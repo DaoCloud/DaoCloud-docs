@@ -1,21 +1,23 @@
 # GPU Operator 离线安装
 
-DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统的 driver 镜像， 驱动版本是 535.104.12；并且内置了各操作系统所需的 Toolkit 镜像，用户不再需要手动离线 toolkit 镜像。
+DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统的 Driver 镜像，驱动版本是 535.104.12；
+并且内置了各操作系统所需的 Toolkit 镜像，用户不再需要手动离线 Toolkit 镜像。
 
-本文使用 AMD 架构的 Centos 7.9（3.10.0-1160）进行演示。如需使用 Red Hat 8.4 部署，请参考[向火种节点仓库上传 Red Hat GPU Opreator 离线镜像](./push_image_to_repo.md)和[构建 Red Hat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)。
+本文使用 AMD 架构的 CentOS 7.9（3.10.0-1160）进行演示。如需使用 Red Hat 8.4 部署，
+请参考[向火种节点仓库上传 Red Hat GPU Opreator 离线镜像](./push_image_to_repo.md)和[构建 Red Hat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)。
 
 ## 前提条件
 
-1. 待部署 GPU Operator 的集群节点内核版本必须完全一致。节点 发行版和 GPU 卡型号在 [GPU 支持矩阵](../gpu_matrix.md) 范围内。
-2. 用户已经在平台上安装了 v0.20.0 及以上版本的 addon 离线包（ v0.12 及以上版本的 addon 就已支持安装 GPU operator，但 GPU operator 仅内置了 centos 7.9 一个操作系统）。
-3. 安装 gpu operator 时选择 v23.9.0+2 及以上版本
-
+- 待部署 gpu-operator 的集群节点内核版本必须完全一致。节点所在的发行版和 GPU 卡型号在 [GPU 支持矩阵](../gpu_matrix.md)的范围内。
+- 用户已经在平台上安装了 v0.20.0 及以上版本的 [addon 离线包](../../../../download/addon/history.md)
+  （Addon 自 v0.12 起开始支持安装 gpu-operator，但 gpu-operator 仅内置了 CentOS 7.9 这一个操作系统）。
+- 安装 gpu-operator 时选择 v23.9.0+2 及以上版本
 
 ## 操作步骤
 
-参考如下步骤为集群安装 GPU Operator 插件。
+参考如下步骤为集群安装 gpu-operator 插件。
 
-1. 登录平台，进入 __容器管理__ -> __待安装 GPU Operator 的集群__ -> 进入集群详情。
+1. 登录平台，进入 __容器管理__ -> __待安装 gpu-operator  的集群__ -> 进入集群详情。
 
 2. 在 __Helm 模板__ 页面，选择 __全部仓库__ ，搜索 __gpu-operator__ 。
 
@@ -40,31 +42,32 @@ DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统�
 
 #### Operator 参数配置
 
-1. __InitContainer.image__ ：配置 CUDA 镜像，推荐默认镜像： __nvidia/cuda__
-2. __InitContainer.repository__ ：CUDA 镜像所在的镜像仓库，默认为 __nvcr.m.daocloud.io__ 仓库
-3. __InitContainer.version__ : CUDA 镜像的版本，请使用默认参数
+- __InitContainer.image__ ：配置 CUDA 镜像，推荐默认镜像： __nvidia/cuda__
+- __InitContainer.repository__ ：CUDA 镜像所在的镜像仓库，默认为 __nvcr.m.daocloud.io__ 仓库
+- __InitContainer.version__ : CUDA 镜像的版本，请使用默认参数
 
 #### Driver 参数配置
 
-1. __Driver.enable__ ：配置是否在节点上部署 NVIDIA 驱动，默认开启，如果您在使用 GPU Operator 部署前，已经在节点上部署了 NVIDIA 驱动程序，请关闭。
-2. __Driver.image__ ：配置 GPU 驱动镜像，推荐默认镜像： __nvidia/driver__ 。
-3. __Driver.repository__ ：GPU 驱动镜像所在的镜像仓库，默认为 nvidia 的 __nvcr.io__ 仓库。
-4. __Driver.usePrecompiled__ ：开启预编译模式安装驱动。
-5. __Driver.version__ ：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，
+- __Driver.enable__ ：配置是否在节点上部署 NVIDIA 驱动，默认开启，如果您在使用 GPU Operator 部署前，
+  已经在节点上部署了 NVIDIA 驱动程序，请关闭。
+- __Driver.image__ ：配置 GPU 驱动镜像，推荐默认镜像： __nvidia/driver__ 。
+- __Driver.repository__ ：GPU 驱动镜像所在的镜像仓库，默认为 nvidia 的 __nvcr.io__ 仓库。
+- __Driver.usePrecompiled__ ：开启预编译模式安装驱动。
+- __Driver.version__ ：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，
    不同类型操作系统的 Driver 镜像的版本存在如下差异，
    详情可参考：[Nvidia GPU Driver 版本](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags)，
    如下不同操作系统的 `Driver Version` 示例：
 
     !!! note
 
-        使用内置的操作系统版本无需修改镜像版本，其他操作系统版本请参考[向火种节点仓库上传镜像](./push_image_to_repo.md) 。
-        注意版本号后无需填写 ubantu、centos、Red Hat等操作系统名称，若官方镜像含有操作系统后缀，请手动移除
+        使用内置的操作系统版本无需修改镜像版本，其他操作系统版本请参考[向火种节点仓库上传镜像](./push_image_to_repo.md)。
+        注意版本号后无需填写 Ubuntu、CentOS、Red Hat 等操作系统名称，若官方镜像含有操作系统后缀，请手动移除。
 
         - Red Hat 系统，例如 `525.105.17`
         - Ubuntu 系统，例如 `535-5.15.0-1043-nvidia`
         - CentOS 系统，例如 `525.147.05`
 
-6. __Driver.RepoConfig.ConfigMapName__ ：用来记录 GPU Operator 的离线 yum 源配置文件名称，
+- __Driver.RepoConfig.ConfigMapName__ ：用来记录 GPU Operator 的离线 yum 源配置文件名称，
    当使用预置的离线包时，各类型的操作系统请参考如下的文档。
 
     - [构建 CentOS 7.9 离线 yum 源](./upgrade_yum_source_centos7_9.md)
@@ -72,7 +75,7 @@ DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统�
 
 #### Toolkit 配置参数
 
-__Toolkit.enable__ ：默认开启，该组件让 conatainerd/docker 支持运行需要 gpu 的容器。
+__Toolkit.enable__ ：默认开启，该组件让 conatainerd/docker 支持运行需要 GPU 的容器。
 
 #### MIG 配置参数
 

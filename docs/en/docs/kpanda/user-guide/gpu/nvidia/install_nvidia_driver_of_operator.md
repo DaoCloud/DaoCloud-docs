@@ -3,31 +3,29 @@ MTPE: Fan-Lin
 Date: 2024-01-24
 ---
 
-# Offline Install GPU Operator
+# Offline Install gpu-operator
 
 DCE 5.0 comes with pre-installed `driver` images for the following three operating systems: Ubuntu 22.04, Ubuntu 20.04,
 and CentOS 7.9. The driver version is `535.104.12`. Additionally, it includes the required `Toolkit` images for each
 operating system, so users no longer need to manually provide offline `toolkit` images.
 
-!!! note
-
-    After installation, switching from MIG mode to full-card mode or vGPU mode is not supported.
-    Only one-click switching between full-card mode and vGPU mode is supported. Please plan your usage mode in advance.
-
-Refer to [NVIDIA GPU Card Usage Modes](index.md) for more details. This article demonstrates the installation
-using AMD architecture on CentOS 7.9 (3.10.0-1160). If you want to deploy on Red Hat 8.4, refer to
-[Uploading Red Hat GPU Operator Offline Images to Bootstrap Nodes](./push_image_to_repo.md) and
-[Building Red Hat 8.4 Offline Yum Repository](./upgrade_yum_source_redhat8_4.md).
+This page demonstrates using AMD architecture with CentOS 7.9 (3.10.0-1160). If you need to deploy on Red Hat 8.4, refer to
+[Uploading Red Hat gpu-operator Offline Image to the Fire Seed Node Repository](./push_image_to_repo.md)
+and [Building Offline Yum Source for Red Hat 8.4](./upgrade_yum_source_redhat8_4.md).
 
 ## Prerequisites
 
-1. The user has already installed addon offline package v0.12.0 or above on the platform.
-2. The kernel versions of the nodes in the cluster, where GPU Operator will be deployed, must be identical.
-   The distribution and GPU card models should be within the scope of the [GPU Support Matrix](../gpu_matrix.md).
+- The kernel version of the cluster nodes where the gpu-operator is to be deployed must be
+  completely consistent. The distribution and GPU card model of the nodes must fall within
+  the scope specified in the [GPU Support Matrix](../gpu_matrix.md).
+- The user has already installed version v0.20.0 or above of the
+  [addon offline package](../../../../download/addon/history.md) on the platform
+  (Addon has supported installing the gpu-operator since v0.12, but the gpu-operator only has built-in support for CentOS 7.9).
+- When installing the gpu-operator, select version v23.9.0+2 or above.
 
 ## Steps
 
-To install the GPU Operator plugin for your cluster, follow these steps:
+To install the gpu-operator plugin for your cluster, follow these steps:
 
 1. Log in to the platform and go to __Container Management__ -> __Clusters__ , check cluster eetails.
 
@@ -46,26 +44,28 @@ To install the GPU Operator plugin for your cluster, follow these steps:
 
 - __Name__ : Enter the plugin name
 - __Namespace__ : Select the namespace for installing the plugin
-- __Version__ : Plugin version, for example, __23.6.10__
-- __Wait__ : When enabled, all associated resources must be in a ready state for the application installation to be marked as successful
-- __Deletion failed__ : If the installation fails, delete the already installed associated resources. By enabling this, __Wait__ is automatically enabled
-- __Detail Logs__ : When enabled, detailed logs of the installation process will be recorded
+- **Version**: The version of the plugin. Here, we use version **v23.9.0+2** as an example.
+- **Failure Deletion**: If the installation fails, it will delete the already installed associated
+  resources. When enabled, **Ready Wait** will also be enabled by default.
+- **Ready Wait**: When enabled, the application will be marked as successfully installed only
+  when all associated resources are in a ready state.
+- **Detailed Logs**: When enabled, detailed logs of the installation process will be recorded.
 
 ### Advanced settings
 
 #### Operator parameters
 
-1. __InitContainer.image__ : Configure the CUDA image, recommended default image: __nvidia/cuda__
-2. __InitContainer.repository__ : Repository where the CUDA image is located, defaults to __nvcr.m.daocloud.io__ repository
-3. __InitContainer.version__ : Version of the CUDA image, please use the default parameter
+- __InitContainer.image__ : Configure the CUDA image, recommended default image: __nvidia/cuda__
+- __InitContainer.repository__ : Repository where the CUDA image is located, defaults to __nvcr.m.daocloud.io__ repository
+- __InitContainer.version__ : Version of the CUDA image, please use the default parameter
 
 #### Driver parameters
 
-1. __Driver.enable__ : Configure whether to deploy the NVIDIA driver on the node, default is enabled. If you have already deployed the NVIDIA driver on the node before using the GPU Operator, please disable this.
-2. __Driver.image__ : Configure the GPU driver image, recommended default image: __nvidia/driver__ .
-3. __Driver.repository__ : Repository where the GPU driver image is located, default is nvidia's __nvcr.io__ repository.
-4. __Driver.usePrecompiled__ : Enable the precompiled mode to install the driver.
-5. __Driver.version__ : Version of the GPU driver image, use default parameters for offline deployment.
+- __Driver.enable__ : Configure whether to deploy the NVIDIA driver on the node, default is enabled. If you have already deployed the NVIDIA driver on the node before using the gpu-operator, please disable this.
+- __Driver.image__ : Configure the GPU driver image, recommended default image: __nvidia/driver__ .
+- __Driver.repository__ : Repository where the GPU driver image is located, default is nvidia's __nvcr.io__ repository.
+- __Driver.usePrecompiled__ : Enable the precompiled mode to install the driver.
+- __Driver.version__ : Version of the GPU driver image, use default parameters for offline deployment.
    Configuration is only required for online installation. Different versions of the Driver image exist for
    different types of operating systems. For more details, refer to
    [Nvidia GPU Driver Versions](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags).
@@ -73,16 +73,15 @@ To install the GPU Operator plugin for your cluster, follow these steps:
 
     !!! note
 
-        The system provides the image 525.147.05-centos7 by default. For other images, refer to
-        [Upload Image to Bootstrap Node Repository](./push_image_to_repo).
-        There is no need to include the operating system name such as Ubuntu, CentOS, Red Hat at the end of the version number. If the official image contains an operating system suffix, manually remove it.
+        When using the built-in operating system version, there is no need to modify the image version. For other operating system versions, please refer to [Uploading Images to the Fire Seed Node Repository](./push_image_to_repo.md).
+        note that there is no need to include the operating system name such as Ubuntu, CentOS, or Red Hat in the version number. If the official image contains an operating system suffix, please manually remove it.
 
         - For Red Hat systems, for example, `525.105.17`
         - For Ubuntu systems, for example, `535-5.15.0-1043-nvidia`
         - For CentOS systems, for example, `525.147.05`
 
-6. __Driver.RepoConfig.ConfigMapName__ : Used to record the name of the offline yum repository configuration file
-   for the GPU Operator. When using the pre-packaged offline bundle, refer to the following documents for
+- __Driver.RepoConfig.ConfigMapName__ : Used to record the name of the offline yum repository configuration file
+   for the gpu-operator. When using the pre-packaged offline bundle, refer to the following documents for
    different types of operating systems.
 
     - [Building CentOS 7.9 Offline Yum Repository](./upgrade_yum_source_centos7_9.md)
