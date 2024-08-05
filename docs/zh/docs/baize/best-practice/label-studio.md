@@ -19,13 +19,13 @@ Label Studio 需部署到[全局服务集群](../../kpanda/user-guide/clusters/c
 
 !!! note
 
-​    在 [Deploy Label Studio on Kubernetes](https://labelstud.io/guide/install_k8s) 了解更多详情。
+    ​在 [Deploy Label Studio on Kubernetes](https://labelstud.io/guide/install_k8s) 了解更多详情。
 
 1. 打开全局服务集群界面，从左侧导航栏找到 __Helm 应用__ -> __Helm 仓库__ ，选择 __创建仓库__ 按钮，填写如下参数：
 
     ![创建按钮](./images/lbs01.png)
 
-1. 添加成功后，点击添加记录后的 __┇__ 按钮，选择 __同步仓库__ ，稍等片刻后完成同步。（后续更新 Label Studio 也会用到这个同步选项）。
+1. 添加成功后，点击列表右侧的 __┇__ ，选择 __同步仓库__ ，稍等片刻后完成同步。（后续更新 Label Studio 也会用到这个同步选项）。
 
     ![同步仓库](./images/lbs02.png)
 
