@@ -1147,6 +1147,7 @@ nav:
                   - Fine-Tune ChatGLM3 with Intelligent Engine: baize/best-practice/finetunel-llm.md
                   - Submit a DeepSpeed Training Task: baize/best-practice/train-with-deepspeed.md
                   - Add Job Scheduler: baize/best-practice/add-scheduler.md
+                  - Deploy Label Studio: baize/best-practice/label-studio.md
               - Troubleshoot:
                   - index: baize/troubleshoot/index.md
                   - Cluster Not Found in Drop-Down List: baize/troubleshoot/cluster-not-found.md
