@@ -9,36 +9,37 @@ Egress 网关策略用于定义哪些 Pod 的出口流量要经过 EgressGateway
 
 ## 创建命名空间 Egress 网关策略
 
-1. 点击 __网关策略__ -> 创建 __命名空间策略__ ，并填入如下参数：
+1. 点击 __网关策略__ -> __创建命名空间策略__ ，并填入如下参数：
 
     ![egresspolicy-create-1](../../images/egresspolicy-create-1.jpg)
 
     **基本信息** ：
     
-    * `策略名称`：输入待创建的策略名称。
-    * `描述`：定义待创建策略描述。
-    * `命名空间`：创建的策略生效的命名空间，此示例中选择的为 __default__ 。
-    * `网关选择`：指定使用哪一个已经创建好的[Egress 网关实例](../egressgateway/create_eg.md)。
+    * __策略名称__ ：输入待创建的策略名称。
+    * __描述__ ：定义待创建策略描述。
+    * __命名空间__ ：创建的策略生效的命名空间，此示例中选择的为 __default__ 。
+    * __网关选择__ ：指定使用哪一个已经创建好的[Egress 网关实例](../egressgateway/create_eg.md)。
 
     **出口地址** ：
 
-    * `出口 IP 地址`：可使用独立的 VIP作为出口 IP。因为 EgressGateway 基于 ARP 生效 VIP，适用于传统网络，
-      源 IP 永久是固定的。在不做设置时，则默认使用缺省 VIP， IP 值必须在 EgressGateway 中的 IP 池范围内。可通过如下两种方式选择 IP：
-        * `指定出口 IP 地址`：从[选择网关](./create_eg.md)对应的出口 IP 范围中，指定某一个 IP 地址作为 出口 IP 。
-        * `指定分配策略`：可使用选择网关的 默认出口 IP 或者通过轮询方式 选择 IP 池中地址作为出口 IP 。
+    * __出口 IP 地址__ ：可使用独立的 VIP 作为出口 IP。因为 EgressGateway 基于 ARP 生效 VIP ，适用于传统网络，
+      源 IP 是永久固定的。在不做设置时，则默认使用缺省 VIP， IP 值必须在 EgressGateway 中的 IP 池范围内。可通过如下两种方式选择 IP：
+        * __指定出口 IP 地址__ ：从[选择网关](./create_eg.md)对应的出口 IP 范围中，指定某一个 IP 地址作为 出口 IP 。
+        * __指定分配策略__ ：可使用选择网关的默认出口 IP 或者通过轮询方式选择 IP 池中地址作为出口 IP 。
       
-    * `节点 IP 地址`：使用节点 IP 地址作为出口 IP。适用于公有云和传统网络等环境，缺点是随着网关节点的故障，出口源 IP 可能会发生变化。对应字段信息为 __spec.egressIP.useNodeIP=true__
+    * __节点 IP 地址__ ：使用节点 IP 地址作为出口 IP。适用于公有云和传统网络等环境，缺点是随着网关节点的故障，出口源 IP 可能会发生变化。对应字段信息为 `spec.egressIP.useNodeIP=true`
 
     **源地址容器组** ：
 
-    `选择容器组`：支持通过 __标签选择器__ 或者 __源地址__ 方式选择源地址容器组，指定本策略生效的容器范围，
+    __选择容器组__ ：支持通过 __标签选择器__ 或者 __源地址__ 方式选择源地址容器组，指定本策略生效的容器范围，
     当匹配的 Pod 访问任意集群外部的地址（任意不是 Node IP、CNI Pod CIDR、ClusterIP 的地址）时，都会被 EgressGateway Node 转发。
-    * `标签选择器`：通过标签指定源地址容器组。
-    * `源地址`：通过添加 源地址 CIDR 地址段方式，添加白名单，锁定的 容器组将生效本策略。
+
+    - __标签选择器__ ：通过标签指定源地址容器组。
+    - __源地址__ ：通过添加源地址 CIDR 地址段方式，添加白名单，锁定的容器组将生效本策略。
 
     **高级设置** ：
 
-    `目标地址`：可指定访问目标地址白名单，指定后此策略将对定义的目标地址生效，支持 单个 IP 地址，IP 段，CIDR 等方式输入。默认不定义，对所有目标地址生效。
+    __目标地址__ ：可指定访问目标地址白名单，指定后此策略将对定义的目标地址生效，支持 单个 IP 地址，IP 段，CIDR 等方式输入。默认不定义，对所有目标地址生效。
 
 2. 输入完成后点击 **确定** 完成创建。
 
@@ -48,8 +49,8 @@ Egress 网关策略用于定义哪些 Pod 的出口流量要经过 EgressGateway
     
     **高级设置** ：
     
-    * `命名空间选择器`：通过 Label 方式选择命名空间，策略生效范围为所选择命名空间。
-    * `目标地址`：同创建命名空间 Egress 网关策略 规则一致。
+    * __命名空间选择器__ ：通过 Label 方式选择命名空间，策略生效范围为所选择命名空间。
+    * __目标地址__ ：同创建命名空间 Egress 网关策略 规则一致。
     
 2. 输入完成后点击 **确定** 完成创建。
 
@@ -75,14 +76,14 @@ Egress 网关策略用于定义哪些 Pod 的出口流量要经过 EgressGateway
 
     在以上创建命令中：
 
-    * __spec.egressGatewayName__ 指定了使用哪一组 EgressGateway 的名字。
-    * __spec.appliedTo.podSelector__ 指定了本策略生效在集群内的哪些 Pod。
+    * `spec.egressGatewayName` 指定了使用哪一组 EgressGateway 的名字。
+    * `spec.appliedTo.podSelector` 指定了本策略生效在集群内的哪些 Pod。
     * 集群的 egress 流量的源 IP 地址有两种选择：
         * 可使用网关节点的 IP。它可适用于公有云和传统网络等环境，缺点是，随着网关节点的故障，
-          出口源 IP 可能会发生变化。可设置 __spec.egressIP.useNodeIP=true__ 来生效。
+          出口源 IP 可能会发生变化。可设置 `spec.egressIP.useNodeIP=true` 来生效。
         * 可使用独立的 VIP，因为 EgressGateway 是基于 ARP 原理生效 VIP，所以它适用于传统网络，
           而不适用于公有云等环境，它的优点是，出口源 IP 永久是固定的。在 EgressPolicy 中不做任何设置，
-          则默认使用 `egressGatewayName` 的缺省 VIP，或者可单独手动指定 __spec.egressIP.ipv4__ ，其 IP 值务必是符合 EgressGateway 中的 IP 池。
+          则默认使用 `egressGatewayName` 的缺省 VIP，或者可单独手动指定 `spec.egressIP.ipv4` ，其 IP 值务必是符合 EgressGateway 中的 IP 池。
 
 2. 查看 EgressPolicy 的状态
 
@@ -113,8 +114,8 @@ Egress 网关策略用于定义哪些 Pod 的出口流量要经过 EgressGateway
 
     如上输出中：
 
-    * __status.eip__ 展示了该组应用出集群时使用的出口 IP 地址。
-    * __status.node__ 展示了哪一个 EgressGateway 的节点在实时的负责出口流量的转发。
+    * `status.eip` 展示了该组应用出集群时使用的出口 IP 地址。
+    * `status.node` 展示了哪一个 EgressGateway 的节点在实时的负责出口流量的转发。
     
     !!! note
     
