@@ -33,6 +33,6 @@ they find that even if the selected queue lacks resources, the Notebook can stil
 
     ![local-queue-initialization-failed](./images/kueue-plainpod.png)
 
-- Solution: When deploying `baize-agent` in the working cluster, enable Kueue support for `enablePlainPod`.
+- Solution: When deploying `baize-agent` in the worker cluster, enable Kueue support for `enablePlainPod`.
 
 - Reference: [Run Plain Pods as a Kueue-Managed Job](https://kueue.sigs.k8s.io/docs/tasks/run/plain_pods/)

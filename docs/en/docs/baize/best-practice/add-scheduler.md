@@ -43,7 +43,7 @@ the highest-scoring node to run the Pod. Factors considered include:
 
 - Resource utilization
 - Pod affinity/anti-affinity
-- Node affinity, etc.
+- Node affinity
 
 ## Scheduler Plugins
 
@@ -53,7 +53,7 @@ including `Coscheduling (Gang Scheduling)` and other features.
 
 ### Deploy Scheduler Plugins
 
-To deploy a secondary scheduler plugin in a working cluster, refer to
+To deploy a secondary scheduler plugin in a worker cluster, refer to
 [Deploying Secondary Scheduler Plugin](../../kpanda/user-guide/clusters/cluster-scheduler-plugin.md).
 
 ### Enable Scheduler Plugins in Intelligent Engine
@@ -64,7 +64,7 @@ To deploy a secondary scheduler plugin in a working cluster, refer to
     It is recommended to test in a test environment or contact our technical support team.
 
 Note that if you wish to use more scheduler plugins in training jobs, you need to manually install
-them successfully in the working cluster first. Then, when deploying the `baize-agent` in the cluster,
+them successfully in the worker cluster first. Then, when deploying the `baize-agent` in the cluster,
 add the proper scheduler plugin configuration.
 
 Through the container management UI provided by **Helm Apps** ,

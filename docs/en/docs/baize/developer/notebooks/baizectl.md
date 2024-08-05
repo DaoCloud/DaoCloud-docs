@@ -1,9 +1,14 @@
-# baizectl Command Line Tool Usage Guide
+---
+MTPE: windsonsea
+Date: 2024-08-05
+---
+
+# baizectl CLI Usage Guide
 
 `baizectl` is a command line tool specifically designed for model developers and data scientists within
 the DCE 5.0 Intelligent Engine module. It provides a series of commands to help users manage
 distributed training jobs, check job statuses, manage datasets, and more. It also supports connecting
-to Kubernetes work clusters and DCE 5.0 workspaces, aiding users in efficiently using and managing
+to Kubernetes worker clusters and DCE 5.0 workspaces, aiding users in efficiently using and managing
 Kubernetes platform resources.
 
 ## Installation
@@ -49,7 +54,7 @@ Use "baizectl [command] --help" for more information about a command.
 The above provides basic information about `baizectl`. Users can view the help information using
 `baizectl --help`, or view the help information for specific commands using `baizectl [command] --help`.
 
-### View Version Information
+### View Versions
 
 `baizectl` supports viewing version information using the `version` command.
 
@@ -66,7 +71,7 @@ The basic format of the `baizectl` command is as follows:
 baizectl [command] [flags]
 ```
 
-Here, `[command]` refers to the specific operation command, such as `data`, `job`, etc., and
+Here, `[command]` refers to the specific operation command, such as `data` and `job`, and
 `[flags]` are optional parameters used to specify detailed information about the operation.
 
 ### Common Options
@@ -146,7 +151,7 @@ Flags:
       --commands stringArray                          The default command of the job
   -d, --datasets stringArray                          The dataset bind to the job, the format is datasetName:mountPath, e.g. mnist:/data/mnist
   -e, --envs stringArray                              The environment variables of the job, the format is key=value
-  -x, --from-notebook string                          Define whether to read the configuration of the current Notebook and directly create tasks, including images, resources, Dataset, etc.
+  -x, --from-notebook string                          Define whether to read the configuration of the current Notebook and directly create tasks, including images, resources, and dataset.
                                                       auto: Automatically determine the mode according to the current environment. If the current environment is a Notebook, it will be set to notebook mode.
                                                       false: Do not read the configuration of the current Notebook.
                                                       true: Read the configuration of the current Notebook. (default "auto")
@@ -674,4 +679,4 @@ baizectl job ls --workspace 123
 
 With this guide, you can quickly get started with `baizectl` commands and efficiently manage AI platform
 resources in practical applications. If you have any questions or issues, it is recommended to
-refer to `baizectl [command] --help` for more detailed information.
+use `baizectl [command] --help` to check more detailed information.

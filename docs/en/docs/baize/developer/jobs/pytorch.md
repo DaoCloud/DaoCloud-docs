@@ -222,6 +222,6 @@ where the `Master` is responsible for coordinating the training job, and the `Wo
     which is the sum of `Master` and `Worker` replica counts.
     Pytorch will automatically tune the roles of `Master` and `Worker`.
 
-#### Run Results
+#### Results
 
 Similarly, we can enter the job details to view the resource usage and the log output of each Pod.

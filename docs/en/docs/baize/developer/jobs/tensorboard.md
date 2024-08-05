@@ -120,7 +120,7 @@ for epoch in range(EPOCHS):
 ### Configure Custom Logs
 
 In addition to logs for training and validation datasets, you can also record other
-custom log content such as learning rate, gradient distribution, etc. Here is a sample code snippet:
+custom log content such as learning rate and gradient distribution. Here is a sample code snippet:
 
 ```python
 # Record custom logs

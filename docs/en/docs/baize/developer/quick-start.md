@@ -8,7 +8,7 @@ hide:
 This document provides a simple guide for users to use the DCE 5.0 Intelligent Engine platform for
 the entire development and training process of datasets, Notebooks, and job training.
 
-1. Click on **Data Management** -> **Datasets** in the navigation bar,
+1. Click **Data Management** -> **Datasets** in the navigation bar,
    then click **Create**. Create three datasets as follows:
 
     - Code: [https://github.com/d-run/drun-samples](https://github.com/d-run/drun-samples/tree/main/tensorflow/tf-fashion-mnist-sample)
@@ -33,7 +33,7 @@ the entire development and training process of datasets, Notebooks, and job trai
 
     <!-- add screenshot later -->
 
-3. Wait for the Notebook to be created successfully, click on the access link in
+3. Wait for the Notebook to be created successfully, click the access link in
    the list to enter the Notebook. Execute the following command in the Notebook terminal to start the job training.
 
     ```shell
@@ -42,7 +42,7 @@ the entire development and training process of datasets, Notebooks, and job trai
 
     <!-- add screenshot later -->
 
-4. Click on **Job Center** -> **Job Management** in the navigation bar, create a `Tensorflow Single` job.
+4. Click **Job Center** -> **Jobs** in the navigation bar, create a `Tensorflow Single` job.
    Refer to the image below for job configuration and enable the **Job Analysis (Tensorboard)** feature.
    Click **Create** and wait for the status to complete.
 
@@ -56,7 +56,7 @@ the entire development and training process of datasets, Notebooks, and job trai
 
     <!-- add screenshot later -->
 
-5. In the job created in the previous step, you can click on the corresponding job analysis to
+5. In the job created in the previous step, you can click the specific job analysis to
    view the job status and optimize the job training.
 
     <!-- add screenshot later -->
