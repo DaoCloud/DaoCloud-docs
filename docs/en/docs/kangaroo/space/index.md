@@ -16,8 +16,8 @@ independently and apply to all qualified images, with a maximum of 15 reclaim ru
 
 ![What's in the registry space](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/space02.png)
 
-After entering the registry space through the `Integrated Registry (Workspace)` on the left navigation bar,
-click the `Push command` button located on the right side.
+After entering the registry space through the __Integrated Registry (Workspace)__ on the left navigation bar,
+click the __Push command__ button located on the right side.
 
 ![Button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/push-cmd01.png)
 
@@ -25,7 +25,7 @@ You can view the push command that can be used to push the image to the current 
 
 ![Push Command](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/push-cmd02.png)
 
-Click the `Upload image` button to upload an image file in tar or tar.gz format.
+Click the __Upload image__ button to upload an image file in tar or tar.gz format.
 Please note that the file size should not exceed 2 GB, and each file corresponds to one image.
 Currently, only image compression packages made with container runtime v1.11.2 and above are supported to upload.
 
