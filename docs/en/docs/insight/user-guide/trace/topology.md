@@ -1,6 +1,9 @@
-# Service Topology
+# Service Map
 
-Service topology is a visual representation of the connections, communication, and dependencies between services. It provides insights into the service-to-service interactions, allowing you to view the calls and performance of services within a specified time range. The connections between nodes in the topology represent the existence of service-to-service calls during the queried time period.
+Service map is a visual representation of the connections, communication, and dependencies between services. 
+It provides insights into the service-to-service interactions, allowing you to view the calls and performance of 
+services within a specified time range. The connections between nodes in the topology map represent the existence of 
+service-to-service calls during the queried time period.
 
 ## Prerequisites
 
@@ -12,12 +15,37 @@ Service topology is a visual representation of the connections, communication, a
 
 1. Go to the __Insight__ product module.
 
-2. Select __Distributed Tracing > Service Topology__ from the left navigation pane.
+2. Select __Trace Tracking__ -> __Service Map__ from the left navigation pane.
 
-3. In the topology graph, you can perform the following actions:
+3. In the Service Map, you can perform the following actions:
 
     - Click a node to slide out the details of the service on the right side. Here,
       you can view metrics such as request latency, throughput, and error rate for the service.
       Clicking on the service name takes you to the service details page.
     - Hover over the connections to view the traffic metrics between the two services.
-    - In the "Display Settings" module, you can configure the display elements in the topology graph.
+    - Click __Display Settings__ , you can configure the display elements in the service map.
+
+    ![Servicemap](../../user-guide/images/servicemap.png)
+
+### Other Nodes
+
+In the Service Map, there can be nodes that are not part of the cluster. These external nodes can be categorized into three types:
+
+- Database
+- Message Queue
+- Virtual Node
+
+1. If a service makes a request to a Database or Message Queue, these two types of nodes will be displayed 
+   by default in the topology map. However, Virtual Nodes represent nodes outside the cluster or services 
+   not integrated into the trace, and they will not be displayed by default in the map.
+
+2. When a service makes a request to MySQL, PostgreSQL, or Oracle Database, the detailed database type 
+   can be seen in the map.
+
+#### Enabling Virtual Nodes
+
+1. Update the `insight-server` chart values, locate the parameter shown in the image below, and change `false` to `true`.
+
+   ![change-parameters](../../image/servicemap.png)
+
+2. In the display settings of the service map, check the `Virtual Services` option to enable it.
