@@ -38,6 +38,8 @@ db/trivy.db
 
 ### 通过命令修改 trivy
 
+运行以下命令为托管 Harbor 的 Kubernetes 集群修改 YAML 参数：
+
 ```shell
 $ kubectl -n {namespace} edit harborclusters.goharbor.io {harbor-name}
 # 主要修改 trivy offlineScan 和 skipUpdate 改为 true
