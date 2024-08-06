@@ -7,7 +7,39 @@ Date: 2024-05-31
 
 # Service Mesh Release Notes
 
-This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
+This page lists all the Release Notes for each version of Service Mesh,
+providing convenience for users to learn about the evolution path and feature changes.
+
+*[mspider]: Internal development codename for DaoCloud Service Mesh
+
+## 2024-08-01
+
+### v0.28.0
+
+#### Features
+
+- **Added** support for connectivity test in network pools for hosted mesh.
+- **Added** multi-cluster deployment capabilities for mesh gateways.
+- **Upgraded** to bind with `github.com/docker/docker` v26.1.4 + incompatible.
+- **Upgraded** support for Istio mesh up to v1.20.8, v1.21.4, and v1.22.2.
+
+#### Fixes
+
+- **Fixed** an issue preventing the Tracing option from being enabled.
+- **Fixed** abnormal detection of mesh components.
+- **Fixed** a potential failure when reinstalling after uninstalling the hosted mesh.
+- **Fixed** incorrect error message descriptions for interconnection detection failures.
+- **Fixed** issues with abnormal namespace injection operations.
+- **Fixed** an injection failure in Waypoint due to a missing Gateway API CRD.
+- **Fixed** an incorrect parameter format in the mspider-mcpc ConfigMap.
+- **Fixed** an issue where Istio Ambient v1.22 ztunnel would not start.
+
+#### Improvements
+
+- **Improved** the default network detection timeout to 3 seconds.
+- **Improved** the cluster health detection mechanism to be configurable.
+- **Improved** the Insight dashboard by replacing the irate expression with rate to prevent data spikes.
+- **Improved** the accuracy of alerts for hosted mesh certificate expiration.
 
 ## 2024-06-30
 
