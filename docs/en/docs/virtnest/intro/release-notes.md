@@ -8,6 +8,20 @@ Date: 2024-04-24
 This page provides the release notes for VirtNest (Virtual Machine),
 allowing you to understand the evolution path and feature changes of each version.
 
+## 2024-07-31
+
+### v0.11.0
+
+#### Features
+
+- **Added** a feature of hot-adding disks to virtual machines.
+
+#### Fixes
+
+- **Fixed** a bug when creating virtual machines from templates.
+- **Fixed** the issue of snapshot restoration failure.
+- **Fixed** display issues with snapshot and clone menus.
+
 ## 2024-06-30
 
 ### v0.10.0
@@ -32,7 +46,7 @@ allowing you to understand the evolution path and feature changes of each versio
 
 #### Features
 
-- **Added** Support for directly updating versions in the Helm application interface
+- **Added** support for directly updating versions in the Helm application interface
   for the virtual machine module.
 
 #### Fixes

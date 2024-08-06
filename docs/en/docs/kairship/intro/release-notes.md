@@ -8,6 +8,14 @@ date: 2024-04-09
 This page lists the release notes of Multicloud Management module,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-07-31
+
+### v0.21.0
+
+#### Improvements
+
+- **Added** a feature of editing object-type data in PlaintextOverrider.
+
 ## 2024-06-31
 
 ### v0.20.0
