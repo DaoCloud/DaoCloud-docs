@@ -15,7 +15,7 @@ service-to-service calls during the queried time period.
 
 1. Go to the __Insight__ product module.
 
-2. Select __Trace Tracking__ -> __Service Map__ from the left navigation pane.
+2. Select __Tracing__ -> __Service Map__ from the left navigation bar.
 
 3. In the Service Map, you can perform the following actions:
 
