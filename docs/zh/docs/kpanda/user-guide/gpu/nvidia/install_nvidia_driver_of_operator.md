@@ -9,8 +9,8 @@ DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统�
 ## 前提条件
 
 - 待部署 gpu-operator 的集群节点内核版本必须完全一致。节点所在的发行版和 GPU 卡型号在 [GPU 支持矩阵](../gpu_matrix.md)的范围内。
-- 用户已经在平台上安装了 v0.20.0 及以上版本的 [addon 离线包](../../../../download/addon/history.md)
-  （Addon 自 v0.12 起开始支持安装 gpu-operator，但 gpu-operator 仅内置了 CentOS 7.9 这一个操作系统）。
+- 用户已经在平台上安装了 v0.12.0 及以上版本的 [addon 离线包](../../../../download/addon/history.md)
+  （Addon v0.20 及以上版本内置 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 三个操作系统）。
 - 安装 gpu-operator 时选择 v23.9.0+2 及以上版本
 
 ## 操作步骤
