@@ -40,7 +40,9 @@ db/trivy.db
 
 ## Enable Offline Scan in Managed Harbor
 
-### Edit in the Kubernetes cluster where Harbor is hosted
+### Modify trivy with command
+
+Run the following command to edit YAML for Kubernetes cluster where Harbor is hosted:
 
 ```shell
 $ kubectl -n {namespace} edit harborclusters.goharbor.io {harbor-name}
@@ -50,14 +52,16 @@ trivy:
     skipUpdate: true
 ```
 
-## Alternatively, you can make modifications from the DCE 5.0 cluster management page
+### Modify CRD YAML on UI
 
-1. Go to `Clusters`, click the proper cluster name.
-2. Select `Custom Resources`.
-3. Choose the `harborcluster` resource.
-4. Enter the namespace where Harbor is hosted.
-5. Select YAML.
-6. Edit the YAML:
+![edit-harborcluster](../images/edit-harborcluster.png)
+
+1. Click __Clusters__, select a cluster and click __CRDs__.
+2. Select the resource __harborcluster__.
+3. Enter the namespace where the managed Harbor is located.
+4. Select YAML.
+5. Choose the version v1beta1.
+6. Edit YAML:
 
 ```yaml
 trivy:
