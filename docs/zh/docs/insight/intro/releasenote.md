@@ -6,7 +6,7 @@
 
 ### Insight Server v0.29.0
 
-#### 新增
+#### 新功能
 
 - **新增** 站内信、飞书通知对象
 
@@ -19,8 +19,8 @@
 
 #### 修复
 
-- **修复** Pod JVM 指标面板无数据
-- **修复** 社区版安装 Insight Agent 时部分参数非必填问题
+- **修复** Pod JVM 指标面板无数据的问题
+- **修复** 社区版安装 Insight Agent 时部分参数非必填的问题
 
 ## 2024-06-30
 
@@ -35,13 +35,13 @@
 
 - **优化** 支持日志上报到 Elasticsearch 8.0 版本
 - **优化** 删除 ReplicaSet 级别指标
-- **修复** fluent-bit  serviceMonitor 指标暴露的路径错误
+- **修复** fluent-bit serviceMonitor 指标暴露的路径错误
 
 ## 2024-05-31
 
 ### Insight Server v0.27.0
 
-#### 新增和优化
+#### 新功能和优化
 
 - **新增** 服务详情中增加服务上下游拓扑
 - **优化** 开发仪表盘给应用管理员
@@ -65,7 +65,7 @@
 
 以下这些变更针对 Insight Server。
 
-#### 新增优化
+#### 新功能优化
 
 - **新增** 当使用 Vector 传输日志时内置 Vector 的监控看板
 - **优化** 支持配置多个日志上传地址
@@ -79,7 +79,7 @@
 - **修复** 使用 YAML 创建告警策略当告警描述为空时创建失败的问题
 - **修复** 当服务接触链路追踪后数据未清理的问题
 
-## 2024.03.31
+## 2024-03-31
 
 !!! warning
 
@@ -106,13 +106,13 @@
 - **修复** YAML 导入告警策略时的校验问题
 - **修复** Grafana 访问速度受限的缺陷
 
-## 2024.01.31
+## 2024-01-31
 
 ### v0.24.0
 
 以下这些变更针对 Insight Server。
 
-#### 新增
+#### 新功能
 
 - **新增** 支持告警抑制
 - **新增** 支持告警模板并从模板创建告警策略
@@ -135,11 +135,11 @@
 
 - **优化** 升级 OpenTelemetry Collector 相关组件的镜像版本
 
-## 2023.12.31
+## 2023-12-31
 
 ### Insight Server v0.23.0
 
-#### 新增
+#### 新功能
 
 - **新增** 集成网络观测 Deepflow 社区版
 - **新增** 告警模板
@@ -163,11 +163,11 @@
 - **优化** 链路追踪的探针注入需要自动注入 `k8s_namespce_name`
 - **优化** 为每个已部署 Insight Agent 的集群自动生成并配置日志索引
 
-## 2023.11.30
+## 2023-11-30
 
 ### Insight Server v0.22.0
 
-#### 新增
+#### 新功能
 
 - **新增** 支持网络连通性拨测功能
 - **新增** 通过 YAML 导入告警策略
@@ -185,7 +185,7 @@
 
 - **修复** Fluentbit 采集目录不兼容 DCE 4.0 的问题
 
-## 2023.10.31
+## 2023-10-31
 
 !!! note
 
@@ -194,7 +194,7 @@
 
 ### Insight Server v0.21.0
 
-#### 新增
+#### 新功能
 
 - **新增** 命名空间维度监控
 
@@ -215,11 +215,11 @@
 - **修复** 链路查询中的操作中出现异常 Span 名称
 - **修复** 银行麒麟 Kylin-V10(SP3) 操作系统中，tailing-sidecar 启动的容器无法正常启动
 
-## 2023.08.31
+## 2023-08-31
 
 ### Insight Server v0.20.0
 
-#### 新增
+#### 新功能
 
 - **新增** 容器事件告警
 - **新增** 链路查询相关日志
@@ -257,11 +257,11 @@
 - **修复** 与 DCE 4.0 的兼容性问题
 - **修复** 指标计算异常的问题
 
-## 2023.07.30
+## 2023-07-30
 
 ### v0.19.0
 
-#### 新增
+#### 新功能
 
 - **新增** Kubenetes 事件分析及查询功能
 - **新增** 内置告警策略提供告警修复建议
@@ -285,11 +285,11 @@
 - **修复** 概览中日志统计值为 0 的问题
 - **修复** 部分内置告警策略不生效的问题
 
-## 2023.07.01
+## 2023-07-01
 
 ### v0.18.0
 
-#### 新增
+#### 新功能
 
 - **新增** 日志告警
 - **新增** 采集管理增加集群状态
@@ -316,7 +316,7 @@
 - **修复** 通过告警列表创建静默，预览匹配告警数据无返回
 - **修复** 部分环境中 Fluentbit 第一次无法启动的问题
 
-## 2023.06.01
+## 2023-06-01
 
 ### v0.17.0
 
@@ -327,7 +327,7 @@
     升级 insight agent 前，请参考：
     [从 v0.16.x（或更低版本）升级到 v0.17.x](../quickstart/install/upgrade-note.md#v016x-v017x)。
 
-#### 新增
+#### 新功能
 
 - **新增** 支持查看活动告警和历史告警详情
 - **新增** 支持通过告警快速创建静默规则
@@ -361,7 +361,7 @@
 - **修复** 修改内置告警规则时无法保存的问题
 - **修复** 组件中时区写死的问题
 
-## 2023.04.28
+## 2023-04-28
 
 ### v0.16.0
 
@@ -370,7 +370,7 @@
     可观测性 Insight v0.16.0 使用了 vmalertmanagers CRD 的新特性参数 __disableRouteContinueEnforce__ ,
     升级 insight server 前，请参考[从 v0.15.x（或更低版本）升级到 v0.16.x](../quickstart/install/upgrade-note.md)
 
-#### 新增
+#### 新功能
 
 - **新增** Java 应用的 JVM 监控。
 - **新增** 设置告警静默通知。
@@ -397,7 +397,7 @@
 - **修复** 【仪表盘】麒麟图标的样式问题
 - **修复** 【仪表盘】tooltip 过长的问题
 
-## 2023.04.04
+## 2023-04-04
 
 ### v0.15.4
 
@@ -414,11 +414,11 @@
 - **修复** 清除警报历史记录的 SQL 语句
 - **修复** 英文仪表盘存在的中文问题
 
-## 2023.03.30
+## 2023-03-30
 
 ### v0.15.1
 
-#### 新增
+#### 新功能
 
 - **新增** JVM 指标采集并集成监控面板
 - **新增** 链路接入的引导
@@ -439,11 +439,11 @@
 - **修复** 采集容器组指标无数据问题
 - **修复** 在 OpenShift 集群无法安装 insight-agent 问题
 
-## 2023.02.27
+## 2023-02-27
 
 ### v0.14.6
 
-#### 新增
+#### 新功能
 
 - **新增** 图表增加刷新按钮
 - **新增** 服务拓扑支持选择多集群并支持通过服务名搜索
@@ -476,7 +476,7 @@
 - **修复** **vmalert** and **vmalertmanager** 的 **configmap-reload** 镜像错误
 - **修复** ARM 架构中 Insight Agent 的 fluentbit
 
-## 2023.01.10
+## 2023-01-10
 
 ### v0.13.2
 
@@ -485,7 +485,7 @@
 - **修复** insight-agent 中 **kubernetes-event-exporter** 镜像地址错误的问题
 - **修复** 通过资源名称过滤告警 API
 
-## 2023.12.30
+## 2023-12-30
 
 ### v0.13.1
 
@@ -494,7 +494,7 @@
 - **修复** 构建离线包增加 **.relok8s-images** 文件
 - **修复** 调整 insight-agent 中组件 **otel-collector** 端口对应的端口名
 
-## 2022.12.29
+## 2022-12-29
 
 ### v0.13.0
 
@@ -505,13 +505,13 @@
 - **新增** 内置消息模板
 - **新增** 图表指标计算说明
 
-### 优化
+#### 优化
 
 - **优化** 日志列表字段显示
 - **优化** insight-agent 的判断逻辑
 - **升级** Jaeger 的 Chart 版本从 v0.62.1 升级到 0.65.1
 
-### 修复
+#### 修复
 
 - **修复** 部分内置告警规则不生效
 - **修复** 创建规则时修复名称可重名的错误
@@ -521,9 +521,9 @@
 - **修复** Jaeger 查询出现 **too many open files** 的问题
 - **修复** es 索引翻转别名和清理策略未起作用的问题
 
-## 2022.11.28
+## 2022-11-28
 
-### v0.12
+### v0.12.0
 
 #### 新功能
 
@@ -551,7 +551,7 @@
 
 ## 2022-11-21
 
-### v0.11
+### v0.11.0
 
 #### 优化
 
@@ -576,9 +576,9 @@
 
 ## 2022-10-20
 
-### v0.10
+### v0.10.0
 
-#### 功能特性
+#### 新功能
 
 - 支持与 OTel 服务名称关联的容器管理 Service 名称，以辨别是否启用了服务链路
 - 在全局 OTel 一栏更新了默认的跟踪样本策略
@@ -607,9 +607,9 @@
 
 ## 2022-9-25
 
-### v0.9
+### v0.9.0
 
-#### 功能特性
+#### 新功能
 
 - Support kpanda service name associated with the otel service name, identify whether the service tracing enabled.
 - Update default tracing sample policies in global otel col.
@@ -638,9 +638,9 @@
 
 ## 2022-8-21
 
-### v0.8
+### v0.8.0
 
-#### 功能特性
+#### 新功能
 
 - Migrate graph server into insight server.
 - Add cluster_name param to graph query request.
@@ -665,7 +665,7 @@
 
 ## 2022-7-20
 
-### v0.7
+### v0.7.0
 
 #### 破坏变更
 
@@ -673,7 +673,7 @@
 - Remove resolve alert api.
 - fix NFD master crash when CRDs missed.
 
-#### 功能特性
+#### 新功能
 
 - Remove jaeger relate code in span-metric.
 - Add index policy for skoala gateway logs.
@@ -696,7 +696,7 @@
 
 ## 2022-6-23
 
-### v0.6
+### v0.6.0
 
 #### 破坏变更
 
@@ -704,11 +704,11 @@
 - Modify trace relate metric query API response type.
 - Using the unified paging mechanism
 
-#### 功能特性
+#### 新功能
 
 - Add graph api through prometheus metrics of mesh layer.
 - Add service graph api through prometheus metrics of general layer.
-- Modify proto param, follow google style doc[https://developers.google.com/protocol-buffers/docs/style].
+- Modify proto param, follow [google style doc](https://developers.google.com/protocol-buffers/docs/style).
 - Modify list api pagination and add sort.
 - Add GProductVersion cr.
 - Add insight metric config api.
@@ -735,9 +735,9 @@
 
 ## 2022-5-18
 
-### v0.5
+### v0.5.0
 
-#### 功能特性
+#### 新功能
 
 - 添加通知模板 API
 - 完成规则和告警 API
@@ -769,9 +769,9 @@
 
 ## 2022-4-22
 
-### v0.4
+### v0.4.0
 
-#### 功能特性
+#### 新功能
 
 - 增加告警通知模块主要 API
 - 升级并适配 kpanda 0.4.x API
@@ -799,9 +799,9 @@
 
 ## 2022-3-18
 
-### v0.3
+### v0.3.0
 
-#### 功能特性
+#### 新功能
 
 - gRPC 和 http 使用相同的端口
 - 将 api 路径从 /api/insight/ 修改为 /api/insight.io/
@@ -817,11 +817,9 @@
 - 支持使用 extraLabels 进行度量查询
 - 添加度量文档。
 - 在 monitor 中实现基本场景案例
-
-#### Helm Charts
-
-- 添加 Jaeger helm chart
-- 添加 OpenTelemetry collector helm chart
-- 添加 tailing-sidecar-operator 作为日志收集的配件/解决方案/插件
-- 在 fluentbit 中添加/变量/日志/消息收集
-- 将 kube exporter 添加到 collecot kube 群集事件日志
+- Helm Charts
+    - 添加 Jaeger helm chart
+    - 添加 OpenTelemetry collector helm chart
+    - 添加 tailing-sidecar-operator 作为日志收集的配件/解决方案/插件
+    - 在 fluentbit 中添加/变量/日志/消息收集
+    - 将 kube exporter 添加到 collecot kube 群集事件日志
