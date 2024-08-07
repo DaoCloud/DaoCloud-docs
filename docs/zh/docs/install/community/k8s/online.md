@@ -77,7 +77,7 @@
 
     !!! note
 
-        - 有关 clusterConfig.yaml 文件设置，请参考[在线安装第 2 步](online.md#_2)。
+        - 有关 clusterConfig.yaml 文件设置，请参考[在线安装第 2 步](#_2)。
         - `-z` 最小化安装
         - `-c` 指定集群配置文件。使用 NodePort 暴露控制台时不需要指定 `-c`。
         - `-d` 开启 debug 模式
