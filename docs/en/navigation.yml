@@ -213,7 +213,7 @@ nav:
                   - Pod Security Policy: kpanda/user-guide/namespaces/podsecurity.md
               - Nodes:
                   - Node Availability Check: kpanda/user-guide/nodes/node-check.md
-                  - Node Config: kpanda/user-guide/nodes/node-config.md
+                  - Node Config: kpanda/user-guide/nodes/node-authentication.md
                   - Node Scaling Out: kpanda/user-guide/nodes/add-node.md
                   - Node Scaling In: kpanda/user-guide/nodes/delete-node.md
                   - Taints: kpanda/user-guide/nodes/taints.md
