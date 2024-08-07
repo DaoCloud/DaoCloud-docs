@@ -56,3 +56,11 @@
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/notebook.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/notebook.jpg"></video>
 </div>
+
+## 智能算力 v0.7.0 版本动态
+
+参阅[智能算力 Release Notes](../baize/intro/release-notes.md)。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/v0.7.0.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/v0.7.0.jpg"></video>
+</div>
