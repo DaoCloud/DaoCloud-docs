@@ -35,8 +35,8 @@ hide:
 
     Redis 填写分为单机和哨兵模式：
 
-    - 单机模式填写地址：`redis://{host}:{port}`，需要替换 host、port 两个参数。
-    - 哨兵模式填写地址：`redis+sentinel://{host}:{port}?sentinelMasterId={master_id}`，需要替换 host、port、master_id 三个参数。
+    - 单机模式填写地址：`redis://{host}:{port}`，需要替换 `host`、`port` 两个参数。
+    - 哨兵模式填写地址：`redis+sentinel://{host}:{port}?sentinelMasterId={master_id}`，需要替换 `host`、`port`、`master_id` 三个参数。
     - 密码：按需填写
 
     ![规格配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/hosted04.png)
@@ -51,9 +51,9 @@ hide:
 
     ![实例列表](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/hosted06.png)
 
-7. 点击某个实例右侧的 __...__ ，可以选择编辑、删除或进入原生 Harbor。
+7. 点击某个实例右侧的 __...__ ，可以选择编辑、删除、进入原生 Harbor，或者查看状态。
 
-    ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/hosted07.png)
+    ![更多操作](../images/hosted07.png)
 
 8.  __托管 Harbor__ 主要是对 Harbor 实例的全生命周期进行管理。创建完成后，系统会自动将该实例集成到 __仓库集成__ 列表，您可前往 __仓库集成__ 列表进入实例详情进行 `创建镜像空间`和`镜像同步`等操作
 
