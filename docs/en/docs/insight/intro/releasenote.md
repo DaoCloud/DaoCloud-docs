@@ -8,49 +8,51 @@ date: 2024-02-19
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2024-07-31
+
+### v0.29.0
+
+#### Insight Server
+
+- **Added** features of messages and Lark notification objects
+- **Improved** to enable or disable `leaderelection` of `insight-manager` via parameter configuration
+- **Improved** to schedule the Prometheus and vmstorage to worker node by default in seven-node installation mode
+
+#### Insight Agent
+
+- **Fixed** an issue where Pod JVM metrics panel had no data
+- **Fixed** an issue where some parameters were not mandatory when installing insight-agent in DCE Community
+
 ## 2024-06-30
 
-### Insight Server v0.28.0
+### v0.28.0
 
-#### Improvements
+#### Insight Server
 
 - **Added** support for DingTalk's signature authentication.
 - **Improved** Webhook which now supports configuration of HTTP Headers.
 - **Improved** service topology map to display calls to MySQL and PostgreSQL databases.
-
-#### Fixes
-
 - **Fixed** missing `clusterid` in Elasticsearch indexes when reporting logs to Kafka cache.
 
-### Insight Agent v0.28.0
-
-#### Improvements
+#### Insight Agent
 
 - **Improved** support for reporting logs to Elasticsearch v8.0.
 - **Removed** ReplicaSet level metrics.
-
-#### Fixes
-
 - **Fixed** incorrect path exposure for fluent-bit serviceMonitor metrics.
 
 ## 2024-05-31
 
-### Insight Server v0.27.0
+### v0.27.0
 
-#### New Features and Improvements
+#### Insight Server
 
 - **Add** upstream and downstream topology to service details.
 - **Improved** development dashboard for application administrators.
 - **Improved** database and message queue type nodes in the topology graph.
 - **Improved** vector monitoring panel.
-
-#### Fixes
-
 - **Fix** an issue where users with namespace permissions are unable to view insight-agent details.
 
-### Insight Agent v0.27.0
-
-#### Improvements
+#### Insight Agent
 
 - **Improved** reporting trace data to Kafka.
 - **Improved** Fluentbit chart upgraded to version 0.46.7.
@@ -59,23 +61,18 @@ the evolution path and feature changes of each version.
 
 ### v0.26.0
 
-The following changes are specific to Insight Server.
-
-#### Features and Improvements
+#### Insight Server
 
 - **Added** built-in monitoring dashboard for Vector when using Vector to transmit logs
 - **Improved** support configuring multiple log upload addresses
 - **Improved** Clicking on a probe name displays the status of the probe task
 - **Improved** support high availability of opentelemetry-collector component
-
-#### Bug Fixes
-
 - **Fixed** an issue with built-in rules not taking effect
 - **Fixed** clear historical data on dashboard after updating probe task
 - **Fixed** an issue with failure to create alert policy when alert description is empty in YAML
 - **Fixed** an issue with data not being cleared after service disengages from distributed tracing
 
-## 2024.03.31
+## 2024-03-31
 
 !!! warning
 
@@ -84,9 +81,7 @@ The following changes are specific to Insight Server.
 
 ### v0.25.0
 
-These changes are for Insight Server.
-
-#### Improvements
+#### Insight Server
 
 - **Improved** Log correlation support for filtering based on TraceID and Pods
 - **Improved** support for encrypting sensitive information of notification objects
@@ -94,92 +89,67 @@ These changes are for Insight Server.
 - **Improved** high availability support for `opentelemetry-collector` component
 - **Improved** Grafana and Jaeger are not accessible without login
 - **Improved** support for customizing whether to initialize log indexes during installation
-
-#### Bug Fixes
-
 - **Fixed** permission issues with alert-related APIs
 - **Fixed** an issue with no data in overview query metrics
 - **Fixed** validation issue when importing YAML for alert policies
 - **Fixed** limitation issue with Grafana access speed
 
-## 2024.01.31
+## 2024-01-31
 
-### Insight Server v0.24.0
+### v0.24.0
 
-#### New Features
+#### Insight Server
 
 - **Added** support for alert suppression
 - **Added** support for alert templates and creating alert policies from templates
-
-#### Improvements
-
 - **Improved** Grafana supports adding data sources of JSON API type
 - **Improved** Grafana prevents using the ECS key to exit fullscreen mode
-
-#### Fixes
-
 - **Fixed** inaccurate preview queries when creating log alerts
 - **Fixed** an error in listening IPv6 during insight-system deployment
 - **Fixed** an issue with Grafana dashboards not being accessible without authentication
 - **Fixed** Enabling InsecureSkipVerify for all SMTP emails
 
-### Insight Agent v0.23.0
-
-#### Improvements
+#### Insight Agent
 
 - **Improved** Upgraded image versions of related components for OpenTelemetry Collector
 
-## 2023.12.31
+## 2023-12-31
 
-### Insight Server v0.23.0
+### v0.23.0
 
-#### New Features
+#### Insight Server
 
 - **Added** integration with network observation Deepflow Community Edition
 - **Added** alert templates
-
-#### Improvements
-
 - **Improved** usage of DSL as the query statement for log alerts
-
-#### Fixes
-
 - **Fixed** an issue that topology graph does not have request latency data
 - **Fixed** an issue where Insight Agent status is not updated when cluster status is abnormal
 - **Fixed** an issue of missing `metadata` in the configuration file for probing
 - **Fixed** inaccurate query and incorrect alert objects in the preview trend chart of log alerts
 - **Fixed** duplicate occurrence of `app.kubernetes.io/name` field in Insight Server Chart
 
-### Insight Agent v0.23.0
-
-#### Improvements
+#### Insight Agent
 
 - **Improved** automatic injection of `k8s_namespce_name` for probe injection in distributed tracing
 - **Improved** automatic generation and configuration of log indexes for each deployed Insight Agent cluster
 
-## 2023.11.30
+## 2023-11-30
 
-### Insight Server v0.22.0
+### v0.22.0
 
-#### New Features
+#### Insight Server
 
 - **Added** support for network connectivity testing
 - **Added** ability to import alert policies via YAML
 - **Added** support for operation audit logging
-
-#### Improvements
-
 - **Improved** automatic deployment of OTel instrumentation CR during installation
-
-#### Fixes
-
 - **Fixed** an issue with Elasticsearch index initialization failure
 
-### Insight Agent v0.22.0
+#### Insight Agent
 
 - **Fixed** compatibility issue with Fluentbit directory collection and DCE 4.0
 
-## 2023.10.31
+## 2023-10-31
 
 !!! note
 
@@ -187,51 +157,37 @@ These changes are for Insight Server.
     configuring PodMonitor. It is recommended to upgrade to this version for the fix.
     For more details, refer to [Known Issues](../../insight/quickstart/install/knownissues.md).
 
-### Insight Server v0.21.0
+### v0.21.0
 
-#### New Features
+#### Insight Server
 
 - **Added** Namespace-level monitoring.
-
-#### Improvements
-
 - **Improved** navigation structure in Insight.
 - **Improved** a behavior of clicking on a link distribution graph allows quick access to proper link details.
-
-#### Fixes
-
 - **Fixed** an issue of unable to view container log context.
 - **Fixed** an error when initializing event index.
 
-### Insight Agent v0.21.0
-
-#### Bug Fixes
+#### Insight Agent
 
 - **Fixed** an issue of abnormal span names appearing in link queries.
 - **Fixed** an issue where containers started by the tailing-sidecar in
   the Bank Kirin Kylin-V10 (SP3) operating system could not start properly.
 
-## 2023.08.31
+## 2023-08-31
 
-### Insight Server v0.20.0
+### v0.20.0
 
-#### New Features
+#### Insight Server
 
 - **Added** container event alerts
 - **Added** linked query-related logs
 - **Added** metadata added to event details
 - **Added** support for Lucene syntax queries in logs
-
-#### Improvements
-
 - **Added** prompts for cluster status abnormalities
 - **Improved** filtering conditions for logs
 - **Improved** duplicate tags when creating silent alert conditions
 - **Improved** node logs now support filtering by file path
 - **Improved** built-in alerting policies for CoreDNS.
-
-#### Bug Fixes
-
 - **Fixed** creation time error for Elasticsearch in system components.
 - **Fixed** discrepancy between the number of logs retrieved in contextual log queries and the actual count.
 - **Fixed** redirection issue with repair suggestions in alerts.
@@ -240,20 +196,15 @@ These changes are for Insight Server.
 - **Fixed** an issue where all nodes became external nodes in the topology diagram when canceling cluster and namespace boundaries.
 - **Fixed** failure to send alerts if there is an error in the content of any notification type in the message template.
 
-### Insight Agent v0.20.0
-
-#### Improvements
+#### Insight Agent
 
 - **Improved** support for consuming log and linked data via Kafka
-
-#### Bug Fixes
-
 - **Fixed** compatibility issues with Openshift clusters
 - **Fixed** compatibility issues with Kubernetes v0.18.20
 - **Fixed** compatibility issues with DCE 4.0
 - **Fixed** an issue with abnormal metric calculations
 
-## 2023.07.30
+## 2023-07-30
 
 ### v0.19.0
 
@@ -281,7 +232,7 @@ These changes are for Insight Server.
 - **Fixed** an issue with log statistics value being displayed as 0 in overview.
 - **Fixed** an issue with some built-in alert policies not taking effect.
 
-## 2023.07.01
+## 2023-07-01
 
 ### v0.18.0
 
@@ -312,7 +263,7 @@ These changes are for Insight Server.
 - **Fixed** an issue where no data was returned when previewing matching alerts while creating silence through the alert list.
 - **Fixed** an issue where Fluentbit could not start for the first time in some environments.
 
-## 2023.06.01
+## 2023-06-01
 
 ### v0.17.0
 
@@ -357,7 +308,7 @@ These changes are for Insight Server.
 - **Fixed** an issue where modifications to built-in alert rules could not be saved.
 - **Fixed** an issue with hardcoded time zone in components.
 
-## 2023.04.28
+## 2023-04-28
 
 ### v0.16.0
 
@@ -393,7 +344,7 @@ These changes are for Insight Server.
 - **Fixed** [Dashboard] Kylin icon style problem
 - **Fixed** [dashboard] tooltip is too long
 
-## 2023.04.04
+## 2023-04-04
 
 ### v0.15.4
 
@@ -410,7 +361,7 @@ These changes are for Insight Server.
 - **Fixed** SQL statement to clear alert history
 - **Fixed** the Chinese problem in the English dashboard
 
-## 2023.03.30
+## 2023-03-30
 
 ### v0.15.1
 
@@ -435,7 +386,7 @@ These changes are for Insight Server.
 - **Fixed** collection pod metrics no data problem
 - **Fixed** an issue of unable to install insight-agent in OpenShift cluster
 
-## 2023.02.27
+## 2023-02-27
 
 ### v0.14.6
 
@@ -472,7 +423,7 @@ These changes are for Insight Server.
 - **Fixed** **configmap-reload** mirror error for **vmalert** and **vmalertmanager**
 - **Fixed** fluentbit for Insight Agent on ARM architecture
 
-## 2023.01.10
+## 2023-01-10
 
 ### v0.13.2
 
@@ -481,7 +432,7 @@ These changes are for Insight Server.
 - **Fixed** the problem that **kubernetes-event-exporter** image address in insight-agent is wrong
 - **Fixed** filter alerts API by resource name
 
-## 2023.12.30
+## 2023-12-30
 
 ### v0.13.1
 
@@ -490,7 +441,7 @@ These changes are for Insight Server.
 - **Fixed** build offline package to add **.relok8s-images** file
 - **Fixed** adjust the port name corresponding to the component **otel-collector** port in insight-agent
 
-## 2022.12.29
+## 2022-12-29
 
 ### v0.13.0
 
@@ -517,7 +468,7 @@ These changes are for Insight Server.
 - **Fixed** Jaeger query has **too many open files** problem
 - **Fixed** elasticsearch index rollover alias and cleanup policy not working
 
-## 2022.11.28
+## 2022-11-28
 
 ### v0.12
 
@@ -601,7 +552,7 @@ These changes are for Insight Server.
 - Added OTel collector grafana dashboard
 - Add Insight overview Chinese page
 
-## 2022-9-25
+## 2022-09-25
 
 ### v0.9
 
@@ -632,7 +583,7 @@ These changes are for Insight Server.
 - Add otel collector grafana dashboard.
 - Add Insight Overview Chinese version.
 
-## 2022-8-21
+## 2022-08-21
 
 ### v0.8
 
@@ -659,7 +610,7 @@ These changes are for Insight Server.
 - Add audit log enable/disable feature.
 - Move Fluentbit config to a ConfigMap.
 
-## 2022-7-20
+## 2022-07-20
 
 ### v0.7
 
@@ -690,7 +641,7 @@ These changes are for Insight Server.
 - Replace insight-overview dashboard.
 - Add GrafanaDashboard, GrafanaDatasource CRDs.
 
-## 2022-6-23
+## 2022-06-23
 
 ### v0.6
 
@@ -729,7 +680,7 @@ These changes are for Insight Server.
 - Add servicemonitor for components in victoria-metrics-k8s-stack.
 - Modify insight components resource.
 
-## 2022-5-18
+## 2022-05-18
 
 ### v0.5
 
@@ -763,7 +714,7 @@ These changes are for Insight Server.
 - Added user guides - documents such as scene monitoring, data query, and alert center
 - New additions to the document site: [Product Benefits](../intro/benefits.md), [Metric Query](../user-guide/data-query/metric.md), [trace query](../user-guide/trace/trace.md), dashboard, [overview](../user-guide/dashboard/overview.md)
 
-## 2022-4-22
+## 2022-04-22
 
 ### v0.4
 
@@ -793,7 +744,7 @@ These changes are for Insight Server.
 - Merge document ROADMAP content into total ROADMAP file
 - Update document structure
 
-## 2022-3-18
+## 2022-03-18
 
 ### v0.3
 
