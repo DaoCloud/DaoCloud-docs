@@ -4,34 +4,31 @@
 
 ## 2024-07-31
 
-### Insight Server v0.29.0
+### v0.29.0
 
-#### 新功能
+#### Insight Server
 
 - **新增** 站内信、飞书通知对象
-
-#### 优化
-
 - **优化** 支持通过配置参数控制 `insight-manager` 的 `leaderelection` 是否开启
 - **优化** 在安装器七节点模式下默认 Prometheus、vmstorage 默认调度到工作节点
   
-### Insight Agent v0.29.0
-
-#### 修复
+#### Insight Agent
 
 - **修复** Pod JVM 指标面板无数据的问题
 - **修复** 社区版安装 Insight Agent 时部分参数非必填的问题
 
 ## 2024-06-30
 
-### Insight Server v0.28.0
+### v0.28.0
+
+#### Insight Server
 
 - **优化** 钉钉支持加签认证
 - **优化** Webhook 支持配置 HTTP Headers
 - **优化** 服务拓扑图中支持展示调用 MySQL、PostgreSQL 数据库
 - **修复** 日志上报到 Kafka 缓存时，Elasticsearch 生成的索引没有 `clusterid`
 
-### Insight Agent v0.28.0
+#### Insight Agent
 
 - **优化** 支持日志上报到 Elasticsearch 8.0 版本
 - **优化** 删除 ReplicaSet 级别指标
@@ -39,22 +36,17 @@
 
 ## 2024-05-31
 
-### Insight Server v0.27.0
+### v0.27.0
 
-#### 新功能和优化
+#### Insight Server
 
 - **新增** 服务详情中增加服务上下游拓扑
 - **优化** 开发仪表盘给应用管理员
 - **优化** 拓扑图增加数据库、消息队列类型的类型节点
 - **优化** 增加 vector 监控面板
-
-#### 修复
-
 - **修复** 命名空间权限的用户，无法查看 insight-agent 详情
 
-### Insight Agent v0.27.0
-
-#### 优化
+#### Insight Agent
 
 - **优化** 支持链路数据上报至 Kafka
 - **优化** 升级 fluentbit chart 到 0.46.7
@@ -63,17 +55,12 @@
 
 ### v0.26.0
 
-以下这些变更针对 Insight Server。
-
-#### 新功能优化
+#### Insight Server
 
 - **新增** 当使用 Vector 传输日志时内置 Vector 的监控看板
 - **优化** 支持配置多个日志上传地址
 - **优化** 点击拨测名称可查看拨测任务的状态
 - **优化** 支持 opentelemetry-collector 组件的高可用
-
-#### 修复
-
 - **修复** 内置规则不生效的问题
 - **修复** 更新拨测任务后，仪表盘未清除历史数据
 - **修复** 使用 YAML 创建告警策略当告警描述为空时创建失败的问题
@@ -88,9 +75,7 @@
 
 ### v0.25.0
 
-以下这些变更针对 Insight Server。
-
-#### 优化
+#### Insight Server
 
 - **优化** 链路关联日志支持根据 TraceID 和容器组过滤
 - **优化** 支持对通知对象的敏感信息进行加密隐藏
@@ -98,9 +83,6 @@
 - **优化** `opentelemetry-collector` 组件支持高可用
 - **优化** Grafana 和 Jaeger 未登录不可访问
 - **优化** 支持自定义在安装时是否初始化日志索引的能力
-
-#### 修复
-
 - **修复** 修复告警相关接口的权限问题
 - **修复** 概览查询指标无数据的问题
 - **修复** YAML 导入告警策略时的校验问题
@@ -110,78 +92,54 @@
 
 ### v0.24.0
 
-以下这些变更针对 Insight Server。
-
-#### 新功能
+#### Insight Server
 
 - **新增** 支持告警抑制
 - **新增** 支持告警模板并从模板创建告警策略
-
-#### 优化
-
 - **优化** Grafana 支持增加 JSON API 类型的数据源
 - **优化** Grafana 禁止使用 ECS 键退出全屏模式
-
-#### 修复
-
 - **修复** 创建日志告警预览查询不准确的问题
 - **修复** insight-system 部署过程中的监听 IPv6 问题报错
 - **修复** Grafana 仪表盘没有通过认证允许查看的问题
 - **修复** 强制所有 SMTP 邮件启用 InsecureSkipVerify
 
-### Insight Agent v0.23.0
-
-#### 优化
+#### Insight Agent
 
 - **优化** 升级 OpenTelemetry Collector 相关组件的镜像版本
 
 ## 2023-12-31
 
-### Insight Server v0.23.0
+### v0.23.0
 
-#### 新功能
+#### Insight Server
 
 - **新增** 集成网络观测 Deepflow 社区版
 - **新增** 告警模板
-
-#### 优化
-
 - **优化** 使用 DSL 作为日志告警的查询语句
-
-#### 修复
-
 - **修复** 拓扑图没有请求延时数据
 - **修复** 当集群状态异常时，Insight Agent 状态未更新
 - **修复** 拨测的配置文件中缺少 `metadata`
 - **修复** 日志告警的预览趋势图查询不准确且告警对象不准确
 - **修复** Insight Server Chart 中 `app.kubernetes.io/name` 字段重复出现
 
-### Insight Agent v0.23.0
-
-#### 优化
+#### Insight Agent
 
 - **优化** 链路追踪的探针注入需要自动注入 `k8s_namespce_name`
 - **优化** 为每个已部署 Insight Agent 的集群自动生成并配置日志索引
 
 ## 2023-11-30
 
-### Insight Server v0.22.0
+### v0.22.0
 
-#### 新功能
+#### Insight Server
 
 - **新增** 支持网络连通性拨测功能
 - **新增** 通过 YAML 导入告警策略
 - **新增** 支持操作审计记录
-
-### 优化
-
 - **优化** 安装时自动下发 OTel instrumentation CR
-
-#### 修复
-
 - **修复** Elasticsearch 索引初始化失败的问题
 
-### Insight Agent v0.22.0
+#### Insight Agent
 
 - **修复** Fluentbit 采集目录不兼容 DCE 4.0 的问题
 
@@ -192,50 +150,36 @@
     Insight Agent v0.21.0 修复了 PodMonitor 配置后会重复集多份 JVM 指标数据的问题，建议升级至该版本进行修复。
     详情可查看[已知问题](../../insight/quickstart/install/knownissues.md)。
 
-### Insight Server v0.21.0
+### v0.21.0
 
-#### 新功能
+#### Insight Server
 
 - **新增** 命名空间维度监控
-
-#### 优化
-
 - **优化** 更新 Insight 导航栏结构
 - **优化** 点击链路分布图可快速查看对应链路详情
-
-#### 修复
-
 - **修复** 无法查看到容器日志的上下文
 - **修复** 初始化事件索引出错
 
-### Insight Agent v0.21.0
-
-#### 修复
+#### Insight Agent
 
 - **修复** 链路查询中的操作中出现异常 Span 名称
 - **修复** 银行麒麟 Kylin-V10(SP3) 操作系统中，tailing-sidecar 启动的容器无法正常启动
 
 ## 2023-08-31
 
-### Insight Server v0.20.0
+### v0.20.0
 
-#### 新功能
+#### Insight Server
 
 - **新增** 容器事件告警
 - **新增** 链路查询相关日志
 - **新增** 事件详情增加元数据
 - **新增** 日志支持 Lucene 语法查询
-
-#### 优化
-
 - **优化** 集群状态异常时增加提示
 - **优化** 日志过滤的条件增强
 - **优化** 告警静默条件创建时允许添加相同的标签
 - **优化** 节点日志支持通过文件路径过滤
 - **优化** 增加针对 CoreDNS 的内置告警策略
-
-#### 修复
-
 - **修复** 系统组件中 Elasticsearch 的创建时间不正确
 - **修复** 日志上下文查询出来的日志条数和实际的日志条数不符
 - **修复** 告警修复建议中跳转链接重定向
@@ -244,14 +188,9 @@
 - **修复** 拓扑图取消集群、命名空间边界时所有的节点变成外部节点问题
 - **修复** 消息模板中要是任一通知类型的模板内容出错，就会导致告警无法通知
 
-### Insight Agent v0.20.0
-
-#### 优化
+#### Insight Agent
 
 - **优化** 日志和链路数据支持通过 Kafka 消费数据。
-
-#### 修复
-
 - **修复** 与 Openshift 集群的兼容性问题
 - **修复** 与 Kubernetes v0.18.20 的兼容性问题
 - **修复** 与 DCE 4.0 的兼容性问题
