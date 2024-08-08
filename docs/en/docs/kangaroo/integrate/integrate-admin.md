@@ -1,6 +1,11 @@
+---
+MTPE: ModetaNiu
+DATE: 2024-08-08
+---
+
 # Integrated Registry (Admin)
 
-The Integrated Registry (Admin) is the entrance for central management of platform container registries.
+The Integrated Registry (Admin) is the entrance for unified management of external container registries.
 It supports integrating external container registries such as Harbor Registry and Docker Registry,
 as well as automatically integrating managed Harbors created by the platform. After integrated registry,
 platform administrators can assign a private registry space to one or more workspaces (namespaces under workspaces)
@@ -26,7 +31,7 @@ by binding the registry space to the workspace, or set the registry space as pub
 
 ## Operating Steps
 
-Refer to [Video Tutorial](../../videos/kangaroo.md#_3) to familiarize yourself with the following operating steps:
+Refer to [Video Tutorial](../../videos/kangaroo.md#integrate-registry-admin) to familiarize yourself with the following operating steps:
 
 1. Log in to DCE 5.0 as a user with the Admin role, click __Container Registry__ -> __Integrated Registry (Admin)__
   from the left navigation bar.
@@ -37,7 +42,7 @@ Refer to [Video Tutorial](../../videos/kangaroo.md#_3) to familiarize yourself w
 
     ![Click Button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/integrated02.png)
 
-1. Select the registry type, fill in the integration name, registry address, username, and password, and click __OK__.
+1. Select the registry type, fill in the integrated name, registry url, username, and password, and click __OK__.
 
     ![Fill Parameters](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/integrated03.png)
 
@@ -45,7 +50,7 @@ Refer to [Video Tutorial](../../videos/kangaroo.md#_3) to familiarize yourself w
 
         For a Harbor registry, an Admin-level username/password must be provided.
 
-1. Return to the integrated registry list. The integrated repositories will have labels such as
+1. Return to the integrated registry list. The integrated registries will have labels such as
   `Integrated`, `Healthy`, or `Unhealthy`. You can perform operations such as __Unbind__ and __Edit__.
 
     ![More Operations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/integrated04.png)
