@@ -14,7 +14,7 @@ Global management supports single sign-on based on LDPA and OIDC protocols. If y
 
 - LDAP
 
-    LDAP refers to Lightweight Directory Access Protocol (Lightweight Directory Access Protocol), which is often used for single sign-on, that is, users can log in with one account password in multiple services. Global management supports LDAP for identity authentication, so the enterprise IdP that establishes identity authentication with DCE 5.0 through the LDAP protocol must support the LDAP protocol. For a detailed description of LDAP, please refer to: [Welcome to LDAP](http://www.ldap.org.cn/category/install).
+    LDAP refers to Lightweight Directory Access Protocol (Lightweight Directory Access Protocol), which is often used for single sign-on, that is, users can log in with one account password in multiple services. Global management supports LDAP for identity authentication, so the enterprise IdP that establishes identity authentication with DCE 5.0 through the LDAP protocol must support the LDAP protocol. For a detailed description of LDAP, please refer to: [Welcome to LDAP](ldap.md).
 
 - OIDC
 
