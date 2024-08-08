@@ -8,8 +8,8 @@ The specific setup steps are as follows:
     helm repo list | grep ghippo
     ```
 
-   If the result is empty or shows the following error, proceed to the next step;
-   otherwise, skip the next step.
+    If the result is empty or shows the following error, proceed to the next step;
+    otherwise, skip the next step.
 
     ```none
     Error: no repositories to show
@@ -43,7 +43,7 @@ The specific setup steps are as follows:
 
 5. Add your reverse proxy address.
 
-   !!! note
+    !!! note
 
         - If possible, you can use the __yq__ command:
 
