@@ -5,7 +5,7 @@ DATE: 2024-08-08
 
 # Integrated Registry (Admin)
 
-The Integrated Registry (Admin) is the entrance for unified management of platform container registries.
+The Integrated Registry (Admin) is the entrance for unified management of external container registries.
 It supports integrating external container registries such as Harbor Registry and Docker Registry,
 as well as automatically integrating managed Harbors created by the platform. After integrated registry,
 platform administrators can assign a private registry space to one or more workspaces (namespaces under workspaces)
