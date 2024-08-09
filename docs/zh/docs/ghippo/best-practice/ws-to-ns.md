@@ -82,7 +82,7 @@ click createns "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_
 
 1. 点击左侧导航栏底部的 __容器管理__ 。
 
-    ![容器管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/crd00.png)
+    ![容器管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/crd00.png) 
 
 1. 点击目标集群的名称，进入 __集群详情__ 。
 
@@ -124,4 +124,4 @@ click createns "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_
 
 1. 选择要授权的 __用户/用户组__ 、 __角色__ 后，点击 __确定__ 完成授权。
 
-    ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/bind02.png)
+    ![确定](../../images/wsauth02.png)
