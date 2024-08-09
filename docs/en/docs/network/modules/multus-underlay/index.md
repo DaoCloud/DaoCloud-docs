@@ -1,32 +1,46 @@
+---
+MTPE: WANG0608GitHub
+date: 2024-08-09
+---
+
 # What is Multus-underlay
 
-`Multus-underlay` is based on `Multus` and with some Underlay type CNI plug-ins (such as MacVLAN or SR-IOV CNI, etc.), it can insert multiple network cards into a Pod.
-In addition, `Multus-underlay` also solves some communication problems of Underlay CNI.
-For example, when MacVLAN is used as a CNI, it cannot directly communicate with the cluster ClusterIP, and it cannot directly communicate with the host MacVLAN Master interface (this is a limitation of Linux MacVLAN technology).
+Multus-underlay is based on Multus and with some underlay CNI plug-ins (such as MacVLAN or SR-IOV CNI),
+it can insert multiple NICs into a pod.
+In addition, Multus-underlay also solves some communication problems of Underlay CNI.
+For example, when MacVLAN is used as a CNI, it cannot directly communicate with the ClusterIP,
+and it cannot directly communicate with the host MacVLAN Master interface (this is a limitation of Linux MacVLAN technology).
+
+> **Warning ⚠️**
+>
+> Multus-underlay has been marked as deprecated and may be removed in the future. It is no longer updated.
 
 ## solved problem
 
-- Pods of type Underlay CNI cannot access the cluster ClusterIP
+- Pods of type Underlay CNI cannot access the ClusterIP
 - Pods of type Underlay CNI cannot pass the health check
 
 ## Included components
 
 Multus-underlay consists of the following components:
 
-- Multus: schedule multiple CNI plug-ins, and insert one or more network cards for Pods as needed
-- Meta-plugins: including Veth and Router two plugins to solve some communication problems of Underlay CNI
+- Multus: schedule multiple CNI plug-ins, and insert one or more NICs for pods as needed
+- Meta-plugins: including two plugins, veth and Router, to solve some communication problems of Underlay CNI
 - SR-IOV CNI (optional): Optional installation of SR-IOV CNI, but requires hardware support
 
 ### Meta-plugins
 
 [Meta-plugins](https://github.com/spidernet-io/cni-plugins) contains two Meta plugins.
-They are `Veth` and `Router`, which are called by CRI in the form of CNI-Chain. Called after the MacVLAN/SR-IOV-type plug-in calls are completed,
-Solve various communication problems by setting some rules in the Pod's NetNs.
+They are veth and Router, which are called by CRI in the form of CNI-Chain. Called after the
+MacVLAN/SR-IOV plug-in calls are completed,
+solve various communication problems by setting some rules in the pod's NetNs.
 
-### Veth-Plugin
+### veth-Plugin
 
-The Veth plugin is somewhat similar to [ptp](https://github.com/containernetworking/plugins/tree/main/plugins/main/ptp), by adding a pair of Veth-Peer devices in Pod NetNs, and hijacking from the host, Traffic in the cluster passes through Veth devices.
-And cluster north-south traffic still goes through `eth0`. The following is an example configuration of the veth plugin with MacVLAN's multus CRD instance:
+The veth plugin is somewhat similar to [ptp](https://github.com/containernetworking/plugins/tree/main/plugins/main/ptp),
+by adding veth peer devices in pod NetNs, and hijacking traffic from the host and the cluster to pass through the veth devices.
+Cluster north-south traffic still goes through `eth0`. The following is an example configuration
+of the veth plugin with MacVLAN's multus CRD instance:
 
 ```yaml
 apiVersion: k8s.cni.cncf.io/v1
@@ -73,7 +87,9 @@ spec:
 
 ### Router-Plugin
 
-The Router plug-in sets some routing rules in Pod Netns, so that the data packets from the host and the cluster are forwarded from the Pod's eth0 (the network card created by the default CNI), while the data packets from outside the cluster are forwarded from the network card created by MacVLAN/SRIOV .
+The Router plug-in sets some routing rules in pod Netns, so that the data packets from the host and
+the cluster are forwarded from the eth0 (the NIC created by the default CNI) in the pod, while the data packets
+from outside the cluster are forwarded from the NIC created by MacVLAN/SRIOV .
 The following is an example configuration of a Multus CRD instance with the Router plug-in and MacVLAN:
 
 ```yaml
