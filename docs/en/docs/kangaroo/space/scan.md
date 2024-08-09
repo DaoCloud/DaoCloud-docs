@@ -9,7 +9,7 @@ An image downloaded can be used directly, which provides convenience to users.
 However, downloaded images may not be safe and may contain backdoors that can be maliciously implanted. 
 Therefore, it is essential to scan downloaded images for obtaining security information.
 
-In a DevOps CI/CD process, pushing an image directly to the container registry cannot guarantee its security. 
+In a DevOps CI/CD process, pushing an image directly to the Container Registry cannot guarantee its security. 
 Thus, continuous security integration and automatic scanning are necessary.
 
 Security scanning is an active preventive measure that can effectively avoid hacker attacks and prevent problems 
@@ -57,7 +57,7 @@ For integrated registries, images appear on the list. You can manually scan imag
     - Not Supported: This image does not support scanning.
     - Queued: The scan task is scheduled but not yet run.
     - Scanning: The scanning task is in progress, and a progress bar is displayed.
-    - View log: The scan task failed to complete. Click `View Logs` to view the related logs.
+    - View log: The scan task failed to complete. Click __View Logs__ to view the related logs.
     - Complete: The scan task completed successfully.
 
 4. After the scan is complete, hover the cursor over the scale bar of the scan to view the scan details.
