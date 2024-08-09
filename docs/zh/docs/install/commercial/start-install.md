@@ -42,6 +42,7 @@ ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](./c
 | | Oracle Linux R8 U7 | [OracleLinux-R8-U7-x86_64-dvd.iso](https://yum.oracle.com/ISOS/OracleLinux/OL8/u7/x86_64/OracleLinux-R8-U7-x86_64-dvd.iso) |
 | | Rocky Linux 9.2 | [Rocky-9.2-x86_64-dvd.iso](https://dl.rockylinux.org/vault/rocky/9.2/isos/x86_64/Rocky-9.2-x86_64-dvd.iso) |
 | ARM64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [查看申请地址](https://www.kylinos.cn/support/trial.html) |
+|     | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [查看申请地址](https://www.kylinos.cn/support/trial.html) |
 
 !!! note
 
@@ -67,13 +68,14 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
     | Redhat 8     | [os-pkgs-redhat8-v0.17.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.3/os-pkgs-redhat8-v0.17.3.tar.gz) |
     | Redhat 7     | [os-pkgs-redhat7-v0.17.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.3/os-pkgs-redhat7-v0.17.3.tar.gz) |
     | Redhat 9     | [os-pkgs-redhat9-v0.17.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.3/os-pkgs-redhat9-v0.17.3.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.17.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.3/os-pkgs-kylinv10-v0.17.3.tar.gz) |
     | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.17.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.3/os-pkgs-ubuntu2004-v0.17.3.tar.gz) |
     | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.17.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.3/os-pkgs-ubuntu2204-v0.17.3.tar.gz) |
     | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.17.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.3/os-pkgs-openeuler22.03-v0.17.3.tar.gz) |
     | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.17.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.3/os-pkgs-oracle9-v0.17.3.tar.gz) |
     | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.17.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.3/os-pkgs-oracle8-v0.17.3.tar.gz) |
     | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.17.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.17.3/os-pkgs-rocky9-v0.17.3.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.17.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.3/os-pkgs-kylin-v10sp2-v0.17.3.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.17.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.3/os-pkgs-kylin-v10sp3-v0.17.3.tar.gz) |
 
 === "V0.19.0"
 
@@ -274,6 +276,7 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
         - -m 参数指定 manifest 文件
         - -z 最小化安装
         - -d 开启 debug 模式
+        - --use-original-repo 从源站 donwload binaries、pull imaeges
         - 更多参数请使用 --help 查询
 
 1. 安装完成后，命令行会提示安装成功。恭喜您！现在可以通过屏幕提示的 URL 使用默认的账号和密码（admin/changeme）探索全新的 DCE 5.0 啦！

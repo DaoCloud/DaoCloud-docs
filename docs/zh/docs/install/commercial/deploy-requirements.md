@@ -19,6 +19,7 @@
 | | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | [Oracle Linux R9 U1 上部署 DCE 5.0 商业版](../os-install/oracleLinux-install-dce5.0.md) |
 | | TencentOS Server 3.1 | 5.4.119-19.0009.14 | [TencentOS Server 3.1 上部署 DCE 5.0 商业版](../os-install/TencentOS-install-dce5.0.md) |
 | ARM 64 | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | [离线安装 DCE 5.0 商业版](start-install.md) |
+|  | 银河麒麟 OS V10 SP3 | 4.19.90-89.11.v2401.ky10.aarch64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 
 !!! note
 
