@@ -8,9 +8,9 @@
 
 ## 前提条件
 
-### 操作系统内核版本需要在 3.15 以上
+### 操作系统内核版本需要在 4.11 以上
 
-目标集群所有节点的操作系统内核版本需要大于 3.15（详见 [kubevirt issue](https://github.com/kubevirt/kubevirt/issues/7006)）。
+目标集群所有节点的操作系统内核版本需要大于 4.11（详见 [kubevirt issue](https://github.com/kubevirt/kubevirt/issues/11886)）。
 运行以下命令查看内核版本：
 
 ```bash
