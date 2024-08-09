@@ -183,8 +183,7 @@ spec:
   #  elasticsearch:
   #    insight:
   #      endpoint: "https://xx.xx.xx.xx:9200"
-  #      # login with basic auth or bearer auth
-  #      #anonymous: false
+  #      insecure: false
   #      # basic auth
   #      username: "username"
   #      password: "password"
