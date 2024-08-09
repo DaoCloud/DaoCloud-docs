@@ -234,7 +234,7 @@ kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
 
 1. 调整 `apiserver` 的配置文件 `/etc/kubernetes/manifests/kube-apiserver.yaml`，放开 `PodTolerationRestriction,PodNodeSelector`, 参考下图：
 
-![insight-ns-toleration](../../images/insight-ns-toleration.png)
+    ![insight-ns-toleration](../../images/insight-ns-toleration.png)
 
 2. 给 `insight-system` 命名空间增加注解：
 
