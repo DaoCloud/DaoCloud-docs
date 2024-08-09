@@ -172,10 +172,10 @@ kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
               operator: "Equal"
               value: "insight-only"
               effect: "NoSchedule"
-    #  prometheus-node-exporter:
-    #    tolerations:
-    #      - effect: NoSchedule
-    #        operator: Exists
+      prometheus-node-exporter:
+        tolerations:
+          - effect: NoSchedule
+            operator: Exists
       prometheusOperator:
         tolerations:
           - key: "node.daocloud.io"
@@ -202,7 +202,8 @@ kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
           value: "insight-only"
           effect: "NoSchedule"
     tailing-sidecar-operator:
-      tolerations:
+      operator:
+        tolerations:
         - key: "node.daocloud.io"
           operator: "Equal"
           value: "insight-only"
@@ -229,9 +230,11 @@ kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
 
 ### 2. 通过命名空间级别配置
 
-让 `insight-system` 命名空间的 Pod 都容忍 `inisght-only` 污点。
+让 `insight-system` 命名空间的 Pod 都容忍 `node.daocloud.io=insight-only` 污点。
 
-1. 调整 `apiserver` 的配置文件 `/etc/kubernetes/manifests/kube-apiserver.yaml`，放开 `PodTolerationRestriction,PodNodeSelector`：
+1. 调整 `apiserver` 的配置文件 `/etc/kubernetes/manifests/kube-apiserver.yaml`，放开 `PodTolerationRestriction,PodNodeSelector`, 参考下图：
+
+![insight-ns-toleration](../../images/insight-ns-toleration.png)
 
 2. 给 `insight-system` 命名空间增加注解：
 
@@ -241,8 +244,10 @@ kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
     metadata:
       name: insight-system
       annotations:
-        scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Exists", "effect": "NoSchedule", "key": "node.daocloud.io/insight-only"}]'
+        scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Equal", "effect": "NoSchedule", "key": "node.daocloud.io", "value": "insight-only"}]'
     ```
+
+重启 insgith-system 命名空间下面的组件即可正常容忍 insight-system 下的 pod 调度.
 
 ## 为节点添加 Label 和节点亲和性来管理组件调度
 
