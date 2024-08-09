@@ -88,12 +88,12 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
     ```bash
     # 将上一步 data 目录中的二进制导入二进制包至火种节点的 MinIO 中
     cd ./data/amd64/files/
-    MINIO_ADDR="http://172.30.41.200:9000" # (1)!
+    MINIO_ADDR="http://127.0.0.1:9000" # (1)!
     MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_files.sh ${MINIO_ADDR}
     
     # 将上一步 data 目录中的镜像导入二进制包至火种节点的镜像仓库中
     cd ./data/amd64/images/
-    REGISTRY_ADDR="172.30.41.200"  ./import_images.sh # (2)!
+    REGISTRY_ADDR="127.0.0.1"  ./import_images.sh # (2)!
     ```
 
     1. IP 替换为实际的仓库地址
