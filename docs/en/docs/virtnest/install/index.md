@@ -4,7 +4,7 @@ This page explains how to install the virtual machine module.
 
 !!! info
 
-    The term __virtnest__ appearing in the following commands or scripts is the internal development code name for the global management module.
+    The term __virtnest__ appearing in the following commands or scripts is the internal development code name for the Virtual Machine module.
 
 ## Configure Helm Repo
 
