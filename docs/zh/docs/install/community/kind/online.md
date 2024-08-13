@@ -84,7 +84,7 @@ precheck pass..
 1. 下载 kind 的二进制文件包。
 
     ```shell
-    curl -Lo ./kind https://qiniu-download-public.daocloud.io/kind/v0.20.0/kind-linux-amd64
+    curl -Lo ./kind https://qiniu-download-public.daocloud.io/kind/v0.17.0/kind-linux-amd64
     chmod +x ./kind
     old_kind=$(which kind)
     if [ -f "$old_kind" ]; then mv ./kind $old_kind; else mv ./kind /usr/bin/kind ; fi
