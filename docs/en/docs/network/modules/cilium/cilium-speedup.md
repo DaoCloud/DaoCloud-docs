@@ -1,12 +1,21 @@
+---
+MTPE: WANG0608GitHub
+Date: 2024-08-13
+---
+
 # Cross-Cluster Application Communication
 
 ## Introduction
 
-As microservices processes evolve, many enterprises choose to deploy multiple Kubernetes (K8s) clusters in order to meet the needs of application isolation, high availability/disaster tolerance, and operations management. However, such multi-cluster deployments pose a problem: some applications depend on microservices in other K8s clusters and need to implement cross-cluster communication. Specifically, a Pod in one cluster needs to access a Pod or Service in another cluster.
+As microservices processes evolve, many enterprises choose to deploy multiple Kubernetes (K8s) clusters
+in order to meet the needs of application isolation, high availability/disaster tolerance, and operations management.
+However, such multicluster deployments pose a problem where some applications depend on microservices
+in other K8s clusters and need to implement cross-cluster communication. Specifically, a pod in
+one cluster needs to access a pod or Service in another cluster.
 
 ## Prerequisites
 
-Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To view and install the latest version, you can do the following:
+Please make sure the Linux Kernel version >= v4.9.17 with v5.10+ recommended. To view and install the latest version, you can do the following:
 
 1. To view the current kernel version:
 
@@ -43,7 +52,7 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
 
     ![create-cluster1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross1.png)
 
-    - Choose cilium as the CNI plugin for cluster01.
+    - Choose Cilium as the CNI plugin for cluster01.
     - Add two parameters, `cluster-id` and `cluster-name`.
     - Use the default configuration for other items.
 
@@ -51,7 +60,8 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
 
     ![Create cluster2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross2.png)
 
-    > The container and service segments used by the two clusters must not overlap. The values of the two parameters must not conflict to identify the clusters uniquely and avoid conflicts for cross-cluster communication.
+    > The container and service segments used by the two clusters must not overlap. The values of
+    > the two parameters must not conflict to identify the clusters uniquely and avoid conflicts for cross-cluster communication.
 
 ## Create a Service for API Server
 
@@ -62,8 +72,8 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
     ![Create service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross4.png)
 
     - Choose NodePort as the access type for external access for cluster01.
-    - Choose `kube-system` as the namespace of API Server.
-    - Label selector filters API Server and returns a selector to view API Server.
+    - Choose kube-system as the namespace of API Server.
+    - Use label selectors to filter API Server components, allowing you to view the selectors associated with the API Server.
     - Configure the access port of the Service, and the container port is 6443.
     - Get the external access link for the Service.
 
@@ -83,13 +93,17 @@ vi $HOME/.kube/config
 
 1. Add new `cluster`, `context`, and `user` information to both cluster01 and cluster02.
 
-    - Under `clusters`, add new `cluster` information: the original CA issuer for both clusters remains unchanged; the new `server` address is changed to the address of the API Server Service that you have created above; and the `name` is changed to the names of the two clusters themselves, namely cluster01 and cluster02.
+    - Under `clusters`, add new `cluster` information: the original CA for both clusters remains unchanged;
+      the new `server` address is changed to the address of the API Server Service that you have created above;
+      and the `name` is changed to the names of the two clusters themselves, namely cluster01 and cluster02.
 
-        > The address of the API Server Service can be found or copied from the DCE5.0 page, which requires the use of the https protocol.
+        > The address of the API Server Service can be found or copied from the DCE5.0 page, which requires to use the https protocol.
 
-    - Add new `context` information to `contexts`: change the values of the `name`, `user`, and `cluster` fields for the clusters in `context` to the names of the two clusters themselves: cluster01 and cluster02.
+    - Add new `context` information to `contexts`: change the values of the `name`, `user`, and `cluster` fields
+      for the clusters in `context` to the names of the two clusters themselves, namely cluster01 and cluster02.
 
-    - Add new `user` information to `users`: the two clusters copy their original credentials and change the name to the names of the two clusters: cluster01 and cluster02.
+    - Add new `user` information to `users`: the two clusters copy their original credential
+      and change the name to the names of the two clusters namely cluster01 and cluster02.
 
 2. Add the `cluster`, `context`, and `user` information to each other's clusters.
 
@@ -154,7 +168,8 @@ Run the following commands to verify cluster connectivity:
     cilium clustermesh connect --context cluster01 --destination-context cluster02
     ```
 
-4. The presence of both `connected cluster1 and cluster2!` on cluster01, and `ClusterMesh enabled!` on cluster02 indicate that both clusters are connected.
+4. The presence of both `connected cluster1 and cluster2!` on cluster01 and `ClusterMesh enabled!`
+   on cluster02 indicates that both clusters are connected.
 
     ![connect](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/network-cross-cluster7.png)
 
@@ -162,7 +177,7 @@ Run the following commands to verify cluster connectivity:
 
 ## Create a demo application
 
-1. Use the [rebel-base](https://github.com/cilium/cilium/blob/main/examples/kubernetes/clustermesh/global-service-example/cluster1.yaml) application provided in the cilium docs, and copy the following yaml file:
+1. Use the [rebel-base](https://github.com/cilium/cilium/blob/main/examples/kubernetes/clustermesh/global-service-example/cluster1.yaml) application provided in the Cilium docs, and copy the following yaml file:
 
     ```yaml
     apiVersion: apps/v1
@@ -248,25 +263,39 @@ Run the following commands to verify cluster connectivity:
 
     ![Create Application](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross9.png)
 
-    Modify the contents of `ConfigMap` so that the data returned is labeled with the names of cluster01 and cluster02, respectively when you access a Service in cluster01 and cluster02. The Pod labels can be found in the `rebel-base` application.
+    Modify the contents of `ConfigMap` so that the data returned is labeled with the names of cluster01
+    and cluster02, respectively when you access a Service in cluster01 and cluster02. The pod labels
+    can be found in the `rebel-base` application.
 
-3. Create a Service for a global service video in each of the two clusters, which points to the created `rebel-base` application.
+3. Create a Service for a global service video in each of the two clusters, which points to the created
+   `rebel-base` application.
 
     ![Create service application](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross10.png)
 
     ![Create service application](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross10.png)
 
     - Service type is ClusterIP
-    - Add the application's Pod labels to filter the corresponding application
+    - Add the application pod labels to filter the proper application
     - Configure the port
     - Add an annotation to make the current Service effective globally.
 
-    > When creating a service for cluster02, the service name must be the same for both clusters. And the two clusters must locate in the same namespace, have the same port name and global annotation.
+    > When creating a service for cluster02, the service name must be the same for both clusters,
+    > The two clusters must locate in the same namespace, and have the same port name and global annotation.
 
 ## Cross-cluster communication
 
-1. Check the Pod IP of the application in cluster02.
+1. Check the pod IP of the application in cluster02.
 
-2. On the page of cluster01 details, click the Pod console of `rebel-base` , and then `curl` the Pod IP of cluster02's `rebel-base`. Successfully returning cluster02 information means the Pods in two clusters can communicate with each other.
+    <!-- add image later -->
 
-3. Check the service name of cluster01. On the console of the Pod `rebel-base` in cluster02, `curl` the corresponding service name of cluster01. Some of the returned content is from cluster01, which means that the Pods and Services in the two clusters can also communicate with each other.
+2. On the page of cluster01 details, click __Pod__ -> __Console__ of rebel-base , and then curl the Pod
+   IP of cluster02's rebel-baseand, and successfully return the information from cluster02 indicating that the pods in two
+   clusters can communicate with each other.
+
+    <!-- add image later -->
+
+3. Check the service name of cluster01. Click __Pod__ -> __Console__ of rebel-base in cluster02,
+   then curl the proper service name of cluster01. Some of the returned content is from cluster01,
+   which means that the pods and Services in the two clusters can also communicate with each other.
+
+    <!-- add image later -->
