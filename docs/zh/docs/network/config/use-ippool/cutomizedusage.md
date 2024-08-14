@@ -5,11 +5,13 @@ hide:
 
 # 第三方工作负载使用 IP 池
 
-本本章节主要介绍结合 Spiderpool 及 Multus CR 管理，为自定义工作负载（本文采用 [OpenKruise](https://github.com/openkruise/kruise) 控制器 创建的工作负载 CloneSet） Pod 配置 IP Pool，通过 Spiderpool 进行 Underlay 网络的 IP 的分配和固定。
+本章节主要介绍结合 Spiderpool 及 Multus CR 管理，为自定义工作负载
+（本文采用 [OpenKruise](https://github.com/openkruise/kruise) 控制器创建的工作负载 CloneSet）
+Pod 配置 IPPool，通过 Spiderpool 进行 Underlay 网络的 IP 的分配和固定。
 
 ## 前提条件
 
-1. [SpiderPool 已成功部署](../../modules/spiderpool/install/install.md)。
+1. [Spiderpool 已成功部署](../../modules/spiderpool/install/install.md)。
 
 2. 如使用手动选择 IP 池，请提前完成[创建 IP 子网和 IP 池](../../config/ippool/createpool.md)。本示例中需要使用固定 IP 池，请提前完成[创建 固定 IP 池](../../config/ippool/createpool.md)。
 
@@ -17,7 +19,7 @@ hide:
 
 ### 使用已创建固定 IP 池
 
-1. 部署自定义资源 `CloneSet`，并在 `Annotation` 中指定默认网络类型，VLAN ID ，子网接口，IP 池信息
+1. 部署自定义资源 CloneSet，并在 `Annotation` 中指定默认网络类型，VLAN ID ，子网接口，IP 池信息
 
     ```yaml
     v1.multus-cni.io/default-network: kube-system/calico
@@ -64,13 +66,13 @@ hide:
     0                  44h
     ```
 
-3. 进入`容器平台` -> 选择对应集群 -> 点击`容器网络`，然后找到对应子网 -> 进入子网详情， 查看 IP 使用情况：
+3. 进入 __容器管理__ -> 选择对应集群 -> 点击 __容器网络__ ，然后找到对应子网 -> 进入子网详情， 查看 IP 使用情况：
 
     ​![openkruise](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/openkruise.jpg)
 
 ### 自动创建固定 IP 池
 
-1. 如需要使用子网自动创建固定 IP 池，请在创建 自定义工作负载时，添加如下 Annotation:
+1. 如需要使用子网自动创建固定 IP 池，请在创建自定义工作负载时，添加如下 `Annotation`:
 
     ```yaml
     apiVersion: apps.kruise.io/v1alpha1
@@ -85,11 +87,11 @@ hide:
       template:
         metadata:
           annotations:
-            v1.multus-cni.io/default-network: "kube-system/calico" # (1)
-            k8s.v1.cni.cncf.io/networks: "kube-system/vlan6" # (2)
-            ipam.spidernet.io/subnet: |-   # (3)
+            v1.multus-cni.io/default-network: "kube-system/calico" # (1)!
+            k8s.v1.cni.cncf.io/networks: "kube-system/vlan6" # (2)!
+            ipam.spidernet.io/subnet: |-   # (3)!
               {"interface":"net1","ipv4": ["subnet124"]}
-            ipam.spidernet.io/ippool-ip-number: "1" # (4)
+            ipam.spidernet.io/ippool-ip-number: "1" # (4)!
           labels:
             app: custom-kruise-cloneset03
         spec:
@@ -105,13 +107,13 @@ hide:
     3. 指定使用固定 IP 池的网卡及待使用子网
     4. 指定弹性 IP 数量，可使用 IP 数=弹性 IP 数+Replica 数
 
-2. 部署后查看 Clonset 状态：
+2. 部署后查看 CloneSet 状态：
 
     ```shell
     kubectl get pods -A|grep kruise-clone03
     ```
 
-3. 查看 IP Pool IP 状态：
+3. 查看 IPPool IP 状态：
 
     ```shell
     $ kubectl get sp -oyaml | grep kruise
