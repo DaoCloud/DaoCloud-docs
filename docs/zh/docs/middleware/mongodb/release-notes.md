@@ -4,6 +4,12 @@
 
 *[Mcamel-MongoDB]: Mcamel 是 DaoCloud 所有中间件的开发代号，MongoDB 是面向文档的 NoSQL 数据库中间件
 
+## 2024-07-31
+
+### v0.12.0
+
+- **新增** 查询 MySQL 慢日志功能
+
 ## 2024-05-31
 
 ### v0.10.0
