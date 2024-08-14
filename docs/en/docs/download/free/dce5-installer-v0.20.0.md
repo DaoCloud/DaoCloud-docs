@@ -1,11 +1,11 @@
 ---
 MTPE: windsonsea
-date: 2024-04-10
+date: 2024-08-14
 hide:
   - navigation
 ---
 
-# DCE 5.0 Community with Installer v0.16.1
+# DCE 5.0 Community with Installer v0.20.0
 
 This page provides downloads for the offline installation package and verification files for DCE 5.0 Community.
 
@@ -15,8 +15,8 @@ This page provides downloads for the offline installation package and verificati
 
 | Filename | Version | Architecture | File Size | Download | Update Date |
 | --------- | ------- | ------------ | --------- | -------- | ----------- |
-| offline-community-v0.16.1-amd64.tar | v0.16.1 | AMD 64 | 7.50 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.16.1-amd64.tar) | 2024-04-09 |
-| offline-community-v0.16.1-arm64.tar | v0.16.1 | <font color="green">ARM 64</font> | 7.05 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.16.1-arm64.tar) | 2024-04-09 |
+| offline-community-v0.20.0-amd64.tar | v0.20.0 | AMD 64 | 7.68 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.20.0-amd64.tar) | 2024-08-09 |
+| offline-community-v0.20.0-arm64.tar | v0.20.0 | <font color="green">ARM 64</font> | 7.29 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.20.0-arm64.tar) | 2024-08-09 |
 
 ## Verification
 
@@ -27,13 +27,13 @@ Go to the offline installation package download directory.
     Run the following command to verify the installation package:
 
     ```sh
-    echo "e21ba57969b765b0d34645150af38b4870939edd49e49426842703bb34b6459526ba9e472242a0604a8d882f5c341cd5a725268ced9c9941f8aaad7d187dfe8c  offline-community-v0.16.1-amd64.tar" | sha512sum -c
+    echo "f673e53594e89f657755db0a6fd57857d8445f4ccdc49e9f4d8582f04eacc951ed0bfc619601a0a04a43862e2058babaab82317dd7b32672ecf95a1ea9f49b14  offline-community-v0.20.0-amd64.tar" | sha512sum -c
     ```
 
     If the verification is successful, the following will be printed:
 
     ```none
-    offline-community-v0.16.1-amd64.tar: OK
+    offline-community-v0.20.0-amd64.tar: OK
     ```
 
 === "<font color="green">ARM 64</font>"
@@ -41,13 +41,13 @@ Go to the offline installation package download directory.
     Run the following command to verify the installation package:
 
     ```sh
-    echo "46a1252dd68194699ce27ac821f939c57eccc9ff8979be30b8b65554b4a1ac169960e6493bfebf5f523d059622d7ce4a5388763295383cc7fde36113ee76b87b  offline-community-v0.16.1-arm64.tar" | sha512sum -c
+    echo "d22cd4e867953e9004e569236c5cddac54a864fdc5d425de5be43bfc9fafc7cc8abf2fb02392b59fd24a0d54e4e176268a77c70cb0071db570ef1277c36f8233  offline-community-v0.20.0-arm64.tar" | sha512sum -c
     ```
 
     If the verification is successful, the following will be printed:
 
     ```none
-    offline-community-v0.16.1-arm64.tar: OK
+    offline-community-v0.20.0-arm64.tar: OK
     ```
 
 ## Installation
@@ -59,7 +59,7 @@ After successfully verifying the offline package,
     Run the following command to decompress the tar package:
 
     ```sh
-    tar -zxvf offline-community-v0.16.1-amd64.tar
+    tar -zxvf offline-community-v0.20.0-amd64.tar
     ```
 
 === "<font color="green">ARM 64</font>"
@@ -67,7 +67,7 @@ After successfully verifying the offline package,
     Run the following command to decompress the tar package:
 
     ```sh
-    tar -zxvf offline-community-v0.16.1-arm64.tar
+    tar -zxvf offline-community-v0.20.0-arm64.tar
     ```
 
 - For installation instructions, refer to [Community Installation Process](../../install/community/k8s/online.md#_2)
@@ -79,9 +79,9 @@ DCE 5.0 Community includes the following modules by default:
 
 | Modules | Introduction | What's New |
 | -------- | ----------- | ---------- |
-| Global Management | Responsible for user access control, permissions, workspace and hierarchy, audit logs, and custom appearance. | [0.25.1](../../ghippo/intro/release-notes.md#0251) |
-| Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and more Kubernetes features. | [0.26.1](../../kpanda/intro/release-notes.md#0261) |
-| Insight | Provides rich dashboards, scene monitoring, data querying, and alert information. | [0.25.3](../../insight/intro/releasenote.md#0253) |
+| Global Management | Responsible for user access control, permissions, workspace and hierarchy, audit logs, and custom appearance. | [0.29.0](../../ghippo/intro/release-notes.md#0290) |
+| Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and more Kubernetes features. | [0.30.1](../../kpanda/intro/release-notes.md#0301) |
+| Insight | Provides rich dashboards, scene monitoring, data querying, and alert information. | [0.29.0](../../insight/intro/releasenote.md#0290) |
 
 ## More
 

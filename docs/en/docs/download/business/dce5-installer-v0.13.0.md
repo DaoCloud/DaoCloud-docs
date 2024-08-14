@@ -83,7 +83,7 @@ DCE 5.0 Enterprise includes the following modules that can be used on-demand to 
 | Container Management | Manage clusters, nodes, workloads, Helm applications, CRDs, namespaces, and other core Kubernetes features | [0.23.0](../../kpanda/intro/release-notes.md#v0230) |
 | Observability | Provides rich dashboards, scenario monitoring, data querying, alerts, and more graphical and textual information | [0.22.0](../../insight/intro/releasenote.md#v0220) |
 | Workbench | Container-based DevOps application platform that supports Jenkins, Tekton, GitOps, and other pipeline jobs | [0.22.0](../../amamba/intro/release-notes.md#v0220) |
-| Multi-Cloud Orchestration | Centrally manages multi-cloud, hybrid cloud, and cross-cloud resources for application orchestration, including multi-cloud disaster recovery and fault recovery capabilities | [0.14.0](../../kairship/intro/release-notes.md#v0140) |
+| MultiCloud Management | Centrally manages multicloud, hybrid cloud, and cross-cloud resources for application orchestration, including multicloud disaster recovery and fault recovery capabilities | [0.14.0](../../kairship/intro/release-notes.md#v0140) |
 | Microservice Engine | Provides governance capabilities such as service registration and discovery, configuration management, and microservice gateway | [0.30.0](../../skoala/intro/release-notes.md#v0300) |
 | Service Mesh | Next-generation service mesh based on the open-source Istio technology for cloud-native applications | [v0.21.2](../../mspider/intro/release-notes.md#v0212) |
 | Middleware Elasticsearch | Currently the preferred full-text search engine | [0.12.0](../../middleware/elasticsearch/release-notes.md#v0120) |
