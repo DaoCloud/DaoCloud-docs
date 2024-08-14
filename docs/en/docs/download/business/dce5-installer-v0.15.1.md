@@ -79,11 +79,11 @@ DCE 5.0 Enterprise includes the following modules, which can be used on-demand t
 
 | Modules | Description | Versions |
 | ------- | ----------- | -------- |
-| Global Management | Responsible for user access control, permissions, workspace and hierarchy, audit logs, personalized appearance settings, etc. | [0.24.0](../../ghippo/intro/release-notes.md#v0240) |
-| Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and other core Kubernetes functionalities. | [0.25.1](../../kpanda/intro/release-notes.md#v0251) |
-| Insight | Provides rich dashboards, scene monitoring, data querying, and alarm information. | [0.24.0](../../insight/intro/releasenote.md#v0240) |
+| Global Management | Responsible for user access control, permissions, workspace and hierarchy, audit logs, and custom appearance. | [0.24.0](../../ghippo/intro/release-notes.md#v0240) |
+| Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and more Kubernetes features. | [0.25.1](../../kpanda/intro/release-notes.md#v0251) |
+| Insight | Provides rich dashboards, scene monitoring, data querying, and alert information. | [0.24.0](../../insight/intro/releasenote.md#v0240) |
 | Workbench | A container-based DevOps application platform that supports Jenkins, Tekton, GitOps, and other pipeline jobs. | [0.24.0](../../amamba/intro/release-notes.md#v0240) |
-| MultiCloud Management | Centralized management of multi-cloud, hybrid cloud, and cross-cloud resources for application orchestration, with capabilities such as multi-cloud disaster recovery and fault recovery. | [0.16.0](../../kairship/intro/release-notes.md#v0160) |
+| MultiCloud Management | Centralized management of multicloud, hybrid cloud, and cross-cloud resources for application orchestration, with capabilities such as multicloud disaster recovery and fault recovery. | [0.16.0](../../kairship/intro/release-notes.md#v0160) |
 | Microservice Engine | Provides governance capabilities such as service registration, discovery, configuration management, and microservice gateway. | [0.33.2](../../skoala/intro/release-notes.md#v0332) |
 | Service Mesh | Next-generation service mesh built on Istio open-source technology for cloud-native applications. | [v0.23.0](../../mspider/intro/release-notes.md#v0230) |
 | Middleware Elasticsearch | Currently the preferred full-text search engine. | [0.14.0](../../middleware/elasticsearch/release-notes.md#v0140) |

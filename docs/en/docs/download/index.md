@@ -15,8 +15,8 @@ This package is dedicated to the community and is available for free trial.
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | --------- | ----------- |
-| offline-community-v0.19.0-arm64.tar | v0.19.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.19.0.md) | 2024-07-09 |
-| offline-community-v0.19.0-amd64.tar | v0.19.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.19.0.md) | 2024-07-09 |
+| offline-community-v0.20.0-arm64.tar | v0.20.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.20.0.md) | 2024-08-09 |
+| offline-community-v0.20.0-amd64.tar | v0.20.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.20.0.md) | 2024-08-09 |
 
 [More Historical Versions of DCE 5.0 Community](./free/dce5-installer-history.md){ .md-button } 
 
@@ -26,8 +26,8 @@ This package is suitable for private cloud, hybrid cloud, multicloud, microservi
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
-| offline-v0.19.0-arm64.tar | v0.19.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.19.0.md) | 2024-07-09 |
-| offline-v0.19.0-amd64.tar | v0.19.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.19.0.md) | 2024-07-09 |
+| offline-v0.20.0-arm64.tar | v0.20.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.20.0.md) | 2024-08-09 |
+| offline-v0.20.0-amd64.tar | v0.20.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.20.0.md) | 2024-08-09 |
 
 [More Historical Versions of DCE 5.0 Enterprise](./business/dce5-installer-history.md){ .md-button } 
 
@@ -37,9 +37,9 @@ DCE 5.0 provides comprehensive Addons for different use cases, which can be down
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
-| standard-addon-offline-package-v0.19.0-amd64.tar.gz | v0.19.0 | [:arrow_right: Go to Download](./addon/v0.19.0.md) | 2024-07-09 |
-| standard-addon-offline-package-v0.19.0-arm64.tar.gz | v0.19.0 | [:arrow_right: Go to Download](./addon/v0.19.0.md) | 2024-07-09 |
-| gpu-addon-offline-package-v0.19.0-amd64.tar.gz | v0.19.0 | [:arrow_right: Go to Download](./addon/v0.19.0.md) | 2024-07-09 |
+| gpu-addon-offline-package-v0.20.0-amd64.tar.gz      | v0.20.0 | [:arrow_right: Go to Download](./addon/v0.20.0.md) | 2024-08-09 |
+| standard-addon-offline-package-v0.20.0-arm64.tar.gz | v0.20.0 | [:arrow_right: Go to Download](./addon/v0.20.0.md) | 2024-08-09 |
+| standard-addon-offline-package-v0.20.0-amd64.tar.gz | v0.20.0 | [:arrow_right: Go to Download](./addon/v0.20.0.md) | 2024-08-09 |
 
 [More Historical Versions of Addons](./addon/history.md){ .md-button } 
 
@@ -50,7 +50,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | Modules | File Size | Download | Update Date |
 | ------- | --------- | -------- | ----------- |
 | Workbench | 402.67 MB | [:arrow_right: Go to Download](./modules/amamba.md) | 2024-07-01 |
-| Container Management | 759.13 MB | [:arrow_right: Go to Download](./modules/kpanda.md) | 2024-07-03 |
+| Container Management | 759.13 MB | [:arrow_right: Go to Download](./modules/kpanda.md) | 2024-08-09 |
 | Cluster Inspection | 174.30 MB | [:arrow_right: Go to Download](./modules/kcollie.md) | 2024-01-02 |
 | Application Backup | 85.06 MB | [:arrow_right: Go to Download](./modules/kcoral.md) | 2024-06-07 |
 | Security Management | 167.29 MB | [:arrow_right: Go to Download](./modules/dowl.md) | 2023-11-26 |
