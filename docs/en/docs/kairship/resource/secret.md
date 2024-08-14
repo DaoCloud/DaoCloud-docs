@@ -1,17 +1,26 @@
+---
+MTPE: ModetaNiu
+DATE: 2024-08-14
+---
+
 # Multicloud Secrets
 
 A Secret is an object that contains a small amount of sensitive information such as a password, token, or key.
 Such information may be placed in the Pod specification or in the image.
 Using Secret means you don't need to include secret data in your application code.
 
-Since Secrets can be created independently of the Pods that use them, there is less risk of exposing Secrets (and their data) during the workflow of creating, viewing, and editing Pods.
-DCE and applications running in the cluster can also take additional precautions with Secrets, such as avoiding writing confidential data to non-volatile storage.
+Since Secrets can be created independently of the Pods that use them, there is less risk of exposing 
+Secrets (and their data) during the workflow of creating, viewing, and editing Pods.
+DCE and applications running in the cluster can also take additional precautions with Secrets, 
+such as avoiding writing confidential data to non-volatile storage.
 
 Secret is similar to ConfigMap but designed to hold secret data.
 
-Two creation methods are currently provided: wizard creation and YAML creation. This article takes wizard creation as an example, and follows the steps below.
+Two creation methods are currently provided: wizard creation and YAML creation. 
+This article takes wizard creation as an example. Please follow the steps below.
 
-1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Secrets__ , and click the __Create Secret__ button in the upper right corner.
+1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Secrets__ , 
+   and click the __Create Secret__ button in the upper right corner.
 
     ![Create Secret](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/secret01.png)
 
@@ -19,7 +28,8 @@ Two creation methods are currently provided: wizard creation and YAML creation. 
 
     ![Fill Info](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/secret02.png)
 
-3. Back to the list of multicloud secrets, the newly created one is the first one by default. Click __┇__ on the right side of the list to edit YAML, update, export and delete Secret.
+3. Back to the list of multicloud secrets, the newly created one is the first one by default. 
+   Click __┇__ on the right side of the list to edit YAML, update, export and delete Secret.
 
     ![Update/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/secret03.png)
 
