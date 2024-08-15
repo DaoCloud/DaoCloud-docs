@@ -43,7 +43,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
     ssh root@10.6.202.177
     ```
 
-1. 使用 vim 命令创建和修改 __label-studio.yaml__ 文件
+1. 使用 `vim` 命令创建和修改 __label-studio.yaml__ 文件
 
     ```bash
     vim label-studio.yaml
@@ -124,7 +124,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
             - /label-studio/* # 修改为 VirtualService 中的 spec.http.match.uri.prefix 的值（注意，末尾需要添加 "*"）
     ```
 
-1. 使用 kubectl 命令应用 label-studio.yaml：
+1. 使用 `kubectl` 命令应用 __label-studio.yaml__：
 
     ```bash
     kubectl apply -f label-studio.yaml
@@ -144,7 +144,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
     ![接入管理列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oem-out01.png)
 
-2. 创建后将详情中的客户端 ID、密钥、单点登录 URL 等填写到客户系统的 __全局管理__ -> __用户与访问控制__ -> __身份提供商__ -> __OIDC__ 中，完成用户对接。
+2. 创建后将详情中的客户端 ID、客户端密钥、单点登录 URL 等填写到客户系统的 __全局管理__ -> __用户与访问控制__ -> __身份提供商__ -> __OIDC__ 中，完成用户对接。
 
     ![oidc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oeminoidc.png)
 
