@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Workbench permission description
+# Workbench Permissions
 
 [Workbench](../../amamba/intro/index.md) supports three user roles:
 
@@ -14,11 +14,11 @@ hide:
 Each role has different permissions, which are described below.
 
 <!--
-You have permission to use `&check;`, but you don't have permission to use `&cross;`
+Use `&check;`for permissions granted and `&cross;`for permissions not granted.
 -->
 
 | Menu Objects | Actions | Workspace Admin | Workspace Editor | Workspace Viewer |
-| -------- | ----------------------------------- | ----- ---------- | ---------------- | ---------------- |
+| -------- | ----------- | -------------- | ---------------- | ---------------- |
 | Apps | View App List | &check; | &check; | &check; |
 | | View details (jump to container management) | &check; | &check; | &check; |
 | | View application logs (jump to observables) | &check; | &check; | &check; |

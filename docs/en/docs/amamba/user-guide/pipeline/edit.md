@@ -1,17 +1,17 @@
-# edit pipeline
+# Edit Pipeline
 
 After creating a custom pipeline, the pipeline stages need to be defined manually. Currently supports defining execution stages for pipelines by editing the Jenkinsfile or via GUI forms. In addition, if you need to change the configuration of each stage of the pipeline, you can also refer to this article to adjust the configuration.
 
 !!! note
 
-     - For the concepts involved in editing pipelines, please refer to [Concepts in pipelines](config/concept.md)
-     - For the parameters involved in editing the pipeline, please refer to [Graphic Task Template Parameter Description](config/step.md)
+     - For the concepts involved in editing pipelines, refer to [Concepts in pipelines](config/concept.md)
+     - For the parameters involved in editing the pipeline, refer to [Graphic Task Template Parameter Description](config/step.md)
 
-## prerequisites
+## Prerequisites
 
 - [Create Workspace](../../../ghippo/user-guide/workspace/workspace.md), [Create User](../../../ghippo/user-guide/access-control/user.md).
 - Add the user to the workspace with __workspace editor__ or higher privileges.
-- Create three credentials that can access the code warehouse, mirror warehouse, and cluster, please refer to [credential management] (credential.md).
+- Create three credentials that can access the code warehouse, mirror warehouse, and cluster, refer to [credential management] (credential.md).
 - [Create a custom pipeline](create/custom.md), and need to add two string parameters in the build parameters. These parameters will be used in the image build command. The parameters are described as follows:
 
      | Parameter Type | Parameter Name | Description |
@@ -120,7 +120,7 @@ Click __Global Settings__ , select node from the __Type__ drop-down list, and se
 
 !!! note
     
-     After the image is updated, the trigger pipeline can also be implemented. For specific operations, please refer to [Trigger Pipeline](run/trigger.md)
+     After the image is updated, the trigger pipeline can also be implemented. For specific operations, refer to [Trigger Pipeline](run/trigger.md)
 
 ### Add stage - review
 
@@ -166,7 +166,7 @@ Click __Global Settings__ , select node from the __Type__ drop-down list, and se
 
 ### Verify cluster resources
 
-1. If each stage of the pipeline runs successfully, a Docker image is automatically built and pushed to your Docker Hub repository. Eventually, the pipeline will automatically create a stateless load in the project you set up beforehand.
+1. If each stage of the pipeline runs successfully, a Docker image is automatically built and pushed to your Docker Hub repository. Eventually, the pipeline will automatically create a deployment in the project you set up beforehand.
 
 2. Go to the container management platform, click __Workload__ under the cluster, and you can see the stateless workload displayed in the list.
 

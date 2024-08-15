@@ -1,12 +1,14 @@
 # 部署 NFS 做数据集预热
 
-## 背景
+**网络文件系统 (NFS)** 允许远程主机通过网络挂载文件，并像本地文件系统一样进行交互。
+这使系统管理员能够将资源集中到网络服务器上进行管理。
 
-数据集是智能算力中核心数据管理功能，通过将 `MLOps` 生命周期中对于数据的依赖统一抽象为数据集；支持用户将各类数据纳管到数据集内，以便训练任务可以直接使用数据集中的数据。
+**数据集** 是 DCE 5.0 智能算力中的核心数据管理功能，将 MLOps 生命周期中对于数据的依赖统一抽象为数据集；
+支持用户将各类数据纳管到数据集内，以便训练任务可以直接使用数据集中的数据。
 
-当远端数据不在工作集群内时，数据集提供了自动进行预热的能力，支持 `Git`、`S3`、`HTTP`、`NFS` 等数据提前预热到集群本地。
+当远端数据不在工作集群内时，数据集提供了自动进行预热的能力，支持 `Git`、`S3`、`HTTP` 等数据提前预热到集群本地。
 
-`数据集` 需要一个支持 `ReadWriteMany` 模式的存储服务对远端数据进行预热，推荐在集群内部署 NFS。
+数据集需要一个支持 `ReadWriteMany` 模式的存储服务对远端数据进行预热，推荐在集群内部署 NFS。
 
 本文主要介绍了如何快速部署一个 NFS 服务，并将其添加为集群的`存储类`。
 
@@ -98,9 +100,11 @@ spec:
       volumes:
         - name: nfs-vol
           hostPath:
-            path: /nfsdata  # 修改此处以指定另一个路径来存储 NFS 共享数据
+            path: /nfsdata  # (1)!
             type: DirectoryOrCreate
 ```
+
+1. 修改此处以指定另一个路径来存储 NFS 共享数据
 
 将上述 `YAML` 保存为 `nfs-server.yaml`，然后执行以下命令进行部署：
 
@@ -169,3 +173,36 @@ kubectl apply -f nfs-sc.yaml
 创建数据集，并将数据集的 **关联存储类** ，`预热方式` 设置为 `NFS`，即可将远端数据预热到集群内。
 
 数据集创建成功后，可以看到数据集的状态为 `预热中`，等待预热完成后即可使用。
+
+## 常见问题
+
+### 缺少必要的 NFS 客户端软件 `/sbin/mount`
+
+```bash
+bad option; for several filesystems (e.g. nfs, cifs) you might need a /sbin/mount.<type> helper program.
+```
+
+在运行 Kubernetes 的节点机器上，确保已安装 NFS 客户端：
+
+=== "Ubuntu/Debian"
+
+    运行以下命令安装 NFS 客户端：
+
+    ```bash
+    sudo apt-get update
+    sudo apt-get install nfs-common
+    ```
+=== "CentOS/RHEL"
+
+    运行以下命令安装 NFS 客户端：
+
+    ```bash
+    sudo yum install nfs-utils
+    ```
+
+检查 NFS 服务器配置，确保 NFS 服务器正在运行且配置正确。你可以尝试运行以下命令手动挂载来测试：
+
+```bash
+sudo mkdir -p /mnt/test
+sudo mount -t nfs <nfs-server>:/nfsdata /mnt/test
+```

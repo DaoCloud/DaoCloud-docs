@@ -45,10 +45,10 @@
 ```bash
 git clone https://github.com/goharbor/perf
 cd perf
-export HARBOR_URL=https://admin:password@harbor.domain(用户名密码和地址)
-export HARBOR_VUS=100（虚拟用户数）
-export HARBOR_ITERATIONS=200（每个虚拟用户数执行的次数）
-export HARBOR_REPORT=true（是否生成报告）
+export HARBOR_URL=https://admin:password@harbor.domain # 用户名密码和地址
+export HARBOR_VUS=100 # 虚拟用户数
+export HARBOR_ITERATIONS=200 # 每个虚拟用户数执行的次数
+export HARBOR_REPORT=true # 是否生成报告
 go run mage.go
 ```
 

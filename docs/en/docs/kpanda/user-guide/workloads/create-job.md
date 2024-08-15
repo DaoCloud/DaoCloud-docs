@@ -5,7 +5,7 @@ Date: 2024-02-28
 
 # Create Job
 
-This page introduces how to create a job through image image and YAML file.
+This page introduces how to create a job through image and YAML file.
 
 Job is suitable for performing one-time jobs. A Job creates one or more Pods, and the Job keeps retrying to run Pods until a certain number of Pods are successfully terminated. A Job ends when the specified number of Pods are successfully terminated. When a Job is deleted, all Pods created by the Job will be cleared. When a Job is paused, all active Pods in the Job are deleted until the Job is resumed. For more information about jobs, refer to [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/).
 
@@ -31,11 +31,11 @@ Refer to the following steps to create a job using an image.
 
     ![Jobs](../images/job01.png)
 
-3. Fill in [Basic Information](create-job.md#_3), [Container Settings](create-job.md) and [Advanced Settings](create-job.md#_5) in turn, click __OK__ in the lower right corner of the page to complete the creation.
+3. Fill in [Basic Information](create-job.md#basic-information), [Container Settings](create-job.md#container-settings) and [Advanced Settings](create-job.md#advanced-settings), click __OK__ in the lower right corner of the page to complete the creation.
 
     The system will automatically return to the __job__ list. Click __┇__ on the right side of the list to perform operations such as updating, deleting, and restarting the job.
 
-    ![Config]](../images/job07.png)
+    ![Config](../images/job07.png)
 
 ### Basic information
 
@@ -58,28 +58,28 @@ Container setting is divided into six parts: basic information, life cycle, heal
 
     ![Basic Information](../images/job02-1.png)
 
-     When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the settings with reference to the following requirements, click __OK__ .
+    When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the settings with reference to the following requirements, click __OK__ .
 
-     - Container Name: Up to 63 characters, lowercase letters, numbers and separators ("-") are supported. Must start and end with a lowercase letter or number, eg nginx-01.
-     - Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/intro/index.md) module of DCE 5.0, you can click __Select Image__ on the right to select an image.
-     - Image Pull Policy: After checking __Always pull image__ , the image will be pulled from the registry every time the load restarts/upgrades. If it is not checked, only the local image will be pulled, and only when the image does not exist locally, it will be re-pulled from the container registry. For more details, refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
-     - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host.
-     - CPU/Memory Quota: Requested value (minimum resource to be used) and limit value (maximum resource allowed to be used) of CPU/Memory resource. Please configure resources for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default value is shown in the figure.
-     - GPU Exclusive: Configure the GPU usage for the container, only positive integers are supported. The GPU quota setting supports setting exclusive use of the entire GPU card or part of the vGPU for the container. For example, for an 8-core GPU card, enter the number __8__ to let the container exclusively use the entire length of the card, and enter the number __1__ to configure a 1-core vGPU for the container.
+    - Container Name: Up to 63 characters, lowercase letters, numbers and separators ("-") are supported. Must start and end with a lowercase letter or number, eg nginx-01.
+    - Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/intro/index.md) module of DCE 5.0, you can click __Select Image__ on the right to select an image.
+    - Image Pull Policy: After checking __Always pull image__ , the image will be pulled from the registry every time the workload restarts/upgrades. If it is not checked, only the local image will be pulled, and only when the image does not exist locally, it will be re-pulled from the container registry. For more details, refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
+    - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host.
+    - CPU/Memory Quota: Requested value (minimum resource to be used) and limit value (maximum resource allowed to be used) of CPU/Memory resource. Please configure resources for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default value is shown in the figure.
+    - GPU Exclusive: Configure the GPU usage for the container, only positive integers are supported. The GPU quota setting supports setting exclusive use of the entire GPU card or part of the vGPU for the container. For example, for an 8-core GPU card, enter the number __8__ to let the container exclusively use the entire length of the card, and enter the number __1__ to configure a 1-core vGPU for the container.
 
     > Before setting exclusive GPU, the administrator needs to install the GPU card and driver plug-in on the cluster nodes in advance, and enable the GPU feature in [Cluster Settings](../clusterops/cluster-settings.md).
 
 === "Lifecycle (optional)"
 
-     Set the commands that need to be executed when the container starts, after starting, and before stopping. For details, refer to [Container Lifecycle settings](pod-config/lifecycle.md).
+    Set the commands that need to be executed when the container starts, after starting, and before stopping. For details, refer to [Container Lifecycle settings](pod-config/lifecycle.md).
 
-     ![Lifecycle](../images/job06.png)
+    ![Lifecycle](../images/job06.png)
 
 === "Health Check (optional)"
 
-     It is used to judge the health status of containers and applications, which helps to improve the availability of applications. For details, refer to [Container Health Check settings](pod-config/health-check.md).
+    It is used to judge the health status of containers and applications, which helps to improve the availability of applications. For details, refer to [Container Health Check settings](pod-config/health-check.md).
 
-     ![Health Check](../images/deploy07.png)  
+    ![Health Check](../images/deploy07.png)  
 
 === "Environment Variables (optional)"
 

@@ -5,8 +5,6 @@ into the service mesh to ensure it operates efficiently, securely, and reliably.
 
 ## Introduction
 
-### Overview of Service Mesh
-
 Service Mesh is an infrastructure layer that handles communication between services
 in a service-to-service architecture. It helps manage complex topology and enables
 microservices to run, observe, protect and configure better. Our Istio-based product
@@ -40,9 +38,9 @@ To ensure successful integrate to the Service Mesh during integration, we recomm
 
 - **Understand the Service Mesh**: Understand basic concepts, core components, and the operation mode of the Service Mesh.
 - **Integrate Application Compatibility**: Evaluate whether your application is suitable for running in a Service Mesh
-  environment and understand changes brought by the Service Mesh like traffic routing, load balancing, etc.
+  environment and understand changes brought by the Service Mesh like traffic routing and load balancing.
 - **Modification and Optimization of Applications**: Modify your application according to the Service Mesh specifications,
-  such as exposing health checks, logs, tracking information, etc., to allow the Service Mesh to monitor and manage them.
+  such as exposing health checks, logs, and tracking information, to allow the Service Mesh to monitor and manage them.
 - **Integrating the Service Mesh**: Integrate at the code level using the interface or SDK provided by the Service Mesh.
 - **Testing and Optimization**: Test thoroughly to ensure reliable performance and behavior of the application
   in the Service Mesh environment.
@@ -53,9 +51,9 @@ As a sidecar is introduced to the same Pod instance, the following runtime envir
 must be met for application integrating to the Service Mesh:
 
 | Field | Required | Value | Explanation |
-| ----------- | -------- | ----- | ----------- |
+| ----- | -------- | ----- | ----------- |
 | Port Listening | Yes | The application should not listen on the following ports:<br>- 15000 to 15010<br>- 15020 to 15021<br>- 15053<br>- 15090 | The data plane of the service mesh needs to listen on these ports, so the application should not listen on them. |
-| Pod Labels | Yes | The values of the __app__ and __version__ labels of the Pod must match the name of the associated __Service__ , not the labels of the Deployment itself. These labels are usually found in the __.spec.template.metadata.labels__ section of the Pod. | Observability and traffic routing features are based on the __app__ and __version__ labels of the Pod, so it is important to ensure that the labels and their values match the __Service__ . |
+| Pod Labels | Yes | The values of the __app__ and __version__ labels of the Pod must match the name of the associated __Service__ , not the labels of the Deployment itself. These labels are usually found in the `.spec.template.metadata.labels` section of the Pod. | Observability and traffic routing features are based on the __app__ and __version__ labels of the Pod, so it is important to ensure that the labels and their values match the __Service__ . |
 | User UID | Yes | The application should not run with a UID of 1337. | The data plane of the service mesh runs with a UID of 1337, and the traffic interception of the sidecar does not handle traffic from this user, so the application should not run with a UID of 1337. |
 | HostNetwork | Yes | Pods should not run in HostNetwork mode. | HostNetwork mode is not supported by the service mesh. |
 | DNSPolicy | Yes | The DNSPolicy of the Pod should be set to ClusterFirst, and the ndots value should be set to 5. | The sidecar needs to communicate with the control plane and relies on DNS resolution of control plane addresses. |
@@ -64,7 +62,7 @@ must be met for application integrating to the Service Mesh:
 ### Application Communication Specifications
 
 | Field | Required | Value | Explanation |
-| ----------- | -------- | ----- | ----------- |
+| ----- | -------- | ----- | ----------- |
 | Service Access Method | No | Services should be accessed using the service name or ClusterIP, not the Pod IP or NodePort. | The data plane of the service mesh needs to match policies based on the service name, so applications should not directly use the Pod IP or NodePort. Otherwise, it may cause policy failures or accessibility issues. |
 | Port Protocol | No | Configure the protocol of the Service ports correctly. In multi-cluster mode, ensure that the configuration of the service is consistent across all clusters (i.e., services with the same name in the same namespace should have consistent Service.spec configurations). | You can modify the protocol of specific ports in the DCE 5.0 service mesh interface ( __Service Management__ > __Service List__ > __Address Information__ ), or refer to the [Istio documentation](https://istio.io/latest/docs/ops/configuration/traffic-management/protocol-selection/) for configuration. Incorrect configuration may cause access or policy issues. |
 

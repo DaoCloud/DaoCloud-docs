@@ -17,7 +17,7 @@ For L7 support, gateway rules are implemented in conjunction with virtual servic
 
 - Servers
 
-    Information about services exposed externally, including hosts, listening port, protocol type, etc.
+    Information about services exposed externally, including hosts, listening port, and protocols.
 
 - TLS
 
@@ -54,6 +54,6 @@ Service mesh provides two creation methods: wizard and YAML. The specific steps 
 
     ![Successfully Created](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/gateway03.png)
 
-4. On the right side of the list, click __⋮__ in the operation column to perform more operations through the pop-up menu.
+4. On the right side of the list, click __┇__ in the operation column to perform more operations through the pop-up menu.
 
     ![Edit/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/gateway04.png)

@@ -12,6 +12,9 @@ You can choose and download the one you need.
 
 | Filename | Version | Architecture | File Size | Download | Update Date |
 | -------- | ------- | ------------ | --------- | -------- | ----------- |
+| gpu-addon-offline-package-v0.20.0-amd64.tar.gz | v0.20.0 | AMD 64 | 5.49 GB | [:arrow_right: Go to Download](./v0.20.0.md) | 2024-08-09 |
+| standard-addon-offline-package-v0.20.0-arm64.tar.gz | v0.20.0 | <font color="green">ARM 64</font> | 15.90 GB | [:arrow_right: Go to Download](./v0.20.0.md) | 2024-08-09 |
+| standard-addon-offline-package-v0.20.0-amd64.tar.gz | v0.20.0 | AMD 64 | 25.21 GB | [:arrow_right: Go to Download](./v0.20.0.md) | 2024-08-09 |
 | gpu-addon-offline-package-v0.19.0-amd64.tar.gz | v0.19.0 | AMD 64 | 4.17 GB | [:arrow_right: Go to Download](./v0.19.0.md) | 2024-07-09 |
 | standard-addon-offline-package-v0.19.0-arm64.tar.gz | v0.19.0 | <font color="green">ARM 64</font>| 15.71 GB | [:arrow_right: Go to Download](./v0.19.0.md) | 2024-07-09 |
 | standard-addon-offline-package-v0.19.0-amd64.tar.gz | v0.19.0 | AMD 64 | 24.83 GB | [:arrow_right: Go to Download](./v0.19.0.md) | 2024-07-09 |

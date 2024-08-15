@@ -1,6 +1,11 @@
+---
+MTPE: ModeatNiu
+DATE: 2024-08-08
+---
+
 # Deploy Harbor through LoadBalancer mode
 
-Currently, DCE 5.0 image repository does not support deploying Harbor using LoadBalancer mode.
+Currently, DCE 5.0 Container Registry does not support deploying Harbor using LoadBalancer mode.
 It only supports Ingress and NodePort modes.
 This document briefly explains how to manually change the access type to LB.
 
@@ -23,7 +28,7 @@ create an LB-type SVC resource.
 
 After creating the Harbor service, an nginx SVC resource will automatically appear in the
 **Container Network** -> **Services** of the cluster where Harbor is located.
-In the service list, click the **⋮** button on the right side, and select **Update** in
+In the service list, click the **┇** button on the right side, and select **Update** in
 the dropdown menu to view the label information of nginx.
 
 <!-- ![nginx](../images/nginx.png)
@@ -32,7 +37,7 @@ the dropdown menu to view the label information of nginx.
 
 ## 3. Modify the harborclusters.goharbor.io CR
 
-Modify the externalUrl field in the harborclusters.goharbor.io CR to the IP address of the LB.
+Modify the `externalUrl` field in the harborclusters.goharbor.io to the IP address of the LB.
 
 ### Modify with UI
 

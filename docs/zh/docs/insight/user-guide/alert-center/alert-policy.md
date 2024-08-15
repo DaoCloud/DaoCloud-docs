@@ -27,42 +27,34 @@
 
     ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy01.png)
 
-2. 列表需至少有一条规则。如果列表为空，可观测性提供了两种方式添加告警规则，
+    !!! note
 
-    - 方式一：第一种为 __表单创建__，用户可自行定义规则以及阈值等信息。
+        - 选择`全部集群、节点或工作负载`：创建的告警规则对所有已安装 insight-agent 的集群生效。
+        - 选择单个或多个集群集群、节点或工作负载：创建的告警规则仅对所选的资源对象生效。
+        - 同时，用户只能对已权限的集群、命名空间设置告警规则。
 
-        ![添加规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/alert-policy04.png)
+### 手动添加规则
 
-        在弹窗中创建告警规则，填写各项参数后点击 __确定__。
+1. 在创建告警策略的第二部中，点击列表右上角的`添加规则`。
 
-        ![创建规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy04.png)
+    ![添加规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/alert-policy04.png)
 
-        - 模板规则：预定义了基础指标，可以按 CPU、内存、磁盘、网络设定要监控的指标。
-        - PromQL 规则：输入一个 PromQL 表达式，具体请[查询 Prometheus 表达式](https://prometheus.io/docs/prometheus/latest/querying/basics/)。
-        - 持续时长：告警被触发且持续时间达到该设定值后，告警策略将变为触发中状态。
-        - 告警级别：包含紧急、警告、信息三种级别。
-        - 高级设置：可以自定义标签和注解。
+2. 在弹窗中创建告警规则，填写各项参数后点击 __确定__。
+
+    ![创建规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy04.png)
+
+    - 模板规则：预定义了基础指标，可以按 CPU、内存、磁盘、网络设定要监控的指标。
+    - PromQL 规则：输入一个 PromQL 表达式，具体请[查询 Prometheus 表达式](https://prometheus.io/docs/prometheus/latest/querying/basics/)。
+    - 持续时长：告警被触发且持续时间达到该设定值后，告警策略将变为触发中状态。
+    - 告警级别：包含紧急、警告、信息三种级别。
+    - 高级设置：可以自定义标签和注解。
 
     !!! info
 
         系统定义了内置标签，若自定义标签与内置标签的`键`值相同，则自定义标签不生效。
         内置标签有：`severity`、`rule_id`，`source`、`cluster_name`、`group_id`、 `target_type` 和 `target`。
 
-    - 方式二：可点击 __模板导入__，选择平台管理员已创建好的告警模板批量导入告警规则。
-
-        ![告警模板](../../images/import-template.png){ width=1000px}
-
-3. 点击 __下一步__ 后配置通知。
-
-    ![通知配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy05.png)
-
-4. 配置完成后，点击 __确定__ 按钮，返回告警策略列表。
-
-!!! tip
-
-    新建的告警策略为 __未触发__ 状态。一旦满足规则中的阈值条件和持续时间后，将变为 __触发中__ 状态。
-
-### 创建日志规则
+#### 创建日志规则
 
 完成基本信息的填写后，点击 __添加规则__，规则类型选择 __日志规则__。
 
@@ -80,7 +72,7 @@
 - __阈值条件__：在输入框中输入告警阈值。当达到设置的阈值时，则触发告警。支持的比较运算符有： >、≥、=、≤、<。
 - __告警级别__：选择告警级别，用于表示告警的严重程度。
 
-### 创建事件规则
+#### 创建事件规则
 
 完成基本信息的填写后，点击 __添加规则__，规则类型选择 __事件规则__。
 
@@ -97,6 +89,23 @@
 - __时间范围__：检测该时间范围内产生数据，若达到设置的阈值条件，则触发告警事件。
 - __阈值条件__：当产生的事件达到设置的阈值时，则触发告警事件。
 - __趋势图__：默认查询 10 分钟内的事件变化趋势，每个点的数值统计的是当前时间点到之前的某段时间（时间范围）内发生的总次数。
+
+### 导入规则模板
+
+1. 可点击 __模板导入__，选择平台管理员已创建好的告警模板批量导入告警规则。
+
+    ![告警模板](../../images/import-template.png){ width=1000px}
+
+1. 点击 __下一步__ 后配置通知。
+
+    ![通知配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy05.png)
+
+2. 配置完成后，点击 __确定__ 按钮，返回告警策略列表。
+
+!!! tip
+
+    新建的告警策略为 __未触发__ 状态。一旦满足规则中的阈值条件和持续时间后，将变为 __触发中__ 状态。
+
 
 !!! warning
 

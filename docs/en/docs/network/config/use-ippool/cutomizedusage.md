@@ -1,18 +1,26 @@
-# Third-party workloads use IP pools
+---
+MTPE: WANG0608GitHub
+Date: 2024-08-12
+---
 
-This page focuses on configuring IP pools for custom workloads (taking the workload CloneSet created by the [OpenKruise](https://github.com/openkruise/kruise) controller as an example here) and using Spiderpool to assign and fix the IPs in the Underlay network.
+# Third-Party Workloads Use IPPools
+
+This section primarily discusses the integration of Spiderpool and Multus CR for managing custom workload
+(Specifically, workloads created by the [OpenKruise](https://github.com/openkruise/kruise) controller, such as CloneSet) pods.
+It covers the configuration of IPPools for pods and explains how to allocate and fix IP addresses in the underlay network using Spiderpool.
 
 ## Prerequisites
 
-1. [SpiderPool has been successfully deployed](../../modules/spiderpool/install.md). 
-2. [Multus with Macvlan/SR-IOV has been successfully deployed](../../modules/multus-underlay/install.md).
-3. If you choose manual selection of IP pool, please complete [Create IP subnet and IP pool](../ippool/createpool.md) in advance. To use a fixed IP pool in this example, please complete [Create a fixed IP pool](../ippool/createpool.md) in advance.
+1. [Spiderpool has been successfully deployed](../../modules/spiderpool/install/install.md).
+
+2. If you choose manual selection of IPPool, please [Create IP subnet and IPPool](../ippool/createpool.md) in advance.
+   To use a fixed IPPool in this example, please complete [Create a fixed IPPool](../ippool/createpool.md) in advance.
 
 ## Steps
 
-### Using created fixed IP pools
+### Using created fixed IPPools
 
-1. Deploy the CR `CloneSet` and specify the default network type, VLAN ID, subnet interface, and IP pool information in `Annotation`.
+1. Deploy the CR CloneSet and specify the default network type, VLAN ID, subnet interface, and IPPool information in `Annotation`.
 
     ```yaml
     v1.multus-cni.io/default-network: kube-system/calico
@@ -49,7 +57,7 @@ This page focuses on configuring IP pools for custom workloads (taking the workl
             command: ["/bin/sh", "-c", "trap : TERM INT; sleep infinity & wait"]
     ```
 
-1. Check the status of CloneSet after `CloneSet` is deployed.
+1. Check the CloneSet status after deployment.
 
     ```shell
     $ kubectl get pods -A|grep kruise-clone
@@ -59,11 +67,13 @@ This page focuses on configuring IP pools for custom workloads (taking the workl
     0                  44h
     ```
 
-1.  Go to `Container Platform`  -> Select the corresponding cluster -> Click `Container Network`, then find the corresponding subnet -> Go to the subnet details and check the IP usage.
+1. Go to __Container Management__  -> Select the proper cluster -> Click __Container Network__ , then find the proper subnet -> Go to the subnet details and check the IP usage.
 
-### Automatic creation of fixed IP pools
+    <!-- add image later -->
 
-1. To automatically create a fixed IP pool using a subnet, add the following Annotation when creating a custom workload.
+### Automatically creating fixed IPPools
+
+1. To automatically create a fixed IPPool using a subnet, add the following `Annotation` when creating a custom workload.
 
     ```yaml
     apiVersion: apps.kruise.io/v1alpha1
@@ -78,11 +88,11 @@ This page focuses on configuring IP pools for custom workloads (taking the workl
       template:
         metadata:
           annotations:
-            v1.multus-cni.io/default-network: "kube-system/calico" # Specify the default container NIC
-            k8s.v1.cni.cncf.io/networks: "kube-system/vlan6" #Specify the Multus CRD instance（NetworkAttachmentDefinition）
-            ipam.spidernet.io/subnet: |-   # Specify the NIC and the subnet to be used with the fixed IP pool
+            v1.multus-cni.io/default-network: "kube-system/calico" # (1)!
+            k8s.v1.cni.cncf.io/networks: "kube-system/vlan6" # (2)!
+            ipam.spidernet.io/subnet: |-   # (3)!
               {"interface":"net1","ipv4": ["subnet124"]}
-            ipam.spidernet.io/ippool-ip-number: "1" # Specify the number of resilient IPs, the number of available IPs = the number of resilient IPs + the number of Replicas
+            ipam.spidernet.io/ippool-ip-number: "1" # (4)!
           labels:
             app: custom-kruise-cloneset03
         spec:
@@ -92,14 +102,19 @@ This page focuses on configuring IP pools for custom workloads (taking the workl
             imagePullPolicy: IfNotPresent
             command: ["/bin/sh", "-c", "trap : TERM INT; sleep infinity & wait"]
     ```
+    
+    1. Specify the default container NIC
+    2. Specify the Multus CRD instance（NetworkAttachmentDefinition）
+    3. Specify the NIC and the subnet to be used with the fixed IPPool
+    4. Specify the number of resilient IPs, the number of available IPs = the number of resilient IPs + the number of Replicas
 
-2. Check the status of Clonset:
+2. Check the CloneSet status after deployment:
 
     ```shell
     kubectl get pods -A|grep kruise-clone03
     ```
 
-3. Check the status of the IP Pool IP:
+3. Check the IPPool IP status:
 
     ```shell
     kubectl get sp -oyaml | grep kruise

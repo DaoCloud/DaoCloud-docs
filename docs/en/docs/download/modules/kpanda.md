@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-date: 2024-01-18
+date: 2024-08-05
 hide:
   - toc
 ---
@@ -13,6 +13,10 @@ This page provides offline packages for different versions of the Container Mana
 
 | Version  | Architecture | File Size | Package | Checksum File | Update Date |
 |----------|--------------|-----------|---------|----------|-------------|
+| [0.30.1](../../kpanda/intro/release-notes.md) | AMD 64 | 758.80 MB | [:arrow_down: kpanda_0.30.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.30.1_amd64.tar) | [:arrow_down: kpanda_0.30.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.30.1_amd64_checksum.sha512sum) | 2024-08-09 |
+| [0.30.0](../../kpanda/intro/release-notes.md) | AMD 64 | 758.80 MB | [:arrow_down: kpanda_0.30.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.30.0_amd64.tar) | [:arrow_down: kpanda_0.30.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.30.0_amd64_checksum.sha512sum) | 2024-08-06 |
+| [0.29.1](../../kpanda/intro/release-notes.md) | AMD 64 | 759.13 MB | [:arrow_down: kpanda_0.29.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.29.1_amd64.tar) | [:arrow_down: kpanda_0.29.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.29.1_amd64_checksum.sha512sum) | 2024-08-05 |
+| [0.29.0](../../kpanda/intro/release-notes.md) | AMD 64 | 759.13 MB | [:arrow_down: kpanda_0.29.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.29.0_amd64.tar) | [:arrow_down: kpanda_0.29.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.29.0_amd64_checksum.sha512sum) | 2024-07-03 |
 | [0.28.1](../../kpanda/intro/release-notes.md) | AMD 64 | 675.40MB | [:arrow_down: kpanda_0.28.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.28.1_amd64.tar) | [:arrow_down: kpanda_0.28.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.28.1_amd64_checksum.sha512sum) | 2024-06-05 |
 | [0.28.0](../../kpanda/intro/release-notes.md) | AMD 64 | 675.40 MB | [:arrow_down: kpanda_0.28.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.28.0_amd64.tar) | [:arrow_down: kpanda_0.28.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.28.0_amd64_checksum.sha512sum) | 2024-06-04 |
 | [0.27.0](../../kpanda/intro/release-notes.md) | AMD 64 | 678.82 MB | [:arrow_down: kpanda_0.27.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.27.0_amd64.tar) | [:arrow_down: kpanda_0.27.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.27.0_amd64_checksum.sha512sum) | 2024-05-06 |
@@ -22,16 +26,16 @@ This page provides offline packages for different versions of the Container Mana
 | [0.22.2](../../kpanda/intro/release-notes.md) | AMD 64 | 615.81 MB | [:arrow_down: kpanda_0.22.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.22.2_amd64.tar) | [:arrow_down: kpanda_0.22.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.22.2_amd64_checksum.sha512sum) | 2023-11-14 |
 | [0.21.1](../../kpanda/intro/release-notes.md) | AMD 64 | 716.15 MB | [:arrow_down: kpanda_0.21.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.21.1_amd64.tar) | [:arrow_down: kpanda_0.21.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.21.1_amd64_checksum.sha512sum) | 2023-09-15 |
 
-## Validation
+## Verification
 
-To validate the integrity of the downloaded offline package and checksum file,
+To verify the integrity of the downloaded offline package and checksum file,
 take `v0.22.2_amd64` as an example, run the following command in the directory:
 
 ```sh
 echo "$(cat kpanda_v0.22.2_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-If the validation is successful, the result will be similar to:
+If the verification is successful, the result will be similar to:
 
 ```none
 kpanda_v0.22.2_amd64.tar: ok

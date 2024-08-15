@@ -19,7 +19,7 @@ repo_name: DaoCloud/DaoCloud-docs
 repo_url: https://github.com/DaoCloud/DaoCloud-docs
 edit_uri: edit/main/docs/en/docs/
 
-use_directory_urls: false # disbale https://www.mkdocs.org/user-guide/configuration/#use_directory_urls
+use_directory_urls: false # disable https://www.mkdocs.org/user-guide/configuration/#use_directory_urls
 strict: false # enable strict mode, https://www.mkdocs.org/user-guide/configuration/#strict
 
 # Configuration
@@ -41,11 +41,12 @@ theme:
   language: "en"
   features:
     - content.code.annotate
+    - content.code.copy
     - content.tooltips
     # - navigation.indexes
     - navigation.tabs
     # - navigation.instant
-    # - navigation.prune
+    - navigation.prune
     - navigation.sections
     - navigation.tabs.sticky
     - navigation.tracking
@@ -54,6 +55,7 @@ theme:
     - search.suggest
     - search.share
     - toc.follow
+    - navigation.path
     # - toc.integrate
 
   palette:
@@ -199,8 +201,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  # - pymdownx.critic
-
-  # - pymdownx.snippets:
+  - pymdownx.critic
+  - pymdownx.snippets
   #     auto_append:
   #       - includes/glossary.md

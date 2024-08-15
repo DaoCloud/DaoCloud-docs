@@ -3,30 +3,30 @@ MTPE: ModetaNiu
 date: 2024-06-27
 ---
 
-# Progressive Delivery in a Hosted Mesh Work Cluster Based on GitOps
+# Progressive Delivery in a Hosted Mesh Worker Cluster Based on GitOps
 
-Scenario: How can customers perform a progressive delivery in a hosted mesh work cluster using GitOps?
+Scenario: How can customers perform a progressive delivery in a hosted mesh worker cluster using GitOps?
 
 ## Prerequisites
 
-Refer to the documentation [Deploy Istio Resources in a Hosted Mesh Work Cluster Based on GitOps](istio_argocd.md) 
-and complete all steps before `Create a Hosted Mesh and Manage the Work Cluster`.
+Refer to the documentation [Deploy Istio Resources in a Hosted Mesh Worker Cluster Based on GitOps](istio_argocd.md) 
+and complete all steps before `Create a Hosted Mesh and Manage the Worker Cluster`.
 
 ## Implementing Weight-Based Progressive Delivery with GitOps
 
 1. Navigate to Workbench, and [Create Application](../user-guide/gitops/create-argo-cd.md) in `GitOps`, 
    with the repository address: `https://github.com/amamba-io/rollout-examples`. 
-   Path should be set to `rollouts/v1`, and select the namespace in the work cluster.
+   Path should be set to `rollouts/v1`, and select the namespace in the worker cluster.
 
 1. After the application is successfully created,  **synchronize** the application resources.
 
-1. Go to the service mesh and check the vs, dr, and gateway resources synchronized in the work cluster under the hosted mesh.
-   If not found, check if the notes in the **[Create a Hosted Mesh and Manage the Work Cluster](../../mspider/user-guide/service-mesh/README.md)** section are configured correctly.
+1. Go to the service mesh and check the vs, dr, and gateway resources synchronized in the worker cluster under the hosted mesh.
+   If not found, check if the notes in the **[Create a Hosted Mesh and Manage the Worker Cluster](../../mspider/user-guide/service-mesh/README.md)** section are configured correctly.
 
-1. By default, the load balancer of the work cluster exposes port `80`, so you need to modify the gateway port 
-   of the service to 80 in the work cluster to access the service.
+1. By default, the load balancer of the worker cluster exposes port `80`, so you need to modify the gateway port 
+   of the service to 80 in the worker cluster to access the service.
 
-1. Access `http://<work cluster node IP>/hello?name=test-v1` in the browser.
+1. Access `http://<worker cluster node IP>/hello?name=test-v1` in the browser.
 
 1. Navigate to Workbench, in the **Progressive Delivery** list, select `dubbo3-provider` to edit the YAML, 
    and change `version: v1` to `version: v2`.
@@ -91,17 +91,17 @@ The `dubbo3-consumer` and `dubbo3-provider` services are related. When accessing
 ### Steps
 
 1. Navigate to Workbench, [Create Application](../user-guide/gitops/create-argo-cd.md) in `GitOps`, with the repository address: `https://github.com/amamba-io/rollout-examples`.
-   Path should be set to `rollouts-legacy/v1`, and select the namespace in the work cluster.
+   Path should be set to `rollouts-legacy/v1`, and select the namespace in the worker cluster.
 
 1. After an applcation is successfully created, **synchronize** the application resources.
 
-1. Go to the service mesh and check the vs, dr, and gateway resources synchronized in the work cluster under the hosted mesh. 
-   If not found, check if the notes in the **[Create a Hosted Mesh and Manage the Work Cluster](../../mspider/user-guide/service-mesh/README.md)** section are configured correctly.
+1. Go to the service mesh and check the vs, dr, and gateway resources synchronized in the worker cluster under the hosted mesh. 
+   If not found, check if the notes in the **[Create a Hosted Mesh and Manage the Worker Cluster](../../mspider/user-guide/service-mesh/README.md)** section are configured correctly.
 
-1. By default, the load balancer of the work cluster exposes port `80`, so you need to modify the gateway port
-   of the service to 80 in the work cluster to access the service.
+1. By default, the load balancer of the worker cluster exposes port `80`, so you need to modify the gateway port
+   of the service to 80 in the worker cluster to access the service.
 
-1. Access `http://<work cluster node IP>/hello?name=test-v1` in the browser.
+1. Access `http://<worker cluster node IP>/hello?name=test-v1` in the browser.
 
 1. Navigate to Workbench, in the **Progressive Delivery** list, select `dubbo3-provider` to edit the YAML, and change `version: v1` to `version: v2`.
 

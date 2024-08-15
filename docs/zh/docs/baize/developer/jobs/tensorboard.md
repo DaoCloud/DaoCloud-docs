@@ -1,17 +1,16 @@
 # 任务分析介绍
 
-在 DCE 智能算力模块中，提供了模型开发过程重要的可视化分析工具，用于展示机器学习模型的训练过程和结果。
+在 DCE 5.0 智能算力模块中，提供了模型开发过程重要的可视化分析工具，用于展示机器学习模型的训练过程和结果。
 本文将介绍 任务分析（Tensorboard）的基本概念、在智能算力系统中的使用方法，以及如何配置数据集的日志内容。
 
-## 1. Tensorboard 是什么？
-
 !!! note
+
     Tensorboard 是 TensorFlow 提供的一个可视化工具，用于展示机器学习模型的训练过程和结果。
     它可以帮助开发者更直观地理解模型的训练动态，分析模型性能，调试模型问题等。
 
 ![Tensorboard](../../images/tensorboard.png)
 
-### Tensorboard 在模型开发过程中的作用及优势
+Tensorboard 在模型开发过程中的作用及优势：
 
 - **可视化训练过程**：通过图表展示训练和验证的损失、精度等指标，帮助开发者直观地观察模型的训练效果。
 - **调试和优化模型**：通过查看不同层的权重、梯度分布等，帮助开发者发现和修正模型中的问题。
@@ -25,17 +24,17 @@
 ### 在创建时 Notebook 启用 Tensorboard
 
 1. **创建 Notebook**：在智能算力平台上创建一个新的 Notebook。
-2. **启用 Tensorboard**：在创建 Notebook 的创建页面中，“启用 Tensorboard”选项，并指定数据集和日志路径。
+2. **启用 Tensorboard**：在创建 Notebook 的页面中，启用 **Tensorboard** 选项，并指定数据集和日志路径。
 
-![Tensorboard](../../images/tensorboard-03.png)
+    ![Tensorboard](../../images/tensorboard-03.png)
 
 ### 在分布式任务创建及完成后启用 Tensorboard
 
 1. **创建分布式任务**：在智能算力平台上创建一个新的分布式训练任务。
-2. **配置 Tensorboard**：在任务配置页面中，“启用 Tensorboard”选项，并指定数据集和日志路径。
+2. **配置 Tensorboard**：在任务配置页面中，启用 **Tensorboard** 选项，并指定数据集和日志路径。
 3. **任务完成后查看 Tensorboard**：任务完成后，可以在任务详情页面中查看 Tensorboard 的链接，点击链接即可查看训练过程的可视化结果。
 
-![Tensorboard](../../images/tensorboard-02.png)
+    ![Tensorboard](../../images/tensorboard-02.png)
 
 ### 在 Notebook 中直接引用 Tensorboard
 

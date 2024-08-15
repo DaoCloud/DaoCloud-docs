@@ -1,53 +1,68 @@
 ---
-MTPE: windsonsea
-date: 2024-05-13
+MTPE: ModetaNiu
+date: 2024-08-01
 ---
 
 # Dependencies and Prerequisites
 
-This page explains the dependencies and prerequisites for installing the virtual machine module.
+This page explains the dependencies and prerequisites for installing virtual machine.
 
 !!! info
 
-    The term __virtnest__ mentioned in the commands or scripts below is the internal development codename for the global management module.
+    The term __virtnest__ mentioned in the commands or scripts below is the internal development codename for 
+    the Global Management module.
 
 ## Prerequisites
 
-The kernel version of all nodes in the target cluster needs to be greater than 3.15. You can check the kernel version by running the following command:
+### Kernel version being above 3.15
 
-1. The kernel version needs to be above 3.15.
+The kernel version of all nodes in the target cluster needs to be higher than 3.15. For detail information, 
+see [kubevirt issue](https://github.com/kubevirt/kubevirt/issues/7006). Run the following command to see the version:
 
-    ```bash
-    uname -a
-    ```
+```bash
+uname -a
+```
 
-    Example output:
+Example output:
 
-    ```output
-    Linux master 6.5.3-1.el7.elrepo.x86_64 #1 SMP PREEMPT_DYNAMIC Wed Sep 13 11:46:28 EDT 2023 x86_64 x86_64 x86_64 GNU/Linux
-    ```
+```output
+Linux master 6.5.3-1.el7.elrepo.x86_64 #1 SMP PREEMPT_DYNAMIC Wed Sep 13 11:46:28 EDT 2023 x86_64 x86_64 x86_64 GNU/Linux
+```
 
-2. The CPU must support the x86-64-v2 instruction set or higher. You can use the following script to check if the current node's CPU supports this:
+### CPU supporting x86-64-v2 instruction set or higher
 
-    ```sh
-    cat <<EOF > detect-cpu.sh
-    #!/bin/sh -eu
+You can use the following script to check if the current node's CPU is usable:
+
+!!! note  
+
+    If you encounter a message like the one shown below, you can safely ignore it as it does not impact the final result.
     
-    flags=$(cat /proc/cpuinfo | grep flags | head -n 1 | cut -d: -f2)
+    ```bash title="示例"
+    $ sh detect-cpu.sh
+    detect-cpu.sh: line 3: fpu: command not found
+    ```   
     
-    supports_v2='awk "/cx16/&&/lahf/&&/popcnt/&&/sse4_1/&&/sse4_2/&&/ssse3/ {found=1} END {exit !found}"'
-    supports_v3='awk "/avx/&&/avx2/&&/bmi1/&&/bmi2/&&/f16c/&&/fma/&&/abm/&&/movbe/&&/xsave/ {found=1} END {exit !found}"'
-    supports_v4='awk "/avx512f/&&/avx512bw/&&/avx512cd/&&/avx512dq/&&/avx512vl/ {found=1} END {exit !found}"'
+```sh
+cat <<EOF > detect-cpu.sh
+#!/bin/sh -eu
     
-    echo "$flags" | eval $supports_v2 || exit 2 && echo "CPU supports x86-64-v2"
-    echo "$flags" | eval $supports_v3 || exit 3 && echo "CPU supports x86-64-v3"
-    echo "$flags" | eval $supports_v4 || exit 4 && echo "CPU supports x86-64-v4"
-    EOF
-    chmod +x detect-cpu.sh
-    sh detect-cpu.sh
-    ```
+flags=$(cat /proc/cpuinfo | grep flags | head -n 1 | cut -d: -f2)
+    
+supports_v2='awk "/cx16/&&/lahf/&&/popcnt/&&/sse4_1/&&/sse4_2/&&/ssse3/ {found=1} END {exit !found}"'
+supports_v3='awk "/avx/&&/avx2/&&/bmi1/&&/bmi2/&&/f16c/&&/fma/&&/abm/&&/movbe/&&/xsave/ {found=1} END {exit !found}"'
+supports_v4='awk "/avx512f/&&/avx512bw/&&/avx512cd/&&/avx512dq/&&/avx512vl/ {found=1} END {exit !found}"'
+    
+echo "$flags" | eval $supports_v2 || exit 2 && echo "CPU supports x86-64-v2"
+echo "$flags" | eval $supports_v3 || exit 3 && echo "CPU supports x86-64-v3"
+echo "$flags" | eval $supports_v4 || exit 4 && echo "CPU supports x86-64-v4"
+EOF
+chmod +x detect-cpu.sh
+sh detect-cpu.sh
+```
 
-3. All nodes must have hardware virtualization (nested virtualization) enabled. You can check by running the following command:
+### All Nodes having hardware virtualization (nested virtualization) enabled
+
+* Run the following command to check if it has been achieved: 
 
     ```sh
     virt-host-validate qemu
@@ -89,20 +104,29 @@ The kernel version of all nodes in the target cluster needs to be greater than 3
     WARN (Unknown if this platform has IOMMU support)
     ```
 
-4. Install virt-host-validate:
+* Install virt-host-validate:
 
-    1. On CentOS:
+    === "On CentOS"
 
         ```bash
         yum install -y qemu-kvm libvirt virt-install bridge-utils
         ```
 
-    2. On Ubuntu:
+    === "On Ubuntu"
 
         ```bash
         apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
         ```
 
-5. If the cluster uses Docker Engine as the container runtime, then the Docker Engine needs to be greater than v20.10.10.
+* Methods to enable hardware virtualization
 
-6. To prepare for future functionality, it is recommended to enable IOMMU.
+    Methods vary from platforms, and this page takes vsphere as an example. 
+    See [vmware website](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-2A98801C-68E8-47AF-99ED-00C63E4857F6.html).
+
+### If using Docker Engine as the container runtime
+
+If Docker Engine is used as the container runtime, it must be higher than v20.10.10.
+
+### Enabling IOMMU is recommended
+
+To prepare for future functions, it is recommended to enable IOMMU.

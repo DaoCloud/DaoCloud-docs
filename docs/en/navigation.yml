@@ -10,6 +10,7 @@ nav:
               - Use Cases: dce/scenario.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Release Notes:
+                  - 20240730 Release: dce/dce-rn/20240730.md
                   - 20240630 Release: dce/dce-rn/20240630.md
                   - 20240530 Release: dce/dce-rn/20240530.md
                   - 20240430 Release: dce/dce-rn/20240430.md
@@ -80,6 +81,9 @@ nav:
                       - Configure Extended Parameters: install/best-practices/extend-params.md
                   - Offline-Clipper Guidelines: install/best-practices/offline-clipper.md
                   - Fixing CVE-2024-21626 bugs: install/best-practices/cve-20240-21626.md
+              - Use Cases:
+                  - Reintegrate Worker Clusters After Global Service Cluster Redeployed: install/best-practices/remanage-work-cluster.md
+                  - Migrate Cluster OS without Downtime: install/best-practices/replace-os.md
               - Installer Release Notes: install/release-notes.md
           - Best Practices: dce/bphome.md
       - Workbench:
@@ -143,7 +147,8 @@ nav:
                       - Custom Toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
                       - Run on a Specific Node: amamba/quickstart/pipeline-on-node.md                    
                       - Build Multi-Arch Image: amamba/user-guide/pipeline/podman.md
-                      - Use Cacher in Pipeline: amamba/quickstart/job-cacher.md  
+                      - Use Cacher in Pipeline: amamba/quickstart/job-cacher.md
+                      - System Env Variables: amamba/user-guide/pipeline/system-env.md
               - GitOps:
                   - Import Repository: amamba/user-guide/gitops/import-repo.md
                   - Create Argo CD App: amamba/user-guide/gitops/create-argo-cd.md
@@ -156,11 +161,13 @@ nav:
                   - View a Canary Delivery Job: amamba/user-guide/release/check-canary.md
                   - Create Blue/Green Job: amamba/user-guide/release/blue-green.md
                   - View Blue/Green Job: amamba/user-guide/release/check-bluegreen.md
+              - Repository: 
+                  - Manage Your Repository: amamba/user-guide/git/git.md
               - Toolchain Integration:
                   - Integrate Toolchain: amamba/user-guide/tools/integrated-toolchain.md
                   - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
                   - R&D Project Management:
-                      - Check Issues: amamba/user-guide/project-mangement/issue.md
+                      - Check Issues: amamba/user-guide/pm/issue.md
               - FAQs:
                   - Pipeline FAQs: amamba/faq/faq-jenkins.md
                   - GitOps FAQs: amamba/faq/faq-gitops.md
@@ -169,9 +176,11 @@ nav:
                       - CI/CD based on Pipeline + GitOps: amamba/quickstart/argocd-jenkins.md
                       - Use GitOps in a Hosted Mesh: amamba/quickstart/istio_argocd.md
                       - Progressive Delivery in a Hosted Mesh: amamba/quickstart/istio_argocd_rollout.md
+                      - Rollout Multicloud Apps with ArgoCD: amamba/quickstart/argo-karmada.md
                   - CI Practices:
-                      - Implement Code Scanning with Pipelines: amamba/quickstart/scan-with-pipeline.md
-                      - Integrate Harbor to Scan Image Security: amamba/quickstart/scan-with-harbor.md
+                      - Scan Code with Pipelines: amamba/quickstart/scan-with-pipeline.md
+                      - Integrate Harbor to Scan Image: amamba/quickstart/scan-with-harbor.md
+                      - Jenkins Delivers App to VM: amamba/user-guide/pipeline/cicd_vm.md
                       - Integrate Jenkins on Physical/Virtual Machine: amamba/quickstart/jenkins-integration.md
                   - Progressive Delivery Practices: 
                       - Contour-based Grayscale Release: amamba/quickstart/contour-argorollout.md
@@ -205,7 +214,7 @@ nav:
                   - Pod Security Policy: kpanda/user-guide/namespaces/podsecurity.md
               - Nodes:
                   - Node Availability Check: kpanda/user-guide/nodes/node-check.md
-                  - Node Config: kpanda/user-guide/nodes/node-config.md
+                  - Node Config: kpanda/user-guide/nodes/node-authentication.md
                   - Node Scaling Out: kpanda/user-guide/nodes/add-node.md
                   - Node Scaling In: kpanda/user-guide/nodes/delete-node.md
                   - Taints: kpanda/user-guide/nodes/taints.md
@@ -242,7 +251,7 @@ nav:
                   - Helm Charts: kpanda/user-guide/helm/README.md
                   - Upload Helm Charts: kpanda/user-guide/helm/upload-helm.md
                   - Helm Apps: kpanda/user-guide/helm/helm-app.md
-                  - Helm Registries: kpanda/user-guide/helm/helm-repo.md
+                  - Helm Repository: kpanda/user-guide/helm/helm-repo.md
                   - Multi-arch Helm Apps: kpanda/user-guide/helm/multi-archi-helm.md
                   - Import Custom Helm App into Addon: kpanda/user-guide/helm/Import-addon.md
               - Operator:
@@ -301,30 +310,35 @@ nav:
                   - NVIDIA GPU Management:
                       - NVIDIA GPU Modes: kpanda/user-guide/gpu/nvidia/index.md
                       - Install GPU Operator:
-                          - Install GPU Operator Offline: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
+                          - Offline Install GPU Operator: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
                           - Build Offline yum for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - Upload Red Hat GPU Opreator Image: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - Build Offline yum for Red Hat 8.4: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                           - Build Offline yum for Red Hat 7.9: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
+                          - Offline Install gpu-operator Driver on Ubuntu22.04: kpanda/user-guide/gpu/nvidia/ubuntu22.04_offline_install_driver.md
                       - NVIDIA GPU Full Card Mode: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU Mode:
                           - Install vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
                           - Use NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
+                          - Build vGPU Oversubscription Image: kpanda/user-guide/gpu/nvidia/vgpu/hami.md
                       - NVIDIA MIG Mode:
                           - Overview: kpanda/user-guide/gpu/nvidia/mig/index.md
                           - Enable MIG Features: kpanda/user-guide/gpu/nvidia/mig/create_mig.md
                           - Use NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
+                      - GPU Quotas: kpanda/user-guide/gpu/vgpu_quota.md
+                      - GPU DRA: kpanda/user-guide/gpu/dynamic-regulation.md
+                      - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
+                      - Use Volcano:
+                          - Install and Use Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
+                          - Use Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
+                      - GPU Scheduling: kpanda/user-guide/gpu/gpu_scheduler_config.md
                   - Ascend GPU:
                       - Install NPU Components: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
                       - Use GPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
+                      - Enable Ascend VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
-                  - GPU Quotas: kpanda/user-guide/gpu/vgpu_quota.md
-                  - GPU DRA: kpanda/user-guide/gpu/dynamic-regulation.md
-                  - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
-                  - Use Volcano:
-                    - Install and Use Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
-                    - Use Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
+                  - GPU FAQs: kpanda/user-guide/gpu/FAQ.md
               - Best Practices:
                   - Back up and Restore etcd: kpanda/best-practice/etcd-backup.md
                   - Cross-cluster Backup and Restore of MySQL Apps: kpanda/best-practice/backup-mysql-on-nfs.md
@@ -423,8 +437,7 @@ nav:
           - Cloud Native Network:
               - Intro:
                   - What is Network: network/intro/index.md
-                  - Background: network/intro/background.md
-                  - Challenges: network/intro/challenges.md
+                  - Background and Challenges: network/intro/background.md
                   - Components: network/modules/modules.md
                   - Offline Upgrade: network/intro/offline.md
                   - Release Notes: network/intro/releasenotes.md
@@ -616,14 +629,16 @@ nav:
                   - Install Dependencies: virtnest/install/install-dependency.md
                   - Offline Upgrade: virtnest/install/offline-install.md
                   - Install virtnest-agent: virtnest/install/virtnest-agent.md
+              - Quick Start:
+                  - Create VM: virtnest/quickstart/index.md
+                  - Update VM: virtnest/quickstart/update.md
+                  - Access VM: virtnest/quickstart/access.md
+                  - Access VM by NodePort: virtnest/quickstart/nodeport.md
+                  - VM Details: virtnest/quickstart/detail.md
               - Manage Virtual Machine:
-                  - Create VM: virtnest/vm/index.md
-                  - Create Windows VM: virtnest/vm/vm-windows.md
                   - Create Secret: virtnest/vm/create-secret.md
-                  - Access VM: virtnest/vm/access.md
                   - Snapshots: virtnest/vm/snapshot.md
                   - Live Migration: virtnest/vm/live-migration.md
-                  - Access VM by NodePort: virtnest/vm/nodeport.md
                   - VM Monitor: virtnest/vm/monitor.md
                   - VM GPU: virtnest/vm/vm-gpu.md
                   - VM Network: virtnest/vm/vm-network.md
@@ -636,7 +651,10 @@ nav:
                   - Create VM by Template: virtnest/template/index.md
                   - VM Template: virtnest/template/tep.md
               - VM Image: virtnest/vm-image/index.md
-              - Import VM from Ubuntu: virtnest/import/import-ubuntu.md
+              - Best Practices: 
+                  - Import Linux VM from VMWare: virtnest/best-practice/import-ubuntu.md
+                  - Import Windows VM from VMWare: virtnest/best-practice/import-windows.md
+                  - Create Windows VM: virtnest/best-practice/vm-windows.md
       - Microservice:
           - Insight:
               - Intro:
@@ -656,7 +674,7 @@ nav:
                       - insight/quickstart/install/index.md
                       - Online Install insight-agent: insight/quickstart/install/install-agent.md
                       - Offline Upgrade insight-agent: insight/quickstart/install/offline-install.md
-                      - Get URL to Upload Data: insight/quickstart/install/gethosturl.md
+                      - Get Data Storage Address of Global Service Cluster: insight/quickstart/install/gethosturl.md
                       - Upgrade Notes: insight/quickstart/install/upgrade-note.md
                       - Known Issues: insight/quickstart/install/knownissues.md
                       - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
@@ -745,8 +763,15 @@ nav:
                   - Management Components: skoala/quickstart/skoala.md
                   - Cluster Init Components: skoala/quickstart/skoala-init.md
                   - Select Workspace: skoala/quickstart/select-workspace.md
+              - Cloud Native Microservices:
+                  - Traffic Control: skoala/cloud-ms/traffic-control.md
+                  - End-to-end Traffic Lane: skoala/cloud-ms/lane.md
               - Cloud Native Gateway:
                   - Gateway Management: skoala/gateway/index.md
+                  - Domain Management:
+                      - Add Domain: skoala/gateway/domain/index.md
+                      - Update/Delete Domain: skoala/gateway/domain/update-domain.md
+                      - Domain Policies: skoala/gateway/domain/domain-policy.md
                   - API Management:
                       - Add API: skoala/gateway/api/index.md
                       - Update/Delete API: skoala/gateway/api/update-api.md
@@ -758,76 +783,73 @@ nav:
                   - Logs:
                       - Request Logs: skoala/gateway/logs/reqlog.md
                       - Instance Logs: skoala/gateway/logs/inslog.md
-                  - Domain Management:
-                      - Add Domain: skoala/gateway/domain/index.md
-                      - Update/Delete Domain: skoala/gateway/domain/update-domain.md
-                      - Domain Policies: skoala/gateway/domain/domain-policy.md
-              - Cloud Native Microservices:
-                  - Traffic Control: skoala/cloud-ms/traffic-control.md
-                  - End-to-end Traffic Lane: skoala/cloud-ms/lane.md
               - Traditional Microservices:
-                  - Hosted Nacos:
-                      - Hosted Naocs: skoala/trad-ms/hosted/index.md
-                      - Microservice Namespace: skoala/trad-ms/hosted/namespace.md
-                      - Microservice List:
-                          - Intro: skoala/trad-ms/hosted/services/index.md
-                          - Check Microservice: skoala/trad-ms/hosted/services/check-details.md
-                          - Traffic Rules:
-                              - Intro: skoala/trad-ms/hosted/services/governance-policy.md
-                              - Flow Control: skoala/trad-ms/hosted/services/flow-control.md
-                              - Circuit Breaker: skoala/trad-ms/hosted/services/circuit-breaker.md
-                              - Authorization: skoala/trad-ms/hosted/services/auth.md
-                              - Hotspot: skoala/trad-ms/hosted/services/hotspot.md
+                  - Registration and Configuration Center:
+                      - Hosted Registration Center: skoala/trad-ms/hosted/index.md
+                      - Service Integration Standards:
+                          - Integrate Sentinel: skoala/standard/sentinel.md
+                          - Integrate Nacos SDK: skoala/standard/nacos.md
+                          - Integrate Sentinel Monitoring Capabilities: skoala/standard/monitor.md
+                          - Integrate Sentinel Cluster Flow Control Capabilities: skoala/standard/flow-control.md
+                      - Microservices Namespace: skoala/trad-ms/hosted/namespace.md
+                      - Microservices List:
+                          - Introduction: skoala/trad-ms/hosted/services/index.md
+                          - Microservices Details: skoala/trad-ms/hosted/services/check-details.md
+                          - Traffic Governance:
+                              - Rules Introduction: skoala/trad-ms/hosted/services/governance-policy.md
+                              - Flow Control Rules: skoala/trad-ms/hosted/services/flow-control.md
+                              - Circuit Breaker Rules: skoala/trad-ms/hosted/services/circuit-breaker.md
+                              - Authorization Rules: skoala/trad-ms/hosted/services/auth.md
+                              - Hotspot Rules: skoala/trad-ms/hosted/services/hotspot.md
                               - System Rules: skoala/trad-ms/hosted/services/system.md
-                              - Cluster Flow: skoala/trad-ms/hosted/services/cluster-flow.md
-                      - Configurations: skoala/trad-ms/hosted/configs.md
+                              - Cluster Flow Control: skoala/trad-ms/hosted/services/cluster-flow.md
+                      - Configuration Management: skoala/trad-ms/hosted/configs.md
                       - Monitoring:
-                          - Monitor Microservices: skoala/trad-ms/hosted/monitor/microservices.md
-                          - Monitor Components: skoala/trad-ms/hosted/monitor/components.md
-                          - Tracing: skoala/trad-ms/hosted/monitor/traces.md
-                      - Resource Info: skoala/trad-ms/hosted/resource-info.md
-                      - Governance Plugin:
-                          - Intro: skoala/trad-ms/hosted/plugins/plugin-center.md
-                          - Enable Sentinel: skoala/trad-ms/hosted/plugins/sentinel.md
-                          - Enable Mesh: skoala/trad-ms/hosted/plugins/mesh.md
-                  - Integrated Registry:
-                      - Integrate Registry: skoala/trad-ms/integrated/index.md
-                      - Microservice Management: skoala/trad-ms/integrated/manage-service.md
-                      - Traces: skoala/trad-ms/integrated/trace.md
-              - Plugins: skoala/plugins/intro.md
-              - Service Spec:
-                  - Enable Sentinel: skoala/standard/sentinel.md
-                  - Enable Nacos: skoala/standard/nacos.md
-                  - Enable Sentinel Monitoring: skoala/standard/monitor.md
-                  - Enable Sentinel Flow Control: skoala/standard/flow-control.md
+                          - Microservices Monitoring: skoala/trad-ms/hosted/monitor/microservices.md
+                          - Component Monitoring: skoala/trad-ms/hosted/monitor/components.md
+                          - Trace Tracking: skoala/trad-ms/hosted/monitor/traces.md
+                      - Resource Information: skoala/trad-ms/hosted/resource-info.md
+                      - Governance Capabilities:
+                          - Introduction: skoala/trad-ms/hosted/plugins/plugin-center.md
+                          - Sentinel Governance: skoala/trad-ms/hosted/plugins/sentinel.md
+                          - Mesh Governance: skoala/trad-ms/hosted/plugins/mesh.md
+                  - Integrated Registration Center:
+                      - Integrated Registration Center Management: skoala/trad-ms/integrated/index.md
+                      - Microservices Management: skoala/trad-ms/integrated/manage-service.md
+                      - Trace Tracking: skoala/trad-ms/integrated/trace.md
+              - Plugin Center:
+                  - Introduction: skoala/plugins/intro.md
+                  - Plugin Practices:
+                      - Using JWT Plugin for Microservices: skoala/best-practice/plugins/jwt.md
+                      - Using JWT Plugin for Gateway: skoala/best-practice/jwt.md
+                      - Gateway Authentication Server:
+                          - skoala/best-practice/auth-server.md
+                          - Integrate AK/SK Authentication: skoala/best-practice/ak-sk-demo.md
+                          - Integrate OIDC Authentication: skoala/best-practice/OIDC-auth.md
+                      - Integrate Global Rate Limit Server for Gateway: skoala/best-practice/global-ratelimit.md
+                  - Custom Plugin Examples:
+                      - Caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
+                      - Anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
+                      - CRC32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
+                      - Conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
+                      - Payload Limit: skoala/best-practice/envoy-extproc-payloadlimit-demo-go.md
               - Best Practices:
-                  - Sample App in Microservices: skoala/best-practice/use-skoala-01.md
-                  - JWT Plugin in Cloud Native Microservice: skoala/best-practice/plugins/jwt.md
-                  - Microservice Gateway JWT: skoala/best-practice/jwt.md
-                  - Authentication Server for Microservie Gateway:
-                      - skoala/best-practice/auth-server.md
-                      - Integrate AK/SK Authentication: skoala/best-practice/ak-sk-demo.md
-                      - Integrate OIDC Authentication: skoala/best-practice/OIDC-auth.md
-                  - Integrate Microservice Gateway with Rate Limit Server: skoala/best-practice/global-ratelimit.md
-                  - Gateway API Policies: skoala/best-practice/gateway02.md
-                  - Access Microservie via Gateway: skoala/best-practice/gateway01.md
-                  - Gateway to Service Mesh: skoala/best-practice/gateway-mesh.md
-                  - Add Custom Attributes to Gateway Request Logs: skoala/best-practice/add-custom-attributes.md
+                  - Microservices Governance Application Example: skoala/best-practice/use-skoala-01.md
+                  - API Policy Configuration Example: skoala/best-practice/gateway02.md
+                  - Accessing Microservices via Gateway: skoala/best-practice/gateway01.md
+                  - Gateway Integration with Service Mesh: skoala/best-practice/gateway-mesh.md
+                  - Custom Attributes for Gateway Request Logs: skoala/best-practice/add-custom-attributes.md
                   - HTTP to Dubbo Protocol Dynamic Routing: skoala/best-practice/http-to-dubbo.md
-                  - Custom Plugin Demo - caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
-                  - Custom Plugin Demo - anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
-                  - Custom Plugin Demo - crc32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
-                  - Custom Plugin Demo - conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
-                  - Custom Plugin Demo - payloadlimit: skoala/best-practice/envoy-extproc-payloadlimit-demo-go.md
-              - Troubleshoot:
-                  - skoala-init error about x-kubernets-validations: skoala/troubleshoot/auth-server.md   
-              - Performance Tests:
-                  - Gateway RPS: skoala/tests/gateway-stress-test.md
-                  - Nacos TPS: skoala/tests/nacos-stress-test.md
-              - General Reference:
-                  - Microservice: reference/basic-knowledge/microservice.md
-                  - Registry: reference/basic-knowledge/registry.md
-                  - Cloud Native Gateway: reference/basic-knowledge/gateway.md
+              - Troubleshooting:
+                  - skoala-init x-kubernets-validations Error: skoala/troubleshoot/auth-server.md
+                  - Nacos Version Downgrade: skoala/troubleshoot/nacos.md
+              - Performance Test:
+                  - Cloud Native Gateway Throughput Test: skoala/tests/gateway-stress-test.md
+                  - Nacos Stress Test Report: skoala/tests/nacos-stress-test.md
+              - References:
+                  - Microservices: skoala/reference/microservice.md
+                  - Registration Center: skoala/reference/registry.md
+                  - Cloud Native Gateway: skoala/reference/gateway.md
           - Service Mesh:
               - Intro:
                   - What is Service Mesh: mspider/intro/index.md
@@ -893,6 +915,7 @@ nav:
               - Mesh Config:
                   - Multicloud Interconnection: mspider/user-guide/multicluster/cluster-interconnect.md
                   - Multicloud Config: mspider/user-guide/multicluster/traffic-branch.md
+                  - Network Connectivity Check: mspider/user-guide/multicluster/check-net-connect.md
                   - Istio Resource Management: mspider/user-guide/mesh-config/istio-resources.md
                   - TLS Key Management: mspider/user-guide/mesh-config/tls-secret.md
                   - Custom Component Resource: mspider/user-guide/mesh-config/custom-res.md
@@ -963,6 +986,7 @@ nav:
                       - MySQL Operator: middleware/mysql/faq/faq-operator.md
                       - MySQL Master/Slave Issues: middleware/mysql/faq/faq-master-slave.md
                       - Other MySQL Issues: middleware/mysql/faq/faq-others.md
+                      - MySQL MGR Configuration: middleware/mysql/faq/faq-mgr-parameter.md
                       - Troubleshoot MySQL MGR: middleware/mysql/faq/mgr-troubleshooting.md
                       - Network Fluctuations in MySQL Master-Slave: middleware/mysql/faq/faq-mtsql-net.md
               - MongoDB Database:
@@ -1000,7 +1024,7 @@ nav:
                       - Delete Redis Instance: middleware/redis/user-guide/delete.md
                       - View Redis Logs: middleware/redis/user-guide/logs.md
                       - Slow Query: middleware/redis/user-guide/slow-query.md
-                  - Cross-Cluster Data Synchronization:
+                  - Best Practice:
                       - HA Deployment Across Data Centers: middleware/redis/best-practice/singleclustercrosszone.md
                       - Data Synchronization Intro: middleware/redis/best-practice/index.md
                       - Cluster Mode to Cluster Mode: middleware/redis/best-practice/cluster2cluster.md
@@ -1085,35 +1109,49 @@ nav:
           - Intelligent Engine:
               - Introduction:
                   - What is Intelligent Engine: baize/intro/index.md
-                  - Installation: baize/intro/install.md
+                  - Initialize Intelligent Engine: baize/intro/install.md
                   - First Time Usage: baize/intro/first.md
                   - Intelligent Engine Release Notes: baize/intro/release-notes.md
-              - Development Console:
+              - Developer:
                   - Introduction: baize/developer/index.md
+                  - Quick Start: baize/developer/quick-start.md
                   - Notebooks:
                       - Create Notebook: baize/developer/notebooks/create.md
                       - Start and Pause Notebook: baize/developer/notebooks/start-pause.md
                       - View Notebook Workload: baize/developer/notebooks/view.md
                       - Delete Notebook: baize/developer/notebooks/delete.md
                       - Notebook SSH Guide: baize/developer/notebooks/notebook-with-ssh.md
-                  - Jobs:
+                      - baizectl CLI Guide: baize/developer/notebooks/baizectl.md
+                  - Job Center:
                       - Create Job: baize/developer/jobs/create.md
+                      - Create Pytorch Job: baize/developer/jobs/pytorch.md
+                      - Create Tensorflow Job: baize/developer/jobs/tensorflow.md
                       - Delete Job: baize/developer/jobs/delete.md
                       - View Job Load: baize/developer/jobs/view.md
+                      - Job Analysis: baize/developer/jobs/tensorboard.md
                   - Data Management:
-                      - Create Dataset: baize/developer/dataset/create-use-delete.md
-                      - Manage Runtime Env: baize/developer/dataset/conda.md
-              - OAM Management:
-                  - GPU Resource Management: baize/oam/resource.md
+                      - Datasets: baize/developer/dataset/create-use-delete.md
+                      - Environments: baize/developer/dataset/conda.md
+                  - Model Service:
+                      - Supported Models: baize/developer/inference/models.md
+                      - Inference Service: baize/developer/inference/create.md
+                      - Create with vLLM Framework: baize/developer/inference/vllm-inference.md
+              - Operator:
+                  - Resource Management: baize/oam/resource.md
                   - Queue Management:
                       - Create Queue: baize/oam/queue/create.md
                       - Delete Queue: baize/oam/queue/delete.md
               - Best Practices:
-                  - Deploy NFS to Preheat Dataset: baize/best-practice/deploy-nfs-in-worker.md
+                  - Deploy NFS to Preload Dataset: baize/best-practice/deploy-nfs-in-worker.md
                   - Update Notebook Built-in Images: baize/best-practice/change-notebook-image.md
                   - Checkpoint Mechanism and Usage: baize/best-practice/checkpoint.md
+                  - Fine-Tune ChatGLM3 with Intelligent Engine: baize/best-practice/finetunel-llm.md
+                  - Submit a DeepSpeed Training Task: baize/best-practice/train-with-deepspeed.md
+                  - Add Job Scheduler: baize/best-practice/add-scheduler.md
+                  - Deploy Label Studio: baize/best-practice/label-studio.md
               - Troubleshoot:
                   - index: baize/troubleshoot/index.md
+                  - Cluster Not Found in Drop-Down List: baize/troubleshoot/cluster-not-found.md
                   - Notebook Not Controlled by Queue Quotas: baize/troubleshoot/notebook-not-controlled-by-quotas.md
                   - Queue Initialization Failed: baize/troubleshoot/local-queue-initialization-failed.md
       - Edge Computing:
@@ -1143,6 +1181,7 @@ nav:
                   - Manage Edge Node Group: kant/user-guide/node-group/manage-group.md
               - End Device:
                   - Intro: kant/user-guide/device/index.md
+                  - Create Device Model: kant/user-guide/device/create-device-model.md
                   - Create End Device: kant/user-guide/device/create-device.md
                   - Manage End Device: kant/user-guide/device/manage-device.md
               - Edge App:
@@ -1158,7 +1197,8 @@ nav:
                   - Deploy EdgeMesh: kant/user-guide/edge-network/deploy-edgemesh.md
                   - Service: kant/user-guide/edge-network/service.md
               - Best Practices:
-                  - Smart Device Control: kant/best-practice/device-control.md
+                  - Instructions to Connect a Modbus Device: kant/best-practice/modbus-device-demo.md
+                  - Smart Device Control: kant/best-practice/custom-device-control.md
                   - Develop Device Driver - Mapper: kant/best-practice/develop-device-mapper.md
       - Management:
           - Global Management:
@@ -1197,6 +1237,7 @@ nav:
                   - Folder Permissions: ghippo/user-guide/workspace/folder-permission.md
                   - Resource Quota: ghippo/user-guide/workspace/quota.md
                   - Compare Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
+                  - Resource Binding Permission Instructions: ghippo/user-guide/workspace/wsbind-permission.md
               - Audit Logs:
                   - Enable/Disable Collection of K8s Audit Logs: ghippo/user-guide/audit/open-audit.md
                   - Enable/Disable Output of K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
@@ -1235,6 +1276,7 @@ nav:
                   - Workbench Permissions: ghippo/permissions/amamba.md
                   - Service Mesh Permissions: ghippo/permissions/mspider.md
                   - Middleware Permissions: ghippo/permissions/mcamel.md
+                  - Intelligent Engine Permissions: ghippo/permissions/baize.md
               - Best Practices:
                   - Workspace Practices: ghippo/best-practice/ws-best-practice.md
                   - Bind a Workspace to Namespace: ghippo/best-practice/ws-to-ns.md

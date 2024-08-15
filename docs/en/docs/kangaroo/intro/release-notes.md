@@ -12,6 +12,22 @@ understand the evolution path and feature changes of each version.
 *[Kpanda]: Internal dev codename for container management
 *[Harbor]: An open-source container registry tool and a CNCF graduated project
 
+## 2023-07-31
+
+### v0.20.0
+
+- **Fixed** an issue where online Harbor creation failed due to some images failing to be pulled
+- **Fixed** inconsistency in the number of permission between the admin user and custom roles
+- **Fixed** some permission overflow issues
+
+## 2023-06-30
+
+### v0.19.0
+
+#### Fixes
+
+- **Fixed** an issue that prevented the deletion of a workspace, incorrectly prompting users to unbind a registry space that had no actual binding relationship with the workspace.
+
 ## 2023-05-31
 
 ### v0.18.1

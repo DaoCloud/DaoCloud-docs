@@ -21,13 +21,13 @@
 - string: 字符串，输入框
 - text：文本，文本框
 - password：字符串，密码输入框
-- choice：在UI上是一个下拉列表，必须按列表的格式提供默认值，例如
+- choice：在UI上是一个下拉列表，当定义多个选项时，可在default字段中定义多行，例如
 
     ```yaml
     type: choice
-    default:
-      - choice 1
-      - choice 2
+    default: |
+      choice 1
+      choice 2
     ```
 
 - credential：凭证，在UI上是一个下拉列表，会获取当前工作空间下的凭证列表

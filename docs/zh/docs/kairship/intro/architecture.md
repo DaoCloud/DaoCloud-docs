@@ -11,17 +11,17 @@
 
 ## 核心组件
 
-多云编排主要包括两个核心组件： __kairship apiserver__ 和 __kairship controller-manager__ 。
+多云编排主要包括两个核心组件： __kairship-apiserver__ 和 __kairship-controller-manager__ 。
 
-### Kairship apiserver
+### Kairship-apiserver
 
- __kairship apiserver__ 主要担负着多云编排所有流量的入口（OpenAPI、GRPC 等）,也是所有 API 的统一入口。 __protobuf__ API 优先级最高，通过 __proto__ 定义所有的 API 接口，并以此生成对应的前后端代码，使用 __grpw-gateway__ 同时支持 HTTP Restful 和 GRPC。
+ __Kairship-apiserver__ 主要担负着多云编排所有流量的入口（OpenAPI、GRPC 等）,也是所有 API 的统一入口。 __protobuf__ API 优先级最高，通过 __proto__ 定义所有的 API 接口，并以此生成对应的前后端代码，使用 __grpw-gateway__ 同时支持 HTTP Restful 和 GRPC。
 
 启动的时候会从[全局管理模块](../../ghippo/intro/index.md)获取操作人的身份信息，用于后续 AuthZ 的安全性校验。
 
 <!--无状态服务，具体接口待补充（目前比较简单）-->
 
-### kairship controller-manager
+### kairship-controller-manager
 
 这是多云编排控制器，主要负责实例状态同步、资源搜集、Karmada 实例注册、全局资源注册等。
 

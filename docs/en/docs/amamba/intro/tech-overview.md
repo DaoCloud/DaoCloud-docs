@@ -150,7 +150,7 @@ Amamba uses [Argo CD](https://argo-cd.readthedocs.io/en/stable/) as the engine t
 implement GitOps capabilities. Compared to native Argo CD, we have mainly enhanced integration with DCE 5.0:
 
 1. Applications are isolated by tenant and can only be deployed to the corresponding clusters and namespaces.
-2. Permissions are controlled according to the global RBAC strategy, and only users with proper rules
+2. Permissions are controlled according to the global RBAC policy, and only users with proper rules
    can perform corresponding operations.
 
 ![argo-cd](../images/amamba-argocd.excalidraw.png)
@@ -192,13 +192,13 @@ Compared to native Argo Rollouts, we have mainly enhanced the following aspects:
 
 Issues:
 
-1. In Mspider's managed mesh mode, the VirtualService and DestinationRule deployed in sub-clusters
+1. In Mspider's hosted mesh mode, the VirtualService and DestinationRule deployed in sub-clusters
    will not take effect, making it impossible to use Istio-based Rollout in this scenario.
-   Mspider is optimizing it and is expected to support it in version v0.26.
+   Mspider is optimizing it and is expected to support it in v0.26.
 2. Creating Rollout based on Deployment will cause temporary access failures. The community is
    working to fix this issue
    [argoproj/argo-rollouts #3111](https://github.com/argoproj/argo-rollouts/issues/3111),
-   which is expected to be resolved in version v1.7.
+   which is expected to be resolved in v1.7.
 
 #### More Resources
 

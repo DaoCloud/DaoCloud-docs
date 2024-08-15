@@ -112,9 +112,9 @@ Observability is a key capability of the mesh, and one of the critical observabi
 
 Clusters created through the container management platform will have the Insight Agent component installed by default.
 
-For other methods, you need to go to the container management interface, find "Helm Applications" in your cluster, and select "insight-agent" to install.
+For other methods, you need to go to the container management interface, find "Helm Apps" in your cluster, and select "insight-agent" to install.
 
-![Helm Applications](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-insgiht-agent-check.png)
+![Helm Apps](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-insgiht-agent-check.png)
 
 ![Install Insight](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-install-insight-agent.png)
 
@@ -241,7 +241,7 @@ Due to the differences in work cluster networks, the "Network ID" needs to be ma
 
 Let's begin configuring the "Network ID" following these steps:
 
-1. First, access the global control plane cluster __kpanda-global-cluster__ (if you're unsure about the location of the relevant cluster, you can ask the responsible person or refer to [Querying the Global Service Cluster](#_30)).
+1. First, access the global control plane cluster __kpanda-global-cluster__ (if you're unsure about the location of the relevant cluster, you can ask the responsible person or refer to [Querying the Global Service Cluster](#querying-global-service-clusters)).
 2. In the __Custom Resources__ module, search for the resource __MeshCluster__ .
 3. Find the work clusters that have been added to the mesh under the __mspider-system__ namespace. For this example, the work clusters are: __mdemo-cluster2__ and __mdemo-cluster3__ .
 4. Take __mdemo-cluster2__ as an example and edit the YAML file.

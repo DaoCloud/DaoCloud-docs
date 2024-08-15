@@ -47,11 +47,11 @@ Follow the steps below to create a Job.
 
 1. On the __Override Configuration__ page, after selecting the personalized container configuration, labels and annotations, click __OK__ .
 
-    You can add the corresponding differentiated configuration item in the list area on the left. After you add a differentiated configuration item, you need to specify the corresponding cluster.
+    You can add the corresponding differentiated configmap in the list area on the left. After you add a differentiated configmap, you need to specify the corresponding cluster.
     The selectable range of the cluster is only the cluster selected at the beginning, and the selected cluster will use the specified differential configuration; the unspecified cluster will still use the default configuration.
 
 !!! note
 
-    - When creating a multicloud workload through mirroring, if you need to use the advanced capabilities of specifying a location and specifying a label to create, you need to ensure that the corresponding location or label has been set for the working cluster;
-    Adding tags needs to be added within a single cluster, and can be jumped to the corresponding cluster maintenance from the working cluster management list.
+    - When creating a multicloud workload through mirroring, if you need to use the advanced capabilities of specifying a location and specifying a label to create, you need to ensure that the corresponding location or label has been set for the worker cluster;
+    Adding tags needs to be added within a single cluster, and can be jumped to the corresponding cluster maintenance from the worker cluster management list.
     - When configuring the number of replicas, you need to pay attention to the corresponding scheduling strategy. Only when it is repeated, will all the configured replicas be started in multiple clusters.

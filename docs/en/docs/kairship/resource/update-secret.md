@@ -2,7 +2,7 @@
 
 Currently, two update methods are provided: editing YAML and form update.
 
-1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Secret__ , click __⋮__ to edit YAML or update the secret.
+1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Secret__ , click __┇__ to edit YAML or update the secret.
 
     ![Secret List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/update-secret01.png)
 

@@ -14,9 +14,9 @@
 
 #### 方式一：使用 chart-syncer 同步镜像
 
-使用 chart-syncer 可以将您下载的安装包中的 chart 及其依赖的镜像包上传至安装器部署 DCE 时使用的镜像仓库和 helm 仓库。
+使用 chart-syncer 可以将您下载的安装包中的 Chart 及其依赖的镜像包上传至安装器部署 DCE 时使用的镜像仓库和 Helm 仓库。
 
-首先找到一台能够连接镜像仓库和 helm 仓库的节点（如火种节点），在节点上创建 load-image.yaml 配置文件，填入镜像仓库和 helm 仓库等配置信息。
+首先找到一台能够连接镜像仓库和 Helm 仓库的节点（如火种节点），在节点上创建 load-image.yaml 配置文件，填入镜像仓库和 Helm 仓库等配置信息。
 
 1. 创建 load-image.yaml
 
@@ -26,7 +26,7 @@
 
     === "已添加 Helm repo"
 
-        若当前环境已安装 chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件。
+        若当前环境已安装 Chart repo，chart-syncer 也支持将 Chart 导出为 tgz 文件。
 
         ```yaml title="load-image.yaml"
         source:
@@ -58,7 +58,7 @@
 
     === "未添加 Helm repo"
 
-        若当前节点上未添加 helm repo，chart-syncer 也支持将 chart 导出为 tgz 文件，并存放在指定路径。
+        若当前节点上未添加 helm repo，chart-syncer 也支持将 Chart 导出为 tgz 文件，并存放在指定路径。
 
         ```yaml title="load-image.yaml"
         source:
@@ -78,7 +78,7 @@
         1. 使用 chart-syncer 之后 .tar.gz 包所在的路径
         2. 镜像仓库 url
         3. 镜像仓库路径
-        4. chart 本地路径
+        4. Chart 本地路径
         5. 镜像仓库用户名
         6. 镜像仓库密码
 
@@ -136,7 +136,7 @@
 
 === "通过 helm repo 升级"
 
-    1. 检查容器管理 helm 仓库是否存在。
+    1. 检查容器管理 Helm 仓库是否存在。
 
         ```shell
         helm repo list | grep kpanda
@@ -148,13 +148,13 @@
         Error: no repositories to show
         ```
 
-    1. 添加容器管理的 helm 仓库。
+    1. 添加容器管理的 Helm 仓库。
 
         ```shell
         helm repo add kpanda http://{harbor url}/chartrepo/{project}
         ```
 
-    1. 更新容器管理的 helm 仓库。
+    1. 更新容器管理的 Helm 仓库。
 
         ```shell
         helm repo update kpanda
@@ -170,7 +170,7 @@
         
         ```none
         NAME                   CHART VERSION  APP VERSION  DESCRIPTION
-        kpanda/kpanda  0.20.0          v0.20.0       A Helm chart for kpanda
+        kpanda/kpanda  0.20.0          v0.20.0       A Helm Chart for kpanda
         ...
         ```
 
@@ -205,7 +205,7 @@
           --version 0.21.0
         ```
 
-=== "通过 chart 包升级"
+=== "通过 Chart 包升级"
 
     1. 备份 `--set` 参数。
 
@@ -611,6 +611,7 @@
         repository: kpanda/etcdbrctl
         tag: v0.22.0
     ```
+
 #### 升级到 v0.29.0 或更高版本
 
 问题描述：将 Kpanda 低版本升级到 v0.29.0 或更高版本时，节点如果是 GPU MIG 模式，系统会将原来的 GPU MIG 模式强制切换成

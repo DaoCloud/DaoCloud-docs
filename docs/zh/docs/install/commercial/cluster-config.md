@@ -142,7 +142,9 @@ spec:
     # externalChartRepoPassword: rootpass123
  
   addonPackage: # 应用商店 addon 离线包，定义后会对 addon 进行离线部署
-    # path: "/root/addon-offline-full-package-v0.4.8-amd64.tar.gz"
+    # path:
+    #   - "/root/standard-addon-offline-package-v0.18.0-amd64.tar.gz"
+    #   - "/root/gpu-addon-offline-package-v0.18.0-amd64.tar.gz"
    
   binaries: # 二进制可执行文件
  
@@ -181,8 +183,7 @@ spec:
   #  elasticsearch:
   #    insight:
   #      endpoint: "https://xx.xx.xx.xx:9200"
-  #      # login with basic auth or bearer auth
-  #      #anonymous: false
+  #      insecure: false
   #      # basic auth
   #      username: "username"
   #      password: "password"

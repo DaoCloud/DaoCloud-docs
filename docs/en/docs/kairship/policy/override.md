@@ -1,3 +1,8 @@
+---
+MTPE: ModetaNiu
+DATE: 2024-07-16
+---
+
 # Override Policies
 
 The role of Override Policy is to define the configurations delivered to different clusters, which can be different. 
@@ -22,12 +27,12 @@ Follow the steps below to create an override policy using YAML.
 
     ![Create from YAML](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op002.png)
 
-3. Return to the override policy list, and the newly created one is the first one by default. Click __⋮__ on the right side of the list to edit YAML and perform delete operations.
+3. Return to the override policy list, and the newly created one is the first one by default. Click __┇__ on the right side of the list to edit YAML and perform delete operations.
 
     !!! note
 
-        If you want to delete an override policy, you need to remove the workload related to the policy first. 
-        After the deletion, all the information related to the policy will be deleted. Please operate with caution.
+        If you want to delete an override policy, it is recommended to remove the workload related to the policy first. 
+        Once the override policy is deleted, all information related to the policy will be deleted. Please operate with caution.
 
 ### YAML example
 
@@ -111,8 +116,8 @@ Next, we will introduce the override policies in detail, which are divided into 
 
         | Field | Required | Description | Example |
         | :-------- | :--- | :--------------- | :---------- |
-        | Component | is | Image component | Registry, Repository, Tag |
-        | Operator | is | the operation on the image | add, remove, replace |
+        | Component | Yes | Image component | Registry, Repository, Tag |
+        | Operator | Yes | the operation on the image | add, remove, replace |
         | Value | No | When the Operator is __add__ or __replace__ , it cannot be empty, and it is empty by default; when the operator is __remove__ , leave it blank. | |
 
 2. When ArgsOverrider is selected: Override configuration of args.
@@ -123,8 +128,8 @@ Next, we will introduce the override policies in detail, which are divided into 
 
         | Field | Required | Description | Example |
         | :------------ | :--- | :-------------- | :---------- |
-        | ContainerName | is | container name | |
-        | Operator | is | the operation to apply on args | add, remove |
+        | ContainerName | Yes | container name | |
+        | Operator | Yes | the operation to apply on args | add, remove |
         | Value | No | The value to apply to args. When the operator is __add__ , the value is appended to args; when the operator is __remove__ , the value is removed from args; if the value is empty, args remains as it is. | |
 
 3. When CommandOverrider is selected: Run the override configuration of the command.
@@ -135,8 +140,8 @@ Next, we will introduce the override policies in detail, which are divided into 
 
         | Field | Required | Description | Example |
         | :------------ | :--- | :--------------- | :------------------ |
-        | ContainerName | is | container name | |
-        | Operator | is | the operation applied to the command | add, remove |
+        | ContainerName | Yes | container name | |
+        | Operator | Yes | the operation applied to the command | add, remove |
         | Value | No | The value applied to the command. When the operator is __add__ , the value is appended to the command; when the operator is __remove__ , the value is removed from the command; if the value is empty, the command remains as it is. | You can add single or multiple values, use __;__ to divide multiple values |
 
 4. When PlainText is selected: Plaintext override configuration.
@@ -147,8 +152,8 @@ Next, we will introduce the override policies in detail, which are divided into 
 
         | Field | Required | Description | Example |
         | :------- | :--- | :----------------- | :--------------- |
-        | Path | is | the path to the target field | |
-        | Operator | is | the type of operation on the target field | add, remove, replace || Value | No | The value to apply to the target field, when Operator is __remove__ , this field must be empty | |
+        | Path | Yes | the path to the target field | |
+        | Operator | Yes | the type of operation on the target field | add, remove, replace || Value | No | The value to apply to the target field, when Operator is __remove__ , this field must be empty | |
 
 5. When LabelsOverrider is selected: Label override configuration.
 
@@ -160,8 +165,8 @@ Next, we will introduce the override policies in detail, which are divided into 
 
         | Field | Required | Description | Example |
         | :------- | :--- | :----------------- | :--------------- ---- |
-        | Key | is | the key of the label | |
-        | Operator | is | the type of operation on the target field | add, remove, replace |
+        | Key | Yes | the key of the label | |
+        | Operator | Yes | the type of operation on the target field | add, remove, replace |
         | Value | No | The value of the tag | |
 
 6. When selecting AnnotationsOverrider: Override configuration of annotations.
@@ -174,6 +179,6 @@ Next, we will introduce the override policies in detail, which are divided into 
 
         | Field | Required | Description | Example |
         | :------- | :--- | :----------------- | :--------------- ---- |
-        | Key | is | the key of the annotation | |
-        | Operator | is | the type of operation on the target field | add, remove, replace |
+        | Key | Yes | the key of the annotation | |
+        | Operator | Yes | the type of operation on the target field | add, remove, replace |
         | Value | No | The value of the annotation | |

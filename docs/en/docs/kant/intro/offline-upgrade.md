@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-07-17
+---
+
 # Offline Upgrade Cloud Edge Collaboration Module
 
 This page explains how to install or upgrade after [downloading the Cloud Edge Collaboration Module](../../download/modules/kant.md).
@@ -8,13 +13,13 @@ This page explains how to install or upgrade after [downloading the Cloud Edge C
 
 ## Load Images from the Downloaded Installation Package
 
-You can load images in one of the following two ways. When there is an image repository in the environment, it is recommended to choose the chart-syncer to synchronize the images to the image repository for more efficient and convenient installation.
+You can load images in one of the following two ways. When there is an container registry in the environment, it is recommended to choose the chart-syncer to synchronize the images to the container registry for more efficient and convenient installation.
 
 ### Use chart-syncer to Synchronize Images
 
-Using chart-syncer allows you to upload the Chart and its dependent image packages from the downloaded installation package to the image repository and Helm repository used when deploying DCE with the installer.
+Using chart-syncer allows you to upload the Chart and its dependent image packages from the downloaded installation package to the container registry and Helm repository used when deploying DCE with the installer.
 
-First, find a node that can connect to the image repository and Helm repository (such as a fire node), create a load-image.yaml configuration file on the node, and fill in the configuration information such as the image repository and Helm repository.
+First, find a node that can connect to the container registry and Helm repository (such as a fire node), create a load-image.yaml configuration file on the node, and fill in the configuration information such as the container registry and Helm repository.
 
 1. Create load-image.yaml
 
@@ -28,40 +33,58 @@ First, find a node that can connect to the image repository and Helm repository 
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kant # Path to run the load-image.yaml file on the node.
+          intermediateBundlesPath: kant # (1)!
         target:
-          containerRegistry: 10.16.10.111 # Image repository address
-          containerRepository: release.daocloud.io/kant # Image repository path
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/kant # (3)!
           repo:
-            kind: HARBOR # Type of Helm Chart repository
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # Helm repository address
+            kind: HARBOR # (4)!
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)!
             auth:
-              username: "admin" # Image repository username
-              password: "Harbor12345" # Image repository password
+              username: "admin" # (6)!
+              password: "Harbor12345" # (7)!
           containers:
             auth:
-              username: "admin" # Helm repository username
-              password: "Harbor12345" # Helm repository password
+              username: "admin" # (8)!
+              password: "Harbor12345" # (9)!
         ```
+
+        1. Path to run the load-image.yaml file on the node
+        2. Container registry address
+        3. Container registry path
+        4. Type of Helm Chart repository
+        5. Helm repository address
+        6. Container registry username
+        7. Container registry password
+        8. Helm repository username
+        9. Helm repository password
 
     === "Helm repo not added"
 
-        If a helm repo is not added on the current node, chart-syncer also supports exporting the chart to a tgz file and storing it in a specified path.
+        If a helm repo is not added on the current node, chart-syncer also supports exporting
+        the chart to a tgz file and storing it in a specified path.
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kant # Path to run the load-image.yaml file on the node.
+          intermediateBundlesPath: kant # (1)!
         target:
-          containerRegistry: 10.16.10.111 # Image repository url
-          containerRepository: release.daocloud.io/kant # Image repository path
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/kant # (3)!
           repo:
             kind: LOCAL
-            path: ./local-repo # Local path of the chart
+            path: ./local-repo # (4)!
           containers:
             auth:
-              username: "admin" # Image repository username
-              password: "Harbor12345" # Image repository password
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
         ```
+
+        1. Path to run the load-image.yaml file on the node
+        2. Container registry url
+        3. Container registry path
+        4. Local path of the chart
+        5. Container registry username
+        6. Container registry password
 
 1. Run the command to synchronize images.
 
@@ -165,10 +188,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade solution
 
     1. Run `helm upgrade`.
 
-        Before upgrading, it is recommended to modify the __global.imageRegistry__ field in bak.yaml to the current image repository address.
+        Before upgrading, it is recommended to modify the `global.imageRegistry` field in bak.yaml to the current container registry address.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your-registry}
         ```
 
         ```shell
@@ -197,10 +220,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade solution
 
     1. Run `helm upgrade`.
 
-        Before upgrading, it is recommended to modify the __global.imageRegistry__ field in bak.yaml to the current image repository address.
+        Before upgrading, it is recommended to modify the `global.imageRegistry` field in bak.yaml to the current container registry address.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your-registry}
         ```
 
         ```shell

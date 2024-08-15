@@ -8,7 +8,7 @@ date: 2024-07-01
 After creating and running a pipeline, you can view the details of its run records.
 
 On the __Workbench__ -> __Pipeline__ -> enter the pipeline details page, select a specific pipeline run record, 
-and click on the execution ID.
+and click the execution ID.
 
 ![Pipeline](../../../images/detail-run1.png)
 
@@ -28,13 +28,13 @@ Upon entering the pipeline run record details page, you can view the basic infor
 
 ![Running report](../../../images/detail-run2.png)
 
-View the running report of the current pipeline record. Click on a specific step in the pipeline to view 
+View the running report of the current pipeline record. Click a specific step in the pipeline to view
 the execution log and runtime of that step, and also view all logs.
 
 ![Log](../../../images/detail-run3.png)
 
-View the artifact report of the current pipeline record. When the pipeline defines a __Saving Artifact__ step 
-and executes this step, the artifacts defined in the pipeline will be cached and available for download by users. 
+View the artifact report of the current pipeline record. When the pipeline defines a __Saving Artifact__ step
+and executes this step, the artifacts defined in the pipeline will be cached and available for download by users.
 The pipeline logs are typically saved as artifacts, as shown in the following image:
 
 ![Log](../../../images/detail-run4.png)

@@ -15,13 +15,13 @@ After [integrating a registry](index.md), you can manage the microservices in th
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/service01.png)
 
-2. Click __Microservice Management__ in the left navigation bar to view the list of micro-services and basic information.
+2. Click __Microservice Management__ in the left navigation bar to view the list of microservices and basic information.
 
-    On the current page, you can copy the name of the micro-service and view all micro-services in the current registry, as well as the namespace, instance, and request statistics of each micro-service.
+    On the current page, you can copy the name of the microservice and view all microservices in the current registry, as well as the namespace, instance, and request statistics of each microservice.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/service02.png)
 
-3. Click the name of the micro-service to view the instance list, interface list, and monitoring information of the micro-service.
+3. Click the name of the microservice to view the instance list, interface list, and monitoring information of the microservice.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/service03.png)
 
@@ -35,7 +35,7 @@ After [integrating a registry](index.md), you can manage the microservices in th
 
         <!--![]()screenshots-->
 
-    - Monitoring information: Displays monitoring information about the micro-service, including the number of requests, error rate, response time, and request rate.
+    - Monitoring information: Displays monitoring information about the microservice, including the number of requests, error rate, response time, and request rate.
 
         User-defined time range is supported.
 

@@ -16,7 +16,7 @@ This article describes the method for expanding the vmstorage disk. Please refer
 
     ![Modify Disk](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/quickstart/images/vmdisk02.png)
 
-4. Select the left navigation menu __Container Storage__ -> __Storage Class__ and find __local-path__ . Click the __⋮__ on the right side of the target and select __Edit__ in the popup menu.
+4. Select the left navigation menu __Container Storage__ -> __Storage Class__ and find __local-path__ . Click the __┇__ on the right side of the target and select __Edit__ in the popup menu.
 
     ![Edit StorageClass](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/quickstart/images/vmdisk03.png)
 
@@ -58,7 +58,7 @@ If the storage volume expansion fails, you can refer to the following method to 
 
 1. Log in to the DCE 5.0 platform as a global service cluster administrator and go to the details of the __kpanda-global-cluster__ cluster.
 
-2. Select the left navigation menu __Workloads__ -> __StatefulSets__ and find the stateful set for __vmstorage__ . Click the __⋮__ on the right side of the target and select __Status__ -> __Stop__ -> __OK__ in the popup menu.
+2. Select the left navigation menu __Workloads__ -> __StatefulSets__ and find the statefulset for __vmstorage__ . Click the __┇__ on the right side of the target and select __Status__ -> __Stop__ -> __OK__ in the popup menu.
 
     ![Stop Status](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/quickstart/images/vmdisk11.png)
 

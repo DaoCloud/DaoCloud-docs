@@ -10,7 +10,7 @@ This page shows how to import repositories.
 ## Prerequisites
 
 - A workspace and a user are required to be created. The user needs to join the workspace and be assigned the __workspace edit__ role.
-  Please refer to [Creating a Workspace](../../../ghippo/user-guide/workspace/workspace.md) and [Users](../../../ghippo/user-guide/access-control/user.md).
+  Refer to [Creating a Workspace](../../../ghippo/user-guide/workspace/workspace.md) and [Users](../../../ghippo/user-guide/access-control/user.md).
 - A Git repository is prepared.
 
 ## Import a repository

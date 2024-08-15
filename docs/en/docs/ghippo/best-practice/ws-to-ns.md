@@ -60,19 +60,19 @@ Workspaces can be mapped to various concepts such as projects, tenants, enterpri
 
 1. Log in to DCE 5.0 as a user with the admin/folder admin role, and click __Global Management__ at the bottom of the left navigation bar.
 
-    
+    ![Global Management](../../images/ws01.png)
 
 1. Click __Workspace and Folder__ in the left navigation bar, and click the __Create Workspace__ button in the upper right corner.
 
-    
+    ![Create Workspaces](../../images/ws02.png)
 
 1. After filling in the workspace name, folder and other information, click __OK__ to complete the creation of the workspace.
 
-    
+    ![OK](../../images/ws03.png)
 
 Tip: If the created namespace already exists in the platform, click a workspace, and under the __Resource Group__ tab, click __Bind Resource__ to directly bind the namespace.
 
-
+![Menu Binding](../../images/across02.png)
 
 ## Prepare the namespace
 
@@ -82,15 +82,15 @@ Follow the steps below to prepare a namespace that is not yet bound to any works
 
 1. Click __Container Management__ at the bottom of the left navigation bar.
 
-    
+    ![Container Management](../../images/crd00.png)
 
 1. Click the name of the target cluster to enter __Cluster Details__ .
 
-    
+    ![Clusters](../../images/crd01.png)
 
 1. Click __Namespace__ on the left navigation bar to enter the namespace management page, and click the __Create__ button on the right side of the page.
 
-    
+    ![Create Namespace](../../images/ns01.png)
 
 1. Fill in the name of the namespace, configure the workspace and tags (optional settings), and click __OK__ .
 
@@ -98,11 +98,11 @@ Follow the steps below to prepare a namespace that is not yet bound to any works
 
         Workspaces are primarily used to divide groups of resources and grant users (groups of users) different access rights to that resource. For a detailed description of the workspace, please refer to [Workspace and Folder](../user-guide/workspace/workspace.md).
 
+    ![fill](../../images/ns02.png)
     
+1. Click __OK__ to complete the creation of the namespace. On the right side of the namespace list, click __┇__ , and you can select __Bind Workspace__ from the pop-up menu.
 
-1. Click __OK__ to complete the creation of the namespace. On the right side of the namespace list, click __⋮__ , and you can select __Bind Workspace__ from the pop-up menu.
-
-    
+    ![Bind](../../images/ns03.png)
 
 ## Bind the namespace to the workspace
 
@@ -110,18 +110,18 @@ In addition to binding in the namespace list, you can also return to __global ma
 
 1. Click __Global Management__ -> __Workspace and Folder__ -> __Resource Group__ , click a workspace name, and click the __Bind Resource__ button.
 
-    
+    ![Bind Resource](../../images/bind01.png)
 
 1. Select the workspace to be bound (multiple choices are allowed), and click __OK__ to complete the binding.
 
-    
+    ![OK](../../images/bind02.png)
 
 ## Add members to the workspace and authorize
 
 1. In __Workspace and Folder__ -> __Authorization__ , click the name of a workspace, and click the __Add Authorization__ button.
 
-    
+    ![Authorization](../../images/wsauth01.png)
 
 1. After selecting the __User/group__ and __Role__ to be authorized, click __OK__ to complete the authorization.
 
-    
+    ![OK](../../images/wsauth02.png)

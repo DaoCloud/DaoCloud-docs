@@ -89,11 +89,11 @@ Lucene supports the following wildcard queries:
 
 1. `*` wildcard: Used to match zero or more characters.
 
-    For example, __te*t__ can match "test", "text", "tempest", etc.
+    For example, __te*t__ can match "test", "text", and "tempest".
 
 2. `?` wildcard: Used to match a single character.
 
-    For example, __te?t__ can match "test", "text", etc.
+    For example, __te?t__ can match "test" and "text".
 
 #### Example
 
@@ -102,7 +102,7 @@ te?t
 ```
 
 In the above example, __te?t__ represents a word that starts with "te", followed by
-any single character, and ends with "t". This query can match words like "test", "text", "tent", etc.
+any single character, and ends with "t". This query can match words like "test", "text", and "tent".
 
 It is important to note that the question mark ( `?` ) represents only a single character.
 If you want to match multiple characters or varying lengths of characters, you can use the
@@ -139,7 +139,7 @@ to represent a range. Here are examples of range queries:
     !!! note
 
         Please note that range queries are applicable only to fields that can be sorted,
-        such as numeric fields, date fields, etc. Also, ensure that you correctly specify
+        such as numeric fields and date fields. Also, ensure that you correctly specify
         the boundary values as the actual value type of the field in your query.
         If you want to perform a range query across the entire index without specifying
         a specific field, you can use the wildcard query `*` instead of a field name.

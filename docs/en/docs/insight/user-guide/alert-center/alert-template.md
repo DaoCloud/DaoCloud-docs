@@ -34,13 +34,13 @@ Alert thresholds based on actual environment conditions.
 
 ## Edit Alert Template
 
-Click **⋮** next to the target rule, then click **Edit** to enter the editing page for the suppression rule.
+Click **┇** next to the target rule, then click **Edit** to enter the editing page for the suppression rule.
 
     ![Edit](../../user-guide/images/template04.png){ width=1000px}
 
 ## Delete Alert Template
 
-Click **⋮** next to the target template, then click **Delete**. Enter the name of the Alert template 
+Click **┇** next to the target template, then click **Delete**. Enter the name of the Alert template 
 in the input box to confirm deletion.
 
     ![Delete](../../user-guide/images/template05.png){ width=1000px}

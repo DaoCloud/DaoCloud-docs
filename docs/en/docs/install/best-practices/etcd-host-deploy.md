@@ -3,9 +3,9 @@ MTPE: windsonsea
 date: 2024-05-11
 ---
 
-# etcd components deployed in host mode and separated from the control plane
+# etcd Components Deployed in Host Mode and Separated from the Control Plane
 
-Starting from version v0.13.0, the installer supports deploying DCE 5.0 in host mode for etcd
+Starting from v0.13.0, the installer supports deploying DCE 5.0 in host mode for etcd
 (i.e., separating the etcd node from the master node). This allows for decoupling from the
 control plane, thereby achieving an independent high-availability etcd.
 

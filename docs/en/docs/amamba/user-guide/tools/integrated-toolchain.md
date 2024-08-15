@@ -14,7 +14,7 @@ Workbench supports tool chain integration from two perspectives: workspace integ
 | Toolchain Name | Description | Authentication | Remarks |
 | --------------- | ----------- | -------------- | -------- |
 | GitLab | After integrating the GitLab repository, it can be used in the pipeline | Personal Access Token, path to obtain: Top right avatar -> **Settings** -> **Access Tokens** -> **Create personal access token** | When creating a personal access token, you must select `api`, and it must be the user's personal token. |
-| Jira | By integrating Jira in the application workbench, it supports tracking of Jira -> Issue | Username/Password | - |
+| Jira | By integrating Jira in the Workbench, it supports tracking of Jira -> Issue | Username/Password | - |
 | Jenkins | After integrating Jenkins, all workspaces will have the pipeline capability for building | Username/Password | Only administrators can integrate, and the entire platform can only integrate Jenkins once. |
 | SonarQube | After integrating SonarQube, code quality scans can be defined in the pipeline | User-Token, path to obtain: **My Account** -> **Profile** -> **Security** -> **Generate Token** (Note: Select User-Token type) | - |
 | Nexus | Nexus is a software repository management tool | Username/Password | - |

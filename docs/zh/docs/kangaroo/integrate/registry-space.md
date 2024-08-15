@@ -32,7 +32,7 @@ Harbor 提供了基于镜像空间（project）的镜像隔离功能。镜像空
 
     ![成功](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/managed04.png)
 
-1. 找到刚创建的镜像空间，点击右侧的 __⋮__ ，可以执行[绑定/解绑工作空间](./bind-to-ws.md)、删除等操作。
+1. 找到刚创建的镜像空间，点击右侧的 __┇__ ，可以执行[绑定/解绑工作空间](./bind-to-ws.md)、删除等操作。
 
     ![其他操作](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/managed05.png)
 

@@ -13,7 +13,7 @@ KubeEdge v1.15.0 mainly adds support for Windows edge nodes, device management b
 
 With the continuous expansion of edge computing application scenarios, there are also more types of devices involved, including many sensors, cameras, and industrial control devices based on the Windows operating system. Therefore, the new version of KubeEdge supports running edge nodes on Windows, covering more usage scenarios.
 
-In version v1.15.0, KubeEdge supports edge nodes running on Windows Server 2019 and supports Windows containers running on edge nodes. This successfully expands the usage scenarios of KubeEdge to the Windows ecosystem. The Windows version of EdgeCore configuration adds a new field called `windowsPriorityClass`, which is set to `NORMAL_PRIORITY_CLASS` by default. Users can download the Windows version of the EdgeCore installation package on the Windows edge host, and after decompressing it, execute the following command to complete the registration and access of the Windows edge node. Users can use `kubectl get nodes` on the cloud side to confirm the status of the edge node and manage the edge Windows applications.
+In v1.15.0, KubeEdge supports edge nodes running on Windows Server 2019 and supports Windows containers running on edge nodes. This successfully expands the usage scenarios of KubeEdge to the Windows ecosystem. The Windows version of EdgeCore configuration adds a new field called `windowsPriorityClass`, which is set to `NORMAL_PRIORITY_CLASS` by default. Users can download the Windows version of the EdgeCore installation package on the Windows edge host, and after decompressing it, execute the following command to complete the registration and access of the Windows edge node. Users can use `kubectl get nodes` on the cloud side to confirm the status of the edge node and manage the edge Windows applications.
 
 ```sh
 edgecore.exe --defaultconfig > edgecore.yaml
@@ -22,11 +22,11 @@ edgecore.exe --config edgecore.yaml
 
 ### Release of Device Management API v1beta1 based on Physical Models
 
-In version v1.15.0, the device management API based on physical models, including Device Model and Device Instance, has been upgraded from v1alpha2 to v1beta1. It adds configurations related to edge device data processing, and combines the northbound device API with the southbound DMI interface to implement device data processing. The main updates of the API include:
+In v1.15.0, the device management API based on physical models, including Device Model and Device Instance, has been upgraded from v1alpha2 to v1beta1. It adds configurations related to edge device data processing, and combines the northbound device API with the southbound DMI interface to implement device data processing. The main updates of the API include:
 
 - In Device Model, fields such as device property description, device property type, device property
   value range, and device property unit are added according to the physical model standard.
-- All built-in protocol configurations in Device Instance are removed, including Modbus, Opc-UA, Bluetooth, etc.
+- All built-in protocol configurations in Device Instance are removed, including Modbus, Opc-UA, and Bluetooth.
   Users can use the extensible Protocol configuration to set their own protocols to achieve device access of
   any protocol. The mappers for built-in protocols such as Modbus, Opc-UA, Bluetooth will not be removed from
   the mappers-go repository, and will be updated to the latest version and maintained continuously.
@@ -36,11 +36,11 @@ In version v1.15.0, the device management API based on physical models, includin
 
 ### Release of Mapper-Framework for DMI Data Plane Custom Development
 
-In version v1.15.0, support for the DMI data plane is provided, mainly carried in the southbound Mapper development framework called Mapper-Framework. Mapper-Framework provides a brand-new Mapper automatic generation framework, which integrates DMI device data management (data plane) capabilities in the framework, allowing devices to process data at the edge or in the cloud, and improving the flexibility of device data management. Mapper-Framework can automatically generate the user's Mapper project, simplifying the complexity of designing and implementing the Mapper, and improving the development efficiency of the Mapper.
+In v1.15.0, support for the DMI data plane is provided, mainly carried in the southbound Mapper development framework called Mapper-Framework. Mapper-Framework provides a brand-new Mapper automatic generation framework, which integrates DMI device data management (data plane) capabilities in the framework, allowing devices to process data at the edge or in the cloud, and improving the flexibility of device data management. Mapper-Framework can automatically generate the user's Mapper project, simplifying the complexity of designing and implementing the Mapper, and improving the development efficiency of the Mapper.
 
 - Support for DMI device data plane management capabilities
 
-    In version v1.15.0, DMI provides support for data plane capabilities, enhancing the ability of edge devices
+    In v1.15.0, DMI provides support for data plane capabilities, enhancing the ability of edge devices
     to process device data. Device data can be directly pushed to the user's database or application on the edge
     according to the configuration, or it can be reported to the cloud through the cloud-edge channel. Users can
     also actively pull device data through the API. The device data management methods are more diverse, solving
@@ -53,7 +53,7 @@ In version v1.15.0, support for the DMI data plane is provided, mainly carried i
 
 - Mapper Automatic Generation Framework Mapper-Framework
 
-    In version v1.15.0, a brand-new Mapper automatic generation framework called Mapper-Framework is proposed.
+    In v1.15.0, a brand-new Mapper automatic generation framework called Mapper-Framework is proposed.
     The framework has integrated functions such as Mapper registration to the cloud, cloud-side delivery of
     Device Model and Device Instance configuration information to the Mapper, and device data transmission
     and reporting. It greatly simplifies the development of the Mapper for users and facilitates the

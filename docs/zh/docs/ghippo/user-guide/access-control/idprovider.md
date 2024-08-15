@@ -14,7 +14,7 @@
 
 - LDAP
 
-    LDAP 指轻型目录访问协议（Lightweight Directory Access Protocol），常用于单点登录，即用户可以在多个服务中使用一个账号密码进行登录。全局管理支持 LDAP 进行身份认证，因此与 DCE 5.0 通过 LDAP 协议建立身份认证的企业 IdP 必须支持 LDAP 协议。关于 LDAP 的详细描述请参见：[欢迎使用 LDAP](http://www.ldap.org.cn/category/install)。
+    LDAP 指轻型目录访问协议（Lightweight Directory Access Protocol），常用于单点登录，即用户可以在多个服务中使用一个账号密码进行登录。全局管理支持 LDAP 进行身份认证，因此与 DCE 5.0 通过 LDAP 协议建立身份认证的企业 IdP 必须支持 LDAP 协议。关于 LDAP 的详细描述请参见：[欢迎使用 LDAP](ldap.md)。
 
 - OIDC
 

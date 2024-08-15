@@ -7,7 +7,7 @@ Installer v0.6.0 and higher versions support this deployment method.
 
 - Read [Deployment Architecture](../commercial/deploy-arch.md) in advance to confirm this deployment mode.
 - Read [Deployment Requirements](../commercial/deploy-requirements.md) in advance to confirm whether the
-  network, hardware, ports, etc. meet the requirements.
+  network, hardware, and ports meet the requirements.
 - Read [Preparation](../commercial/prepare.md) in advance to confirm machine resources and pre-check.
 
 ## Offline installation

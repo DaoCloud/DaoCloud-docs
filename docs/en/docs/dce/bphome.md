@@ -8,8 +8,8 @@ hide:
 This page summarizes the best practice documents for various modules of DCE 5.0.
 These best practices refer to methods and processes that have been widely recognized as
 effective and reliable through long-term experience and validation in the use and management
-of the DCE 5.0 platform. The content covers aspects such as installation, cluster creation and access,
-application management, multi-cloud orchestration, middleware, and more, aiming to help users run
+of the DCE 5.0 platform. The content covers aspects such as installation, cluster creation and integration,
+application management, multicloud management, middleware, and more, aiming to help users run
 and maintain containerized applications more efficiently and stably.
 
 !!! tip "Someone said:"
@@ -36,13 +36,13 @@ and maintain containerized applications more efficiently and stably.
 
     ---
 
-    A container-based DevOps cloud-native application platform, serving as a unified entry point for creating applications
+    A container-based DevOps Cloud Native application platform, serving as a unified entry point for creating applications
 
     - [Implement CI/CD with Pipeline and GitOps](../amamba/quickstart/argocd-jenkins.md)
     - [Code Scanning with Pipeline](../amamba/quickstart/scan-with-pipeline.md)
     - [Integrate Harbor for Image Security Scanning](../amamba/quickstart/scan-with-harbor.md)
     - [Gray Release Practice Based on Contour](../amamba/quickstart/contour-argorollout.md)
-    - [Technical Overview of Application Workbench](../amamba/intro/tech-overview.md)
+    - [Technical Overview of Workbench](../amamba/intro/tech-overview.md)
 
 </div>
 
@@ -54,10 +54,10 @@ and maintain containerized applications more efficiently and stably.
 
     ---
 
-    Building work clusters and nodes based on K8s, which is the core of DCE 5.0
+    Building worker clusters and nodes based on K8s, which is the core of DCE 5.0
 
-    - [Create Ubuntu Work Cluster on CentOS](../kpanda/best-practice/create-ubuntu-on-centos-platform.md)
-    - [Create RedHat 9.2 Work Cluster on CentOS](../kpanda/best-practice/create-redhat9.2-on-centos-platform.md)
+    - [Create Ubuntu Worker Cluster on CentOS](../kpanda/best-practice/create-ubuntu-on-centos-platform.md)
+    - [Create RedHat 9.2 Worker Cluster on CentOS](../kpanda/best-practice/create-redhat9.2-on-centos-platform.md)
     - [Migrate from DCE 4.0 to DCE 5.0](../kpanda/best-practice/dce4-5-migration.md)
     - [Deploy and Upgrade Kubean Backward Compatible Versions](../kpanda/best-practice/kubean-low-version.md)
     - [Use NVIDIA GPU on DCE 5.0](../kpanda/user-guide/gpu/nvidia/index.md)
@@ -68,10 +68,10 @@ and maintain containerized applications more efficiently and stably.
 
     Adopting a native multi-cluster architecture for easy creation and access of K8s clusters
 
-    - [Add Heterogeneous Nodes to Work Clusters](../kpanda/best-practice/multi-arch.md)
-    - [Offline Upgrade of Work Clusters](../kpanda/best-practice/update-offline-cluster.md)
-    - [Expand Control Nodes of Work Clusters](../kpanda/best-practice/add-master-node.md)
-    - [Replace the First Control Node of Work Clusters](../kpanda/best-practice/replace-first-master-node.md)
+    - [Add Heterogeneous Nodes to Worker Clusters](../kpanda/best-practice/multi-arch.md)
+    - [Offline Upgrade Worker Clusters](../kpanda/best-practice/update-offline-cluster.md)
+    - [Expand Controller Nodes of Worker Clusters](../kpanda/best-practice/add-master-node.md)
+    - [Replace the First Controller Node of Worker Clusters](../kpanda/best-practice/replace-first-master-node.md)
     - [Expand Worker Nodes of Global Service Clusters](../kpanda/best-practice/add-worker-node-on-global.md)
 
 - :material-warehouse:{ .lg .middle } __Container Registry__
@@ -81,9 +81,9 @@ and maintain containerized applications more efficiently and stably.
     Supports multi-instance image hosting services, including Harbor and Docker registries
 
     - [Choosing the Access Type for Managed Harbor](../kangaroo/best-practice/managed-harbor-select-access-type.md)
-    - [Login to Insecure Image Repositories](../kangaroo/best-practice/insecure_registry.md)
+    - [Login to Insecure Container Registries](../kangaroo/best-practice/insecure_registry.md)
     - [Harbor Nginx Configuration Practice](../kangaroo/best-practice/harbor-nginx.md)
-    - [Image Repository Capacity Resource Planning](../kangaroo/best-practice/capacity-planning.md)
+    - [Container Registry Capacity Resource Planning](../kangaroo/best-practice/capacity-planning.md)
     - [Deploy Harbor in LB Mode](../kangaroo/best-practice/lb.md)
 
 - :material-dot-net:{ .lg .middle } __Cloud Native Network__
@@ -114,11 +114,11 @@ and maintain containerized applications more efficiently and stably.
 
     ---
 
-    **Multicloud Management** achieves centralized management of multi-cloud and hybrid cloud.
+    **Multicloud Management** achieves centralized management of multicloud and hybrid cloud.
     **Virtual Machines** is a containerized virtual machine platform built on KubeVirt.
 
     - [Cross-Cluster Elastic Scaling](../kairship/best-practice/fhpa.md)
-    - [One-Click Conversion from DCE 4.0 to DCE 5.0 Multi-Cloud Applications](../kairship/best-practice/one-click-conversion.md)
+    - [One-Click Conversion from DCE 4.0 to DCE 5.0 Multicloud Applications](../kairship/best-practice/one-click-conversion.md)
     - [Import VMware Virtual Machines to DCE 5.0](../virtnest/import/import-ubuntu.md)
 
 </div>
@@ -146,26 +146,26 @@ and maintain containerized applications more efficiently and stably.
     Mainly provides functionalities in two dimensions: microservices governance center and microservices gateway
 
     - [Experience Microservices Governance with Sample Applications](../skoala/best-practice/use-skoala-01.md)
-    - [Use JWT Plugin in Cloud-Native Microservices](../skoala/best-practice/plugins/jwt.md)
+    - [Use JWT Plugin in Cloud Native Microservices](../skoala/best-practice/plugins/jwt.md)
     - [Microservices Gateway Accesses Authentication Server](../skoala/best-practice/auth-server.md)
-    - [Gateway API Strategy](../skoala/best-practice/gateway02.md)
+    - [Gateway API policy](../skoala/best-practice/gateway02.md)
     - [Access Microservices via Gateway](../skoala/best-practice/gateway01.md)
 
 - :material-table-refresh:{ .lg .middle } __Service Mesh__
 
     ---
 
-    Built on Istio open-source technology, aimed at next-generation service mesh for cloud-native applications
+    Built on Istio open-source technology, aimed at next-generation service mesh for Cloud Native applications
 
     - [Service Mesh Vulnerability Fix Standards and Plans](../mspider/intro/sla.md)
     - [Service Mesh Application Access Specification](../mspider/intro/app-spec.md)
     - [Complete Directed Service Access Restriction Using Mesh](../mspider/best-practice/use-egress-and-authorized-policy.md)
     - [Supported Custom Workload Types for Mesh Access](../mspider/best-practice/use-custom-workloads.md)
-    - [Precise Control of Multi-Cloud Internet Service Access and Traffic](../mspider/best-practice/multinet-control.md)
+    - [Precise Control of Multicloud Internet Service Access and Traffic](../mspider/best-practice/multinet-control.md)
 
 </div>
 
-## Data Services and Management
+## Middleware and Management
 
 <div class="grid cards" markdown>
 
@@ -203,7 +203,7 @@ and maintain containerized applications more efficiently and stably.
     - [Deploy NFS for Data Preheating](../baize/best-practice/deploy-nfs-in-worker.md)
     - [Update Notebook Built-in Images](../baize/best-practice/change-notebook-image.md)
     - [Checkpoint Mechanism and Usage](../baize/best-practice/checkpoint.md)
-    - [Intelligent Device Control](../kant/best-practice/device-control.md)
+    - [Intelligent Device Control](../kant/best-practice/custom-device-control.md)
     - [Develop Device Driver Applications Mapper](../kant/best-practice/develop-device-mapper.md)
 
 </div>

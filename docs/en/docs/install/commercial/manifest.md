@@ -173,12 +173,12 @@ It includes components related to the infrastructure and products involved in th
 | components.insight              | Observability                                       |
 | components.insight-agent        | Data collection component for observability         |
 | components.ipavo                | Dashboard                                           |
-| components.kairship             | MultiCloud Management                               |
+| components.kairship             | Multicloud Management                               |
 | components.amamba               | Workbench                                           |
 | components.jenkins              | Pipeline engine component for Workbench             |
 | components.skoala               | Microservice engine                                 |
 | components.mspider              | Service mesh                                        |
-| components.mcamel-\*            | Middleware including ES, Kafka, MinIO, etc.         |
+| components.mcamel-\*            | Middleware including ES, Kafka, and MinIO           |
 | components.kangaroo             | Container registry                                  |
 | components.gmagpie              | Billing and reporting                               |
 | components.dowl                 | Cluster security                                    |

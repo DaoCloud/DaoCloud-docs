@@ -7,7 +7,7 @@ hide:
 
 如果发现 Notebook 冗余、过期或因其他缘故不再需要，可以从 Notebook 列表中删除。
 
-1. 在 Notebook 列表右侧点击 **⋮** ，在弹出菜单中选择 **删除** 。
+1. 在 Notebook 列表右侧点击 **┇** ，在弹出菜单中选择 **删除** 。
 
     ![删除](../../images/nb-delete01.png)
 

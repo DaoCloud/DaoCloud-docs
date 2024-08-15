@@ -16,7 +16,9 @@ to trim the offline package. This allows customers to decide which products' off
   and their corresponding product codes. Refer to the information in the `components` section of
   the [product list file manifest.yaml](../commercial/manifest.md).
 
-- The `kubean`, `ghippo`, and `kpanda` components must exist, meaning these three components will be retained by default.
+- The [kubean](../../community/kubean.md), [ghippo](../../ghippo/intro/index.md),
+  and [kpanda](../../kpanda/intro/index.md) components must exist, meaning these
+  three components will be retained by default.
 
 ## Operating Guide
 

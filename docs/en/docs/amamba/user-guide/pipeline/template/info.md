@@ -18,13 +18,13 @@ The pipeline template file mainly contains two parts: __parameterDefinitions__ a
 ## Supported Parameter Types
 
 - boolean: a Boolean value, with a default value of either __true__ or __false__
-- choice: a drop-down list, must provide a default value, for example,
+- choice: a drop-down list, you need to populate `default` with multiple lines, for example,
 
     ```yaml
     type: choice
-    default:
-      - choice 1
-      - choice 2
+    default: |
+      choice 1
+      choice 2
     ```
 
 - credential: a credential, which can obtain the credential list in the current workspace

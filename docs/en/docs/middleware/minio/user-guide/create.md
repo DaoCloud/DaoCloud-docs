@@ -38,7 +38,7 @@ hide:
 
     !!! warning
 
-       __After a MinIO instance is successfully created, scaling replicas and modifying disk usage are not supported. Please configure resources carefully.__    
+        After a MinIO instance is successfully created, scaling replicas and modifying disk usage are not supported. Please configure resources carefully.   
 
     ![Spec settings](../images/minio-create04.png)
 

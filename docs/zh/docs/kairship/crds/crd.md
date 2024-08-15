@@ -3,9 +3,9 @@ hide:
   - toc
 ---
 
-# 管理多云自定义资源
+# 创建多云自定义资源（CRD）
 
-参照以下步骤创建一个多云自定义资源（CRD）。
+您可以通过图形界面的表单创建 CRD：
 
 1. 在左侧导航栏中，点击 __多云自定义资源__ ，进入自定义资源页面，点击右上角的 __YAML 创建__ 按钮。
 
@@ -60,6 +60,8 @@ spec:
 
 ## 通过 YAML 创建 CR 实例
 
+您还可以直接通过 YAML 创建 CR 实例。
+
 1. 进入自定义资源详情，点击 CR 列表右侧的 __YAML 创建__ 按钮。
 
     ![创建cr](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/crd05.png)
@@ -68,7 +70,7 @@ spec:
 
     ![yaml创建cr](../images/crd06.png)
 
-3. 返回 CR 实例列表页，即可查看刚刚创建的名为 __my-new-cron-obiext__ 的 CR 实例。
+3. 返回 CR 实例列表页，即可查看刚刚创建的名为 __my-new-cron-object__ 的 CR 实例。
 
     ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/crd08.png)
 

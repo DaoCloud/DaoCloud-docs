@@ -36,7 +36,7 @@
 
     ![op](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/yaml03.png)
 
-页面会自动返回多云工作负载列表，点击列表右侧的 __⋮__ ，可以编辑修改 YAML，还可以暂停、重启和删除该负载。
+页面会自动返回多云工作负载列表，点击列表右侧的 __┇__ ，可以编辑修改 YAML，还可以暂停、重启和删除该负载。
 
 ![more actions](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deploy12.png)
 

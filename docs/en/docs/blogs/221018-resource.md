@@ -1,6 +1,6 @@
 # 5.0 Introduction to Resource Management Capabilities
 
-As the scale of the enterprise expands, the resources under management and control must become increasingly complex: thousands of servers, machinery and equipment, electronic devices and other tangible fixed assets; daily office software, professional finance/personnel/OA/project management/development, etc. Software; management, employees, staff, etc. resources.
+As the scale of the enterprise expands, the resources under management and control must become increasingly complex: thousands of servers, machinery and equipment, electronic devices and other tangible fixed assets; daily office software, professional finance, personnel, OA, project management, and development. Software; management, employees, staff, and resources.
 
 How to efficiently manage these resources?
 
@@ -53,7 +53,7 @@ After installing DCE 5.0, the platform will automatically create a root level fo
 ### Hierarchy
 
 The platform administrator creates a new hierarchy under the root hierarchy based on the existing hierarchy of the enterprise.
-Hierarchy can be mapped to concepts such as enterprise projects, environments, suppliers, etc. Hierarchy has a hierarchical structure and authority inheritance, and is a node of the resource hierarchy structure of the resource management module.
+Hierarchy can be mapped to concepts such as enterprise projects, environments, and suppliers. Hierarchy has a hierarchical structure and authority inheritance, and is a node of the resource hierarchy structure of the resource management module.
 A hierarchy can contain workspaces, other hierarchies, or a combination of both.
 The newly created hierarchy must have a parent, and the lower hierarchy and workspace will inherit the permissions of the parent file, so the actual permissions of the user in the hierarchy or workspace are derived from the permissions inherited from the parent hierarchy and the permissions obtained at this node. and.
 
@@ -62,7 +62,7 @@ The newly created hierarchy must have a parent, and the lower hierarchy and work
 Workspace is a resource isolation unit in the resource management module, which has two modes: resource group and shared resource, and is directly associated with resources.
 A workspace has one and only one parent level, and the workspace and the resources under it will inherit the permissions of the parent level.
 
-In DCE 5.0, due to the different authorization methods of resources, resources that strongly depend on workspace authorization, such as gateways, pipelines, etc., are derived; and resources that can be selectively bound to workspaces, such as Cluster and Namespace.
+In DCE 5.0, due to the different authorization methods of resources, resources that strongly depend on workspace authorization, such as gateways, and pipelines are derived; and resources that can be selectively bound to workspaces, such as Cluster and Namespace.
 
 Since the resources of Workbench, microservice engine, and service mesh take the workspace as the top-level concept, the resources are completely dependent on the workspace for authorization, so the resources will be automatically bound to a certain workspace, and the owner of the workspace is The owner of the resource.
 Such resources do not need to be manually bound, and the resources do not need to be displayed in the resource group of the workspace. The prerequisite for users (groups) to use resources is to be granted the corresponding permissions in the workspace.
@@ -92,7 +92,7 @@ Enterprise users who need to manage K8S, microservice engine, service mesh and o
 
 ### Solve what problem
 
-1. There are many employees in the enterprise and there is a multi-level structure, such as multi-level suppliers, multi-level departments, etc., and resources are often concentrated in the hands of a small number of operation and maintenance personnel. Resource distribution and resource management consume a lot of manpower and material resources
+1. There are many employees in the enterprise and there is a multi-level structure, such as multi-level suppliers, and multi-level departments, and resources are often concentrated in the hands of a small number of operation and maintenance personnel. Resource distribution and resource management consume a lot of manpower and material resources
 2. The hierarchical structure of the enterprise is changeable, unable to flexibly respond to changes in personnel authority and resource ownership brought about by departmental adjustments
 3. Project-driven enterprises need multiple authorizations for the same group of people and the same resources
 4. For the same resource, it is a security risk for multiple people to have the same authority

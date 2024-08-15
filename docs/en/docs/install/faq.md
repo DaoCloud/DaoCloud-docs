@@ -9,7 +9,7 @@ This page summarizes common issues with the installer and provides troubleshooti
 
 ## Troubleshooting DCE 5.0 Platform Interface Unavailability with diag.sh Script
 
-Since installer version v0.12.0, a new diag.sh script has been added to facilitate troubleshooting when the DCE 5.0 platform interface is unavailable.
+Since installer v0.12.0, a new diag.sh script has been added to facilitate troubleshooting when the DCE 5.0 platform interface is unavailable.
 
 Run the command:
 

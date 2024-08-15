@@ -15,6 +15,6 @@ You can create a multicloud deployment either from an [image](deployment.md) or 
     - Select __Pause__ to temporarily stop the deployment from running.
     - Select __Restart__ to restart the deployment.
 
-        ![Updating Stateless Workload](../images/deploy-update01.png)
+        ![Updating deployment](../images/deploy-update01.png)
 
 2. After making the necessary changes, click __OK__ to complete the update.

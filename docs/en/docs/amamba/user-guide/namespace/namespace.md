@@ -49,7 +49,7 @@ A namespace is an abstraction used in Kubernetes to isolate resources.
 
 ## Namespace Quotas
 
-In addition to CPU requests, CPU limits, memory requests, memory limits, total storage requests, and storage volume claims resource quotas required when creating a namespace, other resource quotas can also be set in the namespace quota management. For example, resources such as container groups, stateless loads, stateful loads, ordinary tasks, and scheduled tasks under the namespace.
+In addition to CPU requests, CPU limits, memory requests, memory limits, total storage requests, and storage volume claims resource quotas required when creating a namespace, other resource quotas can also be set in the namespace quota management. For example, resources such as pods, deployments, statefulsets, jobs, and cronjobs under the namespace.
 
 1. On the namespace list page, select a namespace and click __Resource Quotas__ .
 

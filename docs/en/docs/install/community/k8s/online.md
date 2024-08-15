@@ -34,10 +34,10 @@ This page will guide you to install DCE Community package online in a standard K
 1. Download the `dce5-installer` binary file on the controller node of the Kubernetes cluster
    (you can also [download it via browser](../../../download/index.md)).
 
-    Take VERSION=v0.18.0 as an example.
+    Take VERSION=v0.19.0 as an example.
 
     ```shell
-    export VERSION=v0.18.0
+    export VERSION=v0.19.0
 
     # For ARM, replace `dce5-installer-$VERSION` with `dce5-installer-$VERSION-linux-arm64`
 
@@ -85,7 +85,7 @@ This page will guide you to install DCE Community package online in a standard K
 
     !!! note
 
-        - For `clusterConfig.yaml` file settings, refer to [Online Installation](online.md#_2).
+        - For `clusterConfig.yaml` file settings, refer to [Online Installation](online.md#download-and-install).
         - `-z` minimal install
         - `-c` specifies the cluster configuration file. You don't need to specify `-c`
           when using NodePort to expose the console.

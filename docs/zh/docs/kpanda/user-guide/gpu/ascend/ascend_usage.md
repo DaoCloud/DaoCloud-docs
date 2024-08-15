@@ -4,8 +4,12 @@
 
 ## 前提条件
 
-- 当前集群已[安装昇腾（Ascend） NPU 驱动](ascend_driver_install.md)。
+- 当前 NPU 节点已安装昇腾 （Ascend）驱动。
+- 当前 NPU 节点已安装 Ascend-Docker-Runtime 组件。
+- 当前集群已安装 NPU MindX DL 套件。
 - 当前集群内 NPU 卡未进行任何虚拟化操作或被其它应用占用。
+  
+请参考[昇腾 NPU 组件安装文档](ascend_driver_install.md)安装基础环境。
 
 ## 快速使用
 
@@ -21,7 +25,7 @@
 
 2. 准备基础镜像
 
-    此例使用 Ascent-pytorch 基础镜像，可访问[昇腾镜像仓库](https://ascendhub.huawei.com/#/index)获取。
+    此例使用 Ascent-pytorch 基础镜像，可访问[昇腾镜像仓库](https://www.hiascend.com/developer/ascendhub)获取。
 
 3. 准备 YAML
 
@@ -55,16 +59,16 @@
                   bash sample_run.sh
               resources:
                 requests:
-                  huawei.com/Ascend910: 1 # Number of the Ascend 910 Processors.
+                  huawei.com/Ascend910: 1 # Number of the Ascend 910 Processors
                 limits:
-                  huawei.com/Ascend910: 1 # The value should be the same as that of requests .
+                  huawei.com/Ascend910: 1 # The value should be the same as that of requests
               volumeMounts:
                 - name: hiai-driver
                   mountPath: /usr/local/Ascend/driver
                   readOnly: true
                 - name: slog
                   mountPath: /var/log/npu/conf/slog/slog.conf
-                - name: localtime # The container time must be the same as the host time.
+                - name: localtime # The container time must be the same as the host time
                   mountPath: /etc/localtime
                 - name: dmp
                   mountPath: /var/dmp_daemon
@@ -129,9 +133,12 @@
     kubectl apply -f ascend-demo.yaml
     ```
 
-    查看 Pod 运行状态：![昇腾 Pod 状态](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/ascend-demo-pod-status.png)
+    查看 Pod 运行状态：
+    
+    ![昇腾 Pod 状态](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/ascend-demo-pod-status.png)
 
-    Pod 成功运行后，查看日志结果。在屏幕上的关键提示信息示例如下图，提示信息中的 Label 表示类别标识，Conf 表示该分类的最大置信度，Class 表示所属类别。这些值可能会根据版本、环境有所不同，请以实际情况为准：
+    Pod 成功运行后，查看日志结果。在屏幕上的关键提示信息示例如下图，提示信息中的 Label 表示类别标识，
+    Conf 表示该分类的最大置信度，Class 表示所属类别。这些值可能会根据版本、环境有所不同，请以实际情况为准：
 
     ![昇腾 demo 运行结果](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/ascend-demo-pod-result.png)
 

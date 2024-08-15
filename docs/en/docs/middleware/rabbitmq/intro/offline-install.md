@@ -8,15 +8,15 @@ This page explains how to install or upgrade the Middleware - RabbitMQ module af
 
 ## Load Images from Installation Package
 
-You can load the images in one of the following two ways. When an image repository exists in the environment, it is recommended to choose the chart-syncer to synchronize images to the image repository as it is more efficient and convenient.
+You can load the images in one of the following two ways. When an container registry exists in the environment, it is recommended to choose the chart-syncer to synchronize images to the container registry as it is more efficient and convenient.
 
-### Synchronize Images to Image Repository Using chart-syncer
+### Synchronize Images to Container Registry Using chart-syncer
 
 1. Create __load-image.yaml__ .
 
     !!! note
 
-        All parameters in this YAML file are required. You need a private image repository and modify the relevant configuration.
+        All parameters in this YAML file are required. You need a private container registry and modify the relevant configuration.
 
     === "Installed Chart Repo"
 
@@ -26,18 +26,18 @@ You can load the images in one of the following two ways. When an image reposito
         source:
           intermediateBundlesPath: mcamel-offline # This is the relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline package.
         target:
-          containerRegistry: 10.16.10.111 # Change it to your image repository URL
-          containerRepository: release.daocloud.io/mcamel # Change it to your image repository
+          containerRegistry: 10.16.10.111 # Change it to your container registry URL
+          containerRepository: release.daocloud.io/mcamel # Change it to your container registry
           repo:
             kind: HARBOR # It can also be any other supported Helm Chart repository category
             url: http://10.16.10.111/chartrepo/release.daocloud.io # Change it to the chart repo URL
             auth:
-            username: "admin" # Your image repository username
-            password: "Harbor12345" # Your image repository password
+            username: "admin" # Your container registry username
+            password: "Harbor12345" # Your container registry password
           containers:
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
         ```
 
     === "Not Installed Chart Repo"
@@ -48,15 +48,15 @@ You can load the images in one of the following two ways. When an image reposito
         source:
           intermediateBundlesPath: mcamel-offline # This is the relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline package.
         target:
-          containerRegistry: 10.16.10.111 # Change it to your image repository URL
-          containerRepository: release.daocloud.io/mcamel # Change it to your image repository
+          containerRegistry: 10.16.10.111 # Change it to your container registry URL
+          containerRepository: release.daocloud.io/mcamel # Change it to your container registry
           repo:
             kind: LOCAL
             path: ./local-repo # Local path of the chart
           containers:
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
         ```
 
 1. Run the command to synchronize images.
@@ -155,10 +155,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade method a
 
     1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in mcamel-rabbitmq.yaml with the URL of the image repository you are currently using.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in mcamel-rabbitmq.yaml with the URL of the container registry you are currently using.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your-registry}
         ```
 
         ```shell
@@ -181,10 +181,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade method a
 
     1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in mcamel-rabbitmq.yaml with the URL of the image repository you are currently using.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in mcamel-rabbitmq.yaml with the URL of the container registry you are currently using.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your-registry}
         ```
 
         ```shell

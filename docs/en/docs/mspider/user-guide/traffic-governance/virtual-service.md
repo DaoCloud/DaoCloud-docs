@@ -1,6 +1,6 @@
 # Virtual Service
 
-In the Virtual Service, you can use various matching methods such as port, host, header, etc., to route and distribute requests from different regions and users to specific service versions, divided by weight.
+In the Virtual Service, you can use various matching methods such as port, host, and header to route and distribute requests from different regions and users to specific service versions, divided by weight.
 
 Virtual Service provides routing support for three protocols: HTTP, TCP, and TLS.
 
@@ -40,7 +40,7 @@ The specific steps for creating using the graphical wizard are as follows (refer
 
     ![Routing Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/virtualserv03.png)
 
-4. Return to the Virtual Service list, and there will be a prompt indicating successful creation. On the right side of the Virtual Service list, click the __⋮__ in the "Actions" column to perform more operations from the pop-up menu.
+4. Return to the Virtual Service list, and there will be a prompt indicating successful creation. On the right side of the Virtual Service list, click the __┇__ in the "Actions" column to perform more operations from the pop-up menu.
 
     ![More Actions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/virtualserv04.png)
 

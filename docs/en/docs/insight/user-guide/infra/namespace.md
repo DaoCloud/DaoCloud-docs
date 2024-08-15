@@ -21,14 +21,14 @@ With namespaces as the dimension, you can quickly query resource consumption and
     2. **Resource Overview**: Provides statistics on the number of normal and total workloads within the selected namespace.
     3. **Incidents**: Displays the number of alerts generated within the selected namespace.
     4. **Events**: Shows the number of Warning level events within the selected namespace in the past 24 hours.
-    5. **Resource Consumption**: Provides the sum of CPU and memory usage for container groups within the selected namespace, along with the CPU and memory quota information.
+    5. **Resource Consumption**: Provides the sum of CPU and memory usage for Pods within the selected namespace, along with the CPU and memory quota information.
 
 
 ### Metric Explanations
 
 | Metric Name | Description |
 | -- | -- |
-| CPU Usage | The sum of CPU usage for container groups within the selected namespace. |
-| Memory Usage | The sum of memory usage for container groups within the selected namespace. |
-| Container Group CPU Usage | The CPU usage for each container group within the selected namespace. |
-| Container Group Memory Usage | The memory usage for each container group within the selected namespace. |
+| CPU Usage | The sum of CPU usage for Pods within the selected namespace. |
+| Memory Usage | The sum of memory usage for Pods within the selected namespace. |
+| Pod CPU Usage | The CPU usage for each Pod within the selected namespace. |
+| Pod Memory Usage | The memory usage for each Pod within the selected namespace. |

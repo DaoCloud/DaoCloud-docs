@@ -24,7 +24,7 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
 
     ![工作负载边车管理](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/pn01.png)
 
-1. 点击某个负载右侧的 __⋮__ ，在弹出菜单中选择 __流量透传设置__ 。
+1. 点击某个负载右侧的 __┇__ ，在弹出菜单中选择 __流量透传设置__ 。
 
     ![点击菜单项](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/pn02.png)
 
@@ -99,7 +99,7 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
         HTTP/1.0 200 OK
         Content-Type: text/html; charset=utf-8
         Content-Length: 65
-        Server: Werkzeug/0.12.2 Python/2.7.13 # (1)
+        Server: Werkzeug/0.12.2 Python/2.7.13 # (1)!
         Date: Tue, 07 Feb 2023 03:08:10 GMT
         ```
 

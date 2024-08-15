@@ -8,15 +8,15 @@ This page explains how to install or upgrade the ElasticSearch module of the Mid
 
 ## Loading Images from Installation Package
 
-You can load the images using one of the following two methods. It is recommended to use chart-syncer to sync the images to your image repository when there is an image repository available, as it is more efficient and convenient.
+You can load the images using one of the following two methods. It is recommended to use chart-syncer to sync the images to your container registry when there is an container registry available, as it is more efficient and convenient.
 
-### Syncing Images to Image Repository Using chart-syncer
+### Syncing Images to Container Registry Using chart-syncer
 
 1. Create __load-image.yaml__ file.
 
     !!! note  
 
-        All the parameters in this YAML file are mandatory. You need to have a private image repository and modify the relevant configurations.
+        All the parameters in this YAML file are mandatory. You need to have a private container registry and modify the relevant configurations.
 
     === "Installed chart repo"
 
@@ -26,18 +26,18 @@ You can load the images using one of the following two methods. It is recommende
         source:
           intermediateBundlesPath: mcamel-offline # The relative path to where the charts-syncer command will be executed, not the relative path between this YAML file and the offline package
         target:
-          containerRegistry: 10.16.10.111 # Change it to your image repository URL
-          containerRepository: release.daocloud.io/mcamel # Change it to your image repository
+          containerRegistry: 10.16.10.111 # Change it to your container registry URL
+          containerRepository: release.daocloud.io/mcamel # Change it to your container registry
           repo:
             kind: HARBOR # It can also be any other supported Helm Chart repository type
             url: http://10.16.10.111/chartrepo/release.daocloud.io # Change it to your chart repo URL
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
           containers:
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
         ```
 
     === "Uninstalled chart repo"
@@ -48,15 +48,15 @@ You can load the images using one of the following two methods. It is recommende
         source:
           intermediateBundlesPath: mcamel-offline # The relative path to where the charts-syncer command will be executed, not the relative path between this YAML file and the offline package
         target:
-          containerRegistry: 10.16.10.111 # Change it to your image repository URL
-          containerRepository: release.daocloud.io/mcamel # Change it to your image repository
+          containerRegistry: 10.16.10.111 # Change it to your container registry URL
+          containerRepository: release.daocloud.io/mcamel # Change it to your container registry
           repo:
             kind: LOCAL
             path: ./local-repo # Local path to the chart
           containers:
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
         ```
 
 2. Run the command to sync the images.
@@ -155,10 +155,10 @@ There are two methods to upgrade. Choose the corresponding upgrade method based 
 
 1. Run `helm upgrade` .
 
-    Before upgrading, it is recommended to replace the `global.imageRegistry` field in __mcamel-elasticsearch.yaml__ with the URL of the image repository you are currently using.
+    Before upgrading, it is recommended to replace the `global.imageRegistry` field in __mcamel-elasticsearch.yaml__ with the URL of the container registry you are currently using.
 
     ```shell
-    export imageRegistry={your image repository}
+    export imageRegistry={your-registry}
     ```
 
     ```shell
@@ -181,10 +181,10 @@ There are two methods to upgrade. Choose the corresponding upgrade method based 
 
     1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in __mcamel-elasticsearch.yaml__ with the URL of the image repository you are currently using.
+        Before upgrading, it is recommended to replace the `global.imageRegistry` field in __mcamel-elasticsearch.yaml__ with the URL of the container registry you are currently using.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your-registry}
         ```
 
         ```shell

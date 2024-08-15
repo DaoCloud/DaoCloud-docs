@@ -30,12 +30,12 @@ This article explains how to upload Helm charts. See the steps below.
             helm cm-push ${charts-dir} ${HELM_REPO_URL} --username ${username} --password ${password}
             ```
 
-            Parameter descriptions:
+            Argument descriptions:
 
-            - `charts-dir`: The directory of the Helm Chart, you can also directly push a packaged chart (i.e., a .tgz file).
-            - `HELM_REPO_URL`: URL of the Helm repository.
-            - `username`/`password`: Username and password with push permissions for the Helm repository.
-            - If using https access, add the parameter `--insecure`
+            - `charts-dir`: The directory of the Helm Chart, or the packaged Chart (i.e., .tgz file).
+            - `HELM_REPO_URL`: The URL of the Helm repository.
+            - `username`/`password`: The username and password for the Helm repository with push permissions.
+            - If you want to access via HTTPS and skip the certificate verification, you can add the argument `--insecure`.
 
     === "Upload with Web Page"
 
@@ -47,13 +47,20 @@ This article explains how to upload Helm charts. See the steps below.
 
         2. Go to the relevant project, select the __Helm Charts__ tab, click the __Upload__ button on the page to upload the Helm Chart.
 
-           ![upload Helm Chart](../../images/upload-helm-01.png)
+            ![upload Helm Chart](../../images/upload-helm-01.png)
 
-3. Synchronize remote repository data
+3. Sync Remote Repository Data
 
-    If the cluster settings do not enable __Automatic Helm Repository Refresh__ , manual synchronization is required. The general steps are:
+    === "Manual Sync"
+    
+        By default, the cluster does not enable **Helm Repository Auto-Refresh**, so you need to perform a manual sync operation. The general steps are:
 
-    Go to __Helm Apps__ -> __Helm Repositories__ , click the __Sync Repository__
-    action button on the right side of the corresponding repository list to complete the repository data synchronization.
+        Go to **Helm Applications** -> **Helm Repositories**, click the **┇** button on the right side of the repository list, and select **Sync Repository** to complete the repository data synchronization.
 
-    ![upload Helm Chart](../../images/upload-helm-02.png)
+        ![Upload Helm Chart](../../images/upload-helm-02.png)
+
+    === "Auto Sync"
+    
+        If you need to enable the Helm repository auto-sync feature, you can go to **Cluster Maintenance** -> **Cluster Settings** -> **Advanced Settings** and turn on the Helm repository auto-refresh switch.
+
+        <!-- add image later -->

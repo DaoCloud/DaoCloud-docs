@@ -36,7 +36,7 @@ hide:
 
     !!! warning
 
-       __MinIO 实例创建成功后，不支持扩容副本和修改磁盘用量，请谨慎配置资源。__
+        MinIO 实例创建成功后，不支持扩容副本和修改磁盘用量，请谨慎配置资源。
 
     ![配置规格](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create07.png)
 

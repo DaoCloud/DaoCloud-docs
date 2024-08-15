@@ -2,11 +2,12 @@
 
 ## 介绍
 
-随着微服务进程发展，为了满足应用隔离、高可用/容灾以及运维管理的需求，许多企业选择部署多个 Kubernetes（K8s）集群。然而，这种多集群部署带来了一个问题：一些应用依赖于其他 K8s 集群中的微服务，需要实现集群间的通信。具体而言，需要从一个集群的 Pod 去访问另外一个集群的 Pod 或者 Service。
+随着微服务进程发展，为了满足应用隔离、高可用/容灾以及运维管理的需求，许多企业选择部署多个 Kubernetes（K8s）集群。然而，这种多集群部署带来了一个问题：一些应用依赖于其他 K8s 集群中的
+微服务，需要实现集群间的通信。具体而言，需要从一个集群的 Pod 去访问另外一个集群的 Pod 或者 Service。
 
 ## 前提条件
 
-请确认操作系统 Kernel 版本号 >= 4.9.17，推荐 5.10+。查看并安装升级最新的 Linux 内核版本，您可以按照如下命令进行操作：
+请确认操作系统 Kernel 版本号 >= v4.9.17，推荐 v5.10+。查看并安装升级最新的 Linux 内核版本，您可以按照如下命令进行操作：
 
 1. 查看当前内核版本：
 
@@ -43,7 +44,7 @@
 
     ![创建集群1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster1.png)
 
-    - 集群 cluster01 的网络插件选择 cilium
+    - 集群 cluster01 的网络插件选择 Cilium
     - 添加两个参数 `cluster-id`和 `cluster-name`
     - 其他均使用默认配置项
 
@@ -62,7 +63,7 @@
     ![创建service](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster4.png)
 
     - 集群 cluster01 访问类型选择 NodePort， 便于外部访问
-    - 命名空间选择 `kube-system`，即 API Server 所在命名空间
+    - 命名空间选择 kube-system，即 API Server 所在命名空间
     - 标签选择器筛选 API Server 组件，可返回查看 API Server 的选择器
     - 配置 Service 的访问端口，容器端口为 6443
     - 获取该 Service 的外部访问链接
@@ -77,13 +78,13 @@
 
 通过 `vi` 命令开始编辑 集群 cluster01 和集群  cluster02 的  `kubeconfig` 文件:
 
-    ```bash
-    vi $HOME/.kube/config
-    ```
+```bash
+vi $HOME/.kube/config
+```
 
 1. 在两个集群 cluster01 和 cluster02 里分别添加新的 `cluster`、`context`、`user` 信息。
 
-    - 在`clusters`下面添加新的`cluster`信息：两个集群原有的 CA 颁发机构不变；新的 `server`  地址改为上述创建的 API Server Service 地址；`name` 改为两个集群本身的名称：cluster01 和 cluster02。
+    - 在 `clusters` 下面添加新的 `cluster` 信息：两个集群原有的 CA 颁发机构不变；新的 `server`  地址改为上述创建的 API Server Service 地址；`name` 改为两个集群本身的名称：cluster01 和 cluster02。
 
         > API Server Service 的地址可以从 DCE5.0 的页面查看或复制，需要使用 https 协议。
 
@@ -162,7 +163,7 @@
 
 ## 创建演示应用
 
-1. 使用 cilium 官方文档中提供的 [rebel-base](https://github.com/cilium/cilium/blob/main/examples/kubernetes/clustermesh/global-service-example/cluster1.yaml) 应用，复制如下 yaml 文件：
+1. 使用 Cilium 官方文档中提供的 [rebel-base](https://github.com/cilium/cilium/blob/main/examples/kubernetes/clustermesh/global-service-example/cluster1.yaml) 应用，复制如下 yaml 文件：
 
     ```yaml
     apiVersion: apps/v1
@@ -269,10 +270,12 @@
 
     ![查看pod ip](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster12.png)
 
-2. 进入集群 cluster01 详情，点击应用 `rebel-base`  Pod 控制台，`curl` 集群 cluster02 应用 `rebel-base` 的 Pod IP，成功返回 cluster02 信息，说明两个集群中的 Pod 可以相互通信。
+2. 进入集群 cluster01 详情，点击应用 rebel-base 的 __容器组__ -> __控制台__ ，curl 集群 cluster02 应用 rebel-base 的 Pod IP，成功返回
+   cluster02 信息，说明两个集群中的 Pod 可以相互通信。
 
     ![pod 通信](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster13.png)
 
-3. 查看集群 cluster01 的 Service 名称，进入集群 cluster02 的应用 `rebel-base` Pod 控制台，`curl` 对应的 cluster01 的 Service 名称，有些返回内容来自 cluster01，说明两个集群中的 Pod 和 Service 也可以互相通信。
+3. 查看集群 cluster01 的 Service 名称，进入集群 cluster02 应用 rebel-base 的 __容器组__ -> __控制台__ ，`curl` 对应的 cluster01 的 Service 名称，
+   有些返回内容来自 cluster01，说明两个集群中的 Pod 和 Service 也可以互相通信。
 
     ![Pod 和 Service通信](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster14.png)

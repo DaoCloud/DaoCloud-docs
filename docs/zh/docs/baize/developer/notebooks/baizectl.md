@@ -1,23 +1,17 @@
----
-hide:
-  - toc
----
-
 # baizectl 命令行工具使用指南
 
----
-
-## 概述
-
-`baizectl` 是在 DCE 的智能算力模块中专门服务于模型开发者与数据科学家们使用的工具。
-它提供了一系列命令来帮助用户管理分布式训练作业、查看任务状态、管理数据集等操作，同时支持
-连接 Kubernetes 工作集群和 DCE 的工作空间，帮助用户更高效地使用和管理 Kubernetes 平台资源。
+`baizectl` 是在 DCE 5.0 智能算力模块中专门服务于模型开发者与数据科学家们使用的命令行工具。
+它提供了一系列命令来帮助用户管理分布式训练作业、查看任务状态、管理数据集等操作，同时支持连接
+Kubernetes 工作集群和 DCE 5.0 工作空间，帮助用户更高效地使用和管理 Kubernetes 平台资源。
 
 ## 安装
 
-目前，`baizectl` 已经集成在 DCE5 平台中，在智能算力中，创建 Notebook 后，即可在 Notebook 中直接使用。
+目前，`baizectl` 已经集成在 DCE 5.0 智能算力中。
+你在创建 Notebook 后，即可在 Notebook 中直接使用 `baizectl`。
 
-## 基础介绍
+---
+
+## 快速上手
 
 ### 基本信息
 
@@ -51,7 +45,8 @@ Flags:
 Use "baizectl [command] --help" for more information about a command.
 ```
 
-以上是 `baizectl` 的基本信息，用户可以通过 `baizectl --help` 查看帮助信息，或者通过 `baizectl [command] --help` 查看具体命令的帮助信息。
+以上是 `baizectl` 的基本信息，用户可以通过 `baizectl --help` 查看帮助信息，
+或者通过 `baizectl [command] --help` 查看具体命令的帮助信息。
 
 ### 查看版本信息
 
@@ -82,6 +77,8 @@ baizectl [command] [flags]
 - `--skip-tls-verify`：跳过 TLS 证书验证。
 - `--token string`：DCE5 访问令牌。
 - `-w, --workspace int32`：指定操作的工作区 ID。
+
+---
 
 ## 功能介绍
 
@@ -171,24 +168,24 @@ Flags:
       --working-dir string                            The working directory of job container, if in notebook mode, the default is the directory of the current file
 ```
 
-##### 提交任务命令参数
-
 !!! note
 
-    --name: 任务名称，如果为空，则会自动生成
-    --image: 镜像名称，必须指定
-    --priority: 任务优先级，支持 高=`baize-high-priority`、中=`baize-medium-priority`、低=`baize-low-priority`
-    --resources: 任务资源，格式为 `cpu=1 memory=1Gi,nvidia.com/gpu=1`
-    --workers: 任务工作节点数，默认为 1，当设置大于 1 时，任务将会分布式运行
-    --queue: 任务队列，需要提前创建队列资源
-    --working-dir: 工作目录，如果在 Notebook 模式下，会默认使用当前文件目录
-    --datasets: 数据集，格式为 `datasetName:mountPath`，例如 `mnist:/data/mnist`
-    --shm-size: 共享内存大小，在分布式训练任务时，可以启用，表示使用共享内存，单位为 MiB
-    --labels: 任务标签，格式为 `key=value`
-    --max-retries: 最大重试次数，任务失败后重试次数，失败后会重启任务，默认不限制
-    --max-run-duration: 最大运行时间，任务运行时间超过指定时间后，会被系统终止，默认不限制
-    --restart-policy: 重启策略，支持 `on-failure`、`never`、`always`，默认为 `on-failure`
-    --from-notebook: 是否从 Notebook 中读取配置，支持 `auto`、`true`、`false`，默认为 `auto`
+    提交任务的命令参数说明：
+
+    - --name: 任务名称，如果为空，则会自动生成
+    - --image: 镜像名称，必须指定
+    - --priority: 任务优先级，支持 高=`baize-high-priority`、中=`baize-medium-priority`、低=`baize-low-priority`
+    - --resources: 任务资源，格式为 `cpu=1 memory=1Gi,nvidia.com/gpu=1`
+    - --workers: 任务工作节点数，默认为 1，当设置大于 1 时，任务将会分布式运行
+    - --queue: 任务队列，需要提前创建队列资源
+    - --working-dir: 工作目录，如果在 Notebook 模式下，会默认使用当前文件目录
+    - --datasets: 数据集，格式为 `datasetName:mountPath`，例如 `mnist:/data/mnist`
+    - --shm-size: 共享内存大小，在分布式训练任务时，可以启用，表示使用共享内存，单位为 MiB
+    - --labels: 任务标签，格式为 `key=value`
+    - --max-retries: 最大重试次数，任务失败后重试次数，失败后会重启任务，默认不限制
+    - --max-run-duration: 最大运行时间，任务运行时间超过指定时间后，会被系统终止，默认不限制
+    - --restart-policy: 重启策略，支持 `on-failure`、`never`、`always`，默认为 `on-failure`
+    - --from-notebook: 是否从 Notebook 中读取配置，支持 `auto`、`true`、`false`，默认为 `auto`
 
 ##### PyTorch 单机任务示例
 
@@ -593,6 +590,8 @@ baizectl job submit --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
     -- sleep 1000
 ```
 
+---
+
 ## 高级用法
 
 baizectl 支持更多高级用法，例如自动补全脚本生成、使用特定集群和命名空间、使用特定工作空间等。
@@ -622,14 +621,21 @@ baizectl job ls --workspace 123
 ## 常见问题
 
 - **问题**：为什么无法连接到服务器？
-  **解决方法**：检查 `--server` 参数是否正确设置，并确保网络连接正常。如果服务器使用自签名证书，可以使用 `--skip-tls-verify` 跳过 TLS 证书验证。
+
+    **解决方法**：检查 `--server` 参数是否正确设置，并确保网络连接正常。
+    如果服务器使用自签名证书，可以使用 `--skip-tls-verify` 跳过 TLS 证书验证。
   
 - **问题**：如何解决权限不足的问题？
-  **解决方法**：确保使用正确的 `--token` 参数登录，并检查当前用户是否具有相应的操作权限。
+
+    **解决方法**：确保使用正确的 `--token` 参数登录，并检查当前用户是否具有相应的操作权限。
 
 - **问题**：为什么无法列出数据集？
-  **解决方法**：检查命名空间和工作区是否正确设置，确保当前用户有权限访问这些资源。
+
+    **解决方法**：检查命名空间和工作区是否正确设置，确保当前用户有权限访问这些资源。
+
+---
 
 ## 结语
 
-通过以上指南，用户可以快速上手 `baizectl` 命令，并在实际应用中高效地管理 AI 平台资源。如果有任何疑问或问题，建议参考 `baizectl [command] --help` 获取更多详细信息。
+通过以上指南，用户可以快速上手 `baizectl` 命令，并在实际应用中高效地管理 AI 平台资源。
+如果有任何疑问或问题，建议参考 `baizectl [command] --help` 获取更多详细信息。

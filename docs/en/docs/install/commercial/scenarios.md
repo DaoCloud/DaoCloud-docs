@@ -29,7 +29,7 @@ Specific deployment schemes depend on your business needs, refer to the followin
 Prerequisite: Prepare a node, the operating system and architecture of the node should be consistent
 with the nodes to be created in the cluster.
 
-1. Deploy the installer on a seed node and use the installer to install a cluster with
+1. Deploy the installer on a bootstrap node and use the installer to install a cluster with
    two cluster roles:, global service cluster, and management cluster.
 
 1. Based on the management cluster in the platform, create one or more worker clusters as needed.
@@ -37,7 +37,7 @@ with the nodes to be created in the cluster.
 ## Single Data Center Multiple Management Clusters
 
 When you need to add a management cluster within the current single data center to manage the lifecycle
-of new business clusters, there is no need to install the seed node again. Just install the kubean Operator
+of new business clusters, there is no need to install the bootstrap node again. Just install the kubean Operator
 component on an already created work cluster to give this cluster the ability and role of a management cluster.
 As shown in the figure below:
 
@@ -70,7 +70,7 @@ should be consistent with the nodes to be created in the cluster.
 
 #### Shanghai Data Center
 
-1. Deploy the installer on a seed node and use the installer to install a management cluster.
+1. Deploy the installer on a bootstrap node and use the installer to install a management cluster.
 
 1. After the management cluster is installed, it will automatically create a global service cluster
    based on the [clusterConfig file](./cluster-config.md).
@@ -85,7 +85,7 @@ clusters in other data centers, please refer to the following configuration proc
 Prerequisite: Prepare a node in the Beijing data center, the operating system and architecture
 of the node should be consistent with the nodes to be created in the cluster.
 
-1. Deploy the installer on a seed node in the Beijing data center and use the installer to install a management cluster.
+1. Deploy the installer on a bootstrap node in the Beijing data center and use the installer to install a management cluster.
 
 1. Connect the container management module in the platform (running in the Shanghai data center)
    to the newly installed management cluster in the Beijing data center.

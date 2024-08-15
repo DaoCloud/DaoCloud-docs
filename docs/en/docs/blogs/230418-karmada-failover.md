@@ -12,7 +12,7 @@ Obviously, **Karmada, as the most popular multicloud project in the community, p
 Karmada (Kubernetes Armada) enables users to run cloud native applications across multiple clusters without changing existing applications.
 Enables a truly open multicloud by providing advanced scheduling capabilities using Kubernetes-native APIs. Karmada
 It aims to provide convenient automation for multicluster application management in multicloud and hybrid cloud cases, with key features such as centralized multicloud management, high availability and fault recovery.
-**This article is based on Karmada's release version v1.4.2, and we will explore with you how Karmada's cross-cluster fault recovery is realized**,
+**This article is based on Karmada's release v1.4.2, and we will explore with you how Karmada's cross-cluster fault recovery is realized**,
 Which controllers and schedulers are involved in this process, and what capabilities each controller undertakes in this process, and what capabilities the scheduler undertakes,
 And how to ensure high availability and continuity of user business?
 
@@ -38,7 +38,7 @@ First of all, let's sort out the necessity of implementing failover:
 
 Karmada failback supports two methods:
 
-- __Duplicated__ (full scheduling strategy). When the number of unscheduled candidate clusters meeting the pp (propagationPolicy) limit is not less than the number of failed scheduling clusters, reschedule the failed clusters to candidate clusters.
+- __Duplicated__ (full scheduling policy). When the number of unscheduled candidate clusters meeting the pp (propagationPolicy) limit is not less than the number of failed scheduling clusters, reschedule the failed clusters to candidate clusters.
 - __Divided__ (replica split scheduling policy). In the event of a cluster failure, the scheduler and controller cooperate to attempt to migrate copies of the failed cluster to other healthy clusters.
 
 This article uses __Divided__ as an example:
@@ -46,7 +46,7 @@ This article uses __Divided__ as an example:
 ![Divided](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/karmada02.png)
 
 1. After downloading the official Karmada v1.4.2 source code, use __hack/local-up-karmada.sh__ to start the local Karmada.
-    After startup, three working clusters are automatically managed, among which clusters member1 and member2 use push mode, and member3 uses pull mode.
+    After startup, three worker clusters are automatically managed, among which clusters member1 and member2 use push mode, and member3 uses pull mode.
 
      ```shell
      export KUBECONFIG=$HOME/.kube/karmada.config
@@ -68,9 +68,9 @@ This article uses __Divided__ as an example:
      member3 v1.23.4 Pull True 31m
      ```
 
-2. Deploy the following application configuration on the Karmada control plane. It can be found that we have defined an nginx application with 3 replicas and a propagation strategy.
-    In the propagation strategy, the cluster affinity is specified by __clusterNames__ , which needs to be scheduled to cluster member1 and member2.
-    At the same time, in the replica scheduling strategy, the replica splitting method is used for scheduling, and the scheduling follows the static weight method of member1 with a weight of 1 and member2 with a weight of 2.
+2. Deploy the following application configuration on the Karmada control plane. It can be found that we have defined an nginx application with 3 replicas and a propagation policy.
+    In the propagation policy, the cluster affinity is specified by __clusterNames__ , which needs to be scheduled to cluster member1 and member2.
+    At the same time, in the replica scheduling policy, the replica splitting method is used for scheduling, and the scheduling follows the static weight method of member1 with a weight of 1 and member2 with a weight of 2.
 
      ```yaml
      apiVersion: apps/v1
@@ -124,7 +124,7 @@ This article uses __Divided__ as an example:
 
      After the application is delivered, we will see the following results. A deployment with a copy number of 1 is propagated on the cluster member1, and a deployment with a copy number of 2 is propagated on the cluster member2.
      A total of three copies meet our scheduling expectations. Check the resource information of the control plane, and find that the corresponding work has been created under the corresponding execution namespace of the member clusters of the control plane.
-     The work here is the carrier of the resource object that actually needs to be propagated on the member clusters after the propagation strategy and coverage strategy are applied.
+     The work here is the carrier of the resource object that actually needs to be propagated on the member clusters after the propagation policy and coverage strategy are applied.
      At the same time, it can be seen from the rb (ResourceBinding) of the resource deployment that the deployment is scheduled to cluster member1 and cluster member2.
 
      ```shell
@@ -371,10 +371,10 @@ Karmada implements failover, which is mainly completed by the six controllers in
 1. clusterStatus controller: Perceives the cluster status and writes the cluster status to the status of the cluster resource object on the control plane.
 2. cluster controller: Create an execution namespace on the control plane (the execution namespace here refers to Karmada
     A namespace with special naming rules will be created for each member cluster on the control plane, which is used to store work ), and it is judged according to conditions whether the cluster needs to be stained.
-3. taint-manager controller: According to the cluster taint, the cluster taint tolerated in the propagation strategy is compared and calculated to determine whether to expel the resources on the cluster.
-4. Karmada-scheduler: According to the propagation strategy and cluster conditions, select the best scheduling cluster for resources.
+3. taint-manager controller: According to the cluster taint, the cluster taint tolerated in the propagation policy is compared and calculated to determine whether to expel the resources on the cluster.
+4. Karmada-scheduler: According to the propagation policy and cluster conditions, select the best scheduling cluster for resources.
 5. GracefulEviction controller: After ensuring that the resource status on the new cluster is healthy, remove the resource objects on the eviction cluster.
-6. Binding controller: According to the scheduling result, apply the rules in the propagation strategy, and create a work under the execution namespace corresponding to the control plane cluster.
+6. Binding controller: According to the scheduling result, apply the rules in the propagation policy, and create a work under the execution namespace corresponding to the control plane cluster.
     Aggregate work status, update rb(ResourceBinding) and resource template status.
 7. Execution controller: Create resources in the member cluster according to the work under the corresponding execution namespace of the member cluster.
 
@@ -523,7 +523,7 @@ if needEviction || tolerationTime == 0 {
 }
 ```
 
-It can be noticed that when writing an eviction task, the cluster corresponding to the graceful eviction task will be removed from __rb.spec.clusters__ , which means that the scheduling result will be modified. (Here it needs to be emphasized that the scheduling result is the scheduling and distribution cluster selected by Karmada scheduler based on the propagation strategy and cluster situation for resources, and the scheduling result will be recorded in the __spec.clusters__ attribute of __rb__ (ResourceBinding).) This means that due to cluster failures, the scheduler will be triggered to reschedule, and resources should be evicted from the failed cluster and created on the new cluster.
+It can be noticed that when writing an eviction task, the cluster corresponding to the graceful eviction task will be removed from __rb.spec.clusters__ , which means that the scheduling result will be modified. (Here it needs to be emphasized that the scheduling result is the scheduling and distribution cluster selected by Karmada scheduler based on the propagation policy and cluster situation for resources, and the scheduling result will be recorded in the __spec.clusters__ attribute of __rb__ (ResourceBinding).) This means that due to cluster failures, the scheduler will be triggered to reschedule, and resources should be evicted from the failed cluster and created on the new cluster.
 
 ```go
 // This feature no-(images cluster does not exist.

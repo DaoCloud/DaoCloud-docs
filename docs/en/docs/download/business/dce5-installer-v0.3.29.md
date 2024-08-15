@@ -19,19 +19,19 @@ This page allows you to download the offline package and checksum file of DCE 5.
 | offline-centos7-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 22.9 GB | [:arrow_down: Download](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-v0.3.29-amd64.tar) | 2022-12-16 |
 | offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | <font color="green">ARM 64</font> | 19.9 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.3.29-arm64.tar) | 2022-12-16 |
 
-## Validation
+## Verification
 
 Go to the download directory of the offline package.
 
 === "AMD 64"
 
-     run the following command to validate the offline package:
+     run the following command to verify the offline package:
 
      ```sh
      echo "ef7fd779d3b5bc50bccf80e29934002c60f53143319c80dd9aad85fc1404ac7d309997e0d9c829612c1b400cd4d4861fb1b6f91efee8c236ada930cbb44ca1c1 off line-centos7-v0.3.29-amd64.tar" | sha512sum -c
      ```
 
-     If the validation is successful, it will print:
+     If the verification is successful, it will print:
 
      ```none
      offline-centos7-v0.3.29-amd64.tar: OK
@@ -39,13 +39,13 @@ Go to the download directory of the offline package.
 
 === "<font color="green">ARM 64</font>"
 
-     run the following command to validate the offline package:
+     run the following command to verify the offline package:
 
      ```sh
      echo "1cc8b41bfaad23cb1b14170b68ee581d2eb384fe6d803ce34a1a09f1d41e7640768cca8a7f8a3f6a881ecfddaaa73756247676b6e0bc72b7ca651cc855ce2ff4 offline-k ylin-v10sp2-v0.3.29-arm64.tar" | sha512sum -c
      ```
 
-     If the validation is successful, it will print:
+     If the verification is successful, it will print:
 
      ```none
      offline-kylin-v10sp2-v0.3.29-arm64.tar: OK
@@ -53,7 +53,7 @@ Go to the download directory of the offline package.
 
 ## Installation
 
-After the offline package has been successfully validated,
+After the offline package has been successfully verifyd,
 
 === "AMD 64"
 
@@ -80,7 +80,7 @@ The DCE 5.0 Enterprise includes the following modules, which are plug-and-play t
 
 | Modules | Description | Versions |
 | ------- | ----------- | -------- |
-| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [v0.12](../../ghippo/intro/release-notes.md#v012) |
+| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, and custom appearance. | [v0.12](../../ghippo/intro/release-notes.md#v012) |
 | Container Management | Manage K8s core features such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.13](../../kpanda/intro/release-notes.md#v013) |
 | Insight | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [v0.12](../../insight/intro/releasenote.md#v012) |
 | Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [v0.10](../../amamba/intro/release-notes.md#v010) |

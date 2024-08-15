@@ -13,6 +13,8 @@ This page provides downloadable offline packages for various versions of Redis.
 
 | Version | Architecture | File Size | Package   | Checksum File | Updated Date |
 | ------ | ------------ | --------- | ---------- | ------------ | ------------ |
+| [v0.20.0](../../../middleware/redis/release-notes.md) | <font color=green>ARM 64</font> | 651.65 MB | [:arrow_down: redis_0.20.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.20.0_arm64.tar) | [:arrow_down: redis_0.20.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.20.0_arm64_checksum.sha512sum) | 2024-08-08 |
+| [v0.20.0](../../../middleware/redis/release-notes.md) | AMD 64 | 681.34 MB | [:arrow_down: redis_0.20.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.20.0_amd64.tar) | [:arrow_down: redis_0.20.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.20.0_amd64_checksum.sha512sum) | 2024-08-08 |
 | [v0.19.0](../../../middleware/redis/release-notes.md) | <font color=green>ARM 64</font> | 574.26 MB | [:arrow_down: redis_0.19.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.19.0_arm64.tar) | [:arrow_down: redis_0.19.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.19.0_arm64_checksum.sha512sum) | 2024-07-04 |
 | [v0.19.0](../../../middleware/redis/release-notes.md) | AMD 64 | 603.38 MB | [:arrow_down: redis_0.19.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.19.0_amd64.tar) | [:arrow_down: redis_0.19.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.19.0_amd64_checksum.sha512sum) | 2024-07-04 |
 | [v0.18.0](../../../middleware/redis/release-notes.md) | <font color=green>ARM 64</font> | 574.04 MB | [:arrow_down: redis_0.18.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.18.0_arm64.tar) | [:arrow_down: redis_0.18.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.18.0_arm64_checksum.sha512sum) | 2024-06-05 |
@@ -27,15 +29,15 @@ This page provides downloadable offline packages for various versions of Redis.
 | [v0.12.0](../../../middleware/redis/release-notes.md) | AMD 64 | 531.92 MB | [:arrow_down: redis_0.12.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.12.0_amd64.tar) | [:arrow_down: redis_0.12.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.12.0_amd64_checksum.sha512sum) | 2023-11-08 |
 | [v0.11.1](../../../middleware/redis/release-notes.md) | AMD 64 | 537.81 MB | [:arrow_down: redis_0.11.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.11.1_amd64.tar) | [:arrow_down: redis_0.11.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.11.1_amd64_checksum.sha512sum) | 2023-10-20 |
 
-## Validation
+## Verification
 
-In the directory where you downloaded the offline package and checksum file, run the following command to validate integrity:
+In the directory where you downloaded the offline package and checksum file, run the following command to verify integrity:
 
 ```sh
 echo "$(cat redis_0.11.1_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-Upon successful validation, the result will be printed similar to:
+Upon successful verification, the result will be printed similar to:
 
 ```none
 redis_0.11.1_amd64.tar: OK

@@ -1,6 +1,11 @@
-# Enable/Disable the output of k8s audit logs
+---
+MTPE: WANG0608GitHub
+Done: 2024-08-05
+---
 
-By default, the Kubernetes cluster does not output audit log information.
+# Generate K8s Audit Logs
+
+By default, the Kubernetes cluster does not generate audit log information.
 Through the following configuration, you can enable the audit log feature of Kubernetes.
 
 !!! note
@@ -8,10 +13,10 @@ Through the following configuration, you can enable the audit log feature of Kub
     In a public cloud environment, it may not be possible to control the output and output path of Kubernetes audit logs.
 
 1. Prepare the Policy file for the audit log
-2. Configure the API server and enable audit logs
+2. Configure the API server, and enable audit logs
 3. Reboot and verify
 
-## Prepare audit log policy file
+## Prepare audit log Policy file
 
 ??? note "Click to view Policy YAML for audit log"
 
@@ -180,7 +185,7 @@ Put the above audit log file in __/etc/kubernetes/audit-policy/__ folder, and na
 
 Open the configuration file kube-apiserver.yaml of the API server, usually in the __/etc/kubernetes/manifests/__ folder, and add the following configuration information:
 
-Please back up kube-apiserver.yaml before this step, and the backup file cannot be placed under __/etc/kubernetes/manifests/__ , it is recommended to put it in __/etc/kubernetes/tmp__ .
+Please back up kube-apiserver.yaml before this step. The backup file cannot be placed in the __/etc/kubernetes/manifests/__ , and it is recommended to put it in the __/etc/kubernetes/tmp__ .
 
 1. Add the command under __spec.containers.command__ :
 
@@ -192,7 +197,7 @@ Please back up kube-apiserver.yaml before this step, and the backup file cannot 
     --audit-policy-file=/etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
     ```
 
-2. Add below code under __spec.containers.volumeMounts__ :
+2. Add the command under __spec.containers.volumeMounts__ :
 
     ```yaml
     - mountPath: /var/log/audit
@@ -201,7 +206,7 @@ Please back up kube-apiserver.yaml before this step, and the backup file cannot 
       name: audit-policy
     ```
 
-3. Add below under __spec.volumes__ :
+3. Add the command under __spec.volumes__ :
 
     ```yaml
     - hostPath:
@@ -216,7 +221,7 @@ Please back up kube-apiserver.yaml before this step, and the backup file cannot 
 
 ## Test and verify
 
-After a while, the API server will automatically restart. run the following command to check whether there is an audit log generated in the __/var/log/kubernetes/audit__ directory. If so, it means that the k8s audit log is successfully enabled.
+After a while, the API server will automatically restart, and run the following command to check whether there is an audit log generated in the __/var/log/kubernetes/audit__ directory. If so, it means that the K8s audit log is successfully enabled.
 
 ```shell
 ls /var/log/kubernetes/audit

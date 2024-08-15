@@ -7,8 +7,8 @@ Date: 2024-02-29
 
 The Helm repository is a repository for storing and publishing Charts. The Helm application module supports HTTP(s) protocol to access Chart packages in the repository. By default, the system has 4 built-in helm repos as shown in the table below to meet common needs in the production process of enterprises.
 
-| repository | Description | Example |
-| --------- | --------------------------------------- --------------------- | ------------ |
+| Repository | Description | Example |
+| --------- | ------------ | ------- |
 | partner | Various high-quality features provided by ecological partners Chart | tidb |
 | system | Chart that must be relied upon by system core functional components and some advanced features. For example, insight-agent must be installed to obtain cluster monitoring information | Insight |
 | addon | Common Chart in business cases | cert-manager |
@@ -41,14 +41,19 @@ The following takes the public container repository of Kubevela as an example to
 
     ![Helm Repo](../images/helmrepo01.png)
 
-3. Click the __Create Repository__ button on the helm repo page to enter the Create repository page, and configure relevant parameters according to the table below.
+3. Click the __Create Repository__ button on the helm repo page to enter the Create repository page, and configure relevant arguments according to the table below.
 
-     - Repository name: Set the repository name. Up to 63 characters, can only contain lowercase letters, numbers and separator __-__ , and must start and end with lowercase letters or numbers, such as kubevela
-     - URL: the http(s) address used to point to the target helm repo. For example <https://charts.kubevela.net/core>
-     - Authentication: The method used for identity verification after connecting to the repository address. For public repositories, you can choose __None__ , private repositories need to enter username/password for identity verification
-     - Labels: Add tags for this Helm repository. For example key: repo4; value: Kubevela
-     - Annotations: Add annotations to the Helm repository. For example key: repo4; value: Kubevela
-     - Description: Add a description for this Helm repository. Example: This is a Kubevela public Helm repository
+    - Repository Name: Set the repository name. It can be up to 63 characters long and may only include lowercase letters,
+      numbers, and separators __-__. It must start and end with a lowercase letter or number, for example, kubevela.
+    - Repository URL: The HTTP(S) address pointing to the target Helm repository. For example, <https://charts.kubevela.net/core>.
+    - Skip TLS Verification: If the added Helm repository uses an HTTPS address and requires skipping TLS verification,
+      you can check this option. The default is unchecked.
+    - Authentication Method: The method used for identity verification after connecting to the repository URL.
+      For public repositories, you can select __None__. For private repositories, you need to enter a
+      username/password for identity verification.
+    - Labels: Add labels to this Helm repository. For example, key: repo4; value: Kubevela.
+    - Annotations: Add annotations to this Helm repository. For example, key: repo4; value: Kubevela.
+    - Description: Add a description for this Helm repository. For example: This is a Kubevela public Helm repository.
 
     ![Config](../images/helmrepo02.png)
 
@@ -68,7 +73,7 @@ When the address information of the helm repo changes, the address, authenticati
 
     ![Helm Repo](../images/helmrepo01.png)
 
-3. Find the Helm repository that needs to be updated on the repository list page, click the __⋮__ button on the right side of the list, and click __Update__ in the pop-up menu.
+3. Find the Helm repository that needs to be updated on the repository list page, click the __┇__ button on the right side of the list, and click __Update__ in the pop-up menu.
 
     ![Update](../images/helmrepo04.png)
 
@@ -90,7 +95,7 @@ In addition to importing and updating repositorys, you can also delete unnecessa
 
     ![Helm Repo](../images/helmrepo01.png)
 
-3. Find the Helm repository that needs to be updated on the repository list page, click the __⋮__ button on the right side of the list, and click __Delete__ in the pop-up menu.
+3. Find the Helm repository that needs to be updated on the repository list page, click the __┇__ button on the right side of the list, and click __Delete__ in the pop-up menu.
 
     ![Delete](../images/helmrepo07.png)
 

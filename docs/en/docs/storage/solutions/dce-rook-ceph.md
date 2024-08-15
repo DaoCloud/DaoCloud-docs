@@ -2,7 +2,7 @@
 
 This page will provide the operation steps and instructions for installing and deploying the Rook-ceph cloud native storage system on the graphical interface of Addon in the DCE 5.0 app store.
 
-## Format conversion of Rook-ceph helm charts
+## Convert format of Rook-ceph helm charts
 
 ### Add repo
 
@@ -65,35 +65,35 @@ charts Chart.yaml prometheus README.md values.schema.json templates values.yaml
 rook-ceph-cluster-v1.10.5.tgz rook-ceph-v1.10.5.tgz rook-ceph rook-ceph-cluster rook-ceph-cluster-v1.10.5.tgz rook-ceph-v1.10.5.tgz
 ```
 
-## Operations in DaoCloud registry
+## Operate DaoCloud registry
 
 ### Upload the chart package with json format
 
+![accessing registry](..//images/addon-rook-registry-1.png)
+
+![uploading chart package to registry](..//images/addon-rook-registry-2.png)
 
 
 
-
-
-
-## DCE 5.0 cluster installation Rook-ceph
+## Install rook-ceph on a DCE 5.0 cluster
 
 ### Connect the cluster to DCE 5.0
 
+![cluster access ](..//images/addon-rook-cluster-1.png)
 
-
-
+![cluster access ](..//images/addon-rook-cluster-2.png)
 
 ### Install rook-ceph
 
+![rook-ceph install](..//images/addon-rook-cluster-3.png)
 
+![rook-ceph install](..//images/addon-rook-cluster-4.png)
 
+![rook-ceph component](..//images/addon-rook-getpod.png)
 
+![rook-ceph-sc](..//images/addon-rook-storageclass.png)
 
-
-
-
-
-## App Deployment Verification
+## Verify App Deployment
 
 ```
 [root@k8s-10-6-162-31 kubernetes]# pwd

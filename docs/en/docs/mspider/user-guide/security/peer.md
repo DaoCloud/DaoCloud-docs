@@ -1,4 +1,6 @@
 ---
+MTPE: windsonsea
+Date: 2024-07-17
 hide:
   - toc
 ---
@@ -20,11 +22,14 @@ apiVersion: "security.istio.io/v1beta1"
 kind: "PeerAuthentication"
 metadata:
   name: "default"
-  namespace: "istio-system" #effective namespace
+  namespace: "istio-system" # (1)!
 spec:
   mtls:
-    mode: STRICT #strategy
+    mode: STRICT # (2)!
 ```
+
+1. effective namespace
+2. policy
 
 Service mesh provides two creation methods: wizard and YAML. The specific steps to create through the wizard are as follows:
 
@@ -44,12 +49,12 @@ Service mesh provides two creation methods: wizard and YAML. The specific steps 
 
     ![Successfully Created](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/peer04.png)
 
-5. On the right side of the list, click __⋮__ in the operation column to perform more operations through the pop-up menu.
+5. On the right side of the list, click __┇__ in the operation column to perform more operations through the pop-up menu.
 
     ![Edit/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/peer05.png)
 
 !!! note
 
-    - For the configuration of specific parameters, please refer to [Security Governance Parameter Configuration](./params.md).
-    - For a more intuitive operation demonstration, please refer to [Video Tutorial](../../../videos/mspider.md).
+    - For the configuration of specific parameters, refer to [Security Governance Parameter Configuration](./params.md).
+    - For a more intuitive operation demonstration, refer to [Video Tutorial](../../../videos/mspider.md).
     - See [Service Mesh Identity and Authentication](./mtls.md).

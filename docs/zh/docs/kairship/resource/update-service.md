@@ -2,7 +2,7 @@
 
 目前提供了两种更新方式：编辑 YAML 和表单更新。
 
-1. 进入某一个多云实例后，在左侧导航栏中，点击 __资源管理__ -> __多云服务__ ，点击 __⋮__ 可以表单更新服务。
+1. 进入某一个多云实例后，在左侧导航栏中，点击 __资源管理__ -> __多云服务__ ，点击 __┇__ 可以表单更新服务。
 
     ![服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/update-service01.png)
 

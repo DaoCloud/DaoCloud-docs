@@ -140,9 +140,9 @@ in the previous section's step 3: updating the helm value configuration.
 helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=false
 ```
 
-## Work Cluster Switch
+## Change Worker Cluster
 
-Each work cluster switch is independent and can be turned on as needed.
+Each worker cluster is independent and can be turned on as needed.
 
 ### Steps to Enable Audit Log Collection When Creating a Cluster
 
@@ -154,12 +154,12 @@ By default, the collection of K8s audit logs is turned off. If you need to enabl
 
 Set the switch to the enabled state to enable the collection of K8s audit logs.
 
-When creating a work cluster via DCE 5.0, ensure that the K8s audit log option for the cluster is set to 'true' so
-that the created work cluster will have audit logs enabled.
+When creating a worker cluster via DCE 5.0, ensure that the K8s audit log option for the cluster is set to 'true' so
+that the created worker cluster will have audit logs enabled.
 
 ![Audit Logs Enabled](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker03.png)
 
-After the cluster creation is successful, the K8s audit logs for that work cluster will be collected.
+After the cluster creation is successful, the K8s audit logs for that worker cluster will be collected.
 
 ### Steps to Enable/Disable After Accessing or Creating the Cluster
 

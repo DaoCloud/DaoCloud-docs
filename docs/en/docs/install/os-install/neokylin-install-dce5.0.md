@@ -5,7 +5,7 @@ This article will introduce how to deploy DCE 5.0 on the NeoKylin Linux Advanced
 ## Prerequisites
 
 - Read the [deployment architecture](../commercial/deploy-arch.md) in advance to confirm the deployment mode.
-- Read the [deployment requirements](../commercial/deploy-requirements.md) in advance to confirm if the network, hardware, ports, etc., meet the requirements.
+- Read the [deployment requirements](../commercial/deploy-requirements.md) in advance to confirm if the network, hardware, and ports meet the requirements.
 - Read the [preparation work](../commercial/prepare.md) in advance to confirm the machine resources and pre-checks.
 - Make sure to install `iptables` and `iproute` on the node in advance.
 
@@ -26,13 +26,13 @@ This article will introduce how to deploy DCE 5.0 on the NeoKylin Linux Advanced
 
     | CPU Architecture | Version | Download Link |
     | ---------------- | ------- | ------------- |
-    | AMD64            | v0.18.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.18.0-amd64.tar> |
+    | AMD64            | v0.19.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.19.0-amd64.tar> |
 
     Once downloaded, extract the offline package:
 
     ```bash
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.18.0-amd64.tar
-    tar -xvf offline-v0.18.0-amd64.tar
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.19.0-amd64.tar
+    tar -xvf offline-v0.19.0-amd64.tar
     ```
 
 2. Download the NeoKylin Linux Advanced Server V7Update6 image file.

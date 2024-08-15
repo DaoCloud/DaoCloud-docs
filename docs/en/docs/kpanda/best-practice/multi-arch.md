@@ -1,16 +1,25 @@
-# How to Add Heterogeneous Nodes to a Working Cluster
+---
+MTPE: windsonsea
+Date: 2024-07-30
+---
 
-This page explains how to add ARM architecture nodes with Kylin v10 sp2 operating system to an AMD architecture working cluster with CentOS 7.9 operating system.
+# How to Add Heterogeneous Nodes to a Worker Cluster
+
+This page explains how to add ARM architecture nodes with Kylin v10 sp2 operating system
+to an AMD architecture worker cluster with CentOS 7.9 operating system.
 
 !!! note
 
-    This page is only applicable to adding heterogeneous nodes to a working cluster created
+    This page is only applicable to adding heterogeneous nodes to a worker cluster created
     using the DCE 5.0 platform in offline mode, excluding connected clusters.
 
 ## Prerequisites
 
-- A DCE 5.0 Full Mode deployment has been successfully completed, and the bootstrap node is still alive. Refer to the documentation [Offline Installation of DCE 5.0 Enterprise](../../install/commercial/start-install.md) for the deployment process.
-- A working cluster with AMD architecture and CentOS 7.9 operating system has been created through the DCE 5.0 platform. Refer to the documentation [Creating a Working Cluster](../user-guide/clusters/create-cluster.md) for the creation process.
+- A DCE 5.0 Full Mode deployment has been successfully completed, and the bootstrap node is still alive.
+  Refer to the documentation [Offline Installation of DCE 5.0 Enterprise](../../install/commercial/start-install.md) for the deployment process.
+- A worker cluster with AMD architecture and CentOS 7.9 operating system has been created through the
+  DCE 5.0 platform. Refer to the documentation
+  [Creating a Worker Cluster](../user-guide/clusters/create-cluster.md) for the creation process.
 
 ## Procedure
 
@@ -18,7 +27,8 @@ This page explains how to add ARM architecture nodes with Kylin v10 sp2 operatin
 
 Take ARM architecture and Kylin v10 sp2 operating system as examples.
 
-Make sure you are logged into the bootstrap node! Also, make sure the __clusterConfig.yaml__ file used during the DCE 5.0 deployment is available.
+Make sure you are logged into the bootstrap node! Also, make sure the
+__clusterConfig.yaml__ file used during the DCE 5.0 deployment is available.
 
 #### Offline Image Package
 
@@ -49,7 +59,8 @@ tar -xvf offline-v0.18.0-arm64.tar
 
 #### osPackage Offline Package (Kylin v10 sp2)
 
-The [Kubean](https://github.com/kubean-io/kubean) project provides osPackage offline packages for different operating systems. Visit <https://github.com/kubean-io/kubean/releases> to view the available packages.
+The [Kubean](https://github.com/kubean-io/kubean) project provides osPackage offline packages
+for different operating systems. Visit <https://github.com/kubean-io/kubean/releases> to view the available packages.
 
 | Operating System Version | Download Link |
 | :----------------------- | :------------ |
@@ -57,7 +68,8 @@ The [Kubean](https://github.com/kubean-io/kubean) project provides osPackage off
 
 !!! note
 
-    Check the specific version of the osPackage offline package in the __offline/sample/clusterConfig.yaml__ file of the offline image package.
+    Check the specific version of the osPackage offline package in the
+    __offline/sample/clusterConfig.yaml__ file of the offline image package.
 
 #### Import Offline Packages to the Bootstrap Node
 
@@ -83,7 +95,15 @@ After a successful import command execution, the offline package will be uploade
 
 ### Add Heterogeneous Worker Nodes
 
-Make sure you are logged into the management node of the Global cluster in DCE 5.0.
+!!! note
+
+    If the version of DCE 5.0 you have installed is higher than (inclusive of)
+    [DCE5.0-20230731](../../dce/dce-rn/20230731.md), after completing the above steps,
+    you can directly integrate nodes via UI; if not, you will need to continue with
+    the following steps to integrate heterogeneous nodes.
+
+Make sure you are logged into the management node of the DCE 5.0
+[Global Service Cluster](../user-guide/clusters/cluster-role.md#global-service-cluster).
 
 #### Modify the Host Manifest
 
@@ -95,33 +115,33 @@ Here is an example of host manifest:
     apiVersion: v1
     kind: ConfigMap
     metadata:
-        name: ${cluster-name}-hosts-conf
-        namespace: kubean-system
+      name: ${cluster-name}-hosts-conf
+      namespace: kubean-system
     data:
-        hosts.yml: |
-            all:
-            hosts:
+      hosts.yml: |
+        all:
+          children:
+            etcd:
+              hosts:
                 centos-master:
-                ip: 10.5.14.122
-                access_ip: 10.5.14.122
-                ansible_host: 10.5.14.122
-                ansible_connection: ssh
-                ansible_user: root
-                ansible_ssh_pass: ******
-            children:
+            k8s_cluster:
+              children:
                 kube_control_plane:
-                hosts:
-                    centos-master: 
                 kube_node:
-                hosts:
-                    centos-master: 
-                etcd:
-                hosts:
-                    centos-master: 
-                k8s_cluster:
-                children:
-                    kube_control_plane: 
-                    kube_node: 
+            kube_control_plane:
+              hosts:
+                centos-master:
+            kube_node:
+              hosts:
+                centos-master:
+        hosts:
+          centos-master:
+            ip: 10.5.14.122
+            access_ip: 10.5.14.122
+            ansible_host: 10.5.14.122
+            ansible_connection: ssh
+            ansible_user: root
+            ansible_ssh_pass: ******
     ```
 
 === "After adding a node"
@@ -130,42 +150,42 @@ Here is an example of host manifest:
     apiVersion: v1
     kind: ConfigMap
     metadata:
-        name: ${cluster-name}-hosts-conf
-        namespace: kubean-system
+      name: ${cluster-name}-hosts-conf
+      namespace: kubean-system
     data:
-        hosts.yml: |
-            all:
-            hosts:
-                centos-master:
-                ip: 10.5.14.122
-                access_ip: 10.5.14.122
-                ansible_host: 10.5.14.122
-                ansible_connection: ssh
-                ansible_user: root
-                ansible_ssh_pass: ******
-                # Add heterogeneous node information
-                kylin-worker:
-                ip: 10.5.10.220
-                access_ip: 10.5.10.220
-                ansible_host: 10.5.10.220
-                ansible_connection: ssh
-                ansible_user: root
-                ansible_ssh_pass: dangerous@2022
+      hosts.yml: |
+        all:
+          hosts:
+            centos-master:
+              ip: 10.5.14.122
+              access_ip: 10.5.14.122
+              ansible_host: 10.5.14.122
+              ansible_connection: ssh
+              ansible_user: root
+              ansible_ssh_pass: ******
+              # Add heterogeneous nodes
+            kylin-worker:
+              ip: 10.5.10.220
+              access_ip: 10.5.10.220
+              ansible_host: 10.5.10.220
+              ansible_connection: ssh
+              ansible_user: root
+              ansible_ssh_pass: dangerous@2022
             children:
-                kube_control_plane:
+              kube_control_plane:
                 hosts:
-                    centos-master: 
-                kube_node:
+                  - centos-master
+              kube_node:
                 hosts:
-                    centos-master: 
-                    kylin-worker: # Add the name of heterogeneous node
-                etcd:
+                  - centos-master
+                  - kylin-worker  # Add the name of heterogeneous node
+              etcd:
                 hosts:
-                    centos-master: 
-                k8s_cluster:
+                  - centos-master
+              k8s_cluster:
                 children:
-                    kube_control_plane: 
-                    kube_node: 
+                  - kube_control_plane
+                  - kube_node
     ```
 
 To add information about the newly added worker nodes according to the above comments:
@@ -226,9 +246,12 @@ kubectl -n kubean-system get pod | grep add-worker-node
 
 To check the progress of the scaling task, you can view the logs of the corresponding pod.
 
-### Verify in the User Interface
+### Verify in UI
 
 1. Go to __Container Management__ -> __Clusters__ -> __Nodes__ .
 
+    <!-- Add image later -->
 
 2. Click the newly added node to view details.
+
+    <!-- Add image later -->

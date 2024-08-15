@@ -3,7 +3,7 @@ MTPE: ModetaNiu
 date: 2024-06-28
 ---
 
-# Install DCE 5.0 Enterprise offline
+# Offline Install DCE 5.0 Enterprise
 
 Ensure that you have read and understood the [deployment requirements](deploy-requirements.md),
 [deployment architecture](deploy-arch.md), and [preparation](prepare.md) before installation.
@@ -11,13 +11,11 @@ Ensure that you have read and understood the [deployment requirements](deploy-re
 Refer to the [release notes](../release-notes.md) to avoid known issues with the
 installed version and to check for new features.
 
-## Offline Installation Steps
+## Download Offline Package
 
-### Step 1: Download the Offline Package
+Download the appropriate version of the offline package in accordance with your business environment.
 
-Download the corresponding offline package based on your business environment.
-
-#### Offline Image Package (Required)
+### Offline Image Package (Required)
 
 The offline image package contains configuration files, image resources, and
 chart packages required for installing DCE 5.0 modules.
@@ -26,17 +24,17 @@ You can download the latest version from the [Download Center](../../download/in
 
 | CPU Architecture | Version | Download |
 | :--------------- | :------ | :------- |
-| AMD64 | v0.18.0 | [offline-v0.18.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.18.0-amd64.tar) |
-| <font color="green">ARM64</font> | v0.18.0 | [offline-v0.18.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.18.0-arm64.tar) |
+| AMD64 | v0.19.0 | [offline-v0.19.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.19.0-amd64.tar) |
+| ARM64 | v0.19.0 | [offline-v0.19.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.19.0-arm64.tar) |
 
 After downloading, extract the offline package.
 Take the amd64 architecture offline package as an example
 
 ```bash
-tar -xvf offline-v0.18.0-amd64.tar
+tar -xvf offline-v0.19.0-amd64.tar
 ```
 
-#### ISO Operating System Image File (Required)
+### ISO Operating System Image Files (Required)
 
 The ISO format operating system image file should be downloaded based on the
 different operating systems during the installation process.
@@ -46,7 +44,7 @@ The ISO operating system image file needs to be configured in
 
 | CPU Architecture | Operating System Version | Download |
 | :--------------- | :---------------------- | :-------- |
-| AMD64    | CentOS 7 | [CentOS-7-x86_64-DVD-2009.iso](https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso ) |
+| AMD64 | CentOS 7 | [CentOS-7-x86_64-DVD-2009.iso](https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso ) |
 |   | Redhat 7, 8, 9 | [assembly-field-downloads-page-content-61451](https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451) <br />Note: Redhat operating system requires a Redhat account to download |
 |   | Ubuntu 20.04 | [ubuntu-20.04.6-live-server-amd64.iso](https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso) |
 | | ubuntu-22.04.4 | [ubuntu-22.04.4-live-server-amd64.iso](https://releases.ubuntu.com/jammy/ubuntu-22.04.4-live-server-amd64.iso) |
@@ -62,13 +60,13 @@ The ISO operating system image file needs to be configured in
     Kylin operating system requires providing personal information to download and use.
     Select V10 (Sword) SP2 when downloading.
 
-#### osPackage Offline Packages (Required)
+### osPackage Offline Packages (Required)
 
 The osPackage offline package is a supplement to the Linux operating system offline software source
 provided by the open-source project [Kubean](https://github.com/kubean-io/kubean). For example,
 openEuler 22.03 lacks the `selinux-policy-35.5-15.oe2203.noarch.rpm`.
 
-Starting from version v0.5.0, the installer requires the osPackage offline package for the
+Starting from v0.5.0, the installer requires the osPackage offline package for the
 operating system and defines `osPackagePath` in [clusterConfig.yaml](./cluster-config.md).
 
 [Kubean](https://github.com/kubean-io/kubean) provides osPackage offline packages for different
@@ -76,6 +74,21 @@ operating systems, which can be found at <https://github.com/kubean-io/kubean/re
 
 Currently, the installer version requires the osPackage offline package version to match.
 Download the osPackage offline package based on the corresponding version:
+
+=== "V0.19.0"
+
+    | Operating System | Download |
+    | :--------- | :------ |
+    | CentOS 7     | [os-pkgs-centos7-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-centos7-v0.16.3.tar.gz) |
+    | Redhat 8     | [os-pkgs-redhat8-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-redhat8-v0.16.3.tar.gz) |
+    | Redhat 7     | [os-pkgs-redhat7-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-redhat7-v0.16.3.tar.gz) |
+    | Redhat 9     | [os-pkgs-redhat9-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-redhat9-v0.16.3.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-kylinv10-v0.16.3.tar.gz) |
+    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-ubuntu2004-v0.16.3.tar.gz) |
+    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-openeuler22.03-v0.16.3.tar.gz) |
+    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-oracle9-v0.16.3.tar.gz) |
+    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-oracle8-v0.16.3.tar.gz) |
+    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.16.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-rocky9-v0.16.3.tar.gz) |
 
 === "V0.18.0"
 
@@ -213,19 +226,19 @@ Download the osPackage offline package based on the corresponding version:
 For deploying DCE 5.0 on UOS V20 (1020a) operating system, refer to
 [Deploying DCE 5.0 on UOS V20 (1020a)](../os-install/uos-v20-install-dce5.0.md).
 
-#### Addon Offline Packages (Optional)
+### Addon Offline Packages (Optional)
 
 Addon offline packages contain Helm Chart offline packages for commonly used components.
 For the specific list, refer to the [addon](../../download/addon/history.md) documentation.
 
-Starting from installer version v0.5.0, support for importing addon offline packages is available.
+Starting from installer v0.5.0, support for importing addon offline packages is available.
 If you want to offline all the Helm charts in the addon package, you can download the latest version
 from the [Download Center](../../download/index.md).
 
 First, make sure to download the offline package in advance and define `addonOfflinePackagePath`
 in [clusterConfig.yaml](./cluster-config.md).
 
-#### One-Click Download of Required Offline Packages
+### One-Click Download Required Offline Packages
 
 We provide a script for [one-click downloading and installing the offline packages required for DCE 5.0](../air-tag-download.md).
 
@@ -240,7 +253,7 @@ The following packages are included:
     Due to different methods of downloading ISO operating systems, the one-click download
     does not include the ISO files.
 
-### Step 2: Edit clusterConfig.yaml
+## Edit clusterConfig.yaml
 
 `clusterConfig.yaml` is located in the `offline/sample` directory of the offline image package.
 For detailed parameter introduction, refer to [clusterConfig.yaml](cluster-config.md).
@@ -251,7 +264,7 @@ For detailed parameter introduction, refer to [clusterConfig.yaml](cluster-confi
     When deploying with Redhat 9.2 operating system, you need to enable the kernel
     tuning parameter `node_sysctl_tuning: true`.
 
-### Step 3: Start Installation
+## Install
 
 1. Run the following command to start installing DCE 5.0. The installer binary file is
    located at `offline/dce5-installer`.

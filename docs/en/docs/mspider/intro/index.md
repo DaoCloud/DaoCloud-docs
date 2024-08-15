@@ -46,7 +46,7 @@ DCE 5.0's service mesh has the following advantages compared to other products:
   - HTTP session persistence to meet the continuous processing needs of businesses.
   - Rate limiting and outlier detection to achieve stable and reliable service-to-service links.
   - Network connection management to reduce resource consumption and improve network throughput.
-  - Service security authentication: authentication, authorization, auditing, etc., providing
+  - Service security authentication: authentication, authorization, and auditing providing
       a foundation for service security.
 
 - Graphical application panoramic topology and visualized traffic governance

@@ -8,11 +8,11 @@
 
     ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 
-2. 选择 __外观定制__ 。
+2. 选择 __外观定制__ ,在 __登录页定制__ 页签中，修改登录页的图标和文字后，点击 __保存__ 。
 
-    ![外观定制](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/visual04.png)
+    ![外观定制](../../images/logindesign.png)
 
-3. 在 __登录页定制__ 页签中，修改登录页的图标和文字后，点击 __保存__ 。
+3. 退出登录，在登录页刷新后可看到配置后的效果
 
     ![登录页](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/visual02.png)
 

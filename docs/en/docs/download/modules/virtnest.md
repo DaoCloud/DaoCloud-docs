@@ -31,15 +31,15 @@ On this page, you can download the offline packages for different versions of th
 | [v0.4.0](../../virtnest/intro/release-notes.md) | AMD 64 | 1.43 GB | [:arrow_down: virtnest_v0.4.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/virtnest_v0.4.0_amd64.tar) | [:arrow_down: virtnest_v0.4.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/virtnest_v0.4.0_amd64_checksum.sha512sum) | 2023-11-30 |
 | [v0.3.0](../../virtnest/intro/release-notes.md) | AMD 64 | 1.45 GB | [:arrow_down: virtnest_v0.3.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/virtnest_v0.3.0_amd64.tar) | [:arrow_down: virtnest_v0.3.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/virtnest_v0.3.0_amd64_checksum.sha512sum) | 2023-11-06 |
 
-## Validation
+## Verification
 
-To validate the integrity of the downloaded offline package and checksum file in the directory, using `v0.5.0_amd64` as an example, run the following command:
+To verify the integrity of the downloaded offline package and checksum file in the directory, using `v0.5.0_amd64` as an example, run the following command:
 
 ```sh
 echo "$(cat virtnest_v0.5.0_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-If the validation succeeds, the printed result will be similar to:
+If the verification succeeds, the printed result will be similar to:
 
 ```none
 virtnest_v0.5.0_amd64.tar: ok

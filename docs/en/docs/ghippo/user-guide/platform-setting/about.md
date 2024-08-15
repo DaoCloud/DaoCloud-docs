@@ -3,11 +3,11 @@ hide:
   - toc
 ---
 
-# About the platform
+# About
 
-The __About__ page primarily showcases the latest versions of each module, highlights the different open source software used, and expresses gratitude to the technical team via an animated video.
+The __About__ page primarily showcases the latest versions of each module, highlights the open source software used, and expresses gratitude to the technical team via an animated video.
 
-A simple step to view is as follows:
+Steps to view are as follows:
 
 1. Log in to DCE 5.0 as a user with __Admin__ role. Click __Global Management__ at the bottom of the left navigation bar.
 

@@ -13,6 +13,8 @@ On this page, you can download the offline packages for different versions of Ro
 
 | Version | Architecture | File Size | Package   | Checksum File | Updated Date |
 | ------ | ------------ | --------- | ---------- | ------------ | ------------ |
+| [v0.9.0](../../../middleware/rocketmq/release-notes.md) | <font color=green>ARM 64</font> | 583.76 MB | [:arrow_down: rocketmq_0.9.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.9.0_arm64.tar) | [:arrow_down: rocketmq_0.9.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.9.0_arm64_checksum.sha512sum) | 2024-08-08 |
+| [v0.9.0](../../../middleware/rocketmq/release-notes.md) | AMD 64 | 593.92 MB | [:arrow_down: rocketmq_0.9.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.9.0_amd64.tar) | [:arrow_down: rocketmq_0.9.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.9.0_amd64_checksum.sha512sum) | 2024-08-08 |
 | [v0.8.0](../../../middleware/rocketmq/release-notes.md) | <font color=green>ARM 64</font> | 583.12 MB | [:arrow_down: rocketmq_0.8.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.8.0_arm64.tar) | [:arrow_down: rocketmq_0.8.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.8.0_arm64_checksum.sha512sum) | 2024-07-04 |
 | [v0.8.0](../../../middleware/rocketmq/release-notes.md) | AMD 64 | 593.30 MB | [:arrow_down: rocketmq_0.8.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.8.0_amd64.tar) | [:arrow_down: rocketmq_0.8.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.8.0_amd64_checksum.sha512sum) | 2024-07-04 |
 | [v0.7.0](../../../middleware/rocketmq/release-notes.md) | <font color=green>ARM 64</font> | 583.02 MB | [:arrow_down: rocketmq_0.7.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.7.0_arm64.tar) | [:arrow_down: rocketmq_0.7.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.7.0_arm64_checksum.sha512sum) | 2024-06-05 |
@@ -26,15 +28,15 @@ On this page, you can download the offline packages for different versions of Ro
 | [v0.2.0](../../../middleware/rocketmq/release-notes.md) | AMD 64 | 360.39 MB | [:arrow_down: rocketmq_0.2.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.2.0_amd64.tar) | [:arrow_down: rocketmq_0.2.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.2.0_amd64_checksum.sha512sum) | 2023-12-10 |
 | [v0.1.1](../../../middleware/rocketmq/release-notes.md) | AMD 64 | 354.39 MB | [:arrow_down: rocketmq_0.1.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.1.1_amd64.tar) | [:arrow_down: rocketmq_0.1.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.1.1_amd64_checksum.sha512sum) | 2023-11-02 |
 
-## Validation
+## Verification
 
-To validate the integrity of the downloaded offline package and checksum file in the directory, run the following command:
+To verify the integrity of the downloaded offline package and checksum file in the directory, run the following command:
 
 ```sh
 echo "$(cat mcamel-rocketmq_0.1.1_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-If the validation succeeds, the printed result will be similar to:
+If the verification succeeds, the printed result will be similar to:
 
 ```none
 mcamel-rocketmq_0.1.1_amd64.tar: OK

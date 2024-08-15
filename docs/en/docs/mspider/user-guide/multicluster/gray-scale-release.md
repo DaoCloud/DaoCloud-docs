@@ -53,7 +53,7 @@ The deployment process is the same as above, the main differences are:
 - Image changed: `docker.m.daocloud.io/istio/examples-helloworld-v2` 
 - Add label "version": "v2" to the corresponding **pod label** on the container platform
 
-## Deploy grayscale application strategy
+## Deploy grayscale application policy
 
 ### Multicluster Destination Rules
 

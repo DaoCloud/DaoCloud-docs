@@ -9,7 +9,7 @@ This page explains issues related to cross-cluster interconnect in a service mes
 
 ## Cross-Cluster Service Experiences 10s Access Latency
 
-In a managed mesh with 2 clusters, both clusters have the same test service.
+In a hosted mesh with 2 clusters, both clusters have the same test service.
 When accessing the test service via the ingress gateway, there are occasional 10-second delays.
 
 ### Cause Analysis
@@ -36,13 +36,13 @@ When accessing the test service via the ingress gateway, there are occasional 10
 
 ## Traffic in Mesh Only Hits Test Services in Some Clusters
 
-In a managed mesh with 2 clusters, multi-cloud interconnect is enabled and successfully configured. However, continuous access to the test service via the ingress gateway only hits test services in some clusters.
+In a hosted mesh with 2 clusters, multi-cloud interconnect is enabled and successfully configured. However, continuous access to the test service via the ingress gateway only hits test services in some clusters.
 
 ### Cause Analysis
 
 1. Some test services are in an abnormal state. Check the service status.
 2. Some test services have not injected sidecars. Check the sidecar injection status.
-3. Some test service configurations are incorrect. Check service configurations such as svc ports, port names, etc.
+3. Some test service configurations are incorrect. Check service configurations such as svc ports and port names
 4. Multi-cloud interconnect was enabled after the test services were created.
 
 ### Solutions

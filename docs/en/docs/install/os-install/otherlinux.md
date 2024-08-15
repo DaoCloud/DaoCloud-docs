@@ -21,7 +21,7 @@ Other Linux is essentially because DCE does not provide the installation system 
 
 - Read [Deployment Architecture](../commercial/deploy-arch.md) in advance to confirm this deployment mode.
 - Read [Deployment Requirements](../commercial/deploy-requirements.md) in advance to confirm
-  whether the network, hardware, ports, etc. meet the requirements.
+  whether the network, hardware, and ports meet the requirements.
 - Read [Preparation](../commercial/prepare.md) in advance to confirm machine resources and pre-check.
 
 ## Make the offline OS package
@@ -105,12 +105,12 @@ Other Linux is essentially because DCE does not provide the installation system 
     | Redhat Major Version | < 8 | libselinux-python |
     | | \>= 8 | python3-libselinux |
 
-## Start offline installation
+## Offline installation
 
-1. Download the full mode offline package, you can download the latest version in [Download Center](../../download/index.md).
+1. Download the proper offline package. you can download the latest version in [Download Center](../../download/index.md).
 
     | CPU Architecture | Version | Download URL |
-    | -------- | ------ | ------------------------------ -------------------------------------------------- -------------- |
+    | -------- | ------ | ---------------- |
     | AMD64 | v0.17.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.17.0-amd64.tar> |
 
     Unzip the offline package after downloading:

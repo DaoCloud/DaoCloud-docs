@@ -38,7 +38,7 @@ refer to [Create Multicloud Deployment from Image](deployment.md).
         The override policy is an optional configuration. If you don't need any override configurations, 
         just leave this field empty and click __OK__ .
 
-Then you will be automatically directed to the multicloud deployment list. You can click the __⋮__ icon on the right of the list 
+Then you will be automatically directed to the multicloud deployment list. You can click the __┇__ icon on the right of the list 
 to edit the YAML, pause, restart, or delete the workload.
 
 ![more actions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-update01.png)

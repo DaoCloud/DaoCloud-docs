@@ -27,7 +27,7 @@
 
     ![镜像列表](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/scan01.jpg)
 
-2. 在镜像详情列表中，点击列表右侧的 __⋮__ ，在弹出菜单中选择 __扫描__ 。
+2. 在镜像详情列表中，点击列表右侧的 __┇__ ，在弹出菜单中选择 __扫描__ 。
 
     ![扫描](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/scan02.jpg)
 

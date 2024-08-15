@@ -5,12 +5,16 @@ hide:
 
 # LDAP
 
-The full name of LDAP in English is Lightweight Directory Access Protocol, that is, Lightweight Directory Access Protocol, which is an open and neutral industry-standard application protocol that provides access control and maintains directory information for distributed information through the IP protocol.
+The full name of LDAP is Lightweight Directory Access Protocol, which is an open and neutral
+industry-standard application protocol that provides access control and maintains directories
+for distributed information through the IP protocol.
 
-If your enterprise or organization has its own account system, and your enterprise user management system supports the LDAP protocol, you can use the identity provider feature based on the LDAP protocol provided by the global Organization members create usernames/passwords.
+If your enterprise or organization has its own account system, and your enterprise user management
+system supports the LDAP protocol, you can use the identity provider feature based on the LDAP protocol
+provided by the Global Management instead of creating usernames/passwords for each member in DCE 5.0.
 You can grant permissions to use DCE 5.0 resources to these external user identities.
 
-In global management, the operation steps are as follows:
+In Global Management, the operation steps are as follows:
 
 1. Log in to DCE 5.0 as a user with __admin__ role. Click __Global Management__ -> __Access Control__ in the lower left corner of the left navigation bar.
 
@@ -18,11 +22,11 @@ In global management, the operation steps are as follows:
 
 1. Click __Identity Provider__ on the left nav bar, click __Create an Identity Provider__ button.
 
-    ![id provider](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ldap00.png)
+    ![id provider](../../images/ldap00.png)
 
 1. In the __LDAP__ tab, fill in the following fields and click __Save__ to establish a trust relationship with the identity provider and a user mapping relationship.
 
-    ![ldap](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ldap01.png)
+    ![ldap](../../images/ldap01.png)
 
     | Field         | Description                                                  | Example                             |
     | ------------- | ------------------------------------------------------------ | ----------------------------------- |
@@ -36,7 +40,7 @@ In global management, the operation steps are as follows:
     | Full Name Map | Surname-sn; First name-cn                                     | Not editable                        |
     | Email Mapping | Refers to associating a user's email address with their LDAP account. It allows only users with specific email domain names to access resources such as intranet websites or file shares. | Email address, not editable          |
 
-    **Advanced Configuration**
+    **Advanced Config**
 
     | Field           | Description                                                  | Example |
     | --------------- | ------------------------------------------------------------ | ------- |
@@ -47,7 +51,7 @@ In global management, the operation steps are as follows:
     | RDN Attribute   | Refers to the attribute used to create the Relative Distinguished Name (RDN). In X.500 and LDAP directory services, the RDN attribute is usually unique and is used to identify part of an object in the directory tree (Naming Context). For example, in "cn=John Doe,ou=People,dc=example,dc=com", "cn" is one of the RDN attributes. The RDN attribute defines the relative name of the object under its parent object, so it must be unique. When a new object is added to the directory, its RDN attribute must be different from other objects in the same level, otherwise it will cause naming conflicts. | uid     |
     | UUID Attribute  | Refers to the Universally Unique Identifier (UUID) attribute. A UUID is a 36-character string consisting of numbers, letters, and hyphens, used to identify objects in a computer system. UUID ensures that objects on different computers have unique identifiers at any given time. | entryUUID |
 
-1. On the __Synchronize groups__ tab, fill in the following fields to configure the mapping relationship of groups, and click __Save__ again.
+1. On the __Sync Groups__ tab, fill in the following fields to configure the mapping relationship of groups, and click __Save__ again.
 
     | Field | Description | Example |
     | ---------------- | -------------------------------- ---------------------------- | --------------------- ------ |
@@ -57,6 +61,9 @@ In global management, the operation steps are as follows:
 
 !!! note
 
-    1. After you have established a trust relationship between the enterprise user management system and DCE 5.0 through the LDAP protocol, you can synchronize the users or groups in the enterprise user management system to DCE 5.0 at one time through auto/manual synchronization.
-    1. After synchronization, the administrator can authorize groups/groups in batches, and users can log in to DCE 5.0 through the account/password in the enterprise user management system.
-    1. See the [LDAP Operations Demo Video](../../../videos/ghippo.md#ldap) for a hands-on tutorial.
+    1. After you have established a trust relationship between the enterprise user management system
+       and DCE 5.0 through the LDAP protocol, you can synchronize the users or groups in the enterprise
+       user management system to DCE 5.0 at one time through auto/manual synchronization.
+    1. After synchronization, the administrator can authorize groups/groups in batches, and users
+       can log in to DCE 5.0 through the account/password in the enterprise user management system.
+    1. See the [LDAP Operations Demo Video](../../../videos/ghippo.md#integration-with-ldap-users-and-user-groups) for a hands-on tutorial.

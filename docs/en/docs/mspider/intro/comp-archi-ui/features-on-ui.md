@@ -1,4 +1,6 @@
 ---
+MTPE: windsonsea
+Date: 2024-08-05
 hide:
   - toc
 ---
@@ -25,7 +27,7 @@ The DCE service mesh supports three types of meshes: hosted mesh, dedicated mesh
 
 | Features | Hosted mesh | Dedicated mesh | External mesh |
 | :--: | :------: | :------: | :------: |
-| Access | √ | × | × |
+| Integrate | √ | × | × |
 | Remove | √ | × | × |
 
 ## Service Management

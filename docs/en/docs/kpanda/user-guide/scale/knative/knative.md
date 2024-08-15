@@ -1,4 +1,9 @@
-# Kantive Introduction
+---
+MTPE: windsonsea
+Date: 2024-07-19
+---
+
+# Knative Introduction
 
 Knative provides a higher level of abstraction, simplifying and speeding up the process of building, deploying, and managing applications on Kubernetes. It allows developers to focus more on implementing business logic, while leaving most of the infrastructure and operations work to Knative, significantly improving productivity.
 
@@ -24,7 +29,7 @@ knative-serving        webhook-5c88b94c5-78x7m                 1/1     Running  
 knative-serving        storage-version-migration-serving-serving-1.12.2-t7zvd   0/1  Completed   0   7m15s
 ```
 
-| Component | Function |
+| Component | Features |
 |----------|-------------|
 | Activator | Queues requests (if a Knative Service has scaled to zero). Calls the autoscaler to bring back services that have scaled down to zero and forward queued requests. The Activator can also act as a request buffer, handling bursts of traffic. |
 | Autoscaler | Responsible for scaling Knative services based on configuration, metrics, and incoming requests. |
@@ -43,15 +48,15 @@ knative-serving        storage-version-migration-serving-serving-1.12.2-t7zvd   
 ## Autoscaler Solutions Comparison
 
 | Autoscaler Type | Core Part of Knative Serving | Default Enabled | Scale to Zero Support | CPU-based Autoscaling Support |
-| -------------- | -------------------------- | ------------ | ------------------ | -------------- |
-| Knative Pod Autoscaler (KPA)    | Yes         | Yes          | Yes      | No                           |
-| Horizontal Pod Autoscaler (HPA) | No         | Needs to be enabled after installing Knative Serving | No       | Yes               |
+| -------------- | ---------- | ------------ | ------------------ | -------------- |
+| Knative Pod Autoscaler (KPA) | Yes | Yes | Yes | No |
+| Horizontal Pod Autoscaler (HPA) | No | Needs to be enabled after installing Knative Serving | No | Yes |
 
 ## CRD
 
-| Resource Type       | API Name                          | Description                                                         |
-| -------------- | --------------------------------- | ------------------------------------------------------------ |
-| Services       | service.serving.knative.dev       | Automatically manages the entire lifecycle of Workloads, controls the creation of other objects, ensures applications have Routes, Configurations, and new revisions with each update. |
-| Routes         | route.serving.knative.dev         | Maps network endpoints to one or more revision versions, supports traffic distribution and version routing. |
-| Configurations | configuration.serving.knative.dev | Maintains the desired state of deployments, provides separation between code and configuration, follows the Twelve-Factor App methodology, modifying configurations creates new revisions. |
-| Revisions      | revision.serving.knative.dev      | Snapshot of the workload at each modification time point, immutable object, automatically scales based on traffic. |
+| Resource Type | API Name | Description |
+| ------------- | -------- | ----------- |
+| Services | `service.serving.knative.dev` | Automatically manages the entire lifecycle of Workloads, controls the creation of other objects, ensures applications have Routes, Configurations, and new revisions with each update. |
+| Routes | `route.serving.knative.dev` | Maps network endpoints to one or more revision versions, supports traffic distribution and version routing. |
+| Configurations | `configuration.serving.knative.dev` | Maintains the desired state of deployments, provides separation between code and configuration, follows the Twelve-Factor App methodology, modifying configurations creates new revisions. |
+| Revisions | `revision.serving.knative.dev` | Snapshot of the workload at each modification time point, immutable object, automatically scales based on traffic. |
