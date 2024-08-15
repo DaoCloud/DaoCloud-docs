@@ -1,14 +1,14 @@
 # 自定义导航栏
 
-当前自定义导航栏需要通过手动创建导航栏的yaml，并 apply 到集群中。
+当前自定义导航栏需要通过手动创建导航栏的 YAML ，并 apply 到集群中。
 
 ## 导航栏分类
 
 ![导航栏分类](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/nav01.png)
 
-若需要新增或重新排序导航栏分类可以通过新增、修改 category yaml 实现。
+若需要新增或重新排序导航栏分类可以通过新增、修改 category YAML 实现。
 
-category 的 yaml 示例如下：
+category 的 YAML 示例如下：
 
 ```yaml
 apiVersion: ghippo.io/v1alpha1
@@ -30,7 +30,7 @@ spec:
 4. 定义分类的中英文名称
 5. 排序，数字越大，越靠上
 
-编写好 yaml文件后，通过执行如下命令后，刷新页面即可看到新增、修改的导航栏分类。
+编写好 YAML 文件后，通过执行如下命令后，刷新页面即可看到新增、修改的导航栏分类。
 
 ```bash
 kubectl apply -f xxx.yaml
@@ -40,7 +40,7 @@ kubectl apply -f xxx.yaml
 
 ![导航栏菜单](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/nav02.png)
 
-若需要新增或重新排序导航栏菜单可以通过新增 navigator yaml 实现。
+若需要新增或重新排序导航栏菜单可以通过新增 navigator YAML 实现。
 
 !!! note
 
