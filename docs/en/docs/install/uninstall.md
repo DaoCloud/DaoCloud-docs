@@ -27,5 +27,6 @@ helm -n insight-system uninstall insight-agent insight
 helm -n ipavo-system uninstall ipavo
 helm -n kpanda-system uninstall kpanda
 helm -n istio-system uninstall istio-base istio-ingressgateway istiod
-kubectl delete namespace mcamel-system ghippo-system insight-system ipavo-system kpanda-system istio-system
+helm -n kcollie-system uninstall kcollie
+kubectl delete namespace mcamel-system ghippo-system insight-system ipavo-system kpanda-system istio-system kcollie-system
 ```
