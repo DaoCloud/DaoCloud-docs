@@ -12,14 +12,10 @@ hide:
 
 具体操作步骤如下：
 
-1. 使用您的用户名/密码登录 DCE 5.0。点击左侧导航栏底部的 __全局管理__ 。
-
-    ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
-
-2. 点击右上角的用户名位置，选择 __个人中心__ 。
+1. 点击右上角的用户名位置，选择 __个人中心__ 。
 
     ![个人中心](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/lang01.png)
 
-3. 点击 __安全设置__ 页签。填写您的邮箱地址或修改登录密码。
+2. 点击 __安全设置__ 页签。填写您的邮箱地址或修改登录密码。
 
     ![安全设置](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/security01.png)
