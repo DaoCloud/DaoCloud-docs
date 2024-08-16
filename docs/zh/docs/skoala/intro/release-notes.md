@@ -4,6 +4,34 @@
 
 *[skoala]: DaoCloud 微服务引擎的内部开发代号
 
+## Skoala 0.40.x 升级注意事项
+
+### 影响版本
+
+从任意版本升级至 0.40.x。
+
+### 影响版本
+
+0.40.x 版本中更新了相关自定义资源（CRD），由于在 skoala-init Chart 对应组件 crds 目录中的自定义资源不会自动随安装被更新，本次更新的 CRD 为 gateway-api CRD，BackendTLSPolicy 升级需要手动操作，由于本次更新的内容存在社区兼容性问题，[详情参考](https://github.com/kubernetes-sigs/gateway-api/issues/3086)。
+
+### 升级步骤
+
+请按照如下步骤手动更新需要升级的网关CRD文件：
+1.  删除BackendTLSPolicy:
+
+   ```shell
+    kubectl delete crds `kubectl get crds | grep -E "backendtlspolicies.gateway.networking.k8s.io"`
+   ``` 
+   
+2. 手动更新网关相关 CRD 文件
+
+   ```shell
+    # projectcontour 相关 crd
+    kubectl apply -f skoala-init/charts/contour-provisioner/crds/contour.yaml
+    # gateway-api 相关 crd
+    kubectl apply -f skoala-init/charts/contour-provisioner-prereq/crds/gateway-api.yaml
+   ``` 
+
 ## 2024-08-06
 
 ### v0.39.2
