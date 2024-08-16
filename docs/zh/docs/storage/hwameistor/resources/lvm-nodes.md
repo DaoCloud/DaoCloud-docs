@@ -62,7 +62,7 @@ spec:
   nodeName: k8s-worker-4
   owner: local-storage
   description:
-    diskType: SSD
+    diskType: SSD # 可能需要根据节点磁盘实际情况调整为 HDD 或者 NVMe
 EOF
 ```
 
