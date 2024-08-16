@@ -65,7 +65,7 @@
 
 | **数量** | **服务器角色** | **服务器用途** | **cpu 数量** | **内存容量** | **系统硬盘** | **未分区的硬盘** |
 | ------- | ------------- | ------------ | ----------- | ----------- | ----------- | ------------- |
-| 1 | all in one | 镜像仓库、chart museum 、global 集群本身 | 16 核 | 32 GB | 200 GB | 400 GB |
+| 1 | all in one | 镜像仓库、chart museum、[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)本身 | 16 核 | 32 GB | 200 GB | 400 GB |
 
 ### 4 节点模式 CPU 、内存、硬盘要求
 
@@ -100,7 +100,7 @@
 
 ### 网络拓扑
 
-假设使用 VIP 作为全局集群的负载均衡方式：
+假设使用 VIP 作为全局服务集群的负载均衡方式：
 
 ![Network-Topology](https://docs.daocloud.io/daocloud-docs-images/docs/install/commercial/images/Network-Topology.png)
 
@@ -109,7 +109,7 @@
 | **资源** | **要求** | **说明** |
 | ------- | -------- | ------- |
 | `istioGatewayVip` | 1 个 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口。 |
-| `insightVip` | 1 个 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP。 |
+| `insightVip` | 1 个 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给全局服务集群的 Insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP。 |
 | 网络速率 | 1000 M/s | 不低于千兆，建议万兆 |
 | 协议 | - | 支持 IPv6 |
 | 保留 IP 地址段 | 需保留两段 | 供 Pod（默认 10.233.64.0/18）和 Service （默认 10.233.0.0/18 使用）。如果已经在使用了，可以自定义其他网段避免 IP 地址冲突。|
