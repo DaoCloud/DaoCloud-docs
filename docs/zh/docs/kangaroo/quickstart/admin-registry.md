@@ -12,82 +12,86 @@ hide:
 
 DCE 5.0 主推 Harbor 作为镜像仓库提供镜像服务。
 
-1. 假设您已创建了托管 Harbor 或接入了一个外部 Habor，按照以下步骤可以将公开镜像共享给所有命名空间使用（在部署应用时能够通过镜像选择器选择公开的镜像）：
+## 共享公开镜像
 
-    ```mermaid
-    graph TB
+假设您已创建了托管 Harbor 或接入了一个外部 Habor，按照以下步骤可以将公开镜像共享给所有命名空间使用（在部署应用时能够通过镜像选择器选择公开的镜像）：
 
-    create[创建托管 Harbor] --> setpublic[创建镜像空间并设置为公开]
-    --> push[推送镜像]
-    --> deploy[部署应用]
+```mermaid
+graph TB
 
-    classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-    classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+create[创建托管 Harbor] --> setpublic[创建镜像空间并设置为公开]
+--> push[推送镜像]
+--> deploy[部署应用]
 
-    class create,setpublic,push,deploy cluster;
+classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-    click create "https://docs.daocloud.io/kangaroo/hosted/"
-    click setpublic "https://docs.daocloud.io/kangaroo/integrate/create-space/"
-    click push "https://docs.daocloud.io/kangaroo/quickstart/push/"
-    click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/create-deployment/"
-    ```
+class create,setpublic,push,deploy cluster;
 
-    预期结果：平台上所有用户在命名空间中部署应用时，均能够通过镜像选择器，选择公开镜像空间中的镜像进行部署。
+click create "https://docs.daocloud.io/kangaroo/hosted/"
+click setpublic "https://docs.daocloud.io/kangaroo/integrate/create-space/"
+click push "https://docs.daocloud.io/kangaroo/quickstart/push/"
+click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/create-deployment/"
+```
 
-    ![选择镜像](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/admin01.png)
+预期结果：平台上所有用户在命名空间中部署应用时，均能够通过镜像选择器，选择公开镜像空间中的镜像进行部署。
 
-    ![镜像选择](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/admin02.png)
+![选择镜像](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/admin01.png)
 
-1. 假设您已创建了托管 Harbor 或接入了一个外部 Habor，按照以下步骤可以将私有镜像共享给指定的工作空间（租户）下的命名空间使用（在部署应用时能够通过镜像选择器选择私有的镜像）：
+![镜像选择](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/admin02.png)
 
-    前提条件为：
+## 共享私有镜像
 
-    ```mermaid
-    graph TB
+假设您已创建了托管 Harbor 或接入了一个外部 Habor，按照以下步骤可以将私有镜像共享给指定的工作空间（租户）下的命名空间使用（在部署应用时能够通过镜像选择器选择私有的镜像）：
 
-    create[已创建工作空间] --> bind[命名空间已绑定工作空间]
+前提条件为：
 
-    classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-    classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+```mermaid
+graph TB
 
-    class create,bind cluster;
+create[已创建工作空间] --> bind[命名空间已绑定工作空间]
 
-    click create "https://docs.daocloud.io/ghippo/user-guide/workspace/Workspaces/"
-    click bind "https://docs.daocloud.io/ghippo/user-guide/workspace/quota/#_4"
-    ```
+classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-    操作步骤为：
+class create,bind cluster;
 
-    ```mermaid
-    graph TB
+click create "https://docs.daocloud.io/ghippo/user-guide/workspace/Workspaces/"
+click bind "https://docs.daocloud.io/ghippo/user-guide/workspace/quota/#_4"
+```
 
-    create[创建托管 Harbor] --> setpublic[创建镜像空间并设置为公开]
-    --> push[推送镜像]
-    --> bind[镜像空间绑定工作空间]
-    --> deploy[部署应用]
+操作步骤为：
 
-    classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-    classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+```mermaid
+graph TB
 
-    class create,setpublic,push,bind,deploy cluster;
+create[创建托管 Harbor] --> setpublic[创建镜像空间并设置为公开]
+--> push[推送镜像]
+--> bind[镜像空间绑定工作空间]
+--> deploy[部署应用]
 
-    click create "https://docs.daocloud.io/kangaroo/hosted/"
-    click setpublic "https://docs.daocloud.io/kangaroo/integrate/create-space/"
-    click push "https://docs.daocloud.io/kangaroo/quickstart/push/"
-    click bind "https://docs.daocloud.io/kangaroo/bind-to-ws/"
-    click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/create-deployment/"
-    ```
+classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-    预期结果：仅在该工作空间下的命名空间部署应用时能够通过镜像选择器，选择该镜像空间下的私有镜像进行部署应用。
+class create,setpublic,push,bind,deploy cluster;
 
-    ![选择镜像](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/admin03.png)
+click create "https://docs.daocloud.io/kangaroo/hosted/"
+click setpublic "https://docs.daocloud.io/kangaroo/integrate/create-space/"
+click push "https://docs.daocloud.io/kangaroo/quickstart/push/"
+click bind "https://docs.daocloud.io/kangaroo/bind-to-ws/"
+click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/create-deployment/"
+```
 
-    ![镜像选择](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/admin04.png)
+预期结果：仅在该工作空间下的命名空间部署应用时能够通过镜像选择器，选择该镜像空间下的私有镜像进行部署应用。
 
-    !!! tip
+![选择镜像](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/admin03.png)
 
-        1. 接入的 Harbor 可按照上述方式达到同样的使用效果。
-        1. Docker Registry 本身只有公开镜像，因此接入后镜像将公开给所有命名空间使用。
+![镜像选择](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/admin04.png)
+
+!!! tip
+
+    1. 接入的 Harbor 可按照上述方式达到同样的使用效果。
+    1. Docker Registry 本身只有公开镜像，因此接入后镜像将公开给所有命名空间使用。
