@@ -25,7 +25,7 @@ When the peak business period is over, in order to save resource costs, you can 
 
     ![Clusters](../images/addnode01.png)
 
-2. Click __Nodes__ on the left navigation bar, find the node to be uninstalled, click __ⵗ__ and select __Remove__ .
+2. Click __Nodes__ on the left navigation bar, find the node to be uninstalled, click __┇__ and select __Remove__ .
 
     ![Remove Nodes](../images/deletenode01.png)
 

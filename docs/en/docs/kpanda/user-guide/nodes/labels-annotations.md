@@ -20,7 +20,7 @@ The steps to add/delete tags and annotations are as follows:
 
     ![Clusters](../images/schedule01.png)
 
-2. Click __Nodes__ on the left navigation bar, click the __ⵗ__ operation icon on the right side of the node, and click __Edit Labels__ or __Edit Annotations__ .
+2. Click __Nodes__ on the left navigation bar, click the __┇__ operation icon on the right side of the node, and click __Edit Labels__ or __Edit Annotations__ .
 
     ![暂停调度](../images/labels01.png)
 

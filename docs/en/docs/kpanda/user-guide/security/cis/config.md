@@ -30,7 +30,7 @@ Under the scan configuration tab, clicking the name of a scan configuration disp
 
 After a scan configuration has been successfully created, it can be updated or deleted according to your needs.
 
-Under the scan configuration tab, click the __ⵗ__ action button to the right of a configuration:
+Under the scan configuration tab, click the __┇__ action button to the right of a configuration:
 
 - Select __Edit__ to update the configuration. You can update the description, template, and scan items. The configuration name cannot be changed.
 - Select __Delete__ to delete the configuration.
