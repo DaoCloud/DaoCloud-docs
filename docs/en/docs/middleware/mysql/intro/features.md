@@ -43,7 +43,7 @@ This page explains about the functional features of MySQL.
 After MySQL is deployed in DCE 5.0, the following features will also be supported:
 
 - Implement MySQL high availability and topology management based on Orchestrator
-- Support single node and master/slave mode
+- Support single node and active/standby mode
 - Support phpmyadmin, provide management page
 - Expose metrics based on mysqld-exporter
 - Use Grafana Operator to integrate MySQL Dashboard to display monitoring data
