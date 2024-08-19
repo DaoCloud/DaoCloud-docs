@@ -20,7 +20,7 @@ For more details about taints, refer to the official Kubernetes documentation [T
 
     ![Clusters](../images/taint01.png)
 
-2. In the left navigation bar, click __Nodes__ , find the node that needs to modify the taint, click the __ⵗ__ operation icon on the right and click the __Edit Taints__ button.
+2. In the left navigation bar, click __Nodes__ , find the node that needs to modify the taint, click the __┇__ operation icon on the right and click the __Edit Taints__ button.
 
     ![Edit Taints](../images/taint02.png)
 

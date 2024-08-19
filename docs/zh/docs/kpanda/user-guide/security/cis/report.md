@@ -9,7 +9,7 @@ hide：
 
 - 下载查看
 
-    __安全管理__ -> __合规性扫描__ 页面的 __扫描报告__ 页签点击报告右侧的 __ⵗ__ 操作按钮选择 __下载__ 。
+    __安全管理__ -> __合规性扫描__ 页面的 __扫描报告__ 页签点击报告右侧的 __┇__ 操作按钮选择 __下载__ 。
 
     ![报告列表截图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security09.png)
 

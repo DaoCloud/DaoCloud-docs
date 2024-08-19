@@ -15,7 +15,7 @@
 
     ![点击集群名称](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/taint-click--cluster-name.png)
 
-2. 在左侧导航栏，点击 __节点管理__ ，找到需要修改污点的节点，点击右侧的 __ⵗ__ 操作图标并点击 __修改污点__ 按钮。
+2. 在左侧导航栏，点击 __节点管理__ ，找到需要修改污点的节点，点击右侧的 __┇__ 操作图标并点击 __修改污点__ 按钮。
 
     ![修改污点](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/taint-change.png)
 

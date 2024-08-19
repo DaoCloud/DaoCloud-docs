@@ -11,11 +11,11 @@ hide:
 
     ![进入集群列表页面](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/schedule01.png)
 
-2. 在左侧导航栏点击 __节点管理__ ，在节点右侧点击 __ⵗ__ 操作图标，点击 __暂停调度__ 按钮即可暂停调度该节点。
+2. 在左侧导航栏点击 __节点管理__ ，在节点右侧点击 __┇__ 操作图标，点击 __暂停调度__ 按钮即可暂停调度该节点。
 
     ![暂停调度](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/schedule02.png)
 
-3. 在节点右侧点击 __ⵗ__ 操作图标，点击 __恢复调度__ 按钮即可恢复调度该节点。
+3. 在节点右侧点击 __┇__ 操作图标，点击 __恢复调度__ 按钮即可恢复调度该节点。
 
     ![节点管理](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/schedule03.png)
 
