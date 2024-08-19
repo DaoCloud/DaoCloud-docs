@@ -23,6 +23,7 @@ When deploying DCE 5.0, it is necessary to first plan the software, hardware, an
 | | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | [Deploying DCE 5.0 Enterprise on Oracle Linux R9 U1](../os-install/oracleLinux-install-dce5.0.md) |
 | | TencentOS Server 3.1 | 5.4.119-19.0009.14 | [Deploying DCE 5.0 Enterprise on TencentOS Server 3.1](../os-install/TencentOS-install-dce5.0.md) |
 | ARM 64 | Kylin OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | [Offline Install DCE 5.0 Enterprise](start-install.md) |
+| | Galaxy Kirin OS V10 SP3 | 4.19.90-89.11.v2401.ky10.aarch64 | [Offline Install DCE 5.0 Enterprise](start-install.md) |
 
 !!! note
 
