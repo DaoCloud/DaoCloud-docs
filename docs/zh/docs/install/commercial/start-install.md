@@ -276,7 +276,7 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
         - -m 参数指定 manifest 文件
         - -z 最小化安装
         - -d 开启 debug 模式
-        - --use-original-repo 从源站 donwload binaries、pull imaeges
+        - --use-original-repo 从源站下载可执行文件、拉取镜像等
         - 更多参数请使用 --help 查询
 
 1. 安装完成后，命令行会提示安装成功。恭喜您！现在可以通过屏幕提示的 URL 使用默认的账号和密码（admin/changeme）探索全新的 DCE 5.0 啦！

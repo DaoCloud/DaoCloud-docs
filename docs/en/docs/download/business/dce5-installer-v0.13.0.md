@@ -70,7 +70,7 @@ After successfully verifying the offline package,
     tar -zxvf offline-v0.13.0-arm64.tar
     ```
 
-- For installation instructions, please refer to the [Commercial Edition Installation Process](../../install/commercial/start-install.md).
+- For installation instructions, refer to the [DCE 5.0 Enterprise Installation Process](../../install/commercial/start-install.md).
 - After successful installation, please contact us for authorization: email info@daocloud.io or call 400 002 6898.
 
 ## Modules

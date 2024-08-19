@@ -6,7 +6,7 @@
 
 ### DCE 5.0 界面打不开时，执行 diag.sh 脚本快速排障
 
-安装器自 v0.12.0 版本之后新增了 diag.sh 脚本，方便用户在 DCE 5.0 界面打不开时快速排障。
+安装器自 [v0.12.0 版本](./release-notes.md#v0120)之后新增了 diag.sh 脚本，方便用户在 DCE 5.0 界面打不开时快速排障。
 
 执行命令：
 
@@ -60,8 +60,8 @@ ERROR: failed to create cluster: command "podman run --name kind-control-plane..
 
 解决方案：重新启用 IPv6 或者更新火种节点底座为 Docker。
 
-Podman 相关 Issue 地址：
-https://github.com/containers/podman/issues/13388
+参阅 Podman 相关 Issue：
+[podman 4.0 hangs indefinitely if ipv6 is disabled on system](https://github.com/containers/podman/issues/13388)
 
 ### 火种节点 kind 容器重启后，kubelet 服务无法启动
 
@@ -177,5 +177,5 @@ DaemonSet is not ready: insight-system/insight-agent-fluent-bit. 0 out of 2 expe
 [warn] [net] getaddrinfo(host='mcamel-common-es-cluster-masters-es-http.mcamel-system.svc.cluster.local',errt11):Could not contact DNS servers
 ```
 
-出现上述问题是一个 fluent-bit 的 bug，可以参考：
-https://github.com/aws/aws-for-fluent-bit/issues/233
+出现上述问题是一个 fluent-bit 的 bug，可以参考 aws/aws-for-fluent-bit 的一个 Issue：
+[Seeing `Timeout while contacting DNS servers` with latest v2.19.1](https://github.com/aws/aws-for-fluent-bit/issues/233)

@@ -15,6 +15,27 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2024-07-30
+
+### v0.20.0
+
+#### Improvements
+
+- **Improved** support for Kylin v10sp3.
+- **Improved** the ability to update the global kubeconfig for the Spark cluster.
+- **Improved** the update process for the Spark cluster's own certificates and kubeconfig.
+- **Improved** registration of installer version information with global management.
+- **Improved** the `clusterConfig.yaml` template to add the `insecure` option for `elasticsearch`.
+- **Improved** detection of the system's IPv6 status and automatic enabling.
+- **Improved** validation of special characters in the external Redis URL.
+
+#### Fixes
+
+- **Fixed** an issue where the `-j` parameter did not take effect after specifying a script with the `-s` command line option.
+- **Fixed** intermittent process blocking issues with `ps -p`.
+- **Fixed** dependencies on kernel parameters in Ubuntu 22.04.
+- **Fixed** false warnings during disk detection.
+
 ## 2024-06-30
 
 ### v0.19.0
@@ -22,7 +43,7 @@ the evolution path and feature changes of each version.
 #### Improvements
 
 - **Improved** the default K8s version to v1.29.5.
-- **Improved** support for configuring `ubuntu_kernel_unattended_upgrades_disabled: true` under the `kubeanConfig` 
+- **Improved** support for configuring `ubuntu_kernel_unattended_upgrades_disabled: true` under the `kubeanConfig`
   parameter in `clusterconfig.yaml` to disable automatic kernel updates on Ubuntu.
 - **Improved** the function of uploading multiple files for offline addon packages.
 - **Improved** dependency version of charts-syncer to v0.0.23.

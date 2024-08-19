@@ -30,21 +30,17 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
 
 1. Download and decompress the offline package of DCE Community on the controller node of your kubernetes cluster, or download and decompress the offline package from [Download Center](../../../download/index.md).
 
-    Take VERSION=v0.19.0 as an example.
+    Take VERSION=v0.20.0 as an example.
 
     ```bash
-    export VERSION=v0.19.0
+    export VERSION=v0.20.0
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```
 
 2. Customize `clusterConfig.yaml`
 
-    - If Console is exposed via NodePort (recommended only for PoC use cases), skip this step.
-
-    - In non-public cloud environment (virtual/physical machine), please enable load balancer (metallb) to avoid
-      NodePort instability caused by node IP changes. Plan your network carefully and set up 2 necessary VIPs.
-      Here is an example of `clusterConfig.yaml`:
+    - For non-public cloud environments (VMs or physical machines), enable load balancing (Metallb) to avoid instability caused by NodePort due to changing node IPs. Carefully plan your network and set up 2 necessary VIPs. Here is a sample configuration:
 
         ```yaml title="clusterConfig.yaml"
         apiVersion: provision.daocloud.io/v1alpha3
@@ -56,17 +52,17 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
             insightVip: 10.6.229.11/32
           fullPackagePath: absolute-path-of-the-offline-directory # (1)!
           imagesAndCharts: # (2)!
-            type: external
+            type: external 
             externalImageRepo: your-external-registry # (3)!
             # externalImageRepoUsername: admin
             # externalImageRepoPassword: Harbor123456
-         ```
+        ```
 
-         1. path for decompressed offline package
-         2. container registry
-         3. container registry address, must be http or https
+        1. Path after extracting the offline package
+        2. Container registry
+        3. Container registry address, must be http or https
 
-    - If it is a public cloud environment that already has a Kubernetes load balancer, set `clusterConfig.yaml` as follows:
+    - For public cloud environments that provide Kubernetes load balancing through a pre-configured Cloud Controller Manager, use the following sample configuration:
 
         ```yaml title="clusterConfig.yaml"
         apiVersion: provision.daocloud.io/v1alpha3
@@ -82,11 +78,11 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
             # externalImageRepoPassword: Harbor123456
         ```
 
-        1. path for decompressed offline package
-        2. container registry
-        3. container registry address, must be http or https
+        1. Path after extracting the offline package
+        2. Container registry
+        3. Container registry address, must be http or https
 
-    - If Console is exposed via NodePort (recommended only for PoC use cases), set `clusterConfig.yaml` as follows:
+    - If using NodePort to expose the console (only recommended for PoC), use the following sample configuration:
 
         ```yaml title="clusterConfig.yaml"
         apiVersion: provision.daocloud.io/v1alpha3
@@ -96,15 +92,15 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
             type: NodePort
           fullPackagePath: absolute-path-of-the-offline-directory # (1)!
           imagesAndCharts: # (2)!
-            type: external
+            type: external 
             externalImageRepo: your-external-registry # (3)!
             # externalImageRepoUsername: admin
             # externalImageRepoPassword: Harbor123456
         ```
 
-        1. path for decompressed offline package
-        2. container registry
-        3. container registry address, must be http or https
+        1. Path after extracting the offline package
+        2. Container registry
+        3. Container registry address, must be http or https
 
 3. Install DCE 5.0.
 
