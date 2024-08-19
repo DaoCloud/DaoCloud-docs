@@ -9,6 +9,13 @@ DaoCloud Enterprise 5.0 has two versions for Community and Enterprise.
 
 Currently, only offline packages are provided in the download center. For online installation methods, refer to [Online Installation](../install/index.md).
 
+## Download Prerequisite Dependencies
+
+| Filename | Version | Size | Download | Update Ddate |
+| ------ | ---- | ---- | ---- |-------- |
+| prerequisite_v0.20.0_amd64.tar.gz | v0.20.0 | 119.0 MB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.20.0_amd64.tar.gz) | 2024-08-09 |
+| prerequisite_v0.20.0_arm64.tar.gz | v0.20.0 | 107.0 MB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.20.0_arm64.tar.gz) | 2024-08-09 |
+
 ## Download DCE 5.0 Community
 
 This package is dedicated to the community and is available for free trial.
