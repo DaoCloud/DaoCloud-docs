@@ -38,5 +38,5 @@ hide:
 - 支持 phpmyadmin，提供管理页面
 - 基于 mysqld-exporter 暴露指标
 - 使用 Grafana Operator 集成 MySQL Dashboard，展示监控数据
-- 使用 S erviceMonitor 对接 Prometheus 抓取指标
+- 使用 ServiceMonitor 对接 Prometheus 抓取指标
 - 支持备份、恢复（依赖支持 S3 协议的存储）
