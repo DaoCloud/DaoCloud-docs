@@ -1,8 +1,14 @@
-# Update Multicloud Secret
+---
+MTPE: ModetaNiu
+DATE: 2024-08-19
+---
+
+# Update Multicloud Secrets
 
 Currently, two update methods are provided: editing YAML and form update.
 
-1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Secret__ , click __┇__ to edit YAML or update the secret.
+1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> 
+   __Multicloud Secrets__ , click __┇__ to edit YAML or update the secret.
 
     ![Secret List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/update-secret01.png)
 
@@ -10,7 +16,8 @@ Currently, two update methods are provided: editing YAML and form update.
 
     ![Edit YAML](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/update-secret02.png)
 
-3. Click __Update__ , you can update it through the form, but the name, multicloud namespace, and secret type cannot be updated.
+3. Click __Update__ , you can update it through the form, but the name, multicloud namespace, and secret type 
+   cannot be updated.
 
     ![Update](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/update-secret03.png)
 
