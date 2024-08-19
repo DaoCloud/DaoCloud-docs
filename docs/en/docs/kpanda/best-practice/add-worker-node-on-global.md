@@ -215,7 +215,8 @@ Please ensure proper resource planning before deploying DCE 5.0.
 1. Go to the node list page of the global service cluster, find the __Integrate Node__ button
    on the right side of the node list, and click to enter the node configuration page.
 
-2. Enter the IP and authentication information of the node to be added.
+2. After filling in the IP and authentication information of the node to be integrated,
+   click __Start Check__ . Once the node check is completed, click __Next__ .
 
 3. Add the following custom parameters in the __Custom Parameters__ section:
 
