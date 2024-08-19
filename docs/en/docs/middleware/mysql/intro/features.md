@@ -11,7 +11,7 @@ This page explains about the functional features of MySQL.
 
 - High availability architecture
 
-    It supports master-slave hot backup architecture, flexibly meets various availability requirements, 
+    It supports active/standby hot backup architecture, flexibly meets various availability requirements, 
     and its stable and reliable performance far exceeds the industry average.
 
 - Rapid deployment
