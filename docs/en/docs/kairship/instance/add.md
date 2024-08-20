@@ -36,8 +36,7 @@ To create an multicloud instance, follow the steps below:
 
 3. When selecting the management cluster for installing the multicloud instance, it is recommended to use a cluster 
    that is functioning normally and has a storage class (SC) installed, ensuring sufficient storage volume space. 
-   Otherwise, the installation may fail. If failure occurs, you can check the cause in the corresponding 
-   management cluster. Follow these steps to troubleshoot:
+   Otherwise, the installation may fail. If failure occurs, follow these steps to troubleshoot:
 
     - In the management cluster's StatefulSets page, confirm the running status of __etcd__.
 
