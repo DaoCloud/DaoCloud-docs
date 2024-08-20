@@ -148,11 +148,11 @@ Click __Logs__ to view the log content. By default, 100 lines are displayed. If 
 
 ## View Backup POlicy Details
 
-Go to __Container Management__ -> __Backup Recovery__ -> __etcd Backup__, click on the __Backup Policy__ tab, and then click the policy to view the details.
+Go to __Container Management__ -> __Backup Recovery__ -> __etcd Backup__ , click the __Backup Policy__ tab, and then click the policy to view the details.
 
 ## View Recovery Point
 
-1. Go to __Container Management__ -> __Backup Recovery__ -> __etcd Backup__, and click on the __Recovery Point__ tab.
+1. Go to __Container Management__ -> __Backup Recovery__ -> __etcd Backup__, and click the __Recovery Point__ tab.
 2. After selecting the target cluster, you can view all the backup information under that cluster.
 
     Each time a backup is executed, a corresponding recovery point is generated, which can be used to quickly restore

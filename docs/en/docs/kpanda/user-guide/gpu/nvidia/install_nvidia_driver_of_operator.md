@@ -10,7 +10,7 @@ and CentOS 7.9. The driver version is `535.104.12`. Additionally, it includes th
 operating system, so users no longer need to manually provide offline `toolkit` images.
 
 This page demonstrates using AMD architecture with CentOS 7.9 (3.10.0-1160). If you need to deploy on Red Hat 8.4, refer to
-[Uploading Red Hat gpu-operator Offline Image to the Fire Seed Node Repository](./push_image_to_repo.md)
+[Uploading Red Hat gpu-operator Offline Image to the Bootstrap Node Repository](./push_image_to_repo.md)
 and [Building Offline Yum Source for Red Hat 8.4](./upgrade_yum_source_redhat8_4.md).
 
 ## Prerequisites
@@ -18,10 +18,10 @@ and [Building Offline Yum Source for Red Hat 8.4](./upgrade_yum_source_redhat8_4
 - The kernel version of the cluster nodes where the gpu-operator is to be deployed must be
   completely consistent. The distribution and GPU card model of the nodes must fall within
   the scope specified in the [GPU Support Matrix](../gpu_matrix.md).
-- The user has already installed version v0.20.0 or above of the
+- The user has already installed v0.20.0 or above of the
   [addon offline package](../../../../download/addon/history.md) on the platform
   (Addon has supported installing the gpu-operator since v0.12, but the gpu-operator only has built-in support for CentOS 7.9).
-- When installing the gpu-operator, select version v23.9.0+2 or above.
+- When installing the gpu-operator, select v23.9.0+2 or above.
 
 ## Steps
 
@@ -73,7 +73,7 @@ To install the gpu-operator plugin for your cluster, follow these steps:
 
     !!! note
 
-        When using the built-in operating system version, there is no need to modify the image version. For other operating system versions, please refer to [Uploading Images to the Fire Seed Node Repository](./push_image_to_repo.md).
+        When using the built-in operating system version, there is no need to modify the image version. For other operating system versions, please refer to [Uploading Images to the Bootstrap Node Repository](./push_image_to_repo.md).
         note that there is no need to include the operating system name such as Ubuntu, CentOS, or Red Hat in the version number. If the official image contains an operating system suffix, please manually remove it.
 
         - For Red Hat systems, for example, `525.105.17`

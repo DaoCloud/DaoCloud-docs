@@ -79,7 +79,7 @@ understand the evolution path and feature changes from release to release.
 - **Improved** Helm installation to be more cloud-native, with the controller managing Helm operation jobs.
 - **Improved** quick link to view GPU resource allocation on the node details page, optimizing the integrated GPU quota issue on the monitoring page.
 - **Improved** gpu-operator to support driver installation on the same OS with different kernel versions.
-- **Improved** support for binpack/spread at the cluster level for GPU cards and nodes, reaching product-level support for binpack/spread.
+- **Improved** support for binpack/spread at the cluster level for GPUs and nodes, reaching product-level support for binpack/spread.
 - **Improved** configmap/secret editor to support horizontal movement.
 - **Improved** version selection filtering when updating modules.
 - **Improved** issue where workspace admin permissions mapped to cluster admin permissions in container management did not display.
@@ -153,7 +153,7 @@ understand the evolution path and feature changes from release to release.
 - **Added** support customizing NS admin/editor/viewer permissions through CRD configuration
 - **Added** support connecting to cloudtty via SSH
 - **Added** support accessing running containers through the console
-- **Added** Install Ascend components Device Plugin and NpuExporter through Helm app scend-mindxdl, and view relevant metrics of Ascend GPU cards through Insight
+- **Added** Install Ascend components Device Plugin and NpuExporter through Helm app scend-mindxdl, and view relevant metrics of Ascend GPUs through Insight
 
 #### Improvements
 
@@ -366,7 +366,7 @@ understand the evolution path and feature changes from release to release.
 - **Added** support for upgrading system component versions and modifying system component parameters through the interface.
 - **Added** compatibility with [RedHat 9.2 cluster creation](../best-practice/create-redhat9.2-on-centos-platform.md).
 - **Added** support for Nvidia full card, vGPU, and MIG GPU modes.
-- **Added** support for Tianjic GPU cards.
+- **Added** support for Tianjic GPUs.
 - **Added** support for namespace-level GPU resource quota management.
 - **Added** support for application-level GPU resource quota.
 - **Added** Offline deployment and usage support for

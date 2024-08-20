@@ -147,7 +147,7 @@ can be Nginx, MinIO, or any other file server that supports the HTTP protocol.
 
 In this example, we will use the built-in MinIO in DCE5 as the file server. The MinIO details are as follows:
 
-- Access URL: `http://10.5.14.200:9000` (usually __{seed-node IP} + {9000 port}__ )
+- Access URL: `http://10.5.14.200:9000` (usually __{bootstrap-node IP} + {port-9000}__ )
 - Login username: rootuser
 - Login password: rootpass123
 
