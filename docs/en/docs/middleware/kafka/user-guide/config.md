@@ -25,4 +25,4 @@ Kafka has a built-in parameter configuration UI interface.
 
     ![Parameters](../images/config03.png)
 
-4. Click __Save__ , the parameters will take effect immediately.
+4. Click __Save__ , and the parameters will take effect immediately without restart.
