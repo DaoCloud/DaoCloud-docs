@@ -19,4 +19,4 @@ Kafka 内置了参数配置 UI 界面。
 
     ![配置参数](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/config02.png)
 
-4. 点击 __保存__ ，参数将立即生效。
+4. 点击 __保存__ ，参数将立即生效，不会发生重启。
