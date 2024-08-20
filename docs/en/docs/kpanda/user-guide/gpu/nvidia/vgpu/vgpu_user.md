@@ -12,13 +12,13 @@ This section explains how to use the vGPU capability in the DCE 5.0 platform.
 
 ### Using vGPU through the UI
 
-1. Confirm if the cluster has detected the GPU cards. Click the corresponding __Clusters__ -> __Cluster Settings__ -> __Addon Plugins__ and check if the GPU plugin has been automatically enabled and the corresponding GPU type has been detected. Currently, the cluster will automatically enable the __GPU__ addon and set the __GPU Type__ as __Nvidia vGPU__ .
+1. Confirm if the cluster has detected GPUs. Click the __Clusters__ -> __Cluster Settings__ -> __Addon Plugins__ and check if the GPU plugin has been automatically enabled and the corresponding GPU type has been detected. Currently, the cluster will automatically enable the __GPU__ addon and set the __GPU Type__ as __Nvidia vGPU__ .
 
     
 
-2. Deploy a workload by clicking on the corresponding __Clusters__ -> __Workloads__ . When deploying a workload using an image, select the type __Nvidia vGPU__ , and you will be prompted with the following parameters:
+2. Deploy a workload by clicking __Clusters__ -> __Workloads__ . When deploying a workload using an image, select the type __Nvidia vGPU__ , and you will be prompted with the following parameters:
 
-    - **Number of Physical Cards (nvidia.com/vgpu)**: Indicates how many physical cards need to be mounted by the current pod. The input value must be an integer and **less than or equal to** the number of cards on the host machine.
+    - **Number of Physical Cards (nvidia.com/vgpu)** : Indicates how many physical cards need to be mounted by the current pod. The input value must be an integer and **less than or equal to** the number of cards on the host machine.
     - **GPU Cores (nvidia.com/gpucores)**: Indicates the GPU cores utilized by each card, with a value range from 0 to 100. 
       Setting it to 0 means no enforced isolation, while setting it to 100 means exclusive use of the entire card.
     - **GPU Memory (nvidia.com/gpumem)**: Indicates the GPU memory occupied by each card, with a value in MB. The minimum value is 1, and the maximum value is the total memory of the card.

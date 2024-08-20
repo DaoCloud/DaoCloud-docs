@@ -150,7 +150,7 @@ There are two upgrade methods. You can choose the appropriate upgrade method bas
         helm repo update kcoral
         ```
 
-    1. Select the backup and restore version you want to install (it is recommended to install the latest version version).
+    1. Select the backup and restore version you want to install (it is recommended to install the latest version).
 
         ```shell
         helm search repo kcoral/kcoral --versions

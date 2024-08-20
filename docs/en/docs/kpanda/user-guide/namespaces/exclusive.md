@@ -113,11 +113,11 @@ If you do need to enable namespace exclusive nodes on the Global cluster, please
 
     After confirming that the __PodNodeSelector__ and __PodTolerationRestriction__ admission controllers on the cluster API server have been enabled, please follow the steps below to use the DCE 5.0 UI management interface to set exclusive nodes for the namespace.
 
-    1. Click on the cluster name in the cluster list page, then click __Namespace__ in the left navigation bar.
+    1. Click the cluster name in the cluster list page, then click __Namespace__ in the left navigation bar.
 
         ![Namespace](../../images/exclusive01.png)
 
-    2. Click on the namespace name, then click the __Exclusive Node__ tab, and click __Add Node__ on the bottom right.
+    2. Click the namespace name, then click the __Exclusive Node__ tab, and click __Add Node__ on the bottom right.
 
         ![Add Node](../../images/exclusive02.png)
 
@@ -177,11 +177,11 @@ To enable namespace exclusive nodes on non-Global clusters, please follow the st
 
     After confirming that the __PodNodeSelector__ and __PodTolerationRestriction__ admission controllers on the cluster API server have been enabled, please follow the steps below to use the DCE 5.0 UI management interface to set exclusive nodes for the namespace.
 
-    1. Click on the cluster name in the cluster list page, then click __Namespace__ in the left navigation bar.
+    1. Click the cluster name in the cluster list page, then click __Namespace__ in the left navigation bar.
 
         ![Namespace](../../images/exclusive05.png)
 
-    2. Click on the namespace name, then click the __Exclusive Node__ tab, and click __Add Node__ on the bottom right.
+    2. Click the namespace name, then click the __Exclusive Node__ tab, and click __Add Node__ on the bottom right.
 
         ![Add Node](../../images/exclusive02.png)
 

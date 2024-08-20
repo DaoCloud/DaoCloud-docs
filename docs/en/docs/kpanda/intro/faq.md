@@ -11,7 +11,7 @@ This page lists some frequently asked questions that may arise in container mana
 
     ![failure case](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/faq1.png)
 
-    As shown in the figure, the container management module will automatically create and launch a Job responsible for installing the specific application. In version v0.6.0, due to unreasonable job resource settings, OOM was caused, affecting application installation. This bug has been fixed in version 0.6.1. If you upgrade to the environment of v0.6.1, it will only take effect in new created or accessed clusters. Existing clusters need to be manually adjusted to take effect.
+    As shown in the figure, the container management module will automatically create and launch a Job responsible for installing the specific application. In v0.6.0, due to unreasonable job resource settings, OOM was caused, affecting application installation. This bug has been fixed in v0.6.1. If you upgrade to the environment of v0.6.1, it will only take effect in new created or accessed clusters. Existing clusters need to be manually adjusted to take effect.
 
     ??? note "Click to check how to adjust script"
 
@@ -41,7 +41,7 @@ This page lists some frequently asked questions that may arise in container mana
             ```
 
             Modify `clusterSetting` -> `helm_operation_job_template_resources` to the appropriate value,
-            and the value corresponding to version v0.6.1 is `cpu: 100m,memory: 400Mi`.
+            and the value corresponding to v0.6.1 is `cpu: 100m,memory: 400Mi`.
 
 1. Permission issues between the container management module and the global management module
 
@@ -57,7 +57,7 @@ This page lists some frequently asked questions that may arise in container mana
 
     ![Global Management User Authorization](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq202.png)
 
-    In the global management module, workspace binding involves using the account to go to __Global Management__ -> __Workspaces and Hierarchies__, where you can see your authorized workspace. Click on the workspace name.
+    In the global management module, workspace binding involves using the account to go to __Global Management__ -> __Workspaces and Hierarchies__, where you can see your authorized workspace. Click the workspace name.
 
     1. If the workspace is authorized for you individually, you can see your account in the authorization tab, then check the resource group or shared resource tab. If the resource group is bound to a namespace or the shared resource is bound to a cluster, then your account can see the corresponding cluster.
 

@@ -90,4 +90,4 @@ Solution: Simply create the registry space before the fusion. For example, in th
 ### Architecture Conflict
 
 When upgrading to a version lower than 0.12.0 of the addon, the charts-syncer in the target offline package does not check the existence of the image before pushing, so it will recombine the multi-arch into a single architecture during the upgrade process.
-For example, if the addon is implemented as a multi-arch in version v0.10, upgrading to version v0.11 will overwrite the multi-arch addon with a single architecture. However, upgrading to version 0.12.0 or above can still maintain the multi-arch.
+For example, if the addon is implemented as a multi-arch in v0.10, upgrading to v0.11 will overwrite the multi-arch addon with a single architecture. However, upgrading to v0.12.0 or above can still maintain the multi-arch.

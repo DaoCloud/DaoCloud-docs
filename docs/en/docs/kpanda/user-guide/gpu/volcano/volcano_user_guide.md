@@ -21,7 +21,7 @@ role Pod is running, the entire job cannot be executed properly. The default sch
 one by one and is unaware of the PS and Worker roles in a Kubeflow TFJob. In a high-load cluster
 (insufficient resources), multiple jobs may each be allocated some resources to run a portion of
 their Pods, but the jobs cannot complete successfully, leading to resource waste. For instance,
-if a cluster has 4 GPU cards and both TFJob1 and TFJob2 each have 4 Workers, TFJob1 and TFJob2
+if a cluster has 4 GPUs and both TFJob1 and TFJob2 each have 4 Workers, TFJob1 and TFJob2
 might each be allocated 2 GPUs. However, both TFJob1 and TFJob2 require 4 GPUs to run.
 This mutual waiting for resource release creates a deadlock situation, resulting in GPU resource waste.
 

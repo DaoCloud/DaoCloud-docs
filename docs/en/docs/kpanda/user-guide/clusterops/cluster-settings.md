@@ -7,7 +7,7 @@ Date: 2024-02-26
 
 Cluster settings are used to customize advanced feature settings for your cluster, including whether to enable GPU, helm repo refresh cycle, Helm operation record retention, etc.
 
-- Enable GPU: GPU cards and corresponding driver plug-ins need to be installed on the cluster in advance.
+- Enable GPU: GPUs and proper driver plug-ins need to be installed on the cluster in advance.
 
     Click the name of the target cluster, and click __Operations and Maintenance__ -> __Cluster Settings__ -> __Addons__ in the left navigation bar.
 
