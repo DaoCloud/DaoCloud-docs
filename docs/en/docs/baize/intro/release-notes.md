@@ -8,6 +8,21 @@ date: 2024-07-12
 This page lists the Release Notes for Intelligent Engine,
 so that you can learn its evolution path and feature changes.
 
+## 2024-07-31
+
+### v0.7.0
+
+#### Features
+
+- **Added** support for `Datasets` to query preheating progress after dataset creation, along with a quick debug entry.
+- **Added** support for `Training Tasks` to create both single-machine and distributed tasks with `MxNet`.
+- **Added** support for `Training Tasks` to create `MPI` distributed tasks.
+- **Added** support for `Training Tasks` to use a default image, standardizing the use of base images.
+- **Added** support for `Training Tasks` to configure the startup command directly with a startup script.
+- **Added** support for `Training Tasks` to specify the working directory location for run parameters.
+- **Added** support for `Inference Tasks` to display example documentation for `API` calls in the details.
+- **Improved** the `Env Management` list to show the package managers and `Python` versions available in the environment.
+
 ## 2024-07-10
 
 ### v0.6.1

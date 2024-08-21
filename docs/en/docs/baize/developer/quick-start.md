@@ -27,7 +27,7 @@ the entire development and training process of datasets, Notebooks, and job trai
 
     <!-- add screenshot later -->
 
-2. Prepare the development environment by clicking on **Notebooks** in the navigation bar,
+2. Prepare the development environment by clicking **Notebooks** in the navigation bar,
    then click **Create**. Associate the three datasets created in the previous step and
    fill in the mount paths as shown in the image below:
 
