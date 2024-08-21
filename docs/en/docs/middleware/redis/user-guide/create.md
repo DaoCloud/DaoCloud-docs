@@ -1,6 +1,8 @@
 ---
 hide:
   - toc
+MTPE: ModetaNiu
+DATE: 2024-08-21
 ---
 
 # Create a Redis instance
@@ -15,7 +17,16 @@ After accessing the Redis cache service, follow the steps below to create a Redi
 
     ![Basic info](../images/create01.png)
 
-3. After configuring __Spec Settings__ including deployment type, CPU quota, memory quota, storage class and capacity, click __Next__ .
+3. After configuring __Spec Settings__ including deployment type, CPU quota, memory quota, storage class and capacity, 
+   click __Next__ . Currently there are three deployment type:
+
+    - Standalone: Standalone mode has only master node. In case of fault, data reliability cannot be guaranteed.
+
+    - Sentinel: When the master node fails, the standby node automatically upgrades to become the master node, 
+      ensuring high availability of the service.
+
+    - Cluster : Cluster mode supports multiple standby nodes and multiple master nodes, which can meet users' demands 
+      for low latency and high-performance.
 
     ![Spec settings](../images/create02.png)
 
@@ -24,10 +35,12 @@ After accessing the Redis cache service, follow the steps below to create a Redi
     ![Service settings](../images/create03.png)
 
 
-5. After confirming that the basic information, specification configuration, and service settings are correct, click __OK__ .
+5. After confirming that the basic information, specification configuration, and service settings are correct, 
+   click __OK__ .
 
     ![Confirm](../images/create04.png)
 
-6. Return to the instance list, and the screen will prompt __Instance created successfully__ . The status of the newly created instance is __Not Ready__ , and it will become __Running__ after a while.
+6. Return to the instance list, and the screen will prompt __Instance created successfully__ . 
+   The status of the newly created instance is __Not Ready__ , and it will become __Running__ after a while.
 
     ![Success](../images/create05.png)

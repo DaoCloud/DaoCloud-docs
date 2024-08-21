@@ -986,10 +986,10 @@ nav:
                       - Release Notes: middleware/mysql/release-notes.md
                   - 快速入门:
                       - 实例生命周期:
-                          - 创建 MySQL: middleware/mysql/user-guide/create.md
+                          - 创建 MySQL 实例: middleware/mysql/user-guide/create.md
                           - 创建 MySQL MGR 实例: middleware/mysql/user-guide/create-mgr.md
-                          - 更新 MySQL: middleware/mysql/user-guide/update.md
-                          - 删除 MySQL: middleware/mysql/user-guide/delete.md
+                          - 更新 MySQL 实例: middleware/mysql/user-guide/update.md
+                          - 删除 MySQL 实例: middleware/mysql/user-guide/delete.md
                           - 查看 MySQL 实例: middleware/mysql/user-guide/view.md
                       - 查看 MySQL 日志: middleware/mysql/user-guide/logs.md
                       - MySQL 慢日志: middleware/mysql/user-guide/mysql-slow-query.md
