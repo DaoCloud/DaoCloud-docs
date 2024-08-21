@@ -62,7 +62,7 @@ helm repo update virtnest-release
 ### Back up the --set Parameters
 
 > Before upgrading the virtnest version, we recommend executing the following command to backup the --set parameters 
-  of the previous version
+> of the previous version
 
 ```shell
 helm get values virtnest -n virtnest-system -o yaml > bak.yaml

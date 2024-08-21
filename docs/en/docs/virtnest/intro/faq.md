@@ -46,13 +46,13 @@ If all dependencies are installed, consult with the [developers](../../install/i
 
 #### Case 1
 
-- Phenomenon: An error occurs when resources are sufficient
+- Symptom: An error occurs when resources are sufficient
 
 - Solution: [Enable hardware virtualization for the node](../install/install-dependency.md#all-nodes-having-hardware-virtualization-nested-virtualization-enabled)
 
 #### Case 2
 
-![Phenomenon](../images/createvm-error02.png)
+![Symptom](../images/createvm-error02.png)
 
 Solution: [Upgrade the node's operating system kernel](../install/install-dependency.md#dependencies-and-prerequisites)
 
