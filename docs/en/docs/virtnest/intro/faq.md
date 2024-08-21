@@ -1,3 +1,8 @@
+---
+MTPE: ModetaNiu
+DATE: 2024-08-21
+---
+
 # FAQs
 
 The virtual machine consists of two parts: apiserver and agent.
@@ -15,7 +20,7 @@ When you encounter an issue, you can refer to this page to perform troubleshooti
 ## Page API Errors
 
 If there is an API error with a page request, such as a 500 error or a cluster resource not found,
-the first step is to check the logs of the virtual machine-related services in the Global cluster
+the first step is to check the logs of the virtual machine-related services in the [Global Service Cluster](../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster)
 for any keywords related to kpanda. If there are any, it is necessary to confirm whether the
 kpanda-related services are running properly.
 
@@ -36,10 +41,22 @@ If the detailed information involves storage, such as PVC, PV, SC, etc., check t
 If the problem is not resolved, consult with the [developers](../../install/index.md#contact-us).
 
 If the detailed information involves devices, such as KVM, GPU, etc.,
-verify whether the target cluster nodes have completed the dependency check.
+verify whether the target cluster nodes have completed the [dependency](../install/install-dependency.md) check.
 If all dependencies are installed, consult with the [developers](../../install/index.md#contact-us).
 
-### VM Creation Success but Cannot Be Used
+#### Case 1
+
+- Phenomenon: An error occurs when resources are sufficient
+
+- Solution: [Enable hardware virtualization for the node](../install/install-dependency.md#all-nodes-having-hardware-virtualization-nested-virtualization-enabled)
+
+#### Case 2
+
+![Phenomenon](../images/createvm-error02.png)
+
+Solution: [Upgrade the node's operating system kernel](../install/install-dependency.md#dependencies-and-prerequisites)
+
+### VM Successfully Created but Cannot Be Used
 
 If a VM is successfully created but cannot be used, check the VNC page of the VM in the DCE interface.
 If it only shows the startup information, check the dependencies. If all dependencies are installed,

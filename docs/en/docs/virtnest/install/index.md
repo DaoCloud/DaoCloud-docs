@@ -1,10 +1,16 @@
+---
+MTPE: ModetaNiu
+DATE: 2024-08-21
+---
+
 # Install Virtual Machine Module
 
 This page explains how to install the virtual machine module.
 
 !!! info
 
-    The term __virtnest__ appearing in the following commands or scripts is the internal development code name for the Virtual Machine module.
+    The term __virtnest__ appearing in the following commands or scripts is the internal development code name 
+    for the Virtual Machine module.
 
 ## Configure Helm Repo
 
@@ -15,7 +21,8 @@ helm repo add virtnest-release https://release.daocloud.io/chartrepo/virtnest
 helm repo update virtnest-release
 ```
 
-If you want to experience the latest development version of virtnest, then please add the following repository address (the development version of virtnest is extremely unstable)
+If you want to experience the latest development version of virtnest, then please add the following repository address 
+(the development version of virtnest is extremely unstable).
 
 ```shell
 helm repo add virtnest-release-ci https://release-ci.daocloud.io/chartrepo/virtnest
@@ -54,7 +61,8 @@ helm repo update virtnest-release
 
 ### Back up the --set Parameters
 
-> Before upgrading the virtnest version, we recommend executing the following command to backup the --set parameters of the previous version
+> Before upgrading the virtnest version, we recommend executing the following command to backup the --set parameters 
+  of the previous version
 
 ```shell
 helm get values virtnest -n virtnest-system -o yaml > bak.yaml
@@ -69,7 +77,7 @@ helm upgrade virtnest virtnest-release/virtnest \
     --version 0.6.0
 ```
 
-## Uninstall
+## Delete
 
 ```shell
 helm delete virtnest -n virtnest-system
