@@ -10,7 +10,7 @@
 
 从任意版本升级至 0.40.x。
 
-### 影响版本
+### 影响说明
 
 0.40.x 版本中更新了相关自定义资源（CRD），由于在 skoala-init Chart 对应组件 `crds` 目录中的自定义资源不会自动随安装被更新，
 本次更新的 CRD 为 gateway-api CRD，BackendTLSPolicy 升级需要手动操作。
