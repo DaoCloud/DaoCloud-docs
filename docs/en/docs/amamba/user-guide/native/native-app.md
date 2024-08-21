@@ -68,7 +68,7 @@ Native applications are designed to provide customers with applications composed
 
 1. After the application is successfully created, click the application name to view the workloads with the label __Traditional Microservice__ under the current application.
 
-    > Clicking on the black link that appears will redirect you to the service details page of the Microservice Engine.
+    > Clicking the link that appears will redirect you to the service details page of the Microservice Engine.
 
 2. Alternatively, you can go to the __Microservice Engine__ module and view the services added under the corresponding workspace and registry.
 

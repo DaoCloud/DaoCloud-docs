@@ -9,7 +9,7 @@ in the navigation bar. You can enable this feature by modifying the configuratio
 
 1. In __Container Management__, select the
    [global service cluster](../../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster),
-   and search for `amamba-config` in the __Configuration Items__.
+   and search for `amamba-config` in the __ConfigMaps__.
 
     <!-- add screenshot later -->
 

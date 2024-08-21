@@ -168,7 +168,7 @@ Click __Global Settings__ , select node from the __Type__ drop-down list, and se
 
 1. If each stage of the pipeline runs successfully, a Docker image is automatically built and pushed to your Docker Hub repository. Eventually, the pipeline will automatically create a deployment in the project you set up beforehand.
 
-2. Go to the container management platform, click __Workload__ under the cluster, and you can see the stateless workload displayed in the list.
+2. Go to the container management platform, click __Workload__ under the cluster, and you can see deployments displayed in the list.
 
      <!--![]()screenshots-->
 

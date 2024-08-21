@@ -30,11 +30,11 @@ This section only introduces the core components covered by the Workbench.
 Components define the form of delivery and management for artifacts or cloud services.
 An application can include multiple components. The recommended practice is to include one
 main component (core business logic) and additional components (middleware with strong dependencies
-or exclusive use, operational components, etc.) in an application. For more information about component
+or exclusive components) in an application. For more information about component
 types, refer to the [kubevela Component Definition](http://kubevela.net/docs/v1.2/platform-engineers/oam/x-definition) documentation.
 
 Currently, the Workbench includes five built-in components based on the open-source
-[kubevela](https://kubevela.io/zh/docs/) components: __CronJob, DaemonSet, K8s-Objects, Job, Webservice__ .
+[kubevela](https://kubevela.io/docs/) components: __CronJob, DaemonSet, K8s-Objects, Job, Webservice__ .
 For specific parameter introductions for each component, refer to the
 [Built-in Component List](https://kubevela.io/docs/end-user/components/references) documentation.
 

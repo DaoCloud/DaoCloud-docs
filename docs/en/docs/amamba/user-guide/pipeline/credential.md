@@ -6,7 +6,7 @@ Date: 2024-01-11
 # Credential Management
 
 Credentials can store sensitive information such as usernames, passwords, access tokens (Secret text),
-Kubeconfig, etc., making the stored data more secure, flexible, and preventing exposure in images.
+and kubeconfig making the stored data more secure, flexible, and preventing exposure in images.
 When running pipelines, there is often a need to interact with third-party websites or applications,
 such as Git repositories and image registries. During this process, corresponding credentials need
 to be provided. Therefore, users are required to configure credentials for pipelines. Once configured,

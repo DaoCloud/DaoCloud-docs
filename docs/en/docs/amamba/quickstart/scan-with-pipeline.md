@@ -7,7 +7,7 @@ Date: 2024-01-18
 
 The source code in the code repository, as the original form of software, its security flaws are the direct root cause of software vulnerabilities. Therefore, discovering security flaws in the source code through code scanning analysis is an important method to reduce potential vulnerabilities in software.
 
-For example, SonarQube is an automatic code review tool used to detect bugs in project code and improve test coverage, etc. It can be integrated with existing workflows in the project for continuous code checks between project branches and pull requests.
+For example, SonarQube is an automatic code review tool used to detect bugs in project code and improve test coverage. It can be integrated with existing workflows in the project for continuous code checks between project branches and pull requests.
 
 This article will introduce how to integrate SonarQube into the pipeline to implement code scanning capabilities.
 

@@ -56,7 +56,7 @@ Workbench supports building applications in four ways: [Git Repo](create-app-git
 
     - Health Check: used to judge the health status of containers and applications, which helps to improve the availability of applications. For details, refer to [Container Health Check Configuration](../../../kpanda/user-guide/workloads/pod-config/health-check.md).
 
-    - Environment Variables: Configure container parameters in Pods, add environment variables or pass configurations to Pods, etc. For details, refer to [Container environment variable configuration](../../../kpanda/user-guide/workloads/pod-config/env-variables.md).
+    - Environment Variables: Configure container parameters in Pods, add environment variables or pass configurations to pods. For details, refer to [Container environment variable configuration](../../../kpanda/user-guide/workloads/pod-config/env-variables.md).
 
     - Data Storage: Configure the settings for container mounted data volumes and data persistence.
 
