@@ -622,6 +622,7 @@ nav:
           - Virtual Machine:
               - Intro:
                   - What: virtnest/intro/index.md
+                  - VM Features: virtnest/intro/features.md
                   - Release Notes: virtnest/intro/release-notes.md
                   - FAQs: virtnest/intro/faq.md
               - Install:   
