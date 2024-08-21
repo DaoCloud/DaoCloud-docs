@@ -9,6 +9,56 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## Skoala 0.40.x Upgrade Notes
+
+### Affected Versions
+
+You may be affected if you upgrade from any version to 0.40.x.
+
+### Impact
+
+The 0.40.x version includes updates to related Custom Resource Definitions (CRDs).
+Since the custom resources in the `crds` directory of the skoala-init Chart do not automatically update
+with installation, the updated CRD for this release is the gateway-api CRD, and the BackendTLSPolicy
+upgrade requires manual intervention. Due to compatibility issues within the community regarding this update,
+[refer to the relevant issue on kubernetes-sigs](https://github.com/kubernetes-sigs/gateway-api/issues/3086).
+
+### Steps to upgrade
+
+Please follow these steps to manually update the gateway CRD files that need upgrading:
+
+1. Delete BackendTLSPolicy:
+
+    ```shell
+    kubectl delete crds `kubectl get crds | grep -E "backendtlspolicies.gateway.networking.k8s.io"`
+    ```
+
+2. Manually update the gateway-related CRD files:
+
+    ```shell
+    # CRD related to projectcontour
+    kubectl apply -f skoala-init/charts/contour-provisioner/crds/contour.yaml
+    # CRD related to gateway-api
+    kubectl apply -f skoala-init/charts/contour-provisioner-prereq/crds/gateway-api.yaml
+    ```
+
+## 2024-08-06
+
+### v0.39.2
+
+#### Fixes
+
+- **Fixed** an issue with incorrect display of gateway plugin names.
+- **Fixed** an issue where the distributed transaction component could not be edited due to incorrect database addresses.
+- **Fixed** an issue where managed Nacos instances could not be edited when deployed via NodePort if the port was occupied.
+- **Fixed** an issue where the Top 10 total request count data for gateway requests did not meet expectations.
+- **Fixed** an issue where the Sesame management component encountered errors when injecting the Istio Sidecar.
+
+#### Improvements
+
+- **Improved** compatibility with Istio v1.23.0.
+- **Improved** to resolve thread leakage issues in the Hive management component.
+
 ## 2024-07-31
 
 ### v0.39.1
