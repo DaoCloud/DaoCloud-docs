@@ -31,7 +31,7 @@ version, achieving a quick rollback.
     - Cluster: Select the cluster where the release object is located. Make sure that Istio
       and Argo Rollout have been deployed in this cluster.
     - Namespace: Select the namespace where the release object is located.
-    - Stateless workload: Select the specific release object.
+    - Deployment: Select the specific release object.
     - Service: Select the service of the release object, which must be associated with the
       release object.
 

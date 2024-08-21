@@ -5,9 +5,9 @@ Date: 2024-01-12
 
 # View a Canary Delivery Job
 
-After creating a canary delivery job and associating it with a workload, modifying the workload's image, resource configuration, startup parameters, etc. so that the pod restarts will automatically trigger the canary delivery job to update the version and perform traffic scheduling according to the defined delivery rules.
+After creating a canary delivery job and associating it with a workload, modifying the workload's image, resource configuration, and startup parameters, so that the pod restarts will automatically trigger the canary delivery job to update the version and perform traffic scheduling according to the defined delivery rules.
 
-This article mainly introduces the related operations involved in viewing a canary delivery job, such as viewing task details, updating versions, updating delivery jobs, rolling back versions, etc.
+This article mainly introduces the related operations involved in viewing a canary delivery job, such as viewing task details, updating versions, updating delivery jobs, and rolling back versions.
 
 ## Viewing details
 
@@ -17,7 +17,7 @@ This article mainly introduces the related operations involved in viewing a cana
 
 2. View the details page of the canary delivery job.
 
-    - __Basic Information__: View the name, status, delivery mode, delivery object, etc. of the job.
+    - __Basic Information__: View the name, status, delivery mode, and delivery object of the job.
 
     - __Progressive Delivery__: Visually displays the execution progress of the canary delivery job, and you can intuitively understand which step the task is currently executing and how the execution status is.
 

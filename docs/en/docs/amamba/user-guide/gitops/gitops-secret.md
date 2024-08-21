@@ -1,7 +1,7 @@
 # GitOps Secret Encryption
 
 In the GitOps operational model, resources to be deployed are stored in a Git repository in YAML format.
-These files may contain sensitive information, such as database passwords, API keys, etc.,
+These files may contain sensitive information, such as database passwords and API keys,
 which should not be stored in plain text. Additionally, even when these resources are deployed in a
 Kubernetes cluster as secrets, they can still be easily viewed through base64 encoding,
 leading to many security issues.
@@ -15,9 +15,9 @@ encryption for manifest files in GitOps. The solutions are mainly divided into t
 
     - Closely integrated with ArgoCD, no need to install additional components
     - Can be easily integrated with existing credential management systems
-    - Supports many credential storage backends, such as Vault, Kubernetes Secret, AWS Secret, etc.
-    - Supports encryption of any Kubernetes resource, such as secrets, configmaps,
-      deployment environment variables, etc.
+    - Supports many credential storage backends, such as Vault, Kubernetes Secret, and AWS Secret
+    - Supports encryption of any Kubernetes resource, such as secrets, configmaps and
+      deployment environment variables
 
     Disadvantage: Sensitive information changes require **manual synchronization**
 

@@ -15,7 +15,7 @@ After [creating a native application](native-app.md#create-a-native-application)
 
     ![Basic Info](../../images/native-app02.png)
 
-- Click the __App Resources__ tab to view the Kubernetes resources associated with the native application, such as workloads, services, routes, etc. You also have the ability to edit and delete various resources.
+- Click the __App Resources__ tab to view the Kubernetes resources associated with the native application, such as workloads, services, and routes. You also have the ability to edit and delete various resources.
 
     ![App Resources](../../images/native-app03.png)
 

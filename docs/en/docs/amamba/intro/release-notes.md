@@ -8,6 +8,29 @@ date: 2024-05-08
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version.
 
+## 2024-07-30
+
+### v0.29.0
+
+#### New Features
+
+- **Added** support for custom steps in pipelines
+- **Added** support for continuous deployment to access ArgoCD UI to view application topology
+- **Added** support for refresh and hard refresh in continuous deployment
+
+#### Improvements
+
+- **Improved** the calculation method for pipeline running status
+
+#### Fixes
+
+- **Fixed** an issue where choice type parameters defined in the pipeline template Jenkinsfile could not render correctly
+- **Fixed** an issue where Admin could not approve when the reviewer was empty
+- **Fixed** an issue where native applications could not display all namespace resources
+- **Fixed** an issue where newly created resource types in native applications could not be displayed
+- **Fixed** an issue where the pipeline start time was empty
+- **Fixed** an issue where the content of SSH type credentials could not be cleared
+
 ## 2024-06-30
 
 ### v0.28.0
@@ -98,7 +121,7 @@ the development and feature changes in each version.
 - **Fixed** rendering of pipeline DAG failed for built-in pipeline templates
 - **Fixed** empty configuration in casc when removing SonarQube integration
 - **Fixed** casc configuration not being updated when integrating SonarQube in workspace
-- **Fixed** loss of credentials, SonarQube configurations, email configurations, etc. after switching Jenkins instances
+- **Fixed** loss of credentials, SonarQube configurations, and email configurations after switching Jenkins instances
 
 ## 2024-01-31
 
@@ -322,7 +345,7 @@ the development and feature changes in each version.
 - Toolchains support Jenkins integration
 - Creation and management of multi-branch pipelines
 - Toolchain integration capabilities from an administrator's view
-- API support for blue/green release, including creation, deletion, rollback, upgrade, details, etc.
+- API support for blue/green release, including creation, deletion, rollback, upgrade, and details
 
 #### Fixes
 
@@ -489,7 +512,7 @@ the development and feature changes in each version.
 
 #### Improvements
 
-- Improved performance for obtaining rollout image lists, application group lists, native application lists, etc.
+- Improved performance for obtaining rollout image lists, application group lists, and native application lists
 - The image used in creating app from jar packages is provided by env variable, instead of being hardcoded in the source code. Also ensure that the whole DCE 5.0 install package can obtain that image
 
 #### Fixes

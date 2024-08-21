@@ -35,7 +35,7 @@ With years of leading experience in cloud native field, DaoCloud developed a bra
 
 - Comprehensive Integration
 
-    Workbench integrated popular DevOps tools in the community. Steps in a single pipeline can run on nodes that have multiple operating systems and architectures. It supports independent deployment on public clouds, private clouds, or hosts and can integrate well with self-owned systems and platforms. It also supports integration with mainstream software in the industry, such as Kubernetes, GitLab, SonarQube, Harbor, etc.
+    Workbench integrated popular DevOps tools in the community. Steps in a single pipeline can run on nodes that have multiple operating systems and architectures. It supports independent deployment on public clouds, private clouds, or hosts and can integrate well with self-owned systems and platforms. It also supports integration with mainstream software in the industry, such as Kubernetes, GitLab, SonarQube, and Harbor.
 
 - Experience Accumulation
 
