@@ -9,7 +9,7 @@ hide:
 
 !!! Info
 
-    如果想彻底删除一个接入型的集群，需要前往创建该集群的原始平台操作。DCE 5.0 不支持删除接入型的集群。
+    如果想彻底删除一个接入的集群，需要前往创建该集群的原始平台操作。DCE 5.0 不支持删除接入的集群。
 
 在 DCE 5.0 平台中， __卸载集群__ 和 __解除接入__ 的区别在于：
 
@@ -20,17 +20,20 @@ hide:
 
 !!! note
 
-    - 当前操作用户应具备 [Admin](../../../ghippo/user-guide/access-control/role.md) 或 [Kpanda Owner](../../../ghippo/user-guide/access-control/global.md) 权限才能执行卸载或解除接入的操作。
-    - 卸载集群之前，应该在 __集群设置__ -> __高级配置__ 中关闭 __集群删除保护__ ，否则不显示 __卸载集群__ 的选项。
+    - 当前操作用户应具备 [Admin](../../../ghippo/user-guide/access-control/role.md) 或 [Kpanda Owner](../../../ghippo/user-guide/access-control/global.md) 权限才能执行卸载集群的操作。
+    - 卸载集群之前，应该先在集群列表中点击某个集群名称，在 __集群运维__ -> __集群设置__ -> __高级配置__ 中关闭 __集群删除保护__ ，
+      否则不显示 __卸载集群__ 的选项。
     - __全局服务集群__ 不支持卸载或移除操作。
 
 1. 在 __集群列表__ 页找到需要卸载集群，点击右侧的 __┇__ 并在下拉列表中点击 __卸载集群__ 。
 
-    ![点击删除按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/delete001.png)
+    ![点击删除按钮](../../images/delete001.png)
 
 2. 输入集群名称进行确认，然后点击 __删除__ 。
 
-    ![确认删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/delete002.png)
+    ![确认删除](../../images/delete002.png)
+
+    如果提示集群中还有一些残留的资源，则需要按提示删除相关资源后才能执行卸载操作。
 
 3. 返回 __集群列表__ 页可以看到该集群的状态已经变成 __删除中__ 。卸载集群可能需要一段时间，请您耐心等候。
 
@@ -38,13 +41,21 @@ hide:
 
 ## 解除接入集群
 
+!!! note
+
+    - 当前操作用户应具备 [Admin](../../../ghippo/user-guide/access-control/role.md) 或
+      [Kpanda Owner](../../../ghippo/user-guide/access-control/global.md) 权限才能执行解除接入的操作。
+    - __全局服务集群__ 不支持解除接入。
+
 1. 在 __集群列表__ 页找到需要卸载集群，点击右侧的 __┇__ 并在下拉列表中点击 __解除接入__ 。
 
-    ![点击删除按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/delete001.png)
+    ![点击解除接入按钮](../../images/remove001.png)
 
-2. 输入集群名称进行确认，然后点击 __删除__ 。
+2. 输入集群名称进行确认，然后点击 __解除接入__ 。
 
-    ![确认删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/delete003.png)
+    ![确认删除](../../images/delete003.png)
+
+    如果提示集群中还有一些残留的资源，则需要按提示删除相关资源后才能解除接入。
 
 ## 清理解除接入集群配置数据
 
@@ -52,9 +63,8 @@ hide:
 
 1. 删除 kpanda-system、insight-system 命名空间
 
-    ```
+    ```shell
     kubectl delete ns kpanda-system insight-system
     ```
 
 2. 如果为当前集群启用了服务网格能力，请参考[删除网格](../../../mspider/user-guide/service-mesh/delete.md)文档删除当前集群中的网格实例。
-
