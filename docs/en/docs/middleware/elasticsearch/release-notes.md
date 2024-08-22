@@ -9,6 +9,14 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 *[mcamel-elasticsearch]: "mcamel" is the dev name for DaoCloud's middlewares, and "elasticsearch" is the middleware for distributed search and analytics services
 
+## 2024-07-31
+
+### v0.19.0
+
+- **Added** features of backing up and recovering Elasticsearch instances
+- **Removed** node affinity for recovered instances and added source information in the recovered cluster
+- **Fixed**  request failures caused by special characters in passwords
+
 ## 2024-05-31
 
 ### v0.17.0

@@ -9,6 +9,12 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 *[Mcamel-MongoDB]: "mcamel" is the dev name for DaoCloud's middlewares, and "MongoDB" is a database middleware that provides services for documentation
 
+## 2024-07-31
+
+### v0.12.0
+
+- **Added** a feature of MySQL slow log query
+
 ## 2024-05-31
 
 ### v0.10.0

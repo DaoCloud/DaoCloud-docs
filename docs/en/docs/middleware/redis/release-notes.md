@@ -9,6 +9,12 @@ This page lists the release notes for the Redis Cache service, providing you wit
 
 *[mcamel-redis]: "mcamel" is the dev name for DaoCloud's middlewares, and "redis" is the middleware that provides memory cache services.
 
+## 2024-07-31
+
+### v0.20.0
+
+- **Added** a feature of managing Redis instances.
+
 ## 2024-06-30
 
 ### v0.19.0
