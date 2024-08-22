@@ -1313,7 +1313,8 @@ nav:
           - Container Management: videos/kpanda.md
           - Multicloud Management: videos/kairship.md
           - Container Registry: videos/kangaroo.md
-          - Network: videos/network.md          
+          - Network: videos/network.md    
+          - Virtual Machine: videos/virtnest.md      
       - Microservices:
           - Insight: videos/insight.md
           - Microservice Engine: videos/skoala.md
