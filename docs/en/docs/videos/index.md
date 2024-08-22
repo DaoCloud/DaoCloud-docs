@@ -41,6 +41,7 @@ hide:
 - :material-slot-machine: **Intelligent Engine** [Cloud Native AI - Integrated Training and Inference Platform](baize.md)
 - :fontawesome-brands-edge-legacy: **Cloud Edge Collaboration** [Extend containers to edge](kant.md)
 - :fontawesome-solid-user-group: **Global Management** [Login settings, access permissions, appearance](ghippo.md)
+- :fontawesome-solid-computer: **Virtual Machine** [Auto-migration](virtnest.md)
 
 </div>
 
