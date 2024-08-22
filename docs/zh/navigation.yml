@@ -903,9 +903,10 @@ nav:
               - 流量治理:
                   - mspider/user-guide/traffic-governance/README.md
                   - 虚拟服务: mspider/user-guide/traffic-governance/virtual-service.md
+                  - 虚拟服务参数配置: mspider/user-guide/traffic-governance/vsparams.md
                   - 目标规则: mspider/user-guide/traffic-governance/destination-rules.md
                   - 网关规则: mspider/user-guide/traffic-governance/gateway-rules.md
-                  - 虚拟服务参数配置: mspider/user-guide/traffic-governance/vsparams.md
+                  - 流量故障转移: mspider/user-guide/traffic-governance/traffic-failover.md
               - 安全治理:
                   - 安全治理介绍: mspider/user-guide/security/README.md
                   - 对等身份认证: mspider/user-guide/security/peer.md
