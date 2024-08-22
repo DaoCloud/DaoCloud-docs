@@ -247,7 +247,7 @@ kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
         scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Equal", "effect": "NoSchedule", "key": "node.daocloud.io", "value": "insight-only"}]'
     ```
 
-重启 insgith-system 命名空间下面的组件即可正常容忍 insight-system 下的 pod 调度.
+重启 insight-system 命名空间下面的组件即可正常容忍 insight-system 下的 pod 调度.
 
 ## 为节点添加 Label 和节点亲和性来管理组件调度
 
