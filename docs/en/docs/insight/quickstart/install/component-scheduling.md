@@ -176,10 +176,10 @@ Configure the tolerations for the `insight-server` and `insight-agent` Charts re
               operator: "Equal"
               value: "insight-only"
               effect: "NoSchedule"
-    #  prometheus-node-exporter:
-    #    tolerations:
-    #      - effect: NoSchedule
-    #        operator: Exists
+      prometheus-node-exporter:
+        tolerations:
+          - effect: NoSchedule
+            operator: Exists
       prometheusOperator:
         tolerations:
           - key: "node.daocloud.io"
@@ -206,7 +206,8 @@ Configure the tolerations for the `insight-server` and `insight-agent` Charts re
           value: "insight-only"
           effect: "NoSchedule"
     tailing-sidecar-operator:
-      tolerations:
+      operator:
+        tolerations:
         - key: "node.daocloud.io"
           operator: "Equal"
           value: "insight-only"
@@ -233,9 +234,12 @@ Configure the tolerations for the `insight-server` and `insight-agent` Charts re
 
 ### 2. Configure at the namespace level
 
-Allow Pods in the `insight-system` namespace to tolerate the `insight-only` taint.
+Allow Pods in the `insight-system` namespace to tolerate the `node.daocloud.io=insight-only` taint.
 
-1. Adjust the `apiserver` configuration file `/etc/kubernetes/manifests/kube-apiserver.yaml` to include `PodTolerationRestriction,PodNodeSelector`:
+1. Adjust the `apiserver` configuration file `/etc/kubernetes/manifests/kube-apiserver.yaml` to include 
+   `PodTolerationRestriction,PodNodeSelector`. See the following picture: 
+
+    ![insight-ns-toleration](../../image/insight-ns-toleration.png)
 
 2. Add an annotation to the `insight-system` namespace:
 
@@ -245,8 +249,9 @@ Allow Pods in the `insight-system` namespace to tolerate the `insight-only` tain
     metadata:
       name: insight-system
       annotations:
-        scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Exists", "effect": "NoSchedule", "key": "node.daocloud.io/insight-only"}]'
+        scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Equal", "effect": "NoSchedule", "key": "node.daocloud.io", "value": "insight-only"}]'
     ```
+Restart the components under the `insight-system` namespace to allow normal scheduling of pods under the `insight-system`.
 
 ## Use node labels and node affinity to manage component scheduling
 
