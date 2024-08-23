@@ -885,9 +885,10 @@ nav:
               - Traffic Management:
                   - mspider/user-guide/traffic-governance/README.md
                   - Virtual Service: mspider/user-guide/traffic-governance/virtual-service.md
+                  - Parameters for Virtual Service: mspider/user-guide/traffic-governance/vsparams.md
                   - Destination Rule: mspider/user-guide/traffic-governance/destination-rules.md
                   - Gateway: mspider/user-guide/traffic-governance/gateway-rules.md
-                  - Parameters for Virtual Service: mspider/user-guide/traffic-governance/vsparams.md
+                  - Traffic Failover: mspider/user-guide/traffic-governance/traffic-failover.md
               - Security:
                   - Intro: mspider/user-guide/security/README.md
                   - Peer Authentication: mspider/user-guide/security/peer.md
