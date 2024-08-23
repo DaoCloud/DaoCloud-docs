@@ -33,4 +33,4 @@
 
     ![修改污点](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/taint-add-remove.png)
 
-有关污点的更多详情，请参阅Kubernetes 官方文档：[污点和容忍度](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/)。
+有关污点的更多详情，请参阅 Kubernetes 官方文档：[污点和容忍度](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/)。
