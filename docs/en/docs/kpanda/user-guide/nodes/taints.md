@@ -3,15 +3,14 @@ MTPE: FanLin
 Date: 2024-02-27
 ---
 
-# Node Taint
+# Node Taints
 
 Taint can make a node exclude a certain type of Pod and prevent Pod from being scheduled on the node.
 One or more taints can be applied to each node, and Pods that cannot tolerate these taints will not be scheduled on that node.
-For more details about taints, refer to the official Kubernetes documentation [Taints and Tolerance](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/).
 
 ## Precautions
 
-1. The current operating user should have [__NS Editor__](../permissions/permission-brief.md) role authorization or other higher permissions.
+1. The current operating user should have [NS Editor](../permissions/permission-brief.md) role authorization or other higher permissions.
 2. After adding a taint to a node, only Pods that can tolerate the taint can be scheduled to the node. <!--For how to set tolerance for Pod, refer to -->
 
 ## Steps
@@ -24,14 +23,29 @@ For more details about taints, refer to the official Kubernetes documentation [T
 
     ![Edit Taints](../images/taint02.png)
 
-3. Enter the key value information of the stain in the pop-up box, select the stain effect, and click __OK__ .
+3. Enter the key value information of the taint in the pop-up box, select the taint effect, and click __OK__ .
 
-    Click __➕ Add__ to add multiple stains to the node, and click __X__ on the right side of the stain effect to delete the stain.
+    Click __➕ Add__ to add multiple taints to the node, and click __X__ on the right side of the taint effect to delete the taint.
 
-    Currently supports three stain effects:
+    Currently supports three taint effects:
 
-    - NoSchedule: Pods that cannot tolerate a taint will not be scheduled on nodes with the taint.
-    - PreferNoSchedule: **Try to avoid** Pods that cannot tolerate a taint will not be scheduled on nodes with the taint.
-    - NoExecute: Keep the status quo. Pods that cannot tolerate a taint will not be evicted if they were already running on the node before the taint was set. Pods that cannot tolerate a taint will not be scheduled on the node if they were not running on the node before the taint was set on the node.
+    - `NoExecute`: This affects pods that are already running on the node as follows:
 
-        ![Config](../images/taint03.png)
+        - Pods that do not tolerate the taint are evicted immediately
+        - Pods that tolerate the taint without specifying `tolerationSeconds` in
+            their toleration specification remain bound forever
+        - Pods that tolerate the taint with a specified `tolerationSeconds` remain
+            bound for the specified amount of time. After that time elapses, the node
+            lifecycle controller evicts the Pods from the node.
+
+    - `NoSchedule`: No new Pods will be scheduled on the tainted node unless they have a matching
+      toleration. Pods currently running on the node are **not** evicted.
+
+    - `PreferNoSchedule`: This is a "preference" or "soft" version of `NoSchedule`.
+      The control plane will *try* to avoid placing a Pod that does not tolerate
+      the taint on the node, but it is not guaranteed, so this taint is not recommended to use in a production environment.
+
+    ![Config](../images/taint03.png)
+
+For more details about taints, refer to the Kubernetes documentation
+[Taints and Tolerance](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/).
