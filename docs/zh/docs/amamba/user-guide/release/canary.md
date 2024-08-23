@@ -49,7 +49,7 @@
 
             > 如果设置为 0 或不填写，发布任务执行到此步骤时会永久暂停。
 
-            ![副本数](/docs/zh/docs/amamba/images/canary11.png)
+            ![副本数](../../images/canary11.png)
 
     === "基于 Istio"
 
@@ -78,7 +78,7 @@
 
             > 如果设置为 0 或不填写，发布任务执行到此步骤时会永久暂停。
 
-            ![副本数](/docs/zh/docs/amamba/images/canary14.png)
+            ![副本数](../../images/canary14.png)
 
     === "基于云原生网关"
 
