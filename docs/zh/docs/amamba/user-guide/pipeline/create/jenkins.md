@@ -18,7 +18,7 @@ __具体操作步骤如下：__
 
 1. 在流水线列表页点击 __创建流水线__ 。
 
-    ![click-create](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/createpipelinbutton.png)
+    ![click-create](../images/pipe-cust01.jpg)
 
 2. 选择 __基于代码库的 Jenkinsfile 创建流水线__ ，点击 __确定__ 。
 

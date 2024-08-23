@@ -158,7 +158,6 @@ nav:
                   - 在GitOps中启用凭证加密功能: amamba/user-guide/gitops/gitops-secret.md
                   - 启用ArgoCD原生UI: amamba/user-guide/gitops/integrate-argocd-ui.md
               - 灰度发布:
-                  - Argo Rollout灰度发布: amamba/quickstart/argocd-rollout.md
                   - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md

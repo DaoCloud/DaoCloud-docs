@@ -58,6 +58,6 @@
 2. 在弹出的 __资源配额__ 对话框中，可以看到目前命名空间的资源配额信息。在 __应用资源__ 下点击 __添加__ ，
    选择一个资源并设置配额，具体请参阅 [Kubernetes 资源配额](https://kubernetes.io/zh-cn/docs/concepts/policy/resource-quotas/)。
 
-    ![namespace-quota01](../../images/namespace05.png)
+    ![namespace-quota01](../../images/namespcace05.png)
 
 3. 点击 __确定__ 完成配额设置。
