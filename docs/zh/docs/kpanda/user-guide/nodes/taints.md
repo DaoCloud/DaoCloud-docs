@@ -2,7 +2,6 @@
 
 污点 (Taint) 能够使节点排斥某一类 Pod，避免 Pod 被调度到该节点上。
 每个节点上可以应用一个或多个污点，不能容忍这些污点的 Pod 则不会被调度该节点上。
-有关污点的更多详情，可参考 Kubernetes 官方文档[污点和容忍度](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/)。
 
 ## 注意事项
 
@@ -25,8 +24,13 @@
 
     目前支持三种污点效果：
 
-    - NoSchedule：不能容忍某个污点的 Pod 不会被调度到存在该污点的节点上。
-    - PreferNoSchedule：**尽量避免** 将不能容忍某个污点的 Pod 不会被调度到存在该污点的节点上。
-    - NoExecute：保持现状。如果不能容忍某个污点的 Pod 在节点设置污点之前，已经运行在该节点上，也不会驱逐该 Pod。如果不能容忍某个污点的 Pod 在节点设置污点之前，还未运行在该节点上，则不会被调度到该节点。
+    - `NoSchedule`：新的 Pod 不会被调度到带有此污点的节点上，除非新的 Pod 具有相匹配的容忍度。当前正在节点上运行的 Pod **不会** 被驱逐。
+    - `NoExecute`：这会影响已在节点上运行的 Pod：
+        - 如果 Pod 不能容忍此污点，会马上被驱逐。
+        - 如果 Pod 能够容忍此污点，但是在容忍度定义中没有指定 `tolerationSeconds`，则 Pod 还会一直在这个节点上运行。
+        - 如果 Pod 能够容忍此污点而且指定了 `tolerationSeconds`，则 Pod 还能在这个节点上继续运行指定的时长。这段时间过去后，再从节点上驱除这些 Pod。
+    - `PreferNoSchedule`：这是“软性”的 `NoSchedule`。控制平面将**尝试**避免将不容忍此污点的 Pod 调度到节点上，但不能保证完全避免。所以要尽量避免使用此污点。
 
-        ![修改污点](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/taint-add-remove.png)
+    ![修改污点](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/taint-add-remove.png)
+
+有关污点的更多详情，请参阅Kubernetes 官方文档：[污点和容忍度](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/)。
