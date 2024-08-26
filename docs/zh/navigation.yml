@@ -331,7 +331,9 @@ nav:
                           - MIG 相关命令: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                       - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
                       - GPU 资源动态调节: kpanda/user-guide/gpu/dynamic-regulation.md
-                      - GPU 监控指标: kpanda/user-guide/gpu/gpu-metrics.md
+                      - GPU 监控告警:
+                          - GPU 监控指标: kpanda/user-guide/gpu/gpu-metrics.md
+                          - GPU 告警规则: kpanda/user-guide/gpu/gpu-alarm.md
                       - 使用 Volcano:
                           - 安装和使用 Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
                           - 使用Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md 

@@ -1,102 +1,55 @@
-# GPU 资源动态调节
+# GPU 调度配置（Binpack 和 Spread ）
+  
+本文介绍使用 NVIDIA vGPU 时，如何通过 Binpack 和 Spread 的 GPU 调度配置减少 GPU 资源碎片、防止单点故障等，实现 vGPU 的高级调度。平台提供了集群和工作负载两种维度的 Binpack 和 Spread 调度策略，分别满足不同场景下的使用需求。
 
-提供 GPU 资源动态调整功能，允许您在无需重新加载、重置或重启整个运行环境的情况下，对已经分配的 vGPU 资源进行实时、动态的调整。
-这一功能旨在最大程度地减少对业务运行的影响，确保您的业务能够持续稳定地运行，同时根据实际需求灵活调整GPU资源。
+# 前置条件
+  
+1. 集群节点上已正确安装 GPU 设备。
 
-## 使用场景
+2. 集群中已正确安装 [gpu-operator 组件](https://docs.daocloud.io/kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator/) 和 [Nvidia-vgpu 组件](https://docs.daocloud.io/kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon/)。
 
-- **弹性资源分配**：当业务需求或工作负载发生变化时，可以快速调整 GPU 资源以满足新的性能要求。
-- **即时响应**：在面对突发的高负载或业务需求时，可以迅速增加 GPU 资源而无需中断业务运行，以确保服务的稳定性和性能。
+3. 集群节点列表中，GPU 模式下存在 NVIDIA-vGPU 类型。
+  
+# 使用场景
 
-## 操作步骤
+1. 基于 GPU 卡维度调度策略
 
-以下是一个具体的操作示例，展示如何在不重启 vGPU Pod 的情况下动态调整 vGPU 的算力和显存资源：
+Binpack：优先选择节点的同一张 GPU 卡，适用于提高 GPU 利用率，减少资源碎片。
+Spread：多个 Pod 会分散在节点的不同 GPU 卡上，适用于高可用场景，避免单卡故障。
 
-### 创建一个 vGPU Pod
+2. 基于节点维度的调度策略
 
-首先，我们使用以下 YAML 创建一个 vGPU Pod，其算力初始不限制，显存限制为 200Mb。
+Binpack： 多个 Pod 会优先选择同一个节点，适用于提高 GPU 利用率，减少资源碎片。
+Spread：多个 Pod 会分散在不同节点上，适用于高可用场景，避免单节点故障。
 
-```yaml
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: gpu-burn-test
-  namespace: default
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: gpu-burn-test
-  template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        app: gpu-burn-test
-    spec:
-      containers:
-        - name: container-1
-          image: docker.io/chrstnhntschl/gpu_burn:latest
-          command:
-            - sleep
-            - '100000'
-          resources:
-            limits:
-              cpu: 1m
-              memory: 1Gi
-              nvidia.com/gpucores: '0'
-              nvidia.com/gpumem: '200'
-              nvidia.com/vgpu: '1'
-```
+# 集群维度使用 Binpack 和 Spread 调度配置
 
-### 动态调整算力
+!!! note
+  默认情况下，工作负载会遵循集群级别的 Binpack 和 Spread 调度配置。若工作负载单独设置了与集群不一致的 Binpack 和 Spread 调度策略，则该工作负载优先遵循其本身的调度策略。
 
-如果需要修改算力为 10%，可以按照以下步骤操作：
+1. 在 __集群列表__ 页选择需要调整 Binpack 和 Spread 调度策略的集群，点击右侧的 __┇__ 操作图标并在下拉列表中点击 __ GPU 调度配置__ 。
 
-1. 进入容器：
+![集群列表](../gpu/images/gpu-scheduler-clusterlist.png)
 
-    ```bash
-    kubectl exec -it <pod-name> -- /bin/bash
-    ```
-   
-1. 执行：
+2. 根据业务场景调整 GPU 调度配置，并点击 _ 确定_ 后保存。
 
-    ```bash
-    export CUDA_DEVICE_SM_LIMIT=10
-    ```
-   
-1. 在当前终端直接运行：
+![binpack配置](../gpu/images/gpu-scheduler-clusterrule.png)
 
-    ```bash
-    ./gpu_burn 60
-    ```
+# 工作负载维度使用 Binpack 和 Spread 调度配置
 
-    程序即可生效。 注意，不能退出当前 bash 终端。
+!!! note
+  当工作负载维度的  Binpack 和 Spread 调度策略与集群级别的配置冲突时，优先遵循工作负载维度的配置。
+  
+参考以下步骤，使用镜像创建一个无状态负载，并在工作负载中配置 Binpack 和 Spread 调度策略 。
 
-### 动态调整显存
+1. 点击左侧导航栏上的 __集群列表__ ，然后点击目标集群的名称，进入 __集群详情__ 页面。
 
-如果需要修改显存为 300Mb，可以按照以下步骤操作：
+![集群list](../gpu/images/clusterlist1.png)
 
-1. 进入容器：
+2. 在集群详情页面，点击左侧导航栏的 __工作负载__ -> __无状态负载__ ，然后点击页面右上角的 __镜像创建__ 按钮。
 
-    ```bash
-    kubectl exec -it <pod-name> -- /bin/bash
-    ```
-   
-1. 执行以下命令来设置显存限制：
+![创建工作负载](../gpu/images/gpu-createdeploy.png)
 
-    ```bash
-    export CUDA_DEVICE_MEMORY_LIMIT_0=300m
-    export CUDA_DEVICE_MEMORY_SHARED_CACHE=/usr/local/vgpu/d.cache
-    ```
-   
-    **注意**：每次修改显存大小时，`d.cache` 这个文件名字都需要修改，比如改为 `a.cache`, `1.cache` 等，以避免缓存冲突。
-   
-1. 在当前终端直接运行：
+3. 依次填写[基本信息](create-deployment.md#_3)、[容器配置](create-deployment.md#_4)，并在__容器配置__中启用 GPU 配置，选择 GPU 类型为 NVIDIA vGPU ，点击__高级设置__，启用 Binpack / Spread 调度策略，根据业务场景调整 GPU 调度配置。配置完成后点击__下一步__，进入 [服务配置](create-deployment.md#_5)、[高级配置](create-deployment.md#_6)后，在页面右下角点击 __确定__ 完成创建。
 
-    ```bash
-    ./gpu_burn 60
-    ```
-
-    程序即可生效。同样地，不能退出当前 bash 终端。
-
-通过这些步骤，您可以在不重启 vGPU Pod 的情况下动态地调整其算力和显存资源，从而更灵活地满足业务需求并优化资源利用。
+![配置binpack](../gpu/images/gpu-deploybipack.png)
