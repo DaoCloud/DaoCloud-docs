@@ -32,13 +32,13 @@
 
 ## 容器运行时
 
-容器运行时支持 docker 或 containerd。
+容器运行时支持 Docker 或 containerd。
 
-- Docker 版本必须高于 19.0，推荐使用 19.03.6 版本。
+- Docker 版本必须高于 v19.0，推荐使用 v19.03.6 版本。
 
-须知：如果您安装的 KubeEdge 版本高于或等于 1.14 且云端 Kubernetes 版本高于 1.24，除 Docker 之外，还需要安装 CRI-Dockerd 。
+须知：如果您安装的 KubeEdge 版本高于或等于 v1.14 且云端 Kubernetes 版本高于 v1.24，除 Docker 之外，还需要安装 CRI-Dockerd 。
 
-- 如果您安装的 KubeEdge 版本高于 v1.12.0，推荐安装 Containerd，安装流程参见[边缘节点安装容器引擎](./container-engine-install.md)。
+- 如果您安装的 KubeEdge 版本高于 v1.12.0，推荐安装 containerd，安装流程参见[边缘节点安装容器引擎](./container-engine-install.md)。
 
 ## glibc
 
