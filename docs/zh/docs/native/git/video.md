@@ -150,8 +150,9 @@
 
     !!! tip
 
-        在 CapCut 中，可以选择：
-        
+        剪映识别中文语音，CapCut 识别英文语音。
+        在 CapCut 中，你可以选择：
+
         - **American Female** 作为 text-to-speech 语音
         - **Light Ukulele & Happy** 作为背景音乐
 
