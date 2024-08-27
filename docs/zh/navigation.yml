@@ -1144,7 +1144,7 @@ nav:
           - 智能算力:
               - 介绍:
                   - 什么是智能算力: baize/intro/index.md
-                  - 初始化算力集群: baize/intro/install.md
+                  - 组件部署: baize/intro/install.md
                   - 快速体验: baize/intro/first.md
                   - Release Notes: baize/intro/release-notes.md
               - 开发控制台:
