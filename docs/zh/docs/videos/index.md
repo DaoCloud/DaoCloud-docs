@@ -41,6 +41,7 @@ hide:
 - :material-slot-machine: **智能算力** [云原生 AI - 训推一体化平台](baize.md)
 - :fontawesome-brands-edge-legacy: **云边协同** [容器能力延伸至边缘](kant.md)
 - :fontawesome-solid-user-group: **全局管理** [设置登录、访问权限、外观](ghippo.md)
+- :fontawesome-solid-computer: **虚拟机** [自动漂移](virtnest.md)
 
 </div>
 
