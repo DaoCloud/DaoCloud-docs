@@ -30,6 +30,11 @@ hide:
 
 3. 等待 Notebook 创建成功，点击列表中的访问地址，进入 Notebook。并在 Notebook 的终端中执行以下命令进行任务训练。
 
+!!! note
+   
+   脚本使用 Tensorflow，需要在 Notebook 中执行 `pip install -r requirements.txt` 安装。 
+
+
     ```shell
     python /home/jovyan/code/tensorflow/tf-fashion-mnist-sample/train.py
     ```
