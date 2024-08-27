@@ -1350,6 +1350,7 @@ nav:
           - 多云编排: videos/kairship.md
           - 镜像仓库: videos/kangaroo.md
           - 容器网络: videos/network.md
+          - 虚拟机: videos/virtnest.md
       - 微服务:
           - 可观测性: videos/insight.md
           - 微服务引擎: videos/skoala.md
