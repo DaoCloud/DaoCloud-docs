@@ -370,7 +370,7 @@ nav:
                   - Release Notes: kairship/intro/release-notes.md
               - 工作空间: kairship/workspace.md
               - 多云实例:
-                  - 多云实例介绍: kairship/instance/README.md
+                  - 实例详情: kairship/instance/detail.md
                   - 添加实例: kairship/instance/add.md
                   - 删除实例: kairship/instance/delete.md
               - 多云工作集群: kairship/cluster.md
