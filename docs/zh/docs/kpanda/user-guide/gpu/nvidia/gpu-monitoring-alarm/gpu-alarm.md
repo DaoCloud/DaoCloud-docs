@@ -1,12 +1,12 @@
 # GPU 告警规则
 
-本文介绍如何在 DCE5.0 平台设置 GPU 相关的告警规则。
+本文介绍如何在 DCE 5.0 平台设置 GPU 相关的告警规则。
 
 ## 前置条件
 
 - 集群节点上已正确安装 GPU 设备
-- 集群中已正确安装 [gpu-operator 组件](./nvidia/install_nvidia_driver_of_operator.md)
-- 如果用到了 vGPU 还需要在集群中安装 [Nvidia-vgpu 组件](./nvidia/vgpu/vgpu_addon.md)，并且开启 servicemonitor
+- 集群中已正确安装 [gpu-operator 组件](../install_nvidia_driver_of_operator.md)
+- 如果用到了 vGPU 还需要在集群中安装 [Nvidia-vgpu 组件](../vgpu/vgpu_addon.md)，并且开启 servicemonitor
 - 集群正确安装了 insight-agent 组件
 
 ## 告警常用 GPU 指标
