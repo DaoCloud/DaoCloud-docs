@@ -19,7 +19,7 @@ hide:
    
 ![baize](../images/baize-01.png)
 
- !!! note
+!!! note
 
      目前仅支持读写模式为 `ReadWriteMany` 的 `StorageClass`，请使用 NFS 或者推荐使用 [JuiceFS](https://juicefs.com/zh-cn/)。
 
