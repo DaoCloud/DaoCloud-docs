@@ -1142,8 +1142,8 @@ nav:
           - 智能算力:
               - 介绍:
                   - 什么是智能算力: baize/intro/index.md
-                  - 算力集群初始化: baize/intro/install.md
-                  - 第一次使用: baize/intro/first.md
+                  - 初始化算力集群: baize/intro/install.md
+                  - 快速体验: baize/intro/first.md
                   - Release Notes: baize/intro/release-notes.md
               - 开发控制台:
                   - 介绍: baize/developer/index.md
@@ -1151,7 +1151,7 @@ nav:
                   - Notebooks:
                       - 创建 Notebook: baize/developer/notebooks/create.md
                       - 启动和暂停 Notebook: baize/developer/notebooks/start-pause.md
-                      - 查看 Notebook 工作负载: baize/developer/notebooks/view.md
+                      - Notebook 工作负载: baize/developer/notebooks/view.md
                       - 删除 Notebook: baize/developer/notebooks/delete.md
                       - SSH 访问 Notebook: baize/developer/notebooks/notebook-with-ssh.md
                       - Notebook 中使用环境: baize/developer/notebooks/notebook-with-envs.md
@@ -1164,15 +1164,16 @@ nav:
                       - 查看任务负载: baize/developer/jobs/view.md
                       - 任务分析: baize/developer/jobs/tensorboard.md
                   - 数据管理:
-                      - 创建/使用/删除数据集: baize/developer/dataset/create-use-delete.md
-                      - 环境管理: baize/developer/dataset/environments.md
+                      - 数据集列表: baize/developer/dataset/create-use-delete.md
+                      - 环境列表: baize/developer/dataset/environments.md
                   - 推理服务:
-                      - 模型支持: baize/developer/inference/models.md
-                      - 创建推理服务: baize/developer/inference/create.md
-                      - vLLm 框架创建推理服务: baize/developer/inference/vllm-inference.md
+                      - 模型支持情况: baize/developer/inference/models.md
+                      - 创建 Triton 推理服务: baize/developer/inference/create.md
+                      - 创建 vLLM 推理服务: baize/developer/inference/vllm-inference.md
               - 运维管理:
                   - 介绍: baize/oam/index.md
-                  - 资源管理: baize/oam/resource.md
+                  - 资源管理:
+                      - GPU 列表: baize/oam/resource.md
                   - 队列管理:
                       - 创建队列: baize/oam/queue/create.md
                       - 删除队列: baize/oam/queue/delete.md
