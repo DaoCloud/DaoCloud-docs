@@ -115,6 +115,14 @@ v0.20.0 之前的版本中，火种机上存储的 kind 集群的 kubeconfig 不
 dce5-installer cluster-create -c clusterconfig.yaml -m mainfest.yaml --update-kind-certs
 ```
 
+### Contour 安装后，证书默认有效期仅一年，且不会自动 renew，过期后导致 contour-envoy 组件不断重启
+
+v0.21.0 之前的版本，支持启用安装 Contour 组件，后续版本将不再支持，对于之前版本并且安装了 Contour 的客户，需要执行 helm upgrade 命令来更新证书有效期：
+
+```bash
+helm upgrade  -n contour-system contour --reuse-values --set contour.contour.certgen.certificateLifetime=36500
+```
+
 ## 操作系统相关问题
 
 ### 在 CentOS 7.6 安装时报错
