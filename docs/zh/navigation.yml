@@ -330,7 +330,7 @@ nav:
                           - 使用 NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG 相关命令: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                       - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
-                      - GPU 资源动态调节: kpanda/user-guide/gpu/dynamic-regulation.md
+                      - GPU 调度配置(Binpack/Spread): kpanda/user-guide/gpu/dynamic-regulation.md
                       - GPU 监控告警:
                           - GPU 监控指标: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-metrics.md
                           - GPU 告警规则: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-alarm.md
