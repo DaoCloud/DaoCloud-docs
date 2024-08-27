@@ -51,41 +51,6 @@
 
 - 需要导入虚拟机的 vmdk 文件 path
 
-## 获取 vSphere 的虚拟机基础信息
-
-1. 准备 vddk 镜像
-
-    - 下载 vddk：需要在 [vmware 网站](https://developer.vmware.com/)注册账号后下载
-
-        前往 SDKs，点击 __Compute Virtualization__ ，选择并下载合适版本的
-        __VMware Virtual Disk Development Kit (VDDK)__ 。
-
-        ![点击 Compute Virtualization](../images/import-ubuntu01.png)
-
-        ![选择版本](../images/import-ubuntu02.png)
-
-        ![下载](../images/import-ubuntu03.png)
-
-    -  解压并构建成镜像：
-
-        - 解压
-
-            ```sh
-            tar -xzf VMware-vix-disklib-<version>.x86_64.tar.gz
-            ```
-
-        - 创建 Dockerfile 文件
-
-            ```sh
-            FROM busybox:latest
-            COPY vmware-vix-disklib-distrib /vmware-vix-disklib-distrib
-            RUN mkdir -p /opt
-            ENTRYPOINT ["cp", "-r", "/vmware-vix-disklib-distrib", "/opt"]
-            EOF
-            ```
-
-        - 推送镜像至仓库
-
 ## 网络配置
 
 需要根据网络模式的不同配置不同的信息，若有固定 IP 的需求，需要选择 Bridge 网络模式
