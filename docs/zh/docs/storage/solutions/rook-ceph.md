@@ -55,7 +55,7 @@ Rook 支持多个存储提供商。它将分布式存储软件转变为自我管
 
 其中 kubelet 版本为 1.23.6
 
-```
+```console
 [root@k8s-10-6-162-21 ~]# kubectl get no
 NAME                            STATUS           ROLES                              AGE         VERSION
 k8s-10-6-162-21                 Ready            control-plane,master               19d         v1.23.6
@@ -68,7 +68,7 @@ k8s-10-6-162-24                 Ready            <none>          �
 
 #### 克隆 GitHub 源码
 
-```
+```console
 [root@k8s-10-6-162-21 ~]# git clone https://github.com/rook/rook.git
 
 [root@k8s-10-6-162-21 ~]# ls
@@ -98,7 +98,7 @@ crds.yaml filesystem.yaml object-multisite.yaml rbdmirror.yaml
 
 #### 部署 Operator、CRD 和参数
 
-```
+```console
 [root@k8s-10-6-162-21 ceph]# kubectl create -f crds.yaml -f common.yaml -f operator.yaml
 
 [root@k8s-10-6-162-21 ceph]# kubectl get crd | grep ceph
@@ -121,7 +121,7 @@ volumes.rook.io                                       2022-10-14T02:22:35Z
 
 #### 部署 cluster 和 toolbox
 
-```
+```console
 [root@k8s-10-6-162-21 ceph]# kubectl create -f cluster.yaml
 
 [root@k8s-10-6-162-21 ceph]# kubectl create -f toolbox.yaml
@@ -162,7 +162,7 @@ rook-ceph-tools-55f548895f-8pdhm     1/1 Running          0     4d1h         10.
 
 #### 部署 dashboard
 
-```
+```console
 [root@k8s-10-6-162-21 ~]# kubectl apply -f dashboard-external-https.yaml
 
 [root@k8s-10-6-162-21 ~]# kubectl get svc -n rook-ceph
@@ -185,7 +185,7 @@ rook-ceph-mon-d                                ClusterIP 10.101.56.41 <none> 678
 
 #### 操作 Ceph 存储管理所用的 Rook 工具
 
-```
+```console
 [root@k8s-10-6-162-21 ceph]# kubectl exec -it rook-ceph-tools-55f548895f-fzbq2 -n rook-ceph -- bash
 
 [root@rook-ceph-tools-55f548895f-8pdhm /]# ceph -s
@@ -242,7 +242,7 @@ ID HOST USED AVAIL WR OPS WR DATA RD OPS RD DATA STATE
 
 创建 RBD 池和归置组 (PG)：
 
-```
+```console
 [root@rook-ceph-tools-55f548895f-8pdhm /]# ceph osd pool create replicapool 128
 
 [root@k8s-10-6-162-21 kubernetes]# ceph osd pool application enable replicapool rbd
@@ -263,7 +263,7 @@ rook-cephfs                rook-ceph.cephfs.csi.ceph.com Delete Immediate true 2
 
 #### 在 RBD 上部署 Mysql 和 WordPress
 
-```
+```console
 [root@k8s-10-6-162-21 examples]# cd kubernetes/
 ceph mysql2-cephfs.yaml mysql.yaml README.md wordpress.yaml
 [root@k8s-10-6-162-21 kubernetes]# pwd
@@ -274,7 +274,7 @@ ceph mysql2-cephfs.yaml mysql.yaml README.md wordpress.yaml
 
 #### 在 Cephfs 上部署 Mysql
 
-```
+```console
 [root@k8s-10-6-162-21 kubernetes]# kubectl apply -f mysql2-cephfs.yaml
 
 [root@k8s-10-6-162-21 kubernetes]# kubectl get po
@@ -307,7 +307,7 @@ myfs-data0
 
 ![dashboard-6](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/dashboard-6.png)
 
-```
+```console
 [root@k8s-10-6-162-21 kubernetes]# kubectl get pv,pvc
 NAME                                                        CAPACITY   ACCESS MODES RECLAIM POLICY STATUS CLAIM STORAGECLASS REASON AGE
 persistentvolume/pvc-19515505-cd8f-41d1-ae91-bb42c3eb64f3   20Gi       RWO Delete Bound default/mysql-pv-claim2 rook-cephfs 3d20h
@@ -332,7 +332,7 @@ persistentvolumeclaim/wp-pv-claim        Bound pvc-7647bc80-febc-4299-a62a-8446d
 
 删除并重启 mysql / wordpress Pod：
 
-```
+```console
 [root@k8s-10-6-162-21 kubernetes]# kubectl delete po wordpress-mysql-79966d6c5b-wc6fs
 ```
 
