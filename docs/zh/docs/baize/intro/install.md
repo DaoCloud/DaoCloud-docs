@@ -1,9 +1,9 @@
-# 初始化智能算力集群
+# 组件部署
 
 在 DCE 5.0 的安装器 v0.17.0 之后商业版安装时可以同步安装智算能力模块，
 **无需自行安装** ；请联系交付支持团队获取商业版安装包。
 
-## 安装智能算力模块 (UI 方式安装)
+## baize 全局服务集群
 
 > 此管理模块仅在[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)安装即可
 
@@ -13,36 +13,15 @@
 
     * 命名空间 Namespace 为 `baize-system`
     * 替换环境地址后打开 `<YOUR_DCE_HOST>/kpanda/clusters/kpanda-global-cluster/helm/charts/addon/baize`
-    * 注意 `kpanda-global-cluster` 全局服务集群
+    * 注意 `kpanda-global-cluster` 全局服务集群名称
 
-## 安装智能算力模块 (CLI 方式安装)
+## baize-agent 工作集群
 
-> 管理模块仅在全局服务集群安装即可
+!!! warning
 
-确保全局服务集群内已经安装了智算能力组件，确认方式为通过 DCE 5.0 管理界面查看是否有智算能力模块。
+    如果在智能算力中对应的集群无法选择或提示缺少 `baize-agent`，也就是该工作集群的组件并未成功部署。
 
-!!! info
-
-    一级导航栏有 `智能算力` 入口。
-
-    如何不存在，可以通过以下方式安装，注意需要在 `kpanda-global-cluster` 全局服务集群内安装：
-
-    ```bash
-    # baize 是智算能力组件的开发代号
-    helm repo add baize https://release.daocloud.io/chartrepo/baize
-    helm repo update
-    helm search repo baize # 获取最新的版本编号
-    export VERSION=<version> # 注意使用当前最新版本
-    helm upgrade --install baize baize/baize \
-        --create-namespace \
-        -n baize-system \
-        --set global.imageRegistry=release.daocloud.io \
-        --version=${VERSION}
-    ```
-
-## 工作集群初始化
-
-注意：在每个有算力资源的工作集群内，需要部署对应的算力基础组件，主要组件包含：
+注意：在每个有算力资源的工作集群内，需要部署对应的基础组件，主要组件包含：
 
 * `gpu-operator` 初始化集群中的 GPU 资源，**这部分会因 GPU 资源类型安装方式不同**，
   详情参考 [GPU 管理](../../kpanda/user-guide/gpu/index.md)
@@ -54,7 +33,41 @@
 
     **以上组件必须安装，否则会导致功能使用不正常。**
 
-以上工作完成后，已经可以在智能算力内，进行任务训练和模型开发。
+### 界面化安装 baize-agent
+
+
+> baize-agent 需要在工作集群部署。
+
+按照下方提示，进入工作集群，然后在 __Helm 应用__ -> __Helm 模板__ 找到 `baize` 执行安装步骤。
+
+!!! note "注意事项"
+
+    * 命名空间 Namespace 为 `baize-system`
+    * 替换环境地址后打开 `<YOUR_DCE_HOST>/kpanda/clusters/<cluster_name>/helm/charts/addon/baize`
+    * 注意 `<cluster_name>` 是对应工作集群的名称
+
+### Helm 安装 baize-agent
+
+确保全局服务集群内已经安装了智算能力组件，可以通过在管理界面查看是否有智算能力模块。
+
+!!! info
+
+    需要在一级导航栏有 `智能算力` 入口，保障管理组件部署成功。
+
+    ```bash
+    # baize 是智算能力组件的开发代号
+    helm repo add baize https://release.daocloud.io/chartrepo/baize
+    helm repo update baize
+    helm search repo baize # 获取最新的版本编号
+    export VERSION=<version> # 注意使用当前最新版本
+    helm upgrade --install baize-agent baize/baize-agent \
+        --create-namespace \
+        -n baize-system \
+        --set global.imageRegistry=release.daocloud.io \
+        --version=${VERSION}
+    ```
+
+以上工作完成后，工作集群初始就成功了，可以在智能算力模块，进行任务训练和模型开发。
 
 ### 预热组件介绍
 
