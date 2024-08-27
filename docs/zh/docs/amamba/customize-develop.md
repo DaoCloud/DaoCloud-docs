@@ -1,8 +1,8 @@
 # 自定义步骤开发指南
 
-## YAML 文件模版
+## YAML 文件模板
 
-声明文件用于定义自定义步骤的名称、版本、参数等信息，为了更加的云原生化，我们定义的 plugin 信息保持了 k8s resource 的风格，虽然目前他们不会以 CRD 的形式存在，插件的定义如下：
+声明文件用于定义自定义步骤的名称、版本、参数等信息，为了更加的云原生化，应用工作台定义的 plugin 信息保持了 K8s resource 的风格，虽然目前它们不会以 CRD 的形式存在，插件的定义如下：
 
 ```yaml
 apiVersion: pipeline.amamba.io/v1alpha1
@@ -50,20 +50,22 @@ spec:
         namespace: namespace
 ```
 
-## Param  参数介绍
+## 参数介绍
 
 | 属性名           | 含义                                         | 示例                                        |
 | ---------------- | -------------------------------------------- | ------------------------------------------- |
 | name             | 参数名称                                     | cluster                                     |
 | type             | 参数类型                                     | 支持 string,int,bool,float,array, map       |
-| env              | 对应环境变量的值，没有此字段则默认与name相同 | CLUSTER_NAME                                |
+| env              | 对应环境变量的值，没有此字段则默认与 name 相同 | CLUSTER_NAME                                |
 | validate         | 参数的校验规则                               | {}                                          |
-| uiConfig         | ui页面上的一些选项                           | {}                                          |
-| dependProperties | ui上的属性依赖项                             | 比如namespace依赖于cluster， 给前端交互使用 |
+| uiConfig         | ui 页面上的一些选项                           | {}                                          |
+| dependProperties | ui 上的属性依赖项                             | 比如namespace依赖于cluster， 给前端交互使用 |
 
 ### dependProperties 依赖参数介绍
 
-因为某些参数之间存在着依赖关系，例如 namespace 依赖于 cluster，为了更好的UI交互体验，可以在 dependProperties 中添加属性依赖项说明，那么前端会自动根据 uiType 以及dependProperties来动态获取数据进行交互。dependProperties 是一个 map 结构，key 是前端在组件中会使用到的参数，value 是在 params 中定义的参数名称，可以声明多个依赖项。
+因为某些参数之间存在着依赖关系，例如 namespace 依赖于 cluster，为了更好的 UI 交互体验，可以在 dependProperties 中添加属性依赖项说明，
+那么前端会自动根据 uiType 以及dependProperties来动态获取数据进行交互。dependProperties 是一个 map 结构，
+key 是前端在组件中会使用到的参数，value 是在 params 中定义的参数名称，可以声明多个依赖项。
 
 #### 依赖项举例
 
@@ -147,7 +149,7 @@ options:
 
 ## uiConfig 参数介绍
 
-uiConfig 必须是预定义的类型，主要是一些ui展示上的配置项：
+uiConfig 必须是预定义的类型，主要是一些 ui 展示上的配置项：
 
 ```yaml
 displayName: 显示的名称
@@ -156,28 +158,28 @@ tips: 提示信息（鼠标点击?时的提示）
 placeholder: 占位符信息
 ```
 
-UI参数预定义类型及使用场景如下：：
+UI 参数预定义类型及使用场景如下：
 
-| UI类型             | 参数类型 | 说明                                 | 依赖项说明                                                |
+| UI 类型             | 参数类型 | 说明                                 | 依赖项说明                                                |
 | ------------------ | -------- | ------------------------------------ | --------------------------------------------------------- |
 | Text               | string   | 大文本输入框                         |                                                           |
 | Shell              | string   | Shell 高亮输入框                     |                                                           |
-| Yaml               | string   | Yaml 高亮输入框                      |                                                           |
-| Input              | string   | 输入框,单行文本                      |                                                           |
-| Select             | string   | 下拉框,与参数定义中的options配合使用 |                                                           |
+| Yaml               | string   | YAML 高亮输入框                      |                                                           |
+| Input              | string   | 输入框，单行文本                      |                                                           |
+| Select             | string   | 下拉框，与参数定义中的 options 配合使用 |                                                           |
 | Radio              | string   | 单选框                               |                                                           |
 | Switch             | bool     | 开关                                 |                                                           |
-| Password           | string   | 密码，****                           |                                                           |
+| Password           | string   | 密码 `****`                           |                                                           |
 | Number             | int      | 数字输入框                           |                                                           |
 | ImageInput         | string   | 镜像选择器                           |                                                           |
 | ClusterSelector    | string   | 集群选择器                           |                                                           |
-| NamespaceSelector  | string   | 命名空间选择器                       | 依赖于cluster属性                                         |
+| NamespaceSelector  | string   | 命名空间选择器                       | 依赖于 cluster 属性                                         |
 | CredentialSelector | string   | 凭证选择器                           |                                                           |
-| WorkloadSelector   | string   | 工作负载选择器                       | 依赖于cluster，namespace，workloadType 属性               |
-| ContainerSelector  | string   | 容器选择器                           | 依赖于cluster，namespace，workloadType、workloadName 属性 |
+| WorkloadSelector   | string   | 工作负载选择器                       | 依赖于 cluster、namespace、workloadType 属性               |
+| ContainerSelector  | string   | 容器选择器                           | 依赖于 cluster、namespace、workloadType、workloadName 属性 |
 | Strings            | array    | 字符串数组                           |                                                           |
 | Numbers            | array    | 数字数组                             |                                                           |
-| KV                 | map      | kv键值对结构，如环境变量             |                                                           |
+| KV                 | map      | kv 键值对结构，如环境变量             |                                                           |
 | Ignore             | bool     | 不展示此字段                         |                                                           |
-| CPUNumber          | float    | CPU数量输入框                        |                                                           |
+| CPUNumber          | float    | CPU 数量输入框                        |                                                           |
 | MemoryNumber       | float    | 内存数量输入框                       |                                                           |
