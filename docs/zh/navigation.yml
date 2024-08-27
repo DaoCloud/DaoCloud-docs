@@ -142,6 +142,9 @@ nav:
                       - 流水线模板:
                           - 自定义模板: amamba/user-guide/pipeline/template/custom-template.md
                           - 模板说明: amamba/user-guide/pipeline/template/info.md
+                  - 自定义步骤:
+                      - 自定义步骤介绍: amamba/customize-step.md
+                      - 自定义步骤开发指南: amamba/customize-develop.md
                   - 更多技巧:
                       - 自定义Jenkins Agent镜像: amamba/user-guide/pipeline/jenkins-agent.md
                       - Jenkins自定义工具链: amamba/quickstart/jenkins-custom.md
