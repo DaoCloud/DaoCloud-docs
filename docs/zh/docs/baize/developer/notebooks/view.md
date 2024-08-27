@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# 查看 Notebook 工作负载
+# Notebook 工作负载
 
 如果想要查看某个 Notebook 的工作负载，可以执行以下操作：
 
