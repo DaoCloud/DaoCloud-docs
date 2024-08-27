@@ -66,7 +66,7 @@ hide:
 - Command：`python`
 - Arguments：`/home/jovyan/code/tensorflow/tf-fashion-mnist-sample/train.py`
 
-   !!! note
+    !!! note
 
         数据集或模型较大时，建议在第二步资源配置中开启 GPU 配置。
 
