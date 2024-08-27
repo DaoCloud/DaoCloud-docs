@@ -47,7 +47,7 @@ hide:
 
 !!! note
    
-   脚本使用 Tensorflow，需要在 Notebook 中执行 `pip install -r requirements.txt` 安装。 
+    脚本使用 Tensorflow，需要在 Notebook 中执行 `pip install -r requirements.txt` 安装。 
 
 
     ```shell
