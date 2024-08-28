@@ -573,8 +573,6 @@ nav:
                       - Resource Requirements: storage/hwameistor/install/proresource.md
                       - Install HwameiStor on UI: storage/hwameistor/install/deploy-ui.md
                       - Install via hwameistor-operator: storage/hwameistor/install/deploy-operator.md
-                      - Install DRDB: storage/hwameistor/install/drbdinstall.md
-                      - Install with UI: storage/hwameistor/install/deploy-ui.md
                       - Post-check: storage/hwameistor/install/post-check.md
                       - Storage and Network Adapter config: storage/hwameistor/install/storage-eth.md
                       - Custom Kubelet Root Directory: storage/hwameistor/install/customized-kubelet.md
