@@ -1,8 +1,6 @@
 ---
 MTPE: ModetaNiu
 DATE: 2024-07-18
-hide:
-  - toc
 ---
 
 # Create Multicloud Instance

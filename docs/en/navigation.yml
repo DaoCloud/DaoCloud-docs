@@ -365,7 +365,7 @@ nav:
                   - Multicloud Release Notes: kairship/intro/release-notes.md
               - Workspaces: kairship/workspace.md
               - Multicloud Instances:
-                  - Overview: kairship/instance/README.md
+                  - Instance Detail: kairship/instance/index.md
                   - Add Instance: kairship/instance/add.md
                   - Delete Instance: kairship/instance/delete.md
               - Worker Clusters: kairship/cluster.md
