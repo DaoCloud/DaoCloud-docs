@@ -33,7 +33,7 @@ See [Related Registry](../kangaroo/integrate/integrate-ws.md) for reference.
 
 ## Integrate registry (Admin)
 
-See [registry integration](../kangaroo/integrate/integrate-admin.md) for reference.
+See [registry integration](../kangaroo/integrate/integrate-admin/integrate-admin.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-harbor.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kangaroo-integrate.png"></video>

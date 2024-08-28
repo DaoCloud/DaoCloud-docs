@@ -8,7 +8,7 @@ hide:
 在 DCE 5.0 中有托管 Harbor（在 DCE 上自建的 Harbor）和仓库集成（集成外部的 Habor 或 Docker Registry）两种镜像仓库管理方式：
 
 - [托管 Harbor](../managed/intro.md)（建议）
-- [仓库集成](../integrate/integrate-admin.md)
+- [仓库集成](../integrate/integrate-admin/integrate-admin.md)
 
 DCE 5.0 主推 Harbor 作为镜像仓库提供镜像服务。
 
@@ -81,7 +81,7 @@ class create,setpublic,push,bind,deploy cluster;
 click create "https://docs.daocloud.io/kangaroo/hosted/"
 click setpublic "https://docs.daocloud.io/kangaroo/integrate/create-space/"
 click push "https://docs.daocloud.io/kangaroo/quickstart/push/"
-click bind "https://docs.daocloud.io/kangaroo/bind-to-ws/"
+click bind "https://docs.daocloud.io/kangaroo/integrate/integrate-admin/bind-to-ws/"
 click deploy "https://docs.daocloud.io/kpanda/user-guide/workloads/create-deployment/"
 ```
 

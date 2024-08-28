@@ -32,7 +32,7 @@ Harbor 提供了基于镜像空间（project）的镜像隔离功能。镜像空
 
     ![成功](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/managed04.png)
 
-1. 找到刚创建的镜像空间，点击右侧的 __┇__ ，可以执行[绑定/解绑工作空间](./bind-to-ws.md)、删除等操作。
+1. 找到刚创建的镜像空间，点击右侧的 __┇__ ，可以执行[绑定/解绑工作空间](../integrate-admin/bind-to-ws.md)、删除等操作。
 
     ![其他操作](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/managed05.png)
 
@@ -41,4 +41,4 @@ Harbor 提供了基于镜像空间（project）的镜像隔离功能。镜像空
     - 若镜像空间状态为`公开`，则空间中的镜像能够被平台上的所有 Kubernetes 命名空间拉取使用；
     - 若镜像空间状态为`私有`，则只有在管理员 Admin 将该镜像空间绑定到一个或多个工作空间（租户）后，才能被工作空间（租户）下的 Kubernetes 命名空间拉取使用。
 
-下一步：[绑定/解绑工作空间](./bind-to-ws.md)
+下一步：[绑定/解绑工作空间](../integrate-admin/bind-to-ws.md)

@@ -100,7 +100,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
     - [镜像空间](../kangaroo/space/index.md)
     - [仓库集成(工作空间)](../kangaroo/integrate/integrate-ws.md)
-    - [仓库集成(管理员)](../kangaroo/integrate/integrate-admin.md)
+    - [仓库集成(管理员)](../kangaroo/integrate/integrate-admin/integrate-admin.md)
     - [托管 Harbor](../kangaroo/managed/intro.md)
 
 </div>

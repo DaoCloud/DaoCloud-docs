@@ -66,4 +66,4 @@ Prerequisite: [Cert Manager](https://cert-manager.io/docs/installation/) and [Ha
    the system will automatically integrate the instance into the **Integrated Registry** list. You can navigate to the 
    **Integrated Registry** list to view the instance details and perform operations such as `Create Image Space` and `Sync Images`.
 
-Next step: [Create registry space](../integrate/registry-space.md)
+Next step: [Create registry space](../integrate/integrate-admin/registry-space.md)

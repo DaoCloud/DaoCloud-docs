@@ -11,7 +11,7 @@ In DCE 5.0, there are two methods for managing container registries: Managed Har
 Integrated Registry (integrating external Harbor or Docker Registry).
 
 - [Managed Harbor](../managed/intro.md)（suggested）
-- [Integrated Registry](../integrate/integrate-admin.md)
+- [Integrated Registry](../integrate/integrate-admin/integrate-admin.md)
 
 Harbor is mainly promoted as the Container Registry in DCE 5.0 to provide image services.
 
@@ -86,7 +86,7 @@ class create,setpublic,push,bind,deploy cluster;
 click create "https://docs.daocloud.io/en/kangaroo/hosted/"
 click setpublic "https://docs.daocloud.io/en/kangaroo/integrate/create-space/"
 click push "https://docs.daocloud.io/en/kangaroo/quickstart/push/"
-click bind "https://docs.daocloud.io/en/kangaroo/bind-to-ws/"
+click bind "https://docs.daocloud.io/en/kangaroo/integrate/integrate-admin/bind-to-ws/"
 click deploy "https://docs.daocloud.io/en/kpanda/user-guide/workloads/create-deployment/"
 ```
 

@@ -144,7 +144,7 @@ If you need to perform pod migration, follow these steps after completing the pr
 The following steps describe how to migrate images between image repositories.
 
 1. Integrate the DCE 4.0 image repository with the Kangaroo repository integration (admin).
-   Refer to [Repository Integration](../../kangaroo/integrate/integrate-admin.md) for the operation steps.
+   Refer to [Repository Integration](../../kangaroo/integrate/integrate-admin/integrate-admin.md) for the operation steps.
 
 
     !!! note

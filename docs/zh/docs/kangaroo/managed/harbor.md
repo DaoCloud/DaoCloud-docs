@@ -57,4 +57,4 @@ hide:
 
 8.  __托管 Harbor__ 主要是对 Harbor 实例的全生命周期进行管理。创建完成后，系统会自动将该实例集成到 __仓库集成__ 列表，您可前往 __仓库集成__ 列表进入实例详情进行 `创建镜像空间`和`镜像同步`等操作
 
-下一步：[创建镜像空间](../integrate/registry-space.md)
+下一步：[创建镜像空间](../integrate/integrate-admin/registry-space.md)

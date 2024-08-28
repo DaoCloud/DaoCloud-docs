@@ -10,7 +10,7 @@ by members of a workspace after the image is bound to that workspace.
 - For private images, however, the workspace (tenant) needs to be assigned the private registry space by an 
 administrator before members under the workspace can use them, ensuring the security of private images.
 
-**Prerequisites:** An external Harbor registry has been created or integrated, and [a registry space has been created](../integrate/registry-space.md).
+**Prerequisites:** An external Harbor registry has been created or integrated, and [a registry space has been created](../integrate-admin/registry-space.md).
 
 ## Binding Steps
 

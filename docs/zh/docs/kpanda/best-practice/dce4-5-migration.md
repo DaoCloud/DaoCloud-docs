@@ -270,7 +270,7 @@ data:
 
 下文介绍镜像仓库镜像迁移步骤。
 
-1. 将 DCE 4.0 镜像仓库接入到 Kangaroo 仓库集成（管理员），操作步骤参考 [仓库集成](../../kangaroo/integrate/integrate-admin.md)。
+1. 将 DCE 4.0 镜像仓库接入到 Kangaroo 仓库集成（管理员），操作步骤参考 [仓库集成](../../kangaroo/integrate/integrate-admin/integrate-admin.md)。
 
     ![源仓库集成](../images/4-5-registry-01.png)
 
