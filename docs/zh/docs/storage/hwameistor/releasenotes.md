@@ -1,6 +1,6 @@
-# Hwameistor Release Notes
+# HwameiStor Release Notes
 
-本页列出 Hwameistor 相关的 Release Notes，便于您了解各版本的演进路径和特性变化。
+本页列出 HwameiStor 相关的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
 ## 2024-07-30
 
@@ -114,7 +114,7 @@
 
 #### 优化
 
-- **优化** Hwameistor Operator 新增组件资源配置
+- **优化** hwameistor-operator 新增组件资源配置
 - **优化** 快照恢复超时时间调整
 - **优化** 提高 LDM 默认日志等级
 
@@ -245,7 +245,7 @@
 
 - **新增** 磁盘的已使用容量 [Issue #681](https://github.com/hwameistor/hwameistor/pull/681)
 - **优化** 当未发现可用磁盘时，跳过打分机制 [Issue #724](https://github.com/hwameistor/hwameistor/pull/724)
-- **设置** DRDB 端口默认为 43001 [Issue #723](https://github.com/hwameistor/hwameistor/pull/723)
+- **设置** DRBD 端口默认为 43001 [Issue #723](https://github.com/hwameistor/hwameistor/pull/723)
 
 ## 2023-1-30
 
@@ -264,8 +264,8 @@
 
 #### 新功能
 
-- **新增** Hwameistor DashBoard UI，可展现存储资源、存储节点等使用状态
-- **新增** 界面管理 Hwameistor 存储节点、本地磁盘、迁移记录
+- **新增** HwameiStor DashBoard UI，可展现存储资源、存储节点等使用状态
+- **新增** 界面管理 HwameiStor 存储节点、本地磁盘、迁移记录
 - **新增** 存储池管理功能，支持界面展现存储池基本信息，及存储池对应节点信息
 - **新增** 本地卷管理功能 ，支持界面执行数据卷迁移、高可用转换
 

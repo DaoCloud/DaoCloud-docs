@@ -11,10 +11,10 @@ hide:
 
 - 待使用节点上已准备空闲 HDD、SSD 磁盘
 - 已完成[准备工作](prereq.md)中事项
-- 如需要使用高可用数据卷，请提前完成[DRDB 安装](drbdinstall.md)
+- 如需要使用高可用数据卷，请提前[安装好 DRBD](drbdinstall.md)
 - 如部署环境为生产环境，请提前阅读[生产环境资源要求](proresource.md)
 - 如果您的 Kubernetes 发行版使用不同的 `kubelet` 目录，请提前确认 `kubeletRootDir`。
-  详细信息请参考[自定义 Kubelet 根目录](customized-kubelet.md)。
+  详细信息请参考[自定义 kubelet 根目录](customized-kubelet.md)。
 
 ## 安装步骤
 
@@ -44,16 +44,16 @@ hide:
         设置 K8s 镜像仓库地址，默认已经填写可用在线仓库。
         如果私有化环境，可修改为私有仓库地址。
         
-    - `Global Setting` —> `Kubelet Root Dir`：
+    - `Global Setting` —> `kubelet Root Dir`：
     
         默认的 `kubelet` 目录为 `/var/lib/kubelet`。
         如果您的 Kubernetes 发行版使用不同的 `kubelet` 目录，必须设置参数 `kubeletRootDir`。
-        详细信息请参考[自定义 Kubelet 根目录](customized-kubelet.md)。
+        详细信息请参考[自定义 kubelet 根目录](customized-kubelet.md)。
         
-    - `Config Settings` —> `DRDBStartPort`：
+    - `Config Settings` —> `DRBDStartPort`：
     
-        默认以 43001 开始，当开启 `DRDB` 时，每创建一个高可用数据卷，需要占用主副本数据卷所在节点的一组端口。
-        请在安装之前完成 [DRDB 安装](drbdinstall.md)。
+        默认以 43001 开始，当开启 `DRBD` 时，每创建一个高可用数据卷，需要占用主副本数据卷所在节点的一组端口。
+        请[先安装好 DRBD](drbdinstall.md)。
         
     - **StorageClass 配置**
     
@@ -62,7 +62,7 @@ hide:
         - `AllowVolumeExpansion`：默认为关闭状态，开启后，基于 StorageClass 创建的数据卷可以扩容。
         - `DiskType`：创建的存储池（StorageClass）的磁盘类型，支持类型有：HDD、SSD。默认为 HDD。
         - `Enable HA`：默认关闭 `HA`, 即创建的数据卷为`非高可用`，当开启后，使用该 `StorageClass`
-          创建的数据卷可以设置为`高可用数据卷`。请在开启前完成 [DRDB 安装](drbdinstall.md)。
+          创建的数据卷可以设置为`高可用数据卷`。请在开启前完成 [DRBD 安装](drbdinstall.md)。
         - `Replicas`：非 `HA` 模式下，`Replicas` 数量为 `1`；当开启 `HA` 模式后，`Replicas` 数量可以为 `1` 或者 `2`，并且数量为 `1` 时，可以转换为 `2`。
         - `ReclaimPolicy`: 数据卷删除时，数据的保留策略默认为 `delete`。
         

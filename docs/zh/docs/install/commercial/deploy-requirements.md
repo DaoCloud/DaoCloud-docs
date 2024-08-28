@@ -35,7 +35,7 @@
 | -------- | ---------- |
 | 容器管理 GPU 能力 | ≥ 5.15|
 | Cilium | ≥ 5.12 |
-| Hwameistor DRDB 能力 | [DRBD 适配的内核版本](../../storage/hwameistor/intro/drbd-support.md) |
+| HwameiStor DRBD 能力 | [DRBD 适配的内核版本](../../storage/hwameistor/intro/drbd-support.md) |
 | Kubevirt | > 3.15 |
 | Merbridge 要求 | ≥ 5.7 |
 
