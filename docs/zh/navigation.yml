@@ -142,6 +142,7 @@ nav:
                       - 流水线模板:
                           - 自定义模板: amamba/user-guide/pipeline/template/custom-template.md
                           - 模板说明: amamba/user-guide/pipeline/template/info.md
+                      - 流水线分组: amamba/user-guide/pipeline/group/group.md
                   - 自定义步骤:
                       - 自定义步骤介绍: amamba/customize-step.md
                       - 自定义步骤开发指南: amamba/customize-develop.md
@@ -375,7 +376,7 @@ nav:
                   - Release Notes: kairship/intro/release-notes.md
               - 工作空间: kairship/workspace.md
               - 多云实例:
-                  - 多云实例介绍: kairship/instance/README.md
+                  - 实例详情: kairship/instance/index.md
                   - 添加实例: kairship/instance/add.md
                   - 删除实例: kairship/instance/delete.md
               - 多云工作集群: kairship/cluster.md
@@ -585,7 +586,7 @@ nav:
                   - 安装管理:
                       - 准备工作: storage/hwameistor/install/prereq.md
                       - 资源要求: storage/hwameistor/install/proresource.md
-                      - HwameiStor 安装: storage/hwameistor/install/deploy-ui.md
+                      - 通过界面安装 HwameiStor: storage/hwameistor/install/deploy-ui.md
                       - 通过 hwameistor-operator 安装: storage/hwameistor/install/deploy-operator.md
                       - 安装后检查: storage/hwameistor/install/post-check.md
                       - 存储网卡配置: storage/hwameistor/install/storage-eth.md
