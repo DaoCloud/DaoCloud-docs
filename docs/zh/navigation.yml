@@ -1323,6 +1323,7 @@ nav:
                       - 定制 DCE 5.0 对接 IdP: ghippo/best-practice/oem/custom-idp.md
                       - Keycloak 自定义 IdP: ghippo/best-practice/oem/keycloak-idp.md
                   - 导航栏定制: ghippo/best-practice/navigator.md
+                  - 系统消息配置: ghippo/best-practice/system-message.md
               - 故障排查:
                   - ingressgateway 无法启动: ghippo/troubleshooting/ghippo01.md
                   - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
