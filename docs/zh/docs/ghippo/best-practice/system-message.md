@@ -9,15 +9,15 @@
 
 1. 在集群列表中，点击全局服务集群的名称，进入全局服务集群。
 
-   ![选择集群](../images/system-message1.png)
+    ![选择集群](../images/system-message1.png)
 
 2. 选择左侧导航栏的 __自定义资源__ ，搜索 `ghippoconfig`，点击搜索出来的 `ghippoconfigs.ghippo.io`
 
-   ![选择自定义资源](../images/system-message2.png)
+    ![选择自定义资源](../images/system-message2.png)
 
 3. 点击 __YAML 创建__ ，或修改已存在的 YAML
 
-   ![选择自定义资源](../images/system-message3.png)
+    ![选择自定义资源](../images/system-message3.png)
 
 以下是一个 YAML 示例：
 
