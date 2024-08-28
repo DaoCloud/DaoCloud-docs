@@ -1,11 +1,14 @@
 ---
+MTPE: WANG0608GitHub
+Date: 2024-08-28
 hide:
    - toc
 ---
 
-# Install with Operator
+# Install HwameiStor via hwameistor-operator
 
-This article introduces how to install Hwameistor through the Hwameistor Operator on the platform interface. After installing the Operator, it will automatically launch the Hwameistor-related components. The HwameiStor Operator is responsible for the following:
+This article introduces how to install HwameiStor through the hwameistor-operator on UI. After installing the operator, it will automatically launch the HwameiStor-related
+components. The hwameistor-operator is responsible for the following:
 
 - Full lifecycle management (LCM) of all components:
     - LocalDiskManager
@@ -18,35 +21,36 @@ This article introduces how to install Hwameistor through the Hwameistor Operato
     - Graph UI
 - Configuring node disks for different purposes and use cases
 - Automatically discovering the type of node disks and creating HwameiStor StorageClass accordingly
-- Automatically creating corresponding StorageClasses based on the configuration and features of the HwameiStor system
+- Automatically creating proper StorageClasses based on the configuration and features of the HwameiStor system
 
 ## Prerequisites
 
-- Nodes intended for use with Hwameistor must have sufficient free HDD and SSD disks.
+- Nodes intended for use with HwameiStor must have sufficient free HDD and SSD disks.
 - Ensure that all prerequisites in the [Preparation](prereq.md) documentation are met.
-- If you plan to use highly available data volumes, complete the [DRBD installation](drbdinstall.md) process beforehand.
+- If you plan to use high-availability data volumes, complete the [DRBD installation](drbdinstall.md) process beforehand.
 - If deploying to a production environment, please review the [Resource Requirements for Production Environment](proresource.md) documentation beforehand.
 - If your Kubernetes distribution uses a different `kubelet` directory, confirm the `kubeletRootDir` parameter beforehand. For more details, refer to [Customize Kubelet root directory](customized-kubelet.md).
 
 !!! info
 
-    If there are no available clean disks, the Operator will not automatically create a StorageClass.
-    During the installation process, the Operator will automatically manage the disks and add available disks to the pool of LocalStorage.
+    If there are no available clean disks, the operator will not automatically create a StorageClass.
+    During the installation process, the operator will automatically manage the disks and add available disks to the LocalStorage pool.
     If the available disks are provided after the installation, you need to manually issue a LocalDiskClaim to manage the disks in LocalStorageNode.
-    Once there are disks in the pool of LocalStorageNode, the Operator will automatically create the StorageClass.
+    Once there are disks in the pool of LocalStorageNode, the operator will automatically create the StorageClass.
     In other words, if there is no capacity, the StorageClass will not be created automatically.
 
 ## Steps
 
-Ensure that your cluster has successfully connected to the container management platform before proceeding with the following steps to install Hwameistor.
+Ensure that your cluster has successfully connected to __Container Management__ before proceeding with the
+following steps to install HwameiStor.
 
-1. In the left navigation bar, click `Container Management` -> `Cluster List`, and find the name of the cluster where Hwameistor will be installed.
+1. In the left navigation bar, click __Container Management__ -> __Clusters__ , and find the name of the cluster where HwameiStor will be installed.
 
-2. In the left navigation bar, select `Helm Apps` -> `Helm chart`, find and click `Hwameistor Operator`.
+2. In the left navigation bar, select __Helm Apps__ -> __Helm Charts__ , find and click __hwameistor-operator__.
 
-    ![Hwameistor Operator](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/operator1.png)
+    ![hwameistor-operator](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/operator1.png)
 
-3. Within the `Version Selection` section, choose the version to install, and then click `Install`.
+3. Within the __Version__ section, choose the version to install, and then click __Install__ .
 
 4. On the installation interface, fill in the required installation parameters.
 
@@ -276,20 +280,29 @@ Ensure that your cluster has successfully connected to the container management 
 
     - `hwameistorImageRegistry`:
 
-        Set the registry address of the Hwameistor mirror, and the available online registrys have been filled in by default.
-        If it is a privatized environment, it can be modified to a private registry address.
+        Set the registry address of the HwameiStor image, and the default values for available online registries have already been provided.
+        If it is a private environment, it can be modified to a private registry address.
 
     - `K8s container registry`:
 
-        Set the address of the K8S container registry, and the available online registry has been filled in by default.
+        Set the address of the K8s container registry, and the available online registry has been filled in by default.
         If the environment is privatized, it can be modified to a private registry address.
 
-5. After confirming that the parameters are correct, click `OK` to complete the installation. After the installation is complete, you can click `Helm Apps` to view the installation status of `Hwameistor Operator`.
+    - `DRDB`：
+
+        If you need to use high-availability data volumes, please enable the `DRDB` module. If it was not
+        enabled during installation, please refer to [Enabling DRDB](drbdinstall.md).
+
+    - `replicas`:
+        The recommended number of replicas for each component is `2`.
+
+5. After confirming that the parameters are correct, click __OK__ to complete the installation.
+   After the installation is complete, you can click __Helm Apps__ to view the installation status of __hwameistor-operator__.
 
     ![Check Status](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/operator3.png)
 
-6. After the Operator is installed, the Hwameistor components (Local Storage, Local Disk Manager, etc.) will be installed by default!
-    You can click `Workload`-->`Stateless Workload`, select the corresponding namespace, and view the status of the Hwameistor component.
+6. After the operator is installed, the HwameiStor components (Local Storage, Local Disk Manager) will be installed by default!
+    You can click __Workload__--> __Deployments__, select the proper namespace, and view the status of the HwameiStor component.
 
     ![Details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/operator4.png)
 
