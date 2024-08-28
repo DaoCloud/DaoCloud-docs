@@ -6,6 +6,10 @@ DCE 5.0 组件的升级包含升级 DCE 5.0 产品功能模块、升级 DCE 5.0 
 
 DCE 5.0 基础设施模块的组件特指 [manifest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分。
 
+!!! note
+
+    由于 DCE 5.0 包含较多产品模块，所在使用安装器升级 DCE 5.0 组件时，建议逐级升级而不是横跨多个版本进行升级！！！
+
 ## 前提条件
 
 - 您需要有一个 DCE 5.0 的集群环境，参阅[离线化部署商业版](commercial/start-install.md)
