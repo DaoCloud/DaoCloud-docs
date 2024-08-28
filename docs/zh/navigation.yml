@@ -487,6 +487,8 @@ nav:
                       - Spiderpool 安装: network/modules/spiderpool/install/install.md
                       - RDMA 环境准备及安装: network/modules/spiderpool/install/rdmapara.md
                       - 安装 Nvidia OFED 驱动: network/modules/spiderpool/install/ofed_driver.md
+                      - 为 AI 集群提供 RDMA 能力:  network/modules/spiderpool/install/ai_cluster_with_macvlan.md
+                      - Spiderpool 安装系统要求: network/modules/spiderpool/install/system-requirements.md
                   - 升级: network/modules/spiderpool/upgrade.md
                   - 配置参考: network/modules/spiderpool/config.md
                   - 常用命令: network/modules/spiderpool/command.md
