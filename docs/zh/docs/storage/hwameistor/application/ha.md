@@ -8,11 +8,11 @@ HwameiStor 使用开源的 DRBD 数据同步技术创建**高可用卷**，本�
 
 ## 前提条件
 
-- Hwameistor 已经安装成功
+- HwameiStor 已经安装成功
 
 - 已经完成高可用存储池创建，如未创建请进行[存储池 StorageClass 创建](../../../kpanda/user-guide/storage/sc.md)。
 
-- 已经完成[DRDB 内核组件部署](../install/drbdinstall.md) 
+- 已经部署 [DRBD 内核组件](../install/drbdinstall.md) 
 
   目前 HwameiStor 安装成功后，Helm chart 会默认安装一个名为 `hwameistor-storage-lvm-hdd` 的 `StorageClass`，可使用此存储池创建本地数据卷。
 
