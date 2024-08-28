@@ -6,7 +6,7 @@
 
 1. 在左侧导航栏中，选择 __告警中心__ -> __消息模板__。
 
-   - Insight 默认内置中英文两个模板，以便用户使用。
+    Insight 默认内置中英文两个模板，以便用户使用。
 
     ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/template00.png)
 
@@ -16,15 +16,13 @@
 
 !!! info
 
-    可观测性预置了消息模板。若需要定义模板的内容，请参考：[配置通知模板](../../reference/notify-helper.md)
+    可观测性预置了消息模板。若需要定义模板的内容，请参考[配置通知模板](../../reference/notify-helper.md)。
 
-## 消息模版详情
+## 消息模板详情
 
-1. 点击某一消息模板的名称，右侧滑块可查看消息模板的详情。
+点击某一消息模板的名称，右侧滑块可查看消息模板的详情。
 
-    ![消息模板](../../images/msg-detail.png)
-
-### 参数说明
+![消息模板](../../images/msg-detail.png)
 
 | 参数 | 变量  | 描述 |
 | -- | -- | -- |
