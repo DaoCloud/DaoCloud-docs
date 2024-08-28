@@ -19,6 +19,10 @@
 
     ![选择自定义资源](../images/system-message3.png)
 
+4. 最终效果如下
+
+   ![最终效果](../images/system-message4.png)
+
 以下是一个 YAML 示例：
 
 ```yaml
