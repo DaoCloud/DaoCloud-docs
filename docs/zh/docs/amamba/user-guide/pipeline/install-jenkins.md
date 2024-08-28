@@ -62,20 +62,18 @@
 
 1. 使用具有应用工作台管理员角色的用户登录 DCE 5.0 并进入应用工作台。
 
-    ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins16.png)
+    ![完成创建](../../images/jenkins3.jpg)
 
 2. 在左侧导航栏点击平台管理下的 __工具链集成__ ，点击右上角的 __集成__ 按钮。
 
-    ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins17.png)
+    ![完成创建](../../images/jenkins2.jpg)
 
 3. 选择工具链类型 __Jenkins__ ，填写集成名称、Jenkins 地址、用户名和密码。
    如果 Jenkins 地址为 https 协议时，需要提供证书。通过 Helm 部署出来的 Jenkins 默认账户密码为 __admin/Admin01__ 。
 
-    ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins18.png)
+    ![完成创建](../../images/jenkins.jpg)
 
 4. 集成完毕后会在 __工具链列表__ 页面成功生成一条记录。
-
-    ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins19.png)
 
 5. 接下来就可以前往工作空间内[创建流水线](create/custom.md)。
 
