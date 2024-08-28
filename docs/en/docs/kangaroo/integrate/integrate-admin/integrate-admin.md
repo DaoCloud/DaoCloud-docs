@@ -55,4 +55,4 @@ Refer to [Video Tutorial](../../videos/kangaroo.md#integrate-registry-admin) to 
 
     ![More Operations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/integrated04.png)
 
-Next step: [Create registry space](registry-space.md)
+Next step: [Create registry space](../integrate-admin/registry-space.md)

@@ -104,7 +104,7 @@ We hope you find the information helpful and enjoy exploring!
 
     - [Registry Spaces](../kangaroo/space/index.md)
     - [Registry Integration (Workspace)](../kangaroo/integrate/integrate-ws.md)
-    - [Registry Integration (Admin)](../kangaroo/integrate/integrate-admin.md)
+    - [Registry Integration (Admin)](../kangaroo/integrate/integrate-admin/integrate-admin.md)
     - [Managed Harbor](../kangaroo/managed/intro.md)
 
 </div>

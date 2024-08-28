@@ -33,7 +33,7 @@
 
 ## 仓库集成（管理员）
 
-参阅[仓库集成](../kangaroo/integrate/integrate-admin.md)文档。
+参阅[仓库集成](../kangaroo/integrate/integrate-admin/integrate-admin.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-harbor.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/kangaroo-integrate.png"></video>
