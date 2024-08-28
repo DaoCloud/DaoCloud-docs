@@ -1,17 +1,13 @@
----
-hide:
-  - toc
----
-
 # 容器监控
 
 容器监控是对集群管理中工作负载的监控，在列表中可查看工作负载的基本信息和状态。在工作负载详情页，可查看正在告警的数量以及 CPU、内存等资源消耗的变化趋势。
 
 ## 前提条件
 
-集群已安装 Insight Agent，且所有的容器组处于 __运行中__ 状态。
+集群已安装 insight-agent，且所有的容器组处于 __运行中__ 状态。
 
-- 安装 Insight Agent 请参考：[在线安装 insight-agent](../../quickstart/install/install-agent.md) 或[离线升级 insight-agent](../../quickstart/install/offline-install.md)。
+- 安装 insight-agent，请参考[在线安装 insight-agent](../../quickstart/install/install-agent.md)
+  或[离线升级 insight-agent](../../quickstart/install/offline-install.md)。
 
 ## 操作步骤
 
@@ -19,7 +15,7 @@ hide:
 
 1. 进入 __可观测性__ 产品模块。
   
-2. 在左边导航栏选择 __基础设施__ -> __容器__。
+2. 在左边导航栏选择 __基础设施__ -> __容器__ 。
 
 3. 切换顶部 Tab，查看不同类型工作负载的数据。
 
@@ -33,22 +29,20 @@ hide:
 
     ![容器监控](../../images/workload.png){ width="1000"}
 
-5. 切换 Tab 到`容器组列表`，可查看工作负载的各个容器组状态、所在节点、重启次数等信息。
+5. 切换 Tab 到 __容器组列表__ ，可查看工作负载的各个容器组状态、所在节点、重启次数等信息。
 
     ![容器监控](../../images/workload-1.png){ width="1000"}
 
-6. 切换 Tab 到`JVM 监控`，可查看各个容器组的 JVM 指标。
+6. 切换 Tab 到 __JVM 监控__ ，可查看各个容器组的 JVM 指标。
 
     ![JVM 监控](../../images/workload-2.png)
 
     !!! note
 
         1. JVM 监控功能仅支持 Java 语言。
-        2. 开启 JVM 监控功能请参考：(开始监控 Java 应用)[https://docs.daocloud.io/insight/user-guide/quickstart/jvm-monitor/jvm-catelogy/]。
+        2. 开启 JVM 监控功能，请参考[开始监控 Java 应用](../quickstart/jvm-monitor/jvm-catelogy.md)。
 
-## 参考
-
-### 指标说明
+## 指标参考说明
 
 | **指标名称** | **说明** |
 | -- | -- |
