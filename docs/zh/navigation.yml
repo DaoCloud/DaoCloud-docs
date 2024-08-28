@@ -729,7 +729,7 @@ nav:
                   - 集群: insight/user-guide/infra/cluster.md
                   - 节点: insight/user-guide/infra/node.md
                   - 命名空间: insight/user-guide/infra/namespace.md
-                  - 容器: insight/user-guide/infra/container.md
+                  - 工作负载: insight/user-guide/infra/container.md
                   - 事件查询: insight/user-guide/infra/event.md
                   - 拨测: insight/user-guide/infra/probe.md
               - 指标: insight/user-guide/data-query/metric.md
@@ -737,7 +737,7 @@ nav:
               - 链路追踪:
                   - 服务拓扑: insight/user-guide/trace/topology.md
                   - 服务拓扑元素说明: insight/user-guide/trace/topology-helper.md
-                  - 服务监控: insight/user-guide/trace/service.md
+                  - 服务: insight/user-guide/trace/service.md
                   - 链路查询: insight/user-guide/trace/trace.md
               - 告警:
                   - insight/user-guide/alert-center/index.md
