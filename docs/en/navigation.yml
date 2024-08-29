@@ -1302,6 +1302,7 @@ nav:
                       - Customize DCE 5.0 to Sync IdP: ghippo/best-practice/oem/custom-idp.md
                       - Customize IdP with Keycloak: ghippo/best-practice/oem/keycloak-idp.md
                   - Customize Nav Bar: ghippo/best-practice/navigator.md
+                  - System Messages: ghippo/best-practice/system-message.md
               - Troubleshoot:
                   - ingressgateway cannot start: ghippo/troubleshooting/ghippo01.md
                   - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md
