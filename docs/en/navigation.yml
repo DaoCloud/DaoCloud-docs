@@ -1026,6 +1026,7 @@ nav:
                       - Delete Redis Instance: middleware/redis/user-guide/delete.md
                       - View Redis Logs: middleware/redis/user-guide/logs.md
                       - Slow Query: middleware/redis/user-guide/slow-query.md
+                      - Topology: middleware/redis/user-guide/instancemap.md
                   - Best Practice:
                       - HA Deployment Across Data Centers: middleware/redis/best-practice/singleclustercrosszone.md
                       - Data Synchronization Intro: middleware/redis/best-practice/index.md
