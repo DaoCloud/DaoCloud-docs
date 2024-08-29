@@ -196,11 +196,40 @@
 
 下文测试环境信息为 Ubuntu 22.04 LTS, amd64，离线安装
 
-1. 在安装节点根据部署规划设置节点信息并导出环境变量，多个节点以半角逗号`,` 分隔 
+1. 在安装节点根据部署规划设置节点信息，并导出环境变量，多个节点以半角逗号 `,` 分隔 
 
-    | 部署模式 | `1 server / 0 agent` | `1 server / 2 agent` | `3 server / 0 agent` |
-    | ------- | -------------------- | -------------------- | -------------------- |
-    | 环境变量 | `$ export K3S_SERVERS=172.30.41.5 $ export SSH_USER=root $ # 若使用 public key 方式登录，确保已将公钥添加到各节点的 ~/.ssh/authorized_keys $ #export SSH_PRIVATEKEY_PATH=<私钥路径> $ export SSH_PASSWORD=<SSH密码>` | `$ export K3S_SERVERS=172.30.41.5 $ export K3S_AGENTS=172.30.41.6,172.30.41.7 $ export SSH_USER=root $ # 若使用 public key 方式登录，确保已将公钥添加到各节点的 ~/.ssh/authorized_keys $ #export SSH_PRIVATEKEY_PATH=<私钥路径> $ export SSH_PASSWORD=<SSH密码>` | `$ export K3S_SERVERS=172.30.41.5,172.30.41.6,172.30.41.7 $ export SSH_USER=root $ # 若使用 public key 方式登录，确保已将公钥添加到各节点的 ~/.ssh/authorized_keys $ #export SSH_PRIVATEKEY_PATH=<私钥路径> $ export SSH_PASSWORD=<SSH密码>` |
+    === "1 server / 0 agent"
+
+        ```shell
+        export K3S_SERVERS=172.30.41.5 $ export SSH_USER=root
+        # 若使用 public key 方式登录，确保已将公钥添加到各节点的 ~/.ssh/authorized_keys
+
+        export SSH_PRIVATEKEY_PATH=<私钥路径>
+        export SSH_PASSWORD=<SSH密码>
+        ```
+
+    === "1 server / 2 agent"
+
+        ```shell
+        export K3S_SERVERS=172.30.41.5
+        export K3S_AGENTS=172.30.41.6,172.30.41.7
+        export SSH_USER=root
+
+        # 若使用 public key 方式登录，确保已将公钥添加到各节点的 ~/.ssh/authorized_keys
+        export SSH_PRIVATEKEY_PATH=<私钥路径>
+        export SSH_PASSWORD=<SSH密码>
+        ```
+
+    === "3 server / 0 agent"
+
+        ```shell
+        export K3S_SERVERS=172.30.41.5,172.30.41.6,172.30.41.7
+        export SSH_USER=root
+   
+        # 若使用 public key 方式登录，确保已将公钥添加到各节点的 ~/.ssh/authorized_keys
+        export SSH_PRIVATEKEY_PATH=<私钥路径>
+        export SSH_PASSWORD=<SSH密码>
+        ```
 
 1. 执行部署操作
 
