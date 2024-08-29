@@ -763,13 +763,13 @@ nav:
               - 网络监控:
                   - 集成 DeepFlow: insight/best-practice/integration_deepflow.md
               - 参考文档:
+                  - 可观性参考指标说明: insight/reference/uesd-metric-in-insight.md
+                  - 自定义探测方式: insight/user-guide/collection-manag/probe-module.md
+                  - 指标抓取说明: insight/user-guide/collection-manag/metric-collect.md
                   - 告警通知流程说明: insight/reference/alertnotification.md
                   - 通知模板使用说明: insight/reference/notify-helper.md
                   - Lucene 语法使用方法: insight/reference/lucene.md
-                  - 通过Sidecar采集容器日志: insight/reference/tailing-sidecar.md
-                  - 自定义探测方式: insight/user-guide/collection-manag/probe-module.md
-                  - 指标抓取说明: insight/user-guide/collection-manag/metric-collect.md
-                  - 可观性参考指标说明: insight/reference/uesd-metric-in-insight.md
+                  - 通过 Sidecar 采集容器日志: insight/reference/tailing-sidecar.md
               - 兼容性测试:
                   - Kubernetes 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
