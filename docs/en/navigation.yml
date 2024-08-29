@@ -1015,6 +1015,8 @@ nav:
                       - Delete PostgreSQL: middleware/postgresql/user-guide/delete.md
                       - View PostgreSQL Logs: middleware/postgresql/user-guide/logs.md
                       - Manually Set Antiaffinity: middleware/postgresql/user-guide/antiaffinity.md
+                      - Auto Backup: middleware/postgresql/user-guide/auto-backup.md
+                      - Topology: middleware/postgresql/user-guide/instancemap.md
               - Redis Cache Service:
                   - Intro:
                       - What is Redis: middleware/redis/intro/index.md
