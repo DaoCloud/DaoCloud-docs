@@ -129,27 +129,30 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
 ### 通过 LoadBalancer 连接
 
-上述的[通过 Insight Server 提供的接口获取地址](#insight-server)是通过查询集群的 LoadBalancer 以获取连接地址。
-除此之外，你也可以手动执行以下命令获取相应服务的地址信息：
+1. 若集群中开启 `LoadBalancer` 且为 Insight 设置了 `VIP` 时，您也可以手动执行以下命令获取 `vminsert` 以及 `opentelemetry-collector` 的地址信息：
 
-```shell
-$ kubectl get service -n insight-system | grep lb
-lb-insight-es-master                             LoadBalancer   10.233.35.17    <pending>     9200:31529/TCP                 24d
-lb-insight-opentelemetry-collector               LoadBalancer   10.233.23.12    <pending>     4317:31286/TCP,8006:31351/TCP  24d
-lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    <pending>     8480:31629/TCP                 24d
-```
+    - `lb-vminsert-insight-victoria-metrics-k8s-stack` 是指标服务的地址；
+    - `lb-insight-opentelemetry-collector` 是链路服务的地址。
 
-- `lb-insight-es-master` 是日志服务的地址
-- `lb-vminsert-insight-victoria-metrics-k8s-stack` 是指标服务的地址
-- `lb-insight-opentelemetry-collector` 是链路服务的地址
+    ```shell
+    $ kubectl get service -n insight-system | grep lb
+    lb-insight-opentelemetry-collector               LoadBalancer   10.233.23.12    <pending>     4317:31286/TCP,8006:31351/TCP  24d
+    lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    <pending>     8480:31629/TCP                 24d
+    ```
+
+1. 执行以下命令获取 ` elasticsearch` 的址信息：
+
+    - `mcamel-common-es-cluster-masters-es-http` 是日志服务的地址
+
+    ```shell
+    $ kubectl get service -n mcamel-system | grep es
+    mcamel-common-es-cluster-masters-es-http               NodePort    10.233.16.120   <none>        9200:30465/TCP               47d
+    ```
+
+
 
 ### 通过 NodePort 连接
 
-1. 全局服务集群启用 LB 特性【默认启用】
-
-    通过手动执行命令 `kubectl get service -n insight-system | grep lb` 获得相应服务的 NodePort 端口信息，
-    参考[通过 LoadBalancer 连接](#loadbalancer)。
-    
 1. 全局服务集群禁用 LB 特性
 
     在该情况下，默认不会创建上述的 LoadBalancer 资源，对应服务名为：
