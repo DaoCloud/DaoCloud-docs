@@ -13,9 +13,9 @@
 
     === "集群服务"
 
-        选择目标服务所在的集群和命名空间，填写访问协议、地址以及端口。
+        选择目标服务所在的集群和命名空间，填写地址以及端口。
 
-        ![添加集群服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service01.png)
+        ![添加集群服务](../service/images/cluster-svc.png)
 
         对于集群服务的访问方式，可在 __容器管理__ -> __容器网络__ -> __服务__ 中点击服务名称进行查看：
 
@@ -23,27 +23,27 @@
     
     === "网格服务"
      
-        选择目标服务所在的集群和命名空间，填写访问协议、地址以及端口。
+        选择目标服务所在的集群和命名空间，填写地址以及端口。
 
-        ![添加网格服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/mesh-access.png)
+        ![添加网格服务](../service/images/mesh.png)
             
     === "接入注册中心服务"
 
         选择目标服务所在的注册中心，填写访问协议、地址和端口。
 
-        ![添加注册中心服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/gw-access-service.png)
+        ![添加注册中心服务](../service/images/jieru.png)
     
     === "注册配置中心服务"
          
         选择目标服务所在的注册中心，填写访问协议、地址和端口。
 
-        ![添加注册中心服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service04.png)
+        ![添加注册中心服务](../service/images/zhuce.png)
         
     === "外部服务"
 
         填写服务名称、访问协议、地址、端口。
   
-        ![添加外部服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service02.png)
+        ![添加外部服务](../service/images/waibu.png)
 
 ## 查看服务详情
 
@@ -61,13 +61,13 @@
 
 更新基础配置指修改服务的名称、协议、地址和端口等连接信息。
 
-1. 在 __服务列表__ 页面找到需要更新的服务，在服务右侧点击 __ⵗ__ ，选择 __修改基础配置__ 。
+1. 在 __服务列表__ 页面找到需要更新的服务，在服务右侧点击 __ⵗ__ ，选择 __接入配置__ 。
 
-    ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service07.png)
+    ![更新服务](../service/images/update.png)
 
 2. 更新基本信息，点击 __确定__ 。
 
-    ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/gw-service08.png)
+    ![更新服务](../service/images/updateinfo.png)
 
 !!! danger
 
@@ -78,17 +78,17 @@
 
 1. 在 __服务列表__ 页面找到需要更新的服务，在服务右侧点击 __ⵗ__ ，选择 __修改策略配置__ 。
 
-    ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service09.png)
+    ![更新服务](../service/images/update.png)
 
 2. 更新策略配置，点击 __确定__ 。
 
-    ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/update4.png)
+    ![更新服务](../service/images/updatecelue.png)
 
 ## 删除服务
 
 在 __服务列表__ 页面找到需要删除的服务，在服务右侧点击 __ⵗ__ ，选择 __删除__ 。
 
-![删除服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service10.png)
+![删除服务](../service/images/update.png)
 
 删除服务之前，需要确保没有 API 正在使用该服务。如果该服务正在被某个 API 使用，需要先根据页面提示，
 点击 __API 管理__ 删除关联的 API 之后才能删除该服务。
