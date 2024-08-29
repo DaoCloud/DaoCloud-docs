@@ -587,9 +587,10 @@ nav:
                   - StorageClass: storage/hwameistor/resources/storageclass.md
                   - Volumes:
                       - Volume Migration: storage/hwameistor/resources/migrate.md
+                      - Volume Eviction: storage/hwameistor/resources/volume-eviction.md
                       - Volume Expansion: storage/hwameistor/resources/expand.md
                       - Volume IO Rate Limit: storage/hwameistor/resources/volume-ProvisionedIO.md
-                      - Volume Eviction: storage/hwameistor/resources/volume-eviction.md
+                      - Volume Snapshot: storage/hwameistor/resources/volume-snapshot.md
                   - Use Cases:
                       - Overview: storage/hwameistor/application/overview.md
                       - Deploy StatefulSets:
