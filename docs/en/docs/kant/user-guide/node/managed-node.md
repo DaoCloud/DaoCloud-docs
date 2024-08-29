@@ -118,11 +118,11 @@ When a new edge node is connected, the latest version of the EdgeCore software i
 
 1. Verify if the edge node has been successfully connected.
 
-    1. Select __Edge Computing__ -> __Cloud Edge Collaboration__ from the left navigation pane to access the Edge Unit list page.
+    1. Select __Edge Computing__ -> __Cloud Edge Collaboration__ from the left navigation bar to access the Edge Unit list page.
 
     2. Click the name of an edge unit to view its details.
 
-    3. Select __Edge Resources__ -> __Edge Nodes__ from the left navigation pane to access the Edge Node list page.
+    3. Select __Edge Resources__ -> __Edge Nodes__ from the left navigation bar to access the Edge Node list page.
 
     4. Check the status of the edge node. If the current status is "Healthy," it indicates a successful connection.
 

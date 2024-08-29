@@ -13,7 +13,7 @@ A namespace is an abstraction used in Kubernetes to isolate resources.
 
     Only __Workspace Admin__ has the privilege to create namespaces and set namespace quotas. Other roles do not support this operation.
 
-1. Click __Namespaces__ in the left navigation pane of your Workbench, then click __Create__ in the upper right corner.
+1. Click __Namespaces__ in the left navigation bar of your Workbench, then click __Create__ in the upper right corner.
 
     ![namespace-listpng](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/create00.png)
 

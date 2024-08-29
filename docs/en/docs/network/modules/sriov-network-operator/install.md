@@ -10,9 +10,9 @@ To use sriov-network-operator within a DCE 5.0 cluster, it is recommended to ins
 
 Ensure that your cluster is successfully connected to the `Container Management` platform, then follow these steps to install sriov-network-operator.
 
-1. In the left navigation pane, click `Container Management` -> `Clusters` and locate the name of the cluster where you want to install sriov-network-operator.
+1. In the left navigation bar, click `Container Management` -> `Clusters` and locate the name of the cluster where you want to install sriov-network-operator.
 
-2. In the left navigation pane, select `Helm App` -> `Helm Charts` and find the `sriov-network-operator` chart.
+2. In the left navigation bar, select `Helm App` -> `Helm Charts` and find the `sriov-network-operator` chart.
 
 3. Select the desired version in the `Version Selection` and click `Install`.
 
