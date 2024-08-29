@@ -42,7 +42,7 @@ Due to certain components or functionalities having requirements for the operati
 | -------------------- | -------------- |
 | GPU Capability in Container Management | ≥ 5.15|
 | Cilium | ≥ 5.12 |
-| Hwameistor DRDB Capability | [Kernels compatible with DRBD](../../storage/hwameistor/intro/drbd-support.md) |
+| HwameiStor DRBD Capability | [Kernels compatible with DRBD](../../storage/hwameistor/intro/drbd-support.md) |
 | Kubevirt | > 3.15 |
 | Merbridge | ≥ 5.7 |
 

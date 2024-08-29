@@ -13,11 +13,11 @@ This page describes how to install HwameiStor on UI.
 
 - Free HDD and SSD disks have been prepared on the nodes to be used
 - Completed the items in [Preparation](prereq.md)
-- If you need to use high-availability data volumes, please complete [DRDB installation](drbdinstall.md) in advance
+- If you need to use high-availability data volumes, please complete [DRBD installation](drbdinstall.md) in advance
 - If the deployment environment is a production environment, please read [Resource Requirements for
 Production Environment](proresource.md) in advance
 - If your Kubernetes distribution uses a different `kubelet` directory, please confirm `kubeletRootDir` in advance.
-   For details, please refer to [Customize Kubelet root directory](customized-kubelet.md).
+   For details, please refer to [Customize kubelet root directory](customized-kubelet.md).
 
 ## Steps
 
@@ -47,17 +47,17 @@ Please confirm that your cluster has successfully connected to __Container Manag
         Set the address of the K8s container registry, and the available online registry has been filled in by default.
         If the environment is privatized, it can be modified to a private registry address.
        
-    - `Global Setting` —> `Kubelet Root Dir`:
+    - `Global Setting` —> `kubelet Root Dir`:
     
         The default `kubelet` directory is `/var/lib/kubelet`.
         If your Kubernetes distribution uses a different `kubelet` directory, the parameter `kubeletRootDir` must be set.
-        For details, please refer to [Customize Kubelet root directory](customized-kubelet.md).
+        For details, please refer to [Customize kubelet root directory](customized-kubelet.md).
        
-    - `Config Settings` —> `DRDBStartPort`:
+    - `Config Settings` —> `DRBDStartPort`:
     
-        The default starts at 43001. When `DRDB` is enabled, each time a high-availability
+        The default starts at 43001. When `DRBD` is enabled, each time a high-availability
         data volume is created, a set of ports on the node where the primary copy data volume is located needs to be occupied.
-        Please complete [DRDB Installation](drbdinstall.md) before installation.
+        Please complete [DRBD Installation](drbdinstall.md) before installation.
        
     - **StorageClass Configuration**
     
@@ -66,7 +66,7 @@ Please confirm that your cluster has successfully connected to __Container Manag
         - `AllowVolumeExpansion`: It is off by default. After it is enabled, the data volume created based on the StorageClass can be expanded.
         - `DiskType`: the disk type of the created StorageClass (StorageClass), supported types are: HDD, SSD. HDD is the default.
         - `Enable HA`: `HA` is turned off by default, that is, the created data volume is volumes without high availability, when enabled, use this `StorageClass`
-        The created data volume can be set as `high-availability data volume`. Please complete [DRDB Installation](drbdinstall.md) before opening.
+        The created data volume can be set as `high-availability data volume`. Please complete [DRBD Installation](drbdinstall.md) before opening.
         - `Replicas`: In non-HA mode, the number of `Replicas` is `1`. When the `HA` mode is enabled, the number of `Replicas` can be `1` or `2`, and the number is `1`, which can be converted to `2`.
         - `ReclaimPolicy`: When the data volume is deleted, the default data retention policy is `delete`.
        
