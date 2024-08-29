@@ -33,7 +33,7 @@
 
     支持 12 种 API 策略：负载均衡、路径改写、超时配置、重试机制、请求头重写、响应头重写、Websocket、本地限流、健康检查、cookie 重写、全局限流、访问黑白名单。有关各项策略的配置说明，可参考[API 策略配置](api-policy.md)。
 
-    ![配置策略](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/api/images/policy01.png)
+    ![配置策略](../api/images/apicelue.png)
 
 4. 参考下方说明填写安全配置（选填）。
 
