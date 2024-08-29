@@ -48,14 +48,13 @@ DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统�
 
 #### Driver 参数配置
 
-- __Driver.enable__ ：配置是否在节点上部署 NVIDIA 驱动，默认开启，如果您在使用 GPU Operator 部署前，
-  已经在节点上部署了 NVIDIA 驱动程序，请关闭。
+- __Driver.enable__ ：配置是否在节点上部署 NVIDIA 驱动，默认开启，如果您在使用 GPU Operator 部署前，已经在节点上部署了 NVIDIA 驱动程序，请关闭。（若手动部署驱动程序需要关注 CUDA Toolkit 与 Toolkit Driver Version 的[适配关系](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html#id5)，通过 GPU operator 安装则无需关注）。
+- __Driver.usePrecompiled__ ：启用预编译的GPU驱动
 - __Driver.image__ ：配置 GPU 驱动镜像，推荐默认镜像： __nvidia/driver__ 。
 - __Driver.repository__ ：GPU 驱动镜像所在的镜像仓库，默认为 nvidia 的 __nvcr.io__ 仓库。
 - __Driver.usePrecompiled__ ：开启预编译模式安装驱动。
-- __Driver.version__ ：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，
-   不同类型操作系统的 Driver 镜像的版本存在如下差异，
-   详情可参考：[Nvidia GPU Driver 版本](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags)，
+- __Driver.version__ ：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置。不同类型操作系统的 Driver 镜像的版本存在如下差异，
+   详情可参考：[Nvidia GPU Driver 版本](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags)。
    如下不同操作系统的 `Driver Version` 示例：
 
     !!! note
