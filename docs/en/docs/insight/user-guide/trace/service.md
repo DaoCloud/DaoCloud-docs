@@ -30,7 +30,7 @@ Follow these steps to view service insight metrics:
 
 1. Go to the __Insight__ product module.
 
-2. Select __Trace Tracking__ > __Services__ from the left navigation pane.
+2. Select __Trace Tracking__ -> __Services__ from the left navigation bar.
 
     ![Trace Tracking](../images/service00.png){ width="1000"}
 

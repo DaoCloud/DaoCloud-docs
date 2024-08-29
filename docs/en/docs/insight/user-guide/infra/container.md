@@ -19,7 +19,7 @@ Follow these steps to view service monitoring metrics:
 
 1. Go to the __Insight__ product module.
 
-2. Select __Infrastructure__ > __Containers__ from the left navigation pane.
+2. Select __Infrastructure__ > __Containers__ from the left navigation bar.
 
 3. Switch between tabs at the top to view data for different types of workloads.
 

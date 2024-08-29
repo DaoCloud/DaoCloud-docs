@@ -6,7 +6,7 @@ We will use the HTTP probe method as an example to demonstrate how to modify the
 ## Procedure
 
 1. Go to the cluster list in __Container Management__ and enter the details of the target cluster.
-2. Click the left navigation pane and select __ConfigMaps & Secrets__ -> __ConfigMaps__ .
+2. Click the left navigation bar and select __ConfigMaps & Secrets__ -> __ConfigMaps__ .
 3. Find the ConfigMap named __insight-agent-prometheus-blackbox-exporter__ and click __Edit YAML__ .
    
     Add custom probe methods under __modules__ . Here we use the HTTP probe method as an example:
