@@ -29,7 +29,7 @@ components. The hwameistor-operator is responsible for the following:
 - Ensure that all prerequisites in the [Preparation](prereq.md) documentation are met.
 - If you plan to use high-availability data volumes, complete the [DRBD installation](drbdinstall.md) process beforehand.
 - If deploying to a production environment, please review the [Resource Requirements for Production Environment](proresource.md) documentation beforehand.
-- If your Kubernetes distribution uses a different `kubelet` directory, confirm the `kubeletRootDir` parameter beforehand. For more details, refer to [Customize Kubelet root directory](customized-kubelet.md).
+- If your Kubernetes distribution uses a different `kubelet` directory, confirm the `kubeletRootDir` parameter beforehand. For more details, refer to [Customize kubelet root directory](customized-kubelet.md).
 
 !!! info
 
@@ -288,12 +288,13 @@ following steps to install HwameiStor.
         Set the address of the K8s container registry, and the available online registry has been filled in by default.
         If the environment is privatized, it can be modified to a private registry address.
 
-    - `DRDB`：
+    - `DRBD`：
 
-        If you need to use high-availability data volumes, please enable the `DRDB` module. If it was not
-        enabled during installation, please refer to [Enabling DRDB](drbdinstall.md).
+        If you need to use high-availability data volumes, please enable the `DRBD` module. If it was not
+        enabled during installation, please refer to [Enabling DRBD](drbdinstall.md).
 
     - `replicas`:
+
         The recommended number of replicas for each component is `2`.
 
 5. After confirming that the parameters are correct, click __OK__ to complete the installation.

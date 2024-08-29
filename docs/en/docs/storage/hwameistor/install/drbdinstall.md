@@ -7,18 +7,18 @@ hide:
 
 # Install DRBD (Optional)
 
-If you need to use high-availability data volumes, enable DRDB when deploying Hwameistor. Here is how to install it.
+If you need to use high-availability data volumes, enable DRBD when deploying HwameiStor. Here is how to install it.
 
-## Install DRDB while installing HwameiStor
+## Install DRBD while installing HwameiStor
 
-You can directly enable the DRDB component when installing HwameiStor.
+You can directly enable the DRBD component when installing HwameiStor.
 For details, please refer to [Install HwameiStor with Operator](deploy-operator.md).
 
 ## Install with UI
 
 1. Go to __Container Management__ -> __Helm Charts__, and select __drbd-adapter__.
 
-2. Click __drdb-adapter__, click __Install__ , and enter the configuration page.
+2. Click __drbd-adapter__, click __Install__ , and enter the configuration page.
 
     ![drbd02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/drbd02.png)
 

@@ -1,6 +1,6 @@
-# Hwameistor Release Notes
+# HwameiStor Release Notes
 
-This page lists the Release Notes related to Hwameistor, providing an overview of
+This page lists the Release Notes related to HwameiStor, providing an overview of
 the evolution path and feature changes for each version.
 
 ## 2024-07-30
@@ -114,7 +114,7 @@ the evolution path and feature changes for each version.
 
 #### Improvements
 
-- **Improved** Hwameistor Operator with additional component resource configuration
+- **Improved** HwameiStor Operator with additional component resource configuration
 - **Improved** snapshot recovery timeout
 - **Improved** default log level for LDM
 
@@ -275,7 +275,7 @@ the evolution path and feature changes for each version.
 
 - **Added** used capacity of disks [Issue #681](https://github.com/hwameistor/hwameistor/pull/681)
 - **Improved** skipping scoring mechanism when no available disks are found [Issue #724](https://github.com/hwameistor/hwameistor/pull/724)
-- **Set** default DRDB port to 43001 [Issue #723](https://github.com/hwameistor/hwameistor/pull/723)
+- **Set** default DRBD port to 43001 [Issue #723](https://github.com/hwameistor/hwameistor/pull/723)
 
 ## 2023-1-30
 
@@ -294,8 +294,8 @@ the evolution path and feature changes for each version.
 
 #### New Features
 
-- **Added** Hwameistor Dashboard UI, which displays storage resource and storage node usage status
-- **Added** interface for managing Hwameistor storage nodes, local disks, and migration records
+- **Added** HwameiStor Dashboard UI, which displays storage resource and storage node usage status
+- **Added** interface for managing HwameiStor storage nodes, local disks, and migration records
 - **Added** StorageClass management functionality, displaying basic information about StorageClass and corresponding nodes
 - **Added** local volume management functionality, supporting data volume migration and high availability conversion
 
