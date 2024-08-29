@@ -1044,6 +1044,8 @@ nav:
                       - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
                       - 手工设置工作负载反亲和: middleware/postgresql/user-guide/antiaffinity.md
                       - 备份管理: middleware/postgresql/user-guide/backup.md
+                      - 配置备份数据: middleware/postgresql/user-guide/auto-backup.md
+                      - 实例拓扑: middleware/postgresql/user-guide/instancemap.md
                   - 参考文档:
                       - 开启 PGVector 插件: middleware/postgresql/user-guide/pgvector.md
               - Redis 缓存服务:
