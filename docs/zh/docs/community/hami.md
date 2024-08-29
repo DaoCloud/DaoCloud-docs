@@ -1,6 +1,9 @@
 # HAMi - 异构算力虚拟化中间件
 
-**HAMi 已经是一个 [CNCF 云原生计算基金会](https://cncf.io/)全景图中的项目。**
+**HAMi 已经是一个 [CNCF 云原生计算基金会](https://cncf.io/)全景图中的项目。
+HAMi 在申请加入 Sandbox，目前[已通过投票阶段](https://github.com/cncf/sandbox/issues/97)，
+超过了 66% 的合格分数线，参阅[相关推文](https://mp.weixin.qq.com/s/6Ze2i3-CQSFANhn8b7oNjA)。
+**
 
 支持的设备：
 [![英伟达 GPU](https://img.shields.io/badge/Nvidia-GPU-blue)](https://github.com/Project-HAMi/HAMi#preparing-your-gpu-nodes)
