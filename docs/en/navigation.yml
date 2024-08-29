@@ -707,7 +707,7 @@ nav:
                   - Clusters: insight/user-guide/infra/cluster.md
                   - Nodes: insight/user-guide/infra/node.md
                   - Namespaces: insight/user-guide/infra/namespace.md
-                  - Containers: insight/user-guide/infra/container.md
+                  - Workload: insight/user-guide/infra/container.md
                   - Events: insight/user-guide/infra/event.md
                   - Probes: insight/user-guide/infra/probe.md
               - Metrics: insight/user-guide/data-query/metric.md
@@ -715,7 +715,7 @@ nav:
               - Traces:
                   - Service Topology: insight/user-guide/trace/topology.md
                   - Topology Helper: insight/user-guide/trace/topology-helper.md
-                  - Service Monitor: insight/user-guide/trace/service.md
+                  - Service: insight/user-guide/trace/service.md
                   - Trace Query: insight/user-guide/trace/trace.md
               - Alert Center:
                   - insight/user-guide/alert-center/index.md
