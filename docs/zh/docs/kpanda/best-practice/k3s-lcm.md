@@ -204,7 +204,7 @@
 
 1. 执行部署操作
 
-   以 3 server / 0 agent 模式为例，每台机器必须有一个唯一的主机名
+    以 3 server / 0 agent 模式为例，每台机器必须有一个唯一的主机名
 
     ```shell
     # 若有更多 K3s 安装脚本环境变量设置需求，请设置 K3S_INSTALL_SCRIPT_ENV，其值参考 https://docs.k3s.io/reference/env-variables
@@ -322,7 +322,7 @@
     export K3S_AGENTS=172.30.41.8
     ```
 
-   添加新的 server 节点如下：
+    添加新的 server 节点如下：
 
     ```diff
     < export K3S_SERVERS=172.30.41.5,172.30.41.6,172.30.41.7
@@ -391,9 +391,9 @@
 1. 仅在待删除节点执行 `k3s-uninstall.sh` 或 `k3s-agent-uninstall.sh`
 1. 在任意 server 节点上执行：
 
-   ```shell
-   kubectl delete node <节点名称>
-   ```
+    ```shell
+    kubectl delete node <节点名称>
+    ```
 
 ## 卸载集群
 
