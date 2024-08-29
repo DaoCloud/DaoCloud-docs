@@ -1,14 +1,23 @@
+---
+MTPE: WANG0608GitHub
+Date: 2024-08-29
+---
+
 # Volume Eviction
 
-Volume migration and eviction are important features of the HwameiStor system, ensuring the continuous and normal operation of HwameiStor in production environments.
-HwameiStor migrates volumes from one node to another while ensuring that the data remains accessible.
-When a Kubernetes node or application Pod is evicted for any reason, the system automatically discovers the HwameiStor volumes associated with the node or Pod and migrates them to other nodes, ensuring that the evicted Pod can be scheduled to other nodes and run normally.
-In addition, operators can manually migrate volumes to balance system resources and ensure smooth operation of the system.
+Volume eviction is an important feature of the HwameiStor system, ensuring the continuous and normal
+operation of HwameiStor in production environments. When a Kubernetes node or an application pod is
+evicted for any reason, the system automatically discovers the HwameiStor volumes associated with the
+node or the pod, and migrates them to other nodes, ensuring that the evicted pod can be scheduled to
+other nodes and run normally. In addition, operators can manually migrate volumes to balance system
+resources and ensure smooth operation of the system. Refer to [Volume Migration](./migrate.md).
 
-## Evicting a Node
+## Evict a node
 
-In a Kubernetes system, you can use the following command to evict a node, removing and migrating the Pods running on that node to other nodes.
-At the same time, the HwameiStor volumes used by the Pods are also migrated from the evicted node to other nodes, ensuring that the Pods can be scheduled and run on other nodes.
+In a Kubernetes system, you can use the following command to evict a node, removing and migrating
+the pods running on that node to other nodes. At the same time, The HwameiStor migrates the volume
+used by the pod from the current node to other nodes, ensuring that the pod can run normally on the
+other nodes.
 
 ```bash
 kubectl drain k8s-node-1 --ignore-daemonsets=true
@@ -76,21 +85,24 @@ pvc-6ca4c0d4-da10-4e2e-83b2-19cbf5c5e3e4-scrxjb   1073741824   k8s-node-2   Read
 pvc-f8f017f9-eb09-4fbe-9795-a6e2d6873148-5t782b   1073741824   k8s-node-2   Ready   true     /dev/LocalStorage_PoolHDD-HA/pvc-f8f017f9-eb09-4fbe-9795-a6e2d6873148   30m
 ```
 
-In some cases, when restarting a node, you may want to keep the volumes on that node. You can do this by adding the following label to the node:
+In some cases, when restarting a node, you may want to keep the volumes on that node. You can do this
+by adding the following label to the node:
 
 ```bash
 kubectl label node k8s-node-1 hwameistor.io/eviction=disable
 ```
 
-## Evicting a Pod
+## Evict a pod
 
-When a Kubernetes node is under heavy load, the system selectively evicts some Pods to free up system resources and ensure the normal operation of other Pods.
-If a Pod that uses HwameiStor volumes is evicted, the system automatically captures this evicted Pod and migrates the associated HwameiStor volumes to other nodes, ensuring that the Pod can be scheduled and run on other nodes.
+When a Kubernetes node is under heavy load, the system selectively evicts some pods to free up system
+resources and ensure the normal operation of other pods. If a pod that uses HwameiStor volumes is evicted,
+the system automatically captures this evicted pod and migrates the associated HwameiStor volumes to other
+nodes, ensuring that the Pod can be scheduled and run on other nodes.
 
-## Migrating a Pod
+## Migrate a pod
 
-Operators can manually migrate application Pods and the associated HwameiStor volumes to balance system resources and ensure smooth operation of the system.
-There are two ways to perform manual migration:
+Operators can manually migrate application pods and the associated HwameiStor volumes to balance system
+resources and ensure smooth operation of the system. There are two ways to perform manual migration:
 
 - Method 1
 
