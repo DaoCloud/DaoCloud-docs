@@ -60,7 +60,7 @@
 
 1. 保存安装脚本到安装节点（任意可以访问到集群节点的节点）
 
-    ```Shell
+    ```shell
     $ cat > k3slcm <<'EOF'
     #!/bin/bash
     set -e
@@ -156,37 +156,37 @@
 
 1. （可选）离线环境下，在一台可联网节点下载 K3s 相关离线资源，并拷贝到安装节点
 
-    ```Shell
-    $ ## [联网节点执行]
-    
-    $ # 设置 K3s 版本为 v1.30.2+k3s1
+    ```shell
+    ## [联网节点执行]
+
+    # 设置 K3s 版本为 v1.30.2+k3s1
     $ export k3s_version=v1.30.2+k3s1
     
-    $ # 离线镜像包
-    $ # arm64链接为 https://github.com/k3s-io/k3s/releases/download/$k3s_version/k3s-airgap-images-arm64.tar.zst
+    # 离线镜像包
+    # arm64链接为 https://github.com/k3s-io/k3s/releases/download/$k3s_version/k3s-airgap-images-arm64.tar.zst
     $ curl -LO https://github.com/k3s-io/k3s/releases/download/$k3s_version/k3s-airgap-images-amd64.tar.zst
     
-    $ # k3s 二进制文件
-    $ # arm64链接为 https://github.com/k3s-io/k3s/releases/download/$k3s_version/k3s-arm64
+    # k3s 二进制文件
+    # arm64链接为 https://github.com/k3s-io/k3s/releases/download/$k3s_version/k3s-arm64
     $ curl -LO https://github.com/k3s-io/k3s/releases/download/$k3s_version/k3s
     
-    $ # 安装部署脚本
+    # 安装部署脚本
     $ curl -Lo k3s-install.sh https://get.k3s.io/
     
-    $ ## 上述资源拷贝到安装节点文件系统上
+    ## 上述资源拷贝到安装节点文件系统上
     
-    $ ## [安装节点执行]
+    ## [安装节点执行]
     $ export K3S_AIRGAP_IMAGE=<资源存放目录>/k3s-airgap-images-amd64.tar.zst 
     $ export K3S_BINARY=<资源存放目录>/k3s 
     $ export K3S_INSTALL_SCRIPT=<资源存放目录>/k3s-install.sh
     ```
 
-4. 关闭防火墙和 swap（若防火墙无法关闭，可放行上述入站端口）
+1. 关闭防火墙和 swap（若防火墙无法关闭，可放行上述入站端口）
 
-    ```Shell
-    $ # Ubuntu 关闭防火墙方法
+    ```shell
+    # Ubuntu 关闭防火墙方法
     $ sudo ufw disable
-    $ # RHEL / CentOS / Fedora / SUSE 关闭防火墙方法
+    # RHEL / CentOS / Fedora / SUSE 关闭防火墙方法
     $ systemctl disable firewalld --now
     $ sudo swapoff -a
     $ sudo sed -i '/swap/s/^/#/' /etc/fstab
@@ -206,9 +206,9 @@
 
    以 3 server / 0 agent 模式为例，每台机器必须有一个唯一的主机名
 
-    ```Shell
-    $ # 若有更多 K3s 安装脚本环境变量设置需求，请设置 K3S_INSTALL_SCRIPT_ENV，其值参考 https://docs.k3s.io/reference/env-variables
-    $ # 若需对 server 或 agent 节点作出额外配置，请设置 EXTRA_SERVER_ARGS 或 EXTRA_AGENT_ARGS，其值参考 https://docs.k3s.io/cli/server https://docs.k3s.io/cli/agent
+    ```shell
+    # 若有更多 K3s 安装脚本环境变量设置需求，请设置 K3S_INSTALL_SCRIPT_ENV，其值参考 https://docs.k3s.io/reference/env-variables
+    # 若需对 server 或 agent 节点作出额外配置，请设置 EXTRA_SERVER_ARGS 或 EXTRA_AGENT_ARGS，其值参考 https://docs.k3s.io/cli/server https://docs.k3s.io/cli/agent
     $ bash k3slcm
     * Copying ./v1.30.2/k3s-airgap-images-amd64.tar.zst to 172.30.41.5
     * Copying ./v1.30.2/k3s to 172.30.41.5
@@ -238,7 +238,7 @@
 
 1. 检查集群状态
 
-    ```Shell
+    ```shell
     $ kubectl get no -owide
     NAME      STATUS   ROLES                       AGE     VERSION        INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
     server1   Ready    control-plane,etcd,master   3m51s   v1.30.2+k3s1   172.30.41.5   <none>        Ubuntu 22.04.3 LTS   5.15.0-78-generic   containerd://1.7.17-k3s1
@@ -263,7 +263,7 @@
 1. 如升级到 `v1.30.3+k3s1` 版本，按照 `前置准备` 步骤 2 重新下载离线资源并拷贝到安装节点，同时在安装节点导出离线资源路径环境变量。（若为联网升级，则跳过此操作）
 1. 执行升级操作
 
-    ```Shell
+    ```shell
     $ export K3S_VERSION=v1.30.3+k3s1
     $ bash k3slcm
     * Copying ./v1.30.3/k3s-airgap-images-amd64.tar.zst to 172.30.41.5
@@ -294,7 +294,7 @@
 
 1. 检查集群状态
 
-    ```Shell
+    ```shell
     $ kubectl get node -owide
     NAME      STATUS   ROLES                       AGE   VERSION        INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
     server1   Ready    control-plane,etcd,master   18m   v1.30.3+k3s1   172.30.41.5   <none>        Ubuntu 22.04.3 LTS   5.15.0-78-generic   containerd://1.7.17-k3s1
@@ -318,13 +318,13 @@
 
 1. 如添加新的 agent 节点：
 
-    ```Shell
-    $ export K3S_AGENTS=172.30.41.8
+    ```shell
+    export K3S_AGENTS=172.30.41.8
     ```
 
    添加新的 server 节点如下：
 
-    ```Diff
+    ```diff
     < export K3S_SERVERS=172.30.41.5,172.30.41.6,172.30.41.7
     ---
     > export K3S_SERVERS=172.30.41.5,172.30.41.6,172.30.41.7,172.30.41.8,172.30.41.9
@@ -332,7 +332,7 @@
 
 1. 执行扩容操作（以添加 agent 节点为例）
 
-    ```Diff
+    ```shell
     $ bash k3slcm
     * Copying ./v1.30.3/k3s-airgap-images-amd64.tar.zst to 172.30.41.5
     * Copying ./v1.30.3/k3s to 172.30.41.5
@@ -377,7 +377,7 @@
     
 1. 检查集群状态
 
-    ```Shell
+    ```shell
     $ kubectl get node -owide
     NAME      STATUS   ROLES                       AGE   VERSION        INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
     agent1    Ready    <none>                      57s   v1.30.3+k3s1   172.30.41.8   <none>        Ubuntu 22.04.3 LTS   5.15.0-78-generic   containerd://1.7.17-k3s1
@@ -392,7 +392,7 @@
 1. 在任意 server 节点上执行：
 
    ```shell
-   $ kubectl delete node <节点名称>
+   kubectl delete node <节点名称>
    ```
 
 ## 卸载集群
