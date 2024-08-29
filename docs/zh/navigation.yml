@@ -176,6 +176,7 @@ nav:
               - 常见问题:
                   - 流水线相关问题: amamba/faq/faq-jenkins.md
                   - GitOps 相关问题: amamba/faq/faq-gitops.md
+                  - 工具链相关问题: amamba/faq/faq-toochain.md
               - 最佳实践:
                   - GitOps 实践:
                       - 流水线 + GitOps实现CI/CD: amamba/quickstart/argocd-jenkins.md
