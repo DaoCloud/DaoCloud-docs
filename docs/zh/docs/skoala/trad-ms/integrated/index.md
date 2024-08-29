@@ -27,9 +27,9 @@
 
             ![接入 Mesh/Kubernetes](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/integrate02.png)
 
-    - Nacos/Zookeeper/Eureka/Consul 注册中心：填写注册中心的名称和地址，点击 __确认__ 。
+    - Nacos/Zookeeper/Eureka/Consul 注册中心：填写注册中心的名称和地址，点击 __确认__ ，同时支持服务认证。
 
-        ![接入 Nacos/Zookeeper/Eureka](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/integrate03.png)
+        ![接入 Nacos/Zookeeper/Eureka](../../images/Consul.png)
 
 ## 更新注册中心
 
@@ -41,7 +41,7 @@
 
 2. 修改、增加或删除注册中心的地址，然后在页面底部点击 __确定__ 。
 
-    ![进入更新页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/update-2.png)
+    ![进入更新页面](../../images/edit.png)
 
 !!! note
 
