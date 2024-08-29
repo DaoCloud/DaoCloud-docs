@@ -391,14 +391,15 @@ nav:
                   - 多云定时任务: kairship/workload/cronjob.md
               - 多云自定义资源: kairship/crds/crd.md
               - 多云资源管理:
-                  - 多云服务: kairship/resource/service.md
-                  - 多云命名空间: kairship/resource/ns.md
-                  - 多云配置项: kairship/resource/configmap.md
-                  - 多云密钥: kairship/resource/secret.md
-                  - 多云路由: kairship/resource/ingress.md
+                  - 创建多云服务: kairship/resource/service.md
                   - 更新多云服务: kairship/resource/update-service.md
-                  - 更新多云密钥: kairship/resource/update-secret.md
+                  - 创建多云命名空间: kairship/resource/ns.md
+                  - 更新多云命名空间: kairship/resource/update-ns.md
+                  - 创建多云配置项: kairship/resource/configmap.md
                   - 更新多云配置项: kairship/resource/update-configmap.md
+                  - 创建多云密钥: kairship/resource/secret.md
+                  - 更新多云密钥: kairship/resource/update-secret.md
+                  - 创建多云路由: kairship/resource/ingress.md
                   - 更新多云路由: kairship/resource/update-ingress.md
               - 策略管理:
                   - 部署策略: kairship/policy/propagation.md
