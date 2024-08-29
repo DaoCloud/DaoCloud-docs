@@ -364,6 +364,7 @@ nav:
                   - DCE 4.0到5.0有限场景迁移: kpanda/best-practice/dce4-5-migration.md
                   - 部署/升级Kubean兼容版本: kpanda/best-practice/kubean-low-version.md
                   - 限制Docker单容器磁盘空间: kpanda/best-practice/limit-disk-usage-docker.md
+                  - 边缘集群部署和管理实践: kpanda/best-practice/k3s-lcm.md
           - 多云编排:
               - 介绍:
                   - 什么是多云编排: kairship/intro/index.md
