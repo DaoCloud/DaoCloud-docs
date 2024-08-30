@@ -36,7 +36,7 @@ The following describes the configuration of each parameter when installing Cali
     If you need to configure more features for Calico, you can install Calico via Kubespray. for the configuration of the parameters for Calico installation using Kubespray, please add and fill in as needed under `Advanced Settings`->`Custom Parameters`.
     ![calico-install](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/calico-install-2.png)
 
-> It is recommended to turn on as appropriate and can be used as an installation configuration item.
+> It is recommended to turn on as appropriate and can be used as an installation ConfigMap.
 
 - `calico_pool_blocksize`: the default blockSize of ippool(ipv4).
 

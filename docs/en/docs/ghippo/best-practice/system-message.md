@@ -10,7 +10,7 @@ You can create a system message by applying the YAML for the system message in t
 the time fields in the YAML. System messages will only be displayed within the time range configured
 by the start and end fields.
 
-1. In the Clusters, click on the name of the Global Service Cluster to enter the Gobal Service Cluster.
+1. In the Clusters, click the name of the Global Service Cluster to enter the Gobal Service Cluster.
 
     ![cluster](../images/system-message1.png)
 

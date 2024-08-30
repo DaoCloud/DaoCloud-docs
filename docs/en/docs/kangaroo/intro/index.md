@@ -24,7 +24,7 @@ The container registry cooperates with the [Container Management](../../kpanda/i
 
 - Integrated External Registries
 
-    It allows administrators in integrating external repositories and allocating image spaces to one or more 
+    It allows administrators in integrating external repositories and allocating registry spaces to one or more 
     workspaces (tenants); also allows independent integration of external container registry by workspaces (tenants).
 
 - Image Scanning
