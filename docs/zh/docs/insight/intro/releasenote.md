@@ -2,6 +2,26 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2024-08-31
+
+### v0.30.0
+
+#### Insight Server
+
+- **新增** 服务详情页增加关联容器的流量分布以及流量指标
+- **新增** 集群、节点负载监控仪表盘
+- **新增** 新增 Nvidia GPU 资源监控
+- **新增** 告警列表新增告警状态并支持过
+- **新增** 链路组件 Jaeger 与 OpenTelemetry Collector 增加内置的告警规则
+- **新增** 安装参数中增加 `日志模块`，`事件模块` 的功能开关，允许不启用日志模块
+- **优化** Jaeger Collector 默认的启动参数，优化组件性能
+
+- **修复** Kubernetes 事件未定义类型的问题
+- **修复** 获取系统组件的状态接口请求超时的缺陷
+- **修复** `helm-kubectl` 镜像的 CVE 问题
+- **修复** `OpenTelemetry Collector` 多实例下 spanmetrics 数据错误的问题
+- **修复** `Opentelemetry Collector` 的 `ServiceMonitor` 的 CR 资源名称
+
 ## 2024-07-31
 
 ### v0.29.0
