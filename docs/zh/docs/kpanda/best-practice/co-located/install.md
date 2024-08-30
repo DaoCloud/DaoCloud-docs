@@ -1,7 +1,9 @@
 # Koordinator 离线安装
-Koordinator 是一个基于 QoS 的 Kubernetes 混合工作负载调度系统。它旨在提高对延迟敏感的工作负载和批处理作业的运行时效率和可靠性，简化与资源相关的配置调整的复杂性，并增加 Pod 部署密度以提高资源利用率。
 
-DCE 5.0 预置了 v1.5.0 版本的 Koordinator 离线包。 
+Koordinator 是一个基于 QoS 的 Kubernetes 混合工作负载调度系统。它旨在提高对延迟敏感的工作负载和批处理作业的运行时效率和可靠性，
+简化与资源相关的配置调整的复杂性，并增加 Pod 部署密度以提高资源利用率。
+
+DCE 5.0 预置了 Koordinator v1.5.0 离线包。 
 
 本文介绍如何离线部署 Koordinator。
 
@@ -21,12 +23,12 @@ DCE 5.0 预置了 v1.5.0 版本的 Koordinator 离线包。
 
 3. 选择 __koordinator__ ，点击 __安装__ 。
 
-![点击安装](../images/koordinator_helm.png)
+    ![点击安装](../images/koordinator_helm.png)
 
 4. 进入 koordinator 安装页面，点击 __确定__，使用默认配置安装 koordinator。
 
-![使用默认配置](../images/koordinator_install.png)
+    ![使用默认配置](../images/koordinator_install.png)
 
 5. 查看 koordinator-system 命名空间下的 Pod 是否正常运行
 
-![查看Pod](../images/koordinator_system_pod.png)
+    ![查看Pod](../images/koordinator_system_pod.png)
