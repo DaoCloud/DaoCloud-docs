@@ -44,7 +44,7 @@ nav:
                       - 部署要求: install/commercial/deploy-requirements.md
                       - 前置检查: install/commercial/prepare.md
                       - 端口要求: install/commercial/port-requirements.md
-                      - 外接组件要求(非必须): 
+                      - 外接组件要求(非必需): 
                           - 外接服务存储Binaries资源: install/commercial/external/external-binary.md
                           - 外接镜像仓库与Chart仓库: install/commercial/external/external-imageandchart.md
                           - 外接中间件服务: install/commercial/external/external-middlewares.md
@@ -76,13 +76,13 @@ nav:
                       - 火种节点高可用方案: install/best-practices/thinder-ha.md
                       - 火种节点备份与还原: install/best-practices/thinder-restore.md
                   - 可扩展性实践:
-                      - K8s 集群基于 Docker 的磁盘限制: install/best-practices/docker-storage.md
+                      - K8s集群基于Docker的磁盘限制: install/best-practices/docker-storage.md
                       - 大规模集群参数说明: install/best-practices/large-deployments-par.md
-                      - 部署集群时如何配置扩展参数？: install/best-practices/extend-params.md
+                      - 部署集群时配置扩展参数: install/best-practices/extend-params.md
                   - 离线包裁剪脚本使用手册: install/best-practices/offline-clipper.md
                   - 修复CVE-2024-21626漏洞: install/best-practices/cve-20240-21626.md
               - 客户案例:
-                  - 全局服务集群重装后如何纳管原工作集群: install/best-practices/remanage-work-cluster.md
+                  - 全局服务集群重装后纳管原工作集群: install/best-practices/remanage-work-cluster.md
                   - 不停机迁移集群操作系统: install/best-practices/replace-os.md
               - 安装器 Release Notes: install/release-notes.md
           - 最佳实践: dce/bphome.md
@@ -99,9 +99,9 @@ nav:
                   - 安装和升级:
                       - 离线升级: amamba/offline-upgrade.md
                       - 部署工作台可插拔组件: amamba/pluggable-components.md
-                      - Jenkins安装和配置: 
+                      - Jenkins 安装和配置: 
                         - 安装: amamba/user-guide/pipeline/install-jenkins.md
-                        - Jenkins高可用方案: amamba/quickstart/jenkins-HA.md
+                        - Jenkins 高可用方案: amamba/quickstart/jenkins-HA.md
                         - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
                       - Argo CD高可用部署: amamba/quickstart/argo-cd-HA.md
                   - Release Notes: amamba/intro/release-notes.md
