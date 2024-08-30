@@ -1,34 +1,35 @@
-# RHEL9.2 离线安装 gpu-operator 驱动
+# RHEL 9.2 离线安装 gpu-operator 驱动
 
 前提条件：已安装 gpu-operator v23.9.0+2 及更高版本
 
-`RHEL9.2` 驱动镜像不能直接安装，官方的驱动脚本存在一点问题，在官方修复之前，提供如下的步骤来实现离线安装驱动。
+RHEL 9.2 驱动镜像不能直接安装，官方的驱动脚本存在一点问题，在官方修复之前，提供如下的步骤来实现离线安装驱动。
 
 ## 禁用nouveau驱动
 
-在 `RHEL9.2` 中存在 `nouveau` 非官方的 `Nvidia` 驱动，因此需要先禁用。 
+在 RHEL 9.2 中存在 `nouveau` 非官方的 `Nvidia` 驱动，因此需要先禁用。 
 
 ```shell
-#创建一个新的文件
-$ sudo vi /etc/modprobe.d/blacklist-nouveau.conf
-#添加以下两行内容:
+# 创建一个新的文件
+sudo vi /etc/modprobe.d/blacklist-nouveau.conf
+# 添加以下两行内容:
 blacklist nouveau
 options nouveau modeset=0
-#禁用Nouveau
-$ sudo dracut --force
-#重启vm
-$ sudo reboot
-#检查是否已经成功禁用
-$ lsmod | grep nouveau
+# 禁用Nouveau
+sudo dracut --force
+# 重启vm
+sudo reboot
+# 检查是否已经成功禁用
+lsmod | grep nouveau
 ```
-
 
 ## 自定义驱动镜像
 
-先在本地创建 `nvidia-driver` 文件，内容如下:
+先在本地创建 `nvidia-driver` 文件：
 
-```shell
+<details>
+<summary>点击查看完整的 nvidia-driver 文件内容</summary>
 
+```shell 
 #! /bin/bash -x
 # Copyright (c) 2018-2020, NVIDIA CORPORATION. All rights reserved.
 
@@ -836,6 +837,8 @@ _resolve_rhel_version || exit 1
 $command
 ```
 
+</details>
+
 使用官方的镜像来二次构建自定义镜像，如下是一个 `Dockerfile` 文件的内容：
 
 ```dockerfile
@@ -848,12 +851,11 @@ CMD ["/bin/bash", "-c"]
 构建命令并推送到火种集群：
 
 ```bash
-$ docker build -t {火种registry}/nvcr.m.daocloud.io/nvidia/driver:535.183.06-01-rhel9.2 -f Dockerfile .
-$ docker push {火种registry}/nvcr.m.daocloud.io/nvidia/driver:535.183.06-01-rhel9.2
+docker build -t {火种registry}/nvcr.m.daocloud.io/nvidia/driver:535.183.06-01-rhel9.2 -f Dockerfile .
+docker push {火种registry}/nvcr.m.daocloud.io/nvidia/driver:535.183.06-01-rhel9.2
 ```
 
 ## 安装驱动
 
 1. 安装 gpu-operator addon
 2. 设置 `driver.version=535.183.06-01`
-
