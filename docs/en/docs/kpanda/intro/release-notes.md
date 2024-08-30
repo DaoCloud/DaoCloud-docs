@@ -713,7 +713,7 @@ understand the evolution path and feature changes from release to release.
   the user’s requirement of configuring multiple network cards separately for workload configuration.
 - **Added** support to view the operation log of the creation process after the failure of cluster creation,
   to help users quickly locate the fault.
-- **Added** Stateful workloads support the use of dynamic data volume templates.
+- **Added** StatefulSets support the use of dynamic data volume templates.
 - **Added** Create cluster, create Secret, create Ingress, edit the information verification of namespace quota,
   help guide the user to input the correct configuration parameters, and reduce the user’s failure experience
   of creating jobs.

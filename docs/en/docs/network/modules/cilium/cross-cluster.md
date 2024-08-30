@@ -69,7 +69,7 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
         enable-bbr: "true"
         ```
 
-    - Use the default configuration items for everything else
+    - Use the default ConfigMaps for everything else
 
 1. Click `Create Cluster` to complete the creation.
 

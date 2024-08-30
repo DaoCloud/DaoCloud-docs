@@ -17,7 +17,7 @@ traditional storage, software-defined storage, and cloud native local storage.
 
 - Local storage, known as HwameiStor, is specifically designed for cloud native environments.
   It is built on a cloud native platform and has been selected as an open-source local storage solution
-  for cloud native stateful workloads with High-Availability (HA) capabilities by CNCF sandbox.
+  for cloud native StatefulSets with High-Availability (HA) capabilities by CNCF sandbox.
   HwameiStor addresses the limitations of local volumes by enabling data drifting with applications,
   ensuring data availability and reliability.
 

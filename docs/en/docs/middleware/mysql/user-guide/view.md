@@ -5,7 +5,7 @@ DATE: 2024-08-21
 
 # View MySQL Instance
 
-In the MySQL instance list, select the instance you want to view and click on the instance name to enter the detail page.
+In the MySQL instance list, select the instance you want to view and click the instance name to enter the detail page.
 
 ## Overview
 
@@ -31,7 +31,7 @@ Click the __Update__ button in the upper right corner of the page to update the 
 
 ## Backup Management
 
-- Select __Backup Data__ from the dropdown menu, and click on __Create Backup__ in the upper right corner to 
+- Select __Backup Data__ from the dropdown menu, and click __Create Backup__ in the upper right corner to
   create backup data.
 
     ![Backup Data](../image/view02.png)

@@ -20,7 +20,7 @@ Containerizing storage software and dedicating storage controllers to each volum
 
 ### Avoid Binding
 
-Avoiding lock-in to cloud providers is a common goal for many Kubernetes users. However, the data of stateful applications usually still depends on the cloud service provider and its technology, or on the underlying traditional shared storage system NAS or SAN. With the CAS method, the storage controller can perform data migration in the background of each workload, making live migration easier. In other words, the granularity of control of CAS simplifies the migration of stateful workloads from one Kubernetes cluster to another in a non-disruptive manner.
+Avoiding lock-in to cloud providers is a common goal for many Kubernetes users. However, the data of stateful applications usually still depends on the cloud service provider and its technology, or on the underlying traditional shared storage system NAS or SAN. With the CAS method, the storage controller can perform data migration in the background of each workload, making live migration easier. In other words, the granularity of control of CAS simplifies the migration of StatefulSets from one Kubernetes cluster to another in a non-disruptive manner.
 
 ### Native Cloud
 

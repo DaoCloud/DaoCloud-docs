@@ -136,7 +136,7 @@ evolution path and feature changes of each version.
 - **Added** support for using Pod label selectors or source addresses in gateway policies to select Pods
   that will use Egress and specify Pods that follow specific gateway policies.
 - **Added** support for network configuration control by viewing selected gateways, EgressIPs or node IPs,
-  container group, etc., in gateway policies.
+  pods in gateway policies.
 - **Added** support for using EgressGateway in lower kernel versions.
 - **Added** Management interface for Multus CR, supporting the creation of CR instances using different
   Multus CNI types (including Macvlan, IPvlan, SR-IOV, custom).
