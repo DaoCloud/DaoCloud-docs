@@ -323,6 +323,7 @@ nav:
                           - 上传Red Hat GPU Operator离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - 构建Red Hat 8.4离线yum源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                           - 构建Red Hat 7.9离线yum源: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
+                          - 构建Red Hat 9.2离线yum源: kpanda/user-guide/gpu/nvidia/rhel9.2_offline_install_driver.md
                           - Ubuntu22.04 离线安装GPU驱动: kpanda/user-guide/gpu/nvidia/ubuntu22.04_offline_install_driver.md
                       - NVIDIA GPU整卡模式: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU模式:
