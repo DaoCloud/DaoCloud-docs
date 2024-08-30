@@ -14,10 +14,6 @@ export es_host="insight-es-master.insight-system.svc.cluster.local" # (2)!
 export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster.local" # (3)!
 ```
 
-1. 指标
-2. 日志
-3. 链路
-
 ## 在其他集群安装 insight-agent
 
 ### 通过 Insight Server 提供的接口获取地址
@@ -26,14 +22,14 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
     登录全局服务集群的控制台，执行以下命令：
 
-    !!! note
-
-        请替换命令中的 `${INSIGHT_SERVER_IP}` 参数。
-
     ```bash
     export INSIGHT_SERVER_IP=$(kubectl get service insight-server -n insight-system --output=jsonpath={.spec.clusterIP})
     curl --location --request POST 'http://'"${INSIGHT_SERVER_IP}"'/apis/insight.io/v1alpha1/agentinstallparam'
     ```
+
+    !!! note
+
+        请替换命令中的 `${INSIGHT_SERVER_IP}` 参数。
 
     获得如下返回值：
 
@@ -129,51 +125,52 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
 ### 通过 LoadBalancer 连接
 
-上述的[通过 Insight Server 提供的接口获取地址](#insight-server)是通过查询集群的 LoadBalancer 以获取连接地址。
-除此之外，你也可以手动执行以下命令获取相应服务的地址信息：
+1. 若集群中开启 `LoadBalancer` 且为 Insight 设置了 `VIP` 时，您也可以手动执行以下命令获取 `vminsert` 以及 `opentelemetry-collector` 的地址信息：
 
-```shell
-$ kubectl get service -n insight-system | grep lb
-lb-insight-es-master                             LoadBalancer   10.233.35.17    <pending>     9200:31529/TCP                 24d
-lb-insight-opentelemetry-collector               LoadBalancer   10.233.23.12    <pending>     4317:31286/TCP,8006:31351/TCP  24d
-lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    <pending>     8480:31629/TCP                 24d
-```
+    ```shell
+    $ kubectl get service -n insight-system | grep lb
+    lb-insight-opentelemetry-collector               LoadBalancer   10.233.23.12    <pending>     4317:31286/TCP,8006:31351/TCP  24d
+    lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    <pending>     8480:31629/TCP                 24d
+    ```
+    
+    - `lb-vminsert-insight-victoria-metrics-k8s-stack` 是指标服务的地址
+    - `lb-insight-opentelemetry-collector` 是链路服务的地址
 
-- `lb-insight-es-master` 是日志服务的地址
-- `lb-vminsert-insight-victoria-metrics-k8s-stack` 是指标服务的地址
-- `lb-insight-opentelemetry-collector` 是链路服务的地址
+1. 执行以下命令获取 ` elasticsearch` 的址信息：
+
+    ```shell
+    $ kubectl get service -n mcamel-system | grep es
+    mcamel-common-es-cluster-masters-es-http               NodePort    10.233.16.120   <none>        9200:30465/TCP               47d
+    ```
+
+    `mcamel-common-es-cluster-masters-es-http` 是日志服务的地址
 
 ### 通过 NodePort 连接
 
-1. 全局服务集群启用 LB 特性【默认启用】
+全局服务集群禁用 LB 特性
 
-    通过手动执行命令 `kubectl get service -n insight-system | grep lb` 获得相应服务的 NodePort 端口信息，
-    参考[通过 LoadBalancer 连接](#loadbalancer)。
-    
-1. 全局服务集群禁用 LB 特性
+在该情况下，默认不会创建上述的 LoadBalancer 资源，对应服务名为：
 
-    在该情况下，默认不会创建上述的 LoadBalancer 资源，对应服务名为：
+- vminsert-insight-victoria-metrics-k8s-stack（指标服务）
+- common-es（日志服务）
+- insight-opentelemetry-collector（链路服务）
 
-    - vminsert-insight-victoria-metrics-k8s-stack（指标服务）
-    - common-es（日志服务）
-    - insight-opentelemetry-collector（链路服务）
+上面两种情况获取到对应服务的对应端口信息后，进行如下设置：
 
-    上面两种情况获取到对应服务的对应端口信息后，进行如下设置：
+```shell
+--set global.exporters.logging.host=  # (1)!
+--set global.exporters.logging.port=  # (2)!
+--set global.exporters.metric.host=   # (3)!
+--set global.exporters.metric.port=   # (4)!
+--set global.exporters.trace.host=    # (5)!
+--set global.exporters.trace.port=    # (6)!
+--set global.exporters.auditLog.host= # (7)!
+```
 
-    ```shell
-    --set global.exporters.logging.host=  # (1)!
-    --set global.exporters.logging.port=  # (2)!
-    --set global.exporters.metric.host=   # (3)!
-    --set global.exporters.metric.port=   # (4)!
-    --set global.exporters.trace.host=    # (5)!
-    --set global.exporters.trace.port=    # (6)!
-    --set global.exporters.auditLog.host= # (7)!
-    ```
-
-    1. 外部可访问的管理集群 NodeIP
-    2. 日志服务 9200 端口对应的 NodePort
-    3. 外部可访问的管理集群 NodeIP
-    4. 指标服务 8480 端口对应的 NodePort
-    5. 外部可访问的管理集群 NodeIP
-    6. 链路服务 4317 端口对应的 NodePort
-    7. 外部可访问的管理集群 NodeIP
+1. 外部可访问的管理集群 NodeIP
+2. 日志服务 9200 端口对应的 NodePort
+3. 外部可访问的管理集群 NodeIP
+4. 指标服务 8480 端口对应的 NodePort
+5. 外部可访问的管理集群 NodeIP
+6. 链路服务 4317 端口对应的 NodePort
+7. 外部可访问的管理集群 NodeIP
