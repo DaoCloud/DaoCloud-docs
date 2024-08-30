@@ -10,6 +10,7 @@ Admin、Kpanda Owner 和 Workspace Admin 可以通过共享资源中的 __资源
 - 内存限制（MB）
 - 存储请求总量（GB）
 - 存储卷声明（个）
+- GPU 类型、规格、数量（包括但不限于 Nvidia、Ascend、lluvatar等GPU卡类型）
 
 一个资源（集群）可以被多个工作空间共享，一个工作空间也可以同时使用多个共享集群中的资源。
 

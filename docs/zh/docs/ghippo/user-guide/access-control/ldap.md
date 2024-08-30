@@ -26,28 +26,34 @@ LDAP 协议的身份提供商功能，而不必在 DCE 5.0 中为每一位组织
 
     ![ldap](../../images/ldap01.png)
 
-    | 字段           | 描述                                                         | 举例值                              |
-    | -------------- | ------------------------------------------------------------ | ----------------------------------- |
-    | 类型           | 支持 LDAP (Lightweight Directory Access Protocol) 和 AD (Active Directory) | LDAP                                |
-    | 服务器         | LDAP 服务的地址和端口号                                      | 10.6.165.2:30061                    |
-    | 用户名称       | 登录的用户名                                                 | cn=admin,dn=daocloud,dc=com          |
-    | 密码           | 登录的密码                                                   | password                            |
-    | 基准 DN        | admin 的 DN，用于访问 LDAP 服务器                            | dc=daocloud,dc=io                   |
-    | 用户对象过滤器 | LDAP 用户的 LDAP objectClass<br />新建的用户将与所有这些对象类一起写入 LDAP，并且只要它们包含所有这些对象类，就会找到现在的 LDAP 用户记录。<br />DCE 5.0 已经帮用户自动填入，如需修改可直接编辑。 | inetOrgPerson, organizationalPerson |
-    | 是否启用 TLS   | 启用后将加密 DCE 5.0 与 LDAP 的连接                          | 否                                  |
-    | 全名映射       | 姓-sn；名-cn                                                 | 不可更改                            |
-    | 邮箱映射       | 是指将用户的电子邮件地址与 LDAP 帐户相关联。用于允许只有特定电子邮件域名的用户能够访问某些资源，如内部网站或文件共享 | 邮箱地址，不可更改                  |
+| 字段                                | 描述                                                                       | 
+| ----------------------------------- | -------------------------------------------------------------------------- | --------- |
+| 类型（Vendor）                      | 支持 LDAP (Lightweight Directory Access Protocol) 和 AD (Active Directory) | 
+| 身份提供商名称（UI display name）   | 用于区分不同的身份提供商   | 
+| 服务器（Connection URL）            | LDAP 服务的地址和端口号，如 ldap://10.6.165.2:30061      |
+| 用户名称（Bind DN）  |   LDAP 管理员的 DN，Keycloak 将使用该 DN 来访问 LDAP 服务器   | cn=admin,dn=daocloud,dc=com     |
+| 密码（Bind credentials）            |   LDAP 管理员的密码。该字段可以从 vault 中获取其值，使用 ${vault.ID} 格式。         | 
+| 用户 DN（Users DN）                 | 您的用户所在的 LDAP 树的完整 DN。此 DN 是 LDAP 用户的父级。例如，假设您的典型用户的 DN 类似于“uid='john',ou=users,dc=example,dc=com”，则可以是“ou=users,dc=example,dc=com”。 | dc=daocloud,dc=io     |
+| 用户对象类（User object classes）   | LDAP 中用户的 LDAP objectClass 属性的所有值，以逗号分隔。例如：“inetOrgPerson，organizationalPerson”。新创建的 Keycloak 用户将与所有这些对象类一起写入 L​​DAP，并且只要现有 LDAP 用户记录包含所有这些对象类，就会找到它们。  | 
+| 是否启用TLS（Enable StartTLS）      | 启用后将加密 DCE 5.0 与 LDAP 的连接      |
+| 预设权限（Default permission）      | 同步后的用户/用户组默认没有任何权限            | 
+| 全名映射（First/Last name mapping） | 对应 First name 和 Last Name          | 
+| 用户名映射（User name mapping）     | 用户唯一的用户名         | 
+| 邮箱映射（Mailbox mapping） |     用户的邮箱               |      
     
     **高级配置**
 
-    | 字段           | 描述                                                         | 举例值                              |
-    | -------------- | ------------------------------------------------------------ | ----------------------------------- |
-    | 自动同步       | 默认 1 小时同步一次，可以自行配置                            | 勾选                                |
-    | 数据同步模式   | 对于只读 LDAP 的数据，不可以在 DCE 5.0 平台上编辑用户信息<br />对于写入 LDAP 的数据，可以在 DCE 5.0 上编辑用户信息后再同步回 LDAP | 只读                                |
-    | 读取超时       | 当 LDAP 数据量较大时，调整该数值可以有效避免接口超时         | 600 毫秒                            |
-    | 用户名属性     | 是指在认证和授权过程中用于标识用户的属性。用户名属性是唯一的且不可更改的，可以是用户的电子邮件地址、登录名或其他由系统管理员定义的属性。用户名属性用作用户的唯一标识符，以便系统可以识别特定用户并授予其相应的权限。 | uid                                 |
-    | RDN 属性       | 是指用于创建 Relative Distinguished Name（RDN）的属性。在 X.500 和 LDAP 目录服务中，RDN 属性通常是唯一的，并且是用于标识目录树（Naming Context）中某个对象的一部分。例如，在“cn=John Doe,ou=People,dc=example,dc=com”中，“cn”就是 RDN 属性之一。RDN 属性定义了该对象在其父级对象下的相对名称，因此它必须唯一。当新对象添加到目录中时，它的 RDN 属性必须与同一层级中其他对象的RDN属性不同，否则将导致命名冲突。 | uid                                 |
-    | UUID 属性      | 是指唯一标识符（Universally Unique Identifier）属性。UUID 是由数字、字母和连字符组成的 36 个字符的字符串，用于在计算机系统中标识对象。UUID 可以确保在任何给定时间内，不同计算机上的对象都具有唯一标识符。 | entryUUID                           |
+| 字段 | 描述 |
+| -------- | -------- |
+| 是否启用（Enable or not）    | 默认启用，关闭后该 LDAP 配置不生效     |
+| 自动同步用户（Periodic full sync）     | 默认不启用，启用后可配置同步周期，如每小时同步一次   |
+| 数据同步模式（Edit mode）     | 只读模式不会修改 LDAP 的源数据；写入模式在平台编辑用户信息后，数据将同步回LDAP     |
+| 读取超时（Read timeout）    |当LDAP数据量较大时，调整该数值可以有效避免接口超时     |
+| 用户对象过滤器（User LDAP filter）    | 用于过滤搜索用户的附加 LDAP 过滤器。如果您不需要额外的过滤器，请将其留空。确保它以“(”开头，并以“)”结尾。     |
+|用户名属性（Username LDAP attribute）     | LDAP 属性的名称，映射为 Keycloak 用户名。对于许多 LDAP 服务器供应商来说，它可以是“uid”。对于 Active Directory，它可以是“sAMAccountName”或“cn”。应为您想要从 LDAP 导入到 Keycloak 的所有 LDAP 用户记录填写该属性。    |
+| RDN属性（RDN LDAP attribute）    | LDAP 属性名称，作为典型用户DN的RDN（顶级属性）。通常它与用户名 LDAP 属性相同，但这不是必需的。例如，对于 Active Directory，当用户名属性可能是“sAMAccountName”时，通常使用“cn”作为 RDN 属性。     |
+| UUID属性（UUID LDAP attribute）   | LDAP 属性的名称，用作 LDAP 中对象的唯一对象标识符 (UUID)。对于许多 LDAP 服务器供应商来说，它是“entryUUID”；然而有些是不同的。例如，对于 Active Directory，它应该是“objectGUID”。如果您的 LDAP 服务器不支持 UUID 概念，您可以使用在树中的 LDAP 用户之间应该唯一的任何其他属性。例如“uid”或“entryDN”。   |
+
 
 4. 在 __同步用户组__ 页签中，填写以下字段配置用户组的映射关系后，再次点击 __保存__ 。
 
