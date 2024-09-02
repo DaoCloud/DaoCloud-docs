@@ -4,6 +4,74 @@
 
 *[kpanda]: DaoCloud 容器管理的内部开发代号
 
+## 2024-08-30
+
+### v0.31.0
+
+#### 新增
+
+- **新增** 异构 GPU 卡-支持沐曦 GPU卡
+- **新增** 异构 GPU 卡-支持通过GPU operator 安装redhat9.2的驱动镜像
+- **新增** 支持集群接入证书的有效期检查和提醒
+- **新增** helm 模板支持在界面上查看helm内容及生成的编排文件
+
+#### 优化
+
+- **优化** 增加切换节点 GPU 卡模式的审计日志
+- **优化** npu 面板布局优化调整
+- **优化** GPU资源界面文案优化
+- **优化** gpu-operator uninstall之后，节点上的gpu label过了三分钟左右才不展示问题优化
+- **优化** 提供 GPU 指标告警操作文档
+- **优化** 优化单机多卡场景中一张 GPU掉卡，在工作负载调度的时候pod全处于“UnexpectedAdminissonError”状态问题
+- **优化** 对于 kubean 创建的工作集群，采用 ServiceAccount Token的认证方式访问子集群
+- **优化** 移除cluster_controller 中的 LeaseController
+- **优化** kpanda-controller-manager增加一些与业务相关的监控指标
+- **优化** repo_controller 增加对 repo 的同步/下载的业务监控指标
+- **优化** cluster_setting_controller 增加对 插件 的同步监控指标
+- **优化** 移除 GPUSchedulerController 中的 informerFactory
+- **优化** multi-controller 中的 controller 支持指定开启或者关闭
+- **优化** 优化 cluster_status_controller 逻辑引入 successThreshold 和 failureThreshold
+- **优化** 为 controller 引入能够控制并发的参数
+- **优化** 统一日志输出级别
+- **优化** 优化 控制器 重新入队时间
+- **优化** binding-syner 中的 controller 能够指定开启或者关闭
+- **优化** 自定义资源CRD默认版本优化
+- **优化** 支持在服务列表通过服务名称、访问方式、访问端口搜索
+- **优化** enhancement Kpanda 安装集群的时候对 节点时间一致性 体验的增强
+- **优化** helm 生命周期操作禁止并发
+- **优化** Helm 安装增加k8s编排确认
+- **优化** 工作负载回滚支持展示版本详细信息
+
+#### 修复
+
+- **修复** 修复 gpu driver pod对应进程的gpu显存使用和应用里查看的信息显示不一致问题
+- **修复** 修复vgpu模式的情况下，关机重启vm后，变成整卡模式问题
+- **修复** 修复npu 开启虚拟化之后节点上的lable丢失问题
+- **修复** 修复GPU Pod仪表盘Pod GPU算力使用率显示有误问题
+- **修复** 修复GPU Pod 仪表盘中的GPU Pod显存使用量/使用率显示有误问题
+- **修复** 修复使用Ascend卡创建工作负载，监控指标没有数据展示问题
+- **修复** 修复vgpu修改deviceSplitCount未生效问题
+- **修复** 修复vgpu模式下，显存如果填写5000，更新的时候页面不能回显问题
+- **修复** 修复集群设置菜单下的Addon插件GPU类型下拉框中未展示mig相关的信息问题
+- **修复** 修复有GPU的节点重启或者驱动driverpod升级 vgpu-device-plugin会持续crash问题
+- **修复** 修复GPU配额中GPU显存单位和内存配额单位不一致问题
+- **修复** 修复更新Go dependency 失败，otel依赖冲突问题
+- **修复** 修复cloudshell crd 超时页面终端仍然提示可以重连问题
+- **修复** 修复clusteradmin权限的用户（无global集群的权限），查看最近操作-集群操作页面的立即前往，可以直接进入到global集群的详情页问题
+- **修复** 修复使用nsadmin权限的用户查看工作负载详情页容器配置的基本信息，存在接口报403
+- **修复** 修复NS的Quota展示出来了，但是编辑界面的数据为空问题
+- **修复** 修复容器组详情页的镜像地址和工作负载详情页显示的镜像地址不一致问题
+- **修复** 修复更新insight-ui无状态负载，进入到容器配置- 健康检查页面，查看端口信息未正常展示问题
+- **修复** 修复节点 kubeproxy 版本显示异常问题
+- **修复** 修复DCE5-0.19-接入节点或者创建集群的时候，对ubuntu 22.04 识别系统代号识别有问题
+- **修复** 修复helm 创建应用状态处于未知状态，点击应用详情报错问题
+- **修复** 修复工作集群创建helm应用时前端显示应用的初始状态为失败状态问题
+- **修复** 修复更新helm应用时，就绪等待配置未记录创建时的状态问题
+- **修复** 修复开启就绪等待接入子集群安装helm应用失败，helm应用状态始终处于安装中问题
+
+- **已知问题** 
+- **修复** kpanda 前后端版本需保持一致，否则vgpu模式的情况下，关机重启vm后，变成整卡模式
+
 ## 2024-07-31
 
 ### v0.30.0
