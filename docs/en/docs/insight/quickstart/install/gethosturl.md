@@ -159,7 +159,7 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
 ### Connect via NodePort
 
-Global service cluster disabled LB feature.
+The LoadBalancer feature is disabled in the global service cluster. 
 
 In this case, the LoadBalancer resources mentioned above will not be created by default. The relevant service names are:
 
