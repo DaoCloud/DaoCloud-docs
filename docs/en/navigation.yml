@@ -378,15 +378,16 @@ nav:
                   - Create CronJob from Image: kairship/workload/cronjob.md
               - Custom Resources: kairship/crds/crd.md
               - Multicloud Resources:
-                  - Multicloud Services: kairship/resource/service.md
-                  - Multicloud Namespaces: kairship/resource/ns.md
-                  - Multicloud ConfigMaps: kairship/resource/configmap.md
-                  - Multicloud Secrets: kairship/resource/secret.md
-                  - Multicloud Ingress: kairship/resource/ingress.md
+                  - Create Multicloud Services: kairship/resource/service.md
                   - Update Multicloud Services: kairship/resource/update-service.md
-                  - Update Multicloud Secrets: kairship/resource/update-secret.md
+                  - Create Multicloud Namespaces: kairship/resource/ns.md
+                  - Update Multicloud Namespaces: kairship/resource/update-ns.md
+                  - Create Multicloud ConfigMaps: kairship/resource/configmap.md
                   - Update Multicloud ConfigMaps: kairship/resource/update-configmap.md
-                  - More Multicloud Ingress: kairship/resource/update-ingress.md
+                  - Create Multicloud Secrets: kairship/resource/secret.md
+                  - Update Multicloud Secrets: kairship/resource/update-secret.md
+                  - Create Multicloud Ingress: kairship/resource/ingress.md
+                  - Update Multicloud Ingress: kairship/resource/update-ingress.md
               - Policy Management:
                   - Propagation Policy: kairship/policy/propagation.md
                   - Override Policy: kairship/policy/override.md
