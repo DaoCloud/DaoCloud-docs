@@ -729,9 +729,7 @@ nav:
               - Data Collection:
                   - Collection Management: insight/user-guide/collection-manag/collection-manag.md
                   - Service Monitor: insight/user-guide/collection-manag/service-monitor.md
-                  - Collection Metrics: insight/user-guide/collection-manag/metric-collect.md
-                  - insight-agent Status: insight/user-guide/collection-manag/agent-status.md
-                  - Custom Probe: insight/user-guide/collection-manag/probe-module.md
+                  - insight-agent Status: insight/user-guide/collection-manag/agent-status.md   
               - System Config:
                   - System Components: insight/user-guide/system-config/system-component.md
                   - System Config: insight/user-guide/system-config/system-config.md
@@ -739,6 +737,8 @@ nav:
               - Network Insight:
                   - Integrate DeepFlow: insight/best-practice/integration_deepflow.md
               - References:
+                  - Custom Probe: insight/user-guide/collection-manag/probe-module.md
+                  - Collection Metrics: insight/user-guide/collection-manag/metric-collect.md
                   - Alert Notification Flow: insight/reference/alertnotification.md
                   - Notification Template Instructions: insight/reference/notify-helper.md
                   - Lucene Syntax: insight/reference/lucene.md

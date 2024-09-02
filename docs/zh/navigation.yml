@@ -768,7 +768,7 @@ nav:
               - 网络监控:
                   - 集成 DeepFlow: insight/best-practice/integration_deepflow.md
               - 参考文档:
-                  - 可观性参考指标说明: insight/reference/uesd-metric-in-insight.md
+                  - 可观性参考指标说明: insight/reference/used-metric-in-insight.md
                   - 自定义探测方式: insight/user-guide/collection-manag/probe-module.md
                   - 指标抓取说明: insight/user-guide/collection-manag/metric-collect.md
                   - 告警通知流程说明: insight/reference/alertnotification.md
