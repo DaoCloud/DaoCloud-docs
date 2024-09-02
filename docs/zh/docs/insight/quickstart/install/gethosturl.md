@@ -136,7 +136,7 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
     - `lb-vminsert-insight-victoria-metrics-k8s-stack` 是指标服务的地址
     - `lb-insight-opentelemetry-collector` 是链路服务的地址
 
-1. 执行以下命令获取 ` elasticsearch` 的址信息：
+1. 执行以下命令获取 ` elasticsearch` 地址信息：
 
     ```shell
     $ kubectl get service -n mcamel-system | grep es
