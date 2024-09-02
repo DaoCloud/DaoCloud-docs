@@ -19,7 +19,7 @@ hide:
 
 ## Kubernetes 版本适配情况
 
-下列表格目前仅更新了除 RocketMQ 之外的八个中间件的 Kubernetes 版本适配情况，后续会持续更新。
+下列表格目前仅更新了九个中间件的 Kubernetes 版本适配情况，后续会持续更新。
 表格中“✅”表示已进行测试且兼容，“N/A”表示该对应版本未进行测试。
 
 | **版本/项目** | **RabbitMQ** | **Elasticsearch** | **MysQL** | **Redis** | **Kafka** | **MinIO** | **PostgreSQL** | **MongoDB** | **RocketMQ** |
