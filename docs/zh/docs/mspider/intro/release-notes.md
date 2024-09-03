@@ -10,13 +10,13 @@
 
 #### 功能
 
-- **新增** 托管网格支持将工作集群的流量治理策略`(VS、DR、Gateway)`，快速同步到控制面并提供在线查看能力
-- **新增** Ambient Mesh 模式下注入 Waypoint 和 Ztunnel 边车组件的功能
+- **新增** 托管网格支持将工作集群的流量治理策略 `(VS、DR、Gateway)`，快速同步到控制面并提供在线查看能力
+- **新增** Ambient Mesh 模式下注入 waypoint 和 ztunnel 边车组件的功能
 
 #### 修复
 
 - **修复** 离线环境下网格网络连通性检测功能因缺少必要镜像问题
-- **修复** `Ambient Mesh` 中缺失 `GatewayAPI` 自定义资源定义(CRD) 的问题
+- **修复** Ambient Mesh 中缺失 `GatewayAPI` 自定义资源定义(CRD) 的问题
 - **修复** waypoint 注入状态没有计算命名空间纬度
 - **修复** 删除 waypoint 接口无法传递 namespace
 - **修复** 抓取无用的边车指标端口
