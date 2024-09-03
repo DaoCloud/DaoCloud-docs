@@ -82,7 +82,7 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
                 prefix: /argocd
           route:
             - destination:
-                host: argocd-server
+                host: amamba-argocd-server
                 port:
                   number: 80
     ```
@@ -106,7 +106,7 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
               prefix: /argocd/applications/argocd
         - authnCheck: false
           destination:
-            host: amamba-argocd-server.argocd.svc.cluster.local # 如果命名空间不是argocd，需要更改svc的名称
+            host: amamba-argocd-server.argocd.svc.cluster.local # 如果命名空间不是 argocd，需要更改 svc 的名称
             port: 80
           match:
             uri:
@@ -114,12 +114,12 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
     ```
 
     host 中的 `amamba-argocd-server.argocd.svc.cluster.local` 需要根据您的 ArgoCD 的服务名称和命名空间进行修改。
-    具体修改路径为 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __容器网络__ ，根据 ArgoCD 安装的命名空间搜索关键词 `argocd-server` 来确定。 
+    具体修改路径为 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __容器网络__ ，根据 ArgoCD 安装的命名空间搜索关键词 `amamba-argocd-server` 来确定。 
 
 1. 修改 ArgoCD 的相关配置
 
     前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __工作负载__ -> __无状态负载__ ，
-    选择您安装的 ArgoCD 的命名空间，如 argocd。找到 `argocd-server`，点击右侧的 __重启__ 按钮。
+    选择您安装的 ArgoCD 的命名空间，如 argocd。找到 `amamba-argocd-server`，点击右侧的 __重启__ 按钮。
 
     修改 `argocd-cmd-params-cm`：
 
@@ -161,10 +161,10 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
       accounts.amamba-view: apiKey # 添加这一行
     ```
 
-1. 更改完上述选项后，需要重启 `argocd-server` 这个 Deployment。
+1. 更改完上述选项后，需要重启 `amamba-argocd-server` 这个 Deployment。
 
     前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __工作负载__ -> __无状态负载__ ，
-    选择您安装的 ArgoCD 的命名空间，如 argocd。 找到 `argocd-server`，点击右侧的 __重启__ 按钮。
+    选择您安装的 ArgoCD 的命名空间，如 argocd。 找到 `amamba-argocd-server`，点击右侧的 __重启__ 按钮。
 
 ### 修改应用工作台配置项
 
@@ -175,13 +175,13 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
 
     ```yaml
     generic:
-    argocd:
-      host: amamba-argocd-server.argocd.svc.cluster.local:443  # 将端口改为443
-      enableUI: true         # 添加这个选项
+      argocd:
+        host: amamba-argocd-server.argocd.svc.cluster.local:443  # 将端口改为 443
+        enableUI: true         # 添加这个选项
     ```
 
     host 端口保持 443，其中 `amamba-argocd-server.argocd.svc.cluster.local` 需要根据您的 ArgoCD 的服务名称和命名空间进行修改。
-    具体修改路径为 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __容器网络__ ，根据 ArgoCD 安装的命名空间搜索关键词 `argocd-server` 来确定。 
+    具体修改路径为 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __容器网络__ ，根据 ArgoCD 安装的命名空间搜索关键词 `amamba-argocd-server` 来确定。
 
 1. 更改完上述选项后，前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __工作负载__ -> __无状态负载__ ，
    选择命名空间 `amamba-system`，分别重启 `amamba-apiserver` 和 `amamba-syncer` 这两个 Deployment。
