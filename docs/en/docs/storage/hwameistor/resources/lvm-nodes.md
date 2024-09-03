@@ -61,7 +61,7 @@ spec:
   nodeName: k8s-worker-4
   owner: local-storage
   description:
-    diskType: SSD
+    diskType: SSD # It may be necessary to change to HDD or NVMe based on the actual disk conditions of the nodes.
 EOF
 ```
 
