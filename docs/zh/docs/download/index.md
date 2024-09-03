@@ -53,7 +53,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | 模块 | 文件大小 | 下载 | 更新日期 |
 | ---- | ------- | ----- | --------- |
 | 应用工作台 | 400.49 MB | [:arrow_right: 下载页](./modules/amamba.md) | 2024-09-03 |
-| 容器管理 | 759.13 MB | [:arrow_right: 下载页](./modules/kpanda.md) | 2024-08-29 |
+| 容器管理 | 759.13 MB | [:arrow_right: 下载页](./modules/kpanda.md) | 2024-09-02 |
 | 集群巡检 | 174.30 MB | [:arrow_right: 下载页](./modules/kcollie.md) | 2024-01-02 |
 | 应用备份 | 85.06 MB | [:arrow_right: 下载页](./modules/kcoral.md) | 2024-06-07 |
 | 安全管理 | 167.29 MB | [:arrow_right: 下载页](./modules/dowl.md) | 2023-11-26 |
@@ -63,7 +63,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | 镜像仓库 | 304.16 MB | [:arrow_right: 下载页](./modules/kangaroo.md) | 2024-08-29 |
 | 可观测性 | 2.21 GB | [:arrow_right: 下载页](./modules/insight.md) | 2024-07-04 |
 | 微服务引擎| 1.66 GB | [:arrow_right: 下载页](./modules/skoala.md) | 2024-08-19 |
-| 服务网格 | 1.04 GB | [:arrow_right: 下载页](./modules/mspider.md) | 2024-08-02 |
+| 服务网格 | 1.04 GB | [:arrow_right: 下载页](./modules/mspider.md) | 2024-09-02 |
 | 云边协同 | 107 MB | [:arrow_right: 下载页](./modules/kant.md) | 2024-07-30 |
 | 全局管理 | 458.30 MB | [:arrow_right: 下载页](./modules/ghippo.md) | 2024-09-02 |
 | 运营管理 | 96.41 MB | [:arrow_right: 下载页](./modules/gmagpie.md) | 2024-09-02 |
