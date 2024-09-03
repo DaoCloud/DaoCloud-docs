@@ -1434,6 +1434,7 @@ nav:
       - Fast: community/fast.md
       - FedState: community/fedstate.md
       - Ferry: community/ferry.md
+      - HAMi: community/hami.md
       - HwameiStor: community/hwameistor.md
       - KasmCloud: community/kasmcloud.md
       - Kdoctor: community/kdoctor.md

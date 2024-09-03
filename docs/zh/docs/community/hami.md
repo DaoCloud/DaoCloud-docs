@@ -2,8 +2,7 @@
 
 **HAMi 已经是一个 [CNCF 云原生计算基金会](https://cncf.io/)全景图中的项目。
 HAMi 在申请加入 Sandbox，目前[已通过投票阶段](https://github.com/cncf/sandbox/issues/97)，
-超过了 66% 的合格分数线，参阅[相关推文](https://mp.weixin.qq.com/s/6Ze2i3-CQSFANhn8b7oNjA)。
-**
+超过了 66% 的合格分数线，参阅[相关推文](https://mp.weixin.qq.com/s/6Ze2i3-CQSFANhn8b7oNjA)。**
 
 支持的设备：
 [![英伟达 GPU](https://img.shields.io/badge/Nvidia-GPU-blue)](https://github.com/Project-HAMi/HAMi#preparing-your-gpu-nodes)
@@ -279,7 +278,7 @@ http://{nodeip}:{monitorPort}/metrics
 
 ## 参与贡献
 
-如果你想成为 HAMi 的贡献者，请参[考贡献者指南](https://github.com/Project-HAMi/HAMi/blob/master/CONTRIBUTING.md)，里面有详细的贡献流程。
+如果你想成为 HAMi 的贡献者，请参考[贡献者指南](https://github.com/Project-HAMi/HAMi/blob/master/CONTRIBUTING.md)。
 
 - [HAMi 官网](http://project-hami.io/)
 - [HAMi 仓库](https://github.com/Project-HAMi/HAMi)
