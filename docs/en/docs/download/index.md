@@ -56,8 +56,8 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 
 | Modules | File Size | Download | Update Date |
 | ------- | --------- | -------- | ----------- |
-| Workbench | 402.67 MB | [:arrow_right: Go to Download](./modules/amamba.md) | 2024-07-01 |
-| Container Management | 759.13 MB | [:arrow_right: Go to Download](./modules/kpanda.md) | 2024-08-29 |
+| Workbench | 394.25 MB | [:arrow_right: Go to Download](./modules/amamba.md) | 2024-09-03 |
+| Container Management | 759.13 MB | [:arrow_right: Go to Download](./modules/kpanda.md) | 2024-09-02 |
 | Cluster Inspection | 174.30 MB | [:arrow_right: Go to Download](./modules/kcollie.md) | 2024-01-02 |
 | Application Backup | 85.06 MB | [:arrow_right: Go to Download](./modules/kcoral.md) | 2024-06-07 |
 | Security Management | 167.29 MB | [:arrow_right: Go to Download](./modules/dowl.md) | 2023-11-26 |
@@ -67,8 +67,8 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | Container Registry | 304.16 MB | [:arrow_right: Go to Download](./modules/kangaroo.md) | 2024-08-29 |
 | Insight | 2.62 GB | [:arrow_right: Go to Download](./modules/insight.md) | 2024-07-04 |
 | Microservice Engine | 1.66 GB | [:arrow_right: Go to Download](./modules/skoala.md) | 2024-08-19 |
-| Service Mesh | 1.04 GB | [:arrow_right: Go to Download](./modules/mspider.md) | 2024-08-02 |
-| Cloud Edge Collaboration | 107 MB | [:arrow_right: Go to Download](./modules/kant.md) | 2024-07-30 |
+| Service Mesh | 1.04 GB | [:arrow_right: Go to Download](./modules/mspider.md) | 2024-09-03 |
+| Cloud Edge Collaboration | 107 MB | [:arrow_right: Go to Download](./modules/kant.md) | 2024-09-03 |
 | Global Management | 458.24 MB | [:arrow_right: Go to Download](./modules/ghippo.md) | 2024-09-02 |
 | Operations Management | 91.00 MB | [:arrow_right: Go to Download](./modules/gmagpie.md) | 2024-09-02 |
 | Virtual Machine | 1.43 GB | [:arrow_right: Go to Download](./modules/virtnest.md) | 2024-09-02 |
