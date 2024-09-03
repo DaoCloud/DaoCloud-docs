@@ -16,7 +16,7 @@
 #### 修复
 
 - **修复** 离线环境下网格网络连通性检测功能因缺少必要镜像问题
-- **修复** ambient 缺少 gatewayapi crd
+- **修复** `Ambient Mesh` 中缺失 `GatewayAPI` 自定义资源定义(CRD) 的问题
 - **修复** waypoint 注入状态没有计算命名空间纬度
 - **修复** 删除 waypoint 接口无法传递 namespace
 - **修复** 抓取无用的边车指标端口
