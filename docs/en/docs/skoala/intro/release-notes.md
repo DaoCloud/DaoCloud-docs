@@ -9,6 +9,54 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## 2024-08-26
+
+### v0.40.0
+
+#### New Features
+
+- **Added** support for querying service instances in Nacos based on metadata labels
+- **Added** the display of fixed IP addresses for nodes in the gateway instance overview
+
+#### Fixes
+
+- **Fixed** an issue where the gateway control plane did not restart as expected in certain situations
+- **Fixed** an issue with the unavailability of managed Nacos namespace-related APIs
+- **Fixed** the API name validation issue when importing gateway APIs
+- **Fixed** the CVE-2024-41110 vulnerability in management components
+
+#### Improvements
+
+- **Improved** the upgrade of the gateway runtime Envoy to v1.31.0
+- **Improved** the upgrade of the gateway control plane Contour to v1.30.0-d59d534
+- **Improved** the configuration for extending the validity period of gateway certificates,
+  with a default duration of 5 years, applicable when updating or creating new gateways
+- **Improved** the upgrade of Nacos to v2.4.0.1, with the default version being the stable v2.3.2
+- **Improved** the dependency detection of related resources when deleting Nacos namespaces
+- **Improved** the gateway deletion functionality, now allowing forced deletion of gateways with abnormal statuses
+- **Improved** the validation logic for gateway domain name security policies
+- **Improved** the display capabilities for exception messages when importing gateway APIs
+
+!!! note
+
+    When upgrading from any version to 0.40.x, due to the reasons related to the Gateway API community version, manual handling of CRD upgrades is required. Refer to [Skoala 0.40.x Upgrade Notes](#skoala-040x-upgrade-notes).
+
+## 2024-08-16
+
+### v0.39.4
+
+#### Fixes
+
+- **Fixed** an issue with the unavailability of managed Nacos namespace-related APIs
+
+## 2024-08-15
+
+### v0.39.3
+
+#### Fixes
+
+- **Fixed** an issue with the unavailability of managed Nacos namespace-related APIs
+
 ## Skoala 0.40.x Upgrade Notes
 
 ### Affected Versions
@@ -217,7 +265,7 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 #### Fixes
 
-- **Fixed** the issue of inaccurate permissions in the microservice engine module in the global management
+- **Fixed** an issue of inaccurate permissions in the microservice engine module in the global management
 - **Fixed** abnormal saving of global rate limiting in the gateway
 - **Fixed** abnormal memory configuration when creating a gateway
 - **Fixed** abnormal maximum heap memory configuration at runtime in the gateway
@@ -480,7 +528,7 @@ Please follow these steps to manually update the gateway CRD files that need upg
 - **Fixed** sorting issue in the gateway service list
 - **Fixed** multiple line break issue when importing gateway APIs
 - **Fixed** the problem where Seata Operator image does not support offline repository
-- **Fixed** the issue with abnormal offline release process
+- **Fixed** an issue with abnormal offline release process
 
 ## 2023-10-26
 
@@ -507,8 +555,8 @@ Please follow these steps to manually update the gateway CRD files that need upg
 - **Fixed** an issue of abnormal Seata interface verification.
 - **Fixed** an issue of abnormal workspace access when switching registry center.
 - **Fixed** the permission issue with related interfaces of managed Nacos.
-- **Fixed** the issue with Grafana monitoring panel for managed Nacos.
-- **Fixed** the issue with Sentinel Grafana monitoring panel.
+- **Fixed** an issue with Grafana monitoring panel for managed Nacos.
+- **Fixed** an issue with Sentinel Grafana monitoring panel.
 - **Fixed** the accuracy issue with overall permissions.
 
 #### Improvements
@@ -647,7 +695,7 @@ Please follow these steps to manually update the gateway CRD files that need upg
 - **Fixed** an issue of cluster flow control rules in Sentinel not being saved.
 - **Fixed** an issue of API exception when deleting non-empty services in Nacos.
 - **Fixed** an issue of duplicate data in gateway monitoring data.
-- **Fixed** the issue with the use of plugins in cloud native microservices related APIs.
+- **Fixed** an issue with the use of plugins in cloud native microservices related APIs.
 - **Fixed** the issues with gateway domain naming rules.
 - **Fixed** an issue of incorrect version in cloud native microservice traffic lanes.
 
