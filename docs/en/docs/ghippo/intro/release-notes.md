@@ -3,21 +3,40 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-8-31
+
+### v0.30.0
+
+#### Features
+
+- **Added** configuration and display of system information
+- **Added** the SDK RegisterDeltaResourcePermissionHandler method
+- **Added** tenant perspective and related permissions in __Global Management__ -> __Operations Management__
+
+#### Optimizations
+
+- **Optimized** the scanning for hardcoded certificates using trivy and gosec
+- **Optimized** the development guide in __Global Management__ -> __Operations Management__
+
+#### Fixes
+
+- **Fixed** an issue where the report would not display proper namespace information if there are no pods in the namespace under __Global Management__ -> __Operations Management__
+
 ## 2024-07-31
 
 ### v0.29.0
 
-### Features
+#### Features
 
 - **Added** LDAP server to support LDAPS
 - **Added** installer versions to __Global Management__ -> __Settings__ -> __About__
 
-### Optimizations
+#### Optimizations
 
 - **Optimized** login and password change functions to support username and password encryption
 - **Optimized** prompt text about binding resources on __Global Management__ -> __Workspace and Folder__ -> __Resource Group__
 
-### Fixes
+#### Fixes
 
 - **Fixed** SMTP server settings
 - **Fixed** an issue where installation fails when OEM is configured `enable`
@@ -27,19 +46,19 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.28.0
 
-### Features
+#### Features
 
 - **Added** OAuth2 Identity Provider generic plugin
 - **Added** username and userLdapFilter fields to LDAP configuration
 - **Added** installation insight-angent prompt in __Global Management__ -> __Operations Management__ -> __Billing Config__
 
-### Optimizations
+#### Optimizations
 
 - **Optimized** user creation to automatically remove spaces around the username text (if any) before saving
 - **Optimized** the search mechanism of binding resources
 - **Optimized** a SDK method `ListWorkspaceUsersByPermission()`
 
-### Fixes
+#### Fixes
 
 - **Fixed** an issue that authorized users with a custom role can see all workspaces
 - **Fixed** an issue that the RBAC Access Denied page will appear on the Insight page after closing the browser and reopening it
@@ -49,7 +68,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.27.0
 
-### Features
+#### Features
 
 - **Added** an option in Settings to show/hide the background video on the login page
 - **Added** features to view/add/update/delete SSH certificate information in Personal Center
@@ -57,11 +76,11 @@ so that you can understand the evolution path and feature changes of each versio
   encryption for username and password parameters when passed to API
 - **Added** MySQL MGR mode
 
-### Optimization
+#### Optimization
 
 - **Optimized** Keycloak component to version 22.0.4
 
-### Fixes
+#### Fixes
 
 - **Fixed** an issue with GPU count statistics after licensing by GPU
 
@@ -69,16 +88,16 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.26.0
 
-### Features
+#### Features
 
 - **Added** support for license by GPU
 - **Added** a summary link in Audit Logs
 
-### Optimization
+#### Optimization
 
 - **Optimized** unit tests for the Audit Logs SDK
 
-### Fixes
+#### Fixes
 
 - **Fixed** an issue with the user-agent field in Audit Logs
 - **Fixed** an issue where Audit Logs login records often show one failure followed by one success
@@ -90,7 +109,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.25.1
 
-### Fixes
+#### Fixes
 
 - **Fixed** an issue with resource quota check while workspace resource group is binding to a namespace
 
@@ -98,7 +117,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.25.0
 
-### Features
+#### Features
 
 - **Added** a feature where top-level navigation bar is displayed based on permissions
 - **Added** a feature where Workspace/Folder Editor does not support changing Workspace/Folder and names
@@ -107,7 +126,7 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** __Operations Management__ -> Report Management -> Pod Report: GPU statistics
 - **Added** __Operations Management__ -> Accounting and Billing -> Pod Billing: GPU billing
 
-### Fixes
+#### Fixes
 
 - **Fixed** an issue with front-end CSS errors on global management login
 - **Fixed** an issue where the Refresh Token API in the observability interface could not update the Token
