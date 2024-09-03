@@ -12,7 +12,7 @@
 - **新增** 集群、节点负载监控仪表盘
 - **新增** 新增 Nvidia GPU 资源监控
 - **新增** 告警列表新增告警状态字段，并支持搜索过滤
-- **新增** 链路组件 Jaeger 与 OpenTelemetry Collector 增加内置的告警规则
+- **新增** 链路组件 `Jaeger` 与 `OpenTelemetry Collector` 增加内置的告警规则
 - **新增** 安装参数中增加 `日志模块`，`事件模块` 的功能开关，允许不启用日志模块
 - **优化** Jaeger Collector 默认的启动参数，优化组件性能
 
