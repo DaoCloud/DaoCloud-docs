@@ -48,4 +48,14 @@ docker tag [ImageID] 10.6.194.1:30010/kangaroo/REPOSITORY[:TAG]
 docker push 10.6.194.1:30010/kangaroo/REPOSITORY[:TAG]
 ```
 
+## 删除镜像
+
+1. 点击镜像空间右侧的 __┇__ ，在弹出的菜单中点击 __删除__  。
+
+    ![删除操作](../images/deleteimage.png)
+
+1. 确认无误后，在二次确认弹窗中输入镜像名称，点击 __删除__ 。
+
+    ![二次确认](../images/deleteimage01.png)
+
 下一步：[Artifacts 和描述信息](./desc.md)
