@@ -1,6 +1,15 @@
 # API导入
 
 API导入功能通常用于从外部系统或服务中获取数据并将其导入到当前应用中。以下是一个简单的API导入功能的样例说明，包括请求格式和处理逻辑。
+ 
+在API管理中，点击“导入 API”按钮，用户可以上传或填写新的API信息，以便将其录入到系统中。
+![API导入](../../gateway/api/images/api-lead.jpeg)
+
+通过YAML格式的文件导入API配置。
+
+![导入yaml](../../gateway/api/images/api-yaml.jpeg)
+
+样例如下
 
 ```yaml
 apiVersion: projectcontour.io/v1
@@ -12,8 +21,8 @@ metadata:
     #api域名
     app.projectsesame.io/fqdn: test.ratelimit
   creationTimestamp: null
-  #api名次
-  name: test-plugins
+  #api名称
+  name: test-plugins-1
   #api命名空间
   namespace: skoala-yang
 spec:
@@ -116,4 +125,8 @@ spec:
       statusCode: 200
 status:
   loadBalancer: {}
+
+---
+
+
 ```
