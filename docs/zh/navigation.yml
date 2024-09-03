@@ -159,7 +159,7 @@ nav:
                   - 创建 Argo CD 应用: amamba/user-guide/gitops/create-argo-cd.md
                   - Argo CD 应用状态说明: amamba/user-guide/gitops/argo-cd-status.md
                   - 手动同步应用: amamba/user-guide/gitops/sync-manually.md
-                  - 在GitOps中启用凭证加密功能: amamba/user-guide/gitops/gitops-secret.md
+                  - 启用凭证加密功能: amamba/user-guide/gitops/gitops-secret.md
                   - 启用ArgoCD原生UI: amamba/user-guide/gitops/integrate-argocd-ui.md
               - 灰度发布:
                   - 创建金丝雀发布任务: amamba/user-guide/release/canary.md

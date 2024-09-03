@@ -155,6 +155,7 @@ nav:
                   - Argo CD App Status: amamba/user-guide/gitops/argo-cd-status.md
                   - Manually Sync App: amamba/user-guide/gitops/sync-manually.md
                   - Eanble Credential in GitOps: amamba/user-guide/gitops/gitops-secret.md
+                  - Enable ArgoCD-Native UI: amamba/user-guide/gitops/integrate-argocd-ui.md
               - Canary Release:
                   - Grayscale based on Argo Rollout: amamba/quickstart/argocd-rollout.md
                   - Create a Canary Delivery Job: amamba/user-guide/release/canary.md
