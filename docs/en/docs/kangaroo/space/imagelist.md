@@ -63,4 +63,14 @@ docker tag [ImageID] 10.6.194.1:30010/kangaroo/REPOSITORY[:TAG]
 docker push 10.6.194.1:30010/kangaroo/REPOSITORY[:TAG]
 ```
 
+## Delete Image
+
+1. Click __┇__ on the right side of the registry space, and then click __Delete__ in the pop-up menu.
+
+    ![Delete](../images/deleteimage.png)
+
+1. In the pop-up window, enter the image name and click __Delete__ once you have confirmed that it is correct.
+
+    ![Confirmation](../images/deleteimage01.png)
+
 Next step: [Artifacts and Description](./desc.md)
