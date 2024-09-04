@@ -8,6 +8,19 @@ date: 2024-04-09
 This page lists the release notes of Multicloud Management module,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-08-31
+
+### v0.22.0
+
+#### Features
+
+- **Added** a feature of audit logs for binding and unbinding instance and namespace to workspace in Multicloud Management.
+- **Added** a node selector feature to the multicloud service form.
+
+#### Improvements
+
+- **Upgraded** karmada to v1.9.6
+
 ## 2024-07-31
 
 ### v0.21.0
