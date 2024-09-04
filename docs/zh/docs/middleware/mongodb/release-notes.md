@@ -4,6 +4,19 @@
 
 *[Mcamel-MongoDB]: Mcamel 是 DaoCloud 所有中间件的开发代号，MongoDB 是面向文档的 NoSQL 数据库中间件
 
+## 2024-08-31
+
+### v0.13.0
+
+!!! warning
+
+    升级 mongodb-operator 到 v0.10.0 会导致已有的实例进行重启。
+
+- **优化** 创建实例时不可选择异常的集群
+- **优化** 恢复的新实例的控制台访问方式默认为 Nodeport
+- **优化** 升级 mongodb-operator 版本到 0.10.0，基础镜像均使用 ubi-minimal:8.6-994。
+- **修复** 恢复 MongoDB 实例失败的问题
+
 ## 2024-07-31
 
 ### v0.12.0
