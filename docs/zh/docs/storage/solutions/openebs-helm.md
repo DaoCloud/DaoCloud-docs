@@ -223,7 +223,7 @@ spec:
               value: /data
 ```
 
-## 测试 io 性能
+## 测试 I/O 性能
 
 ```console
 kubectl delete pod hello-local-hostpath-pod
