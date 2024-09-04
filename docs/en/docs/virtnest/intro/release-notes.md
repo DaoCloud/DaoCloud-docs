@@ -8,6 +8,20 @@ Date: 2024-04-24
 This page provides the release notes for VirtNest (Virtual Machine),
 allowing you to understand the evolution path and feature changes of each version.
 
+## 2024-8-31
+
+### v0.12.0
+
+#### Features
+
+- **Added** the hot resizing feature of virtual machine disks.
+- **Added** backend support for cold migration of virtual machines.
+
+#### Fixes
+
+- **Fixed** the issue of no data for CPU monitoring.
+- **Fixed** the error when hot migrating a virtual machine without specifying a node.
+
 ## 2024-07-31
 
 ### v0.11.0
