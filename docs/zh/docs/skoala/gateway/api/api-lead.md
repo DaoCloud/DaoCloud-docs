@@ -1,15 +1,17 @@
-# API导入
+# API 导入
 
-API导入功能通常用于从外部系统或服务中获取数据并将其导入到当前应用中。以下是一个简单的API导入功能的样例说明，包括请求格式和处理逻辑。
+API 导入功能通常用于从外部系统或服务中获取数据并将其导入到当前应用中。
+以下是一个简单的 API 导入功能的样例说明，包括请求格式和处理逻辑等。
  
-在API管理中，点击“导入 API”按钮，用户可以上传或填写新的API信息，以便将其录入到系统中。
+在 API 管理中，点击 __导入 API__ 按钮，您可以上传或填写新的 API 信息并将其录入到 DCE 5.0 微服务引擎中。
+
 ![API导入](../../gateway/api/images/api-lead.jpeg)
 
-通过YAML格式的文件导入API配置。
+通过 YAML 格式的文件导入 API 配置。
 
 ![导入yaml](../../gateway/api/images/api-yaml.jpeg)
 
-样例如下
+YAML 样例如下：
 
 ```yaml
 apiVersion: projectcontour.io/v1
