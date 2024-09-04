@@ -1175,6 +1175,7 @@ nav:
                       - SSH 访问 Notebook: baize/developer/notebooks/notebook-with-ssh.md
                       - Notebook 中使用环境: baize/developer/notebooks/notebook-with-envs.md
                       - baizectl 命令行工具: baize/developer/notebooks/baizectl.md
+                      - Notebook 闲置超时自动关机: baize/developer/notebooks/notebook-auto-close.md
                   - 任务中心:
                       - 创建任务: baize/developer/jobs/create.md
                       - 创建 Pytorch 任务: baize/developer/jobs/pytorch.md
