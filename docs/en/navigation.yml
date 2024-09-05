@@ -777,8 +777,8 @@ nav:
                       - Domain Policies: skoala/gateway/domain/domain-policy.md
                   - API Management:
                       - Add API: skoala/gateway/api/index.md
-                      - Update/Delete API: skoala/gateway/api/update-api.md
-                      - API Policies: skoala/gateway/api/api-policy.md
+                      - Configure API Policy: skoala/gateway/api/api-policy.md
+                      - Import API: skoala/gateway/api/api-lead.md
                   - Service List:
                       - Manual Acess: skoala/gateway/service/manual-integrate.md
                       - Automatic nanotubes: skoala/gateway/service/auto-manage.md
