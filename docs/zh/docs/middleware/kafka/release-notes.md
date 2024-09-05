@@ -2,7 +2,13 @@
 
 本页列出 Kafka 消息队列的 Release Notes，便于您了解各版本的演进路径和特性变化
 
-*[mcamel-kafka]: mcamel 是 DaoCloud 所有中间件的开发代号，kafka 是提供分布式消息队列服务的中间件
+*[mcamel-kafka]: mcamel 是 DaoCloud 所有中间件的开发代号，kafka 
+
+## 2024-08-31
+
+### v0.18.0
+
+- **优化** 创建实例时不可选择异常的集群
 
 ## 2024-05-31
 
