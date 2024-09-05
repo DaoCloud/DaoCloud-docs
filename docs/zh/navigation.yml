@@ -914,6 +914,7 @@ nav:
                   - 创建网格参数说明: mspider/user-guide/service-mesh/params.md
               - 服务管理:
                   - mspider/user-guide/service-list/README.md
+                  - 接入虚拟机: mspider/user-guide/service-list/vm.md
                   - 从网格外部访问服务: mspider/user-guide/service-list/out-to-in.md
                   - 服务条目: mspider/user-guide/service-list/service-entry.md
                   - 一键修复: mspider/user-guide/service-list/diagnose.md
