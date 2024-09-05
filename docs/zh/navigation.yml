@@ -44,7 +44,7 @@ nav:
                       - 部署要求: install/commercial/deploy-requirements.md
                       - 前置检查: install/commercial/prepare.md
                       - 端口要求: install/commercial/port-requirements.md
-                      - 外接组件要求(非必需): 
+                      - 外接组件要求(非必需):
                           - 外接服务存储Binaries资源: install/commercial/external/external-binary.md
                           - 外接镜像仓库与Chart仓库: install/commercial/external/external-imageandchart.md
                           - 外接中间件服务: install/commercial/external/external-middlewares.md
@@ -99,7 +99,7 @@ nav:
                   - 安装和升级:
                       - 离线升级: amamba/offline-upgrade.md
                       - 部署工作台可插拔组件: amamba/pluggable-components.md
-                      - Jenkins 安装和配置: 
+                      - Jenkins 安装和配置:
                         - 安装: amamba/user-guide/pipeline/install-jenkins.md
                         - Jenkins 高可用方案: amamba/quickstart/jenkins-HA.md
                         - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
@@ -166,7 +166,7 @@ nav:
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
                   - 查看蓝绿发布任务: amamba/user-guide/release/check-bluegreen.md
-              - 代码仓库: 
+              - 代码仓库:
                   - 代码仓库管理: amamba/user-guide/git/git.md
               - 工具链集成:
                   - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
@@ -188,6 +188,7 @@ nav:
                       - 集成 Harbor 镜像安全扫描: amamba/quickstart/scan-with-harbor.md
                       - Jenkins 发布应用至虚拟机: amamba/user-guide/pipeline/cicd_vm.md
                       - 物理机/虚拟机集成Jenkins: amamba/quickstart/jenkins-integration.md
+                      - 流水线部署多云应用: amamba/user-guide/quickstart/pipeline-kairship.md
                   - 灰度发布实践:
                       - 基于 Contour 的灰度发布: amamba/quickstart/contour-argorollout.md
       - 容器:
@@ -342,7 +343,7 @@ nav:
                           - GPU 告警规则: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-alarm.md
                       - 使用 Volcano:
                           - 安装和使用 Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
-                          - 使用Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md 
+                          - 使用Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
                       - GPU 调度配置: kpanda/user-guide/gpu/gpu_scheduler_config.md
                   - 昇腾 NPU 管理:
                       - 昇腾 NPU 组件安装: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
@@ -434,7 +435,7 @@ nav:
                   - 镜像扫描: kangaroo/space/scan.md
               - 仓库集成:
                   - 仓库集成(工作空间): kangaroo/integrate/integrate-ws.md
-                  - 仓库集成(管理员): 
+                  - 仓库集成(管理员):
                       - 仓库集成(管理员): kangaroo/integrate/integrate-admin/integrate-admin.md
                       - 创建镜像空间: kangaroo/integrate/integrate-admin/registry-space.md
                       - 绑定/解绑工作空间: kangaroo/integrate/integrate-admin/bind-to-ws.md
@@ -490,7 +491,7 @@ nav:
               - 集成 Spiderpool:
                   - 介绍: network/modules/spiderpool/index.md
                   - Release Notes: network/modules/spiderpool/releasenotes.md
-                  - 安装: 
+                  - 安装:
                       - Spiderpool 安装: network/modules/spiderpool/install/install.md
                       - RDMA 环境准备及安装: network/modules/spiderpool/install/rdmapara.md
                       - 安装 Nvidia OFED 驱动: network/modules/spiderpool/install/ofed_driver.md
@@ -850,12 +851,12 @@ nav:
                       - 接入注册中心管理: skoala/trad-ms/integrated/index.md
                       - 微服务管理: skoala/trad-ms/integrated/manage-service.md
                       - 链路追踪: skoala/trad-ms/integrated/trace.md
-              - 插件中心: 
+              - 插件中心:
                   - 介绍: skoala/plugins/intro.md
                   - 插件应用:
                       - 云原生微服务使用JWT插件: skoala/best-practice/plugins/jwt.md
                       - 云原生网关使用JWT插件: skoala/best-practice/jwt.md
-                      - 云原生网关认证服务器: 
+                      - 云原生网关认证服务器:
                           - skoala/best-practice/auth-server.md
                           - 接入 AK/SK 认证 : skoala/best-practice/ak-sk-demo.md
                           - 接入 OIDC 认证 : skoala/best-practice/OIDC-auth.md
