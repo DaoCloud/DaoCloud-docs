@@ -17,25 +17,24 @@ aws-vpc-cni 是 AWS 为公有云提供的一种 Underlay 网络解决方案，�
 | 功能比较                  |        aws-vpc-cni                  |  Spiderpool + IPvlan  |
 |--------------------------|-------------------------------- | ------------------------------------------ |
 | 多 Underlay 网卡          |          ❌                     |      ✅ (多个跨子网的 Underlay 网卡)         |
-| 自定义路由                 |          ❌                     |      ✅ [route](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/route-zh_CN.md)  |
+| 自定义路由                 |          ❌                     |      ✅ [route](https://spidernet-io.github.io/spiderpool/v0.9/usage/route-zh_CN/)  |
 | 双 CNI 协同               |   支持多 CNI 网卡但不支持路由调协   |       ✅                                    |
-| 网络策略                  |   ✅ [aws-network-policy-agent](https://github.com/aws/aws-network-policy-agent) |      ✅ [cilium-chaining](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/cilium-chaining-zh_CN.md)               |
-| clusterIP                |   ✅ (kube-proxy)               |      ✅ ( kube-proxy 和 ebpf 两种方式)        |
-| Bandwidth                |            ❌                   |      ✅[Bandwidth 管理]([../../ipvlan_bandwidth-zh_CN.md](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/ipvlan_bandwidth-zh_CN.md))              |
+| 网络策略                  |   ✅ [aws-network-policy-agent](https://github.com/aws/aws-network-policy-agent) |      ✅ [cilium-chaining](https://spidernet-io.github.io/spiderpool/v0.9/usage/cilium-chaining-zh_CN/)               |
+| clusterIP                |   ✅ (kube-proxy)               |      ✅ ( kube-proxy 和 eBPF 两种方式)        |
+| Bandwidth                |            ❌                   |      ✅[Bandwidth 管理](https://spidernet-io.github.io/spiderpool/v0.9/usage/ipvlan_bandwidth-zh_CN/)           |
 | metrics                  |            ✅                   |      ✅                                    |
 | 双栈                      |  支持单IPv4、IPv6，不支持双栈      |      支持单 IPv4、IPv6, 双栈                 |
-| 可观测性                  |            ❌                   |      ✅(搭配 cilium hubble, 内核>=4.19.57)   |
-| 多集群                    |            无                   |      ✅ [Submariner](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/submariner-zh_CN.md)     |
+| 可观测性                  |            ❌                   |      ✅(搭配 Cilium Hubble, 内核 >= 4.19.57)   |
+| 多集群                    |            无                   |      ✅ [Submariner](https://spidernet-io.github.io/spiderpool/v0.9/usage/submariner-zh_CN/)     |
 | 搭配AWS 4/7层负载均衡      |            ✅                   |       ✅                                    |
 | 内核限制                  |            无                   |       >= 4.2 (IPvlan 内核限制)                |
-| 转发原理                  | underlay 纯路由 3 层转发          |       IPvlan 2 层                            |
+| 转发原理                  | Underlay 纯路由 3 层转发          |       IPvlan 2 层                            |
 | 组播, 多播                |            ❌                   |       ✅                                   |
-| 跨 vpc 访问               |           ✅                    |       ✅                                   |
+| 跨 VPC 访问               |           ✅                    |       ✅                                   |
 
 ## Spiderpool 针对阿里云存在的局限性提供的解决方案
 
 Spiderpool 的节点拓扑功能可以将 IPPool 与每个节点的每个网卡的可用 IP 形成绑定，同时还具备解决 MAC 地址合法性等功能。
-
 Spiderpool 能基于 IPVlan Underlay CNI 在阿里云环境上运行，并保证集群的东西向与南北向流量均正常，它的实现原理如下：
 
 1. 公有云下使用 Underlay 网络，但公有云的每个云服务器的每张网卡只能分配有限的 IP 地址，当应用运行在某个云服务器上时，需要同步获取到 VPC 网络中分配给该云服务器不同网卡的合法 IP 地址，才能实现通信。根据上述分配 IP 的特点，Spiderpool 的 CRD：`SpiderIPPool` 可以设置 nodeName，multusName 实现节点拓扑的功能，通过 IP 池与节点、IPvlan Multus 配置的亲和性，能最大化的利用与管理节点可用的 IP 地址，给应用分配到合法的 IP 地址，让应用在 VPC 网络内自由通信，包括 Pod 与 Pod 通信，Pod 与云服务器通信等。
