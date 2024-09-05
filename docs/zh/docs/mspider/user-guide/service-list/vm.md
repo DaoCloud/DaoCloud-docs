@@ -1,25 +1,20 @@
----
-hide:
-  - toc
----
+# 服务网格接入虚拟机
 
-# 虚拟机操作
-
-Mspider 服务网格提供虚拟机接入能力，能过打通虚拟机与集群之间流量并且进行流量治理。
+服务网格提供虚拟机接入能力，能够打通虚拟机与集群之间流量并且进行流量治理。
 
 ## 前提条件
-虚拟机需要能过访问上面的控制面 Istiod 服务与 东西网关服务。
+
+虚拟机需要能够访问控制面 Istiod 服务与东西网关服务。
+
 - 暴露控制面 Istiod，用于虚拟机连接（Istiod 默认为 LoadBalancer 服务，控制面集群需要支持分配负载均衡 IP）
 
-![暴露控制面](../../images/qianti.png)
+    ![暴露控制面](../../images/qianti.png)
 
 - 网格需要开启多云互联模式
 
-![多云互联](../../images/duoyun.png)
+    ![多云互联](../../images/duoyun.png)
 
-## 虚拟机接入步骤
-
-### 创建虚拟机服务
+## 创建虚拟机服务
 
 ![接入虚拟机](../../images/create-vm.png)
 
@@ -27,9 +22,9 @@ Mspider 服务网格提供虚拟机接入能力，能过打通虚拟机与集群
 
 ![接入虚拟机](../../images/create-vm2.png)
 
-## 虚拟机接入
+## 接入虚拟机
 
-选择对应虚拟机服务 ->   接入虚拟机 ->  复制命令行去虚拟机执行
+选择对应虚拟机服务，接入虚拟机，复制命令行去虚拟机执行：
 
 ![接入虚拟机](../../images/jieruvm.png)
 
@@ -40,12 +35,13 @@ Mspider 服务网格提供虚拟机接入能力，能过打通虚拟机与集群
 1. 通过控制平台，检查相应虚拟机工作状态是否健康
 2. 在虚拟机上查看虚拟机运行状态
 
-```bash
-# 查看 mspider vm agent 运行状态
-systemctl status mspider-vm-agent.service
-```
+    ```bash
+    # 查看 mspider vm agent 运行状态
+    systemctl status mspider-vm-agent.service
+    ```
 
-查看 Istio 边车日志
+查看 Istio 边车日志：
+
 ```bash
 # 查看虚拟机 istio 边车运行日志
 tail /var/log/istio/istio.err.log /var/log/istio/istio.log -Fq -n 100
@@ -61,7 +57,7 @@ tail /var/log/istio/istio.err.log /var/log/istio/istio.log -Fq -n 100
 
 
  ```bash
- # mspider 默认目录 /var/local/mspider
+# mspider 默认目录 /var/local/mspider
 [root@nicole-u-1 /var/local/mspider]# tree
 .
 ├── bin
@@ -102,7 +98,7 @@ tail /var/log/istio/istio.err.log /var/log/istio/istio.log -Fq -n 100
 
 ## 卸载虚拟机
 
-虚拟机停用 agent
+虚拟机停用 agent：
 
 ```bash
 systemctl stop mspider-vm-agent.service
@@ -114,14 +110,14 @@ systemctl daemon-reload
 rm -rf /var/local/mspider
 ```
 
-手动移除虚拟机相关资源
+手动移除虚拟机相关资源：
 
 ```bash
-# 1 虚拟机对应工作集群 删除 wg
+# 虚拟机对应工作集群 删除 wg
  kubectl get workloadgroup -n <vm-ns> 
  kubectl delete workloadgroup -n <vm-ns> <vm-wg>
  
-# 2. 托管集群，istio-system/ hostd- api-service 的 pod shell
+# 托管集群，istio-system/ hostd- api-service 的 pod shell
 kubectl get wls -n <vm-ns> 
 kubectl delete wls -n <vm-ns>  <[cluster]-[vmName]> 
 ```
