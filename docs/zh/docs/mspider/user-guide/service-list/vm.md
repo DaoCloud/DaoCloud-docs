@@ -35,10 +35,10 @@
 1. 通过控制平台，检查相应虚拟机工作状态是否健康
 2. 在虚拟机上查看虚拟机运行状态
 
-    ```bash
-    # 查看 mspider vm agent 运行状态
-    systemctl status mspider-vm-agent.service
-    ```
+```bash
+# 查看 mspider vm agent 运行状态
+systemctl status mspider-vm-agent.service
+```
 
 查看 Istio 边车日志：
 
@@ -56,7 +56,7 @@ tail /var/log/istio/istio.err.log /var/log/istio/istio.log -Fq -n 100
     手动更改配置请谨慎，更改不当将导致代理无法运行。
 
 
- ```bash
+```bash
 # mspider 默认目录 /var/local/mspider
 [root@nicole-u-1 /var/local/mspider]# tree
 .
@@ -94,7 +94,7 @@ tail /var/log/istio/istio.err.log /var/log/istio/istio.log -Fq -n 100
     
     # 重启 mspider-vm-agent
     systemctl restart mspider-vm-agent.service
- ```
+```
 
 ## 卸载虚拟机
 
