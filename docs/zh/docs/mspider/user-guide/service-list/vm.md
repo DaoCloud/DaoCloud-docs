@@ -40,13 +40,13 @@ Mspider 服务网格提供虚拟机接入能力，能过打通虚拟机与集群
 1. 通过控制平台，检查相应虚拟机工作状态是否健康
 2. 在虚拟机上查看虚拟机运行状态
 
-```yaml
+```bash
 # 查看 mspider vm agent 运行状态
 systemctl status mspider-vm-agent.service
 ```
 
 查看 Istio 边车日志
-```yaml
+```bash
 # 查看虚拟机 istio 边车运行日志
 tail /var/log/istio/istio.err.log /var/log/istio/istio.log -Fq -n 100
 ```
@@ -60,7 +60,7 @@ tail /var/log/istio/istio.err.log /var/log/istio/istio.log -Fq -n 100
     手动更改配置请谨慎，更改不当将导致代理无法运行。
 
 
- ```yaml
+ ```bash
  # mspider 默认目录 /var/local/mspider
 [root@nicole-u-1 /var/local/mspider]# tree
 .
@@ -104,7 +104,7 @@ tail /var/log/istio/istio.err.log /var/log/istio/istio.log -Fq -n 100
 
 虚拟机停用 agent
 
-```yaml
+```bash
 systemctl stop mspider-vm-agent.service
 systemctl disable mspider-vm-agent.service
 
@@ -116,12 +116,12 @@ rm -rf /var/local/mspider
 
 手动移除虚拟机相关资源
 
-```yaml
+```bash
 # 1 虚拟机对应工作集群 删除 wg
  kubectl get workloadgroup -n <vm-ns> 
  kubectl delete workloadgroup -n <vm-ns> <vm-wg>
  
-# 2. 托管集群，istio-system/ hostd- api-service 的 pod shell （https://docs.daocloud.io/mspider/troubleshoot/mesh-space-cannot-unbind.html#_3）
+# 2. 托管集群，istio-system/ hostd- api-service 的 pod shell
 kubectl get wls -n <vm-ns> 
 kubectl delete wls -n <vm-ns>  <[cluster]-[vmName]> 
 ```
