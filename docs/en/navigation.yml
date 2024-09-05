@@ -1131,6 +1131,7 @@ nav:
                       - Delete Notebook: baize/developer/notebooks/delete.md
                       - Notebook SSH Guide: baize/developer/notebooks/notebook-with-ssh.md
                       - baizectl CLI Guide: baize/developer/notebooks/baizectl.md
+                      - Shut down Idle Notebooks: baize/developer/notebooks/notebook-auto-close.md
                   - Job Center:
                       - Create Job: baize/developer/jobs/create.md
                       - Create Pytorch Job: baize/developer/jobs/pytorch.md

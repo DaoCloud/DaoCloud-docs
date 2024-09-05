@@ -18,15 +18,25 @@
 
 ### 界面化修改
 
-1. 在集群管理界面找到对应的工作集群，进入集群详情，选择 __Helm 应用__ ，在 `baize-system` 命名空间下找到 `baize-agent`：
+1. 在集群管理界面找到对应的工作集群，进入集群详情，选择 __Helm 应用__ ，在 `baize-system`
+   命名空间下找到 `baize-agent`，在右上角点击 __更新__ 按钮：
 
     ![baize-agent](../../images/notebook-idle.png)
 
-1. 点击 __更新__ ，按照如下配置修改：
+1. 如图修改 YAML 代码：
 
     ![baize-agent](../../images/notebook-idle02.png)
 
-1. 确认参数修改成功后，保存即可。
+    ```yaml
+    ...
+    notebook-controller:
+      culling_enabled: false
+      cull_idle_time: 120
+      idleness_check_period: 1
+    ...
+    ```
+
+1. 确认参数修改成功后，点击 **下一步** 和 **确定** 。
 
 ### 命令行修改
 
