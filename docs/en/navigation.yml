@@ -1130,6 +1130,7 @@ nav:
                       - View Notebook Workload: baize/developer/notebooks/view.md
                       - Delete Notebook: baize/developer/notebooks/delete.md
                       - Notebook SSH Guide: baize/developer/notebooks/notebook-with-ssh.md
+                      - Use Environments in Notebook: baize/developer/notebooks/notebook-with-envs.md
                       - baizectl CLI Guide: baize/developer/notebooks/baizectl.md
                       - Shut down Idle Notebooks: baize/developer/notebooks/notebook-auto-close.md
                   - Job Center:
@@ -1141,7 +1142,7 @@ nav:
                       - Job Analysis: baize/developer/jobs/tensorboard.md
                   - Data Management:
                       - Datasets: baize/developer/dataset/create-use-delete.md
-                      - Environments: baize/developer/dataset/conda.md
+                      - Environments: baize/developer/dataset/environments.md
                   - Model Service:
                       - Supported Models: baize/developer/inference/models.md
                       - Inference Service: baize/developer/inference/create.md
