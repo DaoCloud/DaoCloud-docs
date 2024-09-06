@@ -328,7 +328,7 @@ nav:
                           - Use NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                       - GPU Quotas: kpanda/user-guide/gpu/vgpu_quota.md
-                      - GPU DRA: kpanda/user-guide/gpu/dynamic-regulation.md
+                      - GPU Scheduling: kpanda/user-guide/gpu/dynamic-regulation.md
                       - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
                       - Use Volcano:
                           - Install and Use Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
