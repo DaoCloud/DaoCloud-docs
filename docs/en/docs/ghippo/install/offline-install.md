@@ -1,15 +1,24 @@
+---
+MTPE: WANG0608GitHub
+Date: 2024-09-05
+---
+
 # Offline Upgrade Global Management Module
 
-This page explains how to install or upgrade the global management module after
+This page explains how to install or upgrade the Global Management module after
 [downloading it from Download Center](../../download/modules/ghippo.md).
 
 !!! info
 
-    `ghippo` appearing in the commands or scripts below is the internally developed code name for the global management module.
+    `ghippo` appearing in the commands or scripts below is the internally developed code name for the Global Management module.
 
-## Synchronize image to the container registry
+## Load images from the installation package
 
-First, synchronize the image to the specified container registry through chart-syncer.
+You can load images using one of the two methods below. When an container registry is available
+in the environment, it is recommended to use chart-syncer to synchronize images to the repository,
+as this method is more efficient and convenient.
+
+### Sync images with the container registry
 
 1. Create load-image.yaml
 
@@ -81,7 +90,7 @@ First, synchronize the image to the specified container registry through chart-s
     charts-syncer sync --config load-image.yaml
     ```
 
-## Load image file
+### Load directly with Docker or containerd
 
 Unzip and load the image file.
 
@@ -115,13 +124,13 @@ Unzip and load the image file.
 
     After the loading is complete, the tag image is required to keep the Registry and Repository consistent with the installation.
 
-## upgrade
+## Upgrade
 
-There are two ways to upgrade. You can choose the corresponding upgrade plan according to the pre-operations:
+Upgrade Notes:
 
-!!! note
+=== "Upgrade from v0.11.x to ≥v0.12.0"
 
-    When upgrading from v0.11.x (or lower) to v0.12.0 (or higher), you need to change all keycloak keys in __bak.yaml__ to keycloakx.
+    When upgrading from v0.11.x (or lower versions) to v0.12.0 (or higher versions), it is necessary to change all keycloak keys in __bak.yaml__ to __keycloakx__.
 
     Replace the key:
 
@@ -139,12 +148,11 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
         ...
     ```
 
-!!! note  
+=== "Upgrade from v0.15.x to ≥v0.16.0"
 
-    When upgrading from v0.15.x (or lower) to v0.16.0 (or higher) versions,
-    the database connection parameters need to be modified.
+    When upgrading from v0.15.x (or lower versions) to v0.16.0 (or higher versions), you need to modify the database connection parameters.
 
-    Here is an example of modifying the database connection parameters:
+    Replace the key:
 
     ```yaml title="bak.yaml"
     USER-SUPPLIED VALUES:
@@ -169,7 +177,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
         port: 3306
     ```
 
-    Change it to:
+    with:
 
     ```yaml title="bak.yaml"
     USER-SUPPLIED VALUES:
@@ -189,9 +197,11 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
           dsn: {global.database.keycloakx.user}:{global.database.keycloakx.password}@tcp({global.database.host}:{global.database.port})/{global.database.keycloakx.dbname}?charset=utf8mb4
     ```
 
+There are two upgrade methods. You can choose the proper upgrade plan based on the above operations:
+
 === "upgrade via helm repo"
 
-    1. Check whether the global management helm repository exists.
+    1. Check whether the Global Management Helm repository exists.
 
         ```shell
         helm repo list | grep ghippo
@@ -203,19 +213,19 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
         Error: no repositories to show
         ```
 
-    1. Add the globally managed helm repository.
+    1. Add the Global Mnagement Helm repository.
 
         ```shell
         helm repo add ghippo http://{harbor url}/chartrepo/{project}
         ```
 
-    1. Update the globally managed helm repository.
+    1. Update the Global Mnagement Helm repository.
 
         ```shell
-        helm repo update ghippo # (1) 
+        helm repo update ghippo # (1)!
         ```
 
-        1. If the helm version is too low, it will fail. If it fails, please try to run helm update repo
+        1. If the Helm version is too low, it will fail. If it fails, please try to run Helm update repo
 
     1. Select the version of Global Management you want to install (the latest version is recommended).
 
@@ -224,26 +234,32 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
         ```
 
         ```none
-        [root@master ~]# helm search repo ghippo/ghippo --versions
-        NAME CHART VERSION APP VERSION DESCRIPTION
-        ghippo/ghippo 0.9.0 v0.9.0 A Helm chart for GHippo
+        NAME                   CHART VERSION  APP VERSION  DESCRIPTION
+        ghippo/ghippo  0.9.0          v0.9.0       A Helm chart for GHippo
         ...
         ```
 
     1. Back up the `--set` parameter.
 
-        Before upgrading the global management version, it is recommended that you run the following command to back up the `--set` parameter of the old version.
+        Before upgrading the Global Management version, it is recommended that you run the following command to back up the `--set` parameter of the old version.
 
         ```shell
         helm get values ​​ghippo -n ghippo-system -o yaml > bak.yaml
         ```
 
-    1. Run `helm upgrade` .
+    1. Update Ghippo CRD.
+
+        ```shell
+        helm pull ghippo/ghippo --version 0.9.0 && tar -zxf ghippo-0.9.0.tgz
+        kubectl apply -f ghippo/crds
+        ```
+
+    1. Run `helm upgrade`.
 
         Before upgrading, it is recommended that you override the __global.imageRegistry__ field in bak.yaml to the address of the currently used container registry.
 
         ```shell
-        export imageRegistry={your image registry}
+        export imageRegistry={your-container-registry}
         ```
 
         ```shell
@@ -258,13 +274,13 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
     1. Back up the `--set` parameter.
 
-        Before upgrading the global management version, it is recommended that you run the following command to back up the `--set` parameter of the old version.
+        Before upgrading the Global Management version, it is recommended that you run the following command to back up the `--set` parameter of the old version.
 
         ```shell
         helm get values ​​ghippo -n ghippo-system -o yaml > bak.yaml
         ```
 
-    1. Update ghippo crds
+    1. Update Ghippo CRD:
 
         ```shell
         kubectl apply -f ./crds
