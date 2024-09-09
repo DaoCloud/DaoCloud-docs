@@ -24,14 +24,14 @@ You can download the latest version from the [Download Center](../../download/in
 
 | CPU Architecture | Version | Download |
 | :--------------- | :------ | :------- |
-| AMD64 | v0.20.0 | [offline-v0.20.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.20.0-amd64.tar) |
-| ARM64 | v0.20.0 | [offline-v0.20.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.20.0-arm64.tar) |
+| AMD64 | v0.21.0 | [offline-v0.21.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-amd64.tar) |
+| ARM64 | v0.21.0 | [offline-v0.21.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-arm64.tar) |
 
 After downloading, extract the offline package.
 Take the amd64 architecture offline package as an example
 
 ```bash
-tar -xvf offline-v0.20.0-amd64.tar
+tar -xvf offline-v0.21.0-amd64.tar
 ```
 
 ### ISO Operating System Image Files (Required)
@@ -46,8 +46,8 @@ The ISO operating system image file needs to be configured in
 | :--------------- | :---------------------- | :-------- |
 | AMD64 | CentOS 7 | [CentOS-7-x86_64-DVD-2009.iso](https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso ) |
 |   | Redhat 7, 8, 9 | [assembly-field-downloads-page-content-61451](https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451) <br />Note: Redhat operating system requires a Redhat account to download |
-|   | Ubuntu 20.04 | [ubuntu-20.04.6-live-server-amd64.iso](https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso) |
-| | ubuntu-22.04.4 | [ubuntu-22.04.4-live-server-amd64.iso](https://releases.ubuntu.com/jammy/ubuntu-22.04.4-live-server-amd64.iso) |
+| | Ubuntu 20.04.6 LTS | [ubuntu-20.04.6-live-server-amd64.iso](https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso) |
+| | Ubuntu 22.04.4 LTS | [ubuntu-22.04.4-live-server-amd64.iso](https://releases.ubuntu.com/jammy/ubuntu-22.04.4-live-server-amd64.iso) |
 |   | UOS V20 (1020a) | [uniontechos-server-20-1020a-amd64.iso](https://cdimage-download.chinauos.com/uniontechos-server-20-1020a-amd64.iso) |
 |   | openEuler 22.03 | [openEuler-22.03-LTS-SP1-x86_64-dvd.iso](https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso) |
 |   | OracleLinux R9 U1 | [OracleLinux-R9-U1-x86_64-dvd.iso](https://yum.oracle.com/ISOS/OracleLinux/OL9/u1/x86_64/OracleLinux-R9-U1-x86_64-dvd.iso) |
@@ -58,8 +58,9 @@ The ISO operating system image file needs to be configured in
 
 !!! note
 
-    Kylin operating system requires providing personal information to download and use.
-    Select V10 (Sword) SP2 when downloading.
+    - It is recommended to install all operating systems in Server mode.
+    - The Kirin operating system requires personal information to be provided for download.
+      When downloading, please select V10 (Sword) SP2.
 
 ### osPackage Offline Packages (Required)
 
@@ -75,6 +76,23 @@ operating systems, which can be found at <https://github.com/kubean-io/kubean/re
 
 Currently, the installer version requires the osPackage offline package version to match.
 Download the osPackage offline package based on the corresponding version:
+
+=== "V0.21.0"
+
+    | Operating System | Download |
+    | :--------- | :------ |
+    | CentOS 7     | [os-pkgs-centos7-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-centos7-v0.18.5.tar.gz) |
+    | Redhat 8     | [os-pkgs-redhat8-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-redhat8-v0.18.5.tar.gz) |
+    | Redhat 7     | [os-pkgs-redhat7-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-redhat7-v0.18.5.tar.gz) |
+    | Redhat 9     | [os-pkgs-redhat9-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-redhat9-v0.18.5.tar.gz) |
+    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-ubuntu2004-v0.18.5.tar.gz) |
+    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-ubuntu2204-v0.18.5.tar.gz) |
+    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-openeuler22.03-v0.18.5.tar.gz) |
+    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-oracle9-v0.18.5.tar.gz) |
+    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-oracle8-v0.18.5.tar.gz) |
+    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.18.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-rocky9-v0.18.5.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-kylin-v10sp2-v0.18.5.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-kylin-v10sp3-v0.18.5.tar.gz) |
 
 === "V0.20.0"
 

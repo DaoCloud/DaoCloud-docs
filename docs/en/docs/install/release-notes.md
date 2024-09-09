@@ -15,6 +15,23 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2024-08-30
+
+### v0.21.0
+
+#### Improvements
+
+- **Improved** to allow configuration of CPU/memory detection thresholds.
+- **Improved** to allow front-end dependencies to be downloaded using the original address.
+- **Improved** to support component installation gating.
+- **Improved** to remove contour installation code.
+- **Improved** to support sharing a MySQL instance.
+- **Improved** to import files when upgrading gproduct.
+
+#### Fixes
+
+- **Fixed** an issue where values were parsed as empty due to grep not supporting PCRE.
+
 ## 2024-07-30
 
 ### v0.20.0

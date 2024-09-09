@@ -78,7 +78,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
     | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-kylin-v10sp2-v0.18.5.tar.gz) |
     | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-kylin-v10sp3-v0.18.5.tar.gz) |
 
-=== "V0.21.0"
+=== "V0.20.0"
 
     | 操作系统版本 | 点击下载 |
     | :--------- | :------ |
