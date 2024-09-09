@@ -14,8 +14,8 @@ hide:
 
 | 文件名称 | 版本 | 架构 | 文件大小 | 下载 | 更新日期 |
 | ------- | --- | ---- | ------ | --- | ------- |
-| offline-v0.21.0-amd64.tar | v0.21.0 | AMD 64 | 27.20GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-amd64.tar) | 2024-09-09 |
-| offline-v0.21.0-arm64.tar | v0.21.0 | <font color="green">ARM 64</font> | 23.99GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-arm64.tar) | 2024-09-09 |
+| offline-v0.21.0-amd64.tar | v0.21.0 | AMD 64 | 27.20 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-amd64.tar) | 2024-09-09 |
+| offline-v0.21.0-arm64.tar | v0.21.0 | <font color="green">ARM 64</font> | 23.99 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-arm64.tar) | 2024-09-09 |
 
 ## 校验
 
