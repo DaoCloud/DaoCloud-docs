@@ -10,7 +10,7 @@ hide:
 This page provides downloads for the offline package and checksum files for DCE 5.0 Community.
 
 [Return to Download Index](../index.md){ .md-button }
-[More Historical Versions](./dce5-installer-history.md){ .md-button }
+[Legacy Packages](./dce5-installer-history.md){ .md-button }
 
 ## Downloads
 
