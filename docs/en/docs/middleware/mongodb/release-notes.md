@@ -9,6 +9,19 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 *[Mcamel-MongoDB]: "mcamel" is the dev name for DaoCloud's middlewares, and "MongoDB" is a database middleware that provides services for documentation
 
+## 2024-08-31
+
+### v0.13.0
+
+!!! warning
+
+    Upgrading mongodb-operator to v0.10.0 will cause existing instances to restart.
+
+- **Improved** the process so that abnormal clusters cannot be selected when creating instances
+- **Improved** and set the default console access method for restored new instances as NodePort
+- **Upgraded** the mongodb-operator version to 0.10.0, with all basic images using ubi-minimal:8.6-994
+- **Fixed** the issue of failures when restoring MongoDB instances.
+
 ## 2024-07-31
 
 ### v0.12.0
