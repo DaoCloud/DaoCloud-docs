@@ -8,6 +8,28 @@ date: 2024-05-08
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version.
 
+## 2024-08-30
+
+### v0.30.0
+
+#### New Features
+
+- **Added** support for global pipeline templates.
+- **Added** support for pipeline group management.
+
+#### Improvements
+
+- **Improved** that after selecting v2 for the pipeline DAG, the next time entering that interface will default to v2.
+
+#### Fixes
+
+- **Fixed** an issue where GitOps failed to create the same Git repository in different workspaces,
+  requiring ArgoCD to be upgraded to v2.12.0, as the Addon offline package for v0.21.0 already
+  includes this version's Chart package.
+- **Fixed** an issue in obtaining the cloud-native gateway during gray release.
+- **Fixed** the incorrect template rendered by gitops-deploy.
+- **Fixed** an issue message when the native application fails to retrieve the routing list.
+
 ## 2024-07-30
 
 ### v0.29.0
@@ -54,7 +76,7 @@ the development and feature changes in each version.
 
 #### Known Issues
 
-- In v0.28.2, once pipeline webhooks are enabled, they cannot be disabled. An upgrade to v0.28.3 
+- In v0.28.2, once pipeline webhooks are enabled, they cannot be disabled. An upgrade to v0.28.3
   is required to resolve this issue.
 
 ## 2024-05-30
@@ -75,7 +97,7 @@ the development and feature changes in each version.
 
 #### Fixes
 
-- **Fixed** an error when updating SSH credentials.
+- **Fixed** an issue when updating SSH credentials.
 - **Fixed** an issue with incorrect pagination offset calculation.
 
 ## 2024-04-30
@@ -90,10 +112,10 @@ the development and feature changes in each version.
 
 #### Improvements
 
-- **Improved** Support searching across all namespaces for helm, olm, native applications, and canary release applications
-- **Improved** Add running status to workload list and when retrieving resources for workload types
-- **Improved** Support installation status of kube-app-manager
-- **Improved** Remove credentials when creating applications from Git/Jar
+- **Improved** support searching across all namespaces for helm, olm, native applications, and canary release applications
+- **Improved** running status to workload list and when retrieving resources for workload types
+- **Improved** support installation status of kube-app-manager
+- **Improved** to remove credentials when creating applications from Git/Jar
 
 #### Bug Fixes
 
@@ -142,7 +164,7 @@ the development and feature changes in each version.
 
 #### Fixed
 
-- **Fixed** Fixed the issue where creating an application with dryRun option still creates the application
+- **Fixed** an issue where creating an application with dryRun option still creates the application
 
 ## 2023-12-31
 
@@ -161,10 +183,10 @@ the development and feature changes in each version.
 #### Bug Fixes
 
 - **Fixed** image address for the contour plugin
-- **Fixed** an error when adding a resource type trait to an OAM application
+- **Fixed** an issue when adding a resource type trait to an OAM application
 - **Fixed** incorrect return value when rolling back a native application
 - **Fixed** an issue where an OAM application is not reconciled by the controller after rolling back
-- **Fixed** an error in modifying casc file when removing integration with SonarQube
+- **Fixed** an issue in modifying casc file when removing integration with SonarQube
 - **Fixed** an issue where instances can be queried across different workspaces
 - **Fixed** an issue of incorrect resource count displayed in the native application topology
 
@@ -270,7 +292,7 @@ the development and feature changes in each version.
 
 - **Improved** steps to integrate gitlab with jenkins credentials
 - **Improved** display of binding time and added a division for sonarqube instances with bound workspaces in the administrator view
-- **Improved** the issue of the cache not expiring in apiserver
+- **Fixed** an issue of the cache not expiring in apiserver
 
 ## 2022-06-30
 
@@ -289,9 +311,10 @@ the development and feature changes in each version.
 
 #### Fixes
 
-- **Fixed** an issue where an error occurred on the native application list page when the target cluster did not have the CRD (Custom Resource Definition) for native applications installed.
+- **Fixed** an issue where an error occurred on the native application list page when
+  the target cluster did not have the CRD (Custom Resource Definition) for native applications installed.
 - **Fixed** an issue where no values were modified when updating pipeline credentials, resulting in a null return when password information was not returned.
-- **Fixed** the problem where the orphan policy for multi-branch pipelines showed as -1 when it was empty.
+- **Fixed** an issue where the orphan policy for multi-branch pipelines showed as -1 when it was empty.
 
 #### Improvements
 
@@ -324,9 +347,9 @@ the development and feature changes in each version.
 
 #### Fixes
 
-- **Fixed** the issue where containers in container images didn't support underscores.
-- **Fixed** the error with replica numbers in blue-green deployments.
-- **Fixed** the problem where the orphan policy for multi-branch pipelines showed as -1 when it was empty.
+- **Fixed** an issue where containers in container images didn't support underscores.
+- **Fixed** an issue with replica numbers in blue-green deployments.
+- **Fixed** an issue where the orphan policy for multi-branch pipelines showed as -1 when it was empty.
 
 #### Improvements
 
