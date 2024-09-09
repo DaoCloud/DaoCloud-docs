@@ -881,6 +881,7 @@ nav:
                   - Parameters to create mesh: mspider/user-guide/service-mesh/params.md
               - Service Management:
                   - mspider/user-guide/service-list/README.md
+                  - Integrate VM: mspider/user-guide/service-list/vm.md
                   - Access Service out of Mesh: mspider/user-guide/service-list/out-to-in.md
                   - Service Entry: mspider/user-guide/service-list/service-entry.md
                   - One-Click Repair: mspider/user-guide/service-list/diagnose.md
