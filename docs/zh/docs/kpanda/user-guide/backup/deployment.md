@@ -20,23 +20,18 @@
 
 参考以下步骤，备份无状态工作负载 __dao-2048__ 。
 
-1. 进入容器管理模块，点击左侧导航栏上的 __备份恢复__ -> __应用备份__ ，进入 __应用备份__ 列表页面。
+1. 在左侧导航栏， 点击 __容器管理__ -> __备份恢复__ 。
 
-    ![集群列表](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/backupd20481.png)
+    ![集群列表](../../images/backupd20481.png)
 
-2. 在 __应用备份__ 列表页面，选择已经安装了 velero 和 __dao-2048__ 应用的集群。点击右上角的 __备份计划__ ，新建一个备份计划。
+2. 进入 __应用备份__ 列表页面，从集群下拉列表中选择已安装了 velero 和 __dao-2048__ 的集群。
+   点击右侧的 __创建备份计划__ 按钮。
 
-    ![应用备份](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/backupd20482.png)
+    ![应用备份](../../images/backupd20482.png)
 
 3. 参考下方说明填写备份配置。
 
-    - 名称：新建备份计划的名称。
-    - 源集群：计划执行应用备份的集群。
-    - 对象存储位置：在源集群安装 velero 时配置的对象存储的访问路径。
-    - 命名空间：需要进行备份的命名空间，支持多选。
-    - 高级配置：根据资源标签对命名空间内的特定资源进行备份如某个应用，或者备份时根据资源标签对命名空间内的特定资源不进行备份。
-
-    ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/backupd20483.png)
+    ![操作菜单](../../images/backupd20483.png)
 
 4. 参考下方说明设置备份执行频率，然后点击 __下一步__ 。
 
@@ -46,7 +41,7 @@
         - 直接复制：直接复制数据卷（PV）中的数据用于备份；
         - 使用 CSI 快照：使用 CSI 快照来备份数据卷（PV）。需要集群中有可用于备份的 CSI 快照类型。
 
-        ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/backupd20484.png)
+    ![操作菜单](../../images/backupd20484.png)
 
 5. 点击 __确定__ ，页面会自动返回应用备份计划列表，找到新建的 __dao-2048__ 备份计划，执行 __立即备份__ 操作。
 
