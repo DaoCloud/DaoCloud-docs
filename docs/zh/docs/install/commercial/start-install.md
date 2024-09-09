@@ -15,13 +15,13 @@
 
 | CPU 架构 | 版本 | 点击下载 |
 | :------- | :----- | :-----|
-| AMD64    | v0.20.0 | [offline-v0.20.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.20.0-amd64.tar) |
-| ARM64    | v0.20.0 | [offline-v0.20.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.20.0-arm64.tar) |
+| AMD64    | v0.21.0 | [offline-v0.21.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-amd64.tar) |
+| ARM64    | v0.21.0 | [offline-v0.21.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-arm64.tar) |
 
 下载完毕后解压离线包。以 amd64 架构离线包为例：
 
 ```bash
-tar -xvf offline-v0.20.0-amd64.tar
+tar -xvf offline-v0.21.0-amd64.tar
 ```
 
 ### ISO 操作系统镜像文件（必需）
@@ -34,8 +34,8 @@ ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](./c
 | :------- | :--------- | :------- |
 | AMD64    | CentOS 7 | [CentOS-7-x86_64-DVD-2009.iso](https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso) |
 | | Redhat 7、8、9 | [assembly-field-downloads-page-content-61451](https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451) <br />注意：Redhat 操作系统需要 Redhat 的账号才可以下载 |
-| | Ubuntu 20.04 | [ubuntu-20.04.6-live-server-amd64.iso](https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso) |
-| | ubuntu-22.04.4 | [ubuntu-22.04.4-live-server-amd64.iso](https://releases.ubuntu.com/jammy/ubuntu-22.04.4-live-server-amd64.iso) |
+| | Ubuntu 20.04.6 LTS | [ubuntu-20.04.6-live-server-amd64.iso](https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso) |
+| | Ubuntu 22.04.4 LTS | [ubuntu-22.04.4-live-server-amd64.iso](https://releases.ubuntu.com/jammy/ubuntu-22.04.4-live-server-amd64.iso) |
 | | 统信 UOS V20（1020a）| [uniontechos-server-20-1020a-amd64.iso](https://cdimage-download.chinauos.com/uniontechos-server-20-1020a-amd64.iso) |
 | | openEuler 22.03 | [openEuler-22.03-LTS-SP1-x86_64-dvd.iso](https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso) |
 | | Oracle Linux R9 U1 | [OracleLinux-R9-U1-x86_64-dvd.iso](https://yum.oracle.com/ISOS/OracleLinux/OL9/u1/x86_64/OracleLinux-R9-U1-x86_64-dvd.iso) |
@@ -46,7 +46,8 @@ ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](./c
 
 !!! note
 
-    麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2。
+    - 建议所有操作系统以 Server 模式安装
+    - 麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2
 
 ### osPackage 离线包（必需）
 
@@ -60,7 +61,24 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
 目前安装器版本要求 osPackage 离线包的版本与之匹配，请根据对应版本下载 osPackage 离线包：
 
-=== "V0.20.0"
+=== "V0.21.0"
+
+    | 操作系统版本 | 点击下载 |
+    | :--------- | :------ |
+    | CentOS 7     | [os-pkgs-centos7-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-centos7-v0.18.5.tar.gz) |
+    | Redhat 8     | [os-pkgs-redhat8-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-redhat8-v0.18.5.tar.gz) |
+    | Redhat 7     | [os-pkgs-redhat7-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-redhat7-v0.18.5.tar.gz) |
+    | Redhat 9     | [os-pkgs-redhat9-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-redhat9-v0.18.5.tar.gz) |
+    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-ubuntu2004-v0.18.5.tar.gz) |
+    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-ubuntu2204-v0.18.5.tar.gz) |
+    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-openeuler22.03-v0.18.5.tar.gz) |
+    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-oracle9-v0.18.5.tar.gz) |
+    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-oracle8-v0.18.5.tar.gz) |
+    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.18.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-rocky9-v0.18.5.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-kylin-v10sp2-v0.18.5.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-kylin-v10sp3-v0.18.5.tar.gz) |
+
+=== "V0.21.0"
 
     | 操作系统版本 | 点击下载 |
     | :--------- | :------ |
