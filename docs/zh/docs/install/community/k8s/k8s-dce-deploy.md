@@ -246,7 +246,7 @@
 
         在安装 Calico 前，请先创建 `calico-system` 命名空间。可参考[创建命名空间](../../../kpanda/user-guide/namespaces/createns.md)。
 
-    【请以官方安装方案为准。参考[官方 Calico 安装文档](https://docs.tigera.io/calico/latest/getting-started/kubernetes/self-managed-onprem/onpremises#install-calico)】
+    请以官方安装方案为准。参考[官方 Calico 安装文档](https://docs.tigera.io/calico/latest/getting-started/kubernetes/self-managed-onprem/onpremises#install-calico)。
 
     1. 下载 Calico 的部署清单文件:
 
