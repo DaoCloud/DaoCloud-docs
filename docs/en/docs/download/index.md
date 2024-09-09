@@ -44,9 +44,9 @@ DCE 5.0 provides comprehensive Addons for different use cases, which can be down
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
-| gpu-addon-offline-package-v0.20.0-amd64.tar.gz      | v0.20.0 | [:arrow_right: Go to Download](./addon/v0.20.0.md) | 2024-08-09 |
-| standard-addon-offline-package-v0.20.0-arm64.tar.gz | v0.20.0 | [:arrow_right: Go to Download](./addon/v0.20.0.md) | 2024-08-09 |
-| standard-addon-offline-package-v0.20.0-amd64.tar.gz | v0.20.0 | [:arrow_right: Go to Download](./addon/v0.20.0.md) | 2024-08-09 |
+| gpu-addon-offline-package-v0.21.0-amd64.tar.gz | v0.21.0 | [:arrow_right: Go to Download](./addon/v0.21.0.md) | 2024-09-07 |
+| standard-addon-offline-package-v0.21.0-arm64.tar.gz | v0.21.0 | [:arrow_right: Go to Download](./addon/v0.21.0.md) | 2024-09-07 |
+| standard-addon-offline-package-v0.21.0-amd64.tar.gz | v0.21.0 | [:arrow_right: Go to Download](./addon/v0.21.0.md) | 2024-09-07 |
 
 [More Historical Versions of Addons](./addon/history.md){ .md-button } 
 
