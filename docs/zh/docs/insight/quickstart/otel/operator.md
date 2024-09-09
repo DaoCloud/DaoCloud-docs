@@ -4,9 +4,9 @@
 
 ## 前提条件
 
-请确保 Insight Agent 已经就绪。如若没有，请参考[安装 insight-agent 采集数据](../install/install-agent.md)并确保以下三项就绪：
+请确保 insight-agent 已经就绪。如若没有，请参考[安装 insight-agent 采集数据](../install/install-agent.md)并确保以下三项就绪：
 
-- 为 Insight-agent 开启 trace 功能
+- 为 insight-agent 开启 trace 功能
 - trace 数据的地址以及端口是否填写正确
 - deployment/insight-agent-opentelemetry-operator 和
   deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪
@@ -15,7 +15,7 @@
 
 !!! tip
 
-    从 Insight v0.22.0 版本开始，不再需要手动安装 Instrumentation CR。
+    从 [Insight v0.22.0](../../intro/releasenote.md#v0220) 开始，不再需要手动安装 Instrumentation CR。
 
 在 insight-system 命名空间下安装，不同版本之间有一些细小的差别。
 
@@ -233,15 +233,15 @@
     EOF
     ```
 
-## 与服务网格产品 Mspider 链路串联场景
+## 与服务网格链路串联场景
 
 如果您开启了服务网格的链路追踪能力，需要额外增加一个环境变量注入的配置：
 
 ### 操作步骤如下
 
 1. 登录 DCE5.0，进入 __容器管理__ 后选择进入目标集群，
-2. 点击左侧导航栏选择 __自定义资源__ ，查找 __instrumentations.opentelemetry.io__ 后进入详情页。
-3. 选择 __insight-system__ 命名空间后，编辑 __insight-opentelemetry-autoinstrumentation__ ，在 __spec:env:__ 下添加以下内容：
+2. 点击左侧导航栏选择 __自定义资源__ ，找到 __instrumentations.opentelemetry.io__ 后进入详情页。
+3. 选择 __insight-system__ 命名空间后，编辑 __insight-opentelemetry-autoinstrumentation__ ，在 spec:env: 下添加以下内容：
 
     ```yaml
         - name: OTEL_SERVICE_NAME
@@ -252,7 +252,7 @@
 
     ![otel-mesh](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/otel-mesh.png)
 
-=== "完整示例如下（For Insight v0.21.x）"
+    完整的命令如下（For Insight v0.21.x）：
 
     ```bash
     K8S_CLUSTER_UID=$(kubectl get namespace kube-system -o jsonpath='{.metadata.uid}')
@@ -306,52 +306,55 @@
 
 ## 添加注解，自动接入链路
 
-以上就绪之后，您就可以通过注解（Annotation）方式为应用程序接入链路追踪了，Otel 目前支持通过注解的方式接入链路。根据服务语言，需要添加上不同的 pod annotations。
-每个服务可添加两类注解之一：
+以上就绪之后，您就可以通过注解（Annotation）方式为应用程序接入链路追踪了，OTel 目前支持通过注解的方式接入链路。
+根据服务语言，需要添加上不同的 pod annotations。每个服务可添加两类注解之一：
 
 - 只注入环境变量注解
 
     这类注解只有一个，用于添加 otel 相关的环境变量，比如链路上报地址、容器所在的集群 id、命名空间等（这个注解在应用不支持自动探针语言时十分有用）
 
-    ```console
+    ```yaml
     instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
     ```
 
-    其中 value 被 / 分成两部分，第一个值 (insight-system) 是上一步安装的 CR 的命名空间，第二个值 (insight-opentelemetry-autoinstrumentation) 是这个 CR 的名字。
+    其中 value 被 `/` 分成两部分，第一个值 (insight-system) 是上一步安装的 CR 的命名空间，
+    第二个值 (insight-opentelemetry-autoinstrumentation) 是这个 CR 的名字。
 
 - 自动探针注入以及环境变量注入注解
 
-    这类注解目前有 4 个，分别对应 4 种不同的编程语言：java、nodejs、python、dotnet，使用它后就会对 spec.pod 下的第一个容器注入自动探针以及 otel 默认环境变量：
+    这类注解目前有 4 个，分别对应 4 种不同的编程语言：java、nodejs、python、dotnet，
+    使用它后就会对 spec.pod 下的第一个容器注入自动探针以及 otel 默认环境变量：
 
     === "Java 应用"
 
-        ```bash
-          instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
+        ```yaml
+        instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
     === "NodeJs 应用"
 
-        ```bash
+        ```yaml
         instrumentation.opentelemetry.io/inject-nodejs: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
     === "Python 应用"
 
-        ```bash
+        ```yaml
         instrumentation.opentelemetry.io/inject-python: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
     === "Dotnet 应用"
 
-        ```bash
+        ```yaml
         instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
     === "Golang 应用"
 
-        由于 Go 自动检测需要设置 [OTEL_GO_AUTO_TARGET_EXE](https://github.com/open-telemetry/opentelemetry-go-instrumentation/blob/main/docs/how-it-works.md), 因此您必须通过注解或 Instrumentation 资源提供有效的可执行路径。未设置此值会导致 Go 自动检测注入中止，从而导致接入链路失败。
+        由于 Go 自动检测需要设置 [OTEL_GO_AUTO_TARGET_EXE](https://github.com/open-telemetry/opentelemetry-go-instrumentation/blob/main/docs/how-it-works.md)，
+        因此您必须通过注解或 Instrumentation 资源提供有效的可执行路径。未设置此值会导致 Go 自动检测注入中止，从而导致接入链路失败。
 
-        ```bash
+        ```yaml
         instrumentation.opentelemetry.io/inject-go: "true"
         instrumentation.opentelemetry.io/otel-go-auto-target-exe: "/path/to/container/executable"
         ```
@@ -366,17 +369,18 @@
 
 !!! tip
 
-    opentelemetry operator 在注入探针时会自动添加一些 OTEL 相关环境变量，同时也支持这些环境变量的覆盖。这些环境变量的覆盖优先级：
+    OpenTelemetry Operator 在注入探针时会自动添加一些 OTel 相关环境变量，同时也支持这些环境变量的覆盖。这些环境变量的覆盖优先级：
 
-    original container env vars -> language specific env vars -> common env vars -> instrument spec configs' vars.
+    ```text
+    original container env vars -> language specific env vars -> common env vars -> instrument spec configs' vars
+    ```
 
-    但是需要避免手动覆盖 OTEL_RESOURCE_ATTRIBUTES_NODE_NAME, 它在 operator 内部作为一个 Pod 是否已经注入探针的标识，如果手动
-    添加了，探针可能无法注入。
-
+    但是需要避免手动覆盖 OTEL_RESOURCE_ATTRIBUTES_NODE_NAME，它在 Operator 内部作为一个
+    Pod 是否已经注入探针的标识，如果手动添加了，探针可能无法注入。
 
 ## 自动注入示例 Demo
 
-注意这个 annotations 是加在 spec.annotations 下的。
+注意这个 `annotations` 是加在 spec.annotations 下的。
 
 ```yaml
 apiVersion: apps/v1
@@ -405,7 +409,7 @@ spec:
             protocol: TCP
 ```
 
-最终生成的 Yaml 内容如下：
+最终生成的 YAML 内容如下：
 
 ```yaml
 apiVersion: v1
