@@ -347,6 +347,23 @@
         instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
+    === "Golang 应用"
+
+        由于 Go 自动检测需要设置 [OTEL_GO_AUTO_TARGET_EXE](https://github.com/open-telemetry/opentelemetry-go-instrumentation/blob/main/docs/how-it-works.md), 因此您必须通过注解或 Instrumentation 资源提供有效的可执行路径。未设置此值会导致 Go 自动检测注入中止，从而导致接入链路失败。
+
+        ```bash
+        instrumentation.opentelemetry.io/inject-go: "true"
+        instrumentation.opentelemetry.io/otel-go-auto-target-exe: "/path/to/container/executable"
+        ```
+        
+        Go 自动检测也需要提升权限。以下权限是自动设置的并且是必需的。
+        
+        ```yaml
+        securityContext:
+          privileged: true
+          runAsUser: 0
+        ```
+
 !!! tip
 
     opentelemetry operator 在注入探针时会自动添加一些 OTEL 相关环境变量，同时也支持这些环境变量的覆盖。这些环境变量的覆盖优先级：
