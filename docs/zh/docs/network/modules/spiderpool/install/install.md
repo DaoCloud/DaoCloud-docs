@@ -44,40 +44,39 @@
     上图中的各项参数说明：
 
     - `Multus Setting` -> `MultusCNI` -> `Install Multus CNI`：启用 Multus 安装。如果您已经安装了 Multus，则可以将其设置为 false。默认为 true。
-    - `Multus Setting` -> `MultusCNI` -> `Default CNI Name`：集群默认 CNI 名称。 默认为空，如果该值为空，Spiderpool 将根据/etc/cni/net.d/ 中已有的 CNI conf 文件自动获取默认 CNI。
+    - `Multus Setting` -> `MultusCNI` -> `Default CNI Name`：集群默认 CNI 名称。 默认为空，如果该值为空，Spiderpool 将根据/etc/cni/net.d/ 中已有的 CNI conf 文件自动获取默认 CNI, DCE5 集群推荐默认为空。
     - `Multus Setting` -> `Multus Image` -> `repository`：设置 Multus 的镜像仓库地址，默认已经填写了可用的在线仓库，如果是私有化环境，可修改为私有仓库地址。
   
     ![spiderpool install4](../../../images/spiderpool-install4.png)
 
     上图中的各项参数说明：
 
-    - `SriovCNI` -> `Install Sriov-CNI`：开启安装 SriovCNI，如果您已经安装了 SriovCNI，则默认为 false
-    - `SriovCNI` -> `Image` -> `Operator repository`：设置镜像名，可使用默认值
-    - `SriovCNI` -> `Image` -> `SriovCni repository`：设置镜像名，可使用默认值
-    - `SriovCNI` -> `Image` -> `SriovDevicePlugin repository`：设置镜像名，可使用默认值
-    - `SriovCNI` -> `Image` -> `SriovConfigDaemon repository`：设置镜像名，可使用默认值
-    - `SriovCNI` -> `Image` -> `IbSriovCni repository`：设置镜像名，可使用默认值
-    - `SriovCNI` -> `Image` -> `ResourcesInjector repository`：设置镜像名，可使用默认值
-    - `SriovCNI` -> `Image` -> `Webhook repository`：设置镜像名，可使用默认值
+    - `Sriov-Operator` -> `Install Sriov-Operator`：开启安装 Sriov-operator，Sriov-operator 用于帮助安装 sriov-cni，sriov-device-plugin 等组件。如果您是在建设 AI 集群场景下，需要基于 SR-IOV 技术给容器提供 RDMA 通信（包括 Roce 和 Infiniband）与加速能力，推荐安装。注意: 建议 Sriov-operator 不要和 k8s-rdma-shared-dev-plugin 同时安装。
+    - `Sriov-Operator` -> `Image` -> `Operator repository`：设置镜像名，可使用默认值。operator 用于帮助安装所有 sriov 组件。
+    - `Sriov-Operator` -> `Image` -> `SriovCni repository`：设置镜像名，可使用默认值。用于帮助安装 sriov-cni CNI 二进制到每个节点。
+    - `Sriov-Operator` -> `Image` -> `SriovDevicePlugin repository`：设置镜像名，可使用默认值。用于发现主机上的 srivo device 资源，并上报给 kubelet。
+    - `Sriov-Operator` -> `Image` -> `SriovConfigDaemon repository`：设置镜像名，可使用默认值。用于配置主机上的 sriov 网络配置，比如启用 SR-IOV 功能等。
+    - `Sriov-Operator` -> `Image` -> `IbSriovCni repository`：设置镜像名，可使用默认值。用于安装 ib-sriov-cni CNI 二进制到每个节点。
+    - `Sriov-Operator` -> `Image` -> `ResourcesInjector repository`：设置镜像名，可使用默认值。基于 webHook 可实现自动更新 Pod 的网络资源(主要是 sriov 网络资源)配置。
+    - `Sriov-Operator` -> `Image` -> `Webhook repository`：设置镜像名，可使用默认值。webhook 组件完成资源的校验和更新。
 
     ![spiderpool install5](../../../images/spiderpool-install5.png)
 
     上图中的各项参数说明：
 
-    - `Rdma` -> `RdmaSharedDevicePlugin` -> `Install RdmaSharedDevicePlugin`：开启安装 RDMA 共享设备插件。
-      基于 Macvlan 或 IPVLAN 使用，如果您的节点上已经安装了 RDMA 共享设备，并打算使用，则可以将其设置为开启，默认为关闭状态。
+    - `Rdma` -> `RdmaSharedDevicePlugin` -> `Install RdmaSharedDevicePlugin`：开启安装 RDMA k8s-shared-dev-plugin 组件。
+      并搭配 Macvlan 或 IPVlan CNI 将 rdma 设备共享给容器使用。如果您是在建设 AI 集群，推荐安装。注意: 建议 RdmaSharedDevicePlugin 不要和 Sriov-Operator 同时安装。
     - `Rdma` -> `RdmaSharedDevicePlugin` -> `Image repository`：设置镜像名，可使用默认值。
-    - `Rdma` -> `RdmaSharedDevicePlugin` -> `RdmaSharedDevicePlugin Config` -> `resourceName`：配置资源名称，在资源前缀的范围内必须是唯一的。
-    - `Rdma` -> `RdmaSharedDevicePlugin` -> `RdmaSharedDevicePlugin Config` -> `vendors`：配置目标设备的 vendor，可使用默认值。
-    - `Rdma` -> `RdmaSharedDevicePlugin` -> `RdmaSharedDevicePlugin Config` -> `deviceIDs`：配置要选择设备的 devices ID 列表，可使用默认值。
+    - `Rdma` -> `RdmaSharedDevicePlugin` -> `RdmaSharedDevicePlugin Config` -> `resourceName`：配置 k8s-rdma-shared-dev-plugin 资源名称，名称集群内唯一，用于给 Pod 分配 rdma 资源。
+    - `Rdma` -> `RdmaSharedDevicePlugin` -> `RdmaSharedDevicePlugin Config` -> `vendors`：配置 rdma 共享设备的 vendor，可使用默认值。用于发现主机上的 rdma 设备。
+    - `Rdma` -> `RdmaSharedDevicePlugin` -> `RdmaSharedDevicePlugin Config` -> `deviceIDs`：配置 rdma 共享设备的 devices ID 列表，可使用默认值。用于发现主机上的 rdma 设备。
   
     ![spiderpool install6](../../../images/spiderpool-install6.png)
 
     上图中的各项参数说明：
 
     - `CNI-Plugins` -> `Image` -> `repository`：设置镜像名，可使用默认值。
-    - `install CNI-Plugins`：开启安装 CNI 插件，给每个节点安装一个二进制的 CNI(macvlan/ipvlan等) 插件，如果你还未安装，则可以将其设置为 true。默认为 false。
-    - `install RDMA-CNI`：开启安装 RDMA CNI，给每个节点安装一个二进制的 RDMA-CNI 插件，如果你还未安装，则可以将其设置为 true。默认为 true。
+    - `install CNI-Plugins`：开启安装 CNI 插件，给每个节点安装 CNI 二进制文件(macvlan/ipvlan等)。如果你还未安装，则可以将其设置为 true。默认为 false。
     - `IP Family Setting` -> `enable IPv4`：开启 IPv4 支持。若开启，在给 pod 分配 IP 时，会尝试分配 IPv4 地址，否则会导致 Pod 启动失败。
       所以，请开启 `Cluster Defalt Ippool Installation` -> `install IPv4 ippool`，以创建集群的默认 IPv4 池。
     - `IP Family Setting` -> `enable IPv6`：开启 IPv6 支持。若开启，在给 pod 分配 IP 时，会尝试分配 IPv6 地址，否则会导致 Pod 启动失败。
