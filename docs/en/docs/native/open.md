@@ -804,7 +804,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Knative Kubernetes-based serverless architecture solution v1.8.0 release (CNCF project)](https://github.com/knative/serving/releases/tag/knative-v1.8.0)
 
-     The main new features of this version: modify the default domain, upgrade HPA to version v2, allow setting seccompProfile to enable the use of restricted security profiles, the minimum k8s support version is upgraded to v1.23, the reconciliation timeout is increased to 30 seconds, and EmptyDir is enabled by default Volume feature parameters.
+     The main new features of this version: modify the default domain, upgrade HPA to v2, allow setting seccompProfile to enable the use of restricted security profiles, the minimum k8s support version is upgraded to v1.23, the reconciliation timeout is increased to 30 seconds, and EmptyDir is enabled by default Volume feature parameters.
 
 - [Koordinator cloud native hybrid system v1.0 released](https://github.com/koordinator-sh/koordinator/releases/tag/v1.0.0)
 

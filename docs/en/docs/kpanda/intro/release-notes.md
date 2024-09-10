@@ -10,6 +10,75 @@ understand the evolution path and feature changes from release to release.
 
 *[kpanda]: Internal development codename for DaoCloud container management
 
+## 2024-08-30
+
+### v0.31.0
+
+#### New Features
+
+- **Added** support for heterogeneous GPUs, including Metax GPUs.
+- **Added** support for installing Red Hat 9.2 driver images via GPU operator for heterogeneous GPUs.
+- **Added** functionality to check and remind users of the validity period of cluster access certificates.
+- **Added** support for viewing Helm content and generated orchestration files directly in the UI.
+
+#### Improvements
+
+- **Improved** the audit logs for switching GPU modes on nodes.
+- **Improved** the layout of the NPU panel.
+- **Improved** the wording on the GPU resource interface.
+- **Improved** the issue where GPU labels on nodes were not removed until three minutes after the gpu-operator was uninstalled.
+- **Improved** documentation for GPU metric alert operations.
+- **Improved** the handling of a single GPU failure in multi-GPU scenarios, resolving the "UnexpectedAdmissionError" status for Pods during workload scheduling.
+- **Improved** the access method for work clusters created by Kubean to use ServiceAccount Token authentication.
+- **Improved** the removal of LeaseController from cluster_controller.
+- **Improved** the kpanda-controller-manager to add some business-related monitoring metrics.
+- **Improved** the repo_controller to include business monitoring metrics for Repo synchronization/downloads.
+- **Improved** the cluster_setting_controller to add monitoring metrics for plugin synchronization.
+- **Improved** the removal of informerFactory from GPUSchedulerController.
+- **Improved** the multi-controller to allow specifying whether to enable or disable Controllers.
+- **Improved** the logic in cluster_status_controller by introducing successThreshold and failureThreshold.
+- **Improved** the introduction of parameters to control concurrency for Controllers.
+- **Improved** unified logging output levels.
+- **Improved** the time for re-queuing controllers.
+- **Improved** the binding-syner Controller to allow specifying whether to enable or disable it.
+- **Improved** the default version of custom resource CRDs.
+- **Improved** the service list to support searching by service name, access method, and access port.
+- **Improved** the experience of node time consistency during Kpanda cluster installation.
+- **Improved** to prohibit concurrency in Helm lifecycle operations.
+- **Improved** to add K8s orchestration confirmation during Helm installation.
+- **Improved** the workload rollback feature to display detailed version information.
+
+#### Fixes
+
+- **Fixed** the inconsistency between GPU memory usage of GPU driver Pods and the information displayed in the application.
+- **Fixed** an issue where the vGPU mode switched to full card mode after shutting down and restarting the VM.
+- **Fixed** the loss of labels on nodes after enabling NPU virtualization.
+- **Fixed** the incorrect display of GPU utilization rates in the GPU Pod dashboard.
+- **Fixed** the incorrect display of GPU memory usage/rates in the GPU Pod dashboard.
+- **Fixed** an issue where monitoring metrics did not display data when creating workloads using Ascend cards.
+- **Fixed** an issue where changes to deviceSplitCount in vGPU mode were not effective.
+- **Fixed** an issue where the page could not reflect the memory size when 5000 was entered in vGPU mode.
+- **Fixed** an issue where the GPU type dropdown for Addon plugins under the cluster settings menu did not display information related to MIG.
+- **Fixed** the problem of continuous crashes when restarting nodes with GPUs or upgrading the driver pod for vgpu-device-plugin.
+- **Fixed** the inconsistency between GPU memory quota units and memory quota units.
+- **Fixed** the failure to update Go dependencies due to conflicts with the otel dependency.
+- **Fixed** an issue where the cloudshell CRD timeout page still prompted for reconnection.
+- **Fixed** an issue where users with clusteradmin permissions (without global service cluster permissions) could directly access the details page of the global service cluster from the recent operations -> cluster operations page.
+- **Fixed** the 403 error when users with Namespace Admin permissions viewed basic information about container configurations on workload detail pages.
+- **Fixed** an issue where the NS quota was displayed, but the edit page data was empty.
+- **Fixed** the inconsistency between the image addresses displayed on the container group detail page and the workload detail page.
+- **Fixed** an issue where the port information was not displayed correctly when entering the health check page of the container configuration after updating the insight-ui stateless workload.
+- **Fixed** the abnormal display issue of the kubeproxy version on nodes.
+- **Fixed** an issue where DCE5-0.19 had problems recognizing the system code when accessing nodes or creating clusters on Ubuntu 22.04.
+- **Fixed** the unknown status issue when creating Helm applications.
+- **Fixed** the initial status of applications displayed as failed when creating Helm applications in work clusters.
+- **Fixed** an issue where the status of readiness waiting configuration was not recorded during the update of Helm applications.
+- **Fixed** an issue where enabling readiness waiting for sub-cluster installation of Helm applications failed, and the Helm application status remained in installation.
+
+**Known Issues**
+
+- **Fixed** the version mismatch between kpanda front-end and back-end, which could cause the vGPU mode to switch to full card mode after shutting down and restarting the VM.
+
 ## 2024-07-31
 
 ### v0.30.0
@@ -35,7 +104,7 @@ understand the evolution path and feature changes from release to release.
 - **Improved** interface calls for obtaining installation configurations when installing Helm charts.
 - **Improved** in addon-pack charts, images support specifying the architecture for pulling images
   via the `--platform` flag.
-- **Improved** decoupling of helm controller from cluster service and rbac service and other optimizations.
+- **Improved** decoupling of helm controller from cluster service and rbac service and other improvements.
 - **Improved** experience when switching GPU modes by adding switching status.
 - **Improved** guide users on how to switch GPU modes when installing nvidia-vgpu and gpu-operator.
 - **Fixed** misunderstanding issues when mig single mode was recognized as full card and used by users.
@@ -183,7 +252,7 @@ understand the evolution path and feature changes from release to release.
 - **Fixed** an issue with incorrect image addresses in synchronized chart packages when relocateContainerImages is set to false in charts-syncer
 - **Fixed** an issue with inability to restore modified PVC data after successful restore of sts+pvc backup
 - **Fixed** backup failure when creating backup policy without backing up data volumes, but including PVs in backup resources
-- **Fixed** an issue with always returning 0 available resources in VGPU mode
+- **Fixed** an issue with always returning 0 available resources in vGPU mode
 - **Fixed** an issue with GPU type displayed as MIG Mixed MIG Single in node details page under mig mixed mode
 - **Fixed** an issue with AI processor count always showing total value in ascend monitoring dashboard
 - **Fixed** inconsistency between labels on nodes and GPU types displayed in node details page
@@ -257,7 +326,7 @@ understand the evolution path and feature changes from release to release.
 - **Improved** availability of GPU node switching, reducing switch time to within 2 seconds
 - **Improved** logic for GPU mode switching
 - **Improved** documentation for GPU-operator installation failure in Ubuntu environment
-- **Improved** Deep review and optimization of GPU dashboard (including VGPU, MIG, and whole GPU card)
+- **Improved** deep review and optimization of GPU dashboard (including vGPU, MIG, and whole GPU)
 - **Improved** functionality related to GPU statistics at node level using custom metrics
 - **Improved** latency when accessing drop-down menus for creating PVCs, network policies, and routing in cluster details page for large-scale clusters
 - **Improved** browser freeze issue when switching namespaces after adding forwarding rules
@@ -269,20 +338,20 @@ understand the evolution path and feature changes from release to release.
 
 - **Fixed** an issue where crontab configuration with cron expression caused inability
   to modify CronJob configuration
-- **Fixed** Infinite loop issue in installer caused by Redis Sentinel configuration
-- **Fixed** Refresh loop issue in console (cloudshell) reconnection mechanism, affecting command execution
-- **Fixed** Incorrect display of container CIDR after integration with DCE4
-- **Fixed** Incorrect image address in online upgrade of installer for kcoral image
-- **Fixed** Failure to restore Job during backup recovery
+- **Fixed** infinite loop issue in installer caused by Redis Sentinel configuration
+- **Fixed** refresh loop issue in console (cloudshell) reconnection mechanism, affecting command execution
+- **Fixed** incorrect display of container CIDR after integration with DCE4
+- **Fixed** incorrect image address in online upgrade of installer for kcoral image
+- **Fixed** failure to restore Job during backup recovery
 - **Fixed** an issue where enabling both HPA and CronHPA resulted in CronHPA being overwritten
-- **Fixed** Ineffective selection of installing Insight plugin during cluster creation in kpanda
-- **Fixed** Inability to upgrade current global cluster despite the page showing upgrade availability
-- **Fixed** Inability to set multiple lines in calico_node_extra_envs in Advanced Settings during cluster creation
-- **Fixed** Abnormal display of memory usage and other related metrics in cluster inspection report for pods
-- **Fixed** Failure to filter deleted pod information in NVIDIA GPU Pod dashboard in Pod filtering
-- **Fixed** Display issue where username and password fields still appeared
+- **Fixed** ineffective selection of installing Insight plugin during cluster creation in kpanda
+- **Fixed** inability to upgrade current global cluster despite the page showing upgrade availability
+- **Fixed** inability to set multiple lines in calico_node_extra_envs in Advanced Settings during cluster creation
+- **Fixed** abnormal display of memory usage and other related metrics in cluster inspection report for pods
+- **Fixed** failure to filter deleted pod information in NVIDIA GPU Pod dashboard in Pod filtering
+- **Fixed** display issue where username and password fields still appeared
   when unified password was disabled during cluster creation
-- **Fixed** Failure to create cluster when enabling kernel tuning for new cluster
+- **Fixed** failure to create cluster when enabling kernel tuning for new cluster
 
 ## 2023-12-31
 
@@ -713,7 +782,7 @@ understand the evolution path and feature changes from release to release.
   the user’s requirement of configuring multiple network cards separately for workload configuration.
 - **Added** support to view the operation log of the creation process after the failure of cluster creation,
   to help users quickly locate the fault.
-- **Added** Stateful workloads support the use of dynamic data volume templates.
+- **Added** StatefulSets support the use of dynamic data volume templates.
 - **Added** Create cluster, create Secret, create Ingress, edit the information verification of namespace quota,
   help guide the user to input the correct configuration parameters, and reduce the user’s failure experience
   of creating jobs.

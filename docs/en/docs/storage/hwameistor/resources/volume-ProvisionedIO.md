@@ -61,7 +61,7 @@ For more information, see [Kubernetes official documentation](https://kubernetes
 
 ## Create a Deployment with PVC
 
-1. In the left navigation bar, select **Workloads** -> **Stateless Workloads**, and click the **Create from Image** button in the upper left corner.
+1. In the left navigation bar, select **Workloads** -> **Deployments**, and click the **Create from Image** button in the upper left corner.
 
     <!-- Add screenshot later -->
 

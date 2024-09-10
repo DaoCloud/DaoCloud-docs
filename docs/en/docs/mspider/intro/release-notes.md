@@ -12,6 +12,25 @@ providing convenience for users to learn about the evolution path and feature ch
 
 *[mspider]: Internal development codename for DaoCloud Service Mesh
 
+## 2024-09-02
+
+### v0.29.0
+
+#### Features
+
+- **Added** support for managed meshes to quickly synchronize traffic management policies (VS, DR, Gateway)
+  of worker clusters to the control plane and provide online viewing capabilities.
+- **Added** a feature to inject waypoint and ztunnel sidecar components under the Ambient Mesh mode.
+
+#### Fixes
+
+- **Fixed** an issue with the connectivity detection feature of the mesh network in offline environments due to missing necessary images.
+- **Fixed** an issue of missing `GatewayAPI` Custom Resource Definitions (CRD) in Ambient Mesh.
+- **Fixed** the calculation issue of waypoint injection status that did not account for namespace dimensions.
+- **Fixed** an issue where the namespace could not be passed when deleting the waypoint interface.
+- **Fixed** an issue of capturing unnecessary sidecar metric ports.
+- **Fixed** the installation issue caused by conflicts with Gateway API resources in Ambient Mesh.
+
 ## 2024-08-01
 
 ### v0.28.0
@@ -62,7 +81,7 @@ providing convenience for users to learn about the evolution path and feature ch
 #### Features
 
 - **Added** a feature of Istio Analyze.
-- **Added** controller for synchronizing Istio resources across work clusters.
+- **Added** controller for synchronizing Istio resources across worker clusters.
 
 #### Fixes
 
@@ -84,7 +103,7 @@ providing convenience for users to learn about the evolution path and feature ch
 
 - **Fixed** an security issue with the low version of `xz` and upgraded `cloudtty` image to version `v0.7.1`.
 - **Fixed** an issue of changes to `Pod` not triggering workload status changes in `Ambient` mode.
-- **Fixed** the issue of incorrect display of topology nodes due to lack of permissions.
+- **Fixed** an issue of incorrect display of topology nodes due to lack of permissions.
 
 ## 2024-04-01
 
@@ -494,9 +513,9 @@ providing convenience for users to learn about the evolution path and feature ch
 
 #### Improvements
 
-- **Improved** the mcpc controller startup logic to avoid situations where work clusters are not correctly registered.
-- **Improved** the WorkloadShadow cleanup logic to be triggered by events instead of on a schedule; it triggers on controller startup, detection of changes in work clusters, or changes in WorkloadShadow.
-- **Improved** the mcpc controller startup logic to avoid situations where work clusters are not correctly registered.
+- **Improved** the mcpc controller startup logic to avoid situations where worker clusters are not correctly registered.
+- **Improved** the WorkloadShadow cleanup logic to be triggered by events instead of on a schedule; it triggers on controller startup, detection of changes in worker clusters, or changes in WorkloadShadow.
+- **Improved** the mcpc controller startup logic to avoid situations where worker clusters are not correctly registered.
 - **Upgraded** the Insight API to v0.14.7.
 - **Upgraded** ckube to support complex condition queries for labels.
 - **Removed** the time limit for Helm upgrades.

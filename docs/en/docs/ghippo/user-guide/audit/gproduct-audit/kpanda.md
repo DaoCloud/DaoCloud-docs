@@ -16,6 +16,7 @@ hide:
 | Upgrade-Kubernetes | Kubernetes | |
 | Integrate-Node | Node | |
 | Remove-Node | Node | |
+| Update-NodeGPUMode | Node | |
 | Integrate-HelmRepo | Helm Repo | |
 | Deploy-HelmApp | Helm App | |
 | Delete-HelmApp | Helm App | |
@@ -31,3 +32,13 @@ hide:
 | Delete-CronJob | CronJob | |
 | Create-Pod | Pod | |
 | Delete-Pod | Pod | |
+| Create-Service | Service | |
+| Delete-Service | Service | |
+| Create-Ingress | Ingress | |
+| Delete-Ingress | Ingress | |
+| Create-StorageClass | StorageClass | |
+| Delete-StorageClass | StorageClass | |
+| Create-PersistentVolume | PersistentVolume | |
+| Delete-PersistentVolume | PersistentVolume | |
+| Create-PersistentVolumeClaim | PersistentVolumeClaim | |
+| Delete-PersistentVolumeClaim | PersistentVolumeClaim | |

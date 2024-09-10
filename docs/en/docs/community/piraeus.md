@@ -11,7 +11,7 @@ The Piraeus Project consists of:
 
 * A [Kubernetes Operator](https://github.com/piraeusdatastore/piraeus-operator) to create, configure and maintain all components of Piraeus.
 * A [CSI Driver](https://github.com/piraeusdatastore/linstor-csi) to provision persistent volumes and snapshots on the storage cluster maintained by Piraeus.
-* A [High Availability Controller](https://github.com/piraeusdatastore/piraeus-ha-controller) to speed up the failover process of stateful workloads
+* A [High Availability Controller](https://github.com/piraeusdatastore/piraeus-ha-controller) to speed up the failover process of StatefulSets
 * A [Volume Affinity Controller](https://github.com/piraeusdatastore/linstor-affinity-controller), keeping Kubernetes Persistent Volumes reported affinity in sync with the cluster.
 * Container images for the open source components Piraeus is built on:
     * [DRBD](https://github.com/LINBIT/drbd) is used as the underlying storage replication mechanism between cluster nodes.

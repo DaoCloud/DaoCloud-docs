@@ -10,6 +10,7 @@ nav:
               - 适用场景: dce/scenario.md
               - K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - 20240830 版本发布: dce/dce-rn/20240830.md
                   - 20240730 版本发布: dce/dce-rn/20240730.md
                   - 20240630 版本发布: dce/dce-rn/20240630.md
                   - 20240530 版本发布: dce/dce-rn/20240530.md
@@ -44,7 +45,7 @@ nav:
                       - 部署要求: install/commercial/deploy-requirements.md
                       - 前置检查: install/commercial/prepare.md
                       - 端口要求: install/commercial/port-requirements.md
-                      - 外接组件要求(非必须): 
+                      - 外接组件要求(非必需):
                           - 外接服务存储Binaries资源: install/commercial/external/external-binary.md
                           - 外接镜像仓库与Chart仓库: install/commercial/external/external-imageandchart.md
                           - 外接中间件服务: install/commercial/external/external-middlewares.md
@@ -76,13 +77,13 @@ nav:
                       - 火种节点高可用方案: install/best-practices/thinder-ha.md
                       - 火种节点备份与还原: install/best-practices/thinder-restore.md
                   - 可扩展性实践:
-                      - K8s 集群基于 Docker 的磁盘限制: install/best-practices/docker-storage.md
+                      - K8s集群基于Docker的磁盘限制: install/best-practices/docker-storage.md
                       - 大规模集群参数说明: install/best-practices/large-deployments-par.md
-                      - 部署集群时如何配置扩展参数？: install/best-practices/extend-params.md
+                      - 部署集群时配置扩展参数: install/best-practices/extend-params.md
                   - 离线包裁剪脚本使用手册: install/best-practices/offline-clipper.md
                   - 修复CVE-2024-21626漏洞: install/best-practices/cve-20240-21626.md
               - 客户案例:
-                  - 全局服务集群重装后如何纳管原工作集群: install/best-practices/remanage-work-cluster.md
+                  - 全局服务集群重装后纳管原工作集群: install/best-practices/remanage-work-cluster.md
                   - 不停机迁移集群操作系统: install/best-practices/replace-os.md
               - 安装器 Release Notes: install/release-notes.md
           - 最佳实践: dce/bphome.md
@@ -99,9 +100,9 @@ nav:
                   - 安装和升级:
                       - 离线升级: amamba/offline-upgrade.md
                       - 部署工作台可插拔组件: amamba/pluggable-components.md
-                      - Jenkins安装和配置: 
+                      - Jenkins 安装和配置:
                         - 安装: amamba/user-guide/pipeline/install-jenkins.md
-                        - Jenkins高可用方案: amamba/quickstart/jenkins-HA.md
+                        - Jenkins 高可用方案: amamba/quickstart/jenkins-HA.md
                         - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
                       - Argo CD高可用部署: amamba/quickstart/argo-cd-HA.md
                   - Release Notes: amamba/intro/release-notes.md
@@ -159,14 +160,14 @@ nav:
                   - 创建 Argo CD 应用: amamba/user-guide/gitops/create-argo-cd.md
                   - Argo CD 应用状态说明: amamba/user-guide/gitops/argo-cd-status.md
                   - 手动同步应用: amamba/user-guide/gitops/sync-manually.md
-                  - 在GitOps中启用凭证加密功能: amamba/user-guide/gitops/gitops-secret.md
+                  - 启用凭证加密功能: amamba/user-guide/gitops/gitops-secret.md
                   - 启用ArgoCD原生UI: amamba/user-guide/gitops/integrate-argocd-ui.md
               - 灰度发布:
                   - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
                   - 查看蓝绿发布任务: amamba/user-guide/release/check-bluegreen.md
-              - 代码仓库: 
+              - 代码仓库:
                   - 代码仓库管理: amamba/user-guide/git/git.md
               - 工具链集成:
                   - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
@@ -183,11 +184,13 @@ nav:
                       - 在托管网格中使用GitOps: amamba/quickstart/istio_argocd.md
                       - 在托管网格中灰度发布: amamba/quickstart/istio_argocd_rollout.md
                       - ArgoCD 与多云联动以发布多云应用: amamba/quickstart/argo-karmada.md
+                      - 使用流水线发布多云资源: amamba/quickstart/pipeline-kairship.md
                   - CI 实践:
                       - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
                       - 集成 Harbor 镜像安全扫描: amamba/quickstart/scan-with-harbor.md
                       - Jenkins 发布应用至虚拟机: amamba/user-guide/pipeline/cicd_vm.md
                       - 物理机/虚拟机集成Jenkins: amamba/quickstart/jenkins-integration.md
+                      - 流水线部署多云应用: amamba/user-guide/quickstart/pipeline-kairship.md
                   - 灰度发布实践:
                       - 基于 Contour 的灰度发布: amamba/quickstart/contour-argorollout.md
       - 容器:
@@ -336,13 +339,13 @@ nav:
                           - 使用 NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG 相关命令: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                       - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
-                      - GPU 调度配置(Binpack/Spread): kpanda/user-guide/gpu/dynamic-regulation.md
+                      - GPU 调度配置: kpanda/user-guide/gpu/dynamic-regulation.md
                       - GPU 监控告警:
                           - GPU 监控指标: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-metrics.md
                           - GPU 告警规则: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-alarm.md
                       - 使用 Volcano:
                           - 安装和使用 Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
-                          - 使用Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md 
+                          - 使用Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
                       - GPU 调度配置: kpanda/user-guide/gpu/gpu_scheduler_config.md
                   - 昇腾 NPU 管理:
                       - 昇腾 NPU 组件安装: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
@@ -367,6 +370,9 @@ nav:
                   - 部署/升级Kubean兼容版本: kpanda/best-practice/kubean-low-version.md
                   - 限制Docker单容器磁盘空间: kpanda/best-practice/limit-disk-usage-docker.md
                   - 边缘集群部署和管理实践: kpanda/best-practice/k3s-lcm.md
+                  - 在离线混部:
+                      - 在离线混部概述: kpanda/best-practice/co-located/index.md
+                      - koordinator 安装: kpanda/best-practice/co-located/install.md
           - 多云编排:
               - 介绍:
                   - 什么是多云编排: kairship/intro/index.md
@@ -431,7 +437,7 @@ nav:
                   - 镜像扫描: kangaroo/space/scan.md
               - 仓库集成:
                   - 仓库集成(工作空间): kangaroo/integrate/integrate-ws.md
-                  - 仓库集成(管理员): 
+                  - 仓库集成(管理员):
                       - 仓库集成(管理员): kangaroo/integrate/integrate-admin/integrate-admin.md
                       - 创建镜像空间: kangaroo/integrate/integrate-admin/registry-space.md
                       - 绑定/解绑工作空间: kangaroo/integrate/integrate-admin/bind-to-ws.md
@@ -487,7 +493,7 @@ nav:
               - 集成 Spiderpool:
                   - 介绍: network/modules/spiderpool/index.md
                   - Release Notes: network/modules/spiderpool/releasenotes.md
-                  - 安装: 
+                  - 安装:
                       - Spiderpool 安装: network/modules/spiderpool/install/install.md
                       - RDMA 环境准备及安装: network/modules/spiderpool/install/rdmapara.md
                       - 安装 Nvidia OFED 驱动: network/modules/spiderpool/install/ofed_driver.md
@@ -705,7 +711,8 @@ nav:
                       - 升级注意事项: insight/quickstart/install/upgrade-note.md
                       - 已知问题: insight/quickstart/install/knownissues.md
                       - 大规模日志部署调整: insight/best-practice/insight-kafka.md
-                      - 自定义 Insight 组件调度策略: insight/quickstart/install/component-scheduling.md
+                      - 定制Insight组件调度策略: insight/quickstart/install/component-scheduling.md
+                      - 开启大日志和大链路模式: insight/quickstart/install/big-log-and-trace.md
                   - 其他发行版安装insight-agent:
                       - DCE 4.0: insight/quickstart/other/install-agentindce.md
                       - OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
@@ -765,7 +772,7 @@ nav:
               - 网络监控:
                   - 集成 DeepFlow: insight/best-practice/integration_deepflow.md
               - 参考文档:
-                  - 可观性参考指标说明: insight/reference/uesd-metric-in-insight.md
+                  - 可观性参考指标说明: insight/reference/used-metric-in-insight.md
                   - 自定义探测方式: insight/user-guide/collection-manag/probe-module.md
                   - 指标抓取说明: insight/user-guide/collection-manag/metric-collect.md
                   - 告警通知流程说明: insight/reference/alertnotification.md
@@ -805,6 +812,7 @@ nav:
                   - API 管理:
                       - API 管理: skoala/gateway/api/index.md
                       - 配置 API 策略: skoala/gateway/api/api-policy.md
+                      - API导入: skoala/gateway/api/api-lead.md
                   - 服务列表:
                       - 手工接入: skoala/gateway/service/manual-integrate.md
                       - 自动纳管: skoala/gateway/service/auto-manage.md
@@ -846,12 +854,12 @@ nav:
                       - 接入注册中心管理: skoala/trad-ms/integrated/index.md
                       - 微服务管理: skoala/trad-ms/integrated/manage-service.md
                       - 链路追踪: skoala/trad-ms/integrated/trace.md
-              - 插件中心: 
+              - 插件中心:
                   - 介绍: skoala/plugins/intro.md
                   - 插件应用:
                       - 云原生微服务使用JWT插件: skoala/best-practice/plugins/jwt.md
                       - 云原生网关使用JWT插件: skoala/best-practice/jwt.md
-                      - 云原生网关认证服务器: 
+                      - 云原生网关认证服务器:
                           - skoala/best-practice/auth-server.md
                           - 接入 AK/SK 认证 : skoala/best-practice/ak-sk-demo.md
                           - 接入 OIDC 认证 : skoala/best-practice/OIDC-auth.md
@@ -908,6 +916,7 @@ nav:
                   - 创建网格参数说明: mspider/user-guide/service-mesh/params.md
               - 服务管理:
                   - mspider/user-guide/service-list/README.md
+                  - 接入虚拟机: mspider/user-guide/service-list/vm.md
                   - 从网格外部访问服务: mspider/user-guide/service-list/out-to-in.md
                   - 服务条目: mspider/user-guide/service-list/service-entry.md
                   - 一键修复: mspider/user-guide/service-list/diagnose.md
@@ -1171,6 +1180,7 @@ nav:
                       - SSH 访问 Notebook: baize/developer/notebooks/notebook-with-ssh.md
                       - Notebook 中使用环境: baize/developer/notebooks/notebook-with-envs.md
                       - baizectl 命令行工具: baize/developer/notebooks/baizectl.md
+                      - Notebook 闲置超时自动关机: baize/developer/notebooks/notebook-auto-close.md
                   - 任务中心:
                       - 创建任务: baize/developer/jobs/create.md
                       - 创建 Pytorch 任务: baize/developer/jobs/pytorch.md

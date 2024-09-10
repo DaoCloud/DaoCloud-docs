@@ -9,6 +9,23 @@
 *[SR-IOV]: Single Root IO Virtualization 的缩写，一种网卡虚拟化的技术
 *[RDMA]: Remote Direct Memory Access 的缩写，即远程直接内存访问，这是一个支撑 LLM 大模型和 GPT 的热门技术
 
+## 2024-08-30
+
+### v0.15.1
+
+- 适配 **Spiderpool v0.9.6**
+
+!!! note
+
+    Spiderpool 自 v0.9.3 起修复了以下问题。若您使用的是 v0.9.3 之前的版本，建议升级至最新版本。
+
+- **新增** Spiderpool 支持 SpiderMultusConfig 配置 ChainCNI，该功能能够支持如 tuning 等 meta CNI 插件以链式调用的方式注入到 CNI 配置文件中。注意：目前仅后端实现。
+- **新增** 支持默认为节点配置必要的内核参数，比如 `net.ipv4.neigh.default.gc_thresh1` 等。
+- **修复** 修复当 StatefulSet 准备就绪并且其 Pod 正在运行时，修改 StatefulSet 注解指定了另一个 IP 池 Pod IP 也不会生效到新的 IP 池范围内的问题。
+- **修复** 修复当 spiderpool-agent 容器重启（探针检测）导致 multus 配置文件丢失问题。
+- **修复** 修复 StatefulSet 应用在快速扩缩容场景下 Spiderpool GC 可能会错误的回收掉 IPPool 中的 IP 地址 导致同一个 IP 被分配给 K8S 集群的多个 Pod 从而出现 IP 地址冲突的问题。
+- **修复** 修复 Pod 插入多个网卡时有概率出现：错误的策略路由表号顺序导致导致通信失败。
+
 ## 2024-05-30
 
 ### v0.15.0

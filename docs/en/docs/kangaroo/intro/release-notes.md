@@ -12,15 +12,28 @@ understand the evolution path and feature changes of each version.
 *[Kpanda]: Internal dev codename for container management
 *[Harbor]: An open-source container registry tool and a CNCF graduated project
 
-## 2023-07-31
+## 2024-08-30
+
+### v0.21.1
+
+- **Added** a feature of quickly creating managed Harbor instances through a one-click setup for Redis/Minio/PostgreSQL.
+- **Optimized** the validation of middleware instances when creating managed Harbor, to reuse is disabled now.
+- **Optimized** the adaptability to middlewares, so that a middleware created through the container registry can also 
+  be managed by the DCE 5.0 middleware (`mcamel`) module.
+- **Added** cluster status validation when creating managed Harbor; Harbor can only be created in running clusters.
+- **Fixed** the issue of missing audit logs when editing or deleting managed Harbor.
+- **Fixed** the error when pulling images through the built-in middleware interface.
+- **Fixed** the issue where the Admin could not operate Harbor via the API after enabling OIDC.
+
+## 2024-07-31
 
 ### v0.20.0
 
 - **Fixed** an issue where online Harbor creation failed due to some images failing to be pulled
-- **Fixed** inconsistency in the number of permission between the admin user and custom roles
+- **Fixed** inconsistency in the number of permission between the Admin user and custom roles
 - **Fixed** some permission overflow issues
 
-## 2023-06-30
+## 2024-06-30
 
 ### v0.19.0
 
@@ -28,14 +41,14 @@ understand the evolution path and feature changes of each version.
 
 - **Fixed** an issue that prevented the deletion of a workspace, incorrectly prompting users to unbind a registry space that had no actual binding relationship with the workspace.
 
-## 2023-05-31
+## 2024-05-31
 
 ### v0.18.1
 
 - **Optimized** the accuracy of login command prompts after integrating Harbor administrator into the container registry
 - **Fixed** pagination issue in the image selector interface on the application workbench
 
-## 2023-04-30
+## 2024-04-30
 
 ### v0.17.0
 
@@ -43,7 +56,7 @@ understand the evolution path and feature changes of each version.
 - **Optimized** image download counts
 - **Optimized** the registry space list view for Docker/Jfrog registry from the administrator's perspective
 
-## 2023-03-29
+## 2024-03-29
 
 ### v0.16.1
 
@@ -54,7 +67,7 @@ understand the evolution path and feature changes of each version.
 - **Fixed** dependency issue in creating and deleting Harbor with custom role management
 - **Fixed** an error occurred when creating a container registry with Chinese characters in the description
 
-## 2023-01-31
+## 2024-01-31
 
 ### v0.15.0
 

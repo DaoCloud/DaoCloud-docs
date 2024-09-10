@@ -11,7 +11,7 @@ The DCE 5.0 standard package does not include middleware. Middleware is only ava
 Log in to the target cluster where Harbor is deployed and execute the `ping` command
 on any node to test the connectivity to the middleware components.
 
-## Private images not visible in the image space list
+## Private images not visible in the registry space list
 
 There is a bug in versions `v0.7.0-v0.7.3` and `v0.8.0` of the container registry system,
 which results in the inability to see private images.

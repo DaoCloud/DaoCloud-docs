@@ -57,7 +57,7 @@ See [Creating Multicloud Jobs](../kairship/workload/job.md) and [Creating Multic
 
 ## Managing Multicloud Resources
 
-See [Multicloud Services](../kairship/resource/service.md), [Multicloud Namespaces](../kairship/resource/ns.md), [Multicloud Configuration Items](../kairship/resource/configmap.md), and [Multicloud Secrets](../kairship/resource/secret.md) for reference.
+See [Multicloud Services](../kairship/resource/service.md), [Multicloud Namespaces](../kairship/resource/ns.md), [Multicloud ConfigMaps](../kairship/resource/configmap.md), and [Multicloud Secrets](../kairship/resource/secret.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-resoruces.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kairship-resource.png"></video>

@@ -73,7 +73,7 @@ Consolidate the cluster and mesh-related planning mentioned above into a form fo
 
 #### Mesh Planning
 
-| Configuration Item | Value                                       |
+| ConfigMap | Value                                       |
 | ------------------ | ------------------------------------------- |
 | Mesh ID            | mdemo-mesh                                   |
 | Mesh Mode          | Managed Mode                                |

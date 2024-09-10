@@ -64,6 +64,6 @@ Prerequisite: [Cert Manager](https://cert-manager.io/docs/installation/) and [Ha
 
 1. **Managed Harbor** primarily involves managing the entire lifecycle of a Harbor instance. Once created, 
    the system will automatically integrate the instance into the **Integrated Registry** list. You can navigate to the 
-   **Integrated Registry** list to view the instance details and perform operations such as `Create Image Space` and `Sync Images`.
+   **Integrated Registry** list to view the instance details and perform operations such as `Create Registry Space` and `Sync Images`.
 
 Next step: [Create registry space](../integrate/integrate-admin/registry-space.md)
