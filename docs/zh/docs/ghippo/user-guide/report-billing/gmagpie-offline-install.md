@@ -20,8 +20,6 @@
 
     === "已安装 chart repo"
 
-        若当前环境已安装 chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件。
-
         ```yaml title="load-image.yaml"
         source:
           intermediateBundlesPath: gmagpie-offline # (1)!
@@ -80,6 +78,10 @@
 
     ```shell
     charts-syncer sync --config load-image.yaml
+    ```
+    若有 x509 认证失败, 可使用参数 --insecure
+    ```shell
+    charts-syncer sync --config load-image.yaml --insecure
     ```
 
 ### Docker 或 containerd 直接加载
@@ -200,13 +202,6 @@
         helm get values gmagpie -n gmagpie-system -o yaml > bak.yaml
         ```
 
-    1. 更新 Gmagpie CRD。
-
-        ```shell
-        helm pull gmagpie/gmagpie --version 0.3.0 && tar -zxf gmagpie-0.3.0.tgz
-        kubectl apply -f gmagpie/crds
-        ```
-
     1. 执行 `helm upgrade` 。
 
         升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 字段为当前使用的镜像仓库地址。
@@ -231,12 +226,6 @@
 
         ```shell
         helm get values gmagpie -n gmagpie-system -o yaml > bak.yaml
-        ```
-
-    1. 更新 Gmagpie CRD。
-
-        ```shell
-        kubectl apply -f ./crds
         ```
 
     1. 执行 `helm upgrade` 。

@@ -25,9 +25,6 @@ as it is more efficient and convenient.
 
     === "Installed chart repo"
 
-        If you have an installed chart repo in the current environment, chart-syncer also
-        supports exporting the chart as a tgz file.
-
         ```yaml title="load-image.yaml"
         source:
           intermediateBundlesPath: gmagpie-offline # (1)!
@@ -87,6 +84,10 @@ as it is more efficient and convenient.
 
     ```shell
     charts-syncer sync --config load-image.yaml
+    ```
+    if x509 certificate error occurs, please add the --insecure flag.
+    ```shell
+    charts-syncer sync --config load-image.yaml --insecure
     ```
 
 ### Loading directly with Docker or containerd
@@ -211,13 +212,6 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         helm get values gmagpie -n gmagpie-system -o yaml > bak.yaml
         ```
 
-    1. Update Gmagpie CRD.
-
-        ```shell
-        helm pull gmagpie/gmagpie --version 0.3.0 && tar -zxf gmagpie-0.3.0.tgz
-        kubectl apply -f gmagpie/crds
-        ```
-
     1. Run `helm upgrade` .
 
         Before upgrading, it is recommended to replace the __global.imageRegistry__ field
@@ -244,12 +238,6 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
         ```shell
         helm get values gmagpie -n gmagpie-system -o yaml > bak.yaml
-        ```
-
-    2. Update the Gmagpie CRD.
-
-        ```shell
-        kubectl apply -f ./crds
         ```
 
     3. Run `helm upgrade` .
