@@ -3,6 +3,18 @@
 This page lists the Release Notes related to HwameiStor, providing an overview of
 the evolution path and feature changes for each version.
 
+## 2024-08-30
+
+### v0.14.9
+
+#### Improvment
+
+- **Added** the verbs/patch permissions to ClusterRole.
+
+#### Fix
+
+- **Fixed** the issue where bound PVCs were not filtered.
+
 ## 2024-07-30
 
 ### v0.14.8
