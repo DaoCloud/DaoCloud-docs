@@ -15,6 +15,31 @@ evolution path and feature changes of each version.
 *[SR-IOV]: Single Root IO Virtualization
 *[RDMA]: Remote Direct Memory Access, a popular tech to support LLM and GPT
 
+## 2024-08-30
+
+### v0.15.1
+
+- Adapted to **Spiderpool v0.9.6**
+
+!!! note
+
+    Spiderpool has fixed the following issues since v0.9.3. If you are using a version prior to v0.9.3, it is recommended to upgrade to the latest version.
+
+- **Added** support for the SpiderMultusConfig configuration for ChainCNI in Spiderpool,
+  which enables meta CNI plugins such as tuning to be injected into the CNI configuration file in a
+  chained manner. Note that this is currently only implemented on the backend.
+- **Added** support for configuring necessary kernel parameters for nodes by default, such as
+  `net.ipv4.neigh.default.gc_thresh1` .
+- **Fixed** an issue where modifying the StatefulSet annotation to specify another IPPool would not
+  take effect in the new IPPool range when the StatefulSet is ready and its pods are running.
+- **Fixed**  an issue where the multus configuration file was lost when the spiderpool-agent container
+  restarted (probe detection).
+- **Fixed** an issue where in rapid scaling scenarios for StatefulSet applications, Spiderpool GC might
+  incorrectly reclaim IP addresses from the IPPool, leading to the same IP being assigned to multiple
+  pods in the K8S cluster, resulting in IP address conflicts.
+- **Fixed** a probability issue where inserting multiple NICs into a pod could lead to
+  incorrect sequence of policy routing table ID, causing communication failures.
+
 ## 2024-05-30
 
 ### v0.15.0
