@@ -1,5 +1,7 @@
 # 创建存储池
 
+下文所述为 HwameiStor 原生的命令行存储池操作方式。DCE 5.0 在集成 HwameiStor 作为本地存储之后，为其提供了图形化 UI，可以[通过表单和 YAML 创建存储池](../../../kpanda/user-guide/storage/sc.md)。推荐使用 UI 执行存储池的增删改查操作，方便通过直观的界面管理各类存储池。
+
 下面的例子来自一个 4 节点的 Kubernetes 集群：
 
 ```console
