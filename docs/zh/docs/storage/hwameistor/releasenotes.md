@@ -4,11 +4,11 @@
 
 ## 2024-08-30
 
-### v0.14.8
+### v0.14.9
 
 #### 优化
 
-- **优化** 为 clusterrole 添加 verbs/patch 访问权限
+- **优化** 为 ClusterRole 添加 verbs/patch 访问权限
 
 #### 修复
 
