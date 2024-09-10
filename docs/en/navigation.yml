@@ -10,6 +10,7 @@ nav:
               - Use Cases: dce/scenario.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Release Notes:
+                  - 20240830 Release: dce/dce-rn/20240830.md
                   - 20240730 Release: dce/dce-rn/20240730.md
                   - 20240630 Release: dce/dce-rn/20240630.md
                   - 20240530 Release: dce/dce-rn/20240530.md
@@ -1338,7 +1339,7 @@ nav:
           - Cloud Edge Collaboration: videos/kant.md
       - Management:
           - Global Management: videos/ghippo.md
-  - Download:
+  - Downloads:
       - DaoCloud Enterprise 5.0:
           - Index: download/index.md
           - Download DCE 5.0 Community: download/free/dce5-installer-history.md
