@@ -1,6 +1,6 @@
 # 使用 OTel SDK 增强 Go 应用程序
 
-Golang 无侵入式接入链路请参考 [通过 Operator 实现应用程序无侵入增强 ---> 添加注解，自动接入链路](../operator.md)
+Golang 无侵入式接入链路请参考 [通过 Operator 实现应用程序无侵入增强](../operator.md) 文档，通过注解实现自动接入链路。
 
 OpenTelemetry 也简称为 OTel，是一个开源的可观测性框架，可以帮助在 Go 应用程序中生成和收集遥测数据：链路、指标和日志。
 
