@@ -79,7 +79,9 @@
     ```shell
     charts-syncer sync --config load-image.yaml
     ```
-    若有 x509 认证失败, 可使用参数 --insecure
+    
+    若有 x509 认证失败，可使用参数 --insecure
+   
     ```shell
     charts-syncer sync --config load-image.yaml --insecure
     ```
@@ -138,7 +140,6 @@
         dbname: gmagpie
         password: passowrd
         user: gmagpie
-
     ```
 
     修改为：
