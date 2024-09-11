@@ -5,7 +5,7 @@
 ## 支持的日志库
 更多信息，请参见 [Logger MDC auto-instrumentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/docs/logger-mdc-instrumentation.md).
 
-| 日志框架 | 自动埋点支持的版本 | 手动埋点需要引入的依赖 |
+| 日志框架 | 支持自动埋点的版本 | 手动埋点需要引入的依赖 |
 | ------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Log4j 1 | 1.2+ | 无|
 | Log4j 2 | 2.7+  | [opentelemetry-log4j-context-data-2.17-autoconfigure](../instrumentation/log4j/log4j-context-data/log4j-context-data-2.17/library-autoconfigure) |
