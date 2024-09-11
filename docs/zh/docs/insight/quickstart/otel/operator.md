@@ -355,7 +355,7 @@
         因此您必须通过注解或 Instrumentation 资源提供有效的可执行路径。未设置此值会导致 Go 自动检测注入中止，从而导致接入链路失败。
 
         ```yaml
-        instrumentation.opentelemetry.io/inject-go: "true"
+        instrumentation.opentelemetry.io/inject-go: "insight-system/insight-opentelemetry-autoinstrumentation"
         instrumentation.opentelemetry.io/otel-go-auto-target-exe: "/path/to/container/executable"
         ```
         
