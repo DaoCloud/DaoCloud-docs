@@ -723,13 +723,12 @@ nav:
                       - 向Insight发送链路数据: insight/quickstart/otel/send_tracing_to_insight.md
                       - 链路数据尾部采样方案: insight/best-practice/tail-based-sampling.md
                   - Java 应用观测:
-                      - insight/quickstart/jvm-monitor/jvm-catelogy.md
-                      - 使用JMX Exporter暴露JVM监控指标: insight/quickstart/jvm-monitor/jmx-exporter.md
-                      - 使用OTel Java Agent暴露JVM监控指标: insight/quickstart/jvm-monitor/otel-java-agent.md
-                      - 已有JVM指标的Java应用对接可观测性: insight/quickstart/jvm-monitor/legacy-jvm.md
+                      - insight/quickstart/otel/java/index.md
+                      - 使用JMX Exporter暴露JVM监控指标: insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md
+                      - 使用OTel Java Agent暴露JVM监控指标: insight/quickstart/otel/java/jvm-monitor/otel-java-agent.md
+                      - 已有JVM指标的Java应用对接可观测性: insight/quickstart/otel/java/jvm-monitor/legacy-jvm.md
                   - Golang 应用观测:
-                      - OTel SDK增强Go应用: insight/quickstart/otel/golang.md
-                      - OTel自动探针增强Go应用: insight/quickstart/otel/golang-ebpf.md
+                      - OTel SDK增强Go应用: insight/quickstart/otel/golang/golang.md
                   - 其他观测技术集成:
                       - 使用OTel接收SkyWalking链路数据: insight/best-practice/sw-to-otel.md
               - 仪表盘:
