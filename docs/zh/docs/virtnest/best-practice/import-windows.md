@@ -17,7 +17,6 @@
 与导入 Linux 操作系统的虚拟机类似，可参考[如何从 VMWare 导入传统 Linuxs 虚拟机到云原生虚拟机平台](import-ubuntu.md)获取以下信息：
 
 - 获取 vSphere 账号密码
-- 制作 vddk 镜像
 - 获取 vSphere 虚拟机信息
 
 ### 检查 Windows 的引导类型
@@ -67,7 +66,7 @@ spec:
             uuid: "421d40f2-21a2-cfeb-d5c9-e7f8abfc2faa"
             thumbprint: "D7:C4:22:E3:6F:69:DA:72:50:81:12:FA:42:18:3F:29:5C:7F:41:CA"
             secretRef: "vsphere21"
-            initImageURL: "release-ci.daocloud.io/virtnest/vddk:v1"
+            initImageURL: "release.daocloud.io/virtnest/vddk:v8"
     - metadata:
         name: export-window-21-datadisk
       spec:
@@ -85,7 +84,7 @@ spec:
             uuid: "421d40f2-21a2-cfeb-d5c9-e7f8abfc2faa"
             thumbprint: "D7:C4:22:E3:6F:69:DA:72:50:81:12:FA:42:18:3F:29:5C:7F:41:CA"
             secretRef: "vsphere21"
-            initImageURL: "release-ci.daocloud.io/virtnest/vddk:v1"
+            initImageURL: "release.daocloud.io/virtnest/vddk:v8"
     # <1>. 引导 virtio 驱动的 pvc
     # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
     - metadata:
@@ -227,7 +226,7 @@ spec:
             uuid: "421d40f2-21a2-cfeb-d5c9-e7f8abfc2faa"
             thumbprint: "D7:C4:22:E3:6F:69:DA:72:50:81:12:FA:42:18:3F:29:5C:7F:41:CA"
             secretRef: "vsphere21"
-            initImageURL: "release-ci.daocloud.io/virtnest/vddk:v1"
+            initImageURL: "release.daocloud.io/virtnest/vddk:v8"
     - metadata:
         name: export-window-21-datadisk
       spec:
@@ -245,7 +244,7 @@ spec:
             uuid: "421d40f2-21a2-cfeb-d5c9-e7f8abfc2faa"
             thumbprint: "D7:C4:22:E3:6F:69:DA:72:50:81:12:FA:42:18:3F:29:5C:7F:41:CA"
             secretRef: "vsphere21"
-            initImageURL: "release-ci.daocloud.io/virtnest/vddk:v1"
+            initImageURL: "release.daocloud.io/virtnest/vddk:v8"
   running: true
   template:
     metadata:
