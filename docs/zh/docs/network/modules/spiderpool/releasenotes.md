@@ -21,9 +21,9 @@
 - **修复** 当 Pod 拥有多个网卡时无法访问 NodePort。
 - **修复** 当 spiderpool-agent 的健康检查失败，导致 00-multus.conf 丢失时，Pod 无法使用期望的 CNI 启动。
 - **修复** spiderpool-init pod 安装阻塞的问题。
-- **修复** 在 statefulset Pod 快速扩展/缩小期间， Spiderpool GC 的 IP 地址不正确，导致 IP 冲突。
+- **修复** 在 StatefulSet Pod 快速扩展/缩小期间，Spiderpool GC 的 IP 地址不正确，导致 IP 冲突。
 - **修复** coordinator 应仅为 Pod 设置 rp_filter，而不是节点。
-- **修复** coordinator：修复 pod 有多个网卡时的错误的策略路由表。
+- **修复** coordinator：修复 Pod 有多个网卡时的错误的策略路由表。
 
 #### 功能变更
 
@@ -54,9 +54,9 @@
 - **修复** 当 Pod 拥有多个网卡时无法访问 NodePort。
 - **修复** 当 spiderpool-agent 的健康检查失败，导致 00-multus.conf 丢失时，Pod 无法使用期望的 CNI 启动。
 - **修复** spiderpool-init pod 安装阻塞的问题。
-- **修复** 在 statefulset Pod 快速扩展/缩小期间， Spiderpool GC 的 IP 地址不正确，导致 IP 冲突。
+- **修复** 在 StatefulSet Pod 快速扩展/缩小期间，Spiderpool GC 的 IP 地址不正确，导致 IP 冲突。
 - **修复** coordinator 应仅为 Pod 设置 rp_filter，而不是节点。
-- **修复** coordinator：修复 pod 有多个网卡时的错误的策略路由表。
+- **修复** coordinator：修复 Pod 有多个网卡时的错误的策略路由表。
 - **修复** chart 中 tuneSysctlConfig 值未正确工作。
 
 #### 功能变更

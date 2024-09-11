@@ -15,8 +15,8 @@
 
 #### 优化
 
-- **修复** 通过界面创建 multus CR ，点击创建后页面卡死的问题。
-- **修复** ListAllSubnetsAndIPPoolsAndMultus API 能够给 multusCR 返回 defaultV4IPPools 和 defaultV6IPPools 两个字段，当启用默认池功能是，有默认池可用。
+- **修复** 界面创建 multus CR时点击创建后页面卡死的问题。
+- **修复** 启用默认池功能时没有可用默认池的问题。现在的 ListAllSubnetsAndIPPoolsAndMultus API 能够给 multus CR 返回 defaultV4IPPools 和 defaultV6IPPools 两个字段。
 
 !!! note
 
@@ -33,7 +33,7 @@
 
 - **修复** ListAllSubnetsAndIPPoolsAndMultus API 通过 namespace 亲和性过滤池失败
 - **修复** 修复 ListMultusCniConfig API 指针值对比判断错误, 并修复判断中将 sriov 的错写为 ipvlan 的问题
-- **新增** 支持界面创建 ovs-cni 类型的 multus CR
+- **新增** 支持界面创建 ovs-cni 类型的 Multus CR
 
 ## 2024-04-30
 
@@ -44,7 +44,7 @@
 
 #### 优化
 
-- **优化** 优化工作负载网络配置，支持 Multus CR 无感知，应用直接选择 IPpool
+- **优化** 优化工作负载网络配置，支持 Multus CR 无感知，应用直接选择 IPPool
 - **优化** 修复 multusName 中的命名空间为空，自动为其拼接 spiderpool 的所在 Namespace
 - **优化** 支持创建 SR-IOV 节点策略时，配置以太网或 InfiniBand 网络类型
 
