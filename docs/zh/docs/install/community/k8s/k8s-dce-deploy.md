@@ -22,7 +22,7 @@
 - CRI：containerd（因为新版本 K8s 已经不再直接支持 Docker）
 - CNI：Calico
 - StorageClass：local-path
-- DCE 5.0 社区版：v0.20.0
+- DCE 5.0 社区版：v0.21.0
 
 ## 准备节点
 
@@ -242,7 +242,11 @@
 
 1. 安装 CNI，以 Calico 为例
 
-    【请以官方安装方案为准。参考[官方 Calico 安装文档](https://docs.tigera.io/calico/latest/getting-started/kubernetes/self-managed-onprem/onpremises#install-calico)】
+    !!! note
+
+        在安装 Calico 前，请先创建 `calico-system` 命名空间。可参考[创建命名空间](../../../kpanda/user-guide/namespaces/createns.md)。
+
+    请以官方安装方案为准。参考[官方 Calico 安装文档](https://docs.tigera.io/calico/latest/getting-started/kubernetes/self-managed-onprem/onpremises#install-calico)。
 
     1. 下载 Calico 的部署清单文件:
 
@@ -271,10 +275,6 @@
 
         1. 等待 Pod 都 Running
         2. 可以看到第一个节点变为 ready 状态了
-
-    !!! note
-
-        在安装 Calico 前，请先创建 `calico-system` 命名空间。可参考[创建命名空间](../../../kpanda/user-guide/namespaces/createns.md)。
 
 ### 接入其他 worker 工作节点
 
@@ -334,7 +334,7 @@ bash install_prerequisite.sh online community
 ### 下载 dce5-installer
 
 ```bash
-export VERSION=v0.20.0
+export VERSION=v0.21.0
 curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
 chmod +x ./dce5-installer 
 ```

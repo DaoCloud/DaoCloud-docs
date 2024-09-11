@@ -10,6 +10,7 @@ nav:
               - 适用场景: dce/scenario.md
               - K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - 20240830 版本发布: dce/dce-rn/20240830.md
                   - 20240730 版本发布: dce/dce-rn/20240730.md
                   - 20240630 版本发布: dce/dce-rn/20240630.md
                   - 20240530 版本发布: dce/dce-rn/20240530.md
@@ -338,7 +339,7 @@ nav:
                           - 使用 NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG 相关命令: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                       - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
-                      - GPU 调度配置: kpanda/user-guide/gpu/dynamic-regulation.md
+                      - GPU 动态调节: kpanda/user-guide/gpu/dynamic-regulation.md
                       - GPU 监控告警:
                           - GPU 监控指标: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-metrics.md
                           - GPU 告警规则: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-alarm.md

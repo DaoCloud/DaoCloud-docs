@@ -9,8 +9,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 离线包 | 版本 | 文件大小 | 下载 | 更新日期 |
 | ------ | ---- | ---- | ---- |-------- |
-| prerequisite_v0.20.0_amd64.tar.gz | v0.20.0 | 119.0 MB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.20.0_amd64.tar.gz) | 2024-08-09 |
-| prerequisite_v0.20.0_arm64.tar.gz | v0.20.0 | 107.0 MB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.20.0_arm64.tar.gz) | 2024-08-09 |
+| prerequisite_v0.21.0_amd64.tar.gz | v0.21.0 | 119.0 MB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.21.0_amd64.tar.gz) | 2024-09-09 |
+| prerequisite_v0.21.0_arm64.tar.gz | v0.21.0 | 107.0 MB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.21.0_arm64.tar.gz) | 2024-09-09 |
 
 ## 下载社区版
 
@@ -18,8 +18,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 离线包 | 版本 | 下载 | 更新日期 |
 | --------------- | ------- | ---- | -------- |
-| offline-community-v0.20.0-arm64.tar | v0.20.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.20.0.md) | 2024-08-09 |
-| offline-community-v0.20.0-amd64.tar | v0.20.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.20.0.md) | 2024-08-09 |
+| offline-community-v0.21.0-arm64.tar | v0.21.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.21.0.md) | 2024-09-09 |
+| offline-community-v0.21.0-amd64.tar | v0.21.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.21.0.md) | 2024-09-09 |
 
 [社区版：更多历史版本](./free/dce5-installer-history.md){ .md-button } 
 
@@ -29,8 +29,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 离线包 | 版本 | 下载 | 更新日期 |
 | ----- | ----- | ---- | --------- |
-| offline-v0.20.0-arm64.tar | v0.20.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.20.0.md) | 2024-08-09 |
-| offline-v0.20.0-amd64.tar | v0.20.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.20.0.md) | 2024-08-09 |
+| offline-v0.21.0-arm64.tar | v0.21.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.21.0.md) | 2024-09-09 |
+| offline-v0.21.0-amd64.tar | v0.21.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.21.0.md) | 2024-09-09 |
 
 [商业版：更多历史版本](./business/dce5-installer-history.md){ .md-button } 
 
@@ -52,7 +52,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 
 | 模块 | 文件大小 | 下载 | 更新日期 |
 | ---- | ------- | ----- | --------- |
-| 应用工作台 | 394.25 MB | [:arrow_right: 下载页](./modules/amamba.md) | 2024-09-05 |
+| 应用工作台 | 394.25 MB | [:arrow_right: 下载页](./modules/amamba.md) | 2024-09-10 |
 | 容器管理 | 674.33 MB | [:arrow_right: 下载页](./modules/kpanda.md) | 2024-09-05 |
 | 集群巡检 | 174.30 MB | [:arrow_right: 下载页](./modules/kcollie.md) | 2024-01-02 |
 | 应用备份 | 85.06 MB | [:arrow_right: 下载页](./modules/kcoral.md) | 2024-06-07 |

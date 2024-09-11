@@ -9,7 +9,7 @@ hide:
 
 This page provides offline installation packages and verification files for DCE 5.0 Community.
 
-[Return to Download Guide](../index.md){ .md-button } [More Historical Versions](./dce5-installer-history.md){ .md-button }
+[Return to Download Guide](../index.md){ .md-button } [Legacy Packages](./dce5-installer-history.md){ .md-button }
 
 ## Download
 

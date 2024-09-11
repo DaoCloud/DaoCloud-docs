@@ -30,7 +30,7 @@ The components used in this example are:
 - CRI: containerd (as Docker is no longer directly supported in newer versions of Kubernetes)
 - CNI: Calico
 - StorageClass: local-path
-- DCE 5.0 Community: v0.20.0
+- DCE 5.0 Community: v0.21.0
 
 ## Prepare Nodes
 
@@ -248,7 +248,12 @@ Perform the following steps on all three nodes:
 
 4. Install CNI, using Calico as an example
 
-    Please refer to the official installation guide for the correct installation method. Refer to the [official Calico installation documentation](https://docs.tigera.io/calico/latest/getting-started/kubernetes/self-managed-onprem/onpremises#install-calico)
+    !!! note
+
+        Before you install Calico, create a `calico-system` namespace in advance.
+        Refer to [Create Namespace](../../../kpanda/user-guide/namespaces/createns.md).
+
+    Refer to the [official Calico installation documentation](https://docs.tigera.io/calico/latest/getting-started/kubernetes/self-managed-onprem/onpremises#install-calico) for the installation procedure.
 
     1. Download the Calico deployment manifest:
 
@@ -277,10 +282,6 @@ Perform the following steps on all three nodes:
 
         1. Wait for all Pods to be Running
         2. You will see the first node become ready
-
-    !!! note
-
-        Before you install Calico, create a `calico-system` namespace in advance. Please refer to [Create Namespace](../../../kpanda/user-guide/namespaces/createns.md).
 
 ### Add Additional Worker Nodes
 
@@ -341,7 +342,7 @@ bash install_prerequisite.sh online community
 ### Download dce5-installer
 
 ```bash
-export VERSION=v0.20.0
+export VERSION=v0.21.0
 curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
 chmod +x ./dce5-installer
 ```
