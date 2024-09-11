@@ -13,18 +13,15 @@
 
 ### v0.15.1
 
-- 适配 **Spiderpool v0.9.6**
+#### 优化
+
+- **修复** 通过界面创建 multus CR ，点击创建后页面卡死的问题。
+- **修复** ListAllSubnetsAndIPPoolsAndMultus API 能够给 multusCR 返回 defaultV4IPPools 和 defaultV6IPPools 两个字段，当启用默认池功能是，有默认池可用。
 
 !!! note
 
-    Spiderpool 自 v0.9.3 起修复了以下问题。若您使用的是 v0.9.3 之前的版本，建议升级至最新版本。
-
-- **新增** Spiderpool 支持 SpiderMultusConfig 配置 ChainCNI，该功能能够支持如 tuning 等 meta CNI 插件以链式调用的方式注入到 CNI 配置文件中。注意：目前仅后端实现。
-- **新增** 支持默认为节点配置必要的内核参数，比如 `net.ipv4.neigh.default.gc_thresh1` 等。
-- **修复** 修复当 StatefulSet 准备就绪并且其 Pod 正在运行时，修改 StatefulSet 注解指定了另一个 IP 池 Pod IP 也不会生效到新的 IP 池范围内的问题。
-- **修复** 修复当 spiderpool-agent 容器重启（探针检测）导致 multus 配置文件丢失问题。
-- **修复** 修复 StatefulSet 应用在快速扩缩容场景下 Spiderpool GC 可能会错误的回收掉 IPPool 中的 IP 地址 导致同一个 IP 被分配给 K8S 集群的多个 Pod 从而出现 IP 地址冲突的问题。
-- **修复** 修复 Pod 插入多个网卡时有概率出现：错误的策略路由表号顺序导致导致通信失败。
+    Spidernet 是部署在 global 集群，对底层 Spiderpool 项目的资源进行创建、删除等一些操作的 API 项目，Spiderpool 项目位于 Addon 中，由用户自行安装、管理与维护，
+    但 Spiderpool 项目自 v0.9.3 版本起修复了一些重要问题，详情参考 [Spiderpool Release Notes](../modules/spiderpool/releasenotes.md)。若您使用的是 v0.9.3 之前的版本，建议升级至最新版本。
 
 ## 2024-05-30
 
