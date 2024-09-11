@@ -50,8 +50,8 @@ hide:
 
     - 了解 [OpenTelemetry](../quickstart/otel/otel.md)，向 Insight [发送观测数据](../quickstart/otel/send_tracing_to_insight.md)
     - 使用[无侵入](../quickstart/otel/operator.md)方式增强应用
-    - 针对[Java 应用观测](../quickstart/jvm-monitor/jvm-catelogy.md)
-    - 针对[Golang 应用观测](../quickstart/otel/golang.md)
+    - 针对[Java 应用观测](../quickstart/otel/java/jvm-monitor/index.md)
+    - 针对[Golang 应用观测](../quickstart/otel/golang/golang.md)
     - [其他观测技术集成](../best-practice/sw-to-otel.md)
 
 </div>
