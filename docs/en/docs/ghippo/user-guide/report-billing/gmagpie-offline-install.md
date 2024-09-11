@@ -85,7 +85,9 @@ as it is more efficient and convenient.
     ```shell
     charts-syncer sync --config load-image.yaml
     ```
-    if x509 certificate error occurs, please add the --insecure flag.
+    
+    If x509 certificate error occurs, please add the --insecure flag.
+   
     ```shell
     charts-syncer sync --config load-image.yaml --insecure
     ```
@@ -240,7 +242,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         helm get values gmagpie -n gmagpie-system -o yaml > bak.yaml
         ```
 
-    3. Run `helm upgrade` .
+    1. Run `helm upgrade` .
 
         It is recommended to replace the __global.imageRegistry__ field in the __bak.yaml__ file
         with the address of the registry you are currently using before performing the upgrade.
