@@ -112,28 +112,11 @@ metadata:
   name: vsphere   # 可更改
   labels:
     app: containerized-data-importer  # 请勿更改
-    type: Opaque
-    data:
-      accessKeyId: "username-base64"
-      secretKey: "password-base64"
+type: Opaque
+data:
+  accessKeyId: "username-base64"
+  secretKey: "password-base64"
 ```
-
-## 配置 kubevirt cdi configmap（vddk）
-
-1. 在将 vSphere 虚拟机导入 KubeVirt 的 CDI 过程中，需要使用 vddk 组件。
-   
-2. 请确保 configmap 的命名空间与 CDI 所在的命名空间保持一致
-    （Virtnest Agent 的默认命名空间是 virtnest-system，示例中为 cdi）。
-
-    ```yaml
-    apiVersion: v1
-    kind: ConfigMap
-    metadata:
-      name: v2v-vmware
-      namespace: cdi
-      data:
-        vddk-init-image: release-ci.daocloud.io/virtnest/vddk:v1
-    ```
 
 ## 编写 kubevirt vm yaml 创建 vm
 
@@ -180,6 +163,7 @@ spec:
           uuid: "421d6135-4edb-df80-ee54-8c5b10cc4e78"                                     
           thumbprint: "D7:C4:22:E3:6F:69:DA:72:50:81:12:FA:42:18:3F:29:5C:7F:41:CA"            
           secretRef: "vsphere"
+          initImageURL: "release.daocloud.io/virtnest/vddk:v8"
   runStrategy: Manual
   template:
     metadata:
