@@ -48,6 +48,11 @@ spec:
               nvidia.com/vgpu: '1'
 ```
 
+调整前查看 `Pod` 中的资源 `GPU` 分配资源：
+
+![gpu-dynamic-regulation-before.png](./images/gpu-dynamic-regulation-before.png)
+
+
 ### 动态调整算力
 
 如果需要修改算力为 10%，可以按照以下步骤操作：
@@ -101,5 +106,10 @@ spec:
     ```
 
     程序即可生效。同样地，不能退出当前 Bash 终端。
+
+调整后查看 `Pod` 中的资源 `GPU` 分配资源：
+
+![gpu-dynamic-regulation-after.png](./images/gpu-dynamic-regulation-after.png)
+
 
 通过上述步骤，您可以在不重启 vGPU Pod 的情况下动态地调整其算力和显存资源，从而更灵活地满足业务需求并优化资源利用。
