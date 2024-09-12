@@ -187,7 +187,7 @@
           mediatedDevices:                    # (2)!
           - mdevNameSelector: GRID P4-1Q
             resourceName: nvidia.com/GRID_P4-1Q
-        pciHostDevices:                       # (3)!
+          pciHostDevices:                     # (3)!
           - externalResourceProvider: true
             pciVendorSelector: 10DE:1BB3
             resourceName: nvidia.com/GP104GL_TESLA_P4 

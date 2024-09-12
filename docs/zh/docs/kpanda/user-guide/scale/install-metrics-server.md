@@ -1,11 +1,11 @@
 ---
 hide:
-  -toc
+  - toc
 ---
 
 # 安装 metrics-server 插件
 
- __metrics-server__ 是 Kubernetes 内置的资源使用指标采集组件。
+__metrics-server__ 是 Kubernetes 内置的资源使用指标采集组件。
 您可以通过配置弹性伸缩（HPA）策略来实现工作负载资源自动水平伸缩 Pod 副本。
 
 本节介绍如何安装 __metrics-server__ 。
@@ -27,13 +27,16 @@ hide:
 1. 在工作负载详情下的弹性伸缩页面，点击 __去安装__ ，进入 __metrics-server__ 插件安装界面。
 
     ![工作负载](images/create-metrics-server-02.png)
+
 2. 阅读 __metrics-server__ 插件相关介绍，选择版本后点击 __安装__ 按钮。本文将以 __3.8.2__ 版本为例进行安装，推荐您安装 __3.8.2__ 及更高版本。
 
     ![工作负载](images/create-metrics-server-01.png)
+
 3. 在安装配置界面配置基本参数。
 
     ![工作负载](images/create-metrics-server-03.png)
-    - 名称：输入插件名称，请注意名称最长 63 个字符，只能包含小写字母、数字及分隔符（“-”）,且必须以小写字母或数字开头及结尾，例如 metrics-server-01。
+
+    - 名称：输入插件名称，请注意名称最长 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾，例如 metrics-server-01。
     - 命名空间：选择插件安装的命名空间，此处以 __default__ 为例。
     - 版本：插件的版本，此处以 __3.8.2__ 版本为例。
     - 就绪等待：启用后，将等待应用下所有关联资源处于就绪状态，才会标记应用安装成功。
@@ -46,11 +49,11 @@ hide:
 
 4. 高级参数配置
 
-    - 如果集群网络无法访问 __k8s.gcr.io__ 仓库，请尝试修改 __repositort__ 参数为 __repository: k8s.m.daocloud.io/metrics-server/metrics-server__ 。
+    - 如果集群网络无法访问 `k8s.gcr.io` 仓库，请尝试修改 `repositort` 参数为 `repository: k8s.m.daocloud.io/metrics-server/metrics-server`
 
-    - 安装 __metrics-server__ 插件还需提供 SSL 证书。如需绕过证书校验，需要在 __defaultArgs:__ 处添加 __- --kubelet-insecure-tls__ 参数。 
+    - 安装 __metrics-server__ 插件还需提供 SSL 证书。如需绕过证书校验，需要在 `defaultArgs:` 处添加 `- --kubelet-insecure-tls` 参数。
 
-    ??? note "推荐使用如下参数来替换参数配置内的默认 YAML 内容"
+    ??? note "点击查看推荐的 YAML 参数"
 
         ```yaml
         image:
