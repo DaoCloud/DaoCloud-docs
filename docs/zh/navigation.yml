@@ -1189,7 +1189,7 @@ nav:
                       - 任务分析: baize/developer/jobs/tensorboard.md
                   - 数据管理:
                       - 数据集列表: baize/developer/dataset/create-use-delete.md
-                      - 环境列表: baize/developer/dataset/environments.md
+                      - 环境管理: baize/developer/dataset/environments.md
                   - 推理服务:
                       - 模型支持情况: baize/developer/inference/models.md
                       - 创建 Triton 推理服务: baize/developer/inference/create.md
