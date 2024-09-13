@@ -14,7 +14,7 @@
 ### 方式一：升级 Addon 离线包，同步更新 Spiderpool Chart 包和镜像
 
 Spiderpool 的离线包存放在 Addon 中，您可以参考[下载 Addon 离线包](../../../download/addon/history.md)，下载最新的 Addon 离线包。
-在下载后，打开 clusterConfig.yaml，修改 `addonOfflinePackagePath` 字段，指定 Addon 所在的路径，完成 Addon 离线包的升级。
+在下载后，打开 `clusterConfig.yaml` ，修改 `addonOfflinePackagePath` 字段，指定 Addon 所在的路径，完成 Addon 离线包的升级。
 
 1. Addon 升级后，即可通过如下方式，获取 Chart 包
 
@@ -129,13 +129,13 @@ customresourcedefinition.apiextensions.k8s.io/spidersubnets.spiderpool.spidernet
 
 在前面的步骤中，已经正确上传离线 Chart 与镜像包到离线环境中，现在可通过 5.0 界面执行升级。
 在低于 0.7.0 的版本中，Spiderpool 会搭配 Multus-underlay 插件使用，而更高的 Spiderpool 中已经集成了 Multus 插件。
-因此在低于 0.7.0 的版本升级到更高版本在界面进行更新操作时，请关闭 **安装 multus** 按钮，避免重复安装。如下图所示，点击 **更新** ，等待更新完成。
+因此在低于 0.7.0 的版本升级到更高版本在界面进行更新操作时，请关闭 **安装 Multus CNI** 按钮，避免重复安装。如下图所示，点击 **更新** ，等待更新完成。
 
 ![disable multus](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-disable-multus.png)
 
 !!! note
 
-- `Multus Setting` -> `MultusCNI` -> `Default CNI Name`：集群默认 CNI 名称。 在更新时，该值应该与安装所填的保持一致，如果安装时该值为空，那 Spiderpool 是根据/etc/cni/net.d/ 中已有的 CNI conf 文件自动获取默认 CNI，此时更新 Spiderpool 该值填入 /etc/cni/net.d/00-multus.config 文件中字段：`clusterNetwork` 对应的值，如 calico。
+- __Multus Setting__ -> __MultusCNI__ -> __Default CNI Name__ ：集群默认 CNI 名称。 在更新时，该值应该与安装所填的保持一致，如果安装时该值为空，那 Spiderpool 是根据/etc/cni/net.d/ 中已有的 CNI conf 文件自动获取默认 CNI，此时更新 Spiderpool 该值填入 /etc/cni/net.d/00-multus.config 文件中字段：`clusterNetwork` 对应的值，如 calico。
 
 ## 验证
 
