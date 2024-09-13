@@ -314,43 +314,64 @@ Each service can add one of two types of annotations:
 
     There are currently 4 such annotations, corresponding to 4 different programming languages: java, nodejs, python, dotnet. After using it, automatic probes and otel default environment variables will be injected into the first container under spec.pod:
 
-    1. Java application
+    === "Java application"
 
-        ```bash
-          instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
+        ```yaml
+        instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
-    2. NodeJs application
+    === "NodeJs application"
 
-        ```bash
+        ```yaml
         instrumentation.opentelemetry.io/inject-nodejs: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
-    3. Python application
+    === "Python application"
 
-        ```bash
+        ```yaml
         instrumentation.opentelemetry.io/inject-python: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
-    4. Dotnet application
+    === "Dotnet application"
 
-        ```bash
+        ```yaml
         instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
+        ```
+
+    === "Golang application"
+
+        Since Go's automatic detection requires the setting of [OTEL_GO_AUTO_TARGET_EXE](https://github.com/open-telemetry/opentelemetry-go-instrumentation/blob/main/docs/how-it-works.md), 
+        you must provide a valid executable path through annotations or Instrumentation resources. 
+        Failure to set this value will result in the termination of Go's automatic detection injection, 
+        leading to a failure in the connection trace.
+
+        ```yaml
+        instrumentation.opentelemetry.io/inject-go: "insight-system/insight-opentelemetry-autoinstrumentation"
+        instrumentation.opentelemetry.io/otel-go-auto-target-exe: "/path/to/container/executable"
+        ```
+        
+        Go's automatic detection also requires elevated permissions. The following permissions are automatically set and are necessary.
+        
+        ```yaml
+        securityContext:
+          privileged: true
+          runAsUser: 0
         ```
 
 !!! tip
 
-The OpenTelemetry Operator automatically adds some OTEL-related environment variables when injecting probes and also supports overriding these variables. The priority order for overriding these environment variables is as follows:
+    The OpenTelemetry Operator automatically adds some OTEL-related environment variables when 
+    injecting probes and also supports overriding these variables. The priority order for overriding 
+    these environment variables is as follows:
 
-1. Original container environment variables
-2. Language-specific environment variables
-3. Common environment variables
-4. Instrument specification configuration variables
+    ```text
+    original container env vars -> language specific env vars -> common env vars -> instrument spec configs' vars
+    ```
 
-However, it is important to avoid manually overriding __OTEL_RESOURCE_ATTRIBUTES_NODE_NAME__ .
-This variable serves as an identifier within the operator to determine if a pod has already
-been injected with a probe. Manually adding this variable may prevent the probe from being
-injected successfully.
+    However, it is important to avoid manually overriding __OTEL_RESOURCE_ATTRIBUTES_NODE_NAME__ .
+    This variable serves as an identifier within the operator to determine if a pod has already
+    been injected with a probe. Manually adding this variable may prevent the probe from being
+    injected successfully.
 
 ## Automatic injection Demo
 
