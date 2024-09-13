@@ -6,12 +6,13 @@ DaoCloud Enterprise 5.0 融海量特性于一体，提供一站式 PaaS 服务�
 
 === "多集群管理"
 
-- 多集群的统一纳管，支持所有特定版本范围内任意 Kubernetes 集群纳入容器管理范围，实现云上云下多云&混合云容器云平台的统一管理。
+- [多集群的统一纳管](../kpanda/user-guide/clusters/integrate-cluster.md)，
+  支持所有特定版本范围内任意 Kubernetes 集群纳入容器管理范围，实现云上云下多云&混合云容器云平台的统一管理。
 - 集群的快速部署，通过 Web 界面快速部署企业级的 Kubernetes 集群，快速搭建企业级容器云台，适配物理机和虚拟机底层环境。
-- 一键式集群升级，一键升级 Kubernetes 版本，统一管理系统组件升级。
+- [一键式集群升级](../kpanda/user-guide/clusters/upgrade-cluster.md)，一键升级 Kubernetes 版本，统一管理系统组件升级。
 - 集群高可用，内置集群容灾、备份能力，保障业务系统在主机故障、机房中断、自然灾害等情况下可恢复，提高生产环境的稳定性，降低业务中断风险。
 - 集群的全生命周期管理，实现自建云原生集群的全生命周期管理。
-- 开放式 API 能力，提供原生的 Kubernetes OpenAPI 能力。
+- [开放式 API 能力](https://docs.daocloud.io/openapi/)，提供原生的 Kubernetes OpenAPI 能力。
 
 === "云原生应用管理"
 
@@ -61,7 +62,9 @@ DaoCloud Enterprise 5.0 融海量特性于一体，提供一站式 PaaS 服务�
 
 === "精选中间件"
 
-- 支持多种主流中间件：Redis、MySQL、Elasticsearch、RabbitMQ、Kafka、MinIO 等。
+- 支持多种主流中间件：[Redis](../middleware/redis/intro/index.md)、[MySQL](../middleware/mysql/intro/index.md)、
+  [Elasticsearch](../middleware/elasticsearch/intro/index.md)、[RabbitMQ](../middleware/rabbitmq/intro/index.md)、
+  [Kafka](../middleware/kafka/intro/index.md)、[MinIO](../middleware/minio/intro/index.md) 等。
 - 支持实例的全生命周期的管理，满足多种高可用集群模式，可根据场景需求自定义副本和自定义配置。
 - 支持在线的资源和存储的扩容。
 - 支持实例资源和业务维度的统一监控。
@@ -71,8 +74,10 @@ DaoCloud Enterprise 5.0 融海量特性于一体，提供一站式 PaaS 服务�
 
 === "简单易用"
 
-- 一键式创建/接入容器集群，实现大规模集群跨云/跨集群的统一管理。图形化创建流水线，满足多场景需求。一站式应用分发，兼容多形态应用。全面打造一站式生产就绪云原生管理平台。
-- 无需感知底层 Kubernetes 平台差异性，简化应用部署流程，降低应用上云难度，让用户聚焦应用开发，无需关心底层基础设置。同时为 **让用户像使用单集群一样来使用多集群** 奠定基础。
+- 一键式创建/接入容器集群，实现大规模集群跨云/跨集群的统一管理。图形化创建流水线，满足多场景需求。
+  一站式应用分发，兼容多形态应用。全面打造一站式生产就绪云原生管理平台。
+- 无需感知底层 Kubernetes 平台差异性，简化应用部署流程，降低应用上云难度，让用户聚焦应用开发，
+  无需关心底层基础设置。同时为 **让用户像使用单集群一样来使用多集群** 奠定基础。
 
 === "生产就绪"
 
@@ -107,7 +112,7 @@ DaoCloud Enterprise 5.0 融海量特性于一体，提供一站式 PaaS 服务�
 === "开放兼容"
 
 - 基于原生的 Kubernetes 和 Docker 技术，全面兼容 Kubernetes API 和 Kubectl 命令。
-- 提供了丰富的插件体系扩充云容器集群功能，例如 Multus、Cillum、Contour 等[网络插件](../network/intro/index.md)。
+- 提供了丰富的插件体系扩充云容器集群功能，例如 Multus、Cilium、Contour 等[网络插件](../network/intro/index.md)。
 
 [下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
