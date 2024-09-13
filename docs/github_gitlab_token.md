@@ -20,4 +20,4 @@ Refer to [Managing your personal access tokens on GitHub](https://docs.github.co
 3. Select the scopes or permissions you wish to grant this token.
 4. Click **Create personal access token**.
 
-Refer to [Personal tokens on GitLab](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+Refer to [Personal tokens on GitLab](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html).
