@@ -134,6 +134,7 @@ nav:
                           - 编写Jenkinsfile: amamba/user-guide/pipeline/pipeline-syntax.md
                           - 图形化任务模板参数: amamba/user-guide/pipeline/config/step.md
                           - 凭证管理: amamba/user-guide/pipeline/credential.md
+                          - GitHub and GitLab Token: amamba/user-guide/pipeline/github_gitlab_token.md
                       - 运行流水线:
                           - 触发器触发: amamba/user-guide/pipeline/run/trigger.md
                           - 手动执行: amamba/user-guide/pipeline/run/manual.md

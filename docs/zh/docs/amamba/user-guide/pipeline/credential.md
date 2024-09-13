@@ -11,17 +11,18 @@ hide:
 
 目前，您可以在应用工作台中创建以下 3 种类型的凭证：
 
-- __用户名和密码__ ：用于存储用户名和密码的认证信息，若第三方网站或应用程序支持用户名/密码的方式访问，则可以选择这种类型，例如 GitHub、GitLab 和 Docker Hub 的帐户。
+- __用户名和密码__ ：用于存储用户名和密码的认证信息，若第三方网站或应用程序支持用户名/密码的方式访问，则可以选择这种类型，例如 GitHub、GitLab 和 Docker Hub 的账户
 
-- __访问令牌（Access Token）__ ：API token 之类的 token (如 GitHub 个人访问 token)。
+- __访问令牌（Access Token）__ ：API token 之类的 token，如 [GitHub 或 GitLab 个人 Token](./github_gitlab_token.md)
 
-- __kubeconfig__ ：用于配置跨集群认证。
+- __kubeconfig__ ：用于配置跨集群认证
 
-- __SSH__ ：SSH 公钥/私钥对。
+- __SSH__ ：SSH 公钥/私钥对
 
-    !!! note
+!!! note
 
-        SSH 类型的凭证在使用时（比如git clone）需要验证主机的身份，目前直接执行会报错。需要前往 Jenkins 后台在 'Manage Jenkins' -> 'Configure Global Security' -> 'Git Host Key Verification Configuration' 这个配置项里修改选项为：'No verification'
+    SSH 类型的凭证在使用时（比如git clone）需要验证主机的身份，目前直接执行会报错。需要前往 Jenkins 后台在
+    __Manage Jenkins__ -> __Configure Global Security__ -> __Git Host Key Verification Configuration__ 将选项修改为 __No verification__
 
 创建和管理凭证的具体步骤如下：
 

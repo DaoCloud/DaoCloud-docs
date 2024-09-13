@@ -134,6 +134,7 @@ nav:
                           - Edit Jenkinsfile: amamba/user-guide/pipeline/pipeline-syntax.md
                           - GUI Template Parameters: amamba/user-guide/pipeline/config/step.md
                           - Credentials: amamba/user-guide/pipeline/credential.md
+                          - GitHub and GitLab Tokens: amamba/user-guide/pipeline/github_gitlab_token.md
                       - Run Pipeline:
                           - Trigger: amamba/user-guide/pipeline/run/trigger.md
                           - Manually Run: amamba/user-guide/pipeline/run/manual.md
