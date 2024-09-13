@@ -23,7 +23,6 @@ Before importing, refer to the [Network Configuration](../vm/vm-network.md) to p
 Similar to importing a virtual machine with a Linux operating system, refer to [Importing a Linux Virtual Machine with Ubuntu from an External Platform](import-ubuntu.md) to get the following information:
 
 - vSphere account and password
-- VDDK image
 - vSphere virtual machine information
 
 ### Check the Boot Type of Windows
@@ -75,7 +74,7 @@ spec:
             uuid: "421d40f2-21a2-cfeb-d5c9-e7f8abfc2faa"
             thumbprint: "D7:C4:22:E3:6F:69:DA:72:50:81:12:FA:42:18:3F:29:5C:7F:41:CA"
             secretRef: "vsphere21"
-            initImageURL: "release-ci.daocloud.io/virtnest/vddk:v1"
+            initImageURL: "release.daocloud.io/virtnest/vddk:v8"
     - metadata:
         name: export-window-21-datadisk
       spec:
@@ -93,7 +92,7 @@ spec:
             uuid: "421d40f2-21a2-cfeb-d5c9-e7f8abfc2faa"
             thumbprint: "D7:C4:22:E3:6F:69:DA:72:50:81:12:FA:42:18:3F:29:5C:7F:41:CA"
             secretRef: "vsphere21"
-            initImageURL: "release-ci.daocloud.io/virtnest/vddk:v1"
+            initImageURL: "release.daocloud.io/virtnest/vddk:v8"
     # <1>. PVC for booting Virtio drivers
     # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
     - metadata:
@@ -235,7 +234,7 @@ spec:
             uuid: "421d40f2-21a2-cfeb-d5c9-e7f8abfc2faa"
             thumbprint: "D7:C4:22:E3:6F:69:DA:72:50:81:12:FA:42:18:3F:29:5C:7F:41:CA"
             secretRef: "vsphere21"
-            initImageURL: "release-ci.daocloud.io/virtnest/vddk:v1"
+            initImageURL: "release.daocloud.io/virtnest/vddk:v8"
     - metadata:
         name: export-window-21-datadisk
       spec:
@@ -253,7 +252,7 @@ spec:
             uuid: "421d40f2-21a2-cfeb-d5c9-e7f8abfc2faa"
             thumbprint: "D7:C4:22:E3:6F:69:DA:72:50:81:12:FA:42:18:3F:29:5C:7F:41:CA"
             secretRef: "vsphere21"
-            initImageURL: "release-ci.daocloud.io/virtnest/vddk:v1"
+            initImageURL: "release.daocloud.io/virtnest/vddk:v8"
   running: true
   template:
     metadata:
