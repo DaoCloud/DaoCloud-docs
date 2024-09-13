@@ -19,8 +19,8 @@ Currently, you can create the following three types of credentials in the Workbe
   through username/password, you can choose this type. Examples include GitHub, GitLab,
   and Docker Hub accounts.
 
-- **Access Token**: This type is used to store tokens like API tokens
-  (e.g., GitHub personal access token).
+- **Access Token**: This type is used to store tokens like API tokens,
+  such as [GitHub or GitLab personal access tokens](./github_gitlab_token.md).
 
 - **Kubeconfig**: This type is used to configure cross-cluster authentication.
 
