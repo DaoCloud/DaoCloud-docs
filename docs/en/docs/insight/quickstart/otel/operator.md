@@ -252,7 +252,7 @@ If you enable the tracing capability of the Mspider(Service Mesh), you need to a
               fieldPath: metadata.labels['app'] 
     ```
 
-The complete example (for Insight v0.21.x) is as follows:
+    The complete example (for Insight v0.21.x) is as follows:
 
     ```bash
     K8S_CLUSTER_UID=$(kubectl get namespace kube-system -o jsonpath='{.metadata.uid}')
