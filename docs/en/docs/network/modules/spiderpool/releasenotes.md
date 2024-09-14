@@ -14,8 +14,8 @@ evolution path and feature changes of each version.
 
 #### Bug Fixes
 
-- **Fixed** the issue where tuneSysctlConfig value in the chart cannot working correctly.
-- **Fixed** the ability to correctly update the GOMAXPROCS configuration.
+- **Fixed** an issue where tuneSysctlConfig value in the chart cannot working correctly.
+- **Fixed** an issue to correctly update the GOMAXPROCS configuration.
 
 ## 2024-08-25
 
@@ -23,12 +23,12 @@ evolution path and feature changes of each version.
 
 #### Bug Fixes
 
-- **Fixed** the issue where StatefulSet Pod should change IP when recreating with a changed pool in annotation
-- **Fixed** the issue where a pod fails to access NodePort when it has multiple NICs.
-- **Fixed** the issue where pods could not start with the expected CNI when the health check of the spiderpool-agent failed, resulting in the loss of 00-multus.conf.
-- **Fixed** the issue where the installation of the spiderpool-init pod may be blocked.
-- **Fixed** the issue where the incorrect IP addresses from Spiderpool GC may cause IP conflicts during rapid scaling up/down of StatefulSet Pods.
-- **Fixed** the issue where the coordinator sets rp_filter only for pods, not for nodes.
+- **Fixed** an issue where StatefulSet Pod should change IP when recreating with a changed pool in annotation
+- **Fixed** an issue where a pod fails to access NodePort when it has multiple NICs.
+- **Fixed** an issue where pods could not start with the expected CNI when the health check of the spiderpool-agent failed, resulting in the loss of 00-multus.conf.
+- **Fixed** an issue where the installation of the spiderpool-init pod may be blocked.
+- **Fixed** an issue where the incorrect IP addresses from Spiderpool GC may cause IP conflicts during rapid scaling up/down of StatefulSet Pods.
+- **Fixed** an issue where the coordinator sets rp_filter only for pods, not for nodes.
 - **Fixed** the coordinator to fix the erroneous policy routing table when pods have multiple NICs.
 
 #### Feature Changes
@@ -57,14 +57,14 @@ evolution path and feature changes of each version.
 
 #### Bug Fixes
 
-- **Fixed** the issue where modifying the pool used in the StatefulSet Pod annotations could lead to using the new pool's IP address when recreated.
-- **Fixed** the issue where a pod cannot access NodePort when it has multiple NICs.
-- **Fixed** the issue where pods could not start with the expected CNI when the health check of the spiderpool-agent failed, resulting in the loss of 00-multus.conf.
-- **Fixed** the issue where the installation of the spiderpool-init pod may be blocked.
-- **Fixed** the issue where the incorrect IP addresses from Spiderpool GC may cause IP conflicts during rapid scaling up/down of StatefulSet Pods.
-- **Fixed** the issue where the coordinator sets rp_filter only for pods, not for nodes.
+- **Fixed** an issue where modifying the pool used in the StatefulSet Pod annotations could lead to using the new pool's IP address when recreated.
+- **Fixed** an issue where a pod cannot access NodePort when it has multiple NICs.
+- **Fixed** an issue where pods could not start with the expected CNI when the health check of the spiderpool-agent failed, resulting in the loss of 00-multus.conf.
+- **Fixed** an issue where the installation of the spiderpool-init pod may be blocked.
+- **Fixed** an issue where the incorrect IP addresses from Spiderpool GC may cause IP conflicts during rapid scaling up/down of StatefulSet Pods.
+- **Fixed** an issue where the coordinator sets rp_filter only for pods, not for nodes.
 - **Fixed** the coordinator to fix the erroneous policy routing table when pods have multiple NICs.
-- **Fixed** the issue where the tuneSysctlConfig value in the chart is not working correctly.
+- **Fixed** an issue where the tuneSysctlConfig value in the chart is not working correctly.
 
 #### Feature Changes
 
