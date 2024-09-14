@@ -9,7 +9,7 @@ hide:
 
 1. Can I specify my own Karmada version or get it upgraded? 
 
-    Yes, The current default version is v1.8.0, and you can upgrade the version by yourself.
+    Yes, The current default version is v1.9.6, and you can upgrade the version by yourself.
 
 2. How to convert single-cluster applications to multicloud applications?
 
