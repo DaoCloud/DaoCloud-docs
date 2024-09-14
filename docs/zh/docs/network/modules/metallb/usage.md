@@ -116,24 +116,22 @@ spec:
 
 1. 通过 Helm 模板安装 MetalLB ,并开启 Shared Default IP Pool 开关
 
-![开启sharedippool](/docs/zh/docs/network/images/sharepool.png)
+    ![开启sharedippool](../../images/sharepool.png)
 
 2. 创建 service 时选择共享的 MetalLB IP池，并填写负载均衡 IP 地址。
 
-![创建service](/docs/zh/docs/network/images/service-sharepool.png)
+    ![创建service](../../images/service-sharepool.png)
 
 ### 非 Default IPPool 开启共享 IP 池
 
-1. 手动给 Helm 应用 MetalLB上打上annotations： [metallb.universe.tf/share-address-pool](http://metallb.universe.tf/share-address-pool): true
+手动给 Helm 应用 MetalLB 打上 `annotations`：
 
-示例：
-
-```
+```yaml
 apiVersion: metallb.io/v1beta1  
 kind: IPAddressPool  
 metadata:  
   annotations:  
-    metallb.universe.tf/share-address-pool: true  
+    metallb.universe.tf/share-address-pool: true  # 增加这一行
   generation: 1  
   name: test-2048-pool  
   namespace: metallb-system  
@@ -145,6 +143,7 @@ spec:
   autoAssign: false  
   avoidBuggyIPs: false
 ```
-2. 创建 service 时选择共享的 MetalLB IP池，并填写负载均衡 IP 地址。
 
-![创建service](/docs/zh/docs/network/images/service-sharepool.png)
+创建 service 时选择共享的 MetalLB IP 池，并填写负载均衡 IP 地址。
+
+![创建 service](../../images/service-sharepool.png)
