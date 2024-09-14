@@ -17,7 +17,7 @@
 
 #### 修复 bug
 
-- **修复** 修改 Statefulset Pod 注释中所使用的池，能够在重新创建时使用新池的 IP 地址
+- **修复** 修改 StatefulSet Pod 注释中所使用的池，能够在重新创建时使用新池的 IP 地址
 - **修复** 当 Pod 拥有多个网卡时无法访问 NodePort。
 - **修复** 当 spiderpool-agent 的健康检查失败，导致 00-multus.conf 丢失时，Pod 无法使用期望的 CNI 启动。
 - **修复** spiderpool-init pod 安装阻塞的问题。
@@ -50,7 +50,7 @@
 
 #### 修复 bug
 
-- **修复** 修改 Statefulset Pod 注释中所使用的池，能够在重新创建时使用新池的 IP 地址
+- **修复** 修改 StatefulSet Pod 注释中所使用的池，能够在重新创建时使用新池的 IP 地址
 - **修复** 当 Pod 拥有多个网卡时无法访问 NodePort。
 - **修复** 当 spiderpool-agent 的健康检查失败，导致 00-multus.conf 丢失时，Pod 无法使用期望的 CNI 启动。
 - **修复** spiderpool-init pod 安装阻塞的问题。
