@@ -683,6 +683,7 @@ nav:
                       - Upgrade Notes: insight/quickstart/install/upgrade-note.md
                       - Known Issues: insight/quickstart/install/knownissues.md
                       - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
+                      - Enable Big Log and Big Trace: insight/quickstart/install/big-log-and-trace.md
                   - Install insight-agent on Other Distributions:
                       - DCE 4.0: insight/quickstart/other/install-agentindce.md
                       - OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
