@@ -106,3 +106,44 @@ spec:
     创建后编辑 Annotation 没有效果。
 
 共享 IP 另一个作用是 LoadBalancer IP 地址不足，需要多个 Service 共享同一个 IP，但注意不同 Service 的协议和端口应该是不同的，否则无法区分连接。
+
+
+## 共享 IP 池
+
+开启共享  IP 池后，该 IP 池中所有的 IP 地址均为共享 IP 地址。
+
+### Default IPPool 开启共享 IP 池
+
+1. 通过 Helm 模板安装 MetalLB ,并开启 Shared Default IP Pool 开关
+
+    ![开启sharedippool](../../images/sharepool.png)
+
+2. 创建 service 时选择共享的 MetalLB IP池，并填写负载均衡 IP 地址。
+
+    ![创建service](../../images/service-sharepool.png)
+
+### 非 Default IPPool 开启共享 IP 池
+
+手动给 Helm 应用 MetalLB 打上 `annotations`：
+
+```yaml
+apiVersion: metallb.io/v1beta1  
+kind: IPAddressPool  
+metadata:  
+  annotations:  
+    metallb.universe.tf/share-address-pool: true  # 增加这一行
+  generation: 1  
+  name: test-2048-pool  
+  namespace: metallb-system  
+  resourceVersion: "1306403711"  
+  uid: e50c8f73-688a-47f9-ac45-0cbbd5cfe878  
+spec:  
+  addresses:  
+  - 10.6.202.90-10.6.202.100  
+  autoAssign: false  
+  avoidBuggyIPs: false
+```
+
+创建 service 时选择共享的 MetalLB IP 池，并填写负载均衡 IP 地址。
+
+![创建 service](../../images/service-sharepool.png)
