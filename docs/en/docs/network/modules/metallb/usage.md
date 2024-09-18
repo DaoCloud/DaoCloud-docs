@@ -113,3 +113,43 @@ spec:
     Editing an Annotation after creation has no effect.
 
 Another feature of shared IP is that the LoadBalancer IP address is insufficient, and multiple Services need to share the same IP, but note that the protocols and ports of different Services should be different, otherwise the connection cannot be distinguished.
+
+## Shared IPPool
+
+When the shared IPPool is enabled, all IP addresses in the IPPool are shared IP addresses.
+
+### Enabling Shared Default IPPool
+
+1. Install MetalLB using a Helm template and enable the Shared Default IPPool option.
+
+    ![Enable shared IPPool](../../images/sharepool.png)
+
+2. When creating a Service, select the shared MetalLB IPPool and specify the LoadBalancer IP address.
+
+    ![Create Service](../../images/service-sharepool.png)
+
+### Enabling Shared IPPool for Non-Default IPPool
+
+Manually add the `annotations` to the Helm application for MetalLB:
+
+```yaml
+apiVersion: metallb.io/v1beta1  
+kind: IPAddressPool  
+metadata:  
+  annotations:  
+    metallb.universe.tf/share-address-pool: true  # Add this line
+  generation: 1  
+  name: test-2048-pool  
+  namespace: metallb-system  
+  resourceVersion: "1306403711"  
+  uid: e50c8f73-688a-47f9-ac45-0cbbd5cfe878  
+spec:  
+  addresses:  
+  - 10.6.202.90-10.6.202.100  
+  autoAssign: false  
+  avoidBuggyIPs: false
+```
+
+When creating a Service, select the shared MetalLB IPPool and specify the LoadBalancer IP address.
+
+![Create Service](../../images/service-sharepool.png)
