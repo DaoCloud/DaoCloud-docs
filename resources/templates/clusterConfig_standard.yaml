@@ -1,0 +1,7 @@
+# Standard clusterConfig template
+apiVersion: v1
+kind: ClusterConfig
+metadata:
+  name: standard-cluster
+spec:
+  details: standard-details
