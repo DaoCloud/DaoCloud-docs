@@ -742,6 +742,7 @@ nav:
               - Network Insight:
                   - Integrate DeepFlow: insight/best-practice/integration_deepflow.md
               - References:
+                  - Insight Reference Metrics: insight/reference/used-metric-in-insight.md
                   - Custom Probe: insight/user-guide/collection-manag/probe-module.md
                   - Collection Metrics: insight/user-guide/collection-manag/metric-collect.md
                   - Alert Notification Flow: insight/reference/alertnotification.md
