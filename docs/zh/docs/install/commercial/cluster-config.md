@@ -8,7 +8,7 @@
 以下是一个 ClusterConfig 文件示例。
 
 ```yaml title="clusterConfig.yaml"
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
 spec:
@@ -348,7 +348,7 @@ spec:
 builtin 模式意味着所需的第三方软件（如 chartMusem 、Minio、Docker registry）将由安装器进行部署并提供 DCE 5.0 平台使用。
 
 ```yaml
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
   creationTimestamp: null
@@ -386,7 +386,7 @@ spec:
 external 模式意味着所需的第三方软件（如 chartMusem 、Minio、Docker registry 等等）无需安装器安装，由使用者提供地址供 DCE 5.0 平台使用。
 
 ```yaml
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
   creationTimestamp: null
@@ -436,7 +436,7 @@ spec:
 official-service 模式，当使用者采用在线安装 DCE 5.0 时，DCE 5.0 平台使用的资源将从 DaoCloud 的官方仓库进行获取。
 
 ```yaml
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
   creationTimestamp: null
