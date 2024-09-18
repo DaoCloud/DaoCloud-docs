@@ -13,7 +13,7 @@ hide:
 
 1. 使用具有 Admin 角色的用户登录 DCE 5.0，从左侧导航栏点击 __镜像仓库__ -> __托管 Harbor__ 。
 
-    ![harbor 实例入口](../../images/harbor-access.png)
+    ![harbor 实例入口](../images/harbor-access.png)
 
 2. 点击右上角的 __创建实例__ 按钮。
 
