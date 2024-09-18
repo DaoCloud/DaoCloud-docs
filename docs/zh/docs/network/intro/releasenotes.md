@@ -13,10 +13,8 @@
 
 ### v0.15.1
 
-#### 优化
-
-- **修复** 界面创建 multus CR时点击创建后页面卡死的问题。
-- **修复** 启用默认池功能时没有可用默认池的问题。现在的 ListAllSubnetsAndIPPoolsAndMultus API 能够给 multus CR 返回 defaultV4IPPools 和 defaultV6IPPools 两个字段。
+- **修复** 界面创建 Multus CR时点击创建后页面卡死的问题。
+- **修复** 启用默认池功能时没有可用默认池的问题。现在的 ListAllSubnetsAndIPPoolsAndMultus API 能够给 Multus CR 返回 defaultV4IPPools 和 defaultV6IPPools 两个字段。
 
 !!! note
 
@@ -29,8 +27,6 @@
 
 - 适配 **Spiderpool v0.9.3**
 
-#### 优化
-
 - **修复** ListAllSubnetsAndIPPoolsAndMultus API 通过 namespace 亲和性过滤池失败
 - **修复** 修复 ListMultusCniConfig API 指针值对比判断错误, 并修复判断中将 sriov 的错写为 ipvlan 的问题
 - **新增** 支持界面创建 ovs-cni 类型的 Multus CR
@@ -41,8 +37,6 @@
 
 - 适配 **Spiderpool v0.9.1**
 - 适配 **EgressGateway v0.5.1**
-
-#### 优化
 
 - **优化** 优化工作负载网络配置，支持 Multus CR 无感知，应用直接选择 IPPool
 - **优化** 修复 multusName 中的命名空间为空，自动为其拼接 spiderpool 的所在 Namespace
@@ -196,8 +190,6 @@
 
 适配 **Spiderpool v0.6.0**
 
-#### 新功能
-
 - **新增** Spiderpool CR 中新增 nodeName、multusName 字段，用于支持节点拓扑，能按需配置网络
 - **新增** Spiderpool 提供了 SpiderMultusConfig CR ，简化书写 JSON 格式的 Multus CNI 配置，
   自动管理 Multus NetworkAttachmentDefinition CR
@@ -218,8 +210,6 @@
 
 适配 **Spiderpool v0.5.0**
 
-#### 优化
-
 - **新增** `spidernet` 定义 Multus API
 - **优化** `spidernet` e2e 稳定性
 - **修复** `spidernet` `goproduct` Proxy Config
@@ -230,8 +220,6 @@
 ### v0.7.0
 
 适配 **Spiderpool v0.4.1**
-
-#### 修复
 
 - **修复** `spidernet` 子网根据 IP 排序问题。
 
@@ -295,13 +283,9 @@
 
 ### v0.4.3
 
-#### 优化
-
 - **优化** 资源使用量，降低 CPU，内存请求量。
 
 ### v0.4.2
-
-#### 优化
 
 - **优化** 资源使用量，降低 CPU，内存请求量。
 - **优化** 在有 IP 占用的情况下，不能删除 Subnet 或 IPPool。

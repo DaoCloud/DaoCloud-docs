@@ -19,47 +19,34 @@ evolution path and feature changes of each version.
 
 ### v0.15.1
 
-- Adapted to **Spiderpool v0.9.6**
+- **Fixed** the issue where the page freezes after clicking create when creating a Multus CR in the UI.
+- **Fixed** the issue of having no available default pool when the default pool feature is enabled. The current ListAllSubnetsAndIPPoolsAndMultus API can return the fields defaultV4IPPools and defaultV6IPPools for the Multus CR.
 
 !!! note
 
-    Spiderpool has fixed the following issues since v0.9.3. If you are using a version prior to v0.9.3, it is recommended to upgrade to the latest version.
-
-- **Added** support for the SpiderMultusConfig configuration for ChainCNI in Spiderpool,
-  which enables meta CNI plugins such as tuning to be injected into the CNI configuration file in a
-  chained manner. Note that this is currently only implemented on the backend.
-- **Added** support for configuring necessary kernel parameters for nodes by default, such as
-  `net.ipv4.neigh.default.gc_thresh1` .
-- **Fixed** an issue where modifying the StatefulSet annotation to specify another IPPool would not
-  take effect in the new IPPool range when the StatefulSet is ready and its pods are running.
-- **Fixed**  an issue where the multus configuration file was lost when the spiderpool-agent container
-  restarted (probe detection).
-- **Fixed** an issue where in rapid scaling scenarios for StatefulSet applications, Spiderpool GC might
-  incorrectly reclaim IP addresses from the IPPool, leading to the same IP being assigned to multiple
-  pods in the K8S cluster, resulting in IP address conflicts.
-- **Fixed** a probability issue where inserting multiple NICs into a pod could lead to
-  incorrect sequence of policy routing table ID, causing communication failures.
+    Spidernet is an API project deployed within the global cluster, designed to facilitate operations
+    such as creating and deleting resources for the underlying Spiderpool project. The Spiderpool
+    project is located in the Addon section and is managed, maintained, and installed by the user.
+    Since v0.9.3, the Spiderpool project has resolved several critical issues. For more details,
+    refer to the [Spiderpool Release Notes](../modules/spiderpool/releasenotes.md). If you are using
+    a version prior to v0.9.3, it is recommended to upgrade to the latest version.
 
 ## 2024-05-30
 
 ### v0.15.0
 
-- Compatibile with Spiderpool v0.9.3
-
-#### Improvements
+- Compatibile with **Spiderpool v0.9.3**
 
 - **Fixed** ListAllSubnetsAndIPPoolsAndMultus API fails to filter pools by namespace affinity
 - **Fixed** ListMultusCniConfig API pointer value comparison judgment error, and fix the problem of sriov being written as ipvlan in the judgment
-- **Added** Support interface to create ovs-cni type multus CR
+- **Added** support interface to create ovs-cni type Multus CR
 
 ## 2023-04-30
 
 ### v0.14.0
 
-- Compatibile with Spiderpool v0.9.1
-- Compatibile with EgressGateway v0.5.1
-
-#### Improvements
+- Compatibile with **Spiderpool v0.9.1**
+- Compatibile with **EgressGateway v0.5.1**
 
 - **Improved** workload network configuration, supports seamless Multus CR, allowing applications to directly select IPpool
 - **Fixed** an issue where the namespace in multusName was empty, now automatically concatenating the namespace where Spiderpool resides
@@ -69,8 +56,8 @@ evolution path and feature changes of each version.
 
 ### v0.13.0
 
-- Compatibile with Spiderpool v0.9.1
-- Compatibile with EgressGateway v0.4.0
+- Compatibile with **Spiderpool v0.9.1**
+- Compatibile with **EgressGateway v0.4.0**
 
 #### New Features
 
@@ -223,8 +210,6 @@ Compatible with **Spiderpool v0.7.0**
 
 Compatible with **Spiderpool v0.6.0**
 
-#### New Features
-
 - **Added** `nodeName` and `multusName` fields in Spiderpool CR to support node topology and
   configure networks as needed
 - **Added** Spiderpool provides SpiderMultusConfig CR, which simplifies the configuration of
@@ -248,8 +233,6 @@ Compatible with **Spiderpool v0.6.0**
 
 Compatible with **Spiderpool v0.5.0**
 
-#### Improvements
-
 - **Added** definition of Multus API in `spidernet`
 - **Improved** stability of `spidernet` e2e
 - **Fixed** `spidernet` `goproduct` Proxy Config
@@ -260,8 +243,6 @@ Compatible with **Spiderpool v0.5.0**
 ### v0.7.0
 
 Compatible with **Spiderpool v0.4.1**
-
-#### Fixes
 
 - **Fixed** subnet sorting issue based on IP in `spidernet`
 
@@ -327,13 +308,9 @@ Compatible with **Spiderpool v0.4.1**
 
 ### v0.4.3
 
-#### Improvements
-
 - **Improved** resource usage, reduce CPU and memory requests.
 
 ### v0.4.2
-
-#### Improvements
 
 - **Improved** resource usage, reduce CPU and memory requests.
 - **Improved** Subnet or IPPool cannot be deleted when IP is occupied.
