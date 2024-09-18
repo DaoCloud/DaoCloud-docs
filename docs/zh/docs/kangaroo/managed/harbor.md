@@ -39,13 +39,13 @@ hide:
     - 哨兵模式填写地址：`redis+sentinel://{host}:{port}?sentinelMasterId={master_id}`，需要替换 `host`、`port`、`master_id` 三个参数。
     - 密码：按需填写
 
-    ![规格配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/hosted04.png)
+    ![规格配置](../images/hosted04.png)
 
 5. 填写域名，选择 Ingress 实例，输入管理员密码后点击 __确定__ （用户名/密码用于登录原生 Harbor 实例，请妥善保管密码）。
 
     域名填写提示: `http://{host}`，host 前面的 __http://__ 必须要带上。
 
-    ![访问与策略绑定](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/hosted05.png)
+    ![访问与策略绑定](../images/hosted05.png)
 
 6. 返回托管 Harbor 实例列表，新创建的实例默认位于第一个，等待状态从`更新中`变为`健康`，即可正常使用。
 
