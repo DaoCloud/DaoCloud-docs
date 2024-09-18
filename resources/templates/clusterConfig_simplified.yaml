@@ -1,0 +1,5 @@
+# Simplified clusterConfig template
+apiVersion: v1
+kind: ClusterConfig
+metadata:
+  name: simplified-cluster
