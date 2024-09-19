@@ -1,15 +1,15 @@
-# 审计日志
+# 查看操作日志
 
-为了记录 HwameiStor 集群系统的使用和操作历史信息，HwameiStor 提供了系统审计日志。该审计日志具有 HwameiStor 系统语义，易于用户查阅、解析。
-审计日志针对 HwameiStor 系统中的每类资源，记录其使用操作信息。该资源包括：Cluster、Node、StoragePool、Volume 等等。
+为了记录 HwameiStor 集群系统的使用和操作历史信息，HwameiStor 提供了系统操作日志。该操作日志具有 HwameiStor 系统语义，易于用户查阅、解析。
+操作日志针对 HwameiStor 系统中的每类资源，记录其使用操作信息。该资源包括：Cluster、Node、StoragePool、Volume 等等。
 
-## 查看审计日志
+查看操作日志的具体步骤如下：
 
-1. 在 **容器管理** 进入 **对应集群** -> **点击左侧容器存储** -> **Hwameistor** 进入 **Hwameistor** 界面，在 **仪表盘** 界面底部可以看到审计模块：
+1. 在左侧导航栏，点击 **容器管理** -> **集群列表** ，点击集群名称进入对应集群；点击 **容器存储** -> **HwameiStor** 进入 **HwameiStor** 界面，在 **仪表盘** 页面底部，可以看到 **操作日志** 列表。
 
 2. 展示了操作类型、资源名称、资源类型、状态、操作时间、操作内容字段。
 
-    ![audit01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/auit01.png)
+    ![audit01](../../images/audit01.png)
 
     其中资源类型支持：
 
@@ -23,4 +23,4 @@
 
     操作内容：可以查看到更多的操作细节信息，如下图展示了 `StorageNode` 资源的一条审计的操作内容。
 
-    ![audit02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/audit02.png)
+    ![audit02](../../images/audit02.png)
