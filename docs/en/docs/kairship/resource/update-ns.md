@@ -1,8 +1,13 @@
+---
+MTPE: ModetaNiu
+DATE: 2024-09-19
+---
+
 # Update Multicloud Namespace
 
 You currently have two options for updating multicloud namespaces: edit YAML and update with form.
 
-1. After entering a multicloud instance, click __Resource Management__ -> __Multicloud Namespace__ in the 
+1. After entering a multicloud instance, click __Resource Management__ -> __Multicloud Namespaces__ in the 
    left navigation bar. Click __┇__ to edit the YAML or update the namespace.
 
     ![Update Namespace](../images/update-ns01.png)
