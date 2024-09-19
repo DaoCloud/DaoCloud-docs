@@ -97,11 +97,12 @@ Metax 提供了两个 helm-chart 包，一个是 metax-extensions，一个是 gp
 2. `metax-maca` 组件的镜像不在 `metax-k8s-images.0.7.13.run` 包里面，需要单独下载 `maca-mxc500-2.23.0.23-ubuntu20.04-x86_64.tar.xz` 这类镜像，`load` 之后重新修改 `metax-maca` 组件的镜像。
   
 3. `metax-driver` 组件的镜像需要从 `https://pub-docstore.metax-tech.com:7001` 这个网站下载 `k8s-driver-image.2.23.0.25.run` 文件，然后执行 `k8s-driver-image.2.23.0.25.run push {registry}/metax` 命令把镜像推送到镜像仓库。推送之后修改 `metax-driver` 组件的镜像地址。
-  
 
 ## 使用 GPU
-安装后可在工作负载中[使用沐曦GPU](https://docs.daocloud.io/kpanda/user-guide/workloads/create-deployment/#_5)
- ![使用GPU](../images/metax-use.png)
+
+安装后可在工作负载中[使用沐曦 GPU](../../workloads/create-deployment.md#_5)
+
+![使用 GPU](../images/metax-use.png)
 
 
 
