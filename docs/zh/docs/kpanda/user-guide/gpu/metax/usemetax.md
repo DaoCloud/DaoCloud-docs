@@ -86,7 +86,7 @@ Metax 提供了两个 helm-chart 包，一个是 metax-extensions，一个是 gp
 
 5. 修改成功之后就可以在节点上看到带有 `Metax GPU` 的标签
   
-    ![metax节点标签](../images/metax-gpu.png)
+    ![metax节点标签](../images/metax-node1.png)
 
 ### gpu-operator
 
