@@ -36,6 +36,8 @@ Metax 提供了两个 helm-chart 包，一个是 metax-extensions，一个是 gp
     - 如没有内容显示，就表示没有安装过软件包。如有内容显示，则表示安装过软件包。
     - 使用 metax-opeartor 时，不推荐在工作节点预安装 MXMACA 内核态驱动，若已安装也无需卸载。
 
+3. 安装驱动
+
 ### gpu-extensions
 
 1. 推送镜像
@@ -60,31 +62,8 @@ Metax 提供了两个 helm-chart 包，一个是 metax-extensions，一个是 gp
 
     ![查看资源](../images/metax-node.png)
 
-  
-4. 修改 DCE5.0 的配置，在 `kpanda-global-cluster` 集群中的 `kpanda-system` 命名空间下修改 gpu-type-config configmap，修改如下 gpu-type.json
 
-    ```json
-    {  
-      "type": "metax-gpu",  
-      "alias": "Metax GPU",  
-      "resource": [  
-        {  
-          "key": "metax-tech.com/gpu",  
-          "alias": "GPU Card Num(Core)",  
-          "is_allocatable": true,  
-          "alias_zh": "物理卡数量(个)",  
-          "range": {  
-           "min": 1,  
-           "min_desc": "Min use 1 gpu",  
-           "max": 128,  
-           "max_desc": "Max use 128 gpu"  
-          }  
-        }  
-      ]  
-    }
-    ```
-
-5. 修改成功之后就可以在节点上看到带有 `Metax GPU` 的标签
+4. 修改成功之后就可以在节点上看到带有 `Metax GPU` 的标签
   
     ![metax节点标签](../images/metax-node1.png)
 
@@ -100,9 +79,10 @@ Metax 提供了两个 helm-chart 包，一个是 metax-extensions，一个是 gp
 
 ## 使用 GPU
 
-安装后可在工作负载中[使用沐曦 GPU](../../workloads/create-deployment.md#_5)
+安装后可在工作负载中[使用沐曦 GPU](../../workloads/create-deployment.md#_5)。注意启用 GPU 后，需选择GPU类型为 Metax GPU
 
 ![使用 GPU](../images/metax-use.png)
 
+进入容器，执行 mx-smi 可查看 GPU 的使用情况.
 
-
+![使用 GPU](../images/metax-use2.png)
