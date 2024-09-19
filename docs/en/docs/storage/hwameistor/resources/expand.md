@@ -5,19 +5,19 @@ modifying the size of `PVC`. Currently, it supports both manual and automatic ex
 
 ## Manual Expansion
 
-1. Access the proper cluster and navigate to **Storage** -> **Hwameistor**
+1. Access the proper cluster and navigate to **Container Storage** -> **HwameiStor**
 
-2. Click **Local Volume** . In the local volume list interface, select a local volume to perform the `expand` operation.
+2. Click **Local Volumes** . On the right side of the local volume list, click **┇** and select **Expand** .
 
+    ![expand01](../../images/expand01.png)
 
+3. In the **Expand** dialog box, enter the new size for expansion. In this example, expand from `1G` to `10G`, then click **OK** .
 
-3. In the `Expand` dialog box, enter the new size for expansion. In this example, expand from `1G` to `10G`, then click **OK** .
-
-
+    ![expand02](../../images/expand02.png)
 
 4. Refresh the current list and check that the capacity of the current local volume has changed from `1G` to `10G`.
 
-
+    ![expand03](../../images/expand03.png)
 
 ## Automatic Expansion
 
@@ -41,12 +41,12 @@ spec:
 
 The three int-type fields `warningThreshold`, `resizeThreshold`, and `nodePoolUsageLimit` represent percentages.
 
-- `warningThreshold`: Currently not associated with any alert action. It serves as a target ratio,
-  meaning that after expansion, the volume usage will be below this percentage.
-- `resizeThreshold`: Indicates a usage ratio. When the volume usage reaches this percentage,
-  the expansion action will be triggered.
-- `nodePoolUsageLimit`: Represents the upper limit of node storage pool usage.
-  If the usage of a pool reaches this percentage, the volumes in this pool will not be automatically expanded.
+- `warningThreshold` is currently not associated with any alert action. It serves as a target ratio, meaning that
+  after expansion, the volume usage will be below this percentage.
+- `resizeThreshold` indicates a usage ratio. When the volume usage reaches this percentage, the expansion action
+  will be triggered.
+- `nodePoolUsageLimit` represents the upper limit of node StorageClass usage. If the usage of a StorageClass reaches
+  this percentage, the volumes in this StorageClass will not be automatically expanded.
 
 ### Matching Rules
 
@@ -74,14 +74,15 @@ spec:
 
 `ResizePolicy` has three label-selectors:
 
-- `pvcSelector`: Indicates that the PVCs selected by this selector will be automatically expanded according to the policy.
-- `namespaceSelector`: Indicates that the PVCs in the namespaces selected by this selector
+- `pvcSelector` indicates that the PVCs selected by this selector will be automatically expanded according to the policy.
+- `namespaceSelector` indicates that the PVCs in the namespaces selected by this selector
   will be automatically expanded according to the policy.
-- `storageClassSelector`: Indicates that the PVCs created from the storage classes selected by
+- `storageClassSelector` indicates that the PVCs created from the StorageClass selected by
   this selector will be automatically expanded according to the policy.
 
-These three selectors have an "AND" relationship. If you specify multiple selectors in a `ResizePolicy`,
-only the PVCs that meet all the selectors will match the policy. If no selector is specified in the `ResizePolicy`, it becomes a cluster-wide `ResizePolicy`, acting as the default policy for all PVCs in the cluster.
+These three selectors have an "AND" relationship. If you specify multiple selectors in a `ResizePolicy`, only
+the PVCs that meet all the selectors will match the policy. If no selector is specified in the `ResizePolicy`,
+it becomes a cluster-wide `ResizePolicy`, acting as the default policy for all PVCs in the cluster.
 
 ## FAQs
 
@@ -104,7 +105,7 @@ Events:
   Normal   FileSystemResizeSuccessful  11s                kubelet                             MountVolume.NodeExpandVolume succeeded for volume "pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8" k8s-worker-3
 ```
 
-### How to Watch the Expanded `PVC/PV`?
+### How to Watch the Expanded `PVC/PV`
 
 ```shell
 kubectl get pvc data-sts-mysql-local-0
