@@ -1006,9 +1006,10 @@ nav:
                       - Offline Upgrade MongoDB: middleware/mongodb/intro/offline-install.md
                       - Release Notes: middleware/mongodb/release-notes.md
                   - Quick Start:
-                      - Create MongoDB: middleware/mongodb/user-guide/create.md
-                      - Update MongoDB: middleware/mongodb/user-guide/update.md
-                      - Delete MongoDB: middleware/mongodb/user-guide/delete.md
+                      - Create MongoDB Instance: middleware/mongodb/user-guide/create.md
+                      - Update MongoDB Instance: middleware/mongodb/user-guide/update.md
+                      - Delete MongoDB Instance: middleware/mongodb/user-guide/delete.md
+                      - View MongoDB Instance: middleware/mongodb/user-guide/view.md
                       - View MongoDB Logs: middleware/mongodb/user-guide/logs.md
               - PostgreSQL Database:
                   - Intro:
@@ -1017,9 +1018,9 @@ nav:
                       - Offline Upgrade PostgreSQL: middleware/postgresql/intro/offline-install.md
                       - Release Notes: middleware/postgresql/release-notes.md
                   - Quick Start:
-                      - Create PostgreSQL: middleware/postgresql/user-guide/create.md
-                      - Update PostgreSQL: middleware/postgresql/user-guide/update.md
-                      - Delete PostgreSQL: middleware/postgresql/user-guide/delete.md
+                      - Create PostgreSQL Instance: middleware/postgresql/user-guide/create.md
+                      - Update PostgreSQL Instance: middleware/postgresql/user-guide/update.md
+                      - Delete PostgreSQL Instance: middleware/postgresql/user-guide/delete.md
                       - View PostgreSQL Logs: middleware/postgresql/user-guide/logs.md
                       - Manually Set Antiaffinity: middleware/postgresql/user-guide/antiaffinity.md
                       - Auto Backup: middleware/postgresql/user-guide/auto-backup.md

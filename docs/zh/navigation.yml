@@ -353,6 +353,7 @@ nav:
                       - 使用昇腾 NPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
                       - 启用昇腾 VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - 天数 GPU 管理: kpanda/user-guide/gpu/Iluvatar_usage.md
+                  - 沐曦 GPU 管理: kpanda/user-guide/gpu/usemetax.md
                   - GPU 相关FAQ: kpanda/user-guide/gpu/FAQ.md
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
@@ -1038,9 +1039,10 @@ nav:
                       - 离线升级 MongoDB: middleware/mongodb/intro/offline-install.md
                       - Release Notes: middleware/mongodb/release-notes.md
                   - 快速入门:
-                      - 创建 MongoDB: middleware/mongodb/user-guide/create.md
-                      - 更新 MongoDB: middleware/mongodb/user-guide/update.md
-                      - 删除 MongoDB: middleware/mongodb/user-guide/delete.md
+                      - 创建 MongoDB 实例: middleware/mongodb/user-guide/create.md
+                      - 更新 MongoDB 实例: middleware/mongodb/user-guide/update.md
+                      - 删除 MongoDB 实例: middleware/mongodb/user-guide/delete.md
+                      - 查看 MongoDB 实例: middleware/mongodb/user-guide/view.md
                       - 查看 MongoDB 日志: middleware/mongodb/user-guide/logs.md
                       - 备份管理: middleware/mongodb/user-guide/backup.md
               - PostgreSQL 数据库:
@@ -1050,9 +1052,9 @@ nav:
                       - 离线升级 PostgreSQL: middleware/postgresql/intro/offline-install.md
                       - Release Notes: middleware/postgresql/release-notes.md
                   - 快速入门:
-                      - 创建 PostgreSQL: middleware/postgresql/user-guide/create.md
-                      - 更新 PostgreSQL: middleware/postgresql/user-guide/update.md
-                      - 删除 PostgreSQL: middleware/postgresql/user-guide/delete.md
+                      - 创建 PostgreSQL 实例: middleware/postgresql/user-guide/create.md
+                      - 更新 PostgreSQL 实例: middleware/postgresql/user-guide/update.md
+                      - 删除 PostgreSQL 实例: middleware/postgresql/user-guide/delete.md
                       - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
                       - 手工设置工作负载反亲和: middleware/postgresql/user-guide/antiaffinity.md
                       - 备份管理: middleware/postgresql/user-guide/backup.md
