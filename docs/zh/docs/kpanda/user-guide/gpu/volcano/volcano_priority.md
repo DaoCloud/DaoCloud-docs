@@ -1,4 +1,4 @@
-# 优先级抢占（Preemption scheduling 策略）
+# 优先级抢占（Preemption scheduling）策略
 
 Volcano 通过 Priority 插件实现了优先级抢占策略，即 Preemption scheduling 策略。在集群资源有限且多个 Job 等待调度时，
 如果使用 Kubernetes 默认调度器，可能会导致具有更多 Pod 数量的 Job 分得更多资源。而 Volcano-scheduler 提供了算法，支持不同的 Job 以 fair-share 的形式共享集群资源。
