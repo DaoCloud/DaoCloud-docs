@@ -135,7 +135,6 @@ hide:
     - [ElasticSearch 数据塞满时如何操作](../insight/faq/expand-once-es-full.md)
     - [使用 Insight 定位应用异常](../insight/best-practice/find_root_cause.md)
     - [使用 OTel 赋予应用可观测性](../insight/quickstart/otel/otel.md)
-    - [使用 OTel SDK 为应用暴露指标](../insight/quickstart/otel/meter.md)
 
 - :material-engine:{ .lg .middle } [__微服务引擎__](../skoala/intro/index.md)
 

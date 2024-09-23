@@ -722,7 +722,6 @@ nav:
                   - OpenTelemetry 观测:
                       - 使用OTel赋予应用可观测: insight/quickstart/otel/otel.md
                       - Operator无侵入增强应用: insight/quickstart/otel/operator.md
-                      - OTel SDK暴露指标: insight/quickstart/otel/meter.md
                       - 向Insight发送链路数据: insight/quickstart/otel/send_tracing_to_insight.md
                       - 链路数据尾部采样方案: insight/best-practice/tail-based-sampling.md
                   - Java 应用观测:

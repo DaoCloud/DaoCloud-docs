@@ -23,10 +23,6 @@ Insight currently provides an easy way to enhance .Net NodeJS, Java, Python and 
 - Manual buried point access using Go language as an example: [Enhance Go application with OpenTelemetry SDK](./golang.md)
 - [Using ebpf to implement non-intrusive auto-instrumetation in Go language](./golang-ebpf.md) (experimental feature)
 
-## Metric enhancements
-
-Best Practices for Metrics Access: [Exposing Metrics for Applications Using the OpenTelemetry SDK](./meter.md).
-
 ## Log Enhancement
 
 TBD
