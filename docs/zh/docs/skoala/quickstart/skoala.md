@@ -6,7 +6,8 @@
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/install-arch-skoala.png)
 
-蓝色框内的 chart 即 `skoala` 组件，需要安装在控制面集群，即 DCE 5.0 的全局集群 `kpanda-global-clsuter`，
+蓝色框内的 Chart 即 `skoala` 组件，需要安装在控制面集群，即 DCE 5.0
+的[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2) `kpanda-global-clsuter`，
 详情可参考 DCE 5.0 的[部署架构](../../install/commercial/deploy-arch.md)。
 安装 `skoala` 组件之后即可以在 DCE 5.0 的一级导航栏中看到微服务引擎模块。
 另外需要注意：安装 `skoala` 之前需要安装好其依赖的 `common-mysql` 组件用于存储资源。
@@ -23,7 +24,7 @@
 
 通过商业版安装微服务引擎管理组件时，需要注意商业版的版本号（[点击查看最新版本](../../download/index.md)）。需要针对不同版本执行不同操作。
 
-商业版的 **版本号 ≥ v0.3.29** 时，默认会安装微服务引擎管理组件，但仍旧建议检查 `manifest.yaml` 文件进行确认
+商业版的 **版本号 ≥ v0.3.29** 时，默认会安装微服务引擎管理组件，但仍旧建议检查 manifest.yaml 文件确认
 `components/skoala/enable` 的值是否为 `true`，以及是否指定了 Helm 的版本。
 
 > 商业版中默认安装的是经过测试的最新版本。如无特殊情况，不建议修改默认的 Helm 版本。
@@ -32,7 +33,7 @@
 
     此注释仅适用于商业版 ≤ v0.3.28；大多数情况下您的版本都会大于此版本。
 
-    执行安装命令时，默认不会安装微服务引擎。需要对照下面的配置修改 `manifest.yaml` 以允许安装微服务引擎。
+    执行安装命令时，默认不会安装微服务引擎。需要对照下面的配置修改 manifest.yaml 以允许安装微服务引擎。
 
     修改文件：
 
@@ -89,7 +90,7 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 !!! note
 
-    - 如果未安装 common-mysql，可用自定义的数据库，上述参数按照实际情况填写即可。
+    如果未安装 common-mysql，可用自定义的数据库，上述参数按照实际情况填写即可。
 
 ### 检测依赖的监控组件
 
@@ -167,7 +168,7 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 ### 配置 skoala helm repo
 
-配置好 Skoala 仓库，即可查看和获取到 skoala 的应用 chart
+配置好 Skoala 仓库，即可查看和获取到 Skoala 的应用 Chart：
 
 ```bash
 helm repo add skoala-release https://release.daocloud.io/chartrepo/skoala
@@ -179,14 +180,14 @@ helm repo update
 `Skoala` 是微服务引擎的控制端的服务：
 
 - 安装完成后，可以在 DCE 5.0 平台看到微服务引擎的入口
-- 包含 3 个组件 skoala-ui、hive、sesame
-- 需要安装在全局管理集群
+- 包含 3 个组件：skoala-ui、hive、sesame
+- 需要安装在全局服务集群
 
-默认情况下，安装完成 skoala 到 kpanda-global-cluster（全局管理集群），就可以在侧边栏看到对应的微服务引擎的入口了。
+默认情况下，安装完成 skoala 到 kpanda-global-cluster（全局服务集群），就可以在侧边栏看到对应的微服务引擎的入口了。
 
 ### 查看微服务引擎管理组件最新版本
 
-在全局管理集群，查看 Skoala 的最新版本，直接通过 helm 命令获取版本信息；
+在全局服务集群中，查看 Skoala 的最新版本，直接通过 Helm 命令获取版本信息；
 
 ```bash
 $ helm repo update skoala-release
@@ -204,7 +205,7 @@ skoala-release/skoala       0.27.1       	0.27.1     	The helm chart for Skoala
 执行以下命令，注意对应的版本号：
 
 ```bash
-$ helm upgrade --install skoala --create-namespace -n skoala-system --cleanup-on-fail \
+helm upgrade --install skoala --create-namespace -n skoala-system --cleanup-on-fail \
     --set ui.image.tag=v0.19.0 \
     --set hive.configMap.database[0].driver="mysql" \
     --set hive.configMap.database[0].dsn="skoala:xxx@tcp(mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local:3306)/skoala?charset=utf8&parseTime=true&loc=Local&timeout=10s" \
@@ -285,13 +286,15 @@ tar -vxf skoala_x.y.z_amd64.tar
 
 ### 同步镜像
 
-将镜像下载到本地节点之后，需要通过 [charts-syncer](https://github.com/bitnami-labs/charts-syncer) 或容器运行时将最新版镜像同步到您的镜像仓库。推荐使用 charts-syncer 同步镜像，因为该方法更加高效便捷。
+将镜像下载到本地节点之后，需要通过 [charts-syncer](https://github.com/bitnami-labs/charts-syncer)
+或容器运行时将最新版镜像同步到您的镜像仓库。推荐使用 charts-syncer 同步镜像，因为该方法更加高效便捷。
 
 #### charts-syncer 同步镜像
 
 1. 使用如下内容创建 `load-image.yaml` 作为 charts-syncer 的配置文件
 
-    `load-image.yaml` 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并参考如下说明修改各项配置。有关 charts-syncer 配置文件的详细解释，可参考其[官方文档](https://github.com/bitnami-labs/charts-syncer)。
+    `load-image.yaml` 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并参考如下说明修改各项配置。
+    有关 charts-syncer 配置文件的详细解释，可参考其[官方文档](https://github.com/bitnami-labs/charts-syncer)。
 
     === "已安装 HARBOR chart repo"
 
@@ -376,15 +379,15 @@ tar -vxf skoala_x.y.z_amd64.tar
         5. 你的镜像仓库用户名
         6. 你的镜像仓库密码
 
-2. 将 skoala_x.y.z.bundle.tar 和 skoala-init_x.y.z.bundle.tar 放到 skoala-offline 文件夹下。
+2. 将 `skoala_x.y.z.bundle.tar` 和 `skoala-init_x.y.z.bundle.tar` 放到 skoala-offline 文件夹下。
 
 3. 执行同步镜像命令。
 
     ```shell
-    charts-syncer sync --config load-image.yaml
+    charts-syncer sync --config load-image.yaml --insecure true
     ```
 
-#### docker/containerd 同步镜像
+#### Docker 或 containerd 同步镜像
 
 1. 解压 `tar` 压缩包。
 
@@ -398,7 +401,7 @@ tar -vxf skoala_x.y.z_amd64.tar
     - images.tar
     - original-chart
 
-2. 从本地加载镜像到 Docker 或 Containerd。
+2. 从本地加载镜像到 Docker 或 containerd。
 
     === "Docker"
 
@@ -406,7 +409,7 @@ tar -vxf skoala_x.y.z_amd64.tar
         docker load -i images.tar
         ```
 
-    === "Containerd"
+    === "containerd"
 
         ```shell
         ctr -n k8s.io image import images.tar
@@ -414,16 +417,16 @@ tar -vxf skoala_x.y.z_amd64.tar
 
 !!! note
 
-    - 需要在每个节点上都通过 Docker 或 Containerd 加载镜像。
+    - 需要在每个节点上都通过 Docker 或 containerd 加载镜像。
     - 加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
 ### 开始升级
 
 镜像同步完成之后，就可以开始升级微服务引擎了。
 
-=== "通过 helm repo 升级"
+=== "通过 `helm repo` 升级"
 
-    1. 检查微服务引擎 helm 仓库是否存在。
+    1. 检查微服务引擎 Helm 仓库是否存在。
 
         ```shell
         helm repo list | grep skoala
@@ -435,19 +438,19 @@ tar -vxf skoala_x.y.z_amd64.tar
         Error: no repositories to show
         ```
 
-    2. 添加微服务引擎的 helm 仓库。
+    2. 添加微服务引擎的 Helm 仓库。
 
         ```shell
         helm repo add skoala-release http://{harbor url}/chartrepo/{project}
         ```
 
-    3. 更新微服务引擎的 helm 仓库。
+    3. 更新微服务引擎的 Helm 仓库。
 
         ```shell
         helm repo update skoala-release # (1)
         ```
 
-        1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
+        1. Helm 版本过低会导致失败，若失败，请尝试执行 `helm repo update`
 
     4. 选择您想安装的微服务引擎版本（建议安装最新版本）。
 
@@ -485,9 +488,9 @@ tar -vxf skoala_x.y.z_amd64.tar
         --version 0.28.1
         ```
 
-=== "通过 chart 包升级"
+=== "通过 Chart 包升级"
 
-    1. 准备好 `original-chart`(解压 skoala_x.y.z.bundle.tar 得到)。
+    1. 准备好 `original-chart`（解压 `skoala_x.y.z.bundle.tar` 得到）。
 
     2. 备份 `--set` 参数。
 
