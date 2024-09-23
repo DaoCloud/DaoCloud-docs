@@ -691,7 +691,6 @@ nav:
                   - Use OpenTelemetry:
                       - Observe App with OTel: insight/quickstart/otel/otel.md
                       - Non-intrusive Enhancement with Operator: insight/quickstart/otel/operator.md
-                      - Expose Metrics with OTel SDK: insight/quickstart/otel/meter.md
                       - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md
                       - Tail-based Sampling Scheme: insight/best-practice/tail-based-sampling.md
                   - Java Insight:

@@ -137,7 +137,6 @@ and maintain containerized applications more efficiently and stably.
     - [What If ElasticSearch Data is Full](../insight/faq/expand-once-es-full.md)
     - [Locate Application Anomalies Using Insight](../insight/best-practice/find_root_cause.md)
     - [Enable Observability for Applications Using OTel](../insight/quickstart/otel/otel.md)
-    - [Expose Metrics for Applications Using OTel SDK](../insight/quickstart/otel/meter.md)
 
 - :material-engine:{ .lg .middle } __Microservices Engine__
 
