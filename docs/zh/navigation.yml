@@ -345,9 +345,9 @@ nav:
                           - GPU 监控指标: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-metrics.md
                           - GPU 告警规则: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-alarm.md
                       - 使用 Volcano:
-                          - 安装和使用 Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
+                          - 安装 Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
                           - 使用Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
-                          - 使用 Volcano 优先级抢占 Preemption scheduling 策略 : kpanda/user-guide/gpu/volcano/volcano_priority.md
+                          - 使用 Volcano 优先级抢占策略: kpanda/user-guide/gpu/volcano/volcano_priority.md
                       - GPU 调度配置: kpanda/user-guide/gpu/gpu_scheduler_config.md
                   - 昇腾 NPU 管理:
                       - 昇腾 NPU 组件安装: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
