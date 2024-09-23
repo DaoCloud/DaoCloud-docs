@@ -14,10 +14,10 @@ This page explains the dependencies and prerequisites for installing virtual mac
 
 ## Prerequisites
 
-### Kernel version being above 3.15
+### Kernel version being above v4.11
 
-The kernel version of all nodes in the target cluster needs to be higher than 3.15. For detail information, 
-see [kubevirt issue](https://github.com/kubevirt/kubevirt/issues/7006). Run the following command to see the version:
+The kernel version of all nodes in the target cluster needs to be higher than v4.11. For detail information,
+see [kubevirt issue](https://github.com/kubevirt/kubevirt/issues/11886). Run the following command to see the version:
 
 ```bash
 uname -a
@@ -120,7 +120,7 @@ sh detect-cpu.sh
 
 * Methods to enable hardware virtualization
 
-    Methods vary from platforms, and this page takes vsphere as an example. 
+    Methods vary from platforms, and this page takes vsphere as an example.
     See [vmware website](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-2A98801C-68E8-47AF-99ED-00C63E4857F6.html).
 
 ### If using Docker Engine as the container runtime
