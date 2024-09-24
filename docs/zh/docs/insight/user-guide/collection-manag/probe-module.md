@@ -1,6 +1,6 @@
 # 自定义探测方式
 
-Insight 使用 Prometheus 官方提供的 Blackbox-Exporter 作为黑盒监控解决方案，可以通过 HTTP、HTTPS、DNS、ICMP、TCP 和 gRPC 方式对目标实例进行检测。可用于以下使用场景：
+Insight 使用 Prometheus 官方提供的 Blackbox Exporter 作为黑盒监控解决方案，可以通过 HTTP、HTTPS、DNS、ICMP、TCP 和 gRPC 方式对目标实例进行检测。可用于以下使用场景：
 
 - HTTP/HTTPS：URL/API可用性检测
 - ICMP：主机存活检测
@@ -13,7 +13,7 @@ Insight 默认未开启 ICMP 探测方式，因为 ICMP 需要更高权限，因
 
 ## 操作步骤
 
-1. 进入 __容器管理__ 的集群列表，点击进入目标集群的详情；
+1. 进入 __容器管理__ 的 __集群列表__ ，点击进入目标集群的详情；
 2. 点击左侧导航，选择 __配置与密钥__ -> __配置项__ ；
 3. 找到名为 __insight-agent-prometheus-blackbox-exporter__ 的配置项，点击 __编辑 YAML__；
 
@@ -50,8 +50,9 @@ Insight 默认未开启 ICMP 探测方式，因为 ICMP 需要更高权限，因
     ```
     由于 ICMP 需要更高权限，因此，我们还需要提升 Pod 权限，否则会出现 `operation not permitted` 的错误。有以下两种方式提升权限：
     
-    1. 方式一： 直接编辑 `BlackBox Exporter` 部署文件开启
-       ```yaml
+    - 方式一： 直接编辑 `BlackBox Exporter` 部署文件开启
+
+        ```yaml
         apiVersion: apps/v1
         kind: Deployment
         metadata:
@@ -75,10 +76,11 @@ Insight 默认未开启 ICMP 探测方式，因为 ICMP 需要更高权限，因
                     runAsGroup: 0
                     runAsNonRoot: false
                     runAsUser: 0
-       ```
+        ```
      
-    2. 方式二： 通过 Helm Upgrade 方式提权
-       ```diff
+    - 方式二： 通过 Helm Upgrade 方式提权
+    
+        ```diff
         prometheus-blackbox-exporter:
           enabled: true
           securityContext:
@@ -89,7 +91,7 @@ Insight 默认未开启 ICMP 探测方式，因为 ICMP 需要更高权限，因
             allowPrivilegeEscalation: false
             capabilities:
               add: ["NET_RAW"]
-       ```
+        ```
 
 !!! info
 
