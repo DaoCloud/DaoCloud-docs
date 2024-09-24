@@ -38,7 +38,7 @@ hide:
 - :material-engine: **微服务引擎** [微服务治理中心和网关](skoala.md)
 - :material-table-refresh: **服务网格** [非侵入式服务治理](mspider.md)
 - :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](mcamel.md)
-- :material-slot-machine: **智能算力** [云原生 AI - 训推一体化平台](baize.md)
+- :material-slot-machine: **AI Lab** [云原生 AI - 训推一体化平台](baize.md)
 - :fontawesome-brands-edge-legacy: **云边协同** [容器能力延伸至边缘](kant.md)
 - :fontawesome-solid-user-group: **全局管理** [设置登录、访问权限、外观](ghippo.md)
 - :fontawesome-solid-computer: **虚拟机** [自动漂移](virtnest.md)

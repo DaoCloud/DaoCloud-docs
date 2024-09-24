@@ -1,6 +1,6 @@
-# 智能算力 Release Notes
+# AI Lab Release Notes
 
-本页列出智能算力各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
+本页列出AI Lab各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
 !!! note
 

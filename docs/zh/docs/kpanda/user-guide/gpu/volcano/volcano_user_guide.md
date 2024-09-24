@@ -32,4 +32,4 @@ Volcano 提供了多种调度策略，以应对上述挑战。其中，Gang-sche
 
     ![Volcano 组件](../../images/volcano-03.png)
 
-通常 Volcano 会和[智能算力平台](../../../../baize/intro/index.md)配合使用，以实现数据集、Notebook、任务训练的整个开发、训练流程的有效闭环。
+通常 Volcano 会和 [AI Lab 平台](../../../../baize/intro/index.md)配合使用，以实现数据集、Notebook、任务训练的整个开发、训练流程的有效闭环。
