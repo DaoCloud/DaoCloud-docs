@@ -1,6 +1,6 @@
 # 在 Notebook 中使用环境
 
-环境管理是智能算力的重要功能之一，通过在 **Notebook** 中关联对应的环境，可以快速切换不同的环境，方便用户进行开发和调试。
+环境管理是 AI Lab 的重要功能之一，通过在 **Notebook** 中关联对应的环境，可以快速切换不同的环境，方便用户进行开发和调试。
 
 ## 创建 Notebook 时选择环境
 
@@ -16,7 +16,7 @@
 
     在 Notebook 中，我们同时提供了 `conda` 和 `mamba` 两种，用户可以根据自己的需求选择合适的环境管理工具。
 
-智能算力中，我们采用了 `conda` 环境管理工具，用户可以在 Notebook 中通过 `!conda env list` 命令查看当前环境列表。
+AI Lab 中，我们采用了 `conda` 环境管理工具，用户可以在 Notebook 中通过 `!conda env list` 命令查看当前环境列表。
 
 ```bash
 (base) jovyan@chuanjia-jupyter-0:~/yolov8$ conda env list
@@ -41,7 +41,7 @@ baize-base               /opt/conda/envs/baize-base
 
 ## Terminal 切换环境
 
-> 智能算力的 Notebook 目前也已经支持了 VSCode。
+> AI Lab 的 Notebook 目前也已经支持了 VSCode。
 
 如果您更喜欢在 Terminal 中管理和切换环境，可以安装如下步骤：
 
@@ -119,4 +119,4 @@ zlib                      1.2.13               h5eee18b_1    defaults
 
 ## 更新环境的包
 
-目前，可以通过在智能算力的界面中 **环境管理** 来更新环境中的包。
+目前，可以通过在 AI Lab 的界面中 **环境管理** 来更新环境中的包。

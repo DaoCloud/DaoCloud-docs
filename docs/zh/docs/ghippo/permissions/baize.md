@@ -3,9 +3,9 @@ hide:
   - toc
 ---
 
-# 智能算力权限说明
+# AI Lab 权限说明
 
-[智能算力](../../baize/intro/index.md)支持四种用户角色：
+[AI Lab](../../baize/intro/index.md)支持四种用户角色：
 
 - Admin / Baize Owner：拥有 `开发控制台` 和 `运维管理` 全部功能的增删改查的权限。
 - Workspace Admin：拥有授权工作空间的 `开发控制台` 全部功能的增删改查的权限。

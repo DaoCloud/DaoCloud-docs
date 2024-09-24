@@ -1,6 +1,6 @@
 # 创建 vLLM 推理服务
 
-智能算力支持以 vLLM 作为推理服务，提供全部 vLLM 的能力，同时提供了完全适配 OpenAI 接口定义。
+AI Lab 支持以 vLLM 作为推理服务，提供全部 vLLM 的能力，同时提供了完全适配 OpenAI 接口定义。
 
 ## vLLM 介绍
 

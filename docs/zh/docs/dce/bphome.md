@@ -190,11 +190,11 @@ hide:
     - [GProduct 对接全局管理](../ghippo/best-practice/gproduct/intro.md)
     - [OEM IN 和 OEM OUT](../ghippo/best-practice/oem/oem-in.md)
 
-- :material-slot-machine:{ .lg .middle } [__智能算力__](../baize/intro/index.md)和[__云边协同__](../kant/intro/index.md)
+- :material-slot-machine:{ .lg .middle } [__AI Lab__](../baize/intro/index.md)和[__云边协同__](../kant/intro/index.md)
 
     ---
 
-    **智能算力** 是 AI 训推一体化平台，整合异构算力，优化 GPU 性能。
+    **AI Lab** 是 AI 训推一体化平台，整合异构算力，优化 GPU 性能。
     而 **云边协同** 则将容器能力扩展到了边缘。
 
     - [部署 NFS 做数据集预热](../baize/best-practice/deploy-nfs-in-worker.md)

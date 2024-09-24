@@ -16,7 +16,7 @@ DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全�
 它经过了近千家行业客户的生产场景检验，构建了坚实、可靠的数字底座，帮助企业定义数字边界，释放云原生生产力。
 
 *[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
-*[AI]: DCE 5.0 内置智能算力引擎，高效管控各类大模型任务、数据集、GPU、CPU、内存等资源
+*[AI]: DCE 5.0 内置 AI Lab，高效管控各类大模型任务、数据集、GPU、CPU、内存等资源
 
 <div class="grid cards" markdown>
 
@@ -32,7 +32,7 @@ DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全�
 - :material-engine: **微服务引擎** [微服务治理中心和网关](skoala/intro/index.md)
 - :material-table-refresh: **服务网格** [非侵入式服务治理](mspider/intro/index.md)
 - :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](middleware/index.md)
-- :material-slot-machine: **智能算力** [云原生 AI - 训推一体化平台](baize/intro/index.md)
+- :material-slot-machine: **AI Lab** [云原生 AI - 训推一体化平台](baize/intro/index.md)
 - :fontawesome-brands-edge: **云边协同** [容器能力扩展至边缘](kant/intro/index.md)
 - :fontawesome-solid-user-group: **全局管理** [设置登录/访问权限/外观](ghippo/intro/index.md)
 - [免费体验 :free:](./trial/index.md){ .md-button }
@@ -139,13 +139,13 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     ![虚拟机](./images/virtnest.png)
 
-=== "智能算力"
+=== "AI Lab"
 
     将 MLOps 与 LLMs 全面融合到云原生平台，实现 AI 智算平台的训推一体化的全生命周期研发流程，支持Pytorch、Tensorflow 等多种深度学习框架，支持数据集、模型开发、训练、推理、监控、运营等功能；用户只需提供关注模型的开发及使用，无需关心底层的资源调度、管理、监控等问题。
 
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[智能算力](./baize/intro/index.md)
+    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[AI Lab](./baize/intro/index.md)
 
-    ![智能算力](baize/images/image01.png)
+    ![AI Lab](baize/images/image01.png)
 
 在成功获取[许可证授权](./dce/license0.md)后，首次登录 DCE 5.0 将会呈现一个仪表盘。
 该仪表盘以直观的方式展示了各种信息，包括正在运行的容器和 Pod、CPU 和内存使用情况、集群/节点/Pod 的健康状态、告警信息、资源利用情况以及功能一览等内容。
