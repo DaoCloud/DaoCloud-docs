@@ -33,7 +33,7 @@ You have permission to use `&check;`, but you don't have permission to use `&cro
 | | Delete Probe Job | &check; | &check; | &check; | &cross; |
 | Metrics | Query Node Metrics | &check; | &check; | &cross; | &cross; |
 | | Query Workload Metrics | &check; | &check; | &check; | &check; |
-| | Advanced Query | &check; | &check; | &check; | &check; |
+| | Advanced Query | &check; | &cross; | &cross; | &cross; |
 | Logs | Query Node Logs | &check; | &check; | &cross; | &cross; |
 | | Query Container Logs | &check; | &check; | &check; | &check; |
 | | Lucene Syntax Query Node Logs | &check; | &check; | &cross; | &cross; |
