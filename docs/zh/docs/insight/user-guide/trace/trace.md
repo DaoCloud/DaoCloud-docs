@@ -25,7 +25,7 @@
 
         列表中支持对 Span 数、延时、发生时间进行排序。
 
-3. 点击筛选栏中的 __Trace ID 搜索__ 切换使用 TraceID 搜索链路。
+3. 点击筛选栏中的 __TraceID 搜索__ 切换使用 TraceID 搜索链路。
 
    - 使用 TraceID 搜索请输入完整的 TraceID。
 
