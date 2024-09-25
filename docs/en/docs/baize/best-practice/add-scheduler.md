@@ -5,7 +5,7 @@ Date: 2024-07-30
 
 # Add Job Scheduler
 
-DCE 5.0 Intelligent Engine provides a job scheduler to help you better manage jobs.
+DCE 5.0 AI Lab provides a job scheduler to help you better manage jobs.
 In addition to the basic scheduler, it also supports custom schedulers.
 
 ## Introduction to Job Scheduler
@@ -56,7 +56,7 @@ including `Coscheduling (Gang Scheduling)` and other features.
 To deploy a secondary scheduler plugin in a worker cluster, refer to
 [Deploying Secondary Scheduler Plugin](../../kpanda/user-guide/clusters/cluster-scheduler-plugin.md).
 
-### Enable Scheduler Plugins in Intelligent Engine
+### Enable Scheduler Plugins in AI Lab
 
 !!! danger
 
@@ -92,4 +92,4 @@ If everything is set up correctly, you will see the scheduler plugin you deploye
 
 <!-- add screenshot later -->
 
-This concludes the instructions for configuring and using the scheduler options in Intelligent Engine.
+This concludes the instructions for configuring and using the scheduler options in AI Lab.

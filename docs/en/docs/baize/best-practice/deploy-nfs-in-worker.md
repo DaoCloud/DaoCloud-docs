@@ -4,7 +4,7 @@ A **Network File System (NFS)** allows remote hosts to mount file systems over a
 interact with those file systems as though they are mounted locally. This enables
 system administrators to consolidate resources onto centralized servers on the network.
 
-**Dataset** is a core feature provided by DCE 5.0 Intelligent Engine.
+**Dataset** is a core feature provided by DCE 5.0 AI Lab.
 By abstracting the dependency on data throughout the entire lifecycle of MLOps
 into datasets, users can manage various types of data in datasets so that
 training tasks can directly use the data in the dataset.

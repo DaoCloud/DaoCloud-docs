@@ -1120,12 +1120,12 @@ nav:
                       - View Instance Details: middleware/minio/user-guide/view.md
                       - MinIO Identity Management: middleware/minio/user-guide/user-management.md
       - Cloud Native AI:
-          - Intelligent Engine:
+          - AI Lab:
               - Introduction:
-                  - What is Intelligent Engine: baize/intro/index.md
-                  - Initialize Intelligent Engine: baize/intro/install.md
+                  - What is AI Lab: baize/intro/index.md
+                  - Initialize AI Lab: baize/intro/install.md
                   - First Time Usage: baize/intro/first.md
-                  - Intelligent Engine Release Notes: baize/intro/release-notes.md
+                  - AI Lab Release Notes: baize/intro/release-notes.md
               - Developer:
                   - Introduction: baize/developer/index.md
                   - Quick Start: baize/developer/quick-start.md
@@ -1161,7 +1161,7 @@ nav:
                   - Deploy NFS to Preload Dataset: baize/best-practice/deploy-nfs-in-worker.md
                   - Update Notebook Built-in Images: baize/best-practice/change-notebook-image.md
                   - Checkpoint Mechanism and Usage: baize/best-practice/checkpoint.md
-                  - Fine-Tune ChatGLM3 with Intelligent Engine: baize/best-practice/finetunel-llm.md
+                  - Fine-Tune ChatGLM3 with AI Lab: baize/best-practice/finetunel-llm.md
                   - Submit a DeepSpeed Training Task: baize/best-practice/train-with-deepspeed.md
                   - Add Job Scheduler: baize/best-practice/add-scheduler.md
                   - Deploy Label Studio: baize/best-practice/label-studio.md
@@ -1293,7 +1293,7 @@ nav:
                   - Workbench Permissions: ghippo/permissions/amamba.md
                   - Service Mesh Permissions: ghippo/permissions/mspider.md
                   - Middleware Permissions: ghippo/permissions/mcamel.md
-                  - Intelligent Engine Permissions: ghippo/permissions/baize.md
+                  - AI Lab Permissions: ghippo/permissions/baize.md
               - Best Practices:
                   - Workspace Practices: ghippo/best-practice/ws-best-practice.md
                   - Bind a Workspace to Namespace: ghippo/best-practice/ws-to-ns.md
@@ -1337,7 +1337,7 @@ nav:
       - Data Service:
           - Middleware: videos/mcamel.md
       - Cloud Native AI:
-          - Intelligent Engine: videos/baize.md
+          - AI Lab: videos/baize.md
       - Edge Computing:
           - Cloud Edge Collaboration: videos/kant.md
       - Management:

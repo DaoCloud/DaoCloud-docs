@@ -3,7 +3,7 @@
 Tensorflow, along with Pytorch, is a highly active open-source deep learning framework
 that provides a flexible environment for training and deployment.
 
-Intelligent Engine provides support and adaptation for the Tensorflow framework.
+AI Lab provides support and adaptation for the Tensorflow framework.
 You can quickly create Tensorflow jobs and conduct model training through graphical operations.
 
 ## Job Configuration
@@ -24,7 +24,7 @@ Here, we use the `baize-notebook` base image and the `associated environment` as
 
 <!-- add screenshot later -->
 
-1. Log in to the Intelligent Engine platform and click **Job Center** in the left navigation bar
+1. Log in to the AI Lab platform and click **Job Center** in the left navigation bar
    to enter the **Jobs** page.
 2. Click the **Create** button in the upper right corner to enter the job creation page.
 3. Select the job type as `Tensorflow Single` and click **Next** .
@@ -32,7 +32,7 @@ Here, we use the `baize-notebook` base image and the `associated environment` as
 
 #### Pre-warming the Code Repository
 
-Use **Intelligent Engine** -> **Dataset List** to create a dataset and pull the code from a remote GitHub repository into the dataset. 
+Use **AI Lab** -> **Dataset List** to create a dataset and pull the code from a remote GitHub repository into the dataset. 
 This way, when creating a job, you can directly select the dataset and mount the code into the job.
 
 Demo code repository address: [https://github.com/d-run/training-sample-code/](https://github.com/d-run/training-sample-code/)
@@ -80,7 +80,7 @@ After the job is successfully submitted, you can enter the job details to see th
 
 ### TFJob Distributed Job
 
-1. Log in to **Intelligent Engine** and click **Job Center** in the left navigation bar to enter the **Jobs** page.
+1. Log in to **AI Lab** and click **Job Center** in the left navigation bar to enter the **Jobs** page.
 2. Click the **Create** button in the upper right corner to enter the job creation page.
 3. Select the job type as `Tensorflow Distributed` and click **Next**.
 4. Fill in the job name and description, then click **OK**.
