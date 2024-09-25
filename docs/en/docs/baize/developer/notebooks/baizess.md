@@ -10,7 +10,7 @@ Currently, `baizess` is integrated within DCE 5.0 AI Lab. Once you create a Note
 
 ### Basic Information
 
-The basic format of the `baizess` command is as follows:
+The basic information of the `baizess` command is as follows:
 
 ```bash
 jovyan@19d0197587cc:/$ baizess

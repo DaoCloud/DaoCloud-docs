@@ -12,7 +12,7 @@
 
 ### 基本信息
 
-`baizess` 命令的基本格式如下：
+`baizess` 命令的基本信息如下：
 
 ```bash
 jovyan@19d0197587cc:/$ baizess
