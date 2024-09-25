@@ -23,17 +23,17 @@
 
 !!! note
 
-    可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
+    可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。请确保在容器管理 v0.31 及以上版本使用该能力，对应安装器 v0.21.0 及以上版本
 
 | CPU 架构 | 版本      | 下载地址                                                                                           |
 | :------ |:--------|:-----------------------------------------------------------------------------------------------|
-| AMD64 | v0.20.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.20.0-amd64.tar> |
-| ARM64 | v0.20.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.20.0-arm64.tar> |
+| AMD64 | v0.21.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-amd64.tar> |
+| ARM64 | v0.21.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-arm64.tar> |
 
 下载完毕后解压离线包。此处我们下载 arm64 架构的离线包：
 
 ```bash
-tar -xvf offline-v0.20.0-arm64.tar
+tar -xvf offline-v0.21.0-arm64.tar
 ```
 
 #### ISO 离线包（Kylin v10 sp2）
@@ -50,9 +50,9 @@ tar -xvf offline-v0.20.0-arm64.tar
 
 其中 [Kubean](https://github.com/kubean-io/kubean) 提供了不同操作系统的osPackage 离线包，可以前往 <https://github.com/kubean-io/kubean/releases> 查看。
 
-| 操作系统版本 | 下载地址                                                                                            |
-| :--------- |:------------------------------------------------------------------------------------------------|
-| Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-kylin-v10sp2-v0.17.5.tar.gz> |
+| 操作系统版本 | 下载地址                                                                                                |
+| :--------- |:----------------------------------------------------------------------------------------------------|
+| Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-kylin-v10sp2-v0.18.5.tar.gz> |
 
 
 !!! note
@@ -67,7 +67,7 @@ tar -xvf offline-v0.20.0-arm64.tar
 ./offline/dce5-installer import-artifact -c clusterConfig.yaml \
     --offline-path=/root/offline \
     --iso-path=/root/Kylin-Server-10-SP2-aarch64-Release-Build09-20210524.iso \
-    --os-pkgs-path=/root/os-pkgs-kylin-v10sp2-v0.17.5.tar.gz
+    --os-pkgs-path=/root/os-pkgs-kylin-v10sp2-v0.18.5.tar.gz
 ```
 
 !!! note
@@ -198,7 +198,7 @@ metadata:
   name: add-worker-node
 spec:
   cluster: ${cluster-name} # 指定 cluster name
-  image: 10.5.14.30/ghcr.m.daocloud.io/kubean-io/spray-job:v0.17.5
+  image: 10.5.14.30/ghcr.m.daocloud.io/kubean-io/spray-job:v0.18.5
   actionType: playbook
   action: scale.yml
   extraArgs: --limit=kylin-worker
