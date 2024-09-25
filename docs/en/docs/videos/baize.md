@@ -1,6 +1,6 @@
-# Intelligent Engine Video Tutorial
+# AI Lab Video Tutorial
 
-DaoCloud has created the following video tutorials for intelligent engine.
+DaoCloud has created the following video tutorials for AI Lab.
 We welcome any form of feedback. Thank you 🙏
 
 <style>

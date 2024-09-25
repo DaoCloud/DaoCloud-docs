@@ -3,9 +3,9 @@ MTPE: windsonsea
 date: 2024-07-12
 ---
 
-# Intelligent Engine Release Notes
+# AI Lab Release Notes
 
-This page lists the Release Notes for Intelligent Engine,
+This page lists the Release Notes for AI Lab,
 so that you can learn its evolution path and feature changes.
 
 ## 2024-07-31

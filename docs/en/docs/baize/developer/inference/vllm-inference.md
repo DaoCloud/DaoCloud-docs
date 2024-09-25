@@ -1,6 +1,6 @@
 # Create Inference Service Using vLLM Framework
 
-Intelligent Engine supports using vLLM as an inference service, offering all the capabilities of vLLM while fully adapting to the OpenAI interface definition.
+AI Lab supports using vLLM as an inference service, offering all the capabilities of vLLM while fully adapting to the OpenAI interface definition.
 
 ## Introduction to vLLM
 

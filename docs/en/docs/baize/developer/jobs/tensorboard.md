@@ -1,8 +1,8 @@
 # Job Analysis
 
-DCE 5.0 Intelligent Engine provides important visualization analysis tools provided for the model development
+DCE 5.0 AI Lab provides important visualization analysis tools provided for the model development
 process, used to display the training process and results of machine learning models. This document will
-introduce the basic concepts of Job Analysis (Tensorboard), its usage in the Intelligent Engine system,
+introduce the basic concepts of Job Analysis (Tensorboard), its usage in the AI Lab system,
 and how to configure the log content of datasets.
 
 !!! note
@@ -27,12 +27,12 @@ The role and advantages of Tensorboard in the model development process:
 
 ## How to Create Tensorboard
 
-In the Intelligent Engine system, we provide a convenient way to create and manage Tensorboard.
+In the AI Lab system, we provide a convenient way to create and manage Tensorboard.
 Here are the specific steps:
 
 ### Enable Tensorboard When Creating a Notebook
 
-1. **Create a Notebook** : Create a new Notebook on the Intelligent Engine platform.
+1. **Create a Notebook** : Create a new Notebook on the AI Lab platform.
 2. **Enable Tensorboard** : On the Notebook creation page, enable the **Tensorboard**
    option and specify the dataset and log path.
 
@@ -40,7 +40,7 @@ Here are the specific steps:
 
 ### Enable Tensorboard After Creating and Completing a Distributed Job
 
-1. **Create a Distributed Job** : Create a new distributed training job on the Intelligent Engine platform.
+1. **Create a Distributed Job** : Create a new distributed training job on the AI Lab platform.
 2. **Configure Tensorboard** : On the job configuration page, enable the **Tensorboard**
    option and specify the dataset and log path.
 3. **View Tensorboard After Job Completion** : After the job is completed, you can view
@@ -131,7 +131,7 @@ with train_summary_writer.as_default():
 
 ## Tensorboard Management
 
-In Intelligent Engine, Tensorboards created through various methods are uniformly
+In AI Lab, Tensorboards created through various methods are uniformly
 displayed on the job analysis page, making it convenient for users to view and manage.
 
 <!-- add screenshot later -->

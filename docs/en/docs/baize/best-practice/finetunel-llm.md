@@ -1,7 +1,7 @@
-# Fine-tune the ChatGLM3 Model by Using Intelligent Engine
+# Fine-tune the ChatGLM3 Model by Using AI Lab
 
 This page uses the `ChatGLM3` model as an example to demonstrate how to use LoRA (Low-Rank Adaptation)
-to fine-tune the ChatGLM3 model within the DCE 5.0 Intelligent Engine environment. The demo program is from the
+to fine-tune the ChatGLM3 model within the DCE 5.0 AI Lab environment. The demo program is from the
 [ChatGLM3](https://github.com/THUDM/ChatGLM3/blob/main/finetune_demo/lora_finetune.ipynb) official example.
 
 The general process of fine-tuning is as follows:
@@ -17,12 +17,12 @@ The general process of fine-tuning is as follows:
 
 !!! info
 
-    Before starting, ensure DCE 5.0 and [Intelligent Engine](../intro/install.md) are correctly installed,
+    Before starting, ensure DCE 5.0 and [AI Lab](../intro/install.md) are correctly installed,
     GPU queue resources are successfully initialized, and computing resources are sufficient.
 
 ## Prepare Data
 
-Utilize the dataset management feature provided by DCE 5.0 Intelligent Engine to quickly preheat
+Utilize the dataset management feature provided by DCE 5.0 AI Lab to quickly preheat
 and persist the data required for fine-tuning large models, reducing GPU resource occupation
 due to data preparation, and improving resource utilization efficiency.
 
@@ -40,7 +40,7 @@ First, pull the ChatGLM3 code repository and download the pre-training model for
 
 <!-- add image later -->
 
-DCE 5.0 Intelligent Engine will automatically preheat the data in the background to ensure
+DCE 5.0 AI Lab will automatically preheat the data in the background to ensure
 quick data access for subsequent tasks.
 
 ### AdvertiseGen Dataset
@@ -68,11 +68,11 @@ Traditionally, environment dependencies are either packaged directly into the de
 installed in the local environment, which can lead to inconsistency in environment dependencies and
 difficulties in managing and updating dependencies.
 
-DCE 5.0 Intelligent Engine provides environment management capabilities, decoupling Python environment
+DCE 5.0 AI Lab provides environment management capabilities, decoupling Python environment
 dependency package management from development tools and task images, solving dependency management
 chaos and environment inconsistency issues.
 
-Here, use the environment management feature provided by DCE 5.0 Intelligent Engine to
+Here, use the environment management feature provided by DCE 5.0 AI Lab to
 create the environment required for ChatGLM3 fine-tuning for subsequent use.
 
 !!! warning
@@ -97,11 +97,11 @@ may vary based on your location. Using a domestic mirror for acceleration can sp
 
 ## Use Notebook as IDE
 
-DCE 5.0 Intelligent Engine provides Notebook as an IDE feature, allowing users to write, run, and view
+DCE 5.0 AI Lab provides Notebook as an IDE feature, allowing users to write, run, and view
 code results directly in the browser. This is very suitable for development in data analysis,
 machine learning, and deep learning fields.
 
-You can use the JupyterLab Notebook provided by Intelligent Engine for the ChatGLM3 fine-tuning task.
+You can use the JupyterLab Notebook provided by AI Lab for the ChatGLM3 fine-tuning task.
 
 ### Create JupyterLab Notebook
 
@@ -241,7 +241,7 @@ previously created `PVC` dataset.
 ## Submit Fine-tuning Tasks
 
 After completing the local fine-tuning test and ensuring that your code and data are correct,
-you can submit the fine-tuning task to the Intelligent Engine for large-scale training and fine-tuning tasks.
+you can submit the fine-tuning task to the AI Lab for large-scale training and fine-tuning tasks.
 
 !!! note
 
@@ -289,7 +289,7 @@ data output dataset for subsequent inference tasks.
 
 ### Submit Tasks via `baizectl`
 
-DCE 5.0 Intelligent Engine's Notebook supports using the `baizectl` command-line tool without authentication.
+DCE 5.0 AI Lab's Notebook supports using the `baizectl` command-line tool without authentication.
 If you prefer using CLI, you can directly use the `baizectl` command-line tool to submit tasks.
 
 ```bash
@@ -313,7 +313,7 @@ For more information on using `baizectl`, refer to the
 ## Model Inference
 
 After completing the fine-tuning task, you can use the fine-tuned model for inference tasks.
-Here, you can use the inference service provided by Intelligent Engine to create an
+Here, you can use the inference service provided by AI Lab to create an
 inference service with the output model.
 
 <!-- add image later -->
@@ -329,13 +329,13 @@ the resource configuration of the previous fine-tuning tasks.
 
 ### Configure Model Runtime
 
-Configuring the model runtime is crucial. Currently, DCE 5.0 Intelligent Engine supports
+Configuring the model runtime is crucial. Currently, DCE 5.0 AI Lab supports
 `vLLM` as the model inference service runtime, which can be directly selected.
 
 !!! tip
 
     vLLM supports a wide range of large language models. Visit [vLLM](https://docs.vllm.ai)
-    for more information. These models can be easily used within Intelligent Engine.
+    for more information. These models can be easily used within AI Lab.
 
 <!-- add image later -->
 
@@ -357,8 +357,8 @@ curl -X POST http://10.20.100.210:31118/v2/models/chatglm3-6b/generate \
 ## Wrap up
 
 This page used `ChatGLM3` as an example to quickly introduce and get you started with
-the **Intelligent Engine** for model fine-tuning, using `LoRA` to fine-tune the ChatGLM3 model.
+the **AI Lab** for model fine-tuning, using `LoRA` to fine-tune the ChatGLM3 model.
 
-DCE 5.0 Intelligent Engine provides a wealth of features to help model developers quickly conduct
+DCE 5.0 AI Lab provides a wealth of features to help model developers quickly conduct
 model development, fine-tuning, and inference tasks. It also offers rich OpenAPI interfaces,
 facilitating integration with third-party application ecosystems.

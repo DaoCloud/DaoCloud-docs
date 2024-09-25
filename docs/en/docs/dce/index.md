@@ -15,7 +15,7 @@ This page provides convenient access to a range of documents for DCE 5.0 compone
 We hope you find the information helpful and enjoy exploring!
 
 *[DCE]: An abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
-*[AI]: DCE 5.0 has an integrated intelligent computing engine for efficient management of LLM jobs, datasets, GPU, CPU, and memory resources
+*[AI]: DCE 5.0 has an integrated AI Lab for efficient management of LLM jobs, datasets, GPU, CPU, and memory resources
 
 !!! tip
 

@@ -50,7 +50,7 @@ The following sections will introduce how to install and use Volcano.
 
     ![Volcano components](../../images/volcano-03.png)
 
-Typically, Volcano is used in conjunction with the [Intelligent Engine](../../../../baize/intro/index.md)
+Typically, Volcano is used in conjunction with the [AI Lab](../../../../baize/intro/index.md)
 to achieve an effective closed-loop process for the development and training of datasets, Notebooks, and task training.
 
 ## Volcano Use Cases

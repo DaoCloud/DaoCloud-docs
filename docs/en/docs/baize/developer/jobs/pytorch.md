@@ -3,7 +3,7 @@
 Pytorch is an open-source deep learning framework that provides a flexible environment for training and deployment.
 A Pytorch job is a job that uses the Pytorch framework.
 
-In the Intelligent Engine platform, we provide support and adaptation for Pytorch jobs. Through a graphical interface, you can quickly create Pytorch jobs and perform model training.
+In the AI Lab platform, we provide support and adaptation for Pytorch jobs. Through a graphical interface, you can quickly create Pytorch jobs and perform model training.
 
 ## Job Configuration
 
@@ -22,7 +22,7 @@ Here we use the `baize-notebook` base image and the `associated environment` as 
 
 <!-- add screenshot later -->
 
-1. Log in to the Intelligent Engine platform, click **Job Center** in the left navigation bar to enter the **Jobs** page.
+1. Log in to the AI Lab platform, click **Job Center** in the left navigation bar to enter the **Jobs** page.
 2. Click the **Create** button in the upper right corner to enter the job creation page.
 3. Select the job type as `Pytorch Single` and click **Next** .
 4. Fill in the job name and description, then click **OK** .
@@ -95,7 +95,7 @@ Training finished.
 
 ### Pytorch Distributed Jobs
 
-1. Log in to the Intelligent Engine platform, click **Job Center** in the left navigation bar to enter the **Jobs** page.
+1. Log in to the AI Lab platform, click **Job Center** in the left navigation bar to enter the **Jobs** page.
 2. Click the **Create** button in the upper right corner to enter the job creation page.
 3. Select the job type as `Pytorch Distributed` and click **Next**.
 4. Fill in the job name and description, then click **OK**.

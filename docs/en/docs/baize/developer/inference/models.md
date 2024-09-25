@@ -1,20 +1,20 @@
 # Model Support
 
-With the rapid iteration of Intelligent Engine, we have now supported various model inference services.
+With the rapid iteration of AI Lab, we have now supported various model inference services.
 Here, you can see information about the supported models.
 
-- Intelligent Engine v0.3.0 launched model inference services, facilitating users to directly use
-  the inference services of Intelligent Engine without worrying about model deployment and maintenance
+- AI Lab v0.3.0 launched model inference services, facilitating users to directly use
+  the inference services of AI Lab without worrying about model deployment and maintenance
   for traditional deep learning models.
-- Intelligent Engine v0.6.0 supports the complete version of vLLM inference capabilities,
+- AI Lab v0.6.0 supports the complete version of vLLM inference capabilities,
   supporting many large language models such as `LLama`, `Qwen`, `ChatGLM`, and more.
 
 !!! note
 
-    The support for inference capabilities is related to the version of Intelligent Engine.
+    The support for inference capabilities is related to the version of AI Lab.
     Refer to the [Release Notes](../../intro/release-notes.md) to understand the latest version and update timely.
 
-You can use GPU types that have been verified by DCE 5.0 in Intelligent Engine.
+You can use GPU types that have been verified by DCE 5.0 in AI Lab.
 For more details, refer to the [GPU Support Matrix](../../../kpanda/user-guide/gpu/gpu-metrics.md).
 
 ![Click to Create](../../images/interface05.png)
@@ -22,7 +22,7 @@ For more details, refer to the [GPU Support Matrix](../../../kpanda/user-guide/g
 ## Triton Inference Server
 
 Through the Triton Inference Server, traditional deep learning models can be well supported.
-Currently, Intelligent Engine supports mainstream inference backend services:
+Currently, AI Lab supports mainstream inference backend services:
 
 | Backend | Supported Model Formats | Description |
 | ------- | ----------------------- | ----------- |
@@ -48,7 +48,7 @@ you can see the list of models we support, which generally aligns with the `vLLM
 
 ### New Features of vLLM
 
-Currently, Intelligent Engine also supports some new features when using vLLM as an inference tool:
+Currently, AI Lab also supports some new features when using vLLM as an inference tool:
 
 - Enable `Lora Adapter` to optimize model inference services during inference.
 - Provide a compatible `OpenAPI` interface with `OpenAI`, making it easy for users

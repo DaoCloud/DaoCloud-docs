@@ -5,7 +5,7 @@ hide:
 
 # Quick Start
 
-This document provides a simple guide for users to use the DCE 5.0 Intelligent Engine platform for
+This document provides a simple guide for users to use the DCE 5.0 AI Lab platform for
 the entire development and training process of datasets, Notebooks, and job training.
 
 1. Click **Data Management** -> **Datasets** in the navigation bar,

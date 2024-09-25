@@ -1,6 +1,6 @@
 # Create Inference Service
 
-The Intelligent Engine currently offers Triton and vLLM as inference frameworks. Users can quickly start a high-performance inference service with simple configurations.
+The AI Lab currently offers Triton and vLLM as inference frameworks. Users can quickly start a high-performance inference service with simple configurations.
 
 ## Inference Service Console
 
@@ -8,7 +8,7 @@ The Intelligent Engine currently offers Triton and vLLM as inference frameworks.
 
 ## Prepare Model Dataset
 
-In Intelligent Engine, we use datasets for managing model files. This makes it convenient to directly mount the model files trained in tasks to the inference service.
+In AI Lab, we use datasets for managing model files. This makes it convenient to directly mount the model files trained in tasks to the inference service.
 
 By default, it is recommended to use `NFS` or `S3` services to store model files.
 

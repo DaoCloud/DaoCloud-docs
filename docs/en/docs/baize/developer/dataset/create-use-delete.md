@@ -5,10 +5,10 @@ date: 2024-05-21
 
 # Create, Use and Delete Datasets
 
-Intelligent Engine provides comprehensive dataset management functions needed for model development, 
+AI Lab provides comprehensive dataset management functions needed for model development, 
 training, and inference processes. Currently, it supports unified access to various data sources.
 
-With simple configurations, you can connect data sources to Intelligent Engine, achieving unified data management, 
+With simple configurations, you can connect data sources to AI Lab, achieving unified data management, 
 preloading, dataset management, and other functionalities.
 
 ## Create a Dataset
