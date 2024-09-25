@@ -153,7 +153,7 @@
           binaries:
             type: builtin
           kubeanConfig: |-
-          allow_unsupported_distribution_setup: true
+            allow_unsupported_distribution_setup: true
             debian_os_family_extensions:
               - "UnionTech OS Server 20\" "
         ```
@@ -183,7 +183,7 @@
           binaries:
             type: builtin
           kubeanConfig: |-
-          allow_unsupported_distribution_setup: true
+            allow_unsupported_distribution_setup: true
             redhat_os_family_extensions:
               - "Anolis OS"
         ```
@@ -213,7 +213,7 @@
           binaries:
             type: builtin
           kubeanConfig: |-
-          allow_unsupported_distribution_setup: true
+            allow_unsupported_distribution_setup: true
             debian_os_family_extensions:
               - "Debian"
         ```
