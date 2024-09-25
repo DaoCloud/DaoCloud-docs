@@ -33,7 +33,7 @@ KubeEdge：是一个开源系统，将原生的容器化应用程序编排功能
 
         如果您选择的集群是一个单节点集群，请确保 master 节点支持调度，即已删除污点 NoSchedule，避免系统组件安装失败。
 
-    ![基本信息](../../images/create-external-edgeunit-01.png)
+    ![基本信息](../../images/create-external-edgeunit-010.png)
 
 1. 填写高级设置
 

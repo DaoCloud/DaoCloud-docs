@@ -39,9 +39,9 @@ DCE 5.0 云边协同支持两种边缘单元：
 
     - 描述：边缘单元描述信息。
 
-    ![基本信息](../../images/create-edgeunit-05.png)
+    ![基本信息](../../images/create-edgeunit-050.png)
 
-<!-- 3. 组件仓库设置。KubeEdge 、Kant 的云端组件仓库设置；
+    <!-- 3. 组件仓库设置。KubeEdge 、Kant 的云端组件仓库设置；
 
     - KubeEdge 镜像仓库：KubeEdge 云端组件镜像仓库。
         - 默认：系统提供的默认镜像仓库地址，存储 KubeEdge 云端组件镜像，像 cloudcore 等。
