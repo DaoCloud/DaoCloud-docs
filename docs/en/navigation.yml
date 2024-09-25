@@ -1137,6 +1137,7 @@ nav:
                       - Notebook SSH Guide: baize/developer/notebooks/notebook-with-ssh.md
                       - Use Environments in Notebook: baize/developer/notebooks/notebook-with-envs.md
                       - baizectl CLI Guide: baize/developer/notebooks/baizectl.md
+                      - baizess Source Switch Tool Guide: baize/developer/notebooks/baizess.md
                       - Shut down Idle Notebooks: baize/developer/notebooks/notebook-auto-close.md
                   - Job Center:
                       - Create Job: baize/developer/jobs/create.md
