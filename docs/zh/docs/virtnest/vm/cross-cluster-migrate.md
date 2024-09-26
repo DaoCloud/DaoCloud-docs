@@ -37,7 +37,7 @@
 
 1. 以 Nginx Ingress 为例，配置 Ingress 以指向 virt-exportproxy Service：
 
-    ```sh
+    ```yaml
     apiVersion: networking.k8s.io/v1
     kind: Ingress
     metadata:
@@ -70,7 +70,7 @@
 
 1. 迁移虚拟机。创建 VirtualMachineExport CR：
 
-    ```sh
+    ```yaml
     apiVersion: v1
     kind: Secret
     metadata:
@@ -110,7 +110,7 @@
 
 2. 使用虚拟机快照进行迁移。创建 VirtualMachineExport CR：
 
-    ```sh
+    ```yaml
     apiVersion: v1
     kind: Secret
     metadata:
