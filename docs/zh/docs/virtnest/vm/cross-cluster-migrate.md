@@ -19,7 +19,7 @@
 ## 开启 VMExport Feature Gate
 
 激活 VMExport Feature Gate，在原有集群内执行如下命令，
-可参考[这里](https://kubevirt.io/user-guide/cluster_admin/activating_feature_gates/#how-to-activate-a-feature-gate)
+可参考[How to activate a feature gate](https://kubevirt.io/user-guide/cluster_admin/activating_feature_gates/#how-to-activate-a-feature-gate)
 
 ```sh
 kubectl edit kubevirt kubevirt -n virtnest-system
