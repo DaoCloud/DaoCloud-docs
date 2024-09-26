@@ -60,26 +60,27 @@
     ```
 
     执行如下命令，使用 kubean `airgap-patch` 镜像生成离线包。
-   `airgap-patch` 镜像 tag 与 kubean 版本一致，需确保 kubean 版本覆盖需要升级的 kubernetes 版本。
+    `airgap-patch` 镜像 tag 与 Kubean 版本一致，需确保 Kubean 版本覆盖需要升级的 Kubernetes 版本。
+
     ```bash
-   # 假设 kubean 版本为 v0.13.9
+    # 假设 kubean 版本为 v0.13.9
     docker run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.13.9
     ```
 
     等待 Docker 服务运行完成后，检查 __/data__ 文件夹下的文件，文件目录如下：
 
     ```console
-   data
-   ├── amd64
-   │   ├── files
-   │   │   ├── import_files.sh
-   │   │   └── offline-files.tar.gz
-   │   ├── images
-   │   │   ├── import_images.sh
-   │   │   └── offline-images.tar.gz
-   │   └── os-pkgs
-   │       └── import_ospkgs.sh
-   └── localartifactset.cr.yaml
+    data
+    ├── amd64
+    │   ├── files
+    │   │   ├── import_files.sh
+    │   │   └── offline-files.tar.gz
+    │   ├── images
+    │   │   ├── import_images.sh
+    │   │   └── offline-images.tar.gz
+    │   └── os-pkgs
+    │       └── import_ospkgs.sh
+    └── localartifactset.cr.yaml
     ```
 
 ## 将离线包导入火种节点
@@ -137,11 +138,12 @@
     “rootuser” 和 “rootpass123”是火种节点内置的 Minio 服务的默认账户和密码。
 
 ## 更新 Global 集群的 kubernetes 版本清单
-   火种节点上执行如下命令，将 `localartifactset` 资源部署到 Global 集群：
 
-    ```bash
-    kubectl apply -f data/kubeanofflineversion.cr.patch.yaml
-    ```
+火种节点上执行如下命令，将 `localartifactset` 资源部署到 Global 集群：
+
+```bash
+kubectl apply -f data/kubeanofflineversion.cr.patch.yaml
+```
 
 ## 下一步
 
