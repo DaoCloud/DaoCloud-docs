@@ -324,7 +324,7 @@ nav:
                       - NVIDIA GPU模式说明: kpanda/user-guide/gpu/nvidia/index.md
                       - GPU Operator:
                           - 离线安装GPU Operator: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
-                          - 升级CentOS 7.9离线yum源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
+                        #   - 升级CentOS 7.9离线yum源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - 上传Red Hat GPU Operator离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - 构建Red Hat 8.4离线yum源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                           - 构建Red Hat 7.9离线yum源: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
