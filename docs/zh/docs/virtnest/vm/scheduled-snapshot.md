@@ -4,68 +4,70 @@
 
 用户可以为虚拟机定时创建快照，能够为数据提供持续的保护，确保在发生数据丢失、损坏或删除的情况下可以进行有效的数据恢复。
 
-## 定时快照
+## 定时快照步骤
 
-1. 点击左侧导航栏上的 __容器管理__ ，然后点击 __集群列表__ ，在列表页面，选择目标虚拟机所在的集群。进入集群后，点击 __工作负载__ 中的 __定时任务__ ，选择 __YAML 创建__ 定时任务，参考以下 YAML 示例可为指定虚拟机定时创建快照。
+1. 点击左侧导航栏上的 __容器管理__ ，然后点击 __集群列表__ ，在列表页面，选择目标虚拟机所在的集群。
+   进入集群后，点击 __工作负载__ 中的 __定时任务__ ，选择 __YAML 创建__ 定时任务，参考以下 YAML 示例可为指定虚拟机定时创建快照。
 
     ![yaml创建定时任务](../images/cronjob.jpg)
 
-??? note "点击查看创建定时任务的 YAML 示例"
+    ??? note "点击查看创建定时任务的 YAML 示例"
 
-    ```yaml
-    apiVersion: batch/v1
-    kind: CronJob
-    metadata:
-        name: xxxxx-xxxxx-cronjob # 定时任务名称, 可自定义
-        namespace: virtnest-system # 请勿修改此namespace
-    spec:
-        schedule: "5 * * * *" # 按需修改定时任务执行间隔
-        concurrencyPolicy: Allow
-        suspend: false
-        successfulJobsHistoryLimit: 10
-        failedJobsHistoryLimit: 3
-        startingDeadlineSeconds: 60
-        jobTemplate:
+        ```yaml
+        apiVersion: batch/v1
+        kind: CronJob
+        metadata:
+          name: xxxxx-xxxxx-cronjob # 定时任务名称, 可自定义
+          namespace: virtnest-system # 请勿修改此namespace
+        spec:
+          schedule: "5 * * * *" # 按需修改定时任务执行间隔
+          concurrencyPolicy: Allow
+          suspend: false
+          successfulJobsHistoryLimit: 10
+          failedJobsHistoryLimit: 3
+          startingDeadlineSeconds: 60
+          jobTemplate:
             spec:
-            template:
+              template:
                 metadata:
-                labels:
+                  labels:
                     virtnest.io/vm: xxxx # 修改为需要快照的虚拟机名称
                     virtnest.io/namespace: xxxx # 修改为虚拟机所在的命名空间
                 spec:
-                serviceAccountName: kubevirt-operator
-                containers:
+                  serviceAccountName: kubevirt-operator
+                  containers:
                     - name: snapshot-job
-                    image: release.daocloud.io/virtnest/tools:v0.1.5 # 离线环境下,仓库地址修改为对应火种集群仓库地址
-                    imagePullPolicy: IfNotPresent
-                    env:
+                      image: release.daocloud.io/virtnest/tools:v0.1.5 # 离线环境下,仓库地址修改为对应火种集群仓库地址
+                      imagePullPolicy: IfNotPresent
+                      env:
                         - name: NS
-                        valueFrom:
+                          valueFrom:
                             fieldRef:
-                            fieldPath: metadata.labels['virtnest.io/namespace']
+                              fieldPath: metadata.labels['virtnest.io/namespace']
                         - name: VM
-                        valueFrom:
+                          valueFrom:
                             fieldRef:
-                            fieldPath: metadata.labels['virtnest.io/vm']
-                    command:
+                              fieldPath: metadata.labels['virtnest.io/vm']
+                      command:
                         - /bin/sh
                         - -c
                         - |
-                        export SUFFIX=$(date +"%Y%m%d-%H%M%S")
-                        cat <<EOF | kubectl apply -f -
-                        apiVersion: snapshot.kubevirt.io/v1alpha1
-                        kind: VirtualMachineSnapshot
-                        metadata:
+                          export SUFFIX=$(date +"%Y%m%d-%H%M%S")
+                          cat <<EOF | kubectl apply -f -
+                          apiVersion: snapshot.kubevirt.io/v1alpha1
+                          kind: VirtualMachineSnapshot
+                          metadata:
                             name: $(VM)-snapshot-$SUFFIX
                             namespace: $(NS)
-                        spec:
+                          spec:
                             source:
-                            apiGroup: kubevirt.io
-                            kind: VirtualMachine
-                            name: $(VM)
-                        EOF
-                restartPolicy: OnFailure
-    ```
-2. 创建定时任务并成功运行后，可点击 __虚拟机__ 在列表页面选择目标虚拟机，进入详情后可查看快照列表。
+                              apiGroup: kubevirt.io
+                              kind: VirtualMachine
+                              name: $(VM)
+                          EOF
+                  restartPolicy: OnFailure
+        ```
+
+1. 创建定时任务并成功运行后，可点击 __虚拟机__ 在列表页面选择目标虚拟机，进入详情后可查看快照列表。
 
     ![定时快照](../images/snapshot.jpg)
