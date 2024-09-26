@@ -44,32 +44,32 @@ spec:
 
 ## 配置原有集群的 Ingress
 
-1. 以 Nginx Ingress 为例，配置 Ingress 以指向 virt-exportproxy Service：
+以 Nginx Ingress 为例，配置 Ingress 以指向 virt-exportproxy Service：
 
-    ```yaml
-    apiVersion: networking.k8s.io/v1
-    kind: Ingress
-    metadata:
-      name: ingress-vm-export
-      namespace: virtnest-system
-    spec:
-      tls:
-        - hosts:
-          - upgrade-test.com
-          secretName: nginx-tls
-    rules:
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-vm-export
+  namespace: virtnest-system
+spec:
+  tls:
+    - hosts:
+        - upgrade-test.com
+      secretName: nginx-tls
+  rules:
     - host: upgrade-test.com
       http:
         paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: virt-exportproxy
-              port:
-                number: 8443
-    ingressClassName: nginx
-    ```
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: virt-exportproxy
+                port:
+                  number: 8443
+  ingressClassName: nginx
+```
 
 ## 迁移步骤
 
@@ -110,7 +110,7 @@ spec:
         example-export   VirtualMachine   testvm       Ready
         ```
 
-    - 如果要在虚拟机不关机的状态下，使用虚拟机快照进行迁移（热迁移）：
+    - 如果要在 **虚拟机不关机** 的状态下，使用虚拟机快照进行迁移（热迁移）：
 
         ```yaml
         apiVersion: v1
