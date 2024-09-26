@@ -65,7 +65,7 @@
 
 | **数量** | **服务器角色** | **服务器用途** | **cpu 数量** | **内存容量** | **系统硬盘** | **未分区的硬盘** |
 | ------- | ------------- | ------------ | ----------- | ----------- | ----------- | ------------- |
-| 1 | all in one | 镜像仓库、chart museum、[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)本身 | 16 核 | 32 GB | 200 GB | 400 GB |
+| 1 | all in one | 镜像仓库、chart museum、[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)本身 | 24 核 | 32 GB | 300 GB | 400 GB |
 
 ### 4 节点模式 CPU 、内存、硬盘要求
 
