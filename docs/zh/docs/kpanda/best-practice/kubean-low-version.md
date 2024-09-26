@@ -29,8 +29,8 @@ keyword: 兼容版本,向下兼容,部署和升级 Kubernetes,部署和升级 K8
     | 制品包版本        | 支持集群范围            | DCE 5.0 支持情况     |
     |--------------|-------------------|------------------|
     | release-2.21 | v1.23.0 ~ v1.25.6 | 安装器 v0.14.0+ 已支持 |
-    | release-2.22 | v1.24.0 ~ v1.26.9 | 安装器 v0.15.0+ 已支持 |
-    | release-2.23 | v1.25.0 ~ v1.27.7 | 安装器 v0.16.0+ 已支持 |
+    | release-2.22 | v1.24.0 ~ v1.26.13 | 安装器 v0.15.0+ 已支持 |
+    | release-2.23 | v1.25.0 ~ v1.27.10 | 安装器 v0.16.0+ 已支持 |
     | release-2.24 | v1.26.0 ~ v1.29.1 | 安装器 v0.17.0+ 已支持 |
     | release-2.25 | v1.27.0 ~ v1.29.5 | 安装器 v0.20.0+ 已支持 |
 
@@ -111,7 +111,7 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
     ```bash
     # 部署 data 文件目录下的 localArtifactSet 资源
     cd ./data
-    kubectl apply -f data/localartifactset.cr.yaml
+    kubectl apply -f localartifactset.cr.yaml
 
     # 下载 release-2.21 版本的 manifest 资源
     wget https://raw.githubusercontent.com/kubean-io/kubean-manifest/main/manifests/manifest-2.21-d6f688f.yml
