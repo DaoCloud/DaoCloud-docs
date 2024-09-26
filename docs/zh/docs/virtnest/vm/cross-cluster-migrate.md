@@ -99,16 +99,6 @@ spec:
             kind: VirtualMachine
             name: testvm # 虚拟机名称
         ```
-    
-        检查 VirtualMachineExport 是否准备就绪：
-    
-        ```sh
-        # 这里的 example-export 需要替换为创建的 VirtualMachineExport 名称
-        kubectl get VirtualMachineExport example-export -n default
-    
-        NAME             SOURCEKIND       SOURCENAME   PHASE
-        example-export   VirtualMachine   testvm       Ready
-        ```
 
     - 如果要在 **虚拟机不关机** 的状态下，使用虚拟机快照进行迁移（热迁移）：
 
@@ -134,10 +124,19 @@ spec:
             kind: VirtualMachineSnapshot
             name: export-snap-202407191524 # 对应的虚拟机快照名称
         ```
+1. 检查 VirtualMachineExport 是否准备就绪：
+    
+   ```sh
+   # 这里的 example-export 需要替换为创建的 VirtualMachineExport 名称
+   kubectl get VirtualMachineExport example-export -n default
+    
+   NAME             SOURCEKIND       SOURCENAME   PHASE
+   example-export   VirtualMachine   testvm       Ready
+   ```
 
-1. 当 VirtualMachineExport 准备就绪后，导出 VirtualMachineExport 备份 YAML。
+1. 当 VirtualMachineExport 准备就绪后，导出虚拟机 YAML。
 
-    - 如果已安装 **virtctl** ，使用以下命令导出备份所用的 YAML：
+    - 如果已安装 **virtctl** ，使用以下命令导出虚拟机的 YAML：
 
         ```sh
         # 自行将 example-export替换为创建的 VirtualMachineExport 名称
@@ -145,7 +144,7 @@ spec:
         virtctl vmexport download example-export --manifest --include-secret --output=manifest.yaml
         ```
 
-    - 如果没有安装 **virtctl** ，使用以下命令导出备份 YAML：
+    - 如果没有安装 **virtctl** ，使用以下命令导出虚拟机 YAML：
 
         ```sh
         # 自行替换 example-export替换为创建的 VirtualMachineExport 名称 和命名空间
@@ -165,4 +164,5 @@ spec:
     ```sh
     kubectl apply -f manifest.yaml
     ```
-    创建成功后，在原有集群内删除原虚拟机。
+    创建成功后，重启虚拟机，虚拟机成功运行后，在原有集群内删除原虚拟机（虚拟机未启动成功时，请勿删除原虚拟机）。
+
