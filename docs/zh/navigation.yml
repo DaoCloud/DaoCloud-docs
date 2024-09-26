@@ -677,6 +677,7 @@ nav:
                   - 创建密钥: virtnest/vm/create-secret.md
                   - 克隆虚拟机: virtnest/vm/clone.md
                   - 快照管理: virtnest/vm/snapshot.md
+                  - 定时快照: virtnest/vm/scheduled-snapshot.md
                   - 实时迁移: virtnest/vm/live-migration.md
                   - 虚拟机监控: virtnest/vm/monitor.md
                   - 虚拟机网络: virtnest/vm/vm-network.md
