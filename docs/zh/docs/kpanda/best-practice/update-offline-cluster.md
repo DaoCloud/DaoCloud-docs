@@ -8,21 +8,17 @@
 
 在离线场景下，用户可以通过制作增量离线包的方式对使用 DCE 5.0 平台所创建的工作集群的 kubernetes 的版本进行升级。整体的升级思路为：
 1. 在联网节点构建离线包
-1. 将离线包导入火种节点
-1. 更新 Global 集群的 kubernetes 版本清单
-1. 使用平台 UI 升级工作集群的 kubernetes 版本
+2. 将离线包导入火种节点
+3. 更新 Global 集群的 kubernetes 版本清单
+4. 使用平台 UI 升级工作集群的 kubernetes 版本
 
 !!! note
 
-    目前支持构建的离线 kubernetes 版本如下：
-
-    - v1.26.3, v1.26.2, v1.26.1, v1.26.0, v1.25.8
-    - v1.25.7, v1.25.6, v1.25.5, v1.25.4, v1.25.3, v1.25.2, v1.25.1, v1.25.0,
-    - v1.24.12, v1.24.11, v1.24.10, v1.24.9, v1.24.8, v1.24.7, v1.24.6, v1.24.5, v1.24.4, v1.24.3, v1.24.2, v1.24.1, v1.24.0
+    目前支持构建的离线 kubernetes 版本请参考 kubean 支持的 kubernetes 版本列表。
 
 ## 在联网节点构建离线包
 
-由于离线环境无法联网，用户需要事先准备一台能够 **联网的节点** 来进行增量离线包的构建，并且在这个节点上启动 Docker 服务。
+由于离线环境无法联网，用户需要事先准备一台能够 **联网的节点** 来进行增量离线包的构建，并且在这个节点上启动 Docker 或者 podman 服务。
 参阅[如何安装 Docker？](../../blogs/230315-install-on-linux.md)
 
 1. 检查联网节点的 Docker 服务运行状态
@@ -50,11 +46,8 @@
     ```yaml title="manifest.yaml"
     image_arch:
     - "amd64"
-    kube_version:
-    - "v1.25.5"
-    - "v1.25.4"
-    - "v1.24.8"
-    - "v1.24.5"
+    kube_version: ## 填写待升级的集群版本
+    - "v1.28.0"
     ```
 
     - __image_arch__ 用于指定 CPU 的架构类型，可填入的参数为 __amd64__ 和 __arm64__ 。
@@ -66,28 +59,27 @@
     mkdir data
     ```
 
-    执行如下命令，使用 `ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8` 镜像生成离线包。
-
-    更多关于 `ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8` 镜像的信息，
-    请前往 [kubean](https://github.com/orgs/kubean-io/packages)。
-
+    执行如下命令，使用 kubean `airgap-patch` 镜像生成离线包。
+   `airgap-patch` 镜像 tag 与 kubean 版本一致，需确保 kubean 版本覆盖需要升级的 kubernetes 版本。
     ```bash
-    docker run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8
+   # 假设 kubean 版本为 v0.13.9
+    docker run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.13.9
     ```
 
     等待 Docker 服务运行完成后，检查 __/data__ 文件夹下的文件，文件目录如下：
 
     ```console
-    data
-    └── v_offline_patch
-        ├── amd64
-        │   ├── files
-        │   │   ├── import_files.sh
-        │   │   └── offline-files.tar.gz #二进制文件
-        │   └── images
-        │       ├── import_images.sh
-        │       └── offline-images.tar.gz #镜像文件
-        └── kubeanofflineversion.cr.patch.yaml
+   data
+   ├── amd64
+   │   ├── files
+   │   │   ├── import_files.sh
+   │   │   └── offline-files.tar.gz
+   │   ├── images
+   │   │   ├── import_images.sh
+   │   │   └── offline-images.tar.gz
+   │   └── os-pkgs
+   │       └── import_ospkgs.sh
+   └── localartifactset.cr.yaml
     ```
 
 ## 将离线包导入火种节点
@@ -105,13 +97,13 @@
     1. 进入镜像文件所在的目录
     
         ```bash
-        cd data/v_offline_patch/amd64/images
+        cd data/amd64/images
         ```
 
     2. 执行 __import_images.sh__ 脚本将镜像导入火种节点内置的 Docker Resgitry 仓库。
    
         ```bash
-        DEST_TLS_VERIFY=false ./import_images.sh 127.0.0.1:443
+        REGISTRY_ADDR="127.0.0.1"  ./import_images.sh
         ```
 
     !!! note
@@ -119,19 +111,18 @@
         上述命令仅仅适用于火种节点内置的 Docker Resgitry 仓库，如果使用外部仓库请使用如下命令：
         
         ```shell
-        DEST_USER=${username} DEST_PASS=${password} DEST_TLS_VERIFY=false ./import_images.sh https://x.x.x.x:443
+        REGISTRY_SCHEME=https REGISTRY_ADDR=${registry_address} REGISTRY_USER=${username} REGISTRY_PASS=${password} ./import_images.sh
         ```
-        
-        - `https://x.x.x.x:443` 为外部仓库的地址。
-        - __DEST_USER=${username} DEST_PASS=${password}__ 外部仓库的用户名和密码参数。
-          如果外部仓库为免密，则可删除此参数。
+
+        - REGISTRY_ADDR 是镜像仓库的地址，比如1.2.3.4:5000
+        - 当镜像仓库存在用户名密码验证时，需要设置 REGISTRY_USER 和 REGISTRY_PASS
 
 3. 在火种节点上将 __/data__ 文件内的二进制文件拷贝至火种节点内置的 Minio 服务上。
 
     1. 进入二进制文件所在的目录
     
         ```bash
-        cd data/v_offline_patch/amd64/files/
+        cd data/amd64/files/
         ```
 
     2. 执行 import_files.sh 脚本将二进制文件导入火种节点内置的 Minio 服务上。
@@ -146,20 +137,10 @@
     “rootuser” 和 “rootpass123”是火种节点内置的 Minio 服务的默认账户和密码。
 
 ## 更新 Global 集群的 kubernetes 版本清单
-
-1. 将联网节点的 __/data__ 文件内的 `kubeanofflineversion.cr.patch` 清单配置文件拷贝至 Global
-   集群内任一 **Master 节点** 的 __/root__ 目录下，请在 **联网节点** 执行如下命令：
+   火种节点上执行如下命令，将 `localartifactset` 资源部署到 Global 集群：
 
     ```bash
-    scp -r data/v_offline_patch/kubeanofflineversion.cr.patch.yaml root@x.x.x.x:/root
-    ```
-
-    `x.x.x.x` 为 Global 集群内任一 Master 节点 IP 地址。
-
-2. 完成上一步后登录 Global 集群内任一 **Master 节点** 执行清单配置文件，命令如下：
-
-    ```bash
-    kubectl apply -f kubeanofflineversion.cr.patch.yaml
+    kubectl apply -f data/kubeanofflineversion.cr.patch.yaml
     ```
 
 ## 下一步
