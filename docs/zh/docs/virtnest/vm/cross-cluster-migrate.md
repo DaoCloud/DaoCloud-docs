@@ -124,15 +124,16 @@ spec:
             kind: VirtualMachineSnapshot
             name: export-snap-202407191524 # 对应的虚拟机快照名称
         ```
+
 1. 检查 VirtualMachineExport 是否准备就绪：
     
-   ```sh
-   # 这里的 example-export 需要替换为创建的 VirtualMachineExport 名称
-   kubectl get VirtualMachineExport example-export -n default
+    ```sh
+    # 这里的 example-export 需要替换为创建的 VirtualMachineExport 名称
+    kubectl get VirtualMachineExport example-export -n default
     
-   NAME             SOURCEKIND       SOURCENAME   PHASE
-   example-export   VirtualMachine   testvm       Ready
-   ```
+    NAME             SOURCEKIND       SOURCENAME   PHASE
+    example-export   VirtualMachine   testvm       Ready
+    ```
 
 1. 当 VirtualMachineExport 准备就绪后，导出虚拟机 YAML。
 
