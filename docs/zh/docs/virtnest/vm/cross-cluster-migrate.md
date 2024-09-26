@@ -25,9 +25,9 @@
     # 修改 featureGates, 增加VMExport, 保存即可
     ...
     spec:
-    configuration:
+      configuration:
         developerConfiguration:
-        featureGates:
+          featureGates:
             - DataVolumes
             - LiveMigration
             - VMExport
@@ -41,24 +41,24 @@
     apiVersion: networking.k8s.io/v1
     kind: Ingress
     metadata:
-        name: ingress-vm-export
-        namespace: virtnest-system
+      name: ingress-vm-export
+      namespace: virtnest-system
     spec:
-        tls:
-            - hosts:
-            - upgrade-test.com
-                secretName: nginx-tls
+      tls:
+        - hosts:
+          - upgrade-test.com
+          secretName: nginx-tls
     rules:
-        - host: upgrade-test.com
-        http:
-            paths:
-            - path: /
-                pathType: Prefix
-                backend:
-                service:
-                    name: virt-exportproxy
-                    port:
-                    number: 8443
+    - host: upgrade-test.com
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: virt-exportproxy
+              port:
+                number: 8443
     ingressClassName: nginx
     ```
 
@@ -74,24 +74,24 @@
     apiVersion: v1
     kind: Secret
     metadata:
-        name: example-token # 导出虚拟机所用token
-        namespace: default # 虚拟机所在命名空间
+      name: example-token # 导出虚拟机所用token
+      namespace: default # 虚拟机所在命名空间
     stringData:
-        token: 1234567890ab # 导出使用的token,可修改
+      token: 1234567890ab # 导出使用的token,可修改
 
     ---
 
     apiVersion: export.kubevirt.io/v1alpha1
     kind: VirtualMachineExport
     metadata:
-        name: example-export # 导出名称, 可自行修改
-        namespace: default # 虚拟机所在命名空间
+      name: example-export # 导出名称, 可自行修改
+      namespace: default # 虚拟机所在命名空间
     spec:
-        tokenSecretRef: example-token # 和上面创建的token名称保持一致
-        source:
-            apiGroup: "kubevirt.io"
-            kind: VirtualMachine
-            name: testvm # 虚拟机名称
+      tokenSecretRef: example-token # 和上面创建的token名称保持一致
+      source:
+        apiGroup: "kubevirt.io"
+        kind: VirtualMachine
+        name: testvm # 虚拟机名称
     ```
 
     检查 VirtualMachineExport 是否准备就绪：
@@ -114,24 +114,24 @@
     apiVersion: v1
     kind: Secret
     metadata:
-        name: example-token # 导出虚拟机所用token
-        namespace: default # 虚拟机所在命名空间
+      name: example-token # 导出虚拟机所用token
+      namespace: default # 虚拟机所在命名空间
     stringData:
-        token: 1234567890ab # 导出使用的token,可修改
+      token: 1234567890ab # 导出使用的token,可修改
 
     ---
 
     apiVersion: export.kubevirt.io/v1alpha1
     kind: VirtualMachineExport
     metadata:
-        name: export-snapshot # 导出名称, 可自行修改
-        namespace: default # 虚拟机所在命名空间
+      name: export-snapshot # 导出名称, 可自行修改
+      namespace: default # 虚拟机所在命名空间
     spec:
-        tokenSecretRef: export-token # 和上面创建的token名称保持一致
-        source:
-            apiGroup: "snapshot.kubevirt.io"
-            kind: VirtualMachineSnapshot
-            name: export-snap-202407191524 # 对应的虚拟机快照名称
+      tokenSecretRef: export-token # 和上面创建的token名称保持一致
+      source:
+        apiGroup: "snapshot.kubevirt.io"
+        kind: VirtualMachineSnapshot
+        name: export-snap-202407191524 # 对应的虚拟机快照名称
     ```
 
     当 VirtualMachineExport 准备就绪后继续执行后续步骤。
