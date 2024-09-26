@@ -18,20 +18,29 @@
 
 ## 开启 VMExport Feature Gate
 
-1. 激活 VMExport Feature Gate，在原有集群内执行如下命令，可参考[这里](https://kubevirt.io/user-guide/cluster_admin/activating_feature_gates/#how-to-activate-a-feature-gate)
+激活 VMExport Feature Gate，在原有集群内执行如下命令，
+可参考[这里](https://kubevirt.io/user-guide/cluster_admin/activating_feature_gates/#how-to-activate-a-feature-gate)
 
-    ```sh
-    kubectl edit kubevirt kubevirt -n virtnest-system
-    # 修改 featureGates, 增加VMExport, 保存即可
-    ...
-    spec:
-      configuration:
-        developerConfiguration:
-          featureGates:
-            - DataVolumes
-            - LiveMigration
-            - VMExport
-    ```
+```sh
+kubectl edit kubevirt kubevirt -n virtnest-system
+```
+
+这条命令将修改 featureGates，增加 VMExport。
+
+```yaml
+apiVersion: kubevirt.io/v1
+kind: KubeVirt
+metadata:
+  name: kubevirt
+  namespace: virtnest-system
+spec:
+  configuration:
+    developerConfiguration:
+      featureGates:
+        - DataVolumes
+        - LiveMigration
+        - VMExport
+```
 
 ## 配置原有集群的 Ingress
 
@@ -64,102 +73,92 @@
 
 ## 迁移步骤
 
-!!! note
+1. 创建 VirtualMachineExport CR
 
-    以下方式需要在虚拟机关机状态下进行迁移。
+    - 如果 **虚拟机关机状态** 下进行迁移（冷迁移）：
 
-1. 迁移虚拟机。创建 VirtualMachineExport CR：
+        ```yaml
+        apiVersion: v1
+        kind: Secret
+        metadata:
+          name: example-token # 导出虚拟机所用token
+          namespace: default # 虚拟机所在命名空间
+        stringData:
+          token: 1234567890ab # 导出使用的token,可修改
+    
+        ---
+        apiVersion: export.kubevirt.io/v1alpha1
+        kind: VirtualMachineExport
+        metadata:
+          name: example-export # 导出名称, 可自行修改
+          namespace: default # 虚拟机所在命名空间
+        spec:
+          tokenSecretRef: example-token # 和上面创建的token名称保持一致
+          source:
+            apiGroup: "kubevirt.io"
+            kind: VirtualMachine
+            name: testvm # 虚拟机名称
+        ```
+    
+        检查 VirtualMachineExport 是否准备就绪：
+    
+        ```sh
+        # 这里的 example-export 需要替换为创建的 VirtualMachineExport 名称
+        kubectl get VirtualMachineExport example-export -n default
+    
+        NAME             SOURCEKIND       SOURCENAME   PHASE
+        example-export   VirtualMachine   testvm       Ready
+        ```
 
-    ```yaml
-    apiVersion: v1
-    kind: Secret
-    metadata:
-      name: example-token # 导出虚拟机所用token
-      namespace: default # 虚拟机所在命名空间
-    stringData:
-      token: 1234567890ab # 导出使用的token,可修改
+    - 如果要在虚拟机不关机的状态下，使用虚拟机快照进行迁移（热迁移）：
 
-    ---
+        ```yaml
+        apiVersion: v1
+        kind: Secret
+        metadata:
+          name: example-token # 导出虚拟机所用token
+          namespace: default # 虚拟机所在命名空间
+        stringData:
+          token: 1234567890ab # 导出使用的token,可修改
+    
+        ---
+        apiVersion: export.kubevirt.io/v1alpha1
+        kind: VirtualMachineExport
+        metadata:
+          name: export-snapshot # 导出名称, 可自行修改
+          namespace: default # 虚拟机所在命名空间
+        spec:
+          tokenSecretRef: export-token # 和上面创建的token名称保持一致
+          source:
+            apiGroup: "snapshot.kubevirt.io"
+            kind: VirtualMachineSnapshot
+            name: export-snap-202407191524 # 对应的虚拟机快照名称
+        ```
 
-    apiVersion: export.kubevirt.io/v1alpha1
-    kind: VirtualMachineExport
-    metadata:
-      name: example-export # 导出名称, 可自行修改
-      namespace: default # 虚拟机所在命名空间
-    spec:
-      tokenSecretRef: example-token # 和上面创建的token名称保持一致
-      source:
-        apiGroup: "kubevirt.io"
-        kind: VirtualMachine
-        name: testvm # 虚拟机名称
-    ```
+1. 当 VirtualMachineExport 准备就绪后，导出 VirtualMachineExport 备份 YAML。
 
-    检查 VirtualMachineExport 是否准备就绪：
+    - 如果已安装 **virtctl** ，使用以下命令导出备份所用的 YAML：
 
-    ```sh
-    # 这里的example-export 需要替换为创建的 VirtualMachineExport 名称
-    kubectl get VirtualMachineExport example-export -n default
+        ```sh
+        # 自行将 example-export替换为创建的 VirtualMachineExport 名称
+        # 自行通过 -n 指定命名空间
+        virtctl vmexport download example-export --manifest --include-secret --output=manifest.yaml
+        ```
 
-    NAME             SOURCEKIND       SOURCENAME   PHASE
-    example-export   VirtualMachine   testvm       Ready
-    ```
+    - 如果没有安装 **virtctl** ，使用以下命令导出备份 YAML：
 
-!!! note
+        ```sh
+        # 自行替换 example-export替换为创建的 VirtualMachineExport 名称 和命名空间
+        manifesturl=$(kubectl get VirtualMachineExport example-export -n default -o=jsonpath='{.status.links.internal.manifests[0].url}')
+        secreturl=$(kubectl get VirtualMachineExport example-export -n default -o=jsonpath='{.status.links.internal.manifests[1].url}')
+        # 自行替换secert名称和命名空间
+        token=$(kubectl get secret example-token -n default -o=jsonpath='{.data.token}' | base64 -d)
+    
+        curl -H "Accept: application/yaml" -H "x-kubevirt-export-token: $token"  --insecure  $secreturl > manifest.yaml
+        curl -H "Accept: application/yaml" -H "x-kubevirt-export-token: $token"  --insecure  $manifesturl >> manifest.yaml
+        ```
 
-    如果虚拟机不能关机，可以使用快照进行迁移：
-
-2. 使用虚拟机快照进行迁移。创建 VirtualMachineExport CR：
-
-    ```yaml
-    apiVersion: v1
-    kind: Secret
-    metadata:
-      name: example-token # 导出虚拟机所用token
-      namespace: default # 虚拟机所在命名空间
-    stringData:
-      token: 1234567890ab # 导出使用的token,可修改
-
-    ---
-
-    apiVersion: export.kubevirt.io/v1alpha1
-    kind: VirtualMachineExport
-    metadata:
-      name: export-snapshot # 导出名称, 可自行修改
-      namespace: default # 虚拟机所在命名空间
-    spec:
-      tokenSecretRef: export-token # 和上面创建的token名称保持一致
-      source:
-        apiGroup: "snapshot.kubevirt.io"
-        kind: VirtualMachineSnapshot
-        name: export-snap-202407191524 # 对应的虚拟机快照名称
-    ```
-
-    当 VirtualMachineExport 准备就绪后继续执行后续步骤。
-
-3. 导出 VirtualMachineExport 备份 YAML
-   
-   1. 如果已安装 virtctl，使用以下命令导出备份 YAML：
-
-    ```sh
-    # 自行将 example-export替换为创建的 VirtualMachineExport 名称
-    # 自行通过 -n 指定命名空间
-    virtctl vmexport download example-export --manifest --include-secret --output=manifest.yaml
-    ```
-
-    2. 如果没有安装 virtctl，使用以下命令导出备份 YAML：
-
-    ```sh
-    # 自行替换 example-export替换为创建的 VirtualMachineExport 名称 和命名空间
-    manifesturl=$(kubectl get VirtualMachineExport example-export -n default -o=jsonpath='{.status.links.internal.manifests[0].url}')
-    secreturl=$(kubectl get VirtualMachineExport example-export -n default -o=jsonpath='{.status.links.internal.manifests[1].url}')
-    # 自行替换secert名称和命名空间
-    token=$(kubectl get secret example-token -n default -o=jsonpath='{.data.token}' | base64 -d)
-
-    curl -H "Accept: application/yaml" -H "x-kubevirt-export-token: $token"  --insecure  $secreturl > manifest.yaml
-    curl -H "Accept: application/yaml" -H "x-kubevirt-export-token: $token"  --insecure  $manifesturl >> manifest.yaml
-    ```
-
-4. 导入虚拟机
+1. 导入虚拟机
 
     将导出的 manifest.yaml 复制到目标迁移集群并执行以下命令（如果命名空间不存在则需要提前创建）：
 
