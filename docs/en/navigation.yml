@@ -1151,7 +1151,7 @@ nav:
                       - Environments: baize/developer/dataset/environments.md
                   - Model Service:
                       - Supported Models: baize/developer/inference/models.md
-                      - Inference Service: baize/developer/inference/create.md
+                      - Create with Triton Framework: baize/developer/inference/triton-inference.md
                       - Create with vLLM Framework: baize/developer/inference/vllm-inference.md
               - Operator:
                   - Resource Management: baize/oam/resource.md

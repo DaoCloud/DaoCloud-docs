@@ -1198,7 +1198,7 @@ nav:
                       - 环境管理: baize/developer/dataset/environments.md
                   - 推理服务:
                       - 模型支持情况: baize/developer/inference/models.md
-                      - 创建 Triton 推理服务: baize/developer/inference/create.md
+                      - 创建 Triton 推理服务: baize/developer/inference/triton-inference.md
                       - 创建 vLLM 推理服务: baize/developer/inference/vllm-inference.md
               - 运维管理:
                   - 介绍: baize/oam/index.md
