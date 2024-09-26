@@ -12,7 +12,7 @@
 您可以在 AI Lab 中使用经过 DCE 5.0 验证过的 GPU 类型；
 更多细节参阅 [GPU 支持矩阵](../../../kpanda/user-guide/gpu/gpu-metrics.md)。
 
-![点击创建](../../images/interface05.png)
+![点击创建](../../images/inference-interface.png)
 
 ## Triton Inference Server
 

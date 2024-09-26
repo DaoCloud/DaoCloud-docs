@@ -17,7 +17,7 @@ Here, you can see information about the supported models.
 You can use GPU types that have been verified by DCE 5.0 in AI Lab.
 For more details, refer to the [GPU Support Matrix](../../../kpanda/user-guide/gpu/gpu-metrics.md).
 
-![Click to Create](../../images/interface05.png)
+![Click to Create](../../images/inference-interface.png)
 
 ## Triton Inference Server
 
