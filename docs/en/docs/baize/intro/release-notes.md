@@ -29,9 +29,9 @@ so that you can learn its evolution path and feature changes.
 
 #### Features
 
-- [Beta] **Added** Support manually saving as an image while a `Notebook` is running (depends on the image repository
+- **Added** [Beta] support manually saving as an image while a `Notebook` is running (depends on the image repository
   module).
-- [Beta] **Added** Support automatically saving as an image when a `Notebook` is closed (depends on the image repository
+- **Added** [Beta] support automatically saving as an image when a `Notebook` is closed (depends on the image repository
   module).
 - **Added** Support selecting private images in the image repository through a form for `Notebook` images.
 - **Added** Support configuring **data input** and **data output** for `Notebook`, which can be directly associated with
