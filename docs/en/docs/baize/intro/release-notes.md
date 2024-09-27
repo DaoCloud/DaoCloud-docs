@@ -8,6 +8,45 @@ date: 2024-07-12
 This page lists the Release Notes for AI Lab,
 so that you can learn its evolution path and feature changes.
 
+## 2024-09-30
+
+### v0.9.0
+
+#### Features
+
+- **Added** Added a new data management sub-module “Data Annotation” which can manage data annotation capabilities for
+  mainstream data types.
+- **Added** Added a new model management sub-module “Model List” which supports quick data import.
+- **Added** When creating a “Data Set”, the PVC storage space size can be specified.
+- **Added** Supports one-click restart of “training tasks”.
+- **Added** When using vGPU resources, the GPU card type can be specified.
+- **Added** The base image of “baize-notebook” has been upgraded to v0.9.0.
+- **Improved** Supports global alerts while ensuring data availability when there is a cluster exception.
+
+## 2024-08-31
+
+### v0.8.0
+
+#### Features
+
+- [Beta] **Added** Support manually saving as an image while a `Notebook` is running (depends on the image repository
+  module).
+- [Beta] **Added** Support automatically saving as an image when a `Notebook` is closed (depends on the image repository
+  module).
+- **Added** Support selecting private images in the image repository through a form for `Notebook` images.
+- **Added** Support configuring **data input** and **data output** for `Notebook`, which can be directly associated with
+  datasets.
+- **Added** Support configuring `Notebook` to start as `Root`.
+- **Added** Support configuring **data input** and **data output** for `training tasks`, which can be directly
+  associated with datasets.
+- [Beta] **Added** Support configuring breakpoint continuation for `training tasks` and automatically detecting and
+  repairing task failures.
+- **Added** Support selecting private images in the image repository through a form for `training task` images.
+- **Added** Support adding display of task parameter information in the details of `training tasks`.
+- **Added** The `environment management` can query the preheating progress and support a quick debugging entry.
+- **Added** Support adding service invocation monitoring in the details of `inference tasks`.
+- **Added** The base image of `baize-notebook` is upgraded to v0.8.0.
+
 ## 2024-07-31
 
 ### v0.7.0
