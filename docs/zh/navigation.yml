@@ -1361,9 +1361,9 @@ nav:
                       - OEM OUT(DCE 5.0 集成到客户系统): ghippo/best-practice/oem/oem-out.md
                       - 定制 DCE 5.0 对接 IdP: ghippo/best-practice/oem/custom-idp.md
                       - Keycloak 自定义 IdP: ghippo/best-practice/oem/keycloak-idp.md
-                  - 导航栏定制:
-                      - 导航栏定制: ghippo/best-practice/navigator.md
-                      - 导航栏菜单根据权限显示/隐藏: ghippo/best-practice/menu-display-or-hiding.md
+                  - 定制导航栏:
+                      - 定制导航栏: ghippo/best-practice/menu/navigator.md
+                      - 基于权限显示/隐藏导航栏菜单: ghippo/best-practice/menu/menu-display-or-hiding.md
               - 故障排查:
                   - ingressgateway 无法启动: ghippo/troubleshooting/ghippo01.md
                   - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
