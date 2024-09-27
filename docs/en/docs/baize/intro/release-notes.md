@@ -17,7 +17,7 @@ so that you can learn its evolution path and feature changes.
 - **Added** Added a new data management sub-module “Data Annotation” which can manage data annotation capabilities for
   mainstream data types.
 - **Added** Added a new model management sub-module “Model List” which supports quick data import.
-- **Added** When creating a “Data Set”, the PVC storage space size can be specified.
+- **Added** When creating a “Dataset”, the PVC storage space size can be specified.
 - **Added** Supports one-click restart of “Training jobs”.
 - **Added** When using vGPU resources, the GPU card type can be specified.
 - **Added** The base image of “baize-notebook” has been upgraded to v0.9.0.
