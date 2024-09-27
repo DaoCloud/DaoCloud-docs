@@ -18,7 +18,7 @@ so that you can learn its evolution path and feature changes.
   mainstream data types.
 - **Added** Added a new model management sub-module “Model List” which supports quick data import.
 - **Added** When creating a “Data Set”, the PVC storage space size can be specified.
-- **Added** Supports one-click restart of “training tasks”.
+- **Added** Supports one-click restart of “Training jobs”.
 - **Added** When using vGPU resources, the GPU card type can be specified.
 - **Added** The base image of “baize-notebook” has been upgraded to v0.9.0.
 - **Improved** Supports global alerts while ensuring data availability when there is a cluster exception.
