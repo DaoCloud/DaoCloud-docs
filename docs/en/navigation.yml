@@ -644,6 +644,7 @@ nav:
                   - Create Secret: virtnest/vm/create-secret.md
                   - Snapshots: virtnest/vm/snapshot.md
                   - Live Migration: virtnest/vm/live-migration.md
+                  - Migrate VM across Clusters: virtnest/vm/cross-cluster-migrate.md
                   - VM Monitor: virtnest/vm/monitor.md
                   - VM GPU: virtnest/vm/vm-gpu.md
                   - VM Network: virtnest/vm/vm-network.md
