@@ -1,29 +1,39 @@
 # 导航栏菜单根据权限显示/隐藏
 
-在现有的权限体系下, 全局管理可以根据用户的权限控制导航栏的菜单是否展示，但是由于容器管理的授权信息未同步到 全局管理, 导致全局管理无法准确判断容器管理菜单是否需要展示。
+在现有的权限体系下, 全局管理可以根据用户的权限控制导航栏的菜单是否展示，
+但是由于容器管理的授权信息未同步到全局管理，导致全局管理无法准确判断容器管理菜单是否需要展示。
 
-本文档通过配置实现了: 将容器管理及可观测性的菜单在**全局管理无法判断的部分, 默认不显示**, 通过**白名单**授权的方式, 实现菜单的隐藏与显示（通过容器管理页面授权的集群或命名空间权限，全局管理均无法感知和判断）
+本文通过配置实现了：
+将容器管理及可观测性的菜单在 **全局管理无法判断的部分, 默认不显示** ，
+通过 **白名单** 授权的方式，实现菜单的隐藏与显示（通过容器管理页面授权的集群或命名空间权限，全局管理均无法感知和判断）。
 
-例如: A 用户在容器管理是 cluster A 的Cluster Admin角色, 这种情况下全局管理无法判断是否有权限展示容器管理菜单, 通过本文档配置后, 用户A默认不可见容器管理菜单, 需要**显式的在全局管理授权**才可以看到容器管理菜单
+例如：A 用户在容器管理是 cluster A 的 Cluster Admin 角色，
+这种情况下全局管理无法判断是否有权限展示容器管理菜单。
+通过本文档配置后，用户 A 默认不可见容器管理菜单，需要 **显式地在全局管理授权** 才可以看到容器管理菜单。
 
 ## 前提条件
 
-已开启根据权限显示/隐藏菜单功能, 开启方法如下：
+已开启基于权限显示/隐藏菜单的功能，开启方法如下：
 
-* 新安装的环境, 在helm install 时增加 --set global.navigatorVisibleDependency=true 参数
-* 已有环境，helm get values ghippo -n ghippo-system -o yaml备份 values, 随后修改bak.yaml 并添加 global.navigatorVisibleDependency: true 如下图所示:
+* 新安装的环境, 在 `helm install` 时增加 `--set global.navigatorVisibleDependency=true` 参数
+* 已有环境，`helm get values ghippo -n ghippo-system -o yaml` 备份 values, 随后修改 bak.yaml 并添加 `global.navigatorVisibleDependency: true`
+
 ![开启菜单隐藏](../../images/menu1.png)
 
-再使用 helm upgrade ghippo ghippo-release/ghippo \  
--n ghippo-system \  
--f ./bak.yaml \  
---version ${version} 升级ghippo即可。
+再使用以下命令升级全局管理：
 
-## 导航栏配置
-
-在 kpanda-global-cluster apply 如下yaml：
-
+```shell
+helm upgrade ghippo ghippo-release/ghippo \  
+  -n ghippo-system \  
+  -f ./bak.yaml \  
+  --version ${version}
 ```
+
+## 配置导航栏
+
+在 kpanda-global-cluster 中 apply 如下 YAML：
+
+```yaml
 apiVersion: ghippo.io/v1alpha1  
 kind: GProductNavigator  
 metadata:  
@@ -94,8 +104,7 @@ spec:
   url: ./kpanda/clusters  
   visible: true  
   
----  
-  
+---
 apiVersion: ghippo.io/v1alpha1  
 kind: GProductNavigator  
 metadata:  
@@ -231,8 +240,7 @@ spec:
   url: ./insight  
   visible: true  
   
----  
-  
+---
 apiVersion: ghippo.io/v1alpha1  
 kind: GProductResourcePermissions  
 metadata:  
@@ -324,20 +332,18 @@ spec:
 ```
 
 ## 通过自定义角色实现上述效果
+
 !!! note
 
     仅容器管理模块的菜单需要单独配置菜单权限，其他模块会根据用户的权限自动显示/隐藏
 
-创建一个自定义角色, 包含的权限点为 容器管理的菜单查看权限, 后续授权给需要查看容器管理菜单的用户即可。
+创建一个自定义角色，包含的权限点为容器管理的菜单查看权限，后续授权给需要查看容器管理菜单的用户。
+
 ![授权](../../images/menu2.png)
+
 ![查看权限点](../../images/menu3.png)
-效果如下, 可以看到容器管理和可观测性的导航栏菜单
+
+效果如下，可以看到容器管理和可观测性的导航栏菜单：
+
 ![验证结果](../../images/menu4.png)
-
-
-
-
-
-
-
 
