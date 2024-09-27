@@ -8,20 +8,21 @@ date: 2024-07-12
 This page lists the Release Notes for AI Lab,
 so that you can learn its evolution path and feature changes.
 
+Here’s the improved version of your text:
+
 ## 2024-09-30
 
 ### v0.9.0
 
 #### Features
 
-- **Added** Added a new data management sub-module “Data Annotation” which can manage data annotation capabilities for
-  mainstream data types.
-- **Added** Added a new model management sub-module “Model List” which supports quick data import.
-- **Added** When creating a “Dataset”, the PVC storage space size can be specified.
-- **Added** Supports one-click restart of “Training jobs”.
-- **Added** When using vGPU resources, the GPU card type can be specified.
-- **Added** The base image of “baize-notebook” has been upgraded to v0.9.0.
-- **Improved** Supports global alerts while ensuring data availability when there is a cluster exception.
+- **Added** a new data management sub-module, “Data Labeling,” for managing data labeling features across main data categories.
+- **Added** a new model management sub-module, “Model List,” which supports to quickly import data.
+- **Added** the feature to specify PVC storage size when creating a “Dataset.”
+- **Added** support for one-click restarts of training jobs.
+- **Added** the option to specify the GPU type when using vGPU resources.
+- **Added** an upgrade of the base image for “baize-notebook” to v0.9.0.
+- **Improved** global alerts support to ensure data availability during cluster exceptions.
 
 ## 2024-08-31
 
@@ -29,23 +30,18 @@ so that you can learn its evolution path and feature changes.
 
 #### Features
 
-- **Added** [Beta] support manually saving as an image while a `Notebook` is running (depends on the image repository
-  module).
-- **Added** [Beta] support automatically saving as an image when a `Notebook` is closed (depends on the image repository
-  module).
-- **Added** Support selecting private images in the image repository through a form for `Notebook` images.
-- **Added** Support configuring **data input** and **data output** for `Notebook`, which can be directly associated with
-  datasets.
-- **Added** Support configuring `Notebook` to start as `Root`.
-- **Added** Support configuring **data input** and **data output** for `training tasks`, which can be directly
-  associated with datasets.
-- [Beta] **Added** Support configuring breakpoint continuation for `training tasks` and automatically detecting and
-  repairing task failures.
-- **Added** Support selecting private images in the image repository through a form for `training task` images.
-- **Added** Support adding display of task parameter information in the details of `training tasks`.
-- **Added** The `environment management` can query the preheating progress and support a quick debugging entry.
-- **Added** Support adding service invocation monitoring in the details of `inference tasks`.
-- **Added** The base image of `baize-notebook` is upgraded to v0.8.0.
+- **Added** [Beta] support for manually saving a `Notebook` as an image while it is running (depending on the Container Registry module).
+- **Added** [Beta] support for automatically saving a `Notebook` as an image when it is closed (depending on the Container Registry module).
+- **Added** an feature to select private images from the Container Registry via a form for `Notebook` images.
+- **Added** support for configuring **data input** and **data output** for `Notebook`, directly associating them with datasets.
+- **Added** support for configuring `Notebook` to start as `Root`.
+- **Added** support for configuring **data input** and **data output** for `training jobs`, which can be directly linked to datasets.
+- **Added** [Beta] support for configuring breakpoint continuation for `training jobs`, with automatic detection and repair of job failures.
+- **Added** an feature to select private images from the Container Registry via a form for `training job` images.
+- **Added** the display of job parameters in the detail page of `training jobs`.
+- **Added** an feature in environment management to query preloading progress and provide a quick debugging entry.
+- **Added** support for service invocation monitoring in the detail page of `inference jobs`.
+- **Added** an upgrade of the base image for `baize-notebook` to v0.8.0.
 
 ## 2024-07-31
 
@@ -53,12 +49,12 @@ so that you can learn its evolution path and feature changes.
 
 #### Features
 
-- **Added** support for `Datasets` to query preheating progress after dataset creation, along with a quick debug entry.
-- **Added** support for `Training Tasks` to create both single-machine and distributed tasks with `MxNet`.
-- **Added** support for `Training Tasks` to create `MPI` distributed tasks.
-- **Added** support for `Training Tasks` to use a default image, standardizing the use of base images.
-- **Added** support for `Training Tasks` to configure the startup command directly with a startup script.
-- **Added** support for `Training Tasks` to specify the working directory location for run parameters.
+- **Added** support for `Datasets` to query preloading progress after dataset creation, along with a quick debug entry.
+- **Added** support for `training jobs` to create both single-machine and distributed tasks with `MxNet`.
+- **Added** support for `training jobs` to create `MPI` distributed tasks.
+- **Added** support for `training jobs` to use a default image, standardizing the use of base images.
+- **Added** support for `training jobs` to configure the startup command directly with a startup script.
+- **Added** support for `training jobs` to specify the working directory location for run parameters.
 - **Added** support for `Inference Tasks` to display example documentation for `API` calls in the details.
 - **Improved** the `Env Management` list to show the package managers and `Python` versions available in the environment.
 
@@ -124,11 +120,11 @@ so that you can learn its evolution path and feature changes.
 - **Added** upgrade `Notebook` image to support the built-in `CLI` tool `baizectl`,
   for command-line task submission and management.
 - **Added** `Notebook` adds affinity scheduling policy configuration.
-- **Added** distributed training tasks can now configure `SHM size` through the UI.
-- **Added** one-click restart function for training tasks.
-- **Added** model training tasks support custom cluster scheduler specification.
+- **Added** distributed training jobs can now configure `SHM size` through the UI.
+- **Added** one-click restart function for training jobs.
+- **Added** model training jobs support custom cluster scheduler specification.
 - **Added** training task analysis tool `Tensorboard` support, can be launched with one click
-  in `Notebook` and training tasks.
+  in `Notebook` and training jobs.
 - **Added** when editing queue quotas, hints are provided for the shared resource configuration of
   the current workspace.
 - **Added** upgrade and adapt Kueue version to `v0.6.2`.
@@ -150,4 +146,4 @@ so that you can learn its evolution path and feature changes.
 - **Added** the Model Inference module, supporting rapid deployment of `Model Serving`,
   compatible with any model algorithm and large language models.
 - **Added** the Data Management module, supporting the integration of mainstream data sources
-  such as `S3`, `NFS`, `HTTP`, and `Git`, with support for automatic data preheating.
+  such as `S3`, `NFS`, `HTTP`, and `Git`, with support for automatic data preloading.
