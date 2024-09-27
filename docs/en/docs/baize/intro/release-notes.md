@@ -8,8 +8,6 @@ date: 2024-07-12
 This page lists the Release Notes for AI Lab,
 so that you can learn its evolution path and feature changes.
 
-Here’s the improved version of your text:
-
 ## 2024-09-30
 
 ### v0.9.0
