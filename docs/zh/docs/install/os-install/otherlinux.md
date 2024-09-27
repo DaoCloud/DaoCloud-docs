@@ -55,7 +55,7 @@
     export HOST_IPS='192.168.10.11 192.168.10.12'
     # 指定安装的目标节点接入信息（多节点用户名密码需保持一致）
     export SSH_USER=root
-    export SSH_PASS=dangerous
+    export SSH_CRED=dangerous
     # 执行安装命令，并输出日志
     ./other_os_pkgs.sh install >>log.txt
     ```
