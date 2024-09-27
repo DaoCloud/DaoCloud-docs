@@ -643,6 +643,7 @@ nav:
               - Manage Virtual Machine:
                   - Create Secret: virtnest/vm/create-secret.md
                   - Snapshots: virtnest/vm/snapshot.md
+                  - Scheduled Snapshot: virtnest/vm/scheduled-snapshot.md
                   - Live Migration: virtnest/vm/live-migration.md
                   - Migrate VM across Clusters: virtnest/vm/cross-cluster-migrate.md
                   - VM Monitor: virtnest/vm/monitor.md
