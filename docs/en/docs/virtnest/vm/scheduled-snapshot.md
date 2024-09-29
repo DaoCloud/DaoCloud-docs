@@ -1,26 +1,35 @@
-# 定时快照
+---
+MTPE: WANG0608GitHub
+Date: 2024-09-27
+---
 
-本文将介绍如何为虚拟机定时创建快照。
+# Scheduled Snapshot
 
-用户可以为虚拟机定时创建快照，能够为数据提供持续的保护，确保在发生数据丢失、损坏或删除的情况下可以进行有效的数据恢复。
+This article introduces how to create snapshots for VMs on a schedule.
 
-## 定时快照步骤
+You can create scheduled snapshots for VMs, providing continuous protection for data and ensuring
+effective data recovery in case of data loss, corruption, or deletion.
 
-1. 点击左侧导航栏上的 __容器管理__ -> __集群列表__ ，在列表页面，选择目标虚拟机所在的集群。
-   进入集群后，点击 __工作负载__ -> __定时任务__ ，选择 __YAML 创建__ 定时任务，参考以下 YAML 示例可为指定虚拟机定时创建快照。
+## Steps
 
-    ![yaml创建定时任务](../images/cronjob.jpg)
+1. In the left navigation bar, click __Container Management__ -> __Clusters__ to select the proper
+   cluster where the target VM is located.
+   After entering the cluster, click __Workloads__ -> __CronJobs__, and choose __Create from YAML__
+   to create a scheduled task. Refer to the following YAML example to create snapshots for the specified
+   VM on a schedule.
 
-    ??? note "点击查看创建定时任务的 YAML 示例"
+    ![create from yaml](../images/cronjob.jpg)
+
+    ??? note "Click to view the YAML example for creating a scheduled task"
 
         ```yaml
         apiVersion: batch/v1
         kind: CronJob
         metadata:
-          name: xxxxx-xxxxx-cronjob # 定时任务名称, 可自定义
-          namespace: virtnest-system # 请勿修改此namespace
+          name: xxxxx-xxxxx-cronjob # Scheduled task name (Customizable)
+          namespace: virtnest-system # Do not modify the namespace
         spec:
-          schedule: "5 * * * *" # 按需修改定时任务执行间隔
+          schedule: "5 * * * *" # Modify the scheduled task execution interval as needed
           concurrencyPolicy: Allow
           suspend: false
           successfulJobsHistoryLimit: 10
@@ -31,13 +40,13 @@
               template:
                 metadata:
                   labels:
-                    virtnest.io/vm: xxxx # 修改为需要快照的虚拟机名称
-                    virtnest.io/namespace: xxxx # 修改为虚拟机所在的命名空间
+                    virtnest.io/vm: xxxx # Modify to the name of the VM that needs to be snapshotted
+                    virtnest.io/namespace: xxxx # Modify to the namespace where the VM is located
                 spec:
                   serviceAccountName: kubevirt-operator
                   containers:
                     - name: snapshot-job
-                      image: release.daocloud.io/virtnest/tools:v0.1.5 # 离线环境下,仓库地址修改为对应火种集群仓库地址
+                      image: release.daocloud.io/virtnest/tools:v0.1.5 # For offline environments, modify the registry address to the proper registry address of the cluster
                       imagePullPolicy: IfNotPresent
                       env:
                         - name: NS
@@ -68,6 +77,7 @@
                   restartPolicy: OnFailure
         ```
 
-1. 创建定时任务并成功运行后，可点击 __虚拟机__ 在列表页面选择目标虚拟机，进入详情后可查看快照列表。
+1. After creating the scheduled task and running it successfully, you can click __Virtual Machines__
+   in the list page to select the target VM. After entering the details, you can view the snapshot list.
 
-    ![定时快照](../images/snapshot.jpg)
+    ![scheduled snapshot](../images/snapshot.jpg)

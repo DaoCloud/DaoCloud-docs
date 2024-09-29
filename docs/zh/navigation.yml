@@ -164,6 +164,7 @@ nav:
                   - 手动同步应用: amamba/user-guide/gitops/sync-manually.md
                   - 启用凭证加密功能: amamba/user-guide/gitops/gitops-secret.md
                   - 启用ArgoCD原生UI: amamba/user-guide/gitops/integrate-argocd-ui.md
+                  - 启用 ApplicationSet 功能: amamba/user-guide/gitops/applicationset.md
               - 灰度发布:
                   - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
@@ -679,6 +680,7 @@ nav:
                   - 快照管理: virtnest/vm/snapshot.md
                   - 定时快照: virtnest/vm/scheduled-snapshot.md
                   - 实时迁移: virtnest/vm/live-migration.md
+                  - 虚拟机跨集群迁移: virtnest/vm/cross-cluster-migrate.md
                   - 虚拟机监控: virtnest/vm/monitor.md
                   - 虚拟机网络: virtnest/vm/vm-network.md
                   - 虚拟机存储: virtnest/vm/vm-sc.md
@@ -1361,8 +1363,9 @@ nav:
                       - OEM OUT(DCE 5.0 集成到客户系统): ghippo/best-practice/oem/oem-out.md
                       - 定制 DCE 5.0 对接 IdP: ghippo/best-practice/oem/custom-idp.md
                       - Keycloak 自定义 IdP: ghippo/best-practice/oem/keycloak-idp.md
-                  - 导航栏定制: ghippo/best-practice/navigator.md
-                  - 系统消息配置: ghippo/best-practice/system-message.md
+                  - 定制导航栏:
+                      - 定制导航栏: ghippo/best-practice/menu/navigator.md
+                      - 基于权限显示/隐藏导航栏菜单: ghippo/best-practice/menu/menu-display-or-hiding.md
               - 故障排查:
                   - ingressgateway 无法启动: ghippo/troubleshooting/ghippo01.md
                   - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
