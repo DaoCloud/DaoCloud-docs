@@ -84,7 +84,7 @@ DCE 5.0 also provides a variety of selected middleware:
 | MySQL |1.64 GB| [:arrow_right: Go to Download](./modules/middleware/mysql.md) |2024-09-06|
 | PostgreSQL |1.82 GB| [:arrow_right: Go to Download](./modules/middleware/postgresql.md) |2024-09-06|
 | RabbitMQ |179.71 MB| [:arrow_right: Go to Download](./modules/middleware/rabbitmq.md) |2024-09-06|
-| Redis |681.45 MB| [:arrow_right: Go to Download](./modules/middleware/redis.md) |2024-09-06|
+| Redis |698.25 MB| [:arrow_right: Go to Download](./modules/middleware/redis.md) |2024-09-29|
 | RocketMQ |594.00 MB| [:arrow_right: Go to Download](./modules/middleware/rocketmq.md) |2024-09-06|
 
 !!! note
