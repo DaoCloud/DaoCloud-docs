@@ -77,7 +77,7 @@ DCE 5.0 also provides a variety of selected middleware:
 
 | Modules | File Size | Download | Update Date |
 | ------- | --------- | -------- | ------------|
-| Elasticsearch |970.39 MB| [:arrow_right: Go to Download](./modules/middleware/elasticsearch.md) |2024-09-06|
+| Elasticsearch |970.83 MB| [:arrow_right: Go to Download](./modules/middleware/elasticsearch.md) |2024-09-29|
 | Kafka |984.89 MB| [:arrow_right: Go to Download](./modules/middleware/kafka.md) |2024-09-06|
 | MinIO |221.48 MB| [:arrow_right: Go to Download](./modules/middleware/minio.md) |2024-09-06|
 | MongoDB |370.60 MB| [:arrow_right: Go to Download](./modules/middleware/mongodb.md) |2024-09-06|
