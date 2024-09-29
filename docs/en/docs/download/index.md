@@ -81,7 +81,7 @@ DCE 5.0 also provides a variety of selected middleware:
 | Kafka |984.89 MB| [:arrow_right: Go to Download](./modules/middleware/kafka.md) |2024-09-06|
 | MinIO |221.48 MB| [:arrow_right: Go to Download](./modules/middleware/minio.md) |2024-09-06|
 | MongoDB |370.60 MB| [:arrow_right: Go to Download](./modules/middleware/mongodb.md) |2024-09-06|
-| MySQL |1.64 GB| [:arrow_right: Go to Download](./modules/middleware/mysql.md) |2024-09-06|
+| MySQL |1.64 GB| [:arrow_right: Go to Download](./modules/middleware/mysql.md) |2024-09-29|
 | PostgreSQL |1.82 GB| [:arrow_right: Go to Download](./modules/middleware/postgresql.md) |2024-09-06|
 | RabbitMQ |179.71 MB| [:arrow_right: Go to Download](./modules/middleware/rabbitmq.md) |2024-09-06|
 | Redis |698.25 MB| [:arrow_right: Go to Download](./modules/middleware/redis.md) |2024-09-29|
