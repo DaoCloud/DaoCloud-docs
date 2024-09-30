@@ -11,11 +11,11 @@ PostgreSQL 中间件的的反亲和策略由同一集群下的所有实例共用
 
 1. 进入 __容器管理__  -> __集群列表__ ，选择实例所在集群；
 
-1. 点击 __自定义资源__ ，查找资源： __operatorconfigurations.acid.zalan.do__ 
+1. 点击 __自定义资源__ ，查找资源： __operatorconfigurations.acid.zalan.do__
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/postgresql/images/antiaff01.png)
 
-1. 在该资源下选择正确的 __命名空间__  -> __CR 实例__ 
+1. 在该资源下选择正确的 __命名空间__  -> __CR 实例__
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/postgresql/images/antiaff02.png)
 
@@ -197,7 +197,7 @@ PostgreSQL 中间件的的反亲和策略由同一集群下的所有实例共用
       resourceVersion: '1202085540'
       uid: 3c9a7758-2f76-432e-9f84-0161cf9a959b
     ```
-    
+
 1. 重启 Operator，已创建的实例也会随之重建并应用新的调度配置。
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/postgresql/images/antiaff04.png)
