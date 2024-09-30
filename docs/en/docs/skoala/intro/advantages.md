@@ -21,7 +21,7 @@ Microservice Engline has the following advantages over its counterparts:
 
 - Easy Transition
 
-    Microservice Engline can manage both traditional and cloud native microservices. You can integrate traditional registries (Zookeeper, Eureka, Nacos, Consul) and cloud native registries (Kubernetes, Service Mesh) into DME. You can also create a Nacos registry in Microservice Engline and enable Mesh plugin to change traditional microservices to cloud native ones, no need to change service codes.
+    Microservice Engline can manage both traditional and cloud native microservices. You can integrate traditional registries (Zookeeper, Eureka, Nacos, Consul) and cloud native registries (Kubernetes, Service Mesh) into Microservice Engine. You can also create a Nacos registry in Microservice Engline and enable Mesh plugin to change traditional microservices to cloud native ones, no need to change service codes.
 
 - Open and Compatible
 
