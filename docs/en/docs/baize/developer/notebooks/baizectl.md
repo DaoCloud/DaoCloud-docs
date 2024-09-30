@@ -6,14 +6,14 @@ Date: 2024-08-05
 # baizectl CLI Usage Guide
 
 `baizectl` is a command line tool specifically designed for model developers and data scientists within
-the DCE 5.0 Intelligent Engine module. It provides a series of commands to help users manage
+the DCE 5.0 AI Lab module. It provides a series of commands to help users manage
 distributed training jobs, check job statuses, manage datasets, and more. It also supports connecting
 to Kubernetes worker clusters and DCE 5.0 workspaces, aiding users in efficiently using and managing
 Kubernetes platform resources.
 
 ## Installation
 
-Currently, `baizectl` is integrated within DCE 5.0 Intelligent Engine. Once you create a Notebook, you can directly use `baizectl` within it.
+Currently, `baizectl` is integrated within DCE 5.0 AI Lab. Once you create a Notebook, you can directly use `baizectl` within it.
 
 ---
 

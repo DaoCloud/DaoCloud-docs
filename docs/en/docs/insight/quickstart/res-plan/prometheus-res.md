@@ -1,4 +1,9 @@
-# Prometheus resource planning
+---
+MTPE: WANG0608GitHub
+Date: 2024-09-24
+---
+
+# Prometheus Resource Planning
 
 In the actual use of Prometheus, affected by the number of cluster containers and the opening of Istio,
 the CPU, memory and other resource usage of Prometheus will exceed the set resources.
@@ -6,19 +11,19 @@ the CPU, memory and other resource usage of Prometheus will exceed the set resou
 In order to ensure the normal operation of Prometheus in clusters of different sizes,
 it is necessary to adjust the resources of Prometheus according to the actual size of the cluster.
 
-## Reference Resource Planning
+## Reference resource planning
 
 In the case that the mesh is not enabled, the test statistics show that the relationship
-between the system Job index and Pod is: **Series number = 800\*Pod number**
+between the system Job index and pods is **Series  count = 800 \* pod count**
 
 When the service mesh is enabled, the magnitude of the Istio-related metrics generated
-by the Pod after the feature is enabled is: **Series number = 768\*Pod number**
+by the pod after the feature is enabled is **Series count = 768 \* pod count**
 
 ### When the service mesh is not enabled
 
-The following resource planning is recommended by Prometheus when the service mesh is not enabled:
+The following resource planning is recommended by Prometheus when **the service mesh is not enabled** :
 
-| Cluster size (number of Pods) | Metrics (service mesh is not enabled) | CPU (core) | Memory (GB) |
+| Cluster size (pod count) | Metrics (service mesh is not enabled) | CPU (core) | Memory (GB) |
 | ---------------- | ---------------------- | --------- --------------- | ---------------------------- |
 | 100 | 8w | Request: 0.5<br>Limit: 1 | Request: 2GB<br>Limit: 4GB |
 | 200 | 16w | Request: 1<br>Limit: 1.5 | Request: 3GB<br>Limit: 6GB |
@@ -34,7 +39,7 @@ The following resource planning is recommended by Prometheus when the service me
 
 The following resource planning is recommended by Prometheus in the scenario of **starting the service mesh**:
 
-| Cluster size (Pod number) | metric volume (service mesh enabled) | CPU (core) | Memory (GB) |
+| Cluster size (pod count) | metric volume (service mesh enabled) | CPU (core) | Memory (GB) |
 | ---------------- | ---------------------- | --------- -------------- | ----------------------------- |
 | 100 | 15w | Request: 1<br>Limit: 2 | Request: 3GB<br>Limit: 6GB |
 | 200 | 31w | Request: 2<br>Limit: 3 | Request: 5GB<br>Limit: 10GB |
@@ -48,8 +53,8 @@ The following resource planning is recommended by Prometheus in the scenario of 
 
 !!! note
 
-    1. The number of Pods in the table refers to the number of Pods that are basically running stably in the cluster.
-        If a large number of Pods are restarted, the index will increase sharply in a short period of time.
+    1. __Pod count__ in the table refers to the pod count that is basically running stably in the cluster.
+        If a large number of pods are restarted, the index will increase sharply in a short period of time.
         At this time, resources need to be adjusted accordingly.
     2. Prometheus stores two hours of data by default in memory, and when the 
         [Remote Write function](https://prometheus.io/docs/practices/remote_write/#memory-usage) is enabled in the cluster,

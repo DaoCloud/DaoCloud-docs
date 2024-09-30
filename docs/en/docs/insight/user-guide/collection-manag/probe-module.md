@@ -1,16 +1,30 @@
-# Custom Probe Methods
+---
+MTPE: WANG0608GitHub
+Date: 2024-09-23
+---
 
-In this page, we will explain how to configure custom probe methods in an existing Blackbox ConfigMap.
-We will use the HTTP probe method as an example to demonstrate how to modify the ConfigMap to achieve custom HTTP probing.
+# Custom probers
+
+Insight uses the Blackbox Exporter provided by Prometheus as a blackbox monitoring solution, allowing detection of target instances via HTTP, HTTPS, DNS, ICMP, TCP, and gRPC. It can be used in the following scenarios:
+
+- HTTP/HTTPS: URL/API availability monitoring
+- ICMP: Host availability monitoring
+- TCP: Port availability monitoring
+- DNS: Domain name resolution
+
+In this page, we will explain how to configure custom probers in an existing Blackbox ConfigMap.
+
+ICMP prober is not enabled by default in Insight because it requires higher permissions. Therfore We will use the HTTP prober as an example to demonstrate how to modify the ConfigMap to achieve custom HTTP probing.
 
 ## Procedure
 
-1. Go to the cluster list in __Container Management__ and enter the details of the target cluster.
+1. Go to __Clusters__ in __Container Management__ and enter the details of the target cluster.
 2. Click the left navigation bar and select __ConfigMaps & Secrets__ -> __ConfigMaps__ .
 3. Find the ConfigMap named __insight-agent-prometheus-blackbox-exporter__ and click __Edit YAML__ .
-   
-    Add custom probe methods under __modules__ . Here we use the HTTP probe method as an example:
 
+    Add custom probers under __modules__ :
+
+=== "HTTP Prober"
     ```yaml
     module:
       http_2xx:
@@ -22,13 +36,74 @@ We will use the HTTP probe method as an example to demonstrate how to modify the
           method: GET
     ```
 
+=== "ICMP Prober"
+
+    ```yaml
+    module:
+      ICMP: # Example of ICMP prober configuration
+        prober: icmp
+        timeout: 5s
+        icmp:
+          preferred_ip_protocol: ip4
+    icmp_example: # Example 2 of ICMP prober configuration
+      prober: icmp
+      timeout: 5s
+      icmp:
+        preferred_ip_protocol: "ip4"
+        source_ip_address: "127.0.0.1"
+    ```
+    Since ICMP requires higher permissions, we also need to elevate the pod permissions. Otherwise, an `operation not permitted` error will occur. There are two ways to elevate permissions:
+
+    - Directly edit the `BlackBox Exporter` deployment file to enable it
+
+        ```yaml
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: insight-agent-prometheus-blackbox-exporter
+          namespace: insight-system
+        spec:
+          template:
+            spec:
+              containers:
+                - name: blackbox-exporter
+                  image: # ... (image, args, ports, etc. remain unchanged)
+                  imagePullPolicy: IfNotPresent
+                  securityContext:
+                    allowPrivilegeEscalation: false
+                    capabilities:
+                      add:
+                      - NET_RAW
+                      drop:
+                      - ALL
+                    readOnlyRootFilesystem: true
+                    runAsGroup: 0
+                    runAsNonRoot: false
+                    runAsUser: 0
+        ```
+
+    - Elevate permissions via `helm upgrade`
+    
+        ```diff
+        prometheus-blackbox-exporter:
+          enabled: true
+          securityContext:
+            runAsUser: 0
+            runAsGroup: 0
+            readOnlyRootFilesystem: true
+            runAsNonRoot: false
+            allowPrivilegeEscalation: false
+            capabilities:
+              add: ["NET_RAW"]
+        ```
+
 !!! info
 
-    For more probe methods, refer to [blackbox_exporter Configuration](https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md).
+    For more probers, refer to [blackbox_exporter Configuration](https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md).
 
-## Friendly Reference
+## Other References
 
-The following YAML file contains various probe methods such as HTTP, TCP, SMTP, ICMP, and DNS. You can modify the configuration file of `insight-agent-prometheus-blackbox-exporter` according to your needs.
+The following YAML file contains various probers such as HTTP, TCP, SMTP, ICMP, and DNS. You can modify the configuration file of `insight-agent-prometheus-blackbox-exporter` according to your needs.
 
 ??? note "Click to view the complete YAML file"
 
@@ -67,11 +142,12 @@ The following YAML file contains various probe methods such as HTTP, TCP, SMTP, 
           TCP:
             prober: tcp
             timeout: 5s
-          ICMP:
-            prober: icmp
-            timeout: 5s
-            icmp:
-              preferred_ip_protocol: ip4
+          # Not enabled by default:
+          # ICMP:
+          #   prober: icmp
+          #   timeout: 5s
+          #   icmp:
+          #     preferred_ip_protocol: ip4
           SSH:
             prober: tcp
             timeout: 5s
@@ -86,7 +162,7 @@ The following YAML file contains various probe methods such as HTTP, TCP, SMTP, 
               tls: true
               tls_config:
                 insecure_skip_verify: false
-          http_2xx_example:               # http probe example
+          http_2xx_example:               # http prober example
             prober: http
             timeout: 5s                   # probe timeout
             http:
@@ -115,7 +191,7 @@ The following YAML file contains various probe methods such as HTTP, TCP, SMTP, 
                 insecure_skip_verify: false
               preferred_ip_protocol: "ip4" # defaults to "ip6"                 # Preferred IP protocol version
               ip_protocol_fallback: false  # no fallback to "ip6"            
-          http_post_2xx:                   # http probe example with body
+          http_post_2xx:                   # http prober example with body
             prober: http
             timeout: 5s
             http:
@@ -123,7 +199,7 @@ The following YAML file contains various probe methods such as HTTP, TCP, SMTP, 
               headers:
                 Content-Type: application/json
               body: '{"username":"admin","password":"123456"}'                   # body carried during probe
-          http_basic_auth_example:         # probe example with username and password
+          http_basic_auth_example:         # prober example with username and password
             prober: http
             timeout: 5s
             http:
@@ -151,7 +227,7 @@ The following YAML file contains various probe methods such as HTTP, TCP, SMTP, 
               compression: gzip
               headers:
                 Accept-Encoding: gzip
-          tls_connect:                     # TCP probe example
+          tls_connect:                     # TCP prober example
             prober: tcp
             timeout: 5s
             tcp:
@@ -194,12 +270,12 @@ The following YAML file contains various probe methods such as HTTP, TCP, SMTP, 
                 - expect: "PING :([^ ]+)"
                   send: "PONG ${1}"
                 - expect: "^:[^ ]+ 001"
-          icmp_example:                    # ICMP probe configuration example
-            prober: icmp
-            timeout: 5s
-            icmp:
-              preferred_ip_protocol: "ip4"
-              source_ip_address: "127.0.0.1"
+          # icmp_example:                    # ICMP prober configuration example
+          #  prober: icmp
+          #  timeout: 5s
+          #  icmp:
+          #    preferred_ip_protocol: "ip4"
+          #    source_ip_address: "127.0.0.1"
           dns_udp_example:                 # DNS query example using UDP
             prober: dns
             timeout: 5s

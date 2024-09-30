@@ -8,13 +8,13 @@
 
 ## 问题分析
 
-在智能算力中，队列管理能力由 [Kueue](https://kueue.sigs.k8s.io/) 提供，
+在 AI Lab 中，队列管理能力由 [Kueue](https://kueue.sigs.k8s.io/) 提供，
 而 Kueue 提供了 两种队列管理资源：
 
 - ClusterQueue 是集群级别的队列，主要用于管理队列中的资源配额，包含了 CPU、内存、GPU 等资源
 - LocalQueue 是命名空间级别的队列，需要指向到一个 ClusterQueue，用于使用队列中的资源分配
 
-在智能算力中，如果创建服务时，发现指定的命名空间不存在 `LocalQueue`，则会提示需要初始化队列。
+在 AI Lab 中，如果创建服务时，发现指定的命名空间不存在 `LocalQueue`，则会提示需要初始化队列。
 
 在极少数情况下，可能由于特殊原因会导致 `LocalQueue` 初始化失败。
 

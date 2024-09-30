@@ -643,7 +643,9 @@ nav:
               - Manage Virtual Machine:
                   - Create Secret: virtnest/vm/create-secret.md
                   - Snapshots: virtnest/vm/snapshot.md
+                  - Scheduled Snapshot: virtnest/vm/scheduled-snapshot.md
                   - Live Migration: virtnest/vm/live-migration.md
+                  - Migrate VM across Clusters: virtnest/vm/cross-cluster-migrate.md
                   - VM Monitor: virtnest/vm/monitor.md
                   - VM GPU: virtnest/vm/vm-gpu.md
                   - VM Network: virtnest/vm/vm-network.md
@@ -691,7 +693,6 @@ nav:
                   - Use OpenTelemetry:
                       - Observe App with OTel: insight/quickstart/otel/otel.md
                       - Non-intrusive Enhancement with Operator: insight/quickstart/otel/operator.md
-                      - Expose Metrics with OTel SDK: insight/quickstart/otel/meter.md
                       - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md
                       - Tail-based Sampling Scheme: insight/best-practice/tail-based-sampling.md
                   - Java Insight:
@@ -1006,9 +1007,10 @@ nav:
                       - Offline Upgrade MongoDB: middleware/mongodb/intro/offline-install.md
                       - Release Notes: middleware/mongodb/release-notes.md
                   - Quick Start:
-                      - Create MongoDB: middleware/mongodb/user-guide/create.md
-                      - Update MongoDB: middleware/mongodb/user-guide/update.md
-                      - Delete MongoDB: middleware/mongodb/user-guide/delete.md
+                      - Create MongoDB Instance: middleware/mongodb/user-guide/create.md
+                      - Update MongoDB Instance: middleware/mongodb/user-guide/update.md
+                      - Delete MongoDB Instance: middleware/mongodb/user-guide/delete.md
+                      - View MongoDB Instance: middleware/mongodb/user-guide/view.md
                       - View MongoDB Logs: middleware/mongodb/user-guide/logs.md
               - PostgreSQL Database:
                   - Intro:
@@ -1017,9 +1019,9 @@ nav:
                       - Offline Upgrade PostgreSQL: middleware/postgresql/intro/offline-install.md
                       - Release Notes: middleware/postgresql/release-notes.md
                   - Quick Start:
-                      - Create PostgreSQL: middleware/postgresql/user-guide/create.md
-                      - Update PostgreSQL: middleware/postgresql/user-guide/update.md
-                      - Delete PostgreSQL: middleware/postgresql/user-guide/delete.md
+                      - Create PostgreSQL Instance: middleware/postgresql/user-guide/create.md
+                      - Update PostgreSQL Instance: middleware/postgresql/user-guide/update.md
+                      - Delete PostgreSQL Instance: middleware/postgresql/user-guide/delete.md
                       - View PostgreSQL Logs: middleware/postgresql/user-guide/logs.md
                       - Manually Set Antiaffinity: middleware/postgresql/user-guide/antiaffinity.md
                       - Auto Backup: middleware/postgresql/user-guide/auto-backup.md
@@ -1120,12 +1122,12 @@ nav:
                       - View Instance Details: middleware/minio/user-guide/view.md
                       - MinIO Identity Management: middleware/minio/user-guide/user-management.md
       - Cloud Native AI:
-          - Intelligent Engine:
+          - AI Lab:
               - Introduction:
-                  - What is Intelligent Engine: baize/intro/index.md
-                  - Initialize Intelligent Engine: baize/intro/install.md
+                  - What is AI Lab: baize/intro/index.md
+                  - Initialize AI Lab: baize/intro/install.md
                   - First Time Usage: baize/intro/first.md
-                  - Intelligent Engine Release Notes: baize/intro/release-notes.md
+                  - AI Lab Release Notes: baize/intro/release-notes.md
               - Developer:
                   - Introduction: baize/developer/index.md
                   - Quick Start: baize/developer/quick-start.md
@@ -1137,6 +1139,7 @@ nav:
                       - Notebook SSH Guide: baize/developer/notebooks/notebook-with-ssh.md
                       - Use Environments in Notebook: baize/developer/notebooks/notebook-with-envs.md
                       - baizectl CLI Guide: baize/developer/notebooks/baizectl.md
+                      - baizess Source Switch Tool Guide: baize/developer/notebooks/baizess.md
                       - Shut down Idle Notebooks: baize/developer/notebooks/notebook-auto-close.md
                   - Job Center:
                       - Create Job: baize/developer/jobs/create.md
@@ -1150,7 +1153,7 @@ nav:
                       - Environments: baize/developer/dataset/environments.md
                   - Model Service:
                       - Supported Models: baize/developer/inference/models.md
-                      - Inference Service: baize/developer/inference/create.md
+                      - Create with Triton Framework: baize/developer/inference/triton-inference.md
                       - Create with vLLM Framework: baize/developer/inference/vllm-inference.md
               - Operator:
                   - Resource Management: baize/oam/resource.md
@@ -1161,7 +1164,7 @@ nav:
                   - Deploy NFS to Preload Dataset: baize/best-practice/deploy-nfs-in-worker.md
                   - Update Notebook Built-in Images: baize/best-practice/change-notebook-image.md
                   - Checkpoint Mechanism and Usage: baize/best-practice/checkpoint.md
-                  - Fine-Tune ChatGLM3 with Intelligent Engine: baize/best-practice/finetunel-llm.md
+                  - Fine-Tune ChatGLM3 with AI Lab: baize/best-practice/finetunel-llm.md
                   - Submit a DeepSpeed Training Task: baize/best-practice/train-with-deepspeed.md
                   - Add Job Scheduler: baize/best-practice/add-scheduler.md
                   - Deploy Label Studio: baize/best-practice/label-studio.md
@@ -1293,7 +1296,7 @@ nav:
                   - Workbench Permissions: ghippo/permissions/amamba.md
                   - Service Mesh Permissions: ghippo/permissions/mspider.md
                   - Middleware Permissions: ghippo/permissions/mcamel.md
-                  - Intelligent Engine Permissions: ghippo/permissions/baize.md
+                  - AI Lab Permissions: ghippo/permissions/baize.md
               - Best Practices:
                   - Workspace Practices: ghippo/best-practice/ws-best-practice.md
                   - Bind a Workspace to Namespace: ghippo/best-practice/ws-to-ns.md
@@ -1310,8 +1313,9 @@ nav:
                       - OEM OUT: ghippo/best-practice/oem/oem-out.md
                       - Customize DCE 5.0 to Sync IdP: ghippo/best-practice/oem/custom-idp.md
                       - Customize IdP with Keycloak: ghippo/best-practice/oem/keycloak-idp.md
-                  - Customize Nav Bar: ghippo/best-practice/navigator.md
-                  - System Messages: ghippo/best-practice/system-message.md
+                  - Customize Nav Bar:
+                      - Customize Nav Bar: ghippo/best-practice/menu/navigator.md
+                      - Display/Hide Navigation Bar Menu Based on Permissions: ghippo/best-practice/menu/menu-display-or-hiding.md
               - Troubleshoot:
                   - ingressgateway cannot start: ghippo/troubleshooting/ghippo01.md
                   - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md
@@ -1337,7 +1341,7 @@ nav:
       - Data Service:
           - Middleware: videos/mcamel.md
       - Cloud Native AI:
-          - Intelligent Engine: videos/baize.md
+          - AI Lab: videos/baize.md
       - Edge Computing:
           - Cloud Edge Collaboration: videos/kant.md
       - Management:

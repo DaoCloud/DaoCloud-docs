@@ -1,6 +1,6 @@
-# 智能算力视频教程
+# AI Lab视频教程
 
-我们为智能算力精心制作了以下视频教程，欢迎任何形式的反馈，谢谢 🙏
+我们为AI Lab精心制作了以下视频教程，欢迎任何形式的反馈，谢谢 🙏
 
 <style>
 .responsive-video-container {
@@ -57,9 +57,9 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/notebook.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/notebook.jpg"></video>
 </div>
 
-## 智能算力 v0.7.0 版本动态
+## AI Lab v0.7.0 版本动态
 
-参阅[智能算力 Release Notes](../baize/intro/release-notes.md)。
+参阅 [AI Lab Release Notes](../baize/intro/release-notes.md)。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/v0.7.0.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/v0.7.0.jpg"></video>

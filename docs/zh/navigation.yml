@@ -24,6 +24,7 @@ nav:
                   - 20230731 版本发布: dce/dce-rn/20230731.md
                   - 20230630 版本发布: dce/dce-rn/20230630.md
                   - 20230531 版本发布: dce/dce-rn/20230531.md
+              - DCE 5.0 Roadmap: dce/roadmap.md
               - DaoCloud 产品支持政策: dce/support.md
               - 云原生词汇: dce/terms.md
           - 安装教程:
@@ -163,6 +164,7 @@ nav:
                   - 手动同步应用: amamba/user-guide/gitops/sync-manually.md
                   - 启用凭证加密功能: amamba/user-guide/gitops/gitops-secret.md
                   - 启用ArgoCD原生UI: amamba/user-guide/gitops/integrate-argocd-ui.md
+                  - 启用 ApplicationSet 功能: amamba/user-guide/gitops/applicationset.md
               - 灰度发布:
                   - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
@@ -191,7 +193,7 @@ nav:
                       - 集成 Harbor 镜像安全扫描: amamba/quickstart/scan-with-harbor.md
                       - Jenkins 发布应用至虚拟机: amamba/user-guide/pipeline/cicd_vm.md
                       - 物理机/虚拟机集成Jenkins: amamba/quickstart/jenkins-integration.md
-                      - 流水线部署多云应用: amamba/user-guide/quickstart/pipeline-kairship.md
+                      - 流水线部署多云应用: amamba/quickstart/pipeline-kairship.md
                   - 灰度发布实践:
                       - 基于 Contour 的灰度发布: amamba/quickstart/contour-argorollout.md
       - 容器:
@@ -323,7 +325,7 @@ nav:
                       - NVIDIA GPU模式说明: kpanda/user-guide/gpu/nvidia/index.md
                       - GPU Operator:
                           - 离线安装GPU Operator: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
-                          - 升级CentOS 7.9离线yum源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
+                        #   - 升级CentOS 7.9离线yum源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - 上传Red Hat GPU Operator离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - 构建Red Hat 8.4离线yum源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                           - 构建Red Hat 7.9离线yum源: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
@@ -345,14 +347,17 @@ nav:
                           - GPU 监控指标: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-metrics.md
                           - GPU 告警规则: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-alarm.md
                       - 使用 Volcano:
-                          - 安装和使用 Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
+                          - 安装 Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
                           - 使用Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
+                          - 使用 Volcano 优先级抢占策略: kpanda/user-guide/gpu/volcano/volcano_priority.md
+                          - 使用 Volcano Binpack 策略: kpanda/user-guide/gpu/volcano/volcano_binpack.md
                       - GPU 调度配置: kpanda/user-guide/gpu/gpu_scheduler_config.md
                   - 昇腾 NPU 管理:
                       - 昇腾 NPU 组件安装: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
                       - 使用昇腾 NPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
                       - 启用昇腾 VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - 天数 GPU 管理: kpanda/user-guide/gpu/Iluvatar_usage.md
+                  - 沐曦 GPU 管理: kpanda/user-guide/gpu/metax/usemetax.md
                   - GPU 相关FAQ: kpanda/user-guide/gpu/FAQ.md
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
@@ -447,9 +452,9 @@ nav:
                   - 托管 Harbor: kangaroo/managed/intro.md
                   - 安装 Harbor Operator: kangaroo/managed/operator.md
                   - 创建托管 Harbor 实例: kangaroo/managed/harbor.md
-                  - 创建镜像空间: kangaroo/integrate/registry-space.md
-                  - 绑定/解绑工作空间: kangaroo/integrate/bind-to-ws.md
-                  - 镜像同步: kangaroo/integrate/sync.md
+                  - 创建镜像空间: kangaroo/integrate/integrate-admin/registry-space.md
+                  - 绑定/解绑工作空间: kangaroo/integrate/integrate-admin/bind-to-ws.md
+                  - 镜像同步: kangaroo/integrate/integrate-admin/sync.md
                   - 仓库迁移: kangaroo/managed/harbor-migration.md
               - 最佳实践:
                   - 托管Harbor的访问类型: kangaroo/best-practice/managed-harbor-select-access-type.md
@@ -673,7 +678,9 @@ nav:
                   - 创建密钥: virtnest/vm/create-secret.md
                   - 克隆虚拟机: virtnest/vm/clone.md
                   - 快照管理: virtnest/vm/snapshot.md
+                  - 定时快照: virtnest/vm/scheduled-snapshot.md
                   - 实时迁移: virtnest/vm/live-migration.md
+                  - 虚拟机跨集群迁移: virtnest/vm/cross-cluster-migrate.md
                   - 虚拟机监控: virtnest/vm/monitor.md
                   - 虚拟机网络: virtnest/vm/vm-network.md
                   - 虚拟机存储: virtnest/vm/vm-sc.md
@@ -721,7 +728,6 @@ nav:
                   - OpenTelemetry 观测:
                       - 使用OTel赋予应用可观测: insight/quickstart/otel/otel.md
                       - Operator无侵入增强应用: insight/quickstart/otel/operator.md
-                      - OTel SDK暴露指标: insight/quickstart/otel/meter.md
                       - 向Insight发送链路数据: insight/quickstart/otel/send_tracing_to_insight.md
                       - 链路数据尾部采样方案: insight/best-practice/tail-based-sampling.md
                   - Java 应用观测:
@@ -1038,9 +1044,10 @@ nav:
                       - 离线升级 MongoDB: middleware/mongodb/intro/offline-install.md
                       - Release Notes: middleware/mongodb/release-notes.md
                   - 快速入门:
-                      - 创建 MongoDB: middleware/mongodb/user-guide/create.md
-                      - 更新 MongoDB: middleware/mongodb/user-guide/update.md
-                      - 删除 MongoDB: middleware/mongodb/user-guide/delete.md
+                      - 创建 MongoDB 实例: middleware/mongodb/user-guide/create.md
+                      - 更新 MongoDB 实例: middleware/mongodb/user-guide/update.md
+                      - 删除 MongoDB 实例: middleware/mongodb/user-guide/delete.md
+                      - 查看 MongoDB 实例: middleware/mongodb/user-guide/view.md
                       - 查看 MongoDB 日志: middleware/mongodb/user-guide/logs.md
                       - 备份管理: middleware/mongodb/user-guide/backup.md
               - PostgreSQL 数据库:
@@ -1050,9 +1057,9 @@ nav:
                       - 离线升级 PostgreSQL: middleware/postgresql/intro/offline-install.md
                       - Release Notes: middleware/postgresql/release-notes.md
                   - 快速入门:
-                      - 创建 PostgreSQL: middleware/postgresql/user-guide/create.md
-                      - 更新 PostgreSQL: middleware/postgresql/user-guide/update.md
-                      - 删除 PostgreSQL: middleware/postgresql/user-guide/delete.md
+                      - 创建 PostgreSQL 实例: middleware/postgresql/user-guide/create.md
+                      - 更新 PostgreSQL 实例: middleware/postgresql/user-guide/update.md
+                      - 删除 PostgreSQL 实例: middleware/postgresql/user-guide/delete.md
                       - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
                       - 手工设置工作负载反亲和: middleware/postgresql/user-guide/antiaffinity.md
                       - 备份管理: middleware/postgresql/user-guide/backup.md
@@ -1163,9 +1170,9 @@ nav:
                       - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
                   - MinIO 灾备方案: middleware/minio/best-pratice/minio-replication.md
       - 云原生 AI:
-          - 智能算力:
+          - AI Lab:
               - 介绍:
-                  - 什么是智能算力: baize/intro/index.md
+                  - 什么是 AI Lab: baize/intro/index.md
                   - 组件部署: baize/intro/install.md
                   - 快速体验: baize/intro/first.md
                   - Release Notes: baize/intro/release-notes.md
@@ -1180,6 +1187,7 @@ nav:
                       - SSH 访问 Notebook: baize/developer/notebooks/notebook-with-ssh.md
                       - Notebook 中使用环境: baize/developer/notebooks/notebook-with-envs.md
                       - baizectl 命令行工具: baize/developer/notebooks/baizectl.md
+                      - baizess 换源工具: baize/developer/notebooks/baizess.md
                       - Notebook 闲置超时自动关机: baize/developer/notebooks/notebook-auto-close.md
                   - 任务中心:
                       - 创建任务: baize/developer/jobs/create.md
@@ -1193,7 +1201,7 @@ nav:
                       - 环境管理: baize/developer/dataset/environments.md
                   - 推理服务:
                       - 模型支持情况: baize/developer/inference/models.md
-                      - 创建 Triton 推理服务: baize/developer/inference/create.md
+                      - 创建 Triton 推理服务: baize/developer/inference/triton-inference.md
                       - 创建 vLLM 推理服务: baize/developer/inference/vllm-inference.md
               - 运维管理:
                   - 介绍: baize/oam/index.md
@@ -1338,7 +1346,7 @@ nav:
                   - 应用工作台权限说明: ghippo/permissions/amamba.md
                   - 服务网格权限说明: ghippo/permissions/mspider.md
                   - 中间件服务权限说明: ghippo/permissions/mcamel.md
-                  - 智能算力权限说明: ghippo/permissions/baize.md
+                  - AI Lab 权限说明: ghippo/permissions/baize.md
               - 最佳实践:
                   - 工作空间最佳实践: ghippo/best-practice/ws-best-practice.md
                   - 工作空间绑定命名空间: ghippo/best-practice/ws-to-ns.md
@@ -1355,8 +1363,9 @@ nav:
                       - OEM OUT(DCE 5.0 集成到客户系统): ghippo/best-practice/oem/oem-out.md
                       - 定制 DCE 5.0 对接 IdP: ghippo/best-practice/oem/custom-idp.md
                       - Keycloak 自定义 IdP: ghippo/best-practice/oem/keycloak-idp.md
-                  - 导航栏定制: ghippo/best-practice/navigator.md
-                  - 系统消息配置: ghippo/best-practice/system-message.md
+                  - 定制导航栏:
+                      - 定制导航栏: ghippo/best-practice/menu/navigator.md
+                      - 基于权限显示/隐藏导航栏菜单: ghippo/best-practice/menu/menu-display-or-hiding.md
               - 故障排查:
                   - ingressgateway 无法启动: ghippo/troubleshooting/ghippo01.md
                   - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
@@ -1382,7 +1391,7 @@ nav:
       - 数据服务:
           - 中间件: videos/mcamel.md
       - 云原生 AI:
-          - 智能算力: videos/baize.md
+          - AI Lab: videos/baize.md
       - 边缘计算:
           - 云边协同: videos/kant.md
       - 管理:
@@ -1440,7 +1449,7 @@ nav:
           - KubeEdge v1.15.0 发布: blogs/240108-kubeedge.md
       - 2023:
           - Spiderpool入选CNCF Sandbox: blogs/231220-spiderpool.md
-          - K8s 1.29发布:宇宙主题雄心勃勃：blogs/231213-k8s-1.29.md
+          - K8s 1.29发布:宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
           - K8s 裸机 vs 虚机性能对比: blogs/231205-vm-bm-compare.md
           - K8s 1.29前瞻：移除、弃用及变更: blogs/231115-k8s-1.29-changes.md
           - 上海 K8s 贡献者峰会回顾: blogs/231008-kcs.md

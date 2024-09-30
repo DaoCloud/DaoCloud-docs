@@ -23,7 +23,7 @@ machine learning engineers due to its flexibility and rich features.
 
 ## Deploy to DCE 5.0
 
-To use Label Studio in Intelligent Engine, it needs to be deployed to the
+To use Label Studio in AI Lab, it needs to be deployed to the
 [Global Service Cluster](../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster).
 You can quickly deploy it using Helm.
 
@@ -107,7 +107,7 @@ externalPostgresql:
 
 To add Label Studio to the DCE 5.0 navigation bar, you can refer to the method in
 [Global Management OEM IN](../../ghippo/best-practice/oem/oem-in.md).
-The following example shows how to add it to the secondary navigation of Intelligent Engine.
+The following example shows how to add it to the secondary navigation of AI Lab.
 
 ### Add Proxy Access
 
@@ -128,7 +128,7 @@ spec:
         prefix: /label-studio
 ```
 
-### Add to Intelligent Engine
+### Add to AI Lab
 
 Modify the CRD for `GProductNavigator` CR `baize`, then make the following changes:
 
@@ -149,14 +149,14 @@ spec:
   iconUrl: ./ui/baize/logo.svg
   isCustom: false
   localizedName:
-    en-US: Intelligent Engine
-    zh-CN: 智能算力
+    en-US: AI Lab
+    zh-CN: AI Lab
   menus:
     - iconUrl: ''
       isCustom: false
       localizedName:
-        en-US: Intelligent Engine
-        zh-CN: 智能算力
+        en-US: AI Lab
+        zh-CN: AI Lab
       name: workspace-view
       order: 1
       url: ./baize
@@ -181,7 +181,7 @@ spec:
       url: https://{DCE_Access_Address}/label-studio    # url to access
       visible: true
     # End adding
-  name: 智能算力
+  name: AI Lab
   order: 10
   url: ./baize
   visible: true
@@ -194,6 +194,6 @@ spec:
 ## Conclusion
 
 The above describes how to add Label Studio and integrate it as an labeling component in
-Intelligent Engine. By adding labels to the datasets in Intelligent Engine, you can associate
+AI Lab. By adding labels to the datasets in AI Lab, you can associate
 it with algorithm development and improve the algorithm development process.
 For further usage, refer to relevant documentation.

@@ -16,7 +16,7 @@ Label Studio 通过其灵活性和功能丰富性，为数据科学家和机器�
 
 ## 部署到 DCE 5.0
 
-要想在智能算力中使用 Label Studio，需将其部署到[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)，
+要想在 AI Lab 中使用 Label Studio，需将其部署到[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)，
 你可以通过 Helm 的方式快速部署。
 
 !!! note
@@ -90,7 +90,7 @@ externalPostgresql:
 ## 添加 GProduct 到导航栏
 
 如果要添加 Label Studio 到 DCE 5.0 导航栏，可以参考[全局管理 OEM IN](../../ghippo/best-practice/oem/oem-in.md) 的方式。
-以下案例是增加到智能算力二级导航的添加方式。
+以下案例是增加到 AI Lab 二级导航的添加方式。
 
 ### 添加代理访问
 
@@ -111,7 +111,7 @@ spec:
         prefix: /label-studio
 ```
 
-### 添加到智能算力
+### 添加到 AI Lab
 
 修改 CRD 为 `GProductNavigator` 的 CR `baize` ，然后在现有配置中进行如下变更：
 
@@ -133,13 +133,13 @@ spec:
   isCustom: false
   localizedName:
     en-US: Intelligent Engine
-    zh-CN: 智能算力
+    zh-CN: AI Lab
   menus:
     - iconUrl: ''
       isCustom: false
       localizedName:
         en-US: Intelligent Engine
-        zh-CN: 智能算力
+        zh-CN: AI Lab
       name: workspace-view
       order: 1
       url: ./baize
@@ -164,7 +164,7 @@ spec:
       url: https://{DCE_访问地址}/label-studio    # 访问地址
       visible: true
     # 添加结束
-  name: 智能算力
+  name: AI Lab
   order: 10
   url: ./baize
   visible: true
@@ -176,5 +176,5 @@ spec:
 
 ## 结语
 
-以上，就是如何添加 Label Studio 并将其作为智能算力的标注组件，通过将标注后的数据添加到智能算力的数据集中，
+以上，就是如何添加 Label Studio 并将其作为 AI Lab 的标注组件，通过将标注后的数据添加到 AI Lab 的数据集中，
 联动算法开发，完善算法开发流程，后续如何使用请关注其他文档参考。

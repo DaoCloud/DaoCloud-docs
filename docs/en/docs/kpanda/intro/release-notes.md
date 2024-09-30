@@ -10,6 +10,48 @@ understand the evolution path and feature changes from release to release.
 
 *[kpanda]: Internal development codename for DaoCloud container management
 
+## 2024-09-30
+
+### v0.32.0
+
+#### Features
+
+- **Added** support for [Volcano Binpack](../user-guide/gpu/volcano/volcano_binpack.md) and [Priority Preemption Strategy](../user-guide/gpu/volcano/volcano_priority.md)
+- **Added** support for the use of Muxi GPU cards
+- **Added** GPU utilization metrics in the GPU monitoring panel
+- **Added** quota and usage display for namespaces
+- **Added** support for kubeconfig issued by the platform to be permanently valid
+- **Added** custom roles now support permission mapping between workspaces and namespaces
+- **Added** the feature to create PVCs through snapshots, allowing users to select their own StorageClass
+
+#### Improvements
+
+- **Improved** the text prompt for available GPU computing power in full GPU card mode
+- **Fixed** an issue where the bound workspace was not displayed after binding a namespace, requiring a manual page refresh
+- **Improved** compatibility with PVs where volumeMode is set to block
+- **Improved** cleaned up intermediate images after merging Addon image architectures
+
+#### Fixes
+
+- **Fixed** an issue where the vGPU setting showed a computing power of 100 but the dashboard's Pod utilization rate displayed 0%
+- **Fixed** an issue where the GPU Operator did not enable the Driver option, resulting in the GPU mode switch function not being displayed
+- **Fixed** an issue where the number of GPUs displayed on the dashboard exceeded the actual value
+- **Fixed** an issue with incorrect GPU utilization display on the node details page in MIG Mixed mode
+- **Fixed** an excessive memory usage issue in the Binding Syncer for large-scale scenarios in 1000+ clusters
+- **Fixed** a sudden increase in Redis connection counts when binding workspaces to each cluster in 1000+ clusters, which would not close for a long time
+- **Fixed** an issue of resource permission confusion in workspace sharing in large-scale scenarios in 1000+ clusters
+- **Fixed** the lack of audit logs when binding workspaces to clusters
+- **Fixed** an issue where virtual machine clusters appeared in compliance scanning within security management
+- **Fixed** an occasional issue of two uninstall Jobs appearing when uninstalling Helm applications
+- **Fixed** an installation failure issue of metrics-server when upgrading the installer from v0.19.0 to v0.20.0
+- **Fixed** an issue where the detection task was not canceled when clicking 'Check' and then 'Cancel' during cluster creation, resulting in subsequent checks showing as still in progress
+- **Fixed** an issue in container management -> node management where global service clusters could not add or remove nodes
+- **Fixed** an issue where a cluster showed as deleting indefinitely despite having actually failed to uninstall
+- **Fixed** an issue where finalizers resources under `kpanda-system` were not deleted when detaching a cluster, preventing the deletion of the `kpanda-system` namespace
+- **Fixed** an issue where the downgrade compatibility package for kubean in DCE 5.0 environments did not successfully delete low-version clusters
+- **Fixed** an issue of incorrect display of backup recovery trigger times
+- **Fixed** an issue where the cluster inspection configuration's scheduled task hour did not match the trigger time with the configured time.
+
 ## 2024-08-30
 
 ### v0.31.0
@@ -481,7 +523,7 @@ understand the evolution path and feature changes from release to release.
 
 - **Improved** support for uninstalling related components during cluster integration.
 - **Improved** pod status handling logic, including sub-status for pods.
-- **Improved** ability to configure the number of job records to keep for cluster operations.
+- **Improved** the feature to configure the number of job records to keep for cluster operations.
 - **Improved** support for configuring the number of control nodes when creating worker clusters.
 - **Improved** prompt for installing Insight-agent if it is not already installed.
 
@@ -537,7 +579,7 @@ understand the evolution path and feature changes from release to release.
 - **Added** validation rules for environment variable rules when creating workloads.
 - **Added** edge load balancing and services.
 - **Added** dual-stack and system kernel as pre-check items for nodes.
-- **Added** the ability to mount secretKey/configmapKey as ConfigMaps inside containers when creating workloads.
+- **Added** the feature to mount secretKey/configmapKey as ConfigMaps inside containers when creating workloads.
 
 #### Improvements
 

@@ -8,6 +8,26 @@ date: 2024-02-19
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2024-08-31
+
+### v0.30.0
+
+#### Insight Server
+
+- **Added** traffic distribution and traffic metrics for associated containers on the Service detail page.
+- **Added** cluster and node load monitoring dashboard.
+- **Added** Nvidia GPU resource monitoring.
+- **Added** an alarm status field to the alarm list and supports search filtering.
+- **Added** built-in alarm rules for the link components `Jaeger` and `OpenTelemetry Collector`.
+- **Added** feature switches for the __Logs__ module and __Events__ module in the installation parameters, allowing the log module to be disabled
+- **Improved** default startup parameters for `Jaeger Collector` to improve component performance.
+
+- **Fixed** an issue with undefined types for Kubernetes events.
+- **Fixed** a timeout issue with the status interface for system components.
+- **Fixed** CVE issues with the `helm-kubectl` image.
+- **Fixed** an issue with spanmetrics data errors in `OpenTelemetry Collector` under multiple instances.
+- **Fixed** the CR resource name for `ServiceMonitor` in `OpenTelemetry Collector`.
+
 ## 2024-07-31
 
 ### v0.29.0

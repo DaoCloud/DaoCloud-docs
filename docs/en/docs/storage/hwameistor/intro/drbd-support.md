@@ -3,11 +3,11 @@ hide:
   - toc
 ---
 
-Kernel versions compatible with DRBD:
+# Kernel Versions Compatible with DRBD
 
-- DRBD-9.0.32-1: This version of DRBD is automatically deployed after installing Hwameistor, making it convenient for users to utilize high availability storage.
+DRBD-9.0.32-1: This version of DRBD is automatically deployed after installing Hwameistor, making it convenient for users to utilize high availability storage.
 
-Since `drbd` operates as a kernel module, it is recommended to use the corresponding kernel version for DRBD-9.0.32-1, as shown in the following table:
+Since `drbd` operates as a kernel module, it is recommended to use the proper kernel version for DRBD-9.0.32-1, as shown in the following table:
 
 !!! note
 

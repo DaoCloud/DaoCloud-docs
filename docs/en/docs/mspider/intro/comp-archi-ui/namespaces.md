@@ -34,4 +34,4 @@ The namespaces and their purposes are described below.
 |                          | skoala-system      | Microservice Engine                                |
 |                          | spidernet-system   | Network module                                     |
 |                          | virtnest-system    | Virtual machine                                    |
-|                          | baize-system       | Intelligent Engine                                 |
+|                          | baize-system       | AI Lab                                 |

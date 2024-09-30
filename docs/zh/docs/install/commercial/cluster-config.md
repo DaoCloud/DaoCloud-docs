@@ -255,7 +255,6 @@ spec:
   #  #mode: onetime
   #  # valid days can be set when in `onetime` mode, default valid days is 3650.
   #  #oneTimeValidDays: 3650  
-
 ```
 
 ## 关键字段
@@ -263,7 +262,7 @@ spec:
 该 YAML 文件中的关键字段说明，请参阅下表。
 
 | 字段 | 说明 | 默认值 |
-| :---- | :----- | :----- |
+| :--- | :-- | :---- |
 | clusterName | 在 KuBean Cluster 里的 Global 集群命名 | - |
 | tinderKind | 火种 kind 集群配置 | - |
 | tinderKind.instanceName | 火种 kind 集群的容器名称 | - |
@@ -516,6 +515,7 @@ spec:
 ``` bash
 # 官方在线
 ./dce5-installer generate-config --install-mode=install-app --access-type=official-service
+
 # 官方在线简化版
 ./dce5-installer generate-config --install-mode=install-app
 

@@ -1,11 +1,11 @@
 ---
 MTPE: windsonsea
-date: 2024-05-11
+date: 2024-09-19
 ---
 
 # clusterConfig.yaml
 
-This YAML file contains various configuration fields of the cluster, and this file must be configured before installation.
+This YAML file contains various fields of the cluster, and must be configured before installation.
 This file will define key parameters such as deployment mode and cluster node information. By default it is located in the `offline/sample/` directory.
 
 ## ClusterConfig Example
@@ -13,7 +13,7 @@ This file will define key parameters such as deployment mode and cluster node in
 The following is an example of ClusterConfig.yaml.
 
 ```yaml title="clusterConfig.yaml"
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
 spec:
@@ -258,91 +258,90 @@ spec:
   #  #mode: onetime
   #  # valid days can be set when in `onetime` mode, default valid days is 3650.
   #  #oneTimeValidDays: 3650
-
 ```
 
 ## Key fields
 
 For key field descriptions in this YAML file, see the table below.
 
-| Field             | Description         | Default Value              |
-| ----------------- | --------------- | ---------------- |
-| clusterName       | Name of the Global cluster within Kubean Cluster                      | -    |
-| tinderKind        | Configuration for the bootstrap cluster         | -    |
-| tinderKind.instanceName | Container name for the bootstrap cluster                         | -    |
-| tinderKind.resourcesMountPath | Host path where the Kind cluster will be mounted         | /home/kind   |
-| tinderKind.registryPort | Port of the container registry in the Kind cluster    | 443                                                   |
-| tinderKind.minioServerPort | Port of the MinIO Server in the Kind cluster    | 9000                                                  |
-| tinderKind.minioConsolePort | Port of the MinIO Console in the Kind cluster        | 9001                                                  |
-| tinderKind.chartmuseumPort | Port of the ChartMuseum in the Kind cluster       | 8081                                                  |
-| masterNodes       | List of Master nodes in the Global cluster, including nodeName/ip/ansibleUser/ansiblePass fields | -    |
-| masterNodes.nodeName | Node name that overrides hostName                                  | -    |
-| masterNodes.ip    | Node IP                                                             | -    |
-| masterNodes.ansibleUser | Node account                                                      | -    |
-| masterNodes.ansiblePass | Node password              | -       |
-| masterNodes.ansibleSSHPort | ssh port, default is 22      | 22    |
+| Field | Description | Default Value |
+| ----- | ----------- | ------------- |
+| clusterName | Name of the Global cluster within Kubean Cluster | - |
+| tinderKind | Configuration for the bootstrap cluster | - |
+| tinderKind.instanceName | Container name for the bootstrap cluster | - |
+| tinderKind.resourcesMountPath | Host path where the Kind cluster will be mounted | /home/kind |
+| tinderKind.registryPort | Port of the container registry in the Kind cluster | 443 |
+| tinderKind.minioServerPort | Port of the MinIO Server in the Kind cluster | 9000 |
+| tinderKind.minioConsolePort | Port of the MinIO Console in the Kind cluster | 9001 |
+| tinderKind.chartmuseumPort | Port of the ChartMuseum in the Kind cluster | 8081 |
+| masterNodes | List of Master nodes in the Global cluster, including nodeName/ip/ansibleUser/ansiblePass fields | - |
+| masterNodes.nodeName | Node name that overrides hostName | - |
+| masterNodes.ip | Node IP | - |
+| masterNodes.ansibleUser | Node account | - |
+| masterNodes.ansiblePass | Node password | - |
+| masterNodes.ansibleSSHPort | ssh port, default is 22 | 22 |
 | masterNodes.ansibleExtraArgs | Specify additional arguments for the Ansible inventory | - |
-| workerNodes       | List of Worker nodes in the Global cluster, including nodeName/ip/ansibleUser/ansiblePass fields | -    |
-| privateKeyPath    | Path to the SSH private key file for deploying the cluster. If specified, ansibleUser and ansiblePass are not required | -    |
-| k8sVersion        | K8s version for installing the cluster, must match KuBean and offline package       | -    |
-| loadBalancer.insightVip | VIP used for Insight data collection in the Global cluster, required when loadBalancer.type is metallb   | -    |
-| loadBalancer.istioGatewayVip | VIP used for DCE UI and OpenAPI access when loadBalancer.type is metallb  | -    |
+| workerNodes | List of Worker nodes in the Global cluster, including nodeName/ip/ansibleUser/ansiblePass fields | - |
+| privateKeyPath | Path to the SSH private key file for deploying the cluster. If specified, ansibleUser and ansiblePass are not required | - |
+| k8sVersion | K8s version for installing the cluster, must match KuBean and offline package | - |
+| loadBalancer.insightVip | VIP used for Insight data collection in the Global cluster, required when loadBalancer.type is metallb | - |
+| loadBalancer.istioGatewayVip | VIP used for DCE UI and OpenAPI access when loadBalancer.type is metallb | - |
 | loadBalancer.type | Load balancer mode used, metallb for physical environments, NodePort for POC, cloudLB (not supported currently) for public cloud and SDN CNI environments | NodePort (default), metallb, cloudLB (Cloud Controller) |
-| loadBalancer.SourceIP                                        | Side effect: Unable to perform load balancing at the node level when obtaining source IP from audit logs. | auto  |
-| fullPackagePath   | Path to the extracted offline package, required in offline mode      | -    |
-| addonPackage.path | Local file system path for the application store addon package       | -    |
-| imagesAndCharts   | Container registry and Chart repository sources                        | -    |
-| imagesAndCharts.externalChartRepo | IP or domain name of the external Chart repository              | -    |
-| imagesAndCharts.externalChartRepoPassword | Password for the external Chart repository, used for image push  | -    |
-| imagesAndCharts.externalChartRepoType | Type of the external Chart repository, either chartmuseum or harbor    | -    |
-| imagesAndCharts.externalChartRepoUsername | Username for the external Chart repository, used for image push | -    |
-| imagesAndCharts.externalImageRepo | IP or domain name of the external container registry with protocol header specified   | -    |
-| imagesAndCharts.externalImageRepoPassword | Password for the external container registry, used for image push  | -    |
-| imagesAndCharts.externalImageRepoUsername | Username for the external container registry, used for image push  | -    |
-| imagesAndCharts.type | Access mode for images and charts, official-service (online), buitin (bootstrap built-in registry and chartmuseum), external | official-service                                      |
-| auditConfig       | Audit log configuration for the k8s api-server                        | Disabled by default                                   |
-| binaries          | Executable binary files                                               | -    |
-| binaries.externalRepository | Access address of the external binary executable file repository in URL format | -    |
-| binaries.type     | Access mode for executable binary files, official-service (online), builtin (MinIO built-in in bootstrap nodes) | official-service                                      |
-| network.clusterCIDR | Cluster CIDR                                                        | -    |
-| network.cni       | CNI selection, such as Calico, Cilium                                | calico                                                |
-| network.serviceCIDR | Service CIDR                                                        | -    |
-| ntpServer         | Available NTP servers for time synchronization of new nodes           | -    |
-| osRepos           | Operating system software repositories                                | -    |
-| osRepos.externalRepoType | Operating system type of the external software repository, centos (all Red Hat series), debian, ubuntu | -    |
+| loadBalancer.SourceIP | Side effect: Unable to perform load balancing at the node level when obtaining source IP from audit logs. | auto |
+| fullPackagePath | Path to the extracted offline package, required in offline mode | - |
+| addonPackage.path | Local file system path for the application store addon package | - |
+| imagesAndCharts | Container registry and Chart repository sources | - |
+| imagesAndCharts.externalChartRepo | IP or domain name of the external Chart repository | - |
+| imagesAndCharts.externalChartRepoPassword | Password for the external Chart repository, used for image push | - |
+| imagesAndCharts.externalChartRepoType | Type of the external Chart repository, either chartmuseum or harbor | - |
+| imagesAndCharts.externalChartRepoUsername | Username for the external Chart repository, used for image push | - |
+| imagesAndCharts.externalImageRepo | IP or domain name of the external container registry with protocol header specified | - |
+| imagesAndCharts.externalImageRepoPassword | Password for the external container registry, used for image push | - |
+| imagesAndCharts.externalImageRepoUsername | Username for the external container registry, used for image push | - |
+| imagesAndCharts.type | Access mode for images and charts, official-service (online), buitin (bootstrap built-in registry and chartmuseum), external | official-service |
+| auditConfig | Audit log configuration for the k8s api-server | Disabled by default |
+| binaries | Executable binary files | - |
+| binaries.externalRepository | Access address of the external binary executable file repository in URL format | - |
+| binaries.type | Access mode for executable binary files, official-service (online), builtin (MinIO built-in in bootstrap nodes) | official-service |
+| network.clusterCIDR | Cluster CIDR | - |
+| network.cni | CNI selection, such as Calico, Cilium | calico |
+| network.serviceCIDR | Service CIDR | - |
+| ntpServer | Available NTP servers for time synchronization of new nodes | - |
+| osRepos | Operating system software repositories | - |
+| osRepos.externalRepoType | Operating system type of the external software repository, centos (all Red Hat series), debian, ubuntu | - |
 | osRepos.externalRepoURLs | Access addresses of the external software repositories | - |
-| osRepos.isoPath                    | Path to the operating system ISO file, required when type is builtin | -    |
-| osRepos.osPackagePath              | Path to the system package file, required when type is builtin        | -    |
-| osRepos.type                       | Access mode for the operating system software repository, either official-service (online) or builtin (MinIO built-in in bootstrap nodes) | official-service                                      |
-| kubeanConfig.ntp_timezone          | Timezone setting for the nodes, if not configured, it will default to the timezone in the nodes | -      |
-| kubeanConfig.node_sysctl_tuning    | Enable to adjust the Systemctl kernel parameters for the Global cluster | false                                                   |
-| kubeanConfig.extra_sysctl          | Set additional Systemctl kernel parameters                          | /usr/local/bin                                          |
-| externalMiddlewares                | External middlewares                                                 | -      |
-| externalMiddlewares.database       | External database                                                   | -      |
-| externalMiddlewares.database.ghippoApiserver | Configuration for the external ghippoApiserver database         | -      |
-| externalMiddlewares.database.ghippoAuditserver | Configuration for the external ghippoAuditserver database     | -      |
-| externalMiddlewares.database.ghippoKeycloak | Configuration for the external ghippoKeycloak database          | -      |
-| externalMiddlewares.database.kpanda | Configuration for the external kpanda database                   | -      |
-| externalMiddlewares.database.kpanda[0].accessType | Access type for the external kpanda database, either readwrite or readonly | readwrite                                               |
-| externalMiddlewares.database.kpanda[0].driver | Database type for the external kpanda database, currently only supports mysql | mysql                                                   |
-| externalMiddlewares.database.kpanda[0].dataSourceName | Data source information for connecting to the external kpanda database, refer to https://gorm.io/docs/connecting_to_the_database.html | -      |
-| externalMiddlewares.database.kpanda[0].maxOpenConnections | Maximum number of open connections for the external kpanda database | 10                                                      |
-| externalMiddlewares.database.kpanda[0].maxIdleConnections | Maximum number of idle connections for the external kpanda database | 10                                                      |
-| externalMiddlewares.database.kpanda[0].connectionMaxLifetimeSeconds | Maximum connection lifetime in seconds for the external kpanda database | 0                                                       |
-| externalMiddlewares.database.kpanda[0].connectionMaxIdleTimeSeconds | Maximum idle connection time in seconds for the external kpanda database | 0                                                       |
-| externalMiddleware.elasticsearch | External Elasticsearch                                               | -      |
-| externalMiddleware.elasticsearch.insight | Configuration for the external Elasticsearch used by Insight       | -      |
-| externalMiddleware.elasticsearch.insight.endpoint | Access endpoint for the external Elasticsearch used by Insight | -      |
-| externalMiddleware.elasticsearch.insight.anonymous | Enable anonymous access to the external Elasticsearch used by Insight, either true or false. When set to true, credentials should not be provided | false                                                   |
-| externalMiddleware.elasticsearch.insight.username | Username for accessing the external Elasticsearch used by Insight   | -      |
-| externalMiddleware.elasticsearch.insight.password | Password for accessing the external Elasticsearch used by Insight   | -      |
+| osRepos.isoPath | Path to the operating system ISO file, required when type is builtin | - |
+| osRepos.osPackagePath | Path to the system package file, required when type is builtin | - |
+| osRepos.type | Access mode for the operating system software repository, either official-service (online) or builtin (MinIO built-in in bootstrap nodes) | official-service |
+| kubeanConfig.ntp_timezone | Timezone setting for the nodes, if not configured, it will default to the timezone in the nodes | - |
+| kubeanConfig.node_sysctl_tuning | Enable to adjust the Systemctl kernel parameters for the Global cluster | false |
+| kubeanConfig.extra_sysctl | Set additional Systemctl kernel parameters | /usr/local/bin |
+| externalMiddlewares | External middlewares | - |
+| externalMiddlewares.database | External database | - |
+| externalMiddlewares.database.ghippoApiserver | Configuration for the external ghippoApiserver database | - |
+| externalMiddlewares.database.ghippoAuditserver | Configuration for the external ghippoAuditserver database | - |
+| externalMiddlewares.database.ghippoKeycloak | Configuration for the external ghippoKeycloak database | - |
+| externalMiddlewares.database.kpanda | Configuration for the external kpanda database | - |
+| externalMiddlewares.database.kpanda[0].accessType | Access type for the external kpanda database, either readwrite or readonly | readwrite |
+| externalMiddlewares.database.kpanda[0].driver | Database type for the external kpanda database, currently only supports mysql | mysql |
+| externalMiddlewares.database.kpanda[0].dataSourceName | Data source information for connecting to the external kpanda database, refer to https://gorm.io/docs/connecting_to_the_database.html | - |
+| externalMiddlewares.database.kpanda[0].maxOpenConnections | Maximum number of open connections for the external kpanda database | 10 |
+| externalMiddlewares.database.kpanda[0].maxIdleConnections | Maximum number of idle connections for the external kpanda database | 10 |
+| externalMiddlewares.database.kpanda[0].connectionMaxLifetimeSeconds | Maximum connection lifetime in seconds for the external kpanda database | 0 |
+| externalMiddlewares.database.kpanda[0].connectionMaxIdleTimeSeconds | Maximum idle connection time in seconds for the external kpanda database | 0 |
+| externalMiddleware.elasticsearch | External Elasticsearch | - |
+| externalMiddleware.elasticsearch.insight | Configuration for the external Elasticsearch used by Insight | - |
+| externalMiddleware.elasticsearch.insight.endpoint | Access endpoint for the external Elasticsearch used by Insight | - |
+| externalMiddleware.elasticsearch.insight.anonymous | Enable anonymous access to the external Elasticsearch used by Insight, either true or false. When set to true, credentials should not be provided | false |
+| externalMiddleware.elasticsearch.insight.username | Username for accessing the external Elasticsearch used by Insight | - |
+| externalMiddleware.elasticsearch.insight.password | Password for accessing the external Elasticsearch used by Insight | - |
 | externalMiddleware.kafka | External Kafka |
 | externalMiddleware.kafka.insight | Configuration for Insight to use external Kafka |
 | externalMiddleware.kafka.insight.brokers | Broker addresses |
 | externalMiddleware.kafka.insight.username | Access username for Insight to use external Kafka | Optional |
 | externalMiddleware.kafka.insight.password | Access password for Insight to use external Kafka | Optional |
-| renewCerts             | Certificate renewal for the cluster           | -    |
-| renewCerts.mode        | Two modes for certificate renewal, supports cyclical and onetime | -     |
+| renewCerts | Certificate renewal for the cluster | - |
+| renewCerts.mode | Two modes for certificate renewal, supports cyclical and onetime | - |
 
 ## Simplified configuration instructions
 
@@ -352,7 +351,7 @@ The `builtin` mode means that the required third-party software (such as ChartMu
 will be deployed and provided by the installer for use in the DCE 5.0 platform.
 
 ```yaml
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
    creationTimestamp: null
@@ -391,7 +390,7 @@ does not need to be installed by the installer. Instead, the user provides the a
 to be used by the DCE 5.0 platform.
 
 ```yaml
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
    creationTimestamp: null
@@ -449,7 +448,7 @@ In the `official-service` mode, when users choose to install DCE 5.0 online, the
 the DCE 5.0 platform will be obtained from DaoCloud's official repository.
 
 ```yaml
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
    creationTimestamp: null
@@ -464,62 +463,62 @@ spec:
    workerNodes:
 ```
 
-## Generate a clusterConfig configuration file template through the command line
+## Generate a clusterConfig template on CLI
 
-### full mode 1 node mode
+### 1-node mode
 
 ``` bash
-# Official online:
+# Official online
 ./dce5-installergenerate-config --install-mode=cluster-create --master=1 --access-type=official-service
-# Official online simplified version:
+# Official online simplified version
 ./dce5-installer generate-config --master=1
 
-# Built-in offline:
+# Built-in offline
 ./dce5-installer generate-config --install-mode=cluster-create --master=1 --access-type=builtin
-# Built-in offline simplified version:
+# Built-in offline simplified version
 ./dce5-installer generate-config --master=1 --access-type=builtin
 
-# Extend offline:
+# Extend offline
 ./dce5-installer generate-config --install-mode=cluster-create --master=1 --access-type=external
-# Extended offline simplified version:
+# Extended offline simplified version
 ./dce5-installer generate-config --master=1 --access-type=external
 ```
 
-### Full Mode 4 Node Mode
+### 4-node Mode
 
 ``` bash
-# Official online:
+# Official online
 ./dce5-installer generate-config --install-mode=cluster-create --master=3 --access-type=official-service
-# Official online simplified version:
+# Official online simplified version
 ./dce5-installer generate-config --master=3
 
-# Built-in offline:
+# Built-in offline
 ./dce5-installer generate-config --install-mode=cluster-create --master=3 --access-type=builtin
-# Built-in offline simplified version:
+# Built-in offline simplified version
 ./dce5-installer generate-config --master=3 --access-type=builtin
 
-# Extend offline:
+# Extend offline
 ./dce5-installer generate-config --install-mode=cluster-create --master=3 --access-type=external
-# Extended offline simplified version:
+# Extended offline simplified version
 ./dce5-installer generate-config --master=3 --access-type=external
 ```
 
-### full mode 7 node mode
+### 7-node Mode
 
 ``` bash
-# Official online:
+# Official online
 ./dce5-installer generate-config --install-mode=cluster-create --master=3 --worker=3 --access-type=official-service
-# Official online simplified version:
+# Official online simplified version
 ./dce5-installer generate-config --master=3 --worker=3
 
-# Built-in offline:
+# Built-in offline
 ./dce5-installer generate-config --install-mode=cluster-create --master=3 --worker=3 --access-type=builtin
-# Built-in offline simplified version:
+# Built-in offline simplified version
 ./dce5-installer generate-config --master=3 --worker=3 --access-type=builtin
 
-# Extend offline:
+# Extend offline
 ./dce5-installer generate-config --install-mode=cluster-create --master=3 --worker=3 --access-type=external
-# Extended offline simplified version:
+# Extended offline simplified version
 ./dce5-installer generate-config --master=3 --worker=3 --access-type=external
 ```
 
@@ -528,7 +527,8 @@ spec:
 ``` bash
 # Official online
 ./dce5-installer generate-config --install-mode=install-app --access-type=official-service
-# Official online simplified version:
+
+# Official online simplified version
 ./dce5-installer generate-config --install-mode=install-app
 
 # Built-in offline:

@@ -1,18 +1,18 @@
 # 模型支持情况
 
-随着智能算力的快速迭代，我们已经支持了多种模型的推理服务，您可以在这里看到所支持的模型信息。
+随着 AI Lab 的快速迭代，我们已经支持了多种模型的推理服务，您可以在这里看到所支持的模型信息。
 
-- 智能算力 v0.3.0 上线了模型推理服务，针对传统的深度学习模型，方便用户可以直接使用智能算力的推理服务，无需关心模型的部署和维护。
-- 智能算力 v0.6.0 支持了完整版本的 vLLM 推理能力，支持诸多大语言模型，如 `LLama`、`Qwen`、`ChatGLM` 等。
+- AI Lab v0.3.0 上线了模型推理服务，针对传统的深度学习模型，方便用户可以直接使用AI Lab 的推理服务，无需关心模型的部署和维护。
+- AI Lab v0.6.0 支持了完整版本的 vLLM 推理能力，支持诸多大语言模型，如 `LLama`、`Qwen`、`ChatGLM` 等。
 
 !!! note
 
-    推理能力的支持与智能算力的版本有关，请查阅 [Release Notes](../../intro/release-notes.md) 了解最新版本并及时更新。
+    推理能力的支持与 AI Lab 的版本有关，请查阅 [Release Notes](../../intro/release-notes.md) 了解最新版本并及时更新。
 
-您可以在智能算力中使用经过 DCE 5.0 验证过的 GPU 类型；
+您可以在 AI Lab 中使用经过 DCE 5.0 验证过的 GPU 类型；
 更多细节参阅 [GPU 支持矩阵](../../../kpanda/user-guide/gpu/gpu-metrics.md)。
 
-![点击创建](../../images/interface05.png)
+![点击创建](../../images/inference-interface.png)
 
 ## Triton Inference Server
 
@@ -38,7 +38,7 @@
 
 ### vLLM 新特性
 
-目前，智能算力还支持在使用 vLLM 作为推理工具时的一些新特性：
+目前，AI Lab 还支持在使用 vLLM 作为推理工具时的一些新特性：
 
 - 在推理模型时，启用 `Lora Adapter` 来优化模型推理服务
 - 提供兼容 `OpenAI` 的 `OpenAPI` 接口，方便用户切换到本地推理服务时，可以低成本的快速切换

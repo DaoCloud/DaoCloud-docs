@@ -3,6 +3,21 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-9-30
+
+### v0.31.0
+
+#### Features
+
+- **Added** support for username encryption when creating users
+- **Added** custom roles that support Container Management folders and workspace roles, and allow their permission points to be mapped to predefined roles in Container Management
+
+#### Fixes
+
+- **Fixed** an error related to excessively long license expiration periods.
+- **Fixed** an error encountered when a resource is unbound from a workspace.
+- **Fixed** an issue where the query methods for reports of the same type are inconsistent in __Global Management__ -> __Operations Management__ .
+
 ## 2024-8-31
 
 ### v0.30.0

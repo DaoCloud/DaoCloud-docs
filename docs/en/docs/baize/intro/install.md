@@ -3,12 +3,12 @@ MTPE: windsonsea
 date: 2024-05-21
 ---
 
-# Initialize Intelligent Engine Cluster
+# Initialize AI Lab Cluster
 
-Starting from DCE 5.0 installer v0.17.0, the Enterprise package can simultaneously install the Intelligent Engine module
+Starting from DCE 5.0 installer v0.17.0, the Enterprise package can simultaneously install the AI Lab module
 **without requiring separate installation** . Please contact the delivery support team to obtain the Enterprise package.
 
-## Install the Intelligent Engine Module (UI)
+## Install the AI Lab Module (UI)
 
 > This module only needs to be installed in the [global service cluster](../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster).
 
@@ -22,22 +22,22 @@ under __Helm Apps__ -> __Helm Charts__ and follow the installation steps.
       open `<YOUR_DCE_HOST>/kpanda/clusters/kpanda-global-cluster/helm/charts/addon/baize`.
     * Note the `kpanda-global-cluster` global service cluster.
 
-## Installing the Intelligent Engine Module (CLI)
+## Installing the AI Lab Module (CLI)
 
 > The management module only needs to be installed in the global servicemanagement cluster.
 
-Ensure that the Intelligent Engine components are already installed in the global service cluster.
-You can confirm this by checking the DCE 5.0 UI for the presence of the Intelligent Engine module.
+Ensure that the AI Lab components are already installed in the global service cluster.
+You can confirm this by checking the DCE 5.0 UI for the presence of the AI Lab module.
 
 !!! info
 
-    The primary navigation bar has an `Intelligent Engine` entry.
+    The primary navigation bar has an `AI Lab` entry.
 
     If it does not exist, you can install it using the following method.
     Note that it needs to be installed in the `kpanda-global-cluster`, that is, global service cluster:
 
     ```bash
-    # baize is the codename for the Intelligent Engine component
+    # baize is the codename for the AI Lab component
     helm repo add baize https://release.daocloud.io/chartrepo/baize
     helm repo update
     helm search repo baize # Get the latest version number
@@ -59,7 +59,7 @@ need to be deployed. The main components include:
   For details, refer to [GPU Management](../../kpanda/user-guide/gpu/index.md).
 - `insight-agent`: Observability component used to collect infrastructure information
   in the cluster, including logs, metrics, and events
-- `baize-agent`: Core component of the Intelligent Engine module, responsible for
+- `baize-agent`: Core component of the AI Lab module, responsible for
   scheduling, monitoring, Pytorch, Tensorflow, and other computing components
 - Optional `nfs`: Storage service used for dataset preheating
 
@@ -68,11 +68,11 @@ need to be deployed. The main components include:
     **The above components must be installed, otherwise it may cause the functionality to not work properly.**
 
 After completing the above tasks, you can now perform task training and model development
-in the Intelligent Engine module.
+in the AI Lab module.
 
 ### Components for preheating
 
-In the data management provided by the Intelligent Engine module, the preheating capability of
+In the data management provided by the AI Lab module, the preheating capability of
 datasets relies on a storage service, and it is recommended to use an NFS service:
 
 - Deploy NFS Server
@@ -85,4 +85,4 @@ datasets relies on a storage service, and it is recommended to use an NFS servic
 ## Conclusion
 
 After completing the above steps, you can now experience all the functionalities of
-Intelligent Engine in the worker cluster. Enjoy using it!
+AI Lab in the worker cluster. Enjoy using it!

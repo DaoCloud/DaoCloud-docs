@@ -17,7 +17,7 @@ A major advantage of DCE 5.0 is its native support for the DevOps development an
 With extensive testing from thousands of industry customers in real production cases, DCE 5.0 has established itself as a solid and trustworthy digital foundation. It assists enterprises in defining their digital boundaries and unleashing the full potential of cloud native productivity. Embrace DCE 5.0 to elevate your organization's capabilities in the cloud native landscape.
 
 *[DCE]: An abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
-*[AI]: DCE 5.0 has an integrated intelligent computing engine for efficient management of LLM jobs, datasets, GPU, CPU, and memory resources
+*[AI]: DCE 5.0 has an integrated AI Lab for efficient management of LLM jobs, datasets, GPU, CPU, and memory resources
 
 <div class="grid cards" markdown>
 
@@ -33,7 +33,7 @@ With extensive testing from thousands of industry customers in real production c
 - :material-engine: **Microservice Engine** [Microservice governance and gateway](skoala/intro/index.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider/intro/index.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/index.md)
-- :material-slot-machine: **Intelligent Engine** [Cloud Native AI - Integrated Training and Inference Platform](baize/intro/index.md)
+- :material-slot-machine: **AI Lab** [Cloud Native AI - Integrated Training and Inference Platform](baize/intro/index.md)
 - :fontawesome-brands-edge: **Cloud Edge Collaboration** [Containers extend to edge](kant/intro/index.md)
 - :fontawesome-solid-user-group: **Global Management** [Login/permissions/appearance](ghippo/intro/index.md)
 - [Free Trial :free:](./trial/index.md){ .md-button }
@@ -205,17 +205,17 @@ customize solutions for various use cases. This modular style allows for continu
 
     ![virtual machine](./images/virtnest.png)
 
-=== "Intelligent Engine"
+=== "AI Lab"
 
     Integrate MLOps and large language models (LLMs) seamlessly into a cloud-native platform to create a comprehensive
-    AI intelligent computing solution with an end-to-end R&D lifecycle. This platform supports a variety of deep learning
+    AI AI Lab solution with an end-to-end R&D lifecycle. This platform supports a variety of deep learning
     frameworks, including PyTorch and TensorFlow, and offers capabilities for dataset management, model development, training,
     inference, monitoring, and operations. Users can concentrate solely on developing and deploying models, without the need
     to manage underlying resource scheduling, administration, or monitoring tasks.
 
-    **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Cloud Native Networking](network/intro/index.md), [Intelligent Engine](./baize/intro/index.md)
+    **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Cloud Native Networking](network/intro/index.md), [AI Lab](./baize/intro/index.md)
 
-    ![Intelligent Engine](./images/baize.png)
+    ![AI Lab](./images/baize.png)
 
 Once you have obtained the [license authorization](./dce/license0.md) and successfully logged into DCE 5.0
 for the first time, you will be greeted by a user-friendly dashboard. This dashboard provides an intuitive display

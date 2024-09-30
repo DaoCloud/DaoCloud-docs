@@ -1,12 +1,12 @@
 # baizectl 命令行工具使用指南
 
-`baizectl` 是在 DCE 5.0 智能算力模块中专门服务于模型开发者与数据科学家们使用的命令行工具。
+`baizectl` 是在 DCE 5.0 AI Lab 模块中专门服务于模型开发者与数据科学家们使用的命令行工具。
 它提供了一系列命令来帮助用户管理分布式训练作业、查看任务状态、管理数据集等操作，同时支持连接
 Kubernetes 工作集群和 DCE 5.0 工作空间，帮助用户更高效地使用和管理 Kubernetes 平台资源。
 
 ## 安装
 
-目前，`baizectl` 已经集成在 DCE 5.0 智能算力中。
+目前，`baizectl` 已经集成在 DCE 5.0 AI Lab 中。
 你在创建 Notebook 后，即可在 Notebook 中直接使用 `baizectl`。
 
 ---

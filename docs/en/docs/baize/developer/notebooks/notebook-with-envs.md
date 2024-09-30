@@ -5,7 +5,7 @@ date: 2024-09-05
 
 # Use Environments in Notebooks
 
-Environment management is one of the key features of Intelligent Engine. By associating an environment
+Environment management is one of the key features of AI Lab. By associating an environment
 in a **Notebook** , you can quickly switch between different environments, making it easier for them to develop and debug.
 
 ## Select an Environment When Creating a Notebook
@@ -24,7 +24,7 @@ If there isn’t a suitable environment, you can create a new one in **Environme
     In the Notebook, both `conda` and `mamba` are provided as environment management tools.
     You can choose the appropriate tool based on their needs.
 
-In Intelligent Engine, you can use the `conda` environment management tool.
+In AI Lab, you can use the `conda` environment management tool.
 You can view the list of current environments in the Notebook by using the command `!conda env list`.
 
 ```bash
@@ -52,7 +52,7 @@ With this method, you can simultaneously write and debug algorithms in a single 
 
 ## Switch Environments in a Terminal
 
-> The Notebook for Intelligent Engine now also supports VSCode.
+> The Notebook for AI Lab now also supports VSCode.
 
 If you prefer managing and switching environments in the Terminal, you can follow these steps:
 
@@ -133,4 +133,4 @@ zlib                      1.2.13               h5eee18b_1    defaults
 ## Update Packages in Environment
 
 Currently, you can update the packages in the environment through the
-**Environment Management** UI in Intelligent Engine.
+**Environment Management** UI in AI Lab.

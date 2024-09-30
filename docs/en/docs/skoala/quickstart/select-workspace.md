@@ -5,7 +5,7 @@ hide:
 
 # Select Workspace
 
-When entering the DaoCloud Microservice Engine (DME) for the first time, you must select a
+When entering the DaoCloud Microservice Engine for the first time, you must select a
 [workspace](../../ghippo/user-guide/workspace/workspace.md) before any other actions.
 
 ![select a workspace](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/select-ws01.png)

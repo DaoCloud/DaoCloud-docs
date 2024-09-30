@@ -15,7 +15,7 @@ However, the initialization fails.
 
 ## Issue Analysis
 
-In the intelligent computing environment, the queue management capability is provided by
+In the AI Lab environment, the queue management capability is provided by
 [Kueue](https://kueue.sigs.k8s.io/). Kueue provides two types of queue management resources:
 
 - **ClusterQueue**: A cluster-level queue mainly used to manage resource quotas within
@@ -23,7 +23,7 @@ In the intelligent computing environment, the queue management capability is pro
 - **LocalQueue**: A namespace-level queue that needs to point to a ClusterQueue
   for resource allocation within the queue.
 
-In the intelligent computing environment, if a service is created and the specified
+In the AI Lab environment, if a service is created and the specified
 namespace does not have a `LocalQueue`, there will be a prompt to initialize the queue.
 
 In rare cases, the `LocalQueue` initialization might fail due to special reasons.

@@ -5,7 +5,7 @@ date: 2024-05-21
 
 # First Time Usage
 
-When entering DCE 5.0 Intelligent Engine for the first time, you need to:
+When entering DCE 5.0 AI Lab for the first time, you need to:
 
 - [Choose a Workspace](#select-a-workspace)
 - [Select a Cluster](#select-cluster)
@@ -13,7 +13,7 @@ When entering DCE 5.0 Intelligent Engine for the first time, you need to:
 
 ## Select a Workspace
 
-When first entering DCE 5.0 Intelligent Engine, you should select a [workspace](../../ghippo/user-guide/workspace/workspace.md).
+When first entering DCE 5.0 AI Lab, you should select a [workspace](../../ghippo/user-guide/workspace/workspace.md).
 
 ![Choose a Workspac](../images/workspace.png)
 
@@ -27,7 +27,7 @@ If you need to change the current workspace, you can click the change icon in th
 
 ## Select Cluster
 
-You can choose which cluster to deploy and execute intelligent computing operations.
+You can choose which cluster to deploy and execute AI Lab operations.
 
 ![Select Cluster](../images/cluster.png)
 
@@ -52,7 +52,7 @@ If the cluster you want is not in the cluster list, you need to bind the cluster
 
 ## Roles
 
-DCE 5.0 Intelligent Computing provides two roles. You can switch between the two administrator roles by clicking the menu item at the bottom left:
+DCE 5.0 AI Lab provides two roles. You can switch between the two administrator roles by clicking the menu item at the bottom left:
 
 - Administrator - Developer: With capabilities of Notebooks, training tasks, and datasets.
 - Platform Administrator - Operator: With capabilities of managing GPU resources and queues.

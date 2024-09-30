@@ -5,7 +5,7 @@ date: 2024-06-17
 
 # Manage Python Environment Dependencies
 
-This document aims to guide users on managing environment dependencies using DCE Intelligent Engine. Below are the specific steps and considerations.
+This document aims to guide users on managing environment dependencies using DCE AI Lab. Below are the specific steps and considerations.
 
 1. [Overview of Environment Management](#overview)
 2. [Create New Environment](#creat-new-environment)
@@ -17,7 +17,7 @@ This document aims to guide users on managing environment dependencies using DCE
 Traditionally, Python environment dependencies are built into an image, which includes the Python version
 and dependency packages. This approach has high maintenance costs and is inconvenient to update, often requiring a complete rebuild of the image.
 
-In DCE 5.0 Intelligent Engine, users can manage pure environment dependencies through the
+In DCE 5.0 AI Lab, users can manage pure environment dependencies through the
 **Environment Management** module, decoupling this part from the image. The advantages include:
 
 - One environment can be used in multiple places, such as in Notebooks, distributed training tasks, and even inference services.
@@ -92,4 +92,4 @@ After configuration, click the **Create** button, and the system will automatica
 
 ---
 
-These are the basic steps and considerations for managing Python dependencies in DCE 5.0 Intelligent Engine.
+These are the basic steps and considerations for managing Python dependencies in DCE 5.0 AI Lab.

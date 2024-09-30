@@ -17,19 +17,27 @@ On the trace query page, you can query detailed information about a call trace b
 Please follow these steps to search for a trace:
 
 1. Go to the __Insight__ product module.
-2. Select __Data Query__ -> __Trace Query__ from the left navigation bar.
-3. Query the trace by multiple conditions or use the TraceID for an exact search.
+2. Select __Tracing__ -> __Traces__ from the left navigation bar.
+
+    ![jaeger](../../image/trace00.png)
 
     !!! note
 
-        Sorting by span count, latency, and start time is supported in the list.
+        Sorting by Span, Latency, and Start At is supported in the list.
 
-4. Click the TraceID name to view the detailed invocation information for that trace.
+3. Click the __TraceID Query__ in the filter bar to switch to TraceID search.
 
+   - To search using TraceID, please enter the complete TraceID.
 
-!!! note
+    <!-- add image later -->
 
-    To search using a TraceID, please enter the complete TraceID.
+## Other Operations
+
+### View Trace Details
+
+1. Click the TraceID of a trace in the trace list to view its detailed call information.
+
+    ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace03.png)
 
 ### Associated Logs
 
@@ -38,10 +46,11 @@ Please follow these steps to search for a trace:
     - By default, it queries the log data within the duration of the trace and one minute after its completion.
     - The queried logs include those with the trace's TraceID in their log text and container logs related to the trace invocation process.
   
-2. Click __View More__ to jump to the __Log Search__ page with conditions.
-3. Supports filtering based on pod and fuzzy keyword search.
+2. Click __View More__ to jump to the __Associated Log__ page with conditions.
+3. By default, all logs are searched, but you can filter by the TraceID or the relevant container logs from the trace call process using the dropdown.
+
+    ![tracelog](../../image/tracelog.png)
 
     !!! note
 
-        1. If the trace spans across clusters or namespaces and the user does not have sufficient permissions, the associated logs cannot be queried.
-        2. After jumping to __Log Search,__ a default search will be performed based on the user's permissions.
+        Since trace may span across clusters or namespaces, if the user does not have sufficient permissions, they will be unable to query the associated logs for that trace.
