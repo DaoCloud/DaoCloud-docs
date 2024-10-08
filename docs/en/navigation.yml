@@ -643,7 +643,9 @@ nav:
               - Manage Virtual Machine:
                   - Create Secret: virtnest/vm/create-secret.md
                   - Snapshots: virtnest/vm/snapshot.md
+                  - Scheduled Snapshot: virtnest/vm/scheduled-snapshot.md
                   - Live Migration: virtnest/vm/live-migration.md
+                  - Migrate VM across Clusters: virtnest/vm/cross-cluster-migrate.md
                   - VM Monitor: virtnest/vm/monitor.md
                   - VM GPU: virtnest/vm/vm-gpu.md
                   - VM Network: virtnest/vm/vm-network.md
@@ -1311,8 +1313,9 @@ nav:
                       - OEM OUT: ghippo/best-practice/oem/oem-out.md
                       - Customize DCE 5.0 to Sync IdP: ghippo/best-practice/oem/custom-idp.md
                       - Customize IdP with Keycloak: ghippo/best-practice/oem/keycloak-idp.md
-                  - Customize Nav Bar: ghippo/best-practice/navigator.md
-                  - System Messages: ghippo/best-practice/system-message.md
+                  - Customize Nav Bar:
+                      - Customize Nav Bar: ghippo/best-practice/menu/navigator.md
+                      - Display/Hide Navigation Bar Menu Based on Permissions: ghippo/best-practice/menu/menu-display-or-hiding.md
               - Troubleshoot:
                   - ingressgateway cannot start: ghippo/troubleshooting/ghippo01.md
                   - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md

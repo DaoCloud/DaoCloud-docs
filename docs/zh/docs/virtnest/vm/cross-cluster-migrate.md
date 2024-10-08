@@ -1,4 +1,4 @@
-# 虚拟机跨集群冷迁移
+# 虚拟机跨集群迁移
 
 本功能暂未做 UI 界面能力，请参考文档的操作步骤执行。
 
@@ -25,7 +25,7 @@
 kubectl edit kubevirt kubevirt -n virtnest-system
 ```
 
-这条命令将修改 featureGates，增加 VMExport。
+这条命令将修改 `featureGates` ，增加 `VMExport` 。
 
 ```yaml
 apiVersion: kubevirt.io/v1
@@ -44,7 +44,7 @@ spec:
 
 ## 配置原有集群的 Ingress
 
-以 Nginx Ingress 为例，配置 Ingress 以指向 virt-exportproxy Service：
+以 Nginx Ingress 为例，配置 Ingress 以指向 `virt-exportproxy` Service：
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -81,10 +81,10 @@ spec:
         apiVersion: v1
         kind: Secret
         metadata:
-          name: example-token # 导出虚拟机所用token
+          name: example-token # 导出虚拟机所用 token
           namespace: default # 虚拟机所在命名空间
         stringData:
-          token: 1234567890ab # 导出使用的token,可修改
+          token: 1234567890ab # 导出使用的 token,可修改
     
         ---
         apiVersion: export.kubevirt.io/v1alpha1
@@ -106,10 +106,10 @@ spec:
         apiVersion: v1
         kind: Secret
         metadata:
-          name: example-token # 导出虚拟机所用token
+          name: example-token # 导出虚拟机所用 token
           namespace: default # 虚拟机所在命名空间
         stringData:
-          token: 1234567890ab # 导出使用的token,可修改
+          token: 1234567890ab # 导出使用的 token ,可修改
     
         ---
         apiVersion: export.kubevirt.io/v1alpha1
@@ -148,10 +148,10 @@ spec:
     - 如果没有安装 **virtctl** ，使用以下命令导出虚拟机 YAML：
 
         ```sh
-        # 自行替换 example-export替换为创建的 VirtualMachineExport 名称 和命名空间
+        # 自行替换 example-export 替换为创建的 VirtualMachineExport 名称 和命名空间
         manifesturl=$(kubectl get VirtualMachineExport example-export -n default -o=jsonpath='{.status.links.internal.manifests[0].url}')
         secreturl=$(kubectl get VirtualMachineExport example-export -n default -o=jsonpath='{.status.links.internal.manifests[1].url}')
-        # 自行替换secert名称和命名空间
+        # 自行替换 secert 名称和命名空间
         token=$(kubectl get secret example-token -n default -o=jsonpath='{.data.token}' | base64 -d)
     
         curl -H "Accept: application/yaml" -H "x-kubevirt-export-token: $token"  --insecure  $secreturl > manifest.yaml
@@ -160,10 +160,9 @@ spec:
 
 1. 导入虚拟机
 
-    将导出的 manifest.yaml 复制到目标迁移集群并执行以下命令（如果命名空间不存在则需要提前创建）：
+    将导出的 `manifest.yaml` 复制到目标迁移集群并执行以下命令（如果命名空间不存在则需要提前创建）：
 
     ```sh
     kubectl apply -f manifest.yaml
     ```
     创建成功后，重启虚拟机，虚拟机成功运行后，在原有集群内删除原虚拟机（虚拟机未启动成功时，请勿删除原虚拟机）。
-

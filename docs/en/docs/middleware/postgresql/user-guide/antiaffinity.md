@@ -3,10 +3,10 @@ MTPE: ModetaNiu
 Date: 2024-07-10
 ---
 
-# Manually Setting Workload Antiaffinity
+# Manually Configure Antiaffinity
 
-The antiaffinity policy of the PostgreSQL middleware is shared across all instances within the same cluster. 
-Therefore, we have enabled the __Preferred__ antiaffinity by default. If you need to disable the antiaffinity policy 
+The antiaffinity policy of the PostgreSQL middleware is shared across all instances within the same cluster.
+Therefore, we have enabled the __Preferred__ antiaffinity by default. If you need to disable the antiaffinity policy
 or enable the __Required__ antiaffinity, you need to modify the settings of the operator.
 
 !!! note
@@ -17,7 +17,7 @@ or enable the __Required__ antiaffinity, you need to modify the settings of the 
 
 1. Go to __Container Management__ -> __Clusters__ and select the cluster where the instance resides.
 
-2. Click __CRDs__ and search for the resource: __operatorconfigurations.acid.zalan.do__ 
+2. Click __CRDs__ and search for the resource: `operatorconfigurations.acid.zalan.do`
 
     ![Search for resources](../images/antiaff01.png)
 
@@ -25,16 +25,16 @@ or enable the __Required__ antiaffinity, you need to modify the settings of the 
 
     ![Select instance](../images/antiaff00.png)
 
-4. Click __Edit YAML__ and modify the following fields according to your needs:
+4. Click __Edit YAML__ and modify the following fields based on your needs:
 
     ![Edit Yaml](../images/antiaff02.png)
 
     | Field                                          | Description                                           |
     | ---------------------------------------------- | ----------------------------------------------------- |
-    | enable_pod_antiaffinity                        | true: Enable workload antiaffinity<br>false: Disable workload antiaffinity            |
-    | pod_antiaffinity_preferred_during_scheduling    | true: Preferred soft antiaffinity<br>false: Required strict antiaffinity |
+    | enable_pod_antiaffinity | true: Enable workload antiaffinity<br>false: Disable workload antiaffinity |
+    | pod_antiaffinity_preferred_during_scheduling | true: Preferred soft antiaffinity<br>false: Required strict antiaffinity |
 
-    The complete yaml is displayed for your reference: 
+    Here is the complete YAML for your reference:
 
     ```yaml 
     apiVersion: acid.zalan.do/v1
@@ -205,4 +205,3 @@ or enable the __Required__ antiaffinity, you need to modify the settings of the 
     ```
 
 5. Restart the operator. The existing instances will be recreated and the new scheduling configuration will be applied.
-
