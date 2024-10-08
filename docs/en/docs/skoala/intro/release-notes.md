@@ -9,6 +9,14 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## 2024-09-02
+
+### v0.40.1
+
+#### Fixes
+
+- **Fixed** an issue where the gateway could not be used when sharing LB VIP
+
 ## 2024-08-26
 
 ### v0.40.0

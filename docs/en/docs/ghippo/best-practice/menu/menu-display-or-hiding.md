@@ -1,26 +1,31 @@
-# 导航栏菜单根据权限显示/隐藏
+# Display/Hide Navigation Bar Menu Based on Permissions
 
-在现有的权限体系下, 全局管理可以根据用户的权限控制导航栏的菜单是否展示，
-但是由于容器管理的授权信息未同步到全局管理，导致全局管理无法准确判断容器管理菜单是否需要展示。
+Under the current permission system, Global Management has the capability to regulate the visibility
+of navigation bar menus according to user permissions. However, due to the authorization information
+of Container Management not being synchronized with Global Management, Global Management cannot
+accurately determine whether to display the Container Management menu.
 
-本文通过配置实现了：
-将容器管理及可观测性的菜单在 **全局管理无法判断的部分, 默认不显示** ，
-通过 **白名单** 授权的方式，实现菜单的隐藏与显示（通过容器管理页面授权的集群或命名空间权限，全局管理均无法感知和判断）。
+This document implements the following through configuration:
+By default, the menus for Container Management and Insight will **not be displayed in areas where
+Global Management cannot make a judgment**. A **Whitelist** authorization strategy is employed to
+effectively manage the visibility of these menus. (The permissions for clusters or namespaces
+authorized through the Container Management page cannot be perceived or judged by Global Management)
 
-例如：A 用户在容器管理是 cluster A 的 Cluster Admin 角色，
-这种情况下全局管理无法判断是否有权限展示容器管理菜单。
-通过本文档配置后，用户 A 默认不可见容器管理菜单，需要 **显式地在全局管理授权** 才可以看到容器管理菜单。
+For example, if User A holds the Cluster Admin role for cluster A in Container Management, Global Management
+cannot determine whether to display the Container Management menu. After the configuration described in this
+document, User A will not see the Container Management menu by default. They will need to have **explicit
+permission in Global Management** to access the Container Management menu.
 
-## 前提条件
+## Prerequisites
 
-已开启基于权限显示/隐藏菜单的功能，开启方法如下：
+The feature to show/hide menus based on permissions must be enabled. The methods to enable this are as follows:
 
-* 新安装的环境, 使用 `helm install` 时增加 `--set global.navigatorVisibleDependency=true` 参数
-* 已有环境，`helm get values ghippo -n ghippo-system -o yaml` 备份 values, 随后修改 bak.yaml 并添加 `global.navigatorVisibleDependency: true`
+* For new installation enviroments, add the `--set global.navigatorVisibleDependency=true` parameter when using `helm install`.
+* For existing environments, back up values using `helm get values ghippo -n ghippo-system -o yaml`, then modify bak.yaml and add `global.navigatorVisibleDependency: true`.
 
-![开启菜单隐藏](../../images/menu1.png)
+![to hide menu](../../images/menu1.png)
 
-再使用以下命令升级全局管理：
+Then upgrade the Global Management using the following command:
 
 ```shell
 helm upgrade ghippo ghippo-release/ghippo \  
@@ -29,9 +34,9 @@ helm upgrade ghippo ghippo-release/ghippo \
   --version ${version}
 ```
 
-## 配置导航栏
+## Configure the Navigation Bar
 
-在 kpanda-global-cluster 中 apply 如下 YAML：
+Apply the following YAML in kpanda-global-cluster:
 
 ```yaml
 apiVersion: ghippo.io/v1alpha1  
@@ -99,7 +104,7 @@ spec:
         permissions:  
           - kpanda.cluster.*  
           - kpanda.menu.get  
-  name: 容器管理  
+  name: Container Management 
   order: 50  
   url: ./kpanda/clusters  
   visible: true  
@@ -235,7 +240,7 @@ spec:
         permissions:  
           - kpanda.cluster.*  
           - kpanda.menu.get  
-  name: 可观测性  
+  name: Insight 
   order: 30  
   url: ./insight  
   visible: true  
@@ -331,18 +336,20 @@ spec:
       name: namespace
 ```
 
-## 通过自定义角色实现上述效果
+## Achieve the Above Effect Through Custom Roles
 
 !!! note
 
-    仅容器管理模块的菜单需要单独配置菜单权限，其他模块会根据用户的权限自动显示/隐藏
+    Only the menus for the Container Management module need to be configured separately menu permissions.
+    Other modules will automatically show/hide based on user permissions
 
-创建一个自定义角色，包含的权限点为容器管理的菜单查看权限，后续授权给需要查看容器管理菜单的用户。
+Create a custom role that includes the permission to view the Container Management menu, and then grant
+this role to users who need access to the Container Management menu.
 
-![授权](../../images/menu2.png)
+![Authorize](../../images/menu2.png)
 
-![查看权限点](../../images/menu3.png)
+![view permission](../../images/menu3.png)
 
-效果如下，可以看到容器管理和可观测性的导航栏菜单：
+you can see the navigation bar menus for container management and observability. The result is as follows:
 
-![验证结果](../../images/menu4.png)
+![result](../../images/menu4.png)
