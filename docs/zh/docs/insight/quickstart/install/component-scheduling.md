@@ -13,7 +13,7 @@ Insight 包含多个核心组件，如 Prometheus、OpenTelemetry、FluentBit、
 由于 Insight Agent 包含了 DaemonSet 组件，所以本节所述的配置方式是让除了 Insight DameonSet 之外的其余组件均运行在专有节点上。
 
 该方式是通过为专有节点添加污点（taint），并配合污点容忍度（tolerations）来实现的。
-更多细节可以参考 [kubernetes 官方文档](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/)。
+更多细节可以参考 [Kubernetes 官方文档](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/)。
 
 可以参考如下命令为节点添加及移除污点：
 
@@ -29,7 +29,7 @@ kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
 
 ### 1. 为每个组件添加污点容忍度
 
-针对 insight-server 和 insight-agent 两个 Chart 分别进行配置：
+针对 `insight-server` 和 `insight-agent` 两个 Chart 分别进行配置：
 
 === "insight-server Chart 配置"
 
@@ -247,7 +247,7 @@ kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
         scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Equal", "effect": "NoSchedule", "key": "node.daocloud.io", "value": "insight-only"}]'
     ```
 
-重启 insight-system 命名空间下面的组件即可正常容忍 insight-system 下的 pod 调度.
+重启 insight-system 命名空间下面的组件即可正常容忍 insight-system 下的 Pod 调度。
 
 ## 为节点添加 Label 和节点亲和性来管理组件调度
 

@@ -1,8 +1,13 @@
+---
+MTPE: WANG0608GitHub
+Date: 2024-10-08
+---
+
 # Custom Insight Component Scheduling Policy
 
 When deploying Insight to a Kubernetes environment, proper resource management and optimization are crucial.
 Insight includes several core components such as Prometheus, OpenTelemetry, FluentBit, Vector, and Elasticsearch.
-These components, during their operation, may negatively impact the performance of other Pods within the cluster
+These components, during their operation, may negatively impact the performance of other pods within the cluster
 due to resource consumption issues. To effectively manage resources and optimize cluster operations,
 node affinity becomes an important option.
 
@@ -234,10 +239,10 @@ Configure the tolerations for the `insight-server` and `insight-agent` Charts re
 
 ### 2. Configure at the namespace level
 
-Allow Pods in the `insight-system` namespace to tolerate the `node.daocloud.io=insight-only` taint.
+Allow pods in the `insight-system` namespace to tolerate the `node.daocloud.io=insight-only` taint.
 
-1. Adjust the `apiserver` configuration file `/etc/kubernetes/manifests/kube-apiserver.yaml` to include 
-   `PodTolerationRestriction,PodNodeSelector`. See the following picture: 
+1. Adjust the `apiserver` configuration file `/etc/kubernetes/manifests/kube-apiserver.yaml` to include
+   `PodTolerationRestriction,PodNodeSelector`. See the following picture:
 
     ![insight-ns-toleration](../../image/insight-ns-toleration.png)
 
@@ -251,17 +256,18 @@ Allow Pods in the `insight-system` namespace to tolerate the `node.daocloud.io=i
       annotations:
         scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Equal", "effect": "NoSchedule", "key": "node.daocloud.io", "value": "insight-only"}]'
     ```
-Restart the components under the `insight-system` namespace to allow normal scheduling of pods under the `insight-system`.
+
+Restart the components under the insight-system namespace to allow normal scheduling of pods under the insight-system.
 
 ## Use node labels and node affinity to manage component scheduling
 
 !!! info
 
     Node affinity is conceptually similar to `nodeSelector`, allowing you to constrain
-    which nodes a Pod can be scheduled on based on **labels** on the nodes.
+    which nodes a pod can be scheduled on based on **labels** on the nodes.
     There are two types of node affinity:
     
-    1. requiredDuringSchedulingIgnoredDuringExecution: The scheduler will only schedule the Pod
+    1. requiredDuringSchedulingIgnoredDuringExecution: The scheduler will only schedule the pod
        if the rules are met. This feature is similar to nodeSelector but has more expressive syntax.
     2. preferredDuringSchedulingIgnoredDuringExecution: The scheduler will try to find nodes that
        meet the rules. If no matching nodes are found, the scheduler will still schedule the Pod.
