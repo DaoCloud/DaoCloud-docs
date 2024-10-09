@@ -40,9 +40,8 @@ DCE 5.0 针对不同的应用场景提供了完善的 Addon，您可以按需下
 
 | 离线包 | 版本 | 下载 | 更新日期 |
 |--------| ---- | --- | --------- |
-| gpu-addon-offline-package-v0.21.0-amd64.tar.gz | v0.21.0 | [:arrow_right: 下载页](./addon/v0.21.0.md) | 2024-09-07 |
-| standard-addon-offline-package-v0.21.0-arm64.tar.gz | v0.21.0 | [:arrow_right: 下载页](./addon/v0.21.0.md) | 2024-09-07 |
-| standard-addon-offline-package-v0.21.0-amd64.tar.gz | v0.21.0 | [:arrow_right: 下载页](./addon/v0.21.0.md) | 2024-09-07 |
+| gpu-addon-offline-package-v0.22.0-amd64.tar.gz | v0.22.0 | [:arrow_right: 下载页](./addon/v0.22.0.md) | 2024-10-10 |
+| standard-addon-offline-package-v0.22.0-arm64.tar.gz | v0.22.0 | [:arrow_right: 下载页](./addon/v0.22.0.md) | 2024-10-10 |
 
 [Addon：更多历史版本](./addon/history.md){ .md-button } 
 
