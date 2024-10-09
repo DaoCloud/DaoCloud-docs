@@ -2,7 +2,15 @@
 
 本页列出 Elasticsearch 索引服务的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
-*[mcamel-elasticsearch]: mcamel 是 DaoCloud 所有中间件的开发代号，elasticsearch 是提供分布式搜索和分析服务的中间件
+*[mcamel-elasticsearch]: mcamel 是 DaoCloud 所有中间件的开发代号，elasticsearch 是提供分布式搜索和分析服务的中间件。
+
+## 2024-09-30
+
+### v0.21.0
+
+- **新增** 创建实例时支持选择 HTTPS / HTTP 协议
+- **修复** 部分操作无审计日志的问题
+- **修复** 安装器创建的 Elasticsearch 实例纳管失败的问题
 
 ## 2024-08-31
 
