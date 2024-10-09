@@ -138,20 +138,30 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 将客户系统与 DCE 5.0 平台通过 OIDC/OAUTH 等协议对接，使用户登录 DCE 5.0 平台后进入客户系统时无需再次登录。
 
-1. 在两套 DCE 5.0 的场景下，可以在 DCE 5.0 中通过 __全局管理__ -> __用户与访问控制__ -> __接入管理__ 创建 SSO 接入。
+!!! note
 
-    ![接入管理列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oemin-jierulist.png)
+    这里使用两套 DCE 5.0 相互对接来进行演示。涵盖将 DCE5 作为用户源登录客户平台，和将客户平台作为用户源登录 DCE5 平台两种场景。
+ 
+1. **DCE5作为用户源，登录客户平台：**首先将第一套 DCE5 作为用户源，实现对接后第一套 DCE5 中的用户可以通过 OIDC 直接登录第二套 DCE 5.0，而无需在第二套中再次创建用户。在第一套 DCE5 中通过 __全局管理__ -> __用户与访问控制__ -> __接入管理__ 创建 SSO 接入。
 
-    ![接入管理列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oem-out01.png)
+    ![接入管理列表](../oem/images/first1.png)
 
-2. 创建后将详情中的客户端 ID、客户端密钥、单点登录 URL 等填写到客户系统的 __全局管理__ -> __用户与访问控制__ -> __身份提供商__ -> __OIDC__ 中，完成用户对接。
+    ![接入管理列表](../oem/images/first2.png)
 
-    ![oidc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oeminoidc.png)
+2. **客户平台作为用户源，登录DCE5：** 将第一套 DCE5 中生成的客户端 ID、客户端密钥、单点登录 URL 等填写到第二套 DCE5 __全局管理__ -> __用户与访问控制__ -> __身份提供商__ -> __OIDC__ 中，完成用户对接。对接后，第一套 DCE5 中的用户可以通过 OIDC 直接登录第二套 DCE 5.0，而无需在第二套中再次创建用户。
 
-3. 对接完成后，客户系统登录页面将出现 OIDC（自定义）选项，首次从 DCE 5.0 平台进入客户系统时选择通过 OIDC 登录，
-   后续将直接进入客户系统无需再次选择。
+ ![oidc1](../oem/images/second2.png)
 
-    ![登录页](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oeminlogin.png)
+ ![oidc2](../oem/images/second1.png)
+
+3. 对接完成后，第二套 DCE5 登录页面将出现 OIDC 选项，首次登录时选择通过 OIDC 登录(（自定义名称，这里是名称是 loginname)，
+   后续将直接进入无需再次选择。
+
+    ![登录页](../oem/images/login.png)
+
+!!! note
+
+    使用两套 DCE5 ,表明客户只要支持 OIDC 协议，无论是 DCE5 作为用户源，还是“客户平台”作为用户源，两种场景都支持。
 
 ## 对接导航栏
 
