@@ -20,6 +20,13 @@
 
     ![服务拓扑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/servicemap00.png){ width="1000"}
 
+4. 点击右下角`图例`，可通过 __临时配置__ 修改当前的拓扑图定义的渲染阈值，跳出或关闭该页面即会丢失该配置。
+
+   - 阈值设置必须大于 0，前面填写的阈值必须小于后面填写的。且填写的阈值必须在最大和最小的范围之间。
+
+   ![服务拓扑](../../images/servicemap01.png){ width="1000"}
+   ![服务拓扑](../../images/servicemap02.png){ width="1000"}
+
 ### 其他节点
 
 在服务拓扑中会存在游离在集群之外的节点，这些游离在外的节点可分成三类：

@@ -755,7 +755,6 @@ nav:
               - 日志: insight/user-guide/data-query/log.md
               - 链路追踪:
                   - 服务拓扑: insight/user-guide/trace/topology.md
-                  - 服务拓扑元素说明: insight/user-guide/trace/topology-helper.md
                   - 服务: insight/user-guide/trace/service.md
                   - 链路查询: insight/user-guide/trace/trace.md
               - 告警:
