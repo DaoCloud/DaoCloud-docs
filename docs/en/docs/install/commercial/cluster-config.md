@@ -108,6 +108,8 @@ spec:
     isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
     osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
 
+    # skipValidateOSPackage: false # Skip the ospackage verification
+
     # type: external
     # Set the block below only if target is S3-compatible storage which need to upload files automatically(e.g. minio).
     # isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
