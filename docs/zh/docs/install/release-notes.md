@@ -9,6 +9,25 @@
 *[Kpanda]: DCE 5.0 容器管理的开发代号
 *[Skoala]: DCE 5.0 微服务引擎的开发代号
 
+## 2024-09-30
+
+### v0.22.0
+
+#### 优化
+
+- **优化** 更新默认 K8s 版本为 v1.30.4
+- **优化** 支持 Rocky Linux 8
+- **优化** 支持跳过验证 ospkg，需要在 clusterconfig.yaml 中 spec->osRepos下定义 `skipValidateOSPackage: true`
+
+#### 修复
+
+- **修复** 多架构镜像融合后未清理中间镜像问题
+- **修复** 不分 Gproduct 组件 helm repo 缺失问题
+
+#### 已知问题
+
+在线安装时 `baize` 组件报错，`Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo update'): no chart name found`
+
 ## 2024-08-30
 
 ### v0.21.0
