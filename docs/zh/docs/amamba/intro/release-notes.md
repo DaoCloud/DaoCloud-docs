@@ -16,12 +16,12 @@
 - **优化** GitOps 模块仓库导入支持配置高级参数
 - **优化** GitOps 应用支持查看 K8s 资源详情
 - **优化** 流水线运行记录支持查看参数
-- **优化** 向导基于 Git 构建应用时， tag 支持通过时间/commit id 生成
+- **优化** 向导基于 Git 构建应用时，tag 支持通过时间或 Commit ID 生成
 
 #### 修复
 
 - **修复** 当无权限审核流水线时会导致重定向
-- **修复** 当开启 ApplicationSet 功能时，GitOps Dashboard 无法访问
+- **修复** 当开启 ApplicationSet 功能时 GitOps Dashboard 无法访问
 
 ## 2024-08-30
 
