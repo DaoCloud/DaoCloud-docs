@@ -17,7 +17,6 @@
 - **优化** 在未开启`Logging` 功能时增加提示
 - **优化** 升级 OTel `python instrumentation` 从 0.46b0 到 0.48b0
 - **优化** 升级 OTel `java instrumentation` 从 1.40.0 到 1.42.1
-  
 - **修复** 站内信告警通知未按照创建的消息模板格式进行换行
 
 #### Insight Agent
@@ -37,7 +36,6 @@
 - **新增** 链路组件 `Jaeger` 与 `OpenTelemetry Collector` 增加内置的告警规则
 - **新增** 安装参数中增加 __日志__ 模块，__事件__ 模块的功能开关，允许不启用日志模块
 - **优化** `Jaeger Collector` 默认的启动参数，优化组件性能
-
 - **修复** Kubernetes 事件未定义类型的问题
 - **修复** 获取系统组件的状态接口请求超时的缺陷
 - **修复** `helm-kubectl` 镜像的 CVE 问题
