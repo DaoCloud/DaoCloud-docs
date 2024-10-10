@@ -15,8 +15,8 @@
 
 | CPU 架构 | 版本 | 点击下载 |
 | :------- | :----- | :-----|
-| AMD64    | v0.22.0 | [offline-v0.22.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.22.0-amd64.tar) |
-| ARM64    | v0.22.0 | [offline-v0.22.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.22.0-arm64.tar) |
+| AMD64 | v0.22.0 | [offline-v0.22.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.22.0-amd64.tar) |
+| <font color="green">ARM64</font> | v0.22.0 | [offline-v0.22.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.22.0-arm64.tar) |
 
 下载完毕后解压离线包。以 amd64 架构离线包为例：
 
@@ -42,8 +42,8 @@ ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](./c
 | | Oracle Linux R8 U7 | [OracleLinux-R8-U7-x86_64-dvd.iso](https://yum.oracle.com/ISOS/OracleLinux/OL8/u7/x86_64/OracleLinux-R8-U7-x86_64-dvd.iso) |
 | | Rocky Linux 9.2 | [Rocky-9.2-x86_64-dvd.iso](https://dl.rockylinux.org/vault/rocky/9.2/isos/x86_64/Rocky-9.2-x86_64-dvd.iso) |
 | | Rocky Linux 8.10 | [Rocky-8.10-x86_64-dvd1.iso](https://download.rockylinux.org/pub/rocky/8/isos/x86_64/Rocky-8.10-x86_64-dvd1.iso) |
-| ARM64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [查看申请地址](https://www.kylinos.cn/support/trial.html) |
-|     | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [查看申请地址](https://www.kylinos.cn/support/trial.html) |
+| <font color="green">ARM64</font> | Kylin Linux Advanced Server release V10 (Sword) SP2 | [查看申请地址](https://www.kylinos.cn/support/trial.html) |
+| | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [查看申请地址](https://www.kylinos.cn/support/trial.html) |
 
 !!! note
 

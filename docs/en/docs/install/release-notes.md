@@ -15,6 +15,30 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2024-09-30
+
+### v0.22.0
+
+#### Improvements
+
+- **Improved** the default K8s version to v1.30.4.
+- **Improved** support for Rocky Linux 8.
+- **Improved** support to skip validation of ospkg, which needs to be defined in
+  `clusterconfig.yaml` under `spec` -> `osRepos` with `skipValidateOSPackage: true`.
+
+#### Fixes
+
+- **Fixed** an issue where intermediate images were not cleaned up after merging multi-architecture images.
+- **Fixed** an issue of missing helm repositories for some GProduct components.
+
+#### Known Issues
+
+During online installation, the `baize` component (AI Lab) may throw an error:
+
+```text
+Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo update'): no chart name found
+```
+
 ## 2024-08-30
 
 ### v0.21.0
