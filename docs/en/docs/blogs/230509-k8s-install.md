@@ -9,11 +9,11 @@ This article takes [KLTS (Kubernetes Long Term Support)](https://klts.io/docs/in
 - At least 2 GB or more of memory per host (too little memory will affect the operation of the application)
 - CPU 2 cores or more
 - Network connectivity of all hosts in the cluster (public and intranet)
-- No duplicate hostname, MAC address or product_uuid on a single node, see [Ensure uniqueness of MAC address and product_uuid on each node](#mac-product-uuid)
+- No duplicate hostname, MAC address or product_uuid on a single node, see [Ensure uniqueness of MAC address and product_uuid on each node](#keep-the-uniqueness-of-mac-and-product_uuid-on-the-node)
 - Open some ports on the host, see [Check Required Ports](#check-required-ports).
 - Disable swap partition. In order for the kubelet to work properly, you must disable swap.
 
-### Ensure the uniqueness of the MAC address and product_uuid on the node
+### Keep the uniqueness of MAC and product_uuid on the node
 
 - Use the command __ip link__ or __ifconfig -a__ to get the MAC address of the network interface
 - Use __sudo cat /sys/class/dmi/id/product_uuid__ command to verify product_uuid

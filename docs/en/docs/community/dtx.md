@@ -20,7 +20,7 @@ date: 2024-06-19
 
 **Status** :  
 
-*v0.1.0* - Early development phase. [CHANGELOG](CHANGELOG.md) for details on recent updates.
+*v0.1.0* - Early development phase. [CHANGELOG](https://github.com/DataTunerX/datatunerx/blob/main/CHANGELOG.md) for details on recent updates.
 
 **Quick Demo & More Documentation** :  
 

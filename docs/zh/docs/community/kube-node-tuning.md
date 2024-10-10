@@ -16,7 +16,7 @@ helm install -n kube-node-tuning kube-node-tuning kube-node-tuning/kube-node-tun
 
 !!! 提示
 
-    如果机器位于中国，请按照以下步骤进行：[在中国快速开始](docs/quick-start-in-china.md)
+    如果机器位于中国，请参考[在中国快速开始](https://github.com/kubean-io/kube-node-tuning/blob/main/docs/quick-start-in-china.md)。
 
 内核的 sysctl 设置将应用于节点的 `/etc/99-kube-node-tuning.conf` 文件。
 

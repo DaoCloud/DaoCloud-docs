@@ -9,7 +9,7 @@ This page explains how to install DCE Community package in a kind cluster online
 
 !!! note
 
-    Click [Online Installation of DCE Community](../../../videos/install.md#3) to watch the video tutorial.
+    Click [Online Installation of DCE Community](../../../videos/install.md#install-the-dce-community-online) to watch the video tutorial.
 
 ## Preparation
 
