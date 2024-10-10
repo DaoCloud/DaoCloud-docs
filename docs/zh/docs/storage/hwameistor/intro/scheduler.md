@@ -14,9 +14,10 @@ hide:
 
     调度器应在集群中以 HA 模式部署，这是生产环境中的最佳实践。
 
-- 通过 Helm Chart 部署
+- 通过 hwameistor-operator 安装
 
-    调度器必须与本地磁盘和本地磁盘管理器配合使用。建议通过 [Helm Chart 进行安装](../install/deploy-helm.md)。
+    hwameistor-operator 安装后会自动将 HwameiStor 相关组件拉起。
+    参阅[通过 hwameistor-operator 安装 HwameiStor](../install/deploy-operator.md)。
 
 - 通过 YAML 部署（针对开发）
 
