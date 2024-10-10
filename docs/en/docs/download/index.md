@@ -22,8 +22,8 @@ This package is dedicated to the community and is available for free trial.
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | --------- | ----------- |
-| offline-community-v0.21.0-arm64.tar | v0.21.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.21.0.md) | 2024-09-09 |
-| offline-community-v0.21.0-amd64.tar | v0.21.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.21.0.md) | 2024-09-09 |
+| offline-community-v0.22.0-arm64.tar | v0.22.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.22.0.md) | 2024-09-09 |
+| offline-community-v0.22.0-amd64.tar | v0.22.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.22.0.md) | 2024-09-09 |
 
 [Legacy Packages for DCE 5.0 Community](./free/dce5-installer-history.md){ .md-button } 
 
@@ -33,8 +33,8 @@ This package is suitable for private cloud, hybrid cloud, multicloud, microservi
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
-| offline-v0.21.0-arm64.tar | v0.21.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.21.0.md) | 2024-09-09 |
-| offline-v0.21.0-amd64.tar | v0.21.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.21.0.md) | 2024-09-09 |
+| offline-v0.22.0-arm64.tar | v0.22.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.22.0.md) | 2024-09-09 |
+| offline-v0.22.0-amd64.tar | v0.22.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.22.0.md) | 2024-09-09 |
 
 [Legacy Packages for DCE 5.0 Enterprise](./business/dce5-installer-history.md){ .md-button } 
 
@@ -44,9 +44,9 @@ DCE 5.0 provides comprehensive Addons for different use cases, which can be down
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
-| gpu-addon-offline-package-v0.21.0-amd64.tar.gz | v0.21.0 | [:arrow_right: Go to Download](./addon/v0.21.0.md) | 2024-09-07 |
-| standard-addon-offline-package-v0.21.0-arm64.tar.gz | v0.21.0 | [:arrow_right: Go to Download](./addon/v0.21.0.md) | 2024-09-07 |
-| standard-addon-offline-package-v0.21.0-amd64.tar.gz | v0.21.0 | [:arrow_right: Go to Download](./addon/v0.21.0.md) | 2024-09-07 |
+| gpu-addon-offline-package-v0.22.0-amd64.tar.gz | v0.22.0 | [:arrow_right: Go to Download](./addon/v0.22.0.md) | 2024-09-07 |
+| standard-addon-offline-package-v0.22.0-arm64.tar.gz | v0.22.0 | [:arrow_right: Go to Download](./addon/v0.22.0.md) | 2024-09-07 |
+| standard-addon-offline-package-v0.22.0-amd64.tar.gz | v0.22.0 | [:arrow_right: Go to Download](./addon/v0.22.0.md) | 2024-09-07 |
 
 [Legacy Packages for Addons](./addon/history.md){ .md-button } 
 
@@ -57,13 +57,13 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | Modules | File Size | Download | Update Date |
 | ------- | --------- | -------- | ----------- |
 | Workbench | 394.25 MB | [:arrow_right: Go to Download](./modules/amamba.md) | 2024-09-10 |
-| Container Management | 759.13 MB | [:arrow_right: Go to Download](./modules/kpanda.md) | 2024-09-29 |
+| Container Management | 674.33 MB | [:arrow_right: Go to Download](./modules/kpanda.md) | 2024-10-08 |
 | Cluster Inspection | 174.30 MB | [:arrow_right: Go to Download](./modules/kcollie.md) | 2024-09-29 |
 | Application Backup | 85.06 MB | [:arrow_right: Go to Download](./modules/kcoral.md) | 2024-09-29 |
 | Security Management | 167.29 MB | [:arrow_right: Go to Download](./modules/dowl.md) | 2023-11-26 |
 | Network | 64.03 MB | [:arrow_right: Go to Download](./modules/spidernet.md) | 2024-09-26 |
 | Storage | 1.62 GB | [:arrow_right: Go to Download](./modules/hwameistor.md)| 2023-11-06 |
-| MultiCloud Management | 583.51 MB | [:arrow_right: Go to Download](./modules/kairship.md) | 2024-09-02 |
+| MultiCloud Management | 663.57 MB | [:arrow_right: Go to Download](./modules/kairship.md) | 2024-10-09 |
 | Container Registry | 304.16 MB | [:arrow_right: Go to Download](./modules/kangaroo.md) | 2024-08-29 |
 | Insight | 2.62 GB | [:arrow_right: Go to Download](./modules/insight.md) | 2024-07-04 |
 | Microservice Engine | 1.66 GB | [:arrow_right: Go to Download](./modules/skoala.md) | 2024-09-25 |
