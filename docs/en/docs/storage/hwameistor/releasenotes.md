@@ -3,28 +3,26 @@
 This page lists the Release Notes related to HwameiStor, providing an overview of
 the evolution path and feature changes for each version.
 
+## 2024-09-30
+
+### v0.15.0
+
+- **Improved** the usage of reflink for formatting the file system (XFS).
+- **Fixed** an issue encountered during LVM execution.
+- **Fixed** an issue where node disk references were not created but were already mounted.
+
 ## 2024-08-30
 
 ### v0.14.9
 
-#### Improvment
-
 - **Added** the verbs/patch permissions to ClusterRole.
-
-#### Fix
-
-- **Fixed** the issue where bound PVCs were not filtered.
+- **Fixed** an issue where bound PVCs were not filtered.
 
 ## 2024-07-30
 
 ### v0.14.8
 
-#### Improvment
-
 - **Improved** the default reclaim policy changed from delete to retain
-
-#### Fixes
-
 - **Fixed** an issue to output the disk along with the partition table.
 - **Fixed** an issue where empty pvName was not handled
 - **Fixed** an issue with the affinity and taint skip policy
@@ -33,8 +31,6 @@ the evolution path and feature changes for each version.
 
 ### v0.14.7
 
-#### Improvements
-
 - **Improved** affinity issues and added an option to skip affinity.
 - **Improved** and cleaned up the dataset manager code.
 
@@ -42,16 +38,12 @@ the evolution path and feature changes for each version.
 
 ### v0.14.6
 
-#### Improvements
-
 - **Improved** Resolve the issue where LVR does not respect pod affinity
 - **Improved** Add an option to enable data validation during migration
 
 ## 2024-03-31
 
 ### v0.14.4
-
-#### Improvements
 
 - **Improved** Delete local mount path when unmounting data volumes
 - **Improved** Added PoolHDD FreeCap to the print column
@@ -119,13 +111,8 @@ the evolution path and feature changes for each version.
 
 ### v0.13.1
 
-#### New Features
-
 - **Added** compatibility with Kubernetes v1.28 version
 - **Added** LVM data volume snapshot feature
-
-#### Improvements
-
 - **Improved** HwameiStor Operator with additional component resource configuration
 - **Improved** snapshot recovery timeout
 - **Improved** default log level for LDM
@@ -154,28 +141,19 @@ the evolution path and feature changes for each version.
 
 ### v0.11.1
 
-#### New Features
-
 - **Added** Support for automatic detection of `cgroup` version.
 
 ## 2023-6-25
 
 ### v0.11.0
 
-#### New Features
-
 - **Added** Implementation of IO limitation or QoS.
 - **Added** Use of `/virtual/` detection to identify virtual block devices.
-
-#### Improvements
-
 - **Fixed** Inconsistency in creation time field for StorageClass.
 
 ## 2023-5-26
 
 ### v0.10.3
-
-#### Improvements
 
 - **Improved** Permissions-related content in Helm templates.
 
@@ -183,41 +161,28 @@ the evolution path and feature changes for each version.
 
 ### v0.11.1
 
-#### New Features
-
-**Added** support for automatic detection of `cgroup` version
+- **Added** support for automatic detection of `cgroup` version
 
 ## 2023-6-25
 
 ### v0.11.0
 
-#### New Features
-
-**Added** implementation of IO limitation or QoS
-
-**Added** identification of virtual block devices using /virtual/
-
-#### Improvements
-
-**Fixed** inconsistency issue with StorageClass creation time field
+- **Added** implementation of IO limitation or QoS
+- **Added** identification of virtual block devices using /virtual/
+- **Fixed** an inconsistency issue with StorageClass creation time field
 
 ## 2023-5-26
 
 ### v0.10.3
 
-#### Improvements
-
-**Improved** permissions-related content in Helm Charts
+- **Improved** permissions-related content in Helm Charts
 
 ## 2023-5-25
 
 ### v0.10.2
 
-#### Improvements
-
-**Improved** automatic conversion of Node Name `.` to `-`, affecting LDM heartbeat detection
-
-**Added** Admin permission functionality
+- **Improved** automatic conversion of Node Name `.` to `-`, affecting LDM heartbeat detection
+- **Added** Admin permission functionality
 
 ## 2023-5-17
 
@@ -255,7 +220,7 @@ the evolution path and feature changes for each version.
 #### Bug Fixes
 
 - **Fixed** an issue where LD is bound but has no capacity in LSN
-- **Fixed** Metrics port listening issue
+- **Fixed** an issue when listening the metrics port
 - **Fixed** an issue that may cause "not found" errors
 - **Fixed** an issue with UI tag in Helm
 
@@ -263,15 +228,11 @@ the evolution path and feature changes for each version.
 
 ### v0.9.2
 
-#### Improvements
-
 - **Added** UI relok8s
 
 ### v0.9.1
 
-#### Improvements
-
-- **Added** Volume Status monitoring [Issue #741](https://github.com/hwameistor/hwameistor/pull/741)
+- **Added** volume status monitoring [Issue #741](https://github.com/hwameistor/hwameistor/pull/741)
 - **Fixed** Local Storage deployment parameters [Issue #742](https://github.com/hwameistor/hwameistor/pull/742)
 
 ### v0.9.0
@@ -293,8 +254,6 @@ the evolution path and feature changes for each version.
 
 ### v0.8.0
 
-#### Improvements
-
 - **Improved** Chinese documentation
 - **Improved** value.yaml file
 - **Updated** Roadmap
@@ -304,13 +263,8 @@ the evolution path and feature changes for each version.
 
 ### v0.7.1
 
-#### New Features
-
 - **Added** HwameiStor Dashboard UI, which displays storage resource and storage node usage status
 - **Added** interface for managing HwameiStor storage nodes, local disks, and migration records
 - **Added** StorageClass management functionality, displaying basic information about StorageClass and corresponding nodes
 - **Added** local volume management functionality, supporting data volume migration and high availability conversion
-
-#### Improvements
-
 - **Improved** unnecessary logging before data migration and avoided interference from Job execution in other namespaces
