@@ -19,17 +19,17 @@ hide:
 
 2. 在 __创建 SSO 接入__ 页面填写客户端 ID。
 
-客户端 ID：对应 client 名称
-客户端访问地址：用户完成登录并通过身份验证后，认证服务器用来重定向用户的地址，即 Callback URL
+    - 客户端 ID：对应 client 名称
+    - 客户端访问地址：用户完成登录并通过身份验证后，认证服务器用来重定向用户的地址，即 Callback URL
 
     ![创建 SSO 接入](../../images/sso2.png)
   
 3. 创建 SSO 接入成功后，在 __接入管理__ 管理列表，点击刚创建的客户端 ID 进入详情，
    复制客户端 ID、密钥和单点登录 URL 信息，填写至客户系统完成用户体系打通。
 
-   !!! note
+    !!! note
 
-    realm 名称为 ghippo。
+        realm 名称为 ghippo。
 
 
     ![接入管理详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/sso3.png)
