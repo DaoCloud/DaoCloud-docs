@@ -5,19 +5,17 @@
 
 </div>
 
-## :warning:警告
+## :warning:警告 {#warning}
 
 **这是一个由贡献者领导的实验性项目，目前不建议在生产环境中运行。**
 
 每个标签都可以正常工作，但在标签之间可能存在不兼容的更改。
 
-## 设计
+## 设计 {#design}
 
 [将 WasmCloud 与 Kubernetes 结合](https://docs.google.com/document/d/16p-9czZ6GT_layiabGE6HTyVpbYSALjoyxXhgIfYW0s/edit#heading=h.ymjg4q1g3smk)
 
-<div align="center"><img src="./arch.png" style="width:500px;" /></div>
-
-## 快速开始
+## 快速开始 {#quick-start}
 
 1. 部署 Nats
 
@@ -79,7 +77,7 @@
     {"body":[],"method":"GET","path":"/","query_string":""}
     ```
 
-## 路线图
+## 路线图 {#roadmap}
 
 - 添加 KasmCloudHost 资源
 - 为资源添加状态信息
@@ -88,6 +86,6 @@
 - 为 Actor 添加 DaemonSet 部署
 - Actors 和 Providers 的蓝/绿部署
 
-## 参考链接
+## 参考链接 {#reference}
 
 - [kasmcloud 仓库](https://github.com/wasmCloud/kasmcloud)
