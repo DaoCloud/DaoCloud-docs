@@ -12,6 +12,16 @@ providing convenience for users to learn about the evolution path and feature ch
 
 *[mspider]: Internal development codename for DaoCloud Service Mesh
 
+## 2024-09-27
+
+### v0.30.0
+
+- **Fixed** exception logging.
+- **Fixed** a null pointer issue with Istio resources.
+- **Fixed** resource removal not taking effect after disabling Istio synchronization in the working cluster.
+- **Fixed** the incorrect injectedMode status in WorkloadShadow.
+- **Improved** the backend's supported Istio version from v1.21.5 to v1.22.4, setting v1.22.4 as the default.
+
 ## 2024-09-02
 
 ### v0.29.0
@@ -64,12 +74,7 @@ providing convenience for users to learn about the evolution path and feature ch
 
 ### v0.27.0
 
-#### Features
-
 - **Added** `Istio` resource analysis to help identify resource configuration anomalies and improve user experience.
-
-#### Fixes
-
 - **Fixed** an issue where components were not uninstalled when removing a dedicated mesh.
 - **Fixed** an issue with abnormal mesh component detection.
 - **Fixed** an issue where reinstalling after uninstalling a hosted mesh might fail.
@@ -78,13 +83,8 @@ providing convenience for users to learn about the evolution path and feature ch
 
 ### v0.26.0
 
-#### Features
-
 - **Added** a feature of Istio Analyze.
 - **Added** controller for synchronizing Istio resources across worker clusters.
-
-#### Fixes
-
 - **Fixed** the absence of default sorting in network grouping list.
 - **Fixed** stop() exception in Istio resource synchronization.
 - **Fixed** an issue of `Istio analyze` not being able to resolve when all are valid.
@@ -131,13 +131,8 @@ providing convenience for users to learn about the evolution path and feature ch
 
 #### v0.23.0
 
-#### Features
-
 - **Added** monitoring dashboards for service and workload monitoring panels, including traffic distribution for upstream and downstream.
 - **Added** compatibility with `Istio` versions `v1.18.7`, `v1.19.6`, `v1.20.2`.
-
-#### Fixes
-
 - **Fixed** an issue where `Consumer` services could not be identified as `Dubbo` services when using `Dubbo` and `Zookeeper` simultaneously.
 - **Fixed** an issue with retrieval of valid `Istio` version list not being filtered based on cluster version.
 - **Fixed** an issue with inability to enable multi-cloud connectivity with `Istio` `v1.20`.
@@ -483,12 +478,7 @@ providing convenience for users to learn about the evolution path and feature ch
 
 ### v0.14.3
 
-#### Features
-
-- Frontend version upgraded to **v0.12.2** .
-
-#### Fixes
-
+- **Upgraded** frontend version to **v0.12.2** .
 - **Fixed** an issue where Istio resources with **.** could not be updated.
 - **Fixed** an issue where istio-proxy could not start normally in version 1.17.1.
 - **Fixed** an issue where the ingress gateway lacked a name, causing the merge to fail and preventing deployment.
