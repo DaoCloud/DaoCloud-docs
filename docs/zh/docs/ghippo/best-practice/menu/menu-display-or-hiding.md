@@ -15,7 +15,7 @@
 
 已开启基于权限显示/隐藏菜单的功能，开启方法如下：
 
-* 新安装的环境, 在 `helm install` 时增加 `--set global.navigatorVisibleDependency=true` 参数
+* 新安装的环境, 使用 `helm install` 时增加 `--set global.navigatorVisibleDependency=true` 参数
 * 已有环境，`helm get values ghippo -n ghippo-system -o yaml` 备份 values, 随后修改 bak.yaml 并添加 `global.navigatorVisibleDependency: true`
 
 ![开启菜单隐藏](../../images/menu1.png)
@@ -346,4 +346,3 @@ spec:
 效果如下，可以看到容器管理和可观测性的导航栏菜单：
 
 ![验证结果](../../images/menu4.png)
-

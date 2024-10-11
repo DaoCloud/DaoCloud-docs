@@ -47,4 +47,4 @@ hide:
 | 创建告警抑制规则：Create-AlertInhibition | AlertInhibition | |
 | 编辑告警抑制规则：Update-AlertInhibition | AlertInhibition | |
 | 删除告警抑制规则：Delete-AlertInhibition | AlertInhibition | |
-| 更新历史告警存储时间：Update-HistoricalAlertData | HistoricalAlertData | |
+| 更新系统配置：Update-SystemSettings | SystemSettings | |

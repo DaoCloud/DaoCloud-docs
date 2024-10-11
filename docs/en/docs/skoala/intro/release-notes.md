@@ -9,6 +9,40 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## 2024-09-30
+
+### v0.41.3
+
+#### New Features
+
+- **Added** support for non-secure requests when the domain is HTTPS.
+
+#### Fixes
+
+- **Fixed** an issue preventing the display of skoala-init installation status by namespace.
+- **Fixed** gateway statistics not aligning with expectations during multi-replica gateway operation.
+- **Fixed** an issue of missing CRDs during installation.
+- **Fixed** the offline image logic.
+- **Fixed** incomplete audit log records.
+- **Fixed** unexpected Nacos instance status when the hosting cluster becomes unavailable.
+- **Fixed** unexpected gateway instance status when the gateway cluster becomes unavailable.
+- **Fixed** the failure of HTTPS POST requests to the gateway API when debugging HTTP domains without skipping certificate verification.
+- **Fixed** incorrect logic in displaying gateway API policies.
+- **Fixed** unexpected Nacos instance status when the hosting instance's port is occupied.
+- **Fixed** the absence of Pod IPs in the gateway worker node instance list.
+
+#### Improvements
+
+- **Improved** certificate and token management logic.
+- **Improved** support for custom plugins in cloud-native microservices.
+- **Improved** the supported version of hosted Nacos from v2.4.0.1 to v2.4.1.
+
+## 2024-09-02
+
+### v0.40.1
+
+- **Fixed** an issue where the gateway could not be used when sharing LB VIP
+
 ## 2024-08-26
 
 ### v0.40.0
@@ -45,15 +79,11 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.39.4
 
-#### Fixes
-
 - **Fixed** an issue with the unavailability of managed Nacos namespace-related APIs
 
 ## 2024-08-15
 
 ### v0.39.3
-
-#### Fixes
 
 - **Fixed** an issue with the unavailability of managed Nacos namespace-related APIs
 
@@ -94,24 +124,17 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.39.2
 
-#### Fixes
-
 - **Fixed** an issue with incorrect display of gateway plugin names.
 - **Fixed** an issue where the distributed transaction component could not be edited due to incorrect database addresses.
 - **Fixed** an issue where managed Nacos instances could not be edited when deployed via NodePort if the port was occupied.
 - **Fixed** an issue where the Top 10 total request count data for gateway requests did not meet expectations.
 - **Fixed** an issue where the Sesame management component encountered errors when injecting the Istio Sidecar.
-
-#### Improvements
-
 - **Improved** compatibility with Istio v1.23.0.
 - **Improved** to resolve thread leakage issues in the Hive management component.
 
 ## 2024-07-31
 
 ### v0.39.1
-
-#### Fixes
 
 - **Fixed** an issue with the incorrect version of the Nacos image.
 
@@ -145,22 +168,15 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.38.2
 
-#### Fixes
-
 - **Fixed** an issue with the display of the Top 10 APIs in gateway statistics.
 
 ## 2024-06-25
 
 ### v0.38.1
 
-#### Features
-
 - **Added** gateway access to the registration center service supports auto-fill and multi-instance.
 - **Added** custom data for gateway logs.
 - **Added** API testing capabilities integrated within the gateway `API` documentation.
-
-#### Fixes
-
 - **Fixed** an issue with pulling offline package public images.
 
 ## 2024-06-25
@@ -182,8 +198,6 @@ Please follow these steps to manually update the gateway CRD files that need upg
 ## 2024-06-04
 
 ### v0.37.1
-
-#### Fixes
 
 - **Fixed** an issue with incorrect version display in Nacos managed details.
 - **Fixed** an issue with incorrect redirect link for microservice JVM monitoring.
@@ -230,8 +244,6 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.36.1
 
-#### Bug Fixes
-
 - **Fixed** missing permissions for cloud-native microservice traffic swimlane drainage rules
 - **Fixed** abnormal link information reporting after injecting gateway into the mesh sidecar
 
@@ -263,8 +275,6 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.35.2
 
-#### Fixes
-
 - **Fixed** an issue of inaccurate permissions in the microservice engine module in the global management
 - **Fixed** abnormal saving of global rate limiting in the gateway
 - **Fixed** abnormal memory configuration when creating a gateway
@@ -281,8 +291,6 @@ Please follow these steps to manually update the gateway CRD files that need upg
 ## 2024-04-03
 
 ### v0.35.1
-
-#### Fixes
 
 - **Fixed** error when creating a domain in the gateway
 - **Fixed** mismatch in managed Nacos resource checks
@@ -329,8 +337,6 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.33.4
 
-#### Fixes
-
 - **Fixed** logic related to native microservices
 - **Fixed** issue where traffic swim lane list does not refresh on initial load
 - **Fixed** incorrect display of Sentinel password
@@ -340,8 +346,6 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.33.3
 
-#### Fixes
-
 - **Fixed** logic related to cloud-native microservices
 - **Fixed** issues caused by changes in grid module API
 
@@ -349,12 +353,7 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.34.0
 
-#### Features
-
 - **Added** namespace information deployed by the gateway in gateway query port based on workbench requirements
-
-#### Improvements
-
 - **Improved** total number of gateway log pagination queries, limited to a maximum display of 10000 list log data
 - **Improved** error prompts for gateway log queries
 
@@ -362,23 +361,16 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.33.2
 
-#### Fixes
-
 - **Fixed** an issue with abnormal restart of gateway service component
 - **Fixed** an issue with abnormal export of gateway logs
 - **Fixed** an issue with incorrect display of status when the replica count of gateway workload is 0
 - **Fixed** an issue with gateway control plane not restarting application configuration when injecting sidecars to gateway
 - **Fixed** an issue with inconsistency between returned sidecar injection status and actual status in gateway list
-
-#### Improvements
-
 - **Improved** the latest SDK in the mesh module to fix logic related to cloud-native microservices interfaces
 
 ## 2024-01-30
 
 ### v0.33.1
-
-#### Fixes
 
 - **Fixed** a logic related to cascading deletion in Nacos
 
@@ -415,8 +407,6 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.31.2
 
-#### Fixes
-
 - **Fixed** an issue of missing protocol field display in the gateway API
 - **Fixed** an issue of abnormal managed resources due to address changes after cluster reconnection
 - **Fixed** an issue of incorrect statistics for abnormal gateway access
@@ -427,8 +417,6 @@ Please follow these steps to manually update the gateway CRD files that need upg
 ## 2023-12-26
 
 ### v0.31.1
-
-#### Fixes
 
 - **Fixed** an issue of missing log files for gateway management components
 
@@ -479,22 +467,15 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.30.2
 
-#### Fixes
-
 - **Fixed** an issue of multiple duplicate route records in the gateway API
 
 ## 2023-12-01
 
 ### v0.30.0
 
-#### Fixes
-
 - **Fixed** an issue with incorrect running status of gateway
 - **Fixed** status check issue with Nacos Operator
 - **Fixed** status check issue with edge instance of mesh service
-
-#### Improvements
-
 - **Improved** gateway-related APIs
 - **Improved** query logic for gateway logs to support custom field queries
 
@@ -522,8 +503,6 @@ Please follow these steps to manually update the gateway CRD files that need upg
 ### 2023-11-07
 
 #### v0.28.1
-
-##### Fixes
 
 - **Fixed** sorting issue in the gateway service list
 - **Fixed** multiple line break issue when importing gateway APIs
@@ -576,21 +555,15 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.27.2
 
-#### Fixes
-
 - **Fixed** Frontend updated to version 0.18.1, resolving UI issues
 
 ### v0.27.1
-
-#### Fixes
 
 - **Fixed** an issue of duplicate details in batch deletion response
 - **Fixed** Problem with sorting plugin information in cloud native microservices port list
 - **Fixed** an issue with abnormal display of traffic swimlane list
 - **Fixed** Inconsistent container names for frontend components
 - **Fixed** Some errors in Sentinel business application monitoring reports
-
-#### Improvements
 
 - **Improved** Upgraded Insight version to 0.19.2
 - **Improved** Upgraded Ghippo version to 0.20.0
@@ -656,8 +629,6 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.26.2
 
-#### Fixed
-
 - **Fixed** an issue with detection of `Consul` registry connectivity
 - **Fixed** an issue with gateway restarting due to abnormal application of plugins
 - **Fixed** an issue with abnormal configuration of gateway verification plugins
@@ -670,8 +641,6 @@ Please follow these steps to manually update the gateway CRD files that need upg
 ## 2023-07-26
 
 ### v0.26.1
-
-#### Fixes
 
 - **Fixed** an issue of incorrect version of the Agent component.
 
@@ -696,7 +665,7 @@ Please follow these steps to manually update the gateway CRD files that need upg
 - **Fixed** an issue of API exception when deleting non-empty services in Nacos.
 - **Fixed** an issue of duplicate data in gateway monitoring data.
 - **Fixed** an issue with the use of plugins in cloud native microservices related APIs.
-- **Fixed** the issues with gateway domain naming rules.
+- **Fixed** an issues with gateway domain naming rules.
 - **Fixed** an issue of incorrect version in cloud native microservice traffic lanes.
 
 #### Improvements
@@ -730,15 +699,11 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.24.2
 
-#### Fixes
-
 - **Fixed** page experience optimization and bug fixes.
 
 ## 2023-07-05
 
 ### v0.24.1
-
-#### Fixes
 
 - **Fixed** an issue of outdated versions in Skoala-init Chart form
 - **Fixed** page experience improvements and issues
@@ -747,18 +712,10 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.24.0
 
-#### Features
-
 - **Added** API for cloud native microservices plugins
 - **Added** cascading selection capability for permissions associated with middleware operations
-
-#### Fixes
-
 - **Fixed** data exception in Insight integration
 - **Fixed** abnormal filtering results for gateway status
-
-#### Improvements
-
 - **Improved** chain validation for gateway and related resource changes
 
 ## 2023-06-26
@@ -801,26 +758,16 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.22.2
 
-#### Fixes
-
 - **Fixed** an issues with Sentinel cluster flow control API
 - **Fixed** an issues with fuzzy query API for Sentinel rules
-
-#### Improvements
-
 - **Improved** default values for connecting to the database to increase fault tolerance
 
 ## 2023-05-29
 
 ### v0.22.1
 
-#### Fixes
-
 - Positions of plugin CRDs are not correc.
 - Issue related to OpenAPI publishing process.
-
-#### Improvements
-
 - Set default values for database of Hive component.
 
 ## 2023-05-26
@@ -869,28 +816,18 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.21.2
 
-#### Fixes
-
 - Sentinel monitoring dashboard.
 - Gateway being injected a service mesh sidecar.
 - Format of registry address for traditional microservices with service mesh enabled.
 - Data service instance is not filtered according to the cluster when selecting the hosted registry.
 - Incorrect registry statistics.
-
-#### Improvements
-
 - Update the Gateway component to the latest community test version.
 
 ## 2023-04-26
 
 ### v0.21.1
 
-#### Fixes
-
 - Cloud native microservice pagination
-
-#### Improvements
-
 - "disable Istio sidecar injection" for Nacos
 - Insight version to official v0.16.0
 - Retry mechanism of components accessing database
@@ -963,34 +900,26 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.19.4
 
-#### Fixes
-
-- Startup issues of managed Nacos
+- Fixed startup issues of managed Nacos
 
 ## 2023-04-10
 
 ### v0.19.3
 
-#### Fixes
-
-- Front-end problems
+- Fixed front-end issues
 
 ## 2023-04-04
 
 ### v0.19.2
 
-#### Fixes
-
-- Nacos and Sentinel verify account by default
-- Gateway API sorting in overview page
+- Fixed Nacos and Sentinel verify account by default
+- Fixed Gateway API sorting in overview page
 
 ## 2023-04-04
 
 ### v0.19.1
 
-#### Fixes
-
-- CVE-2022-31045
+- Fixed CVE-2022-31045
 - Plugin API
 - Gateway restart
 - Version cannot be updated when the plugin is updated
@@ -1230,5 +1159,3 @@ Please follow these steps to manually update the gateway CRD files that need upg
 - Error in pre-dependency check interface
 - Logical error of Sentinel matching Nacos default namespace
 - Logic error in handling port connected to the container management module is wrong
-
-*[Skoala]: The development name for the microservices in DaoCloud

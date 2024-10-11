@@ -2,7 +2,14 @@
 
 本页列出 Kafka 消息队列的 Release Notes，便于您了解各版本的演进路径和特性变化
 
-*[mcamel-kafka]: mcamel 是 DaoCloud 所有中间件的开发代号，kafka 
+*[mcamel-kafka]: mcamel 是 DaoCloud 所有中间件的开发代号，kafka
+
+## 2024-09-30
+
+### v0.19.0
+
+- **修复** 选择工作空间查询 Kafka 列表时权限泄漏的问题
+- **修复** 部分操作无审计日志的问题
 
 ## 2024-08-31
 

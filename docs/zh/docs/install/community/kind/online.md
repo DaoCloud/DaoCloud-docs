@@ -4,7 +4,7 @@
 
 !!! note
 
-    点击[在线安装社区版](../../../videos/install.md#3)可观看视频演示。
+    点击[在线安装社区版](../../../videos/install.md#_2)可观看视频演示。
 
 ## 准备工作
 
@@ -162,10 +162,10 @@ precheck pass..
 
 1. 在 kind 主机下载 dce5-installer 二进制文件。
 
-    假定 VERSION 为 v0.21.0
+    假定 VERSION 为 v0.22.0
 
     ```shell
-    export VERSION=v0.21.0
+    export VERSION=v0.22.0
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```

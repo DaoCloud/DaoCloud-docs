@@ -18,22 +18,22 @@ DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经
 
 === "可观测"
 
-    - [如何利用可观测性快速定位异常并排障？](../videos/use-cases.md#_5)
+    - [如何利用可观测性快速定位异常并排障？](../videos/use-cases.md#_6)
     
 === "流量治理"
 
-    - [如何将微服务接入 DCE 5.0 并治理南北向流量？](../videos/use-cases.md#dce-50_1)
-    - [如何借助服务网格治理传统微服务东西向流量？](../videos/use-cases.md#_3)
+    - [如何将微服务接入 DCE 5.0 并治理南北向流量？](../videos/use-cases.md#_3)
+    - [如何借助服务网格治理传统微服务东西向流量？](../videos/use-cases.md#_4)
 
 === "OEM IN 和 OUT"
 
-    - [如何将客户系统集成到 DCE 5.0？](../videos/use-cases.md#dce-50_3)
-    - [如何将 DCE 5.0 集成到客户系统？](../videos/use-cases.md#dce-50_2)
+    - [如何将客户系统集成到 DCE 5.0？](../videos/use-cases.md#dce-50oem-in)
+    - [如何将 DCE 5.0 集成到客户系统？](../videos/use-cases.md#dce-50-oem-out)
 
 === "网络和通信"
 
-    - [如何让传统应用上云后仍通过固定 IP 对外通信？](../videos/use-cases.md#ip)
-    - [如何实现应用加速与跨集群通信？](../videos/use-cases.md#_4)
+    - [如何让传统应用上云后仍通过固定 IP 对外通信？](../videos/use-cases.md#underlay-ip)
+    - [如何实现应用加速与跨集群通信？](../videos/use-cases.md#_5)
 
 === "CICD 和 GitOps"
 

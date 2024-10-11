@@ -9,7 +9,7 @@ This page explains how to install DCE Community package in a kind cluster online
 
 !!! note
 
-    Click [Online Installation of DCE Community](../../../videos/install.md#3) to watch the video tutorial.
+    Click [Online Installation of DCE Community](../../../videos/install.md#install-the-dce-community-online) to watch the video tutorial.
 
 ## Preparation
 
@@ -164,10 +164,10 @@ precheck pass...
 
 2. Download the `dce5-installer` binary file on the kind host.
 
-    Takve VERSION=v0.21.0 as an example:
+    Takve VERSION=v0.22.0 as an example:
 
     ```shell
-    export VERSION=v0.21.0
+    export VERSION=v0.22.0
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```

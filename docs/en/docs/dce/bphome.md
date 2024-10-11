@@ -119,7 +119,7 @@ and maintain containerized applications more efficiently and stably.
 
     - [Cross-Cluster Elastic Scaling](../kairship/best-practice/fhpa.md)
     - [One-Click Conversion from DCE 4.0 to DCE 5.0 Multicloud Applications](../kairship/best-practice/one-click-conversion.md)
-    - [Import VMware Virtual Machines to DCE 5.0](../virtnest/import/import-ubuntu.md)
+    - [Import VMware Virtual Machines to DCE 5.0](../virtnest/best-practice/import-ubuntu.md)
 
 </div>
 

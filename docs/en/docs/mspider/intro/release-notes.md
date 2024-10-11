@@ -12,6 +12,16 @@ providing convenience for users to learn about the evolution path and feature ch
 
 *[mspider]: Internal development codename for DaoCloud Service Mesh
 
+## 2024-09-27
+
+### v0.30.0
+
+- **Fixed** exception logging.
+- **Fixed** a null pointer issue with Istio resources.
+- **Fixed** resource removal not taking effect after disabling Istio synchronization in the working cluster.
+- **Fixed** the incorrect injectedMode status in WorkloadShadow.
+- **Improved** the backend's supported Istio version from v1.21.5 to v1.22.4, setting v1.22.4 as the default.
+
 ## 2024-09-02
 
 ### v0.29.0
@@ -64,12 +74,7 @@ providing convenience for users to learn about the evolution path and feature ch
 
 ### v0.27.0
 
-#### Features
-
 - **Added** `Istio` resource analysis to help identify resource configuration anomalies and improve user experience.
-
-#### Fixes
-
 - **Fixed** an issue where components were not uninstalled when removing a dedicated mesh.
 - **Fixed** an issue with abnormal mesh component detection.
 - **Fixed** an issue where reinstalling after uninstalling a hosted mesh might fail.
@@ -78,13 +83,8 @@ providing convenience for users to learn about the evolution path and feature ch
 
 ### v0.26.0
 
-#### Features
-
 - **Added** a feature of Istio Analyze.
 - **Added** controller for synchronizing Istio resources across worker clusters.
-
-#### Fixes
-
 - **Fixed** the absence of default sorting in network grouping list.
 - **Fixed** stop() exception in Istio resource synchronization.
 - **Fixed** an issue of `Istio analyze` not being able to resolve when all are valid.
@@ -131,13 +131,8 @@ providing convenience for users to learn about the evolution path and feature ch
 
 #### v0.23.0
 
-#### Features
-
 - **Added** monitoring dashboards for service and workload monitoring panels, including traffic distribution for upstream and downstream.
 - **Added** compatibility with `Istio` versions `v1.18.7`, `v1.19.6`, `v1.20.2`.
-
-#### Fixes
-
 - **Fixed** an issue where `Consumer` services could not be identified as `Dubbo` services when using `Dubbo` and `Zookeeper` simultaneously.
 - **Fixed** an issue with retrieval of valid `Istio` version list not being filtered based on cluster version.
 - **Fixed** an issue with inability to enable multi-cloud connectivity with `Istio` `v1.20`.
@@ -483,151 +478,131 @@ providing convenience for users to learn about the evolution path and feature ch
 
 ### v0.14.3
 
-#### Features
-
-- Frontend version upgraded to **v0.12.2** .
-
-#### Fixes
-
-- **Fixed** an issue where Istio resources with **.** could not be updated.
-- **Fixed** an issue where istio-proxy could not start normally in version 1.17.1.
-- **Fixed** an issue where the ingress gateway lacked a name, causing the merge to fail and preventing deployment.
+- **Upgraded** the frontend version to v0.12.2
+- **Fixed** an issue of not being able to update Istio resources with **.**
+- **Fixed** an issue where istio-proxy could not start properly in version 1.17.1
+- **Fixed** an issue of merge failure and deployment issues caused by missing name in ingress gateway
 
 ## 2023-03-30
 
 ### v0.14.0
 
-#### Features
+#### New Features
 
-- **Added** CloudShell related API definitions.
-- **Added** implementation for updating service labels.
-- **Added** services list and details now return labels.
-- **Added** CloudShell related implementations.
-- **Added** support for querying service labels in the service list.
-- **Added** a new API for updating service labels.
-- **Added** support for istio 1.17.1.
-- **Added** a new high-availability solution for etcd.
-- **Added** a scenario-based testing framework for testing scenario-based functions.
-- **Added** automatic adjustment of component resource configurations when selecting different mesh scales.
-- **Added** custom role implementation, supporting the creation, updating, deletion, binding, and unbinding of custom roles.
+- **Added** CloudShell related API definitions
+- **Added** implementation for updating service labels
+- **Added** service list and details to return labels
+- **Added** CloudShell related implementations
+- **Added** service list now supports querying service labels
+- **Added** a new API for updating service labels
+- **Added** support for Istio 1.17.1
+- **Added** a new etcd high availability solution
+- **Added** a scenario testing framework for testing scenario-based features
+- **Added** automatic adjustment of component resource configurations when selecting different grid scales
+- **Added** implementation for custom roles, supporting operations like creation, updating, deletion, binding, and unbinding of custom roles
 
 #### Improvements
 
-- **Improved** the mcpc controller startup logic to avoid situations where worker clusters are not correctly registered.
-- **Improved** the WorkloadShadow cleanup logic to be triggered by events instead of on a schedule; it triggers on controller startup, detection of changes in worker clusters, or changes in WorkloadShadow.
-- **Improved** the mcpc controller startup logic to avoid situations where worker clusters are not correctly registered.
-- **Upgraded** the Insight API to v0.14.7.
-- **Upgraded** ckube to support complex condition queries for labels.
-- **Removed** the time limit for Helm upgrades.
+- **Improved** mcpc controller startup logic to avoid situations where the working cluster is not registered correctly
+- **Improved** WorkloadShadow cleanup logic to trigger on event rather than on a timer. It will now clean up when the controller starts or detects changes in the working cluster. When WorkloadShadow changes, self-health checks will trigger cleanup if the corresponding workload does not exist.
+- **Improved** mcpc controller startup logic to prevent issues with incorrect registration of the working cluster
+- **Upgraded** Insight API to version v0.14.7
+- **Upgraded** ckube to support complex conditional queries for labels
+- **Removed** the Helm upgrade time limit
 
 #### Fixes
 
-- **Fixed** an issue where the interface did not display anything when the East-West gateway was not ready.
-- **Fixed** an issue where multi-cloud interconnection would automatically register the East-West gateway LB IP, potentially causing internal network issues (removed the `topology.istio.io/network` label from the East-West gateway instance, which would otherwise automatically register the East-West gateway).
-- **Fixed** an issue with migrating clusters that have East-West gateways, where the instance's label could not be modified (if needed, the component has to be deleted and recreated).
-- **Fixed** an issue where binding a Mesh to a workspace service would fail (displaying success in the UI).
-- **Fixed** an issue where detached namespaces existed in the virtual cluster due to anomalies, adding self-check and cleanup behavior on mcpc-controller startup.
-- **Fixed** an issue where updating the mesh via the controller caused the API to fail to deliver mesh configurations.
-- **Fixed** an issue where the TargetPort of ServicePort was not set correctly when creating a hosted mesh.
-- **Fixed** an issue with `GlobalMesh.Status.MeshVersion` being incorrectly overwritten.
-- **Fixed** an issue where mcpc-controller could not enable debug mode.
-- **Fixed** an issue where mcpc-controller could not trigger cluster deletion events.
-- **Fixed** an issue where deleting a Mesh and recreating a Mesh with the same name would cause the Mesh to fail to create properly (hosted proxy could not update correctly).
-- **Fixed** an issue where mcpc controller did not correctly modify the service of istiod-remote in some cases.
+- **Fixed** an issue where the interface would not display when the east-west gateway is not ready
+- **Fixed** an issue where multi-cloud interconnection would automatically register the east-west gateway LB IP, potentially causing internal network anomalies (removed the label `topology.istio.io/network` from the east-west gateway instance, which would automatically register the east-west gateway)
+- **Fixed** the error during cluster migration with the east-west gateway (unable to modify instance labels; if component labels need to be modified, components must be deleted and rebuilt)
+- **Fixed** an issue that caused Mesh binding to workspace services to fail (the interface displayed success)
+- **Fixed** an issue of orphaned namespaces in the virtual cluster due to exceptions, adding self-check and cleanup behavior when starting mcpc-controller
+- **Fixed** an issue of API failing to push grid configurations due to controller updating the grid
+- **Fixed** an issue where ServicePort's TargetPort was not set correctly when creating a managed grid
+- **Fixed** the incorrect override issue with `GlobalMesh.Status.MeshVersion`
+- **Fixed** an issue where mcpc-controller could not enable debug mode
+- **Fixed** an issue where mcpc-controller could not trigger cluster deletion events
+- **Fixed** an issue where deleting a Mesh and then recreating a Mesh with the same name would prevent proper creation of the Mesh (hosted proxy could not be updated correctly)
+- **Fixed** an issue where mcpc controller did not correctly modify the service of istiod-remote in certain cases
 
 ## 2023-02-28
 
-### v0.13.2
+### v0.13.1
 
-#### Features
+#### New Features
 
-- **Added** multi-cloud network interconnection management and related interfaces.
-- **Added** enhanced global configuration capabilities for meshes (mesh system configuration, global traffic governance capabilities, global sidecar injection settings).
-- **Added** support for zookeeper proxy.
+- **Added** multi-cloud network interconnection management and related interfaces
+- **Added** global configuration capabilities for the grid (grid system configuration, global traffic governance capabilities, global sidecar injection settings) enhancements
+- **Added** support for zookeeper proxy
 
 #### Improvements
 
-- **Improved** the Namespace controller by adding a cache to reduce redundant Get requests when there are too many namespaces in the cluster.
-- **Improved** to reduce the log output of ckube in normal mode.
+- **Improved** Namespace controller with Cache to reduce excessive duplicate Get requests when there are too many namespaces in the cluster
+- **Improved** reduced log output of ckube in normal mode
 
 #### Fixes
 
-- **Fixed** mesh-related logic errors caused by removing clusters from the container management platform.
-- **Fixed** an issue where RegProxy injected Sidecar would cause Nacos to fail to register.
-- **Fixed** an issue with incorrect recognition of Spring Cloud services.
-- **Fixed** an issue where the Cluster status was not synchronized with the container management platform.
-- **Fixed** an issue where the traffic passthrough policy - IP segment configuration did not take effect.
-- **Fixed** an issue where the traffic passthrough policy - traffic passthrough policy could not be deleted.
-- **Fixed** an issue where errors were returned when fetching mesh configurations due to non-existent configuration paths. 
+- **Fixed** logical errors related to the grid caused by the removal of clusters from the container management platform
+- **Fixed** an issue where injecting Sidecar with RegProxy would cause Nacos registration failures
+- **Fixed** an issue of incorrect service recognition in Spring Cloud
+- **Fixed** the lack of synchronization of cluster status information from the container management platform
+- **Fixed** the traffic pass-through strategy - IP segment configuration for traffic filtering not taking effect
+- **Fixed** the traffic pass-through strategy - inability to delete traffic pass-through strategies
+- **Fixed** an issue of returning errors when obtaining grid configurations due to non-existent configuration paths
 
-## 2023-01-31
-
-### v0.13.0
-
-#### Features
-
-- **Added** multicluster management feature.
-- **Added** Support for multicloud interconnection.
-- **Added** service dependency analysis and visualization feature.
-- **Added** new **dial** and **readinessProbe** options to endpoint slice.
-- **Added** service mesh security audit feature.
-- **Added** Istio 1.16.3 support.
-- **Added** support for customizing the Istiod configuration .
-
-#### Improvements
-
-- **Improved** the efficiency of MCPC controller synchronization.
-- **Improved** the performance of Istiod initialization.
-- **Improved** the **WorkloadShadow** module to reduce resource consumption.
-- **Improved** the **Mspider** version to improve stability.
-
-#### Removals
-
-- **Removed** Global cluster syncing logic.
-
-## 2022-12-31
-
-### v0.12.1
-
-#### Features
-
-- **Added** service mesh visualization feature.
-- **Added** support for exporting metrics to Grafana.
-- **Added** virtual machine mesh support.
-- **Added** Istio 1.16.2 support.
-- **Added** the **MeshExpansion** and **SidecarInjectorWebhook** components now support custom configuration.
-
-#### Improvements
-
-- **Improved** the performance of the MCPC controller.
-- **Improved** the handling of expired certificates in the mesh components.
-- **Improved** the **insight-api** version to improve stability.
-
-#### Fixes
-
-- **Fixed** an issue where the Istiod pod may fail to start due to a timing issue.
-- **Fixed** an issue where the **workloadLabels** field in Istio resources is not properly handled by the controller.
-- **Fixed** an issue where the **istioctl** command fails to connect to the Istio API server when running in a containerized environment.
-
-## 2022-11-30
+## 2022-12-29
 
 ### v0.12.0
 
-#### Features
+#### New Features
 
-- **Added** support for multi-tenancy.
-- **Added** Istio 1.16.1 support.
-- **Added** new **MeshExpansion** and **SidecarInjectorWebhook** components.
-- **Added** automatic sidecar injection feature.
-- **Added** support for customizing the Istiod configuration.
+- **Added** interface implementation for traffic pass-through functionality
+- **Added** support for Istio 1.15.4, 1.16.1
 
 #### Improvements
 
-- **Improved** the stability and performance of the MCPC controller.
-- **Improved** the **insight-api** version to improve stability.
+- **Improved** the management page of namespace sidecars by adding an "unset" sidecar policy to avoid cross-impact between namespace-level sidecar policies and workload-level policies
+- **Improved** parameters for release pipelines
+- **Improved** sidecar injection and resource limit logic to avoid synchronization issues
 
 #### Fixes
 
-- **Fixed** an issue where the Istiod pod may fail to start due to a timing issue.
-- **Fixed** an issue where the **workloadLabels** field in Istio resources is not properly handled by the controller.
-- **Fixed** an issue where the **istioctl** command fails to connect to the Istio API server when running in a containerized environment.
+- **Fixed** an issue where some components were not updated after a grid upgrade
+- **Fixed** an issue of some resources not being cleared after grid removal - sidecar resource synchronization was incorrect, now using the actual sidecar resources from the istio-proxy container in the Pod
+- **Fixed** an issue where managed clusters could not act as working clusters
+- **Fixed** an issue where the injection display was incorrect when the sidecar injection instances were at 0/0
+- **Fixed** an issue where sidecar-related information still displayed after canceling sidecar injection
+
+## 2022-11-30
+
+### v0.11.1
+
+#### New Features
+
+- **Added** **Key Management** related APIs
+- **Added** rules and gateway lists in virtual services
+- **Added** governance strategy labels and related filtering capabilities
+- **Added** the ability to check the health status of clusters within the grid
+- **Added** integration with otel sdk
+- **Added** multiple interface implementations for secrets
+- **Added** support for Istio 1.15.3
+
+#### Improvements
+
+- **Improved** the workload sidecar injection interface to prevent issues
+- **Improved** the monitoring dashboard for grid services to expand by default
+- **Improved** to disable sub-link redirection in the global monitoring dashboard of the grid to avoid interface confusion
+- **Improved** the processing flow of the grid control plane to avoid conflicts caused by updating already updated objects
+- **Improved** the logic for accessing and removing clusters in the grid
+
+#### Fixes
+
+- **Fixed** an issue where mcpc and other components were not updated after upgrading the control plane MSpider
+- **Fixed** errors in obtaining cluster resources
+- **Fixed** an issue where the response code was 200 when the cluster name did not exist in the cluster namespace list interface
+- **Fixed** an issue of incorrect precondition checks in the grid upgrade process
+- **Fixed** an issue of grid upgrades not executing k8s version restrictions
+- **Fixed** an issue of invalid workload sidecar resource configuration in the sidecar management interface
+- **Fixed** an issue where clusters could not be removed due to monitoring detection failures within the grid
+- **Fixed** an issue where the data plane image was not packaged into the DCE 5.0 offline package
+- **Fixed** an issue where Ckube could not automatically update configurations

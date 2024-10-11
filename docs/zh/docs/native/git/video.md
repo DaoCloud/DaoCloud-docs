@@ -189,7 +189,7 @@
 
 视频确认没问题之后就可以上传到 UCloud 对象存储，你会拿到一个 `https://` 开头的链接。
 
-然后在 Markdown 中使用以下语法，发布到[视频中心](../../../videos/index.md)。
+然后在 Markdown 中使用以下语法，发布到[视频中心](../../videos/index.md)。
 
 ```html
 <div class="responsive-video-container">

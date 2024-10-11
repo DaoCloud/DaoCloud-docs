@@ -132,13 +132,13 @@ spec:
   iconUrl: ./ui/baize/logo.svg
   isCustom: false
   localizedName:
-    en-US: Intelligent Engine
+    en-US: AI Lab
     zh-CN: AI Lab
   menus:
     - iconUrl: ''
       isCustom: false
       localizedName:
-        en-US: Intelligent Engine
+        en-US: AI Lab
         zh-CN: AI Lab
       name: workspace-view
       order: 1

@@ -82,15 +82,15 @@ DCE 5.0 商业版包含以下模块，按需即插即用满足各类应用场景
 | 容器管理 | 管理集群、节点、工作负载、Helm 应用、CRD、命名空间等 K8s 核心功能 | [v0.13](../../kpanda/intro/release-notes.md#v013) |
 | 可观测性 | 提供丰富的仪表盘、场景监控、数据查询、告警等图文信息 | [v0.12](../../insight/intro/releasenote.md#v012) |
 | 应用工作台 | 基于容器的 DevOps 应用平台，支持 Jenkins, Tekton, GitOps 等流水线作业 | [v0.10](../../amamba/intro/release-notes.md#v010) |
-| 多云编排 | 集中管理多云、混合云、跨云资源的应用编排，具备多云灾备、故障恢复等能力 | [v0.4](../../kairship/intro/release-notes.md#v04) |
-| 微服务引擎 | 提供注册发现、服务治理、配置管理、微服务网关等治理能力 | [v0.12](../../skoala/intro/release-notes.md#v012) |
-| 服务网格 | 基于 Istio 开源技术构建的面向云原生应用的下一代服务网格 | [v0.11](../../mspider/intro/release-notes.md#v011) |
-| 中间件 Elasticsearch | 目前首选的全文搜索引擎 | [v0.3](../../middleware/elasticsearch/release-notes.md#v03) |
-| 中间件 Kafka | 基于开源软件 Kafka 提供的分布式消息队列服务 | [v0.1](../../middleware/kafka/release-notes.md#v01) |
-| 中间件 MinIO | 一款非常热门的轻量、开源对象存储方案 | [v0.1](../../middleware/minio/release-notes.md#v01) |
-| 中间件 MySQL | 应用最广泛的开源关系数据库 | [v0.4](../../middleware/mysql/release-notes.md#v04) |
-| 中间件 RabbitMQ | 实现了高级消息队列协议 (AMQP) 的开源消息代理软件 | [v0.6](../../middleware/rabbitmq/release-notes.md#v06) |
-| 中间件 Redis | 一款内存数据库缓存服务 | [v0.3](../../middleware/redis/release-notes.md#v03) |
+| 多云编排 | 集中管理多云、混合云、跨云资源的应用编排，具备多云灾备、故障恢复等能力 | [v0.4](../../kairship/intro/release-notes.md#v040) |
+| 微服务引擎 | 提供注册发现、服务治理、配置管理、微服务网关等治理能力 | [v0.12](../../skoala/intro/release-notes.md#v0122) |
+| 服务网格 | 基于 Istio 开源技术构建的面向云原生应用的下一代服务网格 | [v0.11](../../mspider/intro/release-notes.md#v0111) |
+| 中间件 Elasticsearch | 目前首选的全文搜索引擎 | [v0.3](../../middleware/elasticsearch/release-notes.md#v032) |
+| 中间件 Kafka | 基于开源软件 Kafka 提供的分布式消息队列服务 | [v0.1](../../middleware/kafka/release-notes.md#v0100) |
+| 中间件 MinIO | 一款非常热门的轻量、开源对象存储方案 | [v0.1](../../middleware/minio/release-notes.md#v0100) |
+| 中间件 MySQL | 应用最广泛的开源关系数据库 | [v0.4](../../middleware/mysql/release-notes.md#v040) |
+| 中间件 RabbitMQ | 实现了高级消息队列协议 (AMQP) 的开源消息代理软件 | [v0.6](../../middleware/rabbitmq/release-notes.md#v061) |
+| 中间件 Redis | 一款内存数据库缓存服务 | [v0.3](../../middleware/redis/release-notes.md#v040) |
 | 镜像仓库 | 用于存储 K8s、DevOps 和容器应用开发的镜像 | [发布说明](../../kangaroo/intro/release-notes.md) |
 | 网络 | 针对不同的 Linux 内核，支持多种 CNI 组合方案 | [发布说明](../../network/intro/releasenotes.md) |
 | 存储 | 提供统一数据存储服务，支持文件、对象、块、本地存储，轻松接入存储厂商方案 | [发布说明](../../storage/hwameistor/releasenotes.md) |
