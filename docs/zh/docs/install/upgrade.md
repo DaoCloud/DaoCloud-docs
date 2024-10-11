@@ -175,7 +175,6 @@ Global Flags:
     - DCE 5.0 产品功能模块（gproduct）
     - 基础设施模块（infrastructure）
     - 本地存储模块（hwameistor）
-    - 中间件模块（middleware）
 - 如果需要一起升级产品功能模块和基础设施模块，则可以指定参数 `--upgrade infrastructure,gproduct`
 - 安装器 v0.12.0 支持了 `--multi-arch` 参数，主要是用户在当前环境存在多架构镜像时，进行升级过程中添加该参数可以避免覆盖原有的多架构镜像。
 
