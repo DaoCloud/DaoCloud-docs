@@ -26,7 +26,7 @@ We welcome any form of feedback. Thank you 🙏
 
 ### Create and use datasets
 
-Refer to the [Create Datasets](../baize/developer/dataset/create.md) document.
+Refer to the [Create Datasets](../baize/developer/dataset/create-use-delete.md) document.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/dataset.jpg"></video>

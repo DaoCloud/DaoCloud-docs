@@ -10,7 +10,7 @@
     推理能力的支持与 AI Lab 的版本有关，请查阅 [Release Notes](../../intro/release-notes.md) 了解最新版本并及时更新。
 
 您可以在 AI Lab 中使用经过 DCE 5.0 验证过的 GPU 类型；
-更多细节参阅 [GPU 支持矩阵](../../../kpanda/user-guide/gpu/gpu-metrics.md)。
+更多细节参阅 [GPU 支持矩阵](../../../kpanda/user-guide/gpu/gpu_matrix.md)。
 
 ![点击创建](../../images/inference-interface.png)
 
