@@ -117,7 +117,7 @@ hide:
 
     - [跨集群弹性伸缩](../kairship/best-practice/fhpa.md)
     - [DCE 4.0 一键转换为 DCE 5.0 多云应用](../kairship/best-practice/one-click-conversion.md)
-    - [将 VMWare 虚拟机导入到 DCE 5.0](../virtnest/import/import-ubuntu.md)
+    - [将 VMWare 虚拟机导入到 DCE 5.0](../virtnest/best-practice/import-ubuntu.md)
 
 </div>
 
