@@ -94,7 +94,7 @@ DCE 5.0 Enterprise includes the following modules, which can be used on-demand t
 | Middleware Redis | An in-memory database caching service. | [0.15.0](../../middleware/redis/release-notes.md#v0150) |
 | Container Regisry | Used to store images for K8s, DevOps, and container application development. | [0.15.0](../../kangaroo/intro/release-notes.md#v0150) |
 | Networking | Supports multiple CNI combination solutions for different Linux kernels. | [0.13.0](../../network/intro/releasenotes.md) |
-| Storage | Provides unified data storage services, supporting file, object, block, and local storage, easily integrating with storage vendor solutions. | [v0.14.1](../../storage/hwameistor/releasenotes.md) |
+| Storage | Provides unified data storage services, supporting file, object, block, and local storage, easily integrating with storage vendor solutions. | [v0.14.1](../../storage/hwameistor/releasenotes.md#v0141) |
 
 ## More
 

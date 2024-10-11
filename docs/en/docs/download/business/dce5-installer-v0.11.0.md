@@ -94,9 +94,9 @@ which are plug-and-play to meet various application scenarios:
 | Middleware MySQL | The most widely used open-source relational database. | [0.11.0](../../middleware/mysql/release-notes.md#v0110) |
 | Middleware RabbitMQ | Open-source message broker software implementing the Advanced Message Queuing Protocol (AMQP). | [0.13.0](../../middleware/rabbitmq/release-notes.md#v0130) |
 | Middleware Redis | In-memory database caching service. | [0.11.0](../../middleware/redis/release-notes.md#v0110) |
-| Container Repository | Used for storing images for K8s, DevOps, and container application development. | [0.11.0](../../kangaroo/intro/release-notes.md) |
-| Networking | Supports various CNI combinations for different Linux kernels. | [0.9.0](../../network/intro/releasenotes.md) |
-| Storage | Provides unified data storage services, supporting file, object, block, and local storage with easy integration of storage vendor solutions. | [v0.10.8](../../storage/hwameistor/releasenotes.md) |
+| Container Registry | Used for storing images for K8s, DevOps, and container application development. | [0.11.0](../../kangaroo/intro/release-notes.md#v0110) |
+| Networking | Supports various CNI combinations for different Linux kernels. | [0.9.0](../../network/intro/releasenotes.md#v090) |
+| Storage | Provides unified data storage services, supporting file, object, block, and local storage with easy integration of storage vendor solutions. | [v0.10.8](../../storage/hwameistor/releasenotes.md#v0110) |
 
 ## More
 
