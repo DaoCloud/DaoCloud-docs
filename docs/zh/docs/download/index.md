@@ -77,7 +77,6 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | 管理 | 全局管理 | 458.30 MB | [:arrow_right: 下载页](./modules/ghippo.md) | 2024-09-29 |
 | | 运营管理 | 96.41 MB | [:arrow_right: 下载页](./modules/gmagpie.md) | 2024-09-29 |
 
-
 !!! note
 
     - 升级子模块之后，可能需要重新灌入 License 并激活。
