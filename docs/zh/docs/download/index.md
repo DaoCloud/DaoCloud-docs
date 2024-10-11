@@ -49,38 +49,33 @@ DCE 5.0 针对不同的应用场景提供了完善的 Addon，您可以按需下
 
 DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行升级。
 
-| 模块 | 文件大小 | 下载 | 更新日期 |
-| ---- | ------- | ----- | --------- |
-| 应用工作台 | 394.25 MB | [:arrow_right: 下载页](./modules/amamba.md) | 2024-10-11 |
-| 容器管理 | 674.33 MB | [:arrow_right: 下载页](./modules/kpanda.md) | 2024-10-08 |
-| 集群巡检 | 174.30 MB | [:arrow_right: 下载页](./modules/kcollie.md) | 2024-09-29 |
-| 应用备份 | 85.06 MB | [:arrow_right: 下载页](./modules/kcoral.md) | 2024-09-29 |
-| 安全管理 | 167.29 MB | [:arrow_right: 下载页](./modules/dowl.md) | 2023-11-26 |
-| 网络模块 | 63.76 MB | [:arrow_right: 下载页](./modules/spidernet.md) | 2024-09-26 |
-| 存储模块 | 1.62 GB | [:arrow_right: 下载页](./modules/hwameistor.md)| 2023-11-06 |
-| 多云编排 | 663.57 MB | [:arrow_right: 下载页](./modules/kairship.md) | 2024-10-09 |
-| 镜像仓库 | 304.16 MB | [:arrow_right: 下载页](./modules/kangaroo.md) | 2024-10-11 |
-| 可观测性 | 2.21 GB | [:arrow_right: 下载页](./modules/insight.md) | 2024-10-11 |
-| 微服务引擎| 1.66 GB | [:arrow_right: 下载页](./modules/skoala.md) | 2024-09-25 |
-| 服务网格 | 1.04 GB | [:arrow_right: 下载页](./modules/mspider.md) | 2024-09-27 |
-| 云边协同 | 107 MB | [:arrow_right: 下载页](./modules/kant.md) | 2024-09-03 |
-| 全局管理 | 458.30 MB | [:arrow_right: 下载页](./modules/ghippo.md) | 2024-09-29 |
-| 运营管理 | 96.41 MB | [:arrow_right: 下载页](./modules/gmagpie.md) | 2024-09-29 |
-| 虚拟机 | 1.43 GB | [:arrow_right: 下载页](./modules/virtnest.md) | 2024-09-29 |
-
-DCE 5.0 还提供了各种精选中间件：
-
-| 中间件 | 文件大小 | 下载 | 更新日期 |
-|-------| ------- | ---- | ------ |
-| Elasticsearch |970.83 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) |2024-10-08|
-| Kafka |990.23 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2024-10-08|
-| MinIO |226.79 MB| [:arrow_right: 下载页](./modules/middleware/minio.md) |2024-10-08|
-| MongoDB |376.08 MB| [:arrow_right: 下载页](./modules/middleware/mongodb.md) |2024-10-08|
-| MySQL |1.64 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md) |2024-10-08|
-| PostgreSQL |1.83 GB| [:arrow_right: 下载页](./modules/middleware/postgresql.md) |2024-10-08|
-| RabbitMQ |180.08 MB| [:arrow_right: 下载页](./modules/middleware/rabbitmq.md) |2024-10-08|
-| Redis |698.25 MB| [:arrow_right: 下载页](./modules/middleware/redis.md) |2024-10-08|
-| RocketMQ |599.39 MB| [:arrow_right: 下载页](./modules/middleware/rocketmq.md) |2024-10-08|
+| 频道 | 模块 | 文件大小 | 下载 | 更新日期 |
+| --- | ---- | ------ | ---- | ------ |
+| 工作台 | 应用工作台 | 394.25 MB | [:arrow_right: 下载页](./modules/amamba.md) | 2024-10-11 |
+| 容器 | 容器管理 | 674.33 MB | [:arrow_right: 下载页](./modules/kpanda.md) | 2024-10-08 |
+| | 集群巡检 | 174.30 MB | [:arrow_right: 下载页](./modules/kcollie.md) | 2024-09-29 |
+| | 应用备份 | 85.06 MB | [:arrow_right: 下载页](./modules/kcoral.md) | 2024-09-29 |
+| | 安全管理 | 167.29 MB | [:arrow_right: 下载页](./modules/dowl.md) | 2023-11-26 |
+| | 多云编排 | 663.57 MB | [:arrow_right: 下载页](./modules/kairship.md) | 2024-10-09 |
+| | 镜像仓库 | 304.16 MB | [:arrow_right: 下载页](./modules/kangaroo.md) | 2024-10-11 |
+| | 云原生网络 | 63.76 MB | [:arrow_right: 下载页](./modules/spidernet.md) | 2024-09-26 |
+| | 云原生存储 | 1.62 GB | [:arrow_right: 下载页](./modules/hwameistor.md)| 2023-11-06 |
+| | 虚拟机 | 1.43 GB | [:arrow_right: 下载页](./modules/virtnest.md) | 2024-09-29 |
+| 微服务 | 可观测性 | 2.21 GB | [:arrow_right: 下载页](./modules/insight.md) | 2024-10-11 |
+| | 微服务引擎| 1.66 GB | [:arrow_right: 下载页](./modules/skoala.md) | 2024-09-25 |
+| | 服务网格 | 1.04 GB | [:arrow_right: 下载页](./modules/mspider.md) | 2024-09-27 |
+| 中间件 | Elasticsearch |970.83 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) |2024-10-08|
+| | Kafka |990.23 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2024-10-08|
+| | MinIO |226.79 MB| [:arrow_right: 下载页](./modules/middleware/minio.md) |2024-10-08|
+| | MongoDB |376.08 MB| [:arrow_right: 下载页](./modules/middleware/mongodb.md) |2024-10-08|
+| | MySQL |1.64 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md) |2024-10-08|
+| | PostgreSQL |1.83 GB| [:arrow_right: 下载页](./modules/middleware/postgresql.md) |2024-10-08|
+| | RabbitMQ |180.08 MB| [:arrow_right: 下载页](./modules/middleware/rabbitmq.md) |2024-10-08|
+| | Redis |698.25 MB| [:arrow_right: 下载页](./modules/middleware/redis.md) |2024-10-08|
+| | RocketMQ |599.39 MB| [:arrow_right: 下载页](./modules/middleware/rocketmq.md) |2024-10-08|
+| 边缘计算 | 云边协同 | 107 MB | [:arrow_right: 下载页](./modules/kant.md) | 2024-09-03 |
+| 管理 | 全局管理 | 458.30 MB | [:arrow_right: 下载页](./modules/ghippo.md) | 2024-09-29 |
+| | 运营管理 | 96.41 MB | [:arrow_right: 下载页](./modules/gmagpie.md) | 2024-09-29 |
 
 !!! note
 
