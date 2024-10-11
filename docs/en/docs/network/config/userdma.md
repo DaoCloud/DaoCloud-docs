@@ -37,8 +37,8 @@ DCE 5.0 provides three methods for RDMA passthrough. See [RDMA Usage Comparison]
     - Network Resource Parameters:
       
         - When using RDMA based on Macvlan/VLAN CNI, the resource name is the custom name created in
-          [RDMA Installation and Preparation](install/rdmapara.md) when creating Spiderpool. For more information,
-          please refer to [Exposing RoCE NIC based on Macvlan/IPVLAN](rdmapara.md#exposing-roce-network-card-based-on-macvlan-ipvlan).
+          [RDMA Installation and Preparation](../modules/spiderpool/install/rdmapara.md) when creating Spiderpool. For more information,
+          please refer to [Exposing RoCE NIC based on Macvlan/IPVLAN](../modules/spiderpool/install/rdmapara.md#exposing-roce-network-card-based-on-macvlan-ipvlan).
 
         - When using RDMA based on SRIOV CNI, the resource name is the `resourceName` defined in
           `SriovNetworkNodePolicy`. For more information, please refer to [Using RoCE NIC based on SR-IOV](../modules/spiderpool/install/rdmapara.md#using-roce-network-card-based-on-sr-iov).

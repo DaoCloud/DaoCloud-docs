@@ -28,13 +28,13 @@
 
     - 网络资源参数：
       
-        - 基于 Macvlan/VLAN CNI 使用 RDMA 时，资源名称为 [RDMA 安装及使用准备](install/rdmapara.md) 中创建 Spiderpool 时
-          自定义名称，详情参考 [基于 Macvlan/IPVLAN 共享 ROCE 网卡](rdmapara.md/#macvlan-ipvlan-roce)
+        - 基于 Macvlan/VLAN CNI 使用 RDMA 时，资源名称为 [RDMA 安装及使用准备](../modules/spiderpool/install/rdmapara.md)中创建 Spiderpool 时
+          自定义名称，详情参考 [基于 Macvlan/IPVLAN 共享 ROCE 网卡](../modules/spiderpool/install/rdmapara.md#macvlan-ipvlan-roce)
 
         - 基于 SRIOV CNI 使用 RDMA 时，资源名称为 `SriovNetworkNodePolicy` 中定义的 `resourceName`。
           详情参考[基于 SRI-OV 使用 ROCE 网卡](../modules/spiderpool/install/rdmapara.md#sr-iov-roce)。
     
-        示例中的`spidernet.io/mellnoxrdma` 为 __基于 SRIOV 使用 RoCE 网卡__ 的示例。请求值和限制值目前保持一致，输入值不大于最大可用值。
+        示例中的 `spidernet.io/mellnoxrdma` 为 __基于 SRIOV 使用 RoCE 网卡__ 的示例。请求值和限制值目前保持一致，输入值不大于最大可用值。
         
     - 运行命令：为防止 Pod 启动异常退出， 添加如下运行命令:
     
