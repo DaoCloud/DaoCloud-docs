@@ -40,7 +40,7 @@ spec:
 
     ![基本配置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/authorize02.png)
 
-3. 按屏幕提示进行策略设置后，点击 __确定__ 。参阅[策略设置参数说明](./params.md#_10)。
+3. 按屏幕提示进行策略设置后，点击 __确定__ 。参阅[策略设置参数说明](./params.md#_9)。
 
     ![策略设置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/authorize03.png)
 
