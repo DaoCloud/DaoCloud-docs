@@ -93,7 +93,7 @@ DCE 5.0 Enterprise includes the following modules, which can be used on-demand t
 | Middleware RabbitMQ | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP). | [0.20.0](../../middleware/rabbitmq/release-notes.md#v0200) |
 | Middleware Redis | An in-memory database caching service. | [0.18.0](../../middleware/redis/release-notes.md#v0180) |
 | Container Regisry | Used to store images for K8s, DevOps, and container application development. | [0.18.1](../../kangaroo/intro/release-notes.md#v0181) |
-| Networking | Supports multiple CNI combination solutions for different Linux kernels. | [0.15.0](../../network/intro/releasenotes.md) |
+| Networking | Supports multiple CNI combination solutions for different Linux kernels. | [0.15.0](../../network/intro/releasenotes.md#v0150) |
 | Storage | Provides unified data storage services, supporting file, object, block, and local storage, easily integrating with storage vendor solutions. | [v0.14.6](../../storage/hwameistor/releasenotes.md#v0146) |
 
 ## More

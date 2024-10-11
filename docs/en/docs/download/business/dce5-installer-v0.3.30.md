@@ -84,7 +84,7 @@ The DCE 5.0 Enterprise includes the following modules, which are plug-and-play t
 | Container Management | Manage K8s core features such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.14](../../kpanda/intro/release-notes.md#v014) |
 | Insight | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [v0.13](../../insight/intro/releasenote.md#v013) |
 | Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [v0.12](../../amamba/intro/release-notes.md#v012) |
-| Multicloud Management | Centralized management of application orchestration of multicloud, hybrid cloud, and cross-cloud resources, with multicloud disaster recovery and fault recovery capabilities | [v0.5](../../kairship/intro/release-notes.md# v05) |
+| Multicloud Management | Centralized management of application orchestration of multicloud, hybrid cloud, and cross-cloud resources, with multicloud disaster recovery and fault recovery capabilities | [v0.5](../../kairship/intro/release-notes.md#v050) |
 | Microservice Engine | Provide registration discovery, service governance, configuration management, microservice gateway and other governance capabilities | [v0.16](../../skoala/intro/release-notes.md#v0160) |
 | Service Mesh | A next-generation service mesh for cloud native applications based on Istio open source technology | [v0.12](../../mspider/intro/release-notes.md#v0120) |
 | Middleware Elasticsearch | A popular full-text search engine | [v0.4](../../middleware/elasticsearch/release-notes.md#v040) |

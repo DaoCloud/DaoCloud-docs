@@ -79,6 +79,8 @@ so that you can understand the evolution path and feature changes of each versio
 
 ## 2023-11-30
 
+### v0.14.0
+
 - **Added** support for audit logs
 - **Added** differentiated configuration result display for workloads
 - **Added** support for creating workloads from YAML, allowing batch creation of multiple resources
@@ -88,28 +90,21 @@ so that you can understand the evolution path and feature changes of each versio
 
 ## 2023-10-31
 
-### v0.13
+### v0.13.0
 
 - **Fixed** an issue where corresponding Pods cannot be viewed when viewing svc.
 - **Fixed** an issue of being unable to delete member clusters after enabling metricAdaptor.
 
 ## 2023-08-31
 
-### v0.12
+### v0.12.0
 
 - **Added** support for [Cross-Cluster Horizontal Pod Autoscaling (FHPA)](../best-practice/fhpa.md).
 - **Fixed** an issue of continuous restart of kairship-apiserver.
 
-## 2023-08-31
-
-### v0.12
-
-- **Added** support for cross-cluster horizontal pod autoscaling (FHPA)
-- **Fixed** an issue of continuous restarts of kairship-apiserver
-
 ## 2023-07-31
 
-### v0.11
+### v0.11.0
 
 - **Added** support for viewing event information in resource details.
 - **Improved** the Karmada Operator project for the community edition of the cluster.
@@ -235,7 +230,7 @@ Sure! Here is the revised text with the requested style change:
 
 ## 2022-12-25
 
-### v0.5
+### v0.5.0
 
 #### New Features
 
@@ -269,7 +264,7 @@ Sure! Here is the revised text with the requested style change:
 
 ## 2022-11-25
 
-### v0.4
+### v0.4.0
 
 - **Added** prometheus metrics and opentelemetry tracing.
 - **Added** display of corresponding cluster list after specifying region when creating workloads.
@@ -280,7 +275,7 @@ Sure! Here is the revised text with the requested style change:
 
 ## 2022-10-21
 
-### v0.3
+### v0.3.0
 
 #### New Features
 
@@ -304,7 +299,7 @@ Sure! Here is the revised text with the requested style change:
 
 ## 2022-09-25
 
-### v0.2
+### v0.2.0
 
 - **Added** interface for querying scheduling times.
 - **Added** multicloud service ConfigMap management interface.
@@ -319,7 +314,7 @@ Sure! Here is the revised text with the requested style change:
 
 ## 2022-08-21
 
-### v0.1
+### v0.1.0
 
 #### New Features
 
