@@ -17,8 +17,8 @@ Here are the general steps to use Virtnest:
 1. [Install the virtnest-agent component](../install/virtnest-agent.md) within the cluster.
 2. [Build the required virtual machine images](../vm-image/index.md) and push them to
     Docker Registry or another container registry.
-3. [Create virtual machines using the images](../vm/index.md) or [create virtual machines using YAML](../vm/index.md#yaml).
-4. [Access the virtual machines](../vm/access.md) via VNC/console.
+3. [Create virtual machines using the images](../quickstart/index.md) or [create virtual machines using YAML](../quickstart/index.md#create-with-yaml).
+4. [Access the virtual machines](../quickstart/nodeport.md) via VNC/console.
 5. View the list of virtual machines and detailed information about each one.
 6. Perform necessary operations such as start/stop, restart, clone, [snapshot](../vm/snapshot.md),
    restore from snapshot, and [live migration](../vm/live-migration.md) as needed.

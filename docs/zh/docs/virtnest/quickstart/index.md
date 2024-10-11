@@ -68,7 +68,7 @@
     |  Ubuntu  | Ubuntu 22.04 | release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1 |
     |  Debian  |  Debian 12   | release-ci.daocloud.io/virtnest/system-images/debian-12-x86_64:v1    |
 
-3. 镜像密钥：仅支持默认（Opaque）类型密钥，具体格式请参考[创建密钥](create-secret.md)。
+3. 镜像密钥：仅支持默认（Opaque）类型密钥，具体格式请参考[创建密钥](../vm/create-secret.md)。
 
     平台内置镜像存储在点火集群中，而点火集群的镜像仓库未加密，因此当选择内置镜像时，无需选择密钥。
 

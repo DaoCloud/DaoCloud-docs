@@ -45,7 +45,7 @@ kubectl -n your-namespace describe vm your-vm
 
 ![创建虚拟机报错二](../images/createvm-error02.png)
 
-解决办法：[升级节点操作系统内核](../install/install-dependency.md#315)
+解决办法：[升级节点操作系统内核](../install/install-dependency.md)
 
 ### VM 创建成功但无法使用
 
