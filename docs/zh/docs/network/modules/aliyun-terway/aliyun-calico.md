@@ -1,13 +1,14 @@
-# 阿里云运行 Calico 
+# 阿里云运行 Calico
 
 本文将介绍如何在阿里云自建集群上，安装使用 [Calico](https://github.com/projectcalico/calico) 作为集群 CNI。
 
 ## 安装集群
 
-在阿里云上准备好一套自建 Kubernetes 集群，或按照 [搭建 Kubernetes 集群](usage.md#搭建Kubernetes集群) 文档手动搭建一套集群。 集群安装完成之后，下载 Calico 的部署清单文件:
+在阿里云上准备好一套自建 Kubernetes 集群，或按照[搭建 Kubernetes 集群](usage.md#kubernetes)文档手动搭建一套集群。
+集群安装完成之后，下载 Calico 的部署清单文件:
 
 ```shell
-$ wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
+wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
 ```
 
 > 推荐使用以下命令加速镜像拉取: `sed -i 's?docker.io?docker.m.daocloud.io?g' calico.yaml`
@@ -16,10 +17,12 @@ $ wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/
 
 ## 隧道模式(IPIP)
 
-Vxlan 和 IPIP 协议不依赖底层网络，通过封装构建一个大二层覆盖网络以实现网络连通，所以能够运行在大多数公有云上，此模式不依赖 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)。Calico 部署清单文件默认使用 IPIP 模式，使用以下命令安装:
+Vxlan 和 IPIP 协议不依赖底层网络，通过封装构建一个大二层覆盖网络以实现网络连通，所以能够运行在大多数公有云上，
+此模式不依赖 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)。
+Calico 部署清单文件默认使用 IPIP 模式，使用以下命令安装:
 
 ```shell
-$ kubectl apply -f calico.yaml
+kubectl apply -f calico.yaml
 ```
 
 等待安装完成:
@@ -85,7 +88,8 @@ Content-Length: 153
 * host-local: 非常简单的 IPAM，从节点的 PodCIDR 中分配 IP, 分配的数据存放于本地磁盘, 无其他 IPAM 能力
 * Spiderpool: 提供非常强大的 IPAM 能力，支持按节点分配 IP、支持固定 IP、多网卡分配 IP 等高级特性
 
-在介绍如何使用之前，需要先安装 [CCM 组件](https://github.com/AliyunContainerService/alicloud-controller-manager)，参考 [安装 CCM 文档](usage.md#安装CCM组件，发布VPC路由), 并且切换 Calico 为非隧道模式，修改 calico-node daemonSet 部署清单文件中以下几个环境变量为 Never:
+在介绍如何使用之前，需要先安装 [CCM 组件](https://github.com/AliyunContainerService/alicloud-controller-manager)，
+参考[安装 CCM 文档](usage.md#ccm-vpc)，并且切换 Calico 为非隧道模式，修改 calico-node daemonSet 部署清单文件中以下几个环境变量为 Never:
 
 ```yaml
 # Enable IPIP

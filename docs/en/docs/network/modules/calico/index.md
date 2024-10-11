@@ -11,8 +11,6 @@ Powered by iptables, Calico provides rich and flexible network policies, securin
 
     Calico literally means tabby cats, or cats with three colors as its logo shown below.
 
-    
-
 ## Calico Components
 
 Calico is composed of the following components, some of which are optional when deploying.

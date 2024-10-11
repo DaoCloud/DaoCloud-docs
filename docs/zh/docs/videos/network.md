@@ -13,8 +13,8 @@
 - :five: [MetalLB 的安装与使用](#metallb)
 - :six: [kdoctor 的安装与使用](#kdoctor)
 - :seven: [在阿里云环境运行 Spiderpool](#spiderpool)
-- :eight: [自建集群安装 EgressGateway](#_EgressGateway)
-- :nine: [如何使用 RDMA](#_RDMA)
+- :eight: [自建集群安装 EgressGateway](#egressgateway)
+- :nine: [如何使用 RDMA](#rdma)
 
 </div>
 

@@ -6,7 +6,7 @@
 
 ## 安装集群
 
-在阿里云上准备好一套自建 Kubernetes 集群，或按照 [搭建 Kubernetes 集群](usage.md#搭建Kubernetes集群) 文档手动搭建一套集群。
+在阿里云上准备好一套自建 Kubernetes 集群，或按照[搭建 Kubernetes 集群](usage.md#kubernetes)文档手动搭建一套集群。
 
 ## 安装 Cilium
 
@@ -26,11 +26,13 @@ rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 
 ### Tunnel 模式
 
-Cilium tunnel 模式支持 Vxlan(默认) 和 Geneve 协议，这类似 Calico 的隧道模式。在这种模式下，Cilium 不关系底层网络如何实现，也不需要跟它们对接。通过 Vxlan 等协议将 Pod 网络虚拟化一个二层覆盖网络，然后接入到主机网络，所以
-在这种模式下，Cilium 不依赖类似 CCM 等插件发布 Pod 的路由。所以在这个模式下，您不需要安装 CCM。使用下面的命令安装:
+Cilium tunnel 模式支持 Vxlan（默认）和 Geneve 协议，这类似 Calico 的隧道模式。
+在这种模式下，Cilium 不关系底层网络如何实现，也不需要跟它们对接。
+通过 Vxlan 等协议将 Pod 网络虚拟化一个二层覆盖网络，然后接入到主机网络，
+所以在这种模式下，Cilium 不依赖类似 CCM 等插件发布 Pod 的路由。所以在这个模式下，您不需要安装 CCM。使用下面的命令安装:
 
 ```shell
-cilium install 
+cilium install
 ```
 
 > 所有参数都为默认情况下，Cilium 基于 Vxlan 协议封装 Pod 数据包
@@ -79,9 +81,10 @@ Content-Length: 151
 
 ### Native 模式
 
-Cilium 支持在阿里云上运行 Native 模式，在此模式下，Pod 网络直接对接底层网络，没有额外封装，所以性能相对较好。但需要依赖 CCM 组件发布 Pod 子网路由到 VPC 网络，另外 Cilium 需要做一些特殊配置, 参考以下命令:
+Cilium 支持在阿里云上运行 Native 模式，在此模式下，Pod 网络直接对接底层网络，没有额外封装，所以性能相对较好。
+但需要依赖 CCM 组件发布 Pod 子网路由到 VPC 网络，另外 Cilium 需要做一些特殊配置, 参考以下命令:
 
-> 安装 CCM，参考 [安装CCM文档](usage.md#安装CCM组件，发布VPC路由)
+> 安装 CCM，参考 [安装CCM文档](usage.md#ccm-vpc)
 
 ```shell
 cilium install --set ipam.mode=kubernetes --set routingMode=native --set ipv4NativeRoutingCIDR=10.244.0.0/16 
