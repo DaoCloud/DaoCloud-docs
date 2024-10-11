@@ -1,6 +1,6 @@
 # 组件部署
 
-在 DCE 5.0 的安装器 v0.17.0 之后商业版安装时可以同步安装智算能力模块，
+在 DCE 5.0 的安装器 v0.17.0 之后商业版安装时可以同步安装 AI Lab 模块，
 **无需自行安装** ；请联系交付支持团队获取商业版安装包。
 
 ## baize 全局服务集群
@@ -47,14 +47,14 @@
 
 ### Helm 安装 baize-agent
 
-确保全局服务集群内已经安装了智算能力组件，可以通过在管理界面查看是否有智算能力模块。
+确保全局服务集群内已经安装了 AI Lab 组件，可以通过在管理界面查看是否有 AI Lab 模块。
 
 !!! info
 
     需要在一级导航栏有 `AI Lab` 入口，保障管理组件部署成功。
 
     ```bash
-    # baize 是智算能力组件的开发代号
+    # baize 是 AI Lab 组件的开发代号
     helm repo add baize https://release.daocloud.io/chartrepo/baize
     helm repo update baize
     helm search repo baize # 获取最新的版本编号
