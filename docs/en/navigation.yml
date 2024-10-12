@@ -1359,15 +1359,16 @@ nav:
                   - Cluster Inspection: download/modules/kcollie.md
                   - Application Backup: download/modules/kcoral.md
                   - Security: download/modules/dowl.md
+                  - MultiCloud Management: download/modules/kairship.md
+                  - Container Registry: download/modules/kangaroo.md
                   - Network: download/modules/spidernet.md
                   - Storage: download/modules/hwameistor.md
                   - Virtual Machine: download/modules/virtnest.md
-              - MultiCloud Management: download/modules/kairship.md
-              - Container Registry: download/modules/kangaroo.md
-              - Insight: download/modules/insight.md
-              - Ipavo: download/modules/ipavo.md
-              - Microservice Engine: download/modules/skoala.md
-              - Service Mesh: download/modules/mspider.md
+              - Microservice:
+                  - Insight: download/modules/insight.md
+                  - Ipavo: download/modules/ipavo.md
+                  - Microservice Engine: download/modules/skoala.md
+                  - Service Mesh: download/modules/mspider.md
               - Middleware:
                   - Elasticsearch: download/modules/middleware/elasticsearch.md
                   - Kafka: download/modules/middleware/kafka.md

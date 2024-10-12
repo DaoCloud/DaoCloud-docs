@@ -8,8 +8,9 @@ nav:
               - 申请社区免费体验: dce/license0.md
               - 功能和优势: dce/features.md
               - 适用场景: dce/scenario.md
-              - K8s 认证服务商: dce/kcsp.md
+              - 我们是 K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - 20240930 版本发布: dce/dce-rn/20240930.md
                   - 20240830 版本发布: dce/dce-rn/20240830.md
                   - 20240730 版本发布: dce/dce-rn/20240730.md
                   - 20240630 版本发布: dce/dce-rn/20240630.md
@@ -1408,15 +1409,16 @@ nav:
                   - 集群巡检: download/modules/kcollie.md
                   - 应用备份: download/modules/kcoral.md
                   - 安全管理: download/modules/dowl.md
+                  - 多云编排: download/modules/kairship.md
+                  - 镜像仓库: download/modules/kangaroo.md
                   - 网络模块: download/modules/spidernet.md
                   - 存储模块: download/modules/hwameistor.md
                   - 虚拟机: download/modules/virtnest.md
-              - 多云编排: download/modules/kairship.md
-              - 镜像仓库: download/modules/kangaroo.md
-              - 可观测性: download/modules/insight.md
-              - 仪表盘: download/modules/ipavo.md
-              - 微服务引擎: download/modules/skoala.md
-              - 服务网格: download/modules/mspider.md
+              - 微服务:
+                  - 可观测性: download/modules/insight.md
+                  - 仪表盘: download/modules/ipavo.md
+                  - 微服务引擎: download/modules/skoala.md
+                  - 服务网格: download/modules/mspider.md
               - 中间件:
                   - Elasticsearch: download/modules/middleware/elasticsearch.md
                   - Kafka: download/modules/middleware/kafka.md
