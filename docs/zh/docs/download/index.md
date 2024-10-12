@@ -63,7 +63,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | | 虚拟机 | 1.43 GB | [:arrow_right: 下载页](./modules/virtnest.md) | 2024-09-29 |
 | 微服务 | 可观测性 | 2.21 GB | [:arrow_right: 下载页](./modules/insight.md) | 2024-10-11 |
 | | 微服务引擎| 1.66 GB | [:arrow_right: 下载页](./modules/skoala.md) | 2024-09-25 |
-| | 服务网格 | 1.04 GB | [:arrow_right: 下载页](./modules/mspider.md) | 2024-09-27 |
+| | 服务网格 | 1.04 GB | [:arrow_right: 下载页](./modules/mspider.md) | 2024-10-11 |
 | 中间件 | Elasticsearch |970.83 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) |2024-10-08|
 | | Kafka |990.23 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2024-10-08|
 | | MinIO |226.79 MB| [:arrow_right: 下载页](./modules/middleware/minio.md) |2024-10-08|
