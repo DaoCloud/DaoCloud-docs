@@ -1414,6 +1414,7 @@ nav:
               - 多云编排: download/modules/kairship.md
               - 镜像仓库: download/modules/kangaroo.md
               - 可观测性: download/modules/insight.md
+              - 仪表盘: download/modules/ipavo.md
               - 微服务引擎: download/modules/skoala.md
               - 服务网格: download/modules/mspider.md
               - 中间件:
