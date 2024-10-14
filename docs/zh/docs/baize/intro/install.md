@@ -3,17 +3,17 @@
 在 DCE 5.0 的安装器 v0.17.0 之后商业版安装时可以同步安装 AI Lab 模块，
 **无需自行安装** ；请联系交付支持团队获取商业版安装包。
 
-## baize 全局服务集群
+## 全局服务集群
 
-> 此管理模块仅在[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)安装即可
+> AI Lab 模块仅需安装在[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)
 
-使用下方链接，打开全局服务集群，然后在 __Helm 应用__ -> __Helm 模板__ 找到 `baize` 执行安装步骤。
+打开全局服务集群，然后在 __Helm 应用__ -> __Helm 模板__ 找到 `baize` 执行安装步骤。
 
 !!! note "注意事项"
 
-    * 命名空间 Namespace 为 `baize-system`
+    * 命名空间为 `baize-system`
     * 替换环境地址后打开 `<YOUR_DCE_HOST>/kpanda/clusters/kpanda-global-cluster/helm/charts/addon/baize`
-    * 注意 `kpanda-global-cluster` 全局服务集群名称
+    * `kpanda-global-cluster` 是全局服务集群名称
 
 ## baize-agent 工作集群
 
@@ -21,7 +21,7 @@
 
     如果在 AI Lab 中对应的集群无法选择或提示缺少 `baize-agent`，也就是该工作集群的组件并未成功部署。
 
-注意：在每个有算力资源的工作集群内，需要部署对应的基础组件，主要组件包含：
+在每个有算力资源的工作集群内，需要部署对应的基础组件，主要组件包含：
 
 * `gpu-operator` 初始化集群中的 GPU 资源，**这部分会因 GPU 资源类型安装方式不同**，
   详情参考 [GPU 管理](../../kpanda/user-guide/gpu/index.md)
@@ -37,13 +37,81 @@
 
 > baize-agent 需要在工作集群部署。
 
-按照下方提示，进入工作集群，然后在 __Helm 应用__ -> __Helm 模板__ 找到 `baize` 执行安装步骤。
+按照下方提示，进入工作集群，然后在 __Helm 应用__ -> __Helm 模板__ 找到 `baize-agent` 执行安装步骤。
 
 !!! note "注意事项"
 
-    * 命名空间 Namespace 为 `baize-system`
+    * 命名空间为 `baize-system`
     * 替换环境地址后打开 `<YOUR_DCE_HOST>/kpanda/clusters/<cluster_name>/helm/charts/addon/baize`
-    * 注意 `<cluster_name>` 是对应工作集群的名称
+    * `cluster_name` 是对应工作集群的名称
+
+![Install baize-agent](../images/agent-helm.png)
+
+YAML 示例：
+
+```yaml
+cluster-controller:
+  image:
+    registry: ''
+    repository: baize/baize-cluster-controller
+    tag: v0.4.1
+global:
+  cluster:
+    schedulers: []
+  config:
+    cluster_name: ''
+    dataset_job_spec: {}
+    inference_config:
+      triton_image: m.daocloud.io/nvcr.io/nvidia/tritonserver:24.01-py3
+      triton_images_map:
+        VLLM: m.daocloud.io/nvcr.io/nvidia/tritonserver:24.01-vllm-python-py3
+  debug: false
+  high_available: false
+  imagePullPolicy: IfNotPresent
+  imagePullSecrets: []
+  imageRegistry: release.daocloud.io
+  prod: baize-agent
+  resources: {}
+kubeRbacProxy:
+  image:
+    registry: ''
+    repository: baize/kube-rbac-proxy
+    tag: v0.8.0
+kueue:
+  enablePlainPod: false
+  fullnameOverride: kueue
+  image:
+    registry: ''
+    repository: baize/kueue
+    tag: v0.6.2
+loader:
+  image:
+    registry: ''
+    repository: baize/baize-data-loader
+    tag: v0.4.1
+notebook:
+  image:
+    registry: ''
+    repository: baize/baize-notebook
+    tag: v0.4.1
+notebook-controller:
+  image:
+    registry: ''
+    repository: baize/notebook-controller
+    tag: v1.8.0
+priority:
+  high:
+    value: 100000
+  low:
+    value: 1000
+  medium:
+    value: 10000
+training-operator:
+  image:
+    registry: ''
+    repository: baize/training-operator
+    tag: v1-5525468
+```
 
 ### Helm 安装 baize-agent
 
