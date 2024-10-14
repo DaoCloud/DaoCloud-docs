@@ -6,6 +6,13 @@
 - [选择一个集群](#_3)
 - [确定自己的角色](#_4)
 
+另请参阅：
+
+- [开发控制台快速入门](../developer/quick-start.md)
+- [平台管理员运维管理](../oam/index.md)
+- [AI Lab 最佳实践](../best-practice/deploy-nfs-in-worker.md)
+- [AI Lab 故障排查](../troubleshoot/index.md)
+
 ## 选择工作空间
 
 首次进入 DCE 5.0 AI Lab 时，首先必须选择一个[工作空间](../../ghippo/user-guide/workspace/workspace.md)。
@@ -22,7 +29,7 @@
 
 ## 选择集群
 
-您可以选择在哪个集群部署和执行AI Lab相关的操作。
+您可以选择在哪个集群部署和执行 AI Lab 相关的操作。
 
 ![选择集群](../images/cluster.png)
 
@@ -49,8 +56,9 @@
 
 DCE 5.0 AI Lab 提供了两种角色，可以点击左下角的菜单项切换两种管理员角色：
 
-- 管理员 - 开发控制台：可以处理 Notebook、训练任务和数据集等
-- 平台管理员 - 运维管理：可以管理 GPU 资源、队列等
+- 管理员 - 开发控制台：可以处理 Notebook、训练任务和数据集等。
+  参阅[开发控制台快速入门](../developer/quick-start.md)。
+- 平台管理员 - [运维管理](../oam/index.md)：可以管理 GPU 资源、队列等
 
 每个角色都有一个概览页面，通过图形仪表展示当前可以处理的数据。
 
