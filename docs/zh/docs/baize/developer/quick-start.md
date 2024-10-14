@@ -1,16 +1,16 @@
-# 快速入门
+# 开发控制台快速入门
 
 本文提供了简单的操作手册以便用户使用 DCE 5.0 AI Lab 进行数据集、Notebook、任务训练的整个开发、训练流程。
 
-点击 **数据管理** -> **数据集列表** ，选择 **创建** ，分别创建以下三个数据集。
-
 ## 准备数据集
+
+点击 **数据管理** -> **数据集** ，选择 **创建** 按钮，分别创建以下三个数据集。
 
 ### 数据集：训练代码
 
 - 代码数据源：[https://github.com/d-run/drun-samples.git](https://github.com/d-run/drun-samples.git)，主要是一个简单的 Tensorflow 代码。
-- 国内慢可以使用 gitee 加速：[https://gitee.com/samzong_lu/training-sample-code.git](https://gitee.com/samzong_lu/training-sample-code.git)
-- 代码路径在 `tensorflow/tf-fashion-mnist-sample` 下。
+- 如果是中国境内的用户，可以使用 Gitee 加速：[https://gitee.com/samzong_lu/training-sample-code.git](https://gitee.com/samzong_lu/training-sample-code.git)
+- 代码路径为 `tensorflow/tf-fashion-mnist-sample`
 
 ![训练代码的数据集](../images/baize-01.png)
 
@@ -20,10 +20,10 @@
 
 ### 数据集：训练数据
 
-本次训练使用的数据：[https://github.com/zalandoresearch/fashion-mnist.git](https://github.com/zalandoresearch/fashion-mnist.git)，
+本次训练使用的数据为 [https://github.com/zalandoresearch/fashion-mnist.git](https://github.com/zalandoresearch/fashion-mnist.git)，
 这是 Fashion-MNIST 数据集。
 
-国内慢可以使用 Gitee 加速：[https://gitee.com/samzong_lu/fashion-mnist.git](https://gitee.com/samzong_lu/fashion-mnist.git)
+如果是中国境内的用户，可以使用 Gitee 加速：[https://gitee.com/samzong_lu/fashion-mnist.git](https://gitee.com/samzong_lu/fashion-mnist.git)
 
 ![训练数据的数据集](../images/baize-02.png)
 
@@ -75,6 +75,6 @@ AI Lab 支持将 PVC 作为数据集的数据源类型，所以你可以创建�
 
     ![提交训练任务](../images/othera.png)
 
-成功创建任务后，在左侧导航栏点击 **任务分析** ，可以查看任务状态并对任务训练进行调优。
+1. 成功创建任务后，在左侧导航栏点击 **任务分析** ，可以查看任务状态并对任务训练进行调优。
 
-![查看任务](../images/baize-07.png)
+    ![查看任务](../images/baize-07.png)
