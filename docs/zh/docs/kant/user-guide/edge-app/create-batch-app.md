@@ -51,43 +51,30 @@
     
         > 设置 GPU 配额之前，需要管理员预先在集群节点上安装 GPU 卡及驱动插件，并在[集群设置](../../../kpanda/user-guide/clusterops/cluster-settings.md)中开启 GPU 特性。
 
-
-        ![填写容器配置](../../images/create-app-03.png)
-
     === "生命周期（选填）"
 
         设置容器启动时、启动后、停止前需要执行的命令。
         详情可参考容[容器生命周期配置](../../../kpanda/user-guide/workloads/pod-config/lifecycle.md)。
-
-        ![生命周期](../../images/create-app-04.png)
 
     === "健康检查（选填）"
 
         用于判断容器和应用的健康状态，有助于提高应用的可用性。
         详情可参考[容器健康检查配置](../../../kpanda/user-guide/workloads/pod-config/health-check.md)。
 
-        ![健康检查](../../images/create-app-05.png)
-
     === "环境变量（选填）"
 
         配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。
         详情可参考[容器环境变量配置](../../../kpanda/user-guide/workloads/pod-config/env-variables.md)。
-
-        ![环境变量](../../images/create-app-06.png)
 
     === "数据存储（选填）"
 
         配置容器挂载数据卷和数据持久化的设置。
         详情可参考[容器数据存储配置](../../../kpanda/user-guide/workloads/pod-config/env-variables.md)。
 
-        ![数据存储](../../images/create-app-07.png)
-
     === "安全设置（选填）"
 
         通过 Linux 内置的账号权限隔离机制来对容器进行安全隔离。您可以通过使用不同权限的账号 UID（数字身份标记）来限制容器的权限。
         例如，输入 0 表示使用 root 账号的权限。
-
-        ![安全设置](../../images/create-app-08.png)
 
 5. 填写高级配置
 
