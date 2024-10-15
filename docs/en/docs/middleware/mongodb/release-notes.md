@@ -9,6 +9,15 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 *[Mcamel-MongoDB]: "mcamel" is the dev name for DaoCloud's middlewares, and "MongoDB" is a database middleware that provides services for documentation
 
+## 2024-09-30
+
+### v0.14.0
+
+- **Improved** the default service type of Express nodes in new instances during backup restoration to NodePort
+- **Fixed** an issue with permission leakage when querying the MongoDB list by selecting a workspace
+- **Fixed** an issue with missing audit logs for certain operations
+- **Fixed** an issue with the failure to restore MongoDB
+
 ## 2024-08-31
 
 ### v0.13.0
@@ -57,8 +66,6 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 ## 2024-01-31
 
 ### v0.7.0
-
-#### Improvements
 
 - **Added** display of MongoDB version in global management
 

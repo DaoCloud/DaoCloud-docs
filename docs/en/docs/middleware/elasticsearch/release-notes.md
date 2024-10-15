@@ -9,12 +9,19 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 *[mcamel-elasticsearch]: "mcamel" is the dev name for DaoCloud's middlewares, and "elasticsearch" is the middleware for distributed search and analytics services
 
+## 2024-09-30
+
+### v0.21.0
+
+- **Added** support for selecting HTTPS / HTTP protocol when creating instances
+- **Fixed** an issue where some audit logs are missing for certain operations
+- **Fixed** an issue with the failure to manage Elasticsearch instances created by the installer
+
 ## 2024-08-31
 
 ### v0.20.0
 
 - **Improved** the process so that abnormal clusters cannot be selected when creating instances
-
 
 ## 2024-07-31
 
@@ -48,8 +55,6 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 ### v0.14.0
 
-#### Improvements
-
 - **Improved** Support for Chinese Dashboard in Elasticsearch instances
 - **Improved** Added display of Elasticsearch version in global management
 
@@ -57,15 +62,11 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 ### v0.13.0
 
-#### Improvements
-
 - **Fixed** an issue where validation for special characters in input fields was not working when creating instances.
 
 ## 2023-11-30
 
 ### v0.12.0
-
-#### Improvements
 
 - **Added** support for recording operation audit logs
 - **Improved** prompt when instance list information is not obtained
@@ -73,8 +74,6 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 ### 2023-10-31
 
 #### v0.11.0
-
-##### Improvements
 
 - **Added** offline upgrade functionality
 - **Added** restart functionality for instances
@@ -84,8 +83,6 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 ### v0.10.0
 
-#### Improvements
-
 - **Improved** syntax compatibility for KindBase
 - **Improved** default anti-affinity configuration on the creation page
 - **Improved** page display during operator creation process
@@ -94,29 +91,20 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 ### v0.9.3
 
-#### New features
-
 - **Added** access restrictions for UI interface
 
 ## 2023-06-30
 
 ### v0.9.0
 
-#### New features
-
 - **Added** anti-affinity configuration for __mcamel-elasticsearch__ nodes
 - **Added** monitoring charts for __mcamel-elasticsearch__ , removing interfering elements and adding time range selection
-
-#### Improvements
-
 - **Improved** closed-loop installation of __mcamel-elasticsearch__ ServiceMonitor
 - **Fixed** the monitoring charts for __mcamel-elasticsearch__ , removing interfering elements and adding time range selection
 
 ## 2023-05-30
 
 ### v0.8.0
-
-#### New features
 
 - **Added** integrationg with the global management audit log module for __mcamel-elasticsearch__ 
 - **Added** configurable instance monitoring data collection interval for __mcamel-elasticsearch__ 
@@ -126,13 +114,8 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 ### v0.5.1
 
-#### New features
-
 - **Added** __mcamel-elasticsearch__ details page displays related events
 - **Added** __mcamel-elasticsearch__ supports custom roles
-
-#### Improvements
-
 - **Improved** __mcamel-elasticsearch__ scheduling strategy adds a sliding button
 - **Fixed** __mcamel-elasticsearch__ may interrupt the retry problem when managing clusters
 
@@ -140,14 +123,9 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 ### v0.6.0
 
-#### New features
-
 - **Added** __mcamel-elasticsearch__ supports middleware traces adaptation
 - **Added** Enable traces according to parameter configuration when installing __mcamel-elasticsearch__ 
 - **Added** __mcamel-elasticsearch__ Kibana supports LoadBalancer type
-
-#### Upgrade
-
 - **Upgraded** golang.org/x/net to v0.7.0
 - **Upgraded** GHippo SDK to v0.14.0
 
@@ -164,7 +142,6 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Added** __mcamel-elasticsearch__ supports viewing logs
 - **Added** __mcamel-elasticsearch__ Operator docking with chart-syncer
 - **Added** __mcamel-elasticsearch__ supports LB
-
 - **Added** log view operation instructions, support custom query, export and other features
 
 #### Upgrade
@@ -220,29 +197,19 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 ### v0.3.4
 
-#### New features
-
 - **Added** sync pod status to instance details page
 - **Added** interface to get user list
 - **Added** support arm architecture
-
-#### Improvements
-
 - **Improved** workspace interface logic adjustment
 - **Improved** Style adjustments that do not conform to design specifications
 - **Improved** password acquisition logic adjustment
 - **Improved** cpu&memory request amount should be less than limit logic adjustment
 - **Improved** The instance version does not allow modification, the drop-down box should be text
-
-#### Fixes
-
 - **Fixed** Update the instance service settings, confirm that there is no response, and cannot be submitted
 
 ## 2022-9-25
 
 ### v0.3.2
-
-#### New features
 
 - **Added** pagination feature to the list page
 - **Added** the feature of modifying the configuration
