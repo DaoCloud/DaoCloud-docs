@@ -34,12 +34,11 @@ sudo dockerd -s overlay2 --storage-opt overlay2.size=1G
 
 ### 操作流程
 
-1. 登陆目标节点，查看 fstab 文件，获取当前设备的挂载情况。
+1. 登录目标节点，查看 fstab 文件，获取当前设备的挂载情况。
 
-    ```yaml
+    ```shell
     $ cat /etc/fstab
     
-    #
     # /etc/fstab
     # Created by anaconda on Thu Mar 19 11:32:59 2020
     #
@@ -55,29 +54,30 @@ sudo dockerd -s overlay2 --storage-opt overlay2.size=1G
 
 2. 配置 xfs 文件系统使用 pquota 方式挂载。
 
-    a. 修改 fstab 文件，将挂载方式从 defaults 更新为 rw,pquota；
+    1. 修改 fstab 文件，将挂载方式从 defaults 更新为 rw,pquota；
 
-    ```yaml
-    # 修改 fstab 配置
-    $ vi /etc/fstab
-    - /dev/mapper/centos-root /                       xfs     defaults         0 0
-    + /dev/mapper/centos-root /                       xfs     rw,pquota        0 0
- 
-    # 验证配置是否有误
-    $ mount -a
-    ```
+        ```shell
+        # 修改 fstab 配置
+        $ vi /etc/fstab
+        - /dev/mapper/centos-root /                       xfs     defaults         0 0
+        + /dev/mapper/centos-root /                       xfs     rw,pquota        0 0
+    
+        # 验证配置是否有误
+        $ mount -a
+        ```
 
-    b. 查看 pquota 是否生效
+    1. 查看 pquota 是否生效
 
-    ```shell
-    xfs_quota -x -c print
-    ```
+        ```shell
+        xfs_quota -x -c print
+        ```
 
-    ![看看 fstab 配置](../images/limit-disk-usage-docker-01.png)
+        ![看看 fstab 配置](../images/limit-disk-usage-docker-01.png)
 
     !!! note
 
-        如果 pquota 未生效，请检查操作系统是否开启 pquota 选项，如果未开启，需要在系统引导配置 /etc/grub2.cfg 中添加：rootflags=pquota 参数，配置完成后，需要 reboot 重启操作系统。
+        如果 pquota 未生效，请检查操作系统是否开启 pquota 选项，如果未开启，需要在系统引导配置 /etc/grub2.cfg
+        中添加 `rootflags=pquota` 参数，配置完成后，需要 reboot 重启操作系统。
 
     ![操作系统开启 pquota 选项](../images/limit-disk-usage-docker-02.png)
 
@@ -87,7 +87,7 @@ sudo dockerd -s overlay2 --storage-opt overlay2.size=1G
 
     !!! note
 
-        也可以基于 kubean manifest 操作，在 vars conf 里添加 docker_storage_options 参数。
+        也可以基于 kubean manifest 操作，在 vars conf 里添加 `docker_storage_options` 参数。
 
         ```yaml
         apiVersion: v1

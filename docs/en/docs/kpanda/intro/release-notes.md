@@ -696,7 +696,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2023-02-27
 
-### v0.15
+### v0.15.0
 
 #### Features
 
@@ -730,7 +730,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2022-12-29
 
-### v0.14
+### v0.14.0
 
 #### Features
 
@@ -771,7 +771,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2022-11-29
 
-### v0.13
+### v0.13.0
 
 #### Features
 
@@ -813,7 +813,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2022-10-28
 
-### v0.10
+### v0.10.0
 
 #### Features
 

@@ -15,7 +15,7 @@ After creating a custom pipeline, the pipeline stages need to be defined manuall
 - [Create a custom pipeline](create/custom.md), and need to add two string parameters in the build parameters. These parameters will be used in the image build command. The parameters are described as follows:
 
      | Parameter Type | Parameter Name | Description |
-     | -------- | -------- | ------------------------------- ------------------ |
+     | -------------- | -------------- | ----------- |
      | String | registry | Mirror registry address. In this example use __release-ci.daocloud.io__ |
      | string | project | The project name in the registry. In this example use __demo__ |
      | string | name | The name of the image. This example uses __http-hello__ |

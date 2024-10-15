@@ -4,7 +4,7 @@ configmap/secret 热加载是指将 configmap/secret 作为数据卷挂载在容
 
 ## 操作步骤
 
-1. 参考创建工作负载 - [【容器配置】](../workloads/create-deployment.md#容器配置)，配置容器【数据存储】，选择 __Configmap__ 、 __Configmap Key__ 、 __Secret__ 、 __Secret Key__ 作为数据卷挂载至容器。
+1. 参考创建工作负载 - [容器配置](../workloads/create-deployment.md#_4)，配置容器数据存储，选择 __Configmap__ 、 __Configmap Key__ 、 __Secret__ 、 __Secret Key__ 作为数据卷挂载至容器。
 
     ![使用 config 作为数据卷](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/user_configmap_to_volume.jpg)
 

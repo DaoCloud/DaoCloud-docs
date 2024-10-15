@@ -12,7 +12,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 2. 待部署 GPU Operator 的集群节点 OS 必须为 Red Hat 8.4，且内核版本完全一致。
 3. 准备一个能够和待部署 GPU Operator 的集群网络能够联通的文件服务器，如 nginx 或 minio。
 4. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，且节点上已经完成
-   [Docker 的安装](../../../../install/community/kind/online.md#安装-docker)。
+   [Docker 的安装](../../../../install/community/kind/online.md#docker)。
 5. Global 集群的节点必须为 Red Hat 8.4 4.18.0-305.el8.x86_64。
 
 ## 操作步骤
