@@ -30,7 +30,7 @@ Generally applicable to the following two use cases:
 ## Permission description
 
 | Action Objects | Operations | Workspace Admin | Workspace Editor | Workspace Viewer |
-| :------- | :---------------- | :-------------- | :----- ---------- | :--------------- |
+| :------- | :---------------- | :-------------- | :-------------- | :--------------- |
 | itself | view | &check; | &check; | &check; |
 | - | Authorization | &check; | &cross; | &cross; |
 | - | Modify Alias | &check; | &check; | &cross; |

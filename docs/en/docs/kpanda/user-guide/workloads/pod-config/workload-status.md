@@ -29,7 +29,7 @@ Because different workload types (such as Deployment and Jobs) have inconsistent
 ### Deployment, StatefulSet, DamemonSet Status
 
 | Status | Description |
-| :---------------------- | :------------------------ -------------------------------------- |
+| ------ | ----------- |
 | Waiting | 1. A workload is in this status while its creation is in progress. <br>2. After an upgrade or rollback action is triggered, the workload is in this status. <br>3. Trigger operations such as pausing/scaling, and the workload is in this status. |
 | Running | This status occurs when all instances under the workload are running and the number of replicas matches the user-defined number. |
 | Deleting | When a delete operation is performed, the payload is in this status until the delete is complete. |
@@ -39,7 +39,7 @@ Because different workload types (such as Deployment and Jobs) have inconsistent
 ### Job Status
 
 | Status | Description |
-| :------- | :--------------------------------------- -------------------- |
+| ------ | ----------- |
 | Waiting | The workload is in this status while Job creation is in progress. |
 | Executing | The Job is in progress and the workload is in this status. |
 | Execution Complete | The Job execution is complete and the workload is in this status. |
@@ -49,7 +49,7 @@ Because different workload types (such as Deployment and Jobs) have inconsistent
 ### CronJob status
 
 | Status | Description |
-| :----- | :---------------------------------------- ------------------ |
+| ------ | ----------- |
 | Waiting | The CronJob is in this status when it is being created. |
 | Started | After the CronJob is successfully created, the CronJob is in this status when it is running normally or when the paused task is started. |
 | Stopped | The CronJob is in this status when the stop task operation is performed. |

@@ -86,7 +86,7 @@ Use `&check;`for permissions granted and `&cross;`for permissions not granted.
 ## Microservice Gateway Permissions
 
 | Objects | Actions | Workspace Admin | Workspace Editor | Workspace Viewer |
-| ------------ | ---- | --------------- | --------------- - | ---------------- |
+| ------- | ---- | --------------- | ---------------- | ---------------- |
 | Gateway List | View | &check; | &check; | &check; |
 | Gateway instance | View | &check; | &check; | &check; |
 | | Create | &check; | &check; | &cross; |

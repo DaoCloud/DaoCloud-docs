@@ -18,15 +18,16 @@ The specific operation steps are as follows.
 
     ![access control](../../images/ws01.png)
 
-2. On the left nav bar select __Identity Provider__ , click the __OIDC__ -> __Create an Identity Provider__
+2. On the left nav bar select __Identity Provider__ , click __OIDC__ -> __Create an Identity Provider__
 
     ![click create](../../images/oidc-button.png)
 
 3. After completing the form fields and establishing a trust relationship with the identity provider, click __Save__ .
+
     ![oidc](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/oidc02.png)
 
     | Fields | Descriptions |
-    | ---------- | -------------------------------------- ---------------------- |
+    | ------ | ------------ |
     | Provider Name | displayed on the login page and is the entry point for the identity provider |
     | Authentication Method | Client authentication method. If the JWT is signed with a private key, select __JWT signed with private key__ from the dropdown. For details, refer to [Client Authentication](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication). |
     | Client ID | Client ID |

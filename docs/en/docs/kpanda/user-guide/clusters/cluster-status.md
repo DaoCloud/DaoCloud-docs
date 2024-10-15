@@ -17,7 +17,7 @@ We designed several status for these two clusters.
 ## Integrated Clusters
 
 | Status | Description |
-| ---------------------- | -------------------------- ------------------------------------- |
+| ------ | ----------- |
 | Integrating | The cluster is being integrated into DCE 5.0. |
 | Removing | The cluster is being removed from DCE 5.0. |
 | Running | The cluster is running as expected. |
@@ -26,7 +26,7 @@ We designed several status for these two clusters.
 ## Created Clusters
 
 | Status | Description |
-| --------------------------------------------- | ------ -------------------------------------------------- ---- |
+| ------ | ----------- |
 | Creating | The cluster is being created. |
 | Updating | The Kubernetes version of the cluster is being operating. |
 | Deleting | The cluster is being deleted. |

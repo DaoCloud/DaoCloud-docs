@@ -20,8 +20,8 @@ The specific operation steps are as follows:
 
     Complete the following fields to configure the mail server:
 
-    | field | description | example value |
-    | ----------------- | -------------------------------- ----------------------------- | ------------ |
+    | Field | Description | Example |
+    | ----- | ----------- | ------------ |
     | SMTP server address | SMTP server address that can provide mail service | smtp.163.com |
     | SMTP server port | Port for sending mail | 25 |
     | Username | Name of the SMTP user | test@163.com |
