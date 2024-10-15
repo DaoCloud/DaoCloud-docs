@@ -88,9 +88,9 @@ DCE 5.0 Enterprise includes the following modules, which can be used on-demand t
 | Service Mesh | Next-generation service mesh built on Istio open-source technology for cloud-native applications. | [v0.26.0](../../mspider/intro/release-notes.md#v0260) |
 | Middleware Elasticsearch | Currently the preferred full-text search engine. | [0.17.0](../../middleware/elasticsearch/release-notes.md#v0170) |
 | Middleware Kafka | Distributed message queue service based on the open-source software Kafka. | [0.15.0](../../middleware/kafka/release-notes.md#v0150) |
-| Middleware MinIO | A lightweight, open-source object storage solution that is very popular. | [0.15.0](../../middleware/minio/release-notes.md#v0150) |
+| Middleware MinIO | A lightweight, open-source object storage solution that is very popular. | [0.15.0](../../middleware/minio/release-notes.md#v0151) |
 | Middleware MySQL | The most widely used open-source relational database. | [0.18.0](../../middleware/mysql/release-notes.md#v0180) |
-| Middleware RabbitMQ | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP). | [0.20.0](../../middleware/rabbitmq/release-notes.md#v0200) |
+| Middleware RabbitMQ | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP). | [0.20.0](../../middleware/rabbitmq/release-notes.md#v0230) |
 | Middleware Redis | An in-memory database caching service. | [0.18.0](../../middleware/redis/release-notes.md#v0180) |
 | Container Regisry | Used to store images for K8s, DevOps, and container application development. | [0.18.1](../../kangaroo/intro/release-notes.md#v0181) |
 | Networking | Supports multiple CNI combination solutions for different Linux kernels. | [0.15.0](../../network/intro/releasenotes.md#v0150) |

@@ -88,7 +88,7 @@ DCE 5.0 Enterprise includes the following modules, which can be used on-demand t
 | Service Mesh | Next-generation service mesh built on Istio open-source technology for cloud-native applications. | [v0.29.0](../../mspider/intro/release-notes.md#v0290) |
 | Middleware Elasticsearch | Currently the preferred full-text search engine. | [0.20.0](../../middleware/elasticsearch/release-notes.md#v0200) |
 | Middleware Kafka | Distributed message queue service based on the open-source software Kafka. | [0.18.0](../../middleware/kafka/release-notes.md#v0180) |
-| Middleware MinIO | A lightweight, open-source object storage solution that is very popular. | [0.18.0](../../middleware/minio/release-notes.md#v0180) |
+| Middleware MinIO | A lightweight, open-source object storage solution that is very popular. | [0.18.0](../../middleware/minio/release-notes.md#v0181) |
 | Middleware MySQL | The most widely used open-source relational database. | [0.21.0](../../middleware/mysql/release-notes.md#v0210) |
 | Middleware RabbitMQ | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP). | [0.23.0](../../middleware/rabbitmq/release-notes.md#v0230) |
 | Middleware Redis | An in-memory database caching service. | [0.21.0](../../middleware/redis/release-notes.md#v0210) |
