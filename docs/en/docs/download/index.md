@@ -11,7 +11,7 @@ Currently, only offline packages are provided in the download center. For online
 
 ## Download Prerequisite Dependencies
 
-| Filename | Version | Size | Download | Update Ddate |
+| Lastest Package | Version | Size | Download | Update Ddate |
 | ------ | ---- | ---- | ---- |-------- |
 | prerequisite_v0.22.0_amd64.tar.gz | v0.22.0 | 119.0 MB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.22.0_amd64.tar.gz) | 2024-10-10 |
 | prerequisite_v0.22.0_arm64.tar.gz | v0.22.0 | 107.0 MB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.22.0_arm64.tar.gz) | 2024-10-10 |
@@ -20,7 +20,7 @@ Currently, only offline packages are provided in the download center. For online
 
 This package is dedicated to the community and is available for free trial.
 
-| Filename | Version | Download | Update Date |
+| Lastest Package | Version | Download | Update Date |
 | -------- | ------- | --------- | ----------- |
 | offline-community-v0.22.0-arm64.tar | v0.22.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.22.0.md) | 2024-10-10 |
 | offline-community-v0.22.0-amd64.tar | v0.22.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.22.0.md) | 2024-10-10 |
@@ -31,7 +31,7 @@ This package is dedicated to the community and is available for free trial.
 
 This package is suitable for private cloud, hybrid cloud, multicloud, microservices and other scenarios, providing a variety of customizable cloud native modules.
 
-| Filename | Version | Download | Update Date |
+| Lastest Package | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
 | offline-v0.22.0-arm64.tar | v0.22.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.22.0.md) | 2024-10-10 |
 | offline-v0.22.0-amd64.tar | v0.22.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.22.0.md) | 2024-10-10 |
@@ -42,7 +42,7 @@ This package is suitable for private cloud, hybrid cloud, multicloud, microservi
 
 DCE 5.0 provides comprehensive Addons for different use cases, which can be downloaded and used as needed.
 
-| Filename | Version | Download | Update Date |
+| Lastest Package | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
 | gpu-addon-offline-package-v0.22.0-amd64.tar.gz | v0.22.0 | [:arrow_right: Go to Download](./addon/v0.22.0.md) | 2024-10-10 |
 | standard-addon-offline-package-v0.22.0-arm64.tar.gz | v0.22.0 | [:arrow_right: Go to Download](./addon/v0.22.0.md) | 2024-10-10 |
