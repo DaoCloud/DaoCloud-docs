@@ -88,14 +88,14 @@ The DCE 5.0 Enterprise includes the following modules, which are plug-and-play t
 | Microservice Engine | Provide registration discovery, service governance, configuration management, microservice gateway and other governance capabilities | [0.21.2](../../skoala/intro/release-notes.md#v0212) |
 | Service Mesh | A next-generation service mesh for cloud native applications based on Istio open source technology | [v0.15.1](../../mspider/intro/release-notes.md#v0150) |
 | Middleware Elasticsearch | A popular full-text search engine | [0.7.2](../../middleware/elasticsearch/release-notes.md#v072) |
-| Middleware Kafka | Distributed message queue service based on the open source software Kafka | [0.5.2](../../middleware/kafka/release-notes.md#v052) |
-| Middleware MinIO | A very popular lightweight, open source object storage solution | [0.5.2](../../middleware/minio/release-notes.md#v052) |
+| Middleware Kafka | Distributed message queue service based on the open source software Kafka | [0.5.2](../../middleware/kafka/release-notes.md#v051) |
+| Middleware MinIO | A very popular lightweight, open source object storage solution | [0.5.2](../../middleware/minio/release-notes.md#v051) |
 | Middleware MySQL | The most widely used open source relational database | [0.8.2](../../middleware/mysql/release-notes.md#v082) |
-| Middleware RabbitMQ | Open source message broker software implementing the Advanced Message Queuing Protocol (AMQP) | [0.10.2](../../middleware/rabbitmq/release-notes.md#v0102) |
-| Middleware Redis | An in-memory database caching service | [0.7.2](../../middleware/redis/release-notes.md#v072) |
-| Container registry | Used to store images for K8s, DevOps and container application development | [0.7.2](../../kangaroo/intro/release-notes.md) |
-| Network | Support multiple CNI combinations for different Linux kernels | [0.6.0](../../network/intro/releasenotes.md) |
-| Storage | Provide unified data storage services, support files, objects, blocks, and local storage, and easily access storage vendor solutions | [v0.9.3](../../storage/hwameistor/releasenotes.md) |
+| Middleware RabbitMQ | Open source message broker software implementing the Advanced Message Queuing Protocol (AMQP) | [0.10.2](../../middleware/rabbitmq/release-notes.md#v0101) |
+| Middleware Redis | An in-memory database caching service | [0.7.2](../../middleware/redis/release-notes.md#v071) |
+| Container registry | Used to store images for K8s, DevOps and container application development | [0.7.2](../../kangaroo/intro/release-notes.md#v070) |
+| Network | Support multiple CNI combinations for different Linux kernels | [0.6.0](../../network/intro/releasenotes.md#v060) |
+| Storage | Provide unified data storage services, support files, objects, blocks, and local storage, and easily access storage vendor solutions | [v0.9.3](../../storage/hwameistor/releasenotes.md#v093) |
 
 ## More
 

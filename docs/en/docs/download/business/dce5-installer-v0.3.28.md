@@ -50,19 +50,19 @@ The DCE 5.0 Enterprise includes the following modules, which are plug-and-play t
 
 | Modules | Description | Versions |
 | ------- | ----------- | -------- |
-| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, and custom appearance. | [v0.11](../../ghippo/intro/release-notes.md#v011) |
-| Container Management | Manage K8s core features such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.12](../../kpanda/intro/release-notes.md#v012) |
+| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, and custom appearance. | [v0.11](../../ghippo/intro/release-notes.md#v0110) |
+| Container Management | Manage K8s core features such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.12](../../kpanda/intro/release-notes.md#v013) |
 | Insight | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [v0.11](../../insight/intro/releasenote.md#v011) |
-| Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [v0.9](../../amamba/intro/release-notes.md#v09) |
+| Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [v0.9](../../amamba/intro/release-notes.md#v090) |
 | Multicloud Management | Centralized management of application orchestration of multicloud, hybrid cloud, and cross-cloud resources, with multicloud disaster recovery and fault recovery capabilities | [v0.3](../../kairship/intro/release-notes.md#v030) |
 | Microservice Engine | Provides governance capabilities such as registration discovery, service governance, configuration management, and microservice gateway | [v0.11](../../skoala/intro/release-notes.md#v0122) |
 | Service Mesh | A next-generation service mesh for cloud native applications based on Istio open source technology | [v0.10](../../mspider/intro/release-notes.md#v0111) |
 | Middleware Elasticsearch | Currently preferred full-text search engine | [v0.3](../../middleware/elasticsearch/release-notes.md#v034) |
 | Middleware Kafka | Distributed message queue service based on the open source software Kafka | [v0.1](../../middleware/kafka/release-notes.md#v012) |
 | Middleware MinIO | A very popular lightweight, open source object storage solution | [v0.1](../../middleware/minio/release-notes.md#v012) |
-| Middleware MySQL | The most widely used open source relational database | [v0.4](../../middleware/mysql/release-notes.md#v04) |
-| Middleware RabbitMQ | Open source message broker software implementing the Advanced Message Queuing Protocol (AMQP) | [v0.6](../../middleware/rabbitmq/release-notes.md#v06) |
-| Middleware Redis | An in-memory database caching service | [v0.2](../../middleware/redis/release-notes.md#v02) |
+| Middleware MySQL | The most widely used open source relational database | [v0.4](../../middleware/mysql/release-notes.md#v040) |
+| Middleware RabbitMQ | Open source message broker software implementing the Advanced Message Queuing Protocol (AMQP) | [v0.6](../../middleware/rabbitmq/release-notes.md#v061) |
+| Middleware Redis | An in-memory database caching service | [v0.2](../../middleware/redis/release-notes.md#v022) |
 | Container Registry | Images for storing K8s, DevOps, and container application development | [Release Notes](../../kangaroo/intro/release-notes.md) |
 | Network | Support multiple CNI combinations for different Linux kernels | [Release Notes](../../network/intro/releasenotes.md) |
 | Storage | Provide unified data storage services, support files, objects, blocks, and local storage, and easily access storage vendor solutions | [Release Notes](../../storage/hwameistor/releasenotes.md) |

@@ -88,8 +88,8 @@ DCE 5.0 Enterprise includes the following modules, which can be used on demand t
 | Microservice Engine | Provide governance capabilities such as registration and discovery, service governance, configuration management, microservice gateway, etc. | [0.22.2](../../skoala/intro/release-notes.md#v0222) |
 | Service Mesh | The next-generation service mesh for cloud native applications based on open-source technology Istio. | [v0.16.2](../../mspider/intro/release-notes.md#v0162) |
 | Middleware: Elasticsearch | Currently the preferred full-text search engine. | [0.8.0](../../middleware/elasticsearch/release-notes.md#v080) |
-| Middleware: Kafka | Distributed message queue service based on open-source software Kafka. | [0.6.0](../../middleware/kafka/release-notes.md#v060) |
-| Middleware: MinIO | A very popular lightweight, open-source object storage solution. | [0.6.0](../../middleware/minio/release-notes.md#v060) |
+| Middleware: Kafka | Distributed message queue service based on open-source software Kafka. | [0.6.0](../../middleware/kafka/release-notes.md#v0100) |
+| Middleware: MinIO | A very popular lightweight, open-source object storage solution. | [0.6.0](../../middleware/minio/release-notes.md#v0100) |
 | Middleware: MySQL | The most widely used open-source relational database. | [0.9.0](../../middleware/mysql/release-notes.md#v090) |
 | Middleware: RabbitMQ| Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP). | [0.11.0](../../middleware/rabbitmq/release-notes.md#v0110) |
 | Middleware: Redis | An in-memory database caching service. | [0.8.0](../../middleware/redis/release-notes.md#v080) |

@@ -87,10 +87,10 @@ DCE 5.0 Enterprise includes the following modules, which can be used on-demand t
 | Microservice Engine | Provides governance capabilities such as service registration, discovery, configuration management, and microservice gateway. | [0.39.2](../../skoala/intro/release-notes.md#v0392) |
 | Service Mesh | Next-generation service mesh built on Istio open-source technology for cloud-native applications. | [v0.28.0](../../mspider/intro/release-notes.md#v0280) |
 | Middleware Elasticsearch | Currently the preferred full-text search engine. | [0.19.0](../../middleware/elasticsearch/release-notes.md#v0190) |
-| Middleware Kafka | Distributed message queue service based on the open-source software Kafka. | [0.17.0](../../middleware/kafka/release-notes.md#v0170) |
+| Middleware Kafka | Distributed message queue service based on the open-source software Kafka. | [0.17.0](../../middleware/kafka/release-notes.md#v0180) |
 | Middleware MinIO | A lightweight, open-source object storage solution that is very popular. | [0.17.0](../../middleware/minio/release-notes.md#v0170) |
-| Middleware MySQL | The most widely used open-source relational database. | [0.20.0](../../middleware/mysql/release-notes.md#v0200) |
-| Middleware RabbitMQ | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP). | [0.22.0](../../middleware/rabbitmq/release-notes.md#v0220) |
+| Middleware MySQL | The most widely used open-source relational database. | [0.20.0](../../middleware/mysql/release-notes.md#v0210) |
+| Middleware RabbitMQ | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP). | [0.22.0](../../middleware/rabbitmq/release-notes.md#v0230) |
 | Middleware Redis | An in-memory database caching service. | [0.20.0](../../middleware/redis/release-notes.md#v0200) |
 | Container Regisry | Used to store images for K8s, DevOps, and container application development. | [0.20.0](../../kangaroo/intro/release-notes.md#v0200) |
 | Networking | Supports multiple CNI combination solutions for different Linux kernels. | [0.15.1](../../network/intro/releasenotes.md#v0151) |

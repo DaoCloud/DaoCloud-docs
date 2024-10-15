@@ -34,7 +34,7 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
 
     - [什么是 MinIO](./minio/intro/index.md)
     - [创建/更新/删除 MinIO 实例](./minio/user-guide/create.md)
-    - [查看 MinIO 日志](./minio/user-guide/logs.md)
+    - [查看 MinIO 日志](./minio/user-guide/insight-log-config.md)
     - [MinIO 实例监控](./minio/user-guide/insight.md)
     - [MinIO 身份管理](./minio/user-guide/user-management.md)
 
