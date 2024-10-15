@@ -6,7 +6,7 @@
 
 1. 火种节点及其组件状态运行正常。
 1. 准备一个能够访问互联网和火种节点的节点，且节点上已经完成
-   [Docker 的安装](../../../../install/community/kind/online.md#安装-docker)。
+   [Docker 的安装](../../../../install/community/kind/online.md#docker)。
 
 ## 操作步骤
 

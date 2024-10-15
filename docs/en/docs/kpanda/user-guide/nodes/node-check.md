@@ -3,8 +3,8 @@
 When creating a cluster or adding nodes to an existing cluster, refer to the table below to check the node configuration to avoid cluster creation or expansion failure due to wrong node configuration.
 
 | Check Item | Description |
-| -------------- | ---------------------------------- ---- |
-| OS | Refer to [Supported Architectures and Operating Systems](#Supported Architectures and Operating Systems) |
+| ---------- | ----------- |
+| OS | Refer to [Supported Architectures and Operating Systems](#supported-architectures-and-operating-systems) |
 | SELinux | Off |
 | Firewall | Off |
 | Architecture Consistency | Consistent CPU architecture between nodes (such as ARM or x86) |
@@ -16,7 +16,7 @@ When creating a cluster or adding nodes to an existing cluster, refer to the tab
 ## Supported architectures and operating systems
 
 | Architecture | Operating System | Remarks |
-| ---- | ----------------------------------------------- -------------- | ---- |
+| ---- | ------------------------ | ---- |
 | ARM | Kylin Linux Advanced Server release V10 (Sword) SP2 | Recommended |
 | ARM | UOS Linux | |
 | ARM | openEuler | |
