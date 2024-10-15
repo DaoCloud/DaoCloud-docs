@@ -51,7 +51,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 
 | 频道 | 模块 | 文件大小 | 下载 | 更新日期 |
 | --- | ---- | ------ | ---- | ------ |
-| 工作台 | 应用工作台 | 394.25 MB | [:arrow_right: 下载页](./modules/amamba.md) | 2024-10-11 |
+| 工作台 | 应用工作台 | 394.25 MB | [:arrow_right: 下载页](./modules/amamba.md) | 2024-10-15 |
 | 容器 | 容器管理 | 674.33 MB | [:arrow_right: 下载页](./modules/kpanda.md) | 2024-10-08 |
 | | 集群巡检 | 174.30 MB | [:arrow_right: 下载页](./modules/kcollie.md) | 2024-09-29 |
 | | 应用备份 | 85.06 MB | [:arrow_right: 下载页](./modules/kcoral.md) | 2024-09-29 |
@@ -63,7 +63,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | | 虚拟机 | 1.43 GB | [:arrow_right: 下载页](./modules/virtnest.md) | 2024-09-29 |
 | 微服务 | 可观测性 | 2.21 GB | [:arrow_right: 下载页](./modules/insight.md) | 2024-10-11 |
 | | 仪表盘| 51 MB | [:arrow_right: 下载页](./modules/ipavo.md) | 2024-10-12 |
-| | 微服务引擎| 1.66 GB | [:arrow_right: 下载页](./modules/skoala.md) | 2024-09-25 |
+| | 微服务引擎| 1.66 GB | [:arrow_right: 下载页](./modules/skoala.md) | 2024-10-15 |
 | | 服务网格 | 1.04 GB | [:arrow_right: 下载页](./modules/mspider.md) | 2024-10-11 |
 | 中间件 | Elasticsearch |970.83 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) |2024-10-08|
 | | Kafka |990.23 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2024-10-08|
