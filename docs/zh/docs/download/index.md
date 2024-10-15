@@ -7,7 +7,7 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 ## 下载前置依赖包
 
-| 离线包 | 版本 | 文件大小 | 下载 | 更新日期 |
+| 最新离线包 | 版本 | 文件大小 | 下载 | 更新日期 |
 | ------ | ---- | ---- | ---- |-------- |
 | prerequisite_v0.22.0_amd64.tar.gz | v0.22.0 | 119.0 MB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.22.0_amd64.tar.gz) | 2024-10-10 |
 | prerequisite_v0.22.0_arm64.tar.gz | v0.22.0 | 107.0 MB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.22.0_arm64.tar.gz) | 2024-10-10 |
@@ -16,7 +16,7 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 此版本面向社区，欢迎免费体验。
 
-| 离线包 | 版本 | 下载 | 更新日期 |
+| 最新离线包 | 版本 | 下载 | 更新日期 |
 | --------------- | ------- | ---- | -------- |
 | offline-community-v0.22.0-arm64.tar | v0.22.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.22.0.md) | 2024-10-10 |
 | offline-community-v0.22.0-amd64.tar | v0.22.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.22.0.md) | 2024-10-10 |
@@ -27,7 +27,7 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 此版本适合搭建私有云、混合云、多云、微服务等场景，可以定制丰富多样的云原生模块。
 
-| 离线包 | 版本 | 下载 | 更新日期 |
+| 最新离线包 | 版本 | 下载 | 更新日期 |
 | ----- | ----- | ---- | --------- |
 | offline-v0.22.0-arm64.tar | v0.22.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.22.0.md) | 2024-10-10 |
 | offline-v0.22.0-amd64.tar | v0.22.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.22.0.md) | 2024-10-10 |
@@ -38,7 +38,7 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 DCE 5.0 针对不同的应用场景提供了完善的 Addon，您可以按需下载使用。
 
-| 离线包 | 版本 | 下载 | 更新日期 |
+| 最新离线包 | 版本 | 下载 | 更新日期 |
 |--------| ---- | --- | --------- |
 | gpu-addon-offline-package-v0.22.0-amd64.tar.gz | v0.22.0 | [:arrow_right: 下载页](./addon/v0.22.0.md) | 2024-10-10 |
 | standard-addon-offline-package-v0.22.0-arm64.tar.gz | v0.22.0 | [:arrow_right: 下载页](./addon/v0.22.0.md) | 2024-10-10 |
