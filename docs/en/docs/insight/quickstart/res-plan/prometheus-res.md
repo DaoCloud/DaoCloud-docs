@@ -24,7 +24,7 @@ by the pod after the feature is enabled is **Series count = 768 \* pod count**
 The following resource planning is recommended by Prometheus when **the service mesh is not enabled** :
 
 | Cluster size (pod count) | Metrics (service mesh is not enabled) | CPU (core) | Memory (GB) |
-| ---------------- | ---------------------- | --------- --------------- | ---------------------------- |
+| ---------------- | ---------------------- | ------------------ | ------------------------ |
 | 100 | 8w | Request: 0.5<br>Limit: 1 | Request: 2GB<br>Limit: 4GB |
 | 200 | 16w | Request: 1<br>Limit: 1.5 | Request: 3GB<br>Limit: 6GB |
 | 300 | 24w | Request: 1<br>Limit: 2 | Request: 3GB<br>Limit: 6GB |
@@ -40,7 +40,7 @@ The following resource planning is recommended by Prometheus when **the service 
 The following resource planning is recommended by Prometheus in the scenario of **starting the service mesh**:
 
 | Cluster size (pod count) | metric volume (service mesh enabled) | CPU (core) | Memory (GB) |
-| ---------------- | ---------------------- | --------- -------------- | ----------------------------- |
+| ---------------- | -------------------- | --------------------- | ------------------------ |
 | 100 | 15w | Request: 1<br>Limit: 2 | Request: 3GB<br>Limit: 6GB |
 | 200 | 31w | Request: 2<br>Limit: 3 | Request: 5GB<br>Limit: 10GB |
 | 300 | 46w | Request: 2<br>Limit: 4 | Request: 6GB<br>Limit: 12GB |

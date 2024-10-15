@@ -1,15 +1,20 @@
+---
+MTPE: windsonsea
+Date: 2024-10-15
+---
+
 # MinIO common terms
 
 This page explains MinIO related concepts.
 
 | Concept | Meaning |
-| -------------- | ---------------------------------- ----------------------------------- |
-| Object object | Basic objects stored, such as files, pictures, etc. |
+| ------- | ------- |
+| Object | Basic objects stored, such as files, pictures, etc. |
 | Bucket | The logical space used to store Objects, isolated from each other, similar to the top-level folder in the system |
 | Drive drive disk | the disk that stores data, all object data is stored in Drive |
 | Set disk set | is a set of Drives, and distributed deployment automatically divides one or more sets according to the cluster size |
 
-- an Object stored in a Set
+- an object stored in a Set
 - A cluster is divided into multiple Sets
 - Drives in a Set are distributed on different nodes as much as possible
 - The number of Drives contained in a Set is fixed, which is automatically calculated by the system according to the cluster size by default
@@ -39,7 +44,7 @@ The implementation is designed for speed and can achieve hash speeds in excess o
 
 <!--screenshot-->
 
-## encryption
+## Encryption
 
 Encrypting data in motion is not the same as protecting data at rest.
 MinIO supports multiple sophisticated server-side encryption schemes to protect stored data in all locations.
@@ -90,7 +95,7 @@ While retaining the ability to accommodate various applications (S3 Select, MinS
 
 <!--screenshot-->
 
-## multicloud Gateway
+## Multicloud Gateway
 
 All enterprises are adopting a multicloud strategy, and this includes private clouds as well.
 Therefore, your bare-metal virtualized containers and public cloud services (including non-S3 providers like Google, Microsoft, and Alibaba) must look identical.

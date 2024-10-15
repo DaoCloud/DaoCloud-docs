@@ -54,7 +54,7 @@ For more details, please refer to the [Network Plugin Requirements](https://kube
 #### Control Plane Node
 
 | Protocol | Direction | Port Range | Role | User |
-| ---- | ---- | --------- | ----------------------- | ----- ----------------------- |
+| -------- | --------- | ---------- | ---- | ---- |
 | TCP | Inbound | 6443 | Kubernetes API Server | All Components |
 | TCP | Inbound | 2379-2380 | etcd server client API | kube-apiserver, etcd |
 | TCP | Inbound | 10250 | Kubelet API | kubelet itself, control plane components |
@@ -64,7 +64,7 @@ For more details, please refer to the [Network Plugin Requirements](https://kube
 #### Worker nodes
 
 | Protocol | Direction | Port Range | Role | User |
-| ---- | ---- | ----------- | ------------- | ------------- ------------- |
+| -------- | --------- | ----------- | --- | ---- |
 | TCP | Inbound | 10250 | Kubelet API | kubelet itself, control plane components |
 | TCP | Inbound | 30000-32767 | NodePort Service | All Components |
 
@@ -118,8 +118,8 @@ If you do not specify a runtime, kubeadm automatically tries to detect a runtime
 
 The following table lists some container runtimes and their corresponding socket paths:
 
-| runtime | domain socket |
-| ---------- | ------------------------------- |
+| Runtime | Domain socket |
+| ------- | ------------- |
 | Docker | /var/run/dockershim.sock |
 | Containerd | /run/containerd/containerd.sock |
 | CRI-O | /var/run/crio/crio.sock |
@@ -171,7 +171,7 @@ By default, kubeadm uses docker as the container runtime. The kubelet integrates
 
 **For Docker**
 
-=== "Red Hat based distribution"
+=== "Red Hat-based distribution"
 
      run the following command to install a Red Hat based distribution of Docker:
 
@@ -186,6 +186,7 @@ By default, kubeadm uses docker as the container runtime. The kubelet integrates
      ```bash
      apt-get install docker.io
      ```
+
 **for containerd**
 
 By default, containerd only provides download packages for the amd64 architecture. If you use other infrastructures,
@@ -213,7 +214,7 @@ KLTS provides installation methods based on deb and rpm software sources, and yo
 
 === "Red Hat-based distributions"
 
-     run the following code to set the software source for downloading KLTS:
+     Run the following code to set the software source for downloading KLTS:
 
      ```bash
      VERSION=1.18.20-lts.2
@@ -235,7 +236,7 @@ KLTS provides installation methods based on deb and rpm software sources, and yo
 
 === "Debian-based distributions"
 
-     run the following code to set the software source for downloading KLTS:
+     Run the following code to set the software source for downloading KLTS:
 
      ```bash
      VERSION=1.18.20-lts.2
@@ -253,7 +254,7 @@ KLTS provides installation methods based on deb and rpm software sources, and yo
 
          The following accelerations are all from third parties, and the safety and stability are not guaranteed. It is only recommended to be used in a test environment!!!
 
-     run the following code to set the software source for downloading KLTS:
+     Run the following code to set the software source for downloading KLTS:
 
      === "/etc/hosts"
 
@@ -363,7 +364,7 @@ KLTS provides installation methods based on deb and rpm software sources, and yo
 
          The following accelerations are all from third parties, and the safety and stability are not guaranteed. It is only recommended to be used in a test environment!!!
 
-     run the following code to set the software source for downloading KLTS:
+     Run the following code to set the software source for downloading KLTS:
 
      === "/etc/hosts"
 
@@ -431,7 +432,7 @@ KLTS provides installation methods based on deb and rpm software sources, and yo
 
 === "Red Hat-based distributions"
 
-     run the following command to install:
+     Run the following command to install:
 
      ```bash
      yum install kubeadm kubelet kubectl
@@ -439,17 +440,17 @@ KLTS provides installation methods based on deb and rpm software sources, and yo
 
 === "Debian-based distributions"
 
-     run the following command to install:
+     Run the following command to install:
 
-    ```bash
-    apt-get install kubeadm kubelet kubectl
-    ```
+     ```bash
+     apt-get install kubeadm kubelet kubectl
+     ```
 
 ### Automatically start Kubelet at boot
 
 Run the following command to automatically start Kubelet on boot:
 
-```
+```shell
 systemctl enable kubelet
 ```
 
@@ -457,7 +458,7 @@ systemctl enable kubelet
 
 === "Default"
 
-     run the following command to pull the dependent image:
+     Run the following command to pull the dependent image:
 
      ```bash
      VERSION=1.18.20-lts.2
@@ -467,7 +468,7 @@ systemctl enable kubelet
 
 === "Domestic Acceleration 🚀"
 
-     run the following command to pull the dependent image:
+     Run the following command to pull the dependent image:
 
      ```bash
      VERSION=1.18.20-lts.2
@@ -481,7 +482,7 @@ Subsequent operations on kubeadm need to add __--image-repository__ and __--kube
 
 === "Default"
 
-     run the following command to initialize the nodes of the control plane:
+     Run the following command to initialize the nodes of the control plane:
 
      ```bash
      VERSION=1.18.20-lts.2
@@ -491,7 +492,7 @@ Subsequent operations on kubeadm need to add __--image-repository__ and __--kube
 
 === "Domestic Acceleration 🚀"
 
-     run the following command to initialize the nodes of the control plane:
+     Run the following command to initialize the nodes of the control plane:
 
      ```bash
      VERSION=1.18.20-lts.2
@@ -534,4 +535,3 @@ Usage: ./install.sh [OPTIONS]
 - [Using kubeadm to create a cluster](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 - [Install K8s with kOps](https://kubernetes.io/docs/setup/production-environment/tools/kops/)
 - [Install K8s using Kubespray](https://kubernetes.io/docs/setup/production-environment/tools/kubespray/)
-

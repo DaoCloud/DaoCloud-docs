@@ -62,7 +62,7 @@ In Global Management, the operation steps are as follows:
    groups, and click __Save__ again.
 
     | Field | Description | Example |
-    | ---------------- | -------------------------------- ---------------------------- | --------------------- ------ |
+    | ----- | ----------- | ------- |
     | base DN | location of the group in the LDAP tree | ou=groups,dc=example,dc=org |
     | Usergroup Object Filter | Object classes for usergroups, separated by commas if more classes are required. In a typical LDAP deployment, usually "groupOfNames", the system has been filled in automatically, if you need to change it, just edit it. * means all. | * |
     | group name | cn | Unchangeable |

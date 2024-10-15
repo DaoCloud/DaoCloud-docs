@@ -54,7 +54,7 @@ As cloud native use cases involve data and events at edge locations beyond the t
 Edge-native has many similarities to cloud native, which are described in this section.
 
 | Attributes | Cloud Native vs. Edge Native |
-| ------------------- | ----------------------------- -------------------------------------------------- -|
+| ---------- | ---------------------------- |
 | Portability of applications and services | Applications and services decouple their coupling from the infrastructure. A well-written application does not need to know where it is running to support portability between platforms. |
 | Observability | The platform comes with a well-documented interface and tooling options to detect issues and collect metrics. This allows developers to build systems that are resilient and efficiently managed. |
 | Manageability | Provides interface and tool options to manage applications and resources at scale. The platform also has a plug-in mechanism to provide basic network connection, service and management features. |
@@ -65,7 +65,7 @@ Edge-native has many similarities to cloud native, which are described in this s
 There are similarities in the broad missions of edge-native and cloud native, but there are differences that developers should be aware of.
 
 | Properties | Cloud Native | Edge Native |
-| ------------- | ----------------------------------- ---------------------- | --------------------------- ----------- |
+| ---------- | ------------ | ----------- |
 | Application Model | Most microservice components are stateless services that support horizontal scaling. | While service-provided edge applications are very similar, consumer edge applications may be separate monoliths; in these cases, state is associated with the application. |
 | Data Model | Common is a centralized model that supports stateless components. | Caching, streaming, real-time, and distributed models are often employed. |
 | Elastic | Quick startup and shutdown; typically treats underlying resources as unlimited. | Due to the limited hardware resources of edge devices, the elasticity is limited; if more resources are needed, "vertical" expansion will be performed by requesting the cloud. |
@@ -87,7 +87,7 @@ Edge-native applications are applications and services designed for the edge. Th
 In order to achieve the edge-native mission mentioned earlier in this article, edge-native applications should follow the following guidelines.
 
 | Guidelines | Description |
-| --------------------------- | --------------------- ----------------------------------- |
+| ---------- | ----------- |
 | Hardware management capabilities | Developers need to understand a wide range of hardware platforms and interfaces, not only homogeneous hardware platforms. |
 | External Device Connections | An application must know how to connect to devices in its environment and be aware of changes in functionality at runtime. For example, after initial configuration, they can respond to sensor connection/disconnection or new device connection. Features are not fixed, and the application environment needs to be considered, so the orchestrator needs to be able to coordinate application state and feature changes. |
 | Variable connection awareness | Applications must adapt to unreliable or even unusable (completely isolated) network connections, using mechanisms such as asynchronous communication, queuing and caching. When the edge obtains configuration from the central site, a "pull" mechanism may need to be used to overcome scale, networking, and security issues. |
@@ -124,26 +124,6 @@ The list can be found in [this spreadsheet](https://docs.google.com/spreadsheets
 To get edit access to add items, join the [IoT Edge Working Group Google Group](https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge).
 
 ![QR code of edge native project list](https://i.imgur.com/sToDBW9.png)
-
-## Contributors
-
-### author
-
--Amar Kapadia, Aarna Networks
--Brandon Wick, Aarna Networks
--Joel Roberts, Cisco
--Kate Goldenring, Fermyon
--Dejan Bosanac, Red Hat
-- Tomoya Fujita, Sony US Lab
--Ravi Chunduru, Verizon
--Natalie Fisher, VMware
--Steven Wong, VMware
-
-### Reviewers
-
-- Frédéric Desbiens, Eclipse Foundation
--Prakash Ramchandran, eOTF
--Mark Abrams, SUSE
 
 ## References
 

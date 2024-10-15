@@ -77,7 +77,7 @@ The main features as following:
 The basic concepts related to observability (Insight) are as follows.
 
 | # | Terms | Definitions |
-| :--- | ----------------- | :------------- ------------------------------------------------ |
+| - | ----- | ---------- |
 | 1 | Target | The monitored object; the system will regularly initiate capture tasks to the monitoring point to obtain metrics |
 | 2 | Metric | Use the [open-metric](https://openmetrics.io/) format description to measure the degree of a certain attribute in a software or hardware system |
 | 3 | Recording Rule | A named PromQL expression, which is a new metric obtained by calculating multiple metrics to describe a more complete and complex system state |
