@@ -56,7 +56,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 
 | Channel | Modules | File Size | Download | Update Date |
 | ------- | ------- | --------- | -------- | ----------- |
-| Workbench | Workbench | 394.25 MB | [:arrow_right: Go to Download](./modules/amamba.md) | 2024-10-11 |
+| Workbench | Workbench | 394.25 MB | [:arrow_right: Go to Download](./modules/amamba.md) | 2024-10-15 |
 | Container | Container Management | 674.33 MB | [:arrow_right: Go to Download](./modules/kpanda.md) | 2024-10-08 |
 | | Cluster Inspection | 174.30 MB | [:arrow_right: Go to Download](./modules/kcollie.md) | 2024-09-29 |
 | | Application Backup | 85.06 MB | [:arrow_right: Go to Download](./modules/kcoral.md) | 2024-09-29 |
@@ -68,7 +68,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | | Virtual Machine | 1.43 GB | [:arrow_right: Go to Download](./modules/virtnest.md) | 2024-09-29 |
 | Microservice | Insight | 2.62 GB | [:arrow_right: Go to Download](./modules/insight.md) | 2024-10-11 |
 | | Ipavo | 51 MB | [:arrow_right: Go to Download](./modules/ipavo.md) | 2024-10-12 |
-| | Microservice Engine | 1.66 GB | [:arrow_right: Go to Download](./modules/skoala.md) | 2024-09-25 |
+| | Microservice Engine | 1.66 GB | [:arrow_right: Go to Download](./modules/skoala.md) | 2024-10-15 |
 | | Service Mesh | 1.04 GB | [:arrow_right: Go to Download](./modules/mspider.md) | 2024-10-11 |
 | Middleware| Elasticsearch |970.83 MB| [:arrow_right: Go to Download](./modules/middleware/elasticsearch.md) |2024-10-08|
 | | Kafka |990.23 MB| [:arrow_right: Go to Download](./modules/middleware/kafka.md) |2024-10-08|
