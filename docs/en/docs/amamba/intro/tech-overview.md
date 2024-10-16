@@ -1,3 +1,13 @@
+## Enabling Service Topology, Services, and Call Chains
+
+To enable the service topology map, services, and call chains, you need to configure the telemetry settings in your YAML configuration file. Below is an example configuration:
+
+```yaml
+telemetry:
+  metrics:
+    enabled: true
+  traces:
+    enabled: true
 # Workbench Technical Overview
 
 *[Amamba]: dev codename of DCE 5.0 Workbench
