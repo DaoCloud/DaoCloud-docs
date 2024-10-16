@@ -1,3 +1,13 @@
+## Enabling Service Topology, Services, and Call Chains
+
+To enable the service topology map, services, and call chains, you need to configure the telemetry settings in your YAML configuration file. Below is an example configuration:
+
+```yaml
+telemetry:
+  metrics:
+    enabled: true
+  traces:
+    enabled: true
 # End-to-end Traffic lane
 
 The microservice engine supports isolating relevant versions of an application (or other features) into an independent runtime environment (i.e., a lane), and then routing traffic that meets the rules of the lane to the target version (or other feature) of the application by setting lane rules.
