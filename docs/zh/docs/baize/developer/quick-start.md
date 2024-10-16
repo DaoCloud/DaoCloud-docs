@@ -1,4 +1,4 @@
-# 开发控制台快速入门
+# 快速入门
 
 本文提供了简单的操作手册以便用户使用 DCE 5.0 AI Lab 进行数据集、Notebook、任务训练的整个开发、训练流程。
 
@@ -68,6 +68,10 @@ AI Lab 支持将 PVC 作为数据集的数据源类型，所以你可以创建�
         数据集或模型较大时，建议开启 GPU 配置。
 
 1. 在高级配置中，启用 **任务分析（Tersorboard）** ，点击 **确定** 。
+    
+    !!! note
+        
+        日志所在位置为 `空pvc数据集` 的 `/home/jovyan/model/train/logs/`
 
     ![高级配置](../images/enable-analy.png)
 
