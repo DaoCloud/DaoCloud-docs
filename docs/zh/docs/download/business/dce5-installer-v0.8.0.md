@@ -80,7 +80,7 @@ DCE 5.0 商业版包含以下模块，按需即插即用满足各类应用场景
 | ---- | --- | ------ |
 | 全局管理 | 负责用户访问控制、权限、工作空间与层级、审计日志、个性化外观设置等 | [0.17.1](../../ghippo/intro/release-notes.md#v0171) |
 | 容器管理 | 管理集群、节点、工作负载、Helm 应用、CRD、命名空间等 K8s 核心功能 | [0.18.1](../../kpanda/intro/release-notes.md#v0181) |
-| 可观测性 | 提供丰富的仪表盘、场景监控、数据查询、告警等图文信息 | [0.17.2](../../insight/intro/releasenote.md#v0172) |
+| 可观测性 | 提供丰富的仪表盘、场景监控、数据查询、告警等图文信息 | [0.17.2](../../insight/intro/releasenote.md#v0170) |
 | 应用工作台 | 基于容器的 DevOps 应用平台，支持 Jenkins, Tekton, GitOps 等流水线作业 | [0.17.3](../../amamba/intro/release-notes.md#v0173) |
 | 多云编排 | 集中管理多云、混合云、跨云资源的应用编排，具备多云灾备、故障恢复等能力 | [0.9.1](../../kairship/intro/release-notes.md#v091) |
 | 微服务引擎 | 提供注册发现、服务治理、配置管理、微服务网关等治理能力 | [0.22.2](../../skoala/intro/release-notes.md#v0222) |

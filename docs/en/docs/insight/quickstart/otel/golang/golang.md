@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+Date: 2024-10-16
+---
+
 # Enhance Go applications with OTel SDK
 
 This page contains instructions on how to set up OpenTelemetry enhancements in a Go application.
@@ -152,7 +157,7 @@ func main() {
 
 - Running in a production environment 
 
-    Please refer to the introduction of __Only injecting environment variable annotations__ in [Achieving non-intrusive enhancement of applications through Operators](./operator.md) to add annotations to deployment yaml:
+    Please refer to the introduction of __Only injecting environment variable annotations__ in [Achieving non-intrusive enhancement of applications through Operators](../operator.md) to add annotations to deployment yaml:
 
     ```console
     instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"

@@ -40,7 +40,7 @@
     !!! note
 
         1. JVM 监控功能仅支持 Java 语言。
-        2. 开启 JVM 监控功能，请参考[开始监控 Java 应用](../quickstart/otel/java/index.md)。
+        2. 开启 JVM 监控功能，请参考[开始监控 Java 应用](../../quickstart/otel/java/index.md)。
 
 ## 指标参考说明
 

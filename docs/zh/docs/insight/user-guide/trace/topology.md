@@ -7,7 +7,7 @@
 
 1. 集群中已[安装 insight-agent](../../quickstart/install/install-agent.md) 且应用处于 __运行中__ 状态。
 2. 服务已通过 [Operator](../../quickstart/otel/operator.md) 或
-   [Opentelemetry SDK](../../quickstart/otel/golang.md) 的方式接入链路。
+   [Opentelemetry SDK](../../quickstart/otel/golang/golang.md) 的方式接入链路。
 
 ## 操作步骤
 

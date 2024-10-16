@@ -67,7 +67,7 @@ The main features as following:
     - Understand [OpenTelemetry](../quickstart/otel/otel.md), send observability data to Insight [Sending Observability Data](../quickstart/otel/send_tracing_to_insight.md)
     - Enhance applications in a [non-intrusive](../quickstart/otel/operator.md) manner
     - Observability for [Java Applications](../quickstart/jvm-monitor/jvm-catelogy.md)
-    - Observability for [Golang Applications](../quickstart/otel/golang.md)
+    - Observability for [Golang Applications](../quickstart/otel/golang/golang.md)
     - [Integrating Other Observability Technologies](../best-practice/sw-to-otel.md)
 
 </div>

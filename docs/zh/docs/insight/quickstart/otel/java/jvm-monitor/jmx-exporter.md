@@ -55,7 +55,7 @@ ENTRYPOINT java $JAVA_OPTS -jar my-app.jar
 - 启动参数格式：-javaagent:=:
 - 这里使用了 8088 端口暴露 JVM 的监控指标，如果和 Java 应用冲突，可自行更改
 
-## 方式二： 通过 init container 容器挂载
+## 方式二：通过 init container 容器挂载
 
 我们需要先将 JMX exporter 做成 Docker 镜像, 以下 Dockerfile 仅供参考：
 
