@@ -1,3 +1,13 @@
+## Enabling Service Topology, Services, and Call Chains
+
+To enable the service topology map, services, and call chains, you need to configure the telemetry settings in your YAML configuration file. Below is an example configuration:
+
+```yaml
+telemetry:
+  metrics:
+    enabled: true
+  traces:
+    enabled: true
 # Cloud Native Federation Middleware -- FedState Officially Open Sourced
 
 In the cloud native scenario, there has been great development of stateful services. Some games are based on YAML packaging for manual installation, some are based on helm charts, and some are wrapped based on operator methods. At present, the community's methods are mainly based on helm chart and operator, especially based on operator, because it is a programming-friendly method and can develop various capabilities according to needs. Currently, there are also many open source middleware and database operators in the community, but they are mainly concentrated in the single-cluster game, which is related to the Operator framework itself. In a multi-cloud/federation environment, how to design and implement the scheduling, deployment, and automated operation and maintenance of stateful services based on multiple clusters, multiple data centers, and hybrid cloud scenarios? The newly open-sourced FedState project is trying to solve such situation problems.
