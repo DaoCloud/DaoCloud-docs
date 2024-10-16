@@ -8,7 +8,7 @@
 
 ### 数据集：训练代码
 
-- 代码数据源：[https://github.com/d-run/drun-samples.git](https://github.com/d-run/drun-samples.git)，主要是一个简单的 Tensorflow 代码。
+- 代码数据源：[https://github.com/samzong/training-sample-code.git](https://github.com/samzong/training-sample-code.git)，主要是一个简单的 Tensorflow 代码。
 - 如果是中国境内的用户，可以使用 Gitee 加速：[https://gitee.com/samzong_lu/training-sample-code.git](https://gitee.com/samzong_lu/training-sample-code.git)
 - 代码路径为 `tensorflow/tf-fashion-mnist-sample`
 
@@ -27,23 +27,54 @@
 
 ![训练数据的数据集](../images/baize-02.png)
 
-### 数据集：空 PVC
+!!! note
 
-AI Lab 支持将 PVC 作为数据集的数据源类型，所以你可以创建空数据集，用于存储训练结束的模型和日志。
+    如果未下载提前准备数据集，训练脚本也会自动下载；提前准备训练数据可以加速训练速度
 
-![空pvc数据集](../images/baize-03.png)
+### 数据集：空数据集
 
-## 创建并使用 Notebook
+AI Lab 支持将作为数据集的数据源类型，所以你可以创建空数据集，用于存储训练结束的模型和日志。
 
-准备开发环境，点击导航栏的 **Notebooks** ，点击 **创建** 。将上一步中创建的三个数据集进行关联，挂载路径请参照下图填写：
+![空数据集](../images/baize-03.png)
+
+## 环境依赖: tensorflow
+
+脚本在运行时，需要依赖 `Tensorflow` 的 Python 库，可以使用 AI Lab 的环境依赖管理功能，提前将需要的 Python 库下载和准备完成，无需依赖镜像构建
+
+> 参考 [环境依赖](../developer/dataset/environments.md) 的操作方式，添加一个 `CONDA` 环境.
+
+```yaml
+name: tensorflow
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.12
+  - tensorflow
+prefix: /opt/conda/envs/tensorflow
+```
+
+![创建环境依赖](../images/baize-08.png)
+
+!!! note
+
+    等待环境预热成功后，只需要将此环境挂载到 Notebook、训练任务中，使用 AI Lab 提供的基础镜像就可以
+
+## 使用 Notebook 调试脚本
+
+准备开发环境，点击导航栏的 **Notebooks** ，点击 **创建** 。
+
+- 将上一步中创建的三个数据集进行关联，挂载路径请参照下图填写，注意将需要使用的空数据集在 输出数据集位置配置
 
 ![挂载路径](../images/baize-06.png)
+
+- 选择并绑定前序步骤中的环境依赖包
 
 等待 Notebook 创建成功，点击列表中的访问地址，进入 Notebook。并在 Notebook 的终端中执行以下命令进行任务训练。
 
 !!! note
 
-    脚本使用 Tensorflow，需要在 Notebook 中执行 `pip install -r requirements.txt` 安装。 
+    脚本使用 Tensorflow，如果忘记关联依赖库，也可以临时用 `pip install tensorflow` 安装。
 
     ```shell
     python /home/jovyan/code/tensorflow/tf-fashion-mnist-sample/train.py
@@ -53,32 +84,26 @@ AI Lab 支持将 PVC 作为数据集的数据源类型，所以你可以创建�
 
 ## 创建训练任务
 
-1. 点击导航栏的 **任务中心** -> **训练任务** ，创建一个 `Tensorflow` 单机任务
-1. 先填写基本参数后，点击 **下一步**
-1. 在任务资源配置中，正确配置任务资源后，点击 **下一步**
+1.  点击导航栏的 **任务中心** -> **训练任务** ，创建一个 `Tensorflow` 单机任务
+1.  先填写基本参数后，点击 **下一步**
+1.  在任务资源配置中，正确配置任务资源后，点击 **下一步**
 
-    ![任务资源配置](../images/baize-06.png)
+    - 镜像: 如果前序环境依赖包准备好了，使用默认镜像即可； 如果未准备，要确认镜像内有 `tensorflow` 的 Python 库
+    - shell: 使用 `bash` 即可
+    - 启用命令: `/home/jovyan/code/tensorflow/tf-fashion-mnist-sample/train.py`
 
-    - 镜像地址填写：`release.daocloud.io/baize/jupyter-tensorflow-full:v1.8.0-baize`
-    - Command：`python`
-    - Arguments：`/home/jovyan/code/tensorflow/tf-fashion-mnist-sample/train.py`
+2.  在高级配置中，启用 **任务分析（Tersorboard）** ，点击 **确定** 。
 
     !!! note
 
-        数据集或模型较大时，建议开启 GPU 配置。
-
-1. 在高级配置中，启用 **任务分析（Tersorboard）** ，点击 **确定** 。
-    
-    !!! note
-        
-        日志所在位置为 `空pvc数据集` 的 `/home/jovyan/model/train/logs/`
+        日志所在位置为输出数据集 的 `/home/jovyan/model/train/logs/`
 
     ![高级配置](../images/enable-analy.png)
 
-1. 返回训练任务列表，等到状态变为 **成功** 。点击列表右侧的 **┇** ，可以查看详情、克隆任务、更新优先级、查看日志和删除等操作。
+3.  返回训练任务列表，等到状态变为 **成功** 。点击列表右侧的 **┇** ，可以查看详情、克隆任务、更新优先级、查看日志和删除等操作。
 
     ![提交训练任务](../images/othera.png)
 
-1. 成功创建任务后，在左侧导航栏点击 **任务分析** ，可以查看任务状态并对任务训练进行调优。
+4.  成功创建任务后，在左侧导航栏点击 **任务分析** ，可以查看任务状态并对任务训练进行调优。
 
     ![查看任务](../images/baize-07.png)
