@@ -20,9 +20,25 @@ IAM（Identity and Access Management，用户与访问控制）是全局管理�
 
 ## 使用流程
 
-1. 使用 DCE 平台主账号（ Admin）或具有管理员权限的用户账号登录 DCE 平台。
-2. 创建用户，参见[用户](user.md)。
-3. 为用户授权，参见[权限管理](role.md)。
-4. 创建用户组，参见[用户组](group.md)。
-5. 创建自定义角色，参见[自定义角色](role.md)。
-6. 创建身份提供商，参见[身份提供商](idprovider.md)。
+有关访问控制的常规流程为：
+
+```mermaid
+graph TD
+    login[登录] --> user[创建用户]
+    user --> auth[为用户授权]
+    auth --> group[创建用户组]
+    group --> role[创建自定义角色]
+    role --> id[创建身份提供商]
+
+ classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
+ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
+ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+ class login,user,auth,group,role,id cluster;
+
+click login "https://docs.daocloud.io/ghippo/install/login.html"
+click user "https://docs.daocloud.io/ghippo/user-guide/access-control/user.html"
+click auth "https://docs.daocloud.io/ghippo/user-guide/access-control/role.html"
+click group "https://docs.daocloud.io/ghippo/user-guide/access-control/group.html"
+click role "https://docs.daocloud.io/ghippo/user-guide/access-control/custom-role.html"
+click id "https://docs.daocloud.io/ghippo/user-guide/access-control/idprovider.html"
+```
