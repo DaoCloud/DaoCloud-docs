@@ -1,3 +1,13 @@
+## Enabling Service Topology, Services, and Call Chains
+
+To enable the service topology map, services, and call chains, you need to configure the telemetry settings in your YAML configuration file. Below is an example configuration:
+
+```yaml
+telemetry:
+  metrics:
+    enabled: true
+  traces:
+    enabled: true
 # HTTP to Dubbo Protocol Dynamic Routing
 
 Using [Pixiu](https://cn.dubbo.apache.org/zh-cn/overview/mannual/dubbo-go-pixiu/overview/), it is possible to support protocol conversion. Currently, it supports proxying and conversion of HTTP, Dubbo2, Triple, and gRPC protocols. This article mainly introduces how to use it to convert HTTP protocol to Dubbo protocol.
