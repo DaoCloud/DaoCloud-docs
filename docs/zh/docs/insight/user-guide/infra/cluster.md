@@ -34,4 +34,4 @@
 
 !!! note
 
-    使用的具体指标可参考[可观测性参考指标说明](../../reference/uesd-metric-in-insight.md)。
+    使用的具体指标可参考[可观测性参考指标说明](../../reference/used-metric-in-insight.md)。

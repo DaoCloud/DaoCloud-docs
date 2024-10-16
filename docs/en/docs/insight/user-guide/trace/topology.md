@@ -9,7 +9,7 @@ service-to-service calls during the queried time period.
 
 1. Insight Agent is [installed](../../quickstart/install/install-agent.md) in the cluster and the applications are in the __Running__ state.
 2. Services have been instrumented for distributed tracing using
-   [Operator](../../quickstart/otel/operator.md) or [OpenTelemetry SDK](../../quickstart/otel/golang.md).
+   [Operator](../../quickstart/otel/operator.md) or [OpenTelemetry SDK](../../quickstart/otel/golang/golang.md).
 
 ## Steps
 

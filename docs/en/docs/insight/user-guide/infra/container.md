@@ -48,7 +48,7 @@ Follow these steps to view service monitoring metrics:
     !!! note
 
         1. The JVM monitoring feature only supports the Java language.
-        2. To enable the JVM monitoring feature, refer to [Getting Started with Monitoring Java Applications](../quickstart/otel/java/index.md).
+        2. To enable the JVM monitoring feature, refer to [Getting Started with Monitoring Java Applications](../../quickstart/otel/java/index.md).
 
 ### Metric Explanations
 

@@ -2,7 +2,7 @@
 
 在 __可观测性 Insight__ 中服务是指使用 Opentelemtry SDK 接入链路数据，服务监控能够辅助运维过程中观察应用程序的性能和状态。
 
-如何使用 OpenTelemetry 请参考[使用 OTel 赋予应用可观测性](../quickstart/otel/otel.md)。
+如何使用 OpenTelemetry 请参考[使用 OTel 赋予应用可观测性](../../quickstart/otel/otel.md)。
 
 ## 名词解释
 
@@ -36,14 +36,14 @@
     3. 支持通过右上角的时间选择器快速选择时间范围，或自定义时间范围。
     4. 在 __关联容器__ 模块点击容器组名称，可跳转至容器组详情页。
 
-    ![服务监控](../../insight/images/service.png){ width="1000"}
+    ![服务监控](../../images/service.png){ width="1000"}
 
 4. 点击 Tab 切换到 __操作指标__ ，可查询多选服务相同操作的聚合起来的流量指标。
 
     1. 支持对操作指标中的吞吐率、错误率、请求延时等指标进行排序。
     2. 点击单个操作后的图标，可跳转至 __调用链__ 快速查询相关链路。
 
-    ![服务监控](../../insight/images/service-1.png){ width="1000"}
+    ![服务监控](../../images/service-1.png){ width="1000"}
 
 ### 服务指标说明
 

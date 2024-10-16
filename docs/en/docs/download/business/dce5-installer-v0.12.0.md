@@ -82,7 +82,7 @@ DCE 5.0 Enterprise includes the following modules that can be used on-demand to 
 | ------- | ----------- | -------- |
 | Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, and custom appearance. | [0.21.0](../../ghippo/intro/release-notes.md#v0210) |
 | Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and more Kubernetes features | [0.22.0](../../kpanda/intro/release-notes.md#v0220) |
-| Insight | Provides rich dashboards, scenario monitoring, data querying, alerting, and graphical information | [0.21.1](../../insight/intro/releasenote.md#insight-server-v0210) |
+| Insight | Provides rich dashboards, scenario monitoring, data querying, alerting, and graphical information | [0.21.1](../../insight/intro/releasenote.md#v0210) |
 | Workbench | Container-based DevOps application platform that supports Jenkins, Tekton, GitOps, and other pipeline jobs | [0.21.0](../../amamba/intro/release-notes.md#v0210) |
 | MultiCloud Management | Centralized management of multicloud, hybrid cloud, and cross-cloud resources, with capabilities such as multicloud disaster recovery and fault recovery | [0.13.1](../../kairship/intro/release-notes.md#v0130) |
 | Microservice Engine | Provides governance capabilities such as service discovery, service governance, configuration management, and microservice gateway | [0.28.1](../../skoala/intro/release-notes.md#v0281) |
