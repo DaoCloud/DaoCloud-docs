@@ -9,7 +9,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 1. [定制外观](#_5)
 1. [打通权限体系（可选）](#_6)
 
-具体操作演示请参见 [OEM IN 最佳实践视频教程](../../../videos/use-cases.md#dce-50_3)。
+具体操作演示请参见 [OEM IN 最佳实践视频教程](../../../videos/use-cases.md#dce-50oem-in)。
 
 !!! note
 

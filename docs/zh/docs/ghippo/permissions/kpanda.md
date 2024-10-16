@@ -10,8 +10,8 @@ hide:
 - Admin / Kpanda Owner
 - [Cluster Admin](../../kpanda/user-guide/permissions/permission-brief.md#cluster-admin)
 - [NS Admin](../../kpanda/user-guide/permissions/permission-brief.md#ns-admin)
-- [NS Editor](../../kpanda/user-guide/permissions/permission-brief.md#ns-edit)
-- [NS Viewer](../../kpanda/user-guide/permissions/permission-brief.md#ns-view)
+- [NS Editor](../../kpanda/user-guide/permissions/permission-brief.md#ns-editor)
+- [NS Viewer](../../kpanda/user-guide/permissions/permission-brief.md#ns-viewer)
 
 !!! note
 
