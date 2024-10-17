@@ -364,7 +364,7 @@ nav:
                   - 跨集群备份恢复MySQL: kpanda/best-practice/backup-mysql-on-nfs.md
                   - 工作集群相关实践:
                       - 加固自建工作集群: kpanda/best-practice/hardening-cluster.md
-                      - 离线升级工作集群: kpanda/best-practice/update-offline-cluster.md
+                      - 离线部署/升级工作集群: kpanda/best-practice/update-offline-cluster.md
                       - 工作集群添加异构节点: kpanda/best-practice/multi-arch.md
                       - 工作集群的控制节点扩容: kpanda/best-practice/add-master-node.md
                       - 替换工作集群首个控制节点: kpanda/best-practice/replace-first-master-node.md
