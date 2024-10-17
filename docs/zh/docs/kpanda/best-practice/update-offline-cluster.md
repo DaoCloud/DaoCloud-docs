@@ -15,11 +15,8 @@
 整体的思路为：
 
 1. 在联网节点构建离线包
-
 2. 将离线包导入火种节点
-
 3. 更新 Global 集群的 kubernetes 版本清单
-
 4. 使用平台 UI 创建工作集群或升级工作集群的 kubernetes 版本
 
 !!! note
@@ -159,6 +156,6 @@ kubectl apply -f data/kubeanofflineversion.cr.patch.yaml
 
 登录 DCE 5.0 的 UI 管理界面，您可以继续执行以下操作：
 
-1. 参照[集群创建文档](../../kpanda/user-guide/clusters/create-cluster.md)进行工作集群创建，此时可以选择 Kubernetes 增量版本。
+1. 参照[集群创建文档](../user-guide/clusters/create-cluster.md)进行工作集群创建，此时可以选择 Kubernetes 增量版本。
 
-2. 参照[集群升级文档](../../kpanda/user-guide/clusters/upgrade-cluster.md)对自建的工作集群进行升级。
+2. 参照[集群升级文档](../user-guide/clusters/upgrade-cluster.md)对自建的工作集群进行升级。
