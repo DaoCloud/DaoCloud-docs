@@ -10,6 +10,7 @@ nav:
               - Use Cases: dce/scenario.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Release Notes:
+                  - 20240930 Release: dce/dce-rn/20240930.md
                   - 20240830 Release: dce/dce-rn/20240830.md
                   - 20240730 Release: dce/dce-rn/20240730.md
                   - 20240630 Release: dce/dce-rn/20240630.md
