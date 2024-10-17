@@ -4,7 +4,7 @@
 
 但是需要注意：需要在虚拟机创建成功并且处于关机状态下，修改 YAML 进行配置。
 
-## 配置 HTTP Liveness Probe：
+## 配置 HTTP Liveness Probe
 
 1. 在 spec.template.spec 中配置 livenessProbe.httpGet。
 2. 修改 cloudInitNoCloud 以启动一个 HTTP 服务器。
@@ -126,7 +126,7 @@
         Ubuntu/Debian 安装 ncat。
         CentOS 安装 nmap-ncat（因为 ncat 在 CentOS 的默认仓库中可能不可用）。
 
-## 配置 TCP Liveness Probe：
+## 配置 TCP Liveness Probe
 
 在 spec.template.spec 中配置 livenessProbe.tcpSocket。
 
@@ -230,7 +230,7 @@
               name: cloudinitdisk
     ```
 
-## 配置 Readiness Probes:
+## 配置 Readiness Probes
 
 在 spec.template.spec 中配置 readiness。
 
