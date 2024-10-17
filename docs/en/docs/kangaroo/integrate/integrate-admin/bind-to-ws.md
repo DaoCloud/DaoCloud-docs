@@ -63,4 +63,4 @@ Generally, for private registry spaces, binding to a workspace is helpful to all
     Workspace administrators can integrate external image repositories for their members to use as needed,
     without relying entirely on platform administrators, making it more flexible to use.
 
-Next step: [Deploy Applications](../../amamba/user-guide/wizard/create-app-git.md)
+Next step: [Deploy Applications](../../../amamba/user-guide/wizard/create-app-git.md)

@@ -82,7 +82,7 @@ DCE 5.0 Enterprise includes the following modules, which can be used on-demand t
 | Global Management | Responsible for user access control, permissions, workspace and hierarchy, audit logs, and custom appearance. | [0.29.0](../../ghippo/intro/release-notes.md#v0290) |
 | Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and more Kubernetes features. | [0.30.1](../../kpanda/intro/release-notes.md#v0300) |
 | Insight | Provides rich dashboards, scene monitoring, data querying, and alert information. | [0.29.0](../../insight/intro/releasenote.md#v0290) |
-| Workbench | A container-based DevOps application platform that supports Jenkins, Tekton, GitOps, and other pipeline jobs. | [0.29.1](../../amamba/intro/release-notes.md#v0291) |
+| Workbench | A container-based DevOps application platform that supports Jenkins, Tekton, GitOps, and other pipeline jobs. | [0.29.1](../../amamba/intro/release-notes.md#v0290) |
 | MultiCloud Management | Centralized management of multicloud, hybrid cloud, and cross-cloud resources for application orchestration, with capabilities such as multicloud disaster recovery and fault recovery. | [0.21.1](../../kairship/intro/release-notes.md#v0211) |
 | Microservice Engine | Provides governance capabilities such as service registration, discovery, configuration management, and microservice gateway. | [0.39.2](../../skoala/intro/release-notes.md#v0392) |
 | Service Mesh | Next-generation service mesh built on Istio open-source technology for cloud-native applications. | [v0.28.0](../../mspider/intro/release-notes.md#v0280) |

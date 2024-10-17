@@ -54,4 +54,4 @@
 
     工作空间管理员 Workspace Admin 可以根据需要自己集成外部镜像仓库给成员使用，而无需全部依赖于平台管理员，使用起来更为灵活。
 
-下一步：[部署应用](../../amamba/user-guide/wizard/create-app-git.md)
+下一步：[部署应用](../../../amamba/user-guide/wizard/create-app-git.md)
