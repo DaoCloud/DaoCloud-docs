@@ -13,7 +13,7 @@
 - 开启主机上的某些端口，请参阅[检查所需端口](#_3)。
 - 禁用交换分区。为了保证 kubelet 正常工作，您必须禁用交换分区。
 
-### 确保节点上 MAC 地址和 product_uuid 的唯一性
+### 确保节点上 MAC 地址和 product_uuid 的唯一性 {##mac-product-uuid}
 
 - 使用命令 __ip link__ 或 __ifconfig -a__ 来获取网络接口的 MAC 地址
 - 使用 __sudo cat /sys/class/dmi/id/product_uuid__ 命令来校验 product_uuid

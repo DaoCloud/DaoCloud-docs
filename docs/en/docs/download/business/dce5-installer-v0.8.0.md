@@ -82,7 +82,7 @@ DCE 5.0 Enterprise includes the following modules, which can be used on demand t
 | ------- | ----------- | -------- |
 | Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, and custom appearance. | [0.17.1](../../ghippo/intro/release-notes.md#v0171) |
 | Container Management | Manage Kubernetes core features such as clusters, nodes, workloads, Helm applications, CRD, namespaces, etc. | [0.18.1](../../kpanda/intro/release-notes.md#v0181) |
-| Insight | Provide rich dashboard, scenario monitoring, data query, alert and other graphical information. | [0.17.2](../../insight/intro/releasenote.md#v0170) |
+| Insight | Provide rich dashboard, scenario monitoring, data query, alert and other graphical information. | [0.17.2](../../insight/intro/release-notes.md#v0170) |
 | Workbench| Container-based DevOps application platform, supporting pipeline jobs such as Jenkins, Tekton, GitOps, etc. | [0.17.3](../../amamba/intro/release-notes.md#v0173) |
 | Multicloud MOrchestration| Centralized management of multicloud, hybrid cloud, cross-cloud resources' application orchestration, with multicloud disaster recovery, fault recovery and other capabilities.| [0.9.1](../../kairship/intro/release-notes.md#v091) |
 | Microservice Engine | Provide governance capabilities such as registration and discovery, service governance, configuration management, microservice gateway, etc. | [0.22.2](../../skoala/intro/release-notes.md#v0222) |
@@ -94,8 +94,8 @@ DCE 5.0 Enterprise includes the following modules, which can be used on demand t
 | Middleware: RabbitMQ| Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP). | [0.11.0](../../middleware/rabbitmq/release-notes.md#v0110) |
 | Middleware: Redis | An in-memory database caching service. | [0.8.0](../../middleware/redis/release-notes.md#v080) |
 | Container Registry | Used to store images for K8s, DevOps, and container application development. | [0.8.1](../../kangaroo/intro/release-notes.md#v080) |
-| Network | Supports multiple CNI combinations for different Linux kernels. | [0.7.0](../../network/intro/releasenotes.md#v070) |
-| Storage | Provides unified data storage services, supporting file, object, block, local storage, and easy access to storage vendor solutions. | [v0.10.2](../../storage/hwameistor/releasenotes.md#v0102) |
+| Network | Supports multiple CNI combinations for different Linux kernels. | [0.7.0](../../network/intro/release-notes.md#v070) |
+| Storage | Provides unified data storage services, supporting file, object, block, local storage, and easy access to storage vendor solutions. | [v0.10.2](../../storage/hwameistor/release-notes.md#v0102) |
 
 ## More
 

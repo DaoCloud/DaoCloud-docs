@@ -175,7 +175,7 @@ the evolution path and feature changes of each version.
 
     Insight Agent v0.21.0 has fixed the issue of collecting duplicate JVM metrics after
     configuring PodMonitor. It is recommended to upgrade to this version for the fix.
-    For more details, refer to [Known Issues](../../insight/quickstart/install/knownissues.md).
+    For more details, refer to [Known Issues](../quickstart/install/knownissues.md).
 
 ### v0.21.0
 
@@ -732,7 +732,7 @@ the evolution path and feature changes of each version.
 - Added documentation station glossary
 - Added 4 pages of basic concept tasks and examples, data model, and query language of the document station
 - Added user guides - documents such as scene monitoring, data query, and alert center
-- New additions to the document site: [Product Benefits](../intro/benefits.md), [Metric Query](../user-guide/data-query/metric.md), [trace query](../user-guide/trace/trace.md), dashboard, [overview](../user-guide/dashboard/overview.md)
+- New additions to the document site: [Product Benefits](benefits.md), [Metric Query](../user-guide/data-query/metric.md), [trace query](../user-guide/trace/trace.md), dashboard, [overview](../user-guide/dashboard/overview.md)
 
 ## 2022-04-22
 

@@ -445,7 +445,7 @@ nav:
                   - Background and Challenges: network/intro/background.md
                   - Components: network/modules/modules.md
                   - Offline Upgrade: network/intro/offline.md
-                  - Release Notes: network/intro/releasenotes.md
+                  - Release Notes: network/intro/release-notes.md
                   - Known Issues: network/intro/issues.md
               - Plan:
                   - Eth card plan: network/plans/ethplan.md
@@ -473,7 +473,7 @@ nav:
                   - CoreDNS Performance Test: network/performance/coredns-performance.md
               - Spiderpool:
                   - Intro: network/modules/spiderpool/index.md
-                  - Release Notes: network/modules/spiderpool/releasenotes.md
+                  - Release Notes: network/modules/spiderpool/release-notes.md
                   - Install: 
                       - Install Spiderpool: network/modules/spiderpool/install/install.md
                       - Prepare and install RDMA: network/modules/spiderpool/install/rdmapara.md
@@ -558,7 +558,7 @@ nav:
                   - Background: storage/background.md
                   - Benefits: storage/benefits.md
                   - Features: storage/features.md
-                  - Storage Release Notes: storage/hwameistor/releasenotes.md
+                  - Storage Release Notes: storage/hwameistor/release-notes.md
               - HwameiStor Storage:
                   - Intro: storage/hwameistor/intro/index.md
                   - Modules:
@@ -670,7 +670,7 @@ nav:
                   - Scenario: insight/intro/scenarios.md
                   - Features: insight/intro/features.md
                   - Permissions: insight/intro/permission.md
-                  - Insight Release Notes: insight/intro/releasenote.md
+                  - Insight Release Notes: insight/intro/release-notes.md
               - Quick Start:
                   - Plan to Deploy:
                       - insight/quickstart/res-plan/index.md

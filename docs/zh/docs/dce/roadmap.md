@@ -61,7 +61,7 @@ hide:
     - 支持自定义日志采集配置、日志脱敏
     - 告警支持基于不同的集群、命名空间级别等标签发送给不同的用户
 
-    [:octicons-arrow-right-24: 查看 Insight Release Notes](../insight/intro/releasenote.md)
+    [:octicons-arrow-right-24: 查看 Insight Release Notes](../insight/intro/release-notes.md)
 
 -   :material-slot-machine:{ .lg .middle } __AI Lab__
 

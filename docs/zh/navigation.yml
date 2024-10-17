@@ -468,7 +468,7 @@ nav:
                   - 背景和挑战: network/intro/background.md
                   - 网络组件: network/modules/modules.md
                   - 离线升级云原生网络: network/intro/offline.md
-                  - Release Notes: network/intro/releasenotes.md
+                  - Release Notes: network/intro/release-notes.md
                   - 网络组件已知问题: network/intro/issues.md
               - 网络规划:
                   - 网卡规划: network/plans/ethplan.md
@@ -498,7 +498,7 @@ nav:
                   - CoreDNS 性能测试: network/performance/coredns-performance.md
               - 集成 Spiderpool:
                   - 介绍: network/modules/spiderpool/index.md
-                  - Release Notes: network/modules/spiderpool/releasenotes.md
+                  - Release Notes: network/modules/spiderpool/release-notes.md
                   - 安装:
                       - Spiderpool 安装: network/modules/spiderpool/install/install.md
                       - RDMA 环境准备及安装: network/modules/spiderpool/install/rdmapara.md
@@ -587,7 +587,7 @@ nav:
                   - 背景和挑战: storage/background.md
                   - 功能优势: storage/benefits.md
                   - 功能列表: storage/features.md
-                  - Release Notes: storage/hwameistor/releasenotes.md
+                  - Release Notes: storage/hwameistor/release-notes.md
               - HwameiStor 本地存储:
                   - 介绍: storage/hwameistor/intro/index.md
                   - 组件:
@@ -705,7 +705,7 @@ nav:
                   - 应用场景: insight/intro/scenarios.md
                   - 功能列表: insight/intro/feature.md
                   - 权限说明: insight/intro/permission.md
-                  - Release Notes: insight/intro/releasenote.md
+                  - Release Notes: insight/intro/release-notes.md
               - 快速入门:
                   - 部署资源规划:
                       - insight/quickstart/res-plan/index.md

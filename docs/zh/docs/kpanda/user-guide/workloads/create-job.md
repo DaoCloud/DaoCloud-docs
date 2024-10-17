@@ -26,7 +26,7 @@
 
     ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/job01.png)
 
-3. 依次填写[基本信息](create-job.md#_3)、[容器配置](create-job.md#_4)、[服务配置](create-job.md#_5)、[高级配置](create-job.md#_6)后，在页面右下角点击 __确定__ 完成创建。
+3. 依次填写[基本信息](create-job.md#_3)、[容器配置](create-job.md#_4)、服务配置、[高级配置](create-job.md#_5)后，在页面右下角点击 __确定__ 完成创建。
 
     系统将自动返回 __任务__ 列表。点击列表右侧的 __┇__ ，可以对任务执行执行更新、删除、重启等操作。
 

@@ -81,7 +81,7 @@ DCE 5.0 Community includes the following modules by default:
 | -------- | ----------- | ---------- |
 | Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, and custom appearance. | [0.22.1](../../ghippo/intro/release-notes.md#v0221) |
 | Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and other core Kubernetes features | [0.23.0](../../kpanda/intro/release-notes.md#v0230) |
-| Observability | Provides rich dashboards, scenario monitoring, data queries, alerts, and other graphical and textual information | [0.22.0](../../insight/intro/releasenote.md#v0220) |
+| Observability | Provides rich dashboards, scenario monitoring, data queries, alerts, and other graphical and textual information | [0.22.0](../../insight/intro/release-notes.md#v0220) |
 
 ## More
 

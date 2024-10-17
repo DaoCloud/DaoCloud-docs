@@ -80,7 +80,7 @@ DCE 5.0 商业版包含以下模块，按需即插即用满足各类应用场景
 | ---- | --- | ------ |
 | 全局管理 | 负责用户访问控制、权限、工作空间与层级、审计日志、个性化外观设置等 | [0.16.1](../../ghippo/intro/release-notes.md#v0161) |
 | 容器管理 | 管理集群、节点、工作负载、Helm 应用、CRD、命名空间等 K8s 核心功能 | [0.17.0](../../kpanda/intro/release-notes.md#v0170) |
-| 可观测性 | 提供丰富的仪表盘、场景监控、数据查询、告警等图文信息 | [0.16.1](../../insight/intro/releasenote.md#v0160) |
+| 可观测性 | 提供丰富的仪表盘、场景监控、数据查询、告警等图文信息 | [0.16.1](../../insight/intro/release-notes.md#v0160) |
 | 应用工作台 | 基于容器的 DevOps 应用平台，支持 Jenkins, Tekton, GitOps 等流水线作业 | [0.16.1](../../amamba/intro/release-notes.md#v0161) |
 | 多云编排 | 集中管理多云、混合云、跨云资源的应用编排，具备多云灾备、故障恢复等能力 | [0.8.1](../../kairship/intro/release-notes.md#v080) |
 | 微服务引擎 | 提供注册发现、服务治理、配置管理、微服务网关等治理能力 | [0.21.2](../../skoala/intro/release-notes.md#v0212) |
@@ -92,8 +92,8 @@ DCE 5.0 商业版包含以下模块，按需即插即用满足各类应用场景
 | 中间件 RabbitMQ | 实现了高级消息队列协议 (AMQP) 的开源消息代理软件 | [0.10.2](../../middleware/rabbitmq/release-notes.md#v0101) |
 | 中间件 Redis | 一款内存数据库缓存服务 | [0.7.2](../../middleware/redis/release-notes.md#v071) |
 | 镜像仓库 | 用于存储 K8s、DevOps 和容器应用开发的镜像 | [0.7.2](../../kangaroo/intro/release-notes.md#v070) |
-| 网络 | 针对不同的 Linux 内核，支持多种 CNI 组合方案 | [0.6.0](../../network/intro/releasenotes.md#v060) |
-| 存储 | 提供统一数据存储服务，支持文件、对象、块、本地存储，轻松接入存储厂商方案 | [v0.9.3](../../storage/hwameistor/releasenotes.md#v093) |
+| 网络 | 针对不同的 Linux 内核，支持多种 CNI 组合方案 | [0.6.0](../../network/intro/release-notes.md#v060) |
+| 存储 | 提供统一数据存储服务，支持文件、对象、块、本地存储，轻松接入存储厂商方案 | [v0.9.3](../../storage/hwameistor/release-notes.md#v093) |
 
 ## 更多
 
