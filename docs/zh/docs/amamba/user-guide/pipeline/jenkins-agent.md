@@ -3,7 +3,7 @@
 如果需要使用特定环境的 Jenkins Agent，如特殊版本的JDK，或者特定的工具，可以通过自定义 Jenkins Agent 来实现。
 本文档描述了如何在 DCE 5.0 中自定义 Jenkins Agent，其中工作台支持全局范围的自定义 Agent、流水线级别的自定义 Agent，可根据实际使用场景来决定选用哪种方式。
 
-关于如何构建自定义的镜像请参考文档[在 Jenkins 中使用自定义工具链](../../quickstart/jenkins-custom.md/#创建自定义镜像)
+关于如何构建自定义的镜像请参考文档[在 Jenkins 中使用自定义工具链](../../quickstart/jenkins-custom.md#_1)
 
 ## 自定义全局范围 Agent
 
@@ -11,7 +11,8 @@
 
 ### 配置 Jenkins
 
-1. 前往 __容器管理__ -> __集群列表__ ，选择您安装 Jenkins 的集群和命名空间（默认集群名称为 kpanda-global-cluster，命名空间为 amamba-system）
+1. 前往 __容器管理__ -> __集群列表__ ，选择您安装 Jenkins 的集群和命名空间
+   （默认集群名称为 kpanda-global-cluster，命名空间为 amamba-system）
 2. 选择 __配置与密钥__ -> __配置项__ ，选择 Jenkins 安装的命名空间，搜索配置项 `jenkins-casc-config`
 3. 选择 __编辑 YAML__ , 搜索`jenkins.clouds.kubernetes.templates`，添加以下内容（以添加 maven-jdk11 为例）
 
