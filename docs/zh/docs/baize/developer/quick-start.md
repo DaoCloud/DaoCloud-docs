@@ -64,23 +64,23 @@ prefix: /opt/conda/envs/tensorflow
 
 准备开发环境，点击导航栏的 **Notebooks** ，点击 **创建** 。
 
-- 将上一步中创建的三个数据集进行关联，挂载路径请参照下图填写，注意将需要使用的空数据集在 输出数据集位置配置
+- 将[准备好的三个数据集](#_2)进行关联，挂载路径请参照下图填写，注意将需要使用的空数据集在 输出数据集位置配置
 
-![挂载路径](../images/baize-06.png)
+    ![挂载路径](../images/baize-06.png)
 
-- 选择并绑定前序步骤中的环境依赖包
+- 选择并绑定[环境依赖包](#tensorflow)
 
-等待 Notebook 创建成功，点击列表中的访问地址，进入 Notebook。并在 Notebook 的终端中执行以下命令进行任务训练。
+    等待 Notebook 创建成功，点击列表中的访问地址，进入 Notebook。并在 Notebook 的终端中执行以下命令进行任务训练。
 
-!!! note
+    ![进入 notebook](../images/baize-05.png)
 
-    脚本使用 Tensorflow，如果忘记关联依赖库，也可以临时用 `pip install tensorflow` 安装。
+    !!! note
 
-    ```shell
-    python /home/jovyan/code/tensorflow/tf-fashion-mnist-sample/train.py
-    ```
+        脚本使用 Tensorflow，如果忘记关联依赖库，也可以临时用 `pip install tensorflow` 安装。
 
-![进入 notebook](../images/baize-05.png)
+        ```shell
+        python /home/jovyan/code/tensorflow/tf-fashion-mnist-sample/train.py
+        ```
 
 ## 创建训练任务
 
@@ -88,22 +88,26 @@ prefix: /opt/conda/envs/tensorflow
 1.  先填写基本参数后，点击 **下一步**
 1.  在任务资源配置中，正确配置任务资源后，点击 **下一步**
 
-    - 镜像: 如果前序环境依赖包准备好了，使用默认镜像即可； 如果未准备，要确认镜像内有 `tensorflow` 的 Python 库
-    - shell: 使用 `bash` 即可
-    - 启用命令: `/home/jovyan/code/tensorflow/tf-fashion-mnist-sample/train.py`
+    - 镜像：如果前序环境依赖包准备好了，使用默认镜像即可； 如果未准备，要确认镜像内有 `tensorflow` 的 Python 库
+    - shell：使用 `bash` 即可
+    - 启用命令：
+    
+        ```bash
+        /home/jovyan/code/tensorflow/tf-fashion-mnist-sample/train.py
+        ```
 
-2.  在高级配置中，启用 **任务分析（Tersorboard）** ，点击 **确定** 。
+1.  在高级配置中，启用 **任务分析（Tensorboard）** ，点击 **确定** 。
 
     !!! note
 
-        日志所在位置为输出数据集 的 `/home/jovyan/model/train/logs/`
+        日志所在位置为输出数据集的 `/home/jovyan/model/train/logs/`
 
     ![高级配置](../images/enable-analy.png)
 
-3.  返回训练任务列表，等到状态变为 **成功** 。点击列表右侧的 **┇** ，可以查看详情、克隆任务、更新优先级、查看日志和删除等操作。
+1.  返回训练任务列表，等到状态变为 **成功** 。点击列表右侧的 **┇** ，可以查看详情、克隆任务、更新优先级、查看日志和删除等操作。
 
     ![提交训练任务](../images/othera.png)
 
-4.  成功创建任务后，在左侧导航栏点击 **任务分析** ，可以查看任务状态并对任务训练进行调优。
+1.  成功创建任务后，在左侧导航栏点击 **任务分析** ，可以查看任务状态并对任务训练进行调优。
 
     ![查看任务](../images/baize-07.png)
