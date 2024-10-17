@@ -28,7 +28,7 @@ evolution path and feature changes of each version.
     such as creating and deleting resources for the underlying Spiderpool project. The Spiderpool
     project is located in the Addon section and is managed, maintained, and installed by the user.
     Since v0.9.3, the Spiderpool project has resolved several critical issues. For more details,
-    refer to the [Spiderpool Release Notes](../modules/spiderpool/releasenotes.md). If you are using
+    refer to the [Spiderpool Release Notes](../modules/spiderpool/release-notes.md). If you are using
     a version prior to v0.9.3, it is recommended to upgrade to the latest version.
 
 ## 2024-05-30

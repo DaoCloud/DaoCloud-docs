@@ -188,7 +188,7 @@
 !!! note
 
     Insight Agent v0.21.0 修复了 PodMonitor 配置后会重复集多份 JVM 指标数据的问题，建议升级至该版本进行修复。
-    详情可查看[已知问题](../../insight/quickstart/install/knownissues.md)。
+    详情可查看[已知问题](../quickstart/install/knownissues.md)。
 
 ### v0.21.0
 
@@ -744,7 +744,7 @@
 - 新增文档站术语表
 - 新增文档站基本概念任务和实例、数据模型、查询语言等 4 个页面
 - 新增用户指南 - 场景监控、数据查询、告警中心等文档
-- 文档站新增：[产品优势](../intro/benefits.md)、[指标查询](../user-guide/data-query/metric.md)、[链路查询](../user-guide/trace/trace.md)、仪表盘、[概述](../user-guide/dashboard/overview.md)
+- 文档站新增：[产品优势](benefits.md)、[指标查询](../user-guide/data-query/metric.md)、[链路查询](../user-guide/trace/trace.md)、仪表盘、[概述](../user-guide/dashboard/overview.md)
 
 ## 2022-4-22
 
