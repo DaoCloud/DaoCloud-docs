@@ -230,3 +230,11 @@ hide:
     出现这种现象的原因是：还原时，由于修改了 Pod 标签，导致其标签与其备份时的父资源 ReplicaSet / Deployment 标签不匹配，故还原时出现2倍数量 Pod。
     
     为了避免出现以上这种情况，尽量避免修改关联资源中的某一资源的标签。
+
+1. 集群解除接入后，kpanda-system namespace 一直处于Terminating状态。
+
+    请检查 APIServices 服务状态是否正常，查看命令如下。如果当前状态为 false，请尝试修复 APIServices 或删除该服务。
+
+    ```shell
+    kubectl get apiservices
+    ```
