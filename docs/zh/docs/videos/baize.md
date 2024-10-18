@@ -21,6 +21,24 @@
 }
 </style>
 
+## 任务中心
+
+### 创建分布式训练任务
+
+参阅[创建训练任务](../baize/developer/jobs/create.md)文档。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-job.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/create-distributed-job.png"></video>
+</div>
+
+### Notebook 使用 vGPU
+
+参阅[创建 Notebook](../baize/developer/notebooks/create.md)文档。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/notebook.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/notebook.jpg"></video>
+</div>
+
 ## 数据管理
 
 ### 创建和使用数据集
@@ -37,24 +55,12 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/label-dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/label-dataset.jpg"></video>
 </div>
 
----
+## 模型推理服务
 
-## 任务训练
-
-### 创建分布式训练任务
-
-参阅[创建训练任务](../baize/developer/jobs/create.md)文档。
+参阅[创建 vLLM 推理服务](../baize/developer/inference/vllm-inference.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-job.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/create-distributed-job.png"></video>
-</div>
-
-### Notebook 使用 vGPU
-
-参阅[创建 Notebook](../baize/developer/notebooks/create.md)文档。
-
-<div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/notebook.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/notebook.jpg"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ailab-inference.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ailab-inference.jpg"></video>
 </div>
 
 ## AI Lab v0.7.0 版本动态
