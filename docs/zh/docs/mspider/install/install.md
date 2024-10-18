@@ -34,7 +34,7 @@ hide:
     
     helm upgrade --install mspider mspider/mspider \
         --create-namespace -n mspider-system  \
-        -set global.imageRegistry=release.daocloud.io/mspider \
+        --set global.imageRegistry=release.daocloud.io/mspider \
         --version=${VERSION}
     ```
 
