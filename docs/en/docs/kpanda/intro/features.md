@@ -2,6 +2,16 @@
 
 This page lists the main features of container management.
 
+- External Name (ExternalName): Maps a service to an external DNS name by returning a CNAME record.
+
+### `ExternalName` 服务类型（外部服务）
+
+`ExternalName` 服务类型允许将服务映射到外部 DNS 名称，通过返回 CNAME 记录来实现。
+
+#### 用例
+
+`ExternalName` 服务类型适用于需要集成外部数据库或不属于 Kubernetes 集群的服务的场景。
+
 ## Cluster Lifecycle Management
 
 - Unified Management of Clusters: Support for any Kubernetes cluster within a specific version range to be included in the scope of container management, and to realize unified management of on-cloud, off-cloud, multicloud, and hybrid cloud container cloud platforms.
