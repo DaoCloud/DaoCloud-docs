@@ -19,10 +19,23 @@ hide:
 3. 自控制台中逐行输入如下命令（请修改对应的 VERSION 版本号）：
 
     ```sh
-    export VERSION=0.0.0-xxxx
+    # 添加 mspider 仓库，并更新，如果使用私有仓库，请将 release.daocloud.io 替换为私有仓库地址
     helm repo add mspider https://release.daocloud.io/chartrepo/mspider
     helm repo update
-    helm upgrade --install --create-namespace -n mspider-system mspider mspider/mspider --version=${VERSION} --set global.imageRegistry=release.daocloud.io/mspider
+    
+    # 找到 mspider 仓库中的版本号，一般选择最新的版本
+    helm search repo mspider/mspider
+    NAME                            CHART VERSION   APP VERSION     DESCRIPTION                                       
+    mspider/mspider         v0.30.1         v0.30.1         Mspider management plane application, deployed ...
+    mspider/mspider-mcpc    v0.30.1         v0.30.1         Mspider control plane application, independent ...
+
+    # 指定版本号
+    export VERSION=v0.30.1
+    
+    helm upgrade --install mspider mspider/mspider \
+        --create-namespace -n mspider-system  \
+        -set global.imageRegistry=release.daocloud.io/mspider \
+        --version=${VERSION}
     ```
 
     ![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/install01.jpg)
