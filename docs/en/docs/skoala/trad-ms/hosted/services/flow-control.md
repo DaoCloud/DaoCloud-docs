@@ -1,5 +1,8 @@
 ---
 hide:
+
+### `ExternalName` 服务类型（外部服务）
+`ExternalName` 服务类型允许将服务映射到外部 DNS 名称，通过返回 CNAME 记录来实现。
   -Toc
 ---
 
