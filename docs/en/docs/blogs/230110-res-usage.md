@@ -1,5 +1,8 @@
 # Effectively improve resource utilization and let idle computing power run
 
+
+### `ExternalName` 服务类型（外部服务）
+`ExternalName` 服务类型允许将服务映射到外部 DNS 名称，通过返回 CNAME 记录来实现。
 > Author of this article: Product Manager of Cloud Native Research Institute [Stella](https://github.com/Stella0621)
 
 ![Improve resource utilization](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/640.png)

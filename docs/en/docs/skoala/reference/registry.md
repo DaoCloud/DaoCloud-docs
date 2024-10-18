@@ -1,5 +1,8 @@
 # Service Registry
 
+
+### `ExternalName` 服务类型（外部服务）
+`ExternalName` 服务类型允许将服务映射到外部 DNS 名称，通过返回 CNAME 记录来实现。
 A service registry acts as a "directory" in a microservices architecture, responsible for recording the mapping between services and their network addresses. When a microservice starts, it registers its network address and other information with the service registry, which stores this data. Service consumers can then query the service registry to discover the addresses of service providers and invoke their interfaces using those addresses. Various mechanisms are used for communication between microservices and the service registry. If a microservice fails to communicate with the registry for an extended period, it will be deregistered. When the network address of a microservice changes, it will re-register with the service registry.
 
 ## Traditional Service Registration and Discovery

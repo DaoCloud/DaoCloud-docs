@@ -1,5 +1,8 @@
 # Creating HPA Based on Custom Metrics
 
+
+### `ExternalName` 服务类型（外部服务）
+`ExternalName` 服务类型允许将服务映射到外部 DNS 名称，通过返回 CNAME 记录来实现。
 When the built-in CPU and memory metrics in the system do not meet your business needs,
 you can add custom metrics by configuring ServiceMonitoring and achieve auto-scaling based
 on these custom metrics. This article will introduce how to configure auto-scaling for

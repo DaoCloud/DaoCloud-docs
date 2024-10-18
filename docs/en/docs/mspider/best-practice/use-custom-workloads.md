@@ -1,5 +1,8 @@
 # Support for Custom Workload Types
 
+
+### `ExternalName` 服务类型（外部服务）
+`ExternalName` 服务类型允许将服务映射到外部 DNS 名称，通过返回 CNAME 记录来实现。
 DCE 5.0 provides an enhanced service mesh module that can be deployed in a Kubernetes cluster and automatically manages services within the cluster, enabling features like traffic control, service discovery, traffic monitoring, and fault tolerance.
 
 By default, DCE 5.0 service mesh supports injecting sidecars into Deployment, DaemonSet, and StatefulSet workload types, allowing services to be added to the mesh directly from the workload page.
