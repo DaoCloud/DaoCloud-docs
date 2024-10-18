@@ -10,21 +10,21 @@ nav:
               - 适用场景: dce/scenario.md
               - 我们是 K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
-                  - 20240930 版本发布: dce/dce-rn/20240930.md
-                  - 20240830 版本发布: dce/dce-rn/20240830.md
-                  - 20240730 版本发布: dce/dce-rn/20240730.md
-                  - 20240630 版本发布: dce/dce-rn/20240630.md
-                  - 20240530 版本发布: dce/dce-rn/20240530.md
-                  - 20240430 版本发布: dce/dce-rn/20240430.md
-                  - 20240330 版本发布: dce/dce-rn/20240330.md
-                  - 20240130 版本发布: dce/dce-rn/20240130.md
-                  - 20231231 版本发布: dce/dce-rn/20231231.md
-                  - 20231130 版本发布: dce/dce-rn/20231130.md
-                  - 20231031 版本发布: dce/dce-rn/20231031.md
-                  - 20230831 版本发布: dce/dce-rn/20230831.md
-                  - 20230731 版本发布: dce/dce-rn/20230731.md
-                  - 20230630 版本发布: dce/dce-rn/20230630.md
-                  - 20230531 版本发布: dce/dce-rn/20230531.md
+                  - v0.22.0-20240930 发布: dce/dce-rn/20240930.md
+                  - v0.21.0-20240830 发布: dce/dce-rn/20240830.md
+                  - v0.20.0-20240730 发布: dce/dce-rn/20240730.md
+                  - v0.19.0-20240630 发布: dce/dce-rn/20240630.md
+                  - v0.18.0-20240530 发布: dce/dce-rn/20240530.md
+                  - v0.17.0-20240430 发布: dce/dce-rn/20240430.md
+                  - v0.16.0-20240330 发布: dce/dce-rn/20240330.md
+                  - v0.15.0-20240130 发布: dce/dce-rn/20240130.md
+                  - v0.14.0-20231231 发布: dce/dce-rn/20231231.md
+                  - v0.13.0-20231130 发布: dce/dce-rn/20231130.md
+                  - v0.12.0-20231031 发布: dce/dce-rn/20231031.md
+                  - v0.11.0-20230831 发布: dce/dce-rn/20230831.md
+                  - v0.10.0-20230731 发布: dce/dce-rn/20230731.md
+                  - v0.9.0-20230630 发布: dce/dce-rn/20230630.md
+                  - v0.8.0-20230531 发布: dce/dce-rn/20230531.md
               - DCE 5.0 Roadmap: dce/roadmap.md
               - DaoCloud 产品支持政策: dce/support.md
               - 云原生词汇: dce/terms.md
