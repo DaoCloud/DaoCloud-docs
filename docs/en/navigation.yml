@@ -10,21 +10,21 @@ nav:
               - Use Cases: dce/scenario.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Release Notes:
-                  - 20240930 Release: dce/dce-rn/20240930.md
-                  - 20240830 Release: dce/dce-rn/20240830.md
-                  - 20240730 Release: dce/dce-rn/20240730.md
-                  - 20240630 Release: dce/dce-rn/20240630.md
-                  - 20240530 Release: dce/dce-rn/20240530.md
-                  - 20240430 Release: dce/dce-rn/20240430.md
-                  - 20240330 Release: dce/dce-rn/20240330.md
-                  - 20240130 Release: dce/dce-rn/20240130.md
-                  - 20231231 Release: dce/dce-rn/20231231.md
-                  - 20231130 Release: dce/dce-rn/20231130.md
-                  - 20231031 Release: dce/dce-rn/20231031.md
-                  - 20230831 Release: dce/dce-rn/20230831.md
-                  - 20230731 Release: dce/dce-rn/20230731.md
-                  - 20230630 Release: dce/dce-rn/20230630.md
-                  - 20230531 Release: dce/dce-rn/20230531.md
+                  - v0.22.0-20240930 Released: dce/dce-rn/20240930.md
+                  - v0.21.0-20240830 Released: dce/dce-rn/20240830.md
+                  - v0.20.0-20240730 Released: dce/dce-rn/20240730.md
+                  - v0.19.0-20240630 Released: dce/dce-rn/20240630.md
+                  - v0.18.0-20240530 Released: dce/dce-rn/20240530.md
+                  - v0.17.0-20240430 Released: dce/dce-rn/20240430.md
+                  - v0.16.0-20240330 Released: dce/dce-rn/20240330.md
+                  - v0.15.0-20240130 Released: dce/dce-rn/20240130.md
+                  - v0.14.0-20231231 Released: dce/dce-rn/20231231.md
+                  - v0.13.0-20231130 Released: dce/dce-rn/20231130.md
+                  - v0.12.0-20231031 Released: dce/dce-rn/20231031.md
+                  - v0.11.0-20230831 Released: dce/dce-rn/20230831.md
+                  - v0.10.0-20230731 Released: dce/dce-rn/20230731.md
+                  - v0.9.0-20230630 Released: dce/dce-rn/20230630.md
+                  - v0.8.0-20230531 Released: dce/dce-rn/20230531.md
               - DaoCloud Product Support Policy: dce/support.md
               - Glossary: dce/terms.md
           - Installation:
