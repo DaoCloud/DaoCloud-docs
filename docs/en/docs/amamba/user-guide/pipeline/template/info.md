@@ -1,15 +1,25 @@
 ## Pipeline Template File
+When creating a pipeline template, three parameters were configured using `parameterDefinitions`. However, after using the template to create a pipeline and configure the parameters, the system could not successfully read the parameters configured in the template. This may be due to issues in parameter parsing or transmission, resulting in the parameters not being applied correctly.
 
 The pipeline template file mainly contains two parts: __parameterDefinitions__ and __jenkinsfileTemplate__ .
+1. Configure a pipeline template.
 
+2. Use `parameterDefinitions` in the template to configure three parameters.
 - The __parameterDefinitions__ section defines which parameters are exposed in the pipeline template. Multiple parameter types are supported, such as booleans, drop-down lists, credentials, passwords, and text.
+3. Use this template to create a new pipeline.
 - The __jenkinsfileTemplate__ section defines a __jenkinsfile__ for the Jenkins pipeline and can reference the parameters exposed in __parameterDefinitions__ part.
+4. Configure the template parameters during the creation process.
 
+5. Find that the system cannot correctly read the parameters configured in the template.
 ## __parameterDefinitions__ Section
 
+- Check the logic of parameter parsing and transmission to ensure that the parameters defined in `parameterDefinitions` can be correctly obtained when creating the pipeline.
 | Field | Type | Description | Default Value | Required |
+- Ensure that the parameter names and types remain consistent during the template and instantiation process.
 | --- | --- | --- | --- | --- |
+- Fix the parameter handling code so that the parameters can be correctly read and applied after using the template to create a pipeline.
 | name | string | Parameter name | - | Required |
+- Add necessary unit tests or integration tests to ensure that the parameter transmission function is normal.
 | displayName | []byte | Name displayed on the UI form, less than X characters | "" | Optional |
 | description | string | Parameter description | "" | Optional |
 | default | json.Value | Set a default value for the corresponding parameter | nil | Optional |
