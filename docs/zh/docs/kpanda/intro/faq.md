@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 # 容器管理常见问题 <a id="top" />
 
 本页面列出了一些在容器管理（Kpanda）中可能遇到的问题，为您提供便利的故障排除解决办法。
@@ -26,29 +21,29 @@ hide:
     - [创建集群时在高级设置中启用 **为新建集群内核调优** ，集群创建为什么会失败](#conntrack)
     - [集群解除接入后，`kpanda-system` 命名空间一直处于 Terminating 状态](#ns-terminating)
 
-## 常见问题及其解决办法
+## 权限问题 <a id="permissions" />
 
-1. 容器管理模块和全局管理模块的权限问题 <a id="permissions" />
+有关容器管理和全局管理模块的权限问题，经常有用户会问，为什么我这个用户可以看到这个集群，或者为什么我看不到这个集群，我们应该如何排查相关的权限问题？分为以下三种情况：
 
-    经常有用户会问，为什么我这个用户可以看到这个集群，或者为什么我看不到这个集群，我们应该如何排查相关的权限问题？分为以下三种情况：
+- 容器管理模块的权限分为集群权限、命名空间权限。如果绑定了用户，那该用户就可以查看到相对应的集群及资源。具体权限说明，可以参考[集群权限说明](../user-guide/permissions/permission-brief.md)。
 
-    - 容器管理模块的权限分为集群权限、命名空间权限。如果绑定了用户，那该用户就可以查看到相对应的集群及资源。具体权限说明，可以参考[集群权限说明](../user-guide/permissions/permission-brief.md)。
+    ![容器管理权限](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq201.png)
 
-        ![容器管理权限](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq201.png)
+- 全局管理模块中用户的授权：使用 admin 账号，进入 __全局管理__ -> __用户与访问控制__ -> __用户__ 菜单，找到对应用户。在 __授权所属用户组__ 标签页，如果有类似 Admin、Kpanda Owner 等拥有容器管理权限的角色，那即使在容器管理没有绑定集群权限或命名空间权限，也可以看到全部的集群，可以参考[用户授权文档说明](../../ghippo/user-guide/access-control/user.md)
 
-    - 全局管理模块中用户的授权：使用 admin 账号，进入 __全局管理__ -> __用户与访问控制__ -> __用户__ 菜单，找到对应用户。在 __授权所属用户组__ 标签页，如果有类似 Admin、Kpanda Owner 等拥有容器管理权限的角色，那即使在容器管理没有绑定集群权限或命名空间权限，也可以看到全部的集群，可以参考[用户授权文档说明](../../ghippo/user-guide/access-control/user.md)
+    ![全局管理 用户授权](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq202.png)
 
-        ![全局管理 用户授权](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq202.png)
+- 全局管理模块中工作空间的绑定：使用账号进入 __全局管理__ -> __工作空间与层级__ ，可以看到自己的被授权的工作空间，点击工作空间名称
 
-    - 全局管理模块中工作空间的绑定：使用账号进入 __全局管理__ -> __工作空间与层级__ ，可以看到自己的被授权的工作空间，点击工作空间名称
+    1. 如果该工作空间单独授权给自己，就可以在授权标签页内看到自己的账号，然后查看资源组或共享资源标签页，如果资源组绑定了命名空间或共享资源绑定了集群，那该账号就可以看到对应的集群
 
-        1. 如果该工作空间单独授权给自己，就可以在授权标签页内看到自己的账号，然后查看资源组或共享资源标签页，如果资源组绑定了命名空间或共享资源绑定了集群，那该账号就可以看到对应的集群
+    1. 如果是被授予了全局管理相关角色，那就无法授权标签页内看到自己的账号，也无法在容器管理模块中看到工作空间所绑定的集群资源
 
-        1. 如果是被授予了全局管理相关角色，那就无法授权标签页内看到自己的账号，也无法在容器管理模块中看到工作空间所绑定的集群资源
+    ![全局管理工作空间的绑定](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq203.png)
 
-        ![全局管理工作空间的绑定](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq203.png)
+[返回顶部 :arrow_up:](#top)
 
-    [返回顶部 :arrow_up:](#top)
+## Helm 安装的问题
 
 1. Helm 应用安装失败，提示 “OOMKilled” <a id="oomkilled" />
 
@@ -125,19 +120,23 @@ hide:
 
     [返回顶部 :arrow_up:](#top)
 
-1. 工作负载 -> 删除节点亲和性等调度策略后，调度异常  <a id="scheduling-exception" />
+## 调度的问题 <a id="scheduling-exception" />
 
-    ![调度异常](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq601.png)
+在通过 **工作负载** ，删除节点亲和性等调度策略后，调度异常
 
-    此时，可能是因为策略没有删除干净，点击编辑，删除所有策略。
+![调度异常](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq601.png)
 
-    ![编辑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq602.png)
+此时，可能是因为策略没有删除干净，点击编辑，删除所有策略。
 
-    ![删除](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq603.png)
+![编辑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq602.png)
 
-    ![正常调度](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq604.png)
+![删除](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq603.png)
 
-    [返回顶部 :arrow_up:](#top)
+![正常调度](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq604.png)
+
+[返回顶部 :arrow_up:](#top)
+
+## 应用备份的问题
 
 1. Kcoral 检测工作集群 Velero 状态的逻辑是什么？ <a id="kcoral-logic-for-velero" />
 
@@ -147,8 +146,6 @@ hide:
     - velero 控制面 velero deployment 处于运行状态，并达到期望的副本数
     - velero 数据面 node agent 处于运行状态，并达到期望副本数
     - velero 成功连接到目标 MinIO（BSL 状态为 Available）
-
-    [返回顶部 :arrow_up:](#top)
 
 1. 在跨集群备份还原时，Kcoral 如何获取可用集群？ <a id="kcoral-get-cluster" />
 
@@ -170,33 +167,39 @@ hide:
 
     [返回顶部 :arrow_up:](#top)
 
-1. 卸载 VPA、HPA、CronHPA 之后，为什么对应弹性伸缩记录依然存在？ <a id="autoscaling-log" />
+## 日志的问题 <a id="autoscaling-log" />
 
-    虽然通过 Helm Addon 市场中把对应组件卸载，但是应用弹性伸缩界面相关记依然在，如下图所示:
+卸载 VPA、HPA、CronHPA 之后，为什么对应弹性伸缩记录依然存在？
 
-    ![编辑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq901.png)
+虽然通过 Helm Addon 市场中把对应组件卸载，但是应用弹性伸缩界面相关记依然在，如下图所示:
 
-    这是 helm uninstall 的一个问题，它并不会卸载对应的 CRD，因此导致数据残留，此时我们需要手动卸载对应的 CRD , 完成最终清理工作。
+![编辑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq901.png)
 
-1. 为什么低版本集群的控制台打开异常？ <a id="console-error" />
+这是 helm uninstall 的一个问题，它并不会卸载对应的 CRD，因此导致数据残留，此时我们需要手动卸载对应的 CRD , 完成最终清理工作。
 
-    在 kubernetes 低版本（v1.18以下）的集群中，打开控制台出现 csr 资源请求失败。打开控制台的时候，
-    会根据当前登录用户在目标集群中通过 csr 资源申请证书，如果集群版本太低或者没有开启此功能 controller，
-    会导致证书申请失败，从而无法连接到目标集群。
+## 控制台的问题 <a id="console-error" />
 
-    申请证书流程请参考：https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
+为什么低版本集群的控制台打开异常？
+
+在 kubernetes 低版本（v1.18以下）的集群中，打开控制台出现 CSR 资源请求失败。打开控制台的时候，
+会根据当前登录用户在目标集群中通过 CSR 资源申请证书，如果集群版本太低或者没有开启此功能 Controller，
+会导致证书申请失败，从而无法连接到目标集群。
+
+申请证书流程请参考：https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
     
-    解决方案：
+**解决办法：**
 
-    - 如果集群版本大于 v1.18，请检查 kube-controller-manager 是否开启 csr 功能，确保以下的 controller 是否正常开启
+- 如果集群版本大于 v1.18，请检查 kube-controller-manager 是否开启 csr 功能，确保以下的 controller 是否正常开启
 
-        ```shell
-        ttl-after-finished,bootstrapsigner,csrapproving,csrcleaner,csrsigning
-        ```
+    ```shell
+    ttl-after-finished,bootstrapsigner,csrapproving,csrcleaner,csrsigning
+    ```
 
-    - 低版本集群目前解决方案只有升级版本
+- 低版本集群目前解决方案只有升级版本
 
     [返回顶部 :arrow_up:](#top)
+
+## 创建和接入集群的问题
 
 1. 如何重置创建的集群？ <a id="reset-cluster" />
 
@@ -255,8 +258,6 @@ hide:
             systemctl restart containerd
             ```
 
-    [返回顶部 :arrow_up:](#top)
-
 1. 创建集群时，在高级设置中启用 **为新建集群内核调优** ，集群创建为什么会失败 <a id="conntrack" />
 
     1. 检查内核模块 conntrack 是否加载，执行如下命令：
@@ -274,7 +275,6 @@ hide:
     !!! note
 
         如果内核模块进行了升级操作，也会导致集群创建失败。
-
 
 1. 集群解除接入后，`kpanda-system` 命名空间一直处于 Terminating 状态。 <a id="ns-terminating" />
 
