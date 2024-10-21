@@ -152,6 +152,7 @@ nav:
                       - Build Multi-Arch Image: amamba/user-guide/pipeline/podman.md
                       - Use Cacher in Pipeline: amamba/quickstart/job-cacher.md
                       - System Env Variables: amamba/user-guide/pipeline/system-env.md
+                      - Pipeline Metrics: amamba/user-guide/pipeline/jenkins-metric.md
               - GitOps:
                   - Import Repository: amamba/user-guide/gitops/import-repo.md
                   - Create Argo CD App: amamba/user-guide/gitops/create-argo-cd.md
