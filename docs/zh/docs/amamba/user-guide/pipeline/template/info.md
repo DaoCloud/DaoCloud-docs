@@ -1,15 +1,25 @@
 # 流水线模板文件
+在创建流水线模板时，使用了`parameterDefinitions`配置了三个参数。但在使用该模板创建流水线并配置参数后，系统无法成功读取到模板中配置的参数。这可能是由于参数解析或传递过程中存在问题，导致参数未能正确应用。
 
 流水线模板文件按照YAML的格式组织，主要包含两部分： __parameterDefinitions__ 和 __jenkinsfileTemplate__ 。
+1. 配置一个流水线模板。
 
+2. 在模板中使用`parameterDefinitions`配置三个参数。
 - __parameterDefinitions__ 区域：定义流水线模板暴露哪些参数。支持布尔值、下拉列表、凭证、密码、文本等多种参数类型。
+3. 使用该模板创建新的流水线。
 - __jenkinsfileTemplate__ 区域：定义 Jenkins 流水线的 __jenkinsfile__ ，使用[go template](https://pkg.go.dev/text/template)作为模板引擎渲染，可以引用 __parameterDefinitions__ 中暴露的参数。
+4. 在创建过程中配置模板参数。
 
+5. 发现系统无法正常读取到模板中配置的参数。
 ## __parameterDefinitions__ 区域
 
+- 检查参数解析和传递的逻辑，确保`parameterDefinitions`中定义的参数在创建流水线时能够正确获取。
 | 字段 | 类型 | 说明 | 默认值 | 是否必填 |
+- 确认参数名称和类型在模板和实例化过程中保持一致。
 | --- | --- | --- | --- | --- |
+- 修复参数处理的代码，使得在使用模板创建流水线后，参数能够正确读取和应用。
 | name | string | 参数名称，命名需遵循 [go template specification](https://pkg.go.dev/text/template#hdr-Arguments)，不允许重复，正则 "^[a-zA-Z_][a-zA-Z0-9_]*$" | - | 必填 |
+- 添加必要的单元测试或集成测试，确保参数传递功能正常。
 | displayName | []byte | 表单上显示的名称，长度小于24个字符 | “” | 非必填 |
 | description | string | 参数的描述 | “” | 非必填 |
 | default | json.Value | 为对应的参数设置默认值| nil | 非必填 |
