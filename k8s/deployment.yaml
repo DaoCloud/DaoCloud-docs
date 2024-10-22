@@ -1,0 +1,2 @@
+-        image: your-registry/emojivoto-voting-instrumentation:old
+        image: your-registry/emojivoto-voting-instrumentation:latest
