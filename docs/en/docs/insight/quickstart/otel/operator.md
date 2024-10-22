@@ -1,3 +1,7 @@
+After completing the above configuration, you can see the application's trace data in Insight:
+
+![Application Trace Data](../../images/insight-trace-result.png)
+
 ---
 MTPE: windsonsea
 Date: 2024-10-16
