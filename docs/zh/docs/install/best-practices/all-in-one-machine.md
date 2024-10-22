@@ -30,7 +30,7 @@
 | 资源 | 要求 | 说明 |
 | --- | --- | --- |
 | istioGatewayVip | 1 个 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口 |
-| insightVip | 1 个 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP |
+| insightVip | 1 个 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给全局服务集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP |
 | 协议 | - | 支持 IPv6。 |
 | 保留 IP 地址段 | 需保留两段 | 供 Pod（默认 10.233.64.0/18） 和 Service （默认 10.233.0.0/18 使用）。如果已经在使用了，可以自定义其他网段避免 IP 地址冲突。 |
 | 路由 | - | 服务器有 default 或指向 0.0.0.0 这个地址的路由。 |

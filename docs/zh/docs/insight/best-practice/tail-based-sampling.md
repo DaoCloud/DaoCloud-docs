@@ -60,7 +60,7 @@
 
 ## Insight 具体改动
 
-在 Global 集群中的 `insight-opentelemetry-collector` 前面引入具有负载均衡能力的 Opentelemetry Collector Gateway 组件，使得同一组 Trace 能够根据 TraceID 路由到同一个 Opentelemetry Collector 实例。
+在全局服务集群中的 `insight-opentelemetry-collector` 前面引入具有负载均衡能力的 Opentelemetry Collector Gateway 组件，使得同一组 Trace 能够根据 TraceID 路由到同一个 Opentelemetry Collector 实例。
 
 1. 部署具有负载均衡能力的 OTEL COL Gateway 组件
 

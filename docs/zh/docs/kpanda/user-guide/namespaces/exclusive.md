@@ -21,13 +21,13 @@
     - --enable-admission-plugins=NodeRestriction,PodNodeSelector,PodTolerationRestriction
     ```
 
-## 在 Global 集群上启用命名空间独享节点
+## 在全局服务集群上启用命名空间独享节点
 
-由于 Global 集群上运行着 kpanda、ghippo、insight 等平台基础组件，在 Global 启用命名空间独享节点将可能导致当系统组件重启后，系统组件无法调度到被独享的节点上，影响系统的整体高可用能力。因此，**通常情况下，我们不推荐用户在 Global 集群上启用命名空间独享节点特性**。
+由于全局服务集群上运行着 kpanda、ghippo、insight 等平台基础组件，在 Global 启用命名空间独享节点将可能导致当系统组件重启后，系统组件无法调度到被独享的节点上，影响系统的整体高可用能力。因此，**通常情况下，我们不推荐用户在全局服务集群上启用命名空间独享节点特性**。
 
-如果您确实需要在 Global 集群上启用命名空间独享节点，请参考以下步骤进行开启：
+如果您确实需要在全局服务集群上启用命名空间独享节点，请参考以下步骤进行开启：
 
-1. 为 Global 集群的 kube-apiserver 启用了 __PodNodeSelector__ 和 __PodTolerationRestriction__ 准入控制器
+1. 为全局服务集群的 kube-apiserver 启用了 __PodNodeSelector__ 和 __PodTolerationRestriction__ 准入控制器
 
     !!! note
 
@@ -126,9 +126,9 @@
 
         ![取消独享](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive04.png)
 
-## 在 非 Global 集群上启用命名空间独享节点
+## 在 非全局服务集群上启用命名空间独享节点
 
-在 非 Global 集群上启用命名空间独享节点，请参考以下步骤进行开启：
+在 非全局服务集群上启用命名空间独享节点，请参考以下步骤进行开启：
 
 1. 为当前集群的 kube-apiserver 启用了 __PodNodeSelector__ 和 __PodTolerationRestriction__ 准入控制器
 

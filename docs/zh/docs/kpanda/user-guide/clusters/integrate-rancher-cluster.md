@@ -213,4 +213,4 @@
 
 ### 步骤三：在 DCE 界面接入集群
 
-使用刚刚获取的 kubeconfig 文件，参考[接入集群](./integrate-cluster.md)文档，将 rancher 集群接入 global 集群。
+使用刚刚获取的 kubeconfig 文件，参考[接入集群](./integrate-cluster.md)文档，将 rancher 集群接入全局服务集群。

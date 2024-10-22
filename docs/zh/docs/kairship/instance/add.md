@@ -6,7 +6,7 @@
 
     - 由于 DCE 5.0 多云编排模块借用了开源项目 [Karmada](https://karmada.io/) 的能力，所以创建多云实例时会自动创建一个 Karmada 实例。
 
-    - 新建的多云实例默认位于[全局管理集群](../../kpanda/user-guide/clusters/cluster-role.md)，以虚拟集群的形式存在，用户无感知。
+    - 新建的多云实例默认位于[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md)，以虚拟集群的形式存在，用户无感知。
     
     - 为便于和真实集群进行区分，所有多云实例对应的虚拟集群的名称都带有 __k-__ 前缀。
 

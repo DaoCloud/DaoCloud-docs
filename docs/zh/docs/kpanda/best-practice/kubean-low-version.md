@@ -106,7 +106,7 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
     1. IP 替换为实际的仓库地址
     2. IP 替换为实际的仓库地址
 
-4. 将 `manifest`、`localartifactset.cr.yaml` 自定义资源部署到 **Kubean 所在的管理集群或者 Global 集群** 当中，本例使用的是 Global 集群。
+4. 将 `manifest`、`localartifactset.cr.yaml` 自定义资源部署到 **Kubean 所在的管理集群或者全局服务集群** 当中，本例使用的是全局服务集群。
 
     ```bash
     # 部署 data 文件目录下的 localArtifactSet 资源
@@ -126,7 +126,7 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
 
 1. 前往 **容器管理** ，在 __集群列表__ 页面中，点击 __创建集群__ 按钮。
 
-2. `被纳管`参数选择 `manifest`、`localartifactset.cr.yaml` 自定义资源部署的集群，本例使用的是 Global 集群。
+2. `被纳管`参数选择 `manifest`、`localartifactset.cr.yaml` 自定义资源部署的集群，本例使用的是全局服务集群。
 
     ![cluster01](../images/cluster01.png)
 

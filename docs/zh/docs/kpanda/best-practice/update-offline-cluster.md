@@ -16,7 +16,7 @@
 
 1. 在联网节点构建离线包
 2. 将离线包导入火种节点
-3. 更新 Global 集群的 kubernetes 版本清单
+3. 更新全局服务集群的 kubernetes 版本清单
 4. 使用平台 UI 创建工作集群或升级工作集群的 kubernetes 版本
 
 !!! note
@@ -144,9 +144,9 @@
     上述命令仅仅适用于火种节点内置的 Minio 服务，如果使用外部 Minio 请将 `http://127.0.0.1:9000` 替换为外部 Minio 的访问地址。
     “rootuser” 和 “rootpass123”是火种节点内置的 Minio 服务的默认账户和密码。
 
-## 更新 Global 集群的 kubernetes 版本清单
+## 更新全局服务集群的 kubernetes 版本清单
 
-火种节点上执行如下命令，将 `localartifactset` 资源部署到 Global 集群：
+火种节点上执行如下命令，将 `localartifactset` 资源部署到全局服务集群：
 
 ```bash
 kubectl apply -f data/kubeanofflineversion.cr.patch.yaml

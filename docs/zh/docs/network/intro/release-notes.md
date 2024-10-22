@@ -18,7 +18,7 @@
 
 !!! note
 
-    Spidernet 是部署在 global 集群，对底层 Spiderpool 项目的资源进行创建、删除等一些操作的 API 项目，Spiderpool 项目位于 Addon 中，由用户自行安装、管理与维护，
+    Spidernet 是部署在全局服务集群，对底层 Spiderpool 项目的资源进行创建、删除等一些操作的 API 项目，Spiderpool 项目位于 Addon 中，由用户自行安装、管理与维护，
     但 Spiderpool 项目自 v0.9.3 版本起修复了一些重要问题，详情参考 [Spiderpool Release Notes](../modules/spiderpool/release-notes.md)。若您使用的是 v0.9.3 之前的版本，建议升级至最新版本。
 
 ## 2024-05-30
