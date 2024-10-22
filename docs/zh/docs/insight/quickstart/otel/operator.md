@@ -1,3 +1,7 @@
+完成以上配置后，您可以在 Insight 中看到应用程序的链路数据：
+
+![应用程序链路数据](../../images/insight-trace-result.png)
+
 # 通过 Operator 实现应用程序无侵入增强
 
 > 目前只有 Java、NodeJs、Python、.Net、Golang 支持 Operator 的方式无侵入接入。
