@@ -45,7 +45,7 @@
           rook_cluster: rook-ceph
     ```
 
-## 在 Global 集群中部署 GrafanaDashboard
+## 在全局服务集群中部署 GrafanaDashboard
 
 参考 [Dashboard 模板](https://grafana.com/grafana/dashboards/2842-ceph-cluster/)部署 GrafanaDashboard。
 

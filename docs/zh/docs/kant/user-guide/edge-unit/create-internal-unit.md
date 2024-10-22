@@ -59,7 +59,7 @@ DCE 5.0 云边协同支持两种边缘单元：
 
     !!! note
 
-        如果您想修改 KubeEdge 和 Kant 镜像仓库默认值，可以前往 **Global 集群 kant-system 命名空间**下，修改 ConfigMap 配置文件对应参数 kubeedgeImageRepo 和 kantImageRepo。
+        如果您想修改 KubeEdge 和 Kant 镜像仓库默认值，可以前往 **全局服务集群 kant-system 命名空间**下，修改 ConfigMap 配置文件对应参数 kubeedgeImageRepo 和 kantImageRepo。
         
         - ConfigMap 配置文件名称：dynamic-properties-config
         - 参数示例如下：

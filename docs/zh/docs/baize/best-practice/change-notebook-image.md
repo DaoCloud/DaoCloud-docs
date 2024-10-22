@@ -177,7 +177,7 @@ USER ${NB_UID}
 
 目前，镜像选择器需要通过更新 `baize` 的 `Helm` 参数来修改，具体步骤如下：
 
-在 kpanda-global-cluster 全局管理集群的 `Helm 应用`列表，找到 baize，进入更新页面，在 `YAML` 参数中修改 Notebook 镜像：
+在 kpanda-global-cluster 全局服务集群的 `Helm 应用`列表，找到 baize，进入更新页面，在 `YAML` 参数中修改 Notebook 镜像：
 
 ![Update Baize](../images/update-baize.png)
 

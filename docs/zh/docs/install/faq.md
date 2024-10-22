@@ -21,7 +21,7 @@
 ### 使用 Metallb 时 VIP 访问不通导致 DCE 登录界面无法打开
 
 1. 排查 VIP 的地址是否和主机在同一个网段，Metallb L2 模式下需要确保在同一个网段
-2. 如果是在 Global 集群中的控制节点新增了网卡导致访问不通，需要手动配置 L2Advertisement。
+2. 如果是在全局服务集群中的控制节点新增了网卡导致访问不通，需要手动配置 L2Advertisement。
 
     请参考 [Metallb 这个问题的文档](https://metallb.universe.tf/configuration/_advanced_l2_configuration/#specify-network-interfaces-that-lb-ip-can-be-announced-from)。
 
@@ -95,9 +95,9 @@ failed to initialize top level QOS containers: root container [kubelet kubepods]
 
 ## 证书问题
 
-### Global 集群的 kubeconfig 在火种的副本需要更新
+###全局服务集群的 kubeconfig 在火种的副本需要更新
 
-v0.20.0 之前的版本中，火种机上存储的 Global 集群的 kubeconfig 不会自动更新，v0.20.0 版本支持了自动更新，每个月执行一次。
+v0.20.0 之前的版本中，火种机上存储的全局服务集群的 kubeconfig 不会自动更新，v0.20.0 版本支持了自动更新，每个月执行一次。
 
 之前的版本需要将 dce5-installer 更新到 v0.20.0 然后执行：
 

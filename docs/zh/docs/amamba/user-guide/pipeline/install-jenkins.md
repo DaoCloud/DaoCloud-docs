@@ -45,7 +45,7 @@
     | resources.requests                   | Jenkins 的资源请求值                                         |
     | resources.limits                     | Jenkins 的资源限制值                                         |
     | image.registry                       | Jenkins 镜像仓库地址                                                 |
-    | eventProxy.enabled                   | EventProxy 是一个旨在为 Jenkins 到 Amamba APIServer 提供可靠连接的边车容器，当 Jenkins 部署的集群和 Global 集群不在同一个区域的时候，最好开启。 |
+    | eventProxy.enabled                   | EventProxy 是一个旨在为 Jenkins 到 Amamba APIServer 提供可靠连接的边车容器，当 Jenkins 部署的集群和全局服务集群不在同一个区域的时候，最好开启。 |
     | eventProxy.image.registry            | eventProxy 镜像仓库的地址。<br />如果 enabled=true 必须填写                                   |
     | eventProxy.configMap.eventProxy.host  | Jenkins 事件的接收地址的Host，Jenkins 如果部署在 Worker 集群，需要设置成 DCE 的入口地址。<br />如果 enabled=true 必须填写。                                   |
     | eventProxy.configMap.eventProxy.proto | Jenkins 事件的接收地址的 Protocol，默认是 http。<br />如果 enabled=true 必须填写                                   |

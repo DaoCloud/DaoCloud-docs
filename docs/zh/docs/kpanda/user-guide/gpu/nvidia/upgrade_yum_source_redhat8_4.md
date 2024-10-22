@@ -4,7 +4,7 @@
 
 DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。其它 OS 类型的节点或内核需要用户手动构建离线 yum 源。
 
-本文介绍如何基于 Global 集群任意节点构建 Red Hat 8.4 离线 yum 源包，并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
+本文介绍如何基于全局服务集群任意节点构建 Red Hat 8.4 离线 yum 源包，并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
 
 ## 前提条件
 
@@ -13,18 +13,18 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 3. 准备一个能够和待部署 GPU Operator 的集群网络能够联通的文件服务器，如 nginx 或 minio。
 4. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，且节点上已经完成
    [Docker 的安装](../../../../install/community/kind/online.md#docker)。
-5. Global 集群的节点必须为 Red Hat 8.4 4.18.0-305.el8.x86_64。
+5.全局服务集群的节点必须为 Red Hat 8.4 4.18.0-305.el8.x86_64。
 
 ## 操作步骤
 
-本文以 Red Hat 8.4 4.18.0-305.el8.x86_64 节点为例，介绍如何基于 Global 集群任意节点构建 Red Hat 8.4 离线 yum 源包，
+本文以 Red Hat 8.4 4.18.0-305.el8.x86_64 节点为例，介绍如何基于全局服务集群任意节点构建 Red Hat 8.4 离线 yum 源包，
 并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
 
 ### 下载火种节点中的 yum 源
 
-以下操作在 global 集群的 master 节点上执行。
+以下操作在全局服务集群的 master 节点上执行。
 
-1. 使用 ssh 或其它方式进入 global 集群内任一节点执行如下命令：
+1. 使用 ssh 或其它方式进入全局服务集群内任一节点执行如下命令：
 
     ```bash
     cat /etc/yum.repos.d/extension.repo #查看 extension.repo 中的内容
@@ -75,7 +75,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 ### 下载 elfutils-libelf-devel-0.187-4.el8.x86_64.rpm 包
 
-以下操作在联网节点执行操作，在操作前，您需要保证联网节点和 Global 集群 master 节点间的网络联通性。
+以下操作在联网节点执行操作，在操作前，您需要保证联网节点和全局服务集群 master 节点间的网络联通性。
 
 1. 在联网节点执行如下命令，下载 __elfutils-libelf-devel-0.187-4.el8.x86_64.rpm__ 包：
 
@@ -97,7 +97,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 ### 生成本地 yum repo
 
-以下操作在步骤一中 global 集群的 master 节点上执行。
+以下操作在步骤一中全局服务集群的 master 节点上执行。
 
 1. 进入 yum repo 目录：
 

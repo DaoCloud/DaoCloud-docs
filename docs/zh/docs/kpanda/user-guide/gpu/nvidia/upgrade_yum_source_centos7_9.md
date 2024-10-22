@@ -2,7 +2,7 @@
 
 ## 使用场景介绍
 
-当工作节点的内核版本与 Global 集群的控制节点内核版本或 OS 类型不一致时，需要用户手动构建离线 yum 源。
+当工作节点的内核版本与全局服务集群的控制节点内核版本或 OS 类型不一致时，需要用户手动构建离线 yum 源。
 
 本文介绍如何构建离线 yum 源， 并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
 
@@ -19,7 +19,7 @@
 
 ### 检查集群节点的 OS 和内核版本
 
-分别在 Global 集群的控制节点和待部署 GPU Operator 的节点执行如下命令，若两个节点的 OS 和内核版本一致则无需构建 yum 源，
+分别在全局服务集群的控制节点和待部署 GPU Operator 的节点执行如下命令，若两个节点的 OS 和内核版本一致则无需构建 yum 源，
 可参考[离线安装 GPU Operator](./install_nvidia_driver_of_operator.md) 文档直接安装；若两个节点的 OS 或内核版本不一致，请执行[下一步](#yum)。
 
 1. 执行如下命令，查看集群下待部署 GPU Operator 节点的发行版名称和版本号。

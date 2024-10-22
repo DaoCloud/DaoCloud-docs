@@ -72,4 +72,4 @@ kubectl describe limits -n istio-system dce-default-limit-range
 
     1. DCE 4.0 在接入新版服务网格之前，需提前部署 coreDNS。
 
-    2. __GlobalMesh__ 配置是在 DCE5 的全局管理集群，而不是在接入集群。
+    2. __GlobalMesh__ 配置是在 DCE5 的全局服务集群，而不是在接入集群。
