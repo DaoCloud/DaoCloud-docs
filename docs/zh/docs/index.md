@@ -35,6 +35,9 @@ DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全�
 - :material-slot-machine: **AI Lab** [云原生 AI - 训推一体化平台](baize/intro/index.md)
 - :fontawesome-brands-edge: **云边协同** [容器能力扩展至边缘](kant/intro/index.md)
 - :fontawesome-solid-user-group: **全局管理** [设置登录/访问权限/外观](ghippo/intro/index.md)
+- :material-download: **下载中心** [下载各模块离线包](download/index.md)
+- :simple-youtubestudio: **最佳实践** [实践出真知](dce/bphome.md)
+- :material-frequently-asked-questions: **常见问题** [答疑解惑排查故障](dce/faq.md)
 - [免费体验 :free:](./trial/index.md){ .md-button }
 
 </div>
