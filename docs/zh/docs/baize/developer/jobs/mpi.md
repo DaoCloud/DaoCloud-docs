@@ -163,15 +163,15 @@ spec:
 - `apiVersion` 和 `kind`：表示资源的 API 版本和类型，`MPIJob` 是 Kubeflow 定义的自定义资源，用于创建 MPI 类型的任务。
 - `metadata`：元数据，包含任务的名称等信息。
 - `spec`：任务的详细配置。
-  - `slotsPerWorker`：每个 Worker 节点的槽位数量，通常设置为 1。
-  - `runPolicy`：运行策略，例如任务完成后是否清理 Pod。
-  - `mpiReplicaSpecs`：MPI 任务的副本配置。
-    - `Launcher`：启动器，负责启动 MPI 任务。
-      - `replicas`：副本数，通常为 1。
-      - `template`：Pod 模板，定义容器运行的镜像、命令、资源等。
-    - `Worker`：工作节点，实际执行任务的计算节点。
-      - `replicas`：副本数，根据并行需求设置，这里设置为 2。
-      - `template`：Pod 模板，同样定义容器的运行环境和资源。
+    - `slotsPerWorker`：每个 Worker 节点的槽位数量，通常设置为 1。
+    - `runPolicy`：运行策略，例如任务完成后是否清理 Pod。
+    - `mpiReplicaSpecs`：MPI 任务的副本配置。
+        - `Launcher`：启动器，负责启动 MPI 任务。
+            - `replicas`：副本数，通常为 1。
+            - `template`：Pod 模板，定义容器运行的镜像、命令、资源等。
+        - `Worker`：工作节点，实际执行任务的计算节点。
+            - `replicas`：副本数，根据并行需求设置，这里设置为 2。
+            - `template`：Pod 模板，同样定义容器的运行环境和资源。
 
 #### 设置任务副本数
 
@@ -179,6 +179,7 @@ spec:
 
 - **总副本数** = `Launcher` 副本数 + `Worker` 副本数
 - 本示例中：
+
     - `Launcher` 副本数：1
     - `Worker` 副本数：2
     - **总副本数** ：1 + 2 = 3
