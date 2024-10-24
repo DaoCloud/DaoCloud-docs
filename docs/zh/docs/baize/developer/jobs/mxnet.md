@@ -1,5 +1,9 @@
 # MXNet 任务
 
+!!! warning
+
+    由于 Apache MXNet 项目已存档，因此 Kubeflow MXJob 将在未来的 Training Operator 1.9 版本中弃用和删除。
+
 Apache MXNet 是一个高性能的深度学习框架，支持多种编程语言。MXNet 任务可以使用多种方式进行训练，包括单机模式和分布式模式。在 AI Lab 中，我们提供了对 MXNet 任务的支持，您可以通过界面化操作，快速创建 MXNet 任务，进行模型训练。
 
 本教程将指导您如何在 AI Lab 平台上创建和运行 MXNet 的单机和分布式任务。
@@ -327,4 +331,4 @@ Training completed.
 
 - **参考文档**：
     - [MXNet 官方文档](https://mxnet.apache.org/)
-    - [Kubeflow MXJob 指南](https://www.kubeflow.org/docs/components/training/mxnet/)
+    - [Kubeflow MXJob 指南](https://v1-8-branch.kubeflow.org/docs/components/training/mxnet/)
