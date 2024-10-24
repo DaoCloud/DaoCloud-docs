@@ -231,5 +231,5 @@ Training completed.
     -   **参数调整**：可以通过修改 `command` 和 `args` 来传递不同的训练参数。
 
 -   **参考文档**：
-    -   [PaddlePaddle 官方文档](https://www.paddlepaddle.org.cn/documentation/docs/zh/)
-    -   [Kubeflow PaddleJob 指南](https://www.kubeflow.org/docs/components/training/paddle/)
+    -   [PaddlePaddle 官方文档](https://www.paddlepaddle.org.cn/documentation/docs/zh/2.6/guides/index_cn.html)
+    -   [Kubeflow PaddleJob 指南](https://www.kubeflow.org/docs/components/training/user-guides/paddle/)
