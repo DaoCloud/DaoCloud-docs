@@ -29,3 +29,7 @@ hide:
     ![网格列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/external02.png)
 
 下一步：[服务管理](../service-list/README.md)
+
+## 常见问题
+
+- [DCE 4.0 接入问题追踪](../../troubleshoot/dce4.0-issues.md)

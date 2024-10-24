@@ -975,7 +975,7 @@ nav:
                   - 多集群网络通讯原理: mspider/user-guide/multicluster/multi-cluster-net.md
                   - 多集群灰度发布: mspider/user-guide/multicluster/gray-scale-release.md
               - 故障排查:
-                  - 创建网格故障排查: mspider/troubleshoot/index.md
+                  - 服务网格故障排查: mspider/troubleshoot/index.md
                   - 创建网格时找不到所属集群: mspider/troubleshoot/cannot-find-cluster.md
                   - 创建网格时一直处于“创建中”: mspider/troubleshoot/always-in-creating.md
                   - 创建的网格异常但无法删除: mspider/troubleshoot/failed-to-delete.md
@@ -988,6 +988,8 @@ nav:
                   - 命名空间边车配置与工作负载边车冲突: mspider/troubleshoot/sidecar.md
                   - 边车占用大量内存: mspider/troubleshoot/sidecar-memory-err.md
                   - 集群列表存在未知集群: mspider/troubleshoot/cluster-already-exist.md
+                  - 服务网格中常见的 503 报错: mspider/troubleshoot/503-issue.md
+                  - 监听localhost的应用如何被Pod访问: mspider/troubleshoot/localhost-by-pod.md
               - 最佳实践:
                   - 网格定向服务访问限制: mspider/best-practice/use-egress-and-authorized-policy.md
                   - 接入自定义工作负载类型: mspider/best-practice/use-custom-workloads.md

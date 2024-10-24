@@ -52,3 +52,15 @@ DCE 5.0 服务网格支持 3 种网格：
 
     创建托管网格后，还未接入任何托管的集群，此时网格处于 __未就绪__ 状态。
     用户可以[添加集群](../cluster-management/README.md)，等待集群接入完成后，选择需要服务治理的集群接入。
+
+## 常见问题
+
+- [创建网格时找不到所属集群](../../troubleshoot/cannot-find-cluster.md)
+- [创建网格时一直处于“创建中”，最终创建失败](../../troubleshoot/always-in-creating.md)
+- [创建的网格异常，但无法删除网格](../../troubleshoot/failed-to-delete.md)
+- [托管网格纳管集群失败](../../troubleshoot/failed-to-add-cluster.md)
+- [托管网格纳管集群时 istio-ingressgateway 异常](../../troubleshoot/hosted-mesh-errors.md)
+- [网格空间无法正常解绑](../../troubleshoot/mesh-space-cannot-unbind.md)
+- [托管网格多云互联异常](../../troubleshoot/cluster-interconnect.md)
+- [创建网格时，集群列表存在未知集群](../../troubleshoot/cluster-already-exist.md)
+- [托管网格 APIServer 证书过期处理办法](../../troubleshoot/hosted-apiserver-cert-expiration.md)
