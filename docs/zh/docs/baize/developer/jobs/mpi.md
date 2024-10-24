@@ -76,11 +76,11 @@ python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py \
 
 - **Worker（工作节点）**：
 
-  - **副本数**：2
-  - **资源请求**：
-    - CPU：2 核
-    - 内存：4 GiB
-    - GPU：根据需求分配
+    - **副本数**：2
+    - **资源请求**：
+        - CPU：2 核
+        - 内存：4 GiB
+        - GPU：根据需求分配
 
 #### 完整的 MPIJob 配置示例
 
