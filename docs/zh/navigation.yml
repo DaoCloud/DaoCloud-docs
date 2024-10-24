@@ -1198,6 +1198,7 @@ nav:
                       - 创建任务: baize/developer/jobs/create.md
                       - 创建 Pytorch 任务: baize/developer/jobs/pytorch.md
                       - 创建 Tensorflow 任务: baize/developer/jobs/tensorflow.md
+                      - 创建 MPI 任务: baize/developer/jobs/mpi.md
                       - 删除任务: baize/developer/jobs/delete.md
                       - 查看任务负载: baize/developer/jobs/view.md
                       - 任务分析: baize/developer/jobs/tensorboard.md
