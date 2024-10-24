@@ -88,6 +88,7 @@ nav:
                   - 不停机迁移集群操作系统: install/best-practices/replace-os.md
               - 安装器 Release Notes: install/release-notes.md
           - 最佳实践: dce/bphome.md
+          - 常见问题: dce/faq.md
       - 工作台:
           - 应用工作台:
               - 介绍:
