@@ -95,7 +95,7 @@ failed to initialize top level QOS containers: root container [kubelet kubepods]
 
 ## 证书问题
 
-###全局服务集群的 kubeconfig 在火种的副本需要更新
+### 全局服务集群的 kubeconfig 在火种的副本需要更新
 
 v0.20.0 之前的版本中，火种机上存储的全局服务集群的 kubeconfig 不会自动更新，v0.20.0 版本支持了自动更新，每个月执行一次。
 
