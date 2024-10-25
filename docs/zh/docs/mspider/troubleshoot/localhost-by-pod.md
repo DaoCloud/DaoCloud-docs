@@ -38,7 +38,7 @@
      | `{key} : {value}`  | 替换为选中应用 Pod 的标签。           |
 
      ```yaml
-     apiVersion: networking.istio.io/v1beta1
+     apiVersion: networking.istio.io/v1
      kind: Sidecar
      metadata:
        name: localhost-access
