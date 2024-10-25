@@ -6,7 +6,7 @@
 
 在 DCE 5.0 中默认使用 `trivy` 作为镜像漏洞扫描工具，所有模块在发版时都会进行进行扫描。
 
-- 什么是 trivy？参阅 <https://trivy.dev/>
+- 什么是 trivy？参阅 <https://trivy.dev/v1/>
 - 为什么选择 trivy？
     - 全面的漏洞数据库：Trivy 使用广泛的漏洞数据库，包括 NVD（National Vulnerability Database）、Red Hat Security Advisory、Alpine SecDB 等，能够覆盖大量的已知漏洞。
     - 应用程序依赖关系的扫描：除了操作系统层面的漏洞，Trivy 还能扫描各种语言和框架的应用程序依赖关系，例如 Ruby、Python、JavaScript 等。
@@ -27,7 +27,7 @@ set -o pipefail
 # ignore VULNEEABILITY CVE-2022-1996 it will fix at k8s.io/api next release
 # ignore unfixed  VULNEEABILITY
  
-TRIVY_DB_REPOSITORY=${TRIVY_DB_REPOSITORY:-ghcr.io/aquasecurity/trivy-db}
+TRIVY_DB_REPOSITORY=${TRIVY_DB_REPOSITORY:-ghcr.io/aquasecurity/trivy-db:v1}
  
 # The parameters that this shell receives look like this ：
 # HIGH,CRITICAL release-ci.daocloud.io/mspider/mspider:v0.8.3-47-gd3ac6536  release-ci.daocloud.io/mspider/mspider-api-server:v0.8.3-47-gd3ac6536
