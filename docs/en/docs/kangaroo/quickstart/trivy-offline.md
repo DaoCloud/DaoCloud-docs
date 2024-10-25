@@ -60,7 +60,7 @@ trivy:
 2. Select the resource __harborcluster__.
 3. Enter the namespace where the managed Harbor is located.
 4. Select YAML.
-5. Choose the version v1beta1.
+5. Choose the version v1.
 6. Edit YAML:
 
 ```yaml
