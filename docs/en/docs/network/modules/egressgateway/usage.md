@@ -71,7 +71,7 @@ egressgateway-controller-5754f6658-7pn4z   1/1     Running   0          9h
 
     ```shell
     cat <<EOF | kubectl apply -f -
-    apiVersion: egressgateway.spidernet.io/v1beta1
+    apiVersion: egressgateway.spidernet.io/v1
     kind: EgressGateway
     metadata:
       name: default
@@ -107,7 +107,7 @@ egressgateway-controller-5754f6658-7pn4z   1/1     Running   0          9h
 
     ```shell
     $ kubectl get EgressGateway default -o yaml
-    apiVersion: egressgateway.spidernet.io/v1beta1
+    apiVersion: egressgateway.spidernet.io/v1
     kind: EgressGateway
     metadata:
       name: default
