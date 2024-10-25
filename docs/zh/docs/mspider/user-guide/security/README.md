@@ -21,7 +21,7 @@ hide:
 以下是如何使用 服务网格的授权机制限制两个服务之间流量的示例：
 
 ```yaml
-apiVersion: security.istio.io/v1beta1
+apiVersion: security.istio.io/v1
 kind: AuthorizationPolicy
 metadata:
   name: my-auth-policy
@@ -49,7 +49,7 @@ spec:
 以下是如何使用请求级身份验证验证客户端身份的示例：
 
 ```yaml
-apiVersion: security.istio.io/v1beta1
+apiVersion: security.istio.io/v1
 kind: RequestAuthentication
 metadata:
   name: my-authn-policy
