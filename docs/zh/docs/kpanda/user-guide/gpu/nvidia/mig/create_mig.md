@@ -102,7 +102,7 @@ custom-config:
 ## 切换节点 GPU 模式
     !!! note
     
-        切换 GPU 模式或者修改切分规格后需要重启 mig-manager 的 pod。
+        切换 GPU 模式或者修改切分规格后需要重启 nvidia-mig-manager。
 
 当我们成功安装 gpu operator 之后，节点默认是整卡模式，在节点管理页面会有标识，如下图所示：
 
