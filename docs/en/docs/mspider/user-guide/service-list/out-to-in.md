@@ -26,7 +26,7 @@ This page explains how external applications can access services inside the mesh
     Here is an example YAML after completing the configuration:
 
     ```yaml
-    apiVersion: networking.istio.io/v1beta1
+    apiVersion: networking.istio.io/v1
     kind: Gateway
     metadata:
       name: bookinfo-gateway
@@ -51,7 +51,7 @@ This page explains how external applications can access services inside the mesh
     Here is an example YAML after completing the configuration:
 
     ```yaml
-    apiVersion: networking.istio.io/v1beta1
+    apiVersion: networking.istio.io/v1
     kind: VirtualService
     metadata:
       name: bookinfo
