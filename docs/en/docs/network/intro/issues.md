@@ -88,6 +88,7 @@ Accessing services may encounter 1s delay or failed requests.
     | >= v3.28 |VXLAN offload is automatically enabled in kernel v5.7, addressing previous packet loss issues with ClusterIP and improving performance.| When the kernel version is lower than v5.7, the performance of NICs is low, only running 1-2 Gbps/s. |
 
 - Recommendations:
+
     * When lower versions Calico have access latency issue, it can be avoided by `ethtool --offload vxlan.calico rx off tx off`.
     * Higher versions Calico will automatically disable VXLAN offload by default, so customers with network performance requirements can update the kernel version to v5.7 to solve the problem.
 
@@ -101,7 +102,7 @@ Accessing services may encounter 1s delay or failed requests.
 - Impacts:
 
     | Calico Versions | Behaviors | Impacts |
-    | ----------- | -------------------------------------------------- | ------------------------------------------------------------ |
+    | ----------- | ------------- | ------- |
     | < v3.28.0 | No response | If routing tables do not to use new parent NIC, old routes can't be cleaned up even after restarting felix. |
     | >= v3.28.0 | The VXLAN Manager recreates a routing table when the parent device changes. | None |
 
