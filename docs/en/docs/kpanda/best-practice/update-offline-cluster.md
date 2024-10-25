@@ -1,134 +1,139 @@
-# Work Cluster Offline Upgrade Guide
+---
+MTPE: windsonsea
+Date: 2024-10-25
+---
+
+# Offline Deployment/Upgrade Guide for Worker Clusters
 
 !!! note
 
-    This page describes how to upgrade the kubernetes version of the worker cluster created using the DCE 5.0 platform in offline mode, and does not include the upgrade of other kubeneters components.
+    This document is specifically designed for deploying or upgrading the Kubernetes version of worker clusters created on the DCE 5.0 platform in offline mode. It does not cover the deployment or upgrade of other Kubernetes components.
 
-## Overview
+This guide is applicable to the following offline scenarios:
 
-In the offline scenario, users can upgrade the kubernetes version of the worker cluster created using the DCE 5.0 platform by making an incremental offline package. The overall upgrade idea is: build the offline package on the networking node → import the offline package into the bootstrapping node → update the kubernetes version list of the Global cluster → use the platform UI to upgrade the kubernetes version of the worker cluster.
+- You can follow the operational guidelines to deploy the recommended Kubernetes version in a non-GUI environment created by the DCE 5.0 platform.
+- You can upgrade the Kubernetes version of worker clusters created using the DCE 5.0 platform by generating incremental offline packages.
+
+The overall approach is as follows:
+
+1. Build the offline package on an integrated node.
+2. Import the offline package to the bootstrap node.
+3. Update the Kubernetes version manifest for the [global service cluster](../user-guide/clusters/cluster-role.md#global-service-cluster).
+4. Use the DCE 5.0 UI to create or upgrade the Kubernetes version of the worker cluster.
 
 !!! note
-    
-    Offline kubernetes builds currently supported are as follows:
 
-    - v1.26.3, v1.26.2, v1.26.1, v1.26.0, v1.25.8
-    - v1.25.7, v1.25.6, v1.25.5, v1.25.4, v1.25.3, v1.25.2, v1.25.1, v1.25.0,
-    - v1.24.12, v1.24.11, v1.24.10, v1.24.9, v1.24.8, v1.24.7, v1.24.6, v1.24.5, v1.24.4, v1.24.3, v1.24.2, v1.24.1, v1.24.0
+    For a list of currently supported offline Kubernetes versions, refer to the [list of Kubernetes versions supported by Kubean](../../community/kubean.md#kubernetes-compatibility).
 
-## Build Offline Packages at Networked Node
+## Building the Offline Package on an Integrated Node
 
-Because the offline environment cannot be connected to the Internet, users need to prepare a machine **Networked nodes** in advance to build incremental offline packages and start the Docker service on this node. [How to install Docker?](../../blogs/230315-install-on-linux.md)
+Since the offline environment cannot connect to the internet, you need to prepare an **integrated node** in advance to build the incremental offline package and start Docker or Podman services on this node. Refer to [How to Install Docker?](../../blogs/230315-install-on-linux.md)
 
-1. Check the Docker service running status of the networked nodes
+1. Check the status of the Docker service on the integrated node.
 
     ```bash
-    # Check status of docker process on the node
-    ps aux|grep docker 
+    ps aux | grep docker
+    ```
 
-    # The desired output looks like:
+    You should see output similar to the following:
+
+    ```console
     root     12341  0.5  0.2 654372 26736 ?        Ssl  23:45   0:00 /usr/bin/docked
     root     12351  0.2  0.1 625080 13740 ?        Ssl  23:45   0:00 docker-containerd --config /var/run/docker/containerd/containerd.toml
     root     13024  0.0  0.0 112824   980 pts/0    S+   23:45   0:00 grep --color=auto docker
     ```
 
-2. Create a file named __manifest.yaml__ in the directory of the __/root__ networked node with the following command:
+2. Create a file named __manifest.yaml__ in the __/root__ directory of the integrated node with the following command:
 
     ```bash
     vi manifest.yaml
     ```
 
-    __manifest.yaml__ includes the following contents:
+    The content of __manifest.yaml__ should be as follows:
 
-    ```yaml
+    ```yaml title="manifest.yaml"
     image_arch:
     - "amd64"
-    kube_version:
-    - "v1.25.5"
-    - "v1.25.4"
-    - "v1.24.8"
-    - "v1.24.5"
+    kube_version: # Specify the version of the cluster to be upgraded
+    - "v1.28.0"
     ```
 
-    -  __image_arch__ Used to specify the architecture type of the CPU. The available parameters are __amd64__ and __arm64__ .
-    -  __kube_version__ Used to specify the version of the kubernetes offline package that needs to be built. Refer to the offline kubernetes version that supports building above.
+    - __image_arch__ specifies the CPU architecture type, with options for __amd64__ and __arm64__.
+    - __kube_version__ indicates the version of the Kubernetes offline package to be built. You can refer to the supported offline Kubernetes versions mentioned earlier.
 
-3. Create a new __/data__ folder named under the __/root__ directory to store the incremental offline package.
+3. Create a folder named __/data__ in the __/root__ directory to store the incremental offline package.
 
     ```bash
     mkdir data
     ```
 
-    run the following command to generate an offline package using `ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8` the image.
-
-    For more information about `ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8` mirroring, go to [kubean](https://github.com/kubean-io/kubean/pkgs/container/kubean-operator).
+    Run the following command to generate the offline package using the kubean `airgap-patch` image. Make sure the tag of the `airgap-patch` image matches the Kubean version, and that the Kubean version covers the Kubernetes version you wish to upgrade.
 
     ```bash
-    docker run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8
+    # Assuming the Kubean version is v0.13.9
+    docker run --rm -v $(pwd)/manifest.yaml:/manifest.yaml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.13.9
     ```
 
-    After the docker service finishes running, check __/data__ the files under the folder. The file directory is as follows:
+    After the Docker service completes running, check the files in the __/data__ folder. The folder structure should look like this:
 
-    ```bash
+    ```console
     data
-    └── v_offline_patch
-        ├── amd64
-        │   ├── files
-        │   │   ├── import_files.sh
-        │   │   └── offline-files.tar.gz # binary file
-        │   └── images
-        │       ├── import_images.sh
-        │       └── offline-images.tar.gz # image file
-        └── kubeanofflineversion.cr.patch.yaml
+    ├── amd64
+    │   ├── files
+    │   │   ├── import_files.sh
+    │   │   └── offline-files.tar.gz
+    │   ├── images
+    │   │   ├── import_images.sh
+    │   │   └── offline-images.tar.gz
+    │   └── os-pkgs
+    │       └── import_ospkgs.sh
+    └── localartifactset.cr.yaml
     ```
 
-## Import Offline Packages into the Fire Node
+## Importing the Offline Package to the Bootstrap Node
 
-1. Copy the files of the __/data__ networking node to the directory of the __/root__ fire node, and then **Networking node** run the following command:
+1. Copy the __/data__ files from the integrated node to the __/root__ directory of the bootstrap node. On the **integrated node** , run the following command:
 
     ```bash
     scp -r data root@x.x.x.x:/root
     ```
 
-    !!! note
+    Replace `x.x.x.x` with the IP address of the bootstrap node.
 
-        `x.x.x.x` is the IP address of bootstrapping node.
+2. On the bootstrap node, copy the image files in the __/data__ folder to the built-in Docker registry of the bootstrap node. After logging into the bootstrap node, run the following commands:
 
-2. Copy the image file in the __/data__ folder to the docker registry built in the bootstrapping node.
-   After logging in the fire node, run the following command:
-
-    1. Enter the directory where the image file is located
+    1. Navigate to the directory where the image files are located.
     
         ```bash
-        cd data/v_offline_patch/amd64/images
+        cd data/amd64/images
         ```
 
-    2. Run the import _ images. Sh script to import the image into the built-in docker registry of the fire node.
+    2. Run the __import_images.sh__ script to import the images into the built-in Docker Registry of the bootstrap node.
    
         ```bash
-        DEST_TLS_VERIFY=false ./import_images.sh 127.0.0.1:443
+        REGISTRY_ADDR="127.0.0.1" ./import_images.sh
         ```
 
     !!! note
 
-        The above command is only applicable to the docker registry registry built in the fire node. If an external registry is used, please use the following command:
+        The above command is only applicable to the built-in Docker Registry of the bootstrap node. If you are using an external registry, use the following command:
         
-        ```yaml
-        DEST_USER=${username} DEST_PASS=${password} DEST_TLS_VERIFY=false ./import_images.sh https://x.x.x.x:443
+        ```shell
+        REGISTRY_SCHEME=https REGISTRY_ADDR=${registry_address} REGISTRY_USER=${username} REGISTRY_PASS=${password} ./import_images.sh
         ```
-        
-        `https://x.x.x.x:443` is the address of the external registry.
-        __DEST_USER=${username} DEST_PASS=${password}__ includes username and password parameters for the external registry. This parameter can be deleted if the external registry is secret-free.
 
-3. Copy the binary file in the __/data__ file to the built-in Minio service of the fire node on the fire node.
+        - REGISTRY_ADDR is the address of the image repository, such as 1.2.3.4:5000.
+        - If the image repository requires username and password authentication, set REGISTRY_USER and REGISTRY_PASS accordingly.
 
-    1. Go to the directory where the binary is located
+3. On the bootstrap node, copy the binary files in the __/data__ folder to the built-in Minio service of the bootstrap node.
+
+    1. Navigate to the directory where the binary files are located.
     
         ```bash
-        cd data/v_offline_patch/amd64/files/
+        cd data/amd64/files/
         ```
 
-    2. Run the import _ files. Sh script to import the binary file into the Minio service built into the Kindle Node.
+    2. Run the __import_files.sh__ script to import the binary files into the built-in Minio service of the bootstrap node.
     
         ```bash
         MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_files.sh http://127.0.0.1:9000
@@ -136,29 +141,20 @@ Because the offline environment cannot be connected to the Internet, users need 
 
 !!! note
 
-    The above commands are only applicable to the built-in Minio service of the bootstrapping node. If you use an external Minio, please replace `http://127.0.0.1:9000` with the access address of the external Minio.
-    __rootuser__ and __rootpass123__ are the default account and password of the built-in Minio service of bootstrapping nodes.
+    The above command is only applicable to the built-in Minio service of the bootstrap node. If you are using an external Minio, replace `http://127.0.0.1:9000` with the access address of the external Minio. "rootuser" and "rootpass123" are the default account and password for the built-in Minio service of the bootstrap node.
 
-## Update kubernetes version manifest for Global cluster
+## Updating the Kubernetes Version Manifest for the Global Service Cluster
 
-1. Copy the inventory configuration file in `kubeanofflineversion.cr.patch` the file of the __/data__ networking node
-   to any Master node __/root__ directory in the Global cluster, and **Networking node** run the following command:
+Run the following command on the bootstrap node to deploy the `localartifactset` resource to the global service cluster:
 
-    ```bash
-    scp -r data/v_offline_patch/kubeanofflineversion.cr.patch.yaml root@x.x.x.x:/root
-    ```
+```bash
+kubectl apply -f data/kubeanofflineversion.cr.patch.yaml
+```
 
-    !!! note
+## Next Steps
 
-        `x.x.x.x` is the IP address of any Master node in the Global cluster.
+Log into the DCE 5.0 UI management interface to continue with the following actions:
 
-2. Log in to any **Master node** execution list configuration file in the Global cluster
-   after completing the previous step. The command is as follows:
+1. Refer to the [Creating Cluster Documentation](../user-guide/clusters/create-cluster.md) to create a worker cluster, where you can select the incremental version of Kubernetes.
 
-    ```bash
-    kubectl apply -f kubeanofflineversion.cr.patch.yaml
-    ```
-
-## Upgrade the kubernetes version of the work cluster using the platform UI
-
-Log in to DCE 5.0, and upgrade the self-built worker cluster in reference to [Upgrade Cluster](../user-guide/clusters/upgrade-cluster.md).
+2. Refer to the [Upgrading Cluster Documentation](../user-guide/clusters/upgrade-cluster.md) to upgrade your self-built worker cluster.

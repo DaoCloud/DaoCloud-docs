@@ -2,26 +2,24 @@
 
 !!! note
 
-    本文仅针对离线模式下，使用 DCE 5.0 平台所创建的工作集群的 kubernetes 的版本进行部署或升级，不包括其它 kubeneters 组件的部署或升级。
-
-## 概述
+    本文仅针对离线模式下，使用 DCE 5.0 平台所创建的工作集群的 kubernetes 的版本进行部署或升级，
+    不包括其它 kubeneters 组件的部署或升级。
 
 本文适用以下离线场景：
 
 - 用户可以通过以下操作指南，部署 DCE 5.0 平台所创建的非界面中推荐的 Kubernetes 版本。
-
 - 用户可以通过制作增量离线包的方式对使用 DCE 5.0 平台所创建的工作集群的 kubernetes 的版本进行升级。
 
 整体的思路为：
 
 1. 在联网节点构建离线包
 2. 将离线包导入火种节点
-3. 更新全局服务集群的 kubernetes 版本清单
+3. 更新[全局服务集群](../user-guide/clusters/cluster-role.md#_2)的 Kubernetes 版本清单
 4. 使用平台 UI 创建工作集群或升级工作集群的 kubernetes 版本
 
 !!! note
 
-    目前支持构建的离线 kubernetes 版本请参考 kubean 支持的 kubernetes 版本列表。
+    目前支持构建的离线 kubernetes 版本，请参考 [kubean 支持的 kubernetes 版本列表](../../community/kubean.md#kubernetes)。
 
 ## 在联网节点构建离线包
 
@@ -53,7 +51,7 @@
     ```yaml title="manifest.yaml"
     image_arch:
     - "amd64"
-    kube_version: ## 填写待升级的集群版本
+    kube_version: # 填写待升级的集群版本
     - "v1.28.0"
     ```
 
@@ -156,6 +154,6 @@ kubectl apply -f data/kubeanofflineversion.cr.patch.yaml
 
 登录 DCE 5.0 的 UI 管理界面，您可以继续执行以下操作：
 
-1. 参照[集群创建文档](../user-guide/clusters/create-cluster.md)进行工作集群创建，此时可以选择 Kubernetes 增量版本。
+1. 参照[创建集群的文档](../user-guide/clusters/create-cluster.md)进行工作集群创建，此时可以选择 Kubernetes 增量版本。
 
-2. 参照[集群升级文档](../user-guide/clusters/upgrade-cluster.md)对自建的工作集群进行升级。
+2. 参照[升级集群的文档](../user-guide/clusters/upgrade-cluster.md)对自建的工作集群进行升级。
