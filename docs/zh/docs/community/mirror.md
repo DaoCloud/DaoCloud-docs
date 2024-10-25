@@ -38,7 +38,7 @@ DaoCloud 目前收录了 600+ 国外镜像，方便国内用户拉取。
     docker.io/apache/skywalking-ui
     docker.io/aquasec/kube-bench
     docker.io/aquasec/kube-hunter
-    docker.io/aquasec/trivy
+    docker.io/aquasec/trivy:latest
     docker.io/arey/mysql-client
     docker.io/bitnami/bitnami-shell
     docker.io/bitnami/contour
@@ -124,7 +124,7 @@ DaoCloud 目前收录了 600+ 国外镜像，方便国内用户拉取。
     docker.io/goharbor/notary-signer-photon
     docker.io/goharbor/redis-photon
     docker.io/goharbor/registry-photon
-    docker.io/goharbor/trivy-adapter-photon
+    docker.io/goharbor/trivy-adapter-photon:latest
     docker.io/golang
     docker.io/grafana/grafana
     docker.io/grafana/tempo
