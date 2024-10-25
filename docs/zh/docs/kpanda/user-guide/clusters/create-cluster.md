@@ -105,3 +105,9 @@ hide:
     - 同时失联状态下执行的任何操作都将不生效，请检查集群网络连通性或主机状态。
 
     ![未知状态](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createnew07.png)
+
+## 参考文档
+
+- [在 CentOS 管理平台上创建 Ubuntu 工作集群](../../best-practice/create-ubuntu-on-centos-platform.md)
+- [在 CentOS 管理平台上创建 RedHat 9.2 工作集群](../../best-practice/create-redhat9.2-on-centos-platform.md)
+- [在非主流操作系统上创建集群](../../best-practice/use-otherlinux-create-custer.md)
