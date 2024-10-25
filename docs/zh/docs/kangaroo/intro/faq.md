@@ -28,7 +28,7 @@ DCE 5.0标准版本中没有中间件，中间件属于白金版。
 [CVE 官网](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=kubernetes)获取漏洞数据。
 如果是一个纯离线环境，则不能正常进行漏洞扫描，会执行失败。
 
-![trivy](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/trivy-nodb.png)
+![trivy](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/trivy-nodb-updated.png)
 
 ## 创建托管 Harbor 时第一步集群校验通过后创建 Harbor 仍然出错
 
