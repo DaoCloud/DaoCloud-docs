@@ -41,7 +41,7 @@
 1. 创建 Gateway
 
     ```yaml title="gateway.yaml"
-    apiVersion: networking.istio.io/v1beta1
+    apiVersion: networking.istio.io/v1
     kind: Gateway
     metadata:
       name: rollout-demo
@@ -76,7 +76,7 @@
     仅需修改提示的字段，其余字段无需修改。
 
     ```yaml
-    apiVersion: networking.istio.io/v1beta1
+    apiVersion: networking.istio.io/v1
     kind: VirtualService
     metadata:
       creationTimestamp: "2022-11-07T10:46:23Z"
