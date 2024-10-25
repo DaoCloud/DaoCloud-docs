@@ -37,7 +37,7 @@
     YAML 创建 IP Pool 示例：
 
     ```yaml
-    apiVersion: metallb.io/v1beta1
+    apiVersion: metallb.io/v1
     kind: IPAddressPool
     metadata:
       annotations:
