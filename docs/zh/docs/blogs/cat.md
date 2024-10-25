@@ -1,5 +1,7 @@
 # 喵典
 
+> 作者 [Michael Yao](https://github.com/windsonsea) 版权所有 @2024
+
 这是一个有关猫咪创意平台产品的推广页面。
 
 口号 SLOGAN： **爱喵，就要懂喵**
