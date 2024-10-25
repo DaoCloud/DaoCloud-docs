@@ -88,6 +88,7 @@ nav:
                   - Migrate Cluster OS without Downtime: install/best-practices/replace-os.md
               - Installer Release Notes: install/release-notes.md
           - Best Practices: dce/bphome.md
+          - FAQs: dce/faq.md
       - Workbench:
           - Workbench:
               - Intro:
@@ -176,6 +177,7 @@ nav:
               - FAQs:
                   - Pipeline FAQs: amamba/faq/faq-jenkins.md
                   - GitOps FAQs: amamba/faq/faq-gitops.md
+                  - Toolchain FAQs: amamba/faq/faq-toochain.md
               - Best Practices:
                   - GitOps Practices:
                       - CI/CD based on Pipeline + GitOps: amamba/quickstart/argocd-jenkins.md

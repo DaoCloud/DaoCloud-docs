@@ -125,6 +125,14 @@ In previous versions, you need to update the dce5-installer to v0.20.0 and then 
 dce5-installer cluster-create -c clusterconfig.yaml -m mainfest.yaml --update-kind-certs
 ```
 
+### After installing Contour, the default certificate validity period is only one year and will not auto-renew, leading to continuous restarts of the Contour-Envoy component
+
+For versions prior to v0.21.0, there was support for enabling the installation of the Contour component. Subsequent versions will no longer support this. Customers who have installed Contour in previous versions need to execute the `helm upgrade` command to update the certificate validity period:
+
+```bash
+helm upgrade -n contour-system contour --reuse-values --set contour.contour.certgen.certificateLifetime=36500
+```
+
 ## Operating System Related Issues
 
 ### Error during installation on CentOS 7.6

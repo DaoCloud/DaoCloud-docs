@@ -185,8 +185,8 @@
 会根据当前登录用户在目标集群中通过 CSR 资源申请证书，如果集群版本太低或者没有开启此功能 Controller，
 会导致证书申请失败，从而无法连接到目标集群。
 
-申请证书流程请参考：https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
-    
+申请证书流程请参考 [Kubernetes 官网文档](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/)。
+
 **解决办法：**
 
 - 如果集群版本大于 v1.18，请检查 kube-controller-manager 是否开启 csr 功能，确保以下的 controller 是否正常开启
