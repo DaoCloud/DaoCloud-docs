@@ -1579,7 +1579,7 @@
 
     该版本主要新特性：新功能 ThreatGraph 能够结合网络等运行时环境来确定威胁扫描结果的优先级、支持对云资产进行无代理的云安全态势管理、集成云原生环境恶意程序扫描工具 [YaraHunter](https://github.com/deepfence/YaraHunter)。
 
-- [Trivy 容器漏洞扫描工具 v0.46.0 发布（CNCF 项目）](https://github.com/aquasecurity/trivy/releases/tag/v0.46.0)
+- [Trivy 容器漏洞扫描工具 v0.47.0 发布（CNCF 项目）](https://github.com/aquasecurity/trivy/releases/tag/v0.47.0)
 
     版本特性：支持扫描 Kubernetes 控制平面和节点组件中的漏洞、增加对 .NET 项目许可信息的检索功能、向 Kubernetes 资源的扫描报告中添加了元数据、在 CI 流程中添加了一个用于检查依赖项的 Go 版本的工作流。
 
@@ -1599,7 +1599,7 @@
 
     该版本主要新特性：为虚拟机镜像新增扫描器、多架构镜像支持 OS 通配符、支持按 digest 扫描镜像、增加慢速模式以降低 CPU 和内存利用率。
 
-- [Trivy 容器漏洞扫描工具 v0.33.0 发布（CNCF 项目）](https://github.com/aquasecurity/trivy/releases/tag/v0.33.0)
+- [Trivy 容器漏洞扫描工具 v0.34.0 发布（CNCF 项目）](https://github.com/aquasecurity/trivy/releases/tag/v0.34.0)
 
     该版本主要新特性：禁用非 amd64 架构的 containerd 集成测试、重构 k8s 自定义报告、支持 non-packaged 二进制文件、修复 golang x/text 漏洞。
 
