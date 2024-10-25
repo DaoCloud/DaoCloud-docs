@@ -47,11 +47,11 @@ conduct the following operations:
           - group: networking.istio.io
             kind: VirtualService
             resource: virtualservices
-            version: v1beta1
+            version: v1
           - group: networking.istio.io
             kind: DestinationRule
             resource: destinationrules
-            version: v1beta1
+            version: v1
           - group: networking.istio.io
             kind: Gateway
             resource: gateways
