@@ -100,6 +100,9 @@ custom-config:
 设置完成后，在确认部署应用时即可[使用 GPU MIG 资源](mig_usage.md)。
 
 ## 切换节点 GPU 模式
+    !!! note
+    
+        切换 GPU 模式或者修改切分规格后需要重启 mig-manager 的 pod。
 
 当我们成功安装 gpu operator 之后，节点默认是整卡模式，在节点管理页面会有标识，如下图所示：
 
