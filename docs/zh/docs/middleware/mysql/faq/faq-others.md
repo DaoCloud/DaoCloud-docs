@@ -57,7 +57,7 @@ The MysQL server is running with the read-only option so it cannot excute this s
 
 ## Operator 或者相关 MySQL 资源中出现错误码 1045
 
-### 原因 1：磁盘性能太差，导致 MySQL 初始化被中断
+### 原因：磁盘性能太差，导致 MySQL 初始化被中断
 当出现这个错误后，登录 MySQL，执行：
 ```
 mysql -uroot
