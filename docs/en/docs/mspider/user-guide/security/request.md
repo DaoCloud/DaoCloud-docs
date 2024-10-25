@@ -11,7 +11,7 @@ Each request authentication needs to configure an [Authorization Policy](./autho
 All workloads labeled __app: httpbin__ require JWT authentication. Examples are as follows:
 
 ```yaml
-apiVersion: security.istio.io/v1beta1
+apiVersion: security.istio.io/v1
 kind: RequestAuthentication
 metadata:
   name: httpbin
