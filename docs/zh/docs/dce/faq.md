@@ -170,8 +170,10 @@
     - [MySQL 主备关系问题](../middleware/mysql/faq/faq-master-slave.md)
     - [MySQL MGR 参数配置问题](../middleware/mysql/faq/faq-mgr-parameter.md)
     - [MySQL MGR 排障手册](../middleware/mysql/faq/mgr-troubleshooting.md)
-    - [MySQL 其他故障案例](../middleware/mysql/faq/faq-others.md)
     - [MySQL 主从模式应对网络闪断](../middleware/mysql/faq/faq-mtsql-net.md)
+    - [CR 创建数据库失败报错](../middleware/mysql/faq/faq-others.md#cr)
+    - [出现提示 `The MySQL server is running with the read-only option so it cannot execute this statement`](../middleware/mysql/faq/faq-others.md#the-mysql-server-is-running-with-the-read-only-option-so-it-cannot-execute-this-statement)
+    - [Operator 或者相关 MySQL 资源中出现错误码 1045](../middleware/mysql/faq/faq-others.md#operator-mysql-1045)
 - Elasticsearch 排障
     - [Elasticsearch PVC 磁盘容量满](../middleware/elasticsearch/faq/common-question-es.md#elasticsearch-pvc)
     - [Elasticsearch 业务索引别名被占用](../middleware/elasticsearch/faq/common-question-es.md#elasticsearch_1)
