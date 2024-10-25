@@ -17,7 +17,7 @@ hide:
 YAML 示例：
 
 ```yaml
-apiVersion: security.istio.io/v1beta1
+apiVersion: security.istio.io/v1
 kind: PeerAuthentication
 metadata:
   name: "default"
