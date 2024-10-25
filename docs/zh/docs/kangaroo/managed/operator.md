@@ -79,7 +79,7 @@ hide:
 | controllers.portal.maxReconcile | int | `1` | Max parallel reconciliation for Portal controller |
 | controllers.registry.maxReconcile | int | `1` | Max parallel reconciliation for Registry controller |
 | controllers.registryctl.maxReconcile | int | `1` | Max parallel reconciliation for RegistryCtl controller |
-| controllers.trivy.maxReconcile | int | `1` | Max parallel reconciliation for Trivy controller |
+| controllers.trivy.maxReconcile | int | `5` | Max parallel reconciliation for Trivy controller |
 | deploymentAnnotations | object | `{}` | Additional annotations to add to the controller Deployment |
 | fullnameOverride | string | `""` |  |
 | harborClass | string | `""` | Class name of the Harbor operator |
