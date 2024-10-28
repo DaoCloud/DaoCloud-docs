@@ -1,7 +1,5 @@
 # MySQL 主从模式应对网络闪断
 
-## 背景
-
 MySQL 主从模式的高可用保障是独立于集群的，这就可能存在误判，例如下面的集群：
 
 ![00](../../mysql/images/mysql-net.jpg)
@@ -15,7 +13,7 @@ MySQL 主从模式的高可用保障是独立于集群的，这就可能存在�
 
     适用于集群网络状态不可控的情况。原理是在 orch 监控到 master 网络不可达后，将其忽略。
 
-### 操作步骤
+## 操作步骤
 
 1. 以 common-mysql 数据库，使用 helm 更新 operator：
 
@@ -36,7 +34,7 @@ MySQL 主从模式的高可用保障是独立于集群的，这就可能存在�
       --set "orchestrator.config.RecoveryIgnoreHostnameFilters[0]=^mcamel-common"  # (1)!
     ```
 
-    1. 这里是一个正则，这个正则最终会和  mysql pod 名字做匹配
+    1. 这里是一个正则，则最终会和 mysql pod 名字做匹配
 
 !!! note
 

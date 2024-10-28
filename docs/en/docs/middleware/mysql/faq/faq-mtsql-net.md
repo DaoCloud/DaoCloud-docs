@@ -1,7 +1,5 @@
 # Handle Network Fluctuations in MySQL Master-Slave Mode
 
-## Background
-
 The high availability guarantee in MySQL master-slave mode is independent of the cluster, which can lead to misjudgments. For example, consider the following cluster:
 
 <!--Add image later-->
@@ -14,7 +12,7 @@ To handle such scenarios, we can disable `orch`'s automatic switch capability fo
 
     This is applicable in situations where the network status of the cluster is uncontrollable. The principle is to ignore the master when `orch` detects that the master's network is unreachable.
 
-### Steps
+## Steps
 
 1. For the `common-mysql` database, use Helm to update the operator:
 
@@ -42,7 +40,7 @@ To handle such scenarios, we can disable `orch`'s automatic switch capability fo
     Ensure that the operator restarts after execution is complete.
     Ensure that the `mysql-operator-orc` configmap includes the content set by `--set` after execution is complete.
 
-## Verification Plan
+## Verification Procedure
 
 1. Create a 3-node master-slave cluster (with `-0` as the master), ensuring the name matches the regular expression set above:
 

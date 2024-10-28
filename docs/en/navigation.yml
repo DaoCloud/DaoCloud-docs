@@ -1002,7 +1002,7 @@ nav:
                       - Other MySQL Issues: middleware/mysql/faq/faq-others.md
                       - MySQL MGR Configuration: middleware/mysql/faq/faq-mgr-parameter.md
                       - Troubleshoot MySQL MGR: middleware/mysql/faq/mgr-troubleshooting.md
-                      - Network Fluctuations in MySQL Master-Slave: middleware/mysql/faq/faq-mtsql-net.md
+                      - Network Fluctuations in Master-Slave: middleware/mysql/faq/faq-mtsql-net.md
               - MongoDB Database:
                   - Intro:
                       - What is MongoDB: middleware/mongodb/intro/index.md

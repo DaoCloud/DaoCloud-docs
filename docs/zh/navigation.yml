@@ -1044,7 +1044,7 @@ nav:
                       - MySQL 其他故障: middleware/mysql/faq/faq-others.md
                       - MySQL MGR 参数配置: middleware/mysql/faq/faq-mgr-parameter.md
                       - MySQL MGR 排障: middleware/mysql/faq/mgr-troubleshooting.md
-                      - MySQL 主从模式应对网络闪断: middleware/mysql/faq/faq-mtsql-net.md
+                      - MySQL 主从模式网络闪断: middleware/mysql/faq/faq-mtsql-net.md
               - MongoDB 数据库:
                   - 介绍:
                       - 什么是 MongoDB: middleware/mongodb/intro/index.md
