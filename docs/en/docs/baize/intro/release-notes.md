@@ -8,11 +8,37 @@ date: 2024-07-12
 This page lists the Release Notes for AI Lab,
 so that you can learn its evolution path and feature changes.
 
+!!! note
+
+    Features marked as Beta are subject to change; please pay close attention when using them,
+    and provide timely feedback if you encounter any issues.
+
+## 2024-10-31
+
+### v0.10.0
+
+#### Features
+
+- **Added** the feature to specify the type of GPU to use when configuring vGPU resources in the `Training Task`.
+- **Added** support for Huggingface data sources in the `Dataset`, allowing you to download a vast array of models and datasets.
+- **Added** support for Modelscope data sources in the `Dataset`, allowing you to download a vast array of models and datasets.
+- **Added** the feature for **cross-namespace** references in `Dataset`.
+- **Added** support for specifying the type of card to use when configuring vGPU resources in the `Inference Service`.
+- **Added** a GPU management module in the `Operations Console`, which supports viewing card-level monitoring and metrics information.
+- **Added** compatibility for `Moxi` GPUs.
+
+#### Improvements
+
+- **Improved** the dataset update interface to provide more configuration options.
+- **Improved** the entry position of the Notebook to enhance accessibility.
+
 ## 2024-09-30
 
 ### v0.9.0
 
-#### Features
+!!! note
+
+    The product module name was changed from `Intelligent Computing Engine` to `AI Lab` globally.
 
 - **Added** a new data management sub-module, “Data Labeling,” for managing data labeling features across main data categories.
 - **Added** a new model management sub-module, “Model List,” which supports to quickly import data.
@@ -25,8 +51,6 @@ so that you can learn its evolution path and feature changes.
 ## 2024-08-31
 
 ### v0.8.0
-
-#### Features
 
 - **Added** [Beta] support for manually saving a `Notebook` as an image while it is running (depending on the Container Registry module).
 - **Added** [Beta] support for automatically saving a `Notebook` as an image when it is closed (depending on the Container Registry module).
@@ -45,8 +69,6 @@ so that you can learn its evolution path and feature changes.
 
 ### v0.7.0
 
-#### Features
-
 - **Added** support for `Datasets` to query preloading progress after dataset creation, along with a quick debug entry.
 - **Added** support for `training jobs` to create both single-machine and distributed tasks with `MxNet`.
 - **Added** support for `training jobs` to create `MPI` distributed tasks.
@@ -59,8 +81,6 @@ so that you can learn its evolution path and feature changes.
 ## 2024-07-10
 
 ### v0.6.1
-
-#### Fixes
 
 - **Fixed** an issue where `Inference` create services using the `Triton` framework lacked the `vLLM` option.
 
@@ -78,9 +98,9 @@ so that you can learn its evolution path and feature changes.
   when creating inference services.
 - **Added** `vLLM` supports configuring `Lora` inference parameters when creating inference services.
 
-#### Optimization
+#### Improvement
 
-- **Optimized** the default queue priority to `High` when creating a `Notebook`.
+- **Improved** the default queue priority to `High` when creating a `Notebook`.
 
 #### Fixes
 
@@ -97,7 +117,7 @@ so that you can learn its evolution path and feature changes.
 
 - **Added** support for adding `Tensorboard` analysis dashboard when creating tasks with `baizectl`.
 - **Added** support for binding `Job` to custom environments created in `Environment Management`.
-- **Added** optimizations for custom environment configuration updates and improvements to
+- **Added** Improvements for custom environment configuration updates and improvements to
   the `Python` version selector in `Environment Management`.
 - **Added** support for viewing resource monitoring dashboards in the details of `Inference Service`.
 - **Added** support for binding `Inference Service` to custom environments created in `Environment Management`.
@@ -135,8 +155,6 @@ so that you can learn its evolution path and feature changes.
 ## 2024-04-01
 
 ### v0.3.0
-
-#### Features
 
 - **Added** the Notebooks module, supporting development tools like `Jupyter Notebook`.
 - **Added** the Job Center module, supporting the training of jobs with various mainstream
