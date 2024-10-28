@@ -133,3 +133,44 @@ steps {
 | 命名空间       | 选择需要更新应用所在的命名空间  |
 | 集群凭证           | 需要事先创建后 kubeconfig 类型的凭证用于连接集群                         |
 | 清单文件路径       | 应用的清单文件所在代码仓库的绝对路径        |
+
+## docker-build（系统自定义内置步骤）
+
+通过自定义步骤能力，支持镜像的构建与推送。
+
+| 参数              | 说明                                                         |
+| ----------------- | ------------------------------------------------------------ |
+| image             | 镜像仓库地址                                                 |
+| tag               | 镜像标签                                                     |
+| tags              | 同步构建更多标签的镜像版本                                   |
+| working directory | 构建任务所在的目录                                           |
+| dockerfile        | 源代码仓库中 Dockerfile 文件所在目录                         |
+| build arguments   | 定义传递构建参数                                             |
+| platform          | 指定构建容器镜像所针对的目标平台，默认为` linux/amd64`，还支持 `linux/arm` |
+| no cache          | 是否使用缓存，默认不缓存                                     |
+| disable push      | 是否构建成功后推送进行，默认推送                             |
+
+### 使用方式
+
+推送镜像时，该步骤需要用户名/密码登陆镜像仓库，所以目前存在以下两种使用方式：
+
+- 使用凭证+docker build
+- 环境变量+docker build
+
+#### 使用凭证 + docker build
+
+1. 提前创建好凭证，并且在流水线的`添加凭证`步骤中使用该凭证，用户名变量设置为`DOCKER_USERNAME` 、密码变量设置为`DOCKER_PASSWORD`
+
+  ![docker0](../../../images/docker0.jpg)
+
+1. 创建子步骤 `docker build` ，填写相关参数
+
+#### 环境变量 + docker build
+
+注意：不建议该方式，密码会暴露在流水线当中
+
+1. 在流水线的环境变量模块中添加变量 `DOCKER_USERNAME` 、`DOCKER_PASSWORD`并设置好对应信息
+
+  ![docker1](../../../images/docker1.jpg)
+
+1. 创建步骤 `docker build` ，填写相关参数
