@@ -93,12 +93,12 @@
 
 另外实际使用过程中，需要定义 __超时__ 步骤共同使用，以等待 SonarQube 代码扫描的返回结果，如下：
 
-```bash
+```groovy
 steps {
-              timeout(time: 1, unit: 'HOURS') {
-                waitForQualityGate abortPipeline: true
-              }
-            }
+    timeout(time: 1, unit: 'HOURS') {
+        waitForQualityGate abortPipeline: true
+    }
+}
 ```
 
 | 参数                       | 说明                                                         |
@@ -152,16 +152,16 @@ steps {
 
 ### 使用方式
 
-推送镜像时，该步骤需要用户名/密码登陆镜像仓库，所以目前存在以下两种使用方式：
+推送镜像时，该步骤需要用户名/密码登录镜像仓库，所以目前存在以下两种使用方式：
 
-- 使用凭证+docker build
-- 环境变量+docker build
+- 使用凭证 + docker build
+- 环境变量 + docker build
 
 #### 使用凭证 + docker build
 
-1. 提前创建好凭证，并且在流水线的`添加凭证`步骤中使用该凭证，用户名变量设置为`DOCKER_USERNAME` 、密码变量设置为`DOCKER_PASSWORD`
+1. 提前创建好凭证，并且在流水线的`添加凭证`步骤中使用该凭证，用户名变量设置为 `DOCKER_USERNAME`，密码变量设置为 `DOCKER_PASSWORD`
 
-  ![docker0](../../../images/docker0.jpg)
+    ![docker0](../../../images/docker0.jpg)
 
 1. 创建子步骤 `docker build` ，填写相关参数
 
@@ -169,8 +169,8 @@ steps {
 
 注意：不建议该方式，密码会暴露在流水线当中
 
-1. 在流水线的环境变量模块中添加变量 `DOCKER_USERNAME` 、`DOCKER_PASSWORD`并设置好对应信息
+1. 在流水线的环境变量模块中添加变量 `DOCKER_USERNAME` 、`DOCKER_PASSWORD` 并设置好对应信息
 
-  ![docker1](../../../images/docker1.jpg)
+    ![docker1](../../../images/docker1.jpg)
 
 1. 创建步骤 `docker build` ，填写相关参数
