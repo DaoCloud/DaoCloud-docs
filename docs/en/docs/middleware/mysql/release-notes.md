@@ -144,7 +144,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 ### v0.6.0
 
-### New features
+#### New features
 
 - **Added** __mcamel-mysql__ helm-docs template file
 - **Added** The Operator in the __mcamel-mysql__ app store can only be installed in mcamel-system
@@ -186,7 +186,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 ### v0.4.0
 
-### New features
+#### New features
 
 - **Added** MySQL lifecycle management interface function
 - **Added** MySQL details interface function
