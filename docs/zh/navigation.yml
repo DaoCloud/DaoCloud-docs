@@ -353,6 +353,8 @@ nav:
                           - 使用Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
                           - 使用 Volcano 优先级抢占策略: kpanda/user-guide/gpu/volcano/volcano_priority.md
                           - 使用 Volcano Binpack 策略: kpanda/user-guide/gpu/volcano/volcano_binpack.md
+                          - 使用 Volcano DRF 策略: kpanda/user-guide/gpu/volcano/drf.md
+                          - 使用 Volcano NUMA 亲和性调度: kpanda/user-guide/gpu/volcano/numa.md
                       - GPU 调度配置: kpanda/user-guide/gpu/gpu_scheduler_config.md
                   - 昇腾 NPU 管理:
                       - 昇腾 NPU 组件安装: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
@@ -360,6 +362,7 @@ nav:
                       - 启用昇腾 VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - 天数 GPU 管理: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - 沐曦 GPU 管理: kpanda/user-guide/gpu/metax/usemetax.md
+                  - 寒武纪 GPU 管理: kpanda/user-guide/gpu/metax/use-mlu.md
                   - GPU 相关FAQ: kpanda/user-guide/gpu/FAQ.md
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
