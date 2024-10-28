@@ -1,6 +1,6 @@
 ---
 hide:
-  - nav
+  - navigation
 ---
 
 # 构建离线文档站
@@ -18,7 +18,7 @@ DCE 5.0 文档完全开源，所有原始 Markdown 文件都托管在 [GitHub](h
 
     ![fork](./images/offline01.png)
 
-1. 选择合适的目录后点击 **Create fork**
+1. 简单配置后点击 **Create fork**
 
     ![fork](./images/offline02.png)
 
@@ -33,9 +33,10 @@ DCE 5.0 文档完全开源，所有原始 Markdown 文件都托管在 [GitHub](h
     ```
 
 下载好全部数据后，你就可以复制到内部离线环境中修改任意 Markdown 文件。
-推荐使用 Git 来做文档版本管理。另外，你也可以使用 GitHub Codespace 等云端环境进行在线调试。
+推荐使用 Git 来做文档版本管理。另外，你也可以使用
+[GitHub Codespace](https://docs.github.com/zh/codespaces/overview) 等云端环境进行在线调试。
 
-## 本地修改
+## 本地修改文档
 
 文档目录结构说明：
 
@@ -239,3 +240,11 @@ chmod +x build_and_run.sh
     - 确保已安装了 MkDocs 和 Docker，使其命令可以在终端中运行。
     - 上述脚本会根据你的工作目录和 `site` 目录路径进行操作，确保路径正确。
     - 如果需要在 Dockerfile 中做其他自定义配置，可以在脚本中相应修改 `Dockerfile` 的内容。
+
+当然，你可以在修改 Markdown 文件后，批量执行更多自动化的操作，例如设计更加优秀的 Dockerfile。
+
+## 参考链接
+
+- [DCE 5.0 文档站仓库](https://github.com/DaoCloud/DaoCloud-docs)
+- [Material for MkDocs 官网](https://squidfunk.github.io/mkdocs-material/)
+- [Git 文档流程](https://docs.daocloud.io/native/git/)
