@@ -94,20 +94,18 @@ nav:
               - 介绍:
                   - 什么是应用工作台？: amamba/intro/index.md
                   - 功能特性: amamba/intro/features.md
-                  - 应用工作台技术概览: amamba/intro/tech-overview.md
-                  - 产品优势: amamba/intro/benefits.md
-                  - 适用场景: amamba/intro/scenarios.md
-                  - 基本概念: amamba/intro/concepts.md
+                  - 技术概览: amamba/intro/tech-overview.md
+                  - 场景和优势: amamba/intro/scenarios.md
                   - 权限说明: amamba/intro/permission.md
-                  - 安装和升级:
-                      - 离线升级: amamba/offline-upgrade.md
-                      - 部署工作台可插拔组件: amamba/pluggable-components.md
-                      - Jenkins 安装和配置:
-                        - 安装: amamba/user-guide/pipeline/install-jenkins.md
-                        - Jenkins 高可用方案: amamba/quickstart/jenkins-HA.md
-                        - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
-                      - Argo CD高可用部署: amamba/quickstart/argo-cd-HA.md
                   - Release Notes: amamba/intro/release-notes.md
+              - 安装和升级:
+                  - 离线升级: amamba/offline-upgrade.md
+                  - 部署工作台可插拔组件: amamba/pluggable-components.md
+                  - Jenkins 安装和配置:
+                      - 安装: amamba/user-guide/pipeline/install-jenkins.md
+                      - Jenkins 高可用方案: amamba/quickstart/jenkins-HA.md
+                      - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
+                  - Argo CD高可用部署: amamba/quickstart/argo-cd-HA.md
               - 命名空间管理: amamba/user-guide/namespace/namespace.md
               - 向导:
                   - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
@@ -172,13 +170,11 @@ nav:
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
                   - 查看蓝绿发布任务: amamba/user-guide/release/check-bluegreen.md
-              - 代码仓库:
-                  - 代码仓库管理: amamba/user-guide/git/git.md
+              - 代码仓库: amamba/user-guide/git/git.md
               - 工具链集成:
                   - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
                   - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
-                  - 项目研发管理:
-                      - 查看缺陷: amamba/user-guide/pm/issue.md
+                  - 项目研发管理: amamba/user-guide/pm/issue.md
               - 常见问题:
                   - 流水线相关问题: amamba/faq/faq-jenkins.md
                   - GitOps 相关问题: amamba/faq/faq-gitops.md
@@ -196,8 +192,7 @@ nav:
                       - Jenkins 发布应用至虚拟机: amamba/user-guide/pipeline/cicd_vm.md
                       - 物理机/虚拟机集成Jenkins: amamba/quickstart/jenkins-integration.md
                       - 流水线部署多云应用: amamba/quickstart/pipeline-kairship.md
-                  - 灰度发布实践:
-                      - 基于 Contour 的灰度发布: amamba/quickstart/contour-argorollout.md
+                  - 灰度发布实践: amamba/quickstart/contour-argorollout.md
       - 容器:
           - 容器管理:
               - 介绍:
