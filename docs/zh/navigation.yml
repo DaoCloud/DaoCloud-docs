@@ -93,7 +93,7 @@ nav:
           - 应用工作台:
               - 介绍:
                   - 什么是应用工作台？: amamba/intro/index.md
-                  - 功能总览: amamba/intro/features.md
+                  - 功能特性: amamba/intro/features.md
                   - 应用工作台技术概览: amamba/intro/tech-overview.md
                   - 产品优势: amamba/intro/benefits.md
                   - 适用场景: amamba/intro/scenarios.md
@@ -202,7 +202,7 @@ nav:
           - 容器管理:
               - 介绍:
                   - 什么是容器管理: kpanda/intro/index.md
-                  - 功能总览: kpanda/intro/features.md
+                  - 功能特性: kpanda/intro/features.md
                   - 竞争优势: kpanda/intro/benefits.md
                   - 适用场景: kpanda/intro/scenarios.md
                   - 基本概念: kpanda/intro/concepts.md
@@ -387,7 +387,7 @@ nav:
           - 多云编排:
               - 介绍:
                   - 什么是多云编排: kairship/intro/index.md
-                  - 功能总览: kairship/intro/features.md
+                  - 功能特性: kairship/intro/features.md
                   - 产品架构: kairship/intro/architecture.md
                   - 产品优势: kairship/intro/benefits.md
                   - 基本概念: kairship/intro/concepts.md
@@ -589,12 +589,10 @@ nav:
           - 云原生存储:
               - 介绍:
                   - 什么是云原生存储: storage/index.md
-                  - 背景和挑战: storage/background.md
-                  - 功能优势: storage/benefits.md
-                  - 功能列表: storage/features.md
+                  - 功能特性: storage/features.md
                   - Release Notes: storage/hwameistor/release-notes.md
               - HwameiStor 本地存储:
-                  - 介绍: storage/hwameistor/intro/index.md
+                  - 什么是 HwameiStor: storage/hwameistor/intro/index.md
                   - 组件:
                       - 本地磁盘管理器: storage/hwameistor/intro/ldm.md
                       - 本地存储: storage/hwameistor/intro/ls.md
@@ -664,8 +662,8 @@ nav:
                   - PV 和 PVC: storage/terms/pv_pvc.md
           - 虚拟机:
               - 介绍:
-                  - 简介: virtnest/intro/index.md
-                  - 虚拟机功能列表: virtnest/intro/features.md
+                  - 什么是虚拟机: virtnest/intro/index.md
+                  - 功能特性: virtnest/intro/features.md
                   - Release Notes: virtnest/intro/release-notes.md
                   - 常见问题: virtnest/intro/faq.md
               - 安装:   
@@ -706,10 +704,10 @@ nav:
       - 微服务:
           - 可观测性:
               - 介绍:
-                  - 可观测性: insight/intro/index.md
+                  - 什么是 Insight: insight/intro/index.md
+                  - 功能特性: insight/intro/feature.md
                   - 产品优势: insight/intro/benefits.md
                   - 应用场景: insight/intro/scenarios.md
-                  - 功能列表: insight/intro/feature.md
                   - 权限说明: insight/intro/permission.md
                   - Release Notes: insight/intro/release-notes.md
               - 快速入门:
@@ -804,8 +802,8 @@ nav:
                   - 容器日志黑名单: insight/faq/ignore-pod-log-collect.md
           - 微服务引擎:
               - 介绍:
-                  - 索引: skoala/intro/index.md
-                  - 功能总览: skoala/intro/features.md
+                  - 什么是微服务引擎: skoala/intro/index.md
+                  - 功能特性: skoala/intro/features.md
                   - 使用场景: skoala/intro/scenarios.md
                   - 产品优势: skoala/intro/advantages.md
                   - Release Notes: skoala/intro/release-notes.md
@@ -902,7 +900,7 @@ nav:
           - 服务网格:
               - 介绍:
                   - 什么是服务网格: mspider/intro/index.md
-                  - 功能总览: mspider/intro/features.md
+                  - 功能特性: mspider/intro/features.md
                   - 适用场景: mspider/intro/scenarios.md
                   - 服务网格权限说明: ghippo/permissions/mspider.md
                   - 服务网格应用接入规范: mspider/intro/app-spec.md
@@ -1003,7 +1001,7 @@ nav:
           - 中间件:
               - 介绍:
                   - 什么是中间件: middleware/index.md
-                  - 功能介绍: middleware/common/feature.md
+                  - 功能特性: middleware/common/feature.md
                   - 版本适配: middleware/compatibility.md
                   - 权限设计说明: middleware/permission.md
               - 中间件通用配置:
@@ -1014,7 +1012,7 @@ nav:
               - MySQL 数据库:
                   - 介绍:
                       - 什么是 MySQL: middleware/mysql/intro/index.md
-                      - 功能说明: middleware/mysql/intro/features.md
+                      - 功能特性: middleware/mysql/intro/features.md
                       - 竞争优势: middleware/mysql/intro/benefits.md
                       - 离线升级 MySQL: middleware/mysql/intro/offline-install.md
                       - 基本概念: middleware/mysql/intro/concepts.md
@@ -1098,7 +1096,7 @@ nav:
               - ES 搜索服务:
                   - 介绍:
                       - 什么是 ES: middleware/elasticsearch/intro/index.md
-                      - 功能说明: middleware/elasticsearch/intro/features.md
+                      - 功能特性: middleware/elasticsearch/intro/features.md
                       - 竞争优势: middleware/elasticsearch/intro/benefits.md
                       - 适用场景: middleware/elasticsearch/intro/scenarios.md
                       - 基本概念: middleware/elasticsearch/intro/concepts.md
@@ -1137,7 +1135,7 @@ nav:
               - RabbitMQ 消息队列:
                   - 介绍:
                       - 什么是 RabbitMQ: middleware/rabbitmq/intro/index.md
-                      - 功能说明: middleware/rabbitmq/intro/features.md
+                      - 功能特性: middleware/rabbitmq/intro/features.md
                       - 竞争优势: middleware/rabbitmq/intro/benefits.md
                       - 适用场景: middleware/rabbitmq/intro/scenarios.md
                       - 离线升级 RabbitMQ: middleware/rabbitmq/intro/offline-install.md
@@ -1285,7 +1283,7 @@ nav:
           - 全局管理:
               - 介绍:
                   - 什么是全局管理: ghippo/intro/index.md
-                  - 功能总览: ghippo/intro/features.md
+                  - 功能特性: ghippo/intro/features.md
                   - 常见术语: ghippo/intro/glossary.md
                   - Release Notes: ghippo/intro/release-notes.md
               - 安装、登录和升级:
