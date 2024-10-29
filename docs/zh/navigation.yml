@@ -389,8 +389,6 @@ nav:
                   - 什么是多云编排: kairship/intro/index.md
                   - 功能特性: kairship/intro/features.md
                   - 产品架构: kairship/intro/architecture.md
-                  - 产品优势: kairship/intro/benefits.md
-                  - 基本概念: kairship/intro/concepts.md
                   - 常见问题: kairship/intro/faq.md
                   - 离线升级: kairship/intro/offline-upgrade.md
                   - Release Notes: kairship/intro/release-notes.md
