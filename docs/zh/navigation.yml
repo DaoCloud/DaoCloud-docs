@@ -752,7 +752,7 @@ nav:
               - 链路追踪:
                   - 服务拓扑: insight/user-guide/trace/topology.md
                   - 服务: insight/user-guide/trace/service.md
-                  - 链路查询: insight/user-guide/trace/trace.md
+                  - 调用链: insight/user-guide/trace/trace.md
               - 告警:
                   - insight/user-guide/alert-center/index.md
                   - 告警策略: insight/user-guide/alert-center/alert-policy.md
@@ -774,6 +774,7 @@ nav:
                   - 集成 DeepFlow: insight/best-practice/integration_deepflow.md
               - 参考文档:
                   - 可观性参考指标说明: insight/reference/used-metric-in-insight.md
+                  - Insight Grafana 持久化到数据库: insight/best-practice/grafana-use-db.md
                   - 自定义探测方式: insight/user-guide/collection-manag/probe-module.md
                   - 指标抓取说明: insight/user-guide/collection-manag/metric-collect.md
                   - 告警通知流程说明: insight/reference/alertnotification.md
@@ -1451,7 +1452,7 @@ nav:
           - KubeEdge v1.15.0 发布: blogs/240108-kubeedge.md
       - 2023:
           - Spiderpool入选CNCF Sandbox: blogs/231220-spiderpool.md
-          - K8s 1.29发布:宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
+          - K8s 1.29发布:宇宙主题雄心勃勃：blogs/231213-k8s-1.29.md
           - K8s 裸机 vs 虚机性能对比: blogs/231205-vm-bm-compare.md
           - K8s 1.29前瞻：移除、弃用及变更: blogs/231115-k8s-1.29-changes.md
           - 上海 K8s 贡献者峰会回顾: blogs/231008-kcs.md
