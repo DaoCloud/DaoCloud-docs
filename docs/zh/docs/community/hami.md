@@ -62,12 +62,12 @@ resources:
 ## 安装要求
 
 - NVIDIA drivers >= 440
-- nvidia-docker version > 2.0
+- nvidia-docker version > 2.1
 - docker/containerd/cri-o 已配置 nvidia 作为默认 runtime
-- Kubernetes version >= 1.16
+- Kubernetes version >= 1.18
 - glibc >= 2.17 & glibc < 2.3.0
-- kernel version >= 3.10
-- helm > 3.0
+- kernel version >= 3.12
+- helm > 3.1
 
 ## 快速入门
 
