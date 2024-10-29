@@ -8,7 +8,7 @@ date: 2024-01-09
 In order to meet the customer's demand for building Kubernetes (K8s) clusters with lower versions,
 Kubean provides the capability to be compatible with lower versions and create K8s clusters with those versions.
 
-Currently, the supported versions for self-built worker clusters range from `1.26.0-v1.28`.
+Currently, the supported versions for self-built worker clusters range from `1.27.0-v1.29`.
 Refer to the [DCE 5.0 Cluster Version Support System](./cluster-version.md) for more information.
 
 This article will demonstrate how to deploy a K8s cluster with a lower version.
@@ -33,12 +33,12 @@ This article will demonstrate how to deploy a K8s cluster with a lower version.
 
     | Artifact Version | Cluster Range | DCE 5.0 Support |
     | ----------- | ----------- | ------ |
-    | release-2.21 | v1.23.0 ~ v1.25.6 | Supported since installer v0.14.0 |
-    | release-2.22 | v1.24.0 ~ v1.26.9 | Supported since installer v0.15.0 |
-    | release-2.23 | v1.25.0 ~ v1.27.7 | Expected to support from installer v0.16.0 |
+    | release-2.21 | v1.24.0 ~ v1.26.6 | Supported since installer v0.14.0 |
+    | release-2.22 | v1.25.0 ~ v1.27.9 | Supported since installer v0.15.0 |
+    | release-2.23 | v1.26.0 ~ v1.28.7 | Expected to support from installer v0.16.0 |
 
     This article demonstrates the offline deployment of a K8s cluster with version 1.23.0 and the
-    offline upgrade of a K8s cluster from version 1.23.0 to 1.24.0, so we choose the artifact `release-2.21`.
+    offline upgrade of a K8s cluster from version 1.24.0 to 1.25.0, so we choose the artifact `release-2.21`.
 
 ## Procedure
 
