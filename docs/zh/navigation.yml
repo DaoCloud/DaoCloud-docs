@@ -198,9 +198,7 @@ nav:
               - 介绍:
                   - 什么是容器管理: kpanda/intro/index.md
                   - 功能特性: kpanda/intro/features.md
-                  - 竞争优势: kpanda/intro/benefits.md
-                  - 适用场景: kpanda/intro/scenarios.md
-                  - 基本概念: kpanda/intro/concepts.md
+                  - 适用场景和优势: kpanda/intro/scenarios.md
                   - Release Notes: kpanda/intro/release-notes.md
                   - 离线升级容器管理: kpanda/intro/offline-upgrade.md
                   - 常见问题: kpanda/intro/faq.md
