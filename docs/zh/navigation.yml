@@ -108,7 +108,9 @@ nav:
                         - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
                       - Argo CD高可用部署: amamba/quickstart/argo-cd-HA.md
                   - Release Notes: amamba/intro/release-notes.md
-              - 命名空间管理: amamba/user-guide/namespace/namespace.md
+              - 命名空间管理: 
+                  - 命名空间: amamba/user-guide/namespace/namespace.md
+                  - 多云命名空间: amamba/user-guide/multi-namespace.md
               - 向导:
                   - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
                   - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
