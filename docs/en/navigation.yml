@@ -554,8 +554,6 @@ nav:
           - Cloud Native Storage:
               - Intro:
                   - What is Storage: storage/index.md
-                  - Background: storage/background.md
-                  - Benefits: storage/benefits.md
                   - Features: storage/features.md
                   - Storage Release Notes: storage/hwameistor/release-notes.md
               - HwameiStor Storage:
