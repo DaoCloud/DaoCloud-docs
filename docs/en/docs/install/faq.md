@@ -12,7 +12,7 @@ making it easier for users to quickly resolve issues encountered during installa
 
 ### Troubleshoot DCE 5.0 UI issues with diag.sh
 
-Since [installer v0.12.0](./release-notes.md#v0120),the diag.sh script has been added
+Since [installer v0.13.0](./release-notes.md#v0130),the diag.sh script has been added
 to help users quickly troubleshoot the DCE 5.0 UI issues.
 
 Run the command:
@@ -105,8 +105,8 @@ You need to use the `sudo rm -rf` command to delete these three directories:
 
 ### The kubeconfig of the Global cluster needs to be updated on the bootstrap's replica
 
-Prior to v0.20.0, the kubeconfig of the Global cluster stored on the
-bootstrap node does not automatically update. v0.20.0 supports automatic updates, run once a month.
+Prior to v0.21.0, the kubeconfig of the Global cluster stored on the
+bootstrap node does not automatically update. v0.21.0 supports automatic updates, run once a month.
 
 In previous versions, you need to update the dce5-installer to v0.20.0 and then run:
 
@@ -116,8 +116,8 @@ dce5-installer cluster-create -c clusterconfig.yaml -m mainfest.yaml --update-gl
 
 ### Updating the certificates and kubeconfig of the kind cluster on the bootstrap node itself
 
-Prior to v0.20.0, the kubeconfig of the kind cluster stored on the bootstrap node
-does not automatically update. v0.20.0 supports automatic updates, run once a month.
+Prior to v0.21.0, the kubeconfig of the kind cluster stored on the bootstrap node
+does not automatically update. v0.21.0 supports automatic updates, run once a month.
 
 In previous versions, you need to update the dce5-installer to v0.20.0 and then run:
 
@@ -127,7 +127,7 @@ dce5-installer cluster-create -c clusterconfig.yaml -m mainfest.yaml --update-ki
 
 ### After installing Contour, the default certificate validity period is only one year and will not auto-renew, leading to continuous restarts of the Contour-Envoy component
 
-For versions prior to v0.21.0, there was support for enabling the installation of the Contour component. Subsequent versions will no longer support this. Customers who have installed Contour in previous versions need to execute the `helm upgrade` command to update the certificate validity period:
+For versions prior to v0.22.0, there was support for enabling the installation of the Contour component. Subsequent versions will no longer support this. Customers who have installed Contour in previous versions need to execute the `helm upgrade` command to update the certificate validity period:
 
 ```bash
 helm upgrade -n contour-system contour --reuse-values --set contour.contour.certgen.certificateLifetime=36500
