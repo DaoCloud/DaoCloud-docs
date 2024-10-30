@@ -3,19 +3,19 @@
 INHERIT: navigation.yml
 
 # Project information
-site_name: DaoCloud Enterprise
-site_url: https://docs.daocloud.io/
-site_author: DaoCloud
+site_name: Sophongo Enterprise
+site_url: https://sophdoc.github.io/
+site_author: sophongo
 site_description: >-
-  DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。
+  Sophongo Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。
 
 # copyright
-copyright: Copyright &copy; 2016 - 2024 DaoCloud
+copyright: Copyright &copy; 2016 - 2024 Sophongo
 
 # Repository
-repo_name: DaoCloud/DaoCloud-docs
+repo_name: Sophongo/Sophongo-docs
 
-repo_url: https://github.com/DaoCloud/DaoCloud-docs
+repo_url: https://github.com/sophongo/sophdoc
 edit_uri: edit/main/docs/zh/docs/
 
 use_directory_urls: false # disable https://www.mkdocs.org/user-guide/configuration/#use_directory_urls
@@ -81,7 +81,7 @@ theme:
     text: Roboto
     code: Roboto Mono
   favicon: images/favicon.ico
-  logo: images/DaoCloud.png
+  logo: images/daocloud.png
   icon:
     logo: logo
     repo: fontawesome/brands/github
@@ -90,7 +90,7 @@ theme:
 plugins:
   - search:
       jieba_dict: dict.txt.small
-      jieba_dict_user: dict.txt.daocloud
+      jieba_dict_user: dict.txt.Sophongo
       lang:
         - zh
         - en
@@ -100,13 +100,12 @@ plugins:
 #        - stopWordFilter
 #        - trimmer
 
-  - swagger-ui-tag
 #   - mermaid2
 
 #   - with-pdf:
 #       cover: true
 #       # back_cover: true
-#       # cover_title: DaoCloud
+#       # cover_title: Sophongo
 #       # enabled_if_env: ENABLE_PDF_EXPORT
 #       verbose: false
 
@@ -228,8 +227,8 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.magiclink:
       repo_url_shorthand: true
-      user: daocloud
-      repo: daocloud-docs
+      user: Sophongo
+      repo: Sophongo-docs
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences:
