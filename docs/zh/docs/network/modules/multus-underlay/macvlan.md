@@ -1,7 +1,16 @@
 # Macvlan
+### Macvlan Standalone
+Macvlan Standalone 是一种独立的 Macvlan 配置方式，适用于需要单独管理 Macvlan 网络的场景。
+
+
+### Macvlan Overlay
+Macvlan Overlay 是一种叠加的 Macvlan 配置方式，适用于需要与其他网络插件协同工作的场景。
 
 Macvlan 是 Linux 的一种网卡虚拟化的解决方案，它可以将一张物理网卡虚拟为多张虚拟网卡。
 借助 Multus，可以为 Pod 分配一张或者多张 Macvlan 网卡，从而实现 Pod 借助 Macvlan 网卡与外部通讯。
+### 使用场景
+根据不同的网络需求选择合适的 Macvlan 配置方式，以实现最佳的网络性能和管理灵活性。
+
 
 ## 安装
 
