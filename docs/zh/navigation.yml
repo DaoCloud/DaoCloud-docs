@@ -232,10 +232,10 @@ nav:
               - 工作负载参数配置:
                   - 工作负载状态: kpanda/user-guide/workloads/pod-config/workload-status.md
                   - Job 参数: kpanda/user-guide/workloads/pod-config/job-parameters.md
-                      - 生命周期: kpanda/user-guide/workloads/pod-config/lifecycle.md
-                      - 环境变量: kpanda/user-guide/workloads/pod-config/env-variables.md
-                      - 健康检查: kpanda/user-guide/workloads/pod-config/health-check.md
-                      - 集群调度: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
+                  - 生命周期: kpanda/user-guide/workloads/pod-config/lifecycle.md
+                  - 环境变量: kpanda/user-guide/workloads/pod-config/env-variables.md
+                  - 健康检查: kpanda/user-guide/workloads/pod-config/health-check.md
+                  - 集群调度: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
           - 弹性伸缩:
               - 安装 metrics-server 插件: kpanda/user-guide/scale/install-metrics-server.md
               - 安装 kubernetes-cronhpa-controller: kpanda/user-guide/scale/install-cronhpa.md
