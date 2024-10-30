@@ -19,16 +19,12 @@ evolution path and feature changes of each version.
 
 ### v0.16.1
 
-#### Improvements
-
 - **Fixed** `Update multus interface` When cniType is IPvlan, the bond passed in is not empty, and the Bond.Name of the updated ipvlan is "" will panic.
 - **Fixed** `Update spiderClaimParameter interface` Update failed, but prompted creation failed, the prompt information is incorrect.
 
 ## 2024-09-30
 
 ### v0.16.0
-
-#### Improvements
 
 - **Fixed** The front-end uses the default pool function without field selection, and the back-end API adds the corresponding default pool field support.
 - **Fixed** Fix the spelling error problem, CreatedTime should be createdTime.
