@@ -30,4 +30,15 @@
     <script type="module">
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
     </script>
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/0.1.0-beta.7/libs/cn/index.js"></script>
+    <script>
+        new CozeWebSDK.WebChatClient({
+          config: {
+            bot_id: '7431106514997313587',
+          },
+          componentProps: {
+            title: 'Coze',
+          },
+        });
+    </script>
 {% endblock %}
