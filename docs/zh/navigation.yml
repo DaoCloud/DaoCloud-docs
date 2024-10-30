@@ -1,5 +1,6 @@
 # Page tree
 nav:
+  - 首页: dce/index.md
   - 终端用户手册:
       - 用户注册: dce/license0.md
       - 全局管理:
