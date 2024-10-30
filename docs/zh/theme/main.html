@@ -14,6 +14,38 @@
 {% endblock %}
 {% block content %}
   {% include "overrides/partials/content.html" %}
+
+  <div class="dak-copilot">
+    <iframe src="https://console.d.run/ai-chat-app/ai-chat?mode=mobile&amp;ws=302&amp;token=N2ZlNjFkZDItNDkyMy00Y2I1LWJlM2QtZDJlMzQ2YWM5OTE5"></iframe>
+  </div>
+  
+  <style> 
+  .dak-copilot {
+    position: fixed;
+    width: 460px;
+    height: calc(100vh - 40px);
+    min-height: 400px;
+    max-height: 1200px;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 8px 0 rgba(29, 28, 35, 0.06),
+    0 0 2px 0 rgba(29, 28, 35, 0.18);
+  }
+  
+  .dak-copilot iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+  }
+  </style>
+
 {% endblock %}
 {% block scripts %}
   {{ super() }}
@@ -30,4 +62,5 @@
     <script type="module">
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
     </script>
+
 {% endblock %}
