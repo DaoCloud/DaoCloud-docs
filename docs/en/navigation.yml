@@ -1,5 +1,6 @@
 # Page Tree
 nav:
+  - Home: dce/index.md
   - End User Manual:
       - User Registration: dce/license0.md
       - Global Management:
