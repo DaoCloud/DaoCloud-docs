@@ -1,1471 +1,367 @@
-# Page tree
+# Page Tree
 nav:
-  - DaoCloud Website: https://www.daocloud.io/en/
-  - Documentation:
-      - Get Started: dce/index.md
-      - Learn and Install:
-          - DCE Profile:
-              - Free Trial: dce/license0.md
-              - Features and Benefits: dce/features.md
-              - Use Cases: dce/scenario.md
-              - DaoCloud is a KCSP: dce/kcsp.md
-              - Release Notes:
-                  - v0.22.0-20240930 Released: dce/dce-rn/20240930.md
-                  - v0.21.0-20240830 Released: dce/dce-rn/20240830.md
-                  - v0.20.0-20240730 Released: dce/dce-rn/20240730.md
-                  - v0.19.0-20240630 Released: dce/dce-rn/20240630.md
-                  - v0.18.0-20240530 Released: dce/dce-rn/20240530.md
-                  - v0.17.0-20240430 Released: dce/dce-rn/20240430.md
-                  - v0.16.0-20240330 Released: dce/dce-rn/20240330.md
-                  - v0.15.0-20240130 Released: dce/dce-rn/20240130.md
-                  - v0.14.0-20231231 Released: dce/dce-rn/20231231.md
-                  - v0.13.0-20231130 Released: dce/dce-rn/20231130.md
-                  - v0.12.0-20231031 Released: dce/dce-rn/20231031.md
-                  - v0.11.0-20230831 Released: dce/dce-rn/20230831.md
-                  - v0.10.0-20230731 Released: dce/dce-rn/20230731.md
-                  - v0.9.0-20230630 Released: dce/dce-rn/20230630.md
-                  - v0.8.0-20230531 Released: dce/dce-rn/20230531.md
-              - DaoCloud Product Support Policy: dce/support.md
-              - Glossary: dce/terms.md
-          - Installation:
-              - Overview: install/index.md
-              - Install Dependencies: install/install-tools.md
-              - Install DCE Community:
-                  - Resource Planning: install/community/resources.md
-                  - Deploy a Kind Cluster from Scratch: install/community/kind/online.md
-                  - Deploy a K8s Cluster from Scratch: install/community/k8s/k8s-dce-deploy.md
-                  - Online Install in K8s Cluster: install/community/k8s/online.md
-                  - Offline Install in K8s Cluster: install/community/k8s/offline.md
-              - Install DCE 5.0 Enterprise:
-                  - Introduction: 
-                      - Deployment Architecture: install/commercial/deploy-arch.md
-                      - Configuration:
-                          - clusterConfig.yaml: install/commercial/cluster-config.md
-                          - manifest.yaml: install/commercial/manifest.md
-                  - Deployment Requirements:
-                      - Overview: install/commercial/deploy-requirements.md
-                      - Preparation: install/commercial/prepare.md
-                      - Ports: install/commercial/port-requirements.md
-                      - External Components (Optional):
-                          - Store Binaries with External Service: install/commercial/external/external-binary.md
-                          - Use External Registry and Chart Repo: install/commercial/external/external-imageandchart.md
-                          - Use External Middleware: install/commercial/external/external-middlewares.md
-                          - Store OS Repo with External Service: install/commercial/external/external-os.md
-                  - Start Installation: install/commercial/start-install.md
-              - Install with Different K8s:
-                  - With OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
-                  - With Alibaba Cloud ECS: install/k8s-install/ecs-install-dce5.0.md
-              - Install on Different Linux:
-                  - On UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
-                  - On Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
-                  - On TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
-                  - On NeoKylin Linux Advanced Server V7Update6: install/os-install/neokylin-install-dce5.0.md
-                  - On Other Linux: install/os-install/otherlinux.md
-              - Upgrade:
-                  - Overview: install/upgrade-des.md
-                  - Upgrade DCE 5.0 Components: install/upgrade.md
-                  - Upgrade from Standard to Platinum: install/evolve.md
-              - Uninstall and Import:
-                  - Uninstall: install/uninstall.md
-                  - Import Offline Resources: install/import.md
-              - Troubleshoot: install/faq.md
-              - Best Practices:
-                  - Cluster Deployment Scenarios: install/commercial/scenarios.md
-                  - Global Cluster Practices:
-                      - etcd Deployed in Host and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
-                      - Deploying on DCE 5.0 Appliance: install/best-practices/all-in-one-machine.md
-                  - Thinder Practices:
-                      - HA Bootstrap Nodes: install/best-practices/thinder-ha.md
-                      - Backup and Restore of Bootstrap Node: install/best-practices/thinder-restore.md
-                  - Extend Practices:
-                      - Disk Limit in Docker-based K8s Cluster: install/best-practices/docker-storage.md
-                      - Cluster Parameters at Scale: install/best-practices/large-deployments-par.md
-                      - Configure Extended Parameters: install/best-practices/extend-params.md
-                  - Offline-Clipper Guidelines: install/best-practices/offline-clipper.md
-                  - Fixing CVE-2024-21626 bugs: install/best-practices/cve-20240-21626.md
-              - Use Cases:
-                  - Reintegrate Worker Clusters After Global Service Cluster Redeployed: install/best-practices/remanage-work-cluster.md
-                  - Migrate Cluster OS without Downtime: install/best-practices/replace-os.md
-              - Installer Release Notes: install/release-notes.md
-          - Best Practices: dce/bphome.md
-          - FAQs: dce/faq.md
-      - Workbench:
-          - Workbench:
-              - Intro:
-                  - What is Workbench?: amamba/intro/index.md
-                  - Features: amamba/intro/features.md
-                  - Technical Overview: amamba/intro/tech-overview.md
-                  - Use Cases: amamba/intro/scenarios.md
-                  - Permissions: amamba/intro/permission.md
-                  - Workbench Release Notes: amamba/intro/release-notes.md
-              - Install and Upgrade:
-                  - Offline Upgrade: amamba/offline-upgrade.md
-                  - Deploy Pluggable Components: amamba/pluggable-components.md
-                  - Install and Configure Jenkins: 
-                      - Install Jenkins: amamba/user-guide/pipeline/install-jenkins.md
-                      - Jenkins HA Solution: amamba/quickstart/jenkins-HA.md
-                      - Jenkins Scenarios: amamba/quickstart/scenarios-config.md
-                  - Argo CD HA Deployment: amamba/quickstart/argo-cd-HA.md
-              - Namespaces: amamba/user-guide/namespace/namespace.md
-              - Wizard:
-                  - Build Git-based Microservice: amamba/user-guide/wizard/create-app-git.md
-                  - Build Jar-based Java Apps: amamba/user-guide/wizard/jar-java-app.md
-                  - Deploy Helm Apps: amamba/user-guide/wizard/helm.md
-              - Native Apps:
-                  - Manage Native Apps: amamba/user-guide/native/manage.md
-                  - Deploy Traditional Microservices with Native Apps: amamba/user-guide/native/native-app.md
-              - OAM Apps:
-                  - OAM Concepts: amamba/user-guide/oam/concept.md
-                  - Create OAM Apps: amamba/user-guide/oam/create.md
-                  - Manage OAM Apps: amamba/user-guide/oam/manage.md
-              - Pipelines:
-                  - Quickly Create Pipeline: amamba/quickstart/deploy-pipeline.md
-                  - Create Pipeline:
-                      - Create a Custom Pipeline: amamba/user-guide/pipeline/create/custom.md
-                      - Create a Pipeline by Jenkinsfile: amamba/user-guide/pipeline/create/jenkins.md
-                      - Create a Pipeline from Template: amamba/user-guide/pipeline/create/template.md
-                      - Create a Multi-branch Pipeline: amamba/user-guide/pipeline/create/mutilpipeline.md
-                  - Use Pipeline:
-                      - Concepts:
-                          - Pipeline Concepts: amamba/user-guide/pipeline/config/concept.md
-                          - Pipeline Agent: amamba/user-guide/pipeline/config/agent.md
-                      - Edit Pipeline: 
-                          - Edit with UI: amamba/user-guide/pipeline/edit.md
-                          - Edit Jenkinsfile: amamba/user-guide/pipeline/pipeline-syntax.md
-                          - GUI Template Parameters: amamba/user-guide/pipeline/config/step.md
-                          - Credentials: amamba/user-guide/pipeline/credential.md
-                          - GitHub and GitLab Tokens: amamba/user-guide/pipeline/github_gitlab_token.md
-                      - Run Pipeline:
-                          - Trigger: amamba/user-guide/pipeline/run/trigger.md
-                          - Manually Run: amamba/user-guide/pipeline/run/manual.md
-                      - View Pipeline:
-                          - View Pipeline Details: amamba/user-guide/pipeline/view/view-pipeline.md
-                          - View Pipeline Log: amamba/user-guide/pipeline/view/view-run.md
-                      - Pipeline Template:
-                          - Custom Template: amamba/user-guide/pipeline/template/custom-template.md
-                          - Template Details: amamba/user-guide/pipeline/template/info.md
-                  - More Skills:
-                      - Custom Image for Jenkins Agent: amamba/user-guide/pipeline/jenkins-agent.md
-                      - Custom Toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
-                      - Run on a Specific Node: amamba/quickstart/pipeline-on-node.md                    
-                      - Build Multi-Arch Image: amamba/user-guide/pipeline/podman.md
-                      - Use Cacher in Pipeline: amamba/quickstart/job-cacher.md
-                      - System Env Variables: amamba/user-guide/pipeline/system-env.md
-                      - Pipeline Metrics: amamba/user-guide/pipeline/jenkins-metric.md
-              - GitOps:
-                  - Import Repository: amamba/user-guide/gitops/import-repo.md
-                  - Create Argo CD App: amamba/user-guide/gitops/create-argo-cd.md
-                  - Argo CD App Status: amamba/user-guide/gitops/argo-cd-status.md
-                  - Manually Sync App: amamba/user-guide/gitops/sync-manually.md
-                  - Eanble Credential in GitOps: amamba/user-guide/gitops/gitops-secret.md
-                  - Enable ArgoCD-Native UI: amamba/user-guide/gitops/integrate-argocd-ui.md
-              - Canary Release:
-                  - Grayscale based on Argo Rollout: amamba/quickstart/argocd-rollout.md
-                  - Create a Canary Delivery Job: amamba/user-guide/release/canary.md
-                  - View a Canary Delivery Job: amamba/user-guide/release/check-canary.md
-                  - Create Blue/Green Job: amamba/user-guide/release/blue-green.md
-                  - View Blue/Green Job: amamba/user-guide/release/check-bluegreen.md
-              - Manage Repository: amamba/user-guide/git/git.md
-              - Toolchain Integration:
-                  - Integrate Toolchain: amamba/user-guide/tools/integrated-toolchain.md
-                  - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
-                  - R&D Project Management: amamba/user-guide/pm/issue.md
-              - FAQs:
-                  - Pipeline FAQs: amamba/faq/faq-jenkins.md
-                  - GitOps FAQs: amamba/faq/faq-gitops.md
-                  - Toolchain FAQs: amamba/faq/faq-toochain.md
-              - Best Practices:
-                  - GitOps Practices:
-                      - CI/CD based on Pipeline + GitOps: amamba/quickstart/argocd-jenkins.md
-                      - Use GitOps in a Hosted Mesh: amamba/quickstart/istio_argocd.md
-                      - Progressive Delivery in a Hosted Mesh: amamba/quickstart/istio_argocd_rollout.md
-                      - Rollout Multicloud Apps with ArgoCD: amamba/quickstart/argo-karmada.md
-                  - CI Practices:
-                      - Scan Code with Pipelines: amamba/quickstart/scan-with-pipeline.md
-                      - Integrate Harbor to Scan Image: amamba/quickstart/scan-with-harbor.md
-                      - Jenkins Delivers App to VM: amamba/user-guide/pipeline/cicd_vm.md
-                      - Integrate Jenkins on Physical/Virtual Machine: amamba/quickstart/jenkins-integration.md
-                  - Progressive Delivery Practices: amamba/quickstart/contour-argorollout.md
-                      
-      - Container:
-          - Container Management:
-              - Intro:
-                  - What is Container Management: kpanda/intro/index.md
-                  - Features: kpanda/intro/features.md
-                  - Benefits: kpanda/intro/benefits.md
-                  - Use Cases: kpanda/intro/scenarios.md
-                  - Concepts: kpanda/intro/concepts.md
-                  - Release Notes: kpanda/intro/release-notes.md
-                  - Offline Upgrade: kpanda/intro/offline-upgrade.md
-                  - FAQs: kpanda/intro/faq.md
-              - Clusters:
-                  - Create Cluster: kpanda/user-guide/clusters/create-cluster.md
-                  - Integrate Cluster: kpanda/user-guide/clusters/integrate-cluster.md
-                  - Access Cluster: kpanda/user-guide/clusters/access-cluster.md
-                  - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
-                  - Delete Cluster: kpanda/user-guide/clusters/delete-cluster.md
-                  - Cluster Roles: kpanda/user-guide/clusters/cluster-role.md
-                  - Cluster Status: kpanda/user-guide/clusters/cluster-status.md
-                  - Choose Runtime: kpanda/user-guide/clusters/runtime.md
-                  - Cluster Versions: kpanda/user-guide/clusters/cluster-version.md
-                  - Integrate Rancher Cluster: kpanda/user-guide/clusters/integrate-rancher-cluster.md
-                  - Deploy 2nd Scheduler in a Cluster: kpanda/user-guide/clusters/cluster-scheduler-plugin.md
-              - Namespaces:
-                  - Create Namespace: kpanda/user-guide/namespaces/createns.md
-                  - Exclusive Node to Namespace: kpanda/user-guide/namespaces/exclusive.md
-                  - Pod Security Policy: kpanda/user-guide/namespaces/podsecurity.md
-              - Nodes:
-                  - Node Availability Check: kpanda/user-guide/nodes/node-check.md
-                  - Node Config: kpanda/user-guide/nodes/node-authentication.md
-                  - Node Scaling Out: kpanda/user-guide/nodes/add-node.md
-                  - Node Scaling In: kpanda/user-guide/nodes/delete-node.md
-                  - Taints: kpanda/user-guide/nodes/taints.md
-                  - Node Scheduling: kpanda/user-guide/nodes/schedule.md
-                  - Node Details: kpanda/user-guide/nodes/node-details.md
-                  - Labels and Annotations: kpanda/user-guide/nodes/labels-annotations.md
-              - Workloads:
-                  - Create Deployment: kpanda/user-guide/workloads/create-deployment.md
-                  - Create StatefulSet: kpanda/user-guide/workloads/create-statefulset.md
-                  - Create DaemonSet: kpanda/user-guide/workloads/create-daemonset.md
-                  - Create CronJob: kpanda/user-guide/workloads/create-cronjob.md
-                  - Create Job: kpanda/user-guide/workloads/create-job.md
-                  - Parameters Config:
-                      - Workload Status: kpanda/user-guide/workloads/pod-config/workload-status.md
-                      - Job Parameters: kpanda/user-guide/workloads/pod-config/job-parameters.md
-                      - Lifecycle: kpanda/user-guide/workloads/pod-config/lifecycle.md
-                      - Env Variable: kpanda/user-guide/workloads/pod-config/env-variables.md
-                      - Health Check: kpanda/user-guide/workloads/pod-config/health-check.md
-                      - Cluster Scheduling: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
-              - Autoscaling:
-                  - Knative:
-                    - Intro: kpanda/user-guide/scale/knative/knative.md
-                    - Install Knative: kpanda/user-guide/scale/knative/install.md
-                    - Use Cases: kpanda/user-guide/scale/knative/scene.md
-                    - Usage Practices: kpanda/user-guide/scale/knative/playground.md   
-                  - Install metrics-server: kpanda/user-guide/scale/install-metrics-server.md
-                  - Install kubernetes-cronhpa-controller: kpanda/user-guide/scale/install-cronhpa.md
-                  - Install VPA Plugin: kpanda/user-guide/scale/install-vpa.md
-                  - Create HPA Policy: kpanda/user-guide/scale/create-hpa.md
-                  - Create HPA based on Custom Metrics: kpanda/user-guide/scale/custom-hpa.md
-                  - Create VPA Policy: kpanda/user-guide/scale/create-vpa.md
-                  - HPA and CronHPA Compatibility Rules: kpanda/user-guide/scale/hpa-cronhpa-compatibility-rules.md
-              - Helm Apps:
-                  - Helm Charts: kpanda/user-guide/helm/README.md
-                  - Upload Helm Charts: kpanda/user-guide/helm/upload-helm.md
-                  - Helm Apps: kpanda/user-guide/helm/helm-app.md
-                  - Helm Repository: kpanda/user-guide/helm/helm-repo.md
-                  - Multi-arch Helm Apps: kpanda/user-guide/helm/multi-archi-helm.md
-                  - Import Custom Helm App into Addon: kpanda/user-guide/helm/Import-addon.md
-              - Operator:
-                  - Import Offline MinIO Operator: kpanda/user-guide/olm/import-miniooperator.md
-              - Container Network:
-                  - Create Service: kpanda/user-guide/network/create-services.md
-                  - Create Ingress: kpanda/user-guide/network/create-ingress.md
-                  - Network Policies: kpanda/user-guide/network/network-policy.md
-              - CRDs: kpanda/user-guide/custom-resources/create.md
-              - Container Storage:
-                  - Volume Claim: kpanda/user-guide/storage/pvc.md
-                  - Volume: kpanda/user-guide/storage/pv.md
-                  - StorageClass: kpanda/user-guide/storage/sc.md
-                  - Shared StorageClass: kpanda/user-guide/storage/sc-share.md
-              - ConfigMaps and Secrets:
-                  - Create ConfigMap: kpanda/user-guide/configmaps-secrets/create-configmap.md
-                  - Use ConfigMap: kpanda/user-guide/configmaps-secrets/use-configmap.md
-                  - Create Secret: kpanda/user-guide/configmaps-secrets/create-secret.md
-                  - Use Secret: kpanda/user-guide/configmaps-secrets/use-secret.md
-              - Operation and Maintenance:
-                  - Recent Operations: kpanda/user-guide/clusterops/latest-operations.md
-                  - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
-                  - Cluster Settings: kpanda/user-guide/clusterops/cluster-settings.md
-              - Cluster Inspection:
-                  - Intro: kpanda/user-guide/inspect/index.md
-                  - Create Inspection Settings: kpanda/user-guide/inspect/config.md
-                  - Start Inspection: kpanda/user-guide/inspect/inspect.md
-                  - Check Inspection Reports: kpanda/user-guide/inspect/report.md
-                  - Offline Upgrade Cluster Inspection: kpanda/user-guide/inspect/offline-upgrade.md
-              - Backup Recovery:
-                  - Intro: kpanda/user-guide/backup/index.md
-                  - etcd Backup: kpanda/user-guide/backup/etcd-backup.md
-                  - Install Velero: kpanda/user-guide/backup/install-velero.md
-                  - Back up Deployment: kpanda/user-guide/backup/deployment.md
-                  - Offline Upgrade Backup Recovery: kpanda/user-guide/backup/offline-upgrade.md
-              - Security Management:
-                  - Scan Types: kpanda/user-guide/security/index.md
-                  - CIS:
-                      - Scan Configuration: kpanda/user-guide/security/cis/config.md
-                      - Scan Policies: kpanda/user-guide/security/cis/policy.md
-                      - Scan Report: kpanda/user-guide/security/cis/report.md
-                  - Kube-audit: kpanda/user-guide/security/audit.md
-                  - Kube-hunter: kpanda/user-guide/security/hunter.md
-                  - Offline Upgrade Security: kpanda/user-guide/security/offline-upgrade-dowl.md
-                  - Integrate Falco:
-                      - Intro: security/falco.md
-                      - Install: security/falco-install.md
-                      - Falco-exporter: security/falco-exporter.md
-              - Permissions:
-                  - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
-                  - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
-                  - Add RBAC Rules to System Roles: kpanda/user-guide/permissions/custom-kpanda-role.md 
-              - GPU Management:
-                  - Intro: kpanda/user-guide/gpu/index.md
-                  - GPU Matrix: kpanda/user-guide/gpu/gpu_matrix.md
-                  - NVIDIA GPU Management:
-                      - NVIDIA GPU Modes: kpanda/user-guide/gpu/nvidia/index.md
-                      - Install GPU Operator:
-                          - Offline Install GPU Operator: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
-                          - Build Offline yum for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
-                          - Upload Red Hat GPU Opreator Image: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
-                          - Build Offline yum for Red Hat 8.4: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
-                          - Build Offline yum for Red Hat 7.9: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
-                          - Offline Install gpu-operator Driver on Ubuntu22.04: kpanda/user-guide/gpu/nvidia/ubuntu22.04_offline_install_driver.md
-                      - NVIDIA GPU Full Card Mode: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
-                      - NVIDIA vGPU Mode:
-                          - Install vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
-                          - Use NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
-                          - Build vGPU Oversubscription Image: kpanda/user-guide/gpu/nvidia/vgpu/hami.md
-                      - NVIDIA MIG Mode:
-                          - Overview: kpanda/user-guide/gpu/nvidia/mig/index.md
-                          - Enable MIG Features: kpanda/user-guide/gpu/nvidia/mig/create_mig.md
-                          - Use NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
-                          - MIG Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
-                      - GPU Quotas: kpanda/user-guide/gpu/vgpu_quota.md
-                      - GPU Scheduling: kpanda/user-guide/gpu/dynamic-regulation.md
-                      - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
-                      - Use Volcano:
-                          - Install and Use Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
-                          - Use Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
-                      - GPU Scheduling: kpanda/user-guide/gpu/gpu_scheduler_config.md
-                  - Ascend GPU:
-                      - Install NPU Components: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
-                      - Use GPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
-                      - Enable Ascend VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
-                  - Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
-                  - GPU FAQs: kpanda/user-guide/gpu/FAQ.md
-              - Best Practices:
-                  - Back up and Restore etcd: kpanda/best-practice/etcd-backup.md
-                  - Cross-cluster Backup and Restore of MySQL Apps: kpanda/best-practice/backup-mysql-on-nfs.md
-                  - Strengthen a Self-built Worker Cluster: kpanda/best-practice/hardening-cluster.md
-                  - Offline Upgrade Worker Clusters: kpanda/best-practice/update-offline-cluster.md
-                  - Add Heterogeneous Nodes to Worker Cluster: kpanda/best-practice/multi-arch.md
-                  - Scale Worker Nodes of Global Service Cluster: kpanda/best-practice/add-worker-node-on-global.md
-                  - Create Ubuntu Worker Cluster with CentOS: kpanda/best-practice/create-ubuntu-on-centos-platform.md
-                  - Create Red Hat 9.2 Worker Cluster on CentOS: kpanda/best-practice/create-redhat9.2-on-centos-platform.md
-                  - Scale Controller Nodes of Worker Cluster: kpanda/best-practice/add-master-node.md
-                  - Create Cluster with Non-supported OS: kpanda/best-practice/use-otherlinux-create-custer.md
-                  - Migrate DCE 4.0 to DCE 5.0: kpanda/best-practice/dce4-5-migration.md
-                  - Offline Deploy and Upgrade Legacy Kubean: kpanda/best-practice/kubean-low-version.md
-                  - Replace a Master Node in Worker Cluster: kpanda/best-practice/replace-first-master-node.md
-          - Multicloud Management:
-              - Intro:
-                  - What is Multicloud Management: kairship/intro/index.md
-                  - Features: kairship/intro/features.md
-                  - Architecture: kairship/intro/architecture.md
-                  - Competitiveness: kairship/intro/benefits.md
-                  - Concepts: kairship/intro/concepts.md
-                  - FAQs: kairship/intro/faq.md
-                  - Offline Upgrade: kairship/intro/offline-upgrade.md
-                  - Multicloud Release Notes: kairship/intro/release-notes.md
-              - Workspaces: kairship/workspace.md
-              - Multicloud Instances:
-                  - Instance Detail: kairship/instance/index.md
-                  - Add Instance: kairship/instance/add.md
-                  - Delete Instance: kairship/instance/delete.md
-              - Worker Clusters: kairship/cluster.md
-              - Multicloud Workloads:
-                  - Create Deployment from Image: kairship/workload/deployment.md
-                  - Create Deployment from YAML: kairship/workload/yaml.md
-                  - Update Deployment: kairship/workload/update-deployment.md
-                  - Convert to Multicloud Workload: kairship/workload/promote.md
-                  - Create Job from Image: kairship/workload/job.md
-                  - Create CronJob from Image: kairship/workload/cronjob.md
-              - Custom Resources: kairship/crds/crd.md
-              - Multicloud Resources:
-                  - Create Multicloud Services: kairship/resource/service.md
-                  - Update Multicloud Services: kairship/resource/update-service.md
-                  - Create Multicloud Namespaces: kairship/resource/ns.md
-                  - Update Multicloud Namespaces: kairship/resource/update-ns.md
-                  - Create Multicloud ConfigMaps: kairship/resource/configmap.md
-                  - Update Multicloud ConfigMaps: kairship/resource/update-configmap.md
-                  - Create Multicloud Secrets: kairship/resource/secret.md
-                  - Update Multicloud Secrets: kairship/resource/update-secret.md
-                  - Create Multicloud Ingress: kairship/resource/ingress.md
-                  - Update Multicloud Ingress: kairship/resource/update-ingress.md
-              - Policy Management:
-                  - Propagation Policy: kairship/policy/propagation.md
-                  - Override Policy: kairship/policy/override.md
-              - Failover:
-                  - Overview: kairship/failover/failover.md
-                  - Optimize Failover Latency Sensitivity: kairship/failover/optimization-failover.md
-              - Best Practices:
-                  - DCE 4.0 to DCE 5.0: kairship/best-practice/one-click-conversion.md
-                  - Cross-cluster autoscaling: kairship/best-practice/fhpa.md
-          - Container Registry:
-              - Intro:
-                  - What is Container Registry: kangaroo/intro/index.md
-                  - Registry Release Notes: kangaroo/intro/release-notes.md
-                  - FAQs: kangaroo/intro/faq.md
-                  - Offline Upgrade Container Registry: kangaroo/intro/upgrade.md
-              - Quick Start:
-                  - Manage External Registry: kangaroo/quickstart/registry-in-one.md
-                  - Push Image: kangaroo/quickstart/push.md
-                  - Admin Guide: kangaroo/quickstart/admin-registry.md
-                  - Workspace Admin Guide: kangaroo/quickstart/ws-admin-registry.md
-                  - Enable Image Security Scanning Offline: kangaroo/quickstart/trivy-offline.md
-              - Registry Space:
-                  - Registry Space: kangaroo/space/index.md
-                  - Image List: kangaroo/space/imagelist.md
-                  - Artifacts and Description: kangaroo/space/desc.md
-                  - Retention: kangaroo/space/reclaim.md
-                  - Scan Images: kangaroo/space/scan.md
-              - Integrated Registry:
-                  - Integrated Registry (Workspace): kangaroo/integrate/integrate-ws.md
-                  - Integrated Registry (Admin): 
-                      - Integrated Registry (Admin): kangaroo/integrate/integrate-admin/integrate-admin.md
-                      - Create Registry Space: kangaroo/integrate/integrate-admin/registry-space.md
-                      - Bind/Unbind Workspace: kangaroo/integrate/integrate-admin/bind-to-ws.md
-                      - Sync Images: kangaroo/integrate/integrate-admin/sync.md
-              - Managed Harbor:
-                  - Managed Harbor: kangaroo/managed/intro.md
-                  - Install Harbor Operator: kangaroo/managed/operator.md
-                  - Create Harbor Instance: kangaroo/managed/harbor.md
-                  - Create Registry Space: kangaroo/integrate/registry-space.md
-                  - Bind/Unbind Workspace: kangaroo/integrate/integrate-admin/bind-to-ws.md
-                  - Sync Images: kangaroo/integrate/sync.md
-                  - Migrate Your Harbor Registry: kangaroo/managed/harbor-migration.md
-              - Best Practice:
-                  - Ingress or NodePort for Managed Harbor: kangaroo/best-practice/managed-harbor-select-access-type.md
-                  - Log in to an Insecure Container Registry: kangaroo/best-practice/insecure_registry.md
-                  - Harbor Nginx Configuration Practices: kangaroo/best-practice/harbor-nginx.md
-                  - Registry Capacity Resource Planning: kangaroo/best-practice/capacity-planning.md
-                  - Deploy Harbor through LoadBalancer: kangaroo/best-practice/lb.md
-          - Cloud Native Network:
-              - Intro:
-                  - What is Network: network/intro/index.md
-                  - Background and Challenges: network/intro/background.md
-                  - Components: network/modules/modules.md
-                  - Offline Upgrade: network/intro/offline.md
-                  - Release Notes: network/intro/release-notes.md
-                  - Known Issues: network/intro/issues.md
-              - Plan:
-                  - Eth card plan: network/plans/ethplan.md
-                  - Network plan: network/plans/netplan.md
-              - Network Config:
-                  - IP Pool:
-                      - Create Subnet and IP Pool: network/config/ippool/createpool.md
-                      - IP Pool Scenarios: network/config/ippool/ippoolusage.md
-                  - IP Pool Usage:
-                      - Use IP Pool by Workload: network/config/use-ippool/usage.md
-                      - Use IP Pool by Workload from 3rd party: network/config/use-ippool/cutomizedusage.md
-                  - Workload Uses RDMA: network/config/userdma.md
-                  - Multus CR: network/config/multus-cr.md
-              - Performance reports:
-                  - Network CNI performance test report: network/performance/cni-performance.md
-                  - Spiderpool performance test report: network/performance/spiderpool-performance.md
-                  - Cilium performance test reports:
-                      - Accelerate Pod access to Services: network/performance/cilium-performance/cilium-service.md
-                      - Cross-node communication between Pods: network/performance/cilium-performance/cilium-crossnode.md
-                      - Access acceleration test in the nodePort mode: network/performance/cilium-performance/cilium-nodeport.md
-                      - eBPF-based Pod bandwidth management: network/performance/cilium-performance/cilium-bandwidth.md
-                  - Performance test in eBPF-based network policies: network/performance/ebpf-performance.md
-                  - Ingress Performance Test: network/performance/ingress-performance.md
-                  - Egress Performance Test: network/performance/egress-performance.md
-                  - CoreDNS Performance Test: network/performance/coredns-performance.md
-              - Spiderpool:
-                  - Intro: network/modules/spiderpool/index.md
-                  - Release Notes: network/modules/spiderpool/release-notes.md
-                  - Install: 
-                      - Install Spiderpool: network/modules/spiderpool/install/install.md
-                      - Prepare and install RDMA: network/modules/spiderpool/install/rdmapara.md
-                      - Install Nvidia OFED Driver: network/modules/spiderpool/install/ofed_driver.md
-                  - Upgrade: network/modules/spiderpool/upgrade.md
-                  - Config: network/modules/spiderpool/config.md
-                  - Commands: network/modules/spiderpool/command.md
-                  - Public Cloud:
-                      - Running on Alibaba Cloud: network/modules/spiderpool/public-cloud/alibabacloud.md
-                      - Running on AWS: network/modules/spiderpool/public-cloud/awscloud.md
-              - sriov-network-operator:
-                  - Intro: network/modules/sriov-network-operator/index.md
-                  - Install: network/modules/sriov-network-operator/install.md
-                  - SR-IOV: network/modules/multus-underlay/sriov.md
-                  - DPDK: network/modules/multus-underlay/dpdk.md
-              - Calico:
-                  - Intro: network/modules/calico/index.md
-                  - Install: network/modules/calico/install.md
-                  - ippool: network/modules/calico/ippool.md
-                  - Metrics: network/modules/calico/metrics.md
-                  - Calico Policies: network/modules/calico/policy.md
-                  - Troubleshoot: network/modules/calico/debug.md
-              - Cilium:
-                  - Intro: network/modules/cilium/index.md
-                  - Args Config: network/modules/cilium/install.md
-                  - Unsupported Features: network/modules/cilium/notSupport.md
-                  - Cilium Network Communication Acceleration: network/modules/cilium/cross-cluster.md
-                  - Cross-Cluster Application Communication: network/modules/cilium/cilium-speedup.md
-                  - Cilium Network Policy Support for IPVlan: network/modules/cilium/cilium_chaining.md
-              - Contour:
-                  - Intro: network/modules/contour/index.md
-                  - Install: network/modules/contour/install.md
-              - F5networks:
-                  - Intro: network/modules/f5networks/index.md
-                  - Install: network/modules/f5networks/install.md
-                  - Use: network/modules/f5networks/usage.md
-                  - Debug: network/modules/f5networks/debug.md
-              - Ingress-nginx:
-                  - Intro: network/modules/ingress-nginx/index.md
-                  - Install: network/modules/ingress-nginx/install.md
-                  - Ingress Class: network/modules/ingress-nginx/ingressclass.md
-                  - Ingress Scope: network/modules/ingress-nginx/scope.md
-                  - Load Balance: network/modules/ingress-nginx/proxy.md
-                  - Configure timeout: network/modules/ingress-nginx/timeout.md
-                  - Configure log: network/modules/ingress-nginx/log.md
-                  - Upload limit: network/modules/ingress-nginx/upload.md
-                  - Traffic mirror: network/modules/ingress-nginx/mirror.md
-                  - Cross-Origin Resource Sharing: network/modules/ingress-nginx/cors.md
-                  - Redirect: network/modules/ingress-nginx/redirect.md
-              - EgressGateway:
-                  - Intro: network/modules/egressgateway/index.md
-                  - Install: network/modules/egressgateway/install.md
-                  - Create EgressGateway Instance: network/modules/egressgateway/create_eg.md
-                  - Create EgressPolicy: network/modules/egressgateway/create-egpolicy.md
-              - Metallb:
-                  - Intro: network/modules/metallb/index.md
-                  - Install: network/modules/metallb/install.md
-                  - Instructions for IP pool use: network/modules/metallb/usage.md
-                  - L2 and BGP mode: network/modules/metallb/l2-bgp.md
-                  - Get Client Source IPs: network/modules/metallb/source_ip.md
-              - Multus-underlay:
-                  - Intro: network/modules/multus-underlay/index.md
-                  - Install: network/modules/multus-underlay/install.md
-                  - MacVLAN: network/modules/multus-underlay/macvlan.md
-                  - SR-IOV: network/modules/multus-underlay/sriov.md
-                  - DPDK: network/modules/multus-underlay/dpdk.md
-                  - NmState: network/modules/multus-underlay/nmstat.md
-              - Submariner:
-                  - Intro: network/modules/submariner/index.md
-                  - Install: network/modules/submariner/install.md
-                  - Use: network/modules/submariner/usage.md
-              - Alibaba Cloud Terway:
-                  - Intro: network/modules/aliyun-terway/index.md
-                  - Terway Network: network/modules/aliyun-terway/what.md
-                  - Usage: network/modules/aliyun-terway/usage.md
-                  - Run Calico on Alibaba Cloud: network/modules/aliyun-terway/aliyun-calico.md
-                  - Run Cilium on Alibaba Cloud: network/modules/aliyun-terway/aliyun-cilium.md
-                  - FAQs: network/modules/aliyun-terway/Q_A.md
-          - Cloud Native Storage:
-              - Intro:
-                  - What is Storage: storage/index.md
-                  - Features: storage/features.md
-                  - Storage Release Notes: storage/hwameistor/release-notes.md
-              - HwameiStor Storage:
-                  - Intro: storage/hwameistor/intro/index.md
-                  - Modules:
-                      - Local Disk Manager: storage/hwameistor/intro/ldm.md
-                      - Local Storage: storage/hwameistor/intro/ls.md
-                      - DRBD Installer:
-                          - Intro: storage/hwameistor/intro/drbd.md
-                          - Kernel Versions Supported by DRBD: storage/hwameistor/intro/drbd-support.md
-                          - DRBD Self-Compilation Instructions: storage/hwameistor/intro/drdb-kernel-make.md
-                      - Scheduler: storage/hwameistor/intro/scheduler.md
-                      - Admission Controller: storage/hwameistor/intro/admission-controller.md
-                      - Evictor: storage/hwameistor/intro/evictor.md
-                      - Metric Exporter: storage/hwameistor/intro/exporter.md
-                  - Resources: storage/hwameistor/intro/resources.md
-                  - Installation:
-                      - Preparation: storage/hwameistor/install/prereq.md
-                      - Resource Requirements: storage/hwameistor/install/proresource.md
-                      - Install HwameiStor on UI: storage/hwameistor/install/deploy-ui.md
-                      - Install via hwameistor-operator: storage/hwameistor/install/deploy-operator.md
-                      - Post-check: storage/hwameistor/install/post-check.md
-                      - Storage and Network Adapter config: storage/hwameistor/install/storage-eth.md
-                      - Custom Kubelet Root Directory: storage/hwameistor/install/customized-kubelet.md
-                      - Upgrade: storage/hwameistor/install/upgrade.md
-                      - Uninstall: storage/hwameistor/install/uninstall.md
-                  - Nodes and Disks:
-                      - LVM Node Expansion: storage/hwameistor/resources/lvm-nodes.md
-                      - Disk Node Expansion: storage/hwameistor/resources/disk-nodes.md
-                      - Disk Expansion: storage/hwameistor/resources/disk-expansion.md
-                      - Disk Reservation: storage/hwameistor/resources/reserveddisk.md
-                  - StorageClass: storage/hwameistor/resources/storageclass.md
-                  - Volumes:
-                      - Volume Migration: storage/hwameistor/resources/migrate.md
-                      - Volume Eviction: storage/hwameistor/resources/volume-eviction.md
-                      - Volume Expansion: storage/hwameistor/resources/expand.md
-                      - Volume IO Rate Limit: storage/hwameistor/resources/volume-ProvisionedIO.md
-                      - Volume Snapshot: storage/hwameistor/resources/volume-snapshot.md
-                  - Use Cases:
-                      - Overview: storage/hwameistor/application/overview.md
-                      - Deploy StatefulSets:
-                          - Deploy via Local Volume: storage/hwameistor/application/local.md
-                          - Deploy via HA Volume: storage/hwameistor/application/ha.md
-                  - FAQs: storage/hwameistor/faqs.md
-              - Solutions to Integrate Open Source:
-                  - Rook-Ceph:
-                      - Rook-Ceph Intro: storage/solutions/rook-ceph.md
-                      - Deploy Rook-Ceph with App Store: storage/solutions/dce-rook-ceph.md
-                      - Deploy Rook-Ceph with Helm: storage/solutions/helm-rook-ceph.md
-                      - How to Connect Ceph Dashboard: storage/solutions/ceph-dashboard.md
-                  - Longhorn:
-                      - Longhorn Intro: storage/solutions/longhorn.md
-                      - Deploy Longhorn with App Store: storage/solutions/dce-longhorn.md
-                  - OpenEBS:
-                      - OpenEBS Intro: storage/solutions/openebs.md
-                      - Deploy OpenEBS with Helm: storage/solutions/openebs-helm.md
-                  - TiDB: storage/hwameistor/application/tidb.md
-                  - MinIO: storage/hwameistor/application/minio/minio.md
-              - Concepts:
-                  - Kubernetes storage: storage/terms/k8s_storage.md
-                  - CAS: storage/terms/cas.md
-                  - CSI: storage/terms/csi.md
-                  - CRD and CR: storage/terms/crd_and_cr.md
-                  - Volume: storage/terms/volume.md
-                  - LVM: storage/terms/lvm.md
-                  - PV and PVC: storage/terms/pv_pvc.md
-          - Virtual Machine:
-              - Intro:
-                  - What: virtnest/intro/index.md
-                  - VM Features: virtnest/intro/features.md
-                  - Release Notes: virtnest/intro/release-notes.md
-                  - FAQs: virtnest/intro/faq.md
-              - Install:   
-                  - Install Virtual Machine: virtnest/install/index.md
-                  - Install Dependencies: virtnest/install/install-dependency.md
-                  - Offline Upgrade: virtnest/install/offline-install.md
-                  - Install virtnest-agent: virtnest/install/virtnest-agent.md
-              - Quick Start:
-                  - Create VM: virtnest/quickstart/index.md
-                  - Update VM: virtnest/quickstart/update.md
-                  - Access VM: virtnest/quickstart/access.md
-                  - Access VM by NodePort: virtnest/quickstart/nodeport.md
-                  - VM Details: virtnest/quickstart/detail.md
-              - Manage Virtual Machine:
-                  - Create Secret: virtnest/vm/create-secret.md
-                  - Snapshots: virtnest/vm/snapshot.md
-                  - Scheduled Snapshot: virtnest/vm/scheduled-snapshot.md
-                  - Live Migration: virtnest/vm/live-migration.md
-                  - Migrate VM across Clusters: virtnest/vm/cross-cluster-migrate.md
-                  - VM Monitor: virtnest/vm/monitor.md
-                  - VM GPU: virtnest/vm/vm-gpu.md
-                  - VM Network: virtnest/vm/vm-network.md
-                  - VM Storage: virtnest/vm/vm-sc.md
-                  - VM Drift: virtnest/vm/auto-migrate.md
-              - VM GPU:
-                  - VM GPU: virtnest/gpu/vm-gpu.md
-                  - VM vGPU: virtnest/gpu/vm-vgpu.md
-              - VM Template:
-                  - Create VM by Template: virtnest/template/index.md
-                  - VM Template: virtnest/template/tep.md
-              - VM Image: virtnest/vm-image/index.md
-              - Best Practices: 
-                  - Import Linux VM from VMWare: virtnest/best-practice/import-ubuntu.md
-                  - Import Windows VM from VMWare: virtnest/best-practice/import-windows.md
-                  - Create Windows VM: virtnest/best-practice/vm-windows.md
-      - Microservice:
-          - Insight:
-              - Intro:
-                  - What is Insight: insight/intro/index.md
-                  - Benefits: insight/intro/benefits.md
-                  - Scenario: insight/intro/scenarios.md
-                  - Features: insight/intro/features.md
-                  - Permissions: insight/intro/permission.md
-                  - Insight Release Notes: insight/intro/release-notes.md
-              - Quick Start:
-                  - Plan to Deploy:
-                      - insight/quickstart/res-plan/index.md
-                      - Prometheus Resource Plan: insight/quickstart/res-plan/prometheus-res.md
-                      - vmstorage Disk Plan: insight/quickstart/res-plan/vms-res-plan.md
-                      - Adjust vmstorage: insight/quickstart/res-plan/modify-vms-disk.md
-                  - Install and Upgrade:
-                      - insight/quickstart/install/index.md
-                      - Online Install insight-agent: insight/quickstart/install/install-agent.md
-                      - Offline Upgrade insight-agent: insight/quickstart/install/offline-install.md
-                      - Get Data Storage Address of Global Service Cluster: insight/quickstart/install/gethosturl.md
-                      - Upgrade Notes: insight/quickstart/install/upgrade-note.md
-                      - Known Issues: insight/quickstart/install/knownissues.md
-                      - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
-                      - Enable Big Log and Big Trace: insight/quickstart/install/big-log-and-trace.md
-                  - Install insight-agent on Other Distributions:
-                      - DCE 4.0: insight/quickstart/other/install-agentindce.md
-                      - OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
-              - Get Started with Insight:
-                  - Use OpenTelemetry:
-                      - Observe App with OTel: insight/quickstart/otel/otel.md
-                      - Non-intrusive Enhancement with Operator: insight/quickstart/otel/operator.md
-                      - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md
-                      - Tail-based Sampling Scheme: insight/best-practice/tail-based-sampling.md
-                  - Java Insight:
-                      - insight/quickstart/otel/java/index.md
-                      - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md
-                      - Use OTel Java Agent to Expose JVM Metrics: insight/quickstart/otel/java/jvm-monitor/otel-java-agent.md
-                      - Java App with JVM Metrics Enables Insight: insight/quickstart/otel/java/jvm-monitor/legacy-jvm.md
-                  - Golang App Insight:
-                      - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang/golang.md
-                  - Other Integrations:
-                      - Use OTel to Receive SkyWalking Traces: insight/best-practice/sw-to-otel.md  
-              - Dashboard:
-                  - Overview: insight/user-guide/dashboard/overview.md
-                  - Dashboard: insight/user-guide/dashboard/dashboard.md
-                  - Log in to Grafana with Admin: insight/user-guide/dashboard/login-grafana.md
-                  - Import Custom Dashboard: insight/user-guide/dashboard/import-dashboard.md
-              - Infrastructure:
-                  - Clusters: insight/user-guide/infra/cluster.md
-                  - Nodes: insight/user-guide/infra/node.md
-                  - Namespaces: insight/user-guide/infra/namespace.md
-                  - Workload: insight/user-guide/infra/container.md
-                  - Events: insight/user-guide/infra/event.md
-                  - Probes: insight/user-guide/infra/probe.md
-              - Metrics: insight/user-guide/data-query/metric.md
-              - Logging: insight/user-guide/data-query/log.md
-              - Traces:
-                  - Service Topology: insight/user-guide/trace/topology.md
-                  - Topology Helper: insight/user-guide/trace/topology-helper.md
-                  - Service: insight/user-guide/trace/service.md
-                  - Trace Query: insight/user-guide/trace/trace.md
-              - Alert Center:
-                  - insight/user-guide/alert-center/index.md
-                  - Alert Rules: insight/user-guide/alert-center/alert-policy.md
-                  - Notification Config: insight/user-guide/alert-center/message.md
-                  - Configure Notification Server: insight/user-guide/alert-center/sms-provider.md
-                  - Message Template: insight/user-guide/alert-center/msg-template.md
-                  - Alert Silence: insight/user-guide/alert-center/silent.md
-                  - Alert Inhibition: insight/user-guide/alert-center/inhibition.md
-              - Data Collection:
-                  - Collection Management: insight/user-guide/collection-manag/collection-manag.md
-                  - Service Monitor: insight/user-guide/collection-manag/service-monitor.md
-                  - insight-agent Status: insight/user-guide/collection-manag/agent-status.md   
-              - System Config:
-                  - System Components: insight/user-guide/system-config/system-component.md
-                  - System Config: insight/user-guide/system-config/system-config.md
-                  - Modify Config: insight/user-guide/system-config/modify-config.md
-              - Network Insight:
-                  - Integrate DeepFlow: insight/best-practice/integration_deepflow.md
-              - References:
-                  - Insight Reference Metrics: insight/reference/used-metric-in-insight.md
-                  - Custom Probe: insight/user-guide/collection-manag/probe-module.md
-                  - Collection Metrics: insight/user-guide/collection-manag/metric-collect.md
-                  - Alert Notification Flow: insight/reference/alertnotification.md
-                  - Notification Template Instructions: insight/reference/notify-helper.md
-                  - Lucene Syntax: insight/reference/lucene.md
-                  - Collect Logs with Sidecar: insight/reference/tailing-sidecar.md
-              - Compatibility Test:
-                  - K8s Compatibility Test: insight/compati-test/k8s-compatibility.md
-                  - Rancher Compatibility Test: insight/compati-test/rancher-compatibility.md
-                  - OCP Compatibility Test: insight/compati-test/ocp-compatibility.md
-              - FAQs:
-                  - Clock Skew of Trace Data: insight/faq/traceclockskew.md
-                  - Log Collection Troubleshoot: insight/best-practice/debug-log.md
-                  - Trace Collection Troubleshoot: insight/best-practice/debug-trace.md
-                  - Locate Issues with Insight: insight/best-practice/find_root_cause.md
-                  - What if ElasticSearch is Full: insight/faq/expand-once-es-full.md
-          - Microservices:
-              - Intro:
-                  - Index: skoala/intro/index.md
-                  - Features: skoala/intro/features.md
-                  - Use Cases: skoala/intro/scenarios.md
-                  - Competitiveness: skoala/intro/advantages.md
-                  - Microservices Release Notes: skoala/intro/release-notes.md
-              - Quick Start:
-                  - Management Components: skoala/quickstart/skoala.md
-                  - Cluster Init Components: skoala/quickstart/skoala-init.md
-                  - Select Workspace: skoala/quickstart/select-workspace.md
-              - Cloud Native Microservices:
-                  - Traffic Control: skoala/cloud-ms/traffic-control.md
-                  - End-to-end Traffic Lane: skoala/cloud-ms/lane.md
-              - Cloud Native Gateway:
-                  - Gateway Management: skoala/gateway/index.md
-                  - Domain Management:
-                      - Add Domain: skoala/gateway/domain/index.md
-                      - Update/Delete Domain: skoala/gateway/domain/update-domain.md
-                      - Domain Policies: skoala/gateway/domain/domain-policy.md
-                  - API Management:
-                      - Add API: skoala/gateway/api/index.md
-                      - Configure API Policy: skoala/gateway/api/api-policy.md
-                      - Import API: skoala/gateway/api/api-lead.md
-                  - Service List:
-                      - Manual Acess: skoala/gateway/service/manual-integrate.md
-                      - Automatic nanotubes: skoala/gateway/service/auto-manage.md
-                  - Monitor and Alert: skoala/gateway/alert.md
-                  - Logs:
-                      - Request Logs: skoala/gateway/logs/reqlog.md
-                      - Instance Logs: skoala/gateway/logs/inslog.md
-              - Traditional Microservices:
-                  - Registration and Configuration Center:
-                      - Hosted Registration Center: skoala/trad-ms/hosted/index.md
-                      - Service Integration Standards:
-                          - Integrate Sentinel: skoala/standard/sentinel.md
-                          - Integrate Nacos SDK: skoala/standard/nacos.md
-                          - Integrate Sentinel Monitoring Capabilities: skoala/standard/monitor.md
-                          - Integrate Sentinel Cluster Flow Control Capabilities: skoala/standard/flow-control.md
-                      - Microservices Namespace: skoala/trad-ms/hosted/namespace.md
-                      - Microservices List:
-                          - Introduction: skoala/trad-ms/hosted/services/index.md
-                          - Microservices Details: skoala/trad-ms/hosted/services/check-details.md
-                          - Traffic Governance:
-                              - Rules Introduction: skoala/trad-ms/hosted/services/governance-policy.md
-                              - Flow Control Rules: skoala/trad-ms/hosted/services/flow-control.md
-                              - Circuit Breaker Rules: skoala/trad-ms/hosted/services/circuit-breaker.md
-                              - Authorization Rules: skoala/trad-ms/hosted/services/auth.md
-                              - Hotspot Rules: skoala/trad-ms/hosted/services/hotspot.md
-                              - System Rules: skoala/trad-ms/hosted/services/system.md
-                              - Cluster Flow Control: skoala/trad-ms/hosted/services/cluster-flow.md
-                      - Configuration Management: skoala/trad-ms/hosted/configs.md
-                      - Monitoring:
-                          - Microservices Monitoring: skoala/trad-ms/hosted/monitor/microservices.md
-                          - Component Monitoring: skoala/trad-ms/hosted/monitor/components.md
-                          - Trace Tracking: skoala/trad-ms/hosted/monitor/traces.md
-                      - Resource Information: skoala/trad-ms/hosted/resource-info.md
-                      - Governance Capabilities:
-                          - Introduction: skoala/trad-ms/hosted/plugins/plugin-center.md
-                          - Sentinel Governance: skoala/trad-ms/hosted/plugins/sentinel.md
-                          - Mesh Governance: skoala/trad-ms/hosted/plugins/mesh.md
-                  - Integrated Registration Center:
-                      - Integrated Registration Center Management: skoala/trad-ms/integrated/index.md
-                      - Microservices Management: skoala/trad-ms/integrated/manage-service.md
-                      - Trace Tracking: skoala/trad-ms/integrated/trace.md
-              - Plugin Center:
-                  - Introduction: skoala/plugins/intro.md
-                  - Plugin Practices:
-                      - Using JWT Plugin for Microservices: skoala/best-practice/plugins/jwt.md
-                      - Using JWT Plugin for Gateway: skoala/best-practice/jwt.md
-                      - Gateway Authentication Server:
-                          - skoala/best-practice/auth-server.md
-                          - Integrate AK/SK Authentication: skoala/best-practice/ak-sk-demo.md
-                          - Integrate OIDC Authentication: skoala/best-practice/OIDC-auth.md
-                      - Integrate Global Rate Limit Server for Gateway: skoala/best-practice/global-ratelimit.md
-                  - Custom Plugin Examples:
-                      - Caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
-                      - Anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
-                      - CRC32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
-                      - Conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
-                      - Payload Limit: skoala/best-practice/envoy-extproc-payloadlimit-demo-go.md
-              - Best Practices:
-                  - Microservices Governance Application Example: skoala/best-practice/use-skoala-01.md
-                  - API Policy Configuration Example: skoala/best-practice/gateway02.md
-                  - Accessing Microservices via Gateway: skoala/best-practice/gateway01.md
-                  - Gateway Integration with Service Mesh: skoala/best-practice/gateway-mesh.md
-                  - Custom Attributes for Gateway Request Logs: skoala/best-practice/add-custom-attributes.md
-                  - HTTP to Dubbo Protocol Dynamic Routing: skoala/best-practice/http-to-dubbo.md
-              - Troubleshooting:
-                  - skoala-init x-kubernets-validations Error: skoala/troubleshoot/auth-server.md
-                  - Nacos Version Downgrade: skoala/troubleshoot/nacos.md
-              - Performance Test:
-                  - Cloud Native Gateway Throughput Test: skoala/tests/gateway-stress-test.md
-                  - Nacos Stress Test Report: skoala/tests/nacos-stress-test.md
-              - References:
-                  - Microservices: skoala/reference/microservice.md
-                  - Registration Center: skoala/reference/registry.md
-                  - Cloud Native Gateway: skoala/reference/gateway.md
-          - Service Mesh:
-              - Intro:
-                  - What is Service Mesh: mspider/intro/index.md
-                  - Features: mspider/intro/features.md
-                  - Use Cases: mspider/intro/scenarios.md
-                  - Permissions: ghippo/permissions/mspider.md
-                  - Spec for App Integration: mspider/intro/app-spec.md
-                  - System Components and Architecture:
-                      - Architecture: mspider/intro/comp-archi-ui/architect.md
-                      - Control Plane Components: mspider/intro/comp-archi-ui/cp-component.md
-                      - System Namespaces: mspider/intro/comp-archi-ui/namespaces.md
-                      - Features Supported on UI: mspider/intro/comp-archi-ui/features-on-ui.md
-                  - Supported Istio and K8s Versions: mspider/intro/istio-k8s.md
-                  - FAQs: mspider/intro/faq.md
-                  - Service Mesh Release Notes: mspider/intro/release-notes.md
-              - Install, Config, and Upgrade:
-                  - Install Service Mesh: mspider/install/install.md
-                  - Upgrade Istio: mspider/install/istio-update.md
-                  - Upgrade Sidecar: mspider/install/sidecar-update.md
-                  - Offline Upgrade Service Mesh: mspider/install/offline-upgrade.md
-              - Create/Delete Mesh:
-                  - Create managed/private mesh: mspider/user-guide/service-mesh/README.md
-                  - Create external mesh: mspider/user-guide/service-mesh/external-mesh.md
-                  - Delete mesh: mspider/user-guide/service-mesh/delete.md
-                  - Resource capacity: mspider/user-guide/service-mesh/capacity-resources.md
-                  - Parameters to create mesh: mspider/user-guide/service-mesh/params.md
-              - Service Management:
-                  - mspider/user-guide/service-list/README.md
-                  - Integrate VM: mspider/user-guide/service-list/vm.md
-                  - Access Service out of Mesh: mspider/user-guide/service-list/out-to-in.md
-                  - Service Entry: mspider/user-guide/service-list/service-entry.md
-                  - One-Click Repair: mspider/user-guide/service-list/diagnose.md
-              - Traffic Management:
-                  - mspider/user-guide/traffic-governance/README.md
-                  - Virtual Service: mspider/user-guide/traffic-governance/virtual-service.md
-                  - Parameters for Virtual Service: mspider/user-guide/traffic-governance/vsparams.md
-                  - Destination Rule: mspider/user-guide/traffic-governance/destination-rules.md
-                  - Gateway: mspider/user-guide/traffic-governance/gateway-rules.md
-                  - Traffic Failover: mspider/user-guide/traffic-governance/traffic-failover.md
-              - Security:
-                  - Intro: mspider/user-guide/security/README.md
-                  - Peer Authentication: mspider/user-guide/security/peer.md
-                  - Request Authentication: mspider/user-guide/security/request.md
-                  - Authorization Policy: mspider/user-guide/security/authorize.md
-                  - Security Parameters: mspider/user-guide/security/params.md
-                  - Identity and mTLS: mspider/user-guide/security/mtls.md
-              - Mesh Sidecar:
-                  - Namespace Sidecars: mspider/user-guide/sidecar-management/ns-sidecar.md
-                  - Workload Sidecars: mspider/user-guide/sidecar-management/workload-sidecar.md
-                  - Traffic Passthrough: mspider/user-guide/sidecar-management/passthrough.md
-                  - Change Sidecar Log Level: mspider/user-guide/sidecar-management/sidecar-log-level.md
-              - Traffic Monitor:
-                  - mspider/user-guide/traffic-monitor/README.md
-                  - Traffic Topology: mspider/user-guide/traffic-monitor/conn-topo.md
-                  - Monitor Dashboard Metrics: mspider/user-guide/traffic-monitor/monitoring-indicators.md
-                  - Dashboard Guide: mspider/user-guide/traffic-monitor/indicator-readtips.md
-              - Mesh Cluster:
-                  - Intro: mspider/user-guide/cluster-management/README.md
-                  - Add Cluster: mspider/user-guide/cluster-management/join-clus.md
-                  - Remove Cluster: mspider/user-guide/cluster-management/remove-clus.md
-              - Mesh Gateway:
-                  - Create Mesh Gateway: mspider/user-guide/gateway-instance/create.md
-                  - Delete Mesh Gateway: mspider/user-guide/gateway-instance/delete.md
-                  - Gateway Management for External Mesh: mspider/user-guide/gateway-instance/gateway-in-external-mesh.md
-              - Mesh Config:
-                  - Multicloud Interconnection: mspider/user-guide/multicluster/cluster-interconnect.md
-                  - Multicloud Config: mspider/user-guide/multicluster/traffic-branch.md
-                  - Network Connectivity Check: mspider/user-guide/multicluster/check-net-connect.md
-                  - Istio Resource Management: mspider/user-guide/mesh-config/istio-resources.md
-                  - TLS Key Management: mspider/user-guide/mesh-config/tls-secret.md
-                  - Custom Component Resource: mspider/user-guide/mesh-config/custom-res.md
-                  - Component Resoruce HPA: mspider/user-guide/mesh-config/component-hpa.md
-              - Test:
-                  - Join OCP to Mesh: mspider/test/ocp.md
-                  - Openshift and Mesh Compatibility Test: mspider/test/openshift.md
-                  - Multicloud Deployment: mspider/user-guide/multicluster/multicluster-install.md
-                  - Multicloud Principle: mspider/user-guide/multicluster/multi-cluster-net.md
-                  - Multicloud Grayscale Release: mspider/user-guide/multicluster/gray-scale-release.md
-              - Troubleshoot:
-                  - Index: mspider/troubleshoot/index.md
-                  - Cannot Find Cluster on Mesh Creation: mspider/troubleshoot/cannot-find-cluster.md
-                  - Always in Creating on Mesh Creation: mspider/troubleshoot/always-in-creating.md
-                  - Created Mesh is Abnormal But Cannot be Deleted: mspider/troubleshoot/failed-to-delete.md
-                  - Failed to Add Cluster for Hosted Mesh: mspider/troubleshoot/failed-to-add-cluster.md
-                  - istio-ingressgateway Abnormal: mspider/troubleshoot/hosted-mesh-errors.md
-                  - Expired Cert for Hosted Mesh APIServer: mspider/troubleshoot/hosted-apiserver-cert-expiration.md
-                  - Cross-Cluster Interconnect Issues: mspider/troubleshoot/cluster-interconnect.md
-                  - Unable to Unbind Mesh Space: mspider/troubleshoot/mesh-space-cannot-unbind.md
-                  - Issues on Joining DCE 4.0: mspider/troubleshoot/dce4.0-issues.md
-                  - Issue with Sidecar Configuration Activation: mspider/troubleshoot/sidecar.md
-                  - Sidecar Uses a Large Amount of Memory: mspider/troubleshoot/sidecar-memory-err.md
-                  - Unknown Cluster Exists in List: mspider/troubleshoot/cluster-already-exist.md
-              - Best Practice:
-                  - Restrict Service Access with Mesh: mspider/best-practice/use-egress-and-authorized-policy.md
-                  - Support for Custom Workload Types: mspider/best-practice/use-custom-workloads.md
-                  - Optimize Sidecar Resource Usage: mspider/best-practice/optimize-sidecar-resource.md
-                  - Traffic Control for Multicloud Mesh: mspider/best-practice/multinet-control.md
-      - Data Service:
-          - Middleware:
-              - Intro:
-                  - What is Middleware: middleware/index.md
-                  - Features: middleware/common/feature.md
-                  - Supported K8s Versions: middleware/compatibility.md
-                  - Permissions: middleware/permission.md
-              - Common Config for Middleware:
-                  - First-Time Use: middleware/common/index.md
-                  - Custom Permissions: middleware/common/permissions.md
-                  - Config Management: middleware/common/config.md
-                  - Workload Antiaffinity: middleware/common/antiaffinity.md
-              - MySQL Database:
-                  - Intro:
-                      - What is MySQL: middleware/mysql/intro/index.md
-                      - Features: middleware/mysql/intro/features.md
-                      - Benefits: middleware/mysql/intro/benefits.md
-                      - Offline Upgrade MySQL: middleware/mysql/intro/offline-install.md
-                      - Concepts: middleware/mysql/intro/concepts.md
-                      - Release Notes: middleware/mysql/release-notes.md
-                  - Quick Start:
-                      - Instance Lifecycle:
-                          - Create MySQL Instance: middleware/mysql/user-guide/create.md
-                          - Create MySQL MGR Instance: middleware/mysql/user-guide/create-mgr.md
-                          - Update MySQL Instance: middleware/mysql/user-guide/update.md
-                          - Delete MySQL Instance: middleware/mysql/user-guide/delete.md
-                          - View MySQL Instance: middleware/mysql/user-guide/view.md
-                      - View MySQL Logs: middleware/mysql/user-guide/logs.md
-                      - Instance Topology: middleware/mysql/user-guide/instancemap.md
-                      - Data Backup:
-                          - Manage Backup: middleware/mysql/user-guide/backup-restore/backup-config.md
-                          - Auto Backup: middleware/mysql/user-guide/backup-restore/auto-backup.md
-                          - Manual Backup: middleware/mysql/user-guide/backup-restore/manual-backup.md                  
-                  - Best Practice:
-                      - MySQL Cross-Cluster Sync: middleware/mysql/best-practice/crossclusterssync.md
-                      - MySQL Archiving Solution: middleware/mysql/best-practice/mysql-pt-archiver.md
-                  - Troubleshoot:
-                      - MySQL Health Check: middleware/mysql/faq/quick-check.md
-                      - MySQL Pod: middleware/mysql/faq/faq-pod.md
-                      - MySQL Operator: middleware/mysql/faq/faq-operator.md
-                      - MySQL Master/Slave Issues: middleware/mysql/faq/faq-master-slave.md
-                      - Other MySQL Issues: middleware/mysql/faq/faq-others.md
-                      - MySQL MGR Configuration: middleware/mysql/faq/faq-mgr-parameter.md
-                      - Troubleshoot MySQL MGR: middleware/mysql/faq/mgr-troubleshooting.md
-                      - Network Fluctuations in Master-Slave: middleware/mysql/faq/faq-mtsql-net.md
-              - MongoDB Database:
-                  - Intro:
-                      - What is MongoDB: middleware/mongodb/intro/index.md
-                      - Features: middleware/mongodb/intro/features.md
-                      - Offline Upgrade MongoDB: middleware/mongodb/intro/offline-install.md
-                      - Release Notes: middleware/mongodb/release-notes.md
-                  - Quick Start:
-                      - Create MongoDB Instance: middleware/mongodb/user-guide/create.md
-                      - Update MongoDB Instance: middleware/mongodb/user-guide/update.md
-                      - Delete MongoDB Instance: middleware/mongodb/user-guide/delete.md
-                      - View MongoDB Instance: middleware/mongodb/user-guide/view.md
-                      - View MongoDB Logs: middleware/mongodb/user-guide/logs.md
-              - PostgreSQL Database:
-                  - Intro:
-                      - What is PostgreSQL: middleware/postgresql/intro/index.md
-                      - Features: middleware/postgresql/intro/concepts.md
-                      - Offline Upgrade PostgreSQL: middleware/postgresql/intro/offline-install.md
-                      - Release Notes: middleware/postgresql/release-notes.md
-                  - Quick Start:
-                      - Create PostgreSQL Instance: middleware/postgresql/user-guide/create.md
-                      - Update PostgreSQL Instance: middleware/postgresql/user-guide/update.md
-                      - Delete PostgreSQL Instance: middleware/postgresql/user-guide/delete.md
-                      - View PostgreSQL Logs: middleware/postgresql/user-guide/logs.md
-                      - Manually Set Antiaffinity: middleware/postgresql/user-guide/antiaffinity.md
-                      - Auto Backup: middleware/postgresql/user-guide/auto-backup.md
-                      - Topology: middleware/postgresql/user-guide/instancemap.md
-              - Redis Cache Service:
-                  - Intro:
-                      - What is Redis: middleware/redis/intro/index.md
-                      - Use Cases: middleware/redis/intro/scenarios.md
-                      - Offline Upgrade Redis: middleware/redis/intro/offline-install.md
-                      - Release Notes: middleware/redis/release-notes.md
-                  - Quick Start:
-                      - Create Redis Instance: middleware/redis/user-guide/create.md
-                      - Update Redis Instance: middleware/redis/user-guide/update.md
-                      - Delete Redis Instance: middleware/redis/user-guide/delete.md
-                      - View Redis Logs: middleware/redis/user-guide/logs.md
-                      - Slow Query: middleware/redis/user-guide/slow-query.md
-                      - Topology: middleware/redis/user-guide/instancemap.md
-                  - Best Practice:
-                      - HA Deployment Across Data Centers: middleware/redis/best-practice/singleclustercrosszone.md
-                      - Data Synchronization Intro: middleware/redis/best-practice/index.md
-                      - Cluster Mode to Cluster Mode: middleware/redis/best-practice/cluster2cluster.md
-                      - Sentinel Mode to Sentinel Mode: middleware/redis/best-practice/sentinel2sentinel.md
-                      - Cluster Mode to Sentinel Mode: middleware/redis/best-practice/cluster2sentinel.md
-                      - External Access Based on Spiderpool: middleware/redis/best-practice/spiderpoolconfig.md
-              - Elasticsearch:
-                  - Intro:
-                      - What is Elasticsearch: middleware/elasticsearch/intro/index.md
-                      - Features: middleware/elasticsearch/intro/features.md
-                      - Benefits: middleware/elasticsearch/intro/benefits.md
-                      - Use Cases: middleware/elasticsearch/intro/scenarios.md
-                      - Concepts: middleware/elasticsearch/intro/concepts.md
-                      - Offline Upgrade elasticsearch: middleware/elasticsearch/intro/offline-install.md
-                      - Release Notes: middleware/elasticsearch/release-notes.md
-                  - ES Cluster Capacity Planning: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
-                  - Quick Start:
-                      - Create ES Instance: middleware/elasticsearch/user-guide/create.md
-                      - Update ES Instance: middleware/elasticsearch/user-guide/edit.md
-                      - Delete ES Instance: middleware/elasticsearch/user-guide/delete.md
-                      - Instance Overview: middleware/elasticsearch/user-guide/basic.md
-                      - Monitor Instance: middleware/elasticsearch/user-guide/monitor.md
-                      - View ES Logs: middleware/elasticsearch/user-guide/logs.md
-                      - Backup and Recovery: middleware/elasticsearch/user-guide/snapshot-recover.md
-                  - Migrate ES across Nodes: middleware/elasticsearch/user-guide/migrate-es.md
-                  - ES Troubleshoot: middleware/elasticsearch/faq/common-question-es.md
-              - Kafka Message Queue:
-                  - Intro:
-                      - What is Kafka: middleware/kafka/intro/index.md
-                      - Use Cases: middleware/kafka/intro/scenarios.md
-                      - Offline Upgrade kafka: middleware/kafka/intro/offline-install.md
-                      - Concepts: middleware/kafka/intro/concepts.md
-                      - Release Notes: middleware/kafka/release-notes.md
-                  - Quick Start:
-                      - Create Kafka Instance: middleware/kafka/user-guide/create.md
-                      - View/Update/Delete Kafka: middleware/kafka/user-guide/view-update-delete.md
-                      - Instance Insight/Logs: middleware/kafka/user-guide/insight-log.md
-                      - Config Parameters: middleware/kafka/user-guide/config.md
-                      - Parameter Template: middleware/kafka/user-guide/template.md
-              - RabbitMQ Message Queue:
-                  - Intro:
-                      - What is RabbitMQ: middleware/rabbitmq/intro/index.md
-                      - Features: middleware/rabbitmq/intro/features.md
-                      - Benefits: middleware/rabbitmq/intro/benefits.md
-                      - Use Cases: middleware/rabbitmq/intro/scenarios.md
-                      - Offline Upgrade RabbitMQ: middleware/rabbitmq/intro/offline-install.md
-                      - Concepts: middleware/rabbitmq/intro/concepts.md
-                      - Release Notes: middleware/rabbitmq/release-notes.md
-                  - Quick Start:
-                      - Create RabbitMQ Instance: middleware/rabbitmq/user-guide/create.md
-                      - Update RabbitMQ Instance: middleware/rabbitmq/user-guide/update.md
-                      - Delete RabbitMQ Instance: middleware/rabbitmq/user-guide/delete.md
-                      - View Instance Detail: middleware/rabbitmq/user-guide/view.md
-                      - Migrate Data: middleware/rabbitmq/user-guide/migrate.md
-                      - Monitor Instance: middleware/rabbitmq/user-guide/insight.md
-                      - View RabbitMQ Logs: middleware/rabbitmq/user-guide/logs.md
-                  - Add Custom Addons to RabbitMQ: middleware/rabbitmq/faq/add-plugin.md
-              - RocketMQ Message Queue:
-                  - Intro:
-                      - What is RocketMQ: middleware/rocketmq/intro/index.md
-                      - Concepts: middleware/rocketmq/intro/concepts.md
-                      - Offline Upgrade RocketMQ: middleware/rocketmq/intro/offline-install.md
-                      - Release Notes: middleware/rocketmq/release-notes.md
-                  - Quick Start:
-                      - Create RocketMQ Instance: middleware/rocketmq/quick-start/create-rocketmq.md
-                      - Update RocketMQ Instance: middleware/rocketmq/quick-start/update-rocketmq.md
-                  - Best Practices: 
-                      - HA RocketMQ across Clusters: middleware/rocketmq/best-pratice/singleclustercrosszone.md
-              - MinIO Object Storage:
-                  - Intro:
-                      - What is MinIO: middleware/minio/intro/index.md
-                      - Use Cases: middleware/minio/intro/scenarios.md
-                      - Offline Upgrade MinIO: middleware/minio/intro/offline-install.md
-                      - Concepts: middleware/minio/intro/concepts.md
-                      - Release Notes: middleware/minio/release-notes.md
-                  - Quick Start:
-                      - Create MinIO Instance: middleware/minio/user-guide/create.md
-                      - Update/Delete MinIO Instance: middleware/minio/user-guide/update-delete.md
-                      - Instance Insight/Logs/Parameter Configuration: middleware/minio/user-guide/insight-log-config.md
-                      - View Instance Details: middleware/minio/user-guide/view.md
-                      - MinIO Identity Management: middleware/minio/user-guide/user-management.md
-      - Cloud Native AI:
-          - AI Lab:
-              - Introduction:
-                  - What is AI Lab: baize/intro/index.md
-                  - Initialize AI Lab: baize/intro/install.md
-                  - First Time Usage: baize/intro/first.md
-                  - AI Lab Release Notes: baize/intro/release-notes.md
-              - Developer:
-                  - Introduction: baize/developer/index.md
-                  - Quick Start: baize/developer/quick-start.md
-                  - Notebooks:
-                      - Create Notebook: baize/developer/notebooks/create.md
-                      - Start and Pause Notebook: baize/developer/notebooks/start-pause.md
-                      - View Notebook Workload: baize/developer/notebooks/view.md
-                      - Delete Notebook: baize/developer/notebooks/delete.md
-                      - Notebook SSH Guide: baize/developer/notebooks/notebook-with-ssh.md
-                      - Use Environments in Notebook: baize/developer/notebooks/notebook-with-envs.md
-                      - baizectl CLI Guide: baize/developer/notebooks/baizectl.md
-                      - baizess Source Switch Tool Guide: baize/developer/notebooks/baizess.md
-                      - Shut down Idle Notebooks: baize/developer/notebooks/notebook-auto-close.md
-                  - Job Center:
-                      - Create Job: baize/developer/jobs/create.md
-                      - Create Pytorch Job: baize/developer/jobs/pytorch.md
-                      - Create Tensorflow Job: baize/developer/jobs/tensorflow.md
-                      - Delete Job: baize/developer/jobs/delete.md
-                      - View Job Load: baize/developer/jobs/view.md
-                      - Job Analysis: baize/developer/jobs/tensorboard.md
-                  - Data Management:
-                      - Datasets: baize/developer/dataset/create-use-delete.md
-                      - Environments: baize/developer/dataset/environments.md
-                  - Model Service:
-                      - Supported Models: baize/developer/inference/models.md
-                      - Create with Triton Framework: baize/developer/inference/triton-inference.md
-                      - Create with vLLM Framework: baize/developer/inference/vllm-inference.md
-              - Operator:
-                  - Resource Management: baize/oam/resource.md
-                  - Queue Management:
-                      - Create Queue: baize/oam/queue/create.md
-                      - Delete Queue: baize/oam/queue/delete.md
-              - Best Practices:
-                  - Deploy NFS to Preload Dataset: baize/best-practice/deploy-nfs-in-worker.md
-                  - Update Notebook Built-in Images: baize/best-practice/change-notebook-image.md
-                  - Checkpoint Mechanism and Usage: baize/best-practice/checkpoint.md
-                  - Fine-Tune ChatGLM3 with AI Lab: baize/best-practice/finetunel-llm.md
-                  - Submit a DeepSpeed Training Task: baize/best-practice/train-with-deepspeed.md
-                  - Add Job Scheduler: baize/best-practice/add-scheduler.md
-                  - Deploy Label Studio: baize/best-practice/label-studio.md
-              - Troubleshoot:
-                  - index: baize/troubleshoot/index.md
-                  - Cluster Not Found in Drop-Down List: baize/troubleshoot/cluster-not-found.md
-                  - Notebook Not Controlled by Queue Quotas: baize/troubleshoot/notebook-not-controlled-by-quotas.md
-                  - Queue Initialization Failed: baize/troubleshoot/local-queue-initialization-failed.md
-      - Edge Computing:
-          - Cloud Edge Collaboration:
-              - Intro:
-                  - What is Cloud Edge Collaboration: kant/intro/index.md
-                  - Features: kant/intro/features.md
-                  - Benefits: kant/intro/benefits.md
-                  - Use Cases: kant/intro/use-cases.md
-                  - Concepts: kant/intro/concepts.md
-                  - Release Notes: kant/intro/release-notes.md
-                  - Offline Upgrade: kant/intro/offline-upgrade.md
-              - Edge Unit:
-                  - Create Internal Edge Unit: kant/user-guide/edge-unit/create-internal-unit.md
-                  - Create External Edge Unit: kant/user-guide/edge-unit/create-external-unit.md
-                  - Manage Edge Unit: kant/user-guide/edge-unit/manage-unit.md
-                  - Monitor Edge Resources: kant/user-guide/edge-unit/edge-observable.md
-              - Edge Node:
-                  - Overview: kant/user-guide/node/index.md
-                  - Requirements to Join Edge Node: kant/user-guide/node/join-rqmt.md
-                  - Install Container Runtime on Edge Nodes: kant/user-guide/node/container-engine-install.md
-                  - Create Integration Guide: kant/user-guide/node/create-access-guide.md
-                  - Edge Node Onboarding: kant/user-guide/node/access-guide.md
-                  - Manage Edge Nodes: kant/user-guide/node/manage-node.md
-                  - Batch Upgrade Edge Nodes: kant/user-guide/node/batch-upgrade.md
-              - Edge Node Group:
-                  - Create Edge Node Group: kant/user-guide/node-group/create-group.md
-                  - Manage Edge Node Group: kant/user-guide/node-group/manage-group.md
-              - End Device:
-                  - Intro: kant/user-guide/device/index.md
-                  - Create Device Model: kant/user-guide/device/create-device-model.md
-                  - Create End Device: kant/user-guide/device/create-device.md
-                  - Manage End Device: kant/user-guide/device/manage-device.md
-              - Edge App:
-                  - Overview: kant/user-guide/edge-app/index.md
-                  - Create Deployment: kant/user-guide/edge-app/create-app.md
-                  - Create Deployment in Batch: kant/user-guide/edge-app/create-batch-app.md
-                  - Deploy Deployment in Batch: kant/user-guide/edge-app/deploy.md
-              - Edge-Cloud Message:
-                  - Overview: kant/user-guide/route/index.md
-                  - Create Message Route: kant/user-guide/route/create-route.md
-              - Edge Mesh:
-                  - Overview: kant/user-guide/edge-network/index.md
-                  - Deploy EdgeMesh: kant/user-guide/edge-network/deploy-edgemesh.md
-                  - Service: kant/user-guide/edge-network/service.md
-              - Best Practices:
-                  - Instructions to Connect a Modbus Device: kant/best-practice/modbus-device-demo.md
-                  - Smart Device Control: kant/best-practice/custom-device-control.md
-                  - Develop Device Driver - Mapper: kant/best-practice/develop-device-mapper.md
-      - Management:
-          - Global Management:
-              - Intro:
-                  - What is Global Management: ghippo/intro/index.md
-                  - Features: ghippo/intro/features.md
-                  - Glossary: ghippo/intro/glossary.md
-                  - Release Notes: ghippo/intro/release-notes.md
-              - Install, Login, and Upgrade:
-                  - Offline Upgrade: ghippo/install/offline-install.md
-                  - Customize Reverse Proxy Address: ghippo/install/reverse-proxy.md
-                  - Enable Isolation Mode between Folders/Workspaces: ghippo/install/user-isolation.md
-                  - National Secret Gateway: ghippo/install/gm-gateway.md
-                  - Login: ghippo/install/login.md
-              - Access Control:
-                  - Intro: ghippo/user-guide/access-control/iam.md
-                  - Users: ghippo/user-guide/access-control/user.md
-                  - Groups: ghippo/user-guide/access-control/group.md
-                  - Roles:
-                      - ghippo/user-guide/access-control/role.md
-                      - System Roles: ghippo/user-guide/access-control/global.md
-                      - Custom Roles: ghippo/user-guide/access-control/custom-role.md
-                  - Identity Provider:
-                      - ghippo/user-guide/access-control/idprovider.md
-                      - LDAP: ghippo/user-guide/access-control/ldap.md
-                      - OIDC: ghippo/user-guide/access-control/oidc.md
-                  - Docking Portal:
-                      - ghippo/user-guide/access-control/docking.md
-                      - Webhook: ghippo/user-guide/access-control/webhook.md
-                      - OAuth 2.0 for WeCom: ghippo/user-guide/access-control/oauth2.0.md
-              - Workspaces and Folders:
-                  - ghippo/user-guide/workspace/ws-folder.md
-                  - Create and Delete Workspace: ghippo/user-guide/workspace/workspace.md
-                  - Workspace Permissions: ghippo/user-guide/workspace/ws-permission.md
-                  - Create and Delete Folder: ghippo/user-guide/workspace/folders.md
-                  - Folder Permissions: ghippo/user-guide/workspace/folder-permission.md
-                  - Resource Quota: ghippo/user-guide/workspace/quota.md
-                  - Compare Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
-                  - Resource Binding Permission Instructions: ghippo/user-guide/workspace/wsbind-permission.md
-              - Audit Logs:
-                  - Enable/Disable Collection of K8s Audit Logs: ghippo/user-guide/audit/open-audit.md
-                  - Enable/Disable Output of K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
-                  - Download and Export: ghippo/user-guide/audit/audit-log.md
-                  - Get Source IP in Audit Logs: ghippo/user-guide/audit/source-ip.md
-                  - Audit Items Summary:
-                      - Workbench Audit Items: ghippo/user-guide/audit/gproduct-audit/amamba.md
-                      - Container Management Audit Items: ghippo/user-guide/audit/gproduct-audit/kpanda.md
-                      - Multicloud Management Audit Items: ghippo/user-guide/audit/gproduct-audit/kairship.md
-                      - Container Registry Audit Items: ghippo/user-guide/audit/gproduct-audit/kangaroo.md
-                      - Virtual Machine Audit Items: ghippo/user-guide/audit/gproduct-audit/virtnest.md
-                      - Insight Audit Items: ghippo/user-guide/audit/gproduct-audit/insight.md
-                      - Microservice Audit Items: ghippo/user-guide/audit/gproduct-audit/skoala.md
-                      - Service Mesh Audit Items: ghippo/user-guide/audit/gproduct-audit/mspider.md
-                      - Middleware Audit Items: ghippo/user-guide/audit/gproduct-audit/mcamel.md
-                      - Global Management Audit Items: ghippo/user-guide/audit/gproduct-audit/ghippo.md
-              - Operations Management:
-                  - ghippo/user-guide/report-billing/index.md
-                  - Reports: ghippo/user-guide/report-billing/report.md
-                  - Upgrade Operations Management: ghippo/user-guide/report-billing/gmagpie-offline-install.md
-                  - Billing and Accounting: ghippo/user-guide/report-billing/billing.md
-              - Platform Settings:
-                  - Security Policies: ghippo/user-guide/platform-setting/security.md
-                  - Mail Server Settings: ghippo/user-guide/platform-setting/mail-server.md
-                  - Custom Appearance: ghippo/user-guide/platform-setting/appearance.md
-                  - About: ghippo/user-guide/platform-setting/about.md
-                  - Reset Password: ghippo/user-guide/password.md
-              - Personal Center:
-                  - Security Settings: ghippo/user-guide/personal-center/security-setting.md
-                  - Access Key: ghippo/user-guide/personal-center/accesstoken.md
-                  - SSH Public Key: ghippo/user-guide/personal-center/ssh-key.md
-                  - Language Settings: ghippo/user-guide/personal-center/language.md
-              - Permissions:
-                  - Container Management Permissions: ghippo/permissions/kpanda.md
-                  - Microservice Permissions: ghippo/permissions/skoala.md
-                  - Workbench Permissions: ghippo/permissions/amamba.md
-                  - Service Mesh Permissions: ghippo/permissions/mspider.md
-                  - Middleware Permissions: ghippo/permissions/mcamel.md
-                  - AI Lab Permissions: ghippo/permissions/baize.md
-              - Best Practices:
-                  - Workspace Practices: ghippo/best-practice/ws-best-practice.md
-                  - Bind a Workspace to Namespace: ghippo/best-practice/ws-to-ns.md
-                  - Allocate a Cluster to Workspaces: ghippo/best-practice/cluster-for-multiws.md
-                  - Folder Practices: ghippo/best-practice/folder-practice.md
-                  - Normal Authorization Planning: ghippo/best-practice/authz-plan.md
-                  - Architecture for Large Enterprises: ghippo/best-practice/super-group.md
-                  - Docking with GProduct:
-                      - ghippo/best-practice/gproduct/intro.md
-                      - Join Nav Bar: ghippo/best-practice/gproduct/nav.md
-                      - Join Ingress and Login Authentication: ghippo/best-practice/gproduct/route-auth.md
-                  - OEM IN and OUT:
-                      - OEM IN: ghippo/best-practice/oem/oem-in.md
-                      - OEM OUT: ghippo/best-practice/oem/oem-out.md
-                      - Customize DCE 5.0 to Sync IdP: ghippo/best-practice/oem/custom-idp.md
-                      - Customize IdP with Keycloak: ghippo/best-practice/oem/keycloak-idp.md
-                  - Customize Nav Bar:
-                      - Customize Nav Bar: ghippo/best-practice/menu/navigator.md
-                      - Display/Hide Navigation Bar Menu Based on Permissions: ghippo/best-practice/menu/menu-display-or-hiding.md
-              - Troubleshoot:
-                  - ingressgateway cannot start: ghippo/troubleshooting/ghippo01.md
-                  - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md
-                  - keycloak cannot start: ghippo/troubleshooting/ghippo03.md
-                  - Failed to upgrade Global Management: ghippo/troubleshooting/ghippo04.md
-  - Video Tutorial:
-      - Index: videos/index.md
-      - Get Started:
-          - Installation: videos/install.md
-          - Scenario-based Videos: videos/use-cases.md
-      - Workbench:
-          - Workbench: videos/amamba.md
-      - Container:
-          - Container Management: videos/kpanda.md
-          - Multicloud Management: videos/kairship.md
-          - Container Registry: videos/kangaroo.md
-          - Network: videos/network.md    
-          - Virtual Machine: videos/virtnest.md      
-      - Microservices:
-          - Insight: videos/insight.md
-          - Microservice Engine: videos/skoala.md
-          - Service Mesh: videos/mspider.md
-      - Data Service:
-          - Middleware: videos/mcamel.md
-      - Cloud Native AI:
-          - AI Lab: videos/baize.md
-      - Edge Computing:
-          - Cloud Edge Collaboration: videos/kant.md
-      - Management:
-          - Global Management: videos/ghippo.md
-  - Downloads:
-      - DaoCloud Enterprise 5.0:
-          - Index: download/index.md
-          - Download DCE 5.0 Community: download/free/dce5-installer-history.md
-          - Download DCE 5.0 Enterprise: download/business/dce5-installer-history.md
-          - Download Addon: download/addon/history.md
-          - Download Modules:
-              - Workbench: download/modules/amamba.md
-              - Container:
-                  - Container Management: download/modules/kpanda.md
-                  - Cluster Inspection: download/modules/kcollie.md
-                  - Application Backup: download/modules/kcoral.md
-                  - Security: download/modules/dowl.md
-                  - MultiCloud Management: download/modules/kairship.md
-                  - Container Registry: download/modules/kangaroo.md
-                  - Network: download/modules/spidernet.md
-                  - Storage: download/modules/hwameistor.md
-                  - Virtual Machine: download/modules/virtnest.md
-              - Microservice:
-                  - Insight: download/modules/insight.md
-                  - Ipavo: download/modules/ipavo.md
-                  - Microservice Engine: download/modules/skoala.md
-                  - Service Mesh: download/modules/mspider.md
-              - Middleware:
-                  - Elasticsearch: download/modules/middleware/elasticsearch.md
-                  - Kafka: download/modules/middleware/kafka.md
-                  - MinIO: download/modules/middleware/minio.md
-                  - MongoDB: download/modules/middleware/mongodb.md
-                  - MySQL: download/modules/middleware/mysql.md
-                  - PostgreSQL: download/modules/middleware/postgresql.md
-                  - RabbitMQ: download/modules/middleware/rabbitmq.md
-                  - Redis: download/modules/middleware/redis.md
-                  - RocketMQ: download/modules/middleware/rocketmq.md
-              - Cloud Edge Collaboration: download/modules/kant.md
-              - Management:
-                  - Global Management: download/modules/ghippo.md
-                  - Operation Management: download/modules/gmagpie.md
-  - Blogs:
-      - Index: blogs/index.md
-      - 2024:
-          - Nvidia Conquers Latest AI Tests: blogs/20240619-nvidiaai.md
-          - 10 Years of Kubernetes: blogs/0606-k8s-birth.md
-          - A Legendary K8s Quest with SIG Docs: blogs/240516-sig-docs.md
-          - Large Language Model Spec: blogs/240509-model-spec.md
-          - Cloud Native AI Whitepapaer: blogs/240410-cnai-wp.md
-          - Kubean Enters CNCF Sandbox: blogs/240416-kubean.md
-          - Innovations at KubeCon Paris: blogs/240326-kubecon-eu.md
-          - Create a Open Source Commercial Ecosystem: blogs/240301-osc-eco.md
-          - Book - Managing Cloud Native Data on Kubernetes: blogs/240203-book.md
-          - Accelerated Computing: blogs/240201-ai-compute.md
-          - Containerization AI Streamlines ML Models: blogs/240115-news.md
-          - KubeEdge v1.15.0 Released: blogs/240108-kubeedge.md
-      - 2023:
-          - K8s 1.29 Released - Ambious Mandala Theme: blogs/231213-k8s-1.29.md
-          - Does K8s Perform Better on Bare Metal vs. VMs?: blogs/231205-vm-bm-compare.md
-          - Removals, Deprecations, and Changes in K8s 1.29: blogs/231115-k8s-1.29-changes.md
-          - A Look Back for K8s Contributor Summit in Shanghai: blogs/20231008-kcs.md
-          - Call for K8s Contributor Summit in Shanghai: blogs/230911-kubecon-contributor.md
-          - K8s 1.28 Released: blogs/230815-k8s1.28.md
-          - Unlease K8sGPT: blogs/230808-k8sgpt.md
-          - Explore Ray Core (II): blogs/230615-ray.md
-          - Explore Ray Core (I): blogs/230612-ray.md
-          - Istio 1.18 Released: blogs/230609-istio118.md
-          - Federation Middleware FedState: blogs/230605-fedstate.md
-          - API Server Tracing to Beta: blogs/230601-api-server-tracing.md
-          - Seccomp on Edge: blogs/230518-seccom.md
-          - Install K8s (KLTS): blogs/230509-k8s-install.md
-          - Accelerate Socket by Cilium: blogs/230508-cilium.md
-          - K8s 1.27 Pod Startup: blogs/230428-pod-startup.md
-          - Basics of VictoriaMetrics: blogs/230427-victoriametrics.md
-          - Karmada Failover: blogs/230418-karmada-failover.md
-          - CNCF Platform Engineering Whitepaper: blogs/230417-cncf-platform-wp.md
-          - K8s 1.27 Released: blogs/230412-k8s-1.27.md
-          - New Choice of Fixed IP: blogs/230411-spiderpool.md
-          - Step-By-Step Install DCE Community: blogs/230405-step-by-step-dce5.md
-          - Edge-Native App Principle: blogs/230317-edge-app-wp.md
-          - Install DCE Community on Linux: blogs/230315-install-on-linux.md
-          - Install DCE Community on macOS: blogs/230315-install-on-macos.md
-          - Introduction to KWOK: blogs/230301-kwok.md
-          - Open Source Projects in DCE Community: blogs/230214-open-projects.md
-          - DaoCloud and K8s: blogs/230214-daocloud_k8s.md
-          - DCE 5.0 Dev Quotations: blogs/230201-peter.md
-          - 2023 Cloud Native Forecast: blogs/230201-forecast.md
-          - Leverage Your Idle Computing Power: blogs/230110-res-usage.md
-      - 2022:
-          - K8s 1.26 Released: blogs/221209-k8s-1.26.md
-          - DaoCloud is a KCSP: blogs/221116-kcsp.md
-          - What is Container Management: blogs/221026-kpanda.md
-          - What is Resource Management: blogs/221018-resource.md
-          - What is Workbench: blogs/220925-amamba.md
-          - What is Multicloud Management: blogs/220808-kairship.md
-          - What is Service Mesh: blogs/220708-mspider.md
-          - DCE 5.0 Dev Background: blogs/221008-dce-bg.md
-  - DaoCloud Ecosystem:
-      - Index: community/index.md
-      - CloudTTY: community/cloudtty.md
-      - Clusterpedia: community/clusterpedia.md
-      - DataTunerX: community/dtx.md
-      - EgressGateway: community/egress-gw.md
-      - Fast: community/fast.md
-      - FedState: community/fedstate.md
-      - Ferry: community/ferry.md
-      - HAMi: community/hami.md
-      - HwameiStor: community/hwameistor.md
-      - KasmCloud: community/kasmcloud.md
-      - Kdoctor: community/kdoctor.md
-      - KLTS: community/klts.md
-      - kube-node-tuning: community/kube-node-tuning.md
-      - Kubean: community/kubean.md
-      - KWOK: community/kwok.md
-      - MirageDebug: community/miragedebug.md
-      - Merbridge: community/merbridge.md
-      - Piraeus: community/piraeus.md
-      - Spiderpool: community/spiderpool.md
-      - DaoCloud Icon Library: community/icons/index.md
-  - Cloud Native Institute:
-      - Cloud Native News:
-          - Cloud Native News 2024: native/news/news-2024.md
-          - Cloud Native News 2023: native/news/news-2023.md
-          - Cloud Native News 2022: native/news/news-2022.md
-      - Industry Insight:
-          - Business Products: native/commerce.md
-          - Open Source Projects: native/open.md
-      - Knowledge:
-          - Knowledge Sharing: native/knowledge.md
-  - Free Trial:
-      - Free Trial: trial/index.md
+  - End User Manual:
+      - User Registration: dce/license0.md
+      - Global Management:
+          - Personal Center:
+              - Security Settings: ghippo/user-guide/personal-center/security-setting.md
+              - Access Keys: ghippo/user-guide/personal-center/accesstoken.md
+              - SSH Public Keys: ghippo/user-guide/personal-center/ssh-key.md
+              - Language Settings: ghippo/user-guide/personal-center/language.md
+      - Virtual Machines:
+          - Quick Start:
+              - Create Virtual Machine: virtnest/quickstart/index.md
+              - Update Virtual Machine: virtnest/quickstart/update.md
+              - Connect to Virtual Machine: virtnest/quickstart/access.md
+              - Access Virtual Machine via NodePort: virtnest/quickstart/nodeport.md
+              - Virtual Machine Details: virtnest/quickstart/detail.md
+          - Virtual Machine Management:
+              - Create Key: virtnest/vm/create-secret.md
+              - Clone Virtual Machine: virtnest/vm/clone.md
+              - Snapshot Management: virtnest/vm/snapshot.md
+              - Scheduled Snapshots: virtnest/vm/scheduled-snapshot.md
+              - Live Migration: virtnest/vm/live-migration.md
+              - Cold Migration within Cluster: virtnest/vm/migratiom.md
+              - Cross-Cluster Migration: virtnest/vm/cross-cluster-migrate.md
+              - Virtual Machine Monitoring: virtnest/vm/monitor.md
+              - Virtual Machine Network: virtnest/vm/vm-network.md
+              - Virtual Machine Storage: virtnest/vm/vm-sc.md
+              - Virtual Machine Drifting: virtnest/vm/auto-migrate.md
+              - Virtual Machine Health Check: virtnest/vm/health-check.md      
+      - Container Management:
+          - Workloads:
+              - Create Deployment: kpanda/user-guide/workloads/create-deployment.md
+              - Create StatefulSet: kpanda/user-guide/workloads/create-statefulset.md
+              - Create DaemonSet: kpanda/user-guide/workloads/create-daemonset.md
+              - Create CronJob: kpanda/user-guide/workloads/create-cronjob.md
+              - Create Job: kpanda/user-guide/workloads/create-job.md
+              - Workload Parameter Configuration:
+                  - Workload Status: kpanda/user-guide/workloads/pod-config/workload-status.md
+                  - Job Parameters: kpanda/user-guide/workloads/pod-config/job-parameters.md
+                  - Lifecycle: kpanda/user-guide/workloads/pod-config/lifecycle.md
+                  - Environment Variables: kpanda/user-guide/workloads/pod-config/env-variables.md
+                  - Health Check: kpanda/user-guide/workloads/pod-config/health-check.md
+                  - Cluster Scheduling: kpanda/user-guide/workloads/pod-config/scheduling-policy.md      
+          - Autoscaling:
+              - Install Metrics Server Plugin: kpanda/user-guide/scale/install-metrics-server.md
+              - Install Kubernetes CronHPA Controller: kpanda/user-guide/scale/install-cronhpa.md
+              - Install VPA Plugin: kpanda/user-guide/scale/install-vpa.md
+              - Create HPA Based on Built-in Metrics: kpanda/user-guide/scale/create-hpa.md
+              - Create HPA Based on Custom Metrics: kpanda/user-guide/scale/custom-hpa.md
+              - Create VPA Policy: kpanda/user-guide/scale/create-vpa.md
+              - HPA and CronHPA Compatibility Rules: kpanda/user-guide/scale/hpa-cronhpa-compatibility-rules.md
+              - Other Solutions:
+                  - Introduction to Knative: kpanda/user-guide/scale/knative/knative.md
+                  - Install Knative: kpanda/user-guide/scale/knative/install.md
+                  - Knative Scenarios: kpanda/user-guide/scale/knative/scene.md
+                  - Knative Practice: kpanda/user-guide/scale/knative/playground.md
+          - Helm Apps:
+              - Helm Template: kpanda/user-guide/helm/README.md
+              - Upload Helm Template: kpanda/user-guide/helm/upload-helm.md
+              - Manage Helm Apps: kpanda/user-guide/helm/helm-app.md
+              - Manage Helm Repository: kpanda/user-guide/helm/helm-repo.md
+              - Multi-Architecture Helm Apps: kpanda/user-guide/helm/multi-archi-helm.md
+              - Custom Helm App Import Addon: kpanda/user-guide/helm/Import-addon.md
+          - Operator Applications: kpanda/user-guide/olm/import-miniooperator.md
+          - Container Networking:
+              - Create Services: kpanda/user-guide/network/create-services.md
+              - Create Ingress: kpanda/user-guide/network/create-ingress.md
+              - Network Policies: kpanda/user-guide/network/network-policy.md
+          - Container Storage:
+              - Persistent Volume Claims: kpanda/user-guide/storage/pvc.md
+              - Persistent Volumes: kpanda/user-guide/storage/pv.md
+              - StorageClasses: kpanda/user-guide/storage/sc.md
+              - Shared StorageClasses: kpanda/user-guide/storage/sc-share.md
+      - AI Lab:
+          - Developer:
+              - Introduction: baize/developer/index.md
+              - Quick Start: baize/developer/quick-start.md
+              - Notebooks:
+                  - Create Notebook: baize/developer/notebooks/create.md
+                  - Start and Pause Notebook: baize/developer/notebooks/start-pause.md
+                  - Notebook Workloads: baize/developer/notebooks/view.md
+                  - Delete Notebook: baize/developer/notebooks/delete.md
+                  - SSH Access to Notebook: baize/developer/notebooks/notebook-with-ssh.md
+                  - Use Environments in Notebooks: baize/developer/notebooks/notebook-with-envs.md
+                  - Baizectl Command-Line Tool: baize/developer/notebooks/baizectl.md
+                  - Baizess Source Change Tool: baize/developer/notebooks/baizess.md
+                  - Auto Shutdown for Idle Notebooks: baize/developer/notebooks/notebook-auto-close.md
+              - Job Center:
+                  - Create Job: baize/developer/jobs/create.md
+                  - Create Pytorch Job: baize/developer/jobs/pytorch.md
+                  - Create Tensorflow Job: baize/developer/jobs/tensorflow.md
+                  - Create MPI Job: baize/developer/jobs/mpi.md
+                  - Create MXNet Job: baize/developer/jobs/mxnet.md
+                  - Create PaddlePaddle Job: baize/developer/jobs/paddle.md
+                  - Delete Job: baize/developer/jobs/delete.md
+                  - View Job Load: baize/developer/jobs/view.md
+                  - Job Analysis: baize/developer/jobs/tensorboard.md
+              - Data Management:
+                  - Datasets: baize/developer/dataset/create-use-delete.md
+                  - Environment: baize/developer/dataset/environments.md
+              - Inference Services:
+                  - Model Support Status: baize/developer/inference/models.md
+                  - Create Triton Inference Service: baize/developer/inference/triton-inference.md
+                  - Create vLLM Inference Service: baize/developer/inference/vllm-inference.md
+          - Operator:
+              - Introduction: baize/oam/index.md
+              - Resource Management: baize/oam/resource.md
+              - Queue Management:
+                  - Create Queue: baize/oam/queue/create.md
+                  - Delete Queue: baize/oam/queue/delete.md
+  - Administrator Manual:
+      - User Registration: dce/license0.md
+      - Global Management:
+          - Access Control:
+              - What is Access Control: ghippo/user-guide/access-control/iam.md
+              - Users: ghippo/user-guide/access-control/user.md
+              - Groups: ghippo/user-guide/access-control/group.md
+              - Roles:
+                  - ghippo/user-guide/access-control/role.md
+                  - System Roles: ghippo/user-guide/access-control/global.md
+                  - Custom Roles: ghippo/user-guide/access-control/custom-role.md
+              - Identity Providers:
+                  - ghippo/user-guide/access-control/idprovider.md
+                  - LDAP: ghippo/user-guide/access-control/ldap.md
+                  - OIDC: ghippo/user-guide/access-control/oidc.md
+                  - OAuth 2.0 for WeWork: ghippo/user-guide/access-control/oauth2.0.md
+              - Access Management:
+                  - ghippo/user-guide/access-control/docking.md
+                  - Webhook: ghippo/user-guide/access-control/webhook.md
+          - Workspaces and Folders:
+              - ghippo/user-guide/workspace/ws-folder.md
+              - Create and Delete Workspaces: ghippo/user-guide/workspace/workspace.md
+              - Workspace Permissions: ghippo/user-guide/workspace/ws-permission.md
+              - Create and Delete Folders: ghippo/user-guide/workspace/folders.md
+              - Folder Permissions: ghippo/user-guide/workspace/folder-permission.md
+              - Resource Quotas: ghippo/user-guide/workspace/quota.md
+              - Differences between Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
+              - Resource Binding Permissions: ghippo/user-guide/workspace/wsbind-permission.md
+          - Audit Logs:
+              - Collect K8s Audit Logs: ghippo/user-guide/audit/open-audit.md
+              - Generate K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
+              - Download and Export Audit Logs: ghippo/user-guide/audit/audit-log.md
+              - Get Source IP of Audit Logs: ghippo/user-guide/audit/source-ip.md
+              - Audit Item Summary:
+                  - Container Management Audit Items: ghippo/user-guide/audit/gproduct-audit/kpanda.md
+                  - Virtual Machine Audit Items: ghippo/user-guide/audit/gproduct-audit/virtnest.md
+                  - Global Management Audit Items: ghippo/user-guide/audit/gproduct-audit/ghippo.md
+          - Operations Management:
+              - ghippo/user-guide/report-billing/index.md
+              - Report Management: ghippo/user-guide/report-billing/report.md
+              - Offline Upgrade: ghippo/user-guide/report-billing/gmagpie-offline-install.md
+              - Billing and Accounting: ghippo/user-guide/report-billing/billing.md
+          - Platform Settings:
+              - Security Policies: ghippo/user-guide/platform-setting/security.md
+              - Email Server Settings: ghippo/user-guide/platform-setting/mail-server.md
+              - Custom Appearance: ghippo/user-guide/platform-setting/appearance.md
+              - About Platform: ghippo/user-guide/platform-setting/about.md
+              - Reset Password: ghippo/user-guide/password.md
+          - Personal Center:
+              - Security Settings: ghippo/user-guide/personal-center/security-setting.md
+              - Access Keys: ghippo/user-guide/personal-center/accesstoken.md
+              - SSH Public Keys: ghippo/user-guide/personal-center/ssh-key.md
+              - Language Settings: ghippo/user-guide/personal-center/language.md
+      - Virtual Machines:
+          - Quick Start:
+              - Create Virtual Machine: virtnest/quickstart/index.md
+              - Update Virtual Machine: virtnest/quickstart/update.md
+              - Connect to Virtual Machine: virtnest/quickstart/access.md
+              - Access Virtual Machine via NodePort: virtnest/quickstart/nodeport.md
+              - Virtual Machine Details: virtnest/quickstart/detail.md
+          - Virtual Machine Management:
+              - Create Key: virtnest/vm/create-secret.md
+              - Clone Virtual Machine: virtnest/vm/clone.md
+              - Snapshot Management: virtnest/vm/snapshot.md
+              - Scheduled Snapshots: virtnest/vm/scheduled-snapshot.md
+              - Live Migration: virtnest/vm/live-migration.md
+              - Cold Migration within Cluster: virtnest/vm/migratiom.md
+              - Cross-Cluster Migration: virtnest/vm/cross-cluster-migrate.md
+              - Virtual Machine Monitoring: virtnest/vm/monitor.md
+              - Virtual Machine Network: virtnest/vm/vm-network.md
+              - Virtual Machine Storage: virtnest/vm/vm-sc.md
+              - Virtual Machine Drifting: virtnest/vm/auto-migrate.md
+              - Virtual Machine Health Check: virtnest/vm/health-check.md
+          - Virtual Machine GPU:
+              - Virtual Machine GPU: virtnest/gpu/vm-gpu.md
+              - Virtual Machine vGPU: virtnest/gpu/vm-vgpu.md
+          - Virtual Machine Templates:
+              - Create Virtual Machine via Template: virtnest/template/index.md
+              - Virtual Machine Templates: virtnest/template/tep.md
+          - Virtual Machine Images: virtnest/vm-image/index.md
+      - Container Management:
+          - Cluster Management:
+              - Create Cluster: kpanda/user-guide/clusters/create-cluster.md
+              - Integrate Cluster: kpanda/user-guide/clusters/integrate-cluster.md
+              - Access Cluster: kpanda/user-guide/clusters/access-cluster.md
+              - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
+              - Uninstall/Detach Cluster: kpanda/user-guide/clusters/delete-cluster.md
+              - Cluster Roles: kpanda/user-guide/clusters/cluster-role.md
+              - Cluster Status: kpanda/user-guide/clusters/cluster-status.md
+              - How to Choose Runtime: kpanda/user-guide/clusters/runtime.md
+              - Cluster Version Support Range: kpanda/user-guide/clusters/cluster-version.md
+              - Integrate Rancher Cluster: kpanda/user-guide/clusters/integrate-rancher-cluster.md
+              - Deploy Second Scheduler in Cluster: kpanda/user-guide/clusters/cluster-scheduler-plugin.md
+              - Cluster Certificate Updates: kpanda/user-guide/clusters/k8s-cert.md
+          - Namespaces:
+              - Create Namespace: kpanda/user-guide/namespaces/createns.md
+              - Namespace Exclusive Nodes: kpanda/user-guide/namespaces/exclusive.md
+              - Pod Security Policies: kpanda/user-guide/namespaces/podsecurity.md
+          - Node Management:
+              - Node Availability Check: kpanda/user-guide/nodes/node-check.md
+              - Node Authentication: kpanda/user-guide/nodes/node-authentication.md
+              - Node Expansion: kpanda/user-guide/nodes/add-node.md
+              - Node Reduction: kpanda/user-guide/nodes/delete-node.md
+              - Taint Management: kpanda/user-guide/nodes/taints.md
+              - Node Scheduling: kpanda/user-guide/nodes/schedule.md
+              - Node Details: kpanda/user-guide/nodes/node-details.md
+              - Labels and Annotations: kpanda/user-guide/nodes/labels-annotations.md
+          - Workloads:
+              - Create Deployment: kpanda/user-guide/workloads/create-deployment.md
+              - Create StatefulSet: kpanda/user-guide/workloads/create-statefulset.md
+              - Create DaemonSet: kpanda/user-guide/workloads/create-daemonset.md
+              - Create CronJob: kpanda/user-guide/workloads/create-cronjob.md
+              - Create Job: kpanda/user-guide/workloads/create-job.md
+              - Workload Parameter Configuration:
+                  - Workload Status: kpanda/user-guide/workloads/pod-config/workload-status.md
+                  - Job Parameters: kpanda/user-guide/workloads/pod-config/job-parameters.md
+                  - Lifecycle: kpanda/user-guide/workloads/pod-config/lifecycle.md
+                  - Environment Variables: kpanda/user-guide/workloads/pod-config/env-variables.md
+                  - Health Check: kpanda/user-guide/workloads/pod-config/health-check.md
+                  - Cluster Scheduling: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
+          - Autoscaling:
+              - Install Metrics Server Plugin: kpanda/user-guide/scale/install-metrics-server.md
+              - Install Kubernetes CronHPA Controller: kpanda/user-guide/scale/install-cronhpa.md
+              - Install VPA Plugin: kpanda/user-guide/scale/install-vpa.md
+              - Create HPA Based on Built-in Metrics: kpanda/user-guide/scale/create-hpa.md
+              - Create HPA Based on Custom Metrics: kpanda/user-guide/scale/custom-hpa.md
+              - Create VPA Policy: kpanda/user-guide/scale/create-vpa.md
+              - HPA and CronHPA Compatibility Rules: kpanda/user-guide/scale/hpa-cronhpa-compatibility-rules.md
+              - Other Solutions:
+                  - Introduction to Knative: kpanda/user-guide/scale/knative/knative.md
+                  - Install Knative: kpanda/user-guide/scale/knative/install.md
+                  - Knative Scenarios: kpanda/user-guide/scale/knative/scene.md
+                  - Knative Practice: kpanda/user-guide/scale/knative/playground.md
+          - Container Networking:
+              - Create Services: kpanda/user-guide/network/create-services.md
+              - Create Ingress: kpanda/user-guide/network/create-ingress.md
+              - Network Policies: kpanda/user-guide/network/network-policy.md
+          - Container Storage:
+              - Persistent Volume Claims: kpanda/user-guide/storage/pvc.md
+              - Persistent Volumes: kpanda/user-guide/storage/pv.md
+              - StorageClasses: kpanda/user-guide/storage/sc.md
+              - Shared StorageClasses: kpanda/user-guide/storage/sc-share.md
+          - ConfigMaps and Secrets:
+              - Create ConfigMap: kpanda/user-guide/configmaps-secrets/create-configmap.md
+              - Use ConfigMap: kpanda/user-guide/configmaps-secrets/use-configmap.md
+              - Create Secret: kpanda/user-guide/configmaps-secrets/create-secret.md
+              - Use Secret: kpanda/user-guide/configmaps-secrets/use-secret.md
+              - ConfigMap/Secret Hot Loading: kpanda/user-guide/configmaps-secrets/configmap-hot-loading.md
+          - Cluster Operations:
+              - Recent Operations: kpanda/user-guide/clusterops/latest-operations.md
+              - Cluster Upgrade: kpanda/user-guide/clusters/upgrade-cluster.md
+              - Cluster Settings: kpanda/user-guide/clusterops/cluster-settings.md
+              - Dynamic Resource Overselling in Cluster: kpanda/user-guide/clusterops/cluster-oversold.md
+          - Cluster Inspection:
+              - Introduction: kpanda/user-guide/inspect/index.md
+              - Create Inspection Configuration: kpanda/user-guide/inspect/config.md
+              - Execute Inspection: kpanda/user-guide/inspect/inspect.md
+              - View Inspection Report: kpanda/user-guide/inspect/report.md
+              - Offline Upgrade Cluster Inspection: kpanda/user-guide/inspect/offline-upgrade.md
+          - Security Management:
+              - Security Scan Types: kpanda/user-guide/security/index.md
+              - Compliance Scanning:
+                  - Scan Configuration: kpanda/user-guide/security/cis/config.md
+                  - Scan Policy: kpanda/user-guide/security/cis/policy.md
+                  - Scan Report: kpanda/user-guide/security/cis/report.md
+              - Permission Scanning: kpanda/user-guide/security/audit.md
+              - Vulnerability Scanning: kpanda/user-guide/security/hunter.md
+              - Offline Upgrade Security Management: kpanda/user-guide/security/offline-upgrade-dowl.md
+              - Integrate Falco Security Tool:
+                  - Introduction: security/falco.md
+                  - Installation: security/falco-install.md
+                  - Falco Exporter: security/falco-exporter.md
+          - Permission Management:
+              - Introduction to Permission System: kpanda/user-guide/permissions/permission-brief.md
+              - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
+              - Add Built-in Permission Points for Container Management: kpanda/user-guide/permissions/custom-kpanda-role.md
+          - GPU Management:
+              - Overview of GPU Management: kpanda/user-guide/gpu/index.md
+              - GPU Support Matrix: kpanda/user-guide/gpu/gpu_matrix.md
+              - NVIDIA GPU Management:
+                  - NVIDIA GPU Mode Description: kpanda/user-guide/gpu/nvidia/index.md
+                  - GPU Operator:
+                      - Offline Install GPU Operator: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
+                      - Upload Red Hat GPU Operator Offline Image: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
+                      - Build Red Hat 8.4 Offline Yum Source: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
+                      - Build Red Hat 7.9 Offline Yum Source: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
+                      - Build Red Hat 9.2 Offline Yum Source: kpanda/user-guide/gpu/nvidia/rhel9.2_offline_install_driver.md
+                      - Offline Install GPU Driver on Ubuntu 22.04: kpanda/user-guide/gpu/nvidia/ubuntu22.04_offline_install_driver.md
+                  - NVIDIA Full GPU Mode: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
+                  - NVIDIA vGPU Mode:
+                      - Install vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
+                      - Use NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
+                      - Build vGPU Memory Overcommit Image: kpanda/user-guide/gpu/nvidia/vgpu/hami.md
+                  - NVIDIA MIG Mode:
+                      - Overview of NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/index.md
+                      - Enable MIG Functionality: kpanda/user-guide/gpu/nvidia/mig/create_mig.md
+                      - Use NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
+                      - MIG Related Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
+                  - GPU Quota Management: kpanda/user-guide/gpu/vgpu_quota.md
+                  - GPU Dynamic Regulation: kpanda/user-guide/gpu/dynamic-regulation.md
+                  - GPU Monitoring and Alerts:
+                      - GPU Monitoring Metrics: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-metrics.md
+                      - GPU Alert Rules: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-alarm.md
+                  - Using Volcano:
+                      - Install Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
+                      - Use Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
+                      - Use Volcano Priority Preemption Strategy: kpanda/user-guide/gpu/volcano/volcano_priority.md
+                      - Use Volcano Binpack Strategy: kpanda/user-guide/gpu/volcano/volcano_binpack.md
+                      - Use Volcano DRF Strategy: kpanda/user-guide/gpu/volcano/drf.md
+                      - Use Volcano NUMA Affinity Scheduling: kpanda/user-guide/gpu/volcano/numa.md
+                  - GPU Scheduling Configuration: kpanda/user-guide/gpu/gpu_scheduler_config.md
+              - Ascend NPUs:
+                  - Install Ascend NPU Components: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
+                  - Use Ascend NPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
+                  - Enable Ascend VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
+              - Iluvatar GPUs: kpanda/user-guide/gpu/Iluvatar_usage.md
+              - Muxi GPUs: kpanda/user-guide/gpu/metax/usemetax.md
+              - Cambricon GPUs: kpanda/user-guide/gpu/metax/use-mlu.md
+              - GPU FAQs: kpanda/user-guide/gpu/FAQ.md
+      - AI Lab:
+          - Developer:
+              - Introduction: baize/developer/index.md
+              - Quick Start: baize/developer/quick-start.md
+              - Notebooks:
+                  - Create Notebook: baize/developer/notebooks/create.md
+                  - Start and Pause Notebook: baize/developer/notebooks/start-pause.md
+                  - Notebook Workloads: baize/developer/notebooks/view.md
+                  - Delete Notebook: baize/developer/notebooks/delete.md
+                  - SSH Access to Notebook: baize/developer/notebooks/notebook-with-ssh.md
+                  - Use Environments in Notebooks: baize/developer/notebooks/notebook-with-envs.md
+                  - Baizectl Command-Line Tool: baize/developer/notebooks/baizectl.md
+                  - Baizess Source Change Tool: baize/developer/notebooks/baizess.md
+                  - Auto Shutdown for Idle Notebooks: baize/developer/notebooks/notebook-auto-close.md
+              - Job Center:
+                  - Create Job: baize/developer/jobs/create.md
+                  - Create Pytorch Job: baize/developer/jobs/pytorch.md
+                  - Create Tensorflow Job: baize/developer/jobs/tensorflow.md
+                  - Create MPI Job: baize/developer/jobs/mpi.md
+                  - Create MXNet Job: baize/developer/jobs/mxnet.md
+                  - Create PaddlePaddle Job: baize/developer/jobs/paddle.md
+                  - Delete Job: baize/developer/jobs/delete.md
+                  - View Job Load: baize/developer/jobs/view.md
+                  - Job Analysis: baize/developer/jobs/tensorboard.md
+              - Data Management:
+                  - Dataset List: baize/developer/dataset/create-use-delete.md
+                  - Environment Management: baize/developer/dataset/environments.md
+              - Inference Services:
+                  - Model Support Status: baize/developer/inference/models.md
+                  - Create Triton Inference Service: baize/developer/inference/triton-inference.md
+                  - Create vLLM Inference Service: baize/developer/inference/vllm-inference.md
+          - Operator:
+              - Introduction: baize/oam/index.md
+              - Resource Management: baize/oam/resource.md
+              - Queue Management:
+                  - Create Queue: baize/oam/queue/create.md
+                  - Delete Queue: baize/oam/queue/delete.md
