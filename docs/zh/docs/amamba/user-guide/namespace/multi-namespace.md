@@ -12,7 +12,7 @@
 
     ![namespace-listpng](../../images/mutinamespace.png)
 
-2. 绑定资源操作查看文档[绑定/解绑工作空间](../../../kairship/workspace.md/#绑定解绑工作空间)。
+2. 绑定资源操作查看文档[绑定/解绑工作空间](../../../kairship/workspace.md#_3)。
 
 ## 如何使用多云命名空间
 
