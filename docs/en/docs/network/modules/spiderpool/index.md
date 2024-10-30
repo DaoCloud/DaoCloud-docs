@@ -1,7 +1,16 @@
 ---
+### Spiderpool Version Support
+The Multus plugin now supports multiple versions of Spiderpool, allowing for enhanced network configuration based on the installed version.
+
 MTPE: Jeanine-tw
+### Integration Scenarios
+Spiderpool can be integrated with both Macvlan Standalone and Macvlan Overlay configurations, providing flexibility in network setup.
+
 Revised: Jeanine-tw
 Pics: NA
+### Use Cases
+Select the appropriate Spiderpool version and configuration to optimize network performance and feature utilization.
+
 Date: 2023-01-04
 ---
 
