@@ -13,16 +13,12 @@
 
 ### v0.16.1
 
-#### 优化
-
 - **修复** `更新 multus 接口` cniType 为 IPvlan 时传入的 bond 不为空，且被更新的 ipvlan 的 Bond.Name 为 "" 时将 panic。
 - **修复** `更新 spiderClaimParameter 接口`更新失败, 却提示创建失败，提示信息有误。
 
 ## 2024-09-30
 
 ### v0.16.0
-
-#### 优化
 
 - **修复** 前端使用默认池功能缺少字段选择，后端 API 新增对应的默认池字段支持。
 - **修复** 修复拼写错误问题, CreatedTime 应为 createdTime。
