@@ -9,6 +9,26 @@
 *[SR-IOV]: Single Root IO Virtualization 的缩写，一种网卡虚拟化的技术
 *[RDMA]: Remote Direct Memory Access 的缩写，即远程直接内存访问，这是一个支撑 LLM 大模型和 GPT 的热门技术
 
+## 2024-10-29
+
+### v0.16.1
+
+#### 优化
+
+- **修复** `更新 multus 接口` cniType 为 IPvlan 时传入的 bond 不为空，且被更新的 ipvlan 的 Bond.Name 为 "" 时将 panic。
+- **修复** `更新 spiderClaimParameter 接口`更新失败, 却提示创建失败，提示信息有误。
+
+## 2024-09-30
+
+### v0.16.0
+
+#### 优化
+
+- **修复** 前端使用默认池功能缺少字段选择，后端 API 新增对应的默认池字段支持。
+- **修复** 修复拼写错误问题, CreatedTime 应为 createdTime。
+- **修复** 修复更新 ovs 配置不起作用。
+- **修复** 创建将 overlay CNI 类型作为 underlay multus CR 的名字, 该 CR 将会错误识别为 overlay CNI。
+
 ## 2024-08-30
 
 ### v0.15.1
