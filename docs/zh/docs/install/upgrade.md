@@ -18,23 +18,22 @@ DCE 5.0 组件的升级包含升级 DCE 5.0 产品功能模块、升级 DCE 5.0 
 
 ## 离线升级操作步骤
 
-本次操作步骤演示如何从 v0.8.0 升级到 v0.9.0。目前升级到从低版本升级到 v0.9.0 时，
-需要同时升级 DCE 5.0 产品功能模块和 DCE 5.0 基础设施模块，从而使用到 `istio-gateway` 组件的高可用功能。
+本次操作步骤演示如何从 v0.20.0 升级到 v0.21.0。目
 
 ### 第 1 步：下载 DCE 5.0 离线包
 
 可以在[下载中心](../download/index.md)下载最新版本。
-本文以 v0.9.0 为例。
+本文以 v0.21.0 为例。
 
 | CPU 架构 | 版本   | 下载地址 |
 | :------- | :---- | :----- |
-| AMD64    | v0.9.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-amd64.tar |
-| ARM64    | v0.9.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-arm64.tar |
+| AMD64    | v0.21.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-amd64.tar |
+| ARM64    | v0.21.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-arm64.tar |
 
 下载完毕后解压离线包，以 AMD64 架构离线包为例：
 
 ```bash
-tar -xvf offline-v0.9.0-amd64.tar
+tar -xvf offline-v0.21.0-amd64.tar
 ```
 
 ### 第 2 步：配置 clusterConfig.yaml
