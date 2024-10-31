@@ -27,6 +27,9 @@ Legacy versions that are no longer maintained by the K8s community but will cont
 [![1.25](./images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
 
 DCE 5.0 website is created with MkDocs. All pages are written in markdown.
+
+## Kernel Tuning Feature
+Learn about the [One-Click Kernel Tuning](docs/en/docs/community/kube-node-tuning.md) feature to optimize your cluster performance effortlessly.
 We use GitOps to control workflow and versions.
 
 ## Open a PR
