@@ -74,7 +74,7 @@
 
 !!! note
 
-    CPU 和内存的热加载配置要求：virtnest 的版本不低于 v0.10.0，并且 virtnest-agent 版本不低于 v0.7.0；支持实时迁移（确保 PVC 访问模式为 ReadWriteMany）。
+    CPU 和内存的热加载配置要求：virtnest 的版本不低于 v0.10.0，并且 virtnest-agent 版本不低于 v0.7.0；支持实时迁移（确保 PVC 访问模式为 ReadWriteMany）；带有 GPU 卡的虚拟机暂时无法实现 CPU 和内存的热加载能力。
 
 1. 资源配置：CPU 建议使用整数，若填写小数则会向上取整。支持 CPU、内存的热加载。
 
