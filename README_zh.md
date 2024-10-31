@@ -28,6 +28,9 @@ K8s 社区不再维护，但 DaoCloud [KLTS](https://klts.io/) 项目组会持�
 
 本文档站采用 MkDocs 编译而成，文档内容通过 Markdown 格式写作，并在 GitHub 上完成版本管理、协作开发等工作。
 
+## 内核调优功能
+了解有关[一键内核调优](docs/en/docs/community/kube-node-tuning.md)功能的信息，以轻松优化集群性能。
+
 ## 提交 PR 修改文档
 
 通过 Pull Request (PR) 的方式提交文档修改、译文或新编内容。
