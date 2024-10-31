@@ -25,19 +25,19 @@
   
     如果您想通过 CloudShell 访问 AWS 集群，须升级 kpanda 版本到 v0.29.x 以上，并手动调整 kpanda-apiserver 服务配置项，具体操作流程如下：
 
-    a. 进入**全局服务集群**，在 **工作负载**-**无状态负载** 列表中，找到 kpanda-apiserver 服务；
+    1. 进入 **全局服务集群** ，在 **工作负载** -> **无状态负载** 列表中，找到 kpanda-apiserver 服务；
 
         ![kpanda-apiserver 服务](../../images/access-cluster-100.png)
 
-    b. 进入负载详情页，点击页面右上角 **┇** 并在下拉列表中点击 **更新**；
+    1. 进入负载详情页，点击页面右上角 **┇** 并在下拉列表中点击 **更新** ；
 
         ![更新 kpanda-apiserver 服务](../../images/access-cluster-101.png)
 
-    c. 进入第二步骤 **容器配置**，找到 **生命周期**-**启动命令** 中的参数 **--feature-gates=** ，将其修改为 **--feature-gates=UseTokenInCloudShell=true**
+    1. 进入向导的第 2 步 **容器配置**，找到 **生命周期** -> **启动命令** 中的参数 **--feature-gates=** ，将其修改为 **--feature-gates=UseTokenInCloudShell=true**
 
         ![修改启动命令参数](../../images/access-cluster-102.png)
 
-    d. 修改完成后，进入 kpanda-apiserver 负载详情页，点击页面右上角 **┇** 并在下拉列表中点击 **重启**；
+    1. 修改完成后，进入 kpanda-apiserver 负载详情页，点击页面右上角 **┇** 并在下拉列表中点击 **重启** ；
 
         ![重启 kpanda-apiserver 服务](../../images/access-cluster-103.png)
     
