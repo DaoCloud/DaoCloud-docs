@@ -9,10 +9,10 @@
 
 ## 前提条件
 
-- 已经[部署 DCE 5.0](https://docs.daocloud.io/install/index.html)容器管理平台，且平台运行正常。
-- 容器管理模块[已接入 Kubernetes 集群](https://docs.daocloud.io/kpanda/user-guide/clusters/integrate-cluster/)或者[已创建 Kubernetes 集群](https://docs.daocloud.io/kpanda/user-guide/clusters/create-cluster/)，且能够访问集群的 UI 界面。
-- 当前集群已安装 [GPU operator](https://docs.daocloud.io/kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator/)
-- 当前集群已安装[ NVIDIA-vGPU](https://docs.daocloud.io/kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon/)，且 NVIDIA-vGPU 在 2.4.0+1 及以上版本
+- 已经[部署 DCE 5.0](../../../../../install/index.md)容器管理平台，且平台运行正常。
+- 容器管理模块[已接入 Kubernetes 集群](../../../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../../../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
+- 当前集群已安装 [GPU operator](../install_nvidia_driver_of_operator.md)
+- 当前集群已安装 [NVIDIA-vGPU](./vgpu_addon.md)，且 NVIDIA-vGPU 在 2.4.0+1 及以上版本
 
 ## 操作步骤
 
@@ -24,7 +24,7 @@
 
     ![config1](../../images/config1.png)
 
-2. 编辑 YAML，填写被过滤的 GPU 卡的 uuid 或者 index 码。过滤后，pod 不会被调度到这些 GPU 卡上。
+1. 编辑 YAML，填写被过滤的 GPU 卡的 uuid 或者 index 码。过滤后，pod 不会被调度到这些 GPU 卡上。
 
     `filterdevices`：设备实例的过滤设备。过滤设备可以是以下值之一：
      
@@ -33,11 +33,11 @@
 
     ![config2](../../images/config2.png)
 
-4. 重启 nvidia-vgpu-hami-device-plugin
+1. 重启 nvidia-vgpu-hami-device-plugin
 
     ![重启device](../../images/device1.png)
 
-5. 部署工作负载并查看调度情况。
+1. 部署工作负载并查看调度情况。
 
     ![节点详情](../../images/node1.png)
 

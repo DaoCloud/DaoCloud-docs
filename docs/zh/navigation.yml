@@ -358,7 +358,7 @@ nav:
                       - 启用昇腾 VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - 天数 GPU 管理: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - 沐曦 GPU 管理: kpanda/user-guide/gpu/metax/usemetax.md
-                  - 寒武纪 GPU 管理: kpanda/user-guide/gpu/use-mlu.md
+                  - 寒武纪 GPU 管理: kpanda/user-guide/gpu/mlu/use-mlu.md
                   - GPU 相关FAQ: kpanda/user-guide/gpu/FAQ.md
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
