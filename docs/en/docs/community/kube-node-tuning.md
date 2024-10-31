@@ -1,3 +1,13 @@
+# Kernel Tuning Guide
+
+## Introduction
+Kernel tuning involves adjusting the operating system kernel parameters to optimize the performance of applications running on a cluster. This feature is particularly beneficial for high-performance applications and large-scale clusters.
+
+## Step-by-Step Instructions
+1. Navigate to the cluster creation page in the container management system.
+2. Enable the "One-Click Kernel Tuning" option in the advanced settings.
+3. Follow the on-screen instructions to complete the cluster setup.
+
 ---
 MTPE: windsonsea
 date: 2024-06-19
