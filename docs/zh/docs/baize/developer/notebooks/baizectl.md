@@ -130,7 +130,7 @@ Examples:
 # Submit a job to run the command "torchrun python train.py"
 baizectl job submit -- torchrun python train.py
 # Submit a job with 2 workers(each pod use 4 gpus) to run the command "torchrun python train.py" and use the image "pytorch/pytorch:1.8.1-cuda11.1-cudnn8-runtime"
-baizectl job submit --image pytorch/pytorch:1.8.1-cuda11.1-cudnn8-runtime --workers 2 --resources nvidia.com/gpu=4 -- torchrun python train.py
+baizectl job submit --image pytorch/pytorch:1.8.1-cuda11.1-cudnn8-runtime --workers 2 --requests-resources nvidia.com/gpu=4 -- torchrun python train.py
 # Submit a tensorflow job to run the command "python train.py"
 baizectl job submit --tensorflow -- python train.py
 
@@ -175,7 +175,8 @@ Flags:
     - --name: 任务名称，如果为空，则会自动生成
     - --image: 镜像名称，必须指定
     - --priority: 任务优先级，支持 高=`baize-high-priority`、中=`baize-medium-priority`、低=`baize-low-priority`
-    - --resources: 任务资源，格式为 `cpu=1 memory=1Gi,nvidia.com/gpu=1`
+    - --requests-resources: requests 的任务资源，格式为 `cpu=1 memory=1Gi,nvidia.com/gpu=1`
+    - --resources: limits 的任务资源，格式为 `cpu=1 memory=1Gi,nvidia.com/gpu=1`
     - --workers: 任务工作节点数，默认为 1，当设置大于 1 时，任务将会分布式运行
     - --queue: 任务队列，需要提前创建队列资源
     - --working-dir: 工作目录，如果在 Notebook 模式下，会默认使用当前文件目录
@@ -195,7 +196,7 @@ Flags:
 baizectl job submit --name demojob-v2 -t PYTORCH \
     --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
     --priority baize-high-priority \
-    --resources cpu=1,memory=1Gi \
+    --requests-resources cpu=1,memory=1Gi \
     --workers 1 \
     --queue default \
     --working-dir /data \
@@ -215,7 +216,7 @@ baizectl job submit --name demojob-v2 -t PYTORCH \
 baizectl job submit --name demojob-v2 -t PYTORCH \
     --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
     --priority baize-high-priority \
-    --resources cpu=1,memory=1Gi \
+    --requests-resources cpu=1,memory=1Gi \
     --workers 2 \   # 多任务副本会自动创建分布式任务
     --shm-size 1024 \
     --queue default \
