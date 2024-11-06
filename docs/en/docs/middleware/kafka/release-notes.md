@@ -9,6 +9,19 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 *[mcamel-kafka]: "mcamel" is the dev name for DaoCloud's middlewares, and "kafka" is the middleware that provides distributed messaging queue services
 
+## 2024-09-30
+
+### v0.19.0
+
+- **Fixed** an issue with permission leakage when querying the Kafka list by selecting a workspace
+- **Fixed** an issue with missing audit logs for certain operations
+
+## 2024-08-31
+
+### v0.20.0
+
+- **Improved** the process so that abnormal clusters cannot be selected when creating instances
+
 ## 2024-05-31
 
 ### v0.15.0
@@ -38,15 +51,11 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.12.0
 
-#### Improvements
-
 - **Improved** Added display of Kafka version in global management
 
 ## 2023-12-31
 
 ### v0.11.0
-
-#### Improvements
 
 - **Improved** support for Chinese language in the monitoring dashboard
 - **Improved** returning multiple NodePorts for Kafka when accessed in NodePort mode
@@ -57,16 +66,12 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.10.0
 
-#### Improvements
-
 - **Added** support for recording operation audit logs
 - **Improved** prompt when instance list information is not obtained
 
 ## 2023-10-31
 
 ### v0.9.0
-
-#### Improvements
 
 - **Added** offline upgrade functionality
 - **Added** restart functionality for instances
@@ -76,12 +81,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.8.0
 
-#### New features
-
 - **Added** whitelist access control
-
-#### Improvements
-
 - **Improved** syntax compatibility for KindBase
 - **Improved** page display during operator creation process
 
@@ -89,21 +89,14 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.7.3
 
-#### New features
-
 - **Added** access restrictions for UI interface
 
 ## 2023-06-30
 
 ### v0.7.0
 
-#### New features
-
 - **Added** integration with the global management audit log module
 - **Added** support for __LoadBalancer__ service type
-
-#### Improvements
-
 - **Improved** interfering elements and added time range selection to monitoring charts
 - **Improved** closed-loop installation of __ServiceMonitor__ 
 
@@ -111,26 +104,16 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.5.1
 
-#### New features
-
 - **Added** __mcamel-kafka__ details page displays related events
 - **Added** __mcamel-kafka__ supports custom roles
-
-#### Improvements
-
 - **Improved** __mcamel-kafka__ scheduling strategy adds a sliding button
 
 ## 2023-03-28
 
 ### v0.4.0
 
-#### New features
-
 - **Added** __mcamel-kafka__ supports middleware traces adaptation
 - **Added** Install __mcamel-kafka__ to enable traces according to parameter configuration
-
-#### Improvements
-
 - **Improved** __mcamel-kafka__ optimizes Kafka's default configuration.
 - **Upgraded** golang.org/x/net to v0.7.0
 - **Upgraded** GHippo SDK to v0.14.0
@@ -162,13 +145,8 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.2.0
 
-#### New features
-
 - **Added** __mcamel-kafka__ NodePort port conflict early detection
 - **Added** __mcamel-kafka__ node affinity configuration
-
-#### Improvements
-
 - **Improved** __mcamel-kafka__ manager removes the probe to prevent kafka from being unable to open the manager when it is not ready
 - **Improved** __mcamel-kafka__ zooEntrance repackage mirror address to 1.0.0
 
@@ -176,22 +154,18 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.1.6
 
-#### New features
-
-- **Improved** Improve and optimize the copy function
+- **Improved** the copy function
 - **Improved** instance details - access settings, remove cluster IPv4
 - **Improved** Middleware password verification difficulty adjustment
 - **Added** Docking alert capability
 - **Added** the feature of judging whether sc supports capacity expansion and prompting in advance
-- **Improved** Optimize the prompt logic of installation environment check & adjust its style
+- **Improved** the prompt logic of installation environment check & adjust its style
 - **Improved** middleware style walkthrough optimization
 - **Fixed** The offline image has numbers and capital letters that cannot be scanned
 
 ## 2022-11-08
 
 ### v0.1.4
-
-#### New features
 
 - **Fixed** The correct field cannot be verified when updating, such as managerPass
 - **Improved** Password validation adjusted to MCamel low password strength
@@ -207,8 +181,6 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.1.2
 
-#### New features
-
 - **Added** Sync Pod status to instance details page
 - **Improved** workspace interface logic adjustment
 - **Improved** Style adjustments that do not conform to design specifications
@@ -219,11 +191,9 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ### v0.1.1
 
-#### New features
-
-- **Added** supports kafka list query, status query, creation, deletion and modification
+- **Added** support kafka list query, status query, creation, deletion and modification
 - **Added** Support kafka-manager to manage kafka
 - **Added** Support kafka metric monitoring, check the monitoring chart
 - **Added** support for ghippo permission linkage
 - **Added** __mcamel-elasticsearch__ interface to get user list
-- **Improved** Update the release note script and run the release-process specification
+- **Improved** the release note script and run the release-process specification

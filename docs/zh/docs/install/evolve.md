@@ -7,15 +7,15 @@ DCE 5.0 支持多种版本，除社区版以外的其他版本均为商业版，
 ## 前提条件
 
 - 您需要有一个 DCE 5.0 的集群环境，参阅[离线化部署商业版](commercial/start-install.md)
-- 请确保您的火种机器还存活，并且当前环境对应的离线包还在，否则需要重新下载。
+- 请确保您的火种机器还存活，并且当前环境对应的离线包还在，否则需要重新下载
 
 ## 操作步骤
 
-### 第 1 步：配置 manifest.yaml 文件
+### 第 1 步：配置 manifest.yaml
 
 将 manifest.yaml 文件中所有 `enable: false` 改为 `enable: true`。
 
-```yaml
+```yaml title="manifest.yaml"
 skoala:
    enable: false
    helmVersion: 0.26.1
@@ -61,7 +61,7 @@ skoala:
 
 ### 第 2 步：执行命令
 
-执行升级命令
+执行升级命令：
 
 ```bash
 ./offline/dce5-installer cluster-create -c ./sample/clusterConfig.yaml -m ./sample/manifest.yaml -j 11,12
@@ -73,6 +73,6 @@ skoala:
 
     -j 11,12 是目前执行标准版升级到白金版的必须参数。
 
-### 第 3 步：安装成功提示
+### 第 3 步：升级成功提示
 
 ![upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/commercial/images/succeed01.png)

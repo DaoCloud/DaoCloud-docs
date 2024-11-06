@@ -70,7 +70,7 @@ After successfully verifying the offline package,
     tar -zxvf offline-v0.13.0-arm64.tar
     ```
 
-- For installation instructions, please refer to the [Commercial Edition Installation Process](../../install/commercial/start-install.md).
+- For installation instructions, refer to the [DCE 5.0 Enterprise Installation Process](../../install/commercial/start-install.md).
 - After successful installation, please contact us for authorization: email info@daocloud.io or call 400 002 6898.
 
 ## Modules
@@ -81,20 +81,20 @@ DCE 5.0 Enterprise includes the following modules that can be used on-demand to 
 | ------- | ----------- | -------- |
 | Global Management | Responsible for user access control, permissions, enterprise spaces, audit logs, personalized appearance settings, and more | [0.22.1](../../ghippo/intro/release-notes.md#v0221) |
 | Container Management | Manage clusters, nodes, workloads, Helm applications, CRDs, namespaces, and other core Kubernetes features | [0.23.0](../../kpanda/intro/release-notes.md#v0230) |
-| Observability | Provides rich dashboards, scenario monitoring, data querying, alerts, and more graphical and textual information | [0.22.0](../../insight/intro/releasenote.md#v0220) |
+| Observability | Provides rich dashboards, scenario monitoring, data querying, alerts, and more graphical and textual information | [0.22.0](../../insight/intro/release-notes.md#v0220) |
 | Workbench | Container-based DevOps application platform that supports Jenkins, Tekton, GitOps, and other pipeline jobs | [0.22.0](../../amamba/intro/release-notes.md#v0220) |
-| Multi-Cloud Orchestration | Centrally manages multi-cloud, hybrid cloud, and cross-cloud resources for application orchestration, including multi-cloud disaster recovery and fault recovery capabilities | [0.14.0](../../kairship/intro/release-notes.md#v0140) |
+| MultiCloud Management | Centrally manages multicloud, hybrid cloud, and cross-cloud resources for application orchestration, including multicloud disaster recovery and fault recovery capabilities | [0.14.0](../../kairship/intro/release-notes.md#v0140) |
 | Microservice Engine | Provides governance capabilities such as service registration and discovery, configuration management, and microservice gateway | [0.30.0](../../skoala/intro/release-notes.md#v0300) |
-| Service Mesh | Next-generation service mesh based on the open-source Istio technology for cloud-native applications | [v0.21.2](../../mspider/intro/release-notes.md#v0212) |
+| Service Mesh | Next-generation service mesh based on the open-source Istio technology for cloud-native applications | [v0.21.2](../../mspider/intro/release-notes.md#v0210) |
 | Middleware Elasticsearch | Currently the preferred full-text search engine | [0.12.0](../../middleware/elasticsearch/release-notes.md#v0120) |
 | Middleware Kafka | Distributed message queue service based on the open-source software Kafka | [0.10.0](../../middleware/kafka/release-notes.md#v0100) |
 | Middleware MinIO | A popular lightweight, open-source object storage solution | [0.10.0](../../middleware/minio/release-notes.md#v0100) |
 | Middleware MySQL | The most widely used open-source relational database | [0.13.0](../../middleware/mysql/release-notes.md#v0130) |
 | Middleware RabbitMQ | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP) | [0.15.0](../../middleware/rabbitmq/release-notes.md#v0150) |
 | Middleware Redis | An in-memory database caching service | [0.13.0](../../middleware/redis/release-notes.md#v0130) |
-| Container Registry | Stores images for K8s, DevOps, and container application development | [0.13.1](../../kangaroo/intro/release-notes.md) |
-| Networking | Supports various CNI combinations for different Linux kernels | [0.11.1](../../network/intro/releasenotes.md) |
-| Storage | Provides unified data storage services, supports file, object, block, and local storage, and easily integrates with storage vendor solutions | [v0.13.3](../../storage/hwameistor/releasenotes.md) |
+| Container Registry | Stores images for K8s, DevOps, and container application development | [0.13.1](../../kangaroo/intro/release-notes.md#v0131) |
+| Networking | Supports various CNI combinations for different Linux kernels | [0.11.1](../../network/intro/release-notes.md#v0111) |
+| Storage | Provides unified data storage services, supports file, object, block, and local storage, and easily integrates with storage vendor solutions | [v0.13.3](../../storage/hwameistor/release-notes.md#v0133) |
 
 ## More
 

@@ -13,11 +13,13 @@
 | | Redhat 9.X | Redhat 9.2<br />5.14.0-284.11.1.e9_2.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Ubuntu 20.04 | 5.10.104 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Ubuntu 22.04 | 5.15.0-78-generic | [离线安装 DCE 5.0 商业版](start-install.md) |
+| | Rocky Linux 9.2 | 5.14.0-284.11.1.el9_2.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | 统信 UOS V20 （1020a） | 5.4.0-125-generic | [UOS V20 (1020a) 上部署 DCE 5.0 商业版](../os-install/uos-v20-install-dce5.0.md) |
 | | openEuler 22.03 | 5.10.0-60.18.0.50.oe2203.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | [Oracle Linux R9 U1 上部署 DCE 5.0 商业版](../os-install/oracleLinux-install-dce5.0.md) |
 | | TencentOS Server 3.1 | 5.4.119-19.0009.14 | [TencentOS Server 3.1 上部署 DCE 5.0 商业版](../os-install/TencentOS-install-dce5.0.md) |
 | ARM 64 | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | [离线安装 DCE 5.0 商业版](start-install.md) |
+|  | 银河麒麟 OS V10 SP3 | 4.19.90-89.11.v2401.ky10.aarch64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 
 !!! note
 
@@ -33,8 +35,8 @@
 | -------- | ---------- |
 | 容器管理 GPU 能力 | ≥ 5.15|
 | Cilium | ≥ 5.12 |
-| Hwameistor DRDB 能力 | [DRBD 适配的内核版本](../../storage/hwameistor/intro/drbd-support.md) |
-| Kubevirt | > 3.15 |
+| HwameiStor DRBD 能力 | [DRBD 适配的内核版本](../../storage/hwameistor/intro/drbd-support.md) |
+| Kubevirt | > 4.11 |
 | Merbridge 要求 | ≥ 5.7 |
 
 ### ⚠️ 内核注意事项
@@ -63,7 +65,7 @@
 
 | **数量** | **服务器角色** | **服务器用途** | **cpu 数量** | **内存容量** | **系统硬盘** | **未分区的硬盘** |
 | ------- | ------------- | ------------ | ----------- | ----------- | ----------- | ------------- |
-| 1 | all in one | 镜像仓库、chart museum 、global 集群本身 | 16 核 | 32 GB | 200 GB | 400 GB |
+| 1 | all in one | 镜像仓库、chart museum、[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)本身 | 24 核 | 32 GB | 300 GB | 400 GB |
 
 ### 4 节点模式 CPU 、内存、硬盘要求
 
@@ -98,7 +100,7 @@
 
 ### 网络拓扑
 
-假设使用 VIP 作为全局集群的负载均衡方式：
+假设使用 VIP 作为全局服务集群的负载均衡方式：
 
 ![Network-Topology](https://docs.daocloud.io/daocloud-docs-images/docs/install/commercial/images/Network-Topology.png)
 
@@ -107,7 +109,7 @@
 | **资源** | **要求** | **说明** |
 | ------- | -------- | ------- |
 | `istioGatewayVip` | 1 个 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口。 |
-| `insightVip` | 1 个 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP。 |
+| `insightVip` | 1 个 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给全局服务集群的 Insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP。 |
 | 网络速率 | 1000 M/s | 不低于千兆，建议万兆 |
 | 协议 | - | 支持 IPv6 |
 | 保留 IP 地址段 | 需保留两段 | 供 Pod（默认 10.233.64.0/18）和 Service （默认 10.233.0.0/18 使用）。如果已经在使用了，可以自定义其他网段避免 IP 地址冲突。|

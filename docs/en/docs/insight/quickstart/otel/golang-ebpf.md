@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+Date: 2024-10-16
+---
+
 # Enhance Go apps with OTel auto-instrumentation
 
 If you don't want to manually change the application code, you can try This page's eBPF-based automatic enhancement method.

@@ -4,10 +4,10 @@
 
 ## 前提条件
 
-- 昇腾相关固件与驱动安装成功
-- Kubernetes 集群环境搭建
-- ascend-docker-runtime 已安装
-- ascend-mindxdl 组件已安装
+- Kubernetes 集群环境搭建。
+- 当前 NPU 节点已安装昇腾 （Ascend）驱动。
+- 当前 NPU 节点已安装 Ascend-Docker-Runtime 组件。
+- 当前集群已安装 NPU MindX DL 套件。
 - 支持的 NPU 卡型号：
 
     - Ascend 310P，已验证

@@ -4,14 +4,14 @@ This chapter introduces how to reserve a disk on the interface. the use cases of
 
 The operation and maintenance administrator has disk planning requirements, and needs to reserve some disks not to be used by Hwameistor, and needs to perform the Reserved operation by himself
 
-## **Instructions for use**
+## Instructions for use
 
 1. There are two statuses for Local Disk usage status and reserved status, any status of LD can be Reserved/Unreserved.
 2. Hwameistor will automatically detect the system disk and mark it as Reserved at the beginning of startup
 3. LD has only three states: **Pending, Available, Bound**. LD usage status and Reserved status are as follows:
 
 | Usage status | Reserved or not | Scenario description |
-| :-------- | :------------ | :--------------------- -------------------------------------- |
+| :-------- | :------------ | :------------------------ |
 | Pending | -- | Initialization state |
 | Pending | Reserved | Reserved by the user at the moment of initialization |
 | Available | -- | free disk, can be allocated by Hwameistor |
@@ -25,4 +25,4 @@ Enter the corresponding `cluster`, select `storage`-->`Hwameistor`; click `node`
 
 The reserved disk will not be used by Hwameistor.
 
-![](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/reserveddisk.jpg)
+![reserved disk](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/reserveddisk.jpg)

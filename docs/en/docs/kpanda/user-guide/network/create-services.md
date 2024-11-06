@@ -34,8 +34,8 @@ This requires creating a service through which you get a fixed IP address, decou
 
 Click __Intra-Cluster Access (ClusterIP)__ , which refers to exposing services through the internal IP of the cluster. The services selected for this option can only be accessed within the cluster. This is the default service type. Refer to the configuration parameters in the table below.
 
-| parameter | description | example value |
-| ---------------- | :------------------------------- ---------------------------- | :------- |
+| Parameter | Description | Example value |
+| --------- | ----------- | ------------- |
 | Access type | [Type] Required<br />[Meaning] Specify the method of Pod service discovery, here select intra-cluster access (ClusterIP). | ClusterIP |
 | Service Name | [Type] Required<br />[Meaning] Enter the name of the new service. <br />[Note] Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | Svc-01 |
 | Namespace | [Type] Required<br />[Meaning] Select the namespace where the new service is located. For more information about namespaces, refer to [Namespace Overview](../namespaces/createns.md). <br />[Note] Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | default |
@@ -49,8 +49,8 @@ Click __Intra-Cluster Access (ClusterIP)__ , which refers to exposing services t
 
 Click __NodePort__ , which means exposing the service via IP and static port ( __NodePort__ ) on each node. The __NodePort__ service is routed to the automatically created __ClusterIP__ service. You can access a __NodePort__ service from outside the cluster by requesting __<Node IP>:<Node Port>__ . Refer to the configuration parameters in the table below.
 
-| parameter | description | example value |
-| ---------------- | :------------------------------- ---------------------------- | :------- |
+| Parameter | Description | Example value |
+| --------- | ----------- | ------------- |
 | Access type | [Type] Required<br />[Meaning] Specify the method of Pod service discovery, here select node access (NodePort). | NodePort |
 | Service Name | [Type] Required<br />[Meaning] Enter the name of the new service. <br />[Note] Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | Svc-01 |
 | Namespace | [Type] Required<br />[Meaning] Select the namespace where the new service is located. For more information about namespaces, refer to [Namespace Overview](../namespaces/createns.md). <br />[Note] Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | default |
@@ -64,8 +64,8 @@ Click __NodePort__ , which means exposing the service via IP and static port ( _
 
 Click __Load Balancer__ , which refers to using the cloud provider's load balancer to expose services to the outside. External load balancers can route traffic to automatically created __NodePort__ services and __ClusterIP__ services. Refer to the configuration parameters in the table below.
 
-| parameter | description | example value | |
-| ------------- | :---------------------------------- ------------------------- | :------- | ---- |
+| Parameter | Description | Example value |
+| --------- | ----------- | ------------- |
 | Access type | [Type] Required<br />[Meaning] Specify the method of Pod service discovery, here select node access (NodePort). | NodePort | |
 | Service Name | [Type] Required<br />[Meaning] Enter the name of the new service. <br />[Note] Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | Svc-01 | |
 | Namespace | [Type] Required<br />[Meaning] Select the namespace where the new service is located. For more information about namespaces, refer to [Namespace Overview](../namespaces/createns.md). <br />[Note] Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | default | |
@@ -80,4 +80,3 @@ Click __Load Balancer__ , which refers to using the cloud provider's load balanc
 ### Complete service creation
 
 After configuring all parameters, click the __OK__ button to return to the service list automatically. On the right side of the list, click __┇__ to modify or delete the selected service.
-

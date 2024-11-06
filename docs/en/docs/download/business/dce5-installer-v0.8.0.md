@@ -10,7 +10,7 @@ hide:
 This page provides offline packages and checksum files for DCE 5.0 Enterprise.
 
 [Return to Download Index](../index.md#download-enterprise-package){ .md-button }
-[More Historical Versions](./dce5-installer-history.md){ .md-button }
+[Legacy Packages](./dce5-installer-history.md){ .md-button }
 
 ## Download
 
@@ -80,22 +80,22 @@ DCE 5.0 Enterprise includes the following modules, which can be used on demand t
 
 | Modules | Description | Versions |
 | ------- | ----------- | -------- |
-| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [0.17.1](../../ghippo/intro/release-notes.md#v0171) |
+| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, and custom appearance. | [0.17.1](../../ghippo/intro/release-notes.md#v0171) |
 | Container Management | Manage Kubernetes core features such as clusters, nodes, workloads, Helm applications, CRD, namespaces, etc. | [0.18.1](../../kpanda/intro/release-notes.md#v0181) |
-| Insight | Provide rich dashboard, scenario monitoring, data query, alarm and other graphical information. | [0.17.2](../../insight/intro/releasenote.md#v0172) |
+| Insight | Provide rich dashboard, scenario monitoring, data query, alert and other graphical information. | [0.17.2](../../insight/intro/release-notes.md#v0170) |
 | Workbench| Container-based DevOps application platform, supporting pipeline jobs such as Jenkins, Tekton, GitOps, etc. | [0.17.3](../../amamba/intro/release-notes.md#v0173) |
 | Multicloud MOrchestration| Centralized management of multicloud, hybrid cloud, cross-cloud resources' application orchestration, with multicloud disaster recovery, fault recovery and other capabilities.| [0.9.1](../../kairship/intro/release-notes.md#v091) |
 | Microservice Engine | Provide governance capabilities such as registration and discovery, service governance, configuration management, microservice gateway, etc. | [0.22.2](../../skoala/intro/release-notes.md#v0222) |
 | Service Mesh | The next-generation service mesh for cloud native applications based on open-source technology Istio. | [v0.16.2](../../mspider/intro/release-notes.md#v0162) |
 | Middleware: Elasticsearch | Currently the preferred full-text search engine. | [0.8.0](../../middleware/elasticsearch/release-notes.md#v080) |
-| Middleware: Kafka | Distributed message queue service based on open-source software Kafka. | [0.6.0](../../middleware/kafka/release-notes.md#v060) |
-| Middleware: MinIO | A very popular lightweight, open-source object storage solution. | [0.6.0](../../middleware/minio/release-notes.md#v060) |
+| Middleware: Kafka | Distributed message queue service based on open-source software Kafka. | [0.6.0](../../middleware/kafka/release-notes.md#v0100) |
+| Middleware: MinIO | A very popular lightweight, open-source object storage solution. | [0.6.0](../../middleware/minio/release-notes.md#v0100) |
 | Middleware: MySQL | The most widely used open-source relational database. | [0.9.0](../../middleware/mysql/release-notes.md#v090) |
 | Middleware: RabbitMQ| Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP). | [0.11.0](../../middleware/rabbitmq/release-notes.md#v0110) |
 | Middleware: Redis | An in-memory database caching service. | [0.8.0](../../middleware/redis/release-notes.md#v080) |
-| Container Registry | Used to store images for K8s, DevOps, and container application development. | [0.8.1](../../kangaroo/intro/release-notes.md) |
-| Network | Supports multiple CNI combinations for different Linux kernels. | [0.7.0](../../network/intro/releasenotes.md) |
-| Storage | Provides unified data storage services, supporting file, object, block, local storage, and easy access to storage vendor solutions. | [v0.10.2](../../storage/hwameistor/releasenotes.md) |
+| Container Registry | Used to store images for K8s, DevOps, and container application development. | [0.8.1](../../kangaroo/intro/release-notes.md#v080) |
+| Network | Supports multiple CNI combinations for different Linux kernels. | [0.7.0](../../network/intro/release-notes.md#v070) |
+| Storage | Provides unified data storage services, supporting file, object, block, local storage, and easy access to storage vendor solutions. | [v0.10.2](../../storage/hwameistor/release-notes.md#v0102) |
 
 ## More
 

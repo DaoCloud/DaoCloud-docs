@@ -6,6 +6,8 @@
 
 ## 准备工作
 
+- 准备一台能连通外网的机器
+
 - 准备一个 Kubernetes 集群，集群配置请参考文档[资源规划](../resources.md)。
 
     - 存储：需要提前准备好 StorageClass，并设置为默认 SC
@@ -23,18 +25,17 @@
 
 ## 下载和安装
 
-1. 在 k8s 集群控制平面节点（Controller Node）下载社区版的对应离线包并解压，
-   或者从[下载中心](../../../download/index.md)下载离线包并解压。
+1. 先找一台能连通外网的机器，运行以下命令下载社区版离线包并解压（也可以从网页[下载中心](../../../download/index.md)下载离线包并解压）：
 
-    假定版本 VERSION=v0.19.0
+    假定版本 VERSION=v0.22.0
 
     ```bash
-    export VERSION=v0.19.0
+    export VERSION=v0.22.0
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```
 
-1. 设置集群配置文件 clusterConfig.yaml
+1. 将解压的文件上传到 K8s 集群控制平面节点（Controller Node），在此节点上设置 clusterConfig.yaml
 
     - 如果是非公有云环境（虚拟机、物理机），请启用负载均衡 (metallb)，以规避 NodePort 因节点 IP 变动造成的不稳定。请仔细规划您的网络，设置 2 个必要的 VIP，配置文件范例如下：
 
@@ -98,7 +99,7 @@
         2. 镜像仓库
         3. 镜像仓库地址，必须是 http 或者 https
 
-1. 安装 DCE 5.0。
+1. 在 K8s 集群控制平面节点安装 DCE 5.0。
 
     ```shell
     ./dce5-installer install-app -c clusterConfig.yaml
@@ -106,7 +107,7 @@
 
     !!! note
 
-        - 有关 clusterConfig.yaml 文件设置，请参考[在线安装第 2 步](online.md#_2)。
+        - 有关 clusterConfig.yaml 文件设置，请参考[离线安装第 2 步](#_2)。
         - `-z` 最小化安装
         - `-c` 指定集群配置文件。使用 NodePort 暴露控制台时不需要指定 `-c`。
         - `-d` 开启 debug 模式

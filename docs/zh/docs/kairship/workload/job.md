@@ -5,7 +5,9 @@ hide:
 
 # 多云任务
 
-参照以下步骤创建一个任务（Job）。
+目前支持两种方式创建多云任务：镜像创建和 YAML 创建。
+
+## 镜像创建
 
 1. 在左侧导航栏中，点击 __多云工作负载__ ，进入任务页面，点击右上角的 __镜像创建__ 按钮。
 
@@ -37,16 +39,18 @@ hide:
 
 1. 在 __容器配置__ 页面中，配置负载所在容器的基本信息，可选择配置生命周期、健康检查等信息，然后点击 __下一步__ 。
 
-    ![容器配置](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/job03.png)
+    ![容器配置](../images/job03.png)
 
 1. 在 __高级配置__ 页面中，可以配置任务设置和标签与注解。
 
-    ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/job04.png)
+    ![高级配置](../images/job04.png)
 
     任务设置需要包括以下数据：
 
     - 并行数：任务执行过程中允许同时创建的最大 Pod 数，并行数应不大于 Pod 总数。默认为 1。
     - 超时时间：超出该时间时，任务会被标识为执行失败，任务下的所有 Pod 都会被删除。为空时表示不设置超时时间。
+    - 成功运行 Pod 数：任务完成需要成功运行的最小 Pod 数量。
+    - 重试次数：任务标识为失败前允许重试的最大次数，默认为 6 次。
     - 重启策略：设置失败时是否重启 Pod。
 
     如果您在创建完成后，无需配置差异化时，则可以直接使用 __确认__ 完成多云任务的创建。
@@ -63,3 +67,79 @@ hide:
     - 通过镜像创建多云工作负载时，如果需要采用指定位置、指定标签的高级能力进行创建时，需要确保工作集群已设定对应的位置或者标签；
     增加标签需要在单个集群内增加，可由工作集群管理列表跳转到对应的集群维护。
     - 配置副本数时，需要关注对应的调度策略，仅重复时会在多个集群中全部启动配置的副本数。
+
+## YAML 创建
+
+1. 在左侧导航栏中，点击 __多云工作负载__ ，进入任务页面，点击右上角的 __YAML 创建__ 按钮。
+
+    ![YAML 创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/job01.png)
+
+2. 输入或导入资源的 YAML 文件，点击 __确定__ 。
+
+    ![YAML 文件](../images/job08.png)
+
+### YAML 示例
+
+此处列出一个多云任务的 YAML 示例，您稍加修改就可以使用。
+
+```yaml
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: test01
+  namespace: default
+  uid: 37b438e1-78b6-407f-ab96-3db5934b8935
+  resourceVersion: '2704134'
+  generation: 1
+  creationTimestamp: '2024-08-20T03:16:19Z'
+  labels:
+    app: test01
+    controller-uid: 37b438e1-78b6-407f-ab96-3db5934b8935
+    job-name: test01
+    propagationpolicy.karmada.io/name: test01-pp-wuxah
+    propagationpolicy.karmada.io/namespace: default
+    propagationpolicy.karmada.io/permanent-id: ef569195-6735-4f58-ba8b-d4d1c6363d47
+  annotations:
+    batch.kubernetes.io/job-tracking: ''
+    propagationpolicy.karmada.io/name: test01-pp-wuxah
+    propagationpolicy.karmada.io/namespace: default
+    shadow.clusterpedia.io/cluster-name: k-watson
+spec:
+  parallelism: 1
+  backoffLimit: 6
+  selector:
+    matchLabels:
+      controller-uid: 37b438e1-78b6-407f-ab96-3db5934b8935
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: test01
+        controller-uid: 37b438e1-78b6-407f-ab96-3db5934b8935
+        job-name: test01
+    spec:
+      containers:
+        - name: container-1
+          image: 10.6.202.110/v2/docker.io/cloudnativelabs/kube-router:v1.6.0
+          resources:
+            limits:
+              cpu: 250m
+              memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 512Mi
+          lifecycle: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            privileged: false
+      restartPolicy: Never
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  completionMode: NonIndexed
+  suspend: false
+status: {}
+```

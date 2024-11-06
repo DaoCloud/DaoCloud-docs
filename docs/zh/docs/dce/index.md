@@ -15,7 +15,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
 !!! tip
 
-    掌握容器化浪潮，畅享 DaoCloud Enterprise 5.0，从这里启航！
+    掌舵 AI 浪潮，畅享 DaoCloud Enterprise 5.0，从这里启航！
 
 ## 安装和教程
 
@@ -25,7 +25,8 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
     ---
 
-    DCE 5.0 支持离线和在线两种安装方式，可以安装到不同的 Linux 发行版上。
+    DCE 5.0 支持[离线](../install/community/k8s/online.md)和[在线](../install/community/k8s/offline.md)两种安装方式，
+    可以安装到[不同的 Linux 发行版上](../install/os-install/uos-v20-install-dce5.0.md)。
 
     - [安装依赖项](../install/install-tools.md)
     - [安装社区版](../install/community/resources.md)
@@ -37,7 +38,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
     ---
 
-    我们为 DCE 5.0 的各个模块和场景制作了精良的视频教程。
+    我们为 DCE 5.0 的各个模块和场景制作了精良的[视频教程](../videos/index.md)。
 
     - [场景化视频](../videos/use-cases.md)
     - [应用工作台视频](../videos/amamba.md)
@@ -100,7 +101,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
     - [镜像空间](../kangaroo/space/index.md)
     - [仓库集成(工作空间)](../kangaroo/integrate/integrate-ws.md)
-    - [仓库集成(管理员)](../kangaroo/integrate/integrate-admin.md)
+    - [仓库集成(管理员)](../kangaroo/integrate/integrate-admin/integrate-admin.md)
     - [托管 Harbor](../kangaroo/managed/intro.md)
 
 </div>
@@ -252,5 +253,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 [下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](./license0.md){ .md-button .md-button--primary }
+[最佳实践](./bphome.md){ .md-button .md-button--primary }
+[常见问题](./faq.md){ .md-button .md-button--primary }
 
 ![启航图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/dce/images/sail.jpg)

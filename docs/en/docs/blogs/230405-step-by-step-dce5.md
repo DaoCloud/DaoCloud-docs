@@ -7,7 +7,7 @@ tags: []
 last_updated:
 ---
 
-# Nanny install DCE Community
+# Step-by-step install DCE Community
 
 Author: [Peter Pan](https://github.com/panpan0000), [SAMZONG](https://github.com/SAMZONG)
 
@@ -20,7 +20,7 @@ This article completes the installation of DCE Community from 0 to 1 in a cluste
 Use 3 UCloud VMs, all configured with 8-core 16G.
 
 | Role | Hostname | Operating System | IP | Configuration |
-| ------ | -------------- | ---------- | ------------- | -- ------------ |
+| ---- | -------- | ---------- | -------- | ------------- |
 | control-plane | k8s-master01 | CentOS 8.3 | 10.23.* | 8-core 16G system disk 200GB |
 | worker-node | k8s-work01 | CentOS 8.3 | 10.23.* | 8-core 16G system disk 200GB |
 | worker-node | k8s-work02 | CentOS 8.3 | 10.23.* | 8-core 16G system disk 200GB |
@@ -33,11 +33,11 @@ The components used in this example are:
 - StorageClass: local-path
 - DCE Community: v0.5.0
 
-## prepare node
+## Prepare nodes
 
 All actions described in this section are required.
 
-### Node configuration
+### Configure Nodes
 
 Before installation, make some necessary settings for the three nodes.
 
@@ -331,7 +331,7 @@ chmod +x ./dce5-installer
 
      - Please create an IP reachable from the external network in the public cloud
      - Please allow port 32088 in and out of the host's firewall rules in the public cloud configuration
-     - The above port 32088 is the NodePort port of __kubectl -n istio-system get svc istio-ingressgateway__ 
+     - The above port 32088 is the NodePort port of __kubectl -n istio-system get svc istio-ingressgateway__
 
      ![image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firewall.png)
 

@@ -20,7 +20,7 @@ hide:
 
     ![进入集群列表页面](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/schedule01.png)
 
-2. 在左侧导航栏点击 __节点管理__ ，在节点右侧点击 __ⵗ__ 操作图标，点击 __修改标签__ 或 __修改注解__ 。
+2. 在左侧导航栏点击 __节点管理__ ，在节点右侧点击 __┇__ 操作图标，点击 __修改标签__ 或 __修改注解__ 。
 
     ![暂停调度](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/labels01.png)
 

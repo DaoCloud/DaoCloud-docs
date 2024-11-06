@@ -117,7 +117,7 @@ Kubernetes 相关的研发工作，最终在 2015 年 7 月 21 日发布了
 - 2020 年 12 月：[Dockershim 在 1.20 中被弃用](https://kubernetes.io/blog/2020/12/18/kubernetes-1.20-pod-impersonation-short-lived-volumes-in-csi/)。
 - 2021 年 4 月：[Kubernetes 发布节奏改变](https://blog/2021/07/20/new-kubernetes-release-cadence/)从每年 4 次发布改为每年 3 次发布。
 - 2021 年 7 月：广泛使用的 Beta API 在 Kubernetes 1.22 中被[删除](https://kubernetes.io/blog/2021/07/14/upcoming-changes-in-kubernetes-1-22/)。
-- 2022 年 5 月：在 v1.24 中，Beta API 默认被禁用，以减少升级冲突，并删除 [Dockershim](/dockershim)，
+- 2022 年 5 月：在 v1.24 中，Beta API 默认被禁用，以减少升级冲突，并删除 [Dockershim](https://kubernetes.io/blog/2020/12/02/dockershim-faq/)，
   导致[用户广泛困惑](https://www.youtube.com/watch?v=a03Hh1kd6KE)
   （我们已经[改进了我们的沟通](https://github.com/kubernetes/community/tree/master/communication/contributor-comms)！）。
 - 2022 年 12 月：在 v1.26 中，进行了重大批处理和[作业 API 大修](https://kubernetes.io/blog/2022/12/29/scalable-job-tracking-ga/)，

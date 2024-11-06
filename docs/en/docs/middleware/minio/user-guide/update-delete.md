@@ -22,9 +22,8 @@ If you want to update or modify MinIO's resource configuration, you can follow t
 
 3. Modify the Spec Settings, and click __Next__ .
 
-    - Can be modified: CPU Quota and Memory Quota
-    - Can not be modified: Version, Deployment Mode, Storage Class, Storage Capacity
-
+    - Can be modified: CPU Quota, Memory Quota and Disks per Replica
+    - Can not be modified: Version, Deploy Mode, Replicas, Storage Class, Disks per Replica
     ![Spec settings](../images/minio-update03.png)
 
 4. Modify the service settings and click __OK__ .
@@ -35,7 +34,7 @@ If you want to update or modify MinIO's resource configuration, you can follow t
 
     ![Successful](../images/minio-update05.png)
 
-## Remove MinIO Instance
+## Delete MinIO Instance
 
 If you want to delete a list of instances, you can follow the instructions on this page.
 

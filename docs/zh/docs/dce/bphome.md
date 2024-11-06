@@ -117,7 +117,7 @@ hide:
 
     - [跨集群弹性伸缩](../kairship/best-practice/fhpa.md)
     - [DCE 4.0 一键转换为 DCE 5.0 多云应用](../kairship/best-practice/one-click-conversion.md)
-    - [将 VMWare 虚拟机导入到 DCE 5.0](../virtnest/import/import-ubuntu.md)
+    - [将 VMWare 虚拟机导入到 DCE 5.0](../virtnest/best-practice/import-ubuntu.md)
 
 </div>
 
@@ -135,7 +135,6 @@ hide:
     - [ElasticSearch 数据塞满时如何操作](../insight/faq/expand-once-es-full.md)
     - [使用 Insight 定位应用异常](../insight/best-practice/find_root_cause.md)
     - [使用 OTel 赋予应用可观测性](../insight/quickstart/otel/otel.md)
-    - [使用 OTel SDK 为应用暴露指标](../insight/quickstart/otel/meter.md)
 
 - :material-engine:{ .lg .middle } [__微服务引擎__](../skoala/intro/index.md)
 
@@ -191,17 +190,17 @@ hide:
     - [GProduct 对接全局管理](../ghippo/best-practice/gproduct/intro.md)
     - [OEM IN 和 OEM OUT](../ghippo/best-practice/oem/oem-in.md)
 
-- :material-slot-machine:{ .lg .middle } [__智能算力__](../baize/intro/index.md)和[__云边协同__](../kant/intro/index.md)
+- :material-slot-machine:{ .lg .middle } [__AI Lab__](../baize/intro/index.md)和[__云边协同__](../kant/intro/index.md)
 
     ---
 
-    **智能算力** 是 AI 训推一体化平台，整合异构算力，优化 GPU 性能。
+    **AI Lab** 是 AI 训推一体化平台，整合异构算力，优化 GPU 性能。
     而 **云边协同** 则将容器能力扩展到了边缘。
 
     - [部署 NFS 做数据集预热](../baize/best-practice/deploy-nfs-in-worker.md)
     - [更新 Notebook 内置镜像](../baize/best-practice/change-notebook-image.md)
     - [Checkpoint 机制及使用介绍](../baize/best-practice/checkpoint.md)
-    - [智能设备控制](../kant/best-practice/device-control.md)
+    - [智能设备控制](../kant/best-practice/custom-device-control.md)
     - [开发设备驱动应用 mapper](../kant/best-practice/develop-device-mapper.md)
 
 </div>

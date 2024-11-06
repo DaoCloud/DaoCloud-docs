@@ -15,7 +15,7 @@ After creating a custom pipeline, the pipeline stages need to be defined manuall
 - [Create a custom pipeline](create/custom.md), and need to add two string parameters in the build parameters. These parameters will be used in the image build command. The parameters are described as follows:
 
      | Parameter Type | Parameter Name | Description |
-     | -------- | -------- | ------------------------------- ------------------ |
+     | -------------- | -------------- | ----------- |
      | String | registry | Mirror registry address. In this example use __release-ci.daocloud.io__ |
      | string | project | The project name in the registry. In this example use __demo__ |
      | string | name | The name of the image. This example uses __http-hello__ |
@@ -168,7 +168,7 @@ Click __Global Settings__ , select node from the __Type__ drop-down list, and se
 
 1. If each stage of the pipeline runs successfully, a Docker image is automatically built and pushed to your Docker Hub repository. Eventually, the pipeline will automatically create a deployment in the project you set up beforehand.
 
-2. Go to the container management platform, click __Workload__ under the cluster, and you can see the stateless workload displayed in the list.
+2. Go to the container management platform, click __Workload__ under the cluster, and you can see deployments displayed in the list.
 
      <!--![]()screenshots-->
 

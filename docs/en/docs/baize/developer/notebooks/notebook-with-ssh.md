@@ -5,7 +5,7 @@ date: 2024-05-22
 
 # Notebook SSH Guide
 
-The Intelligent Engine provided by Notebook supports local access via SSH;
+The AI Lab provided by Notebook supports local access via SSH;
 
 With simple configuration, you can use SSH to access the Jupyter Notebook.
 Whether you are using Windows, Mac, or Linux operating systems, you can follow the steps below.

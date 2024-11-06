@@ -11,8 +11,10 @@ This page provides offline packages for different versions of the Multicloud Man
 
 ## Download
 
-| Version     | Architecture | File Size | Package | Checksum File | Update Date |
-|-------------| ----- |-------- |---------------| ---------- |-----------|
+| Version | Architecture | File Size | Package | Checksum File | Updated Date |
+| ------- | ------------ | --------- | ------- | ------------- | ------------ |
+| [v0.23.0](../../kairship/intro/release-notes.md) | AMD 64 | 667.06MB | [:arrow_down: kairship_v0.23.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.23.0_amd64.tar) | [:arrow_down: kairship_v0.23.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.23.0_amd64_checksum.sha512sum) | 2024-10-09 |
+| [v0.22.0](../../kairship/intro/release-notes.md) | AMD 64 | 664.83 MB | [:arrow_down: kairship_v0.22.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.22.0_amd64.tar) | [:arrow_down: kairship_v0.22.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.22.0_amd64_checksum.sha512sum) | 2024-09-02 |
 | [v0.20.0](../../kairship/intro/release-notes.md) | AMD 64 | 663.57 MB | [:arrow_down: kairship_v0.20.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.20.0_amd64.tar) | [:arrow_down: kairship_v0.20.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.20.0_amd64_checksum.sha512sum) | 2024-06-28 |
 | [v0.18.0](../../kairship/intro/release-notes.md) | AMD 64 | 583.51 MB | [:arrow_down: kairship_v0.18.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.18.0_amd64.tar) | [:arrow_down: kairship_v0.18.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.18.0_amd64_checksum.sha512sum) | 2024-04-24 |
 | [v0.15.0](../../kairship/intro/release-notes.md) | AMD 64 | 524.68 MB | [:arrow_down: kairship_v0.15.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.15.0_amd64.tar) | [:arrow_down: kairship_v0.15.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.15.0_amd64_checksum.sha512sum) | 2024-01-02 |

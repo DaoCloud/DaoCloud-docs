@@ -64,10 +64,10 @@ RUN rm -rf /etc/services.d/jupyterlab
 RUN mamba install -n base -y jupyterlab-language-pack-zh-cn \
   && mamba clean --all -y
 
-ARG CODESERVER_VERSION=v4.89.1
+ARG CODESERVER_VERSION=4.89.1
 ARG TARGETARCH
 
-RUN curl -fsSL "https://github.com/coder/code-server/releases/download/$CODESERVER_VERSION/code-server_${CODESERVER_VERSION/v/}_$TARGETARCH.deb" -o /tmp/code-server.deb \
+RUN curl -fsSL "https://github.com/coder/code-server/releases/download/v$CODESERVER_VERSION/code-server_${CODESERVER_VERSION}_$TARGETARCH.deb" -o /tmp/code-server.deb \
   && dpkg -i /tmp/code-server.deb \
   && rm -f /tmp/code-server.deb
 
@@ -122,7 +122,7 @@ RUN mkdir -p /run/sshd \
  && rclone_version=v1.65.0 && \
        arch=$(uname -m | sed -E 's/x86_64/amd64/g;s/aarch64/arm64/g') && \
        filename=rclone-${rclone_version}-linux-${arch} && \
-       wget http://10.6.100.13:8081/repository/github.com/rclone/rclone/releases/download/${rclone_version}/${filename}.zip -O ${filename}.zip && \
+       curl -fsSL https://github.com/rclone/rclone/releases/download/${rclone_version}/${filename}.zip -o ${filename}.zip && \
        unzip ${filename}.zip && mv ${filename}/rclone /usr/local/bin && rm -rf ${filename} ${filename}.zip
 
 # Init mamba

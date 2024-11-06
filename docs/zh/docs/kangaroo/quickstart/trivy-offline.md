@@ -36,7 +36,9 @@ db/trivy.db
 
 ## 开启托管 `Harbor` 离线扫描
 
-### 在托管 `harbor` 所在集群进行编辑
+### 通过命令修改 trivy
+
+运行以下命令为托管 Harbor 的 Kubernetes 集群修改 YAML 参数：
 
 ```shell
 $ kubectl -n {namespace} edit harborclusters.goharbor.io {harbor-name}
@@ -46,7 +48,7 @@ trivy:
     skipUpdate: true
 ```
 
-## 也可以从 `DCE 5.0` 集群管理页面中进行修改
+### 在 UI 界面修改 YAML
 
 ![edit-harborcluster.png](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/edit-harborcluster.png)
 

@@ -18,9 +18,25 @@ IAM (Identity and Access Management) is an important module of global management
 
 ## Usage Process
 
-1. Log in to the DCE platform using the Admin account or an account with administrator privileges.
-2. Create a user, see [User](user.md).
-3. Grant permissions to the user, see [Permission Management](role.md).
-4. Create a user group, see [User Group](group.md).
-5. Create custom roles, see [Custom Roles](role.md).
-6. Create an Identity Provider, see [Identity Provider](idprovider.md).
+Here is a typical process to perform access control.
+
+```mermaid
+graph TD
+    login[Login] --> user[Create User]
+    user --> auth[Authorize User]
+    auth --> group[Create Group]
+    group --> role[Create Custom Role]
+    role --> id[Create Identity Provider]
+
+ classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
+ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
+ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+ class login,user,auth,group,role,id cluster;
+
+click login "https://docs.daocloud.io/en/ghippo/install/login.html"
+click user "https://docs.daocloud.io/en/ghippo/user-guide/access-control/user.html"
+click auth "https://docs.daocloud.io/en/ghippo/user-guide/access-control/role.html"
+click group "https://docs.daocloud.io/en/ghippo/user-guide/access-control/group.html"
+click role "https://docs.daocloud.io/en/ghippo/user-guide/access-control/custom-role.html"
+click id "https://docs.daocloud.io/en/ghippo/user-guide/access-control/idprovider.html"
+```

@@ -29,23 +29,23 @@
     apiVersion: monitoring.coreos.com/v1
     kind: ServiceMonitor
     metadata:
-    labels:
-      operator.insight.io/managed-by: insight
-    name: rook-ceph-sm
-    namespace: rook-ceph
+      labels:
+        operator.insight.io/managed-by: insight
+      name: rook-ceph-sm
+      namespace: rook-ceph
     spec:
-    endpoints:
-      - honorLabels: true
-      port: http-metrics
-    namespaceSelector:
-      any: true
-    selector:
-      matchLabels:
-      app: rook-ceph-mgr
-      rook_cluster: rook-ceph
+      endpoints:
+        - honorLabels: true
+          port: http-metrics
+      namespaceSelector:
+        any: true
+      selector:
+        matchLabels:
+          app: rook-ceph-mgr
+          rook_cluster: rook-ceph
     ```
 
-## 在 Global 集群中部署 GrafanaDashboard
+## 在全局服务集群中部署 GrafanaDashboard
 
 参考 [Dashboard 模板](https://grafana.com/grafana/dashboards/2842-ceph-cluster/)部署 GrafanaDashboard。
 

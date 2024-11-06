@@ -40,7 +40,7 @@ Control of storage throughput, IOPS, and latency increases with increasing granu
 Avoiding cloud vendor lock-in is a common goal for many Kubernetes users.
 However, stateful applications typically still rely on cloud providers and technologies for their data, or on the underlying traditional shared storage systems, NAS or SAN.
 With the CAS approach, the storage controller can migrate data in the background based on the workload, making live migration much simpler.
-In other words, the granularity of control of CAS simplifies the movement of stateful workloads from one Kubernetes cluster to another in a non-disruptive manner.
+In other words, the granularity of control of CAS simplifies the movement of StatefulSets from one Kubernetes cluster to another in a non-disruptive manner.
 
 #### Cloud Native
 
@@ -68,7 +68,7 @@ OpenEBS has many components, which can be divided into the following two categor
 
 ### Data Engine
 
-Data engines are at the heart of OpenEBS and are responsible for performing reads and writes to the underlying persistent storage on behalf of the stateful workloads they serve.
+Data engines are at the heart of OpenEBS and are responsible for performing reads and writes to the underlying persistent storage on behalf of the StatefulSets they serve.
 
 The data engine is responsible for:
 
@@ -85,7 +85,7 @@ The OpenEBS data engine consists of the following layers:
 
 #### Volume Access Layer
 
-Stateful workloads use standard POSIX-compliant mechanisms to perform read and write operations.
+StatefulSets use standard POSIX-compliant mechanisms to perform read and write operations.
 Depending on the type of workload, an application may prefer to perform reads and writes directly to raw block devices or using standard file systems such as XFS, Ext4.
 
 The CSI node driver or Kubelet will take care of attaching the volume to the desired node where the pod will run, formatting it if necessary and mounting the filesystem for access by the pod.

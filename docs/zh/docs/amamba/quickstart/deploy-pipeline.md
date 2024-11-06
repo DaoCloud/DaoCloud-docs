@@ -23,11 +23,11 @@
 
 1. 在流水线列表页点击 __创建流水线__ 。
 
-    ![pipeline](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipelin01.png)
+    ![pipeline](../images/pipe-cust01.jpg)
 
 2. 在弹出的对话框中，选择 __自定义创建流水线__ ，点击 __确定__ 。
 
-    ![pipeline](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipelin02.png)
+    ![pipeline](../images/pipe-cust02.jpg)
 
 3. 进入 __自定义创建流水页面__ ，输入流水线名称 __pipeline-demo__ 。
 
@@ -47,11 +47,11 @@
 
 1. 在流水线列表页面点击一个流水线的名称。
 
-    ![pipelisetting](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/editpipe01.png)
+    ![pipelisetting](../images/pipe-cust03.jpg)
 
 2. 在右上角点击 __编辑流水线__ ，
 
-    ![pipelisetting](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/editpipe02.png)
+    ![pipelisetting](../images/pipe-cust04.jpg)
 
 3. 在右上角点击 __全局设置__ 。
 

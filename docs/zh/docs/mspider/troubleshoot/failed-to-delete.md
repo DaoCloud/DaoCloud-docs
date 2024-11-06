@@ -32,7 +32,7 @@ hide:
 
 1. 移除集群。
 
-    在 __容器管理__ 中，选择 global 集群，自定义资源搜索 `globalmeshes.discovery.mspider.io` 。
+    在 __容器管理__ 中，选择全局服务集群，自定义资源搜索 `globalmeshes.discovery.mspider.io` 。
     在 mspider-system 命名空间下选择要移除集群的网格，编辑 YAML：
 
     ![编辑yaml](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/delete03.png)

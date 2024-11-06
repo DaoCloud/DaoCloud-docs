@@ -19,6 +19,11 @@ hide:
 
     ![规格配置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/create02.png)
 
+    !!! info
+        
+        使用主备模式，更能保证数据的准确性与一致性。
+        主备部署类型提供高可用，当主节点故障后，备节点自动升级为主节点。包含一个主节点和多个备节点，主备节点的数据通过实时复制保持一致，备节点为只读节点，系统自动进行读请求的负载均衡。
+
 4. 设置用户名和密码等 __服务设置__ ，默认采用 ClusterIP 作为访问方式。
 
     ![服务设置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/create03.png)

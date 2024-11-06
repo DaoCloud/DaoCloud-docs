@@ -1,15 +1,25 @@
 # 自定义探测方式
 
+Insight 使用 Prometheus 官方提供的 Blackbox Exporter 作为黑盒监控解决方案，可以通过 HTTP、HTTPS、DNS、ICMP、TCP 和 gRPC 方式对目标实例进行检测。可用于以下使用场景：
+
+- HTTP/HTTPS：URL/API可用性检测
+- ICMP：主机存活检测
+- TCP：端口存活检测
+- DNS：域名解析
+
 在本文中，我们将介绍如何在已有的 Blackbox ConfigMap 中配置自定义的探测方式。
-我们将以 HTTP 探测方式作为示例，展示如何修改 ConfigMap 以实现自定义的 HTTP 探测。
+
+Insight 默认未开启 ICMP 探测方式，因为 ICMP 需要更高权限，因此，我们将以 ICMP 和 HTTP 探测方式作为示例，展示如何修改 ConfigMap 以实现自定义的 ICMP 和 HTTP 探测。
 
 ## 操作步骤
 
-1. 进入 __容器管理__ 的集群列表，点击进入目标集群的详情；
+1. 进入 __容器管理__ 的 __集群列表__ ，点击进入目标集群的详情；
 2. 点击左侧导航，选择 __配置与密钥__ -> __配置项__ ；
 3. 找到名为 __insight-agent-prometheus-blackbox-exporter__ 的配置项，点击 __编辑 YAML__；
 
-    在 __modules__ 下添加自定义探测方式。此处添加 HTTP 探测方式为例：
+    在 __modules__ 下添加自定义探测方式：
+
+=== "HTTP 探测"
 
     ```yaml
     module:
@@ -22,11 +32,72 @@
           method: GET
     ```
 
+=== "ICMP 探测"
+
+    ```yaml
+    module:
+      ICMP: # ICMP 探测配置的示例
+        prober: icmp
+        timeout: 5s
+        icmp:
+          preferred_ip_protocol: ip4
+    icmp_example: # ICMP 探测配置的示例 2
+      prober: icmp
+      timeout: 5s
+      icmp:
+        preferred_ip_protocol: "ip4"
+        source_ip_address: "127.0.0.1"
+    ```
+    由于 ICMP 需要更高权限，因此，我们还需要提升 Pod 权限，否则会出现 `operation not permitted` 的错误。有以下两种方式提升权限：
+    
+    - 方式一： 直接编辑 `BlackBox Exporter` 部署文件开启
+
+        ```yaml
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: insight-agent-prometheus-blackbox-exporter
+          namespace: insight-system
+        spec:
+          template:
+            spec:
+              containers:
+                - name: blackbox-exporter
+                  image: # ... (image, args, ports 等保持不变)
+                  imagePullPolicy: IfNotPresent
+                  securityContext:
+                    allowPrivilegeEscalation: false
+                    capabilities:
+                      add:
+                      - NET_RAW
+                      drop:
+                      - ALL
+                    readOnlyRootFilesystem: true
+                    runAsGroup: 0
+                    runAsNonRoot: false
+                    runAsUser: 0
+        ```
+     
+    - 方式二： 通过 Helm Upgrade 方式提权
+    
+        ```diff
+        prometheus-blackbox-exporter:
+          enabled: true
+          securityContext:
+            runAsUser: 0
+            runAsGroup: 0
+            readOnlyRootFilesystem: true
+            runAsNonRoot: false
+            allowPrivilegeEscalation: false
+            capabilities:
+              add: ["NET_RAW"]
+        ```
+
 !!! info
 
     更多探测方式可参考 [blackbox_exporter Configuration](https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md)。
 
-## 友情参考
+## 其他参考
 
 以下 YAML 文件中包含了 HTTP、TCP、SMTP、ICMP、DNS 等多种探测方式，可根据需求自行修改 `insight-agent-prometheus-blackbox-exporter` 的配置文件。
 
@@ -67,11 +138,12 @@
           TCP:
             prober: tcp
             timeout: 5s
-          ICMP:
-            prober: icmp
-            timeout: 5s
-            icmp:
-              preferred_ip_protocol: ip4
+          # 默认未开启：
+          # ICMP:
+          #   prober: icmp
+          #   timeout: 5s
+          #   icmp:
+          #     preferred_ip_protocol: ip4
           SSH:
             prober: tcp
             timeout: 5s
@@ -194,12 +266,12 @@
                 - expect: "PING :([^ ]+)"
                   send: "PONG ${1}"
                 - expect: "^:[^ ]+ 001"
-          icmp_example:                    # ICMP 探测配置的示例
-            prober: icmp
-            timeout: 5s
-            icmp:
-              preferred_ip_protocol: "ip4"
-              source_ip_address: "127.0.0.1"
+          # icmp_example:                    # ICMP 探测配置的示例
+          #   prober: icmp
+          #   timeout: 5s
+          #   icmp:
+          #     preferred_ip_protocol: "ip4"
+          #     source_ip_address: "127.0.0.1"
           dns_udp_example:                 # 使用 UDP 进行 DNS 查询的示例
             prober: dns
             timeout: 5s

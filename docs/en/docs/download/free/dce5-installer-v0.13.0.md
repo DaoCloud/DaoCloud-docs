@@ -9,7 +9,7 @@ hide:
 
 This page provides offline installation packages and verification files for DCE 5.0 Community.
 
-[Return to Download Guide](../index.md){ .md-button } [More Historical Versions](./dce5-installer-history.md){ .md-button }
+[Return to Download Guide](../index.md){ .md-button } [Legacy Packages](./dce5-installer-history.md){ .md-button }
 
 ## Download
 
@@ -79,9 +79,9 @@ DCE 5.0 Community includes the following modules by default:
 
 | Modules | Introduction | What's New |
 | -------- | ----------- | ---------- |
-| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [0.22.1](../../ghippo/intro/release-notes.md#0221) |
-| Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and other core Kubernetes features | [0.23.0](../../kpanda/intro/release-notes.md#0230) |
-| Observability | Provides rich dashboards, scenario monitoring, data queries, alerts, and other graphical and textual information | [0.22.0](../../insight/intro/releasenote.md#0220) |
+| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, and custom appearance. | [0.22.1](../../ghippo/intro/release-notes.md#v0221) |
+| Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and other core Kubernetes features | [0.23.0](../../kpanda/intro/release-notes.md#v0230) |
+| Observability | Provides rich dashboards, scenario monitoring, data queries, alerts, and other graphical and textual information | [0.22.0](../../insight/intro/release-notes.md#v0220) |
 
 ## More
 

@@ -179,4 +179,4 @@ components:
 | components.kant                 | 边缘计算                          |
 | components.virtnest             | 虚拟机                            |
 | components.kolm                 | olm 管理                          |
-| components.baize                | 智能算力                          |
+| components.baize                | AI Lab                          |

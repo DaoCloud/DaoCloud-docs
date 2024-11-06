@@ -22,7 +22,7 @@ You can load images using one of the two methods below. When there is registry i
 
 Using chart-syncer, you can upload the charts and their dependent image packages from the downloaded installation package to the registry and helm repository used during the deployment of the DCE installer.
 
-First, find a node that can connect to the registry and helm repository (such as the seed node), create a `load-image.yaml` configuration file on the node, and fill in the configuration information for the registry and helm repository.
+First, find a node that can connect to the registry and helm repository (such as the bootstrap node), create a `load-image.yaml` configuration file on the node, and fill in the configuration information for the registry and helm repository.
 
 1. Create `load-image.yaml`
 
@@ -134,7 +134,7 @@ There are two upgrade methods. You can choose the proper upgrade plan based on t
 
 !!! note
 
-    Starting from version v0.21.0 of kpanda, Redis supports setting a sentinel password. If using sentinel mode Redis, you need to change the --set global.db.redis.url during the upgrade. For example:
+    Starting from v0.21.0 of kpanda, Redis supports setting a sentinel password. If using sentinel mode Redis, you need to change the --set global.db.redis.url during the upgrade. For example:
     
     - Previously: `redis+sentinel://:3wPxzWffdn@rfs-mcamel-common-redis-cluster.mcamel-system.svc.cluster.local:26379/mymaster`
     - Now: `redis+sentinel://:3wPxzWffdn@rfs-mcamel-common-redis-cluster.mcamel-system.svc.cluster.local:26379/mymaster?master_password=3wPxzWffdn`

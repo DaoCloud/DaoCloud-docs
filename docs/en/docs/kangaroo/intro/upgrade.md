@@ -9,11 +9,14 @@ This page explains how to install or upgrade the container registry module after
 
 !!! info
 
-    The word `kangaroo` appearing in the following commands or scripts is the internal development code name of the container registry module.
+    The word `kangaroo` appearing in the following commands or scripts is the internal development code name of 
+    the container registry module.
 
 ## Load Images from the Installation Package
 
-You can load the images in one of the following two ways. When a container registry exists in the environment, it is recommended to choose the chart-syncer to synchronize the images to the container registry, as this method is more efficient and convenient.
+You can load the images in one of the following two ways. When a container registry exists in the environment, 
+it is recommended to choose the chart-syncer to synchronize the images to the container registry, 
+as this method is more efficient and convenient.
 
 ### Synchronize Images to the Container Registry using chart-syncer
 
@@ -23,9 +26,10 @@ You can load the images in one of the following two ways. When a container regis
 
         All parameters in this YAML file are mandatory. You need a private container registry and modify the relevant configurations.
 
-    === "Installed chart repo"
+    === "chart repo has been installed"
 
-        If the current environment has an installed chart repo, chart-syncer also supports exporting the chart as a tgz file.
+        If the current environment has an installed chart repo, and chart-syncer also supports exporting the chart 
+        as a tgz file, refer to the following YAML:
 
         ```yaml title="load-image.yaml"
         source:
@@ -55,9 +59,10 @@ You can load the images in one of the following two ways. When a container regis
         8. Your container registry username.
         9. Your container registry password.
 
-    === "If chart repo is not installed"
+    === "chart repo hasn't been installed"
 
-        If the chart repo is not installed in the current environment, chart-syncer also supports exporting the chart as a tgz file and storing it in the specified path.
+        If the chart repo is not installed in the current environment, and chart-syncer supports exporting the chart 
+        as a tgz file and storing it in the specified path, refer to the following YAML:
 
         ```yaml title="load-image.yaml"
         source:
@@ -125,9 +130,9 @@ Extract and load the image files.
 
 ## Upgrade
 
-There are two ways to upgrade. You can choose the corresponding upgrade method based on the prerequisite steps:
+There are two ways to upgrade. You can choose the proper upgrade method based on the prerequisite steps:
 
-=== "Upgrade through helm repo"
+=== "Upgrade via helm repo"
 
     1. Check if the global helm repository exists.
 
@@ -199,7 +204,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
           --version 0.9.0
         ```
 
-=== "Upgrading via chart package"
+=== "Upgrade via chart package"
 
     1. Back up the `--set` parameters.
 

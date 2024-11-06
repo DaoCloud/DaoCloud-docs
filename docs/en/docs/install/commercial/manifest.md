@@ -185,4 +185,4 @@ It includes components related to the infrastructure and products involved in th
 | components.kant                 | Cloud Edge Collaboration                            |
 | components.virtnest             | Virtual Machine                                     |
 | components.kolm                 | OLM management                                      |
-| components.baize                | Intelligent Engine                                  |
+| components.baize                | AI Lab                                  |

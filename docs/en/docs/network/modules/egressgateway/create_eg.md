@@ -31,7 +31,7 @@ This page describes the steps to create an EgressGateway instance.
 
         !!! tip
 
-            The meaning of __spec.chainInsertMode__ can be referred to in the [Calico documentation](https://projectcalico.docs.tigera.io/reference/resources/felixconfig).
+            The meaning of `spec.chainInsertMode` can be referred to in the [Calico documentation](https://projectcalico.docs.tigera.io/reference/resources/felixconfig).
 
     ===  "Flannel"
 
@@ -45,15 +45,15 @@ This page describes the steps to create an EgressGateway instance.
 
         If your cluster is using [Spiderpool](https://github.com/spidernet-io/spiderpool) with another CNI, follow these steps.
 
-        Add the addresses of external services to the 'hijackCIDR' of the 'default' object in 'spiderpool.spidercoordinators' outside the cluster. This ensures that when Pods access these external services, the traffic first goes through the host where the Pod is located, and is matched by the EgressGateway rules.
+        Add the addresses of external services to the `hijackCIDR` of the `default` object in `spiderpool.spidercoordinators` outside the cluster. This ensures that when pods access these external services, the traffic first goes through the host where pods are located, and is matched by the EgressGateway rules.
 
-        If "1.1.1.1/32", "2.2.2.2/32" are external service addresses. For Pods that are already running, you need to restart the Pods for these routing rules to take effect in the Pods.
+        If `1.1.1.1/32`, `2.2.2.2/32` are external service addresses. For pods that are already running, you need to restart the pods for these routing rules to take effect in the pods.
 
         ```shell
         kubectl patch spidercoordinators default  --type='merge' -p '{"spec": {"hijackCIDR": ["1.1.1.1/32", "2.2.2.2/32"]}}'
         ```
 
-2. Confirm that all EgressGateway Pods are running normally.
+2. Confirm that all EgressGateway pods are running normally.
 
     ```shell
     $ kubectl get pod -n kube-system | grep egressgateway
@@ -63,20 +63,25 @@ This page describes the steps to create an EgressGateway instance.
     egressgateway-controller-5754f6658-7pn4z   1/1     Running   0          9h
     ```
 
-## Create EgressGateway Instance
+## Steps
 
-1. Go to the corresponding cluster, click the __Cluster Name__ to enter the details, select __Network__ -> __Network Configuration__ -> __Egress Gateway__ , click __Create Egress Gateway__ , and enter the following parameters. Click confirm to complete the creation.
+1. Go to the proper cluster, click the __Cluster Name__ to enter the details, select __Network__ -> __Network Settings__ -> __EgressGateway__ , click __Create EgressGateway__ , and enter the following parameters. Click __OK__ to complete the creation.
 
     <!-- ![egress-create01](../../images/egress-create-1.jpg) -->
 
-    * __Name__: EgressGateway instance name.
-    * __Description__: Description of the EgressGateway instance, optional.
-    * __Node Selector__: Select the egress gateway exit node based on node labels. Selecting multiple nodes can achieve high availability. Plan ahead for exit nodes and assign the corresponding label to the nodes. In this chapter, label 2 nodes with __egressgateway: true__.
-    * __Egress IP Range__: A group of EgressGateway exit IP ranges, the subnet must be the same as the exit network card (usually the default route network card) on the gateway node, otherwise, it is highly likely that egress access will not work. The setting supports IP range/IP address/CIDR.
-        * __IP Range__ Example: 172.22.0.100-172.22.0.110, used in this chapter.
-        * __IP Address__ Example: 172.22.0.100
-        * __CIDR__ Example: 172.22.0.0/16
-    * __IPv4 Default Egress IP__: The default exit IP address of the gateway after creation. Select an IP address from the Egress IP Range as the default VIP for this group of EgressGateway. Its purpose is that when creating EgressPolicy objects for applications, if the VIP address is not specified, it will default to using this default VIP.
+    * __Name__ : EgressGateway instance name.
+    * __Description__ : Description of the EgressGateway instance, optional.
+    * __Node Selector__ : Select the EgressGateway exit node based on node labels. Selecting multiple nodes
+      can achieve high availability. Plan ahead for exit nodes and assign the corresponding Label to the nodes.
+      In this chapter, label 2 nodes with __egressgateway: true__ .
+    * __Egress IP Range__ : A range of EgressGateway egress IPs needs to be within the same subnet as
+      the egress NIC on the gateway node (typically, this is the NIC used for the default route).
+      Otherwise, it is highly likely that egress access will fail. The setting supports IP range/IP address/CIDR.
+        * __IP Range__ : 172.22.0.100-172.22.0.110, used in this chapter.
+        * __IP Address__ : 172.22.0.100
+        * __CIDR__ : 172.22.0.0/16
+    * __IPv4 Default Egress IP__ : After creation, select an IP address from the egress IP range as the default VIP for the EgressGateway.
+      Its function is that when creating an EgressPolicy object for an application, if a VIP address is not specified, the default VIP will be assigned.
 
 2. Once created, you can view the status of the EgressGateway instance on the interface.
 
@@ -108,6 +113,7 @@ This page describes the steps to create an EgressGateway instance.
         status: Ready
     ```
 
-    In the output above, the __status.nodeList__ field has identified the nodes that match the __spec.nodeSelector__ and the status of the EgressTunnel objects corresponding to those nodes.
+    In the output above, the `status.nodeList` field has identified the nodes that match the `spec.nodeSelector`
+    and the status of the EgressTunnel objects corresponding to those nodes.
 
 After creating the EgressGateway instance, please proceed to [create gateway policies](create-egpolicy.md).

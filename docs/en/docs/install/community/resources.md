@@ -14,7 +14,7 @@ You can install DCE 5.0 on a standard Kubernetes cluster (production env) or on 
 | Resource | Requirements |
 | :------- | :----------- |
 | Node Hardware | **3 Master + 2 Worker** <br />Master Nodes: 4 Cores, 8 GB RAM; 100 GB system disk <br />Worker Nodes: 4 Cores, 8 GB RAM; 100 GB system disk |
-| K8s Version | Recommended highest stable version from K8s official, currently recommended v1.26, minimum support v1.22 |
+| K8s Version | Recommended [highest stable version from K8s community](https://kubernetes.io/releases/), currently recommended v1.29.5, minimum support v1.22 |
 | Supported CRI | Docker and containerd |
 | CPU Architecture | x86_64 and ARM64 |
 
@@ -23,6 +23,6 @@ You can install DCE 5.0 on a standard Kubernetes cluster (production env) or on 
 | Resources  | Requirements |
 | :--------- | :---------- |
 | Node | CPU > 10 cores, memory > 12 GB, disk > 100 GB |
-| K8s Version | Recommended highest stable version from K8s official, currently recommended v1.26, minimum support v1.22 |
+| K8s Version | Recommended [highest stable version from K8s community](https://kubernetes.io/releases/), currently recommended v1.29.5, minimum support v1.22 |
 | Supported CRIs | Docker and containerd |
 | CPU | x86_64 and ARM64 |

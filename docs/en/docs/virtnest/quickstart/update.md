@@ -7,6 +7,12 @@ DATE: 2024-07-25
 
 This page is about how to update a virtual machine using both forms and YAML files.
 
+## Prerequisite
+
+Before updating the CPU, memory, and data disks of the VM while it is powered on, the following prerequisite must be met:
+
+- Live migration is supported.
+
 ## Update Virtual Machine via Form
 
 On the virtual machine list page, click __Update__ to enter the Update VM page.

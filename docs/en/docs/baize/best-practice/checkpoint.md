@@ -99,7 +99,7 @@ checkpoint.save(file_prefix=checkpoint_prefix)
 
 !!!note
 
-    Users of DCE 5.0 Intelligent Engine can directly mount high-performance storage as the checkpoint directory to improve the speed of saving and restoring checkpoints.
+    Users of DCE 5.0 AI Lab can directly mount high-performance storage as the checkpoint directory to improve the speed of saving and restoring checkpoints.
 
 ### Restore Checkpoints in TensorFlow
 

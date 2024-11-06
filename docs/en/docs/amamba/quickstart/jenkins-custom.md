@@ -1,9 +1,9 @@
 # Using a custom toolchain in Jenkins
 
-The image of the running pipeline of Workbench has built-in commonly used tools, including: make, wget, gcc, etc. [^1]. Workbench supports the integration of user-defined tools or tools of a specific version, which can be used in the following cases:
+The image of the running pipeline of Workbench has built-in commonly used tools, including: make, wget, and gcc [^1]. Workbench supports the integration of user-defined tools or tools of a specific version, which can be used in the following cases:
 
 - Upgrade/downgrade to a specific version to fix bugs of the tool;
-- Install the tools that the pipeline operation depends on (for example: yq, curl, kustomize, etc.);
+- Install the tools that the pipeline operation depends on (for example: yq, curl, and kustomize);
 - Prepare the packages that the code depends on in advance to speed up compilation;
 
 Workbench supports adding a custom toolchain through volume mounting or building a custom image.

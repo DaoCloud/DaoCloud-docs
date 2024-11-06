@@ -78,3 +78,8 @@
     ![未设置](../../images/ns-sidecar07-01.png)
 
 下一步：[工作负载边车管理](./workload-sidecar.md)
+
+## 常见问题
+
+- [命名空间边车配置与工作负载边车冲突](./sidecar.md)
+- [边车占用大量内存](./sidecar-memory-err.md)

@@ -21,7 +21,8 @@ helm install -n kube-node-tuning kube-node-tuning kube-node-tuning/kube-node-tun
 
 !!! tip
 
-    If the machine is in China, you should following by: [quick-start-in-china](docs/quick-start-in-china.md)
+    If the machine is in China, you should following by
+    [quick-start-in-china](https://github.com/kubean-io/kube-node-tuning/blob/main/docs/quick-start-in-china.md)
 
 The kernel's sysctl settings are applied to the node at /etc/99-kube-node-tuning.conf.
 

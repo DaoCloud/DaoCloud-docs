@@ -1,6 +1,6 @@
 # Notebook SSH 访问指南
 
-智能算力提供的 Notebook 支持在本地通过 SSH 的方式访问；
+AI Lab 提供的 Notebook 支持在本地通过 SSH 的方式访问；
 
 通过简单的配置，即可使用 SSH 访问 Jupyter Notebook 的功能。
 无论您是使用 Windows、Mac 还是 Linux 操作系统，都可以按照以下步骤进行操作。

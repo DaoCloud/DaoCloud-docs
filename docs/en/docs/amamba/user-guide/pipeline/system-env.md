@@ -1,13 +1,15 @@
 ---
 MTPE: windsonsea
 Date: 2024-07-16
+hide:
+  - toc
 ---
 
 # System Built-in Environment Variables
 
 During the execution of a pipeline, you might need some system-built environment variables to use
 while the pipeline is running. The table below lists the currently default environment variables
-provided by the system. For more details, refer to the [Environment Variable Reference Documentation](./pipeline-syntax/#environment).
+provided by the system. For more details, refer to the [Environment Variable Reference Documentation](./pipeline-syntax.md).
 
 | Variable Name | Default Value | Description |
 | ------------- | ------------- | ----------- |

@@ -21,7 +21,7 @@ This document describes how to integrate traditional microservices with the Sent
     ```
     -javaagent:/jmx_prometheus_javaagent-0.17.0.jar=12345:/prometheus-jmx-config.yaml
     ```
-    For detailed information about JMX, you can refer to [Exposing JVM Monitoring Metrics using JMX Exporter](../../insight/quickstart/jvm-monitor/jmx-exporter.md).
+    For detailed information about JMX, you can refer to [Exposing JVM Monitoring Metrics using JMX Exporter](../../insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md).
 
 3. Create a Kubernetes Service for your service. Pay attention to the following parameters:
 

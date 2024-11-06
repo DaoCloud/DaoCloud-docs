@@ -115,7 +115,7 @@ Next, we will introduce the override policies in detail, which are divided into 
     2. Override configuration for mirroring the selected clusters
 
         | Field | Required | Description | Example |
-        | :-------- | :--- | :--------------- | :---------- |
+        | ----- | -------- | ----------- | ------- |
         | Component | Yes | Image component | Registry, Repository, Tag |
         | Operator | Yes | the operation on the image | add, remove, replace |
         | Value | No | When the Operator is __add__ or __replace__ , it cannot be empty, and it is empty by default; when the operator is __remove__ , leave it blank. | |
@@ -127,7 +127,7 @@ Next, we will introduce the override policies in detail, which are divided into 
     2. Override configuration of args for the selected clusters
 
         | Field | Required | Description | Example |
-        | :------------ | :--- | :-------------- | :---------- |
+        | ----- | -------- | ----------- | ------- |
         | ContainerName | Yes | container name | |
         | Operator | Yes | the operation to apply on args | add, remove |
         | Value | No | The value to apply to args. When the operator is __add__ , the value is appended to args; when the operator is __remove__ , the value is removed from args; if the value is empty, args remains as it is. | |
@@ -139,7 +139,7 @@ Next, we will introduce the override policies in detail, which are divided into 
     2. Perform override configuration of running commands on selected clusters
 
         | Field | Required | Description | Example |
-        | :------------ | :--- | :--------------- | :------------------ |
+        | ----- | -------- | ----------- | ------- |
         | ContainerName | Yes | container name | |
         | Operator | Yes | the operation applied to the command | add, remove |
         | Value | No | The value applied to the command. When the operator is __add__ , the value is appended to the command; when the operator is __remove__ , the value is removed from the command; if the value is empty, the command remains as it is. | You can add single or multiple values, use __;__ to divide multiple values |
@@ -151,7 +151,7 @@ Next, we will introduce the override policies in detail, which are divided into 
     2. Perform override configuration of running commands on selected clusters
 
         | Field | Required | Description | Example |
-        | :------- | :--- | :----------------- | :--------------- |
+        | ----- | -------- | ----------- | ------- |
         | Path | Yes | the path to the target field | |
         | Operator | Yes | the type of operation on the target field | add, remove, replace || Value | No | The value to apply to the target field, when Operator is __remove__ , this field must be empty | |
 
@@ -164,7 +164,7 @@ Next, we will introduce the override policies in detail, which are divided into 
     2. Perform override configuration of running labels for the selected clusters
 
         | Field | Required | Description | Example |
-        | :------- | :--- | :----------------- | :--------------- ---- |
+        | ----- | -------- | ----------- | ------- |
         | Key | Yes | the key of the label | |
         | Operator | Yes | the type of operation on the target field | add, remove, replace |
         | Value | No | The value of the tag | |
@@ -178,7 +178,7 @@ Next, we will introduce the override policies in detail, which are divided into 
     2. Override configuration of running annotations for selected clusters
 
         | Field | Required | Description | Example |
-        | :------- | :--- | :----------------- | :--------------- ---- |
+        | ----- | -------- | ----------- | ------- |
         | Key | Yes | the key of the annotation | |
         | Operator | Yes | the type of operation on the target field | add, remove, replace |
         | Value | No | The value of the annotation | |

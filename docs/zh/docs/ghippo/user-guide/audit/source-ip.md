@@ -9,7 +9,7 @@
 
     开启审计日志会修改 istio-ingressgateway 的副本数，带来一定的性能损耗。
     开启审计日志需要关闭 kube-proxy 的负载均衡以及拓扑感知路由，会对集群性能产生一定的影响。
-    开启审计日志后，访问IP所对应的节点上必须保证存在 istio-ingressgateway ，若因为节点健康或其他问题导致istio-ingressgateway 发生漂移，需要手动调度回该节点，否则会影响 DCE 的正常使用。
+    开启审计日志后，访问IP所对应的节点上必须保证存在 istio-ingressgateway ，若因为节点健康或其他问题导致 istio-ingressgateway 发生漂移，需要手动调度回该节点，否则会影响 DCE 5.0 的正常使用。
 
 ## 判断安装模式的方法
 
@@ -17,7 +17,7 @@
 kubectl get pod -n metallb-system
 ```
 
-在集群中执行上面的命令，若返回结果如下，则表示该集群为非 metallb 安装模式
+在集群中执行上面的命令，若返回结果如下，则表示该集群为非 MetalLB 安装模式
 
 ```console
 No resources found in metallbs-system namespace.
@@ -36,13 +36,13 @@ No resources found in metallbs-system namespace.
     kubectl patch hpa istio-ingressgateway -n istio-system -p '{"spec":{"minReplicas":'$count'}}'
     ```
 
-2. 修改 __istio-ingressgateway__ 的 service 的 __externalTrafficPolicy__ 和 __internalTrafficPolicy__ 值为 Local
+2. 修改 __istio-ingressgateway__ 的 service 的 __externalTrafficPolicy__ 和 __internalTrafficPolicy__ 值为 "Local"
 
     ```bash
     kubectl patch svc istio-ingressgateway -n istio-system -p '{"spec":{"externalTrafficPolicy":"Local","internalTrafficPolicy":"Local"}}'
     ```
 
-## Metallb 安装模式
+## MetalLB 安装模式
 
 该模式下安装完成后，会默认获取审计日志源 IP，若需要了解更多，请参考
-[Metallb 源 IP](../../../network/modules/metallb/source_ip.md)。
+[MetalLB 源 IP](../../../network/modules/metallb/source_ip.md)。

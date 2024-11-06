@@ -9,7 +9,7 @@ DCE 5.0 支持众多第三方存储方案，我们针对 OpenEBS 进行了相关
 
 本次测试使用三个虚拟机节点部署一个 Kubernetes 集群：1 个 Master + 2 个 Worker 节点，kubelet 版本为 1.23.6。
 
-```
+```console
 [root@k8s-10-6-162-31 ~]# kubectl get no
 NAME              STATUS   ROLES                  AGE    VERSION
 k8s-10-6-162-31   Ready    control-plane,master   114d   v1.23.6
@@ -19,14 +19,16 @@ k8s-10-6-162-33   Ready    <none>                 114d   v1.23.6
 
 ## 添加并更新 OpenEBS repo
 
-```
+```console
 [root@k8s-10-6-162-31 ~]# helm repo add openebs https://openebs.github.io/charts
 "openebs" has been added to your repositories
+
 [root@k8s-10-6-162-31 ~]# helm repo update
 Hang tight while we grab the latest from your chart repositories...
 ...Successfully got an update from the "longhorn" chart repository
 ...Successfully got an update from the "openebs" chart repository
 Update Complete. ⎈Happy Helming!⎈
+
 [root@k8s-10-6-162-31 ~]# helm repo list
 NAME URL
 longhorn https://charts.longhorn.io
@@ -35,7 +37,7 @@ openebs https://openebs.github.io/charts
 
 ## Helm 安装 OpenEBS
 
-```
+```console
 [root@k8s-10-6-162-31 ~]# helm install openebs --namespace openebs openebs/openebs --create-namespace
 NAME: openebs
 LAST DEPLOYED: Tue Jan 31 14:44:11 2023
@@ -78,7 +80,8 @@ For more information,
 ```
 
 ## 查看已安装 OpenEBS 集群资源
-```
+
+```console
 [root@k8s-10-6-162-31 ~]# kubectl get po -nopenebs
 NAME                                                         READY       STATUS        RESTARTS       AGE
 openebs-localpv-provisioner-5646cc6748-sdh2g                  1/1        Running       6 (4m44s ago)  47m
@@ -91,58 +94,62 @@ openebs-ndm-operator-65fdff8c8d-zvl8v                         1/1        Running
 [root@k8s-10-6-162-31 ~]# cd /data/openebs/local
 [root@k8s-10-6-162-31 local]# pwd
 /data/openebs/local
+
 [root@k8s-10-6-162-31 ~]# kubectl get sc -A
 NAME                     PROVISIONER             RECLAIMPOLICY    VOLUMEBINDINGMODE    ALLOWVOLUMEEXPANSION   AGE
 longhorn (default)       driver.longhorn.io      Delete           Immediate            true                   48d
 openebs-device           openebs.io/local        Delete           WaitForFirstConsumer false                  19h
 openebs-hostpath         openebs.io/local        Delete           WaitForFirstConsumer false                  19h
 ```
+
 ## 创建 local-hostpath-pvc 资源
-```
+
+```console
 [root@k8s-10-6-162-31 ~]# cat local-hostpath-pvc.yaml
+
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-name: local-hostpath-pvc
+  name: local-hostpath-pvc
 spec:
-storageClassName: openebs-hostpath
-accessModes:
-- ReadWriteOnce
-resources:
-requests:
-storage: 5G
-[root@k8s-10-6-162-31 ~]#
+  storageClassName: openebs-hostpath
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5G
 
 [root@k8s-10-6-162-31 ~]# cat local-hostpath-pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:
-name: hello-local-hostpath-pod
+  name: hello-local-hostpath-pod
 spec:
-volumes:
-- name: local-storage
-persistentVolumeClaim:
-claimName: local-hostpath-pvc
-containers:
-- name: hello-container
-image: busybox
-command:
-- sh
-- -c
-- 'while true; do echo "`date` [`hostname`] Hello from OpenEBS Local PV." >> /data/greeting.txt; sleep $(($RANDOM % 5 + 300)); done'
-volumeMounts:
-- mountPath: /data
-name: local-storage
+  volumes:
+    - name: local-storage
+      persistentVolumeClaim:
+        claimName: local-hostpath-pvc
+  containers:
+    - name: hello-container
+      image: busybox
+      command:
+        - sh
+        - -c
+        - 'while true; do echo "`date` [`hostname`] Hello from OpenEBS Local PV." >> /data/greeting.txt; sleep $(($RANDOM % 5 + 300)); done'
+      volumeMounts:
+        - mountPath: /data
+          name: local-storage
 
 [root@k8s-10-6-162-31 ~]# kubectl apply -f local-hostpath-pvc.yaml
 persistentvolumeclaim/local-hostpath-pvc created
+
 [root@k8s-10-6-162-31 ~]# kubectl get pvc
 NAME STATUS VOLUME CAPACITY ACCESS MODES STORAGECLASS AGE
 local-hostpath-pvc Pending openebs-hostpath 8s
 
 [root@k8s-10-6-162-31 ~]# kubectl apply -f local-hostpath-pod.yaml
 pod/hello-local-hostpath-pod created
-[root@k8s-10-6-162-31 ~]#
+
 [root@k8s-10-6-162-31 ~]# kubectl get po
 NAME READY STATUS RESTARTS AGE
 hello-local-hostpath-pod 0/1 Pending 0 11s
@@ -157,19 +164,24 @@ longhorn-iscsi-installation-2thd5 1/1 Running 1 48d
 longhorn-iscsi-installation-ctqtg 1/1 Running 1 (47d ago) 48d
 longhorn-iscsi-installation-mrm4h 1/1 Running 1 (47d ago) 48d
 ```
-## 创建 workload 并验证 
-```
+
+## 创建 workload 并验证
+
+```console
 [root@k8s-10-6-162-31 ~]# kubectl exec hello-local-hostpath-pod -- cat /data/greeting.txt
 Wed Feb 1 03:50:57 UTC 2023 [hello-local-hostpath-pod] Hello from OpenEBS Local PV.
 
 [root@k8s-10-6-162-31 ~]# kubectl exec -it hello-local-hostpath-pod -sh
 error: you must specify at least one command for the container
+
 [root@k8s-10-6-162-31 ~]# kubectl exec -it hello-local-hostpath-pod -- sh
 / # ls
 bin data dev etc home proc root sys tmp usr var
+
 / # cd data
 /data # ls
 greeting.txt
+
 /data # cat greeting.txt
 Wed Feb 1 03:50:57 UTC 2023 [hello-local-hostpath-pod] Hello from OpenEBS Local PV.
 Wed Feb 1 03:55:59 UTC 2023 [hello-local-hostpath-pod] Hello from OpenEBS Local PV.
@@ -178,15 +190,17 @@ Wed Feb 1 04:06:04 UTC 2023 [hello-local-hostpath-pod] Hello from OpenEBS Local 
 
 [root@k8s-10-6-162-31 ~]# kubectl get -o yaml pv |grep 'path:'
 path: /var/openebs/local/pvc-44db3536-2dc3-4b4d-bcd6-6d388a534fcd
-[root@k8s-10-6-162-31 ~]#
+
 [root@k8s-10-6-162-31 ~]# kubectl get pv
 NAME                                       CAPACITY   ACCESS MODES    RECLAIM POLICY     STATUS    CLAIM                         STORAGECLASS      REASON    AGE
 pvc-44db3536-2dc3-4b4d-bcd6-6d388a534fcd   5G         RWO             Delete             Bound     default/local-hostpath-pvc    openebs-hostpath            71m
 [root@k8s-10-6-162-31 ~]# kubectl get -o yaml pv pvc-44db3536-2dc3-4b4d-bcd6-6d388a534fcd |grep 'path:'
 path: /var/openebs/local/pvc-44db3536-2dc3-4b4d-bcd6-6d388a534fcd
 ```
+
 ## 安装 dbench 性能测试工具
-```
+
+```console
 [root@k8s-10-6-162-31 ~]# cat fio-deploy.yaml
 ** NOTE: For details of params to construct an fio job, refer to this link:
 ** https://fio.readthedocs.io/en/latest/fio_doc.html
@@ -195,23 +209,23 @@ path: /var/openebs/local/pvc-44db3536-2dc3-4b4d-bcd6-6d388a534fcd
 apiVersion: batch/v1
 kind: Job
 metadata:
-generateName: dbench-
+  generateName: dbench-
 spec:
-template:
-spec:
-containers:
-- name: dbench
-image: openebs/perf-test:latest
-imagePullPolicy: IfNotPresent
-env:
-
-** storage mount point on which testfiles are created
-
-- name: DBENCH_MOUNTPOINT
-value: /data
+  template:
+    spec:
+      containers:
+        - name: dbench
+          image: openebs/perf-test:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            # storage mount point on which test files are created
+            - name: DBENCH_MOUNTPOINT
+              value: /data
 ```
-## 测试 io 性能
-```
+
+## 测试 I/O 性能
+
+```console
 kubectl delete pod hello-local-hostpath-pod
 
 [root@k8s-10-6-162-31 ~]# kubectl create -f fio-deploy.yaml
@@ -518,4 +532,3 @@ Average Latency (usec) Read/Write: 395817.82/136881.82
 Sequential Read/Write: 17.8MiB/s / 26.3MiB/s
 Mixed Random Read/Write IOPS: 294/93
 ```
-

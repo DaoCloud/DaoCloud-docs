@@ -453,7 +453,8 @@ if !online && readyCondition.Status != metav1.ConditionTrue {
 
 cluster conntroller 会根据集群当前状态下的 conditions，判断是否需要为集群打上不可调度和不可执行的污点。
 以下代码为核心实现逻辑，当 conditions 中 type 为 Ready 的 condition 状态为 'False' 时，
-执行 UpdateClusterControllerTaint 函数添加 effect 为 NoSchedule 和 NoExecute 的污点。
+执行 UpdateClusterControllerTaint 函数添加 effect 为 NoSchedule 污点。
+此污点并不会触发驱逐操作。想要触发驱逐操作，你还需要将 NoExecute 作为污点添加到 [taint-manager](#taint-manager-controller)。
 
 ```go
 func (c *Controller) taintClusterByCondition(ctx context.Context, cluster *clusterv1alpha1.Cluster) error {

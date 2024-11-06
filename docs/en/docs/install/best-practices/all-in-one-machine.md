@@ -87,7 +87,7 @@ If you need to allocate "static IP" for Pods, you need to create sub-interfaces 
 
 ## Installation Steps (3 Physical Machines)
 
-### Install Prerequisites
+### Prerequisites
 
 [Install Dependencies](../install-tools.md)
 

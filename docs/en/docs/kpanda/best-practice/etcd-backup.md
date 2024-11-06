@@ -60,7 +60,7 @@ You need to check the following before restoring:
 
 ### Shut down the cluster
 
-Before backing up, the cluster must be shut down. The default clusters __etcd__ and __kube-apiserver__ are started as static pods. To close the cluster here means to move the static Pod manifest file out of the __/etc/kubernetes/manifest__ directory, and the cluster will remove the corresponding Pod to close the service.
+Before backing up, the cluster must be shut down. The default clusters __etcd__ and __kube-apiserver__ are started as static pods. To close the cluster here means to move the static Pod manifest file out of the __/etc/kubernetes/manifest__ directory, and the cluster will remove Pods to close the service.
 
 1. First, delete the previous backup data. Removing the data does not delete the existing etcd data, but refers to modifying the name of the etcd data directory. Wait for the backup to be successfully restored before deleting this directory. The purpose of this is to also try to restore the current cluster if the etcd backup restore fails. This step needs to be performed for each node.
 
@@ -140,7 +140,7 @@ You only need to restore the data of one node, and the etcd data of other nodes 
     The parameters are described as follows:
 
     - --data-dir: etcd data directory. This directory must be consistent with the etcd data directory so that etcd can load data normally.
-    - --store-container: The location of S3 storage, the corresponding bucket in MinIO, must correspond to the bucket of data backup.
+    - --store-container: The location of S3 storage, the bucket in MinIO, must correspond to the bucket of data backup.
     - --initial-cluster: etcd is configured initially. The name of the etcd cluster must be the same as the original one.
     - --initial-advertise-peer-urls: etcd member inter-cluster access address. Must be consistent with etcd configuration.
 

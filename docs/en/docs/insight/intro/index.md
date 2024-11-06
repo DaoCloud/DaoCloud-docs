@@ -67,7 +67,7 @@ The main features as following:
     - Understand [OpenTelemetry](../quickstart/otel/otel.md), send observability data to Insight [Sending Observability Data](../quickstart/otel/send_tracing_to_insight.md)
     - Enhance applications in a [non-intrusive](../quickstart/otel/operator.md) manner
     - Observability for [Java Applications](../quickstart/jvm-monitor/jvm-catelogy.md)
-    - Observability for [Golang Applications](../quickstart/otel/golang.md)
+    - Observability for [Golang Applications](../quickstart/otel/golang/golang.md)
     - [Integrating Other Observability Technologies](../best-practice/sw-to-otel.md)
 
 </div>
@@ -77,7 +77,7 @@ The main features as following:
 The basic concepts related to observability (Insight) are as follows.
 
 | # | Terms | Definitions |
-| :--- | ----------------- | :------------- ------------------------------------------------ |
+| - | ----- | ---------- |
 | 1 | Target | The monitored object; the system will regularly initiate capture tasks to the monitoring point to obtain metrics |
 | 2 | Metric | Use the [open-metric](https://openmetrics.io/) format description to measure the degree of a certain attribute in a software or hardware system |
 | 3 | Recording Rule | A named PromQL expression, which is a new metric obtained by calculating multiple metrics to describe a more complete and complex system state |

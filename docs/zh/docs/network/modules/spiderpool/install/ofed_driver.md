@@ -49,11 +49,11 @@
 
     | OS            | 内核版本 | 镜像名称                                                            |
     | ------------- | -------- | ------------------------------------------------------------------- |
-    | ubuntu22.04   | 5.15     | daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64   |
-    | ubuntu20.04   | 5.4      | daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64   |
-    | ubuntu18.04   | 4.15     | daocloud.io/daocloud/mellanox-mofed:23.07-0.5.0.0-ubuntu18.04-amd64 |
-    | RHEL9         | 5.14.0   | daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel9.0-amd64     |
-    | RHEL8/Centos8 | 4.18.0   | daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel8.8-amd64     |
+    | ubuntu22.04   | 5.15     | `daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64`   |
+    | ubuntu20.04   | 5.4      | `daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64`   |
+    | ubuntu18.04   | 4.15     | `daocloud.io/daocloud/mellanox-mofed:23.07-0.5.0.0-ubuntu18.04-amd64` |
+    | RHEL9         | 5.14.0   | `daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel9.0-amd64`     |
+    | RHEL8/Centos8 | 4.18.0   | `daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel8.8-amd64`     |
 
 - 集群不同节点的操作系统或架构可能是不同的，同一个镜像可能无法适用于集群所有节点。这种情况下，
   我们应该确保 Pod 运行在指定的节点。否则因为节点操作系统和架构的不同而导致安装驱动失败。
@@ -166,11 +166,27 @@ spec:
 
         如果想要下载早期版本，请点击 Archive Version 切换。
 
+- 安装 OFED 驱动时，可能会通过 `apt install` 在线安装一些依赖，如果您是离线环境，无法访问外网, 可参考该步骤获取所有需要的依赖。
+
+    | OS Version | Architecture | File Size | Package | Update Date |
+    |----------|--------------|-----------|---------|----------|
+    | Ubuntu 22.04 | AMD 64  | 165.25 MB | [:arrow_down: ubuntu22.04-ofed-driver-offline-deb.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ubuntu22.04-ofed-driver-offline-deb.tar.gz)  | 2024-07-29 |
+
+    获取离线依赖包后，请解压并加载对应的 deb 包
+
+    ```shell
+    mkdir ubuntu22.04-ofed-driver-offline-deb && tar -zxvf ubuntu22.04-ofed-driver-offline-deb.tar.gz
+    cd ubuntu22.04-ofed-driver-offline-deb
+    dpkg -i *.deb
+    apt-get install -f
+    ```
+
 - 本文以下载 iso 文件为例，下载文件并上传到主机。挂载到 `/mnt` 路径并执行安装命令。
 
     ```shell
     root@10-20-1-20:~/install# mount MLNX_OFED_LINUX-23.10-1.1.9.0-ubuntu22.04-x86_64.iso /mnt/
     mount: /mnt: WARNING: source write-protected, mounted read-only.
+    
     root@10-20-1-20:/mnt# ./mlnxofedinstall --with-nvmf --with-nfsrdma --all
     Logs dir: /tmp/MLNX_OFED_LINUX.86055.logs
     General log file: /tmp/MLNX_OFED_LINUX.86055.logs/general.log

@@ -209,22 +209,30 @@ npx prettier -w filename
 
 只需修改 URL 就能筛选出不同的内容：
 
-- 查看某个月份 Closed Issue：
+- Issue
 
-    ```
+    查看某个月份 Closed Issue：
+
+    ```http
     https://github.com/DaoCloud/DaoCloud-docs/issues?page=1&q=is%3Aclosed+is%3Aissue+closed%3A2024-01
     ```
 
-- 查看某个月份创建的 Issue 并增加搜索：
+    查看某个月份创建的还处于 Open 状态的 Issue：
 
-    ```
+    ```http
     https://github.com/DaoCloud/DaoCloud-docs/issues?q=is%3Aissue+%E6%9C%8D%E5%8A%A1%E7%BD%91%E6%A0%BC+created%3A2024-01+is%3Aopen
     ```
 
 - 查看某个月份 Merged PR：
 
-    ```
+    ```http
     https://github.com/DaoCloud/DaoCloud-docs/pulls?q=is%3Apr+label%3Akpanda+is%3Aclosed+merged%3A%3E%3D2024-01
+    ```
+
+- 查看某个日期之后 closed discussion 评论：
+
+    ```http
+    https://github.com/DaoCloud/DaoCloud-docs/discussions?discussions_q=is%3Aclosed+updated%3A%3E2024-08-01
     ```
 
 !!! tip

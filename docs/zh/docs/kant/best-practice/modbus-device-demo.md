@@ -4,7 +4,26 @@
 
 接入流程：
 
-![Modbus 设备接入流程](../images/modbus-device-demo-00.png)
+```mermaid
+graph TD
+    A(开始) --> B(终端设备连接边缘节点)
+    B --> C(创建设备模型)
+    C --> D(创建终端设备)
+    D --> E(部署设备 Mapper)
+    E --> F(结束)
+
+classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+
+class A,F plain
+class B,C,D,E cluster
+
+click B "https://docs.daocloud.io/kant/best-practice/modbus-device-demo.html#_2"
+click C "https://docs.daocloud.io/kant/best-practice/modbus-device-demo.html#_3"
+click D "https://docs.daocloud.io/kant/best-practice/modbus-device-demo.html#_4"
+click E "https://docs.daocloud.io/kant/best-practice/modbus-device-demo.html#_5"
+```
 
 ## 准备工作
 
@@ -20,29 +39,29 @@
 
 ## 终端设备连接边缘节点
 
-由于本文中 Modbus 设备为模拟设备，故我们先将模拟设备镜像下发到边缘节点运行，模拟设备连接。部署流程参考[创建工作负载](../user-guide/edge-app/create-app.md)
+由于本文中 Modbus 设备为模拟设备，故我们先将模拟设备镜像下发到边缘节点运行，模拟设备连接。部署流程参考[创建工作负载](../user-guide/edge-app/create-app.md)。
 
-创建工作负载-高级配置 参数说明：
+在[高级配置](../user-guide/edge-app/create-app.md#__tabbed_2_1)中包含以下参数说明：
 
 - 节点调度，选择设备需要连接的节点
 - 访问配置，网络类型选择主机网络
 
 ## 创建设备模型
 
-设备模型创建流程参见[创建设备模型](../user-guide/device/create-device-model.md)
+设备模型创建流程参见[创建设备模型](../user-guide/device/create-device-model.md)。
 
 以下设备模型参数请跟如下设置保持一致：
 
 - 访问协议名称：modbus-tcp
-- 设备模型孪生属性中的属性名、属性类型、访问权限与下图保持一致
+- 设备模型孪生属性中的 __属性名__ 、__属性类型__ 、__访问权限__ 与下图保持一致
 
     ![设备模型孪生属性](../images/modbus-device-demo-01.png)
 
 ## 创建终端设备
 
-1. 填写基础信息，设备模型选择上文创建的设备模型
+1. 填写 __基础信息__ ，设备模型选择上文创建的设备模型
 
-2. 填写设备配置，模型中关联的孪生属性配置如下
+2. 填写 __设备配置__ ，模型中关联的孪生属性配置如下
 
     temperature 属性访问方式：
 
@@ -61,7 +80,7 @@
     ![设备孪生属性](../images/modbus-device-demo-02.png)
     ![设备孪生属性](../images/modbus-device-demo-03.png)
 
-3. 填写设备访问配置，配置参数如下
+3. 填写设备 __访问配置__ ，配置参数如下：
 
     ```yaml
     address: 0.0.0.0:11502
@@ -93,9 +112,9 @@ release-ci.daocloud.io/kant/devicedemo:v1.1
 
 创建工作负载参数说明：
 
-- 容器配置-数据存储，选择主机路径，**主机路径 /etc/kubeedge** 映射**容器路径 /etc/kubeedge**，权限为**读写权限**
-- 高级配置-访问配置，网络类型选择**主机网络**
-- 高级配置-节点调度，选择跟设备绑定的同一节点
+- __容器配置__ -> __数据存储__ ，选择主机路径，**主机路径 /etc/kubeedge** 映射 **容器路径 /etc/kubeedge**，权限为 **读写权限**
+- __高级配置__ -> __访问配置__ ，网络类型选择 **主机网络**
+- __高级配置__ -> __节点调度__ ，选择跟设备绑定的同一节点
 
     ![数据存储配置](../images/modbus-device-demo-06.png)
     ![访问配置](../images/modbus-device-demo-07.png)

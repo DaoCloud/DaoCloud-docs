@@ -25,10 +25,10 @@ Highly available LVM local data volume, suitable for the following cases and app
 - **Database**, such as MySQL, PostgreSQL, etc.
 - Other applications that require high data availability
 
-## Install and deploy using Helm Chart
+## Install via hwameistor-operator
 
-Local storage is part of HwameiStor and must work with local disk manager. Users are advised to [deploy via helm-charts](../install/deploy-helm.md).
+Once hwameistor-operator is installed, it will automatically launch the HwameiStor-related components. Refer to [Installing HwameiStor via hwameistor-operator](../install/deploy-operator.md).
 
 ## Independent installation and deployment method
 
-Developers can install [independent installation](../install/deploy-helm.md) local-storage from source code, mainly for development and testing use cases. For this installation method, you need to install [Local Disk Manager](./ldm.md) in advance.
+Developers can install [independent installation](../install/deploy-ui.md) local-storage from source code, mainly for development and testing use cases. For this installation method, you need to install [Local Disk Manager](./ldm.md) in advance.

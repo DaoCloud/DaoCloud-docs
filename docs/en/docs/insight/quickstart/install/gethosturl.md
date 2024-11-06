@@ -21,10 +21,6 @@ export es_host="insight-es-master.insight-system.svc.cluster.local" # (2)!
 export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster.local" # (3)!
 ```
 
-1. Metrics
-2. Logs
-3. Traces
-
 ## Install insight-agent in Other Clusters
 
 ### Get Address via Interface Provided by Insight Server
@@ -34,14 +30,15 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
     Log in to the console of the global service cluster and run the following command:
 
-    !!! note
-
-        Please replace the `${INSIGHT_SERVER_IP}` parameter in the command.
 
     ```bash
     export INSIGHT_SERVER_IP=$(kubectl get service insight-server -n insight-system --output=jsonpath={.spec.clusterIP})
     curl --location --request POST 'http://'"${INSIGHT_SERVER_IP}"'/apis/insight.io/v1alpha1/agentinstallparam'
     ```
+
+    !!! note
+
+        Please replace the `${INSIGHT_SERVER_IP}` parameter in the command.
 
     You will get the following response:
 
@@ -139,53 +136,53 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
 ### Connect via LoadBalancer
 
-The above [getting address via interface provided by Insight Server](#get-address-via-interface-provided-by-insight-server) is done by
-querying the cluster's LoadBalancer to get the connection address.
-Additionally, you can manually run the following command to get the address information of the proper services:
+1. If `LoadBalancer` is enabled in the cluster and a `VIP` is set for Insight, you can manually execute 
+   the following command to obtain the address information for `vminsert` and `opentelemetry-collector`:
 
-```shell
-$ kubectl get service -n insight-system | grep lb
-lb-insight-es-master                             LoadBalancer   10.233.35.17    <pending>     9200:31529/TCP                 24d
-lb-insight-opentelemetry-collector               LoadBalancer   10.233.23.12    <pending>     4317:31286/TCP,8006:31351/TCP  24d
-lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    <pending>     8480:31629/TCP                 24d
-```
+    ```shell
+    $ kubectl get service -n insight-system | grep lb
+    lb-insight-opentelemetry-collector               LoadBalancer   10.233.23.12    <pending>     4317:31286/TCP,8006:31351/TCP  24d
+    lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    <pending>     8480:31629/TCP                 24d
+    ```
+    
+    - `lb-vminsert-insight-victoria-metrics-k8s-stack` is the address for the metrics service.
+    - `lb-insight-opentelemetry-collector` is the address for the tracing service.
 
-- `lb-insight-es-master` is the address of the log service.
-- `lb-vminsert-insight-victoria-metrics-k8s-stack` is the address of the metrics service.
-- `lb-insight-opentelemetry-collector` is the address of the trace service.
+2. Execute the following command to obtain the address information for `elasticsearch`:
+
+    ```shell
+    $ kubectl get service -n mcamel-system | grep es
+    mcamel-common-es-cluster-masters-es-http               NodePort    10.233.16.120   <none>        9200:30465/TCP               47d
+    ```
+
+    `mcamel-common-es-cluster-masters-es-http` is the address for the logging service.
 
 ### Connect via NodePort
 
-1. Global service cluster enables LB feature [enabled by default]
+The LoadBalancer feature is disabled in the global service cluster. 
 
-    Manually run the command `kubectl get service -n insight-system | grep lb` to
-    get the NodePort port information of the corresponding services,
-    refer to [Connect via LoadBalancer](#connect-via-loadbalancer).
-    
-1. Global service cluster disables LB feature
+In this case, the LoadBalancer resources mentioned above will not be created by default. The relevant service names are:
 
-    In this case, the above LoadBalancer resources will not be created by default, and the corresponding service names are:
+- vminsert-insight-victoria-metrics-k8s-stack (metrics service)
+- common-es (logging service)
+- insight-opentelemetry-collector (tracing service)
 
-    - vminsert-insight-victoria-metrics-k8s-stack (metrics service)
-    - common-es (log service)
-    - insight-opentelemetry-collector (trace service)
+After obtaining the corresponding port information for the services in the above two scenarios, make the following settings:
 
-    After getting the proper port information of the respective services in the above two cases, set as follows:
+```shell
+--set global.exporters.logging.host=  # (1)!
+--set global.exporters.logging.port=  # (2)!
+--set global.exporters.metric.host=   # (3)!
+--set global.exporters.metric.port=   # (4)!
+--set global.exporters.trace.host=    # (5)!
+--set global.exporters.trace.port=    # (6)!
+--set global.exporters.auditLog.host= # (7)!
+```
 
-    ```shell
-    --set global.exporters.logging.host=  # (1)!
-    --set global.exporters.logging.port=  # (2)!
-    --set global.exporters.metric.host=   # (3)!
-    --set global.exporters.metric.port=   # (4)!
-    --set global.exporters.trace.host=    # (5)!
-    --set global.exporters.trace.port=    # (6)!
-    --set global.exporters.auditLog.host= # (7)!
-    ```
-
-    1. Externally accessible management cluster NodeIP
-    2. NodePort corresponding to log service port 9200
-    3. Externally accessible management cluster NodeIP
-    4. NodePort corresponding to metrics service port 8480
-    5. Externally accessible management cluster NodeIP
-    6. NodePort corresponding to trace service port 4317
-    7. Externally accessible management cluster NodeIP
+1. NodeIP of the externally accessible management cluster
+2. NodePort of the logging service port 9200
+3. NodeIP of the externally accessible management cluster
+4. NodePort of the metrics service port 8480
+5. NodeIP of the externally accessible management cluster
+6. NodePort of the tracing service port 4317
+7. NodeIP of the externally accessible management cluster

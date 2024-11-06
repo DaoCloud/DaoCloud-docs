@@ -6,7 +6,7 @@ Date: 2024-01-11
 # Credential Management
 
 Credentials can store sensitive information such as usernames, passwords, access tokens (Secret text),
-Kubeconfig, etc., making the stored data more secure, flexible, and preventing exposure in images.
+and kubeconfig making the stored data more secure, flexible, and preventing exposure in images.
 When running pipelines, there is often a need to interact with third-party websites or applications,
 such as Git repositories and image registries. During this process, corresponding credentials need
 to be provided. Therefore, users are required to configure credentials for pipelines. Once configured,
@@ -19,8 +19,8 @@ Currently, you can create the following three types of credentials in the Workbe
   through username/password, you can choose this type. Examples include GitHub, GitLab,
   and Docker Hub accounts.
 
-- **Access Token**: This type is used to store tokens like API tokens
-  (e.g., GitHub personal access token).
+- **Access Token**: This type is used to store tokens like API tokens,
+  such as [GitHub or GitLab personal access tokens](./github_gitlab_token.md).
 
 - **Kubeconfig**: This type is used to configure cross-cluster authentication.
 

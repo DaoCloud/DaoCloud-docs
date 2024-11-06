@@ -9,7 +9,7 @@ This article explains how to create a RedHat 9.2 worker cluster on an existing C
 
 ## Prerequisites
 
-A DCE 5.0 full-mode has been deployed, and the spark node is still alive. For deployment, see the document [Offline Installation of DCE 5.0 Commercial Edition](../../install/commercial/start-install.md).
+A DCE 5.0 full-mode has been deployed, and the spark node is still alive. For deployment, see the document [Offline Install DCE 5.0 Enterprise](../../install/commercial/start-install.md).
 
 ## Download and Import RedHat Offline Packages
 

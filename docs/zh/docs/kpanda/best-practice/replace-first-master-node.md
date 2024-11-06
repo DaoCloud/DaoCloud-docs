@@ -21,7 +21,7 @@
 
 1. 获取集群名称
 
-    执行如下命令，找到集群对应的 clusters.kubean.io 资源：
+    执行如下命令，找到集群对应的 `clusters.kubean.io` 资源：
 
     ```shell
     # 比如 clusters.kubean.io 的资源名称为 cluster-mini-1
@@ -59,55 +59,55 @@
     apiVersion: v1
     kind: ConfigMap
     metadata:
-    name: mini-1-hosts-conf
-    namespace: kubean-system
+      name: mini-1-hosts-conf
+      namespace: kubean-system
     data:
-    hosts.yml: |
+      hosts.yml: |
         all:
-        hosts:
+          hosts:
             node1:
-            ip: "172.30.41.161"
-            access_ip: "172.30.41.161"
-            ansible_host: "172.30.41.161"
-            ansible_connection: ssh
-            ansible_user: root
-            ansible_password: dangerous
+              ip: "172.30.41.161"
+              access_ip: "172.30.41.161"
+              ansible_host: "172.30.41.161"
+              ansible_connection: ssh
+              ansible_user: root
+              ansible_password: dangerous
             node2:
-            ip: "172.30.41.162"
-            access_ip: "172.30.41.162"
-            ansible_host: "172.30.41.162"
-            ansible_connection: ssh
-            ansible_user: root
-            ansible_password: dangerous
+              ip: "172.30.41.162"
+              access_ip: "172.30.41.162"
+              ansible_host: "172.30.41.162"
+              ansible_connection: ssh
+              ansible_user: root
+              ansible_password: dangerous
             node3:
-            ip: "172.30.41.163"
-            access_ip: "172.30.41.163"
-            ansible_host: "172.30.41.163"
-            ansible_connection: ssh
-            ansible_user: root
-            ansible_password: dangerous
-        children:
+              ip: "172.30.41.163"
+              access_ip: "172.30.41.163"
+              ansible_host: "172.30.41.163"
+              ansible_connection: ssh
+              ansible_user: root
+              ansible_password: dangerous
+          children:
             kube_control_plane:
-            hosts:
+              hosts:
                 node2:
                 node3:
                 node1:
             kube_node:
-            hosts:
+              hosts:
                 node2:
                 node3:
                 node1:
             etcd:
-            hosts:
+              hosts:
                 node2:
                 node3:
                 node1:
             k8s_cluster:
-            children:
+              children:
                 kube_control_plane:
                 kube_node:
             calico_rr:
-            hosts: {}
+              hosts: {}
     EOF
     }
     
@@ -182,6 +182,7 @@
 
         - 使用 `--limit` 限制更新操作仅作用于 etcd 和 kube_control_plane 节点组。
         - 如果是离线环境，spec.preHook 需要添加 enable-repo.yml，并且 extraArgs 参数填写相关 OS 的正确 repo_list。
+        - 扩容完成后，node2 变更为首个 master
 
     ```bash
     cat << EOF | kubectl apply -f -

@@ -19,7 +19,7 @@ Add the following configuration to the `/etc/docker/daemon.json` file:
 }
 ```
 
-After making the changes, restart Docker: `systemctl restart docker`
+After making the changes, restart Docker using the command `systemctl restart docker`
 
 ## containerd
 

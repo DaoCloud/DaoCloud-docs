@@ -1,4 +1,9 @@
-# container health check
+---
+MTPE: windsonsea
+Date: 2024-10-15
+---
+
+# Container health check
 
 Container health check checks the health status of containers according to user requirements. After configuration, if the application in the container is abnormal, the container will automatically restart and recover. Kubernetes provides Liveness checks, Readiness checks, and Startup checks.
 
@@ -14,8 +19,8 @@ The configuration of LivenessProbe is similar to that of ReadinessProbe, the onl
 
 **HTTP GET parameter description:**
 
-| Parameter | Parameter Description |
-| ----------------------------------- | ---------------- ----------------------------------------------- |
+| Parameter | Description |
+| --------- | ----------- |
 | Path (Path) | The requested path for access. Such as: /healthz path in the example |
 | Port (Port) | Service listening port. Such as: port 8080 in the example |
 | protocol | access protocol, Http or Https |
@@ -33,24 +38,24 @@ The configuration of LivenessProbe is similar to that of ReadinessProbe, the onl
 apiVersion: v1
 kind: Pod
 metadata:
-   labels:
-     test: liveness
-   name: liveness-http
+  labels:
+    test: liveness
+  name: liveness-http
 spec:
-   containers:
-   -name: liveness
-     image: k8s.gcr.io/liveness
-     args:
-     - /server
-     livenessProbe:
-       httpGet:
-         path: /healthz # Access request path
-         port: 8080 # service listening port
-         httpHeaders:
-         - name: Custom-Header
-           value: Awesome
-       initialDelaySeconds: 3 # kubelet should wait 3 seconds before performing the first probe
-       periodSeconds: 3 #kubelet performs a liveness detection every 3 seconds
+  containers:
+  - name: liveness  # Container name
+    image: k8s.gcr.io/liveness  # Container image
+    args:
+    - /server  # Arguments to pass to the container
+    livenessProbe:
+      httpGet:
+        path: /healthz  # Access request path
+        port: 8080  # Service listening port
+        httpHeaders:
+        - name: Custom-Header  # Custom header name
+          value: Awesome  # Custom header value
+      initialDelaySeconds: 3  # Wait 3 seconds before the first probe
+      periodSeconds: 3  # Perform liveness detection every 3 seconds
 ```
 
 According to the set rules, Kubelet sends an HTTP GET request to the service running in the container (the service is listening on port 8080) to perform the detection. The kubelet considers the container alive if the handler under the __/healthz__ path on the server returns a success code. If the handler returns a failure code, the kubelet kills the container and restarts it. Any return code greater than or equal to 200 and less than 400 indicates success, and any other return code indicates failure. The __/healthz__ handler returns a 200 status code for the first 10 seconds of the container's lifetime. The handler then returns a status code of 500.
@@ -59,8 +64,8 @@ According to the set rules, Kubelet sends an HTTP GET request to the service run
 
 **TCP port parameter description:**
 
-| Parameter | Parameter Description |
-| -------------------------------- | ----------------- ----------------------------------------------- |
+| Parameter | Description |
+| --------- | ----------- |
 | Port (Port) | Service listening port. Such as: port 8080 in the example |
 | Delay time (initialDelaySeconds) | Delay check time, in seconds, this setting is related to the normal startup time of business programs. For example, if it is set to 30, it means that the health check will start 30 seconds after the container is started, which is the time reserved for business program startup. |
 | Timeout (timeoutSeconds) | Timeout, in seconds. For example, if it is set to 10, it indicates that the timeout waiting period for executing the health check is 10 seconds. If this time is exceeded, the health check will be regarded as a failure. If set to 0 or not set, the default timeout waiting time is 1 second. |
@@ -73,26 +78,25 @@ For a container that provides TCP communication services, based on this configur
 apiVersion: v1
 kind: Pod
 metadata:
-   name: goproxy
-   labels:
-     app: goproxy
+  name: goproxy
+  labels:
+    app: goproxy
 spec:
-   containers:
-   - name: goproxy
-     image: k8s.gcr.io/goproxy:0.1
-     ports:
-     - containerPort: 8080
-     readinessProbe:
-       tcpSocket:
-         port: 8080
-       initialDelaySeconds: 5
-       periodSeconds: 10
-     livenessProbe:
-       tcpSocket:
-         port: 8080
-       initialDelaySeconds: 15
-       periodSeconds: 20
-
+  containers:
+  - name: goproxy
+    image: k8s.gcr.io/goproxy:0.1
+    ports:
+    - containerPort: 8080
+    readinessProbe:
+      tcpSocket:
+        port: 8080
+      initialDelaySeconds: 5
+      periodSeconds: 10
+    livenessProbe:
+      tcpSocket:
+        port: 8080
+      initialDelaySeconds: 15
+      periodSeconds: 20
 ```
 
 This example uses both readiness and liveness probes. The kubelet sends the first readiness probe 5 seconds after the container is started. Attempt to connect to port 8080 of the __goproxy__ container. If the probe is successful, the Pod will be marked as ready and the kubelet will continue to run the check every 10 seconds.
@@ -107,24 +111,24 @@ In addition to the readiness probe, this configuration includes a liveness probe
 apiVersion: v1
 kind: Pod
 metadata:
-   labels:
-     test: liveness
-   name: liveness-exec
+  labels:
+    test: liveness
+  name: liveness-exec
 spec:
-   containers:
-   -name: liveness
-     image: k8s.gcr.io/busybox
-     args:
-     - /bin/sh
-     - -c
-     - touch /tmp/healthy; sleep 30; rm -f /tmp/healthy; sleep 600
-     livenessProbe:
-       exec:
-         command:
-         - cat
-         - /tmp/healthy
-       initialDelaySeconds: 5 # kubelet waits 5 seconds before performing the first probe
-       periodSeconds: 5 #kubelet performs a liveness detection every 5 seconds
+  containers:
+  - name: liveness  # Container name
+    image: k8s.gcr.io/busybox  # Container image
+    args:
+    - /bin/sh  # Command to run
+    - -c  # Pass the following string as a command
+    - touch /tmp/healthy; sleep 30; rm -f /tmp/healthy; sleep 600  # Command to execute
+    livenessProbe:
+      exec:
+        command:
+        - cat  # Command to check liveness
+        - /tmp/healthy  # File to check
+      initialDelaySeconds: 5  # Wait 5 seconds before the first probe
+      periodSeconds: 5  # Perform liveness detection every 5 seconds
 ```
 
 The __periodSeconds__ field specifies that the kubelet performs a liveness probe every 5 seconds, and the __initialDelaySeconds__ field specifies that the kubelet waits for 5 seconds before performing the first probe. According to the set rules, the cluster periodically executes the command __cat /tmp/healthy__ in the container through the kubelet to detect. If the command executes successfully and the return value is 0, the kubelet considers the container to be healthy and alive. If this command returns a non-zero value, the kubelet will kill the container and restart it.
@@ -138,22 +142,22 @@ Some applications require a long initialization time at startup. You need to use
 ```yaml
 ports:
 - name: liveness-port
-   containerPort: 8080
-   hostPort: 8080
+  containerPort: 8080
+  hostPort: 8080
 
 livenessProbe:
-   httpGet:
-     path: /healthz
-     port: liveness-port
-   failureThreshold: 1
-   periodSeconds: 10
+  httpGet:
+    path: /healthz
+    port: liveness-port
+  failureThreshold: 1
+  periodSeconds: 10
 
 startupProbe:
-   httpGet:
-     path: /healthz
-     port: liveness-port
-   failureThreshold: 30
-   periodSeconds: 10
+  httpGet:
+    path: /healthz
+    port: liveness-port
+  failureThreshold: 30
+  periodSeconds: 10
 ```
 
 With the above settings, the application will have up to 5 minutes (30 * 10 = 300s) to complete the startup process. Once the startup detection is successful, the survival detection task will take over the detection of the container and respond quickly to the container deadlock. If the start probe has been unsuccessful, the container is killed after 300 seconds and further disposition is performed according to the __restartPolicy__ .

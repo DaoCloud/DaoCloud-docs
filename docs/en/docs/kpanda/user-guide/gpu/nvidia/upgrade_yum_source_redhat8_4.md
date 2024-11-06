@@ -2,14 +2,14 @@
 
 ## Scenario Introduction
 
-DCE 5 comes with pre-installed CentOS 7.9 and GPU Operator offline packages with kernel version 3.10.0-1160. For other OS types or nodes with different kernels, users need to manually build the offline yum source.
+DCE 5 comes with pre-installed CentOS v7.9 and GPU Operator offline packages with kernel v3.10.0-1160. For other OS types or nodes with different kernels, users need to manually build the offline yum source.
 
 This guide explains how to build an offline yum source package for Red Hat 8.4 based on any node in the Global cluster. It also demonstrates how to use it during the installation of the GPU Operator by specifying the __RepoConfig.ConfigMapName__ parameter.
 
 ## Prerequisites
 
-1. The user has already installed the addon offline package version v0.12.0 or higher on the platform.
-2. The OS of the cluster nodes where the GPU Operator will be deployed must be Red Hat 8.4, and the kernel version must be identical.
+1. The user has already installed the addon offline package v0.12.0 or higher on the platform.
+2. The OS of the cluster nodes where the GPU Operator will be deployed must be Red Hat v8.4, and the kernel version must be identical.
 3. Prepare a file server that can communicate with the cluster network where the GPU Operator will be deployed, such as Nginx or MinIO.
 4. Prepare a node that can access the internet, the cluster where the GPU Operator will be deployed, and the file server. Ensure that Docker is already installed on this node.
 5. The nodes in the Global cluster must be Red Hat 8.4 4.18.0-305.el8.x86_64.
@@ -18,7 +18,7 @@ This guide explains how to build an offline yum source package for Red Hat 8.4 b
 
 This guide uses a node with Red Hat 8.4 4.18.0-305.el8.x86_64 as an example to demonstrate how to build an offline yum source package for Red Hat 8.4 based on any node in the Global cluster. It also explains how to use it during the installation of the GPU Operator by specifying the __RepoConfig.ConfigMapName__ parameter.
 
-### Step 1: Download the Yum Source from the Seed Node
+### Step 1: Download the Yum Source from the Bootstrap Node
 
 Perform the following steps on the master node of the Global cluster.
 
@@ -110,9 +110,9 @@ You have now generated the offline yum source named __redhat-base-repo__ for ker
 
 ### Step 4: Upload the Local Yum Repository to the File Server
 
-In this example, we will use Minio, which is built-in as the file server in the DCE5 seed node. However, you can choose any file server that suits your needs. Here are the details for Minio:
+In this example, we will use Minio, which is built-in as the file server in the DCE5 bootstrap node. However, you can choose any file server that suits your needs. Here are the details for Minio:
 
-- Access URL: `http://10.5.14.200:9000` (usually the {seed node IP} + {9000 port})
+- Access URL: `http://10.5.14.200:9000` (usually the {bootstrap-node-IP} + {port-9000})
 - Login username: rootuser
 - Login password: rootpass123
 

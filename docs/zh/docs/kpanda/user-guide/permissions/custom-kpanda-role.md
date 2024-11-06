@@ -45,7 +45,7 @@
     [root@master-01 ~]#
     ```
 
-1. 在 Global 集群上创建如下 ClusterRole：
+1. 在全局服务集群上创建如下 ClusterRole：
 
     ```yaml
     apiVersion: rbac.authorization.k8s.io/v1

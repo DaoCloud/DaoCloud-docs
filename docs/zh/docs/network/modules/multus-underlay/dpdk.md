@@ -39,7 +39,7 @@ Network devices using kernel driver
 
 DPDK 支持的用户态驱动有三种：
 
-- vfio-pci：在启用 IoMMU 情况下，推荐使用此驱动，性能安全性最好
+- vfio-pci：在启用 IOMMU 情况下，推荐使用此驱动，性能安全性最好
 - igb-uio：适用性较 uio_pci_generic 更强，支持 SR-IOV VF，但需手动编译 module 并加载到内核
 - uio_pci_generic：内核原生驱动，不兼容 SR-IOV VF，但支持在 VM 上使用
 
@@ -76,7 +76,7 @@ Network devices using kernel driver
 
 `0000:04:01.1`：已经变为 vfio-pci 驱动
 
-- 设置大页内存和开启 IoMMU（vfio-pci 驱动依赖 IOMMU 技术）：
+- 设置大页内存和开启 IOMMU（vfio-pci 驱动依赖 IOMMU 技术）：
 
     编辑 `/etc/default/grub`，在 `GRUB_CMDLINE_LINUX` 中加入以下内容：
 
@@ -88,7 +88,7 @@ Network devices using kernel driver
     !!! note
 
         更新上述配置，需要重启系统，重启系统前最好备份。
-        如果不能更新配置，驱动需要切换为 igb-uio 驱动，需手动 build && insmod && modprobe，具体参考 https://github.com/atsgen/dpdk-kmod
+        如果不能更新配置，驱动需要切换为 igb-uio 驱动，需手动 build && insmod && modprobe，具体参考 [dpdk-kmod](https://github.com/atsgen/dpdk-kmod)
 
 ## 配置 SRIOV-Device-Plugin
 
@@ -233,8 +233,8 @@ root@172-17-8-120:~# kubectl exec -it sriov-pod-2 sh
 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
 sh-4.4# dpdk-app
 ENTER dpdk-app:
- argc=1
- dpdk-app
+  argc=1
+  dpdk-app
 E1031 08:17:36.431877     116 resource.go:31] Error getting cpuset info: open /proc/116/root/sys/fs/cgroup/cpuset/cpuset.cpus: no such file or directory
 E1031 08:17:36.432266     116 netutil_c_api.go:119] netlib.GetCPUInfo() err: open /proc/116/root/sys/fs/cgroup/cpuset/cpuset.cpus: no such file or directory
 Couldn't get CPU info, err code: 1
@@ -246,8 +246,8 @@ Couldn't get CPU info, err code: 1
     IfName="net1"  Name="kube-system/sriov-dpdk-vlan0"  Type=SR-IOV
     MAC=""
 
- myArgc=14
- dpdk-app -n 4 -l 1 --master-lcore 1 -w 0000:04:01.1 -- -p 0x1 -P --config="(0,0,1)" --parse-ptype
+myArgc=14
+dpdk-app -n 4 -l 1 --master-lcore 1 -w 0000:04:01.1 -- -p 0x1 -P --config="(0,0,1)" --parse-ptype
 ```
 
 dpdk-app 会打印出当前 Pod 的相关信息，包括 eth0 的 IP、MAC 和 type 等。

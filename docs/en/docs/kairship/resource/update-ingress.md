@@ -1,8 +1,14 @@
+---
+MTPE: ModetaNiu
+DATE: 2024-08-14
+---
+
 # Update Multicloud Ingress
 
 Currently, two update methods are provided: editing YAML and form update.
 
-1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Ingress__ , click __┇__ to update the ingress in the form.
+1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Ingress__ , 
+   click __┇__ to update the ingress in the form.
 
     ![Ingress List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/update-ingress01.png)
 
@@ -10,7 +16,8 @@ Currently, two update methods are provided: editing YAML and form update.
 
     ![Edit YAML](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/update-ingress02.png)
 
-3. Click __Update__ to update the ingress through the form, but the name, multicloud namespace, and cluster of Ingress Class cannot be updated.
+3. Click __Update__ to update the ingress through the form, but the name, multicloud namespace, 
+   and cluster of Ingress Class cannot be changed.
 
     ![Update](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/update-ingress03.png)
 

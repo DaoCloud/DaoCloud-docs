@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+Date: 2024-10-16
+---
+
 # Use OTel to provide the application observability
 
 > Enhancement is the process of enabling application code to generate telemetry data. i.e. something that helps you monitor or measure the performance and status of your application.
@@ -9,7 +14,7 @@ Insight supports OpenTelemetry for application instrumentation to enhance your a
 
 This guide introduces the basic concepts of telemetry enhancement using OpenTelemetry.
 OpenTelemetry also has an ecosystem of libraries, plugins, integrations, and other useful tools to extend it.
-You can find these resources at the [Otel Registry](https://opentelemetry.io/registry/).
+You can find these resources at the [OTel Registry](https://opentelemetry.io/registry/).
 
 You can use any open standard library for telemetry enhancement and use Insight as an observability backend to ingest, analyze, and visualize data.
 
@@ -19,14 +24,12 @@ Insight currently provides an easy way to enhance .Net NodeJS, Java, Python and 
 
 ## Trace Enhancement
 
-- Best Practices for Trace Access: [Application Non-Intrusive Enhancement via Operator](./operator.md)
-- Manual buried point access using Go language as an example: [Enhance Go application with OpenTelemetry SDK](./golang.md)
+- Best practices for integrate trace: [Application Non-Intrusive Enhancement via Operator](./operator.md)
+- Manual instrumentation with Go language as an example: [Enhance Go application with OpenTelemetry SDK](golang/golang.md)
 - [Using ebpf to implement non-intrusive auto-instrumetation in Go language](./golang-ebpf.md) (experimental feature)
 
-## Metric enhancements
-
-Best Practices for Metrics Access: [Exposing Metrics for Applications Using the OpenTelemetry SDK](./meter.md).
-
+<!--
 ## Log Enhancement
 
 TBD
+-->

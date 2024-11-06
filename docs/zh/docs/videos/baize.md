@@ -1,6 +1,6 @@
-# 智能算力视频教程
+# AI Lab视频教程
 
-我们为智能算力精心制作了以下视频教程，欢迎任何形式的反馈，谢谢 🙏
+我们为AI Lab精心制作了以下视频教程，欢迎任何形式的反馈，谢谢 🙏
 
 <style>
 .responsive-video-container {
@@ -21,25 +21,7 @@
 }
 </style>
 
-## 数据管理
-
-### 创建和使用数据集
-
-参阅[创建数据集](../baize/developer/dataset/create.md)文档。
-
-<div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/dataset.jpg"></video>
-</div>
-
-### 数据标注和数据集
-
-<div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/label-dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/label-dataset.jpg"></video>
-</div>
-
----
-
-## 任务训练
+## 任务中心
 
 ### 创建分布式训练任务
 
@@ -55,4 +37,36 @@
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/notebook.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/notebook.jpg"></video>
+</div>
+
+## 数据管理
+
+### 创建和使用数据集
+
+参阅[创建数据集](../baize/developer/dataset/create-use-delete.md)文档。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/dataset.jpg"></video>
+</div>
+
+### 数据标注和数据集
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/label-dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/label-dataset.jpg"></video>
+</div>
+
+## 模型推理服务
+
+参阅[创建 vLLM 推理服务](../baize/developer/inference/vllm-inference.md)文档。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ailab-inference.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ailab-inference.jpg"></video>
+</div>
+
+## AI Lab v0.7.0 版本动态
+
+参阅 [AI Lab Release Notes](../baize/intro/release-notes.md)。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/v0.7.0.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/v0.7.0.jpg"></video>
 </div>

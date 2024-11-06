@@ -119,7 +119,7 @@ and maintain containerized applications more efficiently and stably.
 
     - [Cross-Cluster Elastic Scaling](../kairship/best-practice/fhpa.md)
     - [One-Click Conversion from DCE 4.0 to DCE 5.0 Multicloud Applications](../kairship/best-practice/one-click-conversion.md)
-    - [Import VMware Virtual Machines to DCE 5.0](../virtnest/import/import-ubuntu.md)
+    - [Import VMware Virtual Machines to DCE 5.0](../virtnest/best-practice/import-ubuntu.md)
 
 </div>
 
@@ -137,7 +137,6 @@ and maintain containerized applications more efficiently and stably.
     - [What If ElasticSearch Data is Full](../insight/faq/expand-once-es-full.md)
     - [Locate Application Anomalies Using Insight](../insight/best-practice/find_root_cause.md)
     - [Enable Observability for Applications Using OTel](../insight/quickstart/otel/otel.md)
-    - [Expose Metrics for Applications Using OTel SDK](../insight/quickstart/otel/meter.md)
 
 - :material-engine:{ .lg .middle } __Microservices Engine__
 
@@ -193,17 +192,17 @@ and maintain containerized applications more efficiently and stably.
     - [GProduct Integration with Global Management](../ghippo/best-practice/gproduct/intro.md)
     - [OEM IN and OEM OUT](../ghippo/best-practice/oem/oem-in.md)
 
-- :material-slot-machine:{ .lg .middle } __Intelligent Engine and Cloud Edge Collaboration__
+- :material-slot-machine:{ .lg .middle } __AI Lab and Cloud Edge Collaboration__
 
     ---
 
-    **Intelligent Engine** is an integrated platform for training and inference.
+    **AI Lab** is an integrated platform for training and inference.
     **Cloud Edge Collaboration** extends container capabilities to the edge.
 
     - [Deploy NFS for Data Preheating](../baize/best-practice/deploy-nfs-in-worker.md)
     - [Update Notebook Built-in Images](../baize/best-practice/change-notebook-image.md)
     - [Checkpoint Mechanism and Usage](../baize/best-practice/checkpoint.md)
-    - [Intelligent Device Control](../kant/best-practice/device-control.md)
+    - [Intelligent Device Control](../kant/best-practice/custom-device-control.md)
     - [Develop Device Driver Applications Mapper](../kant/best-practice/develop-device-mapper.md)
 
 </div>

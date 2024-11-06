@@ -20,9 +20,11 @@ MySQL 已就绪，无报错。在安装全局管理后 keycloak 无法启动（>
 ![img](https://docs.daocloud.io/daocloud-docs-images/docs/reference/images/restart02.png)
 
 1. 检查 MySQL 资源占用是否到达 limit 限制
-2. 检查 MySQL 中 database keycloak table 的数量是不是 92
-3. 删除 keycloak database 并创建，提示 **CREATE DATABASE IF NOT EXISTS keycloak CHARACTER SET utf8**
-4. 重启 keycloak Pod 解决问题
+1. 检查 MySQL 中 database keycloak table 的数量是不是 95
+   （Keycloak 不同版本数据库数量可能会不一样，可以与同版本的开发或测试环境的 Keycloak 数据库数量进行比较），
+   如数量少了，则说明数据库表初始化有问题（查询表数量命令提示为：show tables;）
+1. 删除 keycloak database 并创建，提示 **CREATE DATABASE IF NOT EXISTS keycloak CHARACTER SET utf8**
+1. 重启 Keycloak Pod 解决问题
 
 ## CPU does not support ×86-64-v2
 
@@ -59,6 +61,6 @@ lscpu | grep sse4_2
 ```
 
 ### 解决方法
-需要升级你的虚拟机或物理机 cpu 以支持 x86-64-v2 及以上，确保x86 cpu 指令集支持 sse4.2，如何升级需要你咨询虚拟机平台提供商或着物理机提供商。
+需要升级你的虚拟机或物理机 CPU 以支持 x86-64-v2 及以上，确保x86 CPU 指令集支持 sse4.2，如何升级需要你咨询虚拟机平台提供商或着物理机提供商。
 
 详见：https://github.com/keycloak/keycloak/issues/17290

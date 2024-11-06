@@ -4,7 +4,7 @@ Batch deployments can be created using either an image or a YAML file. This arti
 
 ## Create by Image
 
-Follow these steps to create a stateless workload using an image.
+Follow these steps to create a Deployment using an image.
 
 1. Go to the edge unit details page and select the menu __Edge Application__ -> __Batch Deployments__.
 

@@ -6,8 +6,9 @@
 
 ### 添加 repo
 
-```
+```console
 [root@k8s-10-6-162-31 helm-test]# helm search repo rook
+
 NAME CHART VERSION APP VERSION DESCRIPTION
 rook-release/rook-ceph v1.10.5 v1.10.5 File, Block, and Object Storage Services for yo...
 rook-release/rook-ceph-cluster v1.10.5 v1.10.5 Manages a single Ceph cluster namespace for Rook
@@ -16,7 +17,7 @@ stable/rookout 0.1.2 1.0 DEPRECATED - A Helm chart for Rookout agent on ...
 
 ### 拉取 rook-ceph helm chart 并解压
 
-```
+```console
 [root@k8s-10-6-162-31 helm-test]# helm pull rook-release/rook-ceph
 [root@k8s-10-6-162-31 helm-test]# helm pull rook-release/rook-ceph-cluster
 [root@k8s-10-6-162-31 helm-test]# ls
@@ -30,7 +31,7 @@ rook-ceph rook-ceph-cluster-v1.10.5.tgz rook-ceph-v1.10.5.tgz
 
 ### 将 rook-ceph 的 values.yaml 转成 json 格式
 
-```
+```console
 [root@k8s-10-6-162-31 ~]# helm plugin install https://github.com/karuppiah7890/helm-schema-gen.git
 karuppiah7890/helm-schema-gen info checking GitHub for tag '0.0.4'
 karuppiah7890/helm-schema-gen info found version: 0.0.4 for 0.0.4/Linux/x86_64
@@ -56,7 +57,7 @@ charts Chart.yaml prometheus README.md values.schema.json templates values.yaml
 
 ### 将含有 json 文件的 chart 打包压缩
 
-```
+```console
 [root@k8s-10-6-162-31 helm-test]# tar zcvf rook-ceph-v1.10.5.tgz rook-ceph
 
 [root@k8s-10-6-162-31 helm-test]# tar zcvf rook-ceph-cluster-v1.10.5.tgz rook-ceph-cluster
@@ -95,7 +96,7 @@ rook-ceph-cluster-v1.10.5.tgz rook-ceph-v1.10.5.tgz rook-ceph rook-ceph-cluster 
 
 ## 应用部署验证
 
-```
+```console
 [root@k8s-10-6-162-31 kubernetes]# pwd
 /root/rook/cluster/examples/kubernetes
 

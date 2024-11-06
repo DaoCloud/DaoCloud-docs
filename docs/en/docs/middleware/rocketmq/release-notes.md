@@ -7,6 +7,20 @@ date: 2024-01-05
 
 This page provides the Release Notes for RocketMQ Message Queue, allowing you to understand the evolution and feature changes of each version.
 
+## 2024-09-30
+
+### v0.11.0
+
+- **Fixed** an issue where the container group list did not display all related container groups in the instance
+- **Fixed** an issue with permission leakage when querying the Redis list by selecting a workspace
+- **Fixed** an issue with missing audit logs for certain operations
+
+## 2024-08-31
+
+### v0.10.0
+
+- **Improved** the process so that abnormal clusters cannot be selected when creating instances
+
 ## 2024-04-30
 
 ### v0.6.0
@@ -23,8 +37,6 @@ This page provides the Release Notes for RocketMQ Message Queue, allowing you to
 ## 2024-01-31
 
 ### v0.4.0
-
-#### Optimization
 
 - **Improved** RocketMQ version display in global management.
 

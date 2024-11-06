@@ -15,7 +15,7 @@
 
 **状态** ：
 
-**v0.1.0** - 早期开发阶段。有关最近更新的详细信息，请参阅[CHANGELOG](CHANGELOG.md)。
+**v0.1.0** - 早期开发阶段。有关最近更新的详细信息，请参阅[CHANGELOG](https://github.com/DataTunerX/datatunerx/blob/main/CHANGELOG.md)。
 
 **快速演示和更多文档** ：
 

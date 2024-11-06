@@ -9,11 +9,28 @@ This page lists the release notes for the Redis Cache service, providing you wit
 
 *[mcamel-redis]: "mcamel" is the dev name for DaoCloud's middlewares, and "redis" is the middleware that provides memory cache services.
 
+## 2024-09-30
+
+### v0.22.0
+
+- **Fixed** an issue with permission leakage when querying the Redis list by selecting a workspace
+- **Fixed** an issue with missing audit logs for certain operations
+
+## 2024-08-31
+
+### v0.21.0
+
+- **Improved** the process so that abnormal clusters cannot be selected when creating instances
+
+## 2024-07-31
+
+### v0.20.0
+
+- **Added** a feature of managing Redis instances.
+
 ## 2024-06-30
 
 ### v0.19.0
-
-#### New Features
 
 - **Added** a feature of configuring a fixed IP when creating a Redis instance.
 - **Added** common parameters such as `maxclients` to the parameter templates.
@@ -50,8 +67,6 @@ This page lists the release notes for the Redis Cache service, providing you wit
 ## 2024-01-31
 
 ### v0.15.0
-
-#### Improvements
 
 - **Improved** Redis Operator version upgrade to 6.2.12
 - **Improved** addition of Redis version display in global management
@@ -105,8 +120,6 @@ This page lists the release notes for the Redis Cache service, providing you wit
 ## 2023-06-30
 
 ### v0.9.0
-
-#### New features
 
 - **Added** the ability to prevent creating Redis instances with the same name under different namespaces for __mcamel-redis__ 
 - **Added** handling of non-MCamel managed Redis instances to avoid potential misoperations for __mcamel-redis__ 

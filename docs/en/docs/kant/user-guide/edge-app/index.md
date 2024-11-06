@@ -27,14 +27,14 @@ Deploying workloads with similar configurations or minor differences to a node g
   in the node group, ensuring autonomous operation of the application and business continuity.
 - Even when the node is offline (disconnected from the cloud), automatic scheduling can still take place.
 
-## Configuration Items and Secrets
+## ConfigMaps and Secrets
 
-Configuration items and secrets are resource types used to store and manage authentication information,
+ConfigMaps and secrets are resource types used to store and manage authentication information,
 certificates, keys, and other important and sensitive information required by workloads. The content is
 determined by the user. After the resource is created, it can be loaded and used in the container application.
 
-The process of creating and using configuration items and secrets in the Cloud Edge Collaboration module
+The process of creating and using ConfigMaps and secrets in the Cloud Edge Collaboration module
 is consistent with the process in the Container Management module. In the details page of the edge unit,
-go to the __Configuration Items and Secrets__ menu. Refer to
-[Creating Configuration Items](../../../kpanda/user-guide/configmaps-secrets/create-configmap.md)
+go to the __ConfigMaps and Secrets__ menu. Refer to
+[Creating ConfigMaps](../../../kpanda/user-guide/configmaps-secrets/create-configmap.md)
 for the creation and usage process.

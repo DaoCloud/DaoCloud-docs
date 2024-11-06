@@ -102,7 +102,7 @@ checkpoint.save(file_prefix=checkpoint_prefix)
 
 !!!note
 
-    使用 DCE 5.0 智能算力的用户，可以直接将高性能存储挂载为 Checkpoint 目录，以提高 Checkpoint 保存和恢复的速度。
+    使用 DCE 5.0 AI Lab 的用户，可以直接将高性能存储挂载为 Checkpoint 目录，以提高 Checkpoint 保存和恢复的速度。
 
 ### TensorFlow 恢复 Checkpoint
 

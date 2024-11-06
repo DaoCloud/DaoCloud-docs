@@ -17,22 +17,22 @@ Calico 基于 iptables 提供了丰富而灵活的网络 Policy，保证通过�
 
 Calico 由以下组件组成，在部署 Calico 的时候部分组件是可选的。
 
-- [什么是 Calico](#什么是-calico)
-  - [Calico 组件](#calico-组件)
+- [什么是 Calico](#calico)
+  - [Calico 组件](#calico_1)
     - [Calico API Server](#calico-api-server)
     - [Felix](#felix)
     - [BIRD](#bird)
     - [confd](#confd)
     - [Dikastes](#dikastes)
     - [CNI](#cni)
-    - [数据存储插件](#数据存储插件)
+    - [数据存储插件](#_1)
       - [Kubernetes API datastore](#kubernetes-api-datastore)
       - [etcd](#etcd)
     - [IPAM](#ipam)
     - [kube-controller](#kube-controller)
     - [Typha](#typha)
     - [calicoctl](#calicoctl)
-    - [云编排器插件](#云编排器插件)
+    - [云编排器插件](#_2)
 
 ### Calico API Server
 

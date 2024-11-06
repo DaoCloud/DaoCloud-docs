@@ -1,10 +1,15 @@
-# Service mesh component resource custom configuration
+---
+MTPE: windsonsea
+Date: 2024-10-15
+---
+
+# Custom Service mesh component resources
 
 This page describes how to customize mesh component resources via [Container Management](../../../kpanda/user-guide/workloads/create-deployment.md).
 The control plane components of the service mesh are as follows:
 
 | Component Name | Location | Description | Default Resource Settings |
-| ---------------------------- | ------------ | ------- --------------------- | ---------------- |
+| -------------- | -------- | ----------- | ---------------- |
 | mspider-ui | Global Management Cluster | Service Mesh Interface | requests: CPU: Not set; Memory: Not set<br> limits: CPU: Not set; Memory: Not set |
 | mspider-ckube | Global management cluster | Acceleration component of Kubernetes API Server, used to call global cluster-related resources | requests: CPU: not set; memory: not set<br/> limits: CPU: not set; memory: not set settings |
 | mspider-ckube-remote | Global Management Cluster | Used to call Kubernetes of remote clusters, aggregate multicluster resources, and accelerate | requests: CPU: not set; memory: not set<br/> limits: CPU: not set; memory : not set |

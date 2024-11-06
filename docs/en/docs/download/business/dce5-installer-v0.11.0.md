@@ -10,7 +10,7 @@ hide:
 This page provides downloads for the offline package and checksum files of DCE 5.0 Enterprise.
 
 [Return to Download Index](../index.md#download-enterprise-package){ .md-button }
-[More Historical Versions](./dce5-installer-history.md){ .md-button }
+[Legacy Packages](./dce5-installer-history.md){ .md-button }
 
 ## Downloads
 
@@ -81,11 +81,11 @@ which are plug-and-play to meet various application scenarios:
 
 | Modules | Description | Versions |
 | ------- | ----------- | -------- |
-| Global Management | Responsible for user access control, permissions, enterprise spaces, audit logs, personalized appearance settings, etc. | [0.20.1](../../ghippo/intro/release-notes.md#v0201) |
+| Global Management | Responsible for user access control, permissions, enterprise spaces, audit logs, and custom appearance. | [0.20.1](../../ghippo/intro/release-notes.md#v0201) |
 | Container Management | Manages clusters, nodes, workloads, Helm applications, CRD, namespaces, and other core features of K8s. | [0.21.0](../../kpanda/intro/release-notes.md#v0210) |
-| Insight | Provides rich dashboards, scenario monitoring, data queries, alerts, and other graphical information. | [0.20.0](../../insight/intro/releasenote.md#v0200) |
+| Insight | Provides rich dashboards, scenario monitoring, data queries, alerts, and other graphical information. | [0.20.0](../../insight/intro/release-notes.md#v0200) |
 | Workbench | Container-based DevOps application platform, supports Jenkins, Tekton, GitOps, and other pipeline jobs. | [0.20.0](../../amamba/intro/release-notes.md#v0200) |
-| MultiCloud Orchestration | Centralized management of multi-cloud, hybrid cloud, and cross-cloud resource application orchestrations, with multi-cloud disaster recovery and fault tolerance capabilities. | [0.12.0](../../kairship/intro/release-notes.md#v0120) |
+| MultiCloud Orchestration | Centralized management of multicloud, hybrid cloud, and cross-cloud resource application orchestrations, with multicloud disaster recovery and fault tolerance capabilities. | [0.12.0](../../kairship/intro/release-notes.md#v0120) |
 | Microservice Engine | Provides governance capabilities such as service registration and discovery, service governance, configuration management, and microservice gateway |
 | Service Mesh | Next-generation service mesh built on the open-source technology Istio, designed for cloud native applications. | [v0.19.0](../../mspider/intro/release-notes.md#v0190) |
 | Middleware Elasticsearch | Currently the preferred full-text search engine. | [0.10.0](../../middleware/elasticsearch/release-notes.md#v0100) |
@@ -94,9 +94,9 @@ which are plug-and-play to meet various application scenarios:
 | Middleware MySQL | The most widely used open-source relational database. | [0.11.0](../../middleware/mysql/release-notes.md#v0110) |
 | Middleware RabbitMQ | Open-source message broker software implementing the Advanced Message Queuing Protocol (AMQP). | [0.13.0](../../middleware/rabbitmq/release-notes.md#v0130) |
 | Middleware Redis | In-memory database caching service. | [0.11.0](../../middleware/redis/release-notes.md#v0110) |
-| Container Repository | Used for storing images for K8s, DevOps, and container application development. | [0.11.0](../../kangaroo/intro/release-notes.md) |
-| Networking | Supports various CNI combinations for different Linux kernels. | [0.9.0](../../network/intro/releasenotes.md) |
-| Storage | Provides unified data storage services, supporting file, object, block, and local storage with easy integration of storage vendor solutions. | [v0.10.8](../../storage/hwameistor/releasenotes.md) |
+| Container Registry | Used for storing images for K8s, DevOps, and container application development. | [0.11.0](../../kangaroo/intro/release-notes.md#v0110) |
+| Networking | Supports various CNI combinations for different Linux kernels. | [0.9.0](../../network/intro/release-notes.md#v090) |
+| Storage | Provides unified data storage services, supporting file, object, block, and local storage with easy integration of storage vendor solutions. | [v0.10.8](../../storage/hwameistor/release-notes.md#v0110) |
 
 ## More
 
