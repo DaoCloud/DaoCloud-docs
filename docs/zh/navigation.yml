@@ -1438,6 +1438,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2024:
+          - containerd 相关项目集中发布新版本: blogs/241106-containerd-nerdctl-lima.md
           - K8s 1.31 OCI 工件的只读卷: blogs/240816-1.31-image.md
           - Nvidia 征服最新的 AI 测试: blogs/20240619-nvidiaai.md
           - Kubernetes 十周年: blogs/0606-k8s-birth.md

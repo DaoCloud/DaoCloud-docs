@@ -11,6 +11,14 @@ hide:
 
 ## 2024 年
 
+- [20241107 | containerd 社区项目集中发布新版本](./241106-containerd-nerdctl-lima.md)
+
+    [KubeCon 北美 2024](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/)
+    将于 11 月 12 至 15 日盛大召开，预计参会人数将达到三四万人，仅门票收入就超过千万美元。
+    就在会前一周，[containerd](https://github.com/containerd/containerd) v2.0、
+    [nerdctl](https://github.com/containerd/nerdctl) (**contaiNERD CTL**) v2.0
+    和 [Lima](https://lima-vm.io/) v1.0 集中发布 🎉。
+
 - [20240816 | Kubernetes 1.31：基于 OCI 工件的只读卷 (Alpha)](./240816-1.31-image.md)
 
     Kubernetes 社区在 v1.31 中引入了一项新的 Alpha 特性：
