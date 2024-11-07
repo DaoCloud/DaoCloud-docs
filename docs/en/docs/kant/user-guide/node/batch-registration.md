@@ -8,6 +8,16 @@ The following steps explain how to perform batch registration of edge nodes.
 
 1. On the Edge Node List page, click the __Batch Management__ button to enter the __Batch Management__ page.
 
+
+## Managing Departmental Batch Workloads After Node Group Changes
+
+### Application Synchronization to New Nodes
+Provide detailed instructions on how applications can be automatically or manually synchronized to newly added nodes after a node group change. Include the tools or commands used for synchronization.
+
+### Differentiated Configuration Adjustments
+Offer steps for making differentiated configuration adjustments post-deployment to ensure that the new node configurations are consistent with the existing environment, reducing potential configuration conflicts.
+
+### New Application Deployment
     ![Batch Management](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/batch-register01.png)
 
 1. Select the __Batch Register__ tab and click the __Create Batch Job__ button in the upper right corner.
