@@ -1452,7 +1452,7 @@ nav:
           - KubeEdge v1.15.0 发布: blogs/240108-kubeedge.md
       - 2023:
           - Spiderpool入选CNCF Sandbox: blogs/231220-spiderpool.md
-          - K8s 1.29发布:宇宙主题雄心勃勃：blogs/231213-k8s-1.29.md
+          - K8s 1.29发布宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
           - K8s 裸机 vs 虚机性能对比: blogs/231205-vm-bm-compare.md
           - K8s 1.29前瞻：移除、弃用及变更: blogs/231115-k8s-1.29-changes.md
           - 上海 K8s 贡献者峰会回顾: blogs/231008-kcs.md
