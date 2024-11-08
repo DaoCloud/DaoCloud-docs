@@ -8,6 +8,14 @@ Cloud Edge Collabration provides edge-cloud message routing functionality. You c
 ## Message Endpoints
 
 The platform provides the following three types of message endpoints:
+The configuration for message endpoints has been simplified into three scenarios:
+
+- **rest-eventbus**: Facilitates communication from REST APIs to the EventBus.
+- **eventbus-rest**: Facilitates communication from the EventBus to REST APIs.
+- **rest-servicebus**: Facilitates communication from REST APIs to the ServiceBus.
+
+Refer to the `config/message-endpoints.yaml` file for configuration templates for each scenario.
+
 
 - Rest: Cloud-side endpoints that send message requests to the edge or receive messages from the edge.
 - Event Bus: Edge-side endpoints that send data to the cloud or receive messages from the cloud.
