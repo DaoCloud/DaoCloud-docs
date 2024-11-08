@@ -1,3 +1,8 @@
+# macOS ARM Deployment
+
+This application now supports deployment on macOS ARM architectures. Please ensure that you have the latest dependencies installed by running:
+
+```bash
 # DaoCloud Enterprise 5.0 Documentation
 
 [![Contributors](https://img.shields.io/github/contributors/daocloud/daocloud-docs?color=purple)](CONTRIBUTING.md)
