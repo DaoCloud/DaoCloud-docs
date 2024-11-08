@@ -1,0 +1,14 @@
+rest-eventbus:
+  endpoint: /api/rest-eventbus
+  method: POST
+  description: Endpoint for REST to EventBus communication
+
+eventbus-rest:
+  endpoint: /api/eventbus-rest
+  method: GET
+  description: Endpoint for EventBus to REST communication
+
+rest-servicebus:
+  endpoint: /api/rest-servicebus
+  method: POST
+  description: Endpoint for REST to ServiceBus communication
