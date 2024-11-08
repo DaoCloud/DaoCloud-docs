@@ -881,6 +881,7 @@ nav:
                   - 网关对接服务网格: skoala/best-practice/gateway-mesh.md
                   - 网关请求日志自定义属性: skoala/best-practice/add-custom-attributes.md
                   - HTTP转Dubbo协议动态路由: skoala/best-practice/http-to-dubbo.md
+                  - Nacos对接LDAP进行用户管理: skoala/best-practice/nacos-ldap.md
               - 故障排查:
                   - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md
                   - Nacos 版本降级: skoala/troubleshoot/nacos.md                
