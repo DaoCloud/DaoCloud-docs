@@ -49,7 +49,7 @@ Google 搜索引擎有一个规则：**有效内容更新频繁的网站会显�
 Michael 负责文档资料，也开始调研用什么来建设文档站，他先后调研了 [GitBook](https://www.gitbook.com/),
 [Docusaurus](https://docusaurus.io/), [Hugo](https://www.gohugo.org/), [MkDocs](https://www.mkdocs.org/)。
 最初以 GitBook 在内网搭建了各个 Scrum 团队的文档站，但没有 IT 支持，只能实现一些简单的样式。
-另外 GitBook 商业化之后，社区版的更新基本处于停滞状态。各个 Scrum 团队的文档处于离散和割据状态，层次不齐，风格各式各样。
+另外 GitBook 商业化之后，社区版的更新基本处于停滞状态。各个 Scrum 团队的文档处于离散和割据状态，层次不齐，风格迥异。
 
 ### 走进 GitHub
 
@@ -136,8 +136,10 @@ Michael 在 2024 年多次参与了 Program Committee 评审 KubeCon 演讲议�
 
 ## 结语
 
-迄今为止，你所听过的太多伟大软件来自开源社区：Linux、Android、Git、Kubernetes、Istio、OpenTelemetry、Grafana、MySQL 等等。
-而开源项目想要发展壮大，就需要持续的新鲜血液，需要更多的贡献者加入。
+迄今为止，有太多伟大软件来自开源社区：Linux、Android、Git、Kubernetes、Istio、OpenTelemetry、Grafana、MySQL 等等。
+这些是互联网、云计算、移动应用、AI 训练及推理的底层技术，是推动人类文明跃迁必不可少的催化剂。
+你所认识的大多数开发者、程序员，可能在社区都有着另外一层身份。
+江山代有才人出，开源项目想要发展壮大，就需要持续的新鲜血液，需要更多的贡献者加入。
 
 新手去开源社区做贡献，最难的可能就是迈出第一步。安装好各种工具，搭建好环境，找到可以完善的点。
 接下来就会顺理成章，多多与人交流，找到一个好的 Mentor，慢慢地就会形成一种习惯。
