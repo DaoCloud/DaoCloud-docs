@@ -1,0 +1,1 @@
+![Virtual Machine Management](../../images/virtual-machine-management.png)
