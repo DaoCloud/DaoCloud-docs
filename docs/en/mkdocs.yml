@@ -1,6 +1,9 @@
 ---
 # This file is used to split config and docs navigation
 INHERIT: navigation.yml
+  alternate:
+    - link: /zh/
+      name: 简体中文
 
 # Project information
 site_name: DaoCloud Enterprise
