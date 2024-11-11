@@ -1,6 +1,7 @@
 ---
 hide:
    - toc
+        - Ensure all Chinese language resources are available and correctly linked
 ---
 
 # Features
