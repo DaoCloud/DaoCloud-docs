@@ -102,7 +102,7 @@ customize solutions for various use cases. This modular style allows for continu
 
     **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Cloud Native Network](network/intro/index.md), [cloud native storage](storage/index.md), [selected middleware](middleware/index.md)
 
-    ![data](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/02data.jpg)
+    ![data](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/02data.jpg)
 
 === "Microservice"
 
