@@ -67,6 +67,7 @@ $ ll insight_v0.25.3_amd64
     === "已安装 CHARTMUSEUM chart repo"
 
         若当前环境已安装 CHARTMUSEUM chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件。
+        当charts-syncer同步成功后，再次同步则会提示`There are no charts out of sync!。可通过`/api/charts/insight`接口查看已有版本号来确定是否同步成功。
 
         ```yaml title="load-image.yaml"
         source:
@@ -162,7 +163,7 @@ $ ll insight_v0.25.3_amd64
 
 ## 升级
 
-有两种升级方式。您可以根据前置操作，选择对应的升级方案。升级前，请关注「升级注意事项」
+推荐两种升级方式。您可以根据前置操作，选择对应的升级方案。升级前，请关注「升级注意事项」。需要注意的是，如果通过「集群管理-Helm应用」升级，则需「集群管理-Helm仓库」中进行同步仓库后再升级。
 
 === "通过 helm repo 升级"
 
@@ -216,7 +217,7 @@ $ ll insight_v0.25.3_amd64
         helm get values insight-agent -n insight-system -o yaml > insight-agent.yaml
         ```
 
-    1. 执行 `helm upgrade` 。
+    1. 执行 `helm upgrade` 。需要注意的是，如果备份的values.yaml文件中固定了tag，则建议删除tag字段再进行版本升级。
 
         ```shell
         helm upgrade insight insight/insight \
