@@ -40,7 +40,7 @@ With extensive testing from thousands of industry customers in real production c
 
 </div>
 
-![modules](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/dce-modules04.jpg)
+![modules](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/dce-modules04.jpg)
 
 Over the past ten years, DaoCloud has made significant investments to explore
 and develop a cloud native operating system with customizable and scalable modules
