@@ -23,7 +23,8 @@ $ ll insight_v0.25.3_amd64
 
 ## 从安装包中加载镜像
 
-您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 chart-syncer 同步镜像到镜像仓库，该方法更加高效便捷。需注意，charts-syncer版本需大于等于 [0.0.22](https://github.com/DaoCloud/charts-syncer/releases/tag/v0.0.22)
+您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 chart-syncer 同步镜像到镜像仓库，该方法更加高效便捷。
+需注意，charts-syncer 版本需大于等于 [v0.0.22](https://github.com/DaoCloud/charts-syncer/releases/tag/v0.0.22)。
 
 ### chart-syncer 同步镜像到镜像仓库
 
@@ -163,7 +164,8 @@ $ ll insight_v0.25.3_amd64
 
 ## 升级
 
-推荐两种升级方式。您可以根据前置操作，选择对应的升级方案。升级前，请关注「升级注意事项」。需要注意的是，如果通过「集群管理-Helm应用」升级，则需「集群管理-Helm仓库」中进行同步仓库后再升级。
+推荐以下两种升级方式。您可以根据前置操作，选择对应的升级方案。升级前，请关注[升级注意事项](./upgrade-note.md)。
+需要注意的是，如果通过 **Helm 应用** 升级，则需在 **Helm 仓库** 中进行同步仓库后再升级。
 
 === "通过 helm repo 升级"
 
