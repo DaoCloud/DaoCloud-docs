@@ -7,7 +7,7 @@ You can create multicloud deployments either from an image or a YAML file.
 - YAML creation involves configuring the necessary information in a YAML file. It requires fewer steps and is more efficient, 
   but it assumes some backend technical knowledge.
 
-This guide explains how to create a multicloud deployment using a YAML file. If you want to learn about the image creation method, 
+This guide explains how to create a multicloud deployment using a YAML file. Ensure the YAML syntax is correct. If you want to learn about the image creation method, 
 refer to [Create Multicloud Deployment from Image](deployment.md).
 
 ## Prerequisites
