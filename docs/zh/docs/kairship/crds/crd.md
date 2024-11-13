@@ -66,7 +66,7 @@ spec:
 
     ![创建cr](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/crd05.png)
 
-2. 在 __YAML 创建__ 页面中，先填写 CR 的 YAML 信息，支持下载和导入功能。部署策略和差异化策略为选填内容。
+2. 在 __YAML 创建__ 页面中，填写 CR 的 YAML 信息，确保语法正确，支持下载和导入功能。部署策略和差异化策略为选填内容。
 
     ![yaml创建cr](../images/crd06.png)
 
