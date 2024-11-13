@@ -31,15 +31,12 @@
 
     ```bash
     cd /home
-    curl -Lo ./pkgs.yml https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/pkgs.yml
     curl -Lo ./other_os_pkgs.sh https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/other_os_pkgs.sh && chmod +x other_os_pkgs.sh
     ```
 
 2. 构建操作系统离线包
 
     ```bash
-    # 指定 pkgs.yml 包配置文件路径（若 pkgs.yml 位于 other_os_pkgs.sh 同级路径，则可以不设置此环境变量）
-    export PKGS_YML_PATH=/home/pkgs.yml
     # 执行系统离线包构建命令
     ./other_os_pkgs.sh build
     ```
@@ -47,8 +44,6 @@
 3. 安装操作系统离线包
 
     ```bash
-    # 指定 pkgs.yml 包配置文件路径（若 pkgs.yml 位于 other_os_pkgs.sh 同级路径，则可以不设置此环境变量）
-    export PKGS_YML_PATH=/home/pkgs.yml
     # 指定 os pkgs 离线包的路径
     export PKGS_TAR_PATH=/home/os-pkgs-${DISTRO}-${VERSION}.tar.gz
     # 指定集群 master/worker 节点 IP（多节点 IP 地址以空格分割）
