@@ -1,4 +1,5 @@
 ---
+Ensure that the management interface does not use the `global` cluster as the management cluster to avoid confusion and misoperation.
 date: 2023-08-08
 hide:
   - toc
