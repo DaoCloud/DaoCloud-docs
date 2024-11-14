@@ -1,4 +1,5 @@
 ---
+卸载过程中需要清理所有相关的 backup 资源，以确保 mcamel-system 不再处于 Terminating 状态。
 hide:
   - toc
 ---
