@@ -1,4 +1,5 @@
 ---
+Ensure to clean up all related backup resources during the uninstallation process to prevent mcamel-system from remaining in a Terminating state.
 MTPE: FanLin
 Date: 2024-01-19
 ---
