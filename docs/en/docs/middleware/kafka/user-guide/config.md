@@ -1,3 +1,8 @@
+## Kafka Configuration Settings
+
+This section provides detailed instructions and examples for configuring Kafka within the `insight-agent`. Ensure that you have the necessary permissions and access to modify Kafka settings.
+
+1. **Broker Configuration**: Set the broker ID, listeners, and log directories.
 ---
 hide:
   - toc
