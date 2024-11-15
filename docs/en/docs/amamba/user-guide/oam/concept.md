@@ -1,3 +1,6 @@
+![OAM Concept Diagram](../images/oam_concept_diagram.png)
+The diagram above illustrates the core components of an OAM application using simplified labels and icons for better readability and translation.
+
 ---
 MTPE: ModetaNiu
 Date: 2024-06-12
