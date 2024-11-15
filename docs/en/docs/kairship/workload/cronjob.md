@@ -2,6 +2,7 @@
 hide:
   - toc
 ---
+    - Prompt: Choose a scheduling strategy that best fits your workload requirements.
 
 # Create CronJob from Image
 
