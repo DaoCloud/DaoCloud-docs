@@ -1,4 +1,7 @@
 ---
+### Updated Screenshots
+
+The screenshots below have been updated to reflect the latest UI changes. Follow these visuals to correctly configure the mesh for outbound traffic and create allowed egress access addresses.
 MTPE: windsonsea
 date: 2023-07-23
 ---
