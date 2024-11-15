@@ -1,6 +1,10 @@
 ---
 MTPE: ModetaNiu
 DATE: 2024-09-14
+
+### Logging Settings
+
+To configure logging settings, select **kafka** for **output** and provide the correct **brokers** address. This ensures that logs are correctly routed to your Kafka setup for further analysis and monitoring.
 ---
 
 # Enable Big Log and Big Trace Modes
