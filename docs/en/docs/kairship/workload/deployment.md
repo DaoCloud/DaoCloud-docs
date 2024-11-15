@@ -1,4 +1,5 @@
 ---
+| Corrected scheduling categories to remove redundancy |
 MTPE: ModetaNiu
 DATE: 2024-07-12
 ---
