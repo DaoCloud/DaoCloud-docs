@@ -134,6 +134,8 @@ Michael 在 2024 年多次参与了 Program Committee 评审 KubeCon 演讲议�
 
 2024 年北美 KubeCon 于 11 月 12-15 日举行，主会场有 Keynotes 演讲，也许你能看到 Michael Yao 的名字出现在 Award 名单上。
 
+![cncf-ambassador](./images/cncf09.png)
+
 ## 结语
 
 迄今为止，有太多伟大软件来自开源社区：Linux、Android、Git、Kubernetes、Istio、OpenTelemetry、Grafana、MySQL 等等。
