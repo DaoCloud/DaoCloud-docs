@@ -1,3 +1,8 @@
+## Alert Configuration and Best Practices
+
+This section provides detailed guidance on setting up alerts within the `insight-agent`. It includes best practices for alert configurations and troubleshooting tips to ensure robust monitoring and alerting mechanisms.
+
+1. **Creating Alert Policies**: Define the conditions under which alerts should be triggered.
 # Alert Policies
 
 In addition to the built-in alert policies, DCE 5.0 allows users to create custom alert policies. Each alert policy is a collection of alert rules that can be set for clusters, nodes, and workloads. When an alert object reaches the threshold set by any of the rules in the policy, an alert is automatically triggered and a notification is sent.
