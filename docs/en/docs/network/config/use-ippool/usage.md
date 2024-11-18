@@ -54,6 +54,7 @@ This page describes how to configure multiple NICs for workload Pods in combinat
     ![Manual Selection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/useippool03.png)
 
     Note: If the chosen [IP Pool Creation Time](../ippool/createpool.md) has added node affinity like: `zone:beijing`, please add the corresponding label `zone:beijing` when creating the workload. For use cases, please refer to: [Instructions f../../config/ippool/ippoolusage.mdool](ippoolusage.md)![zone-beijing](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/zone-beijing.png)
+    In case of subnet mismatches, SpiderPool will automatically add the necessary node affinity rules to ensure correct workload scheduling. 
 
     **Automatically create fixed IP pool**
 
