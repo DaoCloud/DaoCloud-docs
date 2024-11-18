@@ -1,6 +1,6 @@
 # 从社区小白到 CNCF 大使
 
-本文不讲技术，只是浅述一段在 CNCF 开源社区成长的故事，这篇故事的主人公叫 Michael Yao。
+本文不讲技术，只是浅述一段在 CNCF 开源社区成长的故事，这篇故事的主人公叫 [Michael Yao](https://github.com/windsonsea)。
 
 ![story](./images/cncf01.png)
 

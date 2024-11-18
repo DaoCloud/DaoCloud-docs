@@ -1383,6 +1383,7 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2024:
+          - From Community Novice to CNCF Ambassador: blogs/241108-cncf-ambassador.md
           - containerd v2.0, nerdctl v2.0, and Lima v1.0: blogs/241106-containerd-nerdctl-lima.md
           - Nvidia Conquers Latest AI Tests: blogs/20240619-nvidiaai.md
           - 10 Years of Kubernetes: blogs/0606-k8s-birth.md
