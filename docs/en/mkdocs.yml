@@ -99,6 +99,13 @@ plugins:
       minify_css: true
       htmlmin_opts:
         remove_comments: true
+
+  - git-revision-date-localized:
+      enable_creation_date: false
+
+  - git-committers:
+      repository: DaoCloud/DaoCloud-docs
+      branch: main
   
   - redirects:
       redirect_maps:

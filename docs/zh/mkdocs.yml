@@ -99,6 +99,12 @@ plugins:
 #        - stemmer
 #        - stopWordFilter
 #        - trimmer
+  - git-revision-date-localized:
+      enable_creation_date: false
+
+  - git-committers:
+      repository: DaoCloud/DaoCloud-docs
+      branch: main
 
   - swagger-ui-tag
 #   - mermaid2
