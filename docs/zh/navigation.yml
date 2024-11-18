@@ -10,6 +10,7 @@ nav:
               - 适用场景: dce/scenario.md
               - 我们是 K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - v0.23.0-20241030 发布: dce/dce-rn/20241030.md
                   - v0.22.0-20240930 发布: dce/dce-rn/20240930.md
                   - v0.21.0-20240830 发布: dce/dce-rn/20240830.md
                   - v0.20.0-20240730 发布: dce/dce-rn/20240730.md
@@ -755,7 +756,7 @@ nav:
               - 链路追踪:
                   - 服务拓扑: insight/user-guide/trace/topology.md
                   - 服务: insight/user-guide/trace/service.md
-                  - 链路查询: insight/user-guide/trace/trace.md
+                  - 调用链: insight/user-guide/trace/trace.md
               - 告警:
                   - insight/user-guide/alert-center/index.md
                   - 告警策略: insight/user-guide/alert-center/alert-policy.md
@@ -777,6 +778,7 @@ nav:
                   - 集成 DeepFlow: insight/best-practice/integration_deepflow.md
               - 参考文档:
                   - 可观性参考指标说明: insight/reference/used-metric-in-insight.md
+                  - Insight Grafana 持久化到数据库: insight/best-practice/grafana-use-db.md
                   - 自定义探测方式: insight/user-guide/collection-manag/probe-module.md
                   - 指标抓取说明: insight/user-guide/collection-manag/metric-collect.md
                   - 告警通知流程说明: insight/reference/alertnotification.md
@@ -880,6 +882,7 @@ nav:
                   - 网关对接服务网格: skoala/best-practice/gateway-mesh.md
                   - 网关请求日志自定义属性: skoala/best-practice/add-custom-attributes.md
                   - HTTP转Dubbo协议动态路由: skoala/best-practice/http-to-dubbo.md
+                  - Nacos对接LDAP进行用户管理: skoala/best-practice/nacos-ldap.md
               - 故障排查:
                   - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md
                   - Nacos 版本降级: skoala/troubleshoot/nacos.md                
@@ -1438,6 +1441,8 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2024:
+          - 从社区小白到 CNCF 大使: blogs/241108-cncf-ambassador.md
+          - containerd 相关项目集中发布新版本: blogs/241106-containerd-nerdctl-lima.md
           - K8s 1.31 OCI 工件的只读卷: blogs/240816-1.31-image.md
           - Nvidia 征服最新的 AI 测试: blogs/20240619-nvidiaai.md
           - Kubernetes 十周年: blogs/0606-k8s-birth.md
@@ -1454,7 +1459,7 @@ nav:
           - KubeEdge v1.15.0 发布: blogs/240108-kubeedge.md
       - 2023:
           - Spiderpool入选CNCF Sandbox: blogs/231220-spiderpool.md
-          - K8s 1.29发布:宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
+          - K8s 1.29发布宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
           - K8s 裸机 vs 虚机性能对比: blogs/231205-vm-bm-compare.md
           - K8s 1.29前瞻：移除、弃用及变更: blogs/231115-k8s-1.29-changes.md
           - 上海 K8s 贡献者峰会回顾: blogs/231008-kcs.md

@@ -12,6 +12,16 @@ technology, sorted by date by default.
 
 ## 2024
 
+- [20241108 | From Community Newbie to CNCF Ambassador](./241108-cncf-ambassador.md)
+
+    This article does not discuss technology; it simply shares a story of growth within the CNCF open source community, detailing a real experience of going from a community newbie to a CNCF ambassador.
+
+- [20241106 | containerd v2.0, nerdctl v2.0, and Lima v1.0](./241106-containerd-nerdctl-lima.md)
+
+    Ahead of the [KubeCon North America 2024](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/)
+    (November 12–15), this week saw the releases of [containerd](https://github.com/containerd/containerd) v2.0,
+    [nerdctl](https://github.com/containerd/nerdctl) (*contaiNERD CTL*) v2.0, and [Lima](https://lima-vm.io/) v1.0 🎉.
+
 - [20240619 | Nvidia Conquers Latest AI Tests](./20240619-nvidiaai.md)
 
     For years, Nvidia has dominated many machine learning benchmarks, and now there are two more notches in its belt：

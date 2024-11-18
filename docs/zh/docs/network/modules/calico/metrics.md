@@ -32,7 +32,7 @@
 
 ## 创建各自组件的 metrics service
 
-`calico_felix_svc`：
+`calico-node-metrics` Service：
 
 ```yaml
 apiVersion: v1
@@ -53,7 +53,7 @@ spec:
     targetPort: 9091
 ```
 
-`calico_`：
+`calico-kube-controllers-metrics` Service：
 
 ```yaml
 apiVersion: v1
@@ -76,7 +76,7 @@ spec:
 
 ## 创建 `ServiceMonitor` 对象
 
-`calico_felix_svc`：
+`calico-node` ServiceMonitor：
 
 ```yaml
 apiVersion: monitoring.coreos.com/v1
@@ -86,6 +86,7 @@ metadata:
   namespace: kube-system
   labels:
     app: calico-node
+    operator.insight.io/managed-by: insight
 spec:
   endpoints:
   - interval: 30s
@@ -106,6 +107,7 @@ metadata:
   namespace: kube-system
   labels:
     app: calico-kube-controller
+    operator.insight.io/managed-by: insight
 spec:
   endpoints:
   - interval: 30s

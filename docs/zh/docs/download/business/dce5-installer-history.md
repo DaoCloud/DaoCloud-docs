@@ -10,6 +10,8 @@ hide:
 
 | 文件名称 | 版本 | 架构 | 文件大小 | 下载 | 更新日期 |
 | ------- | --- | ---- | ------ | --- | ------- |
+| offline-v0.23.0-arm64.tar | v0.23.0 | <font color="green">ARM 64</font> | 29.80 GB | [:arrow_right: 下载页](./dce5-installer-v0.23.0.md) | 2024-11-11 |
+| offline-v0.23.0-amd64.tar | v0.23.0 | AMD 64 | 33.70 GB | [:arrow_right: 下载页](./dce5-installer-v0.23.0.md) | 2024-11-11 |
 | offline-v0.22.0-arm64.tar | v0.22.0 | <font color="green">ARM 64</font> | 24.29 GB | [:arrow_right: 下载页](./dce5-installer-v0.22.0.md) | 2024-10-10 |
 | offline-v0.22.0-amd64.tar | v0.22.0 | AMD 64 | 27.33 GB | [:arrow_right: 下载页](./dce5-installer-v0.22.0.md) | 2024-10-10 |
 | offline-v0.21.0-arm64.tar | v0.21.0 | <font color="green">ARM 64</font>| 23.99 GB | [:arrow_right: 下载页](./dce5-installer-v0.21.0.md) | 2024-09-09 |

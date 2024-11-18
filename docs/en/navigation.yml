@@ -25,6 +25,7 @@ nav:
                   - v0.10.0-20230731 Released: dce/dce-rn/20230731.md
                   - v0.9.0-20230630 Released: dce/dce-rn/20230630.md
                   - v0.8.0-20230531 Released: dce/dce-rn/20230531.md
+              - DCE 5.0 Roadmap: dce/roadmap.md
               - DaoCloud Product Support Policy: dce/support.md
               - Glossary: dce/terms.md
           - Installation:
@@ -1382,6 +1383,8 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2024:
+          - From Community Novice to CNCF Ambassador: blogs/241108-cncf-ambassador.md
+          - containerd v2.0, nerdctl v2.0, and Lima v1.0: blogs/241106-containerd-nerdctl-lima.md
           - Nvidia Conquers Latest AI Tests: blogs/20240619-nvidiaai.md
           - 10 Years of Kubernetes: blogs/0606-k8s-birth.md
           - A Legendary K8s Quest with SIG Docs: blogs/240516-sig-docs.md

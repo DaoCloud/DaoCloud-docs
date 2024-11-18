@@ -167,7 +167,11 @@ plugins:
 # Customization
 extra:
   homepage: /
-  
+
+  analytics:
+    provider: google
+    property: G-WDCH551J9C
+
   # comments
   comments:
     enabled: true

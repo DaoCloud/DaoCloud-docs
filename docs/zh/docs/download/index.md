@@ -18,8 +18,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 最新离线包 | 版本 | 下载 | 更新日期 |
 | --------------- | ------- | ---- | -------- |
-| offline-community-v0.22.0-arm64.tar | v0.22.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.22.0.md) | 2024-10-10 |
-| offline-community-v0.22.0-amd64.tar | v0.22.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.22.0.md) | 2024-10-10 |
+| offline-community-v0.23.0-arm64.tar | v0.23.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.23.0.md) | 2024-11-11 |
+| offline-community-v0.23.0-amd64.tar | v0.23.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.23.0.md) | 2024-11-11 |
 
 [社区版：更多历史版本](./free/dce5-installer-history.md){ .md-button } 
 
@@ -29,8 +29,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 最新离线包 | 版本 | 下载 | 更新日期 |
 | ----- | ----- | ---- | --------- |
-| offline-v0.22.0-arm64.tar | v0.22.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.22.0.md) | 2024-10-10 |
-| offline-v0.22.0-amd64.tar | v0.22.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.22.0.md) | 2024-10-10 |
+| offline-v0.23.0-arm64.tar | v0.23.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.23.0.md) | 2024-11-11 |
+| offline-v0.23.0-amd64.tar | v0.23.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.23.0.md) | 2024-11-11 |
 
 [商业版：更多历史版本](./business/dce5-installer-history.md){ .md-button } 
 
@@ -40,8 +40,8 @@ DCE 5.0 针对不同的应用场景提供了完善的 Addon，您可以按需下
 
 | 最新离线包 | 版本 | 下载 | 更新日期 |
 |--------| ---- | --- | --------- |
-| gpu-addon-offline-package-v0.22.0-amd64.tar.gz | v0.22.0 | [:arrow_right: 下载页](./addon/v0.22.0.md) | 2024-10-10 |
-| standard-addon-offline-package-v0.22.0-arm64.tar.gz | v0.22.0 | [:arrow_right: 下载页](./addon/v0.22.0.md) | 2024-10-10 |
+| gpu-addon-offline-package-v0.23.0-amd64.tar.gz | v0.23.0 | [:arrow_right: 下载页](./addon/v0.23.0.md) | 2024-11-10 |
+| standard-addon-offline-package-v0.23.0-arm64.tar.gz | v0.23.0 | [:arrow_right: 下载页](./addon/v0.23.0.md) | 2024-11-10 |
 
 [Addon：更多历史版本](./addon/history.md){ .md-button } 
 
@@ -65,15 +65,15 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | | 仪表盘| 51 MB | [:arrow_right: 下载页](./modules/ipavo.md) | 2024-10-12 |
 | | 微服务引擎| 1.66 GB | [:arrow_right: 下载页](./modules/skoala.md) | 2024-10-15 |
 | | 服务网格 | 1.04 GB | [:arrow_right: 下载页](./modules/mspider.md) | 2024-10-11 |
-| 中间件 | Elasticsearch |970.83 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) |2024-10-08|
-| | Kafka |990.23 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2024-10-08|
-| | MinIO |226.79 MB| [:arrow_right: 下载页](./modules/middleware/minio.md) |2024-10-08|
-| | MongoDB |376.08 MB| [:arrow_right: 下载页](./modules/middleware/mongodb.md) |2024-10-08|
-| | MySQL |1.64 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md) |2024-10-08|
-| | PostgreSQL |1.83 GB| [:arrow_right: 下载页](./modules/middleware/postgresql.md) |2024-10-08|
-| | RabbitMQ |180.08 MB| [:arrow_right: 下载页](./modules/middleware/rabbitmq.md) |2024-10-08|
-| | Redis |698.25 MB| [:arrow_right: 下载页](./modules/middleware/redis.md) |2024-10-08|
-| | RocketMQ |599.39 MB| [:arrow_right: 下载页](./modules/middleware/rocketmq.md) |2024-10-08|
+| 中间件 | Elasticsearch |971.10 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) |2024-11-05|
+| | Kafka |990.54 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2024-11-05|
+| | MinIO |233.39 MB| [:arrow_right: 下载页](./modules/middleware/minio.md) |2024-11-05|
+| | MongoDB |376.88 MB| [:arrow_right: 下载页](./modules/middleware/mongodb.md) |2024-11-05|
+| | MySQL |1.63 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md) |2024-11-05|
+| | PostgreSQL |1.84 GB| [:arrow_right: 下载页](./modules/middleware/postgresql.md) |2024-11-05|
+| | RabbitMQ |180.35 MB| [:arrow_right: 下载页](./modules/middleware/rabbitmq.md) |2024-11-05|
+| | Redis |698.55 MB| [:arrow_right: 下载页](./modules/middleware/redis.md) |2024-11-05|
+| | RocketMQ |599.68 MB| [:arrow_right: 下载页](./modules/middleware/rocketmq.md) |2024-11-05|
 | 边缘计算 | 云边协同 | 107 MB | [:arrow_right: 下载页](./modules/kant.md) | 2024-09-03 |
 | 管理 | 全局管理 | 458.30 MB | [:arrow_right: 下载页](./modules/ghippo.md) | 2024-09-29 |
 | | 运营管理 | 96.41 MB | [:arrow_right: 下载页](./modules/gmagpie.md) | 2024-09-29 |
