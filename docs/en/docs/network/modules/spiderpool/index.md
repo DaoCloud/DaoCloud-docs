@@ -14,6 +14,7 @@ The features provided by SpiderPool are as follows.
 | Feature | Description
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Multiple ways to use IP Pool | 1. IP Pools can be associated with namespaces, nodes, and applications via Node Selector. <br />2. You can specify the IP Pool in the Annotation when the application is deployed and get the IP resources in the IP Pool in order of priority. |
+| Automatic Node Affinity | Automatically detects subnet configuration mismatches and adds node affinity rules to workloads to ensure correct scheduling. |
 | IP Pool's node affinity | Nodes within the same cluster may belong to different data centers or different subnets. Therefore different copies of the same application need to be assigned IP addresses under different subnets for scheduling. The node affinity of IP Pool supports this scenario. |
 | IP Pool's namespace affinity | Based on the namespace affinity of IP Pool, the same IP Pool can be shared to multiple Namespaces at the same time. |
 | Alternate IP Pool | When the IP address in the IP Pool has been assigned and the corresponding subnet is no longer available, you can create a new subnet and IP Pool and assign it to the application to prevent the application from failing to expand its capacity. |
