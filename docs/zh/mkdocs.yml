@@ -119,6 +119,13 @@ plugins:
 #      htmlmin_opts:
 #        remove_comments: true
 
+  - git-revision-date-localized:
+      enable_creation_date: false
+
+  - git-committers:
+      repository: DaoCloud/DaoCloud-docs
+      branch: main
+
   - redirects:
       redirect_maps:
         "api.md": "dce/index.md"
