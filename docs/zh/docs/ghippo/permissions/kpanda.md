@@ -245,7 +245,7 @@ hide:
 | | | 查看 YAML | &check; | &check; | &check; | &cross; |
 | | | 修改标签 | &check; | &check; | &cross; | &cross; |
 | | | 绑定工作空间 | &check; | &cross; | &cross; | &cross; |
-| | | 配额管理 | &check; | &cross; | &cross; | &cross; |
+| | | 配额管理 | &check; | &check;（仅查看） | &check;（仅查看）| &check;（仅查看）|
 | | | 删除 | &check; | &cross; | &cross; | &cross; |
 | 工作负载 | 无状态负载 | 查看列表 | &check; | &check; | &check; | &check; |
 | | | 查看/管理详情 | &check; | &check; | &check; | &check;（仅查看） |
@@ -364,3 +364,4 @@ hide:
 | | | 查看扫描策略列表 | &check; | &cross; | &cross; | &cross; |
 | | | 创建扫描策略 | &check; | &cross; | &cross; | &cross; |
 | | | 删除扫描策略 | &check; | &cross; | &cross; | &cross; |
+
