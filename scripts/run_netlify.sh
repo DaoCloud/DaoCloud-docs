@@ -9,6 +9,7 @@ pip install mkdocs-material \
     mkdocs-rss-plugin \
     mkdocs-minify-plugin \
     mkdocs-macros-plugin \
+    mkdocs-git-authors-plugin \
     mkdocs-git-revision-date-localized-plugin \
     mkdocs-awesome-pages-plugin \
     mkdocs-redirects \
