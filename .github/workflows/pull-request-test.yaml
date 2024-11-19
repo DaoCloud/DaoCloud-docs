@@ -27,28 +27,25 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Required for mkdocs to be able to display pages last update info
+          fetch-depth: 0
+
+      # Clone mkdocs-material-insiders
+      - name: Checkout public repository
+        uses: actions/checkout@v4
+        with:
+          repository: daocloud/mkdocs-material-insiders
+          path: mkdocs-material
+          fetch-depth: 1
+
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
 
-      # Add ssh private key
-      # - name: Setup SSH
-      #   uses: MrSquaare/ssh-setup-action@v1
-      #   with:
-      #     host: github.com
-      #     private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
       # Install mkdocs-material-insiders
-      - run: pip install git+https://daocloudpublic:$ORG_TOKEN@github.com/daocloud/mkdocs-material-insiders.git
-
-      # Runs a single command using the runners shell
+      - run: pip install -e mkdocs-material
       - run: pip install -r requirements.txt -c $PIP_CONSTRAINT
 
-      # add custom plugin with pdf support
-      # - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
-
-      # build docs
+      # Build docs
       - run: pwd
       - run: mkdocs build -f docs/zh/mkdocs.yml -d ../../public/
       - run: mkdocs build -f docs/en/mkdocs.yml -d ../../public/en/
