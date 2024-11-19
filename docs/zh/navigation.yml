@@ -148,6 +148,7 @@ nav:
                           - 自定义模板: amamba/user-guide/pipeline/template/custom-template.md
                           - 模板说明: amamba/user-guide/pipeline/template/info.md
                       - 流水线分组: amamba/user-guide/pipeline/group/group.md
+                  - 流水线缓存: amamba/user-guide/pipeline/pipeline_cache.md
                   - 自定义步骤:
                       - 自定义步骤介绍: amamba/customize-step.md
                       - 自定义步骤开发指南: amamba/customize-develop.md
