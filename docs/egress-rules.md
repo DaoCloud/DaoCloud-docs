@@ -8,4 +8,12 @@ Egress rules allow you to specify which external services can be accessed by the
 
 ## Use Cases
 
+
+## Configuration Example
+
+Here is a basic example of how to configure egress rules in a service mesh:
+
+```yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
 Egress rules are useful in scenarios where you need to control access to external APIs, databases, or any service outside the mesh.
