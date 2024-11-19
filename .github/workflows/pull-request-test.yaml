@@ -40,7 +40,7 @@ jobs:
       #     private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       # Install mkdocs-material-insiders
-      - run: pip install git+https://daocloudpublic:${ORG_TOKEN}@github.com/daocloud/mkdocs-material-insiders.git
+      - run: pip install git+https://daocloudpublic:$ORG_TOKEN@github.com/daocloud/mkdocs-material-insiders.git
 
       # Runs a single command using the runners shell
       - run: pip install -r requirements.txt -c $PIP_CONSTRAINT
