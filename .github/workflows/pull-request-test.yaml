@@ -29,19 +29,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Clone mkdocs-material-insiders
-      - name: Checkout public repository
-        uses: actions/checkout@v4
-        with:
-          repository: daocloud/mkdocs-material-insiders
-          path: mkdocs-material
-          fetch-depth: 1
+      # # Clone mkdocs-material-insiders
+      # - name: Checkout public repository
+      #   uses: actions/checkout@v4
+      #   with:
+      #     repository: daocloud/mkdocs-material-insiders
+      #     path: mkdocs-material
+      #     fetch-depth: 1
 
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
 
       # Install mkdocs-material-insiders
+      - run: git clone git@github.com:DaoCloud/mkdocs-material-insiders.git mkdocs-material
       - run: pip install -e mkdocs-material
       - run: pip install -r requirements.txt -c $PIP_CONSTRAINT
 
