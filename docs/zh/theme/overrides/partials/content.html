@@ -24,5 +24,9 @@
 {{ page.content }}
 
 {% block comments %}
+  {% include "overrides/partials/source-file.html" %}
+{% endblock %}
+
+{% block comments %}
   {% include "overrides/partials/comments.html" %}
 {% endblock %}
