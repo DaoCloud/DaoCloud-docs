@@ -106,6 +106,7 @@ plugins:
   - git-committers:
       repository: DaoCloud/DaoCloud-docs
       branch: main
+      enabled: true
   
   - redirects:
       redirect_maps:

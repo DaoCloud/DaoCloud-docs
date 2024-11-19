@@ -23,6 +23,10 @@
 {% endif %}
 {{ page.content }}
 
+{% block commiters %}
+  {% include "overrides/partials/source-file.html" %}
+{% endblock %}
+
 {% block comments %}
   {% include "overrides/partials/comments.html" %}
 {% endblock %}

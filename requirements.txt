@@ -10,4 +10,3 @@ mkdocs-redirects
 mkdocs-print-site-plugin
 mkdocs-swagger-ui-tag
 pyyaml
-git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8.git
