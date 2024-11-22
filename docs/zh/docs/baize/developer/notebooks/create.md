@@ -5,9 +5,10 @@ hide:
 
 # 创建 Notebook
 
-Notebook 提供了一个在线的 Web 交互式编程环境，方便开发者快速进行数据科学和机器学习实验。
+Notebook 提供了一个在线交互式编程环境，方便开发者快速进行数据科学和机器学习实验。
+为迎接 AI 浪潮，AI Lab 已集成了当前最流行的 Jupyter Notebook 数据科学交互式开发环境 (IDE)。
 
-进入开发者控制台后，开发者可以在不同集群、命名空间中创建和管理 Notebook。
+您进入 AI Lab 开发者控制台后，可以在不同集群、命名空间中创建和管理 Notebook。
 
 1. 在左侧导航栏中点击 **Notebooks** ，进入 Notebook 列表。点击右侧的 **创建** 按钮。
 
@@ -26,7 +27,7 @@ Notebook 提供了一个在线的 Web 交互式编程环境，方便开发者快
 
 !!! note
 
-    如果选择纯 CPU 资源后，发现挂载了节点上的所有 GPU 卡，可以尝试添加 container env 来解决此问题：
+    如果选择纯 CPU 资源后，发现挂载了节点上的所有 GPU 卡，可以尝试添加一条 container env 来解决此问题：
 
     ```config
     NVIDIA_VISIBLE_DEVICES=""
