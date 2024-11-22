@@ -107,6 +107,7 @@ nav:
                       - Jenkins 高可用方案: amamba/quickstart/jenkins-HA.md
                       - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
                   - Argo CD高可用部署: amamba/quickstart/argo-cd-HA.md
+                  - 开启工作台组件的可观测能力: amamba/components-grafana-dashboard.md
               - 命名空间管理: 
                   - 命名空间: amamba/user-guide/namespace/namespace.md
                   - 多云命名空间: amamba/user-guide/multi-namespace.md
