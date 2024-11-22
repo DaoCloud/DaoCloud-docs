@@ -93,7 +93,7 @@ prefix: /opt/conda/envs/tensorflow
     - 启用命令：
     
         ```bash
-        /home/jovyan/code/tensorflow/tf-fashion-mnist-sample/train.py
+        python /home/jovyan/code/tensorflow/tf-fashion-mnist-sample/train.py
         ```
 
 1.  在高级配置中，启用 **任务分析（Tensorboard）** ，点击 **确定** 。
