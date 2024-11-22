@@ -54,6 +54,7 @@ theme:
     - search.share
     - toc.follow
     - navigation.path
+    - navigation.footer
     # - toc.integrate
 
   palette:
