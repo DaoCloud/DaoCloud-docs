@@ -33,11 +33,11 @@ hide:
 
 1. 在镜像空间页面上，点击右侧的 __推送命令__ 按钮
 
-    ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/push00.png)
+    ![点击按钮](../images/push00.png)
 
 1. 可以 __+ 生成登录指令__ 后，查看推送镜像的命令。
 
-    ![推送命令](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/push01.png)
+    ![推送命令](../images/push01.png)
 
 推送命令示例：
 
