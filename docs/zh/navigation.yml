@@ -535,8 +535,8 @@ nav:
                   - 介绍: network/modules/cilium/index.md
                   - 安装参数配置: network/modules/cilium/install.md
                   - 未支持功能说明: network/modules/cilium/not-support.md
-                  - Cilium 网络通信加速: network/modules/cilium/cross-cluster.md
-                  - 应用跨集群通信: network/modules/cilium/cilium-speedup.md
+                  - Cilium 网络通信加速: network/modules/cilium/cilium-speedup.md
+                  - 应用跨集群通信: network/modules/cilium/cross-cluster.md
                   - 实现IPVlan网络策略能力: network/modules/cilium/cilium_chaining.md
               - 集成 Contour:
                   - 介绍: network/modules/contour/index.md
