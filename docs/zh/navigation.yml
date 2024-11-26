@@ -989,11 +989,13 @@ nav:
                   - 集群列表存在未知集群: mspider/troubleshoot/cluster-already-exist.md
                   - 服务网格中常见的 503 报错: mspider/troubleshoot/503-issue.md
                   - 监听localhost的应用如何被Pod访问: mspider/troubleshoot/localhost-by-pod.md
+                  - 外部服务无法访问排障: mspider/troubleshoot/outbound-issue.md
               - 最佳实践:
                   - 网格定向服务访问限制: mspider/best-practice/use-egress-and-authorized-policy.md
                   - 接入自定义工作负载类型: mspider/best-practice/use-custom-workloads.md
                   - 优化Sidecar资源占用: mspider/best-practice/optimize-sidecar-resource.md
                   - 多云互联网格的精准控制: mspider/best-practice/multinet-control.md
+                  - 如何选择出口流量策略: mspider/best-practice/outbound-traffic.md
       - 数据服务:
           - 中间件:
               - 介绍:
