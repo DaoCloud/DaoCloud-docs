@@ -43,14 +43,14 @@ Jenkins 的配置文件是通过 ConfigMap 存储的。
       jenkins:
         clouds:
           - kubernetes:
-            name: "kubernetes"
-            templates:
-              - name: "new"
-                label: "new"
-                inheritFrom: "nodejs"
-                containers:
-                  - name: "nodejs"
-                    image: "docker.m.daocloud.io/amambadev/jenkins-agent-nodejs:v0.4.6-20.17.0-ubuntu-podman"
+                name: "kubernetes"
+                templates:
+                  - name: "new"
+                    label: "new"
+                    inheritFrom: "nodejs"
+                    containers:
+                      - name: "nodejs"
+                        image: "docker.m.daocloud.io/amambadev/jenkins-agent-nodejs:v0.4.6-20.17.0-ubuntu-podman"
     ```
 
 - 设置最大并行的 agent 数量
@@ -60,7 +60,7 @@ Jenkins 的配置文件是通过 ConfigMap 存储的。
       jenkins:
         clouds:
           - kubernetes:
-            containerCapStr: "100"
+              containerCapStr: "100"
     ```
 
 - 添加共享库配置:
