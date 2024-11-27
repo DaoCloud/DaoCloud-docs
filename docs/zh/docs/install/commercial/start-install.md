@@ -35,7 +35,7 @@ ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](./c
 | AMD64    | CentOS 7 | - |
 | | Redhat 7、8、9 | [assembly-field-downloads-page-content-61451](https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451) <br />注意：Redhat 操作系统需要 Redhat 的账号才可以下载 |
 | | Ubuntu 20.04.6 LTS | [ubuntu-20.04.6-live-server-amd64.iso](https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso) |
-| | Ubuntu 22.04.4 LTS | [ubuntu-22.04.4-live-server-amd64.iso](https://releases.ubuntu.com/jammy/ubuntu-22.04.4-live-server-amd64.iso) |
+| | Ubuntu 22.04.5 LTS | [ubuntu-22.04.5-live-server-amd64.iso](https://releases.ubuntu.com/jammy/ubuntu-22.04.5-live-server-amd64.iso) |
 | | 统信 UOS V20（1020a）| [uniontechos-server-20-1020a-amd64.iso](https://cdimage-download.chinauos.com/uniontechos-server-20-1020a-amd64.iso) |
 | | openEuler 22.03 | [openEuler-22.03-LTS-SP1-x86_64-dvd.iso](https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso) |
 | | Oracle Linux R9 U1 | [OracleLinux-R9-U1-x86_64-dvd.iso](https://yum.oracle.com/ISOS/OracleLinux/OL9/u1/x86_64/OracleLinux-R9-U1-x86_64-dvd.iso) |
