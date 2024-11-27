@@ -8,18 +8,19 @@ error Command error output: xtables parameter problem: iptables-restore: unable 
 
 ## 问题原因
 
-在服务网格中，将网格实例 Istio 部署一些特殊的操作系统（如 Red Hat 系的发行版本），通常与底层操作系统和网络配置有关，造成这个问题的原因有：
+在服务网格中，如果将网格实例 Istio 部署在一些特殊的操作系统（如 Red Hat 的某些发行版本），通常与底层操作系统和网络配置有关，造成这个问题的原因有：
 
 - 缺失 iptables 模块
 
-  - iptables 的 nat 表需要内核模块支持。如果环境上 Red Hat 操作系统上缺少相关模块（如 xt_nat、iptable_nat），就会导致这个问题。
+    iptables 的 nat 表需要内核模块支持。如果环境上 Red Hat 操作系统上缺少相关模块（如 xt_nat、iptable_nat），就会导致这个问题。
 
 - 防火墙冲突
 
-  - OpenShift 和 Istio 都依赖 iptables 来管理网络规则。如果系统中启用了 firewalld 或其他网络工具（如 nftables），可能与 iptables 发生冲突。
+    OpenShift 和 Istio 都依赖 iptables 来管理网络规则。如果系统中启用了 firewalld 或其他网络工具（如 nftables），可能与 iptables 发生冲突。
 
 - nftables 与 iptables 的不兼容
-  - Red Hat 8 和更新版本中，iptables 默认是通过 nftables 后端实现的。如果某些配置使用了传统 iptables 而非 nftables，就会导致类似问题。
+
+    Red Hat 8 和更新版本中，iptables 默认是通过 nftables 后端实现的。如果某些配置使用了传统 iptables 而非 nftables，就会导致类似问题。
 
 ## 解决方法
 
@@ -27,9 +28,9 @@ error Command error output: xtables parameter problem: iptables-restore: unable 
 
 !!! note
 
-    仅小部分操作系统有限制，所以这个功能在工作集群中默认不会部署 （已确认 Openshift 因为 Red Hat 系统限制，需要手工处理）
+    仅小部分操作系统有限制，所以这个功能在工作集群中默认不会被部署（已确认 Openshift 因为 Red Hat 系统限制，需要手工处理）。
 
-从全局管理集群中 `istio-system` 命名空间下将 `DaemonSet` 资源 `istio-os-init`， 复制并同样部署到 `istio-system` 即可.
+从全局服务管理集群中在 `istio-system` 命名空间下将 `DaemonSet` 资源 `istio-os-init` 复制并同样部署到 `istio-system`。
 
 ```yaml
 kind: DaemonSet
@@ -124,4 +125,4 @@ spec:
   revisionHistoryLimit: 10
 ```
 
-也可以直接复制上面的 `YAML` 直接部署到网格实例部署的集群中。
+也可以直接复制上面的 YAML 部署到网格实例所在的集群中。
