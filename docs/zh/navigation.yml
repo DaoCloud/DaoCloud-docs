@@ -990,6 +990,7 @@ nav:
                   - 服务网格中常见的 503 报错: mspider/troubleshoot/503-issue.md
                   - 监听localhost的应用如何被Pod访问: mspider/troubleshoot/localhost-by-pod.md
                   - 外部服务无法访问排障: mspider/troubleshoot/outbound-issue.md
+                  - 工作集群中 istio-init 容器启动失败: mspider/troubleshoot/istio-init-failed.md
               - 最佳实践:
                   - 网格定向服务访问限制: mspider/best-practice/use-egress-and-authorized-policy.md
                   - 接入自定义工作负载类型: mspider/best-practice/use-custom-workloads.md
