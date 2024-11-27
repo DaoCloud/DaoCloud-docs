@@ -106,6 +106,7 @@ nav:
                       - 安装: amamba/user-guide/pipeline/install-jenkins.md
                       - Jenkins 高可用方案: amamba/quickstart/jenkins-HA.md
                       - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
+                      - 保留Jenkins配置项: amamba/user-guide/pipeline/retain-jenkins-config.md
                   - Argo CD高可用部署: amamba/quickstart/argo-cd-HA.md
                   - 开启工作台组件的可观测能力: amamba/components-grafana-dashboard.md
               - 命名空间管理: 
@@ -160,7 +161,6 @@ nav:
                       - 构建多架构镜像: amamba/user-guide/pipeline/podman.md
                       - 系统环境变量: amamba/user-guide/pipeline/system-env.md
                       - 流水线监控指标: amamba/user-guide/pipeline/jenkins-metric.md
-                      - 保留Jenkins配置项: amamba/user-guide/pipeline/retain-jenkins-config.md
               - GitOps:
                   - 导入代码仓库: amamba/user-guide/gitops/import-repo.md
                   - 创建 Argo CD 应用: amamba/user-guide/gitops/create-argo-cd.md
