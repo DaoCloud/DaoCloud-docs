@@ -27,7 +27,7 @@ error Command error output: xtables parameter problem: iptables-restore: unable 
 
 !!! note
 
-    仅 Red Hat 有较为严格的限制，所以这个功能在默认安装时，不会部署
+    仅小部分操作系统有限制，所以这个功能在工作集群中默认不会部署 （已确认 Openshift 因为 Red Hat 系统限制，需要手工处理）
 
 从全局管理集群中 `istio-system` 命名空间下将 `DaemonSet` 资源 `istio-os-init`， 复制并同样部署到 `istio-system` 即可.
 
@@ -124,8 +124,4 @@ spec:
   revisionHistoryLimit: 10
 ```
 
-也可以直接复制上面的 YAML 直接 apply 到网格实例部署的集群中
-
-## OpenShift 特定检查
-
-如果您正在使用 OpenShift，确保集群网络插件（如 OVN、Calico）正确配置，并兼容 Istio 的 iptables 规则。检查 CNI 插件日志以确认是否有冲突。
+也可以直接复制上面的 `YAML` 直接部署到网格实例部署的集群中。
