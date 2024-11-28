@@ -741,6 +741,7 @@ nav:
                   - Integrate DeepFlow: insight/best-practice/integration_deepflow.md
               - References:
                   - Insight Reference Metrics: insight/reference/used-metric-in-insight.md
+                  - Insight Grafana data to a Database: insight/best-practice/grafana-use-db.md
                   - Custom Probe: insight/user-guide/collection-manag/probe-module.md
                   - Collection Metrics: insight/user-guide/collection-manag/metric-collect.md
                   - Alert Notification Flow: insight/reference/alertnotification.md
