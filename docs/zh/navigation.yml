@@ -63,6 +63,9 @@ nav:
                   - TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - NeoKylin Linux Advanced Server V7Update6: install/os-install/neokylin-install-dce5.0.md
                   - 其他 Linux: install/os-install/otherlinux.md
+              - 安装轻量化:
+                  - 轻量化部署裁剪方案验证: install/light-install/light-install-solution.md
+                  - 安装器实现轻量化部署: install/light-install/install-light.md
               - 升级:
                   - 升级 DCE 5.0 组件: install/upgrade.md
                   - 标准版升级白金版: install/evolve.md
