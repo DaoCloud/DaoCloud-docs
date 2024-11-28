@@ -998,6 +998,7 @@ nav:
                   - 优化Sidecar资源占用: mspider/best-practice/optimize-sidecar-resource.md
                   - 多云互联网格的精准控制: mspider/best-practice/multinet-control.md
                   - 如何选择出口流量策略: mspider/best-practice/outbound-traffic.md
+                  - 同步托管网格工作集群资源: mspider/best-practice/managed-mesh-to-sync.md
       - 数据服务:
           - 中间件:
               - 介绍:
