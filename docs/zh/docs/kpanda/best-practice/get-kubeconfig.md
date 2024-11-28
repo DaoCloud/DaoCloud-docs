@@ -1,21 +1,22 @@
 # 接入外部集群时获取永久 Token
 
-通过 kubeconfig 可以快速将一个外部集群接入到集群管理中。为了保障接入的稳定性，kubeconfig 内需要使用较长时效的 Token（建议为永久 `TOKEN`）。
-然而，不同集群服务提供商，如 `AWS EKS` 和 `GKE`，获取永久 Token 的方式不同，他们通常只提供有效期为 24 小时的 Token。
+通过 kubeconfig 可以快速将一个外部集群接入到集群管理中。为了保障接入的稳定性，
+kubeconfig 内需要使用较长时效的 Token（建议使用永久 Token）。
+然而，不同集群服务提供商，如 AWS EKS 和 GKE，获取永久 Token 的方式不同，他们通常只提供有效期为 24 小时的 Token。
 
 !!! note
 
     具体的产品操作界面参考： [接入集群](../user-guide/clusters/integrate-cluster.md)
 
-## 创建具有集群管理员权限的 Service Account
+## 创建具有集群管理员权限的 ServiceAccount
 
-为了解决上述问题，可以创建一个拥有集群管理员权限的 Service Account，并使用该 Service Account 的 kubeconfig 来接入集群。
+为了解决上述问题，可以创建一个拥有集群管理员权限的 ServiceAccount，并使用该 ServiceAccount 的 kubeconfig 来接入集群。
 
 !!! warning
 
     执行以下步骤时，请确保已经配置了 AWS 或者 GCP CLI，并有权限访问该集群，否则会报错。
 
-1. 创建 Service Account 和 ClusterRoleBinding 的 YAML 配置：
+1. 创建 ServiceAccount 和 ClusterRoleBinding 的 YAML 配置：
 
     ```bash
     cat >eks-admin-service-account.yaml <<EOF
@@ -46,9 +47,9 @@
     kubectl apply -f eks-admin-service-account.yaml
     ```
 
-## 为 Service Account 生成 Secret
+## 为 ServiceAccount 生成 Secret
 
-在 Kubernetes 1.24 及以上版本中，创建 Service Account 默认不会创建包含 ca 证书和 user token 的 secret，需要自行关联。
+在 Kubernetes 1.24 及以上版本中，创建 ServiceAccount 默认不会创建包含 CA 证书和 user token 的 secret，需要自行关联。
 
 1. 创建 Secret 的 YAML 配置：
 
@@ -65,13 +66,13 @@
     EOF
     ```
 
-2. 查找名为 eks-admin 的 Service Account 密钥：
+2. 查找名为 eks-admin 的 ServiceAccount 密钥：
 
     ```bash
     kubectl -n kube-system get secret | grep eks-admin | awk '{print $1}'
     ```
 
-## 检索 Service Account Token
+## 检索 ServiceAccount Token
 
 1. 查看 eks-admin-secret 密钥的详情:
 
@@ -83,7 +84,7 @@
 
 ## 配置 kubeconfig
 
-1. 使用获取到的 token，设置 kubeconfig：
+1. 使用获取到的 Token，设置 kubeconfig：
 
     ```bash
     kubectl config set-credentials eks-admin --token=eyJhbGciOiJSUzI...
@@ -110,6 +111,6 @@ kubectl config view --minify --flatten --raw
 
 !!! note
 
-    - 1.24 及以上的集群版本创建 Service Account 默认不会创建包含 ca 证书和 user token 的 secret，需要自行关联。
-      参阅 K8s 官方说明：[Kubernetes Service Account](https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/configure-service-account/#manually-create-an-api-token-for-a-serviceaccount)。
-    - 使用 JWT 工具解析 token 可以查看 token 的过期时间，如 [jwt.io](https://jwt.io)。
+    - 1.24 及以上的集群版本创建 ServiceAccount 默认不会创建包含 CA 证书和 user token 的 secret，需要自行关联。
+      参阅 K8s 官方说明：[Kubernetes ServiceAccount](https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/configure-service-account/#manually-create-an-api-token-for-a-serviceaccount)。
+    - 使用 JWT 工具解析 token 可以查看 token 的过期时间，参阅 [jwt.io](https://jwt.io)。
