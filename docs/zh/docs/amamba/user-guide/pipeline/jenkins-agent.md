@@ -13,7 +13,7 @@
 
 1. 前往 __容器管理__ -> __集群列表__ ，选择您安装 Jenkins 的集群和命名空间
    （默认集群名称为 kpanda-global-cluster，命名空间为 amamba-system）
-2. 选择 __配置与密钥__ -> __配置项__ ，选择 Jenkins 安装的命名空间，搜索配置项 `jenkins-casc-config`
+2. 选择 __配置与密钥__ -> __配置项__ ，选择 Jenkins 安装的命名空间，搜索配置项 `global-jenkins-casc-config`
 3. 选择 __编辑 YAML__ , 搜索`jenkins.clouds.kubernetes.templates`，添加以下内容（以添加 maven-jdk11 为例）
 
     ```yaml
@@ -143,7 +143,7 @@ pipeline {
 可以通过配置流水线的 `activeDeadlineSeconds`、`podRetention` 参数，来实现容器组在指定时间后才会删除容器组。
 
 1. 前往 __容器管理__ -> __集群列表__ ，选择您安装 Jenkins 的集群和命名空间（默认集群名称为 kpanda-global-cluster，命名空间为 amamba-system）
-2. 选择 __配置与密钥__ -> __配置项__ ，选择 Jenkins 安装的命名空间，搜索配置项 `jenkins-casc-config`
+2. 选择 __配置与密钥__ -> __配置项__ ，选择 Jenkins 安装的命名空间，搜索配置项 `global-jenkins-casc-config`
 3. 选择 __编辑 YAML__ , 搜索 `jenkins.clouds.kubernetes.templates`，可以在每个容器模版下添加上述两个参数：
 
     ```yaml
