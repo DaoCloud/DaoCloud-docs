@@ -3,14 +3,23 @@ MTPE: windsonsea
 date: 2024-05-11
 ---
 
-# Upgrade DCE 5.0 Modules
+# Upgrade DCE 5.0 Components
 
-The upgrade of DCE 5.0 modules involves upgrading the product functionality modules and the infrastructure modules of DCE 5.0.
+The upgrade of DCE 5.0 components involves upgrading the product modules and the infrastructure modules of DCE 5.0.
 
-DCE 5.0 consists of several sub-modules, including container management, global management, insight, and more.
-These are primarily defined in the `components` section of the [manifest.yaml](commercial/manifest.md) file.
+- DCE 5.0 consists of several modules, including container management, global management, insight, and more.
+  These are primarily defined in the `components` section of the [manifest.yaml](commercial/manifest.md) file.
 
-The components specific to the infrastructure modules of DCE 5.0 are defined in the `infrastructures` section of the [manifest.yaml](commercial/manifest.md) file.
+- The components specific to the infrastructure modules of DCE 5.0 are defined in the `infrastructures` section of the [manifest.yaml](commercial/manifest.md) file.
+
+!!! warning
+
+    - Since DCE 5.0 includes a wide range of product modules, it's advisable to upgrade
+      the DCE 5.0 components one version at a time using the installer,
+      rather than jumping across multiple versions. 
+
+    - Keep in mind that upgrading the DCE 5.0 components could overwrite your business
+      data, so be sure to back up your data before proceeding!
 
 ## Prerequisites
 
