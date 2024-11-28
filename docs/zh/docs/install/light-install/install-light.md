@@ -141,9 +141,11 @@
 
     请在到达用户现场之前，提前下载好。
 
-1. 清理 istio sidecar 脚本: [clean_istio_proxy.sh](https://gitlab.daocloud.cn/bo.jiang/installer-tools/-/blob/master/clean_istio_proxy.sh)
+1. 清理 Istio 边车脚本：
+   [clean_istio_proxy.sh](https://gitlab.daocloud.cn/bo.jiang/installer-tools/-/blob/master/clean_istio_proxy.sh)
 
-2. 部署 register 脚本：[mv-registry.sh](https://gitlab.daocloud.cn/bo.jiang/installer-tools/-/blob/master/mv-registry.sh)
+1. 部署 register 脚本：
+   [mv-registry.sh](https://gitlab.daocloud.cn/bo.jiang/installer-tools/-/blob/master/mv-registry.sh)
 
 ## 安装步骤
 
@@ -151,7 +153,7 @@
 
 开始安装前，需先安装好前置依赖项。
 
-```yaml
+```shell
 export VERSION=v0.20.0
 curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz
