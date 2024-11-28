@@ -9,11 +9,11 @@ hide:
 
 具体操作步骤如下：
 
-1. 点击左上角的，选择 __可观测性__ 。
+1. 点击左上角的，选择 __可观测性__。
 
     ![一级导航](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/collectmanage01.png){ width="1000"}
 
-2. 选择左侧导航栏的 __采集管理__ ，查看全部集群采集插件的状态。
+2. 选择左侧导航栏的 __采集管理__，查看全部集群采集插件的状态。
 
     ![集群列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/collect00.png){ width="1000"}
 
@@ -21,6 +21,10 @@ hide:
 
     ![集群列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/collect01.png){ width="1000"}
 
-4. 在 __服务监控__ 页签中，点击快捷链接跳转到 __容器管理__ -> __自定义资源__ 添加服务发现规则。
+4. 在集群的采集详情页，选择 __指标采集状态__ 页签，可以看到当前集群 Prometheus 采集的 Target 的详细状态以及每个 Target 的标签。
 
-    ![集群列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/collect02.png){ width="1000"}
+    ![Target](../../images/target-status.png){ width="1000"}
+
+5. 在 __服务监控__ 页签中，点击快捷链接跳转到 __容器管理__ -> __自定义资源__ 添加服务发现规则。
+
+    ![服务发现](../../images/collect02.png){ width="1000"}
