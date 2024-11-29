@@ -107,3 +107,10 @@ __Toolkit.enable__ ：默认开启，该组件让 conatainerd/docker 支持运�
         ```
 
 ​    切分后，应用可[使用 MIG GPU 资源](mig/mig_usage.md)。
+
+## 升级注意事项
+
+1. 已知问题：gpu-operator 从 v23.9.0+3 版本升级到 v24.6.0+1 后，`gpu-operator-node-feature-discovery-master` 一直处于 crash 状态。
+2. 解决办法：在 __Helm 应用__ 页面，搜索 __gpu-operator__ ，点击操作栏中的 __更新__ 按钮，进入更新页面，选择版本为 24.6.0+1 后，将 upgradeCRD 设置为 true。
+
+    ![升级 GPU operator](../images/updategpuoperator.png)
