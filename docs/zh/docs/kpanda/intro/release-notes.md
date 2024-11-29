@@ -4,6 +4,30 @@
 
 *[kpanda]: DaoCloud 容器管理的内部开发代号
 
+## 2024-10-30
+
+### v0.33.0
+
+#### 新增
+
+- **新增** 支持 寒武纪 GPU 卡的纳管和调度
+- **新增** 实现 kubeconfig secret 资源删除的保护机制
+
+#### 优化
+
+- **优化** 优化 升级 hami、gpu-operator 的 addon版本到 v2.4.1、v24.6.0
+- **优化** 优化 kubeconfig secret 资源删除的保护机制
+- **优化** 优化 helm push 插件集成到安装器离线包
+- **优化** 优化 egress 端口分配，Cluster 的 egress 端口保持固定
+
+#### 修复
+
+- **修复** 修复节点详情页的容器组页面根据GPU类型筛选不生效的问题
+- **修复** 修复 metrics-server 插件卸载残留的问题 
+- **修复** 修复 创建集群时自定义yum_repos 重试安装时自定义的内容没有了的问题
+- **修复** 修复 当worker失联时，删除node节点会导致kpanda-controller-manager 出现panic的情况
+
+
 ## 2024-09-30
 
 ### v0.32.0
