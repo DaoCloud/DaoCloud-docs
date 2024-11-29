@@ -1,7 +1,7 @@
 # 保留 Jenkins 配置参数
 
 Jenkins 的配置文件是通过 ConfigMap 存储的。
-但是在实际使用中，您可能会修改某些配置项，如（修改 agent 的镜像，修改最大并行数）等，
+但是在实际使用中，您可能会修改某些配置项，如（修改 Agent 的镜像，修改最大并行数）等，
 通过 Helm 升级方式就会将您的配置覆盖，为了平衡 Jenkins 升级与您自定义配置之间的差异，
 工作台提供了保留 Jenkins 配置参数的功能。
 
@@ -29,8 +29,15 @@ Jenkins 的配置文件是通过 ConfigMap 存储的。
     其中，`jenkins.yaml` 需要与 Jenkins CASC 配置项中的 `jenkins.yaml` **格式保持一致** 。
     你完成修改后，其中的内容会以 `patch` 的方式合并到 Jenkins 的配置文件中。
 
-4. 在只升级了 Jenkins 的情况下，需要手动更新此 configmap 的 annotation 中的
-   `amamba.io/casc-sync-at` 字段，以便更新到 Jenkins 中。
+!!! tip
+    
+    Jenkins CASC 配置项指的是 Jenkins 可以通过配置文件的方式进行配置的一些参数 (Configuration as Code)。
+    您可以前往安装了 Jenkins 的命名空间下查看 `jenkins-casc-config` 这个配置项，key 为 `jenkins.yaml`。
+
+!!! note
+
+    在只升级了 Jenkins 的情况下，因为无法感知到 Jenkins 被升级，因此需要手动更新此 configmap 的 annotation 中的
+    `amamba.io/casc-sync-at` 字段（可以修改为任意值），以便可以被应用到 Jenkins 中。
 
 ## 配置示例
 
@@ -43,14 +50,14 @@ Jenkins 的配置文件是通过 ConfigMap 存储的。
       jenkins:
         clouds:
           - kubernetes:
-                name: "kubernetes"
-                templates:
-                  - name: "new"
-                    label: "new"
-                    inheritFrom: "nodejs"
-                    containers:
-                      - name: "nodejs"
-                        image: "docker.m.daocloud.io/amambadev/jenkins-agent-nodejs:v0.4.6-20.17.0-ubuntu-podman"
+              name: "kubernetes"
+              templates:
+                - name: "new"
+                  label: "new"
+                  inheritFrom: "nodejs"
+                  containers:
+                    - name: "nodejs"
+                      image: "docker.m.daocloud.io/amambadev/jenkins-agent-nodejs:v0.4.6-20.17.0-ubuntu-podman"
     ```
 
 - 设置最大并行的 agent 数量
