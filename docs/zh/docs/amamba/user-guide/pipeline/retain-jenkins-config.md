@@ -1,7 +1,7 @@
 # 保留 Jenkins 配置参数
 
 Jenkins 的配置文件是通过 ConfigMap 存储的。
-但是在实际使用中，您可能会修改某些配置项，如（修改 agent 的镜像，修改最大并行数）等，
+但是在实际使用中，您可能会修改某些配置项，如（修改 Agent 的镜像，修改最大并行数）等，
 通过 Helm 升级方式就会将您的配置覆盖，为了平衡 Jenkins 升级与您自定义配置之间的差异，
 工作台提供了保留 Jenkins 配置参数的功能。
 
@@ -31,12 +31,13 @@ Jenkins 的配置文件是通过 ConfigMap 存储的。
 
 !!! tip
     
-    Jenkins CASC 配置项指的是Jenkins可以通过配置文件的方式进行配置的一些参数(Configuration as Code)。
-    您可以前往Jenkins安装的命名空间下查看`jenkins-casc-config`这个配置项，key为`jenkins.yaml`。
+    Jenkins CASC 配置项指的是 Jenkins 可以通过配置文件的方式进行配置的一些参数 (Configuration as Code)。
+    您可以前往安装了 Jenkins 的命名空间下查看 `jenkins-casc-config` 这个配置项，key 为 `jenkins.yaml`。
 
 !!! note
 
-    在只升级了 Jenkins 的情况下，因为无法感知到Jenkins被升级，因此需要手动更新此 configmap 的 annotation 中的`amamba.io/casc-sync-at` 字段(可以修改为任意值)，以便可以被应用到 Jenkins 中。
+    在只升级了 Jenkins 的情况下，因为无法感知到 Jenkins 被升级，因此需要手动更新此 configmap 的 annotation 中的
+    `amamba.io/casc-sync-at` 字段（可以修改为任意值），以便可以被应用到 Jenkins 中。
 
 ## 配置示例
 
