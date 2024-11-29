@@ -356,6 +356,7 @@ nav:
                   - Migrate DCE 4.0 to DCE 5.0: kpanda/best-practice/dce4-5-migration.md
                   - Offline Deploy and Upgrade Legacy Kubean: kpanda/best-practice/kubean-low-version.md
                   - Replace a Master Node in Worker Cluster: kpanda/best-practice/replace-first-master-node.md
+                  - Get Permanent Token for External Clusters: kpanda/best-practice/get-kubeconfig.md
           - Multicloud Management:
               - Intro:
                   - What is Multicloud Management: kairship/intro/index.md
