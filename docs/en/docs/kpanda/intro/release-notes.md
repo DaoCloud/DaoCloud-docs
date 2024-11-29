@@ -10,6 +10,29 @@ understand the evolution path and feature changes from release to release.
 
 *[kpanda]: Internal development codename for DaoCloud container management
 
+## 2024-10-30
+
+### v0.33.0
+
+#### New Features
+
+- **Added** support for managing and scheduling Cambrian GPU cards
+- **Added** a protection mechanism for the deletion of kubeconfig secret resources
+
+#### Improvements
+
+- **Improved** the upgrade of hami and gpu-operator addon versions to v2.4.1 and v24.6.0
+- **Improved** the protection mechanism for deleting kubeconfig secret resources
+- **Improved** the integration of the helm push plugin into the installer offline package
+- **Improved** egress port allocation, maintaining a fixed egress port for the Cluster
+
+#### Fixes
+
+- **Fixed** the issue where the container group page on the node details page did not filter correctly based on GPU type
+- **Fixed** the issue of residuals when uninstalling the metrics-server plugin
+- **Fixed** the problem where custom content for yum_repos was lost during retry installation when creating a cluster
+- **Fixed** the issue where deleting a node would cause the kpanda-controller-manager to panic when a worker was lost
+
 ## 2024-09-30
 
 ### v0.32.0
