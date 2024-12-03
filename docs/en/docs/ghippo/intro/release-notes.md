@@ -3,6 +3,25 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-11-30
+
+### v0.33.0
+
+- **Upgraded** Istio to 1.22.3
+- **Added** virtual machine module license
+- **Added** metering and billing support for Muxi GPU in Operational Management
+- **Fixed** issue with resource name display anomaly for Create-User in audit logs
+
+## 2024-10-31
+
+### v0.32.0
+
+- **Added** Sidecar version role permission SDK
+- **Added** cloud-native AI related permission points in Workspace Editor
+- **Added** encryption implementation for username and password in session-limit interface
+- **Fixed** issue where the corresponding field was not cleared after re-setting
+  user LDAP filter to empty during synchronization
+
 ## 2024-9-30
 
 ### v0.31.0
