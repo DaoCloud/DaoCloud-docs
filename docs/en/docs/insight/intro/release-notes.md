@@ -8,6 +8,52 @@ date: 2024-02-19
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2024-11-30
+
+### v0.33.1
+
+#### Insight Server
+
+- **Added** the ability to view the Target status, recent collection time, and detailed labels for metric collection management.
+- **Improved** built-in alert rules related to Span traffic metrics.
+- **Upgraded** the image versions of OpenTelemetry probes for various service development languages.
+- **Fixed** an issue where filtering Spans by request delay was ineffective.
+
+## 2024-10-31
+
+### v0.32.1
+
+#### Insight Server
+
+- **Added** support for viewing all Span data with statistics based on status and delay.
+- **Enhanced** container group CPU and memory monitoring metrics to support viewing the CPU and memory usage of containers.
+- **Fixed** an issue where users granted access to a namespace could not view data.
+
+## 2024-09-31
+
+### v0.31.0
+
+!!! warning
+
+    If upgrading from a lower version to this version, the **historical alert storage duration** configured in
+    **System Configuration** will be reset to 30 days. If you have already adjusted this parameter according to
+    your needs, please manually modify it again after the upgrade.
+
+#### Insight Server
+
+- **Added** fields for `Request Protocol`, `Request Method`, and `Status Code` in the trace list.
+- **Enabled** platform administrators to customize rendering thresholds for topology maps,
+  allowing temporary modifications to threshold configurations.
+- **Added** prompts when the `Logging` feature is not enabled.
+- **Upgraded** OTel `python instrumentation` from v0.46b0 to v0.48b0.
+- **Upgraded** OTel `java instrumentation` from v1.40.0 to v1.42.1.
+- **Fixed** an issue where internal message alert notifications did not format
+  line breaks according to the created message template.
+
+#### Insight Agent
+
+- **Fixed** the failure to create ICMP protocol monitoring tasks due to insufficient permissions.
+
 ## 2024-08-31
 
 ### v0.30.0
@@ -21,7 +67,6 @@ the evolution path and feature changes of each version.
 - **Added** built-in alarm rules for the link components `Jaeger` and `OpenTelemetry Collector`.
 - **Added** feature switches for the __Logs__ module and __Events__ module in the installation parameters, allowing the log module to be disabled
 - **Improved** default startup parameters for `Jaeger Collector` to improve component performance.
-
 - **Fixed** an issue with undefined types for Kubernetes events.
 - **Fixed** a timeout issue with the status interface for system components.
 - **Fixed** CVE issues with the `helm-kubectl` image.
