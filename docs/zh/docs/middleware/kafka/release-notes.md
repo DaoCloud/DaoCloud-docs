@@ -4,6 +4,13 @@
 
 *[mcamel-kafka]: mcamel 是 DaoCloud 所有中间件的开发代号，kafka
 
+## 2024-11-30
+
+### v0.21.0
+
+- **优化** 升级 kafka-operator 镜像版本到 0.40.0，并支持创建 3.7.0 版本的 kafka 实例
+- **优化** 增加 kafka-operator  的内存限制量
+
 ## 2024-09-30
 
 ### v0.19.0
