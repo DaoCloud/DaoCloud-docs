@@ -12,15 +12,33 @@ providing convenience for users to learn about the evolution path and feature ch
 
 *[mspider]: Internal development codename for DaoCloud Service Mesh
 
+## 2024-11-30
+
+### v0.32.0
+
+- **Improved** the gateway detail interface `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/mesh-gateways/{gateway}`
+  by adding fields `.details.ports`, `.details.load_balancer_ip`; upgrading `.configuration.service.load_balancer_ip`
+  from runtime configuration to predefined configuration. Additionally, the default in `.details` is now runtime information.
+- **Fixed** an issue where, in extreme cases, the state of the managed mesh removing the cluster was incorrect.
+
+## 2024-10-31
+
+### v0.31.0
+
+- **Fixed** an issue where the link collection rate could not be adjusted.
+- **Fixed** an issue where binding workload waypoint did not have audit logs.
+- **Fixed** an issue where the patch version of K8s could not retrieve a valid Istio version.
+
 ## 2024-09-27
 
 ### v0.30.0
 
-- **Fixed** exception logging.
-- **Fixed** a null pointer issue with Istio resources.
-- **Fixed** resource removal not taking effect after disabling Istio synchronization in the working cluster.
-- **Fixed** the incorrect injectedMode status in WorkloadShadow.
-- **Improved** the backend's supported Istio version from v1.21.5 to v1.22.4, setting v1.22.4 as the default.
+- **Fixed** an issue with abnormal logs.
+- **Fixed** an issue of null pointer with Istio resources.
+- **Fixed** an issue where resources were not removed after shutting down the working cluster's Istio resource synchronization.
+- **Fixed** an issue of the abnormal `injectedMode` status in WorkloadShadow.
+- **Improved** the supported Istio version in the backend, upgraded from v1.21.5 to v1.22.4,
+  with the default version set to 1.22.4.
 
 ## 2024-09-02
 

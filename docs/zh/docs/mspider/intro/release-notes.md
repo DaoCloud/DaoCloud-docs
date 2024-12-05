@@ -8,26 +8,28 @@
 
 ### v0.32.0
 
-- **优化** 网关详情接口 `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/mesh-gateways/{gateway}` 新增字段 `.details.ports`, `.details.load_balancer_ip`；升级 `.configuration.service.load_balancer_ip` 从运行时配置改为预定义配置。并且默认 `.details` 中为运行时信息。
+- **优化** 网关详情接口 `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/mesh-gateways/{gateway}`
+  新增字段 `.details.ports`, `.details.load_balancer_ip`；升级 `.configuration.service.load_balancer_ip`
+  从运行时配置改为预定义配置。并且默认 `.details` 中为运行时信息。
 - **修复** 极端情况下，会出现托管网格移除集群状态不正确问题。
 
 ## 2024-10-31
 
 ### v0.31.0
 
-- **修复** 链路采集率无法调整
-- **修复** 绑定工作负载 waypoint 没有审计日志
-- **修复** k8s 的补丁版本无法获取有效的 Istio version。
+- **修复** 链路采集率无法调整的问题
+- **修复** 绑定工作负载 waypoint 没有审计日志的问题
+- **修复** K8s 的补丁版本无法获取有效 Istio 版本的问题
 
 ## 2024-09-27
 
 ### v0.30.0
 
-- **修复** 异常日志
-- **修复** Istio 资源空指针问题。
-- **修复** 关闭工作集群 Istio 资源同步后，资源移除未生效问题。
-- **修复** WorkloadShadow 中 injectedMode 状态不正常问题。
-- **优化** 后台支持的 Istio 版本从 v1.21.5 升级至 v1.22.4，并且设置默认版本为 1.22.4。
+- **修复** 日志异常的问题
+- **修复** Istio 资源空指针的问题
+- **修复** 关闭工作集群 Istio 资源同步后，资源移除未生效的问题
+- **修复** WorkloadShadow 中 injectedMode 状态不正常的问题
+- **优化** 后台支持的 Istio 版本从 v1.21.5 升级至 v1.22.4，并且设置默认版本为 1.22.4
 
 ## 2024-09-02
 
