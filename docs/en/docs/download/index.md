@@ -11,7 +11,7 @@ Currently, only offline packages are provided in the download center. For online
 
 ## Download Prerequisite Dependencies
 
-| Lastest Package | Version | Size | Download | Update Ddate |
+| Lastest Package | Version | Size | Download | Date |
 | ------ | ---- | ---- | ---- |-------- |
 | prerequisite_v0.23.0_amd64.tar.gz | v0.23.0 | 119.0 MB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.23.0_amd64.tar.gz) | 2024-11-11 |
 | prerequisite_v0.23.0_arm64.tar.gz | v0.23.0 | 107.0 MB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.23.0_arm64.tar.gz) | 2024-11-11 |
@@ -20,7 +20,7 @@ Currently, only offline packages are provided in the download center. For online
 
 This package is dedicated to the community and is available for free trial.
 
-| Lastest Package | Version | Download | Update Date |
+| Lastest Package | Version | Download | Date |
 | -------- | ------- | --------- | ----------- |
 | offline-community-v0.23.0-arm64.tar | v0.23.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.23.0.md) | 2024-11-11 |
 | offline-community-v0.23.0-amd64.tar | v0.23.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.23.0.md) | 2024-11-11 |
@@ -31,7 +31,7 @@ This package is dedicated to the community and is available for free trial.
 
 This package is suitable for private cloud, hybrid cloud, multicloud, microservices and other scenarios, providing a variety of customizable cloud native modules.
 
-| Lastest Package | Version | Download | Update Date |
+| Lastest Package | Version | Download | Date |
 | -------- | ------- | -------- | ----------- |
 | offline-v0.23.0-arm64.tar | v0.23.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.23.0.md) | 2024-11-11 |
 | offline-v0.23.0-amd64.tar | v0.23.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.23.0.md) | 2024-11-11 |
@@ -42,11 +42,11 @@ This package is suitable for private cloud, hybrid cloud, multicloud, microservi
 
 DCE 5.0 provides comprehensive Addons for different use cases, which can be downloaded and used as needed.
 
-| Lastest Package | Version | Download | Update Date |
+| Lastest Package | Version | Download | Date |
 | -------- | ------- | -------- | ----------- |
-| gpu-addon-offline-package-v0.23.0-amd64.tar.gz | v0.23.0 | [:arrow_right: Go to Download](./v0.23.0.md) | 2024-11-10 |
-| standard-addon-offline-package-v0.23.0-arm64.tar.gz | v0.23.0 | [:arrow_right: Go to Download](./v0.23.0.md) | 2024-11-10 |
-| standard-addon-offline-package-v0.23.0-amd64.tar.gz | v0.23.0 | [:arrow_right: Go to Download](./v0.23.0.md) | 2024-11-10 |
+| gpu-addon-offline-package-v0.23.0-amd64.tar.gz | v0.23.0 | [:arrow_right: Go to Download](./addon/v0.23.0.md) | 2024-11-10 |
+| standard-addon-offline-package-v0.23.0-arm64.tar.gz | v0.23.0 | [:arrow_right: Go to Download](./addon/v0.23.0.md) | 2024-11-10 |
+| standard-addon-offline-package-v0.23.0-amd64.tar.gz | v0.23.0 | [:arrow_right: Go to Download](./addon/v0.23.0.md) | 2024-11-10 |
 
 [Legacy Packages for Addons](./addon/history.md){ .md-button } 
 
@@ -54,7 +54,7 @@ DCE 5.0 provides comprehensive Addons for different use cases, which can be down
 
 The numerous modules included in DCE 5.0 can be downloaded separately to upgrade each module on demand.
 
-| Channel | Modules | File Size | Download | Update Date |
+| Channel | Modules | File Size | Download | Date |
 | ------- | ------- | --------- | -------- | ----------- |
 | Workbench | Workbench | 386.41 MB | [:arrow_right: Go to Download](./modules/amamba.md) | 2024-12-01 |
 | Container | Container Management | 674.33 MB | [:arrow_right: Go to Download](./modules/kpanda.md) | 2024-11-06 |
