@@ -4,6 +4,13 @@
 
 *[mspider]: DaoCloud 服务网格的内部开发代号
 
+## 2024-11-30
+
+### v0.32.0
+
+- **优化** 网关详情接口 `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/mesh-gateways/{gateway}` 新增字段 `.details.ports`, `.details.load_balancer_ip`；升级 `.configuration.service.load_balancer_ip` 从运行时配置改为预定义配置。并且默认 `.details` 中为运行时信息。
+- **修复** 极端情况下，会出现托管网格移除集群状态不正确问题。
+
 ## 2024-10-31
 
 ### v0.31.0
