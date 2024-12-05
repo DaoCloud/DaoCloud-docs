@@ -10,8 +10,18 @@ so that you can learn its evolution path and feature changes.
 
 !!! note
 
-    Features marked as Beta are subject to change; please pay close attention when using them,
-    and provide timely feedback if you encounter any issues.
+    Features labeled as Beta may undergo changes; please use them with caution
+    and provide prompt feedback if you encounter any issues.
+
+## 2024-11-30
+
+### v0.11.0
+
+- **Added** status detail display for `Notebooks`, `Datasets`, `Training Jobs`,
+  and `Inference Service` to improve exception handling efficiency.
+- **Added** queue management in the operator console, allowing viewing of all
+  resources that have used the queue on the queue details page.
+- **Improved** interaction for dataset updates.
 
 ## 2024-10-31
 
@@ -19,7 +29,7 @@ so that you can learn its evolution path and feature changes.
 
 #### Features
 
-- **Added** the feature to specify the type of GPU to use when configuring vGPU resources in the `Training Task`.
+- **Added** the feature to specify the type of GPU to use when configuring vGPU resources in the `Training Job`.
 - **Added** support for Huggingface data sources in the `Dataset`, allowing you to download a vast array of models and datasets.
 - **Added** support for Modelscope data sources in the `Dataset`, allowing you to download a vast array of models and datasets.
 - **Added** the feature for **cross-namespace** references in `Dataset`.
@@ -141,11 +151,11 @@ so that you can learn its evolution path and feature changes.
 - **Added** distributed training jobs can now configure `SHM size` through the UI.
 - **Added** one-click restart function for training jobs.
 - **Added** model training jobs support custom cluster scheduler specification.
-- **Added** training task analysis tool `Tensorboard` support, can be launched with one click
+- **Added** training job analysis tool `Tensorboard` support, can be launched with one click
   in `Notebook` and training jobs.
 - **Added** when editing queue quotas, hints are provided for the shared resource configuration of
   the current workspace.
-- **Added** upgrade and adapt Kueue version to `v0.6.2`.
+- **Added** upgrade and adapt Kueue to v0.6.2.
 
 #### Fixes
 
