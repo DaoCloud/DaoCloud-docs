@@ -17,7 +17,7 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 此版本面向社区，欢迎免费体验。
 
 | 最新离线包 | 版本 | 下载 | 更新日期 |
-| --------------- | ------- | ---- | -------- |
+| -------- | ---- | --- | ------- |
 | offline-community-v0.23.0-arm64.tar | v0.23.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.23.0.md) | 2024-11-11 |
 | offline-community-v0.23.0-amd64.tar | v0.23.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.23.0.md) | 2024-11-11 |
 
@@ -40,9 +40,9 @@ DCE 5.0 针对不同的应用场景提供了完善的 Addon，您可以按需下
 
 | 最新离线包 | 版本 | 下载 | 更新日期 |
 |--------| ---- | --- | --------- |
-| gpu-addon-offline-package-v0.23.0-amd64.tar.gz | v0.23.0 | [:arrow_right: 下载页](./v0.23.0.md) | 2024-11-10 |
-| standard-addon-offline-package-v0.23.0-arm64.tar.gz | v0.23.0 | [:arrow_right: 下载页](./v0.23.0.md) | 2024-11-10 |
-| standard-addon-offline-package-v0.23.0-amd64.tar.gz | v0.23.0 | [:arrow_right: 下载页](./v0.23.0.md) | 2024-11-10 |
+| gpu-addon-offline-package-v0.23.0-amd64.tar.gz | v0.23.0 | [:arrow_right: 下载页](./addon/v0.23.0.md) | 2024-11-10 |
+| standard-addon-offline-package-v0.23.0-arm64.tar.gz | v0.23.0 | [:arrow_right: 下载页](./addon/v0.23.0.md) | 2024-11-10 |
+| standard-addon-offline-package-v0.23.0-amd64.tar.gz | v0.23.0 | [:arrow_right: 下载页](./addon/v0.23.0.md) | 2024-11-10 |
 
 [Addon：更多历史版本](./addon/history.md){ .md-button } 
 
