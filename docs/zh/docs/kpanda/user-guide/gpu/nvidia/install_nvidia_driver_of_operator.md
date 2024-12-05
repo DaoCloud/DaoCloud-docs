@@ -17,13 +17,10 @@ DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统�
 
 参考如下步骤为集群安装 gpu-operator 插件。
 
-1. 登录平台，进入 __容器管理__ -> __待安装 gpu-operator  的集群__ -> 进入集群详情。
-
-2. 在 __Helm 模板__ 页面，选择 __全部仓库__ ，搜索 __gpu-operator__ 。
-
-3. 选择 __gpu-operator__ ，点击 __安装__ 。
-
-4. 参考下文参数配置，配置 __gpu-operator__ 安装参数，完成 __gpu-operator__ 的安装。
+1. 登录平台，进入 __容器管理__ -> __待安装 gpu-operator  的集群__ -> 进入集群详情
+2. 在 __Helm 模板__ 页面，选择 __全部仓库__ ，搜索 __gpu-operator__
+3. 选择 __gpu-operator__ ，点击 __安装__
+4. 参考下文参数配置，配置 __gpu-operator__ 安装参数，完成 __gpu-operator__ 的安装
 
 ## 参数配置
 
