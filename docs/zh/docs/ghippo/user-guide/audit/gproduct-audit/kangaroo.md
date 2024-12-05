@@ -9,10 +9,9 @@ hide:
 | --- | --- | --- |
 | 镜像删除：Delete-Image | Image | |
 | artifact删除：Delete-Artifacts | Artifacts | |
-| 创建回收规则：Create-ReclaimRule | ReclaimRule | 同一个接口，只能记录一条 |
-| 删除回收规则：Delete-ReclaimRule | ReclaimRule |
-| 定时运行回收规则：Sheduled-ReclaimRule | ReclaimRule |
-| 手动运行回收规则：Manual-ReclaimRule | ReclaimRule | 单独记录 |
+| 创建回收规则：Update-ReclaimRule | ReclaimRule | 创建和删除是同一个接口，因此均会被记录为 Update-ReclaimRule |
+| 删除回收规则：Update-ReclaimRule | ReclaimRule |
+| 手动运行回收规则：Manual-ReclaimRule | ReclaimRule | 
 | 创建仓库集成：Create-IntegratedRegistryinWorkspace | IntegratedRegistryinWorkspace | |
 | 删除仓库集成：Delete-IntegratedRegistryinWorkspace | IntegratedRegistryinWorkspace | |
 | 更新仓库集成：Update-IntegratedRegistryinWorkspace | IntegratedRegistryinWorkspace | |
