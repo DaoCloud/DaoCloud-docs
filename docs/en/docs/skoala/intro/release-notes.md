@@ -9,6 +9,61 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## 2024-11-30
+
+### v0.43.2
+
+#### Features
+
+- **Added** support for custom annotations on the gateway creation page.
+- **Added** automatic log file splitting and rolling update capabilities for gateways.
+
+#### Fixes
+
+- **Fixed** an issue where resources couldn't be loaded when the username is in Chinese
+- **Fixed** an issue where default values for advanced gateway configurations were ineffective
+- **Fixed** an issue with meaningless annotations appearing when editing gateways
+
+#### Improvements
+
+- **Improved** the logic for rolling updates of gateway logs to prevent log loss (upgraded gateway runtime to private version v0.31.0-dcv2).
+- **Improved** security by disabling the /debug/pprof interface of the skoala-agent.
+- **Improved** Nacos, upgrading from version 2.4.2.1 to 2.4.3 (the stable version remains at 2.3.2).
+- **Improved** the default network connection limit for gateways to mitigate performance issues caused by low default values.
+- **Improved** the Skoala Init Helm Chart by removing the detection of Insight CRD ServiceMonitor to prevent incomplete component installations.
+- **Improved** the upgrade of the gateway control plane Contour to v1.30.1-0be3efa.
+- **Improved** the gateway runtime by upgrading to private version v0.31.0-dc to support log rolling updates (the community version Envoy v1.31.0 remains available if rolling updates are not needed).
+
+## 2024-10-31
+
+### v0.42.1
+
+#### Features
+
+- **Added** detection for the installation status of MetalLB.
+- **Added** support for custom dns-lookup-family capabilities in the gateway.
+- **Added** global rate limiting rule management.
+- **Added** support for built-in global rate limiting plugin templates.
+
+#### Fixes
+
+- **Fixed** an issue where gateway plugins could not be displayed in the interface
+- **Fixed** an issue with abnormal annotations when calling container management components
+- **Fixed** an issue where the delete operation for gateway APIs did not meet expectations
+- **Fixed** an issue with incorrect jump links in the plugin center main menu
+- **Fixed** an issue where the interface displayed incorrectly after setting a fixed IP
+- **Fixed** an issue where gateway rate limiting policies could not be disabled
+- **Fixed** an issue with abnormal use of rate limiting rules in cloud-native microservices
+- **Fixed** an issue with excessive decimal places in the display of managed resources
+
+#### Improvements
+
+- **Improved** the logic for selecting NodePort corresponding to managed Nacos ports 8848/9848,
+  transitioning from random port selection to filtering available ports.
+- **Improved** Nacos, upgrading from version 2.4.1 to 2.4.2.1 (the stable version remains at 2.3.2).
+- **Improved** the upgrade of the gateway control plane Contour to v1.30.0-54ceade.
+- **Improved** the mechanism for reading cached gateway plugins, increasing the wait time for enhanced performance.
+
 ## 2024-09-30
 
 ### v0.41.3
