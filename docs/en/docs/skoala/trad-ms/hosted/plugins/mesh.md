@@ -1,10 +1,15 @@
-# The Mesh governance plug-in is enabled
+---
+hide:
+  - toc
+---
 
-## Operation procedure
+# Enable the Mesh governance plug-in
+
+Perform the following steps to eanble the plugin:
 
 1. Click the name of the target registry on the Hosting Registry list page, and.
 
-   ![](../../../images/ns-1.png)
+   ![click name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/ns-1.png)
 
 2. In the left navigation bar, click __Plugins__ , and on the `Service Mesh` card, click __Enable__ .
 

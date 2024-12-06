@@ -24,7 +24,7 @@ code name for the Microservice Engine.
 
     This document provides instructions for online installation. If you have deployed the offline
     Enterprise Package, it is recommended to refer to
-    [Offline Upgrade of Microservice Engine](offline-upgrade.md) for offline installation or upgrade of the Microservice Engine.
+    [Offline Upgrade of Microservice Engine](#offline-upgrade) for offline installation or upgrade of the Microservice Engine.
 
 ### Install Enterprise Package
 
