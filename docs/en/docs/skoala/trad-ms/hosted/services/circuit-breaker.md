@@ -1,6 +1,6 @@
 ---
 hide:
-  -toc
+  - toc
 ---
 
 # Create Circuit Breaking Rules

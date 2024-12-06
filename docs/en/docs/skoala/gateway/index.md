@@ -1,6 +1,6 @@
 ---
 hide:
-  - heel
+  - toc
 ---
 
 # Microservice Gateway
@@ -125,8 +125,6 @@ In addition to viewing the gateway details, you can update the gateway configura
 ## Update
 
 The microservice gateway supports the high-availability architecture of multi-tenant instances and is compatible with the unified gateway access capabilities of microservices in various modes.
-
-## Update gateway configuration
 
 There are two ways to update the gateway configuration.
 
