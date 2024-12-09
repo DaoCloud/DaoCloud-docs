@@ -31,7 +31,7 @@ https://console.d.run/dak
 
     ![import](./images/chatbot03.png)
 
-## 更新 ChatBot URl
+## 更新 ChatBot URL
 
 !!! note
 
@@ -45,7 +45,7 @@ https://console.d.run/dak
 <script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
 ```
 
-这个 URL 来自下图：
+有关这个 URL，参阅下图：
 
 ![url](./images/chatbot04.png)
 
