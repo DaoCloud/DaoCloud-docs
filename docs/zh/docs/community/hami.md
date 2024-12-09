@@ -1,8 +1,9 @@
 # HAMi - 异构算力虚拟化中间件
 
-**HAMi 已经是一个 [CNCF 云原生计算基金会](https://cncf.io/)全景图中的项目。
-HAMi 在申请加入 Sandbox，目前[已通过投票阶段](https://github.com/cncf/sandbox/issues/97)，
-超过了 66% 的合格分数线，参阅[相关推文](https://mp.weixin.qq.com/s/6Ze2i3-CQSFANhn8b7oNjA)。**
+**HAMi 已经是一个 [CNCF 云原生计算基金会](https://cncf.io/)全景图中的项目，
+[已经过 TOC 投票阶段](https://github.com/cncf/sandbox/issues/97),
+加入了 [CNCF Sandbox](https://www.cncf.io/projects/hami/)。
+参阅[微信公众号推文](https://mp.weixin.qq.com/s/6Ze2i3-CQSFANhn8b7oNjA)。**
 
 支持的设备：
 [![英伟达 GPU](https://img.shields.io/badge/Nvidia-GPU-blue)](https://github.com/Project-HAMi/HAMi#preparing-your-gpu-nodes)
@@ -38,10 +39,9 @@ HAMi 包含以下几个组件，一个统一的 mutatingwebhook，一个统一�
 
 ## 产品特性
 
-HAMi 可以实现显存资源的硬隔离。
+HAMi 可以实现显存资源的硬隔离。以下是一个硬隔离的简单展示。
 
-一个硬隔离的简单展示：
-提交使用以下方式定义的任务后
+提交使用以下方式定义的任务后：
 
 ```yaml
 resources:
