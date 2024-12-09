@@ -1548,6 +1548,7 @@ nav:
           - GitHub 混迹技巧: native/git/github.md
           - Git 同步中英文档: native/git/lsync.md
           - 文档站工作说明: native/git/works.md
+          - 维护 ChatBot: native/git/chatbot.md
           - 视频剪辑帮助: native/git/video.md
           - K8s 相关资源: native/git/k8s.md
       - 行业洞察:
