@@ -11,7 +11,7 @@ This page provides offline packages for different versions of the Container Mana
 
 ## Download
 
-| Version  | Architecture | File Size | Package | Checksum File | Update Date |
+| Version  | Architecture | Size | Package | Checksum | Date |
 |----------|--------------|-----------|---------|----------|-------------|
 | [0.34.0](../../kpanda/intro/release-notes.md) | AMD 64 | 757.83MB | [:arrow_down: kpanda_0.34.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.34.0_amd64.tar) | [:arrow_down: kpanda_0.34.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.34.0_amd64_checksum.sha512sum) | 2024-12-03 |
 | [0.33.2](../../kpanda/intro/release-notes.md) | AMD 64 | 756.22 MB | [:arrow_down: kpanda_0.33.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.33.2_amd64.tar) | [:arrow_down: kpanda_0.33.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.33.2_amd64_checksum.sha512sum) | 2024-11-06 |

@@ -11,7 +11,7 @@ This page provides offline packages for different versions of the Application Ba
 
 ## Download
 
-| Version   | Architecture | File Size | Package   | Checksum File | Updated Date |
+| Version   | Architecture | Size | Package   | Checksum | Date |
 |-----------| ------------ | --------- | --------- | ------------ | ----------- |
 | [v0.12.2](../../kpanda/intro/release-notes.md) | AMD 64 | 86.59 MB | [:arrow_down: kcoral_v0.12.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.12.2_amd64.tar) | [:arrow_down: kcoral_v0.12.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.12.2_amd64_checksum.sha512sum) | 2024-12-03 |
 | [v0.12.1](../../kpanda/intro/release-notes.md) | AMD 64 | 86.59 MB | [:arrow_down: kcoral_v0.12.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.12.1_amd64.tar) | [:arrow_down: kcoral_v0.12.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.12.1_amd64_checksum.sha512sum) | 2024-09-29 |

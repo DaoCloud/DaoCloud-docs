@@ -14,7 +14,7 @@ This page allows you to download the offline package of DCE 5.0 Enterprise.
 
 ## Download
 
-| Filename | File Size | Download | Update Date |
+| Filename | Size | Download | Date |
 | -------- | -------- | ---------- | ---------- |
 | offline-v0.3.28.tar | 21 GB | [:arrow_down: Download](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.3.28.tar) | 2022- 11-18 |
 

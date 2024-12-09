@@ -11,7 +11,7 @@ This page provides downloadable offline packages for various versions of MinIO.
 
 ## Download
 
-| Version | Architecture | File Size | Package   | Checksum File | Updated Date |
+| Version | Architecture | Size | Package   | Checksum | Date |
 | ------ | ------------ | --------- | ---------- | ------------ | ------------ |
 | [v0.20.0](../../../middleware/minio/release-notes.md) | <font color=green>ARM 64</font> | 222.56 MB | [:arrow_down: minio_0.20.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.20.0_arm64.tar) | [:arrow_down: minio_0.20.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.20.0_arm64_checksum.sha512sum) | 2024-11-05 |
 | [v0.20.0](../../../middleware/minio/release-notes.md) | AMD 64 | 233.39 MB | [:arrow_down: minio_0.20.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.20.0_amd64.tar) | [:arrow_down: minio_0.20.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.20.0_amd64_checksum.sha512sum) | 2024-11-05 |

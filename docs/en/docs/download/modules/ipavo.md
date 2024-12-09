@@ -11,7 +11,7 @@ On this page, you can download the offline packages of each version of the Ipavo
 
 ## Download
 
-| Version  | Architecture | File Size | Package     | Checksum File      | Update Date |
+| Version  | Architecture | Size | Package     | Checksum      | Date |
 |----------|--------------|-----------|-------------|--------------------|-------------|
 | [v0.13.0](../../insight/intro/release-notes.md) | <font color="green">ARM 64</font> | 50.32 MB | [:arrow_down: ipavo_v0.13.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ipavo_v0.13.0_arm64.tar) | [:arrow_down: ipavo_v0.13.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ipavo_v0.13.0_arm64_checksum.sha512sum) | 2024-10-28 |
 | [v0.13.0](../../insight/intro/release-notes.md) | AMD 64 | 52.65 MB | [:arrow_down: ipavo_v0.13.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ipavo_v0.13.0_amd64.tar) | [:arrow_down: ipavo_v0.13.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ipavo_v0.13.0_amd64_checksum.sha512sum) | 2024-10-28 |

@@ -10,7 +10,7 @@ hide:
 This page lists all the released offline packages for DCE 5.0 Enterprise.
 You can choose and download the one you need.
 
-| Filename | Version | Architecture | File Size | Download | Update Date |
+| Filename | Version | Architecture | Size | Download | Date |
 | -------- | ------- | ------------ | --------- | -------- | ----------- |
 | offline-v0.24.0-arm64.tar | v0.24.0 | <font color="green">ARM 64</font> | 28.93 GB | [:arrow_right: Go to Download](./dce5-installer-v0.24.0.md) | 2024-12-09 |
 | offline-v0.24.0-amd64.tar | v0.24.0 | AMD 64 | 32.73 GB | [:arrow_right: Go to Download](./dce5-installer-v0.24.0.md) | 2024-12-09 |

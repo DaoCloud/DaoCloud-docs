@@ -12,9 +12,9 @@ which can be used to install the HwameiStor local storage module using this Oper
 
 ## Download
 
-| Version | Architecture | File Size | Package | Checksum File | Update Date |
+| Version | Architecture | Size | Package | Checksum | Date |
 | ------- | ------------ | --------- | ------- | ------------- | ----------- |
-| [v0.13.1] | AMD 64 | 1.62 GB | [:arrow_down: hwameistor-operator_v0.13.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/hwameistor-operator_v0.13.1_amd64.tar) | [:arrow_down: hwameistor-operator_v0.13.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/hwameistor-operator_v0.13.1_amd64_checksum.sha512sum) | 2023-11-06 |
+| [v0.13.1](../../storage/hwameistor/release-notes.md#v0131) | AMD 64 | 1.62 GB | [:arrow_down: hwameistor-operator_v0.13.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/hwameistor-operator_v0.13.1_amd64.tar) | [:arrow_down: hwameistor-operator_v0.13.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/hwameistor-operator_v0.13.1_amd64_checksum.sha512sum) | 2023-11-06 |
 
 ## Verification
 

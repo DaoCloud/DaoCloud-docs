@@ -11,7 +11,7 @@ This page provides downloadable offline packages for various versions of MySQL.
 
 ## Download
 
-| Version | Architecture | File Size | Package   | Checksum File | Updated Date |
+| Version | Architecture | Size | Package   | Checksum | Date |
 | ------ | ------------ | --------- | ---------- | ------------ | ------------ |
 | [v0.23.0](../../../middleware/mysql/release-notes.md) | <font color=green>ARM 64</font> | 1.44 GB | [:arrow_down: mysql_0.23.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.23.0_arm64.tar) | [:arrow_down: mysql_0.23.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.23.0_arm64_checksum.sha512sum) | 2024-11-05 |
 | [v0.23.0](../../../middleware/mysql/release-notes.md) | AMD 64 | 1.63 GB | [:arrow_down: mysql_0.23.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.23.0_amd64.tar) | [:arrow_down: mysql_0.23.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.23.0_amd64_checksum.sha512sum) | 2024-11-05 |

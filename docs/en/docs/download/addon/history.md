@@ -10,8 +10,11 @@ hide:
 This page lists all the Addon offline packages released for DCE 5.0.
 You can choose and download the one you need.
 
-| Filename | Version | Architecture | File Size | Download | Update Date |
+| Filename | Version | Architecture | Size | Download | Date |
 | -------- | ------- | ------------ | --------- | -------- | ----------- |
+| gpu-addon-offline-package-v0.24.0-amd64.tar.gz | v0.24.0 | AMD 64 | 9.71 GB | [:arrow_right: Go to Download](./v0.24.0.md) | 2024-12-09 |
+| standard-addon-offline-package-v0.24.0-arm64.tar.gz | v0.24.0 | <font color="green">ARM 64</font> | 20.68 GB | [:arrow_right: Go to Download](./v0.24.0.md) | 2024-12-09 |
+| standard-addon-offline-package-v0.24.0-amd64.tar.gz | v0.24.0 | AMD 64 | 30.40 GB | [:arrow_right: Go to Download](./v0.24.0.md) | 2024-12-09 |
 | gpu-addon-offline-package-v0.23.0-amd64.tar.gz | v0.23.0 | AMD 64 | 9.71 GB | [:arrow_right: Go to Download](./v0.23.0.md) | 2024-11-10 |
 | standard-addon-offline-package-v0.23.0-arm64.tar.gz | v0.23.0 | <font color="green">ARM 64</font> | 21.87 GB | [:arrow_right: Go to Download](./v0.23.0.md) | 2024-11-10 |
 | standard-addon-offline-package-v0.23.0-amd64.tar.gz | v0.23.0 | AMD 64 | 31.36 GB | [:arrow_right: Go to Download](./v0.23.0.md) | 2024-11-10 |

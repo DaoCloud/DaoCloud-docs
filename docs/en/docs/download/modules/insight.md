@@ -11,7 +11,7 @@ On this page, you can download the offline packages of each version of the Insig
 
 ## Download
 
-| Version | Architecture | File Size | Package | Checksum File | Updated Date |
+| Version | Architecture | Size | Package | Checksum | Date |
 | ------- | ------------ | --------- | ------- | ------------- | ------------ |
 | [v0.31.3](../../insight/intro/release-notes.md) | <font color="green">ARM 64</font> | 2.17 GB | [:arrow_down: insight_v0.31.3_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.31.3_arm64.tar) | [:arrow_down: insight_v0.31.3_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.31.3_arm64_checksum.sha512sum) | 2024-11-05 |
 | [v0.31.3](../../insight/intro/release-notes.md) | AMD 64 | 2.23 GB | [:arrow_down: insight_v0.31.3_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.31.3_amd64.tar) | [:arrow_down: insight_v0.31.3_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.31.3_amd64_checksum.sha512sum) | 2024-11-05 |
