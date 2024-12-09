@@ -13,8 +13,8 @@ Currently, only offline packages are provided in the download center. For online
 
 | Lastest Package | Version | Size | Download | Date |
 | ------ | ---- | ---- | ---- |-------- |
-| prerequisite_v0.23.0_amd64.tar.gz | v0.23.0 | 119.0 MB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.23.0_amd64.tar.gz) | 2024-11-11 |
-| prerequisite_v0.23.0_arm64.tar.gz | v0.23.0 | 107.0 MB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.23.0_arm64.tar.gz) | 2024-11-11 |
+| prerequisite_v0.24.0_amd64.tar.gz | v0.24.0 | 119.0 MB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.24.0_amd64.tar.gz) | 2024-12-09 |
+| prerequisite_v0.24.0_arm64.tar.gz | v0.24.0 | 107.0 MB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.24.0_arm64.tar.gz) | 2024-12-09 |
 
 ## Download DCE 5.0 Community
 
@@ -22,8 +22,8 @@ This package is dedicated to the community and is available for free trial.
 
 | Lastest Package | Version | Download | Date |
 | -------- | ------- | --------- | ----------- |
-| offline-community-v0.23.0-arm64.tar | v0.23.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.23.0.md) | 2024-11-11 |
-| offline-community-v0.23.0-amd64.tar | v0.23.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.23.0.md) | 2024-11-11 |
+| offline-community-v0.24.0-arm64.tar | v0.24.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.24.0.md) | 2024-12-09 |
+| offline-community-v0.24.0-amd64.tar | v0.24.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.24.0.md) | 2024-12-09 |
 
 [Legacy Packages for DCE 5.0 Community](./free/dce5-installer-history.md){ .md-button } 
 
@@ -33,8 +33,8 @@ This package is suitable for private cloud, hybrid cloud, multicloud, microservi
 
 | Lastest Package | Version | Download | Date |
 | -------- | ------- | -------- | ----------- |
-| offline-v0.23.0-arm64.tar | v0.23.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.23.0.md) | 2024-11-11 |
-| offline-v0.23.0-amd64.tar | v0.23.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.23.0.md) | 2024-11-11 |
+| offline-v0.24.0-arm64.tar | v0.24.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.24.0.md) | 2024-12-09 |
+| offline-v0.24.0-amd64.tar | v0.24.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.24.0.md) | 2024-12-09 |
 
 [Legacy Packages for DCE 5.0 Enterprise](./business/dce5-installer-history.md){ .md-button } 
 
@@ -44,9 +44,9 @@ DCE 5.0 provides comprehensive Addons for different use cases, which can be down
 
 | Lastest Package | Version | Download | Date |
 | -------- | ------- | -------- | ----------- |
-| gpu-addon-offline-package-v0.23.0-amd64.tar.gz | v0.23.0 | [:arrow_right: Go to Download](./addon/v0.23.0.md) | 2024-11-10 |
-| standard-addon-offline-package-v0.23.0-arm64.tar.gz | v0.23.0 | [:arrow_right: Go to Download](./addon/v0.23.0.md) | 2024-11-10 |
-| standard-addon-offline-package-v0.23.0-amd64.tar.gz | v0.23.0 | [:arrow_right: Go to Download](./addon/v0.23.0.md) | 2024-11-10 |
+| gpu-addon-offline-package-v0.24.0-amd64.tar.gz | v0.24.0 | [:arrow_right: Go to Download](./addon/v0.24.0.md) | 2024-12-09 |
+| standard-addon-offline-package-v0.24.0-arm64.tar.gz | v0.24.0 | [:arrow_right: Go to Download](./addon/v0.24.0.md) | 2024-12-09 |
+| standard-addon-offline-package-v0.24.0-amd64.tar.gz | v0.24.0 | [:arrow_right: Go to Download](./addon/v0.24.0.md) | 2024-12-09 |
 
 [Legacy Packages for Addons](./addon/history.md){ .md-button } 
 
@@ -59,7 +59,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | Workbench | Workbench | 386.41 MB | [:arrow_right: Go to Download](./modules/amamba.md) | 2024-12-01 |
 | Container | Container Management | 674.33 MB | [:arrow_right: Go to Download](./modules/kpanda.md) | 2024-11-06 |
 | | Cluster Inspection | 174.30 MB | [:arrow_right: Go to Download](./modules/kcollie.md) | 2024-09-29 |
-| | Application Backup | 85.06 MB | [:arrow_right: Go to Download](./modules/kcoral.md) | 2024-09-29 |
+| | Application Backup | 85.06 MB | [:arrow_right: Go to Download](./modules/kcoral.md) | 2024-12-03 |
 | | Security Management | 167.29 MB | [:arrow_right: Go to Download](./modules/dowl.md) | 2023-11-26 |
 | | MultiCloud Management | 663.57 MB | [:arrow_right: Go to Download](./modules/kairship.md) | 2024-10-09 |
 | | Container Registry | 304.16 MB | [:arrow_right: Go to Download](./modules/kangaroo.md) | 2024-10-11 |
