@@ -10,7 +10,7 @@ hide:
 This page lists all packages released for DCE 5.0 Community.
 You can choose and download the one you need.
 
-| Filename | Version | Architecture | File Size | Download | Update Date |
+| Filename | Version | Architecture | Size | Download | Date |
 | -------- | ------- | ------------ | --------- | -------- | ----------- |
 | offline-community-v0.24.0-arm64.tar | v0.24.0 | <font color="green">ARM 64</font> | 8.14 GB | [:arrow_right: Go to Download](./dce5-installer-v0.24.0.md) | 2024-12-09 |
 | offline-community-v0.24.0-amd64.tar | v0.24.0 | AMD 64 | 8.65 GB | [:arrow_right: Go to Download](./dce5-installer-v0.24.0.md) | 2024-12-09 |

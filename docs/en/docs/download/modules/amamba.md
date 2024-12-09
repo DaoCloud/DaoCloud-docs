@@ -11,7 +11,7 @@ This page provides downloads for the offline package of different versions of th
 
 ## Downloads
 
-| Version | Architecture | File Size | Package   | Checksum File | Updated Date |
+| Version | Architecture | Size | Package   | Checksum | Date |
 | ------ | ------------ | --------- | ---------- | ------------ | ------------ |
 | [v0.33.0](../../amamba/intro/release-notes.md) | <font color="green">ARM 64</font> | 386.41 MB | [:arrow_down: amamba_v0.33.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_v0.33.0_arm64.tar) | [:arrow_down: amamba_v0.33.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_v0.33.0_arm64_checksum.sha512sum) | 2024-12-01 |
 | [v0.33.0](../../amamba/intro/release-notes.md) | AMD 64 | 402.65 MB | [:arrow_down: amamba_v0.33.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_v0.33.0_amd64.tar) | [:arrow_down: amamba_v0.33.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_v0.33.0_amd64_checksum.sha512sum) | 2024-12-01 |

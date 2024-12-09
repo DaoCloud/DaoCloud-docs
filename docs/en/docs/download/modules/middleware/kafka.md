@@ -11,7 +11,7 @@ This page provides downloadable offline packages for various versions of Kafka.
 
 ## Download
 
-| Version | Architecture | File Size | Package   | Checksum File | Updated Date |
+| Version | Architecture | Size | Package   | Checksum | Date |
 | ------ | ------------ | --------- | ---------- | ------------ | ------------ |
 | [v0.20.0](../../../middleware/kafka/release-notes.md) | <font color=green>ARM 64</font> | 979.94 MB | [:arrow_down: kafka_0.20.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-kafka_0.20.0_arm64.tar) | [:arrow_down: kafka_0.20.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-kafka_0.20.0_arm64_checksum.sha512sum) | 2024-11-05 |
 | [v0.20.0](../../../middleware/kafka/release-notes.md) | AMD 64 | 990.54 MB | [:arrow_down: kafka_0.20.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-kafka_0.20.0_amd64.tar) | [:arrow_down: kafka_0.20.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-kafka_0.20.0_amd64_checksum.sha512sum) | 2024-11-05 |

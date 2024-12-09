@@ -15,7 +15,7 @@ This page provides offline packages for different versions of the Cloud Edge Col
 
 ## Download
 
-| Version | Architecture | File Size | Package | Checksum File | Update Date | Notes |
+| Version | Architecture | Size | Package | Checksum | Date | Notes |
 | ------- | ----- | ---------- | ------------- | ------------- | ----------- | ---- |
 | [0.17.0](../../kant/intro/release-notes.md) | AMD 64 | 107 MB | [:arrow_down: kant_v0.17.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_v0.17.0_amd64.tar) | [:arrow_down: kant_v0.17.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_v0.17.0_amd64_checksum.sha512sum) | 2024-11-28 | the cloud amd installation package |
 | [0.17.0](../../kant/intro/release-notes.md) | <font color="green">ARM 64</font> | 103 MB | [:arrow_down: kant_v0.17.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_v0.17.0_arm64.tar) | [:arrow_down: kant_v0.17.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_v0.17.0_arm64_checksum.sha512sum) | 2024-11-28 | the cloud arm installation package |
@@ -35,7 +35,7 @@ This page provides offline packages for different versions of the Cloud Edge Col
 
 ??? note "Click to view historical versions"
 
-    | Version | Architecture | File Size | Package | Checksum File | Update Date | Notes |
+    | Version | Architecture | Size | Package | Checksum | Date | Notes |
     | ------- | ----- | ---------- | ------------- | ------------- | ----------- | ---- |
     | [0.14.1](../../kant/intro/release-notes.md) | AMD 64 | 107 MB | [:arrow_down: kant_v0.14.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_v0.14.1_amd64.tar) | [:arrow_down: kant_v0.14.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_v0.14.1_amd64_checksum.sha512sum) | 2024-09-03 | the cloud amd installation package |
     | [0.14.1](../../kant/intro/release-notes.md) | <font color="green">ARM 64</font> | 103 MB | [:arrow_down: kant_v0.14.1_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_v0.14.1_arm64.tar) | [:arrow_down: kant_v0.14.1_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_v0.14.1_arm64_checksum.sha512sum) | 2024-09-03 | the cloud arm installation package |

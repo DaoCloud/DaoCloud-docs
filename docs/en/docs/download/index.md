@@ -54,7 +54,7 @@ DCE 5.0 provides comprehensive Addons for different use cases, which can be down
 
 The numerous modules included in DCE 5.0 can be downloaded separately to upgrade each module on demand.
 
-| Channel | Modules | File Size | Download | Date |
+| Channel | Modules | Size | Download | Date |
 | ------- | ------- | --------- | -------- | ----------- |
 | Workbench | Workbench | 386.41 MB | [:arrow_right: Go to Download](./modules/amamba.md) | 2024-12-01 |
 | Container | Container Management | 674.33 MB | [:arrow_right: Go to Download](./modules/kpanda.md) | 2024-11-06 |

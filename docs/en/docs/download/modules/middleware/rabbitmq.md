@@ -11,7 +11,7 @@ This page allows you to download offline packages for different versions of Rabb
 
 ## Download
 
-| Version | Architecture | File Size | Package   | Checksum File | Updated Date |
+| Version | Architecture | Size | Package   | Checksum | Date |
 | ------ | ------------ | --------- | ---------- | ------------ | ------------ |
 | [v0.25.0](../../../middleware/rabbitmq/release-notes.md) | <font color=green>ARM 64</font> | 174.00 MB | [:arrow_down: rabbitmq_0.25.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rabbitmq_0.25.0_arm64.tar) | [:arrow_down: rabbitmq_0.25.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rabbitmq_0.25.0_arm64_checksum.sha512sum) | 2024-11-05 |
 | [v0.25.0](../../../middleware/rabbitmq/release-notes.md) | AMD 64 | 180.35 MB | [:arrow_down: rabbitmq_0.25.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rabbitmq_0.25.0_amd64.tar) | [:arrow_down: rabbitmq_0.25.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rabbitmq_0.25.0_amd64_checksum.sha512sum) | 2024-11-05 |

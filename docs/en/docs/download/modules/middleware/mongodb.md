@@ -11,7 +11,7 @@ This page provides offline packages for various versions of MongoDB.
 
 ## Download
 
-| Version | Architecture | File Size | Package   | Checksum File | Updated Date |
+| Version | Architecture | Size | Package   | Checksum | Date |
 | ------ | ------------ | --------- | ---------- | ------------ | ------------ |
 | [v0.15.0](../../../middleware/mongodb/release-notes.md) | <font color=green>ARM 64</font> | 353.75 MB | [:arrow_down: mongodb_0.15.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mongodb_0.15.0_arm64.tar) | [:arrow_down: mongodb_0.15.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mongodb_0.15.0_arm64_checksum.sha512sum) | 2024-11-05 |
 | [v0.15.0](../../../middleware/mongodb/release-notes.md) | AMD 64 | 376.88 MB | [:arrow_down: mongodb_0.15.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mongodb_0.15.0_amd64.tar) | [:arrow_down: mongodb_0.15.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mongodb_0.15.0_amd64_checksum.sha512sum) | 2024-11-05 |

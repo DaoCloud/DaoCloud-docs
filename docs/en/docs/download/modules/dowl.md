@@ -11,7 +11,7 @@ This page provides offline packages for different versions of the Dowl security 
 
 ## Download
 
-| Version | Architecture | File Size | Package | Checksum File | Updated Date |
+| Version | Architecture | Size | Package | Checksum | Date |
 | ------- | ------------ | --------- | ------- | ------------- | ------------ |
 | [v0.7.0](../../kpanda/intro/release-notes.md) | AMD 64 | 167.29 MB | [:arrow_down: dowl_v0.7.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dowl_v0.7.0_amd64.tar) | [:arrow_down: dowl_v0.7.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dowl_v0.7.0_amd64_checksum.sha512sum) | 2023-11-26 |
 | [v0.6.0](../../kpanda/intro/release-notes.md) | AMD 64 | 167.29 MB | [:arrow_down: dowl_v0.6.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dowl_v0.6.0_amd64.tar) | [:arrow_down: dowl_v0.6.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dowl_v0.6.0_amd64_checksum.sha512sum) | 2023-11-02 |
