@@ -14,8 +14,8 @@ hide:
 
 | 文件名称 | 版本 | 架构 | 文件大小 | 下载 | 更新日期 |
 | ------- | --- | ---- | ------ | --- | ------- |
-| offline-community-v0.24.0-amd64.tar | v0.24.0 | AMD 64 | 8.65GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.24.0-amd64.tar) | 2024-12-09 |
-| offline-community-v0.24.0-arm64.tar | v0.24.0 | <font color="green">ARM 64</font> | 8.14GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.24.0-arm64.tar) | 2024-12-09 |
+| offline-community-v0.24.0-amd64.tar | v0.24.0 | AMD 64 | 8.65 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.24.0-amd64.tar) | 2024-12-09 |
+| offline-community-v0.24.0-arm64.tar | v0.24.0 | <font color="green">ARM 64</font> | 8.14 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.24.0-arm64.tar) | 2024-12-09 |
 
 ## 校验
 
