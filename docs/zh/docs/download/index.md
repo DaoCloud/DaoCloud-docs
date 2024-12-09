@@ -9,8 +9,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 最新离线包 | 版本 | 文件大小 | 下载 | 更新日期 |
 | ------ | ---- | ---- | ---- |-------- |
-| prerequisite_v0.23.0_amd64.tar.gz | v0.23.0 | 119.0 MB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.23.0_amd64.tar.gz) | 2024-11-11 |
-| prerequisite_v0.23.0_arm64.tar.gz | v0.23.0 | 107.0 MB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.23.0_arm64.tar.gz) | 2024-11-11 |
+| prerequisite_v0.24.0_amd64.tar.gz | v0.24.0 | 119.0 MB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.24.0_amd64.tar.gz) | 2024-12-09 |
+| prerequisite_v0.24.0_arm64.tar.gz | v0.24.0 | 107.0 MB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_v0.24.0_arm64.tar.gz) | 2024-12-09 |
 
 ## 下载社区版
 
@@ -18,8 +18,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 最新离线包 | 版本 | 下载 | 更新日期 |
 | -------- | ---- | --- | ------- |
-| offline-community-v0.23.0-arm64.tar | v0.23.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.23.0.md) | 2024-11-11 |
-| offline-community-v0.23.0-amd64.tar | v0.23.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.23.0.md) | 2024-11-11 |
+| offline-community-v0.24.0-arm64.tar | v0.24.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.24.0.md) | 2024-12-09 |
+| offline-community-v0.24.0-amd64.tar | v0.24.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.24.0.md) | 2024-12-09 |
 
 [社区版：更多历史版本](./free/dce5-installer-history.md){ .md-button } 
 
@@ -29,8 +29,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 最新离线包 | 版本 | 下载 | 更新日期 |
 | ----- | ----- | ---- | --------- |
-| offline-v0.23.0-arm64.tar | v0.23.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.23.0.md) | 2024-11-11 |
-| offline-v0.23.0-amd64.tar | v0.23.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.23.0.md) | 2024-11-11 |
+| offline-v0.24.0-arm64.tar | v0.24.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.24.0.md) | 2024-12-09 |
+| offline-v0.24.0-amd64.tar | v0.24.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.24.0.md) | 2024-12-09 |
 
 [商业版：更多历史版本](./business/dce5-installer-history.md){ .md-button } 
 
