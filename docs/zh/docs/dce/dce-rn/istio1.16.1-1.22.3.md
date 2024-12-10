@@ -1,4 +1,9 @@
-# DCE 5.0 的 Istio 从 v1.16.1 升级到 1.22.3
+---
+hide:
+  - navigation
+---
+
+# DCE 5.0 的 Istio 从 v1.16.1 升级到 v1.22.3
 
 Istio 升级涉及这几个部分：
 
@@ -6,7 +11,7 @@ Istio 升级涉及这几个部分：
 - istio 数据面升级
 
 社区推荐 Istio 升级[使用金丝雀方式升级](https://istio.io/latest/docs/setup/upgrade/canary/)，目前 GProduct
-不支持金丝雀升级，在升级过程中[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)的应用会因
+不支持金丝雀升级。在升级过程中，[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)的应用会因
 Istio 控制面更新而无法访问，可能需要人工干预。
 
 ## 通过安装器升级 DCE 5.0 时涉及到的 Istio 升级
@@ -15,11 +20,11 @@ Istio 控制面更新而无法访问，可能需要人工干预。
 
 举例：容器管理在安装器升级到 v0.24.0 时版本并没有变化，需要重启容器管理的所有 Pod。
 
-### 重启 GP ro du c t pod
+### 重启 GProduct Pod
 
-由于 Istio 升级包括两个部分：数据面和控制面。，刚刚我们升级了安装器已经升级了控制面，下面需要升级数据面
+由于 Istio 升级包括两个部分：数据面和控制面。刚刚安装器已经升级了控制面，下面需要升级数据面。
 
-重启没有更新版本的 GProduct 命名空间下的 Pod，让数据面的可以升级到 v1.22.3
+重启没有更新版本的 GProduct 命名空间下的 Pod，让数据面升级到 v1.22.3
 
 参考步骤：
 
@@ -38,9 +43,9 @@ Istio 控制面更新而无法访问，可能需要人工干预。
 
 ## 单独升级全局管理时涉及到的 Istio 升级（通过 Helm）
 
-当全局管理升级到 v0.33.0 及更高版本时，需要将全局服务集群中的 Istio 升级到 v1.22.3。
+当全局管理升级到 v0.33.0 及更高版本时，需要将全局服务集群中的 Istio 升级到 v1.22.3
 
-升级步骤（以 helm 升级为例）如下：
+升级步骤（以 Helm 升级为例）如下：
 
 ### 获取宿主机内核版本
 
@@ -265,7 +270,7 @@ helm install istio-ingrassgateway istio/gateway -n istio-system -f istio-ingress
 Helm 升级可能并不会更新 CRD，你需要手动更新：
 
 ```shell
-kubectl apply -f ``https://raw.githubusercontent.com/istio/istio/refs/tags/1.22.3/manifests/charts/base/crds/crd-all.gen.yaml
+kubectl apply -f https://raw.githubusercontent.com/istio/istio/refs/tags/1.22.3/manifests/charts/base/crds/crd-all.gen.yaml
 ```
 
 ### 升级全局管理并重启所有命名空间下的 Pod
