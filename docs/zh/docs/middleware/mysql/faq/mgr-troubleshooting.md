@@ -274,3 +274,17 @@ set global group_replication_bootstrap_group=off;
 !!! warning
 
     对于其他节点，依次执行上面的命令。
+
+## MGR的pod一直处于terminating状态
+需要检查:
+1. Kubernetes集群的各个组件可能不正常, 检查相关组件状态, 尤其是etcd.
+2. MGR的operator状态是否正常, 检查operator的pod的日志.
+
+如果处于测试环境,需要快速的删除pod,可以删除相关pod的finalizers:
+```bash
+kubectl edit pod 'your pod name'
+### pod的yaml中删除以下几行
+ finalizers:
+  - mysql.oracle.com/membership
+  - kopf.zalando.org/KopfFinalizerMarker
+```
