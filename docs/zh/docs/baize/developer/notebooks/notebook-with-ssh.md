@@ -43,16 +43,27 @@ AI Lab 提供的 Notebook 支持在本地通过 SSH 的方式访问；
 
 1. 打开生成的公钥文件，通常位于 `~/.ssh/id_rsa.pub`（如果您没有更改默认路径）
 2. 复制公钥内容
-3. 登录到 DCE, 然后右上角帐号点开，选择个人中心
-4. 在 SSH 公钥配置页，添加你本地生成的公钥文件
-5. 保存更改
+3. 登录到 DCE 5.0，从右上角进入 **个人中心**
+4. 在 SSH 公钥配置页，添加你本地生成的公钥文件，保存更改
+
+![ssh key](../../images/ssh-key.png)
 
 ## 在 Notebook 中开启 SSH 访问
 
 1. 登录到 Jupyter Notebook 的 Web 界面。
+
+    ![open notebook](../../images/ssh01.png)
+
+    ![notebook UI](../../images/ssh02.png)
+
 2. 寻找您想要启用 SSH 访问的 Notebook。
 3. 在 Notebook 的设置或详情页面，找到 **开启 SSH 访问** 的选项并启用它。
+
+    ![enable ssh](../../images/ssh03.png)
+
 4. 记录或复制显示的 SSH 访问命令。这个命令将用于后续步骤中的 SSH 连接。
+
+    ![ssh command](../../images/ssh04.png)
 
 ## 不同环境下的 SSH 访问方式
 
@@ -61,11 +72,13 @@ AI Lab 提供的 Notebook 支持在本地通过 SSH 的方式访问；
 假设您获得的 SSH 访问命令如下：
 
 ```bash
-    # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
-    ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
+# ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
+ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
 ```
 
-请将 `DCE5_USERNAME` 替换为您的用户名，`DCE5_UI_LOGIN_IP` 替换为实际的主机名，`DCE5_UI_LOGIN_IP` 替换为实际的端口号。
+- `DCE5_USERNAME` 替换为您的用户名
+- `DCE5_UI_LOGIN_IP` 替换为实际的主机名
+- `DCE5_UI_LOGIN_IP` 替换为实际的端口号
 
 ### Windows
 
@@ -85,8 +98,8 @@ AI Lab 提供的 Notebook 支持在本地通过 SSH 的方式访问；
     2. 输入访问命令：
 
         ```bash
-            # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
-            ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
+        # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
+        ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
         ```
 
     3. 按 Enter 键
@@ -97,8 +110,8 @@ AI Lab 提供的 Notebook 支持在本地通过 SSH 的方式访问；
 2. 输入访问命令：
 
     ```bash
-        # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
-        ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
+    # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
+    ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
     ```
 
 3. 如果系统提示您接受主机的身份，请输入`yes`。
@@ -120,8 +133,8 @@ AI Lab 提供的 Notebook 支持在本地通过 SSH 的方式访问；
     4. 输入 SSH 连接命令，例如：
 
         ```bash
-            # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
-            ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
+        # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
+        ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
         ```
 
     5. 敲击 Enter 键。请将 username、mockhost 和 2222 替换为实际的用户名、主机名和端口号。
