@@ -4,7 +4,7 @@
 
 ### 获取 root 密码
 
-在 MySQL MGR 集群的命名空间下，查找以"-mgr-secret"结尾的 secret 资源，这里以获取"kpanda-mgr"这个集群的 secret 为例：
+在 MySQL MGR 集群的命名空间下，查找以 `-mgr-secret` 结尾的 Secret 资源，这里以获取 `kpanda-mgr` 这个集群的 Secret 为例：
 
 ```shell
 kubectl get secrets/kpanda-mgr-mgr-secret -n mcamel-system --template={{.data.rootPassword}} | base64 -d
@@ -13,10 +13,13 @@ root123!
 
 ### 查看集群状态
 
-通过 MySQL 命令行查看：mysqlsh -uroot -pPassword -- cluster status 
+通过 MySQL 命令行查看：
 
 ```sql
-sh-4.4$ mysqlsh -uroot -pPassword  -- cluster status
+mysqlsh -uroot -pPassword -- cluster status
+```
+
+```json
 {
     "clusterName": "kpanda_mgr", 
     "defaultReplicaSet": {
@@ -180,7 +183,7 @@ COUNT_TRANSACTIONS_REMOTE_IN_APPLIER_QUEUE: 0
     JS > c.setPrimaryInstance('172.30.71.128:3306')
     ```
 
-## 常见故障场景
+## 常见故障
 
 ### 某个 SECONDARY 节点为非 ONLINE 状态
 
@@ -243,9 +246,7 @@ Query OK, 0 rows affected (5.82 sec)
 
 这里如果数据量比较大，该节点会处于比较长时间的 RECOVERING 状态。
 
-### 没有 PRIMARY 节点
-
-### 各个节点都显示 OFFLINE
+### 没有 PRIMARY 节点，各个节点都显示 OFFLINE
 
 ```mysql
 mysql> SELECT * FROM performance_schema.replication_group_members;
@@ -274,3 +275,24 @@ set global group_replication_bootstrap_group=off;
 !!! warning
 
     对于其他节点，依次执行上面的命令。
+
+### MGR 的 Pod 一直处于 terminating 状态
+
+需要检查：
+
+1. Kubernetes 集群的各个组件可能不正常，检查相关组件状态，尤其是 etcd
+2. MGR 的 Operator 状态是否正常，检查 Operator Pod 的日志
+
+如果处于测试环境，需要快速删除 Pod，可以删除相关 pod 的 finalizers：
+
+```bash
+kubectl edit pod <your-pod-name>
+```
+
+在 Pod 的 YAML 中删除以下几行：
+
+```yaml
+finalizers:
+- mysql.oracle.com/membership
+- kopf.zalando.org/KopfFinalizerMarker
+```
