@@ -676,7 +676,7 @@ nav:
                   - 创建虚拟机: virtnest/quickstart/index.md
                   - 更新虚拟机: virtnest/quickstart/update.md
                   - 连接虚拟机: virtnest/quickstart/access.md
-                  - 通过 NodePort 访问虚拟机: virtnest/quickstart/nodeport.md
+                  - 通过 NodePort 多终端访问虚拟机: virtnest/quickstart/nodeport.md
                   - 虚拟机详情: virtnest/quickstart/detail.md
               - 虚拟机管理:
                   - 创建密钥: virtnest/vm/create-secret.md
