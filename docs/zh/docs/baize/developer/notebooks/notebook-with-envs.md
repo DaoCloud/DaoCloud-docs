@@ -4,11 +4,11 @@
 
 ## 创建 Notebook 时选择环境
 
-在创建 **Notebook** 时，可以选择一个或多个的环境 **Envs** 。如果没有合适的环境，可以去 **环境管理** 中创建一个新的环境。
+在创建 **Notebook** 时，可以选择一个或多个的环境 **Envs**
 
 ![Attach-Envs](../../images/notebook04.png)
 
-> 如何创建环境，请参考[环境管理](../dataset/environments.md)。
+如果没有合适的环境，可以去[创建一个新的环境](../dataset/environments.md)。
 
 ## 在 Notebook 使用环境
 
@@ -119,4 +119,4 @@ zlib                      1.2.13               h5eee18b_1    defaults
 
 ## 更新环境的包
 
-目前，可以通过在 AI Lab 的界面中 **环境管理** 来更新环境中的包。
+目前，可以通过在 AI Lab 的界面中 **环境依赖** 来更新环境中的包。
