@@ -16,7 +16,7 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
 1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `osRepo` 相关的参数：
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:

@@ -111,7 +111,7 @@
 1. 定义好的 clusterConfig 文件参考：
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
       creationTimestamp: null
@@ -176,7 +176,7 @@
 1. 定义好的 clusterConfig 文件参考：使用 IP 模式（bootstrapNode 为 auto 或者为火种节点的具体 IP 地址）启动火种节点安装
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
       creationTimestamp: null

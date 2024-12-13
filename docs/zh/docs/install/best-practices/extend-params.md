@@ -34,7 +34,7 @@ DCE 5.0 部署集群依赖了开源软件 Kubespray，所以基本上 Kubespray 
 在 [ClusterConfig.yml](../commercial/cluster-config.md) 配置文件中，更新 kubeanConfig 参数信息，如下：
 
 ```yaml
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
   creationTimestamp: null

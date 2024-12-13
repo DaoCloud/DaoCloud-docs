@@ -47,7 +47,7 @@ tar -xvf offline-v0.21.0-amd64.tar
 文件在解压后的离线包 `offline/sample` 目录下，参考配置文件如下：
 
 ```yaml title="clusterConfig.yaml"
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
 spec:

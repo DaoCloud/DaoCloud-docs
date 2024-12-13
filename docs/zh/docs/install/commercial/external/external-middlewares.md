@@ -83,7 +83,7 @@
    参阅 GORM 文档[连接到数据库](https://gorm.io/zh_CN/docs/connecting_to_the_database.html)。
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
       creationTimestamp: null
@@ -196,7 +196,7 @@
    详见文档 https://gorm.io/docs/connecting_to_the_database.html
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
       creationTimestamp: null
@@ -307,7 +307,7 @@
 3. 修改 clusterConfig.yaml 关于数据库的配置，假设数据库访问地址为 172.30.41.2:5432；不同的数据库类型有不同的 dataSourceName 配置格式，详见文档 https://gorm.io/docs/connecting_to_the_DATABASE.html
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
       creationTimestamp: null
@@ -370,7 +370,7 @@
 1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.redis` 参数：
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:
@@ -403,7 +403,7 @@
 1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.elasticsearch` 参数：
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:
@@ -432,7 +432,7 @@
 1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.S3Storage` 参数：
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:
@@ -458,7 +458,7 @@
 1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.elasticsearch` 参数：
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:

@@ -32,7 +32,7 @@
     参考配置为：
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
       creationTimestamp: null
