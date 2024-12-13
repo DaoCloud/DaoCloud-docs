@@ -1,6 +1,6 @@
 ---
 hide:
-  -Toc
+  - toc
 ---
 
 # Create a flow control rule
@@ -13,7 +13,7 @@ You can create a flow control rule as follows:
 
     > Notice that the incognito to be controlled should be displayed as `Yes` in the column `Traffic Governance` before you proceed to the subsequent steps.
 
-    ![](../../../images/gov00.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov00.png)
 
 2. Select `Flow Control Rules` and click __Create Rules__ on the right.
 

@@ -8,6 +8,18 @@ date: 2024-10-10
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version.
 
+## 2024-10-30
+
+### v0.32.0
+
+- **Added** support for multicloud namespaces
+- **Added** GitOps applications support deployment in multi-cloud namespaces
+- **Added** support for pipeline caching
+- **Improved** pipeline list supports searching ungrouped pipelines
+- **Fixed** an issue with generating Argocd cookie failure
+- **Fixed** an issue with error when creating more than 10 native application versions
+- **Fixed** an issue with privilege escalation when creating OAM control plane namespaces
+
 ## 2024-09-30
 
 ### v0.31.0

@@ -7,7 +7,7 @@
 
 | **架构** | **操作系统** | **测试 OS、Kernel 信息** | 备注（安装指导文档） |
 | -------- | ----------- | ----------------- | ----------------- |
-| AMD 64 | CentOS 7.X | CentOS 7.9<br />3.10.0-1127.el7.x86_64 on an x86_64 | [离线安装 DCE 5.0 商业版](start-install.md)<br />注意：CentOS 7在2024年6月30日结束支持 |
+| AMD 64 | CentOS 7.X | CentOS 7.9<br />3.10.0-1127.el7.x86_64 on an x86_64 | [离线安装 DCE 5.0 商业版](start-install.md)<br />注意：CentOS 7 在 2024 年 6 月 30 日结束支持 |
 | | Redhat 8.X | Redhat 8.4<br />4.18.0-305.el8.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Redhat 7.X | Redhat 7.9<br />3.10.0-1160.e17.x86 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Redhat 9.X | Redhat 9.2<br />5.14.0-284.11.1.e9_2.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
@@ -25,7 +25,7 @@
 
     - CentOS 7 将在 2024 年 6 月 30 日结束支持，企业需根据自身情况进行替换操作系统
     - 上述的操作系统、内核均为测试人员使用的版本
-    - 若非上表中声明的操作系统，请参考文档 [Other Linux 离线部署 DCE 5.0 商业版](../os-install/otherlinux.md)进行安装部署。
+    - 若非上表中声明的操作系统，请参考文档[其他 Linux 离线部署 DCE 5.0 商业版](../os-install/otherlinux.md)进行安装部署。
 
 ## 内核要求
 
@@ -41,17 +41,20 @@
 
 ### ⚠️ 内核注意事项
 
-1. 内核版本小于 5.9 时，`kube-proxy` 使用 `ipvs` 模式会造成通过 Service 方式访问集群内部服务，偶现 1 秒延时或者后端业务升级后访问 Service 失败的情况，详见社区[ISSUE] (https://github.com/kubernetes/kubernetes/issues/81775)，可以采用以下方式绕行：
+1. 内核版本小于 5.9 时，`kube-proxy` 使用 `ipvs` 模式会造成通过 Service 方式访问集群内部服务，
+   偶现 1 秒延时或者后端业务升级后访问 Service 失败的情况，详见 Kubernetes 社区
+   [Issue #81775](https://github.com/kubernetes/kubernetes/issues/81775)，可以采用以下方式解决办法：
 
     - 升级内核至 5.9 及以上
     - 切换 `kube-proxy` 模式为 `iptables`
     - 内核参数更新：`net.ipv4.vs.conntrack=1` + `net.ipv4.vs.conn_reuse_mode=0` + `net.ipv4.vs.expire_nodest_conn=1`
 
-2. Ubuntu 内核自动更新升级，可能导致系统在不经意间被重启，若使用的软件依赖于特定版本的内核，那么当系统自动更新到新的内核版本时，可能会出现[兼容性问题](https://askubuntu.com/a/1176041)
+2. Ubuntu 内核自动更新升级，可能导致系统在不经意间被重启，若使用的软件依赖于特定版本的内核，
+   那么当系统自动更新到新的内核版本时，可能会出现[兼容性问题](https://askubuntu.com/a/1176041)
 
 ## 硬件要求
 
-### CPU 、内存和硬盘
+### CPU、内存和硬盘
 
 | **类型** | **具体要求** |
 | ------- | ----------- |
@@ -59,7 +62,7 @@
 | 内存 | 不得超售 |
 | 硬盘 | IOPS > 500，吞吐量 > 200 MB/s |
 
-### 新手尝鲜模式 CPU 、内存、硬盘要求
+### 新手尝鲜模式 CPU、内存、硬盘要求
 
 参阅[新手尝鲜模式说明](./deploy-arch.md#_2)。
 
@@ -67,7 +70,7 @@
 | ------- | ------------- | ------------ | ----------- | ----------- | ----------- | ------------- |
 | 1 | all in one | 镜像仓库、chart museum、[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)本身 | 24 核 | 32 GB | 300 GB | 400 GB |
 
-### 4 节点模式 CPU 、内存、硬盘要求
+### 4 节点模式 CPU、内存、硬盘要求
 
 参阅 [4 节点模式说明](./deploy-arch.md#4)。
 
@@ -76,7 +79,7 @@
 | 1 | 火种节点 | 1. 执行安装部署程序<br />2. 运行平台所需的镜像仓库和 chart museum | 2 核 | 4 GB | 200 GB | - |
 | 3 | 控制面 | 1. 运行 DCE 5.0 组件<br />2. 运行 kubernetes 系统组件 | 8 核 | 16 GB | 100 GB | 200 GB |
 
-### 7 节点模式(生产环境推荐) CPU 、内存、硬盘要求
+### 7 节点模式(生产环境推荐) CPU、内存、硬盘要求
 
 参阅 [7 节点模式说明](./deploy-arch.md#7-1-6)。
 
@@ -93,7 +96,6 @@
 **建议：**
 
 - 尽量在低延迟和高吞吐量的 SSD 或 NVMe 磁盘支持的机器上运行 etcd
-
 - 使用固态硬盘作为最低选择。在生产环境中首选 NVMe 驱动器。
 
 ## 网络要求

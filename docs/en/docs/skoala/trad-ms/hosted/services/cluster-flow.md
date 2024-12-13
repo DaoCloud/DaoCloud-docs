@@ -1,6 +1,6 @@
 ---
 hide:
-  -toc
+  - toc
 ---
 
 # Create Cluster Flow Control Rules
@@ -23,7 +23,7 @@ Follow the steps below to create a cluster flow control rule:
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
-    ![](../../../images/gov00.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov00.png)
 
 2. Select `Cluster Flow Control`, then click __Create Cluster Flow Control__ on the right side.
 

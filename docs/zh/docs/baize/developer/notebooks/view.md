@@ -23,6 +23,6 @@ hide:
 
     ![确认删除](../../images/nb-workload02.png)
 
-1. 在 StatefulSet 列表，点击右侧的 **┇**，可以针对 Pod 执行更多操作。
+1. 在容器组列表，点击右侧的 **┇**，可以针对 Pod 执行更多操作。
 
     ![已删除](../../images/nb-workload03.png)

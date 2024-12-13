@@ -11,7 +11,7 @@ This page provides offline packages for different versions of the Cluster Inspec
 
 ## Download
 
-| Version | Architecture | File Size | Package | Checksum File | Updated Date |
+| Version | Architecture | Size | Package | Checksum | Date |
 |---------|--------------|-----------|----------|--------------|--------------|
 | [v0.10.0](../../kpanda/intro/release-notes.md) | AMD 64 | 252.95 MB | [:arrow_down: kcollie_v0.10.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.10.0_amd64.tar) | [:arrow_down: kcollie_v0.10.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.10.0_amd64_checksum.sha512sum) | 2024-09-29 |
 | [v0.6.1](../../kpanda/intro/release-notes.md) | AMD 64 | 174.34 MB | [:arrow_down: kcollie_v0.6.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.6.1_amd64.tar) | [:arrow_down: kcollie_v0.6.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.6.1_amd64_checksum.sha512sum) | 2024-01-03 |

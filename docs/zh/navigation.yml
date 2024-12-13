@@ -10,6 +10,8 @@ nav:
               - 适用场景: dce/scenario.md
               - 我们是 K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - v0.24.0-20241130 发布: dce/dce-rn/20241130.md
+                  - v0.23.0-20241030 发布: dce/dce-rn/20241030.md
                   - v0.22.0-20240930 发布: dce/dce-rn/20240930.md
                   - v0.21.0-20240830 发布: dce/dce-rn/20240830.md
                   - v0.20.0-20240730 发布: dce/dce-rn/20240730.md
@@ -62,6 +64,9 @@ nav:
                   - TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - NeoKylin Linux Advanced Server V7Update6: install/os-install/neokylin-install-dce5.0.md
                   - 其他 Linux: install/os-install/otherlinux.md
+              - 安装轻量化:
+                  - 轻量化部署裁剪方案验证: install/light-install/light-install-solution.md
+                  - 安装器实现轻量化部署: install/light-install/install-light.md
               - 升级:
                   - 升级 DCE 5.0 组件: install/upgrade.md
                   - 标准版升级白金版: install/evolve.md
@@ -105,8 +110,12 @@ nav:
                       - 安装: amamba/user-guide/pipeline/install-jenkins.md
                       - Jenkins 高可用方案: amamba/quickstart/jenkins-HA.md
                       - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
+                      - 保留Jenkins配置项: amamba/user-guide/pipeline/retain-jenkins-config.md
                   - Argo CD高可用部署: amamba/quickstart/argo-cd-HA.md
-              - 命名空间管理: amamba/user-guide/namespace/namespace.md
+                  - 开启工作台组件的可观测能力: amamba/components-grafana-dashboard.md
+              - 命名空间管理: 
+                  - 命名空间: amamba/user-guide/namespace/namespace.md
+                  - 多云命名空间: amamba/user-guide/multi-namespace.md
               - 向导:
                   - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
                   - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
@@ -145,6 +154,7 @@ nav:
                           - 自定义模板: amamba/user-guide/pipeline/template/custom-template.md
                           - 模板说明: amamba/user-guide/pipeline/template/info.md
                       - 流水线分组: amamba/user-guide/pipeline/group/group.md
+                  - 流水线缓存: amamba/user-guide/pipeline/pipeline_cache.md
                   - 自定义步骤:
                       - 自定义步骤介绍: amamba/customize-step.md
                       - 自定义步骤开发指南: amamba/customize-develop.md
@@ -153,8 +163,6 @@ nav:
                       - Jenkins自定义工具链: amamba/quickstart/jenkins-custom.md
                       - 在指定的节点上运行: amamba/quickstart/pipeline-on-node.md                    
                       - 构建多架构镜像: amamba/user-guide/pipeline/podman.md
-                      - 在流水线中使用缓存: amamba/quickstart/job-cacher.md
-                      - 使用自定义插件: amamba/user-guide/pipeline/custom-plugin.md
                       - 系统环境变量: amamba/user-guide/pipeline/system-env.md
                       - 流水线监控指标: amamba/user-guide/pipeline/jenkins-metric.md
               - GitOps:
@@ -331,6 +339,7 @@ nav:
                           - 安装 vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
                           - 使用 NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
                           - 构建 vGPU 显存超配镜像: kpanda/user-guide/gpu/nvidia/vgpu/hami.md
+                          - 如何让集群纳管指定的 GPU 卡: kpanda/user-guide/gpu/nvidia/vgpu/manage_somegpu.md
                       - NVIDIA MIG 模式:
                           - NVIDIA MIG 概述: kpanda/user-guide/gpu/nvidia/mig/index.md
                           - 开启 MIG 功能: kpanda/user-guide/gpu/nvidia/mig/create_mig.md
@@ -355,7 +364,7 @@ nav:
                       - 启用昇腾 VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - 天数 GPU 管理: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - 沐曦 GPU 管理: kpanda/user-guide/gpu/metax/usemetax.md
-                  - 寒武纪 GPU 管理: kpanda/user-guide/gpu/metax/use-mlu.md
+                  - 寒武纪 GPU 管理: kpanda/user-guide/gpu/mlu/use-mlu.md
                   - GPU 相关FAQ: kpanda/user-guide/gpu/FAQ.md
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
@@ -377,6 +386,7 @@ nav:
                   - 在离线混部:
                       - 在离线混部概述: kpanda/best-practice/co-located/index.md
                       - koordinator 安装: kpanda/best-practice/co-located/install.md
+                  - 接入外部集群时获取永久 TOKEN: kpanda/best-practice/get-kubeconfig.md
           - 多云编排:
               - 介绍:
                   - 什么是多云编排: kairship/intro/index.md
@@ -528,8 +538,8 @@ nav:
                   - 介绍: network/modules/cilium/index.md
                   - 安装参数配置: network/modules/cilium/install.md
                   - 未支持功能说明: network/modules/cilium/not-support.md
-                  - Cilium 网络通信加速: network/modules/cilium/cross-cluster.md
-                  - 应用跨集群通信: network/modules/cilium/cilium-speedup.md
+                  - Cilium 网络通信加速: network/modules/cilium/cilium-speedup.md
+                  - 应用跨集群通信: network/modules/cilium/cross-cluster.md
                   - 实现IPVlan网络策略能力: network/modules/cilium/cilium_chaining.md
               - 集成 Contour:
                   - 介绍: network/modules/contour/index.md
@@ -666,7 +676,7 @@ nav:
                   - 创建虚拟机: virtnest/quickstart/index.md
                   - 更新虚拟机: virtnest/quickstart/update.md
                   - 连接虚拟机: virtnest/quickstart/access.md
-                  - 通过 NodePort 访问虚拟机: virtnest/quickstart/nodeport.md
+                  - 通过 NodePort 多终端访问虚拟机: virtnest/quickstart/nodeport.md
                   - 虚拟机详情: virtnest/quickstart/detail.md
               - 虚拟机管理:
                   - 创建密钥: virtnest/vm/create-secret.md
@@ -738,7 +748,6 @@ nav:
               - 仪表盘:
                   - 概览: insight/user-guide/dashboard/overview.md
                   - 仪表盘: insight/user-guide/dashboard/dashboard.md
-                  - 以管理员登录 Grafana: insight/user-guide/dashboard/login-grafana.md
                   - 导入自定义仪表盘: insight/user-guide/dashboard/import-dashboard.md
               - 基础设施:
                   - 集群: insight/user-guide/infra/cluster.md
@@ -752,7 +761,7 @@ nav:
               - 链路追踪:
                   - 服务拓扑: insight/user-guide/trace/topology.md
                   - 服务: insight/user-guide/trace/service.md
-                  - 链路查询: insight/user-guide/trace/trace.md
+                  - 调用链: insight/user-guide/trace/trace.md
               - 告警:
                   - insight/user-guide/alert-center/index.md
                   - 告警策略: insight/user-guide/alert-center/alert-policy.md
@@ -774,6 +783,7 @@ nav:
                   - 集成 DeepFlow: insight/best-practice/integration_deepflow.md
               - 参考文档:
                   - 可观性参考指标说明: insight/reference/used-metric-in-insight.md
+                  - Insight Grafana 持久化到数据库: insight/best-practice/grafana-use-db.md
                   - 自定义探测方式: insight/user-guide/collection-manag/probe-module.md
                   - 指标抓取说明: insight/user-guide/collection-manag/metric-collect.md
                   - 告警通知流程说明: insight/reference/alertnotification.md
@@ -877,6 +887,7 @@ nav:
                   - 网关对接服务网格: skoala/best-practice/gateway-mesh.md
                   - 网关请求日志自定义属性: skoala/best-practice/add-custom-attributes.md
                   - HTTP转Dubbo协议动态路由: skoala/best-practice/http-to-dubbo.md
+                  - Nacos对接LDAP进行用户管理: skoala/best-practice/nacos-ldap.md
               - 故障排查:
                   - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md
                   - Nacos 版本降级: skoala/troubleshoot/nacos.md                
@@ -982,11 +993,15 @@ nav:
                   - 集群列表存在未知集群: mspider/troubleshoot/cluster-already-exist.md
                   - 服务网格中常见的 503 报错: mspider/troubleshoot/503-issue.md
                   - 监听localhost的应用如何被Pod访问: mspider/troubleshoot/localhost-by-pod.md
+                  - 外部服务无法访问排障: mspider/troubleshoot/outbound-issue.md
+                  - 工作集群中 istio-init 容器启动失败: mspider/troubleshoot/istio-init-failed.md
               - 最佳实践:
                   - 网格定向服务访问限制: mspider/best-practice/use-egress-and-authorized-policy.md
                   - 接入自定义工作负载类型: mspider/best-practice/use-custom-workloads.md
                   - 优化Sidecar资源占用: mspider/best-practice/optimize-sidecar-resource.md
                   - 多云互联网格的精准控制: mspider/best-practice/multinet-control.md
+                  - 如何选择出口流量策略: mspider/best-practice/outbound-traffic.md
+                  - 同步托管网格工作集群资源: mspider/best-practice/managed-mesh-to-sync.md
       - 数据服务:
           - 中间件:
               - 介绍:
@@ -1202,10 +1217,11 @@ nav:
                   - 数据管理:
                       - 数据集列表: baize/developer/dataset/create-use-delete.md
                       - 环境管理: baize/developer/dataset/environments.md
-                  - 推理服务:
+                  - 模型服务:
                       - 模型支持情况: baize/developer/inference/models.md
-                      - 创建 Triton 推理服务: baize/developer/inference/triton-inference.md
-                      - 创建 vLLM 推理服务: baize/developer/inference/vllm-inference.md
+                      - 推理服务:
+                          - 创建 Triton 推理服务: baize/developer/inference/triton-inference.md
+                          - 创建 vLLM 推理服务: baize/developer/inference/vllm-inference.md
               - 运维管理:
                   - 介绍: baize/oam/index.md
                   - 资源管理:
@@ -1439,6 +1455,8 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2024:
+          - 从社区小白到 CNCF 大使: blogs/241108-cncf-ambassador.md
+          - containerd 相关项目集中发布新版本: blogs/241106-containerd-nerdctl-lima.md
           - K8s 1.31 OCI 工件的只读卷: blogs/240816-1.31-image.md
           - Nvidia 征服最新的 AI 测试: blogs/20240619-nvidiaai.md
           - Kubernetes 十周年: blogs/0606-k8s-birth.md
@@ -1455,7 +1473,7 @@ nav:
           - KubeEdge v1.15.0 发布: blogs/240108-kubeedge.md
       - 2023:
           - Spiderpool入选CNCF Sandbox: blogs/231220-spiderpool.md
-          - K8s 1.29发布:宇宙主题雄心勃勃：blogs/231213-k8s-1.29.md
+          - K8s 1.29发布宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
           - K8s 裸机 vs 虚机性能对比: blogs/231205-vm-bm-compare.md
           - K8s 1.29前瞻：移除、弃用及变更: blogs/231115-k8s-1.29-changes.md
           - 上海 K8s 贡献者峰会回顾: blogs/231008-kcs.md
@@ -1535,6 +1553,7 @@ nav:
           - GitHub 混迹技巧: native/git/github.md
           - Git 同步中英文档: native/git/lsync.md
           - 文档站工作说明: native/git/works.md
+          - 维护 ChatBot: native/git/chatbot.md
           - 视频剪辑帮助: native/git/video.md
           - K8s 相关资源: native/git/k8s.md
       - 行业洞察:

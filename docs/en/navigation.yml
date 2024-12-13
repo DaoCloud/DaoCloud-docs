@@ -25,6 +25,7 @@ nav:
                   - v0.10.0-20230731 Released: dce/dce-rn/20230731.md
                   - v0.9.0-20230630 Released: dce/dce-rn/20230630.md
                   - v0.8.0-20230531 Released: dce/dce-rn/20230531.md
+              - DCE 5.0 Roadmap: dce/roadmap.md
               - DaoCloud Product Support Policy: dce/support.md
               - Glossary: dce/terms.md
           - Installation:
@@ -355,6 +356,7 @@ nav:
                   - Migrate DCE 4.0 to DCE 5.0: kpanda/best-practice/dce4-5-migration.md
                   - Offline Deploy and Upgrade Legacy Kubean: kpanda/best-practice/kubean-low-version.md
                   - Replace a Master Node in Worker Cluster: kpanda/best-practice/replace-first-master-node.md
+                  - Get Permanent Token for External Clusters: kpanda/best-practice/get-kubeconfig.md
           - Multicloud Management:
               - Intro:
                   - What is Multicloud Management: kairship/intro/index.md
@@ -499,8 +501,8 @@ nav:
                   - Intro: network/modules/cilium/index.md
                   - Args Config: network/modules/cilium/install.md
                   - Unsupported Features: network/modules/cilium/notSupport.md
-                  - Cilium Network Communication Acceleration: network/modules/cilium/cross-cluster.md
-                  - Cross-Cluster Application Communication: network/modules/cilium/cilium-speedup.md
+                  - Cilium Network Communication Acceleration: network/modules/cilium/cilium-speedup.md
+                  - Cross-Cluster Application Communication: network/modules/cilium/cross-cluster.md
                   - Cilium Network Policy Support for IPVlan: network/modules/cilium/cilium_chaining.md
               - Contour:
                   - Intro: network/modules/contour/index.md
@@ -740,6 +742,7 @@ nav:
                   - Integrate DeepFlow: insight/best-practice/integration_deepflow.md
               - References:
                   - Insight Reference Metrics: insight/reference/used-metric-in-insight.md
+                  - Insight Grafana data to a Database: insight/best-practice/grafana-use-db.md
                   - Custom Probe: insight/user-guide/collection-manag/probe-module.md
                   - Collection Metrics: insight/user-guide/collection-manag/metric-collect.md
                   - Alert Notification Flow: insight/reference/alertnotification.md
@@ -1149,8 +1152,9 @@ nav:
                       - Environments: baize/developer/dataset/environments.md
                   - Model Service:
                       - Supported Models: baize/developer/inference/models.md
-                      - Create with Triton Framework: baize/developer/inference/triton-inference.md
-                      - Create with vLLM Framework: baize/developer/inference/vllm-inference.md
+                      - Inference Service:
+                          - Create with Triton Framework: baize/developer/inference/triton-inference.md
+                          - Create with vLLM Framework: baize/developer/inference/vllm-inference.md
               - Operator:
                   - Resource Management: baize/oam/resource.md
                   - Queue Management:
@@ -1382,6 +1386,8 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2024:
+          - From Community Novice to CNCF Ambassador: blogs/241108-cncf-ambassador.md
+          - containerd v2.0, nerdctl v2.0, and Lima v1.0: blogs/241106-containerd-nerdctl-lima.md
           - Nvidia Conquers Latest AI Tests: blogs/20240619-nvidiaai.md
           - 10 Years of Kubernetes: blogs/0606-k8s-birth.md
           - A Legendary K8s Quest with SIG Docs: blogs/240516-sig-docs.md

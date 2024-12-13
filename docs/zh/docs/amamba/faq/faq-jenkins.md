@@ -28,7 +28,7 @@ __解决方案__ ：
 
 2. 在左侧导航栏依次点击 __配置与密钥__ -> __配置项__ 。
 
-3. 搜索 __jenkins-casc-config__ ，在操作列点击 __编辑 YAML__ 。
+3. 命名空间选择 __amamba-system__ ，通过名称 __global-jenkins-casc-config__ 进行搜索，在操作列点击 __编辑 YAML__ 。
 
     ![faq-ci3](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci3.png)
 
@@ -122,7 +122,7 @@ __解决方案__ ：
 
 2. 在左侧导航栏依次点击 __配置与密钥__ -> __配置项__ 。
 
-3. 搜索 __jenkins-casc-config__ ，在操作列点击 __编辑 YAML__ 。
+3. 命名空间选择 __amamba-system__ ，通过名称 __global-jenkins-casc-config__ 进行搜索，在操作列点击 __编辑 YAML__ 。
 
 4. 在 __data__ -> __jenkins.yaml__ -> __jenkins.clouds.kubernetes.containerCapStr__ 字段下修改数值。
 
@@ -175,7 +175,7 @@ __解决方案__ ：
 
 2. 在左侧导航栏依次点击 __配置与密钥__ -> __配置项__ 。
 
-3. 搜索 __jenkins-casc-config__ ，在操作列点击 __编辑 YAML__ 。
+3. 命名空间选择 __amamba-system__ ，通过名称 __global-jenkins-casc-config__ 进行搜索，在操作列点击 __编辑 YAML__ 。
 
 4. 在 __data__ -> __jenkins.yaml__ -> 搜索 `eventDispatcher.receiver`，它的值应该为
    `http://amamba-devops-server.amamba-system:80/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins`。

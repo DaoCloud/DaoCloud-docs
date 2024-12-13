@@ -1,6 +1,6 @@
 ---
 hide:
-  -toc
+  - toc
 ---
 
 # Create Authorization Rules
@@ -13,7 +13,7 @@ Follow the steps below to create an authorization rule:
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
-    ![](../../../images/gov00.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov00.png)
 
 2. Select `Authorization Rules`, then click __Create Authorization Rule__ on the right side.
 

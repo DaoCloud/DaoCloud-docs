@@ -36,7 +36,7 @@
 
 在 __创建任务__ 页面中，根据下表输入基本信息后，点击 __下一步__ 。
 
-![创建任务](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/job02.png)
+![创建任务](../../images/job02.png)
 
 - 负载名称：最多包含 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾。同一命名空间内同一类型工作负载的名称不得重复，而且负载名称在工作负载创建好之后不可更改。
 - 命名空间：选择将新建的任务部署在哪个命名空间，默认使用 default 命名空间。找不到所需的命名空间时可以根据页面提示去[创建新的命名空间](../namespaces/createns.md)。
@@ -53,7 +53,7 @@
 
     在配置容器相关参数时，必须正确填写容器的名称、镜像参数，否则将无法进入下一步。参考以下要求填写配置后，点击 __确认__ 。
 
-    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/job02-1.png)
+    ![基本信息](../../images/job02-1.png)
     
     - 容器类型：默认为`工作容器`。有关初始化容器，参见 [k8s 官方文档](https://kubernetes.io/zh-cn/docs/concepts/workloads/pods/init-containers/)。
     - 容器名称：最多包含 63 个字符，支持小写字母、数字及分隔符（“-”）。必须以小写字母或数字开头及结尾，例如 nginx-01。
@@ -81,35 +81,45 @@
             - 规格：切分后的物理 GPU 卡规格。
             - 数量：使用该规格的数量。
     
-    > 设置 GPU 之前，需要管理员预先在集群上安装 [GPU Operator](../gpu/nvidia/install_nvidia_driver_of_operator.md) 和 [nvidia-vgpu](../gpu/nvidia/vgpu/vgpu_addon.md)（仅 vGPU 模式需要安装），并在[集群设置](../clusterops/cluster-settings.md)中开启 GPU 特性。
+    !!! tip
+
+        设置 GPU 之前，需要管理员预先在集群上安装
+        [GPU Operator](../gpu/nvidia/install_nvidia_driver_of_operator.md)
+        和 [nvidia-vgpu](../gpu/nvidia/vgpu/vgpu_addon.md)（仅 vGPU 模式需要安装），
+        并在[集群设置](../clusterops/cluster-settings.md)中开启 GPU 特性。
 
 === "生命周期（选填）"
 
-    设置容器启动时、启动后、停止前需要执行的命令。详情可参考[容器生命周期配置](pod-config/lifecycle.md)。
+    设置容器启动时、启动后、停止前需要执行的命令。
+    详情可参考[容器生命周期配置](pod-config/lifecycle.md)。
 
     ![生命周期](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy06.png)
 
 === "健康检查（选填）"
 
-    用于判断容器和应用的健康状态，有助于提高应用的可用性。详情可参考[容器健康检查配置](pod-config/health-check.md)。
+    用于判断容器和应用的健康状态，有助于提高应用的可用性。
+    详情可参考[容器健康检查配置](pod-config/health-check.md)。
 
     ![健康检查](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy07.png)
 
 === "环境变量（选填）"
 
-    配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。详情可参考[容器环境变量配置](pod-config/env-variables.md)。
+    配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。
+    详情可参考[容器环境变量配置](pod-config/env-variables.md)。
 
     ![环境变量](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy08.png)
 
 === "数据存储（选填）"
 
-    配置容器挂载数据卷和数据持久化的设置。详情可参考[容器数据存储配置](pod-config/env-variables.md)。
+    配置容器挂载数据卷和数据持久化的设置。
+    详情可参考[容器数据存储配置](pod-config/env-variables.md)。
 
     ![数据存储](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy09.png)
 
 === "安全设置（选填）"
 
-    通过 Linux 内置的账号权限隔离机制来对容器进行安全隔离。您可以通过使用不同权限的账号 UID（数字身份标记）来限制容器的权限。例如，输入 __0__ 表示使用 root 账号的权限。
+    通过 Linux 内置的账号权限隔离机制来对容器进行安全隔离。您可以通过使用不同权限的账号 UID
+    （数字身份标记）来限制容器的权限。例如，输入 __0__ 表示使用 root 账号的权限。
 
     ![安全设置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy10.png)
 
@@ -119,7 +129,7 @@
 
 === "任务设置"
 
-    ![任务设置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/job03.png)
+    ![任务设置](../../images/job03.png)
 
     - 并行数：任务执行过程中允许同时创建的最大 Pod 数，并行数应不大于 Pod 总数。默认为 1。
     - 超时时间：超出该时间时，任务会被标识为执行失败，任务下的所有 Pod 都会被删除。为空时表示不设置超时时间。
@@ -129,7 +139,7 @@
 
     可以点击 __添加__ 按钮为工作负载实例 Pod 添加标签和注解。
 
-    ![标签与注解](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/job04.png)
+    ![标签与注解](../../images/job04.png)
 
 ## YAML 创建
 
@@ -147,63 +157,107 @@
 
     ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob08.png)
 
-??? note "点击查看创建任务的 YAML 示例"
+这里有一个 YAML 示例供参考：
 
-    ```yaml
-    kind: Job
-    apiVersion: batch/v1
+```yaml
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: helm-operation-install-gpu-operator-r9qgklbfzr
+  generateName: helm-operation-install-gpu-operator-r9qgk
+  namespace: gpu-operator
+  uid: b4eeba61-9c6a-4198-a3c3-3a1bb59b637a
+  resourceVersion: '419300'
+  generation: 1
+  creationTimestamp: '2024-12-09T09:10:57Z'
+  labels:
+    batch.kubernetes.io/controller-uid: b4eeba61-9c6a-4198-a3c3-3a1bb59b637a
+    batch.kubernetes.io/job-name: helm-operation-install-gpu-operator-r9qgklbfzr
+    controller-uid: b4eeba61-9c6a-4198-a3c3-3a1bb59b637a
+    job-name: helm-operation-install-gpu-operator-r9qgklbfzr
+    sidecar.istio.io/inject: 'false'
+  annotations:
+    batch.kubernetes.io/job-tracking: ''
+    job.kpanda.io/last-reversion-handle-uid: b4eeba61-9c6a-4198-a3c3-3a1bb59b637a
+    revisions: >-
+      {"1":{"status":"running","desire":1,"uid":"b4eeba61-9c6a-4198-a3c3-3a1bb59b637a","start-time":"2024-12-09T09:10:57Z","completion-time":"0001-01-01T00:00:00Z"}}
+  ownerReferences:
+    - apiVersion: helm.kpanda.io/v1alpha1
+      kind: HelmApp
+      name: gpu-operator
+      uid: bc2d26b4-651d-444b-bfe2-76a51b364201
+spec:
+  parallelism: 1
+  completions: 1
+  activeDeadlineSeconds: 1800
+  backoffLimit: 3
+  selector:
+    matchLabels:
+      batch.kubernetes.io/controller-uid: b4eeba61-9c6a-4198-a3c3-3a1bb59b637a
+  template:
     metadata:
-      name: demo
-      namespace: default
-      uid: a9708239-0358-4aa1-87d3-a092c080836e
-      resourceVersion: '92751876'
-      generation: 1
-      creationTimestamp: '2022-12-26T10:52:22Z'
+      generateName: helm-operation-
+      namespace: gpu-operator
+      creationTimestamp: null
       labels:
-        app: demo
-        controller-uid: a9708239-0358-4aa1-87d3-a092c080836e
-        job-name: demo
-      annotations:
-        revisions: >-
-          {"1":{"status":"running","uid":"a9708239-0358-4aa1-87d3-a092c080836e","start-time":"2022-12-26T10:52:22Z","completion-time":"0001-01-01T00:00:00Z"}}
+        batch.kubernetes.io/controller-uid: b4eeba61-9c6a-4198-a3c3-3a1bb59b637a
+        batch.kubernetes.io/job-name: helm-operation-install-gpu-operator-r9qgklbfzr
+        controller-uid: b4eeba61-9c6a-4198-a3c3-3a1bb59b637a
+        job-name: helm-operation-install-gpu-operator-r9qgklbfzr
+        sidecar.istio.io/inject: 'false'
     spec:
-      parallelism: 1
-      backoffLimit: 6
-      selector:
-        matchLabels:
-          controller-uid: a9708239-0358-4aa1-87d3-a092c080836e
-      template:
-        metadata:
-          creationTimestamp: null
-          labels:
-            app: demo
-            controller-uid: a9708239-0358-4aa1-87d3-a092c080836e
-            job-name: demo
-        spec:
-          containers:
-            - name: container-4
-              image: nginx
-              resources:
-                limits:
-                  cpu: 250m
-                  memory: 512Mi
-                requests:
-                  cpu: 250m
-                  memory: 512Mi
-              lifecycle: {}
-              terminationMessagePath: /dev/termination-log
-              terminationMessagePolicy: File
-              imagePullPolicy: IfNotPresent
-              securityContext:
-                privileged: false
-          restartPolicy: Never
-          terminationGracePeriodSeconds: 30
-          dnsPolicy: ClusterFirst
-          securityContext: {}
-          schedulerName: default-scheduler
-      completionMode: NonIndexed
-      suspend: false
-    status:
-      startTime: '2022-12-26T10:52:22Z'
-      active: 1
-    ```
+      volumes:
+        - name: kubeconfig
+          secret:
+            secretName: helm-operation-kubeconfig-h8td2
+            defaultMode: 420
+        - name: data
+          secret:
+            secretName: helm-operation-8t4pc
+            defaultMode: 420
+      containers:
+        - name: helm
+          image: release.daocloud.io/kpanda/kpanda-shell:v0.0.11
+          command:
+            - helm-cmd
+          workingDir: /home/shell/helm
+          env:
+            - name: KUBECONFIG
+              value: /home/.kube/config
+          resources:
+            limits:
+              cpu: 100m
+              memory: 400Mi
+            requests:
+              cpu: 100m
+              memory: 400Mi
+          volumeMounts:
+            - name: data
+              readOnly: true
+              mountPath: /home/shell/helm
+            - name: kubeconfig
+              mountPath: /home/.kube
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Never
+      terminationGracePeriodSeconds: 0
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        kubernetes.io/os: linux
+      securityContext: {}
+      schedulerName: default-scheduler
+  completionMode: NonIndexed
+  suspend: false
+status:
+  conditions:
+    - type: Complete
+      status: 'True'
+      lastProbeTime: '2024-12-09T09:11:23Z'
+      lastTransitionTime: '2024-12-09T09:11:23Z'
+  startTime: '2024-12-09T09:10:57Z'
+  completionTime: '2024-12-09T09:11:23Z'
+  succeeded: 1
+  uncountedTerminatedPods: {}
+  ready: 0
+```

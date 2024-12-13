@@ -6,7 +6,7 @@ This requires creating a service through which you get a fixed IP address, decou
 
 ## Prerequisites
 
-- Container management module [connected to Kubernetes cluster](../clusters/integrate-cluster.md) or [created Kubernetes](../clusters/create-cluster.md), and can access the cluster UI interface.
+- In the Container Management module, you have [integrated Kubernetes cluster](../clusters/integrate-cluster.md) or [created Kubernetes cluster](../clusters/create-cluster.md), and can visit the cluster UI.
 
 - Completed a [namespace creation](../namespaces/createns.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and authorize the user as [NS Editor](../permissions/permission-brief.md#ns-editor) role, for details, refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
 

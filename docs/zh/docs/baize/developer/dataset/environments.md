@@ -63,6 +63,19 @@
 
 配置完成后，点击 **创建** 按钮，系统会自动创建并配置新的 Python 环境。
 
+这里有一个 YAML 示例：
+
+```yaml title="environment.yaml"
+name: tensorflow
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.12
+  - tensorflow
+prefix: /opt/conda/envs/tensorflow
+```
+
 ## 故障排除
 
 - 如果环境创建失败：  

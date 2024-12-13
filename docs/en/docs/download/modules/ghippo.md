@@ -11,7 +11,7 @@ On this page, you can download the offline packages of various versions of the g
 
 ## Download
 
-| Version | Architecture | File Size | Package | Checksum File | Updated Date |
+| Version | Architecture | Size | Package | Checksum | Date |
 | ------- | ------------ | --------- | ------- | ------------- | ------------ |
 | [v0.31.0](../../ghippo/intro/release-notes.md) | <font color="green">ARM 64</font> | 452.23 MB | [:arrow_down: ghippo_v0.31.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.31.0_arm64.tar) | [:arrow_down: ghippo_v0.31.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.31.0_arm64_checksum.sha512sum) | 2024-09-29 |
 | [v0.31.0](../../ghippo/intro/release-notes.md) | AMD 64 | 459.08 MB | [:arrow_down: ghippo_v0.31.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.31.0_amd64.tar) | [:arrow_down: ghippo_v0.31.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.31.0_amd64_checksum.sha512sum) | 2024-09-29 |

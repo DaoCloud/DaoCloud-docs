@@ -1,11 +1,10 @@
-# 通过 NodePort 访问虚拟机
+# 通过 NodePort 实现虚拟机的多终端 SSH 访问
 
-本文将介绍如何通过 NodePort 访问虚拟机。
+本文将介绍如何通过 NodePort 从多个终端以 SSH 访问虚拟机。
 
 ## 现有访问方式的缺陷
 
 1. 虚拟机支持通过 VNC 或者 console 访问，但这两种访问方式都有一个弊端，无法多终端同时在线。
-
 2. 通过 NodePort 形式的 Service，可以帮助解决这个问题。
 
 ## 创建 service 的方式
@@ -14,7 +13,7 @@
 
     - 选择目标访问的虚拟机所在集群页面创建服务（Service）
     - 选择访问类型为节点访问（NodePort）
-    - 选择命名空间（虚拟机所在 namespace）
+    - 选择命名空间（虚拟机所在的 namespace）
     - 标签选择器填写 `vm.kubevirt.io/name: you-vm-name`
     - 端口配置：协议选择 TCP，端口名称自定义，服务端口、容器端口填写 22
 
@@ -43,7 +42,7 @@
       type: NodePort
     ```
 
-2. 执行以下命令
+2. 执行以下命令：
 
     ```sh
     kubectl apply -f you-svc.yaml
