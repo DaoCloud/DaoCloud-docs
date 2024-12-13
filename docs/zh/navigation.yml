@@ -1029,6 +1029,7 @@ nav:
                           - 更新 MySQL 实例: middleware/mysql/user-guide/update.md
                           - 删除 MySQL 实例: middleware/mysql/user-guide/delete.md
                           - 查看 MySQL 实例: middleware/mysql/user-guide/view.md
+                          - 手动切换主备节点: middleware/mysql/user-guide/manual-switch-role.md
                       - 查看 MySQL 日志: middleware/mysql/user-guide/logs.md
                       - MySQL 慢日志: middleware/mysql/user-guide/mysql-slow-query.md
                       - 实例拓扑: middleware/mysql/user-guide/instancemap.md
@@ -1085,12 +1086,15 @@ nav:
                       - 离线升级 Redis: middleware/redis/intro/offline-install.md
                       - Release Notes: middleware/redis/release-notes.md
                   - 快速入门:
-                      - 创建 Redis 实例: middleware/redis/user-guide/create.md
-                      - 更新 Redis 实例: middleware/redis/user-guide/update.md
-                      - 删除 Redis 实例: middleware/redis/user-guide/delete.md
+                      - 实例生命周期管理:
+                          - 创建 Redis 实例: middleware/redis/user-guide/create.md
+                          - 更新 Redis 实例: middleware/redis/user-guide/update.md
+                          - 删除 Redis 实例: middleware/redis/user-guide/delete.md
+                          - 手动切换主备: middleware/redis/user-guide/manual-switch-role.md
                       - 查看 Redis 日志: middleware/redis/user-guide/logs.md
                       - 慢查询: middleware/redis/user-guide/slow-query.md
                       - 实例拓扑: middleware/redis/user-guide/instancemap.md
+                      - 备份与恢复: middleware/redis/user-guide/backup-and-restore.md
                   - 最佳实践:
                       - 单集群跨机房高可用部署: middleware/redis/best-practice/singleclustercrosszone.md
                       - 跨集群数据同步介绍: middleware/redis/best-practice/index.md
