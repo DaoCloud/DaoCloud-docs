@@ -1087,10 +1087,10 @@ nav:
                       - Release Notes: middleware/redis/release-notes.md
                   - 快速入门:
                       - 实例生命周期管理:
-                        - 创建 Redis 实例: middleware/redis/user-guide/create.md
-                        - 更新 Redis 实例: middleware/redis/user-guide/update.md
-                        - 删除 Redis 实例: middleware/redis/user-guide/delete.md
-                        - 手动切换主备: middleware/redis/user-guide/manual-switch-role.md
+                          - 创建 Redis 实例: middleware/redis/user-guide/create.md
+                          - 更新 Redis 实例: middleware/redis/user-guide/update.md
+                          - 删除 Redis 实例: middleware/redis/user-guide/delete.md
+                          - 手动切换主备: middleware/redis/user-guide/manual-switch-role.md
                       - 查看 Redis 日志: middleware/redis/user-guide/logs.md
                       - 慢查询: middleware/redis/user-guide/slow-query.md
                       - 实例拓扑: middleware/redis/user-guide/instancemap.md
