@@ -96,7 +96,7 @@
   中的 bootstrapNode 参数可以指定火种机器的 IP。
 
     ```yaml title="ClusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:
@@ -114,7 +114,7 @@
 
     ```yaml title="ClusterConfig.yaml"
     ...
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:

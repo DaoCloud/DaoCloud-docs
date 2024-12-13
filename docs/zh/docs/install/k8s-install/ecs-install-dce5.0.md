@@ -32,7 +32,7 @@
     参考以下配置，注意设置 `loadBalancer.type = NodePort`，并填写主机的私网 IP 地址：
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     spec:
       loadBalancer:
@@ -103,7 +103,7 @@
     参考以下配置，注意设置 `loadBalancer.type = cloudLB`，并填写主机的私网 IP 地址：
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     spec:
       loadBalancer:
@@ -178,7 +178,7 @@
    参考以下配置，注意设置 `loadBalancer.type = NodePort`，并填写主机的私网 IP 地址：
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     spec:
       loadBalancer:

@@ -10,7 +10,7 @@ hide:
 1. 在[集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `imagesAndCharts` 参数：
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:
