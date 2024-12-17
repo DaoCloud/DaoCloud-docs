@@ -1,0 +1,1463 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/blogs/index.html" rel="canonical"/>
+<link href="../download/modules/gmagpie.html" rel="prev"/>
+<link href="241108-cncf-ambassador.html" rel="next"/>
+<link href="../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>博文索引 - DaoCloud Enterprise</title>
+<link href="../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              博文索引
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../dce/index.html">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            博客
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    博文索引
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="index.html">
+<span class="md-ellipsis">
+    博文索引
+  </span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024">
+<span class="md-ellipsis">
+      2024 年
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023">
+<span class="md-ellipsis">
+      2023 年
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022">
+<span class="md-ellipsis">
+      2022 年
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+<span class="md-ellipsis">
+    2024
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="241108-cncf-ambassador.html">
+<span class="md-ellipsis">
+    从社区小白到 CNCF 大使
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="241106-containerd-nerdctl-lima.html">
+<span class="md-ellipsis">
+    containerd 相关项目集中发布新版本
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240816-1.31-image.html">
+<span class="md-ellipsis">
+    K8s 1.31 OCI 工件的只读卷
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="20240619-nvidiaai.html">
+<span class="md-ellipsis">
+    Nvidia 征服最新的 AI 测试
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0606-k8s-birth.html">
+<span class="md-ellipsis">
+    Kubernetes 十周年
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240516-sig-docs.html">
+<span class="md-ellipsis">
+    K8s 从敲代码到抒发文笔
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240509-model-spec.html">
+<span class="md-ellipsis">
+    OpenAI 大语言模型规范
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0429-ai-survey.html">
+<span class="md-ellipsis">
+    全球大规模AI基础设施形势调研
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240416-kubean.html">
+<span class="md-ellipsis">
+    一颗豆荚入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240410-cnai-wp.html">
+<span class="md-ellipsis">
+    云原生人工智能白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240326-kubecon-eu.html">
+<span class="md-ellipsis">
+    巴黎 KubeCon 谁在引领创新
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240301-osc-eco.html">
+<span class="md-ellipsis">
+    创建一个开源商业生态体系
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240203-book.html">
+<span class="md-ellipsis">
+    好书《K8s云原生数据管理》
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240201-ai-compute.html">
+<span class="md-ellipsis">
+    加速计算基本定义及工作原理
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240115-news.html">
+<span class="md-ellipsis">
+    容器化 AI 简化 ML 模型的部署
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240108-kubeedge.html">
+<span class="md-ellipsis">
+    KubeEdge v1.15.0 发布
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+<span class="md-ellipsis">
+    2023
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="231220-spiderpool.html">
+<span class="md-ellipsis">
+    Spiderpool入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231213-k8s-1.29.html">
+<span class="md-ellipsis">
+    K8s 1.29发布宇宙主题雄心勃勃
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231205-vm-bm-compare.html">
+<span class="md-ellipsis">
+    K8s 裸机 vs 虚机性能对比
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231115-k8s-1.29-changes.html">
+<span class="md-ellipsis">
+    K8s 1.29前瞻：移除、弃用及变更
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231008-kcs.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会回顾
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230911-kubecon-contributor.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会召集令
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230824-tools.html">
+<span class="md-ellipsis">
+    K8s 本地开发工具比较
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230815-k8s1.28.html">
+<span class="md-ellipsis">
+    K8s 1.28 震撼发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230808-k8sgpt.html">
+<span class="md-ellipsis">
+    K8sGPT 赋能 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230615-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索下篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230612-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索上篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230609-istio118.html">
+<span class="md-ellipsis">
+    Istio 1.18 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230605-fedstate.html">
+<span class="md-ellipsis">
+    联邦中间件FedState
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230601-api-server-tracing.html">
+<span class="md-ellipsis">
+    API Server Tracing进阶
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230518-seccom.html">
+<span class="md-ellipsis">
+    边缘场景玩转seccomp
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230515-chaos-mesh.html">
+<span class="md-ellipsis">
+    混沌工程 Chaos Mesh
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230509-k8s-install.html">
+<span class="md-ellipsis">
+    K8s 安装教程(KLTS版)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230508-cilium.html">
+<span class="md-ellipsis">
+    Cilium 实现 socket 加速
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230428-pod-startup.html">
+<span class="md-ellipsis">
+    K8s 1.27 加快 Pod 启动
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230427-victoriametrics.html">
+<span class="md-ellipsis">
+    云原生监控之基础篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230418-karmada-failover.html">
+<span class="md-ellipsis">
+    Karmada Failover 详解
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230417-cncf-platform-wp.html">
+<span class="md-ellipsis">
+    CNCF 平台工程白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230412-k8s-1.27.html">
+<span class="md-ellipsis">
+    K8s 1.27 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230411-spiderpool.html">
+<span class="md-ellipsis">
+    固定应用 IP 的新选择
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230405-step-by-step-dce5.html">
+<span class="md-ellipsis">
+    保姆式安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230317-edge-app-wp.html">
+<span class="md-ellipsis">
+    边缘原生应用准则
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-linux.html">
+<span class="md-ellipsis">
+    Linux 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-macos.html">
+<span class="md-ellipsis">
+    macOS 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230301-kwok.html">
+<span class="md-ellipsis">
+    KWOK 介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-open-projects.html">
+<span class="md-ellipsis">
+    社区版涉及的开源项目
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-daocloud_k8s.html">
+<span class="md-ellipsis">
+    DaoCloud 与 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-peter.html">
+<span class="md-ellipsis">
+    DCE 5.0 攻坚语录集
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-forecast.html">
+<span class="md-ellipsis">
+    2023 年云原生预测
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230110-res-usage.html">
+<span class="md-ellipsis">
+    让闲置算力跑起来
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+<span class="md-ellipsis">
+    2022
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="221209-k8s-1.26.html">
+<span class="md-ellipsis">
+    K8s 1.26 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221116-kcsp.html">
+<span class="md-ellipsis">
+    K8s 资深认证服务商
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221026-kpanda.html">
+<span class="md-ellipsis">
+    容器管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221018-resource.html">
+<span class="md-ellipsis">
+    资源管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220925-amamba.html">
+<span class="md-ellipsis">
+    应用工作台能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220808-kairship.html">
+<span class="md-ellipsis">
+    多云编排能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220708-mspider.html">
+<span class="md-ellipsis">
+    服务网格能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221008-dce-bg.html">
+<span class="md-ellipsis">
+    DCE 开发背景
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden="">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024">
+<span class="md-ellipsis">
+      2024 年
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023">
+<span class="md-ellipsis">
+      2023 年
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022">
+<span class="md-ellipsis">
+      2022 年
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/blogs/index.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/blogs/index.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/blogs/index.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="_1">博客文章<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<p>本页汇总 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 及云原生技术相关的博客和公众号文章，默认按时间排序。</p>
+<h2 id="2024">2024 年<a class="headerlink" href="#2024" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p><a href="241108-cncf-ambassador.html">20241108 | 从社区小白到 CNCF 大使</a></p>
+<p>本文不讲技术，只是浅述一段在 CNCF 开源社区成长的故事，从社区小白到 CNCF 大使的真实经历。</p>
+</li>
+<li>
+<p><a href="241106-containerd-nerdctl-lima.html">20241107 | containerd 社区项目集中发布新版本</a></p>
+<p><a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/">KubeCon 北美 2024</a>
+将于 11 月 12 至 15 日盛大召开，预计参会人数将达到三四万人，仅门票收入就超过千万美元。
+就在会前一周，<a href="https://github.com/containerd/containerd">containerd</a> v2.0、
+<a href="https://github.com/containerd/nerdctl">nerdctl</a> (<strong>contaiNERD CTL</strong>) v2.0
+和 <a href="https://lima-vm.io/">Lima</a> v1.0 集中发布 🎉。</p>
+</li>
+<li>
+<p><a href="240816-1.31-image.html">20240816 | Kubernetes 1.31：基于 OCI 工件的只读卷 (Alpha)</a></p>
+<p>Kubernetes 社区在 v1.31 中引入了一项新的 Alpha 特性：
+镜像卷源（<a href="https://kep.k8s.io/4639">KEP-4639</a>）。
+此特性允许用户在 Pod 中指定一个镜像引用作为卷，并在容器内将其作为卷挂载进行复用。</p>
+</li>
+<li>
+<p><a href="20240619-nvidiaai.html">20240619 | Nvidia 征服最新的 AI 测试</a></p>
+<p>多年来，Nvidia 一直主导着许多机器学习基准测试，如今又在其腰带上增加了两个新的徽章：
+<a href="https://mlcommons.org/benchmarks/training/">MLPerf</a> 和<a href="https://spectrum.ieee.org/machine-learning-in-physics">图神经网络</a>。</p>
+</li>
+<li>
+<p><a href="0606-k8s-birth.html">20240606 | Kubernetes 十周年</a></p>
+<p>十年前，也就是 2014 年 6 月 6 日，Kubernetes
+的<a href="https://github.com/kubernetes/kubernetes/commit/2c4b3a562ce34cddc3f8218a2c4d11c7310e6d56">第一次提交</a>被推送到 GitHub。
+第一次提交包含 250 个文件和 47,501 行的 Go、Bash 和 Markdown 代码，开启了我们今天所见的 K8s 项目。</p>
+</li>
+<li>
+<p><a href="240516-sig-docs.html">20240516 | SIG Docs从敲代码到抒发文笔</a></p>
+<p>这是一次冒险的召唤，一份超越代码领域的邀请，指引你踏入文档创作与社区协作的未知境地。
+在这里，你将为全球用户和贡献者组成的社区赋能，点亮他们前行的道路。</p>
+</li>
+<li>
+<p><a href="240509-model-spec.html">20240509 | OpenAI 大语言模型规范</a></p>
+<p>这是 OpenAI 最新发布的模型规范，它是一个指定 OpenAI API 和 ChatGPT 中模型期望行为的文件，
+包括一套核心目标，以及如何处理冲突目标或指令的指导。</p>
+</li>
+<li>
+<p><a href="0429-ai-survey.html">20240429 | 2024 年大规模 AI 基础设施形势调研</a></p>
+<p>ClearML 发布了与 FuriosaAI 和人工智能基础设施联盟（AIIA）进行的一项全球 AI 调研结果。</p>
+</li>
+<li>
+<p><a href="240416-kubean.html">20240416 | 一颗绿色豆荚入选 CNCF Sandbox</a></p>
+<p>2024 年 4 月 15 日，一个绿色的豆荚 Kubean 经过 <a href="https://github.com/cncf/sandbox/issues/49">CNCF TAG 委员会 11 人投票</a>，
+成功入选了 CNCF Sandbox 沙箱。</p>
+</li>
+<li>
+<p><a href="240410-cnai-wp.html">20240410 | 云原生人工智能白皮书</a></p>
+<p>这本云原生人工智能白皮书首先概述了当前 AI/ML 技术的发展现状，接着介绍了云原生技术所提供的支持，分析了目前面临的挑战和不足，并探讨了正在不断发展中的解决方案。</p>
+</li>
+<li>
+<p><a href="240326-kubecon-eu.html">20240326 | 巴黎 KubeCon：平台工程、API 平台和智能代理引领创新</a></p>
+<p>3.19 - 3.22 在巴黎举行的 <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/">KubeCon + CloudNativeCon Europe</a>
+大会最引人关注的热点是基于 Kubernetes 为生成式人工智能构建基础设施。干货更多聚焦在平台层面。</p>
+</li>
+<li>
+<p><a href="240301-osc-eco.html">20240301 | 创建一个开源商业生态体系</a></p>
+<p>成功的开源项目通常围绕着一个繁荣的公司和产品生态体系构建。那么，什么是开源商业生态体系，
+以及如何帮助创建和支持可持续的开源项目呢？以下是一些方法可以建立对项目长期可行性的信心，
+鼓励公司在开源项目基础上构建商业产品和服务，并通过贡献、内容和其他资源重新投资于它们，从而促进生态体系的发展。</p>
+</li>
+<li>
+<p><a href="240203-book.html">20240203 | 好书推介《Kubernetes 云原生数据管理》</a></p>
+<p>国际知名的科技书籍出版商 O'Reilly Media（奥莱利媒体）联合中国电子工业出版社悄悄上线了一本 Kubernetes 数据存储方面的专业书籍：
+<a href="https://www.oreilly.com.cn/index.php?func=book&amp;isbn=978-7-121-47005-9">《Kubernetes 云原生数据管理》</a>。</p>
+</li>
+<li>
+<p><a href="240201-ai-compute.html">20240201 | 加速计算基本定义及工作原理揭秘</a></p>
+<p>加速计算凭借其前所未有的处理能力，在云端基础设施中占据了核心位置，对于提升数据中心大规模信息处理效能方面发挥了重要作用。</p>
+</li>
+<li>
+<p><a href="240115-news.html">20240115 | 容器化与 AI：机器学习模型的部署流程优化</a></p>
+<p>探讨部署 ML 模型的挑战、容器化的基础以及 AI 和 ML 应用容器化的优势。</p>
+</li>
+<li>
+<p><a href="240108-kubeedge.html">20240108 | KubeEdge v1.15.0 发布</a></p>
+<p>KubeEdge v1.15.0 新增了 Windows 边缘节点支持、基于物模型的设备管理、DMI 数据面支持等功能。</p>
+</li>
+</ul>
+<h2 id="2023">2023 年<a class="headerlink" href="#2023" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p><a href="231220-spiderpool.html">20231220 | 高速网络方案 Spiderpool 入选 CNCF Sandbox</a></p>
+<p>2023 年 12 月 19 日经 DaoCloud 开源，后捐赠给 CNCF 社区的
+<a href="https://github.com/spidernet-io/spiderpool">Spiderpool</a>
+网络方案经 CNCF TOC 委员会投票，入选了 CNCF Sandbox。</p>
+</li>
+<li>
+<p><a href="231213-k8s-1.29.html">20231213 | Kubernetes 1.29 发布：宇宙主题雄心勃勃</a></p>
+<p>太平洋时间 2023 年 12 月 13 日，主题为 Mandala（宇宙）的 Kubernetes 1.29 正式发布。</p>
+</li>
+<li>
+<p><a href="231205-vm-bm-compare.html">20231205 | Kubernetes：裸机 vs 虚机性能对比</a></p>
+<p>比较 Kubernetes 运行在虚拟机和裸机上的性能。</p>
+</li>
+<li>
+<p><a href="231115-k8s-1.29-changes.html">20231115 | Kubernetes 1.29 前瞻：弃用、移除和重大变更</a></p>
+<p>Kubernetes v1.29 计划将于 12 月初发布，这将是 2023 年的最后一个版本。
+就像每次发布一样，Kubernetes v1.29 也将弃用和移除一些特性。
+持续高质量发布的执行能力是开发周期稳健和社区健康的良好见证。
+这篇博文说明了即将发布的 Kubernetes 1.29 中的一些弃用和移除事项。</p>
+</li>
+<li>
+<p><a href="231008-kcs.html">20231008 | 2023 年中国上海 Kubernetes 贡献者峰会回顾</a></p>
+<p>2023 年 9 月 26 日，即 KubeCon + CloudNativeCon + Open Source Summit China 2023 第一天，
+近 50 位社区贡献者济济一堂，在上海聚首 Kubernetes 贡献者峰会。</p>
+</li>
+<li>
+<p><a href="230824-tools.html">20230824 | Kubernetes 本地开发工具比较：Telepresence、Gefyra 和 mirrord</a></p>
+<p>随着 K8s 项目的成熟，K8s 本地开发工具已浮出水面，
+这一类方案通过将本地运行的组件连接到 Kubernetes 集群来提升 Kubernetes 开发体验。
+这样可以在云环境中快速测试新代码，避开了 Docker 化、CI 和部署这样的传统周期。</p>
+</li>
+<li>
+<p><a href="230815-k8s1.28.html">20230815 | Kubernetes 1.28 震撼发布</a></p>
+<p>太平洋时间 2023 年 8 月 15 日，Kubernetes 1.28 正式发布。此版本距离上版本发布时隔 4 个月，是 2023 年的第二个版本。</p>
+</li>
+<li>
+<p><a href="230808-k8sgpt.html">20230808 | 尝鲜：K8sGPT 赋能 Kubernetes</a></p>
+<p><a href="https://k8sgpt.ai/">K8sGPT</a> 是一个非常新潮的云原生智能工具，它为 Kubernetes 云原生软件工程师 (SRE) 赋予了超能力。</p>
+</li>
+<li>
+<p><a href="230615-ray.html">20230612 | AIGC 利器 Ray 云原生探索之路 - Ray Core 下篇</a></p>
+<p>本文详细阐述 Ray 的各项能力和参数，还介绍了一些应用操作实践。</p>
+</li>
+<li>
+<p><a href="230612-ray.html">20230612 | AIGC 利器 Ray 云原生探索之路 - Ray Core 上篇</a></p>
+<p>本文介绍 Ray 分布式计算的底座：Ray Core 是怎样的一种分布式的计算框架。</p>
+</li>
+<li>
+<p><a href="230609-istio118.html">20230609 | Istio 1.18 新鲜出炉：正式宣布 Ambient 模式</a></p>
+<p>1.18 版本是 Istio 在 2023 年发布的第二个版本，也是首个支持 Ambient 模式的版本。</p>
+<p>本次版本更新引入了许多新功能和变化，包括但不限于 Ambient 模式的 Istio、增强的 Kubernetes Gateway API、
+针对未自动注册的虚拟机的健康检查支持、新增对 Metrics 的过期支持、增强的 istioctl analyze 等。</p>
+</li>
+<li>
+<p><a href="230605-fedstate.html">20230605 | 云原生联邦中间件--FedState 正式开源上线</a></p>
+<p>在云原生的场景下，有状态的服务，也有了很大的发展。在多云/联邦的环境下，
+怎么设计和实现基于多集群、多数据中心以及混合云场景下，有状态服务的编排、调度、部署和自动化运维等能力？
+最新开源的 FedState 项目正是在尝试解决这样的场景问题。</p>
+</li>
+<li>
+<p><a href="230601-api-server-tracing.html">20230601 | API Server Tracing 特性进阶至 Beta</a></p>
+<p>在 Kubernetes 中，API Server 是管理和调度所有集群资源的核心组件，它接收和处理来自各种客户端的请求，
+并将它们转化为底层资源操作。因此，API Server 的稳定性和可观测性对 Kubernetes 的整体健康状态至关重要。</p>
+</li>
+<li>
+<p><a href="230518-seccom.html">20230515 | 边缘场景玩转 seccomp 配置文件</a></p>
+<p>Security Profiles Operator (SPO) 是一个功能丰富的 Kubernetes Operator，
+相比以往可以简化 seccomp、SELinux 和 AppArmor 配置文件的管理。
+从头开始记录这些配置文件是该 Operator 的关键特性之一，这通常涉及与大型 CI/CD 系统集成。
+是否能够在边缘场景中测试 Operator 的记录能力是 SPO 的最新开发工作之一，
+非常有助于轻松玩转 seccomp 配置文件。</p>
+</li>
+<li>
+<p><a href="230515-chaos-mesh.html">20230515 | 云原生混沌工程--Chaos Mesh 实战篇</a></p>
+<p>安装和使用 Chaos Mesh，了解 Chaos Mesh 的能力。</p>
+</li>
+<li>
+<p><a href="230509-k8s-install.html">20230509 | 安装 Kubernetes 教程 (KLTS 版)</a></p>
+<p>以 DaoCloud 自主维护的 <a href="https://klts.io/zh/docs/intro/">KLTS (Kubernetes Long Term Support)</a> 为例，
+简要介绍安装 Kubernetes 的准备工作、安装步骤。</p>
+</li>
+<li>
+<p><a href="230508-cilium.html">20230508 | Cilium 基于 eBPF 实现 socket 加速</a></p>
+<p>随着云原生的不断发展，越来越多的应用部署在云上。其中有些应用对实时性要求非常严苛，这使得我们必须提升这些应用性能，达到更快的服务速度。
+为了达到更快的服务速度，一个场景是：当两个互相调用的应用部署在同一个节点上的时候，每次请求和返回都需要经过 socket 层、TCP/IP 协议栈、数据链路层、物理层。
+如果请求和返回绕过 TCP/IP 协议栈，直接在 socket 层将数据包重定向到对端 socket，那将大大减少发送数据包耗时，从而加快服务速度。
+基于这个思路，eBPF 技术通过映射存储 socket 信息，利用帮助函数实现了将数据包重定向到对端 socket 层的能力。Cilium 正是基于 eBPF 这个能力，实现了 socket 层加速效果。</p>
+</li>
+<li>
+<p><a href="230428-pod-startup.html">20230428 | Kubernetes 1.27：加快了 Pod 启动速度</a></p>
+<p>如何在大型集群中加快节点上的 Pod 启动？这是企业中集群管理员常常会面临的问题。
+这篇博文重点介绍了从 kubelet 一侧加快 Pod 启动的方法。此方法不涉及通过
+kube-apiserver 由 controller-manager 创建 Pod 所用的时间段，
+也不包含 Pod 的调度时间或在其上执行 Webhook 的时间。</p>
+</li>
+<li>
+<p><a href="230427-victoriametrics.html">20230427 | 云原生监控 - VictoriaMetrics 之基础篇</a></p>
+<p>说到云原生监控方案，第一时间基本上都会想到 Prometheus+AlertManager+Grafana 的一套成熟解决方案。
+Prometheus 作为监控核心，具备强大的数据模型、高效率运作、丰富的监控能力、强大的查询语言 PromQL、
+简单易用、管理方便等特点。但是 Prometheus 目前在高可用层面上做得还并不完美。为此，在开源社区中，
+孕育出了许多替代、增强方案，VictoriaMetrics 属于其中较为优异的一个，是一个快速、经济高效且可扩展的监控解决方案和时间序列数据库。</p>
+</li>
+<li>
+<p><a href="230418-karmada-failover.html">20230418 | Karmada Failover 详解</a></p>
+<p>多云时代，如何实现应用跨数据中心，跨可用区和跨集群高可用，成为我们探讨的新话题。
+在单个集群中，如果集群发生故障，那么在集群中的所有应用将不可被访问。
+是否有方式帮助我们在集群发生故障时，应用自动迁移到新的集群，保证应用持续的对外访问呢？</p>
+</li>
+<li>
+<p><a href="230417-cncf-platform-wp.html">20230417 | CNCF 平台工程白皮书</a></p>
+<p>2022 年，“平台工程”这个概念很火热，也在 Gartner 的炒作周期曲线上。
+还有言论说“DevOps 已死，平台工程才是未来“。开发者不愿意和基础设施打交道，企业发展又需要自己的基础设施。
+“平台工程”统一这两个矛盾点，或者说“平台工程”是 DevOps 的下一站。</p>
+</li>
+<li>
+<p><a href="230412-k8s-1.27.html">20230412 | 近两年功能增加最多！Kubernetes 1.27 正式发布</a></p>
+<p>Kubernetes 1.27 正式发布。此版本距离上版本发布时隔 4 个月，是 2023 年的第一个版本。
+新版本中 release 团队跟踪了 <strong>60 个 enhancements</strong>，比之前版本都要多得多。</p>
+</li>
+<li>
+<p><a href="230411-spiderpool.html">20230411 | Spiderpool：Calico 固定应用 IP 的新选择</a></p>
+<p>Spiderpool 是一个 Kubernetes 的 IPAM 插件项目，主要针对 Underlay 网络的 IP 地址管理需求而设计，
+能够为任何兼容第三方 IPAM 插件的 CNI 项目所使用。</p>
+</li>
+<li>
+<p><a href="230405-step-by-step-dce5.html">20230405 | 保姆式安装 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 社区版</a></p>
+<p>本文在 3 个节点的集群中完成了从 0 到 1 的 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 社区版安装，
+包含了 K8s 集群、依赖项、网络、存储等细节及更多注意事项。</p>
+</li>
+<li>
+<p><a href="230317-edge-app-wp.html">20230317 | 边缘原生应用准则白皮书</a></p>
+<p>物联网边缘工作组（IOT Edge Working Group）一直在探索边缘原生的定义，
+以及“云原生”和“边缘原生”之间的异同，并发布了《边缘原生应用准则白皮书》。</p>
+</li>
+<li>
+<p><a href="230315-install-on-linux.html">20230315 | 在 Linux 上安装单机 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 社区版</a></p>
+<p>讲述如何在一台 Linux 机器上使用 Docker 和 kind 在线安装 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 社区版。
+这是一种极简安装方式，便于学习和体验，性能优于 macOS 单机版。</p>
+</li>
+<li>
+<p><a href="230315-install-on-macos.html">20230315 | 在 macOS 上安装单机 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 社区版</a></p>
+<p>使用 macOS 笔记本电脑创建单节点的 kind 集群，然后在线安装 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 社区版。
+适合初学者体验和学习，不适合生产环境。</p>
+</li>
+<li>
+<p><a href="230301-kwok.html">20230301 | 开源项目 KWOK 介绍</a></p>
+<p>是什么样的开源项目会在发布 5 个月内，就被 Apple、IBM、腾讯、华为纷纷使用？</p>
+<p>KWOK 是 Kubernetes WithOut Kubelet 的缩写，即没有 Kubelet 的 Kubernetes。
+帮助你在几秒钟内搭建一个由数千个节点构成的集群，用少量资源模拟几千个真实的节点。</p>
+</li>
+<li>
+<p><a href="230214-open-projects.html">20230214 | <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 社区版包含多少开源项目</a></p>
+<p>时常听闻客户、社区成员、贡献者、公司内部的售前、交付、项目组在询问 “<abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 到底涉及了哪些开源项目？”
+这篇博文详细列出了社区版所包含的开源项目。</p>
+</li>
+<li>
+<p><a href="230214-daocloud_k8s.html">20230214 | 「DaoCloud 道客」与 Kubernetes</a></p>
+<p>讲述「DaoCloud 道客」如何借力 Kubernetes 打造新一代企业级云原生应用云平台 —— DaoCloud Enterprise 5.0，以及如何回馈开源社区，践行云原生信仰。</p>
+</li>
+<li>
+<p><a href="230201-forecast.html">20230201 | 2023 年云原生预测</a></p>
+<p>基于 CNCF 发布的云原生报告畅谈 2023 年云原生领域的各项技术和趋势发展。</p>
+</li>
+<li>
+<p><a href="230201-peter.html">20230201 | <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 攻坚语录集</a></p>
+<p>2022 年，上海，疫情肆虐，封城、管控、居家，程序猿们奔走在病毒 🦠 的缝隙中，那一年是 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 攻坚的日子，也是每个中国人艰难的一年。</p>
+</li>
+</ul>
+<h2 id="2022">2022 年<a class="headerlink" href="#2022" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p><a href="221209-k8s-1.26.html">20221209 | K8s 1.26 正式发布</a></p>
+<p>Kubernetes 正式发布了主题为 <strong>Electrifying</strong> 的 v1.26。
+作为 2022 年最后的一个版本，增加了很多新的功能，同时在稳定性上也得到显著提升，本文从多个角度介绍了 1.26 版本的更新。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/DLDmWRmhM_gMVg1qGnj_fA">20221130 | Karmada 资源解释器</a></p>
+<p>Karmada 已被越来越多的企业，应用到多云和混合云场景中。
+在实际应用过程中，用户经常会遇到，通过 PropagationPolicy 来分发各种资源到成员集群的使用场景。
+这就要求分发的资源类型，不仅仅要包含常见的 Kubernetes 原生或知名扩展资源，同时也需要能支持分发用户的自定义资源。
+因此 Karmada 引入了内置解释器来解析常见的 Kubernetes 原生或知名扩展资源，同时又设计了自定义解释器来解释自定义资源的结构，并且在近期提出了可配置解释器方案。
+对无论是自定义资源，还是常见的 Kubernetes 原生资源，都可以提供更加灵活可配置的自定义方法，来提取资源的指定信息，例如副本数、状态等。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/HIxBZjCK8ofCN6C5KRY25w">20221125 | KubeCon 2022 北美站 | 精彩看点回顾</a></p>
+<p>2022 年 11 月落幕的云原生顶级会议 2022 KubeCon 北美站上，来自世界各地的云原生技术专家、产品或解决方案供应商和使用者带来了 300 多场精彩纷呈的演讲。
+主题涵盖 Kubernetes、GitOps、可观测性、eBPF 、网络、服务网格和安全等。
+本文精心挑选了此次会议上的几个热点话题演讲，进行简单介绍，感受每一次演讲和讨论背后所蕴藏的云原生趋势。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/1leu7b8KQw9pcqma8A_cuw">20221123 | 走进车企的数字原生之路 | 论道回顾</a></p>
+<p>11 月 18 日，由「DaoCloud 道客」主办的「论道原生｜云原生数字生态私享会・走进车企」成功举办。
+本次活动从车企的具体案例出发，主要分享了云原生在汽车行业的应用与实践。让我们一起回顾一下本次活动的精彩内容。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/r6YiuUBGD2KmmMOxl26X6A">20221115 | SpiderPool - 云原生容器网络 IPAM 插件</a></p>
+<p>SpiderPool 来源于容器网络落地实践的经验积累，是「Daocloud 道客」开源的原生容器网络 IPAM 插件（github：<a href="https://github.com/spidernet-io/spiderpool">https://github.com/spidernet-io/spiderpool</a>），
+主要用于搭配 Underlay CNI 实现容器云平台精细化的管理和分配 IP。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/4cYUXtZFc3tIjzphVRCSLg">20221110 | 源于热爱，始于坚持，不忘初心 — 「DaoCloud 道客」八岁生日快乐！</a></p>
+<p>时光荏苒，岁月如梭。自 2014 年 11 月成立以来，在 DaoClouders 不懈的耕耘中，「DaoCloud 道客」已经走过了八个年头。
+在 11 月 8 日下午，「DaoCloud 道客」全体船员为 「DaoCloud 道客」举办了生日会。让我们一起来看看「DaoCloud 道客」八岁生日会的盛况吧！</p>
+</li>
+<li>
+<p><a href="221116-kcsp.html">20221105 | DaoCloud 是 K8s 资深认证服务商</a></p>
+<p>DaoCloud 早在 2017 年就首次顺利通过了 Kubernetes 认证，是国内最早涉足并得到 CNCF 官方认可的服务商，
+同时也是国内最早获得 Kubernetes Training Partner (KTP) 认证的厂商。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/9BggFRr0aoEzzmemXplRWg">20221105 | 原生思维看金融数字化转型</a></p>
+<p>2022 年 11 月 5 日至 6 日，由西南财经大学、成都市地方金融监督管理局和成都市温江区人民政府联合主办的第五届国际金融科技论坛 2022 在蓉成功举办。
+5 日下午以 “数字经济赋能金融科技创新” 为主题的论坛邀请「DaoCloud 道客」创始人兼首席执行官、云原生计算基金会大使陈齐彦先生做主题演讲。本文根据演讲内容整理。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/QqzU_YeUKmegaMiQ9MVbww">20221104 | HwameiStor 入选 CNCF 全景图：生产可运维的云原生本地存储系统</a></p>
+<p>近日，CNCF（云原生计算基金会）<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 发布了最新版的云原生全景图 <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>。
+「DaoCloud 道客」自主开源的云原生本地存储系统 HwameiStor，被收录在 CNCF 云原生全景图中的
+RunTime（运行时）层的 Cloud Native Storage（云原生存储）象限，成为 CNCF 推荐的云原生本地存储项目。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/-NzXmyb-9yQc1ydcsZz0CA">20221028 | Kubean 集群生命周期管理</a></p>
+<p>Kubean 采用 Kubespray 作为底层技术依赖，一方面简化了集群部署的操作流程，降低了用户的使用门槛。
+另一方面在 Kubespray 能力基础上增加了集群操作记录、离线版本记录等诸多新特性。
+Kubean 还提供了界面化创建集群的能力（需要结合社区版 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 容器管理功能），让新手用户也能一键创建和管理集群。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/VoUCiXaUuEy0wKlHmTqo4w">20221028 | 激活医疗、人工智能的数字新动能 | 云原生底座</a></p>
+<p>10 月 28 日，由「DaoCloud 道客」主办的「论道原生｜云原生数字生态私享会・上海」成功举办。
+本次活动从云原生思维和技术出发，分享了云原生在医疗和人工智能方面的应用与实践。让我们一起回顾一下本次活动的精彩内容吧。</p>
+</li>
+<li>
+<p><a href="221026-kpanda.html">20221026 | <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 容器管理能力介绍</a></p>
+<p>说明 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 容器管理模块提供的能力。</p>
+</li>
+<li>
+<p><a href="221018-resource.html">20221018 | <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 资源管理能力介绍</a></p>
+<p>说明 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 全局管理模块提供的能力。</p>
+</li>
+<li>
+<p><a href="220925-amamba.html">20220925 | <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 应用工作台能力介绍</a></p>
+<p>说明 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 应用工作台模块提供的能力。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/Ia9Oi3pKuLcrFJwazmpEjg">20220914 | Merbridge 入选 eBPF 全景图</a></p>
+<p>花开自有期，绽放亦有时。在所有贡献者的共同努力和呵护下，Merbridge 的花苞徐徐绽放开来。
+2022 年 4 月初，Merbridge 顺利入选 CNCF 云原生全景图（Cloud Native Landscape），
+进入 Orchestration &amp; Management (编排与管理) 层的 Service Mesh (服务网格) 象限，成为 CNCF 推荐的云原生服务网格加速器。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/GAcBIshuaOXUrDgzIguWHg">20220909 | Clusterpedia 使用心得</a></p>
+<p>Kubernetes 带来的云原生技术革命已席卷全球，越来越多的业务应用运行在 Kubernetes 平台上，
+随着业务规模的扩展，集群数量与日俱增，多集群内部资源管理和检索越来越复杂，多云管理面临巨大挑战。
+在多集群时代，我们可以通过 Cluster-api 来批量创建管理集群，使用 Karmada/Clusternet 来分发部署应用。
+不过我们貌似还是缺少了什么功能，我们要如何去统一地查看多个集群中的资源呢？</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/r8vfFofBy7v1VcUMInp_Iw">20220908 | 华为与「DaoCloud 道客」推出面向元宇宙的云边协同超融合一体机</a></p>
+<p>2022 年 9 月 2 日，在世界人工智能大会上，华为与上海道客网络科技有限公司联合推出面向元宇宙创新业务的 “云边协同超融合一体机”，
+将云原生能力下沉至边缘，提供实时的虚拟数字世界体验，实现真正的云边一体化元宇宙。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/vrBAjdCkI2BKxG7SsSX2Uw">20220905 | 如何打好存储基础，筑就云原生应用基石？| 论道原生</a></p>
+<p>应用的云原生化极大地提升了自身的可用性、稳定性、扩展性、性能等核心能力，同时也深刻改变了应用的方方面面，
+存储作为应用运行的基石，也不可避免地受到了冲击。云原生时代背景下，给存储带来了怎样的挑战，又该如何应对呢？
+第十一期论道原生，「DaoCloud 道客」携华为，分享云原生存储解决方案。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/8F20pchW6WhbEdlU56qFsg">20220810 | Cluster API 检索从未如此简单</a></p>
+<p>Clusterpedia 是一个 CNCF 沙箱项目，用于跨集群复杂的资源检索。
+名字源于 Wikipedia，寓意是打造多集群的百科全书，可以与多个集群同步资源，
+并在与 Kubernetes OpenAPI 兼容的基础上，提供更强大的搜索功能，以帮助您快速、简便、有效地获取任何多集群资源。</p>
+</li>
+<li>
+<p><a href="220808-kairship.html">20220808 | <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 多云编排能力介绍</a></p>
+<p>说明 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 多云编排模块提供的能力。</p>
+</li>
+<li>
+<p><a href="220708-mspider.html">20220708 | <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 服务网格能力介绍</a></p>
+<p>说明 <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 服务网格模块提供的能力。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/K2jG64msI4j-mWqPF0qkKg">20220622 | Clusterpedia 作为首个多云检索开源项目正式进入 CNCF 沙箱</a></p>
+<p>2022 年 6 月 15 日，云原生计算基金会 (CNCF) 宣布 Clusterpedia 正式被纳入 CNCF 沙箱（Sandbox）项目。
+Clusterpedia 是由「DaoCloud 道客」于 2021 年年底推出的开源项目，是一个通过加持 kubectl 就能完成多集群资源复杂检索的神器，
+也是目前 CNCF 唯一专注于多云信息检索的项目，正被广泛使用。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/sFjZmvumQNbP6gnlnpglWQ">20220611 | CloudTTY：下一代云原生开源 Cloud Shell</a></p>
+<p>CloudTTY 是一个云原生开源项目， 基于 kubernetes 之上，解决了一系列集群之上的 “网页命令行” 权限控制下的功能需求。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/2ukrV3M6dGdwzRPnigovkw">20220609 | KubeCon EU 热门云原生技术分享 | 精彩看点回顾</a></p>
+<p>在刚刚过去的年度最顶级的云原生旗舰会议 KubeCon + CloudNativeCon Europe 2022 上，
+全球的云原生技术专家、产品或解决方案供应商和使用者，对云原生进行广泛充分地交流和讨论。
+本文从云原生的外部融合、自身演进、内部相关功能特性这三个方面，分享一些大会上热门的云原生开源项目，一起走进云原生。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/3t2FshkQpVHQ44zbBIQDRQ">20220606 | Merbridge CNI 模式</a></p>
+<p>Merbridge CNI 模式的出现，旨在能够更好地适配服务网格的功能。
+之前没有 CNI 模式时，Merbridge 能够做得事情比较有限。
+其中最大的问题是不能适配注入 Istio 的 Sidecar Annotation，这就导致 Merbridge 无法排除某些端口或 IP 段的流量等。
+同时，由于之前 Merbridge 只处理 Pod 内部的连接请求，这就导致，如果是外部发送到 Pod 的流量，Merbridge 将无法处理。</p>
+</li>
+<li>
+<p><a href="221008-dce-bg.html">20220606 | <abbr title="DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台">DCE</abbr> 5.0 研发背景</a></p>
+<p>简述新一代云原生操作系统 DaoCloud Enterprise 5.0 诞生的背景。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/S6CUDwCDZh-I4e5D1SZa4A">20220530 | 云原生布局开始加速，市场前景如何？收好这份指南</a></p>
+<p>本文以 Infographic 模式图解说明了当前快速发展的云原生与云计算浪潮。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/f0oZV5nWfc42b-b0cLkh2g">20220520 | 走进可观测性 | 论道原生</a></p>
+<p>2018 年起可观测性 (Observability) 被引入 IT 领域，CNCF-Landscape 组织创建了 Observability 的分组。
+自此，可观测性逐渐取代传统的系统监控，从被动监控转向主动观测应用关联的各类数据，成为云原生领域的最热门话题之一。</p>
+</li>
+</ul>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>CNCF：全称 Cloud Native Computing Foundation (云原生计算基金会)，隶属于 Linux 基金会，成立于 2015 年 12 月，是非营利性组织，致力于培育和维护一个厂商中立的开源生态系统，来推广云原生技术，普及云原生应用。 <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>云原生全景图：由 CNCF 从 2016 年 12 月开始维护，汇总了社区成熟和使用范围较广、具有最佳实践的产品和方案，并加以分类，为企业构建云原生体系提供参考，在云生态研发、运维领域具有广泛影响力。 <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月8日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 运营管理" class="md-footer__link md-footer__link--prev" href="../download/modules/gmagpie.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                运营管理
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 从社区小白到 CNCF 大使" class="md-footer__link md-footer__link--next" href="241108-cncf-ambassador.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                从社区小白到 CNCF 大使
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../stylesheets/zoom_image.js"></script>
+<script src="../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

@@ -1,0 +1,1747 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/blogs/231213-k8s-1.29.html" rel="canonical"/>
+<link href="231220-spiderpool.html" rel="prev"/>
+<link href="231205-vm-bm-compare.html" rel="next"/>
+<link href="../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>K8s 1.29发布宇宙主题雄心勃勃 - DaoCloud Enterprise</title>
+<link href="../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#kubernetes-129">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              K8s 1.29发布宇宙主题雄心勃勃
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../dce/index.html">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            博客
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="index.html">
+<span class="md-ellipsis">
+    博文索引
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+<span class="md-ellipsis">
+    2024
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="241108-cncf-ambassador.html">
+<span class="md-ellipsis">
+    从社区小白到 CNCF 大使
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="241106-containerd-nerdctl-lima.html">
+<span class="md-ellipsis">
+    containerd 相关项目集中发布新版本
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240816-1.31-image.html">
+<span class="md-ellipsis">
+    K8s 1.31 OCI 工件的只读卷
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="20240619-nvidiaai.html">
+<span class="md-ellipsis">
+    Nvidia 征服最新的 AI 测试
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0606-k8s-birth.html">
+<span class="md-ellipsis">
+    Kubernetes 十周年
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240516-sig-docs.html">
+<span class="md-ellipsis">
+    K8s 从敲代码到抒发文笔
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240509-model-spec.html">
+<span class="md-ellipsis">
+    OpenAI 大语言模型规范
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0429-ai-survey.html">
+<span class="md-ellipsis">
+    全球大规模AI基础设施形势调研
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240416-kubean.html">
+<span class="md-ellipsis">
+    一颗豆荚入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240410-cnai-wp.html">
+<span class="md-ellipsis">
+    云原生人工智能白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240326-kubecon-eu.html">
+<span class="md-ellipsis">
+    巴黎 KubeCon 谁在引领创新
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240301-osc-eco.html">
+<span class="md-ellipsis">
+    创建一个开源商业生态体系
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240203-book.html">
+<span class="md-ellipsis">
+    好书《K8s云原生数据管理》
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240201-ai-compute.html">
+<span class="md-ellipsis">
+    加速计算基本定义及工作原理
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240115-news.html">
+<span class="md-ellipsis">
+    容器化 AI 简化 ML 模型的部署
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240108-kubeedge.html">
+<span class="md-ellipsis">
+    KubeEdge v1.15.0 发布
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+<span class="md-ellipsis">
+    2023
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="231220-spiderpool.html">
+<span class="md-ellipsis">
+    Spiderpool入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    K8s 1.29发布宇宙主题雄心勃勃
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="231213-k8s-1.29.html">
+<span class="md-ellipsis">
+    K8s 1.29发布宇宙主题雄心勃勃
+  </span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      重要功能
+    </span>
+</a>
+<nav aria-label="重要功能" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-3866nftables-kube-proxy-alpha">
+<span class="md-ellipsis">
+      [网络] KEP-3866：nftables 作为 kube-proxy 后端（Alpha）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-2495pvpvc-readwriteoncepod-ga">
+<span class="md-ellipsis">
+      [存储] KEP-2495：PV/PVC ReadWriteOncePod 访问模式（GA）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#auth-kep-3299kms-v2-ga">
+<span class="md-ellipsis">
+      [Auth] KEP-3299：KMS v2 增强（GA）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-753-sidecar-beta">
+<span class="md-ellipsis">
+      [节点] KEP-753： 原生支持 Sidecar 容器 (Beta)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authapps-kep-2799-secret-beta">
+<span class="md-ellipsis">
+      [Auth/Apps] KEP-2799： 减少基于 Secret 的服务账号令牌（Beta）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#windows-kep-1287windows-pod-alpha">
+<span class="md-ellipsis">
+      [Windows] KEP-1287：Windows 支持 Pod 资源原地升级（Alpha）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-1880-service-ip-alpha">
+<span class="md-ellipsis">
+      [网络] KEP-1880：动态扩展 Service 的可用 IP 范围（Alpha）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-3633-matchlabelkeysmismatchlabelkeys-pod-pod-alpha">
+<span class="md-ellipsis">
+      [调度] KEP-3633： 将 MatchLabelKeys/MismatchLabelKeys 引入 Pod 亲和性和 Pod 反亲和性（Alpha）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-4247queueinghint-pod-beta">
+<span class="md-ellipsis">
+      [调度] KEP-4247：QueueingHint 为优化 Pod 调度带来新的可能（Beta）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instrumentation-kep-727kubelet-ga">
+<span class="md-ellipsis">
+      [Instrumentation] KEP-727：Kubelet 资源指标（GA）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instrumentation-kep-3466kubernetes-slisga">
+<span class="md-ellipsis">
+      [Instrumentation] KEP-3466：Kubernetes 组件运行状况 SLIs（GA）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-3107nodeexpandsecret-csi-ga">
+<span class="md-ellipsis">
+      [存储] KEP-3107：NodeExpandSecret 添加到 CSI 持久卷源（GA）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-3751volumeattributesclassalpha">
+<span class="md-ellipsis">
+      [存储] KEP-3751：VolumeAttributesClass（Alpha）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instrumentation-kep-3077kube-scheduler-alpha">
+<span class="md-ellipsis">
+      [Instrumentation] KEP-3077：kube-scheduler 已转换为上下文日志记录（Alpha）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-127-pod-pod-security-standards-alpha">
+<span class="md-ellipsis">
+      [节点] KEP-127：启用 Pod 安全标准（Pod Security Standards）的用户命名空间支持 (Alpha)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-4191kubelet-image-filesystem-alpha">
+<span class="md-ellipsis">
+      [节点] KEP-4191：Kubelet 支持镜像文件系统（Image Filesystem）被分割 (Alpha)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-4210-imagemaximumgcage-alpha">
+<span class="md-ellipsis">
+      [节点] KEP-4210：添加对 ImageMaximumGCAge 字段的支持 (Alpha)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#auth-kep-4193-alpha">
+<span class="md-ellipsis">
+      [Auth] KEP-4193： 绑定服务账号令牌增强 (Alpha)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      其他需要了解的功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#daocloud">
+<span class="md-ellipsis">
+      DaoCloud 社区贡献
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      升级注意事项
+    </span>
+</a>
+<nav aria-label="升级注意事项" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eventedpleg">
+<span class="md-ellipsis">
+      EventedPLEG 存在严重问题
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#in-tree-cloud-providers-beta">
+<span class="md-ellipsis">
+      in-tree cloud providers 的移除升级至 Beta 状态
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kubernetes">
+<span class="md-ellipsis">
+      Kubernetes 旧版软件包仓库已被冻结
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      其他需要注意的变化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      版本标志
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      历史文档
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      参考
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231205-vm-bm-compare.html">
+<span class="md-ellipsis">
+    K8s 裸机 vs 虚机性能对比
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231115-k8s-1.29-changes.html">
+<span class="md-ellipsis">
+    K8s 1.29前瞻：移除、弃用及变更
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231008-kcs.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会回顾
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230911-kubecon-contributor.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会召集令
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230824-tools.html">
+<span class="md-ellipsis">
+    K8s 本地开发工具比较
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230815-k8s1.28.html">
+<span class="md-ellipsis">
+    K8s 1.28 震撼发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230808-k8sgpt.html">
+<span class="md-ellipsis">
+    K8sGPT 赋能 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230615-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索下篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230612-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索上篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230609-istio118.html">
+<span class="md-ellipsis">
+    Istio 1.18 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230605-fedstate.html">
+<span class="md-ellipsis">
+    联邦中间件FedState
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230601-api-server-tracing.html">
+<span class="md-ellipsis">
+    API Server Tracing进阶
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230518-seccom.html">
+<span class="md-ellipsis">
+    边缘场景玩转seccomp
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230515-chaos-mesh.html">
+<span class="md-ellipsis">
+    混沌工程 Chaos Mesh
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230509-k8s-install.html">
+<span class="md-ellipsis">
+    K8s 安装教程(KLTS版)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230508-cilium.html">
+<span class="md-ellipsis">
+    Cilium 实现 socket 加速
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230428-pod-startup.html">
+<span class="md-ellipsis">
+    K8s 1.27 加快 Pod 启动
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230427-victoriametrics.html">
+<span class="md-ellipsis">
+    云原生监控之基础篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230418-karmada-failover.html">
+<span class="md-ellipsis">
+    Karmada Failover 详解
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230417-cncf-platform-wp.html">
+<span class="md-ellipsis">
+    CNCF 平台工程白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230412-k8s-1.27.html">
+<span class="md-ellipsis">
+    K8s 1.27 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230411-spiderpool.html">
+<span class="md-ellipsis">
+    固定应用 IP 的新选择
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230405-step-by-step-dce5.html">
+<span class="md-ellipsis">
+    保姆式安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230317-edge-app-wp.html">
+<span class="md-ellipsis">
+    边缘原生应用准则
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-linux.html">
+<span class="md-ellipsis">
+    Linux 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-macos.html">
+<span class="md-ellipsis">
+    macOS 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230301-kwok.html">
+<span class="md-ellipsis">
+    KWOK 介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-open-projects.html">
+<span class="md-ellipsis">
+    社区版涉及的开源项目
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-daocloud_k8s.html">
+<span class="md-ellipsis">
+    DaoCloud 与 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-peter.html">
+<span class="md-ellipsis">
+    DCE 5.0 攻坚语录集
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-forecast.html">
+<span class="md-ellipsis">
+    2023 年云原生预测
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230110-res-usage.html">
+<span class="md-ellipsis">
+    让闲置算力跑起来
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+<span class="md-ellipsis">
+    2022
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="221209-k8s-1.26.html">
+<span class="md-ellipsis">
+    K8s 1.26 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221116-kcsp.html">
+<span class="md-ellipsis">
+    K8s 资深认证服务商
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221026-kpanda.html">
+<span class="md-ellipsis">
+    容器管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221018-resource.html">
+<span class="md-ellipsis">
+    资源管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220925-amamba.html">
+<span class="md-ellipsis">
+    应用工作台能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220808-kairship.html">
+<span class="md-ellipsis">
+    多云编排能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220708-mspider.html">
+<span class="md-ellipsis">
+    服务网格能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221008-dce-bg.html">
+<span class="md-ellipsis">
+    DCE 开发背景
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      重要功能
+    </span>
+</a>
+<nav aria-label="重要功能" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-3866nftables-kube-proxy-alpha">
+<span class="md-ellipsis">
+      [网络] KEP-3866：nftables 作为 kube-proxy 后端（Alpha）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-2495pvpvc-readwriteoncepod-ga">
+<span class="md-ellipsis">
+      [存储] KEP-2495：PV/PVC ReadWriteOncePod 访问模式（GA）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#auth-kep-3299kms-v2-ga">
+<span class="md-ellipsis">
+      [Auth] KEP-3299：KMS v2 增强（GA）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-753-sidecar-beta">
+<span class="md-ellipsis">
+      [节点] KEP-753： 原生支持 Sidecar 容器 (Beta)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authapps-kep-2799-secret-beta">
+<span class="md-ellipsis">
+      [Auth/Apps] KEP-2799： 减少基于 Secret 的服务账号令牌（Beta）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#windows-kep-1287windows-pod-alpha">
+<span class="md-ellipsis">
+      [Windows] KEP-1287：Windows 支持 Pod 资源原地升级（Alpha）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-1880-service-ip-alpha">
+<span class="md-ellipsis">
+      [网络] KEP-1880：动态扩展 Service 的可用 IP 范围（Alpha）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-3633-matchlabelkeysmismatchlabelkeys-pod-pod-alpha">
+<span class="md-ellipsis">
+      [调度] KEP-3633： 将 MatchLabelKeys/MismatchLabelKeys 引入 Pod 亲和性和 Pod 反亲和性（Alpha）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-4247queueinghint-pod-beta">
+<span class="md-ellipsis">
+      [调度] KEP-4247：QueueingHint 为优化 Pod 调度带来新的可能（Beta）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instrumentation-kep-727kubelet-ga">
+<span class="md-ellipsis">
+      [Instrumentation] KEP-727：Kubelet 资源指标（GA）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instrumentation-kep-3466kubernetes-slisga">
+<span class="md-ellipsis">
+      [Instrumentation] KEP-3466：Kubernetes 组件运行状况 SLIs（GA）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-3107nodeexpandsecret-csi-ga">
+<span class="md-ellipsis">
+      [存储] KEP-3107：NodeExpandSecret 添加到 CSI 持久卷源（GA）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-3751volumeattributesclassalpha">
+<span class="md-ellipsis">
+      [存储] KEP-3751：VolumeAttributesClass（Alpha）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instrumentation-kep-3077kube-scheduler-alpha">
+<span class="md-ellipsis">
+      [Instrumentation] KEP-3077：kube-scheduler 已转换为上下文日志记录（Alpha）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-127-pod-pod-security-standards-alpha">
+<span class="md-ellipsis">
+      [节点] KEP-127：启用 Pod 安全标准（Pod Security Standards）的用户命名空间支持 (Alpha)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-4191kubelet-image-filesystem-alpha">
+<span class="md-ellipsis">
+      [节点] KEP-4191：Kubelet 支持镜像文件系统（Image Filesystem）被分割 (Alpha)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kep-4210-imagemaximumgcage-alpha">
+<span class="md-ellipsis">
+      [节点] KEP-4210：添加对 ImageMaximumGCAge 字段的支持 (Alpha)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#auth-kep-4193-alpha">
+<span class="md-ellipsis">
+      [Auth] KEP-4193： 绑定服务账号令牌增强 (Alpha)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      其他需要了解的功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#daocloud">
+<span class="md-ellipsis">
+      DaoCloud 社区贡献
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      升级注意事项
+    </span>
+</a>
+<nav aria-label="升级注意事项" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eventedpleg">
+<span class="md-ellipsis">
+      EventedPLEG 存在严重问题
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#in-tree-cloud-providers-beta">
+<span class="md-ellipsis">
+      in-tree cloud providers 的移除升级至 Beta 状态
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kubernetes">
+<span class="md-ellipsis">
+      Kubernetes 旧版软件包仓库已被冻结
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      其他需要注意的变化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      版本标志
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      历史文档
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      参考
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/blogs/231213-k8s-1.29.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/blogs/231213-k8s-1.29.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/blogs/231213-k8s-1.29.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="kubernetes-129">Kubernetes 1.29 发布：宇宙主题雄心勃勃<a class="headerlink" href="#kubernetes-129" title="Permanent link">¶</a></h1>
+<blockquote>
+<p>作者：<a href="https://github.com/mengjiao-liu">mengjiao-liu</a></p>
+</blockquote>
+<p>太平洋时间 2023 年 12 月 13 日，主题为 Mandala（宇宙）的 Kubernetes 1.29 正式发布。</p>
+<p>此版本距离上版本发布时隔 4 个月，是 2023 年的第三个版本，也是今年的最后一个版本。</p>
+<p>新版本中 release 团队跟踪了 49 个 enhancements。其中 11 个功能升级为稳定版，19 个已有功能进行优化升级为 Beta，另有多达
+19 个 Alpha 级别的全新功能。1.29 版本包含了很多重要功能以及用户体验优化，本文下一小节将详细介绍部分重要功能。</p>
+<h2 id="_1">重要功能<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h3 id="kep-3866nftables-kube-proxy-alpha">[网络] KEP-3866：nftables 作为 kube-proxy 后端（Alpha）<a class="headerlink" href="#kep-3866nftables-kube-proxy-alpha" title="Permanent link">¶</a></h3>
+<p>在 Kubernetes v1.29 中，Kubernetes 使用 nftables 作为 kube-proxy 新的后端，此功能现在是 Alpha 版本。
+iptables 存在无法修复的性能问题，随着规则集大小的增加，性能损耗不断增加。很大程度上由于其无法修复的问题，
+内核中 iptables 的开发速度已经放缓，并且大部分已经停止。新功能不会添加到 iptables 中，新功能和性能改进主要进入 nftables。
+nftables 能完成 iptables 能做的所有事情，而且做得更好。</p>
+<p>特别是，RedHat 已宣布 iptables 在 RHEL 9 中已弃用，并且可能在几年后的 RHEL 10 中完全删除。Debian 从 Debian 11 (Bullseye)
+中的 <code>required</code> 软件包中删除了 iptables。基于上述原因，kube-proxy 引入 nftables 作为 kube-proxy 新的后端。</p>
+<p>此功能的后续目标是使 nftables 成为 kube-proxy 的默认后端（替代 iptables 和 ipvs）。</p>
+<p>管理员必须启用特征门控 <code>NFTablesProxyMode</code> 才能使该功能可用，然后必须使用 <code>--proxy-mode=nftables</code> 标志运行 kube-proxy。</p>
+<p>需要注意的是，虽然该 <code>nftables</code> 模式可能与 <code>iptables</code> 模式非常相似，但某些 CNI 插件、NetworkPolicy 实现等可能需要更新才能使用它。
+这可能会带来一定的兼容性问题。</p>
+<h3 id="kep-2495pvpvc-readwriteoncepod-ga">[存储] KEP-2495：PV/PVC <code>ReadWriteOncePod</code> 访问模式（GA）<a class="headerlink" href="#kep-2495pvpvc-readwriteoncepod-ga" title="Permanent link">¶</a></h3>
+<p>在 Kubernetes 中，访问模式是定义如何使用持久存储的方式。这些访问模式是持久卷 (PV) 和持久卷声明 (PVC) 规范的一部分。
+<code>ReadWriteOncePod</code> 作为第四种访问模式（之前的三种访问模式：ReadWriteOnce、ReadOnlyMany、ReadWriteMany）在
+Kubernetes v1.22 中作为 Alpha 功能被引入，在 Kubernetes v1.29 中到达 GA。这一功能的主要目的是提供对存储资源的更灵活的访问控制，
+确保只有一个 Pod 能够以读写模式访问该存储。这种限制对于一些特定的应用场景非常有用，例如，确保只有一个 Pod 能够修改存储中的数据，以防止数据冲突或损坏。</p>
+<p>此功能也更新了 Kubernetes 调度程序以支持与 <code>ReadWriteOncePod</code> 存储相关的 pod 抢占。这意味着，如果两个 Pod 使用
+<code>ReadWriteOncePod</code> 请求 <code>PersistentVolumeClaim</code>，则具有最高优先级的 Pod 将获得对 <code>PersistentVolumeClaim</code> 的访问权限，
+而任何具有较低优先级的 pod 将从节点中被抢占，并且无法访问 <code>PersistentVolumeClaim</code>。</p>
+<p>下面的示例是使用 <code>ReadWriteOncePod</code> 访问模式创建一个新的 PVC：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolumeClaim</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">single-writer-only</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="nt">accessModes</span><span class="p">:</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadWriteOncePod</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="nt">requests</span><span class="p">:</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">      </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1Gi</span>
+</code></pre></div>
+<p>通过引入 ReadWriteOncePod 功能，Kubernetes 使得用户能够更好地控制存储资源的访问权限，提高了应用程序在容器化环境中对存储的管理灵活性。</p>
+<h3 id="auth-kep-3299kms-v2-ga">[Auth] KEP-3299：KMS v2 增强（GA）<a class="headerlink" href="#auth-kep-3299kms-v2-ga" title="Permanent link">¶</a></h3>
+<p>保护 Kubernetes 集群时首先要考虑的事情之一是加密静态的 etcd 数据。 KMS 为供应商提供了一个接口，以便利用存储在外部密钥服务中的密钥来执行此加密。</p>
+<p>Kubernetes KMS（Key Management Service）对于 secret 的安全管理和加密至关重要。随着 Kubernetes 1.29 版本的发布，
+具有特性门控 <code>KMSv2</code> 和 <code>KMSv2KDF</code> 的 KMSv2 功能已升级为 GA，<code>KMSv1</code> 特性门控现在默认处于禁用状态。</p>
+<p>这已成为一项稳定的功能，专注于改进 KMS 插件框架，这对于安全管理至关重要。这些改进确保 Kubernetes secret 仍然是存储敏感信息的强大且安全的方法。</p>
+<h3 id="kep-753-sidecar-beta">[节点] KEP-753： 原生支持 Sidecar 容器 (Beta)<a class="headerlink" href="#kep-753-sidecar-beta" title="Permanent link">¶</a></h3>
+<p>原生支持 Sidecar 容器在 Kubernetes v1.28 中被引入作为 Alpha，v1.29 中升级至 Beta，特性门控 <code>SidecarContainers</code> 默认启用。</p>
+<p>从 Kubernetes v1.29 开始，如果你的 Pod 包含一个或多个 sidecar 容器（具有始终重启策略的 init 容器），
+Kubelet 将延迟向这些 Sidecar 容器发送 TERM 信号，直到最后一个主容器完全终止。 Sidecar 容器将以 Pod 规范中定义的相反顺序终止。
+这可确保 Sidecar 容器继续为 Pod 中的其他容器提供服务，直到不再需要它们为止。</p>
+<h3 id="authapps-kep-2799-secret-beta">[Auth/Apps] KEP-2799： 减少基于 Secret 的服务账号令牌（Beta）<a class="headerlink" href="#authapps-kep-2799-secret-beta" title="Permanent link">¶</a></h3>
+<p><code>legacy-service-account-token-cleaner</code> 控制器作为 kube-controller-manager 的一部分运行，
+<code>LegacyServiceAccountTokenCleanUp</code> 特性门控现在可作为 Beta 使用（默认情况下启用）。
+<code>legacy-service-account-token-cleaner</code> 控制器会循环删除在 <code>--legacy-service-account-token-clean-up-period</code>
+指定的时间内未使用的服务账号令牌密钥（默认为一年）。控制器通过向 Secret 添加名为 <code>kubernetes.io/legacy-token-invalid-since</code>
+的标签（以当前日期作为值）来标记 Secret 无效。如果无效的 Secret 在指定时间内没有被使用，控制器将删除它。</p>
+<p>以下是自动生成的旧令牌的示例，该令牌已标记有 <code>kubernetes.io/legacy-token-last-used</code> 和 <code>kubernetes.io/legacy-token-invalid-since</code> 标签：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build-robot-secret</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="nt">kubernetes.io/legacy-token-last-used</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-10-24</span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="nt">kubernetes.io/legacy-token-invalid-since</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-10-25</span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="nt">kubernetes.io/service-account.name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build-robot</span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes.io/service-account-token</span>
+</code></pre></div>
+<h3 id="windows-kep-1287windows-pod-alpha">[Windows] KEP-1287：Windows 支持 Pod 资源原地升级（Alpha）<a class="headerlink" href="#windows-kep-1287windows-pod-alpha" title="Permanent link">¶</a></h3>
+<p>Kubernetes v1.29 中，Windows 支持了 Pod 资源原地升级（In-Place Update）功能，允许在不重新创建 Pod 或重新启动容器的情况下更改资源。</p>
+<h3 id="kep-1880-service-ip-alpha">[网络] KEP-1880：动态扩展 Service 的可用 IP 范围（Alpha）<a class="headerlink" href="#kep-1880-service-ip-alpha" title="Permanent link">¶</a></h3>
+<p>Service 是公开在一组 Pod 上运行的应用程序的抽象方式。Service 可以具有集群范围的虚拟 IP 地址，
+该地址是从 <code>kube-apiserver</code> 标志中设置的预定义 <code>CIDR</code> 分配的。但是，用户可能希望添加、删除或调整为服务分配的现有 IP 范围，
+而无需重新启动 kube-apiserver。</p>
+<p>此功能允许集群管理员使用 <code>ServiceCIDR</code> 对象动态调整分配给集群的服务 IP 范围的大小，以处理 IP 耗尽或 IP 重新编号等问题，</p>
+<p>在安装引导期间，此功能会根据 <code>kube-apiserver</code> 的 <code>--service-cluster-ip-range</code> 命令行参数的值创建一个名为
+<code>kubernetes</code> 的默认 <code>ServiceCIDR</code> 对象。</p>
+<p>如果要使用此功能，用户需要启用 <code>MultiCIDRServiceAllocator</code> 特性门控和 <code>networking.k8s.io/v1alpha1</code> API，
+并且创建或删除新的 <code>ServiceCIDR</code> 对象来管理服务的可用 IP 范围。</p>
+<p>示例如下：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF | kubectl apply -f -</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="s">apiVersion: networking.k8s.io/v1alpha1</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="s">kind: ServiceCIDR</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="s">metadata:</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="s">  name: newservicecidr</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="s">spec:</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="s">  cidrs:</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="s">  - 10.96.0.0/24</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="s">EOF</span>
+</code></pre></div>
+<h3 id="kep-3633-matchlabelkeysmismatchlabelkeys-pod-pod-alpha">[调度] KEP-3633： 将 MatchLabelKeys/MismatchLabelKeys 引入 Pod 亲和性和 Pod 反亲和性（Alpha）<a class="headerlink" href="#kep-3633-matchlabelkeysmismatchlabelkeys-pod-pod-alpha" title="Permanent link">¶</a></h3>
+<p>Kubernetes v1.29 中 PodAffinity/PodAntiAffinity 中将引入一项增强功能作为 Alpha 版本。它将提高滚动更新期间计算的准确性。
+此功能向 <code>PodAffinityTerm</code> 引入一个补充字段 <code>MatchLabelKeys</code>。这使用户能够在现有 <code>LabelSelector</code> 之上精细控制 PodAffinity
+或 PodAntiAffinity 的范围。</p>
+<p><code>MatchLabelKeys/MismatchLabelKey</code> 是一组 Pod 标签键，用于选择要考虑哪些 Pod。key 用于从传入 Pod 标签中查找 value。
+<code>MatchLabelKeys</code> 获得的 Pod key-value 标签与 <code>LabelSelector</code> 合并为 <code>key in (value)</code>，
+<code>MismatchLabelKeys</code> 获得的 Pod key-value 与 <code>LabelSelector</code> 合并为 <code>key notin (value)</code>，
+以选择现有 Pod 组，传入 Pod 时将考虑这些 Pod（反）亲和力。传入 Pod 标签中不存在的键将被忽略。默认值为空。
+禁止在 <code>MatchLabelKeys/MismatchLabelKey</code> 和 <code>LabelSelector</code> 中同时存在相同的键。
+另外，如果未设置 <code>LabelSelector</code>，则无法设置 <code>MatchLabelKeys/MatchLabelKeys</code>。
+这是一个 Alpha 字段，需要启用 <code>MatchLabelKeysInPodAffinity</code> 特性门控。</p>
+<p>设置了 <code>MatchLabelSelector</code> 后，新创建的 Pod 的调度会受到影响。所有现有的 Pod 都不受影响。</p>
+<p>以 <code>matchLabelKeys</code> 为例，存在 key-value 对 app:database 和 存在 pod-template-hash key 以及值也相同的 Pod 会被调度到同一节点。</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">application-server</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="nn">---</span>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="nt">affinity</span><span class="p">:</span>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">  </span><span class="nt">podAffinity</span><span class="p">:</span>
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="nt">requiredDuringSchedulingIgnoredDuringExecution</span><span class="p">:</span>
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">labelSelector</span><span class="p">:</span>
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">          </span><span class="nt">matchExpressions</span><span class="p">:</span>
+<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">              </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span>
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">              </span><span class="nt">values</span><span class="p">:</span>
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database</span>
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">        </span><span class="nt">topologyKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">topology.kubernetes.io/zone</span>
+<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">        </span><span class="nt">matchLabelKeys</span><span class="p">:</span>
+<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-template-hash</span>
+</code></pre></div>
+<h3 id="kep-4247queueinghint-pod-beta">[调度] KEP-4247：QueueingHint 为优化 Pod 调度带来新的可能（Beta）<a class="headerlink" href="#kep-4247queueinghint-pod-beta" title="Permanent link">¶</a></h3>
+<p>对于 Kubernetes 项目来说，调度器的吞吐量多年来一直是一个永恒的挑战，SIG Scheduling 一直在努力通过许多增强来提高调度吞吐量。</p>
+<p>QueueingHint 功能为优化重新排队效率带来了新的可能性，可以显著减少无用的调度重试。</p>
+<p>在 v1.28 中，只有一个 alpha 插件 (DRA) 支持 QueueingHint，
+在 v1.29 中，一些稳定的插件开始实现 QueueingHints。</p>
+<p>QueueingHint 从 v1.28 引入以来就是 Beta 状态，直接跳过 Alpha 阶段，默认启用。
+它不面向用户而是面向开发者，可以使用 <code>SchedulerQueueingHints</code> 特性门控来决定是否禁用它。
+因为 QueueingHint 改变了调度程序的关键路径并增加了一些内存开销，具体取决于集群的繁忙程度。</p>
+<h3 id="instrumentation-kep-727kubelet-ga">[Instrumentation] KEP-727：Kubelet 资源指标（GA）<a class="headerlink" href="#instrumentation-kep-727kubelet-ga" title="Permanent link">¶</a></h3>
+<p>Kubelet 使用 Prometheus 客户端库以 Prometheus 文本展示格式在 <code>/metrics/resource</code> 公开端点。它提供集群级资源指标 API 所需的指标，
+用以替代 Summary API 提供的指标杂且多的问题。</p>
+<p>在 Kubernetes v1.29 中，将以下 kubelet 资源指标升级为 GA：</p>
+<ul>
+<li><code>container_cpu_usage_seconds_total</code></li>
+<li><code>container_memory_working_set_bytes</code></li>
+<li><code>container_start_time_seconds</code></li>
+<li><code>node_cpu_usage_seconds_total</code></li>
+<li><code>node_memory_working_set_bytes</code></li>
+<li><code>pod_cpu_usage_seconds_total</code></li>
+<li><code>pod_memory_working_set_bytes</code></li>
+<li><code>resource_scrape_error</code>
+  弃用（重命名）指标 <code>scrape_error</code>，改为 <code>resource_scrape_error</code></li>
+</ul>
+<h3 id="instrumentation-kep-3466kubernetes-slisga">[Instrumentation] KEP-3466：Kubernetes 组件运行状况 SLIs（GA）<a class="headerlink" href="#instrumentation-kep-3466kubernetes-slisga" title="Permanent link">¶</a></h3>
+<p>由 <code>ComponentSLIs</code> 特性门控控制并在 <code>/metrics/slis</code> 端点提供服务的指标现在是 GA 和无条件启用的。
+特性门控将在 1.31 被移除。</p>
+<p>访问 <code>/metrics/slis</code> 端点返回的数据示例如下：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a># HELP kubernetes_healthcheck [ALPHA] This metric records the result of a single healthcheck.
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a># TYPE kubernetes_healthcheck gauge
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>kubernetes_healthcheck{name="autoregister-completion",type="healthz"} 1
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>kubernetes_healthcheck{name="autoregister-completion",type="readyz"} 1
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>kubernetes_healthcheck{name="etcd",type="healthz"} 1
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>kubernetes_healthcheck{name="etcd",type="readyz"} 1
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a>kubernetes_healthcheck{name="etcd-readiness",type="readyz"} 1
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>kubernetes_healthcheck{name="informer-sync",type="readyz"} 1
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>kubernetes_healthcheck{name="log",type="healthz"} 1
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a>kubernetes_healthcheck{name="log",type="readyz"} 1
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a>kubernetes_healthcheck{name="ping",type="healthz"} 1
+<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a>kubernetes_healthcheck{name="ping",type="readyz"} 1
+<a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a># HELP kubernetes_healthchecks_total [ALPHA] This metric records the results of all healthcheck.
+<a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a># TYPE kubernetes_healthchecks_total counter
+<a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a>kubernetes_healthchecks_total{name="autoregister-completion",status="error",type="readyz"} 1
+<a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a>kubernetes_healthchecks_total{name="autoregister-completion",status="success",type="healthz"} 15
+<a href="#__codelineno-4-17" id="__codelineno-4-17" name="__codelineno-4-17"></a>kubernetes_healthchecks_total{name="autoregister-completion",status="success",type="readyz"} 14
+<a href="#__codelineno-4-18" id="__codelineno-4-18" name="__codelineno-4-18"></a>kubernetes_healthchecks_total{name="etcd",status="success",type="healthz"} 15
+<a href="#__codelineno-4-19" id="__codelineno-4-19" name="__codelineno-4-19"></a>kubernetes_healthchecks_total{name="etcd",status="success",type="readyz"} 15
+<a href="#__codelineno-4-20" id="__codelineno-4-20" name="__codelineno-4-20"></a>kubernetes_healthchecks_total{name="etcd-readiness",status="success",type="readyz"} 15
+<a href="#__codelineno-4-21" id="__codelineno-4-21" name="__codelineno-4-21"></a>kubernetes_healthchecks_total{name="informer-sync",status="error",type="readyz"} 1
+<a href="#__codelineno-4-22" id="__codelineno-4-22" name="__codelineno-4-22"></a>kubernetes_healthchecks_total{name="informer-sync",status="success",type="readyz"} 14
+<a href="#__codelineno-4-23" id="__codelineno-4-23" name="__codelineno-4-23"></a>kubernetes_healthchecks_total{name="log",status="success",type="healthz"} 15
+<a href="#__codelineno-4-24" id="__codelineno-4-24" name="__codelineno-4-24"></a>kubernetes_healthchecks_total{name="log",status="success",type="readyz"} 15
+<a href="#__codelineno-4-25" id="__codelineno-4-25" name="__codelineno-4-25"></a>kubernetes_healthchecks_total{name="ping",status="success",type="healthz"} 15
+<a href="#__codelineno-4-26" id="__codelineno-4-26" name="__codelineno-4-26"></a>kubernetes_healthchecks_total{name="ping",status="success",type="readyz"} 15
+</code></pre></div>
+<h3 id="kep-3107nodeexpandsecret-csi-ga">[存储] KEP-3107：NodeExpandSecret 添加到 CSI 持久卷源（GA）<a class="headerlink" href="#kep-3107nodeexpandsecret-csi-ga" title="Permanent link">¶</a></h3>
+<p>NodeExpandSecret 功能在 v1.29 中移至 GA。此功能将 <code>NodeExpandSecret</code> 添加到 CSI 持久卷源，
+并使 CSI 客户端能够将其作为 <code>NodeExpandVolume</code> 请求的一部分发送到 CSI 驱动程序。</p>
+<h3 id="kep-3751volumeattributesclassalpha">[存储] KEP-3751：VolumeAttributesClass（Alpha）<a class="headerlink" href="#kep-3751volumeattributesclassalpha" title="Permanent link">¶</a></h3>
+<p>VolumeAttributesClass 功能在 v1.29 中引入，现在处于 Alpha 阶段，默认不启用。需要在 kube-apiserver、
+kube-controller-manager、external-provisioner 和 external-resizer 组件都启用 <code>VolumeAttributesClass</code> 特性门控才能使用此功能。</p>
+<p>此功能对 Kubernetes 持久卷 API 进行扩展，以允许用户在配置后更改卷属性（例如 IOPS 或吞吐量）。</p>
+<p>需要注意的是，在 v1.29 中<code>·VolumeAttributesClass</code> 功能可能仅包含 API 更改，其功能尚未实现。
+实现在 <code>external-provisioner</code> 和 <code>external-resizer</code> 中，将在 Kubernetes v1.29 发布后异步发布。</p>
+<p>CSI 对应标准版本为 1.9，各个厂商 CSI 实现的控制器插件, 必须支持 <code>MODIFY_VOLUME</code> 能力。</p>
+<h3 id="instrumentation-kep-3077kube-scheduler-alpha">[Instrumentation] KEP-3077：kube-scheduler 已转换为上下文日志记录（Alpha）<a class="headerlink" href="#instrumentation-kep-3077kube-scheduler-alpha" title="Permanent link">¶</a></h3>
+<p>Kubernetes v1.24 中引入的上下文日志记录功能现已成功迁移到两个组件（kube-scheduler 和 kube-controller-manager）以及一些目录。
+该功能旨在为 Kubernetes 提供更多有用的日志以更好地进行问题追踪、故障排除。目前该功能处于 Alpha 阶段，如需使用请启用 <code>ContextualLogging</code> 特性门控。</p>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="go">I1113 08:43:37.029524 87144 default_binder.go:53] "Attempting to bind pod to node" logger="Bind.DefaultBinder" pod="kube-system/coredns-69cbfb9798-ms4pq" node="127.0.0.1"</span>
+</code></pre></div>
+<h3 id="kep-127-pod-pod-security-standards-alpha">[节点] KEP-127：启用 Pod 安全标准（Pod Security Standards）的用户命名空间支持 (Alpha)<a class="headerlink" href="#kep-127-pod-pod-security-standards-alpha" title="Permanent link">¶</a></h3>
+<p>添加了 <code>UserNamespacesPodSecurityStandards</code> 特性门控，以启用对 Pod 安全标准的用户命名空间支持。
+启用此功能将修改所有 Pod 安全标准规则以允许设置：<code>spec[.*].securityContext.[runAsNonRoot,runAsUser]</code>。
+仅当集群中的所有节点都支持用户命名空间功能并启用它时，才应启用此特性门控。
+在未来的 Kubernetes 版本中，特性门控不会升级或默认启用。</p>
+<h3 id="kep-4191kubelet-image-filesystem-alpha">[节点] KEP-4191：Kubelet 支持镜像文件系统（Image Filesystem）被分割 (Alpha)<a class="headerlink" href="#kep-4191kubelet-image-filesystem-alpha" title="Permanent link">¶</a></h3>
+<p>Kubelet 支持镜像文件系统（Image Filesystem）被分割在 v1.29 中被引入作为 Alpha，由 特性门控 <code>KubeletSeparateDiskGC</code> 控制是否启用，默认不启用。
+Kubelet 可以支持将 ImageFilesystem 分为可写层和只读层，可写层与 Kubelet 位于同一磁盘上，镜像可以位于单独的文件系统上。</p>
+<h3 id="kep-4210-imagemaximumgcage-alpha">[节点] KEP-4210：添加对 ImageMaximumGCAge 字段的支持 (Alpha)<a class="headerlink" href="#kep-4210-imagemaximumgcage-alpha" title="Permanent link">¶</a></h3>
+<p>将 <code>ImageMaximumGCAge</code> 字段添加到 Kubelet 配置中，该字段允许用户设置镜像在被垃圾收集之前未使用的最长期限。
+该字段由特性门控 <code>ImageMaximumGCAge</code> 控制，当前为 Alpha，默认不启用。</p>
+<h3 id="auth-kep-4193-alpha">[Auth] KEP-4193： 绑定服务账号令牌增强 (Alpha)<a class="headerlink" href="#auth-kep-4193-alpha" title="Permanent link">¶</a></h3>
+<p>Kubernetes v1.29 新增了 4 个特性门控来增强绑定服务账号令牌。
+kube-apiserver 现在通过 <code>ServiceAccountTokenJTI</code> 特性门控添加了对 Alpha 版本的支持，
+以在其发放的服务账户令牌中添加 <code>jti</code>（JWT ID）声明。此外，在令牌发放时，还会在审计日志中添加
+<code>authentication.kubernetes.io/credential-id</code> 审计注释，并在使用令牌进行身份验证时，
+在额外的用户信息中添加 <code>authentication.kubernetes.io/credential-id</code> 条目。</p>
+<p>kube-apiserver 现在通过 <code>ServiceAccountTokenPodNodeInfo</code> 特性门控添加了对 Alpha 版本的支持,
+以在服务账户令牌中添加节点名称（以及节点存在时的 UID）作为额外声明。这些令牌与 Pod 绑定，并在使用令牌进行身份验证时，
+还会提供 <code>authentication.kubernetes.io/node-name</code> 和 <code>authentication.kubernetes.io/node-uid</code> 作为额外的用户信息。</p>
+<p>kube-apiserver 现在通过 <code>ServiceAccountTokenNodeBinding</code> 特性门控添加了对 Alpha 版本的支持，以允许 <code>TokenRequests</code> 直接将令牌绑定到节点，
+并在使用令牌时进行验证（通过 <code>ServiceAccountTokenNodeBindingValidation</code> 特性门控），以确保节点名称和 UID 仍然存在。</p>
+<h2 id="_2">其他需要了解的功能<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<ul>
+<li>[Node] 添加对 containerd/kubelet/CRI 的支持以支持每个运行时类的镜像拉取，在 v1.29 中，此功能为 Alpha，需要启用 <code>RuntimeClassInImageCriApi</code> 特性门控，默认关闭。</li>
+<li>[APIMachinery] 已弃用 kube-apiserver 中的 <code>--cloud-provider</code> 和 <code>--cloud-config</code> CLI 参数。这些参数将在未来版本中删除。</li>
+<li>[Auth] 结构化授权配置（Structured Authorization Configuration）在 v1.29 中进入 Alpha。增加了 structure configuring authorizers 并向 kube-apiserver 授权链添加多个 webhook 的能力。</li>
+<li>[APIMachinery] Structured Authentication Config 在 v1.29 中为 Alpha。在 kube-apiserver 添加了 <code>--authentication-config</code> 标志用于读取 <code>AuthenticationConfiguration</code> 文件。 <code>--authentication-config</code>标志与现有的 <code>--oidc-*</code> 标志互斥。</li>
+<li>[Auth] 添加了对将 <code>certificates.k8s.io/v1alpha1</code> <code>ClusterTrustBundle</code> 对象投影到 Pod 中的支持。</li>
+<li>[APIMachinery] CRD 基于通用表达式语言 (CEL) 的验证规则 GA。</li>
+<li>[APIMachinery] CRD Validation Ratcheting 进入 Alpha2。</li>
+<li>[Apps] Job API Pod 替换策略支持 Beta，添加 <code>job_pods_creation_total</code> 指标，用于跟踪由触发 Pod 创建的事件标记的作业控制器创建的 Pod。</li>
+<li>[节点] <code>DevicePluginCDIDevice</code>s 功能已升级至 Beta 并在 Kubelet 中默认启用。</li>
+<li>[Apps] KEP-3850: 每个索引的 Job 重试 BackOff 限制已升级至 Beta，并引入 <code>job_finished_indexes_total</code> 指标。</li>
+<li>[网络] <code>ServiceNodePortStaticSubrange</code> 特性已升级至 GA。它允许你为 NodePort 服务使用不同的端口分配策略。</li>
+<li>[网络] 将 PodHostIPs 条件提升为 Beta。该功能旨在提高 Pod 获取节点地址的能力。</li>
+<li>[APIMachinery] 优先级和公平性功能在 v1.29 中达到 GA，<code>APIPriorityAndFairness</code> 特性门控 将在 v1.31 中删除。</li>
+<li>[节点] 为 PreStop 生命周期 hook 添加新的睡眠操作功能在 v1.29 中被引入，现在为 Alpha，需要在 kubelet 和 kube-apiserver 组件启用 <code>PodLifecycleSleepAction</code> 特性门控，默认关闭。</li>
+<li>[CLI]添加了将 Kubernetes 客户端的双向流协议从 SPDY/3.1 过渡到 WebSockets 的新功能，添加新的 Alpha <code>TranslateStreamCloseWebsocketRequests</code> 特性门控，允许控制平面接受 WebSockets/V5 升级请求。
+  添加新的 Alpha kubectl 环境变量 <code>KUBECTL_REMOTE_COMMAND_WEBSOCKETS</code>，该标志在设置时尝试将 WebSockets 协议用于 <code>kubectl exec</code>、<code>kubectl cp</code> 和 <code>kubectl attach</code>。</li>
+<li>[存储] 持久卷 status 包含 <code>lastPhaseTransitionTime</code> 字段，该字段保存卷上次转换其阶段的时间戳。功能 <code>PersistentVolumeLastPhaseTransitionTime</code> 在 v1.29 升级至 Beta。</li>
+<li>[APIMachinery] 支持 API 分页 LIST 查询 GA。</li>
+<li>[节点] 在 Kubernetes v1.29 中，<code>PodReadyToStartContainers</code> 升级为 Beta，默认可用。kubelet 在 Pod 的整个生命周期中管理 Pod <code>condition</code> 字段中该条件的值。
+  kubelet 将使用 <code>PodReadyToStartContainers</code> 条件从容器运行时创建 Pod sandbox 和网络配置的角度准确地呈现 Pod 的初始化状态。</li>
+<li>[CLI] 如果子命令不存在，外部插件可以用作内置命令的子命令。此功能处于 Beta 阶段。默认情况下，将 KUBECTL_ENABLE_CMD_SHADOW 环境变量设置为 true。</li>
+<li>[CLI] kubectl delete 命令中的交互式标志（--interactive/-i），默认可用。<code>KUBECTL_INTERACTIVE_DELETE</code> 环境变量已删除。</li>
+<li>[网络] 让 Kubernetes 了解 LoadBalancer 的行为，此功能在 Service 的 <code>.status</code> 中添加了新的 <code>ipMode</code> 字段，其中 <code>type</code> 设置为 <code>LoadBalancer</code>。
+  使用新字段需要启用 <code>LoadBalancerIPMode</code> 特性门控，现在处于 Alpha 阶段，默认是关闭的。</li>
+<li>[Apps] 将 TaintManager 与 NodeLifecycleController 解耦，以增强关注点分离和可维护性。此功能被标记为 Bata 版，但实际上是一个全新的变化（它跳过 Alpha 版本）。
+  它将 <code>TaintManager</code> 与 <code>NodeLifecycleController</code> 解耦，<code>TaintManager</code> 执行基于污点的 Pod 驱逐，并使它们成为两个独立的控制器：
+  <code>NodeLifecycleController</code> 用于向不健康的节点添加污点，<code>TaintManager</code> 用于对受到 NoExecute 效果污染的节点执行 Pod 删除。</li>
+</ul>
+<h2 id="daocloud">DaoCloud 社区贡献<a class="headerlink" href="#daocloud" title="Permanent link">¶</a></h2>
+<p>本次发布中， DaoCloud 重点贡献了 sig-node，sig-scheduling, sig-storage，sig-instrumentation，sig-network 和 kubeadm 相关内容，具体功能点如下：</p>
+<ul>
+<li>[节点] 修复了 sysctl 进行 Pod 规范验证问题：<code>hostNetwork</code> 的 Pod 禁止配置网络命名空间的 sysctl，<code>hostIPC</code> 的 Pod 禁止配置 <code>IPC</code> 命名空间的 sysctl</li>
+<li>[调度] kube-scheduler <code>selectedSpread</code> 插件已被删除，请改用 <code>podTopologySpread</code> 插件。</li>
+<li>[调度] 修复了运行 score 插件时调度程序框架中自 v1.27.0 以来的回归问题。<code>SkippedScorePlugins</code> 数量可能大于 <code>enabledScorePlugins</code>，
+  因此在初始化切片时 <code>cap(len(enabledScorePlugins) - len(skippedScorePlugins))</code> 的值可能是负的，这是不允许的。</li>
+<li>[调度] 向 <code>QueueingHint</code> 添加了返回值以指示错误。如果 <code>QueueingHint</code> 返回错误，调度程序会记录该错误并将该事件视为
+  <code>QueueAfterBackoff</code>，以便 Pod 不会卡在不可调度的 Pod 池中。</li>
+<li>[调度] 在 kube-scheduler 实现 NodeAffinity 插件的调度 hints。</li>
+<li>[存储] 参与设计 <code>VolumeAttributesClass</code> API。</li>
+<li>[Instrumentation] 将 kube-scheduler 完全转化为上下文日志记录。</li>
+<li>[网络] 将 PodHostIPs 条件提升为 Beta。</li>
+<li>[Kubeadm] 允许部署比 kubeadm 版本早 3 个版本的 kubelet (N-3)。这与 SIG Architecture 最近所做的更改相一致，该更改扩展了控制平面和 kubelet 之间的支持偏差。</li>
+<li>[Kubeadm] 修复 <code>clusterrole</code> 的无效命名空间字段。</li>
+<li>[测试] 更新测试框架方法以及添加测试增加测试覆盖率。</li>
+</ul>
+<p>在 v1.29 发布过程中，DaoCloud 参与一百多个问题修复和功能研发，作为作者约有 111 个提交，详情请见<a href="https://www.stackalytics.io/cncf?project_type=cncf-group&amp;release=all&amp;metric=commits&amp;module=github.com/kubernetes/kubernetes&amp;date=120">贡献列表</a>（该版本的两百多位贡献者中有来自 DaoCloud 的 17 位）。
+在 Kubernetes v1.29 的发布周期中，DaoCloud 的多名研发工程师取得了不少成就。其中，Paco 做为首位入选 Kubernetes 指导委员会(Steering Committee)的中国人；
+蔡威成为 CNCF Fall 2023 云原生全球大使，并且是 KCD 深圳站 2023 的组织者和主持人；刘梦姣成为 WG Structured Logging Lead，并且成为 Kubernetes/klog Reviewer；
+郭奇峰成为 Calico Big Cat 大使。</p>
+<h2 id="_3">升级注意事项<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h3 id="eventedpleg">EventedPLEG 存在严重问题<a class="headerlink" href="#eventedpleg" title="Permanent link">¶</a></h3>
+<p><code>EventedPLEG</code> 功能（ 使用事件驱动的 PLEG）在 Kubernetes v1.27 中已经升级为 Beta，但是默认不开启。在 v1.29 测试中发现了严重问题，建议不要启用它！社区正在进行调查和修复，但尚未找到具体原因。</p>
+<h3 id="in-tree-cloud-providers-beta">in-tree cloud providers 的移除升级至 Beta 状态<a class="headerlink" href="#in-tree-cloud-providers-beta" title="Permanent link">¶</a></h3>
+<p>in-tree cloud providers 的移除在 Kubernetes v1.29 状态升级为 Beta，用户需要注意特性门控
+<code>DisableCloudProviders</code> 和 <code>DisableKubeletCloudCredentialProvider</code> 现在默认为 true，
+这意味着在默认运行时不与任何云提供商（比如 Azure， GCE，vSphere）任何进行内置集成。如果你仍然需要此功能，
+请设置 <code>DisableCloudProviders</code> 和 <code>DisableKubeletCloudCredentialProvider</code> 特性门控为 false 或者使用外部云控制管理器。</p>
+<p>有关如何启用和运行外部云控制器管理器的更多信息，请阅读<a href="https://kubernetes.io/zh-cn/docs/tasks/administer-cluster/running-cloud-controller/">云控制器管理器管理</a>。</p>
+<p>如果你需要为旧的 in-tree cloud providers 提供云控制器管理器，请参阅以下链接：</p>
+<ul>
+<li><a href="https://github.com/kubernetes/cloud-provider-aws">Cloud provider AWS</a></li>
+<li><a href="https://github.com/kubernetes-sigs/cloud-provider-azure">Cloud provider Azure</a></li>
+<li><a href="https://github.com/kubernetes/cloud-provider-gcp">Cloud provider GCE</a></li>
+<li><a href="https://github.com/kubernetes/cloud-provider-openstack">Cloud provider OpenStack</a></li>
+<li><a href="https://github.com/kubernetes/cloud-provider-vsphere">Cloud provider vSphere</a></li>
+</ul>
+<h3 id="kubernetes">Kubernetes 旧版软件包仓库已被冻结<a class="headerlink" href="#kubernetes" title="Permanent link">¶</a></h3>
+<p>Kubernetes 旧版软件包仓库（apt.kubernetes.io 和 yum.kubernetes.io）已于 2023 年 9 月 13 日被冻结，Kubernetes v1.29 及以后的版本将仅发布软件包到社区拥有的仓库（pkgs.k8s.io）。
+已弃用的旧仓库及其内容预计将于 2024 年 1 月删除。Kubernetes 项目强烈建议尽快迁移到新的社区拥有的仓库!</p>
+<p>更多详情以及如何迁移请参考<a href="https://kubernetes.io/zh-cn/blog/2023/08/31/legacy-package-repository-deprecation/">Kubernetes 旧版软件包仓库将于 2023 年 9 月 13 日被冻结博客</a></p>
+<h3 id="_4">其他需要注意的变化<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<ul>
+<li>删除网络 <code>ClusterCIDR</code> Alpha API, SIG 对此功能存在合理性怀疑，经过几个月的社区讨论，删除仍在 Alpha 中的现有代码。</li>
+<li>弃用 Node 的 <code>status.nodeInfo.kubeProxyVersion</code> 字段，该字段不准确，它是由 kubelet 设置的，kubelet 实际上并不知道 kube-proxy 版本，或者 kube-proxy 是否正在运行。</li>
+<li>弃用 <code>FlowSchema</code> 和 <code>PriorityLevelConfiguration</code> 的 <code>flowcontrol.apiserver.k8s.io/v1beta2</code> API version，
+  并且 <code>flowcontrol.apiserver.k8s.io/v1beta3</code>已升级为 <code>flowcontrol.apiserver.k8s.io/v1</code>。如果你的清单或客户端软件使用已弃用的 Beta API 组， 则应升级到 v1.29 之前更改这些。</li>
+</ul>
+<h2 id="_5">版本标志<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<p>本次发布的主题是：<strong>Mandala（曼陀罗，宇宙）</strong> ✨</p>
+<p><img alt="logo" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/kubernetes-1.29.png"/></p>
+<p>与我们一起踏上 Kubernetes v1.29 的宇宙之旅！</p>
+<p>这个版本的灵感来自于曼陀罗（Mandala）这一美丽的艺术形式——它是宇宙完美表达的象征。此次发布社区大约有 40 名发布团队成员，得到数百名社区贡献者的支持，他们辛勤工作，将挑战转化为全球数百万人的喜悦。
+曼陀罗主题反映了社区的相互关联，充满活力。每位贡献者都是一个至关重要的部分，他们像曼陀罗艺术中的多样图案一样，为其中添加了独特的能量。Kubernetes 在协作中茁壮成长，回应着曼陀罗创作中的和谐。</p>
+<p>发布标志由 <a href="https://janusworx.com">Mario Jason Braganza</a> 制作（基于曼陀罗艺术，感谢 <a href="https://pixabay.com/users/fibrel-3502541/">Fibrel Ojalá</a>），
+象征着 Kubernetes 项目及其所有成员的小宇宙。</p>
+<p>秉持曼陀罗变革象征的精神，Kubernetes v1.29 庆祝着我们项目的演变。就像 Kubernetes 宇宙中的星星一样，每个贡献者、用户和支持者都为之照亮道路。我们共同创造了一个可能性的世界。</p>
+<h2 id="_6">历史文档<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/Dr_JpSD9tzfahslZO2bX5A">Kubernetes 1.28 震撼发布，Sidecar Containers 迎面而来</a></li>
+<li><a href="https://mp.weixin.qq.com/s/maDEiCGzOPSDkH9dUxIxdA">近两年功能增加最多！Kubernetes 1.27 正式发布</a></li>
+<li><a href="https://mp.weixin.qq.com/s/qwzmeIM4INz-_BK_gbwOxw">Kubernetes 正式发布 v1.26，稳定性显著提升</a></li>
+<li><a href="https://mp.weixin.qq.com/s/aRmLBYpk0MhLJAwY85DyuA">Kubernetes 1.25 正式发布，多方面重大突破</a></li>
+<li><a href="https://mp.weixin.qq.com/s/vqH8ueaZeEeZbx_axNVSjg">Kubernetes 1.24 走向成熟的 Kubernetes</a></li>
+<li><a href="https://mp.weixin.qq.com/s/A5GBv5Yn6tQK_r6_FSyp9A">Kubernetes 1.23 正式发布，有哪些增强？</a></li>
+<li><a href="https://mp.weixin.qq.com/s/9nH2UagDm6TkGhEyoYPgpQ">Kubernetes 1.22 颠覆你的想象：可启用 Swap，推出 PSP 替换方案，还有……</a></li>
+<li><a href="https://mp.weixin.qq.com/s/amGjvytJatO-5a7Nz4BYPw">Kubernetes 1.21 震撼发布 | PSP 将被废除，BareMetal 得到增强</a></li>
+</ul>
+<h2 id="_7">参考<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<ol>
+<li>Kubernetes 增强特性 <a href="https://kep.k8s.io/">https://kep.k8s.io/</a></li>
+<li>Kubernetes 1.29 发布团队 <a href="https://github.com/kubernetes/sig-release/blob/master/releases/release-1.29">https://github.com/kubernetes/sig-release/blob/master/releases/release-1.29</a></li>
+<li>Kubernetes 1.29 变更日志 <a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.29.md">https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.29.md</a></li>
+<li>Kubernetes 1.29 主题讨论 <a href="https://github.com/kubernetes/sig-release/discussions/2349">https://github.com/kubernetes/sig-release/discussions/2349</a></li>
+</ol>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年1月29日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: Spiderpool入选CNCF Sandbox" class="md-footer__link md-footer__link--prev" href="231220-spiderpool.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                Spiderpool入选CNCF Sandbox
+              </div>
+</div>
+</a>
+<a aria-label="下一页: K8s 裸机 vs 虚机性能对比" class="md-footer__link md-footer__link--next" href="231205-vm-bm-compare.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                K8s 裸机 vs 虚机性能对比
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../stylesheets/zoom_image.js"></script>
+<script src="../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

@@ -1,0 +1,1447 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/blogs/230615-ray.html" rel="canonical"/>
+<link href="230808-k8sgpt.html" rel="prev"/>
+<link href="230612-ray.html" rel="next"/>
+<link href="../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>AIGC 利器 Ray 探索下篇 - DaoCloud Enterprise</title>
+<link href="../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#aigc-ray-ray-core">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              AIGC 利器 Ray 探索下篇
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../dce/index.html">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            博客
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="index.html">
+<span class="md-ellipsis">
+    博文索引
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+<span class="md-ellipsis">
+    2024
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="241108-cncf-ambassador.html">
+<span class="md-ellipsis">
+    从社区小白到 CNCF 大使
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="241106-containerd-nerdctl-lima.html">
+<span class="md-ellipsis">
+    containerd 相关项目集中发布新版本
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240816-1.31-image.html">
+<span class="md-ellipsis">
+    K8s 1.31 OCI 工件的只读卷
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="20240619-nvidiaai.html">
+<span class="md-ellipsis">
+    Nvidia 征服最新的 AI 测试
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0606-k8s-birth.html">
+<span class="md-ellipsis">
+    Kubernetes 十周年
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240516-sig-docs.html">
+<span class="md-ellipsis">
+    K8s 从敲代码到抒发文笔
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240509-model-spec.html">
+<span class="md-ellipsis">
+    OpenAI 大语言模型规范
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0429-ai-survey.html">
+<span class="md-ellipsis">
+    全球大规模AI基础设施形势调研
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240416-kubean.html">
+<span class="md-ellipsis">
+    一颗豆荚入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240410-cnai-wp.html">
+<span class="md-ellipsis">
+    云原生人工智能白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240326-kubecon-eu.html">
+<span class="md-ellipsis">
+    巴黎 KubeCon 谁在引领创新
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240301-osc-eco.html">
+<span class="md-ellipsis">
+    创建一个开源商业生态体系
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240203-book.html">
+<span class="md-ellipsis">
+    好书《K8s云原生数据管理》
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240201-ai-compute.html">
+<span class="md-ellipsis">
+    加速计算基本定义及工作原理
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240115-news.html">
+<span class="md-ellipsis">
+    容器化 AI 简化 ML 模型的部署
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240108-kubeedge.html">
+<span class="md-ellipsis">
+    KubeEdge v1.15.0 发布
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+<span class="md-ellipsis">
+    2023
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="231220-spiderpool.html">
+<span class="md-ellipsis">
+    Spiderpool入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231213-k8s-1.29.html">
+<span class="md-ellipsis">
+    K8s 1.29发布宇宙主题雄心勃勃
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231205-vm-bm-compare.html">
+<span class="md-ellipsis">
+    K8s 裸机 vs 虚机性能对比
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231115-k8s-1.29-changes.html">
+<span class="md-ellipsis">
+    K8s 1.29前瞻：移除、弃用及变更
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231008-kcs.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会回顾
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230911-kubecon-contributor.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会召集令
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230824-tools.html">
+<span class="md-ellipsis">
+    K8s 本地开发工具比较
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230815-k8s1.28.html">
+<span class="md-ellipsis">
+    K8s 1.28 震撼发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230808-k8sgpt.html">
+<span class="md-ellipsis">
+    K8sGPT 赋能 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索下篇
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="230615-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索下篇
+  </span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      调度能力
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      运行时环境
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      日志能力
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metrics">
+<span class="md-ellipsis">
+      Metrics 能力
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gpu">
+<span class="md-ellipsis">
+      GPU 能力
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autoscaler">
+<span class="md-ellipsis">
+      Autoscaler 能力
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      实践
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      总结
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230612-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索上篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230609-istio118.html">
+<span class="md-ellipsis">
+    Istio 1.18 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230605-fedstate.html">
+<span class="md-ellipsis">
+    联邦中间件FedState
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230601-api-server-tracing.html">
+<span class="md-ellipsis">
+    API Server Tracing进阶
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230518-seccom.html">
+<span class="md-ellipsis">
+    边缘场景玩转seccomp
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230515-chaos-mesh.html">
+<span class="md-ellipsis">
+    混沌工程 Chaos Mesh
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230509-k8s-install.html">
+<span class="md-ellipsis">
+    K8s 安装教程(KLTS版)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230508-cilium.html">
+<span class="md-ellipsis">
+    Cilium 实现 socket 加速
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230428-pod-startup.html">
+<span class="md-ellipsis">
+    K8s 1.27 加快 Pod 启动
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230427-victoriametrics.html">
+<span class="md-ellipsis">
+    云原生监控之基础篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230418-karmada-failover.html">
+<span class="md-ellipsis">
+    Karmada Failover 详解
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230417-cncf-platform-wp.html">
+<span class="md-ellipsis">
+    CNCF 平台工程白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230412-k8s-1.27.html">
+<span class="md-ellipsis">
+    K8s 1.27 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230411-spiderpool.html">
+<span class="md-ellipsis">
+    固定应用 IP 的新选择
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230405-step-by-step-dce5.html">
+<span class="md-ellipsis">
+    保姆式安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230317-edge-app-wp.html">
+<span class="md-ellipsis">
+    边缘原生应用准则
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-linux.html">
+<span class="md-ellipsis">
+    Linux 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-macos.html">
+<span class="md-ellipsis">
+    macOS 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230301-kwok.html">
+<span class="md-ellipsis">
+    KWOK 介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-open-projects.html">
+<span class="md-ellipsis">
+    社区版涉及的开源项目
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-daocloud_k8s.html">
+<span class="md-ellipsis">
+    DaoCloud 与 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-peter.html">
+<span class="md-ellipsis">
+    DCE 5.0 攻坚语录集
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-forecast.html">
+<span class="md-ellipsis">
+    2023 年云原生预测
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230110-res-usage.html">
+<span class="md-ellipsis">
+    让闲置算力跑起来
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+<span class="md-ellipsis">
+    2022
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="221209-k8s-1.26.html">
+<span class="md-ellipsis">
+    K8s 1.26 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221116-kcsp.html">
+<span class="md-ellipsis">
+    K8s 资深认证服务商
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221026-kpanda.html">
+<span class="md-ellipsis">
+    容器管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221018-resource.html">
+<span class="md-ellipsis">
+    资源管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220925-amamba.html">
+<span class="md-ellipsis">
+    应用工作台能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220808-kairship.html">
+<span class="md-ellipsis">
+    多云编排能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220708-mspider.html">
+<span class="md-ellipsis">
+    服务网格能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221008-dce-bg.html">
+<span class="md-ellipsis">
+    DCE 开发背景
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      调度能力
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      运行时环境
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      日志能力
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metrics">
+<span class="md-ellipsis">
+      Metrics 能力
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gpu">
+<span class="md-ellipsis">
+      GPU 能力
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autoscaler">
+<span class="md-ellipsis">
+      Autoscaler 能力
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      实践
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      总结
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/blogs/230615-ray.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/blogs/230615-ray.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/blogs/230615-ray.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="aigc-ray-ray-core">AIGC 利器 Ray 云原生探索之路--Ray Core 篇 (下)<a class="headerlink" href="#aigc-ray-ray-core" title="Permanent link">¶</a></h1>
+<p><img alt="cover" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-01.png"/></p>
+<p>在上一篇《<a href="230612-ray.html">AIGC 利器 Ray 云原生探索之路--Ray Core 篇 (上)</a>》中，已经基本介绍了 Ray Core 的一些架构、关键概念等，在这里继续补充剩余的一些部分，并结合一些实践的操作，来帮助理解。</p>
+<h2 id="_1">调度能力<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p><img alt="scheduling" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-02.png"/></p>
+<p>当资源请求 (i.e RequestWorkerLease PRC) 被 raylet 接受之后, 整个过程就如上图的状态机一样，主要包含三个状态:</p>
+<ul>
+<li>
+<p>Granted: 在这个状态下，client 是可以使用申请的资源和 raylet 返回来的对应的 worker 去运行 actor 和 task 的。</p>
+</li>
+<li>
+<p>Reschedule: 如果有比本地节点更合适的节点的时候，就需要重新调度到别的节点，这个过程就是重新调度的过程。
+  在这个过程中，本地节点是可以从集群视角去看到集群全部节点的资源使用情况。</p>
+</li>
+<li>
+<p>Canceled: 当申请的资源无法被满足的时候，就会取消本地的调度。比如一个 client 请求了一个特定的机器，但是这个机器挂了。
+  再比如，给 task 请求分配的运行环境不能正常的创建出来，就会导致 raylet 不能启动 worker 去运行 task，这个时候调度的请求也会被取消。</p>
+</li>
+</ul>
+<p>调度策略主要包含：</p>
+<ul>
+<li>
+<p>Hybrid Policy：如果不指定特定的调度策略，这个就是一种默认的调度策略。该策略首先是尝试将 task 放在自己本地来运行，
+  但是当本地节点的资源使用量超过了配置的阈值（默认为 50%），就将 task 分配到其它的机器上，这个分配机器的过程是按照机器的 ID 进行排序
+  （保证每次都按照相同顺序来），这里有第一远程节点、第二远程节点等等，依此类推，直到所有节点上的关键资源利用率都超过阈值。
+  它将选择资源利用率最低的节点。该策略是在 bin-packing 和 load-balancing 之间进行平衡。
+  bin-packing 的场景就是先紧着第一台机器，等第一台机器实在不行了，再到第二台，这种会造成大部分有 task 的机器的负载都很高，
+  会导致一些不确定的问题，机器的负载高了，什么问题都可能发生。load-balancing 就是下面介绍的 spread 的方式，简单理解就是，
+  有 task 大家一起均摊来运行，这种会有资源碎片化的问题。</p>
+</li>
+<li>
+<p>Spread Policy：该策略使用轮询的方式，在具有可用资源的节点之间分配 task，这样可以保证所有的 task 在整个集群中比较均衡地分布，
+  不至于某一些机器的负载很高，其它的机器又很空闲。但这种调度的问题是，可能会导致资源碎片化。</p>
+</li>
+<li>
+<p>Node Affinity Policy：使用此策略，用户可以明确指定 task 或 actor 应运行的目标节点。如果目标节点处于活动状态，
+  则任务或参与者只会在那里运行。如果目标节点已挂了，则取决于亲和力是否是软限制，task 或 actor 可能会被安排到其他节点或无法被安排。</p>
+</li>
+<li>
+<p>Data Locality Policy：简单理解就是，task 可能依赖很多参数对象，task 依赖的参数对象分布在哪个节点多，就调度到哪个节点去，
+  这样就不需要将依赖的参数对象搬来搬去了。就是所谓的，数据本地化策略。</p>
+</li>
+<li>
+<p>Placement Group Policy：task 和 actor 将在 placement group 所在的位置运行。</p>
+</li>
+</ul>
+<h2 id="_2">运行时环境<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p><img alt="cri" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-03.png"/></p>
+<p>运行时环境 (Runtime Env)，定义了 python 脚本运行所需要的依赖，包括文件包，还有环境变量等，它是在运行时动态的被安装的，
+可以提供给一个 Ray 的 job，或者 actors，或者 tasks 去运行。</p>
+<p>运行时环境的安装和删除是通过运行在每一个 node 上的 RuntimeEnvAgent gRPC server 服务来完成的。
+在调度 tasks 和 actors 的时候，RuntimeEnvAgent 组件也是一个关键的组件。</p>
+<p>当一个 actor 或者 task 需要运行时环境的时候，raylet 会发送一个 gRPC 请求到 RuntimeEnvAgent 去创建运行时环境，如果不存在就创建。
+当创建一个环境的时候会涉及到以下的一些工作：通过 pip install 去下载和安装包；为 worker process 设置环境变量；
+在启动一个 worker process 之前，先调用 conda activate；从远程的云存储中下载文件等。</p>
+<p>运行时环境中的一些资源，如下载的文件、被安装的 conda 环境，这些会被缓存在每一个 node 上，
+这样在不同的 jobs、actors、tasks 之间可以共享这些资源。只有当缓存的大小超过一定的大小，
+那些当前没有被任何 jobs、actors、tasks 使用的资源就可以从缓存中删除。</p>
+<p>可以在程序中指定，也可以在提交 job 的时候，设置 Runtime Env。同时也支持为 actor 或者 task 指定特定的 runtime env。</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="err">#</span><span class="w"> </span><span class="nx">Option</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="nx">Starting</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">single</span><span class="o">-</span><span class="nx">node</span><span class="w"> </span><span class="nx">local</span><span class="w"> </span><span class="nx">Ray</span><span class="w"> </span><span class="nx">cluster</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">connecting</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">existing</span><span class="w"> </span><span class="nx">local</span><span class="w"> </span><span class="nx">cluster</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nx">ray</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">runtime_env</span><span class="p">=</span><span class="nx">runtime_env</span><span class="p">)</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="err">#</span><span class="w"> </span><span class="nx">Option</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="nx">Using</span><span class="w"> </span><span class="nx">Ray</span><span class="w"> </span><span class="nx">Jobs</span><span class="w"> </span><span class="nx">API</span><span class="w"> </span><span class="p">(</span><span class="nx">Python</span><span class="w"> </span><span class="nx">SDK</span><span class="p">)</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nx">from</span><span class="w"> </span><span class="nx">ray</span><span class="p">.</span><span class="nx">job_submission</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="nx">JobSubmissionClient</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nx">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">JobSubmissionClient</span><span class="p">(</span><span class="s">"http://&lt;head-node-ip&gt;:8265"</span><span class="p">)</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="nx">job_id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">submit_job</span><span class="p">(</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="nx">entrypoint</span><span class="p">=</span><span class="s">"python my_ray_script.py"</span><span class="p">,</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="nx">runtime_env</span><span class="p">=</span><span class="nx">runtime_env</span><span class="p">,</span>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="p">)</span>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="err">#</span><span class="w"> </span><span class="nx">Option</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span><span class="w"> </span><span class="nx">Using</span><span class="w"> </span><span class="nx">Ray</span><span class="w"> </span><span class="nx">Jobs</span><span class="w"> </span><span class="nx">API</span><span class="w"> </span><span class="p">(</span><span class="nx">CLI</span><span class="p">).</span><span class="w"> </span><span class="p">(</span><span class="nx">Note</span><span class="p">:</span><span class="w"> </span><span class="nx">can</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="o">--</span><span class="nx">runtime</span><span class="o">-</span><span class="nx">env</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">pass</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">YAML</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">instead</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">inline</span><span class="w"> </span><span class="nx">JSON</span><span class="w"> </span><span class="kt">string</span><span class="p">.)</span>
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="err">$</span><span class="w"> </span><span class="nx">ray</span><span class="w"> </span><span class="nx">job</span><span class="w"> </span><span class="nx">submit</span><span class="w"> </span><span class="o">--</span><span class="nx">address</span><span class="p">=</span><span class="s">"http://&lt;head-node-ip&gt;:8265"</span><span class="w"> </span><span class="o">--</span><span class="nx">runtime</span><span class="o">-</span><span class="nx">env</span><span class="o">-</span><span class="nx">json</span><span class="p">=</span><span class="err">'</span><span class="p">{</span><span class="s">"working_dir"</span><span class="p">:</span><span class="w"> </span><span class="s">"/data/my_files"</span><span class="p">,</span><span class="w"> </span><span class="s">"pip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s">"emoji"</span><span class="p">]}</span><span class="err">'</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="nx">python</span><span class="w"> </span><span class="nx">my_ray_script</span><span class="p">.</span><span class="nx">py</span>
+</code></pre></div>
+<p><img alt="ui" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-04.png"/></p>
+<p><img alt="ui" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-05.png"/></p>
+<h2 id="_3">日志能力<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>当一个 actor 或者 task 打印日志到 stdout or stderr，这些 stdout or stderr 会被自动的重定向到对应的 worker 的日志文件中，
+因为 actor 和 task 的运行都是在一个 worker process 中的。log monitor 组件会运行在每一个 node 上，同时它会周期性地读取
+Ray 的这些本地日志文件，然后通过 GCS 的 pubsub 机制，发布这些日志消息给到 driver 程序。driver 程序会负责聚合和打印所有来自 actors 和 tasks 的日志。</p>
+<p><img alt="log arch" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-06.png"/></p>
+<p><img alt="log" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-07.png"/></p>
+<p><img alt="log" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-08.png"/></p>
+<h2 id="metrics">Metrics 能力<a class="headerlink" href="#metrics" title="Permanent link">¶</a></h2>
+<p>Ray 原生地集成了 OpenCensus，同时默认支持将 metrics 数据导出到 Prometheus。所有的 Ray 的组件，
+包括 GCS、raylet、workers 将自己的 metrics 数据 push 到它们本地的 Ray agent 进程中，
+然后每个节点的 Ray agent 通过 OpenCensus 去暴露 metrics 数据，作为 Prometheus 的一个 exporter，
+这样数据就可以被 Prometheus pull 到 Prometheus 里。</p>
+<p><img alt="metrics" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-09.png"/></p>
+<p><img alt="metrics" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-10.png"/></p>
+<p><img alt="metrics" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-11.png"/></p>
+<h2 id="gpu">GPU 能力<a class="headerlink" href="#gpu" title="Permanent link">¶</a></h2>
+<p>默认情况下，Ray 将通过自动检测主机硬件的方式得知 GPU 的设备数量，同时设置给自己，当然也可以通过设置来覆盖自动检测出来的结果。
+如果一个 actor 或者 task 的执行需要 GPU 资源的时候，可以通过给 actor 或者 task 指定需要的资源请求，如<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ray" title="GitHub User: ray">@ray</a>.remote(num_gpus=1)。
+这个时候，Ray 会调度 actor 或者 task 到满足资源需求的机器，也就是有空闲 GPU 的机器去运行 actor 或者 task，
+同时在 actor 或者 task 在运行之前，通过设置 CUDA_VISIBLE_DEVICES 环境变量，将 GPU 指定给 actor 或者 task。下面举例说明了这个过程：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nx">ray</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">num_gpus</span><span class="p">=</span><span class="mi">2</span><span class="p">)</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="err">@</span><span class="nx">ray</span><span class="p">.</span><span class="nx">remote</span><span class="p">(</span><span class="nx">num_gpus</span><span class="p">=</span><span class="mi">1</span><span class="p">)</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="nx">class</span><span class="w"> </span><span class="nx">GPUActor</span><span class="p">:</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="nx">def</span><span class="w"> </span><span class="nx">ping</span><span class="p">(</span><span class="nx">self</span><span class="p">):</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s">"ray.get_gpu_ids(): {}"</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">ray</span><span class="p">.</span><span class="nx">get_gpu_ids</span><span class="p">()))</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s">"CUDA_VISIBLE_DEVICES: {}"</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">environ</span><span class="p">[</span><span class="s">"CUDA_VISIBLE_DEVICES"</span><span class="p">]))</span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="err">@</span><span class="nx">ray</span><span class="p">.</span><span class="nx">remote</span><span class="p">(</span><span class="nx">num_gpus</span><span class="p">=</span><span class="mi">1</span><span class="p">)</span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="nx">def</span><span class="w"> </span><span class="nx">use_gpu</span><span class="p">():</span>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s">"ray.get_gpu_ids(): {}"</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">ray</span><span class="p">.</span><span class="nx">get_gpu_ids</span><span class="p">()))</span>
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s">"CUDA_VISIBLE_DEVICES: {}"</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">environ</span><span class="p">[</span><span class="s">"CUDA_VISIBLE_DEVICES"</span><span class="p">]))</span>
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a>
+<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a>
+<a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="nx">gpu_actor</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">GPUActor</span><span class="p">.</span><span class="nx">remote</span><span class="p">()</span>
+<a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="nx">ray</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">gpu_actor</span><span class="p">.</span><span class="nx">ping</span><span class="p">.</span><span class="nx">remote</span><span class="p">())</span>
+<a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a>
+<a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="c1">// 因为actor（gpu_actor）使用了第一个GPU，所以task（use_gpu）将会使用第二个GPU。</span>
+<a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="nx">ray</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">use_gpu</span><span class="p">.</span><span class="nx">remote</span><span class="p">())</span>
+<a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a>
+<a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="err">#</span><span class="w"> </span><span class="p">(</span><span class="nx">GPUActor</span><span class="w"> </span><span class="nx">pid</span><span class="p">=</span><span class="mi">52420</span><span class="p">)</span><span class="w"> </span><span class="nx">ray</span><span class="p">.</span><span class="nx">get_gpu_ids</span><span class="p">():</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="err">#</span><span class="w"> </span><span class="p">(</span><span class="nx">GPUActor</span><span class="w"> </span><span class="nx">pid</span><span class="p">=</span><span class="mi">52420</span><span class="p">)</span><span class="w"> </span><span class="nx">CUDA_VISIBLE_DEVICES</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-1-24" id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="err">#</span><span class="w"> </span><span class="p">(</span><span class="nx">use_gpu</span><span class="w"> </span><span class="nx">pid</span><span class="p">=</span><span class="mi">51830</span><span class="p">)</span><span class="w"> </span><span class="nx">ray</span><span class="p">.</span><span class="nx">get_gpu_ids</span><span class="p">():</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<a href="#__codelineno-1-25" id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="err">#</span><span class="w"> </span><span class="p">(</span><span class="nx">use_gpu</span><span class="w"> </span><span class="nx">pid</span><span class="p">=</span><span class="mi">51830</span><span class="p">)</span><span class="w"> </span><span class="nx">CUDA_VISIBLE_DEVICES</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+</code></pre></div>
+<p>在云原生的场景下，需要使容器可以识别 GPU 的设备，同时将设备信息传递给到 Ray 内部。Ray 的官方的 docker 镜像版本中，
+提供了 GPU 版本的镜像了。在使用的时候，需要在 RayJob 的定义中指定类似 “ nvidia.com/gpu: 1 ” 这样的资源申请方式，
+同时在 actor 或者 task 上指定需要的 GPU 请求，如：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="err">@</span><span class="nx">ray</span><span class="p">.</span><span class="nx">remote</span><span class="p">(</span><span class="nx">num_gpus</span><span class="p">=</span><span class="mi">1</span><span class="p">)</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nx">class</span><span class="w"> </span><span class="nx">GPUActor</span><span class="p">:</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="nx">def</span><span class="w"> </span><span class="nx">say_hello</span><span class="p">(</span><span class="nx">self</span><span class="p">):</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s">"I live in a pod with GPU access."</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="gpu" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-12.png"/></p>
+<h2 id="autoscaler">Autoscaler 能力<a class="headerlink" href="#autoscaler" title="Permanent link">¶</a></h2>
+<p><img alt="Autoscaler" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-13.png"/></p>
+<p>Ray Autoscaler 负责从集群中添加和删除节点。它查看分布式调度器公开的逻辑资源需求、集群中当前的节点、集群的节点配置文件，
+计算所需的集群配置，并执行将集群移动到所需状态的操作。Autoscaler 会从 GCS 中去拉取当前集群的负载情况，然后调用云厂商的实现去添加和移除节点。</p>
+<p>自动扩缩容的主要工作包含以下几点：</p>
+<ol>
+<li>
+<p>当应用提交 actors、tasks、placement groups 去请求资源，如 CPU、GPU 等。</p>
+</li>
+<li>
+<p>调度器会查看资源的要求和可用的资源，然后决定 tasks 应该放置的位置，或者资源不满足的时候就会阻塞，这个信息会被作为一个快照放到 GCS 中。</p>
+</li>
+<li>
+<p>Autoscaler 作为一个独立的进程运行，它周期性地从 GCS 中抓取步骤 2 中提到的快照，
+   然后从中查看集群的可用资源、请求的资源、有什么 tasks 是阻塞的，以及 worker 节点被设置的配置，
+   然后运行 bin-packing 算法（在调度部分提到过）去计算一下，在能保证运行中的 tasks/actors/placement group
+   和阻塞的这些 tasks/actors/placement group 的资源都能满足的情况下，一共需要多少节点。</p>
+</li>
+<li>
+<p>然后 Autoscaler 使用 node provider interface 去添加和移除节点，各种 cloud provider
+   可以去实现自己的 node provider interface，如 AWS、 GCP、Azure、Kubernetes 以及 on-premise 的数据中心。</p>
+</li>
+<li>
+<p>当新的节点启动了，也注册到 Ray 的集群中了，这些节点就可以接收应用的工作负载了。</p>
+</li>
+</ol>
+<h2 id="_4">实践<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p><img alt="practice" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-14.png"/></p>
+<p>安装 KubeRay：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>kuberay<span class="w"> </span>https://ray-project.github.io/kuberay-helm/
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1"># Install both CRDs and KubeRay operator v0.5.0.</span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>helm<span class="w"> </span>install<span class="w"> </span>kuberay-operator<span class="w"> </span>kuberay/kuberay-operator<span class="w"> </span>--version<span class="w"> </span><span class="m">0</span>.5.0
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1"># Check the KubeRay operator Pod in __default__ namespace</span>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="c1"># NAME                                READY   STATUS    RESTARTS   AGE</span>
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="c1"># kuberay-operator-7fc785cbbd-9jcpv   1/1     Running   0          14d</span>
+</code></pre></div>
+<p>创建 RayJob：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ray.io/v1alpha1</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RayJob</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rayjob-sample</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">  </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python /home/ray/samples/sample_code.py</span>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">  </span><span class="c1"># runtimeEnv decoded to '{</span>
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">  </span><span class="c1">#    "pip": [</span>
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">  </span><span class="c1">#        "requests==2.26.0",</span>
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">  </span><span class="c1">#        "pendulum==2.1.2"</span>
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">  </span><span class="c1">#    ],</span>
+<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">  </span><span class="c1">#    "env_vars": {</span>
+<a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">  </span><span class="c1">#        "counter_name": "test_counter"</span>
+<a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">  </span><span class="c1">#    }</span>
+<a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">  </span><span class="c1">#}'</span>
+<a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">  </span><span class="nt">runtimeEnv</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ewogICAgInBpcCI6IFsKICAgICAgICAicmVxdWVzdHM9PTIuMjYuMCIsCiAgICAgICAgInBlbmR1bHVtPT0yLjEuMiIKICAgIF0sCiAgICAiZW52X3ZhcnMiOiB7ImNvdW50ZXJfbmFtZSI6ICJ0ZXN0X2NvdW50ZXIifQp9Cg==</span>
+<a href="#__codelineno-4-17" id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">  </span><span class="nt">rayClusterSpec</span><span class="p">:</span>
+<a href="#__codelineno-4-18" id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">    </span><span class="nt">rayVersion</span><span class="p">:</span><span class="w"> </span><span class="s">'2.4.0'</span><span class="w"> </span><span class="c1"># should match the Ray version in the image of the containers</span>
+<a href="#__codelineno-4-19" id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">    </span><span class="c1"># Ray head pod template</span>
+<a href="#__codelineno-4-20" id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">    </span><span class="nt">headGroupSpec</span><span class="p">:</span>
+<a href="#__codelineno-4-21" id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">      </span><span class="c1"># the following params are used to complete the ray start: ray start --head --block --redis-port=6379 ...</span>
+<a href="#__codelineno-4-22" id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">      </span><span class="nt">rayStartParams</span><span class="p">:</span>
+<a href="#__codelineno-4-23" id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">        </span><span class="nt">dashboard-host</span><span class="p">:</span><span class="w"> </span><span class="s">'0.0.0.0'</span>
+<a href="#__codelineno-4-24" id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">        </span><span class="nt">num-cpus</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span><span class="w"> </span><span class="c1"># can be auto-completed from the limits</span>
+<a href="#__codelineno-4-25" id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">      </span><span class="c1">#pod template</span>
+<a href="#__codelineno-4-26" id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">      </span><span class="nt">template</span><span class="p">:</span>
+<a href="#__codelineno-4-27" id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">        </span><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-4-28" id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">          </span><span class="nt">containers</span><span class="p">:</span>
+<a href="#__codelineno-4-29" id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ray-head</span>
+<a href="#__codelineno-4-30" id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">              </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rayproject/ray:2.4.0</span>
+<a href="#__codelineno-4-31" id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">              </span><span class="nt">ports</span><span class="p">:</span>
+<a href="#__codelineno-4-32" id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6379</span>
+<a href="#__codelineno-4-33" id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcs-server</span>
+<a href="#__codelineno-4-34" id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8265</span><span class="w"> </span><span class="c1"># Ray dashboard</span>
+<a href="#__codelineno-4-35" id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dashboard</span>
+<a href="#__codelineno-4-36" id="__codelineno-4-36" name="__codelineno-4-36"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10001</span>
+<a href="#__codelineno-4-37" id="__codelineno-4-37" name="__codelineno-4-37"></a><span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">client</span>
+<a href="#__codelineno-4-38" id="__codelineno-4-38" name="__codelineno-4-38"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000</span>
+<a href="#__codelineno-4-39" id="__codelineno-4-39" name="__codelineno-4-39"></a><span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">serve</span>
+<a href="#__codelineno-4-40" id="__codelineno-4-40" name="__codelineno-4-40"></a><span class="w">              </span><span class="nt">resources</span><span class="p">:</span>
+<a href="#__codelineno-4-41" id="__codelineno-4-41" name="__codelineno-4-41"></a><span class="w">                </span><span class="nt">limits</span><span class="p">:</span>
+<a href="#__codelineno-4-42" id="__codelineno-4-42" name="__codelineno-4-42"></a><span class="w">                  </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">"1"</span>
+<a href="#__codelineno-4-43" id="__codelineno-4-43" name="__codelineno-4-43"></a><span class="w">                </span><span class="nt">requests</span><span class="p">:</span>
+<a href="#__codelineno-4-44" id="__codelineno-4-44" name="__codelineno-4-44"></a><span class="w">                  </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">"200m"</span>
+<a href="#__codelineno-4-45" id="__codelineno-4-45" name="__codelineno-4-45"></a><span class="w">              </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a href="#__codelineno-4-46" id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/ray/samples</span>
+<a href="#__codelineno-4-47" id="__codelineno-4-47" name="__codelineno-4-47"></a><span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">code-sample</span>
+<a href="#__codelineno-4-48" id="__codelineno-4-48" name="__codelineno-4-48"></a><span class="w">          </span><span class="nt">volumes</span><span class="p">:</span>
+<a href="#__codelineno-4-49" id="__codelineno-4-49" name="__codelineno-4-49"></a><span class="w">            </span><span class="c1"># You set volumes at the Pod level, then mount them into containers inside that Pod</span>
+<a href="#__codelineno-4-50" id="__codelineno-4-50" name="__codelineno-4-50"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">code-sample</span>
+<a href="#__codelineno-4-51" id="__codelineno-4-51" name="__codelineno-4-51"></a><span class="w">              </span><span class="nt">configMap</span><span class="p">:</span>
+<a href="#__codelineno-4-52" id="__codelineno-4-52" name="__codelineno-4-52"></a><span class="w">                </span><span class="c1"># Provide the name of the ConfigMap you want to mount.</span>
+<a href="#__codelineno-4-53" id="__codelineno-4-53" name="__codelineno-4-53"></a><span class="w">                </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ray-job-code-sample</span>
+<a href="#__codelineno-4-54" id="__codelineno-4-54" name="__codelineno-4-54"></a><span class="w">                </span><span class="c1"># An array of keys from the ConfigMap to create as files</span>
+<a href="#__codelineno-4-55" id="__codelineno-4-55" name="__codelineno-4-55"></a><span class="w">                </span><span class="nt">items</span><span class="p">:</span>
+<a href="#__codelineno-4-56" id="__codelineno-4-56" name="__codelineno-4-56"></a><span class="w">                  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_code.py</span>
+<a href="#__codelineno-4-57" id="__codelineno-4-57" name="__codelineno-4-57"></a><span class="w">                    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_code.py</span>
+<a href="#__codelineno-4-58" id="__codelineno-4-58" name="__codelineno-4-58"></a><span class="w">    </span><span class="nt">workerGroupSpecs</span><span class="p">:</span>
+<a href="#__codelineno-4-59" id="__codelineno-4-59" name="__codelineno-4-59"></a><span class="w">      </span><span class="c1"># the pod replicas in this group typed worker</span>
+<a href="#__codelineno-4-60" id="__codelineno-4-60" name="__codelineno-4-60"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a href="#__codelineno-4-61" id="__codelineno-4-61" name="__codelineno-4-61"></a><span class="w">        </span><span class="nt">minReplicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a href="#__codelineno-4-62" id="__codelineno-4-62" name="__codelineno-4-62"></a><span class="w">        </span><span class="nt">maxReplicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<a href="#__codelineno-4-63" id="__codelineno-4-63" name="__codelineno-4-63"></a><span class="w">        </span><span class="c1"># logical group name, for this called small-group, also can be functional</span>
+<a href="#__codelineno-4-64" id="__codelineno-4-64" name="__codelineno-4-64"></a><span class="w">        </span><span class="nt">groupName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">small-group</span>
+<a href="#__codelineno-4-65" id="__codelineno-4-65" name="__codelineno-4-65"></a><span class="w">        </span><span class="nt">rayStartParams</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<a href="#__codelineno-4-66" id="__codelineno-4-66" name="__codelineno-4-66"></a><span class="w">        </span><span class="c1">#pod template</span>
+<a href="#__codelineno-4-67" id="__codelineno-4-67" name="__codelineno-4-67"></a><span class="w">        </span><span class="nt">template</span><span class="p">:</span>
+<a href="#__codelineno-4-68" id="__codelineno-4-68" name="__codelineno-4-68"></a><span class="w">          </span><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-4-69" id="__codelineno-4-69" name="__codelineno-4-69"></a><span class="w">            </span><span class="nt">containers</span><span class="p">:</span>
+<a href="#__codelineno-4-70" id="__codelineno-4-70" name="__codelineno-4-70"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ray-worker</span><span class="w"> </span><span class="c1"># must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc'</span>
+<a href="#__codelineno-4-71" id="__codelineno-4-71" name="__codelineno-4-71"></a><span class="w">                </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rayproject/ray:2.4.0</span>
+<a href="#__codelineno-4-72" id="__codelineno-4-72" name="__codelineno-4-72"></a><span class="w">                </span><span class="nt">lifecycle</span><span class="p">:</span>
+<a href="#__codelineno-4-73" id="__codelineno-4-73" name="__codelineno-4-73"></a><span class="w">                  </span><span class="nt">preStop</span><span class="p">:</span>
+<a href="#__codelineno-4-74" id="__codelineno-4-74" name="__codelineno-4-74"></a><span class="w">                    </span><span class="nt">exec</span><span class="p">:</span>
+<a href="#__codelineno-4-75" id="__codelineno-4-75" name="__codelineno-4-75"></a><span class="w">                      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">"/bin/sh"</span><span class="p p-Indicator">,</span><span class="s">"-c"</span><span class="p p-Indicator">,</span><span class="s">"ray</span><span class="nv"> </span><span class="s">stop"</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<a href="#__codelineno-4-76" id="__codelineno-4-76" name="__codelineno-4-76"></a><span class="w">                </span><span class="nt">resources</span><span class="p">:</span>
+<a href="#__codelineno-4-77" id="__codelineno-4-77" name="__codelineno-4-77"></a><span class="w">                  </span><span class="nt">limits</span><span class="p">:</span>
+<a href="#__codelineno-4-78" id="__codelineno-4-78" name="__codelineno-4-78"></a><span class="w">                    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">"1"</span>
+<a href="#__codelineno-4-79" id="__codelineno-4-79" name="__codelineno-4-79"></a><span class="w">                  </span><span class="nt">requests</span><span class="p">:</span>
+<a href="#__codelineno-4-80" id="__codelineno-4-80" name="__codelineno-4-80"></a><span class="w">                    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">"200m"</span>
+<a href="#__codelineno-4-81" id="__codelineno-4-81" name="__codelineno-4-81"></a><span class="c1">######################Ray code sample#################################</span>
+<a href="#__codelineno-4-82" id="__codelineno-4-82" name="__codelineno-4-82"></a><span class="c1"># this sample is from https://docs.ray.io/en/latest/cluster/job-submission.html#quick-start-example</span>
+<a href="#__codelineno-4-83" id="__codelineno-4-83" name="__codelineno-4-83"></a><span class="c1"># it is mounted into the container and executed to show the Ray job at work</span>
+<a href="#__codelineno-4-84" id="__codelineno-4-84" name="__codelineno-4-84"></a><span class="nn">---</span>
+<a href="#__codelineno-4-85" id="__codelineno-4-85" name="__codelineno-4-85"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a href="#__codelineno-4-86" id="__codelineno-4-86" name="__codelineno-4-86"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
+<a href="#__codelineno-4-87" id="__codelineno-4-87" name="__codelineno-4-87"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-4-88" id="__codelineno-4-88" name="__codelineno-4-88"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ray-job-code-sample</span>
+<a href="#__codelineno-4-89" id="__codelineno-4-89" name="__codelineno-4-89"></a><span class="nt">data</span><span class="p">:</span>
+<a href="#__codelineno-4-90" id="__codelineno-4-90" name="__codelineno-4-90"></a><span class="w">  </span><span class="nt">sample_code.py</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a href="#__codelineno-4-91" id="__codelineno-4-91" name="__codelineno-4-91"></a><span class="w">    </span><span class="no">import ray</span>
+<a href="#__codelineno-4-92" id="__codelineno-4-92" name="__codelineno-4-92"></a><span class="w">    </span><span class="no">import os</span>
+<a href="#__codelineno-4-93" id="__codelineno-4-93" name="__codelineno-4-93"></a><span class="w">    </span><span class="no">import requests</span>
+<a href="#__codelineno-4-94" id="__codelineno-4-94" name="__codelineno-4-94"></a>
+<a href="#__codelineno-4-95" id="__codelineno-4-95" name="__codelineno-4-95"></a><span class="w">    </span><span class="no">ray.init()</span>
+<a href="#__codelineno-4-96" id="__codelineno-4-96" name="__codelineno-4-96"></a>
+<a href="#__codelineno-4-97" id="__codelineno-4-97" name="__codelineno-4-97"></a><span class="w">    </span><span class="no">@ray.remote</span>
+<a href="#__codelineno-4-98" id="__codelineno-4-98" name="__codelineno-4-98"></a><span class="w">    </span><span class="no">class Counter:</span>
+<a href="#__codelineno-4-99" id="__codelineno-4-99" name="__codelineno-4-99"></a><span class="w">        </span><span class="no">def __init__(self):</span>
+<a href="#__codelineno-4-100" id="__codelineno-4-100" name="__codelineno-4-100"></a><span class="w">            </span><span class="no"># Used to verify runtimeEnv</span>
+<a href="#__codelineno-4-101" id="__codelineno-4-101" name="__codelineno-4-101"></a><span class="w">            </span><span class="no">self.name = os.getenv("counter_name")</span>
+<a href="#__codelineno-4-102" id="__codelineno-4-102" name="__codelineno-4-102"></a><span class="w">            </span><span class="no">self.counter = 0</span>
+<a href="#__codelineno-4-103" id="__codelineno-4-103" name="__codelineno-4-103"></a>
+<a href="#__codelineno-4-104" id="__codelineno-4-104" name="__codelineno-4-104"></a><span class="w">        </span><span class="no">def inc(self):</span>
+<a href="#__codelineno-4-105" id="__codelineno-4-105" name="__codelineno-4-105"></a><span class="w">            </span><span class="no">self.counter += 1</span>
+<a href="#__codelineno-4-106" id="__codelineno-4-106" name="__codelineno-4-106"></a>
+<a href="#__codelineno-4-107" id="__codelineno-4-107" name="__codelineno-4-107"></a><span class="w">        </span><span class="no">def get_counter(self):</span>
+<a href="#__codelineno-4-108" id="__codelineno-4-108" name="__codelineno-4-108"></a><span class="w">            </span><span class="no">return "{} got {}".format(self.name, self.counter)</span>
+<a href="#__codelineno-4-109" id="__codelineno-4-109" name="__codelineno-4-109"></a>
+<a href="#__codelineno-4-110" id="__codelineno-4-110" name="__codelineno-4-110"></a><span class="w">    </span><span class="no">counter = Counter.remote()</span>
+<a href="#__codelineno-4-111" id="__codelineno-4-111" name="__codelineno-4-111"></a>
+<a href="#__codelineno-4-112" id="__codelineno-4-112" name="__codelineno-4-112"></a><span class="w">    </span><span class="no">for _ in range(5):</span>
+<a href="#__codelineno-4-113" id="__codelineno-4-113" name="__codelineno-4-113"></a><span class="w">        </span><span class="no">ray.get(counter.inc.remote())</span>
+<a href="#__codelineno-4-114" id="__codelineno-4-114" name="__codelineno-4-114"></a><span class="w">        </span><span class="no">print(ray.get(counter.get_counter.remote()))</span>
+<a href="#__codelineno-4-115" id="__codelineno-4-115" name="__codelineno-4-115"></a>
+<a href="#__codelineno-4-116" id="__codelineno-4-116" name="__codelineno-4-116"></a><span class="w">    </span><span class="no">print(requests.__version__)</span>
+</code></pre></div>
+<p>查看 RayJob：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>rayjob
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>NAME<span class="w">            </span>AGE
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>rayjob-sample<span class="w">   </span>14d
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>raycluster
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>NAME<span class="w">                             </span>DESIRED<span class="w"> </span>WORKERS<span class="w">   </span>AVAILABLE<span class="w"> </span>WORKERS<span class="w">   </span>STATUS<span class="w">   </span>AGE
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a>rayjob-sample-raycluster-25mkr<span class="w">   </span><span class="m">1</span><span class="w">                 </span><span class="m">1</span><span class="w">                   </span>ready<span class="w">    </span>14d
+</code></pre></div>
+<p>访问 Ray Dashboard：</p>
+<ul>
+<li>
+<p>全局视图：</p>
+<p><img alt="global" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-15.png"/></p>
+</li>
+<li>
+<p>Job 视图：</p>
+<p><img alt="job" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-16.png"/></p>
+</li>
+<li>
+<p>集群视图：</p>
+<p><img alt="cluster" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-17.png"/></p>
+</li>
+<li>
+<p>Actor 视图：</p>
+<p><img alt="actor" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-18.png"/></p>
+</li>
+<li>
+<p>Metrics 视图：</p>
+<p><img alt="metrics" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-19.png"/></p>
+</li>
+<li>
+<p>Log 视图：</p>
+<p><img alt="log" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray2-20.png"/></p>
+</li>
+</ul>
+<h2 id="_5">总结<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<p>以上从 Ray Core 本身介绍了相关的知识，同时也基于社区 Kuberay 结合 Kubernetes 的方案，通过实践展示了一下 Ray Core 的相关能力。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://docs.ray.io/en/latest/">Ray Documentation</a></li>
+<li><a href="https://docs.google.com/document/d/1tBw9A4j62ruI5omIJbMxly-la5w4q_TjyJgJL_jN2fI/preview#">Ray v2 Architecture</a></li>
+</ul>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年1月4日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: K8sGPT 赋能 K8s" class="md-footer__link md-footer__link--prev" href="230808-k8sgpt.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                K8sGPT 赋能 K8s
+              </div>
+</div>
+</a>
+<a aria-label="下一页: AIGC 利器 Ray 探索上篇" class="md-footer__link md-footer__link--next" href="230612-ray.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                AIGC 利器 Ray 探索上篇
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../stylesheets/zoom_image.js"></script>
+<script src="../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

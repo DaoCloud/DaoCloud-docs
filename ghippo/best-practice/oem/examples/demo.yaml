@@ -1,0 +1,84 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: gproduct-demo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gproduct-demo
+  namespace: gproduct-demo
+  labels:
+    app: gproduct-demo
+spec:
+  selector:
+    matchLabels:
+      app: gproduct-demo
+  template:
+    metadata:
+      name: gproduct-demo
+      labels:
+        app: gproduct-demo
+    spec:
+      containers:
+      - name: gproduct-demo
+        image: release.daocloud.io/henry/gproduct-demo
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gproduct-demo
+  namespace: gproduct-demo
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: gproduct-demo
+---
+apiVersion: ghippo.io/v1alpha1
+kind: GProductNavigator
+metadata:
+  name: gproduct-demo
+spec:
+  gproduct: gproduct-demo
+  name: gproduct-demo
+  localizedName:
+    zh-CN: gproduct 示例
+    en-US: gproduct-demo
+  url: ./demo
+  category: 容器   # 
+  iconUrl: ./ui/demo/logo.svg
+  order: 10 # 
+---
+apiVersion: ghippo.io/v1alpha1
+kind: GProductProxy
+metadata:
+  name: gproduct-demo  # 
+spec:
+  gproduct: gproduct-demo  # 
+  proxies:
+  - labels:
+      kind: UIEntry
+    match:
+      uri:
+        prefix: /demo # 
+    rewrite:
+      uri: /index.html
+    destination:
+      host: ghippo-anakin.ghippo-system.svc.cluster.local
+      port: 80
+    authnCheck: false  # 
+  - labels:
+      kind: UIAssets
+    match:
+      uri:
+        prefix: /ui/demo/ # 
+    destination:
+      host: gproduct-demo.gproduct-demo.svc.cluster.local
+      port: 80
+    authnCheck: false

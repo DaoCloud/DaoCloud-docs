@@ -1,0 +1,2684 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/mspider/user-guide/multicluster/multicluster-install.html" rel="canonical"/>
+<link href="../../test/openshift.html" rel="prev"/>
+<link href="multi-cluster-net.html" rel="next"/>
+<link href="../../../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>网格多云部署 - DaoCloud Enterprise</title>
+<link href="../../../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../../../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              网格多云部署
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../blogs/index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            产品文档
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dce/index.html">
+<span class="md-ellipsis">
+    文档导航
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+<span class="md-ellipsis">
+    探索和安装
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            探索和安装
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../dce/license0.html">
+<span class="md-ellipsis">
+    产品介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../install/index.html">
+<span class="md-ellipsis">
+    安装教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dce/bphome.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dce/faq.html">
+<span class="md-ellipsis">
+    常见问题
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+<span class="md-ellipsis">
+    工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            工作台
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../amamba/intro/index.html">
+<span class="md-ellipsis">
+    应用工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+<span class="md-ellipsis">
+    容器
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            容器
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kpanda/intro/index.html">
+<span class="md-ellipsis">
+    容器管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kairship/intro/index.html">
+<span class="md-ellipsis">
+    多云编排
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kangaroo/intro/index.html">
+<span class="md-ellipsis">
+    镜像仓库
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../network/intro/index.html">
+<span class="md-ellipsis">
+    云原生网络
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../storage/index.html">
+<span class="md-ellipsis">
+    云原生存储
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../virtnest/intro/index.html">
+<span class="md-ellipsis">
+    虚拟机
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+<span class="md-ellipsis">
+    微服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            微服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../insight/intro/index.html">
+<span class="md-ellipsis">
+    可观测性
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../skoala/intro/index.html">
+<span class="md-ellipsis">
+    微服务引擎
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    服务网格
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_3">
+<span class="md-nav__icon md-icon"></span>
+            服务网格
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../intro/index.html">
+<span class="md-ellipsis">
+    介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../install/install.html">
+<span class="md-ellipsis">
+    安装、配置和升级
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../service-mesh/index.html">
+<span class="md-ellipsis">
+    创建/删除网格
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../service-list/index.html">
+<span class="md-ellipsis">
+    服务管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../traffic-governance/index.html">
+<span class="md-ellipsis">
+    流量治理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../security/index.html">
+<span class="md-ellipsis">
+    安全治理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../sidecar-management/ns-sidecar.html">
+<span class="md-ellipsis">
+    边车管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../traffic-monitor/index.html">
+<span class="md-ellipsis">
+    流量监控
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../cluster-management/index.html">
+<span class="md-ellipsis">
+    集群纳管
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../gateway-instance/create.html">
+<span class="md-ellipsis">
+    网格网关
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="cluster-interconnect.html">
+<span class="md-ellipsis">
+    网格配置
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5_3_12" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_3_12" id="__nav_2_5_3_12_label" tabindex="0">
+<span class="md-ellipsis">
+    测试
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_3_12_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_5_3_12">
+<span class="md-nav__icon md-icon"></span>
+            测试
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../test/ocp.html">
+<span class="md-ellipsis">
+    OCP 接入网格
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../test/openshift.html">
+<span class="md-ellipsis">
+    Openshift 与网格兼容性测试
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    网格多云部署
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="multicluster-install.html">
+<span class="md-ellipsis">
+    网格多云部署
+  </span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      前置条件
+    </span>
+</a>
+<nav aria-label="前置条件" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      集群要求
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      多集群区域规划
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      网格规划
+    </span>
+</a>
+<nav aria-label="网格规划" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      网格基础信息
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      网络规划
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      规划表单
+    </span>
+</a>
+<nav aria-label="规划表单" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      集群规划
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      网格规划
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      网络规划
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      接入集群以及组件准备
+    </span>
+</a>
+<nav aria-label="接入集群以及组件准备" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      接入集群
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      确认可观测组件（可选）
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+<span class="md-ellipsis">
+      网格部署
+    </span>
+</a>
+<nav aria-label="网格部署" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
+<span class="md-ellipsis">
+      创建网格
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hosted-istiod">
+<span class="md-ellipsis">
+      暴露网格托管控制面 Hosted Istiod
+    </span>
+</a>
+<nav aria-label="暴露网格托管控制面 Hosted Istiod" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      确认托管网格控制面服务
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#external-ip">
+<span class="md-ellipsis">
+      分配 EXTERNAL IP
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#istiod-external-ip">
+<span class="md-ellipsis">
+      验证托管控制面 Istiod EXTERNAL IP 是否通畅
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#istiod">
+<span class="md-ellipsis">
+      确认并且配置网格托管控制面 Istiod 参数
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
+<span class="md-ellipsis">
+      添加工作集群
+    </span>
+</a>
+<nav aria-label="添加工作集群" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_19">
+<span class="md-ellipsis">
+      检测多云控制面是否正常
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_20">
+<span class="md-ellipsis">
+      不同网络模式的网格组件安装与配置
+    </span>
+</a>
+<nav aria-label="不同网络模式的网格组件安装与配置" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#id">
+<span class="md-ellipsis">
+      手动为工作集群配置 网络 ID
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#istio-system-id">
+<span class="md-ellipsis">
+      为工作集群的 istio-system 标识 网络 ID
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_21">
+<span class="md-ellipsis">
+      手动安装东西网关
+    </span>
+</a>
+<nav aria-label="手动安装东西网关" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_22">
+<span class="md-ellipsis">
+      创建网关实例
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gateway">
+<span class="md-ellipsis">
+      创建东西网关 Gateway 资源
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_23">
+<span class="md-ellipsis">
+      设置网格全局网络配置
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#demo">
+<span class="md-ellipsis">
+      网络连通性 demo 应用与验证
+    </span>
+</a>
+<nav aria-label="网络连通性 demo 应用与验证" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#demo_1">
+<span class="md-ellipsis">
+      部署 demo
+    </span>
+</a>
+<nav aria-label="部署 demo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#demo_2">
+<span class="md-ellipsis">
+      容器管理平台部署 demo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#demo_3">
+<span class="md-ellipsis">
+      命令行部署 demo
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#demo_4">
+<span class="md-ellipsis">
+      验证 demo 集群网络
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_24">
+<span class="md-ellipsis">
+      拓展
+    </span>
+</a>
+<nav aria-label="拓展" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_25">
+<span class="md-ellipsis">
+      其他创建集群方式
+    </span>
+</a>
+<nav aria-label="其他创建集群方式" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_26">
+<span class="md-ellipsis">
+      通过容器管理创建集群
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kubeadm">
+<span class="md-ellipsis">
+      通过 kubeadm 创建集群
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kind">
+<span class="md-ellipsis">
+      创建 kind 集群
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metallb">
+<span class="md-ellipsis">
+      Metallb 安装配置
+    </span>
+</a>
+<nav aria-label="Metallb 安装配置" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#demo-metallb">
+<span class="md-ellipsis">
+      demo 集群 metallb 网络池规划记录
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_27">
+<span class="md-ellipsis">
+      安装
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#helm">
+<span class="md-ellipsis">
+      容器管理平台 Helm 安装
+    </span>
+</a>
+<nav aria-label="容器管理平台 Helm 安装" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_28">
+<span class="md-ellipsis">
+      手动安装
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ip">
+<span class="md-ellipsis">
+      增加给对应服务增加指定 IP
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_29">
+<span class="md-ellipsis">
+      验证
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_30">
+<span class="md-ellipsis">
+      查询全局服务集群
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="multi-cluster-net.html">
+<span class="md-ellipsis">
+    多集群网络通讯原理
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="gray-scale-release.html">
+<span class="md-ellipsis">
+    多集群灰度发布
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../troubleshoot/index.html">
+<span class="md-ellipsis">
+    故障排查
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../best-practice/use-egress-and-authorized-policy.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+<span class="md-ellipsis">
+    数据服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            数据服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../middleware/index.html">
+<span class="md-ellipsis">
+    中间件
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="">
+<span class="md-ellipsis">
+    云原生 AI
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+            云原生 AI
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../baize/intro/index.html">
+<span class="md-ellipsis">
+    AI Lab
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="">
+<span class="md-ellipsis">
+    边缘计算
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+            边缘计算
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kant/intro/index.html">
+<span class="md-ellipsis">
+    云边协同
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="">
+<span class="md-ellipsis">
+    管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            管理
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../ghippo/intro/index.html">
+<span class="md-ellipsis">
+    全局管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../blogs/index.html">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      前置条件
+    </span>
+</a>
+<nav aria-label="前置条件" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      集群要求
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      多集群区域规划
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      网格规划
+    </span>
+</a>
+<nav aria-label="网格规划" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      网格基础信息
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      网络规划
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      规划表单
+    </span>
+</a>
+<nav aria-label="规划表单" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      集群规划
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      网格规划
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      网络规划
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      接入集群以及组件准备
+    </span>
+</a>
+<nav aria-label="接入集群以及组件准备" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      接入集群
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      确认可观测组件（可选）
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+<span class="md-ellipsis">
+      网格部署
+    </span>
+</a>
+<nav aria-label="网格部署" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
+<span class="md-ellipsis">
+      创建网格
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hosted-istiod">
+<span class="md-ellipsis">
+      暴露网格托管控制面 Hosted Istiod
+    </span>
+</a>
+<nav aria-label="暴露网格托管控制面 Hosted Istiod" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      确认托管网格控制面服务
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#external-ip">
+<span class="md-ellipsis">
+      分配 EXTERNAL IP
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#istiod-external-ip">
+<span class="md-ellipsis">
+      验证托管控制面 Istiod EXTERNAL IP 是否通畅
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#istiod">
+<span class="md-ellipsis">
+      确认并且配置网格托管控制面 Istiod 参数
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
+<span class="md-ellipsis">
+      添加工作集群
+    </span>
+</a>
+<nav aria-label="添加工作集群" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_19">
+<span class="md-ellipsis">
+      检测多云控制面是否正常
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_20">
+<span class="md-ellipsis">
+      不同网络模式的网格组件安装与配置
+    </span>
+</a>
+<nav aria-label="不同网络模式的网格组件安装与配置" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#id">
+<span class="md-ellipsis">
+      手动为工作集群配置 网络 ID
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#istio-system-id">
+<span class="md-ellipsis">
+      为工作集群的 istio-system 标识 网络 ID
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_21">
+<span class="md-ellipsis">
+      手动安装东西网关
+    </span>
+</a>
+<nav aria-label="手动安装东西网关" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_22">
+<span class="md-ellipsis">
+      创建网关实例
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gateway">
+<span class="md-ellipsis">
+      创建东西网关 Gateway 资源
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_23">
+<span class="md-ellipsis">
+      设置网格全局网络配置
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#demo">
+<span class="md-ellipsis">
+      网络连通性 demo 应用与验证
+    </span>
+</a>
+<nav aria-label="网络连通性 demo 应用与验证" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#demo_1">
+<span class="md-ellipsis">
+      部署 demo
+    </span>
+</a>
+<nav aria-label="部署 demo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#demo_2">
+<span class="md-ellipsis">
+      容器管理平台部署 demo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#demo_3">
+<span class="md-ellipsis">
+      命令行部署 demo
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#demo_4">
+<span class="md-ellipsis">
+      验证 demo 集群网络
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_24">
+<span class="md-ellipsis">
+      拓展
+    </span>
+</a>
+<nav aria-label="拓展" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_25">
+<span class="md-ellipsis">
+      其他创建集群方式
+    </span>
+</a>
+<nav aria-label="其他创建集群方式" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_26">
+<span class="md-ellipsis">
+      通过容器管理创建集群
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kubeadm">
+<span class="md-ellipsis">
+      通过 kubeadm 创建集群
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kind">
+<span class="md-ellipsis">
+      创建 kind 集群
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metallb">
+<span class="md-ellipsis">
+      Metallb 安装配置
+    </span>
+</a>
+<nav aria-label="Metallb 安装配置" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#demo-metallb">
+<span class="md-ellipsis">
+      demo 集群 metallb 网络池规划记录
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_27">
+<span class="md-ellipsis">
+      安装
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#helm">
+<span class="md-ellipsis">
+      容器管理平台 Helm 安装
+    </span>
+</a>
+<nav aria-label="容器管理平台 Helm 安装" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_28">
+<span class="md-ellipsis">
+      手动安装
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ip">
+<span class="md-ellipsis">
+      增加给对应服务增加指定 IP
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_29">
+<span class="md-ellipsis">
+      验证
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_30">
+<span class="md-ellipsis">
+      查询全局服务集群
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/mspider/user-guide/multicluster/multicluster-install.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/mspider/user-guide/multicluster/multicluster-install.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/mspider/user-guide/multicluster/multicluster-install.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="_1">网格多云部署<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<p>本页说明如何在多云环境下部署服务网格。</p>
+<h2 id="_2">前置条件<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h3 id="_3">集群要求<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>集群类型与版本</strong> ：明确当前集群的类型与版本，确保后续安装的服务网格能够在该集群中正常运行。</li>
+<li><strong>提供可靠的 IP</strong> ：控制面集群必须提供一个可靠的 IP 给其他数据面集群来访问控制面。</li>
+<li><strong>授权</strong> ：加入网格的集群需要提供一个拥有足够权限的远程秘钥，允许 Mspider 对集群进行安装组件以及 Istio 控制面访问其他集群的 API Server。</li>
+</ol>
+<h3 id="_4">多集群区域规划<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<p>在 Istio 中，Region、Zone 和 SubZone 是用于维护多集群部署中的服务可用性的概念。具体来说：</p>
+<ul>
+<li><strong>Region</strong> 表示一个大区域，通常用于表示整个云提供商的数据中心区域；在 Kubernetes 中，标签 <a href="https://kubernetes.io/zh-cn/docs/reference/kubernetes-api/labels-annotations-taints/#topologykubernetesioregion"> <code>topology.kubernetes.io/region</code> </a> 确定节点的区域。</li>
+<li><strong>Zone</strong> 表示一个小区域，通常用于表示数据中心中的一个子区域；在 Kubernetes 中，标签 <a href="https://kubernetes.io/zh-cn/docs/reference/kubernetes-api/labels-annotations-taints/#topologykubernetesiozone"> <code>topology.kubernetes.io/zone</code> </a> 确定节点的区域。</li>
+<li><strong>SubZone</strong> 则是一个更小的区域，用于表示 Zone 中的一个更小的部分。Kubernetes 中不存在分区的概念，因此 Istio 引入了自定义节点标签 <a href="https://github.com/istio/api/blob/82b9feb5a1c091ad9a28311c62b4f6f07803a9fa/label/labels.yaml#L84"> <strong>topology.istio.io/subzone</strong> </a> 来定义分区。</li>
+</ul>
+<p>这些概念的作用主要在于帮助 Istio 管理不同区域间的服务可用性。例如，在多集群部署中，如果一个服务在 Zone A 中出现故障，Istio 可以通过配置自动将服务流量转移到 Zone B，从而保证服务可用性。</p>
+<p>配置方式是通过在集群的 <strong>每个节点</strong> 添加相应的 Label：</p>
+<table>
+<thead>
+<tr>
+<th>区域</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Region</td>
+<td>topology.kubernetes.io/region</td>
+</tr>
+<tr>
+<td>Zone</td>
+<td>topology.kubernetes.io/zone</td>
+</tr>
+<tr>
+<td>SubZone</td>
+<td>topology.istio.io/subzone</td>
+</tr>
+</tbody>
+</table>
+<p>添加 Label 可以通过容器管理平台找到对应的集群，给相应节点配置 Label</p>
+<p><img alt="image-20221214101221559" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-node-label.png"/></p>
+<p><img alt="image-20221214101633044" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-node-labels2.png"/></p>
+<h3 id="_5">网格规划<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<h4 id="_6">网格基础信息<a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
+<ul>
+<li>网格 ID</li>
+<li>网格版本</li>
+<li>网格集群</li>
+</ul>
+<h4 id="_7">网络规划<a class="headerlink" href="#_7" title="Permanent link">¶</a></h4>
+<p>确认集群之间网络状态，根据不同状态配置
+这部分主要在于多网络模式两部分的配置：</p>
+<ul>
+<li>规划网络 ID</li>
+<li>东西网格的部署与配置</li>
+<li>如何将网格控制面暴露给其他工作集群。</li>
+</ul>
+<p>网络模式有如下两种：</p>
+<ul>
+<li>单网络模式
+    &gt; 明确集群之间 Pod 网络是否能够直接通。
+    &gt; 如果 Pod 网络能够直接通讯，证明是同网络模式，但是要注意如果其中 <strong>Pod 网络出现冲突</strong> ，就需要选择不同网络模式</li>
+<li>多网络模式
+    &gt; 如果集群之间网络不通，需要给集群划分 <strong>网络 ID</strong> ，并且需要不同网络区域的集群安装东西网关，
+    &gt; 并且配置相关配置，具体操作步骤在下面章节<a href="#_21">不同网络模式的网格组件安装与配置</a>中。</li>
+</ul>
+<h3 id="_8">规划表单<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<p>将上述所提到的集群与网格相关规划汇聚成一张表单，便于用户更加方便的参考。</p>
+<h4 id="_9">集群规划<a class="headerlink" href="#_9" title="Permanent link">¶</a></h4>
+<table>
+<thead>
+<tr>
+<th>集群名</th>
+<th>集群类型</th>
+<th>集群 pod 子网 (podSubnet)</th>
+<th>pod 网络互通关系</th>
+<th>集群节点 &amp; 网络区域</th>
+<th>集群版本</th>
+<th>Master IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mdemo-cluster1</td>
+<td>标准 k8s</td>
+<td>"10.201.0.0/16"</td>
+<td>-</td>
+<td>master： region1/zone1/subzone1</td>
+<td>1.25</td>
+<td>10.64.30.130</td>
+</tr>
+<tr>
+<td>mdemo-cluster2</td>
+<td>标准 k8s</td>
+<td>"10.202.0.0/16"</td>
+<td>-</td>
+<td>master： region1/zone2/subzone2</td>
+<td>1.25</td>
+<td>10.6.230.5</td>
+</tr>
+<tr>
+<td>mdemo-cluster3</td>
+<td>标准 k8s</td>
+<td>"10.100.0.0/16"</td>
+<td>-</td>
+<td>master： region1/zone3/subzone3</td>
+<td>1.25</td>
+<td>10.64.30.131</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_10">网格规划<a class="headerlink" href="#_10" title="Permanent link">¶</a></h4>
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>网格 ID</td>
+<td>mdemo-mesh</td>
+</tr>
+<tr>
+<td>网格模式</td>
+<td>托管模式</td>
+</tr>
+<tr>
+<td>网络模式</td>
+<td>多网络模式（需要安装东西网关，规划网络 ID）</td>
+</tr>
+<tr>
+<td>网格版本</td>
+<td>1.15.3-mspider</td>
+</tr>
+<tr>
+<td>托管集群</td>
+<td>mdemo-cluster1</td>
+</tr>
+<tr>
+<td>工作集群</td>
+<td>mdemo-cluster1、mdemo-cluster2、mdemo-cluster3</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_11">网络规划<a class="headerlink" href="#_11" title="Permanent link">¶</a></h4>
+<p>由于上面的表单所知，集群之间不存在网络互通的情况，因此网格为多网络模式，需要规划如下配置：</p>
+<table>
+<thead>
+<tr>
+<th>集群名</th>
+<th>集群网格角色</th>
+<th>集群网络标识 (网络 ID)</th>
+<th>hosted-istiod LB IP</th>
+<th>eastwest LB IP</th>
+<th>ingress LB IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mdemo-cluster1</td>
+<td>托管集群，工作集群</td>
+<td>network-c1</td>
+<td>10.64.30.71</td>
+<td>10.64.30.73</td>
+<td>10.64.30.72</td>
+</tr>
+<tr>
+<td>mdemo-cluster2</td>
+<td>工作集群</td>
+<td>network-c2</td>
+<td>-</td>
+<td>10.6.136.29</td>
+<td>-</td>
+</tr>
+<tr>
+<td>mdemo-cluster3</td>
+<td>工作集群</td>
+<td>network-c3</td>
+<td>-</td>
+<td>10.64.30.77</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_12">接入集群以及组件准备<a class="headerlink" href="#_12" title="Permanent link">¶</a></h2>
+<p>用户需要准备符合要求的集群，集群可以新创建（创建集群也可以采用容器管理平台的创建能力），也可以是已经存在的集群。</p>
+<p>但是后续网格所需的集群都必须将其接入容器管理平台。</p>
+<h3 id="_13">接入集群<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<p>如果不是通过容器管理平台创建的集群，例如已经存在的集群，或者通过自定义方式（类似 kubeadm 或 Kind 集群）创建的集群都需要将集群接入容器管理平台。</p>
+<p><img alt="接入集群" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-import-cluster0.png"/></p>
+<p><img alt="接入集群" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-import-cluster.png"/></p>
+<h3 id="_14">确认可观测组件（可选）<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
+<p>网格的关键能力可观测性，其中需要关键的观测性组件便是 Insight Agent，因此如果需要拥有网格的观测能力，需要安装其组件。</p>
+<p>容器管理平台创建集群方式创建的集群将默认安装 Insight Agent 组件。</p>
+<p>其他方式需要在容器管理界面中，找到本集群中的 <strong>Helm 应用</strong> ，选择 <strong>insight-agent</strong> 安装。</p>
+<p><img alt="Helm 应用" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-insgiht-agent-check.png"/></p>
+<p><img alt="安装 insight" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-install-insight-agent.png"/></p>
+<p><img alt="安装 insight" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-install-insight-agent1.png"/></p>
+<h2 id="_15">网格部署<a class="headerlink" href="#_15" title="Permanent link">¶</a></h2>
+<p>通过服务网格创建网格，并且将规划的集群加入到对应的网格中。</p>
+<h3 id="_16">创建网格<a class="headerlink" href="#_16" title="Permanent link">¶</a></h3>
+<p>首先在网格管理页面 -&gt; <strong>创建网格</strong> ：</p>
+<p><img alt="创建网格" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-mesh1.png"/></p>
+<p>创建网格的具体参数如图显示：</p>
+<ol>
+<li>选择托管网格：多云环境下，只有托管网格模式能够纳管多集群</li>
+<li>输入唯一的网格名称</li>
+<li>按照前置条件环境，选择预选的符合要求的网格版本</li>
+<li>选择托管控制面所在的集群</li>
+<li>负载均衡 IP：该参数为暴露控制面的 Istiod 所需要的参数，需要预先准备</li>
+<li>镜像仓库：在私有云中，需要将网格所需的镜像上传仓库，公有云建议填入 <code>release.daocloud.io/mspider</code> </li>
+</ol>
+<p><img alt="上传镜像" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-mesh2.png"/></p>
+<p>网格处于创建中，需要等待网格创建完成后，状态由 <strong>创建中</strong> 转变成 <strong>运行中</strong> ；</p>
+<h3 id="hosted-istiod">暴露网格托管控制面 Hosted Istiod<a class="headerlink" href="#hosted-istiod" title="Permanent link">¶</a></h3>
+<h4 id="_17">确认托管网格控制面服务<a class="headerlink" href="#_17" title="Permanent link">¶</a></h4>
+<p>确保网格状态正常后，观察控制面集群 <strong>mdemo-cluster1</strong> 的 <strong>istio-system</strong> 下面的 Service 是否都成功绑定了 LoadBalancer IP。</p>
+<p><img alt="绑定 lb ip" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/hosted-istiod-lb-check.png"/></p>
+<p>发现托管网格控制面的服务 <strong>istiod-mdemo-cluster-hosted-lb</strong> 的没有分配 LoadBalancer IP 需要额外处理。</p>
+<h4 id="external-ip">分配 EXTERNAL IP<a class="headerlink" href="#external-ip" title="Permanent link">¶</a></h4>
+<p>在不同的环境申请或者分配 LoadBalancer IP 的方式不同，尤其是公有云环境，需要根据公有云厂商所提供的方式去创建 LoadBalancer IP。</p>
+<p>本文演示 demo 采用了 metallb 的方式，给所属 LoadBalancer Service 分配 IP，相关部署与配置参考<a href="#metallb">Metallb 安装配置</a>部分。</p>
+<p>部署完 metallb 以后，再次<a href="#_17">确认托管网格控制面服务</a>。</p>
+<h4 id="istiod-external-ip">验证托管控制面 Istiod <strong>EXTERNAL IP</strong> 是否通畅<a class="headerlink" href="#istiod-external-ip" title="Permanent link">¶</a></h4>
+<p>在非托管集群环境中验证托管控制面 Istiod，本次实践通过 curl 的方式验证，如果返回 400 错误，基本可以判定网络已经打通：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nv">hosted_istiod_ip</span><span class="o">=</span><span class="s2">"10.64.30.71"</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>curl<span class="w"> </span>-I<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">hosted_istiod_ip</span><span class="si">}</span><span class="s2">:443"</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># HTTP/1.0 400 Bad Request</span>
+</code></pre></div>
+<h4 id="istiod">确认并且配置网格托管控制面 Istiod 参数<a class="headerlink" href="#istiod" title="Permanent link">¶</a></h4>
+<ol>
+<li>
+<p>获取托管网格控制面服务 <strong>EXTERNAL IP</strong> </p>
+<p>在网格 <strong>mdemo-mesh</strong> 控制面集群 <strong>mdemo-cluster1</strong> 中去确认托管网格控制面服务 <strong>istiod-mdemo-mesh-hosted-lb</strong> 已经分配 LoadBalancer IP 以后，并且记录其 IP，示例如下：</p>
+<p><img alt="确认" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/hosted-istiod-lb-ip.png"/></p>
+<p>确认托管网格控制面服务 <strong>istiod-mdemo-mesh-hosted-lb</strong> <code>EXTERNAL-IP</code> 为 <strong>10.64.30.72</strong> 。</p>
+</li>
+<li>
+<p>手动配置网格托管控制面 Istiod 参数</p>
+<p>首先，在容器管理平台进入全局控制面集群 <strong>kpanda-global-cluster</strong> （如果无法确认相关集群的位置，可以询问相应负责人或者通过<a href="#_30">查询全局服务集群</a>）</p>
+<ul>
+<li><strong>自定义资源模块</strong> 搜索资源 <strong>GlobalMesh</strong> </li>
+<li>接下来在 <strong>mspider-system</strong> 找到对应的网格 <strong>mdemo-mesh</strong> </li>
+<li>
+<p>然后编辑 YAML</p>
+</li>
+<li>
+<p>在 YAML 中 <code>.spec.ownerConfig.controlPlaneParams</code> 字段增加 <code>istio.custom_params.values.global.remotePilotAddress</code> 参数；</p>
+</li>
+<li>其值为上文中记录的 <strong>istiod-mdemo-mesh-hosted-lb</strong> <code>EXTERNAL-IP</code> 地址： <strong>10.64.30.72</strong> 。</li>
+</ul>
+<p><img alt="增加参数" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/get-gm-crd.png"/></p>
+<p><img alt="增加参数" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/edit-gm-yaml.png"/></p>
+<p><img alt="增加参数" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/edit-gm-yaml1.png"/></p>
+</li>
+</ol>
+<h3 id="_18">添加工作集群<a class="headerlink" href="#_18" title="Permanent link">¶</a></h3>
+<p>在服务网格的图形界面上添加集群。</p>
+<ol>
+<li>
+<p>等待网格控制面创建成功后，选中对应网格，进入网格管理页面 -&gt; <strong>集群纳管</strong> -&gt; <strong>添加集群</strong> ：</p>
+<p><img alt="添加集群" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-cluster1.png"/></p>
+</li>
+<li>
+<p>选中所需的工作集群后，等待集群安装网格组件完成；</p>
+<p><img alt="安装组件" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-cluster2.png"/></p>
+</li>
+<li>
+<p>在接入过程中，集群状态会由 <strong>接入中</strong> 转变成 <strong>接入成功</strong> ：</p>
+<p><img alt="接入成功" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-cluster3.png"/></p>
+</li>
+</ol>
+<h4 id="_19">检测多云控制面是否正常<a class="headerlink" href="#_19" title="Permanent link">¶</a></h4>
+<p>由于当前工作集群与网格控制面集群 Pod 网络不同，需要通过上文<a href="#hosted-istiod">暴露网格托管控制面 Hosted Istiod</a>部分将控制面的 Istiod 暴露给公网。</p>
+<p>验证工作集群 Istio 相关组件是否能运行正常，需要在工作集群中检查 <strong>istio-system</strong> 命名空间下的 <strong>istio-ingressgateway</strong> 是否能够正常运行：</p>
+<p><img alt="验证" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/check-work-istiod.png"/></p>
+<h2 id="_20">不同网络模式的网格组件安装与配置<a class="headerlink" href="#_20" title="Permanent link">¶</a></h2>
+<p>在本部分主要分为两个部分：</p>
+<ol>
+<li>给所有工作集群配置 <strong>网络 ID</strong> </li>
+<li>在所有网络不互通的集群中安装东西网关</li>
+</ol>
+<p>这里先提到一个问题：为什么需要安装东西网关呢？
+由于工作集群之间 Pod 网格无法直达，因此服务跨集群通讯时也会出现网络问题，Istio 提供了一个解决方案就是东西网关。
+当目标服务位于不同网络时，其流量将会转发到目标集群的东西网关，东西网关将解析请求，将请求转发到真正的目标服务。</p>
+<p>由上面对东西网关的原理理解以后，又有一个新的问题，Istio 如何区分服务在什么网络中呢？
+Istio 要求用户每个工作集群安装 Istio 时，显示的定义 <strong>网络 ID</strong> ，这也是第一步分存在的原因。</p>
+<h3 id="id">手动为工作集群配置 <strong>网络 ID</strong><a class="headerlink" href="#id" title="Permanent link">¶</a></h3>
+<p>由于工作集群网络的不同，需要手动给每个工作集群配置 <strong>网络 ID</strong> 。
+如果在实际环境中，集群之间 Pod 网络能够相互直达，就可以配置成同一个 <strong>网络 ID</strong> 。</p>
+<p>让我们开始配置 <strong>网络 ID</strong> ，其具体流程如下：</p>
+<ol>
+<li>首先进入全局控制面集群 <strong>kpanda-global-cluster</strong> （如果无法确认相关集群的位置，可以询问相应负责人或者通过<a href="#_30">查询全局服务集群</a>）</li>
+<li>然后在 <strong>自定义资源模块</strong> -&gt; 搜索资源 <strong>MeshCluster</strong> </li>
+<li><strong>mspider-system</strong> 命名空间下找到加入网格的工作集群，本次案例的工作集群有： <strong>mdemo-cluster2</strong> 、 <strong>mdemo-cluster3</strong> </li>
+<li>
+<p>以 <strong>mdemo-cluster2</strong> 为例，编辑 YAML</p>
+<ul>
+<li>找到字段 <code>.spec.meshedParams[].params</code> ， 给其中参数列增加 <strong>网络 ID</strong> 字段</li>
+<li>参数列的注意事项：<ul>
+<li>需要确认 <code>global.meshID: mdemo-mesh</code> 是否为同一个网格 ID</li>
+<li>需要确认集群角色 <code>global.clusterRole: HOSTED_WORKLOAD_CLUSTER</code> 是否为工作集群</li>
+</ul>
+</li>
+<li>添加参数 <code>istio.custom_params.values.global.network</code> ，其值按照最初的<a href="#_8">规划表单</a>中的网络 ID： <strong>network-c2</strong> </li>
+</ul>
+<p><img alt="编辑 YAML" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-network-id1.png"/></p>
+<p><img alt="编辑 YAML" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-network-id2.png"/></p>
+<p><img alt="编辑 YAML" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-network-id3.png"/></p>
+</li>
+</ol>
+<p>重复上述步骤，给所有工作集群 ( <strong>mdemo-cluster1、mdemo-cluster2、mdemo-cluster3</strong> ) 加上 <strong>网络 ID</strong> 。</p>
+<h3 id="istio-system-id">为工作集群的 <strong>istio-system</strong> 标识 <strong>网络 ID</strong><a class="headerlink" href="#istio-system-id" title="Permanent link">¶</a></h3>
+<p>进入容器管理平台，进入对应的工作集群： <strong>mdemo-cluster1、mdemo-cluster2、mdemo-cluster3</strong> 的命名空间添加网络的标签。</p>
+<ul>
+<li>标签 Key： <strong>topology.istio.io/network</strong> </li>
+<li>标签 value： <strong>${CLUSTER_NET}</strong> </li>
+</ul>
+<p>下面以 mdemo-cluster3 为例，找到 <strong>命名空间</strong> ，选中 <strong>istio-system</strong> -&gt; <strong>修改标签</strong> 。</p>
+<p><img alt="标识网络 ID" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/edit-istio-system-label.png"/></p>
+<p><img alt="标识网络 ID" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-istio-system-networkid.png"/></p>
+<h3 id="_21">手动安装东西网关<a class="headerlink" href="#_21" title="Permanent link">¶</a></h3>
+<h4 id="_22">创建网关实例<a class="headerlink" href="#_22" title="Permanent link">¶</a></h4>
+<p>确认所有工作集群中的 Istio 相关组件都就绪以后，开始安装东西网关。</p>
+<p>在工作集群中通过 IstioOperator 资源安装东西网关，东西网关的 YAML 如下：</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>一定要根据当前集群的 <strong>网络 ID</strong> 修改参数。</p>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span>
+<span class="normal"><a href="#__codelineno-1-36">36</a></span>
+<span class="normal"><a href="#__codelineno-1-37">37</a></span>
+<span class="normal"><a href="#__codelineno-1-38">38</a></span>
+<span class="normal"><a href="#__codelineno-1-39">39</a></span>
+<span class="normal"><a href="#__codelineno-1-40">40</a></span>
+<span class="normal"><a href="#__codelineno-1-41">41</a></span>
+<span class="normal"><a href="#__codelineno-1-42">42</a></span>
+<span class="normal"><a href="#__codelineno-1-43">43</a></span>
+<span class="normal"><a href="#__codelineno-1-44">44</a></span>
+<span class="normal"><a href="#__codelineno-1-45">45</a></span>
+<span class="normal"><a href="#__codelineno-1-46">46</a></span>
+<span class="normal"><a href="#__codelineno-1-47">47</a></span>
+<span class="normal"><a href="#__codelineno-1-48">48</a></span>
+<span class="normal"><a href="#__codelineno-1-49">49</a></span>
+<span class="normal"><a href="#__codelineno-1-50">50</a></span>
+<span class="normal"><a href="#__codelineno-1-51">51</a></span>
+<span class="normal"><a href="#__codelineno-1-52">52</a></span>
+<span class="normal"><a href="#__codelineno-1-53">53</a></span>
+<span class="normal"><a href="#__codelineno-1-54">54</a></span>
+<span class="normal"><a href="#__codelineno-1-55">55</a></span>
+<span class="normal"><a href="#__codelineno-1-56">56</a></span>
+<span class="normal"><a href="#__codelineno-1-57">57</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># cluster1</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nv">CLUSTER_NET_ID</span><span class="o">=</span>network-c1
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nv">CLUSTER</span><span class="o">=</span>mdemo-cluster1
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="nv">LB_IP</span><span class="o">=</span><span class="m">10</span>.64.30.73
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1"># cluster2</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="nv">CLUSTER_NET_ID</span><span class="o">=</span>network-c2
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="nv">CLUSTER</span><span class="o">=</span>mdemo-cluster2
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="nv">LB_IP</span><span class="o">=</span><span class="m">10</span>.6.136.29
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1"># cluster3</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="nv">CLUSTER_NET_ID</span><span class="o">=</span>network-c3
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="nv">CLUSTER</span><span class="o">=</span>mdemo-cluster3
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="nv">LB_IP</span><span class="o">=</span><span class="m">10</span>.64.30.77
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="nv">MESH_ID</span><span class="o">=</span>mdemo-mesh
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="nv">HUB</span><span class="o">=</span>release-ci.daocloud.io/mspider
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="nv">ISTIO_VERSION</span><span class="o">=</span><span class="m">1</span>.15.3-mspider
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt; eastwest-iop.yaml</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="s">apiVersion: install.istio.io/v1alpha1</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="s">kind: IstioOperator</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="s">metadata:</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="s">  name: eastwest</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="s">  namespace: istio-system</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="s">spec:</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="s">  components:</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="s">    ingressGateways:</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="s">      - enabled: true</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="s">        k8s:</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="s">          env:</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="s">            - name: ISTIO_META_REQUESTED_NETWORK_VIEW</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="s">              value: ${CLUSTER_NET_ID}  # 修改为当前集群的网络 ID</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="s">          service:</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="s">            loadBalancerIP: ${LB_IP}  # 修改为本集群为东西网关规划的 LB IP</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a><span class="s">            ports:</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="s">              - name: tls</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="s">                port: 15443</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="s">                targetPort: 15443</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="s">            type: LoadBalancer</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="s">        label:</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="s">          app: istio-eastwestgateway</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="s">          istio: eastwestgateway</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43"></a><span class="s">          topology.istio.io/network: ${CLUSTER_NET_ID}  # 修改为当前集群的网络 ID</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44"></a><span class="s">        name: istio-eastwestgateway</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45"></a><span class="s">  profile: empty</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46"></a><span class="s">  tag: ${ISTIO_VERSION}</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47"></a><span class="s">  values:</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48"></a><span class="s">    gateways:</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49"></a><span class="s">      istio_ingressgateway:</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50"></a><span class="s">        injectionTemplate: gateway</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51"></a><span class="s">    global:</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52"></a><span class="s">      network: ${CLUSTER_NET_ID}  # 修改为当前集群的网络 ID</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53"></a><span class="s">      hub: ${HUB}  # 可选，如果无法翻墙或者私有仓库，请修改</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54"></a><span class="s">      meshID: ${MESH_ID}  # 修改为当前集群的 网格 ID（Mesh ID）</span>
+<a id="__codelineno-1-55" name="__codelineno-1-55"></a><span class="s">      multiCluster:</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56"></a><span class="s">        clusterName: ${CLUSTER}  # 修改为当前</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57"></a><span class="s">EOF</span>
+</code></pre></div></td></tr></table></div>
+<p>其创建方式为：</p>
+<ol>
+<li>在容器管理平台进入相应的工作集群</li>
+<li><strong>自定义资源</strong> 模块搜索 <strong>IstioOperator</strong> </li>
+<li>选中 <strong>istio-system</strong> 命名空间</li>
+<li>点击 <strong>创建 YAML</strong> </li>
+</ol>
+<p><img alt="创建网关实例" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-ew.png"/></p>
+<p><img alt="创建网关实例" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-ew2.png"/></p>
+<h3 id="gateway">创建东西网关 Gateway 资源<a class="headerlink" href="#gateway" title="Permanent link">¶</a></h3>
+<p>在网格的 <strong>网关规则</strong> 中创建规则：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.istio.io/v1beta1</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gateway</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cross-network-gateway</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">istio-system</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="nt">istio</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eastwestgateway</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">  </span><span class="nt">servers</span><span class="p">:</span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"*.local"</span>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">      </span><span class="nt">port</span><span class="p">:</span>
+<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tls</span>
+<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">        </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15443</span>
+<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">        </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TLS</span>
+<a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">      </span><span class="nt">tls</span><span class="p">:</span>
+<a href="#__codelineno-2-17" id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">        </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AUTO_PASSTHROUGH</span>
+</code></pre></div>
+<h3 id="_23">设置网格全局网络配置<a class="headerlink" href="#_23" title="Permanent link">¶</a></h3>
+<p>在安装完东西网关以及网关的解析规则以后，需要再所有集群中声明网格中的东西网关配置。
+在 容器管理平台进入全局控制面集群 <strong>kpanda-global-cluster</strong> （如果无法确认相关集群的位置，可以询问相应负责人或者通过<a href="#_30">查询全局服务集群</a>）</p>
+<p>-&gt; 在 <strong>自定义资源</strong> 部分搜索资源 <strong>GlobalMesh</strong> 
+-&gt; 接下来在 <strong>mspider-system</strong> 找到对应的网格 <strong>mdemo-mesh</strong> 
+-&gt; 然后编辑 YAML</p>
+<blockquote>
+<p>在 YAML 中 <strong>.spec.ownerConfig.controlPlaneParams</strong> 字段增加一系列 <code>istio.custom_params.values.global.meshNetworks</code> 参数</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># ！！这两行配置缺一不可</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1"># 格式：istio.custom_params.values.global.meshNetworks.${CLUSTER_NET_ID}.gateways[0].address</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1">#      istio.custom_params.values.global.meshNetworks.${CLUSTER_NET_ID}.gateways[0].port</span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="l l-Scalar l-Scalar-Plain">istio.custom_params.values.global.meshNetworks.network-c1.gateways[0].address</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.64.30.73</span><span class="w"> </span><span class="c1"># (1)!</span>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="l l-Scalar l-Scalar-Plain">istio.custom_params.values.global.meshNetworks.network-c1.gateways[0].port</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">'15443'</span><span class="w">  </span><span class="c1"># (2)!</span>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="l l-Scalar l-Scalar-Plain">istio.custom_params.values.global.meshNetworks.network-c2.gateways[0].address</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.6.136.29</span><span class="w">  </span><span class="c1"># (3)!</span>
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="l l-Scalar l-Scalar-Plain">istio.custom_params.values.global.meshNetworks.network-c2.gateways[0].port</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">'15443'</span><span class="w">  </span><span class="c1"># (4)!</span>
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="l l-Scalar l-Scalar-Plain">istio.custom_params.values.global.meshNetworks.network-c3.gateways[0].address</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.64.30.77</span><span class="w">  </span><span class="c1"># (5)!</span>
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="l l-Scalar l-Scalar-Plain">istio.custom_params.values.global.meshNetworks.network-c3.gateways[0].port</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">'15443'</span><span class="w">  </span><span class="c1"># (6)!</span>
+</code></pre></div>
+<ol>
+<li>cluster1</li>
+<li>cluster3 东西网关端口</li>
+<li>cluster2</li>
+<li>cluster2  东西网格端口</li>
+<li>cluster3</li>
+<li>cluster3 东西网关端口</li>
+</ol>
+<p><img alt="增加参数" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-gm-meshnetowork0.png"/></p>
+<h2 id="demo">网络连通性 demo 应用与验证<a class="headerlink" href="#demo" title="Permanent link">¶</a></h2>
+<h3 id="demo_1">部署 demo<a class="headerlink" href="#demo_1" title="Permanent link">¶</a></h3>
+<p>主要是两个应用：<a href="https://github.com/istio/istio/blob/1.16.0/samples/helloworld/helloworld.yaml">helloworld</a> 与 <a href="https://github.com/istio/istio/blob/1.16.0/samples/sleep/sleep.yaml">sleep</a>（该两个 demo 属于 Istio 提供的测试应用）</p>
+<p>集群部署情况：</p>
+<table>
+<thead>
+<tr>
+<th>集群</th>
+<th>helloworld 与版本</th>
+<th>sleep</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mdemo-cluster1</td>
+<td>:heart: VERSION=vc1</td>
+<td>:heart:</td>
+</tr>
+<tr>
+<td>mdemo-cluster1</td>
+<td>:heart: VERSION=vc2</td>
+<td>:heart:</td>
+</tr>
+<tr>
+<td>mdemo-cluster1</td>
+<td>:heart: VERSION=vc3</td>
+<td>:heart:</td>
+</tr>
+</tbody>
+</table>
+<h4 id="demo_2">容器管理平台部署 demo<a class="headerlink" href="#demo_2" title="Permanent link">¶</a></h4>
+<p>推荐使用容器管理平台创建对应工作负载与应用，在容器管理平台找到对应集群，进入【控制台】执行下面操作。</p>
+<p>下面以 mdemo-cluster1 部署 helloworld vc1 为例：</p>
+<p>其中每个集群需要注意的点：</p>
+<ul>
+<li>
+<p>镜像地址：</p>
+<ul>
+<li>helloworld: docker.m.daocloud.io/istio/examples-helloworld-v1</li>
+<li>Sleep: curlimages/curl</li>
+</ul>
+</li>
+<li>
+<p><strong>helloworld</strong> 工作负载增加对应 <strong>label</strong></p>
+<ul>
+<li>app：helloworld</li>
+<li>version：${VERSION}</li>
+</ul>
+</li>
+<li><strong>helloworld</strong> 工作负载增加对应的版本**环境变量**<ul>
+<li>SERVICE_VERSION: ${VERSION}</li>
+</ul>
+</li>
+</ul>
+<p><img alt="部署demo" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo11.png"/></p>
+<p><img alt="部署demo" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo22.png"/></p>
+<p><img alt="部署demo" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo33.png"/></p>
+<p><img alt="部署demo" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo55.png"/></p>
+<h4 id="demo_3">命令行部署 demo<a class="headerlink" href="#demo_3" title="Permanent link">¶</a></h4>
+<p>部署过程中需要用到的配置文件分别有：</p>
+<ul>
+<li><a href="https://github.com/istio/istio/blob/1.16.0/samples/helloworld/gen-helloworld.sh">gen-helloworld.sh</a></li>
+<li><a href="https://github.com/istio/istio/blob/1.16.0/samples/sleep/sleep.yaml">sleep.yaml</a></li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># -------------------- cluster1 --------------------</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>kubectl<span class="w"> </span>create<span class="w">  </span>namespace<span class="w"> </span>sample
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>sample<span class="w"> </span>istio-injection<span class="o">=</span>enabled
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="c1"># deploy helloworld vc1</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>bash<span class="w"> </span>gen-helloworld.sh<span class="w"> </span>--version<span class="w"> </span>vc1<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-e<span class="w"> </span><span class="s2">"s/docker.io/docker.m.daocloud.io/"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w">  </span>-f<span class="w"> </span>-<span class="w"> </span>-n<span class="w"> </span>sample
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="c1"># deploy sleep</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>kubectl<span class="w"> </span>apply<span class="w">  </span>-f<span class="w"> </span>sleep.yaml<span class="w"> </span>-n<span class="w"> </span>sample
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="c1"># -------------------- cluster2 --------------------</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>kubectl<span class="w"> </span>create<span class="w">  </span>namespace<span class="w"> </span>sample
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>sample<span class="w"> </span>istio-injection<span class="o">=</span>enabled
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="c1"># deploy helloworld vc2</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a>bash<span class="w"> </span>gen-helloworld.sh<span class="w"> </span>--version<span class="w"> </span>vc2<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-e<span class="w"> </span><span class="s2">"s/docker.io/docker.m.daocloud.io/"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w">  </span>-f<span class="w"> </span>-<span class="w"> </span>-n<span class="w"> </span>sample
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="c1"># deploy sleep</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a>kubectl<span class="w"> </span>apply<span class="w">  </span>-f<span class="w"> </span>sleep.yaml<span class="w"> </span>-n<span class="w"> </span>sample
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="c1"># -------------------- cluster3 --------------------</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a>kubectl<span class="w"> </span>create<span class="w">  </span>namespace<span class="w"> </span>sample
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a>kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>sample<span class="w"> </span>istio-injection<span class="o">=</span>enabled
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="c1"># deploy helloworld vc3</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a>bash<span class="w"> </span>gen-helloworld.sh<span class="w"> </span>--version<span class="w"> </span>vc3<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-e<span class="w"> </span><span class="s2">"s/docker.io/docker.m.daocloud.io/"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w">  </span>-f<span class="w"> </span>-<span class="w"> </span>-n<span class="w"> </span>sample
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="c1"># deploy sleep</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a>kubectl<span class="w"> </span>apply<span class="w">  </span>-f<span class="w"> </span>sleep.yaml<span class="w"> </span>-n<span class="w"> </span>sample
+</code></pre></div></td></tr></table></div>
+<h3 id="demo_4">验证 demo 集群网络<a class="headerlink" href="#demo_4" title="Permanent link">¶</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># 任意选择一个集群执行</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">while</span><span class="w"> </span>true<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-n<span class="w"> </span>sample<span class="w"> </span>-c<span class="w"> </span>sleep<span class="w">  </span><span class="se">\</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">               </span><span class="s2">"</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>-n<span class="w"> </span>sample<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>sleep<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.items[0].metadata.name}'</span><span class="k">)</span><span class="s2">"</span><span class="w">    </span><span class="se">\</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">              </span>--<span class="w"> </span>curl<span class="w"> </span>-sS<span class="w"> </span>helloworld.sample:5000/hello<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="c1"># 预期结果会轮询三个集群的不同版本，结果如下：</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="c1"># Hello version: vc2, instance: helloworld-vc2-5d67bc48d8-2tpxd</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="c1"># Hello version: vc2, instance: helloworld-vc2-5d67bc48d8-2tpxd</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="c1"># Hello version: vc2, instance: helloworld-vc2-5d67bc48d8-2tpxd</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="c1"># Hello version: vc2, instance: helloworld-vc2-5d67bc48d8-2tpxd</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="c1"># Hello version: vc1, instance: helloworld-vc1-846f79cc4d-2d8kd</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="c1"># Hello version: vc1, instance: helloworld-vc1-846f79cc4d-2d8kd</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="c1"># Hello version: vc1, instance: helloworld-vc1-846f79cc4d-2d8kd</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="c1"># Hello version: vc3, instance: helloworld-vc3-55b7b5869f-trl8v</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="c1"># Hello version: vc1, instance: helloworld-vc1-846f79cc4d-2d8kd</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="c1"># Hello version: vc3, instance: helloworld-vc3-55b7b5869f-trl8v</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="c1"># Hello version: vc2, instance: helloworld-vc2-5d67bc48d8-2tpxd</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="c1"># Hello version: vc1, instance: helloworld-vc1-846f79cc4d-2d8kd</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="c1"># Hello version: vc2, instance: helloworld-vc2-5d67bc48d8-2tpxd</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="_24">拓展<a class="headerlink" href="#_24" title="Permanent link">¶</a></h2>
+<h3 id="_25">其他创建集群方式<a class="headerlink" href="#_25" title="Permanent link">¶</a></h3>
+<h4 id="_26">通过容器管理创建集群<a class="headerlink" href="#_26" title="Permanent link">¶</a></h4>
+<p>集群创建可以存在多种方式，推荐使用容器管理中的创建集群功能，但是用户可以选择其他创建方式，本文提供的其他方案可以参考拓展章节的<a href="#_26">其他创建集群方式</a></p>
+<p><img alt="创建集群" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster1.png"/></p>
+<p><img alt="创建集群" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster2.png"/></p>
+<p><img alt="创建集群" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster3.png"/></p>
+<p><img alt="创建集群" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster4.png"/></p>
+<p>可以灵活的选择集群需要拓展的组件，网格的可观测能力必须依赖 Insight-agent</p>
+<p><img alt="安装 insight" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster5.png"/></p>
+<p>如果集群需要定义更多的集群高级配置，可以在本步骤添加。</p>
+<p><img alt="集群高级配置" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster6.png"/></p>
+<p>创建集群需要等待 30 分钟左右。</p>
+<p><img alt="等待" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-create-cluster7.png"/></p>
+<h4 id="kubeadm">通过 kubeadm 创建集群<a class="headerlink" href="#kubeadm" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>kubeadm<span class="w"> </span>init<span class="w"> </span>--image-repository<span class="w"> </span>registry.aliyuncs.com/google_containers<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">             </span>--apiserver-advertise-address<span class="o">=</span><span class="m">10</span>.64.30.131<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">             </span>--service-cidr<span class="o">=</span><span class="m">10</span>.111.0.0/16<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">             </span>--pod-network-cidr<span class="o">=</span><span class="m">10</span>.100.0.0/16<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">             </span>--cri-socket<span class="w"> </span>/var/run/cri-dockerd.sock
+</code></pre></div>
+<h4 id="kind">创建 kind 集群<a class="headerlink" href="#kind" title="Permanent link">¶</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span>
+<span class="normal"><a href="#__codelineno-7-23">23</a></span>
+<span class="normal"><a href="#__codelineno-7-24">24</a></span>
+<span class="normal"><a href="#__codelineno-7-25">25</a></span>
+<span class="normal"><a href="#__codelineno-7-26">26</a></span>
+<span class="normal"><a href="#__codelineno-7-27">27</a></span>
+<span class="normal"><a href="#__codelineno-7-28">28</a></span>
+<span class="normal"><a href="#__codelineno-7-29">29</a></span>
+<span class="normal"><a href="#__codelineno-7-30">30</a></span>
+<span class="normal"><a href="#__codelineno-7-31">31</a></span>
+<span class="normal"><a href="#__codelineno-7-32">32</a></span>
+<span class="normal"><a href="#__codelineno-7-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt; kind-cluster1.yaml</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="s">kind: Cluster</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="s">apiVersion: kind.x-k8s.io/v1alpha4</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="s">networking:</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="s">  podSubnet: "10.102.0.0/16" # 安装网络规划阶段，定义规划的 pod 子网</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="s">  serviceSubnet: "10.122.0.0/16" # 安装网络规划阶段，定义规划的 service 子网</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="s">  apiServerAddress: 10.6.136.22</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="s">nodes:</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="s">  - role: control-plane</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="s">    image: kindest/node:v1.25.3@sha256:f52781bc0d7a19fb6c405c2af83abfeb311f130707a0e219175677e366cc45d1</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="s">    extraPortMappings:</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="s">      - containerPort: 35443 # 如果无法申请 LoadBalancer 可以临时采用 nodePort 方式</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="s">        hostPort: 35443 #  set the bind address on the host</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="s">EOF</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt; kind-cluster2.yaml</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="s">kind: Cluster</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="s">apiVersion: kind.x-k8s.io/v1alpha4</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="s">networking:</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="s">  podSubnet: "10.103.0.0/16" # 安装网络规划阶段，定义规划的 pod 子网</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="s">  serviceSubnet: "10.133.0.0/16" # 安装网络规划阶段，定义规划的 service 子网</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="s">  apiServerAddress: 10.6.136.22</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="s">nodes:</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="s">  - role: control-plane</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="s">    image: kindest/node:v1.25.3@sha256:f52781bc0d7a19fb6c405c2af83abfeb311f130707a0e219175677e366cc45d1</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="s">    extraPortMappings:</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="s">      - containerPort: 35443 # 如果无法申请 LoadBalancer 可以临时采用 nodePort 方式</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="s">        hostPort: 35444 #  set the bind address on the host</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29"></a>
+<a id="__codelineno-7-30" name="__codelineno-7-30"></a><span class="s">EOF</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31"></a>
+<a id="__codelineno-7-32" name="__codelineno-7-32"></a>kind<span class="w"> </span>create<span class="w"> </span>cluster<span class="w"> </span>--config<span class="w"> </span>kind-cluster1.yaml<span class="w"> </span>--name<span class="w"> </span>mdemo-kcluster1
+<a id="__codelineno-7-33" name="__codelineno-7-33"></a>kind<span class="w"> </span>create<span class="w"> </span>cluster<span class="w"> </span>--config<span class="w"> </span>kind-cluster2.yaml<span class="w"> </span>--name<span class="w"> </span>mdemo-kcluster2
+</code></pre></div></td></tr></table></div>
+<h3 id="metallb">Metallb 安装配置<a class="headerlink" href="#metallb" title="Permanent link">¶</a></h3>
+<h4 id="demo-metallb">demo 集群 metallb 网络池规划记录<a class="headerlink" href="#demo-metallb" title="Permanent link">¶</a></h4>
+<table>
+<thead>
+<tr>
+<th>集群名</th>
+<th>IP 池</th>
+<th>IP 分配情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mdemo-cluster1</td>
+<td>10.64.30.71-10.64.30.73</td>
+<td>-</td>
+</tr>
+<tr>
+<td>mdemo-cluster2</td>
+<td>10.6.136.25-10.6.136.29</td>
+<td>-</td>
+</tr>
+<tr>
+<td>mdemo-cluster3</td>
+<td>10.64.30.75-10.64.30.77</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_27">安装<a class="headerlink" href="#_27" title="Permanent link">¶</a></h4>
+<h4 id="helm">容器管理平台 Helm 安装<a class="headerlink" href="#helm" title="Permanent link">¶</a></h4>
+<p>推荐使用容器管理平台中 <strong>Helm 应用</strong> -&gt; <strong>Helm 模板</strong> -&gt; 找到 metallb -&gt; <strong>安装</strong> 。</p>
+<p><img alt="安装 metallb" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/install-metallb-from-helm.png"/></p>
+<p><img alt="安装 metallb" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/install-metallb-from-helm1.png"/></p>
+<h5 id="_28">手动安装<a class="headerlink" href="#_28" title="Permanent link">¶</a></h5>
+<p>参阅 <a href="https://metallb.org/installation/">MetalLB 官方文档</a>。</p>
+<p>注意：如果集群的 CNI 使用的是 calico,你需要禁用 calico 的 BGP 模式，否则会影响 MetalLB 的正常工作。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span>
+<span class="normal"><a href="#__codelineno-8-17">17</a></span>
+<span class="normal"><a href="#__codelineno-8-18">18</a></span>
+<span class="normal"><a href="#__codelineno-8-19">19</a></span>
+<span class="normal"><a href="#__codelineno-8-20">20</a></span>
+<span class="normal"><a href="#__codelineno-8-21">21</a></span>
+<span class="normal"><a href="#__codelineno-8-22">22</a></span>
+<span class="normal"><a href="#__codelineno-8-23">23</a></span>
+<span class="normal"><a href="#__codelineno-8-24">24</a></span>
+<span class="normal"><a href="#__codelineno-8-25">25</a></span>
+<span class="normal"><a href="#__codelineno-8-26">26</a></span>
+<span class="normal"><a href="#__codelineno-8-27">27</a></span>
+<span class="normal"><a href="#__codelineno-8-28">28</a></span>
+<span class="normal"><a href="#__codelineno-8-29">29</a></span>
+<span class="normal"><a href="#__codelineno-8-30">30</a></span>
+<span class="normal"><a href="#__codelineno-8-31">31</a></span>
+<span class="normal"><a href="#__codelineno-8-32">32</a></span>
+<span class="normal"><a href="#__codelineno-8-33">33</a></span>
+<span class="normal"><a href="#__codelineno-8-34">34</a></span>
+<span class="normal"><a href="#__codelineno-8-35">35</a></span>
+<span class="normal"><a href="#__codelineno-8-36">36</a></span>
+<span class="normal"><a href="#__codelineno-8-37">37</a></span>
+<span class="normal"><a href="#__codelineno-8-38">38</a></span>
+<span class="normal"><a href="#__codelineno-8-39">39</a></span>
+<span class="normal"><a href="#__codelineno-8-40">40</a></span>
+<span class="normal"><a href="#__codelineno-8-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1"># 如果 kube-proxy 使用的是 IPVS 模式，你需要启用 staticARP</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="c1"># see what changes would be made, returns nonzero returncode if different</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>kubectl<span class="w"> </span>get<span class="w"> </span>configmap<span class="w"> </span>kube-proxy<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>sed<span class="w"> </span>-e<span class="w"> </span><span class="s2">"s/strictARP: false/strictARP: true/"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>kubectl<span class="w"> </span>diff<span class="w"> </span>-f<span class="w"> </span>-<span class="w"> </span>-n<span class="w"> </span>kube-system
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="c1"># actually apply the changes, returns nonzero returncode on errors only</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a>kubectl<span class="w"> </span>get<span class="w"> </span>configmap<span class="w"> </span>kube-proxy<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a>sed<span class="w"> </span>-e<span class="w"> </span><span class="s2">"s/strictARP: false/strictARP: true/"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-<span class="w"> </span>-n<span class="w"> </span>kube-system
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="c1"># 部署 metallb</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/metallb/metallb/v0.13.7/config/manifests/metallb-native.yaml
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="c1"># 检查 pod 运行状态</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>metallb-system
+<a id="__codelineno-8-17" name="__codelineno-8-17"></a>
+<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="c1"># 配置 metallb</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19"></a>cat<span class="w"> </span><span class="s">&lt;&lt; EOF | kubectl apply -f -</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="s">apiVersion: metallb.io/v1beta1</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="s">kind: IPAddressPool</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="s">metadata:</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="s">  name: first-pool</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="s">  namespace: metallb-system</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25"></a><span class="s">spec:</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="s">  addresses:</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27"></a><span class="s">  - 10.64.30.75-10.64.30.77  # 根据规划修改</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28"></a><span class="s">EOF</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29"></a>cat<span class="w"> </span><span class="s">&lt;&lt; EOF | kubectl apply -f -</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30"></a><span class="s">apiVersion: metallb.io/v1beta1</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="s">kind: L2Advertisement</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32"></a><span class="s">metadata:</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33"></a><span class="s">  name: example</span>
+<a id="__codelineno-8-34" name="__codelineno-8-34"></a><span class="s">  namespace: metallb-system</span>
+<a id="__codelineno-8-35" name="__codelineno-8-35"></a><span class="s">spec:</span>
+<a id="__codelineno-8-36" name="__codelineno-8-36"></a><span class="s">  ipAddressPools:</span>
+<a id="__codelineno-8-37" name="__codelineno-8-37"></a><span class="s">  - first-pool</span>
+<a id="__codelineno-8-38" name="__codelineno-8-38"></a><span class="s">  interfaces:</span>
+<a id="__codelineno-8-39" name="__codelineno-8-39"></a><span class="s">  - enp1s0</span>
+<a id="__codelineno-8-40" name="__codelineno-8-40"></a><span class="s">  # - ens192  # 根据不同机器的网卡命名不同，请修改</span>
+<a id="__codelineno-8-41" name="__codelineno-8-41"></a><span class="s">EOF</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="ip">增加给对应服务增加指定 IP<a class="headerlink" href="#ip" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>kubectl<span class="w"> </span>annotate<span class="w"> </span>service<span class="w"> </span>-n<span class="w"> </span>istio-system<span class="w"> </span>istiod-mdemo-mesh-hosted-lb<span class="w"> </span>metallb.universe.tf/address-pool<span class="o">=</span><span class="s1">'first-pool'</span>
+</code></pre></div>
+<h4 id="_29">验证<a class="headerlink" href="#_29" title="Permanent link">¶</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span>
+<span class="normal"><a href="#__codelineno-10-16">16</a></span>
+<span class="normal"><a href="#__codelineno-10-17">17</a></span>
+<span class="normal"><a href="#__codelineno-10-18">18</a></span>
+<span class="normal"><a href="#__codelineno-10-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>deploy<span class="w"> </span>nginx<span class="w"> </span>--image<span class="w"> </span>docker.m.daocloud.io/nginx:latest<span class="w"> </span>--port<span class="w"> </span><span class="m">80</span><span class="w"> </span>-n<span class="w"> </span>default
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>kubectl<span class="w"> </span>expose<span class="w"> </span>deployment<span class="w"> </span>nginx<span class="w"> </span>--name<span class="w"> </span>nginx-lb<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span><span class="w"> </span>--target-port<span class="w"> </span><span class="m">80</span><span class="w"> </span>--type<span class="w"> </span>LoadBalancer<span class="w"> </span>-n<span class="w"> </span>default
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="c1"># 获取对应服务 EXTERNAL-IP</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>kubectl<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>-n<span class="w"> </span>default
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="c1"># NAME         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="c1"># kubernetes   ClusterIP      10.212.0.1       &lt;none&gt;        443/TCP          25h</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="c1"># nginx-lb     LoadBalancer   10.212.249.64    10.6.230.71   8080:31881/TCP   10s</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a>curl<span class="w"> </span>-I<span class="w"> </span><span class="m">10</span>.6.230.71:8080
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="c1"># HTTP/1.1 200 OK</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="c1"># Server: nginx/1.21.6</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="c1"># Date: Wed, 02 Mar 2022 15:31:15 GMT</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="c1"># Content-Type: text/html</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="c1"># Content-Length: 615</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="c1"># Last-Modified: Tue, 25 Jan 2022 15:03:52 GMT</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="c1"># Connection: keep-alive</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="c1"># ETag: "61f01158-267"</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="c1"># Accept-Ranges: bytes</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="_30">查询全局服务集群<a class="headerlink" href="#_30" title="Permanent link">¶</a></h3>
+<p>通过容器管理的集群列表界面，通过搜索 <strong>集群角色：全局服务集群</strong> 。</p>
+<p><img alt="全局服务集群" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/get-kpanda-global-cluster.png"/></p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年4月29日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: Openshift 与网格兼容性测试" class="md-footer__link md-footer__link--prev" href="../../test/openshift.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                Openshift 与网格兼容性测试
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 多集群网络通讯原理" class="md-footer__link md-footer__link--next" href="multi-cluster-net.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                多集群网络通讯原理
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../../../stylesheets/zoom_image.js"></script>
+<script src="../../../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

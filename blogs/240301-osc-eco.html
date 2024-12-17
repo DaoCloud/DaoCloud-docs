@@ -1,0 +1,1331 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/blogs/240301-osc-eco.html" rel="canonical"/>
+<link href="240326-kubecon-eu.html" rel="prev"/>
+<link href="240203-book.html" rel="next"/>
+<link href="../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>创建一个开源商业生态体系 - DaoCloud Enterprise</title>
+<link href="../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              创建一个开源商业生态体系
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../dce/index.html">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            博客
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="index.html">
+<span class="md-ellipsis">
+    博文索引
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+<span class="md-ellipsis">
+    2024
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="241108-cncf-ambassador.html">
+<span class="md-ellipsis">
+    从社区小白到 CNCF 大使
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="241106-containerd-nerdctl-lima.html">
+<span class="md-ellipsis">
+    containerd 相关项目集中发布新版本
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240816-1.31-image.html">
+<span class="md-ellipsis">
+    K8s 1.31 OCI 工件的只读卷
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="20240619-nvidiaai.html">
+<span class="md-ellipsis">
+    Nvidia 征服最新的 AI 测试
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0606-k8s-birth.html">
+<span class="md-ellipsis">
+    Kubernetes 十周年
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240516-sig-docs.html">
+<span class="md-ellipsis">
+    K8s 从敲代码到抒发文笔
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240509-model-spec.html">
+<span class="md-ellipsis">
+    OpenAI 大语言模型规范
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0429-ai-survey.html">
+<span class="md-ellipsis">
+    全球大规模AI基础设施形势调研
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240416-kubean.html">
+<span class="md-ellipsis">
+    一颗豆荚入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240410-cnai-wp.html">
+<span class="md-ellipsis">
+    云原生人工智能白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240326-kubecon-eu.html">
+<span class="md-ellipsis">
+    巴黎 KubeCon 谁在引领创新
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    创建一个开源商业生态体系
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="240301-osc-eco.html">
+<span class="md-ellipsis">
+    创建一个开源商业生态体系
+  </span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      创建可持续的开源商业生态体系
+    </span>
+</a>
+<nav aria-label="创建可持续的开源商业生态体系" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      定义和创建可持续的开源商业生态体系
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      开源生态体系成功的关键要素
+    </span>
+</a>
+<nav aria-label="开源生态体系成功的关键要素" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      建立社区和增加贡献
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      确保商业采用的信心
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      遵守开源文化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      如何构建一个开源生态体系
+    </span>
+</a>
+<nav aria-label="如何构建一个开源生态体系" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+<span class="md-ellipsis">
+      1. 建立健康的治理体系
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+<span class="md-ellipsis">
+      2. 评估资源
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+<span class="md-ellipsis">
+      3. 跟踪进展并进行调整
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      例子：谷歌开源办公室
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240203-book.html">
+<span class="md-ellipsis">
+    好书《K8s云原生数据管理》
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240201-ai-compute.html">
+<span class="md-ellipsis">
+    加速计算基本定义及工作原理
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240115-news.html">
+<span class="md-ellipsis">
+    容器化 AI 简化 ML 模型的部署
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240108-kubeedge.html">
+<span class="md-ellipsis">
+    KubeEdge v1.15.0 发布
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+<span class="md-ellipsis">
+    2023
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="231220-spiderpool.html">
+<span class="md-ellipsis">
+    Spiderpool入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231213-k8s-1.29.html">
+<span class="md-ellipsis">
+    K8s 1.29发布宇宙主题雄心勃勃
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231205-vm-bm-compare.html">
+<span class="md-ellipsis">
+    K8s 裸机 vs 虚机性能对比
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231115-k8s-1.29-changes.html">
+<span class="md-ellipsis">
+    K8s 1.29前瞻：移除、弃用及变更
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231008-kcs.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会回顾
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230911-kubecon-contributor.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会召集令
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230824-tools.html">
+<span class="md-ellipsis">
+    K8s 本地开发工具比较
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230815-k8s1.28.html">
+<span class="md-ellipsis">
+    K8s 1.28 震撼发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230808-k8sgpt.html">
+<span class="md-ellipsis">
+    K8sGPT 赋能 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230615-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索下篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230612-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索上篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230609-istio118.html">
+<span class="md-ellipsis">
+    Istio 1.18 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230605-fedstate.html">
+<span class="md-ellipsis">
+    联邦中间件FedState
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230601-api-server-tracing.html">
+<span class="md-ellipsis">
+    API Server Tracing进阶
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230518-seccom.html">
+<span class="md-ellipsis">
+    边缘场景玩转seccomp
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230515-chaos-mesh.html">
+<span class="md-ellipsis">
+    混沌工程 Chaos Mesh
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230509-k8s-install.html">
+<span class="md-ellipsis">
+    K8s 安装教程(KLTS版)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230508-cilium.html">
+<span class="md-ellipsis">
+    Cilium 实现 socket 加速
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230428-pod-startup.html">
+<span class="md-ellipsis">
+    K8s 1.27 加快 Pod 启动
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230427-victoriametrics.html">
+<span class="md-ellipsis">
+    云原生监控之基础篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230418-karmada-failover.html">
+<span class="md-ellipsis">
+    Karmada Failover 详解
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230417-cncf-platform-wp.html">
+<span class="md-ellipsis">
+    CNCF 平台工程白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230412-k8s-1.27.html">
+<span class="md-ellipsis">
+    K8s 1.27 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230411-spiderpool.html">
+<span class="md-ellipsis">
+    固定应用 IP 的新选择
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230405-step-by-step-dce5.html">
+<span class="md-ellipsis">
+    保姆式安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230317-edge-app-wp.html">
+<span class="md-ellipsis">
+    边缘原生应用准则
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-linux.html">
+<span class="md-ellipsis">
+    Linux 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-macos.html">
+<span class="md-ellipsis">
+    macOS 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230301-kwok.html">
+<span class="md-ellipsis">
+    KWOK 介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-open-projects.html">
+<span class="md-ellipsis">
+    社区版涉及的开源项目
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-daocloud_k8s.html">
+<span class="md-ellipsis">
+    DaoCloud 与 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-peter.html">
+<span class="md-ellipsis">
+    DCE 5.0 攻坚语录集
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-forecast.html">
+<span class="md-ellipsis">
+    2023 年云原生预测
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230110-res-usage.html">
+<span class="md-ellipsis">
+    让闲置算力跑起来
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+<span class="md-ellipsis">
+    2022
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="221209-k8s-1.26.html">
+<span class="md-ellipsis">
+    K8s 1.26 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221116-kcsp.html">
+<span class="md-ellipsis">
+    K8s 资深认证服务商
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221026-kpanda.html">
+<span class="md-ellipsis">
+    容器管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221018-resource.html">
+<span class="md-ellipsis">
+    资源管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220925-amamba.html">
+<span class="md-ellipsis">
+    应用工作台能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220808-kairship.html">
+<span class="md-ellipsis">
+    多云编排能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220708-mspider.html">
+<span class="md-ellipsis">
+    服务网格能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221008-dce-bg.html">
+<span class="md-ellipsis">
+    DCE 开发背景
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      创建可持续的开源商业生态体系
+    </span>
+</a>
+<nav aria-label="创建可持续的开源商业生态体系" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      定义和创建可持续的开源商业生态体系
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      开源生态体系成功的关键要素
+    </span>
+</a>
+<nav aria-label="开源生态体系成功的关键要素" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      建立社区和增加贡献
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      确保商业采用的信心
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      遵守开源文化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      如何构建一个开源生态体系
+    </span>
+</a>
+<nav aria-label="如何构建一个开源生态体系" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+<span class="md-ellipsis">
+      1. 建立健康的治理体系
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+<span class="md-ellipsis">
+      2. 评估资源
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+<span class="md-ellipsis">
+      3. 跟踪进展并进行调整
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      例子：谷歌开源办公室
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/blogs/240301-osc-eco.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/blogs/240301-osc-eco.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/blogs/240301-osc-eco.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="_1">创建一个开源商业生态体系<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<blockquote>
+<p>转载自 <a href="https://todogroup.org/resources/guides/creating-an-open-source-commercial-ecosystem/">Linux todogroup.org</a></p>
+</blockquote>
+<h2 id="_2">创建可持续的开源商业生态体系<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>成功的开源项目通常围绕着一个繁荣的公司和产品生态体系构建。那么，什么是开源商业生态体系，以及如何帮助创建和支持可持续的开源项目呢？
+以下是一些方法可以建立对项目长期可行性的信心，鼓励公司在开源项目基础上构建商业产品和服务，并通过贡献、内容和其他资源重新投资于它们，从而促进生态体系的发展。</p>
+<h3 id="_3">定义和创建可持续的开源商业生态体系<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p>开源计划办公室（OSPO）可以通过两种方式与开源社区互动：</p>
+<ul>
+<li><strong>出站流程：</strong> 为现有项目做出贡献或发布新的开源项目</li>
+<li><strong>入站流程：</strong> 借鉴当前的一些开源项目</li>
+</ul>
+<p>在任何业务或产品策略中，将资源重新投资到所依赖的开源项目中是至关重要的。这种做法有助于创建开源商业生态体系，增强项目的可行性和长期可持续性。然而，在公司投入资源之前，他们必须对项目的未来有信心，才能愿意在其基础上建立商业依赖关系。</p>
+<p>虽然无法保证开源项目一定能成功，但通过围绕其建立商业生态体系的实践，可以为项目奠定成功的基础。
+加速这一过程能够推动创新，加快产品上市速度，进而促进项目的更快采用和使用。
+正如 <a href="https://www.slideshare.net/AccelPartners/the-rise-of-open-adoption-software-oas">Accel Partners 投资者 Ping Li 所述</a>，
+这会形成一个良性循环。</p>
+<p>Ping Li 的言论明确了项目、产品和利润三个可持续性阶段：</p>
+<ul>
+<li><strong>项目：</strong> 创建一个有用、目的明确、拥有强大社区的项目是构建繁荣生态体系的第一步。这可以通过创建全新项目、分叉现有项目，或重新利用现有项目来实现。例如，广受欢迎的 OpenStack 最初是 NASA 内部项目，而 Kubernetes 则是从谷歌内部项目发展而来。这些方法都能激发对项目的需求。</li>
+<li><strong>产品：</strong> 过去，许多开源领域主张纯粹主义，不愿商业化开源创作。但现在情况已有很大变化。公司如 Red Hat 通过将开源软件与强化支持结合，建立了亿美元业务，而像 OpenStack 这样的平台也孵化出像 Mirantis 这样的公司。许多开源项目现在提供社区版，同时提供完全支持的商业版。这种转变将项目变为产品。</li>
+<li><strong>利润：</strong> 利润对任何企业都至关重要，而通过项目到产品再到利润的循环，开源创作可以实现可持续性。为开源项目构建利润模型可能需要创造力。例如，Red Hat 为企业 Linux 和其他开源产品提供的关键支持是否是最有利可图的道路？或者像 Android 生态体系那样，寻求许可费或基于利润模型与硬件制造商合作？收购是否能为项目提供有利可图的商业模式？还有其他基于服务收费、捐赠筹资和众包捐赠的开源利润模型。</li>
+</ul>
+<p>一旦开源创作经历这三个阶段，通过商业依赖和资源再投资驱动的良性循环，项目就能实现稳定的社区开发状态，优化 bug 修复和安全更新，建立有利可图的合作伙伴关系，以及获得更多机会。</p>
+<p>商业依赖导致用户购买解决方案，产生利润，进而增加资源用于重新投资社区。一个健康的社区还可以鼓励项目之间的合作和互惠，提高质量。</p>
+<h2 id="_4">开源生态体系成功的关键要素<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>要打造成功的开源生态体系，首要任务是创建解决问题的独特代码。例如，OpenStack 降低了云中存储和计算资源的成本，帮助组织集中资源。类似地，网络功能虚拟化（NFV）技术有助于电信公司减少对昂贵专有组件的依赖。</p>
+<p>一旦存在解决问题的创造性，就可以着手建立社区和贡献、灌输商业采用的信心以及遵守开源文化。</p>
+<h3 id="_5">建立社区和增加贡献<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<p>要建立健康的开源项目社区，关键是进行开发人员培训和招募，<a href="https://opensource.guide/how-to-contribute/">确立入站贡献的指导方针</a>，以及遵循版本管理、构建和测试自动化、文档编写、问题跟踪和修订等有纪律的开发实践。</p>
+<div class="admonition quote">
+<p class="admonition-title">Ian Varley，SalesForce 的软件架构师</p>
+<p>你需要提供一种让人们参与项目的方式，而不需要他们拥有博士学位或在相关领域工作了 25 年。你需要让他们能够快速参与进来。这意味着你需要提供良好的文档，并且需要有活跃和健康的论坛以及负责任的维护者。</p>
+</div>
+<p><a href="http://contributor-covenant.org/">贡献者公约</a>是一个坚实的行为准则和贡献者指导文件，被<a href="http://contributor-covenant.org/adopters/">超过 40000 个开源项目</a>，包括 Kubernetes、Rails 和 Swift。Cloud Foundry 的<a href="https://www.cloudfoundry.org/code-of-conduct/">行为准则</a>提供了一个强有力的指南，展示了如何为社区成员制定正式准则。</p>
+<h3 id="_6">确保商业采用的信心<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<p>随着一个开源软件项目的成长，<a href="http://www.ifosslr.org/ifosslr/article/view/64">一项研究表明</a>，如果发展达到一个拐点，吸引了企业参与，但并不一定对开源项目中的知识产权制度（或缺乏制度）感到舒适。以下实践有助于增强那些可能在边缘徘徊，等待承诺参与项目的公司的信心。</p>
+<ul>
+<li>
+<p><strong>知识产权和商标管理。</strong> 开源许可证和政策，以及商标，对于一个项目是否能够实现商业采用具有巨大影响。有许多<a href="https://www.linux.com/news/free-tools-driving-open-source-project-success">免费资源</a>可用于管理这些内容。</p>
+</li>
+<li>
+<p><strong>独立治理。</strong> 对于某个成长阶段的项目来说，建立独立治理和中立项目资产变得至关重要。请记住，关键是要涉及那些有资格提供项目的商业和法律治理以及技术治理的人员。例如，一个具有技术技能的人可能了解内部贡献指南，而一个具有商业资质的人可能有资格制定商标政策。</p>
+<div class="admonition quote">
+<p class="admonition-title">Sarah Novotny，FOSS 战略 Azure</p>
+<p>在培育一个健康的商业生态系统中，明确你的项目是如何治理的，指明哪些是特定项目的一部分，哪些不是。设立一组清晰的接口，作为商业生态系统可以插入或连接到项目的地方。当你开始发展一个生态系统时，你希望公司在与你合作时感到安全。</p>
+</div>
+</li>
+<li>
+<p><strong>受支持、安全和可靠的代码和基础设施。</strong> 红帽从为开源软件提供强化支持中获得了多少好处？非常多。除了审查你的代码以确保可靠性和安全性，还要专注于提供支持，并利用社区支持选项，如论坛。许多公司，如Black Duck，也提供开源安全性和可靠性审计服务。</p>
+</li>
+<li>
+<p><strong>公关和营销支持。</strong> 你的项目是否有博客，并且是否有营销和公关方面的计划？围绕你的项目创建自己的内容，并通过在开源活动中进行演讲以及与媒体以及市场部门进行联系来补充这一努力，可以使你的项目被讨论和采用。许多商业开源项目的转化率（以下载者中购买某物的百分比来衡量）与专有软件产品相比并不高，因此低成本、可扩展的营销功能对盈利至关重要。</p>
+</li>
+<li>
+<p>创建强大的客户反馈回路。询问成功的商业人士如何看待客户，他们会说客户是第一位的。这是一个商业原则，在技术文化中可能并不被强调。确保提供直接的方式获取客户反馈并鼓励它。论坛可以提供丰富的客户反馈。回答客户的问题，无论通过哪个渠道，从论坛到电话支持都要覆盖到。</p>
+</li>
+</ul>
+<h3 id="_7">遵守开源文化<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<p>一个没有生态体系和社区的下游项目实际上并没有充分利用开源的价值。遵守开源文化是成功的关键。</p>
+<div class="admonition quote">
+<p class="admonition-title">Luke Faraone，Dropbox 的软件工程师</p>
+<p>在构建开源社区时最重要的一点是确保你自己的流程是开放的。你的决策过程越透明，你的社区就会拥有更强的归属感。你还需要确保你的流程不会成为障碍。如果你的入站或出站贡献的开源流程繁琐，人们就会尝试绕过流程，或者干脆认为贡献太困难。</p>
+</div>
+<ul>
+<li>
+<p><strong>平衡控制和开放性。</strong> 开源软件在许多用户中被广泛接受，因为传统上专有软件通常伴随着成本和控制。在围绕开源项目创建商业策略时，你必须平衡控制你的产品某些方面的价值（例如，附带多少支持），与开放性（例如，是否提供一个免费社区版，可以作为商业版的入口）。此外，请记住，项目创始人在项目上的控制力随着时间的推移会比创始时更少。</p>
+<div class="admonition quote">
+<p class="admonition-title">Joe Beda，K8s 的联合创始人，Heptio 的联合创始人和首席技术官</p>
+<p>随着开源项目的发展，你需要找到一种方法来实际上建立一个信任圈，让你能够委托给其他人，信任他们做出决策。这最终将成为一个困难的过渡。首先，你拥有一个创始人了解一切的小项目，对项目有一定程度的全面控制。然后，项目变成了由社区驱动，没有一个人或团体拥有完全控制权。</p>
+</div>
+</li>
+<li>
+<p><strong>透明度。</strong> 透明度的概念长期以来一直是开源文化的核心。毕竟，直接潜入代码存储库不需要开放和透明吗？然而，透明度不一定是大多数企业的核心原则。事实上，一些企业竭尽全力将内部信息和资产严格保密。在制定基于开源的商业成功策略时，评估透明度的好处。许多人会像欣赏代码透明度一样欣赏面向业务的透明度。</p>
+<div class="admonition quote">
+<p class="admonition-title">Joe Beda，K8s 的联合创始人，Heptio 的联合创始人和首席技术官</p>
+<p>有一些开源项目欢迎外部贡献，但项目的路线图和项目的治理很大程度上掌握在单一公司手中。然后有真正由社区驱动的开源项目。你正在与哪种项目合作？– </p>
+</div>
+</li>
+<li>
+<p><strong>基金会。</strong> 近年来，基金会在开源世界中产生了巨大影响。你的组织可以从与 Linux 基金会到 Apache 软件基金会等基金会合作中受益，你还可以从建立一个专注于开源的基金会中获益。了解开源基金会在促进可持续开源项目方面的作用，并考虑何时以及如何参与其中，将有助于为成功打下基础。</p>
+<div class="admonition quote">
+<p class="admonition-title">Luke Faraone，Dropbox 的软件工程师</p>
+<p>基金会提供了很多价值。历史上，对于许多非常关键的项目来说，如果没有基金会，它们很难获得所需的资金来得到良好的维护。它们有助于确保一个公平的竞争环境，并为组织提供机制，使其能够为开源项目提供支持，而无需直接贡献开发人员。</p>
+</div>
+</li>
+</ul>
+<h2 id="_8">如何构建一个开源生态体系<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
+<p>要围绕你的项目建立开源生态体系，你必须关注以下几点：治理；将开源项目用作商业依赖所需的资源；跟踪进展并进行调整。让我们深入了解每个方面以及它们对你的商业生态战略可以带来的价值。</p>
+<h3 id="1">1. 建立健康的治理体系<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
+<p>建立一个中立的结构至关重要，使竞争对手能够轻松参与，你还应考虑是否应该让外部利益相关者参与治理过程。当治理是独立的并接收多样化贡献时，你的生态体系将更加健康。</p>
+<p>如果你负责项目的技术治理，那么你可能不太适合就支持、商标或许可等问题做出决定。同样，你必须分开技术和财务决策。一些最好的技术进步发生在鼓励冒险的环境中。鼓励技术贡献者朝着冒险的目标努力，分开决策者可以评估它们是否在财务上可行。</p>
+<div class="admonition quote">
+<p class="admonition-title">Joe Beda，K8s 的联合创始人，Heptio 的联合创始人兼首席技术官</p>
+<p>我们尝试在 Kubernetes 社区中灌输的一种理念是项目高于人或公司。对于项目有益的事情与参与项目的公司有益的事情是两个不同的问题。当你的开源项目与单个公司过于紧密地联系在一起时，可能会出现非常棘手的问题。- </p>
+</div>
+<h3 id="2">2. 评估资源<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<p>当合作伙伴或客户决定是否在其业务中使用开源项目时，他们可能会评估或考虑以下不同资源：</p>
+<ul>
+<li><strong>安全策略：</strong> 漏洞管理是客户或合作伙伴可能关注的一个关键问题。你需要确保你拥有所有必要的基础设施和关于<a href="https://opensource.googleblog.com/2021/02/a-new-resource-for-coordinated-vulnerability-disclosure-in-open-source-projects.html">如何应对发现商业版本或开源产品中的漏洞</a>的政策。在安全方面，开源不能次于付费客户，这不是区分你的商业产品的方式。</li>
+<li><strong>法律政策：</strong> 与开源项目相关的法律资源成本可能很高，但也值得注意的是存在免费的法律资源。软件自由法律中心（SFLC）拥有一套非常好的关于开源许可证和版权工作的在线资源，以及更多内容。SFLC 的作者是曾参与创建流行开源许可证等的律师。不要误以为项目的免费版本不需要法律保护或对许可证方面的考虑。</li>
+<li>
+<p><strong>社区管理：</strong> 社区通常是一个成功的开源项目可能拥有的最强大资产，投资资源以发展一个健康的社区是最佳实践。通常，热情洋溢的社区是从一个备受喜爱的免费版本项目中发展起来的，因此仅投资于商业版本的社区增长是一个错误，因为免费社区版本通常促进潜在客户将采取的第一步。确保开源版本和任何开源开发人员都能访问与你的员工开发人员或付费版本运行的相同工具、检查和自动化。不同版本和合作者之间的平等是关键的。</p>
+</li>
+<li>
+<p><strong>明智投资于教育：</strong> 开源教育对于了解如何以健康的方式与开源生态体系互动至关重要。</p>
+<ul>
+<li>培训 - 教育和培训提供了一个良性循环，受过培训的用户推动了你的开源发明的事业。</li>
+<li>认证 - 认证计划帮助用户宣传围绕你的发明的技能，并提高他们的市场价值和你的市场价值。记住，你不仅需要认证具有技能的人。考虑一下 Linux 基金会的核心基础设施倡议（CII）徽章计划。它包括一个最佳实践徽章，可以展示一个开源项目对安全的承诺，建立信任。</li>
+<li>导师和实习 - 通过导师和实习，你可以培养围绕你的开源产品的更广泛知识基础，并创造机会。</li>
+<li>举办活动 - 如果整个围绕开源项目的社区都积极参与，那么开源项目就有很好的机会发展其成功的生态体系。活动是促进群体参与的绝佳方式。</li>
+</ul>
+</li>
+<li><strong>回馈：</strong> 参与你在产品中使用的项目并向上游贡献有着巨大的好处。如果一个开源项目对你和你的组织产生了积极影响，你很可能通过贡献为其带来积极影响。这种互惠互利在整个开源领域中是一种成熟的做法。只需看看 Red Hat 和 IBM，它们都是 Linux 的顶级贡献者。</li>
+</ul>
+<h3 id="3">3. 跟踪进展并进行调整<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
+<p>当然，围绕开源创建一个健康的商业生态体系是一个不断变化的目标。你必须让监督你的治理结构的人参与，并让你的社区提供反馈。“倾听、衡量和调整”是在这方面的一个好建议。你的社区成员可以提供极好的反馈，指导如何进行必要的改进并触达更多人。记住，每个社区都是不同的。</p>
+<div class="admonition quote">
+<p class="admonition-title">Sarah Novotny，Azure 开源策略</p>
+<p>为你与之合作的每个社区找到指标。我倾向于根据特定社区感受到的痛点找到指标，并尝试改善这些指标。没有一个神奇的评估，如果你查看从拉取请求到贡献者数量等六个指标，你就可以突然宣布你的社区和生态体系健康。你可能有一个非常小的项目，但它可能非常健康，因为它有六个核心贡献者和一打活跃但不是维护者的人。可能有健康的讨论，拉取请求可能被迅速处理，尽管在 GitHub 上可能没有一百万的星标或分支，但这可能是一个非常健康的社区。</p>
+</div>
+<h2 id="_9">例子：谷歌开源办公室<a class="headerlink" href="#_9" title="Permanent link">¶</a></h2>
+<p>许多公司已经建立了成功的开源项目办公室。这种趋势始于技术行业，因为像 IBM 和 Oracle 这样的大公司意识到开源严重影响了软件生态体系，但现在各行各业的公司都在运行开源项目。例如，Walmart Labs 和 Netflix 拥有蓬勃发展、<a href="https://www.linux.com/blog/learn/chapter/open-source-management/2017/5/enterprise-open-source-programs-concept-reality">高度结构化的开源项目</a>，并定期向社区贡献项目。开源项目办公室是无处不在的，因为开源是无处不在的。事实上，根据 Black Duck 和 North Bridge 的 <a href="https://www.blackducksoftware.com/2016-future-of-open-source">开源未来调查</a>，仅有三分之一的受访者，大部分来自企业，表示他们不使用任何开源工具或平台。</p>
+<p>在开源项目办公室中，谷歌的可能是最被广泛模仿的。谷歌发布了大量的开源贡献，公司领导者非常坦率地表示，公司从随后的社区参与中获得了商业利益。只需看看 Android 和 Kubernetes 通过社区开发和贡献获得的动力。</p>
+<div class="admonition quote">
+<p class="admonition-title">John Mark Walker，Capital One 的开源项目办公室主任</p>
+<p>技术供应商别无选择：合作或灭亡。他们可以选择无视趋势，但最终这对他们不利。他们最好从谷歌和其他 <a href="http://todogroup.org/">TODO Group</a> 参与者那里借鉴一些页面，并对开源生态体系采取一种全面的方式：哪些对战略重要，参与如何有助于更快地推出新产品和服务？而且，为了额外增加一些魔力，谷歌已经表明，接受公司主要产品重点之外的使命也会产生结果。</p>
+</div>
+<p>这个建议非常正确，这个建议不仅适用于技术供应商。所有公司都可以从谷歌的开源项目中学到宝贵的经验。最近，谷歌 <a href="https://opensource.google.com/">推出了一个新的家园</a>，用于其开源项目、流程和倡议。该网站内容丰富，有几个值得关注的方向，任何想围绕开源项目建立商业生态体系的人都应该留意。</p>
+<p>谷歌网站提供了一个开源项目目录和一个社区部分，展示了培训、活动和其他努力如何利用开源社区的能量。然而，如果你想围绕开源项目创建一个商业生态体系，真正的明珠是一个名为<a href="https://opensource.google.com/docs/">文档</a>的部分，该部分被称为“我们在谷歌开源方面的内部文档”。从开源贡献者和开发人员到实施开源项目计划的公司，谷歌网站的这一部分拥有经过测试和经过验证的大量信息。文档主要分为三个部分：</p>
+<ul>
+<li>创建介绍了谷歌开发人员如何发布他们编写的代码，无论是以新项目的形式还是作为对外部项目的补丁。</li>
+<li>使用解释了谷歌如何将开源代码引入公司并使用它。它深入探讨了维护许可合规性等方面。</li>
+<li>成长描述了谷歌在公司内外运行的一些支持开源社区的项目。</li>
+</ul>
+<div class="admonition quote">
+<p class="admonition-title">Will Norris，谷歌开源项目办公室前软件工程师</p>
+<p>这些文档解释了我们发布新开源项目、向他人的项目提交补丁以及我们如何管理引入公司并自己使用的开源代码的过程。但除了“如何”之外，它还概述了“为什么我们这样做，比如为什么我们只使用特定许可证下的代码，或者为什么我们要求对所有我们收到的补丁签署贡献者许可协议”。</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Luke Faraone，Dropbox 软件工程师</p>
+<p>谷歌发布了出色的开源流程文档，实际上阐明了他们的内部政策和程序。他们对内部所有权模型的描述确实具有教育意义。我还强烈推荐 Karl Fogel 的《Producing Open-Source Software》书籍，根据知识共享许可证在线提供。</p>
+</div>
+<p>仔细观察谷歌开源项目办公室的工作方式表明，该公司非常重视社区多样性和多样的项目，以推进其开源社区。关注社区的概念非常值得关注，因为你寻求在开源周围构建一个健康的商业生态体系。</p>
+<div class="admonition quote">
+<p class="admonition-title">Abby Kearns，Puppet 首席技术官</p>
+<p>如果整个围绕开源项目的社区都积极参与，开源项目就有最好的机会发展成一个成功的生态体系。这包括代码贡献者、用户、文档编写者、软件供应商、平台供应商和集成商等所有人。</p>
+</div>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年3月1日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 巴黎 KubeCon 谁在引领创新" class="md-footer__link md-footer__link--prev" href="240326-kubecon-eu.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                巴黎 KubeCon 谁在引领创新
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 好书《K8s云原生数据管理》" class="md-footer__link md-footer__link--next" href="240203-book.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                好书《K8s云原生数据管理》
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../stylesheets/zoom_image.js"></script>
+<script src="../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

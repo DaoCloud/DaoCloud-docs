@@ -1,0 +1,1475 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/middleware/mysql/faq/faq-master-slave.html" rel="canonical"/>
+<link href="faq-operator.html" rel="prev"/>
+<link href="faq-others.html" rel="next"/>
+<link href="../../../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>MySQL 主备关系 - DaoCloud Enterprise</title>
+<link href="../../../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../../../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#mysql">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              MySQL 主备关系
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../blogs/index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            产品文档
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dce/index.html">
+<span class="md-ellipsis">
+    文档导航
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+<span class="md-ellipsis">
+    探索和安装
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            探索和安装
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../dce/license0.html">
+<span class="md-ellipsis">
+    产品介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../install/index.html">
+<span class="md-ellipsis">
+    安装教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dce/bphome.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dce/faq.html">
+<span class="md-ellipsis">
+    常见问题
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+<span class="md-ellipsis">
+    工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            工作台
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../amamba/intro/index.html">
+<span class="md-ellipsis">
+    应用工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+<span class="md-ellipsis">
+    容器
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            容器
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kpanda/intro/index.html">
+<span class="md-ellipsis">
+    容器管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kairship/intro/index.html">
+<span class="md-ellipsis">
+    多云编排
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kangaroo/intro/index.html">
+<span class="md-ellipsis">
+    镜像仓库
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../network/intro/index.html">
+<span class="md-ellipsis">
+    云原生网络
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../storage/index.html">
+<span class="md-ellipsis">
+    云原生存储
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../virtnest/intro/index.html">
+<span class="md-ellipsis">
+    虚拟机
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+<span class="md-ellipsis">
+    微服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            微服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../insight/intro/index.html">
+<span class="md-ellipsis">
+    可观测性
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../skoala/intro/index.html">
+<span class="md-ellipsis">
+    微服务引擎
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../mspider/intro/index.html">
+<span class="md-ellipsis">
+    服务网格
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+<span class="md-ellipsis">
+    数据服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            数据服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_6_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_1" id="__nav_2_6_1_label" tabindex="0">
+<span class="md-ellipsis">
+    中间件
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_6_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_1">
+<span class="md-nav__icon md-icon"></span>
+            中间件
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../index.html">
+<span class="md-ellipsis">
+    介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../common/index.html">
+<span class="md-ellipsis">
+    中间件通用配置
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_6_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_1_3" id="__nav_2_6_1_3_label" tabindex="0">
+<span class="md-ellipsis">
+    MySQL 数据库
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_6_1_3_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_6_1_3">
+<span class="md-nav__icon md-icon"></span>
+            MySQL 数据库
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../intro/index.html">
+<span class="md-ellipsis">
+    介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../user-guide/create.html">
+<span class="md-ellipsis">
+    快速入门
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../best-practice/crossclusterssync.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_6_1_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_1_3_4" id="__nav_2_6_1_3_4_label" tabindex="0">
+<span class="md-ellipsis">
+    故障排查
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_6_1_3_4_label" class="md-nav" data-md-level="5">
+<label class="md-nav__title" for="__nav_2_6_1_3_4">
+<span class="md-nav__icon md-icon"></span>
+            故障排查
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="quick-check.html">
+<span class="md-ellipsis">
+    MySQL 健康检查
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="faq-pod.html">
+<span class="md-ellipsis">
+    MySQL Pod
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="faq-operator.html">
+<span class="md-ellipsis">
+    MySQL Operator
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    MySQL 主备关系
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="faq-master-slave.html">
+<span class="md-ellipsis">
+    MySQL 主备关系
+  </span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#false">
+<span class="md-ellipsis">
+      实例状态为 false 但日志无报错信息
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      从库日志出现 复制错误
+    </span>
+</a>
+<nav aria-label="从库日志出现 复制错误" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#purged-binlog">
+<span class="md-ellipsis">
+      purged binlog 错误
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      主键冲突错误
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      主从库复制错误
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pod-replica">
+<span class="md-ellipsis">
+      主备 Pod 均为 replica
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      主备数据不一致
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="faq-others.html">
+<span class="md-ellipsis">
+    MySQL 其他故障
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="faq-mgr-parameter.html">
+<span class="md-ellipsis">
+    MySQL MGR 参数配置
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="mgr-troubleshooting.html">
+<span class="md-ellipsis">
+    MySQL MGR 排障
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="faq-mtsql-net.html">
+<span class="md-ellipsis">
+    MySQL 主从模式网络闪断
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../mongodb/intro/index.html">
+<span class="md-ellipsis">
+    MongoDB 数据库
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../postgresql/intro/index.html">
+<span class="md-ellipsis">
+    PostgreSQL 数据库
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../redis/intro/index.html">
+<span class="md-ellipsis">
+    Redis 缓存服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../elasticsearch/intro/index.html">
+<span class="md-ellipsis">
+    ES 搜索服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../kafka/intro/index.html">
+<span class="md-ellipsis">
+    Kafka 消息队列
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../rabbitmq/intro/index.html">
+<span class="md-ellipsis">
+    RabbitMQ 消息队列
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../rocketmq/intro/index.html">
+<span class="md-ellipsis">
+    RocketMQ 消息队列
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../minio/intro/index.html">
+<span class="md-ellipsis">
+    MinIO 对象存储
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="">
+<span class="md-ellipsis">
+    云原生 AI
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+            云原生 AI
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../baize/intro/index.html">
+<span class="md-ellipsis">
+    AI Lab
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="">
+<span class="md-ellipsis">
+    边缘计算
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+            边缘计算
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kant/intro/index.html">
+<span class="md-ellipsis">
+    云边协同
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="">
+<span class="md-ellipsis">
+    管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            管理
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../ghippo/intro/index.html">
+<span class="md-ellipsis">
+    全局管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../blogs/index.html">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#false">
+<span class="md-ellipsis">
+      实例状态为 false 但日志无报错信息
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      从库日志出现 复制错误
+    </span>
+</a>
+<nav aria-label="从库日志出现 复制错误" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#purged-binlog">
+<span class="md-ellipsis">
+      purged binlog 错误
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      主键冲突错误
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      主从库复制错误
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pod-replica">
+<span class="md-ellipsis">
+      主备 Pod 均为 replica
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      主备数据不一致
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/middleware/mysql/faq/faq-master-slave.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/middleware/mysql/faq/faq-master-slave.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/middleware/mysql/faq/faq-master-slave.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="mysql">MySQL 主备关系<a class="headerlink" href="#mysql" title="Permanent link">¶</a></h1>
+<p>MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不同的解决方案。</p>
+<ol>
+<li>
+<p>执行以下命令确认 MySQL 状态:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>mysql<span class="w"> </span>-A
+</code></pre></div>
+<p>输出类似于：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>NAMESPACE       NAME                          READY   REPLICAS   AGE
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>ghippo-system   test                          True    1          3d
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>mcamel-system   mcamel-common-mysql-cluster   False   2          62d
+</code></pre></div>
+</li>
+<li>
+<p>关注 <strong>Ready</strong> 字段值为 <strong>False</strong> 的库 (这里为 <strong>True</strong> 的判断是延迟小于 30s 同步)，查看 MySQL 从库的日志</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-Lhealthy,role<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cluster-mysql<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>replica<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{print $1}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>kubectl<span class="w"> </span>logs<span class="w"> </span><span class="o">{}</span><span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-c<span class="w"> </span>mysql<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ERROR
+</code></pre></div>
+</li>
+</ol>
+<p>当实例状态为 <strong>False</strong> 时，可能存在以下几类故障，可以结合库日志信息排查修复。</p>
+<h2 id="false">实例状态为 <strong>false</strong> 但日志无报错信息<a class="headerlink" href="#false" title="Permanent link">¶</a></h2>
+<p>如果从库的日志中没有任何错误 <strong>ERROR</strong> 信息，说明 <strong>False</strong> 只是因为主从同步的延迟过大，可对从库执行以下命令进一步排查：</p>
+<ol>
+<li>
+<p>寻找到从节点的 Pod</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-Lhealthy,role<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cluster-mysql<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>replica<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{print $1}'</span>
+</code></pre></div>
+<p>输出类似于：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>mcamel-common-mysql-cluster-mysql-1
+</code></pre></div>
+</li>
+<li>
+<p>设置 <strong>binlog</strong> 参数</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>mcamel-common-mysql-cluster-mysql-1<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-c<span class="w"> </span>mysql<span class="w"> </span>--<span class="w"> </span>mysql<span class="w"> </span>--defaults-file<span class="o">=</span>/etc/mysql/client.conf<span class="w"> </span>-NB<span class="w"> </span>-e<span class="w"> </span><span class="s1">'set global sync_binlog=10086;'</span>
+</code></pre></div>
+</li>
+<li>
+<p>进入 MySQL 的容器</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>mcamel-common-mysql-cluster-mysql-1<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-c<span class="w"> </span>mysql<span class="w"> </span>--<span class="w"> </span>mysql<span class="w"> </span>--defaults-file<span class="o">=</span>/etc/mysql/client.conf
+</code></pre></div>
+</li>
+<li>
+<p>在 MySQL 容器中执行查看命令，获取从库状态。</p>
+<p><code>Seconds_Behind_Master</code> 字段为主从延迟，如果取值在 0~30，可以认为没有延迟；表示主从可以保持同步。</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">slave</span><span class="w"> </span><span class="n">status</span><span class="err">\</span><span class="k">G</span><span class="p">;</span><span class="w"> </span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="o">***************************</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="o">***************************</span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">               </span><span class="n">Slave_IO_State</span><span class="p">:</span><span class="w"> </span><span class="n">Waiting</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">source</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">send</span><span class="w"> </span><span class="n">event</span>
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">                  </span><span class="n">Master_Host</span><span class="p">:</span><span class="w"> </span><span class="n">mcamel</span><span class="o">-</span><span class="n">common</span><span class="o">-</span><span class="n">mysql</span><span class="o">-</span><span class="k">cluster</span><span class="o">-</span><span class="n">mysql</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="n">mysql</span><span class="p">.</span><span class="n">mcamel</span><span class="o">-</span><span class="k">system</span>
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">                  </span><span class="n">Master_User</span><span class="p">:</span><span class="w"> </span><span class="n">sys_replication</span>
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">                  </span><span class="n">Master_Port</span><span class="p">:</span><span class="w"> </span><span class="mi">3306</span>
+<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">                </span><span class="n">Connect_Retry</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">              </span><span class="n">Master_Log_File</span><span class="p">:</span><span class="w"> </span><span class="n">mysql</span><span class="o">-</span><span class="n">bin</span><span class="p">.</span><span class="mi">000304</span>
+<a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">          </span><span class="n">Read_Master_Log_Pos</span><span class="p">:</span><span class="w"> </span><span class="mi">83592007</span>
+<a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">               </span><span class="n">Relay_Log_File</span><span class="p">:</span><span class="w"> </span><span class="n">mcamel</span><span class="o">-</span><span class="n">common</span><span class="o">-</span><span class="n">mysql</span><span class="o">-</span><span class="k">cluster</span><span class="o">-</span><span class="n">mysql</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">relay</span><span class="o">-</span><span class="n">bin</span><span class="p">.</span><span class="mi">000002</span>
+<a href="#__codelineno-7-11" id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">                </span><span class="n">Relay_Log_Pos</span><span class="p">:</span><span class="w"> </span><span class="mi">83564355</span>
+<a href="#__codelineno-7-12" id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">        </span><span class="n">Relay_Master_Log_File</span><span class="p">:</span><span class="w"> </span><span class="n">mysql</span><span class="o">-</span><span class="n">bin</span><span class="p">.</span><span class="mi">000304</span>
+<a href="#__codelineno-7-13" id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">             </span><span class="n">Slave_IO_Running</span><span class="p">:</span><span class="w"> </span><span class="n">Yes</span>
+<a href="#__codelineno-7-14" id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">            </span><span class="n">Slave_SQL_Running</span><span class="p">:</span><span class="w"> </span><span class="n">Yes</span>
+<a href="#__codelineno-7-15" id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">              </span><span class="n">Replicate_Do_DB</span><span class="p">:</span>
+<a href="#__codelineno-7-16" id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">          </span><span class="n">Replicate_Ignore_DB</span><span class="p">:</span>
+<a href="#__codelineno-7-17" id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">           </span><span class="n">Replicate_Do_Table</span><span class="p">:</span>
+<a href="#__codelineno-7-18" id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">       </span><span class="n">Replicate_Ignore_Table</span><span class="p">:</span>
+<a href="#__codelineno-7-19" id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">      </span><span class="n">Replicate_Wild_Do_Table</span><span class="p">:</span>
+<a href="#__codelineno-7-20" id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">  </span><span class="n">Replicate_Wild_Ignore_Table</span><span class="p">:</span>
+<a href="#__codelineno-7-21" id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">                   </span><span class="n">Last_Errno</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-7-22" id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="w">                   </span><span class="n">Last_Error</span><span class="p">:</span>
+<a href="#__codelineno-7-23" id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">                 </span><span class="n">Skip_Counter</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-7-24" id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="w">          </span><span class="n">Exec_Master_Log_Pos</span><span class="p">:</span><span class="w"> </span><span class="mi">83564299</span>
+<a href="#__codelineno-7-25" id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="w">              </span><span class="n">Relay_Log_Space</span><span class="p">:</span><span class="w"> </span><span class="mi">83592303</span>
+<a href="#__codelineno-7-26" id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">              </span><span class="n">Until_Condition</span><span class="p">:</span><span class="w"> </span><span class="k">None</span>
+<a href="#__codelineno-7-27" id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="w">               </span><span class="n">Until_Log_File</span><span class="p">:</span>
+<a href="#__codelineno-7-28" id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="w">                </span><span class="n">Until_Log_Pos</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-7-29" id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="w">           </span><span class="n">Master_SSL_Allowed</span><span class="p">:</span><span class="w"> </span><span class="k">No</span>
+<a href="#__codelineno-7-30" id="__codelineno-7-30" name="__codelineno-7-30"></a><span class="w">           </span><span class="n">Master_SSL_CA_File</span><span class="p">:</span>
+<a href="#__codelineno-7-31" id="__codelineno-7-31" name="__codelineno-7-31"></a><span class="w">           </span><span class="n">Master_SSL_CA_Path</span><span class="p">:</span>
+<a href="#__codelineno-7-32" id="__codelineno-7-32" name="__codelineno-7-32"></a><span class="w">              </span><span class="n">Master_SSL_Cert</span><span class="p">:</span>
+<a href="#__codelineno-7-33" id="__codelineno-7-33" name="__codelineno-7-33"></a><span class="w">            </span><span class="n">Master_SSL_Cipher</span><span class="p">:</span>
+<a href="#__codelineno-7-34" id="__codelineno-7-34" name="__codelineno-7-34"></a><span class="w">               </span><span class="n">Master_SSL_Key</span><span class="p">:</span>
+<a href="#__codelineno-7-35" id="__codelineno-7-35" name="__codelineno-7-35"></a><span class="w">        </span><span class="n">Seconds_Behind_Master</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-7-36" id="__codelineno-7-36" name="__codelineno-7-36"></a><span class="n">Master_SSL_Verify_Server_Cert</span><span class="p">:</span><span class="w"> </span><span class="k">No</span>
+<a href="#__codelineno-7-37" id="__codelineno-7-37" name="__codelineno-7-37"></a><span class="w">                </span><span class="n">Last_IO_Errno</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-7-38" id="__codelineno-7-38" name="__codelineno-7-38"></a><span class="w">                </span><span class="n">Last_IO_Error</span><span class="p">:</span>
+<a href="#__codelineno-7-39" id="__codelineno-7-39" name="__codelineno-7-39"></a><span class="w">               </span><span class="n">Last_SQL_Errno</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-7-40" id="__codelineno-7-40" name="__codelineno-7-40"></a><span class="w">               </span><span class="n">Last_SQL_Error</span><span class="p">:</span>
+<a href="#__codelineno-7-41" id="__codelineno-7-41" name="__codelineno-7-41"></a><span class="w">  </span><span class="n">Replicate_Ignore_Server_Ids</span><span class="p">:</span>
+<a href="#__codelineno-7-42" id="__codelineno-7-42" name="__codelineno-7-42"></a><span class="w">             </span><span class="n">Master_Server_Id</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<a href="#__codelineno-7-43" id="__codelineno-7-43" name="__codelineno-7-43"></a><span class="w">                  </span><span class="n">Master_UUID</span><span class="p">:</span><span class="w"> </span><span class="n">e17dae09</span><span class="o">-</span><span class="mi">8</span><span class="n">da0</span><span class="o">-</span><span class="mi">11</span><span class="n">ed</span><span class="o">-</span><span class="mi">9104</span><span class="o">-</span><span class="n">c2f9484728fd</span>
+<a href="#__codelineno-7-44" id="__codelineno-7-44" name="__codelineno-7-44"></a><span class="w">             </span><span class="n">Master_Info_File</span><span class="p">:</span><span class="w"> </span><span class="n">mysql</span><span class="p">.</span><span class="n">slave_master_info</span>
+<a href="#__codelineno-7-45" id="__codelineno-7-45" name="__codelineno-7-45"></a><span class="w">                    </span><span class="n">SQL_Delay</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-7-46" id="__codelineno-7-46" name="__codelineno-7-46"></a><span class="w">          </span><span class="n">SQL_Remaining_Delay</span><span class="p">:</span><span class="w"> </span><span class="k">NULL</span>
+<a href="#__codelineno-7-47" id="__codelineno-7-47" name="__codelineno-7-47"></a><span class="w">      </span><span class="n">Slave_SQL_Running_State</span><span class="p">:</span><span class="w"> </span><span class="n">Replica</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="k">read</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">relay</span><span class="w"> </span><span class="n">log</span><span class="p">;</span><span class="w"> </span><span class="n">waiting</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">more</span><span class="w"> </span><span class="n">updates</span>
+<a href="#__codelineno-7-48" id="__codelineno-7-48" name="__codelineno-7-48"></a><span class="w">           </span><span class="n">Master_Retry_Count</span><span class="p">:</span><span class="w"> </span><span class="mi">86400</span>
+<a href="#__codelineno-7-49" id="__codelineno-7-49" name="__codelineno-7-49"></a><span class="w">                  </span><span class="n">Master_Bind</span><span class="p">:</span>
+<a href="#__codelineno-7-50" id="__codelineno-7-50" name="__codelineno-7-50"></a><span class="w">      </span><span class="n">Last_IO_Error_Timestamp</span><span class="p">:</span>
+<a href="#__codelineno-7-51" id="__codelineno-7-51" name="__codelineno-7-51"></a><span class="w">     </span><span class="n">Last_SQL_Error_Timestamp</span><span class="p">:</span>
+<a href="#__codelineno-7-52" id="__codelineno-7-52" name="__codelineno-7-52"></a><span class="w">               </span><span class="n">Master_SSL_Crl</span><span class="p">:</span>
+<a href="#__codelineno-7-53" id="__codelineno-7-53" name="__codelineno-7-53"></a><span class="w">           </span><span class="n">Master_SSL_Crlpath</span><span class="p">:</span>
+<a href="#__codelineno-7-54" id="__codelineno-7-54" name="__codelineno-7-54"></a><span class="w">           </span><span class="n">Retrieved_Gtid_Set</span><span class="p">:</span><span class="w"> </span><span class="n">e17dae09</span><span class="o">-</span><span class="mi">8</span><span class="n">da0</span><span class="o">-</span><span class="mi">11</span><span class="n">ed</span><span class="o">-</span><span class="mi">9104</span><span class="o">-</span><span class="n">c2f9484728fd</span><span class="p">:</span><span class="mi">21614244</span><span class="o">-</span><span class="mi">21621569</span>
+<a href="#__codelineno-7-55" id="__codelineno-7-55" name="__codelineno-7-55"></a><span class="w">            </span><span class="n">Executed_Gtid_Set</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="n">bc2107c</span><span class="o">-</span><span class="mi">819</span><span class="n">a</span><span class="o">-</span><span class="mi">11</span><span class="n">ed</span><span class="o">-</span><span class="n">bf23</span><span class="o">-</span><span class="mi">22</span><span class="n">be07e4eaff</span><span class="p">:</span><span class="mi">1</span><span class="o">-</span><span class="mi">342297</span><span class="p">,</span>
+<a href="#__codelineno-7-56" id="__codelineno-7-56" name="__codelineno-7-56"></a><span class="mi">7</span><span class="n">cc717ea</span><span class="o">-</span><span class="mi">7</span><span class="n">c1b</span><span class="o">-</span><span class="mi">11</span><span class="n">ed</span><span class="o">-</span><span class="n">b59d</span><span class="o">-</span><span class="n">c2ba3f807d12</span><span class="p">:</span><span class="mi">1</span><span class="o">-</span><span class="mi">619197</span><span class="p">,</span>
+<a href="#__codelineno-7-57" id="__codelineno-7-57" name="__codelineno-7-57"></a><span class="n">a5ab763a</span><span class="o">-</span><span class="mi">7</span><span class="n">c1b</span><span class="o">-</span><span class="mi">11</span><span class="n">ed</span><span class="o">-</span><span class="n">b5ca</span><span class="o">-</span><span class="mi">522707642</span><span class="n">ace</span><span class="p">:</span><span class="mi">1</span><span class="o">-</span><span class="mi">178069</span><span class="p">,</span>
+<a href="#__codelineno-7-58" id="__codelineno-7-58" name="__codelineno-7-58"></a><span class="n">a6045297</span><span class="o">-</span><span class="mi">8743</span><span class="o">-</span><span class="mi">11</span><span class="n">ed</span><span class="o">-</span><span class="mi">8712</span><span class="o">-</span><span class="mi">8</span><span class="n">e52c3ace534</span><span class="p">:</span><span class="mi">1</span><span class="o">-</span><span class="mi">4073131</span><span class="p">,</span>
+<a href="#__codelineno-7-59" id="__codelineno-7-59" name="__codelineno-7-59"></a><span class="n">a95cf9df</span><span class="o">-</span><span class="mi">84</span><span class="n">d7</span><span class="o">-</span><span class="mi">11</span><span class="n">ed</span><span class="o">-</span><span class="mi">8362</span><span class="o">-</span><span class="mi">5</span><span class="n">e8a1c335253</span><span class="p">:</span><span class="mi">1</span><span class="o">-</span><span class="mi">493942</span><span class="p">,</span>
+<a href="#__codelineno-7-60" id="__codelineno-7-60" name="__codelineno-7-60"></a><span class="n">b5175b1b</span><span class="o">-</span><span class="n">a2ac</span><span class="o">-</span><span class="mi">11</span><span class="n">ed</span><span class="o">-</span><span class="n">b0c6</span><span class="o">-</span><span class="n">d6fbe05d7579</span><span class="p">:</span><span class="mi">1</span><span class="o">-</span><span class="mi">3754703</span><span class="p">,</span>
+<a href="#__codelineno-7-61" id="__codelineno-7-61" name="__codelineno-7-61"></a><span class="n">c4dc2b14</span><span class="o">-</span><span class="mi">9</span><span class="n">ed9</span><span class="o">-</span><span class="mi">11</span><span class="n">ed</span><span class="o">-</span><span class="n">ac61</span><span class="o">-</span><span class="mi">36</span><span class="n">da81109699</span><span class="p">:</span><span class="mi">1</span><span class="o">-</span><span class="mi">945884</span><span class="p">,</span>
+<a href="#__codelineno-7-62" id="__codelineno-7-62" name="__codelineno-7-62"></a><span class="n">e17dae09</span><span class="o">-</span><span class="mi">8</span><span class="n">da0</span><span class="o">-</span><span class="mi">11</span><span class="n">ed</span><span class="o">-</span><span class="mi">9104</span><span class="o">-</span><span class="n">c2f9484728fd</span><span class="p">:</span><span class="mi">1</span><span class="o">-</span><span class="mi">21621569</span>
+<a href="#__codelineno-7-63" id="__codelineno-7-63" name="__codelineno-7-63"></a><span class="w">               </span><span class="n">Auto_Position</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<a href="#__codelineno-7-64" id="__codelineno-7-64" name="__codelineno-7-64"></a><span class="w">        </span><span class="n">Replicate_Rewrite_DB</span><span class="p">:</span>
+<a href="#__codelineno-7-65" id="__codelineno-7-65" name="__codelineno-7-65"></a><span class="w">                </span><span class="n">Channel_Name</span><span class="p">:</span>
+<a href="#__codelineno-7-66" id="__codelineno-7-66" name="__codelineno-7-66"></a><span class="w">          </span><span class="n">Master_TLS_Version</span><span class="p">:</span>
+<a href="#__codelineno-7-67" id="__codelineno-7-67" name="__codelineno-7-67"></a><span class="w">      </span><span class="n">Master_public_key_path</span><span class="p">:</span>
+<a href="#__codelineno-7-68" id="__codelineno-7-68" name="__codelineno-7-68"></a><span class="w">       </span><span class="n">Get_master_public_key</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-7-69" id="__codelineno-7-69" name="__codelineno-7-69"></a><span class="w">           </span><span class="n">Network_Namespace</span><span class="p">:</span>
+<a href="#__codelineno-7-70" id="__codelineno-7-70" name="__codelineno-7-70"></a><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">warning</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>主从同步后 <strong>Seconds_Behind_Master</strong> 小于 30s，设置 <strong>sync_binlog=1</strong> </p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>mcamel-common-mysql-cluster-mysql-1<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-c<span class="w"> </span>mysql<span class="w"> </span>--<span class="w"> </span>mysql<span class="w"> </span>--defaults-file<span class="o">=</span>/etc/mysql/client.conf<span class="w"> </span>-NB<span class="w"> </span>-e<span class="w"> </span><span class="s1">'set global sync_binlog=1'</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>如果此时依然不见缓解，可以查看从库的宿主机负载或者 IO 是否太高，执行以下命令：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="o">[</span>root@master-01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>uptime
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="m">11</span>:18<span class="w">  </span>up<span class="w"> </span><span class="m">1</span><span class="w"> </span>day,<span class="w"> </span><span class="m">17</span>:49,<span class="w"> </span><span class="m">2</span><span class="w"> </span>users,<span class="w"> </span>load<span class="w"> </span>averages:<span class="w"> </span><span class="m">9</span>.33<span class="w"> </span><span class="m">7</span>.08<span class="w"> </span><span class="m">6</span>.28
+</code></pre></div>
+<p><strong>load averages</strong> 在正常情况下 3 个数值都不应长期超过 10；如果超过 30 以上，请合理调配下该节点的 Pod 和磁盘。</p>
+</li>
+</ol>
+<h2 id="_1">从库日志出现 <strong>复制错误</strong><a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>如果从库 Pod 日志中出现从库复制错误，可能由多种原因引起，下文将针对不同情况介绍判断及修复方法。</p>
+<h3 id="purged-binlog">purged binlog 错误<a class="headerlink" href="#purged-binlog" title="Permanent link">¶</a></h3>
+<p>注意以下示例，如果出现关键字 <strong>purged binlog</strong> ，通常需要对从库执行重建处理。</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="o">[</span>root@demo-alpha-master-01<span class="w"> </span>/<span class="o">]</span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-Lhealthy,role<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cluster-mysql<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>replica<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{print $1}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>kubectl<span class="w"> </span>logs<span class="w"> </span><span class="o">{}</span><span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-c<span class="w"> </span>mysql<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ERROR
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="m">2023</span>-02-08T18:43:21.991730Z<span class="w"> </span><span class="m">116</span><span class="w"> </span><span class="o">[</span>ERROR<span class="o">]</span><span class="w"> </span><span class="o">[</span>MY-010557<span class="o">]</span><span class="w"> </span><span class="o">[</span>Repl<span class="o">]</span><span class="w"> </span>Error<span class="w"> </span>reading<span class="w"> </span>packet<span class="w"> </span>from<span class="w"> </span>server<span class="w"> </span><span class="k">for</span><span class="w"> </span>channel<span class="w"> </span><span class="s1">''</span>:<span class="w"> </span>Cannot<span class="w"> </span>replicate<span class="w"> </span>because<span class="w"> </span>the<span class="w"> </span>master<span class="w"> </span>purged<span class="w"> </span>required<span class="w"> </span>binary<span class="w"> </span>logs.<span class="w"> </span>Replicate<span class="w"> </span>the<span class="w"> </span>missing<span class="w"> </span>transactions<span class="w"> </span>from<span class="w"> </span>elsewhere,<span class="w"> </span>or<span class="w"> </span>provision<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>slave<span class="w"> </span>from<span class="w"> </span>backup.<span class="w"> </span>Consider<span class="w"> </span>increasing<span class="w"> </span>the<span class="w"> </span>master<span class="s1">'s binary log expiration period. The GTID sets and the missing purged transactions are too long to print in this message. For more information, please see the master'</span>s<span class="w"> </span>error<span class="w"> </span>log<span class="w"> </span>or<span class="w"> </span>the<span class="w"> </span>manual<span class="w"> </span><span class="k">for</span><span class="w"> </span>GTID_SUBTRACT<span class="w"> </span><span class="o">(</span><span class="nv">server_errno</span><span class="o">=</span><span class="m">1236</span><span class="o">)</span>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="m">2023</span>-02-08T18:43:21.991777Z<span class="w"> </span><span class="m">116</span><span class="w"> </span><span class="o">[</span>ERROR<span class="o">]</span><span class="w"> </span><span class="o">[</span>MY-013114<span class="o">]</span><span class="w"> </span><span class="o">[</span>Repl<span class="o">]</span><span class="w"> </span>Slave<span class="w"> </span>I/O<span class="w"> </span><span class="k">for</span><span class="w"> </span>channel<span class="w"> </span><span class="s1">''</span>:<span class="w"> </span>Got<span class="w"> </span>fatal<span class="w"> </span>error<span class="w"> </span><span class="m">1236</span><span class="w"> </span>from<span class="w"> </span>master<span class="w"> </span>when<span class="w"> </span>reading<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span>binary<span class="w"> </span>log:<span class="w"> </span><span class="s1">'Cannot replicate because the master purged required binary logs. Replicate the missing transactions from elsewhere, or provision a new slave from backup. Consider increasing the master'</span>s<span class="w"> </span>binary<span class="w"> </span>log<span class="w"> </span>expiration<span class="w"> </span>period.<span class="w"> </span>The<span class="w"> </span>GTID<span class="w"> </span>sets<span class="w"> </span>and<span class="w"> </span>the<span class="w"> </span>missing<span class="w"> </span>purged<span class="w"> </span>transactions<span class="w"> </span>are<span class="w"> </span>too<span class="w"> </span>long<span class="w"> </span>to<span class="w"> </span>print<span class="w"> </span><span class="k">in</span><span class="w"> </span>this<span class="w"> </span>message.<span class="w"> </span>For<span class="w"> </span>more<span class="w"> </span>information,<span class="w"> </span>please<span class="w"> </span>see<span class="w"> </span>the<span class="w"> </span>master<span class="s1">'s error log or the manual for GTID_SUBTRACT'</span>,<span class="w"> </span>Error_code:<span class="w"> </span>MY-013114
+</code></pre></div>
+<p>重建操作如下：</p>
+<ol>
+<li>
+<p>寻找从节点的 Pod</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="o">[</span>root@master-01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-Lhealthy,role<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cluster-mysql<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>replica<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{print $1}'</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>mcamel-common-mysql-cluster-mysql-1
+</code></pre></div>
+</li>
+<li>
+<p>寻找从节点的  PVC</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="o">[</span>root@master-01<span class="w"> </span>/<span class="o">]</span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pvc<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>mcamel-common-mysql-cluster-mysql-1
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>data-mcamel-common-mysql-cluster-mysql-1<span class="w">                                        </span>Bound<span class="w">    </span>pvc-5840569e-834f-4236-a5c6-878e41c55c85<span class="w">   </span>50Gi<span class="w">       </span>RWO<span class="w">            </span>local-path<span class="w">                   </span>33d
+</code></pre></div>
+</li>
+<li>
+<p>删除从节点的 PVC</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="o">[</span>root@master-01<span class="w"> </span>/<span class="o">]</span>$<span class="w"> </span>kubectl<span class="w"> </span>delete<span class="w"> </span>pvc<span class="w"> </span>data-mcamel-common-mysql-cluster-mysql-1<span class="w"> </span>-n<span class="w"> </span>mcamel-system
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>persistentvolumeclaim<span class="w"> </span><span class="s2">"data-mcamel-common-mysql-cluster-mysql-1"</span><span class="w"> </span>deleted
+</code></pre></div>
+</li>
+<li>
+<p>删除从库的 Pod</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="o">[</span>root@master-01<span class="w"> </span>/<span class="o">]</span>$<span class="w"> </span>kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>mcamel-common-mysql-cluster-mysql-1<span class="w"> </span>-n<span class="w"> </span>mcamel-system
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>pod<span class="w"> </span><span class="s2">"mcamel-common-mysql-cluster-mysql-1"</span><span class="w"> </span>deleted
+</code></pre></div>
+</li>
+</ol>
+<h3 id="_2">主键冲突错误<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<p>运行命令时出现以下错误提示：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="o">[</span>root@demo-alpha-master-01<span class="w"> </span>/<span class="o">]</span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-Lhealthy,role<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cluster-mysql<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>replica<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{print $1}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>kubectl<span class="w"> </span>logs<span class="w"> </span><span class="o">{}</span><span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-c<span class="w"> </span>mysql<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ERROR
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="m">2023</span>-02-08T18:43:21.991730Z<span class="w"> </span><span class="m">116</span><span class="w"> </span><span class="o">[</span>ERROR<span class="o">]</span><span class="w"> </span><span class="o">[</span>MY-010557<span class="o">]</span><span class="w"> </span><span class="o">[</span>Repl<span class="o">]</span><span class="w"> </span>Could<span class="w"> </span>notexecute<span class="w"> </span>Write_rows<span class="w"> </span>event<span class="w"> </span>on<span class="w"> </span>table<span class="w"> </span>dr_brower_db.dr_user_info<span class="p">;</span><span class="w"> </span>Duplicate<span class="w"> </span>entry<span class="w"> </span><span class="s1">'24'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>key<span class="w"> </span><span class="s1">'PRIMARY'</span>,<span class="w"> </span>Error_code:1062<span class="p">;</span><span class="w"> </span>handler<span class="w"> </span>error<span class="w"> </span>HA_ERR_FOUND_DUPP_KEY<span class="p">;</span><span class="w"> </span>the<span class="w"> </span>event<span class="err">'</span>s<span class="w"> </span>master<span class="w"> </span>logmysql-bin.000010,<span class="w"> </span>end_log_pos<span class="w"> </span><span class="m">5295916</span>
+</code></pre></div>
+<p>在错误日志中看到 <code>Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY;</code></p>
+<p>这说明出现了主键冲突，或者主键不存在的错误。此时，可以以幂等模式恢复或插入空事务的形式跳过错误：</p>
+<p><strong>方法1</strong>：幂等模式恢复</p>
+<ol>
+<li>
+<p>寻找到从节点的 Pod</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="o">[</span>root@master-01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-Lhealthy,role<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cluster-mysql<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>replica<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{print $1}'</span>
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>mcamel-common-mysql-cluster-mysql-1
+</code></pre></div>
+</li>
+<li>
+<p>设置 mysql 幂等模式</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="o">[</span>root@master-01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>mcamel-common-mysql-cluster-mysql-1<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-c<span class="w"> </span>mysql<span class="w"> </span>--<span class="w"> </span>mysql<span class="w"> </span>--defaults-file<span class="o">=</span>/etc/mysql/client.conf<span class="w"> </span>-NB<span class="w"> </span>-e<span class="w"> </span><span class="s1">'stop slave;set global slave_exec_mode="IDEMPOTENT";set global sync_binlog=10086;start slave;'</span>
+</code></pre></div>
+</li>
+</ol>
+<p><strong>方法 2</strong> ：插入空事务跳过错误</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="n">slave</span><span class="p">;</span>
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="o">@@</span><span class="k">SESSION</span><span class="p">.</span><span class="n">GTID_NEXT</span><span class="o">=</span><span class="w"> </span><span class="s1">'xxxxx:105220'</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 具体数值，在日志里面提到 */</span>
+<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">BEGIN</span><span class="p">;</span>
+<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">COMMIT</span><span class="p">;</span>
+<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="k">SESSION</span><span class="w"> </span><span class="n">GTID_NEXT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AUTOMATIC</span><span class="p">;</span>
+<a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">START</span><span class="w"> </span><span class="n">SLAVE</span><span class="p">;</span>
+</code></pre></div>
+<p>执行完成以上操作后，观察从库重建的进度：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="c1"># 进入 mysql 的容器</span>
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="o">[</span>root@master-01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>mcamel-common-mysql-cluster-mysql-1<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-c<span class="w"> </span>mysql<span class="w"> </span>--<span class="w"> </span>mysql<span class="w"> </span>--defaults-file<span class="o">=</span>/etc/mysql/client.conf
+</code></pre></div>
+<p>执行以下命令，查看从库的主从延迟状态字段 <strong>Seconds_Behind_Master</strong> ，如果取值在 0~30，表示已没有主从延迟，主库和从库基本保持同步。</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">slave</span><span class="w"> </span><span class="n">status</span><span class="err">\</span><span class="k">G</span><span class="p">;</span>
+</code></pre></div>
+<p>确认主从同步后 (Seconds_Behind_Master 小于 30s)，执行以下命令，设定 MySQL 严格模式：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="o">[</span>root@master-01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>mcamel-common-mysql-cluster-mysql-1<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-c<span class="w"> </span>mysql<span class="w"> </span>--<span class="w"> </span>mysql<span class="w"> </span>--defaults-file<span class="o">=</span>/etc/mysql/client.conf<span class="w"> </span>-NB<span class="w"> </span>-e<span class="w"> </span><span class="err">'</span>stop<span class="w"> </span>slave<span class="p">;</span><span class="nb">set</span><span class="w"> </span>global<span class="w"> </span><span class="nv">slave_exec_mode</span><span class="o">=</span><span class="s2">"STRICT"</span><span class="p">;</span><span class="nb">set</span><span class="w"> </span>global<span class="w"> </span><span class="nv">sync_binlog</span><span class="o">=</span><span class="m">10086</span><span class="p">;</span>start<span class="w"> </span>slave<span class="p">;</span>
+</code></pre></div>
+<h3 id="_3">主从库复制错误<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p>当从库出现类似 <code>[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r</code> 的错误信息，可以执行如下操作：</p>
+<ol>
+<li>
+<p>寻找到从节点的 Pod</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="o">[</span>root@master-01<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' </span>
+<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a>mcamel-common-mysql-cluster-mysql-1
+</code></pre></div>
+</li>
+<li>
+<p>设置让从库跳过这个日志继续复制</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="o">[</span>root@master-01<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;reset slave;change master to MASTER_AUTO_POSITION = 1;start slave;'; </span>
+</code></pre></div>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol>
+<li>这种情况可以以幂等模式执行</li>
+<li>此种类型错误也可以重做从库</li>
+</ol>
+</div>
+<h2 id="pod-replica">主备 Pod 均为 <strong>replica</strong><a class="headerlink" href="#pod-replica" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>通过以下命令，发现两个 MySQL 的 Pod均为 <strong>replica</strong> 角色，需修正其中一个为 <strong>master</strong> 。</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="o">[</span>root@aster-01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-Lhealthy,role<span class="p">|</span>grep<span class="w"> </span>mysql
+<a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a>mcamel-common-mysql-cluster-mysql-0<span class="w">                          </span><span class="m">4</span>/4<span class="w">     </span>Running<span class="w">   </span><span class="m">5</span><span class="w"> </span><span class="o">(</span>16h<span class="w"> </span>ago<span class="o">)</span><span class="w">   </span>16h<span class="w">   </span>no<span class="w">       </span>replica
+<a href="#__codelineno-24-3" id="__codelineno-24-3" name="__codelineno-24-3"></a>mcamel-common-mysql-cluster-mysql-1<span class="w">                          </span><span class="m">4</span>/4<span class="w">     </span>Running<span class="w">   </span><span class="m">6</span><span class="w"> </span><span class="o">(</span>16h<span class="w"> </span>ago<span class="o">)</span><span class="w">   </span>16h<span class="w">   </span>no<span class="w">       </span>replica
+<a href="#__codelineno-24-4" id="__codelineno-24-4" name="__codelineno-24-4"></a>mysql-operator-0<span class="w">                                             </span><span class="m">2</span>/2<span class="w">     </span>Running<span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>16h<span class="w"> </span>ago<span class="o">)</span><span class="w">   </span>16h
+</code></pre></div>
+</li>
+<li>
+<p>进入 MySQL 查看：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>mcamel-common-mysql-cluster-mysql-0<span class="w"> </span>-n<span class="w"> </span>mcamel-system<span class="w"> </span>-c<span class="w"> </span>mysql<span class="w"> </span>--<span class="w"> </span>mysql<span class="w"> </span>--defaults-file<span class="o">=</span>/etc/mysql/client.conf
+</code></pre></div>
+</li>
+<li>
+<p>查看 <strong>slave</strong> 的状态信息，查询结果为空的就是原来的 <strong>master</strong> ，如下方示例中 <strong>mysql-0</strong> 对应的内容:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="c1">-- mysql-0</span>
+<a href="#__codelineno-26-2" id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">slave</span><span class="w"> </span><span class="n">status</span><span class="err">\</span><span class="k">G</span><span class="p">;</span>
+<a href="#__codelineno-26-3" id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="n">empty</span><span class="w"> </span><span class="k">set</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">warning</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+<a href="#__codelineno-26-4" id="__codelineno-26-4" name="__codelineno-26-4"></a>
+<a href="#__codelineno-26-5" id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="c1">-- mysql-1</span>
+<a href="#__codelineno-26-6" id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">slave</span><span class="w"> </span><span class="n">status</span><span class="err">\</span><span class="k">G</span><span class="p">;</span>
+<a href="#__codelineno-26-7" id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="o">***************************</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="o">***************************</span>
+<a href="#__codelineno-26-8" id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="w">               </span><span class="n">Slave_IO_State</span><span class="p">:</span><span class="w"> </span><span class="n">Waiting</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">source</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">send</span><span class="w"> </span><span class="n">event</span>
+<a href="#__codelineno-26-9" id="__codelineno-26-9" name="__codelineno-26-9"></a><span class="w">                  </span><span class="n">Master_Host</span><span class="p">:</span><span class="w"> </span><span class="n">mcamel</span><span class="o">-</span><span class="n">common</span><span class="o">-</span><span class="n">mysql</span><span class="o">-</span><span class="k">cluster</span><span class="o">-</span><span class="n">mysql</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="n">mysql</span><span class="p">.</span><span class="n">mcamel</span><span class="o">-</span><span class="k">system</span>
+<a href="#__codelineno-26-10" id="__codelineno-26-10" name="__codelineno-26-10"></a><span class="w">                  </span><span class="n">Master_User</span><span class="p">:</span><span class="w"> </span><span class="n">sys_replication</span>
+<a href="#__codelineno-26-11" id="__codelineno-26-11" name="__codelineno-26-11"></a><span class="w">                  </span><span class="n">Master_Port</span><span class="p">:</span><span class="w"> </span><span class="mi">3306</span>
+<a href="#__codelineno-26-12" id="__codelineno-26-12" name="__codelineno-26-12"></a><span class="w">                </span><span class="n">Connect_Retry</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<a href="#__codelineno-26-13" id="__codelineno-26-13" name="__codelineno-26-13"></a><span class="w">              </span><span class="n">Master_Log_File</span><span class="p">:</span><span class="w"> </span><span class="n">mysql</span><span class="o">-</span><span class="n">bin</span><span class="p">.</span><span class="mi">000004</span>
+<a href="#__codelineno-26-14" id="__codelineno-26-14" name="__codelineno-26-14"></a><span class="w">          </span><span class="n">Read_Master_Log_Pos</span><span class="p">:</span><span class="w"> </span><span class="mi">38164242</span>
+<a href="#__codelineno-26-15" id="__codelineno-26-15" name="__codelineno-26-15"></a><span class="w">               </span><span class="n">Relay_Log_File</span><span class="p">:</span><span class="w"> </span><span class="n">mcamel</span><span class="o">-</span><span class="n">common</span><span class="o">-</span><span class="n">mysql</span><span class="o">-</span><span class="k">cluster</span><span class="o">-</span><span class="n">mysql</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">relay</span><span class="o">-</span><span class="n">bin</span><span class="p">.</span><span class="mi">000002</span>
+<a href="#__codelineno-26-16" id="__codelineno-26-16" name="__codelineno-26-16"></a><span class="w">                </span><span class="n">Relay_Log_Pos</span><span class="p">:</span><span class="w"> </span><span class="mi">38164418</span>
+<a href="#__codelineno-26-17" id="__codelineno-26-17" name="__codelineno-26-17"></a><span class="w">        </span><span class="n">Relay_Master_Log_File</span><span class="p">:</span><span class="w"> </span><span class="n">mysql</span><span class="o">-</span><span class="n">bin</span><span class="p">.</span><span class="mi">000004</span>
+<a href="#__codelineno-26-18" id="__codelineno-26-18" name="__codelineno-26-18"></a><span class="w">             </span><span class="n">Slave_IO_Running</span><span class="p">:</span><span class="w"> </span><span class="n">Yes</span>
+<a href="#__codelineno-26-19" id="__codelineno-26-19" name="__codelineno-26-19"></a><span class="w">            </span><span class="n">Slave_SQL_Running</span><span class="p">:</span><span class="w"> </span><span class="n">Yes</span>
+<a href="#__codelineno-26-20" id="__codelineno-26-20" name="__codelineno-26-20"></a><span class="w">              </span><span class="n">Replicate_Do_DB</span><span class="p">:</span>
+<a href="#__codelineno-26-21" id="__codelineno-26-21" name="__codelineno-26-21"></a><span class="w">          </span><span class="n">Replicate_Ignore_DB</span><span class="p">:</span>
+<a href="#__codelineno-26-22" id="__codelineno-26-22" name="__codelineno-26-22"></a><span class="w">           </span><span class="n">Replicate_Do_Table</span><span class="p">:</span>
+<a href="#__codelineno-26-23" id="__codelineno-26-23" name="__codelineno-26-23"></a><span class="w">       </span><span class="n">Replicate_Ignore_Table</span><span class="p">:</span>
+<a href="#__codelineno-26-24" id="__codelineno-26-24" name="__codelineno-26-24"></a><span class="w">      </span><span class="n">Replicate_Wild_Do_Table</span><span class="p">:</span>
+<a href="#__codelineno-26-25" id="__codelineno-26-25" name="__codelineno-26-25"></a><span class="w">  </span><span class="n">Replicate_Wild_Ignore_Table</span><span class="p">:</span>
+<a href="#__codelineno-26-26" id="__codelineno-26-26" name="__codelineno-26-26"></a><span class="w">                   </span><span class="n">Last_Errno</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-26-27" id="__codelineno-26-27" name="__codelineno-26-27"></a><span class="w">                   </span><span class="n">Last_Error</span><span class="p">:</span>
+<a href="#__codelineno-26-28" id="__codelineno-26-28" name="__codelineno-26-28"></a><span class="w">                 </span><span class="n">Skip_Counter</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-26-29" id="__codelineno-26-29" name="__codelineno-26-29"></a><span class="w">          </span><span class="n">Exec_Master_Log_Pos</span><span class="p">:</span><span class="w"> </span><span class="mi">38164242</span>
+<a href="#__codelineno-26-30" id="__codelineno-26-30" name="__codelineno-26-30"></a><span class="w">              </span><span class="n">Relay_Log_Space</span><span class="p">:</span><span class="w"> </span><span class="mi">38164658</span>
+<a href="#__codelineno-26-31" id="__codelineno-26-31" name="__codelineno-26-31"></a><span class="w">              </span><span class="n">Until_Condition</span><span class="p">:</span><span class="w"> </span><span class="k">None</span>
+<a href="#__codelineno-26-32" id="__codelineno-26-32" name="__codelineno-26-32"></a><span class="w">               </span><span class="n">Until_Log_File</span><span class="p">:</span>
+<a href="#__codelineno-26-33" id="__codelineno-26-33" name="__codelineno-26-33"></a><span class="w">                </span><span class="n">Until_Log_Pos</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-26-34" id="__codelineno-26-34" name="__codelineno-26-34"></a><span class="w">           </span><span class="n">Master_SSL_Allowed</span><span class="p">:</span><span class="w"> </span><span class="k">No</span>
+<a href="#__codelineno-26-35" id="__codelineno-26-35" name="__codelineno-26-35"></a><span class="w">           </span><span class="n">Master_SSL_CA_File</span><span class="p">:</span>
+<a href="#__codelineno-26-36" id="__codelineno-26-36" name="__codelineno-26-36"></a><span class="w">           </span><span class="n">Master_SSL_CA_Path</span><span class="p">:</span>
+<a href="#__codelineno-26-37" id="__codelineno-26-37" name="__codelineno-26-37"></a><span class="w">              </span><span class="n">Master_SSL_Cert</span><span class="p">:</span>
+<a href="#__codelineno-26-38" id="__codelineno-26-38" name="__codelineno-26-38"></a><span class="w">            </span><span class="n">Master_SSL_Cipher</span><span class="p">:</span>
+<a href="#__codelineno-26-39" id="__codelineno-26-39" name="__codelineno-26-39"></a><span class="w">               </span><span class="n">Master_SSL_Key</span><span class="p">:</span>
+<a href="#__codelineno-26-40" id="__codelineno-26-40" name="__codelineno-26-40"></a><span class="w">        </span><span class="n">Seconds_Behind_Master</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-26-41" id="__codelineno-26-41" name="__codelineno-26-41"></a><span class="n">Master_SSL_Verify_Server_Cert</span><span class="p">:</span><span class="w"> </span><span class="k">No</span>
+<a href="#__codelineno-26-42" id="__codelineno-26-42" name="__codelineno-26-42"></a><span class="w">                </span><span class="n">Last_IO_Errno</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-26-43" id="__codelineno-26-43" name="__codelineno-26-43"></a><span class="w">                </span><span class="n">Last_IO_Error</span><span class="p">:</span>
+<a href="#__codelineno-26-44" id="__codelineno-26-44" name="__codelineno-26-44"></a><span class="w">               </span><span class="n">Last_SQL_Errno</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-26-45" id="__codelineno-26-45" name="__codelineno-26-45"></a><span class="w">               </span><span class="n">Last_SQL_Error</span><span class="p">:</span>
+<a href="#__codelineno-26-46" id="__codelineno-26-46" name="__codelineno-26-46"></a><span class="w">  </span><span class="n">Replicate_Ignore_Server_Ids</span><span class="p">:</span>
+<a href="#__codelineno-26-47" id="__codelineno-26-47" name="__codelineno-26-47"></a><span class="w">             </span><span class="n">Master_Server_Id</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<a href="#__codelineno-26-48" id="__codelineno-26-48" name="__codelineno-26-48"></a><span class="w">                  </span><span class="n">Master_UUID</span><span class="p">:</span><span class="w"> </span><span class="n">c16da70b</span><span class="o">-</span><span class="n">ad12</span><span class="o">-</span><span class="mi">11</span><span class="n">ed</span><span class="o">-</span><span class="mi">8084</span><span class="o">-</span><span class="mi">0</span><span class="n">a580a810256</span>
+<a href="#__codelineno-26-49" id="__codelineno-26-49" name="__codelineno-26-49"></a><span class="w">             </span><span class="n">Master_Info_File</span><span class="p">:</span><span class="w"> </span><span class="n">mysql</span><span class="p">.</span><span class="n">slave_master_info</span>
+<a href="#__codelineno-26-50" id="__codelineno-26-50" name="__codelineno-26-50"></a><span class="w">                    </span><span class="n">SQL_Delay</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-26-51" id="__codelineno-26-51" name="__codelineno-26-51"></a><span class="w">          </span><span class="n">SQL_Remaining_Delay</span><span class="p">:</span><span class="w"> </span><span class="k">NULL</span>
+<a href="#__codelineno-26-52" id="__codelineno-26-52" name="__codelineno-26-52"></a><span class="w">      </span><span class="n">Slave_SQL_Running_State</span><span class="p">:</span><span class="w"> </span><span class="n">Replica</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="k">read</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">relay</span><span class="w"> </span><span class="n">log</span><span class="p">;</span><span class="w"> </span><span class="n">waiting</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">more</span><span class="w"> </span><span class="n">updates</span>
+<a href="#__codelineno-26-53" id="__codelineno-26-53" name="__codelineno-26-53"></a><span class="w">           </span><span class="n">Master_Retry_Count</span><span class="p">:</span><span class="w"> </span><span class="mi">86400</span>
+<a href="#__codelineno-26-54" id="__codelineno-26-54" name="__codelineno-26-54"></a><span class="w">                  </span><span class="n">Master_Bind</span><span class="p">:</span>
+<a href="#__codelineno-26-55" id="__codelineno-26-55" name="__codelineno-26-55"></a><span class="w">      </span><span class="n">Last_IO_Error_Timestamp</span><span class="p">:</span>
+<a href="#__codelineno-26-56" id="__codelineno-26-56" name="__codelineno-26-56"></a><span class="w">     </span><span class="n">Last_SQL_Error_Timestamp</span><span class="p">:</span>
+<a href="#__codelineno-26-57" id="__codelineno-26-57" name="__codelineno-26-57"></a><span class="w">               </span><span class="n">Master_SSL_Crl</span><span class="p">:</span>
+<a href="#__codelineno-26-58" id="__codelineno-26-58" name="__codelineno-26-58"></a><span class="w">           </span><span class="n">Master_SSL_Crlpath</span><span class="p">:</span>
+<a href="#__codelineno-26-59" id="__codelineno-26-59" name="__codelineno-26-59"></a><span class="w">           </span><span class="n">Retrieved_Gtid_Set</span><span class="p">:</span><span class="w"> </span><span class="n">c16da70b</span><span class="o">-</span><span class="n">ad12</span><span class="o">-</span><span class="mi">11</span><span class="n">ed</span><span class="o">-</span><span class="mi">8084</span><span class="o">-</span><span class="mi">0</span><span class="n">a580a810256</span><span class="p">:</span><span class="mi">537</span><span class="o">-</span><span class="mi">59096</span>
+<a href="#__codelineno-26-60" id="__codelineno-26-60" name="__codelineno-26-60"></a><span class="w">            </span><span class="n">Executed_Gtid_Set</span><span class="p">:</span><span class="w"> </span><span class="n">c16da70b</span><span class="o">-</span><span class="n">ad12</span><span class="o">-</span><span class="mi">11</span><span class="n">ed</span><span class="o">-</span><span class="mi">8084</span><span class="o">-</span><span class="mi">0</span><span class="n">a580a810256</span><span class="p">:</span><span class="mi">1</span><span class="o">-</span><span class="mi">59096</span>
+<a href="#__codelineno-26-61" id="__codelineno-26-61" name="__codelineno-26-61"></a><span class="w">                </span><span class="n">Auto_Position</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<a href="#__codelineno-26-62" id="__codelineno-26-62" name="__codelineno-26-62"></a><span class="w">         </span><span class="n">Replicate_Rewrite_DB</span><span class="p">:</span>
+<a href="#__codelineno-26-63" id="__codelineno-26-63" name="__codelineno-26-63"></a><span class="w">                 </span><span class="n">Channel_Name</span><span class="p">:</span>
+<a href="#__codelineno-26-64" id="__codelineno-26-64" name="__codelineno-26-64"></a><span class="w">           </span><span class="n">Master_TLS_Version</span><span class="p">:</span>
+<a href="#__codelineno-26-65" id="__codelineno-26-65" name="__codelineno-26-65"></a><span class="w">       </span><span class="n">Master_public_key_path</span><span class="p">:</span>
+<a href="#__codelineno-26-66" id="__codelineno-26-66" name="__codelineno-26-66"></a><span class="w">        </span><span class="n">Get_master_public_key</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-26-67" id="__codelineno-26-67" name="__codelineno-26-67"></a><span class="w">            </span><span class="n">Network_Namespace</span><span class="p">:</span>
+<a href="#__codelineno-26-68" id="__codelineno-26-68" name="__codelineno-26-68"></a><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">warning</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>针对 master 的 mysql shell 执行重置操作：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="n">mysql</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="n">slave</span><span class="p">;</span><span class="k">reset</span><span class="w"> </span><span class="n">slave</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>此时再手动编辑 master 的 Pod： <strong>role replica =&gt; master ,healthy no =&gt; yes</strong> 。</p>
+</li>
+<li>
+<p>针对 slave 的 mysql shell 执行：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="n">mysql</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">start</span><span class="w"> </span><span class="n">slave</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>如果主从没有建立联系，在 slave 的 mysql shell 执行：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-29-1" id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="c1">-- 注意替换下 {master-host-pod-index}</span>
+<a href="#__codelineno-29-2" id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="n">mysql</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">change</span><span class="w"> </span><span class="n">master</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">master_host</span><span class="o">=</span><span class="s1">'mcamel-common-mysql-cluster-mysql-{master-host-pod-index}.mysql.mcamel-system'</span><span class="p">,</span><span class="n">master_port</span><span class="o">=</span><span class="mi">3306</span><span class="p">,</span><span class="n">master_user</span><span class="o">=</span><span class="s1">'root'</span><span class="p">,</span><span class="n">master_password</span><span class="o">=</span><span class="s1">'{password}'</span><span class="p">,</span><span class="n">master_auto_position</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">MASTER_HEARTBEAT_PERIOD</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">MASTER_CONNECT_RETRY</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MASTER_RETRY_COUNT</span><span class="o">=</span><span class="mi">86400</span><span class="p">;</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="_4">主备数据不一致<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>当主从实例数据不一致时，可以执行以下命令完成主从一致性同步：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-30-1" id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="n">pt</span><span class="o">-</span><span class="k">table</span><span class="o">-</span><span class="n">sync</span><span class="w"> </span><span class="c1">--execute --charset=utf8 --ignore-databases=mysql,sys,percona --databases=amamba,audit,ghippo,insight,ipavo,keycloak,kpanda,skoala dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql-0.mysql.mcamel-system,P=3306 dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql.mysql.mcamel-system,P=3306  --print</span>
+<a href="#__codelineno-30-2" id="__codelineno-30-2" name="__codelineno-30-2"></a>
+<a href="#__codelineno-30-3" id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="n">pt</span><span class="o">-</span><span class="k">table</span><span class="o">-</span><span class="n">sync</span><span class="w"> </span><span class="c1">--execute --charset=utf8 --ignore-databases=mysql,sys,percona --databases=kpanda dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql-0.mysql.mcamel-system,P=3306 dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql-1.mysql.mcamel-system,P=3306  --print</span>
+</code></pre></div>
+<p>使用 pt-table-sync 即可完成数据补充，示例中是 <strong>mysql-0=&gt; mysql-1</strong> 补充数据。</p>
+<p>这种场景往往适用于主从切换，发现新从库有多余的已执行的 gtid 在重做之前补充数据。</p>
+<p>这种补充数据只能保证数据不丢失，如果新主库已经删除的数据会被重新补充回去，是一个潜在的风险，如果是新主库有数据，会被替换成老数据，也是一个风险。</p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月25日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: MySQL Operator" class="md-footer__link md-footer__link--prev" href="faq-operator.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                MySQL Operator
+              </div>
+</div>
+</a>
+<a aria-label="下一页: MySQL 其他故障" class="md-footer__link md-footer__link--next" href="faq-others.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                MySQL 其他故障
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../../../stylesheets/zoom_image.js"></script>
+<script src="../../../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

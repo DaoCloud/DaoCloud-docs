@@ -1,0 +1,1474 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/blogs/240201-ai-compute.html" rel="canonical"/>
+<link href="240203-book.html" rel="prev"/>
+<link href="240115-news.html" rel="next"/>
+<link href="../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>加速计算基本定义及工作原理 - DaoCloud Enterprise</title>
+<link href="../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              加速计算基本定义及工作原理
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../dce/index.html">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            博客
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="index.html">
+<span class="md-ellipsis">
+    博文索引
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+<span class="md-ellipsis">
+    2024
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="241108-cncf-ambassador.html">
+<span class="md-ellipsis">
+    从社区小白到 CNCF 大使
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="241106-containerd-nerdctl-lima.html">
+<span class="md-ellipsis">
+    containerd 相关项目集中发布新版本
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240816-1.31-image.html">
+<span class="md-ellipsis">
+    K8s 1.31 OCI 工件的只读卷
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="20240619-nvidiaai.html">
+<span class="md-ellipsis">
+    Nvidia 征服最新的 AI 测试
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0606-k8s-birth.html">
+<span class="md-ellipsis">
+    Kubernetes 十周年
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240516-sig-docs.html">
+<span class="md-ellipsis">
+    K8s 从敲代码到抒发文笔
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240509-model-spec.html">
+<span class="md-ellipsis">
+    OpenAI 大语言模型规范
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0429-ai-survey.html">
+<span class="md-ellipsis">
+    全球大规模AI基础设施形势调研
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240416-kubean.html">
+<span class="md-ellipsis">
+    一颗豆荚入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240410-cnai-wp.html">
+<span class="md-ellipsis">
+    云原生人工智能白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240326-kubecon-eu.html">
+<span class="md-ellipsis">
+    巴黎 KubeCon 谁在引领创新
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240301-osc-eco.html">
+<span class="md-ellipsis">
+    创建一个开源商业生态体系
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240203-book.html">
+<span class="md-ellipsis">
+    好书《K8s云原生数据管理》
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    加速计算基本定义及工作原理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="240201-ai-compute.html">
+<span class="md-ellipsis">
+    加速计算基本定义及工作原理
+  </span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      加速计算是什么？
+    </span>
+</a>
+<nav aria-label="加速计算是什么？" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      加速计算的重要性
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      加速计算的硬件、软件和网络解决方案
+    </span>
+</a>
+<nav aria-label="加速计算的硬件、软件和网络解决方案" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      硬件加速器
+    </span>
+</a>
+<nav aria-label="硬件加速器" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gpu">
+<span class="md-ellipsis">
+      图形处理器（GPU）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#asic">
+<span class="md-ellipsis">
+      专用集成电路（ASIC）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fpga">
+<span class="md-ellipsis">
+      现场可编程逻辑门阵列（FPGA）
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#api">
+<span class="md-ellipsis">
+      软件和 API
+    </span>
+</a>
+<nav aria-label="软件和 API" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cuda">
+<span class="md-ellipsis">
+      CUDA（统一计算架构）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#opencl">
+<span class="md-ellipsis">
+      OpenCL（开放计算语言）
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      网络
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ai">
+<span class="md-ellipsis">
+      加速计算与生成式 AI
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ai_1">
+<span class="md-ellipsis">
+      加速计算与 AI 驱动的数据中心
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vs">
+<span class="md-ellipsis">
+      加速计算 vs 计算优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240115-news.html">
+<span class="md-ellipsis">
+    容器化 AI 简化 ML 模型的部署
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240108-kubeedge.html">
+<span class="md-ellipsis">
+    KubeEdge v1.15.0 发布
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+<span class="md-ellipsis">
+    2023
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="231220-spiderpool.html">
+<span class="md-ellipsis">
+    Spiderpool入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231213-k8s-1.29.html">
+<span class="md-ellipsis">
+    K8s 1.29发布宇宙主题雄心勃勃
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231205-vm-bm-compare.html">
+<span class="md-ellipsis">
+    K8s 裸机 vs 虚机性能对比
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231115-k8s-1.29-changes.html">
+<span class="md-ellipsis">
+    K8s 1.29前瞻：移除、弃用及变更
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231008-kcs.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会回顾
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230911-kubecon-contributor.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会召集令
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230824-tools.html">
+<span class="md-ellipsis">
+    K8s 本地开发工具比较
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230815-k8s1.28.html">
+<span class="md-ellipsis">
+    K8s 1.28 震撼发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230808-k8sgpt.html">
+<span class="md-ellipsis">
+    K8sGPT 赋能 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230615-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索下篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230612-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索上篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230609-istio118.html">
+<span class="md-ellipsis">
+    Istio 1.18 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230605-fedstate.html">
+<span class="md-ellipsis">
+    联邦中间件FedState
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230601-api-server-tracing.html">
+<span class="md-ellipsis">
+    API Server Tracing进阶
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230518-seccom.html">
+<span class="md-ellipsis">
+    边缘场景玩转seccomp
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230515-chaos-mesh.html">
+<span class="md-ellipsis">
+    混沌工程 Chaos Mesh
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230509-k8s-install.html">
+<span class="md-ellipsis">
+    K8s 安装教程(KLTS版)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230508-cilium.html">
+<span class="md-ellipsis">
+    Cilium 实现 socket 加速
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230428-pod-startup.html">
+<span class="md-ellipsis">
+    K8s 1.27 加快 Pod 启动
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230427-victoriametrics.html">
+<span class="md-ellipsis">
+    云原生监控之基础篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230418-karmada-failover.html">
+<span class="md-ellipsis">
+    Karmada Failover 详解
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230417-cncf-platform-wp.html">
+<span class="md-ellipsis">
+    CNCF 平台工程白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230412-k8s-1.27.html">
+<span class="md-ellipsis">
+    K8s 1.27 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230411-spiderpool.html">
+<span class="md-ellipsis">
+    固定应用 IP 的新选择
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230405-step-by-step-dce5.html">
+<span class="md-ellipsis">
+    保姆式安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230317-edge-app-wp.html">
+<span class="md-ellipsis">
+    边缘原生应用准则
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-linux.html">
+<span class="md-ellipsis">
+    Linux 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-macos.html">
+<span class="md-ellipsis">
+    macOS 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230301-kwok.html">
+<span class="md-ellipsis">
+    KWOK 介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-open-projects.html">
+<span class="md-ellipsis">
+    社区版涉及的开源项目
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-daocloud_k8s.html">
+<span class="md-ellipsis">
+    DaoCloud 与 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-peter.html">
+<span class="md-ellipsis">
+    DCE 5.0 攻坚语录集
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-forecast.html">
+<span class="md-ellipsis">
+    2023 年云原生预测
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230110-res-usage.html">
+<span class="md-ellipsis">
+    让闲置算力跑起来
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+<span class="md-ellipsis">
+    2022
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="221209-k8s-1.26.html">
+<span class="md-ellipsis">
+    K8s 1.26 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221116-kcsp.html">
+<span class="md-ellipsis">
+    K8s 资深认证服务商
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221026-kpanda.html">
+<span class="md-ellipsis">
+    容器管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221018-resource.html">
+<span class="md-ellipsis">
+    资源管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220925-amamba.html">
+<span class="md-ellipsis">
+    应用工作台能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220808-kairship.html">
+<span class="md-ellipsis">
+    多云编排能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220708-mspider.html">
+<span class="md-ellipsis">
+    服务网格能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221008-dce-bg.html">
+<span class="md-ellipsis">
+    DCE 开发背景
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      加速计算是什么？
+    </span>
+</a>
+<nav aria-label="加速计算是什么？" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      加速计算的重要性
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      加速计算的硬件、软件和网络解决方案
+    </span>
+</a>
+<nav aria-label="加速计算的硬件、软件和网络解决方案" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      硬件加速器
+    </span>
+</a>
+<nav aria-label="硬件加速器" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gpu">
+<span class="md-ellipsis">
+      图形处理器（GPU）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#asic">
+<span class="md-ellipsis">
+      专用集成电路（ASIC）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fpga">
+<span class="md-ellipsis">
+      现场可编程逻辑门阵列（FPGA）
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#api">
+<span class="md-ellipsis">
+      软件和 API
+    </span>
+</a>
+<nav aria-label="软件和 API" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cuda">
+<span class="md-ellipsis">
+      CUDA（统一计算架构）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#opencl">
+<span class="md-ellipsis">
+      OpenCL（开放计算语言）
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      网络
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ai">
+<span class="md-ellipsis">
+      加速计算与生成式 AI
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ai_1">
+<span class="md-ellipsis">
+      加速计算与 AI 驱动的数据中心
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vs">
+<span class="md-ellipsis">
+      加速计算 vs 计算优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/blogs/240201-ai-compute.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/blogs/240201-ai-compute.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/blogs/240201-ai-compute.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="_1">加速计算基本定义及工作原理揭秘<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<p>加速计算凭借其前所未有的处理能力，在云端基础设施中占据了核心位置，对于提升数据中心大规模信息处理效能方面发挥了重要作用。
+加速计算还为更高效地训练和部署 GPT-4 等先进的生成式 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 模型提供了必要的算力、内存和存储设施。
+这种能力不仅加快了模型训练周期，还确保了对海量数据集的有效处理能力，并推动开发出更加复杂的模型。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>加速计算利用 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr>、<abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr>、<abbr title="Tensor Processing Units，张量处理单元">TPU</abbr>、<abbr title="Field-Programmable Gate Arrays，现场可编程逻辑门阵列">FPGA</abbr> 等专用硬件来执行计算，其效率高于传统的 <abbr title="Central Processing Unit，中央处理器">CPU</abbr>，提升了速度与性能表现。这种计算方法在
+<abbr title="High Performance Computing，高性能计算">HPC</abbr>、深度学习、<abbr title="Machine Learning，机器学习">ML</abbr>、<abbr title="Artificial Intelligence，人工智能">AI</abbr> 等可以并行处理的任务上展现出了显著优势。</p>
+</div>
+<p>加速计算领域的纵深广阔，发展迅速，涵盖了 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr>、<abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr>、<abbr title="Tensor Processing Units，张量处理单元">TPU</abbr>、<abbr title="Field-Programmable Gate Arrays，现场可编程逻辑门阵列">FPGA</abbr>、<abbr title="Compute Unified Device Architecture，统一计算架构">CUDA</abbr> 以及 <abbr title="Open Computing Language，开放计算语言">OpenCL</abbr> 等众多软硬件解决方案以及各种网络技术。
+此外，我们还探究了加速计算技术对生成式 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 和数据中心等人工智能驱动的应用领域的影响。
+下文有助于您深刻理解加速计算对未来技术格局产生的重大意义与潜在影响。</p>
+<h2 id="_2">加速计算是什么？<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>加速计算是指利用专用硬件以超越 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 常规计算效能的高效计算处理。
+加速计算能充分发挥 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr>、<abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr>、<abbr title="Tensor Processing Units，张量处理单元">TPU</abbr> 和 <abbr title="Field-Programmable Gate Arrays，现场可编程逻辑门阵列">FPGA</abbr> 等设备的能力，
+能够以更高的速度执行运算，从而加速整个计算过程。</p>
+<p>这些加速设备特别适合执行高性能计算、深度学习、机器学习、人工智能以及大数据分析等能够细分为多个并行子任务的运算任务。
+加速计算将某种工作负载 Offload 到专用硬件设备上，极大地提升了系统的效能。</p>
+<h3 id="_3">加速计算的重要性<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p><strong>摩尔定律</strong> （即在恒定成本条件下算力每两年翻一倍）的终结标志着 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 性能增长的放缓。
+这一现象引发了业界向 <strong>加速计算</strong> 领域的转变，并对当前市值达一万亿美元的仅使用 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 的服务器市场的长期生存能力提出了质疑。
+随着对高性能应用和系统需求的日益增长，传统的 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 方案在与更快、更经济、更高性能的加速计算技术竞争时，开始显得力不从心。</p>
+<p>加速计算技术在当今时代之所以至关重要，是因为其擅长高效处理巨量数据，有力地推动了机器学习、人工智能、实时分析和科学研究的迅猛发展。
+其在图形渲染、游戏开发、边缘计算及云计算等领域的影响力日益增强，构筑起了我们这个日益依赖数据驱动且高度互连世界中的数字基础设施（例如数据中心）。</p>
+<h2 id="_4">加速计算的硬件、软件和网络解决方案<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>加速计算技术方案囊括了硬件、软件及网络的融合。这些方案旨在通过对复杂计算任务进行并行处理，以显著提升计算性能和效率。</p>
+<h3 id="_5">硬件加速器<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<p>硬件加速器是加速计算的基础，其性能远超传统 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 单独所能达到的水平。
+主要包括 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr>、<abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr> 和 <abbr title="Field-Programmable Gate Arrays，现场可编程逻辑门阵列">FPGA</abbr>。</p>
+<table>
+<thead>
+<tr>
+<th><strong>-</strong></th>
+<th><strong><abbr title="Graphics Processing Units，图形处理器">GPU</abbr></strong></th>
+<th><strong><abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr></strong></th>
+<th><strong><abbr title="Field-Programmable Gate Arrays，现场可编程逻辑门阵列">FPGA</abbr></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目的</td>
+<td>通用计算</td>
+<td>仅特定任务；完全定制</td>
+<td>可编程执行多种任务</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>高</td>
+<td>最高</td>
+<td>比 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 和 <abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr> 低</td>
+</tr>
+<tr>
+<td>兼容性</td>
+<td>低</td>
+<td>最低（单任务）</td>
+<td>高（完全可重构）</td>
+</tr>
+<tr>
+<td>成本</td>
+<td>&gt;10,000 美元</td>
+<td>5,000 美元或以下；取决于容量</td>
+<td>3,000 美元到 10,000 美元</td>
+</tr>
+<tr>
+<td>开发时间</td>
+<td>短</td>
+<td>最长（需要定制设计）</td>
+<td>中等（需要编程）</td>
+</tr>
+<tr>
+<td>效率</td>
+<td>中等</td>
+<td>最高</td>
+<td>中等到高</td>
+</tr>
+<tr>
+<td>软件和 <abbr title="Application Programming Interface，应用程序编程接口">API</abbr></td>
+<td><abbr title="Compute Unified Device Architecture，统一计算架构">CUDA</abbr>、<abbr title="Open Computing Language，开放计算语言">OpenCL</abbr></td>
+<td>为单个处理器定制</td>
+<td>Verilog、<abbr title="Very High-Speed Integrated Circuit Hardware Description Language，超高速集成电路硬件描述语言">VHDL</abbr>、<abbr title="Open Computing Language，开放计算语言">OpenCL</abbr>、<abbr title="High-Level Synthesis，高级综合设计">HLS</abbr></td>
+</tr>
+<tr>
+<td>典型用例</td>
+<td>游戏、<abbr title="Artificial Intelligence，人工智能">AI</abbr>/<abbr title="Machine Learning，机器学习">ML</abbr>、图形处理</td>
+<td>加密货币挖矿，特定计算</td>
+<td>原型设计，适应性计算</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gpu">图形处理器（<abbr title="Graphics Processing Units，图形处理器">GPU</abbr>）<a class="headerlink" href="#gpu" title="Permanent link">¶</a></h4>
+<p><abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 是一种广泛应用于各种计算密集型任务，擅长同时执行大量复杂的计算，因此非常适合用于 <abbr title="High Performance Computing，高性能计算">HPC</abbr> 以及机器学习中的神经网络训练等任务。</p>
+<p>在应用范畴上，术语“通用图形处理器”（GPGPU）常用来描述 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 在非图形渲染领域中，用于执行传统上由 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 处理的计算任务的情况。</p>
+<p>在用于数据中心和诸如机器学习、人工智能等计算密集型任务的 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 市场中，NVIDIA 处于领先地位。
+其数据中心场景下的主力 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 架构阵容覆盖了最新的 Hopper（H100）架构和先前的 Ampere（A100）架构。
+值得注意的是，H100 系列 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 特别适用于加速 <abbr title="Large Language Model，大型语言模型">LLM</abbr>、深度推荐系统、基因组学和复杂数字孪生体等应用的运算。</p>
+<h4 id="asic">专用集成电路（<abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr>）<a class="headerlink" href="#asic" title="Permanent link">¶</a></h4>
+<p><abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr> 是一种专为执行特定任务而设计的定制芯片，而非像通用 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 那样旨在应对广泛多样的应用程序需求。
+由于 <abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr> 是针对某一特定功能量身定制的，因此在执行该任务时，其效率相比通用处理器更高。
+<abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr> 在速度、能耗以及整体性能上具有明显优势。</p>
+<p><abbr title="Neural Processing Unit，神经处理单元">NPU</abbr> 和 <abbr title="Deep Learning Processor，深度学习处理器">DLP</abbr> 这两个术语经常用来指代专用于加速人工智能工作负载的 <abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr> 类型。
+在加速计算领域，<abbr title="Tensor Processing Units，张量处理单元">TPU</abbr> 就是一个 <abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr> 的例子。<abbr title="Tensor Processing Units，张量处理单元">TPU</abbr> 是针对机器学习工作负载的硬件加速器，
+已在谷歌数据中心范围内大规模部署并广泛应用，承担诸如自然语言翻译、Google Assistant 语音识别以及程序化广告排名等任务。</p>
+<h4 id="fpga">现场可编程逻辑门阵列（<abbr title="Field-Programmable Gate Arrays，现场可编程逻辑门阵列">FPGA</abbr>）<a class="headerlink" href="#fpga" title="Permanent link">¶</a></h4>
+<p><abbr title="Field-Programmable Gate Arrays，现场可编程逻辑门阵列">FPGA</abbr> 是一种半导体集成电路，其特点是能够被重新编程以执行特定任务，且在效率上超过通用 <abbr title="Central Processing Unit，中央处理器">CPU</abbr>。
+与 <abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr>、<abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 和 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 中的固定架构不同，<abbr title="Field-Programmable Gate Arrays，现场可编程逻辑门阵列">FPGA</abbr> 硬件内部包含了可配置逻辑块和可编程互连元件。
+这就意味着，即使在芯片投递并实际部署到系统之后，仍可根据具体应用需求重新编程和优化。</p>
+<p><abbr title="Field-Programmable Gate Arrays，现场可编程逻辑门阵列">FPGA</abbr> 由于其灵活性和并行计算能力，在数据中心，尤其是 <abbr title="High Performance Computing，高性能计算">HPC</abbr> 和 <abbr title="Artificial Intelligence，人工智能">AI</abbr>/<abbr title="Machine Learning，机器学习">ML</abbr> 加速领域的应用正日益受到欢迎。
+然而，与 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 和定制化 <abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr> 相比，<abbr title="Field-Programmable Gate Arrays，现场可编程逻辑门阵列">FPGA</abbr> 的运行速度较慢，并且其软件生态系统尚未得到充分发展。
+<abbr title="Field-Programmable Gate Arrays，现场可编程逻辑门阵列">FPGA</abbr> 在 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 工作负载应用中的普及进度相对较慢，主要原因在于其编程复杂性较高，这导致掌握相关专用技术的工程师数量有限。</p>
+<h3 id="api">软件和 <abbr title="Application Programming Interface，应用程序编程接口">API</abbr><a class="headerlink" href="#api" title="Permanent link">¶</a></h3>
+<p>加速计算利用诸如 <abbr title="Compute Unified Device Architecture，统一计算架构">CUDA</abbr> 和 <abbr title="Open Computing Language，开放计算语言">OpenCL</abbr> 等 <abbr title="Application Programming Interface，应用程序编程接口">API</abbr> 和相应的编程模型，实现软硬件加速器的交互。
+这种优化可以改善数据流，从而实现性能显著提升、能耗效率优化、经济效益最大化以及结果精度增强。
+<abbr title="Application Programming Interface，应用程序编程接口">API</abbr> 和编程模型使开发者能够编写可在 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 上运行的代码，并利用软件库来实现高效算法的执行。</p>
+<h4 id="cuda"><abbr title="Compute Unified Device Architecture，统一计算架构">CUDA</abbr>（统一计算架构）<a class="headerlink" href="#cuda" title="Permanent link">¶</a></h4>
+<p><abbr title="Compute Unified Device Architecture，统一计算架构">CUDA</abbr> 是由 NVIDIA 公司开发的一款专有并行计算平台和 <abbr title="Application Programming Interface，应用程序编程接口">API</abbr> 模型。
+它能够利用 NVIDIA <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 进行通用目的的计算处理，从而显著提升计算任务的执行速度。
+该平台还包含了 cuDNN、TensorRT、DeepStream 等深度学习库，以强化 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 训练和推理任务的执行效能。</p>
+<h4 id="opencl"><abbr title="Open Computing Language，开放计算语言">OpenCL</abbr>（开放计算语言）<a class="headerlink" href="#opencl" title="Permanent link">¶</a></h4>
+<p><abbr title="Open Computing Language，开放计算语言">OpenCL</abbr> 是一个专为并行计算设计的开源平台。它支持多种类型的计算硬件，涵盖了 <abbr title="Central Processing Unit，中央处理器">CPU</abbr>、<abbr title="Graphics Processing Units，图形处理器">GPU</abbr>、<abbr title="Field-Programmable Gate Arrays，现场可编程逻辑门阵列">FPGA</abbr> 以及其他种类的处理器。
+这种广泛的兼容性使得开发者能够最大限度地调动这些多样化硬件组件的并行计算潜能，从而加速各类计算任务。
+<abbr title="Open Computing Language，开放计算语言">OpenCL</abbr> 的一项标志性特征是其跨平台兼容性，这意味着开发者编写的代码能够在多种不同厂商和架构的硬件上运行，实现计算任务的高效加速和资源灵活调度。</p>
+<h3 id="_6">网络<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<p>网络在加速计算中发挥着关键作用，它促进了成千上万个处理单元（如 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 以及内存和存储设备）之间的信息交流。
+各种网络技术被用来实现这些计算设备与系统其余部分之间的通信，以及网络内部多个设备间的数据共享。
+常见的技术包括：</p>
+<ul>
+<li>
+<p><abbr title="PCI Express，一种高速串行计算机扩展总线标准">PCIe</abbr>：是一种高速串行计算机扩展总线标准，提供了一种直接连接计算设备与 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 或内存通讯的方式。
+  在加速计算领域，<abbr title="PCI Express，一种高速串行计算机扩展总线标准">PCIe</abbr> 通常被用来连接 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 或其他加速器至主系统。</p>
+</li>
+<li>
+<p>NVLink：是 NVIDIA 的专有高带宽、节能型互连技术，提供了远超 <abbr title="PCI Express，一种高速串行计算机扩展总线标准">PCIe</abbr> 的高数据传输速率。
+  该技术旨在促进 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 之间以及 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 与 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 之间更加高效的数据共享。</p>
+</li>
+<li>
+<p>Infinity Fabric：AMD 的专有互连技术，用于连接芯片内的各种组件，包括 <abbr title="Central Processing Unit，中央处理器">CPU</abbr>、<abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 和内存。</p>
+</li>
+<li>
+<p>Compute Express Link (<abbr title="Compute Express Link，一种开放的互连标准">CXL</abbr>)：一种开放的互连标准，有助于减少延迟并增加 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 和加速器之间的带宽。
+  它将多个接口合并为一个到主机处理器的 <abbr title="PCI Express，一种高速串行计算机扩展总线标准">PCIe</abbr> 连接。</p>
+</li>
+<li>
+<p>InfiniBand：一种高速、低延迟的互连技术，常用于搭建 <abbr title="High Performance Computing，高性能计算">HPC</abbr> 设施。
+  它支持服务器集群和存储设备之间的高速互连。</p>
+</li>
+<li>
+<p>Ethernet：这种广泛应用的、具有成本效益的、灵活的网络技术被用来在数据中心的服务器之间传输大量的数据，
+  这对于许多加速计算任务来说是至关重要的。但是，它不能提供与 NVLink 或 InfiniBand 相同的性能水平。</p>
+</li>
+</ul>
+<p>下图说明了使用 NVLink 和 <abbr title="PCI Express，一种高速串行计算机扩展总线标准">PCIe</abbr> 连接方法连接 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 的 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 的体系结构。</p>
+<p><img alt="GPU 使用 NVLink 和 PCIe 连接到 CPU" src="images/GPUs-connected-to-a-CPU.jpg"/></p>
+<h2 id="ai">加速计算与生成式 <abbr title="Artificial Intelligence，人工智能">AI</abbr><a class="headerlink" href="#ai" title="Permanent link">¶</a></h2>
+<p>加速计算是开发和实现先进生成式 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 模型的关键驱动力。生成式 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 是指运用一系列复杂的算法机制，
+能够基于训练数据集的统计特性自动生成新的数据样本，在图像、文本和语音等领域已有显著应用实例。</p>
+<p>在生成式 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 领域中，<abbr title="Generative Adversarial Networks，生成式对抗网络">GAN</abbr>、<abbr title="Variational Autoencoders，变分自编码器">VAE</abbr> 以及 OpenAI 的 ChatGPT 在内的 <abbr title="Large Language Model，大型语言模型">LLM</abbr> 等模型被广泛应用。
+这些模型涉及复杂的数学运算，并在大规模数据集上进行训练，
+需要大量的算力和内存支持。更具体来说，模型规模、单层复杂性、序列长度以及多样化程度等因素都在不断促使对计算需求的增长。</p>
+<p>加速计算在解决生成式 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 所需的计算能力和内存需求方面起着特别重要的作用。
+它可以加快训练速度、处理大型数据集、支持复杂模型、实现实时生成，并确保有效梯度计算。</p>
+<ol>
+<li>
+<p>加快训练速度</p>
+<p>加速计算在生成式 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 中最主要的作用在于缩短 <abbr title="Generative Adversarial Networks，生成式对抗网络">GAN</abbr>、<abbr title="Variational Autoencoders，变分自编码器">VAE</abbr> 以及 Transformer 模型的训练周期，
+这些模型在传统的基于 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 的架构上通常需要数天、数周甚至数月的时间来训练。</p>
+<p>诸如 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 和 <abbr title="Tensor Processing Units，张量处理单元">TPU</abbr> 这样的加速计算平台，专为并行处理而设计，
+能够同时执行多个计算任务，从而极大地缩减训练所需时间。</p>
+</li>
+<li>
+<p>处理大型数据集</p>
+<p>生成式 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 模型通常是在庞大的数据集上进行训练的。相较于传统 <abbr title="Central Processing Unit，中央处理器">CPU</abbr>，加速计算硬件能更高效地处理这类大型数据集。
+此外，采用先进的内存架构，如某些 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 中配备的高带宽内存，使得在训练过程中能够有效地处理这些大型数据集。</p>
+</li>
+<li>
+<p>支持复杂模型</p>
+<p>加速计算带来的计算能力提升使得构建更加复杂且规模更大的模型成为可能，进而能够获得更好的性能表现。
+例如，像 GPT-4 这样拥有 170 万亿个参数的大型 Transformer 模型，其诞生正是得益于加速计算的支持。</p>
+</li>
+<li>
+<p>实现实时生成</p>
+<p>对于某些应用来说，<abbr title="Artificial Intelligence，人工智能">AI</abbr> 模型需要实时（或接近实时）地生成内容。
+这一点在诸如视频游戏中的 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 及实时翻译等交互式应用中尤为重要。
+加速计算确保了这些操作能够迅速执行，从而实现实时功能。</p>
+</li>
+<li>
+<p>有效梯度计算</p>
+<p>深度学习模型通过运用基于梯度的优化技术（如反向传播）来学习。
+这些方法是一种迭代计算过程，会朝着减小误差或损失函数的方向调整模型的参数。
+这些计算基于矩阵，因此具有高度并行化的特性，非常适合采用加速计算来进行处理。</p>
+</li>
+</ol>
+<h2 id="ai_1">加速计算与 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 驱动的数据中心<a class="headerlink" href="#ai_1" title="Permanent link">¶</a></h2>
+<p>加速计算平台的目标是加快在各种类型数据中心（包括企业、协同配置、超大规模/云计算、边缘以及模块）中的计算密集型工作负载处理，
+这些工作负载涵盖 <abbr title="Artificial Intelligence，人工智能">AI</abbr>、数据分析、图形处理以及科学计算等领域。首要目标是在提高工作负载性能的同时降低每项查询的能耗与成本。</p>
+<p>随着生成式 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 和 <abbr title="Large Language Model，大型语言模型">LLM</abbr> 在消费者、互联网公司、企业及初创公司中的兴起，<abbr title="Artificial Intelligence，人工智能">AI</abbr> 应用迎来了它的关键时刻。
+这一热潮导致在数据中心和云平台上部署推理的需求显著增加。
+目前，大多数推理工作负载在配备了处理能力的 <abbr title="Central Processing Unit，中央处理器">CPU</abbr> 和基本网络接口卡（<abbr title="Network Interface Card，网络接口卡">NIC</abbr>）上运行。但随着对性能、能效、成本效益以及功率限制不断提升，
+业界正在转向采用加速计算技术，利用 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr> 和 <abbr title="Application-Specific Integrated Circuits，专用集成电路">ASIC</abbr> 等专用硬件。</p>
+<p>对于现代数据中心的未来愿景，其中之一就是建立一个持续运行的“<abbr title="Artificial Intelligence，人工智能">AI</abbr> 工厂”，该工厂负责处理并将数据转化为智能。
+这些设施将采用 <abbr title="Large Language Model，大型语言模型">LLM</abbr>、推荐系统以及最终的推理模型等 <abbr title="Artificial Intelligence，人工智能">AI</abbr> 模型。
+此外，它们还将配置一个推理集群，以支持视频处理、文本生成、图像生成以及虚拟世界和模拟中的三维图形在内的各种工作负载。</p>
+<h2 id="vs">加速计算 vs 计算优化<a class="headerlink" href="#vs" title="Permanent link">¶</a></h2>
+<p>在设计和管理数据中心或选择云计算资源时，选用加速计算还是计算优化非常重要。
+对于可以并行处理的任务，例如机器学习、<abbr title="Artificial Intelligence，人工智能">AI</abbr> 算法、图形渲染以及大规模仿真等，加速计算能带来更大的收益。
+相反，对于那些需要强大单线程性能的任务，如提供网页内容服务、数据库操作或运行企业级应用程序，计算优化系统表现得更好。</p>
+<p>下面，我们比较了加速计算和计算优化之间的主要区别：</p>
+<table>
+<thead>
+<tr>
+<th><strong>-</strong></th>
+<th><strong>加速计算</strong></th>
+<th><strong>计算优化计算</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义</td>
+<td>使用专门的硬件（例如 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr>）</td>
+<td>使用高性能 <abbr title="Central Processing Unit，中央处理器">CPU</abbr></td>
+</tr>
+<tr>
+<td>用例</td>
+<td>图形密集型，机器学习任务</td>
+<td>高计算，服务器工作负载</td>
+</tr>
+<tr>
+<td>速率</td>
+<td>在适合的任务中表现出极高的速度（采用并行处理）</td>
+<td>速度快但适用于通用任务（单线程任务）</td>
+</tr>
+<tr>
+<td>成本</td>
+<td>由于专用硬件，可能会造成成本较高</td>
+<td>通常比加速版本便宜</td>
+</tr>
+<tr>
+<td>硬件</td>
+<td>依赖于特定硬件，例如 <abbr title="Graphics Processing Units，图形处理器">GPU</abbr>、<abbr title="Tensor Processing Units，张量处理单元">TPU</abbr> 或 <abbr title="Field-Programmable Gate Arrays，现场可编程逻辑门阵列">FPGA</abbr></td>
+<td>较少依赖硬件；主要使用高性能多核 <abbr title="Central Processing Unit，中央处理器">CPU</abbr></td>
+</tr>
+</tbody>
+</table>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年1月31日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 好书《K8s云原生数据管理》" class="md-footer__link md-footer__link--prev" href="240203-book.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                好书《K8s云原生数据管理》
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 容器化 AI 简化 ML 模型的部署" class="md-footer__link md-footer__link--next" href="240115-news.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                容器化 AI 简化 ML 模型的部署
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../stylesheets/zoom_image.js"></script>
+<script src="../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

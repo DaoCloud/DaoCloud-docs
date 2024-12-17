@@ -1,0 +1,1424 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/install/best-practices/replace-os.html" rel="canonical"/>
+<link href="remanage-work-cluster.html" rel="prev"/>
+<link href="../release-notes.html" rel="next"/>
+<link href="../../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>不停机迁移集群操作系统 - DaoCloud Enterprise</title>
+<link href="../../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              不停机迁移集群操作系统
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../blogs/index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            产品文档
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dce/index.html">
+<span class="md-ellipsis">
+    文档导航
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+<span class="md-ellipsis">
+    探索和安装
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            探索和安装
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../dce/license0.html">
+<span class="md-ellipsis">
+    产品介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    安装教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+            安装教程
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index.html">
+<span class="md-ellipsis">
+    安装简介
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../install-tools.html">
+<span class="md-ellipsis">
+    安装依赖项
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../community/resources.html">
+<span class="md-ellipsis">
+    安装社区版
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../commercial/deploy-arch.html">
+<span class="md-ellipsis">
+    安装商业版
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../k8s-install/ocp-install-dce5.0.html">
+<span class="md-ellipsis">
+    在不同K8s发行版上安装
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../os-install/uos-v20-install-dce5.0.html">
+<span class="md-ellipsis">
+    在不同操作系统上安装
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../light-install/light-install-solution.html">
+<span class="md-ellipsis">
+    安装轻量化
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../upgrade.html">
+<span class="md-ellipsis">
+    升级
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../uninstall.html">
+<span class="md-ellipsis">
+    卸载和导入
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../faq.html">
+<span class="md-ellipsis">
+    安装排障
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../commercial/scenarios.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_2_12" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2_12" id="__nav_2_2_2_12_label" tabindex="0">
+<span class="md-ellipsis">
+    客户案例
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_2_12_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_2_2_12">
+<span class="md-nav__icon md-icon"></span>
+            客户案例
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="remanage-work-cluster.html">
+<span class="md-ellipsis">
+    全局服务集群重装后纳管原工作集群
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    不停机迁移集群操作系统
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="replace-os.html">
+<span class="md-ellipsis">
+    不停机迁移集群操作系统
+  </span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      背景
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      风险
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      解决方案
+    </span>
+</a>
+<nav aria-label="解决方案" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      准备离线资源（在线可忽略）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#worker">
+<span class="md-ellipsis">
+      迁移 Worker 节点
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#control-plane">
+<span class="md-ellipsis">
+      迁移 Control Plane 节点
+    </span>
+</a>
+<nav aria-label="迁移 Control Plane 节点" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      确定首个主节点
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#control-plane_1">
+<span class="md-ellipsis">
+      迁移非首个 Control Plane 节点
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#control-plane_2">
+<span class="md-ellipsis">
+      迁移首个 Control Plane 节点
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../release-notes.html">
+<span class="md-ellipsis">
+    安装器 Release Notes
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dce/bphome.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dce/faq.html">
+<span class="md-ellipsis">
+    常见问题
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+<span class="md-ellipsis">
+    工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            工作台
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../amamba/intro/index.html">
+<span class="md-ellipsis">
+    应用工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+<span class="md-ellipsis">
+    容器
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            容器
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../kpanda/intro/index.html">
+<span class="md-ellipsis">
+    容器管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../kairship/intro/index.html">
+<span class="md-ellipsis">
+    多云编排
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../kangaroo/intro/index.html">
+<span class="md-ellipsis">
+    镜像仓库
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../network/intro/index.html">
+<span class="md-ellipsis">
+    云原生网络
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../storage/index.html">
+<span class="md-ellipsis">
+    云原生存储
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../virtnest/intro/index.html">
+<span class="md-ellipsis">
+    虚拟机
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+<span class="md-ellipsis">
+    微服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            微服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../insight/intro/index.html">
+<span class="md-ellipsis">
+    可观测性
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../skoala/intro/index.html">
+<span class="md-ellipsis">
+    微服务引擎
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../mspider/intro/index.html">
+<span class="md-ellipsis">
+    服务网格
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+<span class="md-ellipsis">
+    数据服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            数据服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../middleware/index.html">
+<span class="md-ellipsis">
+    中间件
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="">
+<span class="md-ellipsis">
+    云原生 AI
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+            云原生 AI
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../baize/intro/index.html">
+<span class="md-ellipsis">
+    AI Lab
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="">
+<span class="md-ellipsis">
+    边缘计算
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+            边缘计算
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../kant/intro/index.html">
+<span class="md-ellipsis">
+    云边协同
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="">
+<span class="md-ellipsis">
+    管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            管理
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../ghippo/intro/index.html">
+<span class="md-ellipsis">
+    全局管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../blogs/index.html">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      背景
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      风险
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      解决方案
+    </span>
+</a>
+<nav aria-label="解决方案" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      准备离线资源（在线可忽略）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#worker">
+<span class="md-ellipsis">
+      迁移 Worker 节点
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#control-plane">
+<span class="md-ellipsis">
+      迁移 Control Plane 节点
+    </span>
+</a>
+<nav aria-label="迁移 Control Plane 节点" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      确定首个主节点
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#control-plane_1">
+<span class="md-ellipsis">
+      迁移非首个 Control Plane 节点
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#control-plane_2">
+<span class="md-ellipsis">
+      迁移首个 Control Plane 节点
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/install/best-practices/replace-os.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/install/best-practices/replace-os.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/install/best-practices/replace-os.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="_1">不停机迁移集群操作系统<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>某客户生产环境在 CentOS 7.9 操作系统上部署了 DCE 5.0 工作集群，但是由于
+<a href="https://www.redhat.com/en/topics/linux/centos-linux-eol">CentOS 7.9 将停止维护</a>，所以客户希望迁移到 Ubuntu 22.04。
+由于是生产环境，客户希望在不停机的情况下，从 CentOS 7.9 迁移到 Ubuntu 22.04。</p>
+<h2 id="_3">风险<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p>k8s 集群节点的迁移最佳实践是先增后删的操作顺序，但客户要求保证节点 IP 不发生变化，
+  基于此只能调整节点迁移顺序为先删后增，此顺序的改变会导致集群容错性及稳定性下降，需要谨慎对待！</p>
+</li>
+<li>
+<p>另外先删后增的过程中，原节点上的资源会迁移到其他节点，应保证其他节点拥有足够资源和足够的 Pod 容纳能力，否则会导致迁移失败；</p>
+<ul>
+<li>默认单节点最大容纳 Pod 数 <code>kubelet_max_pods</code> 为 110。若迁移可能导致超标，则最好提前更新所有节点的容纳能力</li>
+<li>删除节点的过程中，如果有服务固定在移除的节点或流量指向移除的节点上的 Pod，会有 2-3s 的业务断连</li>
+</ul>
+</li>
+</ul>
+<h2 id="_4">解决方案<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<ul>
+<li>需要从 Control Plane、Worker 节点两个角度来处理</li>
+<li>迁移操作顺序：<a href="#worker">Worker 节点迁移</a> -&gt; <a href="#control-plane_1">非首个 Control Plane 节点迁移</a> -&gt; <a href="#control-plane_2">首个 Control Plane 节点迁移</a></li>
+<li>在进行节点迁移操作之前，安全起见，建议对集群的相关资源进行备份</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本文档默认采用先删后增的操作顺序，实际场景可按需求调整操作顺序。</p>
+</div>
+<h3 id="_5">准备离线资源（在线可忽略）<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<ol>
+<li>
+<p>通过安装器命令，导入 Ubuntu 22.04 的 <a href="../commercial/start-install.html#iso">iso</a>、
+   <a href="../commercial/start-install.html#ospackage">ospackage</a> 文件：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>dce5-installer<span class="w"> </span>import-artifact<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span>--os-pkgs-path<span class="o">=</span>/home/airgap/os-pkgs-ubuntu2204-v0.16.0.tar.gz<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span>--iso-path<span class="o">=</span>/home/iso/ubuntu-22.04.4-live-server-amd64.iso
+</code></pre></div>
+</li>
+<li>
+<p>配置 Ubuntu 22.04 离线源的示例（<code>--limit</code> 用于限制源配置仅作用于指定扩容的节点）：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubean.io/v1alpha1</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterOperation</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster-ops-test</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">  </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/kubean-io/spray-job:latest</span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">  </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">  </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scale.yml</span>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">  </span><span class="nt">preHook</span><span class="p">:</span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ping.yml</span>
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enable-repo.yml</span><span class="w">  </span><span class="c1"># (1)!</span>
+<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">      </span><span class="nt">extraArgs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">        </span><span class="no">--limit=ubuntu-worker1 -e "{repo_list: ['deb [trusted=yes] http://MINIO_ADDR:9000/kubean/ubuntu jammy main', 'deb [trusted=yes] http://MINIO_ADDR:9000/kubean/ubuntu-iso jammy main restricted']}"</span>
+<a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a>
+<a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">disable-firewalld.yml</span>
+</code></pre></div>
+<ol>
+<li>在任务运行前，先执行 enable-repo 的 playbook，为每个节点创建指定 url 的源配置</li>
+</ol>
+</li>
+</ol>
+<h3 id="worker">迁移 Worker 节点<a class="headerlink" href="#worker" title="Permanent link">¶</a></h3>
+<ol>
+<li>
+<p>进入工作集群详情界面，在 <strong>集群设置</strong> -&gt; <strong>高级设置</strong> 中，关闭 <strong>集群删除保护</strong></p>
+</li>
+<li>
+<p>在 <strong>节点管理</strong> 列表中，选择一个工作节点，点击 <strong>移除</strong></p>
+</li>
+<li>
+<p>移除成功后，在终端命令行中，连接<a href="../../kpanda/user-guide/clusters/cluster-role.html#_2">全局服务集群</a>，
+   获取资源类型为 <code>clusters.kubean.io</code>，名称为 &lt;工作集群名称&gt; 下的参数 <code>hosts-conf</code> 信息，此示例工作集群名称为：centos</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># 获取 hosts-conf 参数</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>clusters.kubean.io<span class="w"> </span>centos<span class="w"> </span>-o<span class="o">=</span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">"{.spec.hostsConfRef}{'\n'}"</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="o">{</span><span class="s2">"name"</span>:<span class="s2">"centos-hosts-conf"</span>,<span class="s2">"namespace"</span>:<span class="s2">"kubean-system"</span><span class="o">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>在 <strong>节点管理</strong> 列表中，点击 <strong>接入节点</strong> ，将之前移除的节点重新加入进来即可</p>
+</li>
+<li>
+<p>等待新节点扩容成功后，其他工作节点重复以上步骤直至全部迁移完成</p>
+</li>
+</ol>
+<h3 id="control-plane">迁移 Control Plane 节点<a class="headerlink" href="#control-plane" title="Permanent link">¶</a></h3>
+<p>Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 节点迁移、非首个 Control Plane 节点迁移</p>
+<h4 id="_6">确定首个主节点<a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
+<p>请查看集群的资源 <code>clusters.kubean.io</code> 配置 host-conf 内容，具体定位 <code>all.children.kube_control_plane.hosts</code>，
+在 kube_control_plane 组中，排在首位的节点，即为首个主节点；</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="w">      </span><span class="nt">children</span><span class="p">:</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">        </span><span class="nt">kube_control_plane</span><span class="p">:</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">          </span><span class="nt">hosts</span><span class="p">:</span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">            </span><span class="nt">centos-master1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># (1)!</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">            </span><span class="nt">centos-master2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">            </span><span class="nt">centos-master3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</code></pre></div>
+<ol>
+<li>首个节点</li>
+</ol>
+<h4 id="control-plane_1">迁移非首个 Control Plane 节点<a class="headerlink" href="#control-plane_1" title="Permanent link">¶</a></h4>
+<ol>
+<li>
+<p>在终端命令行中，连接全局服务集群，获取资源类型为 <code>clusters.kubean.io</code>，名称为 &lt;工作集群名称&gt; 下的参数
+   <code>hosts-conf</code>、<code>vars-conf</code> 信息，此示例工作集群名称为：centos</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># 获取 hosts-conf 参数</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>clusters.kubean.io<span class="w"> </span>centos<span class="w"> </span>-o<span class="o">=</span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">"{.spec.hostsConfRef}{'\n'}"</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="o">{</span><span class="s2">"name"</span>:<span class="s2">"centos-hosts-conf"</span>,<span class="s2">"namespace"</span>:<span class="s2">"kubean-system"</span><span class="o">}</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1"># 获取 vars-conf 参数</span>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>clusters.kubean.io<span class="w"> </span>centos<span class="w"> </span>-o<span class="o">=</span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">"{.spec.varsConfRef}{'\n'}"</span>
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="o">{</span><span class="s2">"name"</span>:<span class="s2">"centos-vars-conf"</span>,<span class="s2">"namespace"</span>:<span class="s2">"kubean-system"</span><span class="o">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>创建 ConfigMap 资源用于清理 kube-apiserver 任务，资源文件如下：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pb-clean-kube-apiserver</span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubean-system</span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="nt">data</span><span class="p">:</span>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">  </span><span class="nt">clean-kube-apiserver.yml</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="no">- name: Clean kube-apiserver</span>
+<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">      </span><span class="no">hosts: "{{ node | default('kube_node') }}"</span>
+<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">      </span><span class="no">gather_facts: no</span>
+<a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">      </span><span class="no">tasks:</span>
+<a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">        </span><span class="no">- name: Kill kube-apiserver process</span>
+<a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">        </span><span class="no">shell: ps -eopid=,comm= | awk '$2=="kube-apiserver" {print $1}' | xargs -r kill -9</span>
+</code></pre></div>
+</li>
+<li>
+<p>部署上述文件后，创建 ClusterOperation，用于 Control Plane 的节点缩容，资源文件如下：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubean.io/v1alpha1</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterOperation</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster-remove-master2</span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">  </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">centos</span><span class="w"> </span><span class="c1"># (1)!</span>
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/kubean-io/spray-job:v0.12.2</span><span class="w"> </span><span class="c1"># (2)!</span>
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">  </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">  </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">remove-node.yml</span>
+<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">  </span><span class="nt">extraArgs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-e node=centos-master2</span><span class="w"> </span><span class="c1"># (3)!</span>
+<a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">  </span><span class="nt">postHook</span><span class="p">:</span>
+<a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">      </span><span class="nt">actionSource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">configmap</span>
+<a href="#__codelineno-6-14" id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">      </span><span class="nt">actionSourceRef</span><span class="p">:</span>
+<a href="#__codelineno-6-15" id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pb-clean-kube-apiserver</span>
+<a href="#__codelineno-6-16" id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubean-system</span>
+<a href="#__codelineno-6-17" id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clean-kube-apiserver.yml</span>
+<a href="#__codelineno-6-18" id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-6-19" id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster-info.yml</span>
+</code></pre></div>
+<ol>
+<li>工作集群名称</li>
+<li>指定 Kubean 任务运行的镜像，镜像地址要与之前执行部署时的 Job 其内镜像保持一致</li>
+<li>此处需要定义为非首个 Control Plane 的任意一个节点</li>
+</ol>
+</li>
+<li>
+<p>部署上述文件后且等待节点缩容成功后，创建 ClusterOperation 资源，用于 Control Plane 的节点扩容，资源文件如下：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubean.io/v1alpha1</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterOperation</span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster-scale-master2</span>
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">  </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">centos</span><span class="w"> </span><span class="c1"># (1)!</span>
+<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/kubean-io/spray-job:v0.12.2</span><span class="w"> </span><span class="c1"># (2)!</span>
+<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">  </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">  </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster.yml</span>
+<a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">  </span><span class="nt">extraArgs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--limit=etcd,kube_control_plane -e ignore_assert_errors=yes --skip-tags=multus</span>
+<a href="#__codelineno-7-11" id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">  </span><span class="nt">preHook</span><span class="p">:</span>
+<a href="#__codelineno-7-12" id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-7-13" id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">disable-firewalld.yml</span>
+<a href="#__codelineno-7-14" id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">  </span><span class="w w-Error"> </span><span class="nt">postHook</span><span class="p">:</span>
+<a href="#__codelineno-7-15" id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-7-16" id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upgrade-cluster.yml</span>
+<a href="#__codelineno-7-17" id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">      </span><span class="nt">extraArgs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--limit=etcd,kube_control_plane -e ignore_assert_errors=yes</span>
+<a href="#__codelineno-7-18" id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-7-19" id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster-info.yml</span>
+</code></pre></div>
+<ol>
+<li>工作集群名称</li>
+<li>指定 Kubean 任务运行的镜像，镜像地址要与之前执行部署时的 Job 其内镜像保持一致</li>
+</ol>
+</li>
+<li>
+<p>部署上述文件后且等待第 4 步移除节点重新扩容进来后，重复执行第 3、4 步完成第三个节点的迁移</p>
+</li>
+</ol>
+<h4 id="control-plane_2">迁移首个 Control Plane 节点<a class="headerlink" href="#control-plane_2" title="Permanent link">¶</a></h4>
+<p>可参考文档<a href="../../kpanda/best-practice/replace-first-master-node.html">迁移工作集群的首个控制节点</a>。</p>
+<ol>
+<li>
+<p>在容器管理集群对工作集群的 kubeconfig 进行更新，终端登录到第二个节点</p>
+</li>
+<li>
+<p>更新 ConfigMap 的资源 <code>centos-hosts-conf</code>，调整工作集群首个 Control Plane 节点在
+   kube_control_plane、kube_node、etcd 中的顺序（node1/node2/node3 -&gt; node2/node3/node1）：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">修改前</label><label for="__tabbed_1_2">修改后</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="w">    </span><span class="nt">children</span><span class="p">:</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">      </span><span class="nt">chakube_control_plane</span><span class="p">:</span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">        </span><span class="nt">hosts</span><span class="p">:</span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">          </span><span class="nt">centos-master1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span>
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">          </span><span class="nt">centos-master2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">          </span><span class="nt">centos-master3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">      </span><span class="nt">kube_node</span><span class="p">:</span>
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">        </span><span class="nt">hosts</span><span class="p">:</span>
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">          </span><span class="nt">centos-master1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span>
+<a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">          </span><span class="nt">centos-master2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">          </span><span class="nt">centos-master3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">      </span><span class="nt">etcd</span><span class="p">:</span>
+<a href="#__codelineno-8-13" id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">        </span><span class="nt">hosts</span><span class="p">:</span>
+<a href="#__codelineno-8-14" id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">          </span><span class="nt">centos-master1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span>
+<a href="#__codelineno-8-15" id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">          </span><span class="nt">centos-master2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a href="#__codelineno-8-16" id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">          </span><span class="nt">centos-master3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="w">    </span><span class="nt">children</span><span class="p">:</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">      </span><span class="nt">chakube_control_plane</span><span class="p">:</span>
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">        </span><span class="nt">hosts</span><span class="p">:</span>
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">          </span><span class="nt">centos-master2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">          </span><span class="nt">centos-master3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span>
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">          </span><span class="nt">centos-master1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">      </span><span class="nt">kube_node</span><span class="p">:</span>
+<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">        </span><span class="nt">hosts</span><span class="p">:</span>
+<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">          </span><span class="nt">centos-master2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">          </span><span class="nt">centos-master3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span>
+<a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">          </span><span class="nt">centos-master1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">      </span><span class="nt">etcd</span><span class="p">:</span>
+<a href="#__codelineno-9-13" id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">        </span><span class="nt">hosts</span><span class="p">:</span>
+<a href="#__codelineno-9-14" id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">          </span><span class="nt">centos-master2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a href="#__codelineno-9-15" id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">          </span><span class="nt">centos-master3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span>
+<a href="#__codelineno-9-16" id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">          </span><span class="nt">centos-master1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</code></pre></div>
+</div>
+</div>
+</input></input></div>
+</li>
+<li>
+<p>创建 ClusterOperation，用于 Control Plane 的节点缩容，资源文件如下：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubean.io/v1alpha1</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterOperation</span>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster-test-remove-master1</span>
+<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">  </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">centos</span><span class="w">  </span><span class="c1"># (1)!</span>
+<a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/kubean-io/spray-job:v0.12.2</span><span class="w"> </span><span class="c1"># (2)!</span>
+<a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">  </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">  </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">remove-node.yml</span>
+<a href="#__codelineno-10-10" id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="w">  </span><span class="nt">extraArgs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-e node=centos-master1</span><span class="w"> </span><span class="c1"># (3)!</span>
+<a href="#__codelineno-10-11" id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">  </span><span class="nt">postHook</span><span class="p">:</span>
+<a href="#__codelineno-10-12" id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-10-13" id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">      </span><span class="nt">actionSource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">configmap</span>
+<a href="#__codelineno-10-14" id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="w">      </span><span class="nt">actionSourceRef</span><span class="p">:</span>
+<a href="#__codelineno-10-15" id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pb-clean-kube-apiserver</span>
+<a href="#__codelineno-10-16" id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubean-system</span>
+<a href="#__codelineno-10-17" id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clean-kube-apiserver.yml</span>
+<a href="#__codelineno-10-18" id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-10-19" id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster-info.yml</span>
+</code></pre></div>
+<ol>
+<li>工作集群名称</li>
+<li>指定 Kubean 任务运行的镜像，镜像地址要与之前执行部署时的 Job 其内镜像保持一致</li>
+<li>此处需要定义为首个 Control Plane 的节点</li>
+</ol>
+</li>
+<li>
+<p>部署上述文件且缩容成功后，更新 ConfigMap 资源 cluster-info、kubeadm-config</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># 编辑 cluster-info</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>kube-public<span class="w"> </span>edit<span class="w"> </span>cm<span class="w"> </span>cluster-info
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="c1"># 1. 若 ca.crt 证书更新，则需要更新 certificate-authority-data 字段的内容</span>
+<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="c1"># 查看 ca 证书的 base64 编码：</span>
+<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a>cat<span class="w"> </span>/etc/kubernetes/ssl/ca.crt<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">'\n'</span>
+<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a>
+<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="c1"># 2. 需修改 server 字段的 IP 地址为第二个 Control Plane IP</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># 编辑 kubeadm-config</span>
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>edit<span class="w"> </span>cm<span class="w"> </span>kubeadm-config
+<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a>
+<a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="c1"># 修改 controlPlaneEndpoint 为第二个 Control Plane IP</span>
+</code></pre></div>
+</li>
+<li>
+<p>创建 ClusterOperation，用于 Control Plane 的节点扩容，资源文件如下：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubean.io/v1alpha1</span>
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterOperation</span>
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster-test-scale-master1</span>
+<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">  </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">centos</span><span class="w"> </span><span class="c1"># (1)!</span>
+<a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/kubean-io/spray-job:v0.12.2</span><span class="w"> </span><span class="c1"># (2)!</span>
+<a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">  </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-13-9" id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">  </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster.yml</span>
+<a href="#__codelineno-13-10" id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="w">  </span><span class="nt">extraArgs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--limit=etcd,kube_control_plane -e ignore_assert_errors=yes --skip-tags=multus</span>
+<a href="#__codelineno-13-11" id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w">  </span><span class="nt">preHook</span><span class="p">:</span>
+<a href="#__codelineno-13-12" id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-13-13" id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">disable-firewalld.yml</span>
+<a href="#__codelineno-13-14" id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="w">  </span><span class="nt">postHook</span><span class="p">:</span>
+<a href="#__codelineno-13-15" id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-13-16" id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upgrade-cluster.yml</span>
+<a href="#__codelineno-13-17" id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="w">      </span><span class="nt">extraArgs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--limit=etcd,kube_control_plane -e ignore_assert_errors=yes</span>
+<a href="#__codelineno-13-18" id="__codelineno-13-18" name="__codelineno-13-18"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">actionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">playbook</span>
+<a href="#__codelineno-13-19" id="__codelineno-13-19" name="__codelineno-13-19"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster-info.yml</span>
+</code></pre></div>
+<ol>
+<li>工作集群名称</li>
+<li>指定 Kubean 任务运行的镜像，镜像地址要与之前执行部署时的 Job 其内镜像保持一致</li>
+</ol>
+</li>
+<li>
+<p>扩容任务完成后即成功完成首个 Control Plane 节点迁移</p>
+</li>
+</ol>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年7月24日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 全局服务集群重装后纳管原工作集群" class="md-footer__link md-footer__link--prev" href="remanage-work-cluster.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                全局服务集群重装后纳管原工作集群
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 安装器 Release Notes" class="md-footer__link md-footer__link--next" href="../release-notes.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                安装器 Release Notes
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../../stylesheets/zoom_image.js"></script>
+<script src="../../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

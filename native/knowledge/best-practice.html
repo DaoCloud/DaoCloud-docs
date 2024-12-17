@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/native/knowledge/best-practice.html" rel="canonical"/>
+<link href="troubleshoot.html" rel="prev"/>
+<link href="tools.html" rel="next"/>
+<link href="../../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>最佳实践 - DaoCloud Enterprise</title>
+<link href="../../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              最佳实践
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../blogs/index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../dce/index.html">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../blogs/index.html">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            云原生研究院
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="">
+<span class="md-ellipsis">
+    社区要闻
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_1">
+<span class="md-nav__icon md-icon"></span>
+            社区要闻
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../news/news-2024.html">
+<span class="md-ellipsis">
+    2024 云原生社区要闻
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../news/news-2023.html">
+<span class="md-ellipsis">
+    2023 云原生社区要闻
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../news/news-2022.html">
+<span class="md-ellipsis">
+    2022 云原生社区要闻
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+<span class="md-ellipsis">
+    编写和贡献指南
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_2">
+<span class="md-nav__icon md-icon"></span>
+            编写和贡献指南
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../git/index.html">
+<span class="md-ellipsis">
+    Git 文档流程
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../git/2auth.html">
+<span class="md-ellipsis">
+    Git开启两步安全验证
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../git/rebase.html">
+<span class="md-ellipsis">
+    Git 常见问题
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../git/cmd.html">
+<span class="md-ellipsis">
+    常用 Git 命令
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../git/vscode.html">
+<span class="md-ellipsis">
+    VSCode 编辑技巧
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../git/ui-preview.html">
+<span class="md-ellipsis">
+    GitLab i18n 翻译预览
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../git/github.html">
+<span class="md-ellipsis">
+    GitHub 混迹技巧
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../git/lsync.html">
+<span class="md-ellipsis">
+    Git 同步中英文档
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../git/works.html">
+<span class="md-ellipsis">
+    文档站工作说明
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../git/chatbot.html">
+<span class="md-ellipsis">
+    维护 ChatBot
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../git/video.html">
+<span class="md-ellipsis">
+    视频剪辑帮助
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../git/k8s.html">
+<span class="md-ellipsis">
+    K8s 相关资源
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+<span class="md-ellipsis">
+    行业洞察
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_3">
+<span class="md-nav__icon md-icon"></span>
+            行业洞察
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../commerce.html">
+<span class="md-ellipsis">
+    商业产品
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../open.html">
+<span class="md-ellipsis">
+    开源项目
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+<span class="md-ellipsis">
+    知识分享
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_7_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_4">
+<span class="md-nav__icon md-icon"></span>
+            知识分享
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="index.html">
+<span class="md-ellipsis">
+    索引
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="troubleshoot.html">
+<span class="md-ellipsis">
+    排障方案
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="best-practice.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="tools.html">
+<span class="md-ellipsis">
+    工具推荐
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="products.html">
+<span class="md-ellipsis">
+    产品选型
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="hot-spots.html">
+<span class="md-ellipsis">
+    前沿热点
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="bugs.html">
+<span class="md-ellipsis">
+    安全漏洞
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="ebooks.html">
+<span class="md-ellipsis">
+    电子书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="other.html">
+<span class="md-ellipsis">
+    其他
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/native/knowledge/best-practice.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/native/knowledge/best-practice.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/native/knowledge/best-practice.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="_1">最佳实践<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<p>本页列出云原生社区推崇的最佳实践，供产品和交付参考学习。</p>
+<ul>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/y1dEO8Fb3SxqQUW9WrEsHQ">跨集群运行 StatefulSet</a></p>
+<p>跨集群可靠地运行 StatefulSet 可能需要解决网络和存储两个方面的问题。
+文章基于一个示例，介绍了配置和管理跨集群的有状态应用服务的一个方法。</p>
+</li>
+<li>
+<p><a href="https://thenewstack.io/how-do-we-cultivate-community-within-cloud-native-projects/">我们如何基于云原生项目发展开源社区？</a></p>
+<p>基于云原生项目发展开源社区，首先要知道哪些人会关心你的项目、谁是终端用户、利益相关者和贡献者？
+他们做什么工作、在哪工作以及使用目标是什么？
+发现更多的潜在利益相关者，为他们提供贡献途径，对提高项目的采用率来说至关重要。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/Y-MewxHVMULKDi4_cbl6Yw">Dapr 集成 Flomesh 实现跨集群服务调用</a></p>
+<p><a href="https://github.com/flomesh-io/fsm">Flomesh 服务网格</a>使用可编程代理 Pipy 为核心提供东西、南北向的流量管理。
+通过基于 L7 的流量管理能力，突破计算环境间的网络隔离，建立一个虚拟的平面网络，使不同计算环境中应用可以互相通信。
+文章介绍通过 Dapr 与 Flomesh 服务网格的集成进行跨集群的服务调用，实现“真正的”多集群互联互通。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/qlmm2h8RpQnKOnEjlK0pMA">云原生场景下，如何缓减容器隔离漏洞，监控内核关键路径？</a></p>
+<p>文章介绍了 OpenCloudOS 社区自研的两个方案：CgroupFS 和 SLI，用于缓减容器隔离漏洞，监控内核关键路径。
+CgroupFS 方案提供一个内核态容器视角的虚拟机文件系统(/proc、/sys)，增强了容器资源视图隔离。
+SLI 是容器级别的性能跟踪机制，从容器的角度对 CPU、内存资源的竞争情况进行跟踪、观测，从而为容器性能问题的定位、分析提供可靠的指标。</p>
+</li>
+<li>
+<p><a href="https://cloud.redhat.com/blog/grpc-to-rest-transcoding-with-openshift-and-service-mesh">基于 Kubernetes 和 Istio 轻松完成 gRPC 到 REST 的转码</a></p>
+<p>文章介绍如何在无需修改大量代码的情况下使得 gRPC 服务与 REST 兼容。
+该方案利用 Envoy 过滤器，建立一个转码器，让 RESTful JSON API 客户端通过 HTTP 发送请求，并被代理到一个 gRPC 服务。
+转码器将 gRPC 服务方法的消息输出编码为 JSON，并将 HTTP 响应的 Content-Type 头设置为 application/json。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/8R55Holzrf0wNVD8DLJnAg">kube-state-metrics 在大规模集群下的优化</a></p>
+<p>在小规模集群中，只需要保证 kube-state-metrics 高可用就可以在生产环境使用。
+但是对于大规模的集群，只通过一个 KSM 实例来提供 metrics 指标是非常吃力的，还需要做很多优化：
+例如，过滤不需要的指标和标签，通过分片降低 KSM 实例压力，使用 DaemonSet 方式单独针对 pod 指标进行部署。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/wEmheHwTA8m8LHr_5LVSyg">vivo 自研 Jenkins 资源调度系统设计与实践</a></p>
+<p>文章从目前业界实现 Jenkins 的高可用的实现方案入手，分析各方案的优缺点，引入 vivo 目前使用的 Jenkins 高可用方案——jenkins scheduler 系统。
+该系统不采用原生的 Jenkins 部署方案，而是采用全 master 的方式，master 之间的关系、任务分配、离线、插件安装等由调度系统进行管理。
+目前该系统已经投入生产环境运行。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/BV-y82MalhG-A--hvUFMcg">K8s 迁移 cgroup v2 之前要做的三件事</a></p>
+<p>随着 Kubernetes 1.25 关于cgroup v2 特性的正式发布（GA），kubelet 容器资源管理能力得到加强。
+文章在 cgroup v2 概念的基础上，介绍了采用 cgroup v2 之前在 Linux OS、K8s 生态、应用变更三方面要做的事。</p>
+</li>
+<li>
+<p><a href="https://developer.aliyun.com/ebook/7879?spm=a2c6h.26392470.ebook-read.13.3e855bc8YpIdco">阿里云云原生实战指南</a></p>
+<p>该指南涵盖了全球云原生应用洞察与趋势、阿里云在云原生领域的最新产品与技术布局、阿里云 All in Serverless 的全新思考与投入、传音、新东方、小红书等企业的上云实战经验。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/hFCshQpmF7Vr0jrpugArjA">服务网格安全性和高可用性部署最佳实践</a></p>
+<p>文章介绍在多集群的基础设施中部署服务网格时的安全性和高可用性最佳实践，包括：控制平面应该如何部署在应用程序附近；
+入口应该如何部署以促进安全性和敏捷性；如何使用 Envoy 促进跨集群负载均衡，以及网格内部如何使用证书。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/9Z4zFPU0uHk6RhrpUDD-tw">大中型科技企业开源战略制定与落地</a></p>
+<p>目前，很多企业对于开源是什么，怎么用开源，如何参与开源，企业在开源方面如何做决策，如何进行开源治理，如何利用开源强化竞争力等方面的问题，仍存在着一些难点。
+对此，文章介绍了什么是企业开源战略；企业为什么需要开源战略；企业开源战略包含的内容，以及企业开源战略制定和落地的实践经验。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/F0V8nyo3LtATFmS7pHuxXw">ServiceAccount Token 在不同 K8s 版本中的使用</a></p>
+<p>文章介绍了在不同 K8s 版本下，ServiceAccount Token 令牌的不同使用方式，
+主要包括自动创建 Secret 和 Kubelet 通过 TokenRequest API 去申请 API 两种方式。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/Gusp1ah_qIoMMOg7FhX6Vg">腾讯百万级别容器云平台实践揭秘</a></p>
+<p>文章介绍了腾讯容器云平台在线业务资源容器化部署遇到的问题、容器化对动态路由同步的挑战及各自的解决方案，
+以及为解决 K8s 已有自愈机制存在容器销毁阶段卡住的问题，探索出的一种全新的容器销毁失败自愈机制。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/75paqvd507_ExHHGszB_-Q">在生产中大规模自动化 Istio CA 轮换</a></p>
+<p>文章展示如何配置 Istio 以自动重新加载其 CA，以及如何配置 cert-manager 在 Istio 的中间 CA 到期前定期自动轮换，以提高在多个集群上管理 CA 的操作效率。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/QYeP6WZKG0gjJ2u6k1fXxQ">Kubernetes 零信任安全的 mTLS 最佳实践</a></p>
+<p>文章介绍在 Kubernetes 中实现双向 TLS（mTLS）的三大最佳实践，
+包括不要使用自签名证书、将 Istio 的信任根植于现有的公钥基础设施 (PKI) 中、使用中间证书。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/jfpF3WUs4YvtlJ8Q4zsuxg">微服务应用视角解读如何选择 K8s 的弹性策略</a></p>
+<p>对于集群资源弹性，K8s 社区给出了 Cluster Autoscaler（CA）和Virtual Kubelet（VK）两种解决方案。
+文章围绕微服务应用的形态与特点，剖析了 CA 与 VK 各自适用的场景，并总结了微服务架构下应用该如何选择集群资源弹性。</p>
+</li>
+<li>
+<p><a href="https://www.weave.works/blog/infographic-gitops-pipeline">GitOps 软件交付 pipeline 的组件介绍</a></p>
+<p>文章总结了开始使用 GitOps 所需的组件，包括容器平台、Git 仓库、容器镜像仓库、GitOps 代理和构建服务器。
+以及在扩大规模时可以增加的一些组件，如容器配置自动化、策略引擎、服务网格、渐进式交付工具、事件监控等。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/Q1DXAEL4ceUcUCQjHAIU5Q">万字解读，如何从 0 到 1 构建 K8s 容器平台的 Nginx 负载均衡体系</a></p>
+<p>文章介绍了从 0 到 1 来构建大规模 Kubernetes 容器平台的 Nginx 负载均衡体系的实战经验，
+包括体系的业务需求和运维需求、对 Nginx-Controller 组件的要求、架构设计、体验优化、核心考量点。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/SipnQhbaa7WlpwORTVLCRw">如何管理云原生应用程序的依赖关系</a></p>
+<p>文章介绍了一些云原生应用依赖关系管理的最佳实践，例如，使用 depcheck 来检查未使用的依赖关系，使用依赖关系检查脚本检测过期的依赖关系，
+以及利用自动化依赖关系管理开源工具 <a href="https://github.com/marketplace/renovate">Mend Renovate</a> 为所有类型的依赖关系更新自动创建拉取请求。</p>
+</li>
+<li>
+<p><a href="https://blog.getambassador.io/using-mutating-admission-controllers-to-ease-kubernetes-migrations-5699c1901015">K8s：利用 Mutating Admission Controller 简化应用的环境迁移</a></p>
+<p>Kubernetes 的 Mutating Admission Webhook 通常用于执行安全实践，确保资源遵循特定的策略或配置管理。
+文章介绍了一个新的用例：简化应用的迁移，实现快速更新新环境的清单，同时保持旧环境正常运行。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/ZKsIn0UzrrSGWWMv8Sk4Nw">阿里云容器攻防矩阵 &amp; API 安全生命周期，如何构建金融安全云原生平台</a></p>
+<p>文章从攻击者视角介绍了容器平台（容器攻防矩阵）和 API 在金融科技领域的应用所带来的威胁面，分析威胁，并给出容器平台和 API 全生命周期的安全防护实践建议。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/edy6FsD1d_9fp-U60H_dug">全球顶级开源公司是如何找到前 1000 名社区用户的？</a></p>
+<p>文章分享了 4 个顶级开源商业公司（HashiCorp、Confluent、Databricks 和 CockroachDB）的开源项目和开源社区的运作方式，如何找到前 1000 名社区用户及花了多长时间，以及增长衡量指标等。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/MW67DhLzUWXm0xHd5LH0Tw">容器云多集群环境下如何实践 DevOps</a></p>
+<p>文章介绍了如何通过 GitOps 来实现多集群 DevOps，并推荐了一种多集群 GitOps 工作流作为落地参考，最后介绍了在持续集成和持续交付中具体实践 GitOps 的主流方式。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/3eSm0BZSrPUAZQQhG_L_5A">Kubernetes HPA 的三个误区与避坑指南</a></p>
+<p>Kubernetes 提供了水平弹性扩容能力（HPA），让应用可以随着实时指标进行扩/缩。
+然而 HPA 的实际工作情况可能和我们预想的不一样，这里存在一些认知误区，例如，HPA 存在扩容死区、扩容与预期使用量不符、弹性行为总是滞后等。
+对此，文章总结了一些注意事项，帮助在使用 HPA 时“有效避坑。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/Lj3sl-Ukday9WP4U-8-vqA">是时候思考 K8s 出向流量安全了（上）</a><a href="https://mp.weixin.qq.com/s/NMh1XbBXeyfGuJJ8kZ6J2Q">&amp;（下）</a></p>
+<p>我们往往重视 Ingress 的能力，而忽视了 Egress 流量的安全管控。但无论从安全还是合规的角度，Egress 流量都应加强管控。
+文章分析了进行 Egress 流量策略管控的原因、存在的挑战以及业界方案分析。方案包括六大类：基于 K8s Network Policy、CNI、Service Mesh、微分段技术以及 DNS interception。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/sv40SzD7Ic1eMeElvccs7A">如何保障云原生集群安全</a></p>
+<p>文章为容器集群安全交流论坛的内容汇总。
+内容包括：云集群安全的分类以及预防及解决方案、容器云上集群划分原则、集群审计、节点安全保障、etcd 集群安全、设计网络策略保障集群资源的安全、网络隔离问题、按照安全等保级别针对 k8s 集群的标准化策略或配置等。</p>
+</li>
+<li>
+<p><a href="https://thenewstack.io/how-many-nodes-for-your-kubernetes-control-plane/">Kubernetes 控制平面应该有多少个节点</a></p>
+<p>文章为确定 Kubernetes 控制平面的大小提供了参考。对于大多数用例，3 个节点足以。
+5 个节点将提供更好的可用性，但在所需节点数量和硬件资源消耗方面成本更高。
+此外，监控、备份 etcd 和控制平面节点配置是解决节点故障、预防意外的最佳实践方案。</p>
+</li>
+<li>
+<p><a href="https://www.tetrate.io/blog/minimizing-cross-zone-traffic-charges-with-istio/">利用 Istio 减少跨可用区流量开销</a></p>
+<p>跨可用区部署 Kubernetes 集群具备显著的可靠性优势，但需要一些额外的配置在本地保持流量。
+Istio 的本地感知路由可以帮助减少延迟，并将云供应商对应用流量的跨区数据收费降到最低。</p>
+</li>
+<li>
+<p><a href="https://dzone.com/articles/the-2-minute-test-for-kubernetes-pod-security">2 分钟测试 Kubernetes Pod 的安全</a></p>
+<p>从集群外部运行 <a href="https://github.com/kyverno/kyverno">Kyverno CLI</a>，审计集群是否符合最新的 <a href="https://kubernetes.io/docs/concepts/security/pod-security-standards/">Kubernetes Pod 安全标准</a>的要求，并为 pod 安全标准中定义的每个控制执行策略。执行审计不需要在集群中安装任何东西。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/TH8waHN00y6q26NUDY9wzg">Proxyless Mesh 在 Dubbo 中的实践</a></p>
+<p><a href="https://github.com/apache/dubbo-awesome/blob/master/proposals/D3.2-proxyless-mesh.md">Dubbo Proxyless Mesh</a> 直接实现 xDS 协议解析，实现 Dubbo 与 Control Plane 的直接通信，进而实现控制面对流量管控、服务治理、可观测性、安全等的统一管控，规避 Sidecar 模式带来的性能损耗与部署架构复杂性。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/wYUNsGaWEnQZ0BVxsQORbA">零信任策略下 K8s 安全监控最佳实践</a></p>
+<p>文章介绍如何在分布式容器化环境中借助 K8s 相关的安全数据源及采集技术，监控 K8s 集群，及时发现异常 API 访问事件、异常流量、异常配置、异常日志等行为，并且结合合理的告警策略建立更主动的安全防御体系。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/y42BgaosyIQnA1uDEgqTPA">基于 DevOps 流程的容器安全最佳实践</a></p>
+<p>文章分享了青藤云安全总结得出的适用于 DevOps 工作流程的 14 个容器安全实践，包括防御阶段的 6 个安全左移步骤、保护阶段的安全运行容器、检测阶段的异常行为告警以及响应阶段的事件响应与取证。</p>
+</li>
+<li>
+<p><a href="https://cloud.redhat.com/blog/designing-golden-paths">如何设计内部开发平台的 “Golden Path”</a></p>
+<p>“Golden Path”是指构建和部署某个软件的预架构方法。
+这种方法基于最佳实践的沉淀，能够加速典型应用的开发效率，是成功搭建内部开发平台（IDP）的先决条件。
+文章介绍了“Golden Path”应该具备的特点以及一个简单相关成熟度模型，并展示了一个如何实施“Golden Path”的例子。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/W-Ntu2xdjypFgs5EPMVjkg">通过云原生的方式管理 GPU 资源</a></p>
+<p>文章介绍了如何使用云原生的方式管理GPU资源，包括统一 GPU 资源和框架，以及通过 qGPU 共享方式提高 GPU 使用率，降低了集群层面 GPU 资源的管理难度。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/JL7Ru4nIiP2XuXwNiw2TtA">微服务全链路灰度新能力</a></p>
+<p>文章主要介绍阿里云 MSE 服务治理基于全链路灰度能力的应用场景与痛点延伸出来的两个新能力：运行时白屏化和配置灰度。
+运行时白屏化用于洞察全链路灰度的流量匹配以及运行的行为；配置灰度是指微服务应用中的配置项应该具备的灰度能力，以应对灰度应用对特殊配置值的诉求。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/IAo41AZ0aAkIxY-JzonXMQ">Kubernetes 集群利用率提升实践</a></p>
+<p>文章分享了 Kubernetes 集群利用率提升的思路和实现方式，包括两级扩容机制、两级动态超卖、动态调度、动态驱逐。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/j1dknNrFz0XqXSB2-Cwc3g">NGINX 现代应用参考架构（MARA）的 OpenTelemetry 集成进展报告</a></p>
+<p><a href="https://github.com/nginxinc/kic-reference-architectures">MARA</a> 是可用于在 Kubernetes 环境中构建和部署现代应用的生产就绪代码。
+文章描述了 MARA 对多功能开源可观测性工具的需求，然后介绍了选择 OpenTelemetry 过程中的利弊权衡和设计决策，
+以及采用了哪些技术将 OpenTelemetry 与使用 Python、Java 和 NGINX 构建的微服务应用相集成。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/TaQWryqD5AwWMJOXbejaqg">Istio 外部控制面部署实践</a></p>
+<p>通过对外部 Istiod 部署模型进行调研与部署，作者对其架构进行了剖析并对其使用的部署 yaml 文件部分进行了解析，总结了在部署过程中可能会遇到一些问题。</p>
+</li>
+<li>
+<p><a href="https://www.datadoghq.com/blog/cilium-metrics-and-architecture/">监控 Cilium 的关键指标</a></p>
+<p>文章介绍了监控 Cilium 的关键指标：端点的健康状况、Kubernetes 网络状态、网络策略的有效性、Cilium 的 API 处理和速率限制的性能。</p>
+</li>
+<li>
+<p><a href="https://www.tetrate.io/blog/lateral-movement-and-the-service-mesh/">基于服务网格的云原生安全分层方法</a></p>
+<p>文章主要探讨如何利用服务网格优化 OSI 模型各层的现有安全工具和实践。
+服务网格很适合作为最接近应用的一层，位于（并隐藏）底层安全层之上，为服务提供传输加密、应用身份和应用层访问控制。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/tnYUOHJT0TOh4iYBHlP4aA">Observability：采样 Sampling 场景和落地案例（上篇）</a></p>
+<p>文章先后介绍了采样的使用场景、采样在调用链系统架构的位置、主要方案（头部连贯采样、单元采样和尾部连贯采样）、主流开源和商业系统的采样实现、落地案例等。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/nxnz37VJydNHFMaEywu9KA">Observability 之采样 sampling 场景和落地案例（下篇）</a></p>
+<p>作者围绕一些落地案例，分享了一些关于可观测系统采样设计的思考。
+先分析全量采样的必要性、适合全量采样的链路，然后分享了阿里鹰眼和字节跳动等业内完整采样方案以及 OpenTelemetry 生产环境采样案例。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/pkDxexvrzmtuLMWwzi0p_g">如何扩展 K8s Descheduler 策略</a></p>
+<p>社区 Descheduler 的功能远不能满足公司内部生产环境的需要。
+文章介绍了 LowNodeUtilization 和 HighNodeUtilization 策略的扩展。
+在使用 Descheduler 迁移 Pod 时还需要对业务的稳定性做一些保障措施，完善组件功能后还需要对服务自身进行效果评估。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/CgW1zqfQBdUQo8qDtV-57Q">Kubernetes 资源拓扑感知调度优化</a></p>
+<p>文章首先介绍了腾讯星辰算力的业务场景与精细化调度相关的知识，然后对 K8s 和 Volcano 社区进行调研，发现目前已有的方案都存在局限性。
+最后通过痛点问题分析给出相应的解决方案。
+优化后，原有测试任务的训练速度提升至原来的 3 倍，CPU 抢占的驱逐率大大降低至物理机水平。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/tV3HOaE3TzJ6EbuEmYYfdA">如何正确配置 RBAC 防止容器逃逸</a></p>
+<p>文章介绍了在集群内利用危险的 RBAC 配置进行权限提升的思路，以此说明在容器逃逸后权限配置不当的影响。</p>
+</li>
+<li>
+<p><a href="https://thenewstack.io/query-optimization-in-the-prometheus-world/">如何优化 Prometheus 查询性能</a></p>
+<p>使用 Prometheus 时常会遇到的一个问题是：随着收集的指标数据量的增加，查询性能下降。
+文章介绍了影响 Prometheus 查询性能的因素、Prometheus 提供的可识别缓慢/低效查询的选项以及优化查询性能的方法（如缩短查询时间范围、降低指标分辨率等）。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/SBZO48fWcEojlDlBROdogQ">vivo 容器集群监控系统架构与实践</a></p>
+<p>文章以 vivo 容器集群监控实践经验为基础，探讨了云原生监控体系架构如何构建，从监控高可用和数据转发层组件高可用两个方面介绍 vivo 容器集群监控架构的设计思路，最后总结了在实践过程中遇到的挑战和对策。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/NXXwjxUAGXDD3krKXyJbaQ">混合云的多活架构指南</a></p>
+<p>文章介绍了作业帮公司在混合云环境下的多活架构：多云间的网络是介于单云多可用区和中心-边缘之间的一种状态；
+常态的应用间调用闭环在单云内部，仅需要单云内部独立注册发现；
+某些场景下的跨云调用只需要集群间发现即可；
+多云部署了全量服务，南北向流量就可以优先通过 DNS 进行调度。</p>
+</li>
+<li>
+<p><a href="https://elastisys.com/nsa-cisa-kubernetes-security-hardening-guide-and-beyond-for-2022/">2022 年，如何安全加固 Kubernetes?</a></p>
+<p>文章作者认为，美国国家安全局去年发布的<a href="https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF">《Kubernetes 加固指南》</a>的摘要和后面主体内容存在很大差距。
+为此，作者在总结该报告的基础上，提出了一些配置、应用任意许可、镜像扫描、安全测试等相关的额外见解。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/dEA3g3JnAKloW6K7cUskYQ">混沌工程在微服务场景下的应用</a></p>
+<p>杭州每刻科技引入云原生混沌工程测试平台 Chaos Mesh ，以解决云财务场景下微服务健壮性测试过程中遇到的痛点。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/OgU2uRGhIy7r6WucvdrPzg">百度云原生混部大规模落地实践之路</a></p>
+<p>混部技术，即将在线业务和离线任务混合部署到相同物理资源上，通过资源隔离、调度等控制手段，充分使用资源，同时保证服务的稳定性。
+百度云原生混部系统主要分为三个部分：单机管理层、调度层、运营层。
+单机层提供提供资源质量管理、内核级别的 QoS 隔离、资源视图上报和策略执行、eBPF 细粒度指标采集能力；
+调度层负责资动态源视图的感知和提供最佳调度策略；
+运营层提供资源画像、资源运营、水位设置、热点治理等功能。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/MQh16-PQYsjaGCjwyxIk_A">确保 Kubernetes 安全合规的 6 个最佳实践</a></p>
+<p>文章介绍了，确保在容器化环境中持续合规而不影响生产力，应遵循的 6 个实践：
+实现自动化、对 Kubernetes 本身进行保护、事先发现攻击、专注于零信任、利用 Kubernetes 内置安全措施验证云主机的安全性。</p>
+</li>
+<li>
+<p><a href="https://www.tetrate.io/blog/istio-how-to-enforce-egress-traffic-using-istios-authorization-policies/">如何使用 Istio 授权策略执行 egress 流量</a></p>
+<p>文章以“服务网格内两个独立命名空间中的睡眠服务访问谷歌和雅虎的外部服务”为例，介绍了在执行 ingress 策略时，如何使用 Istio 的 Egress 网关以相似策略执行 egress 授权策略。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/eQzy3zvvEokNXYL637LNCg">解决微服务架构下流量有损问题的实践和探索</a></p>
+<p>尽管可灰度、可观测和可滚回的安全生产三板斧可以最大限度的规避发布过程中由于应用自身代码问题对用户造成的影响，但对于高并发大流量情况下的短时间流量有损问题却仍然无法解决。
+因此，文章围绕发布过程中如何解决流量有损问题、实现应用发布过程中的无损上下线效果相关内容展开方案介绍。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/t1ppAQfm0cPmqhxEARB03Q">阿里巴巴的 Envoy Gateway 实践</a></p>
+<p>文章简单介绍了阿里巴巴探索下一代网关的历程：Envoy Gateway 1.0（孵化期）主要应用于东西向流量的 RPC 互通；
+2.0（成长期）采用 Tengine + Envoy 两层网关，承担南北向网关流量；
+3.0（成熟期）通过 Envoy 将流量网关 + 微服务网关合二为一，辅以硬件加速、内核调优等手段。</p>
+</li>
+<li>
+<p><a href="https://developer.aliyun.com/ebook/read/7575?spm=a2c6h.26392459.ebook-detail.4.17f14848W6TyWT">阿里云发布《云原生实战案例集》</a></p>
+<p>阿里云发布《云原生实战案例集》，通过技术瞭望、行业分析、实战案例解读为企业实践和落地云原生提供一定参考和借鉴。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/hAHNlAi8c0OAO7zSq31J1w">阿里云发布企业云原生 IT 成本治理方案：五大能力加速企业 FinOps 进程</a></p>
+<p>企业云原生 IT 成本治理存在业务单元与计费单元生命周期不匹配、动态资源交付与静态容量规划矛盾、企业 IT 成本治理模型与云原生架构适配等问题。
+由此，阿里云容器服务推出了企业云原生 IT 成本治理方案，提供企业 IT 成本管理、成本可视化、成本优化等功能。</p>
+</li>
+<li>
+<p><a href="https://technostacks.com/blog/devops-trends">2022 年值得关注的 DevOps 趋势和最佳实践</a></p>
+<p>这篇文章介绍了 2022 年值得关注的 DevOps 趋势，其中包括微服务架构、DevSecOps 的应用、朝着完全无服务器的方向发展、弹性测试成为主流、GitOps 成为新常态以及发展混沌工程等。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/9gBY_QHyBrzSoMlBG83zug">分布式定时任务调度框架实践</a></p>
+<p>这篇文章介绍了任务调度框架使用的需求背景和痛点，对业界普遍使用的开源调度框架进行了探究实践，并分析了各自的优劣势。</p>
+</li>
+<li>
+<p><a href="https://dzone.com/articles/split-the-monolith-what-when-how">拆分单独应用三问: What, When, How</a></p>
+<p>在微服务架构设计中，如何拆分单体是一件非常重要但令架构师十分头疼的事。这篇文章介绍了一些关于如何准备和执行单体应用程序拆分的思路和操作步骤。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/ZDqchROixZT4enVYH6UIfw">K8s 安全策略最佳实践</a></p>
+<p>文章开篇对K8s环境面临的安全风险及K8s提供的安全机制进行了介绍。此外，作者根据社区和自身团队的生产实践，总结了改善K8s安全状况的最佳实践。</p>
+</li>
+<li>
+<p><a href="https://blog.51cto.com/u_15331726/5177735">Prometheus 监控 Harbor 实战</a></p>
+<p>Harbor v2.2及其更高版本支持对相关指标的采集和使用，这篇文章介绍了如何使用 Prometheus 轻松抓取 Harbor 实例的一些关键指标。</p>
+</li>
+</ul>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年7月24日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 排障方案" class="md-footer__link md-footer__link--prev" href="troubleshoot.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                排障方案
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 工具推荐" class="md-footer__link md-footer__link--next" href="tools.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                工具推荐
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../../stylesheets/zoom_image.js"></script>
+<script src="../../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

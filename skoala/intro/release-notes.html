@@ -1,0 +1,5862 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/skoala/intro/release-notes.html" rel="canonical"/>
+<link href="scenarios.html" rel="prev"/>
+<link href="../quickstart/skoala.html" rel="next"/>
+<link href="../../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>Release Notes - DaoCloud Enterprise</title>
+<link href="../../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#release-notes">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Release Notes
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../blogs/index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            产品文档
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dce/index.html">
+<span class="md-ellipsis">
+    文档导航
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+<span class="md-ellipsis">
+    探索和安装
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            探索和安装
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../dce/license0.html">
+<span class="md-ellipsis">
+    产品介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../install/index.html">
+<span class="md-ellipsis">
+    安装教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dce/bphome.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dce/faq.html">
+<span class="md-ellipsis">
+    常见问题
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+<span class="md-ellipsis">
+    工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            工作台
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../amamba/intro/index.html">
+<span class="md-ellipsis">
+    应用工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+<span class="md-ellipsis">
+    容器
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            容器
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../kpanda/intro/index.html">
+<span class="md-ellipsis">
+    容器管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../kairship/intro/index.html">
+<span class="md-ellipsis">
+    多云编排
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../kangaroo/intro/index.html">
+<span class="md-ellipsis">
+    镜像仓库
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../network/intro/index.html">
+<span class="md-ellipsis">
+    云原生网络
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../storage/index.html">
+<span class="md-ellipsis">
+    云原生存储
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../virtnest/intro/index.html">
+<span class="md-ellipsis">
+    虚拟机
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+<span class="md-ellipsis">
+    微服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            微服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../insight/intro/index.html">
+<span class="md-ellipsis">
+    可观测性
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+<span class="md-ellipsis">
+    微服务引擎
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_2">
+<span class="md-nav__icon md-icon"></span>
+            微服务引擎
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_2_1" id="__nav_2_5_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_2_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_5_2_1">
+<span class="md-nav__icon md-icon"></span>
+            介绍
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="index.html">
+<span class="md-ellipsis">
+    什么是微服务引擎
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="features.html">
+<span class="md-ellipsis">
+    功能特性
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="scenarios.html">
+<span class="md-ellipsis">
+    使用场景
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Release Notes
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="release-notes.html">
+<span class="md-ellipsis">
+    Release Notes
+  </span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-11-30">
+<span class="md-ellipsis">
+      2024-11-30
+    </span>
+</a>
+<nav aria-label="2024-11-30" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0432">
+<span class="md-ellipsis">
+      v0.43.2
+    </span>
+</a>
+<nav aria-label="v0.43.2" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      新增
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-10-31">
+<span class="md-ellipsis">
+      2024-10-31
+    </span>
+</a>
+<nav aria-label="2024-10-31" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0421">
+<span class="md-ellipsis">
+      v0.42.1
+    </span>
+</a>
+<nav aria-label="v0.42.1" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      新增
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-09-30">
+<span class="md-ellipsis">
+      2024-09-30
+    </span>
+</a>
+<nav aria-label="2024-09-30" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0413">
+<span class="md-ellipsis">
+      v0.41.3
+    </span>
+</a>
+<nav aria-label="v0.41.3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      新增
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-09-02">
+<span class="md-ellipsis">
+      2024-09-02
+    </span>
+</a>
+<nav aria-label="2024-09-02" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0401">
+<span class="md-ellipsis">
+      v0.40.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-08-26">
+<span class="md-ellipsis">
+      2024-08-26
+    </span>
+</a>
+<nav aria-label="2024-08-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0400">
+<span class="md-ellipsis">
+      v0.40.0
+    </span>
+</a>
+<nav aria-label="v0.40.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-08-16">
+<span class="md-ellipsis">
+      2024-08-16
+    </span>
+</a>
+<nav aria-label="2024-08-16" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0394">
+<span class="md-ellipsis">
+      v0.39.4
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-08-15">
+<span class="md-ellipsis">
+      2024-08-15
+    </span>
+</a>
+<nav aria-label="2024-08-15" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0393">
+<span class="md-ellipsis">
+      v0.39.3
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#skoala-040x">
+<span class="md-ellipsis">
+      Skoala 0.40.x 升级注意事项
+    </span>
+</a>
+<nav aria-label="Skoala 0.40.x 升级注意事项" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      影响版本
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      影响说明
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+<span class="md-ellipsis">
+      升级步骤
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-08-06">
+<span class="md-ellipsis">
+      2024-08-06
+    </span>
+</a>
+<nav aria-label="2024-08-06" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0392">
+<span class="md-ellipsis">
+      v0.39.2
+    </span>
+</a>
+<nav aria-label="v0.39.2" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-07-31">
+<span class="md-ellipsis">
+      2024-07-31
+    </span>
+</a>
+<nav aria-label="2024-07-31" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0391">
+<span class="md-ellipsis">
+      v0.39.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-07-25">
+<span class="md-ellipsis">
+      2024-07-25
+    </span>
+</a>
+<nav aria-label="2024-07-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0390">
+<span class="md-ellipsis">
+      v0.39.0
+    </span>
+</a>
+<nav aria-label="v0.39.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_19">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_20">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-07-02">
+<span class="md-ellipsis">
+      2024-07-02
+    </span>
+</a>
+<nav aria-label="2024-07-02" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0382">
+<span class="md-ellipsis">
+      v0.38.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-06-25">
+<span class="md-ellipsis">
+      2024-06-25
+    </span>
+</a>
+<nav aria-label="2024-06-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0381">
+<span class="md-ellipsis">
+      v0.38.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-06-25_1">
+<span class="md-ellipsis">
+      2024-06-25
+    </span>
+</a>
+<nav aria-label="2024-06-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0380">
+<span class="md-ellipsis">
+      v0.38.0
+    </span>
+</a>
+<nav aria-label="v0.38.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_21">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_22">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-06-04">
+<span class="md-ellipsis">
+      2024-06-04
+    </span>
+</a>
+<nav aria-label="2024-06-04" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0371">
+<span class="md-ellipsis">
+      v0.37.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-05-27">
+<span class="md-ellipsis">
+      2024-05-27
+    </span>
+</a>
+<nav aria-label="2024-05-27" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0370">
+<span class="md-ellipsis">
+      v0.37.0
+    </span>
+</a>
+<nav aria-label="v0.37.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_23">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_24">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_25">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-04-30">
+<span class="md-ellipsis">
+      2024-04-30
+    </span>
+</a>
+<nav aria-label="2024-04-30" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0361">
+<span class="md-ellipsis">
+      v0.36.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-04-26">
+<span class="md-ellipsis">
+      2024-04-26
+    </span>
+</a>
+<nav aria-label="2024-04-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0360">
+<span class="md-ellipsis">
+      v0.36.0
+    </span>
+</a>
+<nav aria-label="v0.36.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_26">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_27">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_28">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-04-11">
+<span class="md-ellipsis">
+      2024-04-11
+    </span>
+</a>
+<nav aria-label="2024-04-11" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0352">
+<span class="md-ellipsis">
+      v0.35.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-04-03">
+<span class="md-ellipsis">
+      2024-04-03
+    </span>
+</a>
+<nav aria-label="2024-04-03" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0351">
+<span class="md-ellipsis">
+      v0.35.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-03-23">
+<span class="md-ellipsis">
+      2024-03-23
+    </span>
+</a>
+<nav aria-label="2024-03-23" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0350">
+<span class="md-ellipsis">
+      v0.35.0
+    </span>
+</a>
+<nav aria-label="v0.35.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_29">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_30">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_31">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-03-06">
+<span class="md-ellipsis">
+      2024-03-06
+    </span>
+</a>
+<nav aria-label="2024-03-06" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0334">
+<span class="md-ellipsis">
+      v0.33.4
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-03-01">
+<span class="md-ellipsis">
+      2024-03-01
+    </span>
+</a>
+<nav aria-label="2024-03-01" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0333">
+<span class="md-ellipsis">
+      v0.33.3
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-02-02">
+<span class="md-ellipsis">
+      2024-02-02
+    </span>
+</a>
+<nav aria-label="2024-02-02" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0340">
+<span class="md-ellipsis">
+      v0.34.0
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-02-01">
+<span class="md-ellipsis">
+      2024-02-01
+    </span>
+</a>
+<nav aria-label="2024-02-01" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0332">
+<span class="md-ellipsis">
+      v0.33.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-01-30">
+<span class="md-ellipsis">
+      2024-01-30
+    </span>
+</a>
+<nav aria-label="2024-01-30" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0331">
+<span class="md-ellipsis">
+      v0.33.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-01-18">
+<span class="md-ellipsis">
+      2024-01-18
+    </span>
+</a>
+<nav aria-label="2024-01-18" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0330">
+<span class="md-ellipsis">
+      v0.33.0
+    </span>
+</a>
+<nav aria-label="v0.33.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_32">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_33">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_34">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-01-18_1">
+<span class="md-ellipsis">
+      2024-01-18
+    </span>
+</a>
+<nav aria-label="2024-01-18" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0320">
+<span class="md-ellipsis">
+      v0.32.0
+    </span>
+</a>
+<nav aria-label="v0.32.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_35">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_36">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_37">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-01-03">
+<span class="md-ellipsis">
+      2024-01-03
+    </span>
+</a>
+<nav aria-label="2024-01-03" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0312">
+<span class="md-ellipsis">
+      v0.31.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-12-26">
+<span class="md-ellipsis">
+      2023-12-26
+    </span>
+</a>
+<nav aria-label="2023-12-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0311">
+<span class="md-ellipsis">
+      v0.31.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-12-26_1">
+<span class="md-ellipsis">
+      2023-12-26
+    </span>
+</a>
+<nav aria-label="2023-12-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0310">
+<span class="md-ellipsis">
+      v0.31.0
+    </span>
+</a>
+<nav aria-label="v0.31.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_38">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_39">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_40">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-12-11">
+<span class="md-ellipsis">
+      2023-12-11
+    </span>
+</a>
+<nav aria-label="2023-12-11" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0302">
+<span class="md-ellipsis">
+      v0.30.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-12-01">
+<span class="md-ellipsis">
+      2023-12-01
+    </span>
+</a>
+<nav aria-label="2023-12-01" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0300">
+<span class="md-ellipsis">
+      v0.30.0
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-11-26">
+<span class="md-ellipsis">
+      2023-11-26
+    </span>
+</a>
+<nav aria-label="2023-11-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0290">
+<span class="md-ellipsis">
+      v0.29.0
+    </span>
+</a>
+<nav aria-label="v0.29.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_41">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_42">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_43">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-11-07">
+<span class="md-ellipsis">
+      2023-11-07
+    </span>
+</a>
+<nav aria-label="2023-11-07" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0281">
+<span class="md-ellipsis">
+      v0.28.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-10-26">
+<span class="md-ellipsis">
+      2023-10-26
+    </span>
+</a>
+<nav aria-label="2023-10-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0280">
+<span class="md-ellipsis">
+      v0.28.0
+    </span>
+</a>
+<nav aria-label="v0.28.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_44">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_45">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_46">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-09-01">
+<span class="md-ellipsis">
+      2023-09-01
+    </span>
+</a>
+<nav aria-label="2023-09-01" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0272">
+<span class="md-ellipsis">
+      v0.27.2
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0271">
+<span class="md-ellipsis">
+      v0.27.1
+    </span>
+</a>
+<nav aria-label="v0.27.1" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_47">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_48">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-08-25">
+<span class="md-ellipsis">
+      2023-08-25
+    </span>
+</a>
+<nav aria-label="2023-08-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0270">
+<span class="md-ellipsis">
+      v0.27.0
+    </span>
+</a>
+<nav aria-label="v0.27.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_49">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_50">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_51">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-08-03">
+<span class="md-ellipsis">
+      2023-08-03
+    </span>
+</a>
+<nav aria-label="2023-08-03" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0262">
+<span class="md-ellipsis">
+      v0.26.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-07-26">
+<span class="md-ellipsis">
+      2023-07-26
+    </span>
+</a>
+<nav aria-label="2023-07-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0261">
+<span class="md-ellipsis">
+      v0.26.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-07-25">
+<span class="md-ellipsis">
+      2023-07-25
+    </span>
+</a>
+<nav aria-label="2023-07-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0260">
+<span class="md-ellipsis">
+      v0.26.0
+    </span>
+</a>
+<nav aria-label="v0.26.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_52">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_53">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_54">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-07-19">
+<span class="md-ellipsis">
+      2023-07-19
+    </span>
+</a>
+<nav aria-label="2023-07-19" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0250">
+<span class="md-ellipsis">
+      v0.25.0
+    </span>
+</a>
+<nav aria-label="v0.25.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_55">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_56">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_57">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-07-06">
+<span class="md-ellipsis">
+      2023-07-06
+    </span>
+</a>
+<nav aria-label="2023-07-06" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0242">
+<span class="md-ellipsis">
+      v0.24.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-07-05">
+<span class="md-ellipsis">
+      2023-07-05
+    </span>
+</a>
+<nav aria-label="2023-07-05" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0241">
+<span class="md-ellipsis">
+      v0.24.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-06-30">
+<span class="md-ellipsis">
+      2023-06-30
+    </span>
+</a>
+<nav aria-label="2023-06-30" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0240">
+<span class="md-ellipsis">
+      v0.24.0
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-06-26">
+<span class="md-ellipsis">
+      2023-06-26
+    </span>
+</a>
+<nav aria-label="2023-06-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0230">
+<span class="md-ellipsis">
+      v0.23.0
+    </span>
+</a>
+<nav aria-label="v0.23.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_58">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_59">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_60">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-05-31">
+<span class="md-ellipsis">
+      2023-05-31
+    </span>
+</a>
+<nav aria-label="2023-05-31" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0222">
+<span class="md-ellipsis">
+      v0.22.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-05-29">
+<span class="md-ellipsis">
+      2023-05-29
+    </span>
+</a>
+<nav aria-label="2023-05-29" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0221">
+<span class="md-ellipsis">
+      v0.22.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-05-26">
+<span class="md-ellipsis">
+      2023-05-26
+    </span>
+</a>
+<nav aria-label="2023-05-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0220">
+<span class="md-ellipsis">
+      v0.22.0
+    </span>
+</a>
+<nav aria-label="v0.22.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_61">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_62">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_63">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-05-07">
+<span class="md-ellipsis">
+      2023-05-07
+    </span>
+</a>
+<nav aria-label="2023-05-07" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0212">
+<span class="md-ellipsis">
+      v0.21.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-26">
+<span class="md-ellipsis">
+      2023-04-26
+    </span>
+</a>
+<nav aria-label="2023-04-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0211">
+<span class="md-ellipsis">
+      v0.21.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-25">
+<span class="md-ellipsis">
+      2023-04-25
+    </span>
+</a>
+<nav aria-label="2023-04-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0210">
+<span class="md-ellipsis">
+      v0.21.0
+    </span>
+</a>
+<nav aria-label="v0.21.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_64">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_65">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_66">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-21">
+<span class="md-ellipsis">
+      2023-04-21
+    </span>
+</a>
+<nav aria-label="2023-04-21" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0200">
+<span class="md-ellipsis">
+      v0.20.0
+    </span>
+</a>
+<nav aria-label="v0.20.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_67">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_68">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_69">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-10">
+<span class="md-ellipsis">
+      2023-04-10
+    </span>
+</a>
+<nav aria-label="2023-04-10" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0194">
+<span class="md-ellipsis">
+      v0.19.4
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-10_1">
+<span class="md-ellipsis">
+      2023-04-10
+    </span>
+</a>
+<nav aria-label="2023-04-10" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0193">
+<span class="md-ellipsis">
+      v0.19.3
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-04">
+<span class="md-ellipsis">
+      2023-04-04
+    </span>
+</a>
+<nav aria-label="2023-04-04" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0192">
+<span class="md-ellipsis">
+      v0.19.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-04_1">
+<span class="md-ellipsis">
+      2023-04-04
+    </span>
+</a>
+<nav aria-label="2023-04-04" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0191">
+<span class="md-ellipsis">
+      v0.19.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-03-24">
+<span class="md-ellipsis">
+      2023-03-24
+    </span>
+</a>
+<nav aria-label="2023-03-24" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0190">
+<span class="md-ellipsis">
+      v0.19.0
+    </span>
+</a>
+<nav aria-label="v0.19.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_70">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_71">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_72">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-02-25">
+<span class="md-ellipsis">
+      2023-02-25
+    </span>
+</a>
+<nav aria-label="2023-02-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0180">
+<span class="md-ellipsis">
+      v0.18.0
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-02-22">
+<span class="md-ellipsis">
+      2023-02-22
+    </span>
+</a>
+<nav aria-label="2023-02-22" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0171">
+<span class="md-ellipsis">
+      v0.17.1
+    </span>
+</a>
+<nav aria-label="v0.17.1" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_73">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_74">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_75">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022-12-30">
+<span class="md-ellipsis">
+      2022-12-30
+    </span>
+</a>
+<nav aria-label="2022-12-30" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0161">
+<span class="md-ellipsis">
+      v0.16.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022-12-29">
+<span class="md-ellipsis">
+      2022-12-29
+    </span>
+</a>
+<nav aria-label="2022-12-29" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0160">
+<span class="md-ellipsis">
+      v0.16.0
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022-12-28">
+<span class="md-ellipsis">
+      2022-12-28
+    </span>
+</a>
+<nav aria-label="2022-12-28" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0152">
+<span class="md-ellipsis">
+      v0.15.2
+    </span>
+</a>
+<nav aria-label="v0.15.2" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_76">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_77">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_78">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022-12-22">
+<span class="md-ellipsis">
+      2022-12-22
+    </span>
+</a>
+<nav aria-label="2022-12-22" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0140">
+<span class="md-ellipsis">
+      v0.14.0
+    </span>
+</a>
+<nav aria-label="v0.14.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_79">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_80">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_81">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022-12-21">
+<span class="md-ellipsis">
+      2022-12-21
+    </span>
+</a>
+<nav aria-label="2022-12-21" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0130">
+<span class="md-ellipsis">
+      v0.13.0
+    </span>
+</a>
+<nav aria-label="v0.13.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_82">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_83">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_84">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022-12-13">
+<span class="md-ellipsis">
+      2022-12-13
+    </span>
+</a>
+<nav aria-label="2022-12-13" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0122">
+<span class="md-ellipsis">
+      v0.12.2
+    </span>
+</a>
+<nav aria-label="v0.12.2" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_85">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_86">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../quickstart/skoala.html">
+<span class="md-ellipsis">
+    快速入门
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../cloud-ms/traffic-control.html">
+<span class="md-ellipsis">
+    云原生微服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../gateway/index.html">
+<span class="md-ellipsis">
+    云原生网关
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../trad-ms/hosted/index.html">
+<span class="md-ellipsis">
+    传统微服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../plugins/intro.html">
+<span class="md-ellipsis">
+    插件中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../best-practice/use-skoala-01.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../troubleshoot/auth-server.html">
+<span class="md-ellipsis">
+    故障排查
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../tests/gateway-stress-test.html">
+<span class="md-ellipsis">
+    性能测试
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../reference/microservice.html">
+<span class="md-ellipsis">
+    参考文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../mspider/intro/index.html">
+<span class="md-ellipsis">
+    服务网格
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+<span class="md-ellipsis">
+    数据服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            数据服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../middleware/index.html">
+<span class="md-ellipsis">
+    中间件
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="">
+<span class="md-ellipsis">
+    云原生 AI
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+            云原生 AI
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../baize/intro/index.html">
+<span class="md-ellipsis">
+    AI Lab
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="">
+<span class="md-ellipsis">
+    边缘计算
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+            边缘计算
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../kant/intro/index.html">
+<span class="md-ellipsis">
+    云边协同
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="">
+<span class="md-ellipsis">
+    管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            管理
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../ghippo/intro/index.html">
+<span class="md-ellipsis">
+    全局管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../blogs/index.html">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-11-30">
+<span class="md-ellipsis">
+      2024-11-30
+    </span>
+</a>
+<nav aria-label="2024-11-30" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0432">
+<span class="md-ellipsis">
+      v0.43.2
+    </span>
+</a>
+<nav aria-label="v0.43.2" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      新增
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-10-31">
+<span class="md-ellipsis">
+      2024-10-31
+    </span>
+</a>
+<nav aria-label="2024-10-31" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0421">
+<span class="md-ellipsis">
+      v0.42.1
+    </span>
+</a>
+<nav aria-label="v0.42.1" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      新增
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-09-30">
+<span class="md-ellipsis">
+      2024-09-30
+    </span>
+</a>
+<nav aria-label="2024-09-30" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0413">
+<span class="md-ellipsis">
+      v0.41.3
+    </span>
+</a>
+<nav aria-label="v0.41.3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      新增
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-09-02">
+<span class="md-ellipsis">
+      2024-09-02
+    </span>
+</a>
+<nav aria-label="2024-09-02" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0401">
+<span class="md-ellipsis">
+      v0.40.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-08-26">
+<span class="md-ellipsis">
+      2024-08-26
+    </span>
+</a>
+<nav aria-label="2024-08-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0400">
+<span class="md-ellipsis">
+      v0.40.0
+    </span>
+</a>
+<nav aria-label="v0.40.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-08-16">
+<span class="md-ellipsis">
+      2024-08-16
+    </span>
+</a>
+<nav aria-label="2024-08-16" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0394">
+<span class="md-ellipsis">
+      v0.39.4
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-08-15">
+<span class="md-ellipsis">
+      2024-08-15
+    </span>
+</a>
+<nav aria-label="2024-08-15" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0393">
+<span class="md-ellipsis">
+      v0.39.3
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#skoala-040x">
+<span class="md-ellipsis">
+      Skoala 0.40.x 升级注意事项
+    </span>
+</a>
+<nav aria-label="Skoala 0.40.x 升级注意事项" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      影响版本
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      影响说明
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+<span class="md-ellipsis">
+      升级步骤
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-08-06">
+<span class="md-ellipsis">
+      2024-08-06
+    </span>
+</a>
+<nav aria-label="2024-08-06" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0392">
+<span class="md-ellipsis">
+      v0.39.2
+    </span>
+</a>
+<nav aria-label="v0.39.2" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-07-31">
+<span class="md-ellipsis">
+      2024-07-31
+    </span>
+</a>
+<nav aria-label="2024-07-31" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0391">
+<span class="md-ellipsis">
+      v0.39.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-07-25">
+<span class="md-ellipsis">
+      2024-07-25
+    </span>
+</a>
+<nav aria-label="2024-07-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0390">
+<span class="md-ellipsis">
+      v0.39.0
+    </span>
+</a>
+<nav aria-label="v0.39.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_19">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_20">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-07-02">
+<span class="md-ellipsis">
+      2024-07-02
+    </span>
+</a>
+<nav aria-label="2024-07-02" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0382">
+<span class="md-ellipsis">
+      v0.38.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-06-25">
+<span class="md-ellipsis">
+      2024-06-25
+    </span>
+</a>
+<nav aria-label="2024-06-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0381">
+<span class="md-ellipsis">
+      v0.38.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-06-25_1">
+<span class="md-ellipsis">
+      2024-06-25
+    </span>
+</a>
+<nav aria-label="2024-06-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0380">
+<span class="md-ellipsis">
+      v0.38.0
+    </span>
+</a>
+<nav aria-label="v0.38.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_21">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_22">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-06-04">
+<span class="md-ellipsis">
+      2024-06-04
+    </span>
+</a>
+<nav aria-label="2024-06-04" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0371">
+<span class="md-ellipsis">
+      v0.37.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-05-27">
+<span class="md-ellipsis">
+      2024-05-27
+    </span>
+</a>
+<nav aria-label="2024-05-27" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0370">
+<span class="md-ellipsis">
+      v0.37.0
+    </span>
+</a>
+<nav aria-label="v0.37.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_23">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_24">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_25">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-04-30">
+<span class="md-ellipsis">
+      2024-04-30
+    </span>
+</a>
+<nav aria-label="2024-04-30" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0361">
+<span class="md-ellipsis">
+      v0.36.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-04-26">
+<span class="md-ellipsis">
+      2024-04-26
+    </span>
+</a>
+<nav aria-label="2024-04-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0360">
+<span class="md-ellipsis">
+      v0.36.0
+    </span>
+</a>
+<nav aria-label="v0.36.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_26">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_27">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_28">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-04-11">
+<span class="md-ellipsis">
+      2024-04-11
+    </span>
+</a>
+<nav aria-label="2024-04-11" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0352">
+<span class="md-ellipsis">
+      v0.35.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-04-03">
+<span class="md-ellipsis">
+      2024-04-03
+    </span>
+</a>
+<nav aria-label="2024-04-03" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0351">
+<span class="md-ellipsis">
+      v0.35.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-03-23">
+<span class="md-ellipsis">
+      2024-03-23
+    </span>
+</a>
+<nav aria-label="2024-03-23" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0350">
+<span class="md-ellipsis">
+      v0.35.0
+    </span>
+</a>
+<nav aria-label="v0.35.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_29">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_30">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_31">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-03-06">
+<span class="md-ellipsis">
+      2024-03-06
+    </span>
+</a>
+<nav aria-label="2024-03-06" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0334">
+<span class="md-ellipsis">
+      v0.33.4
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-03-01">
+<span class="md-ellipsis">
+      2024-03-01
+    </span>
+</a>
+<nav aria-label="2024-03-01" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0333">
+<span class="md-ellipsis">
+      v0.33.3
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-02-02">
+<span class="md-ellipsis">
+      2024-02-02
+    </span>
+</a>
+<nav aria-label="2024-02-02" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0340">
+<span class="md-ellipsis">
+      v0.34.0
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-02-01">
+<span class="md-ellipsis">
+      2024-02-01
+    </span>
+</a>
+<nav aria-label="2024-02-01" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0332">
+<span class="md-ellipsis">
+      v0.33.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-01-30">
+<span class="md-ellipsis">
+      2024-01-30
+    </span>
+</a>
+<nav aria-label="2024-01-30" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0331">
+<span class="md-ellipsis">
+      v0.33.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-01-18">
+<span class="md-ellipsis">
+      2024-01-18
+    </span>
+</a>
+<nav aria-label="2024-01-18" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0330">
+<span class="md-ellipsis">
+      v0.33.0
+    </span>
+</a>
+<nav aria-label="v0.33.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_32">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_33">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_34">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-01-18_1">
+<span class="md-ellipsis">
+      2024-01-18
+    </span>
+</a>
+<nav aria-label="2024-01-18" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0320">
+<span class="md-ellipsis">
+      v0.32.0
+    </span>
+</a>
+<nav aria-label="v0.32.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_35">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_36">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_37">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2024-01-03">
+<span class="md-ellipsis">
+      2024-01-03
+    </span>
+</a>
+<nav aria-label="2024-01-03" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0312">
+<span class="md-ellipsis">
+      v0.31.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-12-26">
+<span class="md-ellipsis">
+      2023-12-26
+    </span>
+</a>
+<nav aria-label="2023-12-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0311">
+<span class="md-ellipsis">
+      v0.31.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-12-26_1">
+<span class="md-ellipsis">
+      2023-12-26
+    </span>
+</a>
+<nav aria-label="2023-12-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0310">
+<span class="md-ellipsis">
+      v0.31.0
+    </span>
+</a>
+<nav aria-label="v0.31.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_38">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_39">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_40">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-12-11">
+<span class="md-ellipsis">
+      2023-12-11
+    </span>
+</a>
+<nav aria-label="2023-12-11" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0302">
+<span class="md-ellipsis">
+      v0.30.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-12-01">
+<span class="md-ellipsis">
+      2023-12-01
+    </span>
+</a>
+<nav aria-label="2023-12-01" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0300">
+<span class="md-ellipsis">
+      v0.30.0
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-11-26">
+<span class="md-ellipsis">
+      2023-11-26
+    </span>
+</a>
+<nav aria-label="2023-11-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0290">
+<span class="md-ellipsis">
+      v0.29.0
+    </span>
+</a>
+<nav aria-label="v0.29.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_41">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_42">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_43">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-11-07">
+<span class="md-ellipsis">
+      2023-11-07
+    </span>
+</a>
+<nav aria-label="2023-11-07" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0281">
+<span class="md-ellipsis">
+      v0.28.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-10-26">
+<span class="md-ellipsis">
+      2023-10-26
+    </span>
+</a>
+<nav aria-label="2023-10-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0280">
+<span class="md-ellipsis">
+      v0.28.0
+    </span>
+</a>
+<nav aria-label="v0.28.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_44">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_45">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_46">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-09-01">
+<span class="md-ellipsis">
+      2023-09-01
+    </span>
+</a>
+<nav aria-label="2023-09-01" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0272">
+<span class="md-ellipsis">
+      v0.27.2
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0271">
+<span class="md-ellipsis">
+      v0.27.1
+    </span>
+</a>
+<nav aria-label="v0.27.1" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_47">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_48">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-08-25">
+<span class="md-ellipsis">
+      2023-08-25
+    </span>
+</a>
+<nav aria-label="2023-08-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0270">
+<span class="md-ellipsis">
+      v0.27.0
+    </span>
+</a>
+<nav aria-label="v0.27.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_49">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_50">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_51">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-08-03">
+<span class="md-ellipsis">
+      2023-08-03
+    </span>
+</a>
+<nav aria-label="2023-08-03" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0262">
+<span class="md-ellipsis">
+      v0.26.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-07-26">
+<span class="md-ellipsis">
+      2023-07-26
+    </span>
+</a>
+<nav aria-label="2023-07-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0261">
+<span class="md-ellipsis">
+      v0.26.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-07-25">
+<span class="md-ellipsis">
+      2023-07-25
+    </span>
+</a>
+<nav aria-label="2023-07-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0260">
+<span class="md-ellipsis">
+      v0.26.0
+    </span>
+</a>
+<nav aria-label="v0.26.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_52">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_53">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_54">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-07-19">
+<span class="md-ellipsis">
+      2023-07-19
+    </span>
+</a>
+<nav aria-label="2023-07-19" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0250">
+<span class="md-ellipsis">
+      v0.25.0
+    </span>
+</a>
+<nav aria-label="v0.25.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_55">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_56">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_57">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-07-06">
+<span class="md-ellipsis">
+      2023-07-06
+    </span>
+</a>
+<nav aria-label="2023-07-06" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0242">
+<span class="md-ellipsis">
+      v0.24.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-07-05">
+<span class="md-ellipsis">
+      2023-07-05
+    </span>
+</a>
+<nav aria-label="2023-07-05" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0241">
+<span class="md-ellipsis">
+      v0.24.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-06-30">
+<span class="md-ellipsis">
+      2023-06-30
+    </span>
+</a>
+<nav aria-label="2023-06-30" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0240">
+<span class="md-ellipsis">
+      v0.24.0
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-06-26">
+<span class="md-ellipsis">
+      2023-06-26
+    </span>
+</a>
+<nav aria-label="2023-06-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0230">
+<span class="md-ellipsis">
+      v0.23.0
+    </span>
+</a>
+<nav aria-label="v0.23.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_58">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_59">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_60">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-05-31">
+<span class="md-ellipsis">
+      2023-05-31
+    </span>
+</a>
+<nav aria-label="2023-05-31" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0222">
+<span class="md-ellipsis">
+      v0.22.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-05-29">
+<span class="md-ellipsis">
+      2023-05-29
+    </span>
+</a>
+<nav aria-label="2023-05-29" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0221">
+<span class="md-ellipsis">
+      v0.22.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-05-26">
+<span class="md-ellipsis">
+      2023-05-26
+    </span>
+</a>
+<nav aria-label="2023-05-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0220">
+<span class="md-ellipsis">
+      v0.22.0
+    </span>
+</a>
+<nav aria-label="v0.22.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_61">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_62">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_63">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-05-07">
+<span class="md-ellipsis">
+      2023-05-07
+    </span>
+</a>
+<nav aria-label="2023-05-07" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0212">
+<span class="md-ellipsis">
+      v0.21.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-26">
+<span class="md-ellipsis">
+      2023-04-26
+    </span>
+</a>
+<nav aria-label="2023-04-26" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0211">
+<span class="md-ellipsis">
+      v0.21.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-25">
+<span class="md-ellipsis">
+      2023-04-25
+    </span>
+</a>
+<nav aria-label="2023-04-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0210">
+<span class="md-ellipsis">
+      v0.21.0
+    </span>
+</a>
+<nav aria-label="v0.21.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_64">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_65">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_66">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-21">
+<span class="md-ellipsis">
+      2023-04-21
+    </span>
+</a>
+<nav aria-label="2023-04-21" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0200">
+<span class="md-ellipsis">
+      v0.20.0
+    </span>
+</a>
+<nav aria-label="v0.20.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_67">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_68">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_69">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-10">
+<span class="md-ellipsis">
+      2023-04-10
+    </span>
+</a>
+<nav aria-label="2023-04-10" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0194">
+<span class="md-ellipsis">
+      v0.19.4
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-10_1">
+<span class="md-ellipsis">
+      2023-04-10
+    </span>
+</a>
+<nav aria-label="2023-04-10" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0193">
+<span class="md-ellipsis">
+      v0.19.3
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-04">
+<span class="md-ellipsis">
+      2023-04-04
+    </span>
+</a>
+<nav aria-label="2023-04-04" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0192">
+<span class="md-ellipsis">
+      v0.19.2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-04-04_1">
+<span class="md-ellipsis">
+      2023-04-04
+    </span>
+</a>
+<nav aria-label="2023-04-04" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0191">
+<span class="md-ellipsis">
+      v0.19.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-03-24">
+<span class="md-ellipsis">
+      2023-03-24
+    </span>
+</a>
+<nav aria-label="2023-03-24" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0190">
+<span class="md-ellipsis">
+      v0.19.0
+    </span>
+</a>
+<nav aria-label="v0.19.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_70">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_71">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_72">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-02-25">
+<span class="md-ellipsis">
+      2023-02-25
+    </span>
+</a>
+<nav aria-label="2023-02-25" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0180">
+<span class="md-ellipsis">
+      v0.18.0
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2023-02-22">
+<span class="md-ellipsis">
+      2023-02-22
+    </span>
+</a>
+<nav aria-label="2023-02-22" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0171">
+<span class="md-ellipsis">
+      v0.17.1
+    </span>
+</a>
+<nav aria-label="v0.17.1" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_73">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_74">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_75">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022-12-30">
+<span class="md-ellipsis">
+      2022-12-30
+    </span>
+</a>
+<nav aria-label="2022-12-30" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0161">
+<span class="md-ellipsis">
+      v0.16.1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022-12-29">
+<span class="md-ellipsis">
+      2022-12-29
+    </span>
+</a>
+<nav aria-label="2022-12-29" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0160">
+<span class="md-ellipsis">
+      v0.16.0
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022-12-28">
+<span class="md-ellipsis">
+      2022-12-28
+    </span>
+</a>
+<nav aria-label="2022-12-28" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0152">
+<span class="md-ellipsis">
+      v0.15.2
+    </span>
+</a>
+<nav aria-label="v0.15.2" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_76">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_77">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_78">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022-12-22">
+<span class="md-ellipsis">
+      2022-12-22
+    </span>
+</a>
+<nav aria-label="2022-12-22" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0140">
+<span class="md-ellipsis">
+      v0.14.0
+    </span>
+</a>
+<nav aria-label="v0.14.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_79">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_80">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_81">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022-12-21">
+<span class="md-ellipsis">
+      2022-12-21
+    </span>
+</a>
+<nav aria-label="2022-12-21" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0130">
+<span class="md-ellipsis">
+      v0.13.0
+    </span>
+</a>
+<nav aria-label="v0.13.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_82">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_83">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_84">
+<span class="md-ellipsis">
+      优化
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2022-12-13">
+<span class="md-ellipsis">
+      2022-12-13
+    </span>
+</a>
+<nav aria-label="2022-12-13" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v0122">
+<span class="md-ellipsis">
+      v0.12.2
+    </span>
+</a>
+<nav aria-label="v0.12.2" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_85">
+<span class="md-ellipsis">
+      新功能
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_86">
+<span class="md-ellipsis">
+      修复
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/skoala/intro/release-notes.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/skoala/intro/release-notes.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/skoala/intro/release-notes.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="release-notes">微服务引擎 Release Notes<a class="headerlink" href="#release-notes" title="Permanent link">¶</a></h1>
+<p>本页列出微服务引擎的 Release Notes，便于您了解各版本的演进路径和特性变化。</p>
+<h2 id="2024-11-30">2024-11-30<a class="headerlink" href="#2024-11-30" title="Permanent link">¶</a></h2>
+<h3 id="v0432">v0.43.2<a class="headerlink" href="#v0432" title="Permanent link">¶</a></h3>
+<h4 id="_1">新增<a class="headerlink" href="#_1" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 创建网关时页面应该支持自定义注解</li>
+<li><strong>新增</strong> 网关日志文件自动拆分滚动更新能力</li>
+</ul>
+<h4 id="_2">修复<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 当用户名为中文时资源无法加载的问题</li>
+<li><strong>修复</strong> 网关高级配置默认值不生效的问题</li>
+<li><strong>修复</strong> 编辑网关时出现无意义的注解问题</li>
+</ul>
+<h4 id="_3">优化<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 网关日志滚动更新逻辑，避免日志丢失情况（更新网关运行时至私有版本 v0.31.0-dcv2）</li>
+<li><strong>优化</strong> 禁用 <abbr title="DaoCloud 微服务引擎的内部开发代号">skoala</abbr>-agent 的 /debug/pprof 接口，避免安全风险</li>
+<li><strong>优化</strong> 更新 Nacos 2.4.3 替代 2.4.2.1 版（稳定版仍为 2.3.2）</li>
+<li><strong>优化</strong> 网关默认网络连接数为较大值，可有效避免由于网络连接数默认值过小导致的性能问题</li>
+<li><strong>优化</strong> 移除 Skoala Init Helm Chart 针对 Insight CRD ServiceMonitor 的检测，避免安装功能不完整的 Skoala Init 组件</li>
+<li><strong>优化</strong> 升级网关控制面 Contour 至 v1.30.1-0be3efa</li>
+<li><strong>优化</strong> 为支持网关日志滚动更新升级网关运行时至私有版本 v0.31.0-dc（如不需要网关日志滚动更新功能，仍然可以只用社区版 Envoy v1.31.0）</li>
+</ul>
+<h2 id="2024-10-31">2024-10-31<a class="headerlink" href="#2024-10-31" title="Permanent link">¶</a></h2>
+<h3 id="v0421">v0.42.1<a class="headerlink" href="#v0421" title="Permanent link">¶</a></h3>
+<h4 id="_4">新增<a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> MetalLB 的安装状态检测支持</li>
+<li><strong>新增</strong> 网关支持自定义 dns-lookup-family 能力</li>
+<li><strong>新增</strong> 全局限流规则管理</li>
+<li><strong>新增</strong> 支持内置全局限流插件模板</li>
+</ul>
+<h4 id="_5">修复<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 网关插件在界面中无法展示查看的问题</li>
+<li><strong>修复</strong> 调用容器管理组件注解不正常的问题</li>
+<li><strong>修复</strong> 网关 API 删除操作不符合预期的问题</li>
+<li><strong>修复</strong> 插件中心主菜单跳转链接不正确的问题</li>
+<li><strong>修复</strong> 固定 IP 设置后界面展示不正常的问题</li>
+<li><strong>修复</strong> 网关限流策略不能关闭的问题</li>
+<li><strong>修复</strong> 云原生微服务使用限流规则异常的问题</li>
+<li><strong>修复</strong> 托管资源展示的小数位数过多的问题</li>
+</ul>
+<h4 id="_6">优化<a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 托管 Nacos 8848/9848 端口对应 NodePort 选择逻辑，由随机端口改为筛选可用端口</li>
+<li><strong>优化</strong> 更新 Nacos 2.4.2.1 替代 2.4.1 版（稳定版仍为 2.3.2）</li>
+<li><strong>优化</strong> 升级网关控制面 Contour 至 v1.30.0-54ceade</li>
+<li><strong>优化</strong> 增强网关插件缓存读取的机制，增加等待时间</li>
+</ul>
+<h2 id="2024-09-30">2024-09-30<a class="headerlink" href="#2024-09-30" title="Permanent link">¶</a></h2>
+<h3 id="v0413">v0.41.3<a class="headerlink" href="#v0413" title="Permanent link">¶</a></h3>
+<h4 id="_7">新增<a class="headerlink" href="#_7" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 域名为 HTTPS 时 API 允许配置非安全请求</li>
+</ul>
+<h4 id="_8">修复<a class="headerlink" href="#_8" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 不能按照命名空间展示 <abbr title="DaoCloud 微服务引擎的内部开发代号">skoala</abbr>-init 安装情况的问题</li>
+<li><strong>修复</strong> 网关统计在网关运行时多副本情况下不符合预期的问题</li>
+<li><strong>修复</strong> 安装时 CRD 不存在的问题</li>
+<li><strong>修复</strong> 离线镜像逻辑</li>
+<li><strong>修复</strong> 审计日志部分记录不全的问题</li>
+<li><strong>修复</strong> 当托管 Nacos 所在集群失联时 Nacos 实例状态不符合预期的问题</li>
+<li><strong>修复</strong> 当网关所在集群失联时网关实例状态不符合预期的问题</li>
+<li><strong>修复</strong> 网关 API 的域名为 HTTP 调试的时 HTTPS POST 请求不选择跳过证书验证时调试失败的问题</li>
+<li><strong>修复</strong> 网关 API 策略展示逻辑不正确的问题</li>
+<li><strong>修复</strong> 当托管 Nacos 实例的端口被占用时 Nacos 实例状态不符合预期的问题</li>
+<li><strong>修复</strong> 网关工作节点实例列表没有 Pod IP 的问题</li>
+</ul>
+<h4 id="_9">优化<a class="headerlink" href="#_9" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 证书及令牌管理逻辑</li>
+<li><strong>优化</strong> 为云原生微服务添加自定义插件支持</li>
+<li><strong>优化</strong> 托管 Nacos 所支持的版本中由 v2.4.0.1 升级为 v2.4.1</li>
+</ul>
+<h2 id="2024-09-02">2024-09-02<a class="headerlink" href="#2024-09-02" title="Permanent link">¶</a></h2>
+<h3 id="v0401">v0.40.1<a class="headerlink" href="#v0401" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 网关共享 LB VIP 时无法使用的问题</li>
+</ul>
+<h2 id="2024-08-26">2024-08-26<a class="headerlink" href="#2024-08-26" title="Permanent link">¶</a></h2>
+<h3 id="v0400">v0.40.0<a class="headerlink" href="#v0400" title="Permanent link">¶</a></h3>
+<h4 id="_10">新功能<a class="headerlink" href="#_10" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> Nacos 基于元数据标签查询服务实例</li>
+<li><strong>新增</strong> 网关实例概览中，展示节点固定 IP</li>
+</ul>
+<h4 id="_11">修复<a class="headerlink" href="#_11" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 网关控制面某些情况下重启不符合预期的问题</li>
+<li><strong>修复</strong> 托管 Nacos 命名空间相关 API 无法使用的问题</li>
+<li><strong>修复</strong> 网关 API 导入时 API 名称校验不符合预期的问题</li>
+<li><strong>修复</strong> 管理组件 CVE-2024-41110 漏洞</li>
+</ul>
+<h4 id="_12">优化<a class="headerlink" href="#_12" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 升级网关运行时 Envoy 到 v1.31.0</li>
+<li><strong>优化</strong> 升级网关控制面 Contour 到 v1.30.0-d59d534</li>
+<li><strong>优化</strong> 扩展网关证书有效时间配置，默认时间为 5 年，更新或新创建网关时皆可生效</li>
+<li><strong>优化</strong> 升级 Nacos 到 v2.4.0.1，默认版本生然为稳定版 v2.3.2</li>
+<li><strong>优化</strong> Nacos 命名空间删除时的相关资源依赖检测</li>
+<li><strong>优化</strong> 网关删除功能，现在允许强制删除工作异常的网关实例</li>
+<li><strong>优化</strong> 网关域名安全策略校验逻辑</li>
+<li><strong>优化</strong> 网关 API 导入时异常信息的展示能力</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>任意版本升级到 0.40.x 时，由于 Gateway API 社区版本原因需要手动处理 CRD 升级，
+参考 <a href="#skoala-040x">Skoala 0.40.x 升级注意事项</a>。</p>
+</div>
+<h2 id="2024-08-16">2024-08-16<a class="headerlink" href="#2024-08-16" title="Permanent link">¶</a></h2>
+<h3 id="v0394">v0.39.4<a class="headerlink" href="#v0394" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 托管 Nacos 命名空间相关 API 无法使用的问题.</li>
+</ul>
+<h2 id="2024-08-15">2024-08-15<a class="headerlink" href="#2024-08-15" title="Permanent link">¶</a></h2>
+<h3 id="v0393">v0.39.3<a class="headerlink" href="#v0393" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 托管 Nacos 命名空间相关 API 无法使用的问题.</li>
+</ul>
+<h2 id="skoala-040x">Skoala 0.40.x 升级注意事项<a class="headerlink" href="#skoala-040x" title="Permanent link">¶</a></h2>
+<h3 id="_13">影响版本<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<p>从任意版本升级至 0.40.x。</p>
+<h3 id="_14">影响说明<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
+<p>0.40.x 版本中更新了相关自定义资源（CRD），由于在 <abbr title="DaoCloud 微服务引擎的内部开发代号">skoala</abbr>-init Chart 对应组件 <code>crds</code> 目录中的自定义资源不会自动随安装被更新，
+本次更新的 CRD 为 gateway-api CRD，BackendTLSPolicy 升级需要手动操作。
+由于本次更新的内容存在社区兼容性问题，<a href="https://github.com/kubernetes-sigs/gateway-api/issues/3086">详情参考 kubernetes-sigs 相关 issue</a>。</p>
+<h3 id="_15">升级步骤<a class="headerlink" href="#_15" title="Permanent link">¶</a></h3>
+<p>请按照如下步骤手动更新需要升级的网关 CRD 文件：</p>
+<ol>
+<li>
+<p>删除 BackendTLSPolicy：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>crds<span class="w"> </span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>crds<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">"backendtlspolicies.gateway.networking.k8s.io"</span><span class="sb">`</span>
+</code></pre></div>
+</li>
+<li>
+<p>手动更新网关相关 CRD 文件</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># projectcontour 相关 crd</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>skoala-init/charts/contour-provisioner/crds/contour.yaml
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1"># gateway-api 相关 crd</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>skoala-init/charts/contour-provisioner-prereq/crds/gateway-api.yaml
+</code></pre></div>
+</li>
+</ol>
+<h2 id="2024-08-06">2024-08-06<a class="headerlink" href="#2024-08-06" title="Permanent link">¶</a></h2>
+<h3 id="v0392">v0.39.2<a class="headerlink" href="#v0392" title="Permanent link">¶</a></h3>
+<h4 id="_16">修复<a class="headerlink" href="#_16" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 网关插件名称展示错误的问题</li>
+<li><strong>修复</strong> 分布式事务组件数据库地址错误时无法编辑的问题</li>
+<li><strong>修复</strong> 托管 Nacos 实例在以 NodePort 方式部署时端口被占用情况下无法编辑的问题</li>
+<li><strong>修复</strong> 网关请求 Top 10 总请求数量数据不符合预期的问题</li>
+<li><strong>修复</strong> Sesame 管理组件注入 Istio Sidecar 时报错的问题</li>
+</ul>
+<h4 id="_17">优化<a class="headerlink" href="#_17" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 适配 Istio v1.23.0</li>
+<li><strong>优化</strong> 解决 Hive 管理组件线程泄露的问题</li>
+</ul>
+<h2 id="2024-07-31">2024-07-31<a class="headerlink" href="#2024-07-31" title="Permanent link">¶</a></h2>
+<h3 id="v0391">v0.39.1<a class="headerlink" href="#v0391" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> Nacos 镜像版本错误的问题</li>
+</ul>
+<h2 id="2024-07-25">2024-07-25<a class="headerlink" href="#2024-07-25" title="Permanent link">¶</a></h2>
+<h3 id="v0390">v0.39.0<a class="headerlink" href="#v0390" title="Permanent link">¶</a></h3>
+<h4 id="_18">新功能<a class="headerlink" href="#_18" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> Nacos 支持集成 LDAP 认证</li>
+<li><strong>新增</strong> Nacos 删除前检测能力</li>
+</ul>
+<h4 id="_19">修复<a class="headerlink" href="#_19" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 网关及插件相关权限问题</li>
+<li><strong>修复</strong> Nacos 异常情况启动问题</li>
+<li><strong>修复</strong> Nacos 删除操作接口返回不符合预期的问题</li>
+<li><strong>修复</strong> 网关开启后默认添加标签不正确的问题</li>
+</ul>
+<h4 id="_20">优化<a class="headerlink" href="#_20" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> Docker 基础镜像至 3.20.1</li>
+<li><strong>优化</strong> 权限逻辑，自动通过 API 定义生成权限点</li>
+<li><strong>优化</strong> 弃用 ListGatewayPodsByType</li>
+</ul>
+<h2 id="2024-07-02">2024-07-02<a class="headerlink" href="#2024-07-02" title="Permanent link">¶</a></h2>
+<h3 id="v0382">v0.38.2<a class="headerlink" href="#v0382" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 网关统计 Top10 API 相关展示问题</li>
+</ul>
+<h2 id="2024-06-25">2024-06-25<a class="headerlink" href="#2024-06-25" title="Permanent link">¶</a></h2>
+<h3 id="v0381">v0.38.1<a class="headerlink" href="#v0381" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>新增</strong> 网关接入注册中心服务支持自动填充和多实例</li>
+<li><strong>新增</strong> 网关日志自定义数据</li>
+<li><strong>新增</strong> 网关 <code>API</code> 文档中集成 <code>API</code> 测试能力</li>
+<li><strong>修复</strong> 离线包公共镜像拉取问题</li>
+</ul>
+<h2 id="2024-06-25_1">2024-06-25<a class="headerlink" href="#2024-06-25_1" title="Permanent link">¶</a></h2>
+<h3 id="v0380">v0.38.0<a class="headerlink" href="#v0380" title="Permanent link">¶</a></h3>
+<h4 id="_21">修复<a class="headerlink" href="#_21" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 设置 Nacos 环境变量不生效问题</li>
+<li><strong>修复</strong> 当网关内存设置为小数时与最大堆内存的配比错误的问题</li>
+<li><strong>修复</strong> 网关日志中涉及域名查询的权限问题</li>
+<li><strong>修复</strong> 接入注册中心相关时间显示不正常的问题</li>
+</ul>
+<h4 id="_22">优化<a class="headerlink" href="#_22" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 升级 Ghippo 集成 SDK 至 v0.28.0-dev1 版</li>
+<li><strong>优化</strong> 配合新版本 Ghippo SDK 调整权限依赖逻辑</li>
+</ul>
+<h2 id="2024-06-04">2024-06-04<a class="headerlink" href="#2024-06-04" title="Permanent link">¶</a></h2>
+<h3 id="v0371">v0.37.1<a class="headerlink" href="#v0371" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 托管 Nacos 详情中版本展示不正确的问题</li>
+<li><strong>修复</strong> 微服务 JVM 监控跳转链接不正确的问题</li>
+<li><strong>修复</strong> 流量泳道引流规则接口调用不正常的问题</li>
+<li><strong>修复</strong> 分布式事务对接 Nacos 时用户名密码配置不符合预期的问题</li>
+</ul>
+<h2 id="2024-05-27">2024-05-27<a class="headerlink" href="#2024-05-27" title="Permanent link">¶</a></h2>
+<h3 id="v0370">v0.37.0<a class="headerlink" href="#v0370" title="Permanent link">¶</a></h3>
+<h4 id="_23">新功能<a class="headerlink" href="#_23" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 支持分布式事务组件在概览中的异常信息</li>
+<li><strong>新增</strong> 网关日志中支持状态码筛选</li>
+<li><strong>新增</strong> nacos jvm 实现可配置</li>
+<li><strong>新增</strong> 新增网关 API 测试相关的日志查询功能</li>
+<li><strong>新增</strong> 支持网关外接服务多实例能力</li>
+<li><strong>新增</strong> 支持 Seata 关联的 Nacos 密码自定义</li>
+</ul>
+<h4 id="_24">修复<a class="headerlink" href="#_24" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 网关 API 详情页面显示异常的问题</li>
+<li><strong>修复</strong> 网关本地限流策略不正常的问题</li>
+<li><strong>修复</strong> 域名级别鉴权插件关闭不正常的问题</li>
+<li><strong>修复</strong> 网关根命名空间过滤和检查的问题</li>
+<li><strong>修复</strong> 英文版本 Sentinel 监控面板中出现中文的问题</li>
+</ul>
+<h4 id="_25">优化<a class="headerlink" href="#_25" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 升级托管 Nacos 版本至 2.3.2 替代 2.3.1 版</li>
+<li><strong>优化</strong> API 并添加按工作空间隔离能力</li>
+<li><strong>优化</strong> 网关插件及自定义插件逻辑</li>
+<li><strong>优化</strong> 服务网格集成逻辑</li>
+<li><strong>优化</strong> 网关控制面组件版本及相关自定义资源</li>
+<li><strong>优化</strong> 网关 API 导出功能中跳过流量泳道相关 API</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>重要：0.37.x 版本中更新了相关自定义资源（CRD），由于在 Chart crds 目录中的自定义资源不会自动随安装被更新，
+请升级后手动应用相关 CRD 到工作集群，该文件位于：
+<abbr title="DaoCloud 微服务引擎的内部开发代号">skoala</abbr>-init/charts/contour-provisioner/crds/contour.yaml</p>
+</div>
+<h2 id="2024-04-30">2024-04-30<a class="headerlink" href="#2024-04-30" title="Permanent link">¶</a></h2>
+<h3 id="v0361">v0.36.1<a class="headerlink" href="#v0361" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 云原生微服务流量泳道引流规则权限点缺失的问题</li>
+<li><strong>修复</strong> 网关注入网格边车后链路信息上报不正常的问题</li>
+</ul>
+<h2 id="2024-04-26">2024-04-26<a class="headerlink" href="#2024-04-26" title="Permanent link">¶</a></h2>
+<h3 id="v0360">v0.36.0<a class="headerlink" href="#v0360" title="Permanent link">¶</a></h3>
+<h4 id="_26">新功能<a class="headerlink" href="#_26" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 支持网关自定义插件</li>
+</ul>
+<h4 id="_27">修复<a class="headerlink" href="#_27" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 分布式事务相关 Nacos 和数据库配置不正常的问题</li>
+<li><strong>修复</strong> 网关内存资源配置展示不准确的问题</li>
+<li><strong>修复</strong> Nacos 和分布式事务组件异常信息不准确的问题</li>
+<li><strong>修复</strong> 带有证书的网关 API 编辑保存不正常的问题</li>
+<li><strong>修复</strong> 网关日志查询有时不正常的问题</li>
+</ul>
+<h4 id="_28">优化<a class="headerlink" href="#_28" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> Nacos 至 2.3.1 替代其 2.3.0 版</li>
+<li><strong>优化</strong> 网关 API 测试对于 ClusterIP 不可用时的提示</li>
+</ul>
+<h2 id="2024-04-11">2024-04-11<a class="headerlink" href="#2024-04-11" title="Permanent link">¶</a></h2>
+<h3 id="v0352">v0.35.2<a class="headerlink" href="#v0352" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 全局管理中微服务引擎模块权限点不准确的问题</li>
+<li><strong>修复</strong> 网关全局限流保存不正常的问题</li>
+<li><strong>修复</strong> 网关创建时内存配置不正常的问题</li>
+<li><strong>修复</strong> 网关运行时最大堆内存配置不正常的问题</li>
+<li><strong>修复</strong> 接入注册中心 Eureka 相关时间显示不正常的问题</li>
+<li><strong>修复</strong> 自定义密码的 Nacos 创建 Seata 不正常的问题</li>
+<li><strong>修复</strong> Seata 初始化数据库异常的问题</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>重要：0.35.x 版本中更新了 Gateway API 相关自定义资源（CRD），由于 Chart 更新不会自动应用 CRD 变更，
+请升级后手动应用该位置的 CRD：<abbr title="DaoCloud 微服务引擎的内部开发代号">skoala</abbr>-init/charts/contour-provisioner-prereq/crds/gateway-api.yaml</p>
+</div>
+<h2 id="2024-04-03">2024-04-03<a class="headerlink" href="#2024-04-03" title="Permanent link">¶</a></h2>
+<h3 id="v0351">v0.35.1<a class="headerlink" href="#v0351" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 网关中创建域名时报错的问题</li>
+<li><strong>修复</strong> 托管 Nacos 资源检查不符合预期的问题</li>
+<li><strong>修复</strong> 网关域名开启健康检查端口并在 API 增加健康检查配置后 API 状态异常的问题</li>
+<li><strong>修复</strong> 网关 API 统计概述不正确的问题</li>
+<li><strong>修复</strong> 接入注册中心状态不正常的问题</li>
+<li><strong>修复</strong> 创建流量泳道时相关资源注解不正常的问题</li>
+<li><strong>修复</strong> 网关自定义插件功能相关问题</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>重要：0.35.x 版本中更新了 Gateway API 相关自定义资源（CRD），由于 Chart 更新不会自动应用 CRD 变更，
+请升级后手动应用该位置的 CRD：<abbr title="DaoCloud 微服务引擎的内部开发代号">skoala</abbr>-init/charts/contour-provisioner-prereq/crds/gateway-api.yaml</p>
+</div>
+<h2 id="2024-03-23">2024-03-23<a class="headerlink" href="#2024-03-23" title="Permanent link">¶</a></h2>
+<h3 id="v0350">v0.35.0<a class="headerlink" href="#v0350" title="Permanent link">¶</a></h3>
+<h4 id="_29">新功能<a class="headerlink" href="#_29" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 云原生网关 API 可以通过请求参数进行路由匹配的能力</li>
+<li><strong>新增</strong> 分布式事务 Seata 自定义密码的能力</li>
+<li><strong>新增</strong> 分布式事务 Grafana 面板时间筛选能力</li>
+<li><strong>新增</strong> 支持按命名空间创建筛选云原生微服务流量泳道的能力</li>
+</ul>
+<h4 id="_30">修复<a class="headerlink" href="#_30" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 接入注册中心类型相关的问题</li>
+<li><strong>修复</strong> 网关实例数量为零时提示信息不准确的问题</li>
+<li><strong>修复</strong> 云原生微服务相关的逻辑</li>
+<li><strong>修复</strong> 流量泳道列表首次加载不刷新的问题</li>
+<li><strong>修复</strong> Sentinel 密码展示不正确的问题</li>
+<li><strong>修复</strong> Envoy 作为 xdsServer 时新建 API 导致空指针的问题</li>
+<li><strong>修复</strong> 当网格实例没有服务时分页异常的问题</li>
+<li><strong>修复</strong> 由于服务网格模块 API 变更产生的问题</li>
+</ul>
+<h4 id="_31">优化<a class="headerlink" href="#_31" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 升级适配分布式事务 Seata 2.0 支持的能力</li>
+<li><strong>优化</strong> 将托管注册中心 Nacos 2.3.0 作为默认版本</li>
+<li><strong>优化</strong> 网关 API 统计图表算法改为增量统计方式</li>
+</ul>
+<h2 id="2024-03-06">2024-03-06<a class="headerlink" href="#2024-03-06" title="Permanent link">¶</a></h2>
+<h3 id="v0334">v0.33.4<a class="headerlink" href="#v0334" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 原生微服务相关的逻辑</li>
+<li><strong>修复</strong> 流量泳道列表首次加载不刷新的问题</li>
+<li><strong>修复</strong> Sentinel 密码展示不正确的问题</li>
+<li><strong>修复</strong> 由于网格模块 API 变更产生的集成问题</li>
+</ul>
+<h2 id="2024-03-01">2024-03-01<a class="headerlink" href="#2024-03-01" title="Permanent link">¶</a></h2>
+<h3 id="v0333">v0.33.3<a class="headerlink" href="#v0333" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 云原生微服务相关的逻辑</li>
+<li><strong>修复</strong> 由于网格模块 API 变更产生的问题</li>
+</ul>
+<h2 id="2024-02-02">2024-02-02<a class="headerlink" href="#2024-02-02" title="Permanent link">¶</a></h2>
+<h3 id="v0340">v0.34.0<a class="headerlink" href="#v0340" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>新增</strong> 根据应用工作台需求在网关查询端口中添加网关所部署的命名空间信息</li>
+<li><strong>优化</strong> 网关日志分页查询的总数，于可观测逻辑匹配，限制为最多展示 10000 条列表日志数据</li>
+<li><strong>优化</strong> 网关日志查询的错误提示</li>
+</ul>
+<h2 id="2024-02-01">2024-02-01<a class="headerlink" href="#2024-02-01" title="Permanent link">¶</a></h2>
+<h3 id="v0332">v0.33.2<a class="headerlink" href="#v0332" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 网关服务组件会异常重启的问题</li>
+<li><strong>修复</strong> 网关日志导出不正常的问题</li>
+<li><strong>修复</strong> 当网关工作负载副本为 0 时展示状态不正常的问题</li>
+<li><strong>修复</strong> 网关注入边车时网关控制平面不重启应用配置的问题</li>
+<li><strong>修复</strong> 网关列表中返回的边车注入状态与实际不符的问题</li>
+<li><strong>优化</strong> 至网格模块最新 SDK 修复云原生微服务相关接口逻辑</li>
+</ul>
+<h2 id="2024-01-30">2024-01-30<a class="headerlink" href="#2024-01-30" title="Permanent link">¶</a></h2>
+<h3 id="v0331">v0.33.1<a class="headerlink" href="#v0331" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> Nacos 级联删除相关逻辑</li>
+</ul>
+<h2 id="2024-01-18">2024-01-18<a class="headerlink" href="#2024-01-18" title="Permanent link">¶</a></h2>
+<h3 id="v0330">v0.33.0<a class="headerlink" href="#v0330" title="Permanent link">¶</a></h3>
+<h4 id="_32">新功能<a class="headerlink" href="#_32" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 网关支持自定义逻辑插件</li>
+</ul>
+<h4 id="_33">修复<a class="headerlink" href="#_33" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 网格类型网关服务列表查询异常的问题</li>
+<li><strong>修复</strong> 网关 API 统计中的请求完成数不准确的问题</li>
+<li><strong>修复</strong> 托管 Nacos 下 Seata 和 Sentinel 配置级联删除的问题</li>
+<li><strong>修复</strong> 网关调试日志中的 Header Check 错误</li>
+<li><strong>修复</strong> 部分逻辑由于滑动 TTL 引发的不能获取最新数据问题</li>
+</ul>
+<h4 id="_34">优化<a class="headerlink" href="#_34" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> API 密码返回逻辑使用 Base64 编码，增强安全性</li>
+<li><strong>优化</strong> 云原生网关边车注入实现，遵循 Gateway API 标准</li>
+</ul>
+<h2 id="2024-01-18_1">2024-01-18<a class="headerlink" href="#2024-01-18_1" title="Permanent link">¶</a></h2>
+<h3 id="v0320">v0.32.0<a class="headerlink" href="#v0320" title="Permanent link">¶</a></h3>
+<h4 id="_35">新功能<a class="headerlink" href="#_35" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 云原生微服务监控资源</li>
+<li><strong>新增</strong> 接入注册中心功支持开启认证模式的注册中心接入</li>
+<li><strong>新增</strong> ARM 架构离线安装包发布流程</li>
+</ul>
+<h4 id="_36">修复<a class="headerlink" href="#_36" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 更新域名时会错误更新插件引用的逻辑</li>
+<li><strong>修复</strong> 服务列表查询服务端口错误的问题</li>
+<li><strong>修复</strong> 日志协议字段展示错误的问题</li>
+<li><strong>修复</strong> 流量泳道的服务列表接口返回结果未排序的问题</li>
+<li><strong>修复</strong> 流量泳道的服务列表中实例数量不正确的问题</li>
+<li><strong>修复</strong> 云原生网关已经创建了命名空间刷新报错的问题</li>
+<li><strong>修复</strong> 接入的 Kubernetes 集群中的实例状态与实际不符的问题</li>
+<li><strong>修复</strong> 接入的网格中服务的实例列表结果有误的问题</li>
+<li><strong>修复</strong> 网关中 Nodeport 类型的服务如果对应工作负载停止地址不正确的问题</li>
+<li><strong>修复</strong> 接入注册中心中 Nacos 服务在非默认 Group 中展示异常的问题</li>
+</ul>
+<h4 id="_37">优化<a class="headerlink" href="#_37" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 应应用工作台要求优化路由权重总和大于零即可</li>
+<li><strong>优化</strong> 网关 API 中服务的权重校验逻辑</li>
+<li><strong>优化</strong> 集群接入地址变化引发的资源首次操作不正常问题</li>
+</ul>
+<h2 id="2024-01-03">2024-01-03<a class="headerlink" href="#2024-01-03" title="Permanent link">¶</a></h2>
+<h3 id="v0312">v0.31.2<a class="headerlink" href="#v0312" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 网关 API 中缺少协议字段展示的问题</li>
+<li><strong>修复</strong> 集群重新接入后地址变更导致的托管资源异常问题</li>
+<li><strong>修复</strong> 网关针对异常访问统计不正确的问题</li>
+<li><strong>修复</strong> 集群服务 NodePort 端口为 0 的问题</li>
+<li><strong>修复</strong> 自动填充集群服务和网格服务的状态提示不准确的问题</li>
+<li><strong>修复</strong> Init Chart 在 insight-system 命名空间不存在时安装异常的问题</li>
+</ul>
+<h2 id="2023-12-26">2023-12-26<a class="headerlink" href="#2023-12-26" title="Permanent link">¶</a></h2>
+<h3 id="v0311">v0.31.1<a class="headerlink" href="#v0311" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 网关管理组件的日志文件缺失问题</li>
+</ul>
+<h2 id="2023-12-26_1">2023-12-26<a class="headerlink" href="#2023-12-26_1" title="Permanent link">¶</a></h2>
+<h3 id="v0310">v0.31.0<a class="headerlink" href="#v0310" title="Permanent link">¶</a></h3>
+<h4 id="_38">新功能<a class="headerlink" href="#_38" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 对托管 Nacos 2.3.0 版本的支持</li>
+<li><strong>新增</strong> 流量入口支持服务和 API 网关服务</li>
+<li><strong>新增</strong> 离群实例检测</li>
+<li><strong>新增</strong> 增强流量泳道拓扑的细节（流量指向，版本等）</li>
+<li><strong>新增</strong> 网关运行时的堆内存高级配置</li>
+</ul>
+<h4 id="_39">修复<a class="headerlink" href="#_39" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 网关服务列表和服务详情中没有连接地址的问题</li>
+<li><strong>修复</strong> 网关 API 更新后 label 缺失的问题</li>
+<li><strong>修复</strong> 网关 API 路由规则重复的问题</li>
+<li><strong>修复</strong> 网关运行时最大堆内存为空值的问题</li>
+<li><strong>修复</strong> 托管 Nacos 集成网格服务时的接入服务问题</li>
+<li><strong>修复</strong> 网关注入 Istio 边车注解不正确的问题</li>
+<li><strong>修复</strong> 网关查询 Nacos 服务不正常的问题</li>
+<li><strong>修复</strong> 流量泳道服务名过长导致无法创建引流规则的问题</li>
+<li><strong>修复</strong> 网关更新服务端口异常的问题</li>
+<li><strong>修复</strong> 创建托管资源时资源配额计算异常的问题</li>
+<li><strong>修复</strong> 网关 API 列表添加根据域名筛选的逻辑问题</li>
+<li><strong>修复</strong> 云原生微服务治理重复端口的问题</li>
+<li><strong>修复</strong> 当 API 存在多路由时，请求头始终会进行判断，并且判断条件重复的问题</li>
+<li><strong>修复</strong> HTTPS 域名的 API 测试异常报错问题</li>
+<li><strong>修复</strong> 删除 Sentinel 功能时异常的问题</li>
+<li><strong>修复</strong> 网关日志为空时导出日志导致组件重启的问题</li>
+<li><strong>修复</strong> 托管 Nacos 资源信息接口返回的控制台地址为空的问题</li>
+<li><strong>修复</strong> 托管 Nacos 名称为 -seata 后缀时开启 Seata 插件失败的问题</li>
+<li><strong>修复</strong> 托管 Nacos 管理中间件 MySQL 查看权限的问题</li>
+<li><strong>修复</strong> 网关接口 v1alpha2 版本的标签问题</li>
+</ul>
+<h4 id="_40">优化<a class="headerlink" href="#_40" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> Skoala Agent 组件并添加日志功能</li>
+<li><strong>优化</strong> 升级网关控制面（Contour）至 v1.27.0 私有分支版本</li>
+<li><strong>优化</strong> 升级网关运行时（Envoy）至 v1.28.0 官方版本</li>
+<li><strong>优化</strong> 升级网关依赖 Gateway API 自定义资源至 v1.0 正式版</li>
+<li><strong>优化</strong> 调整网关日志查询索引（兼容之前版本）</li>
+</ul>
+<h2 id="2023-12-11">2023-12-11<a class="headerlink" href="#2023-12-11" title="Permanent link">¶</a></h2>
+<h3 id="v0302">v0.30.2<a class="headerlink" href="#v0302" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 网关 API 多个重复路由记录的问题</li>
+</ul>
+<h2 id="2023-12-01">2023-12-01<a class="headerlink" href="#2023-12-01" title="Permanent link">¶</a></h2>
+<h3 id="v0300">v0.30.0<a class="headerlink" href="#v0300" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 网关运行状态不正确的问题</li>
+<li><strong>修复</strong> Nacos Operator 的状态检测问题</li>
+<li><strong>修复</strong> 网格服务的边车状态检查问题</li>
+<li><strong>优化</strong> 网关相关接口</li>
+<li><strong>优化</strong> 网关日志的查询逻辑支持自定义字段的查询</li>
+</ul>
+<h2 id="2023-11-26">2023-11-26<a class="headerlink" href="#2023-11-26" title="Permanent link">¶</a></h2>
+<h3 id="v0290">v0.29.0<a class="headerlink" href="#v0290" title="Permanent link">¶</a></h3>
+<h4 id="_41">新功能<a class="headerlink" href="#_41" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> API 文档管理、API 查询</li>
+<li><strong>新增</strong> 流量泳道灰度过程可视化，通过视图直接显示集群内部灰度泳道划分，数据流转情况</li>
+</ul>
+<h4 id="_42">修复<a class="headerlink" href="#_42" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 网格模式治理的网格实例列表逻辑</li>
+<li><strong>修复</strong> 托管 Nacos 控制器的一些不同步问题</li>
+</ul>
+<h4 id="_43">优化<a class="headerlink" href="#_43" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 网关服务列表接口并新增访问地址回显功能</li>
+<li><strong>优化</strong> 修改服务后同步更新接口的逻辑</li>
+<li><strong>优化</strong> 网关资源列表的加载速度</li>
+<li><strong>优化</strong> 网关超时设置的配置细节</li>
+</ul>
+<h2 id="2023-11-07">2023-11-07<a class="headerlink" href="#2023-11-07" title="Permanent link">¶</a></h2>
+<h3 id="v0281">v0.28.1<a class="headerlink" href="#v0281" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 网关服务列表的排序问题</li>
+<li><strong>修复</strong> 导入网关 API 的多个换行符问题</li>
+<li><strong>修复</strong> Seata Operator 镜像不支持离线仓库问题</li>
+<li><strong>修复</strong> 离线发布流程异常的问题</li>
+</ul>
+<h2 id="2023-10-26">2023-10-26<a class="headerlink" href="#2023-10-26" title="Permanent link">¶</a></h2>
+<h3 id="v0280">v0.28.0<a class="headerlink" href="#v0280" title="Permanent link">¶</a></h3>
+<h4 id="_44">新功能<a class="headerlink" href="#_44" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 支持网关 API 请求头正则表达式匹配、精准匹配</li>
+<li><strong>新增</strong> 支持网关 API 批量导入导出</li>
+<li><strong>新增</strong> 支持托管 Nacos 多版本选择（目前支持 2.0.4、2.1.1、2.2.3 三个版本）</li>
+<li><strong>新增</strong> 支持 sentinel 控制台密码复杂化</li>
+<li><strong>新增</strong> 支持托管 Nacos 配置文件定向灰度发布</li>
+<li><strong>新增</strong> 支持分布式事务（包括 TCC 模式、FMT 模式、SAGA 模式、XA 模式）</li>
+<li><strong>新增</strong> 支持以 Swagger 标准通过可视化表单界面 导入接口。</li>
+</ul>
+<h4 id="_45">修复<a class="headerlink" href="#_45" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 托管 Nacos 不同版本支持的问题</li>
+<li><strong>修复</strong> 网关接口列表请求方法重复的问题</li>
+<li><strong>修复</strong> Zookeeper 接入注册中心无法接入 TLS 协议实例的问题</li>
+<li><strong>修复</strong> 网关全局认证开启后域名删除和更新失败的问题</li>
+<li><strong>修复</strong> 托管 Nacos 命名空间级别 CPU 使用率不正确的问题</li>
+<li><strong>修复</strong> 托管 Nacos 从 NodePod 模式改为 ClusterIP 模式时 Service 变更不正常的问题</li>
+<li><strong>修复</strong> Seata 接口验证不正常的问题</li>
+<li><strong>修复</strong> 接入注册中心切换 Workspace 接入异常的问题</li>
+<li><strong>修复</strong> 托管 Nacos 相关接口的权限问题</li>
+<li><strong>修复</strong> 托管 Nacos Grafana 监控面板问题</li>
+<li><strong>修复</strong> Sentinel Grafana 监控面板问题</li>
+<li><strong>修复</strong> 整体权限的准确性问题</li>
+</ul>
+<h4 id="_46">优化<a class="headerlink" href="#_46" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 网关更新逻辑当网关中域名开启了 HTTPS 之后不允许关闭网关层面 HTTPS</li>
+<li><strong>优化</strong> 审计日志的事件准确性</li>
+<li><strong>优化</strong> 云原生微服务 WebAssembly 插件逻辑</li>
+<li><strong>优化</strong> 概览页面的网关健康度查询逻辑（由 Rate 变更为 Increase）</li>
+<li><strong>优化</strong> Swagger 路径在 URL 中去掉版本信息并支持多版本接口</li>
+<li><strong>优化</strong> Skoala Init Helm Chart 支持分布式事务控制器（Seata Operator）</li>
+<li><strong>优化</strong> Skoala Agent 证书</li>
+<li><strong>优化</strong> 所有 Swagger 中接口描述与详情内容</li>
+<li><strong>优化</strong> 审计日志格式及自动生成方案</li>
+<li><strong>优化</strong> 当发布正式版本时，会将 Skoala Helm Chart 发布到正式版镜像仓库的 System 项目中</li>
+</ul>
+<h2 id="2023-09-01">2023-09-01<a class="headerlink" href="#2023-09-01" title="Permanent link">¶</a></h2>
+<h3 id="v0272">v0.27.2<a class="headerlink" href="#v0272" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 前端更新至 0.18.1 版修复界面问题</li>
+</ul>
+<h3 id="v0271">v0.27.1<a class="headerlink" href="#v0271" title="Permanent link">¶</a></h3>
+<h4 id="_47">修复<a class="headerlink" href="#_47" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 批量删除时返回详情重复的问题</li>
+<li><strong>修复</strong> 云原生微服务端口列表中插件信息不能排序的问题</li>
+<li><strong>修复</strong> 流量泳道列表不正常展示的问题</li>
+<li><strong>修复</strong> 前端组件的容器名称不统一的问题</li>
+<li><strong>修复</strong> Sentinel 业务应用监控报表的一些错误</li>
+</ul>
+<h4 id="_48">优化<a class="headerlink" href="#_48" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 升级 Insight 版本为 0.19.2</li>
+<li><strong>优化</strong> 升级 Ghippo 版本为 0.20.0</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>重要：微服务引擎版本大于 <code>v0.24.2</code> 版时，针对 <code>v0.24.2</code> 及之前版本存在不兼容更新，因为网关涉及开源组件仓库地址变更，
+所以更新前需要手动删除旧有的 <code>gateway-api-admission-xxxxx</code> Job，然后进行正常升级更新操作。</p>
+</div>
+<h2 id="2023-08-25">2023-08-25<a class="headerlink" href="#2023-08-25" title="Permanent link">¶</a></h2>
+<h3 id="v0270">v0.27.0<a class="headerlink" href="#v0270" title="Permanent link">¶</a></h3>
+<h4 id="_49">新功能<a class="headerlink" href="#_49" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 支持接入 Consul 注册中心</li>
+<li><strong>新增</strong> 支持网关实例级别的安全认证配置</li>
+<li><strong>新增</strong> 支持精确地控制整个集群的流量调用总量</li>
+<li><strong>新增</strong> 流量泳道</li>
+</ul>
+<h4 id="_50">修复<a class="headerlink" href="#_50" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 网关服务接入时权限与预定义权限不符的问题</li>
+<li><strong>修复</strong> 服务治理状态表达不正确的问题</li>
+<li><strong>修复</strong> 托管 Nacos 配置灰度发布返回异常问题</li>
+<li><strong>修复</strong> 托管 Nacos 中服务实例列表报错问题</li>
+<li><strong>修复</strong> 流量泳道服务版本重复的问题</li>
+<li><strong>修复</strong> 流量泳道中服务列表异常问题</li>
+<li><strong>修复</strong> 流量泳道服务删除的问题</li>
+<li><strong>修复</strong> 当错误原因未空时泳道列表空指针异常的问题</li>
+<li><strong>修复</strong> Skoala-init Chart 表单模式配置不生效的问题</li>
+</ul>
+<h4 id="_51">优化<a class="headerlink" href="#_51" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 依要求将删除泳道服务从 delete 方法变为 put。</li>
+<li><strong>优化</strong> 移除多余权限依赖并完善内部权限依赖关系</li>
+<li><strong>优化</strong> 流量泳道适配界面展示需求</li>
+<li><strong>优化</strong> 云原生微服务插件接口</li>
+<li><strong>优化</strong> 添加泳道服务的方式由批量改为单个</li>
+<li><strong>优化</strong> 前端组件 Deployment 端口由 80 修改为 8080</li>
+<li><strong>优化</strong> 升级 Ghippo SDK 到 v0.20.0-dev2</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>重要：微服务引擎版本大于 <code>v0.24.2</code> 版时，针对 <code>v0.24.2</code> 及之前版本存在不兼容更新，因为网关涉及开源组件仓库地址变更，
+所以更新前需要手动删除旧有的 <code>gateway-api-admission-xxxxx</code> Job，然后进行正常升级更新操作。</p>
+</div>
+<h2 id="2023-08-03">2023-08-03<a class="headerlink" href="#2023-08-03" title="Permanent link">¶</a></h2>
+<h3 id="v0262">v0.26.2<a class="headerlink" href="#v0262" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> <code>Consul</code> 注册中心接入时检测不通的问题</li>
+<li><strong>修复</strong> 网关由于插件应用异常重启问题</li>
+<li><strong>修复</strong> 网关验证插件配置异常问题</li>
+<li><strong>修复</strong> <code>Sentinel</code> 集群流控规则编辑异常的问题</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>重要：微服务引擎版本大于 <code>v0.24.2</code> 版时，针对 <code>v0.24.2</code> 及之前版本存在不兼容更新，因为网关涉及开源组件仓库地址变更，
+所以更新前需要手动删除旧有的 <code>gateway-api-admission-xxxxx</code> Job，然后进行正常升级更新操作。</p>
+</div>
+<h2 id="2023-07-26">2023-07-26<a class="headerlink" href="#2023-07-26" title="Permanent link">¶</a></h2>
+<h3 id="v0261">v0.26.1<a class="headerlink" href="#v0261" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 修复 Agent 组件版本错误问题</li>
+</ul>
+<h2 id="2023-07-25">2023-07-25<a class="headerlink" href="#2023-07-25" title="Permanent link">¶</a></h2>
+<h3 id="v0260">v0.26.0<a class="headerlink" href="#v0260" title="Permanent link">¶</a></h3>
+<h4 id="_52">新功能<a class="headerlink" href="#_52" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 支持给网关运行时 Envoy 注入 Istio Sidecar Envoy 代理</li>
+<li><strong>新增</strong> 支持 API 级别的全局限流</li>
+<li><strong>新增</strong> 支持域名级别的全局限流</li>
+<li><strong>新增</strong> 支持 API 列表批量操作（上线/下线/删除）</li>
+<li><strong>新增</strong> 支持云原生微服务治理通过插件方式扩展能力，包括：JWT 插件、Auth 插件、全局限流插件等</li>
+<li><strong>新增</strong> 支持云原生微服务的服务信息详情及端口列表查看</li>
+</ul>
+<h4 id="_53">修复<a class="headerlink" href="#_53" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> Nacos 端口修改不生效的问题</li>
+<li><strong>修复</strong> Sentinel 集群流控规则保存不生效的问题</li>
+<li><strong>修复</strong> 删除 Nacos 中非空服务时接口异常的问题</li>
+<li><strong>修复</strong> 网关监控数据中重复数据的问题</li>
+<li><strong>修复</strong> 云原生微服务使用插件相关 API 的问题</li>
+<li><strong>修复</strong> 网关域名命名规则的相关问题</li>
+<li><strong>修复</strong> 云原生微服务流量泳道的版本错误问题</li>
+</ul>
+<h4 id="_54">优化<a class="headerlink" href="#_54" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 人大金仓数据库的驱动名由 kb_v8r6 改为 kingbase</li>
+</ul>
+<h2 id="2023-07-19">2023-07-19<a class="headerlink" href="#2023-07-19" title="Permanent link">¶</a></h2>
+<h3 id="v0250">v0.25.0<a class="headerlink" href="#v0250" title="Permanent link">¶</a></h3>
+<h4 id="_55">新功能<a class="headerlink" href="#_55" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 将网关运行时的网格注入标识修改被标签方式标记</li>
+<li><strong>新增</strong> 与中间件关联操作的权限级联选择能力</li>
+<li><strong>新增</strong> 云原生微服务限流规则详情 API</li>
+<li><strong>新增</strong> 云原生微服务治理相关 API</li>
+<li><strong>新增</strong> 为安装托管资源时集群就绪检查添加对应组件版本信息</li>
+<li><strong>新增</strong> 为各类搜索 API 添加模糊搜索能力</li>
+</ul>
+<h4 id="_56">修复<a class="headerlink" href="#_56" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 流水线外部镜像扫描地址不对的问题</li>
+<li><strong>修复</strong> 与中间件关联权限依赖未涵盖目录级别的问题</li>
+</ul>
+<h4 id="_57">优化<a class="headerlink" href="#_57" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 网关及相关资源变更的连锁校验</li>
+<li><strong>优化</strong> 网关监听端口由集群 IP 改为容器端口</li>
+</ul>
+<h2 id="2023-07-06">2023-07-06<a class="headerlink" href="#2023-07-06" title="Permanent link">¶</a></h2>
+<h3 id="v0242">v0.24.2<a class="headerlink" href="#v0242" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 页面体验优化及问题修复</li>
+</ul>
+<h2 id="2023-07-05">2023-07-05<a class="headerlink" href="#2023-07-05" title="Permanent link">¶</a></h2>
+<h3 id="v0241">v0.24.1<a class="headerlink" href="#v0241" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> Skoala-init Chart 表单中版本不是最新的问题</li>
+<li><strong>修复</strong> 页面体验优化及问题</li>
+</ul>
+<h2 id="2023-06-30">2023-06-30<a class="headerlink" href="#2023-06-30" title="Permanent link">¶</a></h2>
+<h3 id="v0240">v0.24.0<a class="headerlink" href="#v0240" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>新增</strong> 云原生微服务插件相关 API</li>
+<li><strong>新增</strong> 与中间件关联操作的权限级联选择能力</li>
+<li><strong>修复</strong> Insight 集成数据异常的问题</li>
+<li><strong>修复</strong> 网关状态筛选结果异常的问题</li>
+<li><strong>优化</strong> 网关及相关资源变更的连锁校验</li>
+</ul>
+<h2 id="2023-06-26">2023-06-26<a class="headerlink" href="#2023-06-26" title="Permanent link">¶</a></h2>
+<h3 id="v0230">v0.23.0<a class="headerlink" href="#v0230" title="Permanent link">¶</a></h3>
+<h4 id="_58">新功能<a class="headerlink" href="#_58" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 网关 API 的批量上下线接口</li>
+<li><strong>新增</strong> 为引擎组件添加增强健康检查的配置</li>
+<li><strong>新增</strong> 为缓存逻辑添加标签缓存支持</li>
+<li><strong>新增</strong> 网关创建和更新时网格边车强制注入选项</li>
+<li><strong>新增</strong> 网关列表按照状态筛选支持</li>
+<li><strong>新增</strong> 审计日志集成</li>
+<li><strong>新增</strong> 在持续集成中添加许可检查</li>
+<li><strong>新增</strong> 将 Chart 中的敏感信息通过 Secret 存储</li>
+<li><strong>新增</strong> 升级托管 Nacos 版本至 2.2.3 版</li>
+<li><strong>新增</strong> Sentinel 版本至 0.10.5 版</li>
+</ul>
+<h4 id="_59">修复<a class="headerlink" href="#_59" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> Insight 集成数据指标于原始数据对齐</li>
+<li><strong>修复</strong> 与 mSpider 模块对接时未继承权限的问题</li>
+<li><strong>修复</strong> Nacos 实例列表治理开启状态缺失的问题</li>
+<li><strong>修复</strong> Sentinel 集群流控名称的问题</li>
+<li><strong>修复</strong> 整体概览查询数据不是按照工作空间统计的问题</li>
+<li><strong>修复</strong> 网关未开启 HTTPS 但域名可以开启 HTTPS 的问题</li>
+<li><strong>修复</strong> Skoala-init Chart 表单数据默认值问题</li>
+</ul>
+<h4 id="_60">优化<a class="headerlink" href="#_60" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> Sentinel Grafana 的使用体验和问题</li>
+<li><strong>优化</strong> 托管资源告警逻辑只展示相关资源告警条目</li>
+<li><strong>优化</strong> 重构全局管理模块配置结构</li>
+<li><strong>优化</strong> 托管 Nacos 的信息读取通过 Clusterpedia 完成</li>
+<li><strong>优化</strong> Insight 对接至 0.17.3 版</li>
+<li><strong>优化</strong> 数据库中立相关配置的灵活性</li>
+</ul>
+<h2 id="2023-05-31">2023-05-31<a class="headerlink" href="#2023-05-31" title="Permanent link">¶</a></h2>
+<h3 id="v0222">v0.22.2<a class="headerlink" href="#v0222" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> Sentinel 集群流控 API 的问题</li>
+<li><strong>修复</strong> Sentinel 规则模糊查询 API 的问题</li>
+<li><strong>优化</strong> 连接数据库的默认值提高容错性</li>
+</ul>
+<h2 id="2023-05-29">2023-05-29<a class="headerlink" href="#2023-05-29" title="Permanent link">¶</a></h2>
+<h3 id="v0221">v0.22.1<a class="headerlink" href="#v0221" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 插件 CRD 位置不对的问题</li>
+<li><strong>修复</strong> OpenAPI 发布流程问题</li>
+<li><strong>优化</strong> 为 Hive 组件的数据库配置设置默认值</li>
+</ul>
+<h2 id="2023-05-26">2023-05-26<a class="headerlink" href="#2023-05-26" title="Permanent link">¶</a></h2>
+<h3 id="v0220">v0.22.0<a class="headerlink" href="#v0220" title="Permanent link">¶</a></h3>
+<h4 id="_61">新功能<a class="headerlink" href="#_61" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 托管 Nacos 2.2.x 版本的支持</li>
+<li><strong>新增</strong> 网关链路功能支持</li>
+<li><strong>新增</strong> 云原生微服务路径重写 API</li>
+<li><strong>新增</strong> 云原生微服务超时 API</li>
+<li><strong>新增</strong> 云原生微服务故障注入 API</li>
+<li><strong>新增</strong> 云原生微服务重试等 API</li>
+<li><strong>新增</strong> 云原生微服务使用 WASM 插件功能</li>
+<li><strong>新增</strong> Skoala-init Chart 添加 JSON Schema</li>
+<li><strong>新增</strong> OpenAPI 文档发布流程</li>
+<li><strong>新增</strong> Hive 支持数据库中立</li>
+</ul>
+<h4 id="_62">修复<a class="headerlink" href="#_62" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 托管 Nacos 相关 API 有几率出现空指针的问题</li>
+<li><strong>修复</strong> 托管 Nacos 端口展示不正确的问题</li>
+<li><strong>修复</strong> Grafana 内的 HTTPProxy 拼写错误</li>
+<li><strong>修复</strong> Nacos 数据库初始化 SQL 脚本问题</li>
+<li><strong>修复</strong> 网关组件自定义权限对接问题</li>
+<li><strong>修复</strong> 调用 Ghippo 空指针问题</li>
+<li><strong>修复</strong> Nacos 服务元数据接口异常问题</li>
+<li><strong>修复</strong> 更新域名的错误</li>
+<li><strong>修复</strong> 调用 Kpanda API 频繁的问题</li>
+<li><strong>修复</strong> 接入 Insight 获取数据不准确的问题</li>
+<li><strong>修复</strong> WASM 插件查询出现错误</li>
+<li><strong>修复</strong> 更新 API 路由服务后 API 出现错误</li>
+<li><strong>修复</strong> Sentinel Token 服务器资源问题</li>
+<li><strong>修复</strong> Zookeeper 链接未关闭问题</li>
+</ul>
+<h4 id="_63">优化<a class="headerlink" href="#_63" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> Sentinel 监控面板结构和数据逻辑</li>
+<li><strong>优化</strong> 网关域名管理中移除 virtualhost 自定义资源</li>
+<li><strong>优化</strong> Sentinel 集群流控的 API 逻辑</li>
+<li><strong>优化</strong> Ghippo 升级至 0.17.0-rc2</li>
+<li><strong>优化</strong> 数据库初始化组件 sweet 已于 0.22.0 版废弃，将在 0.23.0 及之后版本彻底移除，从 0.22.0 版开始数据表将自动同步更新，无需人工干预</li>
+</ul>
+<h2 id="2023-05-07">2023-05-07<a class="headerlink" href="#2023-05-07" title="Permanent link">¶</a></h2>
+<h3 id="v0212">v0.21.2<a class="headerlink" href="#v0212" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> Sentinel 监控面板问题</li>
+<li><strong>修复</strong> 网关被注入网格边车的问题</li>
+<li><strong>修复</strong> 传统微服务开启网格治理的注册中心地址格式问题</li>
+<li><strong>修复</strong> 托管注册中心选择中间件实例未按照集群筛选的问题</li>
+<li><strong>修复</strong> 注册中心统计不正确的问题</li>
+<li><strong>优化</strong> 更新网关组件到社区最新测试版</li>
+</ul>
+<h2 id="2023-04-26">2023-04-26<a class="headerlink" href="#2023-04-26" title="Permanent link">¶</a></h2>
+<h3 id="v0211">v0.21.1<a class="headerlink" href="#v0211" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 云原生微服务分页问题</li>
+<li><strong>优化</strong> 为 Nacos 添加禁用注入 Istio 边车的配置</li>
+<li><strong>优化</strong> 升级 Insight 版本至 0.16.0 正式版</li>
+<li><strong>优化</strong> 组件连接数据库重试机制</li>
+<li><strong>优化</strong> 配合 Istio 治理能力修改 Nacos 的 9848 端口名为 GRPC</li>
+</ul>
+<h2 id="2023-04-25">2023-04-25<a class="headerlink" href="#2023-04-25" title="Permanent link">¶</a></h2>
+<h3 id="v0210">v0.21.0<a class="headerlink" href="#v0210" title="Permanent link">¶</a></h3>
+<h4 id="_64">新功能<a class="headerlink" href="#_64" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 网关接入内部及外部地址分离展示</li>
+<li><strong>新增</strong> 云原生微服务治理能力相关 API</li>
+<li><strong>新增</strong> 告警消息列表 API</li>
+<li><strong>新增</strong> 网关使用插件相关 API</li>
+<li><strong>新增</strong> 网关各类插件的逻辑 API</li>
+</ul>
+<h4 id="_65">修复<a class="headerlink" href="#_65" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 网关更新时 Envoy 配置不更新的问题</li>
+<li><strong>修复</strong> 网关只能添加单个端口的问题</li>
+<li><strong>修复</strong> Insight 集成 JVM 查询的问题</li>
+<li><strong>修复</strong> 云原生微服务治理 API 的问题</li>
+<li><strong>修复</strong> Sentinel 规则无法存取的问题</li>
+<li><strong>修复</strong> 链接不到数据库时某些 API 调用会造成程序崩溃的问题</li>
+<li><strong>修复</strong> 资源状态 API 的问题</li>
+<li><strong>修复</strong> 云原生微服务治理 API 时间单位问题</li>
+<li><strong>修复</strong> 域名相关格式校验问题</li>
+<li><strong>修复</strong> 插件一些字段命名错误的问题</li>
+</ul>
+<h4 id="_66">优化<a class="headerlink" href="#_66" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> Insight 集成到 0.16.0</li>
+<li><strong>优化</strong> 部署模板终端服务名称添加模块名前缀</li>
+<li><strong>优化</strong> virtualhost crd</li>
+<li><strong>优化</strong> httpproxy crd</li>
+<li><strong>优化</strong> skoalaplugin crd</li>
+</ul>
+<h2 id="2023-04-21">2023-04-21<a class="headerlink" href="#2023-04-21" title="Permanent link">¶</a></h2>
+<h3 id="v0200">v0.20.0<a class="headerlink" href="#v0200" title="Permanent link">¶</a></h3>
+<h4 id="_67">新功能<a class="headerlink" href="#_67" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> Sentinel 门户版本</li>
+<li><strong>新增</strong> 网关域名级别黑白名单支持</li>
+<li><strong>新增</strong> 原生服务治理列表 API</li>
+<li><strong>新增</strong> 原生服务治理编辑 API</li>
+<li><strong>新增</strong> 可观测 JVM 监控集成</li>
+<li><strong>新增</strong> 网关资源工作负载状态展示</li>
+<li><strong>新增</strong> 网关负载策略选择配置</li>
+</ul>
+<h4 id="_68">修复<a class="headerlink" href="#_68" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> Contour 镜像版本</li>
+<li><strong>修复</strong> 自定义角色功能点及 API 映射</li>
+<li><strong>修复</strong> 网关概览 API 排序和条目</li>
+</ul>
+<h4 id="_69">优化<a class="headerlink" href="#_69" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 插件中心相关 API</li>
+<li><strong>优化</strong> 配置文件结构</li>
+<li><strong>优化</strong> 配置参数由直接读取改为配置包实现</li>
+<li><strong>优化</strong> 管理组件整体包结构</li>
+<li><strong>优化</strong> 管理组件</li>
+<li><strong>优化</strong> Contour 升级到 v1.24.3-ipfilter-tracing</li>
+<li><strong>优化</strong> Envoy 升级到 v1.25.4</li>
+</ul>
+<h2 id="2023-04-10">2023-04-10<a class="headerlink" href="#2023-04-10" title="Permanent link">¶</a></h2>
+<h3 id="v0194">v0.19.4<a class="headerlink" href="#v0194" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 托管 Nacos 的启动问题</li>
+</ul>
+<h2 id="2023-04-10_1">2023-04-10<a class="headerlink" href="#2023-04-10_1" title="Permanent link">¶</a></h2>
+<h3 id="v0193">v0.19.3<a class="headerlink" href="#v0193" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 前端问题</li>
+</ul>
+<h2 id="2023-04-04">2023-04-04<a class="headerlink" href="#2023-04-04" title="Permanent link">¶</a></h2>
+<h3 id="v0192">v0.19.2<a class="headerlink" href="#v0192" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> Nacos 及 Sentinel 默认验证账号问题</li>
+<li><strong>修复</strong> 概览网关 API 排序问题</li>
+</ul>
+<h2 id="2023-04-04_1">2023-04-04<a class="headerlink" href="#2023-04-04_1" title="Permanent link">¶</a></h2>
+<h3 id="v0191">v0.19.1<a class="headerlink" href="#v0191" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> CVE-2022-31045 漏洞</li>
+<li><strong>修复</strong> 插件中心 API 问题</li>
+<li><strong>修复</strong> 网关重启的问题</li>
+<li><strong>修复</strong> 插件更新时版本不能成功更新的问题</li>
+<li><strong>修复</strong> Nacos 及 Sentinel 默认验证账号问题</li>
+<li><strong>修复</strong> 概览内微服务网关网关 API 排序问题</li>
+<li><strong>修复</strong> Nacos 支持版本回滚至 2.0.4</li>
+</ul>
+<h2 id="2023-03-24">2023-03-24<a class="headerlink" href="#2023-03-24" title="Permanent link">¶</a></h2>
+<h3 id="v0190">v0.19.0<a class="headerlink" href="#v0190" title="Permanent link">¶</a></h3>
+<h4 id="_70">新功能<a class="headerlink" href="#_70" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 自定义权限点及 API 的实现</li>
+<li><strong>新增</strong> 注册中心概览相关 API</li>
+<li><strong>新增</strong> 网关黑白名单相关 API</li>
+<li><strong>新增</strong> 概览中网关健康度相关 API</li>
+<li><strong>新增</strong> Nacos 支持版本至 2.1.2</li>
+<li><strong>新增</strong> 获取 Nacos 及网关版本信息 API</li>
+<li><strong>新增</strong> 概览中注册配置中心统计收集器</li>
+<li><strong>新增</strong> 概览中注册配置中心统计 API</li>
+<li><strong>新增</strong> 云原生微服务服务列表 API</li>
+<li><strong>新增</strong> 云原生微服务服务导入相关 API</li>
+<li><strong>新增</strong> 插件中心自定义资源设计</li>
+<li><strong>新增</strong> 插件中心插件管理相关 API</li>
+<li><strong>新增</strong> 网关前置流量拦截配置 API</li>
+<li><strong>新增</strong> 级联资源操作添加事务 (类似) 机制处理包</li>
+<li><strong>新增</strong> 资源重启功能</li>
+</ul>
+<h4 id="_71">修复<a class="headerlink" href="#_71" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> Nacos Operator 中初始化 Nacos 的数据库脚本问题</li>
+<li><strong>修复</strong> Sentinel 相关数据概览 API 的问题</li>
+<li><strong>修复</strong> 网关相关数据的概览 API 的问题</li>
+<li><strong>修复</strong> 网关生命周期管理减少网关异常重启问题</li>
+<li><strong>修复</strong> 概览 API 路径大小写问题</li>
+<li><strong>修复</strong> Nacos 2.1.2 无法创建集群的问题</li>
+<li><strong>修复</strong> 网关前置流量拦截修改不生效的问题</li>
+<li><strong>修复</strong> 网关黑白名单 API 的问题</li>
+<li><strong>修复</strong> Nacos GRPC 端口名字对集成 Istio 产生的问题</li>
+<li><strong>修复</strong> 每日构建中的外部镜像安全扫描</li>
+</ul>
+<h4 id="_72">优化<a class="headerlink" href="#_72" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> CI 流程并简化不必要的任务</li>
+<li><strong>优化</strong> 全部资源的更新操作都采用 retry 机制</li>
+<li><strong>优化</strong> 网关相关功能重构</li>
+</ul>
+<h2 id="2023-02-25">2023-02-25<a class="headerlink" href="#2023-02-25" title="Permanent link">¶</a></h2>
+<h3 id="v0180">v0.18.0<a class="headerlink" href="#v0180" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>新增</strong> 添加注册中心配置中心分离 API</li>
+<li><strong>新增</strong> 添加概览相关逻辑及 API</li>
+<li><strong>修复</strong> gateway-api 镜像版本问题</li>
+<li><strong>修复</strong> 负载均衡模式网关的 IP 池加载问题</li>
+<li><strong>修复</strong> 健康检查相关问题</li>
+</ul>
+<h2 id="2023-02-22">2023-02-22<a class="headerlink" href="#2023-02-22" title="Permanent link">¶</a></h2>
+<h3 id="v0171">v0.17.1<a class="headerlink" href="#v0171" title="Permanent link">¶</a></h3>
+<h4 id="_73">新功能<a class="headerlink" href="#_73" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 网关 NodePort 支持</li>
+<li><strong>新增</strong> 网关 LoadBalancer 支持</li>
+<li><strong>新增</strong> Sentinel 规则统计 API</li>
+<li><strong>新增</strong> Sentinel 治理的服务列表 API</li>
+<li><strong>新增</strong> 网关 API 的 Cookie 重写策略</li>
+<li><strong>新增</strong> 概览数据定时任务</li>
+<li><strong>新增</strong> 定时收集异常 Sentinel 任务</li>
+<li><strong>新增</strong> Sentinel 集群流控详情 API</li>
+<li><strong>新增</strong> 网关接入服务列表端口选择</li>
+<li><strong>新增</strong> 网关服务健康检查策略</li>
+<li><strong>新增</strong> 网关 API 中对健康策略的支持</li>
+<li><strong>新增</strong> Sentinel 统计相关 API</li>
+<li><strong>新增</strong> 支持 chart 离线化的 CI 流程</li>
+<li><strong>新增</strong> 在每日构建中增加外部镜像安全扫描能力</li>
+<li><strong>新增</strong> 发布自动更新 chart 中镜像版本</li>
+</ul>
+<h4 id="_74">修复<a class="headerlink" href="#_74" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> Nacos Namespace 创建异常的问题</li>
+<li><strong>修复</strong> Nacos 持久化存储修改异常的问题</li>
+<li><strong>修复</strong> Nacos 生命周期管理资源校验问题</li>
+<li><strong>修复</strong> 网关监控面板数据展示问题</li>
+<li><strong>修复</strong> Ghippo 链接 GRPC 地址缺失问题</li>
+<li><strong>修复</strong> Sentinel 获取集群流控 API 的问题</li>
+<li><strong>修复</strong> 托管 Nacos 资源状态不更新的问题</li>
+<li><strong>修复</strong> Sentinel 适配 Nacos public 字符串问题</li>
+<li><strong>修复</strong> Sentinel 获取资源 API 没有聚合不同实例问题</li>
+<li><strong>修复</strong> Sentinel 系统规则不生效问题</li>
+<li><strong>修复</strong> 网关服务注册中心类型分页错误的问题</li>
+<li><strong>修复</strong> 创建服务端口错误的问题</li>
+<li><strong>修复</strong> 数据库初始化组建的问题</li>
+<li><strong>修复</strong> 使用 Helm 命令替代 Argocd 部署 Alpha 环境</li>
+<li><strong>修复</strong> 基础镜像 CVE 问题并升级至 3.17.2</li>
+<li><strong>修复</strong> 发布过程 Chart 更新问题</li>
+</ul>
+<h4 id="_75">优化<a class="headerlink" href="#_75" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 升级 gateway-api 到 v0.6.0</li>
+<li><strong>优化</strong> 待更新资源获取由 clusterpedia 改为 client-go</li>
+<li><strong>优化</strong> Sentinel 应用监控模板</li>
+<li><strong>优化</strong> 将离线 chart 构建 CI 步骤独立</li>
+<li><strong>优化</strong> Contour 升级到 v1.24.1</li>
+<li><strong>优化</strong> envoy 升级到 v1.25.1</li>
+<li><strong>优化</strong> 通过 Chart 能力使 Skoala Init 安装时固定命名空间</li>
+</ul>
+<h2 id="2022-12-30">2022-12-30<a class="headerlink" href="#2022-12-30" title="Permanent link">¶</a></h2>
+<h3 id="v0161">v0.16.1<a class="headerlink" href="#v0161" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> 构建镜像时重复创建 builder 的问题</li>
+<li><strong>优化</strong> Sentinel 应用监控面板细节</li>
+</ul>
+<h2 id="2022-12-29">2022-12-29<a class="headerlink" href="#2022-12-29" title="Permanent link">¶</a></h2>
+<h3 id="v0160">v0.16.0<a class="headerlink" href="#v0160" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>修复</strong> Sentinel 调用具备认证开启 Nacos 接口的问题</li>
+<li><strong>修复</strong> nacos-operator 频繁修改服务资源的问题</li>
+<li><strong>优化</strong> 添加 Sentinel 服务的 Grafana 监控面板</li>
+<li><strong>优化</strong> 升级 Insight 为最新版本支持通过集群名查询监控数据</li>
+</ul>
+<h2 id="2022-12-28">2022-12-28<a class="headerlink" href="#2022-12-28" title="Permanent link">¶</a></h2>
+<h3 id="v0152">v0.15.2<a class="headerlink" href="#v0152" title="Permanent link">¶</a></h3>
+<h4 id="_76">新功能<a class="headerlink" href="#_76" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 网关 API 对于认证服务器的支持</li>
+<li><strong>新增</strong> 托管注册中心服务接入 API</li>
+<li><strong>新增</strong> Sentinel 集群流控相关 API</li>
+</ul>
+<h4 id="_77">修复<a class="headerlink" href="#_77" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> Sentinel 规则拼接错误的问题</li>
+<li><strong>修复</strong> Sentinel 仪表盘名称的问题</li>
+<li><strong>修复</strong> 管理组件 Chart 对于生产换环境的 Service IP 问题</li>
+<li><strong>修复</strong> Nacos 控制器处理逻辑的问题</li>
+<li><strong>修复</strong> 与集群管理集成的 egress 地址问题</li>
+</ul>
+<h4 id="_78">优化<a class="headerlink" href="#_78" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 托管 Nacos 监控仪表盘问题</li>
+<li><strong>优化</strong> nacos-operator 数据库初始化的文件获取地址</li>
+<li><strong>优化</strong> 更新 Sentinel 镜像至 v0.6.0</li>
+</ul>
+<h2 id="2022-12-22">2022-12-22<a class="headerlink" href="#2022-12-22" title="Permanent link">¶</a></h2>
+<h3 id="v0140">v0.14.0<a class="headerlink" href="#v0140" title="Permanent link">¶</a></h3>
+<h4 id="_79">新功能<a class="headerlink" href="#_79" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> Init Chart 所需镜像的离线支持</li>
+<li><strong>新增</strong> 获取托管 Nacos 的令牌</li>
+</ul>
+<h4 id="_80">修复<a class="headerlink" href="#_80" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> Skoala Chart 中 Values 命名问题</li>
+<li><strong>修复</strong> CI 流程中的镜像问题</li>
+</ul>
+<h4 id="_81">优化<a class="headerlink" href="#_81" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 设置默认日志输出到控制台</li>
+<li><strong>优化</strong> 升级 nacos-operator 到社区版本</li>
+<li><strong>优化</strong> 更新 Nacos 自定义资源的认证开启支持</li>
+<li><strong>优化</strong> 设置默认组件日志级别</li>
+</ul>
+<h2 id="2022-12-21">2022-12-21<a class="headerlink" href="#2022-12-21" title="Permanent link">¶</a></h2>
+<h3 id="v0130">v0.13.0<a class="headerlink" href="#v0130" title="Permanent link">¶</a></h3>
+<h4 id="_82">新功能<a class="headerlink" href="#_82" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 对接中间件 MySQL 和 Redis 的相关 API</li>
+<li><strong>新增</strong> 网关 JWT 验证支持的 API</li>
+<li><strong>新增</strong> 网关域名校验逻辑</li>
+<li><strong>新增</strong> Sentinel 资源列表 API</li>
+<li><strong>新增</strong> 网关查询注册中心服务的接口</li>
+<li><strong>新增</strong> 版本发布后推送 Init Chart 至 addon 仓库</li>
+<li><strong>新增</strong> 版本发布时完成 gitlab release 操作</li>
+<li><strong>新增</strong> 动态更改日志级别</li>
+</ul>
+<h4 id="_83">修复<a class="headerlink" href="#_83" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong> 全局限流规则更新时不生效的问题</li>
+<li><strong>修复</strong> Envoy Log Level 未设置问题</li>
+<li><strong>修复</strong> 更新网关时异常未判断的问题</li>
+<li><strong>修复</strong> 托管 Nacos 的数据库初始化问题</li>
+</ul>
+<h4 id="_84">优化<a class="headerlink" href="#_84" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>优化</strong> 注册中心列表按更新时间降序排列</li>
+<li><strong>优化</strong> 统一网关 JWT 相关的字段名称</li>
+<li><strong>优化</strong> 网关域名列表增加是否开启 JWT 的字段</li>
+<li><strong>优化</strong> Sentinel 服务名连接符的逻辑</li>
+<li><strong>优化</strong> 升级 Contour 到 1.23 版</li>
+<li><strong>优化</strong> 升级 Envoy 到 1.24 版</li>
+<li><strong>优化</strong> 升级 k8s.io/相关组件到 0.25 版</li>
+<li><strong>优化</strong> 将 go-replayers 组件回归社区版本</li>
+<li><strong>优化</strong> 将 go-helm-client 组件回归社区版本</li>
+<li><strong>优化</strong> 升级 Contour 到 1.23.1 版</li>
+<li><strong>优化</strong> 修改 Agent 组件为强制不注入网格边车</li>
+<li><strong>优化</strong> 将 Nacos 镜像默认配置回归社区版本</li>
+<li><strong>优化</strong> 移除 Nacos 镜像相关 CI 流程</li>
+</ul>
+<h2 id="2022-12-13">2022-12-13<a class="headerlink" href="#2022-12-13" title="Permanent link">¶</a></h2>
+<h3 id="v0122">v0.12.2<a class="headerlink" href="#v0122" title="Permanent link">¶</a></h3>
+<h4 id="_85">新功能<a class="headerlink" href="#_85" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>新增</strong> 添加 Sentinel 自身监控的 Grafana 模板支持</li>
+<li><strong>新增</strong> 添加自定义配置网关索引的配置信息</li>
+</ul>
+<h4 id="_86">修复<a class="headerlink" href="#_86" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>修复</strong>  微服务集成可观测组件的状态问题</li>
+<li><strong>修复</strong> 注册中心开启网格插件能力的治理状态问题</li>
+<li><strong>修复</strong> 网关日志索引问题</li>
+<li><strong>修复</strong> 前置依赖检查接口的问题</li>
+<li><strong>修复</strong> Sentinel 与 Nacos 默认命名空间匹配的逻辑问题</li>
+<li><strong>修复</strong> 连接容器管理模块的端口异常情况的逻辑</li>
+</ul>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年12月4日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 使用场景" class="md-footer__link md-footer__link--prev" href="scenarios.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                使用场景
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 微服务引擎管理组件" class="md-footer__link md-footer__link--next" href="../quickstart/skoala.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                微服务引擎管理组件
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../../stylesheets/zoom_image.js"></script>
+<script src="../../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

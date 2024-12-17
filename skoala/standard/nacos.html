@@ -1,0 +1,1684 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/skoala/standard/nacos.html" rel="canonical"/>
+<link href="sentinel.html" rel="prev"/>
+<link href="monitor.html" rel="next"/>
+<link href="../../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>接入 Nacos SDK - DaoCloud Enterprise</title>
+<link href="../../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#nacos-sdk">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              接入 Nacos SDK
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../blogs/index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            产品文档
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dce/index.html">
+<span class="md-ellipsis">
+    文档导航
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+<span class="md-ellipsis">
+    探索和安装
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            探索和安装
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../dce/license0.html">
+<span class="md-ellipsis">
+    产品介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../install/index.html">
+<span class="md-ellipsis">
+    安装教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dce/bphome.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dce/faq.html">
+<span class="md-ellipsis">
+    常见问题
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+<span class="md-ellipsis">
+    工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            工作台
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../amamba/intro/index.html">
+<span class="md-ellipsis">
+    应用工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+<span class="md-ellipsis">
+    容器
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            容器
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../kpanda/intro/index.html">
+<span class="md-ellipsis">
+    容器管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../kairship/intro/index.html">
+<span class="md-ellipsis">
+    多云编排
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../kangaroo/intro/index.html">
+<span class="md-ellipsis">
+    镜像仓库
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../network/intro/index.html">
+<span class="md-ellipsis">
+    云原生网络
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../storage/index.html">
+<span class="md-ellipsis">
+    云原生存储
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../virtnest/intro/index.html">
+<span class="md-ellipsis">
+    虚拟机
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+<span class="md-ellipsis">
+    微服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            微服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../insight/intro/index.html">
+<span class="md-ellipsis">
+    可观测性
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+<span class="md-ellipsis">
+    微服务引擎
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_2">
+<span class="md-nav__icon md-icon"></span>
+            微服务引擎
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../intro/index.html">
+<span class="md-ellipsis">
+    介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../quickstart/skoala.html">
+<span class="md-ellipsis">
+    快速入门
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../cloud-ms/traffic-control.html">
+<span class="md-ellipsis">
+    云原生微服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../gateway/index.html">
+<span class="md-ellipsis">
+    云原生网关
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_2_5" id="__nav_2_5_2_5_label" tabindex="0">
+<span class="md-ellipsis">
+    传统微服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_2_5_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_5_2_5">
+<span class="md-nav__icon md-icon"></span>
+            传统微服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5_2_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_2_5_1" id="__nav_2_5_2_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    注册配置中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_2_5_1_label" class="md-nav" data-md-level="5">
+<label class="md-nav__title" for="__nav_2_5_2_5_1">
+<span class="md-nav__icon md-icon"></span>
+            注册配置中心
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../trad-ms/hosted/index.html">
+<span class="md-ellipsis">
+    托管注册中心
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5_2_5_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_2_5_1_2" id="__nav_2_5_2_5_1_2_label" tabindex="0">
+<span class="md-ellipsis">
+    服务对接规范
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_2_5_1_2_label" class="md-nav" data-md-level="6">
+<label class="md-nav__title" for="__nav_2_5_2_5_1_2">
+<span class="md-nav__icon md-icon"></span>
+            服务对接规范
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="sentinel.html">
+<span class="md-ellipsis">
+    接入 Sentinel
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    接入 Nacos SDK
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="nacos.html">
+<span class="md-ellipsis">
+    接入 Nacos SDK
+  </span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java">
+<span class="md-ellipsis">
+      JAVA（无框架）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java-springboot">
+<span class="md-ellipsis">
+      JAVA (SpringBoot) 框架
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java-springcloud">
+<span class="md-ellipsis">
+      JAVA (SpringCloud) 框架
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#go">
+<span class="md-ellipsis">
+      Go 框架
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#python">
+<span class="md-ellipsis">
+      Python 框架
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nodejs">
+<span class="md-ellipsis">
+      Node.js 框架
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#c">
+<span class="md-ellipsis">
+      C++ 框架
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="monitor.html">
+<span class="md-ellipsis">
+    接入 Sentinel 监控能力
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="flow-control.html">
+<span class="md-ellipsis">
+    接入 Sentinel 集群流控能力
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../trad-ms/hosted/namespace.html">
+<span class="md-ellipsis">
+    微服务命名空间
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../trad-ms/hosted/services/index.html">
+<span class="md-ellipsis">
+    微服务列表
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../trad-ms/hosted/configs.html">
+<span class="md-ellipsis">
+    配置管理
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../trad-ms/hosted/monitor/microservices.html">
+<span class="md-ellipsis">
+    监控
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../trad-ms/hosted/resource-info.html">
+<span class="md-ellipsis">
+    资源信息
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../trad-ms/hosted/plugins/plugin-center.html">
+<span class="md-ellipsis">
+    治理能力
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../trad-ms/integrated/index.html">
+<span class="md-ellipsis">
+    接入注册中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../plugins/intro.html">
+<span class="md-ellipsis">
+    插件中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../best-practice/use-skoala-01.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../troubleshoot/auth-server.html">
+<span class="md-ellipsis">
+    故障排查
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../tests/gateway-stress-test.html">
+<span class="md-ellipsis">
+    性能测试
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../reference/microservice.html">
+<span class="md-ellipsis">
+    参考文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../mspider/intro/index.html">
+<span class="md-ellipsis">
+    服务网格
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+<span class="md-ellipsis">
+    数据服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            数据服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../middleware/index.html">
+<span class="md-ellipsis">
+    中间件
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="">
+<span class="md-ellipsis">
+    云原生 AI
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+            云原生 AI
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../baize/intro/index.html">
+<span class="md-ellipsis">
+    AI Lab
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="">
+<span class="md-ellipsis">
+    边缘计算
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+            边缘计算
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../kant/intro/index.html">
+<span class="md-ellipsis">
+    云边协同
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="">
+<span class="md-ellipsis">
+    管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            管理
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../ghippo/intro/index.html">
+<span class="md-ellipsis">
+    全局管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../blogs/index.html">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java">
+<span class="md-ellipsis">
+      JAVA（无框架）
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java-springboot">
+<span class="md-ellipsis">
+      JAVA (SpringBoot) 框架
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java-springcloud">
+<span class="md-ellipsis">
+      JAVA (SpringCloud) 框架
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#go">
+<span class="md-ellipsis">
+      Go 框架
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#python">
+<span class="md-ellipsis">
+      Python 框架
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nodejs">
+<span class="md-ellipsis">
+      Node.js 框架
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#c">
+<span class="md-ellipsis">
+      C++ 框架
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/skoala/standard/nacos.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/skoala/standard/nacos.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/skoala/standard/nacos.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="nacos-sdk">服务接入 Nacos SDK<a class="headerlink" href="#nacos-sdk" title="Permanent link">¶</a></h1>
+<p>本文介绍不同框架的传统微服务如何接入 Nacos 的原生 SDK。</p>
+<h2 id="java">JAVA（无框架）<a class="headerlink" href="#java" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>在 <code>pom.xml</code> 文件中添加依赖项。目前的最新版本为 <code>2.2.2</code></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">&lt;dependency&gt;</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.alibaba.nacos<span class="nt">&lt;/groupId&gt;</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>nacos-client<span class="nt">&lt;/artifactId&gt;</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>${latest.version}<span class="nt">&lt;/version&gt;</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p>在服务中添加服务注册和服务发现的代码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">//添加配置变量 serverAddr: Nacos 的地址, e.g,: 192.168.0.0:8848. namespace: Nacos 中的命名空间</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">Properties</span><span class="w"> </span><span class="n">properties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Properties</span><span class="p">();</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">properties</span><span class="p">.</span><span class="na">setProperty</span><span class="p">(</span><span class="s">"serverAddr"</span><span class="p">,</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">"serverAddr"</span><span class="p">));</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">properties</span><span class="p">.</span><span class="na">setProperty</span><span class="p">(</span><span class="s">"namespace"</span><span class="p">,</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">"namespace"</span><span class="p">));</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">NamingService</span><span class="w"> </span><span class="n">naming</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NamingFactory</span><span class="p">.</span><span class="na">createNamingService</span><span class="p">(</span><span class="n">properties</span><span class="p">);</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1">//注册实例: 注册时带上服务的 IP 和端口</span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">naming</span><span class="p">.</span><span class="na">registerInstance</span><span class="p">(</span><span class="s">"sentinel-demo"</span><span class="p">,</span><span class="w"> </span><span class="s">"11.11.11.11"</span><span class="p">,</span><span class="w"> </span><span class="mi">8888</span><span class="p">,</span><span class="w"> </span><span class="s">"DEFAULT"</span><span class="p">);</span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">naming</span><span class="p">.</span><span class="na">getAllInstances</span><span class="p">(</span><span class="s">"sentinel-demo"</span><span class="p">));</span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="n">naming</span><span class="p">.</span><span class="na">deregisterInstance</span><span class="p">(</span><span class="s">"sentinel-demo"</span><span class="p">,</span><span class="w"> </span><span class="s">"11.11.11.11"</span><span class="p">,</span><span class="w"> </span><span class="mi">8888</span><span class="p">,</span><span class="w"> </span><span class="s">"DEFAULT"</span><span class="p">);</span>
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a>
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">naming</span><span class="p">.</span><span class="na">getAllInstances</span><span class="p">(</span><span class="s">"sentinel-demo"</span><span class="p">));</span>
+<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="c1">//添加对服务的订阅，在变更时获取事件通知</span>
+<a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="n">naming</span><span class="p">.</span><span class="na">subscribe</span><span class="p">(</span><span class="s">"sentinel-demo"</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EventListener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">    </span><span class="nd">@Override</span>
+<a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onEvent</span><span class="p">(</span><span class="n">Event</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(((</span><span class="n">NamingEvent</span><span class="p">)</span><span class="n">event</span><span class="p">).</span><span class="na">getServiceName</span><span class="p">());</span>
+<a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(((</span><span class="n">NamingEvent</span><span class="p">)</span><span class="n">event</span><span class="p">).</span><span class="na">getInstances</span><span class="p">());</span>
+<a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="w">        </span><span class="p">}</span>
+<a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="w">    </span><span class="p">});</span>
+</code></pre></div>
+</li>
+<li>
+<p>如需添加 Nacos 的更多特性，可参考<a href="https://github.com/nacos-group/nacos-examples/tree/master/nacos-client-example">更多使用方式</a></p>
+</li>
+</ol>
+<h2 id="java-springboot">JAVA (SpringBoot) 框架<a class="headerlink" href="#java-springboot" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>在 <code>pom.xml</code> 文件中添加依赖项</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">&lt;dependency&gt;</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.alibaba.boot<span class="nt">&lt;/groupId&gt;</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>nacos-config-spring-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>${latest.version}<span class="nt">&lt;/version&gt;</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>版本 <a href="https://mvnrepository.com/artifact/com.alibaba.boot/nacos-config-spring-boot-starter">0.2.x.RELEASE</a> 对应的是 Spring Boot 2.x 版本。</li>
+<li>版本 <a href="https://mvnrepository.com/artifact/com.alibaba.boot/nacos-config-spring-boot-starter">0.1.x.RELEASE</a> 对应的是 Spring Boot 1.x 版本。</li>
+</ul>
+</div>
+</li>
+<li>
+<p>在项目中添加 <code>bootstrap.yaml</code> 配置文件</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nt">spring</span><span class="p">:</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span><span class="nt">application</span><span class="p">:</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="nt">nacos</span><span class="p">:</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">  </span><span class="nt">config</span><span class="p">:</span>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="nt">data-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"> </span><span class="c1"># Nacos 配置的 data-id</span>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1:8848</span><span class="w"> </span><span class="c1"># Nacos 服务器地址</span>
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DEFAULT_GROUP</span><span class="w"> </span><span class="c1"># 配置文件 Group</span>
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public</span><span class="w"> </span><span class="c1"># 命名空间 ID</span>
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yaml</span><span class="w"> </span><span class="c1"># Nacos 配置文件类型</span>
+<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">    </span><span class="nt">auto-refresh</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># 是否启用动态刷新配置</span>
+<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">  </span><span class="nt">discovery</span><span class="p">:</span>
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1:8848</span><span class="w"> </span><span class="c1"># Nacos 服务器地址</span>
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">    </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DEFAULT_GROUP</span><span class="w"> </span><span class="c1"># 注册应用的 Group</span>
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public</span><span class="w"> </span><span class="c1"># Nacos 的命名空间</span>
+</code></pre></div>
+</li>
+<li>
+<p>服务注册功能无需改动代码，直接启动项目就能在服务列表看到启动的服务。</p>
+</li>
+<li>
+<p>添加服务配置的代码</p>
+<ol>
+<li>
+<p>登录 Nacos 控制台添加配置文件。</p>
+<p><img alt="screenshot" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/standard01.png"/></p>
+</li>
+<li>
+<p>然后在控制器代码中添加如下代码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nd">@RestController</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="nd">@RequestMapping</span><span class="p">(</span><span class="s">"config"</span><span class="p">)</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Controller</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="nd">@NacosValue</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"${a.test}"</span><span class="p">,</span><span class="w"> </span><span class="n">autoRefreshed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="nd">@GetMapping</span><span class="p">(</span><span class="s">"get"</span><span class="p">)</span>
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">get</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="p">;</span>
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="p">}</span>
+</code></pre></div>
+</li>
+</ol>
+</li>
+<li>
+<p>如需添加 Nacos 的更多特性，可参考<a href="https://github.com/nacos-group/nacos-examples/tree/master/nacos-spring-boot-example">更多使用方式</a></p>
+</li>
+</ol>
+<h2 id="java-springcloud">JAVA (SpringCloud) 框架<a class="headerlink" href="#java-springcloud" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>在 <code>pom.xml</code> 文件中添加依赖项。</p>
+<p>版本对应关系参考：<a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/wiki/版本说明">版本说明</a></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">&lt;dependency&gt;</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.alibaba.cloud<span class="nt">&lt;/groupId&gt;</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>spring-cloud-starter-alibaba-nacos-config<span class="nt">&lt;/artifactId&gt;</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>${latest.version}<span class="nt">&lt;/version&gt;</span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="nt">&lt;/dependency&gt;</span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="nt">&lt;dependency&gt;</span>
+<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.alibaba.cloud<span class="nt">&lt;/groupId&gt;</span>
+<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>spring-cloud-starter-alibaba-nacos-discovery<span class="nt">&lt;/artifactId&gt;</span>
+<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>${latest.version}<span class="nt">&lt;/version&gt;</span>
+<a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p>在项目中添加 <code>bootstrap.yaml</code> 配置文件</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nl">spring</span><span class="p">:</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span><span class="n">application</span><span class="p">:</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">demo</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="o">---</span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="nl">spring</span><span class="p">:</span>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">  </span><span class="n">cloud</span><span class="p">:</span>
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="n">nacos</span><span class="p">:</span>
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">      </span><span class="n">config</span><span class="p">:</span>
+<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">        </span><span class="n">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">        </span><span class="n">server</span><span class="o">-</span><span class="n">addr</span><span class="p">:</span><span class="w"> </span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">8848</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">nacos</span><span class="w"> </span><span class="n">服务器地址</span>
+<a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">        </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">nacos</span><span class="w"> </span><span class="n">配置的</span><span class="w"> </span><span class="n">data</span><span class="o">-</span><span class="n">id</span>
+<a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">        </span><span class="n">group</span><span class="p">:</span><span class="w"> </span><span class="n">DEFAULT_GROUP</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">配置文件</span><span class="w"> </span><span class="n">Group</span>
+<a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">        </span><span class="n">namespace</span><span class="p">:</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">命名空间ID</span>
+<a href="#__codelineno-6-14" id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">        </span><span class="n">file</span><span class="o">-</span><span class="n">extension</span><span class="p">:</span><span class="w"> </span><span class="n">yaml</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">配置文件后缀</span>
+<a href="#__codelineno-6-15" id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">      </span><span class="n">discovery</span><span class="p">:</span>
+<a href="#__codelineno-6-16" id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">        </span><span class="n">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span>
+<a href="#__codelineno-6-17" id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">        </span><span class="n">server</span><span class="o">-</span><span class="n">addr</span><span class="p">:</span><span class="w"> </span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">8848</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">nacos</span><span class="w"> </span><span class="n">服务器地址</span>
+<a href="#__codelineno-6-18" id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">        </span><span class="n">namespace</span><span class="p">:</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">命名空间ID</span><span class="w">      </span>
+<a href="#__codelineno-6-19" id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">        </span><span class="n">group</span><span class="p">:</span><span class="w"> </span><span class="n">DEFAULT_GROUP</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">应用分组名</span>
+</code></pre></div>
+</li>
+<li>
+<p>在服务添加 Nacos 服务注册的代码</p>
+<p>在启动类上添加 <code>@EnableDiscoveryClient</code> 注解开启服务注册</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nd">@SpringBootApplication</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="nd">@EnableDiscoveryClient</span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">NacosProviderApplication</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">    </span><span class="n">SpringApplication</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">NacosProviderApplication</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">  </span><span class="p">}</span>
+<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>添加动态配置的代码</p>
+<ol>
+<li>
+<p>在 Nacos 控制台添加配置文件</p>
+<p><img alt="screenshot" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/standard01.png"/></p>
+</li>
+<li>
+<p>在控制器中添加 <code>@RefreshScope</code> 和 <code>@Value</code> 注解</p>
+<p>通过 springcloud 的 <code>@RefreshScope</code> 注解可以实现自动配置</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nd">@RestController</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="nd">@RequestMapping</span><span class="p">(</span><span class="s">"config"</span><span class="p">)</span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="nd">@RefreshScope</span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Controller</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="nd">@Value</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"${a.test}"</span><span class="p">)</span>
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a>
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="nd">@GetMapping</span><span class="p">(</span><span class="s">"get"</span><span class="p">)</span>
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">get</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="p">;</span>
+<a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="p">}</span>
+</code></pre></div>
+</li>
+</ol>
+</li>
+<li>
+<p>如需添加 Nacos 的更多特性，可参考<a href="https://github.com/nacos-group/nacos-examples/tree/master/nacos-spring-cloud-example">更多使用方式</a></p>
+</li>
+</ol>
+<h2 id="go">Go 框架<a class="headerlink" href="#go" title="Permanent link">¶</a></h2>
+<p>在 Go 框架微服务中添加 Nacos SDK 时，需要满足以下两个前提条件：</p>
+<ul>
+<li>Go 版本 1.15 以上</li>
+<li>Nacos 版本 2.x 以上</li>
+</ul>
+<p>具体操作步骤如下：</p>
+<ol>
+<li>
+<p>获取依赖</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">go</span><span class="w"> </span><span class="nx">get</span><span class="w"> </span><span class="o">-</span><span class="nx">u</span><span class="w"> </span><span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">nacos</span><span class="o">-</span><span class="nx">group</span><span class="o">/</span><span class="nx">nacos</span><span class="o">-</span><span class="nx">sdk</span><span class="o">-</span><span class="k">go</span><span class="o">/</span><span class="nx">v2</span>
+</code></pre></div>
+</li>
+<li>
+<p>在服务中添加服务注册的代码</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1">//create ServerConfig,配置 Nacos 服务器的地址</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="nx">sc</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">[]</span><span class="nx">constant</span><span class="p">.</span><span class="nx">ServerConfig</span><span class="p">{</span>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">  </span><span class="o">*</span><span class="nx">constant</span><span class="p">.</span><span class="nx">NewServerConfig</span><span class="p">(</span><span class="s">"127.0.0.1"</span><span class="p">,</span><span class="w"> </span><span class="mi">8848</span><span class="p">,</span><span class="w"> </span><span class="nx">constant</span><span class="p">.</span><span class="nx">WithContextPath</span><span class="p">(</span><span class="s">"/nacos"</span><span class="p">)),</span>
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="p">}</span>
+<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a>
+<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="c1">//create ClientConfig，配置客户端的链接配置</span>
+<a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="nx">cc</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">*</span><span class="nx">constant</span><span class="p">.</span><span class="nx">NewClientConfig</span><span class="p">(</span>
+<a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">  </span><span class="nx">constant</span><span class="p">.</span><span class="nx">WithNamespaceId</span><span class="p">(</span><span class="s">"public"</span><span class="p">),</span><span class="w"> </span><span class="c1">//命名空间 ID</span>
+<a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">  </span><span class="nx">constant</span><span class="p">.</span><span class="nx">WithTimeoutMs</span><span class="p">(</span><span class="mi">5000</span><span class="p">),</span><span class="w"> </span><span class="c1">// 超时时间</span>
+<a href="#__codelineno-10-10" id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="w">  </span><span class="nx">constant</span><span class="p">.</span><span class="nx">WithLogDir</span><span class="p">(</span><span class="s">"/tmp/nacos/log"</span><span class="p">),</span><span class="w"> </span><span class="c1">//日志地址</span>
+<a href="#__codelineno-10-11" id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">  </span><span class="nx">constant</span><span class="p">.</span><span class="nx">WithCacheDir</span><span class="p">(</span><span class="s">"/tmp/nacos/cache"</span><span class="p">),</span><span class="w"> </span><span class="c1">// Nacos 服务缓存的地址</span>
+<a href="#__codelineno-10-12" id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">  </span><span class="nx">constant</span><span class="p">.</span><span class="nx">WithLogLevel</span><span class="p">(</span><span class="s">"debug"</span><span class="p">),</span><span class="w"> </span><span class="c1">// 日志级别</span>
+<a href="#__codelineno-10-13" id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="p">)</span>
+<a href="#__codelineno-10-14" id="__codelineno-10-14" name="__codelineno-10-14"></a>
+<a href="#__codelineno-10-15" id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="c1">// 通过 ServerConfig 和 ClientConfig 创建 nacosclient 链接</span>
+<a href="#__codelineno-10-16" id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="nx">client</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">clients</span><span class="p">.</span><span class="nx">NewNamingClient</span><span class="p">(</span>
+<a href="#__codelineno-10-17" id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">  </span><span class="nx">vo</span><span class="p">.</span><span class="nx">NacosClientParam</span><span class="p">{</span>
+<a href="#__codelineno-10-18" id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">    </span><span class="nx">ClientConfig</span><span class="p">:</span><span class="w">  </span><span class="o">&amp;</span><span class="nx">cc</span><span class="p">,</span>
+<a href="#__codelineno-10-19" id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="w">    </span><span class="nx">ServerConfigs</span><span class="p">:</span><span class="w"> </span><span class="nx">sc</span><span class="p">,</span>
+<a href="#__codelineno-10-20" id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="w">  </span><span class="p">},</span>
+<a href="#__codelineno-10-21" id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="p">)</span>
+<a href="#__codelineno-10-22" id="__codelineno-10-22" name="__codelineno-10-22"></a>
+<a href="#__codelineno-10-23" id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="c1">//Register 注册服务</span>
+<a href="#__codelineno-10-24" id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="nx">registerServiceInstance</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span><span class="w"> </span><span class="nx">vo</span><span class="p">.</span><span class="nx">RegisterInstanceParam</span><span class="p">{</span>
+<a href="#__codelineno-10-25" id="__codelineno-10-25" name="__codelineno-10-25"></a><span class="w">  </span><span class="nx">Ip</span><span class="p">:</span><span class="w">          </span><span class="s">"10.0.0.10"</span><span class="p">,</span>
+<a href="#__codelineno-10-26" id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="w">  </span><span class="nx">Port</span><span class="p">:</span><span class="w">        </span><span class="mi">8848</span><span class="p">,</span>
+<a href="#__codelineno-10-27" id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="w">  </span><span class="nx">ServiceName</span><span class="p">:</span><span class="w"> </span><span class="s">"demo.go"</span><span class="p">,</span>
+<a href="#__codelineno-10-28" id="__codelineno-10-28" name="__codelineno-10-28"></a><span class="w">  </span><span class="nx">GroupName</span><span class="p">:</span><span class="w">   </span><span class="s">"group-a"</span><span class="p">,</span>
+<a href="#__codelineno-10-29" id="__codelineno-10-29" name="__codelineno-10-29"></a><span class="w">  </span><span class="nx">ClusterName</span><span class="p">:</span><span class="w"> </span><span class="s">"cluster-a"</span><span class="p">,</span>
+<a href="#__codelineno-10-30" id="__codelineno-10-30" name="__codelineno-10-30"></a><span class="w">  </span><span class="nx">Weight</span><span class="p">:</span><span class="w">      </span><span class="mi">10</span><span class="p">,</span>
+<a href="#__codelineno-10-31" id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="w">  </span><span class="nx">Enable</span><span class="p">:</span><span class="w">      </span><span class="kc">true</span><span class="p">,</span>
+<a href="#__codelineno-10-32" id="__codelineno-10-32" name="__codelineno-10-32"></a><span class="w">  </span><span class="nx">Healthy</span><span class="p">:</span><span class="w">     </span><span class="kc">true</span><span class="p">,</span>
+<a href="#__codelineno-10-33" id="__codelineno-10-33" name="__codelineno-10-33"></a><span class="w">  </span><span class="nx">Ephemeral</span><span class="p">:</span><span class="w">   </span><span class="kc">true</span><span class="p">,</span>
+<a href="#__codelineno-10-34" id="__codelineno-10-34" name="__codelineno-10-34"></a><span class="w">  </span><span class="nx">Metadata</span><span class="p">:</span><span class="w">    </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span><span class="s">"idc"</span><span class="p">:</span><span class="w"> </span><span class="s">"shanghai"</span><span class="p">},</span>
+<a href="#__codelineno-10-35" id="__codelineno-10-35" name="__codelineno-10-35"></a><span class="p">})</span>
+<a href="#__codelineno-10-36" id="__codelineno-10-36" name="__codelineno-10-36"></a>
+<a href="#__codelineno-10-37" id="__codelineno-10-37" name="__codelineno-10-37"></a><span class="c1">//DeRegister 注销服务</span>
+<a href="#__codelineno-10-38" id="__codelineno-10-38" name="__codelineno-10-38"></a><span class="nx">deRegisterServiceInstance</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span><span class="w"> </span><span class="nx">vo</span><span class="p">.</span><span class="nx">DeregisterInstanceParam</span><span class="p">{</span>
+<a href="#__codelineno-10-39" id="__codelineno-10-39" name="__codelineno-10-39"></a><span class="w">  </span><span class="nx">Ip</span><span class="p">:</span><span class="w">          </span><span class="s">"10.0.0.10"</span><span class="p">,</span>
+<a href="#__codelineno-10-40" id="__codelineno-10-40" name="__codelineno-10-40"></a><span class="w">  </span><span class="nx">Port</span><span class="p">:</span><span class="w">        </span><span class="mi">8848</span><span class="p">,</span>
+<a href="#__codelineno-10-41" id="__codelineno-10-41" name="__codelineno-10-41"></a><span class="w">  </span><span class="nx">ServiceName</span><span class="p">:</span><span class="w"> </span><span class="s">"demo.go"</span><span class="p">,</span>
+<a href="#__codelineno-10-42" id="__codelineno-10-42" name="__codelineno-10-42"></a><span class="w">  </span><span class="nx">GroupName</span><span class="p">:</span><span class="w">   </span><span class="s">"group-a"</span><span class="p">,</span>
+<a href="#__codelineno-10-43" id="__codelineno-10-43" name="__codelineno-10-43"></a><span class="w">  </span><span class="nx">Cluster</span><span class="p">:</span><span class="w">     </span><span class="s">"cluster-a"</span><span class="p">,</span>
+<a href="#__codelineno-10-44" id="__codelineno-10-44" name="__codelineno-10-44"></a><span class="w">  </span><span class="nx">Ephemeral</span><span class="p">:</span><span class="w">   </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">//must be true</span>
+<a href="#__codelineno-10-45" id="__codelineno-10-45" name="__codelineno-10-45"></a><span class="p">})</span>
+</code></pre></div>
+</li>
+<li>
+<p>配置加载</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1">//create ServerConfig,配置 Nacos 服务器的地址</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="nx">sc</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">[]</span><span class="nx">constant</span><span class="p">.</span><span class="nx">ServerConfig</span><span class="p">{</span>
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">  </span><span class="o">*</span><span class="nx">constant</span><span class="p">.</span><span class="nx">NewServerConfig</span><span class="p">(</span><span class="s">"127.0.0.1"</span><span class="p">,</span><span class="w"> </span><span class="mi">8848</span><span class="p">,</span><span class="w"> </span><span class="nx">constant</span><span class="p">.</span><span class="nx">WithContextPath</span><span class="p">(</span><span class="s">"/nacos"</span><span class="p">)),</span>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="p">}</span>
+<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a>
+<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="c1">//create ClientConfig，配置客户端的链接配置</span>
+<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="nx">cc</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">*</span><span class="nx">constant</span><span class="p">.</span><span class="nx">NewClientConfig</span><span class="p">(</span>
+<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">  </span><span class="nx">constant</span><span class="p">.</span><span class="nx">WithNamespaceId</span><span class="p">(</span><span class="s">"public"</span><span class="p">),</span><span class="w"> </span><span class="c1">//命名空间 ID</span>
+<a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">  </span><span class="nx">constant</span><span class="p">.</span><span class="nx">WithTimeoutMs</span><span class="p">(</span><span class="mi">5000</span><span class="p">),</span><span class="w"> </span><span class="c1">// 超时时间</span>
+<a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">  </span><span class="nx">constant</span><span class="p">.</span><span class="nx">WithLogDir</span><span class="p">(</span><span class="s">"/tmp/nacos/log"</span><span class="p">),</span><span class="w"> </span><span class="c1">//日志地址</span>
+<a href="#__codelineno-11-11" id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">  </span><span class="nx">constant</span><span class="p">.</span><span class="nx">WithCacheDir</span><span class="p">(</span><span class="s">"/tmp/nacos/cache"</span><span class="p">),</span><span class="w"> </span><span class="c1">// Nacos 服务缓存的地址</span>
+<a href="#__codelineno-11-12" id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">  </span><span class="nx">constant</span><span class="p">.</span><span class="nx">WithLogLevel</span><span class="p">(</span><span class="s">"debug"</span><span class="p">),</span><span class="w"> </span><span class="c1">// 日志级别</span>
+<a href="#__codelineno-11-13" id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="p">)</span>
+<a href="#__codelineno-11-14" id="__codelineno-11-14" name="__codelineno-11-14"></a>
+<a href="#__codelineno-11-15" id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="c1">// 通过 ServerConfig 和 ClientConfig 创建 nacosclient 链接</span>
+<a href="#__codelineno-11-16" id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="nx">client</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">clients</span><span class="p">.</span><span class="nx">NewNamingClient</span><span class="p">(</span>
+<a href="#__codelineno-11-17" id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="w">  </span><span class="nx">vo</span><span class="p">.</span><span class="nx">NacosClientParam</span><span class="p">{</span>
+<a href="#__codelineno-11-18" id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="w">    </span><span class="nx">ClientConfig</span><span class="p">:</span><span class="w">  </span><span class="o">&amp;</span><span class="nx">cc</span><span class="p">,</span>
+<a href="#__codelineno-11-19" id="__codelineno-11-19" name="__codelineno-11-19"></a><span class="w">    </span><span class="nx">ServerConfigs</span><span class="p">:</span><span class="w"> </span><span class="nx">sc</span><span class="p">,</span>
+<a href="#__codelineno-11-20" id="__codelineno-11-20" name="__codelineno-11-20"></a><span class="w">  </span><span class="p">},</span>
+<a href="#__codelineno-11-21" id="__codelineno-11-21" name="__codelineno-11-21"></a><span class="p">)</span>
+<a href="#__codelineno-11-22" id="__codelineno-11-22" name="__codelineno-11-22"></a>
+<a href="#__codelineno-11-23" id="__codelineno-11-23" name="__codelineno-11-23"></a><span class="c1">//get config 获取配置</span>
+<a href="#__codelineno-11-24" id="__codelineno-11-24" name="__codelineno-11-24"></a><span class="nx">content</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">GetConfig</span><span class="p">(</span><span class="nx">vo</span><span class="p">.</span><span class="nx">ConfigParam</span><span class="p">{</span>
+<a href="#__codelineno-11-25" id="__codelineno-11-25" name="__codelineno-11-25"></a><span class="w">  </span><span class="nx">DataId</span><span class="p">:</span><span class="w"> </span><span class="s">"test-data"</span><span class="p">,</span>
+<a href="#__codelineno-11-26" id="__codelineno-11-26" name="__codelineno-11-26"></a><span class="w">  </span><span class="nx">Group</span><span class="p">:</span><span class="w">  </span><span class="s">"test-group"</span><span class="p">,</span>
+<a href="#__codelineno-11-27" id="__codelineno-11-27" name="__codelineno-11-27"></a><span class="p">})</span>
+<a href="#__codelineno-11-28" id="__codelineno-11-28" name="__codelineno-11-28"></a><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"GetConfig,config :"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">content</span><span class="p">)</span>
+<a href="#__codelineno-11-29" id="__codelineno-11-29" name="__codelineno-11-29"></a>
+<a href="#__codelineno-11-30" id="__codelineno-11-30" name="__codelineno-11-30"></a><span class="c1">//Listen config change,key=dataId+group+namespaceId. 监听配置改变</span>
+<a href="#__codelineno-11-31" id="__codelineno-11-31" name="__codelineno-11-31"></a><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">ListenConfig</span><span class="p">(</span><span class="nx">vo</span><span class="p">.</span><span class="nx">ConfigParam</span><span class="p">{</span>
+<a href="#__codelineno-11-32" id="__codelineno-11-32" name="__codelineno-11-32"></a><span class="w">  </span><span class="nx">DataId</span><span class="p">:</span><span class="w"> </span><span class="s">"test-data"</span><span class="p">,</span>
+<a href="#__codelineno-11-33" id="__codelineno-11-33" name="__codelineno-11-33"></a><span class="w">  </span><span class="nx">Group</span><span class="p">:</span><span class="w">  </span><span class="s">"test-group"</span><span class="p">,</span>
+<a href="#__codelineno-11-34" id="__codelineno-11-34" name="__codelineno-11-34"></a><span class="w">  </span><span class="nx">OnChange</span><span class="p">:</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">namespace</span><span class="p">,</span><span class="w"> </span><span class="nx">group</span><span class="p">,</span><span class="w"> </span><span class="nx">dataId</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-11-35" id="__codelineno-11-35" name="__codelineno-11-35"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"config changed group:"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", dataId:"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">dataId</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", content:"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span>
+<a href="#__codelineno-11-36" id="__codelineno-11-36" name="__codelineno-11-36"></a><span class="w">  </span><span class="p">},</span>
+<a href="#__codelineno-11-37" id="__codelineno-11-37" name="__codelineno-11-37"></a><span class="p">})</span>
+</code></pre></div>
+</li>
+<li>
+<p>如需添加 Nacos 的更多特性，可参考<a href="https://github.com/nacos-group/nacos-sdk-go">更多使用方式</a></p>
+</li>
+</ol>
+<h2 id="python">Python 框架<a class="headerlink" href="#python" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>获取依赖</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>pip<span class="w"> </span>install<span class="w"> </span>nacos-sdk-python
+</code></pre></div>
+</li>
+<li>
+<p>代码接入</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kn">import</span> <span class="nn">nacos</span>
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="c1"># Nacos server地址</span>
+<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="n">SERVER_ADDRESSES</span> <span class="o">=</span> <span class="s2">"127.0.0.1:8848"</span>
+<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="c1"># 命名空间 ID</span>
+<a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="n">NAMESPACE</span> <span class="o">=</span> <span class="s2">"public"</span>
+<a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a>
+<a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="n">client</span> <span class="o">=</span> <span class="n">nacos</span><span class="o">.</span><span class="n">NacosClient</span><span class="p">(</span><span class="n">SERVER_ADDRESSES</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="n">NAMESPACE</span><span class="p">)</span>
+<a href="#__codelineno-13-9" id="__codelineno-13-9" name="__codelineno-13-9"></a>
+<a href="#__codelineno-13-10" id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="c1"># 注册服务</span>
+<a href="#__codelineno-13-11" id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="n">client</span><span class="o">.</span><span class="n">add_naming_instance</span><span class="p">(</span><span class="s2">"test.service1"</span><span class="p">,</span> <span class="s2">"1.0.0.7"</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="s2">"testCluster2"</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">"</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<a href="#__codelineno-13-12" id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="c1"># 发送心跳</span>
+<a href="#__codelineno-13-13" id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="n">client</span><span class="o">.</span><span class="n">send_heartbeat</span><span class="p">(</span><span class="s2">"test.service"</span><span class="p">,</span> <span class="s2">"1.0.0.7"</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="s2">"testCluster2"</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">"</span><span class="si">{}</span><span class="s2">"</span><span class="p">)</span>
+<a href="#__codelineno-13-14" id="__codelineno-13-14" name="__codelineno-13-14"></a>
+<a href="#__codelineno-13-15" id="__codelineno-13-15" name="__codelineno-13-15"></a>
+<a href="#__codelineno-13-16" id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="c1"># get config</span>
+<a href="#__codelineno-13-17" id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="n">data_id</span> <span class="o">=</span> <span class="s2">"dev-config"</span>
+<a href="#__codelineno-13-18" id="__codelineno-13-18" name="__codelineno-13-18"></a><span class="n">group</span> <span class="o">=</span> <span class="s2">"DEFAULT_GROUP"</span>
+<a href="#__codelineno-13-19" id="__codelineno-13-19" name="__codelineno-13-19"></a>
+<a href="#__codelineno-13-20" id="__codelineno-13-20" name="__codelineno-13-20"></a><span class="c1"># 全局服务配置</span>
+<a href="#__codelineno-13-21" id="__codelineno-13-21" name="__codelineno-13-21"></a><span class="n">server_config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">get_config</span><span class="p">(</span><span class="n">data_id</span><span class="p">,</span> <span class="n">group</span><span class="p">))</span>
+<a href="#__codelineno-13-22" id="__codelineno-13-22" name="__codelineno-13-22"></a>
+<a href="#__codelineno-13-23" id="__codelineno-13-23" name="__codelineno-13-23"></a><span class="c1"># 当服务配置发生变化</span>
+<a href="#__codelineno-13-24" id="__codelineno-13-24" name="__codelineno-13-24"></a><span class="k">def</span> <span class="nf">config_update</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<a href="#__codelineno-13-25" id="__codelineno-13-25" name="__codelineno-13-25"></a>    <span class="k">global</span> <span class="n">server_config</span>
+<a href="#__codelineno-13-26" id="__codelineno-13-26" name="__codelineno-13-26"></a>    <span class="n">server_config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'content'</span><span class="p">])</span>
+<a href="#__codelineno-13-27" id="__codelineno-13-27" name="__codelineno-13-27"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'new data-&gt;'</span><span class="p">,</span> <span class="n">server_config</span><span class="p">)</span>
+<a href="#__codelineno-13-28" id="__codelineno-13-28" name="__codelineno-13-28"></a>
+<a href="#__codelineno-13-29" id="__codelineno-13-29" name="__codelineno-13-29"></a><span class="c1"># 监听服务配置变化</span>
+<a href="#__codelineno-13-30" id="__codelineno-13-30" name="__codelineno-13-30"></a><span class="n">client</span><span class="o">.</span><span class="n">add_config_watcher</span><span class="p">(</span><span class="n">data_id</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">config_update</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>如需添加 Nacos 的更多特性，可参考<a href="https://github.com/nacos-group/nacos-sdk-python">更多使用方式</a></p>
+</li>
+</ol>
+<h2 id="nodejs">Node.js 框架<a class="headerlink" href="#nodejs" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>添加依赖</p>
+<p>需要使用 <code>2.x</code> 以上的版本</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>npm<span class="w"> </span>install<span class="w"> </span>nacos<span class="w"> </span>--save
+</code></pre></div>
+</li>
+<li>
+<p>添加服务发现的代码逻辑</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="s1">'use strict'</span><span class="p">;</span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">NacosNamingClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'nacos'</span><span class="p">).</span><span class="nx">NacosNamingClient</span><span class="p">;</span>
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">console</span><span class="p">;</span>
+<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a>
+<a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">NacosNamingClient</span><span class="p">({</span>
+<a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">  </span><span class="nx">logger</span><span class="p">,</span>
+<a href="#__codelineno-15-8" id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="w">  </span><span class="nx">serverList</span><span class="o">:</span><span class="w"> </span><span class="s1">'127.0.0.1:8848'</span><span class="p">,</span><span class="w"> </span><span class="c1">// Nacos 服务地址</span>
+<a href="#__codelineno-15-9" id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">  </span><span class="nx">namespace</span><span class="o">:</span><span class="w"> </span><span class="s1">'public'</span><span class="p">,</span><span class="w"> </span><span class="c1">//命名空间ID</span>
+<a href="#__codelineno-15-10" id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="p">});</span>
+<a href="#__codelineno-15-11" id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">ready</span><span class="p">();</span>
+<a href="#__codelineno-15-12" id="__codelineno-15-12" name="__codelineno-15-12"></a>
+<a href="#__codelineno-15-13" id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="kd">const</span><span class="w"> </span><span class="nx">serviceName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'nodejs.test.domain'</span><span class="p">;</span>
+<a href="#__codelineno-15-14" id="__codelineno-15-14" name="__codelineno-15-14"></a>
+<a href="#__codelineno-15-15" id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="c1">// 注册服务</span>
+<a href="#__codelineno-15-16" id="__codelineno-15-16" name="__codelineno-15-16"></a><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">registerInstance</span><span class="p">(</span><span class="nx">serviceName</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-15-17" id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="w">  </span><span class="nx">ip</span><span class="o">:</span><span class="w"> </span><span class="s1">'1.1.1.1'</span><span class="p">,</span>
+<a href="#__codelineno-15-18" id="__codelineno-15-18" name="__codelineno-15-18"></a><span class="w">  </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="mf">8080</span><span class="p">,</span>
+<a href="#__codelineno-15-19" id="__codelineno-15-19" name="__codelineno-15-19"></a><span class="p">});</span>
+<a href="#__codelineno-15-20" id="__codelineno-15-20" name="__codelineno-15-20"></a><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">registerInstance</span><span class="p">(</span><span class="nx">serviceName</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-15-21" id="__codelineno-15-21" name="__codelineno-15-21"></a><span class="w">  </span><span class="nx">ip</span><span class="o">:</span><span class="w"> </span><span class="s1">'2.2.2.2'</span><span class="p">,</span>
+<a href="#__codelineno-15-22" id="__codelineno-15-22" name="__codelineno-15-22"></a><span class="w">  </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="mf">8080</span><span class="p">,</span>
+<a href="#__codelineno-15-23" id="__codelineno-15-23" name="__codelineno-15-23"></a><span class="p">});</span>
+<a href="#__codelineno-15-24" id="__codelineno-15-24" name="__codelineno-15-24"></a>
+<a href="#__codelineno-15-25" id="__codelineno-15-25" name="__codelineno-15-25"></a><span class="c1">// 订阅服务</span>
+<a href="#__codelineno-15-26" id="__codelineno-15-26" name="__codelineno-15-26"></a><span class="nx">client</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">serviceName</span><span class="p">,</span><span class="w"> </span><span class="nx">hosts</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-15-27" id="__codelineno-15-27" name="__codelineno-15-27"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hosts</span><span class="p">);</span>
+<a href="#__codelineno-15-28" id="__codelineno-15-28" name="__codelineno-15-28"></a><span class="p">});</span>
+<a href="#__codelineno-15-29" id="__codelineno-15-29" name="__codelineno-15-29"></a>
+<a href="#__codelineno-15-30" id="__codelineno-15-30" name="__codelineno-15-30"></a><span class="c1">// 注销服务</span>
+<a href="#__codelineno-15-31" id="__codelineno-15-31" name="__codelineno-15-31"></a><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">deregisterInstance</span><span class="p">(</span><span class="nx">serviceName</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-15-32" id="__codelineno-15-32" name="__codelineno-15-32"></a><span class="w">  </span><span class="nx">ip</span><span class="o">:</span><span class="w"> </span><span class="s1">'1.1.1.1'</span><span class="p">,</span>
+<a href="#__codelineno-15-33" id="__codelineno-15-33" name="__codelineno-15-33"></a><span class="w">  </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="mf">8080</span><span class="p">,</span>
+<a href="#__codelineno-15-34" id="__codelineno-15-34" name="__codelineno-15-34"></a><span class="p">});</span>
+</code></pre></div>
+</li>
+<li>
+<p>添加动态配置的代码逻辑</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">NacosConfigClient</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'nacos'</span><span class="p">;</span><span class="w">   </span><span class="c1">// ts</span>
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">NacosConfigClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'nacos'</span><span class="p">).</span><span class="nx">NacosConfigClient</span><span class="p">;</span><span class="w"> </span><span class="c1">// js</span>
+<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>
+<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a>
+<a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">configClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">NacosConfigClient</span><span class="p">({</span>
+<a href="#__codelineno-16-6" id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">  </span><span class="nx">serverAddr</span><span class="o">:</span><span class="w"> </span><span class="s1">'127.0.0.1:8848'</span><span class="p">,</span>
+<a href="#__codelineno-16-7" id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">  </span><span class="nx">namespace</span><span class="o">:</span><span class="w"> </span><span class="s1">'public'</span><span class="p">,</span><span class="w"> </span><span class="c1">//命名空间 ID</span>
+<a href="#__codelineno-16-8" id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="p">});</span>
+<a href="#__codelineno-16-9" id="__codelineno-16-9" name="__codelineno-16-9"></a>
+<a href="#__codelineno-16-10" id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="c1">// 获取配置文件</span>
+<a href="#__codelineno-16-11" id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">content</span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">configClient</span><span class="p">.</span><span class="nx">getConfig</span><span class="p">(</span><span class="s1">'test'</span><span class="p">,</span><span class="w"> </span><span class="s1">'DEFAULT_GROUP'</span><span class="p">);</span><span class="w"> </span><span class="c1">//dataID: test,group: DEFAULT_GROUP</span>
+<a href="#__codelineno-16-12" id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'getConfig = '</span><span class="p">,</span><span class="nx">content</span><span class="p">);</span>
+<a href="#__codelineno-16-13" id="__codelineno-16-13" name="__codelineno-16-13"></a>
+<a href="#__codelineno-16-14" id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="c1">// 监听配置变化</span>
+<a href="#__codelineno-16-15" id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="nx">configClient</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
+<a href="#__codelineno-16-16" id="__codelineno-16-16" name="__codelineno-16-16"></a><span class="w">  </span><span class="nx">dataId</span><span class="o">:</span><span class="w"> </span><span class="s1">'test'</span><span class="p">,</span>
+<a href="#__codelineno-16-17" id="__codelineno-16-17" name="__codelineno-16-17"></a><span class="w">  </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s1">'DEFAULT_GROUP'</span><span class="p">,</span>
+<a href="#__codelineno-16-18" id="__codelineno-16-18" name="__codelineno-16-18"></a><span class="p">},</span><span class="w"> </span><span class="nx">content</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-16-19" id="__codelineno-16-19" name="__codelineno-16-19"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
+<a href="#__codelineno-16-20" id="__codelineno-16-20" name="__codelineno-16-20"></a><span class="p">});</span>
+</code></pre></div>
+</li>
+<li>
+<p>如需添加 Nacos 的更多特性，可参考<a href="https://github.com/nacos-group/nacos-sdk-nodejs">更多使用方式</a></p>
+</li>
+</ol>
+<h2 id="c">C++ 框架<a class="headerlink" href="#c" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>下载依赖</p>
+<p>下载工程<a href="https://github.com/nacos-group/nacos-sdk-cpp">源代码</a>并执行下述命令:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="nb">cd</span><span class="w"> </span>nacos-sdk-cpp
+<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>cmake<span class="w"> </span>.
+<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>make
+</code></pre></div>
+<p>执行命令后会产生一个 l<code>ibnacos-cli.so</code> 和一个 <code>nacos-cli.out</code> 文件</p>
+</li>
+<li>
+<p>运行 <code>make install</code> 将 <code>libnacos-cli</code> 安装到 <code>lib</code> 目录</p>
+</li>
+<li>
+<p>在服务代码中添加服务注册的代码逻辑</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span>
+<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"Nacos.h"</span>
+<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a>
+<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">nacos</span><span class="p">;</span>
+<a href="#__codelineno-18-7" id="__codelineno-18-7" name="__codelineno-18-7"></a>
+<a href="#__codelineno-18-8" id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-18-9" id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="w">    </span><span class="n">Properties</span><span class="w"> </span><span class="n">configProps</span><span class="p">;</span>
+<a href="#__codelineno-18-10" id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="w">    </span><span class="n">configProps</span><span class="p">[</span><span class="n">PropertyKeyConst</span><span class="o">::</span><span class="n">SERVER_ADDR</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"127.0.0.1"</span><span class="p">;</span><span class="w"> </span><span class="c1">// nacos 服务地址</span>
+<a href="#__codelineno-18-11" id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="w">    </span><span class="n">configProps</span><span class="p">[</span><span class="n">PropertyKeyConst</span><span class="o">::</span><span class="n">NAMESPACE</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"public"</span><span class="p">;</span><span class="w"> </span><span class="c1">// 命名空间ID</span>
+<a href="#__codelineno-18-12" id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="w">    </span><span class="n">NacosServiceFactory</span><span class="w"> </span><span class="o">*</span><span class="n">factory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NacosServiceFactory</span><span class="p">(</span><span class="n">configProps</span><span class="p">);</span>
+<a href="#__codelineno-18-13" id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="w">    </span><span class="n">ResourceGuard</span><span class="w"> </span><span class="o">&lt;</span><span class="n">NacosServiceFactory</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_guardFactory</span><span class="p">(</span><span class="n">factory</span><span class="p">);</span>
+<a href="#__codelineno-18-14" id="__codelineno-18-14" name="__codelineno-18-14"></a><span class="w">    </span><span class="n">NamingService</span><span class="w"> </span><span class="o">*</span><span class="n">namingSvc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="o">-&gt;</span><span class="n">CreateNamingService</span><span class="p">();</span>
+<a href="#__codelineno-18-15" id="__codelineno-18-15" name="__codelineno-18-15"></a><span class="w">    </span><span class="n">ResourceGuard</span><span class="w"> </span><span class="o">&lt;</span><span class="n">NamingService</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_serviceFactory</span><span class="p">(</span><span class="n">namingSvc</span><span class="p">);</span>
+<a href="#__codelineno-18-16" id="__codelineno-18-16" name="__codelineno-18-16"></a><span class="w">    </span><span class="n">Instance</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
+<a href="#__codelineno-18-17" id="__codelineno-18-17" name="__codelineno-18-17"></a><span class="w">    </span><span class="n">instance</span><span class="p">.</span><span class="n">clusterName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"DEFAULT"</span><span class="p">;</span>
+<a href="#__codelineno-18-18" id="__codelineno-18-18" name="__codelineno-18-18"></a><span class="w">    </span><span class="n">instance</span><span class="p">.</span><span class="n">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"127.0.0.1"</span><span class="p">;</span>
+<a href="#__codelineno-18-19" id="__codelineno-18-19" name="__codelineno-18-19"></a><span class="w">    </span><span class="n">instance</span><span class="p">.</span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2333</span><span class="p">;</span>
+<a href="#__codelineno-18-20" id="__codelineno-18-20" name="__codelineno-18-20"></a><span class="w">    </span><span class="n">instance</span><span class="p">.</span><span class="n">instanceId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"1"</span><span class="p">;</span>
+<a href="#__codelineno-18-21" id="__codelineno-18-21" name="__codelineno-18-21"></a><span class="w">    </span><span class="n">instance</span><span class="p">.</span><span class="n">ephemeral</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a href="#__codelineno-18-22" id="__codelineno-18-22" name="__codelineno-18-22"></a>
+<a href="#__codelineno-18-23" id="__codelineno-18-23" name="__codelineno-18-23"></a><span class="w">    </span><span class="c1">//模拟注册5个服务</span>
+<a href="#__codelineno-18-24" id="__codelineno-18-24" name="__codelineno-18-24"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-18-25" id="__codelineno-18-25" name="__codelineno-18-25"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-18-26" id="__codelineno-18-26" name="__codelineno-18-26"></a><span class="w">            </span><span class="n">NacosString</span><span class="w"> </span><span class="n">serviceName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"TestNamingService"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">NacosStringOps</span><span class="o">::</span><span class="n">valueOf</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<a href="#__codelineno-18-27" id="__codelineno-18-27" name="__codelineno-18-27"></a><span class="w">            </span><span class="n">instance</span><span class="p">.</span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a href="#__codelineno-18-28" id="__codelineno-18-28" name="__codelineno-18-28"></a><span class="w">            </span><span class="n">namingSvc</span><span class="o">-&gt;</span><span class="n">registerInstance</span><span class="p">(</span><span class="n">serviceName</span><span class="p">,</span><span class="w"> </span><span class="n">instance</span><span class="p">);</span>
+<a href="#__codelineno-18-29" id="__codelineno-18-29" name="__codelineno-18-29"></a><span class="w">        </span><span class="p">}</span>
+<a href="#__codelineno-18-30" id="__codelineno-18-30" name="__codelineno-18-30"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-18-31" id="__codelineno-18-31" name="__codelineno-18-31"></a><span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NacosException</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-18-32" id="__codelineno-18-32" name="__codelineno-18-32"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"encounter exception while registering service instance, raison:"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a href="#__codelineno-18-33" id="__codelineno-18-33" name="__codelineno-18-33"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<a href="#__codelineno-18-34" id="__codelineno-18-34" name="__codelineno-18-34"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-18-35" id="__codelineno-18-35" name="__codelineno-18-35"></a><span class="w">    </span><span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+<a href="#__codelineno-18-36" id="__codelineno-18-36" name="__codelineno-18-36"></a><span class="w">    </span><span class="c1">//注销服务</span>
+<a href="#__codelineno-18-37" id="__codelineno-18-37" name="__codelineno-18-37"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-18-38" id="__codelineno-18-38" name="__codelineno-18-38"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-18-39" id="__codelineno-18-39" name="__codelineno-18-39"></a><span class="w">            </span><span class="n">NacosString</span><span class="w"> </span><span class="n">serviceName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"TestNamingService"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">NacosStringOps</span><span class="o">::</span><span class="n">valueOf</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<a href="#__codelineno-18-40" id="__codelineno-18-40" name="__codelineno-18-40"></a>
+<a href="#__codelineno-18-41" id="__codelineno-18-41" name="__codelineno-18-41"></a><span class="w">            </span><span class="n">namingSvc</span><span class="o">-&gt;</span><span class="n">deregisterInstance</span><span class="p">(</span><span class="n">serviceName</span><span class="p">,</span><span class="w"> </span><span class="s">"127.0.0.1"</span><span class="p">,</span><span class="w"> </span><span class="mi">2000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<a href="#__codelineno-18-42" id="__codelineno-18-42" name="__codelineno-18-42"></a><span class="w">            </span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a href="#__codelineno-18-43" id="__codelineno-18-43" name="__codelineno-18-43"></a><span class="w">        </span><span class="p">}</span>
+<a href="#__codelineno-18-44" id="__codelineno-18-44" name="__codelineno-18-44"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-18-45" id="__codelineno-18-45" name="__codelineno-18-45"></a><span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NacosException</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-18-46" id="__codelineno-18-46" name="__codelineno-18-46"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"encounter exception while registering service instance, raison:"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a href="#__codelineno-18-47" id="__codelineno-18-47" name="__codelineno-18-47"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<a href="#__codelineno-18-48" id="__codelineno-18-48" name="__codelineno-18-48"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-18-49" id="__codelineno-18-49" name="__codelineno-18-49"></a><span class="w">    </span><span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+<a href="#__codelineno-18-50" id="__codelineno-18-50" name="__codelineno-18-50"></a>
+<a href="#__codelineno-18-51" id="__codelineno-18-51" name="__codelineno-18-51"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a href="#__codelineno-18-52" id="__codelineno-18-52" name="__codelineno-18-52"></a><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>添加动态配置的代码逻辑</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"Nacos.h"</span>
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a>
+<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a href="#__codelineno-19-5" id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">nacos</span><span class="p">;</span>
+<a href="#__codelineno-19-6" id="__codelineno-19-6" name="__codelineno-19-6"></a>
+<a href="#__codelineno-19-7" id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyListener</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Listener</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-19-8" id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="k">private</span><span class="o">:</span>
+<a href="#__codelineno-19-9" id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<a href="#__codelineno-19-10" id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="k">public</span><span class="o">:</span>
+<a href="#__codelineno-19-11" id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="w">    </span><span class="n">MyListener</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-19-12" id="__codelineno-19-12" name="__codelineno-19-12"></a><span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<a href="#__codelineno-19-13" id="__codelineno-19-13" name="__codelineno-19-13"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-19-14" id="__codelineno-19-14" name="__codelineno-19-14"></a>
+<a href="#__codelineno-19-15" id="__codelineno-19-15" name="__codelineno-19-15"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">receiveConfigInfo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">NacosString</span><span class="w"> </span><span class="o">&amp;</span><span class="n">configInfo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-19-16" id="__codelineno-19-16" name="__codelineno-19-16"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"==================================="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a href="#__codelineno-19-17" id="__codelineno-19-17" name="__codelineno-19-17"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Watcher"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a href="#__codelineno-19-18" id="__codelineno-19-18" name="__codelineno-19-18"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Watched Key UPDATED:"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">configInfo</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a href="#__codelineno-19-19" id="__codelineno-19-19" name="__codelineno-19-19"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"==================================="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a href="#__codelineno-19-20" id="__codelineno-19-20" name="__codelineno-19-20"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-19-21" id="__codelineno-19-21" name="__codelineno-19-21"></a><span class="p">};</span>
+<a href="#__codelineno-19-22" id="__codelineno-19-22" name="__codelineno-19-22"></a>
+<a href="#__codelineno-19-23" id="__codelineno-19-23" name="__codelineno-19-23"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-19-24" id="__codelineno-19-24" name="__codelineno-19-24"></a><span class="w">    </span><span class="n">Properties</span><span class="w"> </span><span class="n">props</span><span class="p">;</span>
+<a href="#__codelineno-19-25" id="__codelineno-19-25" name="__codelineno-19-25"></a><span class="w">    </span><span class="n">props</span><span class="p">[</span><span class="n">PropertyKeyConst</span><span class="o">::</span><span class="n">SERVER_ADDR</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"127.0.0.1:8848"</span><span class="p">;</span><span class="w"> </span><span class="c1">//nacos地址</span>
+<a href="#__codelineno-19-26" id="__codelineno-19-26" name="__codelineno-19-26"></a><span class="w">    </span><span class="n">props</span><span class="p">[</span><span class="n">PropertyKeyConst</span><span class="o">::</span><span class="n">NAMESPACE</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"public"</span><span class="p">;</span><span class="w"> </span><span class="c1">// 命名空间ID</span>
+<a href="#__codelineno-19-27" id="__codelineno-19-27" name="__codelineno-19-27"></a><span class="w">    </span><span class="n">NacosServiceFactory</span><span class="w"> </span><span class="o">*</span><span class="n">factory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NacosServiceFactory</span><span class="p">(</span><span class="n">props</span><span class="p">);</span>
+<a href="#__codelineno-19-28" id="__codelineno-19-28" name="__codelineno-19-28"></a><span class="w">    </span><span class="n">ResourceGuard</span><span class="w"> </span><span class="o">&lt;</span><span class="n">NacosServiceFactory</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_guardFactory</span><span class="p">(</span><span class="n">factory</span><span class="p">);</span>
+<a href="#__codelineno-19-29" id="__codelineno-19-29" name="__codelineno-19-29"></a><span class="w">    </span><span class="n">ConfigService</span><span class="w"> </span><span class="o">*</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="o">-&gt;</span><span class="n">CreateConfigService</span><span class="p">();</span>
+<a href="#__codelineno-19-30" id="__codelineno-19-30" name="__codelineno-19-30"></a><span class="w">    </span><span class="n">ResourceGuard</span><span class="w"> </span><span class="o">&lt;</span><span class="n">ConfigService</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_serviceFactory</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<a href="#__codelineno-19-31" id="__codelineno-19-31" name="__codelineno-19-31"></a>
+<a href="#__codelineno-19-32" id="__codelineno-19-32" name="__codelineno-19-32"></a><span class="w">    </span><span class="n">MyListener</span><span class="w"> </span><span class="o">*</span><span class="n">theListener</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyListener</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="c1">//You don't need to free it, since it will be deleted by the function removeListener</span>
+<a href="#__codelineno-19-33" id="__codelineno-19-33" name="__codelineno-19-33"></a><span class="w">    </span><span class="n">n</span><span class="o">-&gt;</span><span class="n">addListener</span><span class="p">(</span><span class="s">"dqid"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEFAULT_GROUP"</span><span class="p">,</span><span class="w"> </span><span class="n">theListener</span><span class="p">);</span><span class="c1">//dataID为"dqid"并且group为"DEFAULT_GROUP"的配置改变都将监听到</span>
+<a href="#__codelineno-19-34" id="__codelineno-19-34" name="__codelineno-19-34"></a>
+<a href="#__codelineno-19-35" id="__codelineno-19-35" name="__codelineno-19-35"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Input a character to continue"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a href="#__codelineno-19-36" id="__codelineno-19-36" name="__codelineno-19-36"></a><span class="w">    </span><span class="n">getchar</span><span class="p">();</span>
+<a href="#__codelineno-19-37" id="__codelineno-19-37" name="__codelineno-19-37"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"remove listener"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a href="#__codelineno-19-38" id="__codelineno-19-38" name="__codelineno-19-38"></a><span class="w">    </span><span class="n">n</span><span class="o">-&gt;</span><span class="n">removeListener</span><span class="p">(</span><span class="s">"dqid"</span><span class="p">,</span><span class="w"> </span><span class="n">NULLSTR</span><span class="p">,</span><span class="w"> </span><span class="n">theListener</span><span class="p">);</span><span class="c1">//取消监听</span>
+<a href="#__codelineno-19-39" id="__codelineno-19-39" name="__codelineno-19-39"></a><span class="w">    </span><span class="n">getchar</span><span class="p">();</span>
+<a href="#__codelineno-19-40" id="__codelineno-19-40" name="__codelineno-19-40"></a>
+<a href="#__codelineno-19-41" id="__codelineno-19-41" name="__codelineno-19-41"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a href="#__codelineno-19-42" id="__codelineno-19-42" name="__codelineno-19-42"></a><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>如需添加 Nacos 的更多特性，可参考<a href="https://github.com/nacos-group/nacos-sdk-cpp/blob/master/README_zh_CN.md">更多使用方式</a></p>
+</li>
+</ol>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年10月7日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 接入 Sentinel" class="md-footer__link md-footer__link--prev" href="sentinel.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                接入 Sentinel
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 接入 Sentinel 监控能力" class="md-footer__link md-footer__link--next" href="monitor.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                接入 Sentinel 监控能力
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../../stylesheets/zoom_image.js"></script>
+<script src="../../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

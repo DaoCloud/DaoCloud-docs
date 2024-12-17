@@ -1,0 +1,1565 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/mspider/user-guide/traffic-monitor/monitoring-indicators.html" rel="canonical"/>
+<link href="conn-topo.html" rel="prev"/>
+<link href="indicator-readtips.html" rel="next"/>
+<link href="../../../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>监控看板指标说明 - DaoCloud Enterprise</title>
+<link href="../../../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../../../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              监控看板指标说明
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../blogs/index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            产品文档
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dce/index.html">
+<span class="md-ellipsis">
+    文档导航
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+<span class="md-ellipsis">
+    探索和安装
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            探索和安装
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../dce/license0.html">
+<span class="md-ellipsis">
+    产品介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../install/index.html">
+<span class="md-ellipsis">
+    安装教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dce/bphome.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dce/faq.html">
+<span class="md-ellipsis">
+    常见问题
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+<span class="md-ellipsis">
+    工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            工作台
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../amamba/intro/index.html">
+<span class="md-ellipsis">
+    应用工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+<span class="md-ellipsis">
+    容器
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            容器
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kpanda/intro/index.html">
+<span class="md-ellipsis">
+    容器管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kairship/intro/index.html">
+<span class="md-ellipsis">
+    多云编排
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kangaroo/intro/index.html">
+<span class="md-ellipsis">
+    镜像仓库
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../network/intro/index.html">
+<span class="md-ellipsis">
+    云原生网络
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../storage/index.html">
+<span class="md-ellipsis">
+    云原生存储
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../virtnest/intro/index.html">
+<span class="md-ellipsis">
+    虚拟机
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+<span class="md-ellipsis">
+    微服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            微服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../insight/intro/index.html">
+<span class="md-ellipsis">
+    可观测性
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../skoala/intro/index.html">
+<span class="md-ellipsis">
+    微服务引擎
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    服务网格
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_3">
+<span class="md-nav__icon md-icon"></span>
+            服务网格
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../intro/index.html">
+<span class="md-ellipsis">
+    介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../install/install.html">
+<span class="md-ellipsis">
+    安装、配置和升级
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../service-mesh/index.html">
+<span class="md-ellipsis">
+    创建/删除网格
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../service-list/index.html">
+<span class="md-ellipsis">
+    服务管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../traffic-governance/index.html">
+<span class="md-ellipsis">
+    流量治理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../security/index.html">
+<span class="md-ellipsis">
+    安全治理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../sidecar-management/ns-sidecar.html">
+<span class="md-ellipsis">
+    边车管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5_3_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_3_8" id="__nav_2_5_3_8_label" tabindex="0">
+<span class="md-ellipsis">
+    流量监控
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_3_8_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_5_3_8">
+<span class="md-nav__icon md-icon"></span>
+            流量监控
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="index.html">
+<span class="md-ellipsis">
+    流量监控
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="conn-topo.html">
+<span class="md-ellipsis">
+    流量拓扑
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    监控看板指标说明
+  </span>
+<span class="md-status md-status--new" title="最近添加">
+</span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="monitoring-indicators.html">
+<span class="md-ellipsis">
+    监控看板指标说明
+  </span>
+<span class="md-status md-status--new" title="最近添加">
+</span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      全局监控
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      性能监控
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      服务监控
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      工作负载监控
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="indicator-readtips.html">
+<span class="md-ellipsis">
+    图表阅读指南
+  </span>
+<span class="md-status md-status--new" title="最近添加">
+</span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../cluster-management/index.html">
+<span class="md-ellipsis">
+    集群纳管
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../gateway-instance/create.html">
+<span class="md-ellipsis">
+    网格网关
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../multicluster/cluster-interconnect.html">
+<span class="md-ellipsis">
+    网格配置
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../test/ocp.html">
+<span class="md-ellipsis">
+    测试
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../troubleshoot/index.html">
+<span class="md-ellipsis">
+    故障排查
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../best-practice/use-egress-and-authorized-policy.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+<span class="md-ellipsis">
+    数据服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            数据服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../middleware/index.html">
+<span class="md-ellipsis">
+    中间件
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="">
+<span class="md-ellipsis">
+    云原生 AI
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+            云原生 AI
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../baize/intro/index.html">
+<span class="md-ellipsis">
+    AI Lab
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="">
+<span class="md-ellipsis">
+    边缘计算
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+            边缘计算
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kant/intro/index.html">
+<span class="md-ellipsis">
+    云边协同
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="">
+<span class="md-ellipsis">
+    管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            管理
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../ghippo/intro/index.html">
+<span class="md-ellipsis">
+    全局管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../blogs/index.html">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      全局监控
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      性能监控
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      服务监控
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      工作负载监控
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/mspider/user-guide/traffic-monitor/monitoring-indicators.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/mspider/user-guide/traffic-monitor/monitoring-indicators.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/mspider/user-guide/traffic-monitor/monitoring-indicators.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="_1">监控看板指标说明<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<p>本文用于补充介绍，网格实例中流量监控中的各个监控看板的指标的含义，方便用户查询和定义</p>
+<h2 id="_2">全局监控<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p><img alt="全局监控" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/monitoring-indicators1.png"/></p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>参数</th>
+<th>参数介绍</th>
+<th>计算方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>常规</td>
+<td>全局请求总量</td>
+<td>"Global Request Volume" 代表整个服务网格中的请求流量总量，Ops/s 标识每秒执行的操作或请求的数量。在 Istio中，这个度量通常用来评估整个服务网格的流量</td>
+<td>OPS/s = 总操作数 / 时间段（秒）</td>
+</tr>
+<tr>
+<td></td>
+<td>全局成功率（非 5xx 响应）</td>
+<td></td>
+<td>全局成功率（非响应率 5xx） = (总请求 - 5xx 响应) / 总请求 * 100</td>
+</tr>
+<tr>
+<td></td>
+<td>4xxs</td>
+<td>4xxs 是客户端错误，表示请求可能有问题（例如，404 表示未找到）</td>
+<td>ops/s = 每秒收到的 4xx 响应的数量</td>
+</tr>
+<tr>
+<td></td>
+<td>5xxs</td>
+<td>5xxs 是服务器错误，表示服务器未能正确处理有效请求（例如，500 表示内部服务器错误）</td>
+<td>ops/s = 每秒收到的 5xx 响应的数量</td>
+</tr>
+<tr>
+<td></td>
+<td>虚拟服务</td>
+<td>统计一段时间范围内服务网格内的虚拟服务的净增长情况，通过比较添加和删除事件的数量，可以了解服务的动态变化，并可能有助于识别潜在的问题。</td>
+<td>max(Virtual Services &amp;&amp; and) - max(Virtual Services &amp;&amp; delete)</td>
+</tr>
+<tr>
+<td></td>
+<td>目标规则</td>
+<td>统计一段时间范围内服务网格内的目标规则（Destination Rule）的净增长情况，通过比较添加和删除事件的数量，可以了解服务的动态变化，并可能有助于识别潜在的问题。</td>
+<td>max(Destination Rule &amp;&amp; and) - max(Destination Rule &amp;&amp; delete)</td>
+</tr>
+<tr>
+<td></td>
+<td>网关规则</td>
+<td>统计一段时间范围内服务网格内的网关规则（Gateway）的净增长情况，通过比较添加和删除事件的数量，可以了解服务的动态变化，并可能有助于识别潜在的问题。</td>
+<td>max(Gateway &amp;&amp; and) - max(Gateway &amp;&amp; delete)</td>
+</tr>
+<tr>
+<td></td>
+<td>工作负载条目</td>
+<td>统计一段时间内 WorkloadEntry 的增长趋势，通过观察 Workload 的变化，可以快速了解服务的动态变化，并可能有助于识别潜在的问题。</td>
+<td>max(WorkloadEntry &amp;&amp; and) - max(WorkloadEntry &amp;&amp; delete)</td>
+</tr>
+<tr>
+<td></td>
+<td>服务条目</td>
+<td>统计一段时间内 Service Entries 的增长趋势，通过观察 Service Entries 的变化，可以快速了解服务的动态变化，并可能有助于识别潜在的问题。</td>
+<td>max(Service Entries &amp;&amp; and) - max(Service Entries &amp;&amp; delete)</td>
+</tr>
+<tr>
+<td></td>
+<td>对等认证策略</td>
+<td>统计一段时间内 PeerAuthentication Policies 的增长趋势，通过观察 PeerAuthentication Policies 的变化，可以快速了解服务的动态变化，并可能有助于识别潜在的问题。</td>
+<td>max(PeerAuthentication Policies &amp;&amp; and) - max(PeerAuthentication Policies &amp;&amp; delete)</td>
+</tr>
+<tr>
+<td></td>
+<td>请求认证策略</td>
+<td>统计一段时间内 RequestAuthentication Policies 的增长趋势，通过观察 RequestAuthentication Policies 的变化，可以快速了解服务的动态变化，并可能有助于识别潜在的问题。</td>
+<td>max(RequestAuthentication Policies &amp;&amp; and) - max(RequestAuthentication Policies &amp;&amp; delete)</td>
+</tr>
+<tr>
+<td></td>
+<td>授权策略</td>
+<td>统计一段时间内 Authorization Policies 的增长趋势，通过观察 Authorization Policies 的变化，可以快速了解服务的动态变化，并可能有助于识别潜在的问题。</td>
+<td>max(Authorization Policies  &amp;&amp; and) - max(Authorization Policies  &amp;&amp; delete)</td>
+</tr>
+<tr>
+<td>HTTP/GRPC 工作负载</td>
+<td>Service</td>
+<td>服务名称，名称组合服务所在的命名空间和 Kubernetes 的 Service 访问信息</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>工作负载</td>
+<td>工作负载名称，名称组合工作负载所在的命名空间</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>请求量</td>
+<td>请求的数量，表示特定时间段内的请求总数</td>
+<td>sum(rate(istio_requests_total{...}[1m]))</td>
+</tr>
+<tr>
+<td></td>
+<td>P50 延迟</td>
+<td>中位数延迟，50%的请求在的请求延迟在这个时间以下完成</td>
+<td>histogram_quantile(0.50, sum(rate(...))</td>
+</tr>
+<tr>
+<td></td>
+<td>P90 延迟</td>
+<td>90%的请求在的请求延迟在这个时间以下完成</td>
+<td>histogram_quantile(0.90, sum(rate(...))</td>
+</tr>
+<tr>
+<td></td>
+<td>P99 延迟</td>
+<td>99%的请求在的请求延迟在这个时间以下完成</td>
+<td>histogram_quantile(0.99, sum(rate(...))</td>
+</tr>
+<tr>
+<td></td>
+<td>成功率</td>
+<td>成功率，在查询时间段内成功响应（响应状态码不等于 5xx）的请求所占的百分比，</td>
+<td>sum(rate(... response_code!~"5.*")) / sum(rate(...))</td>
+</tr>
+<tr>
+<td>TCP 工作负载</td>
+<td>Service</td>
+<td>工作负载名称，从 Istio 提供的指标中获取destination_service 标签，这个标签包含了服务的名称。</td>
+<td>destination_workload</td>
+</tr>
+<tr>
+<td></td>
+<td>工作负载</td>
+<td>工作负载名称，从 Istio 提供的指标中获取destination_workload 标签，这个标签包含了工作负载的名称。</td>
+<td>destination_service</td>
+</tr>
+<tr>
+<td></td>
+<td>发送字节数</td>
+<td>每秒发送的字节量</td>
+<td>通过 istio_tcp_sent_bytes_total 计算累计的 TCP 字节，使用 rate 计算对应的发送速率</td>
+</tr>
+<tr>
+<td></td>
+<td>接收字节数</td>
+<td>每秒接收的字节量</td>
+<td>通过 istio_tcp_received_bytes_total 计算累计的 TCP 字节，使用 rate 计算对应的发送速率</td>
+</tr>
+<tr>
+<td>基于版本的 Istio 组件</td>
+<td></td>
+<td>Istio 组件构建版本的可视化展示，展示各个组件的版本分布，以及它们在不同集群中的部署情况。这对于了解 Istio 部署的健康状况和一致性非常有用。</td>
+<td>sum(istio_build{mesh_id="$mesh"}) by (component, tag, mesh_cluster)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">性能监控<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p><img alt="性能监控" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/monitoring-indicators2.png"/></p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>参数</th>
+<th>参数介绍</th>
+<th>计算方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VCPU 使用量</td>
+<td>vCPU / 1k rps</td>
+<td>展示 Istio 每千次请求 (1k rps) 所消耗的虚拟 CPU (vCPU) 资源，主要查询了 istio-ingressgateway 和 istio-proxy。为了保障查询效率，Istio 限制仅当 istio-ingressgateway 请求大于 10 时才进行 istio-proxy 统计。</td>
+<td>(sum(irate(container_cpu_usage_seconds_total{namespace!="istio-system",container="istio-proxy"}[1m]))/ (round(sum(irate(istio_requests_total[1m])), 0.001)/1000))/ (sum(irate(istio_requests_total{source_workload="istio-ingressgateway"}[1m])) &gt;bool 10)</td>
+</tr>
+<tr>
+<td></td>
+<td>vCPU</td>
+<td>展示 Istio 中虚拟 CPU (vCPU) 的整体使用情况</td>
+<td></td>
+</tr>
+<tr>
+<td>内存和数据</td>
+<td>内存用量</td>
+<td>展示 Istio 系统组件中的内存使用情况，统计单位为 bytes</td>
+<td>sum(container_memory_working_set_bytes{pod=~"istio-ingressgateway-.<em>"}) / count(container_memory_working_set_bytes{pod=~"istio-ingressgateway-.</em>",container!="POD"})</td>
+</tr>
+<tr>
+<td></td>
+<td>数据传输量 B/s</td>
+<td>展示 Istio 系统组件的的每秒传输的字节数，统计单位为 Bps</td>
+<td>sum(irate(istio_response_bytes_sum{source_workload="istio-ingressgateway", reporter=~"<span class="arithmatex">\(reporter",destination_mesh_id="\)</span>mesh"}[1m]))</td>
+</tr>
+<tr>
+<td>Istio 组件版本</td>
+<td>Istio 组件版本</td>
+<td>展示Istio组件的版本统计信息，图例格式将包括组件名称、标签和网格集群。</td>
+<td>sum(istio_build{mesh_id="$mesh"}) by (component, tag, mesh_cluster)</td>
+</tr>
+<tr>
+<td>边车资源使用率</td>
+<td>内存</td>
+<td>展示边车容器“istio-proxy”的每分钟工作集字节的总和的变化，用于监视Istio代理容器的内存使用情况</td>
+<td>sum(container_memory_working_set_bytes{container="istio-proxy"})</td>
+</tr>
+<tr>
+<td></td>
+<td>vCPU</td>
+<td>展示边车代理（Proxy）资源使用的虚拟CPU（vCPU）统计信息，展示容器“istio-proxy”的CPU使用秒数的速率总和</td>
+<td>sum(rate(container_cpu_usage_seconds_total{container="istio-proxy"}[1m]))</td>
+</tr>
+<tr>
+<td></td>
+<td>磁盘</td>
+<td>展示边车代理（Proxy）资源使用的磁盘统计信息，展示容器“istio-proxy”的文件系统使用字节的总和</td>
+<td>sum(container_fs_usage_bytes{container="istio-proxy"})</td>
+</tr>
+<tr>
+<td>Istiod 资源使用率</td>
+<td>内存</td>
+<td>展示 Istiod 服务的内存使用情况，提供了一个全面的视图： - 总计：Istiod服务在Kubernetes中的总内存使用量 - 容器内存：Istiod服务在Kubernetes中每个容器的内存使用量 包括虚拟内存、常驻内存、堆内存和栈内存等不同类型的内存使用情况。</td>
+<td>总计（Total (k8s)）："sum(container_memory_working_set_bytes{container=~\"discovery|istio-proxy\", pod=~\"istiod-.<em>\"})" 容器内存（{{ container }} (k8s)）："container_memory_working_set_bytes{container=~\"discovery|istio-proxy\", pod=~\"istiod-.</em>\"}"</td>
+</tr>
+<tr>
+<td></td>
+<td>vCPU</td>
+<td>展示Istiod服务的虚拟CPU（vCPU）使用情况，提供了一个全面的视图： - 总计： 显示Istiod服务在Kubernetes中的总CPU使用率 - 容器 CPU 使用率：显示Istiod服务在Kubernetes中每个容器的CPU使用率 - Pilot：显示Istiod的pilot组件的CPU使用情况</td>
+<td>总计（Total (k8s)）: "sum(rate(container_cpu_usage_seconds_total{container=~\"discovery|istio-proxy\", pod=~\"istiod-.<em>\"}[1m]))"  容器CPU使用率（{{ container }} (k8s)）:  "sum(rate(container_cpu_usage_seconds_total{container=~\"discovery|istio-proxy\", pod=~\"istiod-.</em>\"}[1m])) by (container)"  pilot: "irate(process_cpu_seconds_total{app=\"istiod\"}[1m])"</td>
+</tr>
+<tr>
+<td></td>
+<td>磁盘</td>
+<td>展示每个集群中 Istio组件的磁盘使用情况，特别是与discovery和istio-proxy容器相关的文件系统使用情况。</td>
+<td>sum(process_open_fds{mesh_id="$mesh",app="istiod"}) by (mesh_cluster) container_fs_usage_bytes{ container=~"discovery|istio-proxy", pod=~"istiod-.*"}</td>
+</tr>
+<tr>
+<td></td>
+<td>Goroutines</td>
+<td>展示每个集群中 Istio组件的Go协程数量的趋势</td>
+<td>sum(go_goroutines{mesh_id="$mesh", app="istiod"}) by (mesh_cluster)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">服务监控<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p><img alt="服务监控" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/monitoring-indicators3.png"/></p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>参数</th>
+<th>参数介绍</th>
+<th>计算方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>常规</td>
+<td>客户端请求量</td>
+<td>展示当前服务的客户端的每 5 分钟的请求操作量，如果结果为空值是会展示为 N/A；阈值数值超过 80%时会展示为红色</td>
+<td>round(sum(irate(istio_requests_total{reporter=<sub>"<span class="arithmatex">\(reporter",destination_mesh_id="\)</span>mesh",destination_service=</sub>"$service"}[5m])), 0.001)</td>
+</tr>
+<tr>
+<td></td>
+<td>客户端成功率（非 5xx 响应）</td>
+<td>展示当前服务的客户端的每 5 分钟的成功请求率，并且提供了一种可视化方式来快速识别潜在的问题或趋势。</td>
+<td>sum(irate(istio_requests_total{reporter=<sub>"<span class="arithmatex">\(reporter",destination_mesh_id="\)</span>mesh",destination_service=</sub>"<span class="arithmatex">\(service",response_code!~"5.*"}[5m])) / sum(irate(istio_requests_total{reporter=~"\)</span>reporter",destination_mesh_id="<span class="arithmatex">\(mesh",destination_service=~"\)</span>service"}[5m]))</td>
+</tr>
+<tr>
+<td></td>
+<td>客户端请求时延</td>
+<td>展示当前服务的客户端的请求用时情况，定义了三个目标，用于计算 P50、P90 和 P99 的持续时间。表达式分别计算了 50%、90% 和 99% 的持续时间百分位数。</td>
+<td>示例：(histogram_quantile(0.50, sum(irate(istio_request_duration_milliseconds_bucket{reporter=<sub>\"<span class="arithmatex">\(reporter\",destination_mesh_id=\"\)</span>mesh\",destination_service=</sub>\"<span class="arithmatex">\(service\"}[1m])) by (le)) / 1000) or histogram_quantile(0.50, sum(irate(istio_request_duration_seconds_bucket{reporter=~\"\)</span>reporter\",destination_mesh_id=\"<span class="arithmatex">\(mesh\",destination_service=~\"\)</span>service\"}[1m])) by (le))</td>
+</tr>
+<tr>
+<td></td>
+<td>TCP 接收字节数</td>
+<td>展示当前服务在1 分钟内 TCP 接收字节的即时速率之和，如果匹配到 "null"，结果文本为 "N/A"，单位 Bps</td>
+<td>"sum(irate(istio_tcp_received_bytes_total{reporter=~\"<span class="arithmatex">\(reporter\",destination_mesh_id=\"\)</span>mesh\", destination_service=~\"$service\"}[1m]))"</td>
+</tr>
+<tr>
+<td></td>
+<td>服务的请求量</td>
+<td>展示当前服务的请求量，按照时间展示趋势图，如果匹配到 "null"，结果文本为 "N/A"，单位 Ops</td>
+<td>round(sum(irate(istio_requests_total{reporter="destination", destination_mesh_id="<span class="arithmatex">\(mesh",destination_service=~"\)</span>service"}[5m])), 0.001)</td>
+</tr>
+<tr>
+<td></td>
+<td>服务器成功率（非 5xx 响应）</td>
+<td>展示当前服务的非 5xx 响应的成功率，阈值设置表明，95%以下的成功率标记为红色，99%以下的成功率标记为橙色， 100%为绿色（百分比取值 2位）</td>
+<td>sum(irate(istio_requests_total{reporter="destination", destination_mesh_id="<span class="arithmatex">\(mesh",destination_service=~"\)</span>service",response_code!~"5.*"}[5m])) / sum(irate(istio_requests_total{reporter="destination", destination_mesh_id="<span class="arithmatex">\(mesh", destination_mesh_id="\)</span>mesh",destination_service=~"$service"}[5m]))</td>
+</tr>
+<tr>
+<td></td>
+<td>服务端请求时延</td>
+<td>展示当前服务的服务器请求的延时，通过计算不同分位数的持续时间来提供对服务性能的深入了解。三个目标表达式分别计算了中位数、90%、和99%的请求的延时，以提供从中位数到高端的性能概览</td>
+<td>- histogram_quantile - istio_request_duration_milliseconds_bucket - istio_request_duration_seconds_bucket</td>
+</tr>
+<tr>
+<td></td>
+<td>TCP 发送字节数</td>
+<td>展示当前服务在1 分钟内 TCP 发送字节的即时速率之和，如果匹配到 "null"，结果文本为 "N/A"，单位 Bps</td>
+<td></td>
+</tr>
+<tr>
+<td>客户端工作负载</td>
+<td>基于源和响应码的传入请求</td>
+<td>展示按源工作负载和响应代码分类的传入请求，能够可视化地展示各种工作负载之间的交互情况，分别对具有和不具有互相认证TLS的连接进行计算，以提供对连接安全性的洞察。可以清晰地了解请求如何在不同的源和目的地之间分布。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>基于源的传入成功率（非 5xx 响应）</td>
+<td>展示按源工作负载和命名空间分类的传入成功率，其中成功率是非5xx响应的百分比，分别对具有和不具有互相认证TLS的连接进行计算，以提供对连接成功率的视图。</td>
+<td>sum(irate(istio_requests_total{reporter=~"<span class="arithmatex">\(reporter",destination_mesh_id="\)</span>mesh", connection_security_policy="mutual_tls", destination_service=~"<span class="arithmatex">\(service",response_code!~"5.*", source_workload=~"\)</span>srcwl", source_workload_namespace=~"<span class="arithmatex">\(srcns"}[5m])) by (source_workload, source_workload_namespace) / sum(irate(istio_requests_total{reporter=~"\)</span>reporter",destination_mesh_id="<span class="arithmatex">\(mesh", connection_security_policy="mutual_tls", destination_service=~"\)</span>service", source_workload=~"<span class="arithmatex">\(srcwl", source_workload_namespace=~"\)</span>srcns"}[5m])) by (source_workload, source_workload_namespace)</td>
+</tr>
+<tr>
+<td></td>
+<td>基于源的传入请求时延</td>
+<td>展示按源工作负载和命名空间的请求耗时，分别计算了P50、P90、P95 和 P99等分位数不同的请求持续时间。注意，将分位值除以 1000 转为为秒作为单位。</td>
+<td>示例： (histogram_quantile(0.50, sum(irate(istio_request_duration_milliseconds_bucket{reporter=~"<span class="arithmatex">\(reporter",destination_mesh_id="\)</span>mesh", connection_security_policy="mutual_tls", destination_service=~"<span class="arithmatex">\(service", source_workload=~"\)</span>srcwl", source_workload_namespace=~"<span class="arithmatex">\(srcns"}[1m])) by (source_workload, source_workload_namespace, le)) / 1000) or histogram_quantile(0.50, sum(irate(istio_request_duration_seconds_bucket{reporter=~"\)</span>reporter",destination_mesh_id="<span class="arithmatex">\(mesh", connection_security_policy="mutual_tls", destination_service=~"\)</span>service", source_workload=~"<span class="arithmatex">\(srcwl", source_workload_namespace=~"\)</span>srcns"}[1m])) by (source_workload, source_workload_namespace, le))</td>
+</tr>
+<tr>
+<td></td>
+<td>基于源的传入请求大小</td>
+<td>展示按源工作负载传入的请求大小，分别计算了P50、P90、P95 和 P99等分位数不同的请求大小。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>基于源的响应大小</td>
+<td>展示按源工作负载（source workload）展示了在 P50、P90、P95、P99 (🔐mTLS): 表示在启用了相互TLS（mTLS）的情况下的响应大小的百分位数</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>接收来自传入 TCP 连接的字节数</td>
+<td>展示当前服务通过 TCP 连接收到的字节数，并且展示在 mutual TLS 连接（标记为 🔐mTLS）和非 mutual TLS 连接下从 TCP 连接收到的字节数的情况</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>发送到传入 TCP 连接的字节数</td>
+<td>展示当前服务通过 TCP 连接发送的字节数，并且展示在 mutual TLS 连接（标记为 🔐mTLS）和非 mutual TLS 连接下从 TCP 连接收到的字节数的情况</td>
+<td></td>
+</tr>
+<tr>
+<td>服务工作负载</td>
+<td>基于目标负载和响应码的传入请求</td>
+<td>展示按目的工作负载和响应代码分类的传入请求，能够可视化地展示各种工作负载之间的交互情况，分别对具有和不具有互相认证TLS的连接进行计算，以提供对连接安全性的洞察。可以清晰地了解请求如何在不同的源和目的地之间分布。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>基于目标负载的传入成功率（非 5xx 响应）</td>
+<td>展示按目的工作负载和命名空间分类的传入成功率，其中成功率是非5xx响应的百分比，分别对具有和不具有互相认证TLS的连接进行计算，以提供对连接成功率的视图。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>基于服务负载的传入请求时延</td>
+<td>展示按目的工作负载和命名空间的请求耗时，分别计算了P50、P90、P95 和 P99等分位数不同的请求持续时间。注意，将分位值除以 1000 转为为秒作为单位。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>基于服务负载的传入请求大小</td>
+<td>展示按目的工作负载传入的请求大小，分别计算了P50、P90、P95 和 P99等分位数不同的请求大小。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>基于服务负载的响应大小</td>
+<td>展示按目的工作负载（source workload）展示了在 P50、P90、P95、P99 (🔐mTLS): 表示在启用了相互TLS（mTLS）的情况下的响应大小的百分位数</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>接收来自传入 TCP 连接的字节数</td>
+<td>展示当前服务通过 TCP 连接收到的字节数，并且展示在 mutual TLS 连接（标记为 🔐mTLS）和非 mutual TLS 连接下从 TCP 连接收到的字节数的情况</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>发送到传入 TCP 连接的字节数</td>
+<td>展示当前服务通过 TCP 连接发送的字节数，并且展示在 mutual TLS 连接（标记为 🔐mTLS）和非 mutual TLS 连接下从 TCP 连接收到的字节数的情况</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">工作负载监控<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<p><img alt="工作负载监控" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/monitoring-indicators4.png"/></p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>参数</th>
+<th>参数介绍</th>
+<th>计算方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>常规</td>
+<td>传入请求量</td>
+<td>展示当前工作负载的传入请求量，单位为 Ops，如果接收到的数据为空（null），则会显示 "N/A"</td>
+<td>计算过去 5 分钟内的传入请求总数，其中包括特定的目的地工作负载、命名空间和集群。</td>
+</tr>
+<tr>
+<td></td>
+<td>传入成功率（非 5xx 响应）</td>
+<td>展示当前工作负载的每 5 分钟的成功请求率（不含 5xx 的请求），并且提供了一种可视化方式来快速识别潜在的问题或趋势。如果成功率低于 95%，将显示为红色，如果低于 99%，则显示为橙色</td>
+<td>使用了两个分母和分子的查询来计算非 5xx 响应的百分比。分子计算与特定服务相关的非 5xx 响应，分母计算与该服务相关的所有请求</td>
+</tr>
+<tr>
+<td></td>
+<td>请求时延</td>
+<td>展示当前工作负载的请求的时延，分别显示 P50、P90 和 P99 的请求持续时间，可以用于观察系统的性能，并快速识别潜在的瓶颈或延迟问题。</td>
+<td>(histogram_quantile(0.50, sum(irate(istio_request_duration_milliseconds_bucket{reporter=<sub>"<span class="arithmatex">\(reporter",destination_mesh_id="\)</span>mesh",destination_workload=</sub>"<span class="arithmatex">\(workload", destination_cluster=~"\)</span>dstcluster", destination_workload_namespace=~"<span class="arithmatex">\(namespace"}[1m])) by (le)) / 1000) or histogram_quantile(0.50, sum(irate(istio_request_duration_seconds_bucket{reporter=~"\)</span>reporter",destination_mesh_id="<span class="arithmatex">\(mesh",destination_workload=~"\)</span>workload", destination_cluster=~"<span class="arithmatex">\(dstcluster", destination_workload_namespace=~"\)</span>namespace"}[1m])) by (le))</td>
+</tr>
+<tr>
+<td></td>
+<td>TCP 服务端流量</td>
+<td>展示当前工作负载的TCP 服务器流量，注重统计作为目标工作负载、命名空间和集群，即作为 TCP 服务器，有助于了解网络负载和可能的瓶颈；并以每秒字节（Bps）为单位显示 TCP 发送和接收的字节总数。</td>
+<td>destination_workload_namespace=~"<span class="arithmatex">\(namespace", destination_workload=~"\)</span>workload", destination_cluster=~"$dstcluster"</td>
+</tr>
+<tr>
+<td></td>
+<td>TCP 客户端流量</td>
+<td>展示当前工作负载的 TCP 客户端的流量，注重统计作为源工作负载、命名空间和集群，即作为 TCP服务器，有助于了解网络负载和可能的瓶颈；并以每秒字节（Bps）为单位显示 TCP 发送和接收的字节总数。</td>
+<td>source_workload_namespace=~"<span class="arithmatex">\(namespace", source_workload=~"\)</span>workload"</td>
+</tr>
+<tr>
+<td>入站工作负载</td>
+<td>基于源和响应码的传入请求</td>
+<td>展示当前工作负载中，根据源工作负载和响应代码分类的传入请求，计算使用和不使用双向 TLS 连接的传入请求速率，并按源工作负载、源命名空间和响应代码分类</td>
+<td>示例： round(sum(irate(istio_requests_total{connection_security_policy!="mutual_tls", destination_workload_namespace=~"<span class="arithmatex">\(namespace", destination_workload=~"\)</span>workload", destination_cluster=~"<span class="arithmatex">\(dstcluster", reporter=~"\)</span>reporter",destination_mesh_id="<span class="arithmatex">\(mesh", source_workload=~"\)</span>srcwl", source_workload_namespace=~"$srcns"}[5m])) by (source_workload, source_workload_namespace, response_code), 0.001)</td>
+</tr>
+<tr>
+<td></td>
+<td>基于源的传入成功率（非 5xx 响应）</td>
+<td>展示传入成功请求的比率（非 5xx 响应），分别按使用和不使用双向 TLS 的连接进行分类，并进一步按源工作负载和源命名空间分组。</td>
+<td>sum(irate(istio_requests_total{reporter=~"<span class="arithmatex">\(reporter",destination_mesh_id="\)</span>mesh", connection_security_policy="mutual_tls", destination_workload_namespace=~"<span class="arithmatex">\(namespace", destination_workload=~"\)</span>workload", destination_cluster=~"<span class="arithmatex">\(dstcluster",response_code!~"5.*", source_workload=~"\)</span>srcwl", source_workload_namespace=~"<span class="arithmatex">\(srcns"}[5m])) by (source_workload, source_workload_namespace) / sum(irate(istio_requests_total{reporter=~"\)</span>reporter",destination_mesh_id="<span class="arithmatex">\(mesh", connection_security_policy="mutual_tls", destination_workload_namespace=~"\)</span>namespace", destination_workload=~"<span class="arithmatex">\(workload", destination_cluster=~"\)</span>dstcluster", source_workload=~"<span class="arithmatex">\(srcwl", source_workload_namespace=~"\)</span>srcns"}[5m])) by (source_workload, source_workload_namespace)</td>
+</tr>
+<tr>
+<td></td>
+<td>基于源的传入请求时延</td>
+<td>展示使用双向TLS（标志为🔐mTLS）和未使用双向TLS的源工作负载的请求持续时间。通过各种百分位数 P50、P90和 P99，可以更好地理解不同工作负载下的性能表现</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>基于源的传入请求大小</td>
+<td>展示来自不同来源的请求大小的图表，增加了用于计算不同分位数P50、P90、P95和P99的请求大小。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>基于源的响应大小</td>
+<td>展示响应大小的线型图表，可用于监控来自不同来源的响应大小，使用了histogram_quantile函数计算不同分位数的响应字节大小（例如P50、P90、P95和P99）。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>接收来自传入 TCP 连接的字节数</td>
+<td>展示与传入TCP连接相关的字节接收情况，分别表示与mTLS和非mTLS的连接有关的数据。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>发送到传入 TCP 连接的字节数</td>
+<td>展示对发送到传入TCP连接的字节的可视化表示。通过与之前的图表结合，可以提供完整的对TCP连接的监控视图，同时比较启用和未启用mTLS的连接</td>
+<td></td>
+</tr>
+<tr>
+<td>出站工作负载</td>
+<td>基于目标和响应码的传出请求</td>
+<td>展示按目的地和响应代码的传出请求，基于 istio_requests_total 指标，，分别表示与mTLS和非mTLS的请求量数据。</td>
+<td>round(sum(irate(istio_requests_total{destination_principal=~"spiffe.*", source_workload_namespace=~"<span class="arithmatex">\(namespace", source_workload=~"\)</span>workload", reporter="source", destination_mesh_id="<span class="arithmatex">\(mesh", destination_service=~"\)</span>dstsvc"}[5m])) by (destination_service, response_code), 0.001)</td>
+</tr>
+<tr>
+<td></td>
+<td>基于目标的传出成功率（非 5xx 响应）</td>
+<td>展示传出成功请求的比率（非 5xx 响应），分别按使用和不使用双向 TLS 的连接进行分类，并进一步按源工作负载和源命名空间分组。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>基于目标的传出请求时延</td>
+<td>展示对应请求目标传出的请求时长的百分位，支持50、P90、P95和P99。同时支持mTLS和非mTLS的的安全策略，单位：秒/毫秒。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>基于目标的传出请求大小</td>
+<td>展示在使用mTLS和不使用时传出的请求大小，支持支持50、P90、P95和P99。表达式中使用了与 Istio、工作负载、命名空间和目标服务相关的标签进行过滤。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>基于目标的响应大小</td>
+<td>展示传出不同目的地的响应大小，分别计算了 P50、P90、P95 和 P99 的值，有的与 mutual_tls 的连接安全策略相关联。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>传出 TCP 连接发送的字节数</td>
+<td>展示通过TCP连接发出的字节。通过对比mTLS（双向TLS）和非mTLS连接，深入了解不同安全策略下的字节发送情况。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>接收来自传出 TCP 连接的字节数</td>
+<td>展示通过目的服务发出的外部TCP连接接收的字节量， 分别统计通过 mutual TLS 和不通过 mutual TLS 进行保护的连接的字节总量</td>
+<td>示例： round(sum(irate(istio_tcp_sent_bytes_total{reporter="source", destination_mesh_id="<span class="arithmatex">\(mesh", connection_security_policy!="mutual_tls", source_workload_namespace=~"\)</span>namespace", source_workload=~"<span class="arithmatex">\(workload", destination_service=~"\)</span>dstsvc"}[1m])) by (destination_service), 0.001)</td>
+</tr>
+</tbody>
+</table>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2023年11月30日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 流量拓扑" class="md-footer__link md-footer__link--prev" href="conn-topo.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                流量拓扑
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 图表阅读指南" class="md-footer__link md-footer__link--next" href="indicator-readtips.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                图表阅读指南
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../../../stylesheets/zoom_image.js"></script>
+<script src="../../../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

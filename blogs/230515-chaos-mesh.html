@@ -1,0 +1,1780 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/blogs/230515-chaos-mesh.html" rel="canonical"/>
+<link href="230518-seccom.html" rel="prev"/>
+<link href="230509-k8s-install.html" rel="next"/>
+<link href="../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>混沌工程 Chaos Mesh - DaoCloud Enterprise</title>
+<link href="../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#-chaos-mesh">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              混沌工程 Chaos Mesh
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../dce/index.html">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            博客
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="index.html">
+<span class="md-ellipsis">
+    博文索引
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+<span class="md-ellipsis">
+    2024
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="241108-cncf-ambassador.html">
+<span class="md-ellipsis">
+    从社区小白到 CNCF 大使
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="241106-containerd-nerdctl-lima.html">
+<span class="md-ellipsis">
+    containerd 相关项目集中发布新版本
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240816-1.31-image.html">
+<span class="md-ellipsis">
+    K8s 1.31 OCI 工件的只读卷
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="20240619-nvidiaai.html">
+<span class="md-ellipsis">
+    Nvidia 征服最新的 AI 测试
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0606-k8s-birth.html">
+<span class="md-ellipsis">
+    Kubernetes 十周年
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240516-sig-docs.html">
+<span class="md-ellipsis">
+    K8s 从敲代码到抒发文笔
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240509-model-spec.html">
+<span class="md-ellipsis">
+    OpenAI 大语言模型规范
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0429-ai-survey.html">
+<span class="md-ellipsis">
+    全球大规模AI基础设施形势调研
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240416-kubean.html">
+<span class="md-ellipsis">
+    一颗豆荚入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240410-cnai-wp.html">
+<span class="md-ellipsis">
+    云原生人工智能白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240326-kubecon-eu.html">
+<span class="md-ellipsis">
+    巴黎 KubeCon 谁在引领创新
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240301-osc-eco.html">
+<span class="md-ellipsis">
+    创建一个开源商业生态体系
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240203-book.html">
+<span class="md-ellipsis">
+    好书《K8s云原生数据管理》
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240201-ai-compute.html">
+<span class="md-ellipsis">
+    加速计算基本定义及工作原理
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240115-news.html">
+<span class="md-ellipsis">
+    容器化 AI 简化 ML 模型的部署
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240108-kubeedge.html">
+<span class="md-ellipsis">
+    KubeEdge v1.15.0 发布
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+<span class="md-ellipsis">
+    2023
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="231220-spiderpool.html">
+<span class="md-ellipsis">
+    Spiderpool入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231213-k8s-1.29.html">
+<span class="md-ellipsis">
+    K8s 1.29发布宇宙主题雄心勃勃
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231205-vm-bm-compare.html">
+<span class="md-ellipsis">
+    K8s 裸机 vs 虚机性能对比
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231115-k8s-1.29-changes.html">
+<span class="md-ellipsis">
+    K8s 1.29前瞻：移除、弃用及变更
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231008-kcs.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会回顾
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230911-kubecon-contributor.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会召集令
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230824-tools.html">
+<span class="md-ellipsis">
+    K8s 本地开发工具比较
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230815-k8s1.28.html">
+<span class="md-ellipsis">
+    K8s 1.28 震撼发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230808-k8sgpt.html">
+<span class="md-ellipsis">
+    K8sGPT 赋能 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230615-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索下篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230612-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索上篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230609-istio118.html">
+<span class="md-ellipsis">
+    Istio 1.18 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230605-fedstate.html">
+<span class="md-ellipsis">
+    联邦中间件FedState
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230601-api-server-tracing.html">
+<span class="md-ellipsis">
+    API Server Tracing进阶
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230518-seccom.html">
+<span class="md-ellipsis">
+    边缘场景玩转seccomp
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    混沌工程 Chaos Mesh
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="230515-chaos-mesh.html">
+<span class="md-ellipsis">
+    混沌工程 Chaos Mesh
+  </span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      存储
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      数据库
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chaos-mesh">
+<span class="md-ellipsis">
+      安装 Chaos Mesh
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chaos-mesh_1">
+<span class="md-ellipsis">
+      检查 Chaos Mesh
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chaos-mesh_2">
+<span class="md-ellipsis">
+      使用 Chaos Mesh
+    </span>
+</a>
+<nav aria-label="使用 Chaos Mesh" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      准备
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      登录
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      仪表盘
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      实验
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      计划
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      工作流
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      事件
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      归档
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      设置
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#statuscheck">
+<span class="md-ellipsis">
+      StatusCheck
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      总结
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230509-k8s-install.html">
+<span class="md-ellipsis">
+    K8s 安装教程(KLTS版)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230508-cilium.html">
+<span class="md-ellipsis">
+    Cilium 实现 socket 加速
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230428-pod-startup.html">
+<span class="md-ellipsis">
+    K8s 1.27 加快 Pod 启动
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230427-victoriametrics.html">
+<span class="md-ellipsis">
+    云原生监控之基础篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230418-karmada-failover.html">
+<span class="md-ellipsis">
+    Karmada Failover 详解
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230417-cncf-platform-wp.html">
+<span class="md-ellipsis">
+    CNCF 平台工程白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230412-k8s-1.27.html">
+<span class="md-ellipsis">
+    K8s 1.27 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230411-spiderpool.html">
+<span class="md-ellipsis">
+    固定应用 IP 的新选择
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230405-step-by-step-dce5.html">
+<span class="md-ellipsis">
+    保姆式安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230317-edge-app-wp.html">
+<span class="md-ellipsis">
+    边缘原生应用准则
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-linux.html">
+<span class="md-ellipsis">
+    Linux 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-macos.html">
+<span class="md-ellipsis">
+    macOS 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230301-kwok.html">
+<span class="md-ellipsis">
+    KWOK 介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-open-projects.html">
+<span class="md-ellipsis">
+    社区版涉及的开源项目
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-daocloud_k8s.html">
+<span class="md-ellipsis">
+    DaoCloud 与 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-peter.html">
+<span class="md-ellipsis">
+    DCE 5.0 攻坚语录集
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-forecast.html">
+<span class="md-ellipsis">
+    2023 年云原生预测
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230110-res-usage.html">
+<span class="md-ellipsis">
+    让闲置算力跑起来
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+<span class="md-ellipsis">
+    2022
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="221209-k8s-1.26.html">
+<span class="md-ellipsis">
+    K8s 1.26 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221116-kcsp.html">
+<span class="md-ellipsis">
+    K8s 资深认证服务商
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221026-kpanda.html">
+<span class="md-ellipsis">
+    容器管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221018-resource.html">
+<span class="md-ellipsis">
+    资源管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220925-amamba.html">
+<span class="md-ellipsis">
+    应用工作台能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220808-kairship.html">
+<span class="md-ellipsis">
+    多云编排能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220708-mspider.html">
+<span class="md-ellipsis">
+    服务网格能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221008-dce-bg.html">
+<span class="md-ellipsis">
+    DCE 开发背景
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      存储
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      数据库
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chaos-mesh">
+<span class="md-ellipsis">
+      安装 Chaos Mesh
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chaos-mesh_1">
+<span class="md-ellipsis">
+      检查 Chaos Mesh
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chaos-mesh_2">
+<span class="md-ellipsis">
+      使用 Chaos Mesh
+    </span>
+</a>
+<nav aria-label="使用 Chaos Mesh" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      准备
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      登录
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      仪表盘
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      实验
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      计划
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      工作流
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      事件
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      归档
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      设置
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#statuscheck">
+<span class="md-ellipsis">
+      StatusCheck
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      总结
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/blogs/230515-chaos-mesh.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/blogs/230515-chaos-mesh.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/blogs/230515-chaos-mesh.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="-chaos-mesh">云原生混沌工程--Chaos Mesh 实战篇<a class="headerlink" href="#-chaos-mesh" title="Permanent link">¶</a></h1>
+<p><img alt="chaos mesh" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos01.png"/></p>
+<p>通过《<a href="https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&amp;mid=2659279670&amp;idx=1&amp;sn=67d4d3c542de5e913531ef87731d7a49&amp;scene=21#wechat_redirect">云原生混沌工程 -- Chaos Mesh 总览篇</a>》和《<a href="https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&amp;mid=2659279798&amp;idx=1&amp;sn=646474b92d16c211816205107a6e3c7a&amp;scene=21#wechat_redirect">云原生混沌工程 -- Chaos Mesh 控制器篇</a>》这两篇文章的介绍，可以大概了解 Chaos Mesh 在做什么样的事情以及基本的工作原理。接下来，从安装和使用 Chaos Mesh 的角度，来具体介绍一下 Chaos Mesh 的能力。</p>
+<h2 id="_1">存储<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>安装 nfs sevrer：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>nfs-utils
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>nfs-server
+</code></pre></div>
+</li>
+<li>
+<p>创建 nfs server 的导出的文件系统：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/srv/nfs4/k8s
+</code></pre></div>
+</li>
+<li>
+<p>挂载实际的目录：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>/opt/k8s
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>sudo<span class="w"> </span>mount<span class="w"> </span>--bind<span class="w"> </span>/opt/k8s<span class="w"> </span>/srv/nfs4/k8s
+</code></pre></div>
+</li>
+<li>
+<p>想要这个挂载持久化，添加下面的条目到 /etc/fstab 文件，以下是编辑完的结果：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>cat<span class="w"> </span>/etc/fstab
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>/opt/k8s /srv/nfs4/k8s none bind 0 0
+</code></pre></div>
+</li>
+<li>
+<p>导出文件系统，以下是编辑完的结果：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>cat<span class="w"> </span>/etc/exports
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>/srv/nfs4 10.1.3.0/24(rw,sync,no_root_squash,no_subtree_check,crossmnt,fsid=0)
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>/srv/nfs4/k8s 10.1.3.0/24(rw,sync,no_root_squash,no_subtree_check)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>sudo<span class="w"> </span>exportfs<span class="w"> </span>-ra
+</code></pre></div>
+</li>
+<li>
+<p>查看倒出来的文件系统：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>sudo<span class="w"> </span>exportfs<span class="w"> </span>-v
+</code></pre></div>
+</li>
+<li>
+<p>安装 Helm</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>wget<span class="w"> </span>https://get.helm.sh/helm-v3.8.1-linux-amd64.tar.gz
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>tar<span class="w"> </span>-zxvf<span class="w"> </span>helm-v3.8.1-linux-amd64.tar.gz
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>mv<span class="w"> </span>linux-amd64/helm<span class="w"> </span>/usr/local/bin/helm
+</code></pre></div>
+<p>安装 nfs-subdir-external-provisioner</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>nfs-subdir-external-provisioner<span class="w"> </span>https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>helm<span class="w"> </span>install<span class="w"> </span>nfs-subdir-external-provisioner<span class="w"> </span>nfs-subdir-external-provisioner/nfs-subdir-external-provisioner<span class="w"> </span>--set<span class="w"> </span>nfs.server<span class="o">=</span><span class="m">10</span>.1.3.210<span class="w"> </span>--set<span class="w"> </span>nfs.path<span class="o">=</span>/k8s<span class="w"> </span>--set<span class="w"> </span>image.repository<span class="o">=</span>k8s.m.daocloud.io/sig-storage/nfs-subdir-external-provisioner<span class="w"> </span>--set<span class="w"> </span>image.tag<span class="o">=</span>v4.0.2<span class="w"> </span>--set<span class="w"> </span>storageClass.defaultClass<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="_2">数据库<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>准备 pvc mysqlpvc.yaml</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolumeClaim</span>
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql-pv-claim</span>
+<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql</span>
+<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">  </span><span class="nt">accessModes</span><span class="p">:</span>
+<a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadWriteOnce</span>
+<a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span>
+<a href="#__codelineno-11-11" id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">    </span><span class="nt">requests</span><span class="p">:</span>
+<a href="#__codelineno-11-12" id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">    </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20Gi</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>mysqlpvc.yaml
+</code></pre></div>
+</li>
+<li>
+<p>安装 mysql mysql.yaml</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql-deployment</span>
+<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql</span>
+<a href="#__codelineno-13-9" id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a href="#__codelineno-13-10" id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-13-11" id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<a href="#__codelineno-13-12" id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql</span>
+<a href="#__codelineno-13-13" id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-13-14" id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a href="#__codelineno-13-15" id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql:5.6</span>
+<a href="#__codelineno-13-16" id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql-con</span>
+<a href="#__codelineno-13-17" id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="w">        </span><span class="nt">env</span><span class="p">:</span>
+<a href="#__codelineno-13-18" id="__codelineno-13-18" name="__codelineno-13-18"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_ROOT_PASSWORD</span>
+<a href="#__codelineno-13-19" id="__codelineno-13-19" name="__codelineno-13-19"></a><span class="w">            </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dangerous</span>
+<a href="#__codelineno-13-20" id="__codelineno-13-20" name="__codelineno-13-20"></a><span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<a href="#__codelineno-13-21" id="__codelineno-13-21" name="__codelineno-13-21"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3306</span>
+<a href="#__codelineno-13-22" id="__codelineno-13-22" name="__codelineno-13-22"></a><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql</span>
+<a href="#__codelineno-13-23" id="__codelineno-13-23" name="__codelineno-13-23"></a><span class="w">        </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a href="#__codelineno-13-24" id="__codelineno-13-24" name="__codelineno-13-24"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql-persistent-storage</span>
+<a href="#__codelineno-13-25" id="__codelineno-13-25" name="__codelineno-13-25"></a><span class="w">            </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/mysql</span>
+<a href="#__codelineno-13-26" id="__codelineno-13-26" name="__codelineno-13-26"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a href="#__codelineno-13-27" id="__codelineno-13-27" name="__codelineno-13-27"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql-persistent-storage</span>
+<a href="#__codelineno-13-28" id="__codelineno-13-28" name="__codelineno-13-28"></a><span class="w">        </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a href="#__codelineno-13-29" id="__codelineno-13-29" name="__codelineno-13-29"></a><span class="w">          </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql-pv-claim</span>
+<a href="#__codelineno-13-30" id="__codelineno-13-30" name="__codelineno-13-30"></a><span class="nn">---</span>
+<a href="#__codelineno-13-31" id="__codelineno-13-31" name="__codelineno-13-31"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a href="#__codelineno-13-32" id="__codelineno-13-32" name="__codelineno-13-32"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<a href="#__codelineno-13-33" id="__codelineno-13-33" name="__codelineno-13-33"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-13-34" id="__codelineno-13-34" name="__codelineno-13-34"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql-service</span>
+<a href="#__codelineno-13-35" id="__codelineno-13-35" name="__codelineno-13-35"></a><span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<a href="#__codelineno-13-36" id="__codelineno-13-36" name="__codelineno-13-36"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql</span>
+<a href="#__codelineno-13-37" id="__codelineno-13-37" name="__codelineno-13-37"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-13-38" id="__codelineno-13-38" name="__codelineno-13-38"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodePort</span>
+<a href="#__codelineno-13-39" id="__codelineno-13-39" name="__codelineno-13-39"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a href="#__codelineno-13-40" id="__codelineno-13-40" name="__codelineno-13-40"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql</span>
+<a href="#__codelineno-13-41" id="__codelineno-13-41" name="__codelineno-13-41"></a><span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<a href="#__codelineno-13-42" id="__codelineno-13-42" name="__codelineno-13-42"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+<a href="#__codelineno-13-43" id="__codelineno-13-43" name="__codelineno-13-43"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3306</span>
+<a href="#__codelineno-13-44" id="__codelineno-13-44" name="__codelineno-13-44"></a><span class="w">    </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3306</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>mysql.yaml
+</code></pre></div>
+</li>
+<li>
+<p>检查 mysql 的安装</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pvc<span class="p">|</span>grep<span class="w"> </span>mysql-pv-claim
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>mysql-pv-claim            Bound    pvc-c64c8f7b-0408-49e2-953e-09d36003a3d8   20Gi       RWO            nfs-client     6d3h
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="p">|</span>grep<span class="w"> </span>mysql-deployment
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>mysql-deployment-68bd7964d7-x9c8h                  1/1     Running   0          6d3h
+</code></pre></div>
+</li>
+<li>
+<p>连接数据库</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>kubectl<span class="w"> </span>run<span class="w"> </span>my-release-mysql-client<span class="w"> </span>--rm<span class="w"> </span>--tty<span class="w"> </span>-i<span class="w"> </span>--restart<span class="o">=</span><span class="s1">'Never'</span><span class="w"> </span>--image<span class="w">  </span>docker.io/bitnami/mysql:8.0.32-debian-11-r8<span class="w"> </span>--namespace<span class="w"> </span>default<span class="w"> </span>--env<span class="w"> </span><span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>dangerous<span class="w"> </span>--command<span class="w"> </span>--<span class="w"> </span>bash
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>my-release-mysql-client<span class="w"> </span>bash
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a>mysql<span class="w"> </span>-h<span class="w"> </span><span class="m">10</span>.1.3.210<span class="w"> </span>-P32265<span class="w"> </span>-uroot<span class="w"> </span>-pdangerous
+</code></pre></div>
+</li>
+</ol>
+<h2 id="chaos-mesh">安装 Chaos Mesh<a class="headerlink" href="#chaos-mesh" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>ns<span class="w"> </span>chaos-mesh
+<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>chaos-mesh<span class="w"> </span>https://charts.chaos-mesh.org
+<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a>helm<span class="w"> </span>install<span class="w"> </span>chaos-mesh<span class="w"> </span>chaos-mesh/chaos-mesh<span class="w"> </span>-n<span class="o">=</span>chaos-mesh<span class="w"> </span>--set<span class="w"> </span>chaosDaemon.runtime<span class="o">=</span>containerd<span class="w"> </span>--set<span class="w"> </span>chaosDaemon.socketPath<span class="o">=</span>/run/containerd/containerd.sock<span class="w"> </span>--set<span class="w"> </span>controllerManager.leaderElection.enabled<span class="o">=</span><span class="nb">false</span><span class="w"> </span>--set<span class="w"> </span>controllerManager.replicaCount<span class="o">=</span><span class="m">1</span><span class="w"> </span>--set<span class="w"> </span>dashboard.env.DATABASE_DRIVER<span class="o">=</span>mysql<span class="w"> </span>--set<span class="w"> </span>dashboard.env.DATABASE_DATASOURCE<span class="o">=</span>root:dangerous@tcp<span class="s1">'(10.1.3.210:32265)'</span>/chaosmesh?parseTime<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<h2 id="chaos-mesh_1">检查 Chaos Mesh<a class="headerlink" href="#chaos-mesh_1" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </span>-n<span class="w"> </span>chaos-mesh
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>NAME                                        READY   STATUS    RESTARTS   AGE
+<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a>chaos-controller-manager-77558f4c96-zv8s4   1/1     Running   0          5d
+<a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a>chaos-daemon-2nm9v                          1/1     Running   0          6d2h
+<a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a>chaos-daemon-mrvh6                          1/1     Running   0          6d2h
+<a href="#__codelineno-22-5" id="__codelineno-22-5" name="__codelineno-22-5"></a>chaos-dashboard-544c89d476-d29kt            1/1     Running   0          6d2h
+</code></pre></div>
+<h2 id="chaos-mesh_2">使用 Chaos Mesh<a class="headerlink" href="#chaos-mesh_2" title="Permanent link">¶</a></h2>
+<h3 id="_3">准备<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p>部署一个 nginx 容器用于测试使用。</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>my-repo<span class="w"> </span>https://charts.bitnami.com/bitnami
+<a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a>helm<span class="w"> </span>install<span class="w"> </span>nginx<span class="w"> </span>--set<span class="w"> </span>service.type<span class="o">=</span>NodePort<span class="w"> </span>my-repo/nginx
+</code></pre></div>
+<h3 id="_4">登录<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>输入令牌登录：</p>
+<p><img alt="input token" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos02.png"/></p>
+</li>
+<li>
+<p>点击 link 来打开令牌的辅助生成器：</p>
+<p><img alt="input token" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos03.png"/></p>
+</li>
+<li>
+<p>复制授权的 yaml，进行授权，并生成登录的 token，之后使用 ServiceAccount 的 name 和生成的 token 登录：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a>vi<span class="w"> </span>rbac.yaml
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceAccount</span>
+<a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a href="#__codelineno-25-3" id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-25-4" id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a href="#__codelineno-25-5" id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account-default-viewer-xfddq</span>
+<a href="#__codelineno-25-6" id="__codelineno-25-6" name="__codelineno-25-6"></a>
+<a href="#__codelineno-25-7" id="__codelineno-25-7" name="__codelineno-25-7"></a><span class="nn">---</span>
+<a href="#__codelineno-25-8" id="__codelineno-25-8" name="__codelineno-25-8"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role</span>
+<a href="#__codelineno-25-9" id="__codelineno-25-9" name="__codelineno-25-9"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
+<a href="#__codelineno-25-10" id="__codelineno-25-10" name="__codelineno-25-10"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-25-11" id="__codelineno-25-11" name="__codelineno-25-11"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a href="#__codelineno-25-12" id="__codelineno-25-12" name="__codelineno-25-12"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">role-default-viewer-xfddq</span>
+<a href="#__codelineno-25-13" id="__codelineno-25-13" name="__codelineno-25-13"></a><span class="nt">rules</span><span class="p">:</span>
+<a href="#__codelineno-25-14" id="__codelineno-25-14" name="__codelineno-25-14"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+<a href="#__codelineno-25-15" id="__codelineno-25-15" name="__codelineno-25-15"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"pods"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"namespaces"</span><span class="p p-Indicator">]</span>
+<a href="#__codelineno-25-16" id="__codelineno-25-16" name="__codelineno-25-16"></a><span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"watch"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"list"</span><span class="p p-Indicator">]</span>
+<a href="#__codelineno-25-17" id="__codelineno-25-17" name="__codelineno-25-17"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"chaos-mesh.org"</span><span class="p p-Indicator">]</span>
+<a href="#__codelineno-25-18" id="__codelineno-25-18" name="__codelineno-25-18"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"*"</span><span class="p p-Indicator">]</span>
+<a href="#__codelineno-25-19" id="__codelineno-25-19" name="__codelineno-25-19"></a><span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"watch"</span><span class="p p-Indicator">]</span>
+<a href="#__codelineno-25-20" id="__codelineno-25-20" name="__codelineno-25-20"></a>
+<a href="#__codelineno-25-21" id="__codelineno-25-21" name="__codelineno-25-21"></a><span class="nn">---</span>
+<a href="#__codelineno-25-22" id="__codelineno-25-22" name="__codelineno-25-22"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
+<a href="#__codelineno-25-23" id="__codelineno-25-23" name="__codelineno-25-23"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RoleBinding</span>
+<a href="#__codelineno-25-24" id="__codelineno-25-24" name="__codelineno-25-24"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-25-25" id="__codelineno-25-25" name="__codelineno-25-25"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bind-default-viewer-xfddq</span>
+<a href="#__codelineno-25-26" id="__codelineno-25-26" name="__codelineno-25-26"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a href="#__codelineno-25-27" id="__codelineno-25-27" name="__codelineno-25-27"></a><span class="nt">subjects</span><span class="p">:</span>
+<a href="#__codelineno-25-28" id="__codelineno-25-28" name="__codelineno-25-28"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceAccount</span>
+<a href="#__codelineno-25-29" id="__codelineno-25-29" name="__codelineno-25-29"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account-default-viewer-xfddq</span>
+<a href="#__codelineno-25-30" id="__codelineno-25-30" name="__codelineno-25-30"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a href="#__codelineno-25-31" id="__codelineno-25-31" name="__codelineno-25-31"></a><span class="nt">roleRef</span><span class="p">:</span>
+<a href="#__codelineno-25-32" id="__codelineno-25-32" name="__codelineno-25-32"></a><span class="w">  </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role</span>
+<a href="#__codelineno-25-33" id="__codelineno-25-33" name="__codelineno-25-33"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">role-default-viewer-xfddq</span>
+<a href="#__codelineno-25-34" id="__codelineno-25-34" name="__codelineno-25-34"></a><span class="w">  </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>rbac.yaml
+<a href="#__codelineno-26-2" id="__codelineno-26-2" name="__codelineno-26-2"></a>kubectl<span class="w"> </span>create<span class="w"> </span>token<span class="w"> </span>account-default-viewer-xfddq
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a>eyJhbGciOiJSUzI1NiIsImtpZCI6IjZjbVpnWEpzNWxrNHdDNXBZWGZaYlItYldqVzRDR1RRcnozVS1Oc0pGVk0ifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNjc3ODM4MzQ0LCJpYXQiOjE2Nzc4MzQ3NDQsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJkZWZhdWx0Iiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImFjY291bnQtZGVmYXVsdC1tYW5hZ2VyLXR5eHB4IiwidWlkIjoiY2VlOWQ5OTItMjEwYy00NWRjLTk2ODQtMjUwYTdlZTdlMTk2In19LCJuYmYiOjE2Nzc4MzQ3NDQsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmFjY291bnQtZGVmYXVsdC1tYW5hZ2VyLXR5eHB4In0.ffnSlmHHfewt8B5ErxIxMRbvk8gloKjazF3ocD9jFkqHMcNedqLo1XZSTE7lDlbdKgKJept6Vq03R4GusW5doKqC51laIwh-aWLFYL_lJZ-wAOenU5-HLM_L3SgFSYIuSCwraLfwcatLuzqtkOT_hO8IMoGYLEJQghw6iHlogXf-Z6ckPGt6VGsP6bU40Xaz2EVQw76qJwg2HpkAEbx-ucF6lID_J9Pg5pVsMBW75lgYy3FgITOPXKh85kIm15VqopvNJCRMRHjg-5RcoLBbhIhBVuU9FBwVRqt0TwVXX2CH-f6H8LUlMcDDbrHjBntnOfiBO4r1dru2X38rujRpVg
+</code></pre></div>
+</li>
+<li>
+<p>使用 account-default-viewer-xfddq 作为名称，生成出来的 token 作为令牌，就可以登录到对应 namespace。
+  支持 namespace 和 cluster 范围的令牌申请。</p>
+</li>
+</ul>
+<h3 id="_5">仪表盘<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<p><img alt="dashboard" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos04.png"/></p>
+<h3 id="_6">实验<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<p>以 PodChaos 为例，创建一个 Chaos 类型的实验，完成删除 Pod 的故障注入。</p>
+<ul>
+<li>
+<p>定义：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chaos-mesh.org/v1alpha1</span>
+<a href="#__codelineno-28-2" id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PodChaos</span>
+<a href="#__codelineno-28-3" id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-28-4" id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-kill-example2</span>
+<a href="#__codelineno-28-5" id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a href="#__codelineno-28-6" id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-28-7" id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="w">  </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-kill</span>
+<a href="#__codelineno-28-8" id="__codelineno-28-8" name="__codelineno-28-8"></a><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">one</span>
+<a href="#__codelineno-28-9" id="__codelineno-28-9" name="__codelineno-28-9"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a href="#__codelineno-28-10" id="__codelineno-28-10" name="__codelineno-28-10"></a><span class="w">    </span><span class="nt">namespaces</span><span class="p">:</span>
+<a href="#__codelineno-28-11" id="__codelineno-28-11" name="__codelineno-28-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a href="#__codelineno-28-12" id="__codelineno-28-12" name="__codelineno-28-12"></a><span class="w">    </span><span class="nt">labelSelectors</span><span class="p">:</span>
+<a href="#__codelineno-28-13" id="__codelineno-28-13" name="__codelineno-28-13"></a><span class="w">      </span><span class="s">"app.kubernetes.io/instance"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"nginx"</span>
+</code></pre></div>
+</li>
+<li>
+<p>列表：</p>
+<p><img alt="list" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos05.png"/></p>
+</li>
+<li>
+<p>创建：</p>
+<p><img alt="create" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos06.png"/></p>
+</li>
+<li>
+<p>详情：其中包含元数据，完整的 yaml 定义，以及对应的事件。同时 可以将其进行归档，归档完之后就只能在归档的菜单中可以查看到，
+  因为对应的资源对象已经从 Kubernetes 中删除了，只保存在了数据中。</p>
+<p><img alt="details" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos07.png"/></p>
+</li>
+</ul>
+<h3 id="_7">计划<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<p>定义一个在每小时的 05 分会定时执行的计划，计划中的任务是删除选中的 nginx 的 Pod。</p>
+<ul>
+<li>
+<p>定义：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-29-1" id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chaos-mesh.org/v1alpha1</span>
+<a href="#__codelineno-29-2" id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Schedule</span>
+<a href="#__codelineno-29-3" id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-29-4" id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schedule-delay-example</span>
+<a href="#__codelineno-29-5" id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a href="#__codelineno-29-6" id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-29-7" id="__codelineno-29-7" name="__codelineno-29-7"></a><span class="w">  </span><span class="nt">schedule</span><span class="p">:</span><span class="w"> </span><span class="s">"5</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+<a href="#__codelineno-29-8" id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="w">  </span><span class="nt">historyLimit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a href="#__codelineno-29-9" id="__codelineno-29-9" name="__codelineno-29-9"></a><span class="w">  </span><span class="nt">concurrencyPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Allow</span>
+<a href="#__codelineno-29-10" id="__codelineno-29-10" name="__codelineno-29-10"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"PodChaos"</span>
+<a href="#__codelineno-29-11" id="__codelineno-29-11" name="__codelineno-29-11"></a><span class="w">  </span><span class="nt">podChaos</span><span class="p">:</span>
+<a href="#__codelineno-29-12" id="__codelineno-29-12" name="__codelineno-29-12"></a><span class="w">    </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="s">"pod-kill"</span>
+<a href="#__codelineno-29-13" id="__codelineno-29-13" name="__codelineno-29-13"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">one</span>
+<a href="#__codelineno-29-14" id="__codelineno-29-14" name="__codelineno-29-14"></a><span class="w">    </span><span class="nt">selector</span><span class="p">:</span>
+<a href="#__codelineno-29-15" id="__codelineno-29-15" name="__codelineno-29-15"></a><span class="w">      </span><span class="nt">namespaces</span><span class="p">:</span>
+<a href="#__codelineno-29-16" id="__codelineno-29-16" name="__codelineno-29-16"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a href="#__codelineno-29-17" id="__codelineno-29-17" name="__codelineno-29-17"></a><span class="w">    </span><span class="nt">labelSelectors</span><span class="p">:</span>
+<a href="#__codelineno-29-18" id="__codelineno-29-18" name="__codelineno-29-18"></a><span class="w">        </span><span class="s">"app.kubernetes.io/instance"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"nginx"</span>
+</code></pre></div>
+</li>
+<li>
+<p>列表：</p>
+<p><img alt="list" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos08.png"/></p>
+</li>
+<li>
+<p>创建：</p>
+<p><img alt="create" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos09.png"/></p>
+</li>
+<li>
+<p>详情：其中包含元数据，完整的 yaml 定义，以及对应的事件。同时 可以将其进行归档，归档完之后就只能在归档的菜单中可以查看到，
+  因为对应的资源对象已经从 Kubernetes 中删除了，只保存在了数据中。</p>
+<p><img alt="details" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos10.png"/></p>
+</li>
+</ul>
+<h3 id="_8">工作流<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<p>定义一个工作流，包含入口节点 the-entry 和 Chaos 类型的节点 workflow-pod-chaos。</p>
+<ul>
+<li>
+<p>定义：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-30-1" id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chaos-mesh.org/v1alpha1</span>
+<a href="#__codelineno-30-2" id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Workflow</span>
+<a href="#__codelineno-30-3" id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-30-4" id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">try-workflow-parallel</span>
+<a href="#__codelineno-30-5" id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-30-6" id="__codelineno-30-6" name="__codelineno-30-6"></a><span class="w">  </span><span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">the-entry</span>
+<a href="#__codelineno-30-7" id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="w">  </span><span class="nt">templates</span><span class="p">:</span>
+<a href="#__codelineno-30-8" id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">the-entry</span>
+<a href="#__codelineno-30-9" id="__codelineno-30-9" name="__codelineno-30-9"></a><span class="w">    </span><span class="nt">templateType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Parallel</span>
+<a href="#__codelineno-30-10" id="__codelineno-30-10" name="__codelineno-30-10"></a><span class="w">    </span><span class="nt">deadline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">240s</span>
+<a href="#__codelineno-30-11" id="__codelineno-30-11" name="__codelineno-30-11"></a><span class="w">    </span><span class="nt">children</span><span class="p">:</span>
+<a href="#__codelineno-30-12" id="__codelineno-30-12" name="__codelineno-30-12"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">workflow-pod-chaos</span>
+<a href="#__codelineno-30-13" id="__codelineno-30-13" name="__codelineno-30-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">workflow-pod-chaos</span>
+<a href="#__codelineno-30-14" id="__codelineno-30-14" name="__codelineno-30-14"></a><span class="w">    </span><span class="nt">templateType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PodChaos</span>
+<a href="#__codelineno-30-15" id="__codelineno-30-15" name="__codelineno-30-15"></a><span class="w">    </span><span class="nt">deadline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20s</span>
+<a href="#__codelineno-30-16" id="__codelineno-30-16" name="__codelineno-30-16"></a><span class="w">    </span><span class="nt">podChaos</span><span class="p">:</span>
+<a href="#__codelineno-30-17" id="__codelineno-30-17" name="__codelineno-30-17"></a><span class="w">        </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-kill</span>
+<a href="#__codelineno-30-18" id="__codelineno-30-18" name="__codelineno-30-18"></a><span class="w">        </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">one</span>
+<a href="#__codelineno-30-19" id="__codelineno-30-19" name="__codelineno-30-19"></a><span class="w">        </span><span class="nt">selector</span><span class="p">:</span>
+<a href="#__codelineno-30-20" id="__codelineno-30-20" name="__codelineno-30-20"></a><span class="w">        </span><span class="nt">namespaces</span><span class="p">:</span>
+<a href="#__codelineno-30-21" id="__codelineno-30-21" name="__codelineno-30-21"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a href="#__codelineno-30-22" id="__codelineno-30-22" name="__codelineno-30-22"></a><span class="w">        </span><span class="nt">labelSelectors</span><span class="p">:</span>
+<a href="#__codelineno-30-23" id="__codelineno-30-23" name="__codelineno-30-23"></a><span class="w">            </span><span class="s">"app.kubernetes.io/instance"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"nginx"</span>
+</code></pre></div>
+</li>
+<li>
+<p>列表：</p>
+<p><img alt="list" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos11.png"/></p>
+</li>
+<li>
+<p>创建：</p>
+<p><img alt="create" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos12.png"/></p>
+<p>为了快速创建去看效果，直接通过 kubectl 命令行 apply 的方式创建 Workflow 资源对象，页面操作会慢一点。</p>
+</li>
+<li>
+<p>详情：其中包含工作流运行的拓扑情况，完整的 yaml 定义，以及对应的事件。同时 可以将其进行归档，归档完之后就只能在归档的菜单中可以查看到，因为对应的资源对象已经从 Kubernetes 中删除了，只保存在了数据中。以及在工作流运行完成之后，在过程中创建的 Chaos 类型的资源对象也会被自动删除掉。</p>
+<p><img alt="details" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos13.png"/></p>
+</li>
+</ul>
+<h3 id="_9">事件<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<p>这里汇聚了所有资源对象相关的事件，可以进行查询操作。这些事件数据是从数据库中查出来的，之前的文章提到过数据库中事件数据的来源的原理。同时，支持可以设置事件数据的过期时间，一旦到达过期时间，就会将其从数据库中删除掉。</p>
+<p><img alt="details" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos14.png"/></p>
+<h3 id="_10">归档<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<p>当在页面上对相关资源对象点击归档，或者是从底层 Kubernetes 直接删除资源对象，都是可以将其变成归档状态，归档的数据是保存在数据库中的。归档完的数据就会在这里进行展示，同时可以设置归档数据的过期时间，一旦到达过期时间，就会将其从数据库中删除掉。</p>
+<ul>
+<li>
+<p>列表：</p>
+<p><img alt="list" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos15.png"/></p>
+</li>
+<li>
+<p>详情：已经归档的实验，计划，工作流对象是不能查看详情了，原因是归档的资源对象在 Kubernetes 中已经不存在了。</p>
+<p><img alt="details" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos16.png"/></p>
+</li>
+</ul>
+<h3 id="_11">设置<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
+<p>主要包含登录/登出，主题色彩，中英文设置，还有一些其它的设置开关。</p>
+<p><img alt="setting" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos17.png"/></p>
+<h3 id="statuscheck">StatusCheck<a class="headerlink" href="#statuscheck" title="Permanent link">¶</a></h3>
+<p>在目前的版本中，页面上还不支持显示 StatusCheck 的类型，这里以命令行的方式来展示 Continuous 和 Synchronous 两种方式的 StatusCheck 的使用。</p>
+<ul>
+<li>
+<p>Continuous 类型：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-31-1" id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chaos-mesh.org/v1alpha1</span>
+<a href="#__codelineno-31-2" id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StatusCheck</span>
+<a href="#__codelineno-31-3" id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-31-4" id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">status-check-example</span>
+<a href="#__codelineno-31-5" id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-31-6" id="__codelineno-31-6" name="__codelineno-31-6"></a><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Continuous</span>
+<a href="#__codelineno-31-7" id="__codelineno-31-7" name="__codelineno-31-7"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTP</span>
+<a href="#__codelineno-31-8" id="__codelineno-31-8" name="__codelineno-31-8"></a><span class="w">  </span><span class="nt">intervalSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+<a href="#__codelineno-31-9" id="__codelineno-31-9" name="__codelineno-31-9"></a><span class="w">  </span><span class="nt">timeoutSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<a href="#__codelineno-31-10" id="__codelineno-31-10" name="__codelineno-31-10"></a><span class="w">  </span><span class="nt">successThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a href="#__codelineno-31-11" id="__codelineno-31-11" name="__codelineno-31-11"></a><span class="w">  </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a href="#__codelineno-31-12" id="__codelineno-31-12" name="__codelineno-31-12"></a><span class="w">  </span><span class="nt">http</span><span class="p">:</span>
+<a href="#__codelineno-31-13" id="__codelineno-31-13" name="__codelineno-31-13"></a><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://10.1.3.210:30028</span>
+<a href="#__codelineno-31-14" id="__codelineno-31-14" name="__codelineno-31-14"></a><span class="w">    </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GET</span>
+<a href="#__codelineno-31-15" id="__codelineno-31-15" name="__codelineno-31-15"></a><span class="w">    </span><span class="nt">criteria</span><span class="p">:</span>
+<a href="#__codelineno-31-16" id="__codelineno-31-16" name="__codelineno-31-16"></a><span class="w">      </span><span class="nt">statusCode</span><span class="p">:</span><span class="w"> </span><span class="s">"200"</span>
+</code></pre></div>
+<p>检查状态：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-32-1" id="__codelineno-32-1" name="__codelineno-32-1"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>StatusCheck<span class="w"> </span>status-check-example
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-33-1" id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="nt">Name</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">status-check-example</span>
+<a href="#__codelineno-33-2" id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="nt">Namespace</span><span class="p">:</span><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a href="#__codelineno-33-3" id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="nt">Labels</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">&lt;none&gt;</span>
+<a href="#__codelineno-33-4" id="__codelineno-33-4" name="__codelineno-33-4"></a><span class="nt">Annotations</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">&lt;none&gt;</span>
+<a href="#__codelineno-33-5" id="__codelineno-33-5" name="__codelineno-33-5"></a><span class="nt">API Version</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">chaos-mesh.org/v1alpha1</span>
+<a href="#__codelineno-33-6" id="__codelineno-33-6" name="__codelineno-33-6"></a><span class="nt">Kind</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">StatusCheck</span>
+<a href="#__codelineno-33-7" id="__codelineno-33-7" name="__codelineno-33-7"></a><span class="nt">Metadata</span><span class="p">:</span>
+<a href="#__codelineno-33-8" id="__codelineno-33-8" name="__codelineno-33-8"></a><span class="w">  </span><span class="nt">Creation Timestamp</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:20:57Z</span>
+<a href="#__codelineno-33-9" id="__codelineno-33-9" name="__codelineno-33-9"></a><span class="w">  </span><span class="nt">Generation</span><span class="p">:</span><span class="w">          </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a href="#__codelineno-33-10" id="__codelineno-33-10" name="__codelineno-33-10"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">......</span>
+<a href="#__codelineno-33-11" id="__codelineno-33-11" name="__codelineno-33-11"></a><span class="nt">Spec</span><span class="p">:</span>
+<a href="#__codelineno-33-12" id="__codelineno-33-12" name="__codelineno-33-12"></a><span class="w">  </span><span class="nt">Failure Threshold</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a href="#__codelineno-33-13" id="__codelineno-33-13" name="__codelineno-33-13"></a><span class="w">  </span><span class="nt">Http</span><span class="p">:</span>
+<a href="#__codelineno-33-14" id="__codelineno-33-14" name="__codelineno-33-14"></a><span class="w">    </span><span class="nt">Criteria</span><span class="p">:</span>
+<a href="#__codelineno-33-15" id="__codelineno-33-15" name="__codelineno-33-15"></a><span class="w">      </span><span class="nt">Status Code</span><span class="p">:</span><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">200</span>
+<a href="#__codelineno-33-16" id="__codelineno-33-16" name="__codelineno-33-16"></a><span class="w">    </span><span class="nt">Method</span><span class="p">:</span><span class="w">               </span><span class="l l-Scalar l-Scalar-Plain">GET</span>
+<a href="#__codelineno-33-17" id="__codelineno-33-17" name="__codelineno-33-17"></a><span class="w">    </span><span class="nt">URL</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">http://10.1.3.210:30029</span>
+<a href="#__codelineno-33-18" id="__codelineno-33-18" name="__codelineno-33-18"></a><span class="w">  </span><span class="nt">Interval Seconds</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+<a href="#__codelineno-33-19" id="__codelineno-33-19" name="__codelineno-33-19"></a><span class="w">  </span><span class="nt">Mode</span><span class="p">:</span><span class="w">                   </span><span class="l l-Scalar l-Scalar-Plain">Continuous</span>
+<a href="#__codelineno-33-20" id="__codelineno-33-20" name="__codelineno-33-20"></a><span class="w">  </span><span class="nt">Records History Limit</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<a href="#__codelineno-33-21" id="__codelineno-33-21" name="__codelineno-33-21"></a><span class="w">  </span><span class="nt">Success Threshold</span><span class="p">:</span><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a href="#__codelineno-33-22" id="__codelineno-33-22" name="__codelineno-33-22"></a><span class="w">  </span><span class="nt">Timeout Seconds</span><span class="p">:</span><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<a href="#__codelineno-33-23" id="__codelineno-33-23" name="__codelineno-33-23"></a><span class="w">  </span><span class="nt">Type</span><span class="p">:</span><span class="w">                   </span><span class="l l-Scalar l-Scalar-Plain">HTTP</span>
+<a href="#__codelineno-33-24" id="__codelineno-33-24" name="__codelineno-33-24"></a><span class="nt">Status</span><span class="p">:</span>
+<a href="#__codelineno-33-25" id="__codelineno-33-25" name="__codelineno-33-25"></a><span class="w">  </span><span class="nt">Conditions</span><span class="p">:</span>
+<a href="#__codelineno-33-26" id="__codelineno-33-26" name="__codelineno-33-26"></a><span class="w">    </span><span class="nt">Last Probe Time</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:22:23Z</span>
+<a href="#__codelineno-33-27" id="__codelineno-33-27" name="__codelineno-33-27"></a><span class="w">    </span><span class="nt">Last Transition Time</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:21:23Z</span>
+<a href="#__codelineno-33-28" id="__codelineno-33-28" name="__codelineno-33-28"></a><span class="w">    </span><span class="nt">Reason</span><span class="p">:</span>
+<a href="#__codelineno-33-29" id="__codelineno-33-29" name="__codelineno-33-29"></a><span class="w">    </span><span class="nt">Status</span><span class="p">:</span><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<a href="#__codelineno-33-30" id="__codelineno-33-30" name="__codelineno-33-30"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">SuccessThresholdExceed</span>
+<a href="#__codelineno-33-31" id="__codelineno-33-31" name="__codelineno-33-31"></a><span class="w">    </span><span class="nt">Last Probe Time</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:22:23Z</span>
+<a href="#__codelineno-33-32" id="__codelineno-33-32" name="__codelineno-33-32"></a><span class="w">    </span><span class="nt">Last Transition Time</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:20:53Z</span>
+<a href="#__codelineno-33-33" id="__codelineno-33-33" name="__codelineno-33-33"></a><span class="w">    </span><span class="nt">Reason</span><span class="p">:</span>
+<a href="#__codelineno-33-34" id="__codelineno-33-34" name="__codelineno-33-34"></a><span class="w">    </span><span class="nt">Status</span><span class="p">:</span><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<a href="#__codelineno-33-35" id="__codelineno-33-35" name="__codelineno-33-35"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">Completed</span>
+<a href="#__codelineno-33-36" id="__codelineno-33-36" name="__codelineno-33-36"></a><span class="w">    </span><span class="nt">Last Probe Time</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:22:23Z</span>
+<a href="#__codelineno-33-37" id="__codelineno-33-37" name="__codelineno-33-37"></a><span class="w">    </span><span class="nt">Last Transition Time</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:20:53Z</span>
+<a href="#__codelineno-33-38" id="__codelineno-33-38" name="__codelineno-33-38"></a><span class="w">    </span><span class="nt">Reason</span><span class="p">:</span>
+<a href="#__codelineno-33-39" id="__codelineno-33-39" name="__codelineno-33-39"></a><span class="w">    </span><span class="nt">Status</span><span class="p">:</span><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<a href="#__codelineno-33-40" id="__codelineno-33-40" name="__codelineno-33-40"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">DurationExceed</span>
+<a href="#__codelineno-33-41" id="__codelineno-33-41" name="__codelineno-33-41"></a><span class="w">    </span><span class="nt">Last Probe Time</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:22:23Z</span>
+<a href="#__codelineno-33-42" id="__codelineno-33-42" name="__codelineno-33-42"></a><span class="w">    </span><span class="nt">Last Transition Time</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:20:53Z</span>
+<a href="#__codelineno-33-43" id="__codelineno-33-43" name="__codelineno-33-43"></a><span class="w">    </span><span class="nt">Reason</span><span class="p">:</span>
+<a href="#__codelineno-33-44" id="__codelineno-33-44" name="__codelineno-33-44"></a><span class="w">    </span><span class="nt">Status</span><span class="p">:</span><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<a href="#__codelineno-33-45" id="__codelineno-33-45" name="__codelineno-33-45"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">FailureThresholdExceed</span>
+<a href="#__codelineno-33-46" id="__codelineno-33-46" name="__codelineno-33-46"></a><span class="w">  </span><span class="nt">Count</span><span class="p">:</span><span class="w">                   </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a href="#__codelineno-33-47" id="__codelineno-33-47" name="__codelineno-33-47"></a><span class="w">  </span><span class="nt">Records</span><span class="p">:</span>
+<a href="#__codelineno-33-48" id="__codelineno-33-48" name="__codelineno-33-48"></a><span class="w">    </span><span class="nt">Outcome</span><span class="p">:</span><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">Success</span>
+<a href="#__codelineno-33-49" id="__codelineno-33-49" name="__codelineno-33-49"></a><span class="w">    </span><span class="nt">Start Time</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:21:23Z</span>
+<a href="#__codelineno-33-50" id="__codelineno-33-50" name="__codelineno-33-50"></a><span class="w">    </span><span class="nt">Outcome</span><span class="p">:</span><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">Success</span>
+<a href="#__codelineno-33-51" id="__codelineno-33-51" name="__codelineno-33-51"></a><span class="w">    </span><span class="nt">Start Time</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:21:53Z</span>
+<a href="#__codelineno-33-52" id="__codelineno-33-52" name="__codelineno-33-52"></a><span class="w">    </span><span class="nt">Outcome</span><span class="p">:</span><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">Success</span>
+<a href="#__codelineno-33-53" id="__codelineno-33-53" name="__codelineno-33-53"></a><span class="w">    </span><span class="nt">Start Time</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:22:23Z</span>
+<a href="#__codelineno-33-54" id="__codelineno-33-54" name="__codelineno-33-54"></a><span class="w">  </span><span class="nt">Start Time</span><span class="p">:</span><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:20:53Z</span>
+<a href="#__codelineno-33-55" id="__codelineno-33-55" name="__codelineno-33-55"></a><span class="nt">Events</span><span class="p">:</span>
+<a href="#__codelineno-33-56" id="__codelineno-33-56" name="__codelineno-33-56"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Type    Reason                             Age   From         Message</span>
+<a href="#__codelineno-33-57" id="__codelineno-33-57" name="__codelineno-33-57"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">----    ------                             ----  ----         -------</span>
+<a href="#__codelineno-33-58" id="__codelineno-33-58" name="__codelineno-33-58"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckExecutionSucceed        69s   statuscheck  HTTP execution of status check succeed</span>
+<a href="#__codelineno-33-59" id="__codelineno-33-59" name="__codelineno-33-59"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckSuccessThresholdExceed  69s   statuscheck  success threshold exceed</span>
+<a href="#__codelineno-33-60" id="__codelineno-33-60" name="__codelineno-33-60"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckSuccessThresholdExceed  69s   statuscheck  success threshold exceed</span>
+<a href="#__codelineno-33-61" id="__codelineno-33-61" name="__codelineno-33-61"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckSuccessThresholdExceed  69s   statuscheck  success threshold exceed</span>
+<a href="#__codelineno-33-62" id="__codelineno-33-62" name="__codelineno-33-62"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckExecutionSucceed        39s   statuscheck  HTTP execution of status check succeed</span>
+<a href="#__codelineno-33-63" id="__codelineno-33-63" name="__codelineno-33-63"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckSuccessThresholdExceed  39s   statuscheck  success threshold exceed</span>
+<a href="#__codelineno-33-64" id="__codelineno-33-64" name="__codelineno-33-64"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckSuccessThresholdExceed  39s   statuscheck  success threshold exceed</span>
+<a href="#__codelineno-33-65" id="__codelineno-33-65" name="__codelineno-33-65"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckSuccessThresholdExceed  39s   statuscheck  success threshold exceed</span>
+<a href="#__codelineno-33-66" id="__codelineno-33-66" name="__codelineno-33-66"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckSuccessThresholdExceed  39s   statuscheck  success threshold exceed</span>
+<a href="#__codelineno-33-67" id="__codelineno-33-67" name="__codelineno-33-67"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckExecutionSucceed        9s    statuscheck  HTTP execution of status check succeed</span>
+<a href="#__codelineno-33-68" id="__codelineno-33-68" name="__codelineno-33-68"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckSuccessThresholdExceed  9s    statuscheck  success threshold exceed</span>
+<a href="#__codelineno-33-69" id="__codelineno-33-69" name="__codelineno-33-69"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckSuccessThresholdExceed  9s    statuscheck  success threshold exceed</span>
+</code></pre></div>
+</li>
+<li>
+<p>Synchronous 类型：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-34-1" id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chaos-mesh.org/v1alpha1</span>
+<a href="#__codelineno-34-2" id="__codelineno-34-2" name="__codelineno-34-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StatusCheck</span>
+<a href="#__codelineno-34-3" id="__codelineno-34-3" name="__codelineno-34-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-34-4" id="__codelineno-34-4" name="__codelineno-34-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">status-check-example</span>
+<a href="#__codelineno-34-5" id="__codelineno-34-5" name="__codelineno-34-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-34-6" id="__codelineno-34-6" name="__codelineno-34-6"></a><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Synchronous</span>
+<a href="#__codelineno-34-7" id="__codelineno-34-7" name="__codelineno-34-7"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTP</span>
+<a href="#__codelineno-34-8" id="__codelineno-34-8" name="__codelineno-34-8"></a><span class="w">  </span><span class="nt">intervalSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+<a href="#__codelineno-34-9" id="__codelineno-34-9" name="__codelineno-34-9"></a><span class="w">  </span><span class="nt">timeoutSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<a href="#__codelineno-34-10" id="__codelineno-34-10" name="__codelineno-34-10"></a><span class="w">  </span><span class="nt">successThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a href="#__codelineno-34-11" id="__codelineno-34-11" name="__codelineno-34-11"></a><span class="w">  </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a href="#__codelineno-34-12" id="__codelineno-34-12" name="__codelineno-34-12"></a><span class="w">  </span><span class="nt">http</span><span class="p">:</span>
+<a href="#__codelineno-34-13" id="__codelineno-34-13" name="__codelineno-34-13"></a><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://10.1.3.210:30028</span>
+<a href="#__codelineno-34-14" id="__codelineno-34-14" name="__codelineno-34-14"></a><span class="w">    </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GET</span>
+<a href="#__codelineno-34-15" id="__codelineno-34-15" name="__codelineno-34-15"></a><span class="w">    </span><span class="nt">criteria</span><span class="p">:</span>
+<a href="#__codelineno-34-16" id="__codelineno-34-16" name="__codelineno-34-16"></a><span class="w">      </span><span class="nt">statusCode</span><span class="p">:</span><span class="w"> </span><span class="s">"200"</span>
+</code></pre></div>
+<p>检查状态：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-35-1" id="__codelineno-35-1" name="__codelineno-35-1"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>StatusCheck<span class="w"> </span>status-check-example
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-36-1" id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="nt">Name</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">status-check-example</span>
+<a href="#__codelineno-36-2" id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="nt">Namespace</span><span class="p">:</span><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a href="#__codelineno-36-3" id="__codelineno-36-3" name="__codelineno-36-3"></a><span class="nt">Labels</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">&lt;none&gt;</span>
+<a href="#__codelineno-36-4" id="__codelineno-36-4" name="__codelineno-36-4"></a><span class="nt">Annotations</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">&lt;none&gt;</span>
+<a href="#__codelineno-36-5" id="__codelineno-36-5" name="__codelineno-36-5"></a><span class="nt">API Version</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">chaos-mesh.org/v1alpha1</span>
+<a href="#__codelineno-36-6" id="__codelineno-36-6" name="__codelineno-36-6"></a><span class="nt">Kind</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">StatusCheck</span>
+<a href="#__codelineno-36-7" id="__codelineno-36-7" name="__codelineno-36-7"></a><span class="nt">Metadata</span><span class="p">:</span>
+<a href="#__codelineno-36-8" id="__codelineno-36-8" name="__codelineno-36-8"></a><span class="w">  </span><span class="nt">Creation Timestamp</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:25:15Z</span>
+<a href="#__codelineno-36-9" id="__codelineno-36-9" name="__codelineno-36-9"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">......</span>
+<a href="#__codelineno-36-10" id="__codelineno-36-10" name="__codelineno-36-10"></a><span class="nt">Spec</span><span class="p">:</span>
+<a href="#__codelineno-36-11" id="__codelineno-36-11" name="__codelineno-36-11"></a><span class="w">  </span><span class="nt">Failure Threshold</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a href="#__codelineno-36-12" id="__codelineno-36-12" name="__codelineno-36-12"></a><span class="w">  </span><span class="nt">Http</span><span class="p">:</span>
+<a href="#__codelineno-36-13" id="__codelineno-36-13" name="__codelineno-36-13"></a><span class="w">    </span><span class="nt">Criteria</span><span class="p">:</span>
+<a href="#__codelineno-36-14" id="__codelineno-36-14" name="__codelineno-36-14"></a><span class="w">      </span><span class="nt">Status Code</span><span class="p">:</span><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">200</span>
+<a href="#__codelineno-36-15" id="__codelineno-36-15" name="__codelineno-36-15"></a><span class="w">    </span><span class="nt">Method</span><span class="p">:</span><span class="w">               </span><span class="l l-Scalar l-Scalar-Plain">GET</span>
+<a href="#__codelineno-36-16" id="__codelineno-36-16" name="__codelineno-36-16"></a><span class="w">    </span><span class="nt">URL</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">http://10.1.3.210:30029</span>
+<a href="#__codelineno-36-17" id="__codelineno-36-17" name="__codelineno-36-17"></a><span class="w">  </span><span class="nt">Interval Seconds</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+<a href="#__codelineno-36-18" id="__codelineno-36-18" name="__codelineno-36-18"></a><span class="w">  </span><span class="nt">Mode</span><span class="p">:</span><span class="w">                   </span><span class="l l-Scalar l-Scalar-Plain">Synchronous</span>
+<a href="#__codelineno-36-19" id="__codelineno-36-19" name="__codelineno-36-19"></a><span class="w">  </span><span class="nt">Records History Limit</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<a href="#__codelineno-36-20" id="__codelineno-36-20" name="__codelineno-36-20"></a><span class="w">  </span><span class="nt">Success Threshold</span><span class="p">:</span><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a href="#__codelineno-36-21" id="__codelineno-36-21" name="__codelineno-36-21"></a><span class="w">  </span><span class="nt">Timeout Seconds</span><span class="p">:</span><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<a href="#__codelineno-36-22" id="__codelineno-36-22" name="__codelineno-36-22"></a><span class="w">  </span><span class="nt">Type</span><span class="p">:</span><span class="w">                   </span><span class="l l-Scalar l-Scalar-Plain">HTTP</span>
+<a href="#__codelineno-36-23" id="__codelineno-36-23" name="__codelineno-36-23"></a><span class="nt">Status</span><span class="p">:</span>
+<a href="#__codelineno-36-24" id="__codelineno-36-24" name="__codelineno-36-24"></a><span class="w">  </span><span class="nt">Completion Time</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:25:53Z</span>
+<a href="#__codelineno-36-25" id="__codelineno-36-25" name="__codelineno-36-25"></a><span class="w">  </span><span class="nt">Conditions</span><span class="p">:</span>
+<a href="#__codelineno-36-26" id="__codelineno-36-26" name="__codelineno-36-26"></a><span class="w">    </span><span class="nt">Last Probe Time</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:25:53Z</span>
+<a href="#__codelineno-36-27" id="__codelineno-36-27" name="__codelineno-36-27"></a><span class="w">    </span><span class="nt">Last Transition Time</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:25:53Z</span>
+<a href="#__codelineno-36-28" id="__codelineno-36-28" name="__codelineno-36-28"></a><span class="w">    </span><span class="nt">Reason</span><span class="p">:</span><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">StatusCheckSuccessThresholdExceed</span>
+<a href="#__codelineno-36-29" id="__codelineno-36-29" name="__codelineno-36-29"></a><span class="w">    </span><span class="nt">Status</span><span class="p">:</span><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<a href="#__codelineno-36-30" id="__codelineno-36-30" name="__codelineno-36-30"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">Completed</span>
+<a href="#__codelineno-36-31" id="__codelineno-36-31" name="__codelineno-36-31"></a><span class="w">    </span><span class="nt">Last Probe Time</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:25:53Z</span>
+<a href="#__codelineno-36-32" id="__codelineno-36-32" name="__codelineno-36-32"></a><span class="w">    </span><span class="nt">Last Transition Time</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:25:12Z</span>
+<a href="#__codelineno-36-33" id="__codelineno-36-33" name="__codelineno-36-33"></a><span class="w">    </span><span class="nt">Reason</span><span class="p">:</span>
+<a href="#__codelineno-36-34" id="__codelineno-36-34" name="__codelineno-36-34"></a><span class="w">    </span><span class="nt">Status</span><span class="p">:</span><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<a href="#__codelineno-36-35" id="__codelineno-36-35" name="__codelineno-36-35"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">DurationExceed</span>
+<a href="#__codelineno-36-36" id="__codelineno-36-36" name="__codelineno-36-36"></a><span class="w">    </span><span class="nt">Last Probe Time</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:25:53Z</span>
+<a href="#__codelineno-36-37" id="__codelineno-36-37" name="__codelineno-36-37"></a><span class="w">    </span><span class="nt">Last Transition Time</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:25:12Z</span>
+<a href="#__codelineno-36-38" id="__codelineno-36-38" name="__codelineno-36-38"></a><span class="w">    </span><span class="nt">Reason</span><span class="p">:</span>
+<a href="#__codelineno-36-39" id="__codelineno-36-39" name="__codelineno-36-39"></a><span class="w">    </span><span class="nt">Status</span><span class="p">:</span><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<a href="#__codelineno-36-40" id="__codelineno-36-40" name="__codelineno-36-40"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">FailureThresholdExceed</span>
+<a href="#__codelineno-36-41" id="__codelineno-36-41" name="__codelineno-36-41"></a><span class="w">    </span><span class="nt">Last Probe Time</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:25:53Z</span>
+<a href="#__codelineno-36-42" id="__codelineno-36-42" name="__codelineno-36-42"></a><span class="w">    </span><span class="nt">Last Transition Time</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:25:53Z</span>
+<a href="#__codelineno-36-43" id="__codelineno-36-43" name="__codelineno-36-43"></a><span class="w">    </span><span class="nt">Reason</span><span class="p">:</span>
+<a href="#__codelineno-36-44" id="__codelineno-36-44" name="__codelineno-36-44"></a><span class="w">    </span><span class="nt">Status</span><span class="p">:</span><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<a href="#__codelineno-36-45" id="__codelineno-36-45" name="__codelineno-36-45"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">SuccessThresholdExceed</span>
+<a href="#__codelineno-36-46" id="__codelineno-36-46" name="__codelineno-36-46"></a><span class="w">  </span><span class="nt">Count</span><span class="p">:</span><span class="w">                   </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a href="#__codelineno-36-47" id="__codelineno-36-47" name="__codelineno-36-47"></a><span class="w">  </span><span class="nt">Records</span><span class="p">:</span>
+<a href="#__codelineno-36-48" id="__codelineno-36-48" name="__codelineno-36-48"></a><span class="w">    </span><span class="nt">Outcome</span><span class="p">:</span><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">Success</span>
+<a href="#__codelineno-36-49" id="__codelineno-36-49" name="__codelineno-36-49"></a><span class="w">    </span><span class="nt">Start Time</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:25:42Z</span>
+<a href="#__codelineno-36-50" id="__codelineno-36-50" name="__codelineno-36-50"></a><span class="w">  </span><span class="nt">Start Time</span><span class="p">:</span><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">2023-03-05T09:25:12Z</span>
+<a href="#__codelineno-36-51" id="__codelineno-36-51" name="__codelineno-36-51"></a><span class="nt">Events</span><span class="p">:</span>
+<a href="#__codelineno-36-52" id="__codelineno-36-52" name="__codelineno-36-52"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Type    Reason                             Age    From         Message</span>
+<a href="#__codelineno-36-53" id="__codelineno-36-53" name="__codelineno-36-53"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">----    ------                             ----   ----         -------</span>
+<a href="#__codelineno-36-54" id="__codelineno-36-54" name="__codelineno-36-54"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckExecutionSucceed        4m40s  statuscheck  HTTP execution of status check succeed</span>
+<a href="#__codelineno-36-55" id="__codelineno-36-55" name="__codelineno-36-55"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckCompleted               4m29s  statuscheck  status check completed</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StatusCheckSuccessThresholdExceed</span>
+<a href="#__codelineno-36-56" id="__codelineno-36-56" name="__codelineno-36-56"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Normal  StatusCheckSuccessThresholdExceed  4m29s  statuscheck  success threshold exceed</span>
+</code></pre></div>
+</li>
+</ul>
+<h2 id="_12">总结<a class="headerlink" href="#_12" title="Permanent link">¶</a></h2>
+<p>经过安装和实践，可以更好地理解使用 Chaos Mesh 的一些方式。这里只是举了一些例子帮助理解，对于其它更多的使用方式可以参考官方的文档。</p>
+<p>Chaos Mesh 简介：
+<a href="https://chaos-mesh.org/zh/docs/">https://chaos-mesh.org/zh/docs/</a></p>
+<p>作者：熊先生</p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年1月4日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 边缘场景玩转seccomp" class="md-footer__link md-footer__link--prev" href="230518-seccom.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                边缘场景玩转seccomp
+              </div>
+</div>
+</a>
+<a aria-label="下一页: K8s 安装教程(KLTS版)" class="md-footer__link md-footer__link--next" href="230509-k8s-install.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                K8s 安装教程(KLTS版)
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../stylesheets/zoom_image.js"></script>
+<script src="../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

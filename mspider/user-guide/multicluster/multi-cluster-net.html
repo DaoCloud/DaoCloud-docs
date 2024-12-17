@@ -1,0 +1,1454 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/mspider/user-guide/multicluster/multi-cluster-net.html" rel="canonical"/>
+<link href="multicluster-install.html" rel="prev"/>
+<link href="gray-scale-release.html" rel="next"/>
+<link href="../../../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>多集群网络通讯原理 - DaoCloud Enterprise</title>
+<link href="../../../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../../../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              多集群网络通讯原理
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../blogs/index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../../../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            产品文档
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dce/index.html">
+<span class="md-ellipsis">
+    文档导航
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+<span class="md-ellipsis">
+    探索和安装
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            探索和安装
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../dce/license0.html">
+<span class="md-ellipsis">
+    产品介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../install/index.html">
+<span class="md-ellipsis">
+    安装教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dce/bphome.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dce/faq.html">
+<span class="md-ellipsis">
+    常见问题
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+<span class="md-ellipsis">
+    工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            工作台
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../amamba/intro/index.html">
+<span class="md-ellipsis">
+    应用工作台
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+<span class="md-ellipsis">
+    容器
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            容器
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kpanda/intro/index.html">
+<span class="md-ellipsis">
+    容器管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kairship/intro/index.html">
+<span class="md-ellipsis">
+    多云编排
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kangaroo/intro/index.html">
+<span class="md-ellipsis">
+    镜像仓库
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../network/intro/index.html">
+<span class="md-ellipsis">
+    云原生网络
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../storage/index.html">
+<span class="md-ellipsis">
+    云原生存储
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../virtnest/intro/index.html">
+<span class="md-ellipsis">
+    虚拟机
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+<span class="md-ellipsis">
+    微服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            微服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../insight/intro/index.html">
+<span class="md-ellipsis">
+    可观测性
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../skoala/intro/index.html">
+<span class="md-ellipsis">
+    微服务引擎
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    服务网格
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_3">
+<span class="md-nav__icon md-icon"></span>
+            服务网格
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../intro/index.html">
+<span class="md-ellipsis">
+    介绍
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../install/install.html">
+<span class="md-ellipsis">
+    安装、配置和升级
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../service-mesh/index.html">
+<span class="md-ellipsis">
+    创建/删除网格
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../service-list/index.html">
+<span class="md-ellipsis">
+    服务管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../traffic-governance/index.html">
+<span class="md-ellipsis">
+    流量治理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../security/index.html">
+<span class="md-ellipsis">
+    安全治理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../sidecar-management/ns-sidecar.html">
+<span class="md-ellipsis">
+    边车管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../traffic-monitor/index.html">
+<span class="md-ellipsis">
+    流量监控
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../cluster-management/index.html">
+<span class="md-ellipsis">
+    集群纳管
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../gateway-instance/create.html">
+<span class="md-ellipsis">
+    网格网关
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="cluster-interconnect.html">
+<span class="md-ellipsis">
+    网格配置
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_5_3_12" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_3_12" id="__nav_2_5_3_12_label" tabindex="0">
+<span class="md-ellipsis">
+    测试
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_5_3_12_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_5_3_12">
+<span class="md-nav__icon md-icon"></span>
+            测试
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../test/ocp.html">
+<span class="md-ellipsis">
+    OCP 接入网格
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../test/openshift.html">
+<span class="md-ellipsis">
+    Openshift 与网格兼容性测试
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="multicluster-install.html">
+<span class="md-ellipsis">
+    网格多云部署
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    多集群网络通讯原理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="multi-cluster-net.html">
+<span class="md-ellipsis">
+    多集群网络通讯原理
+  </span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      多云服务网格的优势
+    </span>
+</a>
+<nav aria-label="多云服务网格的优势" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      故障隔离与故障转移
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      地域感知与故障转移
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      多维度团队或项目隔离
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      多云维度的观测能力
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      多云下网络通讯原理
+    </span>
+</a>
+<nav aria-label="多云下网络通讯原理" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      单一网络模型
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      多网络模型
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      多云服务网格架构的抉择
+    </span>
+</a>
+<nav aria-label="多云服务网格架构的抉择" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      单集群单控制面
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      多集群单控制面
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      多集群多控制面
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      多云环境下的服务发现
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+<span class="md-ellipsis">
+      服务网格技术方案
+    </span>
+</a>
+<nav aria-label="服务网格技术方案" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
+<span class="md-ellipsis">
+      网络模型
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      多集群单控制面
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
+<span class="md-ellipsis">
+      服务网格架构
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_19">
+<span class="md-ellipsis">
+      参考
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="gray-scale-release.html">
+<span class="md-ellipsis">
+    多集群灰度发布
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../troubleshoot/index.html">
+<span class="md-ellipsis">
+    故障排查
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../best-practice/use-egress-and-authorized-policy.html">
+<span class="md-ellipsis">
+    最佳实践
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+<span class="md-ellipsis">
+    数据服务
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            数据服务
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../middleware/index.html">
+<span class="md-ellipsis">
+    中间件
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="">
+<span class="md-ellipsis">
+    云原生 AI
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+            云原生 AI
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../baize/intro/index.html">
+<span class="md-ellipsis">
+    AI Lab
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="">
+<span class="md-ellipsis">
+    边缘计算
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+            边缘计算
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../kant/intro/index.html">
+<span class="md-ellipsis">
+    云边协同
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="">
+<span class="md-ellipsis">
+    管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            管理
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../ghippo/intro/index.html">
+<span class="md-ellipsis">
+    全局管理
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../blogs/index.html">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      多云服务网格的优势
+    </span>
+</a>
+<nav aria-label="多云服务网格的优势" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      故障隔离与故障转移
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      地域感知与故障转移
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      多维度团队或项目隔离
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      多云维度的观测能力
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      多云下网络通讯原理
+    </span>
+</a>
+<nav aria-label="多云下网络通讯原理" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      单一网络模型
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      多网络模型
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      多云服务网格架构的抉择
+    </span>
+</a>
+<nav aria-label="多云服务网格架构的抉择" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      单集群单控制面
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      多集群单控制面
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      多集群多控制面
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      多云环境下的服务发现
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+<span class="md-ellipsis">
+      服务网格技术方案
+    </span>
+</a>
+<nav aria-label="服务网格技术方案" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
+<span class="md-ellipsis">
+      网络模型
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      多集群单控制面
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
+<span class="md-ellipsis">
+      服务网格架构
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_19">
+<span class="md-ellipsis">
+      参考
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/mspider/user-guide/multicluster/multi-cluster-net.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/mspider/user-guide/multicluster/multi-cluster-net.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/mspider/user-guide/multicluster/multi-cluster-net.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="_1">多集群网络通讯原理与架构分析<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<p>近年来，多集群架构已经成为“老生常谈”。我们喜欢高可用，喜欢异地多可用区，而多集群架构天生就具备了这样的能力。
+另一方面我们也希望通过多集群混合云来降低成本，利用到不同集群各自的优势和特性，以便使用不同集群的最新技术与支持现实中越来越复杂的云上业务。
+最为本质的问题时单集群模式下存在承载能力上限，并且集群故障时，无法快速故障转移。</p>
+<p>就是因为这些种种原因，多集群几乎成为了云计算的新潮流。
+随着新架构的诞生，新的难题也接踵而来，尤其是在多集群场景下，其中业务的治理、监控、网络通讯也面临着严重的考验。
+这时不得不提到服务网格，该技术从理论上来说对于多云多集群场景下，从设计基因中就自带了解决上面问题的能力。</p>
+<p>为什么说服务网格能够支持复杂的多云场景呢？
+服务网格将自身能力下沉到基础设施层面，因此从理论上来说，在多云环境中，它天然能够感知自己云上业务的各种信息，比如说服务地址、服务之间链路关系等网络信息，
+网格将感知的信息聚会成一个完整的多云网络拓扑，在一个已知且能控制的多云拓扑中，用户能够从高纬度的观测并且控制业务通讯。</p>
+<p>上述都只理论分析，再多的理论分析也不如一个实践论证，因此我们将自身服务网格产品（Mspider）到底如何支持多云环境进行一个由浅入深的整体剖析。</p>
+<h2 id="_2">多云服务网格的优势<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>首先，我们回到最初的起点，我们为什么要选择多云服务网格？
+所有的技术都是为了解决问题而存在，不具有优势与解决问题的技术，是虚假且没有意义的。
+因此我们简单介绍一下相对于单集群场景下，多云场景下的服务网格能够给我们带来哪些优势？</p>
+<h3 id="_3">故障隔离与故障转移<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p>在单集群场景下，业务服务 A 出现问题时，我们通过将业务流量转移到同集群的另一个业务实例上。
+但是如果集群出现故障时，这时候会变成多个业务同时故障，这时候如何将该集群的所有业务转移到另一个集群上，这是已经非常费时且复杂地。
+但是实际地生产环境下，每分每秒是非常昂贵。
+但是多云场景下，集群维度的故障转移是基本能力，用户能够快速地转移其所有业务的流量。
+用户只需要定义集群之间故障转移的策略，例如 A 集群故障时，将业务流量转移到集群 B 中。</p>
+<h3 id="_4">地域感知与故障转移<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<p>当多云环境下，对云上的地域进行定义；在业务健康时，可以让业务之间通讯以就近原则，发生故障时，可以快速转移至最近的地域环境中。</p>
+<p>地域感知对于多云的重要性不言而喻。
+因为现实世界、实际地域区域会影响网络通讯，中间有时间空间资源等多种因素。
+例如当中国北京的集群都故障时，随机将业务转移到美国，但是实际环境中中国上海的集群空闲在那里，这肯定是不合理的。</p>
+<h3 id="_5">多维度团队或项目隔离<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<p>虽然随着多云的体量扩大，但是团队的复杂度并没有增加，团队可以将多云划分成不同的区域、不同的集群、不同业务项目。
+团队拥有多云能力的情况下，可以只需要管理自己相关的集群与业务。</p>
+<h3 id="_6">多云维度的观测能力<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<p>单集群模式下，用户只能知道当前集群内的业务运行情况，每个集群之间的业务通讯时不透明且独立的。用户无法感知到集群外的业务通讯链路。</p>
+<p>但是多云场景下，只要属于同一个网格，网格能将同一网络下不同集群之间的通讯情况进行聚合分析，将其绘制成一张完整的多云网络拓扑。
+好比原先的单集群只是一张 2D 的照片，现在多云场景下，服务网格能够提供一张 3D 立体的拓扑网络。
+这不仅仅是范围的扩大，而是维度层次上的增加。</p>
+<h2 id="_7">多云下网络通讯原理<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<p>在了解了多云场景下巨大的优势，我们回归现实，多云场景有伴随着哪些问题？
+其中哪个问题最为根本？
+首先我们从字面上理解一下这个意思，多个云环境？多个云厂商？
+多个云集群？这里的多个，就意味着存在不同。
+而且在多云世界里，网络通讯是一个非常硬核的问题，云厂商之间能够直接通讯吗？
+多集群之间如何通讯无阻？</p>
+<p>在单集群的情况，所以的工作负载都在同一网络上（集群内部网络），但是多集群的场景下，每个集群可能存在多种因素导致网络无法互通，这里列举常见的几种情况：</p>
+<ul>
+<li>地域问题导致集群实际网络之间存在网络隔离</li>
+<li>初始化集群时，保持默认配置导致集群子网都一样，因此集群与集群之间网络会存在 IP 冲突。
+  以上几种情况下的多集群之间网络通讯是存在问题的，为了保持集群内部网络的独立性以及集群网络之间网络打通，Istio 提供了两种网络模型，用户可以根据集群状态与用户需求自由选择不同的网络模型。</li>
+</ul>
+<h3 id="_8">单一网络模型<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<p>顾名思义，在单一网络的情况下，多集群之间的网络实例能给直接通讯，这时候不需要网格进行任何操作，服务之间网络通讯能够直达，其架构图如下：</p>
+<p><img alt="架构图" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/single-net.png"/></p>
+<p>单一网络模型的优势是非常明显的，用户通讯时，无需复杂的配置和中转，因此网络解析也更加直观，因此也能带来更高的网络性能。</p>
+<p>在这时不得不提的是，有的用户会问，如果拥有多个集群，并且当时多集群之间网络存在冲突，但是又想要多集群之间网络选择单一网络模型时如何做？在这里简单提供一些网络改造需要解决的问题：</p>
+<ul>
+<li>子网冲突问题：需要解决集群实例网络与集群服务网络的子网冲突问题</li>
+<li>网络隔离问题：集群之间网络可能由于地域、安全等多种因素造成网络隔离的现状，用户可以选择通过隧道或直接路由，解决跨多个集群的 Pod IP 路由。</li>
+</ul>
+<h3 id="_9">多网络模型<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<p>在多网络模型中，不同网络中的工作负载实例不能够直接通讯，因此服务网格提供了一种解决方案，让业务实例通过一个或多个 Mesh 网关相互访问，从而解决工作实例网络不能互相通讯的问题。</p>
+<p>在服务通讯时，网格会根据网络分区进行服务发现，当请求服务与目标服务不属于同一网络分区时，服务请求将会转发给目标分区的东西网关，通过东西网关路由到真实的目标服务。</p>
+<p><img alt="服务请求分发" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/multi-net.png"/></p>
+<h2 id="_10">多云服务网格架构的抉择<a class="headerlink" href="#_10" title="Permanent link">¶</a></h2>
+<p>在上述网络方面的思考以后，用户可能对服务网格自身架构存在好奇，例如服务网格控制面组件位置在哪里？
+如何运行多集群模式？
+这架构拥有哪些优势或者缺陷？
+让我们具体分析现有服务网格提供的架构，现在主要有如下三种架构：</p>
+<ul>
+<li>单集群单控制面</li>
+<li>多集群单控制面</li>
+<li>多集群多控制面</li>
+</ul>
+<h3 id="_11">单集群单控制面<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
+<p>在最简单的情况下，可以在单一集群上使用控制平面运行网格。</p>
+<p><img alt="控制平面运行网格" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/singlecluster-primary.png"/></p>
+<h3 id="_12">多集群单控制面<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
+<p>多集群部署也可以共享控制平面实例。
+在这种情况下，在核心控制集群部署核心的共享控制面实例，其网格核心的通讯策略都由 <strong>共享控制面实例</strong> 控制。
+在从集群中，其实也存在一个从控制面实例，该实例其核心能力是 <strong>控制本集群的边车生命周期管理</strong> 。</p>
+<p><img alt="共享控制面实例" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/multi-primary.png"/></p>
+<p><img alt="控制本集群边车" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/multi-primary-control.png"/></p>
+<p>思考一个问题，从集群的边车如何与共享控制面建立连接？其回答时共享控制面需要暴露自身控制面服务。</p>
+<p>在单一网络模型中主集群的共享控制平面可以通过稳定 IP(例如集群 IP)访问。</p>
+<p>但是在多网络模型的多集群中，需要通过 Mesh 网关对外 <strong>暴露</strong> 共享控制平面。</p>
+<p>在实际的生产环境，可以根据实际的云供应商或者内部网络的规划灵活选择；
+例如内部负载平衡器，避免将控制面暴露到公共网络中，因为其存在潜在的安全隐患。</p>
+<p>共享控制面在上面描述中都是属于某一个网格集群中，其实其远程共享控制面也可以部署在网格外的集群中，
+这样能够让网格的控制面与数据面在物理上实现隔离，避免主集群的控制面与数据面同时出现问题，可以分散风险。</p>
+<p><img alt="远程共享部署" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/remote-primary.png"/></p>
+<h3 id="_13">多集群多控制面<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<p>为了获得高可用性，您可以在多个集群、区或地域之间部署多个控制平面实例。</p>
+<p>在具有多个共享控制面的多集群场景下，每个控制面都属于某个集群，
+共享控制面接受用户定义的配置（例如 <strong>Service</strong> 、 <strong>ServiceEntry</strong> 、 <strong>DestinationRule</strong> 等）来则自身集群的 Kubernetes API Server。
+因此每个主控制面集群都拥有独立的配置来源。</p>
+<p>因此这里存在一个问题，多个控制面集群如何同步配置？
+这是一个很复杂的问题，需要增加另外的同步操作。
+在大型的生产环境可能需要配合 CI/CD 工具一起自动化该过程，实现配置同步。</p>
+<p><img alt="image-20221209083658951" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/multi-multi.png"/></p>
+<p>在这种多控制面模型下的在部署难度与配置复杂度上需要付出很大代价。
+但是也能收获更高的回报，其核心优势在于：</p>
+<ul>
+<li><strong>高可用</strong> ：如果控制平面不可用，故障范围仅限于由该控制平面管理的群集中的工作负载。</li>
+<li><strong>配置隔离</strong> ：您可以在一个群集，区域或地区中进行配置更改，而不会影响其他群集。</li>
+<li><strong>控制面分区域滚动发布</strong> ：能够在不同的控制面区域内，对网格控制面进行滚动发布，包括金丝雀发布网格控制面，其影响范围也只是该控制面所在的区域。</li>
+</ul>
+<h2 id="_14">多云环境下的服务发现<a class="headerlink" href="#_14" title="Permanent link">¶</a></h2>
+<p>了解了服务网格控制面架构以后，这时候我们不得不提到服务网格数据面的通讯与运行原理，
+理解这些原理能提高我们在实际运行服务网格遇到问题的解决能力。其中服务网格数据面通讯里面最为核心的技术便是服务发现能力。</p>
+<p>在单集群模式下，服务网格控制面会从集群注册中心获取所有注册在集群中的服务，然后将集群注册中心获取到的服务信息聚合成一个服务端点列表，向每个边车提供。</p>
+<p>在多群集场景下的服务发现能力更加复杂，因为集群之间存在注册中心隔离，网格为了运行多集群采用的解决方案是服务网格控制平面会观察并且记录每个集群中的注册中心的服务，
+然后将集群中的 <strong>同命名空间下</strong> 的 <strong>同名服务</strong> 进行聚合，最后梳理成一张完整的 <strong>网格服务端点列表</strong> ，然后下发给网格内的边车。因此服务才能具有发现其他集群服务端点的能力。</p>
+<p>因此网格控制面为了能够访问其控制面的多集群的注册中心，在部署阶段需要从集群 <strong>授权远程密钥</strong> 给所属的控制面集群。
+授权以后控制面才能对多集群进行服务发现，因此才具有后续的跨集群负载均衡能力。</p>
+<p><img alt="授权远程密钥" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/multi-discovery.png"/></p>
+<p>在多集群网格部署模型下，多集群服务默认的策略是：每个集群均衡负载。
+但是在复杂且庞大的生产环境中，其实很多服务只需要在某些区域进行流量通讯，这时候就可以采用本地优先负载均衡策略（具体方式为参考 <a href="https://istio.io/latest/docs/tasks/traffic-management/locality-load-balancing/">Istio 官方提到的 Locality Load Balancing</a>）。</p>
+<p>在某些场景下我们会发现，跨集群的流量负载能力并不是频繁操作，时时刻刻的跨集群负载也不是我们所期望的。
+例如说我们只是需要进行蓝绿部署，其版本位于不同的集群中；
+例如当某个集群的某个服务出现故障时，能够切换到备用集群的服务中。
+这些场景都是偶发的。发生频率很低，但是又是刚需。</p>
+<p>这时候我们怎么样才能通过网格实现呢？在 Istio 服务网格下有两种方式：</p>
+<ol>
+<li>
+<p>我们可以不交换集群的 <strong>API Server</strong> 远程密钥，这样的话集群只能进行自身集群内的服务发现。
+  如果需要进行跨集群流量负载，可以通过 <strong>ServiceEntry</strong> 配合外部负载器的方式实现。</p>
+<p><img alt="多副本恢复" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/multi-dup-discovery.png"/></p>
+</li>
+<li>
+<p>通过配置 <strong>VirtualService</strong> 与 <strong>DestinationRule</strong> 策略，禁用多集群之间的流量负载。</p>
+</li>
+</ol>
+<h2 id="_15">服务网格技术方案<a class="headerlink" href="#_15" title="Permanent link">¶</a></h2>
+<p>上述几个章节我们简单围绕服务网格三个核心维度（网络模型、控制面架构、数据面服务发现）分析其相关原理与优势。
+但是这时候我们会发现在网络模型和控制面架构部分介绍时都存在多种方案的情形，那么我们如何选择具体那种方案呢？</p>
+<p>DaoCloud 深耕在服务网格产品多年的 ，拥有实际落地客户，以及从单集群演变到多集群客户解决方案的经验，我们产品内部也经过了多种方案的验证与实践，采集多位客户的场景，最后将我们的多集群服务网格产品的架构选型方案如下：自由的网络模型 + 多集群单控制面。</p>
+<h3 id="_16">网络模型<a class="headerlink" href="#_16" title="Permanent link">¶</a></h3>
+<p>在选择网格模型落地时，其实并不是非 A 即 B。
+比如说用户需要更高效果，其打通部分集群之间网络成本在用户容忍范围内，用户可以选择部分集群网络为单一网络模式，在无法打通集群网络的集群中选择多网络模式。</p>
+<p>每种模型都有自己独特的优势与代价，那么我能不能同时拥有呢？
+这个答案时肯定的，我们都要。所以我们提出一个全能网络模型的概念，用户可以根据自己的需要选择网络模型：</p>
+<ul>
+<li>单一网络</li>
+<li>多网络</li>
+<li>单一网络 + 多网络</li>
+</ul>
+<p>这样丰富的网络模型方案，让我们能够更加贴合用户需求解决实际问题。</p>
+<h3 id="_17">多集群单控制面<a class="headerlink" href="#_17" title="Permanent link">¶</a></h3>
+<p>到这一部分，很多人会提问为什么选择多集群单控制面模式呢？从上述文章看起来多集群多控制面提供的能力不是更加丰富吗？</p>
+<p>这里不得不提到实现多集群多控制面在落地的时候存在一个非常痛苦的点：多控制面从部署到运用到维护的成本非常高。
+我们怎么得出这个结论的呢？在早期我们内部选择了多集群多控制面的验证，但是在这个过程中发现多控制面存在一些弊端：</p>
+<ul>
+<li>
+<p>策略复杂高隐患：</p>
+<ul>
+<li>配置复杂：不同的控制面需要不同的策略，虽然换个角度看是独立的控制面策略，但是在多集群场景下，集群肯定是简单的一个两个，应用的总数也会随着集群的扩大变得更加复杂，非常容易发生部分集群忘记配置，或者更改配置时需要重复配置多套相同的策略。</li>
+<li>策略冲突：多套控制面的策略非常多，用户需要准确掌握每个策略，不然很容易造成策略冲突。</li>
+</ul>
+</li>
+<li>
+<p>控制面部署与升级维护成本高：当存在多套控制面时，我们需要维护多套控制面的部署与升级。</p>
+</li>
+<li>污染多个控制面集群：由于网格需要聚会多集群命名空间与服务，会污染控制面集群。让我举例说明：当集群 A 拥有命名空间 N1、N2；集群 B 拥有命名空间 N3 时；且集群 A、B 都控制面集群时，集群 A 需要新增 N3，集群 B 需要新增 N1、N2。当多集群与集群中业务到达一定体量时，这是非常恐怖的。</li>
+</ul>
+<p>但是在多集群单控制面模式下能够大部分避免上面存在的问题，尤其是其中治理策略复杂这块，所有的策略将会统一在一个集群中，因此其中配置难度与管理难度将大大降低。</p>
+<h3 id="_18">服务网格架构<a class="headerlink" href="#_18" title="Permanent link">¶</a></h3>
+<p>接下来让我们来了解一下服务网格的实际架构：</p>
+<p><img alt="托管网格" src="https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/mspider-hosted-mesh.png"/></p>
+<p>在原生的多集群单控制面下其实并不能解决上文提到的污染多个控制面集群问题，但是我们仔细看上面的架构，大家会发现在这部分架构与社区提供的方案有一个很大的不同，在控制面集群中多了一套服务网格组件，这一套组件的最大的特色是提供了一个虚拟集群，该集群与网格控制面连接，并且目的是将网格资源与控制面集群的资源进行隔离，避免产生脏资源，这时候就能完美解决治理资源污染集群的问题，并且避免用户误操作删除控制面策略资源。</p>
+<p>总结一下服务网格技术选型方案的的优势：</p>
+<ul>
+<li><strong>更简单的管理</strong> ： 将整个服务网格的管理集中在一个控制平面中，可以帮助组织更方便、更快速地管理整个服务网格。</li>
+<li><strong>低复杂度的配置与更好的性能</strong> ： 通过将整个服务网格的所有数据都统一在一个控制平面中，可以更快速地处理服务的路由和治理策略，从而提高整个服务网格的性能。</li>
+<li><strong>更强的安全性</strong> ：在单控制面多集群模式中，我们可以更好地控制对整个服务网格的访问，并使用更严格的安全策略来保护其数据。</li>
+<li><strong>支持跨集群负载与容灾能力</strong> ：能够灵活的配置跨集群流量负载与容灾策略。</li>
+<li><strong>策略配置统一高效</strong> ：不需要配置复杂的控制面配置同步与合并问题，尤其是控制面越多，其业务服务的体量越大，其同步和合并一定会是一个非常复杂且存在风险的存在。</li>
+<li><strong>灵活的控制面与数据面隔离</strong> ：服务网格允许用户将网格控制面与数据面集群进行隔离，并且在用户资源有限的情况下也支持集群同时兼具控制面与数据面在同一集群下。</li>
+<li><strong>网络模式灵活切换</strong> ：服务网格默认场景是多集群位于单网络，但是多网络模式也能够支持部署。</li>
+<li><strong>网格资源隔离</strong> ：在开源模式下，控制面集群需要管理所有集群的网格策略，这时候会存在污染控制面集群的命名空间，或者部分网格资源会受到集群本身操作影响（例如某个命名空间被删除）。</li>
+</ul>
+<h2 id="_19">参考<a class="headerlink" href="#_19" title="Permanent link">¶</a></h2>
+<p>本文部分图片来自 <a href="https://istio.io/latest/docs/">Istio 官网</a>与 <a href="https://docs.daocloud.io/">DaoCloud 文档网站</a>。</p>
+<p>参阅 <a href="https://istio.io/latest/docs/ops/deployment/deployment-models/">Istio 部署模型</a>。</p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年2月27日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 网格多云部署" class="md-footer__link md-footer__link--prev" href="multicluster-install.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                网格多云部署
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 多集群灰度发布" class="md-footer__link md-footer__link--next" href="gray-scale-release.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                多集群灰度发布
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../../../stylesheets/zoom_image.js"></script>
+<script src="../../../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

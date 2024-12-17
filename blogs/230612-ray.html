@@ -1,0 +1,1502 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。" name="description"/>
+<meta content="DaoCloud" name="author"/>
+<link href="https://docs.daocloud.io/blogs/230612-ray.html" rel="canonical"/>
+<link href="230615-ray.html" rel="prev"/>
+<link href="230609-istio118.html" rel="next"/>
+<link href="../images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>AIGC 利器 Ray 探索上篇 - DaoCloud Enterprise</title>
+<link href="../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../overrides/assets/stylesheets/main.e13ced4c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WDCH551J9C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WDCH551J9C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WDCH551J9C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#aigc-ray-ray-core">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+<a href="/dce/license0/">
+   DaoCloud 第五代产品全新上线咯！<strong>点击链接，免费体验！</strong>
+
+</a>
+</div>
+</aside>
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="DaoCloud Enterprise" class="md-header__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DaoCloud Enterprise
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              AIGC 利器 Ray 探索上篇
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to system preference" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/" hreflang="zh">
+              简体中文
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://www.daocloud.io/">
+        
+  
+    
+  
+  DaoCloud 官网
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../dce/index.html">
+          
+  
+  产品文档
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../videos/index.html">
+          
+  
+  视频教程
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../download/index.html">
+          
+  
+  下载中心
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="index.html">
+          
+  
+  博客
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../community/index.html">
+          
+  
+  DaoCloud 开源生态
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../native/news/news-2024.html">
+          
+  
+  云原生研究院
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../trial/index.html">
+          
+  
+  免费体验
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DaoCloud Enterprise" class="md-nav__button md-logo" data-md-component="logo" href="/" title="DaoCloud Enterprise">
+<img alt="logo" src="../images/DaoCloud.png"/>
+</a>
+    DaoCloud Enterprise
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DaoCloud/DaoCloud-docs" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    DaoCloud/DaoCloud-docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://www.daocloud.io/">
+<span class="md-ellipsis">
+    DaoCloud 官网
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../dce/index.html">
+<span class="md-ellipsis">
+    产品文档
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../videos/index.html">
+<span class="md-ellipsis">
+    视频教程
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../download/index.html">
+<span class="md-ellipsis">
+    下载中心
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-ellipsis">
+    博客
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            博客
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="index.html">
+<span class="md-ellipsis">
+    博文索引
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+<span class="md-ellipsis">
+    2024
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="241108-cncf-ambassador.html">
+<span class="md-ellipsis">
+    从社区小白到 CNCF 大使
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="241106-containerd-nerdctl-lima.html">
+<span class="md-ellipsis">
+    containerd 相关项目集中发布新版本
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240816-1.31-image.html">
+<span class="md-ellipsis">
+    K8s 1.31 OCI 工件的只读卷
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="20240619-nvidiaai.html">
+<span class="md-ellipsis">
+    Nvidia 征服最新的 AI 测试
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0606-k8s-birth.html">
+<span class="md-ellipsis">
+    Kubernetes 十周年
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240516-sig-docs.html">
+<span class="md-ellipsis">
+    K8s 从敲代码到抒发文笔
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240509-model-spec.html">
+<span class="md-ellipsis">
+    OpenAI 大语言模型规范
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="0429-ai-survey.html">
+<span class="md-ellipsis">
+    全球大规模AI基础设施形势调研
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240416-kubean.html">
+<span class="md-ellipsis">
+    一颗豆荚入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240410-cnai-wp.html">
+<span class="md-ellipsis">
+    云原生人工智能白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240326-kubecon-eu.html">
+<span class="md-ellipsis">
+    巴黎 KubeCon 谁在引领创新
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240301-osc-eco.html">
+<span class="md-ellipsis">
+    创建一个开源商业生态体系
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240203-book.html">
+<span class="md-ellipsis">
+    好书《K8s云原生数据管理》
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240201-ai-compute.html">
+<span class="md-ellipsis">
+    加速计算基本定义及工作原理
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240115-news.html">
+<span class="md-ellipsis">
+    容器化 AI 简化 ML 模型的部署
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="240108-kubeedge.html">
+<span class="md-ellipsis">
+    KubeEdge v1.15.0 发布
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+<span class="md-ellipsis">
+    2023
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="231220-spiderpool.html">
+<span class="md-ellipsis">
+    Spiderpool入选CNCF Sandbox
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231213-k8s-1.29.html">
+<span class="md-ellipsis">
+    K8s 1.29发布宇宙主题雄心勃勃
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231205-vm-bm-compare.html">
+<span class="md-ellipsis">
+    K8s 裸机 vs 虚机性能对比
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231115-k8s-1.29-changes.html">
+<span class="md-ellipsis">
+    K8s 1.29前瞻：移除、弃用及变更
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="231008-kcs.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会回顾
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230911-kubecon-contributor.html">
+<span class="md-ellipsis">
+    上海 K8s 贡献者峰会召集令
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230824-tools.html">
+<span class="md-ellipsis">
+    K8s 本地开发工具比较
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230815-k8s1.28.html">
+<span class="md-ellipsis">
+    K8s 1.28 震撼发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230808-k8sgpt.html">
+<span class="md-ellipsis">
+    K8sGPT 赋能 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230615-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索下篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索上篇
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="230612-ray.html">
+<span class="md-ellipsis">
+    AIGC 利器 Ray 探索上篇
+  </span>
+</a>
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      基本概念
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      整体架构
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#job">
+<span class="md-ellipsis">
+      Job 介绍
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#actor">
+<span class="md-ellipsis">
+      Actor 介绍
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#task">
+<span class="md-ellipsis">
+      Task 介绍
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#object">
+<span class="md-ellipsis">
+      Object 介绍
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#placement-group">
+<span class="md-ellipsis">
+      Placement Group 管理
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      节点管理
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      资源管理
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      总结
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230609-istio118.html">
+<span class="md-ellipsis">
+    Istio 1.18 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230605-fedstate.html">
+<span class="md-ellipsis">
+    联邦中间件FedState
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230601-api-server-tracing.html">
+<span class="md-ellipsis">
+    API Server Tracing进阶
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230518-seccom.html">
+<span class="md-ellipsis">
+    边缘场景玩转seccomp
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230515-chaos-mesh.html">
+<span class="md-ellipsis">
+    混沌工程 Chaos Mesh
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230509-k8s-install.html">
+<span class="md-ellipsis">
+    K8s 安装教程(KLTS版)
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230508-cilium.html">
+<span class="md-ellipsis">
+    Cilium 实现 socket 加速
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230428-pod-startup.html">
+<span class="md-ellipsis">
+    K8s 1.27 加快 Pod 启动
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230427-victoriametrics.html">
+<span class="md-ellipsis">
+    云原生监控之基础篇
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230418-karmada-failover.html">
+<span class="md-ellipsis">
+    Karmada Failover 详解
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230417-cncf-platform-wp.html">
+<span class="md-ellipsis">
+    CNCF 平台工程白皮书
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230412-k8s-1.27.html">
+<span class="md-ellipsis">
+    K8s 1.27 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230411-spiderpool.html">
+<span class="md-ellipsis">
+    固定应用 IP 的新选择
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230405-step-by-step-dce5.html">
+<span class="md-ellipsis">
+    保姆式安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230317-edge-app-wp.html">
+<span class="md-ellipsis">
+    边缘原生应用准则
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-linux.html">
+<span class="md-ellipsis">
+    Linux 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230315-install-on-macos.html">
+<span class="md-ellipsis">
+    macOS 单机安装社区版
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230301-kwok.html">
+<span class="md-ellipsis">
+    KWOK 介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-open-projects.html">
+<span class="md-ellipsis">
+    社区版涉及的开源项目
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230214-daocloud_k8s.html">
+<span class="md-ellipsis">
+    DaoCloud 与 K8s
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-peter.html">
+<span class="md-ellipsis">
+    DCE 5.0 攻坚语录集
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230201-forecast.html">
+<span class="md-ellipsis">
+    2023 年云原生预测
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="230110-res-usage.html">
+<span class="md-ellipsis">
+    让闲置算力跑起来
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+<span class="md-ellipsis">
+    2022
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="221209-k8s-1.26.html">
+<span class="md-ellipsis">
+    K8s 1.26 正式发布
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221116-kcsp.html">
+<span class="md-ellipsis">
+    K8s 资深认证服务商
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221026-kpanda.html">
+<span class="md-ellipsis">
+    容器管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221018-resource.html">
+<span class="md-ellipsis">
+    资源管理能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220925-amamba.html">
+<span class="md-ellipsis">
+    应用工作台能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220808-kairship.html">
+<span class="md-ellipsis">
+    多云编排能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="220708-mspider.html">
+<span class="md-ellipsis">
+    服务网格能力介绍
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="221008-dce-bg.html">
+<span class="md-ellipsis">
+    DCE 开发背景
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../community/index.html">
+<span class="md-ellipsis">
+    DaoCloud 开源生态
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../native/news/news-2024.html">
+<span class="md-ellipsis">
+    云原生研究院
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../trial/index.html">
+<span class="md-ellipsis">
+    免费体验
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      基本概念
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      整体架构
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#job">
+<span class="md-ellipsis">
+      Job 介绍
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#actor">
+<span class="md-ellipsis">
+      Actor 介绍
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#task">
+<span class="md-ellipsis">
+      Task 介绍
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#object">
+<span class="md-ellipsis">
+      Object 介绍
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#placement-group">
+<span class="md-ellipsis">
+      Placement Group 管理
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      节点管理
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      资源管理
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      总结
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/commits/main/docs/zh/docs/blogs/230612-ray.md" title="查看编辑历史">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/DaoCloud/DaoCloud-docs/edit/main/docs/zh/docs/blogs/230612-ray.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://raw.githubusercontent.com/DaoCloud/DaoCloud-docs/main/docs/zh/docs/blogs/230612-ray.md" title="查看源文件">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="aigc-ray-ray-core">AIGC 利器 Ray 云原生探索之路 - Ray Core 篇 (上)<a class="headerlink" href="#aigc-ray-ray-core" title="Permanent link">¶</a></h1>
+<p><img alt="start" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray01.png"/></p>
+<p>本文介绍 Ray 分布式计算的底座：Ray Core 是怎样的一种分布式的计算框架。</p>
+<h2 id="_1">基本概念<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>Ray Core 是 Ray 的底层的分布式的计算框架，使用基于 actor 模型来实现的一套计算框架，
+它可以将 Python 的一个 Class 或者一个 Function 转成分布式的 actor 和 task，
+在所有的机器上分布式的运行，并且 tasks/actor 之间可以通过分布式的对象存储能力来共享和传递 object 来完成分布式的一些协作。
+Ray Core 的这些能力为其它的更高层的模块提供了一个分布式计算的基础框架。</p>
+<p><img alt="concepts" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray02.png"/></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nx">ray</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nx">os</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nx">requests</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nx">ray</span><span class="p">.</span><span class="nx">init</span><span class="p">()</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="err">@</span><span class="nx">ray</span><span class="p">.</span><span class="nx">remote</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="nx">class</span><span class="w"> </span><span class="nx">Counter</span><span class="p">:</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="nx">def</span><span class="w"> </span><span class="nx">__init__</span><span class="p">(</span><span class="nx">self</span><span class="p">):</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">verify</span><span class="w"> </span><span class="nx">runtimeEnv</span>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="nx">self</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">getenv</span><span class="p">(</span><span class="s">"counter_name"</span><span class="p">)</span>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">        </span><span class="nx">self</span><span class="p">.</span><span class="nx">counter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span>
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="nx">def</span><span class="w"> </span><span class="nx">inc</span><span class="p">(</span><span class="nx">self</span><span class="p">):</span>
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="nx">self</span><span class="p">.</span><span class="nx">counter</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="nx">def</span><span class="w"> </span><span class="nx">get_counter</span><span class="p">(</span><span class="nx">self</span><span class="p">):</span>
+<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"{} got {}"</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">self</span><span class="p">.</span><span class="nx">counter</span><span class="p">)</span>
+<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>
+<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="nx">counter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Counter</span><span class="p">.</span><span class="nx">remote</span><span class="p">()</span>
+<a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>
+<a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="k">for</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="k">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">    </span><span class="nx">ray</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">counter</span><span class="p">.</span><span class="nx">inc</span><span class="p">.</span><span class="nx">remote</span><span class="p">())</span>
+<a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nx">ray</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">counter</span><span class="p">.</span><span class="nx">get_counter</span><span class="p">.</span><span class="nx">remote</span><span class="p">()))</span>
+<a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>
+<a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="nb">print</span><span class="p">(</span><span class="nx">requests</span><span class="p">.</span><span class="nx">__version__</span><span class="p">)</span>
+</code></pre></div>
+<p>说明：</p>
+<ul>
+<li><strong>class Counter</strong> 在标注了 <strong><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ray" title="GitHub User: ray">@ray</a>.remote</strong> 注解之后，同时使用 remote() 调用，如 counter = Counter.remote()，
+  这里的 counter 就是一个 actor 的 handle，而 Counter 就是一个 actor。而 class 中定义的 function 在使用 remote()
+  调用的时候，就表现成了一个 task。actor 是有状态，对于 Synchronous, Single-Threaded 类型的 actor，
+  对于同一个调用者中按照顺序调用类成员方法的时候，需要保证顺序，才能保证结果的正确性，但是不同的调用者之间是可以并发处理的。
+  对于 Asynchronous 或 Threaded 类型的 actor，即使是同一个调用者在调用成员方法的时候，也是可以不用保证调用顺序，进行异步的执行。</li>
+<li>在一般的 function（不是 class 的成员方法）的定义上也标注了<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ray" title="GitHub User: ray">@ray</a>.remote 注解之后，在调用的时候使用 remote()，
+  就表现成一个 task。task 可以分布在不同机器上，并行的进行运行，而且是异步的方式，同时是无状态的。</li>
+</ul>
+<h2 id="_2">整体架构<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p><img alt="architecture" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray03.png"/></p>
+<p><strong>driver process</strong> ：driver 是程序的根，或者理解成 main 程序，这里指的是运行了 ray.init()方法的 code。
+driver process 是一种特殊的 worker process ，用于执行 driver 的 process，它会执行顶层的应用（如 ____main____ in Python）。
+它能提交 task，但是它不是自己去执行 task。同时 driver processes 能运行在任何节点上，只是默认是运行在 head 节点。
+driver process 也会处理来自 log monitor 发送过来的 worker 节点上日志。同时，jobs 和 drivers 的关系是 1:1 的关系。</p>
+<p><strong>worker process</strong> ：worker process 负责 task 的提交和执行。一个 worker process 就是一个 python 的进程。
+worker process 可以是无状态的，这种 worker process 可以被用来重复地执行一般的 task，这里一般的 task 指的就是使用了
+ray.remote 标注的 function。worker process 也可以用于执行有状态的 actor，这里有状态的 actor 指的是使用了 ray.remote
+的 class，在一个 actor 被实例化的时候，就会创建一个对应的 worker process，专门用于这个 actor 的运行，以及 actor
+内的成员方式所对应的 task。每一个 worker process 和一个特定的 job 是相关的，默认初始化的 worker 的数量和所在机器的 cpu 核数一样。</p>
+<p><strong>Distributed Scheduler</strong> ：Distributed Scheduler 是 Raylet 组件的一部分，负责资源管理，task 放置的位置，
+保证 task 运行所需要的参数对象可以从分布式对象存储的对象中获取。每个 Raylet 组件会跟踪本地节点的资源，
+当一个资源请求被同意之后，Raylet 就会减少本地可用资源，一旦资源被使用完之后返还回来了，Raylet 又会增加本地的可用资源，
+所以 Raylet 有一个强一致性的本地的可用资源的视图。同时，Raylet 也接收来自控制平面 GCS 服务的一些关于其它节点的资源使用的信息，
+这个信息对于分布式调度是很有用的。比如，在集群范围内，可以均衡一点的调度 task。GCS 会周期性的去所有的 Raylet 拉取每一个 Raylet
+的本地节点的可用资源，然后将这些信息通过广播的方式告知所有节点的 Raylet。一般的 task 提交是使用的分布式的方式提交 task，
+也就是对于这些 task 的调度已经是去中心化了，举例来说，一个 task 的调用者在调度 task 的时候，首先会选择一个合适的 Raylet
+发送 RequestWorkerLease PRC 请求，默认是发给本地节点的 Raylet 中的调度器，去申请运行 task 需要的资源。
+但是也会根据数据本地化的原则，节点粘性的一些特性选择其它节点的 Raylet。当 Raylet 中的调度器经过分析之后，
+觉得当前的节点就是合适的节点，那这个 task 就可以在本地的节点运行，如果本地 Raylet 觉得本地节点是不合适的，
+那会告知任务的提交者去一个合适节点去申请资源，此时，任务的提交者就会去被推荐的节点的 Raylet 的调度器去申请运行 task 的资源。
+以此类推，以类似的机制处理调度的请求，直到找到一个合适的节点，这个过程就是一个去中心化的分布式的调度方式。</p>
+<p><strong>Distributed Object Store</strong> ：负责存储和转移大对象。这里是分布式的方式支持对象存储。在本地存储的大对象，
+在其它的节点上也是可以引用，在 task 执行的时候，如果 task 被调度的节点上，没有对应需要的对象，
+就会到这个对象的节点去获取这个对象到本地，然后执行 task。这样不同节点的 task 之间是可以共享和引用这些对象的。</p>
+<p><strong>Global Control Service</strong> ：GCS 是一个 server，它是 ray 的控制平面，在新版的 ray 中，GCS 加强了容错能力，
+这样 GCS 就可以运行在任意的节点，以及多个节点，而不是仅仅运行在 head 节点。GCS 服务主要包含以下能力：</p>
+<ol>
+<li>
+<p>节点管理：管理节点的增加和删除，同时广播这些信息给所有节点的 Raylets，这样所有的 Raylet 就能感知到节点的变化。</p>
+</li>
+<li>
+<p>资源管理：广播每一个 Raylet 可用的资源给整个集群，这样可以保证每一个 Raylet 都可以及时的更新自己的全局的可用资源的视图，
+   在分布式调度 task 的时候是很重要的。Ray 会先自动探测节点的资源数据作为可以调度的逻辑资源的设置。</p>
+</li>
+<li>
+<p>Actor 管理：管理 actor 的创建和删除请求，同时也监控 actor 的存活情况，以及在 actor 失败的时候重新创建 actor。
+   所有的 actor 在被调度之前是需要先注册到 GCS 中。</p>
+</li>
+<li>
+<p>Placement group 管理：配合完成 Placement group 的创建和删除。管理 Placement group 的生命周期，同时使用
+   two phase commit protocol 创建 Placement group。Placement group 是属于 job 或者 actor 的，当 job 或者
+   actor 是处于 dead 状态，那 Placement group 就会被删除，这时所有使用了 Placement group 预留资源的 actors 和
+   tasks 都会被 kill，同时释放资源。</p>
+</li>
+<li>
+<p>元数据存储：提供了一个键值对的存储能力，这些数据可以让任何 worker 访问到。这里只存储一些小的元数据。
+   主要包括集群的 dashboard address，Remote function 的定义（当一个 worker 被指定运行一个 task，
+   它会去 GCS 下载该 task 对应的 function 的定义），Runtime environment 的数据
+   （默认情况下，Runtime environment 的工作目录是保存在 GCS），还有一些其它的组件也将元数据保存在 GCS，
+   比如 Ray Serve 组件将部署的信息就保存在 GCS 中。</p>
+</li>
+<li>
+<p>Worker 管理器：处理 Raylet 上报上来的失败的 worker。</p>
+</li>
+<li>
+<p>运行时环境：管理运行时环境的包，同时也会统计这些包的使用量，以及回收。运行时环境的包是可以共享的，在资源不足的时候会回收一部分。</p>
+</li>
+</ol>
+<p><strong>API server</strong> ：不仅仅包含了 dashboard server，这里的 dashboard server 也可以理解成 dashboard 的 backend，同时还是提交 job 的 api 入口，也提供了一些集群状态的 api。</p>
+<p><strong>API agent</strong> ：收集本地节点的指标数据，用于去聚合集群层面的健康数据。也负责给 task 和 actor 去安装运行时环境用于执行 task 和 actor。</p>
+<p><strong>Autoscaler</strong> ：基于集群的资源的使用情况，以及 job 对资源的需求，去增加和移除集群的节点。</p>
+<p><strong>Log monitor</strong> ：当 task 和 actor 打印 logs 到它的 stdout or stderr，这些输出会被自动的重定向到对应的 worker 的日志文件。
+在每一个节点上都会运行一个 log monitor，它会定期的从本地的 ray 日志文件中读取这些日志文件，然后通过 GCS pubsub 的机制，
+发布这些日志消息到 head 的 driver 中去。</p>
+<h2 id="job">Job 介绍<a class="headerlink" href="#job" title="Permanent link">¶</a></h2>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray04.png"/></p>
+<p>每个 job 由其对应专用的 job supervisor actor 来管理，job supervisor actor 是运行在 head 节点上，
+后续会支持将 job supervisor actor 也可以运行在非 head 节点来减小 head 节点的压力。
+job supervisor actor 运行在用户指定的运行环境下面，job 的 entrypoint command 作为其子进程进行运行，
+同时会继承 job supervisor actor 运行的环境。这个 actor 在 ray 的 dashboard 中可以查看到，它是一个内部类型的 actor。</p>
+<p>job manager 会管理这些 job supervisor actor 以及它的日志，同时 job 自己的 entrypoint script 的输出也会被写到
+head 节点，这些日志文件可以通过 Http 的方式访问，也可以在 ray dashborad 上查看。</p>
+<p>job 会报告自己的状态（如，PENDING、RUNNING、SUCCEEDED）和一些消息，这些被存储在 GCS 中，同时可以通过 API 的方式获取到。</p>
+<p>如果想要停止一个 job，需要给对应的 job supervisor actor 发送停止事件，这个过程本身是异步的，
+job supervisor actor 会负责中断 job 的子进程以及更新 job 的状态。</p>
+<p>一个 job 会包含相关的 actors、tasks、objects 和 runtime env。jobs 和 drivers 的关系是 1:1 的关系。</p>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray05.png"/></p>
+<h2 id="actor">Actor 介绍<a class="headerlink" href="#actor" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>actor 的生命周期：</p>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray06.png"/></p>
+<ul>
+<li>
+<p>actor 的生命周期和它的元数据都是被 GCS 服务所管理的，每一个 actor 的 client 会缓存这个元数据在本地，
+  这些元数据的信息中有和发送 Tasks 相关的信息，比如 actor 的地址，client 可以通过这个地址直接通过 gRPC
+  发送 task 给 actor，这里发送的 task 主要指 actor 的成员方法所对应的 task。不像一般 task 的提交，
+  一般 task 的任务提交完全是由调用者控制什么时候调度以及运行，通过分布式调度完成调度工作。而 actor 的整个生命周期都是由
+  GCS 集中式的管理，包括 actor 的调度请求也是由 GCS 发起的，而不是 actor 的调用者。actor 被实例化之后会创建一个
+  worker process，这个 worker 是当前这个 actor 专享的（不像给一般 task 使用的 worker，这种 worker
+  是可以被 task 重复使用的），所有这个 actor 的成员方法的调用（也就是 task），会被调度这个指定的 worker，
+  这些方法可以访问和修改这个 worker 的状态。</p>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray07.png"/></p>
+</li>
+<li>
+<p>当创建一个 actor 的时候，负责创建 actor 的 worker 会构建一个 task，这个 task 叫做 actor creation task，
+  actor creation task 会运行 actor 的构造函数。负责创建这个 actor 的 worker 会等待 actor creation task
+  运行所依赖的一些外部条件就绪了之后，会异步的注册这个 actor 到 GCS，对于 detached actors，注册的处理过程是同步的方式，
+  对于 non-detached actors 的注册处理过程是异步的方式，然后 GCS 会负责调度 actor creation task 去创建 actor，
+  就好像 GCS 是这个 actor 的调用者一样。</p>
+</li>
+<li>同时，就像方法调用一样，创建的 actor 会返回一个 actor handle 给调用者。这个调用者就可以用这个 actor handle
+  去调用 actor 的方法，也可以理解成发送 Tasks，因为 actor 的成员方法也是一个 remote 的分布式的 task。
+  当一个 task 的参数是用的 actor handle，这个 task 不会立即调度，而是要等到 “actor creation task” 这个任务完成。</li>
+<li>actor 的 tasks 执行和一般的 task 是类似的，这些 actor tasks 通过 gRPC 被直接提交给 actor process，但是这些
+  task 不会直接运行，除非它的依赖都已经是 ready 的。但是 actor 的 task 和一般的 task 有两个主要的不同的地方：<ol>
+<li>默认情况下，actor task 执行是不需要资源申请的，因为 actor 在创建的时候已经申请了资源。
+    actor task 就是 actor 的成员方法被调用的创建出来的方法。</li>
+<li>对于每一个 actor 的调用者来说，同一个调用者调用的 actor 的方法时，也就是 task 是按照调用顺序执行的，
+    这样就可以保证 actor 有状态的特性，这种模式的 actor 是 Synchronous, Single-Threaded Actor。</li>
+<li>还有一种是 Asynchronous 或 Threaded Actor，这种 actor 的方法是可以异步，并且无顺序要求的。</li>
+</ol>
+</li>
+<li>默认情况下，actors 在失败的时候是不会重启的，但是为了支持故障恢复，可以设置相关参数让其支持失败之后重启的能力，
+  这里可以设置 max_restarts 和 max_task_retries 选项在 ray.remote() 和 .options() 里面。</li>
+</ul>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray08.png"/></p>
+</li>
+<li>
+<p>actor task 的执行：</p>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray09.png"/></p>
+<ul>
+<li>
+<p>actor task 指的是 actor 的成员方法被调用的时候所创建的 task。一个 actor 可能有无数个调用者，
+一个 actor handle 就代表一个调用者，同时 actor handle 中包含了 actor 的 RPC 地址，
+这样调用者就可以连接到 actor 进行提交 actor task 给 actor 对应的 worker process。</p>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray10.png"/></p>
+</li>
+<li>
+<p>一个 actor 可以并发处理很多的调用，上图仅仅显示了一次调用。</p>
+</li>
+</ul>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray11.png"/></p>
+</li>
+<li>
+<p>actor dead：</p>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray12.png"/></p>
+<ul>
+<li>
+<p>actor 可能是 detached 类型的也可能是 non-detached 类型，detached 是同步的场景，non-detached 是异步的场景，
+  在使用中推荐使用 non-detached 的类型，同时也是默认的方式，当一个 actor 的所有的 actor handle 超出范围了（通过引用计数的方式来跟踪），
+  这个时候，actor 的创建者会通知 GCS，然后 GCS 发送一个 KillActor RPC 给对应的 actor，之后 actor 将会退出它的进程，
+  actor 可以被自动的垃圾回收。或者当 GCS 检测到 actor 的创建者退出了，也会中断对应的 actor，actor 可以被自动的垃圾回收。
+  或者是 actor 对应的 job 退出了， 也会中断对应的 actor，actor 也可以被自动地垃圾回收。不管是哪种情况，提交给 actor 的，
+  但是还没有执行的 tasks 就会报 RayActorError 错误。而对于 detached 类型的 actor，在不再需要的时候，是需要应用自己手动的方式去删除的。</p>
+</li>
+<li>
+<p>actor 在运行期间，也有可能遇到不可预期的错误导致退出，那提交给 actor 的 task 也是会报 RayActorError 错误。</p>
+</li>
+<li>
+<p>Ray 中支持设置 actor 失败之后的重启次数，如果设置了 max_restarts，那在 actor 的 owner 还存活的时候，
+  GCS 会尝试通过 actor creation task 的方式，去重启 actor。在这个过程中，所有想要调用 actor 的客户端就会将要调用的
+  tasks 缓存起来，在 actor 重启成功了之后再提交过去，如果 actor 重启固定次数之后，还是没有启动好，
+  那缓存起来的，还没有运行的 actor task 就会全部被标记成失败。</p>
+</li>
+<li>
+<p>同时在 actor 重启成功之后，也有一个参数 max_restarts 来控制 actor task 的重启次数。</p>
+</li>
+</ul>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray13.png"/></p>
+</li>
+</ol>
+<h2 id="task">Task 介绍<a class="headerlink" href="#task" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>task 的生命周期：</p>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray14.png"/></p>
+<ul>
+<li>这里的 task 指的是一般的 task（NORMAL_TASK）。task 的持有者会负责保证一个被提交的 task 的执行，这里的 task
+  的持有者可以理解成调用 function 的某一个 process，这个 process 也是 function 返回值的持有者。task 的持有者会去负责和
+  raylet 通信去申请执行 task 需要的资源，这里为什么是和 raylet 通信，因为 raylet 中包含了分布式调度器。上图中 Driver
+  是 task A 的持有者，Worker1 是 task B 的持有者，所以 Driver 会负责申请 task A 执行需要的资源，而 Worker1 会负责 task B 执行需要的资源。</li>
+<li>在申请资源之前，首先需要解决的 task 的依赖，才会去分布式调度器去申请资源。这里的 task 的依赖主要指的是 task（function）
+  的参数依赖，因为参数可以是其它的 task 的返回值。分布式调度器会尝试去申请资源，同时去从分布式对象存储中去获取 task 的依赖（ObjectRef）
+  到本地节点，一旦资源和依赖都就绪了，分布式调度器会同意资源的申请，然后返回一个可以执行这个 task 的 worker 的地址给到 task 的持有者。</li>
+<li>然后 task 的持有者就会通过 gRPC 的方式，去提交这个 task 到分布式调度器返回的 worker 中去运行。在 task 执行成功之后，
+  负责执行 task 的 worker 需要保存 task 的返回值。如果 task 的返回值很小，worker 就直接将返回值返回给 task 的持有者，
+  如果 task 的返回值比较大，那就存到分布式对象存储中，返回给 task 的持有者一个存放的位置。</li>
+</ul>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray15.png"/></p>
+</li>
+<li>
+<p>分布式 task 调度：</p>
+<p>下图中，task A 已经在 worker1 中运行，task B 和 task C 已经被提交到了 worker1，所以在 worker1 的本地的关系表中已经包含了 X 和 Y 对象，
+X 代表 task B，Y 代表了 task C。首先来看看怎么样来调度 task B。</p>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray16.png"/></p>
+<ul>
+<li>worker1 去询问本地的 raylet 中的调度器去给 task B 去申请资源。</li>
+<li>本地调度器告诉 worker1 去尝试 node2 去请求调度。</li>
+<li>worker1 更新了本地的关系表去表示 task B 现在是阻塞在 node2 了。</li>
+<li>worker1 去询问 node2 的调度器，去为 task B 申请资源。</li>
+<li>node2 的调度器同意了 worker1 的资源请求，同时返回了 worker2 的地址给了 worker1。只要 task B 还在占用
+  worker2 去运行，node2 的调度器会保证没有其它的 tasks 会被再指定到 worker2 上去。</li>
+<li>之后，worker1 就发送了 task B 到 worker2 去执行了。</li>
+</ul>
+</li>
+<li>
+<p>Task 的执行：</p>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray17.png"/></p>
+<ul>
+<li>依赖解决：task 的调用者在去分布式调度器去为 task 申请资源之前，会等待所有 task 运行所需要的依赖都就绪了。
+  很多时候，任务的调用者也是其它任务的持有者，比如 foo.remote(bar.remote())，在这个例子中，task 的调用者是执行
+  foo.remote 这个方法的进程，同时在 foo.remote()中又依赖了 bar.remote 这个 task 的返回值，而 bar.remote
+  这个 task 也是属于 foo.remote 调用者的，所以这个时候不会直接调度 foo 这个 task，而是会等 bar 这个 task 已经完成了，
+  才会去调用 foo 这个 task。在这个情况下，bar 这个 task 的返回值会被保存在本地的进程中，直接给到 foo 这个 task
+  作为参数进行运行 foo 这个 task。如果 foo 这个 task 依赖的参数是不在本地的，比如是存在分布式对象存储中的大对象，
+  那在调度 foo 这个 task 之前会将 foo 依赖的大对象拉到本地来，然后再完成调度和运行 foo 这个 task。</li>
+<li>资源满足：一个 task 的调用者通过发送资源请求给一个更合适的 raylet，也就是更合适的分布式调度器，那怎么选择哪个
+  raylet 是更合适的，从以下三个方面考虑：<ol>
+<li>通过数据本地化优先， 如果一个 task 依赖了很多对象参数，那就会现在那些节点上能包含了绝大多数参数对象的节点，
+    因为不需要再去读取很多的参数对象了，因为大部分都在某一个节点了，
+    那就调度这个节点上，至于还有少部分没有的对象参数，只好从分布式对象存储中去读取到本地了。</li>
+<li>通过节点粘性，如果目标 raylet 是通过 NodeAffinitySchedulingStrategy 策略指定的，那就直接到对应的节点的 raylet 去。</li>
+<li>也是默认的一种方式，就是认为本地的 raylet 就是开始认为最合适的调度器，虽然最终可能不一定被调度在本地。</li>
+</ol>
+</li>
+<li>在选择好了合适的 raylet 之后，raylet 首先会将资源的请求放到队列中，如果这个 raylet 同意了资源请求，
+  就返回给调用者当前 raylet 它的本地的 worker 的地址。</li>
+</ul>
+</li>
+</ol>
+<h2 id="object">Object 介绍<a class="headerlink" href="#object" title="Permanent link">¶</a></h2>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray18.png"/></p>
+<p>Object 是一个应用的 value，这些 value 是由 task 返回的或通过 ray.put 创建的。
+一个 Object 的 value 是不可变的值，一旦创建就不能修改，它可以被存储，也可以被引用，只要是在 Ray cluster 集群范围内。</p>
+<p>task（function）是可以有返回值的，这个返回值是一个 Object，当在某一个 worker 中，去调用这个 function
+的时候就会去提交创建这个 task 的请求，那这个 task 的返回值就属于这个 worker 的，这个 worker 就是 owner。
+所以在这个情况下，Object 的 owner 是通过提交 creating task 来创建初始 ObjectRef 的 worker。
+同时这个 worker 会保存这个 Object 的引用计数。</p>
+<p>ray.put(obj) 这种方式也是可以创建一个 Object，当在一个 worker 中，调用 ray.put 的时候，
+所以在这种情况下，Object 的 owner 是通过调用 ray.put 来创建初始 ObjectRef 的 worker。
+同时这个 worker 会保存这个 Object 的引用计数。</p>
+<p>当前，worker 可以使用 ObjectRef 来引用对象。Object 的生命周期是由它的 owner 管理的。
+Ray 会保证，如果 Object 的 owner 是存活的，那么 Object 最终可能被解析为它的 value
+（或者在 worker 失败的情况下抛出错误空）。如果 owner 挂了，尝试获取该 Object 的值将抛出异常，即使该 Object 仍然存在物理副本。</p>
+<p>Object 是可以被保存在 owner’s in-process memory store，也可以保存在分布式对象存储中。
+in-process memory store 是被分配在 owner 的堆内存的，同时不会限制内存的大小，因为在 Ray 中，
+只有小的 Object 才会保存在 worker 的 in-process memory store，如果小的 Object 太多了，
+也会导致 worker 因 OOM 而被 kill。那些保存在分布式对象存储中的大的 Object 首先会被保存在共享的内存对象存储中。
+共享的内存对象存储会强制一个用户指定容量的限制（默认是机器内存的 30%），同时在达到容量限制的时候会保存到本地磁盘。
+这样做是为了减少每个 Object 的内存占用和解析时间。</p>
+<p>有两种方式可以获取到 ObjectRef 对应的 Object 的 value。1. 一种是通过在一个 ObjectRef(s) 上，
+调用 ray.get 的方式；2. 另一种是传递一个 ObjectRef 作为 task 的参数，当 worker 去执行这个 task 的时候，
+就会解析这个 ObjectRef，然后使用解析出来的 value 去替换 task 的参数。</p>
+<p>对于一个小的 Object，可以直接从它的 owner 的 in-process store 中去解析出来。
+如果是被保存在分布式对象中的大的 Object，就必须通过分布式协议去解析这个大的 Object 了。</p>
+<p>当一个 task A 的返回值是一个大的 Object，它会被保存在运行这个 task A 的节点 A 的
+local shared memory store 中，当另一台节点 B 的 task B 要用 taskA 的返回值作为 task B 的参数，
+那首先会从调用 task B 的调用者，也就是 taskB 的 owner 中查找 object directory，
+从中得知 task A 的返回值这个大的 Object 的保存为位置，这里可以简单理解为节点 A，
+接下来，task B 所在的 raylet 是会去节点 A 的 raylet 中的分布式对象存储中去读取 task A 的返回值对象，
+这时会使用到分布式协议，将需要的对象复制到本地。这里提一下 object directory
+，在 object directory 就保存了 object 的位置信息，在之前的版本是保存在 GCS 中，
+现在的版本是保存在 owners 中的（这里的 owner 就是 task 的调用者）。
+当在节点 A 的 task C 要使用 task B 的返回值，这个时候就会直接从节点 A 的 local shared memory store 中直接去获取了。</p>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray19.png"/></p>
+<h2 id="placement-group">Placement Group 管理<a class="headerlink" href="#placement-group" title="Permanent link">¶</a></h2>
+<p>描述：Placement Groups 主要是用来申请预留一些资源用于去运行 actors 或 tasks。actors 或者 tasks
+可以在运行的时候指定 PlacementGroupSchedulingStrategy。Placement Groups 在预留资源的时候的表现形式是使用
+Bundles 来表示，Bundles 是一组资源的集合，如 bundle 0 为 {"CPU": 1}, bundle 1 为 {"CPU": 1, "GPU": 4}。
+一个 Placement Group 中可以包含多个 bundles，需要注意的是 bundle 是在 Placement Groups 的最小单元，
+而且一个 bundle 可以被预留的前提是，资源的申请不能超过单台机器的资源剩余。举例来说，集群的机器中，
+具有最充裕资源的机器剩下了 cpu :5 ，gpu :5，如果定义了一个 Placement Group，Placement Group
+中定义了一个 bundle，这个 bundle 定义了 {"CPU": 5, "GPU": 9}，那这个 bundle 是不能被调度的，
+也可以理解成这个 Placement Group 是无法被满足以及调度的。Placement Group 的资源预留也是可以跨机器预留的。
+比如集群有 3 台机器，让每一台机器预留 {"CPU": 1, "GPU": 1}，然后 tasks 分布在这三个机器运行。
+通过 Placement Groups 的能力，可以让 actors 或者 tasks 以 gang scheduling（组调度，要么一起运行，要么都不要运行）的方式运行。</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="err">#</span><span class="w"> </span><span class="nx">创建一个actor</span><span class="err">，</span><span class="nx">并使用placement</span><span class="w"> </span><span class="nx">group</span><span class="err">。</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nx">actor</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Actor</span><span class="p">.</span><span class="nx">options</span><span class="p">(</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="nx">scheduling_strategy</span><span class="p">=</span><span class="nx">PlacementGroupSchedulingStrategy</span><span class="p">(</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="nx">placement_group</span><span class="p">=</span><span class="nx">pg</span><span class="p">,</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="p">)</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">).</span><span class="nx">remote</span><span class="p">()</span>
+</code></pre></div>
+<p>Placement Group 创建：</p>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray20.png"/></p>
+<p>当应用请求去创建一个 placement group 的时候，应用所在的 worker 会基于 RPC 去发送一个同步的请求给到 GCS，
+GCS 会先将请求保存起来，然后排队。因为 placement group 的资源申请可能会跨节点，所以 Ray 使用了两阶段提交保证原子性，
+如果在这个过程中，有任何的 raylet 挂了，那这次创建过程就会回滚，然后这次创建的请求是重新进入队列排队。
+不像 tasks、actors、objects、placement groups 是不需要引用计数的。因为 placement groups 的持有者是
+job 或者 detached actor，当 own 这个 placement group 的 job 或者 detached actor 是 dead 状态了，
+那这个 placement group 也就会被自动的删除了，所以不需要引用计数的方式，因为会自动的垃圾回收。
+同时也支持用户直接调用 api 的方式去删除一个 placement group。placement group 也可以像 actor 一样有 detected，
+placement group 也可以有 detached placement groups，需要手动创建和手动删除的，举例来说一个 task 使用了 detached
+类型的 placement group，那这个 placement group 不会随着 task 的销毁而自动被删除，detached placement groups
+的生命周期是超越了它的 owner 的。当一个 placement group 被销毁了，所有使用这个 placement group 的 actors，
+tasks 都会被 kill，同时 placement group 预留的资源会释放出来。</p>
+<p>在云原生的方案中，也有类似能力的组件可以平替 placement group，如 Kueue 等来完成组调度的能力。</p>
+<h2 id="_3">节点管理<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>当 raylet 启动的时候，它会注册到 GCS 中去，GCS 将注册上来的 raylet 的相关信息保存在存储中，
+一旦 raylet 被成功注册到 GCS，这个注册的事情信息就会被广播给所有的 raylets。</p>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray21.png"/></p>
+<p>当节点完成注册之后，GCS 会通过周期性的监控检测去监控这个节点的 raylet 的健康不健康。
+同时 GCS 也会拉取这个 raylet 的资源视图，然后将这个信息也广播其它的 raylets。
+如果这个 raylet 失败了，GCS 也会将这个失败的消息广播给其它的 raylets。一旦 raylet 收到了这些消息，
+它们就开始清理相关的状态。同时 raylet 也会统计它所在节点的本地进程中哪些是挂掉的，去告知 GCS，
+然后 GCS 再将这个信息再广播给其它的 raylets。这个有助于去清理系统中相关不一致的状态，去更好的帮助完成 tasks 的提交。</p>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray22.png"/></p>
+<h2 id="_4">资源管理<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p><img alt="Image" src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/ray23.png"/></p>
+<p>GCS 负责保证所有的 raylets 有最新的集群资源使用的视图。这样分布式调度器就可以更有效的完成调度，
+如果这个视图是不够新的，那就可能会给分布式调度器造成调度不准确的问题，导致 actors/tasks 不能很好的被调度到合适的位置。
+默认，GCS 会每隔 100ms 从所有的注册到自己的 raylets 去拉取最新的资源使用情况的视图，也会间隔 100ms 去广播给其它的 raylets。
+同时 GCS 也会为 Autoscaler 组件提供当前集群的负载的数据，以帮助 Autoscaler 去判断什么时候给集群增加机器和从集群中移除机器。</p>
+<h2 id="_5">总结<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<p>从上述的分析中，可以看到 Ray Core 中的整体架构、关键能力、基本的工作方式等。上述为 Ray Core 的部分分析，
+还有一部分的分析会放到下一篇，同时在下一篇中会有实践的内容，可以更直观一点地认识 Ray Core。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://docs.ray.io/en/latest/">Ray 文档站</a></li>
+<li><a href="https://docs.google.com/document/d/1tBw9A4j62ruI5omIJbMxly-la5w4q_TjyJgJL_jN2fI/preview#">Ray v2 架构</a></li>
+</ul>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年1月4日</span>
+</span>
+</aside>
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOArnAQs4CRCpV" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="daocloud/daocloud-docs" data-repo-id="MDEwOlJlcG9zaXRvcnk0NTcyNzgxMA==" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: AIGC 利器 Ray 探索下篇" class="md-footer__link md-footer__link--prev" href="230615-ray.html">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                AIGC 利器 Ray 探索下篇
+              </div>
+</div>
+</a>
+<a aria-label="下一页: Istio 1.18 正式发布" class="md-footer__link md-footer__link--next" href="230609-istio118.html">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                Istio 1.18 正式发布
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2016 - 2024 DaoCloud
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.tabs", "navigation.prune", "navigation.sections", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "search.share", "toc.follow", "navigation.path", "navigation.footer"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../stylesheets/zoom_image.js"></script>
+<script src="../overrides/assets/javascripts/bundle.b97a6647.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6b117ea770a78bebf27e63b402da0c4e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.2.0/+esm'
+    </script>
+<script src="https://console.d.run/drun-copilot/chatbot-sdk.umd.js?ws=302&amp;token=ZjgxNzgwNTktMmZjNS00NTZhLWI0YTItNzYyMzQ4MDE1MzFh"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>
