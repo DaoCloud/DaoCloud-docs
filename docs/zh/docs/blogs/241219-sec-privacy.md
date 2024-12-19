@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 重磅！DaoCloud 成功加入 K8s 安全响应委员会
 
 2024 年 12 月 19 日，在 Paco 和开源团队的不懈努力下，Daocloud 作为社区认可的 Kubernetes 发行商成功加入
@@ -57,7 +62,7 @@ members:
 
 1. 拥有一个积极监控 Kubernetes 安全特性的邮件清单
 1. 积极维护 Kubernetes 代码仓库且是
-   [经 CNCF 认证的 Kuberenetes Certified Service Provider (KCSP)][https://www.cncf.io/training/certification/software-conformance/]
+   [CNCF 认证的 Kuberenetes Certified Service Provider (KCSP)](https://www.cncf.io/training/certification/software-conformance/)
 1. 拥有不限于当前企业所在的用户基础
 1. 拥有一个公开可验证的、截至目前为止曾经修复安全漏洞的多项提交记录
 1. 不是上述清单中某个发行商的下属企业或子公司
