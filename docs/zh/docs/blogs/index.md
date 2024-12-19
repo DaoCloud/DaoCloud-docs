@@ -11,6 +11,11 @@ hide:
 
 ## 2024 年
 
+- [20241219 | 重磅！DaoCloud 成功加入 K8s 安全响应委员会](./241219-sec-privacy.md)
+
+    2024 年 12 月 19 日，在 Paco 和开源团队的不懈努力下，Daocloud 作为社区认可的 Kubernetes 发行商成功加入
+[Kubernetes 安全响应委员会](https://github.com/kubernetes/k8s.io/blob/main/groups/committee-security-response/groups.yaml)（committee-security-response）。
+
 - [20241108 | 从社区小白到 CNCF 大使](./241108-cncf-ambassador.md)
 
     本文不讲技术，只是浅述一段在 CNCF 开源社区成长的故事，从社区小白到 CNCF 大使的真实经历。
