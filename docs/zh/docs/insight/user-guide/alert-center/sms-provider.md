@@ -1,18 +1,19 @@
 # 配置通知服务器
 
-可观测性 Insight 支持短信通知，目前通过集成阿里云、腾讯云的短信服务发送告警消息。本文介绍了如何在 insight 中配置短信通知的服务器。短信签名中支持的变量为消息模板中的默认变量，同时由于短信字数有限，建议选择较为明确的变量。
+可观测性 Insight 支持短信通知，目前通过集成阿里云、腾讯云的短信服务发送告警消息。
+本文介绍了如何在 Insight 中配置短信通知的服务器。短信签名中支持的变量为消息模板中的默认变量，同时由于短信字数有限，建议选择较为明确的变量。
 
 > 如何配置短信接收人可参考文档：[配置短信通知组](../../user-guide/alert-center/message.md)。
 
-## 操作步骤
+配置通知服务器的操作步骤如下：
 
-1. 进入 __告警中心__ -> __通知配置__ -> __通知服务器__。
+1. 进入 __告警中心__ -> __通知配置__ -> __通知服务器__
 
     ![通知服务器](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/smsserver00.png)
 
-2. 点击 __添加通知服务器__。
+2. 点击 __添加通知服务器__
 
-    1. 配置阿里云服务器。
+    === "配置阿里云服务器"
 
         > 申请阿里云短信服务，请参考[阿里云短信服务](https://help.aliyun.com/document_detail/108062.html?spm=a2c4g.57535.0.0.2cec637ffna8ye)。
 
@@ -30,7 +31,8 @@
 
         !!! note
 
-            当参数模版内容如上图时，用户在阿里云定义的模板内容应为： `${severity}：${alertname} 在 ${startat} 被触发。` 
+            当参数模板内容如上图时，用户在阿里云定义的模板内容应为：
+            `${severity}：${alertname} 在 ${startat} 被触发` 
             
             另外，上图中的对应关系为：
        
@@ -38,7 +40,7 @@
             2.  `{{index.0).Labels.alertname }}` 对应 `${alertname}`，表示告警的规则名称；
             3.  `{{(index.0).StartsAt}}` 对应 `${startat}`，表示告警事件的开始时间。
 
-    3. 配置腾讯云服务器。
+    === "配置腾讯云服务器"
 
         > 申请腾讯云短信服务，请参考[腾讯云短信](https://cloud.tencent.com/document/product/382/37794)。
 
@@ -49,7 +51,8 @@
         - __短信模板 ID__：短信模板 ID，由腾讯云系统自动生成。
         - __签名内容__：短信签名内容，即在腾讯云短信签名中定义的实际网站名的全称或简称。
         - __SdkAppId__：短信 SdkAppId，在腾讯云短信控制台添加应用后生成的实际 SdkAppId。
-        - __参数模板__：短信正文模板可以包含变量，用户可通过变量实现自定义短信内容。请参考：[腾讯云变量规范](https://cloud.tencent.com/document/product/382/39023#.E5.8F.98.E9.87.8F.E8.A7.84.E8.8C.83.3Ca-id.3D.22variable.22.3E.3C.2Fa.3E)。
+        - __参数模板__：短信正文模板可以包含变量，用户可通过变量实现自定义短信内容。
+          请参考[腾讯云变量规范](https://cloud.tencent.com/document/product/382/39023#.E5.8F.98.E9.87.8F.E8.A7.84.E8.8C.83.3Ca-id.3D.22variable.22.3E.3C.2Fa.3E)。
 
         ![通知服务器](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/sms03.png)
 
