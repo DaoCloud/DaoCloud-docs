@@ -33,11 +33,12 @@
             当参数模版内容如上图时，用户在阿里云定义的模板内容应为： `${severity}：${alertname} 在 ${startat} 被触发。` 
             
             另外，上图中的对应关系为：
-              1.  `{{(index.0).Labels.severity}}` 对应 `${severity}`，表示告警事件的级别；
-              2.  `{{index.0).Labels.alertname }}` 对应 `${alertname}`，表示告警的规则名称；
-              3.  `{{(index.0).StartsAt}}` 对应 `${startat}`，表示告警事件的开始时间。
+       
+            1.  `{{(index.0).Labels.severity}}` 对应 `${severity}`，表示告警事件的级别；
+            2.  `{{index.0).Labels.alertname }}` 对应 `${alertname}`，表示告警的规则名称；
+            3.  `{{(index.0).StartsAt}}` 对应 `${startat}`，表示告警事件的开始时间。
 
-    2. 配置腾讯云服务器。
+    3. 配置腾讯云服务器。
 
         > 申请腾讯云短信服务，请参考[腾讯云短信](https://cloud.tencent.com/document/product/382/37794)。
 
