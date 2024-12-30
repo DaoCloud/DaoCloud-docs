@@ -1,7 +1,7 @@
 # Metallb 升级及调试
 
-- [Metallb 升级问题](#metallb-升级问题)
-- [Metallb Debug](#metallb-调试)
+- [Metallb 升级问题](#metallb_1)
+- [Metallb Debug](#metallb_2)
 
 ## Metallb 升级问题
 
