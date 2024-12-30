@@ -11,7 +11,9 @@ hide:
 
 1. 需要提前准备一段待使用的 `真实物理 IP` ，用于 IP 池创建。
 
-> 若需安装 ARP Pool，需启用 Helm 并使其处于就绪等待状态。
+> 注意：若需配置 Metallb ARP Mode，必须启用 Helm 并使其处于就绪等待状态。
+
+![metallb-helm-wait](../../images/metallb_helm_wait.png)
 
 ## 安装步骤
 
