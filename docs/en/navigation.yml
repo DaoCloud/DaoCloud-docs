@@ -706,7 +706,6 @@ nav:
               - Dashboard:
                   - Overview: insight/user-guide/dashboard/overview.md
                   - Dashboard: insight/user-guide/dashboard/dashboard.md
-                  - Log in to Grafana with Admin: insight/user-guide/dashboard/login-grafana.md
                   - Import Custom Dashboard: insight/user-guide/dashboard/import-dashboard.md
               - Infrastructure:
                   - Clusters: insight/user-guide/infra/cluster.md
