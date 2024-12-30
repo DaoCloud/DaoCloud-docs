@@ -790,6 +790,7 @@ nav:
                   - 通知模板使用说明: insight/reference/notify-helper.md
                   - Lucene 语法使用方法: insight/reference/lucene.md
                   - 通过 Sidecar 采集容器日志: insight/reference/tailing-sidecar.md
+                  - VictoriaMetrics 资源规划: insight/best-practice/vm-resource-plan.md
               - 兼容性测试:
                   - Kubernetes 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
