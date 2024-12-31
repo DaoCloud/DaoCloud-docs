@@ -125,10 +125,9 @@
 
 ## 虚拟机
 
-- [虚拟机页面 API 报错](../virtnest/intro/faq.md#api)
-- [虚拟机创建失败](../virtnest/intro/faq.md#vm_1)
-- [虚拟机创建成功但无法使用](../virtnest/intro/faq.md#vm_2)
-- [VNC 可以启动但网络无法访问](../virtnest/intro/faq.md#vnc)
+- [虚拟机页面 API 报错](../virtnest/faq/index.md)
+- [虚拟机创建成功但无法使用](../virtnest/faq/cannot-use.md)
+- [Windows 虚拟机无法识别新增磁盘](../virtnest/faq/recog-disk.md)
 
 ## 可观测性
 

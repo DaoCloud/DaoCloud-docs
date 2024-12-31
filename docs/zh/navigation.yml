@@ -666,7 +666,6 @@ nav:
                   - 什么是虚拟机: virtnest/intro/index.md
                   - 功能特性: virtnest/intro/features.md
                   - Release Notes: virtnest/intro/release-notes.md
-                  - 常见问题: virtnest/intro/faq.md
               - 安装:   
                   - 安装虚拟机: virtnest/install/index.md
                   - 安装依赖及前提条件: virtnest/install/install-dependency.md
@@ -702,6 +701,10 @@ nav:
                   - 从 VMware 导入传统 Linux 虚拟机: virtnest/best-practice/import-ubuntu.md
                   - 从 VMware 导入传统 Windows 虚拟机: virtnest/best-practice/import-windows.md
                   - 创建 Windows 虚拟机: virtnest/best-practice/vm-windows.md
+              - 常见问题:
+                  - 页面 API 报错: virtnest/faq/index.md
+                  - VM 无法正常使用: virtnest/faq/cannot-use.md
+                  - Windows 虚拟机不识别新增磁盘: virtnest/faq/recog-disk.md
       - 微服务:
           - 可观测性:
               - 介绍:
