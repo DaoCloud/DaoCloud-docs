@@ -43,8 +43,21 @@ spec:
 ```
 
 ## 配置原有集群的 Ingress
+安装 lb 类型的 ingress-controller
 
-以 Nginx Ingress 为例，配置 Ingress 以指向 `virt-exportproxy` Service：
+在 virtnest-system 命名空间下创建 tls secret
+
+```bash
+export KEY_FILE=key.pem
+export CERT_FILE=cert.ca
+export HOST=upgrade-test.com
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ${KEY_FILE} -out ${CERT_FILE} -subj "/CN=${HOST}/O=${HOST}" -addext "subjectAltName = DNS:${HOST}"
+
+export CERT_NAME=nginx-tls
+kubectl -n virtnest-system create secret tls ${CERT_NAME} --key ${KEY_FILE} --cert ${CERT_FILE}
+```
+
+在 virtnest-system 命名空间下创建 Ingress，配置 Ingress 以指向 `virt-exportproxy` Service：
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -70,6 +83,37 @@ spec:
                   number: 8443
   ingressClassName: nginx
 ```
+
+## 配置目标集群的 CoreDNS configmap
+```bash
+kubectl edit cm coredns -n kube-system
+```
+找到 `Corefile` 配置部分，并添加 `hosts` 配置。这里假设 ingress 的 lb 配置为 `192.168.1.10`：
+
+```yaml
+Corefile: |
+  .:53 {
+      errors
+      health
+      ready
+      kubernetes cluster.local in-addr.arpa ip6.arpa {
+          pods insecure
+          fallthrough in-addr.arpa ip6.arpa
+      }
+      hosts {
+          192.168.1.10 upgrade-test.com
+          fallthrough
+      }
+      prometheus :9153
+      forward . /etc/resolv.conf
+      cache 30
+      loop
+      reload
+      loadbalance
+  }
+
+```
+
 
 ## 迁移步骤
 
