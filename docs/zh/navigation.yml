@@ -1256,6 +1256,7 @@ nav:
                   - 基本概念: kant/intro/concepts.md
                   - Release Notes: kant/intro/release-notes.md
                   - 离线升级云边协同: kant/intro/offline-upgrade.md
+                  - 常见问题: kant/intro/faq.md
               - 边缘单元:
                   - 创建专有边缘单元: kant/user-guide/edge-unit/create-internal-unit.md
                   - 创建外接边缘单元: kant/user-guide/edge-unit/create-external-unit.md
