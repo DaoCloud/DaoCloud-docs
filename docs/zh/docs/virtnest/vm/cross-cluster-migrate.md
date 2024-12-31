@@ -1,6 +1,6 @@
 # 虚拟机跨集群迁移
 
-本功能暂未做 UI 界面能力，请参考文档的操作步骤执行。
+本功能暂未做 UI 界面能力，请参考以下操作步骤。
 
 ## 使用场景
 
@@ -19,13 +19,13 @@
 ## 开启 VMExport Feature Gate
 
 激活 VMExport Feature Gate，在原有集群内执行如下命令，
-可参考[How to activate a feature gate](https://kubevirt.io/user-guide/cluster_admin/activating_feature_gates/#how-to-activate-a-feature-gate)
+可参考[如何激活特性门控](https://kubevirt.io/user-guide/cluster_admin/activating_feature_gates/#how-to-activate-a-feature-gate)。
 
 ```sh
 kubectl edit kubevirt kubevirt -n virtnest-system
 ```
 
-这条命令将修改 `featureGates` ，增加 `VMExport` 。
+这条命令将修改 `featureGates`，增加 `VMExport`。
 
 ```yaml
 apiVersion: kubevirt.io/v1
@@ -43,9 +43,10 @@ spec:
 ```
 
 ## 配置原有集群的 Ingress
-安装 lb 类型的 ingress-controller
 
-在 virtnest-system 命名空间下创建 tls secret
+安装 LB 类型的 ingress-controller。
+
+在 `virtnest-system` 命名空间下创建 tls secret：
 
 ```bash
 export KEY_FILE=key.pem
@@ -57,7 +58,7 @@ export CERT_NAME=nginx-tls
 kubectl -n virtnest-system create secret tls ${CERT_NAME} --key ${KEY_FILE} --cert ${CERT_FILE}
 ```
 
-在 virtnest-system 命名空间下创建 Ingress，配置 Ingress 以指向 `virt-exportproxy` Service：
+在 `virtnest-system` 命名空间下创建 Ingress，配置 Ingress 以指向 `virt-exportproxy` Service：
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -84,11 +85,13 @@ spec:
   ingressClassName: nginx
 ```
 
-## 配置目标集群的 CoreDNS configmap
+## 配置目标集群的 CoreDNS ConfigMap
+
 ```bash
 kubectl edit cm coredns -n kube-system
 ```
-找到 `Corefile` 配置部分，并添加 `hosts` 配置。这里假设 ingress 的 lb 配置为 `192.168.1.10`：
+
+找到 `Corefile` 配置部分，并添加 `hosts` 配置。这里假设 Ingress 的 LB 配置为 `192.168.1.10`：
 
 ```yaml
 Corefile: |
@@ -114,12 +117,11 @@ Corefile: |
 
 ```
 
-
 ## 迁移步骤
 
 1. 创建 VirtualMachineExport CR
 
-    - 如果 **虚拟机关机状态** 下进行迁移（冷迁移）：
+    === "虚拟机关机状态下的冷迁移"
 
         ```yaml
         apiVersion: v1
@@ -128,8 +130,8 @@ Corefile: |
           name: example-token # 导出虚拟机所用 token
           namespace: default # 虚拟机所在命名空间
         stringData:
-          token: 1234567890ab # 导出使用的 token,可修改
-    
+          token: 1234567890ab # 导出时所用的 token
+
         ---
         apiVersion: export.kubevirt.io/v1alpha1
         kind: VirtualMachineExport
@@ -137,14 +139,14 @@ Corefile: |
           name: example-export # 导出名称, 可自行修改
           namespace: default # 虚拟机所在命名空间
         spec:
-          tokenSecretRef: example-token # 和上面创建的token名称保持一致
+          tokenSecretRef: example-token # 和上面创建的 token 名称保持一致
           source:
             apiGroup: "kubevirt.io"
             kind: VirtualMachine
             name: testvm # 虚拟机名称
         ```
 
-    - 如果要在 **虚拟机不关机** 的状态下，使用虚拟机快照进行迁移（热迁移）：
+    === "虚拟机不关机状态下的热迁移"
 
         ```yaml
         apiVersion: v1
@@ -153,8 +155,8 @@ Corefile: |
           name: example-token # 导出虚拟机所用 token
           namespace: default # 虚拟机所在命名空间
         stringData:
-          token: 1234567890ab # 导出使用的 token ,可修改
-    
+          token: 1234567890ab # 导出时所用的 token
+
         ---
         apiVersion: export.kubevirt.io/v1alpha1
         kind: VirtualMachineExport
@@ -181,7 +183,9 @@ Corefile: |
 
 1. 当 VirtualMachineExport 准备就绪后，导出虚拟机 YAML。
 
-    - 如果已安装 **virtctl** ，使用以下命令导出虚拟机的 YAML：
+    === "如果已安装 virtctl"
+    
+        使用以下命令导出虚拟机的 YAML：
 
         ```sh
         # 自行将 example-export替换为创建的 VirtualMachineExport 名称
@@ -189,7 +193,9 @@ Corefile: |
         virtctl vmexport download example-export --manifest --include-secret --output=manifest.yaml
         ```
 
-    - 如果没有安装 **virtctl** ，使用以下命令导出虚拟机 YAML：
+    === "如果没有安装 virtctl"
+        
+        使用以下命令导出虚拟机 YAML：
 
         ```sh
         # 自行替换 example-export 替换为创建的 VirtualMachineExport 名称 和命名空间
@@ -209,4 +215,5 @@ Corefile: |
     ```sh
     kubectl apply -f manifest.yaml
     ```
+
     创建成功后，重启虚拟机，虚拟机成功运行后，在原有集群内删除原虚拟机（虚拟机未启动成功时，请勿删除原虚拟机）。
