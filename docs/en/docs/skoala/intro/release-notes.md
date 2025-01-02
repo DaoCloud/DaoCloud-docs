@@ -9,6 +9,26 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## 2024-12-31
+
+### v0.43.4
+
+- **Improved** UI and user experience
+
+## 2024-12-25
+
+### v0.43.3
+
+- **Fixed** the issue with the Nacos load balancing mode API
+- **Fixed** the display issue of global rate limiting server tags
+- **Fixed** the logging issue of the Nacos list
+
+!!! note
+
+    To support rolling updates of gateway logs and add debugging tools, the gateway runtime has been upgraded to
+    the private version v0.32.0-dcv3 (built on Envoy v1.32.0; if the rolling update function for gateway logs is not needed,
+    the community version Envoy v1.32.0 can still be used).
+
 ## 2024-11-30
 
 ### v0.43.2
