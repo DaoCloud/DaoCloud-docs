@@ -1459,6 +1459,8 @@ nav:
                   - 运营管理: download/modules/gmagpie.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 2025:
+          - 2024 中国开源年度报告: blogs/2025/open-source-report.md
       - 2024:
           - DaoCloud成功加入K8s安全响应委员会: blogs/2024/241219-sec-privacy.md
           - 从社区小白到 CNCF 大使: blogs/2024/241108-cncf-ambassador.md

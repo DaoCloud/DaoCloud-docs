@@ -9,6 +9,12 @@ hide:
 
 *[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
 
+## 2025 年
+
+- [2024 中国开源年度报告](./2025/open-source-report.md)
+
+    2024 中国开源年度报告以深入全面的数据洞察，DaoCloud 为当年黑马
+
 ## 2024 年
 
 - [20241219 | 重磅！DaoCloud 成功加入 K8s 安全响应委员会](2024/241219-sec-privacy.md)
