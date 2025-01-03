@@ -159,7 +159,7 @@ within a network. These include:
 
 The following is a diagram illustrating the architecture of GPUs interfaced with a CPU using NVLink and PCIe connectivity methods.
 
-![GPUs connected to a CPU using NVLink and PCIe Diagram](./images/GPUs-connected-to-a-CPU.jpg)
+![GPUs connected to a CPU using NVLink and PCIe Diagram](../images/GPUs-connected-to-a-CPU.jpg)
 
 ## Accelerated Computing Instances in the Cloud
 

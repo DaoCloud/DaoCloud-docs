@@ -6,7 +6,7 @@ Ahead of the [KubeCon North America 2024](https://events.linuxfoundation.org/kub
 (November 12–15), this week saw the releases of [containerd](https://github.com/containerd/containerd) v2.0,
 [nerdctl](https://github.com/containerd/nerdctl) (*contaiNERD CTL*) v2.0, and [Lima](https://lima-vm.io/) v1.0 🎉.
 
-![three-container-runtime](./images/containerd01.png)
+![three-container-runtime](../images/containerd01.png)
 
 ## containerd v2.0
 
@@ -135,7 +135,7 @@ and [AWS’s Finch](https://aws.amazon.com/blogs/opensource/introducing-finch-an
 
 Lima finally reached v1.0 today, with the support from 110+ contributors and 15,000+ stargazers in the past 3+ years.
 
-![star history](./images/containerd02.png)
+![star history](../images/containerd02.png)
 
 This release introduces several breaking changes, such as switching the default machine
 driver on macOS from QEMU to `Virtualization.framework` (VZ) for better filesystem performance.

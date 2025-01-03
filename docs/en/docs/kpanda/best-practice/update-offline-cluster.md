@@ -27,7 +27,7 @@ The overall approach is as follows:
 
 ## Building the Offline Package on an Integrated Node
 
-Since the offline environment cannot connect to the internet, you need to prepare an **integrated node** in advance to build the incremental offline package and start Docker or Podman services on this node. Refer to [How to Install Docker?](../../blogs/230315-install-on-linux.md)
+Since the offline environment cannot connect to the internet, you need to prepare an **integrated node** in advance to build the incremental offline package and start Docker or Podman services on this node. Refer to [How to Install Docker?](../../blogs/2023/230315-install-on-linux.md)
 
 1. Check the status of the Docker service on the integrated node.
 
