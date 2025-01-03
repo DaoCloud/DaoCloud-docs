@@ -13,7 +13,7 @@
 [88,000 多名贡献者](https://k8s.devstats.cncf.io/d/24/overall-project-statistics?orgId=1)，
 这些贡献者来自 44 个国家的 [8,000 多家公司](https://www.cncf.io/reports/kubernetes-project-journey-report/)。
 
-![company contributions](./images/company.png)
+![company contributions](../images/company.png)
 
 巧合的是，2014 年不仅是容器化浪潮初露锋芒的一年，也是 DaoCloud 的诞生之年。Roby、Kay 及几位业内志同道合的人士敏锐地捕捉到了这一趋势，
 并在上海杨浦浓厚的学术氛围中，创立了道客网络科技有限公司，即云原生社区知名的 DaoCloud 群体。
@@ -45,7 +45,7 @@ Kubernetes 就不可能达到今天的成就。
 
 在过去的十年里，中国贡献者的力量同样不容小觑：
 
-![中国贡献](./images/contri-list.png)
+![中国贡献](../images/contri-list.png)
 
 ## Kubernetes 源于技术的融合
 
@@ -68,7 +68,7 @@ Kubernetes 的理念早在第一次提交或甚至第一个原型
 2013 年秋天，这个认识激励了一个小团队开始研发一个后来成为 **Kubernetes** 的项目。该团队包括
 Joe Beda、Brendan Burns、Craig McLuckie、Ville Aikas、Tim Hockin、Dawn Chen、Brian Grant 和 Daniel Smith。
 
-![Linux 容器的未来](./images/future.png)
+![Linux 容器的未来](../images/future.png)
 
 2013 年 3 月，在 PyCon 会议上，Solomon Hykes 作了一个 5 分钟的闪电演讲
 [“Linux 容器的未来”](https://youtu.be/wW9CAH9nSLs?si=VtK_VFQHymOT7BIB)，介绍了一个即将推出的开源工具 “Docker”，
@@ -78,7 +78,7 @@ Joe Beda、Brendan Burns、Craig McLuckie、Ville Aikas、Tim Hockin、Dawn Chen
 
 ## Kubernetes 的十年
 
-![kubecon eu 2017](./images/kubeconeu2017.jpg)
+![kubecon eu 2017](../images/kubeconeu2017.jpg)
 
 Kubernetes 的历史始于 2014 年 6 月 6 日的那次历史性提交，以及随后在 2014 年 6 月 10 日由谷歌工程师
 Eric Brewer 在 DockerCon 2014 上的[主题演讲](https://youtu.be/YrxnVKZeqK8?si=Q_wYBFn7dsS9H3k3)
@@ -145,23 +145,23 @@ Kubernetes 在这十年所提供的扩展特性很难数得清。最初设计时
 
 - DaoCloud 有 100 多人参与过 Kubernetes 社区贡献
 
-    ![focus](./images/focus.png)
+    ![focus](../images/focus.png)
 
-    ![100 contributors](./images/100.png)
+    ![100 contributors](../images/100.png)
 
 - DaoCloud 有 10 多个维护者和 Approver 席位
 
-    ![seat](./images/seat.png)
+    ![seat](../images/seat.png)
 
 - DaoCloud 每年都有多位员工获得 Kubernetes Contributor Award 奖项
 
-    ![award](./images/award.png)
+    ![award](../images/award.png)
 
 - DaoCloud 捐献的项目中有 [6 个已加入 CNCF Sandbox](https://docs.daocloud.io/community/)
 
 ## 今天的 Kubernetes
 
-![欢迎来到 KubeCon NA 2023](./images/welcome.jpg)
+![欢迎来到 KubeCon NA 2023](../images/welcome.jpg)
 
 十年来，Kubernetes 项目在技术能力、被企业使用的频次和贡献方面都经历了巨大的增长。
 
@@ -177,7 +177,7 @@ Kubernetes 在这十年所提供的扩展特性很难数得清。最初设计时
 
 ## Kubernetes 的未来
 
-![LTS 演讲](./images/lts.jpg)
+![LTS 演讲](../images/lts.jpg)
 
 十年之后，Kubernetes 的未来依然光明。社区优先考虑的问题是：既改善用户体验，又增强项目的可持续性。
 应用开发的世界在不断演变，Kubernetes 也将随之变化。
@@ -194,8 +194,8 @@ Kubernetes 的下一个十年将由其用户和生态社区引导，但最重要
 来看看你、你认识的大咖、知名人物对社区所做的贡献吧：
 [contribcard.clotributor.dev](https://contribcard.clotributor.dev/)
 
-![card](./images/kube10.png)
+![card](../images/kube10.png)
 
 我们期待与你一起构建 Kubernetes 的未来！
 
-![daocloud 10](./images/daocloud10.jpg)
+![daocloud 10](../images/daocloud10.jpg)

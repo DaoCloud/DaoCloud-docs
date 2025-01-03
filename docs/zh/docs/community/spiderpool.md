@@ -20,7 +20,7 @@ Spiderpool 的核心功能如下：
 
 ![key features](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/images/spider-arch.png)
 
-参阅 [Spiderpool 固定 IP 场景视频](../videos/use-cases.md#underlay-ip)和[入选 CNCF Sandbox 的博文](../blogs/231220-spiderpool.md)。
+参阅 [Spiderpool 固定 IP 场景视频](../videos/use-cases.md#underlay-ip)和[入选 CNCF Sandbox 的博文](../blogs/2023/231220-spiderpool.md)。
 
 [了解 Spiderpool 社区](https://github.com/spidernet-io){ .md-button }
 [查阅 Spiderpool 官网](https://spidernet-io.github.io/spiderpool/){ .md-button }

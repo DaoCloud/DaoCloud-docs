@@ -2,7 +2,7 @@
 
 > 作者：[WillardHu](https://github.com/WillardHu) 和 [JiaweiGithub](https://github.com/JiaweiGithub)
 
-KubeEdge 是 DCE 5.0 [云边协同](../kant/intro/index.md)的核心组件，DaoCloud
+KubeEdge 是 DCE 5.0 [云边协同](../../kant/intro/index.md)的核心组件，DaoCloud
 持续积极跟随、推进、规划 KubeEdge 的各项特性。
 
 ## 版本变更
@@ -50,7 +50,7 @@ Mapper-Framework 提供了全新的 Mapper 自动生成框架，框架中集成�
     主动拉取设备数据。设备数据管理方式更加多样化，解决了 Mapper 频繁向云端上报设备数据，易造成云边通信阻塞的问题，
     能够减轻云边通信的数据量，降低云边通信阻塞的风险。DMI 数据面系统架构如下图所示：
 
-    ![系统架构](./images/edge01.png)
+    ![系统架构](../images/edge01.png)
 
 - Mapper 自动生成框架 Mapper-Framework
 
@@ -120,4 +120,4 @@ DaoCloud 秉承社区繁荣共建的理念，持续鼓励贡献上游，回馈�
 - 参与 EdgeMesh CNI 功能设计
 - Q4 DaoCloud 边缘团队总计给 KubeEdge 社区提交 PR [22 个](https://kubeedge.devstats.cncf.io/d/56/company-commits-table?orgId=1&from=now-90d&to=now&var-repogroups=kubeedge&var-companies=DaoCloud%20Network%20Technology%20Co.%20Ltd.)
 
-![贡献](./images/edge02.png)
+![贡献](../images/edge02.png)

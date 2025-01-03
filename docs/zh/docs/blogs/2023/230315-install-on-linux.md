@@ -154,14 +154,14 @@ precheck pass..
 
 ## 安装 DCE 5.0 社区版
 
-1. 安装依赖项，另请参阅[依赖项安装说明](../install/install-tools.md)
+1. 安装依赖项，另请参阅[依赖项安装说明](../../install/install-tools.md)
 
     ```shell
     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
     bash install_prerequisite.sh online community 
     ```
 
-1. 在主机下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../download/index.md)）
+1. 在主机下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../download/index.md)）
 
     ```shell
     export VERSION=v0.5.0

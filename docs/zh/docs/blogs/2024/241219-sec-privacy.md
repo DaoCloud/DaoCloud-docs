@@ -14,7 +14,7 @@ hide:
 功夫不负有心人，最终 DaoCloud 成功加入。除最初的一些美国发行商之外，DaoCloud 是继华为、阿里之外第三家加入该委员会的中国公司。
 自此 Daocloud 能够率先收到 Kubernetes 社区内部的私密安全漏洞报告，并积极参与修复，这对维护 IT 基础设施安全具有非常重要的意义。
 
-![安全响应委员会](./images/sec01.png)
+![安全响应委员会](../images/sec01.png)
 
 如果 K8s 社区发现一个 CVE 安全漏洞，通常不会立即公开，而是会先通知委员会成员，共同加固并防范之后，才会延迟披露公开。
 如今 DaoCloud 是 K8s 社区核心的安全响应委员会成员，是社区对 DaoCloud 安全责任和防护能力的认可，
@@ -87,7 +87,7 @@ Daocloud 能成功加入 Kubernetes 安全响应委员会，离不开大家在 K
 
 DaoCloud 在社区贡献代码并作为维护者负责管理的仓库：
 
-![maintainers](./images/sec02.png)
+![maintainers](../images/sec02.png)
 
 在维护代码和网站之外，DaoCloud 还积极参与 KubeCon、KCD 和 LFAPAC 等各种线下开源演讲活动，
 致力于云原生技术传播和 AI 基础设施优化。
@@ -96,4 +96,4 @@ DaoCloud 在社区贡献代码并作为维护者负责管理的仓库：
 - Iceber 是 CNCF 大使、Linux 基金会官方开源布道者、KCD 活动的组织者
 - windsonsea 是 CNCF 大使，近两年多届 KubeCon Program Committee 演讲议题审稿人
 
-![them](./images/sec03.png)
+![them](../images/sec03.png)

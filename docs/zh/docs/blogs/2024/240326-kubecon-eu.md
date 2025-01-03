@@ -8,7 +8,7 @@
 我参加 KubeCon 这类大会的目的是发掘那些在各自技术领域独具创新、不断突破技术边界的厂商。
 这是我就这一标志性开源大会为 SiliconANGLE 撰写的第七篇新闻稿，我的目标特别锁定在寻找那些我先前未曾接触过的参展商。
 
-![Post of KubeCon EU](./images/KubeConEU1.jpg)
+![Post of KubeCon EU](../images/KubeConEU1.jpg)
 
 以下就是这份独家名单上的六家创新公司，再加上一家最近有收购行动的我的前客户。
 

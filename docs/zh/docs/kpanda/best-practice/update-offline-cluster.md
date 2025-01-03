@@ -24,7 +24,7 @@
 ## 在联网节点构建离线包
 
 由于离线环境无法联网，用户需要事先准备一台能够 **联网的节点** 来进行增量离线包的构建，并且在这个节点上启动 Docker 或者 podman 服务。
-参阅[如何安装 Docker？](../../blogs/230315-install-on-linux.md)
+参阅[如何安装 Docker？](../../blogs/2023/230315-install-on-linux.md)
 
 1. 检查联网节点的 Docker 服务运行状态
 

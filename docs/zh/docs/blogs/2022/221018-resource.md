@@ -44,7 +44,7 @@
 资源被共享后，工作空间的所有者仅具有资源限额下的资源使用权限，无法管理资源或者调整工作空间能够使用的资源量。
 同时共享资源对于资源本身也具有一定的要求，仅具有层级的资源能够被共享，比如 Cluster-Namespace，Cluster 资源所有者能够将 Cluster 资源分享给不同的工作空间使用，并且限制工作空间在此 Cluster 上的使用额度，工作空间所有者在资源限额内能够创建多个Namespace，但是 Namespace 的资源额度总和不能超过 Cluster 在该工作空间的资源限额。对于 Kubernetes 资源，当前能够分享的资源类型仅有 Cluster。
 
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
 
 ## 资源管理要素
 
@@ -137,8 +137,8 @@
     答：微服务治理、应用工作台、服务网格下的资源均自动绑定 Workspace，且权限强依赖于 Workspace，需要通过获得 Workspace 权限继而获取相关的资源权限。
     能够进行 Workspace 授权的有 Admin、Workspace Owner、Folder Admin、Workspace Admin。
 
-[了解服务网格](../ghippo/intro/index.md){ .md-button }
+[了解服务网格](../../ghippo/intro/index.md){ .md-button }
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
