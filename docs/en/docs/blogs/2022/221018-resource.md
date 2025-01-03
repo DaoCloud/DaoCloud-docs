@@ -44,7 +44,7 @@ For shared resources, multiple workspaces can share one or more resources. Resou
 After resources are shared, the owner of the workspace only has resource usage rights under the resource limit, and cannot manage resources or adjust the amount of resources that the workspace can use.
 At the same time, shared resources also have certain requirements for the resources themselves. Only hierarchical resources can be shared, such as Cluster-Namespace. Cluster resource owners can share Cluster resources to different workspaces, and limit the workspace to this Cluster. The workspace owner can create multiple Namespaces within the resource quota, but the sum of the resource quotas of the Namespaces cannot exceed the resource quota of the Cluster in the workspace. For Kubernetes resources, the only resource type that can be shared currently is Cluster.
 
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../../dce/license0.md){ .md-button .md-button--primary }
 
 ## Resource management elements
 
@@ -137,8 +137,8 @@ Enterprise users who need to manage K8S, microservice engine, service mesh and o
      Answer: The resources under microservice governance, Workbench, and service mesh are all automatically bound to Workspace, and permissions are strongly dependent on Workspace. You need to obtain Workspace permissions and then obtain related resource permissions.
      Admin, Workspace Owner, Folder Admin, and Workspace Admin can be authorized for Workspace.
 
-[Learn about service mesh](../ghippo/intro/index.md){ .md-button }
+[Learn about service mesh](../../ghippo/intro/index.md){ .md-button }
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[Free Trial](../../dce/license0.md){ .md-button .md-button--primary }

@@ -2,7 +2,7 @@
 
 > Authors: [WillardHu](https://github.com/WillardHu) and [JiaweiGithub](https://github.com/JiaweiGithub)
 
-KubeEdge is the core component of DCE 5.0 [Cloud Edge Collaboration](../kant/intro/index.md)
+KubeEdge is the core component of DCE 5.0 [Cloud Edge Collaboration](../../kant/intro/index.md)
 and DaoCloud has been actively following, promoting, and planning features of KubeEdge.
 
 ## What have been changed
@@ -49,7 +49,7 @@ In v1.15.0, support for the DMI data plane is provided, mainly carried in the so
     and reduce the risk of communication blockage between the cloud and the edge. The DMI data plane system
     architecture is shown in the following figure:
 
-    ![System Architecture](./images/edge01.png)
+    ![System Architecture](../images/edge01.png)
 
 - Mapper Automatic Generation Framework Mapper-Framework
 
@@ -124,4 +124,4 @@ DaoCloud adheres to the concept of thriving and co-building the community, conti
 - In Q4, the DaoCloud Edge Team submitted a total of 22 PRs to the KubeEdge community.
   See [Commit Details](https://kubeedge.devstats.cncf.io/d/56/company-commits-table?orgId=1&from=now-90d&to=now&var-repogroups=kubeedge&var-companies=DaoCloud%20Network%20Technology%20Co.%20Ltd.).
 
-![Contributions](./images/edge02.png)
+![Contributions](../images/edge02.png)

@@ -159,7 +159,7 @@ fire-kind-cluster-control-plane Ready control-plane 18h v1.25.3
 
      ![success](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/success.jpg)
 
-1. After entering the default user and password (admin/changeme) to log in, the system will prompt [Request License Key](../dce/license0.md).
+1. After entering the default user and password (admin/changeme) to log in, the system will prompt [Request License Key](../../dce/license0.md).
 
 ## Experience using
 
@@ -167,18 +167,18 @@ After applying for a license, you will enter the main interface of DCE 5.0, disp
 
 You can try:
 
-- create a [user](../ghippo/user-guide/access-control/user.md),
-   Join a [group](../ghippo/user-guide/access-control/group.md),
-   Grant [role permission](../ghippo/user-guide/access-control/role.md)
-- [Customized software interface](../ghippo/user-guide/platform-setting/appearance.md)
-- [Integrate a cluster](../kpanda/user-guide/clusters/integrate-cluster.md)
-- [Manage your nodes](../kpanda/user-guide/nodes/node-check.md)
-- [Create a workload](../kpanda/user-guide/workloads/create-deployment.md)
+- create a [user](../../ghippo/user-guide/access-control/user.md),
+   Join a [group](../../ghippo/user-guide/access-control/group.md),
+   Grant [role permission](../../ghippo/user-guide/access-control/role.md)
+- [Customized software interface](../../ghippo/user-guide/platform-setting/appearance.md)
+- [Integrate a cluster](../../kpanda/user-guide/clusters/integrate-cluster.md)
+- [Manage your nodes](../../kpanda/user-guide/nodes/node-check.md)
+- [Create a workload](../../kpanda/user-guide/workloads/create-deployment.md)
 - For more, please refer to the documentation station page
 
 ## uninstall
 
-1. Uninstall [DCE Community](../install/uninstall.md).
+1. Uninstall [DCE Community](../../install/uninstall.md).
 1. Delete the kind cluster.
 
      ```

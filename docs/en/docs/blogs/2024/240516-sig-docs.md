@@ -1,6 +1,6 @@
 # From Code to Quill: Embark on a Legendary Kubernetes Quest with SIG Docs
 
-![writing](./images/writing.jpeg)
+![writing](../images/writing.jpeg)
 
 You've likely heard the adage, "Contributing isn't just about writing code",
 whispered in forums or seen etched into the digital walls of open source communities.

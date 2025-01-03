@@ -2,7 +2,7 @@
 
 This article shares a personal journey of growth within the CNCF open-source community, featuring a protagonist named [Michael Yao](https://github.com/windsonsea).
 
-![story](./images/cncf01copy.png)
+![story](../images/cncf01copy.png)
 
 ## 2021: A Beginner's Journey
 
@@ -28,7 +28,7 @@ This starkly contrasted the standalone Office suite or corporate intranet Wiki p
 
 ## 2022: Getting Started
 
-![start](./images/cncf02copy.png)
+![start](../images/cncf02copy.png)
 
 In 2022, DaoCloud's R&D department began recruiting more talent to develop the fifth-generation containerized platform, which later became the cloud-native operating system DCE 5.0. Michael was responsible for documentation and began researching how to build a documentation site. He explored options like [GitBook](https://www.gitbook.com/), [Docusaurus](https://docusaurus.io/), [Hugo](https://www.gohugo.org/), and [MkDocs](https://www.mkdocs.org/). Initially, he set up documentation sites for various Scrum teams using GitBook on the intranet but faced limitations due to a lack of IT support, resulting in only basic styling. Additionally, after GitBook commercialized, updates for the community version stagnated, causing the documentation for different Scrum teams to become disjointed and inconsistent.
 
@@ -50,7 +50,7 @@ Michael advises newcomers to start by tackling some [good first issues](https://
 
 ## 2023: Run, Brother
 
-![run](./images/cncf03copy.png)
+![run](../images/cncf03copy.png)
 
 In 2023, Michael participated in several open-source projects, with the static compilation of external websites falling into three categories:
 
@@ -76,13 +76,13 @@ In 2023, Michael participated in several open-source projects, with the static c
     - [hwameistor.io](http://hwameistor.io): An open-source project donated by DaoCloud to CNCF, successfully joining the Sandbox, with Michael as one of the maintainers.
     - [karmada.io](http://karmada.io): Open-sourced by Huawei, with DaoCloud ranking first in code contributions, and Michael being one of the maintainers.
 
-![2023 commits](./images/cncf04copy.png)
+![2023 commits](../images/cncf04copy.png)
 
 ## 2024: Knowledge Gained
 
 The prosperity of the community relies on the contributions of its members, and active contributors are the lifeblood of various projects.
 
-![k8s-insight](./images/cncf05.png)
+![k8s-insight](../images/cncf05.png)
 
 In 2024, Michael participated multiple times in the Program Committee for reviewing KubeCon speaking topics:
 
@@ -91,11 +91,11 @@ In 2024, Michael participated multiple times in the Program Committee for review
 - KubeCon New Delhi 2024
 - KubeCon Hong Kong 2024
 
-![badges](./images/cncf06.png)
+![badges](../images/cncf06.png)
 
 The North American KubeCon in 2024 will take place from November 12-15, featuring keynote speeches at the main venue. You might see Michael Yao's name on the award list.
 
-![cncf-ambassador](./images/cncf09.png)
+![cncf-ambassador](../images/cncf09.png)
 
 ## Conclusion
 
@@ -142,9 +142,9 @@ So what are you waiting for? Find an environment that encourages open-source con
 
 Efforts will always be rewarded. If one day you search for your name and find numerous articles related to you, each with tens of thousands of views, the excitement in your heart will drive you to continue moving forward.
 
-![authors](./images/cncf07.png)
+![authors](../images/cncf07.png)
 
-![cncf-ambassador](./images/cncf08.png)
+![cncf-ambassador](../images/cncf08.png)
 
 ## Reference Links
 

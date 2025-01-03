@@ -2,7 +2,7 @@
 
 > Source: [k8s.io](https://kubernetes.io/blog/2024/06/06/10-years-of-kubernetes/)
 
-![KCSEU 2024 group photo](./images/kcseu2024.jpg)
+![KCSEU 2024 group photo](../images/kcseu2024.jpg)
 
 Ten (10) years ago, on June 6th, 2014, the
 [first commit](https://github.com/kubernetes/kubernetes/commit/2c4b3a562ce34cddc3f8218a2c4d11c7310e6d56)
@@ -13,7 +13,7 @@ Kubernetes would grow to become one of the largest Open Source projects to date 
 more than [8,000 companies](https://www.cncf.io/reports/kubernetes-project-journey-report/), across
 44 countries.
 
-![kcscn2019](./images/kcscn2019.jpg)
+![kcscn2019](../images/kcscn2019.jpg)
 
 This milestone isn't just for Kubernetes but for the Cloud Native ecosystem that blossomed from
 it. There are close to [200 projects](https://all.devstats.cncf.io/d/18/overall-project-statistics-table?orgId=1)
@@ -49,7 +49,7 @@ realization in the fall of 2013 inspired a small team to start working on a proj
 become **Kubernetes**. That team included Joe Beda, Brendan Burns, Craig McLuckie, Ville Aikas, Tim
 Hockin, Dawn Chen, Brian Grant, and Daniel Smith.
 
-![The future of Linux Container](./images/future.png)
+![The future of Linux Container](../images/future.png)
 
 In March of 2013, a 5-minute lightning talk called
 ["The future of Linux Containers," presented by Solomon Hykes at PyCon](https://youtu.be/wW9CAH9nSLs?si=VtK_VFQHymOT7BIB),
@@ -73,7 +73,7 @@ Aikas, Tim Hockin, Dawn Chen, Brian Grant, and Daniel Smith.
 
 ## A decade of Kubernetes
 
-![kubecon eu 2017](./images/kubeconeu2017.jpg)
+![kubecon eu 2017](../images/kubeconeu2017.jpg)
 
 Kubernetes' history begins with that historic commit on June 6th, 2014, and the subsequent
 announcement of the project in a June 10th
@@ -140,7 +140,7 @@ incredible volume of contribution over the last decade that has made Kubernetes 
 
 ## Kubernetes today
 
-![welcome to kubecon na 2023](./images/welcome.jpg)
+![welcome to kubecon na 2023](../images/welcome.jpg)
 
 Since its early days, the project has seen enormous growth in technical capability, usage, and
 contribution. The project is still actively working to improve and better serve its users.
@@ -166,7 +166,7 @@ update any automation you have to use registry.k8s.io!
 
 ## The future of Kubernetes
 
-![lts talk](./images/lts.jpg)
+![lts talk](../images/lts.jpg)
 
 A decade in, the future of Kubernetes still looks bright. The community is prioritizing changes that
 both improve the user experiences, and enhance the sustainability of the project. The world of
@@ -194,4 +194,4 @@ information about contributing in our New Contributor Guide at
 
 We look forward to building the future of Kubernetes with you!
 
-![kcs na 2023](./images/kcsna2023.jpg)
+![kcs na 2023](../images/kcsna2023.jpg)

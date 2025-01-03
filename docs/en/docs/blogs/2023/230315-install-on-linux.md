@@ -154,14 +154,14 @@ If you already have Docker on the host, and the version is higher than 1.18, you
 
 ## Install DCE Community
 
-1. Install dependencies, see also [Dependency Installation Instructions](../install/install-tools.md)
+1. Install dependencies, see also [Dependency Installation Instructions](../../install/install-tools.md)
 
      ```shell
      curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
      bash install_prerequisite.sh online community
      ```
 
-1. Download the dce5-installer binary file on the host (you can also [download via browser](../download/index.md)
+1. Download the dce5-installer binary file on the host (you can also [download via browser](../../download/index.md)
 
      ```shell
      export VERSION=v0.5.0
