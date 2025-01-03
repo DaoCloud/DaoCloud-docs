@@ -124,7 +124,7 @@ OpenCL 的一项标志性特征是其跨平台兼容性，这意味着开发者�
 
 下图说明了使用 NVLink 和 PCIe 连接方法连接 CPU 的 GPU 的体系结构。
 
-![GPU 使用 NVLink 和 PCIe 连接到 CPU](./images/GPUs-connected-to-a-CPU.jpg)
+![GPU 使用 NVLink 和 PCIe 连接到 CPU](../images/GPUs-connected-to-a-CPU.jpg)
 
 ## 加速计算与生成式 AI
 

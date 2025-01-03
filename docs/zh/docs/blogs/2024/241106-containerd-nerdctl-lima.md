@@ -9,7 +9,7 @@
 [nerdctl](https://github.com/containerd/nerdctl) (**contaiNERD CTL**) v2.0
 和 [Lima](https://lima-vm.io/) v1.0 集中发布 🎉。
 
-![three-container-runtime](./images/containerd01.png)
+![three-container-runtime](../images/containerd01.png)
 
 ## containerd v2.0
 
@@ -125,6 +125,6 @@ Lima 已被多个知名第三方项目改编，如 [Colima](https://github.com/a
 
 以下 Lima 项目在 GitHub 上得到的 Star 数变化趋势图。
 
-![star history](./images/containerd02.png)
+![star history](../images/containerd02.png)
 
 另请参阅 [Lima v1.0 发布说明](https://github.com/lima-vm/lima/releases/tag/v1.0.0)。

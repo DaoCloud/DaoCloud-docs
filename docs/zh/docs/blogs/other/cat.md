@@ -6,7 +6,7 @@
 
 口号 SLOGAN： **爱喵，就要懂喵**
 
-![](./images/cat01.png)
+![](../images/cat01.png)
 
 ## 产品
 
@@ -68,4 +68,4 @@
 
 [查看 PPT](https://www.aippt.cn/share/1wVxvkpry830Bq0oOYAfAg){ .md-button .md-button--primary }
 
-![](./images/cat02.jpg)
+![](../images/cat02.jpg)

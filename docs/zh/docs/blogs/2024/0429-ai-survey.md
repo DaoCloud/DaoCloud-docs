@@ -29,7 +29,7 @@ ClearML 北美首席营销官兼总经理 Noam Harel 表示：
 
     部署生成式 AI 的最大担忧是行动过于仓促并且重要事项考虑不足（例如，让错误的商业应用场景优先）。第二个担忧是由于缺乏执行力而进展太慢。
 
-    ![figure 1](./images/survey01.png)
+    ![figure 1](../images/survey01.png)
 
     图 1：96% 的企业计划扩大其 AI 算力
 
@@ -40,7 +40,7 @@ ClearML 北美首席营销官兼总经理 Noam Harel 表示：
     74% 的受访者认为，将算力和调度功能放到一个统一的 AI/ML 平台上是有价值的（而不是将一个个孤立单点方案拼凑成 AI 基础设施技术栈）。
     但只有 19% 的受访者真正拥有支持查看和管理队列中作业并有效优化 GPU 利用率的调度工具。
 
-    ![figure 2](./images/survey02.webp)
+    ![figure 2](../images/survey02.webp)
 
     图 2：74% 的受访者认为将算力和调度功能放到一个统一的的 AI/ML 平台上是有价值的
 
@@ -58,7 +58,7 @@ ClearML 北美首席营销官兼总经理 Noam Harel 表示：
     为了解决 GPU 缺乏的问题，约 52% 的受访者在 2024 年积极寻找低本高效的 GPU 替代品用于推理，而用于训练的这一比例为 27%，这标志着 AI 硬件使用的转变。
     另外，20% 的受访者表示对低本高效的 GPU 替代品感兴趣，但还找不到替代品。
 
-    ![figure 3](./images/survey03.webp)
+    ![figure 3](../images/survey03.webp)
 
     图 3：52% 的受访者表示在 2024 年积极寻找低本高效的 GPU 替代品用于推理
 
@@ -71,7 +71,7 @@ ClearML 北美首席营销官兼总经理 Noam Harel 表示：
     超过一半的受访者计划在 2024 年使用 LLM（LLama 模型和类 LLama 模型），其次是在 2024 年商业化部署嵌入式模型（BERT 和相关模型）（26%）。
     缓解算力挑战对于实现各自的愿望至关重要。
 
-    ![figure 4](./images/survey04.webp)
+    ![figure 4](../images/survey04.webp)
 
     图 4 ：超过一半的受访者计划在 2024 年使用 LLM（LLama 和类 LLama 模型）
 
@@ -83,7 +83,7 @@ ClearML 北美首席营销官兼总经理 Noam Harel 表示：
     有 53% 认为 GPU 资源利用率在 51% 到 70%，只有 25% 认为他们的 GPU 利用率达到 85%。
     而仅有 7% 的企业认为他们的 GPU 基础设施在高峰期的利用率超过 85%。
 
-    ![figure 5](./images/survey05.webp)
+    ![figure 5](../images/survey05.webp)
 
     图 5：15% 的受访者表示可用和已购买的 GPU 中只有不到 50% 在使用
 
@@ -95,7 +95,7 @@ ClearML 北美首席营销官兼总经理 Noam Harel 表示：
 
     几乎所有高管（95%）都表示，拥有和使用外部开源技术解决方案对他们的组织很重要。
 
-    ![figure 6](./images/survey06.webp)
+    ![figure 6](../images/survey06.webp)
 
     图 6：96% 的受访企业目前或计划在 2024 年定制开源模型
 
