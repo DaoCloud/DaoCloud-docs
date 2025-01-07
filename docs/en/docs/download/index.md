@@ -74,7 +74,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | | Kafka |1.42 GB| [:arrow_right: Go to Download](./modules/middleware/kafka.md) |2024-12-12|
 | | MinIO |233.30 MB| [:arrow_right: Go to Download](./modules/middleware/minio.md) |2024-12-12|
 | | MongoDB |376.88 MB| [:arrow_right: Go to Download](./modules/middleware/mongodb.md) |2024-12-12|
-| | MySQL |1.77 GB| [:arrow_right: Go to Download](./modules/middleware/mysql.md) |2025-01-02|
+| | MySQL |1.77 GB| [:arrow_right: Go to Download](./modules/middleware/mysql.md) |2025-01-07|
 | | PostgreSQL |1.84 GB| [:arrow_right: Go to Download](./modules/middleware/postgresql.md) |2024-12-12|
 | | RabbitMQ |180.35 MB| [:arrow_right: Go to Download](./modules/middleware/rabbitmq.md) |2024-12-12|
 | | Redis |747.81 MB| [:arrow_right: Go to Download](./modules/middleware/redis.md) |2025-01-02|

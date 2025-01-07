@@ -70,7 +70,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | | Kafka |1.42 GB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2024-12-12|
 | | MinIO |233.30 MB| [:arrow_right: 下载页](./modules/middleware/minio.md) |2024-12-12|
 | | MongoDB |376.88 MB| [:arrow_right: 下载页](./modules/middleware/mongodb.md) |2024-12-12|
-| | MySQL |1.77 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md) |2025-01-02|
+| | MySQL |1.77 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md) |2025-01-07|
 | | PostgreSQL |1.84 GB| [:arrow_right: 下载页](./modules/middleware/postgresql.md) |2024-12-12|
 | | RabbitMQ |180.35 MB| [:arrow_right: 下载页](./modules/middleware/rabbitmq.md) |2024-12-12|
 | | Redis |747.81 MB| [:arrow_right: 下载页](./modules/middleware/redis.md) |2025-01-02|
