@@ -21,9 +21,9 @@
 /docs/en/themes/ @samzong @windsonsea
 
 # amamba
-/docs/zh/docs/amamba/ @jzhupup @zengchongliner @windsonsea
-/docs/zh/docs/download/modules/amamba.md @jzhupup @zengchongliner @windsonsea
-/docs/zh/docs/videos/amamba.md @jzhupup @zengchongliner @windsonsea
+/docs/zh/docs/amamba/ @samzong @zengchongliner @windsonsea
+/docs/zh/docs/download/modules/amamba.md @samzong @zengchongliner @windsonsea
+/docs/zh/docs/videos/amamba.md @samzong @zengchongliner @windsonsea
 
 # baize
 /docs/zh/docs/baize/ @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
@@ -56,8 +56,8 @@
 /docs/zh/docs/videos/kant.md @zhiyingfang2022 @git-jxj @windsonsea
 
 # install
-/docs/zh/docs/install/ @jzhupup @FloatXD @Rei1010 @windsonsea
-/docs/zh/docs/videos/install.md @jzhupup @FloatXD @Rei1010 @windsonsea
+/docs/zh/docs/install/ @zhiyingfang2022 @FloatXD @Rei1010 @windsonsea
+/docs/zh/docs/videos/install.md @zhiyingfang2022 @FloatXD @Rei1010 @windsonsea
 
 # kpanda
 /docs/zh/docs/kpanda/ @lemontrees123 @shijinye @Rei1010 @yt-huang @windsonsea
@@ -91,5 +91,5 @@
 /docs/zh/docs/videos/middleware.md @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
 
 # hwameistor
-/docs/zh/docs/storage/ @jzhupup @FloatXD @windsonsea
-/docs/zh/docs/download/modules/hwameistor.md @jzhupup @FloatXD @windsonsea
+/docs/zh/docs/storage/ @FloatXD @windsonsea
+/docs/zh/docs/download/modules/hwameistor.md @FloatXD @windsonsea
