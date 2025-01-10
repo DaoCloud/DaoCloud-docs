@@ -13,7 +13,7 @@ CronJobs are suitable for performing periodic operations, such as backup and rep
 
 Before creating a CronJob, the following prerequisites need to be met:
 
-- In the [Container Management](../../intro/index.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/index.md) module [Integrate Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md) and a [user](../../../ghippo/user-guide/access-control/user.md).
 
@@ -51,7 +51,7 @@ On the __Create CronJobs__ page, enter the information according to the table be
 
 ### Container settings
 
-Container setting is divided into six parts: basic information, life cycle, health check, environment variables, data storage, and security settings. Click the tab below to view the requirements of each part.
+Container setting is divided into six parts: basic information, lifecycle, health check, environment variables, data storage, and security settings. Click the tab below to view the requirements of each part.
 
 > Container setting is only configured for a single container. To add multiple containers to a pod, click __+__ on the right to add multiple containers.
 

@@ -1,6 +1,6 @@
 # Manage Helm Apps
 
-The container management module supports interface-based management of Helm, including creating Helm instances using Helm charts, customizing Helm instance arguments, and managing the full lifecycle of Helm instances.
+The container management module supports interface-based management of Helm, including creating Helm instances using Helm charts, customizing Helm instance arguments, and managing the lifecycle of Helm instances.
 
 This section will take [cert-manager](https://cert-manager.io/docs/) as an example to introduce how to create and manage Helm apps through the container management interface.
 

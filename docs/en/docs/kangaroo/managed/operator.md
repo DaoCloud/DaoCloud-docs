@@ -7,7 +7,7 @@ DATE: 2024-07-31
 
 # Install Harbor Operator
 
-A managed Harbor uses the Harbor Operator to perform full lifecycle management of creating, upgrading,
+A managed Harbor uses the Harbor Operator to perform lifecycle management of creating, upgrading,
 and deleting Harbor instances. Before creating a managed Harbor instance, you need to install the Harbor Operator
 in your container management system, with a minimum version requirement of 1.4.0.
 

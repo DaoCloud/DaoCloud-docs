@@ -29,7 +29,7 @@ and use of full-cycle container registry services.
   such as development, testing, and production.
 - Breaks the calling barriers between modules, and supports rapid image pull when deploying applications in Workbench 
   and container management module
-- Provides a unified management control plane, allowing administrators to manage the full life cycle of multiple 
+- Provides a unified management control plane, allowing administrators to manage the lifecycle of multiple 
   Harbor instances on the same interface.
 
 ## Steps

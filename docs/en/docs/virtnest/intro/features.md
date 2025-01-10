@@ -5,7 +5,7 @@ date: 2024-08-21
 
 # Virtual Machine Features
 
-The virtual machine module provides management capabilities for the full lifecycle of virtual machines.
+The virtual machine module provides management capabilities for the lifecycle of virtual machines.
 Virtual Machine supports the following operations:
 
 | Operation | Description | Virtual Machine State |

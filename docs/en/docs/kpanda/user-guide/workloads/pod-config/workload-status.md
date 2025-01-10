@@ -13,7 +13,7 @@ A workload is an application running on Kubernetes, and in Kubernetes, whether y
 - [Job](../create-job.md)
 - [CronJob](../create-cronjob.md)
 
-You can also expand workload resources by setting [Custom Resource CRD](../../custom-resources/create.md). In the fifth-generation container management, it supports full lifecycle management of workloads such as creation, update, capacity expansion, monitoring, logging, deletion, and version management.
+You can also expand workload resources by setting [Custom Resource CRD](../../custom-resources/create.md). In the fifth-generation container management, it supports lifecycle management of workloads such as creation, update, capacity expansion, monitoring, logging, deletion, and version management.
 
 ## Pod Status
 
@@ -23,7 +23,7 @@ Pods follow a predefined lifecycle, starting at __Pending__ [phase](https://kube
 
 ## Workload Status
 
-The fifth-generation container management module designs a built-in workload life cycle status set based on factors such as Pod status and number of replicas, so that users can more realistically perceive the running status of workloads.
+The fifth-generation container management module designs a built-in workload lifecycle status set based on factors such as Pod status and number of replicas, so that users can more realistically perceive the running status of workloads.
 Because different workload types (such as Deployment and Jobs) have inconsistent management mechanisms for Pods, different workloads will have different lifecycle status during operation, as shown in the following table.
 
 ### Deployment, StatefulSet, DamemonSet Status

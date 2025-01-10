@@ -53,7 +53,7 @@ This is an index page for FAQs and troubleshooting for DCE 5.0.
     - [What is the logic for Kcoral application backup to detect Velero status in the working cluster](../kpanda/intro/faq.md#kcoral-logic-for-velero)
     - [When backing up and restoring across clusters, how does Kcoral obtain available clusters](../kpanda/intro/faq.md#kcoral-get-cluster)
     - [Kcoral backed up Pods and Deployments with the same label, but after restoring the backup, two Pods appear](../kpanda/intro/faq.md#2pod-with-same-label)
-- [Why do the corresponding elastic scaling records still exist after uninstalling VPA, HPA, and CronHPA](../kpanda/intro/faq.md#autoscaling-log)
+- [Why do the corresponding scaling records still exist after uninstalling VPA, HPA, and CronHPA](../kpanda/intro/faq.md#autoscaling-log)
 - [Why does the console open abnormally in lower version clusters](../kpanda/intro/faq.md#console-error)
 - Creating and Integrating Clusters:
     - [How to reset a created cluster](#reset-cluster)

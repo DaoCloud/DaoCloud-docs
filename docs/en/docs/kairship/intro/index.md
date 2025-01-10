@@ -26,7 +26,7 @@ According to statistics, the current distribution of multicloud adoption by busi
 As the table shows, multicloud has become the mainstream in the market. This also explains why DaoCloud crafted the Multicloud Management module in DCE 5.0.
 
 MultiCloud Management is an application-centric platform for efficiently managing applications across multiple clouds.
-It allows centralized management of multicloud and hybrid-cloud environments, providing cross-cloud deployment, release, and operational components. Elastic scaling of applications based on cluster resources supports global load balancing, and it provides disaster recovery that fully addresses the disaster recovery problem for multicloud applications.
+It allows centralized management of multicloud and hybrid-cloud environments, providing cross-cloud deployment, release, and operational components. Scaling of applications based on cluster resources supports global load balancing, and it provides disaster recovery that fully addresses the disaster recovery problem for multicloud applications.
 
 ![workload](../images/workload01.png)
 

@@ -31,7 +31,7 @@ Follow the steps below to create a CronJob.
     - Aggregation: schedule as few instances as possible in all selected clusters
     - Dynamic weight: according to the real-time schedulable maximum number of instances of all selected clusters, the total number of filled instances will be run in equal proportion
 
-1. On the __Container Configuration__ page, configure the basic information of the container where the load resides, and optionally configure information such as life cycle and health check, and then click __Next__ .
+1. On the __Container Configuration__ page, configure the basic information of the container where the load resides, and optionally configure information such as lifecycle and health check, and then click __Next__ .
 
 1. On the __CronJob Configuration__ page, configure concurrency policies, timing rules, task records, other configurations and other information
 

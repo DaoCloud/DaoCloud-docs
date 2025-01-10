@@ -14,7 +14,7 @@ Multicloud Management module has the following features:
 - **Multicloud Application Deployment**: Flexible deployment policies and override policies for multicloud applications.
 - **Application Failover**: Built-in capability to enable application failover across multiple clouds.
 - **One-Click Application Conversion**: Achieve seamless conversion of applications from DCE4 to DCE5 with just one click.
-- **Cross-Cluster Elastic Scaling**: Dynamically adjust resources across different clusters
+- **Cross-Cluster Scaling**: Dynamically adjust resources across different clusters
   based on application workload demands.
 - **Observability**: Rich audit rules and metrics to improve observability.
 - **Practical Permissions**: Manage user access based on [workspaces](../../ghippo/user-guide/workspace/workspace.md).

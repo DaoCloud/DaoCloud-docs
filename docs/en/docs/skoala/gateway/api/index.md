@@ -5,7 +5,7 @@ Date: 2024-07-10
 
 # API Management
 
-The microservice gateway supports the full lifecycle management of the API of the gateway instance, including adding, updating, and deleting the API.
+The microservice gateway supports the lifecycle management of the API of the gateway instance, including adding, updating, and deleting the API.
 
 ## Create API
 
@@ -85,7 +85,7 @@ You can update the base configuration, policy configuration, and security config
 
 ## Delete API
 
-The microservice gateway supports the full lifecycle management of the API of the gateway
+The microservice gateway supports the lifecycle management of the API of the gateway
 instance, including adding, updating, and removing the API. This page explains how to
 remove an API.
 

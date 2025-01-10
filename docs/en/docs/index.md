@@ -78,7 +78,7 @@ customize solutions for various use cases. This modular style allows for continu
     DCE 5.0 supports unified and centralized management of multicloud and hybrid clouds,
     providing cross-cloud resource retrieval and application deployment, release, and
     operation and maintenance capabilities. This enables efficient management and control
-    of multicloud applications, elastic scaling of applications based on cluster resources,
+    of multicloud applications, scaling of applications based on cluster resources,
     and global load balancing.
     
     Furthermore, DCE 5.0 offers fault recovery capabilities that
@@ -110,7 +110,7 @@ customize solutions for various use cases. This modular style allows for continu
     traditional microservices, cloud native microservices, and open-source microservice frameworks.
     It achieves integrated management of existing microservice systems and new and legacy microservice systems of enterprises.
 
-    This capability supports the full lifecycle management of microservices from development, deployment,
+    This capability supports the lifecycle management of microservices from development, deployment,
     access, observation, operation, and maintenance. It also provides high-performance cloud native
     microservice gateways, ensuring continuous availability of microservice applications. Additionally,
     DCE 5.0 introduces independent open-source eBPF mesh acceleration technology to comprehensively improve traffic forwarding efficiency.

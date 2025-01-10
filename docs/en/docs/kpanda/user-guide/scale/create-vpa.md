@@ -19,7 +19,7 @@ This page describes how to configure VPA for deployment.
 
 Before configuring a vertical scaling policy for deployment, the following prerequisites must be met:
 
-- In the [Container Management](../../intro/index.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/index.md) module [Integrate Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md), [user](../../../ghippo/user-guide/access-control/user.md), [Deployments](../workloads/create-deployment.md) or [Statefulsets](../workloads/create-statefulset.md).
 
@@ -53,6 +53,6 @@ Refer to the following steps to configure the built-in index auto scaling policy
         - Auto-scaling: The vertical scaling policy automatically calculates and modifies the resource quota of the application.
     - Target container: Select the container to be scaled vertically.
 
-5. After completing the parameter configuration, click the __OK__ button to automatically return to the elastic scaling details page. Click __┇__ on the right side of the list to perform edit and delete operations.
+5. After completing the parameter configuration, click the __OK__ button to automatically return to the scaling details page. Click __┇__ on the right side of the list to perform edit and delete operations.
 
     ![Successfully Configurate](../images/createVpaScale02.png)

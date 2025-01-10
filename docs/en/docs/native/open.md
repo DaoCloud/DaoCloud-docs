@@ -836,7 +836,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [KubeClipper: K8s multicluster lifecycle management tool open sourced by Kyushu Cloud](https://mp.weixin.qq.com/s/RVUB5Pw6-A5zZAQktl8AcQ)
 
-     [KubeClipper](https://github.com/KubeClipper-labs) is based on the kubeadm tool for secondary packaging, providing rapid deployment of K8S clusters and continuous full lifecycle management (installation, uninstallation, upgrade, scaling, remote access, etc.) capabilities,
+     [KubeClipper](https://github.com/KubeClipper-labs) is based on the kubeadm tool for secondary packaging, providing rapid deployment of K8S clusters and continuous lifecycle management (installation, uninstallation, upgrade, scaling, remote access, etc.) capabilities,
      It supports multiple deployment methods such as online, proxy, and offline, and also provides rich and scalable management services for CRI, CNI, CSI, and various CRD components.
 
 - [KubeEdge Cloud Native Edge Computing Platform v1.15.0 Released (CNCF Project)](https://github.com/kubeedge/kubeedge/blob/master/CHANGELOG/CHANGELOG-1.15.md)
@@ -1477,7 +1477,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Serverless-cd: Serverless Devs released a lightweight CI/CD framework based on Serverless architecture——](https://mp.weixin.qq.com/s/ps_ZFsv7KGwV2V61SvvWIA)
 
-     Serverless Devs is the industry's first platform that supports cloud native full lifecycle management of mainstream serverless services/frameworks. [Serverless-cd](https://github.com/Serverless-Devs/serverless-cd) is built based on Serverless Devs, fully follows the best practices of Serverless architecture, and refers to the implementation of Github Action at the specification and ecological level. It adopts the Master Worker model and event-driven architecture, which can be used to quickly build an enterprise internal application management PaaS platform.
+     Serverless Devs is the industry's first platform that supports cloud native lifecycle management of mainstream serverless services/frameworks. [Serverless-cd](https://github.com/Serverless-Devs/serverless-cd) is built based on Serverless Devs, fully follows the best practices of Serverless architecture, and refers to the implementation of Github Action at the specification and ecological level. It adopts the Master Worker model and event-driven architecture, which can be used to quickly build an enterprise internal application management PaaS platform.
 
 - [Serverless Devs entered the CNCF sandbox and became the first serverless tool project selected](https://mp.weixin.qq.com/s/ICVDO3U5Ea1DzP3LFJq8mQ)
 

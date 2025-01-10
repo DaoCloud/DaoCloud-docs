@@ -9,13 +9,13 @@ This page describes how to create a StatefulSet through image and YAML files.
 
 [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) is a common resource in Kubernetes, and [Deployment](create-deployment.md), mainly used to manage the deployment and scaling of Pod collections. The main difference between the two is that Deployment is stateless and does not save data, while StatefulSet is stateful and is mainly used to manage stateful applications. In addition, Pods in a StatefulSet have a persistent ID, which makes it easy to identify the corresponding Pod when matching storage volumes.
 
-Through the container management module of [DCE 5.0](../../../dce/index.md), workloads on multicloud and multiclusters can be easily managed based on corresponding role permissions, including the creation of StatefulSets, update, delete, elastic scaling, restart, version rollback and other full life cycle management.
+Through the container management module of [DCE 5.0](../../../dce/index.md), workloads on multicloud and multiclusters can be easily managed based on corresponding role permissions, including the creation of StatefulSets, update, delete, scaling, restart, and other lifecycle management.
 
 ## Prerequisites
 
 Before using image to create StatefulSets, the following prerequisites need to be met:
 
-- In the [Container Management](../../intro/index.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/index.md) module [Integrate Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md) and a [user](../../../ghippo/user-guide/access-control/user.md).
 
@@ -39,7 +39,7 @@ Follow the steps below to create a statefulSet using image.
 
     The system will automatically return to the list of __StatefulSets__ , and wait for the status of the workload to become __running__ . If the workload status is abnormal, refer to [Workload Status](../workloads/pod-config/workload-status.md) for specific exception information.
 
-    Click __┇__ on the right side of the New Workload column to perform operations such as update, delete, elastic scaling, restart, and version rollback on the workload.
+    Click __┇__ on the right side of the New Workload column to perform operations such as update, delete, scaling, and restart the workload.
 
     ![Status](../images/state10.png)
 
@@ -54,7 +54,7 @@ Follow the steps below to create a statefulSet using image.
 
 ### Container settings
 
-Container setting is divided into six parts: basic information, life cycle, health check, environment variables, data storage, and security settings. Click the tab below to view the requirements of each part.
+Container setting is divided into six parts: basic information, lifecycle, health check, environment variables, data storage, and security settings. Click the tab below to view the requirements of each part.
 
 > Container settings is only configured for a single container. To add multiple containers to a pod, click __+__ on the right to add multiple containers.
 
