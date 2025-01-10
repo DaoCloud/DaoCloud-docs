@@ -112,7 +112,11 @@ Container setting is divided into six parts: basic information, life cycle, heal
 
      > The above rules only apply to multiple jobs created by the same CronJob. Multiple jobs created by multiple CronJobs are always allowed to run concurrently.
 
-- Policy Settings: Set the time period for job execution based on minutes, hours, days, weeks, and months. Support custom Cron expressions with numbers and `*` , **after inputting the expression, the meaning of the current expression will be prompted**. For detailed expression syntax rules, refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
+- Policy Settings: 
+
+    - Set the time period for job execution based on minutes, hours, days, weeks, and months. Support custom Cron expressions with numbers and `*` , **after inputting the expression, the meaning of the current expression will be prompted**. For detailed expression syntax rules, refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
+    - Time zone: all UTC time zones are integrated. You can choose one.
+
 - Job Records: Set how many records of successful or failed jobs to keep. __0__ means do not keep.
 - Timeout: When this time is exceeded, the job will be marked as failed to execute, and all Pods under the job will be deleted. When it is empty, it means that no timeout is set. The default is 360 s.
 - Retries: the number of times the job can be retried, the default value is 6.
