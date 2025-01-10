@@ -137,6 +137,8 @@
 
 === "网络配置"
 
+    ![DNS 配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy17.png)
+
     - 如在集群中部署了 [SpiderPool](../../../network/modules/spiderpool/index.md) 和 [Multus](../../../network/modules/multus-underlay/index.md) 组件，则可以在网络配置中配置容器网卡。详情参考[工作负载使用 IP 池](../../../network/config/use-ippool/usage.md)。
     
     - DNS 配置：应用在某些场景下会出现冗余的 DNS 查询。Kubernetes 为应用提供了与 DNS 相关的配置选项，能够在某些场景下有效地减少冗余的 DNS 查询，提升业务并发量。
@@ -153,17 +155,19 @@
     - Options：DNS 的配置选项，其中每个对象可以具有 name 属性（必需）和 value 属性（可选）。该字段中的内容将合并到基于 dnsPolicy 生成的域名解析文件的 options 字段中，dnsConfig 的 options 的某些选项如果与基于 dnsPolicy 生成的域名解析文件的选项冲突，则会被 dnsConfig 所覆盖。
     - 主机别名：为主机设置的别名。
 
-        ![DNS 配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy17.png)
-
 === "升级策略"
 
-    - 升级方式： __滚动升级__ 指逐步用新版本的实例替换旧版本的实例，升级的过程中，业务流量会同时负载均衡分布到新老的实例上，因此业务不会中断。 __重建升级__ 指先删除老版本的负载实例，再安装指定的新版本，升级过程中业务会中断。
+    ![升级策略](../../images/state-deploy14.png)
+
+    - 升级方式：
+        - __滚动升级(RollingUpdate)__ 指逐步用新版本的实例替换旧版本的实例，升级的过程中，业务流量会同时负载均衡分布到新老的实例上，因此业务不会中断。 
+        - __重建升级(OnDelete)__ 指先删除老版本的负载实例，再安装指定的新版本，升级过程中业务会中断。
     - 最大保留版本数：设置版本回滚时保留的旧版本数量。默认 10。
     - 缩容时间窗：负载停止前命令的执行时间窗（0-9,999秒），默认 30 秒。
 
-        ![升级策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy14.png)
-
 === "容器管理策略"
+
+    ![容器管理策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state05.png)
 
     Kubernetes v1.7 及其之后的版本可以通过 __.spec.podManagementPolicy__ 设置 Pod 的管理策略，支持以下两种方式：
     
@@ -171,9 +175,9 @@
     
     - __并行策略（Parallel）__ ：并行创建或删除容器，和 Deployment 类型的 Pod 一样。StatefulSet 控制器并行地启动或终止所有的容器。启动或者终止其他 Pod 前，无需等待 Pod 进入 Running 和 ready 或者完全停止状态。 这个选项只会影响扩缩操作的行为，不影响更新时的顺序。
 
-        ![容器管理策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state05.png)
-
 === "调度策略"
+
+    ![调度策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy15.png)
 
     - 容忍时间：负载实例所在的节点不可用时，将负载实例重新调度到其它可用节点的时间，默认为 300 秒。
     - 节点亲和性：根据节点上的标签来约束 Pod 可以调度到哪些节点上。
@@ -182,8 +186,6 @@
     - 拓扑域：即 topologyKey，用于指定可以调度的一组节点。例如， __kubernetes.io/os__ 表示只要某个操作系统的节点满足 labelSelector 的条件就可以调度到该节点。
     
     > 具体详情请参考[调度策略](pod-config/scheduling-policy.md)。
-
-        ![调度策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy15.png)
 
 === "标签与注解"
 

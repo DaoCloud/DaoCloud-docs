@@ -60,6 +60,8 @@ Container setting is divided into six parts: basic information, life cycle, heal
 
 === "Basic information (required)"
 
+    ![Basic Info](../images/state11.png)
+
     When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the settings with reference to the following requirements, click __OK__ .
     
     - Container Name: Up to 63 characters, lowercase letters, numbers and separators ("-") are supported. Must start and end with a lowercase letter or number, eg nginx-01.
@@ -70,8 +72,6 @@ Container setting is divided into six parts: basic information, life cycle, heal
     - GPU Exclusive: Configure the GPU usage for the container, only positive integers are supported. The GPU quota setting supports setting exclusive use of the entire GPU card or part of the vGPU for the container. For example, for an 8-core GPU card, enter the number __8__ to let the container exclusively use the entire length of the card, and enter the number __1__ to configure a 1-core vGPU for the container.
     
     > Before setting exclusive GPU, the administrator needs to install the GPU card and driver plug-in on the cluster nodes in advance, and enable the GPU feature in [Cluster Settings](../clusterops/cluster-settings.md).
-
-    ![Basic Info](../images/state11.png)
 
 === "Lifecycle (optional)"
 
@@ -115,13 +115,15 @@ Configure [Service (Service)](../network/create-services.md) for the statefulset
 
     ![Config Parameters](../images/deploy13.png)
 
-3. Click __OK__ and click __Next__ .
+3. Click __OK__ and click __Next__
 
 ### Advanced settings
 
 Advanced setting includes four parts: load network settings, upgrade policy, scheduling policy, label and annotation. You can click the tabs below to view the requirements of each part.
 
 === "Network Configuration"
+
+    ![DNS](../images/state17.png)
 
     1. For container NIC settings, refer to [Workload Usage IP Pool](../../../network/config/use-ippool/usage.md)
     2. DNS settings
@@ -140,17 +142,19 @@ Advanced setting includes four parts: load network settings, upgrade policy, sch
     - Options: Configuration options for DNS, where each object can have a name attribute (required) and a value attribute (optional). The content in this field will be merged into the options field of the domain name resolution file generated based on dnsPolicy. If some options of dnsConfig options conflict with the options of the domain name resolution file generated based on dnsPolicy, they will be overwritten by dnsConfig.
     - Host Alias: the alias set for the host.
 
-    ![DNS](../images/state17.png)
-
 === "Upgrade Policy"
-
-    - Upgrade Mode: __Rolling upgrade__ refers to gradually replacing instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted. __Rebuild and upgrade__ refers to deleting the workload instance of the old version first, and then installing the specified new version. During the upgrade process, the business will be interrupted.
-    - Revision History Limit: Set the number of old versions retained when the version is rolled back. The default is 10.
-    - Graceful Period: The execution period (0-9,999 seconds) of the command before the workload stops, the default is 30 seconds.
 
     ![Upgrade Policy](../images/state14.png)
 
+    - Upgrade Mode:
+        - __RollingUpdate__ refers to gradually replacing instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted.
+        - __OnDelete__ refers to deleting the workload instance of the old version first, and then installing the specified new version. During the upgrade process, the business will be interrupted.
+    - Revision History Limit: Set the number of old versions retained when the version is rolled back. The default is 10.
+    - Graceful Time Window: The execution period (0-9,999 seconds) of the command before the workload stops, the default is 30 seconds.
+
 === "Container Management Policies"
+
+    ![Container Management Policies](../images/state05.png)
 
     Kubernetes v1.7 and later versions can set Pod management policies through __.spec.podManagementPolicy__ , which supports the following two methods:
     
@@ -158,9 +162,9 @@ Advanced setting includes four parts: load network settings, upgrade policy, sch
     
     - __Parallel__ : Create or delete containers in parallel, just like Pods of the Deployment type. The StatefulSet controller starts or terminates all containers in parallel. There is no need to wait for a Pod to enter the Running and ready state or to stop completely before starting or terminating other Pods. This option only affects the behavior of scaling operations, not the order of updates.
 
-    ![Container Management Policies](../images/state05.png)
-
 === "Scheduling Policies"
+
+    ![Scheduling Policies](../images/state15.png)
 
     - Tolerance time: When the node where the workload instance is located is unavailable, the time for rescheduling the workload instance to other available nodes, the default is 300 seconds.
     - Node affinity: According to the label on the node, constrain which nodes the Pod can be scheduled on.
@@ -169,8 +173,6 @@ Advanced setting includes four parts: load network settings, upgrade policy, sch
     - Topology domain: namely topologyKey, used to specify a group of nodes that can be scheduled. For example, __kubernetes.io/os__ indicates that as long as the node of an operating system meets the conditions of labelSelector, it can be scheduled to the node.
     
     > For details, refer to [Scheduling Policy](pod-config/scheduling-policy.md).
-
-    ![Scheduling Policies](../images/state15.png)
 
 === "Labels and Annotations"
 

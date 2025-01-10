@@ -154,7 +154,7 @@ Advanced setting includes four parts: load network settings, upgrade policy, sch
     - Max Unavailable Pods: Specify the maximum value or ratio of unavailable pods during the workload update process, the default is 25%. If it is equal to the number of instances, there is a risk of service interruption.
     - Revision History Limit: Set the number of old versions retained when the version is rolled back. The default is 10.
     - Upgrade Max Duration: If the deployment is not successful after the set time, the workload will be marked as failed. Default is 600 seconds.
-    - Graceful Period: The execution period (0-9,999 seconds) of the command before the workload stops, the default is 30 seconds.
+    - Graceful Time Window: The execution period (0-9,999 seconds) of the command before the workload stops, the default is 30 seconds.
 
 === "Scheduling Policies"
 
