@@ -203,7 +203,7 @@ This page lists the release notes for the Redis Cache service, providing you wit
 
 - **Added** the ability to retrieve a list of users
 - **Added** support for ARM architecture
-- **Added** full lifecycle management for Redis instances
+- **Added** lifecycle management for Redis instances
 - **Added** deployment of monitoring for Redis instances
 - **Added** support for Redis sentinel, including one-click deployment of singleton and cluster modes
 - **Added** support for WS permission isolation

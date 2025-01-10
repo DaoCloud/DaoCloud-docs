@@ -1083,7 +1083,7 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 - Error in creating Nacos namespace
 - Error in editing Nacos persistent storage
-- Resource verification of Nacos life cycle management
+- Resource verification of Nacos lifecycle management
 - Data display of gateway monitoring panel
 - Ghippo link GRPC address missing
 - Error of Sentinel cannot acquire cluster flow control API

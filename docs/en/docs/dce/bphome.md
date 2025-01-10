@@ -117,7 +117,7 @@ and maintain containerized applications more efficiently and stably.
     **Multicloud Management** achieves centralized management of multicloud and hybrid cloud.
     **Virtual Machines** is a containerized virtual machine platform built on KubeVirt.
 
-    - [Cross-Cluster Elastic Scaling](../kairship/best-practice/fhpa.md)
+    - [Cross-Cluster Scaling](../kairship/best-practice/fhpa.md)
     - [One-Click Conversion from DCE 4.0 to DCE 5.0 Multicloud Applications](../kairship/best-practice/one-click-conversion.md)
     - [Import VMware Virtual Machines to DCE 5.0](../virtnest/best-practice/import-ubuntu.md)
 

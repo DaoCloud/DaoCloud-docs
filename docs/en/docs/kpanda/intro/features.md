@@ -16,7 +16,7 @@ This page lists the main features of container management.
 
 ## Cloud-Native Application Load
 
-- Full Application Lifecycle Management: Support for Kubernetes-native workload type deployment and management capabilities, including full lifecycle management such as creation, configuration, monitoring, capacity expansion, upgrade, rollback, and deletion.
+- Full Application Lifecycle Management: Support for Kubernetes-native workload type deployment and management capabilities, including lifecycle management such as creation, configuration, monitoring, capacity expansion, upgrade, rollback, and deletion.
 - One-Stop Application Load Creation: Decouple the underlying Kubernetes platform, and create, operate, and maintain business workloads in one stop.
 - Cross-Cluster Application Load Management: Unified management of cross-cluster loads and efficient retrieval capabilities.
 - Application Autoscaling: Through the interface, manual/automatic scaling of application load can be realized, and the autoscaling policies can be customized to cope with traffic peaks.
@@ -28,7 +28,7 @@ This page lists the main features of container management.
 - Automatic Scheduling of Containers: Support for application service scheduling management, automatically schedule containers according to host resource usage, specify specific deployment hosts, and schedule containers through label policies.
 - Affinity and Anti-Affinity: Supports the definition of affinity and anti-affinity for scheduling between pods; and affinity and anti-affinity between pods and nodes to meet business custom scheduling requirements.
 - Container Security User Setting: Support for setting the container running user. If running with Root privileges, fill in the Root user ID 0.
-- Custom Resource (CRD) Support: Supports full lifecycle management such as creation, configuration, and deletion of custom resources.
+- Custom Resource (CRD) Support: Supports lifecycle management such as creation, configuration, and deletion of custom resources.
 
 ## Service and Routing
 

@@ -55,7 +55,7 @@ Request Flow:
     
     The total number of pending requests + the number of requests that can exceed the target concurrency > the target concurrency per Pod * number of Pods.
 
-## case 2 - Based on Concurrent Elastic Scaling
+## case 2 - Based on Concurrent Scaling
 
 We first apply the following YAML definition under the cluster.
 
@@ -86,7 +86,7 @@ Execute the following command for testing, and you can observe the scaling of th
 wrk -t2 -c4 -d6s http://hello.knative-serving.knative.daocloud.io/
 ```
 
-## case 3 - Based on concurrent elastic scaling, scale out in advance to reach a specific ratio.
+## case 3 - Based on concurrent scaling, scale out in advance to reach a specific ratio.
 
 We can easily achieve this, for example, by limiting the concurrency to 10 per container. This can be implemented through `autoscaling.knative.dev/target-utilization-percentage: 70`, starting to scale out the Pods when 70% is reached.
 

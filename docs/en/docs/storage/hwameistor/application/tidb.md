@@ -80,7 +80,7 @@ This test uses three virtual machine nodes to deploy a Kubernetes cluster, inclu
 
 ### Deploy TiDB on Kubernetes
 
-You can use TiDB Operator to deploy TiDB on Kubernetes. TiDB Operator is an automatic operation and maintenance system for TiDB clusters on Kubernetes, providing full lifecycle management of TiDB including deployment, upgrade, scaling, backup and recovery, and configuration changes. With TiDB Operator, TiDB can seamlessly run on public cloud or privately deployed Kubernetes clusters.
+You can use TiDB Operator to deploy TiDB on Kubernetes. TiDB Operator is an automatic operation and maintenance system for TiDB clusters on Kubernetes, providing lifecycle management of TiDB including deployment, upgrade, scaling, backup and recovery, and configuration changes. With TiDB Operator, TiDB can seamlessly run on public cloud or privately deployed Kubernetes clusters.
 
 The correspondence between TiDB and TiDB Operator versions is as follows:
 

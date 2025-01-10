@@ -33,7 +33,7 @@ helps enterprises achieve digital transformation and improve IT delivery capabil
 
     Supports "polyform" cloud native applications in cloud native scenarios, including Kubernetes native applications, Helm apps, and OAM applications.
     Can integrate microservice applications based on SpingCloud, Dubbo, and ServiceMesh frameworks to achieve microservice governance. Seamlessly integrates with DCE 5.0's [Microservice Engine](../../skoala/intro/index.md) and [Service Mesh](../../mspider/intro/index.md).
-    Provides full lifecycle management for cloud native applications, such as scaling, logging, monitoring, and application updates.
+    Provides lifecycle management for cloud native applications, such as scaling, logging, monitoring, and application updates.
 
     ![Cloud native apps](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/what02.png)
 

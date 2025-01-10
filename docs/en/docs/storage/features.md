@@ -18,7 +18,7 @@ DCE 5.0 Cloud Native Storage offers the following features:
 | Multiple Types of Volumes | Supports LVM-type and raw disk-type volumes to accommodate various disk requirements. |
 | CSI Standard | Accesses HwameiStor local storage through standardized CSI, ensuring a consistent usage approach. |
 | Master-Slave High Availability | Implements a multi-replica redundancy mechanism for volumes, ensuring high data availability and enhancing the reliability of data read and write operations. |
-| Volume Expansion | Allows for seamless expansion of volumes during business operations, supporting elastic scaling of mounted volumes while applications are running. |
+| Volume Expansion | Allows for seamless expansion of volumes during business operations, supporting scaling of mounted volumes while applications are running. |
 | **Production Operability** | |
 | Non-Disruptive Upgrades (No Impact on Business Data) | Separates the data plane and control plane, allowing for upgrades or expansion of control plane nodes without affecting the read/write operations of business application data. |
 | Disk Replacement | Supports disk replacement after alerts, ensuring that business applications remain unaffected and maintaining operational continuity. |

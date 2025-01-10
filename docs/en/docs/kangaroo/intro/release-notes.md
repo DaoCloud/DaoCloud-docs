@@ -218,7 +218,7 @@ understand the evolution path and feature changes of each version.
 
 - **Added** support for creating managed registries based on Harbor
 - **Added** support multi-copy deployment
-- **Added** support full life cycle management of container registry
+- **Added** support lifecycle management of container registry
 - **Added** support deploying managed harbor instances in any namespace under any cluster of the platform
 - **Added** support platform access and management of external Harbor, Docker Registry container registry
 - **Added** support separate allocation of private registry space for platform workspace (tenant)

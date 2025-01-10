@@ -210,7 +210,7 @@ providing convenience for users to learn about the evolution path and feature ch
 - **Added** support for running **VM Agent** in containers.
 - **Added** support for deleting virtual machine type workloads.
 - **Added** customizable namespace scope for edge discovery in the mesh, significantly reducing resource consumption pressure on **Sidecar** .
-- **Added** elastic scaling configuration **auto_scaling** for the mesh gateway.
+- **Added** scaling configuration **auto_scaling** for the mesh gateway.
 
 #### Improvements
 

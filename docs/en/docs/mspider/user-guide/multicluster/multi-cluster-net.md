@@ -106,7 +106,7 @@ In the simplest case, a mesh can be run with a control plane on a single cluster
 
 Multicluster deployments can also share control plane instances.
 In this case, the shared control plane instance of the core is deployed in the core control cluster, and the communication policy of the mesh core is controlled by **shared control plane instance**.
-In the slave cluster, there is actually a slave control plane instance whose core capability is **controlling the sidecar life cycle management of the cluster**.
+In the slave cluster, there is actually a slave control plane instance whose core capability is **controlling the sidecar lifecycle management of the cluster**.
 
 
 

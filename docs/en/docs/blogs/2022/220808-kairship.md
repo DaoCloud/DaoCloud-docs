@@ -77,7 +77,7 @@ The Multicloud Management will synchronize all the clusters that have been conne
 
 **Deploy multicloud workloads**
 
-The Multicloud Management module supports Kubernetes-native workload type deployment and management capabilities, including: creation, configuration, expansion, deletion, and other full lifecycle management. In addition, it supports override configuration of clusters, allowing users to easily handle the configuration management of different clusters.
+The Multicloud Management module supports Kubernetes-native workload type deployment and management capabilities, including: creation, configuration, expansion, deletion, and other lifecycle management. In addition, it supports override configuration of clusters, allowing users to easily handle the configuration management of different clusters.
 
 - **Instance Scheduling Policy**
 

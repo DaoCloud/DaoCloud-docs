@@ -19,7 +19,7 @@ The container registry cooperates with the [Container Management](../../kpanda/i
 
 - Full Lifecycle Management
 
-    The container registry provides full lifecycle management through managed harbors, including the creation, editing, 
+    The container registry provides lifecycle management through managed harbors, including the creation, editing, 
     and deletion of image repositories.
 
 - Integrated External Registries

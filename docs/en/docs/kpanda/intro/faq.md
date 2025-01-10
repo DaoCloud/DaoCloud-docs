@@ -18,7 +18,7 @@ This page lists some common issues that may be encountered in container manageme
     - [What is the logic behind Kcoral's detection of Velero status in the working cluster?](#kcoral-logic-for-velero)
     - [How does Kcoral obtain available clusters during cross-cluster backup and restore?](#kcoral-get-cluster)
     - [Kcoral backed up pods and deployments with the same label, but two pods appear after restore](#2pod-with-same-label)
-- [Why do elastic scaling records still exist after uninstalling VPA, HPA, and CronHPA?](#autoscaling-log)
+- [Why do scaling records still exist after uninstalling VPA, HPA, and CronHPA?](#autoscaling-log)
 - [Why does the console open abnormally in low-version clusters?](#console-error)
 - Creating and integrating clusters:
     - [How to reset a created cluster](#reset-cluster)
@@ -172,9 +172,9 @@ Kcoral is the development code for application backup.
 
 ## Log Issues <a id="autoscaling-log" />
 
-Why do elastic scaling records still exist after uninstalling VPA, HPA, and CronHPA?
+Why do scaling records still exist after uninstalling VPA, HPA, and CronHPA?
 
-Although the corresponding components were uninstalled through the Helm Addon market, the records related to application elastic scaling still remain, as shown in the figure:
+Although the corresponding components were uninstalled through the Helm Addon market, the records related to application scaling still remain, as shown in the figure:
 
 ![Edit](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq901.png)
 

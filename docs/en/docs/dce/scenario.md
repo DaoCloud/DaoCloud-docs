@@ -109,7 +109,7 @@ The user application architecture relies on mainstream middleware capabilities, 
 
 Modules involved: [Container Management](../kpanda/intro/index.md), [Container Network](../network/intro/index.md), [Container Local Storage](../storage/index.md), [Cloud native middleware](../middleware/index.md), Cloud Edge Collabration, Dual-architecture Cloud
 
-Solution advantages: cloud native local storage capabilities designed for stateful applications, unified platform management cloud native middleware, providing middleware management capabilities for the full lifecycle of multi-tenancy, deployment, observation, backup, operation and maintenance, combined with the container platform Ability to adapt to edge and innovation use cases.
+Solution advantages: cloud native local storage capabilities designed for stateful applications, unified platform management cloud native middleware, providing middleware management capabilities for the lifecycle of multi-tenancy, deployment, observation, backup, operation and maintenance, combined with the container platform Ability to adapt to edge and innovation use cases.
 
 === "App Store"
 
