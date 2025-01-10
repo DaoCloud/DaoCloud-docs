@@ -30,9 +30,9 @@
 
 3. 依次填写[基本信息](create-cronjob.md#_3)、[容器配置](create-cronjob.md#_4)、[定时任务配置](create-cronjob.md#_5)、[高级配置](create-cronjob.md#_6)后，在页面右下角点击 __确定__ 完成创建。
 
-    系统将自动返回 __定时任务__ 列表。点击列表右侧的 __┇__ ，可以对定时任务执行执行更新、删除、重启等操作。
+    系统将自动返回 __定时任务__ 列表。点击列表右侧的 __┇__ ，可以对定时任务执行执行删除、重启等操作。
 
-    ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob06.png)
+    ![操作菜单](../../images/cronjob06.png)
 
 ### 基本信息
 
@@ -126,7 +126,13 @@
 
     > 上述规则仅适用于同一个 CronJob 创建的多个任务。多个 CronJob 创建的多个任务总是允许并发执行。
 
-- 定时规则：基于分钟、小时、天、周、月设置任务执行的时间周期。支持用数字和 `*` 自定义 Cron 表达式，**输入表达式后下方会提示当前表达式的含义**。有关详细的表达式语法规则，可参考 [Cron 时间表语法](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax)。
+- 定时规则：
+
+    - 基于分钟、小时、天、周、月设置任务执行的时间周期。支持用数字和 `*` 自定义 Cron 表达式，
+      **输入表达式后下方会提示当前表达式的含义** 。
+      有关详细的表达式语法规则，可参考 [Cron 时间表语法](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax)。
+    - 时区：集成了所有 UTC 时区，可以选择其一
+  
 - 任务记录：设定保留多少条任务执行成功或失败的记录。 __0__ 表示不保留。
 - 超时时间：超出该时间时，任务就会被标识为执行失败，任务下的所有 Pod 都会被删除。为空时表示不设置超时时间。默认值为 360 s。
 - 重试次数：任务可重试次数，默认值为 6。
