@@ -65,10 +65,10 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
 
 ### Create Offline Resources for the Earlier Versions of K8s
 
-1. Prepare the manifest.yml file.
+1. Prepare the manifest.yaml file.
 
     ```bash
-    cat > "manifest.yml" <<EOF
+    cat > "manifest.yaml" <<EOF
     image_arch:
       - "amd64" ## "arm64"
     kube_version: ## Fill in the cluster version according to the actual scenario
@@ -84,7 +84,7 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
     mkdir data
     # Create the offline package
     AIRGAP_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/airgap-patch:2.21-d6f688f" # (1)
-    podman run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data -e ZONE=CN -e MODE=FULL ${AIRGAP_IMG_ADDR}
+    podman run --rm -v $(pwd)/manifest.yaml:/manifest.yaml -v $(pwd)/data:/data -e ZONE=CN -e MODE=FULL ${AIRGAP_IMG_ADDR}
     ```
 
     1. The image spray-job can use the accelerator address here, and the image address is determined based on the selected artifact version
@@ -110,10 +110,10 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
     kubectl apply -f data/localartifactset.cr.yaml
 
     # Download the manifest resources corresponding to release-2.21
-    wget https://raw.githubusercontent.com/kubean-io/kubean-manifest/main/manifests/manifest-2.21-d6f688f.yml
+    wget https://raw.githubusercontent.com/kubean-io/kubean-manifest/main/manifests/manifest-2.21-d6f688f.yaml
     
     # Deploy the manifest resources corresponding to release-2.21
-    kubectl apply -f manifest-2.21-d6f688f.yml
+    kubectl apply -f manifest-2.21-d6f688f.yaml
     ```
 
 ### Deployment and Upgrade Legacy K8s Cluster
