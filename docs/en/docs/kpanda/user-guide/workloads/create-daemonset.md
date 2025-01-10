@@ -154,7 +154,7 @@ Advanced setting includes four parts: load network settings, upgrade policy, sch
     -  Revision History Limit: Set the number of old versions retained when the version is rolled back. The default is 10.
     - Minimum Ready: The minimum time for a Pod to be ready. Only after this time is the Pod considered available. The default is 0 seconds.
     - Upgrade Max Duration: If the deployment is not successful after the set time, the workload will be marked as failed. Default is 600 seconds.
-    - Graceful Period: The execution period (0-9,999 seconds) of the command before the workload stops, the default is 30 seconds.
+    - Graceful Time Window: The execution period (0-9,999 seconds) of the command before the workload stops, the default is 30 seconds.
 
     ![Upgrade Policy](../images/daemon14.png)
 
