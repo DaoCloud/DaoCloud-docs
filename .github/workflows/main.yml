@@ -37,12 +37,20 @@ jobs:
         with:
           fetch-depth: 0 # Required for mkdocs to be able to display pages last update info
       
-      # Clone 
+      # Clone OpenAPI docs
       - name: Checkout public repository
         uses: actions/checkout@v2
         with:
           repository: daocloud/daocloud-api-docs
           path: dao-openapi
+          fetch-depth: 0 # Required for mkdocs to be able to display pages last update info
+
+      # Clone Download docs
+      - name: Checkout public repository
+        uses: actions/checkout@v2
+        with:
+          repository: daocloud/daocloud-download-docs
+          path: daocloud-download-docs
           fetch-depth: 0 # Required for mkdocs to be able to display pages last update info
       
       - uses: actions/setup-python@v2
@@ -73,6 +81,10 @@ jobs:
       # merged openapi docs
       - run: cp -av dao-openapi/docs/openapi docs/zh/docs/
       - run: python scripts/merged_nav.py
+
+      # merged download docs
+      - run: cp -av daocloud-download-docs/docs/zh/docs/download docs/zh/docs/
+      - run: cp -av daocloud-download-docs/docs/en/docs/download docs/en/docs/
 
       # build docs
       - run: pwd
