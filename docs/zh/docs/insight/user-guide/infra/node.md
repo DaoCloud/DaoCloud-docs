@@ -27,8 +27,8 @@
 
 4. 若选择的节点为 GPU 节点，在节点下方的页签即可看到 __GPU 监控__，从 __GPU 监控__ 即可对 GPU 的资源进行监控。
 
-    !!!
+    ![gpu-node](../../images/gpu-node.png){ width="1000"}
+
+    !!! note
 
         当前仅支持 Nvidia、华为昇腾的 GPU 监控。
-
-    ![gpu-node](../../images/image.png){ width="1000"}
