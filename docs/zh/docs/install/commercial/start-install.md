@@ -15,13 +15,13 @@
 
 | CPU 架构 | 版本 | 点击下载 |
 | :------- | :----- | :-----|
-| AMD64 | v0.24.0 | [offline-v0.24.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.24.0-amd64.tar) |
-| <font color="green">ARM64</font> | v0.24.0 | [offline-v0.24.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.24.0-arm64.tar) |
+| AMD64 | v0.25.0 | [offline-v0.25.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.25.0-amd64.tar) |
+| <font color="green">ARM64</font> | v0.25.0 | [offline-v0.25.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.25.0-arm64.tar) |
 
 下载完毕后解压离线包。以 amd64 架构离线包为例：
 
 ```bash
-tar -xvf offline-v0.24.0-amd64.tar
+tar -xvf offline-v0.25.0-amd64.tar
 ```
 
 ### ISO 操作系统镜像文件（必需）
