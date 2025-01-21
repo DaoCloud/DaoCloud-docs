@@ -37,7 +37,7 @@
 
     ![弹性伸缩配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale02.png)
 
-4. 确认集群已[安装了 __metrics-server__ ](install-metrics-server.md)、Insight、Prometheus-adapter 插件且插件运行状态为正常后，即可点击 __新建伸缩__ 按钮。
+4. 确认集群已[安装了 metrics-server](install-metrics-server.md)、Insight、Prometheus-adapter 插件且插件运行状态为正常后，即可点击 __新建伸缩__ 按钮。
 
     !!! note
 
