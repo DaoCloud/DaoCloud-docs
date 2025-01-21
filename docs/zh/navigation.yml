@@ -237,19 +237,20 @@ nav:
                   - 节点调度: kpanda/user-guide/nodes/schedule.md
                   - 节点详情: kpanda/user-guide/nodes/node-details.md
                   - 标签与注解: kpanda/user-guide/nodes/labels-annotations.md
+                  
               - 工作负载:
                   - 创建 Deployment: kpanda/user-guide/workloads/create-deployment.md
                   - 创建 StatefulSet: kpanda/user-guide/workloads/create-statefulset.md
                   - 创建 DaemonSet: kpanda/user-guide/workloads/create-daemonset.md
                   - 创建 CronJob: kpanda/user-guide/workloads/create-cronjob.md
                   - 创建 Job: kpanda/user-guide/workloads/create-job.md
-                  - 工作负载参数配置:
+                  - 参数配置说明:
                       - 工作负载状态: kpanda/user-guide/workloads/pod-config/workload-status.md
                       - Job 参数: kpanda/user-guide/workloads/pod-config/job-parameters.md
                       - 生命周期: kpanda/user-guide/workloads/pod-config/lifecycle.md
                       - 环境变量: kpanda/user-guide/workloads/pod-config/env-variables.md
                       - 健康检查: kpanda/user-guide/workloads/pod-config/health-check.md
-                      - 集群调度: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
+                      - 调度策略: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
               - 弹性伸缩:
                   - 安装 metrics-server 插件: kpanda/user-guide/scale/install-metrics-server.md
                   - 安装 kubernetes-cronhpa-controller: kpanda/user-guide/scale/install-cronhpa.md
