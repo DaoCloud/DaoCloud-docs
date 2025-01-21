@@ -2,6 +2,19 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2024-12-31
+
+### v0.34.1
+
+#### Insight
+
+- **优化** Grafana 默认登陆密码使用 Secret 管理
+- **修复** JVM 监控面板指标描述错误
+
+#### Insight-agent
+
+- **修复** OpenTelemetry Operator 升级失败
+
 ## 2024-11-30
 
 ### v0.33.1
