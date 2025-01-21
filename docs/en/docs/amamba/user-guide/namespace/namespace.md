@@ -1,4 +1,4 @@
-# Namespace Management
+# Create Namespace
 
 A namespace is an abstraction used in Kubernetes to isolate resources.
 
