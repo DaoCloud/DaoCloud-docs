@@ -115,8 +115,8 @@ nav:
                   - Argo CD高可用部署: amamba/quickstart/argo-cd-HA.md
                   - 开启工作台组件的可观测能力: amamba/components-grafana-dashboard.md
               - 命名空间管理: 
-                  - 命名空间: amamba/user-guide/namespace/namespace.md
-                  - 多云命名空间: amamba/user-guide/multi-namespace.md
+                  - 创建命名空间: amamba/user-guide/namespace/namespace.md
+                  - 创建多云命名空间: amamba/user-guide/namespace/multi-namespace.md
               - 向导:
                   - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
                   - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
@@ -237,7 +237,6 @@ nav:
                   - 节点调度: kpanda/user-guide/nodes/schedule.md
                   - 节点详情: kpanda/user-guide/nodes/node-details.md
                   - 标签与注解: kpanda/user-guide/nodes/labels-annotations.md
-                  
               - 工作负载:
                   - 创建 Deployment: kpanda/user-guide/workloads/create-deployment.md
                   - 创建 StatefulSet: kpanda/user-guide/workloads/create-statefulset.md

@@ -110,7 +110,9 @@ nav:
                       - Jenkins HA Solution: amamba/quickstart/jenkins-HA.md
                       - Jenkins Scenarios: amamba/quickstart/scenarios-config.md
                   - Argo CD HA Deployment: amamba/quickstart/argo-cd-HA.md
-              - Namespaces: amamba/user-guide/namespace/namespace.md
+              - Namespaces: 
+                  - Create Namespace: amamba/user-guide/namespace/namespace.md
+                  - Create MultiCloud Namespace: amamba/user-guide/namespace/multi-namespace.md
               - Wizard:
                   - Build Git-based Microservice: amamba/user-guide/wizard/create-app-git.md
                   - Build Jar-based Java Apps: amamba/user-guide/wizard/jar-java-app.md
