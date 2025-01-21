@@ -26,7 +26,7 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 
 - 当前操作用户应具有 [NS Editor](../permissions/permission-brief.md#ns-editor) 或更高权限，详情可参考[命名空间授权](../namespaces/createns.md)。
 
-- 已完成[ __metrics-server 插件安装__ ](install-metrics-server.md)。
+- 已完成 [metrics-server 插件安装](install-metrics-server.md)。
 
 ### 操作步骤
 

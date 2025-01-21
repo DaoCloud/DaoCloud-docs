@@ -1,5 +1,8 @@
 # 创建 VPA
 
+垂直伸缩（VPA）策略可以根据容器实际资源使用情况手动或自动调整 Pod 中容器的 CPU 和内存资源请求量。
+这有助于确保每个容器都能获得所需的资源，而不会过度提供资源浪费。
+
 容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA）通过监控 Pod 在一段时间内的资源申请和用量，
 计算出对该 Pod 而言最适合的 CPU 和内存请求值。使用 VPA 可以更加合理地为集群下每个 Pod 分配资源，提高集群的整体资源利用率，避免集群资源浪费。
 
@@ -22,7 +25,7 @@ DCE 5.0 支持通过手动和自动两种方式来修改资源请求值，您可
 
 - 当前操作用户应具有 [NS Editor](../permissions/permission-brief.md#ns-editor) 或更高权限，详情可参考[命名空间授权](../namespaces/createns.md)。
 
-- 当前集群已经安装 [ __metrics-server__ ](install-metrics-server.md) 和 [ __VPA__ ](install-vpa.md) 插件。
+- 当前集群已经安装 [metrics-server](install-metrics-server.md) 和 [VPA](install-vpa.md) 插件。
 
 ## 操作步骤
 
