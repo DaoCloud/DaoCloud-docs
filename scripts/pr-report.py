@@ -1,7 +1,8 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # Created on Tue Jan 16 15:17:40 2024
-# @author: FanLin
+# @uthor: FanLin
 #
 # 此脚本会导出 repo 下的所有 PR 记录，方便汇总统计
 #
@@ -17,12 +18,12 @@ from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
 
 # 你的 GitHub 令牌
-token = "替换为你的 token"
+token = "改为你的token"
 # 要查询的仓库名
 repo = "DaoCloud/DaoCloud-docs"
 # 指定要导出的日期范围
-start_date = "2023-01-01T00:00:00Z"
-end_date = "2023-01-31T23:59:59Z"
+start_date = "2024-01-01T00:00:00Z"
+end_date = "2024-12-31T23:59:59Z"
 # GitHub 的 API endpoint
 url = f"https://api.github.com/repos/{repo}/pulls"
 
@@ -32,7 +33,7 @@ headers = {
 }
 
 params = {
-    "state": "all",  # 获取所有的PR
+    "state": "closed",  # 获取所有的PR
     "sort": "created",
     "direction": "desc",  # 从新到旧排序
     "per_page": 100,  # 每页的结果数量
@@ -46,7 +47,11 @@ def get_pr_details(pr):
     except requests.exceptions.RequestException as e:
         print(f"Error fetching PR details for {pr_url}: {e}")
         return None
-    
+
+    # 只处理 merged 状态的 PR
+    if pr_data.get("merged_at") is None:
+        return None
+
     changed_files = pr_data["changed_files"]
     additions = pr_data["additions"]
     deletions = pr_data["deletions"]
@@ -75,14 +80,28 @@ def fetch_all_prs(url, headers, params, start_date, end_date):
         while True:
             params["page"] = page
             response = requests.get(url, headers=headers, params=params)
-            data = response.json()
+            try:
+                response.raise_for_status()
+                data = response.json()
+            except requests.exceptions.RequestException as e:
+                print(f"Request failed: {e}")
+                break
+            except ValueError as e:
+                print(f"Error parsing JSON response: {e}")
+                break
+
+            if not isinstance(data, list):
+                print(f"Unexpected response format: {data}")
+                break
+
             if not data:
                 break
+
             futures = [executor.submit(get_pr_details, pr) for pr in data if pr["created_at"] >= start_date and pr["created_at"] <= end_date]
             for future in futures:
                 result = future.result()
-                if result is not None:
-                    df = df.append(result, ignore_index=True)
+                if result is not None and not pd.isna(result).all():
+                    df = pd.concat([df, pd.DataFrame([result])], ignore_index=True)
             page += 1
     return df
 
@@ -97,7 +116,7 @@ label_counts_monthly = df["Labels"].explode().value_counts()
 monthly_user_counts = df.groupby([df.index.year, df.index.month])['Author'].value_counts()
 
 # 替换保存路径
-with pd.ExcelWriter('PR_detail_2023.xlsx') as writer: 
+with pd.ExcelWriter('dce5-PR_detail_2024.xlsx') as writer: 
     df.to_excel(writer, sheet_name='PR Details')
     label_counts_monthly.to_excel(writer, sheet_name='Label Counts')
     monthly_user_counts.to_excel(writer, sheet_name='Monthly User Counts')
