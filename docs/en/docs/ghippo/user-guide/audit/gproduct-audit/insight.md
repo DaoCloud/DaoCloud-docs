@@ -49,4 +49,4 @@ hide:
 | Create-AlertInhibition | AlertInhibition | |
 | Update-AlertInhibition | AlertInhibition | |
 | Delete-AlertInhibition | AlertInhibition | |
-| Update-HistoricalAlertData | HistoricalAlertData | |
+| Update-SystemSettings | SystemSettings | |

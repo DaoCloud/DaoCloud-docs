@@ -1,6 +1,9 @@
 # 安装 kubernetes-cronhpa-controller 插件
 
-容器副本定时水平扩缩容策略（CronHPA）能够为周期性高并发应用提供稳定的计算资源保障， __kubernetes-cronhpa-controller__ 则是实现 CronHPA 的关键组件。
+定时伸缩（CronHPA）策略是指标伸缩（HPA）机制的扩展，允许根据时间模式指定负载中的 Pod 副本数量进行扩缩容。
+通过 CronHPA，用户可以在特定时间点自动扩展或缩减 Pod 数量。
+
+CronHPA 能够为周期性高并发应用提供稳定的计算资源保障， __kubernetes-cronhpa-controller__ 是实现 CronHPA 的关键组件。
 
 本节介绍如何安装 __kubernetes-cronhpa-controller__ 插件。
 
@@ -37,11 +40,11 @@
     ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/installcronhpa2.png)
 
     - 名称：输入插件名称，请注意名称最长 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾，例如 kubernetes-cronhpa-controller。
-    - 命名空间：选择将插件安装在哪个命名空间，此处以 __default__ 为例。
-    - 版本：插件的版本，此处以 __1.3.0__ 版本为例。
-    - 就绪等待：启用后，将等待应用下的所有关联资源都处于就绪状态，才会标记应用安装成功。
-    - 失败删除：如果插件安装失败，则删除已经安装的关联资源。开启后，将默认同步开启 __就绪等待__ 。
-    - 详情日志：开启后，将记录安装过程的详细日志。
+    - 命名空间：选择将插件安装在哪个命名空间，此处以 __default__ 为例
+    - 版本：插件的版本，此处以 __1.3.0__ 版本为例
+    - 就绪等待：启用后，将等待应用下的所有关联资源都处于就绪状态，才会标记应用安装成功
+    - 失败删除：如果插件安装失败，则删除已经安装的关联资源。开启后，将默认同步开启 __就绪等待__
+    - 详情日志：开启后，将记录安装过程的详细日志
 
     !!! note
 
@@ -51,10 +54,10 @@
 
     !!! warning
 
-    如需删除 __kubernetes-cronhpa-controller__ 插件，应在 __Helm 应用__ 列表页面才能将其彻底删除。
+        如需删除 __kubernetes-cronhpa-controller__ 插件，应在 __Helm 应用__ 列表页面才能将其彻底删除。
 
-    如果在工作负载的 __弹性伸缩__ 页签下删除插件，这只是删除了该插件的工作负载副本，插件本身仍未删除，后续重新安装该插件时也会提示错误。
+        如果在工作负载的 __弹性伸缩__ 页签下删除插件，这只是删除了该插件的工作负载副本，插件本身仍未删除，后续重新安装该插件时也会提示错误。
 
 6. 回到工作负载详情页面下的 __弹性伸缩__ 页签，可以看到界面显示 __插件已安装__ 。现在可以开始创建 CronHPA 策略了。
 
-    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/installcronhpa3.png)
+    ![工作负载](../../images/installcronhpa3.png)

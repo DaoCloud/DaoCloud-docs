@@ -22,8 +22,7 @@ The key features of Spiderpool are as follows:
 
 ![key features](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/community/images/spider-arch.png)
 
-Refer to the [Spiderpool Fixed IP Scenario Video](../videos/use-cases.md#ip) and .
-Refer to the [Spiderpool Fixed IP Scenario Video](../videos/use-cases.md#ip) and the blog of [Spiderpool is Onboarding into CNCF Sandbox Projects](../blogs/231220-spiderpool.md).
+Refer to the [Spiderpool Fixed IP Scenario Video](../videos/use-cases.md#configuring-and-using-underlay-ip) and the blog of [Spiderpool is Onboarding into CNCF Sandbox Projects](../blogs/231220-spiderpool.md).
 
 [Go to Spiderpool repo](https://github.com/spidernet-io){ .md-button }
 [Go to Spiderpool website](https://spidernet-io.github.io/spiderpool/){ .md-button }

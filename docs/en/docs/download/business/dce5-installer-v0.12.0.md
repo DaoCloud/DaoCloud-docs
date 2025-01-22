@@ -10,11 +10,11 @@ hide:
 This page allows you to download the offline package and checksum files for DCE 5.0 Enterprise.
 
 [Return to Download Index](../index.md#_2){ .md-button }
-[More Historical Versions](./dce5-installer-history.md){ .md-button }
+[Legacy Packages](./dce5-installer-history.md){ .md-button }
 
 ## Download
 
-| Filename | Version | Architecture | File Size | Download | Update Date |
+| Filename | Version | Architecture | Size | Download | Date |
 | -------- | ------- | ------------ | --------- | -------- | ----------- |
 | offline-v0.12.0-amd64.tar | v0.12.0 | AMD 64 | 23.30 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-amd64.tar) | 2023-11-08 |
 | offline-v0.12.0-arm64.tar | v0.12.0 | <font color="green">ARM 64</font> | 20.20 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-arm64.tar) | 2023-11-08 |
@@ -80,11 +80,11 @@ DCE 5.0 Enterprise includes the following modules that can be used on-demand to 
 
 | Modules | Description | Versions |
 | ------- | ----------- | -------- |
-| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [0.21.0](../../ghippo/intro/release-notes.md#v0210) |
-| Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and other core Kubernetes functionalities | [0.22.0](../../kpanda/intro/release-notes.md#v0220) |
-| Insight | Provides rich dashboards, scenario monitoring, data querying, alerting, and graphical information | [0.21.1](../../insight/intro/releasenote.md#insight-server-v0210) |
+| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, and custom appearance. | [0.21.0](../../ghippo/intro/release-notes.md#v0210) |
+| Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and more Kubernetes features | [0.22.0](../../kpanda/intro/release-notes.md#v0220) |
+| Insight | Provides rich dashboards, scenario monitoring, data querying, alerting, and graphical information | [0.21.1](../../insight/intro/release-notes.md#v0210) |
 | Workbench | Container-based DevOps application platform that supports Jenkins, Tekton, GitOps, and other pipeline jobs | [0.21.0](../../amamba/intro/release-notes.md#v0210) |
-| Multi-Cloud Orchestration | Centralized management of multi-cloud, hybrid cloud, and cross-cloud resources, with capabilities such as multi-cloud disaster recovery and fault recovery | [0.13.1](../../kairship/intro/release-notes.md#v0131) |
+| MultiCloud Management | Centralized management of multicloud, hybrid cloud, and cross-cloud resources, with capabilities such as multicloud disaster recovery and fault recovery | [0.13.1](../../kairship/intro/release-notes.md#v0130) |
 | Microservice Engine | Provides governance capabilities such as service discovery, service governance, configuration management, and microservice gateway | [0.28.1](../../skoala/intro/release-notes.md#v0281) |
 | Service Mesh | Next-generation service mesh for cloud-native applications based on Istio open-source technology | [v0.20.3](../../mspider/intro/release-notes.md#v0203) |
 | Middleware Elasticsearch | Currently the preferred full-text search engine | [0.11.0](../../middleware/elasticsearch/release-notes.md#v0110) |
@@ -94,8 +94,8 @@ DCE 5.0 Enterprise includes the following modules that can be used on-demand to 
 | Middleware RabbitMQ | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP) | [0.14.0](../../middleware/rabbitmq/release-notes.md#v0140) |
 | Middleware Redis | An in-memory database caching service | [0.12.0](../../middleware/redis/release-notes.md#v0120) |
 | Container Registry | Used to store images for K8s, DevOps, and container application development | [0.11.0](../../kangaroo/intro/release-notes.md#v0110) |
-| Networking | Supports multiple CNI combinations for different Linux kernels | [0.10.1](../../network/intro/releasenotes.md#v0101) |
-| Storage | Provides unified data storage services, supports file, object, block, and local storage, and easily integrates with storage vendor solutions | [v0.13.1](../../storage/hwameistor/releasenotes.md#v0131) |
+| Networking | Supports multiple CNI combinations for different Linux kernels | [0.10.1](../../network/intro/release-notes.md#v0101) |
+| Storage | Provides unified data storage services, supports file, object, block, and local storage, and easily integrates with storage vendor solutions | [v0.13.1](../../storage/hwameistor/release-notes.md#v0131) |
 | Cloud Edge Collaboration | Extends containerized capabilities to the edge | [v0.5.1](../../kant/intro/release-notes.md#v050) |
 
 ## More

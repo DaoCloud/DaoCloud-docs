@@ -25,7 +25,7 @@
 
     ![进入集群列表页面](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/addnode01.png)
 
-2. 在左侧导航栏点击 __节点管理__ ，找到需要卸载的节点，点击 __ⵗ__ 选择 __移除节点__ 。
+2. 在左侧导航栏点击 __节点管理__ ，找到需要卸载的节点，点击 __┇__ 选择 __移除节点__ 。
 
     ![移除节点](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deletenode01.png)
 

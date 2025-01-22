@@ -43,7 +43,7 @@ K8s 官方不再维护（但 DaoCloud [KLTS](https://klts.io/) 会持续维护�
 Source: https://github.com/cncf/artwork/tree/master/projects/kubernetes/certified-kubernetes
 -->
 
-有关 DaoCloud 开源贡献的更多信息，请参阅博客 [DaoCloud 是 K8s 资深认证服务商](../blogs/221116-kcsp.md)。
+有关 DaoCloud 开源贡献的更多信息，请参阅博客 [DaoCloud 是 K8s 资深认证服务商](../blogs/2022/221116-kcsp.md)。
 
 [下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }

@@ -226,7 +226,7 @@ data:
 
 1. 进入容器管理模块，点击左侧导航栏上的 __备份恢复__ -> __应用备份__ ，进入 __应用备份__ 列表页面。
 
-    ![集群列表](../images/backupd20481)
+    ![集群列表](../images/backupd20481.png)
 
 2. 在 __应用备份__ 列表页面，选择备份集群。点击右上角的 __备份计划__ ，新建一个备份计划。
 
@@ -270,7 +270,7 @@ data:
 
 下文介绍镜像仓库镜像迁移步骤。
 
-1. 将 DCE 4.0 镜像仓库接入到 Kangaroo 仓库集成（管理员），操作步骤参考 [仓库集成](../../kangaroo/integrate/integrate-admin.md)。
+1. 将 DCE 4.0 镜像仓库接入到 Kangaroo 仓库集成（管理员），操作步骤参考 [仓库集成](../../kangaroo/integrate/integrate-admin/integrate-admin.md)。
 
     ![源仓库集成](../images/4-5-registry-01.png)
 

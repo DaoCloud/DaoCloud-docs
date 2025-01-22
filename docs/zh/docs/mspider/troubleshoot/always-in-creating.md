@@ -142,7 +142,7 @@ mcpc-remote-kube-api-server configmap 等待很长时间没有创建。
    istiod-xxxx-hosed-lb 无法分配 endpoint。可在 addon 中为该集群部署 metalLB。
 
 3. 情况 3：在移除原有托管网格后的环境中，再次创建托管网格的情况下，容易出现控制面还没有及时下发导致
-   "mspider-mcpc-remote-kube-api-server" ConfigMap 未及时创建。可以重启一下 global 集群 gsc controller：
+   "mspider-mcpc-remote-kube-api-server" ConfigMap 未及时创建。可以重启一下全局服务集群 gsc controller：
 
     ```bash
     kubectl -n mspider-system delete pod $(kubectl -n mspider-system get pod -l app=mspider-gsc-controller -o 'jsonpath={.items.metadata.name}')

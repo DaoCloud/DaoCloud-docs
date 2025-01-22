@@ -1,11 +1,11 @@
 # 在其他 Linux 上离线部署 DCE 5.0 商业版
 
 本文将介绍如何在其他 Linux 上部署 DCE 5.0。
-安装器 v0.7.0 及更高版本支持这种部署方式。
+[安装器 v0.7.0](../release-notes.md#v070) 及更高版本支持这种部署方式。
 
-Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离线包（OS package），需要您自己去制作。
+其他 Linux 本质上是由于 DCE 5.0 对某些 Linux 没有提供安装系统离线包（OS package），需要您自己去制作。
 
-## 已验证操作系统
+## 已验证的操作系统
 
 | 架构  | 操作系统              | 所属系统族   | 推荐内核        |
 | ----- | ------------------- | ------------ | ------------- |
@@ -15,7 +15,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
 
 !!! note
 
-    没有验证的操作系统，可以尝试通过本文档的教程尝试部署。
+    没有验证的操作系统，可以尝试参考本文的教程来部署。
 
 ## 前提条件
 
@@ -31,15 +31,12 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
 
     ```bash
     cd /home
-    curl -Lo ./pkgs.yml https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/pkgs.yml
     curl -Lo ./other_os_pkgs.sh https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/other_os_pkgs.sh && chmod +x other_os_pkgs.sh
     ```
 
 2. 构建操作系统离线包
 
     ```bash
-    # 指定 pkgs.yml 包配置文件路径（若 pkgs.yml 位于 other_os_pkgs.sh 同级路径，则可以不设置此环境变量）
-    export PKGS_YML_PATH=/home/pkgs.yml
     # 执行系统离线包构建命令
     ./other_os_pkgs.sh build
     ```
@@ -47,15 +44,13 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
 3. 安装操作系统离线包
 
     ```bash
-    # 指定 pkgs.yml 包配置文件路径（若 pkgs.yml 位于 other_os_pkgs.sh 同级路径，则可以不设置此环境变量）
-    export PKGS_YML_PATH=/home/pkgs.yml
     # 指定 os pkgs 离线包的路径
     export PKGS_TAR_PATH=/home/os-pkgs-${DISTRO}-${VERSION}.tar.gz
     # 指定集群 master/worker 节点 IP（多节点 IP 地址以空格分割）
     export HOST_IPS='192.168.10.11 192.168.10.12'
     # 指定安装的目标节点接入信息（多节点用户名密码需保持一致）
     export SSH_USER=root
-    export SSH_PASS=dangerous
+    export SSH_CRED=dangerous
     # 执行安装命令，并输出日志
     ./other_os_pkgs.sh install >>log.txt
     ```
@@ -64,6 +59,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
 
     ```console
     [root@master test]# cat log.txt |egrep 'INFO|WARN'
+    
     [WARN]   skip install yq ...
     [INFO]   succeed to install package 'python-apt'
     [INFO]   succeed to install package 'python3-apt'
@@ -89,21 +85,21 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
     [INFO]   All packages for Node (192.168.10.11) have been installed.
     ```
 
-### 注意
+!!! note
 
-1. 通过 `cat log.txt |egrep 'INFO|WARN'`检查安装情况：
+    - 你可以通过 `cat log.txt |egrep 'INFO|WARN'` 检查安装情况：
 
-    如果出现`failed to install package` 关键字，则说明未安装成功，并且最终失败时，
-    会输出`the packages that failed to install are: ipset ipvsadm xfsprogs`。
+        如果出现 `failed to install package` 关键字，则说明未安装成功，并且最终失败时，
+        会输出 `the packages that failed to install are: ipset ipvsadm xfsprogs`。
 
-2. 相同系统族（os family）的不同版本（major version）所对应的包名存在差异:
+    - 相同系统族（os family）的不同版本（major version）所对应的包名存在差异:
 
-    | 系统族               | 版本  | 包名               |
-    | -------------------- | ----- | ------------------ |
-    | Debian               | < 11  | python-apt         |
-    |                      | >= 11 | python3-apt        |
-    | Redhat Major Version | < 8   | libselinux-python  |
-    |                      | \>= 8 | python3-libselinux |
+        | 系统族               | 版本  | 包名               |
+        | -------------------- | ----- | ------------------ |
+        | Debian               | < 11  | python-apt         |
+        |                      | >= 11 | python3-apt        |
+        | Redhat Major Version | < 8   | libselinux-python  |
+        |                      | \>= 8 | python3-libselinux |
 
 ## 开始离线安装
 
@@ -122,14 +118,14 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
 
 2. 参考[制作操作系统离线包（OS package）](#os-package)。
 
-3. 下载 addon 离线包，可以在[下载中心](../../download/index.md)下载最新版本（可选）
+3. 下载 addon 离线包，可以在[下载中心](../../download/index.md)下载最新版本（可选）。
 
 4. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，
    可以在离线包 `offline/sample` 下获取该文件并按需修改。
 
     === "UnionTech OS Server 20 1050d"
 
-        ```yaml
+        ```yaml title="clusterConfig.yaml"
         apiVersion: provision.daocloud.io/v1alpha3
         kind: ClusterConfig
         metadata:
@@ -152,14 +148,14 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
           binaries:
             type: builtin
           kubeanConfig: |-
-          allow_unsupported_distribution_setup: true
+            allow_unsupported_distribution_setup: true
             debian_os_family_extensions:
               - "UnionTech OS Server 20\" "
         ```
 
     === "AnolisOS 8.8 GA"
 
-        ```yaml
+        ```yaml title="clusterConfig.yaml"
         apiVersion: provision.daocloud.io/v1alpha3
         kind: ClusterConfig
         metadata:
@@ -182,14 +178,14 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
           binaries:
             type: builtin
           kubeanConfig: |-
-          allow_unsupported_distribution_setup: true
+            allow_unsupported_distribution_setup: true
             redhat_os_family_extensions:
               - "Anolis OS"
         ```
 
     === "Ubuntu 22.04.3"
 
-        ```yaml
+        ```yaml title="clusterConfig.yaml"
         apiVersion: provision.daocloud.io/v1alpha3
         kind: ClusterConfig
         metadata:
@@ -212,7 +208,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
           binaries:
             type: builtin
           kubeanConfig: |-
-          allow_unsupported_distribution_setup: true
+            allow_unsupported_distribution_setup: true
             debian_os_family_extensions:
               - "Debian"
         ```
@@ -225,7 +221,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
     | spec.kubeanConfig.debian_os_family_extensions          | 可通过查看 `ansible_os_family` 来填写 | 若为 Debian 系统族则需填写 |
     | spec.kubeanConfig.redhat_os_family_extensions          | 可通过查看 `ansible_os_family` 来填写 | 若为 Redhat 系统族则需填写 |
 
-    如何查看当前发行版环境的系统族标识：
+    查看当前发行版环境的系统族标识：
 
     ```bash
     export USER=root
@@ -237,7 +233,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
 
     执行成功后将输出以下信息：
 
-    ```bash
+    ```console
     192.168.10.xxx | SUCCESS => {
         "ansible_facts": {
             "ansible_os_family": "UnionTech OS Server 20\" ",

@@ -26,7 +26,7 @@ To use the [Vulnerability Scan](index.md) feature, you need to create a scan pol
 
 After creating a scan policy, you can update or delete it as needed.
 
-Under the __Scan Policy__ tab, click the __ⵗ__ action button to the right of a configuration:
+Under the __Scan Policy__ tab, click the __┇__ action button to the right of a configuration:
 
 - For periodic scan policies:
 

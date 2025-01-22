@@ -1,6 +1,6 @@
-# Component resource elastic scaling
+# Component resource scaling
 
-Users can control the [Control Plane Components](../../intro/comp-archi-ui/cp-component.md) realizes the elastic scaling policy. Currently, it provides three elastic scaling methods: metric shrinking (HPA), timing shrinking (CronHPA), and vertical scaling (VPA). Users can choose the appropriate elastic scaling policy according to their needs. The following uses index scaling (HPA) as an example to introduce the method of creating an auto scaling policy.
+Users can control the [Control Plane Components](../../intro/comp-archi-ui/cp-component.md) realizes the scaling policy. Currently, it provides three scaling methods: metric shrinking (HPA), timing shrinking (CronHPA), and vertical scaling (VPA). Users can choose the appropriate scaling policy according to their needs. The following uses index scaling (HPA) as an example to introduce the method of creating an auto scaling policy.
 
 ## Prerequisites
 
@@ -28,13 +28,13 @@ Take the __istiod__ of the dedicated cluster as an example, the specific operati
       - Workload: The workload object that performs auto scaling.
       - Target CPU Utilization: The CPU usage of the Pod under the workload resource. The calculation method is: the request (`request`) value of all Pod resources/workloads under the workload. When the actual CPU usage is greater/lower than the target value, the system automatically reduces/increases the number of Pod replicas.
       - Target Memory Usage: The memory usage of the Pod under the workload resource. When the actual memory usage is greater/lower than the target value, the system automatically reduces/increases the number of Pod replicas.
-      - Replica range: the elastic scaling range of the number of Pod replicas. The default interval is 1 - 10.
+      - Replica range: the scaling range of the number of Pod replicas. The default interval is 1 - 10.
      
       
 
 4. Click __OK__ to finish editing, and the new policy has taken effect.
 
-## More elastic scaling configurations
+## More scaling configurations
 
 Please refer to:
 

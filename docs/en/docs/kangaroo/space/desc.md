@@ -8,7 +8,7 @@ You can use Markdown to customize the description for each image.
 
 You can follow the steps below to view the details of artifacts:
 
-1. Select a Harbor instance, go to the `Registry Space` page, and click a registry space name.
+1. Select a Harbor instance, go to the __Registry Space__ page, and click a registry space name.
 
     ![Enter registry space](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/desc01.png)
 
@@ -16,7 +16,7 @@ You can follow the steps below to view the details of artifacts:
 
     ![Image List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/desc02.png)
 
-3. The `Artifacts` tab will be displayed by default. Click a version in the list to see more details.
+3. The __Artifacts__ tab will be displayed by default. Click a version in the list to see more details.
 
     ![Artifacts](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/desc03.png)
 
@@ -28,11 +28,11 @@ You can follow the steps below to view the details of artifacts:
 
 You can follow the steps below to customize the description information for each image using Markdown:
 
-1. Following the steps in the previous section, click the `Description` tab and then click the `Edit` button.
+1. Following the steps in the previous section, click the __Description__ tab and then click the __Edit__ button.
 
     ![edit](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/desc05.png)
 
-2. You can use Markdown syntax to edit the description, and then click `Save`.
+2. You can use Markdown syntax to edit the description, and then click __Save__.
 
     ![save](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/desc06.png)
 

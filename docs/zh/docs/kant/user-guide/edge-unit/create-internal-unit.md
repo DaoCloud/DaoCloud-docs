@@ -39,9 +39,9 @@ DCE 5.0 云边协同支持两种边缘单元：
 
     - 描述：边缘单元描述信息。
 
-    ![基本信息](../../images/create-edgeunit-05.png)
+    ![基本信息](../../images/create-edgeunit-050.png)
 
-<!-- 3. 组件仓库设置。KubeEdge 、Kant 的云端组件仓库设置；
+    <!-- 3. 组件仓库设置。KubeEdge 、Kant 的云端组件仓库设置；
 
     - KubeEdge 镜像仓库：KubeEdge 云端组件镜像仓库。
         - 默认：系统提供的默认镜像仓库地址，存储 KubeEdge 云端组件镜像，像 cloudcore 等。
@@ -59,7 +59,7 @@ DCE 5.0 云边协同支持两种边缘单元：
 
     !!! note
 
-        如果您想修改 KubeEdge 和 Kant 镜像仓库默认值，可以前往 **Global 集群 kant-system 命名空间**下，修改 ConfigMap 配置文件对应参数 kubeedgeImageRepo 和 kantImageRepo。
+        如果您想修改 KubeEdge 和 Kant 镜像仓库默认值，可以前往 **全局服务集群 kant-system 命名空间**下，修改 ConfigMap 配置文件对应参数 kubeedgeImageRepo 和 kantImageRepo。
         
         - ConfigMap 配置文件名称：dynamic-properties-config
         - 参数示例如下：

@@ -1,15 +1,19 @@
 ---
 MTPE: windsonsea
-date: 2024-05-11
+date: 2024-08-19
 ---
 
 # Installation Troubleshooting
 
-This page summarizes common issues with the installer and provides troubleshooting solutions to help users quickly resolve problems encountered during installation and operation.
+This page summarizes common installation issues and troubleshooting solutions,
+making it easier for users to quickly resolve issues encountered during installation and operation.
 
-## Troubleshooting DCE 5.0 Platform Interface Unavailability with diag.sh Script
+## UI Issues
 
-Since installer v0.12.0, a new diag.sh script has been added to facilitate troubleshooting when the DCE 5.0 platform interface is unavailable.
+### Troubleshoot DCE 5.0 UI issues with diag.sh
+
+Since [installer v0.12.0](./release-notes.md#v0120),the diag.sh script has been added
+to help users quickly troubleshoot the DCE 5.0 UI issues.
 
 Run the command:
 
@@ -17,125 +21,25 @@ Run the command:
 ./offline/diag.sh
 ```
 
-Example of execution result:
+Example of execution results:
 
-![FAQ1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/faq11.png)
+![FAQ1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/faq11.png)
 
-## Failure to Start kubelet Service After Kind Container Restart
+### VIP access issues when using Metallb preventing the DCE login page from opening
 
-After restarting the Kind container, the kubelet service fails to start and reports an error:
+1. Check if the VIP address is in the same subnet as the host. In Metallb L2 mode, it is necessary to ensure they are in the same subnet.
+2. If a network card was added to the control node in a Global cluster causing access issues, L2Advertisement needs to be configured manually.
 
-```text
-failed to initialize top level QOS containers: root container [kubelet kubepods] doesn't exist
-```
+    Refer to the [Metallb documentation on this issue](https://metallb.universe.tf/configuration/_advanced_l2_configuration/#specify-network-interfaces-that-lb-ip-can-be-announced-from).
 
-Solution:
+## Bootstrap Node Issues
 
-- Solution 1: Restart by executing the command `podman restart [kind] --time 120`, and do not interrupt this task with ctrl+c during the execution process.
+### After shutting down and restarting the bootstrap node, the kind cluster cannot restart properly
 
-- Solution 2: Enter the Kind container using `podman exec` and Run the following command:
+After shutting down and restarting the bootstrap node, the kind cluster cannot start properly
+due to the lack of auto-start configuration during deployment on the openEuler 22.03 LTS SP2 operating system.
 
-    ```bash
-    for i in $(systemctl list-unit-files --no-legend --no-pager -l | grep --color=never -o .*.slice | grep kubepod);
-    do systemctl stop $i;
-    done
-    ```
-
-## Podman fails to create containers after disabling `IPv6`
-
-**Error message**:
-
-```text
-ERROR: failed to create cluster: command "podman run --name kind-control-plane...  
-```
-
-**Solutions**
-
-Re-enable IPv6 or change bootstrapping node base to Docker.
-
-Podman-related issues: <https://github.com/containers/podman/issues/13388>
-
-## Redis get stuck when reinstalling DCE 5.0 in kind cluster
-
-Issue: The Redis Pod remains in a 0/4 running state for a long time with the error message `primary ClusterIP can not unset`.
-
-1. Delete the rfs-mcamel-common-redis service in the mcamel-system namespace:
-
-    ```shell
-    kubectl delete svc rfs-mcamel-common-redis -n mcamel-system
-    ```
-
-2. Then, retry the installation command.
-
-## When using Metallb, the VIP access is blocked and cannot log into DCE
-
-1. Check whether the VIP is in the same network segment as the host. In Metallb L2 mode, they should be in the same network segment.
-
-2. If this error occurs after you added a new NIC to the control node in the global cluster, you need to manually declare and configure `L2Advertisement`.
-
-    Refer to related [Metallb issues](https://metallb.universe.tf/configuration/_advanced_l2_configuration/#specify-network-interfaces-that-lb-ip-can-be-announced-from)
-
-## Community package: `fluent-bit` installation failed
-
-**Error**:
-
-```text
-DaemonSet is not ready: insight-system/insight-agent-fluent-bit. 0 out of 2 expected pods are ready
-```
-
-**Solutions**:
-
-Check if the following key information appears in the Pod log:
-
-```text
-[warn] [net] getaddrinfo(host='mcamel-common-es-cluster-masters-es-http.mcamel-system.svc.cluster.local',errt11):Could not contact DNS servers
-```
-
-If yes, it is a known bug of `fluent-bit` bug.
-Refer to: <https://github.com/aws/aws-for-fluent-bit/issues/233>
-
-## Error reported during CentOS 7.6 installation
-
-**Error**:
-
-![FAQ1](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/FAQ1.png)
-
-**Solutions**:
-
-Run `modprobe br_netfilter` on each node where the global service cluster is installed, and wait until `br_netfilter` is loaded.
-
-## CentOS environment preparation issues
-
-Running `yum install docker` reports an error:
-
-```text
-Failed to set locale, defaulting to C.UTF-8
-CentOS Linux 8 - AppStream                                                                    93  B/s |  38  B     00:00    
-Error: Failed to download metadata for repo 'appstream': Cannot prepare internal mirrorlist: No URLs in mirrorlist
-```
-
-You can try the following methods to resolve the issue:
-
-- Install `glibc-langpack-en` package:
-
-    ```bash
-    sudo yum install -y glibc-langpack-en
-    ```
-
-- If the issue persists, try the following:
-
-    ```bash
-    sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
-    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
-    sudo yum update -y
-    ```
-
-## Unable to Restart kind Cluster Properly After Bootstrap Node Reboot
-
-After rebooting the bootstrap node, the kind cluster may fail to restart properly because the kind cluster
-was not set to start automatically on the openEuler 22.03 LTS SP2 operating system during deployment.
-
-To resolve this issue, execute the following command to restart:
+You need to run the following command to start it:
 
 ```bash
 podman restart $(podman ps | grep installer-control-plane | awk '{print $1}') 
@@ -143,12 +47,154 @@ podman restart $(podman ps | grep installer-control-plane | awk '{print $1}')
 
 !!! note
 
-    If the above scenario occurs in other environments, you can also execute the same command for restarting.
+    If this scenario occurs in other environments, you can also run this command to restart.
 
-## Missing ip6tables When Deploying Ubuntu 20.04 as the Bootstrap Machine
+### Missing ip6tables when deploying Ubuntu 20.04 as a bootstrap node
 
-When deploying Ubuntu 20.04 as the bootstrap machine, the absence of ip6tables can cause errors during the deployment process.
+Deploying Ubuntu 20.04 as a bootstrap node may cause errors during the deployment process due to the absence of ip6tables.
 
-Refer to the [Podman known issue](https://github.com/containers/podman/issues/3655).
+Refer to the [Podman known issues](https://github.com/containers/podman/issues/3655).
 
-Temporary solution: Manually install iptables, refer to [Install and Use iptables on Ubuntu 22.04](https://orcacore.com/install-use-iptables-ubuntu-22-04/#:~:text=In%20this%20guide%2C%20we%20want%20to%20teach%20you,your%20network%20traffic%20packets%20by%20using%20these%20filters).
+Temporary solution: Manually install iptables, refer to [Install and Use iptables on Ubuntu 22.04](https://orcacore.com/install-use-iptables-ubuntu-22-04/).
+
+### After disabling IPv6 during installation, Podman on the bootstrap node cannot create containers
+
+The error message is as follows:
+
+```text
+ERROR: failed to create cluster: command "podman run --name kind-control-plane...
+```
+
+Solution: Re-enable IPv6 or update the bootstrap node base to Docker.
+
+Refer to the related Podman issue:
+[podman 4.0 hangs indefinitely if ipv6 is disabled on system](https://github.com/containers/podman/issues/13388)
+
+### After restarting the kind container on the bootstrap node, the kubelet service cannot start
+
+After the kind container restarts, the kubelet service cannot start and reports the following error:
+
+```text
+failed to initialize top level QOS containers: root container [kubelet kubepods] doesn't exist
+```
+
+Solutions:
+
+- Solution 1: Restart and run the command `podman restart [kind] --time 120`. Do not interrupt this task with Ctrl+C during execution.
+
+- Solution 2: Run `podman exec` to enter the kind container and run the following command:
+
+    ```bash
+    for i in $(systemctl list-unit-files --no-legend --no-pager -l | grep --color=never -o .*.slice | grep kubepod);
+    do systemctl stop $i;
+    done
+    ```
+
+### How to uninstall data from the bootstrap node
+
+After deploying the commercial version, if you want to uninstall, in addition to the
+cluster nodes themselves, you also need to reset the bootstrap node. The reset steps are as follows:
+
+You need to use the `sudo rm -rf` command to delete these three directories:
+
+- /tmp
+- /var/lib/dce5/
+- /home/kind/etcd
+
+## Certificate Issues
+
+### The kubeconfig of the Global cluster needs to be updated on the bootstrap's replica
+
+Prior to v0.20.0, the kubeconfig of the Global cluster stored on the
+bootstrap node does not automatically update. v0.20.0 supports automatic updates, run once a month.
+
+In previous versions, you need to update the dce5-installer to v0.20.0 and then run:
+
+```bash
+dce5-installer cluster-create -c clusterconfig.yaml -m mainfest.yaml --update-global-kubeconf
+```
+
+### Updating the certificates and kubeconfig of the kind cluster on the bootstrap node itself
+
+Prior to v0.20.0, the kubeconfig of the kind cluster stored on the bootstrap node
+does not automatically update. v0.20.0 supports automatic updates, run once a month.
+
+In previous versions, you need to update the dce5-installer to v0.20.0 and then run:
+
+```bash
+dce5-installer cluster-create -c clusterconfig.yaml -m mainfest.yaml --update-kind-certs
+```
+
+### After installing Contour, the default certificate validity period is only one year and will not auto-renew, leading to continuous restarts of the Contour-Envoy component
+
+For versions prior to v0.21.0, there was support for enabling the installation of the Contour component. Subsequent versions will no longer support this. Customers who have installed Contour in previous versions need to execute the `helm upgrade` command to update the certificate validity period:
+
+```bash
+helm upgrade -n contour-system contour --reuse-values --set contour.contour.certgen.certificateLifetime=36500
+```
+
+## Operating System Related Issues
+
+### Error during installation on CentOS 7.6
+
+![FAQ1](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/FAQ1.png)
+
+Executing `modprobe br_netfilter` on each node where the global service cluster is installed
+will resolve the issue by loading `br_netfilter`.
+
+### CentOS Environment Preparation Issues
+
+An error occurs when running `yum install docker`:
+
+```text
+Failed to set locale, defaulting to C.UTF-8
+CentOS Linux 8 - AppStream                                                                    93  B/s |  38  B     00:00    
+Error: Failed to download metadata for repo 'appstream': Cannot prepare internal mirrorlist: No URLs in mirrorlist
+```
+
+You can try the following methods to resolve it:
+
+- Install `glibc-langpack-en`
+
+    ```bash
+    sudo yum install -y glibc-langpack-en
+    ```
+
+- If the issue persists, try:
+
+    ```bash
+    sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+    sudo yum update -y
+    ```
+
+## Community Edition Issues
+
+### Redis hanging during DCE 5.0 reinstallation of the kind cluster
+
+Issue: The Redis Pod has been stuck at 0/4 running for a long time, indicating: `primary ClusterIP can not unset`
+
+1. Delete rfs-mcamel-common-redis in the `mcamel-system` namespace
+
+    ```shell
+    kubectl delete svc rfs-mcamel-common-redis -n mcamel-system
+    ```
+
+2. Then re-run the installation command.
+
+### Community version fluent-bit installation failure
+
+Error message:
+
+```text
+DaemonSet is not ready: insight-system/insight-agent-fluent-bit. 0 out of 2 expected pods are ready
+```
+
+Check the Pod logs for the following key information:
+
+```text
+[warn] [net] getaddrinfo(host='mcamel-common-es-cluster-masters-es-http.mcamel-system.svc.cluster.local',errt11):Could not contact DNS servers
+```
+
+The above issue is a bug in fluent-bit. You can refer to an issue in aws/aws-for-fluent-bit:
+[Seeing `Timeout while contacting DNS servers` with latest v2.19.1](https://github.com/aws/aws-for-fluent-bit/issues/233)

@@ -11,7 +11,7 @@ The __insight-agent__ has been successfully deployed in the target cluster and i
 ## View Probes
 
 1. Go to the __Insight__ product module.
-2. Select __Infrastructure__ -> __Probes__ in the left navigation pane.
+2. Select __Infrastructure__ -> __Probes__ in the left navigation bar.
 
     - Click the cluster or namespace dropdown in the table to switch between clusters and namespaces.
     - The list displays the name, probe method, probe target, connectivity status, and creation time of the probes by default.

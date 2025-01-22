@@ -5,7 +5,7 @@ Date: 2024-07-10
 
 # Domain Name Management
 
-The microservice gateway supports the full lifecycle management of domain names, including adding, updating, and deleting domain names. Through domain name management, you can apply a domain name to multiple apis of the gateway and configure gateway policies at the domain name level.
+The microservice gateway supports the lifecycle management of domain names, including adding, updating, and deleting domain names. Through domain name management, you can apply a domain name to multiple apis of the gateway and configure gateway policies at the domain name level.
 
 ## Add domain name
 

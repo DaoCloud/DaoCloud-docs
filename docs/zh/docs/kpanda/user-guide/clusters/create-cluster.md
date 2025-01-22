@@ -10,7 +10,7 @@ hide:
 其中，接入集群只能从第三方厂商接入，参见[接入集群](./integrate-cluster.md)。
 
 本页介绍如何创建工作集群，默认情况下，新建工作集群的工作节点 OS 类型和 CPU 架构需要与全局服务集群保持一致。
-如需使用区别于全局管理集群 OS 或架构的节点创建集群，参阅[在 centos 管理平台上创建 ubuntu 工作集群](../../best-practice/create-ubuntu-on-centos-platform.md)进行创建。
+如需使用区别于全局服务集群 OS 或架构的节点创建集群，参阅[在 centos 管理平台上创建 ubuntu 工作集群](../../best-practice/create-ubuntu-on-centos-platform.md)进行创建。
 
 推荐使用 [DCE 5.0 支持的操作系统](../../../install/commercial/deploy-requirements.md)来创建集群。
 如您本地节点不在上述支持范围，可参考[在非主流操作系统上创建集群](../../best-practice/use-otherlinux-create-custer.md)进行创建。
@@ -105,3 +105,9 @@ hide:
     - 同时失联状态下执行的任何操作都将不生效，请检查集群网络连通性或主机状态。
 
     ![未知状态](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createnew07.png)
+
+## 参考文档
+
+- [在 CentOS 管理平台上创建 Ubuntu 工作集群](../../best-practice/create-ubuntu-on-centos-platform.md)
+- [在 CentOS 管理平台上创建 RedHat 9.2 工作集群](../../best-practice/create-redhat9.2-on-centos-platform.md)
+- [在非主流操作系统上创建集群](../../best-practice/use-otherlinux-create-custer.md)

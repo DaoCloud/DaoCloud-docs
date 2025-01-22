@@ -1,6 +1,6 @@
 ---
 hide:
-  - heel
+  - toc
 ---
 
 # Enable the Sentinel governance plug-in
@@ -11,16 +11,16 @@ Sentinel is a traffic governance component oriented to distributed and multi-lan
 
 1. Click the name of the target registry on the Hosting Registry list page, and.
 
-   ![](../../../images/ns-1.png)
+   ![click name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/ns-1.png)
 
 2. In the left navigation bar, click __Plugins__ , and on the `Sentinel` card, click __Enable__ .
 
-   ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/sentinel01.png)
+   ![enable](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/sentinel01.png)
 
 3. Fill in the configuration information and click __OK__ at the bottom of the box.
 
-   ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/sentinel02.png)
+   ![OK](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/sentinel02.png)
 
 4. If the prerequisites are met and the configuration is correct, the message "Enable the sentinel governance ability successfully" pops up in the upper right corner of the page.
 
-   ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/sentinel03.png)
+   ![tips](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/sentinel03.png)

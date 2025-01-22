@@ -20,13 +20,11 @@ Insight 目前提供了使用 OpenTelemetry 增强 .Net NodeJS、Java、Python �
 ## 链路增强
 
 - 链路接入的最佳实践：[通过 Operator 实现应用程序无侵入增强](./operator.md)
-- 以 Go 语言为例的手动埋点接入：[使用 OpenTelemetry SDK 增强 Go 应用程序](./golang.md)
-- [利用 ebpf 实现 Go 语言无侵入探针](./golang-ebpf.md)（实验性功能）
+- 以 Go 语言为例的手动埋点接入：[使用 OpenTelemetry SDK 增强 Go 应用程序](./golang/golang.md)
+- [利用 ebpf 实现 Go 语言无侵入探针](https://github.com/keyval-dev/opentelemetry-go-instrumentation/blob/master/docs/getting-started/README.md)（实验性功能）
 
-## 指标增强
-
-指标接入的最佳实践：[使用 OpenTelemetry SDK 为应用程序暴露指标](./meter.md)。
-
+<!--
 ## 日志增强
 
 TBD
+-->

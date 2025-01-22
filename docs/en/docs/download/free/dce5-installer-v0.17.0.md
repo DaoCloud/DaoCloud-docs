@@ -13,7 +13,7 @@ This page provides downloads for the offline installation package and verificati
 
 ## Download
 
-| Filename | Version | Architecture | File Size | Download | Update Date |
+| Filename | Version | Architecture | Size | Download | Date |
 | --------- | ------- | ------------ | --------- | -------- | ----------- |
 | offline-community-v0.17.0-amd64.tar | v0.17.0 | AMD 64 | 7.61 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.17.0-amd64.tar) | 2024-05-09 |
 | offline-community-v0.17.0-arm64.tar | v0.17.0 | <font color="green">ARM 64</font> | 7.21 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.17.0-arm64.tar) | 2024-05-09 |
@@ -79,9 +79,9 @@ DCE 5.0 Community includes the following modules by default:
 
 | Modules | Introduction | What's New |
 | -------- | ----------- | ---------- |
-| Global Management | Responsible for user access control, permissions, workspace and hierarchy, audit logs, personalized appearance settings, etc. | [0.26.0](../../ghippo/intro/release-notes.md#0260) |
-| Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and other core Kubernetes functionalities. | [0.27.0](../../kpanda/intro/release-notes.md#0270) |
-| Insight | Provides rich dashboards, scene monitoring, data querying, and alarm information. | [0.26.0](../../insight/intro/releasenote.md#0260) |
+| Global Management | Responsible for user access control, permissions, workspace and hierarchy, audit logs, and custom appearance. | [0.26.0](../../ghippo/intro/release-notes.md#v0260) |
+| Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and more Kubernetes features. | [0.27.0](../../kpanda/intro/release-notes.md#v0270) |
+| Insight | Provides rich dashboards, scene monitoring, data querying, and alert information. | [0.26.0](../../insight/intro/release-notes.md#v0260) |
 
 ## More
 

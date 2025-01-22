@@ -135,10 +135,11 @@ Below is a list of features available:
         - Supports predefined folder roles: Folder Admin, Folder Editor, and Folder Viewer
         - Supports predefined workspace roles: Workspace Admin, Workspace Editor, and Workspace Viewer
     4. [Identity Provider](../user-guide/access-control/idprovider.md)
-        - Support LDAP and OIDC connections to external users
+        - Support LDAP, OIDC, and OAuth 2.0 connections to external users
         - LDAP protocol supports manual/automatic synchronization of external users
         - LDAP protocol supports manual synchronization of external groups
         - OIDC protocol supports manual synchronization of external users
+        - OAuth 2.0 protocol supports manual synchronization of external users
 2. Workspace and Folders
     1. [Folders](../user-guide/workspace/folders.md)
         - Display folders and workspaces in a tree structure

@@ -1,41 +1,64 @@
 ---
 hide:
    - toc
+MTPE: ModetaNiu
+DATE: 2024-07-31
 ---
 
 # Install Harbor Operator
 
-A managed Harbor uses the Harbor Operator to perform full lifecycle management of creating, upgrading,
+A managed Harbor uses the Harbor Operator to perform lifecycle management of creating, upgrading,
 and deleting Harbor instances. Before creating a managed Harbor instance, you need to install the Harbor Operator
 in your container management system, with a minimum version requirement of 1.4.0.
 
-> Note: Harbor Operator relies on Cert Manager, so make sure to
-> [install Cert Manager](https://cert-manager.io/docs/installation/) first.
+> Note: Harbor Operator relies on Cert Manager, so make sure to install Cert Manager first.
 
-1. If you encounter the following error message when creating a Harbor instance, click `Go to install`.
+If you encounter the following error message when creating a Harbor instance, click __Go to install__ .
 
-   ![error](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/errors.png)
+![error](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/errors.png)
 
-2. Go to `Container Management` -> `Helm Apps` -> `Helm Charts`, and find and click the harbor-operator card.
+## Step One -- Install cert-manager
 
-   ![card](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/operator01.png)
+1. Go to __Container Management__ -> __Helm Apps__ -> __Helm Charts__ , and search for cert-manager.
 
-3. Choose the version and click `Install`.
+    ![cert-manager](../images/manager01.png)
 
-   ![install](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/operator02.png)
+2. Choose the version and click __Install__ .
 
-4. After entering the name and namespace, click `OK`.
+    ![install](../images/manager02.png)
+
+3. After entering the name and namespace, click __OK__ .
    If you want to add other parameters, please refer to the [Parameter Values](#parameter-values) below.
 
-   ![OK](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/operator03.png)
+    ![fill in](../images/manager03.png)
 
-5. Wait for the installation to complete (Status from `Pending Install` to `Deployed`).
+4. Wait for the installation to complete (Status from `Pending Install` to `Deployed`).
 
-   ![status](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/operator04.png)
+    ![status](../images/manager04.png)
+
+## Step Two -- Install harbor-operator
+
+1. Go to __Container Management__ -> __Helm Apps__ -> __Helm Charts__ , and search for harbor-operator.
+
+    ![card](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/operator01.png)
+
+2. Choose the version and click __Install__ .
+
+    ![install](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/operator02.png)
+
+3. After entering the name and namespace, click __OK__ .
+   If you want to add other parameters, please refer to the [Parameter Values](#parameter-values) below.
+
+    ![fill in](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/operator03.png)
+
+4. Wait for the installation to complete (Status from `Pending Install` to `Deployed`).
+
+    ![status](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/operator04.png)
 
 ## Parameter Values
 
-During the installation process of the Harbor Operator, there are several parameters that can be filled in and controlled. Please refer to the table below for specific parameter details:
+During the installation of the Harbor Operator, there are several parameters that can be filled in and controlled. 
+Please refer to the table below for specific parameter details:
 
 > The parameters `minio-operator.enabled`, `postgres-operator.enabled`, and `redis-operator.enabled` must be set to `false`.
 

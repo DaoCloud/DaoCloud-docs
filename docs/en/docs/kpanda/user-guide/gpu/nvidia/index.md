@@ -31,7 +31,7 @@ For detailed instructions on enabling these configurations, refer to [Offline In
 
 ## How to Use
 
-You can refer to the following links to quickly start using Daocloud's management capabilities for NVIDIA GPU cards.
+You can refer to the following links to quickly start using Daocloud's management capabilities for NVIDIA GPUs.
 
 - **[Using Full NVIDIA GPU](full_gpu_userguide.md)**
 - **[Using NVIDIA vGPU](vgpu/vgpu_user.md)**

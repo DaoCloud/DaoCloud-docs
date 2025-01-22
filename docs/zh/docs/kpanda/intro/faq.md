@@ -1,13 +1,51 @@
----
-hide:
-  - toc
----
+# 容器管理常见问题 <a id="top" />
 
-# 常见问题
+本页面列出了一些在容器管理（Kpanda）中可能遇到的问题，为您提供便利的故障排除解决办法。
 
-本页面列出了一些在容器管理中可能遇到的常见问题，为您提供便利的故障排除解决方案。
+- [容器管理和全局管理模块的权限问题](#permissions)
+- Helm 安装：
+    - [Helm 应用安装失败，提示 “OOMKilled”](#oomkilled)
+    - [Helm 安装应用时，无法拉取 kpanda-shell 镜像](#kpanda-shell)
+    - [Helm Chart 界面未显示最新上传到 Helm Repo 的 Chart](#no-chart)
+    - [Helm 安装应用失败时卡在安装中无法删除应用重新安装](#cannot-remove-app)
+- [工作负载 -> 删除节点亲和性等调度策略后，调度异常](#scheduling-exception)
+- 应用备份：
+    - [Kcoral 应用备份检测工作集群 Velero 状态的逻辑是什么](#kcoral-logic-for-velero)
+    - [在跨集群备份还原时，Kcoral 如何获取可用集群](#kcoral-get-cluster)
+    - [Kcoral 备份了相同标签的 Pod 和 Deployment，但还原备份后出现 2 个 Pod](#2pod-with-same-label)
+- [卸载 VPA、HPA、CronHPA 之后，为什么对应弹性伸缩记录依然存在](#autoscaling-log)
+- [为什么低版本集群的控制台打开异常](#console-error)
+- 创建和接入集群：
+    - [如何重置创建的集群](#reset-cluster)
+    - [接入集群安装插件失败](#failed-plugin)
+    - [创建集群时在高级设置中启用 **为新建集群内核调优** ，集群创建为什么会失败](#conntrack)
+    - [集群解除接入后，`kpanda-system` 命名空间一直处于 Terminating 状态](#ns-terminating)
 
-1. Helm 应用安装失败，提示 “OOMKilled”
+## 权限问题 <a id="permissions" />
+
+有关容器管理和全局管理模块的权限问题，经常有用户会问，为什么我这个用户可以看到这个集群，或者为什么我看不到这个集群，我们应该如何排查相关的权限问题？分为以下三种情况：
+
+- 容器管理模块的权限分为集群权限、命名空间权限。如果绑定了用户，那该用户就可以查看到相对应的集群及资源。具体权限说明，可以参考[集群权限说明](../user-guide/permissions/permission-brief.md)。
+
+    ![容器管理权限](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq201.png)
+
+- 全局管理模块中用户的授权：使用 admin 账号，进入 __全局管理__ -> __用户与访问控制__ -> __用户__ 菜单，找到对应用户。在 __授权所属用户组__ 标签页，如果有类似 Admin、Kpanda Owner 等拥有容器管理权限的角色，那即使在容器管理没有绑定集群权限或命名空间权限，也可以看到全部的集群，可以参考[用户授权文档说明](../../ghippo/user-guide/access-control/user.md)
+
+    ![全局管理 用户授权](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq202.png)
+
+- 全局管理模块中工作空间的绑定：使用账号进入 __全局管理__ -> __工作空间与层级__ ，可以看到自己的被授权的工作空间，点击工作空间名称
+
+    1. 如果该工作空间单独授权给自己，就可以在授权标签页内看到自己的账号，然后查看资源组或共享资源标签页，如果资源组绑定了命名空间或共享资源绑定了集群，那该账号就可以看到对应的集群
+
+    1. 如果是被授予了全局管理相关角色，那就无法授权标签页内看到自己的账号，也无法在容器管理模块中看到工作空间所绑定的集群资源
+
+    ![全局管理工作空间的绑定](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq203.png)
+
+[返回顶部 :arrow_up:](#top)
+
+## Helm 安装的问题
+
+1. Helm 应用安装失败，提示 “OOMKilled” <a id="oomkilled" />
 
     ![失败情况](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq1.png)
 
@@ -45,27 +83,10 @@ hide:
             修改 clusterSetting -> helm_operation_job_template_resources 到合适的值即可，
             v0.6.1 版本对应的值为 cpu: 100m,memory: 400Mi
 
-1. 容器管理模块和全局管理模块的权限问题
+    [返回顶部 :arrow_up:](#top)
 
-    经常有用户会问，为什么我这个用户可以看到这个集群，或者为什么我看不到这个集群，我们应该如何排查相关的权限问题？分为以下三种情况：
 
-    - 容器管理模块的权限分为集群权限、命名空间权限。如果绑定了用户，那该用户就可以查看到相对应的集群及资源。具体权限说明，可以参考[集群权限说明](../user-guide/permissions/permission-brief.md)。
-
-        ![容器管理权限](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq201.png)
-
-    - 全局管理模块中用户的授权：使用 admin 账号，进入 __全局管理__ -> __用户与访问控制__ -> __用户__ 菜单，找到对应用户。在 __授权所属用户组__ 标签页，如果有类似 Admin、Kpanda Owner 等拥有容器管理权限的角色，那即使在容器管理没有绑定集群权限或命名空间权限，也可以看到全部的集群，可以参考[用户授权文档说明](../../ghippo/user-guide/access-control/user.md)
-
-        ![全局管理 用户授权](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq202.png)
-
-    - 全局管理模块中工作空间的绑定：使用账号进入 __全局管理__ -> __工作空间与层级__ ，可以看到自己的被授权的工作空间，点击工作空间名称
-
-        1. 如果该工作空间单独授权给自己，就可以在授权标签页内看到自己的账号，然后查看资源组或共享资源标签页，如果资源组绑定了命名空间或共享资源绑定了集群，那该账号就可以看到对应的集群
-
-        1. 如果是被授予了全局管理相关角色，那就无法授权标签页内看到自己的账号，也无法在容器管理模块中看到工作空间所绑定的集群资源
-
-        ![全局管理工作空间的绑定](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq203.png)
-
-1. Helm 安装应用时，无法拉取 kpanda-shell 镜像
+1. Helm 安装应用时，无法拉取 kpanda-shell 镜像 <a id="kpanda-shell" />
 
     使用离线安装后，接入的集群安装helm应用经常会遇到拉取 kpanda-shell 镜像失败，如图：
 
@@ -75,7 +96,9 @@ hide:
 
     ![修改镜像](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq302.png)
 
-1. Helm Chart 界面未显示最新上传到对应 Helm Repo 的 Chart，如图：
+    [返回顶部 :arrow_up:](#top)
+
+1. Helm Chart 界面未显示最新上传到对应 Helm Repo 的 Chart  <a id="no-chart" />
 
     ![模板](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq401.png)
 
@@ -83,7 +106,9 @@ hide:
 
     ![刷新仓库](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq402.png)
 
-1. Helm 安装应用失败时卡在安装中无法删除应用重新安装，如图：
+    [返回顶部 :arrow_up:](#top)
+
+1. Helm 安装应用失败时卡在安装中无法删除应用重新安装  <a id="cannot-remove-app" />
 
     ![删除失败](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq501.png)
 
@@ -93,19 +118,27 @@ hide:
 
     ![删除 CR](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq503.png)
 
-1. 工作负载 -> 删除节点亲和性等调度策略后，调度异常，如图：
+    [返回顶部 :arrow_up:](#top)
 
-    ![调度异常](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq601.png)
+## 调度的问题 <a id="scheduling-exception" />
 
-    此时，可能是因为策略没有删除干净，点击编辑，删除所有策略。
+在通过 **工作负载** ，删除节点亲和性等调度策略后，调度异常
 
-    ![编辑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq602.png)
+![调度异常](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq601.png)
 
-    ![删除](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq603.png)
+此时，可能是因为策略没有删除干净，点击编辑，删除所有策略。
 
-    ![正常调度](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq604.png)
+![编辑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq602.png)
 
-1. Kcoral 检测工作集群 Velero 状态的逻辑是什么？
+![删除](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq603.png)
+
+![正常调度](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq604.png)
+
+[返回顶部 :arrow_up:](#top)
+
+## 应用备份的问题
+
+1. Kcoral 检测工作集群 Velero 状态的逻辑是什么？ <a id="kcoral-logic-for-velero" />
 
     ![检测](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq701.png)
 
@@ -114,7 +147,7 @@ hide:
     - velero 数据面 node agent 处于运行状态，并达到期望副本数
     - velero 成功连接到目标 MinIO（BSL 状态为 Available）
 
-1. 在跨集群备份还原的时候，Kcoral 如何获取可用集群？
+1. 在跨集群备份还原时，Kcoral 如何获取可用集群？ <a id="kcoral-get-cluster" />
 
     在通过 Kcoral 跨集群备份还原应用的时候，在恢复页面中，Kcoral 会帮助用户筛选可以执行跨集群还原的集群列表，逻辑如下：
 
@@ -126,33 +159,49 @@ hide:
 
     所以只要对接了相同的 MinIO 和 Bucket，Velero 处于运行状态，就可以跨集群备份（需要有写入权限）和还原。
 
-1. 卸载 VPA，HPA，CronHPA 之后，为什么对应弹性伸缩记录依然存在？
+1. Kcoral 进行应用备份操作，同时备份相同标签的 Pod 和 Deployment 后，还原备份后出现 2 个 Pod。 <a id="2pod-with-same-label" />
 
-    虽然通过 Helm Addon 市场中把对应组件卸载，但是应用弹性伸缩界面相关记依然在，如下图所示:
-
-    ![编辑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq901.png)
-
-    这是 helm uninstall 的一个问题，它并不会卸载对应的 CRD，因此导致数据残留，此时我们需要手动卸载对应的 CRD , 完成最终清理工作。
-
-1. 为什么低版本集群的控制台打开异常？
-
-    在 kubernetes 低版本（v1.18以下）的集群中，打开控制台出现 csr 资源请求失败。打开控制台的时候，
-    会根据当前登录用户在目标集群中通过 csr 资源申请证书，如果集群版本太低或者没有开启此功能 controller，
-    会导致证书申请失败，从而无法连接到目标集群。
-
-    申请证书流程请参考：https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
+    出现这种现象的原因是：还原时，由于修改了 Pod 标签，导致其标签与其备份时的父资源 ReplicaSet / Deployment 标签不匹配，故还原时出现2倍数量 Pod。
     
-    解决方案：
+    为了避免出现以上这种情况，尽量避免修改关联资源中的某一资源的标签。
 
-    - 如果集群版本大于 v1.18，请检查 kube-controller-manager 是否开启 csr 功能，确保以下的 controller 是否正常开启
+    [返回顶部 :arrow_up:](#top)
 
-        ```shell
-        ttl-after-finished,bootstrapsigner,csrapproving,csrcleaner,csrsigning
-        ```
+## 日志的问题 <a id="autoscaling-log" />
 
-    - 低版本集群目前解决方案只有升级版本
+卸载 VPA、HPA、CronHPA 之后，为什么对应弹性伸缩记录依然存在？
 
-1. 如何重置创建的集群？
+虽然通过 Helm Addon 市场中把对应组件卸载，但是应用弹性伸缩界面相关记依然在，如下图所示:
+
+![编辑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq901.png)
+
+这是 helm uninstall 的一个问题，它并不会卸载对应的 CRD，因此导致数据残留，此时我们需要手动卸载对应的 CRD , 完成最终清理工作。
+
+## 控制台的问题 <a id="console-error" />
+
+为什么低版本集群的控制台打开异常？
+
+在 kubernetes 低版本（v1.18以下）的集群中，打开控制台出现 CSR 资源请求失败。打开控制台的时候，
+会根据当前登录用户在目标集群中通过 CSR 资源申请证书，如果集群版本太低或者没有开启此功能 Controller，
+会导致证书申请失败，从而无法连接到目标集群。
+
+申请证书流程请参考 [Kubernetes 官网文档](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/)。
+
+**解决办法：**
+
+- 如果集群版本大于 v1.18，请检查 kube-controller-manager 是否开启 csr 功能，确保以下的 controller 是否正常开启
+
+    ```shell
+    ttl-after-finished,bootstrapsigner,csrapproving,csrcleaner,csrsigning
+    ```
+
+- 低版本集群目前解决方案只有升级版本
+
+    [返回顶部 :arrow_up:](#top)
+
+## 创建和接入集群的问题
+
+1. 如何重置创建的集群？ <a id="reset-cluster" />
 
     创建的集群分为两种情况：
 
@@ -163,7 +212,9 @@ hide:
 
     ![卸载集群](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq1102.png)
 
-1. 接入集群安装插件失败
+    [返回顶部 :arrow_up:](#top)
+
+1. 接入集群安装插件失败 <a id="failed-plugin" />
 
     离线环境接入的集群，在安装插件之前，需要先配置 CRI 代理仓库，以忽略 TLS 验证（所有节点都需要执行）。
 
@@ -207,7 +258,7 @@ hide:
             systemctl restart containerd
             ```
 
-1. 创建集群时，高级设置启用 **为新建集群内核调优** ，集群创建失败。
+1. 创建集群时，在高级设置中启用 **为新建集群内核调优** ，集群创建为什么会失败 <a id="conntrack" />
 
     1. 检查内核模块 conntrack 是否加载，执行如下命令：
 
@@ -225,8 +276,12 @@ hide:
 
         如果内核模块进行了升级操作，也会导致集群创建失败。
 
-1. 进行应用备份操作，同时备份相同标签的 Pod 和 Deployment 后，还原备份后，出现2个 Pod。
+1. 集群解除接入后，`kpanda-system` 命名空间一直处于 Terminating 状态。 <a id="ns-terminating" />
 
-    出现这种现象的原因是：还原时，由于修改了 Pod 标签，导致其标签与其备份时的父资源 ReplicaSet / Deployment 标签不匹配，故还原时出现2倍数量 Pod。
-    
-    为了避免出现以上这种情况，尽量避免修改关联资源中的某一资源的标签。
+    请检查 APIServices 服务状态是否正常，查看命令如下。如果当前状态为 false，请尝试修复 APIServices 或删除该服务。
+
+    ```shell
+    kubectl get apiservices
+    ```
+
+    [返回顶部 :arrow_up:](#top)

@@ -2,7 +2,7 @@
 
 Deployment structure of the microservice engine cluster init components:
 
-![image](../images/skoala-init-cn.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/skoala-init-cn.png)
 
 The chart inside the blue box, namely the `skoala-init` component, needs to be installed in the worker cluster. After installing the `skoala-init` component, you can use various features of the microservice engine, such as creating a registry center, and gateway instances. Additionally, please note that the `skoala-init` component depends on the `insight-agent` component of the DCE 5.0 observability module to provide metric monitoring and distributed tracing functionalities. If you need to use these features, you need to install the `insight-agent` component beforehand. For specific steps, refer to [Install the insight-agent component](../../insight/quickstart/install/install-agent.md).
 

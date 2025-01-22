@@ -26,13 +26,20 @@ keyword: 兼容版本,向下兼容,部署和升级 Kubernetes,部署和升级 K8
 - 前往 [kubean](https://github.com/kubean-io/kubean) 查看发布的[制品](https://kubean-io.github.io/kubean/zh/releases/artifacts/)，
   并根据实际情况选择具体的制品版本。目前支持的制品版本及对应的集群版本范围如下：
 
-    | 制品包版本   | 支持集群范围 | DCE 5.0 支持情况 |
-    | ----------- | ----------- | ------ |
-    | release-2.21   | v1.23.0 ~ v1.25.6      | 安装器 v0.14.0+ 已支持 |
-    | release-2.22   |    v1.24.0 ~ v1.26.9    | 安装器 v0.15.0+ 已支持 |
-    | release-2.23   |    v1.25.0 ~ v1.27.7    | 预计安装器 v0.16.0+ |
+    | 制品包版本        | 支持集群范围            | DCE 5.0 支持情况     |
+    |--------------|-------------------|------------------|
+    | release-2.21 | v1.23.0 ~ v1.25.6 | 安装器 v0.14.0+ 已支持 |
+    | release-2.22 | v1.24.0 ~ v1.26.13 | 安装器 v0.15.0+ 已支持 |
+    | release-2.23 | v1.25.0 ~ v1.27.10 | 安装器 v0.16.0+ 已支持 |
+    | release-2.24 | v1.26.0 ~ v1.29.1 | 安装器 v0.17.0+ 已支持 |
+    | release-2.25 | v1.27.0 ~ v1.29.5 | 安装器 v0.20.0+ 已支持 |
 
-    本文演示离线部署 K8s 集群到 1.23.0 版本及离线升级 K8s 集群从 1.23.0 版本到 1.24.0 版本，所以选择 `release-2.21` 的制品。
+!!! tip
+
+    在选择制品版本时，不仅需要参考集群版本范围，还需判断该制品 manifest 资源中相应组件(如 calico、containerd)版本范围是否覆盖当前集群该组件版本！
+
+    
+本文演示离线部署 K8s 集群到 1.23.0 版本及离线升级 K8s 集群从 1.23.0 版本到 1.24.0 版本，所以选择 `release-2.21` 的制品。
 
 ## 操作步骤
 
@@ -59,10 +66,10 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
 
 ### 制作低版本 K8s 离线资源
 
-1. 准备 manifest.yml 文件。
+1. 准备 manifest.yaml 文件。
 
     ```bash
-    cat > "manifest.yml" <<EOF
+    cat > "manifest.yaml" <<EOF
     image_arch:
       - "amd64" ## "arm64"
     kube_version: ## 根据实际场景填写集群版本
@@ -78,7 +85,7 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
     mkdir data
     # 制作离线包，
     AIRGAP_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/airgap-patch:2.21-d6f688f" # (1)!
-    podman run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data -e ZONE=CN -e MODE=FULL ${AIRGAP_IMG_ADDR}
+    podman run --rm -v $(pwd)/manifest.yaml:/manifest.yaml -v $(pwd)/data:/data -e ZONE=CN -e MODE=FULL ${AIRGAP_IMG_ADDR}
     ```
 
     1. 镜像 spray-job 这里可以采用加速器地址，镜像地址根据选择制品版本来决定
@@ -88,29 +95,29 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
     ```bash
     # 将上一步 data 目录中的二进制导入二进制包至火种节点的 MinIO 中
     cd ./data/amd64/files/
-    MINIO_ADDR="http://172.30.41.200:9000" # (1)!
+    MINIO_ADDR="http://127.0.0.1:9000" # (1)!
     MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_files.sh ${MINIO_ADDR}
     
     # 将上一步 data 目录中的镜像导入二进制包至火种节点的镜像仓库中
     cd ./data/amd64/images/
-    REGISTRY_ADDR="172.30.41.200"  ./import_images.sh # (2)!
+    REGISTRY_ADDR="127.0.0.1"  ./import_images.sh # (2)!
     ```
 
     1. IP 替换为实际的仓库地址
     2. IP 替换为实际的仓库地址
 
-4. 将 `manifest`、`localartifactset.cr.yaml` 自定义资源部署到 **Kubean 所在的管理集群或者 Global 集群** 当中，本例使用的是 Global 集群。
+4. 将 `manifest`、`localartifactset.cr.yaml` 自定义资源部署到 **Kubean 所在的管理集群或者全局服务集群** 当中，本例使用的是全局服务集群。
 
     ```bash
     # 部署 data 文件目录下的 localArtifactSet 资源
     cd ./data
-    kubectl apply -f data/localartifactset.cr.yaml
+    kubectl apply -f localartifactset.cr.yaml
 
     # 下载 release-2.21 版本的 manifest 资源
-    wget https://raw.githubusercontent.com/kubean-io/kubean-manifest/main/manifests/manifest-2.21-d6f688f.yml
+    wget https://raw.githubusercontent.com/kubean-io/kubean-manifest/main/manifests/manifest-2.21-d6f688f.yaml
 
     # 部署 release-2.21 对应的 manifest 资源
-    kubectl apply -f manifest-2.21-d6f688f.yml
+    kubectl apply -f manifest-2.21-d6f688f.yaml
     ```
 
 ### 部署和升级 K8s 集群兼容版本
@@ -119,7 +126,7 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
 
 1. 前往 **容器管理** ，在 __集群列表__ 页面中，点击 __创建集群__ 按钮。
 
-2. `被纳管`参数选择 `manifest`、`localartifactset.cr.yaml` 自定义资源部署的集群，本例使用的是 Global 集群。
+2. `被纳管`参数选择 `manifest`、`localartifactset.cr.yaml` 自定义资源部署的集群，本例使用的是全局服务集群。
 
     ![cluster01](../images/cluster01.png)
 

@@ -60,6 +60,6 @@
 
 2. 点击指定消息路由右侧 __删除__ 按钮。
 
-3. 点击 __确定__ ，即删除成功，放回到消息路由列表页。
+3. 点击 __确定__ ，即删除成功，返回到消息路由列表页。
 
     ![删除消息路由](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-route-05.png)

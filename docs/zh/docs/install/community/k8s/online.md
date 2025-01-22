@@ -28,10 +28,10 @@
 
 1. 在 K8s 集群控制平面节点（Controller Node）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/index.md)）。
 
-    假定 VERSION 为 v0.19.0
+    假定 VERSION 为 v0.25.0
 
     ```shell
-    export VERSION=v0.19.0
+    export VERSION=v0.25.0
 
     # 如果是 ARM 架构请更新 `dce5-installer-$VERSION` 为 `dce5-installer-$VERSION-linux-arm64`
     
@@ -47,7 +47,7 @@
     - 如果是非公有云环境（虚拟机、物理机），请启用负载均衡 (metallb)，以规避 NodePort 因节点 IP 变动造成的不稳定。请仔细规划您的网络，设置 2 个必要的 VIP，配置文件范例如下：
 
         ```yaml title="clusterConfig.yaml"
-        apiVersion: provision.daocloud.io/v1alpha3
+        apiVersion: provision.daocloud.io/v1alpha4
         kind: ClusterConfig
         spec:
           loadBalancer:
@@ -62,7 +62,7 @@
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 K8s 负载均衡能力, 配置文件范例如下:
 
         ```yaml title="clusterConfig.yaml"
-        apiVersion: provision.daocloud.io/v1alpha3
+        apiVersion: provision.daocloud.io/v1alpha4
         kind: ClusterConfig
         spec:
           loadBalancer:
@@ -77,7 +77,7 @@
 
     !!! note
 
-        - 有关 clusterConfig.yaml 文件设置，请参考[在线安装第 2 步](online.md#_2)。
+        - 有关 clusterConfig.yaml 文件设置，请参考[在线安装第 2 步](#_2)。
         - `-z` 最小化安装
         - `-c` 指定集群配置文件。使用 NodePort 暴露控制台时不需要指定 `-c`。
         - `-d` 开启 debug 模式

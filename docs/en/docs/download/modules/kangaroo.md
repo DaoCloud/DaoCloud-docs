@@ -11,8 +11,10 @@ On this page, you can download offline packages for different versions of the co
 
 ## Download
 
-| Version  | Architecture | File Size | Package     | Checksum File      | Update Date |
-|----------|--------------|-----------|-------------|--------------------|-------------|
+| Version | Architecture | Size | Package | Checksum | Date |
+| ------- | ------------ | --------- | ------- | ------------- | ------------ |
+| [0.22.0](../../kangaroo/intro/release-notes.md) | AMD 64 | 349.21 MB | [:arrow_down: kangaroo_0.22.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.22.0_amd64.tar) | [:arrow_down: kangaroo_0.22.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.22.0_amd64_checksum.sha512sum) | 2024-10-11 |
+| [0.21.0](../../kangaroo/intro/release-notes.md) | AMD 64 | 349.19 MB | [:arrow_down: kangaroo_0.21.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.21.0_amd64.tar) | [:arrow_down: kangaroo_0.21.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.21.0_amd64_checksum.sha512sum) | 2024-08-29 |
 | [0.18.0](../../kangaroo/intro/release-notes.md) | AMD 64 | 389.58 MB | [:arrow_down: kangaroo_0.18.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.18.0_amd64.tar) | [:arrow_down: kangaroo_0.18.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.18.0_amd64_checksum.sha512sum) | 2024-05-29 |
 | [0.17.0](../../kangaroo/intro/release-notes.md) | AMD 64 | 304.16 MB | [:arrow_down: kangaroo_0.17.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.17.0_amd64.tar) | [:arrow_down: kangaroo_0.17.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.17.0_amd64_checksum.sha512sum) | 2024-04-26 |
 | [0.15.0](../../kangaroo/intro/release-notes.md) | AMD 64 | 297.82 MB | [:arrow_down: kangaroo_0.15.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.15.0_amd64.tar) | [:arrow_down: kangaroo_0.15.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.15.0_amd64_checksum.sha512sum) | 2024-01-29 |

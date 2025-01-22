@@ -10,11 +10,11 @@ hide:
 This page provides offline packages and checksum files for DCE 5.0 Community.
 
 [Return to Download Index](../index.md){ .md-button }
-[More Historical Versions](./dce5-installer-history.md){ .md-button }
+[Legacy Packages](./dce5-installer-history.md){ .md-button }
 
 ## Download
 
-| Filename | Version | Architecture | File Size | Download | Update Date |
+| Filename | Version | Architecture | Size | Download | Date |
 | -------- | ------- | ------------ | --------- | -------- | ----------- |
 | offline-community-v0.8.0-amd64.tar | v0.8.0 | AMD 64 | 6.01 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.8.0-amd64.tar) | 2023-06-06 |
 | offline-community-v0.8.0-arm64.tar | v0.8.0 | <font color="green">ARM 64</font> | 5.64 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.8.0-arm64.tar) | 2023-06-06 |
@@ -80,9 +80,9 @@ DCE 5.0 Community includes the following modules by default:
 
 | Modules | Introduction | What's New |
 | -------- | ----------- | ---------- |
-| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [0.17.1](../../ghippo/intro/release-notes.md#0171) |
-| Container Management | Manage Kubernetes core features such as clusters, nodes, workloads, Helm applications, CRD, namespaces, etc. | [0.18.1](../../kpanda/intro/release-notes.md#0181) |
-| Insight | Provide rich dashboard, scenario monitoring, data query, alarm and other graphical information.        | [0.17.2](../../insight/intro/releasenote.md#0172) |
+| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, and custom appearance. | [0.17.1](../../ghippo/intro/release-notes.md#v0171) |
+| Container Management | Manage Kubernetes core features such as clusters, nodes, workloads, Helm applications, CRD, namespaces, etc. | [0.18.1](../../kpanda/intro/release-notes.md#v0181) |
+| Insight | Provide rich dashboard, scenario monitoring, data query, alert and other graphical information.        | [0.17.2](../../insight/intro/release-notes.md#v0170) |
 
 ## More
 

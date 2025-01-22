@@ -40,104 +40,102 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
     mcamel-common-mysql-cluster-mysql-1
     ```
 
-2. 设置 __binlog__ 参数
+1. 设置 __binlog__ 参数
 
     ```bash
     kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'set global sync_binlog=10086;'
     ```
 
-3. 进入 MySQL 的容器
+1. 进入 MySQL 的容器
 
     ```bash
     kubectl exec -it mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf
     ```
 
-4. 在 MySQL 容器中执行查看命令，获取从库状态。
+1. 在 MySQL 容器中执行查看命令，获取从库状态。
 
-    __Seconds_Behind_Master__ 字段为主从延迟，如果取值在 0~30，可以认为没有延迟；表示主从可以保持同步。
+    `Seconds_Behind_Master` 字段为主从延迟，如果取值在 0~30，可以认为没有延迟；表示主从可以保持同步。
 
-    ??? note "SQL 语句如下"
+    ```sql
+    mysql> show slave status\G; 
+    *************************** 1. row ***************************
+                   Slave_IO_State: Waiting for source to send event
+                      Master_Host: mcamel-common-mysql-cluster-mysql-0.mysql.mcamel-system
+                      Master_User: sys_replication
+                      Master_Port: 3306
+                    Connect_Retry: 1
+                  Master_Log_File: mysql-bin.000304
+              Read_Master_Log_Pos: 83592007
+                   Relay_Log_File: mcamel-common-mysql-cluster-mysql-1-relay-bin.000002
+                    Relay_Log_Pos: 83564355
+            Relay_Master_Log_File: mysql-bin.000304
+                 Slave_IO_Running: Yes
+                Slave_SQL_Running: Yes
+                  Replicate_Do_DB:
+              Replicate_Ignore_DB:
+               Replicate_Do_Table:
+           Replicate_Ignore_Table:
+          Replicate_Wild_Do_Table:
+      Replicate_Wild_Ignore_Table:
+                       Last_Errno: 0
+                       Last_Error:
+                     Skip_Counter: 0
+              Exec_Master_Log_Pos: 83564299
+                  Relay_Log_Space: 83592303
+                  Until_Condition: None
+                   Until_Log_File:
+                    Until_Log_Pos: 0
+               Master_SSL_Allowed: No
+               Master_SSL_CA_File:
+               Master_SSL_CA_Path:
+                  Master_SSL_Cert:
+                Master_SSL_Cipher:
+                   Master_SSL_Key:
+            Seconds_Behind_Master: 0
+    Master_SSL_Verify_Server_Cert: No
+                    Last_IO_Errno: 0
+                    Last_IO_Error:
+                   Last_SQL_Errno: 0
+                   Last_SQL_Error:
+      Replicate_Ignore_Server_Ids:
+                 Master_Server_Id: 100
+                      Master_UUID: e17dae09-8da0-11ed-9104-c2f9484728fd
+                 Master_Info_File: mysql.slave_master_info
+                        SQL_Delay: 0
+              SQL_Remaining_Delay: NULL
+          Slave_SQL_Running_State: Replica has read all relay log; waiting for more updates
+               Master_Retry_Count: 86400
+                      Master_Bind:
+          Last_IO_Error_Timestamp:
+         Last_SQL_Error_Timestamp:
+                   Master_SSL_Crl:
+               Master_SSL_Crlpath:
+               Retrieved_Gtid_Set: e17dae09-8da0-11ed-9104-c2f9484728fd:21614244-21621569
+                Executed_Gtid_Set: 4bc2107c-819a-11ed-bf23-22be07e4eaff:1-342297,
+    7cc717ea-7c1b-11ed-b59d-c2ba3f807d12:1-619197,
+    a5ab763a-7c1b-11ed-b5ca-522707642ace:1-178069,
+    a6045297-8743-11ed-8712-8e52c3ace534:1-4073131,
+    a95cf9df-84d7-11ed-8362-5e8a1c335253:1-493942,
+    b5175b1b-a2ac-11ed-b0c6-d6fbe05d7579:1-3754703,
+    c4dc2b14-9ed9-11ed-ac61-36da81109699:1-945884,
+    e17dae09-8da0-11ed-9104-c2f9484728fd:1-21621569
+                   Auto_Position: 1
+            Replicate_Rewrite_DB:
+                    Channel_Name:
+              Master_TLS_Version:
+          Master_public_key_path:
+           Get_master_public_key: 0
+               Network_Namespace:
+    1 row in set, 1 warning (0.00 sec)
+    ```
 
-        ```sql
-        mysql> show slave status\G; 
-        *************************** 1. row ***************************
-                      Slave_IO_State: Waiting for source to send event
-                          Master_Host: mcamel-common-mysql-cluster-mysql-0.mysql.mcamel-system
-                          Master_User: sys_replication
-                          Master_Port: 3306
-                        Connect_Retry: 1
-                      Master_Log_File: mysql-bin.000304
-                  Read_Master_Log_Pos: 83592007
-                      Relay_Log_File: mcamel-common-mysql-cluster-mysql-1-relay-bin.000002
-                        Relay_Log_Pos: 83564355
-                Relay_Master_Log_File: mysql-bin.000304
-                    Slave_IO_Running: Yes
-                    Slave_SQL_Running: Yes
-                      Replicate_Do_DB:
-                  Replicate_Ignore_DB:
-                  Replicate_Do_Table:
-              Replicate_Ignore_Table:
-              Replicate_Wild_Do_Table:
-          Replicate_Wild_Ignore_Table:
-                          Last_Errno: 0
-                          Last_Error:
-                        Skip_Counter: 0
-                  Exec_Master_Log_Pos: 83564299
-                      Relay_Log_Space: 83592303
-                      Until_Condition: None
-                      Until_Log_File:
-                        Until_Log_Pos: 0
-                  Master_SSL_Allowed: No
-                  Master_SSL_CA_File:
-                  Master_SSL_CA_Path:
-                      Master_SSL_Cert:
-                    Master_SSL_Cipher:
-                      Master_SSL_Key:
-                Seconds_Behind_Master: 0
-        Master_SSL_Verify_Server_Cert: No
-                        Last_IO_Errno: 0
-                        Last_IO_Error:
-                      Last_SQL_Errno: 0
-                      Last_SQL_Error:
-          Replicate_Ignore_Server_Ids:
-                    Master_Server_Id: 100
-                          Master_UUID: e17dae09-8da0-11ed-9104-c2f9484728fd
-                    Master_Info_File: mysql.slave_master_info
-                            SQL_Delay: 0
-                  SQL_Remaining_Delay: NULL
-              Slave_SQL_Running_State: Replica has read all relay log; waiting for more updates
-                  Master_Retry_Count: 86400
-                          Master_Bind:
-              Last_IO_Error_Timestamp:
-            Last_SQL_Error_Timestamp:
-                      Master_SSL_Crl:
-                  Master_SSL_Crlpath:
-                  Retrieved_Gtid_Set: e17dae09-8da0-11ed-9104-c2f9484728fd:21614244-21621569
-                    Executed_Gtid_Set: 4bc2107c-819a-11ed-bf23-22be07e4eaff:1-342297,
-        7cc717ea-7c1b-11ed-b59d-c2ba3f807d12:1-619197,
-        a5ab763a-7c1b-11ed-b5ca-522707642ace:1-178069,
-        a6045297-8743-11ed-8712-8e52c3ace534:1-4073131,
-        a95cf9df-84d7-11ed-8362-5e8a1c335253:1-493942,
-        b5175b1b-a2ac-11ed-b0c6-d6fbe05d7579:1-3754703,
-        c4dc2b14-9ed9-11ed-ac61-36da81109699:1-945884,
-        e17dae09-8da0-11ed-9104-c2f9484728fd:1-21621569
-                        Auto_Position: 1
-                Replicate_Rewrite_DB:
-                        Channel_Name:
-                  Master_TLS_Version:
-              Master_public_key_path:
-                Get_master_public_key: 0
-                    Network_Namespace:
-        1 row in set, 1 warning (0.00 sec)
-        ```
-
-5. 主从同步后 __Seconds_Behind_Master__ 小于 30s，设置 __sync_binlog=1__ 
+1. 主从同步后 __Seconds_Behind_Master__ 小于 30s，设置 __sync_binlog=1__ 
 
     ```bash
     kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'set global sync_binlog=1';
     ```
 
-6. 如果此时依然不见缓解，可以查看从库的宿主机负载或者 IO 是否太高，执行以下命令：
+1. 如果此时依然不见缓解，可以查看从库的宿主机负载或者 IO 是否太高，执行以下命令：
 
     ```bash
     [root@master-01 ~]$ uptime
@@ -146,7 +144,7 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
 
     __load averages__ 在正常情况下 3 个数值都不应长期超过 10；如果超过 30 以上，请合理调配下该节点的 Pod 和磁盘。
 
-## 从库日志出现 __复制错误__ 
+## 从库日志出现 __复制错误__
 
 如果从库 Pod 日志中出现从库复制错误，可能由多种原因引起，下文将针对不同情况介绍判断及修复方法。
 
@@ -154,13 +152,11 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
 
 注意以下示例，如果出现关键字 __purged binlog__ ，通常需要对从库执行重建处理。
 
-??? note "错误示例"
-
-    ```bash
-    [root@demo-alpha-master-01 /]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
-    2023-02-08T18:43:21.991730Z 116 [ERROR] [MY-010557] [Repl] Error reading packet from server for channel '': Cannot replicate because the master purged required binary logs. Replicate the missing transactions from elsewhere, or provision a new slave from backup. Consider increasing the master's binary log expiration period. The GTID sets and the missing purged transactions are too long to print in this message. For more information, please see the master's error log or the manual for GTID_SUBTRACT (server_errno=1236)
-    2023-02-08T18:43:21.991777Z 116 [ERROR] [MY-013114] [Repl] Slave I/O for channel '': Got fatal error 1236 from master when reading data from binary log: 'Cannot replicate because the master purged required binary logs. Replicate the missing transactions from elsewhere, or provision a new slave from backup. Consider increasing the master's binary log expiration period. The GTID sets and the missing purged transactions are too long to print in this message. For more information, please see the master's error log or the manual for GTID_SUBTRACT', Error_code: MY-013114
-    ```
+```bash
+[root@demo-alpha-master-01 /]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
+2023-02-08T18:43:21.991730Z 116 [ERROR] [MY-010557] [Repl] Error reading packet from server for channel '': Cannot replicate because the master purged required binary logs. Replicate the missing transactions from elsewhere, or provision a new slave from backup. Consider increasing the master's binary log expiration period. The GTID sets and the missing purged transactions are too long to print in this message. For more information, please see the master's error log or the manual for GTID_SUBTRACT (server_errno=1236)
+2023-02-08T18:43:21.991777Z 116 [ERROR] [MY-013114] [Repl] Slave I/O for channel '': Got fatal error 1236 from master when reading data from binary log: 'Cannot replicate because the master purged required binary logs. Replicate the missing transactions from elsewhere, or provision a new slave from backup. Consider increasing the master's binary log expiration period. The GTID sets and the missing purged transactions are too long to print in this message. For more information, please see the master's error log or the manual for GTID_SUBTRACT', Error_code: MY-013114
+```
 
 重建操作如下：
 
@@ -194,16 +190,16 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
 
 ### 主键冲突错误
 
-??? note "错误实例"
+运行命令时出现以下错误提示：
 
-    ```bash
-    [root@demo-alpha-master-01 /]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
-    2023-02-08T18:43:21.991730Z 116 [ERROR] [MY-010557] [Repl] Could notexecute Write_rows event on table dr_brower_db.dr_user_info; Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY; the event's master logmysql-bin.000010, end_log_pos 5295916
-    ```
+```bash
+[root@demo-alpha-master-01 /]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
+2023-02-08T18:43:21.991730Z 116 [ERROR] [MY-010557] [Repl] Could notexecute Write_rows event on table dr_brower_db.dr_user_info; Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY; the event's master logmysql-bin.000010, end_log_pos 5295916
+```
 
-如果在错误日志中看到： __Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY;__ ，
+在错误日志中看到 `Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY;`
 
-说明出现了主键冲突，或者主键不存在的错误。此时，可以以幂等模式恢复或插入空事务的形式跳过错误：
+这说明出现了主键冲突，或者主键不存在的错误。此时，可以以幂等模式恢复或插入空事务的形式跳过错误：
 
 **方法1**：幂等模式恢复
 
@@ -252,7 +248,7 @@ mysql> show slave status\G;
 
 ### 主从库复制错误
 
-当从库出现类似 __[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r__ 的错误信息，可以执行如下操作：
+当从库出现类似 `[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r` 的错误信息，可以执行如下操作：
 
 1. 寻找到从节点的 Pod
 
@@ -272,7 +268,7 @@ mysql> show slave status\G;
     1. 这种情况可以以幂等模式执行
     2. 此种类型错误也可以重做从库
 
-## 主备 Pod 均为 __replica__ 
+## 主备 Pod 均为 __replica__
 
 1. 通过以下命令，发现两个 MySQL 的 Pod均为 __replica__ 角色，需修正其中一个为 __master__ 。
 
@@ -283,102 +279,100 @@ mysql> show slave status\G;
     mysql-operator-0                                             2/2     Running   1 (16h ago)   16h
     ```
 
-2. 进入 MySQL 查看：
+1. 进入 MySQL 查看：
 
     ```bash
     kubectl exec -it mcamel-common-mysql-cluster-mysql-0 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf
     ```
 
-3. 查看 __slave__ 的状态信息，查询结果为空的就是原来的 __master__ ，如下方示例中 __mysql-0__ 对应的内容:
+1. 查看 __slave__ 的状态信息，查询结果为空的就是原来的 __master__ ，如下方示例中 __mysql-0__ 对应的内容:
 
-    ??? note "状态信息示例“
+    ```sql
+    -- mysql-0
+    mysql> show slave status\G;
+    empty set, 1 warning (0.00 sec)
 
-        ```sql
-        -- mysql-0
-        mysql> show slave status\G;
-        empty set, 1 warning (0.00 sec)
+    -- mysql-1
+    mysql> show slave status\G;
+    *************************** 1. row ***************************
+                   Slave_IO_State: Waiting for source to send event
+                      Master_Host: mcamel-common-mysql-cluster-mysql-0.mysql.mcamel-system
+                      Master_User: sys_replication
+                      Master_Port: 3306
+                    Connect_Retry: 1
+                  Master_Log_File: mysql-bin.000004
+              Read_Master_Log_Pos: 38164242
+                   Relay_Log_File: mcamel-common-mysql-cluster-mysql-1-relay-bin.000002
+                    Relay_Log_Pos: 38164418
+            Relay_Master_Log_File: mysql-bin.000004
+                 Slave_IO_Running: Yes
+                Slave_SQL_Running: Yes
+                  Replicate_Do_DB:
+              Replicate_Ignore_DB:
+               Replicate_Do_Table:
+           Replicate_Ignore_Table:
+          Replicate_Wild_Do_Table:
+      Replicate_Wild_Ignore_Table:
+                       Last_Errno: 0
+                       Last_Error:
+                     Skip_Counter: 0
+              Exec_Master_Log_Pos: 38164242
+                  Relay_Log_Space: 38164658
+                  Until_Condition: None
+                   Until_Log_File:
+                    Until_Log_Pos: 0
+               Master_SSL_Allowed: No
+               Master_SSL_CA_File:
+               Master_SSL_CA_Path:
+                  Master_SSL_Cert:
+                Master_SSL_Cipher:
+                   Master_SSL_Key:
+            Seconds_Behind_Master: 0
+    Master_SSL_Verify_Server_Cert: No
+                    Last_IO_Errno: 0
+                    Last_IO_Error:
+                   Last_SQL_Errno: 0
+                   Last_SQL_Error:
+      Replicate_Ignore_Server_Ids:
+                 Master_Server_Id: 100
+                      Master_UUID: c16da70b-ad12-11ed-8084-0a580a810256
+                 Master_Info_File: mysql.slave_master_info
+                        SQL_Delay: 0
+              SQL_Remaining_Delay: NULL
+          Slave_SQL_Running_State: Replica has read all relay log; waiting for more updates
+               Master_Retry_Count: 86400
+                      Master_Bind:
+          Last_IO_Error_Timestamp:
+         Last_SQL_Error_Timestamp:
+                   Master_SSL_Crl:
+               Master_SSL_Crlpath:
+               Retrieved_Gtid_Set: c16da70b-ad12-11ed-8084-0a580a810256:537-59096
+                Executed_Gtid_Set: c16da70b-ad12-11ed-8084-0a580a810256:1-59096
+                    Auto_Position: 1
+             Replicate_Rewrite_DB:
+                     Channel_Name:
+               Master_TLS_Version:
+           Master_public_key_path:
+            Get_master_public_key: 0
+                Network_Namespace:
+    1 row in set, 1 warning (0.01 sec)
+    ```
 
-        -- mysql-1
-        mysql> show slave status\G;
-        *************************** 1. row ***************************
-                      Slave_IO_State: Waiting for source to send event
-                          Master_Host: mcamel-common-mysql-cluster-mysql-0.mysql.mcamel-system
-                          Master_User: sys_replication
-                          Master_Port: 3306
-                        Connect_Retry: 1
-                      Master_Log_File: mysql-bin.000004
-                  Read_Master_Log_Pos: 38164242
-                      Relay_Log_File: mcamel-common-mysql-cluster-mysql-1-relay-bin.000002
-                        Relay_Log_Pos: 38164418
-                Relay_Master_Log_File: mysql-bin.000004
-                    Slave_IO_Running: Yes
-                    Slave_SQL_Running: Yes
-                      Replicate_Do_DB:
-                  Replicate_Ignore_DB:
-                  Replicate_Do_Table:
-              Replicate_Ignore_Table:
-              Replicate_Wild_Do_Table:
-          Replicate_Wild_Ignore_Table:
-                          Last_Errno: 0
-                          Last_Error:
-                        Skip_Counter: 0
-                  Exec_Master_Log_Pos: 38164242
-                      Relay_Log_Space: 38164658
-                      Until_Condition: None
-                      Until_Log_File:
-                        Until_Log_Pos: 0
-                  Master_SSL_Allowed: No
-                  Master_SSL_CA_File:
-                  Master_SSL_CA_Path:
-                      Master_SSL_Cert:
-                    Master_SSL_Cipher:
-                      Master_SSL_Key:
-                Seconds_Behind_Master: 0
-        Master_SSL_Verify_Server_Cert: No
-                        Last_IO_Errno: 0
-                        Last_IO_Error:
-                      Last_SQL_Errno: 0
-                      Last_SQL_Error:
-          Replicate_Ignore_Server_Ids:
-                    Master_Server_Id: 100
-                          Master_UUID: c16da70b-ad12-11ed-8084-0a580a810256
-                    Master_Info_File: mysql.slave_master_info
-                            SQL_Delay: 0
-                  SQL_Remaining_Delay: NULL
-              Slave_SQL_Running_State: Replica has read all relay log; waiting for more updates
-                  Master_Retry_Count: 86400
-                          Master_Bind:
-              Last_IO_Error_Timestamp:
-            Last_SQL_Error_Timestamp:
-                      Master_SSL_Crl:
-                  Master_SSL_Crlpath:
-                  Retrieved_Gtid_Set: c16da70b-ad12-11ed-8084-0a580a810256:537-59096
-                    Executed_Gtid_Set: c16da70b-ad12-11ed-8084-0a580a810256:1-59096
-                        Auto_Position: 1
-                Replicate_Rewrite_DB:
-                        Channel_Name:
-                  Master_TLS_Version:
-              Master_public_key_path:
-                Get_master_public_key: 0
-                    Network_Namespace:
-        1 row in set, 1 warning (0.01 sec)
-        ```
-
-4. 针对 master 的 mysql shell 执行重置操作：
+1. 针对 master 的 mysql shell 执行重置操作：
 
     ```sql
     mysql > stop slave;reset slave;
     ```
 
-5. 此时再手动编辑 master 的 Pod： __role replica => master ,healthy no => yes__ 。
+1. 此时再手动编辑 master 的 Pod： __role replica => master ,healthy no => yes__ 。
 
-6. 针对 slave 的 mysql shell 执行：
+1. 针对 slave 的 mysql shell 执行：
 
     ```sql
     mysql > start slave;
     ```
 
-7. 如果主从没有建立联系，在 slave 的 mysql shell 执行：
+1. 如果主从没有建立联系，在 slave 的 mysql shell 执行：
 
     ```sql
     -- 注意替换下 {master-host-pod-index}

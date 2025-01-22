@@ -59,9 +59,9 @@ Refer to the [Namespace Exclusive Nodes](../kpanda/user-guide/namespaces/exclusi
 
 ## Workloads
 
-### Create Stateless Workload
+### Create Deployment
 
-Refer to the [Create Stateless Workload](../kpanda/user-guide/workloads/create-deployment.md) documentation page.
+Refer to the [Create Deployment](../kpanda/user-guide/workloads/create-deployment.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-deployment.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kpanda-deployment.png"></video>

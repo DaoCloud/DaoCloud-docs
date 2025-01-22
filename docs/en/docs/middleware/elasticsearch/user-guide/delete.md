@@ -11,7 +11,7 @@ If you want to delete an Elasticsearch instance, you can do the following:
 
         After an instance is deleted, all information related to the instance will also be deleted, so please proceed with caution.
 
-1. In the list of Elasticsearch instances, click the __⋮__ button on the right, and select __Delete Instance__ from the pop-up menu.
+1. In the list of Elasticsearch instances, click the __┇__ button on the right, and select __Delete Instance__ from the pop-up menu.
 
     ![Delete Instance](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/elasticsearch/images/delete01.png)
 

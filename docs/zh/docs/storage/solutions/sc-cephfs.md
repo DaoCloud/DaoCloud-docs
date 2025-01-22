@@ -6,7 +6,7 @@
 
 ## 操作步骤
 
-1. 在集群列表中点击目标集群的名称，然后在左侧导航栏点击`容器存储`->`存储池(SC)`->`创建存储池(SC)`。
+1. 在集群列表中点击目标集群的名称，然后在左侧导航栏点击 __容器存储__ -> __存储池(SC)__ -> __创建存储池(SC)__ 。
 
 2. 填写基本信息，参数说明如下：
 
@@ -16,13 +16,13 @@
 
     | clusterID | rook-ceph | 运行 rook-ceph 集群的命名空间 |
     | --- | --- | --- |
-    | csi.storage.k8s.io/fstype | ext4 | 指定卷的文件系统类型。 如果未指定，csi-provisioner 将默认设置为“ext4”，官方文档不推荐使用”xfs” |
-    | csi.storage.k8s.io/controller-expand-secret-name | rook-csi-rbd-provisioner | 创建卷时CSI provisioner使用的Kubernetes Secret的名称 |
-    | csi.storage.k8s.io/controller-expand-secret-namespace | rook-ceph | 上述Secret所在的命名空间 |
-    | csi.storage.k8s.io/node-stage-secret-name | rook-csi-cephfs-node | 执行卷扩展操作时CSI控制器使用的Secret的名称 |
-    | csi.storage.k8s.io/node-stage-secret-namespace | rook-ceph | 执行卷扩展操作时Secret所在的命名空间 |
-    | csi.storage.k8s.io/provisioner-secret-name | rook-csi-cephfs-provisioner | 节点上卷挂载操作时CSI节点插件使用的Secret的名称 |
-    | csi.storage.k8s.io/provisioner-secret-namespace | rook-ceph | 节点上卷挂载操作时Secret所在的命名空间 |
+    | csi.storage.k8s.io/fstype | ext4 | 指定卷的文件系统类型。如果未指定，csi-provisioner 将默认设置为 “ext4”，不推荐使用 ”xfs” |
+    | csi.storage.k8s.io/controller-expand-secret-name | rook-csi-rbd-provisioner | 创建卷时 CSI provisioner 使用的 Kubernetes Secret 的名称 |
+    | csi.storage.k8s.io/controller-expand-secret-namespace | rook-ceph | 上述 Secret 所在的命名空间 |
+    | csi.storage.k8s.io/node-stage-secret-name | rook-csi-cephfs-node | 执行卷扩展操作时 CSI 控制器使用的 Secret 的名称 |
+    | csi.storage.k8s.io/node-stage-secret-namespace | rook-ceph | 执行卷扩展操作时 Secret 所在的命名空间 |
+    | csi.storage.k8s.io/provisioner-secret-name | rook-csi-cephfs-provisioner | 节点上卷挂载操作时 CSI 节点插件使用的 Secret 的名称 |
+    | csi.storage.k8s.io/provisioner-secret-namespace | rook-ceph | 节点上卷挂载操作时 Secret 所在的命名空间 |
     | fsName | ceph-filesystem | 定义卷的 CephFS 文件系统名称 |
     | pool | ceph-filesystem-data0 | 定义卷的 Ceph 池名称 |
 
@@ -30,4 +30,4 @@
 
     ![fs02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/fs02.png)
 
-3. 填写完点击 `确定` 即可创建成功
+3. 填写完点击 __确定__ 即可创建成功

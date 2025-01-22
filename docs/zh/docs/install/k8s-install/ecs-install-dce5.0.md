@@ -32,7 +32,7 @@
     参考以下配置，注意设置 `loadBalancer.type = NodePort`，并填写主机的私网 IP 地址：
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     spec:
       loadBalancer:
@@ -103,7 +103,7 @@
     参考以下配置，注意设置 `loadBalancer.type = cloudLB`，并填写主机的私网 IP 地址：
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     spec:
       loadBalancer:
@@ -178,7 +178,7 @@
    参考以下配置，注意设置 `loadBalancer.type = NodePort`，并填写主机的私网 IP 地址：
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     spec:
       loadBalancer:
@@ -226,7 +226,7 @@
 
 8. 修改 ghippo 反向代理配置
 
-    参考文档 [自定义反向代理服务器地址](../../ghippo/install/reverse-proxy.md#_1)，其中代理地址为上一步中
+    参考文档 [自定义反向代理服务器地址](../../ghippo/install/reverse-proxy.md)，其中代理地址为上一步中
     `istio-ingressgateway` 的 type 为 `LoadBalancer` 时分配的 IP 地址。修改成功后即可通过该 IP 地址进行访问。
 
     ![ghippo](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/ghippo01.png)

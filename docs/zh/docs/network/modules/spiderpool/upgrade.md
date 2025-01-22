@@ -1,17 +1,11 @@
 # 升级 Spiderpool
 
-本页说明如何将 DCE 5.0 的旧版本 Spiderpool（小于或等于v0.5.0），升级到新版本。本文中以 Spiderpool 到 v0.7.0 为例。
+本页说明如何将 DCE 5.0 的旧版本 Spiderpool，升级到新版本。本文中以 Spiderpool 到 v0.9.6 为例。
 
 ## 前提条件
 
 1. 一套 Kubernetes 集群
 2. 已安装 [Helm](https://helm.sh/docs/intro/install/)。
-
-## 检查升级环境
-
-DCE 5.0 中已部署其他更低版本的 Spiderpool。
-
-![spiderpool 0.5.0](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-before-upgrade.png)
 
 ## 获取 Chart 包与镜像
 
@@ -20,18 +14,18 @@ DCE 5.0 中已部署其他更低版本的 Spiderpool。
 ### 方式一：升级 Addon 离线包，同步更新 Spiderpool Chart 包和镜像
 
 Spiderpool 的离线包存放在 Addon 中，您可以参考[下载 Addon 离线包](../../../download/addon/history.md)，下载最新的 Addon 离线包。
-在下载后，打开 clusterConfig.yaml，修改 `addonOfflinePackagePath` 字段，指定 Addon 所在的路径，完成 Addon 离线包的升级。
+在下载后，打开 `clusterConfig.yaml` ，修改 `addonOfflinePackagePath` 字段，指定 Addon 所在的路径，完成 Addon 离线包的升级。
 
 1. Addon 升级后，即可通过如下方式，获取 Chart 包
 
-    参考如下方式，通过 DCE 5.0 界面下载 v0.7.0 的 Chart 包：
+    参考如下方式，通过 DCE 5.0 界面下载 v0.9.6 的 Chart 包：
 
-    ![spiderpool chart](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-chart-version-7.png)
+    ![spiderpool chart](../../images/spiderpool-upgrade-chart.png)
 
 2. 上传并解压 Chart 包到环境中
 
     ```bash
-    tar -xvf spiderpool-0.7.0.tgz -C /root/spiderpool
+    tar -xvf spiderpool-0.9.6.tgz -C /root/spiderpool
     ```
 
 ### 方式二：手动升级 Spiderpool
@@ -46,13 +40,13 @@ Spiderpool 的离线包存放在 Addon 中，您可以参考[下载 Addon 离线
 
     $ helm search repo spiderpool/spiderpool --versions
     NAME                   CHART VERSION   APP VERSION  DESCRIPTION
-    spiderpool/spiderpool  0.7.0           0.7.0        ipam for kubernetes cni
+    spiderpool/spiderpool  0.9.6           0.9.6        ipam for kubernetes cni
     ...
 
-    $ helm fetch spiderpool/spiderpool --version 0.7.0
+    $ helm fetch spiderpool/spiderpool --version 0.9.6
 
-    $ ls spiderpool-0.7.0.tgz
-    spiderpool-0.7.0.tgz
+    $ ls spiderpool-0.9.6.tgz
+    spiderpool-0.9.6.tgz
     ```
 
     将 Chart 包上传到离线仓库。
@@ -68,14 +62,14 @@ Spiderpool 的离线包存放在 Addon 中，您可以参考[下载 Addon 离线
     在任意可通外网的且安装了 Docker 的环境上，执行下列命令获取 Spiderpool 的镜像。
 
     ```shell
-    docker pull ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-controller:v0.7.0
-    docker pull ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-agent:v0.7.0
+    docker pull ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-controller:v0.9.6
+    docker pull ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-agent:v0.9.6
     ```
 
     通过 `docker save` 保存为离线镜像 tar 包，并上传到离线环境。
 
     ```shell
-    docker save -o spiderpool-0.7.0.tar ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-controller:v0.7.0 ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-agent:v0.7.0
+    docker save -o spiderpool-0.9.6.tar ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-controller:v0.9.6 ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-agent:v0.9.6
     ```
 
 3. 在需升级的环境中加载镜像到 Docker 或 containerd。
@@ -83,13 +77,13 @@ Spiderpool 的离线包存放在 Addon 中，您可以参考[下载 Addon 离线
     === "Docker"
 
         ```shell
-        docker load -i spiderpool-0.7.0.tar
+        docker load -i spiderpool-0.9.6.tar
         ```
 
     === "containerd"
 
         ```shell
-        ctr -n k8s.io image import spiderpool-0.7.0.tar
+        ctr -n k8s.io image import spiderpool-0.9.6.tar
         ```
 
 !!! note
@@ -99,17 +93,19 @@ Spiderpool 的离线包存放在 Addon 中，您可以参考[下载 Addon 离线
 
 ## 删除 spiderpool-init
 
-在 v0.7.0 版本开始，Spiderpool 引入了 Spidercoordinators 插件，此插件的默认配置将在 spiderpool-init 被创建时自动下发。
-在升级 Spiderpool 前，请先删除该 Pod。通过 `helm upgrade` 更新时，会自动创建 spiderpool-init Pod，并下发创建 Spidercoordinators 的默认配置。
+- 在 v0.9.5 版本开始，Spiderpool 将 spiderpool-init 组件从 Pod 更改为 Job，使得升级更加灵活，如果从 v0.9.5 版本升级到更高的版本，无需删除 spiderpool-init Job。
 
-```bash
-[root@controller-node-1 ~]# kubectl get po -n kube-system spiderpool-init
-NAME              READY   STATUS      RESTARTS   AGE
-spiderpool-init   0/1     Completed   0          49m
+- 从 v0.9.5 以下的任何版本升级到比 v0.9.5 更高的版本时，在升级 Spiderpool 前，请先删除该 spiderpool-init Pod，如果不删除，可能会引发一些更新冲突，同时通过 `helm upgrade` 更新后，会自动创建 spiderpool-init Job，
+但此时，spiderpool-init Pod 将会存在残留。
 
-[root@controller-node-1 ~]# kubectl delete po -n kube-system spiderpool-init
-pod "spiderpool-init" deleted
-```
+    ```bash
+    [root@controller-node-1 ~]# kubectl get po -n kube-system spiderpool-init
+    NAME              READY   STATUS      RESTARTS   AGE
+    spiderpool-init   0/1     Completed   0          49m
+
+    [root@controller-node-1 ~]# kubectl delete po -n kube-system spiderpool-init
+    pod "spiderpool-init" deleted
+    ```
 
 ## 更新 CRD
 
@@ -132,18 +128,20 @@ customresourcedefinition.apiextensions.k8s.io/spidersubnets.spiderpool.spidernet
 ## 通过 DCE 5.0 界面升级
 
 在前面的步骤中，已经正确上传离线 Chart 与镜像包到离线环境中，现在可通过 5.0 界面执行升级。
-在低于 0.7.0 的版本中，Spiderpool 会搭配 Multus-underlay 插件使用，而新版本的 Spiderpool 中已经集成了 Multus 插件。
-在界面进行更新操作时，请关闭 **安装 multus** 按钮，避免重复安装。如下图所示，点击 **更新** ，等待更新完成。
+在低于 0.7.0 的版本中，Spiderpool 会搭配 Multus-underlay 插件使用，而更高的 Spiderpool 中已经集成了 Multus 插件。
+因此在低于 0.7.0 的版本升级到更高版本在界面进行更新操作时，请关闭 **安装 Multus CNI** 按钮，避免重复安装。如下图所示，点击 **更新** ，等待更新完成。
 
 ![disable multus](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-disable-multus.png)
 
-- `Multus Setting` -> `MultusCNI` -> `Default CNI Name`：集群默认 CNI 名称。 在更新时，该值应该与安装所填的保持一致，如果安装时该值为空，那 Spiderpool 是根据/etc/cni/net.d/ 中已有的 CNI conf 文件自动获取默认 CNI，此时更新 Spiderpool 该值填入 /etc/cni/net.d/00-multus.config 文件中字段：`clusterNetwork` 对应的值，如 calico。
+!!! note
+
+- __Multus Setting__ -> __MultusCNI__ -> __Default CNI Name__ ：集群默认 CNI 名称。 在更新时，该值应该与安装所填的保持一致，如果安装时该值为空，那 Spiderpool 是根据/etc/cni/net.d/ 中已有的 CNI conf 文件自动获取默认 CNI，此时更新 Spiderpool 该值填入 /etc/cni/net.d/00-multus.config 文件中字段：`clusterNetwork` 对应的值，如 calico。
 
 ## 验证
 
 升级后检查版本正常。
 
-![spiderpool 0.7.0](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-after-upgrade.png)
+![spiderpool 0.9.6](../../images//spiderpool-after-upgrade.png)
 
 在 0.7.0 及以上的 Spiderpool 版本中，提供了 SpiderMultusConfig CR 来自动管理 Multus NetworkAttachmentDefinition CR。
 如果您的集群中存在旧的 Multus CR，新版本由于创建机制的不同，UI 中并不会显示出来您旧有的 MUltus CR。

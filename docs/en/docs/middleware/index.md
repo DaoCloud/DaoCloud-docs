@@ -36,8 +36,8 @@ Install and enable these middleware components as needed to achieve optimal perf
 
     - [What is MinIO](./minio/intro/index.md)
     - [Create/Update/Delete MinIO Instances](./minio/user-guide/create.md)
-    - [View MinIO Logs](./minio/user-guide/logs.md)
-    - [MinIO Instance Monitoring](./minio/user-guide/insight.md)
+    - [View MinIO Logs](./minio/user-guide/insight-log-config.md)
+    - [MinIO Instance Monitoring](./minio/user-guide/insight-log-config.md)
     - [MinIO Identity Management](./minio/user-guide/user-management.md)
 
 </div>

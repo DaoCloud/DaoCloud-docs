@@ -35,6 +35,6 @@ When performing an inspection, you can choose to inspect multiple clusters in ba
 === "Individual Inspection"
 
     1. Go to the Cluster Inspection page.
-    2. Click the more options button ( __ⵗ__ ) on the right of the corresponding inspection configuration, then select __Inspection__ from the popup menu.
+    2. Click the more options button ( __┇__ ) on the right of the corresponding inspection configuration, then select __Inspection__ from the popup menu.
 
         ![basic](../images/inspection-start-alone.png)

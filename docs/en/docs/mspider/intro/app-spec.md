@@ -5,8 +5,6 @@ into the service mesh to ensure it operates efficiently, securely, and reliably.
 
 ## Introduction
 
-### Overview of Service Mesh
-
 Service Mesh is an infrastructure layer that handles communication between services
 in a service-to-service architecture. It helps manage complex topology and enables
 microservices to run, observe, protect and configure better. Our Istio-based product

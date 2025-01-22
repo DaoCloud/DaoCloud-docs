@@ -7,7 +7,14 @@ hide:
 
 # Features
 
-Cloud Edge Collaboration extends cloud-native capabilities to the edge through an integrated "end-edge-cloud" collaborative architecture. This approach helps enterprises rapidly expand secure, flexible, efficient, and reliable edge cloud-native capabilities, making it widely applicable in fields such as industrial Internet, Internet of Things (IoT), smart factories, smart parks, smart retail, and more. The cloud side handles the registration, management, and distribution of applications and configurations for edge nodes, while the edge side focuses on running edge applications, achieving edge autonomy. The device side supports multi-protocol terminal access and provides standard interfaces for device connectivity.
+Cloud Edge Collaboration extends cloud-native capabilities to the edge through an integrated
+"end-edge-cloud" collaborative architecture. This approach helps enterprises rapidly expand
+secure, flexible, efficient, and reliable edge cloud-native capabilities, making it widely
+applicable in fields such as industrial Internet, Internet of Things (IoT), smart factories,
+smart parks, smart retail, and more. The cloud side handles the registration, management,
+and distribution of applications and configurations for edge nodes, while the edge side focuses
+on running edge applications, achieving edge autonomy. The device side supports multi-protocol
+terminal access and provides standard interfaces for device connectivity.
 
 The functional architecture of the edge computing platform includes the following features:
 
@@ -15,16 +22,18 @@ The functional architecture of the edge computing platform includes the followin
 
 - Supports the integration of a vast number of edge nodes.
 - Automatically generates configuration information for edge nodes within the platform.
-- Offers two efficient and convenient management methods: online and offline node management.
+- Offers two efficient and convenient management methods: token and certificate.
 - Allows for uniform management, monitoring, and operation of edge nodes from the cloud.
 
 ## Edge Application/Model Management
 
 - Facilitates the rapid deployment of edge applications or models to edge nodes in the form of containers.
-- Users can package their edge applications or models into container images, upload them to a container registry, and deploy these images to edge nodes via the Cloud Edge Collaboration platform.
+  Users can package their edge applications or models into container images, upload them to a container
+  registry, and deploy these images to edge nodes via the Cloud Edge Collaboration platform.
 - Supports the viewing of running data, events, and log information for deployed instances.
-- Containers offer a robust ecosystem, aiding in the seamless transition of container applications to various running environments, enhancing portability.
-- Containers provide better resource isolation and support CPU scheduling.
+- Containers offer a robust ecosystem, aiding in the seamless transition of container applications to various
+  running environments, enhancing portability. Containers provide better resource isolation and support CPU
+  and GPU scheduling.
 
 ## Edge Device Management
 
@@ -34,7 +43,8 @@ The functional architecture of the edge computing platform includes the followin
 ## Data Management
 
 - Provides a message routing function, allowing users to configure message routing rules.
-- The platform forwards edge messages to corresponding message endpoints based on the configured routing rules, enabling flexible data routing and enhancing data security.
+- The platform forwards edge messages to corresponding message endpoints based on the configured routing rules,
+  enabling flexible data routing and enhancing data security.
 
 ## Permission Management
 

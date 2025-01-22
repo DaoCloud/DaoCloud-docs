@@ -45,7 +45,7 @@ The following takes the public container repository of Kubevela as an example to
 
     - Repository Name: Set the repository name. It can be up to 63 characters long and may only include lowercase letters,
       numbers, and separators __-__. It must start and end with a lowercase letter or number, for example, kubevela.
-    - Repository URL: The HTTP(S) address pointing to the target Helm repository. For example, <https://charts.kubevela.net/core>.
+    - Repository URL: The HTTP(S) address pointing to the target Helm repository. For example, <https://kubevela.github.io/charts>
     - Skip TLS Verification: If the added Helm repository uses an HTTPS address and requires skipping TLS verification,
       you can check this option. The default is unchecked.
     - Authentication Method: The method used for identity verification after connecting to the repository URL.
@@ -65,7 +65,7 @@ The following takes the public container repository of Kubevela as an example to
 
 When the address information of the helm repo changes, the address, authentication method, label, annotation, and description information of the helm repo can be updated.
 
-1. Find the cluster where the repository to be updated is located, click the cluster name, and enter cluster details .
+1. Find the cluster where the repository to be updated is located, click the cluster name, and enter cluster details.
 
     ![Clusters](../images/crd01.png)
 

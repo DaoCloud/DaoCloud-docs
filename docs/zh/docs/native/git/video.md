@@ -150,8 +150,9 @@
 
     !!! tip
 
-        在 CapCut 中，可以选择：
-        
+        剪映识别中文语音，CapCut 识别英文语音。
+        在 CapCut 中，你可以选择：
+
         - **American Female** 作为 text-to-speech 语音
         - **Light Ukulele & Happy** 作为背景音乐
 
@@ -188,7 +189,7 @@
 
 视频确认没问题之后就可以上传到 UCloud 对象存储，你会拿到一个 `https://` 开头的链接。
 
-然后在 Markdown 中使用以下语法，发布到[视频中心](../../../videos/index.md)。
+然后在 Markdown 中使用以下语法，发布到[视频中心](../../videos/index.md)。
 
 ```html
 <div class="responsive-video-container">

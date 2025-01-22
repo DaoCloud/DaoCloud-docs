@@ -4,7 +4,7 @@
 
 [有状态负载（StatefulSet）](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/statefulset/)是 Kubernetes 中的一种常见资源，和[无状态负载（Deployment）](create-deployment.md)类似，主要用于管理 Pod 集合的部署和伸缩。二者的主要区别在于，Deployment 是无状态的，不保存数据，而 StatefulSet 是有状态的，主要用于管理有状态应用。此外，StatefulSet 中的 Pod 具有永久不变的 ID，便于在匹配存储卷时识别对应的 Pod。
 
-通过 [DCE 5.0](../../../dce/index.md) 的容器管理模块，可以基于相应的角色权限轻松管理多云多集群上的工作负载，包括对有状态工作负载的创建、更新、删除、弹性扩缩、重启、版本回退等全生命周期管理。
+通过 [DCE 5.0](../../../dce/index.md) 的容器管理模块，可以基于相应的角色权限轻松管理多云多集群上的工作负载，包括对有状态工作负载的创建、更新、删除、弹性扩缩、重启等全生命周期管理。
 
 ## 前提条件
 
@@ -34,7 +34,7 @@
 
     系统将自动返回 __有状态工作负载__ 列表，等待工作负载状态变为 __运行中__ 。如果工作负载状态出现异常，请查看具体异常信息，可参考[工作负载状态](../workloads/pod-config/workload-status.md)。
 
-    点击新建工作负载列右侧的 __┇__ ，可以对工作负载执行执行更新、删除、弹性扩缩、重启、版本回退等操作。
+    点击新建工作负载列右侧的 __┇__ ，可以对工作负载执行执行更新、删除、弹性扩缩、重启等操作。
 
     ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state10.png)
 
@@ -71,10 +71,21 @@
         - 镜像仓库密钥：可选。如果目标仓库需要 Secret 才能访问，需要先去[创建一个密钥](../configmaps-secrets/create-secret.md)。
     - 特权容器：容器默认不可以访问宿主机上的任何设备，开启特权容器后，容器即可访问宿主机上的所有设备，享有宿主机上的运行进程的所有权限。
     - CPU/内存配额：CPU/内存资源的请求值（需要使用的最小资源）和限制值（允许使用的最大资源）。请根据需要为容器配置资源，避免资源浪费和因容器资源超额导致系统故障。默认值如图所示。
-    - GPU 配置：为容器配置 GPU 用量，仅支持输入正整数。GPU 配额设置支持为容器设置独享整张 GPU 卡或部分 vGPU。
-      例如，对于一张 8 核心的 GPU 卡，输入数字 __8__ 表示让容器独享整长卡，输入数字 __1__ 表示为容器配置 1 核心的 vGPU。
+    - GPU 配置：为容器配置 GPU 用量， 仅支持输入正整数。
+        - 整卡模式：
+            - 物理卡数量：容器能够使用的物理 GPU 卡数量。配置后，容器将占用整张物理 GPU卡。同时物理卡数量需要 ≤ 单节点插入的最大 GPU 卡数。
+        - 虚拟化模式：
+            - 物理卡数量：容器能够使用的物理 GPU 卡数量， 物理卡数量需要 ≤ 单节点插入的最大 GPU 卡数。
+            - GPU 算力：每张物理 GPU 卡上需要使用的算力百分比，最多为100%。
+            - 显存：每张物理卡上需要使用的显存数量。
+            - 调度策略（Binpack/Spread）：支持基于 GPU 卡和基于节点的两种维度的调度策略。Binpack 是集中式调度策略，优先将容器调度到同一个节点的同一张 GPU 卡上；Spread 是分散式调度策略，优先将容器调度到不同节点的不同 GPU 卡上，根据实际场景可组合使用。（当工作负载级别的 Binpack/Spread 调度策略与集群级别的 Binpack/Spread 调度策略冲突时，系统优先使用工作负载级别的调度策略）。
+            - 任务优先级：GPU 算力会优先供给高优先级任务使用，普通任务会减少甚至暂停使用 GPU 算力，直到高优先级任务结束，普通任务会重新继续使用 GPU 算力，常用于在离线混部场景。
+            - 指定型号：将工作负载调度到指定型号的 GPU 卡上，适用于对 GPU 型号有特殊要求的场景。
+        - Mig 模式
+            - 规格：切分后的物理 GPU 卡规格。
+            - 数量：使用该规格的数量。
     
-    > 设置 GPU 之前，需要管理员预先在集群节点上安装 GPU 卡及驱动插件，并在[集群设置](../clusterops/cluster-settings.md)中开启 GPU 特性。
+    > 设置 GPU 之前，需要管理员预先在集群上安装 [GPU Operator](../gpu/nvidia/install_nvidia_driver_of_operator.md) 和 [nvidia-vgpu](../gpu/nvidia/vgpu/vgpu_addon.md)（仅 vGPU 模式需要安装），并在[集群设置](../clusterops/cluster-settings.md)中开启 GPU 特性。
 
 === "生命周期（选填）"
 
@@ -126,6 +137,8 @@
 
 === "网络配置"
 
+    ![DNS 配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy17.png)
+
     - 如在集群中部署了 [SpiderPool](../../../network/modules/spiderpool/index.md) 和 [Multus](../../../network/modules/multus-underlay/index.md) 组件，则可以在网络配置中配置容器网卡。详情参考[工作负载使用 IP 池](../../../network/config/use-ippool/usage.md)。
     
     - DNS 配置：应用在某些场景下会出现冗余的 DNS 查询。Kubernetes 为应用提供了与 DNS 相关的配置选项，能够在某些场景下有效地减少冗余的 DNS 查询，提升业务并发量。
@@ -142,17 +155,19 @@
     - Options：DNS 的配置选项，其中每个对象可以具有 name 属性（必需）和 value 属性（可选）。该字段中的内容将合并到基于 dnsPolicy 生成的域名解析文件的 options 字段中，dnsConfig 的 options 的某些选项如果与基于 dnsPolicy 生成的域名解析文件的选项冲突，则会被 dnsConfig 所覆盖。
     - 主机别名：为主机设置的别名。
 
-        ![DNS 配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy17.png)
-
 === "升级策略"
 
-    - 升级方式： __滚动升级__ 指逐步用新版本的实例替换旧版本的实例，升级的过程中，业务流量会同时负载均衡分布到新老的实例上，因此业务不会中断。 __重建升级__ 指先删除老版本的负载实例，再安装指定的新版本，升级过程中业务会中断。
+    ![升级策略](../../images/state-deploy14.png)
+
+    - 升级方式：
+        - __滚动升级(RollingUpdate)__ 指逐步用新版本的实例替换旧版本的实例，升级的过程中，业务流量会同时负载均衡分布到新老的实例上，因此业务不会中断。 
+        - __重建升级(OnDelete)__ 指先删除老版本的负载实例，再安装指定的新版本，升级过程中业务会中断。
     - 最大保留版本数：设置版本回滚时保留的旧版本数量。默认 10。
     - 缩容时间窗：负载停止前命令的执行时间窗（0-9,999秒），默认 30 秒。
 
-        ![升级策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy14.png)
-
 === "容器管理策略"
+
+    ![容器管理策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state05.png)
 
     Kubernetes v1.7 及其之后的版本可以通过 __.spec.podManagementPolicy__ 设置 Pod 的管理策略，支持以下两种方式：
     
@@ -160,9 +175,9 @@
     
     - __并行策略（Parallel）__ ：并行创建或删除容器，和 Deployment 类型的 Pod 一样。StatefulSet 控制器并行地启动或终止所有的容器。启动或者终止其他 Pod 前，无需等待 Pod 进入 Running 和 ready 或者完全停止状态。 这个选项只会影响扩缩操作的行为，不影响更新时的顺序。
 
-        ![容器管理策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/state05.png)
-
 === "调度策略"
+
+    ![调度策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy15.png)
 
     - 容忍时间：负载实例所在的节点不可用时，将负载实例重新调度到其它可用节点的时间，默认为 300 秒。
     - 节点亲和性：根据节点上的标签来约束 Pod 可以调度到哪些节点上。
@@ -171,8 +186,6 @@
     - 拓扑域：即 topologyKey，用于指定可以调度的一组节点。例如， __kubernetes.io/os__ 表示只要某个操作系统的节点满足 labelSelector 的条件就可以调度到该节点。
     
     > 具体详情请参考[调度策略](pod-config/scheduling-policy.md)。
-
-        ![调度策略](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy15.png)
 
 === "标签与注解"
 

@@ -35,7 +35,7 @@ View the results of the code quality scan for the pipeline. To view the results,
 - The current pipeline has defined SonarQube configuration steps
 - The pipeline has been successfully executed
 
-After meeting the above requirements, you can view the scan results on the details page. Clicking on "View More" 
+After meeting the above requirements, you can view the scan results on the details page. Clicking __View More__
 can redirect you to the SonarQube backend to view more detailed results, as shown in the following image:
 
 <!-- Add image later -->

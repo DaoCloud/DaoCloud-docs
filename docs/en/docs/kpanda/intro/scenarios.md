@@ -1,6 +1,6 @@
 # Use Cases
 
-Container management is a versatile platform that can be used for multicloud deployment, cross-cloud disaster recovery, and unified management across cloud clusters. It also supports elastic scaling to handle traffic peaks.
+Container management is a versatile platform that can be used for multicloud deployment, cross-cloud disaster recovery, and unified management across cloud clusters. It also supports scaling to handle traffic peaks.
 
 **multicloud Deployment**
 
@@ -14,6 +14,6 @@ To ensure high availability of services, container management deploys services o
 
 Container management allows for cross-cloud cluster unified management, regardless of infrastructure environment or Kubernetes platforms built by different container cloud vendors. This reduces additional management costs caused by different infrastructures and providers, unifies the management process, and reduces costs. It also supports unified operation and maintenance across cloud clusters, enabling integrated monitoring services and multi-dimensional, cross-cloud unified monitoring and operation and maintenance.
 
-**Elastic Scaling to Deal with Traffic Peaks**
+**Scaling to Deal with Traffic Peaks**
 
 Container management supports cluster autoscaling, combining the underlying IaaS autoscaling capabilities to automatically autoscale cluster nodes in response to ultra-large traffic business peaks and troughs to save costs. It also supports autoscaling of applications, allowing e-commerce customers to expand application computing resources in real-time based on user-set autoscaling policies. The number of business pods increases with the rise of business visits and decreases with their decline.

@@ -483,7 +483,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [JD Cloud Cloud Native Security Platform Released](https://mp.weixin.qq.com/s/SSs3231b2wU75dKXue8Fxw)
 
-    Jingdong Cloud Cloud Native Security Platform includes security services such as asset inventory, image security, runtime security, network security, cluster security, node security, etc., providing a full lifecycle cloud native security solution from image generation, storage to runtime.
+    Jingdong Cloud Cloud Native Security Platform includes security services such as asset inventory, image security, runtime security, network security, cluster security, node security, etc., providing a lifecycle cloud native security solution from image generation, storage to runtime.
 
 - [Jibudata's multi-cloud data backup and recovery products YS1000 v3.3 & v3.4 released](https://mp.weixin.qq.com/s/lW4ZgiX3aZ39OgAiqLHIlQ)
 
@@ -776,7 +776,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [SmartX Partners with Spirit Sparrow Cloud to Launch Joint Full-Stack Cloud Native Solution](https://mp.weixin.qq.com/s/_mhgQ3YsGdWgWCbQyuT9xA)
 
-    In this solution, SmartX provides customers with a production-ready IaaS tier base based on the hyper-converged software SMTX OS, and helps create and manage production-grade Kubernetes clusters through the Kubernetes build and management service tool, SMTX Kubernetes Service. The ACP container cloud platform helps customers realize the full lifecycle platform management of business applications from development, testing to deployment and operation and maintenance.
+    In this solution, SmartX provides customers with a production-ready IaaS tier base based on the hyper-converged software SMTX OS, and helps create and manage production-grade Kubernetes clusters through the Kubernetes build and management service tool, SMTX Kubernetes Service. The ACP container cloud platform helps customers realize the lifecycle platform management of business applications from development, testing to deployment and operation and maintenance.
 
 - [SmartX launches IOMesh, the first K8s native enterprise distributed storage in China](https://mp.weixin.qq.com/s/BT6P-PvGqmA8llQ42i2Y9w)
 
@@ -846,7 +846,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Rancher Prime is a distribution of Rancher with core code from Rancher DCE Community, but with more emphasis on security and enhanced features and services for enterprise users.
     The features of Rancher Prime are: improved comprehensive security governance and a trusted Container registry.
-    introduce UI extensions; full lifecycle support for hosting clusters on Ali Cloud, Tencent Cloud and Huawei Cloud;
+    introduce UI extensions; lifecycle support for hosting clusters on Ali Cloud, Tencent Cloud and Huawei Cloud;
     support openEuler Linux and support for ARM systems.
 
 - [SUSE releases SUSE Edge 2.0, a cloud native edge management platform](https://mp.weixin.qq.com/s/LszXlp9iKT6FudzWY3EmaQ)

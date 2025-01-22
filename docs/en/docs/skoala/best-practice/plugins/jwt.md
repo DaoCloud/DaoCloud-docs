@@ -9,9 +9,9 @@ To use the JWT plugin in cloud-native microservices, the following prerequisites
 ### Create a Service Mesh
 
 First, you need to create a service mesh for the cluster where the target service resides in the Service Mesh module of DCE 5.0.
-Currently, three types of meshes are supported: Managed Mesh, Dedicated Mesh, and External Mesh.
+Currently, three types of meshes are supported: Hosted Mesh, Dedicated Mesh, and External Mesh.
 
-For specific steps on creating a mesh, refer to [Creating a Managed/Dedicated Mesh](../../../mspider/user-guide/service-mesh/README.md) or [Creating an External Mesh](../../../mspider/user-guide/service-mesh/external-mesh.md).
+For specific steps on creating a mesh, refer to [Creating a Hosted/Dedicated Mesh](../../../mspider/user-guide/service-mesh/README.md) or [Creating an External Mesh](../../../mspider/user-guide/service-mesh/external-mesh.md).
 
 
 

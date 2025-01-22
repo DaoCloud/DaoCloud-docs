@@ -5,50 +5,50 @@ hide:
   - toc
 ---
 
-# What is Intelligent Engine
+# What is AI Lab
 
-Intelligent Engine is a cloud native AI computing platform developed by DaoCloud that can running on any K8s-based system.
+AI Lab is a cloud native AI computing platform developed by DaoCloud that can running on any K8s-based system.
 This innovative platform, known as Cloud Native AI Platform, offers a seamless integration of software
-and hardware for a superior AI computing experience. Intelligent Engine combines various computing powers,
+and hardware for a superior AI computing experience. AI Lab combines various computing powers,
 optimizes GPU performance, streamlines the scheduling and management of computing resources,
 and enhances computing efficiency. With its focus on reducing costs and simplifying AI development,
-Intelligent Engine provides optimized AI development frameworks that accelerate the implementation of AI applications
+AI Lab provides optimized AI development frameworks that accelerate the implementation of AI applications
 across different industries.
 
 **Key Features**
 
 - Fully Managed Computing Resources
 
-    Powered by DCE (DaoCloud Enterprise), Intelligent Engine offers robust infrastructure capabilities to support
+    Powered by DCE (DaoCloud Enterprise), AI Lab offers robust infrastructure capabilities to support
     large-scale computing clusters, heterogeneous GPUs, and comprehensive hosting services.
     It also includes integrated acceleration solutions like vGPU.
 
 - Dataset Management
 
-    Intelligent Engine supports efficient dataset management during model development, with features such as
+    AI Lab supports efficient dataset management during model development, with features such as
     dataset organization, multi-data source access, and dataset preloading.
     The underlying container storage engine ensures smooth and effective data processing.
 
 - Development Environment Management
 
-    Intelligent Engine caters to the requirements of MLOps and LLMOps engineers by providing a range of
+    AI Lab caters to the requirements of MLOps and LLMOps engineers by providing a range of
     development environments, including JupyterLab and upcoming support for VSCode. It allows
     for custom development environments and easy access to GPU, dataset, and other resources.
 
 - Job Management
 
-    Intelligent Engine offers comprehensive job lifecycle management, enabling quick creation of jobs and support
+    AI Lab offers comprehensive job lifecycle management, enabling quick creation of jobs and support
     for popular job frameworks like Pytorch, TensorFlow, and PaddlePaddle. It includes various
     job scheduling options, such as single-machine, distributed, multi-node, and multi-GPU setups.
 
 - GPU Management
 
-    Users can monitor GPU resources and usage through Intelligent Engine, with features for tracking current
+    Users can monitor GPU resources and usage through AI Lab, with features for tracking current
     and historical job activities on GPUs. This facilitates GPU stress assessment and optimization.
 
 - Queue Management
 
-    Intelligent Engine allows for the creation of queues and their association with workspaces to ensure
+    AI Lab allows for the creation of queues and their association with workspaces to ensure
     efficient coordination and resource isolation within different clusters.
 
 [Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }

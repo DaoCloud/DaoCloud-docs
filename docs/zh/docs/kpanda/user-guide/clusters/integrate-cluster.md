@@ -29,6 +29,7 @@ hide:
 3. 填写目标集群的 KubeConfig，点击 __验证 Config__ ，验证通过后才能成功接入集群。
 
     > 如果不知道如何获取集群的 KubeConfig 文件，可以在输入框右上角点击 __如何获取 kubeConfig__ 查看对应步骤。
+
     ![接入集群](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/join003.png)
 
 4. 确认所有参数填写正确，在页面右下角点击 __确定__ 。
@@ -39,3 +40,8 @@ hide:
 
     - 新接入的集群状态为 __接入中__ ，接入成功后变为 __运行中__ 。
     - 如果集群状态一直处于 __接入中__ ，请确认接入脚本是否在对应集群上执行成功。有关集群状态的更多详情，请参考[集群状态](cluster-status.md)。
+
+## 参考文档
+
+- [为工作集群添加异构节点](../../best-practice/multi-arch.md)
+- [DCE 4.0 -> DCE 5.0 有限场景迁移](../../best-practice/dce4-5-migration.md)

@@ -8,7 +8,7 @@
 以下是一个 ClusterConfig 文件示例。
 
 ```yaml title="clusterConfig.yaml"
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
 spec:
@@ -33,7 +33,7 @@ spec:
     # NodePort(default), metallb, cloudLB (Cloud Controller 暂不支持)
     type: metallb
     istioGatewayVip: xx.xx.xx.xx/32 # 当 loadBalancer.type 是 metallb 时必填，为 DCE 提供 UI 和 OpenAPI 访问权限
-    insightVip: xx.xx.xx.xx/32 # 别丢弃 /32，当 loadBalancer.type 是 metallb 时必填，用作 global 集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
+    insightVip: xx.xx.xx.xx/32 # 别丢弃 /32，当 loadBalancer.type 是 metallb 时必填，用作全局服务集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
     SourceIP: auto # 默认值auto表示开启审计日志获取源IP功能，设置为false则关闭审计日志获取源IP功能
  
   # 指定 ssh 私钥，定义后无需再定义节点的 ansibleUser、ansiblePass
@@ -103,6 +103,8 @@ spec:
     type: builtin
     isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
     osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
+    
+    # skipValidateOSPackage: false # 跳过 ospackage 验证
 
     # type: external
     # Set the block below only if target is S3-compatible storage which need to upload files automatically(e.g. minio).
@@ -183,8 +185,7 @@ spec:
   #  elasticsearch:
   #    insight:
   #      endpoint: "https://xx.xx.xx.xx:9200"
-  #      # login with basic auth or bearer auth
-  #      #anonymous: false
+  #      insecure: false
   #      # basic auth
   #      username: "username"
   #      password: "password"
@@ -256,7 +257,6 @@ spec:
   #  #mode: onetime
   #  # valid days can be set when in `onetime` mode, default valid days is 3650.
   #  #oneTimeValidDays: 3650  
-
 ```
 
 ## 关键字段
@@ -264,8 +264,8 @@ spec:
 该 YAML 文件中的关键字段说明，请参阅下表。
 
 | 字段 | 说明 | 默认值 |
-| :---- | :----- | :----- |
-| clusterName | 在 KuBean Cluster 里的 Global 集群命名 | - |
+| :--- | :-- | :---- |
+| clusterName | 在 KuBean Cluster 里的全局服务集群命名 | - |
 | tinderKind | 火种 kind 集群配置 | - |
 | tinderKind.instanceName | 火种 kind 集群的容器名称 | - |
 | tinderKind.resourcesMountPath | kind 集群挂载的主机路径 | /home/kind |
@@ -273,17 +273,17 @@ spec:
 | tinderKind.minioServerPort | kind 集群中 MinIO Server 的端口 | 9000 |
 | tinderKind.minioConsolePort | kind 集群中 MinIO Console 的端口 | 9001 |
 | tinderKind.chartmuseumPort | kind 集群中 ChartMuseum 的端口 | 8081 |
-| masterNodes | Global 集群：Master 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | - |
+| masterNodes |全局服务集群：Master 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | - |
 | masterNodes.nodeName | 节点名称，将覆盖 hostName | - |
 | masterNodes.ip | 节点 IP | - |
 | masterNodes.ansibleUser | 节点账号 | - |
 | masterNodes.ansiblePass | 节点密码 | - |
 | masterNodes.ansibleSSHPort | ssh 的端口，默认为22 | 22 |
 | masterNodes.ansibleExtraArgs | 指定 ansible 主机清单参数 | - |
-| workerNodes | Global 集群：Worker 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | - |
+| workerNodes |全局服务集群：Worker 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | - |
 | privateKeyPath | kuBean 部署集群的 SSH 私钥文件路径，如果填写则不需要定义 ansibleUser、ansiblePass | - |
 | k8sVersion | kuBean 安装集群的 K8s 版本必须跟 KuBean 和离线包相匹配 | - |
-| loadBalancer.insightVip | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP | - |
+| loadBalancer.insightVip | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给全局服务集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP | - |
 | loadBalancer.istioGatewayVip | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口 | - |
 | loadBalancer.type | 所使用的 LoadBalancer 的模式，物理环境用 metallb，POC 用 NodePort，公有云和 SDN CNI 环境用 cloudLB（暂时还未未支持 cloudLB 模式） | NodePort (default)、metallb、cloudLB (Cloud Controller) |
 | loadBalancer.SourceIP | 审计日志获取源IP，副作用：在节点层面无法进行负载均衡 | auto |
@@ -313,7 +313,7 @@ spec:
 | osRepos.osPackagePath | 系统包文件的路径 ，type 为 builtin 时不能为空 | - |
 | osRepos.type | 操作系统软件源的访问模式，取值为 official-service(在线), builtin(火种节点内置的minio) | official-service |
 | kubeanConfig.ntp_timezone | 设置节点的时区，如果不配置该参数，默认按照节点中的时区 | - |
-| kubeanConfig.node_sysctl_tuning | 开启后默认调整 Global 集群的 Systemctl 内核参数 | false |
+| kubeanConfig.node_sysctl_tuning | 开启后默认调整全局服务集群的 Systemctl 内核参数 | false |
 | kubeanConfig.extra_sysctl | 设置额外的 Systemctl 内核参数 | /usr/local/bin |
 | externalMiddlewares | 外置中间件 | - |
 | externalMiddlewares.database | 外置数据库 | - |
@@ -349,7 +349,7 @@ spec:
 builtin 模式意味着所需的第三方软件（如 chartMusem 、Minio、Docker registry）将由安装器进行部署并提供 DCE 5.0 平台使用。
 
 ```yaml
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
   creationTimestamp: null
@@ -387,7 +387,7 @@ spec:
 external 模式意味着所需的第三方软件（如 chartMusem 、Minio、Docker registry 等等）无需安装器安装，由使用者提供地址供 DCE 5.0 平台使用。
 
 ```yaml
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
   creationTimestamp: null
@@ -437,7 +437,7 @@ spec:
 official-service 模式，当使用者采用在线安装 DCE 5.0 时，DCE 5.0 平台使用的资源将从 DaoCloud 的官方仓库进行获取。
 
 ```yaml
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
   creationTimestamp: null
@@ -517,6 +517,7 @@ spec:
 ``` bash
 # 官方在线
 ./dce5-installer generate-config --install-mode=install-app --access-type=official-service
+
 # 官方在线简化版
 ./dce5-installer generate-config --install-mode=install-app
 

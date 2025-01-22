@@ -5,9 +5,9 @@ hide:
   - toc
 ---
 
-# Intelligent Engine Permissions
+# AI Lab Permissions
 
-[Intelligent Engine](../../baize/intro/index.md) supports four user roles:
+[AI Lab](../../baize/intro/index.md) supports four user roles:
 
 - Admin / Baize Owner: Has full permissions (create, read, update, delete) for all features in the `Developer` and `Operator`.
 - Workspace Admin: Has full permissions (create, read, update, delete) for all features in the authorized workspace's `Developer`.

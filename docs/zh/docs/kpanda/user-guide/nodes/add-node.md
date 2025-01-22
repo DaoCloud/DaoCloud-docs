@@ -7,7 +7,7 @@ hide:
 
 随着业务应用不断增长，集群资源日趋紧张，这时可以基于 kubean 对集群节点进行扩容。扩容后，应用可以运行在新增的节点上，缓解资源压力。
 
-只有通过容器管理模块[创建的集群](../clusters/create-cluster.md)才支持节点扩缩容，从外部接入的集群不支持此操作。本文主要介绍同种架构下工作集群的 **工作节点** 扩容，如需为集群增加控制节点或异构工作节点，请参阅：[对工作集群的控制节点扩容](../../best-practice/add-master-node.md)、[为工作集群添加异构节点](../../best-practice/multi-arch.md)、[为全局服务集群的工作节点扩容](../../best-practice/add-worker-node-on-global.md)。
+只有通过容器管理模块[创建的集群](../clusters/create-cluster.md)才支持节点扩缩容，从外部接入的集群不支持此操作。本文主要介绍同种架构下工作集群的 **工作节点** 扩容。
 
 1. 在 __集群列表__ 页面点击目标集群的名称。
 
@@ -28,3 +28,10 @@ hide:
 !!! note
 
     接入节点大约需要 20 分钟，请您耐心等待。
+
+## 参考文档
+
+- [对工作集群的控制节点扩容](../../best-practice/add-master-node.md)
+- [为工作集群添加异构节点](../../best-practice/multi-arch.md)
+- [为全局服务集群的工作节点扩容](../../best-practice/add-worker-node-on-global.md)
+- [替换工作集群的首个控制节点](../../best-practice/replace-first-master-node.md)

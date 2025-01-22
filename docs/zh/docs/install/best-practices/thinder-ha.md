@@ -12,7 +12,7 @@
 
 - 火种节点：操作系统 centos7.9 ，IP `xxx.xx.xx.193`
 - global单集群： 操作系统 centos7.9，IP `xxx.xx.xx.194`，CRI containerd
-- 备用火种节点： 操作系统 centos7.9，IP `xxx.xx.xx.194`，备用火种节点可以与 global 集群的 master 节点在一起。
+- 备用火种节点： 操作系统 centos7.9，IP `xxx.xx.xx.194`，备用火种节点可以与全局服务集群的 master 节点在一起。
 - dnsServer：IP `xxx.xx.xx.192`
 - 域名： <www.tinder-node-server.com> （初始解析到火种节点 `xxx.xx.xx.193`）
 
@@ -111,7 +111,7 @@
 1. 定义好的 clusterConfig 文件参考：
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
       creationTimestamp: null
@@ -176,7 +176,7 @@
 1. 定义好的 clusterConfig 文件参考：使用 IP 模式（bootstrapNode 为 auto 或者为火种节点的具体 IP 地址）启动火种节点安装
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
       creationTimestamp: null

@@ -2,7 +2,7 @@
 
 本文介绍如何在应用工作台中客户的流水线任务在指定的节点上运行。
 
-## 修改配置文件 jenkins-casc-config
+## 修改配置文件 global-jenkins-casc-config
 
 1. 前往 __容器管理__ 模块，进入目标集群的详情页面，例如 __kpanda-global-cluster__ 集群。
 
@@ -12,7 +12,7 @@
 
     ![配置项](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node02.png)
 
-3. 搜索 __jenkins-casc-config__ ，在列表选择 __编辑 YAML__ 。
+3. 命名空间选择 __amamba-system__ ，通过名称 __global-jenkins-casc-config__ 进行搜索，在操作列点击 __编辑 YAML__ 。
 
     ![编辑 YAML](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node03.png)
 

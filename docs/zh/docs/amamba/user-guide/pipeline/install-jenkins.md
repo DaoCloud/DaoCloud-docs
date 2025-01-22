@@ -45,7 +45,7 @@
     | resources.requests                   | Jenkins 的资源请求值                                         |
     | resources.limits                     | Jenkins 的资源限制值                                         |
     | image.registry                       | Jenkins 镜像仓库地址                                                 |
-    | eventProxy.enabled                   | EventProxy 是一个旨在为 Jenkins 到 Amamba APIServer 提供可靠连接的边车容器，当 Jenkins 部署的集群和 Global 集群不在同一个区域的时候，最好开启。 |
+    | eventProxy.enabled                   | EventProxy 是一个旨在为 Jenkins 到 Amamba APIServer 提供可靠连接的边车容器，当 Jenkins 部署的集群和全局服务集群不在同一个区域的时候，最好开启。 |
     | eventProxy.image.registry            | eventProxy 镜像仓库的地址。<br />如果 enabled=true 必须填写                                   |
     | eventProxy.configMap.eventProxy.host  | Jenkins 事件的接收地址的Host，Jenkins 如果部署在 Worker 集群，需要设置成 DCE 的入口地址。<br />如果 enabled=true 必须填写。                                   |
     | eventProxy.configMap.eventProxy.proto | Jenkins 事件的接收地址的 Protocol，默认是 http。<br />如果 enabled=true 必须填写                                   |
@@ -62,20 +62,18 @@
 
 1. 使用具有应用工作台管理员角色的用户登录 DCE 5.0 并进入应用工作台。
 
-    ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins16.png)
+    ![完成创建](../../images/jenkins3.jpg)
 
 2. 在左侧导航栏点击平台管理下的 __工具链集成__ ，点击右上角的 __集成__ 按钮。
 
-    ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins17.png)
+    ![完成创建](../../images/jenkins2.jpg)
 
 3. 选择工具链类型 __Jenkins__ ，填写集成名称、Jenkins 地址、用户名和密码。
    如果 Jenkins 地址为 https 协议时，需要提供证书。通过 Helm 部署出来的 Jenkins 默认账户密码为 __admin/Admin01__ 。
 
-    ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins18.png)
+    ![完成创建](../../images/jenkins.jpg)
 
 4. 集成完毕后会在 __工具链列表__ 页面成功生成一条记录。
-
-    ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins19.png)
 
 5. 接下来就可以前往工作空间内[创建流水线](create/custom.md)。
 

@@ -1,4 +1,9 @@
-# scenes to be used
+---
+MTPE: windsonsea
+Date: 2024-10-15
+---
+
+# Use cases for Kafka
 
 Compared with [RabbitMQ](../../rabbitmq/intro/index.md), Kafka message queue is suitable for Cases such as building real-time data pipelines, streaming data processing, third-party decoupling, and traffic peak shaving and valley removal. It has the characteristics of large-scale, high reliability, high concurrent access, scalability, and full hosting.
 
@@ -7,7 +12,7 @@ Compared with [RabbitMQ](../../rabbitmq/intro/index.md), Kafka message queue is 
 As the saying goes, there is no best technology, only the most suitable technology. Each messaging middleware service has its own advantages and disadvantages. Here is a simple comparison between RabbitMQ and Kafka.
 
 | | Kafka | RabbitMQ |
-| ---------- | -------------------------------------- ---------------------- | --------------------------- ------------------------------------ |
+| -- | ---- | ------ |
 | Performance | Single-node QPS reaches one million, high throughput | Single-node QPS is ten thousand, low throughput |
 | Reliability | Multi-copy mechanism, high data reliability | Multi-copy mechanism, high data reliability |
 | Function | Persistence<br />Transaction Message<br />Sequence at Single Partition Level| Persistence<br />Priority Queue<br />Delay Queue<br />Dead Letter Queue<br />Transaction Message |

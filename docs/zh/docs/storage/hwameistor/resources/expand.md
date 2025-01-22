@@ -4,9 +4,9 @@ HwameiStor 支持 `CSI 卷扩容` 。这个功能实现了通过修改 `PVC` 的
 
 ## 手动扩容数据卷
 
-1. 进入对应集群，选择 **存储** -> **Hwameistor**
+1. 进入对应集群，选择 **容器存储** -> **HwameiStor**
 
-2. 点击 **本地卷** ，在本地卷列表界面，选择一条本地卷进行`扩容`操作
+2. 点击 **本地卷** ，在本地卷列表中，点击一个本地卷右侧的 **┇**， 选择 **扩容**
 
     ![expand01](../../images/expand01.png)
 
@@ -73,7 +73,7 @@ spec:
 
 - `pvcSelector` 表示被这个 selector 选中的 PVC 会依照选中它的 policy 自动扩容。
 - `namespaceSelector` 表示被这个 selector 选中的 namespace 下的 PVC 会依照这个 policy 自动扩容。
-- `storageClassSelector` 表示从被这个 selector 选中的 storageclass 创建出来的 PVC 会依照这个 policy 自动扩容。
+- `storageClassSelector` 表示从被这个 selector 选中的 StorageClass 创建出来的 PVC 会依照这个 policy 自动扩容。
 
 这三个 selector 之间是“且”的关系，如果你在一个 `ResizePolicy` 里指明了多个 selector，
 那么要符合全部的 selector 的 PVC 才会匹配这个 policy。如果 `ResizePolicy` 中没有指明任何 selector，

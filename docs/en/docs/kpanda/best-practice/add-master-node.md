@@ -144,8 +144,7 @@ metadata:
   name: cluster1-online-install-ops
 spec:
   cluster: ${cluster-name} # Specify cluster name
-  image: ghcr.m.daocloud.io/kubean-io/spray-job:v0.4.6 # Specify the image for the kubean job
-  backoffLimit: 0
+  image: ghcr.m.daocloud.io/kubean-io/spray-job:v0.18.0 # Specify the image for the kubean job
   actionType: playbook
   action: cluster.yml
   extraArgs: --limit=etcd,kube_control_plane -e ignore_assert_errors=yes
@@ -186,8 +185,8 @@ Create and deploy scale-master-node-ops.yaml based on the above configuration.
 
 ```bash
 # Copy the above manifest
-vi cale-master-node-ops.yaml
-kubectl apply -f cale-master-node-ops.yaml -n kubean-system
+vi scale-master-node-ops.yaml
+kubectl apply -f scale-master-node-ops.yaml -n kubean-system
 ```
 
 Perform the following command to verify it.

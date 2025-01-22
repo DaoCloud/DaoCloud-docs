@@ -165,7 +165,7 @@ For scenarios where the driver cannot be installed through Kubernetes, such as u
 
 - When installing the OFED driver, some dependencies may be installed online through `apt install`. If you are in an offline environment and cannot access the external network, you can refer to this step to obtain all the required dependencies.
 
-    | OS Version | Architecture | File Size | Package | Update Date |
+    | OS Version | Architecture | Size | Package | Date |
     |----------|--------------|-----------|---------|----------|
     | Ubuntu 22.04 | AMD 64 | 165.25 MB | [:arrow_down: ubuntu22.04-ofed-driver-offline-deb.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ubuntu22.04-ofed-driver-offline-deb.tar.gz) | 2024-07-29 |
 

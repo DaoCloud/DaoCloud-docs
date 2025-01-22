@@ -1,6 +1,6 @@
 # Create HPA
 
-DaoCloud Enterprise 5.0 supports elastic scaling of Pod resources based on metrics (Horizontal Pod Autoscaling, HPA).
+DaoCloud Enterprise 5.0 supports scaling of Pod resources based on metrics (Horizontal Pod Autoscaling, HPA).
 Users can dynamically adjust the number of copies of Pod resources by setting CPU utilization, memory usage, and custom metrics.
 For example, after setting an auto scaling policy based on the CPU utilization metric for the workload,
 when the CPU utilization of the Pod exceeds/belows the metric threshold you set, the workload controller
@@ -12,11 +12,11 @@ This page describes how to configure auto scaling based on built-in metrics and 
 
      1. HPA is only applicable to Deployment and StatefulSet, and only one HPA can be created per workload.
      2. If you create an HPA policy based on CPU utilization, you must set the configuration limit (Limit) for the workload in advance, otherwise the CPU utilization cannot be calculated.
-     3. If built-in metrics and multiple custom metrics are used at the same time, HPA will calculate the number of scaling copies required based on multiple metrics, and take the larger value (but not exceed the maximum number of copies configured when setting the HPA policy) for elastic scaling .
+     3. If built-in metrics and multiple custom metrics are used at the same time, HPA will calculate the number of scaling copies required based on multiple metrics, and take the larger value (but not exceed the maximum number of copies configured when setting the HPA policy) for scaling .
 
-## Built-in metric elastic scaling policy
+## Built-in metric scaling policy
 
-The system has two built-in elastic scaling metrics of CPU and memory to meet users' basic business cases.
+The system has two built-in scaling metrics of CPU and memory to meet users' basic business cases.
 
 ### Prerequisites
 
@@ -56,13 +56,15 @@ Refer to the following steps to configure the built-in index auto scaling policy
 
 5. Create custom metric auto scaling policy parameters.
 
-     
 
-     - Policy name: Enter the name of the auto scaling policy. Please note that the name can contain up to 63 characters, and can only contain lowercase letters, numbers, and separators ("-"), and must start and end with lowercase letters or numbers, such as hpa- my-dep.
-     - Namespace: The namespace where the payload resides.
-     - Workload: The workload object that performs auto scaling.
-     - Target CPU Utilization: The CPU usage of the Pod under the workload resource. The calculation method is: the request (request) value of all Pod resources/workloads under the workload. When the actual CPU usage is greater/lower than the target value, the system automatically reduces/increases the number of Pod replicas.
-     - Target Memory Usage: The memory usage of the Pod under the workload resource. When the actual memory usage is greater/lower than the target value, the system automatically reduces/increases the number of Pod replicas.
-     - Replica range: the elastic scaling range of the number of Pod replicas. The default interval is 1 - 10.
+    - Policy Name: Enter the name of the scaling policy. Please note that the name can be up to 63 characters long and can only contain lowercase letters, numbers, and separators ("-"). It must also start and end with a lowercase letter or number, for example, hpa-my-dep.
+    - Namespace: The namespace where the load is located.
+    - Workload: The workload object that executes scaling.
+    - Replica Range: Set the minimum number of container group replicas allowed, with a default value of 1. Set the maximum number of container group replicas allowed, with a default value of 10.
+    - Stabilization Time Window: The stabilization window time for scaling up and down must be greater than or equal to 0 and less than or equal to 3600, with a range of [0, 3600] seconds.
+    - System Metrics:
+        - CPU Utilization: The CPU usage of the Pods under the workload resources. The calculation method is: total resources of all Pods under the workload / request value of the workload. When the actual CPU usage is greater than/less than the target value, the system automatically decreases/increases the number of Pod replicas.
+        - Memory Usage: The memory usage of the Pods under the workload resources. When the actual memory usage is greater than/less than the target value, the system automatically decreases/increases the number of Pod replicas.
+    - Custom Metrics: Refer to [Creating HPA Based on Custom Metrics](./custom-hpa.md).
 
-6. After completing the parameter configuration, click the __OK__ button to automatically return to the elastic scaling details page. Click __┇__ on the right side of the list to edit, delete, and view related events.
+6. After completing the parameter configuration, click the __OK__ button to automatically return to the scaling details page. Click __┇__ on the right side of the list to edit, delete, and view related events.

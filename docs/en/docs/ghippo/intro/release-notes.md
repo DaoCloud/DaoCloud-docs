@@ -3,41 +3,107 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-11-30
+
+### v0.33.0
+
+- **Upgraded** Istio to 1.22.3
+- **Added** virtual machine module license
+- **Added** metering and billing support for Muxi GPU in Operational Management
+- **Fixed** issue with resource name display anomaly for Create-User in audit logs
+
+## 2024-10-31
+
+### v0.32.0
+
+- **Added** Sidecar version role permission SDK
+- **Added** cloud-native AI related permission points in Workspace Editor
+- **Added** encryption implementation for username and password in session-limit interface
+- **Fixed** issue where the corresponding field was not cleared after re-setting
+  user LDAP filter to empty during synchronization
+
+## 2024-9-30
+
+### v0.31.0
+
+- **Added** support for username encryption when creating users
+- **Added** custom roles that support Container Management folders and workspace roles, and allow their permission points to be mapped to predefined roles in Container Management
+- **Fixed** an error related to excessively long license expiration periods.
+- **Fixed** an error encountered when a resource is unbound from a workspace.
+- **Fixed** an issue where the query methods for reports of the same type are inconsistent in __Global Management__ -> __Operations Management__ .
+
+## 2024-8-31
+
+### v0.30.0
+
+- **Added** configuration and display of system information
+- **Added** the SDK RegisterDeltaResourcePermissionHandler method
+- **Added** tenant perspective and related permissions in __Global Management__ -> __Operations Management__
+- **Improved** the scanning for hardcoded certificates using trivy and gosec
+- **Improved** the development guide in __Global Management__ -> __Operations Management__
+- **Fixed** an issue where the report would not display proper namespace information if there are no pods in the namespace under __Global Management__ -> __Operations Management__
+
+## 2024-07-31
+
+### v0.29.0
+
+#### Features
+
+- **Added** LDAP server to support LDAPS
+- **Added** installer versions to __Global Management__ -> __Settings__ -> __About__
+
+#### Improvements
+
+- **Improved** login and password change functions to support username and password encryption
+- **Improved** prompt text about binding resources on __Global Management__ -> __Workspace and Folder__ -> __Resource Group__
+
+#### Fixes
+
+- **Fixed** SMTP server settings
+- **Fixed** an issue where installation fails when OEM is configured `enable`
+- **Fixed** the inconsistency issue of English column names in exported reports in __Operations Management__
+
+## 2024-06-30
+
+### v0.28.0
+
+#### Features
+
+- **Added** OAuth2 Identity Provider generic plugin
+- **Added** username and userLdapFilter fields to LDAP configuration
+- **Added** installation insight-angent prompt in __Global Management__ -> __Operations Management__ -> __Billing Config__
+
+#### Improvements
+
+- **Improved** user creation to automatically remove spaces around the username text (if any) before saving
+- **Improved** the search mechanism of binding resources
+- **Improved** a SDK method `ListWorkspaceUsersByPermission()`
+
+#### Fixes
+
+- **Fixed** an issue that authorized users with a custom role can see all workspaces
+- **Fixed** an issue that the RBAC Access Denied page will appear on the Insight page after closing the browser and reopening it
+- **Fixed** an issue that the exported report has inconsistent fields with those shown on the page in __Global Management__ -> __Operations Management__
+
 ## 2024-5-31
 
 ### v0.27.0
-
-### Features
 
 - **Added** an option in Settings to show/hide the background video on the login page
 - **Added** features to view/add/update/delete SSH certificate information in Personal Center
 - **Added** features of creating user and changing password:
   encryption for username and password parameters when passed to API
 - **Added** MySQL MGR mode
-
-### Optimization
-
-- **Optimized** Keycloak component to version 22.0.4
-
-### Fixes
-
+- **Improved** Keycloak component to version 22.0.4
 - **Fixed** an issue with GPU count statistics after licensing by GPU
 
 ## 2024-4-30
 
 ### v0.26.0
 
-### Features
-
 - **Added** support for license by GPU
 - **Added** a summary link in Audit Logs
-
-### Optimization
-
-- **Optimized** unit tests for the Audit Logs SDK
-
-### Fixes
-
+- **Improved** unit tests for the Audit Logs SDK
 - **Fixed** an issue with the user-agent field in Audit Logs
 - **Fixed** an issue where Audit Logs login records often show one failure followed by one success
 - **Fixed** an issue in __Operations Management__ where validation prompts were not removed
@@ -48,15 +114,13 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.25.1
 
-### Fixes
-
 - **Fixed** an issue with resource quota check while workspace resource group is binding to a namespace
 
 ## 2024-3-31
 
 ### v0.25.0
 
-### Features
+#### Features
 
 - **Added** a feature where top-level navigation bar is displayed based on permissions
 - **Added** a feature where Workspace/Folder Editor does not support changing Workspace/Folder and names
@@ -65,7 +129,7 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** __Operations Management__ -> Report Management -> Pod Report: GPU statistics
 - **Added** __Operations Management__ -> Accounting and Billing -> Pod Billing: GPU billing
 
-### Fixes
+#### Fixes
 
 - **Fixed** an issue with front-end CSS errors on global management login
 - **Fixed** an issue where the Refresh Token API in the observability interface could not update the Token
@@ -74,40 +138,24 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.24.0
 
-#### Features
-
 - **Added** resource quotas limiting GPU
 - **Added** support for DCE5 logged-in users to access Insight's Grafana and other components
-
-#### Optimization
-
-- **Optimized** rate limiting with single flight mechanism when triggering FoldersAuthz CR
-- **Optimized** to filter out duplicate authorizations
-- **Optimized** the condition where Workspace authorization information is not stored in FoldersAuthz CR
-- **Optimized** a full update of FoldersAuthz CR upon ghippo-controller-manager restart
-
-#### Fixes
-
+- **Improved** rate limiting with single flight mechanism when triggering FoldersAuthz CR
+- **Improved** to filter out duplicate authorizations
+- **Improved** the condition where Workspace authorization information is not stored in FoldersAuthz CR
+- **Improved** a full update of FoldersAuthz CR upon ghippo-controller-manager restart
 - **Fixed** an issue where a large number of authorization requests caused FoldersAuthz CR updates to overwhelm k8s
 
 ## 2023-12-29
 
 ### v0.23.0
 
-#### Features
-
 - **Added** a feature to automatically log out from the identity provider page when logging out of DCE 5.0
 - **Added** support for usernames with underscores and other special characters
 - **Added** removal of the restriction on authorizing usernames with special characters
 - **Added** a user isolation mode between Folders
 - **Added** support for authorizing multiple roles to Folder/Workspace users
-
-#### Optimization
-
-- **Optimized** initial username and password (admin/changeme) to be stored in Secret instead of ConfigMap
-
-#### Fixes
-
+- **Improved** initial username and password (admin/changeme) to be stored in Secret instead of ConfigMap
 - **Fixed** an issue with the redirection of offline environment documentation site
 - **Fixed** an issue with installer version 0.13 upgrade failure
 - **Fixed** an issue with workspace large-scale test performance
@@ -115,8 +163,6 @@ so that you can understand the evolution path and feature changes of each versio
 ## 2023-12-05
 
 ### v0.22.1
-
-#### Fixes
 
 - **Fixed** an issue with incomplete display of middleware in the navigation bar
 
@@ -130,14 +176,8 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** SDK support for usernames with underscores
 - **Added** support for DCE 4.0 to DCE 5.0 migration validation
 - **Added** __Operations Management__ precise search in list
-
-#### Optimization
-
-- **Optimized** Chinese language support to the __About__ - __Product Versions__ submodule
+- **Improved** Chinese language support to the __About__ - __Product Versions__ submodule
   for kcoral, dowl, kcollie, and virtnest
-
-#### Fixes
-
 - **Fixed** an issue where LDAP users synchronized over could not be added to user groups
 - **Fixed** an issue in Operations Management where workspace reports were not fully displayed
 
@@ -154,11 +194,11 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** backend customization of the top-level navigation bar
 - **Added** support for redirecting to the English documentation site in non-Chinese languages
 
-#### Optimization
+#### Improvements
 
-- **Optimized** an issue with random 400 errors in the interface
-- **Optimized** Operations Management display of empty data in reports
-- **Optimized** Operations Management function to jump from the cluster billing list to the node billing list by 
+- **Improved** an issue with random 400 errors in the interface
+- **Improved** Operations Management display of empty data in reports
+- **Improved** Operations Management function to jump from the cluster billing list to the node billing list by 
   node count
 
 #### Fixes
@@ -170,30 +210,21 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.20.1
 
-#### Fixes
-
 - **Fixed** an issue with random 400 errors in the interface
 
 ## 2023-08-30
 
 ### v0.20.0
 
-#### Features
-
 - **Added** connection with Enterprise WeChat
 - **Added** support for 8-32 character passwords
 - **Added** support for integrating Kant license for cloud-edge collaboration
 - **Added** Operations Management support for postgres/kingbase databases
-
-#### Optimization
-
-- **Optimized** added primary keys to some database tables without primary keys
+- **Improved** added primary keys to some database tables without primary keys
 
 ## 2023-07-28
 
 ### v0.19.0
-
-#### Features
 
 - **Added** support for integrating project group IDP login without clicking
 - **Added** resource group binding to mesh / mesh-namespace
@@ -201,21 +232,13 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** Settings -> Security Policies -> limiting multiple concurrent sessions for a single user
 - **Added** Settings -> Security Policies -> limiting the maximum number of concurrent session connections
   for the system
-
-#### Optimization
-
-- **Optimized** support for customized parameters in Webhook URL
-
-#### Fixes
-
+- **Improved** support for customized parameters in Webhook URL
 - **Fixed** an issue with errors when filling in the mail server
 - **Fixed** an issue where LDAP users could not join user groups
 
 ## 2023-07-06
 
 ### v0.18.1
-
-#### Fixes
 
 - **Fixed** an issue where workspace cluster names could be empty
 - **Fixed** an issue with Folder Admin role permissions in the workspace authorization list
@@ -240,39 +263,18 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** more types of currencies which are supported by reports in Operations Management
 - **Added** istio-ingressgateway and istiod supporting high availability
 
-#### Optimization
+#### Improvements
 
-- **Optimized** backend configuration of passwords stored in secret
+- **Improved** backend configuration of passwords stored in secret
 
 #### Fixes
 
 - **Fixed** an issue with Audit Logs time zones
 - **Fixed** an issue with role list not displaying during workspace authorization
 
-### Features
-
-- **Added** a feature of moving workspace
-- **Added** License expiration reminder
-- **Added** License function unavailable after expiration
-- **Added** Webhook record backend cleanup functionality
-- **Added** a setting where users must enter the old password when changing passwords
-- **Added** support for external kingbase database
-- **Added** more types of currencies which are supported by reports in Operations Management
-- **Added** istio-ingressgateway and istiod supporting high availability
-
-### Optimization
-
-- **Optimized** passwords of backend configuration to store in secret
-
-### Fixes
-
-- **Fixed** an issue with Audit Logs time zones
-
 ## 2023-06-02
 
 ### v0.17.1
-
-#### Fixes
 
 - **Fixed** an issue where migration files caused migration failures
 - **Fixed** an issue where only Workspace Admin could be selected when creating a workspace
@@ -305,10 +307,10 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** support for pod group billing reports in Operations Management
 - **Added** support for Namespace billing reports in Operations Management
 
-#### Optimization
+#### Improvements
 
-- **Optimized** default sorting of the role list
-- **Optimized** Workspace Editor permission
+- **Improved** default sorting of the role list
+- **Improved** Workspace Editor permission
 
 #### Fixes
 
@@ -317,8 +319,6 @@ so that you can understand the evolution path and feature changes of each versio
 ## 2023-04-28
 
 ### v0.16.1
-
-#### Fixes
 
 - **Fixed** an issue where an infinite loop caused excessive CPU usage
 - **Fixed** an issue where audit logs export was incomplete
@@ -340,10 +340,10 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** separate storage for user and system audit logs, with separate API access
 - **Added** removal of API Server's dependency on accessing the external network
 
-#### Optimization
+#### Improvements
 
-- **Optimized** filtering out non-existent permissions when creating customized roles
-- **Optimized** Audit Logs database partitioning functionality
+- **Improved** filtering out non-existent permissions when creating customized roles
+- **Improved** Audit Logs database partitioning functionality
 
 #### Fixes
 
@@ -379,9 +379,9 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** an option in Helm values to enable/disable audit-related functionality with one click
 - **Added** support for recording kpanda page operations in Audit Logs
 
-#### Optimization
+#### Improvements
 
-- **Optimized** OpenAPI call method
+- **Improved** OpenAPI call method
 
 #### Fixes
 
@@ -392,8 +392,6 @@ so that you can understand the evolution path and feature changes of each versio
 ## 2022-12-30
 
 ### v0.13.2
-
-#### Fixes
 
 - **Fixed** the missing English explanations for interface permission descriptions
 - **Fixed** an issue where database table updates might fail due to database encoding
@@ -415,10 +413,10 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** support for sending test emails and using mail servers without account credentials
 - **Added** prompts for usernames that do not meet system requirements
 
-#### Optimization
+#### Improvements
 
-- **Optimized** Ghippo authentication code to reduce memory usage
-- **Optimized** preloading mechanism of the frontend interface under low network conditions
+- **Improved** Ghippo authentication code to reduce memory usage
+- **Improved** preloading mechanism of the frontend interface under low network conditions
 
 #### Fixes
 
@@ -428,10 +426,8 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.12.1
 
-#### Optimization
-
-- **Optimized** automatic construction of pure offline packages through CI
-- **Optimized** Ghippo upgrade documentation
+- **Improved** automatic construction of pure offline packages through CI
+- **Improved** Ghippo upgrade documentation
 
 ## 2022-11-28
 
@@ -445,13 +441,13 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** Keycloak changed to Quarkus architecture
 - **Added** Keycloak image upgraded to version 20.0.1
 
-#### Optimization
+#### Improvements
 
-- **Optimized** refactored the export audit logs http interface to a grpc stream interface
-- **Optimized** SDK memory usage, peak reduced by 50%
-- **Optimized** some audit logs code
-- **Optimized** e2e kind image switched to 1.25
-- **Optimized** resource usage efficiency increased to over 40%
+- **Improved** refactored the export audit logs http interface to a grpc stream interface
+- **Improved** SDK memory usage, peak reduced by 50%
+- **Improved** some audit logs code
+- **Improved** e2e kind image switched to 1.25
+- **Improved** resource usage efficiency increased to over 40%
 
 #### Fixes
 
@@ -462,8 +458,6 @@ so that you can understand the evolution path and feature changes of each versio
 ## 2022-11-01
 
 ### v0.11.2
-
-#### Fixes
 
 - **Fixed** an issue with resource group binding to clusters
 - **Fixed** an issue where workspaces could not be created when there were no workspaces
@@ -484,11 +478,11 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** a bound identifier to the resource group list
 - **Added** resource binding interface support for Registry resource types
 
-#### Optimization
+#### Improvements
 
-- **Optimized** resource types changed to enumeration
-- **Optimized** whether GProduct licenses need to be injected with variables is now configurable
-- **Optimized** CICD process
+- **Improved** resource types changed to enumeration
+- **Improved** whether GProduct licenses need to be injected with variables is now configurable
+- **Improved** CICD process
 
 #### Fixes
 
@@ -556,11 +550,11 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** About -> software version -> module supports Chinese names
 - **Added** overall bilingual documentation site structure and main content
 
-#### Optimization
+#### Improvements
 
-- **Optimized** authorization and authentication -> provide a JOB to ensure synchronization of database and custom resources
-- **Optimized** LDAP -> configuration error checks
-- **Optimized** feedback and error messages for operations in various functions support both Chinese and English
-- **Optimized** workspace and folder -> check for existing sub-resources before deletion
-- **Optimized** keycloak jvm parameters
-- **Optimized** simplified mock using the mockery framework
+- **Improved** authorization and authentication -> provide a JOB to ensure synchronization of database and custom resources
+- **Improved** LDAP -> configuration error checks
+- **Improved** feedback and error messages for operations in various functions support both Chinese and English
+- **Improved** workspace and folder -> check for existing sub-resources before deletion
+- **Improved** keycloak jvm parameters
+- **Improved** simplified mock using the mockery framework

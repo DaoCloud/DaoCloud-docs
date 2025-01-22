@@ -1,71 +1,173 @@
 ---
 MTPE: windsonsea
-date: 2024-05-21
+date: 2024-10-14
 ---
 
-# Initialize Computing Cluster
+# Deploy AI Lab Components
 
-By default, when installing DCE 5.0 Enterprise, the Intelligent Engine Module can be installed synchronously. Please contact the delivery support team to obtain the Enterprise installation package.
+Starting from version 0.17.0 of the DCE 5.0 installer, the AI Lab module can be installed concurrently
+during the installation of the commercial version, **without the need for separate installation** ;
+please contact the delivery support team to obtain the commercial installation package.
 
-## Install Intelligent Engine
+## Global Service Cluster
 
-Ensure that the Intelligent Engine components have been installed in the global management cluster.
-You can verify this by checking if the Intelligent Engine module is available through the DCE 5.0 UI.
+> AI Lab needs to be installed only in the [Global Service Cluster](../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster).
+
+Go to the Global Service Cluster, then navigate to __Helm Apps__ -> __Helm Charts__ to
+find `baize` and run the installation steps.
+
+!!! note "Important Notes"
+
+    * The namespace is `baize-system`
+    * After replacing the environment address, open `<YOUR_DCE_HOST>/kpanda/clusters/kpanda-global-cluster/helm/charts/addon/baize`
+    * `kpanda-global-cluster` is the name of the Global Service Cluster.
+
+## baize-agent Worker Cluster
+
+!!! warning
+
+    If the cluster cannot be selected in AI Lab or indicates that `baize-agent` is missing,
+    it means that the components for this worker cluster have not been successfully deployed.
+
+In each worker cluster with computing resources, the corresponding basic components need to be deployed.
+The main components include:
+
+* `gpu-operator` initializes the GPU resources in the cluster.
+  **This part may vary depending on the installation method of the GPU resource type**.
+  For details, refer to [GPU Management](../../kpanda/user-guide/gpu/index.md).
+* `insight-agent` is an observability component used to collect infrastructure information
+  from the cluster, including logs, metrics, and events.
+* `baize-agent` contains the core components of AI Lab, including scheduling, monitoring,
+  and computing components like Pytorch and TensorFlow.
+* [Optional] `nfs` storage service for dataset preloading.
+
+!!! danger
+
+    The above components must be installed; otherwise, functionality may not work properly.
+
+### Install baize-agent on UI
+
+> baize-agent needs to be deployed in the worker cluster.
+
+Follow the prompts below to enter the worker cluster, then navigate to
+__Helm Apps__ -> __Helm Charts__ to find `baize-agent` and execute the installation steps.
+
+!!! note "Important Notes"
+
+    * The namespace is `baize-system`
+    * After replacing the environment address, open
+      `<YOUR_DCE_HOST>/kpanda/clusters/<cluster_name>/helm/charts/addon/baize`
+    * `cluster_name` is the name of the corresponding worker cluster.
+
+![Install baize-agent](../images/agent-helm.png)
+
+Here is a YAML Example:
+
+```yaml
+cluster-controller:
+  image:
+    registry: ''
+    repository: baize/baize-cluster-controller
+    tag: v0.4.1
+global:
+  cluster:
+    schedulers: []
+  config:
+    cluster_name: ''
+    dataset_job_spec: {}
+    inference_config:
+      triton_image: m.daocloud.io/nvcr.io/nvidia/tritonserver:24.01-py3
+      triton_images_map:
+        VLLM: m.daocloud.io/nvcr.io/nvidia/tritonserver:24.01-vllm-python-py3
+  debug: false
+  high_available: false
+  imagePullPolicy: IfNotPresent
+  imagePullSecrets: []
+  imageRegistry: release.daocloud.io
+  prod: baize-agent
+  resources: {}
+kubeRbacProxy:
+  image:
+    registry: ''
+    repository: baize/kube-rbac-proxy
+    tag: v0.8.0
+kueue:
+  enablePlainPod: false
+  fullnameOverride: kueue
+  image:
+    registry: ''
+    repository: baize/kueue
+    tag: v0.6.2
+loader:
+  image:
+    registry: ''
+    repository: baize/baize-data-loader
+    tag: v0.4.1
+notebook:
+  image:
+    registry: ''
+    repository: baize/baize-notebook
+    tag: v0.4.1
+notebook-controller:
+  image:
+    registry: ''
+    repository: baize/notebook-controller
+    tag: v1.8.0
+priority:
+  high:
+    value: 100000
+  low:
+    value: 1000
+  medium:
+    value: 10000
+training-operator:
+  image:
+    registry: ''
+    repository: baize/training-operator
+    tag: v1-5525468
+```
+
+### Install baize-agent with helm
+
+Ensure that the AI Lab components are already installed in the Global Service Cluster.
+You can check in the GUI if the AI Lab module is available.
 
 !!! info
 
-    There is an entry for `Intelligent Engine` in the primary navigation bar.
-
-If it is not available, you can install it using the following method.
-Please note that it needs to be installed in the `kpanda-global-cluster` global management cluster:
+You need to have an `AI Lab` entry in the main navigation bar to ensure that
+the management components are deployed successfully.
 
 ```bash
-# "baize" is the development codename for the Intelligent Engine component
+# Baize is the development code name for the AI Lab component
 helm repo add baize https://release.daocloud.io/chartrepo/baize
-helm repo update
-export VERSION=v0.1.1
-helm upgrade --install baize baize/baize \
+helm repo update baize
+helm search repo baize # Get the latest version number
+export VERSION=<version> # Make sure to use the current latest version
+helm upgrade --install baize-agent baize/baize-agent \
     --create-namespace \
     -n baize-system \
     --set global.imageRegistry=release.daocloud.io \
     --version=${VERSION}
 ```
 
-If you are installing in an existing `DCE` environment, you can add the `helm` source to the container management and also use a graphical installation method.
+Once the above tasks are completed, the worker cluster will be successfully initialized,
+and you can perform task training and model development in the AI Lab module.
 
-## Initialize Worker Cluster
+### Components for Preloading
 
-In each worker cluster with computing resources, the corresponding basic computing components need to be deployed. The main components include:
+The dataset preloading capability provided in the AI Lab module relies on the storage service,
+and it is recommended to use the NFS service:
 
-- `gpu-operator`: Initializes the GPU resources in the cluster.
-  **The installation method may vary depending on the type of GPU resources.**
-  For details, refer to [GPU Management](../../kpanda/user-guide/gpu/index.md).
-- `insight-agent`: Observability component used to collect infrastructure information
-  in the cluster, including logs, metrics, and events
-- `baize-agent`: Core component of the Intelligent Engine module, responsible for
-  scheduling, monitoring, Pytorch, Tensorflow, and other computing components
-- `nfs`: Storage service used for dataset preheating
+* Deploy NFS Server
 
-!!! danger
+    * If an NFS already exists, you can skip this step.
+    * If it does not exist, you can refer to the
+      [NFS Service Deployment](../../baize/best-practice/deploy-nfs-in-worker.md) in best practices.
 
-    **The above components must be installed, otherwise it may cause the functionality to not work properly.**
-
-After completing the above tasks, you can now perform task training and model development
-in the Intelligent Engine module.
-
-### Components for preheating
-
-In the data management provided by the Intelligent Engine module, the preheating capability of
-datasets relies on a storage service, and it is recommended to use an NFS service:
-
-- Deploy NFS Server
-    - If NFS already exists, you can skip this step
-    - If it does not exist, you can refer to the best practices for
-      [Deploying NFS Service](../../baize/best-practice/deploy-nfs-in-worker.md)
-- Deploy `nfs-driver-csi`
-- Deploy `StorageClass`
+* Deploy `nfs-driver-csi`
+* Deploy `StorageClass`
 
 ## Conclusion
 
-After completing the above steps, you can now experience all the functionalities of
-Intelligent Engine in the worker cluster. Enjoy using it!
+After completing the above steps, you can fully experience the functionalities of AI Lab
+ within the worker cluster. Enjoy your usage!

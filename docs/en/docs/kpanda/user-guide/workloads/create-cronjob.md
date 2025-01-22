@@ -13,7 +13,7 @@ CronJobs are suitable for performing periodic operations, such as backup and rep
 
 Before creating a CronJob, the following prerequisites need to be met:
 
-- In the [Container Management](../../intro/index.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/index.md) module [Integrate Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md) and a [user](../../../ghippo/user-guide/access-control/user.md).
 
@@ -51,7 +51,7 @@ On the __Create CronJobs__ page, enter the information according to the table be
 
 ### Container settings
 
-Container setting is divided into six parts: basic information, life cycle, health check, environment variables, data storage, and security settings. Click the corresponding tab below to view the requirements of each part.
+Container setting is divided into six parts: basic information, lifecycle, health check, environment variables, data storage, and security settings. Click the tab below to view the requirements of each part.
 
 > Container setting is only configured for a single container. To add multiple containers to a pod, click __+__ on the right to add multiple containers.
 
@@ -112,7 +112,11 @@ Container setting is divided into six parts: basic information, life cycle, heal
 
      > The above rules only apply to multiple jobs created by the same CronJob. Multiple jobs created by multiple CronJobs are always allowed to run concurrently.
 
-- Policy Settings: Set the time period for job execution based on minutes, hours, days, weeks, and months. Support custom Cron expressions with numbers and `*` , **after inputting the expression, the meaning of the current expression will be prompted**. For detailed expression syntax rules, refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
+- Policy Settings: 
+
+    - Set the time period for job execution based on minutes, hours, days, weeks, and months. Support custom Cron expressions with numbers and `*` , **after inputting the expression, the meaning of the current expression will be prompted**. For detailed expression syntax rules, refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
+    - Time zone: all UTC time zones are integrated. You can choose one.
+
 - Job Records: Set how many records of successful or failed jobs to keep. __0__ means do not keep.
 - Timeout: When this time is exceeded, the job will be marked as failed to execute, and all Pods under the job will be deleted. When it is empty, it means that no timeout is set. The default is 360 s.
 - Retries: the number of times the job can be retried, the default value is 6.

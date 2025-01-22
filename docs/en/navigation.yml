@@ -10,18 +10,25 @@ nav:
               - Use Cases: dce/scenario.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Release Notes:
-                  - 20240630 Release: dce/dce-rn/20240630.md
-                  - 20240530 Release: dce/dce-rn/20240530.md
-                  - 20240430 Release: dce/dce-rn/20240430.md
-                  - 20240330 Release: dce/dce-rn/20240330.md
-                  - 20240130 Release: dce/dce-rn/20240130.md
-                  - 20231231 Release: dce/dce-rn/20231231.md
-                  - 20231130 Release: dce/dce-rn/20231130.md
-                  - 20231031 Release: dce/dce-rn/20231031.md
-                  - 20230831 Release: dce/dce-rn/20230831.md
-                  - 20230731 Release: dce/dce-rn/20230731.md
-                  - 20230630 Release: dce/dce-rn/20230630.md
-                  - 20230531 Release: dce/dce-rn/20230531.md
+                  - v0.25.0-20241231 Released: dce/dce-rn/20241231.md
+                  - v0.24.0-20241130 Released: dce/dce-rn/20241130.md
+                  - v0.23.0-20241030 Released: dce/dce-rn/20241030.md
+                  - v0.22.0-20240930 Released: dce/dce-rn/20240930.md
+                  - v0.21.0-20240830 Released: dce/dce-rn/20240830.md
+                  - v0.20.0-20240730 Released: dce/dce-rn/20240730.md
+                  - v0.19.0-20240630 Released: dce/dce-rn/20240630.md
+                  - v0.18.0-20240530 Released: dce/dce-rn/20240530.md
+                  - v0.17.0-20240430 Released: dce/dce-rn/20240430.md
+                  - v0.16.0-20240330 Released: dce/dce-rn/20240330.md
+                  - v0.15.0-20240130 Released: dce/dce-rn/20240130.md
+                  - v0.14.0-20231231 Released: dce/dce-rn/20231231.md
+                  - v0.13.0-20231130 Released: dce/dce-rn/20231130.md
+                  - v0.12.0-20231031 Released: dce/dce-rn/20231031.md
+                  - v0.11.0-20230831 Released: dce/dce-rn/20230831.md
+                  - v0.10.0-20230731 Released: dce/dce-rn/20230731.md
+                  - v0.9.0-20230630 Released: dce/dce-rn/20230630.md
+                  - v0.8.0-20230531 Released: dce/dce-rn/20230531.md
+              - DCE 5.0 Roadmap: dce/roadmap.md
               - DaoCloud Product Support Policy: dce/support.md
               - Glossary: dce/terms.md
           - Installation:
@@ -85,26 +92,27 @@ nav:
                   - Migrate Cluster OS without Downtime: install/best-practices/replace-os.md
               - Installer Release Notes: install/release-notes.md
           - Best Practices: dce/bphome.md
+          - FAQs: dce/faq.md
       - Workbench:
           - Workbench:
               - Intro:
                   - What is Workbench?: amamba/intro/index.md
                   - Features: amamba/intro/features.md
-                  - Technical Overview of Workbench: amamba/intro/tech-overview.md
-                  - Competitiveness: amamba/intro/benefits.md
+                  - Technical Overview: amamba/intro/tech-overview.md
                   - Use Cases: amamba/intro/scenarios.md
-                  - Concepts: amamba/intro/concepts.md
                   - Permissions: amamba/intro/permission.md
-                  - Install and Upgrade:
-                      - Offline Upgrade: amamba/offline-upgrade.md
-                      - Deploy Pluggable Components: amamba/pluggable-components.md
-                      - Install and Configure Jenkins: 
-                        - Install Jenkins: amamba/user-guide/pipeline/install-jenkins.md
-                        - Jenkins HA Solution: amamba/quickstart/jenkins-HA.md
-                        - Jenkins Scenarios: amamba/quickstart/scenarios-config.md
-                      - Argo CD HA Deployment: amamba/quickstart/argo-cd-HA.md
                   - Workbench Release Notes: amamba/intro/release-notes.md
-              - Namespaces: amamba/user-guide/namespace/namespace.md
+              - Install and Upgrade:
+                  - Offline Upgrade: amamba/offline-upgrade.md
+                  - Deploy Pluggable Components: amamba/pluggable-components.md
+                  - Install and Configure Jenkins: 
+                      - Install Jenkins: amamba/user-guide/pipeline/install-jenkins.md
+                      - Jenkins HA Solution: amamba/quickstart/jenkins-HA.md
+                      - Jenkins Scenarios: amamba/quickstart/scenarios-config.md
+                  - Argo CD HA Deployment: amamba/quickstart/argo-cd-HA.md
+              - Namespaces: 
+                  - Create Namespace: amamba/user-guide/namespace/namespace.md
+                  - Create MultiCloud Namespace: amamba/user-guide/namespace/multi-namespace.md
               - Wizard:
                   - Build Git-based Microservice: amamba/user-guide/wizard/create-app-git.md
                   - Build Jar-based Java Apps: amamba/user-guide/wizard/jar-java-app.md
@@ -132,6 +140,7 @@ nav:
                           - Edit Jenkinsfile: amamba/user-guide/pipeline/pipeline-syntax.md
                           - GUI Template Parameters: amamba/user-guide/pipeline/config/step.md
                           - Credentials: amamba/user-guide/pipeline/credential.md
+                          - GitHub and GitLab Tokens: amamba/user-guide/pipeline/github_gitlab_token.md
                       - Run Pipeline:
                           - Trigger: amamba/user-guide/pipeline/run/trigger.md
                           - Manually Run: amamba/user-guide/pipeline/run/manual.md
@@ -148,40 +157,41 @@ nav:
                       - Build Multi-Arch Image: amamba/user-guide/pipeline/podman.md
                       - Use Cacher in Pipeline: amamba/quickstart/job-cacher.md
                       - System Env Variables: amamba/user-guide/pipeline/system-env.md
+                      - Pipeline Metrics: amamba/user-guide/pipeline/jenkins-metric.md
               - GitOps:
                   - Import Repository: amamba/user-guide/gitops/import-repo.md
                   - Create Argo CD App: amamba/user-guide/gitops/create-argo-cd.md
                   - Argo CD App Status: amamba/user-guide/gitops/argo-cd-status.md
                   - Manually Sync App: amamba/user-guide/gitops/sync-manually.md
                   - Eanble Credential in GitOps: amamba/user-guide/gitops/gitops-secret.md
+                  - Enable ArgoCD-Native UI: amamba/user-guide/gitops/integrate-argocd-ui.md
               - Canary Release:
                   - Grayscale based on Argo Rollout: amamba/quickstart/argocd-rollout.md
                   - Create a Canary Delivery Job: amamba/user-guide/release/canary.md
                   - View a Canary Delivery Job: amamba/user-guide/release/check-canary.md
                   - Create Blue/Green Job: amamba/user-guide/release/blue-green.md
                   - View Blue/Green Job: amamba/user-guide/release/check-bluegreen.md
-              - Repository: 
-                  - Manage Your Repository: amamba/user-guide/git/git.md
+              - Manage Repository: amamba/user-guide/git/git.md
               - Toolchain Integration:
                   - Integrate Toolchain: amamba/user-guide/tools/integrated-toolchain.md
                   - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
-                  - R&D Project Management:
-                      - Check Issues: amamba/user-guide/pm/issue.md
+                  - R&D Project Management: amamba/user-guide/pm/issue.md
               - FAQs:
                   - Pipeline FAQs: amamba/faq/faq-jenkins.md
                   - GitOps FAQs: amamba/faq/faq-gitops.md
+                  - Toolchain FAQs: amamba/faq/faq-toochain.md
               - Best Practices:
                   - GitOps Practices:
                       - CI/CD based on Pipeline + GitOps: amamba/quickstart/argocd-jenkins.md
                       - Use GitOps in a Hosted Mesh: amamba/quickstart/istio_argocd.md
                       - Progressive Delivery in a Hosted Mesh: amamba/quickstart/istio_argocd_rollout.md
+                      - Rollout Multicloud Apps with ArgoCD: amamba/quickstart/argo-karmada.md
                   - CI Practices:
                       - Scan Code with Pipelines: amamba/quickstart/scan-with-pipeline.md
                       - Integrate Harbor to Scan Image: amamba/quickstart/scan-with-harbor.md
                       - Jenkins Delivers App to VM: amamba/user-guide/pipeline/cicd_vm.md
                       - Integrate Jenkins on Physical/Virtual Machine: amamba/quickstart/jenkins-integration.md
-                  - Progressive Delivery Practices: 
-                      - Contour-based Grayscale Release: amamba/quickstart/contour-argorollout.md
+                  - Progressive Delivery Practices: amamba/quickstart/contour-argorollout.md
                       
       - Container:
           - Container Management:
@@ -212,7 +222,7 @@ nav:
                   - Pod Security Policy: kpanda/user-guide/namespaces/podsecurity.md
               - Nodes:
                   - Node Availability Check: kpanda/user-guide/nodes/node-check.md
-                  - Node Config: kpanda/user-guide/nodes/node-config.md
+                  - Node Config: kpanda/user-guide/nodes/node-authentication.md
                   - Node Scaling Out: kpanda/user-guide/nodes/add-node.md
                   - Node Scaling In: kpanda/user-guide/nodes/delete-node.md
                   - Taints: kpanda/user-guide/nodes/taints.md
@@ -325,7 +335,7 @@ nav:
                           - Use NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                       - GPU Quotas: kpanda/user-guide/gpu/vgpu_quota.md
-                      - GPU DRA: kpanda/user-guide/gpu/dynamic-regulation.md
+                      - GPU Scheduling: kpanda/user-guide/gpu/dynamic-regulation.md
                       - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
                       - Use Volcano:
                           - Install and Use Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
@@ -351,6 +361,7 @@ nav:
                   - Migrate DCE 4.0 to DCE 5.0: kpanda/best-practice/dce4-5-migration.md
                   - Offline Deploy and Upgrade Legacy Kubean: kpanda/best-practice/kubean-low-version.md
                   - Replace a Master Node in Worker Cluster: kpanda/best-practice/replace-first-master-node.md
+                  - Get Permanent Token for External Clusters: kpanda/best-practice/get-kubeconfig.md
           - Multicloud Management:
               - Intro:
                   - What is Multicloud Management: kairship/intro/index.md
@@ -363,7 +374,7 @@ nav:
                   - Multicloud Release Notes: kairship/intro/release-notes.md
               - Workspaces: kairship/workspace.md
               - Multicloud Instances:
-                  - Overview: kairship/instance/README.md
+                  - Instance Detail: kairship/instance/index.md
                   - Add Instance: kairship/instance/add.md
                   - Delete Instance: kairship/instance/delete.md
               - Worker Clusters: kairship/cluster.md
@@ -376,15 +387,16 @@ nav:
                   - Create CronJob from Image: kairship/workload/cronjob.md
               - Custom Resources: kairship/crds/crd.md
               - Multicloud Resources:
-                  - Multicloud Services: kairship/resource/service.md
-                  - Multicloud Namespaces: kairship/resource/ns.md
-                  - Multicloud ConfigMaps: kairship/resource/configmap.md
-                  - Multicloud Secrets: kairship/resource/secret.md
-                  - Multicloud Ingress: kairship/resource/ingress.md
+                  - Create Multicloud Services: kairship/resource/service.md
                   - Update Multicloud Services: kairship/resource/update-service.md
-                  - Update Multicloud Secrets: kairship/resource/update-secret.md
+                  - Create Multicloud Namespaces: kairship/resource/ns.md
+                  - Update Multicloud Namespaces: kairship/resource/update-ns.md
+                  - Create Multicloud ConfigMaps: kairship/resource/configmap.md
                   - Update Multicloud ConfigMaps: kairship/resource/update-configmap.md
-                  - More Multicloud Ingress: kairship/resource/update-ingress.md
+                  - Create Multicloud Secrets: kairship/resource/secret.md
+                  - Update Multicloud Secrets: kairship/resource/update-secret.md
+                  - Create Multicloud Ingress: kairship/resource/ingress.md
+                  - Update Multicloud Ingress: kairship/resource/update-ingress.md
               - Policy Management:
                   - Propagation Policy: kairship/policy/propagation.md
                   - Override Policy: kairship/policy/override.md
@@ -414,16 +426,17 @@ nav:
                   - Scan Images: kangaroo/space/scan.md
               - Integrated Registry:
                   - Integrated Registry (Workspace): kangaroo/integrate/integrate-ws.md
-                  - Integrated Registry (Admin): kangaroo/integrate/integrate-admin.md
-                  - Create Registry Space: kangaroo/integrate/registry-space.md
-                  - Bind/Unbind Workspace: kangaroo/integrate/bind-to-ws.md
-                  - Sync Images: kangaroo/integrate/sync.md
+                  - Integrated Registry (Admin): 
+                      - Integrated Registry (Admin): kangaroo/integrate/integrate-admin/integrate-admin.md
+                      - Create Registry Space: kangaroo/integrate/integrate-admin/registry-space.md
+                      - Bind/Unbind Workspace: kangaroo/integrate/integrate-admin/bind-to-ws.md
+                      - Sync Images: kangaroo/integrate/integrate-admin/sync.md
               - Managed Harbor:
-                  - kangaroo/managed/intro.md
+                  - Managed Harbor: kangaroo/managed/intro.md
                   - Install Harbor Operator: kangaroo/managed/operator.md
                   - Create Harbor Instance: kangaroo/managed/harbor.md
                   - Create Registry Space: kangaroo/integrate/registry-space.md
-                  - Bind/Unbind Workspace: kangaroo/integrate/bind-to-ws.md
+                  - Bind/Unbind Workspace: kangaroo/integrate/integrate-admin/bind-to-ws.md
                   - Sync Images: kangaroo/integrate/sync.md
                   - Migrate Your Harbor Registry: kangaroo/managed/harbor-migration.md
               - Best Practice:
@@ -438,7 +451,7 @@ nav:
                   - Background and Challenges: network/intro/background.md
                   - Components: network/modules/modules.md
                   - Offline Upgrade: network/intro/offline.md
-                  - Release Notes: network/intro/releasenotes.md
+                  - Release Notes: network/intro/release-notes.md
                   - Known Issues: network/intro/issues.md
               - Plan:
                   - Eth card plan: network/plans/ethplan.md
@@ -466,7 +479,7 @@ nav:
                   - CoreDNS Performance Test: network/performance/coredns-performance.md
               - Spiderpool:
                   - Intro: network/modules/spiderpool/index.md
-                  - Release Notes: network/modules/spiderpool/releasenotes.md
+                  - Release Notes: network/modules/spiderpool/release-notes.md
                   - Install: 
                       - Install Spiderpool: network/modules/spiderpool/install/install.md
                       - Prepare and install RDMA: network/modules/spiderpool/install/rdmapara.md
@@ -493,8 +506,8 @@ nav:
                   - Intro: network/modules/cilium/index.md
                   - Args Config: network/modules/cilium/install.md
                   - Unsupported Features: network/modules/cilium/notSupport.md
-                  - Cilium Network Communication Acceleration: network/modules/cilium/cross-cluster.md
-                  - Cross-Cluster Application Communication: network/modules/cilium/cilium-speedup.md
+                  - Cilium Network Communication Acceleration: network/modules/cilium/cilium-speedup.md
+                  - Cross-Cluster Application Communication: network/modules/cilium/cross-cluster.md
                   - Cilium Network Policy Support for IPVlan: network/modules/cilium/cilium_chaining.md
               - Contour:
                   - Intro: network/modules/contour/index.md
@@ -548,10 +561,8 @@ nav:
           - Cloud Native Storage:
               - Intro:
                   - What is Storage: storage/index.md
-                  - Background: storage/background.md
-                  - Benefits: storage/benefits.md
                   - Features: storage/features.md
-                  - Storage Release Notes: storage/hwameistor/releasenotes.md
+                  - Storage Release Notes: storage/hwameistor/release-notes.md
               - HwameiStor Storage:
                   - Intro: storage/hwameistor/intro/index.md
                   - Modules:
@@ -569,10 +580,8 @@ nav:
                   - Installation:
                       - Preparation: storage/hwameistor/install/prereq.md
                       - Resource Requirements: storage/hwameistor/install/proresource.md
-                      - Install with Operator: storage/hwameistor/install/deploy-operator.md
-                      - Install with hwameistor-operator: storage/hwameistor/install/deploy-helm.md
-                      - Install DRDB: storage/hwameistor/install/drbdinstall.md
-                      - Install with UI: storage/hwameistor/install/deploy-ui.md
+                      - Install HwameiStor on UI: storage/hwameistor/install/deploy-ui.md
+                      - Install via hwameistor-operator: storage/hwameistor/install/deploy-operator.md
                       - Post-check: storage/hwameistor/install/post-check.md
                       - Storage and Network Adapter config: storage/hwameistor/install/storage-eth.md
                       - Custom Kubelet Root Directory: storage/hwameistor/install/customized-kubelet.md
@@ -586,9 +595,10 @@ nav:
                   - StorageClass: storage/hwameistor/resources/storageclass.md
                   - Volumes:
                       - Volume Migration: storage/hwameistor/resources/migrate.md
+                      - Volume Eviction: storage/hwameistor/resources/volume-eviction.md
                       - Volume Expansion: storage/hwameistor/resources/expand.md
                       - Volume IO Rate Limit: storage/hwameistor/resources/volume-ProvisionedIO.md
-                      - Volume Eviction: storage/hwameistor/resources/volume-eviction.md
+                      - Volume Snapshot: storage/hwameistor/resources/volume-snapshot.md
                   - Use Cases:
                       - Overview: storage/hwameistor/application/overview.md
                       - Deploy StatefulSets:
@@ -620,6 +630,7 @@ nav:
           - Virtual Machine:
               - Intro:
                   - What: virtnest/intro/index.md
+                  - VM Features: virtnest/intro/features.md
                   - Release Notes: virtnest/intro/release-notes.md
                   - FAQs: virtnest/intro/faq.md
               - Install:   
@@ -636,7 +647,9 @@ nav:
               - Manage Virtual Machine:
                   - Create Secret: virtnest/vm/create-secret.md
                   - Snapshots: virtnest/vm/snapshot.md
+                  - Scheduled Snapshot: virtnest/vm/scheduled-snapshot.md
                   - Live Migration: virtnest/vm/live-migration.md
+                  - Migrate VM across Clusters: virtnest/vm/cross-cluster-migrate.md
                   - VM Monitor: virtnest/vm/monitor.md
                   - VM GPU: virtnest/vm/vm-gpu.md
                   - VM Network: virtnest/vm/vm-network.md
@@ -661,7 +674,7 @@ nav:
                   - Scenario: insight/intro/scenarios.md
                   - Features: insight/intro/features.md
                   - Permissions: insight/intro/permission.md
-                  - Insight Release Notes: insight/intro/releasenote.md
+                  - Insight Release Notes: insight/intro/release-notes.md
               - Quick Start:
                   - Plan to Deploy:
                       - insight/quickstart/res-plan/index.md
@@ -676,6 +689,7 @@ nav:
                       - Upgrade Notes: insight/quickstart/install/upgrade-note.md
                       - Known Issues: insight/quickstart/install/knownissues.md
                       - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
+                      - Enable Big Log and Big Trace: insight/quickstart/install/big-log-and-trace.md
                   - Install insight-agent on Other Distributions:
                       - DCE 4.0: insight/quickstart/other/install-agentindce.md
                       - OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
@@ -683,29 +697,26 @@ nav:
                   - Use OpenTelemetry:
                       - Observe App with OTel: insight/quickstart/otel/otel.md
                       - Non-intrusive Enhancement with Operator: insight/quickstart/otel/operator.md
-                      - Expose Metrics with OTel SDK: insight/quickstart/otel/meter.md
                       - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md
                       - Tail-based Sampling Scheme: insight/best-practice/tail-based-sampling.md
                   - Java Insight:
-                      - Insight Java Apps: insight/quickstart/jvm-monitor/jvm-catelogy.md
-                      - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/jvm-monitor/jmx-exporter.md
-                      - Use OTel Java Agent to Expose JVM Metrics: insight/quickstart/jvm-monitor/otel-java-agent.md
-                      - Java App with JVM Metrics Enables Insight: insight/quickstart/jvm-monitor/legacy-jvm.md
+                      - insight/quickstart/otel/java/index.md
+                      - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md
+                      - Use OTel Java Agent to Expose JVM Metrics: insight/quickstart/otel/java/jvm-monitor/otel-java-agent.md
+                      - Java App with JVM Metrics Enables Insight: insight/quickstart/otel/java/jvm-monitor/legacy-jvm.md
                   - Golang App Insight:
-                      - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang.md
-                      - Enhance Go Apps with OTel Auto-Probe: insight/quickstart/otel/golang-ebpf.md
+                      - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang/golang.md
                   - Other Integrations:
                       - Use OTel to Receive SkyWalking Traces: insight/best-practice/sw-to-otel.md  
               - Dashboard:
                   - Overview: insight/user-guide/dashboard/overview.md
                   - Dashboard: insight/user-guide/dashboard/dashboard.md
-                  - Log in to Grafana with Admin: insight/user-guide/dashboard/login-grafana.md
                   - Import Custom Dashboard: insight/user-guide/dashboard/import-dashboard.md
               - Infrastructure:
                   - Clusters: insight/user-guide/infra/cluster.md
                   - Nodes: insight/user-guide/infra/node.md
                   - Namespaces: insight/user-guide/infra/namespace.md
-                  - Containers: insight/user-guide/infra/container.md
+                  - Workload: insight/user-guide/infra/container.md
                   - Events: insight/user-guide/infra/event.md
                   - Probes: insight/user-guide/infra/probe.md
               - Metrics: insight/user-guide/data-query/metric.md
@@ -713,7 +724,7 @@ nav:
               - Traces:
                   - Service Topology: insight/user-guide/trace/topology.md
                   - Topology Helper: insight/user-guide/trace/topology-helper.md
-                  - Service Monitor: insight/user-guide/trace/service.md
+                  - Service: insight/user-guide/trace/service.md
                   - Trace Query: insight/user-guide/trace/trace.md
               - Alert Center:
                   - insight/user-guide/alert-center/index.md
@@ -726,9 +737,7 @@ nav:
               - Data Collection:
                   - Collection Management: insight/user-guide/collection-manag/collection-manag.md
                   - Service Monitor: insight/user-guide/collection-manag/service-monitor.md
-                  - Collection Metrics: insight/user-guide/collection-manag/metric-collect.md
-                  - insight-agent Status: insight/user-guide/collection-manag/agent-status.md
-                  - Custom Probe: insight/user-guide/collection-manag/probe-module.md
+                  - insight-agent Status: insight/user-guide/collection-manag/agent-status.md   
               - System Config:
                   - System Components: insight/user-guide/system-config/system-component.md
                   - System Config: insight/user-guide/system-config/system-config.md
@@ -736,6 +745,10 @@ nav:
               - Network Insight:
                   - Integrate DeepFlow: insight/best-practice/integration_deepflow.md
               - References:
+                  - Insight Reference Metrics: insight/reference/used-metric-in-insight.md
+                  - Insight Grafana data to a Database: insight/best-practice/grafana-use-db.md
+                  - Custom Probe: insight/user-guide/collection-manag/probe-module.md
+                  - Collection Metrics: insight/user-guide/collection-manag/metric-collect.md
                   - Alert Notification Flow: insight/reference/alertnotification.md
                   - Notification Template Instructions: insight/reference/notify-helper.md
                   - Lucene Syntax: insight/reference/lucene.md
@@ -772,8 +785,8 @@ nav:
                       - Domain Policies: skoala/gateway/domain/domain-policy.md
                   - API Management:
                       - Add API: skoala/gateway/api/index.md
-                      - Update/Delete API: skoala/gateway/api/update-api.md
-                      - API Policies: skoala/gateway/api/api-policy.md
+                      - Configure API Policy: skoala/gateway/api/api-policy.md
+                      - Import API: skoala/gateway/api/api-lead.md
                   - Service List:
                       - Manual Acess: skoala/gateway/service/manual-integrate.md
                       - Automatic nanotubes: skoala/gateway/service/auto-manage.md
@@ -876,15 +889,17 @@ nav:
                   - Parameters to create mesh: mspider/user-guide/service-mesh/params.md
               - Service Management:
                   - mspider/user-guide/service-list/README.md
+                  - Integrate VM: mspider/user-guide/service-list/vm.md
                   - Access Service out of Mesh: mspider/user-guide/service-list/out-to-in.md
                   - Service Entry: mspider/user-guide/service-list/service-entry.md
                   - One-Click Repair: mspider/user-guide/service-list/diagnose.md
               - Traffic Management:
                   - mspider/user-guide/traffic-governance/README.md
                   - Virtual Service: mspider/user-guide/traffic-governance/virtual-service.md
+                  - Parameters for Virtual Service: mspider/user-guide/traffic-governance/vsparams.md
                   - Destination Rule: mspider/user-guide/traffic-governance/destination-rules.md
                   - Gateway: mspider/user-guide/traffic-governance/gateway-rules.md
-                  - Parameters for Virtual Service: mspider/user-guide/traffic-governance/vsparams.md
+                  - Traffic Failover: mspider/user-guide/traffic-governance/traffic-failover.md
               - Security:
                   - Intro: mspider/user-guide/security/README.md
                   - Peer Authentication: mspider/user-guide/security/peer.md
@@ -965,10 +980,11 @@ nav:
                       - Release Notes: middleware/mysql/release-notes.md
                   - Quick Start:
                       - Instance Lifecycle:
-                          - Create MySQL: middleware/mysql/user-guide/create.md
-                          - Create MySQL MGR: middleware/mysql/user-guide/create-mgr.md
-                          - Update MySQL: middleware/mysql/user-guide/update.md
-                          - Delete MySQL: middleware/mysql/user-guide/delete.md
+                          - Create MySQL Instance: middleware/mysql/user-guide/create.md
+                          - Create MySQL MGR Instance: middleware/mysql/user-guide/create-mgr.md
+                          - Update MySQL Instance: middleware/mysql/user-guide/update.md
+                          - Delete MySQL Instance: middleware/mysql/user-guide/delete.md
+                          - View MySQL Instance: middleware/mysql/user-guide/view.md
                       - View MySQL Logs: middleware/mysql/user-guide/logs.md
                       - Instance Topology: middleware/mysql/user-guide/instancemap.md
                       - Data Backup:
@@ -984,8 +1000,9 @@ nav:
                       - MySQL Operator: middleware/mysql/faq/faq-operator.md
                       - MySQL Master/Slave Issues: middleware/mysql/faq/faq-master-slave.md
                       - Other MySQL Issues: middleware/mysql/faq/faq-others.md
+                      - MySQL MGR Configuration: middleware/mysql/faq/faq-mgr-parameter.md
                       - Troubleshoot MySQL MGR: middleware/mysql/faq/mgr-troubleshooting.md
-                      - Network Fluctuations in MySQL Master-Slave: middleware/mysql/faq/faq-mtsql-net.md
+                      - Network Fluctuations in Master-Slave: middleware/mysql/faq/faq-mtsql-net.md
               - MongoDB Database:
                   - Intro:
                       - What is MongoDB: middleware/mongodb/intro/index.md
@@ -993,9 +1010,10 @@ nav:
                       - Offline Upgrade MongoDB: middleware/mongodb/intro/offline-install.md
                       - Release Notes: middleware/mongodb/release-notes.md
                   - Quick Start:
-                      - Create MongoDB: middleware/mongodb/user-guide/create.md
-                      - Update MongoDB: middleware/mongodb/user-guide/update.md
-                      - Delete MongoDB: middleware/mongodb/user-guide/delete.md
+                      - Create MongoDB Instance: middleware/mongodb/user-guide/create.md
+                      - Update MongoDB Instance: middleware/mongodb/user-guide/update.md
+                      - Delete MongoDB Instance: middleware/mongodb/user-guide/delete.md
+                      - View MongoDB Instance: middleware/mongodb/user-guide/view.md
                       - View MongoDB Logs: middleware/mongodb/user-guide/logs.md
               - PostgreSQL Database:
                   - Intro:
@@ -1004,11 +1022,13 @@ nav:
                       - Offline Upgrade PostgreSQL: middleware/postgresql/intro/offline-install.md
                       - Release Notes: middleware/postgresql/release-notes.md
                   - Quick Start:
-                      - Create PostgreSQL: middleware/postgresql/user-guide/create.md
-                      - Update PostgreSQL: middleware/postgresql/user-guide/update.md
-                      - Delete PostgreSQL: middleware/postgresql/user-guide/delete.md
+                      - Create PostgreSQL Instance: middleware/postgresql/user-guide/create.md
+                      - Update PostgreSQL Instance: middleware/postgresql/user-guide/update.md
+                      - Delete PostgreSQL Instance: middleware/postgresql/user-guide/delete.md
                       - View PostgreSQL Logs: middleware/postgresql/user-guide/logs.md
                       - Manually Set Antiaffinity: middleware/postgresql/user-guide/antiaffinity.md
+                      - Auto Backup: middleware/postgresql/user-guide/auto-backup.md
+                      - Topology: middleware/postgresql/user-guide/instancemap.md
               - Redis Cache Service:
                   - Intro:
                       - What is Redis: middleware/redis/intro/index.md
@@ -1021,6 +1041,7 @@ nav:
                       - Delete Redis Instance: middleware/redis/user-guide/delete.md
                       - View Redis Logs: middleware/redis/user-guide/logs.md
                       - Slow Query: middleware/redis/user-guide/slow-query.md
+                      - Topology: middleware/redis/user-guide/instancemap.md
                   - Best Practice:
                       - HA Deployment Across Data Centers: middleware/redis/best-practice/singleclustercrosszone.md
                       - Data Synchronization Intro: middleware/redis/best-practice/index.md
@@ -1045,6 +1066,7 @@ nav:
                       - Instance Overview: middleware/elasticsearch/user-guide/basic.md
                       - Monitor Instance: middleware/elasticsearch/user-guide/monitor.md
                       - View ES Logs: middleware/elasticsearch/user-guide/logs.md
+                      - Backup and Recovery: middleware/elasticsearch/user-guide/snapshot-recover.md
                   - Migrate ES across Nodes: middleware/elasticsearch/user-guide/migrate-es.md
                   - ES Troubleshoot: middleware/elasticsearch/faq/common-question-es.md
               - Kafka Message Queue:
@@ -1103,43 +1125,53 @@ nav:
                       - View Instance Details: middleware/minio/user-guide/view.md
                       - MinIO Identity Management: middleware/minio/user-guide/user-management.md
       - Cloud Native AI:
-          - Intelligent Engine:
+          - AI Lab:
               - Introduction:
-                  - What is Intelligent Engine: baize/intro/index.md
-                  - Installation: baize/intro/install.md
+                  - What is AI Lab: baize/intro/index.md
+                  - Initialize AI Lab: baize/intro/install.md
                   - First Time Usage: baize/intro/first.md
-                  - Intelligent Engine Release Notes: baize/intro/release-notes.md
-              - Development Console:
+                  - AI Lab Release Notes: baize/intro/release-notes.md
+              - Developer:
                   - Introduction: baize/developer/index.md
+                  - Quick Start: baize/developer/quick-start.md
                   - Notebooks:
                       - Create Notebook: baize/developer/notebooks/create.md
                       - Start and Pause Notebook: baize/developer/notebooks/start-pause.md
                       - View Notebook Workload: baize/developer/notebooks/view.md
                       - Delete Notebook: baize/developer/notebooks/delete.md
                       - Notebook SSH Guide: baize/developer/notebooks/notebook-with-ssh.md
-                  - Jobs:
+                      - Use Environments in Notebook: baize/developer/notebooks/notebook-with-envs.md
+                      - baizectl CLI Guide: baize/developer/notebooks/baizectl.md
+                      - baizess Source Switch Tool Guide: baize/developer/notebooks/baizess.md
+                      - Shut down Idle Notebooks: baize/developer/notebooks/notebook-auto-close.md
+                  - Job Center:
                       - Create Job: baize/developer/jobs/create.md
+                      - Create Pytorch Job: baize/developer/jobs/pytorch.md
+                      - Create Tensorflow Job: baize/developer/jobs/tensorflow.md
                       - Delete Job: baize/developer/jobs/delete.md
                       - View Job Load: baize/developer/jobs/view.md
+                      - Job Analysis: baize/developer/jobs/tensorboard.md
                   - Data Management:
-                      - Create Dataset: baize/developer/dataset/create-use-delete.md
-                      - Manage Runtime Env: baize/developer/dataset/conda.md
-                  - Inference Service:
+                      - Datasets: baize/developer/dataset/create-use-delete.md
+                      - Environments: baize/developer/dataset/environments.md
+                  - Model Service:
                       - Supported Models: baize/developer/inference/models.md
-                      - Create Inference Service: baize/developer/inference/create.md
-                      - Create with vLLM Framework: baize/developer/inference/vllm-inference.md
-              - OAM Management:
-                  - GPU Resource Management: baize/oam/resource.md
+                      - Inference Service:
+                          - Create with Triton Framework: baize/developer/inference/triton-inference.md
+                          - Create with vLLM Framework: baize/developer/inference/vllm-inference.md
+              - Operator:
+                  - Resource Management: baize/oam/resource.md
                   - Queue Management:
                       - Create Queue: baize/oam/queue/create.md
                       - Delete Queue: baize/oam/queue/delete.md
               - Best Practices:
-                  - Deploy NFS to Preheat Dataset: baize/best-practice/deploy-nfs-in-worker.md
+                  - Deploy NFS to Preload Dataset: baize/best-practice/deploy-nfs-in-worker.md
                   - Update Notebook Built-in Images: baize/best-practice/change-notebook-image.md
                   - Checkpoint Mechanism and Usage: baize/best-practice/checkpoint.md
-                  - Fine-Tune ChatGLM3 with Intelligent Engine: baize/best-practice/finetunel-llm.md
+                  - Fine-Tune ChatGLM3 with AI Lab: baize/best-practice/finetunel-llm.md
                   - Submit a DeepSpeed Training Task: baize/best-practice/train-with-deepspeed.md
                   - Add Job Scheduler: baize/best-practice/add-scheduler.md
+                  - Deploy Label Studio: baize/best-practice/label-studio.md
               - Troubleshoot:
                   - index: baize/troubleshoot/index.md
                   - Cluster Not Found in Drop-Down List: baize/troubleshoot/cluster-not-found.md
@@ -1155,6 +1187,7 @@ nav:
                   - Concepts: kant/intro/concepts.md
                   - Release Notes: kant/intro/release-notes.md
                   - Offline Upgrade: kant/intro/offline-upgrade.md
+                  - FAQs: kant/intro/faq.md
               - Edge Unit:
                   - Create Internal Edge Unit: kant/user-guide/edge-unit/create-internal-unit.md
                   - Create External Edge Unit: kant/user-guide/edge-unit/create-external-unit.md
@@ -1163,6 +1196,7 @@ nav:
               - Edge Node:
                   - Overview: kant/user-guide/node/index.md
                   - Requirements to Join Edge Node: kant/user-guide/node/join-rqmt.md
+                  - Install Container Runtime on Edge Nodes: kant/user-guide/node/container-engine-install.md
                   - Create Integration Guide: kant/user-guide/node/create-access-guide.md
                   - Edge Node Onboarding: kant/user-guide/node/access-guide.md
                   - Manage Edge Nodes: kant/user-guide/node/manage-node.md
@@ -1172,6 +1206,7 @@ nav:
                   - Manage Edge Node Group: kant/user-guide/node-group/manage-group.md
               - End Device:
                   - Intro: kant/user-guide/device/index.md
+                  - Create Device Model: kant/user-guide/device/create-device-model.md
                   - Create End Device: kant/user-guide/device/create-device.md
                   - Manage End Device: kant/user-guide/device/manage-device.md
               - Edge App:
@@ -1187,7 +1222,8 @@ nav:
                   - Deploy EdgeMesh: kant/user-guide/edge-network/deploy-edgemesh.md
                   - Service: kant/user-guide/edge-network/service.md
               - Best Practices:
-                  - Smart Device Control: kant/best-practice/device-control.md
+                  - Instructions to Connect a Modbus Device: kant/best-practice/modbus-device-demo.md
+                  - Smart Device Control: kant/best-practice/custom-device-control.md
                   - Develop Device Driver - Mapper: kant/best-practice/develop-device-mapper.md
       - Management:
           - Global Management:
@@ -1265,7 +1301,7 @@ nav:
                   - Workbench Permissions: ghippo/permissions/amamba.md
                   - Service Mesh Permissions: ghippo/permissions/mspider.md
                   - Middleware Permissions: ghippo/permissions/mcamel.md
-                  - Intelligent Engine Permissions: ghippo/permissions/baize.md
+                  - AI Lab Permissions: ghippo/permissions/baize.md
               - Best Practices:
                   - Workspace Practices: ghippo/best-practice/ws-best-practice.md
                   - Bind a Workspace to Namespace: ghippo/best-practice/ws-to-ns.md
@@ -1282,7 +1318,9 @@ nav:
                       - OEM OUT: ghippo/best-practice/oem/oem-out.md
                       - Customize DCE 5.0 to Sync IdP: ghippo/best-practice/oem/custom-idp.md
                       - Customize IdP with Keycloak: ghippo/best-practice/oem/keycloak-idp.md
-                  - Customize Nav Bar: ghippo/best-practice/navigator.md
+                  - Customize Nav Bar:
+                      - Customize Nav Bar: ghippo/best-practice/menu/navigator.md
+                      - Display/Hide Navigation Bar Menu Based on Permissions: ghippo/best-practice/menu/menu-display-or-hiding.md
               - Troubleshoot:
                   - ingressgateway cannot start: ghippo/troubleshooting/ghippo01.md
                   - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md
@@ -1299,7 +1337,8 @@ nav:
           - Container Management: videos/kpanda.md
           - Multicloud Management: videos/kairship.md
           - Container Registry: videos/kangaroo.md
-          - Network: videos/network.md          
+          - Network: videos/network.md    
+          - Virtual Machine: videos/virtnest.md      
       - Microservices:
           - Insight: videos/insight.md
           - Microservice Engine: videos/skoala.md
@@ -1307,12 +1346,12 @@ nav:
       - Data Service:
           - Middleware: videos/mcamel.md
       - Cloud Native AI:
-          - Intelligent Engine: videos/baize.md
+          - AI Lab: videos/baize.md
       - Edge Computing:
           - Cloud Edge Collaboration: videos/kant.md
       - Management:
           - Global Management: videos/ghippo.md
-  - Download:
+  - Downloads:
       - DaoCloud Enterprise 5.0:
           - Index: download/index.md
           - Download DCE 5.0 Community: download/free/dce5-installer-history.md
@@ -1325,14 +1364,16 @@ nav:
                   - Cluster Inspection: download/modules/kcollie.md
                   - Application Backup: download/modules/kcoral.md
                   - Security: download/modules/dowl.md
+                  - MultiCloud Management: download/modules/kairship.md
+                  - Container Registry: download/modules/kangaroo.md
                   - Network: download/modules/spidernet.md
                   - Storage: download/modules/hwameistor.md
                   - Virtual Machine: download/modules/virtnest.md
-              - MultiCloud Management: download/modules/kairship.md
-              - Container Registry: download/modules/kangaroo.md
-              - Insight: download/modules/insight.md
-              - Microservice Engine: download/modules/skoala.md
-              - Service Mesh: download/modules/mspider.md
+              - Microservice:
+                  - Insight: download/modules/insight.md
+                  - Ipavo: download/modules/ipavo.md
+                  - Microservice Engine: download/modules/skoala.md
+                  - Service Mesh: download/modules/mspider.md
               - Middleware:
                   - Elasticsearch: download/modules/middleware/elasticsearch.md
                   - Kafka: download/modules/middleware/kafka.md
@@ -1350,59 +1391,61 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2024:
-          - Nvidia Conquers Latest AI Tests: blogs/20240619-nvidiaai.md
-          - 10 Years of Kubernetes: blogs/0606-k8s-birth.md
-          - A Legendary K8s Quest with SIG Docs: blogs/240516-sig-docs.md
-          - Large Language Model Spec: blogs/240509-model-spec.md
-          - Cloud Native AI Whitepapaer: blogs/240410-cnai-wp.md
-          - Kubean Enters CNCF Sandbox: blogs/240416-kubean.md
-          - Innovations at KubeCon Paris: blogs/240326-kubecon-eu.md
-          - Create a Open Source Commercial Ecosystem: blogs/240301-osc-eco.md
-          - Book - Managing Cloud Native Data on Kubernetes: blogs/240203-book.md
-          - Accelerated Computing: blogs/240201-ai-compute.md
-          - Containerization AI Streamlines ML Models: blogs/240115-news.md
-          - KubeEdge v1.15.0 Released: blogs/240108-kubeedge.md
+          - From Community Novice to CNCF Ambassador: blogs/2024/241108-cncf-ambassador.md
+          - containerd v2.0, nerdctl v2.0, and Lima v1.0: blogs/2024/241106-containerd-nerdctl-lima.md
+          - Nvidia Conquers Latest AI Tests: blogs/2024/20240619-nvidiaai.md
+          - 10 Years of Kubernetes: blogs/2024/0606-k8s-birth.md
+          - A Legendary K8s Quest with SIG Docs: blogs/2024/240516-sig-docs.md
+          - Large Language Model Spec: blogs/2024/240509-model-spec.md
+          - Cloud Native AI Whitepapaer: blogs/2024/240410-cnai-wp.md
+          - Kubean Enters CNCF Sandbox: blogs/2024/240416-kubean.md
+          - Innovations at KubeCon Paris: blogs/2024/240326-kubecon-eu.md
+          - Create a Open Source Commercial Ecosystem: blogs/2024/240301-osc-eco.md
+          - Book - Managing Cloud Native Data on Kubernetes: blogs/2024/240203-book.md
+          - Accelerated Computing: blogs/2024/240201-ai-compute.md
+          - Containerization AI Streamlines ML Models: blogs/2024/240115-news.md
+          - KubeEdge v1.15.0 Released: blogs/2024/240108-kubeedge.md
       - 2023:
-          - K8s 1.29 Released - Ambious Mandala Theme: blogs/231213-k8s-1.29.md
-          - Does K8s Perform Better on Bare Metal vs. VMs?: blogs/231205-vm-bm-compare.md
-          - Removals, Deprecations, and Changes in K8s 1.29: blogs/231115-k8s-1.29-changes.md
-          - A Look Back for K8s Contributor Summit in Shanghai: blogs/20231008-kcs.md
-          - Call for K8s Contributor Summit in Shanghai: blogs/230911-kubecon-contributor.md
-          - K8s 1.28 Released: blogs/230815-k8s1.28.md
-          - Unlease K8sGPT: blogs/230808-k8sgpt.md
-          - Explore Ray Core (II): blogs/230615-ray.md
-          - Explore Ray Core (I): blogs/230612-ray.md
-          - Istio 1.18 Released: blogs/230609-istio118.md
-          - Federation Middleware FedState: blogs/230605-fedstate.md
-          - API Server Tracing to Beta: blogs/230601-api-server-tracing.md
-          - Seccomp on Edge: blogs/230518-seccom.md
-          - Install K8s (KLTS): blogs/230509-k8s-install.md
-          - Accelerate Socket by Cilium: blogs/230508-cilium.md
-          - K8s 1.27 Pod Startup: blogs/230428-pod-startup.md
-          - Basics of VictoriaMetrics: blogs/230427-victoriametrics.md
-          - Karmada Failover: blogs/230418-karmada-failover.md
-          - CNCF Platform Engineering Whitepaper: blogs/230417-cncf-platform-wp.md
-          - K8s 1.27 Released: blogs/230412-k8s-1.27.md
-          - New Choice of Fixed IP: blogs/230411-spiderpool.md
-          - Step-By-Step Install DCE Community: blogs/230405-step-by-step-dce5.md
-          - Edge-Native App Principle: blogs/230317-edge-app-wp.md
-          - Install DCE Community on Linux: blogs/230315-install-on-linux.md
-          - Install DCE Community on macOS: blogs/230315-install-on-macos.md
-          - Introduction to KWOK: blogs/230301-kwok.md
-          - Open Source Projects in DCE Community: blogs/230214-open-projects.md
-          - DaoCloud and K8s: blogs/230214-daocloud_k8s.md
-          - DCE 5.0 Dev Quotations: blogs/230201-peter.md
-          - 2023 Cloud Native Forecast: blogs/230201-forecast.md
-          - Leverage Your Idle Computing Power: blogs/230110-res-usage.md
+          - K8s 1.29 Released - Ambious Mandala Theme: blogs/2023/231213-k8s-1.29.md
+          - Does K8s Perform Better on Bare Metal vs. VMs?: blogs/2023/231205-vm-bm-compare.md
+          - Removals, Deprecations, and Changes in K8s 1.29: blogs/2023/231115-k8s-1.29-changes.md
+          - A Look Back for K8s Contributor Summit in Shanghai: blogs/2023/20231008-kcs.md
+          - Call for K8s Contributor Summit in Shanghai: blogs/2023/230911-kubecon-contributor.md
+          - K8s 1.28 Released: blogs/2023/230815-k8s1.28.md
+          - Unlease K8sGPT: blogs/2023/230808-k8sgpt.md
+          - Explore Ray Core (II): blogs/2023/230615-ray.md
+          - Explore Ray Core (I): blogs/2023/230612-ray.md
+          - Istio 1.18 Released: blogs/2023/230609-istio118.md
+          - Federation Middleware FedState: blogs/2023/230605-fedstate.md
+          - API Server Tracing to Beta: blogs/2023/230601-api-server-tracing.md
+          - Seccomp on Edge: blogs/2023/230518-seccom.md
+          - Install K8s (KLTS): blogs/2023/230509-k8s-install.md
+          - Accelerate Socket by Cilium: blogs/2023/230508-cilium.md
+          - K8s 1.27 Pod Startup: blogs/2023/230428-pod-startup.md
+          - Basics of VictoriaMetrics: blogs/2023/230427-victoriametrics.md
+          - Karmada Failover: blogs/2023/230418-karmada-failover.md
+          - CNCF Platform Engineering Whitepaper: blogs/2023/230417-cncf-platform-wp.md
+          - K8s 1.27 Released: blogs/2023/230412-k8s-1.27.md
+          - New Choice of Fixed IP: blogs/2023/230411-spiderpool.md
+          - Step-By-Step Install DCE Community: blogs/2023/230405-step-by-step-dce5.md
+          - Edge-Native App Principle: blogs/2023/230317-edge-app-wp.md
+          - Install DCE Community on Linux: blogs/2023/230315-install-on-linux.md
+          - Install DCE Community on macOS: blogs/2023/230315-install-on-macos.md
+          - Introduction to KWOK: blogs/2023/230301-kwok.md
+          - Open Source Projects in DCE Community: blogs/2023/230214-open-projects.md
+          - DaoCloud and K8s: blogs/2023/230214-daocloud_k8s.md
+          - DCE 5.0 Dev Quotations: blogs/2023/230201-peter.md
+          - 2023 Cloud Native Forecast: blogs/2023/230201-forecast.md
+          - Leverage Your Idle Computing Power: blogs/2023/230110-res-usage.md
       - 2022:
-          - K8s 1.26 Released: blogs/221209-k8s-1.26.md
-          - DaoCloud is a KCSP: blogs/221116-kcsp.md
-          - What is Container Management: blogs/221026-kpanda.md
-          - What is Resource Management: blogs/221018-resource.md
-          - What is Workbench: blogs/220925-amamba.md
-          - What is Multicloud Management: blogs/220808-kairship.md
-          - What is Service Mesh: blogs/220708-mspider.md
-          - DCE 5.0 Dev Background: blogs/221008-dce-bg.md
+          - K8s 1.26 Released: blogs/2022/221209-k8s-1.26.md
+          - DaoCloud is a KCSP: blogs/2022/221116-kcsp.md
+          - What is Container Management: blogs/2022/221026-kpanda.md
+          - What is Resource Management: blogs/2022/221018-resource.md
+          - What is Workbench: blogs/2022/220925-amamba.md
+          - What is Multicloud Management: blogs/2022/220808-kairship.md
+          - What is Service Mesh: blogs/2022/220708-mspider.md
+          - DCE 5.0 Dev Background: blogs/2022/221008-dce-bg.md
   - DaoCloud Ecosystem:
       - Index: community/index.md
       - CloudTTY: community/cloudtty.md
@@ -1412,6 +1455,7 @@ nav:
       - Fast: community/fast.md
       - FedState: community/fedstate.md
       - Ferry: community/ferry.md
+      - HAMi: community/hami.md
       - HwameiStor: community/hwameistor.md
       - KasmCloud: community/kasmcloud.md
       - Kdoctor: community/kdoctor.md

@@ -28,6 +28,31 @@ HwameiStor 是一款 Kubernetes 原生的容器附加存储 (CAS) 解决方案�
 
     可以根据集群规模大小进行动态的扩容，灵活满足应用的数据持久化需求。
 
+## 产品优势
+
+**I/O 本地化**
+
+100% 本地吞吐，无网络开销，节点故障时 Pod 在副本节点启动，使用副本数据卷进行本地 IO 读写。
+
+**高性能、高可用性**
+
+- 100% IO 本地化，实现高性能本地吞吐
+- 2 副本数据卷冗余备份，保障数据高可用
+
+**线性扩展**
+
+- 独立节点单元，最小 1 节点，扩展数量不限
+- 控制平面、数据平面分离，节点扩展，不影响业务应用数据 I/O
+
+**CPU、内存开销小**
+
+IO 本地化，相同的 IO 读写，CPU 平稳，无较大波动，内存资源开销小
+
+**生产可运维**
+
+- 支持节点、磁盘、数据卷组（VG）维度迁移
+- 支持换盘等运维行为
+
 [HwameiStor 发行版本](https://github.com/hwameistor/hwameistor/releases){ .md-button .md-button--primary }
 [下载 DCE 5.0](../../../download/index.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../../../install/index.md){ .md-button .md-button--primary }

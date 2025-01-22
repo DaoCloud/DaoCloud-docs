@@ -1,8 +1,5 @@
 ---
 date: 2023-07-23
-status: new
-hide:
-   - toc
 ---
 
 # 使用网格完成定向服务访问限制
@@ -13,7 +10,7 @@ hide:
 
 ## 准备工作
 
-首先，您需要确保你的网格属于正常的状态，如果您还没有安装 Istio，请参考 [创建网格](../install/install.md)。
+首先，您需要确保你的网格属于正常的状态，如果您还没有安装 Istio，请参考[创建网格](../install/install.md)。
 
 ### 网格启用仅出口流量
 
@@ -71,7 +68,7 @@ hide:
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-07.png)
 
-## 启用授权策略
+### 启用授权策略
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-11.png)
 

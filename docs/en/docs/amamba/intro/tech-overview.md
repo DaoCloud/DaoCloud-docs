@@ -192,7 +192,7 @@ Compared to native Argo Rollouts, we have mainly enhanced the following aspects:
 
 Issues:
 
-1. In Mspider's managed mesh mode, the VirtualService and DestinationRule deployed in sub-clusters
+1. In Mspider's hosted mesh mode, the VirtualService and DestinationRule deployed in sub-clusters
    will not take effect, making it impossible to use Istio-based Rollout in this scenario.
    Mspider is optimizing it and is expected to support it in v0.26.
 2. Creating Rollout based on Deployment will cause temporary access failures. The community is

@@ -142,8 +142,7 @@ metadata:
   name: cluster1-online-install-ops
 spec:
   cluster: ${cluster-name} # (1)!
-  image: ghcr.m.daocloud.io/kubean-io/spray-job:v0.4.6 # (2)!
-  backoffLimit: 0
+  image: ghcr.m.daocloud.io/kubean-io/spray-job:v0.18.0 # (2)!
   actionType: playbook
   action: cluster.yml # (3)!
   extraArgs: --limit=etcd,kube_control_plane -e ignore_assert_errors=yes
@@ -174,8 +173,8 @@ spec:
 然后创建并部署 scale-master-node-ops.yaml。
 
 ```bash
-vi cale-master-node-ops.yaml
-kubectl apply -f cale-master-node-ops.yaml -n kubean-system
+vi scale-master-node-ops.yaml
+kubectl apply -f scale-master-node-ops.yaml -n kubean-system
 ```
 
 执行完上述步骤，执行如下命令进行验证：

@@ -11,8 +11,6 @@ hide:
 1. 第一部分是平台集成或托管的镜像仓库中全部的公开镜像，以及通过镜像空间与工作空间绑定而单独分配给该工作空间的私有镜像。
 2. 第二部分是工作空间主动关联某镜像仓库而获得的全部公开或私有镜像。
 
-![镜像空间包含什么](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/space02.png)
-
 **主要功能**
 
 - 快速部署应用：镜像列表和 __应用工作台__ 均以工作空间为维度，因此当您在应用工作台下选择同一工作空间部署应用时，
@@ -33,19 +31,29 @@ hide:
 
 您可以推送一个镜像到当前镜像空间，并设置推送命令。
 
-1. 在镜像列表页面上，点击右侧的 __推送命令__ 按钮
+1. 在镜像空间页面上，点击右侧的 __推送命令__ 按钮
 
-    ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/push00.png)
+    ![点击按钮](../images/push00.png)
 
 1. 可以 __+ 生成登录指令__ 后，查看推送镜像的命令。
 
-    ![推送命令](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/push01.png)
+    ![推送命令](../images/push01.png)
 
 推送命令示例：
 
 ```bash
-docker tag [ImageID] 10.6.194.1:30010/kangaroo/REPOSITORY[:TAG]
-docker push 10.6.194.1:30010/kangaroo/REPOSITORY[:TAG]
+docker tag [ImageID] 10.6.135.168:30002/[镜像空间名称]/[镜像名称]:[镜像版本号]
+docker push 10.6.135.168:30002/[镜像空间名称]/[镜像名称]:[镜像版本号]
 ```
+
+## 删除镜像
+
+1. 点击镜像空间右侧的 __┇__ ，在弹出的菜单中点击 __删除__
+
+    ![删除操作](../images/deleteimage.png)
+
+1. 确认无误后，在二次确认弹窗中输入镜像名称，点击 __删除__
+
+    ![二次确认](../images/deleteimage01.png)
 
 下一步：[Artifacts 和描述信息](./desc.md)

@@ -7,18 +7,18 @@ Date: 2024-07-29
 
 ## Symptom
 
-In the Intelligent Engine Developer and Operator UI, the desired cluster cannot
+In the AI Lab Developer and Operator UI, the desired cluster cannot
 be found in the drop-down list while you search for a cluster.
 
 ## Analysis
 
-If the desired cluster is missing from the cluster drop-down list in Intelligent Engine,
+If the desired cluster is missing from the cluster drop-down list in AI Lab,
 it could be due to the following reasons:
 
-- The `baize-agent` is not installed or failed to install, causing Intelligent Engine
+- The `baize-agent` is not installed or failed to install, causing AI Lab
   to be unable to retrieve cluster information.
 - The cluster name was not configured when installing `baize-agent`, causing
-  Intelligent Engine to be unable to retrieve cluster information.
+  AI Lab to be unable to retrieve cluster information.
 - Observable components within the worker cluster are abnormal,
   leading to the inability to collect metrics information from the cluster.
 
@@ -26,7 +26,7 @@ it could be due to the following reasons:
 
 ### `baize-agent` not installed or failed to install
 
-Intelligent Engine requires some basic components to be installed in each worker cluster.
+AI Lab requires some basic components to be installed in each worker cluster.
 If the `baize-agent` is not installed in the worker cluster, you can choose to install
 it via UI, which might lead to some unexpected errors.
 
@@ -53,7 +53,7 @@ for Insight metrics collection and **is empty by default, requiring manual confi
 
 ### Insight components in the worker cluster are abnormal
 
-If the Insight components in the cluster are abnormal, it might cause Intelligent Engine
+If the Insight components in the cluster are abnormal, it might cause AI Lab
 to be unable to retrieve cluster information. Check if the platform's Insight services
 are running and configured correctly.
 

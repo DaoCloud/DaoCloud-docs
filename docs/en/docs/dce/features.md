@@ -19,7 +19,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of features, and the typic
 - Cluster high avalability, the built-in cluster disaster recovery and backup abilities ensure that business systems
   can recover from host failures, equipment room interruptions, and natural disasters, improving the stability of the
   production environment and reducing the risk of business interruption.
-- Full lifecycle management of clusters, realizing the full lifecycle management of self-build cloud native clusters.
+- Full lifecycle management of clusters, realizing the lifecycle management of self-build cloud native clusters.
 - OpenAPI capability, providing native Kubernetes openAPI ability.
 
 === "Cloud native application management"
@@ -30,7 +30,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of features, and the typic
   service application to realize the lifecycle-management of application.
 - Workload autoscaling. It can manually/automatically expand and reduce the application workload, and
   customize the autoscaling policies to cope with the traffic peak.
-- The full lifecycle of application, supporting lifecycle-management of application such as application view, update,
+- The lifecycle of application, supporting lifecycle-management of application such as application view, update,
   delete, rollback, time view, and upgrade.
 - Unified workload management abbility of cross-cluster.
 

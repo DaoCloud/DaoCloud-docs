@@ -2,7 +2,7 @@
 
 使用分布式链路跟踪，可以在分布式系统中观察请求如何在各个系统中流转。不可否认，它非常实用，例如了解您的服务连接和诊断延迟问题，以及许多其他好处。
 
-但是，如果您的大多数请求都成功了，并且没有出现不可接受的延迟或错误，那么您真的需要所有这些数据吗？所以，你并不总是需要大量或者全量的数据来找到正确的见解。您只需要通过恰当的的数据采样即可。
+但是，如果您的大多数请求都成功了，并且没有出现不可接受的延迟或错误，那么您真的需要所有这些数据吗？所以，你并不总是需要大量或者全量的数据来找到正确的见解。您只需要通过恰当的数据采样即可。
 
 采样背后的想法是控制发送到可观察性收集器的链路，从而降低采集成本。不同的组织有不同的原因，比如为什么要抽样，以及想要抽样什么杨的数据。所以，我们需要自定义采样策略：
 
@@ -12,7 +12,7 @@
 
 在讨论采样时使用一致的术语是很重要的。Trace 或 Span 被视为 **采样** 或 **未采样**：
 
-- 采样：Trace 或 Span 被处理并保存。为它被采样者选择为总体的代表，所以它被认为是 **抽样的**。
+- 采样：Trace 或 Span 被处理并保存。为它被采样者选择为总体的代表，所以它被认为是 **采样的**。
 - 未采样：不被处理或保存的 Trace 或 Span。因为它不是由采样器选择的，所以被认为是 **未采样**。
 
 ## 采样的方式有哪些？
@@ -21,7 +21,7 @@
 
 头部抽样是一种用于尽早做出抽样决定的采样技术。采样或删除 Trace/Span 的决定不是通过检查整个 Trace 来做出的。
 
-例如，最常见的头部抽样形式是一致概率抽样。它也可以称为确定性采样。在这种情况下，将根据 TraceID 和要采样的所需 Trace 百分比做出采样决策。这可确保以一致的速率（例如所有 Trace的 5%）对整个 Trace 进行采样（不遗漏 Span。
+例如，最常见的头部采样形式是一致概率采样。它也可以称为确定性采样。在这种情况下，将根据 TraceID 和要采样的所需 Trace 百分比做出采样决策。这可确保以一致的速率（例如所有 Trace的 5%）对整个 Trace 进行采样并且不遗漏 Span。
 
 头部采样的好处是：
 - 易于理解
@@ -54,243 +54,243 @@
 
 **DCE5 Insight 目前推荐使用尾部采样并优先支持尾部采样。**
 
-尾部采样处理器根据一组定义的策略对链路进行采样。但是，链路的所有跨度（span）必须由同一收集器实例接收，以做出有效的采样决策。
+尾部采样处理器根据一组定义的策略对链路进行采样。但是，链路的所有跨度（Span）必须由同一收集器实例接收，以做出有效的采样决策。
 
 因此，需要对 Insight 的 Global Opentelemetry Collector 架构进行调整以实现尾部采样策略。
 
 ## Insight 具体改动
 
-在 Global 集群中的 `insight-opentelemetry-collector` 前面引入具有负载均衡能力的 Opentelemetry Collector Gateway 组件，使得同一组 Trace 能够根据 TraceID 路由到同一个 Opentelemetry Collector 实例。
+在全局服务集群中的 `insight-opentelemetry-collector` 前面引入具有负载均衡能力的 Opentelemetry Collector Gateway 组件，使得同一组 Trace 能够根据 TraceID 路由到同一个 Opentelemetry Collector 实例。
 
 1. 部署具有负载均衡能力的 OTEL COL Gateway 组件
 
-如果您使用了 Insight 0.25.x 版本，可以通过如下 Helm Upgrade 参数 `--set opentelemetry-collector-gateway.enabled=true` 快速开启，以此跳过如下部署过程。
+    如果您使用了 Insight 0.25.x 版本，可以通过如下 Helm Upgrade 参数 `--set opentelemetry-collector-gateway.enabled=true` 快速开启，以此跳过如下部署过程。
 
-参照以下 YAML 配置来部署。
+    参照以下 YAML 配置来部署。
 
-??? note "点击查看部署配置"
+    ??? note "点击查看部署配置"
 
-    ```yaml
-    kind: ClusterRole
-    apiVersion: rbac.authorization.k8s.io/v1
-    metadata:
-      name: insight-otel-collector-gateway
-    rules:
-    - apiGroups: [""]
-      resources: ["endpoints"]
-      verbs: ["get", "watch", "list"]
-    ---
-    apiVersion: v1
-    kind: ServiceAccount
-    metadata:
-      name: insight-otel-collector-gateway
-      namespace: insight-system
-    ---
-    apiVersion: rbac.authorization.k8s.io/v1
-    kind: ClusterRoleBinding
-    metadata:
-      name: insight-otel-collector-gateway
-    roleRef:
-      apiGroup: rbac.authorization.k8s.io
-      kind: ClusterRole
-      name: insight-otel-collector-gateway
-    subjects:
-    - kind: ServiceAccount
-      name: insight-otel-collector-gateway
-      namespace: insight-system
-    ---
-    kind: ConfigMap
-    metadata:
-      labels:
-        app.kubernetes.io/component: opentelemetry-collector
-        app.kubernetes.io/instance: insight-otel-collector-gateway
-        app.kubernetes.io/name: insight-otel-collector-gateway
-      name: insight-otel-collector-gateway-collector
-      namespace: insight-system
-    apiVersion: v1
-    data:
-      collector.yaml: |
-        receivers:
-          otlp:
-            protocols:
-              grpc:
-              http:
-          jaeger:
-            protocols:
-              grpc:
-        processors:
-    
-        extensions:
-          health_check:
-          pprof:
-            endpoint: :1888
-          zpages:
-            endpoint: :55679
-        exporters:
-          logging:
-          loadbalancing:
-            routing_key: "traceID"
-            protocol:
-              otlp:
-                # all options from the OTLP exporter are supported
-                # except the endpoint
-                timeout: 1s
-                tls:
-                  insecure: true
-            resolver:
-              k8s:
-                service: insight-opentelemetry-collector
-                ports:
-                  - 4317
-        service:
-          extensions: [pprof, zpages, health_check]
-          pipelines:
-            traces:
-              receivers: [otlp, jaeger]
-              exporters: [loadbalancing]
-    ---
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      labels:
-        app.kubernetes.io/component: opentelemetry-collector
-        app.kubernetes.io/instance: insight-otel-collector-gateway
-        app.kubernetes.io/name: insight-otel-collector-gateway
-      name: insight-otel-collector-gateway
-      namespace: insight-system
-    spec:
-      replicas: 2
-      selector:
-        matchLabels:
-          app.kubernetes.io/component: opentelemetry-collector
-          app.kubernetes.io/instance: insight-otel-collector-gateway
-          app.kubernetes.io/name: insight-otel-collector-gateway
-      template:
+        ```yaml
+        kind: ClusterRole
+        apiVersion: rbac.authorization.k8s.io/v1
+        metadata:
+          name: insight-otel-collector-gateway
+        rules:
+        - apiGroups: [""]
+          resources: ["endpoints"]
+          verbs: ["get", "watch", "list"]
+        ---
+        apiVersion: v1
+        kind: ServiceAccount
+        metadata:
+          name: insight-otel-collector-gateway
+          namespace: insight-system
+        ---
+        apiVersion: rbac.authorization.k8s.io/v1
+        kind: ClusterRoleBinding
+        metadata:
+          name: insight-otel-collector-gateway
+        roleRef:
+          apiGroup: rbac.authorization.k8s.io
+          kind: ClusterRole
+          name: insight-otel-collector-gateway
+        subjects:
+        - kind: ServiceAccount
+          name: insight-otel-collector-gateway
+          namespace: insight-system
+        ---
+        kind: ConfigMap
         metadata:
           labels:
             app.kubernetes.io/component: opentelemetry-collector
             app.kubernetes.io/instance: insight-otel-collector-gateway
             app.kubernetes.io/name: insight-otel-collector-gateway
+          name: insight-otel-collector-gateway-collector
+          namespace: insight-system
+        apiVersion: v1
+        data:
+          collector.yaml: |
+            receivers:
+              otlp:
+                protocols:
+                  grpc:
+                  http:
+              jaeger:
+                protocols:
+                  grpc:
+            processors:
+        
+            extensions:
+              health_check:
+              pprof:
+                endpoint: :1888
+              zpages:
+                endpoint: :55679
+            exporters:
+              logging:
+              loadbalancing:
+                routing_key: "traceID"
+                protocol:
+                  otlp:
+                    # all options from the OTLP exporter are supported
+                    # except the endpoint
+                    timeout: 1s
+                    tls:
+                      insecure: true
+                resolver:
+                  k8s:
+                    service: insight-opentelemetry-collector
+                    ports:
+                      - 4317
+            service:
+              extensions: [pprof, zpages, health_check]
+              pipelines:
+                traces:
+                  receivers: [otlp, jaeger]
+                  exporters: [loadbalancing]
+        ---
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          labels:
+            app.kubernetes.io/component: opentelemetry-collector
+            app.kubernetes.io/instance: insight-otel-collector-gateway
+            app.kubernetes.io/name: insight-otel-collector-gateway
+          name: insight-otel-collector-gateway
+          namespace: insight-system
         spec:
-          containers:
-          - args:
-            - --config=/conf/collector.yaml
-            env:
-            - name: POD_NAME
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.name
-            image: ghcr.m.daocloud.io/openinsight-proj/opentelemetry-collector-contrib:5baef686672cfe5551e03b5c19d3072c432b6f33
-            imagePullPolicy: IfNotPresent
-            livenessProbe:
-              failureThreshold: 3
-              httpGet:
-                path: /
-                port: 13133
-                scheme: HTTP
-              periodSeconds: 10
-              successThreshold: 1
-              timeoutSeconds: 1
-            name: otc-container
-            resources:
-              limits:
-                cpu: '1'
-                memory: 2Gi
-              requests:
-                cpu: 100m
-                memory: 400Mi
-            ports:
-            - containerPort: 14250
-              name: jaeger-grpc
+          replicas: 2
+          selector:
+            matchLabels:
+              app.kubernetes.io/component: opentelemetry-collector
+              app.kubernetes.io/instance: insight-otel-collector-gateway
+              app.kubernetes.io/name: insight-otel-collector-gateway
+          template:
+            metadata:
+              labels:
+                app.kubernetes.io/component: opentelemetry-collector
+                app.kubernetes.io/instance: insight-otel-collector-gateway
+                app.kubernetes.io/name: insight-otel-collector-gateway
+            spec:
+              containers:
+              - args:
+                - --config=/conf/collector.yaml
+                env:
+                - name: POD_NAME
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: metadata.name
+                image: ghcr.m.daocloud.io/openinsight-proj/opentelemetry-collector-contrib:5baef686672cfe5551e03b5c19d3072c432b6f33
+                imagePullPolicy: IfNotPresent
+                livenessProbe:
+                  failureThreshold: 3
+                  httpGet:
+                    path: /
+                    port: 13133
+                    scheme: HTTP
+                  periodSeconds: 10
+                  successThreshold: 1
+                  timeoutSeconds: 1
+                name: otc-container
+                resources:
+                  limits:
+                    cpu: '1'
+                    memory: 2Gi
+                  requests:
+                    cpu: 100m
+                    memory: 400Mi
+                ports:
+                - containerPort: 14250
+                  name: jaeger-grpc
+                  protocol: TCP
+                - containerPort: 8888
+                  name: metrics
+                  protocol: TCP
+                - containerPort: 4317
+                  name: otlp-grpc
+                  protocol: TCP
+                - containerPort: 4318
+                  name: otlp-http
+                  protocol: TCP
+                - containerPort: 55679
+                  name: zpages
+                  protocol: TCP
+        
+                volumeMounts:
+                - mountPath: /conf
+                  name: otc-internal
+        
+              serviceAccount: insight-otel-collector-gateway
+              serviceAccountName: insight-otel-collector-gateway
+              volumes:
+              - configMap:
+                  defaultMode: 420
+                  items:
+                  - key: collector.yaml
+                    path: collector.yaml
+                  name: insight-otel-collector-gateway-collector
+                name: otc-internal
+        ---
+        kind: Service
+        apiVersion: v1
+        metadata:
+          name: insight-opentelemetry-collector-gateway
+          namespace: insight-system
+          labels:
+            app.kubernetes.io/component: opentelemetry-collector
+            app.kubernetes.io/instance: insight-otel-collector-gateway
+            app.kubernetes.io/name: insight-otel-collector-gateway
+        spec:
+          ports:
+            - name: fluentforward
               protocol: TCP
-            - containerPort: 8888
-              name: metrics
+              port: 8006
+              targetPort: 8006
+            - name: jaeger-compact
+              protocol: UDP
+              port: 6831
+              targetPort: 6831
+            - name: jaeger-grpc
               protocol: TCP
-            - containerPort: 4317
-              name: otlp-grpc
+              port: 14250
+              targetPort: 14250
+            - name: jaeger-thrift
               protocol: TCP
-            - containerPort: 4318
-              name: otlp-http
+              port: 14268
+              targetPort: 14268
+            - name: metrics
               protocol: TCP
-            - containerPort: 55679
-              name: zpages
+              port: 8888
+              targetPort: 8888
+            - name: otlp
               protocol: TCP
-    
-            volumeMounts:
-            - mountPath: /conf
-              name: otc-internal
-    
-          serviceAccount: insight-otel-collector-gateway
-          serviceAccountName: insight-otel-collector-gateway
-          volumes:
-          - configMap:
-              defaultMode: 420
-              items:
-              - key: collector.yaml
-                path: collector.yaml
-              name: insight-otel-collector-gateway-collector
-            name: otc-internal
-    ---
-    kind: Service
-    apiVersion: v1
-    metadata:
-      name: insight-opentelemetry-collector-gateway
-      namespace: insight-system
-      labels:
-        app.kubernetes.io/component: opentelemetry-collector
-        app.kubernetes.io/instance: insight-otel-collector-gateway
-        app.kubernetes.io/name: insight-otel-collector-gateway
-    spec:
-      ports:
-        - name: fluentforward
-          protocol: TCP
-          port: 8006
-          targetPort: 8006
-        - name: jaeger-compact
-          protocol: UDP
-          port: 6831
-          targetPort: 6831
-        - name: jaeger-grpc
-          protocol: TCP
-          port: 14250
-          targetPort: 14250
-        - name: jaeger-thrift
-          protocol: TCP
-          port: 14268
-          targetPort: 14268
-        - name: metrics
-          protocol: TCP
-          port: 8888
-          targetPort: 8888
-        - name: otlp
-          protocol: TCP
-          appProtocol: grpc
-          port: 4317
-          targetPort: 4317
-        - name: otlp-http
-          protocol: TCP
-          port: 4318
-          targetPort: 4318
-        - name: zipkin
-          protocol: TCP
-          port: 9411
-          targetPort: 9411
-        - name: zpages
-          protocol: TCP
-          port: 55679
-          targetPort: 55679
-      selector:
-        app.kubernetes.io/component: opentelemetry-collector
-        app.kubernetes.io/instance: insight-otel-collector-gateway
-        app.kubernetes.io/name: insight-otel-collector-gateway
-    ```
+              appProtocol: grpc
+              port: 4317
+              targetPort: 4317
+            - name: otlp-http
+              protocol: TCP
+              port: 4318
+              targetPort: 4318
+            - name: zipkin
+              protocol: TCP
+              port: 9411
+              targetPort: 9411
+            - name: zpages
+              protocol: TCP
+              port: 55679
+              targetPort: 55679
+          selector:
+            app.kubernetes.io/component: opentelemetry-collector
+            app.kubernetes.io/instance: insight-otel-collector-gateway
+            app.kubernetes.io/name: insight-otel-collector-gateway
+        ```
 
-2. 配置尾部采样规则
+1. 配置尾部采样规则
 
-!!! note
+    !!! note
 
-    需要在原本 insight-otel-collector-config configmap 配置组中增加尾部采样（tail_sampling processors）的规则。
+        需要在原本 insight-otel-collector-config configmap 配置组中增加尾部采样（tail_sampling processors）的规则。
 
 1. 在 `processor` 中增加如下内容，具体规则可调整；参考 [OTel 官方示例](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/tailsamplingprocessor/README.md#a-practical-example)。
 
@@ -350,7 +350,7 @@
         ]
     ```
 
-2. 在 `insight-otel-collector-config` **configmap** 中的 otel col pipeline 中激活该 `processor`：
+1. 在 `insight-otel-collector-config` **configmap** 中的 otel col pipeline 中激活该 `processor`：
 
     ```yaml
     traces:
@@ -365,9 +365,9 @@
         - otlp
     ```
 
-3. 重启 `insight-opentelemetry-collector` 组件。
+1. 重启 `insight-opentelemetry-collector` 组件。
 
-4. 部署或更新 Insight-agent，将链路数据的上报地址修改为 `opentelemetry-collector-gateway` LB 的 `4317` 端口地址。
+1. 部署或更新 Insight-agent，将链路数据的上报地址修改为 `opentelemetry-collector-gateway` LB 的 `4317` 端口地址。
 
     ```yaml
     ....
@@ -376,5 +376,5 @@
             endpoint: insight-opentelemetry-collector-gateway.insight-system.svc.cluster.local:4317  # 👈 修改为 gateway/lb 地址
     ```
 
-# 参考
+## 参考
 - [sampling](https://opentelemetry.io/docs/concepts/sampling/)

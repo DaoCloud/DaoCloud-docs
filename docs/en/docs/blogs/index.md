@@ -12,121 +12,131 @@ technology, sorted by date by default.
 
 ## 2024
 
-- [20240619 | Nvidia Conquers Latest AI Tests](./20240619-nvidiaai.md)
+- [20241108 | From Community Newbie to CNCF Ambassador](2024/241108-cncf-ambassador.md)
+
+    This article does not discuss technology; it simply shares a story of growth within the CNCF open source community, detailing a real experience of going from a community newbie to a CNCF ambassador.
+
+- [20241106 | containerd v2.0, nerdctl v2.0, and Lima v1.0](2024/241106-containerd-nerdctl-lima.md)
+
+    Ahead of the [KubeCon North America 2024](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/)
+    (November 12–15), this week saw the releases of [containerd](https://github.com/containerd/containerd) v2.0,
+    [nerdctl](https://github.com/containerd/nerdctl) (*contaiNERD CTL*) v2.0, and [Lima](https://lima-vm.io/) v1.0 🎉.
+
+- [20240619 | Nvidia Conquers Latest AI Tests](2024/20240619-nvidiaai.md)
 
     For years, Nvidia has dominated many machine learning benchmarks, and now there are two more notches in its belt：
     [MLPerf](https://mlcommons.org/benchmarks/training/) and [graph neural networks](https://spectrum.ieee.org/machine-learning-in-physics).
 
-- [20240606 | 10 Years of Kubernetes](./0606-k8s-birth.md)
+- [20240606 | 10 Years of Kubernetes](2024/0606-k8s-birth.md)
 
     Ten (10) years ago, on June 6th, 2014, the
     [first commit](https://github.com/kubernetes/kubernetes/commit/2c4b3a562ce34cddc3f8218a2c4d11c7310e6d56)
     of Kubernetes was pushed to GitHub. That first commit with 250 files and 47,501 lines of go, bash
     and markdown kicked off the project we have today.
 
-- [20240516 | Embark on a Legendary K8s Quest with SIG Docs](./240509-model-spec.md)
+- [20240516 | Embark on a Legendary K8s Quest with SIG Docs](2024/240509-model-spec.md)
 
     You've likely heard the adage, "Contributing isn't just about writing code",
     whispered in forums or seen etched into the digital walls of open source communities.
     But what depth of truth lies within this ancient wisdom, especially in the vast,
     evolving world of Kubernetes?
 
-- [20240509 | Large Language Model Spec](./240509-model-spec.md)
+- [20240509 | Large Language Model Spec](2024/240509-model-spec.md)
 
     This is the first draft of LLM Spec, a document that specifies desired behavior for our models in the OpenAI API and ChatGPT. It includes a set of core objectives, as well as guidance on how to deal with conflicting objectives or instructions.
 
-- [20240410 | Cloud Native AI Whitepapaer](./240410-cnai-wp.md)
+- [20240410 | Cloud Native AI Whitepapaer](2024/240410-cnai-wp.md)
 
     This paper presents a brief overview of the state-of-the-art AI/ML techniques, followed by what CN technologies offer, covering the next challenges and gaps before discussing evolving solutions.
 
-- [20240416 | Kubean Enters CNCF Sandbox](./240416-kubean.md)
+- [20240416 | Kubean Enters CNCF Sandbox](2024/240416-kubean.md)
 
     On April 15, 2024, after [an 11-member CNCF TAG committee vote](https://github.com/cncf/sandbox/issues/49), with 8 in favor and 3 not voting, the results exceeded the 66% threshold, successfully entering the well-known Sandbox for further incubation.
 
-- [20240326 | Platform engineering, API platforms and intelligent agents dominate innovation at KubeCon Paris](./240326-kubecon-eu.md)
+- [20240326 | Platform engineering, API platforms and intelligent agents dominate innovation at KubeCon Paris](2024/240326-kubecon-eu.md)
 
     The sizzle at this past week’s [KubeCon + CloudNativeCon Europe](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/)
     in Paris was all about Kubernetes-based infrastructure for generative artificial intelligence. The steak, in contrast, was all about platforms.
 
-- [20240301 | Create a Open Source Commercial Ecosystem](./240301-osc-eco.md)
+- [20240301 | Create a Open Source Commercial Ecosystem](2024/240301-osc-eco.md)
 
     One way for an open source project to be successful is to have a thriving ecosystem of companies and products built around it. So what exactly is an open source commercial ecosystem and how can organizations help create and support sustainable open source projects? There are concrete ways to create confidence in a project’s long-term viability, encourage companies to create commercial products and services on top of open source projects, and re-invest in them with contributions, content, and other resources. These practices for enabling ecosystem development help set your projects up for success.
 
-- [20240203 | Book Recommendation "Managing Cloud Native Data on Kubernetes"](./240203-book.md)
+- [20240203 | Book Recommendation "Managing Cloud Native Data on Kubernetes"](2024/240203-book.md)
 
     International renowned technology book publisher O'Reilly Media has quietly launched a professional book on Kubernetes data storage in collaboration with China Electronics Industry Publishing House:
     [Managing Cloud Native Data on Kubernetes](https://www.oreilly.com.cn/index.php?func=book&isbn=978-7-121-47005-9).
 
-- [20240201 | Accelerated Computing: What is it? and How Does it Work?](./240201-ai-compute.md)
+- [20240201 | Accelerated Computing: What is it? and How Does it Work?](2024/240201-ai-compute.md)
 
     Accelerated computing, with its unprecedented processing power, has taken a central role in cloud infrastructure,
     as it helps manage vast amounts of information in data centers more efficiently and effectively.
 
-- [20240115 | Containerization and AI: Streamlining the Deployment of Machine Learning Models](./240115-news.md)
+- [20240115 | Containerization and AI: Streamlining the Deployment of Machine Learning Models](2024/240115-news.md)
 
     This blog will explore the challenges of deploying ML models, the fundamentals of containerization, and the benefits for AI and ML applications.
 
-- [20240108 | KubeEdge v1.15.0 Release](./240108-kubeedge.md)
+- [20240108 | KubeEdge v1.15.0 Release](2024/240108-kubeedge.md)
 
     KubeEdge v1.15.0 introduces new features such as support for Windows edge nodes, device management based on physical models, and DMI data plane support.
 
 ## 2023
 
-- [20231213 | Kubernetes 1.29 Released with an Ambious Mandala Theme](./231213-k8s-1.29.md)
+- [20231213 | Kubernetes 1.29 Released with an Ambious Mandala Theme](2023/231213-k8s-1.29.md)
 
     On December 13, 2023, Pacific Time, Kubernetes 1.29 with the theme "Mandala" is officially released.
 
-- [20231205 | Does Kubernetes Really Perform Better on Bare Metal vs. VMs?](./231205-vm-bm-compare.md)
+- [20231205 | Does Kubernetes Really Perform Better on Bare Metal vs. VMs?](2023/231205-vm-bm-compare.md)
 
     Many people presume that a Kubernetes cluster deployed on bare metal performs better than one deployed on
     virtual machines, but until now there hasn’t been any proof of that assumption.
 
-- [20231115 | Removals, Deprecations, and Major Changes in Kubernetes 1.29](./231115-k8s-1.29-changes.md)
+- [20231115 | Removals, Deprecations, and Major Changes in Kubernetes 1.29](2023/231115-k8s-1.29-changes.md)
 
     As with every release, Kubernetes v1.29 will introduce feature deprecations and removals.
     Our continued ability to produce high-quality releases is a testament to our robust development
     cycle and healthy community. The following are some deprecations and removals coming
     in the Kubernetes 1.29 release.
 
-- [20231008 | A Look Back for Kubernetes Contributor Summits in Shanghai, China](./20231008-kcs.md)
+- [20231008 | A Look Back for Kubernetes Contributor Summits in Shanghai, China](2023/20231008-kcs.md)
 
     On September 26, 2023, the first day of KubeCon + CloudNativeCon + Open Source Summit China 2023,
     nearly 50 community contributors gathered in Shanghai for the Kubernetes Contributor Summit.
 
-- [20230815 | Kubernetes 1.28 is Released](./230815-k8s1.28.md)
+- [20230815 | Kubernetes 1.28 is Released](2023/230815-k8s1.28.md)
 
     Announcing the release of Kubernetes v1.28 Planternetes, the second release of 2023!
 
-- [20230808 | Unlocking the Power of Kubernetes with K8SGPT](./230808-k8sgpt.md)
+- [20230808 | Unlocking the Power of Kubernetes with K8SGPT](2023/230808-k8sgpt.md)
 
     [K8sGPT](https://k8sgpt.ai/) is an incredible tool that gives Kubernetes SREs superpowers.
     It provides a simple and efficient way to scan your Kubernetes clusters and diagnose issues in plain English.
 
-- [20230612 | AIGC Sharp Tools: Exploring Ray's Cloud-Native Journey - Ray Core Part II](./230615-ray.md)
+- [20230612 | AIGC Sharp Tools: Exploring Ray's Cloud-Native Journey - Ray Core Part II](2023/230615-ray.md)
 
     This article provides a detailed explanation of Ray's capabilities and parameters, as well as practical application operations.
 
-- [20230612 | The Exploration of Ray Core in Cloud-Native Computing for AIGC - Ray Core](./230612-ray.md)
+- [20230612 | The Exploration of Ray Core in Cloud-Native Computing for AIGC - Ray Core](2023/230612-ray.md)
 
     This article introduces how Ray Core, a distributed computing framework, works as the foundation of Ray.
 
-- [20230609 | Istio 1.18 Released: Officially Announcing Ambient Mode](./230609-istio118.md)
+- [20230609 | Istio 1.18 Released: Officially Announcing Ambient Mode](2023/230609-istio118.md)
 
     The 1.18 release is the second release of Istio in 2023 and the first to support Ambient mode.
 
     This release introduces many new features and changes, including but not limited to Istio in Ambient mode, enhanced Kubernetes Gateway API,
     health check support for unregistered VMs, added support for metric expiration, and improved __istioctl analyze__ .
 
-- [20230605 | Cloud Native Federation Middleware - FedState Officially Open Sourced](./230605-fedstate.md)
+- [20230605 | Cloud Native Federation Middleware - FedState Officially Open Sourced](2023/230605-fedstate.md)
 
     In the cloud native scenario, there has been great development of stateful services. In a multi-cloud/federation environment, how to design and implement the scheduling, deployment, and automated operation and maintenance of stateful services based on multiple clusters, multiple data centers, and hybrid cloud scenarios? The newly open-sourced FedState project is trying to solve such situation problems.
 
-- [2023061| API Server Tracing feature upgraded to beta](./230601-api-server-tracing.md)
+- [2023061| API Server Tracing feature upgraded to beta](2023/230601-api-server-tracing.md)
 
     In Kubernetes, the API Server is the core component responsible for managing and scheduling all cluster resources. It receives and processes requests from various clients
     and converts them into underlying resource operations. Therefore, the stability and observability of the API Server are crucial to the overall health of Kubernetes.
 
-- [20230518| Having fun with seccomp profiles on the edge](./230518-seccom.md)
+- [20230518| Having fun with seccomp profiles on the edge](2023/230518-seccom.md)
 
     The Security Profiles Operator (SPO) is a feature-rich
     operator for Kubernetes to make managing seccomp, SELinux and
@@ -136,85 +146,85 @@ technology, sorted by date by default.
     operator in edge cases is one of the recent development efforts of the SPO and
     makes it excitingly easy to play around with seccomp profiles.
 
-- [20230509 | Kubernetes Installation Tutorial (KLTS Version)](./230509-k8s-install.md)
+- [20230509 | Kubernetes Installation Tutorial (KLTS Version)](2023/230509-k8s-install.md)
 
     Using the DaoCloud-maintained [KLTS (Kubernetes Long Term Support)](https://klts.io/docs/intro/) as an example,
     this article briefly introduces the preparation work and installation steps for installing Kubernetes.
 
-- [20230508 | Cilium Accelerates Sockets with eBPF](./230508-cilium.md)
+- [20230508 | Cilium Accelerates Sockets with eBPF](2023/230508-cilium.md)
 
     With the continuous development of cloud native technology, more and more applications are deployed on the cloud. Some of these applications have very strict real-time requirements, which requires us to improve their performance to achieve faster service speeds.
     To achieve faster service speeds, a scenario is that when two applications that call each other are deployed on the same node, each request and response must pass through the socket layer, TCP/IP protocol stack, data link layer, and physical layer. 
     If requests and responses bypass the TCP/IP protocol stack and directly redirect data packets to the peer socket at the socket layer, it will greatly reduce the time consumed for sending data packets and increase the speed of the service.
     Based on this idea, eBPF technology maps and stores socket information, and uses helper functions to achieve the ability to redirect data packets to the peer socket layer. Cilium is based on this ability of eBPF to achieve socket acceleration effects.
 
-- [20230428 | Kubernetes 1.27: Speed Up Pod Startup](./230428-pod-startup.md)
+- [20230428 | Kubernetes 1.27: Speed Up Pod Startup](2023/230428-pod-startup.md)
 
     How to speed up Pod startup on nodes in a large cluster? This is a problem that cluster administrators often face in enterprises.
     This article focuses on methods to speed up Pod startup on the kubelet side. This method does not involve the time period for controller-manager to create Pods through kube-apiserver, 
     nor does it include the scheduling time of Pods or the time to run Webhooks on them.
 
-- [20230427 | Cloud-Native Monitoring - Basics of VictoriaMetrics](./230427-victoriametrics.md)
+- [20230427 | Cloud-Native Monitoring - Basics of VictoriaMetrics](2023/230427-victoriametrics.md)
 
     When it comes to cloud native monitoring solutions, the first thing that comes to mind is basically a mature solution set of Prometheus+AlertManager+Grafana. 
     As a monitoring core, Prometheus has powerful features such as strong data modeling, efficient operation, rich monitoring capabilities, powerful query language PromQL, simplicity, and easy management. However, Prometheus is currently not perfect in terms of high availability. For this reason, many alternative and enhanced solutions have emerged in the open source community, and VictoriaMetrics is one of the more outstanding ones. It is a fast, cost-effective, and scalable monitoring solution and time-series database.
 
-- [20230418 | Detailed Explanation of Karmada Failover](./230418-karmada-failover.md)
+- [20230418 | Detailed Explanation of Karmada Failover](2023/230418-karmada-failover.md)
 
     In the era of multicloud, how to achieve cross-data center, cross-AZ, and cross-cluster high availability of applications has become a new topic we are exploring.
     In a single cluster, if the cluster fails, all applications in the cluster will not be accessible. Is there a way to help us automatically migrate applications to a new cluster when the cluster fails to ensure continuous external access to the application?
 
-- [20230417 | CNCF Platform Engineering White Paper](230417-cncf-platform-wp.md)
+- [20230417 | CNCF Platform Engineering White Paper](2023/230417-cncf-platform-wp.md)
 
     In 2022, the concept of "platform engineering" is very popular and also on Gartner's hype cycle curve. There are also comments that "DevOps is dead, platform engineering is the future". Developers are unwilling to deal with infrastructure, but enterprise development also needs its own infrastructure. "Platform engineering" unifies these two contradictory points, or "platform engineering" is the next stop of DevOps.
 
-- [20230412 | The feature that has increased the most in the past two years! Kubernetes 1.27 officially released](230412-k8s-1.27.md)
+- [20230412 | The feature that has increased the most in the past two years! Kubernetes 1.27 officially released](2023/230412-k8s-1.27.md)
 
     Kubernetes 1.27 has officially been released. This version is the first version of 2023 and has been released four months after the previous version. In this new version, the release team tracked 60 enhancements, which is much more than previous versions.
 
-- [20230411 | Spiderpool: A new choice for Calico fixed application IP](230411-spiderpool.md)
+- [20230411 | Spiderpool: A new choice for Calico fixed application IP](2023/230411-spiderpool.md)
 
     Spiderpool is a Kubernetes IPAM plugin project designed primarily for the IP address management needs of underlay networks. It can be used by any CNI project compatible with third-party IPAM plugins.
 
-- [20230405 | Step-by-Step Installation of DCE Community](230405-step-by-step-dce5.md)
+- [20230405 | Step-by-Step Installation of DCE Community](2023/230405-step-by-step-dce5.md)
 
     This article completes the installation of DCE Community from 0 to 1 in a cluster of three nodes, including details of K8s clusters, dependencies, networks, storage, and more.
 
-- [20230317 | Edge Native Application Guidelines White Paper](230317-edge-app-wp.md)
+- [20230317 | Edge Native Application Guidelines White Paper](2023/230317-edge-app-wp.md)
 
     The IoT Edge Working Group has been exploring the definition of edge-native, as well as the similarities and differences between "cloud-native" and "edge-native", and has released the "Edge Native Application Guidelines White Paper".
 
-- [20230315 | Installing DCE Community on Linux](230315-install-on-linux.md)
+- [20230315 | Installing DCE Community on Linux](2023/230315-install-on-linux.md)
 
     Describes how to use Docker and kind to install DCE Community online on a single Linux machine. This is an extremely simple installation method that is easy to learn and experience, and has better performance than the macOS standalone version.
 
-- [20230315 | Installing DCE Community on macOS](230315-install-on-macos.md)
+- [20230315 | Installing DCE Community on macOS](2023/230315-install-on-macos.md)
 
     Create a single-node kind cluster using a macOS laptop and then install DCE Community online. Suitable for beginners to experience and learn, but not suitable for production environments.
 
-- [20230301 | Introduction to the open-source project KWOK](230301-kwok.md)
+- [20230301 | Introduction to the open-source project KWOK](2023/230301-kwok.md)
 
     What kind of open-source project would be used by Apple, IBM, Tencent, and Huawei within five months of its release? KWOK stands for Kubernetes WithOut Kubelet, which means Kubernetes without Kubelet. It helps you build a cluster consisting of thousands of nodes in seconds and simulates thousands of real nodes with minimal resources.
 
-- [20230214 | How many open source projects are included in DCE Community?](230214-open-projects.md)
+- [20230214 | How many open source projects are included in DCE Community?](2023/230214-open-projects.md)
 
     Often, customers, community members, contributors, and sales, delivery, and project teams within the company ask, "Which open-source projects does DCE really involve?" This article details the open-source projects included in the DCE Community.
 
-- [20230214 | "DaoCloud Dao Ke" and Kubernetes](230214-daocloud_k8s.md)
+- [20230214 | "DaoCloud Dao Ke" and Kubernetes](2023/230214-daocloud_k8s.md)
 
     Describes how "DaoCloud Dao Ke" leverages Kubernetes to create a new generation of enterprise-level cloud native application cloud platforms - DaoCloud Enterprise 5.0, and how to give back to the open-source community and practice cloud native beliefs.
 
-- [20230201 | 2023 Cloud-Native Predictions](230201-forecast.md)
+- [20230201 | 2023 Cloud-Native Predictions](2023/230201-forecast.md)
 
     Based on CNCF's Cloud-Native Report, this article talks about the development of various technologies and trends in the cloud native field in 2023.
 
-- [20230201 | DCE 5.0 Struggle Quotations Collection](230201-peter.md)
+- [20230201 | DCE 5.0 Struggle Quotations Collection](2023/230201-peter.md)
 
     In 2022, in Shanghai, ravaged by the epidemic, lockdowns, controls, and home stays, programmers ran between the cracks of the virus 🦠. That year was the time when DCE 5.0 struggled, and it was also a difficult year for every Chinese person.
 
 ## 2022
 
-- [20221209 | K8s 1.26 officially released](221209-k8s-1.26.md)
+- [20221209 | K8s 1.26 officially released](2022/221209-k8s-1.26.md)
 
     Kubernetes has officially released v1.26, titled "Electrifying". As the last version of 2022, it adds many new features and significantly improves stability. This article introduces the updates in version 1.26
 
@@ -238,7 +248,7 @@ technology, sorted by date by default.
 
     Time flies, and years pass by. Since its establishment in November 2014, DaoCloud has gone through eight years of unremitting efforts by DaoClouders. On the afternoon of November 8th, all the crew members of DaoCloud held a birthday party for DaoCloud. Let's take a look at the grand occasion of DaoCloud eighth birthday party together!
 
-- [20221105 | DaoCloud is a Senior Certified Service Provider for K8s](221116-kcsp.md)
+- [20221105 | DaoCloud is a Senior Certified Service Provider for K8s](2022/221116-kcsp.md)
 
     As early as 2017, DaoCloud successfully passed Kubernetes certification, becoming the earliest service provider in China to enter and be recognized by CNCF. It is also the earliest vendor in China to obtain Kubernetes Training Partner (KTP) certification.
 
@@ -262,15 +272,15 @@ technology, sorted by date by default.
 
     On October 20th, 2022, DaoCloud officially released its container container registry service based on Alibaba Cloud Object Storage Service (OSS). This service provides users with secure and reliable storage and management of container images, helping them reduce the cost of image storage and improve image access efficiency. Moreover, by using Alibaba Cloud OSS as the underlying storage engine, DaoCloud can provide users with more diversified storage options, such as cold storage and disaster recovery.
 
-- [20221026 | Introduction to Container Management Capability of DCE 5.0](221026-kpanda.md)
+- [20221026 | Introduction to Container Management Capability of DCE 5.0](2022/221026-kpanda.md)
 
     This article explains the capabilities provided by the container management module of DCE 5.0.
 
-- [20221018 | Introduction to Resource Management Capability of DCE 5.0](221018-resource.md)
+- [20221018 | Introduction to Resource Management Capability of DCE 5.0](2022/221018-resource.md)
 
     This article explains the capabilities provided by the global management module of DCE 5.0.
 
-- [20220925 | Introduction to Workbench Capability of DCE 5.0](220925-amamba.md)
+- [20220925 | Introduction to Workbench Capability of DCE 5.0](2022/220925-amamba.md)
 
     This article explains the capabilities provided by the Workbench module of DCE 5.0.
 
@@ -294,11 +304,11 @@ technology, sorted by date by default.
 
     Clusterpedia is a CNCF sandbox project for cross-cluster complex resource retrieval. It can synchronize resources with multiple clusters and provide more powerful search features based on Kubernetes OpenAPI compatibility to help you quickly, easily, and effectively obtain any multicluster resources.
 
-- [20220808 | Introduction to Multicloud Management Capability of DCE 5.0](220808-kairship.md)
+- [20220808 | Introduction to Multicloud Management Capability of DCE 5.0](2022/220808-kairship.md)
 
     This article explains the capabilities provided by the Multicloud Management module of DCE 5.0.
 
-- [20220708 | Introduction to Service Mesh Capability of DCE 5.0](220708-mspider.md)
+- [20220708 | Introduction to Service Mesh Capability of DCE 5.0](2022/220708-mspider.md)
 
     This article explains the capabilities provided by the service mesh module of DCE 5.0.
 
@@ -318,7 +328,7 @@ technology, sorted by date by default.
 
     The emergence of Merbridge CNI mode aims to better adapt to the features of service mesh. When there was no CNI mode before, Merbridge could do relatively little. The biggest problem was that it couldn't adapt to the Sidecar Annotation injected by Istio, which made Merbridge unable to exclude traffic from certain ports or IP ranges. At the same time, because Merbridge only processed connection requests within the Pod before, it meant that if it was external traffic sent to the Pod, Merbridge would not be able to handle it.
 
-- [20220606 | DCE 5.0 Development Background](221008-dce-bg.md)
+- [20220606 | DCE 5.0 Development Background](2022/221008-dce-bg.md)
 
     Describes the background of the birth of DaoCloud Enterprise 5.0, the new generation of cloud native operating system.
 

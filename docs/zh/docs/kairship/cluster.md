@@ -18,13 +18,13 @@
 
 ## 移除集群
 
-1. 在集群右侧点击 __…__ 按钮，在弹出菜单中选择 __移除__ 。
+1. 在集群右侧点击 __┇__ 按钮，在弹出菜单中选择 __移除__ 。
 
     ![removal](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/cluster01.png)
 
 2. 在弹窗中输入集群的名称，确认无误后点击 __删除__ 。
 
-    ![removal](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/removecl02.png){ width="500" }
+    ![removal](./images/removecl02.png)
 
 !!! note
 
@@ -33,7 +33,7 @@
 
 ## 更多操作
 
-系统会自动返回工作集群列表。在集群右侧点击 __…__ 按钮可以执行 __暂停/恢复调度__ 、 __编辑集群标签__ 、 __修改集群污点__ 等操作。
+系统会自动返回工作集群列表。在集群右侧点击 __┇__ 按钮可以执行 __暂停/恢复调度__ 、 __编辑集群标签__ 、 __修改集群污点__ 等操作。
 
 ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/joincluster03.png)
 

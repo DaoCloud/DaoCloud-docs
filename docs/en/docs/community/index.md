@@ -107,7 +107,7 @@ hide:
 
     ---
 
-    A full life cycle management tool for containerized clusters.
+    A lifecycle management tool for containerized clusters.
 
     [:octicons-arrow-right-24: Learn more](./kubean.md)
 

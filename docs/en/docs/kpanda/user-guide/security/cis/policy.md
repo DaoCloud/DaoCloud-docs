@@ -25,7 +25,7 @@ After creating a scan configuration, you can create a scan policy based on the c
 
 After creating a scan policy, you can update or delete it as needed.
 
-Under the __Scan Policy__ tab, click the __ⵗ__ action button to the right of a configuration:
+Under the __Scan Policy__ tab, click the __┇__ action button to the right of a configuration:
 
 - For periodic scan policies:
 

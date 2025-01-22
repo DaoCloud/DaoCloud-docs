@@ -1,23 +1,30 @@
 ---
 hide:
   - toc
+MTPE: ModetaNiu
+DATE: 2024-08-19
 ---
 
 # Multicloud Ingress
 
-Multicloud Ingress is a unified abstraction of the standard Kubernetes Ingress multicloud. By creating an Ingress and associating it with several multicloud services, it can be distributed to multiple clusters at the same time.
+Multicloud Ingress is a unified abstraction of the standard Kubernetes Ingress multicloud. By creating an Ingress 
+and associating it with several multicloud services, it can be distributed to multiple clusters at the same time.
 
-Currently, two creation methods are provided: form creation and YAML creation. This article takes form creation as an example, and follows the steps below.
+Currently, two creation methods are provided: form creation and YAML creation. This article takes form creation as an example.
+You can follow the steps below.
 
-1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Ingress__ , and click the __Create Multicloud Ingress__ button in the upper right corner.
+1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> 
+   __Multicloud Ingress__ , and click the __Create Multicloud Ingress__ button in the upper right corner.
 
     ![Ingress List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/create-ingress01.png)
 
-2. On the __Create Multicloud Ingress__ page, after configuring the deployment location, setting ingress rules, Ingress Class, whether to enable session persistence, etc., click __OK__ . For details, please refer to [Create Ingress](../../kpanda/user-guide/network/create-ingress.md)
+2. On the __Create Ingress__ page, after configuring the deployment location, setting ingress rules, Ingress Class, 
+   and whether to enable session affinity, etc., click __OK__ . For details, please refer to [Create Ingress](../../kpanda/user-guide/network/create-ingress.md).
 
     ![Create Ingress](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/create-ingress02.png)
 
-3. It supports one-click conversion of sub-cluster services to multicloud ingress. Click __Convert Now__ on the list page, select the ingress under the specified worker cluster and namespace, and click OK to convert successfully.
+3. It supports one-click conversion of sub-cluster services to multicloud ingress. Click __Convert Now__ on the list page, 
+   select the ingress under the specified worker cluster and namespace, and click __OK__ to convert successfully.
 
     ![Convert Now](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/create-ingress03.png)
 

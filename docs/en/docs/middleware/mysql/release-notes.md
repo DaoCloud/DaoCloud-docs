@@ -9,6 +9,21 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 *[mcamel-mysql]: "mcamel" is the dev name for DaoCloud's middlewares, and "mysql" is a popular relational database
 
+## 2024-09-30
+
+### v0.22.0
+
+- **Added** support for manually switching between master and worker nodes
+- **Added** support for configuring Router nodes in MGR instances
+- **Fixed** an issue with missing audit logs for certain operations
+
+## 2024-08-31
+
+### v0.21.0
+
+- **Improved** the process so that abnormal clusters cannot be selected when creating instances.
+- **Improved** the issue of permission leakage in the interface.
+
 ## 2024-05-31
 
 ### v0.18.0
@@ -42,8 +57,6 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 ## 2024-01-31
 
 ### v0.15.0
-
-#### Improvements
 
 - **Improved** Added display of MySQL version in global management
 
@@ -119,14 +132,9 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 ### v0.7.0
 
-#### New features
-
 - **Added** __mcamel-mysql__ supports middleware traces adaptation
 - **Added** Install __mcamel-mysql__ to enable traces according to parameter configuration.
 - **Added** __mcamel-mysql__ PhpMyAdmin supports LoadBalancer type
-
-#### Improvements
-
 - **Upgraded** golang.org/x/net to v0.7.0
 - **Upgraded** GHippo SDK to v0.14.0
 - **Improved** __mcamel-mysql__ common-mysql supports multiple instance optimization
@@ -136,7 +144,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 ### v0.6.0
 
-### New features
+#### New features
 
 - **Added** __mcamel-mysql__ helm-docs template file
 - **Added** The Operator in the __mcamel-mysql__ app store can only be installed in mcamel-system
@@ -178,7 +186,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 ### v0.4.0
 
-### New features
+#### New features
 
 - **Added** MySQL lifecycle management interface function
 - **Added** MySQL details interface function

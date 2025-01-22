@@ -6,8 +6,9 @@ This page will provide the operation steps and instructions for installing and d
 
 ### Add repo
 
-```
+```console
 [root@k8s-10-6-162-31 helm-test]# helm search repo rook
+
 NAME CHART VERSION APP VERSION DESCRIPTION
 rook-release/rook-ceph v1.10.5 v1.10.5 File, Block, and Object Storage Services for yo...
 rook-release/rook-ceph-cluster v1.10.5 v1.10.5 Manages a single Ceph cluster namespace for Rook
@@ -16,7 +17,7 @@ stable/rookout 0.1.2 1.0 DEPRECATED - A Helm chart for Rookout agent on ...
 
 ### Pull and unzip rook-ceph helm charts
 
-```
+```console
 [root@k8s-10-6-162-31 helm-test]# helm pull rook-release/rook-ceph
 [root@k8s-10-6-162-31 helm-test]# helm pull rook-release/rook-ceph-cluster
 [root@k8s-10-6-162-31 helm-test]# ls
@@ -30,7 +31,7 @@ rook-ceph rook-ceph-cluster-v1.10.5.tgz rook-ceph-v1.10.5.tgz
 
 ### Convert rook-ceph values.yaml to json
 
-```
+```console
 [root@k8s-10-6-162-31 ~]# helm plugin install https://github.com/karuppiah7890/helm-schema-gen.git
 karuppiah7890/helm-schema-gen info checking GitHub for tag '0.0.4'
 karuppiah7890/helm-schema-gen info found version: 0.0.4 for 0.0.4/Linux/x86_64
@@ -56,7 +57,7 @@ charts Chart.yaml prometheus README.md values.schema.json templates values.yaml
 
 ### Pack and zip charts in json files
 
-```
+```console
 [root@k8s-10-6-162-31 helm-test]# tar zcvf rook-ceph-v1.10.5.tgz rook-ceph
 
 [root@k8s-10-6-162-31 helm-test]# tar zcvf rook-ceph-cluster-v1.10.5.tgz rook-ceph-cluster
@@ -95,7 +96,7 @@ rook-ceph-cluster-v1.10.5.tgz rook-ceph-v1.10.5.tgz rook-ceph rook-ceph-cluster 
 
 ## Verify App Deployment
 
-```
+```console
 [root@k8s-10-6-162-31 kubernetes]# pwd
 /root/rook/cluster/examples/kubernetes
 

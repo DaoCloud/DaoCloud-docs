@@ -12,25 +12,25 @@ hide:
 
 如果在创建 Harbor 实例时，出现以下异常提示，请点击 __前往安装__ 。（必须先安装 Cert Manager ！）
 
-![harbor-operator 异常](../../images/createharbor.png)
+![harbor-operator 异常](../images/createharbor.png)
 
 ## 第一步
 
 1. 进入 __容器管理__ 的 __Helm 应用__ -> __Helm 模板__ ，找到并点击 cert-manager 卡片。
 
-    ![搜索cert-manager](../../images/serchcertmangager.png)
+    ![搜索cert-manager](../images/serchcertmanger.png)
 
 2. 选择版本，点击 __安装__ 。
 
-    ![安装](../../images/applycertmanager.png)
+    ![安装](../images/applycermanager.png)
 
 3. 输入名称和命名空间后，点击 __确定__ ，如果想要添加其他参数，请参考下一节的参数说明。
 
-    ![填表](../../images/acertdetail.png)
+    ![填表](../images/certdetail.png)
 
 4. 等待安装完成。
 
-    ![安装](../../images/installcert.png)
+    ![安装](../images/installcert.png)
 
 ## 第二步
 

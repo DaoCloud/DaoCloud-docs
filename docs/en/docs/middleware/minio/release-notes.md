@@ -9,6 +9,26 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 
 *[mcamel-minio]: "mcamel" is the dev name for DaoCloud's middlewares, and "minio" is a light-weight middleware that provides object storage services
 
+## 2024-09-30
+
+### v0.19.0
+
+- **Fixed** an issue with permission leakage when querying the MinIO list by selecting a workspace
+- **Fixed** an issue with missing audit logs for certain operations
+
+## 2024-08-31
+
+### v0.18.1
+
+- **Improved** the process so that abnormal clusters cannot be selected when creating instances
+- **Fixed** the error in the `minio operator` multi-replica exit mechanism, adjusting it to single-replica mode.
+
+## 2024-07-31
+
+### v0.17.0
+
+- **Fixed** incorrect MinIO image address after cluster restart
+
 ## 2024-04-30
 
 ### v0.14.0
@@ -24,8 +44,6 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 ## 2024-01-31
 
 ### v0.12.0
-
-#### Improvements
 
 - **Improved** Support for Chinese Dashboard in MinIO instances
 - **Improved** Added display of MinIO version in global management

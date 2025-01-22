@@ -1,6 +1,6 @@
 # How to choose the container runtime
 
-The container runtime is an important component in kubernetes to manage the life cycle of containers and container images. Kubernetes made containerd the default container runtime in version 1.19, and removed support for the Dockershim component in version 1.24.
+The container runtime is an important component in kubernetes to manage the lifecycle of containers and container images. Kubernetes made containerd the default container runtime in version 1.19, and removed support for the Dockershim component in version 1.24.
 
 Therefore, compared to the Docker runtime, we **recommend you to use the lightweight containerd as your container runtime**, because this has become the current mainstream runtime choice.
 

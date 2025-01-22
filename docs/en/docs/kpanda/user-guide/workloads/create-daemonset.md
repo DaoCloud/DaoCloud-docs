@@ -21,7 +21,7 @@ For simplicity, a DaemonSet can be started on each node for each type of daemon.
 
 Before creating a DaemonSet, the following prerequisites need to be met:
 
-- In the [Container Management](../../intro/index.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/index.md) module [Integrate Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md) and a [user](../../../ghippo/user-guide/access-control/user.md).
 
@@ -59,7 +59,7 @@ On the __Create DaemonSets__ page, after entering the information according to t
 
 ### Container settings
 
-Container setting is divided into six parts: basic information, life cycle, health check, environment variables, data storage, and security settings. Click the corresponding tab below to view the requirements of each part.
+Container setting is divided into six parts: basic information, lifecycle, health check, environment variables, data storage, and security settings. Click the tab below to view the requirements of each part.
 
 > Container setting is only configured for a single container. To add multiple containers to a pod, click __+__ on the right to add multiple containers.
 
@@ -128,9 +128,9 @@ Advanced setting includes four parts: load network settings, upgrade policy, sch
 
 === "Network Configuration"
 
-    In some cases, the application will have redundant DNS queries. Kubernetes provides DNS-related settings options for applications, which can effectively reduce redundant DNS queries and increase business concurrency in certain cases.
+    ![DNS](../images/daemon17.png)
 
-    
+    In some cases, the application will have redundant DNS queries. Kubernetes provides DNS-related settings options for applications, which can effectively reduce redundant DNS queries and increase business concurrency in certain cases.
 
     - DNS Policy
 
@@ -144,21 +144,21 @@ Advanced setting includes four parts: load network settings, upgrade policy, sch
     - Options: Configuration options for DNS, where each object can have a name attribute (required) and a value attribute (optional). The content in this field will be merged into the options field of the domain name resolution file generated based on dnsPolicy. If some options of dnsConfig options conflict with the options of the domain name resolution file generated based on dnsPolicy, they will be overwritten by dnsConfig.
     - Host Alias: the alias set for the host.
 
-    ![DNS](../images/daemon17.png)
-
 === "Upgrade Policy"
-
-    - Upgrade Mode: __Rolling upgrade__ refers to gradually replacing instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted. __Rebuild and upgrade__ refers to deleting the workload instance of the old version first, and then installing the specified new version. During the upgrade process, the business will be interrupted.
-    - Max Unavailable Pods: Specify the maximum value or ratio of unavailable pods during the workload update process, the default is 25%. If it is equal to the number of instances, there is a risk of service interruption.
-    - Max Surge: The maximum or ratio of the total number of Pods exceeding the desired replica count of Pods during a Pod update. Default is 25%.
-    -  Revision History Limit: Set the number of old versions retained when the version is rolled back. The default is 10.
-    - Minimum Ready: The minimum time for a Pod to be ready. Only after this time is the Pod considered available. The default is 0 seconds.
-    - Upgrade Max Duration: If the deployment is not successful after the set time, the workload will be marked as failed. Default is 600 seconds.
-    - Graceful Period: The execution period (0-9,999 seconds) of the command before the workload stops, the default is 30 seconds.
 
     ![Upgrade Policy](../images/daemon14.png)
 
+    - Upgrade Mode:
+        - __RollingUdate__ refers to gradually replacing instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted.
+        - __OnDelete__ refers to deleting the workload instance of the old version first, and then installing the specified new version. During the upgrade process, the business will be interrupted.
+    - Max Unavailable Pods: Specify the maximum value or ratio of unavailable pods during the workload update process, the default is 25%. If it is equal to the number of instances, there is a risk of service interruption.
+    - Revision History Limit: Set the number of old versions retained when the version is rolled back. The default is 10.
+    - Upgrade Max Duration: If the deployment is not successful after the set time, the workload will be marked as failed. Default is 600 seconds.
+    - Graceful Time Window: The execution period (0-9,999 seconds) of the command before the workload stops, the default is 30 seconds.
+
 === "Scheduling Policies"
+
+    ![Scheduling Policy](../images/daemon15.png)
 
     - Toleration time: When the node where the workload instance is located is unavailable, the time for rescheduling the workload instance to other available nodes, the default is 300 seconds.
     - Node affinity: According to the label on the node, constrain which nodes the Pod can be scheduled on.
@@ -167,8 +167,6 @@ Advanced setting includes four parts: load network settings, upgrade policy, sch
     - Topology domain: namely topologyKey, used to specify a group of nodes that can be scheduled. For example, __kubernetes.io/os__ indicates that as long as the node of an operating system meets the conditions of labelSelector, it can be scheduled to the node.
 
     > For details, refer to [Scheduling Policy](pod-config/scheduling-policy.md).
-
-    ![Scheduling Policy](../images/daemon15.png)
 
 === "Labels and Annotations"
 

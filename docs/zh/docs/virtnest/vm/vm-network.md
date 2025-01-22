@@ -15,8 +15,8 @@
 
     - 在主机节点上安装并运行 Open vSwitch, 可参考[这里](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/#_1)
     - 在主机节点上配置 Open vSwitch 网桥, 可参考[这里](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/#open-vswitch)
-    - 安装 Spiderpool，可参考[安装 Spiderpool](https://docs.daocloud.io/network/modules/spiderpool/install/install/#_2), Spiderpool 默认会把 Multus CNI 和 Ovs CNI 都装上
-    - 创建 ovs 类型的 Multus CR，可参考[界面创建 Multus CR](https://docs.daocloud.io/network/config/multus-cr/#multus-cr_1) 或 [YAML 创建 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/#spiderpool)
+    - 安装 Spiderpool，可参考[安装 Spiderpool](../../network/modules/spiderpool/install/install.md#_2), Spiderpool 默认会把 Multus CNI 和 Ovs CNI 都装上
+    - 创建 ovs 类型的 Multus CR，可参考[界面创建 Multus CR](../../network/config/multus-cr.md#multus-cr_1) 或 [YAML 创建 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/#spiderpool)
     - 创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)
 
 ## 网络配置

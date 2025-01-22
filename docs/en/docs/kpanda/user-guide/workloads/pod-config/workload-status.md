@@ -13,7 +13,7 @@ A workload is an application running on Kubernetes, and in Kubernetes, whether y
 - [Job](../create-job.md)
 - [CronJob](../create-cronjob.md)
 
-You can also expand workload resources by setting [Custom Resource CRD](../../custom-resources/create.md). In the fifth-generation container management, it supports full lifecycle management of workloads such as creation, update, capacity expansion, monitoring, logging, deletion, and version management.
+You can also expand workload resources by setting [Custom Resource CRD](../../custom-resources/create.md). In the fifth-generation container management, it supports lifecycle management of workloads such as creation, update, capacity expansion, monitoring, logging, deletion, and version management.
 
 ## Pod Status
 
@@ -23,13 +23,13 @@ Pods follow a predefined lifecycle, starting at __Pending__ [phase](https://kube
 
 ## Workload Status
 
-The fifth-generation container management module designs a built-in workload life cycle status set based on factors such as Pod status and number of replicas, so that users can more realistically perceive the running status of workloads.
+The fifth-generation container management module designs a built-in workload lifecycle status set based on factors such as Pod status and number of replicas, so that users can more realistically perceive the running status of workloads.
 Because different workload types (such as Deployment and Jobs) have inconsistent management mechanisms for Pods, different workloads will have different lifecycle status during operation, as shown in the following table.
 
 ### Deployment, StatefulSet, DamemonSet Status
 
 | Status | Description |
-| :---------------------- | :------------------------ -------------------------------------- |
+| ------ | ----------- |
 | Waiting | 1. A workload is in this status while its creation is in progress. <br>2. After an upgrade or rollback action is triggered, the workload is in this status. <br>3. Trigger operations such as pausing/scaling, and the workload is in this status. |
 | Running | This status occurs when all instances under the workload are running and the number of replicas matches the user-defined number. |
 | Deleting | When a delete operation is performed, the payload is in this status until the delete is complete. |
@@ -39,7 +39,7 @@ Because different workload types (such as Deployment and Jobs) have inconsistent
 ### Job Status
 
 | Status | Description |
-| :------- | :--------------------------------------- -------------------- |
+| ------ | ----------- |
 | Waiting | The workload is in this status while Job creation is in progress. |
 | Executing | The Job is in progress and the workload is in this status. |
 | Execution Complete | The Job execution is complete and the workload is in this status. |
@@ -49,7 +49,7 @@ Because different workload types (such as Deployment and Jobs) have inconsistent
 ### CronJob status
 
 | Status | Description |
-| :----- | :---------------------------------------- ------------------ |
+| ------ | ----------- |
 | Waiting | The CronJob is in this status when it is being created. |
 | Started | After the CronJob is successfully created, the CronJob is in this status when it is running normally or when the paused task is started. |
 | Stopped | The CronJob is in this status when the stop task operation is performed. |

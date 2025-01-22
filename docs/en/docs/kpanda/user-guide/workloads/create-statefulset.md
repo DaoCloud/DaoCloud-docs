@@ -9,13 +9,13 @@ This page describes how to create a StatefulSet through image and YAML files.
 
 [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) is a common resource in Kubernetes, and [Deployment](create-deployment.md), mainly used to manage the deployment and scaling of Pod collections. The main difference between the two is that Deployment is stateless and does not save data, while StatefulSet is stateful and is mainly used to manage stateful applications. In addition, Pods in a StatefulSet have a persistent ID, which makes it easy to identify the corresponding Pod when matching storage volumes.
 
-Through the container management module of [DCE 5.0](../../../dce/index.md), workloads on multicloud and multiclusters can be easily managed based on corresponding role permissions, including the creation of stateful workloads, update, delete, elastic scaling, restart, version rollback and other full life cycle management.
+Through the container management module of [DCE 5.0](../../../dce/index.md), workloads on multicloud and multiclusters can be easily managed based on corresponding role permissions, including the creation of StatefulSets, update, delete, scaling, restart, and other lifecycle management.
 
 ## Prerequisites
 
-Before using image to create stateful workloads, the following prerequisites need to be met:
+Before using image to create StatefulSets, the following prerequisites need to be met:
 
-- In the [Container Management](../../intro/index.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/index.md) module [Integrate Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md) and a [user](../../../ghippo/user-guide/access-control/user.md).
 
@@ -39,7 +39,7 @@ Follow the steps below to create a statefulSet using image.
 
     The system will automatically return to the list of __StatefulSets__ , and wait for the status of the workload to become __running__ . If the workload status is abnormal, refer to [Workload Status](../workloads/pod-config/workload-status.md) for specific exception information.
 
-    Click __┇__ on the right side of the New Workload column to perform operations such as update, delete, elastic scaling, restart, and version rollback on the workload.
+    Click __┇__ on the right side of the New Workload column to perform operations such as update, delete, scaling, and restart the workload.
 
     ![Status](../images/state10.png)
 
@@ -54,11 +54,13 @@ Follow the steps below to create a statefulSet using image.
 
 ### Container settings
 
-Container setting is divided into six parts: basic information, life cycle, health check, environment variables, data storage, and security settings. Click the corresponding tab below to view the requirements of each part.
+Container setting is divided into six parts: basic information, lifecycle, health check, environment variables, data storage, and security settings. Click the tab below to view the requirements of each part.
 
 > Container settings is only configured for a single container. To add multiple containers to a pod, click __+__ on the right to add multiple containers.
 
 === "Basic information (required)"
+
+    ![Basic Info](../images/state11.png)
 
     When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the settings with reference to the following requirements, click __OK__ .
     
@@ -70,8 +72,6 @@ Container setting is divided into six parts: basic information, life cycle, heal
     - GPU Exclusive: Configure the GPU usage for the container, only positive integers are supported. The GPU quota setting supports setting exclusive use of the entire GPU card or part of the vGPU for the container. For example, for an 8-core GPU card, enter the number __8__ to let the container exclusively use the entire length of the card, and enter the number __1__ to configure a 1-core vGPU for the container.
     
     > Before setting exclusive GPU, the administrator needs to install the GPU card and driver plug-in on the cluster nodes in advance, and enable the GPU feature in [Cluster Settings](../clusterops/cluster-settings.md).
-
-    ![Basic Info](../images/state11.png)
 
 === "Lifecycle (optional)"
 
@@ -115,13 +115,15 @@ Configure [Service (Service)](../network/create-services.md) for the statefulset
 
     ![Config Parameters](../images/deploy13.png)
 
-3. Click __OK__ and click __Next__ .
+3. Click __OK__ and click __Next__
 
 ### Advanced settings
 
 Advanced setting includes four parts: load network settings, upgrade policy, scheduling policy, label and annotation. You can click the tabs below to view the requirements of each part.
 
 === "Network Configuration"
+
+    ![DNS](../images/state17.png)
 
     1. For container NIC settings, refer to [Workload Usage IP Pool](../../../network/config/use-ippool/usage.md)
     2. DNS settings
@@ -140,17 +142,19 @@ Advanced setting includes four parts: load network settings, upgrade policy, sch
     - Options: Configuration options for DNS, where each object can have a name attribute (required) and a value attribute (optional). The content in this field will be merged into the options field of the domain name resolution file generated based on dnsPolicy. If some options of dnsConfig options conflict with the options of the domain name resolution file generated based on dnsPolicy, they will be overwritten by dnsConfig.
     - Host Alias: the alias set for the host.
 
-    ![DNS](../images/state17.png)
-
 === "Upgrade Policy"
-
-    - Upgrade Mode: __Rolling upgrade__ refers to gradually replacing instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted. __Rebuild and upgrade__ refers to deleting the workload instance of the old version first, and then installing the specified new version. During the upgrade process, the business will be interrupted.
-    - Revision History Limit: Set the number of old versions retained when the version is rolled back. The default is 10.
-    - Graceful Period: The execution period (0-9,999 seconds) of the command before the workload stops, the default is 30 seconds.
 
     ![Upgrade Policy](../images/state14.png)
 
+    - Upgrade Mode:
+        - __RollingUpdate__ refers to gradually replacing instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted.
+        - __OnDelete__ refers to deleting the workload instance of the old version first, and then installing the specified new version. During the upgrade process, the business will be interrupted.
+    - Revision History Limit: Set the number of old versions retained when the version is rolled back. The default is 10.
+    - Graceful Time Window: The execution period (0-9,999 seconds) of the command before the workload stops, the default is 30 seconds.
+
 === "Container Management Policies"
+
+    ![Container Management Policies](../images/state05.png)
 
     Kubernetes v1.7 and later versions can set Pod management policies through __.spec.podManagementPolicy__ , which supports the following two methods:
     
@@ -158,9 +162,9 @@ Advanced setting includes four parts: load network settings, upgrade policy, sch
     
     - __Parallel__ : Create or delete containers in parallel, just like Pods of the Deployment type. The StatefulSet controller starts or terminates all containers in parallel. There is no need to wait for a Pod to enter the Running and ready state or to stop completely before starting or terminating other Pods. This option only affects the behavior of scaling operations, not the order of updates.
 
-    ![Container Management Policies](../images/state05.png)
-
 === "Scheduling Policies"
+
+    ![Scheduling Policies](../images/state15.png)
 
     - Tolerance time: When the node where the workload instance is located is unavailable, the time for rescheduling the workload instance to other available nodes, the default is 300 seconds.
     - Node affinity: According to the label on the node, constrain which nodes the Pod can be scheduled on.
@@ -169,8 +173,6 @@ Advanced setting includes four parts: load network settings, upgrade policy, sch
     - Topology domain: namely topologyKey, used to specify a group of nodes that can be scheduled. For example, __kubernetes.io/os__ indicates that as long as the node of an operating system meets the conditions of labelSelector, it can be scheduled to the node.
     
     > For details, refer to [Scheduling Policy](pod-config/scheduling-policy.md).
-
-    ![Scheduling Policies](../images/state15.png)
 
 === "Labels and Annotations"
 

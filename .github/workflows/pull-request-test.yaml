@@ -14,7 +14,8 @@ on:
 
 env:
   PIP_CONSTRAINT: /home/runner/work/DaoCloud-docs/DaoCloud-docs/constraints.txt
-
+  MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.ORG_TOKEN }}
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -25,32 +26,19 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
         with:
-          fetch-depth: 0 # Required for mkdocs to be able to display pages last update info
-      - uses: actions/setup-python@v5
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v2
         with:
           python-version: 3.x
 
-      #       # Add ssh private key
-      #       - name: Setup SSH
-      #         uses: MrSquaare/ssh-setup-action@v1
-      #         with:
-      #           host: github.com
-      #           private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      #       # Install mkdocs-material-insiders
-      #       - run: git clone git@github.com:DaoCloud/mkdocs-material-insiders.git mkdocs-material
-      #       - run: pip install -e mkdocs-material
-
-
-      # Runs a single command using the runners shell
+      # Install mkdocs-material
       - run: pip install -r requirements.txt -c $PIP_CONSTRAINT
+      - run: pip install mkdocs-material --no-cache # double check it.
 
-      # add custom plugin with pdf support
-      - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
-
-      # build docs
+      # Build docs
       - run: pwd
       - run: mkdocs build -f docs/zh/mkdocs.yml -d ../../public/
       - run: mkdocs build -f docs/en/mkdocs.yml -d ../../public/en/

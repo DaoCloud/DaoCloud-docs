@@ -25,7 +25,7 @@ Upon entering the developer console, developers can create and manage Notebooks 
 
     ![created](../../images/notebook01.png)
 
-4. Click the **┇** on the right side to perform more actions: update arguments, start/stop, view workload details, and delete.
+4. Click the **┇** on the right side to perform more actions: update arguments, start/stop, clone Notebook, view workload details, and delete.
 
 !!! note
 

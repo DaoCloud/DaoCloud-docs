@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsesa
-date: 2024-05-11
+date: 2024-10-10
 ---
 
 # Network Portfolio Solutions
@@ -16,25 +16,40 @@ Moreover, SpiderPool is employed to strengthen the IP management allocation and 
 Different IP pools meets various use cases of application communication. The main features of this portfolio are as follows:
 
 1. With Multus as the scheduling core, it achieves multi CNI IP allocation to Pod and polymorphic network communication for an application. Open source solutions are used to realize cross CNI Pod communication within the cluster.
-   The installation of Multus is not a must, if the application does not require multiple Pod NICs and different network modes.
+
+    The installation of Multus is not a must, if the application does not require multiple Pod NICs and different network modes.
+
 2. Spiderpool serves as the IPAM management component of Underlay CNI to achieve fine-grained IP management and flexible IP planning and allocation.
-   The installation of SpiderPool is not a must, if Underlay CNI is not installed in the application scenario.
+
+    The installation of SpiderPool is not a must, if Underlay CNI is not installed in the application scenario.
+
 3. Cilium, a high-performance Overlay CNI, provides many capabilities, including eBPF kernel acceleration, cross-cluster Pod communication, cross-cluster Service communication, flexible fine-grained network policy distribution, and traffic observation.
-   Cilium is a must-have network CNI in this portfolio.
+
+    Cilium is a must-have network CNI in this portfolio.
+
 4. The external access IP provided through Ipvlan CNI / MacVLAN CNI / SR-IOV CNI enables Pod Layer 2 external communication. Complemented by Calico dynamic virtual network, it reduces chores of network operation and maintenance and also saves IP resources.
-   If there is no external access requirement in the application scenario, you do not need to install Underlay CNI.
+   
+    If there is no external access requirement in the application scenario, you do not need to install Underlay CNI.
 
 ## Solution 2：Calico + Macvlan/Ipvlan/SRIOV + SpiderPool + Multus
 
 This solution is suitable for low kernel versions of Linux OS, and applicable for cross-cluster connectivity, multiple CNIs and other diversified use cases.
 
 1. With Multus as the scheduling core in the same way, it achieves multi CNI IP allocation and polymorphic network communication. Open source solutions are used to realize cross CNI Pod communication within the cluster.
-   The installation of Multus is not a must, if the application does not require multiple Pod NICs and different network modes.
+
+    The installation of Multus is not a must, if the application does not require multiple Pod NICs and different network modes.
+
 2. Spiderpool serves as the IPAM management component of Underlay CNI to achieve fine-grained IP management and flexible IP planning and allocation.
-   The installation of SpiderPool is not a must, if Underlay CNI is not installed in the application scenario.
+
+    The installation of SpiderPool is not a must, if Underlay CNI is not installed in the application scenario.
+
 3. The external access IP provided through Ipvlan CNI / MacVLAN CNI / SR-IOV CNI enables Pod Layer 2 external communication. Complemented by Calico dynamic virtual network, it reduces chores of network operation and maintenance and also saves IP resources.
-   Calico is a must-have network CNI in this portfolio. If there is no external access requirement in the application scenario, you do not need to install Underlay CNI.
-4. The Submariner component provides cross-cluster Pod communication.Both Submariner and Core DNS service discovery makes cross-cluster service discovery possible. Submariner can be installed according to your demand.
+
+    Calico is a must-have network CNI in this portfolio. If there is no external access requirement in the application scenario, you do not need to install Underlay CNI.
+
+4. The Submariner component provides cross-cluster Pod communication. Both Submariner and Core DNS service discovery makes cross-cluster service discovery possible.
+
+    Submariner can be installed according to your demand.
 
 ## Network components
 

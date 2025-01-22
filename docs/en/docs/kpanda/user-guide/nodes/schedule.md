@@ -11,11 +11,11 @@ Supports suspending or resuming scheduling of nodes. Pausing scheduling means st
 
     ![Clusters](../images/taint01.png)
 
-2. Click __Nodes__ on the left navigation bar, click the __ⵗ__ operation icon on the right side of the node, and click the __Cordon__ button to suspend scheduling the node.
+2. Click __Nodes__ on the left navigation bar, click the __┇__ operation icon on the right side of the node, and click the __Cordon__ button to suspend scheduling the node.
 
     ![Cordon](../images/schedule01.png)
 
-3. Click the __ⵗ__ operation icon on the right side of the node, and click the __Uncordon__ button to resume scheduling the node.
+3. Click the __┇__ operation icon on the right side of the node, and click the __Uncordon__ button to resume scheduling the node.
 
     ![Uncordon](../images/schedule02.png)
 

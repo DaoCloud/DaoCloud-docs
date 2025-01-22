@@ -9,11 +9,23 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 
 *[Mcamel-PostgreSQL]: "Mcamel" is the dev name for DaoCloud's middlewares, and "PostgreSQL" is a relational database.
 
+## 2024-09-30
+
+### v0.16.0
+
+- **Fixed** an issue with permission leakage when querying the PostgreSQL list by selecting a workspace
+- **Fixed** an issue with missing audit logs for certain operations
+
+## 2024-08-31
+
+### v0.15.0
+
+- **Improved** the process so that abnormal clusters cannot be selected when creating instances.
+- **Fixed** the issue where managing PostgreSQL instances failed due to empty memory.
+
 ## 2024-06-30
 
 ### v0.13.0
-
-#### New Features
 
 - **Added** support for enabling the PG Vector plugin.
 - **Improved** PostgreSQL which now supports v15.5.
@@ -46,8 +58,6 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 ## 2024-01-31
 
 ### v0.9.0
-
-#### Improvements
 
 - **Improved** Added display of PostgreSQL version in global management
 

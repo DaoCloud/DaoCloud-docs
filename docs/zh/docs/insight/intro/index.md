@@ -10,22 +10,6 @@ hide:
 
 可观测模块实现了指标、日志、链路的统一采集，支持对指标、日志进行多维度的告警并提供简洁明了的可视化管理界面。
 
-主要功能如下：
-
-- 提供容器、服务、节点和集群等多维度的监控
-- 支持查询 CPU、内存、存储、网络等监控指标
-- 集成 Grafana，提供精选的开源仪表盘
-- 支持集群工作负载日志，系统日志和 Kubernetes 事件的采集和查询
-- 支持单条日志的上下文查询
-- 以集群为维度生成服务拓扑，查看服务间调用关系
-- 侵入式链路采集，支持查询服务的实时 RPS、错误率、时延等关键指标
-- 提供开源的聚合链路查询
-- 提供开箱即用的告警规则
-- 支持自定义指标、日志等告警
-- 支持灵活的配置告警级别、阈值、通知对象等
-- 提供邮箱、企业微信、钉钉、Webhook 等多种通知方式
-- 持久化存储指标、日志、链路数据
-
 ## 模块指引
 
 <div class="grid cards" markdown>
@@ -50,8 +34,8 @@ hide:
 
     - 了解 [OpenTelemetry](../quickstart/otel/otel.md)，向 Insight [发送观测数据](../quickstart/otel/send_tracing_to_insight.md)
     - 使用[无侵入](../quickstart/otel/operator.md)方式增强应用
-    - 针对[Java 应用观测](../quickstart/jvm-monitor/jvm-catelogy.md)
-    - 针对[Golang 应用观测](../quickstart/otel/golang.md)
+    - 针对 [Java 应用观测](../quickstart/otel/java/index.md)
+    - 针对 [Golang 应用观测](../quickstart/otel/golang/golang.md)
     - [其他观测技术集成](../best-practice/sw-to-otel.md)
 
 </div>

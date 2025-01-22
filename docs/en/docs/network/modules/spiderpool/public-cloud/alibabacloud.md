@@ -1,36 +1,96 @@
+---
+MTPE: WANG0608GitHub
+Date: 2024-09-05
+---
+
 # Running on Alibaba Cloud
 
-This page primarily explains how to use Spiderpool in an Alibaba Cloud environment and how to implement a complete Underlay solution.
+This page primarily explains how to use Spiderpool in an Alibaba Cloud environment and how to implement a
+complete Underlay solution.
 
 ## Background
 
-With a multitude of public cloud providers available, such as Alibaba Cloud, Huawei Cloud, Tencent Cloud, AWS, and more, it can be challenging to use mainstream open-source CNI plugins to operate on these platforms using Underlay networks. Instead, one has to rely on proprietary CNI plugins provided by each cloud vendor, leading to a lack of standardized Underlay solutions for public clouds. This page introduces Spiderpool, an Underlay networking solution designed to work seamlessly in any public cloud environment. A unified CNI solution offers easier management across multiple clouds, particularly in hybrid cloud scenarios.
+With a multitude of public cloud providers available, such as Alibaba Cloud, Huawei Cloud, Tencent Cloud,
+AWS, and more, it can be challenging to use mainstream open-source CNI plugins to operate on these platforms
+using Underlay networks. Instead, one has to rely on proprietary CNI plugins provided by each cloud vendor,
+leading to a lack of standardized Underlay solutions for public clouds. A unified CNI solution offers easier
+management across multiple clouds, particularly in hybrid cloud scenarios. Spiderpool is an Underlay networking
+solution designed to work seamlessly in any public cloud environment.
 
-## Features
+## Reasons for Choosing Spiderpool
 
-Spiderpool offers features such as node topology, MAC address validation, and integration with services that use `spec.externalTrafficPolicy` set to Local mode. Spiderpool can run on public cloud environments using the IPVlan Underlay CNI. Here's an overview of its implementation:
+- Spiderpool is a Underlay and RDMA network solution in Kubernetes. It enhances the capabilities of Macvlan CNI,
+  IPvlan CNI, and SR-IOV CNI to meet various networking needs. It allows Underlay network solutions to be applied
+  in **Bare Metal, virtual machine, and public cloud environments**, providing excellent network performance for
+  I/O-intensive and low-latency applications.
 
-1. When using Underlay networks in a public cloud environment, each network interface of a cloud server can only be assigned a limited number of IP addresses. To enable communication when an application runs on a specific cloud server, it needs to obtain the valid IP addresses allocated to different network interfaces within the VPC network. To address this IP allocation requirement, Spiderpool introduces a CRD named `SpiderIPPool`. By configuring the nodeName and multusName fields in `SpiderIPPool`, it enables node topology functionality. Spiderpool leverages the affinity between the IP pool and nodes, as well as the affinity between the IP pool and IPvlan Multus, facilitating the utilization and management of available IP addresses on the nodes. This ensures that applications are assigned valid IP addresses, enabling seamless communication within the VPC network, including communication between Pods and also between Pods and cloud servers.
+- [aws-vpc-cni](https://github.com/aws/amazon-vpc-cni-k8s) is a network plugin that enables pod network communication
+  in Kubernetes using Elastic NICs on AWS.
 
-2. In a public cloud VPC network, network security controls and packet forwarding principles dictate that when network data packets contain MAC and IP addresses unknown to the VPC network, correct forwarding becomes unattainable. This issue arises in scenarios where Macvlan or OVS based Underlay CNI plugins generate new MAC addresses for Pod NICs, resulting in communication failures among Pods. To address this challenge, Spiderpool offers a solution in conjunction with [IPVlan CNI](https://www.cni.dev/plugins/current/main/ipvlan/). The IPVlan CNI operates at the L3 of the network, eliminating the reliance on L2 broadcasts and avoiding the generation of new MAC addresses. Instead, it maintains consistency with the parent interface. By incorporating IPVlan, the legitimacy of MAC addresses in a public cloud environment can be effectively resolved.
+aws-vpc-cni is an Underlay network solution provided by AWS for public cloud environments, but it cannot meet
+complex networking requirements. Below is a feature comparison between Spiderpool and aws-vpc-cni when used in
+AWS cloud environments. The subsequent sections will demonstrate the relevant features of Spiderpool:
 
-3. When the `.spec.externalTrafficPolicy` of a service is set to `Local`, the client's source IP can be reserved. However, in self-managed public cloud clusters, using the platform's LoadBalancer component for nodePort forwarding in this mode will lead to access failures. To tackle this problem, Spiderpool offers the coordinator plugin. This plugin utilizes iptables to apply packet marking, ensuring that response packets coming from veth0 are still forwarded through veth0. This resolves the problem of nodePort access in this mode.
+| Feature Comparison         |        aws-vpc-cni                  |  Spiderpool + IPvlan  |
+|---------------------------|-------------------------------- | ------------------------------------------ |
+| Multiple Underlay NICs    |          ❌                     |      ✅ (Multiple Underlay NICs across subnets)         |
+| Custom Routing             |          ❌                     |      ✅ [route](https://spidernet-io.github.io/spiderpool/v0.9/usage/route/)  |
+| Dual CNI Cooperation       |   Supports multiple CNI NICs but does not support routing coordination   |       ✅                                    |
+| Network Policies           |   ✅ [aws-network-policy-agent](https://github.com/aws/aws-network-policy-agent) |      ✅ [cilium-chaining](https://spidernet-io.github.io/spiderpool/v0.9/usage/cilium-chaining/)               |
+| clusterIP                 |   ✅ (kube-proxy)               |      ✅ (kube-proxy and eBPF methods)        |
+| Bandwidth                 |            ❌                   |      ✅ [Bandwidth Management](https://spidernet-io.github.io/spiderpool/v0.9/usage/ipvlan_bandwidth/)           |
+| Metrics                   |            ✅                   |      ✅                                    |
+| Dual Stack                |  Supports single IPv4, IPv6, while does not support dual stack      |      Supports single IPv4, IPv6, and dual stack                 |
+| Observability             |            ❌                   |      ✅ (with Cilium Hubble, kernel >= 4.19.57)   |
+| Multi-cluster             |            None                   |      ✅ [Submariner](https://spidernet-io.github.io/spiderpool/v0.9/usage/submariner/)     |
+| Compatible with AWS Layer 4/7 Load Balancers |            ✅                   |       ✅                                    |
+| Kernel Restrictions        |            None                   |       >= 4.2 (IPvlan kernel restrictions)                |
+| Forwarding Principles      | Underlay pure routing Layer 3 forwarding          |       IPvlan Layer 2                            |
+| Multicast                 |            ❌                   |       ✅                                   |
+| Access Across VPCs          |           ✅                    |       ✅                                   |
+
+## Spiderpool Solutions for Alibaba Cloud Limitations
+
+The node topology feature in Spiderpool can bind the IPPool to the available IPs of each NIC on every node,
+while also providing functionalities to address MAC address validity and other concerns. Spiderpool can run
+on public cloud environments using the IPVlan Underlay CNI. Here's an overview of its implementation:
+
+1. When using Underlay networks in a public cloud environment, each NIC of a cloud server can only be assigned
+   a limited number of IP addresses. To enable communication when an application runs on a specific cloud server,
+   it needs to get the valid IP addresses allocated to different NICs within the VPC network. To address this IP
+   allocation requirement, Spiderpool introduces a CRD named `SpiderIPPool`. By configuring the nodeName and
+   multusName fields in `SpiderIPPool`, it enables node topology functionality. Spiderpool leverages the affinity
+   between the IPPool and nodes, as well as the affinity between the IPPool and IPvlan Multus, facilitating the
+   utilization and management of available IP addresses on the nodes. This ensures that applications are assigned
+   valid IP addresses, enabling seamless communication within the VPC network, including communication between pods
+   and also between pods and cloud servers.
+
+2. In a public cloud VPC network, network security controls and packet forwarding principles dictate that when
+   network data packets contain MAC and IP addresses unknown to the VPC network, correct forwarding becomes unattainable.
+   This issue arises in scenarios where Macvlan or OVS based Underlay CNI plugins generate new MAC addresses for pod NICs,
+   resulting in communication failures among pods. To address this challenge, Spiderpool offers a solution in conjunction
+   with [IPVlan CNI](https://www.cni.dev/plugins/current/main/ipvlan/). The IPVlan CNI operates at the L3 of the network,
+   eliminating the reliance on L2 broadcasts and avoiding the generation of new MAC addresses. Instead, it maintains
+   consistency with the parent interface. By incorporating IPVlan, the legitimacy of MAC addresses in a public cloud
+   environment can be effectively resolved.
 
 ## Prerequisites
 
-1. The system kernel version must be greater than 4.2 when using IPVlan as the cluster's CNI.
+- The system kernel version must be greater than 4.2 when using IPVlan as the cluster's CNI.
 
-2. [Helm](https://helm.sh/docs/intro/install/) is installed.
+- [Helm](https://helm.sh/docs/intro/install/) is installed.
 
 ## Steps
 
 ### Alibaba Cloud Environment
 
-- Prepare an Alibaba Cloud environment with virtual machines that have 2 network interfaces. Assign a set of auxiliary private IP addresses to each network interface, as shown in the picture:
+- Prepare an Alibaba Cloud environment with virtual machines that have 2 NICs. Assign a set of auxiliary private
+  IP addresses to each NIC, as shown in the picture:
 
     ![alicloud-web-network](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/alicloud-network-web.png)
 
-- Utilize the configured VMs to build a Kubernetes cluster. The available IP addresses for the nodes and the network topology of the cluster are depicted below:
+- Utilize the configured VMs to build a Kubernetes cluster. The available IP addresses for the nodes and the network
+  topology of the cluster are depicted below:
 
     ![网络拓扑](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/alicloud-k8s-network.png)
 
@@ -46,15 +106,23 @@ helm repo update spiderpool
 helm install spiderpool spiderpool/spiderpool --namespace kube-system --set ipam.enableStatefulSet=false --set multus.multusCNI.defaultCniCRName="ipvlan-eth0"
 ```
 
-> If you are using a cloud server from a Chinese mainland cloud provider, you can enhance image pulling speed by specifying the parameter `--set global.imageRegistryOverride=ghcr.m.daocloud.io`.
+> If you are using a cloud server from a Chinese mainland cloud provider, you can enhance image pulling speed
+> by specifying the parameter `--set global.imageRegistryOverride=ghcr.m.daocloud.io`.
 >
-> Spiderpool allows for fixed IP addresses for application replicas with a controller type of `StatefulSet`. However, in the underlay network scenario of public clouds, cloud instances are limited to using specific IP addresses. When StatefulSet replicas migrate to different nodes, the original fixed IP becomes invalid and unavailable on the new node, causing network unavailability for the new Pods. To address this issue, set `ipam.enableStatefulSet` to `false` to disable this feature.
+> Spiderpool allows for fixed IP addresses for application replicas with a controller type of `StatefulSet`.
+> However, in the underlay network scenario of public clouds, cloud instances are limited to using specific
+> IP addresses. When StatefulSet replicas migrate to different nodes, the original fixed IP becomes invalid
+> and unavailable on the new node, causing network unavailability for the new pods. To address this issue,
+> set `ipam.enableStatefulSet` to `false` to disable this feature.
 >
-> Specify the Multus clusterNetwork for the cluster using `multus.multusCNI.defaultCniCRName`. `clusterNetwork` is a specific field within the Multus plugin used to define the default network interface for Pods.
+> Specify the Multus clusterNetwork for the cluster using `multus.multusCNI.defaultCniCRName`. `clusterNetwork`
+> is a specific field within the Multus plugin used to define the default NIC for pods.
 
 ### Install CNI
 
-To simplify the creation of JSON-formatted Multus CNI configurations, Spiderpool offers the SpiderMultusConfig CR to automatically manage Multus NetworkAttachmentDefinition CRs. Here is an example of creating an IPvlan SpiderMultusConfig configuration:
+To simplify the creation of JSON-formatted Multus CNI configurations, Spiderpool offers the SpiderMultusConfig
+CR to automatically manage Multus NetworkAttachmentDefinition CRs. Here is an example of creating an IPvlan
+SpiderMultusConfig configuration:
 
 ```shell
 IPVLAN_MASTER_INTERFACE0="eth0"
@@ -97,7 +165,7 @@ spec:
 EOF
 ```
 
-This case uses the given configuration to create two IPvlan SpiderMultusConfig instances. These instances will automatically generate corresponding Multus NetworkAttachmentDefinition CRs for the host's `eth0` and `eth1` network interfaces.
+This case uses the given configuration to create two IPvlan SpiderMultusConfig instances. These instances will automatically generate corresponding Multus NetworkAttachmentDefinition CRs for the host's `eth0` and `eth1` NICs.
 
 ```bash
 $ kubectl get spidermultusconfigs.spiderpool.spidernet.io -n kube-system
@@ -115,13 +183,24 @@ ipvlan-eth1   10m
 
 The Spiderpool's CRD, `SpiderIPPool`, introduces the following fields: `nodeName`, `multusName`, and `ips`:
 
-- `nodeName`: when `nodeName` is not empty, Pods are scheduled on a specific node and attempt to acquire an IP address from the corresponding SpiderIPPool. If the Pod's node matches the specified `nodeName`, it successfully obtains an IP. Otherwise, it cannot obtain an IP from that SpiderIPPool. When `nodeName` is empty, Spiderpool does not impose any allocation restrictions on the Pod.
+- `nodeName`: when `nodeName` is not empty, pods are scheduled on a specific node and attempt to acquire
+  an IP address from the corresponding SpiderIPPool. If the pod's node matches the specified `nodeName`,
+  it successfully obtains an IP. Otherwise, it cannot obtain an IP from that SpiderIPPool. When `nodeName`
+  is empty, Spiderpool does not impose any allocation restrictions on the pod.
 
-- `multusName`：Spiderpool integrates with Multus CNI to cope with cases involving multiple network interface cards. When `multusName` is not empty, SpiderIPPool utilizes the corresponding Multus CR instance to configure the network for the Pod. If the Multus CR specified by `multusName` does not exist, Spiderpool cannot assign a Multus CR to the Pod. When `multusName` is empty, Spiderpool does not impose any restrictions on the Multus CR used by the Pod.
+- `multusName`：Spiderpool integrates with Multus CNI to cope with cases involving multiple NICs. When
+  `multusName` is not empty, SpiderIPPool utilizes the corresponding Multus CR instance to configure the
+  network for the pod. If the Multus CR specified by `multusName` does not exist, Spiderpool cannot assign
+  a Multus CR to the pod. When `multusName` is empty, Spiderpool does not impose any restrictions on the
+  Multus CR used by the pod.
 
-- `spec.ips`：this field must not be empty. Due to Alibaba Cloud's limitations on available IP addresses for nodes, the specified range of values must fall within the auxiliary private IP range of the host associated with the specified `nodeName`. You can obtain this information from the Elastic Network Interface page in the Alibaba Cloud console.
+- `spec.ips`：this field must not be empty. Due to Alibaba Cloud's limitations on available IP addresses
+  for nodes, the specified range of values must fall within the auxiliary private IP range of the host
+  associated with the specified `nodeName`. You can obtain this information from the Elastic NIC page in
+  the Alibaba Cloud console.
 
-Based on the provided information, use the following YAML configuration to create a SpiderIPPool for each network interface (eth0 and eth1) on every node. These SpiderIPPools will assign IP addresses to Pods running on different nodes.
+Based on the provided information, use the following YAML configuration to create a SpiderIPPool for each
+NIC (eth0 and eth1) on every node. These SpiderIPPools will assign IP addresses to pods running on different nodes.
 
 ```shell
 $ cat <<EOF | kubectl apply -f -
@@ -267,7 +346,7 @@ spec:
 EOF
 ```
 
-Check the status of the running Pods:
+Check the status of the running pods:
 
 ```bash
 $ kubectl get po -owide
@@ -278,7 +357,7 @@ test-app-2-7c56876fc6-7brhf   1/1     Running   0          12s   192.168.0.160  
 test-app-2-7c56876fc6-zlxxt   1/1     Running   0          12s   192.168.0.161    worker    <none>           <none>
 ```
 
-Spiderpool automatically assigns IP addresses to the applications, ensuring that the assigned IPs are within the expected IP pool.
+Spiderpool automatically assigns IP addresses to the applications, ensuring that the assigned IPs are within the expected IPPool.
 
 ```bash
 $ kubectl get spiderippool
@@ -291,7 +370,7 @@ worker-192   4         192.168.0.0/24    1                    5                t
 
 ### Test East-West Connectivity
 
-- Test communication between Pods and their hosts:
+- Test communication between pods and their hosts:
 
     ```bash
     $ kubectl get nodes -owide
@@ -309,7 +388,7 @@ worker-192   4         192.168.0.0/24    1                    5                t
     round-trip min/avg/max = 0.054/0.071/0.088 ms
     ```
 
-- Test communication between Pods across different nodes and subnets:
+- Test communication between pods across different nodes and subnets:
 
     ```shell
     $ kubectl exec -ti test-app-1-b7765b8d8-422sb -- ping 172.31.199.193 -c 2
@@ -331,7 +410,7 @@ worker-192   4         192.168.0.0/24    1                    5                t
     round-trip min/avg/max = 0.194/0.301/0.408 ms
     ```
 
-- Test communication between Pods and ClusterIP services:
+- Test communication between pods and ClusterIP services:
 
     ```bash
     $ kubectl get svc test-svc
@@ -352,16 +431,16 @@ worker-192   4         192.168.0.0/24    1                    5                t
 
 ### Test North-South Connectivity
 
-#### Test egress traffic from Pods to external destinations
+#### Test egress traffic from pods to external destinations
 
 - Alibaba Cloud's NAT Gateway provides an ingress and egress gateway for public or private network traffic
   within a VPC environment. By utilizing NAT Gateway, the cluster can have egress connectivity. Please refer to
   [the NAT Gateway documentation](https://www.alibabacloud.com/help/en/nat-gateway?spm=a2c63.p38356.0.0.1b111b76Rn9rPa)
   for creating a NAT Gateway as depicted in the picture:
 
-![alicloud-natgateway](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/alicloud-natgateway.png)
+    ![alicloud-natgateway](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/alicloud-natgateway.png)
 
-- Test egress traffic from Pods
+- Test egress traffic from pods
 
     ```bash
     $ kubectl exec -ti test-app-2-7c56876fc6-7brhf -- curl www.baidu.com -I
@@ -389,7 +468,10 @@ traffic ingress access. Follow the steps below and refer to
 
 1. Configure `providerID` on Cluster Nodes
 
-    On each node in the cluster, run the following command to obtain the `providerID` for each node. <http://100.100.100.200/latest/meta-data> is the API entry point provided by Alibaba Cloud CLI for retrieving instance metadata. You don't need to modify it in the provided example. For more information, please refer to [ECS instance metadata](https://www.alibabacloud.com/help/en/ecs/user-guide/overview-of-ecs-instance-metadata?spm=a2c63.p38356.0.0.1c3c592dPUwXMN).
+    On each node in the cluster, run the following command to obtain the `providerID` for each node.
+    <http://100.100.100.200/latest/meta-data> is the API entry point provided by Alibaba Cloud CLI
+    for retrieving instance metadata. You don't need to modify it in the provided example. For more
+    information, refer to [ECS instance metadata](https://www.alibabacloud.com/help/en/ecs/user-guide/overview-of-ecs-instance-metadata?spm=a2c63.p38356.0.0.1c3c592dPUwXMN).
 
     ```bash
     $ META_EP=http://100.100.100.200/latest/meta-data
@@ -398,7 +480,10 @@ traffic ingress access. Follow the steps below and refer to
     cn-hangzhou.i-bp17345hor9*******
     ```
 
-    On the `master` node of the cluster, use the `kubectl patch` command to add the `providerID` for each node in the cluster. This step is necessary to ensure the proper functioning of the CCM Pod on each corresponding node. Failure to run this step will result in the CCM Pod being unable to run correctly.
+    On the `master` node of the cluster, use the `kubectl patch` command to add the `providerID` for
+    each node in the cluster. This step is necessary to ensure the proper functioning of the CCM pod
+    on each corresponding node. Failure to run this step will result in the CCM pod being unable to
+    run correctly.
 
     ```bash
     kubectl get nodes
@@ -408,9 +493,13 @@ traffic ingress access. Follow the steps below and refer to
 
 2. Create an Alibaba Cloud RAM user and grant authorization.
 
-    A RAM user is an entity within Alibaba Cloud's Resource Access Management (RAM) that represents individuals or applications requiring access to Alibaba Cloud resources. Refer to [Overview of RAM users](https://www.alibabacloud.com/help/en/ram/user-guide/overview-of-ram-users?spm=a2c63.p38356.0.0.435a7b9fxy619R) to create a RAM user and assign the necessary permissions for accessing resources.
+    A RAM user is an entity within Alibaba Cloud's Resource Access Management (RAM) that represents
+    individuals or applications requiring access to Alibaba Cloud resources. Refer to [Overview of RAM users](https://www.alibabacloud.com/help/en/ram/user-guide/overview-of-ram-users?spm=a2c63.p38356.0.0.435a7b9fxy619R)
+    to create a RAM user and assign the necessary permissions for accessing resources.
 
-    To ensure that the RAM user used in the subsequent steps has sufficient privileges, grant the `AdministratorAccess` and `AliyunSLBFullAccess` permissions to the RAM user, following the instructions provided here.
+    To ensure that the RAM user used in the subsequent steps has sufficient privileges, grant
+    the `AdministratorAccess` and `AliyunSLBFullAccess` permissions to the RAM user, following the
+    instructions provided here.
 
 3. Obtain the AccessKey & AccessKeySecret for the RAM user.
 
@@ -470,9 +559,12 @@ traffic ingress access. Follow the steps below and refer to
 
 The following YAML will create two sets of services, one for TCP (layer 4 load balancing) and one for HTTP (layer 7 load balancing), with `spec.type` set to `LoadBalancer`.
 
-- `service.beta.kubernetes.io/alibaba-cloud-loadbalancer-protocol-port`: this annotation provided by CCM allows you to customize the exposed ports for layer 7 load balancing. For more information, refer to [the CCM Usage Documentation](https://github.com/kubernetes/cloud-provider-alibaba-cloud/blob/master/docs/usage.md).
+- `service.beta.kubernetes.io/alibaba-cloud-loadbalancer-protocol-port`: this annotation provided
+  by CCM allows you to customize the exposed ports for layer 7 load balancing. For more information,
+  refer to [the CCM Usage Documentation](https://github.com/kubernetes/cloud-provider-alibaba-cloud/blob/master/docs/usage.md).
 
-- `.spec.externalTrafficPolicy`: indicates whether the service prefers to route external traffic to local or cluster-wide endpoints. It has two options: Cluster (default) and Local. Setting `.spec.externalTrafficPolicy` to `Local` preserves the client source IP.
+- `.spec.externalTrafficPolicy`: indicates whether the service prefers to route external traffic to
+  local or cluster-wide endpoints. It has two options: Cluster (default) and Local. Setting `.spec.externalTrafficPolicy` to `Local` preserves the client source IP.
 
 ```bash
 $ cat <<EOF | kubectl apply -f -

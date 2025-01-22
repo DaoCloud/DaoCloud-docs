@@ -33,23 +33,7 @@ KubeEdge：是一个开源系统，将原生的容器化应用程序编排功能
 
         如果您选择的集群是一个单节点集群，请确保 master 节点支持调度，即已删除污点 NoSchedule，避免系统组件安装失败。
 
-    ![基本信息](../../images/create-external-edgeunit-01.png)
-
-<!-- 3. 组件仓库设置。KubeEdge、Kant 的云端组件仓库设置；
-
-    - Kant 镜像仓库：系统所需云端组件镜像仓库，Kant 代指云边协同模块。
-        - 默认：系统提供的默认镜像仓库地址，存储云边协同模块所需云端组件镜像，像 kant-worker-admission;
-        - 自定义：如果用户将系统云端组件镜像存储在自己的镜像仓库，用户可以选择自定义仓库地址。
-
-    - Kant Helm 仓库：系统所需云端组件 helm 应用仓库，Kant 代指云边协同模块。如果下拉选项中没有您想要的 Helm 仓库，可以点击右侧 __创建仓库__ 按钮，创建新的 Helm 仓库。
-
-    - KubeEdge 镜像仓库（可选）：KubeEdge 云端组件镜像仓库。
-
-    !!! note
-
-        在边缘节点接入时，KubeEdge 边端镜像仓库可以引用云端地址，建议填写。
-
-    ![组件仓库设置](../../images/create-external-edgeunit-02.png) -->
+    ![基本信息](../../images/create-external-edgeunit-010.png)
 
 1. 填写高级设置
 

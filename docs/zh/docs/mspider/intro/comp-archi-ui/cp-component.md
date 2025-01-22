@@ -14,7 +14,7 @@ hide:
     </tr>
     <tr>
         <td>mspider-ui</td>
-        <td>全局管理集群</td>
+        <td>全局服务集群</td>
         <td>服务网格界面</td>
         <td>
             <ul>
@@ -25,8 +25,8 @@ hide:
     </tr>
     <tr>
         <td>mspider-ckube</td>
-        <td>全局管理集群</td>
-        <td>Kubernetes API Server 的加速组件，用于调用全局集群相关的资源</td>
+        <td>全局服务集群</td>
+        <td>Kubernetes API Server 的加速组件，用于调用全局服务集群相关的资源</td>
         <td>
             <ul>
                 <li>requests: CPU: 未设置；内存: 未设置</li>
@@ -36,7 +36,7 @@ hide:
     </tr>
     <tr>
         <td>mspider-ckube-remote</td>
-        <td>全局管理集群</td>
+        <td>全局服务集群</td>
         <td>用于调用远程集群的 Kubernetes， 聚合多集群资源，并且加速</td>
         <td>
             <ul>
@@ -47,7 +47,7 @@ hide:
     </tr>
     <tr>
         <td>mspider-gsc-controller</td>
-        <td>全局管理集群</td>
+        <td>全局服务集群</td>
         <td>服务网格管理组件，用于网格创建，网格配置等网格控制面生命周期管理，以及权限管理等 Mspider  控制面能力</td>
         <td>
             <ul>
@@ -58,7 +58,7 @@ hide:
     </tr>
     <tr>
         <td>mspider-api-service</td>
-        <td>全局管理集群</td>
+        <td>全局服务集群</td>
         <td>为 Mspider 后台 API 交互，等控制行为提供接口</td>
         <td>
             <ul>

@@ -16,66 +16,45 @@ Follow these steps to create an end device:
 
 1. Navigate to the edge unit details page and select __Edge Resources__ -> __End Devices__ from the left menu.
 
-    ![End Devices](../images/create-device-01.png)
-
 2. Click the __Create Device__ button located at the top right corner of the end device list.
 
-    ![Create Device](../images/create-device-02.png)
+    <!--add image later-->
 
-3. Enter the basic information.
+3. Fill in __Basic Information__ .
 
-    - Device Name: Use a combination of lowercase letters, numbers, hyphens (-), and dots (.). Avoid consecutive separators and ensure the name starts and ends with a letter or number. The maximum character limit is 253.
-    - Access Protocol: The current platform supports device access via the Modbus protocol.
-    - Namespace: Specify the namespace where the device resides. Namespaces help isolate resources from each other.
-    - Description: Provide a brief description of the device.
+    - __Device Name__ : Use a combination of lowercase letters, numbers, hyphens (-), and periods (.). Avoid consecutive symbols and ensure the name starts and ends with a letter or number. It can have a maximum of 253 characters.
+    - __Namespace__ : Specify the namespace where the device resides. Namespaces help isolate resources from each other.
+    - __Device Model__ : The associated device model.
+    - __Protocol__ : The protocol of the associated device model will be automatically filled in and cannot be modified here.
+    - __Description__ : Provide a brief description of the device.
 
-4. Fill in the device settings, and you can add twins and labels.
+    <!--add image later-->
 
-    - Twin Properties: Optional. Refers to the dynamic data of the end device, including proprietary real-time data such as the on/off state of a light, temperature, and humidity readings from a sensor.
-    - Labels: Optional. Classify and manage different device by assigning labels to them.
+4. Fill in __Device Settings__ , and you can click __Add Twins__ and __Tag__ .
+
+    - __Twin Attributes__ : Optional. Refers to the dynamic data of the end device, including proprietary real-time data such as the on/off state of a light, temperature, and humidity readings from a sensor.
+    - __Tag__ : Optional. Classify and manage different device by assigning labels to them.
 
     ![Basic Info](../images/create-device-03.png)
 
-    To add twins, you can select the corresponding register type based on the
+    To add twins attributes, you can select the corresponding register type based on the
     device type and fill in the corresponding parameters. The parameter descriptions are as follows:
 
-    - Register Type: Modbus protocol device register types include Coil Registers, Discrete Input Registers, Holding Registers, and Input Registers.
-    - Property Name: Required. The name of the device property.
-    - Default Value: Required. The desired value of the property, based on the data type of the register type.
-    - Access Mode: Default value. Varies based on the default access method for the register type.
-    - Register Address: Required. The starting data bit corresponding to the property.
-    - Collection Interval: Optional. Specifies the interval at which the device collects and reports data.
-    - Byte Swap: Swap the two-byte contents in each register obtained.
-    - Swap Register Order: Reverse the order of all registers obtained from high to low.
-    - Property Value Range: Limit the range of the original data obtained.
-    - Scaling Factor: Scale the original data obtained.
+    - __Attribute Name__ : Required. The device attribute name.
+    - __Desired Value__ : Optional. The desired value of the attribute, which can be filled when the access permission is Read or Write.
+    - __Collection Interval__ : Optional. The interval at which data is collected from the device.
+    - __Report Cycle__ : Optional. The interval at which data is reported from the device.
+    - __Visitors__ : The method used to access the device attribute must be consistent with the mapper's access method when the platform is connected to the device.
 
-    ![Device Settings](../images/create-device-04.png)
+    <!--add image later-->
 
-5. Fill in the device access settings.
+5. Fill in __Access Settings__ .
 
-    The Modbus protocol has two transmission modes: RTU and TCP. The access settings differs between the two modes.
+    The access parameters for the platform to connect to the device should be provided in YAML format as follows:
 
-    - Slave ID: The identification field when accessing register values.
+    <!--add image later-->
 
-    **RTU Transmission Mode:**
-
-    - Serial Port: The serial port to which the end device is connected. Different values can be selected depending on the operating system of the edge node.
-    - Baud Rate: The number of symbol elements transmitted per second, which measures the data transfer rate.
-    - Data Bits: A parameter that measures the actual data bits in communication.
-    - Parity: A simple error-checking mechanism used to determine if there is noise interference during communication or if there is a synchronization issue between transmitting and receiving data.
-    - Stop Bits: Represents the last bit of a single data packet.
-
-    ![RTU](../images/create-device-05.png)
-
-    **TCP Transmission Mode:**
-
-    - IP: The IP address of the end device.
-    - Port: The port of the end device.
-
-    ![TCP](../images/create-device-06.png)
-
-6. Confirm the information and click __OK__ if the configured information is correct to complete the device creation.
+6. Verify that the configured information is correct, then click __OK__ to complete the device creation.
 
     ![Confirm Creation](../images/create-device-07.png)
 

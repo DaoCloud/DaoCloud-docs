@@ -9,6 +9,87 @@
 *[Kpanda]: DCE 5.0 容器管理的开发代号
 *[Skoala]: DCE 5.0 微服务引擎的开发代号
 
+## 2024-10-30
+
+### v0.23.0
+
+#### 优化
+
+- **优化** 启用 cert-manager
+- **优化** 新增前置依赖包中安装 helm-push 插件
+- **优化** mysql mgr 模式下，采用 router 双副本
+- **优化** 中间件统一 mysql 版本使用 8.0.37
+
+#### 修复
+
+- **修复** 集群状态检测方法，补充集群无法访问时的异常处理
+- **修复** 安装 global 集群，es、redis、mysql 外置时，创建 minio 失败
+- **修复** skopeo copy 在 x86 环境拉取 arm 镜像时的架构问题
+- **修复** 中间件 redis 镜像 registry
+- **修复** kafka metrics 采集异常
+
+## 2024-09-30
+
+### v0.22.0
+
+#### 优化
+
+- **优化** 更新默认 K8s 版本为 v1.30.4
+- **优化** 支持 Rocky Linux 8
+- **优化** 支持跳过验证 ospkg，需要在 clusterconfig.yaml 中 spec -> osRepos
+  下定义 `skipValidateOSPackage: true`
+
+#### 修复
+
+- **修复** 多架构镜像融合后未清理中间镜像问题
+- **修复** 部分 GProduct 组件 helm repo 缺失问题
+
+#### 已知问题
+
+在线安装时 `baize` 组件（AI Lab）会报错：
+
+```text
+Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo update'): no chart name found
+```
+
+## 2024-08-30
+
+### v0.21.0
+
+#### 优化
+
+- **优化** 允许配置 CPU/内存 检测阈值
+- **优化** 允许前置依赖使用原始地址下载
+- **优化** 支持组件安装门控
+- **优化** 移除 contour 安装代码
+- **优化** 支持共享一个 MySQL 实例
+- **优化** 升级 gproduct 时导入 files
+
+#### 修复
+
+- **修复** 修复由于 grep 不支持 PCRE 导致 values 解析为空的问题
+
+## 2024-07-30
+
+### v0.20.0
+
+#### 优化
+
+- **优化** 支持 Kylin v10sp3
+- **优化** 支持更新火种集群内部的全局服务集群 kubeconfig
+- **优化** 支持更新火种集群自身证书及 kubeconfig
+- **优化** 向全局管理注册安装器版本信息
+- **优化** clusterConfig.yaml 配置模版对 `elasticsearch` 添加 `insecure` 选项
+- **优化** 检测系统 ipv6 启用状态并自动启用
+- **优化** 优化外接 redis url 中的特殊字符校验
+
+#### 修复
+
+- **修复** 命令行 -s 指定脚本后 -j 参数不生效
+- **修复** ps -p 偶发进程阻塞问题
+- **修复** Ubuntu 22.04 内核参数依赖问题
+- **修复** 磁盘检测误警告问题
+
 ## 2024-06-30
 
 ### v0.19.0
@@ -42,7 +123,7 @@
 - **优化** 更新默认 K8s 版本为 v1.28.9
 - **优化** 支持 Ubuntu 22.04
 - **优化** 支持产品组件扩展集成其命令行工具
-- **优化** 增强 All-In-One 模式火种集群和全局管理集群的隔离性
+- **优化** 增强 All-In-One 模式火种集群和全局服务集群的隔离性
 - **优化** 优化 Kubean download_url 格式
 - **优化** 扩展 merge_values_xxx 函数参数列表，支持获取由安装程序组装的原始 values 参数
 - **优化** 添加前置依赖组件的最小可用版本检测
@@ -189,7 +270,7 @@
 #### 已知问题
 
 - 在火种节点中使用 podman 时必须开启 ipv6
-- Global 集群会出现 `etcd NOSPACE` 告警风险
+-全局服务集群会出现 `etcd NOSPACE` 告警风险
 
 ## 2023-10-31
 
@@ -210,24 +291,24 @@
 - **优化** 将 GProduct 组件重新打包上传到火种节点 ChartMuseum
 - **优化** 在上传 addon 失败时的日志输出
 - **优化** 适配升级 GProduct 组件时的复用 helm 安装参数
-- **优化** 调整的 Global 集群每个节点 Pod 数量最大为 180
+- **优化** 调整的全局服务集群每个节点 Pod 数量最大为 180
 - **优化** 迁移 charts 过程中日志过多的问题
 
 #### 修复
 
 - **修复** 安装器基于非 root 用户安装时缓存文件的特权问题
-- **修复** 在安装过程中从火种节点迁移数据到 Global 集群时的报错
+- **修复** 在安装过程中从火种节点迁移数据到全局服务集群时的报错
 - **修复** 上传 addon 可能失败的问题
 - **修复** 从代码上修复可能出现的 `helm operation in progress` 问题
 - **修复** Kpanda 组件支持带密码的哨兵模式的外置 redis
-- **修复** 基于 docker 运行时部署 Global 集群失败的问题
+- **修复** 基于 docker 运行时部署全局服务集群失败的问题
 - **修复** 在 LB 模式下 Ghippo 重定向问题
 - **修复** MinIO 组件启动时没有 metric 指标的问题
 
 #### 已知问题
 
 - 在火种节点中使用 podman 时必须开启 ipv6
-- Global 集群会出现 `etcd NOSPACE` 告警风险
+-全局服务集群会出现 `etcd NOSPACE` 告警风险
 
 ## 2023-8-31
 
@@ -235,11 +316,11 @@
 
 #### 新增
 
-- **新增** 更新 Global 集群的 k8s 版本到 v1.26.7 以避免旧版本安全漏洞
+- **新增** 更新全局服务集群的 k8s 版本到 v1.26.7 以避免旧版本安全漏洞
 - **新增** 支持在 clusterConfig.yaml 设置 ansible 扩展参数
 - **新增** 支持在 clusterConfig.yaml 添加证书更新配置，支持周期性更新及一次性更新
 - **新增** 支持 redhat 9.2 系统离线部署
-- **新增** 离线包添加 diag.sh Global 集群诊断脚本
+- **新增** 离线包添加 diag.sh全局服务集群诊断脚本
 - **新增** `--multi-arch` 标识，避免升级操作覆盖多架构镜像问题
 
 #### 优化
@@ -400,7 +481,7 @@
 - 容器管理平台离线模式暂无法支持工作集群添加节点
 - 离线场景下使用外置 OS Repo 仓库时，即 clusterConfig.yaml 中定义 `osRepos.type=external`，
   部署 DCE 5.0 成功后无法在容器管理中创建工作集群，临时解决方案如下：
-  global 集群安装完成后立即更新 global 集群 kubean-system 命名空间的 configmap kubean-localservice，
+ 全局服务集群安装完成后立即更新全局服务集群 kubean-system 命名空间的 configmap kubean-localservice，
   将 `yumRepos.external` 值中所有双引号改为单引号。如下示例，将文件内的双引号都替换为单引号：
 
     ```yaml
@@ -459,7 +540,7 @@
 
 #### 已知问题
 
-- 在线安装 global 集群会失败，需在 clusterConfig.yaml 的 `kubeanConfig` 块里进行如下配置：
+- 在线安装全局服务集群会失败，需在 clusterConfig.yaml 的 `kubeanConfig` 块里进行如下配置：
 
     ```yaml
     kubeanConfig: |-
@@ -470,7 +551,7 @@
     `calico_crds_download_url`，值为上述 calico_crds_download_url 的值
 
 - Kubean 存在低概率无法创建 spray-job 任务，通过手动删除对应的 clusteroperations CR 资源再重新执行安装命令
-- 使用外部 OS Repo 部署 DCE 5.0 后，无法通过容器管理离线创建工作集群，通过手动修改 global 集群 kubean-system
+- 使用外部 OS Repo 部署 DCE 5.0 后，无法通过容器管理离线创建工作集群，通过手动修改全局服务集群 kubean-system
   命名空间的 configmap kubean-localservice 来解决。在 `yumRepos` 下新增如下配置，需要在 external 内填写
   clusterConfig.yaml 中配置的外部 OS Repo 地址：
 
@@ -599,7 +680,7 @@
 #### 已知问题
 
 - 默认安装模式下暂不支持未分区的 SSD 盘，如果要支持，需要手工干涉。
-- 纯离线环境，默认没有应用商店。请手动将火种节点的 chart-museum 接入到 global 集群，仓库地址：`http://{火种 IP}:8081`，
+- 纯离线环境，默认没有应用商店。请手动将火种节点的 chart-museum 接入到全局服务集群，仓库地址：`http://{火种 IP}:8081`，
   用户名 rootuser，密码 rootpass123
 - metallb 社区有已知问题，在主网卡有 dadfailed 的 IPV6 回环地址，metallb 无法工作，安装之前需要确保主网卡没有 dadfailed
 - insight-api-server 启动中如果机器太卡，在 Liveness 健康检查周期内，无法完成数据库的初始化（migrate）动作，导致需要手动介入

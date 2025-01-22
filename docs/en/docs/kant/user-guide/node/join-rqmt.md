@@ -6,7 +6,7 @@ The edge nodes need to meet the specifications in the table below.
 
 - x86_64 architecture
 
-    Ubuntu LTS (Xenial Xerus), Ubuntu LTS (Bionic Beaver), CentOS, RHEL, Kylin, NewStart, NeoKylin, and EulerOS
+    Ubuntu LTS (Xenial Xerus,  Bionic Beaver, Jammy Jellyfish, or Focal Fossa), CentOS, EulerOS, RHEL, Kylin, NewStart, NeoKylin, openEuler, and Rocky Linux
 
 <!-- - armv7i (arm32) architecture
 
@@ -32,9 +32,13 @@ Not less than 1GB.
 
 ## Container Runtime
 
-Docker version must be higher than 19.0, and it is recommended to use version 19.03.6.
+The container runtime supports either Docker or containerd.
 
-Note: If the KubeEdge version is higher than or equal to 1.14 and the cloud Kubernetes version is higher than 1.24, you need to install CRI-Dockerd in addition to Docker.
+- The Docker version must be higher than v19.0, and v19.03.6 is recommended.
+
+    Note: If the installed version of KubeEdge is higher than or equal to v1.14 and the cloud Kubernetes version is higher than v1.24, CRI-Dockerd will need to be installed in addition to Docker.
+
+- If the installed version of KubeEdge is higher than v1.12.0, it is recommended to install containerd. For the installation process, refer to [Install Container Runtime on Edge Nodes](./container-engine-install.md).
 
 ## glibc
 
@@ -55,3 +59,18 @@ The edge nodes need to use the following ports, please make sure these ports can
 ## Time Synchronization
 
 The time of the edge node needs to be consistent with the time of the cloud server, and UTC standard time is recommended.
+
+## Component Scheduling
+
+The edge nodes do not support some running components such as Calico, KubeProxy, and Insight.
+To prevent DaemonSet applications from being scheduled to the edge, which could lead to abnormal
+node status, the following annotation should be added for exclusion.
+
+```yaml
+nodeAffinity:
+  requiredDuringSchedulingIgnoredDuringExecution:
+    nodeSelectorTerms:
+      - matchExpressions:
+        - key: node-role.kubernetes.io/edge
+          operator: DoesNotExist
+```

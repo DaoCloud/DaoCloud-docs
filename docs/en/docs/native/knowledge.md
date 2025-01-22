@@ -634,7 +634,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [In-depth Interpretation: Distributed System Resilience Architecture Ballast Stone OpenChaos](https://mp.weixin.qq.com/s/x-aRajL_ThKgVpOwV5GgXA)
 
     [OpenChaos](https://github.com/openmessaging/openchaos) is an emerging chaos engineering tool created by the RocketMQ team for the resilience of distributed systems.
-    OpenChaos sets up a dedicated detection model for the unique properties of some distributed systems, such as the delivery semantics and push efficiency of the Pub/Sub system, the precise scheduling, elastic scaling and cold start efficiency of the scheduling system, and the real-time performance of the streaming system.
+    OpenChaos sets up a dedicated detection model for the unique properties of some distributed systems, such as the delivery semantics and push efficiency of the Pub/Sub system, the precise scheduling, scaling and cold start efficiency of the scheduling system, and the real-time performance of the streaming system.
     At the same time, it has built-in scalable model support to verify the resilience performance under the impact of large-scale data requests and various failures, and provide optimization suggestions for architecture evolution.
 
 - [Kubernetes will heavily adopt Sigstore to protect the open source ecosystem](https://www.infoq.cn/article/pXTp33YPCH2LYkQw3HRv)
@@ -642,9 +642,9 @@ This page shares some technical articles related to cloud native, and we hope th
     Launched last year, Sigstore is a free signing service for software developers that improves the security of the software supply chain through encrypted software signing powered by transparent logging technology.
     Kubernetes 1.24 and all future releases use Sigstore to sign artifacts and verify signatures.
 
-- [Kubernetes Node Elastic Scaling Open Source Component Amazon Karpenter Practice: Deploying GPU Inference Applications](https://mp.weixin.qq.com/s/DcP9vQGGldCFRNs9odpFJg)
+- [Kubernetes Node Scaling Open Source Component Amazon Karpenter Practice: Deploying GPU Inference Applications](https://mp.weixin.qq.com/s/DcP9vQGGldCFRNs9odpFJg)
 
-    Karpenter is an open source component released by Amazon for elastic scaling of Kubernetes cluster nodes.
+    Karpenter is an open source component released by Amazon for scaling of Kubernetes cluster nodes.
     This component can automatically create appropriate new nodes and join them in the cluster according to the needs of Unscheduleable Pods.
     Karpenter completely abandons the concept of node groups and uses EC2 Fleet API to directly manage nodes.
     This page takes the GPU inference scenario as an example to elaborate on the working principle, configuration process and test results of Karpenter.

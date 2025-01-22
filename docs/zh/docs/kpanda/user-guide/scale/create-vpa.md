@@ -1,8 +1,13 @@
 # 创建 VPA
 
-容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA）通过监控 Pod 在一段时间内的资源申请和用量，计算出对该 Pod 而言最适合的 CPU 和内存请求值。使用 VPA 可以更加合理地为集群下每个 Pod 分配资源，提高集群的整体资源利用率，避免集群资源浪费。
+垂直伸缩（VPA）策略可以根据容器实际资源使用情况手动或自动调整 Pod 中容器的 CPU 和内存资源请求量。
+这有助于确保每个容器都能获得所需的资源，而不会过度提供资源浪费。
 
-DCE 5.0 支持通过容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA），基于此功能可以根据容器资源的使用情况动态调整 Pod 请求值。DCE 5.0 支持通过手动和自动两种方式来修改资源请求值，您可以根据实际需要进行配置。
+容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA）通过监控 Pod 在一段时间内的资源申请和用量，
+计算出对该 Pod 而言最适合的 CPU 和内存请求值。使用 VPA 可以更加合理地为集群下每个 Pod 分配资源，提高集群的整体资源利用率，避免集群资源浪费。
+
+DCE 5.0 支持通过容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA），基于此功能可以根据容器资源的使用情况动态调整 Pod 请求值。
+DCE 5.0 支持通过手动和自动两种方式来修改资源请求值，您可以根据实际需要进行配置。
 
 本文将介绍如何为工作负载配置 Pod 垂直伸缩。
 
@@ -20,7 +25,7 @@ DCE 5.0 支持通过容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA�
 
 - 当前操作用户应具有 [NS Editor](../permissions/permission-brief.md#ns-editor) 或更高权限，详情可参考[命名空间授权](../namespaces/createns.md)。
 
-- 当前集群已经安装 [ __metrics-server__ ](install-metrics-server.md) 和 [ __VPA__ ](install-vpa.md) 插件。
+- 当前集群已经安装 [metrics-server](install-metrics-server.md) 和 [VPA](install-vpa.md) 插件。
 
 ## 操作步骤
 
@@ -50,3 +55,16 @@ DCE 5.0 支持通过容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA�
 5. 完成参数配置后，点击 __确定__ 按钮，自动返回弹性伸缩详情页面。点击列表右侧的 __┇__ ，可以执行编辑、删除操作。
 
     ![工作负载](images/create-vpa-05.png)
+
+!!! note
+
+    默认情况下，--min-replicas 的值为 2。表示当副本数大于 1 时，VPA 才会生效，
+    可以通过修改 updater 的 --min-replicas 参数值来改变这一默认行为。
+    
+    ```yaml
+    spec: 
+      containers: 
+      - name: updater 
+      args: 
+      - "--min-replicas=2"
+    ```

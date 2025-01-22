@@ -28,6 +28,6 @@
 
     ![创建规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/reclaim02.png)
 
-1. 返回镜像回收列表，点击右侧的 __⋮__ ，可以禁用、编辑或删除回收规则。
+1. 返回镜像回收列表，点击右侧的 __┇__ ，可以禁用、编辑或删除回收规则。
 
     ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/reclaim03.png)

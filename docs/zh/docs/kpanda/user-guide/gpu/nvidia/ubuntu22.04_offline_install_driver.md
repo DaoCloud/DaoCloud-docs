@@ -30,7 +30,8 @@
 
 ## 安装驱动
 
-1. 安装 gpu-operator addon，设置 `driver.usePrecompiled=true`
-2. 设置 `driver.version=535`，这里要注意，写的是 535，不是 535.104.12
+1. 安装 gpu-operator addon
+2. 若使用预编译模式，则设置 `driver.usePrecompiled=true`，并设置 `driver.version=535`。
+   这里要注意，需要将默认的 535.104.12 改成 535。（非预编译模式跳过此步，直接安装即可）
 
 ![安装驱动](../images/driver.jpg)

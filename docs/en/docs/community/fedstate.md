@@ -33,5 +33,5 @@ FedState consists of the following components:
 
 ## References
 
-- Blog: [Cloud Native Federation Middleware - FedState](../blogs/230605-fedstate.md)
+- Blog: [Cloud Native Federation Middleware - FedState](../blogs/2023/230605-fedstate.md)
 - Repo url: https://github.com/fedstate/fedstate

@@ -2,25 +2,25 @@
 
 本页列出使用镜像仓库时常见的一些问题和解决办法。
 
-## DCE5.0标准版本中不能使用中间件部署
+## DCE 5.0 标准版为什么不能使用中间件部署镜像仓库
 
-DCE 5.0标准版本中没有中间件，中间件属于白金版。
+部署镜像仓库时会用到一些中间件，但 DCE 5.0 标准版中没有中间件，中间件属于白金版。
 
-## 如何校验配置的中间件网络是否可连接
+## 部署镜像仓库时如何校验配置的中间件网络是否可连接
 
 登录部署 Harbor 的目标集群，在任意节点中执行 `ping` 命令，测试是否能连接到中间件组件。
 
 ## 镜像空间列表看不到私有镜像
 
-镜像仓库在 `v0.7.0-v0.7.3`、`v0.8.0` 版本系统存在一个 bug，会导致看不到私有镜像。
+镜像仓库 v0.7.0-v0.7.3 和 v0.8.0 存在一个 bug，会导致看不到私有镜像，请升级到更高版本的镜像仓库。
 
-## 在使用中间件部署的 Minio 时
+## 在使用中间件 MinIO 部署镜像仓库时报错
 
-在使用中间件部署的 Minio 时，需要先手动通过 Minio 管理平台创建好 bucket。
+在使用中间件 MinIO 部署镜像仓库时，需要先手动通过 MinIO 管理平台创建好 bucket。
 
 ## 仓库集成支持的 Harbor 最低版本
 
-在仓库集成时因使用了 `Harbor` 的功能，对版本有一定要求，目前支持的已知最低版本为：`2.4.0`。更早的旧版本将不可用。
+在仓库集成时因使用了 Harbor 的功能，对版本有一定要求，目前支持的已知最低版本为 v2.4.0。更早的旧版本将不可用。
 
 ## 离线环境镜像扫描器失败
 
@@ -32,15 +32,17 @@ DCE 5.0标准版本中没有中间件，中间件属于白金版。
 
 ## 创建托管 Harbor 时第一步集群校验通过后创建 Harbor 仍然出错
 
-目前只校验了集群中是否有 `CRD`，没有校验 `harbor-operator` 服务，可能会出现不存在 `harbor-operator` 服务的情况，导致不能正确的创建 `Harbor`。
+目前只校验了集群中是否有 CRD，没有校验 `harbor-operator` 服务，可能会出现不存在 `harbor-operator` 服务的情况，导致不能正确地创建 Harbor。
 
 ## 本地执行 `docker login {ip}` 之后报错
+
+执行 `docker login {ip}` 后出现以下报错：
 
 ```text
 Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certificate for {ip} because it doesn't contain any IP SANs
 ```
 
-出现这个错误是因为 `registry` 是 `https` 服务，是使用了非签名证书或者不安全证书，就会提示这个错误，
+出现这个错误是因为 `registry` 是 `https` 服务，是使用了非签名证书或者不安全证书，就会提示这个错误。
 解决办法是在 `/etc/docker/daemon.json` 配置文件中 `"insecure-registries"` 加入对应的 IP。
 
 ```json
@@ -52,40 +54,40 @@ Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certif
 
 之后重启 `systemctl restart docker`。
 
-## 创建托管 harbor 接入外部 PG、Redis，密码含有特殊字符 (!@#$%^&*) 之类的，服务启动失败
+## 创建托管 Harbor 接入外部 PostgreSQL、Redis，密码含有特殊字符 `(!@#$%^&*)`，导致服务启动失败
 
 目前密码中不能有特殊字符，不然会出现服务启动失败的情况，可以使用大小写字母和数字组合的情况。
 
-## Harbor Operator 安装不成功
+## harbor-operator 安装不成功
 
-`Harbor Operator` 安装不成功需要检查这几点，`cert-manager`是否安装成功，`installCRDs` 是否设置为`true`。
-安装`Harbor operator` 的 __helm__ 任务是否成功。
+harbor-operator 安装不成功需要检查这几点，`cert-manager` 是否安装成功，`installCRDs` 是否设置为 `true`。
+安装 harbor-operator 的 __helm__ 任务是否成功。
 
 ## 创建托管 Harbor 可以使用 redis cluster 模式吗
 
-目前 `Harbor` 仍然不能使用 `redis` cluster 模式。
+目前 Harbor 仍然不能使用 `redis cluster` 模式。
 
 ## 私有镜像在非镜像仓库模块能看到吗？
 
-镜像仓库是严格按照 DEC 5.0 的权限来执行的，在镜像仓库中某个用户必须要属于某个租户，
-才能看到当前租户下的私有镜像空间，否则即使管理员也不能看到。
+镜像仓库是严格按照 DCE 5.0 的权限来执行的，在镜像仓库中某个用户必须要属于某个租户/工作空间，
+才能看到当前租户下的私有镜像空间，否则即使管理员也看不到。
 
-## 私有镜像绑定工作空间后不能查询到
+## 私有镜像绑定到工作空间后查询不到私有镜像
 
-私有镜像绑定工作空间后程序需要异步执行很多逻辑，所以不会马上能看到。
-这个过程会受到系统的影响，如果系统响应较快，则异步执行较快，1 分钟内能看到。最长应该不会超过 5 分钟。
+私有镜像绑定工作空间后程序需要异步执行很多逻辑，所以不会马上看到。
+这个过程会受到系统的影响，如果系统响应较快，则异步执行较快，通常 1 分钟内就能看到。最长应该不会超过 5 分钟。
 
 ## 托管Harbor创建后能访问了但是状态依然不健康
 
 目前托管 Harbor 页面上的状态和仓库集成的状态是二合一的，当两个状态都为健康的时候才是健康，
-因此可能出现托管 `Harbor` 已经可以访问了，但是状态依然不健康，这种情况需要等一个服务探测周期，
+因此可能出现托管 Harbor 已经可以访问了，但是状态依然不健康，这种情况需要等一个服务探测周期，
 一个探测周期是 10 分钟，在一个周期后就会恢复如初。
 
 ## 创建的托管仓库状态为不健康
 
 ![仓库不健康](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/img.png)
 
-- A1：用户输入的数据库、Redis、S3 存储等信息有误，导致无法连接，可通过查看日志文件进行排查。
+- A1：用户输入的数据库、Redis、S3 存储等信息有误，导致无法连接，可通过查看日志文件进行排查。 <a id="a1" />
   现象主要是几个核心服务有 Pod 启动失败，可以通过查看日志进一步确认原因。
 
     ```shell
@@ -103,7 +105,7 @@ Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certif
     trust-node-port-nginx-deployment-677c74576-7kmh4             1/1     Running   0          20h
     ```
 
-- A2：如果 A1 排查无误，排查 `harborcluster` 资源是否健康，如下命令查看 `harborcluster` 资源状态。
+- A2：如果通过 [A1](#a1) 排查后无误，继续排查 `harborcluster` 资源是否健康，如下命令查看 `harborcluster` 资源状态。<a id="a2" />
 
     ```shell
     kubectl -n kangaroo-lrf04 get harborclusters.goharbor.io
@@ -114,8 +116,8 @@ Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certif
     trust-node-port   https://10.6.232.5:30010   healthy
     ```
 
-- A3：如果 A2 排查无误，在 `kpanda-global-cluster` 集群上排查 `registrysecrets.kangaroo.io`
-  资源是否创建，以及 `status` 情况。
+- A3：如果 [A2](#a2) 排查后无误，继续在 `kpanda-global-cluster` 集群上排查 `registrysecrets.kangaroo.io`
+  资源是否创建，以及 `status` 情况。<a id="a3" />
 
     提示: namespace 默认为 kangaroo-system。
 
@@ -134,12 +136,12 @@ Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certif
 
 !!! tip
 
-    - 上述 A1、A2 都在托管 Harbor 所在的集群上排查问题，目标集群通过如下页面路径查看： __仓库实例__ -> __概览__ -> __部署位置__ 
-    - 上述 A3 在 `kpanda-global-cluster` 集群上验证。
+    - 上述 [A1](#a1)、[A2](#a2) 都在托管 Harbor 所在的集群上排查问题，在目标集群上的查看路径为： __仓库实例__ -> __概览__ -> __部署位置__ 
+    - 上述 [A3](#a3) 在 `kpanda-global-cluster` 集群上验证。
 
 ## 创建 `Project` 或上传镜像后发现页面上的镜像空间和可用存储未增加
 
-这是因为 UI 页面上在`托管 Harbor` 首页、仓库集成详情中的统计信息是异步获取的数据，会有一定的延迟，最长延迟为 `10` 分钟。
+这是因为 UI 页面上在 **托管 Harbor** 首页、仓库集成详情中的统计信息是异步获取的数据，会有一定的延迟，最长延迟为 10 分钟。
 
 ## 仓库集成后但状态为不健康
 
@@ -149,7 +151,7 @@ Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certif
 如果实例健康，则通过在 `kpanda-global-cluster` 集群上排查 `registrysecrets.kangaroo.io`
 资源是否创建，并排查 `status` 情况，这样可以初步确认问题所在。
 
-提示：namespace 默认为 kangaroo-system。
+提示：namespace 默认为 `kangaroo-system`。
 
 ```shell
 kubectl -n kangaroo-system get registrysecrets.kangaroo.io

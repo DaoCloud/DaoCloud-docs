@@ -12,7 +12,7 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
 1. 配置 clusterConfig.yaml，设置 binaries 相关的参数，如下：
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:
@@ -89,7 +89,7 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
 5. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `binaries` 相关的参数。
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:

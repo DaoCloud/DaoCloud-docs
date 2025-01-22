@@ -30,4 +30,4 @@ DCE 5.0 服务网格自带了一些系统命名空间，请勿将业务应用和
 |                      | skoala-system      | 微服务引擎                      |
 |                      | spidernet-system   | 网络模块                        |
 |                      | virtnest-system    | 虚拟机模块                      |
-|                      | baize-system       | 智能算力模块                    |
+|                      | baize-system       | AI Lab 模块                    |

@@ -10,11 +10,191 @@ understand the evolution path and feature changes from release to release.
 
 *[kpanda]: Internal development codename for DaoCloud container management
 
+## 2024-10-30
+
+### v0.33.0
+
+#### New Features
+
+- **Added** support for managing and scheduling Cambrian GPU cards
+- **Added** a protection mechanism for the deletion of kubeconfig secret resources
+
+#### Improvements
+
+- **Improved** the upgrade of hami and gpu-operator addon versions to v2.4.1 and v24.6.0
+- **Improved** the protection mechanism for deleting kubeconfig secret resources
+- **Improved** the integration of the helm push plugin into the installer offline package
+- **Improved** egress port allocation, maintaining a fixed egress port for the Cluster
+
+#### Fixes
+
+- **Fixed** the issue where the container group page on the node details page did not filter correctly based on GPU type
+- **Fixed** the issue of residuals when uninstalling the metrics-server plugin
+- **Fixed** the problem where custom content for yum_repos was lost during retry installation when creating a cluster
+- **Fixed** the issue where deleting a node would cause the kpanda-controller-manager to panic when a worker was lost
+
+## 2024-09-30
+
+### v0.32.0
+
+#### Features
+
+- **Added** support for [Volcano Binpack](../user-guide/gpu/volcano/volcano_binpack.md) and [Priority Preemption Strategy](../user-guide/gpu/volcano/volcano_priority.md)
+- **Added** support for the use of Muxi GPU cards
+- **Added** GPU utilization metrics in the GPU monitoring panel
+- **Added** quota and usage display for namespaces
+- **Added** support for kubeconfig issued by the platform to be permanently valid
+- **Added** custom roles now support permission mapping between workspaces and namespaces
+- **Added** the feature to create PVCs through snapshots, allowing users to select their own StorageClass
+
+#### Improvements
+
+- **Improved** the text prompt for available GPU computing power in full GPU card mode
+- **Fixed** an issue where the bound workspace was not displayed after binding a namespace, requiring a manual page refresh
+- **Improved** compatibility with PVs where volumeMode is set to block
+- **Improved** cleaned up intermediate images after merging Addon image architectures
+
+#### Fixes
+
+- **Fixed** an issue where the vGPU setting showed a computing power of 100 but the dashboard's Pod utilization rate displayed 0%
+- **Fixed** an issue where the GPU Operator did not enable the Driver option, resulting in the GPU mode switch function not being displayed
+- **Fixed** an issue where the number of GPUs displayed on the dashboard exceeded the actual value
+- **Fixed** an issue with incorrect GPU utilization display on the node details page in MIG Mixed mode
+- **Fixed** an excessive memory usage issue in the Binding Syncer for large-scale scenarios in 1000+ clusters
+- **Fixed** a sudden increase in Redis connection counts when binding workspaces to each cluster in 1000+ clusters, which would not close for a long time
+- **Fixed** an issue of resource permission confusion in workspace sharing in large-scale scenarios in 1000+ clusters
+- **Fixed** the lack of audit logs when binding workspaces to clusters
+- **Fixed** an issue where virtual machine clusters appeared in compliance scanning within security management
+- **Fixed** an occasional issue of two uninstall Jobs appearing when uninstalling Helm applications
+- **Fixed** an installation failure issue of metrics-server when upgrading the installer from v0.19.0 to v0.20.0
+- **Fixed** an issue where the detection task was not canceled when clicking 'Check' and then 'Cancel' during cluster creation, resulting in subsequent checks showing as still in progress
+- **Fixed** an issue in container management -> node management where global service clusters could not add or remove nodes
+- **Fixed** an issue where a cluster showed as deleting indefinitely despite having actually failed to uninstall
+- **Fixed** an issue where finalizers resources under `kpanda-system` were not deleted when detaching a cluster, preventing the deletion of the `kpanda-system` namespace
+- **Fixed** an issue where the downgrade compatibility package for kubean in DCE 5.0 environments did not successfully delete low-version clusters
+- **Fixed** an issue of incorrect display of backup recovery trigger times
+- **Fixed** an issue where the cluster inspection configuration's scheduled task hour did not match the trigger time with the configured time.
+
+## 2024-08-30
+
+### v0.31.0
+
+#### New Features
+
+- **Added** support for heterogeneous GPUs, including Metax GPUs.
+- **Added** support for installing Red Hat 9.2 driver images via GPU operator for heterogeneous GPUs.
+- **Added** functionality to check and remind users of the validity period of cluster access certificates.
+- **Added** support for viewing Helm content and generated orchestration files directly in the UI.
+
+#### Improvements
+
+- **Improved** the audit logs for switching GPU modes on nodes.
+- **Improved** the layout of the NPU panel.
+- **Improved** the wording on the GPU resource interface.
+- **Improved** the issue where GPU labels on nodes were not removed until three minutes after the gpu-operator was uninstalled.
+- **Improved** documentation for GPU metric alert operations.
+- **Improved** the handling of a single GPU failure in multi-GPU scenarios, resolving the "UnexpectedAdmissionError" status for Pods during workload scheduling.
+- **Improved** the access method for work clusters created by Kubean to use ServiceAccount Token authentication.
+- **Improved** the removal of LeaseController from cluster_controller.
+- **Improved** the kpanda-controller-manager to add some business-related monitoring metrics.
+- **Improved** the repo_controller to include business monitoring metrics for Repo synchronization/downloads.
+- **Improved** the cluster_setting_controller to add monitoring metrics for plugin synchronization.
+- **Improved** the removal of informerFactory from GPUSchedulerController.
+- **Improved** the multi-controller to allow specifying whether to enable or disable Controllers.
+- **Improved** the logic in cluster_status_controller by introducing successThreshold and failureThreshold.
+- **Improved** the introduction of parameters to control concurrency for Controllers.
+- **Improved** unified logging output levels.
+- **Improved** the time for re-queuing controllers.
+- **Improved** the binding-syner Controller to allow specifying whether to enable or disable it.
+- **Improved** the default version of custom resource CRDs.
+- **Improved** the service list to support searching by service name, access method, and access port.
+- **Improved** the experience of node time consistency during Kpanda cluster installation.
+- **Improved** to prohibit concurrency in Helm lifecycle operations.
+- **Improved** to add K8s orchestration confirmation during Helm installation.
+- **Improved** the workload rollback feature to display detailed version information.
+
+#### Fixes
+
+- **Fixed** the inconsistency between GPU memory usage of GPU driver Pods and the information displayed in the application.
+- **Fixed** an issue where the vGPU mode switched to full card mode after shutting down and restarting the VM.
+- **Fixed** the loss of labels on nodes after enabling NPU virtualization.
+- **Fixed** the incorrect display of GPU utilization rates in the GPU Pod dashboard.
+- **Fixed** the incorrect display of GPU memory usage/rates in the GPU Pod dashboard.
+- **Fixed** an issue where monitoring metrics did not display data when creating workloads using Ascend cards.
+- **Fixed** an issue where changes to deviceSplitCount in vGPU mode were not effective.
+- **Fixed** an issue where the page could not reflect the memory size when 5000 was entered in vGPU mode.
+- **Fixed** an issue where the GPU type dropdown for Addon plugins under the cluster settings menu did not display information related to MIG.
+- **Fixed** the problem of continuous crashes when restarting nodes with GPUs or upgrading the driver pod for vgpu-device-plugin.
+- **Fixed** the inconsistency between GPU memory quota units and memory quota units.
+- **Fixed** the failure to update Go dependencies due to conflicts with the otel dependency.
+- **Fixed** an issue where the cloudshell CRD timeout page still prompted for reconnection.
+- **Fixed** an issue where users with clusteradmin permissions (without global service cluster permissions) could directly access the details page of the global service cluster from the recent operations -> cluster operations page.
+- **Fixed** the 403 error when users with Namespace Admin permissions viewed basic information about container configurations on workload detail pages.
+- **Fixed** an issue where the NS quota was displayed, but the edit page data was empty.
+- **Fixed** the inconsistency between the image addresses displayed on the container group detail page and the workload detail page.
+- **Fixed** an issue where the port information was not displayed correctly when entering the health check page of the container configuration after updating the insight-ui stateless workload.
+- **Fixed** the abnormal display issue of the kubeproxy version on nodes.
+- **Fixed** an issue where DCE5-0.19 had problems recognizing the system code when accessing nodes or creating clusters on Ubuntu 22.04.
+- **Fixed** the unknown status issue when creating Helm applications.
+- **Fixed** the initial status of applications displayed as failed when creating Helm applications in work clusters.
+- **Fixed** an issue where the status of readiness waiting configuration was not recorded during the update of Helm applications.
+- **Fixed** an issue where enabling readiness waiting for sub-cluster installation of Helm applications failed, and the Helm application status remained in installation.
+
+**Known Issues**
+
+- **Fixed** the version mismatch between kpanda front-end and back-end, which could cause the vGPU mode to switch to full card mode after shutting down and restarting the VM.
+
+## 2024-07-31
+
+### v0.30.0
+
+#### Features
+
+- **Added** support for installing Koordinator plugins via Addon, completing online and offline mixed scheduling.
+- **Added** UI supports 7-day or custom date options when generating kubeconfig.
+- **Added** Helm charts support viewing Helm content and generated orchestration files on the interface.
+- **Added** offline gpu-operator default operating system support for CentOS 7, Ubuntu 22.04, Ubuntu 20.04.
+- **Added** support for Ascend NPU virtualization in document format.
+- **Added** NPU monitoring dashboard supports switching between Chinese and English.
+- **Added** gpu-operator supports enabling RDMA.
+
+#### Improvements
+
+- **Improved** added domain name field to Ingress list.
+- **Improved** support for "Cluster Vendor" name in global service clusters (Daocloud Kubean).
+- **Improved** Kpanda performance.
+- **Fixed** an issue where certificates generated by kpanda's `GetClusterAdminKubeConfig`
+  were unusable if they expired in one year.
+- **Improved** support for checking and reminding about the validity period of cluster access certificates.
+- **Improved** interface calls for obtaining installation configurations when installing Helm charts.
+- **Improved** in addon-pack charts, images support specifying the architecture for pulling images
+  via the `--platform` flag.
+- **Improved** decoupling of helm controller from cluster service and rbac service and other improvements.
+- **Improved** experience when switching GPU modes by adding switching status.
+- **Improved** guide users on how to switch GPU modes when installing nvidia-vgpu and gpu-operator.
+- **Fixed** misunderstanding issues when mig single mode was recognized as full card and used by users.
+
+#### Fixed
+
+- **Fixed** an issue where HPA created by various modules was invalid due to metrics-server not being
+  installed by default in global service clusters.
+- **Fixed** an issue with Kpanda database connection.
+- **Fixed** an issue with PV/PVC permissions for the NS Admin role.
+- **Fixed** an issue where egress port refresh led to data flow interruption and controller-manager malfunction
+  after modifying cluster basic configurations.
+- **Fixed** an issue where restarting workloads in the access method page of workload details resulted in
+  a 404 error for the service interface.
+- **Fixed** an issue with the missing offline package for cro-operator in addon.
+- **Fixed** an issue with unintended system reboot during automatic kernel updates on Ubuntu.
+- **Fixed** an issue with occasional display of full card mode on nodes when using MIG mode.
+- **Fixed** an issue where memory overcommit feature was unavailable after GPU virtualization.
+- **Fixed** an issue with occasional failure in switching GPU scheduling policies when adjusting GPU scheduling policy.
+
 ## 2024-06-30
 
 ### v0.29.0
 
-#### Added
+#### Features
 
 - **Added** support for K3s as a Kubernetes distribution for connected clusters.
 - **Added** GPU status monitoring, viewable on the observability platform via XDI metrics.
@@ -27,13 +207,13 @@ understand the evolution path and feature changes from release to release.
 - **Added** support for GPU scheduling Spread (workload level).
 - **Added** support for GPU scheduling Binpack (workload level).
 
-#### Improved
+#### Improvements
 
 - **Improved** download station addon package to support multiple offline packages automatically.
 - **Improved** Helm installation to be more cloud-native, with the controller managing Helm operation jobs.
 - **Improved** quick link to view GPU resource allocation on the node details page, optimizing the integrated GPU quota issue on the monitoring page.
 - **Improved** gpu-operator to support driver installation on the same OS with different kernel versions.
-- **Improved** support for binpack/spread at the cluster level for GPU cards and nodes, reaching product-level support for binpack/spread.
+- **Improved** support for binpack/spread at the cluster level for GPUs and nodes, reaching product-level support for binpack/spread.
 - **Improved** configmap/secret editor to support horizontal movement.
 - **Improved** version selection filtering when updating modules.
 - **Improved** issue where workspace admin permissions mapped to cluster admin permissions in container management did not display.
@@ -47,7 +227,8 @@ understand the evolution path and feature changes from release to release.
 - **Fixed** an issue where the Deployment instance list displayed Pods not belonging to the current Deployment.
 - **Fixed** an inconsistency between GPU memory allocation rate in the GPU node dashboard and the actual node.
 - **Fixed** an issue with incorrect display of GPU node labels.
-- **Fixed** an issue with LoadBalancer type service where updating the lb IP address and viewing service details occasionally showed nodeport access method.
+- **Fixed** an issue with LoadBalancer type service where updating the lb IP address and viewing service details
+  occasionally showed nodeport access method.
 - **Fixed** an issue with configuring multiple GPU types in mig mode when creating workloads.
 - **Fixed** an issue with configuration mismatches in MIG Mixed mode when Deployment specified multiple different GPU types.
 
@@ -57,7 +238,7 @@ understand the evolution path and feature changes from release to release.
 
 ### v0.28.0
 
-#### Added
+#### Features
 
 - **Added** support for ws admin+cluster admin to bind clusters/namespaces to workspaces in Kpanda.
 - **Added** support for specifying volume snapshot classes when creating storage volume snapshots.
@@ -70,7 +251,7 @@ understand the evolution path and feature changes from release to release.
 - **Added** NPU-related metrics support in workloads.
 - **Added** Nvlink metrics support in Kpanda metrics.
 
-#### Improved
+#### Improvements
 
 - **Improved** display when disconnecting management clusters and sub-clusters.
 - **Improved** prompt when loadBalancerIP is unavailable during service updates.
@@ -101,12 +282,12 @@ understand the evolution path and feature changes from release to release.
 
 ### v0.27.0
 
-#### New Features
+#### Features
 
 - **Added** support customizing NS admin/editor/viewer permissions through CRD configuration
 - **Added** support connecting to cloudtty via SSH
 - **Added** support accessing running containers through the console
-- **Added** Install Ascend components Device Plugin and NpuExporter through Helm app scend-mindxdl, and view relevant metrics of Ascend GPU cards through Insight
+- **Added** Install Ascend components Device Plugin and NpuExporter through Helm app scend-mindxdl, and view relevant metrics of Ascend GPUs through Insight
 
 #### Improvements
 
@@ -136,7 +317,7 @@ understand the evolution path and feature changes from release to release.
 - **Fixed** an issue with incorrect image addresses in synchronized chart packages when relocateContainerImages is set to false in charts-syncer
 - **Fixed** an issue with inability to restore modified PVC data after successful restore of sts+pvc backup
 - **Fixed** backup failure when creating backup policy without backing up data volumes, but including PVs in backup resources
-- **Fixed** an issue with always returning 0 available resources in VGPU mode
+- **Fixed** an issue with always returning 0 available resources in vGPU mode
 - **Fixed** an issue with GPU type displayed as MIG Mixed MIG Single in node details page under mig mixed mode
 - **Fixed** an issue with AI processor count always showing total value in ascend monitoring dashboard
 - **Fixed** inconsistency between labels on nodes and GPU types displayed in node details page
@@ -196,7 +377,7 @@ understand the evolution path and feature changes from release to release.
 
 ### v0.25.0
 
-#### New Features
+#### Features
 
 - **Added** support for batch deletion/stop of multiple workloads
 - **Added** support for setting time zone during cluster installation
@@ -210,7 +391,7 @@ understand the evolution path and feature changes from release to release.
 - **Improved** availability of GPU node switching, reducing switch time to within 2 seconds
 - **Improved** logic for GPU mode switching
 - **Improved** documentation for GPU-operator installation failure in Ubuntu environment
-- **Improved** Deep review and optimization of GPU dashboard (including VGPU, MIG, and whole GPU card)
+- **Improved** deep review and optimization of GPU dashboard (including vGPU, MIG, and whole GPU)
 - **Improved** functionality related to GPU statistics at node level using custom metrics
 - **Improved** latency when accessing drop-down menus for creating PVCs, network policies, and routing in cluster details page for large-scale clusters
 - **Improved** browser freeze issue when switching namespaces after adding forwarding rules
@@ -222,26 +403,26 @@ understand the evolution path and feature changes from release to release.
 
 - **Fixed** an issue where crontab configuration with cron expression caused inability
   to modify CronJob configuration
-- **Fixed** Infinite loop issue in installer caused by Redis Sentinel configuration
-- **Fixed** Refresh loop issue in console (cloudshell) reconnection mechanism, affecting command execution
-- **Fixed** Incorrect display of container CIDR after integration with DCE4
-- **Fixed** Incorrect image address in online upgrade of installer for kcoral image
-- **Fixed** Failure to restore Job during backup recovery
+- **Fixed** infinite loop issue in installer caused by Redis Sentinel configuration
+- **Fixed** refresh loop issue in console (cloudshell) reconnection mechanism, affecting command execution
+- **Fixed** incorrect display of container CIDR after integration with DCE4
+- **Fixed** incorrect image address in online upgrade of installer for kcoral image
+- **Fixed** failure to restore Job during backup recovery
 - **Fixed** an issue where enabling both HPA and CronHPA resulted in CronHPA being overwritten
-- **Fixed** Ineffective selection of installing Insight plugin during cluster creation in kpanda
-- **Fixed** Inability to upgrade current global cluster despite the page showing upgrade availability
-- **Fixed** Inability to set multiple lines in calico_node_extra_envs in Advanced Settings during cluster creation
-- **Fixed** Abnormal display of memory usage and other related metrics in cluster inspection report for pods
-- **Fixed** Failure to filter deleted pod information in NVIDIA GPU Pod dashboard in Pod filtering
-- **Fixed** Display issue where username and password fields still appeared
+- **Fixed** ineffective selection of installing Insight plugin during cluster creation in kpanda
+- **Fixed** inability to upgrade current global cluster despite the page showing upgrade availability
+- **Fixed** inability to set multiple lines in calico_node_extra_envs in Advanced Settings during cluster creation
+- **Fixed** abnormal display of memory usage and other related metrics in cluster inspection report for pods
+- **Fixed** failure to filter deleted pod information in NVIDIA GPU Pod dashboard in Pod filtering
+- **Fixed** display issue where username and password fields still appeared
   when unified password was disabled during cluster creation
-- **Fixed** Failure to create cluster when enabling kernel tuning for new cluster
+- **Fixed** failure to create cluster when enabling kernel tuning for new cluster
 
 ## 2023-12-31
 
 ### v0.24.0
 
-#### New Features
+#### Features
 
 - **Added** support for recording creation and deletion operations of services,
   ingress, volume claims, volumes, and storage pool resources in kpanda audit logs
@@ -285,7 +466,7 @@ understand the evolution path and feature changes from release to release.
 
 ### v0.23.0
 
-#### New Features
+#### Features
 
 - **Added** audit logs for key functionalities such as cluster creation, deletion, access,
   unbinding, and upgrade; node access and unbinding; creation/deletion of deployment, statefulset,
@@ -314,12 +495,12 @@ understand the evolution path and feature changes from release to release.
 
 ### v0.22.0
 
-#### New Features
+#### Features
 
 - **Added** support for upgrading system component versions and modifying system component parameters through the interface.
 - **Added** compatibility with [RedHat 9.2 cluster creation](../best-practice/create-redhat9.2-on-centos-platform.md).
 - **Added** support for Nvidia full card, vGPU, and MIG GPU modes.
-- **Added** support for Tianjic GPU cards.
+- **Added** support for Tianjic GPUs.
 - **Added** support for namespace-level GPU resource quota management.
 - **Added** support for application-level GPU resource quota.
 - **Added** Offline deployment and usage support for
@@ -334,7 +515,7 @@ understand the evolution path and feature changes from release to release.
 - **Added** Custom parameter configuration support for cluster-node checks to meet enterprise
   node encryption authentication and other scenarios.
 
-#### Improved
+#### Improvements
 
 - **Improved** support for viewing associated information in Configmap/Secret details page.
 - **Improved** Resources visible for different permission users when entering Container Management.
@@ -356,7 +537,7 @@ understand the evolution path and feature changes from release to release.
 
 ### v0.21.0
 
-#### New Features
+#### Features
 
 - **Added** connectivity check for __Helm Repo__ passwords, with support for skipping TLS certificate authentication.
 - **Added** scaling of worker nodes for global service machines.
@@ -365,7 +546,7 @@ understand the evolution path and feature changes from release to release.
 
 - **Improved** support for uninstalling related components during cluster integration.
 - **Improved** pod status handling logic, including sub-status for pods.
-- **Improved** ability to configure the number of job records to keep for cluster operations.
+- **Improved** the feature to configure the number of job records to keep for cluster operations.
 - **Improved** support for configuring the number of control nodes when creating worker clusters.
 - **Improved** prompt for installing Insight-agent if it is not already installed.
 
@@ -382,7 +563,7 @@ understand the evolution path and feature changes from release to release.
 
 ### v0.20.0
 
-#### New Features
+#### Features
 
 - **Added** helm app interface supports viewing Helm operation logs.
 - **Added** workload clusters support heterogeneous node integration.
@@ -414,14 +595,14 @@ understand the evolution path and feature changes from release to release.
 
 ### v0.19.0
 
-#### New Features
+#### Features
 
 - **Added** compatibility for deploying worker clusters on openAnolis / Oracle Linux operating systems.
 - **Added** support for automatically adding JFrog authentication information when creating clusters in an offline environment.
 - **Added** validation rules for environment variable rules when creating workloads.
 - **Added** edge load balancing and services.
 - **Added** dual-stack and system kernel as pre-check items for nodes.
-- **Added** the ability to mount secretKey/configmapKey as ConfigMaps inside containers when creating workloads.
+- **Added** the feature to mount secretKey/configmapKey as ConfigMaps inside containers when creating workloads.
 
 #### Improvements
 
@@ -450,7 +631,7 @@ understand the evolution path and feature changes from release to release.
 
 ### v0.18.0
 
-#### New Features
+#### Features
 
 - **Added** inspection report download.
 - **Added** global audit logs for high-priority operations.
@@ -472,7 +653,7 @@ understand the evolution path and feature changes from release to release.
 
 ### v0.17.0
 
-#### New Features
+#### Features
 
 - **Added** capability to download patrol report
 - **Added** view of ETCD Backup Low
@@ -504,7 +685,7 @@ understand the evolution path and feature changes from release to release.
 
 ### v0.16.0
 
-#### New Features
+#### Features
 
 - **Added** capability to query PVC events using the interface.
 - **Added** configuration of parameters such as backofflimit, completions, parallelism,
@@ -538,9 +719,9 @@ understand the evolution path and feature changes from release to release.
 
 ## 2023-02-27
 
-### v0.15
+### v0.15.0
 
-#### New Features
+#### Features
 
 - **Added** Productization support for Persistent Volumes (PVs), which supports selecting existing data volumes
   while creating PVCs.
@@ -572,9 +753,9 @@ understand the evolution path and feature changes from release to release.
 
 ## 2022-12-29
 
-### v0.14
+### v0.14.0
 
-#### New Features
+#### Features
 
 - **Added** support for displaying Chinese names and template suppliers in the Helm chart.
 - **Added** CronHPA, which enables timed scaling of workloads.
@@ -613,15 +794,15 @@ understand the evolution path and feature changes from release to release.
 
 ## 2022-11-29
 
-### v0.13
+### v0.13.0
 
-#### New Features
+#### Features
 
 - **Added** Replicatsets productization:
     - Replicatsets can be managed using the WEB terminal (CloudTTY).
     - Support for viewing Replicatsets monitoring, logs, Yaml, events, and containers.
     - Support for viewing Replicatsets details.
-    - Linkage **Workbench**, the full life cycle of Replicatsets is managed by grayscale publishing.
+    - Linkage **Workbench**, the lifecycle of Replicatsets is managed by grayscale publishing.
 - **Added** Pod details page.
 - **Added** Namespace details page.
 - **Added** Use the WEB terminal to upload files to the container and download files from the Pod to the local.
@@ -655,9 +836,9 @@ understand the evolution path and feature changes from release to release.
 
 ## 2022-10-28
 
-### v0.10
+### v0.10.0
 
-#### New Features
+#### Features
 
 - **Added** NetworkPolicy policy management features, including the creation, update, and deletion of NetworkPolicy
   policies, as well as the display of NetworkPolicy policy details, to help users configure network traffic policies
@@ -666,7 +847,7 @@ understand the evolution path and feature changes from release to release.
   the user’s requirement of configuring multiple network cards separately for workload configuration.
 - **Added** support to view the operation log of the creation process after the failure of cluster creation,
   to help users quickly locate the fault.
-- **Added** Stateful workloads support the use of dynamic data volume templates.
+- **Added** StatefulSets support the use of dynamic data volume templates.
 - **Added** Create cluster, create Secret, create Ingress, edit the information verification of namespace quota,
   help guide the user to input the correct configuration parameters, and reduce the user’s failure experience
   of creating jobs.

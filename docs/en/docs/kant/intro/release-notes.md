@@ -8,6 +8,32 @@ date: 2024-06-28
 This page lists the release notes for Cloud Edge Collaboration, providing an overview
 of the evolution path and feature changes in each version.
 
+## 2024-07-31
+
+### v0.13.0
+
+#### New Feature
+
+- **Added** support for pre-pulling images on edge nodes when network conditions are good
+
+#### Improvements
+
+- **Improved** by adding a beginner's guide to help users quickly get started with edge services.
+- **Improved** the addition of a beginner's guide to help users quickly get started with edge business
+
+## 2024-06-30
+
+### v0.12.0
+
+#### New Feature
+
+- **Added** support for creating and managing device models
+
+#### Improvements
+
+- **Improved** device parameter configuration for more flexible device creation
+- **Improved** support for edge installation packages to dynamically update download links based on offline environments
+
 ## 2024-05-30
 
 ### v0.11.0

@@ -1,6 +1,13 @@
-# Node monitoring
+---
+MTPE: ModetaNiu
+DATE: 2024-08-29
+---
 
-Through node monitoring, you can get an overview of the current health status of the nodes in the selected cluster and the number of abnormalities in the corresponding pod; on the current node details page, you can view the number of alerts and the trend graph of resource consumption such as CPU, memory, and disk.
+# Node Monitoring
+
+Through node monitoring, you can get an overview of the current health status of the nodes in the selected cluster 
+and the number of abnormal pod; on the current node details page, you can view the number of alerts and 
+the trend of resource consumption such as CPU, memory, and disk.
 
 ## Prerequisites
 
@@ -10,20 +17,14 @@ Through node monitoring, you can get an overview of the current health status of
 
 1. Go to the __Insight__ product module.
 
-2. Select __Infrastructure__ > __Nodes__ from the left navigation pane. On this page, you can view the following information:
+2. Select __Infrastructure__ -> __Nodes__ from the left navigation bar. On this page, you can view the following information:
 
-    1. **Cluster Switching**: Use the dropdown at the top to switch between clusters.
-    2. **Node List**: Shows a list of nodes within the selected cluster. Click a specific node to view detailed information.
-    3. **Incidents**: Displays the number of alerts generated in the current cluster.
-    4. **Resource Consumption**: Shows the actual usage and total capacity of CPU, memory, and disk for the selected node.
-    5. **Metric Explanations**: Describes the trends in CPU, memory, disk I/O, and network traffic for the selected node.
+    - **Cluster**: Uses the dropdown at the top to switch between clusters.
+    - **Nodes**: Shows a list of nodes within the selected cluster. Click a specific node to view detailed information.
+    - **Alert**: Displays the number of alerts generated in the current cluster.
+    - **Resource Consumption**: Shows the actual usage and total capacity of CPU, memory, and disk for the selected node.
+    - **Metric Explanations**: Describes the trends in CPU, memory, disk I/O, and network traffic for the selected node.
 
+    ![Node Monitoring](../../image/node.png){ width="1000"}
 
-### Metric Explanations
-
-| Metric Name | Description |
-| -- | -- |
-| CPU Usage Rate | The ratio of the actual CPU usage of the node to the total CPU capacity of the node.|
-| Memory Usage Rate | The ratio of the actual memory usage of the node to the total memory capacity of the node.|
-| Disk Read/Write Rate | The rate at which the disk is reading from or writing to data, measured in bytes per second.|
-| Network Receive/Send Rate | The incoming and outgoing rates of network traffic, measured in bytes per second.|
+3. Click __Resource Level Monitor__, you can view more metrics of the current cluster.

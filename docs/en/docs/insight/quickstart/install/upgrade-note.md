@@ -1,8 +1,28 @@
+---
+MTPE: WANG0608GitHub
+Date: 2024-09-24
+---
+
 # Upgrade Notes
 
-This page provides some considerations for upgrading Insight Server and Agent.
+This page provides some considerations for upgrading insight-server and insight-agent.
 
-## Insight server
+## insight-agent
+
+### Upgrade from v0.28.x (or lower) to v0.29.x
+
+Due to the upgrade of the Opentelemetry community operator chart version in v0.29.0, the supported values for `featureGates` in the values file have changed. Therefore, before upgrading, you need to set the value of `featureGates` to empty, as follows:
+
+```diff
+-  --set opentelemetry-operator.manager.featureGates="+operator.autoinstrumentation.go,+operator.autoinstrumentation.multi-instrumentation,+operator.autoinstrumentation.nginx" \
++  --set opentelemetry-operator.manager.featureGates=""
+```
+
+## insight-server
+
+### Upgrade from v0.26.x (or lower) to v0.27.x or higher
+
+In v0.27.x, the switch for the vector component has been separated. If the existing environment has vector enabled, you need to specify `--set vector.enabled=true` when upgrading the insight-server.
 
 ### Upgrade from v0.19.x (or lower) to 0.20.x
 
@@ -17,15 +37,15 @@ kubectl -n insight-system delete deployment insight-jaeger-query
 ### Upgrade from v0.17.x (or lower) to v0.18.x
 
 In v0.18.x, there have been updates to the Jaeger-related deployment files,
-so you need to manually run the following commands before upgrading insight server:
+so you need to manually run the following commands before upgrading insight-server:
 
 ```bash
 kubectl -n insight-system delete deployment insight-jaeger-collector
 kubectl -n insight-system delete deployment insight-jaeger-query
 ```
 
-There have been changes to metric names In v0.18.x, so after upgrading insight server,
-insight agent should also be upgraded.
+There have been changes to metric names in v0.18.x, so after upgrading insight-server,
+insight-agent should also be upgraded.
 
 In addition, the parameters for enabling the tracing module and adjusting the ElasticSearch connection
 have been modified. Refer to the following parameters:
@@ -49,7 +69,7 @@ have been modified. Refer to the following parameters:
 ### Upgrade from v0.15.x (or lower) to v0.16.x
 
 In v0.16.x, a new feature parameter `disableRouteContinueEnforce` in the `vmalertmanagers CRD`
-is used. Therefore, you need to manually run the following command before upgrading insight server:
+is used. Therefore, you need to manually run the following command before upgrading insight-server:
 
 ```shell
 kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics/operator/v0.33.0/config/crd/bases/operator.victoriametrics.com_vmalertmanagers.yaml --force-conflicts
@@ -66,7 +86,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
 
 ## insight-agent
 
-### Upgrade from 0.23.x (or lower) to v0.24.x
+### Upgrade from v0.23.x (or lower) to v0.24.x
 
 In v0.24.x, CRDs have been added to the `OTEL operator chart`. However,
 helm upgrade does not update CRDs, so you need to manually run the following command:
@@ -82,7 +102,7 @@ insight-agent offline package. After extracting the insight-agent Chart, manuall
 kubectl apply -f charts/agent/crds/crd-opentelemetry.io_opampbridges.yaml
 ```
 
-### Upgrade from 0.19.x (or lower) to v0.20.x
+### Upgrade from v0.19.x (or lower) to v0.20.x
 
 In v0.20.x, Kafka log export configuration has been added, and there have been some adjustments
 to the log export configuration. Before upgrading __insight-agent__ , please note the parameter changes.
@@ -98,7 +118,7 @@ The previous logging configuration has been moved to the logging.elasticsearch c
 ### Upgrade from v0.17.x (or lower) to v0.18.x
 
 Due to the updated deployment files for Jaeger In v0.18.x, it is important to
-note the changes in parameters before upgrading the Insight Agent.
+note the changes in parameters before upgrading the insight-agent.
 
 ```diff
 +  --set global.exporters.trace.enable=true \
@@ -110,7 +130,7 @@ note the changes in parameters before upgrading the Insight Agent.
 
 In v0.17.x, the kube-prometheus-stack chart version was upgraded from 41.9.1 to 45.28.1, and
 there were also some field upgrades in the CRD used, such as the __attachMetadata__ field of
-servicemonitor. Therefore, the following command needs to be rund before upgrading the insight agent:
+servicemonitor. Therefore, the following command needs to be rund before upgrading the insight-agent:
 
 ```bash
 kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.65.1/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml --force-conflicts
@@ -123,7 +143,7 @@ insight-agent/dependency-crds after extracting the insight-agent offline package
 
 v0.12.x upgrades kube-prometheus-stack chart from 39.6.0 to 41.9.1, including prometheus-operator to v0.60.1, prometheus-node-exporter chart to v4.3.0.
 Prometheus-node-exporter uses [Kubernetes recommended label](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) after upgrading, so you need to delete __node-exporter__ daemonset.
-prometheus-operator has updated the CRD, so you need to run the following command before upgrading the insight agent:
+prometheus-operator has updated the CRD, so you need to run the following command before upgrading the insight-agent:
 
 ```shell linenums="1"
 kubectl delete daemonset insight-agent-prometheus-node-exporter -n insight-system

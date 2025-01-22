@@ -1,12 +1,17 @@
-#DPDK
+---
+MTPE: WANG0608GitHub
+DATE: 2024-08-02
+---
+
+# DPDK
 
 This page mainly introduces how to quickly create the first DPDK application in DCE 5.0.
 
-## pre-dependency
+## Prerequisites and dependencies
 
-- Install Multus-underlay, and enable the installation of SRIOV components, refer to [Install](install.md)
-- Hardware support is required: have a network card that supports SR-IOV series and set up a virtual feature (VF), refer to [SR-IOV](sriov.md)
-- Need to switch the network card driver to user mode driver
+- Multus-underlay has been installed and SRIOV is enabled, refer to [Installation](install.md)
+- Hardware: a NIC that supports SR-IOV, with virtual function (VF) enabled, refer to [SR-IOV](sriov.md)
+- The NIC driver has been adapted to the user mode
 
 ```shell
 # Download dpdk source code
@@ -33,15 +38,15 @@ Network devices using kernel driver
 Take `0000:04:00.2 'MT27800 Family [ConnectX-5 Virtual Function] 1018' if=enp4s0f0v0 drv=mlx5_core unused=vfio-pci` as an example:
 
 - 0000:04:00.2: The VF PCI address
-- if=enp4s0f0v0: the VF NIC name
-- drv=mlx5_core: current network card driver
-- unused=vfio-pci: Switchable NIC driver
+- if=enp4s0f0v0: The VF NIC name
+- drv=mlx5_core: The current NIC driver
+- unused=vfio-pci: An NIC driver that is ready to use if necessary
 
 There are three types of user mode drivers supported by DPDK:
 
-- vfio-pci: When IoMMU is enabled, this driver is recommended for best performance and security
-- igb-uio: more applicable than uio_pci_generic, supports SR-IOV VF, but needs to manually compile the module and load it into the kernel
-- uio_pci_generic: kernel native driver, not compatible with SR-IOV VF, but supports use on VM
+- vfio-pci: When IOMMU is enabled, this driver is recommended for best performance and security
+- igb-uio: It is more applicable than uio_pci_generic, and supports SR-IOV VF. However, it is rquired to manually compile modules and load them into the kernel
+- uio_pci_generic: It is the kernel native driver, not compatible with SR-IOV VF, but can be used on VM.
 
 Switch the NIC driver to vfio-pci:
 
@@ -76,7 +81,7 @@ Network devices using kernel driver
 
 `0000:04:01.1`: changed to vfio-pci driver
 
-- Set huge page memory and enable IoMMU (vfio-pci driver relies on IOMMU technology):
+- Set huge page memory and enable IOMMU (vfio-pci driver relies on IOMMU technology):
 
     Edit `/etc/default/grub` and add the following to `GRUB_CMDLINE_LINUX`:
 
@@ -88,7 +93,9 @@ Network devices using kernel driver
     !!! note
 
         To update the above configuration, you need to restart the system, it is best to back up before restarting the system.
-        If the configuration cannot be updated, the driver needs to be switched to the igb-uio driver, and manual build && insmod && modprobe is required. For details, refer to https://github.com/atsgen/dpdk-kmod
+        If the configuration cannot be updated, the driver needs to be switched to the igb-uio driver.
+        You need to manually perform actions like build, insmod, and modprobe.
+        For details, refer to [dpdk-kmod](https://github.com/atsgen/dpdk-kmod).
 
 ## Configure SRIOV-Device-Plugin
 
@@ -132,12 +139,12 @@ Network devices using kernel driver
     kubectl describe nodes 172-17-8-120
     ...
     Allocatable:
-      cpu: 24
-      ephemeral-storage: 881675818368
-      hugepages-1Gi: 6Gi
-      hugepages-2Mi: 0
-      intel.com/sriov_netdevice: 6
-      intel.com/sriov_netdevice_dpdk: 1 # It is displayed here to indicate that it is already available
+      cpu:                             24
+      ephemeral-storage:               881675818368
+      hugepages-1Gi:                   6Gi
+      hugepages-2Mi:                   0
+      intel.com/sriov_netdevice:       6
+      intel.com/sriov_netdevice_dpdk:  1  # It is displayed here to indicate that it is already available
     ```
 
 - Create a Multus DPDK CRD:
@@ -169,7 +176,7 @@ Network devices using kernel driver
     > EOF
     ```
 
-## Create DPDK Test Pod
+## Create DPDK test pod
 
 ```shell
 cat << EOF | kubectl apply -f -
@@ -226,15 +233,15 @@ spec:
 > EOF
 ```
 
-Wait for Pod Running, then enter the Pod:
+Wait for the pod to be running, then enter it by running the following command:
 
 ```shell
 root@172-17-8-120:~# kubectl exec -it sriov-pod-2 sh
 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
 sh-4.4#dpdk-app
 ENTER dpdk-app:
- argc=1
- dpdk-app
+  argc=1
+  dpdk-app
 E1031 08:17:36.431877 116 resource.go:31] Error getting cpuset info: open /proc/116/root/sys/fs/cgroup/cpuset/cpuset.cpus: no such file or directory
 E1031 08:17:36.432266 116 netutil_c_api.go:119] netlib.GetCPUInfo() err: open /proc/116/root/sys/fs/cgroup/cpuset/cpuset.cpus: no such file or directory
 Couldn't get CPU info, err code: 1
@@ -246,9 +253,10 @@ Couldn't get CPU info, err code: 1
     IfName="net1" Name="kube-system/sriov-dpdk-vlan0" Type=SR-IOV
     MAC=""
 
- myArgc=14
- dpdk-app -n 4 -l 1 --master-lcore 1 -w 0000:04:01.1 -- -p 0x1 -P --config="(0,0,1)" --parse-ptype
+myArgc=14
+dpdk-app -n 4 -l 1 --master-lcore 1 -w 0000:04:01.1 -- -p 0x1 -P --config="(0,0,1)" --parse-ptype
 ```
 
-dpdk-app will print out the relevant information of the current Pod, including the IP, MAC and type of eth0.
-It is worth noting that the net1 network card does not have any network information such as IP and MAC, which conforms to the characteristics of DPDK and can work without the kernel network protocol stack.
+dpdk-app will print out the relevant information of the current pod, including the IP, MAC and type of eth0.
+Note that the net1 NIC does not have any network information such as IP and MAC,
+which conforms to the characteristics of DPDK and can work without the kernel network protocol stack.

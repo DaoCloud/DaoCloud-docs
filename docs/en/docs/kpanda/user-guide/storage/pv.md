@@ -1,6 +1,6 @@
 # data volume (PV)
 
-A data volume (PersistentVolume, PV) is a piece of storage in the cluster, which can be prepared in advance by the administrator, or dynamically prepared using a storage class (Storage Class). PV is a cluster resource, but it has an independent life cycle and will not be deleted when the Pod process ends. Mounting PVs to workloads can achieve data persistence for workloads. The PV holds the data directory that can be accessed by the containers in the Pod.
+A data volume (PersistentVolume, PV) is a piece of storage in the cluster, which can be prepared in advance by the administrator, or dynamically prepared using a storage class (Storage Class). PV is a cluster resource, but it has an independent lifecycle and will not be deleted when the Pod process ends. Mounting PVs to workloads can achieve data persistence for workloads. The PV holds the data directory that can be accessed by the containers in the Pod.
 
 ## Create data volume
 

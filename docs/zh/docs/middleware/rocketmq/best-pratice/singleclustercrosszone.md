@@ -33,7 +33,7 @@ RocketMQ 5.0 通过 Dledger Controller 实现 broker 高可用自动主从切换
 - 尽量形成两机房的 Broker Master 1:2 的关系，避免所有 Master 运行在同一机房
 - name_srv 在两个机房分别存在副本
 
-![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone02.png){ width=700px }
+![mutizone](../images/crosszone02.png){ width=700px }
 
 本方案采用了工作负载的调度策略，通过具有权重的节点亲和性策略和工作负载反亲和策略达成以上部署目标。
 
@@ -234,11 +234,11 @@ Broker 标签用于工作负载反亲和（自带标签，不用配置）：
 
 Controller 运行于机房 B，基于 Dledger Controller 的主从转换机制，可以实现机房 B 的 broker slave -> master 自动升级，无需人工干预。
 
-![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone04.png){ width=700px }
+![mutizone](../images/crosszone04.png){ width=700px }
 
 ### 机房 B 离线
 
-![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone05.png){ width=700px }
+![mutizone](../images/crosszone05.png){ width=700px }
 
 - 负责调度的 Controller 离线，将暂时无法 slave -> master 转换，需要手动删除 Pod 漂移至其他节点。
 - Controller 重新调度至现存节点，才能继续完成机房 A 的 slave -> master 自动升级。

@@ -16,7 +16,7 @@
   详情参考 [GPU 支持矩阵](../../gpu_matrix.md)。
 - 节点上的所有 GPU 必须：属于同一产品线（例如 A100-SXM-40GB）
 
-## 安装 GPU Operator Addon
+## 安装 gpu-operator Addon
 
 ### 参数配置
 
@@ -99,9 +99,13 @@ custom-config:
 
 设置完成后，在确认部署应用时即可[使用 GPU MIG 资源](mig_usage.md)。
 
+!!! note
+    
+    若后续更新了切分策略配置文件，需要重启 nvidia-mig-manager，否则切分策略不生效。
+
 ## 切换节点 GPU 模式
 
-当我们成功安装 gpu operator 之后，节点默认是整卡模式，在节点管理页面会有标识，如下图所示：
+当我们成功安装 gpu-operator 之后，节点默认是整卡模式，在节点管理页面会有标识，如下图所示：
 
 ![mixed](../../images/node-gpu.png)
 
@@ -117,3 +121,5 @@ custom-config:
 点击确认按钮后，等待约一分钟左右刷新页面，MIG 模式切换成：
 
 ![切换 mig](../../images/node-mig.png)
+
+

@@ -10,11 +10,11 @@ hide:
 This page allows you to download the offline package and checksum file of DCE 5.0 Enterprise.
 
 [Return to Download Index](../index.md#download-enterprise-package){ .md-button }
-[More Historical Versions](./dce5-installer-history.md){ .md-button }
+[Legacy Packages](./dce5-installer-history.md){ .md-button }
 
 ## Download
 
-| Filename | Version | Architecture | File Size | Download | Update Date |
+| Filename | Version | Architecture | Size | Download | Date |
 | -------- | ------- | ------------ | --------- | -------- | ----------- |
 | offline-v0.5.0-amd64.tar | v0.5.0 | AMD 64 | 15.86 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.5.0-amd64.tar) | 2023-03-06 |
 | offline-v0.5.0-arm64.tar | v0.5.0 | <font color="green">ARM 64</font> | 14.56 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.5.0-arm64.tar) | 2023-03-06 |
@@ -80,11 +80,11 @@ The DCE 5.0 Enterprise includes the following modules, which are plug-and-play t
 
 | Modules | Description | Versions |
 | ------- | ----------- | -------- |
-| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [0.14.0](../../ghippo/intro/release-notes.md#v0140) |
-| Container Management | Manage K8s core features such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [0.15.1](../../kpanda/intro/release-notes.md#v0151) |
-| Insight | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [0.14.6](../../insight/intro/releasenote.md#v0146) |
-| Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [0.14.4](../../amamba/intro/release-notes.md#v0144) |
-| Multicloud Management| Centralized management of application orchestration of multicloud, hybrid cloud, and cross-cloud resources, with multicloud disaster recovery and fault recovery capabilities| [0.6.2](../../kairship/intro/release-notes.md# 062) |
+| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, and custom appearance. | [0.14.0](../../ghippo/intro/release-notes.md#v0140) |
+| Container Management | Manage K8s core features such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [0.15.1](../../kpanda/intro/release-notes.md#v0150) |
+| Insight | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [0.14.6](../../insight/intro/release-notes.md#v0146) |
+| Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [0.14.4](../../amamba/intro/release-notes.md#v0140) |
+| Multicloud Management| Centralized management of application orchestration of multicloud, hybrid cloud, and cross-cloud resources, with multicloud disaster recovery and fault recovery capabilities| [0.6.2](../../kairship/intro/release-notes.md#v063) |
 | Microservice Engine | Provide registration discovery, service governance, configuration management, microservice gateway and other governance capabilities | [0.18.0](../../skoala/intro/release-notes.md#v0180) |
 | Service Mesh | A next-generation service mesh for cloud native applications based on Istio open source technology | [v0.13.1](../../mspider/intro/release-notes.md#v0131) |
 | Middleware Elasticsearch | Currently preferred full-text search engine | [0.5.0](../../middleware/elasticsearch/release-notes.md#v050) |
@@ -93,9 +93,9 @@ The DCE 5.0 Enterprise includes the following modules, which are plug-and-play t
 | Middleware MySQL | The most widely used open source relational database | [0.6.0](../../middleware/mysql/release-notes.md#v060) |
 | Middleware RabbitMQ | Open source message broker software implementing the Advanced Message Queuing Protocol (AMQP) | [0.8.0](../../middleware/rabbitmq/release-notes.md#v080) |
 | Middleware Redis | An in-memory database caching service | [0.5.0](../../middleware/redis/release-notes.md#v050) |
-| Container registry | Used to store images for K8s, DevOps and container application development | [0.5.2](../../kangaroo/intro/release-notes.md) |
-| Network | Support multiple CNI combinations for different Linux kernels | [0.4.4](../../network/intro/releasenotes.md) |
-| Storage | Provide unified data storage services, support files, objects, blocks, and local storage, and easily access storage vendor solutions | [v0.8.0](../../storage/hwameistor/releasenotes.md) |
+| Container registry | Used to store images for K8s, DevOps and container application development | [0.5.2](../../kangaroo/intro/release-notes.md#v050) |
+| Network | Support multiple CNI combinations for different Linux kernels | [0.4.4](../../network/intro/release-notes.md#v044) |
+| Storage | Provide unified data storage services, support files, objects, blocks, and local storage, and easily access storage vendor solutions | [v0.8.0](../../storage/hwameistor/release-notes.md) |
 
 ## More
 

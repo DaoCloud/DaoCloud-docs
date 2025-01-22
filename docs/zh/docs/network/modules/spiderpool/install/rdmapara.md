@@ -13,7 +13,8 @@
 
 1. 请确认集群环境中已具备 RDMA 设备。
 
-2. 请确认集群中节点具备 RoCE 功能的 mellanox 网卡，本示例中采用 mellanox ConnectX 5 型号网卡。并且已安装对应的 OFED 驱动，如未安装, 可参考 [安装 OFED 驱动](./ofed_driver.md) 文档安装驱动。
+2. 请确认集群中节点具备 RoCE 功能的 mellanox 网卡，本示例中采用 mellanox ConnectX 5 型号网卡。
+   并且已安装对应的 OFED 驱动，如未安装，可参考 [安装 OFED 驱动](./ofed_driver.md)文档安装驱动。
 
 ## 基于 Macvlan /IPVLAN 共享 RoCE 网卡
 
@@ -49,11 +50,11 @@
     | rdmaSharedDevicePlugin.deviceConfig.deviceIDs    | 1017 | 设备 ID 号，同上一步查询的信息一致 |
     | rdmaSharedDevicePlugin.deviceConfig.vendors     | 15b3 | 网卡 Vendors 信息，同上一步查询的信息一致 |
 
-    ![rdmamacvlan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/rdma_macvlan01.jpg)
+    ![rdmamacvlan](../../../images/rdma_macvlan01.png)
 
     成功部署后，可查看已安装组件。
 
-    ![resource](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/rdma_macvlan02.jpg)
+    ![resource](../../../images/rdma_macvlan02.png)
 
 1. 安装完成后，可登录控制器节点，查看上报的 RDMA 设备资源。
 
@@ -61,13 +62,13 @@
     kubectl get no -o json | jq -r '[.items[] | {name:.metadata.name, allocable:.status.allocatable}]'
       [
         {
-           "name": "10-20-1-10",
-           "allocable": {
-             "cpu": "40",
-             "memory": "263518036Ki",
-             "pods": "110",
-             "spidernet.io/hca_shared_devices": "500", # 可使用的 hca_shared_devices  数量
-             ...
+          "name": "10-20-1-10",
+          "allocable": {
+            "cpu": "40",
+            "memory": "263518036Ki",
+            "pods": "110",
+            "spidernet.io/hca_shared_devices": "500", # 可使用的 hca_shared_devices  数量
+            ...
           }
         },
         ...
@@ -170,15 +171,16 @@
       </tr>
     </table>
 
-    ![sriov01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov01.jpg)
 
-    ![sriov02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov02.jpg)
+    ![sriov01](../../../images/sriov01.png)
 
-    ![sriov03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov03.jpg)
+    ![sriov02](../../../images/sriov02.png)
+
+    ![sriov03](../../../images/sriov03.png)
 
 1. 完成后，安装的组件如下：
 
-    ![sriov04](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov04.jpg)
+    ![sriov04](../../../images/sriov04.png)
 
 1. 参考如下 **SriovNetworkNodePolicy** 配置，使得 SR-IOV Operator 能够在宿主机上创建出 VF，并上报资源
 
@@ -206,30 +208,30 @@
     ```
 
     界面配置：
-   
-    ![sriov05](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov05.jpg)
 
-    ![sriov06](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov06.jpg)
+    ![sriov05](../../../images/sriov05.png)
+
+    ![sriov06](../../../images/sriov06.png)
 
 1. 安装完成后查看可用的设备资源：
 
     ```sh
     kubectl get no -o json | jq -r '[.items[] | {name:.metadata.name, allocable:.status.allocatable}]'
     [
-     {
-       "name": "10-20-1-220",
-       "allocable": {
-         "cpu": "56",
-         "ephemeral-storage": "3971227249029",
-         "hugepages-1Gi": "0",
-         "hugepages-2Mi": "0",
-         "memory": "131779740Ki",
-         "pods": "110",
-         "spidernet.io/hca_shared_devices": "0",
-         "spidernet.io/mellanoxrdma": "8", # 可用的设备资源
-         ...
-       }
-     }
+    {
+      "name": "10-20-1-220",
+      "allocable": {
+        "cpu": "56",
+        "ephemeral-storage": "3971227249029",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "memory": "131779740Ki",
+        "pods": "110",
+        "spidernet.io/hca_shared_devices": "0",
+        "spidernet.io/mellanoxrdma": "8", # 可用的设备资源
+        ...
+      }
+    }
     ```
 
 1. 如果 Spiderpool 已成功部署，并且 Device 资源已成功发现，则请完成如下操作：

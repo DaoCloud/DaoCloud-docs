@@ -1,8 +1,11 @@
 # HPA 和 CronHPA 兼容规则
 
 HPA 全称为 HorizontalPodAutoscaler，即 Pod 水平自动伸缩。
+HPA 策略可以根据资源利用率指标（CPU/内存）或自定义指标自动扩展负载中 Pod 副本的数量。
 
 CronHPA 全称为 Cron HorizontalPodAutoscaler，即 Pod 定时的水平自动伸缩。
+CronHPA 策略是指标伸缩（HPA）机制的扩展，允许根据时间模式指定负载中的 Pod 副本数量进行扩缩容。
+通过 CronHPA，用户可以在特定时间点自动扩展或缩减 Pod 数量。
 
 ## CronHPA 和 HPA 兼容冲突
 
@@ -13,7 +16,7 @@ CronHPA 全称为 Cron HorizontalPodAutoscaler，即 Pod 定时的水平自动�
 对比 CronHPA 和 HPA 的定义模板，可以观察到以下几点：
 
 - CronHPA 和 HPA 都是通过 scaleTargetRef 字段来获取伸缩对象。
-- CronHPA 通过 jobs 的 crontab 规则定时伸缩副本数。
+- CronHPA 通过 Job 的 crontab 规则定时伸缩副本数。
 - HPA 通过资源利用率判断伸缩情况。
 
 !!! note

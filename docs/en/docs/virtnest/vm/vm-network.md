@@ -20,8 +20,11 @@ achieving a more flexible and diverse network architecture.
 
 1. When selecting the Bridge network mode, some information needs to be configured in advance:
 
-    - Create a Multus CR of type `ovs`. See [Creating a Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs/)
-    - Create a subnet and IP pool. See [Creating Subnets and IP Pools](../../network/config/ippool/createpool.md)
+    - Install and run Open vSwitch on the host nodes. See  [Ovs-cni Quick Start](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs/#_1).
+    - Configure Open vSwitch bridge on the host nodes. See [vswitch](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs/#configure-open-vswitch-bridge-on-the-node) for instructions.
+    - Install Spiderpool. See [installing spiderpool](../../network/modules/spiderpool/install/install.md#how-to-install-spiderpool) for instructions. By default, Spiderpool will install both Multus CNI and Ovs CNI.
+    - Create a Multus CR of type `ovs`. You can [create a custom Multus CR](../../network/config/multus-cr.md#create-a-custom-multus-cr) or [use YAML for creation](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/#spiderpool)
+    - Create a subnet and IP pool. See [creating subnets and IP pools](../../network/config/ippool/createpool.md)
 .
 ## Network Configuration
 
@@ -46,9 +49,7 @@ achieving a more flexible and diverse network architecture.
 
         ![Network Mode](../images/createvm-net02.png)
         
-        - When selecting Bridge mode, there are some prerequisites.
-           - Create ovs type Multus CR, currently cannot be created on the page. Refer to [Creating ovs type Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
-           - Create subnets and IP pools similar to passt mode.
+        - Ensure all [prerequisites](#prerequisites) are met before selecting the Bridge mode.
 
 3. Adding NICs
    

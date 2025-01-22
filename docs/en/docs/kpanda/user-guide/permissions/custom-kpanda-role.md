@@ -19,13 +19,12 @@ workload deployments. Similar operations can be performed for other rules.
 
 Before adding RBAC rules to system roles, the following prerequisites must be met:
 
-- Container management version v0.27.0 and above.
+- Container management v0.27.0 and above.
 - [Integrated Kubernetes cluster](../clusters/integrate-cluster.md) or
   [created Kubernetes cluster](../clusters/create-cluster.md), and able to access the cluster's UI interface.
-- Completed creation of a [namespace](../namespaces/createns.md) and [user account](../../../ghippo/user-guide/access-control/user.md), 
+- Completed creation of a [namespace](../namespaces/createns.md) and [user account](../../../ghippo/user-guide/access-control/user.md),
   and the granting of [NS Viewer](./permission-brief.md#ns-viewer).
   For details, refer to [namespace authorization](./cluster-ns-auth.md).
-
 
 !!! note
 
@@ -56,7 +55,7 @@ Before adding RBAC rules to system roles, the following prerequisites must be me
   
     ![image-20240514113009311](../images/permisson02.png)
 
-1. Switch the login user to ns-viewer, open the console to get the token for the ns-viewer user, 
+1. Switch the login user to ns-viewer, open the console to get the token for the ns-viewer user,
    and use `curl` to request and delete the nginx deployment mentioned above. However,
    a prompt appears as below, indicating the user doesn't have permission to delete it.
   

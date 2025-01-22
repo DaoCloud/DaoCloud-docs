@@ -5,72 +5,26 @@ Date: 2024-04-24
 
 # Features
 
-## Cloud Native Unified Management
+DCE 5.0 Cloud Native Storage offers the following features:
 
-- Hybrid Storage Access
-   
-    HwameiStor provides unified CSI standardized access to enable multiple data access types such as NFS, block storage, and local storage. This feature meets the needs of different cases.
-
-- Dynamic Memory Management
-
-    Supports dynamic allocation of StorageClass resources, eliminating the need for administrators to manually manage, operate, and maintain data volumes.
-
-- Creation of Multiple Data Volumes
-
-    Data volumes can be dynamically created through StorageClass, and snapshots can be used to create data volumes.
-
-## Cloud Native Local Storage (HwameiStor)
-
-- High Performance Local Volumes
-
-    HwameiStor Cloud Native Local Storage eliminates the need for external storage devices and ensures high-performance local throughput through IO localization with no network overhead. It supports applications with high performance requirements such as databases and middleware on the cloud.
-
-- Multiple Types of Data Volumes
-
-    HwameiStor Cloud Native Local Storage supports LVM type and raw disk type data volumes to meet different disk demand use cases.
-
-- CSI Standards
-
-    HwameiStor connects to local storage through standard CSI standards, and postures are used uniformly.
-
-- Active and Standby High Availability
-
-    Multi-copy redundancy mechanisms of data volumes ensure high availability of data and improve the reliability of data reading and writing.
-
-- Data Volume Expansion
-
-    Business-insensitive expansion is supported, enabling elastic expansion of mounted data volumes during application running.
-
-## Production Operability and Maintainability
-
-- Non-Disruptive Upgrade
-
-    The separation of the data plane and control plane enables zero perception of business data when the control plane upgrades/expands nodes.
-
-- Disk Replacement
-
-    HwameiStor supports disk replacement after disk alerts without affecting business applications, ensuring production operability and maintainability.
-
-- One-Click Expulsion of Node Data Volumes
-
-    Manually expel the data volume of a certain node with one click to realize production operation and maintenance.
-
-- Automatic Expulsion of Node Data Volumes
-
-    HwameiStor supports automatic detection and eviction of data volumes on nodes through Kubernetes eviction behavior.
-
-- Single Disk Dimension (LD) Data Migration
-
-    HwameiStor supports disk replacement when an early warning occurs, ensuring that all data is migrated without business application data loss.
-
-- Data Migration of Application Load Dimension
-
-    HwameiStor supports data migration with the application as the dimension during stateful application rescheduling, ensuring successful scheduling of business application Pods and data consistency after scheduling.
-
-- Unified Dashboard
-
-    The unified dashboard displays resource usage and distribution, storage resource status, and monitoring alerts.
-
-- Rich Metrics
-
-    HwameiStor provides all-around data service monitoring and alerting, realizing comprehensive monitoring of data disks, StorageClass, and storage drivers, and comprehensively guarantees data security.
+| Features | Description |
+| ------- | --- |
+| **Cloud Native Unified Management** | |
+| Hybrid Storage Access | Provides unified CSI standardized access, enabling multiple data access types (NFS, block storage, local storage) to meet diverse scenario requirements. |
+| Dynamic Storage Management | Supports dynamic allocation of storage pool resources, eliminating the need for manual management or maintenance of volumes by administrators. |
+| Multiple Volume Creation Methods | Allows for dynamic creation of volumes through storage pools, as well as snapshot-based creation of volumes. |
+| **Cloud Native Local Storage (HwameiStor)** | |
+| High-Performance Local Volumes | Achieves IO localization without the need for external storage devices, minimizing network overhead and ensuring high local throughput, making it suitable for high-performance applications in the cloud. |
+| Multiple Types of Volumes | Supports LVM-type and raw disk-type volumes to accommodate various disk requirements. |
+| CSI Standard | Accesses HwameiStor local storage through standardized CSI, ensuring a consistent usage approach. |
+| Master-Slave High Availability | Implements a multi-replica redundancy mechanism for volumes, ensuring high data availability and enhancing the reliability of data read and write operations. |
+| Volume Expansion | Allows for seamless expansion of volumes during business operations, supporting scaling of mounted volumes while applications are running. |
+| **Production Operability** | |
+| Non-Disruptive Upgrades (No Impact on Business Data) | Separates the data plane and control plane, allowing for upgrades or expansion of control plane nodes without affecting the read/write operations of business application data. |
+| Disk Replacement | Supports disk replacement after alerts, ensuring that business applications remain unaffected and maintaining operational continuity. |
+| One-Click Eviction of Node Volumes | Enables manual one-click eviction of volumes from specific nodes, facilitating operational management. |
+| Automatic Eviction of Node Volumes | Automatically detects and evicts volumes from nodes based on Kubernetes eviction behavior. |
+| Single Disk Dimension (LD) Data Migration | Supports the migration of all data when a disk alert occurs and replacement is necessary, ensuring that business application data is not lost. |
+| Application Load Dimension Data Migration | Facilitates data migration based on application dimensions during the rescheduling of stateful applications, ensuring successful scheduling of business application Pods and maintaining data consistency post-scheduling. |
+| Unified Dashboard | Features a centralized dashboard that displays resource usage rates and distributions, as well as the status of storage resources and monitoring alerts. |
+| Rich Metrics Indicators | Provides comprehensive monitoring and alerts for data services, ensuring thorough oversight of data disks, storage pools, and storage drivers to safeguard data security. |
