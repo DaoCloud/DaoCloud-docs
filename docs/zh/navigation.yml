@@ -569,6 +569,7 @@ nav:
                   - IPPool 使用说明: network/modules/metallb/usage.md
                   - L2 和 BGP 模式说明: network/modules/metallb/l2-bgp.md
                   - 获取客户端源 IP: network/modules/metallb/source_ip.md
+                  - 问题排查: network/modules/metallb/debug.md
               - 集成 Multus-underlay:
                   - 介绍: network/modules/multus-underlay/index.md
                   - 安装: network/modules/multus-underlay/install.md

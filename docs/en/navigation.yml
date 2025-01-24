@@ -540,6 +540,7 @@ nav:
                   - Instructions for IP pool use: network/modules/metallb/usage.md
                   - L2 and BGP mode: network/modules/metallb/l2-bgp.md
                   - Get Client Source IPs: network/modules/metallb/source_ip.md
+                  - Debug: network/modules/metallb/debug.md
               - Multus-underlay:
                   - Intro: network/modules/multus-underlay/index.md
                   - Install: network/modules/multus-underlay/install.md

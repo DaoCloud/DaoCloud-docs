@@ -61,9 +61,13 @@ spec:
 
 如果您使用 Metallb 遇到网络连通性问题，按照以下步骤排查：
 
-- 检查 L2Advertisement 资源是否存在:
+- 检查 L2Advertisement 资源是否存在，如果 L2Advertisement 资源配置了 NodeSelector，请确认有集群是否有节点配置该 Label。
 
+    ```bash
     kubectl get l2advertisement -n metallb-system
+    ```
+
+- 请确认该 LoadBalancer 是否存在正常运行的 Endpoint。
 
 - 检查 LoadBalaner Service 的注解是否正确
 
@@ -71,12 +75,23 @@ spec:
 
 - 获取您的 LoadBalancer Service 的事件，获取关键错误信息:
 
+    ```bash
     kubectl describe svc -n <lb_service_ns> <lb_service_name>
+    ```
 
     > 如果未获取到任何事件，请重建服务然后获取。
 
-- 通过服务名称过滤 Metallb 组件日志:
+- 请确认您是否单集群节点或所有节点都是 Controller Plane 节点，如果是请清理 Controller Plane 节点上的 Labels: `node.kubernetes.io/exclude-from-external-load-balancers`。
 
+    ```bash
+    kubectl label nodes <Your_Controller_Plane_Node> node.kubernetes.io/exclude-from-external-load-balancers-
+    ```
+
+- 通过服务名称过滤 Metallb 组件日志，查看是否有相关错误信息。如果未有明显日志请编辑 metallb-speaker DaemonSet 的日志登记为 Debug。
+
+    ```bash
     kubectl logs -n metallb-system controller-xxxx | grep <lb_service_name>
 
     kubectl logs -n metallb-system speaker-xxxx | grep <lb_service_name>
+    ```
+
