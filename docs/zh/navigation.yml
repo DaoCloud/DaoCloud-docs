@@ -926,7 +926,9 @@ nav:
                   - 边车版本升级: mspider/install/sidecar-update.md
                   - 离线升级服务网格: mspider/install/offline-upgrade.md
               - 创建/删除网格:
-                  - 创建托管/专有网格: mspider/user-guide/service-mesh/README.md
+                  - 网格分类: mspider/user-guide/service-mesh/index.md
+                  - 创建托管网格: mspider/user-guide/service-mesh/hosted-mesh.md
+                  - 创建专有网格: mspider/user-guide/service-mesh/dedicated-mesh.md
                   - 创建外接网格: mspider/user-guide/service-mesh/external-mesh.md
                   - 删除网格: mspider/user-guide/service-mesh/delete.md
                   - 网格规模对应资源用量: mspider/user-guide/service-mesh/capacity-resources.md

@@ -11,7 +11,7 @@
 
 ### 操作步骤
 
-1. 前往 **服务网格** ，参考[创建托管网格](../../mspider/user-guide/service-mesh/README.md)
+1. 前往 **服务网格** ，参考[创建托管网格](../../mspider/user-guide/service-mesh/index.md)
 
 2. 控制面入口方式选择 **负载均衡** ，其余默认
 
@@ -114,7 +114,7 @@
 
 3. 创建成功后，手动 **同步** 应用资源
 
-4. 前往服务网格，在托管网格查看工作集群中同步的 vs、dr、gateway 资源，如果未查找到，请检测章节 **[创建托管网格并纳管工作集群](../../mspider/user-guide/service-mesh/README.md)** 中的注意事项是否配置正确
+4. 前往服务网格，在托管网格查看工作集群中同步的 vs、dr、gateway 资源，如果未查找到，请检测章节 **[创建托管网格并纳管工作集群](../../mspider/user-guide/service-mesh/index.md)** 中的注意事项是否配置正确
 
 5. 默认情况下工作集群的负载均衡暴露的是 `80` 端口，所需要在工作集群中修改服务的 gatway 端口为 80 以便能访问到服务
 
