@@ -8,10 +8,10 @@
 
 ### v0.36
 
-- **新增** 封装 addon 沐曦 metax-exporter：用于在集群环境中收集 沐曦 GPU 设备指标数据，安装后在可观测模块可进行图形化展示。
-- **新增** 封装 addon 沐曦 metax-extensions：提供 gpu‑device 和 gpu‑label 两个组件，为容器使用沐曦 GPU 提供必需的资源注册及分配能力。
-- **新增** 装 addon 沐曦 metax-operator：提供全部组件，除了metax-extensions能力外，进一步云原生化，减轻集群中软件运行负担，降低运维难度。
-- **修复** 修复 PVC 列表制作快照 button 显示问题。
+- **新增** 封装 addon 沐曦 metax-exporter：用于在集群环境中收集沐曦 GPU 设备指标数据，安装后在可观测模块可进行图形化展示
+- **新增** 封装 addon 沐曦 metax-extensions：提供 gpu‑device 和 gpu‑label 两个组件，为容器使用沐曦 GPU 提供必需的资源注册及分配能力
+- **新增** 封装 addon 沐曦 metax-operator：提供全部组件，除了 metax-extensions 能力外，进一步云原生化，减轻集群中软件运行负担，降低运维难度
+- **修复** 修复 PVC 列表制作快照 button 显示问题
 
 ## 2024-12-31
 
