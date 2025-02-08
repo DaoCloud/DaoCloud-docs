@@ -11,7 +11,7 @@ DCE 5.0 微服务引擎支持在云原生微服务中使用 JWT 插件，为服�
 首先需要在 DCE 5.0 的[服务网格](../../../mspider/intro/index.md)模块中，为目标服务所在的集群创建服务网格。
 目前支持创建托管网格、专有网格、外接网格三种类型的网格。
 
-有关具体网格的创建步骤，可参考[创建托管/专有网格](../../../mspider/user-guide/service-mesh/README.md)或[创建外接网格](../../../mspider/user-guide/service-mesh/external-mesh.md)。
+有关具体网格的创建步骤，可参考[创建托管/专有网格](../../../mspider/user-guide/service-mesh/index.md)或[创建外接网格](../../../mspider/user-guide/service-mesh/external-mesh.md)。
 
 ![add-mesh](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-jwt01.png)
 

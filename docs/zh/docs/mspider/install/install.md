@@ -48,4 +48,4 @@ hide:
 
     ![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/install02.jpg)
 
-下一步：[创建网格](../user-guide/service-mesh/README.md)
+下一步：[创建网格](../user-guide/service-mesh/index.md)

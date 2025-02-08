@@ -25,10 +25,10 @@ hide:
 
 | 菜单对象 | 操作 | Admin | Workspace Admin | Workspace Editor | Workspace Viewer |
 | ------- | --- | ----- | --------------- | ---------------- | ---------------- |
-| 服务网格列表 | [创建网格](../../mspider/user-guide/service-mesh/README.md) | &check; | &cross; | &cross; | &cross; |
+| 服务网格列表 | [创建网格](../../mspider/user-guide/service-mesh/index.md) | &check; | &cross; | &cross; | &cross; |
 | | 更新网格 | &check; | &check; | &cross; | &cross; |
 | | [删除网格](../../mspider/user-guide/service-mesh/delete.md) | &check; | &cross; | &cross; | &cross; |
-| | [查看网格列表](../../mspider/user-guide/service-mesh/README.md) | &check; | &check; | &check; | &check; |
+| | [查看网格列表](../../mspider/user-guide/service-mesh/index.md) | &check; | &check; | &check; | &check; |
 | 网格概览 | 查看 | &check; | &check; | &check; | &check; |
 | 服务列表 | 查看 | &check; | &check; | &check; | &check; |
 | 服务列表 | 创建 VM 服务 | &check; | &check; | &check; | &cross; |

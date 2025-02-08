@@ -39,7 +39,7 @@
 
 ## 创建网格
 
-参阅[创建网格](../mspider/user-guide/service-mesh/README.md)文档。
+参阅[创建网格](../mspider/user-guide/service-mesh/index.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-mesh.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/mspider-create-mesh.png"></video>

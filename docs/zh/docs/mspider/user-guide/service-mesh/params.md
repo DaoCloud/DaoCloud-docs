@@ -4,7 +4,7 @@
 
 ## 最大重试次数 Max retries
 
-服务网格中内嵌了 Envoy 组件，在[创建网格](./README.md)时可以设置 Envoy 相关的一些参数。
+服务网格中内嵌了 Envoy 组件，在[创建网格](index.md)时可以设置 Envoy 相关的一些参数。
 更多细节请参阅 [Envoy 文档](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on)。
 
 ### HTTP

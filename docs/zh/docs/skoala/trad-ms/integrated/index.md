@@ -23,7 +23,7 @@
 
         - 如果找不到想要添加的 Kubernetes 集群，可以去容器管理模块[接入集群](../../../kpanda/user-guide/clusters/integrate-cluster.md)或[创建集群](../../../kpanda/user-guide/clusters/create-cluster.md)。
 
-        - 如果找不到想要添加的网格服务，可以去网格服务模块[创建网格](../../../mspider/user-guide/service-mesh/README.md)。
+        - 如果找不到想要添加的网格服务，可以去网格服务模块[创建网格](../../../mspider/user-guide/service-mesh/index.md)。
 
             ![接入 Mesh/Kubernetes](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/integrate02.png)
 
@@ -48,7 +48,7 @@
     如需更新 Kubernetes/Mesh 注册中心：
 
     - 可以先[移除已经接入的注册中心](#_4)，然后再重新接入其他的注册中心。
-    - 也可以去容器管理模块[更新对应的集群](../../../kpanda/user-guide/clusters/upgrade-cluster.md)，或者去服务网格模块[更新对应的网格服务](../../../mspider/user-guide/service-mesh/README.md)。
+    - 也可以去容器管理模块[更新对应的集群](../../../kpanda/user-guide/clusters/upgrade-cluster.md)，或者去服务网格模块[更新对应的网格服务](../../../mspider/user-guide/service-mesh/index.md)。
 
 ## 移除注册中心
 

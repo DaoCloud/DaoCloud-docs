@@ -17,7 +17,7 @@ hide:
 
 3. 选择想要绑定的服务网格，然后在弹框底部点击 __确定__ 。
 
-    如果找不到想要的服务网格，可以去服务网格模块[创建一个网格](../../../../mspider/user-guide/service-mesh/README.md)。
+    如果找不到想要的服务网格，可以去服务网格模块[创建一个网格](../../../../mspider/user-guide/service-mesh/index.md)。
 
     ![配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/mesh02.png)
 
