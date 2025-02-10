@@ -57,6 +57,25 @@ spec:
 
 ## 启用 ApplicationSet 功能
 
+### 应用工作台版本 >= v0.35.0
+
+在工作台升级至v0.35.0后，我们提供了feature开关，可以一键开启/关闭`AppOfApplicationSet`功能。
+
+1. 前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __配置与密钥__ __配置项__
+
+1. 命名空间选择 amamba 安装的命名空间(默认是`amamba-system`), 选择 `amamba-config` 进行更新
+
+1. 添加或修改以下配置项：
+```yaml
+argocd.appAnyNamespace.enable: true # 如果关闭则设置为false
+```
+
+1. 点击保存即可, 进入应用工作台 -> GitOps 模块即可通过 AppOfApplicationSet 的方式创建 GitOps 应用。
+
+### 应用工作台版本 < v0.35.0
+
+#### 启用配置
+
 1. 配置 ApplicationSet Controller 的 RBAC
 
     ApplicationSet 依赖于 ApplicationSet Controller 的调谐才能实现控制多个 Application，
@@ -121,7 +140,7 @@ spec:
 
 完成上述更改后，您需要重启 ArgoCD 和应用工作台相关组件。
 
-## 重启服务
+#### 重启服务
 
 **重启 ArgoCD 组件：**
 
