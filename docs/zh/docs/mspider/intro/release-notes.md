@@ -4,18 +4,85 @@
 
 *[mspider]: DaoCloud 服务网格的内部开发代号
 
+## 2025-01-25
+
+### v0.34.0
+
+#### 修复
+
+- **修复** 网格网关负载均衡 IP 无法查询。
+- **修复** 兼具托管集群和工作集群角色安装 Ingress gateway 参数混乱.
+
+#### 优化
+
+- **优化** Istio 版本 1.23 设置为体验版本，默认推荐 1.22.
+
+## Mspider服务网格升级istio版本1.23+ 注意事项
+!!! note
+
+    影响范围：
+   istio版本低于1.23且已经创建了网格网关实例，需要升级istio到1.23的用户。若istio版本低于1.23，但没有创建网格网关实例的用户，不受本次升级影响。
+
+### 背景
+
+因为 Istio 社区在 [1.23 废弃 In-Cluster Operator](https://istio.io/latest/blog/2024/in-cluster-operator-deprecation-announcement/)，且1.24彻底废弃， Mspider 网格 Istio 组件采用了 Istio In-Cluster Operator，因此为了保证 1.23以后的版本能够正常安装，我们开发了 [Pluma Operator](https://github.com/pluma-tools/pluma-operator)，并且进行开源。
+当在 Mspider 安装网格的版本 大于等于 1.23 版本时，我们将自动切换 Operaotr（Istio In-Cluster Operator -> Pluma Operator）
+
+### 升级变更通告
+
+替换成 Pluma Operator 中，有一个大的变化，Istio 组件安装将会由 Operator 管理资源的方式，变更为 Helm 标准安装，因此升级网格时，会存在部分资源发生一定变化。
+
+### 组件更新情况
+
+升级 1.23 以后，受到更新影响范围：
+- Istio-system 下 mspider 和 istio 组件
+- Mspider 安装的网格网关
+
+### 网格网关升级操作
+
+!!! note
+
+    如果不进行当前升级处理，将出现南北流量断流情况
+
+升级过程中最重要的是数据面流量，而这次升级影响的是网关，因为 helm 标准化安装存在模版更新变化，然后网关存在 label 变化导致 pluma 无法正常升级 gateway，需要提前处理。
+![image](../images/1.png)
+由于 kubernetes 不允许更新 deployment 的 selectorLabels，我们需要删除重建 labels
+1. 先创建新的 gateway，并且自定义 app，istio labels
+app：$gateway_name
+Istio: $gateway_name
+![image](../images/2.png)
+2. 修改对于的 Gateway 策略 CRD，绑定新建的 gateway 进行流量迁移新网关
+![image](../images/3.png)
+3. 删除旧的不符合升级后模版的 网关
+
+
+## 2024-12-30
+
+### v0.33.0
+
+#### 修复
+
+- **修复** 托管网格工作集群 KubeConfig 未更新问题以及工作集群移除时未清理网格 Secret 问题。
+
 ## 2024-11-30
 
 ### v0.32.0
 
+#### 修复
+
+- **修复** 极端情况下，会出现托管网格移除集群状态不正确问题。
+
+#### 优化
+
 - **优化** 网关详情接口 `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/mesh-gateways/{gateway}`
   新增字段 `.details.ports`, `.details.load_balancer_ip`；升级 `.configuration.service.load_balancer_ip`
   从运行时配置改为预定义配置。并且默认 `.details` 中为运行时信息。
-- **修复** 极端情况下，会出现托管网格移除集群状态不正确问题。
 
 ## 2024-10-31
 
 ### v0.31.0
+
+#### 修复
 
 - **修复** 链路采集率无法调整的问题
 - **修复** 绑定工作负载 waypoint 没有审计日志的问题
@@ -25,10 +92,15 @@
 
 ### v0.30.0
 
+#### 修复
+
 - **修复** 日志异常的问题
 - **修复** Istio 资源空指针的问题
 - **修复** 关闭工作集群 Istio 资源同步后，资源移除未生效的问题
 - **修复** WorkloadShadow 中 injectedMode 状态不正常的问题
+
+#### 优化
+
 - **优化** 后台支持的 Istio 版本从 v1.21.5 升级至 v1.22.4，并且设置默认版本为 1.22.4
 
 ## 2024-09-02
