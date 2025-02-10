@@ -1,7 +1,7 @@
 # 手工设置工作负载反亲和
 
-PostgreSQL 中间件的的反亲和策略由同一集群下的所有实例共用，因此我们默认开启了 __Preferred__  反亲和。
-如需关闭反亲和策略或开启 __Required__  反亲和，需要修改 __Operator__  设置。
+PostgreSQL 中间件的的反亲和策略由同一集群下的所有实例共用，因此我们默认开启了 __Preferred__ 反亲和。
+如需关闭反亲和策略或开启 __Required__ 反亲和，需要修改 __Operator__ 设置。
 
 !!! note
 
@@ -9,13 +9,13 @@ PostgreSQL 中间件的的反亲和策略由同一集群下的所有实例共用
 
 ## 操作步骤
 
-1. 进入 __容器管理__  -> __集群列表__ ，选择实例所在集群；
+1. 进入 __容器管理__ -> __集群列表__ ，选择实例所在集群；
 
 1. 点击 __自定义资源__ ，查找资源： __operatorconfigurations.acid.zalan.do__
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/postgresql/images/antiaff01.png)
 
-1. 在该资源下选择正确的 __命名空间__  -> __CR 实例__
+1. 在该资源下选择正确的 __命名空间__ -> __CR 实例__
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/postgresql/images/antiaff02.png)
 
@@ -23,9 +23,9 @@ PostgreSQL 中间件的的反亲和策略由同一集群下的所有实例共用
 
     ![创建](../images/antiaff03.png)
 
-    | 字段                                           | 说明                                               |
-    | -------------------------------------------- | -------------------------------------------- |
-    | enable_pod_antiaffinity                      | true：启用工作负载反亲和<br>false：关闭工作负载反亲和            |
+    | 字段 | 说明 |
+    | --- | ---- |
+    | enable_pod_antiaffinity | true：启用工作负载反亲和<br>false：关闭工作负载反亲和 |
     | pod_antiaffinity_preferred_during_scheduling | true：Preferred 软性反亲和<br>false：Required 强制反亲和 |
 
     完整代码如下，供参考：
