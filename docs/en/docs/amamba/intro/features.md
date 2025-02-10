@@ -16,3 +16,7 @@ The Workbench is a module included in DCE 5.0 Enterprise Package, providing the 
 | **Repository Management**    | Supports importing code repositories from Git, allowing you to use them for continuous deployment of applications.            |
 | **Canary Release**          | - Canary release ensures system stability by allowing you to discover and fix bugs during the initial grayscale phase, reducing the impact range of bugs and vulnerabilities.<br>- Supports advanced release policies such as Canary release, Blue/Green deployment, and A/B Testing.<br>- Canary release supports automated progressive release.<br>- Supports quick rollback based on metric analysis. |
 | **Toolchain Integration**    | This means you can integrate your favorite DevOps tools as a toolchain, eliminating the need to log into multiple platforms and deal with different views of these tools. |
+## 自由透传
+
+自由透传功能允许服务网格在保持原有请求数据完整性的前提下，直接将请求转发到后端服务，而不进行额外的处理或修改。这对于需要保持请求精确性或满足特殊路由需求的场景非常有帮助。
+
