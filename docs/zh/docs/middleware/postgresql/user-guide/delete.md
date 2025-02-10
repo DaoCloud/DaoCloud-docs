@@ -7,7 +7,7 @@ hide:
 
 如果想要删除一个 PostgreSQL 实例，可以执行如下操作：
 
-1. 在 PostgreSQL 实例列表中，点击右侧的 __┇__  按钮，在弹出菜单中选择 __删除实例__ 。
+1. 在 PostgreSQL 实例列表中，点击右侧的 __┇__ 按钮，在弹出菜单中选择 __删除实例__
 
     ![删除实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/delete00.png)
 
@@ -15,6 +15,6 @@ hide:
 
     ![点击删除](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/delete01.png)
 
-    !!! warning
+!!! warning
 
-        删除实例后，该实例相关的所有信息也会被全部删除，请谨慎操作。
+    删除实例后，该实例相关的所有信息也会被全部删除，请谨慎操作。
