@@ -19,9 +19,9 @@ hide:
 
     ![访问路由](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/out-to-in01.png)
 
-2. 点击 __流量治理__ -> __网关规则__ -> __创建__ 为 istio 网关创建网关规则，对外暴露服务及端口。
+2. 点击 __流量治理__ -> __网关规则__ -> __创建__ 为 Istio 网关创建网关规则，对外暴露服务及端口。
 
-    ![创建规则](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/out-to-in02.png)
+    ![创建规则](../../images/out-to-in02.png)
 
     完成配置后的 YAML 示例如下：
 
@@ -44,7 +44,7 @@ hide:
 
     1. 使用默认控制器
 
-3. 点击 __确定__ 回到网关规则列表，可见创建成功提示。
+3. 点击 __确定__ 回到网关规则列表，可以看到创建成功的提示。
 
 4. 点击 __流量治理__ -> __虚拟服务__ -> __创建__ 来创建路由规则，基于请求中的 URI 路由到指定页面。
 
