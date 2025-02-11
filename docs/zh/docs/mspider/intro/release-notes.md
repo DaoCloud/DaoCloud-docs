@@ -17,26 +17,32 @@
 
 - **优化** Istio 版本 1.23 设置为体验版本，默认推荐 1.22.
 
-## Mspider服务网格升级istio版本1.23+ 注意事项
+## 服务网格升级到 Istio 1.23+ 的注意事项
+
 !!! note
 
     影响范围：
-   istio版本低于1.23且已经创建了网格网关实例，需要升级istio到1.23的用户。若istio版本低于1.23，但没有创建网格网关实例的用户，不受本次升级影响。
+    Istio 版本低于 1.23 且已经创建了网格网关实例，需要升级到 Istio 1.23。
+    若 Istio 低于 1.23，但没有创建网格网关实例，不受本次升级的影响。
 
 ### 背景
 
-因为 Istio 社区在 [1.23 废弃 In-Cluster Operator](https://istio.io/latest/blog/2024/in-cluster-operator-deprecation-announcement/)，且1.24彻底废弃， Mspider 网格 Istio 组件采用了 Istio In-Cluster Operator，因此为了保证 1.23以后的版本能够正常安装，我们开发了 [Pluma Operator](https://github.com/pluma-tools/pluma-operator)，并且进行开源。
-当在 Mspider 安装网格的版本 大于等于 1.23 版本时，我们将自动切换 Operaotr（Istio In-Cluster Operator -> Pluma Operator）
+因为 Istio 社区在 [1.23 废弃 In-Cluster Operator](https://istio.io/latest/blog/2024/in-cluster-operator-deprecation-announcement/)，
+且在 1.24 中彻底废弃，DCE 5.0 服务网格内置的 Istio 组件采用了 Istio In-Cluster Operator，因此为了保证 Istio 1.23 以后的版本能够正常安装，
+我们开发了 [Pluma Operator](https://github.com/pluma-tools/pluma-operator)，并且进行开源。
+当在服务网格中的 Istio 版本大于等于 1.23 时，将自动切换 Operator（Istio In-Cluster Operator -> Pluma Operator）
 
 ### 升级变更通告
 
-替换成 Pluma Operator 中，有一个大的变化，Istio 组件安装将会由 Operator 管理资源的方式，变更为 Helm 标准安装，因此升级网格时，会存在部分资源发生一定变化。
+替换成 Pluma Operator 中，有一个大的变化，Istio 组件安装将会由 Operator 管理资源的方式，
+变更为 Helm 标准安装，因此升级网格时，会存在部分资源发生一定变化。
 
 ### 组件更新情况
 
 升级 1.23 以后，受到更新影响范围：
-- Istio-system 下 mspider 和 istio 组件
-- Mspider 安装的网格网关
+
+- istio-system 下的 mspider 和 istio 组件
+- 通过 Mspider 安装的网格网关
 
 ### 网格网关升级操作
 
@@ -44,17 +50,27 @@
 
     如果不进行当前升级处理，将出现南北流量断流情况
 
-升级过程中最重要的是数据面流量，而这次升级影响的是网关，因为 helm 标准化安装存在模版更新变化，然后网关存在 label 变化导致 pluma 无法正常升级 gateway，需要提前处理。
-![image](../images/1.png)
-由于 kubernetes 不允许更新 deployment 的 selectorLabels，我们需要删除重建 labels
-1. 先创建新的 gateway，并且自定义 app，istio labels
-app：$gateway_name
-Istio: $gateway_name
-![image](../images/2.png)
-2. 修改对于的 Gateway 策略 CRD，绑定新建的 gateway 进行流量迁移新网关
-![image](../images/3.png)
-3. 删除旧的不符合升级后模版的 网关
+升级过程中最重要的是数据面流量，而这次升级影响的是网关，因为 Helm 标准化安装存在模版更新变化，
+然后网关存在 label 变化导致 pluma 无法正常升级 gateway，需要提前处理。
 
+![image](../images/1.png)
+
+由于 Kubernetes 不允许更新 Deployment 的 selectorLabels，所以需要删除重建 labels
+
+1. 先创建新的 gateway，并且自定义 app、istio labels
+
+    ```yaml
+    app：$gateway_name
+    Istio: $gateway_name
+    ```
+
+    ![image](../images/2.png)
+
+1. 修改对应的 Gateway 策略 CRD，绑定新建的 gateway 将流量迁移到新网关
+
+    ![image](../images/3.png)
+
+1. 删除旧的不符合升级后模板的网关
 
 ## 2024-12-30
 
@@ -68,12 +84,7 @@ Istio: $gateway_name
 
 ### v0.32.0
 
-#### 修复
-
 - **修复** 极端情况下，会出现托管网格移除集群状态不正确问题。
-
-#### 优化
-
 - **优化** 网关详情接口 `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/mesh-gateways/{gateway}`
   新增字段 `.details.ports`, `.details.load_balancer_ip`；升级 `.configuration.service.load_balancer_ip`
   从运行时配置改为预定义配置。并且默认 `.details` 中为运行时信息。
@@ -81,8 +92,6 @@ Istio: $gateway_name
 ## 2024-10-31
 
 ### v0.31.0
-
-#### 修复
 
 - **修复** 链路采集率无法调整的问题
 - **修复** 绑定工作负载 waypoint 没有审计日志的问题
@@ -92,28 +101,18 @@ Istio: $gateway_name
 
 ### v0.30.0
 
-#### 修复
-
 - **修复** 日志异常的问题
 - **修复** Istio 资源空指针的问题
 - **修复** 关闭工作集群 Istio 资源同步后，资源移除未生效的问题
 - **修复** WorkloadShadow 中 injectedMode 状态不正常的问题
-
-#### 优化
-
 - **优化** 后台支持的 Istio 版本从 v1.21.5 升级至 v1.22.4，并且设置默认版本为 1.22.4
 
 ## 2024-09-02
 
 ### v0.29.0
 
-#### 功能
-
 - **新增** 托管网格支持将工作集群的流量治理策略 `(VS、DR、Gateway)`，快速同步到控制面并提供在线查看能力
 - **新增** Ambient Mesh 模式下注入 waypoint 和 ztunnel 边车组件的功能
-
-#### 修复
-
 - **修复** 离线环境下网格网络连通性检测功能因缺少必要镜像问题
 - **修复** Ambient Mesh 中缺失 `GatewayAPI` 自定义资源定义(CRD) 的问题
 - **修复** waypoint 注入状态没有计算命名空间纬度
@@ -125,7 +124,7 @@ Istio: $gateway_name
 
 ### v0.28.0
 
-#### 功能
+#### 新增
 
 - **新增** 支持托管网格网络互联池连通性检测
 - **新增** 网格网关多集群部署
@@ -173,14 +172,9 @@ Istio: $gateway_name
 
 ### v0.25.0
 
-#### 功能
-
 - **新增** 内置网格告警规则，可观测内告警配置可直接使用。
 - **新增** 适配 `Istio` 版本至 `v1.19.9`,`v1.20.5`, `v1.21.1`。
 - **新增** `OpenAPI` 增加 `WorkloadShadow` 新增字段 `.status.replicas`, 用于记录 `Pod` 运行时总数。
-
-#### 修复
-
 - **修复** 升级 `cloudtty` 镜像版本到 `v0.7.1`，修复 `xz` 低版本安全问题。
 - **修复** `Ambient` 模式下 `Pod` 变更未触发工作负载状态变更。
 - **修复** 修复拓扑节点无权限显示有误问题。
@@ -189,7 +183,7 @@ Istio: $gateway_name
 
 ### v0.24.1
 
-#### 功能
+#### 新增
 
 - **新增** 集群节点列表 API `/apis/mspider.io/v3alpha1/clusters/{cluster_name}/nodes`。
 - **新增** 网格网关亲和性字段 `affinity`。
@@ -211,47 +205,47 @@ Istio: $gateway_name
 
 ### v0.23.0
 
-#### 功能
+#### 新增
 
-- **新增** 服务和工作负载监控面板的监控面板，增加上下游流量分布。
-- **新增** 适配 `Istio` 版本至 `v1.18.7`,`v1.19.6`,`v1.20.2`。
+- **新增** 服务和工作负载监控面板的监控面板，增加上下游流量分布
+- **新增** 适配 Istio 版本至 v1.18.7、v1.19.6、v1.20.2
 
 #### 修复
 
-- **修复** 同时使用`Dubbo` 和 `Zookeeper` 时， `Consumer` 服务无法被识别为 `Dubbo` 服务问题。
-- **修复** 获取有效 `Istio` 版本列表，未根据集群版本进行过滤。
-- **修复** `Istio` `v1.20` 无法开启多云互联问题。
+- **修复** 同时使用 Dubbo 和 Zookeeper 时， Consumer 服务无法被识别为 Dubbo 服务问题
+- **修复** 获取有效 Istio 版本列表，未根据集群版本进行过滤
+- **修复** Istio v1.20 无法开启多云互联问题
 
 ## 2023-12-31
 
 ### v0.22.0
 
-#### 功能
+#### 新增
 
 - **新增** 自定义网格实例的系统组件资源配额
-- **新增** 更大规模：**S2000P8000** , **S5000P20000** 网格实例
+- **新增** 更大规模：S2000P8000、S5000P20000 网格实例
 - **新增** 网关实例升级提醒，支持一键升级
 
 #### 优化
 
-- **升级** 支持的网格版本至 **1.18.6** 和 **1.19.5**
-- **升级** **1.17** 支持的网格版本为 **1.17.8-fix-20231226**，修复了之前的内存泄漏问题
+- **升级** 支持的 Istio 网格版本至 1.18.6 和 1.19.5
+- **升级** 1.17 支持的网格版本为 1.17.8-fix-20231226，修复了之前的内存泄漏问题
 
 #### 修复
 
-- **修复** **Sidecar** 热升级无法在 **istio-proxy** 用户下执行的问题
+- **修复** Sidecar 热升级无法在 istio-proxy 用户下执行的问题
 - **修复** 专有网格下，升级网格后网格的版本没有正确更新
 
 ## 2023-11-30
 
 ### v0.21.0
 
-#### 功能
+#### 新增
 
 - **新增** 专有网格支持多云互联功能
-- **新增** 支持选择和升级新版本的 **Istio（1.19.3、1.18.5、1.17.6）** 进行部署网格实例
-- **新增** **VM Agent** 支持对 **Istio** 进程进行健康检测和故障自恢复
-- **新增** **TrafficLane API** 支持通过 **Annotations** 进行操作
+- **新增** 支持选择和升级新版本的 Istio（1.19.3、1.18.5、1.17.6）进行部署网格实例
+- **新增** VM Agent 支持对 Istio 进程进行健康检测和故障自恢复
+- **新增** TrafficLane API 支持通过 Annotations 进行操作
 
 #### 优化
 
@@ -272,7 +266,7 @@ Istio: $gateway_name
 
 ### v0.20.3
 
-#### 功能
+#### 新增
 
 - **新增** **VM Agent** 支持容器运行
 - **新增** 支持删除虚拟机类型工作负载
@@ -537,19 +531,19 @@ Istio: $gateway_name
 - **修复** 在 1.17.1 版本中，istio-proxy 无法正常启动的问题
 - **修复** ingress gateway 缺少 name 导致 merge 失败无法部署的问题
 - **修复** 服务地址无法搜索的问题
-- **修复** 无法更新带 **.** 的 Istio 资源 的问题
-- **修复** 之前 controller 内存泄漏的问题。
-- **修复** add/delete cluster 有时没有正确触发的逻辑。
-- **修复** 了托管模式下 istio-system 可能被误删的情况。
-- **修复** ingress gateway 缺少 name 导致 merge 失败无法部署的问题。
+- **修复** 无法更新带 `.` 的 Istio 资源的问题
+- **修复** 之前 controller 内存泄漏的问题
+- **修复** add/delete cluster 有时没有正确触发的逻辑
+- **修复** 了托管模式下 istio-system 可能被误删的情况
+- **修复** ingress gateway 缺少 name 导致 merge 失败无法部署的问题
 - **修复** 在开启全局注入情况下，更新网格可能导致 istio-operator pod 被注入，从而使网格创建失败的问题
 - **修复** 服务与 WorkloadShadow 关联的两个部分没有清理逻辑，导致服务被错误绑定在工作负载上
 - **修复** 一个导致虚拟集群被同步到 Mspider 导致接入失败的问题
-- **优化** controller 命名空间、服务资源处理逻辑，减少频繁触发 workloadShadow 资源更新。
-- **优化** workloadShadow 资源频繁获取/更新的问题，现在只对某些发生特定改变的资源进行 reconcile。
+- **优化** controller 命名空间、服务资源处理逻辑，减少频繁触发 workloadShadow 资源更新
+- **优化** workloadShadow 资源频繁获取/更新的问题，现在只对某些发生特定改变的资源进行 reconcile
 - **优化** 减少 pod 变更不断更新 WorkloadShadow
-- **修复** relok8s 中 wasm 插件镜像地址拼写错误的问题。
-- **修复** TrafficLane 默认 repository 错误。
+- **修复** relok8s 中 wasm 插件镜像地址拼写错误的问题
+- **修复** TrafficLane 默认 repository 错误
 - **优化** Helm 镜像渲染模板。镜像结构拆分为三个部分 registry/repository:tag
 
 #### 移除
