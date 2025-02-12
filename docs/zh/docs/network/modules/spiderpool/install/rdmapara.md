@@ -9,6 +9,21 @@
 - 基于 SR-IOV CNI，使用 **RDMA Exclusive 模式** ，暴露主机上的 RoCE 网卡给 Pod 使用，
   需要使用 [RDMA CNI](https://github.com/k8snetworkplumbingwg/rdma-cni) 来完成 RDMA 设备隔离。
 
+以下是上面两种 RDMA 使用方式的区别:
+
+| 比较维度     | Macvlan/IPVLAN 共享 RDMA 方案           | SR-IOV CNI 隔离 RDMA 方案          |
+| ------------| ------------------------------------- | --------------------------------- |
+| 网络隔离      | 所有容器共享 RDMA 设备，隔离性较差        | 容器独享 RDMA 设备，隔离性较好        |
+| 性能         | 性能较高                               | 硬件直通，性能最优                   |
+| 资源利用率    | 资源利用率较高                          | 较低，受硬件支持的 VFs 数量限制       |
+| 使用复杂度    | 配置相对简单                            | 配置较为复杂，需要硬件支持和配置       |
+| 兼容性       | 兼容性较好，适用于大多数环境               | 依赖硬件支持，兼容性较差              |
+| 适用场景      | 适用于大多数场景，包括裸金属，虚拟机等      | 只适用于裸金属，不适用于虚拟机场景     |
+| 成本         | 成本较低，因为不需要额外的硬件支持          | 成本较高，需要支持 SR-IOV 的硬件设备 |
+| RDMA 协议支持 | 支持 Roce 协议, 不支持 Ininiband 协议    | 支持 Roce 和 Infiniband 协议        |
+
+如果您的硬件支持 SR-IOV, 优先推荐使用基于 [SR-IOV CNI 的 **RDMA Exclusive 模式**](#基于-sr-iov-使用-roce-网卡) ，这具有更好的隔离型，更好的性能。并且 Spiderpool 同时提供了 RDMA exporter 功能和 grafana 监控面板，通过实时监控 Pod/Node RDMA 网络的性能，包括吞吐量、延迟、丢包率等，可以时发现问题并采取措施解决，提高网络的可靠性和性能。
+
 ## 前提条件
 
 1. 请确认集群环境中已具备 RDMA 设备。
@@ -17,6 +32,8 @@
    并且已安装对应的 OFED 驱动，如未安装，可参考 [安装 OFED 驱动](./ofed_driver.md)文档安装驱动。
 
 ## 基于 Macvlan /IPVLAN 共享 RoCE 网卡
+
+注意: Macvlan/IPvlan 不支持 Infiniband 网卡。
 
 1. 基于 Macvlan/IPVLAN 暴露 RoCE 网卡时，需要确认主机上的 RDMA 子系统工作在 **Shared 模式** 下，否则，请切换到 **Shared 模式** 。
 
@@ -108,7 +125,7 @@
     netns exclusive copy-on-fork on
     ```
 
-1. 确认网卡具备 SR-IOV 功能，查看支持的最大 VF 数量：
+2. 确认网卡具备 SR-IOV 功能，查看支持的最大 VF 数量：
 
     ```sh
     cat /sys/class/net/ens6f0np0/device/sriov_totalvfs
@@ -120,13 +137,13 @@
     8
     ```
 
-1. 确认 RDMA 网卡的信息，用于后续 Device Plugin 发现设备资源。
+3. 确认 RDMA 网卡的信息，用于后续 Device Plugin 发现设备资源。
 
     在本演示环境中，网卡 **vendors** 为 15b3，网卡 **deviceIDs** 为 1017。
     在后续步骤创建 **SriovNetworkNodePolicy** 时需要用到这些信息。
 
     ```sh
-    lspci -nn | grep Ethernet
+    lspci -nn | grep Mellanox
     ```
 
     输出类似于：
@@ -136,7 +153,7 @@
     04:00.1 Ethernet controller [0200]: Mellanox Technologies MT27800 Family [ConnectX-5] [15b3:1017]
     ```
 
-1. 安装 Spiderpool 并开启 RDMA CNI、SR-IOV CNI。安装详情请参考[安装 Spiderpool](install.md)。
+4. 安装 Spiderpool 并开启 RDMA CNI、SR-IOV CNI, 推荐开启 Spiderpool-agent RDMA 监控功能，安装详情请参考[安装 Spiderpool](install.md)。
 
     <table>
       <tr>
@@ -171,18 +188,17 @@
       </tr>
     </table>
 
-
     ![sriov01](../../../images/sriov01.png)
 
     ![sriov02](../../../images/sriov02.png)
 
     ![sriov03](../../../images/sriov03.png)
 
-1. 完成后，安装的组件如下：
+5. 完成后，安装的组件如下：
 
     ![sriov04](../../../images/sriov04.png)
 
-1. 参考如下 **SriovNetworkNodePolicy** 配置，使得 SR-IOV Operator 能够在宿主机上创建出 VF，并上报资源
+6. 参考如下 **SriovNetworkNodePolicy** 配置，使得 SR-IOV Operator 能够在宿主机上创建出 VF，并上报资源
 
     YAML 配置示例如下：
 
@@ -213,7 +229,7 @@
 
     ![sriov06](../../../images/sriov06.png)
 
-1. 安装完成后查看可用的设备资源：
+7. 安装完成后查看可用的设备资源：
 
     ```sh
     kubectl get no -o json | jq -r '[.items[] | {name:.metadata.name, allocable:.status.allocatable}]'
@@ -234,7 +250,7 @@
     }
     ```
 
-1. 如果 Spiderpool 已成功部署，并且 Device 资源已成功发现，则请完成如下操作：
+8. 如果 Spiderpool 已成功部署，并且 Device 资源已成功发现，则请完成如下操作：
 
     - 完成创建 Multus 实例，详情参考[创建 Multus CR](../../../config/multus-cr.md)
     - 完成创建 IP Pool，详情参考[创建子网及 IP Pool](../../../config/ippool/createpool.md)
