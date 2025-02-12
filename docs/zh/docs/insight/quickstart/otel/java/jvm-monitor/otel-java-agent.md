@@ -1,14 +1,46 @@
 # 使用 OpenTelemetry Java Agent 暴露 JVM 监控指标
 
-在 Opentelemetry Agent v1.20.0 及以上版本中，Opentelemetry Agent 新增了 JMX Metric Insight 模块，如果你的应用已经集成了 Opentelemetry Agent 去采集应用链路，那么你不再需要另外引入其他 Agent 去为我们的应用暴露 JMX 指标。Opentelemetry Agent 也是通过检测应用程序中本地可用的 MBean 公开的指标，对其进行收集并暴露指标。
+在 Opentelemetry Agent v1.20.0 及以上版本中，Opentelemetry Agent 新增了 [JMX Metric Insight](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/instrumentation/jmx-metrics/javaagent/README.md#jmx-metric-insight) 模块，
+它也是通过检测应用程序中本地可用的 MBean 公开的指标，对其进行收集并暴露指标，它还针对常见的 Java Server 或框架内置了一些监控的样例，请参考[预定义的指标](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/instrumentation/jmx-metrics/javaagent/README.md#predefined-metrics)。
+如果你的应用已经通过 Opentelemetry Operator 将 Opentelemetry Agent 自动注入到了你的应用中了，那么你不再需要另外引入其他 Agent 去为我们的应用暴露 JMX 指标。比如以下 Demo:
 
-Opentelemetry Agent 也针对常见的 Java Server 或框架内置了一些监控的样例，请参考[预定义的指标](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/semantic-conventions.md)。
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  labels:
+    app: my-app
+spec:
+  selector:
+    matchLabels:
+      app: my-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: my-app
+      annotations:
+        instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation" # 注入 otel agent 需要
+        # 以下是指标采集需要的 3 个注解
+        insight.opentelemetry.io/metric-scrape: "true" # 是否采集
+        insight.opentelemetry.io/metric-path: "/metrics"      # 采集指标的路径
+        insight.opentelemetry.io/metric-port: "9464"   # 采集指标的端口
+    spec:
+      containers:
+      - name: myapp
+        image: jaegertracing/vertx-create-span:operator-e2e-tests
+        ports:
+          - containerPort: 8080
+            protocol: TCP
+          - containerPort: 9464 # 容器也需要对应暴露 9464 端口，同时 Deployment 对应的 SVC 也需要申明 9464 端口
+            protocol: TCP
+```
 
-使用 OpenTelemetry Java Agent 同样需要考虑如何将 JAR 挂载进容器，除了可以参考上面 JMX Exporter 挂载 JAR 文件的方式外，我们还可以借助 Opentelemetry 提供的 Operator 的能力来实现自动为我们的应用开启 JVM 指标暴露：
+在以上的 Deployment 中，我们在 __template.metadata.annotations__ 下添加了四个注解，它们各种有自己的作用。其中的 __insight.opentelemetry.io/metric-port__
+指定的就是 Opentelemetry Agent 默认的指标暴露端口。如果端口发生了冲突，你可以给你的应用指定一个新的指标端口: __-Dotel.exporter.prometheus.port=8464__，
+在改动后其他位置的的端口值也要一并修改。
 
-如果你的应用已经集成了 Opentelemetry Agent 去采集应用链路，那么你不再需要另外引入其他 Agent 去为我们的应用暴露 JMX 指标。Opentelemetry Agent 通过检测应用程序中本地可用的 MBean 公开的指标，现在可以本地收集并暴露指标接口。
-
-但是，截至目前版本，你仍然需要手动为应用加上相应注解之后，JVM 数据才会被 Insight 采集到，具体注解内容请参考 [已有 JVM 指标的 Java 应用对接可观测性](./legacy-jvm.md)。
 
 ## 为 Java 中间件暴露指标
 
