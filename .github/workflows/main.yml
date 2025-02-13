@@ -102,3 +102,10 @@ jobs:
       - run: python scripts/refresh_cdn_cache.py \
             publickey=$UCLOUD_PUBLICKEY \
             privatekey=$UCLOUD_PRIVATEKEY
+      
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=daocloud-docs --branch=production
