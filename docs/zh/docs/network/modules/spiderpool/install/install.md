@@ -31,14 +31,16 @@
 
     - `namespace`：部署 SpiderPool 组件的命名空间，默认为 `kube-system`。如改为其他 Namespace，界面可能会不可用。
     - `Global Setting` —> `global image Registry`：设置所有镜像的仓库地址，默认已经填写了可用的在线仓库，如果是私有化环境，可修改为私有仓库地址。
-    - `Spiderpool Agent Setting` —> `Spiderpool Agent Container registry`：设置镜像名，可使用默认值。
+    - `Spiderpool Agent Setting` —> `registry`：设置镜像名，可使用默认值。
+    - `Spiderpool Agent Setting` —> `Spiderpool Agent Prometheus Setting` -> `Enable Prometheus`: 开启 Spiderpool Agent 的监控指标。
+    - `Spiderpool Agent Setting` —> `Spiderpool Agent Prometheus Setting` -> `Enable RDMA Metric`: 开启集群中 RDMA 网络监控指标。需要开启以上一项的 Spiderpool-agent Prometheus 开关。
     - `Spiderpool Controller Setting` -> `replicas number`：设置 Spiderpool Controller 的副本数，主要负责 Spiderpool 的控制器逻辑。
 
         > 该 Pod 是 hostnetwork 模式，并且在 Pod 之间设置了反亲和性，所以一个 Node 上最多部署一个 Pod。
         > 如果要部署大于 1 的副本数量，请确保集群的节点数充足，否则将导致部分 Pod 调度失败。
 
     - `Spiderpool Controller Setting` -> `Spiderpool Controller Image` -> `repository`：设置镜像名，可使用默认值。
-
+    - `Spiderpool Controller Setting` -> `AutoInjectRdmaResource`: 开启通过 Webhook 自动为 AI 应用注入 包括 RDMA 网卡和 RDMA 设备资源。
     ![填写参数 3](../../../images/spiderpool-install3.png)
 
     上图中的各项参数说明：
