@@ -39,7 +39,7 @@ hide:
     - 运行时：选择集群的运行时环境，目前支持 containerd 和 docker，[如何选择容器运行时](runtime.md)。
     - Kubernetes 版本：支持 3 个版本跨度，具体取决于被纳管集群所支持的版本。
 
-    ![填写基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create002.png)
+    ![填写基本信息](../images/createcluster214.png)
 
 3. 填写节点配置信息，并点击 __下一步__ 。
 
