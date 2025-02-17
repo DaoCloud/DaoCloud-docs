@@ -3,6 +3,21 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2025-01-31  
+
+### v0.34.0  
+
+- **Added** support for global management to use cert-manager for generating and managing SSL certificates.  
+- **Added** disabled SSH keys and access credentials when a user is deleted or disabled.  
+- **Added** a feature gate for public cloud.  
+- **Added** public cloud user registration.  
+- **Added** phone number information to the public cloud user profile page.  
+- **Added** dual sidebars for public cloud (admin sidebar/user sidebar).  
+- **Fixed** an issue with vGPU allocated quota calculation in workspaces.  
+- **Fixed** an issue where searching for usernames containing `_` in the user list returned no results.  
+- **Fixed** an issue where some audit log resource names were empty.  
+- **Fixed** an issue with abnormal username display in audit logs.
+
 ## 2024-11-30
 
 ### v0.33.0
@@ -10,7 +25,7 @@ so that you can understand the evolution path and feature changes of each versio
 - **Upgraded** Istio to 1.22.3
 - **Added** virtual machine module license
 - **Added** metering and billing support for Muxi GPU in Operational Management
-- **Fixed** issue with resource name display anomaly for Create-User in audit logs
+- **Fixed** an issue with resource name display anomaly for Create-User in audit logs
 
 ## 2024-10-31
 
@@ -19,7 +34,7 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** Sidecar version role permission SDK
 - **Added** cloud-native AI related permission points in Workspace Editor
 - **Added** encryption implementation for username and password in session-limit interface
-- **Fixed** issue where the corresponding field was not cleared after re-setting
+- **Fixed** an issue where the corresponding field was not cleared after re-setting
   user LDAP filter to empty during synchronization
 
 ## 2024-9-30
@@ -420,7 +435,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Fixes
 
-- **Fixed** issue where OpenAPI cycle was a required parameter; it is now optional
+- **Fixed** an issue where OpenAPI cycle was a required parameter; it is now optional
 
 ## 2022-11-30
 
