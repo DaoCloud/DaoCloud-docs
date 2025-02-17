@@ -12,7 +12,7 @@
 
 初始集群需要在 Helm 中安装 virtnest-agent 组件后方可使用虚拟机的相关能力。
 
-1. 点击左侧导航栏上的 __容器管理__ ，然后点击 __虚拟机__ ，若未安装 virtnest-agent 组件，则无法正常使用虚拟机能力。将提醒用户在所需集群内进行安装。
+1. 从左侧导航栏，依次点击 __虚拟机__ -> __虚拟机__ ，若未安装 virtnest-agent 组件，则无法正常使用虚拟机能力。将提醒用户在所需集群内进行安装。
 
     ![安装提示](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/virtnest001.png)
 

@@ -13,26 +13,23 @@
 - 在指定集群[安装 virtnest-agent](../install/index.md)，操作系统内核版本需要在 3.15 以上。
 - 创建一个[命名空间](../../kpanda/user-guide/namespaces/createns.md)和[用户](../../ghippo/user-guide/access-control/user.md)。
 - 提前准备好镜像，平台内置三种镜像 (如下文所示)，如需制作镜像，可参考开源项目[制作镜像](https://github.com/Tedezed/kubevirt-images-generator/tree/master)。
-- 进行网络配置时，若选择使用 Passt 网络模式，则需要升级至 0.4.0 及以上版本。
 
 ## 镜像创建
 
 参考以下步骤，使用镜像创建一个虚拟机。
 
-1. 点击左侧导航栏上的 __容器管理__ ，然后点击 __虚拟机__ ，进入 __虚拟机__ 页面。
+1. 从左侧导航栏，依次点击 __虚拟机__ -> __虚拟机__ ，进入 __虚拟机__ 页面。
 
     ![虚拟机](../images/createvm01.png)
 
-2. 在虚拟机列表页面，点击 __创建虚拟机__ -> 选择 __通过镜像创建__ 。
+1. 点击 __创建虚拟机__ -> 选择 __通过镜像创建__
 
-    ![镜像创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm02.png)
-
-3. 进入镜像创建页面，依次填写基本信息、镜像配置、存储与网络、登录设置后，在页面右下角点击 __确定__ 完成创建。
+1. 依次填写基本信息、镜像配置、存储与网络、登录设置后，在页面右下角点击 __确定__ 完成创建。
 
     系统将自动返回虚拟机列表。点击列表右侧的 __┇__ ，可以对虚拟机执行关机/开启、重启、克隆、更新、创建快照、控制台访问（VNC）、删除等操作。
     克隆和快照能力依赖于存储池的选择。
 
-    ![虚拟机操作](../images/createvm03.png)
+    ![虚拟机操作](../images/console01.png)
 
 ### 基本信息
 
@@ -50,40 +47,36 @@
 
 ### 镜像配置
 
-根据下表填写镜像相关信息后，点击 __下一步__ 
+根据下表填写镜像相关信息后，点击 __下一步__
 
-![使用镜像仓库](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm05.png)
+![使用镜像仓库](../images/createvm05.png)
 
-1. 镜像来源：支持三种类型的来源。
+- 镜像来源：支持三种类型的来源。
 
     - 镜像仓库类型：镜像存储在容器镜像仓库中，支持从镜像仓库中按需选择镜像；
     - HTTP 类型：镜像存储于 HTTP 协议的文件服务器中，支持 HTTPS://和 HTTP://前缀；
     - 对象存储（S3）：支持通过对象存储协议 (S3) 获取的虚拟机镜像，若是无需认证的对象存储文件，请使用 HTTP 来源。
 
-2. 以下是平台内置的镜像信息，包括操作系统和版本、镜像地址。同时也支持自定义虚拟机镜像。
+- 以下是平台内置的镜像信息，包括操作系统和版本、镜像地址。同时也支持自定义虚拟机镜像。
 
-    | 操作系统 |   对应版本   | 镜像地址                                                             |
-    | :------: | :----------: | -------------------------------------------------------------------- |
-    |  CentOS  |  CentOS 7.9  | release-ci.daocloud.io/virtnest/system-images/centos-7.9-x86_64:v1   |
-    |  Ubuntu  | Ubuntu 22.04 | release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1 |
-    |  Debian  |  Debian 12   | release-ci.daocloud.io/virtnest/system-images/debian-12-x86_64:v1    |
+ | 操作系统 |   对应版本 | 镜像地址 |
+ | :------: | :----------: | -------------------------------------------------------------------- |
+ |  CentOS |  CentOS 7.9 | release-ci.daocloud.io/virtnest/system-images/centos-7.9-x86_64:v1 |
+ |  Ubuntu | Ubuntu 22.04 | release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1 |
+ |  Debian |  Debian 12 | release-ci.daocloud.io/virtnest/system-images/debian-12-x86_64:v1 |
 
-3. 镜像密钥：仅支持默认（Opaque）类型密钥，具体格式请参考[创建密钥](../vm/create-secret.md)。
+- 镜像密钥：仅支持默认（Opaque）类型密钥，具体格式请参考[创建密钥](../vm/create-secret.md)。
 
     平台内置镜像存储在点火集群中，而点火集群的镜像仓库未加密，因此当选择内置镜像时，无需选择密钥。
 
-!!! note
+    !!! note
 
-    CPU 和内存的热加载配置要求：virtnest 的版本不低于 v0.10.0，并且 virtnest-agent 版本不低于 v0.7.0；支持实时迁移（确保 PVC 访问模式为 ReadWriteMany）；带有 GPU 卡的虚拟机暂时无法实现 CPU 和内存的热加载能力。
+        CPU 和内存的热加载配置要求：virtnest 的版本不低于 v0.10.0，并且 virtnest-agent 版本不低于 v0.7.0；支持实时迁移（确保 PVC 访问模式为 ReadWriteMany）；带有 GPU 卡的虚拟机暂时无法实现 CPU 和内存的热加载能力。
 
-1. 资源配置：CPU 建议使用整数，若填写小数则会向上取整。支持 CPU、内存的热加载。
+- 资源配置：CPU 建议使用整数，若填写小数则会向上取整。支持 CPU、内存的热加载。
 
-2. GPU 配置：启用 GPU 功能需要需要满足前提条件，具体可参考 [虚拟机配置 GPU（Nvidia)](../gpu/vm-gpu.md)。
+- GPU 配置：启用 GPU 功能需要需要满足前提条件，具体可参考 [虚拟机配置 GPU（Nvidia)](../gpu/vm-gpu.md)。
    虚拟机支持 Nvidia—GPU 和 Nvidia—vGPU 两种类型，选择所需类型后，需要选择对应的 GPU 型号和卡的数量。
-   
-   ![配置gpu](../images/gpu01.png)
-   
-   ![配置vgpu](../images/vgpu01.png)
 
 ### 存储与网络配置
 
@@ -127,12 +120,12 @@
 
     - 网络配置可以根据表格信息按需组合。
     
-        | 网络模式          | CNI     | 是否安装 Spiderpool | 网卡模式    | 固定 IP         | 实时迁移     |
-        | ----------------- | ------- | ------------------- | ------------ | --------------- | ------------ |
-        | Masquerade（NAT） | Calico  | ❌                 | 单网卡       | ❌               | ✅            |
-        |                   | Cilium  | ❌                 | 单网卡       | ❌               | ✅            |
-        |                   | Flannel | ❌                 | 单网卡       | ❌               | ✅            |
-        | Bridge（桥接）    | OVS     | ✅                 | 多网卡       | ✅               | ✅           |
+        | 网络模式 | CNI | 是否安装 Spiderpool | 网卡模式 | 固定 IP | 实时迁移 |
+        | ------- | -- | ------------------ | ------- | ------ | ------- |
+        | Masquerade（NAT） | Calico | ❌ | 单网卡 | ❌ | ✅ |
+        | | Cilium | ❌ | 单网卡 | ❌ | ✅ |
+        | | Flannel | ❌ | 单网卡 | ❌ | ✅ |
+        | Bridge（桥接） | OVS | ✅ | 多网卡 | ✅ | ✅ |
         
         ![网络配置](../images/createvm-net01.png)
     
@@ -145,17 +138,15 @@
       
     - 添加网卡
     
-        - Passt（直通）/Bridge（桥接）模式下支持手动添加网卡。点击 __添加网卡__ ，进行网卡 IP 池的配置。选择和网络模式匹配的 Multus CR，若没有则需要自行创建。
+        - Bridge（桥接）模式下支持手动添加网卡。点击 __添加网卡__ ，进行网卡 IP 池的配置。选择和网络模式匹配的 Multus CR，若没有则需要自行创建。
         - 若打开 __使用默认 IP 池__ 开关，则使用 multus CR 配置中的默认 IP 池。若关闭开关，则手动选择 IP 池。
-        
-        ![添加网卡](../images/createvm-net03.png)
 
 ### 登录设置
 
 - 用户名/密码：可以通过用户名和密码登录至虚拟机。
 - SSH：选择 SSH 登录方式时可为虚拟机绑定 SSH 密钥，用于日后登录虚拟机。
 
-![登录设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm07.png)
+![登录设置](../images/createvm07.png)
 
 ## YAML 创建
 
@@ -228,3 +219,8 @@
                   I2Nsb3VkLWNvbmZpZwpzc2hfcHdhdXRoOiB0cnVlCmRpc2FibGVfcm9vdDogZmFsc2UKY2hwYXNzd2Q6IHsibGlzdCI6ICJyb290OjEyMzQ1NiIsIGV4cGlyZTogRmFsc2V9CgoKcnVuY21kOgogIC0gc2VkIC1pICIvI1w/UGVybWl0Um9vdExvZ2luL3MvXi4qJC9QZXJtaXRSb290TG9naW4geWVzL2ciIC9ldGMvc3NoL3NzaGRfY29uZmlnCiAgLSBzeXN0ZW1jdGwgcmVzdGFydCBzc2guc2VydmljZQ==
               name: cloudinitdisk
     ```
+
+## 通过模板创建
+
+自定义模板是由虚拟机配置转化而来的模板。
+参见[通过模板创建虚拟机](../template/index.md)。
