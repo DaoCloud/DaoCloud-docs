@@ -10,7 +10,7 @@ hide:
 其中，接入集群只能从第三方厂商接入，参见[接入集群](./integrate-cluster.md)。
 
 本页介绍如何创建工作集群，默认情况下，新建工作集群的工作节点 OS 类型和 CPU 架构需要与全局服务集群保持一致。
-如需使用区别于全局服务集群 OS 或架构的节点创建集群，参阅[在 centos 管理平台上创建 ubuntu 工作集群](../../best-practice/create-ubuntu-on-centos-platform.md)进行创建。
+如需使用区别于全局服务集群 OS 或架构的节点创建集群，参阅[在 CentOS 管理平台上创建 Ubuntu 工作集群](../../best-practice/create-ubuntu-on-centos-platform.md)进行创建。
 
 推荐使用 [DCE 5.0 支持的操作系统](../../../install/commercial/deploy-requirements.md)来创建集群。
 如您本地节点不在上述支持范围，可参考[在非主流操作系统上创建集群](../../best-practice/use-otherlinux-create-custer.md)进行创建。
@@ -21,7 +21,7 @@ hide:
 
 - 根据业务需求准备一定数量的节点，且节点 OS 类型和 CPU 架构一致。
 - 推荐 Kubernetes 版本 1.29.5，具体版本范围，参阅 [DCE 5.0 集群版本支持体系](./cluster-version.md)，
-  目前最新版 DCE5.0 支持自建工作集群版本范围在 `v1.28.0-v1.30.2`。如需创建低版本的集群，请参考[集群版本支持范围](./cluster-version.md)、[部署与升级 Kubean 向下兼容版本](../../best-practice/kubean-low-version.md)。
+  目前最新版 DCE 5.0 支持自建工作集群版本范围在 `v1.28.0-v1.30.2`。如需创建低版本的集群，请参考[集群版本支持范围](./cluster-version.md)、[部署与升级 Kubean 向下兼容版本](../../best-practice/kubean-low-version.md)。
 - 目标主机需要允许 IPv4 转发。如果 Pod 和 Service 使用的是 IPv6，则目标服务器需要允许 IPv6 转发。
 - DCE 暂不提供对防火墙的管理功能，您需要预先自行定义目标主机防火墙规则。为了避免创建集群的过程中出现问题，建议禁用目标主机的防火墙。
 - 参阅[节点可用性检查](../nodes/node-check.md)。
@@ -36,7 +36,7 @@ hide:
 
     - 集群名称：名称只包含小写字母、数字和连字符（"-"），必须以小写字母或者数字开头和结尾，最长 63 个字符。
     - 被纳管：选择由哪个集群来管理此集群，例如在集群生命周期中创建、升级、节点扩缩容、删除集群等。
-    - 运行时：选择集群的运行时环境，目前支持 containerd 和 docker，[如何选择容器运行时](runtime.md)。
+    - 运行时：选择集群的运行时环境，目前支持 containerd 和 Docker，[如何选择容器运行时](runtime.md)。
     - Kubernetes 版本：支持 3 个版本跨度，具体取决于被纳管集群所支持的版本。
 
     ![填写基本信息](../images/createcluster214.png)
@@ -52,7 +52,6 @@ hide:
         > 如果使用公私钥方式访问节点，需要预先配置节点的 SSH 密钥。参阅[使用 SSH 密钥认证节点](../nodes/node-authentication.md)。
 
     - 使用统一的密码：开启后集群中所有节点的访问密码都相同，需要在下方输入访问所有节点的统一密码。如果关闭，则可以为每个节点设置单独的用户名和密码。
-
     - 节点信息：填写节点名称和 IP 地址。
     - 自定义参数：设置变量控制 Ansible 与远程主机交互。可设置变量参考[连接到主机：行为清单参数](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters)
     - NTP 时间同步：开启后会自动同步各个节点上的时间，需要提供 NTP 服务器地址。

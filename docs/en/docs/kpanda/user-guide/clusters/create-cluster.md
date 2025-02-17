@@ -19,10 +19,11 @@ It is recommended to use the [supported operating systems in DCE 5.0](../../../i
 Certain prerequisites must be met before creating a cluster:
 
 - Prepare enough nodes to be joined into the cluster.
-- It is recommended to use Kubernetes version 1.25.7. For the specific version range, refer to the
-  [DCE 5.0 Cluster Version Support System](./cluster-version.md). Currently, the supported version
-  range for created worker clusters is `v1.26.0-v1.28`. If you need to create a cluster with a
-  lower version, refer to the [Supporterd Cluster Versions](./cluster-version.md).
+- It is recommended to use Kubernetes v1.29.5. For the specific version range, refer to the
+  [DCE 5.0 Supported Clusters](./cluster-version.md). Currently, the supported version
+  range for created worker clusters is `v1.28.0-v1.30.2`. If you need to create a cluster with a
+  lower version, refer to the [Supporterd Cluster Versions](./cluster-version.md) and
+  [Deploy and Upgrade from a Compatiable Kubean Version](../../best-practice/kubean-low-version.md).
 - The target host must allow IPv4 forwarding. If using IPv6 in Pods and Services,
   the target server needs to allow IPv6 forwarding.
 - DCE 5.0 does not provide firewall management. You need to pre-define the firewall rules of
@@ -56,6 +57,9 @@ Certain prerequisites must be met before creating a cluster:
         > If using public/private key authentication, SSH keys for the nodes need to be configured in advance. Refer to [Using SSH Key Authentication for Nodes](../nodes/node-authentication.md).
 
     - Same Password: When enabled, all nodes in the cluster will have the same access password. Enter the unified password for accessing all nodes in the field below. If disabled, you can set separate usernames and passwords for each node.
+    - Custom Parameters: Set variables to control Ansible's interaction with remote hosts.
+      For configurable variables, refer to
+      [Connecting to Hosts: Behavioral Inventory Parameters](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters).
     - Node Information: Set note names and IPs.
     - NTP Time Synchronization: When enabled, time will be automatically synchronized across all nodes. Provide the NTP server address.
 
@@ -82,6 +86,8 @@ Certain prerequisites must be met before creating a cluster:
     - __disable_firewalld&ufw__ : Disable the firewall to prevent the node from being inaccessible during installation.
     - __Insecure_registries__ : Set the address of you private container registry. If you use a private container registry, fill in its address can bypass certificate authentication of the container engine and obtain the image.
     - __yum_repos__ : Fill in the Yum source registry address.
+      In an offline environment, the default address options are for reference only.
+      Please fill them in according to your actual situation.
 
 !!! success
 
@@ -94,3 +100,9 @@ Certain prerequisites must be met before creating a cluster:
     - hen the cluster is in an unknown state, it means that the current cluster has been disconnected. 
     - The data displayed by the system is the cached data before the disconnection, which does not represent real data.
     - Any operations performed in the disconnected state will not take effect. Please check the cluster network connectivity or Host Status.
+
+## References  
+
+- [Create an Ubuntu Work Cluster on a CentOS Management Platform](../../best-practice/create-ubuntu-on-centos-platform.md)  
+- [Create a RedHat 9.2 Work Cluster on a CentOS Management Platform](../../best-practice/create-redhat9.2-on-centos-platform.md)  
+- [Create a Cluster on Non-Mainstream Operating Systems](../../best-practice/use-otherlinux-create-custer.md)
