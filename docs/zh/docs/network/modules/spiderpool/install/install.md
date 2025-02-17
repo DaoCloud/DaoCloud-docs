@@ -41,6 +41,7 @@
 
     - `Spiderpool Controller Setting` -> `Spiderpool Controller Image` -> `repository`：设置镜像名，可使用默认值。
     - `Spiderpool Controller Setting` -> `AutoInjectRdmaResource`: 开启通过 Webhook 自动为 AI 应用注入 包括 RDMA 网卡和 RDMA 设备资源。
+  
     ![填写参数 3](../../../images/spiderpool-install3.png)
 
     上图中的各项参数说明：
