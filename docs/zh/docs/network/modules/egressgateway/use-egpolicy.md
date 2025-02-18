@@ -1,4 +1,4 @@
-# 使用 Egress Policy
+# 使用 Egress 网关策略
 
 ## 目前 EgressGateway 支持如下 CNI
 
