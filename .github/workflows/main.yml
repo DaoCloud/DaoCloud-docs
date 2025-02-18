@@ -91,17 +91,17 @@ jobs:
       - run: mkdocs build -f docs/zh/mkdocs.yml -d ../../public/
       - run: mkdocs build -f docs/en/mkdocs.yml -d ../../public/en/
 
-      # upload to ucloud bucket
-      - run: cd public && pwd && python ../scripts/upload-ucloud.py \
-                public_key=$UCLOUD_PUBLICKEY \
-                private_key=$UCLOUD_PRIVATEKEY \
-                region=$UCLOUD_REGION \
-                bucket=$UCLOUD_BUCKET
+      # # upload to ucloud bucket
+      # - run: cd public && pwd && python ../scripts/upload-ucloud.py \
+      #           public_key=$UCLOUD_PUBLICKEY \
+      #           private_key=$UCLOUD_PRIVATEKEY \
+      #           region=$UCLOUD_REGION \
+      #           bucket=$UCLOUD_BUCKET
 
-      # refresh docs site cdn cache
-      - run: python scripts/refresh_cdn_cache.py \
-            publickey=$UCLOUD_PUBLICKEY \
-            privatekey=$UCLOUD_PRIVATEKEY
+      # # refresh docs site cdn cache
+      # - run: python scripts/refresh_cdn_cache.py \
+      #       publickey=$UCLOUD_PUBLICKEY \
+      #       privatekey=$UCLOUD_PRIVATEKEY
       
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
