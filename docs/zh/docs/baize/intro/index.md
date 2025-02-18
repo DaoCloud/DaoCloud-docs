@@ -21,7 +21,7 @@ AI Lab 提供软硬一体的 AI 智算体验，整合异构算力，优化 GPU �
 
 - 开发环境管理
 
-    满足 MLOps 和 LLMOps 工程师对开发环境的需求，提供多种开发环境，包括 JupyterLab、VSCode(进行中) 等，支持自定义开发环境，一键挂载各种 GPU、数据集等资源。
+    满足 MLOps 和 LLMOps 工程师对开发环境的需求，提供多种开发环境，包括 JupyterLab、CodeServer，支持自定义开发环境，一键挂载各种 GPU、数据集等资源。
 
 - 任务管理
 
