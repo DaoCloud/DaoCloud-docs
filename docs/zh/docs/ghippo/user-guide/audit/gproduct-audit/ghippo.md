@@ -20,18 +20,21 @@ hide:
 | 创建用户密钥： CreateAccessKeys-User | User |     |
 | 更新用户密钥： UpdateAccessKeys-User | User |     |
 | 删除用户密钥：DeleteAccessKeys-User | User |     |
+| 角色关联用户：UpdateRoles-User | User |     |
+| 登录：Login-User | User |     |
+| 登出：Logout-User | User |     |
 | 创建用户组：Create-Group | Group |     |
 | 删除用户组：Delete-Group | Group |     |
 | 更新用户组：Update-Group | Group |     |
 | 添加用户至用户组：AddUserTo-Group | Group |  |
 | 从用户组删除用户： RemoveUserFrom-Group | Group |     |
 | 更新用户组角色： UpdateRoles-Group | Group |     |
-| 角色关联用户：UpdateRoles-User | User |     |
+| 创建自定义角色： Create-CustomRole | Role |     |
+| 更新自定义角色： Update-CustomRole | Role |     |
+| 删除自定义角色： Delete-CustomRole | Role |     |
 | 创建Ldap ：Create-LADP | LADP |     |
 | 更新Ldap：Update-LADP | LADP |     |
 | 删除Ldap ： Delete-LADP | LADP | OIDC没有走APIserver审计不到 |
-| 登录：Login-User | User |     |
-| 登出：Logout-User | User |     |
 | 设置密码策略：UpdatePassword-SecurityPolicy | SecurityPolicy |     |
 | 设置会话超时：UpdateSessionTimeout-SecurityPolicy | SecurityPolicy |     |
 | 设置账号锁定：UpdateAccountLockout-SecurityPolicy | SecurityPolicy |     |

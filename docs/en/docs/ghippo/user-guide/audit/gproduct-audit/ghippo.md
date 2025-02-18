@@ -22,18 +22,20 @@ hide:
 | CreateAccessKeys-User | User | |
 | UpdateAccessKeys-User | User | |
 | DeleteAccessKeys-User | User | |
+| Login-User | User | |
+| Logout-User | User | |
 | Create-Group | Group | |
 | Delete-Group | Group | |
 | Update-Group | Group | |
 | AddUserTo-Group | Group | |
 | RemoveUserFrom-Group | Group | |
 | UpdateRoles-Group | Group | |
-| UpdateRoles-User | User | |
+| Create-CustomRole | Role | |
+| Update-CustomRole | Role | |
+| Delete-CustomRole | Role | |
 | Create-LADP | LADP | |
 | Update-LADP | LADP | |
 | Delete-LADP | LADP | Unable to audit through API server for OIDC |
-| Login-User | User | |
-| Logout-User | User | |
 | UpdatePassword-SecurityPolicy | SecurityPolicy | |
 | UpdateSessionTimeout-SecurityPolicy | SecurityPolicy | |
 | UpdateAccountLockout-SecurityPolicy | SecurityPolicy | |
