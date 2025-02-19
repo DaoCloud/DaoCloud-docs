@@ -1425,6 +1425,43 @@ nav:
           - 云边协同: videos/kant.md
       - 管理:
           - 全局管理: videos/ghippo.md
+  - 下载中心:
+      - DaoCloud Enterprise 5.0:
+          - 导览页: download/index.md
+          - 下载 DCE 5.0 社区版: download/free/dce5-installer-history.md
+          - 下载 DCE 5.0 商业版: download/business/dce5-installer-history.md
+          - 下载 Addon 离线包: download/addon/history.md
+          - 下载子模块:
+              - 应用工作台: download/modules/amamba.md
+              - 容器:
+                  - 容器管理: download/modules/kpanda.md
+                  - 集群巡检: download/modules/kcollie.md
+                  - 应用备份: download/modules/kcoral.md
+                  - 安全管理: download/modules/dowl.md
+                  - 多云编排: download/modules/kairship.md
+                  - 镜像仓库: download/modules/kangaroo.md
+                  - 网络模块: download/modules/spidernet.md
+                  - 存储模块: download/modules/hwameistor.md
+                  - 虚拟机: download/modules/virtnest.md
+              - 微服务:
+                  - 可观测性: download/modules/insight.md
+                  - 仪表盘: download/modules/ipavo.md
+                  - 微服务引擎: download/modules/skoala.md
+                  - 服务网格: download/modules/mspider.md
+              - 中间件:
+                  - Elasticsearch: download/modules/middleware/elasticsearch.md
+                  - Kafka: download/modules/middleware/kafka.md
+                  - MinIO: download/modules/middleware/minio.md
+                  - MongoDB: download/modules/middleware/mongodb.md
+                  - MySQL: download/modules/middleware/mysql.md
+                  - PostgreSQL: download/modules/middleware/postgresql.md
+                  - RabbitMQ: download/modules/middleware/rabbitmq.md
+                  - Redis: download/modules/middleware/redis.md
+                  - RocketMQ: download/modules/middleware/rocketmq.md
+              - 云边协同: download/modules/kant.md
+              - 全局&运营管理:
+                  - 全局管理: download/modules/ghippo.md
+                  - 运营管理: download/modules/gmagpie.md
   - 博客:
       - 博文索引: blogs/index.md
       - 2025:
