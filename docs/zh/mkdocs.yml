@@ -94,13 +94,13 @@ plugins:
       lang:
         - zh
         - en
-  - git-revision-date-localized:
-      enable_creation_date: false
+  # - git-revision-date-localized:
+  #     enable_creation_date: false
 
-  - git-committers:
-      repository: DaoCloud/DaoCloud-docs
-      branch: main
-      enabled: true
+  # - git-committers:
+  #     repository: DaoCloud/DaoCloud-docs
+  #     branch: main
+  #     enabled: true
 
   # - git-authors:
   #     enabled: true
