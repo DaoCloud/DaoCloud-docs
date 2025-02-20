@@ -162,6 +162,7 @@ nav:
                       - 自定义步骤开发指南: amamba/customize-develop.md
                   - 更多技巧:
                       - 自定义Jenkins Agent镜像: amamba/user-guide/pipeline/jenkins-agent.md
+                      - 迁移Jenkins Agent镜像: amamba/user-guide/pipeline/migrate-jenkins-agent-images.md
                       - Jenkins自定义工具链: amamba/quickstart/jenkins-custom.md
                       - 在指定的节点上运行: amamba/quickstart/pipeline-on-node.md                    
                       - 构建多架构镜像: amamba/user-guide/pipeline/podman.md
