@@ -128,6 +128,7 @@ plugins:
         "dce/what-is-dce.md": "dce/index.md"
         "zh/dce/index.md": "dce/index.md"
         "zh/install/install-dce.md": "install/community/k8s/online.md"
+        "dce/what.md": "dce/index.md"
 
         # module quick links
         "kairship.md": "kairship/intro/index.md"
