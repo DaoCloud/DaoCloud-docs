@@ -49,7 +49,7 @@ kubectl apply -f xxx.yaml
 
 ### 一级菜单
 
-作为产品插入到某个导航栏分类下
+使用以下 YAML，作为产品插入到某个导航栏分类下：
 
 ```yaml
 apiVersion: ghippo.io/v1alpha1

@@ -22,11 +22,11 @@
 
     最佳实践：工作空间通过“授权”功能可以给部门成员授予不同角色权限，而工作空间能够把人与角色的授权关系一次性应用到工作空间的所有资源上。因此运维人员只需将资源绑定到资源组，将部门中的不同角色加入不同的资源组，就能确保资源的权限被正确分配。
 
-    | 角色            | 集群 Cluster | 跨集群 Cluster-Namespace | 
-    | --------------- | ------------ | ------------------------ | 
-    | Workspace Admin | Cluster Admin    | NS Admin               | 
-    | Workspace Edit  | &cross;      | NS Editor                  |
-    | Workspace View  | &cross;      | NS Viewer                  |
+     | 角色 | 集群 Cluster | 跨集群 Cluster-Namespace |
+     | --- | ------------ | ----------------------- |
+     | Workspace Admin | Cluster Admin | NS Admin |
+     | Workspace Edit | &cross; | NS Editor |
+     | Workspace View | &cross; | NS Viewer |
 
 3. 共享资源：共享资源功能主要针对集群资源。
 
@@ -40,10 +40,10 @@
     那么部门 A 的管理员（工作空间 A Admin）能够在应用工作台创建并使用命名空间，其中命名空间额度总和不能超过 50 核，部门 B 的管理员（工作空间 B Admin）能够在应用工作台创建并使用命名空间，其中命名空间额度总和不能超过 100 核。
     部门 A 的管理员和部门 B 管理员创建的命名空间会被自动绑定在该部门，部门中的其他成员将对应的拥有命名空间的 Namesapce Admin、Namesapce Edit、Namesapce View 角色（这里部门指的是工作空间，工作空间还可以映射为组织、供应商等其他概念）。整个过程如下表：
 
-    | 部门         | 角色                                                    | 共享集群 Cluster | 资源配额   |
-    | ------------ | ------------------------------------------------------- | ------------ | ---------- |
-    | 部门管理员 A | Workspace Admin                                         | 集群 01    | CPU 50 核  |
-    | 部门管理员 B | Workspace Admin                                         | 集群 01   | CPU 100 核 |
+    | 部门 | 角色 | 共享集群 Cluster | 资源配额 |
+    | --- | ---- | ------------ | ---------- |
+    | 部门管理员 A | Workspace Admin | 集群 01 | CPU 50 核 |
+    | 部门管理员 B | Workspace Admin | 集群 01 | CPU 100 核 |
 
 ## 工作空间对 DCE 各模块的作用
 
