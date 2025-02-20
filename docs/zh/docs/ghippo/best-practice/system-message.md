@@ -1,10 +1,16 @@
+---
+hide:
+  - toc
+---
+
 # 系统消息
 
 系统消息用于通知所有用户，类似于系统公告，会在特定时间显示在 DCE 5.0 UI 的顶部栏。
 
 ## 配置系统消息
 
-通过在[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2) apply 系统消息的 YAML 即可创建一条系统消息，消息的显示时间由 YAML 中的时间字段决定。
+通过在[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)
+apply 系统消息的 YAML 即可创建一条系统消息，消息的显示时间由 YAML 中的时间字段决定。
 系统消息仅在 start、end 字段配置的时间范围之内才会显示。
 
 1. 在集群列表中，点击全局服务集群的名称，进入全局服务集群。

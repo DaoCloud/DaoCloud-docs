@@ -24,21 +24,21 @@ mvn -f ../pom.xml clean install -DskipTestsuite -DskipExamples -DskipTests
 
 ![从 IDE 运行](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/idp01.png)
 
-### __添加 service 代码__ 
+### 添加 service 代码
 
 #### 如果可从 keycloak 继承部分功能
 
 在目录 __services/src/main/java/org/keycloak/broker__ 下添加文件：
 
-文件名需要是 __xxxProvider.java__ 和 __xxxProviderFactory.java__ 
+文件名需要是 __xxxProvider.java__ 和 __xxxProviderFactory.java__
 
 ![java](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/idp02.png)
 
-**[xxxProviderFactory.java](./examples/xxxProviderFactory.java) 示例：**
+查看 [xxxProviderFactory.java](./examples/xxxProviderFactory.java) 示例。
 
 留意 __PROVIDER_ID = "oauth";__ 这个变量，后面定义 html 会用到。
 
-**[xxxProvider.java](./examples/xxxProvider.java) 示例**
+查看 [xxxProvider.java](./examples/xxxProvider.java) 示例。
 
 #### 如果不能从 keycloak 继承功能
 
