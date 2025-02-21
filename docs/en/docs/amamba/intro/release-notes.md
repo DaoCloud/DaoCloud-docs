@@ -8,6 +8,21 @@ date: 2024-10-10
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version.
 
+## 2024-12-31  
+
+### v0.34.0  
+
+- **Added** support for selecting a StorageClass when configuring pipeline cache in the admin view.  
+- **Added** support for directly updating pipeline cache.  
+- **Improved** helm application creation style to sync with container management.  
+
+## 2024-11-30  
+
+### v0.33.0  
+
+- **Added** support for viewing Kubernetes resource details in GitOps.  
+- **Added** automatic disabling of Agent cache when pipeline cache is turned off.
+
 ## 2024-10-30
 
 ### v0.32.0
