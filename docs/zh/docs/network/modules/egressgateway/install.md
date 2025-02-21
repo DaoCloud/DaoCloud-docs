@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 安装 EgressGateway
 
 本章节主要介绍如何安装 EgressGateway 组件。

@@ -52,7 +52,7 @@ default    egressgateway-controller-6cd86df57-xm2d4   1/1     Running   0    86m
 
 我们新创建一台机器，作为 VPC 网络东西向的服务器，在这里我启动的机器 IP 为 `172.17.81.29`。
 
-![new-vm](./new-vm.png)
+![new-vm](../../../images/new-vm.png)
 
 运行下面命令启动测试服务器，他的功能是 `curl ip:8080`，它会返回客户端的 IP 地址，可以供我们检查 Egress IP 运作是否正常。
 
