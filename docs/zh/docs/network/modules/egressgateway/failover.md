@@ -66,17 +66,21 @@ status:
 
 EgressGateway Agent 会通过 `feature.tunnelUpdatePeriod` 间隔定时更新 `status.lastHeartbeatTime` 字段，EgressGateway Controller 则会通过 `feature.tunnelMonitorPeriod` 定时列出所有 EgressTunnel，分别检查 `status.lastHeartbeatTime` 与 `feature.eipEvictionTimeout` 的和是否超过当前时间。 
 
-![egress-check](./egress-check.svg)
+![egress-check](../../images/egress-check.svg)
 
 Datapath Failover 问题排查步骤：
 
 1. 首先，查看 EgressGateway 应用的安装配置文件 `values.yaml`，确认与 Datapath Failover 相关的配置是否设置合理，特别是确保 `eipEvictionTimeout` 的值大于 `tunnelMonitorPeriod` 加上 `tunnelUpdatePeriod` 的总和；
 2. 执行 `kubectl get egt -w` 命令，检查 `EgressTunnel` 的状态。检查选中的 Node 是否处于 `HeartbeatTimeout` 状态，并且是否存在其他处于 `Ready` 状态的 `EgressTunnel`；
+
     ```shell
     kubectl get egt -w
+    ```
+    ```
     NAME    TUNNELMAC           TUNNELIPV4        TUNNELIPV6   MARK         PHASE
     node1   66:50:85:cb:b2:bf   192.200.229.11    fd01::c486   0x26d9b723   Ready
     node2   66:d4:65:85:e2:c7   192.200.128.75    fd01::6676   0x26abf380   HeartbeatTimeout
     node3   66:c4:da:a7:58:25   192.200.101.153   fd01::edb5   0x26c4ce84   Ready
     ```
+
 3. 如果想查询是否出现过 HeartbeatTimeout 导致的 IP 切换，可以在 controller 容器检索 `update tunnel status to HeartbeatTimeout` 相关的日志。
