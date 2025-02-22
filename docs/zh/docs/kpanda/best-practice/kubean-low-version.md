@@ -66,10 +66,10 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
 
 ### 制作低版本 K8s 离线资源
 
-1. 准备 manifest.yaml 文件。
+1. 准备 manifest.yml 文件。
 
     ```bash
-    cat > "manifest.yaml" <<EOF
+    cat > "manifest.yml" <<EOF
     image_arch:
       - "amd64" ## "arm64"
     kube_version: ## 根据实际场景填写集群版本
@@ -85,7 +85,7 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
     mkdir data
     # 制作离线包，
     AIRGAP_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/airgap-patch:2.21-d6f688f" # (1)!
-    podman run --rm -v $(pwd)/manifest.yaml:/manifest.yaml -v $(pwd)/data:/data -e ZONE=CN -e MODE=FULL ${AIRGAP_IMG_ADDR}
+    podman run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data -e ZONE=CN -e MODE=FULL ${AIRGAP_IMG_ADDR}
     ```
 
     1. 镜像 spray-job 这里可以采用加速器地址，镜像地址根据选择制品版本来决定
