@@ -521,15 +521,15 @@ nav:
                       - 在 AWS 环境运行: network/modules/spiderpool/public-cloud/awscloud.md
               - 集成 EgressGateway:
                   - 介绍: network/modules/egressgateway/index.md
-                  - 在 DCE5.0 上安装运行:
+                  - 在 DCE 5.0 上安装运行:
                       - 安装: network/modules/egressgateway/install.md
                       - 创建网关实例: network/modules/egressgateway/create_eg.md
                       - 创建网关策略: network/modules/egressgateway/create-egpolicy.md
                       - 使用网关策略: network/modules/egressgateway/use-egpolicy.md
-                  - 从 AWS Marketplace 安装 EgressGateway: network/modules/egressgateway/marketplace-install.md
-                      #- 安装: network/modules/egressgateway/installation-on-aws/marketplace-install.md
-                      #- 升级: network/modules/egressgateway/installation-on-aws/upgrade.k8s.md
-                      #- 卸载: network/modules/egressgateway/installation-on-aws/uninstall.k8s.md
+                  - 从 AWS 安装 EgressGateway:
+                      - 安装: network/modules/egressgateway/aws/marketplace-install.md
+                      - 升级: network/modules/egressgateway/aws/upgrade-k8s.md
+                      - 卸载: network/modules/egressgateway/aws/uninstall-k8s.md
                   - 租户级默认 EgressGateway: network/modules/egressgateway/namespace-eg.md
                   - 集群级默认 EgressGateway: network/modules/egressgateway/cluster-eg.md
                   - 出口网关节点间迁移 Egress IP: network/modules/egressgateway/move-ip.md

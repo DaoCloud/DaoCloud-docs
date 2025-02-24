@@ -219,7 +219,7 @@ egressgateway-controller-5754f6658-7pn4z   1/1     Running   0          9h
       in real-time. Note: EgressGateway nodes support high availability. When multiple EgressGateway nodes
       exist, all EgressPolicies will be evenly distributed to different EgressGateway nodes for implementation.
 
-4. Check the status of EgressEndpointSlices.
+1. Check the status of EgressEndpointSlices.
 
    For each EgressPolicy object, there is a corresponding EgressEndpointSlices object that stores
    the collection of IP addresses for the Pods selected by the EgressPolicy. If an application

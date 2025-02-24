@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 卸载 EgressGateway
 
 为了确保在卸载 EgressGateway 之前不影响正在使用的业务应用，建议执行以下步骤：

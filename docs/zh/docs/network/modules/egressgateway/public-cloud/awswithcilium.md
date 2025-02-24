@@ -1,7 +1,5 @@
 # 在 AWS Cilium CNI 下使用 EgressGateway
 
-## 介绍
-
 本文介绍了在 AWS Kubernetes 的 Cilium CNI 网络环境下，运行 EgressGateway。EgressGateway 支持多个 Node 作为 Pod 的高可用（HA）出口网关，你可以通过 EgressGateway 来节省公网 IP 费用，同时实现对需要访问外部网络的 Pod 进行精细化控制。
 
 EgressGateway 相对于 Cilium 的 Egress 功能，支持 HA 高可用。如果你没有此需要，应当先考虑使用 Cilium 的 Egress 功能。
@@ -19,7 +17,6 @@ curl ipinfo.io
 ```
 
 通过 curl 您可以看到返回结果包含你 Node 的公网 IP。
-
 
 ## 安装 EgressGateway
 

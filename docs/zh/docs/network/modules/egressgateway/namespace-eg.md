@@ -1,7 +1,5 @@
 # 租户级默认 EgressGateway
 
-## 介绍
-
 为租户设置默认 EgressGateway 可以简化在租户下使用 EgressPolicy 时每次指定 EgressGateway 名称的步骤。租户级默认 EgressGateway 的优先级大于集群默认 EgressGateway，换句话说，当指定了租户级的默认网关，会优先使用租户默认设置，如果租户没有设置默认网关，则会使用集群默认设置。
 
 ## 实施要求
