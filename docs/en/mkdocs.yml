@@ -108,10 +108,10 @@ plugins:
   #     branch: main
   #     enabled: true
   
-  - redirects:
-      redirect_maps:
-        "en/install/install-dce.md": "install/index.md"
-        "en/dce/what.md": "dce/index.md"
+  # - redirects:
+  #     redirect_maps:
+  #       "en/install/install-dce.md": "install/index.md"
+  #       "en/dce/what.md": "dce/index.md"
 
   # - git-revision-date: # Display the last update date on the bottom of each page, install with 'pip install mkdocs-git-revision-date-plugin'
   #     enabled_if_env: "CI"
