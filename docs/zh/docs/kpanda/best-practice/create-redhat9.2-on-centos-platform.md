@@ -25,9 +25,9 @@
 | ISO 离线包 | ISO 包导入火种节点脚本 | 前往 [RedHat 官方地址登录下载](https://access.redhat.com/zh_CN/downloads) |
 | import-iso | ISO 导入火种节点脚本 | https://github.com/kubean-io/kubean/releases/download/v0.9.3/import_iso.sh |
 
-### 导入 os pckage 离线包至火种节点的 minio
+### 导入 os pckage 离线包至火种节点
 
-**解压 RedHat os pckage 离线包**
+<!-- **解压 RedHat os pckage 离线包**
 
 执行如下命令解压下载的 os pckage 离线包。此处我们下载的 RedHat os pckage 离线包。
 
@@ -45,33 +45,38 @@ os package 解压后的文件内容如下：
     └── os-pkgs.sha256sum.txt  # os packages 包的 sha256sum 效验文件
 ```
 
-**导入 OS Package 至火种节点的 MinIO**
+**导入 OS Package** -->
 
-执行如下命令，将 os packages 包到 MinIO 文件服务中：
+执行如下命令，导入 os pckage 包：
 
-```bash
-MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_ospkgs.sh  http://127.0.0.1:9000 os-pkgs-redhat9-v0.9.3.tar.gz
+``` bash
+# 采用 build-in 内建模式部署火种集群时，我们可以不用指定 clusterConfig.yml 配置文件
+dce5-installer import-artifact --os-pkgs-path=/home/os-pkgs/os-pkgs-redhat9-v0.9.3.tar.gz
+
+# 采用 external 外接模式部署火种集群时，我们需要指定 clusterConfig.yml 配置文件
+dce5-installer import-artifact -c clusterConfig.yml --os-pkgs-path=/home/os-pkgs/os-pkgs-redhat9-v0.9.3.tar.gz
 ```
 
 !!! note
 
-    上述命令仅仅适用于火种节点内置的 MinIO 服务，如果使用外部 MinIO 请将 `http://127.0.0.1:9000` 替换为外部 MinIO 的访问地址。
-    “rootuser” 和 “rootpass123” 是火种节点内置的 MinIO 服务的默认账户和密码。“os-pkgs-redhat9-v0.9.3.tar.gz“
-    为所下载的 os package 离线包的名称。
+    上述命令中，“/home/os-pkgs”为 os pckage 包下载目录，“os-pkgs-redhat9-v0.9.3.tar.gz“为所下载的 os package 离线包名称。
 
-### 导入 ISO 离线包至火种节点的 MinIO
+### 导入 ISO 离线包至火种节点
 
-执行如下命令, 将 ISO 包到 MinIO 文件服务中:
+执行如下命令, 导入 ISO 包:
 
-```bash
-MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_iso.sh http://127.0.0.1:9000 rhel-9.2-x86_64-dvd.iso
+``` bash
+# 采用 build-in 内建模式部署火种集群时，我们可以不用指定 clusterConfig.yml 配置文件
+dce5-installer import-artifact --iso-path=/home/iso/rhel-9.2-x86_64-dvd.iso
+
+# 采用 external 外接模式部署火种集群时，我们需要指定 clusterConfig.yml 配置文件
+dce5-installer import-artifact -c clusterConfig.yml --iso-path=/home/iso/rhel-9.2-x86_64-dvd.iso
+
 ```
 
 !!! note
 
-    上述命令仅仅适用于火种节点内置的 MinIO 服务，如果使用外部 MinIO 请将 `http://127.0.0.1:9000` 替换为外部 MinIO 的访问地址。
-    “rootuser” 和 “rootpass123” 是火种节点内置的 MinIO 服务的默认账户和密码。
-    “rhel-9.2-x86_64-dvd.iso“ 为所下载的 ISO 离线包。
+   上述命令中，“/home/iso”为 ISO 包下载目录，“rhel-9.2-x86_64-dvd.iso“ 为所下载的 ISO 离线包名称。
 
 ## 前往 UI 界面创建集群
 
