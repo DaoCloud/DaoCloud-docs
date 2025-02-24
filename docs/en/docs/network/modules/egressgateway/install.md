@@ -9,7 +9,7 @@ This chapter mainly introduces how to install the EgressGateway component.
 
 ## Prerequisites
 
-- To use EgressGateway within a DCE 5.0 cluster, it is necessary to combine it with [Calico/Flannel/Weave/Spiderpool](../../modules/egressgateway/usage.md).
+- To use EgressGateway within a DCE 5.0 cluster, it is necessary to combine it with [Calico/Flannel/Weave/Spiderpool](use-egpolicy.md).
 
 - It is recommended to install EgressGateway v0.4.0 or higher. After installation, instances of the egress gateway
   can be created and use them in conjunction with egress gateway policies.

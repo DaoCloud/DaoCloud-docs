@@ -17,11 +17,13 @@
 安装前设置 Calico 的 iptables 模式为 Append。
 
 如果您是通过 YAML 安装的 Calico，则应该执行下面命令：
+
 ```shell
 kubectl set env daemonset -n calico-system calico-node FELIX_CHAININSERTMODE=Append
 ```
 
 如果您是通过 Calico Operator 管理 Calico 则应该执行下面命令：
+
 ```shell
 kubectl patch felixconfigurations  default --type='merge' -p '{"spec":{"chainInsertMode":"Append"}}'
 ```
@@ -188,7 +190,9 @@ Remote IP: 172.17.81.28:59022
 测试 Pod 访问南北向网络的服务，我们可以看到 node1 的 Pod 使用 node2 的节点绑定的公网 IP 完成了互联网访问。
 
 ```shell
-$ curl ipinfo.io
+curl ipinfo.io
+```
+```json
 {
   "ip": "8.217.200.161",
   "city": "Hong Kong",

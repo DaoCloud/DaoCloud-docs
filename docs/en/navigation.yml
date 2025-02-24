@@ -491,6 +491,25 @@ nav:
                   - Public Cloud:
                       - Running on Alibaba Cloud: network/modules/spiderpool/public-cloud/alibabacloud.md
                       - Running on AWS: network/modules/spiderpool/public-cloud/awscloud.md
+              - EgressGateway:
+                  - Intro: network/modules/egressgateway/index.md
+                  - Install on DCE 5.0:
+                      - Install: network/modules/egressgateway/install.md
+                      - Create Gateway Instance: network/modules/egressgateway/create_eg.md
+                      - Create Gateway Policy: network/modules/egressgateway/create-egpolicy.md
+                      - Use Gateway Policy: network/modules/egressgateway/use-egpolicy.md
+                  - Install on AWS:
+                      - Install: network/modules/egressgateway/aws/marketplace-install.md
+                      - Upgrade: network/modules/egressgateway/aws/upgrade-k8s.md
+                      - Uninstall: network/modules/egressgateway/aws/uninstall-k8s.md
+                  - Default EgressGateway for Tenant: network/modules/egressgateway/namespace-eg.md
+                  - Default EgressGateway for Cluster: network/modules/egressgateway/cluster-eg.md
+                  - Migrate Egress IP Between Gateway Nodes: network/modules/egressgateway/move-ip.md
+                  - EgressGateway Failover: network/modules/egressgateway/failover.md
+                  - EgressGateway Troubleshooting: network/modules/egressgateway/troubleshooting.md
+                  - For Public Cloud:
+                      - Run on Alibaba Cloud: network/modules/egressgateway/public-cloud/alicloud.md
+                      - Run on AWS: network/modules/egressgateway/public-cloud/awswithcilium.md
               - sriov-network-operator:
                   - Intro: network/modules/sriov-network-operator/index.md
                   - Install: network/modules/sriov-network-operator/install.md
@@ -530,11 +549,6 @@ nav:
                   - Traffic mirror: network/modules/ingress-nginx/mirror.md
                   - Cross-Origin Resource Sharing: network/modules/ingress-nginx/cors.md
                   - Redirect: network/modules/ingress-nginx/redirect.md
-              - EgressGateway:
-                  - Intro: network/modules/egressgateway/index.md
-                  - Install: network/modules/egressgateway/install.md
-                  - Create EgressGateway Instance: network/modules/egressgateway/create_eg.md
-                  - Create EgressPolicy: network/modules/egressgateway/create-egpolicy.md
               - Metallb:
                   - Intro: network/modules/metallb/index.md
                   - Install: network/modules/metallb/install.md
