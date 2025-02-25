@@ -11,6 +11,24 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
 
 ## 修改 ArgoCD 配置
 
+### 应用工作台版本 >= v0.35.0
+
+在工作台升级至v0.35.0后，我们提供了feature开关，可以一键开启/关闭ArgoCD的UI功能。
+
+1. 前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __配置与密钥__ __配置项__
+
+1. 命名空间选择 amamba 安装的命名空间(默认是`amamba-system`), 选择 `amamba-config` 进行更新
+
+1. 添加或修改以下配置项：
+
+    ```yaml
+    argocd.ui.enable: true # 如果关闭则设置为false
+    ```
+
+1. 修改过后，仍需修改 amamba的配置项 [修改应用工作台配置项](#修改应用工作台配置项)。
+
+### 应用工作台版本 < v0.35.0
+
 下述配置均在 `kpanda-global-cluster` 集群中，并假设您的 ArgoCD 安装在 `argocd` 这个命名空间中。
 
 前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __自定义资源__ ，根据资源分组及版本搜索
@@ -168,21 +186,21 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
 
 经过上述步骤后，还需要更改应用工作台的配置项才能使 ArgoCD UI 生效。
 
-1. 前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __配置与密钥__ -> __配置项__ ，
-   选择命名空间 `amamba-system`，修改 `amamba-config` 这个 ConfigMap，修改以下配置项：
+1. 前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __Helm应用__，
+   选择命名空间 `amamba-system`，修改 `amamba` 这个应用，在yaml中修改以下配置项:
 
     ```yaml
-    generic:
-      argocd:
-        host: amamba-argocd-server.argocd.svc.cluster.local:443  # 将端口改为 443
-        enableUI: true         # 添加这个选项
+    configMap:
+      generic:
+        argocd:
+          host: amamba-argocd-server.argocd.svc.cluster.local:443  # 将端口改为 443
+          enableUI: true         # 添加这个选项
     ```
 
     host 端口保持 443，其中 `amamba-argocd-server.argocd.svc.cluster.local` 需要根据您的 ArgoCD 的服务名称和命名空间进行修改。
     具体修改路径为 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __容器网络__ ，根据 ArgoCD 安装的命名空间搜索关键词 `amamba-argocd-server` 来确定。
 
-1. 更改完上述选项后，前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __工作负载__ -> __无状态负载__ ，
-   选择命名空间 `amamba-system`，分别重启 `amamba-apiserver` 和 `amamba-syncer` 这两个 Deployment。
+1. 保存后等待helm应该更新完毕即可。
 
 ## 查看拓扑
 
