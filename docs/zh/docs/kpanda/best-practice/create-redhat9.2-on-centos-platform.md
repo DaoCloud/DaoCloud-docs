@@ -9,7 +9,7 @@
 
 ## 前提条件
 
-已经部署好一个 DCE 5.0 全模式，并且火种节点还存活，部署参考文档[离线安装 DCE 5.0 商业版](../../install/commercial/start-install.md)
+你已经部署好一个 DCE 5.0 全模式，并且火种节点还存活。具体部署，请参考文档[离线安装 DCE 5.0 商业版](../../install/commercial/start-install.md)。
 
 ## 下载并导入 RedHat 相关离线包
 
@@ -25,7 +25,7 @@
 | ISO 离线包 | ISO 包导入火种节点脚本 | 前往 [RedHat 官方地址登录下载](https://access.redhat.com/zh_CN/downloads) |
 | import-iso | ISO 导入火种节点脚本 | https://github.com/kubean-io/kubean/releases/download/v0.9.3/import_iso.sh |
 
-### 导入 os pckage 离线包至火种节点
+### 导入 OS pckage 离线包至火种节点
 
 <!-- **解压 RedHat os pckage 离线包**
 
@@ -49,7 +49,7 @@ os package 解压后的文件内容如下：
 
 执行如下命令，导入 os pckage 包：
 
-``` bash
+```bash
 # 采用 build-in 内建模式部署火种集群时，我们可以不用指定 clusterConfig.yml 配置文件
 dce5-installer import-artifact --os-pkgs-path=/home/os-pkgs/os-pkgs-redhat9-v0.9.3.tar.gz
 
@@ -63,20 +63,19 @@ dce5-installer import-artifact -c clusterConfig.yml --os-pkgs-path=/home/os-pkgs
 
 ### 导入 ISO 离线包至火种节点
 
-执行如下命令, 导入 ISO 包:
+执行如下命令，导入 ISO 包：
 
-``` bash
+```bash
 # 采用 build-in 内建模式部署火种集群时，我们可以不用指定 clusterConfig.yml 配置文件
 dce5-installer import-artifact --iso-path=/home/iso/rhel-9.2-x86_64-dvd.iso
 
 # 采用 external 外接模式部署火种集群时，我们需要指定 clusterConfig.yml 配置文件
 dce5-installer import-artifact -c clusterConfig.yml --iso-path=/home/iso/rhel-9.2-x86_64-dvd.iso
-
 ```
 
 !!! note
 
-   上述命令中，“/home/iso”为 ISO 包下载目录，“rhel-9.2-x86_64-dvd.iso“ 为所下载的 ISO 离线包名称。
+    上述命令中，“/home/iso”为 ISO 包下载目录，“rhel-9.2-x86_64-dvd.iso“ 为所下载的 ISO 离线包名称。
 
 ## 前往 UI 界面创建集群
 
