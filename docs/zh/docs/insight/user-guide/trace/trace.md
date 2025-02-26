@@ -46,7 +46,7 @@ Insight 会默认采集应用的链路数据。在`调用链`中，可以通过�
 1. 进入 __可观测性__ 产品模块，
 2. 在左边导航栏选择 __链路追踪__ -> __调用链__。
 
-    ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace00.png)
+    ![tracesearch](../../images/tracesearch.png)
 
     !!! note
 
@@ -56,7 +56,7 @@ Insight 会默认采集应用的链路数据。在`调用链`中，可以通过�
 
     使用 TraceID 搜索请输入完整的 TraceID。
 
-    ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace04.png)
+    ![traceidsearch](../../images/traceidsearch.png)
 
 ### 查看链路详情
 
