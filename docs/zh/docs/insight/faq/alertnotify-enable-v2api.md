@@ -1,12 +1,13 @@
 # Insight 告警通知开启  v1alpha2
 
-Insight 在引入了新的模板体系，新的模板体系在渲染的数据结构上做了调整，因此和旧版本（v1alpha1）存在兼容性的问题。为了避免为客户产生兼容性的问题，默认不启用，需要用户主动开启，配置方法如下。
-需要特别注意的是，开启时，需要立即迁移模板到 v1alpha2 语法，否则将产生 #2248 错误，导致无法正确的发送告警消息。（运维实践：记住备份旧模板数据）
+Insight 引入了新的模板体系，新的模板体系在渲染的数据结构上做了调整，因此和旧版本（v1alpha1）存在兼容性的问题。
+为了避免产生兼容性的问题，默认不启用。用户需要主动开启。
+需要特别注意的是，开启时，需要立即迁移模板到 v1alpha2 语法，否则将产生 #2248 错误，导致无法正确地发送告警消息。（运维实践：记住备份旧模板数据）
 
 本文接下来将介绍：
 
-- 开启新模板
-- 迁移至新模板
+- [开启新模板](#v1alpha2)
+- [迁移至新模板](#_1)
 
 ## 启用 v1alpha2
 
@@ -14,30 +15,30 @@ Insight 在引入了新的模板体系，新的模板体系在渲染的数据结
 
 1. 在 Helm upgrade 的执行命令中增加如下参数：
 
-```shell
---set server.alerting.notifyTemplate.version="v1alpha2"
-```
+    ```shell
+    --set server.alerting.notifyTemplate.version="v1alpha2"
+    ```
 
 2. 除 #1 之外亦可编辑 helm 的 values 文件，如下：
 
-```diff
-server:
-  alerting:
-    notifyTemplate:
--     version: v1alpha1
-+     version: v1alpha2
-```
+    ```diff
+    server:
+      alerting:
+        notifyTemplate:
+    -     version: v1alpha1
+    +     version: v1alpha2
+    ```
 
 ### 方法 2：临时调整配置文件（configmap）
 
 1. 编辑 insight-server 的配置文件（configmap）insight-server-config，调整配置文件如下：
 
-```diff
-alerting:
-  notifyTemplate:
--   version: v1alpha1
-+   version: v1alpha2
-```
+    ```diff
+    alerting:
+      notifyTemplate:
+    -   version: v1alpha1
+    +   version: v1alpha2
+    ```
 
 2. 编辑保存之后，重启 insight-server 即可。
 
@@ -82,7 +83,8 @@ type AmAlert struct {
 
 ## 示例
 
-我们以邮件通知模板为例。以下是新模板和旧模板的 diff，我们可以注意到第二行增加了 {{range .Alerts}} 语法，只需要将原本的模板包裹在 range 关键字里，即可。需要特别注意的是，邮件的标题和正文使用的**数据结构一致**，不再特殊处理，以减少心智上的负担。
+以邮件通知模板为例，下面是新旧模板的 diff。可以看到，第二行新增了 `{{range .Alerts}}` 语法，只需将原有模板包裹在 `range` 关键字中即可。
+需要特别注意的是，邮件的标题和正文**共享相同的数据结构**，不再进行特殊处理，从而降低心智负担。
 
 ```diff
 +<b style="font-weight: bold">[{{ .Alerts | len -}}] {{.Status}}</b><br />
@@ -117,7 +119,7 @@ description: {{ .Annotations.description }} <br />
 
 ### 更多示例
 
-飞书，钉钉和企业微信的通知模板。
+飞书、钉钉和企业微信的通知模板。
 
 ```diff
 +[{{ .Alerts | len -}}] {{.Status}}
