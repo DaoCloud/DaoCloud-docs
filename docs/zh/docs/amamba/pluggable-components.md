@@ -118,7 +118,7 @@ metadata:
 
 4. 点击右下角确定按钮即可完成安装。可以查看 __vela-system__ 命名空间下的相关的负载是否均处于 __运行中__ 状态判断。
 
-5. 确认上述的负载成功部署后，在当前集群详情左侧菜单栏的 __配置项与密钥__ -> __配置项__，
+5. 确认上述的负载成功部署后，在当前集群详情左侧菜单栏的 __配置项与密钥__ -> __配置项__，切换到 __amamba-system__ 命名空间下，
    搜索 __amamba-config__，点击 __编辑 YAML__。
 
 6. 在 __data->amamba-config.yaml__ 中添加如下参数：
@@ -126,10 +126,10 @@ metadata:
     ```yaml
     generic:
       kubevela:
-        namespace: kubevela-system # (1)!
+        namespace: vela-system # (1)!
     ```
 
-    1. kubevela 安装的命名空间
+    1. kubevela 实际安装的命名空间
 
     ![vela02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/vela02.png)
 
@@ -154,9 +154,9 @@ metadata:
 
     **参数说明：**
 
-    - 名称：请填写 __argorollout__，建议。
+    - 名称：按需要填，建议填写 __argo-rollouts__ 。
     - 版本：默认选择为 __2.32.0__，addon 仓库目前仅有该版本。
-    - 命名空间：请选择 __argo-rollouts-system__，建议。
+    - 命名空间：建议填写 __argo-rollouts__ 。
 
     **开启 contour**
 
@@ -194,12 +194,12 @@ metadata:
 
         ```shell
         # clusterRole的名称需要根据实际的安装情况来修改。
-        kubectl patch clusterrole argo-rollouts --type='json' -p='[{"op": "add", "path": "/rules/-", "value": {"apiGroups":["projectcontour.io"],"resources":["httpproxies"],"verbs":["get","list","watch","update","patch","delete"]}}]'
+        kubectl patch clusterrole argo-rollouts -n argo-rollouts --type='json' -p='[{"op": "add", "path": "/rules/-", "value": {"apiGroups":["projectcontour.io"],"resources":["httpproxies"],"verbs":["get","list","watch","update","patch","delete"]}}]'
         ```
 
     Rollout 部署成功后，可以创建金丝雀发布界面选择 contour 作为流量控制。
 
-4. 点击右下角确定按钮即可完成安装。可以查看 __argo-rollouts-system__ 命名空间下的相关的负载是否均处于 __运行中__ 状态判断。
+4. 点击右下角确定按钮即可完成安装。可以查看 __argo-rollouts__ 命名空间下的相关的负载是否均处于 __运行中__ 状态判断。
 
 5. 部署成功后，即可前往 __应用工作台__ 模块在当前集群使用`基于云原生网关`的灰度发布能力。
 
@@ -207,5 +207,5 @@ metadata:
 
 !!! note
 
-    - argo-rollout 是一个用于 Kubernetes 应用的灰度发布和流量管理的工具，它专注于应用程序的部署和更新过程。
-    - 在使用过程中，需要在应用的所在集群部署。如果需要在多个集群中使用灰度发布能力，需要在所对应的集群一一部署 argo-rollout 组件。
+    - argo-rollouts 是一个用于 Kubernetes 应用的灰度发布和流量管理的工具，它专注于应用程序的部署和更新过程。
+    - 在使用过程中，需要在应用的所在集群部署。如果需要在多个集群中使用灰度发布能力，需要在所对应的集群一一部署 argo-rollouts 组件。
