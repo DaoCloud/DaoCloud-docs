@@ -1,23 +1,25 @@
-# Prometheus 集群标签配置
+# Prometheus Cluster Label Configuration
 
-本文说明如何修改 Prometheus(CR) 为监控指标添加集群标识标签（cluster_name），以提高指标、告警消息的可读性。
+This document explains how to modify Prometheus (CR) to add a cluster label (`cluster_name`)
+to monitoring metrics, improving the readability of metrics and alert messages.
 
-## 方式一：通过 Prometheus 修改
+## Method 1: Modify Prometheus Directly
 
-1. 在命令行执行以下语句找到 Prometheus(CR)
+1. Run the following command to locate the Prometheus (CR):
 
     ```shell
     kubectl get prometheus -n insight-system
     ```
 
-    预期输出示例：
+    Expected output example:
 
     ```
     NAME                                    VERSION   DESIRED   READY   RECONCILED   AVAILABLE   AGE
     insight-agent-kube-prometh-prometheus   v2.44.0   1         1       True         True        73d
     ```
 
-1. 编辑 Prometheus CR，在 `spec.externalLabels` 参数中增加 `cluster_name`，作为在容器管理中注册的名字。
+2. Edit the Prometheus CR and add `cluster_name` under the `spec.externalLabels` parameter.
+   This value should match the registered cluster name in container management.
 
     ```diff
     apiVersion: monitoring.coreos.com/v1
@@ -31,9 +33,10 @@
     +   cluster_name: kpanda-global-cluster
     ```
 
-## 方式二：通过 Helm 修改（推荐）
+## Method 2: Modify via Helm (Recommended)
 
-1. 建议通过 Helm 来更新 `Prometheus CR`，以避免在升级过程中丢失这些配置。编辑 `values.yaml` 里对应的参数：
+1. It is recommended to update the `Prometheus CR` via Helm to avoid losing these configurations
+   during upgrades. Edit the relevant parameters in `values.yaml`:
 
     ```diff
     kube-prometheus-stack:
@@ -44,19 +47,21 @@
     +       cluster_name: 'kpanda-global-cluster'
     ```
 
-1. 可以通过 `--set` 参数来设置
+2. Alternatively, you can set the value using the `--set` flag:
 
     ```shell
     --set kube-prometheus-stack.prometheus.prometheusSpec.externalLabels.cluster_name='kpanda-global-cluster'
     ```
 
-## 补充说明
+## Additional Notes
 
-在容器管理 v0.27 版本之后，集群的名字也会标记在 `kpanda-system` 的 `namespace` 中，记录在 `kpanda.io/cluster-name` 的标签中。
+Starting from container management v0.27, the cluster name is also recorded in the
+`kpanda-system` namespace under the label `kpanda.io/cluster-name`.
 
 ```shell
 kubectl get ns kpanda-system -o yaml
 ```
+
 ```yaml
 apiVersion: v1
 kind: Namespace

@@ -105,7 +105,7 @@ description: {{ .Annotations.description }} <br />
 +{{end}}
 ```
 
-旧模板的写法
+旧模板的写法：
 
 ```
 [{{ .status }}] [{{ .severity }}] alert: {{ .alertname }}
