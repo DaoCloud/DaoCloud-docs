@@ -180,3 +180,21 @@ __解决方案__ ：
 4. 在 __data__ -> __jenkins.yaml__ -> 搜索 `eventDispatcher.receiver`，它的值应该为
    `http://amamba-devops-server.amamba-system:80/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins`。
    其中 `amamba-system` 为工作台所部署的命名空间。
+
+## ARM 架构下构建镜像报错："systemd cgroup flag passed, but systemd support for managing cgroups is not available"
+
+cgroup manager支持 systemd 和 cgroupfs ，默认情况下 agent容器里面 podman 使用 cgroupfs （配置在 /etc/containers/containers.conf 文件中）。但有些情况下可能存在没有正确识别的情况，需要手动在命令行中指定：
+
+```bash
+podman build --cgroups-manager=cgroupfs .
+```
+
+此时如果报错变成："error adding seccamp filter rule for syscall bdflush: permission denied"
+
+这是因为特定的 runc 版本和 podman 的问题，参考 [containers/podman #10735](https://github.com/containers/podman/issues/10735)
+
+可以去 crun 的 [release页面](https://github.com/containers/crun/releases) 下载对应的二进制，移到/usr/local/bin 下，并在build的时候指定runtime：
+
+```bash
+podman build --cgroups-manager=cgroupfs --runtime=/usr/local/bin/crun .
+```
