@@ -24,6 +24,9 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
     ```yaml
     argocd.ui.enable: true # 如果关闭则设置为false
     ```
+   > 注意是添加一个key-value对
+   
+   ![](../../images/argocd-ui-config.png) 
 
 1. 修改过后，仍需修改 amamba的配置项 [修改应用工作台配置项](#修改应用工作台配置项)。
 

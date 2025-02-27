@@ -56,6 +56,10 @@
 
     ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins15.png)
 
+    > !!!注意：如果您通过容器管理中的Helm应用模块升级Jenkins并修改了密码，需要在工作台解除集成后重新集成，否则工作台无法识别出Jenkins的密码变更。
+
+    > Jenkins的Helm版本升级至v0.5.0以后，镜像仓库地址由 docker.m.daocloud.io 更改为 ghcr.m.daocloud.io，如果您打算升级Jenkins，请注意修改镜像仓库地址。  
+
 ## 集成 Jenkins
 
 说明：目前仅支持集成通过 DCE 5.0 平台安装的 Jenkins。

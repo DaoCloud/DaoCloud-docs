@@ -70,6 +70,9 @@ spec:
     ```yaml
     argocd.appAnyNamespace.enable: true # 如果关闭则设置为false
     ```
+    > 注意是添加一个key-value对
+    
+    ![](../../images/app-in-any-ns-config.png)
 
 1. 点击保存, 进入应用工作台 -> GitOps 模块，通过 AppOfApplicationSet 的方式创建 GitOps 应用。
 
