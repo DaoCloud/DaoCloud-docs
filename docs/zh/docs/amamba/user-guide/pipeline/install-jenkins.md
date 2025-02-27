@@ -46,9 +46,9 @@
     | resources.limits                     | Jenkins 的资源限制值                                         |
     | image.registry                       | Jenkins 镜像仓库地址                                                 |
     | eventProxy.enabled                   | EventProxy 是一个旨在为 Jenkins 到 Amamba APIServer 提供可靠连接的边车容器，当 Jenkins 部署的集群和全局服务集群不在同一个区域的时候，最好开启。 |
-    | eventProxy.image.registry            | eventProxy 镜像仓库的地址。<br />如果 enabled=true 必须填写                                   |
-    | eventProxy.configMap.eventProxy.host  | Jenkins 事件的接收地址的Host，Jenkins 如果部署在 Worker 集群，需要设置成 DCE 的入口地址。<br />如果 enabled=true 必须填写。                                   |
-    | eventProxy.configMap.eventProxy.proto | Jenkins 事件的接收地址的 Protocol，默认是 http。<br />如果 enabled=true 必须填写                                   |
+    | eventProxy.image.registry            | eventProxy 镜像仓库的地址。<br />如果 enabled=true 必须填写 |
+    | eventProxy.configMap.eventProxy.host  | Jenkins 事件的接收地址的Host，Jenkins 如果部署在 Worker 集群，需要设置成 DCE 的入口地址。<br />如果 enabled=true 必须填写。 |
+    | eventProxy.configMap.eventProxy.proto | Jenkins 事件的接收地址的 Protocol，默认是 http。<br />如果 enabled=true 必须填写 |
     | eventProxy.configMap.eventProxy.webhookUrl | Jenkins 事件的接收地址的路径，默认是 `/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins` 。  |
     | eventProxy.configMap.eventProxy.token | 访问 DCE 的 token，获取方式参考[全局管理访问密钥文档](../../../ghippo/user-guide/personal-center/accesstoken.md)<br />如果 enabled=true 必须填写 |
 
@@ -56,9 +56,13 @@
 
     ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins15.png)
 
-    > !!!注意：如果您通过容器管理中的Helm应用模块升级Jenkins并修改了密码，需要在工作台解除集成后重新集成，否则工作台无法识别出Jenkins的密码变更。
+    !!! note
 
-    > Jenkins的Helm版本升级至v0.5.0以后，镜像仓库地址由 docker.m.daocloud.io 更改为 ghcr.m.daocloud.io，如果您打算升级Jenkins，请注意修改镜像仓库地址。  
+        如果您通过容器管理中的 Helm 应用模块升级 Jenkins 并修改了密码，
+        需要在工作台解除集成后重新集成，否则工作台无法识别出 Jenkins 的密码变更。
+
+        Jenkins 的 Helm 版本升级至 v0.5.0 以后，镜像仓库地址由 `docker.m.daocloud.io`
+        更改为 `ghcr.m.daocloud.io`。如果您打算升级 Jenkins，请注意修改镜像仓库地址。
 
 ## 集成 Jenkins
 
