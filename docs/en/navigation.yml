@@ -779,6 +779,9 @@ nav:
                   - Trace Collection Troubleshoot: insight/best-practice/debug-trace.md
                   - Locate Issues with Insight: insight/best-practice/find_root_cause.md
                   - What if ElasticSearch is Full: insight/faq/expand-once-es-full.md
+                  - Container Log Blacklist: insight/faq/ignore-pod-log-collect.md  
+                  - Configure Prometheus Cluster Labels: insight/faq/alertinfo-trans-clusterid-to-name.md  
+                  - Enabling Insight Alert v1alpha2: insight/faq/alertnotify-enable-v2api.md
           - Microservices:
               - Intro:
                   - Index: skoala/intro/index.md

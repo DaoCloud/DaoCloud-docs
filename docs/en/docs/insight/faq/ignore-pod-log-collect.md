@@ -3,11 +3,11 @@ hide:
   - toc
 ---
 
-# 容器日志黑名单
+# Container Log Blacklist
 
-具体配置方式如下：
+To exclude container logs from being collected, follow these steps:
 
-1. 对于任意一个不需要采集容器日志的 Pod, 在 Pod 的 annotation 中添加 `insight.opentelemetry.io/log-ignore: "true"` 来指定不需要采集的容器日志，例如：
+1. **For any Pod where log collection is not needed**, add the annotation `insight.opentelemetry.io/log-ignore: "true"` in the Pod's metadata. This prevents logs from being collected for that Pod. Example:
 
     ```yaml
     apiVersion: apps/v1
@@ -31,4 +31,4 @@ hide:
               image: banzaicloud/log-generator:0.3.2
     ```
 
-2. 重启 Pod，等待 Pod 恢复运行状态之后，Fluenbit 将不再采集这个 Pod 内的容器的日志。
+2. **Restart the Pod.** Once the Pod is back in a running state, Fluent Bit will no longer collect logs from the containers within that Pod.
