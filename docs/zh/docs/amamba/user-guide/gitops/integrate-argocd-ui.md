@@ -15,18 +15,19 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
 
 在工作台升级至v0.35.0后，我们提供了feature开关，可以一键开启/关闭ArgoCD的UI功能。
 
-1. 前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __配置与密钥__ __配置项__
+1. 前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __配置与密钥__ -> __配置项__
 
-1. 命名空间选择 amamba 安装的命名空间(默认是`amamba-system`), 选择 `amamba-config` 进行更新
+1. 命名空间选择 amamba 安装的命名空间（默认是 `amamba-system`），选择 `amamba-config` 进行更新
 
 1. 添加或修改以下配置项：
 
     ```yaml
     argocd.ui.enable: true # 如果关闭则设置为false
     ```
-   > 注意是添加一个key-value对
+    
+    > 注意是添加一个 key-value 对
    
-   ![](../../images/argocd-ui-config.png) 
+    ![修改配置项](../../images/argocd-ui-config.png) 
 
 1. 修改过后，仍需修改 amamba的配置项 [修改应用工作台配置项](#修改应用工作台配置项)。
 
