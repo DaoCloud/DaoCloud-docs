@@ -52,7 +52,8 @@ to deploy it and use the continuous deployment capability provided by the Workbe
 4. Click the __OK__ button at the bottom right to complete the installation. Confirm that the related argo-cd resources in the __argocd__ namespace are all in the __Running__ state.
 
 5. After successfully deploying the resources mentioned above, go to the __ConfigMaps & Secrets__ -> __ConfigMaps__
-   menu on the left side of the current cluster details page. Search for __amamba-config__ and click __Edit YAML__ .
+   menu on the left side of the current cluster details page. Choose namespace __amamba-system__ , then search for 
+   __amamba-config__ and click __Edit YAML__ .
 
 6. Add the following parameters in the __data->amamba-config.yaml__ section:
 
@@ -133,14 +134,14 @@ to deploy and utilize the OAM application capabilities provided by the Workbench
 
 4. Click the __OK__ button on the bottom right corner to complete the installation. You can check if the relevant workloads under the __vela-system__ namespace are all in the __Running__ state.
 
-5. Once you have confirmed the successful deployment of the above workloads, go to the current cluster's details page and navigate to the left sidebar menu and select __ConfigMaps & Secrets__ -> __ConfigMaps__ . Search for __amamba-config__ and click __Edit YAML__ .
+5. Once you have confirmed the successful deployment of the above workloads, go to the current cluster's details page and navigate to the left sidebar menu and select __ConfigMaps & Secrets__ -> __ConfigMaps__ . Search for __amamba-config__ in namespace __amamba-system__ and click __Edit YAML__ .
 
 6. In the __data->amamba-config.yaml__ section, add the following parameters:
 
     ```yaml
     generic:
       kubevela:
-        namespace: kubevela-system # (1)!
+        namespace: vela-system # (1)!
     ```
 
     1. The namespace where kubevela is installed
@@ -166,9 +167,9 @@ If you chose not to enable it during the deployment of DCE 5.0, follow the instr
 
     **Parameter Description:**
 
-    - Name: Please fill in __argorollout__, recommended.
+    - Name: Please fill in __argo-rollouts__, recommended.
     - Version: Default selection is __2.32.0__, the addon repository currently only has this version.
-    - Namespace: Please select __argo-rollouts-system__, recommended.
+    - Namespace: Please select __argo-rollouts__, recommended.
 
     **Enable contour**
 
@@ -206,12 +207,12 @@ If you chose not to enable it during the deployment of DCE 5.0, follow the instr
 
         ```shell
         # The name of the clusterRole needs to be modified according to the actual installation situation
-        kubectl patch clusterrole argo-rollouts --type='json' -p='[{"op": "add", "path": "/rules/-", "value": {"apiGroups":["projectcontour.io"],"resources":["httpproxies"],"verbs":["get","list","watch","update","patch","delete"]}}]'
+        kubectl patch clusterrole argo-rollouts -n argo-rollouts --type='json' -p='[{"op": "add", "path": "/rules/-", "value": {"apiGroups":["projectcontour.io"],"resources":["httpproxies"],"verbs":["get","list","watch","update","patch","delete"]}}]'
         ```
 
     After the Rollout deployment is successful, you can create a canary release interface to select contour as the traffic control.
 
-4. Click the confirm button in the lower right corner to complete the installation. You can check if the related loads under the __argo-rollouts-system__ namespace are all in the __running__ state.
+4. Click the confirm button in the lower right corner to complete the installation. You can check if the related loads under the __argo-rollouts__ namespace are all in the __running__ state.
 
 5. After successful deployment, you can go to the __Workbench__ module to use the gray release capability based on `cloud-native gateway` in the current cluster.
 
@@ -219,5 +220,5 @@ If you chose not to enable it during the deployment of DCE 5.0, follow the instr
 
 !!! note
 
-    - Argo-rollout is a tool for gray release and traffic management for Kubernetes applications, focusing on the deployment and update process of applications.
-    - During use, it needs to be deployed in the cluster where the application is located. If you need to use gray release capability in multiple clusters, you need to deploy the argo-rollout component in each corresponding cluster.
+    - Argo-rollouts is a tool for gray release and traffic management for Kubernetes applications, focusing on the deployment and update process of applications.
+    - During use, it needs to be deployed in the cluster where the application is located. If you need to use gray release capability in multiple clusters, you need to deploy the argo-rollouts component in each corresponding cluster.
