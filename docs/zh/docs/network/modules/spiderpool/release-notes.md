@@ -2,6 +2,71 @@
 
 本页列出 Spiderpool 的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+
+## 2025-02-13
+
+### v1.0.1
+
+#### 修复 bug
+
+- **修复** IPAM: 在做完 IP 冲突检测之后，主动发送免费 arp 更新 arp 缓存表，避免 Pod 刚创建后无法访问。
+
+## 2025-01-26
+
+### v1.0.0
+
+### 新功能
+
+- **新增** 支持为 SpiderMultusConfig 和 Pod 注入相同注解: `cni.spidernet.io/network-resource-inject`, Webhook 能够将相关的 SpiderMultusConfig 中网卡以及网络硬件资源注入到 Pod 中。
+- **新增** 升级 Multus 版本到 V4.0
+- **新增** 支持为 AI 应用提供 Pod 与 节点级别的 RDMA 监控能力
+- **新增** Spidermultusconfig 增加 chain CNI 支持，支持 tuning 等插件
+- **新增** 支持 IPPool 的通配符筛选
+- **新增** 支持卸载 Spiderpool 时清理各种资源
+- **新增** 支持从 Kube-controller-manager Pod 中获取集群的子网，避免 kubeadm-config 未提供时无法获取
+
+#### 修复 bug
+
+- **修复** IPAM: 修复 StatefulSet 无法运行在多网卡模式。
+- **修复** 修复当 spiderpool-agent 的 container 重启但 Pod 未重启时，节点上的 00-multus.conf 被删除，导致 Pod 无法使用多网卡。
+- **修复** 修复在 Statefulset Pod 扩大/缩小期间，Spiderpool 无法正确的 GC  IP 地址，导致 IP 冲突
+- **修复** 修复 Coordinator 在多网卡时，策略路由表异常导致通信失败
+- **修复** 修复 RBAC 权限过高导致潜在的 CVE 风险
+- **修复** 修复在子网过大时，IP 分配缓慢的问题
+- **修复** 修复 Pod 多网卡时，访问 NodePort 失败
+
+## 2025-01-26
+
+### v0.9.9
+
+### 新功能
+
+- **新增** 在 IPAM 中做 IP 冲突和网关可达性检测，而不是在 Coordinator 插件中。否则当 IP 冲突时错误的 arp 缓存表可能被更新，在使用固定 IP 的应用迁移场景，导致应用短暂不可通信。
+
+## 2025-01-03
+
+### v0.9.8
+
+### 新功能
+
+- **新增** 添加一个开关，决定是否 istio 的 veth0 配置链路本地地址，避免 istio 无法劫持流量
+
+#### 修复 bug
+
+- **修复** SpiderMultusConfig 检查 multus.spidernet.io/cr-name 指定的 Name 是否冲突
+- **修复** IPAM: 修复多网卡下，一个网卡 IP 短缺造成其他网卡 IP 池被耗尽的问题
+- **修复** 修复 Cilium 运行在 Multi-pool IPAM 模式时，Spiderpool-controller Panic 问题
+- **修复** 确保在检测网关之前检测 IP 冲突，避免潜在的通信失败问题
+
+## 2024-09-26
+
+### v0.9.7
+
+#### 修复 bug
+
+- **修复** 修复 Panic 错误当 Webhook 验证创建 SpiderMultusConfig 的 podRPFilter 字段
+- **修复** Webhook 验证创建 SpiderMultusConfig 时，检查 podMACPrefix 是否是单播的 Mac 地址
+
 ## 2024-09-04
 
 ### v0.9.6
