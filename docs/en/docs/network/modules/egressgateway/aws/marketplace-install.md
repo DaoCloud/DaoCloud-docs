@@ -23,7 +23,7 @@ After subscribing to EgressGateway, install it on your Kubernetes cluster using 
 export HELM_EXPERIMENTAL_OCI=1
 aws ecr get-login-password --region us-east-1 | helm registry login --username AWS --password-stdin 709825985650.dkr.ecr.us-east-1.amazonaws.com
 mkdir awsmp-chart && cd awsmp-chart
-helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/daocloud-hong-kong/egressgateway --version 0.0.2
+helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/daocloud-hong-kong/egressgateway --version 0.6.2
 tar xf $(pwd)/* && find $(pwd) -maxdepth 1 -type f -delete
 helm install --generate-name --namespace <ENTER_NAMESPACE_HERE> ./*
 ```
