@@ -6,7 +6,7 @@
 
 ### v0.35.1
 
-#### Insight
+#### Insight Server
 
 - **优化** 调整链路搜索面板的排版
 - **修复** 服务详情中的操作指标 P95 请求延时无数据
@@ -15,7 +15,7 @@
 - **修复** 导出的日志文件中存在错误信息
 - **修复** 飞书告警通知失败的问题
 
-#### Insight-agent
+#### Insight Agent
 
 - **修复** fluent-bit 上报日志偶发性有 cri parser 解析失败的现象
 
@@ -23,12 +23,12 @@
 
 ### v0.34.1
 
-#### Insight
+#### Insight Server
 
 - **优化** Grafana 默认登陆密码使用 Secret 管理
 - **修复** JVM 监控面板指标描述错误
 
-#### Insight-agent
+#### Insight Agent
 
 - **修复** OpenTelemetry Operator 升级失败
 

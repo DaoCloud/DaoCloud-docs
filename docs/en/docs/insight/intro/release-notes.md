@@ -8,6 +8,36 @@ date: 2024-02-19
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2025-02-28  
+
+### v0.35.1
+
+#### Insight Server
+
+- **Improved** the layout of the trace search panel  
+- **Fixed** missing P95 request latency data in service details  
+- **Fixed** errors in the GPU-less monitoring dashboard  
+- **Fixed** an issue where namespace permissions couldn't view metric collection status  
+- **Fixed** errors in exported log files  
+- **Fixed** Feishu alert notification failures  
+
+#### Insight Agent
+
+- **Fixed** occasional `cri parser` failures in logs reported by `fluent-bit`  
+
+## 2024-12-31
+
+### v0.34.1
+
+#### Insight Server
+
+- **Improved** Grafana default login password management with Secret  
+- **Fixed** incorrect metric descriptions in the JVM monitoring panel  
+
+#### Insight Agent
+
+- **Fixed** OpenTelemetry Operator upgrade failures
+
 ## 2024-11-30
 
 ### v0.33.1
@@ -115,7 +145,7 @@ the evolution path and feature changes of each version.
 - **Improved** development dashboard for application administrators.
 - **Improved** database and message queue type nodes in the topology graph.
 - **Improved** vector monitoring panel.
-- **Fix** an issue where users with namespace permissions are unable to view insight-agent details.
+- **Fixed** an issue where users with namespace permissions are unable to view insight-agent details.
 
 #### Insight Agent
 
