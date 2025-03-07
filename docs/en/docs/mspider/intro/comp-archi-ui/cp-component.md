@@ -72,6 +72,17 @@ This page lists the various components in the control plane of the service mesh 
         </td>
     </tr>
     <tr>
+        <td>mspider-worker-api</td>
+        <td>Global Management Cluster</td>
+        <td>Handles worker-level API requests and task execution for Mspider</td>
+        <td>
+            <ul>
+                <li>requests: CPU: Not set; Memory: Not set</li>
+                <li>limits: CPU: Not set; Memory: Not set</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
         <td>Hosted Mesh</td>
         <td></td>
         <td></td>
