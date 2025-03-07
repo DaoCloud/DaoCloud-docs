@@ -4,6 +4,12 @@
 
 *[mcamel-kafka]: mcamel 是 DaoCloud 所有中间件的开发代号，kafka
 
+## 2025-02-28
+
+### v0.23.0
+
+- **优化** 将 Kafka 管理工具由 `CMAK` 更新为 `kafka-ui`
+
 ## 2024-11-30
 
 ### v0.21.0

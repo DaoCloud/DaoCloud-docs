@@ -4,6 +4,12 @@
 
 *[mcamel-mysql]: mcamel 是 DaoCloud 所有中间件的开发代号，mysql 是应用最广泛的关系型数据库
 
+## 2025-02-28
+
+### v0.26.0
+
+- **优化** 升级 `mysqld-exporter` 镜像，并支持 `MySQL-MGR` 的告警规则
+
 ## 2024-09-30
 
 ### v0.22.0
