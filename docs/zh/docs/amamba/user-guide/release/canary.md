@@ -8,7 +8,7 @@
 
 - 创建一个应用并开启 __灰度发布__ ，可参考[基于 Git 仓构建微服务应用](../wizard/create-app-git.md)、[基于 Jar 包部署 Java 应用](../wizard/jar-java-app.md)。
 
-- 发布对象所在的集群已经安装了 Istio 和 Argo Rollout 两个组件。
+- 发布对象所在的集群已经安装了 Istio 和 [Argo Rollout](../../pluggable-components.md#argo-rollouts) 两个组件。
 
 ## Istio 安装方式
 
