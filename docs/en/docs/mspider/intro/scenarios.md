@@ -45,6 +45,7 @@ to be configured for specific ports of specific services as needed.
 
 - Load Balancing: Configure various load balancing policies, such as random, round-robin, least connections,
   and consistent hashing, to forward traffic to specific service instances.
+ - Free Pass-Through: In this mode, incoming traffic is passed directly to the target service without applying any load balancing algorithms. This ensures that the original request characteristics are preserved and can be useful for scenarios requiring transparent service routing.
 
 - HTTP Header: Flexibly add, modify, and delete specified HTTP headers, including manipulating headers
   before forwarding HTTP requests to target services. It is also possible to manipulate the header
