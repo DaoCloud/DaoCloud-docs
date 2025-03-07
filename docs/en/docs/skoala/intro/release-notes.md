@@ -9,6 +9,30 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## 2025-02-24  
+
+### v0.45.0
+
+- **Added** support for custom log field configuration in the gateway  
+- **Fixed** an issue where the Header Key in gateway routing configurations did not support uppercase letters  
+
+## 2025-01-24
+
+### v0.44.0
+
+#### Features
+
+- **Added** support for exposing managed Nacos services via LB  
+- **Added** support for configuring node affinity for managed Nacos  
+- **Added** support for configuring node affinity for the gateway  
+- **Added** support for custom configurations in managed Nacos  
+
+#### Fixes
+
+- **Fixed** a TLS vulnerability in Skoala Agent  
+- **Fixed** vulnerabilities CVE-2022-1996, CVE-2024-45337, and CVE-2024-24790 in Skoala Agent  
+- **Fixed** an issue where modifying gateway instances via the UI would cause custom log configurations to be lost
+
 ## 2024-12-31
 
 ### v0.43.4
