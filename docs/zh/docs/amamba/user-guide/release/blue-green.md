@@ -8,7 +8,7 @@
 
 - 创建一个[工作空间](../../../ghippo/user-guide/workspace/workspace.md)和一个[用户](../../../ghippo/user-guide/access-control/user.md)，该用户需加入该工作空间并具备 __Workspace Editor__  角色。
 
-- 发布对象所在的集群已经安装了 Argo Rollout 组件。有关具体的安装方式，可参考[管理 Helm 应用](../../../kpanda/user-guide/helm/helm-app.md)。
+- 发布对象所在的集群已经安装了 [Argo Rollout](../../pluggable-components.md#argo-rollouts) 组件。
 
 ## 操作步骤
 
