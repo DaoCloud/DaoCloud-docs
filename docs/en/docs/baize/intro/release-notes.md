@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-date: 2024-07-12
+date: 2025-03-10
 ---
 
 # AI Lab Release Notes
@@ -12,6 +12,15 @@ so that you can learn its evolution path and feature changes.
 
     Features labeled as Beta may undergo changes; please use them with caution
     and provide prompt feedback if you encounter any issues.
+
+## 2024-12-31 
+
+### v0.12.0  
+
+- **Added** support for custom resource pools in queues.  
+- **Added** a Muxi GPU monitoring dashboard with enhanced GPU observability metrics.  
+- **Fixed** vulnerabilities CVE-2024-45337 and CVE-2024-45338.  
+- **Fixed** an issue preventing proper dataset creation.  
 
 ## 2024-11-30
 
