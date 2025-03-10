@@ -9,7 +9,13 @@
 *[SR-IOV]: Single Root IO Virtualization 的缩写，一种网卡虚拟化的技术
 *[RDMA]: Remote Direct Memory Access 的缩写，即远程直接内存访问，这是一个支撑 LLM 大模型和 GPT 的热门技术
 
-## 2024-10-29
+## 2024-11-30
+
+### v0.16.2
+
+- **修复** IP 池无法正确添加 IP 问题。
+
+## 2024-10-31
 
 ### v0.16.1
 
