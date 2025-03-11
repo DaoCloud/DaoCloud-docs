@@ -95,4 +95,4 @@ docx 文件的兼容性不太好，比如在欧美或阿拉伯地区的操作系
 - 使用 [I-love-pdf 在线转换 PDF](https://www.ilovepdf.com/word_to_pdf)
 - 或使用 Adobe Acrobat Pro 在本地转换成 PDF
 
-目前经转换的离线文档都位于[下载站](https://docs.daocloud.io/download/#_4)。
+目前经转换的离线文档都位于[下载站](https://docs.daocloud.io/download/#_5)。
