@@ -86,7 +86,7 @@ mdctl export -d docs/zh/ -s mkdocs -o amamba.docx -n "产品文档/工作台/应
 - `产品文档/工作台/应用工作台` 是 nav 中的层次结构
 - `~/Downloads/doc-template.docx` 是模板文件，这个文件的样式可以自行定制
 
-## 转换成 pdf
+## 转换成 PDF
 
 docx 文件的兼容性不太好，比如在欧美或阿拉伯地区的操作系统上打开，
 某些中文字符会出现乱码，此时可以将其转换成 PDF 保留文档样式。
