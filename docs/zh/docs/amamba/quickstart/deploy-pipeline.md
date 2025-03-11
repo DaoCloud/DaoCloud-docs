@@ -23,7 +23,7 @@
 
 1. 在流水线列表页点击 __创建流水线__ 。
 
-    ![pipeline](../images/pipe-cust01.jpg)
+    ![pipeline](../images/pipe-cust01.png)
 
 2. 在弹出的对话框中，选择 __自定义创建流水线__ ，点击 __确定__ 。
 

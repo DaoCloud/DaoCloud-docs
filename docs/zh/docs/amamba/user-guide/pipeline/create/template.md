@@ -8,7 +8,7 @@
 
 1. 在流水线列表页点击 __创建流水线__
 
-    ![click-create](../../../images/pipe-cust01.jpg)
+    ![click-create](../../../images/pipe-cust01.png)
 
 2. 在弹出的对话框中，选择 __模板创建__，点击 __确定__
 
