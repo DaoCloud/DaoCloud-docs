@@ -16,9 +16,9 @@
 - **修复** 命名空间显示逻辑混乱的问题
 - **修复** `rollouts` 更新镜像时，会修改其他字段的问题
 
-!!! warn
+!!! warning
 
-    通过 【Helm 应用】 手动升级 `amamba` 组件时，`jenkins` 镜像仓库地址仍旧是 `xxx/docker.m.daocloud.io`，
+    通过 **Helm 应用** 手动升级 `amamba` 组件时，`jenkins` 镜像仓库地址仍旧是 `xxx/docker.m.daocloud.io`，
     使用安装器升级时，会同步升级为 `xxx/ghcr.m.daocloud.io`。
 
 ## 2024-12-31
