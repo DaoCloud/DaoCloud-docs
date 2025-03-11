@@ -2,6 +2,25 @@
 
 本页列出应用工作台的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2025-02-28
+
+### v0.35.0
+
+- **新增** 流水线模板：部署到虚拟机
+- **新增** `ArgoCDUI` 和 `AppAnyNamespace` 两个 `FeatureGate`
+- **新增** 流水线缓存配置可修改缓存容量大小（根据 `AllowVolumeExpansion` 字段表示是否支持更新流水线缓存容量）
+- **修复** `ArgoRollouts` 监控面板的命名空间选择框没有根据集群过滤
+- **修复** `gitops event` 显示混乱的问题
+- **修复** 在 `app of apps` 模式下，创建的 `Application` 应该是在 `argocd` 命名空间下
+- **修复** 默认集成的 `jenkins` 没有集群和命名空间
+- **修复** 命名空间显示逻辑混乱的问题
+- **修复** `rollouts` 更新镜像时，会修改其他字段的问题
+
+!!! warn
+
+    通过 【Helm 应用】 手动升级 `amamba` 组件时，`jenkins` 镜像仓库地址仍旧是 `xxx/docker.m.daocloud.io`，
+    使用安装器升级时，会同步升级为 `xxx/ghcr.m.daocloud.io`。
+
 ## 2024-12-31
 
 ### v0.34.0
