@@ -1,4 +1,4 @@
-# Citizen Code of Conduct
+ # Citizen Code of Conduct
 
 ## Purpose
 
