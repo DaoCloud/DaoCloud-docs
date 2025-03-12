@@ -13,7 +13,7 @@ hide:
 
     ```yaml
     apiVersion: apps/v1
-    kind: Pod
+    kind: Deployment
     metadata:
       name: log-generator
     spec:
