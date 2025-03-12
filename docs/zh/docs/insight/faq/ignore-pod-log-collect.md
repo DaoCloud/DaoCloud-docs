@@ -5,6 +5,8 @@ hide:
 
 # 容器日志黑名单
 
+> 注意：目前仅支持 Deployment、 Statefulset、 Daemonset、 Pod 级别的黑名单，不支持 Namespace 级别。
+
 具体配置方式如下：
 
 1. 对于任意一个不需要采集容器日志的 Pod, 在 Pod 的 annotation 中添加 `insight.opentelemetry.io/log-ignore: "true"` 来指定不需要采集的容器日志，例如：
