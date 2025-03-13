@@ -15,6 +15,7 @@ hide:
 | 集群接入节点：Integrate-Node | Node |
 | 集群节点移除：Remove-Node | Node |
 | 集群节点 GPU 模式切换：Update-NodeGPUMode  | NodeGPUMode |
+| 集群节点修改污点：Update-Taints | Taints |
 | helm仓库创建：Create-HelmRepo | HelmRepo |
 | helm应用部署：Create-HelmApp | HelmApp |
 | helm应用删除：Delete-HelmApp | HelmApp |
