@@ -122,13 +122,16 @@ nav:
                   - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
                   - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
                   - 基于 Helm 模板部署 Helm 应用: amamba/user-guide/wizard/helm.md
-              - 原生应用:
-                  - 管理原生应用: amamba/user-guide/native/manage.md
-                  - 通过原生应用部署传统微服务: amamba/user-guide/native/native-app.md
-              - OAM 应用:
-                  - OAM 概念: amamba/user-guide/oam/concept.md
-                  - 创建 OAM 应用: amamba/user-guide/oam/create.md
-                  - 管理 OAM 应用: amamba/user-guide/oam/manage.md
+              - 多形态应用:
+                  - 原生应用:
+                      - 管理原生应用: amamba/user-guide/native/manage.md
+                      - 通过原生应用部署传统微服务: amamba/user-guide/native/native-app.md
+                  - Helm 应用: amamba/user-guide/helm.md
+                  - OAM 应用:
+                      - OAM 概念: amamba/user-guide/oam/concept.md
+                      - 创建 OAM 应用: amamba/user-guide/oam/create.md
+                      - 管理 OAM 应用: amamba/user-guide/oam/manage.md
+                  - OLM 应用: amamba/user-guide/olm.md
               - 流水线:
                   - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
                   - 创建流水线:
