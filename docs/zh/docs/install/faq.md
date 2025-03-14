@@ -157,6 +157,37 @@ Error: Failed to download metadata for repo 'appstream': Cannot prepare internal
     sudo yum update -y
     ```
 
+## osRepos 的 external 模式 externalRepoURLs 检查失败
+
+clusterConfig.yaml 如下：
+
+```yaml
+  osRepos:
+    type: external
+    externalRepoType: rocky
+    externalRepoURLs:
+      - http://10.5.14.100:8081/rocky/\$releasever/os/\$basearch
+      - http://10.5.14.100:8081/rocky-iso/\$releasever/os/\$basearch/AppStream
+      - http://10.5.14.100:8081/rocky-iso/\$releasever/os/\$basearch/BaseOS
+```
+
+报错如下：
+
+```
+[root@localhost dce5]# ./dist/dce5-installer cluster-create -c ./sample/clusterConfig.yaml -m ./sample/manifest.yaml --max-tasks 2
+[Error]:[Error] invalid ClusterConfig: maybe the binaries.externalRepoURLs http://10.5.14.100:8081/rocky/$releasever/os/$basearch cannot be connected, return code: 404
+```
+
+配置实际上是正确的，externalRepoURLs 可以正常使用，但是由于检测时，没有解析变量，导致 404
+
+![image](./images/404-osrepos.png)
+
+**影响：**
+导致 osRepos 使用 external 模式的集群无法被正常创建。
+
+**绕过方法：**
+使用新的二进制文件重试。
+
 ## 社区版问题
 
 ### kind 集群重装 DCE 5.0 时 Redis 卡住

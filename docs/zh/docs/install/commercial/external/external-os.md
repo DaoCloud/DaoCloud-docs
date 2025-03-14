@@ -1,41 +1,39 @@
-# 使用外接服务存储 OS Repo 资源
+# 使用外接服务存储 osRepos 资源
 
-本文描述如何使用第三方存储服务的 OS Repo 资源并且在安装器安装时进行指定。支持两种类型：S3 兼容服务(如 minio)，非 S3 兼容服务(如 nginx)
+本文描述如何使用第三方存储服务的 osRepos 资源并且在安装器安装时进行指定。支持两种类型：S3 兼容服务(如 minio)，非 S3 兼容服务（如 nginx）。
 
 ## 前提条件
 
 - 根据要部署的环境下载 [ISO 操作系统镜像文件](../start-install.md/#iso)
 - 根据要部署的环境下载 [osPackage 离线包](../start-install.md/#ospackage)
 
-## 操作步骤
-
-### 使用 S3 兼容服务
+## 使用 S3 兼容服务
 
 S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中简单配置即可，无需其他操作。
 
-1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `osRepo` 相关的参数：
+在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `osRepo` 相关的参数：
 
-    ```yaml
-    apiVersion: provision.daocloud.io/v1alpha4
-    kind: ClusterConfig
-    metadata:
-    spec:
-    ..........
-    osRepos:
-        type: external
-        isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
-        osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
-        externalRepoEndpoint: https://external-repo.daocloud.io
-        externalRepoUsername: rootuser
-        externalRepoPassword: rootpass123
-    ..........
-    ```
+```yaml
+apiVersion: provision.daocloud.io/v1alpha4
+kind: ClusterConfig
+metadata:
+spec:
+  ..........
+  osRepos:
+    type: external
+    isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
+    osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
+    externalRepoEndpoint: https://external-repo.daocloud.io
+    externalRepoUsername: rootuser
+    externalRepoPassword: rootpass123
+  ..........
+```
 
-    !!! note
+!!! note
 
-        给定的用户名需要具有 bucket 的读写权限。
+    给定的用户名需要具有 bucket 的读写权限。
 
-### 使用非 S3 兼容服务
+## 使用非 S3 兼容服务
 
 非 S3 兼容的服务需要先手动将下载好的 ISO 操作系统镜像文件、osPackage 离线包导入，
 然后在[集群配置文件 clusterConfig.yaml](../cluster-config.md) 中配置相关参数。
@@ -45,17 +43,17 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
 
 1. 确保有一个可用的 nginx 服务，及服务所在节点的登录和文件写入权限；
 
-2. 下载/拷贝 ISO 操作系统镜像文件、osPackage 离线包至 nginx 服务所在节点，并将 ISO 导入脚本从火种节点拷贝至 nginx 服务所在节点；
+1. 下载/拷贝 ISO 操作系统镜像文件、osPackage 离线包至 nginx 服务所在节点，并将 ISO 导入脚本从火种节点拷贝至 nginx 服务所在节点；
 
     !!! note
 
         ISO 导入脚本在[离线包镜像包](../start-install.md/#_2)中，路径为 `./offline/offline-iso/import_iso.sh`
 
-3. 确定需要导入的路径；
+1. 确定需要导入的路径；
 
     1. 通过 nginx.conf (`nginx -t` 命令查看改文件路径) 检测 nginx 服务所在节点的文件路径和 URL 路径的映射关系，下方示例供参考：
 
-        ```bash
+        ```nginx
         http {
             server {
                 listen       8080;
@@ -68,14 +66,14 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
         }
         ```
 
-       上方配置说明 nginx http 服务的访问根路径映射本地目录 `/usr/share/nginx/html`。
+        上方配置说明 nginx http 服务的访问根路径映射本地目录 `/usr/share/nginx/html`。
 
-    2. 如果是普通方式部署的 nginx 服务，则选定导入路径为 `/usr/share/nginx/html`。
+    1. 如果是普通方式部署的 nginx 服务，则选定导入路径为 `/usr/share/nginx/html`。
 
-    3. 如果是容器部署的 nginx 服务，需要挂载宿主机路径至容器，且挂载的宿主机路径对应着映射了 http 服务的容器本地路径，即存在这样的关系：
+    1. 如果是容器部署的 nginx 服务，需要挂载宿主机路径至容器，且挂载的宿主机路径对应着映射了 http 服务的容器本地路径，即存在这样的关系：
        `http-path -> container-path -> host-path`。则导入路径应为 host-path，host-path 需要手动按照附录 2 确认。
 
-4. 执行如下命令导入 ISO 操作系统镜像文件、osPackage 离线包：
+1. 执行如下命令导入 ISO 操作系统镜像文件、osPackage 离线包：
 
     ```bash
     cat > import.sh << "EOF"
@@ -95,7 +93,7 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
 
     其中环境变量 MAPPING_PATH 代表步骤 3 中提及的导入路径
 
-5. 验证是否导入成功
+1. 验证是否导入成功
 
     登录一台全局服务集群节点，假设 nignx 访问地址为 `http://10.0.1.1:8080`，参考附录 1 进行配置，执行如下命令：
 
@@ -118,7 +116,7 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
 
         其他操作系统也是类似操作，因为具体的操作系统的包管理器的软件源配置有一些差异
 
-6. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `osRepo` 相关的参数，`externalRepoURLs` 参考附录 1。
+1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `osRepo` 相关的参数，`externalRepoURLs` 参考附录 1。
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -138,11 +136,11 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
       ..........
     ```
 
-7. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
+1. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
 
-### 附录
+## 附录
 
-#### 1. 操作系统与对应的 RepoURLs
+### 操作系统与对应的 RepoURLs
 
 `${address_prefix}` 替换为 HTTP 服务的外部访问地址，如 `http://10.0.1.1:8080`
 
@@ -157,7 +155,7 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
 | Ubuntu bionic | ['deb [trusted=yes] \${address_prefix}/kubean/ubuntu/amd64 bionic/','deb [trusted=yes] \${address_prefix}/kubean/ubuntu-iso bionic main restricted'] |
 | Ubuntu focal | ['deb [trusted=yes] \${address_prefix}/kubean/ubuntu/amd64 focal/','deb [trusted=yes] \${address_prefix}/kubean/ubuntu-iso focal main restricted']|
 
-#### 2. 查看容器卷挂载列表
+### 查看容器卷挂载列表
 
 | CLI tool | Command |
 | --- | --- |
