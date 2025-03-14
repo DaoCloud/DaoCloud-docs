@@ -368,7 +368,7 @@ Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo u
 
 #### 优化
 
-- **优化** 对于使用安装器通过外接 os repo 部署环境后，优化了在容器管理创建集群时可以选择到外接 os repo
+- **优化** 对于使用安装器通过外接 osRepos 部署环境后，优化了在容器管理创建集群时可以选择到外接 osRepos
 - **优化** 重构、抽象 clusterConfig 检测层
 - **优化** 前置依赖安装脚本的错误提示
 - **优化** 在最小化安装过程中 ES 健康状态为 `yellow` 时允许继续安装
@@ -503,7 +503,7 @@ Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo u
 - 离线包解压后的 `offline/sample/clusterConfig.yaml` 文件存在缩进问题，导致离线部署时会变成在线安装，离线安装前如果要使用 `offline/sample/clusterConfig.yaml` 文件的话需要手动修改缩进问题，请查看[集群配置文件](commercial/cluster-config.md)
 - Addon 离线包暂不支持上传到 JFrog 外接服务
 - 容器管理平台离线模式暂无法支持工作集群添加节点
-- 离线场景下使用外置 OS Repo 仓库时，即 clusterConfig.yaml 中定义 `osRepos.type=external`，
+- 离线场景下使用外置 osRepos 仓库时，即 clusterConfig.yaml 中定义 `osRepos.type=external`，
   部署 DCE 5.0 成功后无法在容器管理中创建工作集群，临时解决方案如下：
  全局服务集群安装完成后立即更新全局服务集群 kubean-system 命名空间的 configmap kubean-localservice，
   将 `yumRepos.external` 值中所有双引号改为单引号。如下示例，将文件内的双引号都替换为单引号：
@@ -546,7 +546,7 @@ Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo u
 
 - **新增** 支持 Other Linux 来部署 DCE 5.0，[参考文档](os-install/otherlinux.md)
 - **新增** 支持操作系统 OpenEuler 22.03
-- **新增** 支持外接 OS Repos，[参考集群配置文件说明](commercial/cluster-config.md)
+- **新增** 支持外接 osReposs，[参考集群配置文件说明](commercial/cluster-config.md)
 - **新增** 支持内核参数调优，[参考集群配置文件说明](commercial/cluster-config.md)
 - **新增** 支持检测外部 ChartMuseum 和 MinIO 服务是否可用
 
@@ -575,9 +575,9 @@ Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo u
     `calico_crds_download_url`，值为上述 calico_crds_download_url 的值
 
 - Kubean 存在低概率无法创建 spray-job 任务，通过手动删除对应的 clusteroperations CR 资源再重新执行安装命令
-- 使用外部 OS Repo 部署 DCE 5.0 后，无法通过容器管理离线创建工作集群，通过手动修改全局服务集群 kubean-system
+- 使用外部 osRepos 部署 DCE 5.0 后，无法通过容器管理离线创建工作集群，通过手动修改全局服务集群 kubean-system
   命名空间的 configmap kubean-localservice 来解决。在 `yumRepos` 下新增如下配置，需要在 external 内填写
-  clusterConfig.yaml 中配置的外部 OS Repo 地址：
+  clusterConfig.yaml 中配置的外部 osRepos 地址：
 
     ```yaml
     yumRepos:
