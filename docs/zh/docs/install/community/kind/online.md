@@ -162,7 +162,7 @@ precheck pass..
 
 1. 在 kind 主机下载 dce5-installer 二进制文件。
 
-    假定 VERSION 为 v0.25.0
+    假定 VERSION 为 v0.27.0
 
     ```shell
     export VERSION=v0.25.0
