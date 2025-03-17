@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-date: 2024-08-19
+date: 2025-03-17
 ---
 
 # Installation Troubleshooting
@@ -168,7 +168,40 @@ You can try the following methods to resolve it:
     sudo yum update -y
     ```
 
-## Community Edition Issues
+## `osRepos` External Mode `externalRepoURLs` Check Failure  
+
+The `clusterConfig.yaml` is as follows:  
+
+```yaml
+  osRepos:
+    type: external
+    externalRepoType: rocky
+    externalRepoURLs:
+      - http://10.5.14.100:8081/rocky/\$releasever/os/\$basearch
+      - http://10.5.14.100:8081/rocky-iso/\$releasever/os/\$basearch/AppStream
+      - http://10.5.14.100:8081/rocky-iso/\$releasever/os/\$basearch/BaseOS
+```
+
+Error message:  
+
+```
+[root@localhost dce5]# ./dist/dce5-installer cluster-create -c ./sample/clusterConfig.yaml -m ./sample/manifest.yaml --max-tasks 2
+[Error]:[Error] invalid ClusterConfig: maybe the binaries.externalRepoURLs http://10.5.14.100:8081/rocky/$releasever/os/$basearch cannot be connected, return code: 404
+```
+
+The configuration is actually correct, and `externalRepoURLs` can be accessed normally. However, during validation, the variables are not properly parsed, resulting in a `404` error.  
+
+![image](./images/404-osrepos.png)  
+
+### Impact
+
+Clusters using `osRepos` in external mode cannot be created successfully.  
+
+### Workaround
+
+Retry using a new binary file.
+
+## Community Package Issues
 
 ### Redis hanging during DCE 5.0 reinstallation of the kind cluster
 
