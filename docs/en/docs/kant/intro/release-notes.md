@@ -1,12 +1,47 @@
 ---
 MTPE: ModetaNiu
-date: 2024-06-28
+date: 2025-03-18
 ---
 
 # Release Notes
 
 This page lists the release notes for Cloud Edge Collaboration, providing an overview
 of the evolution path and feature changes in each version.
+
+## 2024-12-31
+
+### v0.18.0
+
+- **Added** support for reporting terminal device status.
+- **Updated** the display of the time taken to retrieve status after edge unit installation.
+
+## 2024-11-30
+
+### v0.17.0
+
+- **Updated** the unit display for terminal device collection and reporting intervals.
+- **Updated** download prompts for edge installation packages.
+
+## 2024-10-31
+
+### v0.16.0
+
+- **Updated** token validity period prompts in edge node installation commands.
+
+## 2024-09-30
+
+### v0.15.0
+
+- **Updated** support for editing terminal devices while in a bound node state.
+- **Updated** the batch workload management process for a more user-friendly experience.
+
+## 2024-08-31
+
+### v0.14.0
+
+- **Added** support for allocating initial cloud resources to edge units based on edge node scale.
+- **Added** support for uninstallation policy settings for edge units.
+- **Updated** edge node access commands to allow setting the CloudCore component access address.
 
 ## 2024-07-31
 
