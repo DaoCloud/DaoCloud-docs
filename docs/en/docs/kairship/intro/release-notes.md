@@ -8,6 +8,13 @@ date: 2024-10-10
 This page lists the release notes of Multicloud Management module,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-10-31  
+
+### v0.24.0  
+
+- **Added** extended audit log feature to record advanced configuration operations for multicloud instances,
+  as well as YAML creation operations for propagation policies and override policies.
+
 ## 2024-09-30
 
 ### v0.23.0
