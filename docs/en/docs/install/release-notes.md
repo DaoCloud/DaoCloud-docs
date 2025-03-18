@@ -15,6 +15,49 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2025-02-28
+
+### v0.27.0
+
+- **Added** support for setting `variables` parameters in `manifest.yaml` to extend and customize GProduct component configuration.
+
+## 2025-01-31
+
+### v0.26.0
+
+- **Improved** external MySQL database support to allow setting the database mode (master-slave or MGR).
+
+## 2024-12-31
+
+### v0.25.0
+
+- **Improved** manifest components and their dependency handling.
+
+## 2024-11-30
+
+### v0.24.0
+
+- **Fixed** inconsistent output units of the `df` command across different systems.
+
+## 2024-10-30
+
+### v0.23.0
+
+#### Updates
+
+- **Improved** to enable cert-manager.
+- **Improved** pre-install dependency packages to include the `helm-push` plugin.
+- **Improved** MySQL MGR mode to use router with two replicas.
+- **Improved** middleware MySQL version to unify on 8.0.37.
+
+#### Fixes
+
+- **Fixed** cluster status detection logic with improved exception handling when clusters are unreachable.
+- **Fixed** an issue where installing a global cluster with external ES, Redis, and MySQL caused MinIO creation to fail.
+- **Fixed** an architecture issue with `skopeo copy` when pulling ARM images in x86 environments.
+- **Fixed** incorrect Redis image registry in middleware.
+- **Fixed** issues with Kafka metrics collection.
+
 ## 2024-09-30
 
 ### v0.22.0
