@@ -1,12 +1,31 @@
 ---
 MTPE: windsonsea
-date: 2024-10-10
+date: 2025-03-18
 ---
 
 # Releases Notes
 
 This page lists the release notes for Workbench to help you understand
-the development and feature changes in each version.
+the development and feature changes in each version. 
+
+## 2025-02-28  
+
+### v0.35.0  
+
+- **Added** pipeline templates for deploying to virtual machines.  
+- **Added** two new `FeatureGates`: `ArgoCDUI` and `AppAnyNamespace`.  
+- **Added** support for modifying pipeline cache size, controlled by the `AllowVolumeExpansion` field.  
+- **Fixed** the namespace selector in the `ArgoRollouts` monitoring dashboard not filtering by cluster.  
+- **Fixed** display issues with `gitops event`.  
+- **Fixed** the creation of `Application` resources in *app of apps* mode to ensure they are placed in the `argocd` namespace.  
+- **Fixed** missing cluster and namespace information in the default integrated `jenkins` instance.  
+- **Fixed** confusing logic in namespace display.  
+- **Fixed** an issue where updating container images in `rollouts` would unintentionally modify other fields.  
+
+!!! warning  
+
+    When manually upgrading the `amamba` component using a **Helm app**, the `jenkins` image registry address will remain `xxx/docker.m.daocloud.io`.  
+    When upgrading via the installer, it will automatically update to `xxx/ghcr.m.daocloud.io`.
 
 ## 2024-12-31  
 
@@ -14,7 +33,7 @@ the development and feature changes in each version.
 
 - **Added** support for selecting a StorageClass when configuring pipeline cache in the admin view.  
 - **Added** support for directly updating pipeline cache.  
-- **Improved** helm application creation style to sync with container management.  
+- **Improved** helm app creation style to sync with container management.  
 
 ## 2024-11-30  
 
