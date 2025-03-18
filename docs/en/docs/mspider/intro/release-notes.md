@@ -2,7 +2,7 @@
 MTPE: ModetaNiu
 Revised: done
 Pics: NA
-Date: 2024-05-31
+Date: 2025-03-18
 ---
 
 # Service Mesh Release Notes
@@ -11,6 +11,66 @@ This page lists all the Release Notes for each version of Service Mesh,
 providing convenience for users to learn about the evolution path and feature changes.
 
 *[mspider]: Internal development codename for DaoCloud Service Mesh
+
+## 2025-01-25
+
+### v0.34.0
+
+- **Fixed** an issue where the mesh gateway load balancing IP could not be queried.
+- **Fixed** a problem where the installation parameters for the Ingress gateway were confused when both managed cluster and workload cluster roles were present.
+- **Updated** Istio v1.23 set as an experimental version, with 1.22 being the default recommended version.
+
+## Notes on Upgrading Service Mesh to Istio 1.23+
+
+!!! note
+
+    Affected Range:
+    If the Istio version is lower than 1.23 and a mesh gateway instance has been created, you need to upgrade to Istio 1.23.
+    If Istio is lower than 1.23 but no mesh gateway instance has been created, this upgrade will not affect you.
+
+### Background
+
+The Istio community announced the deprecation of the In-Cluster Operator in [1.23](https://istio.io/latest/blog/2024/in-cluster-operator-deprecation-announcement/) and it will be fully deprecated in 1.24.
+DCE 5.0's service mesh uses the Istio In-Cluster Operator, so to ensure that versions 1.23 and later of Istio can be installed correctly, we have developed and open-sourced the [Pluma Operator](https://github.com/pluma-tools/pluma-operator).
+When the Istio version in the service mesh is 1.23 or higher, the Operator will automatically switch from the Istio In-Cluster Operator to the Pluma Operator.
+
+### Upgrade Changes
+
+One major change with replacing the In-Cluster Operator with the Pluma Operator is that Istio component installations will shift from being managed by the Operator to being installed using Helm standard methods. This means that certain resources will undergo changes during the upgrade.
+
+### Component Update Details
+
+After upgrading to version 1.23, the following components will be affected:
+
+- The `mspider` and `istio` components under `istio-system`.
+- The mesh gateway installed through Mspider.
+
+### Mesh Gateway Upgrade Procedure
+
+!!! note
+
+    Failure to perform the current upgrade will result in a disruption of north-south traffic.  
+
+The most critical part of the upgrade is the data plane traffic, specifically the gateway, as the Helm standard installation brings changes to the templates. The gateway's labels change, which can prevent Pluma from properly upgrading the gateway. Thus, it is necessary to handle this in advance.  
+
+Since Kubernetes does not allow updating `Deployment` selectorLabels, it is necessary to delete and recreate the labels:
+
+1. Create a new gateway and customize the `app` and `istio` labels:
+
+    ```yaml
+    app: $gateway_name
+    Istio: $gateway_name
+    ```
+
+2. Modify the corresponding Gateway Policy CRD to bind the new gateway and migrate traffic to the new gateway.
+
+3. Delete the old gateway that does not conform to the upgraded template.
+
+## 2024-12-30
+
+### v0.33.0
+
+- **Fixed** an issue where the KubeConfig for managed mesh workload clusters was not updated and where mesh secrets were not cleaned up when a workload cluster was removed.
 
 ## 2024-11-30
 
@@ -516,7 +576,7 @@ providing convenience for users to learn about the evolution path and feature ch
 - **Added** support for Istio 1.17.1
 - **Added** a new etcd high availability solution
 - **Added** a scenario testing framework for testing scenario-based features
-- **Added** automatic adjustment of component resource configurations when selecting different grid scales
+- **Added** automatic adjustment of component resource configurations when selecting different mesh scales
 - **Added** implementation for custom roles, supporting operations like creation, updating, deletion, binding, and unbinding of custom roles
 
 #### Improvements
@@ -535,8 +595,8 @@ providing convenience for users to learn about the evolution path and feature ch
 - **Fixed** the error during cluster migration with the east-west gateway (unable to modify instance labels; if component labels need to be modified, components must be deleted and rebuilt)
 - **Fixed** an issue that caused Mesh binding to workspace services to fail (the interface displayed success)
 - **Fixed** an issue of orphaned namespaces in the virtual cluster due to exceptions, adding self-check and cleanup behavior when starting mcpc-controller
-- **Fixed** an issue of API failing to push grid configurations due to controller updating the grid
-- **Fixed** an issue where ServicePort's TargetPort was not set correctly when creating a managed grid
+- **Fixed** an issue of API failing to push mesh configurations due to controller updating the mesh
+- **Fixed** an issue where ServicePort's TargetPort was not set correctly when creating a managed mesh
 - **Fixed** the incorrect override issue with `GlobalMesh.Status.MeshVersion`
 - **Fixed** an issue where mcpc-controller could not enable debug mode
 - **Fixed** an issue where mcpc-controller could not trigger cluster deletion events
@@ -550,7 +610,7 @@ providing convenience for users to learn about the evolution path and feature ch
 #### New Features
 
 - **Added** multi-cloud network interconnection management and related interfaces
-- **Added** global configuration capabilities for the grid (grid system configuration, global traffic governance capabilities, global sidecar injection settings) enhancements
+- **Added** global configuration capabilities for the mesh (mesh system configuration, global traffic governance capabilities, global sidecar injection settings) enhancements
 - **Added** support for zookeeper proxy
 
 #### Improvements
@@ -560,13 +620,13 @@ providing convenience for users to learn about the evolution path and feature ch
 
 #### Fixes
 
-- **Fixed** logical errors related to the grid caused by the removal of clusters from the container management platform
+- **Fixed** logical errors related to the mesh caused by the removal of clusters from the container management platform
 - **Fixed** an issue where injecting Sidecar with RegProxy would cause Nacos registration failures
 - **Fixed** an issue of incorrect service recognition in Spring Cloud
 - **Fixed** the lack of synchronization of cluster status information from the container management platform
 - **Fixed** the traffic pass-through strategy - IP segment configuration for traffic filtering not taking effect
 - **Fixed** the traffic pass-through strategy - inability to delete traffic pass-through strategies
-- **Fixed** an issue of returning errors when obtaining grid configurations due to non-existent configuration paths
+- **Fixed** an issue of returning errors when obtaining mesh configurations due to non-existent configuration paths
 
 ## 2022-12-29
 
@@ -585,8 +645,8 @@ providing convenience for users to learn about the evolution path and feature ch
 
 #### Fixes
 
-- **Fixed** an issue where some components were not updated after a grid upgrade
-- **Fixed** an issue of some resources not being cleared after grid removal - sidecar resource synchronization was incorrect, now using the actual sidecar resources from the istio-proxy container in the Pod
+- **Fixed** an issue where some components were not updated after a mesh upgrade
+- **Fixed** an issue of some resources not being cleared after mesh removal - sidecar resource synchronization was incorrect, now using the actual sidecar resources from the istio-proxy container in the Pod
 - **Fixed** an issue where managed clusters could not act as working clusters
 - **Fixed** an issue where the injection display was incorrect when the sidecar injection instances were at 0/0
 - **Fixed** an issue where sidecar-related information still displayed after canceling sidecar injection
@@ -600,7 +660,7 @@ providing convenience for users to learn about the evolution path and feature ch
 - **Added** **Key Management** related APIs
 - **Added** rules and gateway lists in virtual services
 - **Added** governance strategy labels and related filtering capabilities
-- **Added** the ability to check the health status of clusters within the grid
+- **Added** the ability to check the health status of clusters within the mesh
 - **Added** integration with otel sdk
 - **Added** multiple interface implementations for secrets
 - **Added** support for Istio 1.15.3
@@ -608,19 +668,19 @@ providing convenience for users to learn about the evolution path and feature ch
 #### Improvements
 
 - **Improved** the workload sidecar injection interface to prevent issues
-- **Improved** the monitoring dashboard for grid services to expand by default
-- **Improved** to disable sub-link redirection in the global monitoring dashboard of the grid to avoid interface confusion
-- **Improved** the processing flow of the grid control plane to avoid conflicts caused by updating already updated objects
-- **Improved** the logic for accessing and removing clusters in the grid
+- **Improved** the monitoring dashboard for mesh services to expand by default
+- **Improved** to disable sub-link redirection in the global monitoring dashboard of the mesh to avoid interface confusion
+- **Improved** the processing flow of the mesh control plane to avoid conflicts caused by updating already updated objects
+- **Improved** the logic for accessing and removing clusters in the mesh
 
 #### Fixes
 
 - **Fixed** an issue where mcpc and other components were not updated after upgrading the control plane MSpider
 - **Fixed** errors in obtaining cluster resources
 - **Fixed** an issue where the response code was 200 when the cluster name did not exist in the cluster namespace list interface
-- **Fixed** an issue of incorrect precondition checks in the grid upgrade process
-- **Fixed** an issue of grid upgrades not executing k8s version restrictions
+- **Fixed** an issue of incorrect precondition checks in the mesh upgrade process
+- **Fixed** an issue of mesh upgrades not executing k8s version restrictions
 - **Fixed** an issue of invalid workload sidecar resource configuration in the sidecar management interface
-- **Fixed** an issue where clusters could not be removed due to monitoring detection failures within the grid
+- **Fixed** an issue where clusters could not be removed due to monitoring detection failures within the mesh
 - **Fixed** an issue where the data plane image was not packaged into the DCE 5.0 offline package
 - **Fixed** an issue where Ckube could not automatically update configurations
