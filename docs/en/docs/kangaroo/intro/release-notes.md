@@ -12,6 +12,26 @@ understand the evolution path and feature changes of each version.
 *[Kpanda]: Internal dev codename for container management
 *[Harbor]: An open-source container registry tool and a CNCF graduated project
 
+## 2024-11-30
+
+### v0.24.0
+
+- **Fixed** an issue where creating a managed Harbor instance failed when different clusters used the same MinIO name.
+
+## 2024-10-31
+
+### v0.23.0
+
+- **Added** validation prompts to prevent image pushes when image proxy is enabled in Harbor repositories.
+- **Added** support for custom image namespaces in Docker Registry.
+- **Added** support for deleting middleware when deleting Harbor instances.
+- **Fixed** a delay issue in the count when creating image namespaces.
+- **Fixed** an issue where managed Harbor ChartMuseum did not correctly use Redis.
+- **Fixed** inconsistent return values between the `GetRepository` and `ListRepository` APIs.
+- **Fixed** a 405 error prompt when deleting an admin-integrated docker-registry image.
+- **Fixed** image vulnerability issues.
+- **Fixed** an issue where creating a Harbor MinIO instance would cause unexpected restarts.
+
 ## 2024-09-30
 
 ### v0.22.0
