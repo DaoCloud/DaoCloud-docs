@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-date: 2024-01-05
+date: 2025-03-18
 ---
 
 # Elasticsearch Indexing Service Release Notes
@@ -8,6 +8,18 @@ date: 2024-01-05
 This page lists the Release Notes of Elasticsearch indexing service, so that you can understand the evolution path and feature changes of each version.
 
 *[mcamel-elasticsearch]: "mcamel" is the dev name for DaoCloud's middlewares, and "elasticsearch" is the middleware for distributed search and analytics services
+
+## 2025-02-28  
+
+### v0.24.0  
+
+- **Added** support for creating `Elasticsearch` instances with version `8.17.1`.  
+
+## 2024-11-30  
+
+### v0.23.0  
+
+- **Updated** the default configuration to disable the geoip database to avoid yellow health status.
 
 ## 2024-09-30
 
