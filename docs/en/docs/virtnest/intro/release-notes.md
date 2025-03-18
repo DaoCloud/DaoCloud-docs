@@ -8,6 +8,33 @@ Date: 2024-10-10
 This page provides the release notes for VirtNest (Virtual Machine),
 allowing you to understand the evolution path and feature changes of each version.
 
+## 2025-02-28
+
+### v0.16.0
+
+- **Added** status prompts for real-time VM migration.  
+- **Added** UI prompts indicating whether storage supports hot-plugging.  
+- **Fixed** an issue where the image address was empty during cold migration within the VM cluster.  
+- **Fixed** an incorrect disk count in the VM overview.
+
+## 2024-11-30
+
+### v0.15.0
+
+- **Added** support for semi-automated Muxi GPU configuration.  
+- **Added** snapshot management.  
+- **Added** a VM monitoring overview.  
+- **Fixed** an issue where VM network interfaces went down after reboot.  
+- **Fixed** VM creation failures when using GPU.
+
+## 2024-10-31
+
+### v0.14.0
+
+- **Upgraded** VirtNest Agent to v0.8.0.  
+- **Fixed** an error when creating VMs with GPUs.  
+- **Fixed** an issue where VM disks could not be expanded.
+
 ## 2024-09-30
 
 ### v0.13.0
