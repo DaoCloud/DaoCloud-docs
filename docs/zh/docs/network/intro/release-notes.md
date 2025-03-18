@@ -20,16 +20,16 @@
 ### v0.16.1
 
 - **修复** `更新 multus 接口` cniType 为 IPvlan 时传入的 bond 不为空，且被更新的 ipvlan 的 Bond.Name 为 "" 时将 panic。
-- **修复** `更新 spiderClaimParameter 接口`更新失败, 却提示创建失败，提示信息有误。
+- **修复** `更新 spiderClaimParameter 接口`更新失败，却提示创建失败，提示信息有误。
 
 ## 2024-09-30
 
 ### v0.16.0
 
 - **修复** 前端使用默认池功能缺少字段选择，后端 API 新增对应的默认池字段支持。
-- **修复** 修复拼写错误问题, CreatedTime 应为 createdTime。
+- **修复** 修复拼写错误问题，CreatedTime 应为 createdTime。
 - **修复** 修复更新 ovs 配置不起作用。
-- **修复** 创建将 overlay CNI 类型作为 underlay multus CR 的名字, 该 CR 将会错误识别为 overlay CNI。
+- **修复** 创建将 overlay CNI 类型作为 underlay multus CR 的名字，该 CR 将会错误识别为 overlay CNI。
 
 ## 2024-08-30
 
@@ -50,7 +50,7 @@
 - 适配 **Spiderpool v0.9.3**
 
 - **修复** ListAllSubnetsAndIPPoolsAndMultus API 通过 namespace 亲和性过滤池失败
-- **修复** 修复 ListMultusCniConfig API 指针值对比判断错误, 并修复判断中将 sriov 的错写为 ipvlan 的问题
+- **修复** 修复 ListMultusCniConfig API 指针值对比判断错误，并修复判断中将 sriov 的错写为 ipvlan 的问题
 - **新增** 支持界面创建 ovs-cni 类型的 Multus CR
 
 ## 2024-04-30
@@ -61,7 +61,7 @@
 - 适配 **EgressGateway v0.5.1**
 
 - **优化** 优化工作负载网络配置，支持 Multus CR 无感知，应用直接选择 IPPool
-- **优化** 修复 multusName 中的命名空间为空，自动为其拼接 spiderpool 的所在 Namespace
+- **优化** 修复 multusName 中的命名空间为空，自动为其拼接 Spiderpool 的所在 Namespace
 - **优化** 支持创建 SR-IOV 节点策略时，配置以太网或 InfiniBand 网络类型
 
 ## 2024-01-30
