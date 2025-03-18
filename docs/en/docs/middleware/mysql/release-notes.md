@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-date: 2024-01-05
+date: 2025-03-18
 ---
 
 # MySQL Release Notes
@@ -8,6 +8,12 @@ date: 2024-01-05
 This page lists the Release Notes of the MySQL database, so that you can understand the evolution path and feature changes of each version.
 
 *[mcamel-mysql]: "mcamel" is the dev name for DaoCloud's middlewares, and "mysql" is a popular relational database
+
+## 2025-02-28
+
+### v0.26.0
+
+- **Updated** the `mysqld-exporter` image and added support for alerting rules for `MySQL-MGR`.
 
 ## 2024-09-30
 

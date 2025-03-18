@@ -7,6 +7,15 @@ date: 2024-01-05
 
 This page provides the Release Notes for RocketMQ Message Queue, allowing you to understand the evolution and feature changes of each version.
 
+## 2025-02-28  
+
+### v0.14.0  
+
+- **Added** support for configuring static IPs for `RocketMQ` instances.  
+- **Updated** support for configuring time zone environment variables.  
+- **Updated** the operator image version.  
+- **Fixed** an issue with console connection errors after the nameserver restart.
+
 ## 2024-09-30
 
 ### v0.11.0
