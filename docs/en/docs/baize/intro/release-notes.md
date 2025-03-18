@@ -13,9 +13,30 @@ so that you can learn its evolution path and feature changes.
     Features labeled as Beta may undergo changes; please use them with caution
     and provide prompt feedback if you encounter any issues.
 
-## 2024-12-31 
+## 2025-02-28
 
-### v0.12.0  
+### v0.14.1
+
+- **Added** support for enabling RDMA configuration in training tasks.  
+- **Added** support for adding the `HF_ENDPOINT` environment variable to datasets.  
+- **Added** a time range selector in the monitoring dashboard.  
+- **Updated** the vLLM image to version 0.7.1 (with DeepSeek support).  
+- **Updated** Kueue to version 0.10.1.  
+- **Fixed** an issue where legend colors in the monitoring dashboard did not match expectations.  
+- **Fixed** an issue where GPU resource charts displayed incorrectly on the operations management overview page.  
+
+## 2025-01-31
+
+### v0.13.0
+
+- **Updated** the default vLLM image to version 0.6.6 to improve compatibility for training and inference tasks.  
+- **Fixed** an issue where training tasks configured for checkpoint resume still showed as disabled in task details.  
+- **Fixed** an issue where GPU usage metrics in training task monitoring always showed as "no data."
+- **Fixed** an issue where UI operations could not proceed when no default resource pool was present.
+
+## 2024-12-31
+
+### v0.12.0
 
 - **Added** support for custom resource pools in queues.  
 - **Added** a Muxi GPU monitoring dashboard with enhanced GPU observability metrics.  
