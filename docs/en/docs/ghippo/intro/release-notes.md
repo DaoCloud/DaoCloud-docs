@@ -3,19 +3,31 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
-## 2025-01-31  
+## 2025-02-28
 
-### v0.34.0  
+### v0.35.0
 
-- **Added** support for global management to use cert-manager for generating and managing SSL certificates.  
-- **Added** disabled SSH keys and access credentials when a user is deleted or disabled.  
-- **Added** a feature gate for public cloud.  
-- **Added** public cloud user registration.  
-- **Added** phone number information to the public cloud user profile page.  
-- **Added** dual sidebars for public cloud (admin sidebar/user sidebar).  
-- **Fixed** an issue with vGPU allocated quota calculation in workspaces.  
-- **Fixed** an issue where searching for usernames containing `_` in the user list returned no results.  
-- **Fixed** an issue where some audit log resource names were empty.  
+- **Added** real-name authentication for individual public cloud users.
+- **Added** audit logging for creating, updating, and deleting custom roles.
+- **Fixed** login state validation issues in the `ListGProducts API`.
+- **Fixed** an issue where audit logs were not recorded when saving `SMTP` settings.
+- **Fixed** inconsistent search rules between the user authorization list and the group authorization list.
+- **Fixed** inconsistent styling between global management and namespace quota management pages.
+- **Fixed** incorrect display of allocated `vGPU` memory in the workspace.
+
+## 2025-01-31
+
+### v0.34.0
+
+- **Added** support for global management to use cert-manager for generating and managing SSL certificates.
+- **Added** disabled SSH keys and access credentials when a user is deleted or disabled.
+- **Added** a feature gate for public cloud.
+- **Added** public cloud user registration.
+- **Added** phone number information to the public cloud user profile page.
+- **Added** dual sidebars for public cloud (admin/user sidebar).
+- **Fixed** an issue with vGPU allocated quota calculation in workspaces.
+- **Fixed** an issue where searching for usernames containing `_` in the user list returned no results.
+- **Fixed** an issue where some audit log resource names were empty.
 - **Fixed** an issue with abnormal username display in audit logs.
 
 ## 2024-11-30
@@ -31,7 +43,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.32.0
 
-- **Added** Sidecar version role permission SDK
+- **Added** sidecar version role permission SDK
 - **Added** cloud-native AI related permission points in Workspace Editor
 - **Added** encryption implementation for username and password in session-limit interface
 - **Fixed** an issue where the corresponding field was not cleared after re-setting
@@ -193,7 +205,7 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** __Operations Management__ precise search in list
 - **Improved** Chinese language support to the __About__ - __Product Versions__ submodule
   for kcoral, dowl, kcollie, and virtnest
-- **Fixed** an issue where LDAP users synchronized over could not be added to user groups
+- **Fixed** an issue where LDAP users synchronized over could not be added to groups
 - **Fixed** an issue in Operations Management where workspace reports were not fully displayed
 
 ## 2023-11-01
@@ -249,7 +261,7 @@ so that you can understand the evolution path and feature changes of each versio
   for the system
 - **Improved** support for customized parameters in Webhook URL
 - **Fixed** an issue with errors when filling in the mail server
-- **Fixed** an issue where LDAP users could not join user groups
+- **Fixed** an issue where LDAP users could not join groups
 
 ## 2023-07-06
 
@@ -304,7 +316,7 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** features to create/edit/delete/list/view Webhook API in Access Control
 - **Added** user CRUD/Login/Logout events triggering Webhook
 - **Added** Access Control permission
-- **Added** support for `.` and `@` in usernames/user group names
+- **Added** support for `.` and `@` in usernames/group names
 - **Added** a feature where platform default language changes to auto-detected browser preference
 - **Added** a feature of downloading audit logs as Excel and CSV formats
 - **Added** a feature to separate display for system and user logs in Audit Logs 
@@ -329,7 +341,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Fixes
 
-- **Fixed** an issue with the synchronization time of LDAP user group synchronization
+- **Fixed** an issue with the synchronization time of LDAP group synchronization
 
 ## 2023-04-28
 
@@ -503,7 +515,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 - **Fixed** an issue where deleted clusters still existed
 - **Fixed** an issue where keycloak jwks changes did not reset the Istio cache
-- **Fixed** an issue with zero-value creation time for user groups
+- **Fixed** an issue with zero-value creation time for groups
 - **Fixed** an issue where the __last used time__ field for access keys returned an empty string when not used
 
 ## 2022-09-28
@@ -536,7 +548,7 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** User and Access Control -> authorization (APIServer/SDK)
 - **Added** Audit Logs -> display (view/list/cleanup settings/export)
 - **Added** Audit Logs -> batch insertion
-- **Added** Identity provider -> integrate LDAP -> user/user group synchronization settings (create/edit/delete/view/sync)
+- **Added** Identity provider -> integrate LDAP -> user/group synchronization settings (create/edit/delete/view/sync)
 - **Added** Settings -> Security Policies -> password policy settings
 - **Added** personal center -> access keys (create/edit/delete/view/list)
 - **Added** Audit Logs -> insertion of global management operations into Audit Logs
