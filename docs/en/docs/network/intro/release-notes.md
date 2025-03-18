@@ -15,7 +15,13 @@ evolution path and feature changes of each version.
 *[SR-IOV]: Single Root IO Virtualization
 *[RDMA]: Remote Direct Memory Access, a popular tech to support LLM and GPT
 
-## 2024-10-29
+## 2024-11-30  
+
+### v0.16.2  
+
+- **Fixed** an issue where the IP pool could not correctly add IPs.  
+
+## 2024-10-31
 
 ### v0.16.1
 
