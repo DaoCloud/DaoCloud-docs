@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-date: 2024-07-11
+date: 2025-03-18
 ---
 
 # Container Management Release Notes
@@ -9,6 +9,36 @@ This page provides the Release Notes for container management to help you
 understand the evolution path and feature changes from release to release.
 
 *[kpanda]: Internal development codename for DaoCloud container management
+
+## 2025-01-31
+
+### v0.36
+
+- **Added** a packaged addon for Muxi `metax-exporter`, used to collect Muxi GPU device metrics in the cluster environment, with graphical visualization available in the observability module after installation.
+- **Added** a packaged addon for Muxi `metax-extensions`, providing the `gpu-device` and `gpu-label` components to enable essential resource registration and allocation capabilities for containers using Muxi GPUs.
+- **Added** a packaged addon for Muxi `metax-operator`, which includes all components, further cloud-native optimized beyond `metax-extensions` to reduce cluster resource burden and simplify operations.
+- **Fixed** an issue with the display of the snapshot creation button in the PVC list.
+
+## 2024-12-31
+
+### v0.35
+
+- **Updated** access restrictions so that only cluster admins can access the network settings module.
+- **Updated** the cloudshell readiness process to improve speed when no idle workers are available.
+- **Fixed** an issue where `kpanda`-related pods in production environments did not have resource limits set.
+- **Fixed** a history information leak issue in the cloudtty console.
+- **Fixed** an issue where keys would be lost after creating a cluster using key-based authentication, causing the private key to be unavailable when adding nodes again.
+- **Fixed** an issue where job execution failures due to timeouts did not update the `helmrelease` status.
+
+## 2024-11-30
+
+### v0.34.0
+
+- **Updated** the etcd backup section in the `ListClusterSummary` cluster list page.
+- **Fixed** an issue where route configurations added to `VirtualService` by cloudshell were not cleaned up after the console was shut down.
+- **Fixed** an issue where the console would continually attempt to reconnect and fail to display logs after cluster creation failure.
+- **Fixed** an issue where expired cloudshell resources were not cleaned up in time.
+- **Fixed** a backup failure issue in the backup and restore module when using `and` filtering for resource tags without selectors.
 
 ## 2024-10-30
 
