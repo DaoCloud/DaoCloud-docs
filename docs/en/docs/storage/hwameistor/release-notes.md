@@ -3,6 +3,15 @@
 This page lists the Release Notes related to HwameiStor, providing an overview of
 the evolution path and feature changes for each version.
 
+## 2024-10-30
+
+### v0.16.0
+
+- **Updated** support for using LUKS encrypted volumes.  
+- **Updated** the process of disabling encrypted volumes after unmounting.  
+- **Updated** CSI to v4.0.0.  
+- **Updated** renamed `secureSecret` in `StorageClass` for clarity.
+
 ## 2024-09-30
 
 ### v0.15.0

@@ -143,7 +143,7 @@
 - **修复** LocalStoragePool 节点的 NVME 磁盘显示问题
 - **修复** 迁移操作丢失副本状态问题
 - **修复** 当 Disk Owner 为空时，磁盘不允许分配问题
-- **修复** Failover 功能 `deploy`,`Makefile` 等问题
+- **修复** Failover 功能 `deploy`、`Makefile` 等问题
 
 ## 2023-7-05
 
