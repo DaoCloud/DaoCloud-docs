@@ -8,7 +8,7 @@
 
 ## 前提条件
 
-- 适用于容器管理 v0.27.0 及以上版本。
+- 适用于容器管理 v0.27.0 至 v0.30.2，和 v0.38.0 及以上版本，。
 - [已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
 - 已完成一个[命名空间的创建](../namespaces/createns.md)、[用户的创建](../../../ghippo/user-guide/access-control/user.md)，并为用户授予 [NS Viewer](./permission-brief.md#ns-viewer) ，详情可参考[命名空间授权](./cluster-ns-auth.md)。
 
@@ -16,7 +16,9 @@
 
     - 只需在 Global Cluster 增加权限点，Kpanda 控制器会把 Global Cluster 增加的权限点同步到所有接入子集群中，同步需一段时间才能完成
     - 只能在 Global Cluster 增加权限点，在子集群新增的权限点会被 Global Cluster 内置角色权限点覆盖
-    - 只支持使用固定 Label 的 ClusterRole 追加权限，不支持替换或者删除权限，也不能使用 role 追加权限，内置角色跟用户创建的 ClusterRole Label 对应关系如下
+    - 只支持使用固定 Label 的 ClusterRole 追加权限，不支持替换或者删除权限，也不能使用 role 追加权限。配置时均需要加上此 label：rbac.kpanda.io/source: "append" ，修改对应内置角色还需额外增加对应角色的label ：
+    
+    内置角色跟用户创建的 ClusterRole Label 对应关系如下
 
         ```output
         cluster-admin: rbac.kpanda.io/role-template-cluster-admin: "true"
@@ -54,6 +56,7 @@
       name: append-ns-view # (1)!
       labels:
         rbac.kpanda.io/role-template-ns-view: "true" # (2)!
+        rbac.kpanda.io/source: "append"
     rules:
       - apiGroups: [ "apps" ]
         resources: [ "deployments" ]
