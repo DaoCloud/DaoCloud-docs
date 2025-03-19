@@ -16,7 +16,7 @@
 
     - 只需在 Global Cluster 增加权限点，Kpanda 控制器会把 Global Cluster 增加的权限点同步到所有接入子集群中，同步需一段时间才能完成
     - 只能在 Global Cluster 增加权限点，在子集群新增的权限点会被 Global Cluster 内置角色权限点覆盖
-    - 只支持使用固定 Label 的 ClusterRole 追加权限，不支持替换或者删除权限，也不能使用 role 追加权限。配置时均需要加上此 label：rbac.kpanda.io/source: "append" ，修改对应内置角色还需额外增加如下 label：
+    - 只支持使用固定 Label 的 ClusterRole 追加权限，不支持替换或者删除权限，也不能使用 role 追加权限。配置时均需要加上此 label：rbac.kpanda.io/source: "append" ，修改对应内置角色还需额外增加对应角色的label ：
     
     内置角色跟用户创建的 ClusterRole Label 对应关系如下
 
