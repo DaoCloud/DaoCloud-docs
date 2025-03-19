@@ -32,11 +32,15 @@ hide:
 | | Ascend 310P； | CentOS 7.6 | | | | 
 | | | CentOS 8.2 | | | | 
 | | | KylinV10SP1 操作系统 | | | | 
+| | | KylinV10SP2 操作系统 | | | | 
+| | | KylinV10SP3 操作系统 | | | | 
 | | | openEuler 操作系统 | | | | 
 | 昇腾（Ascend 910） | Ascend 910B | Ubuntu 20.04 | 详情参考内核版本要求 | 操作系统：CentOS 7.9；内核版本：3.10.0-1160 | [910 驱动文档](./ascend/ascend_driver_install.md#npu_1) | 
 | | | CentOS 7.6 | | | | 
 | | | CentOS 8.2 | | | | 
 | | | KylinV10SP1 操作系统 | | | | 
+| | | KylinV10SP2 操作系统 | | | | 
+| | | KylinV10SP3 操作系统 | | | | 
 | | | openEuler 操作系统 | | | |
 
 ## 天数智芯（Iluvatar）GPU
