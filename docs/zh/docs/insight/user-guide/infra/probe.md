@@ -75,6 +75,52 @@ Insight 基于 [Prometheus Blackbox Exporter](https://github.com/prometheus/blac
 | DNS Response (Latency) | 表示整个探测过程的持续时间，单位是秒。 |
 | HTTP Duration | 表示从发送请求到接收到完整响应的整个过程的时间。|
 
+## 自定义指标监控
+
+创建拨测后，除了可以通过拨测的监控面板查看当前探测目标的健康状态，还可以根据拨测相关的指标创建出对应的告警规则。具体来说，Prometheus Blackbox Exporter 会将拨测的结果生成一系列指标，最常用的如下：
+
+| 指标 | 说明 |
+| ------ | ------ |
+| probe_success | Ping 状态 |
+| probe_http_ssl | SSL |
+| probe_ssl_earliest_cert_expiry | SSL 有效期|
+| probe_ip_protocol | IP 协议 |
+| probe_http_status_code | HTTP 状态码 |
+| probe_http_duration_seconds | HTTP 时延 |
+| probe_http_version | HTTP 版本|
+
+常用的告警规则：
+
+```yaml
+apiVersion: operator.victoriametrics.com/v1beta1
+kind: VMRule
+metadata:
+  labels:
+    operator.insight.io/managed-by: insight
+  name: probe-alert-rule
+  namespace: test1
+spec:
+  groups:
+    - name: probe
+      rules:
+        - alert: ProbeFailed
+          annotations:
+            description: Probe job {{ .labels.job }} access {{ .labels.instance }} in namespace {{ .labels.namespace }} target down for 15s
+            value: '{{$value}}'
+          expr: probe_success == 0
+          for: 15s
+          labels:
+            severity: critical
+        - alert: SlowProbe
+          annotations:
+            description: Probe job {{ .labels.job }} access {{ .labels.instance }} in namespace {{ .labels.namespace }} took more than 1s to complete
+            value: '{{$value}}'
+          expr: avg_over_time(probe_duration_seconds[1m]) > 1
+          for: 1m
+          labels:
+            severity: warning
+```
+
 ## 删除拨测任务
 
 点击列表右侧的 __┇__ -> __删除__，确认无误后点击 __确定__。

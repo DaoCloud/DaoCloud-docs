@@ -63,6 +63,56 @@ Click __ ...__ in the operations column and click __View Monitoring Dashboard__ 
 | DNS Response (Latency) | Represents the duration of the entire probe process in seconds. |
 | HTTP Duration | Represents the duration of the entire process from sending the request to receiving the complete response. |
 
+## Custom Metrics Alert
+
+After creating a blackbox probing task, besides checking the health status of the probe target via the monitoring 
+dashboard, you can also create corresponding alert rules based on the metrics related to the probing. Specifically, 
+Prometheus Blackbox Exporter generates a series of metrics from the probing results, with the most commonly used ones 
+listed as follows:
+
+
+| Metric | Description |
+| ------ | ------ |
+| probe_success | Ping status |
+| probe_http_ssl | SSL verification result |
+| probe_ssl_earliest_cert_expiry | Earliest SSL certificate expiration date|
+| probe_ip_protocol | IP protocol being used |
+| probe_http_status_code | HTTP status code returned |
+| probe_http_duration_seconds | HTTP request duration |
+| probe_http_version | HTTP version|
+
+Commonly used alert rules are configured as below:
+
+```yaml
+apiVersion: operator.victoriametrics.com/v1beta1
+kind: VMRule
+metadata:
+  labels:
+    operator.insight.io/managed-by: insight
+  name: probe-alert-rule
+  namespace: test1
+spec:
+  groups:
+    - name: probe
+      rules:
+        - alert: ProbeFailed
+          annotations:
+            description: Probe job {{ .labels.job }} access {{ .labels.instance }} in namespace {{ .labels.namespace }} target down for 15s
+            value: '{{$value}}'
+          expr: probe_success == 0
+          for: 15s
+          labels:
+            severity: critical
+        - alert: SlowProbe
+          annotations:
+            description: Probe job {{ .labels.job }} access {{ .labels.instance }} in namespace {{ .labels.namespace }} took more than 1s to complete
+            value: '{{$value}}'
+          expr: avg_over_time(probe_duration_seconds[1m]) > 1
+          for: 1m
+          labels:
+            severity: warning
+```
+
 ## Edit a Probe
 
 Click __ ...__ in the operations column and click __Edit__ .
