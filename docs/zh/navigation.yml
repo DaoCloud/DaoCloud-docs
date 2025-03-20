@@ -369,7 +369,9 @@ nav:
                       - 使用昇腾 NPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
                       - 启用昇腾 VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - 天数 GPU 管理: kpanda/user-guide/gpu/Iluvatar_usage.md
-                  - 沐曦 GPU 管理: kpanda/user-guide/gpu/metax/usemetax.md
+                  - 沐曦 GPU 管理: 
+                      - 在线安装沐曦 GPU 管理: kpanda/user-guide/gpu/metax/online-metax.md
+                      - 离线安装沐曦 GPU 管理: kpanda/user-guide/gpu/metax/offline-metax.md
                   - 寒武纪 GPU 管理: kpanda/user-guide/gpu/mlu/use-mlu.md
                   - POD 与 GPU 卡的占用关系: kpanda/user-guide/gpu/gpupod.md
                   - GPU 相关FAQ: kpanda/user-guide/gpu/FAQ.md
