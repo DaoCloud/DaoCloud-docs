@@ -733,7 +733,7 @@ nav:
           - 可观测性:
               - 介绍:
                   - 什么是 Insight: insight/intro/index.md
-                  - 功能特性: insight/intro/feature.md
+                  - 功能特性: insight/intro/features.md
                   - 产品优势: insight/intro/benefits.md
                   - 应用场景: insight/intro/scenarios.md
                   - 权限说明: insight/intro/permission.md
