@@ -10,7 +10,7 @@ Building upon this capability, Insight serves as a unified observability solutio
 multiple clusters. It collects observability data from multiple clusters by deploying the insight-agent
 plugin and allows querying of metrics, logs, and trace data through the DCE 5.0 Insight.
 
- __insight-agent__ is a tool that facilitates the collection of observability data from multiple clusters.
+__insight-agent__ is a tool that facilitates the collection of observability data from multiple clusters.
 Once installed, it automatically collects metrics, logs, and trace data without any modifications.
 
 Clusters created through __Container Management__ come pre-installed with insight-agent. Hence,

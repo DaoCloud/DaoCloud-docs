@@ -13,9 +13,9 @@ For more information, please refer to the [Logger MDC auto-instrumentation](http
 
 | Logging Framework | Supported Automatic Instrumentation Versions | Dependencies Required for Manual Instrumentation |
 | ------------------ | ----------------------------------------- | ----------------------------------------------- |
-| Log4j 1            | 1.2+                                     | None                                           |
-| Log4j 2            | 2.7+                                     | [opentelemetry-log4j-context-data-2.17-autoconfigure](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/main/instrumentation/log4j/log4j-context-data/log4j-context-data-2.17/library-autoconfigure) |
-| Logback            | 1.0+                                     | [opentelemetry-logback-mdc-1.0](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/main/instrumentation/logback/logback-mdc-1.0/library) |
+| Log4j 1 | 1.2+ | None |
+| Log4j 2 | 2.7+ | [opentelemetry-log4j-context-data-2.17-autoconfigure](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/main/instrumentation/log4j/log4j-context-data/log4j-context-data-2.17/library-autoconfigure) |
+| Logback | 1.0+ | [opentelemetry-logback-mdc-1.0](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/main/instrumentation/logback/logback-mdc-1.0/library) |
 
 ## Using Logback (Spring Boot Project)
 

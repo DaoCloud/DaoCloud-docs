@@ -1,4 +1,4 @@
-# 通过 Helm 部署 Insight Agent 
+# 通过 Helm 部署 Insight Agent
 
 本文描述了在命令行中通过 Helm 命令安装 Insight Agent 社区版的操作步骤。
 
