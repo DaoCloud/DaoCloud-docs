@@ -687,11 +687,11 @@ nav:
           - Insight:
               - Intro:
                   - What is Insight: insight/intro/index.md
+                  - Features: insight/intro/features.md
                   - Benefits: insight/intro/benefits.md
                   - Scenario: insight/intro/scenarios.md
-                  - Features: insight/intro/features.md
                   - Permissions: insight/intro/permission.md
-                  - Insight Release Notes: insight/intro/release-notes.md
+                  - Release Notes: insight/intro/release-notes.md
               - Quick Start:
                   - Plan to Deploy:
                       - insight/quickstart/res-plan/index.md
@@ -706,6 +706,7 @@ nav:
                       - Upgrade Notes: insight/quickstart/install/upgrade-note.md
                       - Known Issues: insight/quickstart/install/knownissues.md
                       - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
+                      - Customize Insight Scheduling Policies: insight/quickstart/install/component-scheduling.md
                       - Enable Big Log and Big Trace: insight/quickstart/install/big-log-and-trace.md
                   - Install insight-agent on Other Distributions:
                       - DCE 4.0: insight/quickstart/other/install-agentindce.md
