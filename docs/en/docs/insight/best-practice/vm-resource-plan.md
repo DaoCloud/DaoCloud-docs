@@ -6,10 +6,10 @@ The resource consumption of `VictoriaMetrics` components in actual `Prometheus R
 
 After continuous monitoring of metrics from `Prometheus RemoteWrite` to `VictoriaMetrics`, we observed that the resource usage of `VictoriaMetrics` components is generally positively correlated with the **ingestion rate**, which is also positively correlated with the number of Pods.
 
-- **Ingestion_rate**:  
-`sum(rate(vm_rows_inserted_total{job="vminsert-insight-victoria-metrics-k8s-stack"}[1m]))`  
-This shows how many data points per second are inserted into `vminsert` (replication is not accounted for in this metric).
+- **Ingestion_rate**：sum(rate(vm_rows_inserted_total{job="vminsert-insight-victoria-metrics-k8s-stack"}[1m]))
+- **Pod 数量**：sum(kube_pod_info)
 
+This shows how many data points per second are inserted into `vminsert` (replication is not accounted for in this metric).
 If you need to know the ingestion rate including the replication factor, use:  
 `sum(rate(vm_vminsert_metrics_read_total{job="vmstorage-insight-victoria-metrics-k8s-stack"}[1m]))`  
 This query shows how many data points `vmstorage` reads from `vminsert`.
@@ -22,12 +22,12 @@ Through long-term testing across multiple clusters, the difference between these
 
 | **Component** | **Resource** | **Formula** | **Notes** |
 |---------------|--------------|-------------|-----------|
-| **vminsert**  | CPU          | (ingestion_rate / 100k + 0.07) * 2 | |
-|               | Ingress bandwidth (KB/s) | 60 * ingestion_rate / 1k + 120 | |
-|               | Outgoing bandwidth (KB/s) | 20 * ingestion_rate / 1k + 40 | Approximately 1/3 of ingress bandwidth |
-| **vmstorage** | CPU          | (2 * ingestion_rate / 100k - 0.02) * 2 | |
-|               | Memory (MB)  | 100 * ingestion_rate / 1k * 2 | |
-|               | Ingress bandwidth (KB/s) | 30 * ingestion_rate / 1k | |
+| **vminsert** | CPU | (ingestion_rate / 100k + 0.07) * 2 | |
+| | Ingress bandwidth (KB/s) | 60 * ingestion_rate / 1k + 120 | |
+| | Outgoing bandwidth (KB/s) | 20 * ingestion_rate / 1k + 40 | Approximately 1/3 of ingress bandwidth |
+| **vmstorage** | CPU | (2 * ingestion_rate / 100k - 0.02) * 2 | |
+| | Memory (MB) | 100 * ingestion_rate / 1k * 2 | |
+| | Ingress bandwidth (KB/s) | 30 * ingestion_rate / 1k | |
 
 **Parameter explanations:**
 
@@ -44,15 +44,15 @@ Based on current observations, the approximate relationship between cluster size
 The following table shows the approximate resource requirements for `VictoriaMetrics` components at different cluster sizes under Prometheus RemoteWrite scenarios:
 
 | **Cluster Size (Pod Count)** | **ingestion_rate** | **vminsert CPU (core)** | **vminsert Memory** | **vminsert Ingress Bandwidth** | **vminsert Outgoing Bandwidth** | **vmstorage CPU (core)** | **vmstorage Memory** | **vmstorage Ingress Bandwidth** |
-|-----------------|-------------|--------------------|-----------------|-----------------------|--------------------|--------------------|-----------------|-------------------------|
-| 100             | 8k          | 0.3                | 160 MB          | 600 KB/s             | 200 KB/s           | 0.28               | 1.6 GB          | 240 KB/s                |
-| 200             | 17k         | 0.48               | 340 MB          | 1.1 MB/s             | 380 KB/s           | 0.64               | 3.3 GB          | 510 KB/s                |
-| 300             | 25k         | 0.64               | 500 MB          | 1.6 MB/s             | 540 KB/s           | 0.96               | 4.9 GB          | 750 KB/s                |
-| 400             | 34k         | 0.84               | 500 MB          | 2.1 MB/s             | 720 KB/s           | 1.32               | 6.7 GB          | 1,020 KB/s              |
-| 500             | 42k         | 0.98               | 500 MB          | 2.6 MB/s             | 880 KB/s           | 1.64               | 8.2 GB          | 1.3 MB/s                |
-| 800             | 67k         | 1.48               | 500 MB          | 4.1 MB/s             | 1.4 MB/s           | 2.64               | 13.1 GB         | 2 MB/s                  |
-| 1000            | 84k         | 1.82               | 500 MB          | 5.1 MB/s             | 1.7 MB/s           | 3.32               | 16.4 GB         | 2.5 MB/s                |
-| 2000            | 167k        | 3.48               | 500 MB          | 10 MB/s              | 3.3 MB/s           | 6.64               | 32.6 GB         | 4.9 MB/s                |
+|-------|--------|-----------|----------|-----------|----------|----------|---------|-----------|
+| 100 | 8k | 0.3 | 160 MB | 600 KB/s | 200 KB/s | 0.28 | 1.6 GB | 240 KB/s |
+| 200 | 17k | 0.48 | 340 MB | 1.1 MB/s | 380 KB/s | 0.64 | 3.3 GB | 510 KB/s |
+| 300 | 25k | 0.64 | 500 MB | 1.6 MB/s | 540 KB/s | 0.96 | 4.9 GB | 750 KB/s |
+| 400 | 34k | 0.84 | 500 MB | 2.1 MB/s | 720 KB/s | 1.32 | 6.7 GB | 1,020 KB/s |
+| 500 | 42k | 0.98 | 500 MB | 2.6 MB/s | 880 KB/s | 1.64 | 8.2 GB | 1.3 MB/s |
+| 800 | 67k | 1.48 | 500 MB | 4.1 MB/s | 1.4 MB/s | 2.64 | 13.1 GB | 2 MB/s |
+| 1000 | 84k | 1.82 | 500 MB | 5.1 MB/s | 1.7 MB/s | 3.32 | 16.4 GB | 2.5 MB/s |
+| 2000 | 167k | 3.48 | 500 MB | 10 MB/s | 3.3 MB/s | 6.64 | 32.6 GB | 4.9 MB/s |
 
 **Notes:**
 
