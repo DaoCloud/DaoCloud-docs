@@ -777,10 +777,10 @@ nav:
                   - 仪表盘: insight/user-guide/dashboard/dashboard.md
                   - 导入自定义仪表盘: insight/user-guide/dashboard/import-dashboard.md
               - 基础设施:
-                  - 集群: insight/user-guide/infra/cluster.md
-                  - 节点: insight/user-guide/infra/node.md
-                  - 命名空间: insight/user-guide/infra/namespace.md
-                  - 工作负载: insight/user-guide/infra/container.md
+                  - 集群监控: insight/user-guide/infra/cluster.md
+                  - 节点监控: insight/user-guide/infra/node.md
+                  - 命名空间监控: insight/user-guide/infra/namespace.md
+                  - 容器监控: insight/user-guide/infra/container.md
                   - 事件查询: insight/user-guide/infra/event.md
                   - 拨测: insight/user-guide/infra/probe.md
               - 指标: insight/user-guide/data-query/metric.md
