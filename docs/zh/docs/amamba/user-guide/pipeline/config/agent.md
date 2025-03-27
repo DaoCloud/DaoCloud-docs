@@ -9,7 +9,8 @@ Agent 描述了整个 __流水线__ 执行过程或者某个 __阶段__ 的执�
 这个 Kubernetes 插件会在 Jenkins Agent Pod 中运行一个特殊的容器 __jnlp__ ，目的是为了在 Jenkins Controller 和
 Jenkins Agent 之间进行通信，所以需要定义其他容器来运行流水线步骤，并且可以通过 __container__ 命令来切换不同的容器。
 
-## 内置 Label 说明
+## 内置 Label 说明 
+<a name="use-the-built-in-label"></a>
 
 应用工作台通过 podTemplate 能力声明了 Label，提供了一些内置 SDK 供用户使用。
 
