@@ -135,23 +135,28 @@ nav:
                       - Create a Multi-branch Pipeline: amamba/user-guide/pipeline/create/mutilpipeline.md
                   - Use Pipeline:
                       - Concepts:
-                          - Pipeline Concepts: amamba/user-guide/pipeline/config/concept.md
+                          - Concepts: amamba/user-guide/pipeline/config/concept.md
                           - Pipeline Agent: amamba/user-guide/pipeline/config/agent.md
                       - Edit Pipeline: 
-                          - Edit with UI: amamba/user-guide/pipeline/edit.md
-                          - Edit Jenkinsfile: amamba/user-guide/pipeline/pipeline-syntax.md
-                          - GUI Template Parameters: amamba/user-guide/pipeline/config/step.md
-                          - Credentials: amamba/user-guide/pipeline/credential.md
-                          - GitHub and GitLab Tokens: amamba/user-guide/pipeline/github_gitlab_token.md
+                          - Edit on UI: amamba/user-guide/pipeline/edit.md
+                          - Write Jenkinsfile: amamba/user-guide/pipeline/pipeline-syntax.md
+                          - GUI Template Arguments: amamba/user-guide/pipeline/config/step.md
+                          - Credential: amamba/user-guide/pipeline/credential.md
+                          - GitHub and GitLab Token: amamba/user-guide/pipeline/github_gitlab_token.md
                       - Run Pipeline:
                           - Trigger: amamba/user-guide/pipeline/run/trigger.md
-                          - Manually Run: amamba/user-guide/pipeline/run/manual.md
+                          - Manual Run: amamba/user-guide/pipeline/run/manual.md
                       - View Pipeline:
                           - View Pipeline Details: amamba/user-guide/pipeline/view/view-pipeline.md
-                          - View Pipeline Log: amamba/user-guide/pipeline/view/view-run.md
+                          - View Running Status: amamba/user-guide/pipeline/view/view-run.md
                       - Pipeline Template:
-                          - Custom Template: amamba/user-guide/pipeline/template/custom-template.md
-                          - Template Details: amamba/user-guide/pipeline/template/info.md
+                          - Custom Pipeline: amamba/user-guide/pipeline/template/custom-template.md
+                          - Templates: amamba/user-guide/pipeline/template/info.md
+                      - Pipeline Group: amamba/user-guide/pipeline/group/group.md
+                  - Pipeline Buffer: amamba/user-guide/pipeline/pipeline_cache.md
+                  - Custom Steps:
+                      - Intro: amamba/customize-step.md
+                      - Develop Guide: amamba/customize-develop.md
                   - More Skills:
                       - Custom Image for Jenkins Agent: amamba/user-guide/pipeline/jenkins-agent.md
                       - Custom Toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
