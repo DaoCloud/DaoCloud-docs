@@ -403,13 +403,13 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: jaegertracing/vertx-create-span:operator-e2e-tests
+        image: ghcr.io/pavolloffay/spring-petclinic:latest
         ports:
           - containerPort: 8080
             protocol: TCP
 ```
 
-最终生成的 YAML 内容如下：
+在原本编排基础上最终合并生成的 YAML 内容如下：
 
 ```yaml
 apiVersion: v1
