@@ -14,8 +14,8 @@ hide:
 1. 在火种节点上下载离线镜像包，可从[下载中心](../../download/index.md)下载其他版本的离线包。
 
     ```shell
-    # 假定 VERSION 为 v0.4.0
-    export VERSION=v0.4.0
+    # 假定 VERSION 为 v0.27.0
+    export VERSION=v0.27.0
     wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-$VERSION-amd64.tar
     ```
 
@@ -30,8 +30,8 @@ hide:
 1. 在火种节点上下载离线镜像包，可从[下载中心](../../download/index.md)下载其他版本的离线包。
 
     ```shell
-    # 假定 VERSION 为 v0.4.0
-    export VERSION=v0.4.0
+    # 假定 VERSION 为 v0.27.0
+    export VERSION=v0.27.0
     wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-$VERSION-arm64.tar
     ```
 
