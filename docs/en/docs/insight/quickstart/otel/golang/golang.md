@@ -359,6 +359,5 @@ span.SetStatus(codes.Error, "internal error")
 
 For the Demo presentation, please refer to:
 
-- [otel-grpc-examples](https://github.com/openinsight-proj/otel-grpc-examples/tree/no-metadata-grpcgateway-v1.11.1)
-- [opentelemetry-demo/productcatalogservice](https://github.com/open-telemetry/opentelemetry-demo/tree/main/src/productcatalogservice)
-- [opentelemetry-collector-contrib/demo](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/examples/demo)
+- [opentelemetry-demo/productcatalogservice](https://github.com/open-telemetry/opentelemetry-demo/tree/main/src/product-catalog)
+- [Getting Started](https://opentelemetry.io/docs/languages/go/getting-started/)
