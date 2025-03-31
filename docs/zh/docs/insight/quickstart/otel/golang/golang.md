@@ -357,5 +357,6 @@ span.SetStatus(codes.Error, "internal error")
 ## 参考
 
 有关 Demo 演示请参考：
-- [opentelemetry-demo/productcatalogservice](https://github.com/open-telemetry/opentelemetry-demo/tree/main/src/productcatalogservice)
-- [opentelemetry-collector-contrib/demo](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/examples/demo)
+
+- [opentelemetry-demo/productcatalogservice](https://github.com/open-telemetry/opentelemetry-demo/tree/main/src/product-catalog)
+- [Getting Started](https://opentelemetry.io/docs/languages/go/getting-started/)
