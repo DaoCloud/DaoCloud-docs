@@ -239,7 +239,7 @@
 
 ### 操作步骤如下
 
-1. 登录 DCE5.0，进入 __容器管理__ 后选择进入目标集群，
+1. 登录 DCE 5.0，进入 __容器管理__ 后选择进入目标集群，
 2. 点击左侧导航栏选择 __自定义资源__ ，找到 __instrumentations.opentelemetry.io__ 后进入详情页。
 3. 选择 __insight-system__ 命名空间后，编辑 __insight-opentelemetry-autoinstrumentation__ ，在 spec:env: 下添加以下内容：
 
