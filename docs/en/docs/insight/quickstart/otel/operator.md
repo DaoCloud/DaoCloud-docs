@@ -246,7 +246,7 @@ If you enable the tracing capability of the Mspider(Service Mesh), you need to a
 
 ### The operation steps are as follows
 
-1. Log in to DCE5.0, then enter __Container Management__ and select the target cluster.
+1. Log in to DCE 5.0, then enter __Container Management__ and select the target cluster.
 2. Click __CRDs__ in the left navigation bar, find __instrumentations.opentelemetry.io__, and enter the details page.
 3. Select the __insight-system__ namespace, then edit __insight-opentelemetry-autoinstrumentation__, and add the following content under `spec:env:`:
 
@@ -417,7 +417,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: jaegertracing/vertx-create-span:operator-e2e-tests
+        image: ghcr.io/pavolloffay/spring-petclinic:latest
         ports:
           - containerPort: 8080
             protocol: TCP
