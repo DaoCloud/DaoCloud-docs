@@ -37,13 +37,13 @@ CloudTTY 适用于以下几个场景。
 
 CloudTTY 的网页终端使用效果如下：
 
-![screenshot_gif](https://github.com/cloudtty/cloudtty/raw/main/docs/snapshot.gif)
+![screenshot_gif](./images/snapshot.gif)
 
 如果将 CloudTTY 集成到您自己的 UI 里面，最终效果 demo 如下:
 
-![demo_png](https://github.com/cloudtty/cloudtty/raw/main/docs/demo.png)
+![demo_png](./images/demo.png)
 
-[了解 CloudTTY 社区](https://github.com/cloudtty/cloudtty){ .md-button }
+[了解 CloudTTY GitHub 社区](https://github.com/cloudtty/cloudtty){ .md-button }
 
 ![cncf logo](./images/cncf.png)
 

@@ -28,5 +28,5 @@ KWOK 是 DaoCloud 自主开源并被 Kubernetes 社区接纳和管理一个开�
 - [Slack](https://kubernetes.slack.com/messages/sig-scheduling)
 - [邮件列表](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling)
 
-[了解 KWOK 社区](https://github.com/kubernetes-sigs/kwok){ .md-button }
+[了解 KWOK GitHub 社区](https://github.com/kubernetes-sigs/kwok){ .md-button }
 [KWOK 博文](../blogs/2023/230301-kwok.md){ .md-button }

@@ -59,6 +59,6 @@ KLTS 针对这一现状，默默修复了深受 [CVE-2021-3121](https://www.cved
 - v1.11.10
 - v1.10.13
 
-[了解 KLTS 社区](https://github.com/klts-io){ .md-button }
+[了解 KLTS GitHub 社区](https://github.com/klts-io){ .md-button }
 
 [查阅 KLTS 官网](https://klts.io/){ .md-button }

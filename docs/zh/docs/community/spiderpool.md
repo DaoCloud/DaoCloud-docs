@@ -22,7 +22,7 @@ Spiderpool 的核心功能如下：
 
 参阅 [Spiderpool 固定 IP 场景视频](../videos/use-cases.md#underlay-ip)和[入选 CNCF Sandbox 的博文](../blogs/2023/231220-spiderpool.md)。
 
-[了解 Spiderpool 社区](https://github.com/spidernet-io){ .md-button }
+[了解 Spiderpool GitHub 社区](https://github.com/spidernet-io){ .md-button }
 [查阅 Spiderpool 官网](https://spidernet-io.github.io/spiderpool/){ .md-button }
 
 ![cncf logo](./images/cncf.png)

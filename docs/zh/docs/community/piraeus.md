@@ -2,7 +2,7 @@
 
 Piraeus 是一个高性能、高可用、简单、安全且与云无关的存储解决方案，适用于 Kubernetes。
 
-Piraeus 项目包括：
+Piraeus 项目包括以下 GitHub 仓库：
 
 * [Kubernetes Operator](https://github.com/piraeusdatastore/piraeus-operator)，用于创建、配置和维护 Piraeus 的所有组件。
 * [CSI Driver](https://github.com/piraeusdatastore/linstor-csi)，用于在 Piraeus 维护的存储集群上提供持久卷和快照。

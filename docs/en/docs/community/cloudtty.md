@@ -41,11 +41,11 @@ CloudTTY is applicable to the following cases:
 
 The demo effect of CloudTTY is as follows:
 
-![screenshot_gif](https://github.com/cloudtty/cloudtty/raw/main/docs/snapshot.gif)
+![screenshot_gif](./images/snapshot.gif)
 
 After the CloudTTY is intergated to your own UI, it would look like:
 
-![demo_png](https://github.com/cloudtty/cloudtty/raw/main/docs/demo.png)
+![demo_png](./images/demo.png)
 
 [Go to CloudTTY repo](https://github.com/cloudtty/cloudtty){ .md-button }
 

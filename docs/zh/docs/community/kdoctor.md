@@ -1,6 +1,6 @@
-# kdoctor
+# Kdoctor
 
-kdoctor 是一个 kubernetes 数据面测试项目，通过压力注入的方式，实现对集群进行功能、性能的主动式巡检。
+Kdoctor 是一个 Kubernetes 数据面测试项目，通过压力注入的方式，实现对集群进行功能、性能的主动式巡检。
 
 传统的集群巡检，通过采集指标、日志、应用状态等信息来确认集群和应用的状态，实现被动式巡检。
 但是在一些特殊场景下，这种方式可能不能实现预期的巡检目的、时效性、集群范围，
@@ -17,11 +17,11 @@ kdoctor 是一个 kubernetes 数据面测试项目，通过压力注入的方式
 
 - 给某个服务主动注入压力，它可能是镜像仓库、mysql 或者 api-server，以配合 BUG 复现，或确认服务性能
 
-kdoctor 是一个 kubernetes 数据面测试项目，来源于生产运维过程中的实践场景，通过压力注入的方式，
-实现对集群功能、性能的主动式巡检。kdoctor 可以应用于:
+Kdoctor 是一个 Kubernetes 数据面测试项目，来源于生产运维过程中的实践场景，通过压力注入的方式，
+实现对集群功能、性能的主动式巡检。Kdoctor 可以应用于:
 
 - 生产环境的部署检查、日常运维等场景，能避免了人工巡检的工作负担。
 
 - 能应用 E2E 测试、bug 复现、混沌测试等，减少编程工作。
 
-[了解 kdoctor 社区](https://github.com/kdoctor-io/kdoctor){ .md-button }
+[了解 Kdoctor GitHub 社区](https://github.com/kdoctor-io/kdoctor){ .md-button }
