@@ -5,7 +5,19 @@ Demo 程序来自 [ChatGLM3](https://github.com/THUDM/ChatGLM3/blob/main/finetun
 
 微调的大致流程为：
 
-![流程](./images/fine-tunel-chatglm3-01.png)
+```mermaid
+graph LR
+  A[数据准备] --> B[模型调试<br>（Notebook）]
+  C[环境准备] --> B
+  B --> D[任务训练<br>（UI 或 baizectl）]
+  D --> E[推理服务]
+
+classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+
+class A,B,C,D,E k8s
+```
 
 ## 环境依赖
 
