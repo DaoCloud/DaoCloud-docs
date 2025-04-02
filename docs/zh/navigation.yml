@@ -114,7 +114,8 @@ nav:
                       - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
                       - 保留Jenkins配置项: amamba/user-guide/pipeline/retain-jenkins-config.md
                   - Argo CD高可用部署: amamba/quickstart/argo-cd-HA.md
-                  - 开启工作台组件的可观测能力: amamba/components-grafana-dashboard.md
+                  - 特性门控: amamba/quickstart/feature-gates.md
+                  - 开启组件的可观测能力: amamba/components-grafana-dashboard.md
               - 命名空间管理: 
                   - 创建命名空间: amamba/user-guide/namespace/namespace.md
                   - 创建多云命名空间: amamba/user-guide/namespace/multi-namespace.md
@@ -156,6 +157,7 @@ nav:
                           - 自定义模板: amamba/user-guide/pipeline/template/custom-template.md
                           - 模板说明: amamba/user-guide/pipeline/template/info.md
                       - 流水线分组: amamba/user-guide/pipeline/group/group.md
+                      - 发版记录: amamba/user-guide/pipeline/release-stats.md
                   - 流水线缓存: amamba/user-guide/pipeline/pipeline_cache.md
                   - 自定义步骤:
                       - 自定义步骤介绍: amamba/customize-step.md
@@ -180,11 +182,11 @@ nav:
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
                   - 查看蓝绿发布任务: amamba/user-guide/release/check-bluegreen.md
-              - 代码仓库: amamba/user-guide/git/git.md
               - 工具链集成:
                   - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
                   - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
                   - 项目研发管理: amamba/user-guide/pm/issue.md
+                  - 代码仓库: amamba/user-guide/git/git.md
               - 常见问题:
                   - 流水线相关问题: amamba/faq/faq-jenkins.md
                   - GitOps 相关问题: amamba/faq/faq-gitops.md

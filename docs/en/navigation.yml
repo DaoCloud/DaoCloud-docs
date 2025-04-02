@@ -111,6 +111,7 @@ nav:
                       - Jenkins HA Solution: amamba/quickstart/jenkins-HA.md
                       - Jenkins Scenarios: amamba/quickstart/scenarios-config.md
                   - Argo CD HA Deployment: amamba/quickstart/argo-cd-HA.md
+                  - Feature Gates: amamba/quickstart/feature-gates.md
               - Namespaces: 
                   - Create Namespace: amamba/user-guide/namespace/namespace.md
                   - Create MultiCloud Namespace: amamba/user-guide/namespace/multi-namespace.md
@@ -172,11 +173,11 @@ nav:
                   - View a Canary Delivery Job: amamba/user-guide/release/check-canary.md
                   - Create Blue/Green Job: amamba/user-guide/release/blue-green.md
                   - View Blue/Green Job: amamba/user-guide/release/check-bluegreen.md
-              - Manage Repository: amamba/user-guide/git/git.md
               - Toolchain Integration:
                   - Integrate Toolchain: amamba/user-guide/tools/integrated-toolchain.md
                   - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
                   - R&D Project Management: amamba/user-guide/pm/issue.md
+                  - Manage Repository: amamba/user-guide/git/git.md
               - FAQs:
                   - Pipeline FAQs: amamba/faq/faq-jenkins.md
                   - GitOps FAQs: amamba/faq/faq-gitops.md
