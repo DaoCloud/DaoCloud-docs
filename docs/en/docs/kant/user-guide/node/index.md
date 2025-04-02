@@ -25,7 +25,6 @@ classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
 classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-class start1,end1 k8s;
 class require,config,oam cluster
 
 click require "https://docs.daocloud.io/en/kant/user-guide/node/join-rqmt.html"

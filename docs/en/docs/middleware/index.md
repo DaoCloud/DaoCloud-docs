@@ -143,5 +143,4 @@ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class update,overview,monitor,migrate,practice plain
-class ws,create k8s
 ```

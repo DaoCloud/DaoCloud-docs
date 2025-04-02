@@ -95,7 +95,6 @@ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class plan,k8s,tools,kind,s1,s2,kpanda,ghippo,insight,free,ask cluster;
-class start k8s
 class S,U spacewhite
 
 click plan "https://docs.daocloud.io/en/install/community/resources.html"
@@ -149,7 +148,6 @@ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class arch,deploy,prepare,download,config,install,ocp,ali,uos,oracle,tencent,other cluster
-class start,other-k8s,other-os k8s
 
 click arch "https://docs.daocloud.io/en/install/commercial/deploy-arch.html"
 click deploy "https://docs.daocloud.io/en/install/commercial/deploy-requirements.html"

@@ -98,7 +98,7 @@ click istio "https://docs.daocloud.io/en/mspider/user-guide/mesh-config/istio-re
  classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
  classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
  classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
- class mesh,overview,service,traffic,security,monitor,sidecar,cluster,meshgw,config k8s;
+
  class vs,dr,gw,peer,request,authz,tp,list,ns,workload,global,istio cluster;
 ```
 

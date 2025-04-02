@@ -61,5 +61,4 @@ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class pass,usern,button,tip1,send,tip2,send,click,config,reset,success plain;
-class judge1,judge2 k8s
 ```

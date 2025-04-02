@@ -22,7 +22,6 @@ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class ns,vs cluster;
 class nss,topo,health1,health2,export,limit plain;
-class init k8s
 ```
 
 To alleviate the issue of resource consumption, you can implement the following configurations.

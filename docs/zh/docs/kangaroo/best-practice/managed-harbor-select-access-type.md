@@ -81,7 +81,6 @@ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class client plain;
-class ingress,harbor,pod1,pod2 k8s
 ```
 
 对于 **私有云** ，使用 Ingress 部署完托管 Harbor 之后，需要在 DNS 服务中添加域名解析，
@@ -145,5 +144,4 @@ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class client plain;
-class ingress,harbor,pod1,pod2 k8s
 ```
