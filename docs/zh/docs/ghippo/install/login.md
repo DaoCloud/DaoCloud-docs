@@ -30,7 +30,6 @@ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class user,pass cluster;
 class judge plain
-class success,fail k8s
 ```
 
 用户登录界面如下图。具体登录画面，请与实际产品为准。

@@ -88,7 +88,6 @@ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class client plain;
-class ingress,harbor,pod1,pod2 k8s
 ```
 
 For **private cloud**, after deploying managed Harbor with Ingress, you need to add domain name
@@ -156,5 +155,4 @@ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class client plain;
-class ingress,harbor,pod1,pod2 k8s
 ```

@@ -13,13 +13,11 @@ The modules included in DCE Community are [Global Management](../ghippo/intro/in
 ```mermaid
 graph LR
 
-apply[1. Apply for a license] --> get[2. Get offline authorization] --> activate[3. Activate offline authorization]
+apply[Apply for a license] --> get[Get offline authorization] --> activate[Activate offline authorization]
 
 classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
 classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class apply,get,activate k8s
 
 click apply "https://docs.daocloud.io/en/dce/license0.html#apply-for-a-license"
 ```

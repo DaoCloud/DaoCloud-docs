@@ -26,8 +26,8 @@ hide:
     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
     classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+    
     class admin plain;
-    class user1,user2,user3 k8s;
     class user cluster
     ```
 
@@ -51,6 +51,7 @@ hide:
     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
     classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+
     class admin plain;
     class user,group,add cluster
     ```
@@ -109,6 +110,7 @@ hide:
     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
     classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+
     class admin plain;
     class about,password,appear,mail,license cluster
     ```

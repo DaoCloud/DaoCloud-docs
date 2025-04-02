@@ -30,7 +30,6 @@ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class user,pass cluster;
 class judge plain
-class success,fail k8s
 ```
 
 The user login screen is as shown in the figure below. For the specific login screen, please refer to the actual product.
