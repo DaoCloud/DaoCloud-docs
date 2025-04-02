@@ -422,12 +422,8 @@ metadata:
   resourceVersion: '2668986'
   creationTimestamp: '2022-04-08T05:58:48Z'
   labels:
-    app: my-pod-with-sidecar
-    pod-template-hash: 565bd877dd
+    app: my-app
   annotations:
-    cni.projectcalico.org/containerID: 234eae5e55ea53db2a4bc2c0384b9a1021ed3908f82a675e4a92a49a7e80dd61
-    cni.projectcalico.org/podIP: 192.168.134.133/32
-    cni.projectcalico.org/podIPs: 192.168.134.133/32
     instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
 spec:
   volumes:
@@ -469,6 +465,9 @@ spec:
   containers:
     - name: myapp
       image: ghcr.io/pavolloffay/spring-petclinic:latest
+      ports:
+        - containerPort: 8080
+          protocol: TCP
       env:
 +       - name: OTEL_JAVAAGENT_DEBUG
 +         value: 'true'
