@@ -115,6 +115,17 @@ plugins:
         "dce/what-is-dce.md": "dce/index.md"
         "zh/dce/index.md": "dce/index.md"
         "zh/install/install-dce.md": "install/community/k8s/online.md"
+        "dce/what.md": "dce/index.md"
+        "insight/user-guide/quickstart/jvm-monitor/otel-java-agent.md": "insight/quickstart/otel/java/jvm-monitor/otel-java-agent.md"
+        "insight/user-guide/quickstart/otel/otel.md": "insight/quickstart/otel/otel.md"
+        "insight/quickstart/jvm-monitor/jmx-exporter.md": "insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md"
+        "insight/user-guide/scenario-insight/topology-helper.md": "insight/user-guide/trace/topology.md"
+        "network/modules/spiderpool/rdmapara.md": "network/modules/spiderpool/install/rdmapara.md"
+        "kangaroo/integrate/bind-to-ws.md": "kangaroo/integrate/integrate-admin/bind-to-ws.md"
+        "skoala/intro/what.md": "skoala/intro/index.md"
+        "skoala/quickstart/install.md": "skoala/quickstart/skoala.md"
+        "virtnest/quick-start/create-secret.md": "virtnest/vm/create-secret.md"
+        "virtnest/vm/vm-gpu.md": "virtnest/gpu/vm-gpu.md"
 
         # module quick links
         "kairship.md": "kairship/intro/index.md"
