@@ -411,7 +411,7 @@ spec:
 
 在原本编排基础上最终合并生成的 YAML 内容如下：
 
-```yaml
+```diff
 apiVersion: v1
 kind: Pod
 metadata:
@@ -449,105 +449,82 @@ spec:
                     apiVersion: v1
                     fieldPath: metadata.namespace
         defaultMode: 420
-    - name: opentelemetry-auto-instrumentation
-      emptyDir: {}
-  initContainers:
-    - name: opentelemetry-auto-instrumentation
-      image: >-
-        ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java
-      command:
-        - cp
-        - /javaagent.jar
-        - /otel-auto-instrumentation/javaagent.jar
-      resources: {}
-      volumeMounts:
-        - name: opentelemetry-auto-instrumentation
-          mountPath: /otel-auto-instrumentation
++   - name: opentelemetry-auto-instrumentation
++     emptyDir: {}
++ initContainers:
++   - name: opentelemetry-auto-instrumentation
++     image: >-
++       ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java
++     command:
++       - cp
++       - /javaagent.jar
++       - /otel-auto-instrumentation/javaagent.jar
++     resources: {}
++     volumeMounts:
++       - name: opentelemetry-auto-instrumentation
++         mountPath: /otel-auto-instrumentation
         - name: kube-api-access-sp2mz
           readOnly: true
           mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-      terminationMessagePath: /dev/termination-log
-      terminationMessagePolicy: File
-      imagePullPolicy: Always
   containers:
     - name: myapp
       image: ghcr.io/pavolloffay/spring-petclinic:latest
       env:
-        - name: OTEL_JAVAAGENT_DEBUG
-          value: 'true'
-        - name: OTEL_INSTRUMENTATION_JDBC_ENABLED
-          value: 'true'
-        - name: SPLUNK_PROFILER_ENABLED
-          value: 'false'
-        - name: JAVA_TOOL_OPTIONS
-          value: ' -javaagent:/otel-auto-instrumentation/javaagent.jar'
-        - name: OTEL_TRACES_EXPORTER
-          value: otlp
-        - name: OTEL_EXPORTER_OTLP_ENDPOINT
-          value: http://insight-agent-opentelemetry-collector.svc.cluster.local:4317
-        - name: OTEL_EXPORTER_OTLP_TIMEOUT
-          value: '20'
-        - name: OTEL_TRACES_SAMPLER
-          value: parentbased_traceidratio
-        - name: OTEL_TRACES_SAMPLER_ARG
-          value: '0.85'
-        - name: SPLUNK_TRACE_RESPONSE_HEADER_ENABLED
-          value: 'true'
-        - name: OTEL_SERVICE_NAME
-          value: my-deployment-with-sidecar
-        - name: OTEL_RESOURCE_ATTRIBUTES_POD_NAME
-          valueFrom:
-            fieldRef:
-              apiVersion: v1
-              fieldPath: metadata.name
-        - name: OTEL_RESOURCE_ATTRIBUTES_POD_UID
-          valueFrom:
-            fieldRef:
-              apiVersion: v1
-              fieldPath: metadata.uid
-        - name: OTEL_RESOURCE_ATTRIBUTES_NODE_NAME
-          valueFrom:
-            fieldRef:
-              apiVersion: v1
-              fieldPath: spec.nodeName
-        - name: OTEL_RESOURCE_ATTRIBUTES
-          value: >-
-            k8s.container.name=myapp,k8s.deployment.name=my-deployment-with-sidecar,k8s.deployment.uid=8de6929d-dda0-436c-bca1-604e9ca7ea4e,k8s.namespace.name=default,k8s.node.name=$(OTEL_RESOURCE_ATTRIBUTES_NODE_NAME),k8s.pod.name=$(OTEL_RESOURCE_ATTRIBUTES_POD_NAME),k8s.pod.uid=$(OTEL_RESOURCE_ATTRIBUTES_POD_UID),k8s.replicaset.name=my-deployment-with-sidecar-565bd877dd,k8s.replicaset.uid=190d5f6e-ba7f-4794-b2e6-390b5879a6c4
-        - name: OTEL_PROPAGATORS
-          value: jaeger,b3
-      resources: {}
++       - name: OTEL_JAVAAGENT_DEBUG
++         value: 'true'
++       - name: OTEL_INSTRUMENTATION_JDBC_ENABLED
++         value: 'true'
++       - name: SPLUNK_PROFILER_ENABLED
++         value: 'false'
++       - name: JAVA_TOOL_OPTIONS
++         value: ' -javaagent:/otel-auto-instrumentation/javaagent.jar'
++       - name: OTEL_TRACES_EXPORTER
++         value: otlp
++       - name: OTEL_EXPORTER_OTLP_ENDPOINT
++         value: http://insight-agent-opentelemetry-collector.svc.cluster.local:4317
++       - name: OTEL_EXPORTER_OTLP_TIMEOUT
++         value: '20'
++       - name: OTEL_TRACES_SAMPLER
++         value: parentbased_traceidratio
++       - name: OTEL_TRACES_SAMPLER_ARG
++         value: '0.85'
++       - name: SPLUNK_TRACE_RESPONSE_HEADER_ENABLED
++         value: 'true'
++       - name: OTEL_SERVICE_NAME
++         value: my-deployment-with-sidecar
++       - name: OTEL_RESOURCE_ATTRIBUTES_POD_NAME
++         valueFrom:
++           fieldRef:
++             apiVersion: v1
++             fieldPath: metadata.name
++       - name: OTEL_RESOURCE_ATTRIBUTES_POD_UID
++         valueFrom:
++           fieldRef:
++             apiVersion: v1
++             fieldPath: metadata.uid
++       - name: OTEL_RESOURCE_ATTRIBUTES_NODE_NAME
++         valueFrom:
++           fieldRef:
++             apiVersion: v1
++             fieldPath: spec.nodeName
++       - name: OTEL_RESOURCE_ATTRIBUTES
++         value: >-
++           k8s.container.name=myapp,k8s.deployment.name=my-deployment-with-sidecar,k8s.deployment.uid=8de6929d-dda0-436c-bca1-604e9ca7ea4e,k8s.namespace.name=default,k8s.node.name=$(OTEL_RESOURCE_ATTRIBUTES_NODE_NAME),k8s.pod.name=$(OTEL_RESOURCE_ATTRIBUTES_POD_NAME),k8s.pod.uid=$(OTEL_RESOURCE_ATTRIBUTES_POD_UID),k8s.replicaset.name=my-deployment-with-sidecar-565bd877dd,k8s.replicaset.uid=190d5f6e-ba7f-4794-b2e6-390b5879a6c4
++      - name: OTEL_PROPAGATORS
++        value: jaeger,b3
++    resources:
++       limits:
++         cpu: 500m
++         memory: 64Mi
++       requests:
++         cpu: 50m
++         memory: 64Mi
       volumeMounts:
         - name: kube-api-access-sp2mz
           readOnly: true
           mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        - name: opentelemetry-auto-instrumentation
-          mountPath: /otel-auto-instrumentation
-      terminationMessagePath: /dev/termination-log
-      terminationMessagePolicy: File
-      imagePullPolicy: Always
-  restartPolicy: Always
-  terminationGracePeriodSeconds: 30
-  dnsPolicy: ClusterFirst
-  serviceAccountName: default
-  serviceAccount: default
-  nodeName: k8s-master3
-  securityContext:
-    runAsUser: 1000
-    runAsGroup: 3000
-    fsGroup: 2000
-  schedulerName: default-scheduler
-  tolerations:
-    - key: node.kubernetes.io/not-ready
-      operator: Exists
-      effect: NoExecute
-      tolerationSeconds: 300
-    - key: node.kubernetes.io/unreachable
-      operator: Exists
-      effect: NoExecute
-      tolerationSeconds: 300
-  priority: 0
-  enableServiceLinks: true
-  preemptionPolicy: PreemptLowerPriority
++        - name: opentelemetry-auto-instrumentation
++          mountPath: /otel-auto-instrumentation
 ```
 
 ## 链路查询
