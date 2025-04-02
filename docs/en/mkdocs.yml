@@ -108,10 +108,20 @@ plugins:
   #     branch: main
   #     enabled: true
   
-  # - redirects:
-  #     redirect_maps:
-  #       "en/install/install-dce.md": "install/index.md"
-  #       "en/dce/what.md": "dce/index.md"
+  - redirects:
+      redirect_maps:
+        "en/install/install-dce.md": "en/install/index.md"
+        "en/dce/what/index.md": "en/dce/index.md"
+        "en/dce/what.md": "en/dce/index.md"
+        "en/insight/user-guide/quickstart/jvm-monitor/otel-java-agent.md": "en/insight/quickstart/otel/java/jvm-monitor/otel-java-agent.md"
+        "en/network/modules/spiderpool/rdmapara.md": "en/network/modules/spiderpool/install/rdmapara.md"
+        "en/kangaroo/integrate/bind-to-ws.md": "en/kangaroo/integrate/integrate-admin/bind-to-ws.md"
+        "en/insight/user-guide/quickstart/otel/otel.md": "en/insight/quickstart/otel/otel.md"
+        "en/insight/quickstart/jvm-monitor/jmx-exporter.md": "en/insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md"
+        "en/skoala/intro/what.md": "en/skoala/intro/index.md"
+        "en/skoala/quickstart/install.md": "en/skoala/quickstart/skoala.md"
+        "en/insight/user-guide/scenario-insight/topology-helper/": "en/insight/user-guide/trace/topology.md"
+        "en/virtnest/quick-start/create-secret.md": "en/virtnest/vm/create-secret.md"
 
   # - git-revision-date: # Display the last update date on the bottom of each page, install with 'pip install mkdocs-git-revision-date-plugin'
   #     enabled_if_env: "CI"
