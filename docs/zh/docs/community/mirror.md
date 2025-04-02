@@ -20,7 +20,7 @@ DaoCloud 为此提供了国内镜像加速，便于从国内拉取这些镜像�
 ## 支持的镜像列表
 
 DaoCloud 目前收录了 600+ 国外镜像，方便国内用户拉取。
-您可以随时[提 PR](https://github.com/DaoCloud/public-image-mirror/pulls)，增加更多的镜像地址。
+您可以随时[在 GitHub 上提 PR](https://github.com/DaoCloud/public-image-mirror/pulls)，增加更多的镜像地址。
 
 ??? note "点击查看已收录的镜像"
 
@@ -626,4 +626,4 @@ DaoCloud 目前收录了 600+ 国外镜像，方便国内用户拉取。
     registry.opensource.zalan.do/acid/spilo-14
     ```
 
-[了解镜像社区](https://github.com/DaoCloud/public-image-mirror){ .md-button }
+[了解 GitHub 镜像社区](https://github.com/DaoCloud/public-image-mirror){ .md-button }
