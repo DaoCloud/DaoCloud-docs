@@ -156,6 +156,24 @@ flowchart TD
     click intercon "https://docs.daocloud.io/en/mspider/user-guide/multicluster/cluster-interconnect/"
 ```
 
+## Common Issues and Troubleshooting Cases
+
+- [Common Service Mesh Issues](./faq.md)
+- [Cannot Find the Associated Cluster When Creating a Mesh](../troubleshoot/cannot-find-cluster.md)
+- [Mesh Stuck in "Creating" State and Eventually Fails](../troubleshoot/always-in-creating.md)
+- [Mesh Creation Failed and Cannot Be Deleted](../troubleshoot/failed-to-delete.md)
+- [Failed to Add a Cluster to a Hosted Mesh](../troubleshoot/failed-to-add-cluster.md)
+- [Istio-IngressGateway Issues When Adding a Cluster to a Hosted Mesh](../troubleshoot/hosted-mesh-errors.md)
+- [Mesh Space Cannot Be Unbound Properly](../troubleshoot/mesh-space-cannot-unbind.md)
+- [Troubleshooting DCE 4.0 Integration Issues](../troubleshoot/dce4.0-issues.md)
+- [Namespace Sidecar Configuration Conflicts with Workload Sidecar](../troubleshoot/sidecar.md)
+- [Multi-Cloud Interconnect Issues in Hosted Mesh](../troubleshoot/cluster-interconnect.md)
+- [Sidecar Consumes Excessive Memory](../troubleshoot/sidecar-memory-err.md)
+- [Unknown Clusters Appear in the Cluster List When Creating a Mesh](../troubleshoot/cluster-already-exist.md)
+- [Handling Expired APIServer Certificates in a Hosted Mesh](../troubleshoot/hosted-apiserver-cert-expiration.md)
+- [Common 503 Errors in Service Mesh](../troubleshoot/503-issue.md)
+- [How to Allow Applications Listening on Localhost to Be Accessed by Other Pods](../troubleshoot/localhost-by-pod.md)
+
 [Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../../dce/license0.md){ .md-button .md-button--primary }
