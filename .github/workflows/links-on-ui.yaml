@@ -1,4 +1,6 @@
-used_links:
+compatibility_links:
+  # Sort in alphabetical order
+  # 应用工作台 Amamba
   - "/amamba/pluggable-components/#argo-cd"
   - "/amamba/pluggable-components/#argo-rollout"
   - "/amamba/pluggable-components/#argo-rollouts"
@@ -10,14 +12,19 @@ used_links:
   - "/amamba/user-guide/pipeline/run/trigger"
   - "/amamba/user-guide/pipeline/system-env/"
   - "/amamba/user-guide/wizard/jar-java-app.html"
+  # AI Lab - Baize
   - "/baize/developer/notebooks/notebook-with-ssh/"
+  # 文档首页
   - "/dce/what/"
+  # 下载站 download
   - "/download/modules/kant/"
+  # 全局管理 Ghippo
   - "/ghippo/user-guide/access-control/role/"
   - "/ghippo/user-guide/access-control/role/#_2"
   - "/ghippo/user-guide/audit/gproduct-audit/amamba/"
   - "/ghippo/user-guide/audit/open-audit/"
   - "/ghippo/user-guide/personal-center/ssh-key/"
+  # 可观测 Insight
   - "/insight/quickstart/jvm-monitor/jmx-exporter.html"
   - "/insight/quickstart/otel/golang/golang"
   - "/insight/quickstart/otel/java/jvm-monitor/legacy-jvm"
@@ -28,17 +35,21 @@ used_links:
   - "/insight/user-guide/quickstart/jvm-monitor/otel-java-agent/"
   - "/insight/user-guide/quickstart/otel/otel/"
   - "/insight/user-guide/scenario-insight/topology-helper/"
+  # 多云编排 Kairship
   - "/kairship/instance/add.html"
   - "/kangaroo/best-practice/insecure_registry.html"
   - "/kangaroo/integrate/bind-to-ws/"
+  # 云边协同 Kant
   - "/kant/user-guide/edge-app/create-app.html#yaml"
   - "/kant/user-guide/edge-app/create-batch-app.html#yaml"
   - "/kant/user-guide/edge-network/deploy-edgemesh.html#helm"
   - "/kant/user-guide/node/batch-upgrade.html"
   - "/kant/user-guide/node/join-rqmt.html"
+  # 容器管理 Kpanda
   - "/kpanda/user-guide/helm/upload-helm.html"
   - "/kpanda/user-guide/permissions/permission-brief"
   - "/kpanda/user-guide/scale/install-metrics-server"
+  # 服务网格 Mspider
   - "/mspider/intro/app-spec.html"
   - "/mspider/troubleshoot/cluster-interconnect/#_5"
   - "/mspider/user-guide/gateway-instance/gateway-in-external-mesh.html"
@@ -53,9 +64,11 @@ used_links:
   - "/mspider/user-guide/traffic-monitor/conn-topo/"
   - "/mspider/user-guide/traffic-monitor/indicator-readtips.html"
   - "/mspider/user-guide/traffic-monitor/monitoring-indicators.html"
+  # 网络 Network
   - "/network/modules/ingress-nginx/scope/#ingress_2"
   - "/network/modules/spiderpool/rdmapara.html#macvlan-ipvlan-roce"
   - "/network/modules/spiderpool/rdmapara/"
+  # 微服务引擎 Skoala
   - "/skoala/gateway/#_2"
   - "/skoala/gateway/api/api-lead/"
   - "/skoala/intro/release-notes/"
@@ -66,5 +79,6 @@ used_links:
   - "/skoala/quickstart/skoala-init/#crd"
   - "/skoala/standard/nacos.html"
   - "/skoala/trad-ms/hosted/services/cluster-flow.html"
+  # 虚拟机 Virtnest
   - "/virtnest/quick-start/create-secret/"
   - "/virtnest/vm/vm-gpu"
