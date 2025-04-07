@@ -2,12 +2,16 @@
 
 应用工作台基于开源软件 [Argo CD](https://argo-cd.readthedocs.io/en/stable/) 实现持续部署。本页面演示如何实现应用的持续部署。
 
+<a name="prerequisites"></a>
+
 ## 前提条件
 
 - 需创建一个工作空间和一个用户，该用户需加入该工作空间并赋予 __workspace edit__ 角色。
   参考[创建工作空间](../../../ghippo/user-guide/workspace/workspace.md)、[用户和角色](../../../ghippo/user-guide/access-control/user.md)。
 - 准备一个 Git 仓库，如果持续部署应用的清单文件所在的代码仓库不是公开的，则需要事先将仓库导入至应用工作台，参考[导入仓库](import-repo.md)。
 - [argo-cd](../../pluggable-components.md#argo-cd) 组件已安装并配置。
+
+<a name="creating-an-argo-cd-application"></a>
 
 ## 创建 Argo CD 应用
 
@@ -38,6 +42,8 @@
             - 同步重试：对应用同步重试参数化，支持设置重试最大次数、重试持续时间、重试持续最大时间、因子
 
     ![创建应用](../../images/create-gitops02.png)
+
+<a name="viewing-the-application"></a>
 
 ## 查看应用
 
