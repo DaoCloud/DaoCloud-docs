@@ -1,18 +1,79 @@
-# Pipeline node (Agent)
+# Pipeline Node (Agent)
 
-Agent describes the entire __pipeline__ execution process or the execution environment of a certain __stage__ , and must appear at the top of the __description file__ or each __stage__ .
+An **Agent** defines the execution environment for an entire **pipeline** or a specific **stage**. It must be declared at the top of the **configuration file** or within each **stage**.
 
-This article describes how to extend the Jenkins Agent running in Kubernetes based on the [Kubernetes plugin for Jenkins](https://plugins.jenkins.io/kubernetes/) plugin.
+This document describes how to extend a Jenkins Agent running in Kubernetes using the [Kubernetes plugin for Jenkins](https://plugins.jenkins.io/kubernetes/).
 
-## Kubernetes Pod template introduction
+## Introduction to Kubernetes Pod Templates
 
-This Kubernetes plugin will run a special container __jnlp__ in the Jenkins Agent Pod. The purpose is to communicate between the Jenkins Controller and the Jenkins Agent, so you need to define other containers to run the pipeline steps, and you can use the __container__ command to Switch between different containers.
+The Kubernetes plugin runs a special container, **jnlp**, within the Jenkins Agent Pod. This container facilitates communication between the Jenkins Controller and the Jenkins Agent. Additional containers must be defined to execute pipeline steps, and you can switch between them using the **container** command.
 
 ## Use the built-in Label
 
-Workbench declares 6 labels through the podTemplate capability: __base__ , __maven__ , __go__ , __go16__ , __node.js__ and __python__ . You can specify a specific Agent label to use the corresponding podTemplate.
+The Workbench declares labels using the `podTemplate` feature and provides built-in SDKs for users.
 
-- Can use go podTemplate via __node('go')__ in Jenkinsfile.
+### SDKs
+
+The runtime supports both Docker and Podman, but the operating system varies:
+
+| SDK (Label) | Version Info | Default Container Name | Operating System |
+|------------|-------------|----------------------|----------------|
+| base | - | base | CentOS 7.9<br />Ubuntu 22.04 |
+| maven | java: 8 <br />maven: 3.9.9 | maven | CentOS 7.9<br />Ubuntu 22.04 |
+| maven-jdk11 | java: 11 <br />maven: 3.9.9 | maven | CentOS 7.9<br />Ubuntu 22.04 |
+| maven-jdk17 | java: 17 <br />maven: 3.9.9 | maven | Ubuntu 22.04 |
+| maven-jdk21 | java: 21 <br />maven: 3.9.9 | maven | Ubuntu 22.04 |
+| go | go: 1.17.13 | go | CentOS 7.9<br />Ubuntu 22.04 |
+| go-1.18.10 | go: 1.18.10 | go | Ubuntu 22.04 |
+| go-1.20.14 | go: 1.20.14 | go | Ubuntu 22.04 |
+| go-1.22.6 | go: 1.22.6 | go | Ubuntu 22.04 |
+| python | python: 3.8.19<br />Both `python` and `python3` point to Python 3.8 | python | CentOS 7.9<br />Ubuntu 22.04 |
+| python-2.7.9 | python: 2.7.9<br />Both `python` and `python2` point to Python 2.7 | python | Ubuntu 22.04 |
+| python-3.10.9 | python: 3.10.9<br />Both `python` and `python3` point to Python 3.10 | python | Ubuntu 22.04 |
+| python-3.11.9 | python: 3.11.9<br />Both `python` and `python3` point to Python 3.11 | python | Ubuntu 22.04 |
+| node.js | node: 16.20.2 <br />yarn: 1.22.22 | nodejs | CentOS 7.9<br />Ubuntu 22.04 |
+| node.js-18.20.4 | node: 18.20.4 <br />yarn: 1.22.22 | nodejs | Ubuntu 22.04 |
+| node.js-20.17.0 | node: 20.17.0 <br />yarn: 1.22.22 | nodejs | Ubuntu 22.04 |
+
+### Built-in Command-Line Tools
+
+| Tool | Version | Operating System |
+|------|---------|----------------|
+| podman | Ubuntu 22.04: 5.1.0<br />CentOS 7.9: 3.0.1 | Ubuntu 22.04, CentOS 7.9 |
+| docker | 27.1.2 | Ubuntu 22.04, CentOS 7.9 |
+| helm | 3.15.4 | Ubuntu 22.04, CentOS 7.9 |
+| kubectl | v1.31.0 | Ubuntu 22.04, CentOS 7.9 |
+| argocd | v2.12.1 | Ubuntu 22.04, CentOS 7.9 |
+| argo rollouts | v1.7.2 | Ubuntu 22.04, CentOS 7.9 |
+| sonar_scanner | 4.8.0.2856 | Ubuntu 22.04, CentOS 7.9 |
+| yq | v4.44.3 | Ubuntu 22.04, CentOS 7.9 |
+| make | - | Ubuntu 22.04, CentOS 7.9 |
+| build-essential | - | Ubuntu 22.04 |
+| libcurl4-openssl-dev | - | Ubuntu 22.04 |
+| libssl-dev | - | Ubuntu 22.04 |
+| wget | - | Ubuntu 22.04, CentOS 7.9 |
+| git | - | Ubuntu 22.04, CentOS 7.9 |
+| curl | - | Ubuntu 22.04, CentOS 7.9 |
+| autoconf | - | Ubuntu 22.04, CentOS 7.9 |
+| zip | - | Ubuntu 22.04, CentOS 7.9 |
+| unzip | - | Ubuntu 22.04, CentOS 7.9 |
+| jq | - | Ubuntu 22.04, CentOS 7.9 |
+| locales | - | Ubuntu 22.04 |
+| vim | - | Ubuntu 22.04, CentOS 7.9 |
+| gettext | - | Ubuntu 22.04, CentOS 7.9 |
+| tree | - | Ubuntu 22.04, CentOS 7.9 |
+| gcc | - | CentOS 7.9 |
+| gcc-c++ | - | CentOS 7.9 |
+| curl-devel | - | CentOS 7.9 |
+| glibc-common | - | CentOS 7.9 |
+
+!!! note
+
+    **CentOS 7.9 has reached end-of-life (EOL).** It is retained only for compatibility with older pipeline build environments. For new environments, it is recommended to use SDKs that support Ubuntu 22.04.
+
+## Using Built-in Labels
+
+- You can use the `go` podTemplate in a `Jenkinsfile` like this:
 
     ```groovy
     pipeline {
@@ -21,7 +82,7 @@ Workbench declares 6 labels through the podTemplate capability: __base__ , __mav
           label 'go'
         }
       }
-      
+
       stages {
         stage('go') {
           steps {
@@ -34,119 +95,10 @@ Workbench declares 6 labels through the podTemplate capability: __base__ , __mav
     }
     ```
 
-- You can also select an Agent whose type is __node__ and whose label is __go__ on the __Edit Pipeline__ page.
+- Alternatively, in the **Pipeline Editor**, you can select an Agent of type **node** with the label **go**.
 
-    <!--![]()screenshots-->
+    ![agent-base](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/agent-base.jpeg)
 
-### Built-in Labels
+## Custom podTemplate
 
-The built-in Jenkins Agent Labels have the following options:
-
-=== "base"
-
-    | Name        | Type/Version                        |
-    | ----------- | ----------------------------------- |
-    | Container   | base                                |
-    | Operating System | centos-7 (7.9.2009)             |
-    | Podman      | podman version 3.0.1                |
-    | Kubectl     | v1.22.0                             |
-    | Built-in Tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
-
-=== "maven"
-
-    | Name        | Type/Version                        |
-    | ----------- | ----------------------------------- |
-    | Container   | maven                               |
-    | Operating System | centos-7 (7.9.2009)             |
-    | Jdk         | openjdk-1.8.0_322                   |
-    | Maven       | 3.5.3                               |
-    | Podman      | podman version 3.0.1                |
-    | Kubectl     | v1.22.0                             |
-    | Built-in Tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
-
-=== "mavenjdk11"
-
-    | Name        | Type/Version                        |
-    | ----------- | ----------------------------------- |
-    | Container   | maven                               |
-    | Operating System | centos-7 (7.9.2009)             |
-    | Jdk         | openjdk-11.0.19                      |
-    | Maven       | 3.5.3                               |
-    | Podman      | podman version 3.0.1                |
-    | Kubectl     | v1.22.0                             |
-    | Built-in Tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
-
-=== "go"
-
-    | Name        | Type/Version                        |
-    | ----------- | ----------------------------------- |
-    | Container   | go                                  |
-    | Operating System | centos-7 (7.9.2009)             |
-    | Go          | 1.12.10                             |
-    | GOPATH      | /home/jenkins/go                    |
-    | GOROOT      | /usr/local/go                       |
-    | Podman      | podman version 3.0.1                |
-    | Kubectl     | v1.22.0                             |
-    | Built-in Tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
-
-=== "node.js"
-
-    | Name        | Type/Version                        |
-    | ----------- | ----------------------------------- |
-    | Container   | nodejs                             |
-    | Operating System | centos-7 (7.9.2009)             |
-    | Node        | v10.16.3                            |
-    | Yarn        | 1.16.0                              |
-    | Podman      | podman version 3.0.1                |
-    | Kubectl     | v1.22.0                             |
-    | Built-in Tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
-
-=== "python"
-
-    | Name        | Type/Version                        |
-    | ----------- | ----------------------------------- |
-    | Container   | python                             |
-    | Operating System | centos-7 (7.9.2009)             |
-    | Python      | 3.7.11                              |
-    | Podman      | podman version 3.0.1                |
-    | Kubectl     | v1.22.0                             |
-    | Built-in Tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
-
-## Customize podTemplate using YAML
-
-If you need to run the Jenkins Agent in a specific environment, you can customize the Jenkins Agent on the pipeline.
-
-1. Select the Agent type as __kubernetes__ on the __Edit Pipeline__ page.
-
-    <!--![]()screenshots-->
-
-2. Click __YAML Editor__ and fill in the YAML statement in the dialog box, refer to the following example:
-
-    ```yaml
-    apiVersion: v1
-    kind: Pod
-    spec:
-      containers:
-      - name: jnlp
-        image: docker.m.daocloud.io/jenkins/inbound-agent:4.10-2  # (1)!
-        args:
-        - ^${computer.jnlpmac} ^${computer.name}
-      - name: golang
-        image: golang:1.16.5   # (2)!
-        command:
-        - sleep
-        args:
-        - 99d
-    ```
-
-    1. You need to provide the address of the JNLP image,
-       otherwise, the default "jenkins/inbound-agent" will be used.
-    2. Fill in your custom image.
-
-3. Enter __golang__ in Container as the default container for pipeline operation.
-
-    <!--![]()screenshots-->
-
-4. To use other containers of the above examples in other steps of the pipeline, you can select __Specify container__ to fill in the required container name.
-
-    <!--![]()screenshots-->
+If you have specific build environment requirements, refer to [Creating a Custom Image](../../../quickstart/jenkins-custom.md#_1) for implementation details.
