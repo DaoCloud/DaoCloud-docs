@@ -28,9 +28,9 @@ DCE 5.0 has two versions: DCE Community and DCE 5.0 Enterprise.
       <td>DCE Community</td>
       <td>
         <ul>
-          <li><a href="https://docs.daocloud.io/en/ghippo/intro/index.html">Global Management</a></li>
-          <li><a href="https://docs.daocloud.io/en/kpanda/intro/index.html">Container Management</a></li>
-          <li><a href="https://docs.daocloud.io/en/insight/intro/index.html">Insight</a></li>
+          <li><a href="https://docs.daocloud.io/en/ghippo/intro/">Global Management</a></li>
+          <li><a href="https://docs.daocloud.io/en/kpanda/intro/">Container Management</a></li>
+          <li><a href="https://docs.daocloud.io/en/insight/intro/">Insight</a></li>
         </ul>
       </td>
       <td>
@@ -41,18 +41,18 @@ DCE 5.0 has two versions: DCE Community and DCE 5.0 Enterprise.
       <td>DCE 5.0 Enterprise</td>
       <td> <p>On top of DCE Community, more modules are added:</p>
         <ul>
-          <li><a href="https://docs.daocloud.io/en/amamba/intro/index.html"><span style="white-space: nowrap;">Workbench</span></a></li>
-          <li><a href="https://docs.daocloud.io/en/kairship/intro/index.html">Multicloud Management</a></li>
-          <li><a href="https://docs.daocloud.io/en/skoala/intro/index.html"><span style="white-space: nowrap;">Microservice Engine</span></a></li>
-          <li><a href="https://docs.daocloud.io/en/mspider/intro/index.html">Service Mesh</a></li>
+          <li><a href="https://docs.daocloud.io/en/amamba/intro/"><span style="white-space: nowrap;">Workbench</span></a></li>
+          <li><a href="https://docs.daocloud.io/en/kairship/intro/">Multicloud Management</a></li>
+          <li><a href="https://docs.daocloud.io/en/skoala/intro/"><span style="white-space: nowrap;">Microservice Engine</span></a></li>
+          <li><a href="https://docs.daocloud.io/en/mspider/intro/">Service Mesh</a></li>
           <li><a href="https://docs.daocloud.io/en/middleware/index.html"><span style="white-space: nowrap;">Middleware</span></a></li>
-          <li><a href="https://docs.daocloud.io/en/kangaroo/index.html">Container Registry</a></li>
-          <li><a href="https://docs.daocloud.io/en/kant/intro/index.html">Cloud Edge Collaboration</a></li>
-          <li><a href="https://docs.daocloud.io/en/virtnest/intro/index.html">Containerized VM</a></li>
+          <li><a href="https://docs.daocloud.io/en/kangaroo/intro/">Container Registry</a></li>
+          <li><a href="https://docs.daocloud.io/en/kant/intro/">Cloud Edge Collaboration</a></li>
+          <li><a href="https://docs.daocloud.io/en/virtnest/intro/">Containerized VM</a></li>
         </ul>
       </td>
       <td>
-        Contact us for licensing: email info@daocloud.io or call 400 002 6898. You can freely combine the modules as needed, and <a href="https://docs.daocloud.io/en/download/index.html#download-modules">download offline packages for sub-modules</a> anytime.
+        Contact us for licensing: email info@daocloud.io or call 400 002 6898. You can freely combine the modules as needed, and <a href="https://docs.daocloud.io/en/download/#download-modules">download offline packages for sub-modules</a> anytime.
       </td>
     </tr>
   </tbody>
@@ -103,9 +103,9 @@ click tools "https://docs.daocloud.io/en/install/install-tools.html"
 click kind "https://docs.daocloud.io/en/install/community/kind/online.html"
 click s1 "https://docs.daocloud.io/en/install/community/k8s/online.html"
 click s2 "https://docs.daocloud.io/en/install/community/k8s/offline.html"
-click kpanda "https://docs.daocloud.io/en/kpanda/intro/index.html"
-click ghippo "https://docs.daocloud.io/en/ghippo/intro/index.html"
-click insight "https://docs.daocloud.io/en/insight/intro/index.html"
+click kpanda "https://docs.daocloud.io/en/kpanda/intro/"
+click ghippo "https://docs.daocloud.io/en/ghippo/intro/"
+click insight "https://docs.daocloud.io/en/insight/intro/"
 click free "https://docs.daocloud.io/en/dce/license0.html"
 click ask "https://docs.daocloud.io/en/install/index.html#contact-us"
 ```

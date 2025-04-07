@@ -19,9 +19,9 @@ DCE 5.0 大体分为两个版本：社区版和商业版。 [下载 DCE 5.0 商�
       <td>社区版</td>
       <td>
         <ul>
-          <li><a href="https://docs.daocloud.io/ghippo/intro/index.html">全局管理</a></li>
-          <li><a href="https://docs.daocloud.io/kpanda/intro/index.html">容器管理</a></li>
-          <li><a href="https://docs.daocloud.io/insight/intro/index.html">可观测性</a></li>
+          <li><a href="https://docs.daocloud.io/ghippo/intro/">全局管理</a></li>
+          <li><a href="https://docs.daocloud.io/kpanda/intro/">容器管理</a></li>
+          <li><a href="https://docs.daocloud.io/insight/intro/">可观测性</a></li>
         </ul>
       </td>
       <td>
@@ -33,14 +33,14 @@ DCE 5.0 大体分为两个版本：社区版和商业版。 [下载 DCE 5.0 商�
       <td>商业版</td>
       <td><p>社区版上增加了：</p>
         <ul>
-          <li><a href="https://docs.daocloud.io/amamba/intro/index.html"><span style="white-space: nowrap;">应用工作台</span></a></li>
-          <li><a href="https://docs.daocloud.io/kairship/intro/index.html">多云编排</a></li>
-          <li><a href="https://docs.daocloud.io/skoala/intro/index.html"><span style="white-space: nowrap;">微服务引擎</span></a></li>
-          <li><a href="https://docs.daocloud.io/mspider/intro/index.html">服务网格</a></li>
+          <li><a href="https://docs.daocloud.io/amamba/intro/"><span style="white-space: nowrap;">应用工作台</span></a></li>
+          <li><a href="https://docs.daocloud.io/kairship/intro/">多云编排</a></li>
+          <li><a href="https://docs.daocloud.io/skoala/intro/"><span style="white-space: nowrap;">微服务引擎</span></a></li>
+          <li><a href="https://docs.daocloud.io/mspider/intro/">服务网格</a></li>
           <li><a href="https://docs.daocloud.io/middleware/index.html"><span style="white-space: nowrap;">精选中间件</span></a></li>
-          <li><a href="https://docs.daocloud.io/kangaroo/intro/index.html">镜像仓库</a></li>
-          <li><a href="https://docs.daocloud.io/kant/intro/index.html">云边协同</a></li>
-          <li><a href="https://docs.daocloud.io/virtnest/intro/index.html">容器化的虚拟机</a></li>
+          <li><a href="https://docs.daocloud.io/kangaroo/intro/">镜像仓库</a></li>
+          <li><a href="https://docs.daocloud.io/kant/intro/">云边协同</a></li>
+          <li><a href="https://docs.daocloud.io/virtnest/intro/">容器化的虚拟机</a></li>
         </ul>
       </td>
       <td>
@@ -96,9 +96,9 @@ click tools "https://docs.daocloud.io/install/install-tools.html"
 click kind "https://docs.daocloud.io/install/community/kind/online.html"
 click s1 "https://docs.daocloud.io/install/community/k8s/online.html"
 click s2 "https://docs.daocloud.io/install/community/k8s/offline.html"
-click kpanda "https://docs.daocloud.io/kpanda/intro/index.html"
-click ghippo "https://docs.daocloud.io/ghippo/intro/index.html"
-click insight "https://docs.daocloud.io/insight/intro/index.html"
+click kpanda "https://docs.daocloud.io/kpanda/intro/"
+click ghippo "https://docs.daocloud.io/ghippo/intro/"
+click insight "https://docs.daocloud.io/insight/intro/"
 click free "https://docs.daocloud.io/dce/license0.html"
 click ask "https://docs.daocloud.io/install/index.html#_4"
 ```
