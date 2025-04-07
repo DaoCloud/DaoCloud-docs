@@ -118,7 +118,7 @@ We hope you find the information helpful and enjoy exploring!
     This is a comprehensive microservice management platform tailored for mainstream microservice ecosystems.
 
     - [Cloud Native Gateway](../skoala/gateway/index.md)
-    - [Cloud Native Microservices](../skoala/cloud-ms/index.md)
+    - [Cloud Native Microservices](../skoala/cloud-ms/lane.md)
     - [Traditional Microservices](../skoala/trad-ms/hosted/index.md)
     - [Plugin Center](../skoala/plugins/intro.md)
 
