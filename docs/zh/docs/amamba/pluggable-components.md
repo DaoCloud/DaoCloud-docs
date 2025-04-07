@@ -16,6 +16,8 @@
     如果需要在安装 DCE 5.0 时开启或关闭应用工作台的相关组件，可以在部署时设置 __manifest.yaml__
     中的 __enable__ 关键字来通过设置 true 或者 fasle 选择是否启用。
 
+<a name="deploying-the-argo-cd-component"></a>
+
 ## 部署 argo-cd 组件
 
 如果部署 DCE 5.0 时选择不启用，则按照下述步骤进行部署，从而使用应用工作台提供的持续部署能力。
@@ -62,6 +64,8 @@
 
 1. 重启成功后，即可前往 __应用工作台__ 模块使用持续部署能力。
 
+<a name="notes"></a>
+
 ### 注意事项
 
 对于 Addon 中的 argo-cd 组件，我们基于开源版本做了一些配置，主要更改如下：
@@ -93,6 +97,8 @@ kind: ConfigMap
 metadata:
   name: argocd-rbac-cm
 ```
+
+<a name="deploying-the-vela-core-component"></a>
 
 ## 部署 vela-core 组件
 
@@ -138,6 +144,8 @@ metadata:
    __amamba-syncer__ ，并依次进行重启。
 
 8. 重启成功后，即可前往 __应用工作台__ 模块使用 OAM 应用能力。
+
+<a name="deploying-the-argo-rollouts-component"></a>
 
 ## 部署 argo-rollouts
 
