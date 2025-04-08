@@ -29,7 +29,7 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
    
     ![修改配置项](../../images/argocd-ui-config.png) 
 
-1. 修改过后，仍需修改 amamba的配置项 [修改应用工作台配置项](#修改应用工作台配置项)。
+1. 注意：修改过后，您仍需**修改amamba的配置项** [修改应用工作台配置项](#update-config) 才能使 ArgoCD UI 生效。
 
 ### 应用工作台版本 < v0.35.0
 
@@ -187,6 +187,7 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
     选择您安装的 ArgoCD 的命名空间，如 argocd。 找到 `amamba-argocd-server`，点击右侧的 __重启__ 按钮。
 
 ## 修改应用工作台配置项
+<span id="update-config"></span>
 
 经过上述步骤后，还需要更改应用工作台的配置项才能使 ArgoCD UI 生效。
 
