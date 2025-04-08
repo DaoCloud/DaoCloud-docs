@@ -13,8 +13,8 @@ OpenTelemetry 也简称为 OTel，是一个开源的可观测性框架，可以�
 必须先安装与 OpenTelemetry exporter 和 SDK 相关的依赖项。如果您正在使用其他请求路由器，请参考[请求路由](#_3)。
 切换/进入到应用程序源文件夹后运行以下命令：
 
-```golang
-go get go.opentelemetry.io/otel@v1.19.0 \
+```bash
+$ go get go.opentelemetry.io/otel@v1.19.0 \
   go.opentelemetry.io/otel/trace@v1.19.0 \
   go.opentelemetry.io/otel/sdk@v1.19.0 \
   go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.46.1 \
