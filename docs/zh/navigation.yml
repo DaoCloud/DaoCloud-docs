@@ -770,8 +770,10 @@ nav:
                       - 使用JMX Exporter暴露JVM监控指标: insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md
                       - 使用OTel Java Agent暴露JVM监控指标: insight/quickstart/otel/java/jvm-monitor/otel-java-agent.md
                       - 已有JVM指标的Java应用对接可观测性: insight/quickstart/otel/java/jvm-monitor/legacy-jvm.md
+                      - 将 TraceId 和 SpanId 写入 Java 应用日志: insight/quickstart/otel/java/mdc.md
                   - Golang 应用观测:
                       - OTel SDK增强Go应用: insight/quickstart/otel/golang/golang.md
+                      - 将 TraceId 和 SpanId 写入 Golang 应用日志: insight/quickstart/otel/golang/traceid_logs.md
                   - 其他观测技术集成:
                       - 使用OTel接收SkyWalking链路数据: insight/best-practice/sw-to-otel.md
               - 仪表盘:
