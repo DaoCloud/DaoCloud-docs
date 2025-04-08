@@ -25,17 +25,18 @@
 
 ### 同步 Helm Chart
 
-1. 进入`容器管理` -> `Helm 应用` -> `Helm 仓库`，搜索 addon，获取内置仓库地址和用户名/密码（系统内置仓库默认用户名/密码为 rootuser/rootpass123）。
+1. 进入 **容器管理** -> **Helm 应用** -> **Helm 仓库** ，搜索 addon，
+   获取内置仓库地址和用户名/密码（系统内置仓库默认用户名/密码为 rootuser/rootpass123）。
 
-  ![helmlist](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/helmlist.png)
+    ![helmlist](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/helmlist.png)
   
-  ![helmdetail](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/helmdetail.png)
+    ![helmdetail](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/helmdetail.png)
   
 1. 同步 Helm Chart 到容器管理内置仓库 Addon
 
     * 编写如下配置文件，可以根据具体配置修改，并保存为 `sync-dao-2048.yaml`。
 
-        ```yaml
+        ```yaml title="sync-dao-2048.yaml"
         source:  # helm charts 源信息
           repo:
             kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别，比如 CHARTMUSEUM
@@ -87,8 +88,8 @@
         Done moving /var/folders/vm/08vw0t3j68z9z_4lcqyhg8nm0000gn/T/charts-syncer869598676/dao-2048-1.4.1.tgz
         ```
 
-1. 待上一步执行完成后，进入`容器管理` -> `Helm 应用` -> `Helm 仓库`，找到对应 Addon，
-   在操作栏点击`同步仓库`，回到 Helm 模板就可以看到上传的 Helm 应用
+1. 待上一步执行完成后，进入 **容器管理** -> **Helm 应用** -> **Helm 仓库** ，找到对应 Addon，
+   在操作栏点击 **同步仓库** ，回到 Helm 模板就可以看到上传的 Helm 应用
 
     ![helm同步](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/helmsyn.png)
 
