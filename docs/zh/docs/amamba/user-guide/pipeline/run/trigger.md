@@ -2,7 +2,7 @@
 
 为流水线配置触发器，周期性地自动触发流水线的执行。在编辑流水线时点击 __编辑配置__ ，即可配置构建触发器。
 
-![trigger001](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/trigger001.png)
+![trigger001](../../../images/trigger001.png)
 
 __当前支持以下几种触发器类型：__
 

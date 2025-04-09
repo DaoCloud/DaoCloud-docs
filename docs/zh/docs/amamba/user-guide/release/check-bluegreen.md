@@ -23,7 +23,7 @@
 
 2. 设置金丝雀发布的镜像。
 
-    ![镜像地址](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/blue03.png)
+    ![镜像地址](../../images/blue03.png)
 
 3. 应用更新成功后会在主要版本中存在两个版本的信息，并且此时蓝绿发布任务的状态为「暂停中」 。
 
