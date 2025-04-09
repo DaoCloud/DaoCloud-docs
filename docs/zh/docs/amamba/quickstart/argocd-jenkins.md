@@ -21,7 +21,11 @@
 
 2. 准备一个 Harbor 镜像仓库
 
-3. 准备访问上述三个仓库的凭证。此教程中使用的三个凭证分别命为 git-credentials、git-app-credentials、harbor-credentials 
+3. 准备访问上述三个仓库的凭证。此教程中使用的三个凭证分别命为
+
+    - git-credentials
+    - git-app-credentials
+    - harbor-credentials 
 
 ## 创建流水线
 
