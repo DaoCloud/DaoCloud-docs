@@ -21,7 +21,11 @@
 
 2. 准备一个 Harbor 镜像仓库
 
-3. 准备访问上述三个仓库的凭证。此教程中使用的三个凭证分别命为 git-credentials、git-app-credentials、harbor-credentials 
+3. 准备访问上述三个仓库的凭证。此教程中使用的三个凭证分别命为：
+
+    - git-credentials
+    - git-app-credentials
+    - harbor-credentials
 
 ## 创建流水线
 
@@ -104,7 +108,7 @@
 
 ### 基于 Kustomize 持续发布
 
-如果部署文件使用 Kustomize 管理，我们可以更新流水线`update manifest`步骤以适配这种情况：
+如果部署文件使用 Kustomize 管理，我们可以更新流水线 `update manifest` 步骤以适配这种情况：
 
 ```groovy
 environment {
@@ -205,24 +209,24 @@ stages{
 
 1. 选择上述创建的流水线，点击 __立即运行__ 。
 
-2. 查看运行日志。
+1. 查看运行日志。
 
     ![cd:ci05](../images/pipeline-gitops-5.png)
 
-3. 流水线运行成功后，验证镜像是否上传到 Harbor，Jenkinsfile 中定义的 tag 为当前的`Commit ID`，同时注意到部署仓库的内容也更新了。
+1. 流水线运行成功后，验证镜像是否上传到 Harbor，Jenkinsfile 中定义的 tag 为当前的`Commit ID`，同时注意到部署仓库的内容也更新了。
 
     ![cd:ci06](../images/pipeline-gitops-6.png)
     ![ci:cd07](../images/pipeline-gitops-7.png)
 
-4. 继续验证持续部署应用，发现处于 __未同步__ 状态。看到 Deployment 资源未同步。
+1. 继续验证持续部署应用，发现处于 __未同步__ 状态。看到 Deployment 资源未同步。
 
     ![cd:ci08](../images/pipeline-gitops-8.png)
 
-5. 点击 __同步__ ，等待同步成功后，查看 Deployment 资源，确认目前的镜像版本。
+1. 点击 __同步__ ，等待同步成功后，查看 Deployment 资源，确认目前的镜像版本。
 
     ![cd:ci11](../images/pipeline-gitops-9.png)
 
-6. 通过 `port-forward` 映射本地端口到 guestbook-ui 的服务，并在本地访问：
+1. 通过 `port-forward` 映射本地端口到 guestbook-ui 的服务，并在本地访问：
 
     ```console
     kubectl port-forward svc/guestbook-ui -n demo-gitops 8080:80
@@ -232,8 +236,9 @@ stages{
 
 ## 其他
 
-在以上流程的基础上，也可以使用 [Argo Rollouts](https://argo-rollouts.readthedocs.io/en/stable/) 替换 Deployment 实现灰度发布和蓝绿发布。我们在示例代码中提供了样例，可以做为**流水线 - GitOps - 灰度/蓝绿发布** 的参考:
+在以上流程的基础上，也可以使用 [Argo Rollouts](https://argo-rollouts.readthedocs.io/en/stable/) 替换
+Deployment 实现灰度发布和蓝绿发布。我们在示例代码中提供了样例，可以做为 **流水线** -> **GitOps** -> **灰度/蓝绿发布** 的参考：
 
-- [基于副本数的灰度发布](https://github.com/amamba-io/amamba-examples/tree/main/replicas-rollouts) 和 [流水线](https://github.com/amamba-io/amamba-examples/blob/main/pipelines/replicas-rollouts.jenkinsfile)
-- [基于Istio的灰度发布](https://github.com/amamba-io/amamba-examples/tree/main/istio-rollouts) 和 [流水线](https://github.com/amamba-io/amamba-examples/blob/main/pipelines/istio-rollouts.jenkinsfile)
-- [蓝绿发布](https://github.com/amamba-io/amamba-examples/tree/main/blue-green) 和 [流水线](https://github.com/amamba-io/amamba-examples/blob/main/pipelines/blue-green.jenkinsfile)
+- [基于副本数的灰度发布](https://github.com/amamba-io/amamba-examples/tree/main/replicas-rollouts)和[流水线](https://github.com/amamba-io/amamba-examples/blob/main/pipelines/replicas-rollouts.jenkinsfile)
+- [基于 Istio 的灰度发布](https://github.com/amamba-io/amamba-examples/tree/main/istio-rollouts)和[流水线](https://github.com/amamba-io/amamba-examples/blob/main/pipelines/istio-rollouts.jenkinsfile)
+- [蓝绿发布](https://github.com/amamba-io/amamba-examples/tree/main/blue-green)和[流水线](https://github.com/amamba-io/amamba-examples/blob/main/pipelines/blue-green.jenkinsfile)
