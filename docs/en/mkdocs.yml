@@ -59,6 +59,9 @@ theme:
     # - toc.integrate
 
   palette:
+    primary: black
+
+  palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
