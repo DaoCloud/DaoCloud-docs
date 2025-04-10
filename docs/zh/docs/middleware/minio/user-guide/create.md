@@ -13,7 +13,7 @@ hide:
 
     > 如果是首次使用，需要[先选择工作空间](../../common/index.md)，然后点击 __立即部署__ 创建 MinIO 实例。
 
-    ![点击新建实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create02.png)
+    ![点击新建实例](../images/create02.png)
 
 3. 参考下方信息填写实例基本信息，然后点击 __下一步__ 。
 
