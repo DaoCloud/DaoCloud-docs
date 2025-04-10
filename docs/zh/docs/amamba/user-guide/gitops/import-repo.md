@@ -21,7 +21,7 @@
 
 2. 在 __使用 HTTPS 导入仓库__ 页面中，配置相关参数后点击 __确定__ 。
 
-    ![导入](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/import02.png)
+    ![导入](../../images/import02.png)
 
 ### 使用 SSH 导入仓库
 
@@ -31,7 +31,7 @@
 
 2. 在 __使用 SSH 导入仓库__ 页面中，配置相关参数后点击 __确定__ 。
 
-    ![导入](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/import03.png)
+    ![导入](../../images/import04.png)
 
 ## 删除仓库
 
