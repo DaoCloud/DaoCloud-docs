@@ -32,6 +32,51 @@ For more information on open source Grafana, see
 
 !!! note
 
-    1. For accessing Grafana UI, refer to [Access Native Grafana](../../user-guide/dashboard/login-grafana.md).
+    1. To import a custom dashboard, refer to [Import Custom Dashboard](./import-dashboard.md).
+    2. If you need to create a custom dashboard through the Grafana UI, you must
+       first configure [Grafana Persistent Storage](../../best-practice/grafana-use-db.md).
 
-    2. For importing custom dashboards, refer to [Importing Custom Dashboards](./import-dashboard.md).
+## Others
+
+### Accessing the Grafana UI
+
+1. The system-generated Grafana login password is automatically created by the Grafana Operator. You can find the login password by decrypting the `grafana-admin-credentials` secret in the `insight-system` namespace.
+2. Access the Grafana UI through your browser at `http://ip:port/ui/insight-grafana/login` and log in using the username `admin` and the decrypted secret as the password.
+
+### Customizing Grafana Admin Password
+
+#### Option 1: Manual Configuration
+
+Set the `spec.config.security.admin_password` field in the Grafana CR `insight-grafana-operator-grafana` to the desired password.
+
+```diff
+apiVersion: integreatly.org/v1alpha1
+kind: Grafana
+spec:
+  config:
+    security:
+      admin_user: admin
++     admin_password: admin
+      allow_embedding: true
+      disable_gravatar: false
+```
+
+#### Option 2: Auto-Generate Password
+
+Remove the `security.admin_password` field from the Grafana CR `insight-grafana-operator-grafana`. The `GrafanaOperator` will automatically generate a new admin password for the Grafana instance.
+
+```diff
+apiVersion: integreatly.org/v1alpha1
+kind: Grafana
+spec:
+  config:
+    security:
+      admin_user: admin
+-     admin_password: admin
+      allow_embedding: true
+      disable_gravatar: false
+```
+
+#### Option 3: Configure via Secret
+
+Delete the `spec.config.security.admin_password` field from the CR. Then, set the `GF_SECURITY_ADMIN_PASSWORD` field in the `grafana-admin-credentials` secret under the `insight-system` namespace to the new password.
