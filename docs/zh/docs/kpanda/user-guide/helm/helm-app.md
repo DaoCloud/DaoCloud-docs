@@ -64,6 +64,28 @@
 5. 系统将自动返回 Helm 应用列表，右上角弹窗提示 __更新成功__ 。
 
     ![更新成功](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/helm11.png)
+    
+### 注意事项：
+
+若更新耗时较长，可能是由于资源限制导致。可通过以下步骤调整 Helm 任务资源配额：
+
+1. 查看更新该 helm 应用所占用的资源
+
+    ```bash
+    # 获取更新 helm 应用的 job name
+    kubectl -n default get job
+    
+    # 查看更新该 helm 应用的这个 job 所占用的资源
+    kubectl -n zestu-system get job **换成 jobname ** -oyaml|grep resources -A 6
+    ```
+
+1. 调整 Helm 任务的资源配额
+
+    进入 **集群详情** -> **集群运维** -> **集群设置** -> **高级设置**，调整 Helm 任务资源配额，并点击 **确定** 完成保存。
+    
+    ![更新helm应用](../images/updatehelm.png)
+
+注：Helm 应用更新完成后，可将资源配额修改成默认值，以减少资源开支。
 
 ## 查看 Helm 操作记录
 
