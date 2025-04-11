@@ -28,6 +28,7 @@ Grafana 是一种开源的数据可视化和监控平台，它提供了丰富的
 !!! note
     
     1. 导入自定义仪表盘请参考[导入自定义仪表盘](./import-dashboard.md)。
+    2. 如需通过 Grafana UI 创建自定义仪表盘，请先配置 [Grafana 持久化存储](../../best-practice/grafana-use-db.md)。
 
 ## 其他
 
