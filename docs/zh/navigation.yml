@@ -1224,13 +1224,13 @@ nav:
           - AI Lab:
               - 介绍:
                   - 什么是 AI Lab: baize/intro/index.md
-                  - 组件部署: baize/intro/install.md
-                  - 快速体验: baize/intro/first.md
+                  - 安装 AI Lab 组件: baize/intro/install.md
+                  - 首次使用: baize/intro/first.md
                   - Release Notes: baize/intro/release-notes.md
               - 开发控制台:
                   - 介绍: baize/developer/index.md
                   - 快速入门: baize/developer/quick-start.md
-                  - Notebooks:
+                  - 使用 Notebooks 开发环境:
                       - 创建 Notebook: baize/developer/notebooks/create.md
                       - 启动和暂停 Notebook: baize/developer/notebooks/start-pause.md
                       - Notebook 工作负载: baize/developer/notebooks/view.md
@@ -1240,7 +1240,7 @@ nav:
                       - baizectl 命令行工具: baize/developer/notebooks/baizectl.md
                       - baizess 换源工具: baize/developer/notebooks/baizess.md
                       - Notebook 闲置超时自动关机: baize/developer/notebooks/notebook-auto-close.md
-                  - 任务中心:
+                  - 任务管理:
                       - 创建任务: baize/developer/jobs/create.md
                       - 创建 Pytorch 任务: baize/developer/jobs/pytorch.md
                       - 创建 Tensorflow 任务: baize/developer/jobs/tensorflow.md
