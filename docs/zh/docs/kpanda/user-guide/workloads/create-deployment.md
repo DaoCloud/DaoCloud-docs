@@ -105,7 +105,7 @@
 
 === "数据存储（选填）"
 
-    配置容器挂载数据卷和数据持久化的设置。详情可参考[容器数据存储配置](pod-config/env-variables.md)。
+    配置容器挂载数据卷和数据持久化的设置。详情可参考[容器数据存储配置](../storage/pv.md)。
     
     ![数据存储](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy09.png)
 
