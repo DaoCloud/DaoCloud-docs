@@ -6,7 +6,7 @@
 
 1. 进入 __可观测性__ 后，在左侧导航栏中点击 __告警中心__ -> __通知配置__，默认位于邮件通知对象。
 
-    ![邮件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/email00.png)
+    ![邮件](../../images/email01.png)
 
 2. 点击 __添加邮箱组__，添加一个或多个邮件地址。
 
@@ -18,7 +18,7 @@
 
 1. 在左侧导航栏中点击 __告警中心__ -> __通知配置__ -> __企业微信__。
 
-    ![企业微信](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/wechatbot00.png)
+    ![企业微信](../../images/wechatbot01.png)
 
     有关企业微信群机器人的 URL，请参阅[企业微信官方文档：如何使用群机器人](https://developer.work.weixin.qq.com/document/path/91770)。
 
@@ -59,7 +59,7 @@
 
 1. 在左侧导航栏中点击 __告警中心__ -> __通知配置__ -> __Webhook__。
 
-    ![webhook](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/webhook00.png)
+    ![webhook](../../images/webhook01.png)
 
     有关 Webhook URL 及更多配置方式，请参阅 [webhook 文档](https://github.com/webhooksite/webhook.site)。
 
@@ -93,7 +93,7 @@
 
 1. 在左侧导航栏中点击 __告警中心__ -> __通知配置__ -> __短信__，点击 __添加短信组__，添加一个或多个短信组。
 
-    ![messsage](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/notify06.png)
+    ![messsage](../../images/notify7.png)
 
 2. 在弹窗中输入名称、接收短信的对象、手机号以及通知服务器。
 
