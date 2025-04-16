@@ -16,7 +16,7 @@
 | CPU 架构 | 版本 | 点击下载 |
 | :------- | :----- | :-----|
 | AMD64 | v0.28.0 | [offline-v0.28.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.28.0-amd64.tar) |
-| <font color="green">ARM64</font> | v0.27.0 | [offline-v0.27.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.28.0-arm64.tar) |
+| <font color="green">ARM64</font> | v0.28.0 | [offline-v0.28.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.28.0-arm64.tar) |
 
 下载完毕后解压离线包。以 amd64 架构离线包为例：
 
@@ -80,7 +80,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
     | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-kylin-v10sp2-v0.23.6.tar.gz) |
     | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-kylin-v10sp3-v0.23.6.tar.gz) |
 
-=== "V0.27.0 / V0.27.1"
+=== "v0.27.0 / V0.27.1"
 
     | 操作系统版本 | 点击下载 |
     | :--------- | :------ |
