@@ -5,7 +5,7 @@
 ## 下载脚本
 
 ```bash
-export VERSION=v0.27.0
+export VERSION=v0.28.0
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/download_packages_${VERSION}.sh
 chmod +x download_packages_${VERSION}.sh
 ```
