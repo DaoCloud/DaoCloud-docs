@@ -1254,6 +1254,7 @@ nav:
                       - 数据集列表: baize/developer/dataset/create-use-delete.md
                       - 环境管理: baize/developer/dataset/environments.md
                   - 模型服务:
+                      - 模型列表: baize/developer/inference/model-create.md
                       - 模型支持情况: baize/developer/inference/models.md
                       - 推理服务:
                           - 创建 Triton 推理服务: baize/developer/inference/triton-inference.md
