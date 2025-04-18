@@ -174,12 +174,12 @@ rules:
 
     ```yaml
     - hostPath:
-      path: /var/log/kubernetes/audit
-      type: ""
+        path: /var/log/kubernetes/audit
+        type: ""
       name: audit-logs
     - hostPath:
-      path: /etc/kubernetes/audit-policy
-      type: ""
+        path: /etc/kubernetes/audit-policy
+        type: ""
       name: audit-policy
     ```
 
