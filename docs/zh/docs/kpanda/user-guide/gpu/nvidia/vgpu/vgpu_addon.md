@@ -15,7 +15,8 @@
 
 2. 在安装 vGPU 的过程中提供了几个基本修改的参数，如果需要修改高级参数点击 YAML 列进行修改：
 
-    - __deviceCoreScaling__ ：NVIDIA 装置算力使用比例，预设值是 1。可以大于 1（启用虚拟算力，实验功能）。如果我们配置 __devicePlugin.deviceCoreScaling__ 参数为 S，在部署了我们装置插件的 Kubernetes 集群中，这张 GPU 分出的 vGPU 将总共包含 __S * 100%__ 算力。
+    - __deviceCoreScaling__ ：NVIDIA 装置算力使用比例，预设值是 1。可以大于 1（启用虚拟算力，实验功能）。
+      如果我们配置 __devicePlugin.deviceCoreScaling__ 参数为 S，在部署了我们装置插件的 Kubernetes 集群中，这张 GPU 分出的 vGPU 将总共包含 __S * 100%__ 算力。
 
     - __deviceMemoryScaling__ ：NVIDIA 装置显存使用比例，预设值是 1。可以大于 1（启用虚拟显存，实验功能）。
       对于有 M 显存大小的 NVIDIA GPU，如果我们配置 __devicePlugin.deviceMemoryScaling__ 参数为 S，
@@ -36,21 +37,19 @@
   
 4. 随后，从左侧导航栏点击 __节点管理__ ，找到目标节点，点击 __GPU 模式切换__ ，切换为 vGPU 模式。
 
-!!! note
-
-    NVIDIA 的 vGPU 能力支持节点级别的 GPU 模式切换（整卡/vGPU/mig 模式），满足同一集群中不同工作负载对 GPU 模式的不同需求。
-
- ![GPU模式1](../../images/vgpuaddon1.png)
-
-  点击 __确定__ 后，节点状态会变为 __GPU 模式切换中__ ，等待节点切换完成（也就是vGPU的hami-nvidia-vgpu-device-plugin pod启动完毕）。切换完成之后状态会变为 __Nvidia-vGPU__ 。
-
-  ![GPU模式2](../../images/vgpuaddon2.png)
-
- ![GPU模式3](../../images/vgpuaddon3.png)
-
+    !!! note
+    
+        NVIDIA 的 vGPU 能力支持节点级别的 GPU 模式切换（整卡/vGPU/mig 模式），满足同一集群中不同工作负载对 GPU 模式的不同需求。
+    
+    ![GPU模式1](../../images/vgpuaddon1.png)
+    
+    点击 __确定__ 后，节点状态会变为 __GPU 模式切换中__ ，等待节点切换完成（也就是 vGPU 的 hami-nvidia-vgpu-device-plugin pod 启动完毕）。切换完成之后状态会变为 __Nvidia-vGPU__ 。
+    
+    ![GPU模式2](../../images/vgpuaddon2.png)
+    
+    ![GPU模式3](../../images/vgpuaddon3.png)
 
 5. 节点 GPU 模式切换成功后，[部署应用可使用 vGPU 资源](vgpu_user.md)。注意：切换过程稍有延迟，请在节点标签正确显示后再部署应用。
-
 
 !!! note
 
