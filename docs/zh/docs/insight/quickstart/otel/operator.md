@@ -445,57 +445,86 @@ spec:
                     apiVersion: v1
                     fieldPath: metadata.namespace
         defaultMode: 420
-+   - name: opentelemetry-auto-instrumentation
-+     emptyDir: {}
++   - name: opentelemetry-auto-instrumentation-java
++     emptyDir:
++       sizeLimit: 200Mi      
 + initContainers:
-+   - name: opentelemetry-auto-instrumentation
-+     image: >-
-+       ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java
++   - name: opentelemetry-auto-instrumentation-java
++     image: ghcr.m.daocloud.io/openinsight-proj/autoinstrumentation-java:1.45.0-eb49d21116a1d8fbf0d9080adddad3a367e68a5e
++     imagePullPolicy: IfNotPresent
 +     command:
 +       - cp
 +       - /javaagent.jar
-+       - /otel-auto-instrumentation/javaagent.jar
-+     resources: {}
++       - /otel-auto-instrumentation-java/javaagent.jar
++     resources:
++       limits:
++         cpu: 500m
++         memory: 64Mi
++       requests:
++         cpu: 50m
++         memory: 64Mi
++     terminationMessagePath: /dev/termination-log
++     terminationMessagePolicy: File
 +     volumeMounts:
-+       - name: opentelemetry-auto-instrumentation
-+         mountPath: /otel-auto-instrumentation
-        - name: kube-api-access-sp2mz
-          readOnly: true
-          mountPath: /var/run/secrets/kubernetes.io/serviceaccount
++       - name: opentelemetry-auto-instrumentation-java
++         mountPath: /otel-auto-instrumentation-java
++       - name: kube-api-access-sp2mz
++         readOnly: true
++         mountPath: /var/run/secrets/kubernetes.io/serviceaccount
   containers:
     - name: myapp
       image: ghcr.io/pavolloffay/spring-petclinic:latest
+      imagePullPolicy: Always
       ports:
         - containerPort: 8080
           protocol: TCP
-      env:
++     env:
 +       - name: OTEL_JAVAAGENT_DEBUG
-+         value: 'true'
++         value: "false"
 +       - name: OTEL_INSTRUMENTATION_JDBC_ENABLED
-+         value: 'true'
++         value: "true"
 +       - name: SPLUNK_PROFILER_ENABLED
-+         value: 'false'
++         value: "false"
 +       - name: JAVA_TOOL_OPTIONS
-+         value: ' -javaagent:/otel-auto-instrumentation/javaagent.jar'
-+       - name: OTEL_TRACES_EXPORTER
-+         value: otlp
++         value: ' -javaagent:/otel-auto-instrumentation-java/javaagent.jar'
 +       - name: OTEL_EXPORTER_OTLP_ENDPOINT
-+         value: http://insight-agent-opentelemetry-collector.svc.cluster.local:4317
-+       - name: OTEL_EXPORTER_OTLP_TIMEOUT
-+         value: '20'
-+       - name: OTEL_TRACES_SAMPLER
-+         value: parentbased_traceidratio
-+       - name: OTEL_TRACES_SAMPLER_ARG
-+         value: '0.85'
-+       - name: SPLUNK_TRACE_RESPONSE_HEADER_ENABLED
-+         value: 'true'
++         value: http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317
++       - name: OTEL_NODE_IP
++         valueFrom:
++           fieldRef:
++             apiVersion: v1
++             fieldPath: status.hostIP
++       - name: OTEL_POD_IP
++         valueFrom:
++           fieldRef:
++             apiVersion: v1
++             fieldPath: status.podIP
++       - name: OTEL_K8S_CLUSTER_UID
++         value: 416d133f-d00a-43e1-b859-f1839a5a93ee
++       - name: OTEL_EXPORTER_OTLP_PROTOCOL
++         value: grpc
++       - name: OTEL_K8S_NAMESPACE_NAME
++         valueFrom:
++           fieldRef:
++             apiVersion: v1
++             fieldPath: metadata.namespace
++       - name: OTEL_LOGS_EXPORTER
++         value: none
++       - name: OTEL_METRICS_EXPORTER
++         value: prometheus
++       - name: OTEL_EXPORTER_PROMETHEUS_PORT
++         value: "9464"
 +       - name: OTEL_SERVICE_NAME
-+         value: my-deployment-with-sidecar
++         value: my-app
 +       - name: OTEL_RESOURCE_ATTRIBUTES_POD_NAME
 +         valueFrom:
 +           fieldRef:
 +             apiVersion: v1
 +             fieldPath: metadata.name
++       - name: OTEL_PROPAGATORS
++         value: tracecontext,baggage,b3,b3multi,jaeger,xray,ottrace
++       - name: OTEL_TRACES_SAMPLER
++         value: always_on
 +       - name: OTEL_RESOURCE_ATTRIBUTES_POD_UID
 +         valueFrom:
 +           fieldRef:
@@ -507,24 +536,18 @@ spec:
 +             apiVersion: v1
 +             fieldPath: spec.nodeName
 +       - name: OTEL_RESOURCE_ATTRIBUTES
-+         value: >-
-+           k8s.container.name=myapp,k8s.deployment.name=my-deployment-with-sidecar,k8s.deployment.uid=8de6929d-dda0-436c-bca1-604e9ca7ea4e,k8s.namespace.name=default,k8s.node.name=$(OTEL_RESOURCE_ATTRIBUTES_NODE_NAME),k8s.pod.name=$(OTEL_RESOURCE_ATTRIBUTES_POD_NAME),k8s.pod.uid=$(OTEL_RESOURCE_ATTRIBUTES_POD_UID),k8s.replicaset.name=my-deployment-with-sidecar-565bd877dd,k8s.replicaset.uid=190d5f6e-ba7f-4794-b2e6-390b5879a6c4
-+      - name: OTEL_PROPAGATORS
-+        value: jaeger,b3
-+    resources:
-+       limits:
-+         cpu: 500m
-+         memory: 64Mi
-+       requests:
-+         cpu: 50m
-+         memory: 64Mi
++         value: k8s.container.name=myapp,k8s.deployment.name=my-app,k8s.deployment.uid=25ce570c-8401-4f07-b8a9-dd64fcf3a1d1,k8s.namespace.name=default,k8s.node.name=$(OTEL_RESOURCE_ATTRIBUTES_NODE_NAME),k8s.pod.name=$(OTEL_RESOURCE_ATTRIBUTES_POD_NAME),k8s.pod.uid=$(OTEL_RESOURCE_ATTRIBUTES_POD_UID),k8s.replicaset.name=my-app-54fc75999c,k8s.replicaset.uid=56358d62-1321-4a62-b2e9-34132988efa0,service.instance.id=default.$(OTEL_RESOURCE_ATTRIBUTES_POD_NAME).myapp,service.version=latest
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
       volumeMounts:
         - name: kube-api-access-sp2mz
           readOnly: true
           mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-+        - name: opentelemetry-auto-instrumentation
-+          mountPath: /otel-auto-instrumentation
++       - name: opentelemetry-auto-instrumentation-java
++         mountPath: /otel-auto-instrumentation-java
 ```
+🔔 需要注意的是，不同的版本自动注入后生成YAML并不完全一致。
 
 ## 链路查询
 
