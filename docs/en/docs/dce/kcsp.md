@@ -33,7 +33,7 @@ The currently maintained versions by K8s community:
 [![1.28](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
 [![1.29](../images/1.29.png)](https://github.com/cncf/k8s-conformance/pull/3203)
 [![1.30](../images/1.30.png)](https://github.com/cncf/k8s-conformance/pull/3578)
-[![1.31](../../../zh/docs/images/1.31.png)](https://github.com/cncf/k8s-conformance/pull/3675)
+[![1.31](../images/1.31.png)](https://github.com/cncf/k8s-conformance/pull/3675)
 
 Historical versions that are no longer maintained by the Kubernetes community, but are being continuously maintained by DaoCloud [KLTS](https://klts.io/):
 

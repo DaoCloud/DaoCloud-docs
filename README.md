@@ -9,7 +9,6 @@ DaoCloud is a Certified Kubernetes Service Provider (KCSP). DCE has been certifi
 
 Current releases maintained by K8s community:
 
-
 [![1.28](./images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
 [![1.29](./images/1.29.png)](https://github.com/cncf/k8s-conformance/pull/3203)
 [![1.30](./docs/zh/docs/images/1.30.png)](https://github.com/cncf/k8s-conformance/pull/3578)
