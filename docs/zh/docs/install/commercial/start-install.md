@@ -66,7 +66,6 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
     | 操作系统版本 | 点击下载 |
     | :--------- | :------ |
-    | CentOS 7     | [os-pkgs-centos7-v0.23.6.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-centos7-v0.23.6.tar.gz) |
     | Redhat 8     | [os-pkgs-redhat8-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-redhat8-v0.23.6.tar.gz) |
     | Redhat 7     | [os-pkgs-redhat7-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-redhat7-v0.23.6.tar.gz) |
     | Redhat 9     | [os-pkgs-redhat9-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-redhat9-v0.23.6.tar.gz) |
@@ -84,7 +83,6 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
     | 操作系统版本 | 点击下载 |
     | :--------- | :------ |
-    | CentOS 7     | [os-pkgs-centos7-v0.22.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-centos7-v0.22.5.tar.gz) |
     | Redhat 8     | [os-pkgs-redhat8-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-redhat8-v0.22.5.tar.gz) |
     | Redhat 7     | [os-pkgs-redhat7-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-redhat7-v0.22.5.tar.gz) |
     | Redhat 9     | [os-pkgs-redhat9-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-redhat9-v0.22.5.tar.gz) |
@@ -102,7 +100,6 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
     | 操作系统版本 | 点击下载 |
     | :--------- | :------ |
-    | CentOS 7     | [os-pkgs-centos7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-centos7-v0.22.4.tar.gz) |
     | Redhat 8     | [os-pkgs-redhat8-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat8-v0.22.4.tar.gz) |
     | Redhat 7     | [os-pkgs-redhat7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat7-v0.22.4.tar.gz) |
     | Redhat 9     | [os-pkgs-redhat9-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat9-v0.22.4.tar.gz) |
@@ -120,7 +117,6 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
     | 操作系统版本 | 点击下载 |
     | :--------- | :------ |
-    | CentOS 7     | [os-pkgs-centos7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-centos7-v0.22.4.tar.gz) |
     | Redhat 8     | [os-pkgs-redhat8-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat8-v0.22.4.tar.gz) |
     | Redhat 7     | [os-pkgs-redhat7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat7-v0.22.4.tar.gz) |
     | Redhat 9     | [os-pkgs-redhat9-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat9-v0.22.4.tar.gz) |
@@ -138,7 +134,6 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
     | 操作系统版本 | 点击下载 |
     | :--------- | :------ |
-    | CentOS 7     | [os-pkgs-centos7-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-centos7-v0.21.1.tar.gz) |
     | Redhat 8     | [os-pkgs-redhat8-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-redhat8-v0.21.1.tar.gz) |
     | Redhat 7     | [os-pkgs-redhat7-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-redhat7-v0.21.1.tar.gz) |
     | Redhat 9     | [os-pkgs-redhat9-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-redhat9-v0.21.1.tar.gz) |
@@ -156,7 +151,6 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
     | 操作系统版本 | 点击下载 |
     | :--------- | :------ |
-    | CentOS 7     | [os-pkgs-centos7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-centos7-v0.19.0.tar.gz) |
     | Redhat 8     | [os-pkgs-redhat8-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat8-v0.19.0.tar.gz) |
     | Redhat 7     | [os-pkgs-redhat7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat7-v0.19.0.tar.gz) |
     | Redhat 9     | [os-pkgs-redhat9-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat9-v0.19.0.tar.gz) |
@@ -174,7 +168,6 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
     | 操作系统版本 | 点击下载 |
     | :--------- | :------ |
-    | CentOS 7     | [os-pkgs-centos7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-centos7-v0.19.0.tar.gz) |
     | Redhat 8     | [os-pkgs-redhat8-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat8-v0.19.0.tar.gz) |
     | Redhat 7     | [os-pkgs-redhat7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat7-v0.19.0.tar.gz) |
     | Redhat 9     | [os-pkgs-redhat9-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat9-v0.19.0.tar.gz) |

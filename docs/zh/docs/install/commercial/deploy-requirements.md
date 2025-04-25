@@ -7,19 +7,18 @@
 
 | **架构** | **操作系统** | **测试 OS、Kernel 信息** | 备注（安装指导文档） |
 | -------- | ----------- | ----------------- | ----------------- |
-| AMD 64 | CentOS 7.X | CentOS 7.9<br />3.10.0-1127.el7.x86_64 on an x86_64 | [离线安装 DCE 5.0 商业版](start-install.md)<br />注意：CentOS 7 在 2024 年 6 月 30 日结束支持 |
-| | Redhat 8.X | Redhat 8.4<br />4.18.0-305.el8.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
+| AMD 64 | Redhat 8.X | Redhat 8.4<br />4.18.0-305.el8.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Redhat 7.X | Redhat 7.9<br />3.10.0-1160.e17.x86 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Redhat 9.X | Redhat 9.2<br />5.14.0-284.11.1.e9_2.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
-| | Ubuntu 20.04 | 5.10.104 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Ubuntu 22.04 | 5.15.0-78-generic | [离线安装 DCE 5.0 商业版](start-install.md) |
+| | Ubuntu 24.04 | / | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Rocky Linux 9.2 | 5.14.0-284.11.1.el9_2.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | 统信 UOS V20 （1020a） | 5.4.0-125-generic | [UOS V20 (1020a) 上部署 DCE 5.0 商业版](../os-install/uos-v20-install-dce5.0.md) |
 | | openEuler 22.03 | 5.10.0-60.18.0.50.oe2203.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | [Oracle Linux R9 U1 上部署 DCE 5.0 商业版](../os-install/oracleLinux-install-dce5.0.md) |
 | | TencentOS Server 3.1 | 5.4.119-19.0009.14 | [TencentOS Server 3.1 上部署 DCE 5.0 商业版](../os-install/TencentOS-install-dce5.0.md) |
 | ARM 64 | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | [离线安装 DCE 5.0 商业版](start-install.md) |
-|  | 银河麒麟 OS V10 SP3 | 4.19.90-89.11.v2401.ky10.aarch64 | [离线安装 DCE 5.0 商业版](start-install.md) |
+| | 银河麒麟 OS V10 SP3 | 4.19.90-89.11.v2401.ky10.aarch64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 
 !!! note
 
@@ -44,11 +43,10 @@
 1. 内核版本小于 5.9 时，`kube-proxy` 使用 `ipvs` 模式会造成通过 Service 方式访问集群内部服务，
    偶现 1 秒延时或者后端业务升级后访问 Service 失败的情况，详见 Kubernetes 社区
    [Issue #81775](https://github.com/kubernetes/kubernetes/issues/81775)，可以采用以下方式解决办法：
-
     - 升级内核至 5.9 及以上
     - 切换 `kube-proxy` 模式为 `iptables`
     - 内核参数更新：`net.ipv4.vs.conntrack=1` + `net.ipv4.vs.conn_reuse_mode=0` + `net.ipv4.vs.expire_nodest_conn=1`
-
+   
 2. Ubuntu 内核自动更新升级，可能导致系统在不经意间被重启，若使用的软件依赖于特定版本的内核，
    那么当系统自动更新到新的内核版本时，可能会出现[兼容性问题](https://askubuntu.com/a/1176041)
 
@@ -68,7 +66,7 @@
 
 | **数量** | **服务器角色** | **服务器用途** | **cpu 数量** | **内存容量** | **系统硬盘** | **未分区的硬盘** |
 | ------- | ------------- | ------------ | ----------- | ----------- | ----------- | ------------- |
-| 1 | all in one | 镜像仓库、chart museum、[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)本身 | 24 核 | 32 GB | 300 GB | 400 GB |
+| 1 | all in one | 镜像仓库、chart museum、[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)本身 | 24 核 | 48 GB | 300 GB | 400 GB |
 
 ### 4 节点模式 CPU、内存、硬盘要求
 
@@ -77,7 +75,7 @@
 | **数量** | **服务器角色** | **服务器用途** | **cpu 数量** | **内存容量** | **系统硬盘** | **未分区的硬盘** |
 | ------- | ------------- | ------------ | ----------- | ----------- | ----------- | -------------- |
 | 1 | 火种节点 | 1. 执行安装部署程序<br />2. 运行平台所需的镜像仓库和 chart museum | 2 核 | 4 GB | 200 GB | - |
-| 3 | 控制面 | 1. 运行 DCE 5.0 组件<br />2. 运行 kubernetes 系统组件 | 8 核 | 16 GB | 100 GB | 200 GB |
+| 3 | 控制面 | 1. 运行 DCE 5.0 组件<br />2. 运行 kubernetes 系统组件 | 16核 | 32 GB | 100 GB | 200 GB |
 
 ### 7 节点模式(生产环境推荐) CPU、内存、硬盘要求
 
