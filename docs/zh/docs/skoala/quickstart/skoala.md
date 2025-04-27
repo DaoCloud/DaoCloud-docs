@@ -206,11 +206,10 @@ skoala-release/skoala       0.27.1       	0.27.1     	The helm chart for Skoala
 
 ```bash
 helm upgrade --install skoala --create-namespace -n skoala-system --cleanup-on-fail \
-    --set ui.image.tag=v0.19.0 \
     --set hive.configMap.database[0].driver="mysql" \
     --set hive.configMap.database[0].dsn="skoala:xxx@tcp(mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local:3306)/skoala?charset=utf8&parseTime=true&loc=Local&timeout=10s" \
     skoala-release/skoala \
-    --version 0.28.1
+    --version 0.28.1  # 注意使用最新版本
 ```
 
 查看 Pod 是否启动成功：
@@ -260,10 +259,10 @@ skoala-ui-7c9f5b7b67-9rpzc             2/2     Running   0               3h48m
 4. 执行 `helm upgrade` 命令
 
     ```bash
-    helm upgrade --install --create-namespace -n skoala-system skoala skoala/skoala --version=0.28.1 --set hive.image.tag=v0.28.1 --set sesame.image.tag=v0.28.1 --set ui.image.tag=v0.19.0 -f skoala.yaml
+    helm upgrade --install --create-namespace -n skoala-system skoala skoala/skoala --version=0.28.1 -f skoala.yaml
     ```
 
-    > 需要将 `version`、`hive.image.tag`、`sesame.image.tag`、`ui.image.tag` 四个参数的值调整为您需要升级到的微服务引擎的版本号。
+    > 需要将 `version` 值调整为您需要升级到的微服务引擎的版本号。
 
 ## 离线升级
 
