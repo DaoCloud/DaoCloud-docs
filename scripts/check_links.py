@@ -37,7 +37,7 @@ def main():
         else:
             formatted_url = f"[{url}]({cn_url})"
         
-        print(formatted_url, cn_status, en_status)
+        # print(formatted_url, cn_status, en_status)
         results.append([formatted_url, cn_status, en_status])
     
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
