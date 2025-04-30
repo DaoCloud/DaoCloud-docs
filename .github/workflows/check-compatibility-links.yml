@@ -1,0 +1,37 @@
+name: Check Compatibility Links
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # 每周日午夜运行
+  workflow_dispatch:      # 支持手动触发
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pyyaml tabulate
+          
+      - name: Check links
+        run: |
+          python scripts/check_links.py > check-results.txt
+        env:
+          DOCS_BASE_URL: "https://docs.daocloud.io"
+          
+      - name: Create issue
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: 'Compatibility Links Check Report'
+          content-filepath: ./check-results.txt
+          labels: |
+            report
+            automated-check
