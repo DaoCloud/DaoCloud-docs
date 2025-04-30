@@ -15,7 +15,7 @@ hide:
 
 ![metallb-helm-wait](../../images/metallb_helm_wait.png)
 
-2. 如果您开启 ARP 模式，默认情况下为了 VIP 会在节点的新建或删除后出现飘逸的情况。Metallb 只会向具有 Label: `node.spidernet.io/include-metallb-l2-loadbalancer=true` 的节点宣告 VIP。安装 Metallb 后，您必须手动为这些节点添加 Label：`node.spidernet.io/include-metallb-l2-loadbalancer=true`。如果您并不关心 VIP 飘逸的情况，您可以设置 `nodeSelectors` 的 `Key` 和 `Value` 为空。
+2. 如果您开启 ARP 模式，默认情况下为了 VIP 会在节点的新建或删除后出现飘逸的情况。Metallb 只会向具有 Label: `node.spidernet.io/include-metallb-l2-loadbalancer=true` 的节点宣告 VIP。安装 Metallb 后，您**必须手动**为这些节点添加 Label：`node.spidernet.io/include-metallb-l2-loadbalancer=true`。如果您并不关心 VIP 飘逸的情况，您可以设置 `nodeSelectors` 的 `Key` 和 `Value` 为空。
 
 ## 安装步骤
 
