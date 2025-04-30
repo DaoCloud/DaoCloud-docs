@@ -111,7 +111,7 @@ Amamba [Jenkins](https://github.com/amamba-io/jenkins-agent) 基于
     - 自定义步骤：WIP
 - 加速（WIP，缺一个系统的文档）；
     - [在指定的节点上运行流水线 - DaoCloud Enterprise](../quickstart/pipeline-on-node.md)
-    - [在流水线中使用缓存 - DaoCloud Enterprise](../quickstart/job-cacher.md)
+    - [在流水线中使用缓存 - DaoCloud Enterprise](../user-guide/pipeline/pipeline_cache.md)
 - 集成：
     - SornaQube：[使用流水线实现代码扫描 - DaoCloud Enterprise](../quickstart/scan-with-pipeline.md)
     - 使用集成的 Gitlab：WIP（基本原理，如何使用）
