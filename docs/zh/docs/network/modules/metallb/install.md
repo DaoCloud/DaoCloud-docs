@@ -11,11 +11,14 @@ hide:
 
 1. 需要提前准备一段待使用的 `真实物理 IP` ，用于 IP 池创建。
 
-> 注意：若需配置 Metallb ARP Mode，必须启用 Helm 并使其处于**就绪等待状态**。
+    > 注意：若需配置 Metallb ARP Mode，必须启用 Helm 并使其处于**就绪等待状态**。
+  
+    ![metallb-helm-wait](../../images/metallb_helm_wait.png)
 
-![metallb-helm-wait](../../images/metallb_helm_wait.png)
-
-2. 如果您开启 ARP 模式，默认情况下为了 VIP 会在节点的新建或删除后出现飘逸的情况。Metallb 只会向具有 Label: `node.spidernet.io/include-metallb-l2-loadbalancer=true` 的节点宣告 VIP。安装 Metallb 后，您必须手动为这些节点添加 Label：`node.spidernet.io/include-metallb-l2-loadbalancer=true`。如果您并不关心 VIP 飘逸的情况，您可以设置 `nodeSelectors` 的 `Key` 和 `Value` 为空。
+2. 如果您开启 ARP 模式，默认情况下为了 VIP 会在节点的新建或删除后出现飘逸的情况。Metallb 只会向具有
+   Label: `node.spidernet.io/include-metallb-l2-loadbalancer=true` 的节点宣告 VIP。
+   安装 Metallb 后，您**必须手动**为这些节点添加 Label：`node.spidernet.io/include-metallb-l2-loadbalancer=true`。
+   如果您并不关心 VIP 飘逸的情况，您可以设置 `nodeSelectors` 的 `Key` 和 `Value` 为空。
 
 ## 安装步骤
 

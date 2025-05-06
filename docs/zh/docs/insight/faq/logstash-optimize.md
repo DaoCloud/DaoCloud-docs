@@ -1,4 +1,4 @@
-# Logstash 消费 Kafka topic 存在延迟
+# Logstash 参数优化
 
 Logstash 消费 Kafka topic 存在延迟可能由多种原因导致，以下是一些常见的因素及相应的解决方法：
 
@@ -29,6 +29,10 @@ Logstash 消费 Kafka topic 存在延迟可能由多种原因导致，以下是�
 优化步骤如下：
 
 1. 增大 pipeline 单线程处理的最大事件数，例如：
+```yaml
+pipeline.batch.size: 5000
+pipeline.batch.delay: 10
+```
 
     ```bash
     pipeline.batch.size: 5000
@@ -36,16 +40,19 @@ Logstash 消费 Kafka topic 存在延迟可能由多种原因导致，以下是�
     ```
 
 2. 增大工作线程数，例如：
+```yaml
+pipeline.workers: 32 # 这个数量应该和 cpu 核数一致。
+```
 
     ```bash
     pipeline.workers: 32 # 这个数量应该和 cpu 核数一致。
     ```
 
+3. 适当增加 kafka 输入插件的 [consumer_threads][1] 参数值，根据服务器性能和数据量合理设置。同时，检查输出插件的配置，如 elasticsearch 输出插件的 [batch_size][2] 参数，避免因批量过大导致写入延迟。
 3. 适当增加 kafka 输入插件的 [consumer_threads](https://www.elastic.co/docs/reference/logstash/plugins/plugins-inputs-kafka)
    参数值，根据服务器性能和数据量合理设置。同时，检查输出插件的配置，如 elasticsearch 输出插件的
    [batch_size](https://www.elastic.co/docs/reference/logstash/plugins/plugins-outputs-elasticsearch#_batch_sizes) 参数，避免因批量过大导致写入延迟。
 
-## 参考
-
-- [logstash-settings-file](https://www.elastic.co/docs/reference/logstash/logstash-settings-file)
-- [plugins-outputs-elasticsearch](https://www.elastic.co/docs/reference/logstash/plugins/plugins-outputs-elasticsearch#_batch_sizes)
+# 参考
+- [1]: https://www.elastic.co/docs/reference/logstash/logstash-settings-file)
+- [2]: https://www.elastic.co/docs/reference/logstash/plugins/plugins-outputs-elasticsearch#_batch_sizes

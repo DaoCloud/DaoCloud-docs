@@ -2,6 +2,22 @@
 
 本页列出 Spiderpool 的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2025-04-30
+
+### v1.0.2
+
+### 新功能
+
+- **新增** SpiderMultusConfig 支持为 Macvlan/IPVlan/Sriov CNI 配置 MTU。
+- **新增** 为 RDMA 指标添加 Pause 和 Discards 统计信息，并优化 Grafana 仪表盘。
+- **新增** 支持通过设置 spiderpool-conf ConfigMap:  enableValidatingResourcesDeletedWebhook=true, 当 IPPool 和 Subnet 被删除时，Webhook 检查是否仍有 IP 分配。如果有，则不允许被删除。
+
+#### 修复 bug
+
+- **修复** 修复节点的 RDMA 多播指标不正确问题。
+- **修复** 修复 SpiderMultusConfig 中 sriov 带宽限制不生效的问题（min/maxTxRateMbps）
+- **修复** 修复 当无状态应用未经历正常的 CNI Del 流程时，IP 被 GC 但 SpiderEndpoint 残留导致该 IP 无法被正常分配，Pod 无法启动。
+- **修复** 修复 Spiderpool-agent ENV(EnableGCStatelessTerminatingPod(Not)ReadyNode=false) 不工作问题。对于为正常运行的无状态应用，Spiderpool 支持通过环境变量控制是否回收其 IP，这样避免当 Pod 对象存在但其 IP 已经被回收场景。
 
 ## 2025-02-13
 
