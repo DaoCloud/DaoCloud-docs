@@ -838,7 +838,7 @@ nav:
                   - Elasticsearch 数据塞满时如何操作: insight/faq/expand-once-es-full.md
                   - 容器日志黑名单: insight/faq/ignore-pod-log-collect.md
                   - Prometheus 集群标签配置: insight/faq/alertinfo-trans-clusterid-to-name.md
-                  - Insight告警通知开启v1alpha2: insight/faq/alertnotify-enable-v2api.md
+                  - Insight 告警通知开启 v1alpha2: insight/faq/alertnotify-enable-v2api.md
                   - Kafka 参数优化: insight/faq/logstash-optimize.md
           - 微服务引擎:
               - 介绍:
