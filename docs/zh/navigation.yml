@@ -401,6 +401,7 @@ nav:
                       - 在离线混部概述: kpanda/best-practice/co-located/index.md
                       - koordinator 安装: kpanda/best-practice/co-located/install.md
                   - 接入外部集群时获取永久 TOKEN: kpanda/best-practice/get-kubeconfig.md
+                  - 单台物理机最大运行 pod 数量的最佳实践: kpanda/best-practice/max-pod.md
           - 多云编排:
               - 介绍:
                   - 什么是多云编排: kairship/intro/index.md
