@@ -1,5 +1,4 @@
 # Logstash 参数优化
-# Logstash 参数优化
 
 Logstash 消费 Kafka topic 存在延迟可能由多种原因导致，以下是一些常见的因素及相应的解决方法：
 
