@@ -834,11 +834,12 @@ nav:
                   - 链路数据的时钟偏移: insight/faq/traceclockskew.md
                   - 日志采集排障指南: insight/best-practice/debug-log.md
                   - 链路采集排障指南: insight/best-practice/debug-trace.md
-                  - 使用Insight定位异常: insight/best-practice/find_root_cause.md
-                  - ES 数据塞满时如何操作: insight/faq/expand-once-es-full.md
+                  - 使用 Insight 定位异常: insight/best-practice/find_root_cause.md
+                  - Elasticsearch 数据塞满时如何操作: insight/faq/expand-once-es-full.md
                   - 容器日志黑名单: insight/faq/ignore-pod-log-collect.md
-                  - Prometheus集群标签配置: insight/faq/alertinfo-trans-clusterid-to-name.md
-                  - Insight告警通知开启v1alpha2: insight/faq/alertnotify-enable-v2api.md
+                  - Prometheus 集群标签配置: insight/faq/alertinfo-trans-clusterid-to-name.md
+                  - Insight 告警通知开启 v1alpha2: insight/faq/alertnotify-enable-v2api.md
+                  - Logstash 参数优化: insight/faq/logstash-optimize.md
           - 微服务引擎:
               - 介绍:
                   - 什么是微服务引擎: skoala/intro/index.md
