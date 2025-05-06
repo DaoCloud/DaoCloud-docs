@@ -1,14 +1,20 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const cookies = document.cookie.split(";").reduce((acc, cookie) => {
-    const [key, value] = cookie.trim().split("=");
-    acc[key] = value;
-    return acc;
-  }, {});
-  if (cookies.preferredLang) {
+(function () {
+  const userSelectedLang = localStorage.getItem("userSelectedLang");
+  const currentPath = window.location.pathname;
+
+  if (userSelectedLang) {
+    if (userSelectedLang === "en" && !currentPath.startsWith("/en/")) {
+      const newPath = "/en" + (currentPath === "/" ? "" : currentPath);
+      window.location.replace(newPath);
+      return;
+    } else if (userSelectedLang === "zh" && currentPath.startsWith("/en/")) {
+      const newPath = currentPath.replace(/^\/en/, "") || "/";
+      window.location.replace(newPath);
+      return;
+    }
     return;
   }
 
-  // 获取浏览器语言
   const userLang = (
     navigator.language ||
     navigator.userLanguage ||
@@ -16,9 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
   ).toLowerCase();
   const langPrefix = userLang.split("-")[0];
 
-  const currentPath = window.location.pathname;
-
-  // 语言跳转逻辑
   if (langPrefix === "zh") {
     if (currentPath.startsWith("/en/")) {
       const newPath = currentPath.replace(/^\/en/, "") || "/";
@@ -30,14 +33,31 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.replace(newPath);
     }
   }
-});
+})();
 
 document.addEventListener("click", function (event) {
-  const langLink = event.target.closest("a[data-language]");
-  if (langLink) {
-    const selectedLang = langLink.getAttribute("data-language");
-    document.cookie = `preferredLang=${selectedLang}; path=/; max-age=${
-      30 * 24 * 60 * 60
-    }`;
+  const langSwitcher = event.target.closest(".md-select__link[hreflang]");
+  if (langSwitcher) {
+    event.preventDefault();
+
+    const newLang = langSwitcher.getAttribute("hreflang");
+    localStorage.setItem("userSelectedLang", newLang);
+
+    const currentPath = window.location.pathname;
+    let newPath;
+
+    if (newLang === "en") {
+      newPath = currentPath.startsWith("/en/")
+        ? currentPath
+        : "/en" + (currentPath === "/" ? "" : currentPath);
+    } else {
+      newPath = currentPath.startsWith("/en/")
+        ? currentPath.replace(/^\/en/, "") || "/"
+        : currentPath;
+    }
+
+    const queryAndHash = window.location.search + window.location.hash;
+
+    window.location.href = newPath + queryAndHash;
   }
 });
