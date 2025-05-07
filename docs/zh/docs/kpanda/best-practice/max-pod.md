@@ -1,12 +1,12 @@
-# 单台物理机最大运行 pod 数量的最佳实践
+# 单台物理机最大运行 Pod 数量的最佳实践
 
 本文介绍了如何为集群上运行的节点配置最大运行 Pod 数量的最佳实践。包括资源规划、配置更改、测试过程及结果、节点故障迁移问题和实施建议。
 
 ## 硬件配置
 
-- 3vm 作为工作集群 k8s 主节点规格：8C 16G 硬盘 100G
-- 1 台物理机作为工作集群 k8s 节点：80C 512G
-- os： oracle Linux 9.5
+- 3 台虚机作为工作集群 K8s 主节点，规格：8C 16G，硬盘 100G
+- 1 台物理机作为工作集群 K8s 节点，规格：80C 512G
+- 操作系统：Oracle Linux 9.5
 
 ## 其他配置调优
 
@@ -20,7 +20,6 @@ sysctl -w fs.inotify.max_queued_events=655360
 
 ### kubelet
 
-
 ```yaml title="/var/lib/kubelet/config.yaml"
 - eventBurst: 100 # 默认 100
 - eventRecordQPS: 50 # 默认 50
@@ -30,19 +29,19 @@ sysctl -w fs.inotify.max_queued_events=655360
 - maxParallelImagePulls: 10 # 最大并行拉取镜像数量，是作为提高创建 Pod QPS
 ```
 
-给kubelet配置上资源预留，不让他注册到node上
+给 kubelet 配置资源预留，不让其注册到 node 上
 
-```
+```yaml
 kubeReserved: {cpu: "2", memory: "2Gi", ephemeral-storage: "10Gi"}
 systemReserved: {cpu: "2", memory: "2Gi", ephemeral-storage: "10Gi"}
 ```
 
 ### containerd
 
-```
+```yaml
 # /etc/containerd/config.toml
 [plugins."io.containerd.grpc.v1.cri"]
- max_concurrent_downloads = 10 #并发镜像下载数 (默认 3)，需要合理评估
+ max_concurrent_downloads = 10 # 并发镜像下载数 (默认 3)，需要合理评估
 ```
 
 ### kube-apiserver
@@ -50,9 +49,9 @@ systemReserved: {cpu: "2", memory: "2Gi", ephemeral-storage: "10Gi"}
 ```yaml
 --max-requests-inflight=4000 # 提升并发请求数 (默认 400)
 --max-mutating-requests-inflight=2000 # 提升写请求并发 (默认 200)
---watch-cache=true # 开启watch 缓存
+--watch-cache=true # 开启 watch 缓存
 --watch-cache-sizes=pod#1000 # 提高 watch 缓存容量
---http2-max-streams-per-connection=1000 # 提升 HTTP/2 流数量,golang 默认值是250
+--http2-max-streams-per-connection=1000 # 提升 HTTP/2 流数量，golang 默认值是 250
 ```
 
 ### kube-controller-manager
@@ -61,13 +60,13 @@ systemReserved: {cpu: "2", memory: "2Gi", ephemeral-storage: "10Gi"}
 --concurrent-service-syncs=10 # 默认值1
 --concurrent-deployment-syncs=50 # 默认值5
 --concurrent-replicaset-syncs=50 # 默认值5
---http2-max-streams-per-connection=1000 # 提升 HTTP/2 流数量（非必须）
+--http2-max-streams-per-connection=1000 # 提升 HTTP/2 流数量（非必需）
 ```
 
 ### kube-scheduler
 
 ```yaml
---http2-max-streams-per-connection=1000 # 提升 HTTP/2 流数量（非必须）
+--http2-max-streams-per-connection=1000 # 提升 HTTP/2 流数量（非必需）
 ```
 
 ### 网络配置
@@ -77,14 +76,14 @@ systemReserved: {cpu: "2", memory: "2Gi", ephemeral-storage: "10Gi"}
 1. 配置 IPPool 中 ipipMode 为 CrossSubnet，vxlanMode 为 Never
 
     ```bash
-    calicoctl patch  ippool default-ippool -p '{"spec": {"ipipMode": "CrossSubnet","vxlanMode": "Never"}}'
+    calicoctl patch ippool default-ippool -p '{"spec": {"ipipMode": "CrossSubnet","vxlanMode": "Never"}}'
     ```
 
 2. 设置 Calico-node 的最低资源限制：CPU 2C，Memory 1G
 
 3. Calico 基于周期触发和事件触发两种机制来更新 Iptables 和 ipset 规则，建议做如下调整，
-   减少 CPU 消耗增大 iptabels 周期触发更新策略间隔 iptablesRefreshInterval=30s 
-   (默认为 10 s)增大 ipset 周期触发更新策略间隔 ipsetsRefreshInterval=120s (默认为 90s)
+   减少 CPU 消耗增大 iptabels 周期触发更新策略间隔 iptablesRefreshInterval=30s
+   （默认为 10s）增大 ipset 周期触发更新策略间隔 ipsetsRefreshInterval=120s (默认为 90s)
 
     ```bash
     calicoctl patch felixconfiguration default -p '{"spec": {"iptablesRefreshInterval": "30s","ipsetsRefreshInterval": "120s"}}'
@@ -97,7 +96,7 @@ systemReserved: {cpu: "2", memory: "2Gi", ephemeral-storage: "10Gi"}
     ```
 
 5. 设置 IP 池子网大小为 16 位掩码，BlockSize 为 26，避免 IP 不够分配。
- 
+
     > 必须在安装集群时设置，IP 池创建后子网大小和 BlockSize 不可更改。
 
 6. 大规模下节点主机内核网络参数调优
@@ -121,7 +120,7 @@ systemReserved: {cpu: "2", memory: "2Gi", ephemeral-storage: "10Gi"}
 
 !!! note
 
-    作用：minSyncPeriod 尝试同步 iptables 规则与内核之间的最短时长。 默认值：0s，
+    作用：minSyncPeriod 尝试同步 iptables 规则与内核之间的最短时长。默认值：0s，
     则任何 Service 和 Endpoint 发送变化，kube-proxy 都会马上更新规则。
 
     建议值：默认值 1s 适用于大多数集群，在大型集群中，可能需要将其设置为更大的值。
@@ -248,7 +247,7 @@ echo "操作完成！"
 
 ### kubelet
 
-kubelet 组件在 400-800 的 cpu-memoy 使用情况
+kubelet 组件在 400-800 的 cpu-memory 使用情况
 
 ![kubelet1](../best-practice/images/maxpod4.png)
 
@@ -259,7 +258,7 @@ kubelet Pod 创建的 QPS，400 Pod QPS 最高 25 左右，负载升高，QPS �
 ## 测试结果
 
 800 Pod Per Node 节点运行正常，kube-apiserver 没有错误⽇志。
-1000Pod Per Node，节点卡顿，创建 Pod 也很慢。Prometheus 等组件有重启现象。
+1000 Pod Per Node，节点卡顿，创建 Pod 也很慢。Prometheus 等组件有重启现象。
 
 ## 测试结论
 
@@ -271,7 +270,7 @@ kubelet Pod 创建的 QPS，400 Pod QPS 最高 25 左右，负载升高，QPS �
 
 1. 节点迁移时，这几百个 Pod 对应的镜像可能有几百个，同时在新节点进行拉取的时候，会出现影响原有节点的情况。
 
-2. 节点上运行 600+ Pod，deployment 如果是滚动更新的时候，就会出现接近 1000 个 Pod，节点压力就会变得很高。
+2. 节点上运行 600+ Pod，Deployment 如果是滚动更新的时候，就会出现接近 1000 个 Pod，节点压力就会变得很高。
 
 3. 节点故障之后恢复时间较长。
 
