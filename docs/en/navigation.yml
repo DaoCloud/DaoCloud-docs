@@ -371,6 +371,7 @@ nav:
                   - Offline Deploy and Upgrade Legacy Kubean: kpanda/best-practice/kubean-low-version.md
                   - Replace a Master Node in Worker Cluster: kpanda/best-practice/replace-first-master-node.md
                   - Get Permanent Token for External Clusters: kpanda/best-practice/get-kubeconfig.md
+                  - Max Pods Running on a Physical Machine: kpanda/best-practice/max-pod.md
           - Multicloud Management:
               - Intro:
                   - What is Multicloud Management: kairship/intro/index.md
