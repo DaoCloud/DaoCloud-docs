@@ -534,6 +534,7 @@ nav:
                       - 在 AWS 环境运行: network/modules/spiderpool/public-cloud/awscloud.md
               - 集成 EgressGateway:
                   - 介绍: network/modules/egressgateway/index.md
+                  - Release Notes: network/modules/egressgateway/release-notes.md
                   - 在 DCE 5.0 上安装运行:
                       - 安装: network/modules/egressgateway/install.md
                       - 创建网关实例: network/modules/egressgateway/create_eg.md
