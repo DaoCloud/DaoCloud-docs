@@ -9,6 +9,17 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## 2025-05-06
+
+### v0.46.0
+
+- **Added** support for customizing the log output destination for managed registration configuration center Nacos  
+- **Added** UI-based operation for global rate limiting rules in the gateway  
+- **Added** the ability to automatically set weights for gateway API access services  
+- **Fixed** the issue where updating global rate limiting plugins required a gateway restart to take effect  
+- **Upgraded** Global Managment (Ghippo) to v0.36.0-dev2  
+- **Added** an automatic changelog generation tool for CRD changes in the Operator  
+
 ## 2025-02-24  
 
 ### v0.45.0
