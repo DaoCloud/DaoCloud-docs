@@ -29,13 +29,13 @@ Fluent Bit 根据 Kubernetes Namespace Name 发送到不同 Topic 的使用场�
     ```
 
 2. 在现有 `insight-agent-Fluent Bit-config` Configmap 中对  Kafka Output 增加 `topic_key` 配置并开启 `dynamic_topic`:
-```diff
-        Topics      insight-logs
-        format      json
-        # topic_key 优先于 Topics
-+       dynamic_topic On
-+       topic_key   router
-```
+    ```diff
+            Topics      insight-logs
+            format      json
+            # topic_key 优先于 Topics
+    +       dynamic_topic On
+    +       topic_key   router
+    ```
 
 3. 重启 Fluentbit，观察 kafka 中 topic 是否被创建或有数据写入。
 
