@@ -16,17 +16,17 @@ Fluent Bit 根据 Kubernetes Namespace Name 发送到不同 Topic 的使用场�
 ## 实现步骤
 1. 在现有 `insight-agent-Fluent Bit-luascripts-config` Configmap 中对 Lua 脚本 `container_log_filter.lua` 中增加如下逻辑(可根据实际需求调整), 该逻辑将从 `kubernetes.namespace_name` 取值并赋值给 `router` 字段。
 
-```diff
-      annotations = record["kubernetes"]["annotations"]
-      if(annotations == nil) then
-        debugLog("miss annotations in kubernetes, skip filter")
-        return 1, timestamp, record
-      end
-
-+      if(record["kubernetes"]["namespace_name"] ~= nil and record["kubernetes"]["namespace_name"] ~= '') then
-+        record['router'] = record["kubernetes"]["namespace_name"]
-+      end
-```
+    ```diff
+          annotations = record["kubernetes"]["annotations"]
+          if(annotations == nil) then
+            debugLog("miss annotations in kubernetes, skip filter")
+            return 1, timestamp, record
+          end
+    
+    +      if(record["kubernetes"]["namespace_name"] ~= nil and record["kubernetes"]["namespace_name"] ~= '') then
+    +        record['router'] = record["kubernetes"]["namespace_name"]
+    +      end
+    ```
 
 2. 在现有 `insight-agent-Fluent Bit-config` Configmap 中对  Kafka Output 增加 `topic_key` 配置并开启 `dynamic_topic`:
 ```diff
