@@ -29,20 +29,22 @@
 
 - **修复** 网格网关负载均衡 IP 无法查询。
 - **修复** 兼具托管集群和工作集群角色安装 Ingress gateway 参数混乱.
-- **优化** Istio 版本 1.23 设置为体验版本，默认推荐 1.22.
+- **优化** Istio v1.23 设置为体验版本，默认推荐 v1.22
 
 ## 服务网格升级到 Istio 1.23+ 的注意事项
 
 !!! note
 
     影响范围：
-    Istio 版本低于 1.23 且已经创建了网格网关实例时，需要升级到 Istio 1.23。
-    若 Istio 低于 1.23，但没有创建网格网关实例，不受本次升级的影响。
+    
+    - Istio 低于 v1.23 且已经创建了网格网关实例时，需要升级到 Istio 1.23。
+
+    - Istio 低于 v1.23，但没有创建网格网关实例，不受本次升级的影响。
 
 ### 背景
 
-因为 Istio 社区在 [1.23 废弃 In-Cluster Operator](https://istio.io/latest/blog/2024/in-cluster-operator-deprecation-announcement/)，
-且在 1.24 中彻底废弃，DCE 5.0 服务网格内置的 Istio 组件采用了 Istio In-Cluster Operator，因此为了保证 Istio 1.23 以后的版本能够正常安装，
+因为 Istio 社区在 [v1.23 废弃 In-Cluster Operator](https://istio.io/latest/blog/2024/in-cluster-operator-deprecation-announcement/)，
+且在 v1.24 中彻底废弃，DCE 5.0 服务网格内置的 Istio 组件采用了 Istio In-Cluster Operator，因此为了保证 Istio 1.23 以后的版本能够正常安装，
 我们开发了 [Pluma Operator](https://github.com/pluma-tools/pluma-operator)，并且进行开源。
 当在服务网格中的 Istio 版本大于等于 1.23 时，将自动切换 Operator（Istio In-Cluster Operator -> Pluma Operator）
 
@@ -53,7 +55,7 @@
 
 ### 组件更新情况
 
-升级 1.23 以后，受到更新影响范围：
+升级到 v1.23 以后，受到更新影响范围：
 
 - istio-system 下的 mspider 和 istio 组件
 - 通过 Mspider 安装的网格网关
