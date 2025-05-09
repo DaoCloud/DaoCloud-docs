@@ -1,4 +1,4 @@
-# Fluent Bit 根据 Kubernetes Namespace Name 发送到不同的 Topic
+# Fluent Bit 根据 Kubernetes Namespace Name 路由至不同的 Topic
 
 Fluent Bit 根据 Kubernetes Namespace Name 发送到不同 Topic 的使用场景主要是在容器化应用环境中，基于 Kubernetes 平台，实现日志的分类管理与精准传输。
 
