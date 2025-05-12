@@ -7,11 +7,11 @@ The authorization and resource planning process for such users is shown in the f
 ```mermaid
 graph TB
 
-    start([Start]) --> user[1. Create User]
-    user --> ns[2. Prepare Kubernetes Namespace]
-    ns --> ws[3. Prepare Workspace]
-    ws --> ws-to-ns[4. Bind a workspace to namespace]
-    ws-to-ns --> authu[5. Authorize a user with Workspace Editor]
+    start([Start]) --> user[Create User]
+    user --> ns[Prepare Kubernetes Namespace]
+    ns --> ws[Prepare Workspace]
+    ws --> ws-to-ns[Bind a workspace to namespace]
+    ws-to-ns --> authu[Authorize a user with Workspace Editor]
     authu --> complete([End])
     
 click user "https://docs.daocloud.io/en/ghippo/user-guide/access-control/user/"

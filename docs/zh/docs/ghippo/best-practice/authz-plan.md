@@ -7,11 +7,11 @@
 ```mermaid
 graph TB
 
-    start([开始]) --> user[1. 创建用户]
-    user --> ns[2. 准备 Kubernetes 命名空间]
-    ns --> ws[3. 准备工作空间]
-    ws --> ws-to-ns[4. 工作空间绑定命名空间]
-    ws-to-ns --> authu[5. 给用户授权 Workspace Editor]
+    start([开始]) --> user[创建用户]
+    user --> ns[准备 Kubernetes 命名空间]
+    ns --> ws[准备工作空间]
+    ws --> ws-to-ns[工作空间绑定命名空间]
+    ws-to-ns --> authu[给用户授权 Workspace Editor]
     authu --> complete([结束])
     
 click user "https://docs.daocloud.io/ghippo/user-guide/access-control/user/"
