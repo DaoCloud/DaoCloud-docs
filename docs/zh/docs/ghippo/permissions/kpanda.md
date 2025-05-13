@@ -34,6 +34,8 @@ hide:
 | | | 查看监控 | &check; | &cross; | &cross; | &cross; |
 | | | 编辑基础配置 | &check; | &cross; | &cross; | &cross; |
 | | | 下载 kubeconfig | &check; | &check;（下载ns权限的kubeconfig） | &check;（下载 ns 权限的 kubeconfig） | &check;（下载 ns 权限的 kubeconfig） |
+| | | 绑定工作空间 | &check;（需同时设置为workspace admin或包含resource bind权限点的自定义角色） | &cross; | &cross; | &cross; |
+| | | 解绑工作空间 | &check;（需同时设置为workspace admin或包含resource bind权限点的自定义角色） | &cross; | &cross; | &cross; |
 | | | 解除接入 | &cross; | &cross; | &cross; | &cross; |
 | | | 查看日志 | &check; | &cross; | &cross; | &cross; |
 | | | 重试 | &cross; | &cross; | &cross; | &cross; |
@@ -50,6 +52,8 @@ hide:
 | | | 移除节点 | &cross; | &cross; | &cross; | &cross; |
 | | 无状态负载 | 查看列表 | &check; | &check; | &check; | &check; |
 | | | 查看/管理详情 | &check; | &check; | &check; | &check;（仅查看） |
+| | | 批量停止 | &check; | &check; | &check; | &cross; |
+| | | 批量删除 | &check; | &check; | &check; | &cross; |
 | | | YAML 创建 | &check; | &check; | &check; | &cross; |
 | | | 镜像创建 | &check; | &check; | &check; | &cross; |
 | | 选择 ns 绑定的 ws 内的实例 | 选择镜像 | &check; | &check; | &check; | &cross; |
@@ -148,6 +152,11 @@ hide:
 | | | 修改标签 | &check; | &cross; | &cross; | &cross; |
 | | | 修改注解 | &check; | &cross; | &cross; | &cross; |
 | | | 删除 | &check; | &cross; | &cross; | &cross; |
+| | Operators Hub | 安装 Operator | &check; | &cross; | &cross; | &cross; |
+| | 安装的 Operators | 查看列表 | &check; | &check; | &check; | &check; |
+| | | 编辑订阅 | &check; | &cross; | &cross; | &cross; |
+| | | 审批 | &check; | &cross; | &cross; | &cross; |
+| | | 卸载 | &check; | &cross; | &cross; | &cross; |
 | | 服务 | 查看列表 | &check; | &check; | &check; | &check; |
 | | | 查看/管理详情 | &check; | &check; | &check; | &check;（仅查看） |
 | | | YAML 创建 | &check; | &check; | &check; | &cross; |
