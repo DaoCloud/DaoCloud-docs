@@ -1,23 +1,39 @@
-为了记录 HwameiStor 集群系统的使用和操作历史信息，HwameiStor 提供了系统审计日志。该审计日志具有 HwameiStor 系统语义，易于用户查阅、解析。审计日志记录了 HwameiStor 系统中各类资源的使用操作信息，包括 Cluster、Node、StoragePool、Volume 等。
+---
+hide:
+  - toc
+---
 
-您可以通过以下步骤查看审计日志：
+# View Operation Log
 
-1. 在 HwameiStor 界面底部的菜单栏中，点击 "审计" 按钮。
+To record the usage and operational history of the HwameiStor cluster system,
+HwameiStor provides system Operation Log. These logs follow the HwameiStor
+semantics, making them easy for users to review and parse.
 
-2. 在审计页面中，您可以看到操作类型、资源名称、资源类型、状态、操作时间和操作内容等字段。
+The operation log records usage and operation information for each type of resource
+in the HwameiStor. These resources include: Cluster, Node, StoragePool, Volume, and more.
 
-   ![audit01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/auit01.png)
+The specific steps to view Operation Log are as follows:
 
-   其中资源类型支持：
+1. In the left navigation bar, click **Container Management** -> **Clusters** ,
+   then click a cluster name to enter the proper cluster. Next, click **Container Storage**
+   -> **HwameiStor** to enter the **HwameiStor** page. At the bottom of the **Dashboard** page,
+   you can see the **Operation Log** list.
 
-   - Cluster
-   - StorageNode
-   - Disk
-   - DiskNode
-   - Pool
-   - Volume
-   - DiskVolume
+2. The list displays the following fields: Operation Type, Resource Name, Resource Type,
+   Status, Operation Time, and Operation Details.
 
-   操作内容：您可以查看更多的操作细节信息。下图展示了 `StorageNode` 资源的一条审计操作内容。
+    ![audit01](../../images/audit01.png)
 
-   ![audit02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/audit02.png)
+    The supported resource types include:
+
+    - Cluster  
+    - StorageNode  
+    - Disk  
+    - DiskNode  
+    - Pool  
+    - Volume  
+    - DiskVolume  
+
+    Click **View** to check details about each operation.
+
+    ![audit02](../../images/audit02.png)
