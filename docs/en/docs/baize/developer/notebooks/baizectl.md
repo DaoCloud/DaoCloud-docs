@@ -224,10 +224,6 @@ baizectl job submit --name demojob-v2 -t PYTORCH \
     -- sleep 1000
 ```
 
-##### PyTorch 分布式任务示例
-
-提交训练任务示例，用户可以根据实际需求修改参数，以下为创建一个 PyTorch 任务的示例：
-
 ##### Example of a Distributed PyTorch Job
 
 Example of submitting a training job.
