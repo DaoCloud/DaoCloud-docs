@@ -9,6 +9,25 @@
 *[Kpanda]: DCE 5.0 容器管理的开发代号
 *[Skoala]: DCE 5.0 微服务引擎的开发代号
 
+## 2025-04-30
+
+### v0.29.0
+
+- **新增** 支持在 kind 集群内安装 Cloud 模式（原 AI 模式）
+- **新增** 通过 --show-feature-gates 参数展示安装器脚本内部的特殊功能开关
+- **新增** 构建 cloud 模式下的离线包
+- **新增** 适配火种 kind 版本 v0.27.0
+- **新增** 升级 dce5 时检测待升级组件的当前版本是否低于已存在版本 
+- **优化** AI 模式更新为 Cloud 模式
+- **优化** Cloud 模式下支持 metalLB
+- **优化** istio-ingressgateway 的镜像拉取策略为 'IfNotPresent'
+- **优化** 使用 dce5-installer rollback 子命令回滚时对于历史升级记录的处理
+- **优化** 构建脚本中对火种离线资源的处理逻辑，移除冗余逻辑，提升后期维护性
+- **修复**  安装中间件 rabbitmq 时从公网拉取镜像的问题
+- **修复**  chart values 里包含 '#' 字符时解析失败的问题
+- **修复**  离线升级 DCE5 后 mcamel-mysql 组件使用镜像错误的问题
+- **修复**  升级 DCE5 后覆盖之前手动修改的 metallb 组件相关的 CR L2Advertisement
+
 ## 2025-03-31
 
 ### v0.28.0
