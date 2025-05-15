@@ -625,6 +625,7 @@ nav:
                       - Volume Expansion: storage/hwameistor/resources/expand.md
                       - Volume IO Rate Limit: storage/hwameistor/resources/volume-ProvisionedIO.md
                       - Volume Snapshot: storage/hwameistor/resources/volume-snapshot.md
+                  - Audit Logs: storage/hwameistor/resources/audit.md
                   - Use Cases:
                       - Overview: storage/hwameistor/application/overview.md
                       - Deploy StatefulSets:
