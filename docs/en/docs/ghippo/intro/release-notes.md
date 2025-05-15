@@ -7,9 +7,9 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.36.0
 
-- **Added** Integrated service topology view into observability module.
-- **Fixed** Resolved an issue where user `OpenAPI` tokens were missing assigned user group permissions.
-- **Fixed** Resolved an issue preventing `LDAP` users from changing their language settings.
+- **Added** service topology view into observability module.
+- **Fixed** an issue where user `OpenAPI` tokens were missing assigned user group permissions.
+- **Fixed** an issue preventing `LDAP` users from changing their language settings.
 
 ## 2025-02-28
 
