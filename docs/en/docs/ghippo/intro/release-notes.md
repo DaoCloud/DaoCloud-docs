@@ -3,6 +3,14 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2025-04-30
+
+### v0.36.0
+
+- **Added** Integrated service topology view into observability module.
+- **Fixed** Resolved an issue where user `OpenAPI` tokens were missing assigned user group permissions.
+- **Fixed** Resolved an issue preventing `LDAP` users from changing their language settings.
+
 ## 2025-02-28
 
 ### v0.35.0
