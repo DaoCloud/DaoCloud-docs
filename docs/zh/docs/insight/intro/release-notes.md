@@ -2,6 +2,24 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+
+## 2025-04-30
+
+### v0.36.1
+
+#### Insight Server
+
+- **优化** 优化内置 kubernetes-persistent-volumes 的仪表盘
+- **优化** 修改默认的 fluentbit 配置
+- **优化** 为 Indexs 调整 `total_shards_per_nod` 参数
+- **优化** 升级 vmcluster 版本
+- **修复** 通过 webhook 发送告警消息中集群名称展示为集群 ID
+
+#### Insight Agent
+
+- **优化** 支持给 etcd-exporter 设置污点和容忍
+- **优化** 升级 blackbox-exporter 版本到 v0.25.0
+
 ## 2025-02-28
 
 ### v0.35.1

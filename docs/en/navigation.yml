@@ -10,6 +10,7 @@ nav:
               - Use Cases: dce/scenario.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Release Notes:
+                  - v0.29.0-20250430 Released: dce/dce-rn/20250430.md
                   - v0.28.0-20250331 Released: dce/dce-rn/20250331.md
                   - v0.27.0-20250228 Released: dce/dce-rn/20250228.md
                   - v0.26.0-20250131 Released: dce/dce-rn/20250131.md
@@ -502,6 +503,7 @@ nav:
                       - Running on AWS: network/modules/spiderpool/public-cloud/awscloud.md
               - EgressGateway:
                   - Intro: network/modules/egressgateway/index.md
+                  - Release Notes: network/modules/egressgateway/release-notes.md
                   - Install on DCE 5.0:
                       - Install: network/modules/egressgateway/install.md
                       - Create Gateway Instance: network/modules/egressgateway/create_eg.md
@@ -624,6 +626,7 @@ nav:
                       - Volume Expansion: storage/hwameistor/resources/expand.md
                       - Volume IO Rate Limit: storage/hwameistor/resources/volume-ProvisionedIO.md
                       - Volume Snapshot: storage/hwameistor/resources/volume-snapshot.md
+                  - Audit Logs: storage/hwameistor/resources/audit.md
                   - Use Cases:
                       - Overview: storage/hwameistor/application/overview.md
                       - Deploy StatefulSets:
