@@ -35,79 +35,8 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
 
 下述配置均在 `kpanda-global-cluster` 集群中，并假设您的 ArgoCD 安装在 `argocd` 这个命名空间中。
 
-前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __自定义资源__ ，根据资源分组及版本搜索
-（即 `apiVersion` 字段。以 `Gateway` 为例，搜索 `networking.istio.io`），进入自定义资源详情后，选择对应命名空间及版本，在右侧点击 __YAML 创建__ 。
-创建以下几个资源。
-
-1. 创建 Gateway
-
-    ```yaml
-    apiVersion: networking.istio.io/v1alpha3
-    kind: Gateway
-    metadata:
-      name: argocd-gateway
-      namespace: argocd # 注意命名空间
-    spec:
-      selector:
-        istio: ingressgateway
-      servers:
-        - hosts:
-            - "*"
-          port:
-            name: http
-            number: 80
-            protocol: HTTP
-          tls:
-            httpsRedirect: false
-        - hosts:
-            - "*"
-          port:
-            name: https
-            number: 443
-            protocol: HTTPS
-          tls:
-            cipherSuites:
-              - ECDHE-ECDSA-AES128-GCM-SHA256
-              - ECDHE-RSA-AES128-GCM-SHA256
-              - ECDHE-ECDSA-AES128-SHA
-              - AES128-GCM-SHA256
-              - AES128-SHA
-              - ECDHE-ECDSA-AES256-GCM-SHA384
-              - ECDHE-RSA-AES256-GCM-SHA384
-              - ECDHE-ECDSA-AES256-SHA
-              - AES256-GCM-SHA384
-              - AES256-SHA
-            credentialName: argocd-secret
-            maxProtocolVersion: TLSV1_3
-            minProtocolVersion: TLSV1_2
-            mode: SIMPLE
-    ```
-
-1. 创建 VirtualService
-
-    ```yaml
-    apiVersion: networking.istio.io/v1alpha3
-    kind: VirtualService
-    metadata:
-      name: argocd-virtualservice
-      namespace: argocd # 注意命名空间
-    spec:
-      gateways:
-        - argocd-gateway
-      hosts:
-        - "*"
-      http:
-        - match:
-            - uri:
-                prefix: /argocd
-          route:
-            - destination:
-                host: amamba-argocd-server
-                port:
-                  number: 80
-    ```
-
 1. 创建 GProductProxy
+   前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __自定义资源__ ，搜索`gproductproxies.ghippo.io`,进入自定义资源详情后，在右侧点击 __YAML 创建__ 。
 
     ```yaml
     apiVersion: ghippo.io/v1alpha1
