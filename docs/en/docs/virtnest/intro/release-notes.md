@@ -8,6 +8,12 @@ Date: 2024-10-10
 This page provides the release notes for VirtNest (Virtual Machine),
 allowing you to understand the evolution path and feature changes of each version.
 
+## 2025-04-30
+
+### v0.17.0
+
+- **Upgraded** user experience for GPU selection.
+
 ## 2025-02-28
 
 ### v0.16.0

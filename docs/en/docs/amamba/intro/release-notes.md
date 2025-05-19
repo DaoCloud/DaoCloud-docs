@@ -8,6 +8,13 @@ date: 2025-03-18
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version. 
 
+## 2025-04-30
+
+### v0.36.0
+
+- **Added** description and executor fields to pipeline run detail view.
+- **Fixed** 403 error when fetching the `Nacos` instance list.
+
 ## 2025-02-28  
 
 ### v0.35.0  

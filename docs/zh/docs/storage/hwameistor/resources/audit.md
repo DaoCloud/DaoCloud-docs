@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 查看操作日志
 
 为了记录 HwameiStor 集群系统的使用和操作历史信息，HwameiStor 提供了系统操作日志。该操作日志具有 HwameiStor 系统语义，易于用户查阅、解析。
@@ -21,6 +26,6 @@
     - Volume
     - DiskVolume
 
-    操作内容：可以查看到更多的操作细节信息，如下图展示了 `StorageNode` 资源的一条审计的操作内容。
+    点击 **查看** 可以查看操作细节，如下图展示了 `StorageNode` 资源的一条审计的操作内容。
 
     ![audit02](../../images/audit02.png)

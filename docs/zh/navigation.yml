@@ -10,6 +10,7 @@ nav:
               - 适用场景: dce/scenario.md
               - 我们是 K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - v0.29.0-20250430 发布: dce/dce-rn/20250430.md
                   - v0.28.0-20250331 发布: dce/dce-rn/20250331.md
                   - v0.27.0-20250228 发布: dce/dce-rn/20250228.md
                   - v0.26.0-20250131 发布: dce/dce-rn/20250131.md
@@ -44,12 +45,12 @@ nav:
                   - 在线安装到 K8s 集群: install/community/k8s/online.md
                   - 离线安装到 K8s 集群: install/community/k8s/offline.md
               - 安装商业版:
-                  - 安装介绍: 
+                  - 安装介绍:
                       - 部署架构: install/commercial/deploy-arch.md
-                      - 编辑配置文件: 
+                      - 编辑配置文件:
                           - clusterConfig.yaml: install/commercial/cluster-config.md
                           - manifest.yaml: install/commercial/manifest.md
-                  - 部署要求: 
+                  - 部署要求:
                       - 部署要求: install/commercial/deploy-requirements.md
                       - 前置检查: install/commercial/prepare.md
                       - 端口要求: install/commercial/port-requirements.md
@@ -118,7 +119,7 @@ nav:
                   - Argo CD高可用部署: amamba/quickstart/argo-cd-HA.md
                   - 特性门控: amamba/quickstart/feature-gates.md
                   - 开启组件的可观测能力: amamba/components-grafana-dashboard.md
-              - 命名空间管理: 
+              - 命名空间管理:
                   - 创建命名空间: amamba/user-guide/namespace/namespace.md
                   - 创建多云命名空间: amamba/user-guide/namespace/multi-namespace.md
               - 向导:
@@ -146,7 +147,7 @@ nav:
                       - 基本概念:
                           - 流水线中的概念: amamba/user-guide/pipeline/config/concept.md
                           - 流水线节点(Agent): amamba/user-guide/pipeline/config/agent.md
-                      - 编辑流水线: 
+                      - 编辑流水线:
                           - 使用界面编辑: amamba/user-guide/pipeline/edit.md
                           - 编写Jenkinsfile: amamba/user-guide/pipeline/pipeline-syntax.md
                           - 图形化任务模板参数: amamba/user-guide/pipeline/config/step.md
@@ -170,7 +171,7 @@ nav:
                   - 更多技巧:
                       - 自定义Jenkins Agent镜像: amamba/user-guide/pipeline/jenkins-agent.md
                       - Jenkins自定义工具链: amamba/quickstart/jenkins-custom.md
-                      - 在指定的节点上运行: amamba/quickstart/pipeline-on-node.md                    
+                      - 在指定的节点上运行: amamba/quickstart/pipeline-on-node.md
                       - 构建多架构镜像: amamba/user-guide/pipeline/podman.md
                       - 系统环境变量: amamba/user-guide/pipeline/system-env.md
                       - 流水线监控指标: amamba/user-guide/pipeline/jenkins-metric.md
@@ -188,6 +189,7 @@ nav:
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
                   - 查看蓝绿发布任务: amamba/user-guide/release/check-bluegreen.md
+                  - 金丝雀发布示例操作: amamba/user-guide/release/canary-guide.md
               - 工具链集成:
                   - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
                   - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
@@ -374,7 +376,7 @@ nav:
                       - 使用昇腾 NPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
                       - 启用昇腾 VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - 天数 GPU 管理: kpanda/user-guide/gpu/Iluvatar_usage.md
-                  - 沐曦 GPU 管理: 
+                  - 沐曦 GPU 管理:
                       - 在线安装沐曦 GPU 管理: kpanda/user-guide/gpu/metax/online-metax.md
                       - 离线安装沐曦 GPU 管理: kpanda/user-guide/gpu/metax/offline-metax.md
                   - 寒武纪 GPU 管理: kpanda/user-guide/gpu/mlu/use-mlu.md
@@ -697,7 +699,7 @@ nav:
                   - 什么是虚拟机: virtnest/intro/index.md
                   - 功能特性: virtnest/intro/features.md
                   - Release Notes: virtnest/intro/release-notes.md
-              - 安装:   
+              - 安装:
                   - 安装虚拟机: virtnest/install/index.md
                   - 安装依赖及前提条件: virtnest/install/install-dependency.md
                   - 离线升级: virtnest/install/offline-install.md
@@ -933,7 +935,7 @@ nav:
                   - Nacos对接LDAP进行用户管理: skoala/best-practice/nacos-ldap.md
               - 故障排查:
                   - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md
-                  - Nacos 版本降级: skoala/troubleshoot/nacos.md                
+                  - Nacos 版本降级: skoala/troubleshoot/nacos.md
               - 性能测试:
                   - 云原生网关吞吐量测试: skoala/tests/gateway-stress-test.md
                   - Nacos 压测报告: skoala/tests/nacos-stress-test.md
@@ -1168,7 +1170,7 @@ nav:
                       - 备份和恢复: middleware/elasticsearch/user-guide/snapshot-recover.md
                   - ES 故障排查: middleware/elasticsearch/faq/common-question-es.md
                   - 最佳实践:
-                      - 双机房部署 ES: middleware/elasticsearch/bestpractice/esin2IDC.md 
+                      - 双机房部署 ES: middleware/elasticsearch/bestpractice/esin2IDC.md
                       - 跨节点迁移 ES: middleware/elasticsearch/user-guide/migrate-es.md
                       - 使用reindex迁移ES: middleware/elasticsearch/bestpractice/reindex-to-backup.md
               - Kafka 消息队列:
@@ -1213,7 +1215,7 @@ nav:
                   - 快速入门:
                       - 创建 RocketMQ 实例: middleware/rocketmq/quick-start/create-rocketmq.md
                       - 更新 RocketMQ 实例: middleware/rocketmq/quick-start/update-rocketmq.md
-                  - 最佳实践: 
+                  - 最佳实践:
                       - RocketMQ 跨集群高可用: middleware/rocketmq/best-pratice/singleclustercrosszone.md
               - MinIO 对象存储:
                   - 介绍:

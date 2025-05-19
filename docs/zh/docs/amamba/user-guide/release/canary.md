@@ -103,3 +103,5 @@
 5. 系统自动跳转至灰度发布的任务列表页面，提示 __更新版本成功__ 。
 
     ![返回列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/canary16.png)
+
+具体可参考 [金丝雀发布示例操作](canary-guide.md)
