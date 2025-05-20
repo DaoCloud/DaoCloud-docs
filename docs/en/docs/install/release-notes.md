@@ -15,6 +15,38 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2025-04-30
+
+### v0.29.0
+
+- **Added** support for installing Cloud mode (formerly AI mode) within kind clusters.
+- **Added** `--show-feature-gates` parameter to display special feature flags within the installer script.
+- **Added** support for building offline packages for Cloud mode.
+- **Added** compatibility with Huozhong kind version v0.27.0.
+- **Added** version check when upgrading DCE5 to detect if the current component version is lower than the existing version.
+- **Improved** renaming of AI mode to Cloud mode.
+- **Improved** cloud mode to support MetalLB.
+- **Improved** `istio-ingressgateway` image pull policy set to `IfNotPresent`.
+- **Improved** handling of historical upgrade records when using the `dce5-installer rollback` subcommand.
+- **Improved** logic for handling Huozhong offline resources in build scripts by removing redundant code and improving maintainability.
+- **Fixed** issue with pulling RabbitMQ images from the public internet during middleware installation.
+- **Fixed** failure to parse chart values containing the `#` character.
+- **Fixed** incorrect image used for the `mcamel-mysql` component after offline DCE5 upgrade.
+- **Fixed** issue where DCE5 upgrade overwrote previously manually modified CR `L2Advertisement` related to the MetalLB component.
+
+## 2025-03-31
+
+### v0.28.0
+
+- **Added** AI mode deployment framework.
+- **Added** experimental `rollback-app` command to roll back Global cluster component deployments.
+- **Improved** default Kubernetes version updated to v1.31.6.
+- **Improved** cleanup of `podman` systemd configurations before starting Huozhong clusters.
+- **Improved** MySQL middleware configuration checks.
+- **Improved** Global cluster to use a separate `resolv.conf` configuration.
+- **Improved** CNI binary owner set to `root` to prevent permission issues.
+- **Fixed** missing offline image of iptables for the `kube-vip` component.
+
 ## 2025-02-28
 
 ### v0.27.0
