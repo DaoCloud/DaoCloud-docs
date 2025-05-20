@@ -20,7 +20,7 @@ Upon entering the developer console, developers can create and manage Notebooks 
 
     ![fill forms](../../images/notebook02.png)
 
-1. In the **Advanced** configuration, you can customize parameters such as task parameters, scheduling policies, task analysis, SSH access, and auto-saving.
+1. In the **Advanced** page, you can customize arguments, scheduling policies, analysis, SSH, and auto-saving.
    Adjust these arguments and click **OK**.
 
     ![fill forms](../../images/notebook06.png)
