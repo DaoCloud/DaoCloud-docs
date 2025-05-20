@@ -15,17 +15,22 @@ Upon entering the developer console, developers can create and manage Notebooks 
 
     ![click button](../../images/notebook01.png)
 
-2. The system will pre-fill basic configuration data, including the cluster, namespace,
+1. The system will pre-fill basic configuration data, including the cluster, namespace,
    queue, priority, resources, and job arguments. Adjust these arguments and click **OK**.
 
     ![fill forms](../../images/notebook02.png)
 
-3. The newly created Notebook will initially be in the **Pending** state, and will change to **Running**
+1. In the **Advanced** configuration, you can customize parameters such as task parameters, scheduling policies, task analysis, SSH access, and auto-saving.
+   Adjust these arguments and click **OK**.
+
+    ![fill forms](../../images/notebook06.png)
+
+1. The newly created Notebook will initially be in the **Pending** state, and will change to **Running**
    after a moment, with the latest one appearing at the top of the list by default.
 
     ![created](../../images/notebook01.png)
 
-4. Click the **┇** on the right side to perform more actions: update arguments, start/stop, clone Notebook, view workload details, and delete.
+1. Click the **┇** on the right side to perform more actions: update arguments, start/stop, clone Notebook, view workload details, and delete.
 
 !!! note
 
