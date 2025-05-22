@@ -36,7 +36,9 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
 下述配置均在 `kpanda-global-cluster` 集群中，并假设您的 ArgoCD 安装在 `argocd` 这个命名空间中。
 
 1. 创建 GProductProxy
-   前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __自定义资源__ ，搜索`gproductproxies.ghippo.io`,进入自定义资源详情后，在右侧点击 __YAML 创建__ 。
+
+    前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __自定义资源__ ，搜索
+    `gproductproxies.ghippo.io`，进入自定义资源详情后，在右侧点击 __YAML 创建__ 。
 
     ```yaml
     apiVersion: ghippo.io/v1alpha1
@@ -121,7 +123,7 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
 经过上述步骤后，还需要更改应用工作台的配置项才能使 ArgoCD UI 生效。
 
 1. 前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __Helm应用__，
-   选择命名空间 `amamba-system`，修改 `amamba` 这个应用，在yaml中修改以下配置项:
+   选择命名空间 `amamba-system`，修改 `amamba` 这个应用，在 YAML 中修改以下配置项：
 
     ```yaml
     configMap:
@@ -134,7 +136,7 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
     host 端口保持 443，其中 `amamba-argocd-server.argocd.svc.cluster.local` 需要根据您的 ArgoCD 的服务名称和命名空间进行修改。
     具体修改路径为 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __容器网络__ ，根据 ArgoCD 安装的命名空间搜索关键词 `amamba-argocd-server` 来确定。
 
-1. 保存后等待helm应该更新完毕即可。
+1. 保存后等待 Helm 应该更新完毕即可。
 
 ## 查看拓扑
 
