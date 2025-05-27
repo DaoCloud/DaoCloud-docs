@@ -44,11 +44,11 @@
 
     - 阶段创建后，点击 __阶段__ ，可以用过阶段进行阶段配置。支持设置阶段的名称、Agent、触发条件、步骤。
 
-### 配置全局设置
+### 配置 Agent 设置
 
-点击 __全局设置__ ，从 __类型__ 下拉列表中选择 node，从 label 下拉列表选择 go 。
+点击 __Agent 设置__ ，从 __类型__ 下拉列表中选择 node，从 label 下拉列表选择 go 。
 
-![pipelisetting](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipelisetting.png)
+![pipelisetting](../../images/pipelisetting.png)
 
 ### 添加阶段 - 拉取源代码
 
