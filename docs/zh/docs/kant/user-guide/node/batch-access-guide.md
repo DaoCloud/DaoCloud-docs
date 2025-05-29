@@ -19,11 +19,11 @@
 该脚本支持以下两个重要参数：
 
 - `MULTI_ARCH`：控制是否支持多架构节点接入
-  - `false`：仅支持与控制节点相同架构的节点接入
-  - `true`：支持同时接入 amd64 和 arm64 架构的节点
+    - `false`：仅支持与控制节点相同架构的节点接入
+    - `true`：支持同时接入 amd64 和 arm64 架构的节点
 - `WITH_CONTAINERD`：控制是否自动安装 containerd
-  - `false`：不自动安装 containerd
-  - `true`：自动为节点安装默认版本的 containerd
+    - `false`：不自动安装 containerd
+    - `true`：自动为节点安装默认版本的 containerd
 
 ## 批量节点接入步骤
 
