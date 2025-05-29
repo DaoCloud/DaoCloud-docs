@@ -13,6 +13,39 @@ so that you can learn its evolution path and feature changes.
     Features labeled as Beta may undergo changes; please use them with caution
     and provide prompt feedback if you encounter any issues.
 
+## 2025-04-30
+
+### v0.16.1
+
+- **Added** support for configuring pre- and post-execution parameters in vLLM inference services.
+- **Added** support for disabling vLLM commands in the vLLM framework to meet distributed inference requirements.
+- **Added** CRD support for customizing CPU/memory resources for dataset prewarming tasks, timeout for saving training images, and startup timeout for inference services.
+- **Improved** the notebook image by reducing its size.
+- **Improved** inference service configuration by adding example environment variables.
+- **Improved** the dataset creation process by adding a "Create PVC" link for PVC type selection.
+- **Improved** vLLM inference service updates to support modifying runtime configurations.
+- **Fixed** potential errors when saving images after upgrading `kube-snapshot` to v0.7.3.
+- **Fixed** issues pulling Git-based datasets in SSH mode.
+- **Fixed** CVE-2025-22872 and CVE-2025-30204 security vulnerabilities.
+
+## 2025-03-31
+
+### v0.15.1
+
+- **Added** support for configuring shared memory when selecting multiple GPUs for training and inference tasks.
+- **Added** API key support for the vLLM framework.
+- **Improved** the default training image selection by using the notebook image for better interactivity.
+- **Improved** environment checks before dataset creation to prevent failures when no default `storageClassName` is available in the cluster.
+- **Improved** dependency management by removing the `defaults` channel from `mamba` to reduce risk.
+- **Upgraded** the vLLM framework image to version 0.7.3.
+- **Fixed** issues where RDMA labels were not added as expected in training tasks.
+- **Fixed** crashes in training tasks caused by missing base configurations.
+- **Fixed** CVE-2025-22870 and CVE-2024-45337 security vulnerabilities.
+- **Fixed** issues in annotation instances due to overly new dependency versions in the notebook.
+- **Fixed** issues enabling TAS in training tasks (note: the required Kueue version is not officially released; contact the product team to try this feature).
+- **Fixed** UI issues when using Kingbase or PostgreSQL as the database.
+- **Fixed** issues with updating API keys in the Triton framework.
+
 ## 2025-02-28
 
 ### v0.14.1

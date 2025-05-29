@@ -35,79 +35,10 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
 
 下述配置均在 `kpanda-global-cluster` 集群中，并假设您的 ArgoCD 安装在 `argocd` 这个命名空间中。
 
-前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __自定义资源__ ，根据资源分组及版本搜索
-（即 `apiVersion` 字段。以 `Gateway` 为例，搜索 `networking.istio.io`），进入自定义资源详情后，选择对应命名空间及版本，在右侧点击 __YAML 创建__ 。
-创建以下几个资源。
-
-1. 创建 Gateway
-
-    ```yaml
-    apiVersion: networking.istio.io/v1alpha3
-    kind: Gateway
-    metadata:
-      name: argocd-gateway
-      namespace: argocd # 注意命名空间
-    spec:
-      selector:
-        istio: ingressgateway
-      servers:
-        - hosts:
-            - "*"
-          port:
-            name: http
-            number: 80
-            protocol: HTTP
-          tls:
-            httpsRedirect: false
-        - hosts:
-            - "*"
-          port:
-            name: https
-            number: 443
-            protocol: HTTPS
-          tls:
-            cipherSuites:
-              - ECDHE-ECDSA-AES128-GCM-SHA256
-              - ECDHE-RSA-AES128-GCM-SHA256
-              - ECDHE-ECDSA-AES128-SHA
-              - AES128-GCM-SHA256
-              - AES128-SHA
-              - ECDHE-ECDSA-AES256-GCM-SHA384
-              - ECDHE-RSA-AES256-GCM-SHA384
-              - ECDHE-ECDSA-AES256-SHA
-              - AES256-GCM-SHA384
-              - AES256-SHA
-            credentialName: argocd-secret
-            maxProtocolVersion: TLSV1_3
-            minProtocolVersion: TLSV1_2
-            mode: SIMPLE
-    ```
-
-1. 创建 VirtualService
-
-    ```yaml
-    apiVersion: networking.istio.io/v1alpha3
-    kind: VirtualService
-    metadata:
-      name: argocd-virtualservice
-      namespace: argocd # 注意命名空间
-    spec:
-      gateways:
-        - argocd-gateway
-      hosts:
-        - "*"
-      http:
-        - match:
-            - uri:
-                prefix: /argocd
-          route:
-            - destination:
-                host: amamba-argocd-server
-                port:
-                  number: 80
-    ```
-
 1. 创建 GProductProxy
+
+    前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __自定义资源__ ，搜索
+    `gproductproxies.ghippo.io`，进入自定义资源详情后，在右侧点击 __YAML 创建__ 。
 
     ```yaml
     apiVersion: ghippo.io/v1alpha1
@@ -192,7 +123,7 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
 经过上述步骤后，还需要更改应用工作台的配置项才能使 ArgoCD UI 生效。
 
 1. 前往 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __Helm应用__，
-   选择命名空间 `amamba-system`，修改 `amamba` 这个应用，在yaml中修改以下配置项:
+   选择命名空间 `amamba-system`，修改 `amamba` 这个应用，在 YAML 中修改以下配置项：
 
     ```yaml
     configMap:
@@ -205,7 +136,7 @@ DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导�
     host 端口保持 443，其中 `amamba-argocd-server.argocd.svc.cluster.local` 需要根据您的 ArgoCD 的服务名称和命名空间进行修改。
     具体修改路径为 __容器管理__ -> __集群列表__ -> __kpanda-global-cluster__ -> __容器网络__ ，根据 ArgoCD 安装的命名空间搜索关键词 `amamba-argocd-server` 来确定。
 
-1. 保存后等待helm应该更新完毕即可。
+1. 保存后等待 Helm 应该更新完毕即可。
 
 ## 查看拓扑
 

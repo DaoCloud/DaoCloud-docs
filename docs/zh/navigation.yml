@@ -1263,7 +1263,8 @@ nav:
                       - 任务分析: baize/developer/jobs/tensorboard.md
                   - 数据管理:
                       - 数据集列表: baize/developer/dataset/create-use-delete.md
-                      - 环境管理: baize/developer/dataset/environments.md
+                      - 环境依赖: baize/developer/dataset/environments.md
+                      - 数据标注: baize/developer/dataset/labeling.md
                   - 模型服务:
                       - 模型列表: baize/developer/inference/model-create.md
                       - 模型支持情况: baize/developer/inference/models.md
