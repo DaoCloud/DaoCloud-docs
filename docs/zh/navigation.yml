@@ -844,6 +844,7 @@ nav:
                   - Insight 告警通知开启 v1alpha2: insight/faq/alertnotify-enable-v2api.md
                   - Logstash 参数优化: insight/faq/logstash-optimize.md
                   - Fluent Bit 根据 Namespace 路由至不同 Topic: insight/faq/fluentbit-dynamic-kafka-topic.md
+                  - NeoKylin Linux 系统运行 Fluent Bit 失败: insight/faq/kylin-fluentbit.md
           - 微服务引擎:
               - 介绍:
                   - 什么是微服务引擎: skoala/intro/index.md
