@@ -833,7 +833,6 @@ nav:
                   - Kubernetes 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
                   - Openshift 兼容性测试: insight/compati-test/ocp-compatibility.md
-
               - 常见问题:
                   - 链路数据的时钟偏移: insight/faq/traceclockskew.md
                   - 日志采集排障指南: insight/best-practice/debug-log.md
