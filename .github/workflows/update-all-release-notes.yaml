@@ -1,0 +1,31 @@
+name: Update All Project Release Notes
+
+on:
+  # Run every two days at 1 AM UTC
+  schedule:
+    - cron: '0 1 */2 * *'
+  
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  # Single job with matrix strategy that calls the reusable workflow
+  update-release-notes:
+    strategy:
+      matrix:
+        project:
+          - repo: "spidernet-io/spiderpool"
+            min_version: "v0.6.0"
+            component: "network"
+          # Add more projects here as needed
+          # - repo: "metallb/metallb"
+          #   min_version: "v0.13.0"
+      fail-fast: false
+    
+    name: Update ${{ matrix.project.repo }}
+    uses: ./.github/workflows/call-update-release-notes.yaml
+    with:
+      project_repo: ${{ matrix.project.repo }}
+      min_version: ${{ matrix.project.min_version }}
+      component: ${{ matrix.project.component }}
+    secrets: inherit
