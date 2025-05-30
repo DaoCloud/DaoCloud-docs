@@ -89,6 +89,12 @@ hide:
 
     ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew06.png)
 
+           !!! 提示
+
+        默认情况下集群每个月会自动更新证书，更新过程中会造成   重启。如需停止自动更新集群证书，可在高级配置中设置:auto_renew_certificates: false。
+        ![证书](../images/zhengshu.png)
+
+
 !!! success
 
     - 填写正确信息并完成上述步骤后，页面会提示集群正在创建中。
