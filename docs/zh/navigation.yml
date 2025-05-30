@@ -385,6 +385,7 @@ nav:
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
                   - 跨集群备份恢复MySQL: kpanda/best-practice/backup-mysql-on-nfs.md
+                  - 快速搭建 Dify LLM 应用开发平台: kpanda/best-practice/dify-use.md
                   - 工作集群相关实践:
                       - 加固自建工作集群: kpanda/best-practice/hardening-cluster.md
                       - 离线部署/升级工作集群: kpanda/best-practice/update-offline-cluster.md
