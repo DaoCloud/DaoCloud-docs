@@ -120,3 +120,21 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 为了更高效便捷处理已过期或者即将过期的 kubernetes 集群证书，可参考
 [k8s 版本集群证书更新](https://github.com/yuyicai/update-kube-cert/blob/master/README-zh_CN.md)。
+
+## 关闭自动更新证书
+
+### 新创建的集群 
+
+默认情况下集群每个月会自动更新证书，更新过程中会造成 k8s 控制面组件（apiserver/controller/scheduler/etcd）重启。
+如需停止自动更新集群证书，可在创建集群时的高级配置中设置 `:auto_renew_certificates: false`。
+
+![证书](../images/zhengshu.png)
+
+### 已经创建的集群
+
+集群已经创建好后，每个节点上都有两个 systemctl 服务，需要进行停止和删除。可通过如下命令关闭自动更新证书：
+
+```bash
+k8s-certs-renew.service
+k8s-certs-renew.timer
+```

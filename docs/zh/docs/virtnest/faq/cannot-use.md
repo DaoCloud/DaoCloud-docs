@@ -30,6 +30,19 @@ kubectl -n your-namespace describe vm your-vm
 
 解决办法：[升级节点操作系统内核](../install/install-dependency.md)
 
+### 案例 3
+![创建虚拟机报错三](../images/createvm-error03.png)
+
+解决办法：
+在 worker 集群中执行以下命令：
+
+```bash
+kubectl patch cdi cdi \
+  --type merge \
+  --patch '{"spec":{"config":{"insecureRegistries":["your registry ip"]}}}' 
+
+```
+
 ## VM 创建成功但无法使用
 
 若 VM 创建成功但无法使用，应在 DCE 页面检查 VM 的 VNC 页面是否正常。
