@@ -64,21 +64,18 @@ jobs:
           REPO_NAME: ${{ env.repo_name }}
         run: |
           set -x
-          if ! [[ -n "$(git status --porcelain)" ]]; then
-            echo "changes=false" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
+          set -e
           # Check if there are already open PRs for this project's release notes
           # Look for PRs that match both the title pattern and have the 'documentation' label
           existing_prs=$(gh pr list --repo ${{ github.repository }} --json title,labels,headRefName --jq '.[] | select(.title == "docs: auto update '"$REPO_NAME"' release notes" and (.labels | map(.name) | contains(["auto-sync-release-notes"]))) | .headRefName')
-
+          echo "DEBUG: existing_prs value: '$existing_prs'"
           if [[ -n "$existing_prs" ]]; then
             echo "Found existing auto-generated PRs for $REPO_NAME release notes. Skipping PR creation."
             echo "changes=false" >> $GITHUB_OUTPUT
-            exit 0
+          else
+            echo "No existing auto-generated PRs found for $REPO_NAME release notes. Creating PR."
+            echo "changes=true" >> $GITHUB_OUTPUT
           fi
-          echo "changes=true" >> $GITHUB_OUTPUT
 
       - name: Update release notes
         if: steps.check_changes.outputs.changes == 'true'
