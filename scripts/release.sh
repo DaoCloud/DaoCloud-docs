@@ -86,14 +86,31 @@ if [ -z "$PROJECT_ZH_RELEASE_NOTES_PATH" ]; then
 fi
 
 # Create release-notes directory if it doesn't exist
-RELEASE_NOTES_DIR="${PROJECT_EN_RELEASE_NOTES_PATH}/release-notes"
+RELEASE_NOTES_DIR="${PROJECT_EN_RELEASE_NOTES_PATH}"
 mkdir -p "$RELEASE_NOTES_DIR"
 
 # Function to fetch release notes for a specific tag
 fetch_release_notes() {
     local tag=$1
-    sub_path=$(echo $tag | tr '.' '')
-    local output_file="$RELEASE_NOTES_DIR/${sub_path}.md"
+
+    # Extract major.minor version from the tag
+    # Remove 'v' prefix if present
+    local version=${tag#v}
+
+    # Extract major and minor version numbers
+    local major_minor=$(echo "$version" | grep -oE '^[0-9]+\.[0-9]+')
+
+    if [ -z "$major_minor" ]; then
+        echo "Warning: Could not extract major.minor version from tag: $tag"
+        # Fallback to using the tag directly
+        major_minor="$version"
+    fi
+
+    # Create directory for this major.minor version
+    local version_dir="$RELEASE_NOTES_DIR/release-$major_minor"
+    mkdir -p "$version_dir"
+
+    local output_file="$version_dir/${tag}.md"
 
     echo "Fetching release notes for tag: $tag"
 
