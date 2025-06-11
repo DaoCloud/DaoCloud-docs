@@ -451,7 +451,14 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
         - --use-original-repo 从源站下载可执行文件、拉取镜像等
         - 更多参数请使用 --help 查询
 
-1. 安装完成后，命令行会提示安装成功。恭喜您！现在可以通过屏幕提示的 URL 使用默认的账号和密码（admin/changeme）探索全新的 DCE 5.0 啦！
+    !!! note
+
+        如果你在使用 `-m ./offline/sample/manifest.yaml` 运行命令时报错，可以尝试执行以下替换操作：
+
+        - 对于 DCE 5.0 社区版，替换为 `-m ./offline/sample/manifest-community.yaml`  
+        - 对于 DCE 5.0 商业版，替换为 `-m ./offline/sample/manifest-enterprise.yaml`
+
+2. 安装完成后，命令行会提示安装成功。恭喜您！现在可以通过屏幕提示的 URL 使用默认的账号和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -459,4 +466,4 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
         请记录好提示的 URL，方便下次访问。
 
-1. 成功安装 DCE 5.0 商业版之后，请联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898。
+3. 成功安装 DCE 5.0 商业版之后，请联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898。
