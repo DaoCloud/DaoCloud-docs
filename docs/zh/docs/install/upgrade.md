@@ -183,3 +183,10 @@ Global Flags:
 ### 第 5 步：升级成功提示
 
 ![upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/upgrade.png)
+
+!!! note
+
+    如果你在使用 `-m ./offline/sample/manifest.yaml` 运行命令时报错，可以尝试执行以下替换操作：
+
+    - 对于 DCE 5.0 社区版，替换为 `-m ./offline/sample/manifest-community.yaml`  
+    - 对于 DCE 5.0 商业版，替换为 `-m ./offline/sample/manifest-enterprise.yaml`

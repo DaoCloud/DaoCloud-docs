@@ -24,7 +24,7 @@
     tar -xvf offline-v0.26.0-amd64.tar
     ```
 
-2. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，可以在离线包 `offline/sample` 下获取该文件并修改，此处示例主要描述如何使用 host 模式部署 etcd。
+1. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，可以在离线包 `offline/sample` 下获取该文件并修改，此处示例主要描述如何使用 host 模式部署 etcd。
 
     参考配置为：
 
@@ -74,15 +74,22 @@
         - 配置 `etcdNodes`。
         - 在 kubeanConfig 配置 `etcd_deployment_type: host`。
 
-3. 配置 manifest 文件（可选），可以在离线包 `offline/sample` 下获取该文件并按需修改。
+1. 配置 manifest 文件（可选），可以在离线包 `offline/sample` 下获取该文件并按需修改。
 
-4. 开始安装 DCE 5.0。
+1. 开始安装 DCE 5.0。
 
     ```bash
     ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml 
     ```
 
-5. 安装完成后，查看验证当前集群及控制面节点是否部署了 etcd？
+    !!! note
+
+        如果你在使用 `-m ./offline/sample/manifest.yaml` 运行命令时报错，可以尝试执行以下替换操作：
+
+        - 对于 DCE 5.0 社区版，替换为 `-m ./offline/sample/manifest-community.yaml`  
+        - 对于 DCE 5.0 商业版，替换为 `-m ./offline/sample/manifest-enterprise.yaml`
+
+1. 安装完成后，查看验证当前集群及控制面节点是否部署了 etcd？
 
     - 当前集群没有 etcd 相关的 Pod
 
@@ -94,10 +101,10 @@
 
     综上 etcd 均未被检测到，说明当前集群及控制面节点无 etcd 服务，执行下一步。
 
-6. 执行命令 `pf -ef | grep etcd` ，查看 apiserver 连接的是外部 etcd 地址，如下图，连接正常。
+1. 执行命令 `pf -ef | grep etcd` ，查看 apiserver 连接的是外部 etcd 地址，如下图，连接正常。
 
     ![etcd03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/etcd03.png)
 
-7. 在 etcd 节点上执行命令 `systemctl status etcd` 来判断运行情况，如下图，etcd 运行正常。
+1. 在 etcd 节点上执行命令 `systemctl status etcd` 来判断运行情况，如下图，etcd 运行正常。
 
     ![etcd04](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/etcd04.png)

@@ -72,6 +72,13 @@
         - `--platform` 用来声明在哪个 Kubernetes 发行版上部署 DCE 5.0，目前仅支持 openshift
         - `--serial` 指定后所有安装任务串行执行
 
+    !!! note
+
+        如果你在使用 `-m ./offline/sample/manifest.yaml` 运行命令时报错，可以尝试执行以下替换操作：
+
+        - 对于 DCE 5.0 社区版，替换为 `-m ./offline/sample/manifest-community.yaml`  
+        - 对于 DCE 5.0 商业版，替换为 `-m ./offline/sample/manifest-enterprise.yaml`
+
 6. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
