@@ -13,7 +13,7 @@ Possible cause: The jwtsUri address of the RequestAuthentication CR cannot be ac
 
 Solution:
 
-1. Backup the RequestAuthentication ghippo CR.
+1. Back up the RequestAuthentication ghippo CR.
 
     ```shell
     kubectl get RequestAuthentication ghippo -n istio-system -o yaml > ghippo-ra.yaml
