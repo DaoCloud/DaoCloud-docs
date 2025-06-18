@@ -144,10 +144,18 @@
 
 ## 更新全局服务集群的 kubernetes 版本清单
 
-火种节点上执行如下命令，将 `localartifactset` 资源部署到全局服务集群：
+火种节点上执行如下命令，将 `manifest`、`localartifactset` 资源部署到全局服务集群：
 
 ```bash
-kubectl apply -f data/kubeanofflineversion.cr.patch.yaml
+# 部署 data 文件目录下的 localArtifactSet 资源
+cd ./data
+kubectl apply -f localartifactset.cr.yaml
+
+# 下载 release-2.21 版本的 manifest 资源
+wget https://raw.githubusercontent.com/kubean-io/kubean-manifest/main/manifests/manifest-2.21-d6f688f.yaml
+
+# 部署 release-2.21 对应的 manifest 资源
+kubectl apply -f manifest-2.21-d6f688f.yaml
 ```
 
 ## 下一步

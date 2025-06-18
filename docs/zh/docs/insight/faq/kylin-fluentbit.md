@@ -30,7 +30,7 @@ kylin 系统的 `memory page size` 大小是 `64K`，`Centos/Ubuntu` 系统的 `
 
 > Fluent Bit 支持范围：Fluent Bit 4.0.1+
 
-参考社区的[解答][1] 将镜像替换成道客[自行构建][2]的镜像：`ghcr.m.daocloud.io/openinsight-proj/fluent-bit:4.0.1-jemalloc-off`。
+参考社区的[解答][1] 将镜像替换成道客[自行构建][2]的镜像：`ghcr.m.daocloud.io/openinsight-proj/fluent-bit:4.0.1`; 注意：镜像地址是 **openinsight-proj** 。
 
 与官方的差别：仅在编译时关闭 `jemalloc` 特性，其余与官方一致。
 
