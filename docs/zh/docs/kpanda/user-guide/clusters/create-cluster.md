@@ -89,17 +89,18 @@ hide:
 
     ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew06.png)
 
-    !!! tip
-
-        默认情况下集群证书有效期为一年，每个月会自动更新证书，更新过程中会造成重启。如需停止自动更新集群证书和如需配置证书签发有效期，可在高级参数中进行配置
-
-        ```yaml
-        auto_renew_certificates: false # 关闭自动更新证书
-        kube_cert_validity_period: 87600h  #配置普通非 CA 证书有效期为 10 年
-        kube_ca_cert_validity_period: 175200h # 配置 CA 证书的有效期
-        ```
-
-        ![证书](../images/clustercert.png)
+!!! tip
+    
+    默认情况下集群证书有效期为一年，每个月会自动更新证书，更新过程中会造成重启。
+    如需停止自动更新集群证书以及如需配置证书签发有效期，可以在高级参数中进行配置：
+    
+    ```yaml
+    auto_renew_certificates: false # 关闭自动更新证书
+    kube_cert_validity_period: 87600h  #配置普通非 CA 证书有效期为 10 年
+    kube_ca_cert_validity_period: 175200h # 配置 CA 证书的有效期
+    ```
+    
+    ![clustercert](../images/clustercert.png)
 
 !!! success
 
