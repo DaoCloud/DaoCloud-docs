@@ -140,11 +140,13 @@ k8s-certs-renew.timer
 ```
 
 ## 配置证书签发的有效期
-默认情况下，证书的有效期是 1 年，如需修改，可在创建集群时的高级配置中设置如下参数
-```bash
-auto_renew_certificates:  false  # 关闭自动更新证书
-kube_cert_validity_period:  87600h  #配置普通非 CA 证书有效期为 10 年
-kube_ca_cert_validity_period:  175200h  # 配置 CA 证书的有效期
-  
+
+默认情况下，证书的有效期是 1 年，如需修改，可在创建集群时的高级配置中设置如下参数：
+
+```yaml
+auto_renew_certificates: false  # 关闭自动更新证书
+kube_cert_validity_period: 87600h  #配置普通非 CA 证书有效期为 10 年
+kube_ca_cert_validity_period: 175200h  # 配置 CA 证书的有效期
 ```
+
 ![证书](../images/clustercert.png)
