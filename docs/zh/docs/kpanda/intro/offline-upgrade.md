@@ -243,7 +243,7 @@
 在安装 DCE 5.0 或在产品模块升级前已执行以下命令：
 
 ```shell
-~/dce5-installer cluster-create -c /home/dce5/sample/clusterConfig.yaml -m /home/dce5/sample/manifest.yaml -d -j 14,15
+~/dce5-installer cluster-create -c /home/offline/sample/clusterConfig.yaml -m /home/offline/sample/manifest.yaml -d -j 14,15
 ```
 
 ### 操作步骤
