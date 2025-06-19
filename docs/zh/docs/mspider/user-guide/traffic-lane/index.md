@@ -12,13 +12,11 @@
 ### 系统请求链路
 
 ```yaml
-istio-cars-ingress（Istio 网关）
+bookinfo-gw（Istio 网关）
     ↓
-portal-api-portal
+productpage
     ↓
-cars-rti-adapter
-    ↓
-cars-aggregator
+details & reviews...
 ```
 
 此链路中的每一跳服务均已接入 Istio Sidecar，并支持基于 Header 的子集路由。
