@@ -70,7 +70,7 @@ http:
 apiVersion: extensions.istio.io/v1alpha1
 kind: WasmPlugin
 metadata:
-  name: details
+  name: bookinfo
   namespace: bookinfo
 spec:
   imagePullPolicy: Always
@@ -82,8 +82,8 @@ spec:
     type: W3C
   selector:
     matchLabels:
-      app.kubernetes.io/part-of: cars # 泳道作用的工作负载共同 label
-  url: oci://xx.xx.xx.xxx/release.daocloud.io/mspider/mspider-traffic-lane:v0.30.4 # 泳道版本
+      app: bookinfo # 泳道作用的工作负载共同 label
+  url: oci://release.daocloud.io/mspider/mspider-traffic-lane:v0.30.4 # 泳道版本
 ```
 
 如果是私有环境，记得提前将泳道的 Wasm 推送到镜像仓库。
@@ -111,13 +111,13 @@ spec:
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
-  name: details
+  name: bookinfo-gw
   namespace: bookinfo
 spec:
   gateways:
-    - cars-demo-dev/cars # 网关入口服务
+    - bookinfo/bookinfo-gw # 网关入口服务
   hosts:
-    - details
+    - '*'
   http:
     - headers: # 将请求 header 重置为流量泳道通用 header 规则 <x-mspider-lane：green>
         request:
@@ -130,7 +130,7 @@ spec:
       name: green-lane
       route:
         - destination:
-            host: details
+            host: productpage
             port:
               number: 9080
             subset: green
@@ -145,7 +145,7 @@ spec:
       name: yellow-lane
       route:
         - destination:
-            host: details
+            host: productpage
             port:
               number: 9080
             subset: yellow
@@ -157,13 +157,13 @@ spec:
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
-  name: details
+  name: bookinfo-gw
   namespace: bookinfo
 spec:
   gateways:
-    - cars-demo-dev/cars # 网关入口服务
+    - bookinfo/bookinfo-gw # 网关入口服务
   hosts:
-    - details
+    - '*'
   http:
     - match: # 访问服务，比如发起 http 的入口请求（postman），需要定义 header <green>
         - headers:
@@ -172,7 +172,7 @@ spec:
       name: green-lane
       route:
         - destination:
-            host: details
+            host: productpage
             port:
               number: 9080
             subset: green
@@ -183,7 +183,7 @@ spec:
       name: yellow-lane
       route:
         - destination:
-            host: details
+            host: productpage
             port:
               number: 9080
             subset: yellow
@@ -201,7 +201,7 @@ spec:
   gateways:
     - mesh # 全局服务
   hosts:
-    - '*' # 内部服务
+    - details # 内部服务
   http:
     - match: # 匹配泳道 通用 header 规则
         - headers:
@@ -210,7 +210,7 @@ spec:
       name: green
       route:
         - destination:
-            host: productpage
+            host: details
             port:
               number: 9080
             subset: green
@@ -221,7 +221,7 @@ spec:
       name: yellow
       route:
         - destination:
-            host: productpage
+            host: details
             port:
               number: 9080
             subset: yellow
