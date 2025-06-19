@@ -3,7 +3,7 @@
 流量泳道（Traffic Lane）功能用于实现多版本、灰度发布等场景下的 **精细化流量路由控制** 。
 该机制的核心依赖以下三个关键要素：
 
-- **Wasm 扩展模块**：在服务间请求中注入自定义 Header（如 `bu`），用于标识请求所属的泳道。
+- **Wasm 扩展模块**：在服务间请求中注入自定义 Header（如 `x-mspider-lane`），用于标识请求所属的泳道。
 - **TraceID 链路追踪信息**：辅助识别请求来源，为泳道路由提供上下文支持。
 - **Istio 路由配置**：通过 VirtualService（VS）和 DestinationRule（DR）基于 Header 实现泳道级流量分发。
 
@@ -25,23 +25,23 @@ cars-aggregator
 
 ### 泳道规划策略
 
-- 定义两个泳道：`wtchk` 和 `wicph`
-- 使用 Header Key：`bu`（泳道标识字段）
-- 默认泳道值：`wtchk`
+- 定义两个泳道：`green` 和 `yellow`
+- 使用 Header Key：`x-mspider-lane`（泳道标识字段）
+- 默认泳道值：`green`
 
 ### 路由行为预期
 
 | 请求 Header 示例 | 预期路由目标子集 |
 | --------------- | ------------- |
-| build: wtchk | wtchk |
-| build: wicph | wicph |
+| x-mspider-laneid: green | green |
+| x-mspider-laneid: yellow | yellow |
 
 - 请求到达时，Istio 会依据 Header 中的泳道标识将流量路由至对应的子集 Pod。
 - 若 Header 缺失，系统可配置默认值或返回错误，具体取决于 VS/DR 策略。
 
 ### Header 重写说明
 
-由于上游服务可能使用 `buid` 字段，而系统内部标准识别字段为 `bu`，
+由于上游服务可能使用 `x-mspider-laneid` 字段，而系统内部标准识别字段为 `x-mspider-lane`，
 建议在入口网关（如 `istio-cars-ingress`）的 VirtualService 中添加以下配置：
 
 ```yaml
@@ -51,12 +51,12 @@ http:
   headers:
     request:
       set:
-        bu: "{{ request.headers['buid'] }}"
+        x-mspider-lane: "{{ request.headers['x-mspider-laneid'] }}"
 ```
 
 !!! note
 
-    如上操作用于将 `buid` 统一映射为标准泳道标识 `bu`，仅当上游请求头不一致时才需配置；若已统一为 `bu`，可跳过这一步。
+    如上操作用于将 `x-mspider-laneid` 统一映射为标准泳道标识 `x-mspider-lane`，仅当上游请求头不一致时才需配置；若已统一为 `x-mspider-lane`，可跳过这一步。
 
 ## 示例操作步骤
 
@@ -70,20 +70,20 @@ http:
 apiVersion: extensions.istio.io/v1alpha1
 kind: WasmPlugin
 metadata:
-  name: cars-traffic-lane
-  namespace: cars-aswatson-dev
+  name: details
+  namespace: bookinfo
 spec:
   imagePullPolicy: Always
   phase: STATS
   pluginConfig:
     cache_size: 1024
-    lane_header: bu # 流量泳道识别的通用 header key
-    traffic_lane: wtchk # 泳道默认 header value
+    lane_header: x-mspider-lane # 流量泳道识别的通用 header key
+    traffic_lane: green # 泳道默认 header value
     type: W3C
   selector:
     matchLabels:
       app.kubernetes.io/part-of: cars # 泳道作用的工作负载共同 label
-  url: oci://10.95.35.134/release.daocloud.io/mspider/mspider-traffic-lane:v0.30.4 # 泳道版本
+  url: oci://xx.xx.xx.xxx/release.daocloud.io/mspider/mspider-traffic-lane:v0.30.4 # 泳道版本
 ```
 
 如果是私有环境，记得提前将泳道的 Wasm 推送到镜像仓库。
@@ -97,7 +97,7 @@ spec:
 
 ![img](./images/lane02.png)
 
-### 4. 定义服务的 dr, 给每个服务都配置 wtchk 和 wicph 两组 subset
+### 4. 定义服务的 dr, 给每个服务都配置 green 和 yellow 两组 subset
 
 要确认是否绑定了目标服务，可以通过服务网格界面辅助判断
 
@@ -111,44 +111,44 @@ spec:
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
-  name: cars-api-portal
-  namespace: cars-aswatson-dev
+  name: details
+  namespace: bookinfo
 spec:
   gateways:
-    - cars-aswatson-dev/cars # 网关入口服务
+    - cars-demo-dev/cars # 网关入口服务
   hosts:
-    - "*"
+    - details
   http:
-    - headers: # 将请求 header 重置为流量泳道通用 header 规则 <bu：wtchk>
+    - headers: # 将请求 header 重置为流量泳道通用 header 规则 <x-mspider-lane：green>
         request:
           set: # 重写
-            bu: wtchk
-      match: # 访问服务，比如发起 http 的入口请求（postman），需要定义 header <wtchk>
+            x-mspider-lane: green
+      match: # 访问服务，比如发起 http 的入口请求（postman），需要定义 header <green>
         - headers:
-            buid:
-              exact: wtchk
-      name: hk
+            x-mspider-laneid:
+              exact: green
+      name: green-lane
       route:
         - destination:
-            host: cars-api-portal.cars-aswatson-dev.svc.cluster.local
+            host: details
             port:
-              number: 8181
-            subset: cars-api-portal-wtchk
+              number: 9080
+            subset: green
     - headers:
         request:
           set:
-            bu: wicph
+            x-mspider-lane: yellow
       match:
         - headers:
-            buid:
-              exact: wicph
-      name: ph
+            x-mspider-laneid:
+              exact: yellow
+      name: yellow-lane
       route:
         - destination:
-            host: cars-api-portal.cars-aswatson-dev.svc.cluster.local
+            host: details
             port:
-              number: 8181
-            subset: cars-api-portal-wtcph
+              number: 9080
+            subset: yellow
 ```
 
 如果不需要重写 header，示例如下：
@@ -157,36 +157,36 @@ spec:
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
-  name: cars-api-portal
-  namespace: cars-aswatson-dev
+  name: details
+  namespace: bookinfo
 spec:
   gateways:
-    - cars-aswatson-dev/cars # 网关入口服务
+    - cars-demo-dev/cars # 网关入口服务
   hosts:
-    - "*"
+    - details
   http:
-    - match: # 访问服务，比如发起 http 的入口请求（postman），需要定义 header <wtchk>
+    - match: # 访问服务，比如发起 http 的入口请求（postman），需要定义 header <green>
         - headers:
-            bu:
-              exact: wtchk
-      name: hk
+            x-mspider-lane:
+              exact: green
+      name: green-lane
       route:
         - destination:
-            host: cars-api-portal.cars-aswatson-dev.svc.cluster.local
+            host: details
             port:
-              number: 8181
-            subset: cars-api-portal-wtchk
+              number: 9080
+            subset: green
     - match:
         - headers:
-            buid:
-              exact: wicph
-      name: ph
+            x-mspider-lane:
+              exact: yellow
+      name: yellow-lane
       route:
         - destination:
-            host: cars-api-portal.cars-aswatson-dev.svc.cluster.local
+            host: details
             port:
-              number: 8181
-            subset: cars-api-portal-wtcph
+              number: 9080
+            subset: yellow
 ```
 
 ### 6. 后续内部服务定义 VirtualService
@@ -195,36 +195,36 @@ spec:
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
-  name: cars-rti-adapter
-  namespace: cars-aswatson-dev
+  name: details
+  namespace: bookinfo
 spec:
   gateways:
     - mesh # 全局服务
   hosts:
-    - cars-rti-adapter # 内部服务
+    - '*' # 内部服务
   http:
     - match: # 匹配泳道 通用 header 规则
         - headers:
-            bu:
-              exact: wtchk
-      name: cars-adapter
+            x-mspider-lane:
+              exact: green
+      name: green
       route:
         - destination:
-            host: cars-rti-adapter.cars-aswatson-dev.svc.cluster.local
+            host: productpage
             port:
-              number: 20885
-            subset: cars-rti-adapter-wtchk
+              number: 9080
+            subset: green
     - match:
         - headers:
-            bu:
-              exact: wtcph
-      name: cars-adapter-ph
+            x-mspider-lane:
+              exact: yellow
+      name: yellow
       route:
         - destination:
-            host: cars-rti-adapter.cars-aswatson-dev.svc.cluster.local
+            host: productpage
             port:
-              number: 20885
-            subset: cars-rti-adapter-wtcph
+              number: 9080
+            subset: yellow
 ```
 
 ## 常见问题记录
@@ -241,12 +241,8 @@ spec:
 
 ### 没有开启链路追踪，导致服务访问错误
 
-现象是 istio-proxy 有传入 header，但是没有 traceid：
-
-![img](./images/lane04.png)
-
-业务日志看到的请求 header bu 正常应该是：
+现象是 istio-proxy 有传入 header，但是没有 traceid
+业务日志看到的请求 header x-mspider-lane 正常应该是：
 
 ![img](./images/lane05.png)
 
-![img](./images/lane06.png)
