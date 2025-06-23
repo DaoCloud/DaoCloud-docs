@@ -1,12 +1,29 @@
 ---
 MTPE: windsonsea
-date: 2024-02-19
+date: 2025-06-23
 ---
 
 # Insight Release Notes
 
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version.
+
+## 2025-04-30
+
+### v0.36.1
+
+#### Insight Server
+
+* **Optimized** the built-in dashboard for `kubernetes-persistent-volumes`.
+* **Optimized** the default configuration for Fluent Bit.
+* **Optimized** by adjusting the `total_shards_per_node` parameter for index settings.
+* **Optimized** by upgrading the version of `vmcluster`.
+* **Fixed** an issue where the cluster name in alert messages sent via webhook was displayed as the cluster ID.
+
+#### Insight Agent
+
+* **Optimized** support for setting taints and tolerations for `etcd-exporter`.
+* **Optimized** by upgrading `blackbox-exporter` to version v0.25.0.
 
 ## 2025-02-28  
 
