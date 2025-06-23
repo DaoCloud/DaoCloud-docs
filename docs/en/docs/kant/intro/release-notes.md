@@ -1,12 +1,21 @@
 ---
 MTPE: ModetaNiu
-date: 2025-03-18
+date: 2025-06-23
 ---
 
 # Release Notes
 
 This page lists the release notes for Cloud Edge Collaboration, providing an overview
 of the evolution path and feature changes in each version.
+
+## 2025-03-31
+
+### v0.19.1
+
+* **Added** support for installing KubeEdge v1.20.0 on edge units.
+* **Fixed** an issue where the user-agent in audit logs was incorrect.
+* **Fixed** an issue where updating only the ConfigMap via Helm did not trigger a restart of the CloudCore Pod.
+* **Fixed** an issue where the default image URLs for system components were incorrect when creating an edge unit.
 
 ## 2024-12-31
 
@@ -166,7 +175,7 @@ of the evolution path and feature changes in each version.
 - **Added** a feature of batch registration and access of x86_64 and arm64 architecture edge computing machines as edge nodes
 - **Added** features of pausing/resuming the scheduling of edge nodes
 - **Added** a feature of removing edge nodes
-- **Added** a feature to show node information, such as Kubelet version, operating system, container runtime, and resource usage/allocation status.
+- **Added** a feature to show node information, such as kubelet version, operating system, container runtime, and resource usage/allocation status.
 - **Added** a feature to show the list of pods, labels and annotations, event list, and status on edge nodes
 - **Added** a feature of creating edge node groups through specified nodes or tag filtering
 - **Added** a feature of editing and deleting edge node groups
