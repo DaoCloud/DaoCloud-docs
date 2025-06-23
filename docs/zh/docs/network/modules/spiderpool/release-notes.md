@@ -26,6 +26,8 @@
 #### 修复 bug
 
 - **修复** IPAM: 在做完 IP 冲突检测之后，主动发送免费 arp 更新 arp 缓存表，避免 Pod 刚创建后无法访问。
+- **修复** 确保内核发送 GARP 以避免通信故障
+- **修复** 更新 ippool/subnet ValidatingWebhook 所用的 Chart
 
 ## 2025-01-26
 
