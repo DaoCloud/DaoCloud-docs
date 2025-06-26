@@ -26,7 +26,7 @@ evolution path and feature changes of each version.
 !!! note
 
     For existing `SpiderSubnet` and `SpiderIPPool` resources, you need to manually add
-    the annotation `"v1.v1.multus-underlay-cni.io/vlanId"` in order for the `VlanId` to be displayed.
+    the annotation `"v1.multus-underlay-cni.io/vlanId"` in order for the `VlanId` to be displayed.
 
 ## 2024-11-30  
 
