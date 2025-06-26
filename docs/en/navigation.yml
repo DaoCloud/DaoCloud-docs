@@ -227,6 +227,7 @@ nav:
                   - Cluster Versions: kpanda/user-guide/clusters/cluster-version.md
                   - Integrate Rancher Cluster: kpanda/user-guide/clusters/integrate-rancher-cluster.md
                   - Deploy 2nd Scheduler in a Cluster: kpanda/user-guide/clusters/cluster-scheduler-plugin.md
+                  - Renew Cluster Cert: kpanda/user-guide/clusters/k8s-cert.md
               - Namespaces:
                   - Create Namespace: kpanda/user-guide/namespaces/createns.md
                   - Exclusive Node to Namespace: kpanda/user-guide/namespaces/exclusive.md

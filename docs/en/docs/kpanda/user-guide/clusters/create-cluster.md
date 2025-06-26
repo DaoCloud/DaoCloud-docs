@@ -89,6 +89,17 @@ Certain prerequisites must be met before creating a cluster:
       In an offline environment, the default address options are for reference only.
       Please fill them in according to your actual situation.
 
+!!! tip
+
+    By default, the cluster certificates are valid for one year and are automatically renewed every month. This renewal process may cause restarts.
+    To disable automatic certificate renewal or configure the certificate validity period, you can modify the advanced parameters:
+
+    ```yaml
+    auto_renew_certificates: false  # Disable automatic certificate renewal
+    kube_cert_validity_period: 87600h  # Set the validity period for regular (non-CA) certificates to 10 years
+    kube_ca_cert_validity_period: 175200h  # Set the validity period for CA certificates
+    ```
+
 !!! success
 
     - After correctly filling in the above information, the page will prompt that the cluster is being created.
