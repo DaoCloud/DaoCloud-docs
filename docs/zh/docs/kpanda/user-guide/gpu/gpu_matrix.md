@@ -42,7 +42,7 @@ hide:
 | | | KylinV10SP2 操作系统 | | | | 
 | | | KylinV10SP3 操作系统 | | | | 
 | | | openEuler 操作系统 | | | |
-| | Ascend 910B3； | | | | | 
+| | Ascend 910B3 | | | | | 
 
 ## 天数智芯（Iluvatar）GPU
 
