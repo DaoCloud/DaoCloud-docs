@@ -86,7 +86,7 @@ if [ -z "$PROJECT_ZH_RELEASE_NOTES_PATH" ]; then
 fi
 
 # Create release-notes directory if it doesn't exist
-RELEASE_NOTES_DIR="${PROJECT_EN_RELEASE_NOTES_PATH}"
+RELEASE_NOTES_DIR="${PROJECT_EN_RELEASE_NOTES_PATH}/release-notes"
 mkdir -p "$RELEASE_NOTES_DIR"
 
 # Function to fetch release notes for a specific tag
