@@ -2,6 +2,14 @@
 
 本页列出全局管理各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2025-05-31
+
+### v0.37.0
+
+- **新增** 菜单根据权限显示功能的 gproductresourcepermissionses CR 支持定制化
+- **优化** SDK 增加 RegisterDeltaGlobalAuthzPermissionHandler 方法
+- **修复** 高级定制中清空 CSS 不成功的问题
+
 ## 2025-04-30
 
 ### v0.36.0

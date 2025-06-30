@@ -42,6 +42,7 @@ hide:
 | | | KylinV10SP2 操作系统 | | | | 
 | | | KylinV10SP3 操作系统 | | | | 
 | | | openEuler 操作系统 | | | |
+| | Ascend 910B3 | | | | | 
 
 ## 天数智芯（Iluvatar）GPU
 
@@ -61,13 +62,13 @@ hide:
 ## 燧原（Enflame）GPU
 | GPU 厂商及类型 | 支持的 GPU 型号 | 适配的操作系统（在线） | 推荐内核 | 推荐的操作系统及内核 | 安装文档 |  
 | :--: | :--: | :--: | :--: | :--: | :--: |  
-| 燧原Enflame（整卡/vGPU） | 燧原 S60 | Ubuntu 22.04 |  |  |  |
+| 燧原Enflame（整卡） | 燧原 S60 | Ubuntu 22.04 |  |  |  |
 |  | 云燧 T 系列 |  |  |  |  |
 |  | 云燧 I 系列 |  |  |  |  |
 
 ## 壁仞（Birentech）GPU
 | GPU 厂商及类型 | 支持的 GPU 型号 | 适配的操作系统（在线） | 推荐内核 | 推荐的操作系统及内核 | 安装文档 |  
 | :--: | :--: | :--: | :--: | :--: | :--: |  
-| 壁仞Birentech（整卡/vGPU） | Biren 110E | Ubuntu 22.04 |  |  |  |
+| 壁仞Birentech（整卡） | Biren 110E | Ubuntu 22.04 |  |  |  |
 |  | Biren 106M |  |  |  |  |
 |  | Biren 106B、106C |  |  |  |  |
