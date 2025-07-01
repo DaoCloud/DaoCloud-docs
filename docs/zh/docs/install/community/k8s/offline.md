@@ -27,10 +27,10 @@
 
 1. 先找一台能连通外网的机器，运行以下命令下载社区版离线包并解压（也可以从网页[下载中心](../../../download/index.md)下载离线包并解压）：
 
-    假定版本 VERSION=v0.29.0
+    假定版本 VERSION=v0.30.0
 
     ```bash
-    export VERSION=v0.29.0
+    export VERSION=v0.30.0
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```
