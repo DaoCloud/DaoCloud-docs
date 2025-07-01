@@ -32,7 +32,7 @@ hide:
 
     ![创建集群按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create001.png)
 
-2. 参考下列要求填写集群基本信息，并点击 __下一步__ 。
+1. 参考下列要求填写集群基本信息，并点击 __下一步__ 。
 
     - 集群名称：名称只包含小写字母、数字和连字符（"-"），必须以小写字母或者数字开头和结尾，最长 63 个字符。
     - 被纳管：选择由哪个集群来管理此集群，例如在集群生命周期中创建、升级、节点扩缩容、删除集群等。
@@ -41,26 +41,22 @@ hide:
 
     ![填写基本信息](../images/createcluster214.png)
 
-3. 填写节点配置信息，并点击 __下一步__ 。
+1. 填写节点配置信息，并点击 __节点检查__ 。如果检查通过则继续下一步操作；如果检查未通过，则更新 __节点信息__ 并再次执行检查。
 
-    - 高可用：开启后需要提供至少 3 个控制器节点。关闭后，只提供 1 个控制器节点即可。
-
-        > 生产环境中建议使用高可用模式。
-
+    - 控制节点规格：配置集群控制节点数量，推荐使用3个及以上节点作为控制节点，以保证集群的高可用.
     - 认证方式：选择通过用户名/密码还是公私钥访问节点。
 
         > 如果使用公私钥方式访问节点，需要预先配置节点的 SSH 密钥。参阅[使用 SSH 密钥认证节点](../nodes/node-authentication.md)。
 
     - 使用统一的密码：开启后集群中所有节点的访问密码都相同，需要在下方输入访问所有节点的统一密码。如果关闭，则可以为每个节点设置单独的用户名和密码。
-    - 节点信息：填写节点名称和 IP 地址。
+    - 节点信息：填写节点名称、IP 地址、用户名和密码。
+    - 批量上传：下载提供的 CSV 模板（包含字段：主机名、IP地址、用户名、密码、节点角色），填写需要接入的节点信息.上传后，新控制节点信息将自动覆盖到 IP 地址为空的控制节点信息，新工作节点信息将自动添加到列表末尾。
     - 自定义参数：设置变量控制 Ansible 与远程主机交互。可设置变量参考[连接到主机：行为清单参数](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters)
     - NTP 时间同步：开启后会自动同步各个节点上的时间，需要提供 NTP 服务器地址。
 
-    ![节点配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/createnew01.png)
+    ![节点配置](../images/createnew01.png)
 
-4. 在页面底部点击节点检查。如果检查通过则继续下一步操作。如果检查未通过，则更新 __节点信息__ 并再次执行检查。
-
-5. 填写网络配置信息，并点击 __下一步__ 。
+1. 填写网络配置信息，并点击 __下一步__ 。
 
     - 网络插件：负责为集群内的 Pod 提供网络服务，**创建集群后不可更改网络插件**。支持 [cilium](../../../network/modules/cilium/index.md) 和 [calico](../../../network/modules/calico/index.md)。选择 __none__ 表示暂不安装网络插件。
 
@@ -69,15 +65,13 @@ hide:
     - 容器网段：集群下容器使用的网段，决定集群下容器的数量上限。创建后不可修改。
     - 服务网段：同一集群下容器互相访问时使用的 Service 资源的网段，决定 Service 资源的上限。创建后不可修改。
 
-    ![网络配置1](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew03.png)
-        
-    ![网络配置2](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew04.png)
+    ![网络配置](../images/createnew02.png)
 
-6. 填写插件配置信息，并点击 __下一步__ 。
+1. 填写插件配置信息，并点击 __下一步__ 。
 
-    ![插件配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew05.png)
+    ![插件配置](../images/createnew03.png)
 
-7. 填写高级配置信息，并点击 __确定__ 。
+1. 填写高级配置信息，并点击 __确定__ 。
 
     - __kubelet_max_pods__ ：设置每个节点的最大 Pod 数量，默认为 110 个。
     - __hostname_overide__ ：重置主机名，建议使用默认值，采用系统默认生成的名称作为主机名称。
