@@ -21,14 +21,14 @@
 /docs/en/themes/ @samzong @windsonsea
 
 # amamba
-/docs/zh/docs/amamba/ @samzong @zengchongliner @windsonsea
-/docs/zh/docs/download/modules/amamba.md @samzong @zengchongliner @windsonsea
-/docs/zh/docs/videos/amamba.md @samzong @zengchongliner @windsonsea
+/docs/zh/docs/amamba/ @samzong @windsonsea
+/docs/zh/docs/download/modules/amamba.md @samzong @windsonsea
+/docs/zh/docs/videos/amamba.md @samzong @windsonsea
 
 # baize
-/docs/zh/docs/baize/ @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
-/docs/zh/docs/download/modules/baize.md @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
-/docs/zh/docs/videos/baize.md @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
+/docs/zh/docs/baize/ @samzong @git-jxj @windsonsea @kebe7jun
+/docs/zh/docs/download/modules/baize.md @samzong @git-jxj @windsonsea @kebe7jun
+/docs/zh/docs/videos/baize.md @samzong @git-jxj @windsonsea @kebe7jun
 
 # ghippo
 /docs/zh/docs/ghippo/ @yitingdc @lemontrees123 @bzsuni @windsonsea
@@ -36,14 +36,14 @@
 /docs/zh/docs/videos/ghippo.md @yitingdc @lemontrees123 @bzsuni @windsonsea
 
 # insight
-/docs/zh/docs/insight/ @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
-/docs/zh/docs/download/modules/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
-/docs/zh/docs/videos/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+/docs/zh/docs/insight/ @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+/docs/zh/docs/download/modules/insight.md @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+/docs/zh/docs/videos/insight.md @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
 
 # kairship
-/docs/zh/docs/kairship/  @yt-huang @samzong @windsonsea
-/docs/zh/docs/download/modules/kairship.md  @yt-huang @samzong @windsonsea
-/docs/zh/docs/videos/kairship.md  @yt-huang @samzong @windsonsea
+/docs/zh/docs/kairship/ @yt-huang @samzong @windsonsea
+/docs/zh/docs/download/modules/kairship.md @yt-huang @samzong @windsonsea
+/docs/zh/docs/videos/kairship.md @yt-huang @samzong @windsonsea
 
 # kangaroo
 /docs/zh/docs/kangaroo/ @lemontrees123 @yt-huang @yitingdc @windsonsea
@@ -56,14 +56,14 @@
 /docs/zh/docs/videos/kant.md @zhiyingfang2022 @git-jxj @windsonsea
 
 # install
-/docs/zh/docs/install/ @zhiyingfang2022 @FloatXD @Rei1010 @windsonsea
-/docs/zh/docs/videos/install.md @zhiyingfang2022 @FloatXD @Rei1010 @windsonsea
+/docs/zh/docs/install/ @zhiyingfang2022 @FloatXD @windsonsea
+/docs/zh/docs/videos/install.md @zhiyingfang2022 @FloatXD @windsonsea
 
 # kpanda
-/docs/zh/docs/kpanda/ @lemontrees123 @shijinye @Rei1010 @yt-huang @windsonsea
-/docs/zh/docs/download/modules/kpanda.md @lemontrees123 @shijinye @Rei1010 @yt-huang @windsonsea
-/docs/zh/docs/download/modules/addon/ @lemontrees123 @shijinye @Rei1010 @yt-huang @windsonsea
-/docs/zh/docs/videos/kpanda.md @lemontrees123 @shijinye @Rei1010 @yt-huang @windsonsea
+/docs/zh/docs/kpanda/ @lemontrees123 @shijinye @yt-huang @windsonsea
+/docs/zh/docs/download/modules/kpanda.md @lemontrees123 @shijinye @yt-huang @windsonsea
+/docs/zh/docs/download/modules/addon/ @lemontrees123 @shijinye @yt-huang @windsonsea
+/docs/zh/docs/videos/kpanda.md @lemontrees123 @shijinye @yt-huang @windsonsea
 
 # mspider
 /docs/zh/docs/mspider/ @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
@@ -76,19 +76,19 @@
 /docs/zh/docs/videos/skoala.md @Adityayxt @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
 
 # spidernet
-/docs/zh/docs/network/ @ty-dc @windsonsea
-/docs/zh/docs/download/modules/spidernet.md @ty-dc @windsonsea
-/docs/zh/docs/videos/spidernet.md @ty-dc @windsonsea
+/docs/zh/docs/network/ @windsonsea
+/docs/zh/docs/download/modules/spidernet.md @windsonsea
+/docs/zh/docs/videos/spidernet.md @windsonsea
 
 # virtnest
-/docs/zh/docs/virtnest/  @bzsuni @windsonsea @yitingdc
-/docs/zh/docs/download/modules/virtnest.md  @bzsuni @windsonsea @yitingdc
-/docs/zh/docs/videos/virtnest.md  @bzsuni @windsonsea @yitingdc
+/docs/zh/docs/virtnest/ @bzsuni @windsonsea @yitingdc
+/docs/zh/docs/download/modules/virtnest.md @bzsuni @windsonsea @yitingdc
+/docs/zh/docs/videos/virtnest.md @bzsuni @windsonsea @yitingdc
 
 # middleware
-/docs/zh/docs/middleware/ @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
-/docs/zh/docs/download/modules/middleware/ @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
-/docs/zh/docs/videos/middleware.md @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
+/docs/zh/docs/middleware/ @samzong @windsonsea @drivebyer
+/docs/zh/docs/download/modules/middleware/ @samzong @windsonsea @drivebyer
+/docs/zh/docs/videos/middleware.md @samzong @windsonsea @drivebyer
 
 # hwameistor
 /docs/zh/docs/storage/ @FloatXD @windsonsea
