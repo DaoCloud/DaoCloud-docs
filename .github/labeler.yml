@@ -22,6 +22,10 @@ ghippo:
   - "docs/en/docs/ghippo/**/*"
   - "docs/zh/docs/ghippo/**/*"
 
+hydra:
+  - "docs/en/docs/hydra/**/*"
+  - "docs/zh/docs/hydra/**/*"
+
 insight:
   - "docs/en/docs/insight/**/*"
   - "docs/zh/docs/insight/**/*"
