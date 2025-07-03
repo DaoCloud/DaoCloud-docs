@@ -9,7 +9,6 @@
     - 接入配置与实际的边缘节点机器是一对一的关系，一个接入配置的安装文件和接入命令只能在单台实际的边缘节点上使用。
     - 本文接入指南仅适用于云边协同模块 v0.20 及以上版本，如果低于 v0.20 版本，请参考历史版本[边缘节点接入指南](./access-guide-v0.19.md) 
 
-
 本文主要介绍单节点接入流程，如果您想快速批量接入节点，请参考 [批量接入边缘节点](./batch-access-guide.md)。
 
 ## 前提条件
@@ -33,61 +32,93 @@
 
 1. 通过在线或离线接入方式，执行操作，接入节点。
 
-    **在线接入**
+    === "在线接入"
 
-    如果您的环境可以访问外网，建议选择在线接入方式。
+        如果您的环境可以访问外网，建议选择在线接入方式。
 
-    1. 在接入步骤抽屉弹框界面，点击 __在线接入__ 页签，显示在线接入安装步骤。
+        1. 在接入步骤抽屉弹框界面，点击 __在线接入__ 页签，显示在线接入安装步骤。
 
-        ![在线接入](../../images/access-guide-08.png)    
+            ![在线接入](../../images/access-guide-08.png)    
 
-    1. 使用脚本准备 keadm 工具，执行界面中展示的命令。
+        1. 使用脚本准备 keadm 工具，执行界面中展示的命令。
 
-        !!! note
+            !!! note
 
-            建议先创建一个空的工作目录，在该目录下执行脚本。
+                建议先创建一个空的工作目录，在该目录下执行脚本。
 
-        ```shell
-        curl -sfL https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/keadm_init.sh | sudo MULTI_ARCH=false WITH_CONTAINERD=false bash -s --
-        ```
+            ```shell
+            curl -sfL https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/keadm_init.sh | sudo MULTI_ARCH=false WITH_CONTAINERD=false bash -s --
+            ```
 
-    1. 执行界面中展示的接入命令，接入节点。
+        1. 执行界面中展示的接入命令，接入节点。
 
-        !!! note
+            !!! note
 
-            请注意接入命令中的 token 有效期，如果 token 失效，请刷新页面重新获取。
+                请注意接入命令中的 token 有效期，如果 token 失效，请刷新页面重新获取。
 
-        命令示例：    
+            命令示例：
 
-        ```shell
-        keadm join --cgroupdriver=cgroupfs --cloudcore-ipport=10.64.24.29:30000 --hub-protocol=websocket --certport=30002 --image-repository=docker.m.daocloud.io/kubeedge --labels=batch-node.kant.io/protocol-type=websocket,kant.io/batch=test --kubeedge-version=v1.20.0 --remote-runtime-endpoint=unix:///run/containerd/containerd.sock  --set modules.edgeStream.server=10.64.24.29:30004,modules.edgeStream.enable=true,modules.metaManager.enable=true,modules.metaManager.metaServer.enable=true,modules.serviceBus.enable=true,modules.edgeHub.websocket.server=10.64.24.29:30000 --token=f06150c1f9469047fd459187f6c1eb539b2778373ff874e55786c1c721ff8a29.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTEwNzY3ODd9.ATFgzWCHJhGGTYDwCk7E6SrbXh0STv40JuZwCUgX2H0
-        ```
+            ```shell
+            keadm join \
+              --cgroupdriver=cgroupfs \
+              --cloudcore-ipport=10.64.24.29:30000 \
+              --hub-protocol=websocket \
+              --certport=30002 \
+              --image-repository=docker.m.daocloud.io/kubeedge \
+              --labels=batch-node.kant.io/protocol-type=websocket,kant.io/batch=test \
+              --kubeedge-version=v1.20.0 \
+              --remote-runtime-endpoint=unix:///run/containerd/containerd.sock \
+              --set \
+                modules.edgeStream.server=10.64.24.29:30004,\
+                modules.edgeStream.enable=true,\
+                modules.metaManager.enable=true,\
+                modules.metaManager.metaServer.enable=true,\
+                modules.serviceBus.enable=true,\
+                modules.edgeHub.websocket.server=10.64.24.29:30000 \
+              --token=f06150c1f9469047fd459187f6c1eb539b2778373ff874e55786c1c721ff8a29.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTEwNzY3ODd9.ATFgzWCHJhGGTYDwCk7E6SrbXh0STv40JuZwCUgX2H0
+            ```
 
-    **离线接入**
+    === "离线接入"
 
-    如果您的环境不可以访问外网，请选择离线接入方式。
+        如果您的环境不可以访问外网，请选择离线接入方式。
 
-    1. 在接入步骤抽屉弹框界面，点击 __离线接入__ 页签，显示离线线接入安装步骤。
+        1. 在接入步骤抽屉弹框界面，点击 __离线接入__ 页签，显示离线线接入安装步骤。
 
-        ![在线接入](../../images/access-guide-09.png)    
+            ![在线接入](../../images/access-guide-09.png)    
 
-    1. 点击 **下载文件** 按钮，跳转到下载中心，在下载列表中选择对应架构的边端安装包和初始化脚本。
+        1. 点击 **下载文件** 按钮，跳转到下载中心，在下载列表中选择对应架构的边端安装包和初始化脚本。
 
-    1. 将安装包文件和脚本文件拷贝到要接入的边缘节点的同一个目录下，并在该目录下执行初始化脚本。
+        1. 将安装包文件和脚本文件拷贝到要接入的边缘节点的同一个目录下，并在该目录下执行初始化脚本。
 
-        !!! note
+            !!! note
 
-            建议创建一个空的工作目录，来存放相关文件。
+                建议创建一个空的工作目录，来存放相关文件。
 
-        ```shell
-        sudo MULTI_ARCH=false WITH_CONTAINERD=false bash -c keadm_init.sh
-        ```
+            ```shell
+            sudo MULTI_ARCH=false WITH_CONTAINERD=false bash -c keadm_init.sh
+            ```
 
-    1. 接入节点，执行如下命令。
+        1. 接入节点，执行如下命令。
 
-        ```shell
-        keadm join --cgroupdriver=cgroupfs --cloudcore-ipport=10.64.24.29:30000 --hub-protocol=websocket --certport=30002 --image-repository=docker.m.daocloud.io/kubeedge --labels=batch-node.kant.io/protocol-type=websocket,kant.io/batch=test --kubeedge-version=v1.20.0 --remote-runtime-endpoint=unix:///run/containerd/containerd.sock  --set modules.edgeStream.server=10.64.24.29:30004,modules.edgeStream.enable=true,modules.metaManager.enable=true,modules.metaManager.metaServer.enable=true,modules.serviceBus.enable=true,modules.edgeHub.websocket.server=10.64.24.29:30000 --token=f06150c1f9469047fd459187f6c1eb539b2778373ff874e55786c1c721ff8a29.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTEwNzY3ODd9.ATFgzWCHJhGGTYDwCk7E6SrbXh0STv40JuZwCUgX2H0
-        ```
+            ```shell
+            keadm join \
+              --cgroupdriver=cgroupfs \
+              --cloudcore-ipport=10.64.24.29:30000 \
+              --hub-protocol=websocket \
+              --certport=30002 \
+              --image-repository=docker.m.daocloud.io/kubeedge \
+              --labels=batch-node.kant.io/protocol-type=websocket,kant.io/batch=test \
+              --kubeedge-version=v1.20.0 \
+              --remote-runtime-endpoint=unix:///run/containerd/containerd.sock \
+              --set \
+                modules.edgeStream.server=10.64.24.29:30004,\
+                modules.edgeStream.enable=true,\
+                modules.metaManager.enable=true,\
+                modules.metaManager.metaServer.enable=true,\
+                modules.serviceBus.enable=true,\
+                modules.edgeHub.websocket.server=10.64.24.29:30000 \
+              --token=f06150c1f9469047fd459187f6c1eb539b2778373ff874e55786c1c721ff8a29.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTEwNzY3ODd9.ATFgzWCHJhGGTYDwCk7E6SrbXh0STv40JuZwCUgX2H0
+            ```
 
 1. 验证边缘节点是否纳管成功。
 
@@ -99,4 +130,4 @@
 
     1. 查看边缘节点的状态，当前状态为 __健康__ 表示纳管成功。
 
-        ![边缘节点纳管成果](../../images/access-guide-05.png)
+    ![边缘节点纳管成功](../../images/access-guide-05.png)

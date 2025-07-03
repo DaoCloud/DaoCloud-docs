@@ -27,7 +27,8 @@
 
 1. 根据节点环境配置，选择对应的接入配置。
 
-1. 点击 **下载文件** 按钮，跳转到下载中心，在下载列表中选择对应版本和架构的边端安装包：`kantadm_{版本}_{架构}.tar.gz`。建议选择最新版本。
+1. 点击 **下载文件** 按钮，跳转到[下载中心](https://docs.daocloud.io/download/modules/kant)，
+   在下载列表中选择对应版本和架构的边端安装包：`kantadm_{版本}_{架构}.tar.gz`。建议选择最新版本。
 
     ![下载边端安装包](../../images/access-guide-04.png)
 
@@ -43,39 +44,65 @@
 
         将解压后的 kantadm 二进制文件放到 `/usr/local/bin` 目录下。
 
-1. 通过 token 或证书方式，执行命令，接入节点。
+1. 通过 token 或证书方式，接入节点。
 
-    **token 安装**
+    === "token 安装"
 
-    1. 接入指南界面，第三步点击 __token 安装__ 页签，显示 token 安装步骤。
+        1. 接入指南界面，第三步点击 __token 安装__ 页签，显示 token 安装步骤。
 
-        !!! note
+            !!! note
 
-            安装命令的 token 24小时内有效，如需长期有效的安装方式，请使用证书安装。
+                安装命令的 token 24小时内有效，如需长期有效的安装方式，请使用证书安装。
 
-    1. 接入节点，执行如下命令。
+        1. 接入节点，执行如下命令。
 
-        ```shell
-        kantadm join --cloudcore-host=10.31.226.14 --websocket-port=30000 --node-prefix=edge --token=b2d6bb5d9312c39ffac08ecfd5030bed006b8b67d0799d632d381f19fca9e765.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NTk3NDV9.0sdaWbYSTURmAYmQwDn_zF7P9TwcRTSMhwPw6l87U7E --cgroup-driver=cgroupfs --remote-runtime-endpoint= --version=v1.12.2 --batch-name=edge --edge-registry=docker.m.daocloud.io/kubeedge --quic-port=30001 --http-port=30002 --stream-port=30003  --tunnel-port=30004 --labels=test=1,test1=1
-        ```
+            ```shell
+            kantadm join \
+              --cloudcore-host=10.31.226.14 \
+              --websocket-port=30000 \
+              --quic-port=30001 \
+              --http-port=30002 \
+              --stream-port=30003 \
+              --tunnel-port=30004 \
+              --node-prefix=edge \
+              --token=b2d6bb5d9312c39ffac08ecfd5030bed006b8b67d0799d632d381f19fca9e765.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NTk3NDV9.0sdaWbYSTURmAYmQwDn_zF7P9TwcRTSMhwPw6l87U7E \
+              --cgroup-driver=cgroupfs \
+              --remote-runtime-endpoint= \
+              --version=v1.12.2 \
+              --batch-name=edge \
+              --edge-registry=docker.m.daocloud.io/kubeedge \
+              --labels=test=1,test1=1
+            ```
 
-    **证书安装**
+    === "证书安装"
 
-    1. 接入节点界面，第三步点击 __证书安装__ 页签，显示证书安装步骤。
+        1. 接入节点界面，第三步点击 __证书安装__ 页签，显示证书安装步骤。
 
-    1. 点击 __下载证书__ 按钮，将证书下载到本地。
+        1. 点击 __下载证书__ 按钮，将证书下载到本地。
 
-    1. 保存证书，执行如下命令。
+        1. 保存证书，执行如下命令。
 
-        ```shell
-        mkdir -p /etc/kant && mv ./cert.tar /etc/kant/cert.tar
-        ```
+            ```shell
+            mkdir -p /etc/kant && mv ./cert.tar /etc/kant/cert.tar
+            ```
 
-    1. 接入节点，执行如下命令。
+        1. 接入节点，执行如下命令。
 
-        ```shell
-        kantadm join --cloudcore-host=10.2.129.13 --websocket-port=30000 --node-prefix=sh --remote-runtime-endpoint=unix:///run/containerd/containerd.sock --cgroup-driver=cgroupfs --version=v1.12.6 --batch-name=guide-test --edge-registry=docker.m.daocloud.io/kubeedge --quic-port=30001 --http-port=30002 --stream-port=30003 --tunnel-port=30004
-        ```
+            ```shell
+            kantadm join \
+              --cloudcore-host=10.2.129.13 \
+              --websocket-port=30000 \
+              --quic-port=30001 \
+              --http-port=30002 \
+              --stream-port=30003 \
+              --tunnel-port=30004 \
+              --node-prefix=sh \
+              --remote-runtime-endpoint=unix:///run/containerd/containerd.sock \
+              --cgroup-driver=cgroupfs \
+              --version=v1.12.6 \
+              --batch-name=guide-test \
+              --edge-registry=docker.m.daocloud.io/kubeedge
+            ```
 
 1. 验证边缘节点是否纳管成功。
 
@@ -87,4 +114,4 @@
 
     1. 查看边缘节点的状态，当前状态为 __健康__ 表示纳管成功。
 
-        ![边缘节点纳管成果](../../images/access-guide-05.png)
+    ![边缘节点纳管成功](../../images/access-guide-05.png)
