@@ -15,6 +15,24 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2025-05-31
+
+### v0.30.0
+
+- **Added** support for offline installation on Ubuntu 24.04 (Noble).
+- **Added** offline support for Cilium.
+- **Added** support for using different installation modes to generate corresponding `manifest.yaml` files.
+- **Optimized** the naming convention for component installation function prefixes and
+  the directory structure for component charts within offline packages.
+- **Optimized** by removing the build process for macOS binary packages.
+- **Optimized** by updating the versions of prerequisite tools.
+- **Optimized** the read/write logic for Helm revision record files.
+- **Optimized** the installation process for Ubuntu-based clusters by stopping and
+  disabling the `unattended-upgrades` service beforehand.
+- **Fixed** an issue where `cert-manager` CRDs were not installed together during installation.
+- **Fixed** the log output for failed upgrade attempts to make error messages clearer.
+- **Fixed** an issue where upgrading Kant failed to replace the `imageRegistry` field in the `values.yaml` file.
+
 ## 2025-04-30
 
 ### v0.29.0
@@ -175,7 +193,7 @@ Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo u
 
 #### Known Issues
 
-- When deploying the community version of a kind cluster with v1.29.4 on an ARM-based kylinv10 operating system, 
+- When deploying the community version of a kind cluster with v1.29.4 on an ARM-based kylinv10 operating system,
   the component `mcamel-common-mysql-cluster` might fail to install.
 
 ## 2024-05-30

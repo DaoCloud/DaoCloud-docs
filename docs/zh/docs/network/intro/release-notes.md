@@ -19,8 +19,7 @@
 
 !!! note
 
-    已有 SpiderSubnet 和 SpiderIPPool 资源需要手动添加注解："v1.v1.multus-underlay-cni.io/vlanId" 后，才能显示。
-
+    已有 SpiderSubnet 和 SpiderIPPool 资源需要手动添加注解："v1.multus-underlay-cni.io/vlanId" 后，才能显示。
 
 ## 2024-11-30
 
