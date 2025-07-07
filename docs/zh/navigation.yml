@@ -1234,6 +1234,19 @@ nav:
                       - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
                   - MinIO 灾备方案: middleware/minio/best-pratice/minio-replication.md
       - 云原生 AI:
+          - 大模型服务平台:
+              - 模型广场: hydra/index.md
+              - 模型体验: hydra/exp.md
+              - 模型部署: hydra/deploy.md
+              - 模型服务: hydra/service.md
+              - 模型调用: hydra/api-call.md
+              - API Key 管理: hydra/apikey.md
+              - 使用示例场景:
+                  - 示例场景介绍: hydra/user-guides/index.md
+                  - 在 VSCode 和 Cline 中使用: hydra/user-guides/cline-in-vscode.md
+                  - 在 Cherry Studio 中使用: hydra/user-guides/cherry-studio.md
+                  - 在 Bob Translate 中使用: hydra/user-guides/bob-translate.md
+                  - 在 LobeChat 中使用: hydra/user-guides/lobe-chat.md
           - AI Lab:
               - 介绍:
                   - 什么是 AI Lab: baize/intro/index.md
