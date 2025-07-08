@@ -20,16 +20,16 @@
 
 !!! note
 
-NVIDIA 的 vGPU 能力支持节点级别的 GPU 模式切换（整卡/vGPU/mig 模式），满足同一集群中不同工作负载对 GPU 模式的不同需求。
+    NVIDIA 的 vGPU 能力支持节点级别的 GPU 模式切换（整卡/vGPU/mig 模式），满足同一集群中不同工作负载对 GPU 模式的不同需求。
 
 1. 在**集群列表**页选择目标集群，点击集群名称进入集群详情。从左侧导航栏点击 __节点管理__ ，找到目标节点，点击右侧的**┇**操作图标并在下拉列表中点击**GPU 模式**。
 
-![GPU模式1](../images/gpumodel1.png)
+    ![GPU模式1](../images/gpumodel1.png)
 
 2. 切换模式并点击 __确定__ 后，节点状态会变为 __GPU 模式切换中__ ，等待节点列表中的 GPU 模式标签正确显示后则表示切换完成（也就是 vGPU 的 hami-nvidia-vgpu-device-plugin pod 启动完毕）。
 
-![GPU模式2](../images/vgpuaddon2.png)
+    ![GPU模式2](../images/vgpuaddon2.png)
 
-![GPU模式3](../images/vgpuaddon3.png)
+    ![GPU模式3](../images/vgpuaddon3.png)
   
 3. 节点 GPU 模式切换成功后，[部署应用可使用 vGPU 资源](vgpu_user.md)。注意：切换过程稍有延迟，请在节点标签正确显示后再部署应用。
