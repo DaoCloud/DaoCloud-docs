@@ -1239,6 +1239,7 @@ nav:
               - 模型体验: hydra/exp.md
               - 模型部署: hydra/deploy.md
               - 模型服务: hydra/service.md
+              - 模型文件: hydra/dataset.md
               - 模型调用: hydra/api-call.md
               - API Key 管理: hydra/apikey.md
               - 使用示例场景:
