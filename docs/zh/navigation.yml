@@ -523,7 +523,7 @@ nav:
                   - CoreDNS 性能测试: network/performance/coredns-performance.md
               - 集成 Spiderpool:
                   - 介绍: network/modules/spiderpool/index.md
-                  - Release Notes: network/modules/spiderpool/release-notes.md
+                  - Release Notes: network/modules/spiderpool/release-notes/
                   - 安装:
                       - Spiderpool 安装: network/modules/spiderpool/install/install.md
                       - RDMA 环境准备及安装: network/modules/spiderpool/install/rdmapara.md
@@ -986,6 +986,7 @@ nav:
                   - 目标规则: mspider/user-guide/traffic-governance/destination-rules.md
                   - 网关规则: mspider/user-guide/traffic-governance/gateway-rules.md
                   - 流量故障转移: mspider/user-guide/traffic-governance/traffic-failover.md
+                  - 流量泳道: mspider/user-guide/traffic-lane/index.md
               - 安全治理:
                   - 安全治理介绍: mspider/user-guide/security/README.md
                   - 对等身份认证: mspider/user-guide/security/peer.md
@@ -1233,6 +1234,19 @@ nav:
                       - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
                   - MinIO 灾备方案: middleware/minio/best-pratice/minio-replication.md
       - 云原生 AI:
+          - 大模型服务平台:
+              - 模型广场: hydra/index.md
+              - 模型体验: hydra/exp.md
+              - 模型部署: hydra/deploy.md
+              - 模型服务: hydra/service.md
+              - 模型调用: hydra/api-call.md
+              - API Key 管理: hydra/apikey.md
+              - 使用示例场景:
+                  - 示例场景介绍: hydra/user-guides/index.md
+                  - 在 VSCode 和 Cline 中使用: hydra/user-guides/cline-in-vscode.md
+                  - 在 Cherry Studio 中使用: hydra/user-guides/cherry-studio.md
+                  - 在 Bob Translate 中使用: hydra/user-guides/bob-translate.md
+                  - 在 LobeChat 中使用: hydra/user-guides/lobe-chat.md
           - AI Lab:
               - 介绍:
                   - 什么是 AI Lab: baize/intro/index.md
@@ -1314,7 +1328,7 @@ nav:
                   - 边缘节点安装容器引擎: kant/user-guide/node/container-engine-install.md
                   - 创建接入配置: kant/user-guide/node/create-access-guide.md
                   - 接入边缘节点: kant/user-guide/node/access-guide.md
-                  # - 批量接入边缘节点: kant/user-guide/node/batch-access-guide.md
+                  - 批量接入边缘节点: kant/user-guide/node/batch-access-guide.md
                   - 运维边缘节点: kant/user-guide/node/manage-node.md
                   - 批量升级边缘节点: kant/user-guide/node/batch-upgrade.md
               - 边缘节点组:

@@ -19,7 +19,7 @@ addonPackage:
 然后执行导入命令：
 
 ```shell
-~/dce5-installer cluster-create -c /home/dce5/sample/clusterConfig.yaml -m /home/dce5/sample/manifest.yaml -d -j13
+~/dce5-installer cluster-create -c /home/offline/sample/clusterConfig.yaml -m /home/offline/sample/manifest.yaml -d -j13
 ```
 
 ### 多架构融合
@@ -30,7 +30,7 @@ addonPackage:
 以 addon-offline-full-package-v0.9.0-arm64.tar.gz 为例，执行导入命令：
 
 ```shell
-~/dce5-installer import-addon -c /home/dce5/sample/clusterConfig.yaml --addon-path=/home/addon-offline-full-package-v0.9.0-arm64.tar.gz
+~/dce5-installer import-addon -c /home/offline/sample/clusterConfig.yaml --addon-path=/home/addon-offline-full-package-v0.9.0-arm64.tar.gz
 ```
 
 ## 升级
@@ -49,7 +49,7 @@ addonPackage:
 然后执行导入命令：
 
 ```shell
-~/dce5-installer cluster-create -c /home/dce5/sample/clusterConfig.yaml -m /home/dce5/sample/manifest.yaml -d -j13
+~/dce5-installer cluster-create -c /home/offline/sample/clusterConfig.yaml -m /home/offline/sample/manifest.yaml -d -j13
 ```
 
 ### 多架构融合
@@ -59,7 +59,7 @@ addonPackage:
 以 addon-offline-full-package-v0.11.0-arm64.tar.gz 为例，执行导入命令：
 
 ```shell
-~/dce5-installer import-addon -c /home/dce5/sample/clusterConfig.yaml --addon-path=/home/addon-offline-full-package-v0.11.0-arm64.tar.gz
+~/dce5-installer import-addon -c /home/offline/sample/clusterConfig.yaml --addon-path=/home/addon-offline-full-package-v0.11.0-arm64.tar.gz
 ```
 
 ## 注意事项

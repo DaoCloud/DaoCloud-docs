@@ -21,9 +21,9 @@
 - **优化** 更新前置依赖工具版本
 - **优化** helm revision 记录文件的存取逻辑
 - **优化** 安装基于 Ubuntu 的集群时先停止并禁用 unattended-upgrades 服务
-- **修复** 安装 cert-manager 同时将 crd 安装完成 
+- **修复** 安装 cert-manager 同时将 crd 安装完成
 - **修复** 升级失败的日志提示
-- **修复** kant 升级无法替换 values.yaml 中 imageRegistry 字段的问题 
+- **修复** kant 升级无法替换 values.yaml 中 imageRegistry 字段的问题
 
 ## 2025-04-30
 
@@ -33,27 +33,27 @@
 - **新增** 通过 --show-feature-gates 参数展示安装器脚本内部的特殊功能开关
 - **新增** 构建 cloud 模式下的离线包
 - **新增** 适配火种 kind 版本 v0.27.0
-- **新增** 升级 dce5 时检测待升级组件的当前版本是否低于已存在版本 
+- **新增** 升级 DCE 5.0 时检测待升级组件的当前版本是否低于已存在版本
 - **优化** AI 模式更新为 Cloud 模式
 - **优化** Cloud 模式下支持 metalLB
 - **优化** istio-ingressgateway 的镜像拉取策略为 'IfNotPresent'
 - **优化** 使用 dce5-installer rollback 子命令回滚时对于历史升级记录的处理
 - **优化** 构建脚本中对火种离线资源的处理逻辑，移除冗余逻辑，提升后期维护性
-- **修复**  安装中间件 rabbitmq 时从公网拉取镜像的问题
-- **修复**  chart values 里包含 '#' 字符时解析失败的问题
-- **修复**  离线升级 DCE5 后 mcamel-mysql 组件使用镜像错误的问题
-- **修复**  升级 DCE5 后覆盖之前手动修改的 metallb 组件相关的 CR L2Advertisement
+- **修复** 安装中间件 rabbitmq 时从公网拉取镜像的问题
+- **修复** chart values 里包含 '#' 字符时解析失败的问题
+- **修复** 离线升级 DCE 5.0 后 mcamel-mysql 组件使用镜像错误的问题
+- **修复** 升级 DCE 5.0 后覆盖之前手动修改的 metallb 组件相关的 CR L2Advertisement
 
 ## 2025-03-31
 
 ### v0.28.0
 
 - **新增** AI 模式部署框架
-- **新增** 实验性新增 rollback-app 命令，用于回滚 Global 集群组件应用
-- **优化** 更新默认 k8s 版本到 v1.31.6 
+- **新增** 实验性新增 rollback-app 命令，用于回滚全局管理集群组件应用
+- **优化** 更新默认 k8s 版本到 v1.31.6
 - **优化** 火种集群启动前对 podman systemd 配置的清理
 - **优化** mysql 中间件配置检测
-- **优化** global集群使用独立 resolv.conf 配置
+- **优化** 全局管理集群使用独立 resolv.conf 配置
 - **优化** 配置 cni 二进制 owner 为 root， 避免权限问题
 - **修复** kube-vip 组件缺失 iptables 版本离线镜像问题
 
@@ -95,7 +95,7 @@
 #### 修复
 
 - **修复** 集群状态检测方法，补充集群无法访问时的异常处理
-- **修复** 安装 global 集群，es、redis、mysql 外置时，创建 minio 失败
+- **修复** 安装 全局管理集群，es、redis、mysql 外置时，创建 minio 失败
 - **修复** skopeo copy 在 x86 环境拉取 arm 镜像时的架构问题
 - **修复** 中间件 redis 镜像 registry
 - **修复** kafka metrics 采集异常
@@ -116,13 +116,13 @@
 - **修复** 多架构镜像融合后未清理中间镜像问题
 - **修复** 部分 GProduct 组件 helm repo 缺失问题
 
-#### 已知问题
+!!! warning "已知问题"
 
-在线安装时 `baize` 组件（AI Lab）会报错：
+    在线安装时 `baize` 组件（AI Lab）会报错：
 
-```text
-Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo update'): no chart name found
-```
+    ```text
+    Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo update'): no chart name found
+    ```
 
 ## 2024-08-30
 
@@ -341,8 +341,7 @@ Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo u
 
 #### 已知问题
 
-- 在火种节点中使用 podman 时必须开启 ipv6
--全局服务集群会出现 `etcd NOSPACE` 告警风险
+- 在火种节点中使用 podman 时必须开启 ipv6 -全局服务集群会出现 `etcd NOSPACE` 告警风险
 
 ## 2023-10-31
 
@@ -379,8 +378,7 @@ Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo u
 
 #### 已知问题
 
-- 在火种节点中使用 podman 时必须开启 ipv6
--全局服务集群会出现 `etcd NOSPACE` 告警风险
+- 在火种节点中使用 podman 时必须开启 ipv6 -全局服务集群会出现 `etcd NOSPACE` 告警风险
 
 ## 2023-8-31
 
@@ -392,7 +390,7 @@ Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo u
 - **新增** 支持在 clusterConfig.yaml 设置 ansible 扩展参数
 - **新增** 支持在 clusterConfig.yaml 添加证书更新配置，支持周期性更新及一次性更新
 - **新增** 支持 redhat 9.2 系统离线部署
-- **新增** 离线包添加 diag.sh全局服务集群诊断脚本
+- **新增** 离线包添加 diag.sh 全局服务集群诊断脚本
 - **新增** `--multi-arch` 标识，避免升级操作覆盖多架构镜像问题
 
 #### 优化
@@ -553,7 +551,7 @@ Error: chart "baize" matching v0.9.0 not found in baize index. (try 'helm repo u
 - 容器管理平台离线模式暂无法支持工作集群添加节点
 - 离线场景下使用外置 osRepos 仓库时，即 clusterConfig.yaml 中定义 `osRepos.type=external`，
   部署 DCE 5.0 成功后无法在容器管理中创建工作集群，临时解决方案如下：
- 全局服务集群安装完成后立即更新全局服务集群 kubean-system 命名空间的 configmap kubean-localservice，
+  全局服务集群安装完成后立即更新全局服务集群 kubean-system 命名空间的 configmap kubean-localservice，
   将 `yumRepos.external` 值中所有双引号改为单引号。如下示例，将文件内的双引号都替换为单引号：
 
     ```yaml

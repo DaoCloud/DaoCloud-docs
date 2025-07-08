@@ -15,6 +15,19 @@ evolution path and feature changes of each version.
 *[SR-IOV]: Single Root IO Virtualization
 *[RDMA]: Remote Direct Memory Access, a popular tech to support LLM and GPT
 
+## 2025-04-30
+
+### v0.16.3
+
+* **Optimized** compatibility with Spiderpool API version v1.0.1.
+
+* **Fixed** an issue where the `VlanId` field was not displayed on the subnet interface.
+
+!!! note
+
+    For existing `SpiderSubnet` and `SpiderIPPool` resources, you need to manually add
+    the annotation `"v1.multus-underlay-cni.io/vlanId"` in order for the `VlanId` to be displayed.
+
 ## 2024-11-30  
 
 ### v0.16.2  

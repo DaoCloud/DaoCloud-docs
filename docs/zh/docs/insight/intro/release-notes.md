@@ -2,6 +2,26 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2025-06-30
+
+### v0.37.0
+
+#### Insight Server
+
+- **优化** Helm 支持更多的 Vector 和 OTel Collector 的参数设置
+- **优化** 增强 Insight 自身内部的监控观测能力
+- **优化** Grafana 仪表盘支持 polystat 组件的展示
+- **优化** 增加 Calico，Prometheus 和 Prometheus RemoteWrite 相关的仪表盘
+- **优化** 增加自带的 系统组件的告警规则
+- **修复** 链路列表中的数据与 jaeger list 统计的值不一致
+- **修复** 拨测 和 etcd 仪表盘中的显示错误
+
+#### Insight Agent
+
+- **优化** 升级 Fluenbit 版本到 v4.0.1
+- **优化** 升级 OpenTelemetry Operator 至 0.88.6 版本
+- **优化** 支持下发 Calico 监控所需 ServiceMonitor
+- **修复** 补充 2 个 sidecar 的 kubelint 的参数
 
 ## 2025-04-30
 

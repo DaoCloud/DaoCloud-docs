@@ -227,6 +227,7 @@ nav:
                   - Cluster Versions: kpanda/user-guide/clusters/cluster-version.md
                   - Integrate Rancher Cluster: kpanda/user-guide/clusters/integrate-rancher-cluster.md
                   - Deploy 2nd Scheduler in a Cluster: kpanda/user-guide/clusters/cluster-scheduler-plugin.md
+                  - Renew Cluster Cert: kpanda/user-guide/clusters/k8s-cert.md
               - Namespaces:
                   - Create Namespace: kpanda/user-guide/namespaces/createns.md
                   - Exclusive Node to Namespace: kpanda/user-guide/namespaces/exclusive.md
@@ -491,7 +492,7 @@ nav:
                   - CoreDNS Performance Test: network/performance/coredns-performance.md
               - Spiderpool:
                   - Intro: network/modules/spiderpool/index.md
-                  - Release Notes: network/modules/spiderpool/release-notes.md
+                  - Release Notes: network/modules/spiderpool/release-notes/
                   - Install: 
                       - Install Spiderpool: network/modules/spiderpool/install/install.md
                       - Prepare and install RDMA: network/modules/spiderpool/install/rdmapara.md

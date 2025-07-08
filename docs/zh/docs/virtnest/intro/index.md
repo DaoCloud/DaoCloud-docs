@@ -11,7 +11,12 @@ hide:
 
 1. 在集群内[安装 virtnest-agent 组件](../install/virtnest-agent.md)。
 2. [构建所需的虚拟机镜像](../vm-image/index.md)，将镜像推送到 Docker Registry 或其他镜像仓库中。
-3. [使用镜像创建虚拟机](../quickstart/index.md)或[使用 YAML 创建虚拟机](../quickstart/index.md#yaml)。
+3. 目前创建虚拟机有三种方式：
+
+    - [通过镜像创建](../quickstart/index.md)
+    - [通过模板创建](../template/index.md)
+    - [通过 YAML 创建](../quickstart/index.md#yaml)
+
 4. 通过 VNC/console 方式[访问虚拟机](../quickstart/nodeport.md)。
 5. 查看虚拟机列表以及每个虚拟机的详细信息。
 6. 根据需要执行开启/关机、重启、克隆、[快照](../vm/snapshot.md)、恢复快照、[实时迁移](../vm/live-migration.md)等操作。

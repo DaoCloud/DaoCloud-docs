@@ -13,6 +13,19 @@ so that you can learn its evolution path and feature changes.
     Features labeled as Beta may undergo changes; please use them with caution
     and provide prompt feedback if you encounter any issues.
 
+## 2025-05-31
+
+### v0.17.3
+
+* **Optimized** by upgrading the vLLM framework image to version 0.8.5-post1.
+* **Optimized** the dataset warming logic for HTTP and S3 types so that existing files
+  in storage are no longer deleted during the warming process.
+* **Fixed** issues related to exceptions when updating the dataset type.
+* **Fixed** an issue with abnormal webhook behavior during `baize-agent` upgrades.
+* **Fixed** an error that occurred when creating inference services through the UI.
+* **Fixed** resource permission issues related to the `baizectl` tool within Notebooks.
+* **Fixed** a duplicate issue where errors occurred when creating inference services through the UI.
+
 ## 2025-04-30
 
 ### v0.16.1

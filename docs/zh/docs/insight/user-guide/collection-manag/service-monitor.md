@@ -25,14 +25,14 @@
 	metadata:
 	  name: micrometer-demo # (1)
 	  namespace: insight-system # (2)
-	    labels: 
-	      operator.insight.io/managed-by: insight
+	  labels:
+	    operator.insight.io/managed-by: insight
 	spec:
 	  endpoints: # (3)
 	    - honorLabels: true
-	        interval: 15s
-	        path: /actuator/prometheus
-	        port: http
+	      interval: 15s
+	      path: /actuator/prometheus
+	      port: http
 	  namespaceSelector: # (4)
 	    matchNames:
 	      - insight-system  # (5)
