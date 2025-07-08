@@ -360,6 +360,8 @@ nav:
                           - 使用 NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG 相关命令: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                       - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
+                      - GPU 调度配置: kpanda/user-guide/gpu/gpu_scheduler_config.md
+                      - GPU 模式切换: kpanda/user-guide/gpu/GPU-mode-switching.md
                       - GPU 动态调节: kpanda/user-guide/gpu/dynamic-regulation.md
                       - GPU 监控告警:
                           - GPU 监控指标: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-metrics.md
@@ -371,7 +373,6 @@ nav:
                           - 使用 Volcano Binpack 策略: kpanda/user-guide/gpu/volcano/volcano_binpack.md
                           - 使用 Volcano DRF 策略: kpanda/user-guide/gpu/volcano/drf.md
                           - 使用 Volcano NUMA 亲和性调度: kpanda/user-guide/gpu/volcano/numa.md
-                      - GPU 调度配置: kpanda/user-guide/gpu/gpu_scheduler_config.md
                   - 昇腾 NPU 管理:
                       - 昇腾 NPU 组件安装: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
                       - 使用昇腾 NPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
