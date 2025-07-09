@@ -171,7 +171,7 @@ spec:
   secretRef: minio-accesskey
 ```
 
-当然，在外网可以访问的情况下，也可以直接填写AWS S3、Azure **Blob** **Storage** 等服务商提供的存储地址。
+当然，在外网可以访问的情况下，也可以直接填写AWS S3、Azure **Blob Storage** 等服务商提供的存储地址。
 
 ### 使用提前创建的PV/PVC
 
