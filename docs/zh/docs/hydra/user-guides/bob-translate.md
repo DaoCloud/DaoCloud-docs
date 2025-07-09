@@ -1,6 +1,8 @@
-# 在 Bob Translate 中使用 d.run
+# 在 Bob Translate 中使用 Hydra
 
-本文说明如何在 Bob Translate 中调用 d.run 中的模型服务。
+*[Hydra]: 大模型服务平台的开发代号
+
+本文说明如何在 Bob Translate 中调用 Hydra 中的模型服务。
 
 [Bob](https://bobtranslate.com/) 是一款 macOS 平台的翻译和 OCR 软件，
 您可以在任何应用程序中使用 Bob 进行翻译和 OCR，即用即走，简单、快捷、高效！
@@ -18,7 +20,7 @@
 
 ![Bob Translate](../images/bobtranslate-2.png)
 
-添加您从 d.run 获取的 API Key 和 API Host。
+添加您从 Hydra 获取的 API Key 和 API Host。
 
 - API Key：输入您的 API Key
 - API Host：

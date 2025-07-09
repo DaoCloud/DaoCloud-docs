@@ -1,8 +1,8 @@
 # 使用 Dataset 管理模型文件
 
-<span style="border-bottom: 1px dashed #999; cursor: help;" title="大模型服务平台的开发代号">
-  Hydra
-</span> 基于 BaizeAl/Dataset 来管理模型的权重文件。Dataset 抽象了 Kubernetes Volume
+*[Hydra]: 大模型服务平台的开发代号
+
+Hydra 基于 BaizeAl/Dataset 来管理模型的权重文件。Dataset 抽象了 Kubernetes Volume
 的使用，极大简化了 PV/PVC 的创建和维护流程，并支持多种数据源类型：
 
 | DatasetType  | 说明                                 |
