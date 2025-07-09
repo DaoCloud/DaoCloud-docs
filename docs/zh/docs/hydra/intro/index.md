@@ -49,4 +49,4 @@ hide:
 
 ## 控制台和运维管理使用逻辑
 
-![控制台和运维管理使用逻辑](./images/console%20and%20operation.png)
+![控制台和运维管理使用逻辑](./images/consoleandoperation.png)
