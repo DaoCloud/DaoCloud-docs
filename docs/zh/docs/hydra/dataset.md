@@ -63,7 +63,7 @@ spec:
     uri: huggingface://Qwen/Qwen2.5-0.5B-Instruct
 ```
 
-从MS下载qwen2-0.5b-instruct
+从 Model Scope 下载 qwen2-0.5b-instruct：
 
 ```yaml
 apiVersion: dataset.baizeai.io/v1alpha1
