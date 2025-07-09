@@ -1,7 +1,9 @@
-# 在 Cherry Studio 中使用 d.run
+# 在 Cherry Studio 中使用 Hydra
+
+*[Hydra]: 大模型服务平台的开发代号
 
 [🍒 Cherry Studio](https://cherry-ai.com/) 是一个 LLM 桌面客户端，
-支持多 LLM 服务商集成，包括 OpenAI、GPT-3、d.run 等。
+支持多 LLM 服务商集成，包括 OpenAI、GPT-3、Hydra 等。
 
 ![Cherry Studio](../images/cherry-studio.jpg)
 

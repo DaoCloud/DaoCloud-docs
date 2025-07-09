@@ -1,10 +1,8 @@
----
-status: new
----
+# Hydra 使用示例场景
 
-# d.run 使用示例场景
+*[Hydra]: 大模型服务平台的开发代号
 
-您可以参考以下示例场景，在开发工作中配置并使用 d.run 提供的模型服务。
+您可以参考以下示例场景，在开发工作中配置并使用 Hydra 提供的模型服务。
 
 ## 模型调用示例
 
@@ -17,10 +15,10 @@ status: new
 
 | 应用场景 | 操作说明 |
 | --- | ---- |
-| [Cline in VSCode](https://github.com/cline/cline) | [在 VSCode 中通过 Cline/RooCode 使用 d.run 的模型服务](./cline-in-vscode.md) |
-| [Cherry Studio](https://cherry-ai.com) | [在 Cherry Studio 中使用 d.run 的模型服务](./cherry-studio.md) |
-| [Bob Translate](https://bobtranslate.com) | [在 Bob Translate 中使用 d.run 的模型服务](./bob-translate.md) |
-| [Lobe Chat](https://github.com/lobehub/lobe-chat) | [在 Lobe Chat 中使用 d.run 的模型服务](./lobe-chat.md) |
+| [Cline in VSCode](https://github.com/cline/cline) | [在 VSCode 中通过 Cline/RooCode 使用 Hydra 的模型服务](./cline-in-vscode.md) |
+| [Cherry Studio](https://cherry-ai.com) | [在 Cherry Studio 中使用 Hydra 的模型服务](./cherry-studio.md) |
+| [Bob Translate](https://bobtranslate.com) | [在 Bob Translate 中使用 Hydra 的模型服务](./bob-translate.md) |
+| [Lobe Chat](https://github.com/lobehub/lobe-chat) | [在 Lobe Chat 中使用 Hydra 的模型服务](./lobe-chat.md) |
 
 ## 贡献说明
 
