@@ -44,7 +44,7 @@ spec:
 
 我们可以看到 spec.source 列出了从 [Hugging Face](https://huggingface.co/models) 和 [ModelScope](https://www.modelscope.cn/models) 下载该模型的路径。我们根据这个信息可以创建如下的Dataset：
 
-从HF下载qwen2-0.5b-instruct
+从 Hugging Face 下载 qwen2-0.5b-instruct：
 
 ```yaml
 apiVersion: dataset.baizeai.io/v1alpha1
