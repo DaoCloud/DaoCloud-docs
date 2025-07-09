@@ -1,45 +1,61 @@
-# 阿里云环境运行
+# 在阿里云上运行 Spiderpool
 
 本页主要介绍如何使用 Spiderpool 在阿里云环境运行，并如何实现一套完整的 Underlay 解决方案。
 
 ## 背景
 
-当前公有云厂商众多，如：阿里云、华为云、腾讯云、AWS 等，但当前开源社区的主流 CNI 插件难以以 Underlay 网络方式运行其上，只能使用每个公有云厂商的专有 CNI 插件，没有统一的公有云 Underlay 解决方案。尤其是在混合云场景下，统一的 CNI 方案能够便于多云管理。Spiderpool 是一种适用于任意的公有云环境中的 Underlay 网络解决方案。
+当前公有云厂商众多，如阿里云、华为云、腾讯云、AWS 等，但当前开源社区的主流 CNI 插件很难以 Underlay 网络方式运行其上，
+只能使用每个公有云厂商的专有 CNI 插件，没有统一的公有云 Underlay 解决方案。尤其是在混合云场景下，
+统一的 CNI 方案能够便于多云管理。Spiderpool 是一种适用于任意的公有云环境中的 Underlay 网络解决方案。
 
 ## 为什么选择 Spiderpool
 
-- Spiderpool 是一个 Kubernetes 的 Underlay 和 RDMA 网络解决方案，它增强了 Macvlan CNI、IPvlan CNI 和 SR-IOV CNI 的功能，满足了各种网络需求，使得 Underlay 网络方案可应用在**裸金属、虚拟机和公有云环境**中，可为网络 I/O 密集性、低延时应用带来优秀的网络性能。
+- Spiderpool 是一个 Kubernetes 的 Underlay 和 RDMA 网络解决方案，它增强了 Macvlan CNI、IPvlan CNI
+  和 SR-IOV CNI 的功能，满足了各种网络需求，使得 Underlay 网络方案可应用在 **裸金属、虚拟机和公有云环境**
+  中，可为网络 I/O 密集性、低延时应用带来优秀的网络性能。
 
-- [aws-vpc-cni](https://github.com/aws/amazon-vpc-cni-k8s) 可以使用 AWS 上的弹性网络接口在 Kubernetes 中实现 Pod 网络通信的网络插件。
+- [aws-vpc-cni](https://github.com/aws/amazon-vpc-cni-k8s) 可以使用
+  AWS 上的弹性网络接口在 Kubernetes 中实现 Pod 网络通信的网络插件。
 
-aws-vpc-cni 是 AWS 为公有云提供的一种 Underlay 网络解决方案，但它不能满足复杂的网络需求，如下是 Spiderpool 与 aws-vpc-cni 在 AWS 云环境上使用的一些功能对比，在后续章节会演示 Spiderpool 的相关功能：
+aws-vpc-cni 是 AWS 为公有云提供的一种 Underlay 网络解决方案，但它不能满足复杂的网络需求，如下是
+Spiderpool 与 aws-vpc-cni 在 AWS 云环境上使用的一些功能对比，在后续章节会演示 Spiderpool 的相关功能：
 
-| 功能比较                  |        aws-vpc-cni                  |  Spiderpool + IPvlan  |
-|--------------------------|-------------------------------- | ------------------------------------------ |
-| 多 Underlay 网卡          |          ❌                     |      ✅ (多个跨子网的 Underlay 网卡)         |
-| 自定义路由                 |          ❌                     |      ✅ [route](https://spidernet-io.github.io/spiderpool/v0.9/usage/route-zh_CN/)  |
-| 双 CNI 协同               |   支持多 CNI 网卡但不支持路由调协   |       ✅                                    |
-| 网络策略                  |   ✅ [aws-network-policy-agent](https://github.com/aws/aws-network-policy-agent) |      ✅ [cilium-chaining](https://spidernet-io.github.io/spiderpool/v0.9/usage/cilium-chaining-zh_CN/)               |
-| clusterIP                |   ✅ (kube-proxy)               |      ✅ ( kube-proxy 和 eBPF 两种方式)        |
-| Bandwidth                |            ❌                   |      ✅[Bandwidth 管理](https://spidernet-io.github.io/spiderpool/v0.9/usage/ipvlan_bandwidth-zh_CN/)           |
-| metrics                  |            ✅                   |      ✅                                    |
-| 双栈                      |  支持单IPv4、IPv6，不支持双栈      |      支持单 IPv4、IPv6, 双栈                 |
-| 可观测性                  |            ❌                   |      ✅(搭配 Cilium Hubble, 内核 >= 4.19.57)   |
-| 多集群                    |            无                   |      ✅ [Submariner](https://spidernet-io.github.io/spiderpool/v0.9/usage/submariner-zh_CN/)     |
-| 搭配AWS 4/7层负载均衡      |            ✅                   |       ✅                                    |
-| 内核限制                  |            无                   |       >= 4.2 (IPvlan 内核限制)                |
-| 转发原理                  | Underlay 纯路由 3 层转发          |       IPvlan 2 层                            |
-| 组播, 多播                |            ❌                   |       ✅                                   |
-| 跨 VPC 访问               |           ✅                    |       ✅                                   |
+| 功能比较 | aws-vpc-cni | Spiderpool + IPvlan |
+|--------|------------ | -------------------- |
+| 多 Underlay 网卡 | ❌ | ✅ (多个跨子网的 Underlay 网卡) |
+| 自定义路由 | ❌ | ✅ [route](https://spidernet-io.github.io/spiderpool/v0.9/usage/route-zh_CN/) |
+| 双 CNI 协同 | 支持多 CNI 网卡但不支持路由调协 | ✅ |
+| 网络策略 | ✅ [aws-network-policy-agent](https://github.com/aws/aws-network-policy-agent) | ✅ [cilium-chaining](https://spidernet-io.github.io/spiderpool/v0.9/usage/cilium-chaining-zh_CN/) |
+| clusterIP | ✅ (kube-proxy) | ✅ ( kube-proxy 和 eBPF 两种方式) |
+| Bandwidth | ❌ | ✅[Bandwidth 管理](https://spidernet-io.github.io/spiderpool/v0.9/usage/ipvlan_bandwidth-zh_CN/) |
+| metrics | ✅ | ✅ |
+| 双栈 | 支持单IPv4、IPv6，不支持双栈 | 支持单 IPv4、IPv6, 双栈 |
+| 可观测性 | ❌ | ✅(搭配 Cilium Hubble, 内核 >= 4.19.57) |
+| 多集群 | 无 | ✅ [Submariner](https://spidernet-io.github.io/spiderpool/v0.9/usage/submariner-zh_CN/) |
+| 搭配AWS 4/7层负载均衡 | ✅ | ✅ |
+| 内核限制 | 无 | >= 4.2 (IPvlan 内核限制) |
+| 转发原理 | Underlay 纯路由 3 层转发 | IPvlan 2 层 |
+| 组播, 多播 | ❌ | ✅ |
+| 跨 VPC 访问 | ✅ | ✅ |
 
 ## Spiderpool 针对阿里云存在的局限性提供的解决方案
 
 Spiderpool 的节点拓扑功能可以将 IPPool 与每个节点的每个网卡的可用 IP 形成绑定，同时还具备解决 MAC 地址合法性等功能。
 Spiderpool 能基于 IPVlan Underlay CNI 在阿里云环境上运行，并保证集群的东西向与南北向流量均正常，它的实现原理如下：
 
-1. 公有云下使用 Underlay 网络，但公有云的每个云服务器的每张网卡只能分配有限的 IP 地址，当应用运行在某个云服务器上时，需要同步获取到 VPC 网络中分配给该云服务器不同网卡的合法 IP 地址，才能实现通信。根据上述分配 IP 的特点，Spiderpool 的 CRD：`SpiderIPPool` 可以设置 nodeName，multusName 实现节点拓扑的功能，通过 IP 池与节点、IPvlan Multus 配置的亲和性，能最大化的利用与管理节点可用的 IP 地址，给应用分配到合法的 IP 地址，让应用在 VPC 网络内自由通信，包括 Pod 与 Pod 通信，Pod 与云服务器通信等。
+1. 公有云下使用 Underlay 网络，但公有云的每个云服务器的每张网卡只能分配有限的 IP 地址，
+   当应用运行在某个云服务器上时，需要同步获取到 VPC 网络中分配给该云服务器不同网卡的合法
+   IP 地址，才能实现通信。根据上述分配 IP 的特点，Spiderpool 的 CRD：`SpiderIPPool`
+   可以设置 nodeName，multusName 实现节点拓扑的功能，通过 IP 池与节点、IPvlan Multus
+   配置的亲和性，能最大化的利用与管理节点可用的 IP 地址，给应用分配到合法的 IP 地址，
+   让应用在 VPC 网络内自由通信，包括 Pod 与 Pod 通信，Pod 与云服务器通信等。
 
-2. 公有云的 VPC 网络中，处于网络安全管控和数据包转发的原理，当网络数据报文中出现 VPC 网络未知的 MAC 和 IP 地址时，它无法得到正确的转发。例如，基于 Macvlan 和 OVS 原理的 Underlay CNI 插件，Pod 网卡中的 MAC 地址是新生成的，会导致 Pod 无法通信。针对该问题，Spiderpool 可搭配 [IPVlan](https://www.cni.dev/plugins/current/main/ipvlan/) CNI 进行解决。IPVlan 基于三层网络，无需依赖二层广播，并且不会重新生成 Mac 地址，与父接口保持一致，因此通过 IPvlan 可以解决公有云中关于 MAC 地址合法性的问题。
+2. 公有云的 VPC 网络中，处于网络安全管控和数据包转发的原理，当网络数据报文中出现 VPC 网络未知的
+   MAC 和 IP 地址时，它无法得到正确的转发。例如，基于 Macvlan 和 OVS 原理的 Underlay CNI 插件，
+   Pod 网卡中的 MAC 地址是新生成的，会导致 Pod 无法通信。针对该问题，Spiderpool 可搭配
+   [IPVlan](https://www.cni.dev/plugins/current/main/ipvlan/) CNI 进行解决。
+   IPVlan 基于三层网络，无需依赖二层广播，并且不会重新生成 Mac 地址，与父接口保持一致，
+   因此通过 IPvlan 可以解决公有云中关于 MAC 地址合法性的问题。
 
 ## 实施要求
 
@@ -55,7 +71,8 @@ Spiderpool 能基于 IPVlan Underlay CNI 在阿里云环境上运行，并保证
 
     ![alicloud-web-network](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/alicloud-network-web.png)
 
-    > - 实例（虚拟机）是能够为您的业务提供计算服务的最小单位，不同的实例规格可创建网卡数和每张网卡可分配的辅助 IP 数存在差异，根据业务场景和使用场景，参考阿里云[实例规格族](https://help.aliyun.com/zh/ecs/user-guide/overview-of-instance-families#concept-sx4-lxv-tdb)选择对应规格进行创建实例。
+    > - 实例（虚拟机）是能够为您的业务提供计算服务的最小单位，不同的实例规格可创建网卡数和每张网卡可分配的辅助 IP 数存在差异，
+        根据业务场景和使用场景，参考阿里云[实例规格族](https://help.aliyun.com/zh/ecs/user-guide/overview-of-instance-families#concept-sx4-lxv-tdb)选择对应规格进行创建实例。
     > - 如果有 IPv6 的需求，可以参考阿里云[配置 IPv6 地址](https://help.aliyun.com/zh/ecs/user-guide/configure-ipv6-addresses/?spm=a2c4g.11186623.0.0.21ee48beYHt7ZW)。
 
 - 使用上述配置的虚拟机，搭建一套 Kubernetes 集群，节点的可用 IP 及集群网络拓扑图如下：
@@ -68,25 +85,27 @@ Spiderpool 能基于 IPVlan Underlay CNI 在阿里云环境上运行，并保证
 
 ```bash
 helm repo add spiderpool https://spidernet-io.github.io/spiderpool
-
 helm repo update spiderpool
-
 helm install spiderpool spiderpool/spiderpool --namespace kube-system --set ipam.enableStatefulSet=false --set multus.multusCNI.defaultCniCRName="ipvlan-eth0"
 ```
 
 !!! note
 
     - 如果您的集群未安装 IPVlan, 你可以通过指定 Helm 参数 `--set plugins.installCNI=true` 安装 IPVlan。
-
     - 如果您使用的是中国大陆的云厂商服务器，可以指定参数 `--set global.imageRegistryOverride=ghcr.m.daocloud.io` ，以帮助您更快的拉取镜像。
+    - Spiderpool 可以为控制器类型为：`Statefulset` 的应用副本固定 IP 地址。在公有云的 Underlay 网络场景中，
+      云主机只能使用限定的 IP 地址，当 StatefulSet 类型的应用副本漂移到其他节点，但由于原固定的 IP 在其他节点是非法不可用的，
+      新的 Pod 将出现网络不可用的问题。对此场景，将 `ipam.enableStatefulSet` 设置为 `false`，禁用该功能。
 
-    - Spiderpool 可以为控制器类型为：`Statefulset` 的应用副本固定 IP 地址。在公有云的 Underlay 网络场景中，云主机只能使用限定的 IP 地址，当 StatefulSet 类型的应用副本漂移到其他节点，但由于原固定的 IP 在其他节点是非法不可用的，新的 Pod 将出现网络不可用的问题。对此场景，将 `ipam.enableStatefulSet` 设置为 `false`，禁用该功能。
-
-    - 通过 `multus.multusCNI.defaultCniCRName` 指定 multus 默认使用的 CNI 的 NetworkAttachmentDefinition 实例名。如果 `multus.multusCNI.defaultCniCRName` 选项不为空，则安装后会自动生成一个数据为空的 NetworkAttachmentDefinition 对应实例。如果 `multus.multusCNI.defaultCniCRName` 选项为空，会尝试通过 /etc/cni/net.d 目录下的第一个 CNI 配置来创建对应的 NetworkAttachmentDefinition 实例，否则会自动生成一个名为 `default` 的 NetworkAttachmentDefinition 实例，以完成 multus 的安装。
+    - 通过 `multus.multusCNI.defaultCniCRName` 指定 multus 默认使用的 CNI 的 NetworkAttachmentDefinition 实例名。如果
+      `multus.multusCNI.defaultCniCRName` 选项不为空，则安装后会自动生成一个数据为空的 NetworkAttachmentDefinition 对应实例。
+      如果 `multus.multusCNI.defaultCniCRName` 选项为空，会尝试通过 /etc/cni/net.d 目录下的第一个 CNI 配置来创建对应的
+      NetworkAttachmentDefinition 实例，否则会自动生成一个名为 `default` 的 NetworkAttachmentDefinition 实例，以完成 multus 的安装。
 
 ### 安装 CNI 配置
 
-Spiderpool 为简化书写 JSON 格式的 Multus CNI 配置，它提供了 SpiderMultusConfig CR 来自动管理 Multus NetworkAttachmentDefinition CR。如下是创建 IPvlan SpiderMultusConfig 配置的示例：
+Spiderpool 为简化书写 JSON 格式的 Multus CNI 配置，它提供了 SpiderMultusConfig CR 来自动管理
+Multus NetworkAttachmentDefinition CR。如下是创建 IPvlan SpiderMultusConfig 配置的示例：
 
 ```shell
 IPVLAN_MASTER_INTERFACE0="eth0"
@@ -129,7 +148,8 @@ spec:
 EOF
 ```
 
-在本文示例中，使用如上配置，创建如下的两个 IPvlan SpiderMultusConfig，将基于它们自动生成的 Multus NetworkAttachmentDefinition CR，它们分别对应了宿主机的 `eth0` 与 `eth1` 网卡。
+在本文示例中，使用如上配置，创建如下的两个 IPvlan SpiderMultusConfig，将基于它们自动生成的
+Multus NetworkAttachmentDefinition CR，它们分别对应了宿主机的 `eth0` 与 `eth1` 网卡。
 
 ```bash
 $ kubectl get spidermultusconfigs.spiderpool.spidernet.io -n kube-system
@@ -147,13 +167,19 @@ ipvlan-eth1   10m
 
 Spiderpool 的 CRD：`SpiderIPPool` 提供了 `nodeName`、`multusName` 与 `ips` 字段：
 
-- `nodeName`：当 `nodeName` 不为空时，Pod 在某个节点上启动，并尝试从 SpiderIPPool 分配 IP 地址, 若 Pod 所在节点符合该 `nodeName`，则能从该 SpiderIPPool 中成功分配出 IP，若 Pod 所在节点不符合 `nodeName`，则无法从该 SpiderIPPool 中分配出 IP。当 `nodeName` 为空时，Spiderpool 对 Pod 不实施任何分配限制。
+- `nodeName`：当 `nodeName` 不为空时，Pod 在某个节点上启动，并尝试从 SpiderIPPool 分配 IP 地址。
+   若 Pod 所在节点符合该 `nodeName`，则能从该 SpiderIPPool 中成功分配出 IP。若 Pod 所在节点不符合
+   `nodeName`，则无法从该 SpiderIPPool 中分配出 IP。当 `nodeName` 为空时，Spiderpool 对 Pod 不实施任何分配限制。
 
-- `multusName`：Spiderpool 通过该字段与 Multus CNI 深度结合以应对多网卡场景。当 `multusName` 不为空时，SpiderIPPool 会使用对应的 Multus CR 实例为 Pod 配置网络，若 `multusName` 对应的 Multus CR 不存在，那么 Spiderpool 将无法为 Pod 指定 Multus CR。当 `multusName` 为空时，Spiderpool 对 Pod 所使用的 Multus CR 不作限制。
+- `multusName`：Spiderpool 通过该字段与 Multus CNI 深度结合以应对多网卡场景。当 `multusName` 不为空时，
+  SpiderIPPool 会使用对应的 Multus CR 实例为 Pod 配置网络，若 `multusName` 对应的 Multus CR 不存在，
+  那么 Spiderpool 将无法为 Pod 指定 Multus CR。当 `multusName` 为空时，Spiderpool 对 Pod 所使用的 Multus CR 不作限制。
 
-- `spec.ips`：该字段的值必须设置。由于阿里云限制了节点可使用的 IP 地址，故该值的范围必须在 `nodeName` 对应主机的辅助私网 IP 范围内，您可以从阿里云的弹性网卡界面获取。
+- `spec.ips`：该字段的值必须设置。由于阿里云限制了节点可使用的 IP 地址，故该值的范围必须在
+  `nodeName` 对应主机的辅助私网 IP 范围内，您可以从阿里云的弹性网卡界面获取。
 
-依据如上所述，使用如下的 Yaml，为每个节点的每张网卡（eth0、eth1）分别创建了一个 SpiderIPPool，它们将为不同节点上的 Pod 提供 IP 地址。
+依据如上所述，使用如下的 Yaml，为每个节点的每张网卡（eth0、eth1）分别创建了一个
+SpiderIPPool，它们将为不同节点上的 Pod 提供 IP 地址。
 
 ```shell
 $ cat <<EOF | kubectl apply -f -
@@ -393,6 +419,7 @@ worker-192   4         192.168.0.0/24    1                    5                t
 
     ```bash
     $ kubectl exec -ti test-app-2-7c56876fc6-7brhf -- curl www.baidu.com -I
+
     HTTP/1.1 200 OK
     Accept-Ranges: bytes
     Cache-Control: private, no-cache, no-store, proxy-revalidate, no-transform
@@ -414,6 +441,7 @@ worker-192   4         192.168.0.0/24    1                    5                t
 
     ```bash
     $ kubectl exec -ti test-app-2-qbhwx -- ping -6 aliyun.com -c 2
+
     PING aliyun.com (2401:b180:1:60::6): 56 data bytes
     64 bytes from 2401:b180:1:60::6: seq=0 ttl=96 time=6.058 ms
     64 bytes from 2401:b180:1:60::6: seq=1 ttl=96 time=6.079 ms
@@ -431,7 +459,9 @@ CCM（Cloud Controller Manager）是阿里云提供的一个用于 Kubernetes �
 
 1. 集群节点配置 `providerID`
 
-    务必在集群中的每个节点上，分别执行如下命令，从而获取每个节点各自的 `providerID`。<http://100.100.100.200/latest/meta-data> 是阿里云 CLI 提供获取实例元数据的 API 入口，在下列示例中无需修改它。更多用法可参考[实例元数据](https://help.aliyun.com/document_detail/49150.html?spm=a2c4g.170249.0.0.3ffc59d7JhEqHl)
+    务必在集群中的每个节点上，分别执行如下命令，从而获取每个节点各自的 `providerID`。<http://100.100.100.200/latest/meta-data>
+    是阿里云 CLI 提供获取实例元数据的 API 入口，在下列示例中无需修改它。
+    更多用法可参考[实例元数据](https://help.aliyun.com/document_detail/49150.html?spm=a2c4g.170249.0.0.3ffc59d7JhEqHl)
 
     ```bash
     $ META_EP=http://100.100.100.200/latest/meta-data
@@ -440,27 +470,32 @@ CCM（Cloud Controller Manager）是阿里云提供的一个用于 Kubernetes �
     cn-hangzhou.i-bp17345hor9*******
     ```
 
-    在集群的 `master` 节点通过 `kubectl patch` 命令为集群中的 `每个节点` 补充各自的 `providerID`，该步骤必须被执行，否则对应节点的 CCM Pod 将无法运行。
+    在集群的 `master` 节点通过 `kubectl patch` 命令为集群中的 `每个节点` 补充各自的 `providerID`，
+    该步骤必须被执行，否则对应节点的 CCM Pod 将无法运行。
 
     ```bash
     kubectl get nodes
+
     # 将 <NODE_NAME> 与 <provider_id> 替换为对应值
     kubectl patch node <NODE_NAME> -p '{"spec":{"providerID": "<provider_id>"}}'
     ```
 
 2. 创建阿里云的 RAM 用户，并授权。
 
-    RAM 用户是 RAM 中的一种实体身份，代表需要访问阿里云的人员或应用程序。通过参阅 [RAM 访问控制](https://help.aliyun.com/zh/ram/user-guide/overview-of-ram-users?spm=a2c4g.11186623.0.0.213e6806eeXInD)创建 RAM 用户，并授于需要访问资源的权限。
+    RAM 用户是 RAM 中的一种实体身份，代表需要访问阿里云的人员或应用程序。通过参阅
+    [RAM 访问控制](https://help.aliyun.com/zh/ram/user-guide/overview-of-ram-users?spm=a2c4g.11186623.0.0.213e6806eeXInD)创建
+    RAM 用户，并授于需要访问资源的权限。
 
     为确保后续步骤中所使用的 RAM 用户具备足够的权限，请与本文保持一致，给予 RAM 用户 `AdministratorAccess` 和 `AliyunSLBFullAccess` 权限。
 
 3. 获取 RAM 用户的 AccessKey & AccessKeySecret
 
-    登录 RAM 用户，访问 [用户中心](https://usercenter.console.aliyun.com/#/manage/ak)，获取对应 RAM 用的 AccessKey & AccessKeySecret。
+    登录 RAM 用户，访问[用户中心](https://usercenter.console.aliyun.com/#/manage/ak)，获取对应
+    RAM 用的 AccessKey & AccessKeySecret。
 
 4. 创建 CCM 的 Cloud ConfigMap。
 
-    将步骤 3 获取的 AccessKey & AccessKeySecret，参考下列方式写入环境变量。
+    将上一步获取的 AccessKey & AccessKeySecret，参考下列方式写入环境变量。
 
     ```bash
     export ACCESS_KEY_ID=LTAI********************
@@ -490,7 +525,7 @@ CCM（Cloud Controller Manager）是阿里云提供的一个用于 Kubernetes �
     EOF
     ```
 
-5. 获取 Yaml ，并通过 `kubectl apply -f cloud-controller-manager.yaml` 方式安装 CCM，本文中安装的版本为 v2.5.0
+5. 获取 YAML，并通过 `kubectl apply -f cloud-controller-manager.yaml` 方式安装 CCM，本文中安装的版本为 v2.5.0
 
     使用如下命令，获取 cloud-controller-manager.yaml，并替换其中 `<<cluster_cidr>>` 为您真实集群的 cluster cidr。
 
@@ -512,9 +547,14 @@ CCM（Cloud Controller Manager）是阿里云提供的一个用于 Kubernetes �
 
 如下的 Yaml 将创建 `spec.type` 为 `LoadBalancer` 的 2 组 service，一组为 tcp （四层负载均衡），一组为 http （七层负载均衡）。
 
-- `service.beta.kubernetes.io/alibaba-cloud-loadbalancer-protocol-port`：CCM 提供的创建七层负载均衡注解。可以通过它自定义暴露端口。更多用法参考 [CCM 使用文档](https://github.com/kubernetes/cloud-provider-alibaba-cloud/blob/master/docs/usage.md) 。
+- `service.beta.kubernetes.io/alibaba-cloud-loadbalancer-protocol-port`：CCM 提供的创建七层负载均衡注解。
+  可以通过它自定义暴露端口。更多用法参考 [CCM 使用文档](https://github.com/kubernetes/cloud-provider-alibaba-cloud/blob/master/docs/usage.md) 。
 
-- `.spec.externalTrafficPolicy`：表示此 Service 是否希望将外部流量路由到节点本地或集群范围的端点。它有两个可用选项：Cluster（默认）和 Local。将`.spec.externalTrafficPolicy` 设置为 `Local`，可以保留客户端源 IP，但公有云自建集群在这种模式下使用平台的 Loadbalancer 组件进行 nodePort 转发时，会出现访问不通。针对该问题 Spiderpool 提供了 coordinator 插件，该插件通过 iptables 在数据包中打标记，确认从 veth0 进入的数据的回复包仍从 veth0 转发，进而解决在该模式下 nodeport 访问不通的问题。
+- `.spec.externalTrafficPolicy`：表示此 Service 是否希望将外部流量路由到节点本地或集群范围的端点。它有两个可用选项：
+  Cluster（默认）和 Local。将`.spec.externalTrafficPolicy` 设置为 `Local`，可以保留客户端源 IP，
+  但公有云自建集群在这种模式下使用平台的 Loadbalancer 组件进行 nodePort 转发时，会出现访问不通。针对该问题
+  Spiderpool 提供了 coordinator 插件，该插件通过 iptables 在数据包中打标记，确认从 veth0 进入的数据的回复包仍从
+  veth0 转发，进而解决在该模式下 nodeport 访问不通的问题。
 
 ```bash
 $ cat <<EOF | kubectl apply -f -
@@ -599,6 +639,7 @@ Accept-Ranges: bytes
 
 ```bash
 $ kubectl describe svc lb-ipv6
+
 ...
 Events:
   Type     Reason                  Age                   From            Message
