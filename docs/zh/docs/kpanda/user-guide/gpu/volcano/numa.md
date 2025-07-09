@@ -21,14 +21,14 @@ Pod 调度时可以采用的 NUMA 放置策略，具体策略对应的调度行�
 调度过程如下：
 
 1. 根据 Pod 设置的 Volcano 拓扑策略，筛选具有相同策略的节点。
-  
+
 2. 在设置了相同策略的节点中，筛选 CPU 拓扑满足该策略要求的节点进行调度。
 
 | Pod 可配置的拓扑策略 | 1. 根据 Pod 设置的拓扑策略，筛选可调度的节点 | 2. 进一步筛选 CPU 拓扑满足策略的节点进行调度 |
-|------------------|----------------------------------------|-----------------------------------------|
-| none             | 针对配置了以下几种拓扑策略的节点，调度时均无筛选行为。none：可调度；best-effort：可调度；restricted：可调度；single-numa-node：可调度 | - |
-| best-effort      | 筛选拓扑策略同样为“best-effort”的节点：none：不可调度；best-effort：可调度；restricted：不可调度；single-numa-node：不可调度 | 尽可能满足策略要求进行调度：优先调度至单 NUMA 节点，如果单 NUMA 节点无法满足 CPU 申请值，允许调度至多个 NUMA 节点。|
-| restricted       | 筛选拓扑策略同样为“restricted”的节点：none：不可调度；best-effort：不可调度；restricted：可调度；single-numa-node：不可调度 | 严格限制的调度策略：单 NUMA 节点的CPU容量上限大于等于 CPU 的申请值时，仅允许调度至单 NUMA 节点。此时如果单 NUMA 节点剩余的 CPU 可使用量不足，则 Pod 无法调度。单 NUMA 节点的 CPU 容量上限小于 CPU 的申请值时，可允许调度至多个 NUMA 节点。 |
+|--------|----------|----------|
+| none | 针对配置了以下几种拓扑策略的节点，调度时均无筛选行为。none：可调度；best-effort：可调度；restricted：可调度；single-numa-node：可调度 | - |
+| best-effort | 筛选拓扑策略同样为“best-effort”的节点：none：不可调度；best-effort：可调度；restricted：不可调度；single-numa-node：不可调度 | 尽可能满足策略要求进行调度：优先调度至单 NUMA 节点，如果单 NUMA 节点无法满足 CPU 申请值，允许调度至多个 NUMA 节点。|
+| restricted | 筛选拓扑策略同样为“restricted”的节点：none：不可调度；best-effort：不可调度；restricted：可调度；single-numa-node：不可调度 | 严格限制的调度策略：单 NUMA 节点的CPU容量上限大于等于 CPU 的申请值时，仅允许调度至单 NUMA 节点。此时如果单 NUMA 节点剩余的 CPU 可使用量不足，则 Pod 无法调度。单 NUMA 节点的 CPU 容量上限小于 CPU 的申请值时，可允许调度至多个 NUMA 节点。 |
 | single-numa-node | 筛选拓扑策略同样为“single-numa-node”的节点：none：不可调度；best-effort：不可调度；restricted：不可调度；single-numa-node：可调度 | 仅允许调度至单 NUMA 节点。|
 
 ## 配置 NUMA 亲和调度策略
@@ -122,9 +122,9 @@ Pod 调度时可以采用的 NUMA 放置策略，具体策略对应的调度行�
 
 | 工作节点 | 节点策略拓扑管理器策略 | NUMA 节点 0 上的可分配 CPU | NUMA 节点 1 上的可分配 CPU |
 |--------|------------------|---------------------|---------------------|
-| node-1 | single-numa-node | 16U                 | 16U                 |
-| node-2 | best-effort      | 16U                 | 16U                 |
-| node-3 | best-effort      | 20U                 | 20U                 |
+| node-1 | single-numa-node | 16U | 16U |
+| node-2 | best-effort | 16U | 16U |
+| node-3 | best-effort | 20U | 20U |
 
 - [示例一](#eg1)中，Pod 的 CPU 申请值为 2U，设置拓扑策略为“single-numa-node”，因此会被调度到相同策略的 node-1。
 - [示例二](#eg2)中，Pod 的 CPU 申请值为20U，设置拓扑策略为“best-effort”，它将被调度到 node-3，
