@@ -31,23 +31,23 @@ aws-vpc-cni is an Underlay network solution provided by AWS for public cloud env
 complex networking requirements. Below is a feature comparison between Spiderpool and aws-vpc-cni when used in
 AWS cloud environments. The subsequent sections will demonstrate the relevant features of Spiderpool:
 
-| Feature Comparison         |        aws-vpc-cni                  |  Spiderpool + IPvlan  |
-|---------------------------|-------------------------------- | ------------------------------------------ |
-| Multiple Underlay NICs    |          ❌                     |      ✅ (Multiple Underlay NICs across subnets)         |
-| Custom Routing             |          ❌                     |      ✅ [route](https://spidernet-io.github.io/spiderpool/v0.9/usage/route/)  |
-| Dual CNI Cooperation       |   Supports multiple CNI NICs but does not support routing coordination   |       ✅                                    |
-| Network Policies           |   ✅ [aws-network-policy-agent](https://github.com/aws/aws-network-policy-agent) |      ✅ [cilium-chaining](https://spidernet-io.github.io/spiderpool/v0.9/usage/cilium-chaining/)               |
-| clusterIP                 |   ✅ (kube-proxy)               |      ✅ (kube-proxy and eBPF methods)        |
-| Bandwidth                 |            ❌                   |      ✅ [Bandwidth Management](https://spidernet-io.github.io/spiderpool/v0.9/usage/ipvlan_bandwidth/)           |
-| Metrics                   |            ✅                   |      ✅                                    |
-| Dual Stack                |  Supports single IPv4, IPv6, while does not support dual stack      |      Supports single IPv4, IPv6, and dual stack                 |
-| Observability             |            ❌                   |      ✅ (with Cilium Hubble, kernel >= 4.19.57)   |
-| Multi-cluster             |            None                   |      ✅ [Submariner](https://spidernet-io.github.io/spiderpool/v0.9/usage/submariner/)     |
-| Compatible with AWS Layer 4/7 Load Balancers |            ✅                   |       ✅                                    |
-| Kernel Restrictions        |            None                   |       >= 4.2 (IPvlan kernel restrictions)                |
-| Forwarding Principles      | Underlay pure routing Layer 3 forwarding          |       IPvlan Layer 2                            |
-| Multicast                 |            ❌                   |       ✅                                   |
-| Access Across VPCs          |           ✅                    |       ✅                                   |
+| Feature Comparison | aws-vpc-cni | Spiderpool + IPvlan |
+|--------------------|------------ | ------------------- |
+| Multiple Underlay NICs | ❌ | ✅ (Multiple Underlay NICs across subnets) |
+| Custom Routing | ❌ | ✅ [route](https://spidernet-io.github.io/spiderpool/v0.9/usage/route/) |
+| Dual CNI Cooperation | Supports multiple CNI NICs but does not support routing coordination | ✅ |
+| Network Policies | ✅ [aws-network-policy-agent](https://github.com/aws/aws-network-policy-agent) | ✅ [cilium-chaining](https://spidernet-io.github.io/spiderpool/v0.9/usage/cilium-chaining/) |
+| clusterIP | ✅ (kube-proxy) | ✅ (kube-proxy and eBPF methods) |
+| Bandwidth | ❌ | ✅ [Bandwidth Management](https://spidernet-io.github.io/spiderpool/v0.9/usage/ipvlan_bandwidth/) |
+| Metrics | ✅ | ✅ |
+| Dual Stack | Supports single IPv4, IPv6, while does not support dual stack | Supports single IPv4, IPv6, and dual stack |
+| Observability | ❌ | ✅ (with Cilium Hubble, kernel >= 4.19.57) |
+| Multi-cluster | None | ✅ [Submariner](https://spidernet-io.github.io/spiderpool/v0.9/usage/submariner/) |
+| Compatible with AWS Layer 4/7 Load Balancers | ✅ | ✅ |
+| Kernel Restrictions | None | >= 4.2 (IPvlan kernel restrictions) |
+| Forwarding Principles | Underlay pure routing Layer 3 forwarding | IPvlan Layer 2 |
+| Multicast | ❌ | ✅ |
+| Access Across VPCs | ✅ | ✅ |
 
 ## Spiderpool Solutions for Alibaba Cloud Limitations
 
@@ -100,9 +100,7 @@ Install Spiderpool via helm:
 
 ```bash
 helm repo add spiderpool https://spidernet-io.github.io/spiderpool
-
 helm repo update spiderpool
-
 helm install spiderpool spiderpool/spiderpool --namespace kube-system --set ipam.enableStatefulSet=false --set multus.multusCNI.defaultCniCRName="ipvlan-eth0"
 ```
 
