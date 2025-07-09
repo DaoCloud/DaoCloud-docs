@@ -1,53 +1,186 @@
----
-hide:
-  - toc
----
+# 模型服务
 
-# 模型部署
+模型服务是一项将开源或微调后的大语言模型快速部署为可调用服务的解决方案。
+通过一键部署，将复杂的模型管理简化为标准化的服务形式，适配主流模型服务的 API 调用能力，满足即开即用的需求。
 
-*[Hydra]: 大模型服务平台的开发代号
+- 模型服务允许用户调用所选模型执行任务，如文本生成、图像理解、图像生成。
+- 支持模型在线体验。
 
-可以从[模型广场](./index.md)或者[模型服务](./service.md)中进行模型部署。各个参数说明如下：
+![service](./images/service01.png)
 
-![deploy](./images/deploy01.png)
+点击模型服务名称，即可进入该服务详情页面。  
+模型服务详情中包含了该服务的基本信息、授权方式以及调用示例。
 
-- 选择需要部署的模型（如 DeepSeek-R1），可通过 下拉菜单 快速选择符合您业务需求和任务场景的模型。
+![service](./images/service02.png)
 
-    ![deploy](./images/deploy02.png)
+## 基本信息
 
-- 模型服务名称，需满足以下要求
+- 模型服务名称：当前服务的名称，用于标识该模型服务
+- 访问模型名称：每个模型服务都有唯一的路径名称，用于调用模型服务
+- 模型服务ID：用于账单查询
+- 模型：当前服务使用的基座模型
+- 实例数：该服务使用实例数
+- 状态：当前服务的状态
+- 付费方式：当前服务的计费方式
 
-    - 长度限制：2 - 64 个字符
-    - 字符限制：仅支持小写字母、数字、短横线（-），且必须以小写字母或数字开头和结尾
-    - 示例：text-gen-service 或 model-01
+## 鉴权方式
 
-- 区域
+- API-Key 授权：
 
-    - 选择服务部署的区域（如“上海七区”）
-    - 区域选择需根据业务覆盖范围和延迟要求进行选择
+    - 所有 API 请求均需要在 HTTP Header 中添加 Authorization 字段，用于验证身份
+    - 格式：Authorization: Bearer {API_KEY}
+    - 您可以通过页面中的“查看我的 API-Key”链接获取密钥
 
-- 实例数
+- 安全建议：将 API-Key 存储在后端服务器，避免将密钥暴露在客户端代码中，防止泄露
 
-    - 配置需要部署的实例数量。默认值：1
-    - 实例说明：实例数量越多，服务的并发能力越强，但成本也会相应增加
+## 调用 API 示例
 
-- 计费方式。Hydra 提供两种计费模式：
+- 请求地址：POST 请求地址为 `https://sh-02.d.run/v1/chat/completions`
 
-    1. 按量付费：
+### 请求示例：使用 curl 调用 API
 
-        - 实时按使用量计费，适合短期使用或动态需求的用户
-        - 费用公式：实例数 × 每小时费用
-        - 示例：1 实例 × 12.57 元/小时 = 12.57 元/小时
+```shell
+curl 'https://sh-02.d.run/v1/chat/completions' \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <Your API Key here>" \
+  -d '{
+    "model": "u-8105f7322477/test",
+    "messages": [{"role": "user", "content": "Say this is a test!"}],
+    "temperature": 0.7
+  }'
+```
 
-    2. 包年包月（暂不支持）：
-    
-        - 提前购买服务实例，价格相对优惠，适合长期使用的用户
-        - 选择此模式后，系统会提示对应的年费或月费价格
+参数说明：
 
-- 查看配置费用
+- model：模型服务的访问路径名称（如 u-8105f7322477/test）。
+- messages：对话历史列表，包含用户输入，例如：
 
-    - 页面底部会自动显示配置费用的计算公式及预计费用
-    - 示例：
+    ```json
+    [{"role": "user", "content": "Say this is a test!"}]
+    ```
 
-        - 配置费用：12.57 元/小时
-        - 计算公式：1（实例数） × 12.57 元/小时
+- temperature：控制生成结果的随机性，值越高生成越有创意，值越低生成越稳定。
+
+### 响应示例
+
+```json
+{
+  "id": "cmp-1d033c426254417b7b0675303b1d300",
+  "object": "chat.completion",
+  "created": 1733724462,
+  "model": "u-8105f7322477/test",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "I am a large language model. How can I assist you today?"
+      },
+      "tool_calls": []
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 25,
+    "completion_tokens": 15,
+    "total_tokens": 40
+  }
+}
+```
+
+响应字段说明：
+
+- id：生成结果的唯一标识符。
+- model：所调用的模型服务 ID。
+- choices：模型生成的结果数组。
+    - message：生成的内容。
+    - content：模型生成的文本内容。
+- usage：本次调用的 Token 使用情况：
+    - prompt_tokens：用户输入的 Token 数量。
+    - completion_tokens：生成结果的 Token 数量。
+    - total_tokens：总使用量。
+
+- 集成开发示例
+
+### Python 示例代码
+
+```python
+# Compatible with OpenAI Python library v1.0.0 and above
+
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://sh-02.d.run/v1/",
+    api_key="<Your API Key here>"
+)
+
+messages = [
+    {"role": "user", "content": "hello!"},
+    {"role": "user", "content": "Say this is test?"}
+]
+
+response = client.chat.completions.create(
+    model="u-8105f7322477/test",
+    messages=messages
+)
+
+content = response.choices[0].message.content
+
+print(content)
+```
+
+### node.js 示例代码
+
+```js
+const OpenAI = require('openai');
+
+const openai = new OpenAI({
+  baseURL: 'https://sh-02.d.run/v1',
+  apiKey: '<Your API Key here>',
+});
+
+async function getData() {
+  try {
+    const chatCompletion = await openai.chat.completions.create({
+      model: 'u-8105f7322477/test',
+      messages: [
+        { role: 'user', content: 'hello!' },
+        { role: 'user', content: 'how are you?' },
+      ],
+    });
+
+    console.log(chatCompletion.choices[0].message.content);
+  } catch (error) {
+    if (error instanceof OpenAI.APIError) {
+      console.error('API Error:', error.status, error.message);
+      console.error('Error details:', error.error);
+    } else {
+      console.error('Unexpected error:', error);
+    }
+  }
+}
+
+getData();
+```
+
+## 扩缩容
+
+如果在模型使用过程中，发现资源不足或出现卡顿现象，可以对模型扩容。
+
+在模型服务列表中，点击右侧的 **┇** ，在弹出菜单中选择 **扩缩容**。
+
+![扩缩容](./images/service03.png)
+
+输入要增加的实例数，比如 2 个后，点击确定。
+
+![扩缩容](./images/service04.png)
+
+## 删除
+
+1. 在模型服务列表中，点击右侧的 **┇** ，在弹出菜单中选择 **删除**
+1. 输入要删除的模型服务名称，确认无误后点击 **删除**
+
+    ![删除服务](./images/service05.png)
+
+!!! caution
+
+    删除后，模型将停止服务，并停止计费。
