@@ -382,7 +382,7 @@ nav:
                       - 在线安装沐曦 GPU 管理: kpanda/user-guide/gpu/metax/online-metax.md
                       - 离线安装沐曦 GPU 管理: kpanda/user-guide/gpu/metax/offline-metax.md
                   - 寒武纪 GPU 管理: kpanda/user-guide/gpu/mlu/use-mlu.md
-                  - POD 与 GPU 卡的占用关系: kpanda/user-guide/gpu/gpupod.md
+                  - Pod 与 GPU 卡的占用关系: kpanda/user-guide/gpu/gpupod.md
                   - GPU 相关FAQ: kpanda/user-guide/gpu/FAQ.md
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md

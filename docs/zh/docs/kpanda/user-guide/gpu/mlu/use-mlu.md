@@ -9,7 +9,7 @@
 - 当前集群已安装寒武纪固件、驱动以及DevicePlugin组件，安装详情请参考官方文档：
     - [驱动固件安装](https://www.cambricon.com/docs/sdk_1.15.0/driver_5.10.22/user_guide/index.html)
     - [DevicePlugin 安装](https://github.com/Cambricon/cambricon-k8s-device-plugin/blob/master/device-plugin/README.md)
-    
+
 在安装 DevicePlugin 时请关闭 **--enable-device-type** 参数，否则 DCE5.0 将无法正确识别寒武纪 GPU。
 
 ## 寒武纪 GPU 模式介绍

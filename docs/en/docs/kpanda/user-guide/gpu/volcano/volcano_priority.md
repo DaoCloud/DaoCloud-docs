@@ -1,29 +1,24 @@
-# 优先级抢占（Preemption scheduling）策略
+# Preemption Scheduling Strategy
 
-Volcano 通过 Priority 插件实现了优先级抢占策略，即 Preemption scheduling 策略。在集群资源有限且多个 Job 等待调度时，
-如果使用 Kubernetes 默认调度器，可能会导致具有更多 Pod 数量的 Job 分得更多资源。而 Volcano-scheduler 提供了算法，支持不同的 Job 以 fair-share 的形式共享集群资源。
+Volcano implements the preemption scheduling strategy through the Priority plugin. When cluster resources are limited and multiple Jobs are waiting to be scheduled, using the default Kubernetes scheduler may cause Jobs with more Pods to get more resources. Volcano-scheduler provides an algorithm that supports different Jobs sharing cluster resources in a fair-share manner.
 
-Priority 插件允许用户自定义 Job 和 Task 的优先级，并根据需求在不同层次上定制调度策略。
-例如，对于金融场景、物联网监控场景等需要较高实时性的应用，Priority 插件能够确保其优先得到调度。
+The Priority plugin allows users to customize the priority of Jobs and Tasks, and tailor scheduling policies at different levels as needed. For example, in scenarios requiring higher real-time performance such as finance or IoT monitoring, the Priority plugin ensures these are scheduled first.
 
-## 使用方式
+## Usage
 
-优先级的决定基于配置的 PriorityClass 中的 Value 值，值越大优先级越高。默认已启用，无需修改。可通过以下命令确认或修改。
+Priority is determined based on the Value field in the configured PriorityClass; the larger the value, the higher the priority. It is enabled by default and does not require modification. You can confirm or modify it with the following command:
 
 ```shell
 kubectl -n volcano-system edit configmaps volcano-scheduler-configmap
 ```
 
-## 使用案例
+## Example
 
-假设集群中存在两个空闲节点，并有三个优先级不同的工作负载：high-priority、med-priority 和 low-priority。
-当 high-priority 工作负载运行并占满集群资源后，再提交 med-priority 和 low-priority 工作负载。
-由于集群资源全部被更高优先级的工作负载占用，med-priority 和 low-priority 工作负载将处于 pending 状态。
-当 high-priority 工作负载结束后，根据优先级调度原则，med-priority 工作负载将优先被调度。
+Assume there are two idle nodes in the cluster and three workloads with different priorities: high-priority, med-priority, and low-priority. When the high-priority workload runs and occupies all cluster resources, the med-priority and low-priority workloads submitted afterward will be pending because all resources are used by the higher priority workload. After the high-priority workload finishes, according to the priority scheduling principle, the med-priority workload will be scheduled first.
 
-1. 通过 priority.yaml 创建 3 个优先级定义，分别为：high-priority，med-priority，low-priority。
+1. Create 3 priority definitions with priority.yaml: high-priority, med-priority, and low-priority.
 
-    ```yaml title="查看 priority.yaml"
+    ```yaml title="View priority.yaml"
     cat <<EOF | kubectl apply -f - 
     apiVersion: scheduling.k8s.io/v1 
     kind: PriorityClass 
@@ -46,7 +41,7 @@ kubectl -n volcano-system edit configmaps volcano-scheduler-configmap
     EOF
     ```
 
-2. 查看优先级定义信息。
+2. Check the priority class information.
 
     ```bash
     kubectl get PriorityClass
@@ -59,10 +54,10 @@ kubectl -n volcano-system edit configmaps volcano-scheduler-configmap
     system-cluster-critical   2000000000   false            6d6h  
     system-node-critical      2000001000   false            6d6h
     ```
-  
-3. 创建高优先级工作负载 high-priority-job，占用集群的全部资源。
 
-    ```bash title="查看 high-priority-job"
+3. Create a high-priority workload `high-priority-job` that occupies all cluster resources.
+
+    ```bash title="View high-priority-job"
     cat <<EOF | kubectl apply -f -  
     apiVersion: batch.volcano.sh/v1alpha1  
     kind: Job  
@@ -89,11 +84,12 @@ kubectl -n volcano-system edit configmaps volcano-scheduler-configmap
     EOF
     ```
 
-    通过 `kubectl get pod` 查看 Pod运行 信息：
+    Check Pod running status:
 
     ```bash
     kubectl get pods
     ```
+
     ```console
     NAME                   READY   STATUS    RESTARTS   AGE  
     priority-high-test-0   1/1     Running   0          3s  
@@ -102,9 +98,9 @@ kubectl -n volcano-system edit configmaps volcano-scheduler-configmap
     priority-high-test-3   1/1     Running   0          3s
     ```
 
-    此时，集群节点资源已全部被占用。
+    At this point, cluster node resources are fully occupied.
 
-4. 创建中优先级工作负载 med-priority-job 和低优先级工作负载 low-priority-job。
+4. Create medium-priority workload `med-priority-job` and low-priority workload `low-priority-job`.
 
     ```bash title="med-priority-job"
     cat <<EOF | kubectl apply -f -  
@@ -160,11 +156,12 @@ kubectl -n volcano-system edit configmaps volcano-scheduler-configmap
     EOF
     ```
 
-    通过 `kubectl get pod` 查看 Pod 运行信息，集群资源不足，Pod 处于 Pending 状态：
+    Check Pod running status; cluster resources are insufficient, so Pods are Pending:
 
     ```bash
     kubectl get pods
     ```
+
     ```console
     NAME                     READY   STATUS    RESTARTS   AGE  
     priority-high-test-0     1/1     Running   0          3m29s  
@@ -181,12 +178,14 @@ kubectl -n volcano-system edit configmaps volcano-scheduler-configmap
     priority-medium-test-3   0/1     Pending   0          2m36s
     ```
 
-5. 删除 high_priority_job 工作负载，释放集群资源，med_priority_job 会被优先调度。
-   执行 `kubectl delete -f high_priority_job.yaml` 释放集群资源，查看 Pod 的调度信息：
+5. Delete the high-priority workload to release cluster resources; the medium-priority workload will be scheduled first.
+
+    Run `kubectl delete -f high_priority_job.yaml` to release resources and check Pod scheduling status:
 
     ```bash
     kubectl get pods
     ```
+
     ```console
     NAME                     READY   STATUS    RESTARTS   AGE  
     priority-low-test-0      0/1     Pending   0          5m18s  

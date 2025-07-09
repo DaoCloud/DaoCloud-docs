@@ -327,37 +327,51 @@ nav:
               - GPU Management:
                   - Intro: kpanda/user-guide/gpu/index.md
                   - GPU Matrix: kpanda/user-guide/gpu/gpu_matrix.md
-                  - NVIDIA GPU Management:
+                  - NVIDIA GPUs:
                       - NVIDIA GPU Modes: kpanda/user-guide/gpu/nvidia/index.md
-                      - Install GPU Operator:
+                      - GPU Operator:
                           - Offline Install GPU Operator: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
-                          - Build Offline yum for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
+                        #   - Build Offline yum for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - Upload Red Hat GPU Opreator Image: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - Build Offline yum for Red Hat 8.4: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                           - Build Offline yum for Red Hat 7.9: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
-                          - Offline Install gpu-operator Driver on Ubuntu22.04: kpanda/user-guide/gpu/nvidia/ubuntu22.04_offline_install_driver.md
-                      - NVIDIA GPU Full Card Mode: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
+                          - Build Offline yum for Red Hat 9.2: kpanda/user-guide/gpu/nvidia/rhel9.2_offline_install_driver.md
+                          - Install GPU Driver on Ubuntu 22.04: kpanda/user-guide/gpu/nvidia/ubuntu22.04_offline_install_driver.md
+                      - NVIDIA GPU Full Card: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU Mode:
                           - Install vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
                           - Use NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
-                          - Build vGPU Oversubscription Image: kpanda/user-guide/gpu/nvidia/vgpu/hami.md
+                          - Build vGPU Overprovision Image: kpanda/user-guide/gpu/nvidia/vgpu/hami.md
+                          - How a Cluster can Manage a Specific GPU: kpanda/user-guide/gpu/nvidia/vgpu/manage_somegpu.md
                       - NVIDIA MIG Mode:
                           - Overview: kpanda/user-guide/gpu/nvidia/mig/index.md
                           - Enable MIG Features: kpanda/user-guide/gpu/nvidia/mig/create_mig.md
                           - Use NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                       - GPU Quotas: kpanda/user-guide/gpu/vgpu_quota.md
-                      - GPU Scheduling: kpanda/user-guide/gpu/dynamic-regulation.md
-                      - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
-                      - Use Volcano:
-                          - Install and Use Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
-                          - Use Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
                       - GPU Scheduling: kpanda/user-guide/gpu/gpu_scheduler_config.md
-                  - Ascend GPU:
-                      - Install NPU Components: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
-                      - Use GPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
-                      - Enable Ascend VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
-                  - Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
+                      - Switching GPU Modes: kpanda/user-guide/gpu/GPU-mode-switching.md
+                      - Dynamic Regulation of GPUs: kpanda/user-guide/gpu/dynamic-regulation.md
+                      - GPU Alerts:
+                          - GPU Metrics: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-metrics.md
+                          - GPU Alert Rules: kpanda/user-guide/gpu/nvidia/gpu-monitoring-alarm/gpu-alarm.md
+                      - Use Volcano:
+                          - Install Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
+                          - Use Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
+                          - Use Volcano Priority Preemption Policies: kpanda/user-guide/gpu/volcano/volcano_priority.md
+                          - Use Volcano Binpack Policy: kpanda/user-guide/gpu/volcano/volcano_binpack.md
+                          - Use Volcano DRF Policy: kpanda/user-guide/gpu/volcano/drf.md
+                          - Use Volcano NUMA Affinity Scheduling: kpanda/user-guide/gpu/volcano/numa.md
+                  - Ascend NPUs:
+                      - Install Ascend NPU Components: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
+                      - Use Ascend NPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
+                      - Enable Ascend vNPU: kpanda/user-guide/gpu/ascend/vnpu.md
+                  - Iluvatar GPUs: kpanda/user-guide/gpu/Iluvatar_usage.md
+                  - Metax GPUs:
+                      - Online Install Metax GPUs: kpanda/user-guide/gpu/metax/online-metax.md
+                      - Offline Install Metax GPUs: kpanda/user-guide/gpu/metax/offline-metax.md
+                  - MLU GPUs: kpanda/user-guide/gpu/mlu/use-mlu.md
+                  - Pod and GPU: kpanda/user-guide/gpu/gpupod.md
                   - GPU FAQs: kpanda/user-guide/gpu/FAQ.md
               - Best Practices:
                   - Back up and Restore etcd: kpanda/best-practice/etcd-backup.md
