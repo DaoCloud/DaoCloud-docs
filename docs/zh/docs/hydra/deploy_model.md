@@ -7,7 +7,7 @@ hide:
 
 *[Hydra]: 大模型服务平台的开发代号
 
-可以从[模型广场](./index.md)或者[模型部署](./deploy.md)中进行模型部署。各个参数说明如下：
+可以从[模型广场](./index.md)或者[模型部署](./deploy_overview.md)中进行模型部署。各个参数说明如下：
 
 ![deploy](./images/deploy01.png)
 
