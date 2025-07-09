@@ -1236,13 +1236,17 @@ nav:
                   - MinIO 灾备方案: middleware/minio/best-pratice/minio-replication.md
       - 云原生 AI:
           - 大模型服务平台:
-              - 模型广场: hydra/index.md
-              - 模型体验: hydra/exp.md
-              - 模型部署:
-                  - hydra/deploy.md
-                  - 使用 Dataset 管理模型文件: hydra/dataset.md
-              - 模型服务: hydra/service.md
-              - 模型调用: hydra/api-call.md
+              - 介绍:
+                  - 什么是大模型服务平台: hydra/intro/index.md
+                  - Release Notes: hydra/intro/release-notes.md
+              - 普通用户视图:
+                  - 模型广场:
+                       - hydra/index.md
+                       - 模型调用: hydra/api-call.md
+                  - 模型体验: hydra/exp.md
+                  - 模型部署:
+                      - 模型部署: hydra/service.md
+                      - 使用 Dataset 管理模型文件: hydra/dataset.md
               - API Key 管理: hydra/apikey.md
               - 使用示例场景:
                   - 示例场景介绍: hydra/user-guides/index.md
