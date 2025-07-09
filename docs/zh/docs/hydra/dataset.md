@@ -20,7 +20,7 @@ Hydra基于BaizeAl/Dataset来管理模型的权重文件，Dataset基于kubernet
 
 ### 通过HuggingFace和ModelScope
 
-我们已经在BaizeAl/ModelHub将Hydra部署大模型需要的元信息都规整好了，以 qwen2-0.5b-instruct 为例，找到对应的metadata.yaml（https://github.com/BaizeAl/modelhub/blob/main/models/alibaba/qwen2-0.5b-instruct/metadata.yaml）:
+我们已经在BaizeAl/ModelHub将Hydra部署大模型需要的元信息都规整好了，以 qwen2-0.5b-instruct 为例，找到对应的 [metadata.yaml](https://github.com/BaizeAl/modelhub/blob/main/models/alibaba/qwen2-0.5b-instruct/metadata.yaml):
 
 
 ```yaml
