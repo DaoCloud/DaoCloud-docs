@@ -134,7 +134,7 @@ data:
 
 ### 使用NFS
 
-提前准备模型文件到NFS，以如下路径为例nfs://192.168.1.11/dataset/Qwen/Qwen2.5-0.5B-Instruct 为例，创建Dataset
+提前准备模型文件到NFS，以路径 `nfs://192.168.1.11/dataset/Qwen/Qwen2.5-0.5B-Instruct` 为例，创建Dataset：
 
 ```yaml
 apiVersion: dataset.baizeai.io/v1alpha1
