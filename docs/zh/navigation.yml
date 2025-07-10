@@ -1248,8 +1248,11 @@ nav:
                       - hydra/deploy/index.md
                       - 部署新模型: hydra/deploy/deploy.md
                       - 使用 Dataset 管理模型文件: hydra/dataset.md
-              - API Key 管理: hydra/apikey.md
-              - 使用示例场景:
+                  - API Key 管理: hydra/apikey.md
+              - 运维管理:
+                  - 模型广场管理: hydra/oam/index.md
+                  - 模型部署管理: hydra/oam/mdm.md
+              - 用户实践场景:
                   - 示例场景介绍: hydra/user-guides/index.md
                   - 在 VSCode 和 Cline 中使用: hydra/user-guides/cline-in-vscode.md
                   - 在 Cherry Studio 中使用: hydra/user-guides/cherry-studio.md
