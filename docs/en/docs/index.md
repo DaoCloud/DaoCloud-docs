@@ -33,9 +33,13 @@ With extensive testing from thousands of industry customers in real production c
 - :material-engine: **Microservice Engine** [Microservice governance and gateway](skoala/intro/index.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider/intro/index.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/index.md)
+- :simple-themodelsresource: **LLM Studio** [Use and maintain large models](./hydra/intro/index.md)
 - :material-slot-machine: **AI Lab** [Cloud Native AI - Integrated Training and Inference Platform](baize/intro/index.md)
 - :fontawesome-brands-edge: **Cloud Edge Collaboration** [Containers extend to edge](kant/intro/index.md)
 - :fontawesome-solid-user-group: **Global Management** [Login/permissions/appearance](ghippo/intro/index.md)
+- :material-download: **Download Hub** [Download offline packages](download/index.md)
+- :simple-youtubestudio: **Best Practices** [Practice enables your business](dce/bphome.md)
+- :material-frequently-asked-questions: **FAQs** [troubleshooting](dce/faq.md)
 - [Free Trial :free:](./trial/index.md){ .md-button }
 
 </div>

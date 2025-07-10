@@ -32,6 +32,7 @@ DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全�
 - :material-engine: **微服务引擎** [微服务治理中心和网关](skoala/intro/index.md)
 - :material-table-refresh: **服务网格** [非侵入式服务治理](mspider/intro/index.md)
 - :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](middleware/index.md)
+- :simple-themodelsresource: **大模型服务平台** [运营管控大模型](./hydra/intro/index.md)
 - :material-slot-machine: **AI Lab** [云原生 AI - 训推一体化平台](baize/intro/index.md)
 - :fontawesome-brands-edge: **云边协同** [容器能力扩展至边缘](kant/intro/index.md)
 - :fontawesome-solid-user-group: **全局管理** [设置登录/访问权限/外观](ghippo/intro/index.md)
