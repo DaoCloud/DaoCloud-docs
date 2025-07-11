@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # MySQL Release Notes
 
 本页列出 MySQL 数据库的 Release Notes，便于您了解各版本的演进路径和特性变化。

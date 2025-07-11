@@ -26,6 +26,18 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     - [跨节点迁移 ES 数据](./elasticsearch/user-guide/migrate-es.md)
     - [ES 故障排查](./elasticsearch/faq/common-question-es.md)
 
+- :simple-apachekafka:{ .lg .middle } __Kafka 消息队列__
+
+    ---
+
+    这是支持流式数据处理等多种特性的分布式消息流处理中间件，常用于消息传输的数据管道。
+
+    - [什么是 Kafka](./kafka/intro/index.md)
+    - [创建 Kafka 实例](./kafka/user-guide/create.md)
+    - [查看/更新/删除 Kafka](./kafka/user-guide/view-update-delete.md)
+    - [Kafka 日志及实例监控](./kafka/user-guide/insight-log.md)
+    - [Kafka 参数配置](./kafka/user-guide/config.md)
+
 - :simple-minio:{ .lg .middle } __MinIO 对象存储__
 
     ---
@@ -38,9 +50,15 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     - [MinIO 实例监控](./minio/user-guide/insight-log-config.md)
     - [MinIO 身份管理](./minio/user-guide/user-management.md)
 
-</div>
+- :simple-mongodb:{ .lg .middle } __MongoDB 数据库__
 
-<div class="grid cards" markdown>
+    ---
+
+    MongoDB 是一种面向文档的 NoSQL 数据库管理系统，它以灵活的数据模型和可扩展性而闻名。
+
+    - [什么是 MongoDB](./mongodb/intro/index.md)
+    - [创建/更新/删除 MongoDB 实例](./mongodb/user-guide/create.md)
+    - [查看 MongoDB 日志](./mongodb/user-guide/logs.md)
 
 - :simple-mysql:{ .lg .middle } __MySQL 数据库__
 
@@ -53,20 +71,6 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     - [查看 MySQL 日志](./mysql/user-guide/logs.md)
     - [MySQL 故障排查](./mysql/faq/quick-check.md)
 
-- :simple-mongodb:{ .lg .middle } __MongoDB 数据库__
-
-    ---
-
-    MongoDB 是一种面向文档的 NoSQL 数据库管理系统，它以灵活的数据模型和可扩展性而闻名。
-
-    - [什么是 MongoDB](./mongodb/intro/index.md)
-    - [创建/更新/删除 MongoDB 实例](./mongodb/user-guide/create.md)
-    - [查看 MongoDB 日志](./mongodb/user-guide/logs.md)
-
-</div>
-
-<div class="grid cards" markdown>
-
 - :simple-postgresql:{ .lg .middle } __PostgreSQL 数据库__
 
     ---
@@ -77,21 +81,6 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     - [创建/更新/删除 PostgreSQL 实例](./postgresql/user-guide/create.md)
     - [查看 PostgreSQL 日志](./postgresql/user-guide/logs.md)
     - [PostgreSQL 反亲和设置](./postgresql/user-guide/antiaffinity.md)
-
-- :simple-redis:{ .lg .middle } __Redis 缓存服务__
-
-    ---
-
-    这是一种内存数据库缓存服务，兼容了 Redis 和 Memcached 两种内存数据库引擎的优点。
-
-    - [什么是 Redis](./redis/intro/index.md)
-    - [创建/更新/删除 Redis 实例](./redis/user-guide/create.md)
-    - [查看 Redis 日志](./redis/user-guide/logs.md)
-    - [跨集群数据同步](./redis/best-practice/index.md)
-
-</div>
-
-<div class="grid cards" markdown>
 
 - :simple-rabbitmq:{ .lg .middle } __RabbitMQ 消息队列__
 
@@ -105,21 +94,16 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     - [RabbitMQ 数据迁移](./rabbitmq/user-guide/migrate.md)
     - [RabbitMQ 自定义插件](./rabbitmq/faq/add-plugin.md)
 
-- :simple-apachekafka:{ .lg .middle } __Kafka 消息队列__
+- :simple-redis:{ .lg .middle } __Redis 缓存服务__
 
     ---
 
-    这是支持流式数据处理等多种特性的分布式消息流处理中间件，常用于消息传输的数据管道。
+    这是一种内存数据库缓存服务，兼容了 Redis 和 Memcached 两种内存数据库引擎的优点。
 
-    - [什么是 Kafka](./kafka/intro/index.md)
-    - [创建 Kafka 实例](./kafka/user-guide/create.md)
-    - [查看/更新/删除 Kafka](./kafka/user-guide/view-update-delete.md)
-    - [Kafka 日志及实例监控](./kafka/user-guide/insight-log.md)
-    - [Kafka 参数配置](./kafka/user-guide/config.md)
-
-</div>
-
-<div class="grid cards" markdown>
+    - [什么是 Redis](./redis/intro/index.md)
+    - [创建/更新/删除 Redis 实例](./redis/user-guide/create.md)
+    - [查看 Redis 日志](./redis/user-guide/logs.md)
+    - [跨集群数据同步](./redis/best-practice/index.md)
 
 - :simple-apacherocketmq:{ .lg .middle } __RocketMQ 消息队列__
 
@@ -127,8 +111,8 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
 
     这是基于高级消息队列协议 (AMQP) 构建的消息代理软件（亦称面向消息的中间件），常用于交易数据的传输管道。
 
-    - [什么是 Rocketmq](./rocketmq/intro/index.md)
-    - [创建/更新/删除 Rocketmq 实例](./rocketmq/quick-start/create-rocketmq.md)
+    - [什么是 RocketMQ](./rocketmq/intro/index.md)
+    - [创建/更新/删除 RocketMQ 实例](./rocketmq/quick-start/create-rocketmq.md)
 
 </div>
 

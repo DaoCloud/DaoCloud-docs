@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # RabbitMQ Release Notes
 
 本页列出 RabbitMQ 消息队列的 Release Notes，便于您了解各版本的演进路径和特性变化。

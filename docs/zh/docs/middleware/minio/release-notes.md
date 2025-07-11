@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # MinIO 对象存储 Release Notes
 
 本页列出 MinIO 对象存储的 Release Notes，便于您了解各版本的演进路径和特性变化。
