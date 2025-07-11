@@ -217,9 +217,8 @@ metadata:
   name: qwen2-5-0-5b-instruct
   namespace: another-namepsace
 spec:
-  share: true
   source:
-    type: PVC
+    type: REFERENCE
     uri: dataset://public/qwen2-5-0-5b-instruct
 ```
 
