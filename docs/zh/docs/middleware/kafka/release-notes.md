@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Kafka 消息队列 Release Notes
 
 本页列出 Kafka 消息队列的 Release Notes，便于您了解各版本的演进路径和特性变化

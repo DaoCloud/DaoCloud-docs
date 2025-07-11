@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Elasticsearch 索引服务 Release Notes
 
 本页列出 Elasticsearch 索引服务的 Release Notes，便于您了解各版本的演进路径和特性变化。
