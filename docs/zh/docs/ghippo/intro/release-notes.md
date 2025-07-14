@@ -2,6 +2,21 @@
 
 本页列出全局管理各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2025-06-30
+
+### v0.39.0
+
+- **优化** Chart 中 `Values` 中 `sidecar` 资源配置参数，将 `apiserver`、`audit-server`、`ghippo-ui`、`anakin`、`controller-manager` 中的 `sidecar.istio.io/proxyResources` 统一聚合到 `global.istioSidecar.resources` 调控。
+- **修复** 平台关闭双因子验证时，重置密码显示重置 `OTP` 的问题
+- **修复** 测试邮件服务器时，同时选取 `ssl` 和 `startls` 不报错问题
+- **修复** 前端对接身份提供商 `OIDC` 协议一键获取失败问题（封装访问 `well-known-url` 的过程，返回 `openid configuration` 至前端显示）
+
+### v0.38.1
+
+- **新增** 支持显示 `LDAP` 用户最近一次登录时间
+- **新增** 配额管理界面对 `Ascend 910 VIR` 类型 `GPU` 进行适配
+- **修复** 查看角色详情时, 部分权限点为空的问题
+
 ## 2025-05-31
 
 ### v0.37.0
