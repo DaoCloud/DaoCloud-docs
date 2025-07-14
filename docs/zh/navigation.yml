@@ -1242,8 +1242,8 @@ nav:
                   - Release Notes: hydra/intro/release-notes.md
               - 普通用户视图:
                   - 模型广场:
-                       - hydra/index.md
-                       - 模型调用: hydra/api-call.md
+                      - hydra/index.md
+                      - 模型调用: hydra/api-call.md
                   - 模型体验: hydra/exp.md
                   - 模型部署:
                       - hydra/deploy/index.md
