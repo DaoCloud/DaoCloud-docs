@@ -1174,6 +1174,29 @@ nav:
                       - View Instance Details: middleware/minio/user-guide/view.md
                       - MinIO Identity Management: middleware/minio/user-guide/user-management.md
       - Cloud Native AI:
+          - LLM Studio:
+              - Intro:
+                  - What is LLM Studio: hydra/intro/index.md
+                  - Release Notes: hydra/intro/release-notes.md
+              - User View:
+                  - Model Gallery:
+                       - hydra/index.md
+                       - Call Models: hydra/api-call.md
+                  - Playground: hydra/exp.md
+                  - Served Models:
+                      - hydra/deploy/index.md
+                      - Serve a New Model: hydra/deploy/deploy.md
+                      - Use Dataset to Manage Model Files: hydra/dataset.md
+                  - API Keys: hydra/apikey.md
+              - Admin Console:
+                  - Manage Model Gallery: hydra/oam/index.md
+                  - Manage Deployed Models: hydra/oam/mdm.md
+              - Best Practices:
+                  - Intro: hydra/user-guides/index.md
+                  - Use with VSCode and Cline: hydra/user-guides/cline-in-vscode.md
+                  - Use with Cherry Studio: hydra/user-guides/cherry-studio.md
+                  - Use with Bob Translate: hydra/user-guides/bob-translate.md
+                  - Use with LobeChat: hydra/user-guides/lobe-chat.md
           - AI Lab:
               - Introduction:
                   - What is AI Lab: baize/intro/index.md
