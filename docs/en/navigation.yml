@@ -1180,8 +1180,8 @@ nav:
                   - Release Notes: hydra/intro/release-notes.md
               - User View:
                   - Model Gallery:
-                       - hydra/index.md
-                       - Call Models: hydra/api-call.md
+                      - hydra/index.md
+                      - Call Models: hydra/api-call.md
                   - Playground: hydra/exp.md
                   - Served Models:
                       - hydra/deploy/index.md
