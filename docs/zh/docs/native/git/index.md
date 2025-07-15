@@ -229,6 +229,12 @@ npx prettier -w filename
     https://github.com/DaoCloud/DaoCloud-docs/pulls?q=is%3Apr+label%3Akpanda+is%3Aclosed+merged%3A%3E%3D2024-01
     ```
 
+- 查看某人参与过的所有 PR：
+
+   ```http
+   https://github.com/kubernetes/website/pulls?q=is%3Apr+involves%3Awindsonsea
+   ```
+
 - 查看某个日期之后 closed discussion 评论：
 
     ```http

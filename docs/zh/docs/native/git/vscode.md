@@ -52,4 +52,11 @@
 <p>\n<!--\n$1\n-->\n\n</p>
 ```
 
+查找 markdown 表格中前后冗余空格：
+
+```
+{2,}
+\s+\|
+```
+
 ![search](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/vscode03.png)
