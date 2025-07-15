@@ -10,6 +10,7 @@ nav:
               - 适用场景: dce/scenario.md
               - 我们是 K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - v0.31.0-20250630 发布: dce/dce-rn/20250630.md
                   - v0.30.0-20250530 发布: dce/dce-rn/20250530.md
                   - v0.29.0-20250430 发布: dce/dce-rn/20250430.md
                   - v0.28.0-20250331 发布: dce/dce-rn/20250331.md
