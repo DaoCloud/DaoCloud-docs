@@ -188,6 +188,35 @@ clusterConfig.yaml 如下：
 **绕过方法：**
 使用新的二进制文件重试。
 
+## Manifest 开启 MySQL MGR 模式无效
+
+**问题：**
+
+dce5-installer 自 v0.30 无法通过 Manifest 开启 MGR mysql。
+其他参数如 pvcSize 等也不生效，只有 enable 参数才能生效。
+
+![manifest-enable](./images/manifest-enable.png)
+
+**解决办法：**
+
+1. 执行安装器命令 `--dry-run` 参数输出执行脚本到 installer.sh
+
+    ```shell
+    ./dce5-installer cluster-create -c clusterConfig.yml -m manifest-enterprise.yaml -z --dry-run > installer.sh
+    ```
+
+1. 在 installer.sh 脚本文件开头加一行：
+
+    ```script title="installer.sh"
+    ManifestFile=/root/data/manifest-enterprise.yaml
+    ```
+
+1. 增加 -s 参数，重新执行 installer.sh
+
+    ```shell
+    ./dce5-installer cluster-create -c clusterConfig.yml -m manifest-enterprise.yaml -z -s installer.sh
+    ```
+
 ## 社区版问题
 
 ### kind 集群重装 DCE 5.0 时 Redis 卡住
