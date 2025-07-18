@@ -69,8 +69,18 @@
 
     ```bash
     # 假设 kubean 版本为 v0.13.9
-    docker run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.13.9
+    docker run \
+        -v $(pwd)/data:/data \
+        -v $(pwd)/manifest.yml:/manifest.yml \
+        -e ZONE=CN \
+        -e MODE=FULL \
+        ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.13.9
     ```
+
+    | 环境变量 | 可选值描述 | 默认值 |
+    | ----------- | ------------------------------------ | ----------- |
+    | ZONE | - `DEFAULT`: 采用默认原始地址下载离线资源  <br/>  -`CN`: 采用国内 DaoCloud 加速器地址下载离线资源 | `DEFAULT` |
+    | MODE | - `INCR`: 仅构建配置中指定组件的离线资源（即：增量包） <br/>  - `FULL`: 将构建配置中指定的组件以及集群部署必要其他组件的离线资源（即：全量包）| `INCR` |
 
     等待 Docker 服务运行完成后，检查 __/data__ 文件夹下的文件，文件目录如下：
 
