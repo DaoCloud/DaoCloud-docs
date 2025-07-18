@@ -62,7 +62,7 @@ kubeconfig 内需要使用较长时效的 Token（建议使用永久 Token）。
       namespace: kube-system
       annotations:
         kubernetes.io/service-account.name: eks-admin
-        type: kubernetes.io/service-account-token
+    type: kubernetes.io/service-account-token
     EOF
     ```
 
