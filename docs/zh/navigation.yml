@@ -1181,7 +1181,8 @@ nav:
                       - 手工设置工作负载反亲和: middleware/postgresql/user-guide/antiaffinity.md
                       - 备份管理: middleware/postgresql/user-guide/backup.md
                       - 配置备份数据: middleware/postgresql/user-guide/auto-backup.md
-                      - 实例拓扑: middleware/postgresql/user-guide/instancemap.md
+                      - 参数模板: middleware/postgresql/user-guide/template.md
+                      - 实例监控: middleware/postgresql/user-guide/instancemap.md
                   - 参考文档:
                       - 开启 PGVector 插件: middleware/postgresql/user-guide/pgvector.md
               - RabbitMQ 消息队列:
