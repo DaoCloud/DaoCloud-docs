@@ -103,7 +103,7 @@ spec:
   order: 50  
   url: ./kpanda/clusters  
   visible: true  
-  
+
 ---
 apiVersion: ghippo.io/v1alpha1  
 kind: GProductNavigator  
@@ -241,7 +241,6 @@ spec:
   visible: true  
   
 ---
-
 apiVersion: ghippo.io/v1alpha1
 kind: GProductResourcePermissions
 metadata:
@@ -265,7 +264,6 @@ spec:
         en-US: Menu
         zh-CN: 菜单
       name: menu
-
 ```
 
 ## 通过自定义角色实现上述效果
