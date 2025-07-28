@@ -103,7 +103,7 @@ spec:
   order: 50  
   url: ./kpanda/clusters  
   visible: true  
-  
+
 ---
 apiVersion: ghippo.io/v1alpha1  
 kind: GProductNavigator  
@@ -241,94 +241,29 @@ spec:
   visible: true  
   
 ---
-apiVersion: ghippo.io/v1alpha1  
-kind: GProductResourcePermissions  
-metadata:  
-  name: kpanda  
-spec:  
-  actions:  
-    - localizedName:  
-        en-US: Create  
-        zh-CN: 创建  
-      name: create  
-    - localizedName:  
-        en-US: Delete  
-        zh-CN: 删除  
-      name: delete  
-    - localizedName:  
-        en-US: Update  
-        zh-CN: 编辑  
-      name: update  
-    - localizedName:  
-        en-US: Get  
-        zh-CN: 查看  
-      name: get  
-    - localizedName:  
-        en-US: Admin  
-        zh-CN: 管理  
-      name: admin  
-  authScopes:  
-    - resourcePermissions:  
-        - actions:  
-            - name: get  
-            - dependPermissions:  
-                - action: get  
-              name: create  
-            - dependPermissions:  
-                - action: get  
-              name: update  
-            - dependPermissions:  
-                - action: get  
-              name: delete  
-          resourceType: cluster  
-        - actions:  
-            - name: get  
-          resourceType: menu  
-      scope: platform  
-    - resourcePermissions:  
-        - actions:  
-            - name: admin  
-              tips:  
-                - en-US: >-  
-                    If the workspace is bound to a cluster, it will be assigned  
-                    the Cluster Admin role upon authorization.  
-                  zh-CN: 若工作空间绑定了集群，授权后还将被映射为对应集群的 Cluster Admin 角色  
-          resourceType: cluster  
-        - actions:  
-            - name: get  
-              tips:  
-                - en-US: >-  
-                    If the workspace is bound to a namespace, it will be  
-                    assigned the NS View role upon authorization.  
-                  zh-CN: 若工作空间绑定了命名空间，授权后还将被映射为对应命名空间的 NS View 角色  
-            - name: update  
-              tips:  
-                - en-US: >-  
-                    If the workspace is bound to a namespace, it will be  
-                    assigned the NS Edit role upon authorization.  
-                  zh-CN: 若工作空间绑定了命名空间，授权后还将被映射为对应命名空间的 NS  Edit 角色  
-            - name: admin  
-              tips:  
-                - en-US: >-  
-                    If the workspace is bound to a namespace, it will be  
-                    assigned the NS Admin role upon authorization.  
-                  zh-CN: 若工作空间绑定了命名空间，授权后还将被映射为对应命名空间的 NS Admin 角色  
-          resourceType: namespace  
-      scope: workspace  
-  gproduct: kpanda  
-  resourceTypes:  
-    - localizedName:  
-        en-US: Cluster Management  
-        zh-CN: 集群管理  
-      name: cluster  
-    - localizedName:  
-        en-US: Menu  
-        zh-CN: 菜单  
-      name: menu  
-    - localizedName:  
-        en-US: Namespace Management  
-        zh-CN: 命名空间  
-      name: namespace
+apiVersion: ghippo.io/v1alpha1
+kind: GProductResourcePermissions
+metadata:
+  name: kpanda-custom
+spec:
+  isCustom: true
+  actions:
+    - localizedName:
+        en-US: Get
+        zh-CN: 查看
+      name: get
+  authScopes:
+    - resourcePermissions:
+        - actions:
+            - name: get
+          resourceType: menu
+      scope: platform
+  gproduct: kpanda
+  resourceTypes:
+    - localizedName:
+        en-US: Menu
+        zh-CN: 菜单
+      name: menu
 ```
 
 ## 通过自定义角色实现上述效果
