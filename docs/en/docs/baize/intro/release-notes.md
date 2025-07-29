@@ -13,13 +13,23 @@ so that you can learn its evolution path and feature changes.
     Features labeled as Beta may undergo changes; please use them with caution
     and provide prompt feedback if you encounter any issues.
 
+## 2025-06-30
+
+### v0.18.1
+
+- **Added** the ability to manage resource pools based on node configurations.  
+- **Added** support for choosing whether to clear or retain existing files during data space preloading.  
+- **Optimized** the product logic by renaming "dataset" to "data space" for conceptual consistency.  
+- **Upgraded** the vLLM image to v0.9.1.  
+- **Fixed** the vulnerability of CVE-2024-24790.
+
 ## 2025-05-31
 
 ### v0.17.3
 
 * **Optimized** by upgrading the vLLM framework image to version 0.8.5-post1.
-* **Optimized** the dataset warming logic for HTTP and S3 types so that existing files
-  in storage are no longer deleted during the warming process.
+* **Optimized** the dataset preloading logic for HTTP and S3 types so that existing files
+  in storage are no longer deleted during the preloading process.
 * **Fixed** issues related to exceptions when updating the dataset type.
 * **Fixed** an issue with abnormal webhook behavior during `baize-agent` upgrades.
 * **Fixed** an error that occurred when creating inference services through the UI.
@@ -32,7 +42,7 @@ so that you can learn its evolution path and feature changes.
 
 - **Added** support for configuring pre- and post-execution parameters in vLLM inference services.
 - **Added** support for disabling vLLM commands in the vLLM framework to meet distributed inference requirements.
-- **Added** CRD support for customizing CPU/memory resources for dataset prewarming tasks, timeout for saving training images, and startup timeout for inference services.
+- **Added** CRD support for customizing CPU/memory resources for dataset prepreloading tasks, timeout for saving training images, and startup timeout for inference services.
 - **Improved** the notebook image by reducing its size.
 - **Improved** inference service configuration by adding example environment variables.
 - **Improved** the dataset creation process by adding a "Create PVC" link for PVC type selection.
