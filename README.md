@@ -9,10 +9,10 @@ DaoCloud is a Certified Kubernetes Service Provider (KCSP). DCE has been certifi
 
 Current releases maintained by K8s community:
 
-[![1.28](./images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
 [![1.29](./images/1.29.png)](https://github.com/cncf/k8s-conformance/pull/3203)
 [![1.30](./docs/zh/docs/images/1.30.png)](https://github.com/cncf/k8s-conformance/pull/3578)
 [![1.31](./docs/zh/docs/images/1.31.png)](https://github.com/cncf/k8s-conformance/pull/3675)
+[![1.32](./docs/zh/docs/images/1.32.png)](https://github.com/cncf/k8s-conformance/pull/3810)
 
 Legacy versions that are no longer maintained by the K8s community but will continue to be maintained by DaoCloud's [KLTS](https://klts.io/):
 
@@ -27,6 +27,7 @@ Legacy versions that are no longer maintained by the K8s community but will cont
 [![1.25](./images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
 [![1.26](./images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
 [![1.27](./images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
+[![1.28](./images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
 
 DCE 5.0 website is created with MkDocs. All pages are written in markdown.
 We use GitOps to control workflow and versions.
