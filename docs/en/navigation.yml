@@ -1233,10 +1233,14 @@ nav:
                           - Create with Triton Framework: baize/developer/inference/triton-inference.md
                           - Create with vLLM Framework: baize/developer/inference/vllm-inference.md
               - Operator:
-                  - Resource Management: baize/oam/resource.md
-                  - Queue Management:
+                  - Intro: baize/oam/index.md
+                  - Resource Pools:
+                      - Create Resource Pool: baize/oam/resource/create.md
+                      - Manage Resource Pool: baize/oam/resource/manage.md
+                  - Queues:
                       - Create Queue: baize/oam/queue/create.md
                       - Delete Queue: baize/oam/queue/delete.md
+                  - GPUs: baize/gpu.md
               - Best Practices:
                   - Deploy NFS to Preload Dataset: baize/best-practice/deploy-nfs-in-worker.md
                   - Update Notebook Built-in Images: baize/best-practice/change-notebook-image.md
