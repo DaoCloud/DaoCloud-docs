@@ -244,7 +244,7 @@ Install it in the insight-system namespace. There are some minor differences bet
 
 If you enable the tracing capability of the Mspider(Service Mesh), you need to add an additional environment variable injection configuration:
 
-### The operation steps are as follows
+### The operation steps
 
 1. Log in to DCE 5.0, then enter __Container Management__ and select the target cluster.
 2. Click __CRDs__ in the left navigation bar, find __instrumentations.opentelemetry.io__, and enter the details page.
@@ -333,31 +333,31 @@ different pod annotations need to be added. Each service can add one of two type
     python, dotnet. After using it, automatic probes and otel default environment variables will be 
     injected into the first container under spec.pod:
 
-    === "Java application"
+    === "Java"
 
         ```yaml
         instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
-    === "NodeJs application"
+    === "Node.js"
 
         ```yaml
         instrumentation.opentelemetry.io/inject-nodejs: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
-    === "Python application"
+    === "Python"
 
         ```yaml
         instrumentation.opentelemetry.io/inject-python: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
-    === "Dotnet application"
+    === ".NET"
 
         ```yaml
         instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
-    === "Golang application"
+    === "Golang"
 
         Since Go's automatic detection requires the setting of [OTEL_GO_AUTO_TARGET_EXE](https://github.com/open-telemetry/opentelemetry-go-instrumentation/blob/main/docs/how-it-works.md), 
         you must provide a valid executable path through annotations or Instrumentation resources. 
@@ -561,8 +561,62 @@ spec:
 +       - name: opentelemetry-auto-instrumentation-java
 +         mountPath: /otel-auto-instrumentation-java
 ```
+
 🔔 Automatically injected YAML may not be entirely consistent across different versions."
 
 ## Trace query
 
 How to query the connected services, refer to [Trace Query](../../user-guide/trace/trace.md).
+
+## Installing Multiple Instrumentation CRs to Support Differentiated Configuration
+
+The previously mentioned instrumentation CR is a built-in, general-purpose configuration provided by Insight.
+In real-world scenarios, to meet differentiated configuration needs, you can install multiple Instrumentation CRs
+with different names and reference them as needed.
+
+Typical use cases include:
+
+1. **Environment isolation** : Different configurations for sampling rate, exporter endpoints, etc., in dev/test/prod environments.
+2. **Team/business unit isolation** : Different teams may have separate requirements for telemetry data storage or resource tagging.
+3. **Service type differentiation** : Frontend, backend, and data-processing services may require different sampling rates or metric scopes.
+4. **Granular sampling strategy** : Apply lower sampling for high-throughput services and full sampling for critical paths to reduce overhead.
+5. **Canary releases and testing** : Use a new CR to test configuration changes, and gradually replace the old configuration after validation.
+6. **Namespace isolation** : Use separate CRs for services in different namespaces to avoid configuration interference.
+7. **Compliance requirements** : EU services need to send data to collectors within the EU to comply with GDPR.
+8. **Resource tagging differentiation** : Add custom tags (e.g., `team: a`, `env: prod`) for different service groups.
+
+**Core principle** : Use multiple CRs to "divide and conquer," avoiding the limitations of a single configuration when handling multidimensional needs.
+
+### Examples
+
+1. Create another `insight-opentelemetry-autoinstrumentation-debug` Instrumentation CR for Project Group B to test a new Java Agent version:
+
+    ```yaml
+    apiVersion: opentelemetry.io/v1alpha1
+    kind: Instrumentation
+    metadata:
+      name: insight-opentelemetry-autoinstrumentation-debug # 👈 Used to distinguish between different Instrumentation CRs
+      namespace: insight-system
+    spec:
+      java:
+        image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:my-debug-xx.xx # 👈 Image version for testing
+        ······
+        env:
+          - name: OTEL_JAVAAGENT_DEBUG
+            value: "false"
+          - name: OTEL_INSTRUMENTATION_JDBC_ENABLED
+            value: "true"
+          - name: SPLUNK_PROFILER_ENABLED
+            value: "false"
+          - name: OTEL_METRICS_EXPORTER
+            value: "prometheus"
+          - name: OTEL_METRICS_EXPORTER_PORT
+            value: "9464"
+        ······  
+    ```
+
+2. Update the service’s annotation to use `insight-system/insight-opentelemetry-autoinstrumentation-debug`:
+
+    ```yaml
+    instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation-debug"
+    ```
