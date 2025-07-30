@@ -343,7 +343,7 @@
         instrumentation.opentelemetry.io/inject-python: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
-    === "Dotnet 应用"
+    === ".NET 应用"
 
         ```yaml
         instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
