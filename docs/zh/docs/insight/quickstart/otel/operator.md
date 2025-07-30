@@ -547,7 +547,8 @@ spec:
 +       - name: opentelemetry-auto-instrumentation-java
 +         mountPath: /otel-auto-instrumentation-java
 ```
-🔔 需要注意的是，不同的版本自动注入后生成YAML并不完全一致。
+
+🔔 需要注意的是，不同的版本自动注入后生成 YAML 并不完全一致。
 
 ## 链路查询
 
@@ -559,8 +560,8 @@ spec:
 
 典型适用场景如下：
 
-1. 环境隔离：开发 / 测试 / 生产环境需独立配置采样率、Exporter 端点等参数。
-2. 团队 / 业务线隔离：不同团队对遥测数据的存储位置、资源标签有独立需求。
+1. 环境隔离：开发/测试/生产环境需独立配置采样率、Exporter 端点等参数。
+2. 团队/业务线隔离：不同团队对遥测数据的存储位置、资源标签有独立需求。
 3. 服务类型差异化：前端、后端、数据处理服务的采样率、指标收集范围不同。
 4. 采样策略精细化：高频服务低采样，核心链路全采样，避免性能开销。
 5. 灰度发布与测试：通过新 CR 测试配置变更，验证后逐步替换旧配置。
@@ -571,35 +572,35 @@ spec:
 核心逻辑：通过多 CR 实现 “分而治之”，避免单一配置无法满足多维度需求。
 
 例如：
+
 1. 再创建一个 `insight-opentelemetry-autoinstrumentation-debug` Instrumentation CR 用于项目组 B 调试新的 Java Agent 版本：
 
-```yaml
-  apiVersion: opentelemetry.io/v1alpha1
-  kind: Instrumentation
-  metadata:
-    name: insight-opentelemetry-autoinstrumentation-debug # 👈 用于区分不同 Instrumentation CR
-    namespace: insight-system
-  spec:
-    java:
-      image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:my-debug-xx.xx # 👈 用于测试的版本镜像
-      ······
-      env:
-        - name: OTEL_JAVAAGENT_DEBUG
-          value: "false"
-        - name: OTEL_INSTRUMENTATION_JDBC_ENABLED
-          value: "true"
-        - name: SPLUNK_PROFILER_ENABLED
-          value: "false"
-        - name: OTEL_METRICS_EXPORTER
-          value: "prometheus"
-        - name: OTEL_METRICS_EXPORTER_PORT
-          value: "9464"
-      ······  
-```
-
+    ```yaml
+    apiVersion: opentelemetry.io/v1alpha1
+    kind: Instrumentation
+    metadata:
+      name: insight-opentelemetry-autoinstrumentation-debug # 👈 用于区分不同 Instrumentation CR
+      namespace: insight-system
+    spec:
+      java:
+        image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:my-debug-xx.xx # 👈 用于测试的版本镜像
+        ······
+        env:
+          - name: OTEL_JAVAAGENT_DEBUG
+            value: "false"
+          - name: OTEL_INSTRUMENTATION_JDBC_ENABLED
+            value: "true"
+          - name: SPLUNK_PROFILER_ENABLED
+            value: "false"
+          - name: OTEL_METRICS_EXPORTER
+            value: "prometheus"
+          - name: OTEL_METRICS_EXPORTER_PORT
+            value: "9464"
+        ······  
+    ```
 
 2. 更改原本服务使用的注解，使用 `insight-system/insight-opentelemetry-autoinstrumentation-debug` 注解：
 
-```yaml
-  instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation-debug"
-  ```
+    ```yaml
+    instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation-debug"
+    ```
