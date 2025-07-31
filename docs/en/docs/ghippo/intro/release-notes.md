@@ -3,6 +3,29 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2025-06-30
+
+### v0.39.0
+
+* **Optimized** resource configuration parameters for `sidecar` under `Values` in the Chart, by unifying the `sidecar.istio.io/proxyResources` settings in `apiserver`, `audit-server`, `ghippo-ui`, `anakin`, and `controller-manager` into a single `global.istioSidecar.resources` control.
+* **Fixed** issue where resetting password showed resetting `OTP` when two-factor authentication was disabled on the platform.
+* **Fixed** issue where selecting both `ssl` and `starttls` simultaneously during mail server testing did not raise an error.
+* **Fixed** frontend failure to fetch identity provider `OIDC` protocol one-click data (wrapped the process of accessing the `well-known` URL, returning the `openid configuration` to the frontend for display).
+
+### v0.38.1
+
+* **Added** support to display the most recent login time of `LDAP` users.
+* **Added** quota management UI adaptation for `Ascend 910 VIR` type `GPU`.
+* **Fixed** issue where some permission points were empty when viewing role details.
+
+## 2025-05-31
+
+### v0.37.0
+
+* **Added** customizable support for the `gproductresourcepermissionses` CR controlling menu display based on permissions.
+* **Optimized** SDK by adding the `RegisterDeltaGlobalAuthzPermissionHandler` method.
+* **Fixed** issue where clearing CSS in advanced customization was unsuccessful.
+
 ## 2025-04-30
 
 ### v0.36.0
