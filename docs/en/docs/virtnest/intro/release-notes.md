@@ -8,6 +8,15 @@ Date: 2024-10-10
 This page provides the release notes for VirtNest (Virtual Machine),
 allowing you to understand the evolution path and feature changes of each version.
 
+## 2025-07-30
+
+### v0.18.1
+
+* **Added** IP search support for the virtual machine list API.
+* **Optimized** VirtNest integration with Insight (`metrics`, `log`, `otel tracing`) to meet development best practices.
+* **Optimized** support for scheduled snapshots and snapshot backup restoration of virtual machines using scripts and documentation.
+* **Fixed** error occurring during batch creation of virtual machines.
+
 ## 2025-04-30
 
 ### v0.17.0
