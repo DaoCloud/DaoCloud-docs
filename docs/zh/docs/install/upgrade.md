@@ -126,8 +126,13 @@ DCE 5.0 基础设施模块的组件特指 [manifest.yaml](commercial/manifest.md
 !!! note
 
     如果升级组件依赖数据库，在执行升级命令前，需先创建数据库信息。操作步骤如下：
+
     1. 确认 manifest 中新增的产品组件已开启
-    2. 执行安装步骤第 11 步，如：./dce5-installer cluster-create -c clusterConfig.yaml -m mainfest-enterprise.yaml -j11
+    2. 运行如下命令，执行第 11 步：
+    
+        ```bash
+        ./dce5-installer cluster-create -c clusterConfig.yaml -m mainfest-enterprise.yaml -j11
+        ```
 
 执行升级命令：
 
