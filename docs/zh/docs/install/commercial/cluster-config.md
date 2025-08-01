@@ -36,7 +36,7 @@ spec:
     insightVip: xx.xx.xx.xx/32 # 别丢弃 /32，当 loadBalancer.type 是 metallb 时必填，用作全局服务集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
     SourceIP: auto # 默认值auto表示开启审计日志获取源IP功能，设置为false则关闭审计日志获取源IP功能
  
-  # 指定 ssh 私钥，定义后无需再定义节点的 ansibleUser、ansiblePass
+  # 指定 ssh 私钥，定义后需同时配置节点的 ansibleUser、无需配置 ansiblePass
   # privateKeyPath: /root/.ssh/id_rsa_sample
  
   masterNodes:
