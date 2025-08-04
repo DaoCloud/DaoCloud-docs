@@ -343,7 +343,7 @@
         instrumentation.opentelemetry.io/inject-python: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
 
-    === "Dotnet 应用"
+    === ".NET 应用"
 
         ```yaml
         instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
@@ -547,8 +547,60 @@ spec:
 +       - name: opentelemetry-auto-instrumentation-java
 +         mountPath: /otel-auto-instrumentation-java
 ```
-🔔 需要注意的是，不同的版本自动注入后生成YAML并不完全一致。
+
+🔔 需要注意的是，不同的版本自动注入后生成 YAML 并不完全一致。
 
 ## 链路查询
 
 如何查询已经接入的服务，参考[链路查询](../../user-guide/trace/trace.md)。
+
+## 安装多个 Instrumentation CR 满足差异化配置
+
+上面的自动注入 CR 属于 Insight 内置且通用的。实际场景中，为了满足差异化配置需求，可以安装多个 Instrumentation CR，每个 CR 名字不同，再按需引用不同 CR 名字。
+
+典型适用场景如下：
+
+1. 环境隔离：开发/测试/生产环境需独立配置采样率、Exporter 端点等参数。
+2. 团队/业务线隔离：不同团队对遥测数据的存储位置、资源标签有独立需求。
+3. 服务类型差异化：前端、后端、数据处理服务的采样率、指标收集范围不同。
+4. 采样策略精细化：高频服务低采样，核心链路全采样，避免性能开销。
+5. 灰度发布与测试：通过新 CR 测试配置变更，验证后逐步替换旧配置。
+6. 命名空间隔离：不同命名空间的服务使用独立 CR，避免配置干扰。
+7. 合规性要求：欧盟服务需将数据发送至欧盟境内 Collector，符合 GDPR。
+8. 资源标签区分：为不同服务群体添加专属标签（如 team: a、env: prod）。
+
+核心逻辑：通过多 CR 实现 “分而治之”，避免单一配置无法满足多维度需求。
+
+例如：
+
+1. 再创建一个 `insight-opentelemetry-autoinstrumentation-debug` Instrumentation CR 用于项目组 B 调试新的 Java Agent 版本：
+
+    ```yaml
+    apiVersion: opentelemetry.io/v1alpha1
+    kind: Instrumentation
+    metadata:
+      name: insight-opentelemetry-autoinstrumentation-debug # 👈 用于区分不同 Instrumentation CR
+      namespace: insight-system
+    spec:
+      java:
+        image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:my-debug-xx.xx # 👈 用于测试的版本镜像
+        ······
+        env:
+          - name: OTEL_JAVAAGENT_DEBUG
+            value: "false"
+          - name: OTEL_INSTRUMENTATION_JDBC_ENABLED
+            value: "true"
+          - name: SPLUNK_PROFILER_ENABLED
+            value: "false"
+          - name: OTEL_METRICS_EXPORTER
+            value: "prometheus"
+          - name: OTEL_METRICS_EXPORTER_PORT
+            value: "9464"
+        ······  
+    ```
+
+2. 更改原本服务使用的注解，使用 `insight-system/insight-opentelemetry-autoinstrumentation-debug` 注解：
+
+    ```yaml
+    instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation-debug"
+    ```

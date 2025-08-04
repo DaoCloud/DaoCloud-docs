@@ -1181,7 +1181,8 @@ nav:
                       - 手工设置工作负载反亲和: middleware/postgresql/user-guide/antiaffinity.md
                       - 备份管理: middleware/postgresql/user-guide/backup.md
                       - 配置备份数据: middleware/postgresql/user-guide/auto-backup.md
-                      - 实例拓扑: middleware/postgresql/user-guide/instancemap.md
+                      - 参数模板: middleware/postgresql/user-guide/template.md
+                      - 实例监控: middleware/postgresql/user-guide/instancemap.md
                   - 参考文档:
                       - 开启 PGVector 插件: middleware/postgresql/user-guide/pgvector.md
               - RabbitMQ 消息队列:
@@ -1301,15 +1302,18 @@ nav:
                           - 创建 vLLM 推理服务: baize/developer/inference/vllm-inference.md
               - 运维管理:
                   - 介绍: baize/oam/index.md
-                  - 资源管理:
-                      - GPU 列表: baize/oam/resource.md
+                  - 资源池管理:
+                      - 创建资源池: baize/oam/resource/create.md
+                      - 管理资源池: baize/oam/resource/manage.md
                   - 队列管理:
                       - 创建队列: baize/oam/queue/create.md
                       - 删除队列: baize/oam/queue/delete.md
+                  - GPU 信息: baize/gpu.md
               - 最佳实践:
                   - 部署 NFS 做数据集预热: baize/best-practice/deploy-nfs-in-worker.md
                   - 更新 Notebook 内置镜像: baize/best-practice/change-notebook-image.md
                   - Checkpoint 机制及使用介绍: baize/best-practice/checkpoint.md
+                  - 拓扑感知调度训练任务: baize/best-practice/train-with-tas.md
                   - 使用 Baize 微调 ChatGLM3: baize/best-practice/finetunel-llm.md
                   - 提交 DeepSpeed 训练任务: baize/best-practice/train-with-deepspeed.md
                   - 训练任务增加调度器选项: baize/best-practice/add-scheduler.md
