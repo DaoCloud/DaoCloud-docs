@@ -1,6 +1,6 @@
 ---
-MTPE: ModetaNiu
-date: 2024-06-11
+MTPE: windsonsea
+date: 2025-08-06
 hide:
   - toc
 ---
@@ -61,12 +61,12 @@ Built on container management, hierarchical resource management through global m
 creating and managing cloud native applications with CI/CD pipelines and GitOps processes,
 facilitating progressive delivery.
 
-![Workbench Role in DCE 5.0](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/what01.png)
+![Workbench Role in DCE 5.0](../images/what00.jpg)
 
-## Deployment Method
+## Deploy
 
 It is recommended to install Workbench using the
-[DCE 5.0 Enterprise Package installation package](../../install/commercial/start-install.md),
+[DCE 5.0 Enterprise Package](../../install/commercial/start-install.md),
 as it installs all modules of DCE 5.0 at once, without worrying about component compatibility.
 
 However, if you want to install or upgrade the Workbench module separately, run the following command successively:
