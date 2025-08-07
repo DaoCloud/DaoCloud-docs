@@ -32,9 +32,9 @@
 
     ![pipelisetting](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/editpipe02.png)
 
-2. 图形化编辑页面包括两个区域：__画布（左侧）__ 和 __阶段设置（右侧）__ 。
+2. 图形化编辑页面包括两个区域：__画布（左侧）__ 和 __阶段设置（右侧）__
 
-    ![canvasdescribe](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/canvasdescribe.png)
+    ![canvasdescribe](../../images/canvasdescribe.png)
 
     - 点击 __+添加阶段__ 后，会生成一个串行阶段，点击后，会生成一个新的阶段，可以在该阶段中添加流水线步骤，
       通过选择步骤类型，可以快速创建当前阶段中的流水线步骤。
@@ -54,75 +54,73 @@
 
 1. 点击画布中的 __添加阶段__ 。在右侧的阶段设置中设置名称：git clone。
 
-2. 点击 __添加步骤__ ，在弹出的对话框中步骤类型下选择 __git clone__ ，参照下表，对相关参数进行配置。
+2. 点击 __添加步骤__ ，在弹出的对话框中步骤类型下选择 __Git Clone__ ，参照下表，对相关参数进行配置。
 
     - 仓库 URL：输入仓库地址。
     - 分支：不填写，默认为 master 分支。
     - 凭证：如果您的仓库属于私有仓库则需要提供一个凭证。
 
-    ![git_clone](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/git_clone.png)
+    ![git_clone](../../images/git_clone.png)
 
 ### 添加阶段 - 单元测试
 
 1. 点击画布中的 __添加阶段__ 。在右侧的阶段设置中设置名称：unit test。
 
-2. 在步骤模块中选择开启 __指定容器__ ，在弹出的对话框中填写容器名称：go，然后点击 __确定__ 。
+2. 在步骤模块中选择开启 __指定容器__ ，在弹出的对话框中填写容器名称：go，然后点击 __确定__
 
-    ![container1](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/container1.png)
+    ![container1](../../images/container1.png)
 
-3. 点击 __添加步骤以对代码进行单元测试，并生成测试报告__ ，在弹出的对话框中步骤类型下选择 shell，并在命令行中输入以下命令，然后点击 __确定__ 。
+3. 点击 __添加步骤以对代码进行单元测试，并生成测试报告__ ，在弹出的对话框中步骤类型下选择 Shell，并在命令行中输入以下命令，然后点击 __确定__
 
     ```go
     go test -coverprofile=coverage.out
     ```
 
-    ![go-test](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/go-test.png)
+    ![go-test](../../images/go-test.png)
 
 ### 添加阶段 - 构建并推送镜像
 
 1. 点击画布中的 __添加阶段__ 。在右侧的阶段设置中设置名称：build & push。
 
-2. 在步骤模块中选择开启 __指定容器__ ，在弹出的对话框中填写容器名称：go，然后点击 __确定__ 。
+2. 在步骤模块中选择开启 __指定容器__ ，在弹出的对话框中填写容器名称：go，然后点击 __确定__
 
-    ![container2](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/container2.png)
+    ![container2](../../images/container1.png)
 
-3. 在步骤模块中选择开启 __使用凭证__ ，在弹出的对话框中填写相关参数，然后点击 __确定__ 。
+3. 在步骤模块中选择开启 __使用凭证__ ，在弹出的对话框中填写相关参数，然后点击 __确定__
 
     - 凭证：选择创建的 docker hub 凭证，用户访问镜像仓库。选择已创建好的 “docker-credential” 凭证。
     - 密码变量：PASS
     - 用户名变量：USER
 
-    ![creditional1](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/creditional1.png)
+    ![creditional1](../../images/creditional1.png)
 
-4. 点击 __添加步骤__ 进行代码构建，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击 __确定__ 。
+4. 点击 __添加步骤__ 进行代码构建，在弹出的对话框中步骤类型下选择 Shell，参并在命令行中输入以下命令，然后点击 __确定__
 
     ```go
     go build -o simple-http-server main.go
     ```
 
-5. 点击 __添加步骤__ 以根据源码中的 Dockerfile 构建 Docker 镜像，在弹出的对话框中步骤类型下选择 shell，
-   参并在命令行中输入以下命令，然后点击 __确定__ 。
+5. 点击 __添加步骤__ 以根据源码中的 Dockerfile 构建 Docker 镜像，在弹出的对话框中步骤类型下选择 Shell，
+   参并在命令行中输入以下命令，然后点击 __确定__
 
     ```docker
     docker build -f Dockerfile . -t $REGISTRY/$PROJECT/$NAME:latest
     ```
 
-6. 点击 __添加步骤__ 以登录镜像仓库并将镜像推送至镜像仓库中，在弹出的对话框中步骤类型下选择 shell，
-   参并在命令行中输入以下命令，然后点击 __确定__ 。
+6. 点击 __添加步骤__ 以登录镜像仓库并将镜像推送至镜像仓库中，在弹出的对话框中步骤类型下选择 Shell，
+   参并在命令行中输入以下命令，然后点击 __确定__
 
     ```docker
     docker login $REGISTRY -u $USER -p $PASS
     ```
 
-    ![build3](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/build3.png)
-
-6. 点击 __添加步骤__ 以将镜像推送至镜像仓库中，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击 __确定__ 。
+6. 点击 __添加步骤__ 以将镜像推送至镜像仓库中，在弹出的对话框中步骤类型下选择 Shell，参并在命令行中输入以下命令，然后点击 __确定__
 
     ```docker
     docker push $REGISTRY/$PROJECT/$NAME:latest
     ```
 
-    ![build4](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/build4.png)
+    ![build4](../../images/build4.png)
 
 !!! note
     
@@ -133,7 +131,7 @@
 1. 点击画布中的 __添加阶段__ 。在右侧的阶段设置中设置名称：review。
 
 2. 点击 __添加步骤__ ，在弹出的对话框中步骤类型下选择 __审核__ ，在消息字段中填入 __@admin__ ，即 __admin__ 
-   帐户在流水线运行到该阶段时会进行审核，然后点击 __确定__ 。
+   帐户在流水线运行到该阶段时会进行审核，然后点击 __确定__
 
     ![review](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/review.png)
 
@@ -141,11 +139,11 @@
 
 1. 点击画布中的 __添加阶段__ 。在右侧的阶段设置中设置名称：deploy。
 
-2. 在步骤模块中选择开启 __指定容器__ ，在弹出的对话框中填写容器名称：go，然后点击 __确定__ 。
+2. 在步骤模块中选择开启 __指定容器__ ，在弹出的对话框中填写容器名称：go，然后点击 __确定__
 
     ![container3](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/container3.png)
 
-3. 在步骤模块中选择开启 __使用凭证__ ，在弹出的对话框中填写相关参数，然后点击 __确定__ 。
+3. 在步骤模块中选择开启 __使用凭证__ ，在弹出的对话框中填写相关参数，然后点击 __确定__
 
     - 凭证：选择 kubeconfig 类型的凭证。
 
@@ -153,7 +151,7 @@
 
     ![credentials2](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/credentials2.png)
 
-4. 点击 __添加步骤__ 以进行集群部署操作，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击 __确定__ 。
+4. 点击 __添加步骤__ 以进行集群部署操作，在弹出的对话框中步骤类型下选择 Shell，参并在命令行中输入以下命令，然后点击 __确定__
 
     ```shell
     kubectl apply -f deploy.yaml
