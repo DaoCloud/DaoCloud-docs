@@ -6,19 +6,19 @@
 
 1. 创建一个[工作空间](../../../ghippo/user-guide/workspace/workspace.md)和一个[用户](../../../ghippo/user-guide/access-control/user.md)，该用户需加入该工作空间并具备  __Workspace Editor__  角色。
 
-2. [创建访问镜像仓库的凭证](../pipeline/credential.md)，例如 __registry__ 。
+2. [创建访问镜像仓库的凭证](../pipeline/credential.md)，例如 __registry__
 
 3. 准备一个镜像仓库，例如 Harbor 仓库。
 
-4. 下载 [daocloud-demo.jar](https://github.com/huoyinghao/filedownload/raw/main/daocloud-demo.jar)
+4. 制作一个 Jar 包
 
 ## 操作步骤
 
-1. 在左侧导航栏点击 __向导__ ，然后选择 __基于 Jar 包构建__ 。
+1. 在左侧导航栏点击 __向导__ ，然后选择 __基于 Jar 包构建__
 
     ![基于jar包](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/jar01.png)
 
-2. 参考下列要求填写基本信息，然后点击 __下一步__ 。
+2. 参考下列要求填写基本信息，然后点击 __下一步__
 
     - 名称：填写资源负载的名称。
     - 资源类型：本演示选择无状态负载，目前仅支持无状态负载。
@@ -28,7 +28,7 @@
 
     ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/git01.png)
 
-3. 参考下列要求配置流水线，然后点击 __下一步__ 。
+3. 参考下列要求配置流水线，然后点击 __下一步__
 
     - 目标镜像地址：为目标镜像命名，需包含目标镜像的存储路径，例如 __release-ci.daocloud.io/test-lfj/fromjar__
     - Tag：为目标镜像打标签，例如版本号 __v1.0__
@@ -38,7 +38,7 @@
 
     ![流水线构建](../../images/jar03.png)
 
-4. 参考下列要求填写容器配置，然后点击 __下一步__ 。
+4. 参考下列要求填写容器配置，然后点击 __下一步__
 
     - 访问类型：支持通过 clusterIP 仅允许在集群内访问该应用，或者通过 NodePort 允许在集群外部访问，或者通过负载均衡器进行访问。
     - 端口配置：根据实际业务场景填写需要暴露的端口号，此示例中的 jar 包需要暴露 8080 端口。
@@ -57,7 +57,7 @@
 
     ![容器配置](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/jar04.png)
 
-5. 参考下列说明选择是否开启高级功能，然后点击 __创建并上传 Jar 包__ 。
+5. 参考下列说明选择是否开启高级功能，然后点击 __创建并上传 Jar 包__
 
     - 服务网格：选择是否启用 [DCE 5.0 的服务网格](../../../mspider/intro/index.md)模块来治理微服务流量。
     - 微服务引擎：是否将新创建的应用接入 [DCE 5.0 的微服务引擎](../../../skoala/intro/index.md)模块。
@@ -68,13 +68,13 @@
 
     ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/jar01.png)
 
-6. 选择需要上传的文件，点击 __确定__ 。
+6. 选择需要上传的文件，点击 __确定__
 
     ![上传文件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/jar02.png)
 
 7. 创建成功后会触发运行对应的流水线，在左侧导航栏点击 __流水线__ 可查看其运行状态。
 
-    > 流水线的命名规则为“对应的应用名称-随机数”，例如通过流水线名称 __demo-4615a8__ 即可得知对应的应用名为 __demo__ 。
+    > 流水线的命名规则为“对应的应用名称-随机数”，例如通过流水线名称 __demo-4615a8__ 即可得知对应的应用名为 __demo__
 
     ![运行流水线](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/jar07.png)
 
