@@ -127,6 +127,7 @@ nav:
               - 向导:
                   - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
                   - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
+                  - 基于容器镜像构建应用: amamba/user-guide/wizard/image-app.md
                   - 基于 Helm 模板部署 Helm 应用: amamba/user-guide/wizard/helm.md
               - 多形态应用:
                   - 原生应用:
