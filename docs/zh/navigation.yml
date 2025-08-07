@@ -121,15 +121,12 @@ nav:
                   - Argo CD高可用部署: amamba/quickstart/argo-cd-HA.md
                   - 特性门控: amamba/quickstart/feature-gates.md
                   - 开启组件的可观测能力: amamba/components-grafana-dashboard.md
-              - 命名空间管理:
-                  - 创建命名空间: amamba/user-guide/namespace/namespace.md
-                  - 创建多云命名空间: amamba/user-guide/namespace/multi-namespace.md
               - 向导:
                   - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
                   - 基于 Jar 包构建 Java 应用: amamba/user-guide/wizard/jar-java-app.md
                   - 基于容器镜像构建应用: amamba/user-guide/wizard/image-app.md
                   - 基于 Helm 模板部署 Helm 应用: amamba/user-guide/wizard/helm.md
-              - 多形态应用:
+              - 应用概览:
                   - 原生应用:
                       - 管理原生应用: amamba/user-guide/native/manage.md
                       - 通过原生应用部署传统微服务: amamba/user-guide/native/native-app.md
@@ -139,6 +136,9 @@ nav:
                       - 创建 OAM 应用: amamba/user-guide/oam/create.md
                       - 管理 OAM 应用: amamba/user-guide/oam/manage.md
                   - OLM 应用: amamba/user-guide/olm.md
+              - 命名空间:
+                  - 创建命名空间: amamba/user-guide/namespace/namespace.md
+                  - 创建多云命名空间: amamba/user-guide/namespace/multi-namespace.md
               - 流水线:
                   - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
                   - 创建流水线:
@@ -193,6 +193,7 @@ nav:
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
                   - 查看蓝绿发布任务: amamba/user-guide/release/check-bluegreen.md
                   - 金丝雀发布示例操作: amamba/user-guide/release/canary-guide.md
+              - 代码仓库: amamba/user-guide/repo.md
               - 工具链集成:
                   - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
                   - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
