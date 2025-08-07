@@ -45,7 +45,7 @@
     kind: Gateway
     metadata:
       name: rollout-demo
-      namespace: rollout-demo # (1)
+      namespace: rollout-demo # (1)!
     spec:
       selector:
         istio: ingressgateway
@@ -87,9 +87,9 @@
       uid: 8109f754-aa9d-49f1-b8a9-d4daf5108032
     spec:
       gateways:
-      - rollout-demo # (1)
+      - rollout-demo # (1)!
       hosts:
-      - '*' # (2)
+      - '*' # (2)!
       http:
       - name: primary
         route:
@@ -191,17 +191,17 @@
 
 在应用工作台创建灰度发布任务。如需了解更详细的创建说明，可参考[创建金丝雀发布任务](../user-guide/release/canary.md)。
 
-1. 选择开启灰度发布的应用
+1. 填写基本信息后，点击 **下一步**
 
-    ![选择应用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/application04.png)
+    ![选择应用](../images/application04.png)
 
-2. 设置发布规则，选择流量管理类型为 __Istio__ ，流量调度类型为 __基于权重__ 。
+2. 设置发布规则后，点击 **创建并更新应用**
 
-    ![修改规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/application05.png)
+    ![修改规则](../images/application05.png)
 
-3. 点击创建并更新应用，在弹出的对话框中填写镜像地址： __argoproj/rollouts-demo:yellow__ 
+3. 在弹出的对话框中填写镜像地址： `argoproj/rollouts-demo:yellow`
 
-    ![填写镜像地址](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout05.png)
+    ![填写镜像地址](../images/argorollout05.png)
 
 ### 验证效果
 
