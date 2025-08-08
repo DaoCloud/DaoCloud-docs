@@ -20,7 +20,7 @@ Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装�
   
     !!! note
 
-        注意：创建 Multus CR 时，CNI 类型只能为 macvlan、ipvlan、sriov 和自定义四种类型四选一，可分成三种场景，参考以下三种参数方式进行配置。
+        创建 Multus CR 时，CNI 类型只能为 macvlan、ipvlan、sriov 和自定义四种类型四选一，可分成三种场景，参考以下三种参数方式进行配置。
 
 ### 创建 macvlan 或 ipvlan 类型的 Multus CR
 
@@ -28,33 +28,22 @@ Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装�
 
 ![创建 Multus CR](../images/multus01.png)
 
-参数说明:
-
-- __名称__ ：Multus CNI 配置的实例名称，即 Multus CR 名称。
-- __描述__ ：实例的描述信息。
-- __CNI 类型__ ：CNI 的类型，目前界面可选择 macvlan，ipvlan。
-- __VLAN ID__ ：当 CNI 类型为 macvlan，ipvlan，sriov 时被允许配置， "0" 和 ""的效果一样。
-- __网卡配置__：网卡配置中包含接口配置信息。
-    - 请确保主网卡存在于主机上。
-    - 如果使用基于 MacVlan/IPVlan 的共享 RDMA 功能，请确保该网卡具备 RDMA 能力。
-    - 当网卡接口数量为一个时，则默认网卡配置中只有一个网卡接口。当添加接口数量大于等于两个时，可以做 Bond 相关配置。
-- __网卡接口__ ：只用于 CNI 类型 为 macvlan，ipvlan ，至少有一个元素。如果有两个及其以上的元素, bond 必须不能为空。
-- __Bond 信息__：名称不能为空，模式必须在范围 [0,6] 内, 分别对应七种模式：
-    - balance-rr
-    - active-backup
-    - balance-xor
-    - broadcast
-    - 802.3ad
-    - balance-tlb
-    - balance-alb
-
-- `IPv4 默认池`：CNI 配置文件 IPv4 默认池。
-- `IPv6 默认池`：CNI 配置文件 IPv6 默认池。
-参数是可选的, 输入格式为 `k1=v1;k2=v2;k3=v3`，用 `;` 隔开。
+| 参数 | 说明 |
+| ---- | ---- |
+| **名称** | Multus CNI 配置的实例名称，即 Multus CR 名称。 |
+| **描述** | 实例的描述信息。 |
+| **CNI 类型** | CNI 的类型，目前界面可选择 `macvlan`、`ipvlan`。 |
+| **VLAN ID** | 当 CNI 类型为 `macvlan`、`ipvlan`、`sriov` 时允许配置，`0` 和 `""` 的效果一致。 |
+| **网卡配置** | - 网卡配置中包含接口配置信息。<br>- 请确保主网卡存在于主机上。<br>- 如果使用基于 MacVlan/IPVlan 的共享 RDMA 功能，请确保该网卡具备 RDMA 能力。<br>- 当网卡接口数量为 1 时，默认只有一个接口配置；当接口数量 ≥ 2 时，可进行 Bond 配置。 |
+| **网卡接口** | 仅用于 CNI 类型为 `macvlan`、`ipvlan`，至少有 1 个元素；若 ≥ 2 个元素，`bond` 必须非空。 |
+| **Bond 信息** | 名称不能为空，模式必须在 `[0,6]` 范围内，对应：<br>0. balance-rr<br>1. active-backup<br>2. balance-xor<br>3. broadcast<br>4. 802.3ad<br>5. balance-tlb<br>6. balance-alb |
+| **IPv4 默认池** | CNI 配置文件 IPv4 默认池，参数可选，格式：`k1=v1;k2=v2;k3=v3`。 |
+| **IPv6 默认池** | CNI 配置文件 IPv6 默认池，参数可选，格式：`k1=v1;k2=v2;k3=v3`。 |
 
 #### VLAN 配置说明
 
-- Underlay 网络是指底层物理网络，通常涉及 VLAN 网络。如果 Underlay 网络不涉及到 VLAN 网络，不需要配置 VLAN ID (默认值为 0 即可)。
+Underlay 网络是指底层物理网络，通常涉及 VLAN 网络。如果 Underlay 网络不涉及到 VLAN 网络，不需要配置 VLAN ID (默认值为 0 即可)。
+
 - **对于 VLAN 子接口**:
     - 如果网络管理员已经创建好 **VLAN 子接口**，那么不需要填写 VLAN ID (默认值为 0 即可)，只需要将创建好的 **VLAN 子接口** 填入到网卡接口(Master) 字段。
     - 如果需要自动创建 **VLAN 子接口** ，那么需要配置 VLAN ID，并将主网卡接口(Master)设置为对应的 **父接口**
