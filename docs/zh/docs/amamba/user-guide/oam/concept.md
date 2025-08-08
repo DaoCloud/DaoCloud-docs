@@ -18,8 +18,6 @@ OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/)
 
 本节仅介绍应用工作台涵盖的核心组件。
 
-### 组件
-
 组件（Components）可以定义一个制品或云服务的交付和管理形式，一个应用中可以包括多个组件。
 最佳的实践方案是一个应用包括一个主组件（核心业务）和附属组件（强依赖或独享的中间件，运维组件等）。
 有关组件类型说明，可参考 [kubevela Component Definition](http://kubevela.net/zh/docs/v1.2/platform-engineers/oam/x-definition#%E7%BB%84%E4%BB%B6%E5%AE%9A%E4%B9%89%EF%BC%88componentdefinition%EF%BC%89)。
@@ -50,14 +48,14 @@ __Affinity、Annotations、Command、Container-Image、Cpuscaler__ 等多种运�
 
 Kubevela 可以根据您的需求轻松实现原地定制和扩展。
 
-#### 自定义组件
+### 自定义组件
 
 组件定义（ComponentDefinition）的设计目标是，允许平台管理员将任何类型的可部署制品封装成待交付的“组件”。
 只要定义好之后，这种类型的组件就可以被用户在部署计划（Application）中引用、实例化并交付出去。
 
 有关自定义组件的具体操作，可参考官方文档：[自定义组件入门](http://kubevela.net/zh/docs/v1.2/platform-engineers/components/custom-component)。
 
-#### 自定义运维特征
+### 自定义运维特征
 
 运维特征定义（TraitDefinition）为组件提供了一系列可被按需绑定的运维动作，这些运维动作通常都是由平台管理员提供的运维能力，
 为这个组件提供一系列的运维操作和策略，比如添加一个负载均衡策略、路由策略、或者执行弹性扩缩容、灰度发布策略等等。

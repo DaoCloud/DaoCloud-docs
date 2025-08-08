@@ -3,7 +3,7 @@ MTPE: ModetaNiu
 Date: 2024-06-12
 ---
 
-# Introduction to OAM
+# OAM Concepts
 
 The OAM application functionality is based on the open-source software
 [KubeVela](http://kubevela.net/zh/docs/v1.2/), which uses the Open Application Model (OAM)
@@ -19,13 +19,11 @@ application delivery in a hybrid environment:
 
 You can refer to the following diagram from the KubeVela official documentation for a visual representation:
 
-![oam1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/oam001.png)
+![oam1](../../images/oam001.png)
 
-## Introduction to Core Components
+## Core Components
 
 This section only introduces the core components covered by the Workbench.
-
-### Components
 
 Components define the form of delivery and management for artifacts or cloud services.
 An application can include multiple components. The recommended practice is to include one
@@ -64,7 +62,7 @@ in the arrays. For detailed information, refer to the [kubevela reference](http:
 
 KubeVela allows easy customization and extension based on your needs.
 
-#### Custom Components
+### Custom Components
 
 Component Definitions allow platform administrators to package any type of deployable artifact as a deliverable "component". 
 Once defined, components of this type can be referenced, instantiated,
@@ -73,7 +71,7 @@ and delivered in deployment plans (Applications) by users.
 For specific operations on custom components, refer to the official documentation:
 [Getting Started with Custom Components](http://kubevela.net/docs/v1.2/platform-engineers/components/custom-component).
 
-#### Custom Traits
+### Custom Traits
 
 Trait Definitions provide a set of operational actions that can be bound to components as needed.
 These operational actions are usually provided by platform administrators as operational capabilities,
