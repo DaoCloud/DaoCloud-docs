@@ -9,6 +9,12 @@
 *[SR-IOV]: Single Root IO Virtualization 的缩写，一种网卡虚拟化的技术
 *[RDMA]: Remote Direct Memory Access 的缩写，即远程直接内存访问，这是一个支撑 LLM 大模型和 GPT 的热门技术
 
+## 2025-07-30
+
+### v0.16.4
+
+- **新增** 引入权限管理，只有 NS 或 Cluster Admin 级别的管理员可以操作 SpiderIPPool 资源。只有 Cluster Admin 才能操作 Subnet 资源。
+
 ## 2025-04-30
 
 ### v0.16.3
