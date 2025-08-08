@@ -4,6 +4,32 @@
 
 *[mspider]: DaoCloud 服务网格的内部开发代号
 
+## 2025-08-08
+
+### v0.36.0
+
+- **新增** 支持 Istio 1.25.3 和 1.24.6 版本支持
+- **修复** 网格控制台无权限问题。
+- **修复** 网格版本 1.23 使用 pluma-operator 中网格网关无法创建问题。
+- **修复** Istio 版本大于 1.23 错误显示 istio-operator 没有安装，正确修复为 pluma-operator.
+- **修复** 同一个用户无法打开多个控制台问题。
+- **修复** 服务名称长度接近 63，查询服务版本异常问题。
+- **修复** Istio 1.24 标准化 Peer Metadata Attributes 导致无指标数据问题。
+- **修复** 离线环境无法安装 1.23+ 网格问题。
+- **升级** 升级 cloudtty 版本到 v0.8.7。
+
+!!! note
+
+    自 Istio 1.23 起，控制面组件由 Pluma Operator 管理，需指定对应的 Istio chart仓库地址。系统默认内置 Addon 仓库地址，MSpider 自 v0.36+ 起已支持该机制。
+    如用户需配置自定义仓库地址，可通过在对应 GlobalMesh CRD新增网格安装参数：
+    
+    ```yaml
+    global.istioRepo: https://release.daocloud.io/chartrepo/addon
+    ```
+
+    ![](../images/GlobalMeshCRD.png)
+
+
 ## 2025-05-09
 
 ### v0.35.0
