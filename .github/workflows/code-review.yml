@@ -2,24 +2,37 @@ name: Gemini AI Code Reviewer
 on:
   issue_comment:
     types: [created]
-permissions: write-all
+  pull_request_review_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
 jobs:
   gemini-code-review:
     runs-on: ubuntu-latest
-    if: |
-      github.event.issue.pull_request &&
+    if: >
+      (github.event.issue.pull_request != null || github.event.pull_request != null) &&
       contains(github.event.comment.body, '/gemini-review')
     steps:
+      - name: Install GitHub CLI
+        run: sudo apt-get update && sudo apt-get install gh -y
+
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
       - id: pr
         run: |
-          PR_JSON=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.issue.number }})
+          PR_NUMBER=${{ github.event.issue.number || github.event.pull_request.number }}
+          PR_JSON=$(gh api repos/${{ github.repository }}/pulls/${PR_NUMBER})
           echo "head_sha=$(echo $PR_JSON | jq -r .head.sha)" >> $GITHUB_OUTPUT
           echo "base_sha=$(echo $PR_JSON | jq -r .base.sha)" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - uses: truongnh1992/gemini-ai-code-reviewer@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
