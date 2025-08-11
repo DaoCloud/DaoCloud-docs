@@ -14,28 +14,77 @@ jobs:
   gemini-code-review:
     runs-on: ubuntu-latest
     if: >
-      (github.event.issue.pull_request != null || github.event.pull_request != null) &&
-      contains(github.event.comment.body, '/gemini-review')
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '/gemini-review')) ||
+      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '/gemini-review'))
     steps:
-      - name: Install GitHub CLI
-        run: sudo apt-get update && sudo apt-get install gh -y
-
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
+      - name: Install GitHub CLI and jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gh jq
+        # jq is installed to parse JSON responses from GitHub API in later steps
+
       - id: pr
         run: |
-          PR_NUMBER=${{ github.event.issue.number || github.event.pull_request.number }}
-          PR_JSON=$(gh api repos/${{ github.repository }}/pulls/${PR_NUMBER})
-          echo "head_sha=$(echo $PR_JSON | jq -r .head.sha)" >> $GITHUB_OUTPUT
-          echo "base_sha=$(echo $PR_JSON | jq -r .base.sha)" >> $GITHUB_OUTPUT
+          PR_NUMBER=${{ github.event.pull_request.number || github.event.issue.number }}
+          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: truongnh1992/gemini-ai-code-reviewer@main
+      - name: Respond with thank you message
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.pr.outputs.pr_number }}
+        run: |
+          MESSAGE="Thanks for triggering the review! Gemini AI Code Reviewer has started reviewing this PR and will provide detailed feedback in about 3 minutes. Please wait a moment."
+          gh pr comment $PR_NUMBER --body "$MESSAGE"
+
+      - name: Run Gemini AI Code Reviewer
+        uses: truongnh1992/gemini-ai-code-reviewer@main
+        timeout-minutes: 10
+        continue-on-error: false
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-2.5-pro-preview-05-06
           EXCLUDE: "*.md,*.txt,package-lock.json,*.yml,*.yaml"
+
+      - name: Check Gemini Review Comments and Approve if OK
+        if: always()
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.pr.outputs.pr_number }}
+          REPO: ${{ github.repository }}
+        run: |
+          echo "Checking Gemini review comments for issues..."
+
+          # 使用 GitHub API 获取 PR 所有 review 记录，增加超时时间
+          RESPONSE=$(gh api repos/$REPO/pulls/$PR_NUMBER/reviews --timeout 20)
+          if [ $? -ne 0 ]; then
+            echo "Failed to fetch PR reviews from GitHub API. Exiting."
+            exit 1
+          fi
+
+          # 用 jq 解析评论者用户名包含 'gemini' 的 review body, 合并成字符串
+          COMMENTS=$(echo "$RESPONSE" | jq -r '[.[] | select(.user.login | test("gemini"; "i")) | .body] | join("\n")')
+
+          if [ -z "$COMMENTS" ]; then
+            echo "No Gemini review comments found."
+          else
+            echo "Gemini review comments found:"
+            echo "$COMMENTS"
+          fi
+
+          # 精确匹配关键词, 注意大小写敏感以降低误判
+          if echo "$COMMENTS" | grep -qE '\b(issue|error|problem|fail|bug|warn|warning|critical)\b'; then
+            echo "Potential issues detected in Gemini review comments. Skipping /lgtm."
+            exit 0
+          else
+            echo "No issues detected in Gemini review comments. Posting /lgtm."
+            gh pr comment $PR_NUMBER --body "/lgtm"
+          fi
