@@ -60,11 +60,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ steps.pr.outputs.pr_number }}
           REPO: ${{ github.repository }}
+          GH_HTTP_TIMEOUT: 20
         run: |
           echo "Checking Gemini review comments for issues..."
 
           # 使用 GitHub API 获取 PR 所有 review 记录，增加超时时间
-          RESPONSE=$(gh api repos/$REPO/pulls/$PR_NUMBER/reviews --timeout 20)
+          RESPONSE=$(gh api repos/$REPO/pulls/$PR_NUMBER/reviews)
           if [ $? -ne 0 ]; then
             echo "Failed to fetch PR reviews from GitHub API. Exiting."
             exit 1
