@@ -199,6 +199,8 @@ extra:
   status:
     new: 最近添加
     beta: beta
+    download: 下载
+
 
 # Customization Javascript
 extra_javascript:
