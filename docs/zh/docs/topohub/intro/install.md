@@ -6,7 +6,7 @@
 
 1. 安装前端 UI 组件 topohub-dashboard
 
-    商业版本安装流程请参考 [安装教程](../../install)。
+    商业版本安装流程请参考 [安装教程](../../install/index.md)。
 
     topohub-dashboard 组件默认不安装，请先修改 **manifest** 配置文件。
 
