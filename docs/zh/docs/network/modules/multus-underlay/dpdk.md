@@ -90,9 +90,9 @@ Network devices using kernel driver
         更新上述配置，需要重启系统，重启系统前最好备份。
         如果不能更新配置，驱动需要切换为 igb-uio 驱动，需手动 build && insmod && modprobe，具体参考 [dpdk-kmod](https://github.com/atsgen/dpdk-kmod)
 
-## 配置 SRIOV-Device-Plugin
+## 配置 SR-IOV Device-Plugin
 
-- 更新 SRIOV-Device-plugin 的 configmap：新建资源池 sriov_netdevice_dpdk，让其能够找到支持 dpdk 的 VF：
+- 更新 SR-IOV Device-plugin 的 configmap：新建资源池 sriov_netdevice_dpdk，让其能够找到支持 dpdk 的 VF：
 
     ```shell
     kubectl edit cm -n kube-system sriov-0.1.1-config

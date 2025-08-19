@@ -5,7 +5,7 @@ hide:
 
 # 什么是 Spiderpool
 
-Spiderpool 是一个 Kubernetes 的 Underlay 和 RDMA 网络解决方案，它增强了 [MacVLAN CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/macvlan), [IPVLAN CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/ipvlan), [SR-IOV CNI](https://github.com/k8snetworkplumbingwg/sriov-cni) 的功能，满足了各种网络需求，使得 underlay 网络方案可应用在裸金属、虚拟机和公有云环境中，可为网络 I/O 密集性、低延时应用带来优秀的网络性能，包括存储、中间件、AI 等应用。可以参考[网站](https://spidernet-io.github.io/spiderpool/latest/)了解更多详情。
+Spiderpool 是一个 Kubernetes 的 Underlay 和 RDMA 网络解决方案，它增强了 [Macvlan CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/macvlan), [IPvlan CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/ipvlan), [SR-IOV CNI](https://github.com/k8snetworkplumbingwg/sriov-cni) 的功能，满足了各种网络需求，使得 underlay 网络方案可应用在裸金属、虚拟机和公有云环境中，可为网络 I/O 密集性、低延时应用带来优秀的网络性能，包括存储、中间件、AI 等应用。可以参考[网站](https://spidernet-io.github.io/spiderpool/latest/)了解更多详情。
 
 目前 SpiderPool 支持的能力如下：
 

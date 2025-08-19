@@ -42,8 +42,8 @@
     - `Images` —> `SriovConfigDaemon` -> `tag`：设置 SriovConfigDaemon 的镜像版本，保持默认即可。
     - `Images` —> `SriovDevicePlugin` -> `repository`：设置 SriovDevicePlugin 的镜像名，保持默认即可。
     - `Images` —> `SriovDevicePlugin` -> `tag`：设置 SriovDevicePlugin 的镜像版本，保持默认即可。
-    - `Operator` —> `resourcePrefix`：SRIOV 网络设备插件端点资源前缀。
-    - `SriovNetworkNodePolicy` —> `name`：SRIOV 网络节点策略的名称。
+    - `Operator` —> `resourcePrefix`：SR-IOV 网络设备插件端点资源前缀。
+    - `SriovNetworkNodePolicy` —> `name`：SR-IOV 网络节点策略的名称。
 
     ![sriov instal4](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov-network-operator-install-4.png)
 
@@ -51,7 +51,7 @@
 
     - `pfNames`：SR-IOV 物理功能（PF）名称列表。
     - `pfNames` -> `numVfs`：每个物理功能 (PF) 的虚拟功能 (VF) 数量。
-    - `pfNames` -> `resourceName`：SRIOV 网络设备插件端点资源名称。
+    - `pfNames` -> `resourceName`：SR-IOV 网络设备插件端点资源名称。
     - `NodeSelector` -> `labelKey`：NodeSelector 标签的键。
     - `NodeSelector` -> `labelValue`：NodeSelector 标签的值。
 

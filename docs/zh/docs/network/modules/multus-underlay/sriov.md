@@ -103,9 +103,9 @@ root@172-17-8-120:~# ip l show enp4s0f0np0
 
 通过安装 Multus-underlay 来安装 SR-IOV CNI，具体安装流程参考[安装](install.md)。
 注意, 安装时需正确配置 `sriov-device-plugin` resource 资源，包括 vendor、device 等信息。
-否则 SRIOV-Device-Plugin 无法找到正确的 VF。
+否则 SR-IOV 设备插件无法找到正确的 VF。
 
-## 配置 SRIOV-Device-Plugin
+## 配置 SR-IOV 设备插件
 
 安装完 SR-IOV CNI 之后，通过下面的方式查看 SR-IOV CNI 是否发现了主机上的 VF：
 

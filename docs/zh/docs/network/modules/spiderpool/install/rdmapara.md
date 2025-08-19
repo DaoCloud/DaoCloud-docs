@@ -2,7 +2,7 @@
 
 本章节主要介绍安装 Spiderpool 时，RDMA 相关参数说明，目前 RDMA 支持如下两种使用方式：
 
-- 基于 Macvlan/IPVLAN CNI，使用 **RDMA Shared 模式** ，暴露主机上的 RoCE 网卡给 Pod 使用，
+- 基于 Macvlan/IPvlan CNI，使用 **RDMA Shared 模式** ，暴露主机上的 RoCE 网卡给 Pod 使用，
   需要部署 [Shared Device Plugin](https://github.com/Mellanox/k8s-rdma-shared-dev-plugin)来完成
   RDMA 网卡资源的暴露和 Pod 调度。
 
@@ -11,7 +11,7 @@
 
 以下是上面两种 RDMA 使用方式的区别:
 
-| 比较维度     | Macvlan/IPVLAN 共享 RDMA 方案           | SR-IOV CNI 隔离 RDMA 方案          |
+| 比较维度     | Macvlan/IPvlan 共享 RDMA 方案           | SR-IOV CNI 隔离 RDMA 方案          |
 | ------------| ------------------------------------- | --------------------------------- |
 | 网络隔离      | 所有容器共享 RDMA 设备，隔离性较差        | 容器独享 RDMA 设备，隔离性较好        |
 | 性能         | 性能较高                               | 硬件直通，性能最优                   |
@@ -31,11 +31,11 @@
 2. 请确认集群中节点具备 RoCE 功能的 mellanox 网卡，本示例中采用 mellanox ConnectX 5 型号网卡。
    并且已安装对应的 OFED 驱动，如未安装，可参考 [安装 OFED 驱动](./ofed_driver.md)文档安装驱动。
 
-## 基于 Macvlan /IPVLAN 共享 RoCE 网卡
+## 基于 Macvlan /IPvlan 共享 RoCE 网卡
 
 注意: Macvlan/IPvlan 不支持 Infiniband 网卡。
 
-1. 基于 Macvlan/IPVLAN 暴露 RoCE 网卡时，需要确认主机上的 RDMA 子系统工作在 **Shared 模式** 下，否则，请切换到 **Shared 模式** 。
+1. 基于 Macvlan/IPvlan 暴露 RoCE 网卡时，需要确认主机上的 RDMA 子系统工作在 **Shared 模式** 下，否则，请切换到 **Shared 模式** 。
 
     ```sh
     # 查看 RoCE 网卡模式

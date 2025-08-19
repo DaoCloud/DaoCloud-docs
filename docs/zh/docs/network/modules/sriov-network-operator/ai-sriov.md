@@ -12,7 +12,7 @@ Spiderpool 使用了 [sriov-network-operator](https://github.com/k8snetworkplumb
 
 - 在不同的网络场景下，使用了不同的 CNI
 
-    1. Infiniband 网络场景下，使用 [IB-SRIOV CNI](https://github.com/k8snetworkplumbingwg/ib-sriov-cni) 给 Pod 提供 SR-IOV 网卡。
+    1. Infiniband 网络场景下，使用 [IB-SR-IOV CNI](https://github.com/k8snetworkplumbingwg/ib-sriov-cni) 给 Pod 提供 SR-IOV 网卡。
     2. RoCE 网络场景下， 使用了 [SR-IOV CNI](https://github.com/k8snetworkplumbingwg/sriov-cni) 来暴露宿主机上的 RDMA 网卡给 Pod 使用，暴露 RDMA 资源。可额外使用 [RDMA CNI](https://github.com/k8snetworkplumbingwg/rdma-cni) 来完成 RDMA 设备隔离。
 
 !!! note
@@ -95,7 +95,7 @@ Spiderpool 使用了 [sriov-network-operator](https://github.com/k8snetworkplumb
     1. 基于 5.3.0 或更新版本的 Linux 内核，系统中加载的 RDMA 模块，RDMA 核心包提供了在系统启动时自动加载相关模块的方法
     2. 需要 Mellanox OFED 4.7 版或更新版本。在这种情况下，不需要使用基于 5.3.0 或更新版本的内核。
 
-2. 对于 SRIOV 场景，请设置主机上的 RDMA 子系统为 exclusive 模式，使得容器能够独立使用 RDMA 设备过程，避免与其他容器共享
+2. 对于 SR-IOV 场景，请设置主机上的 RDMA 子系统为 exclusive 模式，使得容器能够独立使用 RDMA 设备过程，避免与其他容器共享
 
     ```shell
     # Check the current operating mode (the Linux RDMA subsystem operates in shared mode by default):
@@ -278,10 +278,10 @@ Spiderpool 使用了 [sriov-network-operator](https://github.com/k8snetworkplumb
         ....
     ```
 
-    SRIOV VF 数量决定了一个网卡能同时为多少个 Pod 提供网卡，不同型号的网卡的有不同的最大 VF 数量上限，
+    SR-IOV VF 数量决定了一个网卡能同时为多少个 Pod 提供网卡，不同型号的网卡的有不同的最大 VF 数量上限，
     Mellanox 的 ConnectX 网卡常见型号的最大 VF 上限是 127。如下示例，设置每个节点上的 GPU1 和 GPU2 的网卡，
     每个网卡配置出 12 个 VF 设备。请参考如下，为主机上每个亲和 GPU 的网卡配置 SriovNetworkNodePolicy，
-    这样将有 8 个 SRIOV 资源以供使用。
+    这样将有 8 个 SR-IOV 资源以供使用。
 
     ```shell
     # 对于 ethernet 网络，设置 LINK_TYPE=eth， 对于 Infiniband 网络，设置 LINK_TYPE=ib
@@ -391,7 +391,7 @@ Spiderpool 使用了 [sriov-network-operator](https://github.com/k8snetworkplumb
 3. 创建 CNI 配置和对应的 ippool 资源
 
     1. 对于 Infiniband 网络，请为所有的 GPU 亲和的 SR-IOV 网卡配置
-       [IB-SRIOV CNI](https://github.com/k8snetworkplumbingwg/ib-sriov-cni) 配置，
+       [IB-SR-IOV CNI](https://github.com/k8snetworkplumbingwg/ib-sriov-cni) 配置，
        并创建对应的 IP 地址池。 如下例子，配置了 GPU1 亲和的网卡和 IP 地址池：
 
         ```shell
@@ -644,7 +644,7 @@ Spiderpool 使用了 [sriov-network-operator](https://github.com/k8snetworkplumb
 
 对于使用了 Infiniband 网络的集群，如果网络中有 [UFM 管理平台](https://www.nvidia.com/en-us/networking/infiniband/ufm/)，
 可使用 [ib-kubernetes](https://github.com/Mellanox/ib-kubernetes) 插件，它以 daemonset 形式运行，
-监控所有使用 SRIOV 网卡的容器，把 VF 设备的 Pkey 和 GUID 上报给 UFM。
+监控所有使用 SR-IOV 网卡的容器，把 VF 设备的 Pkey 和 GUID 上报给 UFM。
 
 1. 在 UFM 主机上创建通信所需要的证书：
 

@@ -55,7 +55,7 @@ Underlay 网络是指底层物理网络，通常涉及 VLAN 网络。如果 Unde
       那么不需要填写 VLAN ID (默认值为 0 即可)，只需要将创建好的 **Bond 网卡名称** 填入到网卡接口(Master) 字段。
     Spiderpool 在创建 Pod 时，在主机上动态创建一张 **Bond 网卡**，以用于连接 Pod 的 Underlay 网络。
 - **对于 RDMA 网卡**：
-    - 如果基于 Macvlan/IPVLAN/SRIOV 暴露主机上的 RoCE 网卡给到 Pod 使用时， VLAN ID 无需填写，默认为 0 即可。
+    - 如果基于 Macvlan/IPvlan/SR-IOV 暴露主机上的 RoCE 网卡给到 Pod 使用时， VLAN ID 无需填写，默认为 0 即可。
 
 - **使用 Bond 网卡创建 VLAN 子接口**：
     - 如果需要在创建 **Bond 网卡** 的同时，需要创建VLAN 子接口来承接 Pod 网络， 需要配置 VLAN ID
