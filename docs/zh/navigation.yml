@@ -613,7 +613,8 @@ nav:
               - 集成 Multus-underlay:
                   - 介绍: network/modules/multus-underlay/index.md
                   - 安装: network/modules/multus-underlay/install.md
-                  - MacVLAN: network/modules/multus-underlay/macvlan.md
+                  - Macvlan: network/modules/multus-underlay/macvlan.md
+                  - 使用 Macvlan 建设 AI 集群: network/modules/multus-underlay/ai-macvlan.md
                   - NmState: network/modules/multus-underlay/nmstat.md
               - 集成 Submariner:
                   - 介绍: network/modules/submariner/index.md

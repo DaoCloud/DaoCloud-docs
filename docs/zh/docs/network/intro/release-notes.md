@@ -220,7 +220,7 @@
 - **修复** 自动池资源名字长度限制
 - **修复** Coordinator 添加路由失败
 - **修复** 如果 `spidercoordinator.status.phase` 未 Ready， 清理已收集的集群子网信息，并且阻止 Pod 创建
-- **修复** 清理 `spidermultusconfig` 中 `SR-IOV-cni` 的 `resourceName` 字段
+- **修复** 清理 `spidermultusconfig` 中 SR-IOV CNI  的 `resourceName` 字段
 - **修复** 验证 `spidermultusconfig` 中自定义 CNI 配置文件是否是合法的 Json 格式
 - **修复** 所有节点与 Pod 的路由都统一的被创建在主机的 `table500` 中，而不是每一个 Pod 独占一个 `table`
 
