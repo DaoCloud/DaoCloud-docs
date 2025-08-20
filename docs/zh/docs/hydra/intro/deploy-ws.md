@@ -29,7 +29,7 @@
     ```yaml
     global:
       config:
-        cluster_name: 'jxj31-mspider' # 工作集群名称
+        cluster_name: 'jxj31-mspider'
         agent_base_url: 'http:/cn-sh-a1' # 需要工作集群可访问的网关地址
         agent_server:
           address: example.com:443 # 全局服务集群 dce 地址
