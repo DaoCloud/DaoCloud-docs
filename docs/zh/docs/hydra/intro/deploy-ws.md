@@ -32,7 +32,7 @@
         cluster_name: 'jxj31-mspider' # 工作集群名称
         agent_base_url: 'http:/cn-sh-a1' # 需要工作集群可访问的网关地址
         agent_server:
-          address: 10.64.24.20:443 # 全局服务集群 dce 地址
+          address: example.com:443 # 全局服务集群 dce 地址
           plaintext: false
           insecure: true # 如果是测试环境，可以将其内置为 true，不走证书
     ```
@@ -175,7 +175,7 @@
 5. 配置域名解析，域名映射到 Ingress 网关的 LB，工作集群和浏览器的电脑 /etc/hosts 追加域名映射：
 
     ```shell
-    echo "10.64.24.211 cn-sh-a1" | sudo tee -a /etc/hosts
+    echo "10.64.xx.xx cn-sh-a1" | sudo tee -a /etc/hosts
     ```
 
 设置本地电脑信任证书：
@@ -236,7 +236,7 @@ spec:
   share: true
   source:
     type: HTTP
-    uri: http://10.64.24.22:81/model/qwen3-06b/ # 需要改成你的地址
+    uri: http://example.com:81/model/qwen3-06b/ # 需要改成你的地址
     options:
       repoType: MODEL
   mountOptions:
@@ -287,7 +287,7 @@ dataset.dataset.baizeai.io/qwen3-0.6b created
 
     1. 安装fake-gpu-operator
 
-        对于离线安装，可以[从公司内网下载离线包](http://10.64.24.22:81/fakegpu-install.tar)一键部署：
+        对于离线安装，可以先下载离线包一键部署：
 
         ![离线安装](./images/deploy14.png)
 
