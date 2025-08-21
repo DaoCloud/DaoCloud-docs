@@ -5,16 +5,28 @@
 
 本文说明如何部署私有化 WS 模式的大模型服务平台 Hydra，支持无卡进行推理。
 
-## 全局服务集群安装 Hydra
+## 全局服务集群
 
-在[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)中，
-安装 Hydra 和 Mspider（依赖 Istio 创建网关进行路由）。
+在[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)中，需要安装：
 
-> 安装器默认内置 Istio
+- Hydra：手动安装或通过安装器安装
+- [服务网格](../../mspider/install/install.md)（依赖 Istio 创建网关进行路由）
+- [MySQL](../../middleware/mysql/intro/offline-install.md)
+- [Redis](../../middleware/redis/intro/offline-install.md)
+
+!!! tip
+
+    - 全局服务集群默认安装了通用的 MySQL 和 Redis。
+    - 如果通过安装器安装 Hydra，则默认使用通用的 MySQL 和 Redis。
+    - 如果手动安装 Hydra，需要在安装参数中指定 MySQL 和 Redis。
+
+安装好的效果如下图：
 
 ![安装 Hydra 和 mspider](./images/deploy01.png)
 
 ## 工作集群
+
+工作集群需要安装 Hydra Agent 和 metallb。
 
 ### 安装 Hydra Agent
 
@@ -53,20 +65,7 @@
 
     ![创建专有网格](./images/deploy06.png)
 
-2. 创建 TLS 证书，生成 Secret（域名与上述的 `agent_base_url` 一致）
-
-    ```shell
-    root@controller-node-1:~# openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-      -keyout tls.key -out tls.crt \
-      -subj "/CN=cn-sh-a1/O=Demo" \
-      -addext "subjectAltName=DNS:cn-sh-a1"
-
-    root@controller-node-1:~# kubectl create secret tls cn-sh-a1 \
-      --cert=tls.crt \
-      --key=tls.key
-    ```
-
-3. 初始化 Gateway API CRD
+1. 初始化 Gateway API CRD
 
     ```shell
     root@controller-node-1:~# kubectl kustomize "github.com/kubernetes-sigs/gateway-api/config/crd?ref=v1.2.1" | kubectl apply -f -;
@@ -78,7 +77,7 @@
     customresourcedefinition.apiextensions.k8s.io/referencegrants.gateway.networking.k8s.io created
     ```
 
-4. 创建网关，路由规则
+1. 创建网关，路由规则
 
     ```shell
     root@controller-node-1:~# cat gateway.yaml
@@ -172,7 +171,7 @@
     httproute.gateway.networking.k8s.io/hydra-agent-knoway created
     ```
 
-5. 配置域名解析，域名映射到 Ingress 网关的 LB，工作集群和浏览器的电脑 /etc/hosts 追加域名映射：
+1. 配置域名解析，域名映射到 Ingress 网关的 LB，工作集群和浏览器的电脑 /etc/hosts 追加域名映射：
 
     ```shell
     echo "10.64.xx.xx cn-sh-a1" | sudo tee -a /etc/hosts
