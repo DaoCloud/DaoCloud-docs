@@ -1377,6 +1377,15 @@ nav:
                   - Modbus 设备接入实践: kant/best-practice/modbus-device-demo.md
                   - 智能设备控制: kant/best-practice/custom-device-control.md
                   - 开发设备驱动应用mapper: kant/best-practice/develop-device-mapper.md
+      - 设备:
+          - 设备管理:
+              - 介绍:
+                  - 什么是设备管理: topohub/intro/index.md
+                  - 安装设备管理组件: topohub/intro/install.md
+              - 设备:
+                  - 接入设备: topohub/user-guide/device/access-device.md
+                  - 批量接入设备: topohub/user-guide/device/batch-access-device.md
+                  - 管理设备: topohub/user-guide/device/manage-device.md
       - 管理:
           - 全局管理:
               - 介绍:
