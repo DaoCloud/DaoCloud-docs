@@ -131,35 +131,35 @@ HAMi 企业版的许可证已内置到镜像中，对于基本安装无需额外
 
 1. **找到许可证目录**
 
-   在每个 GPU 节点上找到许可证存储目录：
+    在每个 GPU 节点上找到许可证存储目录：
 
-   ```bash
-   # 在 GPU 节点上执行
-   sudo mkdir -p /usr/local/vgpu
-   ```
+    ```bash
+    # 在 GPU 节点上执行
+    sudo mkdir -p /usr/local/vgpu
+    ```
 
 2. **部署许可证文件**
 
-   将获取的许可证文件复制到指定目录：
+    将获取的许可证文件复制到指定目录：
 
-   ```bash
-   # 复制主许可证文件
-   sudo cp <license> /usr/local/vgpu/
+    ```bash
+    # 复制主许可证文件
+    sudo cp <license> /usr/local/vgpu/
 
-   # 复制设备特定的许可证文件
-   sudo cp GPU-12345678-1234-1234-1234-123456789abc.lic /usr/local/vgpu/
-   sudo cp GPU-87654321-4321-4321-4321-cba987654321.lic /usr/local/vgpu/
-   ```
+    # 复制设备特定的许可证文件
+    sudo cp GPU-12345678-1234-1234-1234-123456789abc.lic /usr/local/vgpu/
+    sudo cp GPU-87654321-4321-4321-4321-cba987654321.lic /usr/local/vgpu/
+    ```
 
 ## 安装 HAMi 企业版
 
 本节介绍如何移除现有的 GPU 操作器并安装 HAMi 企业版。
 
-### 移除现有的 nvidia-vgpu operator
+### 移除现有的 nvidia-vgpu Operator
 
-在安装 HAMi 企业版之前，需要先移除集群中现有的 nvidia-vgpu operator 以避免冲突。
+在安装 HAMi 企业版之前，需要先移除集群中现有的 nvidia-vgpu Operator 以避免冲突。
 
-检查现有 operator，如果有请根据合理的方式进行卸载。
+检查现有 Operator，如果有请根据合理的方式进行卸载。
 
 ```bash
 # 查看现有的 GPU 相关操作器
@@ -175,14 +175,14 @@ kubectl get pods -A | grep -i vgpu
 
 1. **获取安装包**
 
-   确保您已获得 `hami_commercial.tar` 安装包文件。
+    确保您已获得 `hami_commercial.tar` 安装包文件。
 
 2. **解压安装包**
 
-   ```bash
-   # 解压 HAMi 企业版安装包
-   tar -xvf hami_commercial.tar
-   ```
+    ```bash
+    # 解压 HAMi 企业版安装包
+    tar -xvf hami_commercial.tar
+    ```
 
 ### 部署 HAMi 企业版
 
@@ -211,19 +211,19 @@ TEST SUITE: None
 
 1. **检查 Pod 状态**
 
-   ```bash
-   # 查看 HAMi 企业版相关 Pod 状态
-   kubectl -n hami-commercial get pod
-   ```
+    ```bash
+    # 查看 HAMi 企业版相关 Pod 状态
+    kubectl -n hami-commercial get pod
+    ```
 
-   预期输出示例：
+    预期输出示例：
 
-   ```console
-   NAME                                READY   STATUS    RESTARTS   AGE
-   hami-device-plugin-daemonset-xxxxx  1/1     Running   0          2m
-   hami-scheduler-xxxxx                1/1     Running   0          2m
-   hami-webhook-xxxxx                  1/1     Running   0          2m
-   ```
+    ```console
+    NAME                                READY   STATUS    RESTARTS   AGE
+    hami-device-plugin-daemonset-xxxxx  1/1     Running   0          2m
+    hami-scheduler-xxxxx                1/1     Running   0          2m
+    hami-webhook-xxxxx                  1/1     Running   0          2m
+    ```
 
 !!! note
 
@@ -238,52 +238,52 @@ HAMi 企业版部署完成后，需要进行一些后续配置以确保系统正
 
 1. **登录 DCE 5.0 管理界面**
 
-   使用管理员账户登录 DCE 5.0 平台的 Web 管理界面。
+    使用管理员账户登录 DCE 5.0 平台的 Web 管理界面。
 
 2. **进入容器管理模块**
 
-   导航到 **容器管理** → **集群列表** → 选择目标集群。
+    导航到 **容器管理** → **集群列表** → 选择目标集群。
 
 3. **切换 GPU 模式**
 
-   在集群详情页面中：
+    在集群详情页面中：
 
-   - 找到 **节点管理** 选项
-   - 选择包含 GPU 的节点
-   - 在节点详情中找到 **GPU 配置** 选项
-   - 将 GPU 模式从 `GPU` 切换为 `vGPU`
-   - 保存配置更改
+    - 找到 **节点管理** 选项
+    - 选择包含 GPU 的节点
+    - 在节点详情中找到 **GPU 配置** 选项
+    - 将 GPU 模式从 `GPU` 切换为 `vGPU`
+    - 保存配置更改
 
 4. **确认模式切换**
 
-   切换完成后，可以在节点详情页面确认 GPU 模式已更改为 `vGPU`。
+    切换完成后，可以在节点详情页面确认 GPU 模式已更改为 `vGPU`。
 
 ### 验证系统配置
 
 1. **检查 GPU 资源**
 
-   验证 GPU 资源已正确转换为 vGPU 资源：
+    验证 GPU 资源已正确转换为 vGPU 资源：
 
-   ```bash
-   # 查看节点的 GPU 资源
-   kubectl describe nodes | grep -A 5 -B 5 "nvidia.com/vgpu"
-   ```
+    ```bash
+    # 查看节点的 GPU 资源
+    kubectl describe nodes | grep -A 5 -B 5 "nvidia.com/vgpu"
+    ```
 
-   预期输出应显示 `nvidia.com/vgpu` 资源而不是 `nvidia.com/gpu`。
+    预期输出应显示 `nvidia.com/vgpu` 资源而不是 `nvidia.com/gpu`。
 
 2. **验证设备插件状态**
 
-   ```bash
-   # 检查设备插件是否正常运行
-   kubectl -n hami-commercial get pods -l app=hami-device-plugin
-   ```
+    ```bash
+    # 检查设备插件是否正常运行
+    kubectl -n hami-commercial get pods -l app=hami-device-plugin
+    ```
 
 3. **查看系统事件**
 
-   ```bash
-   # 查看相关的系统事件
-   kubectl get events -n hami-commercial --sort-by='.lastTimestamp'
-   ```
+    ```bash
+    # 查看相关的系统事件
+    kubectl get events -n hami-commercial --sort-by='.lastTimestamp'
+    ```
 
 ## 验证和测试
 
@@ -293,77 +293,77 @@ HAMi 企业版部署完成后，需要进行一些后续配置以确保系统正
 
 1. **创建测试应用配置文件**
 
-   创建一个使用 vGPU 资源的测试应用：
+    创建一个使用 vGPU 资源的测试应用：
 
-   ```yaml
-   apiVersion: apps/v1
-   kind: Deployment
-   metadata:
-     name: vgpu-test-app
-     namespace: default
-   spec:
-     replicas: 1
-     selector:
-       matchLabels:
-         app: vgpu-test-app
-     template:
-       metadata:
-         labels:
-           app: vgpu-test-app
-       spec:
-         containers:
-           - name: pytorch-container
-             image: release.daocloud.io/zestu/pytorch:2.5.1-cuda12.4-cudnn9-runtime
-             command: ["sleep", "3600"]
-             resources:
-               limits:
-                 nvidia.com/vgpu: 1 # 申请 1 个 vGPU
-                 nvidia.com/gpumem: 4096 # 申请 4GB GPU 内存
-                 nvidia.com/gpucores: 50 # 申请 50% GPU 算力
-               requests:
-                 nvidia.com/vgpu: 1
-                 nvidia.com/gpumem: 4096
-                 nvidia.com/gpucores: 50
-         nodeSelector:
-           gpu: "on"
-   ```
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: vgpu-test-app
+      namespace: default
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: vgpu-test-app
+      template:
+        metadata:
+          labels:
+            app: vgpu-test-app
+        spec:
+          containers:
+            - name: pytorch-container
+              image: release.daocloud.io/zestu/pytorch:2.5.1-cuda12.4-cudnn9-runtime
+              command: ["sleep", "3600"]
+              resources:
+                limits:
+                  nvidia.com/vgpu: 1 # 申请 1 个 vGPU
+                  nvidia.com/gpumem: 4096 # 申请 4GB GPU 内存
+                  nvidia.com/gpucores: 50 # 申请 50% GPU 算力
+                requests:
+                  nvidia.com/vgpu: 1
+                  nvidia.com/gpumem: 4096
+                  nvidia.com/gpucores: 50
+          nodeSelector:
+            gpu: "on"
+    ```
 
 2. **部署测试应用**
 
-   ```bash
-   # 应用测试配置
-   kubectl apply -f vgpu-test-app.yaml
-   ```
+    ```bash
+    # 应用测试配置
+    kubectl apply -f vgpu-test-app.yaml
+    ```
 
 ### GPU 资源分配验证
 
 1. **进入测试容器**
 
-   ```bash
-   # 进入测试容器
-   kubectl exec -it deployment/vgpu-test-app -- bash
-   ```
+    ```bash
+    # 进入测试容器
+    kubectl exec -it deployment/vgpu-test-app -- bash
+    ```
 
 2. **检查 GPU 可见性**
 
-   在容器内执行以下命令：
+    在容器内执行以下命令：
 
-   ```bash
-   # 检查 CUDA 设备
-   nvidia-smi
+    ```bash
+    # 检查 CUDA 设备
+    nvidia-smi
 
-   # 检查 GPU 内存限制
-   nvidia-smi --query-gpu=memory.total,memory.used,memory.free --format=csv
-   ```
+    # 检查 GPU 内存限制
+    nvidia-smi --query-gpu=memory.total,memory.used,memory.free --format=csv
+    ```
 
-   预期输出应显示分配的 4GB GPU 内存限制。
+    预期输出应显示分配的 4GB GPU 内存限制。
 
 3. **验证 GPU 算力限制**
 
-   ```bash
-   # 检查 GPU 利用率限制
-   nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits
-   ```
+    ```bash
+    # 检查 GPU 利用率限制
+    nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits
+    ```
 
 ### GPU 内存验证
 
