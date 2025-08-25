@@ -389,6 +389,7 @@ nav:
                   - Pod 与 GPU 卡的占用关系: kpanda/user-guide/gpu/gpupod.md
                   - GPU 相关FAQ: kpanda/user-guide/gpu/FAQ.md
               - 最佳实践:
+                  - 部署 HAMi 企业版: kpanda/best-practice/hami-enterprise-installation.md
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
                   - 跨集群备份恢复MySQL: kpanda/best-practice/backup-mysql-on-nfs.md
                   - 快速搭建 Dify LLM 应用开发平台: kpanda/best-practice/dify-use.md
