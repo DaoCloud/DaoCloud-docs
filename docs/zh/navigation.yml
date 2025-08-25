@@ -841,6 +841,7 @@ nav:
                   - 通过 Sidecar 采集容器日志: insight/reference/tailing-sidecar.md
                   - VictoriaMetrics 资源规划: insight/best-practice/vm-resource-plan.md
                   - 创建 Remote Sampling Server: insight/reference/remote-sampling.md
+                  - Insight 和 Insight-agent 安全的连接 Kafka: insight/reference/security-connect-kafka.md
               - 兼容性测试:
                   - Kubernetes 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
