@@ -20,7 +20,7 @@
 
 ### GPU 硬件要求
 
-- 推荐 NVIDIA GPU 卡（支持 CUDA），[点击](https://project-hami.io/docs/userguide/Device-supported)了解 HAMi 企业版支持 GPU 类型。
+- 推荐 NVIDIA GPU 卡（支持 CUDA），参阅 [HAMi 企业版支持的 GPU 类型](https://project-hami.io/docs/userguide/Device-supported)。
 - GPU 驱动程序已正确安装
 - 支持 GPU 虚拟化的硬件架构
 
