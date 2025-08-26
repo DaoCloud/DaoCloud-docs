@@ -146,9 +146,8 @@ HAMi 企业版的许可证已内置到镜像中，对于基本安装无需额外
     # 复制主许可证文件
     sudo cp <license> /usr/local/vgpu/
 
-    # 复制设备特定的许可证文件
+    # 复制设备特定的许可证文件（一个许可证可包含申请的一个或多个设备）
     sudo cp GPU-12345678-1234-1234-1234-123456789abc.lic /usr/local/vgpu/
-    sudo cp GPU-87654321-4321-4321-4321-cba987654321.lic /usr/local/vgpu/
     ```
 
 ## 安装 HAMi 企业版
@@ -187,6 +186,14 @@ kubectl get pods -A | grep -i vgpu
 ### 部署 HAMi 企业版
 
 使用 Helm 命令部署 HAMi 企业版：
+
+使用 `helm upgrade` 命令更新安装包；注意修改 `values.yaml`配置：
+
+- 将 `resourceName` 从 `nvidia.com/gpu` 改为 `nvidia.com/vgpu`
+- 修改 `Chart` 中需要的镜像和版本，主要涉及：
+    - /projecthami/jettech/kube-webhook-certgen
+    - /projecthami/kube-webhook-certgen
+    - /projecthami/hami:vX.Y.Z-commercial
 
 ```bash
 helm upgrade --install hami-commercial ./ \
