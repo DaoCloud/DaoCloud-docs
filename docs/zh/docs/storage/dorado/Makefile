@@ -74,7 +74,7 @@ w: watch
 
 sync-doc:
 	rsync -av ../../../../../../huawei-dorado-test/ . \
-		--include='img' \
+		--include='img/***' \
 		--include='*.md' \
 		--exclude='*' \
 		--delete
