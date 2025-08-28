@@ -111,7 +111,7 @@ jobs:
           command: pages deploy public --project-name=daocloud-docs --branch=production
       
       - name: Upload to Qiniu Kodo
-        uses: samzong/action-qiniu-upload-nodejs@v0.0.3
+        uses: samzong/action-qiniu-upload-nodejs@master
         with:
           access_key: ${{ secrets.QINIU_ACCESS_KEY }}
           secret_key: ${{ secrets.QINIU_SECRET_KEY }}
