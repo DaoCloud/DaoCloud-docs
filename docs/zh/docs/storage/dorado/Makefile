@@ -72,3 +72,12 @@ watch:
 	watch kubectl get po,pvc,volumesnapshot
 w: watch
 
+sync-doc:
+	rsync -av ../../../../../../huawei-dorado-test/ . \
+		--include='images/***' \
+		--include='*.md' \
+		--exclude='*' \
+		--delete
+	mv README.md dorado-test.md
+	npx prettier --w dorado-test.md
+sd: sync-doc

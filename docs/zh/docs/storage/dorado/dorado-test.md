@@ -3,32 +3,35 @@ hide:
   - navigation
 ---
 
-# 测试 K8s CSI 驱动 Dorado 存储
+# 测试 K8S CSI 驱动 Dorado 存储
 
 标准化测试各项 CSI 能力和存储的容器感知能力
 
+Git: <https://gitee.com/daocloud/huawei-dorado-test>
+
 ## 测试结论
 
-**DaoCloud d.run AI 算力调度平台（暨 DCE5 v3.0 云原生容器平台），能全面兼容
-OceanStore Dorado v6 的"CNCF-CSI 标准"的各项容器卷功能，也能兼容"华为 CSM 标准"的各项容器卷感知功能。**
+**DaoCloud d.run AI 算力调度平台（暨 DCE5 v3.0 云原生容器平台)，能全面兼容 OceanStor Dorado 的"CNCF-CSI标准"的各项容器卷功能，也能兼容"华为CSM标准"的各项容器卷感知功能。**
+
+**以上结论适用于 HUAWEI OceanStor Dorado V700 全闪存存储系统以及 OceanStor Hybrid V700 混合闪存存储系统所包含的所有型号。**
 
 ## 测试环境
 
-| 组件                      | 版本                           |
-| ------------------------- | ------------------------------ |
-| 存储型号                  | 华为 OceanStore Dorado 5000 v6 |
-| 存储版本                  | V700R001C00SPC200              |
-| d.run                     | DCE5 v3.0.0                    |
-| Kubernetes                | v1.31.6                        |
-| CSI 驱动                  | eSDK_K8S_Plugin v4.8.0         |
-| 存储监控容器              | Huawei CSM v2.3.0              |
-| csi-attacher              | v4.4.0                         |
-| csi-node-driver-registrar | v2.9.0                         |
-| csi-provisioner           | v3.6.0                         |
-| csi-resizer               | v1.9.0                         |
-| csi-snapshotter           | v6.3.0                         |
-| livenessprobe             | v2.12.0                        |
-| snapshot-controller       | v6.3.0                         |
+| 组件                      | 版本                          |
+| ------------------------- | ----------------------------- |
+| 存储型号                  | 华为 OceanStor Dorado 5000 v6 |
+| 存储版本                  | V700R001C00SPC200             |
+| d.run                     | DCE5 v3.0.0                   |
+| Kubernetes                | v1.31.6                       |
+| CSI 驱动                  | eSDK_K8S_Plugin v4.8.0        |
+| 存储监控容器              | Huawei CSM v2.3.0             |
+| csi-attacher              | v4.4.0                        |
+| csi-node-driver-registrar | v2.9.0                        |
+| csi-provisioner           | v3.6.0                        |
+| csi-resizer               | v1.9.0                        |
+| csi-snapshotter           | v6.3.0                        |
+| livenessprobe             | v2.12.0                       |
+| snapshot-controller       | v6.3.0                        |
 
 ## 组网拓扑
 
@@ -39,6 +42,7 @@ OceanStore Dorado v6 的"CNCF-CSI 标准"的各项容器卷功能，也能兼容
 ### oceanctl
 
 MACOS 版本需要从源代码直接编译
+
 <https://github.com/Huawei/eSDK_K8S_Plugin/blob/master/Makefile>
 
 ### CSI 驱动
@@ -77,23 +81,23 @@ MACOS 版本需要从源代码直接编译
 
 ## 操作过程
 
-命令已经封装到 [Makefile](./Makefile) 里
+命令已经封装到 [Makefile](https://gitee.com/daocloud/huawei-dorado-test/blob/master/Makefile) 里
 
-```sh
+```
 # 安装 CSI
-make csi
+$ make csi
 
 # 安装 csm
-make csm
+$ make csm
 
 # 安装 backend
-make backend
+$ make backend
 
 # 创建测试
-make create
+$ make create
 
 # 删除测试
-make delete
+$ make delete
 ```
 
 ## 测试结果
@@ -102,8 +106,8 @@ make delete
 | ---------- | ------------------------------------------------------ | ------ | --------------------------------- |
 | 卷创建     | 动态创建 pvc => pv                                     | 通过   |                                   |
 | 卷扩容     | 在线修改 pvc 容量大小                                  | 通过   |                                   |
-| 卷挂载 1   | RWO 独占卷挂载                                         | 通过   |                                   |
-| 读写 IO    | 写入数据库数据，然后读取                               | 通过   |                                   |
+| 卷挂载1    | RWO 独占卷挂载                                         | 通过   |                                   |
+| 读写IO     | 写入数据库数据，然后读取                               | 通过   |                                   |
 | 卷卸载     | 删除 MySQL 容器，然后 mount -l 检查 nfs 挂载是否被删除 | 通过   |                                   |
 | 卷删除     | 删除 PVC，检查存储界面是否显示卷被删除                 | 通过   |                                   |
 | 卷共享     | ReadWriteMany 模式多容器跨主机挂载卷                   | 通过   |                                   |
@@ -136,7 +140,6 @@ make delete
 #### 克隆
 
 ![](./images/clone1.png)
-
 ![](./images/clone2.png)
 
 #### 快照
@@ -146,13 +149,11 @@ make delete
 #### PV 感知
 
 ![](./images/pv1.png)
-
 ![](./images/pv2.png)
 
 #### POD 感知
 
 ![](./images/pv1.png)
-
 ![](./images/pv2.png)
 
 ## 常见问题
@@ -160,8 +161,8 @@ make delete
 ### 如何配置 daocloud 租户
 
 1. 后端网页 UI 里创建 daocloud 租户；
-2. 服=>多租户，daocloud 租户=>概要信息，关联 StoragePool001；
-3. 服务=>网络=>逻辑端口，daocloud 租户下，配置独立的 IP, 并且打开管理 url 功能；
+2. 服=>多租户，daocloud租户=>概要信息，关联 StoragePool001；
+3. 服务=>网络=>逻辑端口，daocloud租户下，配置独立的 IP, 并且打开管理 url 功能；
 4. backends.yaml 配置租户的 url；
 
 ### 如何确保 PV 卷文件系统生成在 daocloud 租户下
@@ -170,23 +171,19 @@ backends.yaml 里需要从租户逻辑端口的 url 登录租户，具体请看 
 
 ### 如何配置 NFS 4.x
 
-设置=>文件服务=>NFS 服务，daocloud 租户下，打开各个 4.x 服务
-
+设置=>文件服务=>NFS服务，daocloud租户下，打开各个 4.x 服务
 注意：CSI 会根据 mountOption 里的 NFS 版本过滤 StoragePool
 
 ### CSM 需要配置存储后端吗？
 
-不需要，它读的 `storagebackendclaims.xuanwu.huawei.io` 信息
+不需要，它读的 storagebackendclaims.xuanwu.huawei.io 信息
 
 ## CSM 日志
 
 CSM 容器发送 PV/POD 信息到存储的 REST API
 
-```sh
-cat /var/log/huawei-csm/csm-storage-service/cmi-service
 ```
-
-```
+$ cat /var/log/huawei-csm/csm-storage-service/cmi-service
 2025-08-19 14:30:51.301498 1[requestID:4226085859] [INFO]:  call request POST https://100.115.9.220:8088/deviceManager/rest/2102353SYPFSLC000003/container_pv, request: map[clusterName:dce5 pvName:pvc-b8b2c41c-fc34-4629-ae45-a630e1800ec8
 
 2025-08-19 14:31:20.858171 1[requestID:4042092947] [INFO]:  call request POST https://100.115.9.220:8088/deviceManager/rest/2102353SYPFSLC000003/container_pod, request: map[nameSpace:default podName:mysql-0 resourceId:844 resourceType:40]
@@ -194,10 +191,11 @@ cat /var/log/huawei-csm/csm-storage-service/cmi-service
 
 ## 遗留问题
 
-### 1. CSM 不支持临时卷
+### 1. CSM 不支持临时(ephemeral)卷
 
-此问题已经提交到 Github：
-[Need to support monitoring pods that mount ephemeral volumes #1](https://github.com/Huawei/csm/issues/1)
+已经提交到 Github:
+[Need to support monitoring pods that mount ephemeral volumes #1
+](https://github.com/Huawei/csm/issues/1)
 
 ## 附录
 
@@ -205,8 +203,8 @@ cat /var/log/huawei-csm/csm-storage-service/cmi-service
 
 #### 脚本
 
-```console
-make create
+```
+$ make create
 kubectl apply -f sc.yaml
 storageclass.storage.k8s.io/dorado-nfs created
 kubectl apply -f pvc.yaml
@@ -263,13 +261,10 @@ Waiting for 1 pods to be ready...
 partitioned roll out complete: 1 new pods have been updated...
 ```
 
-#### 示例
-
-```sh
-kubectl get po,pvc,volumesnapshot
-```
+#### 实例
 
 ```
+$ kubectl get po,pvc,volumesnapshot
 NAME                  READY   STATUS    RESTARTS        AGE
 pod/mysql-0           2/2     Running   0               8m57s
 pod/mysql-1           2/2     Running   1 (7m45s ago)   8m12s
@@ -288,11 +283,8 @@ volumesnapshot.snapshot.storage.k8s.io/data-mysql-snapshot   true         data-m
 
 ### CSI
 
-```sh
-kubectl -n huawei-csi get po
 ```
-
-```
+$ kubectl -n huawei-csi get po
 NAME                                     READY   STATUS    RESTARTS   AGE
 huawei-csi-controller-6c8c87bc8d-sg7s8   9/9     Running   0          5d21h
 huawei-csi-node-9gtsj                    3/3     Running   0          5d21h
@@ -300,11 +292,8 @@ huawei-csi-node-9gtsj                    3/3     Running   0          5d21h
 
 ### CSM
 
-```sh
-kubectl -n huawei-csm get po
 ```
-
-```
+$ kubectl -n huawei-csm get po
 NAME                                      READY   STATUS    RESTARTS   AGE
 csm-prometheus-service-7c79866c7b-9nvpp   3/3     Running   0          6d10h
 csm-storage-service-59876749df-58kpk      3/3     Running   0          6d10h
@@ -312,11 +301,8 @@ csm-storage-service-59876749df-58kpk      3/3     Running   0          6d10h
 
 ### CRDs
 
-```sh
-kubectl api-resources --api-group xuanwu.huawei.io
 ```
-
-```
+$ kubectl api-resources --api-group xuanwu.huawei.io
 NAME                     SHORTNAMES   APIVERSION            NAMESPACED   KIND
 resourcetopologies       rt           xuanwu.huawei.io/v1   false        ResourceTopology
 storagebackendclaims     sbc          xuanwu.huawei.io/v1   true         StorageBackendClaim
@@ -327,10 +313,7 @@ volumemodifycontents     vmct         xuanwu.huawei.io/v1   false        VolumeM
 
 ### mount -l
 
-```sh
-mount -l | grep /pvc-b8b2c41c-fc34-4629-ae45-a630e1800ec8/mount
 ```
-
-```
+$ mount -l | grep /pvc-b8b2c41c-fc34-4629-ae45-a630e1800ec8/mount
 100.115.9.220:/pvc_b8b2c41c_fc34_4629_ae45_a630e1800ec8 on /var/lib/kubelet/pods/83aca192-3c4d-4ed4-812d-aef164b1938c/volumes/kubernetes.io~csi/pvc-b8b2c41c-fc34-4629-ae45-a630e1800ec8/mount type nfs4 (rw,relatime,vers=4.2,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=100.115.8.120,local_lock=none,addr=100.115.9.220)
 ```
