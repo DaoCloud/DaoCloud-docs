@@ -103,18 +103,19 @@ jobs:
       #       publickey=$UCLOUD_PUBLICKEY \
       #       privatekey=$UCLOUD_PRIVATEKEY
       
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy public --project-name=daocloud-docs --branch=production
+      # - name: Deploy to Cloudflare Pages
+      #   uses: cloudflare/wrangler-action@v3
+      #  with:
+      #    apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      #    accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      #    command: pages deploy public --project-name=daocloud-docs --branch=production
       
       - name: Upload to Qiniu Kodo
-        uses: hujiulong/action-qiniu-upload@v0.0.2
+        uses: samzong/action-qiniu-upload-nodejs@v0.0.6
         with:
           access_key: ${{ secrets.QINIU_ACCESS_KEY }}
           secret_key: ${{ secrets.QINIU_SECRET_KEY }}
           bucket: ${{ secrets.QINIU_BUCKET }}
           source_dir: public
           dest_dir: /
+          concurrency: 50
