@@ -579,7 +579,7 @@ nav:
                   - 故障排查: network/modules/calico/debug.md
               - 集成 Cilium:
                   - 介绍: network/modules/cilium/index.md
-                  - 安装参数配置: network/modules/cilium/install.md
+                  - 部署 Cilium: network/modules/cilium/deploy-cilium.md
                   - 未支持功能说明: network/modules/cilium/not-support.md
                   - Cilium 网络通信加速: network/modules/cilium/cilium-speedup.md
                   - 应用跨集群通信: network/modules/cilium/cross-cluster.md
