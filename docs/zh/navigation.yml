@@ -168,6 +168,7 @@ nav:
                           - 模板说明: amamba/user-guide/pipeline/template/info.md
                       - 流水线分组: amamba/user-guide/pipeline/group/group.md
                       - 发版记录: amamba/user-guide/pipeline/release-stats.md
+                      - 高级参数选项: amamba/user-guide/pipeline/advanced_parameters.md
                   - 流水线缓存: amamba/user-guide/pipeline/pipeline_cache.md
                   - 自定义步骤:
                       - 自定义步骤介绍: amamba/customize-step.md
