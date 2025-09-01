@@ -2,9 +2,9 @@
 
 ## 全局参数选项支持
 
-如果需要开启全局参数选项支持，需要在 Feature Flags 中开启 `AdminGlobalBuildParameter` 选项。具体操作可参考： [特性门控](https://docs.daocloud.io/amamba/quickstart/feature-gates)
+如果需要开启全局参数选项支持，需要在 Feature Flags 中开启 `AdminGlobalBuildParameter` 选项。具体操作可参考[特性门控](../../quickstart/feature-gates.md)
 
-然后在 amamba 所在的命名空间下，更新 ConfigMap amamba-config ，指定jenkins 的部署名称和 ConfigMap 名称。内容如下：
+然后在 amamba 所在的命名空间下，更新 ConfigMap amamba-config ，指定 Jenkins 的部署名称和 ConfigMap 名称。内容如下：
 
 ```yaml
 kind: ConfigMap
@@ -20,7 +20,7 @@ data:
     generic: {}
 ```
 
-并且需要更新 jenkins ConfigMap 中的启动脚本 `apply_config.sh`，添加以下内容：
+并且需要更新 Jenkins ConfigMap 中的启动脚本 `apply_config.sh`，添加以下内容：
 
 ```yaml
 kind: ConfigMap
@@ -55,13 +55,12 @@ data:
 
 Jenkins 插件 [Extended Choice Parameter](https://plugins.jenkins.io/extended-choice-parameter/) 对于 Choice 类型的构建参数做了很多扩展，支持多选、单选、复选框等多种选择方式。
 
-如果需要开启全局参数选项支持，需要在 Feature Flags 中开启 `PipelineAdvancedParameters` 选项。具体操作可参考： [特性门控](https://docs.daocloud.io/amamba/quickstart/feature-gates)
+如果需要开启全局参数选项支持，需要在 Feature Flags 中开启 `PipelineAdvancedParameters` 选项。
+具体操作可参考[特性门控](../../quickstart/feature-gates.md)
 
 此外，需要在 Jenkins 中安装 Extended Choice Parameter 插件。可以参考 [Extended Choice Parameter](https://plugins.jenkins.io/extended-choice-parameter/)。
 
-#### 通过webhook传多个选项
-
-如果希望通过webhook传递多个选项，可以在 query parameter 中
+如果希望通过 Webhook 传递多个选项，可以使用 query parameter。
 
 #### 运行
 
@@ -86,4 +85,4 @@ curl --location 'http://<host>/unsafe/pipeline.amamba.io/v1alpha1/workspace/<wor
 }' 
 ```
 
-> 注意：Extended Choice Parameter 必须设置默认值，通过webhook触发时才能捕捉到
+> 注意：Extended Choice Parameter 必须设置默认值，通过 Webhook 触发时才能捕捉到。
