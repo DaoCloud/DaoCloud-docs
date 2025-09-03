@@ -1386,6 +1386,7 @@ nav:
               - 介绍:
                   - 什么是设备管理: topohub/intro/index.md
                   - 安装设备管理组件: topohub/intro/install.md
+                  - 设备管理 Release Notes: topohub/intro/release-notes.md
               - 设备:
                   - 接入设备: topohub/device/index.md
                   - 批量接入设备: topohub/device/batch-access-device.md

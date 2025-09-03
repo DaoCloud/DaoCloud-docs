@@ -9,6 +9,13 @@ hide:
 
 *[mcamel-mysql]: mcamel 是 DaoCloud 所有中间件的开发代号，mysql 是应用最广泛的关系型数据库
 
+## 2025-08-31
+
+### v0.27.0
+
+- **新增** 创建 MySQL 实例支持容忍配置
+- **修复** MySQL 中文 grafana dashboard 语法错误
+
 ## 2025-02-28
 
 ### v0.26.0
