@@ -9,6 +9,13 @@ hide:
 
 *[mcamel-kafka]: mcamel 是 DaoCloud 所有中间件的开发代号，kafka
 
+## 2025-08-31
+
+### v0.25.0
+
+- **新增** 创建 Kafka 实例支持容忍配置
+- **新增** 创建 Kafka 实例支持配置复杂的 listener 访问
+
 ## 2025-02-28
 
 ### v0.23.0
