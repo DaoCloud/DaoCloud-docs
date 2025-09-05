@@ -42,7 +42,7 @@ hide:
     打开全局服务集群，然后在 __Helm 应用__ -> __Helm 模板__ 找到 `topohub` 执行安装步骤。
 
         - BMC 账号密码：连接主机 BMC 的默认账号和密码。
-        - DHCP Sever：节点上能够访问所有管理设备网络的网卡名，其以 trunk 模式接入到交换机，例如 eth1。
+        - DHCP Server：节点上能够访问所有管理设备网络的网卡名，其以 trunk 模式接入到交换机，例如 eth1。
         - Topohub working node：topohub 组件部署运行的节点名。
 
 ## 结语
