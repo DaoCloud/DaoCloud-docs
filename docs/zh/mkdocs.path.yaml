@@ -18,7 +18,7 @@ repo_name: DaoCloud/DaoCloud-docs
 repo_url: https://github.com/DaoCloud/DaoCloud-docs
 edit_uri: edit/main/docs/zh/docs/
 
-use_directory_urls: true # disbale https://www.mkdocs.org/user-guide/configuration/#use_directory_urls
+use_directory_urls: true # enable https://www.mkdocs.org/user-guide/configuration/#use_directory_urls
 strict: false # enable strict mode, https://www.mkdocs.org/user-guide/configuration/#strict
 
 # Configuration
