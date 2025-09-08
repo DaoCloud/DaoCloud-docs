@@ -3,7 +3,7 @@
 *[Hydra]: 大模型服务平台的开发代号
 *[Mspider]: 服务网格的开发代号
 
-本文说明如何部署私有化 WS 模式的大模型服务平台 Hydra，支持无卡进行推理。
+本文说明如何部署私有化 WS（Workspace）模式的大模型服务平台 Hydra，支持无卡进行推理。
 
 ## 全局服务集群
 
@@ -284,7 +284,7 @@ dataset.dataset.baizeai.io/qwen3-0.6b created
         kubectl label node <node-name> run.ai/simulated-gpu-node-pool=default
         ```
 
-    1. 安装fake-gpu-operator
+    1. 安装 fake-gpu-operator
 
         对于离线安装，可以先下载离线包一键部署：
 
@@ -302,7 +302,7 @@ dataset.dataset.baizeai.io/qwen3-0.6b created
 
         ![检测通过](./images/deploy16.png)
 
-1. 创建模型部署任务后修改部署参数
+1. 创建模型部署任务后修改部署参数：
 
     ![修改部署参数](./images/deploy17.png)
 
@@ -313,7 +313,7 @@ dataset.dataset.baizeai.io/qwen3-0.6b created
     release.daocloud.io/hydra/vllm-openai:0.8.5.dev940-cpu
     ```
 
-1. 使用 CPU 推理时模型 qwen3 0.6b 占用 7g 左右内存，给的 CPU 决定 token 速度
+1. 使用 CPU 推理时模型 Qwen3 0.6b 占用 7g 左右内存，给的 CPU 决定 token 速度
 
     ![问一问](./images/deploy18.png)
 
@@ -323,12 +323,12 @@ dataset.dataset.baizeai.io/qwen3-0.6b created
 
         对于测试环境的模型流量，直接走 knoway-gateway 网关。
 
-1. 创建网关的 nodeport 类型 svc 服务
+1. 创建网关的 NodePort 类型 svc 服务
 
     ![创建 svc](./images/deploy20.png)
 
     ![指向 nodeport](./images/deploy21.png)
 
-1. 访问 dce 时只能走 http 端口
+1. 访问 DCE 时只能走 HTTP 端口
 
     ![访问 dce 时只能走 http 端口](./images/deploy22.png)
