@@ -31,10 +31,10 @@ This page will guide you to install DCE Community package offline in a standard 
 1. Find a machine with internet access and run the command below to download and extract the
    offline package (or download it from the [download center](../../../download/index.md)):
 
-    Take VERSION=v0.31.0 as an example.
+    Take VERSION=v0.33.0 as an example.
 
     ```bash
-    export VERSION=v0.31.0
+    export VERSION=v0.33.0
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```
