@@ -168,7 +168,7 @@ You can try the following methods to resolve it:
     sudo yum update -y
     ```
 
-## `osRepos` External Mode `externalRepoURLs` Check Failure  
+### `osRepos` External Mode `externalRepoURLs` Check Failure  
 
 The `clusterConfig.yaml` is as follows:  
 
@@ -193,13 +193,38 @@ The configuration is actually correct, and `externalRepoURLs` can be accessed no
 
 ![image](./images/404-osrepos.png)  
 
-### Impact
+**Impact:** Clusters using `osRepos` in external mode cannot be created successfully.  
 
-Clusters using `osRepos` in external mode cannot be created successfully.  
+**Workaround:** Retry using a new binary file.
 
-### Workaround
+### Manifest setting for enabling MySQL MGR mode not effective
 
-Retry using a new binary file.
+**Issue:**
+
+Since `dce5-installer` v0.30, enabling MySQL MGR through the Manifest has no effect.  
+Other parameters such as `pvcSize` are also ineffective, and only the `enable` parameter works.
+
+![manifest-enable](./images/manifest-enable.png)
+
+**Solution:**
+
+1. Run the installer command with the `--dry-run` parameter to output the execution script to `installer.sh`:
+
+    ```shell
+    ./dce5-installer cluster-create -c clusterConfig.yml -m manifest-enterprise.yaml -z --dry-run > installer.sh
+    ```
+
+2. At the beginning of the `installer.sh` script file, add the following line:
+
+    ```script title="installer.sh"
+    ManifestFile=/root/data/manifest-enterprise.yaml
+    ```
+
+3. Add the `-s` parameter and re-run `installer.sh`:
+
+    ```shell
+    ./dce5-installer cluster-create -c clusterConfig.yml -m manifest-enterprise.yaml -z -s installer.sh
+    ```
 
 ## Community Package Issues
 
@@ -215,7 +240,7 @@ Issue: The Redis Pod has been stuck at 0/4 running for a long time, indicating: 
 
 2. Then re-run the installation command.
 
-### Community version fluent-bit installation failure
+### fluent-bit installation failure
 
 Error message:
 
