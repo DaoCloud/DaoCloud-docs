@@ -14,6 +14,46 @@ the evolution path and feature changes of each version.
 *[Kangaroo]: Dev codename for the Container Registry in DCE 5.0
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
+*[Hydra]: Dev codename for LLM Studio in DCE 5.0
+
+## 2025-08-31
+
+### v0.33.0
+
+- **Updated** the minimum required Helm version in pre-checks to v3.14.0
+- **Optimized** pre-requisite scripts
+- **Fixed** cluster deployment failures on RHEL8 series due to low default Python version
+- **Fixed** errors on kylin v10 when system `VERSION_ID` is non-numeric during cluster deployment
+- **Fixed** MySQL DSN URL parsing validation errors
+- **Fixed** duplicate MySQL query parameter issue in Hydra
+- **Fixed** minimal deployment replica configuration issue in Hydra
+- **Fixed** database charset issues in Hydra
+- **Fixed** rollback failure for `rollback-app mcamel` in Hydra
+
+## 2025-07-31
+
+### v0.32.0
+
+- **Added** support for deleting `kind` and `kind` cluster data
+- **Added** support for component failure rollback
+- **Added** Kafka and Zookeeper monitoring metrics
+- **Optimized** MySQL installation process
+- **Optimized** RabbitMQ reinstallation logic
+- **Optimized** Kafka CA certificate validity to 10 years
+- **Fixed** version retrieval failures in infra and middleware components
+- **Fixed** data loss issue during YAML deserialization
+- **Fixed** Fluent Bit image issue
+- **Fixed** pre-requisite script installation failure with high-version `sudo`
+
+## 2025-06-30
+
+### v0.31.0
+
+- **Added** support for configurable k8s certificate issuance validity period
+- **Optimized** default behavior to disable `kernel_unattended_upgrades` in Ubuntu cluster environments
+- **Updated** installer to Go 1.24 and GolangCI-Lint v2
+- **Fixed** issue where enabling node kernel tuning would always call `nf-conntrack` playbook
+- **Fixed** parameter issues in URLs for online scenarios
 
 ## 2025-05-31
 
