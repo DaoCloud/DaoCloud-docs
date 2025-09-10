@@ -1304,6 +1304,16 @@ nav:
                   - Instructions to Connect a Modbus Device: kant/best-practice/modbus-device-demo.md
                   - Smart Device Control: kant/best-practice/custom-device-control.md
                   - Develop Device Driver - Mapper: kant/best-practice/develop-device-mapper.md
+      - Devices:
+          - Device Management:
+              - Introduction:
+                  - What is Device Management: topohub/intro/index.md
+                  - Install Device Management Component: topohub/intro/install.md
+                  - Device Management Release Notes: topohub/intro/release-notes.md
+              - Devices:
+                  - Onboard Device: topohub/device/index.md
+                  - Batch Onboard Devices: topohub/device/batch-access-device.md
+                  - Manage Devices: topohub/device/manage-device.md
       - Management:
           - Global Management:
               - Intro:
