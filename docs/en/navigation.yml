@@ -1312,7 +1312,7 @@ nav:
                   - Device Management Release Notes: topohub/intro/release-notes.md
               - Devices:
                   - Onboard Device: topohub/device/index.md
-                  - Batch Onboard Devices: topohub/device/batch-access-device.md
+                  - Batch Onboard Devices: topohub/device/batch-access.md
                   - Manage Devices: topohub/device/manage-device.md
       - Management:
           - Global Management:
