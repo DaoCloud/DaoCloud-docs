@@ -1390,7 +1390,7 @@ nav:
                   - 设备管理 Release Notes: topohub/intro/release-notes.md
               - 设备:
                   - 接入设备: topohub/device/index.md
-                  - 批量接入设备: topohub/device/batch-access-device.md
+                  - 批量接入设备: topohub/device/batch-access.md
                   - 管理设备: topohub/device/manage-device.md
       - 管理:
           - 全局管理:
