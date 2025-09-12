@@ -2,7 +2,7 @@
 
 *[Hydra]: 大模型服务平台的开发代号
 
-Hydra 基于 BaizeAl/Dataset 来管理模型的权重文件。Dataset 抽象了 Kubernetes Volume
+Hydra 基于 BaizeAI/Dataset 来管理模型的权重文件。Dataset 抽象了 Kubernetes Volume
 的使用，极大简化了 PV/PVC 的创建和维护流程，并支持多种数据源类型：
 
 | DatasetType  | 说明                                 |
@@ -24,9 +24,9 @@ Dataset 还支持自动预加载：对于支持的类型会创建一个预处理
 
 ### 通过 Hugging Face 和 ModelScope
 
-我们已经在 BaizeAl/ModelHub 将 Hydra 部署大模型需要的元信息都规整好了，以
-qwen2-0.5b-instruct 为例，找到对应的
-[metadata.yaml](https://github.com/BaizeAl/modelhub/blob/main/models/alibaba/qwen2-0.5b-instruct/metadata.yaml):
+我们已经在 [BaizeAI/ModelHub](https://github.com/BaizeAI/modelhub) 将
+Hydra 部署大模型需要的元信息都规整好了，以 qwen2-0.5b-instruct 为例，找到对应的
+[metadata.yaml](https://github.com/BaizeAI/modelhub/blob/main/models/alibaba/qwen2-0.5b-instruct/metadata.yaml)：
 
 ```yaml
 apiVersion: model.hydra.io/v1alpha1
@@ -92,10 +92,10 @@ spec:
 
 需要特别注意其中的字段设置：
 
-- 需要指定 `metadata.labels.hydra.io/model-id` 为对应的模型 ID 来关联对应的模型服
-- 如果是模型体验里的服务，需要指定 namespace 为 public。如果是模型部署则需要指定到对应的命名空间下；
+- 需要指定 `metadata.labels.hydra.io/model-id` 为对应的模型 ID 来关联对应的模型服务
+- 如果是模型体验里的服务，需要指定 namespace 为 public。如果是模型部署，则需要指定到对应的命名空间下。
 - 通过指定 `spec.share` 为 true，我们允许其他的模型服务可以通过 REFERENCE
-  的方式直接引用该 Dataset 及对应的文件，避免重复下载。具体配置参考目使用 Dataset 管理模型文件；
+  的方式直接引用该 Dataset 及对应的文件，避免重复下载。具体配置参考当前使用的 Dataset 管理模型文件。
 
 ### 通过 Git
 

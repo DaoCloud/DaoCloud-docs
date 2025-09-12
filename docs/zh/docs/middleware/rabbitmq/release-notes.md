@@ -9,6 +9,13 @@ hide:
 
 *[mcamel-rabbitmq]: mcamel 是 DaoCloud 所有中间件的开发代号，rabbitmq 实现了高级消息队列协议 (AMQP) 的消息代理软件
 
+## 2025-08-31
+
+### v0.27.3
+
+- **修复** 无法创建配置模版的问题
+- **修复** 创建 managerment service 为 nodeport 时不生效的问题
+
 ## 2024-09-30
 
 ### v0.24.0

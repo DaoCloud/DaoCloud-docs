@@ -17,7 +17,7 @@ DCE 5.0 提供的网络方案对当前主流的开源网络组件进行优化组
 - [f5networks](../modules/f5networks/index.md)：全面控制 F5 设备，将集群中 service 和 ingress 配置同步到 F5 硬件设备上，实现集群北向入口的负载均衡。
 - [Ingress-nginx](../modules/ingress-nginx/index.md)：Kubernetes 社区托管的 Ingress 控制器，使用 nginx 作为反向代理和负载均衡。
 - [MetalLB](../modules/metallb/index.md)：裸金属版的 Kubernetes 负载均衡器方案。
-- [Multus-underlay](../modules/multus-underlay/index.md)：基于 Multus、搭配 Macvlan + SRIOV-CNI 的多网卡方案。
+- [Multus-underlay](../modules/multus-underlay/index.md)：基于 Multus、搭配 Macvlan + SR-IOV CNI 的多网卡方案。
 - [Spiderpool](../modules/spiderpool/index.md)：自动化管理 IP 资源
 - [Submariner](../modules/submariner/index.md)：跨集群的网络通讯方案
 - [Aliyun CNI](../modules/aliyun-terway/index.md)：运行在阿里云上的 CNI 插件，提供稳定、高性能，支持Kubernetes network policy、流控等高级特性。

@@ -157,7 +157,7 @@ Error: Failed to download metadata for repo 'appstream': Cannot prepare internal
     sudo yum update -y
     ```
 
-## osRepos 的 external 模式 externalRepoURLs 检查失败
+### osRepos 的 external 模式 externalRepoURLs 检查失败
 
 clusterConfig.yaml 如下：
 
@@ -188,7 +188,7 @@ clusterConfig.yaml 如下：
 **绕过方法：**
 使用新的二进制文件重试。
 
-## Manifest 开启 MySQL MGR 模式无效
+### Manifest 开启 MySQL MGR 模式无效
 
 **问题：**
 

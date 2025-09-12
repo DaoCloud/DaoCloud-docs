@@ -10,6 +10,7 @@ nav:
               - Use Cases: dce/scenario.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Release Notes:
+                  - v0.33.0-20250831 Released: dce/dce-rn/20250831.md
                   - v0.32.0-20250731 Released: dce/dce-rn/20250731.md
                   - v0.31.0-20250630 Released: dce/dce-rn/20250630.md
                   - v0.30.0-20250530 Released: dce/dce-rn/20250530.md
@@ -553,9 +554,9 @@ nav:
                   - Troubleshoot: network/modules/calico/debug.md
               - Cilium:
                   - Intro: network/modules/cilium/index.md
-                  - Args Config: network/modules/cilium/install.md
+                  - Deploy Cilium: network/modules/cilium/deploy-cilium.md
                   - Unsupported Features: network/modules/cilium/notSupport.md
-                  - Cilium Network Communication Acceleration: network/modules/cilium/cilium-speedup.md
+                  - Cilium Network Acceleration: network/modules/cilium/cilium-speedup.md
                   - Cross-Cluster Application Communication: network/modules/cilium/cross-cluster.md
                   - Cilium Network Policy Support for IPVlan: network/modules/cilium/cilium_chaining.md
               - Contour:
@@ -1180,6 +1181,7 @@ nav:
               - Intro:
                   - What is LLM Studio: hydra/intro/index.md
                   - Release Notes: hydra/intro/release-notes.md
+                  - Deploy LLM Studio: hydra/intro/deploy-ws.md
               - User View:
                   - Model Gallery:
                       - hydra/index.md
@@ -1241,7 +1243,7 @@ nav:
                   - Queues:
                       - Create Queue: baize/oam/queue/create.md
                       - Delete Queue: baize/oam/queue/delete.md
-                  - GPUs: baize/gpu.md
+                  - GPUs: baize/oam/gpu.md
               - Best Practices:
                   - Deploy NFS to Preload Dataset: baize/best-practice/deploy-nfs-in-worker.md
                   - Update Notebook Built-in Images: baize/best-practice/change-notebook-image.md
@@ -1303,6 +1305,16 @@ nav:
                   - Instructions to Connect a Modbus Device: kant/best-practice/modbus-device-demo.md
                   - Smart Device Control: kant/best-practice/custom-device-control.md
                   - Develop Device Driver - Mapper: kant/best-practice/develop-device-mapper.md
+      - Devices:
+          - Device Management:
+              - Introduction:
+                  - What is Device Management: topohub/intro/index.md
+                  - Install Device Management Component: topohub/intro/install.md
+                  - Device Management Release Notes: topohub/intro/release-notes.md
+              - Devices:
+                  - Onboard Device: topohub/device/index.md
+                  - Batch Onboard Devices: topohub/device/batch-access.md
+                  - Manage Devices: topohub/device/manage-device.md
       - Management:
           - Global Management:
               - Intro:

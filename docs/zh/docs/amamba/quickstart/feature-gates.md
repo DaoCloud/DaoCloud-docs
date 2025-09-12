@@ -33,6 +33,9 @@ configMap:
 
 | Feature             | Default | Stage | Since | Until |
 |---------------------|---------|-------|-------|-------|
+| UpstreamPipeline        | false   | Alpha | 0.38  | -     |
+| AdminGlobalBuildParameter        | false   | Alpha | 0.38  | -     |
+| PipelineAdvancedParameters        | false   | Alpha | 0.38  | -     |
 | ReleaseStats        | false   | Alpha | 0.36  | -     |
 | DAGv2               | false   | Alpha | 0.27  | 0.27  |
 | DAGv2               | true    | Beta  | 0.28  | 0.30  |
@@ -67,3 +70,12 @@ configMap:
 
 - `KairshipApplication`:
    支持管理多租户级别的多云应用。
+
+- `PipelineAdvancedParameters`:
+   支持在流水线配置选项-多选、git分支、镜像标签、制品版本和全局参数类型的参数。
+
+- `AdminGlobalBuildParameter`:
+   支持在工作台管理中配置流水线的全局参数。
+
+- `UpstreamPipeline`:
+   支持通过OpenAPI的方式在运行流水线的时候指定上游的流水线和运行ID，以保持相同的触发用户。

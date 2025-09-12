@@ -86,6 +86,10 @@ virtnest:
   - "docs/en/docs/virtnest/**/*"
   - "docs/zh/docs/virtnest/**/*"
 
+topohub:
+  - "docs/en/docs/topohub/**/*"
+  - "docs/zh/docs/topohub/**/*"
+
 en:
   - "docs/en/**/*"
 

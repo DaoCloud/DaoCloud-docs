@@ -8,7 +8,7 @@
     2. Spiderpool > v0.7.0 后支持安装 Multus，所以不需要再安装 Multus-underlay，并且 Multus-underlay
        大部分功能已经迁移到 [Spiderpool v0.7.0](https://github.com/spidernet-io/spiderpool/releases/tag/v0.7.0)，
        请使用 Spiderpool v0.7.0。
-    3. 现在不再通过 Multus-underlay 安装 Sriov-CNI，而是通过 [sriov-network-operator](../sriov-network-operator/install.md)
+    3. 现在不再通过 Multus-underlay 安装 SR-IOV CNI，而是通过 [sriov-network-operator](../sriov-network-operator/install.md)
        安装，请使用 [sriov-network-operator](../sriov-network-operator/index.md)
 
 ## 注意事项
@@ -16,10 +16,10 @@
 - 默认 CNI：安装 Multus-underlay 之前，需要确认当前集群是否存在默认 CNI，比如 Calico 或者 Cilium，否则 Multus 可能会无法工作。
 - Spiderpool：Multus-underlay 依赖 [Spiderpool](https://github.com/spidernet-io/spiderpool) 作为 `ipam`。
   安装 `Spiderpool` 请参考 [Install Spiderpool](../spiderpool/install/install.md)。
-- 如需安装 SRIOV-CNI，需要确认节点是否为物理主机且节点拥有支持 SRIOV 的物理网卡。
+- 如需安装 SR-IOV CNI，需要确认节点是否为物理主机且节点拥有支持 SR-IOV 的物理网卡。
   如果节点为 VM 虚拟机或者没有支持 SR-IOV 的网卡，那么 SR-IOV 将无法工作。
   详情参考 [sriov-device-plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin)。
-- 不建议同时安装 MacVLAN 和 SR-IOV。
+- 不建议同时安装 Macvlan 和 SR-IOV。
 
 ## 安装步骤
 
@@ -75,22 +75,22 @@
         如果为双栈集群，也需要填写 IPv6 的地址。
         如果 CNI 为 Calico 且 有多个 IP 池，Pod CIDR 可配置多个。
 
-5. 安装 MacVLAN（可选，默认安装）：
+5. 安装 Macvlan（可选，默认安装）：
 
-    此步骤会根据配置创建 MacVLAN 对应的 Multus CRD 实例:
+    此步骤会根据配置创建 Macvlan 对应的 Multus CRD 实例:
 
     ![macvlan](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/macvlan.png)
 
-    - `Install Macvlan CNI`：true/false，是否创建 MacVLAN 的 Multus CRD 实例。
-    - `Macvlan Type`：macvlan-overlay/macvlan-standalone，安装 MacVLAN CRD 实例的类型。
+    - `Install Macvlan CNI`：true/false，是否创建 Macvlan 的 Multus CRD 实例。
+    - `Macvlan Type`：macvlan-overlay/macvlan-standalone，安装 Macvlan CRD 实例的类型。
 
-        - `macvlan-overlay`：此类型下，MacVLAN 会与默认 CNI 搭配使用（比如 Calico），这样会在 Pod 中插入两张网卡。
-           分别是默认 CNI 和 MacVLAN 的网卡，前者用于解决 Pod 与集群东西向通信问题；后者用于 Pod 集群南北向通信。
-        - `macvlan-standalone`：此类型下，Pod 中只会插入一张 MacVLAN 的网卡，只由其完成与集群东西向和南北向的通信问题。
+        - `macvlan-overlay`：此类型下，Macvlan 会与默认 CNI 搭配使用（比如 Calico），这样会在 Pod 中插入两张网卡。
+           分别是默认 CNI 和 Macvlan 的网卡，前者用于解决 Pod 与集群东西向通信问题；后者用于 Pod 集群南北向通信。
+        - `macvlan-standalone`：此类型下，Pod 中只会插入一张 Macvlan 的网卡，只由其完成与集群东西向和南北向的通信问题。
       
     - `Multus CR Name`：Multus CRD 实例的名称。
-    - `Master Interface`：MacVLAN 主接口的名称。注意：配置的主接口必须存在于主机上，否则 MacVLAN 无法工作。
-    - `Vlan ID`：可选，MacVLAN 主接口的 Vlan tag。
+    - `Master Interface`：Macvlan 主接口的名称。注意：配置的主接口必须存在于主机上，否则 Macvlan 无法工作。
+    - `Vlan ID`：可选，Macvlan 主接口的 Vlan tag。
 
 6. 安装 SR-IOV（可选，默认不安装）：
 
@@ -98,14 +98,14 @@
 
     ![sriov_install](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/sriov_install.png)
 
-    - `Install SRIOV CNI`：是否安装 SR-IOV，默认不安装。
-    - `SRIOV Type`：安装 SR-IOV 的 Multus CRD 实例的类型，有以下几种：
+    - `Install SR-IOV CNI`：是否安装 SR-IOV，默认不安装。
+    - `SR-IOV Type`：安装 SR-IOV 的 Multus CRD 实例的类型，有以下几种：
       - `sriov-overlay`：此类型下，SR-IOV 会与默认 CNI 搭配使用（比如 Calico），这样会在 Pod 中插入两张网卡。
           分别是默认 CNI 和 SR-IOV 的网卡，前者用于解决 Pod 与集群东西向通信问题；后者用于 Pod 集群南北向通信。
       - `sriov-standalone`：此类型下，Pod 中只会插入一张 SR-IOV 的网卡，只由其完成与集群东西向和南北向的通信问题。
-    - `SRIOV CR Name`：Multus CRD 实例的名称。
+    - `SR-IOV CR Name`：Multus CRD 实例的名称。
     - `Vlan ID`：可选，SR-IOV PF 的 Vlan tag。
-    - `SRIOV Device Plugin Configuration`：用于发现主机上的 SR-IOV PF 和 VF device，筛选方式可以为：`vendors`、`devices`、`drivers`、`pfNames`。
+    - `SR-IOV Device Plugin Configuration`：用于发现主机上的 SR-IOV PF 和 VF device，筛选方式可以为：`vendors`、`devices`、`drivers`、`pfNames`。
         具体参考 [sriov-device-plugin-readme.md](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin/blob/master/README.md)。
 
     配置 SR-IOV Net-Device Plugin：
@@ -119,7 +119,7 @@
 
     !!! note
 
-        不建议同时启用 MacVLAN 和 SR-IOV。另外启用 SR-IOV 需要硬件支持，安装前确认物理主机的网卡是否支持 SR-IOV。
+        不建议同时启用 Macvlan 和 SR-IOV。另外启用 SR-IOV 需要硬件支持，安装前确认物理主机的网卡是否支持 SR-IOV。
 
 7. 配置完成，点击`安装`。
 
@@ -127,11 +127,11 @@
 
 1. 检查各组件是否正常 Running：
 
-    包括 Multus、Meta-plugins、SR-IOV CNI（如果启用）、SRIOV-Device-Plugins（如果启用）。
+    包括 Multus、Meta-plugins、SR-IOV CNI（如果启用）、SR-IOV-Device-Plugins（如果启用）。
 
     ![install_finished](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/install_finished.png)
 
-2. 创建工作负载，以 MacVLAN 为例：
+2. 创建工作负载，以 Macvlan 为例：
 
     - 如果 type 为 macvlan-overlay，那么需要在 Pod 的 Annotations 中插入以下的注解：
 
@@ -140,7 +140,7 @@
             k8s.v1.cni.cncf.io/networks: kube-system/macvlan-vlan0
         ```
 
-        `k8s.v1.cni.cncf.io/networks`：表示会在 Pod 中除默认 CNI 之外再插入一张 MacVLAN 网卡。
+        `k8s.v1.cni.cncf.io/networks`：表示会在 Pod 中除默认 CNI 之外再插入一张 Macvlan 网卡。
 
     - 如果 type 为 macvlan-standalone，那么需要在 Pod 的 Annotations 中插入以下的注解：
 
@@ -185,9 +185,9 @@
         1. 指定 Pod 第二张网卡 (net1) 从哪一个 IP 池中分配 IP
         2. 设置 Pod 第二张网卡
 
-        - `ipam.spidernet.io/ippool`：指定从哪一个 IP 池为 MacVLAN 网卡分配 IP 地址。
+        - `ipam.spidernet.io/ippool`：指定从哪一个 IP 池为 Macvlan 网卡分配 IP 地址。
           如果不指定，将会从默认池中分配。更多 Spiderpool 使用说明请参考 [Spiderpool](../spiderpool/index.md)。
-        - `k8s.v1.cni.cncf.io/networks`：通过指定 MacVLAN Multus CRD，为 Pod 再分配一张 MacVLAN 网卡 (net1)。
+        - `k8s.v1.cni.cncf.io/networks`：通过指定 Macvlan Multus CRD，为 Pod 再分配一张 Macvlan 网卡 (net1)。
 
         创建成功：
 
@@ -199,7 +199,7 @@
 
 3. 测试连通性。
 
-    可以看到 Pod 的第一张网卡仍然由 Calico 分配，第二张网卡由 MacVLAN 分配：
+    可以看到 Pod 的第一张网卡仍然由 Calico 分配，第二张网卡由 Macvlan 分配：
 
     ```shell
     root@master:~# kubectl exec -it macvlan-overlay-589d6ddc68-kk798 sh
@@ -233,7 +233,7 @@
 
 ## 测试
 
-MacVLAN 网卡的 IP 地址段从宿主机分配，所以在宿主机网络路由可达的情况下，可以直接访问该 Pod 的 MacVLAN 网卡，测试步骤如下：
+Macvlan 网卡的 IP 地址段从宿主机分配，所以在宿主机网络路由可达的情况下，可以直接访问该 Pod 的 Macvlan 网卡，测试步骤如下：
 
 1. 在集群节点中访问 `10.253.255.73` 和 `172.17.8.193`。
 

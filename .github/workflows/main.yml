@@ -4,9 +4,11 @@ name: deploy-for-main
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on push events but only for the main branch and when docs change
   push:
     branches: [ main ]
+    paths:
+      - 'docs/**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -103,9 +105,19 @@ jobs:
       #       publickey=$UCLOUD_PUBLICKEY \
       #       privatekey=$UCLOUD_PRIVATEKEY
       
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+      # - name: Deploy to Cloudflare Pages
+      #   uses: cloudflare/wrangler-action@v3
+      #  with:
+      #    apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      #    accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      #    command: pages deploy public --project-name=daocloud-docs --branch=production
+      
+      - name: Upload to Qiniu Kodo
+        uses: samzong/action-qiniu-upload-nodejs@v0.0.8
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy public --project-name=daocloud-docs --branch=production
+          access_key: ${{ secrets.QINIU_ACCESS_KEY }}
+          secret_key: ${{ secrets.QINIU_SECRET_KEY }}
+          bucket: ${{ secrets.QINIU_BUCKET }}
+          source_dir: public
+          dest_dir: /
+          concurrency: 50

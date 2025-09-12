@@ -10,6 +10,7 @@ nav:
               - 适用场景: dce/scenario.md
               - 我们是 K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - v0.33.0-20250831 发布: dce/dce-rn/20250831.md
                   - v0.32.0-20250731 发布: dce/dce-rn/20250731.md
                   - v0.31.0-20250630 发布: dce/dce-rn/20250630.md
                   - v0.30.0-20250530 发布: dce/dce-rn/20250530.md
@@ -168,6 +169,7 @@ nav:
                           - 模板说明: amamba/user-guide/pipeline/template/info.md
                       - 流水线分组: amamba/user-guide/pipeline/group/group.md
                       - 发版记录: amamba/user-guide/pipeline/release-stats.md
+                      - 高级参数选项: amamba/user-guide/pipeline/advanced_parameters.md
                   - 流水线缓存: amamba/user-guide/pipeline/pipeline_cache.md
                   - 自定义步骤:
                       - 自定义步骤介绍: amamba/customize-step.md
@@ -389,6 +391,7 @@ nav:
                   - Pod 与 GPU 卡的占用关系: kpanda/user-guide/gpu/gpupod.md
                   - GPU 相关FAQ: kpanda/user-guide/gpu/FAQ.md
               - 最佳实践:
+                  - 部署 HAMi 企业版: kpanda/best-practice/hami-enterprise-installation.md
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
                   - 跨集群备份恢复MySQL: kpanda/best-practice/backup-mysql-on-nfs.md
                   - 快速搭建 Dify LLM 应用开发平台: kpanda/best-practice/dify-use.md
@@ -513,6 +516,7 @@ nav:
                   - 工作负载使用 RDMA:
                       - 工作负载使用 RDMA: network/config/userdma.md
                       - RDMA 使用方式对比: network/config/rdmatype.md
+                      - RDMA 指标: network/config/rdma-metrics.md
                   - 创建 Multus CR: network/config/multus-cr.md
               - 网络性能:
                   - 网络 CNI 性能测试报告: network/performance/cni-performance.md
@@ -566,6 +570,7 @@ nav:
                   - 安装: network/modules/sriov-network-operator/install.md
                   - SR-IOV: network/modules/multus-underlay/sriov.md
                   - DPDK: network/modules/multus-underlay/dpdk.md
+                  - 使用 SR-IOV 建设 AI 集群: network/modules/sriov-network-operator/ai-sriov.md
               - 集成 Calico:
                   - 介绍: network/modules/calico/index.md
                   - 安装参数配置: network/modules/calico/install.md
@@ -575,7 +580,7 @@ nav:
                   - 故障排查: network/modules/calico/debug.md
               - 集成 Cilium:
                   - 介绍: network/modules/cilium/index.md
-                  - 安装参数配置: network/modules/cilium/install.md
+                  - 部署 Cilium: network/modules/cilium/deploy-cilium.md
                   - 未支持功能说明: network/modules/cilium/not-support.md
                   - Cilium 网络通信加速: network/modules/cilium/cilium-speedup.md
                   - 应用跨集群通信: network/modules/cilium/cross-cluster.md
@@ -611,7 +616,8 @@ nav:
               - 集成 Multus-underlay:
                   - 介绍: network/modules/multus-underlay/index.md
                   - 安装: network/modules/multus-underlay/install.md
-                  - MacVLAN: network/modules/multus-underlay/macvlan.md
+                  - Macvlan: network/modules/multus-underlay/macvlan.md
+                  - 使用 Macvlan 建设 AI 集群: network/modules/multus-underlay/ai-macvlan.md
                   - NmState: network/modules/multus-underlay/nmstat.md
               - 集成 Submariner:
                   - 介绍: network/modules/submariner/index.md
@@ -836,6 +842,8 @@ nav:
                   - Lucene 语法使用方法: insight/reference/lucene.md
                   - 通过 Sidecar 采集容器日志: insight/reference/tailing-sidecar.md
                   - VictoriaMetrics 资源规划: insight/best-practice/vm-resource-plan.md
+                  - 创建 Remote Sampling Server: insight/reference/remote-sampling.md
+                  - Insight 和 Insight-agent 安全的连接 Kafka: insight/reference/security-connect-kafka.md
               - 兼容性测试:
                   - Kubernetes 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
@@ -1245,6 +1253,8 @@ nav:
               - 介绍:
                   - 什么是大模型服务平台: hydra/intro/index.md
                   - Release Notes: hydra/intro/release-notes.md
+                  - 部署大模型服务平台: hydra/intro/deploy-ws.md
+                  - 离线升级大模型服务平台: hydra/intro/offline-upgrade.md
               - 普通用户视图:
                   - 模型广场: hydra/index.md
                   - 模型体验: hydra/exp.md
@@ -1309,7 +1319,7 @@ nav:
                   - 队列管理:
                       - 创建队列: baize/oam/queue/create.md
                       - 删除队列: baize/oam/queue/delete.md
-                  - GPU 信息: baize/gpu.md
+                  - GPU 信息: baize/oam/gpu.md
               - 最佳实践:
                   - 部署 NFS 做数据集预热: baize/best-practice/deploy-nfs-in-worker.md
                   - 更新 Notebook 内置镜像: baize/best-practice/change-notebook-image.md
@@ -1373,6 +1383,16 @@ nav:
                   - Modbus 设备接入实践: kant/best-practice/modbus-device-demo.md
                   - 智能设备控制: kant/best-practice/custom-device-control.md
                   - 开发设备驱动应用mapper: kant/best-practice/develop-device-mapper.md
+      - 设备:
+          - 设备管理:
+              - 介绍:
+                  - 什么是设备管理: topohub/intro/index.md
+                  - 安装设备管理组件: topohub/intro/install.md
+                  - 设备管理 Release Notes: topohub/intro/release-notes.md
+              - 设备:
+                  - 接入设备: topohub/device/index.md
+                  - 批量接入设备: topohub/device/batch-access.md
+                  - 管理设备: topohub/device/manage-device.md
       - 管理:
           - 全局管理:
               - 介绍:
@@ -1536,6 +1556,8 @@ nav:
                   - RabbitMQ: download/modules/middleware/rabbitmq.md
                   - Redis: download/modules/middleware/redis.md
                   - RocketMQ: download/modules/middleware/rocketmq.md
+              - 云原生 AI:
+                  - 大模型服务平台: download/modules/hydra.md
               - 云边协同: download/modules/kant.md
               - 全局&运营管理:
                   - 全局管理: download/modules/ghippo.md
