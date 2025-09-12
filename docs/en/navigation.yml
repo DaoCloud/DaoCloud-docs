@@ -1181,6 +1181,7 @@ nav:
               - Intro:
                   - What is LLM Studio: hydra/intro/index.md
                   - Release Notes: hydra/intro/release-notes.md
+                  - Deploy LLM Studio: hydra/intro/deploy-ws.md
               - User View:
                   - Model Gallery:
                       - hydra/index.md
