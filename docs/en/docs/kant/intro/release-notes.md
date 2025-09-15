@@ -8,6 +8,15 @@ date: 2025-06-23
 This page lists the release notes for Cloud Edge Collaboration, providing an overview
 of the evolution path and feature changes in each version.
 
+## 2025-06-30
+
+### v0.20.0
+
+- **Improved** edge node onboarding process by using `keadm` and rebuilding the edge installation package.  
+- **Improved** removal of `kant-workeragent` configuration in edge units, using default configuration
+  for install/uninstall, with upgrades managed via Helm applications.  
+- **Fixed** an issue where batch workloads temporarily filtered out resources other than Deployments.  
+
 ## 2025-03-31
 
 ### v0.19.1
@@ -56,12 +65,7 @@ of the evolution path and feature changes in each version.
 
 ### v0.13.0
 
-#### New Feature
-
 - **Added** support for pre-pulling images on edge nodes when network conditions are good
-
-#### Improvements
-
 - **Improved** by adding a beginner's guide to help users quickly get started with edge services.
 - **Improved** the addition of a beginner's guide to help users quickly get started with edge business
 
@@ -69,20 +73,13 @@ of the evolution path and feature changes in each version.
 
 ### v0.12.0
 
-#### New Feature
-
 - **Added** support for creating and managing device models
-
-#### Improvements
-
 - **Improved** device parameter configuration for more flexible device creation
 - **Improved** support for edge installation packages to dynamically update download links based on offline environments
 
 ## 2024-05-30
 
 ### v0.11.0
-
-#### Improvements
 
 - **Improved** the interaction for custom repositories in edge units, making creation more convenient
 - **Improved** the edge node access which now suppports cloud-edge communication protocols, including WebSocket and QUIC
@@ -92,38 +89,23 @@ of the evolution path and feature changes in each version.
 
 ### v0.10.0
 
-#### New Features
-
 - **Added** support for user-defined installation of MQTT services
 - **Added** a feature of confguring workload upgrade policy
 - **Added** a feature of configuring workload affinity
 - **Added** a feature of adding aliases for edge nodes
-
-#### Improvements
-
 - **Improved** the edge node access process for a more user-friendly experience
 
 ## 2024-04-07
 
 ### v0.9.0
 
-#### New Features
-
 - **Added** support for users to customize installation of MQTT service
-
-#### Improvements
-
 - **Improved** the edge node access process for a more user-friendly interaction
-
-#### Fixes
-
 - **Fixed** an issue with client displaying time in different time zones
 
 ## 2024-02-06
 
 ### v0.8.1
-
-#### New Features
 
 - **Added** a feature of rolling back versions of workloads
 - **Added** display of deployed workload versions
@@ -135,12 +117,7 @@ of the evolution path and feature changes in each version.
 
 ### v0.7.1
 
-#### New Features
-
 - **Added** support for integrating with KubeEdge installed in the cluster
-
-#### Improvements
-
 - **Improved** batch deletion interaction for edge resources
 - **Improved** edge unit image authentication interaction
 - **Improved** custom device parameter configuration
@@ -169,8 +146,6 @@ of the evolution path and feature changes in each version.
 ## 2023-11-06
 
 ### v0.5.0
-
-#### New Features
 
 - **Added** a feature of batch registration and access of x86_64 and arm64 architecture edge computing machines as edge nodes
 - **Added** features of pausing/resuming the scheduling of edge nodes
