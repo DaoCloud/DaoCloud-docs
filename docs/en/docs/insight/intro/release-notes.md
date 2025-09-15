@@ -8,6 +8,27 @@ date: 2025-06-23
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2025-06-30
+
+### v0.37.0
+
+#### Insight Server
+
+- **Improved** Helm to support more parameter settings for Vector and OTel Collector.  
+- **Improved** Insight’s internal monitoring and observability capabilities.  
+- **Improved** Grafana dashboards to support the polystat component.  
+- **Improved** Grafana dashboards by adding Calico, Prometheus, and Prometheus RemoteWrite metrics.  
+- **Improved** built-in alerting rules for system components.  
+- **Fixed** an issue where data in the trace list was inconsistent with values in the Jaeger list.  
+- **Fixed** display errors in probe and etcd dashboards.  
+
+#### Insight Agent
+
+- **Improved** Fluent Bit version upgrade to v4.0.1.  
+- **Improved** OpenTelemetry Operator version upgrade to 0.88.6.  
+- **Improved** support for delivering ServiceMonitor required for Calico monitoring.  
+- **Fixed** missing `kubelint` parameters for 2 sidecars.  
+
 ## 2025-04-30
 
 ### v0.36.1
