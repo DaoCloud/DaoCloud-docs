@@ -9,6 +9,22 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## 2025-07-31
+
+### v0.48.0
+
+- **Added** the AI Gateway module with lifecycle management support.  
+- **Fixed** an issue with form validation for managed Nacos database configuration.  
+
+## 2025-06-30
+
+### v0.47.0
+
+- **Added** the ability to enable or disable Gateway EndpointSlices.  
+- **Added** primary key support for managed Nacos database tables to avoid initialization failures caused by strict database requirements.  
+- **Fixed** an issue where the gateway might not restart as expected after updating its configuration.  
+- **Fixed** a wording issue in the load balancing strategy for the gateway’s least-connections policy.  
+
 ## 2025-05-06
 
 ### v0.46.0
