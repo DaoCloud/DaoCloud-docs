@@ -3,14 +3,31 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2025-08-15
+
+### v0.40.3
+
+- **Fixed** an issue where login page icons and background were not displayed correctly.  
+- **Fixed** an issue where customized login page charts were missing.  
+
+## 2025-07-31
+
+### v0.40.0
+
+- **Added** sub-account support in SaaS mode.  
+- **Added** CRUD operations for sub-accounts in SaaS mode.  
+- **Added** new login and registration pages in SaaS mode.  
+- **Improved** login `Token` to include `domain` information.  
+- **Improved** Helm Chart `Values` configuration for `sidecar` resources by consolidating
+  `sidecar.istio.io/proxyResources` from `apiserver`, `audit-server`, `ghippo-ui`, `anakin`,
+  and `controller-manager` into `global.istioSidecar.resources` for centralized control.  
+- **Fixed** an issue where selecting both `SSL` and `starTLS` when testing the mail server did not raise an error.  
+- **Fixed** an issue where inserting a sub-product into the primary menu failed.  
+- **Fixed** an issue where disabling two-factor authentication caused password reset to show `OTP` reset.  
+- **Fixed** an issue where the frontend failed to fetch information from identity providers
+  via the `OIDC` protocol in one click.  
+
 ## 2025-06-30
-
-### v0.39.0
-
-* **Optimized** resource configuration parameters for `sidecar` under `Values` in the Chart, by unifying the `sidecar.istio.io/proxyResources` settings in `apiserver`, `audit-server`, `ghippo-ui`, `anakin`, and `controller-manager` into a single `global.istioSidecar.resources` control.
-* **Fixed** issue where resetting password showed resetting `OTP` when two-factor authentication was disabled on the platform.
-* **Fixed** issue where selecting both `ssl` and `starttls` simultaneously during mail server testing did not raise an error.
-* **Fixed** frontend failure to fetch identity provider `OIDC` protocol one-click data (wrapped the process of accessing the `well-known` URL, returning the `openid configuration` to the frontend for display).
 
 ### v0.38.1
 
