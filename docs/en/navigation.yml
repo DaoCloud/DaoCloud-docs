@@ -1017,6 +1017,7 @@ nav:
                   - Features: middleware/common/feature.md
                   - Supported K8s Versions: middleware/compatibility.md
                   - Permissions: middleware/permission.md
+                  - Middleware Release Notes: middleware/release-notes.md
               - Common Config for Middleware:
                   - First-Time Use: middleware/common/index.md
                   - Custom Permissions: middleware/common/permissions.md
@@ -1029,7 +1030,7 @@ nav:
                       - Benefits: middleware/mysql/intro/benefits.md
                       - Offline Upgrade MySQL: middleware/mysql/intro/offline-install.md
                       - Concepts: middleware/mysql/intro/concepts.md
-                      - Release Notes: middleware/mysql/release-notes.md
+                      #   - Release Notes: middleware/mysql/release-notes.md
                   - Quick Start:
                       - Instance Lifecycle:
                           - Create MySQL Instance: middleware/mysql/user-guide/create.md
@@ -1060,7 +1061,7 @@ nav:
                       - What is MongoDB: middleware/mongodb/intro/index.md
                       - Features: middleware/mongodb/intro/features.md
                       - Offline Upgrade MongoDB: middleware/mongodb/intro/offline-install.md
-                      - Release Notes: middleware/mongodb/release-notes.md
+                      #   - Release Notes: middleware/mongodb/release-notes.md
                   - Quick Start:
                       - Create MongoDB Instance: middleware/mongodb/user-guide/create.md
                       - Update MongoDB Instance: middleware/mongodb/user-guide/update.md
@@ -1072,7 +1073,7 @@ nav:
                       - What is PostgreSQL: middleware/postgresql/intro/index.md
                       - Features: middleware/postgresql/intro/concepts.md
                       - Offline Upgrade PostgreSQL: middleware/postgresql/intro/offline-install.md
-                      - Release Notes: middleware/postgresql/release-notes.md
+                      #   - Release Notes: middleware/postgresql/release-notes.md
                   - Quick Start:
                       - Create PostgreSQL Instance: middleware/postgresql/user-guide/create.md
                       - Update PostgreSQL Instance: middleware/postgresql/user-guide/update.md
@@ -1086,7 +1087,7 @@ nav:
                       - What is Redis: middleware/redis/intro/index.md
                       - Use Cases: middleware/redis/intro/scenarios.md
                       - Offline Upgrade Redis: middleware/redis/intro/offline-install.md
-                      - Release Notes: middleware/redis/release-notes.md
+                      #   - Release Notes: middleware/redis/release-notes.md
                   - Quick Start:
                       - Create Redis Instance: middleware/redis/user-guide/create.md
                       - Update Redis Instance: middleware/redis/user-guide/update.md
@@ -1109,7 +1110,7 @@ nav:
                       - Use Cases: middleware/elasticsearch/intro/scenarios.md
                       - Concepts: middleware/elasticsearch/intro/concepts.md
                       - Offline Upgrade elasticsearch: middleware/elasticsearch/intro/offline-install.md
-                      - Release Notes: middleware/elasticsearch/release-notes.md
+                      #   - Release Notes: middleware/elasticsearch/release-notes.md
                   - ES Cluster Capacity Planning: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
                   - Quick Start:
                       - Create ES Instance: middleware/elasticsearch/user-guide/create.md
@@ -1127,7 +1128,7 @@ nav:
                       - Use Cases: middleware/kafka/intro/scenarios.md
                       - Offline Upgrade kafka: middleware/kafka/intro/offline-install.md
                       - Concepts: middleware/kafka/intro/concepts.md
-                      - Release Notes: middleware/kafka/release-notes.md
+                      #   - Release Notes: middleware/kafka/release-notes.md
                   - Quick Start:
                       - Create Kafka Instance: middleware/kafka/user-guide/create.md
                       - View/Update/Delete Kafka: middleware/kafka/user-guide/view-update-delete.md
@@ -1142,7 +1143,7 @@ nav:
                       - Use Cases: middleware/rabbitmq/intro/scenarios.md
                       - Offline Upgrade RabbitMQ: middleware/rabbitmq/intro/offline-install.md
                       - Concepts: middleware/rabbitmq/intro/concepts.md
-                      - Release Notes: middleware/rabbitmq/release-notes.md
+                      #   - Release Notes: middleware/rabbitmq/release-notes.md
                   - Quick Start:
                       - Create RabbitMQ Instance: middleware/rabbitmq/user-guide/create.md
                       - Update RabbitMQ Instance: middleware/rabbitmq/user-guide/update.md
@@ -1157,7 +1158,7 @@ nav:
                       - What is RocketMQ: middleware/rocketmq/intro/index.md
                       - Concepts: middleware/rocketmq/intro/concepts.md
                       - Offline Upgrade RocketMQ: middleware/rocketmq/intro/offline-install.md
-                      - Release Notes: middleware/rocketmq/release-notes.md
+                      #   - Release Notes: middleware/rocketmq/release-notes.md
                   - Quick Start:
                       - Create RocketMQ Instance: middleware/rocketmq/quick-start/create-rocketmq.md
                       - Update RocketMQ Instance: middleware/rocketmq/quick-start/update-rocketmq.md
@@ -1169,7 +1170,7 @@ nav:
                       - Use Cases: middleware/minio/intro/scenarios.md
                       - Offline Upgrade MinIO: middleware/minio/intro/offline-install.md
                       - Concepts: middleware/minio/intro/concepts.md
-                      - Release Notes: middleware/minio/release-notes.md
+                      #   - Release Notes: middleware/minio/release-notes.md
                   - Quick Start:
                       - Create MinIO Instance: middleware/minio/user-guide/create.md
                       - Update/Delete MinIO Instance: middleware/minio/user-guide/update-delete.md
