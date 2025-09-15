@@ -10,6 +10,66 @@ understand the evolution path and feature changes from release to release.
 
 *[kpanda]: Internal development codename for DaoCloud container management
 
+## 2025-07-31
+
+### v0.41
+
+- **Added** GPU management support.  
+- **Improved** instructions for batch uploading nodes when creating clusters or onboarding nodes.  
+- **Improved** cluster list status display when cluster creation fails.  
+- **Fixed** an issue where YAML data was abnormal during Helm application updates.  
+- **Fixed** an issue where the maximum GPU memory size was incorrect in GPU configuration.  
+- **Fixed** an issue where the console could not access pods after enabling the `UseTokenInCloudShell` feature.  
+- **Fixed** an issue where `os_package_repo` was required during retry of cluster creation or node onboarding.  
+- **Fixed** an error when adding nodes to Ubuntu 22.04 clusters with kernel tuning enabled.  
+- **Fixed** an issue where etcd backups could not be used.  
+- **Fixed** an issue where files could not be downloaded in stateless workload pods.  
+- **Fixed** errors during Helm application installation.  
+- **Fixed** incorrect log messages during Helm application uninstall.  
+- **Fixed** an issue where GPU quotas could not be updated in quota management.  
+
+## 2025-05-30
+
+### v0.40
+
+- **Added** support for separate `limit` and `request` configuration for Helm task resources.  
+- **Added** support for cluster-specific `resolv.conf`.  
+- **Added** support for configuring and displaying `nodeSelector` in workloads.  
+- **Improved** automatic retry time for Helm installation.  
+- **Improved** Dce5.0 interface data refresh to prevent stale data.  
+- **Fixed** an issue where Helm installation was blocked by Baize kueue webhook.  
+- **Fixed** an issue where KPanda nodes could not switch GPU mode after GPU training tasks completed.  
+- **Fixed** GPU Operator v24.6.0+1 installation failure when deploying with installer.  
+- **Fixed** an issue where users with `wsadmin`/`wsedit` permissions could not configure container security policies in namespaces.  
+- **Fixed** Helm application installation failure could not be updated.  
+- **Fixed** Helm repository information loss during installation or failure.  
+- **Fixed** delayed status display after Helm application uninstall.  
+- **Fixed** CloudShell permission leakage issue.  
+- **Fixed** KPanda-apiserver memory anomalies.  
+- **Fixed** optional GPU type selection issue during cluster operations.  
+- **Fixed** an issue where uploading Chinese files in CloudTTY resulted in missing downloads.  
+- **Fixed** an issue where Cluster Admin users successfully bound workspaces to clusters.  
+- **Fixed** inconsistent access permissions between container management page and main page for Namespace Admin users.  
+- **Fixed** unresponsive node checks after correcting timezone differences during cluster creation.  
+
+## 2025-03-31
+
+### v0.38
+
+- **Added** support for installing container management via ARM packages, downloadable directly from the download site.  
+- **Fixed** an issue where namespace resource quota requests exceeded limits without warnings but could still be set successfully.  
+- **Fixed** DNS resolution issue in `kpanda-shell:v0.0.13`.  
+- **Fixed** an issue where audit logs did not record user modifications to node taints.  
+
+## 2025-02-28
+
+### v0.37
+
+- **Fixed** image pull errors for various services after offline installation of `metax-operator`.  
+- **Fixed** offline Helm installation failure for `metax-operator`.  
+- **Fixed** an issue where `PatchCustomResource` API failed to update resources.  
+- **Fixed** installer failure due to special characters in external MySQL passwords.  
+
 ## 2025-01-31
 
 ### v0.36
