@@ -12,6 +12,55 @@ providing convenience for users to learn about the evolution path and feature ch
 
 *[mspider]: Internal development codename for DaoCloud Service Mesh
 
+## 2025-08-08
+
+### v0.36.0
+
+- **Added** support for Istio v1.25.3 and v1.24.6.
+- **Fixed** an issue where the mesh console had no permission.
+- **Fixed** an issue where mesh gateways could not be created in Istio v1.23 using the `pluma-operator`.
+- **Fixed** an issue where Istio versions greater than v1.23 incorrectly reported `istio-operator`
+  as missing, corrected to `pluma-operator`.
+- **Fixed** an issue where the same user could not open multiple consoles.
+- **Fixed** an issue where querying service versions failed when the service name length was close to 63 characters.
+- **Fixed** an issue where standardized Peer Metadata Attributes in Istio v1.24 caused missing metric data.
+- **Fixed** an issue where Istio v1.23+ meshes could not be installed in offline environments.
+- **Upgraded** `cloudtty` to v0.8.7.
+
+!!! note
+
+    Starting with Istio v1.23, control plane components are managed by Pluma Operator.
+    You must specify the corresponding Istio chart repository address.
+    The system comes with a built-in Addon repository address, and MSpider supports this mechanism since v0.36+.
+
+    To configure a custom repository, add the mesh installation parameter to the corresponding GlobalMesh CRD:  
+
+    ```yaml
+    global.istioRepo: https://release.daocloud.io/chartrepo/addon
+    ```
+
+    ![yaml snippet](../images/GlobalMeshCRD.png)
+
+## 2025-05-09
+
+### v0.35.0
+
+- **Added** support for Istio v1.22 and v1.23, and Kubernetes v1.32.
+- **Fixed** the description of the MSpider Helm Chart name.
+- **Fixed** an issue where the actual access address of the mesh control plane was not displayed.
+- **Fixed** an issue where workspace mesh resource bindings were cleared due to unsynchronized binding information at startup.
+- **Fixed** an issue where retrieving cluster node selectors incorrectly required cluster-level permissions.
+- **Fixed** an issue where a user bound to multiple roles caused permission errors.
+- **Fixed** custom Istio v1.24.5-mspider deployments to retain the managed mesh architecture (since community Istio v1.24 removed `istio-remote`).
+- **Fixed** a memory leak in the `traffic-lane` plugin caused by the wasm queue mechanism.
+- **Optimized** Istio upgrades to v1.24.5, v1.23.6, and v1.22.8.
+- **Optimized** audit log event naming standardization.
+
+!!! note
+
+    Istio v1.23 is set as the default recommended version.
+    See [Upgrade Notes](#notes-on-upgrading-service-mesh-to-istio-123).
+
 ## 2025-01-25
 
 ### v0.34.0
@@ -49,9 +98,9 @@ After upgrading to version 1.23, the following components will be affected:
 
 !!! note
 
-    Failure to perform the current upgrade will result in a disruption of north-south traffic.  
+    Failure to perform the current upgrade will result in a disruption of north-south traffic.
 
-The most critical part of the upgrade is the data plane traffic, specifically the gateway, as the Helm standard installation brings changes to the templates. The gateway's labels change, which can prevent Pluma from properly upgrading the gateway. Thus, it is necessary to handle this in advance.  
+The most critical part of the upgrade is the data plane traffic, specifically the gateway, as the Helm standard installation brings changes to the templates. The gateway's labels change, which can prevent Pluma from properly upgrading the gateway. Thus, it is necessary to handle this in advance.
 
 Since Kubernetes does not allow updating `Deployment` selectorLabels, it is necessary to delete and recreate the labels:
 
