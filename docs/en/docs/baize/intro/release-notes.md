@@ -13,6 +13,35 @@ so that you can learn its evolution path and feature changes.
     Features labeled as Beta may undergo changes; please use them with caution
     and provide prompt feedback if you encounter any issues.
 
+## 2025-08-31
+
+### v0.20.2
+
+- **Added** support for enabling Docker-in-Docker in notebooks to run docker commands inside.
+- **Added** support for toleration configuration in training tasks.
+- **Improved** queue quota interaction to better support multiple GPU models.
+- **Improved** GPU monitoring panel link by updating it to the GPU panel under Insight space.
+- **Improved** resource pool node topology hint messages.
+- **Improved** vLLM by upgrading to version v0.10.0.
+- **Improved** Kubesnapshot by upgrading to version v0.2.8 to fix errors when installing with kind.
+- **Improved** image usage by removing Bitnami-related images and replacing them with release repository images.
+- **Fixed** an issue where TensorBoard could not display data due to storage policy restrictions.
+
+## 2025-07-31
+
+### v0.19.1
+
+- **Added** support for topology-aware scheduling in training tasks.
+- **Added** support for viewing GPU model information in training task queues.
+- **Added** support for filtering nodes by GPU model in resource pools.
+- **Added** support for readiness and health checks in inference services.
+- **Added** support for shared memory configuration in inference services.
+- **Added** support for preheating mode configuration in HTTP and S3 type data spaces.
+- **Improved** the user experience for custom image interaction.
+- **Improved** Kueue by upgrading to version v0.12.4.
+- **Improved** security by removing unnecessary RBAC permissions.
+- **Fixed** security vulnerability CVE-2025-22868.
+
 ## 2025-06-30
 
 ### v0.18.1
