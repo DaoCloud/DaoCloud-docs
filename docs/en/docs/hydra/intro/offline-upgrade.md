@@ -1,10 +1,10 @@
-# Offline Upgrade of the Large Model Service Platform
+# Offline Upgrade of the LLM Studio
 
-This page explains how to install or upgrade after [downloading the Large Model Service Platform module](../../../download/modules/hydra.md).
+This page explains how to install or upgrade after [downloading the LLM Studio module](../../../download/modules/hydra.md).
 
 !!! info
 
-    The term __hydra__ appearing in the following commands or scripts is the internal development codename for the Large Model Service Platform module.
+    The term __hydra__ appearing in the following commands or scripts is the internal development codename for the LLM Studio module.
 
 ## Extract the downloaded package to get the bundle package
 
@@ -12,7 +12,7 @@ This page explains how to install or upgrade after [downloading the Large Model 
 tar -xvf hydra_v0.9.0_amd64.tar
 ```
 
-After extraction, you will get three proper bundle.tar packages: hydra, hydra-agent, and web-search-agent.
+After extraction, you will get three bundle.tar packages: hydra, hydra-agent, and web-search-agent.
 
 ```shell
 $ ll hydra_v0.9.0_amd64
@@ -43,7 +43,7 @@ You can load images using one of the two methods below. When a registry exists i
           intermediateBundlesPath: hydra-offline # (1)!
         target:
           containerRegistry: 10.16.10.111 # (2)!
-          containerRepository: release.daocloud.io/hydra # (3)1
+          containerRepository: release.daocloud.io/hydra # (3)!
           repo:
             kind: HARBOR # (4)!
             url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)!
@@ -56,15 +56,15 @@ You can load images using one of the two methods below. When a registry exists i
               password: "Harbor12345" # (9)!
         ```
 
-        1. The relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline package  
-        2. Must be changed to your registry URL  
-        3. Must be changed to your image repository  
-        4. Can also be any other supported Helm Chart repository type  
-        5. Must be changed to the chart repo URL  
-        6. Your registry username  
-        7. Your registry password  
-        8. Your registry username  
-        9. Your registry password  
+        1. The relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline package
+        2. Must be changed to your registry URL
+        3. Must be changed to your registry
+        4. Can also be any other supported Helm Chart repository type
+        5. Must be changed to the chart repo URL
+        6. Your registry username
+        7. Your registry password
+        8. Your registry username
+        9. Your registry password
 
     === "Chart repo not installed"
 
@@ -85,12 +85,12 @@ You can load images using one of the two methods below. When a registry exists i
               password: "Harbor12345" # (6)!
         ```
 
-        1. The relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline package  
-        2. Must be changed to your registry URL  
-        3. Must be changed to your image repository  
-        4. Local path of the chart  
-        5. Your registry username  
-        6. Your registry password  
+        1. The relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline package
+        2. Must be changed to your registry URL
+        3. Must be changed to your registry
+        4. Local path of the chart
+        5. Your registry username
+        6. Your registry password
 
 2. Run the sync image command.
 
@@ -130,7 +130,7 @@ Extract and load the image file.
 
 !!! note
 
-    Each node needs to perform the Docker or containerd image loading operation.  
+    Each node needs to perform the Docker or containerd image loading operation.
     After loading, you need to tag the images to keep the Registry and Repository consistent with the installation.
 
 ## Upgrade
@@ -155,25 +155,25 @@ Error: no repositories to show
 helm repo add hydra-release http://{harbor_url}/chartrepo/{project}
 ```
 
-Update the Large Model Service Platform helm repository.
+Update the LLM Studio helm repository.
 
 ```bash
 helm repo update hydra-release
 ```
 
-Choose the version of the Large Model Service Platform you want to install (it is recommended to install the latest version).
+Choose the version of the LLM Studio you want to install (it is recommended to install the latest version).
 
 ```bash
 # Update image versions in the hydra-release repository
 helm update repo
 
-# Get the latest version of the Large Model Service Platform
+# Get the latest version of the LLM Studio
 helm search repo hydra-release/hydra --versions
 
-# Large Model Service Platform components for the workload cluster
+# LLM Studio components for the worker cluster
 helm search repo hydra-release/hydra-agent --versions
 
-# Optional web search component for the workload cluster
+# Optional web search component for the worker cluster
 helm search repo hydra-release/web-search-agent --versions
 ```
 
@@ -185,7 +185,7 @@ hydra-release/hydra           v0.9.0           v0.9.0         A Helm chart for K
 
 ### Back up the `--set` parameters
 
-Before upgrading the Large Model Service Platform version, it is recommended to run the following command
+Before upgrading the LLM Studio version, it is recommended to run the following command
 to back up the old version’s `--set` parameters.
 
 ```bash
@@ -194,7 +194,7 @@ helm get values hydra -n hydra-system -o yaml > bak.yaml
 
 ### Run `helm upgrade`
 
-Before upgrading, it is recommended to overwrite the **global.imageRegistry** field in bak.yaml
+Before upgrading, it is recommended to overwrite the `global.imageRegistry` field in bak.yaml
 with the currently used registry address.
 
 ```bash
