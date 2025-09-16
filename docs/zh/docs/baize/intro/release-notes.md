@@ -10,14 +10,14 @@
 
 ### v0.20.2
 
-- **新增** Notebook 支持开启 Docker in docker 配置，以便在 notebook 内执行 docker 命令。
+- **新增** Notebook 支持开启 Docker in Docker 配置，以便在 Notebook 内执行 Docker 命令。
 - **新增** 训练任务支持容忍配置
 - **优化** 队列配额交互，更好地支持多型号 GPU
 - **优化** GPU 监控面板链接修改为 insight 空间下 GPU 面板链接
 - **优化** 资源池节点拓扑提示信息
-- **优化** 升级 vllm 至 v0.10.0 版
+- **优化** 升级 vLLM 至 v0.10.0 版
 - **优化** 升级 Kubesnapshot 至 v0.2.8 版，解决基于 kind 安装报错问题
-- **优化** 移除 bitnami 相关镜像，利用 release 仓库中对应镜像替代
+- **优化** 移除 Bitnami 相关镜像，利用 release 仓库中对应镜像替代
 - **修复** 修复 TensorBoard 由于存储制度而不能展示数据的问题
 
 ## 2025-07-31
