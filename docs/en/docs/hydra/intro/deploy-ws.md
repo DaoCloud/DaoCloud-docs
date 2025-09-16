@@ -49,13 +49,9 @@ The worker cluster needs Hydra Agent and metallb installed.
           insecure: true # For test environments, you can set this to true to bypass certificates
     ```
 
-    <!-- ![Configure yaml parameters](./images/deploy03.png)
-
-    ![Hydra agent deployed successfully](./images/deploy04.png) -->
 
 3. Deploy metallb in the worker cluster (used for routing access to the model) and allocate a LoadBalancer
 
-    <!-- ![metallb deployed successfully](./images/deploy05.png) -->
 
 ### Create Service Mesh (Istio + Gateway API)
 
@@ -63,7 +59,6 @@ The worker cluster needs Hydra Agent and metallb installed.
 
     Note: Managed meshes currently do not support gateway API.
 
-    <!-- ![Create dedicated mesh](./images/deploy06.png) -->
 
 1. Initialize Gateway API CRD
 
@@ -165,6 +160,7 @@ The worker cluster needs Hydra Agent and metallb installed.
             type: PathPrefix
             value: /v1
     ```
+    
     ```shell
     root@controller-node-1:~# kubectl apply -f httproute.yaml
 
@@ -179,8 +175,6 @@ The worker cluster needs Hydra Agent and metallb installed.
 
 Set the local computer to trust the certificate:
 
-<!-- ![Set local computer to trust certificate](./images/deploy07.png) -->
-
 ## Worker Cluster Initialization
 
 Insert vendor data into the database.  
@@ -188,7 +182,6 @@ For new versions of Hydra, this step is unnecessary because Hydra can automatica
 
 When implementing (only batch upload supported), use the `mcamel-system` workload `mcamel-common-mysql-cluster-mysql`.
 
-<!-- ![Fill in id and name](./images/deploy08.png) -->
 
 Example:
 
@@ -199,8 +192,6 @@ Example:
 ### Register Model in Hydra Ops Platform
 
 Configure model deployment parameters (adjust according to actual needs)
-
-<!-- ![Manage model parameters](./images/deploy09.png) -->
 
 ### Install nfs drive
 
@@ -263,19 +254,13 @@ dataset.dataset.baizeai.io/qwen3-0.6b created
 
 ## Try the Model
 
-<!-- ![Try the model](./images/deploy10.png) -->
+Try the model in DCE 5.0.
 
 ## Model Deployment
-
-<!-- ![Deploy model 1](./images/deploy11.png)
-
-![Deploy model successfully](./images/deploy12.png) -->
 
 If running without GPUs, note:
 
 1. Model deployment without GPU (deployment detects no GPU and fails)
-
-    <!-- ![Detected no GPU](./images/deploy13.png) -->
 
     Therefore, deploy `gpu-operator-fake` (pulling external images requires proxy):
 
@@ -289,8 +274,6 @@ If running without GPUs, note:
 
         For offline installation, first download the offline package and deploy:
 
-        <!-- ![Offline install](./images/deploy14.png) -->
-
         For online installation, run:
 
         ```shell
@@ -299,13 +282,9 @@ If running without GPUs, note:
 
         After deployment, wait a few minutes, check that the Node has GPU labels, and refresh status to confirm detection passed.
 
-        <!-- ![Node with GPU label](./images/deploy15.png)
-
-        ![Detection passed](./images/deploy16.png) -->
 
 2. After creating a model deployment task, modify deployment parameters:
 
-    <!-- ![Modify deployment parameters](./images/deploy17.png) -->
 
     ```
     --dtype=half
@@ -316,20 +295,12 @@ If running without GPUs, note:
 
 3. When using CPU inference, the Qwen3 0.6b model occupies about 7GB memory. CPU allocation determines token speed.
 
-    <!-- ![Ask a question](./images/deploy18.png)
-
-    ![View pod](./images/deploy19.png) -->
-
     !!! tip
 
         For test environment model traffic, route directly through the knoway-gateway.
 
 4. Create a NodePort type svc service for the gateway
 
-    <!-- ![Create svc](./images/deploy20.png)
-
-    ![Pointing to nodeport](./images/deploy21.png) -->
 
 5. When accessing DCE, only the HTTP port can be used
 
-    <!-- ![Access DCE only via HTTP port](./images/deploy22.png) -->
