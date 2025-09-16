@@ -12,7 +12,7 @@
 tar -xvf hydra_v0.9.0_amd64.tar
 ```
 
-解压后可得到 hydra、 hydra-agent、web-search-agent 对应 3 个 bundle.tar 包
+解压后可得到 hydra、hydra-agent、web-search-agent 这 3 个 bundle.tar 包。
 
 ```shell
 $ ll hydra_v0.9.0_amd64
@@ -42,7 +42,7 @@ $ ll hydra_v0.9.0_amd64
           intermediateBundlesPath: hydra-offline # (1)!
         target:
           containerRegistry: 10.16.10.111 # (2)!
-          containerRepository: release.daocloud.io/hydra # (3)1
+          containerRepository: release.daocloud.io/hydra # (3)!
           repo:
             kind: HARBOR # (4)!
             url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)!
@@ -148,13 +148,13 @@ helm repo list | grep hydra-release
 Error: no repositories to show
 ```
 
-### 添加 helm 仓库
+### 添加 Helm 仓库
 
 ```bash
 helm repo add hydra-release http://{harbor_url}/chartrepo/{project}
 ```
 
-更新大模型服务平台的 helm 仓库。
+更新大模型服务平台的 Helm 仓库。
 
 ```bash
 helm repo update hydra-release
@@ -175,6 +175,7 @@ helm search repo hydra-release/hydra-agent --versions
 # 工作集群可选支持网页搜索组件
 helm search repo hydra-release/web-search-agent --versions
 ```
+
 ```output
 NAME                     	CHART VERSION	APP VERSION	DESCRIPTION
 hydra-release/hydra      	v0.9.0       	v0.9.0     	A Helm chart for Kubernetes
@@ -191,7 +192,7 @@ helm get values hydra -n hydra-system -o yaml > bak.yaml
 
 ### 执行 `helm upgrade`
 
-升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 字段为当前使用的镜像仓库地址。
+升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
 
 ```bash
 export imageRegistry={YOUR_IMAGE_REGISTRY}
