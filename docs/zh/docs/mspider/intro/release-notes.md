@@ -27,8 +27,7 @@
     global.istioRepo: https://release.daocloud.io/chartrepo/addon
     ```
 
-    ![](../images/GlobalMeshCRD.png)
-
+    ![yaml snippet](../images/GlobalMeshCRD.png)
 
 ## 2025-05-09
 

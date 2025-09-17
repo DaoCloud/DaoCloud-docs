@@ -2,27 +2,28 @@
 
 本页列出全局管理各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2025-08-15
+
+### v0.40.3
+
+- **修复** 修复登录页图标、背景未正常展示问题
+- **修复** 修复定制的登陆页图表丢失问题
+
 ## 2025-07-31
 
 ### v0.40.0
-
-### 功能
 
 - **新增** SaaS 模式升级成支持子账号功能
 - **新增** SaaS 模式支持增删改查子账号
 - **新增** SaaS 模式支持新的登录注册页面
 - **优化** 支持登录 `Token` 里带上 `domain` 信息
+- **优化** 优化 Helm Chart `Values` 中 `sidecar` 资源配置参数，将 `apiserver`、`audit-server`、`ghippo-ui`、`anakin`、`controller-manager` 中的 `sidecar.istio.io/proxyResources` 统一聚合到 `global.istioSidecar.resources` 调控。
 - **修复** 修复测试邮件服务器时，同时选取 `SSL` 和 `starTLS` 不报错问题
 - **修复** 修复子产品插入一级菜单失败问题
+- **修复** 平台关闭双因子验证时，重置密码显示重置 `OTP` 的问题
+- **修复** 前端对接身份提供商 `OIDC` 协议一键获取失败问题
 
 ## 2025-06-30
-
-### v0.39.0
-
-- **优化** Chart 中 `Values` 中 `sidecar` 资源配置参数，将 `apiserver`、`audit-server`、`ghippo-ui`、`anakin`、`controller-manager` 中的 `sidecar.istio.io/proxyResources` 统一聚合到 `global.istioSidecar.resources` 调控。
-- **修复** 平台关闭双因子验证时，重置密码显示重置 `OTP` 的问题
-- **修复** 测试邮件服务器时，同时选取 `ssl` 和 `startls` 不报错问题
-- **修复** 前端对接身份提供商 `OIDC` 协议一键获取失败问题（封装访问 `well-known-url` 的过程，返回 `openid configuration` 至前端显示）
 
 ### v0.38.1
 

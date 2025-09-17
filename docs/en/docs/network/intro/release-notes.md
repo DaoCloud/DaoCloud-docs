@@ -15,6 +15,13 @@ evolution path and feature changes of each version.
 *[SR-IOV]: Single Root IO Virtualization
 *[RDMA]: Remote Direct Memory Access, a popular tech to support LLM and GPT
 
+## 2025-07-30
+
+### v0.16.4
+
+- **Added** role-based access control: only **NS** or **Cluster Admin** level administrators can
+  manage `SpiderIPPool` resources, and only **Cluster Admins** can manage `Subnet` resources.  
+
 ## 2025-04-30
 
 ### v0.16.3
@@ -55,7 +62,8 @@ evolution path and feature changes of each version.
 ### v0.15.1
 
 - **Fixed** the issue where the page freezes after clicking create when creating a Multus CR in the UI.
-- **Fixed** the issue of having no available default pool when the default pool feature is enabled. The current ListAllSubnetsAndIPPoolsAndMultus API can return the fields defaultV4IPPools and defaultV6IPPools for the Multus CR.
+- **Fixed** the issue of having no available default pool when the default pool feature is enabled. The current
+  ListAllSubnetsAndIPPoolsAndMultus API can return the fields defaultV4IPPools and defaultV6IPPools for the Multus CR.
 
 !!! note
 
@@ -73,7 +81,8 @@ evolution path and feature changes of each version.
 - Compatibile with **Spiderpool v0.9.3**
 
 - **Fixed** ListAllSubnetsAndIPPoolsAndMultus API fails to filter pools by namespace affinity
-- **Fixed** ListMultusCniConfig API pointer value comparison judgment error, and fix the problem of sriov being written as ipvlan in the judgment
+- **Fixed** ListMultusCniConfig API pointer value comparison judgment error, and fix the problem of
+  SR-IOV being written as ipvlan in the judgment
 - **Added** support interface to create ovs-cni type Multus CR
 
 ## 2023-04-30
