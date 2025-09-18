@@ -27,7 +27,7 @@
     java -javaagent:/path/to/opentelemetry-javaagent.jar \   # 请将路径修改为您文件下载的实际地址。
     -Dotel.resource.attributes=service.name=my-java-demo,service.version=v0.0.1,deployment.environment=test \
     -Dotel.exporter.otlp.protocol=grpc \
-    -Dotel.exporter.otlp.endpoint=<endpoint> \   # 替换为前提条件中获取到 4318 端口对应的接入点。
+    -Dotel.exporter.otlp.endpoint=<endpoint> \   # 替换为前提条件中获取到 4317 端口对应的接入点。
     -Dotel.logs.exporter=none \
     -Dotel.metrics.exporter=none \
     -jar /path/to/your/app.jar     # 替换为您实际jar包的地址。
