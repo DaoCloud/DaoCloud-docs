@@ -187,7 +187,7 @@ Java 框架自动上传 Trace 数据，详细的 Java 框架支持列表，请�
 
 2. 在[方法二](#opentelemetry-java-sdk)的 Maven 依赖基础上新增如下依赖。
 
-    ```yaml
+    ```xml
     <dependency>
         <groupId>io.opentelemetry</groupId>
         <artifactId>opentelemetry-extension-annotations</artifactId>
