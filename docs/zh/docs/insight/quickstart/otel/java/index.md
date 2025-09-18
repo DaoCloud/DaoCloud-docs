@@ -4,19 +4,22 @@
 
 ## 前提条件
 
-- 获取接入点信息
+- 获取接入点信息：
 
-获取集群 `insight-system` 命名空间下 `insight-agent-opentelemetry-collector` 服务对应的 Service 以及 `4317` 或者 `4318` 端口暴露的地址，假设为：`http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317`，请根据 Service 实际的负载类型进行调整。
+    获取集群 `insight-system` 命名空间下 `insight-agent-opentelemetry-collector` 服务对应的 Service 以及 `4317`
+    或者 `4318` 端口暴露的地址，假设为：`http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317`，请根据 Service 实际的负载类型进行调整。
 
 ## 方式一：使用 OpenTelemetry Java Agent 自动埋点
 
-[OpenTelemetry Java Agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation) 提供了无侵入的接入方式，支持上百种 Java 框架自动上传 Trace 数据，详细的 Java 框架支持列表，请参见 [Supported Libraries and Versions](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/docs/supported-libraries.md)。
+[OpenTelemetry Java Agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation) 提供了无侵入的接入方式，支持上百种
+Java 框架自动上传 Trace 数据，详细的 Java 框架支持列表，请参见
+[Supported Libraries and Versions](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/docs/supported-libraries.md)。
 
-### 1. Kubernetes 场景
+### Kubernetes 场景
 
 在 Kubernetes 环境下的 Java 应用链路接入与监控请参考 [通过 Operator 实现应用程序无侵入增强](../operator.md) 文档，通过注解实现自动接入链路。
 
-### 2. 非 Kubernetes 场景
+### 非 Kubernetes 场景
 
 1. 下载 [Java Agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases)。
 2. 通过修改 Java 启动的 VM 参数上报链路数据。
@@ -47,9 +50,10 @@
 
 ## 方式二：使用 OpenTelemetry Java SDK 手动埋点
 
-[OpenTelemetry Java SDK](https://github.com/open-telemetry/opentelemetry-java) 是 OpenTelemetry Java Agent 实现的基础，同时提供了丰富的自定义能力。当 OpenTelemetry Java Agent 的埋点不满足您的场景或者需要增加一些自定义业务埋点时，可以使用以下方式接入。
+[OpenTelemetry Java SDK](https://github.com/open-telemetry/opentelemetry-java) 是 OpenTelemetry Java Agent
+实现的基础，同时提供了丰富的自定义能力。当 OpenTelemetry Java Agent 的埋点不满足您的场景或者需要增加一些自定义业务埋点时，可以使用以下方式接入。
 
-1. 引入Maven POM依赖:
+1. 引入 Maven POM 依赖：
 
     ```xml
     <dependencies>
@@ -181,7 +185,7 @@
 
 1. 下载 [Java Agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases)。
 
-2. 在 **方法二** 的 Maven 依赖基础上新增如下依赖。
+2. 在[方法二](#opentelemetry-java-sdk)的 Maven 依赖基础上新增如下依赖。
 
     ```yaml
     <dependency>
@@ -201,7 +205,7 @@
 
 3. 修改 Java 代码以获取 OpenTelemetry Tracer
 
-同时使用 Java Agent 和 Java SDK 埋点时，无需再使用**方法二**中的OpenTelemetrySupport 类获取 Tracer
+    同时使用 Java Agent 和 Java SDK 埋点时，无需再使用**方法二**中的OpenTelemetrySupport 类获取 Tracer
 
     ```java
     OpenTelemetry openTelemetry = GlobalOpenTelemetry.get();
@@ -329,7 +333,7 @@
 
 6. 启动应用。
 
-## 其他用例参考：
+## 其他用例参考
 
 1. Java 应用的 JVM 进行监控：已经暴露 JVM 指标和仍未暴露 JVM 指标的 Java 应用如何与可观测性 Insight 对接。
 
