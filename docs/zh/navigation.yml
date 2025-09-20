@@ -1265,6 +1265,7 @@ nav:
                   - API Key 管理: hydra/apikey.md
               - 运维管理:
                   - 模型广场管理: hydra/oam/index.md
+                  - MaaS模型管理: hydra/oam/maas.md
                   - 模型部署管理: hydra/oam/mdm.md
               - 用户实践场景:
                   - 示例场景介绍: hydra/user-guides/index.md
