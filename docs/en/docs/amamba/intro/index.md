@@ -74,7 +74,7 @@ However, if you want to install or upgrade the Workbench module separately, run 
 ```bash
 export VERSION=**** # (1)!
 helm repo add amamba-release https://release.daocloud.io/chartrepo/amamba
-helm repo update amamba
+helm repo update amamba-release
 helm upgrade --install --create-namespace --cleanup-on-fail amamba amamba-release/amamba -n amamba-system --version=${VERSION}
 ```
 
