@@ -1569,6 +1569,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2025:
+          - 聚焦 Kubernetes 指导委员会: blogs/2025/k8s-steering-spotlight.md
           - 开源文档的构建/运营/贡献: blogs/2025/open-source-doc.md
           - 2024 中国开源年度报告: blogs/2025/open-source-report.md
       - 2024:
