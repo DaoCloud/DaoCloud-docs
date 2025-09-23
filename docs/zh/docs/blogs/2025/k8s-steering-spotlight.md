@@ -34,13 +34,13 @@ Kubernetes 的收获与挑战。从他们的个人历程和动力，到委员会
 [Kubernetes 1.21](https://kubernetes.io/blog/2021/04/08/kubernetes-1-21-release-announcement/)
 的发布团队负责人。
 
-**Paco:** 我是来自中国的 [Paco](https://www.linkedin.com/in/pacoxu2020/)，曾在上海 DaoCloud
+**Paco:** 我是来自中国的 [Paco](https://www.linkedin.com/in/pacoxu2020/)，在上海 DaoCloud
 担任开源团队负责人。在社区中，我主要参与
 [kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/)、
 [SIG Node](https://github.com/kubernetes/community/blob/master/sig-node/README.md) 和
 [SIG Testing](https://github.com/kubernetes/community/blob/master/sig-testing/README.md)。
 此外，我协助组织了 KCD China，并担任近期在香港举办的
-[KubeCon+CloudNativeCon China 2024](https://events.linuxfoundation.org/kubecon-cloudnativecon-open-source-summit-ai-dev-china/) 的共同主席。
+[KubeCon+CloudNativeCon China 2024](https://events.linuxfoundation.org/kubecon-cloudnativecon-open-source-summit-ai-dev-china/) 的联席主席。
 
 **Patrick:** 大家好！我是 [Patrick](https://www.linkedin.com/in/patrickohly/)。自 2018 年以来，
 我一直为 Kubernetes 做出贡献。我从
