@@ -1483,6 +1483,8 @@ nav:
                   - Operation Management: download/modules/gmagpie.md
   - Blogs:
       - Index: blogs/index.md
+      - 2025:
+          - Spotlight on the K8s Steering Committee: blogs/2025/k8s-steering-spotlight.md
       - 2024:
           - From Community Novice to CNCF Ambassador: blogs/2024/241108-cncf-ambassador.md
           - containerd v2.0, nerdctl v2.0, and Lima v1.0: blogs/2024/241106-containerd-nerdctl-lima.md
