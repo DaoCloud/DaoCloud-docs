@@ -10,6 +10,18 @@ technology, sorted by date by default.
 
 *[DCE]: Abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
 
+## 2025
+
+- [Spotlight on the Kubernetes Steering Committee](./2025/k8s-steering-spotlight.md)
+
+    The [Kubernetes Steering Committee](https://github.com/kubernetes/steering) is the backbone of the
+    Kubernetes project, ensuring that its vibrant community and governance structures operate smoothly
+    and effectively. While the technical brilliance of Kubernetes is often spotlighted through its
+    [Special Interest Groups (SIGs) and Working Groups (WGs)](https://github.com/kubernetes/community),
+    the unsung heroes quietly steering the ship are the members of the Steering Committee. They tackle
+    complex organizational challenges, empower contributors, and foster the thriving open source
+    ecosystem that Kubernetes is celebrated for.
+
 ## 2024
 
 - [20241108 | From Community Newbie to CNCF Ambassador](2024/241108-cncf-ambassador.md)

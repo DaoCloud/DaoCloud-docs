@@ -50,3 +50,13 @@ The containerized PostgreSQL database provided in DCE 5.0 Enterprise Package off
 - **Support for Stored Procedure Languages such as PL/SQL and PL/Python**
 
 	Supports various stored procedure languages, including PL/SQL, PL/Python, and PL/Perl, allowing PostgreSQL to be integrated with other programming languages for development and extension purposes.
+
+- **Instance Monitoring**
+
+	PostgreSQL provides multiple monitoring methods, including built-in statistical views (such as pg_stat_activity, pg_stat_replication, etc.), which allow real-time inspection of connection status, transaction activity, lock waits, and replication lag. Combined with external monitoring tools (such as Prometheus, Zabbix, and pgAdmin), PostgreSQL enables comprehensive instance-level monitoring and alerting, helping administrators detect and resolve potential issues in time to ensure stable database operations.
+
+- **Backup Management**
+
+	Supports multiple backup and recovery methods, including logical backups (such as pg_dump, pg_restore) and physical backups (such as pg_basebackup). Logical backups are suitable for small datasets and cross-version migrations, while physical backups are suited for large-scale databases requiring rapid recovery. Combined with WAL (Write-Ahead Log) archiving, PostgreSQL enables Point-in-Time Recovery (PITR), enhancing data security and reliability. With automation scripts or backup management tools (such as Barman and pgBackRest), enterprises can achieve scheduled backups, backup validation, and centralized management, fulfilling disaster recovery and compliance requirements.
+
+

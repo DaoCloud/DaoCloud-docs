@@ -295,6 +295,7 @@ nav:
                   - 创建服务: kpanda/user-guide/network/create-services.md
                   - 创建路由: kpanda/user-guide/network/create-ingress.md
                   - 网络策略: kpanda/user-guide/network/network-policy.md
+                  - 网络配置: network/config/index.md
               - 自定义资源: kpanda/user-guide/custom-resources/create.md
               - 容器存储:
                   - 数据卷声明: kpanda/user-guide/storage/pvc.md
@@ -507,17 +508,20 @@ nav:
                   - 网卡规划: network/plans/ethplan.md
                   - 网络规划: network/plans/netplan.md
               - 网络配置:
-                  - IP 池管理:
+                  - 网络配置: network/config/index.md
+                  - 静态 IP 池:
                       - 创建子网及 IP 池: network/config/ippool/createpool.md
                       - IP 池场景说明: network/config/ippool/ippoolusage.md
+                      - IP 预留: network/config/reserved-ip.md
                   - 使用 IP 池:
                       - 工作负载使用 IP 池: network/config/use-ippool/usage.md
                       - 第三方工作负载使用IP池: network/config/use-ippool/cutomizedusage.md
+                  - Multus CR 管理: network/config/multus-cr.md
                   - 工作负载使用 RDMA:
                       - 工作负载使用 RDMA: network/config/userdma.md
                       - RDMA 使用方式对比: network/config/rdmatype.md
                       - RDMA 指标: network/config/rdma-metrics.md
-                  - 创建 Multus CR: network/config/multus-cr.md
+                  
               - 网络性能:
                   - 网络 CNI 性能测试报告: network/performance/cni-performance.md
                   - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
@@ -1265,6 +1269,7 @@ nav:
                   - API Key 管理: hydra/apikey.md
               - 运维管理:
                   - 模型广场管理: hydra/oam/index.md
+                  - MaaS模型管理: hydra/oam/maas.md
                   - 模型部署管理: hydra/oam/mdm.md
               - 用户实践场景:
                   - 示例场景介绍: hydra/user-guides/index.md
@@ -1565,6 +1570,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2025:
+          - 聚焦 Kubernetes 指导委员会: blogs/2025/k8s-steering-spotlight.md
           - 开源文档的构建/运营/贡献: blogs/2025/open-source-doc.md
           - 2024 中国开源年度报告: blogs/2025/open-source-report.md
       - 2024:
