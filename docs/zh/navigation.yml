@@ -517,6 +517,7 @@ nav:
                       - 工作负载使用 IP 池: network/config/use-ippool/usage.md
                       - 第三方工作负载使用IP池: network/config/use-ippool/cutomizedusage.md
                   - Multus CR 管理: network/config/multus-cr.md
+                  - SR-IOV 节点策略: network/config/sriov-node-policy.md
                   - 工作负载使用 RDMA:
                       - 工作负载使用 RDMA: network/config/userdma.md
                       - RDMA 使用方式对比: network/config/rdmatype.md
