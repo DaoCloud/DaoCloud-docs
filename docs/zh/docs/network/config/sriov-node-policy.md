@@ -26,7 +26,7 @@ SR-IOV 节点策略（SriovNetworkNodePolicy）是 SR-IOV 网络配置的核心�
 
 请输入如下基本参数：
 
-![创建 SR-IOV 节点策略](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov-policy02.png)
+![创建 SR-IOV 节点策略](../images/sriov-policy02.png)
 
 | 参数 | 说明 | 是否必填 |
 | ---- | ---- | ---- |
