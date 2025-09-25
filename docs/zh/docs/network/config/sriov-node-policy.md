@@ -16,7 +16,7 @@ SR-IOV 节点策略（SriovNetworkNodePolicy）是 SR-IOV 网络配置的核心�
 
 2. 进入 __网络配置__ —> __SR-IOV 节点策略管理__ ，点击创建 __SR-IOV 节点策略__ 。
 
-    ![SR-IOV 节点策略管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov-policy01.png)
+    ![SR-IOV 节点策略管理](../images/sriov-policy01.png)
 
     !!! note
 
