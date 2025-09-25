@@ -4,7 +4,7 @@ SR-IOV 节点策略（SriovNetworkNodePolicy）是 SR-IOV 网络配置的核心�
 
 ## 前提条件
 
-- [SpiderPool 已成功部署](https://docs.daocloud.io/network/modules/spiderpool/install.html)，并且启用安装 sriov。
+- [SpiderPool 已成功部署](../modules/spiderpool/install.md)，并且启用安装 sriov。
 - 集群节点支持 SR-IOV 硬件功能
 - 具有集群管理员权限
 
