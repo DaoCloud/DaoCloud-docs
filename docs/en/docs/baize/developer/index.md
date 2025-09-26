@@ -5,4 +5,9 @@ hide:
 
 # Developer Console
 
-The developer console is a console for developers to perform tasks such as AI inference and training large models on a daily basis.
+The Developer Console is where developers run daily tasks such as AI inference and large language model training.
+
+![Developer Overview](../images/dev-view.png)
+
+The overview provides a quick snapshot of the current workspace’s resources and usage,
+including details on GPU resources, notebooks, tasks, and datasets.
