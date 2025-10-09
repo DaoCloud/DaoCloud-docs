@@ -15,7 +15,7 @@ At the early stage, enterprises simply migrated their applications to the cloud.
 
 According to statistics, the current distribution of multicloud adoption by businesses choosing to the cloud are as follows:
 
-| Cloud Solutions       | Market Share |
+| Cloud Solutions | Market Share |
 | ------------------------ | ------------ |
 | multiple public clouds + multiple private clouds | 43% |
 | multiple public clouds + one private cloud | 29% |
@@ -31,6 +31,46 @@ It allows centralized management of multicloud and hybrid-cloud environments, pr
 ![workload](../images/workload01.png)
 
 [Demo video: One-Click Conversion to Multicloud](../../videos/use-cases.md#_2)
+
+## Basic Concepts
+
+| Concept | Description |
+| ------- | ----------- |
+| **Resource Template** | The multicloud management software uses Kubernetes native APIs to define federated resource templates, enabling seamless integration with existing Kubernetes tooling. |
+| **Deployment Policy** | The multicloud management software provides an independent `PropagationPolicy` API to define multi-cluster scheduling requirements. |
+| | - Supports a **1:N policy mapping mechanism**, allowing users to avoid specifying scheduling constraints every time a federated application is created. |
+| | - With the **default policy**, users can interact directly with the Kubernetes API. |
+| **Differentiation Policy** | The multicloud management software provides an `OverridePolicy` API to automatically generate independent configurations for different clusters. |
+| | - Automatically configures different image registry addresses based on the region of the member cluster. |
+| | - Uses different storage classes according to cloud vendors of the clusters. |
+
+## Product Advantages
+
+Empowering developers to use **multicloud as if it were a single Kubernetes cluster**, multicloud management offers the following advantages:
+
+* **Compatible with Kubernetes Native API**
+  
+    Upgrade from single-cluster to multi-cluster with zero modification.
+
+* **Seamless Integration with the Kubernetes Toolchain Ecosystem**
+
+    * Freedom from vendor lock-in: multicloud platform support, automatic allocation, and flexible migration.
+    * No dependency on commercial vendor products.
+
+* **Rich Multi-Cluster Scheduling**
+
+    * Cluster affinity scheduling for high-availability multi-cluster deployments with fine granularity.
+    * Supports multiple regions, availability zones, clusters, and vendors.
+
+* **Open and Neutral**
+
+    * Jointly initiated by organizations from internet, finance, manufacturing, telecommunications, and cloud industries.
+    * Out-of-the-box built-in policy sets for multiple scenarios: dual-active across cities, two-city three-center DR, and cross-region disaster recovery.
+
+* **Centralized Management**
+
+    * No need to worry about cluster location.
+    * Supports public cloud, private cloud, and edge clusters.
 
 [Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
