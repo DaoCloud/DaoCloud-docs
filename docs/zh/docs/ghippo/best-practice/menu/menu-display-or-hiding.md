@@ -23,9 +23,9 @@
 再使用以下命令升级全局管理：
 
 ```shell
-helm upgrade ghippo ghippo-release/ghippo \  
-  -n ghippo-system \  
-  -f ./bak.yaml \  
+helm upgrade ghippo ghippo-release/ghippo \
+  -n ghippo-system \
+  -f ./bak.yaml \
   --version ${version}
 ```
 
@@ -34,212 +34,212 @@ helm upgrade ghippo ghippo-release/ghippo \
 在 kpanda-global-cluster 中 apply 如下 YAML：
 
 ```yaml
-apiVersion: ghippo.io/v1alpha1  
-kind: GProductNavigator  
-metadata:  
-  name: kpanda-menus-custom  
-spec:  
-  category: container  
-  gproduct: kpanda  
-  iconUrl: ./ui/kpanda/kpanda.svg  
-  isCustom: true  
-  localizedName:  
-    en-US: Container Management  
-    zh-CN: 容器管理  
-  menus:  
-    - iconUrl: ''  
-      isCustom: true  
-      localizedName:  
-        en-US: Clusters  
-        zh-CN: 集群列表  
-      name: Clusters  
-      order: 80  
-      url: ./kpanda/clusters  
-      visible: true  
-      visibleDependency:  
-        permissions:  
-          - kpanda.cluster.*  
-          - kpanda.menu.get  
-    - iconUrl: ''  
-      isCustom: true  
-      localizedName:  
-        en-US: Namespaces  
-        zh-CN: 命名空间  
-      name: Namespaces  
-      order: 70  
-      url: ./kpanda/namespaces  
-      visible: true  
-      visibleDependency:  
-        permissions:  
-          - kpanda.cluster.*  
-          - kpanda.menu.get  
-    - iconUrl: ''  
-      isCustom: true  
-      localizedName:  
-        en-US: Workloads  
-        zh-CN: 工作负载  
-      name: Workloads  
-      order: 60  
-      url: ./kpanda/workloads/deployments  
-      visible: true  
-      visibleDependency:  
-        permissions:  
-          - kpanda.cluster.*  
-          - kpanda.menu.get  
-    - iconUrl: ''  
-      isCustom: true  
-      localizedName:  
-        en-US: Permissions  
-        zh-CN: 权限管理  
-      name: Permissions  
-      order: 10  
-      url: ./kpanda/rbac/content/cluster  
-      visible: true  
-      visibleDependency:  
-        permissions:  
-          - kpanda.cluster.*  
-          - kpanda.menu.get  
-  name: 容器管理  
-  order: 50  
-  url: ./kpanda/clusters  
-  visible: true  
+apiVersion: ghippo.io/v1alpha1
+kind: GProductNavigator
+metadata:
+  name: kpanda-menus-custom
+spec:
+  category: container
+  gproduct: kpanda
+  iconUrl: ./ui/kpanda/kpanda.svg
+  isCustom: true
+  localizedName:
+    en-US: Container Management
+    zh-CN: 容器管理
+  menus:
+    - iconUrl: ''
+      isCustom: true
+      localizedName:
+        en-US: Clusters
+        zh-CN: 集群列表
+      name: Clusters
+      order: 80
+      url: ./kpanda/clusters
+      visible: true
+      visibleDependency:
+        permissions:
+          - kpanda.cluster.*
+          - kpanda.menu.get
+    - iconUrl: ''
+      isCustom: true
+      localizedName:
+        en-US: Namespaces
+        zh-CN: 命名空间
+      name: Namespaces
+      order: 70
+      url: ./kpanda/namespaces
+      visible: true
+      visibleDependency:
+        permissions:
+          - kpanda.cluster.*
+          - kpanda.menu.get
+    - iconUrl: ''
+      isCustom: true
+      localizedName:
+        en-US: Workloads
+        zh-CN: 工作负载
+      name: Workloads
+      order: 60
+      url: ./kpanda/workloads/deployments
+      visible: true
+      visibleDependency:
+        permissions:
+          - kpanda.cluster.*
+          - kpanda.menu.get
+    - iconUrl: ''
+      isCustom: true
+      localizedName:
+        en-US: Permissions
+        zh-CN: 权限管理
+      name: Permissions
+      order: 10
+      url: ./kpanda/rbac/content/cluster
+      visible: true
+      visibleDependency:
+        permissions:
+          - kpanda.cluster.*
+          - kpanda.menu.get
+  name: 容器管理
+  order: 50
+  url: ./kpanda/clusters
+  visible: true
 
 ---
-apiVersion: ghippo.io/v1alpha1  
-kind: GProductNavigator  
-metadata:  
-  name: insight-menus-custom  
-spec:  
-  category: microservice  
-  gproduct: insight  
-  iconUrl: ./ui/insight/logo.svg  
-  isCustom: true  
-  localizedName:  
-    en-US: Insight  
-    zh-CN: 可观测性  
-  menus:  
-    - iconUrl: ''  
-      isCustom: true  
-      localizedName:  
-        en-US: Overview  
-        zh-CN: 概览  
-      name: Overview  
-      order: 9  
-      url: ./insight/overview  
-      visible: true  
-      visibleDependency:  
-        permissions:  
-          - kpanda.cluster.*  
-          - kpanda.menu.get  
-    - iconUrl: ''  
-      isCustom: true  
-      localizedName:  
-        en-US: Dashboard  
-        zh-CN: 仪表盘  
-      name: Dashboard  
-      order: 8  
-      url: ./insight/dashboard  
-      visible: true  
-      visibleDependency:  
-        permissions:  
-          - kpanda.cluster.*  
-          - kpanda.menu.get  
-    - iconUrl: ''  
-      isCustom: true  
-      localizedName:  
-        en-US: Infrastructure  
-        zh-CN: 基础设施  
-      name: Infrastructure  
-      order: 7  
-      url: ./insight/clusters  
-      visible: true  
-      visibleDependency:  
-        permissions:  
-          - kpanda.cluster.*  
-          - kpanda.menu.get  
-    - iconUrl: ''  
-      isCustom: true  
-      localizedName:  
-        en-US: Metrics  
-        zh-CN: 指标  
-      name: Metrics  
-      order: 6  
-      url: ./insight/metric/basic  
-      visible: true  
-      visibleDependency:  
-        permissions:  
-          - kpanda.cluster.*  
-          - kpanda.menu.get  
-    - iconUrl: ''  
-      isCustom: true  
-      localizedName:  
-        en-US: Logs  
-        zh-CN: 日志  
-      name: Logs  
-      order: 5  
-      url: ./insight/logs  
-      visible: true  
-      visibleDependency:  
-        permissions:  
-          - kpanda.cluster.*  
-          - kpanda.menu.get  
-    - iconUrl: ''  
-      isCustom: true  
-      localizedName:  
-        en-US: Trace Tracking  
-        zh-CN: 链路追踪  
-      name: Trace Tracking  
-      order: 4  
-      url: ./insight/topology  
-      visible: true  
-      visibleDependency:  
-        permissions:  
-          - kpanda.cluster.*  
-          - kpanda.menu.get  
-    - iconUrl: ''  
-      isCustom: true  
-      localizedName:  
-        en-US: Alerts  
-        zh-CN: 告警  
-      name: Alerts  
-      order: 3  
-      url: ./insight/alerts/active/metrics  
-      visible: true  
-      visibleDependency:  
-        permissions:  
-          - kpanda.cluster.*  
-          - kpanda.menu.get  
-    - iconUrl: ''  
-      isCustom: true  
-      localizedName:  
-        en-US: Collect Management  
-        zh-CN: 采集管理  
-      name: Collect Management  
-      order: 2  
-      url: ./insight/agents  
-      visible: true  
-      visibleDependency:  
-        permissions:  
-          - kpanda.cluster.*  
-          - kpanda.menu.get  
-    - iconUrl: ''  
-      isCustom: true  
-      localizedName:  
-        en-US: System Management  
-        zh-CN: 系统管理  
-      name: System Management  
-      order: 1  
-      url: ./insight/system-components  
-      visible: true  
-      visibleDependency:  
-        permissions:  
-          - kpanda.cluster.*  
-          - kpanda.menu.get  
-  name: 可观测性  
-  order: 30  
-  url: ./insight  
-  visible: true  
-  
+apiVersion: ghippo.io/v1alpha1
+kind: GProductNavigator
+metadata:
+  name: insight-menus-custom
+spec:
+  category: microservice
+  gproduct: insight
+  iconUrl: ./ui/insight/logo.svg
+  isCustom: true
+  localizedName:
+    en-US: Insight
+    zh-CN: 可观测性
+  menus:
+    - iconUrl: ''
+      isCustom: true
+      localizedName:
+        en-US: Overview
+        zh-CN: 概览
+      name: Overview
+      order: 9
+      url: ./insight/overview
+      visible: true
+      visibleDependency:
+        permissions:
+          - kpanda.cluster.*
+          - kpanda.menu.get
+    - iconUrl: ''
+      isCustom: true
+      localizedName:
+        en-US: Dashboard
+        zh-CN: 仪表盘
+      name: Dashboard
+      order: 8
+      url: ./insight/dashboard
+      visible: true
+      visibleDependency:
+        permissions:
+          - kpanda.cluster.*
+          - kpanda.menu.get
+    - iconUrl: ''
+      isCustom: true
+      localizedName:
+        en-US: Infrastructure
+        zh-CN: 基础设施
+      name: Infrastructure
+      order: 7
+      url: ./insight/clusters
+      visible: true
+      visibleDependency:
+        permissions:
+          - kpanda.cluster.*
+          - kpanda.menu.get
+    - iconUrl: ''
+      isCustom: true
+      localizedName:
+        en-US: Metrics
+        zh-CN: 指标
+      name: Metrics
+      order: 6
+      url: ./insight/metric/basic
+      visible: true
+      visibleDependency:
+        permissions:
+          - kpanda.cluster.*
+          - kpanda.menu.get
+    - iconUrl: ''
+      isCustom: true
+      localizedName:
+        en-US: Logs
+        zh-CN: 日志
+      name: Logs
+      order: 5
+      url: ./insight/logs
+      visible: true
+      visibleDependency:
+        permissions:
+          - kpanda.cluster.*
+          - kpanda.menu.get
+    - iconUrl: ''
+      isCustom: true
+      localizedName:
+        en-US: Trace Tracking
+        zh-CN: 链路追踪
+      name: Trace Tracking
+      order: 4
+      url: ./insight/topology
+      visible: true
+      visibleDependency:
+        permissions:
+          - kpanda.cluster.*
+          - kpanda.menu.get
+    - iconUrl: ''
+      isCustom: true
+      localizedName:
+        en-US: Alerts
+        zh-CN: 告警
+      name: Alerts
+      order: 3
+      url: ./insight/alerts/active/metrics
+      visible: true
+      visibleDependency:
+        permissions:
+          - kpanda.cluster.*
+          - kpanda.menu.get
+    - iconUrl: ''
+      isCustom: true
+      localizedName:
+        en-US: Collect Management
+        zh-CN: 采集管理
+      name: Collect Management
+      order: 2
+      url: ./insight/agents
+      visible: true
+      visibleDependency:
+        permissions:
+          - kpanda.cluster.*
+          - kpanda.menu.get
+    - iconUrl: ''
+      isCustom: true
+      localizedName:
+        en-US: System Management
+        zh-CN: 系统管理
+      name: System Management
+      order: 1
+      url: ./insight/system-components
+      visible: true
+      visibleDependency:
+        permissions:
+          - kpanda.cluster.*
+          - kpanda.menu.get
+  name: 可观测性
+  order: 30
+  url: ./insight
+  visible: true
+
 ---
 apiVersion: ghippo.io/v1alpha1
 kind: GProductResourcePermissions
