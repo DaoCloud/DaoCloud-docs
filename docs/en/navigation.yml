@@ -1415,6 +1415,7 @@ nav:
                   - Customize Nav Bar:
                       - Customize Nav Bar: ghippo/best-practice/menu/navigator.md
                       - Display/Hide Navigation Bar Menu Based on Permissions: ghippo/best-practice/menu/menu-display-or-hiding.md
+                  - System Messages: ghippo/best-practice/system-message.md
               - Troubleshoot:
                   - ingressgateway cannot start: ghippo/troubleshooting/ghippo01.md
                   - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md

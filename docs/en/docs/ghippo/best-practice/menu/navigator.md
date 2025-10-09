@@ -9,7 +9,7 @@ Currently, the custom navigation bar needs to be manually created as a YAML file
 
 ## Navigation Bar Categories
 
-![Navigation Bar Categories](../images/nav01.png)
+![Navigation Bar Categories](../../images/nav01.png)
 
 To add or reorder navigation bar categories, you can achieve it by adding or modifying the category YAML.
 
@@ -43,7 +43,7 @@ kubectl apply -f xxx.yaml
 
 ## Navigation Bar Menus
 
-![Navigation Bar Menus](../images/nav02.png)
+![Navigation Bar Menus](../../images/nav02.png)
 
 To add or reorder navigation bar menus, you can achieve it by adding a navigator YAML.
 
