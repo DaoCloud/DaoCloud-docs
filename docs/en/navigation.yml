@@ -73,8 +73,10 @@ nav:
                   - On TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - On NeoKylin Linux Advanced Server V7Update6: install/os-install/neokylin-install-dce5.0.md
                   - On Other Linux: install/os-install/otherlinux.md
+              - Lightweight Install:
+                  - Verify Lightweight Deployment Plan: install/light-install/light-install-solution.md
+                  - Lightweight Deployment: install/light-install/install-light.md
               - Upgrade:
-                  - Overview: install/upgrade-des.md
                   - Upgrade DCE 5.0 Components: install/upgrade.md
                   - Upgrade from Standard to Platinum: install/evolve.md
               - Uninstall and Import:
