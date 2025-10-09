@@ -27,6 +27,13 @@ service-to-service calls during the queried time period.
 
     ![Servicemap](../../user-guide/images/servicemap.png)
 
+4. In the search box, you can filter the topology data based on **service name**, **node error rate range**, and **node latency range**.
+
+
+5. Click the __Legend__ button in the bottom-right corner to modify the rendering thresholds defined in the current topology through a __temporary configuration__. Exiting or closing this page will discard the configuration.
+
+    The threshold values must be greater than 0. The value entered first must be smaller than the one entered later. All entered values must fall within the maximum and minimum range.
+
 ### Other Nodes
 
 In the Service Map, there can be nodes that are not part of the cluster. These external nodes can be categorized into three types:
@@ -48,4 +55,4 @@ In the Service Map, there can be nodes that are not part of the cluster. These e
 
    ![change-parameters](../../image/servicemap.png)
 
-2. In the display settings of the service map, check the `Virtual Services` option to enable it.
+2. In the display settings of the service map, check the **Virtual Services** option to enable it.
