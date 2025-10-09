@@ -15,19 +15,17 @@ You can deploy a model either from the [Model Gallery](../index.md) or the [Mode
 
     ![deploy](../images/deploy02.png)
 
-- **Model Service Name**: Must meet the following requirements:
+- **Model Service Name:** Must meet the following requirements:
 
-    - **Length**: Between 2 and 64 characters
-    - **Allowed characters**: Lowercase letters, numbers, and hyphens (`-`)
-    - **Naming rule**: Must start and end with a lowercase letter or number
-    - **Examples**: `text-gen-service`, `model-01`
+    - Length: 2 - 64 characters
+    - Characters: Only lowercase letters, numbers, and hyphens (-) are allowed; must start and end with a lowercase letter or number
+    - Example: text-gen-service or model-01
 
-- **Region**:
+- **Number of Instances**
 
-    - Select the deployment region for your service (e.g., “Shanghai Zone 7”)
-    - Choose the region based on your business coverage and latency requirements
+    - Configure the number of instances to deploy. Default: 1
+    - Notes: More instances increase the service's concurrency capability, but also increase cost
 
-- **Instance Count**:
-
-    - Configure the number of instances to deploy (default: 1)
-    - **Note**: More instances improve concurrency but also increase cost
+- **Deployment Cluster:** Select the cluster for deployment. It is recommended to choose the closest cluster.  
+- **Namespace:** Specify the target namespace for deployment.  
+- **Model File Check:** After selecting the model, cluster, and namespace, the system will automatically perform the model file check.  
