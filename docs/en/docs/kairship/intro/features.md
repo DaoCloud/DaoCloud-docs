@@ -1,133 +1,44 @@
 ---
 MTPE: windsonsea
-date: 2024-06-20
+date: 2025-10-09
 ---
 
 # Features
 
-Multicloud Management module has the following features:
+The feature list of **MultiCloud Management** is as follows:
 
-- **Unified Management Interface**: A unified interface for managing multiple multicloud instances.
-- **Multiple Instances**: Create multiple multicloud instances that work in isolation and do not affect each other.
-- **One-click Integration of Clusters**: Add existing clusters from Container Management module into a multicloud instance, sync the latest cluster information at real time.
-- **Native APIs**: Supports all Kubernetes native APIs.
-- **Multicloud Application Deployment**: Flexible deployment policies and override policies for multicloud applications.
-- **Application Failover**: Built-in capability to enable application failover across multiple clouds.
-- **One-Click Application Conversion**: Achieve seamless conversion of applications from DCE4 to DCE5 with just one click.
-- **Cross-Cluster Scaling**: Dynamically adjust resources across different clusters
-  based on application workload demands.
-- **Observability**: Rich audit rules and metrics to improve observability.
-- **Practical Permissions**: Manage user access based on [workspaces](../../ghippo/user-guide/workspace/workspace.md).
+* **Unified Management Plane:** MultiCloud Management provides a unified management plane responsible for managing multiple multicloud instances, serving as the unified request entry point (LCM of MultiCloud Management instances). All other multicloud-related requests can be deployed in the global service cluster.
+* **Multiple Instances:** Supports creating multiple multicloud instances, with isolated workloads that do not affect or perceive each other.
+* **One-Click Cluster Access:** Supports one-click access for clusters from existing managed clusters into a multicloud instance, and synchronizes the latest cluster information in real-time (clusters are deleted along with the instance).
+* **Native API Support:** Supports all native Kubernetes APIs.
+* **MultiCloud Application Distribution:** Provides a wide range of distribution and differentiation strategies for multicloud applications.
+* **Application Failover:** Built-in failover capability for multicloud applications.
+* **One-Click Application Migration:** Enables one-click migration of applications from DCE4 to DCE5.
+* **Cross-Cluster Autoscaling:** Dynamically adjusts resources across clusters based on application load requirements.
+* **Observability:** Provides rich auditing and metrics capabilities to enhance observability.
+* **Integration with Global Access Control:** Manages user access scope via workspaces and performs authentication and authorization for users and instances.
 
-## Multicloud Instances
+## Detailed Breakdown
 
-- **Add Multicloud Instances**: You can create an empty multicloud instance, and add clusters later as needed.
-
-- **Check the instance list and search by instance name**.
-
-    You can view all multicloud instances visible to the current user account,
-    including CPU and memory usage, cluster status, versions, creation time, etc.
-
-- **Safe Delete**: Multicloud instances cannot be deleted when there are still some clusters in it.
-  This is to avoid unintentional delete and ensure data security.
-
-## Cluster Management
-
-- **Add Cluster**
-
-    After a multicloud instance is created, you can dynamically (no need to restart) add clusters into it and manage other resources across these clusters. Adding a cluster is quite easy. Just select your expected clusters from the list and then click "OK".
-
-- **View Cluster**
-
-    You can view all clusters added into a multicloud instance, and further check the details of these clusters, including providers, versions, regions, CPU/Memory usage, service IP range, status, etc.
-
-- **Remove Cluster**
-
-    You can dynamically remove a cluster from the current multicloud instance.
-
-    Removal Verification: To ensure data security, a cluster cannot be removed when there are still resources (deployments, namespaces, secrets, etc.) deployed in this cluster under the current multicloud instance.
-
-- **kubectl CLI**
-
-    You can use kubectl commands in the cloud shell to get the __kubeconfig__ information so that users can manage the multicloud instance locally.
-
-    Support the management of multicloud instances through the web-based terminal, CloudShell.
-
-## Multicloud Workloads
-
-- **Create Multicloud Deployment**
-
-    - Image Creation: Create a deployment through a graphical interface and set deployment or override policies.
-    - Override Settings: Support override configurations when creating workloads, allowing for cluster-specific configuration such as pod count, CPU, memory, and upgrade strategy. Enable override configurations for cluster-specific settings including image, deployment policy, container scripts, container storage, container logs, scheduling policy, labels, and annotations.
-    - Create by YAML: Create a workload quickly with YAML files.
-    - YAML Syntax Check: Check the syntax of these YAML files and provides prompts for incorrect syntax.
-
-- **Multicloud Workload Details**
-
-    - Basic Information: Support viewing deployment details of deployments, including pod count and active cluster information. Provide monitoring capabilities for individual pods, allowing users to navigate to Insight Pod logs and view logs for individual pods.
-    - Deployment Information: View deployment details of deployments and perform operations such as restart, pause, resume, and release for multicloud workloads.
-    - Instance List: Display pod information of workloads across multiple Kubernetes clusters in a cluster-specific manner. Enable quick navigation to the corresponding cluster's workload details page and view monitoring and log information for the corresponding pods.
-    - Service List: Segment workload service information within clusters and provide quick navigation to the corresponding cluster's workload details page. View monitoring and log information for the corresponding services.
-
-- **Update Multicloud Workload**
-
-    - Visualized Update: Edit the workload through the graphical interface.
-    - YAML Update: Change configuration of the multicloud workload by editing its YAML file.
-
-- **Delete Multicloud Workload**
-
-    - Visualized Deletion: Delete multicloud workloads as well as resources therein through the graphical interface.
-    - You can also delete multicloud workloads in cloudshell and terminals.
-    - Deletion Confirmation: Remind users to perform a secondary confirmation before proceeding with the deletion.
-
-## Resource Management
-
-- **Multicloud Namespace**
-
-    - Manage Multicloud Namespaces: Support viewing the resource list of multicloud namespaces.
-    - View Multicloud Namespace List: Provide a list to view namespace information across multiple clusters.
-    - Create Multicloud Namespace: Enable the creation of multicloud namespaces through a user-friendly interface.
-
-- **Multicloud ConfigMaps**
-
-    - Manage Multicloud ConfigMaps: Support viewing the resource list of multicloud configmaps.
-    - Manage Multicloud Secrets: Support viewing the resource list of multicloud Secrets.
-    - Create Multicloud ConfigMaps or Secrets: Enable the creation of multicloud configmaps or secrets through a user-friendly interface or YAML, with unified display in the user interface.
-    - Delete Multicloud ConfigMaps or Secrets: Support the deletion of idle multicloud configmaps or secrets. Deletion is not allowed for configmaps or secrets that are currently in use.
-
-- **Multicloud Services and Ingress**
-
-    - Create Services and Ingress: Support the creation of services through a user-friendly interface or YAML, with unified display in the user interface.
-    - Delete Services and Ingress: Support the deletion of services/ingress, with corresponding prompts for those currently in use.
-
-## Policy Management
-
-- **Propagation Policies**
-
-    - Propagation Policy List: View the list of propagation policies associated with the current instances and their associated multicloud resources.
-    - Create Propagation Policy: Maintain and edit propagation policy information using YAML.
-    - Delete Propagation Policy: Delete idle propagation policies.
-
-- **Override Policies**
-
-    - Override Policy List: View the list of override policies associated with the current instances and their associated multicloud resources.
-    - Create Override Policy: Maintain and edit override policy information using YAML.
-    - Delete Override Policy: View the list of override policies associated with the current instances and their associated multicloud resources.
-
-## System Settings
-
-- **Cluster Health Check**
-
-    Configure the duration for marking the cluster health status as successful or failed.
-
-- **Failover**
-
-    Configure parameters to automatically migrate pod replicas from a failed cluster to other available clusters, ensuring service stability.
-
-- **CronReschedule**
-
-    Regularly check the status of pods in the cluster. If a pod remains unschedulable for a specified period, it will be automatically evicted to avoid resource waste.
-
-- **Federated HPA**
-
-    Install karmada-metrics-adapter in the instance control plane cluster to provide metrics API. This feature is disabled by default.
+| Feature | Description |
+| ------- | ----------- |
+| **MultiCloud Instance Management** | **Add MultiCloud Instance:** Supports adding instances without any clusters to create empty instances. |
+| | **View MultiCloud Instance:** Supports search by instance name and viewing instance list, basic information, CPU and memory usage, status, version, creation time, etc. |
+| | **Remove MultiCloud Instance:** Performs validation before removal; only allows removal when the instance contains no clusters. |
+| **Cluster Management Within Instances** | **Add Cluster:** Supports dynamically adding new clusters to the current multicloud instance and displaying available clusters that the user has access to. |
+| | **View Cluster:** Supports viewing detailed information about the connected clusters, such as name, status, platform, region, availability zone, and Kubernetes version. |
+| | **Remove Cluster:** Supports dynamic cluster removal with resource validation and risk warnings. |
+| | **Manage Instance Resources via kubectl:** Supports obtaining kubeconfig links and managing multicloud instances through a web terminal. |
+| **MultiCloud Workloads** | **Create MultiCloud Stateless Workloads:** Supports graphical creation, differentiated configuration, YAML creation, and syntax validation. |
+| | **MultiCloud Workload Details:** View deployment details, resource usage, instance lists, service lists, and supports operations such as restart, pause, and resume. |
+| | **Update MultiCloud Workload:** Supports configuration updates through the web UI or YAML editor. |
+| | **Delete MultiCloud Workload:** Supports deletion through the UI or CLI with secondary confirmation. |
+| **Resource Management** | **MultiCloud Namespace:** Supports viewing, creating, and deleting multicloud namespace resources. |
+| | **MultiCloud Configuration Items:** Supports viewing, creating, and deleting multicloud ConfigMap and Secret resources. |
+| | **MultiCloud Services and Routing:** Supports creating and deleting Service/Ingress resources. |
+| **Policy Management** | **Deployment Policy:** Supports viewing, creating, and deleting deployment policies. |
+| | **Differentiation Policy:** Supports viewing, creating, and deleting differentiation policies. |
+| **System Settings** | **Cluster Health Check Configuration:** Configure the duration for marking a cluster's health status as successful or failed. |
+| | **Failover:** Automatically migrates Pod replicas from failed clusters to other available clusters. |
+| | **Scheduled Rescheduling:** Periodically checks Pod status and automatically evicts unschedulable Pods. |
+| | **Autoscaling:** Installs `karmada-metrics-adapter` to provide metrics APIs (disabled by default). |

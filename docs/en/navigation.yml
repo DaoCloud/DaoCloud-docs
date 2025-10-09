@@ -399,8 +399,6 @@ nav:
                   - What is Multicloud Management: kairship/intro/index.md
                   - Features: kairship/intro/features.md
                   - Architecture: kairship/intro/architecture.md
-                  - Competitiveness: kairship/intro/benefits.md
-                  - Concepts: kairship/intro/concepts.md
                   - FAQs: kairship/intro/faq.md
                   - Offline Upgrade: kairship/intro/offline-upgrade.md
                   - Multicloud Release Notes: kairship/intro/release-notes.md
