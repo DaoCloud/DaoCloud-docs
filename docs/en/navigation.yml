@@ -1197,6 +1197,7 @@ nav:
                   - API Keys: hydra/apikey.md
               - Admin Console:
                   - Manage Model Gallery: hydra/oam/index.md
+                  - MaaS Models: hydra/oam/maas.md
                   - Manage Deployed Models: hydra/oam/mdm.md
               - Best Practices:
                   - Intro: hydra/user-guides/index.md
