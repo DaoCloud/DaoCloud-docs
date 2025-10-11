@@ -10,7 +10,7 @@ Platform administrators can manage model deployments in **Operations Management*
 !!! note
 
     Here, you are creating **model deployment configuration files**, not the model files themselves.
-    To manage or download model files, please refer to [Managing Model Files with Dataset](./index.md).
+    To manage or download model files, please refer to [Managing Model Files with Dataset](../dataset.md).
 
 ## Model Deployment List
 
