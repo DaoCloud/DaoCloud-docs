@@ -4,9 +4,31 @@ This page lists the release notes for LLM Studio, helping you understand version
 
 *[hydra]: Internal codename for DaoCloud's LLM Studio
 
+## 2025-08-07
+
+### v0.8.0
+
+**Admin Console**
+
+* **Added** model list display
+* **Added** support for bulk importing models from URL address information
+* **Added** support for creating models
+* **Added** MaaS model list display
+* **Added** support for adding MaaS models
+* **Added** support for adding multiple upstream endpoint configurations
+* **Added** support for rate limiting at the **apikey** level
+* **Added** support for rate limiting at the **Workspace** level
+* **Added** support for defining multiple sets of rate-limiting rules
+* **Added** support for **round-robin load balancing**
+* **Added** model deployment management list display
+* **Added** support for configuring multiple sets of model parameters
+* **Added** support for deploying models with **vLLM**
+
 ## 2025-07-04
 
 ### v0.7.0
+
+**User View**
 
 - **Added** support for deep thinking in text models.
 - **Added** support for copying and regenerating messages in text models.
