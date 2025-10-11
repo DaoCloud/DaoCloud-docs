@@ -280,7 +280,7 @@ nav:
                   - 其他方案:
                     - Knative 介绍: kpanda/user-guide/scale/knative/knative.md
                     - 安装 Knative: kpanda/user-guide/scale/knative/install.md
-                    - Kantive 场景: kpanda/user-guide/scale/knative/scene.md
+                    - Knative 场景: kpanda/user-guide/scale/knative/scene.md
                     - Knative 实践: kpanda/user-guide/scale/knative/playground.md
               - Helm 应用:
                   - Helm 模板: kpanda/user-guide/helm/README.md
