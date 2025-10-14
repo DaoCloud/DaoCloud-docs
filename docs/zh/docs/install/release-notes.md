@@ -10,6 +10,18 @@
 *[Skoala]: DCE 5.0 微服务引擎的开发代号
 *[Hydra]: DCE 5.0 大模型服务平台的开发代号
 
+## 2025-09-30
+
+### v0.34.0
+
+- **新增** SKIP_DEPENDENCY_RESOURCES 特性门控，避免分阶段升级场景重复导入资源问题
+- **新增** 支持 Kylin V11 发行版离线部署，并优化相关离线包构建 CI
+- **新增** 支持集群节点接入密码密文处理
+- **新增** rp_filter sysctl 默认参数配置
+- **修复** 离线场景 tailing-sidecar-operator 镜像地址问题
+- **修复** kylin v11 环境安装 kind 集群 cgroup v2 兼容问题
+- **修复** manifest 配置组件 nodeAffinity 参数失效问题
+
 ## 2025-08-31
 
 ### v0.33.0
