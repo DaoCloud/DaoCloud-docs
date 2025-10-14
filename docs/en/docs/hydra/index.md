@@ -30,18 +30,14 @@ Hover over a model card and click the **Details** icon to start interacting with
 
 ![details](./images/details02.png)
 
-Click the **API Call** tab to view complete API call information.
-
-![details](./images/details03.png)
-
 ## Try Models
 
 Click the **Try** icon on a model card to start interacting with the AI using the default corpus.
 
 ![try](./images/exper01.png)
 
-You can also try models from the **Model Trial** page. See [this guide](./exp.md) for more details.
+You can also try models from the **Playground** page. See [this guide](./exp.md) for more details.
 
 ## Deploy Models
 
-You can easily deploy models from either the **Model Gallery** or the **Model Service** page. See [parameter explanations](./deploy/deploy.md) for more information.
+You can easily deploy models from either the **Model Gallery** or the **Served Models** page. See [parameters](./deploy/deploy.md) for more information.
