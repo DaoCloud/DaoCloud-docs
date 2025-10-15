@@ -22,4 +22,4 @@
 
 ## 贡献说明
 
-如果您有更多的使用场景，欢迎您通过 [Github PR](https://github.com/d-run/drun-docs) 告诉我们。
+如果您有更多的使用场景，欢迎您通过 [Github PR](https://github.com/DaoCloud/DaoCloud-docs/pulls) 告诉我们。

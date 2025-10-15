@@ -280,7 +280,7 @@ nav:
                   - 其他方案:
                     - Knative 介绍: kpanda/user-guide/scale/knative/knative.md
                     - 安装 Knative: kpanda/user-guide/scale/knative/install.md
-                    - Kantive 场景: kpanda/user-guide/scale/knative/scene.md
+                    - Knative 场景: kpanda/user-guide/scale/knative/scene.md
                     - Knative 实践: kpanda/user-guide/scale/knative/playground.md
               - Helm 应用:
                   - Helm 模板: kpanda/user-guide/helm/README.md
@@ -638,6 +638,7 @@ nav:
                   - 阿里云运行 Calico: network/modules/aliyun-terway/aliyun-calico.md
                   - 阿里云运行 Cilium: network/modules/aliyun-terway/aliyun-cilium.md
                   - 常见问题: network/modules/aliyun-terway/Q_A.md
+              - 集成 Unifabric: network/modules/unifabric/install.md
           - 云原生存储:
               - 介绍:
                   - 什么是云原生存储: storage/index.md
@@ -1453,6 +1454,7 @@ nav:
                       - 服务网格审计项: ghippo/user-guide/audit/gproduct-audit/mspider.md
                       - 中间件审计项: ghippo/user-guide/audit/gproduct-audit/mcamel.md
                       - 算力云审计项: ghippo/user-guide/audit/gproduct-audit/zestu.md
+                      - 大模型服务平台审计项: ghippo/user-guide/audit/gproduct-audit/hydra.md
                       - 全局管理审计项: ghippo/user-guide/audit/gproduct-audit/ghippo.md
               - 运营管理:
                   - ghippo/user-guide/report-billing/index.md
@@ -1498,7 +1500,6 @@ nav:
                       - 定制导航栏: ghippo/best-practice/menu/navigator.md
                       - 基于权限显示/隐藏导航栏菜单: ghippo/best-practice/menu/menu-display-or-hiding.md
                   - 系统消息: ghippo/best-practice/system-message.md
-
               - 故障排查:
                   - ingressgateway 无法启动: ghippo/troubleshooting/ghippo01.md
                   - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md

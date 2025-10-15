@@ -1,6 +1,6 @@
 # 离线升级大模型服务平台
 
-本页说明[下载大模型服务平台模块](../../../download/modules/hydra.md)后，应该如何安装或升级。
+本页说明[下载大模型服务平台模块](https://docs.daocloud.io/download/modules/hydra/)后，应该如何安装或升级。
 
 !!! info
 

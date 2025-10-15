@@ -73,8 +73,10 @@ nav:
                   - On TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - On NeoKylin Linux Advanced Server V7Update6: install/os-install/neokylin-install-dce5.0.md
                   - On Other Linux: install/os-install/otherlinux.md
+              - Lightweight Install:
+                  - Verify Lightweight Deployment Plan: install/light-install/light-install-solution.md
+                  - Lightweight Deployment: install/light-install/install-light.md
               - Upgrade:
-                  - Overview: install/upgrade-des.md
                   - Upgrade DCE 5.0 Components: install/upgrade.md
                   - Upgrade from Standard to Platinum: install/evolve.md
               - Uninstall and Import:
@@ -397,8 +399,6 @@ nav:
                   - What is Multicloud Management: kairship/intro/index.md
                   - Features: kairship/intro/features.md
                   - Architecture: kairship/intro/architecture.md
-                  - Competitiveness: kairship/intro/benefits.md
-                  - Concepts: kairship/intro/concepts.md
                   - FAQs: kairship/intro/faq.md
                   - Offline Upgrade: kairship/intro/offline-upgrade.md
                   - Multicloud Release Notes: kairship/intro/release-notes.md
@@ -1197,6 +1197,7 @@ nav:
                   - API Keys: hydra/apikey.md
               - Admin Console:
                   - Manage Model Gallery: hydra/oam/index.md
+                  - MaaS Models: hydra/oam/maas.md
                   - Manage Deployed Models: hydra/oam/mdm.md
               - Best Practices:
                   - Intro: hydra/user-guides/index.md
@@ -1415,6 +1416,7 @@ nav:
                   - Customize Nav Bar:
                       - Customize Nav Bar: ghippo/best-practice/menu/navigator.md
                       - Display/Hide Navigation Bar Menu Based on Permissions: ghippo/best-practice/menu/menu-display-or-hiding.md
+                  - System Messages: ghippo/best-practice/system-message.md
               - Troubleshoot:
                   - ingressgateway cannot start: ghippo/troubleshooting/ghippo01.md
                   - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md
