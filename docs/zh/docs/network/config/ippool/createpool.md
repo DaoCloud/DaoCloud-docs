@@ -56,7 +56,7 @@ hide:
 
     进入创建页面，输入如下参数：
 
-    ![创建 IP 池](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/subnet04.png)
+    ![创建 IP 池](../../images/createippool.png)
 
     - `命名空间`：可以指定命名空间（命名空间管理员只能看到自己所属的 IP 池。不能看到子网。）
 
