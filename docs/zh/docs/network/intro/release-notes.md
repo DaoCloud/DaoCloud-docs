@@ -13,9 +13,9 @@
 
 ### v0.16.5
 
-- **新增** 支持当 Spiderpool 关闭自动池功能，ui 不能使用自动池功能
+- **新增** 支持当 Spiderpool 关闭自动池功能，UI 不能使用自动池功能
 - **新增** 支持对 Multus CR 进行权限验证，非 Cluster Admin 用户无法创建、更新、删除 Multus CR。
-- **修复** 获取 Spiderpool IP 池，如果使用 Query 参数(selectNamespace) 无法获取到期望的 IP 池。
+- **修复** 获取 Spiderpool IP 池，如果使用 Query 参数 `selectNamespace` 无法获取到期望的 IP 池。
 
 ## 2025-07-30
 
