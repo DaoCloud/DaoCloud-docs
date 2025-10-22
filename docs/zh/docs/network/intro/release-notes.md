@@ -9,6 +9,14 @@
 *[SR-IOV]: Single Root IO Virtualization 的缩写，一种网卡虚拟化的技术
 *[RDMA]: Remote Direct Memory Access 的缩写，即远程直接内存访问，这是一个支撑 LLM 大模型和 GPT 的热门技术
 
+## 2025-09-30
+
+### v0.16.5
+
+- **新增** 支持当 Spiderpool 关闭自动池功能，ui 不能使用自动池功能
+- **新增** 支持对 Multus CR 进行权限验证，非 Cluster Admin 用户无法创建、更新、删除 Multus CR。
+- **修复** 获取 Spiderpool IP 池，如果使用 Query 参数(selectNamespace) 无法获取到期望的 IP 池。
+
 ## 2025-07-30
 
 ### v0.16.4
