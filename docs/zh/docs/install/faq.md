@@ -217,6 +217,150 @@ dce5-installer 自 v0.30 无法通过 Manifest 开启 MGR mysql。
     ./dce5-installer cluster-create -c clusterConfig.yml -m manifest-enterprise.yaml -z -s installer.sh
     ```
 
+### MGR 模式 MySQL Common 实例初始化失败导致 DCE 安装失败
+
+在执行 DCE 安装过程中，`mcamel-common` 实例的 MySQL 初始化阶段失败。  
+通过观察发现，`mysqlrouter` 用户在 MySQL 中丢失，导致 `router` 的 Deployment
+副本数 (`replica`) 一直为 `0`，从而导致整个安装过程无法继续。
+
+```text
+mcamel-common 实例未能成功重建 mysqlrouter 用户
+→ router deployment replica = 0
+→ DCE 安装卡住/失败
+```
+
+* **影响模块：** DCE 安装器的 MySQL 初始化流程
+* **影响范围：** 所有使用 MGR 模式的 `common` MySQL 实例
+* **影响版本：** v0.27.0, v0.28.0, v0.29.0 等
+* **现象总结：**
+
+    * router 无法连接 MGR 集群
+    * `mysqlrouter` 用户缺失
+    * router deployment 无法启动（replica = 0）
+
+**故障原因分析**
+
+在一次异常操作（如断电重启或 PVC 清理）后，运维人员手动恢复了 MGR 集群，但
+Operator 未能感知集群状态的改变，因此未触发对应的调谐逻辑。
+
+由于 PVC 被清空，原有的 `mysqlrouter` 用户信息在 MySQL 数据库中丢失，导致
+router 无法认证连接到集群，进而安装不断 Crash。
+
+**数据验证**
+
+通过 MySQL 查询用户表，发现找不到 `mysqlrouter` 用户：
+
+```mysql
+mysql> select user,host from mysql.user;
++---------------------------+-----------+
+| user                      | host      |
++---------------------------+-----------+
+| kpanda                    | %         |
+| mysql_innodb_cluster_1000 | %         |
+| mysql_innodb_cluster_1001 | %         |
+| mysql_innodb_cluster_1002 | %         |
+| mysqladmin                | %         |
+| root                      | %         |
+| localroot                 | localhost |
+| mysql.infoschema          | localhost |
+| mysql.session             | localhost |
+| mysql.sys                 | localhost |
+| mysqlhealthchecker        | localhost |
+| mysqlmetrics              | localhost |
++---------------------------+-----------+
+12 rows in set (0.00 sec)
+```
+
+**解决方案**
+
+1. 获取 `mysqlrouter` 的 Secret
+
+    从 Kubernetes 集群中获取 Router 的用户名与密码：
+
+    ```shell
+    kubectl get secret mcamel-common-kpanda-mgr-router -n mcamel-system -oyaml
+    ```
+
+    示例输出：
+
+    ```yaml
+    apiVersion: v1
+    data:
+      routerPassword: aVVOZHEtWm9tb0gtamJYTGstS3E9VEotNnlqc1M=
+      routerUsername: bXlzcWxyb3V0ZXI=
+    kind: Secret
+    metadata:
+      name: mcamel-common-kpanda-mgr-router
+      namespace: mcamel-system
+    ```
+
+    解码得到用户名和密码：
+
+    ```console
+    ➜ b64-d bXlzcWxyb3V0ZXI=
+    mysqlrouter
+
+    ➜ b64-d aVVOZHEtWm9tb0gtamJYTGstS3E9VEotNnlqc1M=
+    iUNdq-ZomoH-jbXLk-Kq=TJ-6yjsS
+    ```
+
+2. 手动在 MGR 集群中创建 `mysqlrouter` 用户
+
+    登录已恢复正常的 MGR 集群，调用 `setupRouterAccount()` 函数重新创建 `mysqlrouter` 用户：
+
+    ```mysql
+    MySQL  localhost:33060+ ssl  JS > cluster.setupRouterAccount('mysqlrouter', {password: "iUNdq-ZomoH-jbXLk-Kq=TJ-6yjsS"})
+    ```
+
+    输出结果：
+
+    ```text
+    Creating user mysqlrouter@%.
+    Account mysqlrouter@% was successfully created.
+    ```
+
+    验证 `mysqlrouter` 用户是否创建成功：
+
+    ```mysql hl_lines="10"
+    MySQL  localhost:33060+ ssl  SQL > select user,host from mysql.user;
+    +---------------------------+-----------+
+    | user                      | host      |
+    +---------------------------+-----------+
+    | kpanda                    | %         |
+    | mysql_innodb_cluster_1000 | %         |
+    | mysql_innodb_cluster_1001 | %         |
+    | mysql_innodb_cluster_1002 | %         |
+    | mysqladmin                | %         |
+    | mysqlrouter               | %         |
+    | root                      | %         |
+    | localroot                 | localhost |
+    | mysql.infoschema          | localhost |
+    | mysql.session             | localhost |
+    | mysql.sys                 | localhost |
+    | mysqlhealthchecker        | localhost |
+    | mysqlmetrics              | localhost |
+    +---------------------------+-----------+
+    13 rows in set (0.00 sec)
+    ```
+
+3. 重新启动 `router` 的 deployment：
+
+    ```shell
+    kubectl scale deploy mcamel-common-kpanda-mgr-router --replicas=0 -n mcamel-system
+    kubectl scale deploy mcamel-common-kpanda-mgr-router --replicas=2 -n mcamel-system
+    ```
+
+    验证恢复情况：
+
+    ```shell
+    kubectl get deploy | grep router
+
+    mcamel-common-kpanda-mgr-router             2/2     2            2           2d2h
+    mcamel-common-mgr-cluster-router            2/2     2            2           2d2h
+    ```
+
+    此时 `router` 正常运行，DCE 安装流程恢复正常。
+
 ## 社区版问题
 
 ### kind 集群重装 DCE 5.0 时 Redis 卡住
