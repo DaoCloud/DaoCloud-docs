@@ -51,7 +51,7 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
         baize   baize-system  5           2025-08-18 11:39:12.328965189 +0800 CST  deployed    baize-v0.19.1    v0.19.1
         ```
 
-    1. 执行以下命令，在输出的 YAML 内容中，找到 `notebook_images` 或类似字段，定位到与您版本号匹配的镜像地址。
+    1. 执行以下命令，在输出的 YAML 内容中，找到 `notebook_images` 或类似字段，定位到与版本号匹配的镜像地址。
        复制其中一个与版本匹配的镜像地址备用，例如 `192.168.157.30/release.daocloud.io/baize/baize-notebook:v0.19.1`。
 
         ```bash
@@ -62,7 +62,7 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
 
 === "界面化操作"
 
-    1. 登录平台，从左侧导航栏进入 **容器管理** -> **集群列表** 。在集群列表界面中点击进入 **kapanda-global-cluster** 全局服务集群。
+    1. 登录 DCE 5.0，从左侧导航栏进入 **容器管理** -> **集群列表** ，找到并点击 **kapanda-global-cluster** 全局服务集群。
 
         ![进入集群列表界面](../../images/custom-image-02.png)
 
@@ -80,7 +80,7 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
         ![查看YAML](../../images/custom-image-05.png)
 
     1. 在弹出的 YAML 编辑器中，找到 `data.config.yaml` -> `notebook_images:` 字段。列表中展示了当前所有内置的 Notebook 镜像。
-       请复制其中一个作为您的基础镜像地址，例如 `192.168.157.30/release.daocloud.io/baize/baize-notebook:v0.19.1`。
+       复制其中一个作为基础镜像地址，例如 `192.168.157.30/release.daocloud.io/baize/baize-notebook:v0.19.1`。
 
         ![查看notebook基础镜像](../../images/custom-image-06.png)
 
@@ -88,17 +88,17 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
 
 本示例演示如何安装特定 CUDA 版本的 PyTorch。
 
-1. 在您的本地开发环境或构建服务器上创建 `Dockerfile`，以[上一步获取的基础镜像](/#notebook_1)为起点，安装所需依赖。
+1. 在本地开发环境或构建服务器上创建 `Dockerfile`，以[上一步获取的基础镜像](#notebook_1)为起点，安装所需依赖。
 
     ```dockerfile title="Dockerfile 示例"
     # 使用上一步获取的基础镜像地址
     FROM 192.168.157.30/release.daocloud.io/baize/baize-notebook:v0.19.1
 
-    # 安装您需要的依赖，例如支持 CUDA 11.8 的 PyTorch
+    # 安装所需要的依赖，例如支持 CUDA 11.8 的 PyTorch
     RUN pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
     ```
 
-1. 构建并推送您的定制镜像：
+1. 构建并推送定制镜像：
 
     ```bash
     # 定义新镜像的完整名称和标签
@@ -121,7 +121,7 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
 
 === "命令行操作"
 
-    1. 在您的管理节点上，执行以下命令进入 `baize` ConfigMap 的编辑模式。
+    1. 在管理节点上，执行以下命令进入 `baize` ConfigMap 的编辑模式。
 
         ```bash
         kubectl edit cm baize -n baize-system
@@ -178,6 +178,7 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
     ![进入创建Notebook](../../images/custom-image-10.png)
 
 1. 在创建 Notebook 的 **资源配置** 环节中选择配置的 Notebook 类型，**镜像类型** 选择 **预制镜像** 。
-   在 **镜像地址** 的下拉菜单中，您现在应该能看到刚刚添加的自定义镜像选项（例如 `...:v0.19.1-cuda11.8-torch2.0`）。选择该镜像，配置其他资源后创建实例。
+   在 **镜像地址** 的下拉菜单中，您现在应该能看到刚刚添加的自定义镜像选项（例如 `...:v0.19.1-cuda11.8-torch2.0`）。
+   选择该镜像，配置其他资源后即可创建实例。
 
     ![创建Notebook的资源配置](../../images/custom-image-11.png)
