@@ -1,5 +1,7 @@
 # 为 Notebook 定制开发环境镜像
 
+*[Baize]: AI Lab 组件的开发代号
+
 Notebook 提供了一套功能强大的在线开发环境。然而，在面对特定算法模型时，您可能需要不同版本的依赖库（例如特定版本的 CUDA、PyTorch 或 TensorFlow）。此时，平台内置镜像无法完全覆盖需求。
 
 本文档将指导您如何基于 AI Lab 提供的基础镜像，构建并注册包含自定义依赖的 Notebook 镜像，使平台用户在创建 Notebook 实例时能够直接选择该自定义镜像。
@@ -18,19 +20,14 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
 - 本地或服务器上已安装容器构建工具；
 - 本地已配置好 `kubectl` 命令行工具并连接到目标集群。
 
-*[Baize]: AI Lab 组件的开发代号
-
 ## 操作步骤
 
 整个过程分为四个核心步骤：
 
 1. [获取基础镜像](#notebook_1)：获取当前 AI Lab 版本对应的 Notebook 基础镜像地址。
-
-2. [定制并构建镜像](#_7)：编写 Dockerfile 添加自定义依赖，并构建、推送镜像。
-
-3. [注册新镜像](#_8)：将新镜像的地址注册到 AI Lab 的配置中，并重启服务使其生效。
-
-4. [使用新环境](#_11)：在创建 Notebook 实例时，从下拉列表中选择您新添加的镜像。
+1. [定制并构建镜像](#_7)：编写 Dockerfile 添加自定义依赖，并构建、推送镜像。
+1. [注册新镜像](#_8)：将新镜像的地址注册到 AI Lab 的配置中，并重启服务使其生效。
+1. [使用新环境](#_11)：在创建 Notebook 实例时，从下拉列表中选择您新添加的镜像。
 
 ### 获取基础 Notebook 镜像
 
@@ -40,7 +37,7 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
 
 1. 通过 SSH 登录到 Kubernetes 集群的管理节点。
 
-2. 执行以下命令，查看已安装的 AI Lab 版本。这将帮助您定位对应版本的镜像。
+1. 执行以下命令，查看已安装的 AI Lab 版本。这将帮助您定位对应版本的镜像。
 
     ```bash
     helm list -n baize-system | grep baize
@@ -53,9 +50,10 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
     baize   baize-system  5           2025-08-18 11:39:12.328965189 +0800 CST  deployed    baize-v0.19.1    v0.19.1
     ```
 
-3. 执行以下命令，在输出的 YAML 内容中，找到 `notebook_images` 或类似字段，定位到与您版本号匹配的镜像地址。请复制其中一个与您版本匹配的镜像地址备用，例如：`192.168.157.30/release.daocloud.io/baize/baize-notebook:v0.19.1`。
+1. 执行以下命令，在输出的 YAML 内容中，找到 `notebook_images` 或类似字段，定位到与您版本号匹配的镜像地址。
+   复制其中一个与版本匹配的镜像地址备用，例如 `192.168.157.30/release.daocloud.io/baize/baize-notebook:v0.19.1`。
 
-   ```bash
+    ```bash
     kubectl get cm baize -n baize-system -o yaml
     ```
     
@@ -63,23 +61,24 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
 
 #### 界面化操作
 
-1. 登录平台，从左侧导航栏进入 **容器管理** -> **集群列表**。在集群列表界面中点击进入 **kapanda-global-cluster** 全局集群。
+1. 登录平台，从左侧导航栏进入 **容器管理** -> **集群列表** 。在集群列表界面中点击进入 **kapanda-global-cluster** 全局服务集群。
 
     ![进入集群列表界面](../../images/custom-image-02.png)
 
-2. 在 **kapanda-global-cluster** 集群的左侧导航栏，选择 **配置与密钥** -> **配置项** (ConfigMap)。并在页面顶部的 **命名空间** 下拉框中，选择 **baize-system**。
+1. 在 **kapanda-global-cluster** 集群的左侧导航栏，选择 **配置与密钥** -> **配置项** (ConfigMap)。并在页面顶部的 **命名空间** 下拉框中，选择 **baize-system**
 
     ![进入 baize system 命名空间](../../images/custom-image-03.png)
 
-3. 在列表中找到并点击进入名为 **baize** 的配置项。
+1. 在列表中找到并点击进入名为 **baize** 的配置项。
 
     ![进入 baize 的配置项界面](../../images/custom-image-04.png)
 
-4. 点击页面右上角的 **编辑 YAML**。
+1. 点击页面右上角的 **编辑 YAML**
 
     ![查看YAML](../../images/custom-image-05.png)
 
-5. 在弹出的 YAML 编辑器中，找到 `data.config.yaml` -> `notebook_images:` 字段。列表中展示了当前所有内置的 Notebook 镜像。请复制其中一个作为您的基础镜像地址，例如：`192.168.157.30/release.daocloud.io/baize/baize-notebook:v0.19.1`。
+1. 在弹出的 YAML 编辑器中，找到 `data.config.yaml` -> `notebook_images:` 字段。列表中展示了当前所有内置的 Notebook 镜像。
+   请复制其中一个作为您的基础镜像地址，例如 `192.168.157.30/release.daocloud.io/baize/baize-notebook:v0.19.1`。
 
     ![查看notebook基础镜像](../../images/custom-image-06.png)
 
@@ -99,7 +98,7 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
     RUN pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
     ```
 
-2. 构建并推送您的定制镜像：
+1. 构建并推送您的定制镜像：
 
     !!! warning
 
@@ -128,7 +127,7 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
     kubectl edit cm baize -n baize-system
     ```
 
-2. 在打开的 YAML 编辑器中，找到 `data.config.yaml` 下的 `notebook_images` 列表。在列表中添加一个新的条目，指向推送的定制镜像。最后保存并退出编辑器。
+1. 在打开的 YAML 编辑器中，找到 `data.config.yaml` 下的 `notebook_images` 列表。在列表中添加一个新的条目，指向推送的定制镜像。最后保存并退出编辑器。
 
     ```yaml
     # ... (已有配置)
@@ -144,10 +143,10 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
     # ... (其他配置)
     ```
 
-    - `name`: 为您在步骤 2 中推送的 `CUSTOM_IMAGE_NAME`
+    - `name`: 这是上一节定制并构建出的镜像 `CUSTOM_IMAGE_NAME`
     - `type`: 指定镜像的分类。如果主要用于 Jupyter，请设置 `JUPYTER`
 
-3. 在您的管理节点上，请依次执行以下命令，重启服务。
+1. 在您的管理节点上，请依次执行以下命令，重启服务。
 
     ```bash
     # 重启 baize-apiserver
@@ -156,15 +155,16 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
 
 #### 界面化操作
 
-1. 返回您在步骤 1 中打开的 baize ConfigMap **编辑 YAML** 界面。找到 `data.config.yaml` -> `notebook_images:` 列表。在列表末尾添加一个新条目，`name` 值为您在步骤 2 中推送的 `CUSTOM_IMAGE_NAME`。点击右下角的 **确定** 保存更改。
+1. 返回您在步骤 1 中打开的 Baize ConfigMap **编辑 YAML** 界面。找到 `data.config.yaml` -> `notebook_images:` 列表。
+   在列表末尾添加一个新条目，`name` 值为您在步骤 2 中推送的 `CUSTOM_IMAGE_NAME`。点击右下角的 **确定** 保存更改。
 
     ![添加新镜像](../../images/custom-image-07.png)
 
-2. 重启服务。仍在 **kapanda-global-cluster** 集群页面。从左侧导航栏进入 **工作负载** -> **无状态负载**。并在页面上方将 **命名空间** 选择为 **baize-system**。
+1. 重启服务。仍在 **kapanda-global-cluster** 集群页面。从左侧导航栏进入 **工作负载** -> **无状态负载** 。并在页面上方将 **命名空间** 选择为 **baize-system**
 
     ![查看baize-system的工作负载](../../images/custom-image-08.png)
 
-3. 在列表中找到 **baize-apiserver**，点击右侧的 **┇** 操作按钮，选择 **修改状态** -> **重启**。
+1. 在列表中找到 **baize-apiserver**，点击右侧的 **┇** 操作按钮，选择 **修改状态** -> **重启**
 
     ![重启服务](../../images/custom-image-09.png)
 
@@ -172,10 +172,11 @@ Notebook 提供了一套功能强大的在线开发环境。然而，在面对�
 
 完成以上所有步骤后，您的新环境就已经准备就绪了。
 
-1. 返回平台，导航至 **AI Lab** -> **开发控制台** -> **Notebooks**。点击右上角的 **创建**。
+1. 返回平台，导航至 **AI Lab** -> **开发控制台** -> **Notebooks**。点击右上角的 **创建**
 
     ![进入创建Notebook](../../images/custom-image-10.png)
 
-2. 在创建 Notebook 的 **资源配置** 环节中选择配置的 Notebook 类型，**镜像类型** 选择 **预制镜像**。在 **镜像地址** 的下拉菜单中，您现在应该能看到刚刚添加的自定义镜像选项（例如 `...:v0.19.1-cuda11.8-torch2.0`）。选择该镜像，配置其他资源后创建实例。
+1. 在创建 Notebook 的 **资源配置** 环节中选择配置的 Notebook 类型，**镜像类型** 选择 **预制镜像** 。
+   在 **镜像地址** 的下拉菜单中，您现在应该能看到刚刚添加的自定义镜像选项（例如 `...:v0.19.1-cuda11.8-torch2.0`）。选择该镜像，配置其他资源后创建实例。
 
     ![创建Notebook的资源配置](../../images/custom-image-11.png)
