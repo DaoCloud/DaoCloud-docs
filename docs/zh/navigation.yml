@@ -1296,6 +1296,7 @@ nav:
                       - 删除 Notebook: baize/developer/notebooks/delete.md
                       - SSH 访问 Notebook: baize/developer/notebooks/notebook-with-ssh.md
                       - Notebook 中使用环境: baize/developer/notebooks/notebook-with-envs.md
+                      - 为 Notebook 定制开发环境镜像: baize/developer/notebooks/customize-notebook-image.md
                       - baizectl 命令行工具: baize/developer/notebooks/baizectl.md
                       - baizess 换源工具: baize/developer/notebooks/baizess.md
                       - Notebook 闲置超时自动关机: baize/developer/notebooks/notebook-auto-close.md
