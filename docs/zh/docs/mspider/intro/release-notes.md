@@ -4,6 +4,21 @@
 
 *[mspider]: DaoCloud 服务网格的内部开发代号
 
+## 2025-10-31
+
+### v0.37.0
+
+- **新增** Gateway API 支持。
+- **修复** PodMonitor 中已弃用的 targetPort 字段，将其替换为推荐的 portNumber 字段以消除 Prometheus Operator 的警告日志。涉及以下 PodMonitor 资源：
+  mspider-system/mspider-ckube-metrics
+  mspider-system/mspider-ckube-remote-metrics
+- **修复** istio 网关 helm 参数强校验问题。
+- **升级** Ckube 升级到 v1.3.11，修复 gcc 启动问题。
+- **升级** Ckube 升级到 v1.3.10，修复 watcher 重启导致集群资源 not found 问题。
+- **升级** hosted_apiserver 到 v0.0.14.
+- **升级** 前端版本至 v0.35.0
+- **升级** pluma-operator 升级至 v0.1.3
+
 ## 2025-08-08
 
 ### v0.36.0
