@@ -4,6 +4,29 @@
 
 *[kpanda]: DaoCloud 容器管理的内部开发代号
 
+## 2025-10-09
+
+### v0.43
+
+- **新增**  gpu device 列表新增通过UUID和ID搜索功能。
+- **修复** cronjob 的 pause 状态显示不正确。
+- **修复** 通过修改集群高级配置 Helm 操作记录保留未生效。
+- **优化** 查询pod很慢，页面有报错。
+- **优化** GPU 管理支持显示 dashboard.
+- **优化** 获取的集群资源过滤掉 shim 集群的资源.
+- **优化** 工作集群新增网络相关优化参数。
+- **升级** 更新 Kubean API 至 v0.28.4。
+
+## 2025-08-31
+
+### v0.42
+
+- **新增** GPU 模式支持其他厂商 device plugin
+- **新增** kpanda 支持 shim 集群。
+- **新增** 适配 kubespray containerd_download_url 变更。
+- **优化** 节点检查：节点无法联通时可以快速失败。
+- **优化** 适配 kubespray redhat 8 系列和 kylin OS 的变更。
+
 ## 2025-07-31
 
 ### v0.41
