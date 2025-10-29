@@ -18,30 +18,27 @@ This page describes how to create subnets and IP pools before creating workloads
 1. [SpiderPool successfully deployed.](../../modules/spiderpool/install/install.md)
 2. [Multus with Macvlan/SR-IOV has been successfully deployed.](../../modules/multus-underlay/install.md)
 
-## Interface operation
+## UI operation
 
-1. After login to DCE, click `Container Management` -> `Clusters` in the left navigation bar, and find the cluster. Then click `Container Network` -> `Network Settings` in the left navigation bar.
+1. After login to DCE, click **Container Management** -> **Clusters** in the left navigation bar, and find the cluster. Then click **Container Network** -> **Network Settings** in the left navigation bar.
 
     ![Network Config](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/networkconfig01.png)
 
-2. Enter `Network Configuration` to confirm whether the subnet to be used has been created.
+2. Enter **Network Configuration** to confirm whether the subnet to be used has been created.
 
     - If the subnet to be used has been created by default, you can directly create an IP pool.
-    - If the subnet to be used is not created by default, you can enter the page and click `Create Subnet`.
+    - If the subnet to be used is not created by default, you can enter the page and click **Create Subnet**
 
     ![Create Subnet](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/subnet01.png)
 
     ​Parameter details:
 
-    - `IPv4/IPv6 Type`: the subnet type of the subnet to be created.
+    - **IPv4/IPv6 Type:** the subnet type of the subnet to be created.
+    - **Subnet:** the subnet segment that has been planned. If used with Macvlan/IPvlan, please confirm the proper network interface/sub-interface with the network administrator in advance.
+    - **Gateway:** the gateway corresponding to the subnet. Please confirm with your network colleagues in advance.
+    - **VLAN ID:** the VLAN ID corresponding to the subnet.
 
-    - `Subnet`: the subnet segment that has been planned. If used with Macvlan, please confirm the corresponding network interface/sub-interface with the network administrator in advance.
-
-    - `Gateway`: the gateway corresponding to the subnet. Please confirm with your network colleagues in advance.
-    ​
-    - `VLAN ID`: the VLAN ID corresponding to the subnet.
-
-3. Click `Next` to enter `Select IP`, enter the IP segment to be used (the above-mentioned IP in the subnet), and click `OK` to complete the creation of the subnet.
+3. Click **Next** to enter **Select IP**, enter the IP segment to be used (the above-mentioned IP in the subnet), and click **OK** to complete the creation of the subnet.
 
     ![Choose IP](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/subnet02.png)
 
@@ -49,7 +46,7 @@ This page describes how to create subnets and IP pools before creating workloads
 
     ![Subnet Details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/subnet03.png)
 
-5. On the subnet details page, click `Create IP Pool`.
+5. On the subnet details page, click **Create IP Pool**
 
     !!! note
 
@@ -58,29 +55,35 @@ This page describes how to create subnets and IP pools before creating workloads
         - If strict control of IP resources is adopted, you can complete the creation of IP pool in advance.
         - If coarse-grained control of IP resources is adopted, there is no need to create an IP pool in advance.
 
-    On the `Create IP Pool` page, input the following parameters:
+    On the **Create IP Pool** page, input the following parameters:
 
     ![Create IP Pool](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/subnet04.png)
 
-    - `Gateway`: `Gateway` inherits `Subnet Gateway` by default and can be modified.
-    - `Custom Routing`: routes can be customized based on IP pool granularity for special needs.
-    - `Workload Affinity`: a workload label (such as `app: workload01`). After the IP pool is created, it can only be selected by the corresponding workload to achieve the effect of a fixed IP pool.
-    - `Node Affinity`: a node label (such as `node:controller-1`). After the IP pool is created, the workload Pod needs to be scheduled to the corresponding node to use the created IP pool.
-    - `Namespace Affinity`: After enabling it, you can select the corresponding namespace. After selecting, only workloads in the corresponding namespace can use the created IP pool.
+    - **Namespace:** Specify a namespace. (A namespace administrator can only view IP pools within their own namespace and cannot view subnets.)
+    - **Gateway:** **Gateway** inherits **Subnet Gateway** by default and can be modified.
+    - **Custom Routing:** routes can be customized based on IP pool granularity for special needs.
+    - **Workload Affinity:** a workload label (such as `app: workload01`). After the IP pool is created, it can only be selected by the corresponding workload to achieve the effect of a fixed IP pool.
+    - **Node Affinity:** a node label (such as `node:controller-1`). After the IP pool is created, the workload Pod needs to be scheduled to the corresponding node to use the created IP pool.
+    - **Namespace Affinity:** After enabling it, you can select the corresponding namespace. After selecting, only workloads in the corresponding namespace can use the created IP pool.
 
     !!! note
 
-        If no affinity is added at creation time, the created IP pool will be a `shared IP pool`.
+        If no affinity is added at creation time, the created IP pool will be a **shared IP pool**.
 
-6. Click the IP pool name, and then click `Add IP` to select `IP start Address` and `IP number` to join the IP pool. Click `OK` to complete the IP addition, and click again to complete the creation of the IP pool.
+6. Click the IP pool name, and then click **Add IP** to select **IP start Address** and **IP number** to join the IP pool. Click **OK** to complete the IP addition, and click again to complete the creation of the IP pool.
 
-    `Get IP rules`: obtain the corresponding number of IPs in turn from the `IP Start Address`. If the IP segments are not consecutive IPs, skip the intermediate IPs and obtain them sequentially.
+    **Get IP rules:** obtain the corresponding number of IPs in turn from the **IP Start Address** . If the IP segments are not consecutive IPs, skip the intermediate IPs and obtain them sequentially.
 
     ![Add IP](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/subnet05.png)
 
-7. After the creation is complete, [the workload can use the IP Pool](../use-ippool/usage.md)
+7. After creation, click the IP pool name to open the IP Management page.
 
-## YAML creation
+    **Migrate IPs:** Select the IPs to be migrated -> click the **Migrate IP** button -> choose the target IP pool to complete the migration (IPs can be gracefully migrated between IP pools within the same namespace).
+    **Remove IPs:** Select the IPs to be removed -> click the **Remove IP** button -> confirm to complete the removal.
+
+8. After the creation is complete, [the workload can use the IP Pool](../use-ippool/usage.md)
+
+## Create via YAML
 
 Subnets and IPPools can also be created directly via YAML.
 
@@ -95,11 +98,12 @@ spec:
    gateway: 172.30.120.1
    ipVersion: 4
    ips:
-   - 172.30.120.126-172.30.120.127 #The subnet IP has been planned, and the IP segment can be entered
-       #Such as: 72.30.120.126-172.30.120.127 segment or a single IP such as: 172.30.120.126
+   - 172.30.120.126-172.30.120.127 # (1)!
    subnet: 172.30.120.0/21
    vlan: 0
 ```
+
+1. The subnet IP has been planned, and the IP segment can be entered. Such as: 72.30.120.126-172.30.120.127 segment or a single IP such as: 172.30.120.126
 
 ### Create IPPool via YAML
 
@@ -112,6 +116,7 @@ spec:
    ipVersion: 4
    subnet: 172.30.120.0/21
    ips:
-   - 172.30.120.126-172.30.120.127 # Added to the IP in the subnet, you can enter the IP segment
-          # Such as: 172.30.120.126-172.30.120.127 segment or a single IP such as: 172.30.120.126
+   - 172.30.120.126-172.30.120.127 # (1)!
 ```
+
+1. Added to the IP in the subnet, you can enter the IP segment. Such as 172.30.120.126-172.30.120.127 segment or a single IP such as: 172.30.120.126
