@@ -3,17 +3,16 @@
 Pytorch 是一个开源的深度学习框架，它提供了一个灵活的训练和部署环境。
 Pytorch 任务是一个使用 Pytorch 框架的任务。
 
-在 AI Lab 中，我们提供了 Pytorch 任务支持和适配，您可以通过界面化操作，
-快速创建 Pytorch 任务，进行模型训练。
+在 AI Lab 中，我们提供了 Pytorch 任务支持和适配，您可以通过界面化操作快速创建 Pytorch 任务，进行模型训练。
 
 ## 任务配置介绍
 
 - 任务类型同时支持 `Pytorch 单机` 和 `Pytorch 分布式` 两种模式。
-- 运行镜像内已经默认支持 Pytorch 框架，无需额外安装。
+- 默认的 `baize-notebook` 镜像不预装深度学习框架，请先在[环境管理](../dataset/environments.md)中安装 PyTorch 或 TensorFlow，并将其挂载到任务运行环境。
 
 ## 任务运行环境
 
-在这里我们使用 `baize-notebook` 基础镜像 和 `关联环境` 的方式来作为任务基础运行环境。
+在这里我们使用 `baize-notebook` 基础镜像和 `关联环境` 的方式来作为任务基础运行环境。挂载环境后，需通过 `conda activate <env_name> && python - <<'EOF'` 的形式在 Conda 环境中执行任务命令。
 
 > 了解如何创建环境，请参考 [环境列表](../dataset/environments.md)。
 
@@ -30,10 +29,12 @@ Pytorch 任务是一个使用 Pytorch 框架的任务。
 
 #### 运行参数
 
-- 启动命令 使用 `bash`
-- 命令参数使用
+- 启动命令使用 `bash`
+- 命令参数参考下方示例：
+- 将 `<env_name>` 替换为已挂载的 Conda 环境名称（例如 `torch-env`）。
 
-```python
+```bash
+conda activate <env_name> && python - <<'EOF'
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -71,7 +72,10 @@ for epoch in range(100):
         print(f'Epoch [{epoch+1}/100], Loss: {loss.item():.4f}')
 
 print('Training finished.')
+EOF
 ```
+
+以上 heredoc 写法适合快速临时验证。正式训练时，建议通过挂载数据空间引入真实的数据集和训练代码，并直接在命令中调用这些文件。
 
 #### 运行结果
 
@@ -103,10 +107,12 @@ Training finished.
 
 #### 运行参数
 
-- 启动命令 使用 `bash`
-- 命令参数使用
+- 启动命令使用 `bash`
+- 命令参数参考下方示例：
+- 将 `<env_name>` 替换为已挂载的 Conda 环境名称（例如 `torch-env`）。
 
-```python
+```bash
+conda activate <env_name> && python - <<'EOF'
 import os
 import torch
 import torch.distributed as dist
@@ -209,7 +215,10 @@ def train():
 
 if __name__ == '__main__':
     train()
+EOF
 ```
+
+同样地，该命令主要用于临时测试。生产训练任务请挂载包含数据集和训练脚本的数据空间，在容器内直接引用这些文件。
 
 #### 任务副本数
 

@@ -2,6 +2,49 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2025-08-31
+
+### v0.38.1
+
+#### Insight Server
+
+- **新增** `insight-server` 内置 `es`、`database`、`vmselect` 的 `vmalert` 规则  
+- **新增** 告警支持 `target_type` 为命名空间  
+- **修复** 调整 `Prometheus CR` 默认的采集间隔和评估间隔为 `1m`  
+- **修复** 告警名称校验逻辑  
+- **修复** 消费审计日志的错误  
+- **修复** `agentinstallparam API` 中 `trace` 输出字段丢失的问题  
+- **修复** 跟随 `Jaeger UI` 逻辑的 `trace` 时长计算问题  
+- **修复** 移除未使用的 `apiserver` 和 `ksm` 指标  
+- **优化** 更新 `insight chart` 中的 `smon cr`  
+- **优化** 支持安全连接 `Kafka`  
+- **优化** `otelcol` 仅通过事件发送到 `es/kafka`  
+- **优化** 更新默认的 `insight-agent spanmetrics` 配置（与 server 协同）  
+- **优化** 升级 `etcd-exporter` 从 `0.7.0` 到 `0.8.0`  
+- **优化** 升级 `Jaeger` 至 `v2`  
+- **优化** 升级 `jaeger-v2` 至 `jaeger-2.9.1-6ede7f9f` 
+
+#### Insight Agent
+
+- **新增** `insight-agent` Chart 支持 `Jaeger` 远程采样服务器  
+- **新增** 在写入 `Elasticsearch` 时增加 `kafka_record_metadata` 字段  
+- **新增** 日志下载支持排序与 `MaxLogCount` 限制  
+- **新增** 在 `insight-tracing-debug.json` 中增加热力图展示  
+- **修复** `grafana-operator` 日志等级配置问题  
+- **修复** `Grafana` 侧边栏显示问题  
+- **修复** `otel event collector` 选主问题  
+- **修复** `spanmetrics` 时间戳重复采样问题  
+- **修复** `es-init` 在重启时覆盖配置的问题  
+- **修复** `Fluentbit` 的 `add_time.lua` 纳秒精度问题  
+- **修复** `vmalert` 列表与监听所有命名空间的规则问题  
+- **修复** 关闭 `vector headless` 避免指标重复采集  
+- **优化** 升级 `otel stack`  
+- **优化** 升级 `Fluentbit`  
+- **优化** 启用 `otel event collector` 选主功能  
+- **优化** 升级 `tailing-sidecar-operator` 从 `0.15.0` 到 `0.18.0`  
+- **优化** 升级 `grafana-operator` 从 `4.5.0` 到 `4.5.1`  
+- **优化** 升级 `Fluentbit/XC` 从 `4.0.1` 到 `4.0.7`  
+
 ## 2025-06-30
 
 ### v0.37.0

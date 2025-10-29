@@ -64,19 +64,36 @@
 | | **GPU 配置** ：启用或禁用 GPU 配置；部分涉及到 GPU 的依赖包需要在预加载时配置 GPU 资源。 | 启用 |
 | | **关联存储** ：选择关联的存储配置；环境依赖包会存储在关联存储中。注意：需要使用支持 `ReadWriteMany` 的存储。 | my-storage-config |
 | | **数据存储大小** ：启用或禁用数据存储大小设置；合理评估数据量以避免造成存储资源浪费；如默认不配置，默认不限量（100TB）。 | 启用 |
-配置完成后，点击 **创建** 按钮，系统会自动创建并配置新的 Python 环境。
+| | **pip 镜像推荐** ：在中国大陆环境下，可使用清华 TUNA（`https://pypi.tuna.tsinghua.edu.cn/simple`）或阿里云（`https://mirrors.aliyun.com/pypi/simple`）等镜像以提升下载速度。 | |
 
-这里有一个 YAML 示例：
+配置完成后，点击 **创建** 按钮，系统会自动创建并配置新的 Python 环境。
+	
+### 示例依赖文件
+
+在输入编辑器中可以参考以下模板进行填写。平台会自动写入环境名称和 Python 版本，无需手动指定。
+
+在中国大陆网络环境中，可以优先使用国内的 Conda 镜像源（如清华 TUNA、阿里云等）来提升依赖下载速度。
 
 ```yaml title="environment.yaml"
-name: tensorflow
 channels:
   - defaults
-  - conda-forge
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
 dependencies:
-  - python=3.12
-  - tensorflow
-prefix: /opt/conda/envs/tensorflow
+  - pytorch=2.2
+  - torchvision
+  - torchaudio
+  - pip
+  - pip:
+      - numpy==1.24.4
+      - matplotlib>=3.8
+```
+
+```txt title="requirements.txt"
+torch==2.2.0
+torchvision==0.17.0
+torchaudio==2.2.0
+numpy>=1.24
+matplotlib>=3.8
 ```
 
 ## 故障排除

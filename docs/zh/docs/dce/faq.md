@@ -20,6 +20,9 @@
 - 操作系统相关问题
     - [在 CentOS 7.6 安装时报错](../install/faq.md#centos-76)
     - [CentOS 环境准备问题](../install/faq.md#centos)
+    - [osRepos 的 external 模式 externalRepoURLs 检查失败](../install/faq.md#osrepos-external-externalrepourls)
+    - [Manifest 开启 MySQL MGR 模式无效](../install/faq.md#manifest-mysql-mgr)
+    - [MGR 模式 MySQL Common 实例初始化失败导致 DCE 安装失败](../install/faq.md#mgr-mysql-common-dce)
 - 社区版安装问题
     - [kind 集群重装 DCE 5.0 时 Redis 卡住](../install/faq.md#kind-dce-50-redis)
     - [社区版安装 fluent-bit 失败](../install/faq.md#fluent-bit)
