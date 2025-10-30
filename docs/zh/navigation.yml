@@ -804,7 +804,7 @@ nav:
                   - 其他观测技术集成:
                       - insight/best-practice/index.md
                       - 使用OTel接收 SkyWalking 链路数据: insight/best-practice/sw-to-otel.md
-                      - 接入 Nginx Ingress 的链路追踪: insight/best-practiceingress-otel.md
+                      - 接入 Nginx Ingress 的链路追踪: insight/best-practice/ingress-otel.md
               - 仪表盘:
                   - 概览: insight/user-guide/dashboard/overview.md
                   - 仪表盘: insight/user-guide/dashboard/dashboard.md
