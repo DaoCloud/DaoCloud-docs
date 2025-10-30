@@ -36,7 +36,7 @@ hide:
     - 使用[无侵入](../quickstart/otel/operator.md)方式增强应用
     - 针对 [Java 应用观测](../quickstart/otel/java/index.md)
     - 针对 [Golang 应用观测](../quickstart/otel/golang/golang.md)
-    - [其他观测技术集成](../best-practice/sw-to-otel.md)
+    - [其他观测技术集成](../best-practice/index.md)
 
 </div>
 
