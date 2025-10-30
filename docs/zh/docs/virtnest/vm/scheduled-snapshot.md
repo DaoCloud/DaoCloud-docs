@@ -9,11 +9,11 @@
 1. 点击左侧导航栏上的 __容器管理__ -> __集群列表__ ，在列表页面，选择目标虚拟机所在的集群。
    进入集群后，点击 __工作负载__ -> __定时任务__ ，选择 __YAML 创建__ 定时任务，参考以下 YAML 示例可为指定虚拟机定时创建快照。
 
-    ![yaml创建定时任务](../images/cronjob.jpg)
+![yaml创建定时任务](../images/cronjob.jpg)
 
-    ??? note "点击查看创建定时任务的 YAML 示例"
+??? note "点击查看创建定时任务的 YAML 示例"
 
-        ```yaml
+```yaml
         apiVersion: batch/v1
         kind: CronJob
         metadata:
@@ -53,12 +53,23 @@
                         - -c
                         - |
                           export SUFFIX=$(date +"%Y%m%d-%H%M%S")
+                          export SNAPSHOT_NAME="${VM}-snapshot-${SUFFIX}
+
+                          VM_UID=$(kubectl get vm ${VM} -n ${NS} -o jsonpath='{.metadata.uid}')
+                          VM_API_VERSION=$(kubectl get vm ${VM} -n ${NS} -o jsonpath='{.apiVersion}')
+
                           cat <<EOF | kubectl apply -f -
                           apiVersion: snapshot.kubevirt.io/v1alpha1
                           kind: VirtualMachineSnapshot
                           metadata:
-                            name: $(VM)-snapshot-$SUFFIX
+                            name: ${SNAPSHOT_NAME}
                             namespace: $(NS)
+                            ownerReferences:
+                            - apiVersion: ${VM_API_VERSION}
+                              controller: true
+                              kind: VirtualMachine
+                              name: ${VM}
+                              uid: ${VM_UID}
                           spec:
                             source:
                               apiGroup: kubevirt.io
@@ -70,4 +81,4 @@
 
 1. 创建定时任务并成功运行后，可点击 __虚拟机__ 在列表页面选择目标虚拟机，进入详情后可查看快照列表。
 
-    ![定时快照](../images/snapshot.jpg)
+![定时快照](../images/snapshot.jpg)
