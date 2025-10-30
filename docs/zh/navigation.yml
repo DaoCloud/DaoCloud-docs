@@ -802,7 +802,9 @@ nav:
                       - OTel SDK增强Go应用: insight/quickstart/otel/golang/golang.md
                       - 将 TraceId 和 SpanId 写入 Golang 应用日志: insight/quickstart/otel/golang/traceid_logs.md
                   - 其他观测技术集成:
-                      - 使用OTel接收SkyWalking链路数据: insight/best-practice/sw-to-otel.md
+                      - insight/best-practice/index.md
+                      - 使用OTel接收 SkyWalking 链路数据: insight/best-practice/sw-to-otel.md
+                      - 接入 Nginx Ingress 的链路追踪: insight/best-practice/ingress-otel.md
               - 仪表盘:
                   - 概览: insight/user-guide/dashboard/overview.md
                   - 仪表盘: insight/user-guide/dashboard/dashboard.md
