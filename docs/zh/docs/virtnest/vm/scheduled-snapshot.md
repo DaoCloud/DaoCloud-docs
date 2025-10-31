@@ -13,7 +13,7 @@
 
     ??? note "点击查看创建定时任务的 YAML 示例"
 
-    ```yaml
+        ```yaml
         apiVersion: batch/v1
         kind: CronJob
         metadata:
