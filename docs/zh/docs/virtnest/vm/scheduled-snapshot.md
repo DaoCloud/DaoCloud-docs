@@ -53,12 +53,23 @@
                         - -c
                         - |
                           export SUFFIX=$(date +"%Y%m%d-%H%M%S")
+                          export SNAPSHOT_NAME="${VM}-snapshot-${SUFFIX}
+
+                          VM_UID=$(kubectl get vm ${VM} -n ${NS} -o jsonpath='{.metadata.uid}')
+                          VM_API_VERSION=$(kubectl get vm ${VM} -n ${NS} -o jsonpath='{.apiVersion}')
+
                           cat <<EOF | kubectl apply -f -
                           apiVersion: snapshot.kubevirt.io/v1alpha1
                           kind: VirtualMachineSnapshot
                           metadata:
-                            name: $(VM)-snapshot-$SUFFIX
+                            name: ${SNAPSHOT_NAME}
                             namespace: $(NS)
+                            ownerReferences:
+                            - apiVersion: ${VM_API_VERSION}
+                              controller: true
+                              kind: VirtualMachine
+                              name: ${VM}
+                              uid: ${VM_UID}
                           spec:
                             source:
                               apiGroup: kubevirt.io
