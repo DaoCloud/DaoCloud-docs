@@ -523,7 +523,7 @@ nav:
                       - 工作负载使用 RDMA: network/config/userdma.md
                       - RDMA 使用方式对比: network/config/rdmatype.md
                       - RDMA 指标: network/config/rdma-metrics.md
-                  
+
               - 网络性能:
                   - 网络 CNI 性能测试报告: network/performance/cni-performance.md
                   - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
@@ -802,7 +802,9 @@ nav:
                       - OTel SDK增强Go应用: insight/quickstart/otel/golang/golang.md
                       - 将 TraceId 和 SpanId 写入 Golang 应用日志: insight/quickstart/otel/golang/traceid_logs.md
                   - 其他观测技术集成:
-                      - 使用OTel接收SkyWalking链路数据: insight/best-practice/sw-to-otel.md
+                      - insight/best-practice/index.md
+                      - 使用OTel接收 SkyWalking 链路数据: insight/best-practice/sw-to-otel.md
+                      - 接入 Nginx Ingress 的链路追踪: insight/best-practice/ingress-otel.md
               - 仪表盘:
                   - 概览: insight/user-guide/dashboard/overview.md
                   - 仪表盘: insight/user-guide/dashboard/dashboard.md
@@ -851,6 +853,7 @@ nav:
                   - VictoriaMetrics 资源规划: insight/best-practice/vm-resource-plan.md
                   - 创建 Remote Sampling Server: insight/reference/remote-sampling.md
                   - Insight 和 Insight-agent 安全的连接 Kafka: insight/reference/security-connect-kafka.md
+                  - 配置 Alertmanager 逐条发送告警通知: insight/reference/send-alert-notifications-individually.md
               - 兼容性测试:
                   - Kubernetes 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md

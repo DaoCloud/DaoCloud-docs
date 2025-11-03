@@ -4,23 +4,39 @@
 
 *[mspider]: DaoCloud 服务网格的内部开发代号
 
+## 2025-10-31
+
+### v0.37.0
+
+- **新增** Gateway API 支持
+- **修复** PodMonitor 中已弃用的 `targetPort` 字段，将其替换为推荐的 `portNumber` 字段以消除 Prometheus Operator 的警告日志。涉及以下 PodMonitor 资源：
+    - mspider-system/mspider-ckube-metrics
+    - mspider-system/mspider-ckube-remote-metrics
+- **修复** Istio 网关 helm 参数强校验问题
+- **升级** Ckube 升级到 v1.3.11，修复 GCC 启动问题
+- **升级** Ckube 升级到 v1.3.10，修复 watcher 重启导致集群资源 not found 问题
+- **升级** hosted_apiserver 到 v0.0.14
+- **升级** 前端版本至 v0.35.0
+- **升级** pluma-operator 升级至 v0.1.3
+
 ## 2025-08-08
 
 ### v0.36.0
 
 - **新增** 对 Istio v1.25.3 和 v1.24.6 的支持
 - **修复** 网格控制台无权限问题。
-- **修复** 网格版本 1.23 使用 pluma-operator 中网格网关无法创建问题。
-- **修复** Istio 版本大于 1.23 错误显示 istio-operator 没有安装，正确修复为 pluma-operator.
-- **修复** 同一个用户无法打开多个控制台问题。
-- **修复** 服务名称长度接近 63，查询服务版本异常问题。
-- **修复** Istio 1.24 标准化 Peer Metadata Attributes 导致无指标数据问题。
-- **修复** 离线环境无法安装 1.23+ 网格问题。
-- **升级** 升级 cloudtty 版本到 v0.8.7。
+- **修复** Istio 1.23 使用 pluma-operator 中网格网关无法创建问题。
+- **修复** Istio 版本大于 1.23 错误显示 istio-operator 没有安装，正确修复为 pluma-operator
+- **修复** 同一个用户无法打开多个控制台问题
+- **修复** 服务名称长度接近 63，查询服务版本异常问题
+- **修复** Istio 1.24 标准化 Peer Metadata Attributes 导致无指标数据问题
+- **修复** 离线环境无法安装 Istio 1.23+ 网格问题
+- **升级** 升级 cloudTTY 版本到 v0.8.7
 
 !!! note
 
-    自 Istio 1.23 起，控制面组件由 Pluma Operator 管理，需指定对应的 Istio chart仓库地址。系统默认内置 Addon 仓库地址，MSpider 自 v0.36+ 起已支持该机制。
+    自 Istio 1.23 起，控制面组件由 Pluma Operator 管理，需指定对应的 Istio chart仓库地址。
+    系统默认内置 Addon 仓库地址，Mspider 自 v0.36+ 起已支持该机制。
     如用户需配置自定义仓库地址，可通过在对应 GlobalMesh CRD新增网格安装参数：
     
     ```yaml
@@ -36,7 +52,7 @@
 - **新增** 对 Istio v1.22、v1.23 的支持，新增对 k8s v1.32 的支持。
 - **修复** Mspider Helm Chart 名称描述。
 - **修复** 无法显示网格控制面实际访问地址。
-- **修复** 启动时未同步绑定信息，导致工作空间网格资源绑定被清理。 
+- **修复** 启动时未同步绑定信息，导致工作空间网格资源绑定被清理。
 - **修复** 获取集群节点选择器不应该需要集群权限。
 - **修复** 同一个用户绑定多个角色权限出错问题。
 - **修复** 自定义 Istio 1.24.5-mspider 版本保持原有托管网格架构（社区 Istio 1.24 移除了 istio-remote）
@@ -52,8 +68,8 @@
 
 ### v0.34.0
 
-- **修复** 网格网关负载均衡 IP 无法查询。
-- **修复** 兼具托管集群和工作集群角色安装 Ingress gateway 参数混乱.
+- **修复** 网格网关负载均衡 IP 无法查询
+- **修复** 兼具托管集群和工作集群角色安装 Ingress Gateway 参数混乱
 - **优化** Istio v1.23 设置为体验版本，默认推荐 v1.22
 
 ## 服务网格升级到 Istio 1.23+ 的注意事项
@@ -62,14 +78,14 @@
 
     影响范围：
     
-    - Istio 低于 v1.23 且已经创建了网格网关实例时，需要升级到 Istio 1.23。
-
-    - Istio 低于 v1.23，但没有创建网格网关实例，不受本次升级的影响。
+    - Istio 低于 v1.23 且已经创建了网格网关实例时，需要升级到 Istio 1.23
+    - Istio 低于 v1.23，但没有创建网格网关实例，不受本次升级的影响
 
 ### 背景
 
 因为 Istio 社区在 [v1.23 废弃 In-Cluster Operator](https://istio.io/latest/blog/2024/in-cluster-operator-deprecation-announcement/)，
-且在 v1.24 中彻底废弃，DCE 5.0 服务网格内置的 Istio 组件采用了 Istio In-Cluster Operator，因此为了保证 Istio 1.23 以后的版本能够正常安装，
+且在 v1.24 中彻底废弃，DCE 5.0 服务网格内置的 Istio 组件采用了 Istio In-Cluster Operator，
+因此为了保证 Istio 1.23 以后的版本能够正常安装，
 我们开发了 [Pluma Operator](https://github.com/pluma-tools/pluma-operator)，并且进行开源。
 当在服务网格中的 Istio 版本大于等于 1.23 时，将自动切换 Operator（Istio In-Cluster Operator -> Pluma Operator）
 
@@ -82,7 +98,7 @@
 
 升级到 v1.23 以后，受到更新影响范围：
 
-- istio-system 下的 mspider 和 istio 组件
+- istio-system 下的 Mspider 和 Istio 组件
 - 通过 Mspider 安装的网格网关
 
 ### 网格网关升级操作
@@ -96,9 +112,9 @@
 
 ![image](../images/1.png)
 
-由于 Kubernetes 不允许更新 Deployment 的 selectorLabels，所以需要删除重建 labels
+由于 Kubernetes 不允许更新 Deployment 的 selectorLabels，所以需要删除重建 label
 
-1. 先创建新的 gateway，并且自定义 app、istio labels
+1. 先创建新的 Gateway，并且自定义 App、Istio label
 
     ```yaml
     app：$gateway_name
@@ -107,7 +123,7 @@
 
     ![image](../images/2.png)
 
-1. 修改对应的 Gateway 策略 CRD，绑定新建的 gateway 将流量迁移到新网关
+1. 修改对应的 Gateway 策略 CRD，绑定新建的 Gateway 将流量迁移到新网关
 
     ![image](../images/3.png)
 
@@ -439,20 +455,20 @@
 - **新增** 工作负载注入策略清除能力
 - **新增** 集群列表新增组件状态实现
 - **新增** 新增 `mspider.io/mesh-gateway-name` Label 规范，用于定义网关网关名称
-- **新增** **MCPC Controller** 实现纳管服务自动注入能力
+- **新增** MCPC Controller 实现纳管服务自动注入能力
 - **新增** Ghippo 资源上报功能，按照规范自动创建并且更新 **GProductResource** 资源
-- **新增** **MCPC Controller** 新增配置 `global.config.enableAutoInitPolicies`，用于是否开启纳管服务自动初始化治理策略
-- **新增** **MCPC Controller** 新增配置 `global.config.enableAutoInjectedSidecar`，用于是否开启纳管服务自动注入策略
+- **新增** MCPC Controller 新增配置 `global.config.enableAutoInitPolicies`，用于是否开启纳管服务自动初始化治理策略
+- **新增** MCPC Controller 新增配置 `global.config.enableAutoInjectedSidecar`，用于是否开启纳管服务自动注入策略
 - **新增** K8s 各版本兼容性测试
-- **优化** 新增 cache 优化查询集群 **Insight Agent** 状态接口过慢问题
+- **优化** 新增 cache 优化查询集群 insight-agent 状态接口过慢问题
 - **优化** 网格创建时对托管集群检测加强，避免创建冲突网格
 - **优化** 网格网关更新操作将忽略名称 (Name)、命名空间 (Namespace)、标签 (Label) 更新，避免更新触发异常
 - **优化** Kpanda 集群 kubeconfig 同步方式
-- **优化** **WorkloadShadow controller watcher** 创建逻辑
+- **优化** WorkloadShadow controller watcher 创建逻辑
 - **升级** 支持查询集群与集群组件，允许不传 MeshID，独立获取信息
-- **升级** go package istio.io/istio 到 **v0.0.0-20230131034922-50fb2905d9f5** 版本
-- **升级** **CloudTTY** 到 **v0.5.3** 版本
-- **升级** 前端版本至 **v0.15.0** 版本
+- **升级** go package istio.io/istio 到 v0.0.0-20230131034922-50fb2905d9f5
+- **升级** CloudTTY 到 v0.5.3
+- **升级** 前端版本至 v0.15.0
 
 #### 修复
 
@@ -612,7 +628,7 @@
 - **新增** CloudShell 相关实现
 - **新增** 服务列表支持对服务标签的查询
 - **新增** 一个新的 API，用于更新服务的标签
-- **新增** istio 1.17.1 支持
+- **新增** Istio 1.17.1 支持
 - **新增** 一个新的 etcd 高可用方案
 - **新增** 场景化测试框架，用于测试场景化的功能
 - **新增** 选择不同网格规模时，自动调整组件资源配置
@@ -675,7 +691,7 @@
 #### 新功能
 
 - **新增** 流量透传功能的接口实现
-- **新增** 对 istio 1.15.4、1.16.1 的支持
+- **新增** 对 Istio 1.15.4、1.16.1 的支持
 
 #### 优化
 
@@ -703,7 +719,7 @@
 - **新增** 网格中集群健康状态检查能力
 - **新增** otel sdk 接入
 - **新增** secret 的多个接口实现
-- **新增** 对 istio 1.15.3 的支持
+- **新增** 对 Istio 1.15.3 的支持
 
 #### 优化
 
@@ -715,7 +731,7 @@
 
 #### 修复
 
-- **修复** 当控制面 MSpider 升级之后，mcpc 等组件未更新的问题
+- **修复** 当控制面 Mspider 升级之后，mcpc 等组件未更新的问题
 - **修复** 获取集群资源错误
 - **修复** 获取集群命名空间列表接口集群名称不存在时响应码为 200 情况
 - **修复** 网格升级流程中前置条件判断有误的问题

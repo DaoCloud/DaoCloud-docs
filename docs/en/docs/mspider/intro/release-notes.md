@@ -12,6 +12,21 @@ providing convenience for users to learn about the evolution path and feature ch
 
 *[mspider]: Internal development codename for DaoCloud Service Mesh
 
+## 2025-10-31
+
+### v0.37.0
+
+- **Added** support for Gateway API  
+- **Fixed** deprecated `targetPort` field in PodMonitor, replaced with the recommended `portNumber` field to eliminate Prometheus Operator warning logs. Affected PodMonitor resources:  
+  - mspider-system/mspider-ckube-metrics  
+  - mspider-system/mspider-ckube-remote-metrics  
+- **Fixed** strict validation issue with Istio gateway Helm parameters  
+- **Upgraded** Ckube to v1.3.11 to fix GCC startup issue  
+- **Upgraded** Ckube to v1.3.10 to fix “cluster resource not found” issue caused by watcher restarts  
+- **Upgraded** hosted_apiserver to v0.0.14  
+- **Upgraded** frontend version to v0.35.0  
+- **Upgraded** pluma-operator to v0.1.3
+
 ## 2025-08-08
 
 ### v0.36.0
