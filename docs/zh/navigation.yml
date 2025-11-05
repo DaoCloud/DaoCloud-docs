@@ -639,7 +639,10 @@ nav:
                   - 阿里云运行 Calico: network/modules/aliyun-terway/aliyun-calico.md
                   - 阿里云运行 Cilium: network/modules/aliyun-terway/aliyun-cilium.md
                   - 常见问题: network/modules/aliyun-terway/Q_A.md
-              - 集成 Unifabric: network/modules/unifabric/install.md
+              - 集成 Unifabric:
+                  - 功能特性: network/modules/unifabric/features.md
+                  - Release Notes: network/modules/unifabric/release-notes.md
+                  - 安装 Unifabric: network/modules/unifabric/install.md
           - 云原生存储:
               - 介绍:
                   - 什么是云原生存储: storage/index.md
