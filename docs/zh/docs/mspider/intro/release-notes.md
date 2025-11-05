@@ -16,7 +16,6 @@
 - **升级** Ckube 升级到 v1.3.11，修复 GCC 启动问题
 - **升级** Ckube 升级到 v1.3.10，修复 watcher 重启导致集群资源 not found 问题
 - **升级** hosted_apiserver 到 v0.0.14
-- **升级** 前端版本至 v0.35.0
 - **升级** pluma-operator 升级至 v0.1.3
 
 ## 2025-08-08
