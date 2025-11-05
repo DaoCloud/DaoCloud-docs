@@ -74,7 +74,7 @@ logging.pattern.level=trace_id=%mdc{trace_id} span_id=%mdc{span_id} %5p ....省�
 
     !!! tip
 
-        请将 `OPENTELEMETRY_VERSION` 替换为[最新版本](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-log4j-context-data-2.17-autoconfigure/versions)
+        请将 `OPENTELEMETRY_VERSION` 替换为[最新版本](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-logback-mdc-1.0/versions)
 
     ```xml
     <dependencies>

@@ -78,7 +78,7 @@ Here is an example of the logs:
 
     !!! tip
 
-        Please replace `OPENTELEMETRY_VERSION` with the [latest version](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-log4j-context-data-2.17-autoconfigure/versions).
+        Please replace `OPENTELEMETRY_VERSION` with the [latest version](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-logback-mdc-1.0/versions).
 
     ```xml
     <dependencies>
