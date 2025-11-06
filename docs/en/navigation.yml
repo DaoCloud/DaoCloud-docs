@@ -519,6 +519,7 @@ nav:
                   - Upgrade: network/modules/spiderpool/upgrade.md
                   - Config: network/modules/spiderpool/config.md
                   - Commands: network/modules/spiderpool/command.md
+                  - RDMA Dashboard: network/modules/spiderpool/rdma-dashboard.md           
                   - Public Cloud:
                       - Running on Alibaba Cloud: network/modules/spiderpool/public-cloud/alibabacloud.md
                       - Running on AWS: network/modules/spiderpool/public-cloud/awscloud.md

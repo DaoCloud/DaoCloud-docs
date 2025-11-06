@@ -548,6 +548,7 @@ nav:
                   - 升级: network/modules/spiderpool/upgrade.md
                   - 配置参考: network/modules/spiderpool/config.md
                   - 常用命令: network/modules/spiderpool/command.md
+                  - RDMA 看板: network/modules/spiderpool/rdma-dashboard.md                
                   - 公有云适配:
                       - 在阿里云环境运行: network/modules/spiderpool/public-cloud/alibabacloud.md
                       - 在 AWS 环境运行: network/modules/spiderpool/public-cloud/awscloud.md
