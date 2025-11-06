@@ -11,6 +11,10 @@ hide:
 
 ## 2025 年
 
+- [再登云原生之巅：Paco Xu 入选 Kubernetes 指导委员会](./2025/paco-ksc.md)
+
+    Paco Xu 再度成功入选 Kubernetes 指导委员会。
+
 - [聚焦 Kubernetes 指导委员会](./2025/k8s-steering-spotlight.md)
 
     [Kubernetes 指导委员会](https://github.com/kubernetes/steering) 是 Kubernetes 项目的支柱，
