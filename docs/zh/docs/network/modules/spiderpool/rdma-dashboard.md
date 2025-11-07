@@ -1,6 +1,8 @@
-# 1、Spiderpool RDMA Node - 节点看板
+# Spiderpool RDMA 看板介绍
 
-## 1.1、Throughput
+## Spiderpool RDMA Node - 节点看板
+
+### Throughput
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs1.png)
 
@@ -15,7 +17,7 @@
 | Read Throughput by Pod                 | 统计该节点 Pod 读带宽，如果发现节点带宽占用异常，可以通过该看板来排查哪个 Pod 占用了较大的带宽。 |
 | Write Throughput by Pod                | 统计该节点 Pod 写带宽，如果发现节点带宽占用异常，可以通过该看板来排查哪个 Pod 占用了较大的带宽。 |
 
-## 1.2、Basic (ECN/CNP/SEQ)
+### Basic (ECN/CNP/SEQ)
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs3.png)
 
@@ -36,7 +38,7 @@
 | Out of Sequence Packets Rate by Device   | 接收到的乱序数据包数量。                                     |
 | CNP Packets Ignored Rate by Device       | 由反应点（Reaction Point）HCA 接收但被忽略的 CNP（拥塞通知包）数量。 |
 
-## 1.3、Detail
+### Detail
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs7.png)
 
@@ -78,7 +80,7 @@
 | **UD**   | 单 QP 可支持多播/多端点可扩展                                | 不可靠- 需要自己处理重传、排序、序列化- 通常用于消息层协议（如 MPI 的某些实现） |
 | **DCT**  | 提供接近 RC 的可靠性与 RDMA 原语允许多发起方复用较少的发起 QP（DCI）降低服务端资源开销 | 折中方案：既不像 RC 完全点对点，也不像 UD 完全无连接，需要 DCT 支持的硬件/驱动 |
 
-## 1.4、RoCE
+### RoCE
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs12.png)
 
@@ -89,7 +91,7 @@
 | RoCE Slow Restart Count                    | 使用 RoCE 慢启动（slow restart）的次数，在拥塞或长时间空闲后，RoCE 会逐步恢复发送速率，避免网络突然过载。 |
 | RoCE Slow Restart CNP Count                | 慢启动期间可能触发 CNP，以通知发送端降低发送速率。           |
 
-# 2、Spiderpool RDMA Cluster - 集群看板
+## Spiderpool RDMA Cluster - 集群看板
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs13.png)
 
@@ -97,36 +99,36 @@
 
 - **Summary**
 
-| 面板名称                       | 面板说明                   |
-| ------------------------------ | -------------------------- |
-| Node Total (RDMA Capacity)     | 具有 RMDA 能力的节点数量。 |
-| Workload Total (RDMA Capacity) | RDMA 工作负载数量统计。    |
-| Pod Total (RDMA Capacity)      | RDMA Pod 数量看板。        |
+    | 面板名称                       | 面板说明                   |
+    | ------------------------------ | -------------------------- |
+    | Node Total (RDMA Capacity)     | 具有 RMDA 能力的节点数量。 |
+    | Workload Total (RDMA Capacity) | RDMA 工作负载数量统计。    |
+    | Pod Total (RDMA Capacity)      | RDMA Pod 数量看板。        |
 
 - **Hotspot**
-  - Hotspot 部分，主要用来排查集群热点工作负载，这样可以规划应用是否充分负载均衡或者是确认工作负载是否合理。
-    - Top 10 Read Throughput by Node
-    - Top 10 Write Throughput by Node
-    - Top 10 Read Throughput by Pod
-    - Top 10 Write Throughput by Pod
-    - Top 10 Read Throughput by Workload
-    - Top 10 Write Throughput by Workload
+    - Hotspot 部分，主要用来排查集群热点工作负载，这样可以规划应用是否充分负载均衡或者是确认工作负载是否合理。
+        - Top 10 Read Throughput by Node
+        - Top 10 Write Throughput by Node
+        - Top 10 Read Throughput by Pod
+        - Top 10 Write Throughput by Pod
+        - Top 10 Read Throughput by Workload
+        - Top 10 Write Throughput by Workload
 - **Node** **Status**
-  - 这部分与 Node 单独的面板中的统计是相同的，具体含义可以参考上面，这部分不同的是集群下所有节点的视角，可以方便直接发现哪个节点出现了问题。
-    - Read Pause by Node PF
-    - Write Pause by Node PF
-    - Read Discards by Node PF
-    - CNP Packets Sent Rate by Node PF
-    - NP ECN Marked ROCE Packets by Node PF
-    - RP CNP Handled by Node PF
-    - Out of Sequence by Node PF
-    - RP CNP Ignored by Node PF
+    - 这部分与 Node 单独的面板中的统计是相同的，具体含义可以参考上面，这部分不同的是集群下所有节点的视角，可以方便直接发现哪个节点出现了问题。
+        - Read Pause by Node PF
+        - Write Pause by Node PF
+        - Read Discards by Node PF
+        - CNP Packets Sent Rate by Node PF
+        - NP ECN Marked ROCE Packets by Node PF
+        - RP CNP Handled by Node PF
+        - Out of Sequence by Node PF
+        - RP CNP Ignored by Node PF
 - **Pod Status**
-  - Pod Status 统计了常见的 Pod 乱序/丢包，方便在集群这边快速查看问题。
-    - Out of Sequence by Pods (Top 10)
-    - Read Discards by Pods (Top 10)
+    - Pod Status 统计了常见的 Pod 乱序/丢包，方便在集群这边快速查看问题。
+        - Out of Sequence by Pods (Top 10)
+        - Read Discards by Pods (Top 10)
 
-# 3、Spiderpool RDMA AI Workload - 工作负载看板
+## Spiderpool RDMA AI Workload - 工作负载看板
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs14.png)
 
@@ -134,8 +136,9 @@ RDMA Workload 可以用来监控某一组 workload 的 Pod，比如 PytorchJob �
 
 通过 Workload 视角可以很方便定位问题 Pod，具体指标含义可以参考前面 Node 面板的说明，这里仅仅对象是 Workload 下的 Pod。
 
-# 4、Spiderpool RDMA SRIOV Pod - RDMA pod 看板
+## Spiderpool RDMA SRIOV Pod - RDMA pod 看板
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs15.png)
 
-RDMA Pod 是对某个特定 Pod 的监控，当使用集群级别或者节点级别面板排查到某个 Pod 出现问题后，可以使用 Pod 面板无干扰的进行排查，具体指标含义可以参考前面 Node 面板的说明，这里仅仅对象是单个 Pod。
+RDMA Pod 是对某个特定 Pod 的监控，当使用集群级别或者节点级别面板排查到某个 Pod 出现问题后，可以使用
+Pod 面板无干扰的进行排查，具体指标含义可以参考前面 Node 面板的说明，这里仅仅对象是单个 Pod。
