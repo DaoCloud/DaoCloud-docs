@@ -11,6 +11,10 @@ hide:
 
 ## 2025 年
 
+- [DaoCloud 首批通过 CNCF Kubernetes AI Conformance 认证](./2025/ai-conformance.md)
+
+    [DCE 5.0](https://docs.daocloud.io/) 首批通过 CNCF Kubernetes AI Conformance 认证。
+
 - [再登云原生之巅：Paco Xu 入选 Kubernetes 指导委员会](./2025/paco-ksc.md)
 
     Paco Xu 再度成功入选 Kubernetes 指导委员会。
