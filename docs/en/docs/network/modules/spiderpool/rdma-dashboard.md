@@ -1,6 +1,8 @@
-# 1. Spiderpool RDMA Node - Node Dashboard
+# Spiderpool RDMA Dashboards
 
-## 1.1. Throughput
+## Spiderpool RDMA Node - Node Dashboard
+
+### Throughput
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs1.png)
 
@@ -15,7 +17,7 @@
 | Read Throughput by Pod                 | Statistics of Pod read bandwidth on the node. If abnormal node bandwidth usage is detected, this dashboard can be used to identify which Pod is consuming excessive bandwidth. |
 | Write Throughput by Pod                | Statistics of Pod write bandwidth on the node. If abnormal node bandwidth usage is detected, this dashboard can be used to identify which Pod is consuming excessive bandwidth. |
 
-## 1.2. Basic (ECN/CNP/SEQ)
+### Basic (ECN/CNP/SEQ)
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs3.png)
 
@@ -36,7 +38,7 @@
 | Out of Sequence Packets Rate by Device   | Number of out-of-order data packets received.                         |
 | CNP Packets Ignored Rate by Device       | Number of CNPs (congestion notification packets) received but ignored by the Reaction Point HCA. |
 
-## 1.3. Detail
+### Detail
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs7.png)
 
@@ -78,7 +80,7 @@
 | **UD**         | Single QP supports multicast/multiple endpoints; scalable         | Unreliable - requires handling retransmission, ordering, serialization yourself - typically used for message layer protocols (such as some MPI implementations) |
 | **DCT**        | Provides reliability and RDMA primitives close to RC; allows multiple initiators to multiplex fewer initiating QPs (DCI); reduces server-side resource overhead | Compromise solution: neither fully point-to-point like RC nor completely connectionless like UD; requires DCT-supporting hardware/drivers |
 
-## 1.4. RoCE
+### RoCE
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs12.png)
 
@@ -89,7 +91,7 @@
 | RoCE Slow Restart Count                    | Number of times RoCE slow restart was used. After congestion or prolonged idle periods, RoCE gradually resumes the transmission rate to avoid sudden network overload. |
 | RoCE Slow Restart CNP Count                | CNPs may be triggered during slow restart to notify the sender to reduce the transmission rate. |
 
-# 2. Spiderpool RDMA Cluster - Cluster Dashboard
+## Spiderpool RDMA Cluster - Cluster Dashboard
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs13.png)
 
@@ -97,36 +99,36 @@ This dashboard is divided into 3 sections:
 
 - **Summary**
 
-| Panel Name                     | Panel Description                       |
-| ------------------------------ | --------------------------------------- |
-| Node Total (RDMA Capacity)     | Number of nodes with RDMA capability.   |
-| Workload Total (RDMA Capacity) | Statistics of RDMA workload count.      |
-| Pod Total (RDMA Capacity)      | RDMA Pod count dashboard.               |
+    | Panel Name                     | Panel Description                       |
+    | ------------------------------ | --------------------------------------- |
+    | Node Total (RDMA Capacity)     | Number of nodes with RDMA capability.   |
+    | Workload Total (RDMA Capacity) | Statistics of RDMA workload count.      |
+    | Pod Total (RDMA Capacity)      | RDMA Pod count dashboard.               |
 
 - **Hotspot**
-  - The Hotspot section is mainly used to identify cluster hotspot workloads, which can help determine whether applications are fully load-balanced or whether workloads are reasonable.
-    - Top 10 Read Throughput by Node
-    - Top 10 Write Throughput by Node
-    - Top 10 Read Throughput by Pod
-    - Top 10 Write Throughput by Pod
-    - Top 10 Read Throughput by Workload
-    - Top 10 Write Throughput by Workload
+    - The Hotspot section is mainly used to identify cluster hotspot workloads, which can help determine whether applications are fully load-balanced or whether workloads are reasonable.
+        - Top 10 Read Throughput by Node
+        - Top 10 Write Throughput by Node
+        - Top 10 Read Throughput by Pod
+        - Top 10 Write Throughput by Pod
+        - Top 10 Read Throughput by Workload
+        - Top 10 Write Throughput by Workload
 - **Node Status**
-  - This section has the same statistics as the individual Node panel, and the specific meanings can be referenced above. The difference is that this provides a cluster-wide view of all nodes, making it easy to directly identify which node has issues.
-    - Read Pause by Node PF
-    - Write Pause by Node PF
-    - Read Discards by Node PF
-    - CNP Packets Sent Rate by Node PF
-    - NP ECN Marked ROCE Packets by Node PF
-    - RP CNP Handled by Node PF
-    - Out of Sequence by Node PF
-    - RP CNP Ignored by Node PF
+    - This section has the same statistics as the individual Node panel, and the specific meanings can be referenced above. The difference is that this provides a cluster-wide view of all nodes, making it easy to directly identify which node has issues.
+        - Read Pause by Node PF
+        - Write Pause by Node PF
+        - Read Discards by Node PF
+        - CNP Packets Sent Rate by Node PF
+        - NP ECN Marked ROCE Packets by Node PF
+        - RP CNP Handled by Node PF
+        - Out of Sequence by Node PF
+        - RP CNP Ignored by Node PF
 - **Pod Status**
-  - Pod Status provides statistics on common Pod out-of-order packets/packet loss, making it easy to quickly view issues at the cluster level.
-    - Out of Sequence by Pods (Top 10)
-    - Read Discards by Pods (Top 10)
+    - Pod Status provides statistics on common Pod out-of-order packets/packet loss, making it easy to quickly view issues at the cluster level.
+        - Out of Sequence by Pods (Top 10)
+        - Read Discards by Pods (Top 10)
 
-# 3. Spiderpool RDMA AI Workload - Workload Dashboard
+## Spiderpool RDMA AI Workload - Workload Dashboard
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs14.png)
 
@@ -134,7 +136,7 @@ RDMA Workload can be used to monitor Pods of a specific workload group. For exam
 
 The Workload perspective makes it easy to locate problematic Pods. The specific metric meanings can refer to the Node panel descriptions above; the only difference here is that the object is Pods under a Workload.
 
-# 4. Spiderpool RDMA SRIOV Pod - RDMA Pod Dashboard
+## Spiderpool RDMA SRIOV Pod - RDMA Pod Dashboard
 
 ![RDMA Dashboard](../../../images/rdma/rdma-docs15.png)
 
