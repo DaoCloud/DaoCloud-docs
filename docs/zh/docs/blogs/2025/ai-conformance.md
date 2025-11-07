@@ -57,6 +57,10 @@ AI 场景专属的功能、API 和配置要求，为 AI 工作负载的跨环境
 | | 早期维护通知 | 提供提前计划的维护通知机制 |
 | | 高度互联节点的 Gang 维护 | 支持高度互联节点的 Gang 维护，最小化影响 |
 
+!!! note
+
+    上述合规项及分类可能会随行业发展、标准更新和版本迭代而调整，仅供参考，不构成最终版本。
+
 通过认证的平台可获得 CNCF 官方授权使用 AI Conformance 标识，成为行业认可的 AI 友好型 Kubernetes 发行版。
 
 <figure markdown="span">
@@ -65,11 +69,12 @@ AI 场景专属的功能、API 和配置要求，为 AI 工作负载的跨环境
 
 ## DaoCloud 领跑国内，跻身全球首批认证阵营
 
-作为国内开源事业领军企业，DaoCloud 紧跟云原生 AI 发展浪潮，在 Kubernetes v1.33 发版之初便率先启动
-[DCE 5.0](https://docs.daocloud.io/) 平台的 AI Conformance 合规测试，并于 2025 年 10
-月[成功通过认证](https://github.com/cncf/ai-conformance/pull/13)，成为国内唯一在该版本达成认证的企业级 AI/ML 平台。
+作为国内开源事业的领军企业，DaoCloud 紧跟云原生 AI 发展潮流。在社区推出 Kubernetes AI Conformance
+合规标准后，率先针对目前广泛使用的 Kubernetes v1.33 启动 [DCE 5.0](https://docs.daocloud.io/) 平台的
+AI Conformance 测试，并于 2025 年 10 月[成功通过认证](https://github.com/cncf/ai-conformance/pull/13)，
+成为国内首个在该版本获得认证的企业级 AI/ML 平台。
 
-此次全球首批通过认证的企业仅 6 家，DaoCloud DCE 平台与 Red Hat Openshift、SUSE RKE2
+此次全球首批通过认证的企业仅寥寥几家，DaoCloud DCE 平台与 Red Hat Openshift、SUSE RKE2
 等国际知名平台共同入选，彰显了中国企业在云原生 AI 领域的技术实力：
 
 - **DaoCloud 的 DCE 平台**
