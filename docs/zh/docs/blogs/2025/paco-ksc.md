@@ -17,7 +17,6 @@ AI 底层技术生态的重要推动者。指导委员会负责就项目章程�
 Kubernetes 指导委员会共设 7 个席位，其中 4 个席位 在 2025 年参与改选。
 新当选委员的任期为两年，所有委员均由 Kubernetes 社区 投票产生。
 
-
 本次经社区选举出的 4 个席位（任期 2027 年结束）为：
 
 - Kat Cosgrove, ([@katcosgrove](https://github.com/katcosgrove)), Minimus
@@ -42,7 +41,11 @@ Paco Xu 也是唯一进入该委员会的中国人。
 - [WG AI Gateway](https://github.com/kubernetes/community/tree/master/wg-ai-gateway)：在 Gateway API 生态中探索适配推理流量的路由、策略与观测等网络治理能力，并与 Gateway API Inference Extension（GAIE） 推理扩展等项目协同。
 - [WG AI Integration](https://github.com/kubernetes/community/tree/master/wg-ai-integration)：面向 AI 系统与 Kubernetes 的集成实践，汇聚各类落地经验与规范提案。
 
-如何参与：以上工作组均在社区官网 [Community Groups 页面](https://www.kubernetes.dev/community/community-groups/)列出，含 Slack、邮件列表与双周会议等信息，欢迎有实践经验或对标准/实现感兴趣的同学加入。
+![AI 工作组](../images/ai-wg.jpeg)
+
+**如何参与:** 所有工作组均在社区官网的
+[Community Groups 页面](https://www.kubernetes.dev/community/community-groups/)列出，包含
+Slack 频道、邮件列表及双周会议等信息。欢迎具备实践经验或对标准/实现感兴趣的同学加入。
 
 ## 了解关注 Paco
 
