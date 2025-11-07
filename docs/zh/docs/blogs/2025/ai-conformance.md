@@ -4,7 +4,6 @@
 [Kubernetes AI Conformance](https://github.com/cncf/ai-conformance) 认证标准，在基础
 [Kubernetes Conformance](https://github.com/cncf/k8s-conformance) 认证之上，定义了
 AI 场景专属的功能、API 和配置要求，为 AI 工作负载的跨环境移植、高效运行提供统一基准。
-这一认证要求企业需先通过基础 Kubernetes 合规认证，才能申请 AI 专项认证，成为检验平台 AI 承载能力的核心标尺。
 
 !!! note
 
@@ -81,7 +80,7 @@ AI 场景专属的功能、API 和配置要求，为 AI 工作负载的跨环境
 - Sidero Labs 的 Talos Linux
 
 <figure markdown="span">
-  ![v1.33 合规列表](../images/ai-conf01.png){ width="600" }
+  ![v1.33 合规列表](../images/ai-conf01.png){ width="700" }
 </figure>
 
 DCE 5.0 此次通过认证，意味着其能为企业提供兼容标准、可移植、高可靠的 AI 运行环境，无论是大规模模型训练、高性能推理还是
