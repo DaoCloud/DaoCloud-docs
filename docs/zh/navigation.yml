@@ -1581,15 +1581,15 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2025:
-          - DCE 首批通过 AI Conformance 认证: blogs/2025/ai-conformance.md
-          - Paco 入选 Kubernetes 指导委员会: blogs/2025/paco-ksc.md
+          - DCE首批通过AI Conformance认证: blogs/2025/ai-conformance.md
+          - Paco 连任 K8s 指导委员会: blogs/2025/paco-ksc.md
           - 聚焦 Kubernetes 指导委员会: blogs/2025/k8s-steering-spotlight.md
           - 开源文档的构建/运营/贡献: blogs/2025/open-source-doc.md
           - 2024 中国开源年度报告: blogs/2025/open-source-report.md
       - 2024:
           - DaoCloud成功加入K8s安全响应委员会: blogs/2024/241219-sec-privacy.md
           - 从社区小白到 CNCF 大使: blogs/2024/241108-cncf-ambassador.md
-          - containerd 相关项目集中发布新版本: blogs/2024/241106-containerd-nerdctl-lima.md
+          - containerd等项目集中发布新版本: blogs/2024/241106-containerd-nerdctl-lima.md
           - K8s 1.31 OCI 工件的只读卷: blogs/2024/240816-1.31-image.md
           - Nvidia 征服最新的 AI 测试: blogs/2024/20240619-nvidiaai.md
           - Kubernetes 十周年: blogs/2024/0606-k8s-birth.md
