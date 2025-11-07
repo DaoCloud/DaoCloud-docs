@@ -1581,6 +1581,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2025:
+          - DCE 首批通过 AI Conformance 认证: blogs/2025/ai-conformance.md
           - Paco 入选 Kubernetes 指导委员会: blogs/2025/paco-ksc.md
           - 聚焦 Kubernetes 指导委员会: blogs/2025/k8s-steering-spotlight.md
           - 开源文档的构建/运营/贡献: blogs/2025/open-source-doc.md
