@@ -10,12 +10,25 @@ AI 场景专属的功能、API 和配置要求，为 AI 工作负载的跨环境
     值得注意的是，各企业的 Kubernetes 定制化平台或发行版想要证明其在 AI/ML 场景下的能力和可靠性，
     必须先获得 Kubernetes Conformance 认证，才能再申请 AI Conformance 认证。
 
-认证合规项分为 MUST（必需）和 SHOULD（建议）两类，全面覆盖 AI 工作负载关键需求：
+作为国内开源事业的领军企业，DaoCloud 紧跟云原生 AI 发展潮流。在社区推出 Kubernetes AI Conformance
+合规标准后，率先针对目前广泛使用的 Kubernetes v1.33 启动 [DCE 5.0](https://docs.daocloud.io/) 平台的
+AI Conformance 测试，并于 2025 年 10 月[成功通过认证](https://github.com/cncf/ai-conformance/pull/13)，
+成为国内首个在该版本获得认证的企业级 AI/ML 平台。
+
+DCE 5.0 是一款高性能、可扩展的云原生智能操作系统，可在任意基础设施和环境中提供一致、稳定的体验，支持异构云、边缘云与多云编排。
+平台集成服务网格与微服务技术，实现全链路流量可追踪，并通过智能监控和动态可视化仪表盘，让集群、节点、应用与服务的健康状态清晰可见；
+原生支持 DevOps 和 GitOps 模式，实现应用交付标准化与自动化，并内置精选数据库与中间件，使运维更高效智能。
+模块化设计确保各功能独立解耦、灵活升级无影响，同时可与丰富云原生生态产品对接，提供完整解决方案。经过近千家客户生产环境验证，
+DCE 5.0 构建了可靠的数字底座，助力企业释放云原生生产力，迈向智能化、AI 驱动的数字未来。
+
+## AI Conformance 合规项说明
+
+AI Conformance 认证合规项分为 MUST（必需）和 SHOULD（建议）两类，全面覆盖 AI 工作负载关键需求：
 
 - **MUST 必需项:** 聚焦加速器资源分配、AI 推理网络入口、Gang 调度、自动扩缩容、性能监控、安全访问等核心能力，确保平台能稳定支撑 AI 训练与推理基础场景。
 - **SHOULD 建议项:** 延伸至 GPU 共享、高性能存储、拓扑感知调度、机密计算等进阶功能，助力平台实现 AI 场景的优化升级。
 
-## MUST 必需项
+### MUST 必需项
 
 | 类别 | 项目 | 功能要求 | 测试要求 |
 | ---- | ---- | ---- | ---- |
@@ -23,13 +36,13 @@ AI 场景专属的功能、API 和配置要求，为 AI 工作负载的跨环境
 | 网络 | AI 推理高级入口 | 支持 Kubernetes Gateway API，并实现推理服务的高级流量管理 | 验证所有 `gateway.networking.k8s.io/v1` Gateway API 资源是否启用 |
 | 调度与编排 | Gang 调度 | 平台必须允许安装并成功运行至少一个 Gang 调度方案 | 供应商需证明其平台可以成功运行至少一个 Gang 调度方案 |
 | | AI 工作负载有效自动扩缩 | 集群自动扩缩器必须支持基于加速器类型扩缩节点组 | 配置节点池并创建 (A*N)+1 个请求加速器的 Pod，验证自动扩缩行为 |
-| | AI 工作负载有效自动扩缩 | 支持 HorizontalPodAutoscaler，对使用加速器的 Pod 正确扩缩 | 配置自定义指标管道、Deployment 和 HPA，施加负载验证扩缩 |
+| | | 支持 HorizontalPodAutoscaler，对使用加速器的 Pod 正确扩缩 | 配置自定义指标管道、Deployment 和 HPA，施加负载验证扩缩 |
 | 可观测性与遥测 | 加速器性能指标 | 支持安装至少一个加速器指标方案，暴露精细性能指标 | 抓取 Prometheus 兼容指标端点并验证每个加速器指标 |
-|  | AI 作业与推理服务指标 | 提供监控系统收集标准格式指标 | 部署应用，生成流量，验证监控系统收集关键指标 |
+| | AI 作业与推理服务指标 | 提供监控系统收集标准格式指标 | 部署应用，生成流量，验证监控系统收集关键指标 |
 | 安全 | 安全加速器访问 | 确保容器内访问加速器隔离性与受控性 | 部署 Pod 验证未授权访问被拒绝 |
 | AI 框架与 Operator 支持 | 稳健的 CRD 与控制器操作 | 支持至少一个复杂 AI Operator 可安装并可靠运行 | 部署 Operator，验证 Pod、Webhook 和 CRD 正确运行 |
 
-## SHOULD 建议项
+### SHOULD 建议项
 
 | 类别 | 项目 | 功能要求 |
 | ---- | ---- | ---- |
@@ -60,6 +73,7 @@ AI 场景专属的功能、API 和配置要求，为 AI 工作负载的跨环境
 !!! note
 
     上述合规项及分类可能会随行业发展、标准更新和版本迭代而调整，仅供参考，不构成最终版本。
+    具体请参阅 [cncf/ai-conformance README](https://github.com/cncf/ai-conformance)。
 
 通过认证的平台可获得 CNCF 官方授权使用 AI Conformance 标识，成为行业认可的 AI 友好型 Kubernetes 发行版。
 
@@ -69,13 +83,9 @@ AI 场景专属的功能、API 和配置要求，为 AI 工作负载的跨环境
 
 ## DaoCloud 领跑国内，跻身全球首批认证阵营
 
-作为国内开源事业的领军企业，DaoCloud 紧跟云原生 AI 发展潮流。在社区推出 Kubernetes AI Conformance
-合规标准后，率先针对目前广泛使用的 Kubernetes v1.33 启动 [DCE 5.0](https://docs.daocloud.io/) 平台的
-AI Conformance 测试，并于 2025 年 10 月[成功通过认证](https://github.com/cncf/ai-conformance/pull/13)，
-成为国内首个在该版本获得认证的企业级 AI/ML 平台。
-
-此次全球首批通过认证的企业仅寥寥几家，DaoCloud DCE 平台与 Red Hat Openshift、SUSE RKE2
-等国际知名平台共同入选，彰显了中国企业在云原生 AI 领域的技术实力：
+在 Kubernetes v1.33 中，率先通过认证的企业仅寥寥数家，
+[DaoCloud DCE 平台](https://daocloud.io/products/platinum-edition/index.html)与
+Red Hat Openshift、SUSE RKE2 等国际知名平台共同入选，彰显了中国企业在云原生 AI 领域的技术实力：
 
 - **DaoCloud 的 DCE 平台**
 - NeoNephos Foundation 的 Gardener
