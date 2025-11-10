@@ -1,19 +1,34 @@
 ---
 MTPE: windsonsea
-date: 2024-01-09
+date: 2025-11-10
 hide:
   - toc
 ---
 
 # K8s Certified Service Provider
 
-DaoCloud is a [CNCF-certified Kubernetes service provider](https://landscape.cncf.io/?group=certified-partners-and-providers&item=platform--certified-kubernetes-distribution--daocloud-enterprise),
-officially known as a Kubernetes Certified Service Provider (KCSP). As early as 2017, DaoCloud successfully
-obtained official certification from Kubernetes, making it the first provider in China to gain recognition from CNCF.
+The CNCF provides compliance certification for Kubernetes platform vendors around the world to validate product capabilities and delivery quality.
 
-We actively participate in CNCF-related community contributions throughout the year, leading technological trends in the community.
-Whenever a new version of Kubernetes is released, we are among the first to adapt to and enhance new features, pushing them to
-actual production environments.
+DaoCloud is a [CNCF-certified Kubernetes Certified Service Provider (KCSP)](https://landscape.cncf.io/?group=certified-partners-and-providers&item=platform--certified-kubernetes-distribution--daocloud-enterprise).
+As early as 2017, DaoCloud passed the official certification, becoming one of the earliest CNCF-recognized Kubernetes service providers in China.  
+We have remained deeply involved in the community for years — contributing code, docs and practices — and always stay aligned with the community’s upstream. With every new Kubernetes release, we are among the first to adapt and enhance new features, and deliver them into production environments.
+
+## Kubernetes AI Conformance
+
+To support the explosive growth of AI/ML workloads — and their needs for compute and hardware acceleration — CNCF launched the [Kubernetes AI Conformance](https://github.com/cncf/ai-conformance) standard.  
+On top of the base [Kubernetes Conformance](https://github.com/cncf/k8s-conformance) requirements, it defines AI-specific functions, APIs and configuration rules, establishing a unified baseline for **consistent portability** and **efficient scheduling** of AI workloads across environments.
+
+Certified platforms are authorized by CNCF to use the “AI Conformance” badge — meaning the distribution is recognized as AI-friendly and ready for AI/ML production use.
+
+<figure markdown="span">
+  ![logo](../blogs/images/CNCF_AI_Conformance_Logo.png){ width="200" }
+</figure>
+
+As a leader in cloud-native open source in China, DaoCloud keeps pace with the community:  
+after the AI Conformance standard was released, we were among the first to start AI Conformance testing for the mainstream Kubernetes v1.33 on our [DCE 5.0](https://docs.daocloud.io/) platform, and in October 2025 we [successfully passed the certification](https://github.com/cncf/ai-conformance/pull/13) —  
+**becoming the first enterprise-grade AI/ML platform in China to achieve certification for this version.**
+
+## Kubernetes Conformance
 
 As an officially certified KCSP, DaoCloud has extensive experience in helping enterprises deploy large-scale clusters using Kubernetes successfully.
 
