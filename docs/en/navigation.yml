@@ -1489,6 +1489,7 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2025:
+          - DCE Passed CNCF Kubernetes AI Conformance: blogs/2025/ai-conformance.md
           - Spotlight on the K8s Steering Committee: blogs/2025/k8s-steering-spotlight.md
       - 2024:
           - From Community Novice to CNCF Ambassador: blogs/2024/241108-cncf-ambassador.md
