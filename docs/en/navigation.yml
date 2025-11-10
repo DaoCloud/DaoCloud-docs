@@ -223,15 +223,17 @@ nav:
                   - FAQs: kpanda/intro/faq.md
               - Clusters:
                   - Create Cluster: kpanda/user-guide/clusters/create-cluster.md
-                  - Integrate Cluster: kpanda/user-guide/clusters/integrate-cluster.md
-                  - Access Cluster: kpanda/user-guide/clusters/access-cluster.md
+                  - Integrate/Scale/Delete Clusters:
+                      - Integrate Cluster: kpanda/user-guide/clusters/integrate-cluster.md
+                      - Integrate Rancher Cluster: kpanda/user-guide/clusters/integrate-rancher-cluster.md
+                      - Scale Worker Nodes of Global Service Cluster: kpanda/best-practice/add-worker-node-on-global.md
+                      - Access Cluster: kpanda/user-guide/clusters/access-cluster.md
+                      - Delete Cluster: kpanda/user-guide/clusters/delete-cluster.md
                   - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
-                  - Delete Cluster: kpanda/user-guide/clusters/delete-cluster.md
                   - Cluster Roles: kpanda/user-guide/clusters/cluster-role.md
                   - Cluster Status: kpanda/user-guide/clusters/cluster-status.md
                   - Choose Runtime: kpanda/user-guide/clusters/runtime.md
                   - Cluster Versions: kpanda/user-guide/clusters/cluster-version.md
-                  - Integrate Rancher Cluster: kpanda/user-guide/clusters/integrate-rancher-cluster.md
                   - Deploy 2nd Scheduler in a Cluster: kpanda/user-guide/clusters/cluster-scheduler-plugin.md
                   - Renew Cluster Cert: kpanda/user-guide/clusters/k8s-cert.md
               - Namespaces:
