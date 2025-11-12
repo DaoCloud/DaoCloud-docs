@@ -15,6 +15,10 @@ AI 场景专属的功能、API 和配置要求，为 AI 工作负载的跨环境
 AI Conformance 测试，并于 2025 年 10 月[成功通过认证](https://github.com/cncf/ai-conformance/pull/13)，
 成为国内首个在该版本获得认证的企业级 AI/ML 平台。
 
+<figure markdown="span">
+  ![logo](../images/ai-conf02.jpeg){ width="700" }
+</figure>
+
 [DCE 5.0](https://daocloud.io/products/index.html) 是一款高性能、可扩展的云原生 AI 操作系统，
 可在任意基础设施和环境中提供一致、稳定的体验，支持异构云、边缘云与多云编排。
 平台集成服务网格与微服务技术，实现全链路流量可追踪，并通过智能监控和动态可视化仪表盘，让集群、节点、应用与服务的健康状态清晰可见；
@@ -80,7 +84,7 @@ AI Conformance 认证合规项分为 MUST（必需）和 SHOULD（建议）两�
 通过认证的平台可获得 CNCF 官方授权使用 AI Conformance 标识，成为行业认可的 AI 友好型 Kubernetes 发行版。
 
 <figure markdown="span">
-  ![logo](../images/CNCF_AI_Conformance_Logo.png){ width="200" }
+  ![logo](../images/ai-conf01.png){ width="700" }
 </figure>
 
 ## DaoCloud 领跑国内，跻身全球首批认证阵营
@@ -95,10 +99,6 @@ Red Hat Openshift、SUSE RKE2 等国际知名平台共同入选，彰显了中�
 - Red Hat 的 Openshift 容器平台
 - SUSE 的 RKE2
 - Sidero Labs 的 Talos Linux
-
-<figure markdown="span">
-  ![v1.33 合规列表](../images/ai-conf01.png){ width="700" }
-</figure>
 
 DCE 5.0 此次通过认证，意味着其能为企业提供兼容标准、可移植、高可靠的 AI 运行环境，无论是大规模模型训练、高性能推理还是
 MLOps 流水线部署，都能实现高效承载与灵活扩展。未来，DaoCloud 将持续深耕云原生 AI 生态，为企业 AI 数字化转型提供更坚实的技术底座。
