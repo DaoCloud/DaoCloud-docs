@@ -1,4 +1,4 @@
-# DaoCloud 首批通过 CNCF Kubernetes AI Conformance 认证
+# DaoCloud 首批通过 CNCF Kubernetes AI 合规认证
 
 随着 AI/ML 工作负载对计算资源和硬件加速的需求爆发式增长，CNCF 推出
 [Kubernetes AI Conformance](https://github.com/cncf/ai-conformance) 认证标准，在基础
@@ -8,16 +8,14 @@ AI 场景专属的功能、API 和配置要求，为 AI 工作负载的跨环境
 !!! note
 
     值得注意的是，各企业的 Kubernetes 定制化平台或发行版想要证明其在 AI/ML 场景下的能力和可靠性，
-    必须先获得 Kubernetes Conformance 认证，才能再申请 AI Conformance 认证。
+    必须先获得 Kubernetes 合规认证，才能再申请 AI 合规认证。
 
 作为国内开源事业的领军企业，DaoCloud 紧跟云原生 AI 发展潮流。在社区推出 Kubernetes AI Conformance
 合规标准后，率先针对目前广泛使用的 Kubernetes v1.33 启动 [DCE 5.0](https://docs.daocloud.io/) 平台的
-AI Conformance 测试，并于 2025 年 10 月[成功通过认证](https://github.com/cncf/ai-conformance/pull/13)，
+AI 合规测试，并于 2025 年 10 月[成功通过认证](https://github.com/cncf/ai-conformance/pull/13)，
 成为国内首个在该版本获得认证的企业级 AI/ML 平台。
 
-<figure markdown="span">
-  ![logo](../images/ai-conf02.jpeg){ width="700" }
-</figure>
+![initial adopters](../images/ai-conf02.jpeg)
 
 [DCE 5.0](https://daocloud.io/products/index.html) 是一款高性能、可扩展的云原生 AI 操作系统，
 可在任意基础设施和环境中提供一致、稳定的体验，支持异构云、边缘云与多云编排。
@@ -27,9 +25,9 @@ AI Conformance 测试，并于 2025 年 10 月[成功通过认证](https://githu
 DCE 5.0 模块化设计确保各功能独立解耦、灵活升级无影响，同时可与丰富 AI 生态产品对接，提供完整解决方案。经过近千家客户生产环境验证，
 构建了可靠的数字底座，助力企业释放 AI 生产力，迈向智能化、AI 驱动的数字未来。
 
-## AI Conformance 合规项说明
+## AI 合规项说明
 
-AI Conformance 认证合规项分为 MUST（必需）和 SHOULD（建议）两类，全面覆盖 AI 工作负载关键需求：
+AI 合规认证项分为 MUST（必需）和 SHOULD（建议）两类，全面覆盖 AI 工作负载关键需求：
 
 - **MUST 必需项:** 聚焦加速器资源分配、AI 推理网络入口、Gang 调度、自动扩缩容、性能监控、安全访问等核心能力，确保平台能稳定支撑 AI 训练与推理基础场景。
 - **SHOULD 建议项:** 延伸至 GPU 共享、高性能存储、拓扑感知调度、机密计算等进阶功能，助力平台实现 AI 场景的优化升级。
@@ -81,11 +79,9 @@ AI Conformance 认证合规项分为 MUST（必需）和 SHOULD（建议）两�
     上述合规项及分类可能会随行业发展、标准更新和版本迭代而调整，仅供参考，不构成最终版本。
     具体请参阅 [cncf/ai-conformance README](https://github.com/cncf/ai-conformance)。
 
-通过认证的平台可获得 CNCF 官方授权使用 AI Conformance 标识，成为行业认可的 AI 友好型 Kubernetes 发行版。
+通过认证的平台可获得 CNCF 官方授权使用 AI 合规徽章，成为行业认可的 AI 友好型 Kubernetes 发行版。
 
-<figure markdown="span">
-  ![logo](../images/ai-conf01.png){ width="700" }
-</figure>
+![logo](../images/ai-conf01.png)
 
 ## DaoCloud 领跑国内，跻身全球首批认证阵营
 
@@ -102,3 +98,7 @@ Red Hat Openshift、SUSE RKE2 等国际知名平台共同入选，彰显了中�
 
 DCE 5.0 此次通过认证，意味着其能为企业提供兼容标准、可移植、高可靠的 AI 运行环境，无论是大规模模型训练、高性能推理还是
 MLOps 流水线部署，都能实现高效承载与灵活扩展。未来，DaoCloud 将持续深耕云原生 AI 生态，为企业 AI 数字化转型提供更坚实的技术底座。
+
+![intial adopters](../images/ai-conf03.jpeg)
+
+更多细节参阅 CNCF 公众号文章：[CNCF 推出认证 Kubernetes AI 合规计划，统一 Kubernetes 上的 AI 工作负载标准](https://mp.weixin.qq.com/s/ro-ro46SguuirDIv54IO1w)。
