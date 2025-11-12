@@ -81,7 +81,7 @@ AI 合规认证项分为 MUST（必需）和 SHOULD（建议）两类，全面�
 
 通过认证的平台可获得 CNCF 官方授权使用 AI 合规徽章，成为行业认可的 AI 友好型 Kubernetes 发行版。
 
-![logo](../images/ai-conf01.png)
+![logo](../images/ai-conf04.png)
 
 ## DaoCloud 领跑国内，跻身全球首批认证阵营
 
