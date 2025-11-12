@@ -32,12 +32,12 @@ spec:
       global.high_available: 'false'
       global.istio_version: 1.23.6-mspider
       global.mesh_capacity: S50P200
-      global.enableGatewayAPI: true # 开启 GatewayAPI 功能
+      global.enableGatewayAPI: 'true'  # 开启 GatewayAPI 功能
 ```
 
 ## 第二步：安装 Gateway API CRD
 
-### 托管网格模式
+### 托管网格模式（目前暂不支持）
 
 在托管网格模式下，mspider 会自动将 Gateway API 的 CRD 进行应用。同时，我们可以配合中描述的同步工作集群资源功能，将 Gateway API 资源同步到托管网格中。
 
