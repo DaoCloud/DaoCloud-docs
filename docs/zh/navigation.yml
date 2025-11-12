@@ -1049,6 +1049,7 @@ nav:
                   - TLS 密钥管理: mspider/user-guide/mesh-config/tls-secret.md
                   - 组件资源自定义: mspider/user-guide/mesh-config/custom-res.md
                   - 组件资源弹性伸缩: mspider/user-guide/mesh-config/component-hpa.md
+                  - 支持的 Gateway API: mspider/user-guide/mesh-config/gateway-api.md
               - 测试:
                   - OCP 接入网格: mspider/test/ocp.md
                   - Openshift 与网格兼容性测试: mspider/test/openshift.md
