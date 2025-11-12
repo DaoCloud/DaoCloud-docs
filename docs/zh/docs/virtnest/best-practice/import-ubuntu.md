@@ -138,13 +138,13 @@ metadata:
   labels:
     virtnest.io/os-family: Ubuntu
     virtnest.io/os-version: "22.04"
-  name: export-ubuntu                                       # 虚拟机名称，可更改，同一个命名空间内不可重复
+  name: export-ubuntu # 虚拟机名称，可更改，同一个命名空间内不可重复
   namespace: default
 spec:
   dataVolumeTemplates:
   - metadata:
       creationTimestamp: null
-      name: export-ubuntu-rootdisk                          # dataVolume 名称，可更改，同一个命名空间内不可重复
+      name: export-ubuntu-rootdisk # dataVolume 名称，可更改，同一个命名空间内不可重复
       namespace: default
     spec:
       pvc:
@@ -177,7 +177,7 @@ spec:
             disk:
               bus: virtio
             name: rootdisk
-          interfaces:                                                          # 修改这里的网络配置
+          interfaces:  # 修改这里的网络配置
           - bridge: {}
             name: ovs-bridge0
         machine:
@@ -185,14 +185,14 @@ spec:
         resources:
           requests:
             memory: 4Gi
-      networks:                                                                # 修改这里的网络配置
+      networks: # 修改这里的网络配置
       - multus:
           default: true
           networkName: kube-system/test1
         name: ovs-bridge0
       volumes:
       - dataVolume:
-          name: export-ubuntu-rootdisk                                         #  
+          name: export-ubuntu-rootdisk # dataVolume 名称，可更改，同一个命名空间内不可重复
         name: rootdisk
 ```
 
