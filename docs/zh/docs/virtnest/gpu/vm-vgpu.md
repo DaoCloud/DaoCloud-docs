@@ -118,20 +118,51 @@
 2. 将 vGPU 和 GPU 直通加入 Virtnest Kubevirt CR，以下示例是添加 vGPU 和 GPU 直通后的 部分关键 yaml：
 
     ```yaml
+    apiVersion: kubevirt.io/v1
+    kind: KubeVirt
+    metadata:
+      annotations:
+        kubevirt.io/latest-observed-api-version: v1
+        kubevirt.io/storage-observed-api-version: v1
+        meta.helm.sh/release-name: virtnest-agent
+        meta.helm.sh/release-namespace: virtnest-system
+      creationTimestamp: "2024-08-22T09:15:22Z"
+      finalizers:
+      - foregroundDeleteKubeVirt
+      generation: 1
+      labels:
+        app.kubernetes.io/managed-by: Helm
+      name: kubevirt
+      namespace: virtnest-system
+      resourceVersion: "36729976"
+      uid: 45c52329-36e7-40c4-b288-3c555bfe6cca
     spec:
+      certificateRotateStrategy: {}
       configuration:
         developerConfiguration:
           featureGates:
+          - Snapshot
+          - ExpandDisks
+          - HotplugVolumes
+          - Passt
           - GPU
           - DisableMDEVConfiguration
-        permittedHostDevices: # (1)!
+          - VMLiveUpdateFeatures
+          - VMExport
+        vmRolloutStrategy: LiveUpdate
+        # 下面是需要填写的信息
+        permittedHostDevices:         # (1)!
           mediatedDevices:            # (2)!
           - mdevNameSelector: GRID P4-1Q
-            resourceName: nvidia.com /GRID_P4-1Q
+            resourceName: nvidia.com/GRID_P4-1Q
           pciHostDevices:             # (3)!
           - externalResourceProvider:  true
             pciVendorSelector: 10DE:1BB3
-            resourceName: nvidia.com /GP104GL_TESLA_P4
+            resourceName: nvidia.com/GP104GL_TESLA_P4
+      customizeComponents: {}
+      imagePullPolicy: IfNotPresent
+      workloadUpdateStrategy:
+        workloadUpdateM
     ```
 
     1. 下面是需要填写的信息
@@ -237,20 +268,51 @@
     kubectl -n virtnest-system edit kubevirt kubevirt
     ```
     ```yaml
+    apiVersion: kubevirt.io/v1
+    kind: KubeVirt
+    metadata:
+      annotations:
+        kubevirt.io/latest-observed-api-version: v1
+        kubevirt.io/storage-observed-api-version: v1
+        meta.helm.sh/release-name: virtnest-agent
+        meta.helm.sh/release-namespace: virtnest-system
+      creationTimestamp: "2024-08-22T09:15:22Z"
+      finalizers:
+      - foregroundDeleteKubeVirt
+      generation: 1
+      labels:
+        app.kubernetes.io/managed-by: Helm
+      name: kubevirt
+      namespace: virtnest-system
+      resourceVersion: "36729976"
+      uid: 45c52329-36e7-40c4-b288-3c555bfe6cca
     spec:
+      certificateRotateStrategy: {}
       configuration:
         developerConfiguration:
           featureGates:
+          - Snapshot
+          - ExpandDisks
+          - HotplugVolumes
+          - Passt
           - GPU
           - DisableMDEVConfiguration
-        permittedHostDevices: # (1)!
-          mediatedDevices:                    # (2)!
+          - VMLiveUpdateFeatures
+          - VMExport
+        vmRolloutStrategy: LiveUpdate
+        # 下面是需要填写的信息
+        permittedHostDevices:         # (1)!
+          mediatedDevices:            # (2)!
           - mdevNameSelector: GRID P4-1Q
             resourceName: nvidia.com/GRID_P4-1Q
-          pciHostDevices:                       # (3)!
-          - externalResourceProvider: true
+          pciHostDevices:             # (3)!
+          - externalResourceProvider:  true
             pciVendorSelector: 10DE:1BB3
-            resourceName: nvidia.com/GP104GL_TESLA_P4 
+            resourceName: nvidia.com/GP104GL_TESLA_P4
+      customizeComponents: {}
+      imagePullPolicy: IfNotPresent
+      workloadUpdateStrategy:
+        workloadUpdateM
     ```
 
     1. 下面是需要填写的信息
@@ -286,8 +348,8 @@
           source:
             registry:
               url: docker://release-ci.daocloud.io/virtnest/system-images/debian-12-x86_64:v1
-    runStrategy: Manual
-    template:
+      runStrategy: Manual
+      template:
         metadata:
           creationTimestamp: null
         spec:
@@ -305,27 +367,27 @@
               - disk:
                   bus: virtio
                 name: cloudinitdisk
-            gpus:
-            - deviceName: nvidia.com/GP104GL_TESLA_P4
+              gpus:
+              - deviceName: nvidia.com/GRID_P4-1Q
                 name: gpu-0-0
-            - deviceName: nvidia.com/GP104GL_TESLA_P4
-              name: gpu-0-1
-            interfaces:
-            - masquerade: {}
-              name: default
-          machine:
-            type: q35
-          resources:
-            requests:
-              memory: 2Gi
-        networks:
-        - name: default
-          pod: {}
-        volumes:
-        - dataVolume:
+              - deviceName: nvidia.com/GRID_P4-1Q
+                name: gpu-0-1
+              interfaces:
+              - masquerade: {}
+                name: default
+            machine:
+              type: q35
+            resources:
+              requests:
+                memory: 2Gi
+          networks:
+          - name: default
+            pod: {}
+          volumes:
+          - dataVolume:
+              name: systemdisk-testvm-gpu1
             name: systemdisk-testvm-gpu1
-          name: systemdisk-testvm-gpu1
-        - cloudInitNoCloud:
-            userDataBase64: I2Nsb3VkLWNvbmZpZwpzc2hfcHdhdXRoOiB0cnVlCmRpc2FibGVfcm9vdDogZmFsc2UKY2hwYXNzd2Q6IHsibGlzdCI6ICJyb290OmRhbmdlcm91cyIsIGV4cGlyZTogRmFsc2V9CgoKcnVuY21kOgogIC0gc2VkIC1pICIvI1w/UGVybWl0Um9vdExvZ2luL3MvXi4qJC9QZXJtaXRSb290TG9naW4geWVzL2ciIC9ldGMvc3NoL3NzaGRfY29uZmlnCiAgLSBzeXN0ZW1jdGwgcmVzdGFydCBzc2guc2VydmljZQ==
+          - cloudInitNoCloud:
+              userDataBase64: I2Nsb3VkLWNvbmZpZwpzc2hfcHdhdXRoOiB0cnVlCmRpc2FibGVfcm9vdDogZmFsc2UKY2hwYXNzd2Q6IHsibGlzdCI6ICJyb290OmRhbmdlcm91cyIsIGV4cGlyZTogRmFsc2V9CgoKcnVuY21kOgogIC0gc2VkIC1pICIvI1w/UGVybWl0Um9vdExvZ2luL3MvXi4qJC9QZXJtaXRSb290TG9naW4geWVzL2ciIC9ldGMvc3NoL3NzaGRfY29uZmlnCiAgLSBzeXN0ZW1jdGwgcmVzdGFydCBzc2guc2VydmljZQ==
             name: cloudinitdisk
     ```
