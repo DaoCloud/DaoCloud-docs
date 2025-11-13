@@ -263,7 +263,8 @@
 
 与普通虚拟机唯一的区别是在 devices 中添加 GPU 相关信息。
 
-??? note "点击查看完整 YAML"
+<details>
+  <summary>点击展开查看 YAML 示例</summary>
 
 ```yaml
 apiVersion: kubevirt.io/v1
@@ -331,3 +332,5 @@ spec:
           userDataBase64: I2Nsb3VkLWNvbmZpZwpzc2hfcHdhdXRoOiB0cnVlCmRpc2FibGVfcm9vdDogZmFsc2UKY2hwYXNzd2Q6IHsibGlzdCI6ICJyb290OmRhbmdlcm91cyIsIGV4cGlyZTogRmFsc2V9CgoKcnVuY21kOgogIC0gc2VkIC1pICIvI1w/UGVybWl0Um9vdExvZ2luL3MvXi4qJC9QZXJtaXRSb290TG9naW4geWVzL2ciIC9ldGMvc3NoL3NzaGRfY29uZmlnCiAgLSBzeXN0ZW1jdGwgcmVzdGFydCBzc2guc2VydmljZQ==
         name: cloudinitdisk
 ```
+
+</details>
