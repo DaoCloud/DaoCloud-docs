@@ -3,19 +3,21 @@
 在 DCE 5.0 的安装器 v0.17.0 之后商业版安装时可以同步安装 AI Lab 组件，
 **无需自行安装** ；请联系交付支持团队获取商业版安装包。
 
-## 全局服务集群
+## 在全局服务集群
 
-> AI Lab 模块仅需安装在[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)
+> AI Lab 模块仅需安装在[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)。
 
 打开全局服务集群，然后在 __Helm 应用__ -> __Helm 模板__ 找到 `baize` 执行安装步骤。
 
 !!! note "注意事项"
 
+    在配置 UI 或 YAML 时要注意：
+
     * 命名空间为 `baize-system`
     * 替换环境地址后打开 `<YOUR_DCE_HOST>/kpanda/clusters/kpanda-global-cluster/helm/charts/addon/baize`
     * `kpanda-global-cluster` 是全局服务集群名称
 
-## baize-agent 工作集群
+## 在 baize-agent 工作集群
 
 !!! warning
 
@@ -39,13 +41,15 @@
 
 按照下方提示，进入工作集群，然后在 __Helm 应用__ -> __Helm 模板__ 找到 `baize-agent` 执行安装步骤。
 
+![Install baize-agent](../images/agent-helm.png)
+
 !!! note "注意事项"
+
+    在配置 UI 或 YAML 时要注意：
 
     * 命名空间为 `baize-system`
     * 替换环境地址后打开 `<YOUR_DCE_HOST>/kpanda/clusters/<cluster_name>/helm/charts/addon/baize`
     * `cluster_name` 是对应工作集群的名称
-
-![Install baize-agent](../images/agent-helm.png)
 
 YAML 示例：
 
@@ -115,7 +119,7 @@ training-operator:
 
 ### Helm 安装 baize-agent
 
-确保全局服务集群内已经安装了 AI Lab 组件，可以通过在管理界面查看是否有 AI Lab 模块。
+确保[全局服务集群内已经安装了 AI Lab 组件](#_1)，可以通过在管理界面查看是否有 AI Lab 模块。
 
 !!! info
 
@@ -142,7 +146,7 @@ AI Lab 模块提供的数据管理中，数据集的预热能力依赖存储服�
 
 * 部署 NFS Server
     * 如果已存在 NFS 可以跳过此步骤
-    * 如果不存在，可以参考最佳实践中的 [NFS 服务部署](../../baize/best-practice/deploy-nfs-in-worker.md)
+    * 如果不存在，可以参考 [NFS 服务部署](../../baize/best-practice/deploy-nfs-in-worker.md)
 * 部署 `nfs-driver-csi`
 * 部署 `StorageClass`
 
