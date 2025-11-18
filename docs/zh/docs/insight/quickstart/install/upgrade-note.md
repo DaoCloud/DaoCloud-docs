@@ -2,18 +2,43 @@
 
 本页介绍一些升级 insight-server 和 insight-agent 的注意事项。
 
-## insight-agent
+## insight-server
 
-### 从 v0.28.x（或更低版本）升级到 v0.29.x
+###  从 v0.39.x（或更低版本）升级到 v0.40.x 或更高版本
 
-由于 v0.29.0 升级了 Opentelemetry 社区的 operator chart 版本，values 中的 featureGates 的支持的值有所变化，因此，在 upgrade 之前，需要将 `featureGates` 的值设置为空, 即：
+在 v0.40.0 版本中，grafana operator 会从 v4 升级到 v5 并会引入大量的 CRD 变更。 升级过程会由 `helm upgrade` 自动完成。
+如果客户需要 `helm rollback` 回到老版本（比如，v0.40.0 -> v0.39.0）需要是手动清理 v5 的 CR:
 
-```diff
--  --set opentelemetry-operator.manager.featureGates="+operator.autoinstrumentation.go,+operator.autoinstrumentation.multi-instrumentation,+operator.autoinstrumentation.nginx" \
-+  --set opentelemetry-operator.manager.featureGates=""
+```shell
+kubectl delete grafanas.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+kubectl delete grafanadashboards.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+kubectl delete grafanadatasources.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
 ```
 
-## insight-server
+这部分命令只清理了 insight-system 命名空间下的 CR, 其他命名空间可以用相同的方式处理。
+
+在 v0.40.x 的 grafana Deployment 会添加一个 [dashboard-discover](https://github.com/openinsight-proj/dashboard-discover) sidecar
+用于将现有环境中特定的 GrafanaDashboard(v4)，ConfigMap 写入到 grafana dashboard provider 指定目录(/var/lib/grafana/plugins/dashboards)中。
+
+架构图如下：
+
+![img](../../images/dashboard-discover.jpg)
+
+具体规则如下：
+
+1. GrafanaDashboard(v4)
+
+   dashboard-discover sidecar 会 watch 集群中所用命名空间中带有：`operator.insight.io/managed-by=insight` label 的 GrafanaDashboard(v4)
+并将其 Json 内容写入到 Grafana 容器的 `/var/lib/grafana/plugins/dashboards` 中。
+
+
+2. ConfigMap
+
+   dashboard-discover sidecar 会 watch 集群中所用命名空间中带有：`operator.insight.io/managed-by=insight,operator.insight.io/dashboard=true` label 的 ConfigMap
+并将其 data 下的所有内容写入到 Grafana 容器的 `/var/lib/grafana/plugins/dashboards` 中。
+
+> 如果需要将 Json 文件存入特定文件夹中，可以在对应资源 label 中添加：`operator.insight.io/dashboard-folder=you-folder`
+
 
 ### 从 v0.26.x（或更低版本）升级到 v0.27.x 或更高版本
 
@@ -75,6 +100,15 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
     ```
 
 ## insight-agent
+
+### 从 v0.28.x（或更低版本）升级到 v0.29.x
+
+由于 v0.29.0 升级了 Opentelemetry 社区的 operator chart 版本，values 中的 featureGates 的支持的值有所变化，因此，在 upgrade 之前，需要将 `featureGates` 的值设置为空, 即：
+
+```diff
+-  --set opentelemetry-operator.manager.featureGates="+operator.autoinstrumentation.go,+operator.autoinstrumentation.multi-instrumentation,+operator.autoinstrumentation.nginx" \
++  --set opentelemetry-operator.manager.featureGates=""
+```
 
 ### 从 v0.23.x（或更低版本）升级到 v0.24.x
 
