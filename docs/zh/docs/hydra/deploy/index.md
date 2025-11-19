@@ -8,29 +8,18 @@
 
 ![service](../images/service01.png)
 
-点击模型服务名称（需要处于`运行中`状态），可以进入服务详情页面。  
+点击模型服务名称（需要处于`运行中`状态），可以进入服务详情页面。
 模型服务详情中包含了该服务的基本信息、授权方式以及调用示例。
 
 ![service](../images/service02.png)
 
-## 基本信息
-
-- 模型服务名称：当前服务的名称，用于标识该模型服务
-- 访问模型名称：每个模型服务都有唯一的路径名称，用于调用模型服务
-- 模型服务ID：用于账单查询
-- 模型：当前服务使用的基座模型
-- 实例数：该服务使用实例数
-- 状态：当前服务的状态
-
 ## 鉴权方式
 
-- API-Key 授权：
+1. Service API 使用 API-Key 进行鉴权。
+2. 强烈建议开发者把 API-Key 放在后端存储，而非分享或者放在客户端存储，以免 API-Key 泄露，导致财产损失。
+3. 所有 API 请求都应在 Authorization HTTP Header 中包含您的 API-Key，如 `Authorization: Bearer {API_KEY}` 查看我的 API-Key
 
-    - 所有 API 请求均需要在 HTTP Header 中添加 Authorization 字段，用于验证身份
-    - 格式：Authorization: Bearer {API_KEY}
-    - 您可以通过页面中的“查看我的 API-Key”链接获取密钥
-
-- 安全建议：将 API-Key 存储在后端服务器，避免将密钥暴露在客户端代码中，防止泄露
+安全建议：将 API-Key 存储在后端服务器，避免将密钥暴露在客户端代码中，防止泄露。
 
 ## 调用 API 示例
 
@@ -60,7 +49,7 @@ curl 'https://sh-02.d.run/v1/chat/completions' \
 
 - temperature：控制生成结果的随机性，值越高生成越有创意，值越低生成越稳定。
 
-### 响应示例
+### API 响应示例
 
 ```json
 {
@@ -98,7 +87,7 @@ curl 'https://sh-02.d.run/v1/chat/completions' \
     - completion_tokens：生成结果的 Token 数量。
     - total_tokens：总使用量。
 
-- 集成开发示例
+以下是一些集成开发示例：
 
 ### Python 示例代码
 
@@ -161,19 +150,19 @@ async function getData() {
 getData();
 ```
 
-## 扩缩容
+## 模型服务扩缩容
 
 如果在模型使用过程中，发现资源不足或出现卡顿现象，可以对模型扩容。
 
-在模型服务列表中，点击右侧的 **┇** ，在弹出菜单中选择 **扩缩容**。
+1. 在模型服务列表中，点击右侧的 **┇** ，在弹出菜单中选择 **扩缩容**
 
-![扩缩容](../images/service03.png)
+    ![扩缩容](../images/service03.png)
 
-输入要增加的实例数，比如 2 个后，点击确定。
+1. 输入要增加的实例数，比如 2 个后，点击 **确定**
 
-![扩缩容](../images/service04.png)
+    ![扩缩容](../images/service04.png)
 
-## 删除
+## 删除模型服务
 
 1. 在模型服务列表中，点击右侧的 **┇** ，在弹出菜单中选择 **删除**
 1. 输入要删除的模型服务名称，确认无误后点击 **删除**
