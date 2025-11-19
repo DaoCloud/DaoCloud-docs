@@ -60,13 +60,11 @@
 
 ## Insight 具体改动
 
-在全局服务集群中的 `insight-opentelemetry-collector` 前面引入具有负载均衡能力的 Opentelemetry Collector Gateway 组件，使得同一组 Trace 能够根据 TraceID 路由到同一个 Opentelemetry Collector 实例。
+在全局服务集群中的 `insight-opentelemetry-collector` 前面新增具有负载均衡能力的 Opentelemetry Collector Gateway 组件，使得同一组 Trace 能够根据 TraceID 路由到同一个 Opentelemetry Collector 实例。
 
 1. 部署具有负载均衡能力的 OTEL COL Gateway 组件
 
-    如果您使用了 Insight 0.25.x 版本，可以通过如下 Helm Upgrade 参数 `--set opentelemetry-collector-gateway.enabled=true` 快速开启，以此跳过如下部署过程。
-
-    参照以下 YAML 配置来部署。
+    可以参照以下 YAML 配置来部署。
 
     ??? note "点击查看部署配置"
 
@@ -127,7 +125,7 @@
               zpages:
                 endpoint: :55679
             exporters:
-              logging:
+              debug:
               loadbalancing:
                 routing_key: "traceID"
                 protocol:
@@ -181,7 +179,7 @@
                     fieldRef:
                       apiVersion: v1
                       fieldPath: metadata.name
-                image: ghcr.m.daocloud.io/openinsight-proj/opentelemetry-collector-contrib:5baef686672cfe5551e03b5c19d3072c432b6f33
+                image: ghcr.m.daocloud.io/openinsight-proj/opentelemetry-collector-contrib:v0.137.0-1a9ef1dc
                 imagePullPolicy: IfNotPresent
                 livenessProbe:
                   failureThreshold: 3
