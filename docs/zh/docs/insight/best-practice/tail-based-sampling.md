@@ -157,7 +157,7 @@
           name: insight-otel-collector-gateway
           namespace: insight-system
         spec:
-          replicas: 2
+          replicas: 1
           selector:
             matchLabels:
               app.kubernetes.io/component: opentelemetry-collector
