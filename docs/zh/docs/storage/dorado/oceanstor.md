@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-# OceanStor A 系列存储与上海道客平台兼容性测试报告
+# OceanStor A 系列存储与道客 d.run 算力调度平台兼容性测试报告
 
 ## 1 环境配置
 
@@ -66,11 +66,11 @@ hide:
 
 ### 2.2 验证目的
 
-本次旨在测试上海道客平台 DaoCloud 和华为 A 系列存储对接兼容性，验证在道客平台上 A 系列存储 UCM 的推理加速能力，关注 TTFT、提高吞吐量和并发的效果提升。
+本次旨在测试道客 d.run 算力调度平台和华为 A 系列存储对接兼容性，验证在 d.run 算力调度平台上 A 系列存储 UCM 的推理加速能力，关注 TTFT、提高吞吐量和并发的效果提升。
 
 ### 2.3 验证总结
 
-上海道客平台 DaoCloud 与华为A系列存储相互兼容，支持 AI 场景 Unified Cache Manager 推理加速能力。在 LLM 模型推理输入长序列和多并发的场景下，Unified Cache 方案提供了基于华为 OceanStor A 系列存储系统的 Prefix Cache、GSA 等功能特性，通过改变 KV Cache 的重用方式，切片化处理输入序列，以及在长序列稀疏化处理，实现了有效缩短 TTFT、提高吞吐量和并发的性能提升效果。
+道客 d.run 算力调度平台 与华为A系列存储相互兼容，支持 AI 场景 Unified Cache Manager 推理加速能力。在 LLM 模型推理输入长序列和多并发的场景下，Unified Cache 方案提供了基于华为 OceanStor A 系列存储系统的 Prefix Cache、GSA 等功能特性，通过改变 KV Cache 的重用方式，切片化处理输入序列，以及在长序列稀疏化处理，实现了有效缩短 TTFT、提高吞吐量和并发的性能提升效果。
 
 在 Qwen3-32B 模型，序列长度 32K + 1K 的场景下，TTFT 最大提升 47%，E2E 吞吐最大提升 75%，在超过并发数为 15 场景，关闭 UCM E2E 吞吐能力最大为 102 tok/s，增加并发后吞吐能力存在波动。
 
@@ -481,7 +481,7 @@ hide:
     1. 根据测试场景修改输入文档长度及并发数  
     2. 开启 UCM 情况下，使用 UC-Eval 测试结果如下：  
       
-        [点击查看 Excel 测试结果](./images/UC-Eval01.xlsx)
+        [点击查看 Excel :material-microsoft-excel: 测试结果](./images/UC-Eval01.xlsx)
 
         记录到最大并发数为 32，对应增量吞吐 292.7 tok/s  
 
@@ -489,7 +489,7 @@ hide:
 
     3. 裸推场景测试结果如下：  
        
-        [点击查看 Excel 测试结果](./images/UC-Eval02.xlsx)
+        [点击查看 Excel :material-microsoft-excel: 测试结果](./images/UC-Eval02.xlsx)
 
         记录到最大并发数为 17，对应增量吞吐 173.2 tok/s  
 
@@ -568,7 +568,7 @@ hide:
 
 - **实测结果**
 
-    [点击查看 Excel 测试结果](./images/prefix-cache.xlsx)
+    [点击查看 Excel :material-microsoft-excel: 测试结果](./images/prefix-cache.xlsx)
 
     ![img](./images/clip_image112.png)
 
