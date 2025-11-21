@@ -19,6 +19,7 @@
 | [Cherry Studio](https://cherry-ai.com) | [在 Cherry Studio 中使用 Hydra 的模型服务](./cherry-studio.md) |
 | [Bob Translate](https://bobtranslate.com) | [在 Bob Translate 中使用 Hydra 的模型服务](./bob-translate.md) |
 | [Lobe Chat](https://github.com/lobehub/lobe-chat) | [在 Lobe Chat 中使用 Hydra 的模型服务](./lobe-chat.md) |
+| [自定义大模型推理运行时](./custom-runtime.md) | [在自定义大模型推理运行时中使用 Hydra 的模型服务](./custom-runtime.md) |
 
 ## 贡献说明
 

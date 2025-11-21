@@ -1290,6 +1290,7 @@ nav:
                   - 在 Cherry Studio 中使用: hydra/user-guides/cherry-studio.md
                   - 在 Bob Translate 中使用: hydra/user-guides/bob-translate.md
                   - 在 LobeChat 中使用: hydra/user-guides/lobe-chat.md
+                  - 自定义大模型推理运行时: hydra/user-guides/custom-runtime.md
           - AI Lab:
               - 介绍:
                   - 什么是 AI Lab: baize/intro/index.md
