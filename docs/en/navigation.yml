@@ -1209,6 +1209,7 @@ nav:
                   - Use with Cherry Studio: hydra/user-guides/cherry-studio.md
                   - Use with Bob Translate: hydra/user-guides/bob-translate.md
                   - Use with LobeChat: hydra/user-guides/lobe-chat.md
+                  - Custom LLM Inference Runtime: hydra/user-guides/custom-runtime.md
           - AI Lab:
               - Introduction:
                   - What is AI Lab: baize/intro/index.md
