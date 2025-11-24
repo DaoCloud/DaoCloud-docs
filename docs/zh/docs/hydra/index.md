@@ -11,6 +11,8 @@ Hydra 模型广场提供多样化的模型选择，涵盖文本生成、图像�
 系统预置了通义千问、Meta、DeepSeek 等主流提供商提供的各类大语言模型。
 用户可根据业务需求灵活部署。
 
+[查阅和下载《大模型服务平台》PDF 文档](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/hydra-docs.pdf){ .md-button .md-button--primary }
+
 ## 筛选模型
 
 通过模型广场的标签，可以快速检索模型列表，支持标签多选，也可以随时清空筛选条件。
