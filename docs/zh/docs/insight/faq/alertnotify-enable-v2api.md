@@ -2,9 +2,10 @@
 
 Insight 引入了新的模板体系，新的模板体系在渲染的数据结构上做了调整，因此和旧版本（v1alpha1） **存在兼容性** 的问题。 因此 默认不启用 v1alpah2。运维可以根据客户的需求开启。
 
-> 🔥 开启后，需要 **立即迁移模板到 v1alpha2 语法** ，否则告警消息将无法正常的发送给 企业微信、电子邮件、飞书等。
->
-> **运维最佳实践，务必通过 SQL 备份旧模板数据。**
+!!! note
+
+    开启后，需要 **立即迁移模板到 v1alpha2 语法** ，否则告警消息将无法正常的发送给 企业微信、电子邮件、飞书等。
+    **运维最佳实践，务必通过 SQL 备份旧模板数据。**
 
 ## 为什么引入新的模板
 
@@ -18,7 +19,7 @@ Insight 引入了新的模板体系，新的模板体系在渲染的数据结构
 
 1. 除了 “邮件标题” 之外，模板只能用模板格式化某一条 Alert 的数据（<span style="color: #87CEEB;">蓝色部分</span>）。因此，一些 **换行符** ，还有 **首行的 `[1]FIRING` 字样** 无法定制。
 
-   ![告警通知v1alpha2](../images/alert-v1alpha2-notify.png)
+    ![告警通知v1alpha2](../images/alert-v1alpha2-notify.png)
 
 2. “邮件标题” 仅能访问 CommonLabels 里的数据（<span style="color: orange;">橙色部分</span>）。
 
@@ -32,7 +33,8 @@ Insight 引入了新的模板体系，新的模板体系在渲染的数据结构
 
 #### 邮件正文
 
-下面是 邮件正文 的 新旧模板的 diff。
+下面是邮件正文新旧模板的 diff。
+
 ```text linenums="1"
 <b style="font-weight: bold">[{{ .Alerts | len -}}] {{.Status}}</b><br />
 {{range .Alerts}}
@@ -52,7 +54,7 @@ description: {{ .Annotations.description }} <br />
 {{end}}
 ```
 
-1. `第 2 行` 和 `第 16 行` ，分别新增了 `{{range .Alerts}}` 和 `{{end}}`，将旧版本的模板包裹在 `range` 关键字中。基本上大多数的模板只要这么处理即可。
+1. `第 2 行` 和 `第 16 行` ，分别新增了 `{{range .Alerts}}` 和 `{{end}}`，将旧版本的模板包裹在 `range` 关键字中。基本上大多数的模板只要这么处理。
 2. `第 15 行`，增加 `<br />` 作为换行符。渲染出来的内容不会 “堆叠在” 一起，而是按照 Alert 一组一组展示。
 
 #### 邮件标题
@@ -100,7 +102,9 @@ Starts At:   {{ .StartsAt }}
 1. **内置模板** ：insight-server 内置一套中文和英文的模板，开启 v1alpha2 之后，程序会自动更新 内置模板 到新版本，无需迁移；
 2. **客户创建模板** ：因为兼容性问题，insight-server 默认不会迁移客户创建的模板。因此，在模板迁移之前，所有的告警通知都将失效，因为无法正确的解析模板，无法正确的生成通知内容，因此无法通知到外部的 webhook，邮件，企业微信。
 
-> 🔥 注意，如果客户不能接受 迁移期间内 无告警通知，那么此方案不可行。
+!!! note
+
+    注意，如果客户不能接受迁移期间内无告警通知，那么此方案不可行。
 
 
 ### 方法 1：(推荐) 通过 helm 命令 upgrade
@@ -111,9 +115,9 @@ Starts At:   {{ .StartsAt }}
     --set server.alerting.notifyTemplate.version="v1alpha2"
     ```
 
-2. 除「helm 命令升级」之外亦可编辑 helm 的 values 文件，如下：
+2. 除 **Helm 命令升级** 外亦可编辑 Helm 的 values 文件，如下：
 
-    ```diff
+    ```diff title="values.yaml"
     server:
       alerting:
         notifyTemplate:
@@ -125,7 +129,7 @@ Starts At:   {{ .StartsAt }}
 
 1. 编辑 insight-server 的配置文件（configmap）insight-server-config，调整配置文件如下：
 
-    ```diff
+    ```diff title="insight-server-config.yaml"
     alerting:
       notifyTemplate:
     -   version: v1alpha1
