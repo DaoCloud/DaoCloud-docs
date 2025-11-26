@@ -9,6 +9,8 @@ hide:
 包括模型部署的复杂性、模型选择的困难性、运行稳定性不足以及潜在的安全风险等。通过提供从模型部署到运维管理的全生命周期服务，
 该平台能够帮助企业和开发者高效地接入和使用各类大模型能力，从而加速企业数字化转型和智能化升级的进程。
 
+[查阅和下载《大模型服务平台》PDF 文档](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/hydra-docs.pdf){ .md-button .md-button--primary }
+
 **功能特性**
 
 - 一键部署与简化运维
