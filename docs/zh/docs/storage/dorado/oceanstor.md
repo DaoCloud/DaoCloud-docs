@@ -319,11 +319,16 @@ hide:
         ![666](./images/clip_image062.png)
 
     3. 在 Pod 所在的 Kubernetes 节点上查看文件系统是否挂载成功。
+
     4. 进入 Pod 的容器中查看 PVC 是否挂载到指定的路径。
        
         ![img](./images/clip_image064.png)
 
-    5. 删除已创建的 Pod，查看 Pod 是否删除成功。
+    5. 从网页图形界面进入 Pod 命令行界面
+
+        ![img](./images/vllm-workspace.png)
+
+    6. 删除已创建的 Pod，查看 Pod 是否删除成功。
        
         ![777](./images/clip_image066.png)
 
@@ -482,7 +487,7 @@ hide:
     2. 开启 UCM 情况下，使用 UC-Eval 测试结果如下：  
       
         [benchmark_static_latency.md](attachments/image48__benchmark_static_latency.md)
-        
+
         [benchmark_static_latency.csv](attachments/image48__benchmark_static_latency.csv)
 
         记录到最大并发数为 32，对应增量吞吐 292.7 tok/s  
