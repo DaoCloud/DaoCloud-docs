@@ -647,6 +647,11 @@ nav:
                   - 功能特性: network/modules/unifabric/features.md
                   - Release Notes: network/modules/unifabric/release-notes.md
                   - 安装 Unifabric: network/modules/unifabric/install.md
+                  - RDMA 延时监控使用指南: network/modules/unifabric/features/RdmaLatencyDetection.md
+                  - RDMA 拓扑识别: network/modules/unifabric/features/RdmaNeighbor.md
+                  - ScaleUP 使用文档: network/modules/unifabric/features/ScaleUp.md
+                  - 存储节点接入指南: network/modules/unifabric/features/StorageNode.md
+                  - Switch Port Detail 介绍: network/modules/unifabric/features/SwitchPortDetail.md
           - 云原生存储:
               - 介绍:
                   - 什么是云原生存储: storage/index.md
