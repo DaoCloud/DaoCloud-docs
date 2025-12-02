@@ -52,17 +52,18 @@ jobs:
             function findOwnerFile(filePath) {
                const parts = filePath.split('/');
 
-               // Check first level directory FIRST (prioritize more specific owners)
-               if (parts.length > 1) {
-                 const firstLevelDir = parts[0];
-                 const ownerPath = path.join(firstLevelDir, 'OWNER');
+               // Try each directory level from deepest to shallowest
+               for (let i = parts.length - 1; i > 0; i--) {
+                 const dirPath = parts.slice(0, i).join('/');
+                 const ownerPath = path.join(dirPath, 'OWNER');
+                 
                  if (fs.existsSync(ownerPath)) {
                    const content = fs.readFileSync(ownerPath, 'utf8');
-                   const owners = content.split('\n')
+                   const owners = content.split('\\n')
                      .filter(line => line.trim().startsWith('@'))
                      .map(line => line.trim());
                    if (owners.length > 0) {
-                     return { path: firstLevelDir, owners };
+                     return { path: dirPath, owners };
                    }
                  }
                }
@@ -70,7 +71,7 @@ jobs:
                // Fall back to root directory
                if (fs.existsSync('OWNER')) {
                  const content = fs.readFileSync('OWNER', 'utf8');
-                 const owners = content.split('\n')
+                 const owners = content.split('\\n')
                    .filter(line => line.trim().startsWith('@'))
                    .map(line => line.trim());
                  if (owners.length > 0) {
