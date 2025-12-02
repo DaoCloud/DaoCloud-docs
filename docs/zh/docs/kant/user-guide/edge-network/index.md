@@ -24,4 +24,4 @@ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 ```
 
 应用网格能力依赖 EdgeMesh 应用，用户在使用网格能力前，需要先部署 EdgeMesh 应用。
-部署流程参考[部署 edgemesh 应用](./deploy-edgemesh.md)
+部署流程参考[部署 edgemesh 应用](./deploy-edgemesh.md)。

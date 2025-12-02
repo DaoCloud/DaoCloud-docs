@@ -12,6 +12,87 @@
 *[Redis]: 高性能键值对存储系统，广泛用于缓存、会话管理和分布式锁。
 *[RocketMQ]: 高可靠、可扩展的分布式消息中间件，适用于事务消息和顺序消息场景。
 
+## 2025-10-31
+
+### Elasticsearch v0.25.2
+
+- **新增** 支持容忍配置
+- **修复** relok8s 解析问题
+- **修复** ghippo 升级日志错误
+- **升级** Elasticsearch & Kibana 从 8.17.1 到 8.17.10
+- **升级** operator 到 2.16.1
+
+### Kafka v0.26.0
+
+- **新增** 支持配置密码
+- **新增** 支持配置复杂 listener 访问
+- **新增** 支持容忍配置
+- **新增** 支持 Kafka 4.0
+- **新增** 支持 CPU、内存、存储容量及副本数从 CR 中获取
+- **新增** charts values 可配置 ghippo sdk 缓存过期时间
+- **修复** Dashboard 显示问题
+- **修复** 创建 Kafka 配置模版报错的问题
+
+### MinIO v0.22.0
+- **新增** 支持 NodePort 端口冲突提前检测
+- **新增** 支持节点亲和性配置
+- **新增** 支持容忍配置
+- **新增** charts values 可配置 ghippo sdk 缓存过期时间
+- **优化** 取消认证信息输入框
+- **修复** 单实例状态显示异常的问题
+- **修复** 创建实例时未校验名称的问题
+- **修复** 无法重启 MinIO 的问题
+- **升级** MinIO operator 到 6.0.4
+- **升级** 离线镜像检测脚本
+
+### MongoDB v0.17.0
+- **新增** 支持容忍配置
+- **新增** charts values 可配置 ghippo sdk 缓存过期时间
+- **修复** 某些情况下审计日志丢失的问题
+- **修复** 添加 v1alpha2 版本 API，并在 URL 中添加 workspace_id ，避免权限泄漏
+- **修复** 设置恢复的实例 Express 服务类型为 NodePort 的问题
+- **修复** 恢复 MongoDB 失败的问题
+
+### MySQL v0.27.1
+
+- **新增** 支持容忍配置
+- **新增** ghippo workspace sDK 超时时间配置
+- **修复** Dashboard 语法问题
+- **修复** 启动自动备份时更新参数报错的问题
+- **升级** MySQL 从 5.7.31 到 5.7.44
+
+### PostgreSQL v0.19.0
+- **新增** 支持容忍配置
+- **升级** pgAdmin 到 9.6.0
+- **升级** exporter 到 v0.17.1
+- **升级** operator 到 0.14.0
+
+### RabbitMQ v0.28.0
+- **新增** 增强默认参数模版
+- **新增** 适配 installer 安装的 RabbitMQ 页面展示
+- **新增** 支持 4.1.0 版本    
+- **修复** deployment 中 matchLabels 移除 istio 注入的 label
+- **修复** 无法创建配置模板的问题
+- **修复** 创建 managerment service 类型为 NodePort 时不生效的问题
+- **升级** RabbitMQ operator到 4.4.1 以支持 RabbitMQ 4.0.5
+
+### Redis v0.28.0
+
+- **新增** 支持容忍配置
+- **修复** ghippo 升级审计日志的问题
+- **升级** 升级 Redis 到 7.2.9，移除 7.2.6 与 7.2.7
+- **升级** 升级 RedisInsight 到 2.70.0
+  
+### RocketMQ v0.16.0
+
+- **新增** 支持 Nameserver 日志持久化存储
+- **新增** 支持 Broker/Controller 日志输出到控制台
+- **新增** 支持 RocketMQ 5.3.3
+- **新增** 支持容忍配置
+- **新增** charts values 可配置 ghippo sdk 缓存过期时间
+- **修复** 使用 0.15.0 版本 Operator 可能导致 Broker 频繁重启的问题
+- **修复** 页面更新可能覆盖用户在自定义资源中的 map/slice 字段的问题
+
 ## 2025-02-28
 
 ### Elasticsearch v0.24.0
