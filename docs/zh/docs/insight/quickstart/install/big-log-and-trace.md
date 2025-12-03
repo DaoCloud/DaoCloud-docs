@@ -37,15 +37,13 @@
 
 === "0.38.x 之前的版本"
 
-  组件：Agent opentelemetry-collector + Global opentelemetry-collector + Jaeger-collector + Elasticsearch
-
-  ![链路模式](../../images/big-log03.png)
+    组件：Agent opentelemetry-collector + Global opentelemetry-collector + Jaeger-collector + Elasticsearch
+    ![链路模式](../../images/big-log03.png)
 
 === "0.38.x+ 之后的版本"
 
-  组件：Agent opentelemetry-collector + Global opentelemetry-collector + Elasticsearch
-
-  ![链路模式](../../images/big-trace-new.png)
+    组件：Agent opentelemetry-collector + Global opentelemetry-collector + Elasticsearch
+    ![链路模式](../../images/big-trace-new.png)
 
 ### 大链路模式
 
@@ -54,13 +52,14 @@
 注意：链路的架构在 0.38.x 版本之后有所调整，数据流图如下所示：
 
 === "0.38.x 之前的版本"
-  组件：Agent opentelemetry-collector + Kafka + Global opentelemetry-collector + Jaeger-collector + Elasticsearch
-
-  ![大链路模式](../../images/big-log04.png)
+    
+    组件：Agent opentelemetry-collector + Kafka + Global opentelemetry-collector + Jaeger-collector + Elasticsearch
+    ![大链路模式](../../images/big-log04.png)
 
 === "0.38.x+ 之后的版本"
-  组件：Agent opentelemetry-collector + Kafka + Global opentelemetry-collector + Elasticsearch
-  ![大链路模式](../../images/big-trace-kafka-new.png)
+    
+    组件：Agent opentelemetry-collector + Kafka + Global opentelemetry-collector + Elasticsearch
+    ![大链路模式](../../images/big-trace-kafka-new.png)
 
 ## 通过安装器开启
 
