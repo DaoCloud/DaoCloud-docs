@@ -4,9 +4,72 @@
 
 ## insight
 
+###  从 v0.39.x（或更低版本）升级到 v0.40.x 或更高版本
+
+在 v0.40.0 版本中，grafana operator 会从 v4 升级到 v5 并会引入大量的 CRD 变更。 升级过程会由 `helm upgrade` 自动完成。
+如果客户需要 `helm rollback` 回到老版本（比如，v0.40.0 -> v0.39.0）需要是手动清理 v5 的 CR:
+
+```shell
+kubectl delete grafanas.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+kubectl delete grafanadashboards.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+kubectl delete grafanadatasources.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+```
+
+这部分命令只清理了 insight-system 命名空间下的 `grafanadashboards.grafana.integreatly.org`, 其他命名空间可以用相同的方式处理。
+
+在 v0.40.x 的 grafana deployment 会添加一个 [dashboard-discover](https://github.com/openinsight-proj/dashboard-discover) sidecar
+用于将现有环境中特定的 GrafanaDashboard(v4)，ConfigMap 写入到 grafana dashboard provider 指定目录(/var/lib/grafana/plugins/dashboards)中。
+
+架构图如下：
+
+![img](../../images/upgrade-note01.jpg)
+
+具体规则如下：
+
+1. GrafanaDashboard(v4)
+
+   dashboard-discover sidecar 会 watch 集群中所用命名空间中带有：`operator.insight.io/managed-by=insight` label 的 GrafanaDashboard(v4)
+并将其 Json 内容写入到 Grafana 容器的 `/var/lib/grafana/plugins/dashboards` 中。
+
+
+2. ConfigMap
+
+   dashboard-discover sidecar 会 watch 集群中所用命名空间中带有：`operator.insight.io/managed-by=insight,operator.insight.io/dashboard=true` label 的 ConfigMap
+并将其 data 下的所有内容写入到 Grafana 容器的 `/var/lib/grafana/plugins/dashboards` 中。
+
+> 如果需要将 Json 文件存入特定文件夹中，可以在对应资源 label 中添加：`operator.insight.io/dashboard-folder=you-folder`
+
+在 v0.40.0 版本中， grafana 从 9.3.14 升级到 12.1.3。grafana 12.1.3 已完全移除对 AngularJS 的支持，转而优先支持 React。具体可以看[社区说明](https://grafana.com/blog/2025/04/03/angularjs-support-will-be-removed-in-grafana-12-what-you-need-to-know)。
+
+insight 以及兄弟团队维护的仪表盘已经自动迁移，开箱即用。对于客户自己维护的仪表盘，grafana 12.1.3 对部分核心预置（pre-installed）的
+AngularJS 面板提供自动迁移支持。在客户首次在 Grafana 12.1.3 打开自定义仪表盘后 grafana 会自动触发迁移, 迁移完成后，务必点击仪表盘的「Save」按钮保存变更，避免每次加载时重复迁移。
+
+若未完成 AngularJS 面板迁移，在 Grafana 12.1.3 后会出现以下问题：
+
+1. 依赖 AngularJS 的插件无法加载，在插件目录中不会显示已安装状态。
+2. 已配置的 AngularJS 数据源不会出现在数据源列表中。
+3. 仪表盘中原 AngularJS 面板会显示错误提示，如 `Error loading: plugin_name` 或 `Panel plugin not found: plugin_name`； 如下图：
+
+   <img src="../../images/upgrade-note02.png" alt="angularjs-deprecation-warning-panel" width="50%" />
+
+   可以手动替换类似的面板或插件。
+
+4. 仪表盘中原 Datasource 丢失，如 `Datasource XXX was not found`, 如下图：
+
+   <img src="../../images/upgrade-note03.png" alt="datasource-not-found" width="50%" />
+
+   可以手动创建一个 Datasource 变量:
+
+   <img src="../../images/upgrade-note04.png" alt="grafana-prometheus-ds-var" height="500" />
+
+   然后在面板中使用：
+
+   <img src="../../images/upgrade-note05.png" alt="grafana-use-prometheus-ds-var" width="30%" />
+
 ### 从 v0.37.x（或更低版本）升级到 v0.38.x
 
-在 v0.38.x 版本中 insight 将 Jaeger 从 v1 升级到 v2，部署架构上也有变化，在升级 insight 时，需要指定 `--set jaeger.collector.enabled=false`。
+在 v0.38.x 版本中 insight 将 Jaeger 从 v1 升级到 v2，部署架构上也有调整，jaeger Collector 现已弃用，其功能作为插件合并到 Global Opentelemetry Collector 中，
+在升级 insight 时，需要指定 `--set jaeger.collector.enabled=false`。
 
 ### 从 v0.26.x（或更低版本）升级到 v0.27.x 或更高版本
 
