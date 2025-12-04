@@ -5,24 +5,18 @@ Date: 2024-09-24
 
 # Upgrade Notes
 
-This page provides some considerations for upgrading insight-server and insight-agent.
+This page provides some considerations for upgrading insight and insight-agent chart.
 
-## insight-agent
+## insight
 
-### Upgrade from v0.28.x (or lower) to v0.29.x
+### Upgrade from v0.37.x (or lower) to v0.38.x
 
-Due to the upgrade of the Opentelemetry community operator chart version in v0.29.0, the supported values for `featureGates` in the values file have changed. Therefore, before upgrading, you need to set the value of `featureGates` to empty, as follows:
-
-```diff
--  --set opentelemetry-operator.manager.featureGates="+operator.autoinstrumentation.go,+operator.autoinstrumentation.multi-instrumentation,+operator.autoinstrumentation.nginx" \
-+  --set opentelemetry-operator.manager.featureGates=""
-```
-
-## insight-server
+In version v0.38.x, insight upgrades Jaeger from v1 to v2, and there are also changes in the deployment architecture. 
+When upgrading insight, you need to specify `--set jaeger.collector.enabled=false`.
 
 ### Upgrade from v0.26.x (or lower) to v0.27.x or higher
 
-In v0.27.x, the switch for the vector component has been separated. If the existing environment has vector enabled, you need to specify `--set vector.enabled=true` when upgrading the insight-server.
+In v0.27.x, the switch for the vector component has been separated. If the existing environment has vector enabled, you need to specify `--set vector.enabled=true` when upgrading the insight.
 
 ### Upgrade from v0.19.x (or lower) to 0.20.x
 
@@ -37,14 +31,14 @@ kubectl -n insight-system delete deployment insight-jaeger-query
 ### Upgrade from v0.17.x (or lower) to v0.18.x
 
 In v0.18.x, there have been updates to the Jaeger-related deployment files,
-so you need to manually run the following commands before upgrading insight-server:
+so you need to manually run the following commands before upgrading insight:
 
 ```bash
 kubectl -n insight-system delete deployment insight-jaeger-collector
 kubectl -n insight-system delete deployment insight-jaeger-query
 ```
 
-There have been changes to metric names in v0.18.x, so after upgrading insight-server,
+There have been changes to metric names in v0.18.x, so after upgrading insight,
 insight-agent should also be upgraded.
 
 In addition, the parameters for enabling the tracing module and adjusting the ElasticSearch connection
@@ -69,7 +63,7 @@ have been modified. Refer to the following parameters:
 ### Upgrade from v0.15.x (or lower) to v0.16.x
 
 In v0.16.x, a new feature parameter `disableRouteContinueEnforce` in the `vmalertmanagers CRD`
-is used. Therefore, you need to manually run the following command before upgrading insight-server:
+is used. Therefore, you need to manually run the following command before upgrading insight:
 
 ```shell
 kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics/operator/v0.33.0/config/crd/bases/operator.victoriametrics.com_vmalertmanagers.yaml --force-conflicts
@@ -85,6 +79,15 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
     ```
 
 ## insight-agent
+
+### Upgrade from v0.28.x (or lower) to v0.29.x
+
+Due to the upgrade of the Opentelemetry community operator chart version in v0.29.0, the supported values for `featureGates` in the values file have changed. Therefore, before upgrading, you need to set the value of `featureGates` to empty, as follows:
+
+```diff
+-  --set opentelemetry-operator.manager.featureGates="+operator.autoinstrumentation.go,+operator.autoinstrumentation.multi-instrumentation,+operator.autoinstrumentation.nginx" \
++  --set opentelemetry-operator.manager.featureGates=""
+```
 
 ### Upgrade from v0.23.x (or lower) to v0.24.x
 

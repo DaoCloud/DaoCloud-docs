@@ -1,23 +1,16 @@
 # 升级注意事项
 
-本页介绍一些升级 insight-server 和 insight-agent 的注意事项。
+本页介绍一些升级 insight 和 insight-agent chart 的注意事项。
 
-## insight-agent
+## insight
 
-### 从 v0.28.x（或更低版本）升级到 v0.29.x
+### 从 v0.37.x（或更低版本）升级到 v0.38.x
 
-由于 v0.29.0 升级了 Opentelemetry 社区的 operator chart 版本，values 中的 featureGates 的支持的值有所变化，因此，在 upgrade 之前，需要将 `featureGates` 的值设置为空, 即：
-
-```diff
--  --set opentelemetry-operator.manager.featureGates="+operator.autoinstrumentation.go,+operator.autoinstrumentation.multi-instrumentation,+operator.autoinstrumentation.nginx" \
-+  --set opentelemetry-operator.manager.featureGates=""
-```
-
-## insight-server
+在 v0.38.x 版本中 insight 将 Jaeger 从 v1 升级到 v2，部署架构上也有变化，在升级 insight 时，需要指定 `--set jaeger.collector.enabled=false`。
 
 ### 从 v0.26.x（或更低版本）升级到 v0.27.x 或更高版本
 
-在 v0.27.x 版本中将 vector 组件的开关单独抽出。故原有环境开启了 vector，那在升级 insight-server 时，需要指定 `--set vector.enabled=true` 。
+在 v0.27.x 版本中将 vector 组件的开关单独抽出。故原有环境开启了 vector，那在升级 insight 时，需要指定 `--set vector.enabled=true` 。
 
 ### 从 v0.19.x（或更低版本）升级到 0.20.x
 
@@ -30,14 +23,14 @@ kubectl -n insight-system delete deployment insight-jaeger-query
 
 ### 从 v0.17.x（或更低版本）升级到 v0.18.x
 
-由于 0.18.x 中更新了 Jaeger 相关部署文件，因此需要在升级 insight-server  前手动执行如下命令：
+由于 0.18.x 中更新了 Jaeger 相关部署文件，因此需要在升级 insight  前手动执行如下命令：
 
 ```bash
 kubectl -n insight-system delete deployment insight-jaeger-collector
 kubectl -n insight-system delete deployment insight-jaeger-query
 ```
 
-由于 0.18.x 中指标名产生了变动，因此，需要在升级 insight-server 之后，insight-agent 也应该做升级。
+由于 0.18.x 中指标名产生了变动，因此，需要在升级 insight 之后，insight-agent 也应该做升级。
 
 此外，调整了开启链路模块的参数，以及 ElasticSearch 连接调整。具体参考以下参数：
 
@@ -60,7 +53,7 @@ kubectl -n insight-system delete deployment insight-jaeger-query
 ### 从 v0.15.x（或更低版本）升级到 v0.16.x
 
 由于 0.16.x 中使用了 vmalertmanagers CRD 的新特性参数 disableRouteContinueEnforce，
-因此需要在升级 insight-server 前手动执行如下命令。
+因此需要在升级 insight 前手动执行如下命令。
 
 ```shell
 kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics/operator/v0.33.0/config/crd/bases/operator.victoriametrics.com_vmalertmanagers.yaml --force-conflicts
@@ -75,6 +68,15 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
     ```
 
 ## insight-agent
+
+### 从 v0.28.x（或更低版本）升级到 v0.29.x
+
+由于 v0.29.0 升级了 Opentelemetry 社区的 operator chart 版本，values 中的 featureGates 的支持的值有所变化，因此，在 upgrade 之前，需要将 `featureGates` 的值设置为空, 即：
+
+```diff
+-  --set opentelemetry-operator.manager.featureGates="+operator.autoinstrumentation.go,+operator.autoinstrumentation.multi-instrumentation,+operator.autoinstrumentation.nginx" \
++  --set opentelemetry-operator.manager.featureGates=""
+```
 
 ### 从 v0.23.x（或更低版本）升级到 v0.24.x
 
