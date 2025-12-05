@@ -9,9 +9,51 @@ This page provides some considerations for upgrading insight and insight-agent c
 
 ## insight
 
+### Upgrade from v0.39.x (or lower) to v0.40.x or higher
+
+In version v0.40.0, the Grafana Operator will be upgraded from v4 to v5, introducing significant CRD changes. 
+The upgrade process will be automatically completed by `helm upgrade`.
+
+If users need to perform a `helm rollback` to a previous version (e.g., from v0.40.0 to v0.39.0), 
+they must manually clean up the v5 Custom Resources (CRs) using the following commands:
+```shell
+kubectl delete grafanas.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+kubectl delete grafanadashboards.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+kubectl delete grafanadatasources.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+```
+These commands only clean up CRs in the `insight-system` namespace. CRs in other namespaces can be removed using the same approach.
+
+The Grafana Deployment in v0.40.x will include a [dashboard-discover](https://github.com/openinsight-proj/dashboard-discover) sidecar, 
+which is used to write specific GrafanaDashboard(v4) resources and ConfigMaps from the existing environment into the directory 
+specified by the Grafana dashboard provider (/var/lib/grafana/plugins/dashboards).
+
+
+The architecture diagram of dashboard-discover is as follows:
+
+![img](../../image/dashboard-discover.jpg)
+
+The specific rules are as follows:
+
+1. GrafanaDashboard(v4)
+
+   The dashboard-discover sidecar will watch for GrafanaDashboard(v4) resources across all namespaces in the cluster that 
+   have the label: `operator.insight.io/managed-by=insight`, and write their JSON content into the `/var/lib/grafana/plugins/dashboards`
+   directory of the Grafana container.
+
+
+2. ConfigMap
+
+   The dashboard-discover sidecar will watch for ConfigMaps across all namespaces in the cluster that have the labels: 
+   `operator.insight.io/managed-by=insight,operator.insight.io/dashboard=true`, and write all content under their data field 
+   into the `/var/lib/grafana/plugins/dashboards` directory of the Grafana container.
+
+> If you need to store JSON files in a specific folder, you can add the following label to the corresponding resource: 
+> `operator.insight.io/dashboard-folder=your-folder`
+
 ### Upgrade from v0.37.x (or lower) to v0.38.x
 
-In version v0.38.x, insight upgrades Jaeger from v1 to v2, and there are also changes in the deployment architecture. 
+In version v0.38.x of insight, Jaeger has been upgraded from v1 to v2, with corresponding adjustments to the deployment architecture.
+The jaeger Collector has now been deprecated, and its functionalities have been merged into the Global Opentelemetry Collector as a plugin.
 When upgrading insight, you need to specify `--set jaeger.collector.enabled=false`.
 
 ### Upgrade from v0.26.x (or lower) to v0.27.x or higher
