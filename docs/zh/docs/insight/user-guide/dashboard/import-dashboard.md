@@ -8,7 +8,7 @@
 
 2. 选择左侧导航栏的 __自定义资源__ ，在列表中查找 __grafana.integreatly.org__ 文件，进入详情。
 
-    ![导入仪表盘](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/importboard00.png){ width="1000"}
+    ![导入仪表盘](../../images/importboard00.png){ width="1000"}
 
 3. 点击 __Yaml 创建__ ，使用以下模板，在 __Json__ 字段中替换仪表盘 JSON。
 
