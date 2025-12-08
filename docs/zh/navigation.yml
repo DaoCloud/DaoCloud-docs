@@ -644,14 +644,14 @@ nav:
                   - 阿里云运行 Cilium: network/modules/aliyun-terway/aliyun-cilium.md
                   - 常见问题: network/modules/aliyun-terway/Q_A.md
               - 集成 Unifabric:
-                  - 功能特性: network/modules/unifabric/features.md
+                  - Unifabric 概述: network/modules/unifabric/features.md
                   - Release Notes: network/modules/unifabric/release-notes.md
-                  - 安装 Unifabric: network/modules/unifabric/install.md
-                  - RDMA 延时监控使用指南: network/modules/unifabric/features/RdmaLatencyDetection.md
+                  - Unifabric 安装: network/modules/unifabric/install.md
+                  - 交换机节点接入: network/modules/unifabric/features/SwitchPortDetail.md
+                  - 存储节点接入: network/modules/unifabric/features/StorageNode.md
                   - RDMA 拓扑识别: network/modules/unifabric/features/RdmaNeighbor.md
                   - ScaleUP 使用文档: network/modules/unifabric/features/ScaleUp.md
-                  - 存储节点接入指南: network/modules/unifabric/features/StorageNode.md
-                  - Switch Port Detail 介绍: network/modules/unifabric/features/SwitchPortDetail.md
+                  - RDMA 延时监控使用指南: network/modules/unifabric/features/RdmaLatencyDetection.md
           - 云原生存储:
               - 介绍:
                   - 什么是云原生存储: storage/index.md

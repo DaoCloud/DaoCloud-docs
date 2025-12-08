@@ -5,6 +5,8 @@
 Unifabric 具备 ScaleUP 网络拓扑识别功能，打开该选项后，可以通过 `ScaleUpGroup` CRD 查看集群中的超级节点（ScaleUP）组信息。
 同时，节点上会自动打上 `dce.unifabric.io/scaleup-group` 标签，标签值为所属的 ScaleUP 组名称。这样在调度机器学习任务时，可以通过该标签更好地利用 ScaleUP 组。
 
+![ScaleUp](../images/chaojiedian.PNG)
+
 ## 基本要求
 
 1. 当前仅支持沐曦 Metax 作为 ScaleUP 的数据源。
