@@ -6,7 +6,7 @@ date: 2025-06-23
 # Insight Release Notes
 
 This page lists the Release Notes of Insight, so that you can understand
-the evolution path and feature changes of each version.
+the evolution path and feature changes of each version. [Upgrade Notes](../quickstart/install/upgrade-note.md).
 
 ## 2025-06-30
 

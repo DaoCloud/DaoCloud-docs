@@ -1137,6 +1137,7 @@ nav:
                       - 实例监控及日志: middleware/kafka/user-guide/insight-log.md
                       - 配置参数: middleware/kafka/user-guide/config.md
                       - 参数模板: middleware/kafka/user-guide/template.md
+                      - Kafka Topic 使用介绍: middleware/kafka/user-guide/useage-topic.md
                   - 最佳实践:
                       - Kafka双机房部署灾备方案: middleware/kafka/bestpractice/kafkain2IDC.md
               - MinIO 对象存储:
