@@ -11,6 +11,8 @@ This page provides some considerations for upgrading insight and insight-agent c
 
 ### Upgrade from v0.39.x (or lower) to v0.40.x or higher
 
+#### Upgrade grafana operator
+
 In version v0.40.0, the Grafana Operator will be upgraded from v4 to v5, introducing significant CRD changes. 
 The upgrade process will be automatically completed by `helm upgrade`.
 
@@ -49,6 +51,38 @@ The specific rules are as follows:
 
 > If you need to store JSON files in a specific folder, you can add the following label to the corresponding resource: 
 > `operator.insight.io/dashboard-folder=your-folder`
+
+#### Upgrade grafana
+
+In version v0.40.0, Grafana has been upgraded from 9.3.14 to 12.1.3. Grafana 12.1.3 has completely removed support for
+AngularJS and prioritized React instead. For details, refer to the [community announcement](https://grafana.com/blog/2025/04/03/angularjs-support-will-be-removed-in-grafana-12-what-you-need-to-know).
+
+Dashboards maintained by Insight and other gproduct have been automatically migrated and are ready to use out of the box.
+For customer-maintained dashboards, Grafana 12.1.3 provides automatic migration support for some core pre-installed AngularJS panels.
+When a customer opens a custom dashboard in Grafana 12.1.3 for the first time, Grafana will automatically trigger the migration.
+**After migration is complete, be sure to click the 「Save」 button on the dashboard to save changes, preventing repeated migrations on each load.**
+
+If AngularJS panel migration is not completed, the following issues will occur in Grafana 12.1.3 and later versions:
+
+1. Plugins dependent on AngularJS will fail to load and will not display as installed in the plugin directory.
+2. Configured AngularJS data sources will not appear in the data source list.
+3. Original AngularJS panels in the dashboard will show error messages such as `Error loading: plugin_name` or `Panel plugin not found: plugin_name`; see the figure below:
+
+   ![img](../../image/upgrade-note02.png)
+
+   Similar panels or plugins can be manually replaced.
+
+4. Original data sources in the dashboard will be lost, with errors such as `Datasource XXX was not found`; see the figure below:
+
+   ![img](../../image/upgrade-note03.png)
+
+   You can manually create a `Datasource variable`:
+
+   ![img](../../image/upgrade-note04.png)
+
+   Then apply it in the panel:
+
+   ![img](../../image/upgrade-note05.png)
 
 ### Upgrade from v0.37.x (or lower) to v0.38.x
 

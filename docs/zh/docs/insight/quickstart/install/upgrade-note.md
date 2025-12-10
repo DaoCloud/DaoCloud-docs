@@ -6,6 +6,8 @@
 
 ###  从 v0.39.x（或更低版本）升级到 v0.40.x 或更高版本
 
+#### grafana operator 升级
+
 在 v0.40.0 版本中，grafana operator 会从 v4 升级到 v5 并会引入大量的 CRD 变更。 升级过程会由 `helm upgrade` 自动完成。
 如果客户需要 `helm rollback` 回到老版本（比如，v0.40.0 -> v0.39.0）需要是手动清理 v5 的 CR:
 
@@ -39,6 +41,8 @@ kubectl delete grafanadatasources.grafana.integreatly.org -n insight-system --se
 
 > 如果需要将 Json 文件存入特定文件夹中，可以在对应资源 label 中添加：`operator.insight.io/dashboard-folder=you-folder`
 
+#### grafana 升级
+
 在 v0.40.0 版本中， grafana 从 9.3.14 升级到 12.1.3。grafana 12.1.3 已完全移除对 AngularJS 的支持，转而优先支持 React。具体可以看[社区说明](https://grafana.com/blog/2025/04/03/angularjs-support-will-be-removed-in-grafana-12-what-you-need-to-know)。
 
 insight 以及兄弟团队维护的仪表盘已经自动迁移，开箱即用。对于客户自己维护的仪表盘，grafana 12.1.3 对部分核心预置（pre-installed）的
@@ -50,21 +54,21 @@ AngularJS 面板提供自动迁移支持。在客户首次在 Grafana 12.1.3 打
 2. 已配置的 AngularJS 数据源不会出现在数据源列表中。
 3. 仪表盘中原 AngularJS 面板会显示错误提示，如 `Error loading: plugin_name` 或 `Panel plugin not found: plugin_name`； 如下图：
 
-   <img src="../../images/upgrade-note02.png" alt="angularjs-deprecation-warning-panel" width="50%" />
+   ![img](../../images/upgrade-note02.png)
 
    可以手动替换类似的面板或插件。
 
 4. 仪表盘中原 Datasource 丢失，如 `Datasource XXX was not found`, 如下图：
 
-   <img src="../../images/upgrade-note03.png" alt="datasource-not-found" width="50%" />
+   ![img](../../images/upgrade-note03.png)
 
    可以手动创建一个 Datasource 变量:
 
-   <img src="../../images/upgrade-note04.png" alt="grafana-prometheus-ds-var" height="500" />
+   ![img](../../images/upgrade-note04.png)
 
    然后在面板中使用：
 
-   <img src="../../images/upgrade-note05.png" alt="grafana-use-prometheus-ds-var" width="30%" />
+   ![img](../../images/upgrade-note05.png)
 
 ### 从 v0.37.x（或更低版本）升级到 v0.38.x
 
