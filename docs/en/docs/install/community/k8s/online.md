@@ -41,7 +41,7 @@ This page will guide you to install DCE Community package online in a standard K
 
     # For ARM, replace `dce5-installer-$VERSION` with `dce5-installer-$VERSION-linux-arm64`
 
-    curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
+    curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
 
