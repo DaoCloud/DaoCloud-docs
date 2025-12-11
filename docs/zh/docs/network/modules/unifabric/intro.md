@@ -49,7 +49,7 @@ Unifabric 基于 Kubernetes 原生架构，提供标准 Helm Chart，支持在�
 - 支持查看链路的 RX/TX 带宽、拥塞（CE）、错误（UE）等数据
 - 提供链路性能分析视图，支持链路历史趋势分析
 
-![pod](./images/pod.PNG)
+![pod](./images/pod.png)
 
 ### 4. 自动分组与智能诊断
 
