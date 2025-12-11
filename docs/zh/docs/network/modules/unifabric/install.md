@@ -75,9 +75,9 @@
     
     - 检查 FabricNode CRD 状态：
     
-    ```bash
-    kubectl get fabricnodes.unifabric.io
-    ```
+        ```bash
+        kubectl get fabricnodes.unifabric.io
+        ```
     
     - 查看具体节点的邻居信息：
     
