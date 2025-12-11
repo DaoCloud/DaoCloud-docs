@@ -663,7 +663,7 @@ If the output is different from the above cases, please follow the upgrade instr
 
     ```yaml
     kubeanConfig: |-
-      calico_crds_download_url: "https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
+      calico_crds_download_url: "https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
     ```
 
     At the same time, creating a worker cluster online through container management also has the same problem. You need to add the above configuration in the custom parameters of the advanced configuration on the cluster creation page. The key is `calico_crds_download_url`, and the value is the value of the above calico_crds_download_url
