@@ -366,4 +366,4 @@ sh-inf-worker-1    Ready    gpu                        130d   v1.30.5
 
 ### 故障排查
 
-参考 [Troubleshooting](Troubleshooting.md)
+参考 [Troubleshooting](../troubleshooting.md)
