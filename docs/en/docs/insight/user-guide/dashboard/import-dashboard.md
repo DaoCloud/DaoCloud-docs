@@ -6,25 +6,30 @@ By using Grafana CRD, you can incorporate the management and deployment of dashb
 
 1. Log in to the DCE 5.0 platform and go to __Container Management__ . Select the __kpanda-global-cluster__ from the cluster list.
 
-2. Choose __Custom Resources__ from the left navigation bar. Look for the __grafanadashboards.integreatly.org__ 
+2. Choose __Custom Resources__ from the left navigation bar. Look for the __grafana.integreatly.org__ 
    file in the list and click it to view the details.
 
 3. Click __YAML Create__ and use the following template. Replace the dashboard JSON in the __Json__ field.
 
-    - __namespace__ : Specify the target namespace.
-    - __name__ : Provide a name for the dashboard.
-    - __label__ : Mandatory. Set the label as __operator.insight.io/managed-by: insight__ .
+   - __metadata.name__ ：Provide a name for the dashboard.
+   - __metadata.namespace__ ：Specify the target namespace.
+   - __metadata.labels__ ：Mandatory， __operator.insight.io/managed-by: insight__ .
+   - __spec.allowCrossNamespaceImport__ ：Mandatory, __true__ .
+   - __spec.instanceSelector.matchLabels__ ：Mandatory，__operator.insight.io/managed-by: insight__ .
 
     ```yaml
-    apiVersion: integreatly.org/v1alpha1
+    apiVersion: grafana.integreatly.org/v1beta1
     kind: GrafanaDashboard
     metadata:
       labels:
-        app: insight-grafana-operator
         operator.insight.io/managed-by: insight
       name: sample-dashboard
       namespace: insight-system
     spec:
+      allowCrossNamespaceImport: true
+      instanceSelector:
+        matchLabels:
+          operator.insight.io/managed-by: insight
       json: >
         {
           "id": null,

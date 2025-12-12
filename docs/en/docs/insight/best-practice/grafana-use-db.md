@@ -25,6 +25,8 @@ these steps to set up an external database, using MySQL as an example:
 
 ## Step-by-Step Instructions
 
+### Method 1
+
 1. **Initialize the Database**
 
     Create a new database for Grafana in your external database, and we recommend naming it `grafana`.
@@ -34,14 +36,13 @@ these steps to set up an external database, using MySQL as an example:
     Within the `insight-system` namespace, locate the Grafana Custom Resource (CR) named
     `insight-grafana-operator-grafana`. Update the configuration to include:
 
-    ```yaml
-    apiVersion: integreatly.org/v1alpha1
+    ```diff
+    apiVersion: grafana.integreatly.org/v1beta1
     kind: Grafana
     metadata:
-      name: insight-grafana-operator-grafana
+      name: grafana
       namespace: insight-system
     spec:
-      baseImage: 10.64.40.50/docker.m.daocloud.io/grafana/grafana:9.3.14
       config:
         # Add the following fields
     +   database:
@@ -54,7 +55,7 @@ these steps to set up an external database, using MySQL as an example:
 
 3. **Verify the Configuration**
 
-    After updating, your Grafana configuration file (`grafana-config`) should include the following:
+    After updating, your Grafana configuration file (`grafana-ini`) should include the following:
 
     ```toml
     [database]
@@ -65,40 +66,19 @@ these steps to set up an external database, using MySQL as an example:
       user = grafana
     ```
 
-    Additionally, update your `insight.yaml` file to include:
+### Method 2
 
-    ```yaml
-    grafana-operator:
-      grafana:
-        config:
-          database:
-            type: mysql
-            host: "10.6.216.101:30782"
-            name: "grafana"
-            user: "grafana"
-            password: "grafana_password"
-    ```
+1. **Initialize the Database**
 
-4. **Upgrade the Insight Server**
+    Create a new database for Grafana in your external database, and we recommend naming it `grafana`.
 
-    It’s best to upgrade via Helm:
-
-    ```shell
-    helm upgrade insight insight/insight \
-      -n insight-system \
-      -f ./insight.yaml \
-      --version ${version}
-    ```
-
-5. **Or Upgrade via Command Line**
-
-    If you prefer using the command line, start by retrieving the original configuration from the Insight Helm:
+2. **Get the original value from the insight**
 
     ```shell
     helm get values insight -n insight-system -o yaml > insight.yaml
     ```
 
-    Then, specify the original configuration file while saving the Grafana database connection details:
+3. **Upgrade insight with database connection details**
 
     ```shell
     helm upgrade --install \
@@ -135,4 +115,50 @@ these steps to set up an external database, using MySQL as an example:
     ALTER TABLE annotation_tag_v2
         ADD CONSTRAINT annotation_tag_v2_pk
             PRIMARY KEY (tag_id, annotation_id);
+    ```
+
+3. **Enabling Grafana persistent database before upgrading Insight will cause permission issues such as inability to log 
+   in with the upgraded grafana admin user and failure to create dashboards.**
+
+    Root Cause: After Insight is upgraded, the admin password in the `grafana-admin-credentials` Secret is updated, 
+    but the password of the admin user in the `grafana.user` table of the database is the one written during database initialization,
+    resulting in a password conflict for the admin user and authentication failure.
+
+    There are two solutions to this problem:
+
+    **Solution 1: Fix the grafana admin password**
+
+    Before upgrading Insight, add the following configuration to insight.yaml to fix the grafana password:
+
+    ```diff
+    grafana-operator:
+      grafana:
+        config:
+          security:
+            admin_user: admin
+    +       admin_password: F4R1an5D2oPMRg==
+    ```
+
+    **Solution 2: Update the latest admin password to the database**
+
+    Run the code according to the comments at https://go.dev/play, execute the generated SQL in the database, 
+    and finally restart the grafana pod:
+
+    ```go
+    package main
+
+    import (
+      "fmt"
+
+      "github.com/grafana/grafana/pkg/util"
+    )
+
+    func main() {
+      sql := "UPDATE grafana.`user` SET password = '%s' WHERE login = 'admin';" // SQL update template
+      salt := "JjTJT3vlVE"                                                      // Retrieve the salt via SQL query: SELECT salt FROM grafana.`user` WHERE login = 'admin';
+      password := "yR1IQmNqHKjchw=="                                            // The value of GF_SECURITY_ADMIN_PASSWORD in the grafana-admin-credentials secret under the insight-system namespace
+      encodeStr := util.EncodePassword(password, salt)
+      fmt.Println(fmt.Sprintf(sql, encodeStr))                                  // Execute the output command in the database
+      // Example output: UPDATE grafana.`user` SET password = '243c6eecaebe959d33f8f96563c6ada760efb6a2da8e46699550a8d33f28ab3a0317cb8abc3a392accea6229f6dd535173ff' WHERE login = 'admin';
+    }
     ```
