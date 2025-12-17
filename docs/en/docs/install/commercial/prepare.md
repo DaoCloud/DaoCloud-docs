@@ -24,7 +24,8 @@ This page describes the preparation work required for deploying DCE 5.0.
 | Time Synchronization | All cluster nodes must have synchronized time | This is an official requirement of Docker and Kubernetes. Otherwise kube.conf will report error `Unable to connect to the server: x509: certificate has expired or is not yet` |
 | Timezone | All servers must have unified timezone | Recommended to set to Asia/Shanghai. <br />Reference command: timedatectl set-timezone Asia/Shanghai |
 | Nameserver | /etc/resolv.conf must have at least one Nameserver | CoreDNS requirement, otherwise there will be errors. This nameserver can be a non-existent IP address in a pure offline environment. Centos8minimal has no /etc/resolv file by default and needs to be created manually |
-| Protocol | IPv6 support | Bootstrap node must enable ipv6 when using podman |
+| Network Config | IPv6 support | Bootstrap node must enable ipv6 when using podman to access K8S inside kind. Verify this by ensuring `sysctl net.ipv6.conf.all.disable_ipv6` returns `0`. |
+| Network Forwarding | Enable ip_forward | Bootstrap node must enable ipv4.ip_forward, verify `sysctl net.ipv4.ip_forward` returns `1` and ensure its persistence. |
 
 ## Bootstrap Machine Dependency Component Check
 
