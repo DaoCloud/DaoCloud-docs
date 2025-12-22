@@ -18,7 +18,7 @@
 - **修复** insight 升级脚本问题
 - **修复** insight 升级到 0.38.0，需关闭老版本的 jaeger 问题
 - **修复** skoala AI 网关离线镜像问题
-- **修复** bcLinux 相关 repo url 版本号错误问题 
+- **修复** bcLinux 相关 repo url 版本号错误问题
 - **修复** podman 5.x 版本火种集群 cgroup v2 兼容问题
 
 ## 2025-10-31
