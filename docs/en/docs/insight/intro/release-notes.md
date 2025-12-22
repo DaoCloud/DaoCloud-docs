@@ -8,6 +8,49 @@ date: 2025-06-23
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version. [Upgrade Notes](../quickstart/install/upgrade-note.md).
 
+## 2025-08-31
+
+### v0.38.1
+
+#### Insight Server
+
+- **Added** built-in vmalert rules for `es`, `database`, and `vmselect` in insight-server.
+- **Added** alert support for `target_type` set to namespace.
+- **Fixed** adjusted the default Prometheus CR scrape interval and evaluation interval to 1m.
+- **Fixed** alert name validation logic.
+- **Fixed** errors in consuming audit logs.
+- **Fixed** missing `trace` output field in the `agentinstallparam` API.
+- **Fixed** trace duration calculation following Jaeger UI logic.
+- **Fixed** removal of unused `apiserver` and `ksm` metrics.
+- **Optimized** updating `smon` CR in the insight chart.
+- **Optimized** support for secure Kafka connections.
+- **Optimized** otelcol now sends events only to `es`/`kafka`.
+- **Optimized** updated default `insight-agent` spanmetrics configuration (coordinated with the server).
+- **Optimized** upgraded `etcd-exporter` from v0.7.0 to v0.8.0.
+- **Optimized** upgraded Jaeger to v2.
+- **Optimized** upgraded `jaeger-v2` to `jaeger-2.9.1-6ede7f9f`.
+
+#### Insight Agent
+
+- **Added** support for Jaeger remote sampling server in the `insight-agent` Chart.
+- **Added** `kafka_record_metadata` field when writing to Elasticsearch.
+- **Added** log download support with sorting and `MaxLogCount` limit.
+- **Added** heatmap display in `insight-tracing-debug.json`.
+- **Fixed** log level configuration issue in `grafana-operator`.
+- **Fixed** Grafana sidebar display issue.
+- **Fixed** master selection issue in the otel event collector.
+- **Fixed** duplicate timestamp sampling issue in spanmetrics.
+- **Fixed** `es-init` overwriting configuration on restart.
+- **Fixed** nanosecond precision issue in Fluentbit `add_time.lua`.
+- **Fixed** vmalert list and rules monitoring all namespaces issue.
+- **Fixed** closed vector headless to avoid duplicate metric collection.
+- **Optimized** upgraded otel stack.
+- **Optimized** upgraded Fluentbit.
+- **Optimized** enabled master selection for otel event collector.
+- **Optimized** upgraded `tailing-sidecar-operator` from 0.15.0 to 0.18.0.
+- **Optimized** upgraded `grafana-operator` from v4.5.0 to v4.5.1.
+- **Optimized** upgraded Fluentbit/XC from v4.0.1 to v4.0.7.
+
 ## 2025-06-30
 
 ### v0.37.0
