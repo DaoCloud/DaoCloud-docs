@@ -22,8 +22,8 @@ control plane, thereby achieving an independent high-availability etcd.
 
     | CPU Architecture | Version | Download Link |
     | ---------------- | ------- | ------------- |
-    | AMD64            | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar> |
-    | <font color="green">ARM64</font> | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar> |
+    | AMD64            | v0.13.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar> |
+    | <font color="green">ARM64</font> | v0.13.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar> |
 
     After downloading, extract the offline package:
 

@@ -157,7 +157,7 @@ precheck pass..
 1. 安装依赖项，另请参阅[依赖项安装说明](../../install/install-tools.md)
 
     ```shell
-    curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
     bash install_prerequisite.sh online community 
     ```
 
@@ -165,7 +165,7 @@ precheck pass..
 
     ```shell
     export VERSION=v0.5.0
-    curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
+    curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer 
     ```
 

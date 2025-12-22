@@ -157,7 +157,7 @@ If you already have Docker on the host, and the version is higher than 1.18, you
 1. Install dependencies, see also [Dependency Installation Instructions](../../install/install-tools.md)
 
      ```shell
-     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
      bash install_prerequisite.sh online community
      ```
 
@@ -165,7 +165,7 @@ If you already have Docker on the host, and the version is higher than 1.18, you
 
      ```shell
      export VERSION=v0.5.0
-     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
+     curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
      chmod +x ./dce5-installer
      ```
 

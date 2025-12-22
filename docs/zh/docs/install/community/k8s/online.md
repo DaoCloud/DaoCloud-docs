@@ -28,14 +28,14 @@
 
 1. 在 K8s 集群控制平面节点（Controller Node）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/index.md)）。
 
-    假定 VERSION 为 v0.35.0：
+    假定 VERSION 为 v0.36.0：
 
     ```shell
-    export VERSION=v0.35.0
+    export VERSION=v0.36.0
 
     # 如果是 ARM 架构请更新 `dce5-installer-$VERSION` 为 `dce5-installer-$VERSION-linux-arm64`
 
-    curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
+    curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
 

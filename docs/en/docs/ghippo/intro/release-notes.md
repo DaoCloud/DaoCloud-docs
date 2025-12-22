@@ -3,16 +3,40 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
-## 2025-08-15
+## 2025-10-31
 
-### v0.40.3
+## v0.43.0
 
-- **Fixed** an issue where login page icons and background were not displayed correctly.  
-- **Fixed** an issue where customized login page charts were missing.  
+- **Added** (CSP) encryption support for usernames, mobile numbers, and passwords.
+- **Added** (CSP) APIs that allow operations teams to create records in the `domains` and `sms_templates` tables.
+- **Optimized** periodic synchronization of permission data from the database to CRs such as `foldersauthzes` and `workspace`.
+- **Fixed** (CSP) an issue where disabling real-name authentication did not take effect.
+
+## 2025-09-30
+
+### v0.42.0
+
+- **Added** an API that returns username information for the current user.
+- **Added** (CSP) support for primary accounts to view audit logs.
+- **Added** (CSP) audit logging for create, update, delete, and query operations on sub-accounts.
+- **Added** (CSP) support for returning different sub-tenant Alipay payment links and real-name authentication based on the `domain`.
+- **Added** (CSP) support for returning different sub-tenant SMS gateways based on the `domain`.
+- **Optimized** encryption of usernames and passwords during API transmission when configuring `SMTP`.
+- **Fixed** an issue where adding authorization via the `SDK` triggered duplicate notifications.
+- **Fixed** an issue where following the browser language setting did not take effect.
+- **Fixed** (CSP) an issue where disabling real-name authentication did not take effect.
+- **Fixed** an issue where `SMTP` test emails failed to send.
+
+## 2025-08-30
+
+### v0.41.1
+
+- **Added** (CSP) support for redirecting to a configurable URL when clicking the logo on the login or registration page.
+- **Optimized** username validation in the sub-account creation API.
 
 ## 2025-07-31
 
-### v0.40.0
+### v0.40.3
 
 - **Added** sub-account support in SaaS mode.  
 - **Added** CRUD operations for sub-accounts in SaaS mode.  

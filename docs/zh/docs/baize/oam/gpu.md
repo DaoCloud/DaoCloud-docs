@@ -10,3 +10,7 @@ hide:
 进入 **运维管理** 后，点击左侧导航栏的 **GPU 信息**，可以查看 GPU 卡和各种训练任务。
 
 ![GPU 信息](../images/resource.png)
+
+点击某个 **设备 ID** ，可以查看 GPU 的详情信息。
+
+![GPU 详情](../images/gpu-detail.png)

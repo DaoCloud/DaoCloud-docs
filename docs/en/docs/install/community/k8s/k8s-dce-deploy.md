@@ -335,7 +335,7 @@ Now that everything is ready, let's install DCE 5.0 Community.
 ### Install Basic Dependencies
 
 ```bash
-curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
 bash install_prerequisite.sh online community
 ```
 
@@ -343,7 +343,7 @@ bash install_prerequisite.sh online community
 
 ```bash
 export VERSION=v0.33.0
-curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
+curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
 chmod +x ./dce5-installer
 ```
 

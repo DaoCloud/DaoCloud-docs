@@ -18,7 +18,7 @@ This page lists the download addresses of installers and image packages.
      ```shell
      # Assume VERSION is v0.28.0
      export VERSION=v0.28.0
-     wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-$VERSION-amd64.tar
+     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-$VERSION-amd64.tar
      ```
 
 2. Unzip the offline package.
@@ -34,7 +34,7 @@ This page lists the download addresses of installers and image packages.
      ```shell
      # Assume VERSION is v0.28.0
      export VERSION=v0.28.0
-     wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-$VERSION-arm64.tar
+     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-$VERSION-arm64.tar
      ```
 
 2. Unzip the offline package.
