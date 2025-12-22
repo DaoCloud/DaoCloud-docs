@@ -4,6 +4,31 @@ This page lists the release notes for LLM Studio, helping you understand version
 
 *[hydra]: Internal codename for DaoCloud's LLM Studio
 
+## 2025-11-30
+
+### v0.12.1
+
+**Admin Console**
+
+- **Added** support for custom inference frameworks in model deployment management.
+
+## 2025-10-31
+
+### v0.11.0
+
+**Admin Console**
+
+- **Added** support for uploading model icons locally in the Model Marketplace.
+
+## 2025-09-30
+
+### v0.10.0
+
+**Admin Console**
+
+- **Added** support for deploying models using SGLang.
+- **Added** support for viewing audit logs.
+
 ## 2025-08-07
 
 ### v0.8.0
