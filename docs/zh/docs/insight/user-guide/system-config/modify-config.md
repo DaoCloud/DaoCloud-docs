@@ -51,14 +51,16 @@
 
 ## 如何修改日志数据存储时长
 
+请修改以下 Elasticsearch ILM 策略配置文件，调整 delete 阶段的 min_age 参数以设置数据的保留期限。默认保留时长为 3d 。在 `-u` 后填写 Elasticsearch 的用户名和密码，并将 http://localhost:9200 修改为 elastic 的地址。由于数据生命周期会依次经过 `hot > warm > cold > delete` 阶段，但是每个阶段都是从索引创建日期作为起始时间算的，而不是从上一阶段完成的结束时间算。因此数据的最终 `保存周期 = delete.min_age`。请根据您的实际需求调整各个阶段的 `min_age` 设置。请注意 Elasticsearch 使用的协议（例如 HTTPS)，并根据实际情况修改访问地址。例如默认 Insight 的 Elasticsearch 集群只有 `hot` 和 `delete` 两个阶段，且您希望将数据保留 1 天，则可以将 `hot.min_age` 设置为 1d，`delete.min_age` 设置为 0。
+
 先 ssh 登录到对应的节点，参考以下步骤修改日志数据保留期限：
 
-### 方法一：修改 Json 文件
+### 方法一：通过命令行修改文件
 
-1. 修改以下文件中 __rollover__ 字段中的 __max_age__ 参数，并设置保留期限，默认存储时长为 __7d__ 。注意需要修改第一行中的 Elastic 用户名和密码、IP 地址和索引。
+1. 修改以下文件中 __delete__ 字段中的 __min_age__ 参数，并设置保留期限，默认存储时长为 __7d__ 。注意需要修改第一行中的 Elastic 用户名和密码、IP 地址和索引。
 
     ```json
-    curl  --insecure --location -u"elastic:amyVt4o826e322TUVi13Ezw6" -X PUT "https://172.30.47.112:30468/_ilm/policy/insight-es-k8s-logs-policy?pretty" -H 'Content-Type: application/json' -d'
+    curl --insecure --location -u"elastic:amyVt4o826e322TUVi13Ezw6" -X PUT "https://localhost:9200/_ilm/policy/insight-es-k8s-logs-policy?pretty" -H 'Content-Type: application/json' -d'
     {
         "policy": {
             "phases": {
@@ -69,7 +71,7 @@
                             "priority": 100
                         },
                         "rollover": {
-                            "max_age": "8d",
+                            "max_age": "7d",
                             "max_size": "10gb"
                         }
                     }
@@ -83,7 +85,7 @@
                     }
                 },
                 "delete": {
-                    "min_age": "30d",
+                    "min_age": "3d",
                     "actions": {
                         "delete": {}
                     }
@@ -121,14 +123,16 @@
 
 ## 如何修改链路数据存储时长
 
+与上面修改日志数据存储时长相同，请修改以下 Elasticsearch ILM 策略配置文件，调整 delete 阶段的 min_age 参数以设置数据的保留期限。默认保留时长为 3d 。在 `-u` 后填写 Elasticsearch 的用户名和密码，并将 http://localhost:9200 修改为 elastic 的地址。由于数据生命周期会依次经过 `hot > warm > cold > delete` 阶段，但是每个阶段都是从索引创建日期作为起始时间算的，而不是从上一阶段完成的结束时间算。因此数据的最终 `保存周期 = delete.min_age`。请根据您的实际需求调整各个阶段的 `min_age` 设置。请注意 Elasticsearch 使用的协议（例如 HTTPS)，并根据实际情况修改访问地址。例如默认 Insight 的 Elasticsearch 集群只有 `hot` 和 `delete` 两个阶段，且您希望将数据保留 1 天，则可以将 `hot.min_age` 设置为 1d，`delete.min_age` 设置为 0。
+
 先 ssh 登录到对应的节点，参考以下步骤修改链路数据保留期限：
 
-### 方法一：修改 Json 文件
+### 方法一：通过命令行修改文件
 
-1. 修改以下文件中 __rollover__ 字段中的 __max_age__ 参数，并设置保留期限，默认存储时长为 __7d__ 。注意需要修改第一行中的 Elastic 用户名和密码、IP 地址和索引。
+1. 修改以下文件中 __delete__ 字段中的 __min_age__ 参数，并设置保留期限，默认存储时长为 __7d__ 。注意需要修改第一行中的 Elastic 用户名和密码、IP 地址和索引。
 
     ```json
-    curl --insecure --location -u"elastic:amyVt4o826e322TUVi13Ezw6" -X PUT "https://172.30.47.112:30468/_ilm/policy/jaeger-ilm-policy?pretty" -H 'Content-Type: application/json' -d'
+    curl --insecure --location -u"elastic:amyVt4o826e322TUVi13Ezw6" -X PUT "https://localhost:9200/_ilm/policy/jaeger-ilm-policy?pretty" -H 'Content-Type: application/json' -d'
     {
         "policy": {
             "phases": {
@@ -139,7 +143,7 @@
                             "priority": 100
                         },
                         "rollover": {
-                            "max_age": "6d",
+                            "max_age": "7d",
                             "max_size": "10gb"
                         }
                     }
@@ -153,7 +157,7 @@
                     }
                 },
                 "delete": {
-                    "min_age": "30d",
+                    "min_age": "3d",
                     "actions": {
                         "delete": {}
                     }
