@@ -14,6 +14,11 @@ By seamlessly integrating state-of-the-art service mesh and microservice technol
 
 A major advantage of DCE 5.0 is its native support for the DevOps development and operation mode, facilitating standardization and automation throughout the application delivery process. Additionally, DCE 5.0 effortlessly integrates a range of carefully selected databases and middleware, enhancing operational efficiency and governance. Each product module operates independently, ensuring flexible upgrades without disrupting critical business operations. Furthermore, DCE 5.0 seamlessly integrates with various cloud native ecosystem products, forming a comprehensive and robust solution system.
 
+DCE 5.0 comes with a built-in cloud-native, integrated training and inference platform, **AI Lab** , together with a **LLM Studio** , forming a complete AI capability foundation from compute to models:
+
+- **AI Lab** delivers a tightly integrated software-and-hardware AI computing experience by unifying heterogeneous compute resources and optimizing GPU performance. It enables centralized scheduling and refined operations of compute resources, maximizing utilization while reducing costs. In addition, it provides optimized AI development frameworks that simplify development and deployment, accelerating the adoption of AI applications across industries.
+- **LLM Studio** is designed for enterprise users and offers full lifecycle services covering model deployment, runtime, and operations management. It effectively addresses key challenges such as deployment complexity, model selection difficulty, runtime stability, and security risks, helping enterprises and developers efficiently access and leverage a wide range of large model capabilities, and continuously driving digital transformation and intelligent upgrades.
+
 With extensive testing from thousands of industry customers in real production cases, DCE 5.0 has established itself as a solid and trustworthy digital foundation. It assists enterprises in defining their digital boundaries and unleashing the full potential of cloud native productivity. Embrace DCE 5.0 to elevate your organization's capabilities in the cloud native landscape.
 
 *[DCE]: An abbreviation for DaoCloud Enterprise, a next-generation AI computing platform

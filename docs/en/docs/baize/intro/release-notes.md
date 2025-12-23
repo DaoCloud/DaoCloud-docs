@@ -13,6 +13,34 @@ so that you can learn its evolution path and feature changes.
     Features labeled as Beta may undergo changes; please use them with caution
     and provide prompt feedback if you encounter any issues.
 
+## 2025-11-30
+
+### v0.23.0
+
+- **Added** support for configuring scheduling strategies for distributed training jobs, allowing selection between resource utilization–first or performance–first.
+- **Added** support for configuring the image pull policy for training jobs.
+- **Fixed** an issue where inference service health check and readiness check configurations did not align with UI operations.
+
+## 2025-10-31
+
+### v0.22.0
+
+- **Added** support for rolling deletion of checkpoint files for training jobs.
+- **Added** support for displaying GPU IDs for GPU-related metrics in the monitoring dashboard.
+- **Added** support for pausing training jobs.
+- **Added** support for viewing associated logs when saving images.
+- **Optimized** the upgrade of Kueue to v0.14.1.
+- **Fixed** an issue where TAS task features were incorrectly added to single-node training jobs.
+
+## 2025-09-30
+
+### v0.21.1
+
+- **Added** support for custom images for inference services.
+- **Added** support for fault-tolerance prechecks for training jobs to identify exceptions, assist in troubleshooting, and ensure training stability.
+- **Optimized** support for configuring resource pool toleration time for training jobs.
+- **Optimized** the display of GPU utilization and memory usage in resource pools.
+
 ## 2025-08-31
 
 ### v0.20.2
