@@ -13,7 +13,7 @@ This page provides some considerations for upgrading insight and insight-agent c
 
 #### Upgrade grafana operator
 
-In version v0.40.0, the Grafana Operator will be upgraded from v4 to v5, introducing significant CRD changes. 
+In version v0.40.0, the Grafana Operator will be upgraded from v4 to v5, introducing significant CRD((v1alpha1 -> v1beta1)) changes. 
 The upgrade process will be automatically completed by `helm upgrade`.
 
 If users need to perform a `helm rollback` to a previous version (e.g., from v0.40.0 to v0.39.0), 
@@ -26,63 +26,14 @@ kubectl delete grafanadatasources.grafana.integreatly.org -n insight-system --se
 These commands only clean up CRs in the `insight-system` namespace. CRs in other namespaces can be removed using the same approach.
 
 The Grafana Deployment in v0.40.x will include a [dashboard-discover](https://github.com/openinsight-proj/dashboard-discover) sidecar, 
-which is used to write specific GrafanaDashboard(v4) resources and ConfigMaps from the existing environment into the directory 
-specified by the Grafana dashboard provider (/var/lib/grafana/plugins/dashboards).
-
-
-The architecture diagram of dashboard-discover is as follows:
-
-![img](../../image/dashboard-discover.jpg)
-
-The specific rules are as follows:
-
-1. GrafanaDashboard(v4)
-
-   The dashboard-discover sidecar will watch for GrafanaDashboard(v4) resources across all namespaces in the cluster that 
-   have the label: `operator.insight.io/managed-by=insight`, and write their JSON content into the `/var/lib/grafana/plugins/dashboards`
-   directory of the Grafana container.
-
-
-2. ConfigMap
-
-   The dashboard-discover sidecar will watch for ConfigMaps across all namespaces in the cluster that have the labels: 
-   `operator.insight.io/managed-by=insight,operator.insight.io/dashboard=true`, and write all content under their data field 
-   into the `/var/lib/grafana/plugins/dashboards` directory of the Grafana container.
-
-> If you need to store JSON files in a specific folder, you can add the following label to the corresponding resource: 
-> `operator.insight.io/dashboard-folder=your-folder`
+which is used to load GrafanaDashboard(v1alpha1) resources and ConfigMaps into the directory specified by the Grafana dashboard provider (/var/lib/grafana/plugins/dashboards). 
+Please refer to [Import Custom Dashboards](../../user-guide/dashboard/import-dashboard.md).
 
 #### Upgrade grafana
 
 In version v0.40.0, Grafana has been upgraded from 9.3.14 to 12.1.3. Grafana 12.1.3 has completely removed support for
 AngularJS and prioritized React instead. For details, refer to the [community announcement](https://grafana.com/blog/2025/04/03/angularjs-support-will-be-removed-in-grafana-12-what-you-need-to-know).
-
-Dashboards maintained by Insight and other gproduct have been automatically migrated and are ready to use out of the box.
-For customer-maintained dashboards, Grafana 12.1.3 provides automatic migration support for some core pre-installed AngularJS panels.
-When a customer opens a custom dashboard in Grafana 12.1.3 for the first time, Grafana will automatically trigger the migration.
-**After migration is complete, be sure to click the 「Save」 button on the dashboard to save changes, preventing repeated migrations on each load.**
-
-If AngularJS panel migration is not completed, the following issues will occur in Grafana 12.1.3 and later versions:
-
-1. Plugins dependent on AngularJS will fail to load and will not display as installed in the plugin directory.
-2. Configured AngularJS data sources will not appear in the data source list.
-3. Original AngularJS panels in the dashboard will show error messages such as `Error loading: plugin_name` or `Panel plugin not found: plugin_name`; see the figure below:
-
-   ![img](../../image/upgrade-note02.png)
-
-   Similar panels or plugins can be manually replaced.
-
-4. Original data sources in the dashboard will be lost, with errors such as `Datasource XXX was not found`; see the figure below:
-
-   ![img](../../image/upgrade-note03.png)
-
-   You can manually create a `Datasource variable`:
-
-   ![img](../../image/upgrade-note04.png)
-
-   Then apply it in the panel:
-
-   ![img](../../image/upgrade-note05.png)
+If you run into issues while using the dashboard, please refer to [Import Custom Dashboards](../../user-guide/dashboard/import-dashboard.md#notice).
 
 ### Upgrade from v0.37.x (or lower) to v0.38.x
 

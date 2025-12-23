@@ -41,10 +41,10 @@ Grafana 是一种开源的数据可视化和监控平台，它提供了丰富的
 
 #### 方案一：手动配置
 
-将 Grafana CR `insight-grafana-operator-grafana` 的 `spec.config.security.admin_password` 设置输入指定密码。
+将 Grafana CR `grafana` 的 `spec.config.security.admin_password` 设置输入指定密码。
 
 ```diff
-apiVersion: integreatly.org/v1alpha1
+apiVersion: grafana.integreatly.org/v1beta1
 kind: Grafana
 spec:
   config:
@@ -57,11 +57,11 @@ spec:
 
 #### 方案二：自动生成密码
 
-删除掉 Grafana CR `insight-grafana-operator-grafana` 的 `security.admin_password` 的字段，
+删除掉 Grafana CR `grafana` 的 `security.admin_password` 的字段，
 `GrafanaOperator` 将自动给 grafana 实例生成新的 admin 的密码。
 
 ```diff
-apiVersion: integreatly.org/v1alpha1
+apiVersion: grafana.integreatly.org/v1beta1
 kind: Grafana
 spec:
   config:
