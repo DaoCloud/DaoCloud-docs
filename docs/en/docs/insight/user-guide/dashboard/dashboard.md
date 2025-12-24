@@ -47,10 +47,10 @@ For more information on open source Grafana, see
 
 #### Option 1: Manual Configuration
 
-Set the `spec.config.security.admin_password` field in the Grafana CR `insight-grafana-operator-grafana` to the desired password.
+Set the `spec.config.security.admin_password` field in the Grafana CR `grafana` to the desired password.
 
 ```diff
-apiVersion: integreatly.org/v1alpha1
+apiVersion: grafana.integreatly.org/v1beta1
 kind: Grafana
 spec:
   config:
@@ -63,10 +63,10 @@ spec:
 
 #### Option 2: Auto-Generate Password
 
-Remove the `security.admin_password` field from the Grafana CR `insight-grafana-operator-grafana`. The `GrafanaOperator` will automatically generate a new admin password for the Grafana instance.
+Remove the `security.admin_password` field from the Grafana CR `grafana`. The `GrafanaOperator` will automatically generate a new admin password for the Grafana instance.
 
 ```diff
-apiVersion: integreatly.org/v1alpha1
+apiVersion: grafana.integreatly.org/v1beta1
 kind: Grafana
 spec:
   config:

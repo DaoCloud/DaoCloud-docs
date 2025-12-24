@@ -52,8 +52,8 @@
 导入模板时请参阅 [Insight 导入仪表盘](../../insight/user-guide/dashboard/import-dashboard.md)。
 
 ```yaml
-apiVersion: integreatly.org/v1alpha1
-kind: GrafanaDashboard
+apiVersion: grafana.integreatly.org/v1beta1
+kind: Grafana Dashboard
 metadata:
   labels:
     app: insight-grafana-operator
@@ -61,16 +61,20 @@ metadata:
   name: ceph-dashboard
   namespace: insight-system
 spec:
+  allowCrossNamespaceImport: true
+  instanceSelector:
+    matchLabels:
+      operator.insight.io/managed-by: insight
   json: >
     {
         "__inputs": [],
         "__elements": {},
         "__requires": [
         {
-            "type": "panel",
-            "id": "gauge",
-            "name": "Gauge",
-            "version": ""
+          "type": "panel",
+          "id": "gauge",
+          "name": "Gauge",
+          "version": ""
         },
         {
             "type": "grafana",
@@ -78,7 +82,7 @@ spec:
             "name": "Grafana",
             "version": "9.0.5"
         },
-....
+  ....
 ```
 
 ## 查看 Ceph 监控面板

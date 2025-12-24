@@ -52,7 +52,7 @@ Refer to [Dashboard Template](https://grafana.com/grafana/dashboards/2842-ceph-c
 See [Insight Import Dashboard](../../insight/user-guide/dashboard/import-dashboard.md) when importing templates.
 
 ```yaml
-apiVersion: integrally.org/v1alpha1
+apiVersion: grafana.integreatly.org/v1beta1
 kind: Grafana Dashboard
 metadata:
   labels:
@@ -61,6 +61,10 @@ metadata:
   name: ceph-dashboard
   namespace: insight-system
 spec:
+  allowCrossNamespaceImport: true
+  instanceSelector:
+    matchLabels:
+      operator.insight.io/managed-by: insight
   json: >
     {
         "__inputs": [],
