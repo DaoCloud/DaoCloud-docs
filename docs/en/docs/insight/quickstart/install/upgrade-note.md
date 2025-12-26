@@ -9,9 +9,36 @@ This page provides some considerations for upgrading insight and insight-agent c
 
 ## insight
 
+### Upgrade from v0.39.x (or lower) to v0.40.x or higher
+
+#### Upgrade grafana operator
+
+In version v0.40.0, the Grafana Operator will be upgraded from v4 to v5, introducing significant CRD((v1alpha1 -> v1beta1)) changes. 
+The upgrade process will be automatically completed by `helm upgrade`.
+
+If users need to perform a `helm rollback` to a previous version (e.g., from v0.40.0 to v0.39.0), 
+they must manually clean up the v5 Custom Resources (CRs) using the following commands:
+```shell
+kubectl delete grafanas.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+kubectl delete grafanadashboards.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+kubectl delete grafanadatasources.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+```
+These commands only clean up CRs in the `insight-system` namespace. CRs in other namespaces can be removed using the same approach.
+
+The Grafana Deployment in v0.40.x will include a [dashboard-discover](https://github.com/openinsight-proj/dashboard-discover) sidecar, 
+which is used to load GrafanaDashboard(v1alpha1) resources and ConfigMaps into the directory specified by the Grafana dashboard provider (/var/lib/grafana/plugins/dashboards). 
+Please refer to [Import Custom Dashboards](../../user-guide/dashboard/import-dashboard.md).
+
+#### Upgrade grafana
+
+In version v0.40.0, Grafana has been upgraded from 9.3.14 to 12.1.3. Grafana 12.1.3 has completely removed support for
+AngularJS and prioritized React instead. For details, refer to the [community announcement](https://grafana.com/blog/2025/04/03/angularjs-support-will-be-removed-in-grafana-12-what-you-need-to-know).
+If you run into issues while using the dashboard, please refer to [Import Custom Dashboards](../../user-guide/dashboard/import-dashboard.md#notice).
+
 ### Upgrade from v0.37.x (or lower) to v0.38.x
 
-In version v0.38.x, insight upgrades Jaeger from v1 to v2, and there are also changes in the deployment architecture. 
+In version v0.38.x of insight, Jaeger has been upgraded from v1 to v2, with corresponding adjustments to the deployment architecture.
+The jaeger Collector has now been deprecated, and its functionalities have been merged into the Global Opentelemetry Collector as a plugin.
 When upgrading insight, you need to specify `--set jaeger.collector.enabled=false`.
 
 ### Upgrade from v0.26.x (or lower) to v0.27.x or higher

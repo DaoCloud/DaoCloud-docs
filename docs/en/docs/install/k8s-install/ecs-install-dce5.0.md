@@ -23,7 +23,7 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 
     ```shell
     export VERSION=v0.28.0
-    curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
+    curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
 
@@ -85,7 +85,7 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 
     ```shell
     export VERSION=v0.28.0
-    curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
+    curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
 
@@ -160,7 +160,7 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 
     ```shell
     export VERSION=v0.28.0
-    curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
+    curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
 

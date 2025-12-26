@@ -16,6 +16,40 @@ the evolution path and feature changes of each version.
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 *[Hydra]: Dev codename for LLM Studio in DCE 5.0
 
+## 2025-11-30
+
+### v0.36.0
+
+- **Added** support for Migu Cloud bclinux 21.10 system.
+- **Fixed** issues with the Insight upgrade script.
+- **Fixed** issue where upgrading Insight to v0.38.0 required shutting down the old version of Jaeger.
+- **Fixed** offline image issue in Skoala AI Gateway.
+- **Fixed** incorrect version numbers in bcLinux-related repo URLs.
+- **Fixed** Podman 5.x compatibility issue with Huozhong cluster using cgroup v2.
+
+## 2025-10-31
+
+### v0.35.0
+
+- **Added** e2e upgrade tests for Kubernetes v1.32.
+- **Added** QA testing for cloud mode.
+- **Optimized** default URL parameters for etcd metrics.
+- **Optimized** default Kubernetes version to v1.32.
+- **Fixed** issue where kubean manifest template rendering order caused ConfigMap configuration to not take effect.
+- **Fixed** offline image issue in Skoala AI Gateway.
+
+## 2025-09-30
+
+### v0.34.0
+
+- **Added** `SKIP_DEPENDENCY_RESOURCES` feature gate to prevent duplicate resource imports during phased upgrades.
+- **Added** support for offline deployment of Kylin V11 distribution and optimized related offline package CI builds.
+- **Added** support for encrypted handling of cluster node access passwords.
+- **Added** default `rp_filter` sysctl parameter configuration.
+- **Fixed** offline scenario issue with `tailing-sidecar-operator` image addresses.
+- **Fixed** Kylin V11 environment compatibility issue with Kind clusters using cgroup v2.
+- **Fixed** issue where `nodeAffinity` parameters in manifest configuration components did not take effect.
+
 ## 2025-08-31
 
 ### v0.33.0
@@ -663,7 +697,7 @@ If the output is different from the above cases, please follow the upgrade instr
 
     ```yaml
     kubeanConfig: |-
-      calico_crds_download_url: "https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
+      calico_crds_download_url: "https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
     ```
 
     At the same time, creating a worker cluster online through container management also has the same problem. You need to add the above configuration in the custom parameters of the advanced configuration on the cluster creation page. The key is `calico_crds_download_url`, and the value is the value of the above calico_crds_download_url

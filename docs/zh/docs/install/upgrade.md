@@ -28,8 +28,8 @@ DCE 5.0 组件的升级包含升级 DCE 5.0 产品功能模块、升级 DCE 5.0 
 
 | CPU 架构 | 版本   | 下载地址 |
 | :------- | :---- | :----- |
-| AMD64    | v0.21.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-amd64.tar |
-| ARM64    | v0.21.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-arm64.tar |
+| AMD64    | v0.21.0 | https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-amd64.tar |
+| ARM64    | v0.21.0 | https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-arm64.tar |
 
 下载完毕后解压离线包，以 AMD64 架构离线包为例：
 

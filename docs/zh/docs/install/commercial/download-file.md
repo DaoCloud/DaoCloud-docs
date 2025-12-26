@@ -16,7 +16,7 @@ hide:
     ```shell
     # 假定 VERSION 为 v0.28.0
     export VERSION=v0.28.0
-    wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-$VERSION-amd64.tar
+    wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-$VERSION-amd64.tar
     ```
 
 2. 解压离线包。
@@ -32,7 +32,7 @@ hide:
     ```shell
     # 假定 VERSION 为 v0.28.0
     export VERSION=v0.28.0
-    wget https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-$VERSION-arm64.tar
+    wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-$VERSION-arm64.tar
     ```
 
 2. 解压离线包。

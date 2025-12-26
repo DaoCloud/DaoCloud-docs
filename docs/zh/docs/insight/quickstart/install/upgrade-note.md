@@ -4,9 +4,33 @@
 
 ## insight
 
+###  从 v0.39.x（或更低版本）升级到 v0.40.x 或更高版本
+
+#### grafana operator 升级
+
+在 v0.40.0 版本中，grafana operator 会从 v4 升级到 v5 并会引入大量的 CRD(v1alpha1 -> v1beta1) 变更。 升级过程会由 `helm upgrade` 自动完成。
+如果客户需要 `helm rollback` 回到老版本（比如，v0.40.0 -> v0.39.0）需要是手动清理 v1beta1 的 CR:
+
+```shell
+kubectl delete grafanas.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+kubectl delete grafanadashboards.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+kubectl delete grafanadatasources.grafana.integreatly.org -n insight-system --selector operator.insight.io/managed-by=insight --ignore-not-found=true
+```
+
+这部分命令只清理了 insight-system 命名空间下的 `grafanadashboards.grafana.integreatly.org`, 其他命名空间可以用相同的方式处理。
+
+在 v0.40.x 的 grafana deployment 会添加一个 [dashboard-discover](https://github.com/openinsight-proj/dashboard-discover) sidecar
+用于将现有环境中的 GrafanaDashboard(v1alpha1)，ConfigMap 导入到 Grafana 中以避免升级带来的问题，详细文档在 [导入自定义仪表盘](../../user-guide/dashboard/import-dashboard.md)。
+
+#### grafana 升级
+
+在 v0.40.0 版本中， grafana 从 9.3.14 升级到 12.1.3。grafana 12.1.3 已完全移除对 AngularJS 的支持，转而优先支持 React。具体可以看[社区说明](https://grafana.com/blog/2025/04/03/angularjs-support-will-be-removed-in-grafana-12-what-you-need-to-know)。
+如果在使用仪表盘遇时到问题，请查看 insight [导入自定义仪表盘](../../user-guide/dashboard/import-dashboard.md#注意事项) 的手动迁移方式。
+
 ### 从 v0.37.x（或更低版本）升级到 v0.38.x
 
-在 v0.38.x 版本中 insight 将 Jaeger 从 v1 升级到 v2，部署架构上也有变化，在升级 insight 时，需要指定 `--set jaeger.collector.enabled=false`。
+在 v0.38.x 版本中 insight 将 Jaeger 从 v1 升级到 v2，部署架构上也有调整，jaeger Collector 现已弃用，其功能作为插件合并到 Global Opentelemetry Collector 中，
+在升级 insight 时，需要指定 `--set jaeger.collector.enabled=false`。
 
 ### 从 v0.26.x（或更低版本）升级到 v0.27.x 或更高版本
 

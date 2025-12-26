@@ -10,6 +10,17 @@
 *[Skoala]: DCE 5.0 微服务引擎的开发代号
 *[Hydra]: DCE 5.0 大模型服务平台的开发代号
 
+## 2025-11-30
+
+### v0.36.0
+
+- **新增** 适配移动云 bclinux 21.10 系统
+- **修复** insight 升级脚本问题
+- **修复** insight 升级到 0.38.0，需关闭老版本的 jaeger 问题
+- **修复** skoala AI 网关离线镜像问题
+- **修复** bcLinux 相关 repo url 版本号错误问题
+- **修复** podman 5.x 版本火种集群 cgroup v2 兼容问题
+
 ## 2025-10-31
 
 ### v0.35.0
@@ -677,7 +688,7 @@
 
     ```yaml
     kubeanConfig: |-
-      calico_crds_download_url: "https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
+      calico_crds_download_url: "https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
     ```
 
     同时通过容器管理在线创建工作集群也有相同问题，需在集群创建页面高级配置的自定义参数中添加上述配置，键为

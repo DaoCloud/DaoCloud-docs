@@ -22,11 +22,11 @@
 
     最佳实践：工作空间通过“授权”功能可以给部门成员授予不同角色权限，而工作空间能够把人与角色的授权关系一次性应用到工作空间的所有资源上。因此运维人员只需将资源绑定到资源组，将部门中的不同角色加入不同的资源组，就能确保资源的权限被正确分配。
 
-     | 角色 | 集群 Cluster | 跨集群 Cluster-Namespace |
-     | --- | ------------ | ----------------------- |
-     | Workspace Admin | Cluster Admin | NS Admin |
-     | Workspace Edit | &cross; | NS Editor |
-     | Workspace View | &cross; | NS Viewer |
+    | 角色 | 集群 Cluster | 跨集群 Cluster-Namespace |
+    | --- | ------------ | ----------------------- |
+    | Workspace Admin | Cluster Admin | NS Admin |
+    | Workspace Edit | &cross; | NS Editor |
+    | Workspace View | &cross; | NS Viewer |
 
 3. 共享资源：共享资源功能主要针对集群资源。
 
@@ -38,7 +38,7 @@
     最佳实践：运维部门手中有一个高可用集群 01，想要分配给部门 A（工作空间 A）和部门 B（工作空间 B）使用，其中部门 A 分配 CPU 50 核，部门 B 分配 CPU 100 核。
     那么可以借用共享资源的概念，将集群 01 分别共享给部门 A 和部门 B，并限制部门 A 的 CPU 使用额度为 50，部门 B 的 CPU 使用额度为 100。
     那么部门 A 的管理员（工作空间 A Admin）能够在应用工作台创建并使用命名空间，其中命名空间额度总和不能超过 50 核，部门 B 的管理员（工作空间 B Admin）能够在应用工作台创建并使用命名空间，其中命名空间额度总和不能超过 100 核。
-    部门 A 的管理员和部门 B 管理员创建的命名空间会被自动绑定在该部门，部门中的其他成员将对应的拥有命名空间的 Namesapce Admin、Namesapce Edit、Namesapce View 角色（这里部门指的是工作空间，工作空间还可以映射为组织、供应商等其他概念）。整个过程如下表：
+    部门 A 的管理员和部门 B 管理员创建的命名空间会被自动绑定在该部门，部门中的其他成员将对应的拥有命名空间的 Namespace Admin、Namespace Edit、Namespace View 角色（这里部门指的是工作空间，工作空间还可以映射为组织、供应商等其他概念）。整个过程如下表：
 
     | 部门 | 角色 | 共享集群 Cluster | 资源配额 |
     | --- | ---- | ------------ | ---------- |
@@ -63,9 +63,9 @@
 
     如果您需要通过工作空间对人和资源进行统一授权管理，可以手动将需要的资源绑定到某个工作空间中，从而将用户在该工作空间的角色应用到资源上（这里的资源是可以跨集群的）。
 
-    另外，在资源的绑定入口上容器管理与服务网格稍有差异，工作空间提供了容器管理中的 Cluster 、 Cluster-Namesapce 和服务网格中的 Mesh、Mesh-Namespace 资源的绑定入口，但尚未开放对服务网格的 kairship 和 Kairship-Namespace 资源的绑定。
+    另外，在资源的绑定入口上容器管理与服务网格稍有差异，工作空间提供了容器管理中的 Cluster 、 Cluster-Namespace 和服务网格中的 Mesh、Mesh-Namespace 资源的绑定入口，但尚未开放对服务网格的 Kairship 和 Kairship-Namespace 资源的绑定。
 
-    对于 kairship 和 Kairship-Namespace 资源，可以在服务网格的资源列表进行手动绑定。
+    对于 Kairship 和 Kairship-Namespace 资源，可以在服务网格的资源列表进行手动绑定。
 
 ## 工作空间的使用场景
 
