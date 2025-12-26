@@ -46,7 +46,7 @@
     - 升级内核至 5.9 及以上
     - 切换 `kube-proxy` 模式为 `iptables`
     - 内核参数更新：`net.ipv4.vs.conntrack=1` + `net.ipv4.vs.conn_reuse_mode=0` + `net.ipv4.vs.expire_nodest_conn=1`
-   
+
 2. Ubuntu 内核自动更新升级，可能导致系统在不经意间被重启，若使用的软件依赖于特定版本的内核，
    那么当系统自动更新到新的内核版本时，可能会出现[兼容性问题](https://askubuntu.com/a/1176041)
 
