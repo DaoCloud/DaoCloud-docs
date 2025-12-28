@@ -48,6 +48,50 @@ The event details are shown in the following figure.
 
 ![User event details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/audit03.png)
 
+<details>
+<summary>Click to view details of event.yaml</summary>
+
+```yaml
+kind: Event
+apiVersion: audit.ghippo.io/v1
+level: RequestResponse
+auditID:
+stage: ResponseComplete
+requestURI: /apis/ghippo.io/v1alpha1/login 
+verb: Login # Operation type
+user: # User information
+  username: admin
+  groups:
+   - 123-ad
+   - 123dasd
+   - 12eqw
+   - JinyeGroup2
+impersonatedUser: # Usually empty, when not empty it overrides the `user` field above, indicating the actual operator
+  username:
+  groups: null
+sourceIPs: # List of request source IP addresses
+  - 10.64.0.55
+userAgent: grpc-go/1.55.0 # Source request client browser information
+objectRef: # Reference information of the operation object
+  name: admin
+  resource: User
+  namespace: ''
+  apiGroup: ''
+  apiVersion: ''
+responseStatus:
+  metadata: null
+  status: ''
+  reason: ''
+  code: 200
+requestReceivedTimestamp: '2023-06-21T07:39:48.4847069294Z'
+stageTimestamp: '2023-06-21T07:39:484894894809Z'
+annotations:
+  authorization.k8s.io/decision: ''
+  authorization.k8s.io/reason: ''
+ClusterName: '-'
+```
+</details> 
+
 Click the __Export__ in the upper right corner to export the user operation logs within the selected time range in CSV or Excel format.
 
 ![Export](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/audit04.png)

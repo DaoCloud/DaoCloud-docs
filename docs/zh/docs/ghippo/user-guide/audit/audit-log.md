@@ -34,6 +34,49 @@
 事件详情如下图所示。
 
 ![用户事件详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/audit03.png)
+<details>
+<summary>点击查看 event.yaml</summary>
+
+```yaml
+kind: Event
+apiVersion: audit.ghippo.io/v1
+level: RequestResponse
+auditID:
+stage: ResponseComplete
+requestURI: /apis/ghippo.io/v1alpha1/login
+verb: Login
+user: # 操作用户信息
+  username: admin
+  groups:
+   - 123-ad
+   - 123dasd
+   - 12eqw
+   - JinyeGroup2
+impersonatedUser: # 通常为空，不为空时覆盖上个字段 user,表示实际操作用户
+  username:
+  groups: null
+sourceIPs: # 请求来源 IP 地址列表
+  - 10.64.0.55
+userAgent: grpc-go/1.55.0 # 请求来源客户端浏览器信息
+objectRef: # 操作对象的引用信息
+  name: admin
+  resource: User
+  namespace: ''
+  apiGroup: ''
+  apiVersion: ''
+responseStatus:
+  metadata: null
+  status: ''
+  reason: ''
+  code: 200
+requestReceivedTimestamp: '2023-06-21T07:39:48.4847069294Z'
+stageTimestamp: '2023-06-21T07:39:484894894809Z'
+annotations:
+  authorization.k8s.io/decision: ''
+  authorization.k8s.io/reason: ''
+ClusterName: '-'
+```
+</details> 
 
 点击右上角的 __导出__ 按钮，可以按 CSV 和 Excel 格式导出当前所选时间范围内的用户操作日志。
 
