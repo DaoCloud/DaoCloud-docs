@@ -146,6 +146,10 @@ kubectl delete namespace unifabric
 
 交换机节点接入（Switch Port Detail），可展示交换机端口的详细信息，包括端口状态、邻居设备信息等。该功能通过 gNMI 协议连接到交换机，获取端口状态和邻居设备信息，并将其存储在 Kubernetes 的 Custom Resource 中。
 
+### 支持的交换机型号
+
+目前支持云和交换机，未来会提供对英伟达某些型号交换机的支持。
+
 ### 字段说明
 
 ```yaml
@@ -209,6 +213,10 @@ status:
 ### 功能概述
 
 Unifabric 支持将外部裸金属存储节点接入到 Kubernetes 集群中进行统一管理和监控。通过部署 unifabric agent 到存储节点上，agent 会采集存储节点的 RDMA 网络状态、LLDP 邻居信息等，并将数据上报到 k8s 集群中的 unifabric 控制平面。也可以在集群的 grafana 面板中查看存储节点的监控数据。
+
+### 支持的存储服务器型号
+
+通用的Linux服务器都支持接入。
 
 ### 基本要求
 
