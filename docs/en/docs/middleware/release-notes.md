@@ -12,6 +12,134 @@ This page summarizes all middleware module release notes.
 *[Redis]: A high-performance key-value store, widely used for caching, session management, and distributed locks.  
 *[RocketMQ]: A highly reliable and scalable distributed messaging middleware, suitable for transactional and ordered message scenarios.  
 
+## 2025-11-30
+
+### Elasticsearch v0.26.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+### Kafka v0.27.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+### MinIO v0.23.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+### MongoDB v0.18.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+### MySQL v0.28.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+- **Added** alerts for failover events in primary–replica mode
+- **Fixed** an issue where the `mysql_router` account was occasionally not created in MGR mode
+- **Upgraded** phpMyAdmin to 5.2.3
+
+### PostgreSQL v0.20.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+### RabbitMQ v0.29.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+### Redis v0.29.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+- **Upgraded** the Opstree Operator to 0.22.2
+
+### RocketMQ v0.17.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+- **Added** affinity and toleration configurations for Controller and NameServer
+
+## 2025-10-31
+
+### Elasticsearch v0.25.2
+
+- **Added** support for toleration configuration
+- **Fixed** relok8s parsing issues
+- **Fixed** incorrect ghippo upgrade logs
+- **Upgraded** Elasticsearch and Kibana from 8.17.1 to 8.17.10
+- **Upgraded** the operator to 2.16.1
+
+### Kafka v0.26.0
+
+- **Added** support for password configuration
+- **Added** support for configuring complex listener access
+- **Added** support for toleration configuration
+- **Added** support for Kafka 4.0
+- **Added** support for retrieving CPU, memory, storage capacity, and replica count from CRs
+- **Added** support for configuring ghippo SDK cache expiration time in chart values
+- **Fixed** dashboard display issues
+- **Fixed** errors when creating Kafka configuration templates
+
+### MinIO v0.22.0
+
+- **Added** early detection for NodePort port conflicts
+- **Added** support for node affinity configuration
+- **Added** support for toleration configuration
+- **Added** support for configuring ghippo SDK cache expiration time in chart values
+- **Optimized** by removing the authentication information input field
+- **Fixed** abnormal status display for single-instance deployments
+- **Fixed** missing name validation when creating instances
+- **Fixed** an issue where MinIO could not be restarted
+- **Upgraded** the MinIO Operator to 6.0.4
+- **Upgraded** the offline image validation script
+
+### MongoDB v0.17.0
+
+- **Added** support for toleration configuration
+- **Added** support for configuring ghippo SDK cache expiration time in chart values
+- **Fixed** an issue where audit logs were lost in certain scenarios
+- **Fixed** potential permission leakage by adding the v1alpha2 API and including `workspace_id` in URLs
+- **Fixed** an issue where restored instances used NodePort as the Express service type
+- **Fixed** failures during MongoDB restore operations
+
+### MySQL v0.27.1
+
+- **Added** support for toleration configuration
+- **Added** timeout configuration for the ghippo workspace SDK
+- **Fixed** dashboard syntax issues
+- **Fixed** errors when updating parameters while enabling automatic backups
+- **Upgraded** MySQL from 5.7.31 to 5.7.44
+
+### PostgreSQL v0.19.0
+
+- **Added** support for toleration configuration
+- **Upgraded** pgAdmin to 9.6.0
+- **Upgraded** the exporter to v0.17.1
+- **Upgraded** the operator to 0.14.0
+
+### RabbitMQ v0.28.0
+
+- **Added** enhanced default parameter templates
+- **Added** support for page display of RabbitMQ installed via installer
+- **Added** support for version 4.1.0
+- **Fixed** removal of Istio injection labels from `matchLabels` in deployments
+- **Fixed** an issue where configuration templates could not be created
+- **Fixed** an issue where the NodePort management service type did not take effect
+- **Upgraded** the RabbitMQ Operator to 4.4.1 to support RabbitMQ 4.0.5
+
+### Redis v0.28.0
+
+- **Added** support for toleration configuration
+- **Fixed** audit log issues during ghippo upgrades
+- **Upgraded** Redis to 7.2.9 and removed versions 7.2.6 and 7.2.7
+- **Upgraded** RedisInsight to 2.70.0
+
+### RocketMQ v0.16.0
+
+- **Added** support for persistent storage of NameServer logs
+- **Added** support for outputting Broker/Controller logs to the console
+- **Added** support for RocketMQ 5.3.3
+- **Added** support for toleration configuration
+- **Added** support for configuring ghippo SDK cache expiration time in chart values
+- **Fixed** an issue where using Operator version 0.15.0 could cause frequent Broker restarts
+- **Fixed** an issue where page updates could overwrite map/slice fields in user-defined custom resources
+
 ## 2025-02-28
 
 ### Elasticsearch v0.24.0
