@@ -9,6 +9,26 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## 2025-11-30
+
+### v0.51.0
+
+- **Added** support for configuring the Nacos log output method.
+- **Optimized** improved query performance for the AI Gateway list.
+
+## 2025-10-31
+
+### v0.50.1
+
+- **Added** support for configuring AI Gateway menu permissions.
+- **Optimized** improved the AI Gateway installation logic to better align with the Helm installation process.
+
+## 2025-09-30
+
+### v0.49.0
+
+- **Optimized** implemented an integrated interaction experience between the managed AI Gateway interface and the platform.
+
 ## 2025-07-31
 
 ### v0.48.0
