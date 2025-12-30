@@ -38,15 +38,15 @@ spec:
   topologyName: default
 ```
 
-### 2. Create a Resource Pool
+### 2. Create a Resource Flavor
 
-Follow the steps in [Creating a Resource Pool](../oam/resource/create.md). Select the target nodes and the previously created node topology.
+Follow the steps in [Creating a Resource Flavor](../oam/resource/create.md). Select the target nodes and the previously created node topology.
 
-<!-- ![Create Resource Pool](../best-practice/images/train-with-tas-02.png) -->
+<!-- ![Create Resource Flavor](../best-practice/images/train-with-tas-02.png) -->
 
 ### 3. Create a Queue
 
-Follow the steps in [Creating a Queue](../oam/queue/create.md). Choose the resource pool created in the previous step.
+Follow the steps in [Creating a Queue](../oam/queue/create.md). Choose the resource flavor created in the previous step.
 
 <!-- ![Create Queue](../best-practice/images/train-with-tas-03.png) -->
 
@@ -54,6 +54,6 @@ Follow the steps in [Creating a Queue](../oam/queue/create.md). Choose the resou
 
 With the TAS configuration in place, you can now create a training job using a PodTemplate that includes TAS settings. Refer to [Creating a Training Job](../developer/jobs/create.md) for guidance.
 
-The queue specified in the training job references a resource pool with topology information. Based on the TAS configuration, scheduling is automated. Scheduling all related Pods within the same topology domain is a **preference**, not a **requirement**. By default, TAS matches the lowest level in the topology; if a `PodSet` cannot be scheduled within a given topology domain, the scheduler will attempt the next higher level.
+The queue specified in the training job references a resource flavor with topology information. Based on the TAS configuration, scheduling is automated. Scheduling all related Pods within the same topology domain is a **preference**, not a **requirement**. By default, TAS matches the lowest level in the topology; if a `PodSet` cannot be scheduled within a given topology domain, the scheduler will attempt the next higher level.
 
 With these steps completed, you have successfully configured topology-aware scheduling for your training job.
