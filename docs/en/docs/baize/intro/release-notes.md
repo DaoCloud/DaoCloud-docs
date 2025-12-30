@@ -38,8 +38,8 @@ so that you can learn its evolution path and feature changes.
 
 - **Added** support for custom images for inference services.
 - **Added** support for fault-tolerance prechecks for training jobs to identify exceptions, assist in troubleshooting, and ensure training stability.
-- **Optimized** support for configuring resource pool toleration time for training jobs.
-- **Optimized** the display of GPU utilization and memory usage in resource pools.
+- **Optimized** support for configuring resource flavor toleration time for training jobs.
+- **Optimized** the display of GPU utilization and memory usage in resource flavors.
 
 ## 2025-08-31
 
@@ -49,7 +49,7 @@ so that you can learn its evolution path and feature changes.
 - **Added** support for toleration configuration in training tasks.
 - **Improved** queue quota interaction to better support multiple GPU models.
 - **Improved** GPU monitoring panel link by updating it to the GPU panel under Insight space.
-- **Improved** resource pool node topology hint messages.
+- **Improved** resource flavor node topology hint messages.
 - **Improved** vLLM by upgrading to version v0.10.0.
 - **Improved** Kubesnapshot by upgrading to version v0.2.8 to fix errors when installing with kind.
 - **Improved** image usage by removing Bitnami-related images and replacing them with release repository images.
@@ -61,7 +61,7 @@ so that you can learn its evolution path and feature changes.
 
 - **Added** support for topology-aware scheduling in training tasks.
 - **Added** support for viewing GPU model information in training task queues.
-- **Added** support for filtering nodes by GPU model in resource pools.
+- **Added** support for filtering nodes by GPU model in resource flavors.
 - **Added** support for readiness and health checks in inference services.
 - **Added** support for shared memory configuration in inference services.
 - **Added** support for preheating mode configuration in HTTP and S3 type data spaces.
@@ -74,7 +74,7 @@ so that you can learn its evolution path and feature changes.
 
 ### v0.18.1
 
-- **Added** the ability to manage resource pools based on node configurations.  
+- **Added** the ability to manage resource flavors based on node configurations.  
 - **Added** support for choosing whether to clear or retain existing files during data space preloading.  
 - **Optimized** the product logic by renaming "dataset" to "data space" for conceptual consistency.  
 - **Upgraded** the vLLM image to v0.9.1.  
@@ -145,13 +145,13 @@ so that you can learn its evolution path and feature changes.
 - **Updated** the default vLLM image to version 0.6.6 to improve compatibility for training and inference tasks.  
 - **Fixed** an issue where training tasks configured for checkpoint resume still showed as disabled in task details.  
 - **Fixed** an issue where GPU usage metrics in training task monitoring always showed as "no data."
-- **Fixed** an issue where UI operations could not proceed when no default resource pool was present.
+- **Fixed** an issue where UI operations could not proceed when no default resource flavor was present.
 
 ## 2024-12-31
 
 ### v0.12.0
 
-- **Added** support for custom resource pools in queues.  
+- **Added** support for custom resource flavors in queues.  
 - **Added** a Muxi GPU monitoring dashboard with enhanced GPU observability metrics.  
 - **Fixed** vulnerabilities CVE-2024-45337 and CVE-2024-45338.  
 - **Fixed** an issue preventing proper dataset creation.  
