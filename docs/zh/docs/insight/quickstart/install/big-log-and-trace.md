@@ -6,7 +6,7 @@
 本文将介绍以下几种开启方式：
 
 - 通过[安装器开启或升级](#_8)至大日志和大链路模式（通过 manifest.yaml 中同一个参数值控制）
-- 通过 [通过 Helm 命令或者容器管理界面开启](#helm)大日志和大链路模式
+- 通过 [Helm 命令或者容器管理界面开启](#helm)大日志和大链路模式
 
 ## 日志
 
@@ -126,18 +126,19 @@ helm get values insight-agent -n insight-system -o yaml > insight-agent.yaml
     
     1. 先修改 **Insight** Helm 应用:
     
-    在 **kpanda-global-cluster** 管理集群中，从左侧导航栏切换至 **Helm 应用**，选择并更新 **insight** 应用；
-    ![upgrade-insight-global-kafka](../../images/upgrade-insight-global-kafka.png)
+        在 **kpanda-global-cluster** 管理集群中，从左侧导航栏切换至 **Helm 应用**，选择并更新 **insight** 应用；
 
-    填写 Kafka 相关配置信息后并点击确认更新。
+        ![upgrade-insight-global-kafka](../../images/upgrade-insight-global-kafka.png)
+    
+        填写 Kafka 相关配置信息后并点击确认更新。
 
     2. 更新子集群 **Insight-Agent**  Helm 应用：
 
-    在容器管理模块中，找到对应的子集群，从左侧导航栏选择 **Helm 应用** ，找到并更新 **insight-agent**。
-
-    在 **Logging Settings** 中，为 **output** 选择 **kafka**，并填写正确的 **brokers** 地址。
-
-    ![kpanda](../../images/big-log05.png)
+        在容器管理模块中，找到对应的子集群，从左侧导航栏选择 **Helm 应用** ，找到并更新 **insight-agent**。
+    
+        在 **Logging Settings** 中，为 **output** 选择 **kafka**，并填写正确的 **brokers** 地址。
+    
+        ![kpanda](../../images/big-log05.png)
 
     需要注意的是，在升级完成后，需手动重启 **insight-agent-fluent-bit** 组件。
 
@@ -224,21 +225,22 @@ helm get values insight-agent -n insight-system -o yaml > insight-agent.yaml
     
     1. 先修改 **Insight** Helm 应用:
     
-    在 **kpanda-global-cluster** 管理集群中，从左侧导航栏切换至 **Helm 应用**，选择并更新 **insight** 应用；
-    ![upgrade-insight-global-kafka](../../images/upgrade-insight-global-kafka.png)
-
-    填写 Kafka 相关配置信息后并点击确认更新。
+        在 **kpanda-global-cluster** 管理集群中，从左侧导航栏切换至 **Helm 应用**，选择并更新 **insight** 应用；
+    
+        ![upgrade-insight-global-kafka](../../images/upgrade-insight-global-kafka.png)
+    
+        填写 Kafka 相关配置信息后并点击确认更新。
 
     2. 更新子集群 **Insight-Agent**  Helm 应用：
     
-    在容器管理模块中，找到对应的集群，从左侧导航栏选择 **Helm 应用** ，找到并更新 insight-agent。
+        在容器管理模块中，找到对应的集群，从左侧导航栏选择 **Helm 应用** ，找到并更新 insight-agent。
+    
+        在 **Trace Settings** 中，为 **output** 选择 **kafka**，并填写正确的 **brokers** 地址。
+    
+        ![UI 上升级](../../images/big-log06.png)
 
-    在 **Trace Settings** 中，为 **output** 选择 **kafka**，并填写正确的 **brokers** 地址。
-
-    ![UI 上升级](../../images/big-log06.png)
-
-    需要注意的是，在升级完成后，需手动
-    **重启 insight-agent-opentelemetry-collector** 和 **insight-opentelemetry-collector** 组件。
+    需要注意的是，在升级完成后，需手动重启
+    **insight-agent-opentelemetry-collector** 和 **insight-opentelemetry-collector** 组件。
 
 
 === "在 `helm upgrade` 命令中使用 --set"
