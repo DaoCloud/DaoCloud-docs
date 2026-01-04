@@ -1,10 +1,12 @@
 # 开启大日志和大链路模式
 
 可观测性模块为了提高大规模环境下的数据写入能力，支持将日志切换为
-**大日志** 模式、将链路切换为 **大链路** 模式。本文将介绍以下几种开启方式：
+**大日志** 模式、将链路切换为 **大链路** 模式，两者区别可参考[利用 Kafka 与 Elasticsearch 流式架构应对超大规模日志方案](../../best-practice/insight-kafka.md)。
+
+本文将介绍以下几种开启方式：
 
 - 通过[安装器开启或升级](#_8)至大日志和大链路模式（通过 manifest.yaml 中同一个参数值控制）
-- 通过 [Helm 命令手动开启](#helm)大日志和大链路模式
+- 通过 [通过 Helm 命令或者容器管理界面开启](#helm)大日志和大链路模式
 
 ## 日志
 
@@ -105,7 +107,7 @@ infrastructures:
     - insight-agent-opentelemetry-collector
     - insight-opentelemetry-collector
 
-## 通过 Helm 命令开启
+## 通过 Helm 命令或者容器管理界面开启
 
 前提条件：需要保证存在 **可用的 kafka** 且地址可正常访问。
 
@@ -119,6 +121,26 @@ helm get values insight-agent -n insight-system -o yaml > insight-agent.yaml
 ### 开启大日志
 
 有以下几种方式开启或升级至大日志模式：
+
+=== "通过容器管理 UI 升级"
+    
+    1. 先修改 **Insight** Helm 应用:
+    
+    在 **kpanda-global-cluster** 管理集群中，从左侧导航栏切换至 **Helm 应用**，选择并更新 **insight** 应用；
+    ![upgrade-insight-global-kafka](../../images/upgrade-insight-global-kafka.png)
+
+    填写 Kafka 相关配置信息后并点击确认更新。
+
+    2. 更新子集群 **Insight-Agent**  Helm 应用：
+
+    在容器管理模块中，找到对应的子集群，从左侧导航栏选择 **Helm 应用** ，找到并更新 **insight-agent**。
+
+    在 **Logging Settings** 中，为 **output** 选择 **kafka**，并填写正确的 **brokers** 地址。
+
+    ![kpanda](../../images/big-log05.png)
+
+    需要注意的是，在升级完成后，需手动重启 **insight-agent-fluent-bit** 组件。
+
 
 === "在 `helm upgrade` 命令中使用 --set"
 
@@ -194,19 +216,30 @@ helm get values insight-agent -n insight-system -o yaml > insight-agent.yaml
           --version 0.30.1
         ```
 
-=== "容器管理 UI 升级"
-
-    在容器管理模块中，找到对应的集群，从左侧导航栏选择 **Helm 应用** ，找到并更新 insight-agent。
-
-    在 **Logging Settings** 中，为 **output** 选择 **kafka**，并填写正确的 **brokers** 地址。
-
-    ![kpanda](../../images/big-log05.png)
-
-    需要注意的是，在升级完成后，需手动重启 **insight-agent-fluent-bit** 组件。
-
 ### 开启大链路
 
 有以下几种方式开启或升级至大链路模式：
+
+=== "通过容器管理 UI 升级"
+    
+    1. 先修改 **Insight** Helm 应用:
+    
+    在 **kpanda-global-cluster** 管理集群中，从左侧导航栏切换至 **Helm 应用**，选择并更新 **insight** 应用；
+    ![upgrade-insight-global-kafka](../../images/upgrade-insight-global-kafka.png)
+
+    填写 Kafka 相关配置信息后并点击确认更新。
+
+    2. 更新子集群 **Insight-Agent**  Helm 应用：
+    
+    在容器管理模块中，找到对应的集群，从左侧导航栏选择 **Helm 应用** ，找到并更新 insight-agent。
+
+    在 **Trace Settings** 中，为 **output** 选择 **kafka**，并填写正确的 **brokers** 地址。
+
+    ![UI 上升级](../../images/big-log06.png)
+
+    需要注意的是，在升级完成后，需手动
+    **重启 insight-agent-opentelemetry-collector** 和 **insight-opentelemetry-collector** 组件。
+
 
 === "在 `helm upgrade` 命令中使用 --set"
 
@@ -284,18 +317,9 @@ helm get values insight-agent -n insight-system -o yaml > insight-agent.yaml
           --version 0.30.1
         ```
 
-=== "容器管理 UI 升级"
-
-    在容器管理模块中，找到对应的集群，从左侧导航栏选择 **Helm 应用** ，找到并更新 insight-agent。
-
-    在 **Trace Settings** 中，为 **output** 选择 **kafka**，并填写正确的 **brokers** 地址。
-
-    ![UI 上升级](../../images/big-log06.png)
-
-    需要注意的是，在升级完成后，需手动
-    **重启 insight-agent-opentelemetry-collector** 和 **insight-opentelemetry-collector** 组件。
-
 ## 如何消费 Kafka 中的日志和链路数据？
+
+具体流程请参考[利用 Kafka 与 Elasticsearch 流式架构应对超大规模日志方案](../../best-practice/insight-kafka.md)
 
 在使用 Kafka 模式时，目前 Insight 会采集日志、Kube 审计、Kube 事件和链路四种数据至 Kafka，以下分别是数据类型对应的 Kafka Topic 名字：
 
