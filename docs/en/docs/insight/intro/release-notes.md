@@ -1,3 +1,4 @@
+---
 MTPE: windsonsea
 date: 2025-06-23
 ---
@@ -14,9 +15,9 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 #### Insight Server
 
 #### Insight Agent
-- **Fixed** apiserver ServiceMonitor drop `apiserver_request_terminations_total` metric
-- **Fixed** kube-state-metrics adaptation for DCE4 in Kubernetes 1.18.x
-- **Fixed** remove the dependency on the `kube_(.*)_labels` metric for built-in recording rules
+- **Fixed** apiserver ServiceMonitor dropping the `apiserver_request_terminations_total` metric
+- **Fixed** kube-state-metrics compatibility with DCE4 on Kubernetes 1.18.x
+- **Removed** dependency on the `kube_(.*)_labels` metric in built-in recording rules
 
 ## 2025-10-31
 
@@ -27,46 +28,46 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - **Added** built-in alert rules for HwameiStor
 - **Added** FormatQuery API
 - **Added** Grafana datasource for Skoala gateway access logs
-- **Added** a node scope pod resource dashboard
-- **Added** PrometheusRemoteWriteLost rule description Prometheus remote write lost connection
-- **Added** vmrule's rule `labels` and `annotations` validate
-- **Added** Alertmanager builtin template functions
-- **Added** PromQL field to Alert Preview API response
-- **Added** API for preview notify template
-- **Added** allow the template to access the full data from the Alertmanager webhook
-- **Fixed** fields export not works
-- **Fixed** parseNotifyTemplate function cause nil panic
+- **Added** node-scoped pod resource dashboard
+- **Added** rule description for PrometheusRemoteWriteLost (Prometheus remote write lost connection)
+- **Added** validation for `labels` and `annotations` in vmrule rules
+- **Added** built-in Alertmanager template functions
+- **Added** PromQL field in the Alert Preview API response
+- **Added** API for previewing notification templates
+- **Added** support for accessing full Alertmanager webhook data in templates
+- **Fixed** fields export not working
+- **Fixed** nil panic caused by the `parseNotifyTemplate` function
 - **Fixed** FormatQuery API bug
-- **Fixed** kube controller alert expr bug
-- **Fixed** create VMAlertmanagerConfig "xxxx" is invalid "spec.route" Required value
-- **Fixed** query logs through ident filter not works when ident log exists in different log paths
-- **Improved** elasticsearch connection log of es address
-- **Improved** OTel aggregator use OTelhttp to send metrics
-- **Improved** enable opentelemetry-collector-aggregator by default
+- **Fixed** kube controller alert expression bug
+- **Fixed** invalid VMAlertmanagerConfig error when `spec.route` is missing
+- **Fixed** log queries via ident filter not working when ident logs exist in different paths
+- **Improved** Elasticsearch connection logs to include ES address details
+- **Improved** OTel aggregator to use `otelhttp` for sending metrics
+- **Enabled** opentelemetry-collector-aggregator by default
 - **Upgraded** elastic alert version to 1.24
 - **Upgraded** Golang version to 1.23
 
 #### Insight Agent
 
-- **Fixed** config-reloader image from `jimmidyson/configmap-reload:v0.13.0` to 'victoriametrics/operator:config-reloader-v0.62.0'
-- **Improved** remove unused metrics's node-exporter collector job
-- **Upgraded** nginx from 1.26.2-alpine to 1.29.2-alpine in runbook image
-- **Upgraded** kube-state-metrics image from v2.8.2 to v2.16.0 to support Kubernetes 1.25+.
-- **Upgraded** kube-state-metrics image from v2.6.0 to v2.16.0 to support Kubernetes 1.22~1.24
-- **Upgraded** kube-state-metrics chart form v5.4.2 to v6.3.0
-- **Upgraded** OTel operator chart from 0.91.1(OTel operator v0.127.0) to 0.95.1(OTel operator v0.135.0)
-- **Upgraded** OTel collector chart from 0.129.0 to 0.134.0
-- **Upgraded** OTel java instrumentation from 2.17.1-5f7a6e92a8bccd68f741e292c29a64eb332e442f to 2.20.0-9d132e299f552bfe560190207f5e5c5868047866
-- **Upgraded** OTel nodejs instrumentation from 0.62.0 to 0.64.1
-- **Upgraded** OTel python instrumentation from 0.56b0 to 0.58b0
-- **Upgraded** OTel go instrumentation from v0.22.1 to v0.23.0
-- **Upgraded**jaeger v2 from jaeger-2.9.1-6ede7f9f to jaeger-2.10.0-b10b5835
-- **Upgraded** victoria-metrics-k8s-stack from 0.14.19 to 0.61.12
-- **Upgraded** victoriametrics/operator from 0.48.3 to 0.63.0
-- **Upgraded** victoriametrics/vmselect from 1.103.0 to 1.127.0
-- **Upgraded** victoriametrics/vmstorage from 1.103.0 to 1.127.0
-- **Upgraded**victoriametrics/vminsert from 1.103.0 to 1.127.0
-- **Upgraded** victoriametrics/vmalert from 1.93.5 to 1.127.0
+- **Updated** config-reloader image from `jimmidyson/configmap-reload:v0.13.0` to `victoriametrics/operator:config-reloader-v0.62.0`
+- **Removed** unused node-exporter collector job metrics
+- **Upgraded** nginx in the runbook image from `1.26.2-alpine` to `1.29.2-alpine`
+- **Upgraded** kube-state-metrics image from `v2.8.2` to `v2.16.0` to support Kubernetes 1.25+
+- **Upgraded** kube-state-metrics image from `v2.6.0` to `v2.16.0` to support Kubernetes 1.22–1.24
+- **Upgraded** kube-state-metrics chart from `v5.4.2` to `v6.3.0`
+- **Upgraded** OTel operator chart from `0.91.1` (OTel operator `v0.127.0`) to `0.95.1` (OTel operator `v0.135.0`)
+- **Upgraded** OTel collector chart from `0.129.0` to `0.134.0`
+- **Upgraded** OTel Java instrumentation from `2.17.1-5f7a6e92a8bccd68f741e292c29a64eb332e442f` to `2.20.0-9d132e299f552bfe560190207f5e5c5868047866`
+- **Upgraded** OTel Node.js instrumentation from `0.62.0` to `0.64.1`
+- **Upgraded** OTel Python instrumentation from `0.56b0` to `0.58b0`
+- **Upgraded** OTel Go instrumentation from `v0.22.1` to `v0.23.0`
+- **Upgraded** Jaeger v2 from `jaeger-2.9.1-6ede7f9f` to `jaeger-2.10.0-b10b5835`
+- **Upgraded** victoria-metrics-k8s-stack from `0.14.19` to `0.61.12`
+- **Upgraded** victoriametrics/operator from `0.48.3` to `0.63.0`
+- **Upgraded** victoriametrics/vmselect from `1.103.0` to `1.127.0`
+- **Upgraded** victoriametrics/vmstorage from `1.103.0` to `1.127.0`
+- **Upgraded** victoriametrics/vminsert from `1.103.0` to `1.127.0`
+- **Upgraded** victoriametrics/vmalert from `1.93.5` to `1.127.0`
   
 ## 2025-09-30
 
