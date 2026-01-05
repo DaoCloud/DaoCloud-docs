@@ -27,7 +27,7 @@ CPU.weight * (request + used) / allocatable
 通过 Binpack 策略的节点总得分如下：
 
 ```
-binpack.weight - (CPU.score + Memory.score + GPU.score) / (CPU.weight + Memory.weight + GPU.weight) - 100
+binpack.weight * (CPU.score + Memory.score + GPU.score) / (CPU.weight + Memory.weight + GPU.weight) * 100
 ```
 
 即 Binpack 插件的权重值越大，得分越高，某类资源的权重越大，该资源在打分时的占比越大。其中：
@@ -59,13 +59,13 @@ binpack.weight - (CPU.score + Memory.score + GPU.score) / (CPU.weight + Memory.w
 1. 节点总得分的计算公式为：
 
     ```
-    binpack.weight - (CPU.score + Memory.score + GPU.score) / (CPU.weight + Memory.weight + GPU.weight) - 100
+    binpack.weight * (CPU.score + Memory.score + GPU.score) / (CPU.weight + Memory.weight + GPU.weight) * 100
     ```
 
     假设 binpack.weight 配置为 5，Node 1 在 Binpack 策略下的得分为：
     
     ```
-    5 - (0.75 + 0.75 + 2) / (1 + 1 + 2) - 100 = 437.5
+    5 * (0.75 + 0.75 + 2) / (1 + 1 + 2) * 100 = 437.5
     ```
 
 1. Binpack 对 Node 2 的资源打分：
@@ -85,7 +85,7 @@ binpack.weight - (CPU.score + Memory.score + GPU.score) / (CPU.weight + Memory.w
 1. Node 2 在 Binpack 策略下的得分为：
 
     ```
-    5 - (1 + 0.75 + 2) / (1 + 1 + 2) - 100 = 468.75
+    5 * (1 + 0.75 + 2) / (1 + 1 + 2) * 100 = 468.75
     ```
 
 综上，Node 2 得分大于 Node 1，按照 Binpack 策略，Pod 将会优先调度至 Node 2。
