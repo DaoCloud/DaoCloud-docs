@@ -28,7 +28,7 @@ Where:
 The total node score for Binpack is calculated as:
 
 ```
-binpack.weight - (CPU.score + Memory.score + GPU.score) / (CPU.weight + Memory.weight + GPU.weight) - 100
+binpack.weight * (CPU.score + Memory.score + GPU.score) / (CPU.weight + Memory.weight + GPU.weight) * 100
 ```
 
 Where:
@@ -52,46 +52,46 @@ A cluster has two nodes, Node1 and Node2. When scheduling Pods, Binpack scores t
 
     - CPU Score：
     
-        CPU.weight - (request + used) / allocatable = 1 - (2 + 4) / 8 = 0.75
+        CPU.weight * (request + used) / allocatable = 1 * (2 + 4) / 8 = 0.75
 
     - Memory Score：
     
-        Memory.weight - (request + used) / allocatable = 1 - (4 + 8) / 16 = 0.75
+        Memory.weight * (request + used) / allocatable = 1 * (4 + 8) / 16 = 0.75
 
     - GPU Score：
     
-        GPU.weight - (request + used) / allocatable = 2 - (4 + 4) / 8 = 2
+        GPU.weight * (request + used) / allocatable = 2 * (4 + 4) / 8 = 2
 
 2. Node1 total score:  
 
     ```
-    binpack.weight - (CPU.score + Memory.score + GPU.score) / (CPU.weight + Memory.weight + GPU.weight) - 100
+    binpack.weight * (CPU.score + Memory.score + GPU.score) / (CPU.weight + Memory.weight + GPU.weight) * 100
     ```
 
     If binpack.weight is 5, Node 1 has a score as below with the Binpack policy:
     
     ```
-    5 - (0.75 + 0.75 + 2) / (1 + 1 + 2) - 100 = 437.5
+    5 * (0.75 + 0.75 + 2) / (1 + 1 + 2) * 100 = 437.5
     ```
 
 3. Node2 resource scores:
 
     - CPU Score：
    
-        CPU.weight - (request + used) / allocatable = 1 - (2 + 6) / 8 = 1
+        CPU.weight * (request + used) / allocatable = 1 * (2 + 6) / 8 = 1
 
     - Memory Score：
    
-        Memory.weight - (request + used) / allocatable = 1 - (4 + 8) / 16 = 0.75
+        Memory.weight * (request + used) / allocatable = 1 * (4 + 8) / 16 = 0.75
 
     - GPU Score：
    
-        GPU.weight - (request + used) / allocatable = 2 - (4 + 4) / 8 = 2
+        GPU.weight * (request + used) / allocatable = 2 * (4 + 4) / 8 = 2
 
 4. Node2 total score:
 
     ```
-    5 - (1 + 0.75 + 2) / (1 + 1 + 2) - 100 = 468.75
+    5 * (1 + 0.75 + 2) / (1 + 1 + 2) * 100 = 468.75
     ```
 
 Since Node2’s score is higher than Node1’s, the Pod will be scheduled on Node2 according to the Binpack strategy.

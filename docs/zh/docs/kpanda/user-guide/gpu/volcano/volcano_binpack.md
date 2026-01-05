@@ -46,15 +46,15 @@ binpack.weight * (CPU.score + Memory.score + GPU.score) / (CPU.weight + Memory.w
 
     - CPU Score：
     
-        CPU.weight - (request + used) / allocatable = 1 - (2 + 4) / 8 = 0.75
+        CPU.weight * (request + used) / allocatable = 1 * (2 + 4) / 8 = 0.75
 
     - Memory Score：
     
-        Memory.weight - (request + used) / allocatable = 1 - (4 + 8) / 16 = 0.75
+        Memory.weight * (request + used) / allocatable = 1 * (4 + 8) / 16 = 0.75
 
     - GPU Score：
     
-        GPU.weight - (request + used) / allocatable = 2 - (4 + 4) / 8 = 2
+        GPU.weight * (request + used) / allocatable = 2 * (4 + 4) / 8 = 2
 
 1. 节点总得分的计算公式为：
 
@@ -72,15 +72,15 @@ binpack.weight * (CPU.score + Memory.score + GPU.score) / (CPU.weight + Memory.w
 
     - CPU Score：
    
-        CPU.weight - (request + used) / allocatable = 1 - (2 + 6) / 8 = 1
+        CPU.weight * (request + used) / allocatable = 1 * (2 + 6) / 8 = 1
 
     - Memory Score：
    
-        Memory.weight - (request + used) / allocatable = 1 - (4 + 8) / 16 = 0.75
+        Memory.weight * (request + used) / allocatable = 1 * (4 + 8) / 16 = 0.75
 
     - GPU Score：
    
-        GPU.weight - (request + used) / allocatable = 2 - (4 + 4) / 8 = 2
+        GPU.weight * (request + used) / allocatable = 2 * (4 + 4) / 8 = 2
 
 1. Node 2 在 Binpack 策略下的得分为：
 
