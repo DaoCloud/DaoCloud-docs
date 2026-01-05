@@ -1,4 +1,3 @@
-![515fcd89fb5e72dff6ceeb33ae0dc550](https://github.com/user-attachments/assets/c03fd6b0-0be0-4241-bf73-35051f7bd97d)---
 MTPE: windsonsea
 date: 2025-06-23
 ---
