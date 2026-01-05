@@ -1,10 +1,12 @@
-# Kafka + Elasticsearch 流式架构应对超大规模日志方案
+# 利用 Kafka 与 Elasticsearch 流式架构应对超大规模日志方案
 
 随着业务发展，越来越多的应用产生的日志数据会越来越多，为了保证系统能够正常采集并分析庞杂的日志数据时，
 一般做法是引入 Kafka 的流式架构来解决大量数据异步采集的方案。采集到的日志数据会经过 Kafka 流转，
 由相应的数据消费组件将数据从 Kafka 消费存入到 Elasticsearch 中，并通过 Insight 进行可视化展示与分析。
 
-本文将介绍以下两种方案：
+如若需要开启 Kafka 架构，请参考[开启大日志和大链路模式](../quickstart/install/big-log-and-trace.md)。
+
+本文将介绍以下两种方案原理：
 
 - Fluentbit + Kafka + Logstash + Elasticsearch
 - Fluentbit + Kafka + Vector + Elasticsearch
