@@ -1,4 +1,4 @@
----
+![515fcd89fb5e72dff6ceeb33ae0dc550](https://github.com/user-attachments/assets/c03fd6b0-0be0-4241-bf73-35051f7bd97d)---
 MTPE: windsonsea
 date: 2025-06-23
 ---
@@ -7,6 +7,80 @@ date: 2025-06-23
 
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version. [Upgrade Notes](../quickstart/install/upgrade-note.md).
+
+## 2025-11-30
+
+### v0.39.2
+
+#### Insight Server
+
+#### Insight Agent
+- **Fixed** apiserver ServiceMonitor drop `apiserver_request_terminations_total` metric
+- **Fixed** kube-state-metrics adaptation for DCE4 in Kubernetes 1.18.x
+- **Fixed** remove the dependency on the `kube_(.*)_labels` metric for built-in recording rules
+
+## 2025-10-31
+
+### v0.39.0
+
+#### Insight Server
+
+- **Added** built-in alert rules for HwameiStor
+- **Added** FormatQuery API
+- **Added** Grafana datasource for Skoala gateway access logs
+- **Added** a node scope pod resource dashboard
+- **Added** PrometheusRemoteWriteLost rule description Prometheus remote write lost connection
+- **Added** vmrule's rule `labels` and `annotations` validate
+- **Added** Alertmanager builtin template functions
+- **Added** PromQL field to Alert Preview API response
+- **Added** API for preview notify template
+- **Added** allow the template to access the full data from the Alertmanager webhook
+- **Fixed** fields export not works
+- **Fixed** parseNotifyTemplate function cause nil panic
+- **Fixed** FormatQuery API bug
+- **Fixed** kube controller alert expr bug
+- **Fixed** create VMAlertmanagerConfig "xxxx" is invalid "spec.route" Required value
+- **Fixed** query logs through ident filter not works when ident log exists in different log paths
+- **Improved** elasticsearch connection log of es address
+- **Improved** OTel aggregator use OTelhttp to send metrics
+- **Improved** enable opentelemetry-collector-aggregator by default
+- **Upgraded** elastic alert version to 1.24
+- **Upgraded** Golang version to 1.23
+
+#### Insight Agent
+
+- **Fixed** config-reloader image from `jimmidyson/configmap-reload:v0.13.0` to 'victoriametrics/operator:config-reloader-v0.62.0'
+- **Improved** remove unused metrics's node-exporter collector job
+- **Upgraded** nginx from 1.26.2-alpine to 1.29.2-alpine in runbook image
+- **Upgraded** kube-state-metrics image from v2.8.2 to v2.16.0 to support Kubernetes 1.25+.
+- **Upgraded** kube-state-metrics image from v2.6.0 to v2.16.0 to support Kubernetes 1.22~1.24
+- **Upgraded** kube-state-metrics chart form v5.4.2 to v6.3.0
+- **Upgraded** OTel operator chart from 0.91.1(OTel operator v0.127.0) to 0.95.1(OTel operator v0.135.0)
+- **Upgraded** OTel collector chart from 0.129.0 to 0.134.0
+- **Upgraded** OTel java instrumentation from 2.17.1-5f7a6e92a8bccd68f741e292c29a64eb332e442f to 2.20.0-9d132e299f552bfe560190207f5e5c5868047866
+- **Upgraded** OTel nodejs instrumentation from 0.62.0 to 0.64.1
+- **Upgraded** OTel python instrumentation from 0.56b0 to 0.58b0
+- **Upgraded** OTel go instrumentation from v0.22.1 to v0.23.0
+- **Upgraded**jaeger v2 from jaeger-2.9.1-6ede7f9f to jaeger-2.10.0-b10b5835
+- **Upgraded** victoria-metrics-k8s-stack from 0.14.19 to 0.61.12
+- **Upgraded** victoriametrics/operator from 0.48.3 to 0.63.0
+- **Upgraded** victoriametrics/vmselect from 1.103.0 to 1.127.0
+- **Upgraded** victoriametrics/vmstorage from 1.103.0 to 1.127.0
+- **Upgraded**victoriametrics/vminsert from 1.103.0 to 1.127.0
+- **Upgraded** victoriametrics/vmalert from 1.93.5 to 1.127.0
+  
+## 2025-09-30
+
+### v0.38.2
+
+#### Insight Server
+
+- **Improved** AlertGroup's name validation
+
+#### Insight Agent
+
+- **Fixed** event collector parse event data bug
+- **Fixed** duplicate CPU counts in License statistics under Hyper-Threading mode
 
 ## 2025-08-31
 
@@ -22,13 +96,13 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - **Fixed** missing `trace` output field in the `agentinstallparam` API.
 - **Fixed** trace duration calculation following Jaeger UI logic.
 - **Fixed** removal of unused `apiserver` and `ksm` metrics.
-- **Optimized** updating `smon` CR in the insight chart.
-- **Optimized** support for secure Kafka connections.
-- **Optimized** otelcol now sends events only to `es`/`kafka`.
-- **Optimized** updated default `insight-agent` spanmetrics configuration (coordinated with the server).
-- **Optimized** upgraded `etcd-exporter` from v0.7.0 to v0.8.0.
-- **Optimized** upgraded Jaeger to v2.
-- **Optimized** upgraded `jaeger-v2` to `jaeger-2.9.1-6ede7f9f`.
+- **Improved** updating `smon` CR in the insight chart.
+- **Improved** support for secure Kafka connections.
+- **Improved** OTelcol now sends events only to `es`/`kafka`.
+- **Improved** updated default `insight-agent` spanmetrics configuration (coordinated with the server).
+- **Improved** upgraded `etcd-exporter` from v0.7.0 to v0.8.0.
+- **Improved** upgraded Jaeger to v2.
+- **Improved** upgraded `jaeger-v2` to `jaeger-2.9.1-6ede7f9f`.
 
 #### Insight Agent
 
@@ -38,18 +112,18 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - **Added** heatmap display in `insight-tracing-debug.json`.
 - **Fixed** log level configuration issue in `grafana-operator`.
 - **Fixed** Grafana sidebar display issue.
-- **Fixed** master selection issue in the otel event collector.
+- **Fixed** master selection issue in the OTel event collector.
 - **Fixed** duplicate timestamp sampling issue in spanmetrics.
 - **Fixed** `es-init` overwriting configuration on restart.
 - **Fixed** nanosecond precision issue in Fluentbit `add_time.lua`.
 - **Fixed** vmalert list and rules monitoring all namespaces issue.
 - **Fixed** closed vector headless to avoid duplicate metric collection.
-- **Optimized** upgraded otel stack.
-- **Optimized** upgraded Fluentbit.
-- **Optimized** enabled master selection for otel event collector.
-- **Optimized** upgraded `tailing-sidecar-operator` from 0.15.0 to 0.18.0.
-- **Optimized** upgraded `grafana-operator` from v4.5.0 to v4.5.1.
-- **Optimized** upgraded Fluentbit/XC from v4.0.1 to v4.0.7.
+- **Improved** upgraded OTel stack.
+- **Improved** upgraded Fluentbit.
+- **Improved** enabled master selection for OTel event collector.
+- **Improved** upgraded `tailing-sidecar-operator` from 0.15.0 to 0.18.0.
+- **Improved** upgraded `grafana-operator` from v4.5.0 to v4.5.1.
+- **Improved** upgraded Fluentbit/XC from v4.0.1 to v4.0.7.
 
 ## 2025-06-30
 
@@ -78,16 +152,16 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 
 #### Insight Server
 
-* **Optimized** the built-in dashboard for `kubernetes-persistent-volumes`.
-* **Optimized** the default configuration for Fluent Bit.
-* **Optimized** by adjusting the `total_shards_per_node` parameter for index settings.
-* **Optimized** by upgrading the version of `vmcluster`.
+* **Improved** the built-in dashboard for `kubernetes-persistent-volumes`.
+* **Improved** the default configuration for Fluent Bit.
+* **Improved** by adjusting the `total_shards_per_node` parameter for index settings.
+* **Improved** by upgrading the version of `vmcluster`.
 * **Fixed** an issue where the cluster name in alert messages sent via webhook was displayed as the cluster ID.
 
 #### Insight Agent
 
-* **Optimized** support for setting taints and tolerations for `etcd-exporter`.
-* **Optimized** by upgrading `blackbox-exporter` to version v0.25.0.
+* **Improved** support for setting taints and tolerations for `etcd-exporter`.
+* **Improved** by upgrading `blackbox-exporter` to version v0.25.0.
 
 ## 2025-02-28  
 
@@ -615,7 +689,7 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 #### Fixes
 
 - **Fixed** build offline package to add **.relok8s-images** file
-- **Fixed** adjust the port name corresponding to the component **otel-collector** port in insight-agent
+- **Fixed** adjust the port name corresponding to the component **OTel-collector** port in insight-agent
 
 ## 2022-12-29
 
@@ -734,8 +808,8 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 
 #### Features
 
-- Support kpanda service name associated with the otel service name, identify whether the service tracing enabled.
-- Update default tracing sample policies in global otel col.
+- Support kpanda service name associated with the OTel service name, identify whether the service tracing enabled.
+- Update default tracing sample policies in global OTel col.
 - Change sumologic(work for audit log) exporter port 8080 to 80.
 - Use go-migrate to manage db migration version.
 - Fix multi cluster and multi namespaces filter not work well in graph API.
@@ -748,7 +822,7 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - Fluentbit support elasticsearch output skip verify TLS.
 - kube audit log filter support getting rule from helm values.
 - Fix parse centos7/ubuntu20 host log time.
-- Bump up otel operator version, remove cert-manager dependencies in operator deploy within self-signed cert.
+- Bump up OTel operator version, remove cert-manager dependencies in operator deploy within self-signed cert.
 - Scrape jaeger collector metrics.
 - Bump up tailing-sidecar version.
 - Jaeger support elasticsearch output skip verfify TLS.
@@ -756,7 +830,7 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 
 #### Other
 
-- Add otel collector grafana dashboard.
+- Add OTel collector grafana dashboard.
 - Add Insight Overview Chinese version.
 
 ## 2022-08-21
@@ -775,7 +849,7 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 
 #### Adjustment
 
-- Bump up otel operator in agent chart.
+- Bump up OTel operator in agent chart.
 - Add kibana as builtin tools.
 - Reduce traces/logs chart's default values.
 - Add Helm values parameters documentation.
@@ -806,10 +880,10 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - Dock with ghippo roles.
 - Expose metric **insight_cluster_info** in server.
 - Add log.SearchLog API for SKoala, accept ES query DSL and return raw ES response.
-- Bump up OTelcol helm chart version to 0.21.1 and update otelcol architecture.
+- Bump up OTelcol helm chart version to 0.21.1 and update OTelcol architecture.
 - support mspider tracing.
 - Bump up OTelcol helm chart version to 0.23.0.
-- Add default tracing sample policies in global otel col.
+- Add default tracing sample policies in global OTel col.
 
 #### Adjustment
 
@@ -936,7 +1010,7 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - Complete cluster/namespace list and cluster summary
 - Add bulk query immediate and range metrics api
 - add node and all workload api
-- Added Otel tracing to track insight
+- Added OTel tracing to track insight
 - Support for metrics queries with extraLabels
 - Add metrics documentation.
 - Realize basic scenario cases in monitor
