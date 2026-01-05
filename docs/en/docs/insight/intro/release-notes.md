@@ -95,14 +95,14 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - **Fixed** errors in consuming audit logs.
 - **Fixed** missing `trace` output field in the `agentinstallparam` API.
 - **Fixed** trace duration calculation following Jaeger UI logic.
-- **Fixed** removal of unused `apiserver` and `ksm` metrics.
-- **Improved** updating `smon` CR in the insight chart.
+- **Removed** unused `apiserver` and `ksm` metrics.
+- **Updated** `smon` CR in the insight chart.
 - **Improved** support for secure Kafka connections.
 - **Improved** OTelcol now sends events only to `es`/`kafka`.
-- **Improved** updated default `insight-agent` spanmetrics configuration (coordinated with the server).
-- **Improved** upgraded `etcd-exporter` from v0.7.0 to v0.8.0.
-- **Improved** upgraded Jaeger to v2.
-- **Improved** upgraded `jaeger-v2` to `jaeger-2.9.1-6ede7f9f`.
+- **Updated** default `insight-agent` spanmetrics configuration (coordinated with the server).
+- **Upgraded** `etcd-exporter` from v0.7.0 to v0.8.0.
+- **Upgraded** Jaeger to v2.
+- **Upgraded** `jaeger-v2` to `jaeger-2.9.1-6ede7f9f`.
 
 #### Insight Agent
 
@@ -118,12 +118,12 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - **Fixed** nanosecond precision issue in Fluentbit `add_time.lua`.
 - **Fixed** vmalert list and rules monitoring all namespaces issue.
 - **Fixed** closed vector headless to avoid duplicate metric collection.
-- **Improved** upgraded OTel stack.
-- **Improved** upgraded Fluentbit.
-- **Improved** enabled master selection for OTel event collector.
-- **Improved** upgraded `tailing-sidecar-operator` from 0.15.0 to 0.18.0.
-- **Improved** upgraded `grafana-operator` from v4.5.0 to v4.5.1.
-- **Improved** upgraded Fluentbit/XC from v4.0.1 to v4.0.7.
+- **Upgraded** OTel stack.
+- **Upgraded** Fluentbit.
+- **Enabled** master selection for OTel event collector.
+- **Upgraded** `tailing-sidecar-operator` from 0.15.0 to 0.18.0.
+- **Upgraded** `grafana-operator` from v4.5.0 to v4.5.1.
+- **Upgraded** Fluentbit/XC from v4.0.1 to v4.0.7.
 
 ## 2025-06-30
 
@@ -361,7 +361,7 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 
 #### Insight Agent
 
-- **Improved** Upgraded image versions of related components for OpenTelemetry Collector
+- **Upgraded** image versions of related components for OpenTelemetry Collector
 
 ## 2023-12-31
 
@@ -541,10 +541,10 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - **Improved** added no data prompt for JVM monitoring.
 - **Improved** alert policy details do not show other parameters if not notified.
 - **Improved** added resource limits for OpenTelemetry Operator.
-- **Improved** upgraded Grafana version to v9.3.14.
-- **Improved** upgraded tailing sidecar version from v0.5.6 to v0.7.0.
-- **Improved** upgraded kube-prometheus-stack version to v45.28.1.
-- **Improved** upgraded prometheus version to v2.44.0.
+- **Upgraded** Grafana version to v9.3.14.
+- **Upgraded** tailing sidecar version from v0.5.6 to v0.7.0.
+- **Upgraded** kube-prometheus-stack version to v45.28.1.
+- **Upgraded** prometheus version to v2.44.0.
 
 #### Bug Fixes
 
