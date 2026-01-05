@@ -2,6 +2,80 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化，[升级注意事项](../quickstart/install/upgrade-note.md)。
 
+## 2025-11-30
+
+### v0.39.2
+
+#### Insight Server
+
+#### Insight Agent
+- **修复** `apiserver` ServiceMonitor 丢失 `apiserver_request_terminations_total` 指标的问题
+- **修复** Kubernetes 1.18.x 下 DCE4 对 `kube-state-metrics` 的适配问题
+- **修复** 内置 recording rules 不再依赖 `kube_(.*)_labels` 指标
+
+## 2025-10-31
+
+### v0.39.0
+
+#### Insight Server
+
+- **新增** HwameiStor 内置告警规则
+- **新增** FormatQuery API
+- **新增** Skoala 网关访问日志的 Grafana 数据源
+- **新增** 节点级 Pod 资源仪表盘
+- **新增** PrometheusRemoteWriteLost 告警规则说明（Prometheus 远程写入连接丢失）
+- **新增** vmrule 的规则 `labels` 和 `annotations` 校验功能
+- **新增** Alertmanager 内置模板函数
+- **新增** Alert Preview API 响应中添加 PromQL 字段
+- **新增** 预览通知模板的 API
+- **新增** 支持模板访问 Alertmanager webhook 的完整数据
+- **修复** 导出字段功能不生效
+- **修复** `parseNotifyTemplate` 函数导致的 nil panic
+- **修复** FormatQuery API 的 bug
+- **修复** kube controller 告警表达式 bug
+- **修复** 创建 VMAlertmanagerConfig 时 `"xxxx" is invalid "spec.route" Required value` 错误
+- **修复** 使用 ident filter 查询日志时，存在不同日志路径的 ident 日志无法查询问题
+- **优化** Elasticsearch 连接日志中显示 ES 地址
+- **优化** OTel aggregator 使用 OTelhttp 发送指标
+- **优化** 默认启用 opentelemetry-collector-aggregator
+- **升级** elastic alert 版本至 1.24
+- **升级** Golang 版本至 1.23
+
+#### Insight Agent
+
+- **修复** config-reloader 镜像从 `jimmidyson/configmap-reload:v0.13.0` 改为 `victoriametrics/operator:config-reloader-v0.62.0`
+- **优化** 移除未使用指标的 node-exporter collector job
+- **升级** runbook 镜像中 nginx 从 1.26.2-alpine 升级到 1.29.2-alpine
+- **升级** kube-state-metrics 镜像至 v2.16.0，支持 Kubernetes 1.25+
+- **升级** kube-state-metrics 镜像从 v2.6.0 升级至 v2.16.0，支持 Kubernetes 1.22~1.24
+- **升级** kube-state-metrics chart 从 v5.4.2 升级到 v6.3.0
+- **升级** OTel operator chart 从 0.91.1（OTel operator v0.127.0）升级至 0.95.1（OTel operator v0.135.0）
+- **升级** OTel collector chart 从 0.129.0 升级至 0.134.0
+- **升级** OTel Java instrumentation 从 2.17.1 升级至 2.20.0
+- **升级** OTel Node.js instrumentation 从 0.62.0 升级至 0.64.1
+- **升级** OTel Python instrumentation 从 0.56b0 升级至 0.58b0
+- **升级** OTel Go instrumentation 从 v0.22.1 升级至 v0.23.0
+- **升级** jaeger v2 从 2.9.1 升级至 2.10.0
+- **升级** victoria-metrics-k8s-stack 从 0.14.19 升级至 0.61.12
+- **升级** victoriametrics/operator 从 0.48.3 升级至 0.63.0
+- **升级** victoriametrics/vmselect 从 1.103.0 升级至 1.127.0
+- **升级** victoriametrics/vmstorage 从 1.103.0 升级至 1.127.0
+- **升级** victoriametrics/vminsert 从 1.103.0 升级至 1.127.0
+- **升级** victoriametrics/vmalert 从 1.93.5 升级至 1.127.0
+
+## 2025-09-30
+
+### v0.38.2
+
+#### Insight Server
+
+- **优化** AlertGroup 名称校验
+
+#### Insight Agent
+
+- **修复** 事件采集器解析事件数据的 bug
+- **修复** Hyper-Threading 模式下 License 统计中 CPU 数量重复问题
+
 ## 2025-08-31
 
 ### v0.38.1
