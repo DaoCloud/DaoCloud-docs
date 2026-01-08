@@ -1,6 +1,6 @@
 # 开启链路指标告警规则与自定义链路告警规则
 
-自 v0.33.0 版本起，Insight 内置了针对服务链路（SpanMetrics）的核心监控告警策略，在通过 Helm 安装 Insight 是可通过 `--set victoria-metrics-k8s-stack.defaultRules.spanmetrics=true` 来参数开启。开启之后，无需用户手动配置基础规则，即可实现对服务或接口调用的错误率、请求延时两大关键维度的自动化监控与异常告警，进一步降低可观测性落地门槛，提升微服务架构下的问题发现效率。
+自 v0.33.0 版本起，Insight 内置了针对服务链路（SpanMetrics）的核心监控告警策略，在通过 Helm 安装 Insight 时可通过参数 `--set victoria-metrics-k8s-stack.defaultRules.spanmetrics=true` 来开启。开启之后，无需用户手动配置基础规则，即可实现对服务或接口调用的错误率、请求延时两大关键维度的自动化监控与异常告警，进一步降低可观测性落地门槛，提升微服务架构下的问题发现效率。
 
 本文档针对 Insight 可观测平台内置的 spanmetrics 告警规则（VMRule 类型）进行详细说明，帮助你理解各告警规则对应的指标含义、PromQL 逻辑，以便在告警中心中正确配置或自定义相关告警规则。
 
