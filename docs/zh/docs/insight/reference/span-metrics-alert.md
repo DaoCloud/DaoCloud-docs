@@ -26,6 +26,7 @@ metadata:
   name: spanmetrics
   namespace: insight-system
   labels:
+    # 规则默认部署在 insight-system 命名空间，带有此标识的告警规则为内置规则
     "operator.insight.io/builtin-rule": "true" 
 spec:
   groups:
