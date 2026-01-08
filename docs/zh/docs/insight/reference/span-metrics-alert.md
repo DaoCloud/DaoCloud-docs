@@ -33,37 +33,37 @@ spec:
     rules:
     - alert: ServiceErrorRate
       annotations:
-        description: Error rate of Service {{`{{`}} $labels.service_name {{`}}`}} in cluster/namespace {{`{{`}} $labels.cluster {{`}}`}}/{{`{{`}} $labels.k8s_namespace_name {{`}}`}} is greater than {{`{{`}} printf "%.2f" $value {{`}}`}}%.'
+        description: Error rate of Service {{ $labels.service_name }} in cluster/namespace {{ $labels.cluster }}/{{ $labels.k8s_namespace_name }} is greater than {{ printf "%.2f" $value }}%.'
       expr: 100 * (sum(rate(calls_total{status_code="STATUS_CODE_ERROR",span_kind =~"SPAN_KIND_SERVER"}[10m])) by (cluster,namespace,k8s_namespace_name,k8s,service_name) / sum(rate(calls_total{span_kind =~"SPAN_KIND_SERVER"}[10m])) by (cluster,namespace,k8s_namespace_name,service_name)) >= 15
       for: 10m
       labels:
         severity: critical
         # namespace from k8s_namespace_name: backward Backwards-compatible scenarios where the agent is not upgraded
-        namespace: '{{`{{`}} $labels.k8s_namespace_name {{`}}`}}'
+        namespace: '{{ $labels.k8s_namespace_name }}'
     - alert: SpanErrorRate
       annotations:
-        description: Error rate of SpanName {{`{{`}} $labels.span_name {{`}}`}} of {{`{{`}} $labels.pod {{`}}`}} Service {{`{{`}} $labels.service_name {{`}}`}} in cluster/namespace {{`{{`}} $labels.cluster {{`}}`}}/{{`{{`}} $labels.k8s_namespace_name {{`}}`}} is greater than {{`{{`}} printf "%.2f" $value {{`}}`}}%.
+        description: Error rate of SpanName {{ $labels.span_name }} of {{ $labels.pod }} Service {{ $labels.service_name }} in cluster/namespace {{ $labels.cluster }}/{{ $labels.k8s_namespace_name }} is greater than {{ printf "%.2f" $value }}%.
       expr: 100 * (sum(rate(calls_total{status_code="STATUS_CODE_ERROR",span_kind =~"SPAN_KIND_SERVER"}[10m])) by (cluster,namespace,k8s_namespace_name,service_name,span_name) / sum(rate(calls_total{span_kind =~"SPAN_KIND_SERVER"}[10m])) by (cluster,namespace,k8s_namespace_name,service_name,span_name)) >= 15
       for: 10m
       labels:
         severity: critical
-        namespace: '{{`{{`}} $labels.k8s_namespace_name {{`}}`}}'
+        namespace: '{{ $labels.k8s_namespace_name }}'
     - alert: ServiceLatency
       annotations:
-        description: Latency of Service {{`{{`}} $labels.service_name {{`}}`}} in cluster/namespace {{`{{`}} $labels.cluster {{`}}`}}/{{`{{`}} $labels.k8s_namespace_name {{`}}`}} is greater than {{`{{`}} printf "%.2f" $value {{`}}`}}.
+        description: Latency of Service {{ $labels.service_name }} in cluster/namespace {{ $labels.cluster }}/{{ $labels.k8s_namespace_name }} is greater than {{ printf "%.2f" $value }}.
       expr: (sum(rate(duration_milliseconds_bucket{span_kind =~"SPAN_KIND_SERVER"}[10m])) by (cluster,namespace,k8s_namespace_name,service_name,le)) >= 1000
       for: 10m
       labels:
         severity: critical
-        namespace: '{{`{{`}} $labels.k8s_namespace_name {{`}}`}}'
+        namespace: '{{ $labels.k8s_namespace_name }}'
     - alert: SpanLatency
       annotations:
-        description: Latency of SpanName {{`{{`}} $labels.span_name {{`}}`}} of {{`{{`}} $labels.pod }} Service {{`{{`}} $labels.service_name {{`}}`}} in cluster/namespace {{`{{`}} $labels.cluster {{`}}`}}/{{`{{`}} $labels.k8s_namespace_name {{`}}`}} is greater than {{`{{`}} printf "%.2f" $value {{`}}`}}.
+        description: Latency of SpanName {{ $labels.span_name }} of {{ $labels.pod }} Service {{ $labels.service_name }} in cluster/namespace {{ $labels.cluster }}/{{ $labels.k8s_namespace_name }} is greater than {{ printf "%.2f" $value }}.
       expr: (sum(rate(duration_milliseconds_bucket{span_kind =~"SPAN_KIND_SERVER"}[10m])) by (cluster,namespace,k8s_namespace_name,service_name,span_name,le)) >= 1000
       for: 10m
       labels:
         severity: critical
-        namespace: '{{`{{`}} $labels.k8s_namespace_name {{`}}`}}'
+        namespace: '{{ $labels.k8s_namespace_name }}'
 ```
 
 ### 规则特点说明：
