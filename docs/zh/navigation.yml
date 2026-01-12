@@ -863,6 +863,7 @@ nav:
                   - Insight 和 Insight-agent 安全的连接 Kafka: insight/reference/security-connect-kafka.md
                   - 配置 Alertmanager 逐条发送告警通知: insight/reference/send-alert-notifications-individually.md
                   - 利用 Kafka 与 Elasticsearch 流式架构应对超大规模日志方案: insight/best-practice/insight-kafka.md 
+                  - 开启链路指标告警规则与自定义链路告警规则: insight/reference/span-metrics-alert.md
               - 兼容性测试:
                   - Kubernetes 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
