@@ -51,7 +51,16 @@
 
 5. 节点 GPU 模式切换成功后，[部署应用可使用 vGPU 资源](vgpu_user.md)。注意：切换过程稍有延迟，请在节点标签正确显示后再部署应用。
 
-!!! note
+## 升级注意事项
 
-    NVIDIA vGPU Addon 不支持从老版本 v2.0.0 直接升级为最新版 v2.0.0+1；
-    如需升级，请卸载老版本后重新安装。
+### 从 2.6.1+1 升级到 2.7.1+1
+
+NVIDIA vGPU Addon 从 2.6.1+1 升级到 2.7.1+1 前需要删除 clusterrolebinding 资源 `nvidia-vgpu-hami-scheduler`。在控制台执行：
+
+```shell
+kubectl delete clusterrolebinding nvidia-vgpu-hami-scheduler
+```
+
+### 从 v2.0.0 升级到 v2.0.0+1
+
+NVIDIA vGPU Addon 不支持从 v2.0.0 直接升级到 v2.0.0+1。如需升级，请卸载老版本后重新安装。
