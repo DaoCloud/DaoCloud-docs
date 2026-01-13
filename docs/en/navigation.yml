@@ -11,7 +11,7 @@ nav:
               - DaoCloud is a KCSP: dce/kcsp.md
               - Release Notes:
                   - v0.36.0-20251130 Released: dce/dce-rn/20251130.md
-                  - v0.35.0-20251030 Released: dce/dce-rn/20251030.md
+                  - v0.35.0-20251031 Released: dce/dce-rn/20251031.md
                   - v0.34.0-20250930 Released: dce/dce-rn/20250930.md
                   - v0.33.0-20250831 Released: dce/dce-rn/20250831.md
                   - v0.32.0-20250731 Released: dce/dce-rn/20250731.md
@@ -515,7 +515,7 @@ nav:
                   - CoreDNS Performance Test: network/performance/coredns-performance.md
               - Spiderpool:
                   - Intro: network/modules/spiderpool/index.md
-                  - Release Notes: network/modules/spiderpool/release-notes/
+                  - Release Notes: network/modules/spiderpool/release-notes.md
                   - Install: 
                       - Install Spiderpool: network/modules/spiderpool/install/install.md
                       - Prepare and install RDMA: network/modules/spiderpool/install/rdmapara.md

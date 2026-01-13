@@ -11,7 +11,7 @@ nav:
               - 我们是 K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
                   - v0.36.0-20251130 发布: dce/dce-rn/20251130.md
-                  - v0.35.0-20251030 发布: dce/dce-rn/20251030.md
+                  - v0.35.0-20251031 发布: dce/dce-rn/20251031.md
                   - v0.34.0-20250930 发布: dce/dce-rn/20250930.md
                   - v0.33.0-20250831 发布: dce/dce-rn/20250831.md
                   - v0.32.0-20250731 发布: dce/dce-rn/20250731.md
@@ -542,7 +542,7 @@ nav:
                   - CoreDNS 性能测试: network/performance/coredns-performance.md
               - 集成 Spiderpool:
                   - 介绍: network/modules/spiderpool/index.md
-                  - Release Notes: network/modules/spiderpool/release-notes/
+                  - Release Notes: network/modules/spiderpool/release-notes.md
                   - 安装:
                       - Spiderpool 安装: network/modules/spiderpool/install/install.md
                       - RDMA 环境准备及安装: network/modules/spiderpool/install/rdmapara.md
