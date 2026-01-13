@@ -83,12 +83,14 @@
 1. Fork 后克隆 GitHub 仓库。
 
     ```bash
+    # 替换成你的 URL
     git clone https://github.com/windsonsea/daodocs.git
     ```
 
 1. 在本地创建分支。
 
     ```bash
+    # 替换成你的 branch
     git checkout -b yourbranch
     ```
 
@@ -105,8 +107,11 @@
    参见更多 [GitHub 命令](https://education.github.com/git-cheat-sheet-education.pdf)。
 
     ```bash
+    # 把当前所有修改添加到缓存区
     git add .
-    git commit -m "fix a typo in chapter 1" 
+    # 替换成你的 commit message
+    git commit -m "fix a typo in chapter 1"
+    # 替换成你的 branch
     git push origin yourbranch
     ```
 
@@ -141,7 +146,9 @@
 
     ```git
     git add .
+    # 沿用上一条 commit message，跟上一条 commit 合并
     git commit --amend --no-edit
+    # 替换成你的 branch
     git push origin yourbranch -f
     ```
 
@@ -189,6 +196,7 @@ make lint-yaml
     ```shell
     git add .
     npm run commit
+    # 替换成你的 branch
     git push origin branch-name
     ```
 
