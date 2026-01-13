@@ -25,7 +25,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
     ---
 
-    DCE 5.0 支持[离线](../install/community/k8s/online.md)和[在线](../install/community/k8s/offline.md)两种安装方式，
+    DCE 5.0 支持[离线](../install/community/k8s/offline.md)和[在线](../install/community/k8s/online.md)两种安装方式，
     可以安装到[不同的 Linux 发行版上](../install/os-install/uos-v20-install-dce5.0.md)。
 
     - [安装依赖项](../install/install-tools.md)
@@ -50,6 +50,34 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 </div>
 
 ## 产品模块
+
+<div class="grid cards" markdown>
+
+- :simple-smart:{ .lg .middle } __AI Lab__
+
+    ---
+
+    提供软硬一体的 AI 智算体验，整合异构算力，优化 GPU 性能，实现算力资源统一调度和运营。
+
+    - [安装 AI Lab 组件](../baize/intro/install.md)
+    - [开发控制台 - 快速入门](../baize/developer/quick-start.md)
+    - [运维管理](../baize/oam/index.md)
+    - [部署 NFS 做数据集预热](../baize/best-practice/deploy-nfs-in-worker.md)
+    - [使用 AI Lab 微调 ChatGLM3 模型](../baize/best-practice/finetunel-llm.md)
+
+- :octicons-ai-model-24:{ .lg .middle } __大模型服务平台__
+
+    ---
+
+    专为企业级用户打造的综合性人工智能模型服务管理平台。
+
+    - [部署大模型服务平台（WS 模式）](../hydra/intro/deploy-ws.md)
+    - [普通用户视图 - 模型广场](../hydra/index.md)
+    - [普通用户视图 - 模型体验](../hydra/exp.md)
+    - [运维管理 - 模型广场管理](../hydra/oam/index.md)
+    - [自定义大模型推理运行时](../hydra/user-guides/custom-runtime.md)
+
+</div>
 
 <div class="grid cards" markdown>
 
