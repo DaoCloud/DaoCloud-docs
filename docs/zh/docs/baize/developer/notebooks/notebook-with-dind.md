@@ -5,7 +5,7 @@
 
 ## 启用并使用 Docker
 
-在创建 Notebook 实例时启用 Docker 功能：
+### 启用 Docker 功能
 
 1. 登录 __AI Lab__ 平台，进入 Notebook 界面，点击 __创建__ 按钮。
 
@@ -28,9 +28,9 @@
 
 启动 Notebook ：
 
-1. 当 Notebook 实例状态由「等待中」变为「运行中」时，表示实例已成功启动。如一直在「等待中」，请刷新页面
+5. 当 Notebook 实例状态由「等待中」变为「运行中」时，表示实例已成功启动。如一直在「等待中」，请刷新页面
    
-2. 此时，实例右侧的 __打开__ 列的图标将由灰色变为黑色，处于可点击状态。点击该图标，进入对应的 Notebook 实例。
+6. 此时，实例右侧的 __打开__ 列的图标将由灰色变为黑色，处于可点击状态。点击该图标，进入对应的 Notebook 实例。
 
 ### 验证 Docker 功能是否可用
 
@@ -51,7 +51,6 @@ docker inspect <container_name>
 
 ```bash
 #查看指定容器的详细信息，其中<container_name> 需替换为实际存  在的容器名称或容器 ID。
-
 docker inspect <container_name>
 ```
 
@@ -65,13 +64,17 @@ Docker 功能提供完整的容器生命周期管理能力，支持容器的创�
 
 使用 docker run 命令创建并启动容器：
  基本语法
+
 ```bash
 # 基本语法
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
 # 运行一个简单的 Ubuntu 容器
 docker run -it ubuntu:20.04 /bin/bash
+
 # 后台运行容器
 docker run -d --name my-app nginx:latest
+
 # 指定端口映射
 docker run -d -p 8080:80 --name web-server nginx:latest
 ```
@@ -88,20 +91,27 @@ docker run -d -p 8080:80 --name web-server nginx:latest
 
 查看容器状态：
 ```bash
+
 # 查看正在运行的容器
 docker ps
+
 # 查看所有容器（包括已停止的）
 docker ps -a
+
 # 查看容器详细信息
 docker inspect container_name
 ```
 
 启动和停止容器：
+
 ```bash
+
 # 启动已停止的容器
 docker start container_name
+
 # 停止运行中的容器
 docker stop container_name
+
 # 重启容器
 docker restart container_name
 ```
@@ -111,8 +121,10 @@ docker restart container_name
 进入正在运行的容器：
 
 ```bash
+
 # 进入容器的交互式终端  
 docker exec -it container_name /bin/bash
+
 # 执行单个命令  
 docker exec container_name ls -la /app
 ```
@@ -126,6 +138,7 @@ docker exec container_name ls -la /app
 Notebook 可以挂载PVC 或数据空间实现数据的持久化存储，同时其挂载路径可以关联到 docker，从而实现容器间的数据共享和数据的持久化存储。
 
 ```bash
+
 # 挂载到指定目录
 docker run -d -v /root/data:/workspace/data --name dev-env python:3.9
 ```
@@ -139,8 +152,10 @@ Docker 功能支持多种方式制作和保存自定义镜像，满足不同场�
 使用 Dockerfile 构建镜像是最常用的方式：
 
 ```bash
+
 #基本构建命令
 docker build -t my-app:latest .
+
 #指定 Dockerfile 路径
 docker build -f /path/to/Dockerfile -t my-app:v1.0 .
 ```
@@ -150,6 +165,7 @@ docker build -f /path/to/Dockerfile -t my-app:v1.0 .
 将镜像导出为 tar 文件：
 
 ```bash
+
 # 导出单个镜像
 docker save -o my-image.tar my-app:latest
 ```
@@ -157,6 +173,7 @@ docker save -o my-image.tar my-app:latest
 导出的镜像可以通过 `docker load` 命令导入：
 
 ```bash 
+
 # 导入镜像
 docker load -i my-image.tar
 ```
@@ -173,8 +190,10 @@ docker load -i my-image.tar
 
 # 挂载所有 GPU 设备
 docker run --gpus all -it pytorch/pytorch:latest python
+
 # 挂载指定数量的 GPU
 docker run --gpus 2 -it tensorflow/tensorflow:latest-gpu python
+
 # 挂载指定的 GPU 设备
 docker run --gpus device=0 -it nvidia/cuda:11.8-devel-ubuntu20.04
 ```
@@ -195,12 +214,16 @@ Docker 容器可以通过多种网络模式与宿主机和外部网络进行通�
 将容器端口映射到宿主机端口，实现外部访问：
 
 ```bash
+
 # 映射单个端口
 docker run -d -p 8080:80 --name web-app nginx:latest
+
 # 映射多个端口
 docker run -d \  -p 8080:80 \  -p 8443:443 \  --name web-server nginx:latest
+
 # 映射到指定 IP
 docker run -d -p 127.0.0.1:8080:80 --name local-app nginx:latest
+
 # 映射随机端口
 docker run -d -P --name random-port nginx:latest
 ```
