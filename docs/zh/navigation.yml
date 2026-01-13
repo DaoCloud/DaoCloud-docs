@@ -1350,7 +1350,7 @@ nav:
                   - 更新 Notebook 内置镜像: baize/best-practice/change-notebook-image.md
                   - Checkpoint 机制及使用介绍: baize/best-practice/checkpoint.md
                   - 拓扑感知调度训练任务: baize/best-practice/train-with-tas.md
-                  - 使用 Baize 微调 ChatGLM3: baize/best-practice/finetunel-llm.md
+                  - 使用 AI Lab 微调 ChatGLM3: baize/best-practice/finetunel-llm.md
                   - 提交 DeepSpeed 训练任务: baize/best-practice/train-with-deepspeed.md
                   - 训练任务增加调度器选项: baize/best-practice/add-scheduler.md
                   - 部署 Label Studio: baize/best-practice/label-studio.md
