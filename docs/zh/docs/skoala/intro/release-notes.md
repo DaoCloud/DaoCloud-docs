@@ -4,6 +4,23 @@
 
 *[skoala]: DaoCloud 微服务引擎的内部开发代号
 
+## 2025-12-31
+
+### v0.52.1
+
+- **新增** AI 网关、Nacos 支持查看全部工作空间数据
+- **新增** AI 网关列表支持版本信息展示
+- **优化** AI 网关安装逻辑
+- **优化** AI 网关 Higress 版本升级至 v2.1.9
+
+!!! note
+
+    本版本中 AI 网关 Higress 版本进行了升级，CRD 发生变更，升级前请在对应工作集群执行以下命令，手动更新 CRD：
+    
+    ```shell
+    kubectl apply -f skoala-init/charts/contour-provisioner/crds/higress.gen.yaml
+    ```
+
 ## 2025-11-30
 
 ### v0.51.0
