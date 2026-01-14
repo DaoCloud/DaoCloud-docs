@@ -1317,6 +1317,7 @@ nav:
                       - baizess 换源工具: baize/developer/notebooks/baizess.md
                       - Notebook闲置超时自动关机: baize/developer/notebooks/notebook-auto-close.md
                       - Notebook Docker 功能: baize/developer/notebooks/notebook-with-dind.md
+                      - 在 Notebook 中使用 Docker 功能: baize/developer/notebooks/notebook-with-dind.md
                   - 任务管理:
                       - 创建任务: baize/developer/jobs/create.md
                       - 创建 Pytorch 任务: baize/developer/jobs/pytorch.md
