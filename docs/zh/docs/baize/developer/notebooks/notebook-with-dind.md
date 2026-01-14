@@ -148,7 +148,7 @@ docker build -f /path/to/Dockerfile -t my-app:v1.0 .
 # 导出单个镜像
 docker save -o my-image.tar my-app:latest
 ```
-
+ 
 导出的镜像可以通过 `docker load` 命令导入：
 
 ```bash 
@@ -175,7 +175,7 @@ docker run --gpus device=0 -it nvidia/cuda:11.8-devel-ubuntu20.04
 
 ### 支持哪些 GPU
 
-Notebook 支持多种 GPU，详情见[GPU 支持矩阵](../../../kpanda/user-guide/gpu/gpu_matrix.md)）
+Notebook 支持多种 GPU，详情见[GPU 支持矩阵](../../../kpanda/user-guide/gpu/gpu_matrix.md)
 
 
   
