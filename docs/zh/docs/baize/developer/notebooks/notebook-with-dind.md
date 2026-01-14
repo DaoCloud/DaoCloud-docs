@@ -26,9 +26,9 @@
 
 ### 验证已启动 docker    
 
-1. 当 Notebook 实例状态由 __等待中__ 变为 __运行中__ 时，表示实例已成功启动。如一直在 __等待中__ ，请刷新页面
+6. 当 Notebook 实例状态由 __等待中__ 变为 __运行中__ 时，表示实例已成功启动。如一直在 __等待中__ ，请刷新页面
    
-2. 此时，实例右侧的 __打开__ 列的图标将由灰色变为黑色，处于可点击状态。点击该图标，进入对应的 Notebook 实例。
+7. 此时，实例右侧的 __打开__ 列的图标将由灰色变为黑色，处于可点击状态。点击该图标，进入对应的 Notebook 实例。
 
 ### 验证 Docker 功能是否可用
 
@@ -197,7 +197,7 @@ docker run -d -p 127.0.0.1:8080:80 --name local-app nginx:latest
 docker run -d -P --name random-port nginx:latest
 ```
 
-## ## 制作镜像
+## 制作镜像
 
 Docker 功能支持多种方式制作和保存自定义镜像，满足不同场景的需求。
 
@@ -208,7 +208,6 @@ Docker 功能支持多种方式制作和保存自定义镜像，满足不同场�
 ```bash
 # 基本构建命令
 docker build -t my-app:latest .
-
 # 指定 Dockerfile 路径
 docker build -f /path/to/Dockerfile -t my-app:v1.0 .
 ```
@@ -231,7 +230,7 @@ docker load -i my-image.tar
 
 ## 高级功能
 
-容器实例的 Docker 功能支持 buildx 和 Compose 等高级工具，满足复杂场景下的容器化开发需求。
+Notebook 的 Docker 功能支持 buildx 和 Compose 等高级工具，满足复杂场景下的容器化开发需求。
 
 ### Docker buildx
 
@@ -242,13 +241,10 @@ Docker buildx 是 Docker 的扩展构建功能，支持多平台构建和高级�
 ```bash
 # 查看 buildx 版本
 docker buildx version
-
 # 查看可用的构建器
 docker buildx ls
-
 # 创建新的构建器
 docker buildx create --name mybuilder --use
-
 # 启动构建器
 docker buildx inspect --bootstrap
 ```
@@ -258,10 +254,8 @@ docker buildx inspect --bootstrap
 ```bash
 # 构建多平台镜像
 docker buildx build --platform linux/amd64,linux/arm64 -t my-app:latest .
-
 # 构建并推送到仓库
 docker buildx build --platform linux/amd64,linux/arm64 -t my-app:latest --push .
-
 # 构建特定平台
 docker buildx build --platform linux/amd64 -t my-app:amd64 .
 ```
@@ -275,27 +269,23 @@ Docker Compose 用于定义和运行多容器应用程序。
 ```bash
 # 检查 Compose 版本
 docker compose version
-
 # 启动服务
 docker compose up -d
-
 # 查看服务状态
 docker compose ps
-
 # 停止服务
 docker compose down
-
 # 查看日志
 docker compose logs
 ```
 
 ## 访问镜像仓库
 
-容器实例的 Docker 功能支持访问算力云镜像仓库以及其他公有和私有镜像仓库。
+ Notebook 的 Docker 功能支持访问 AI Lab 镜像仓库以及其他公有和私有镜像仓库。
 
-### 算力云镜像仓库
+### AI Lab 镜像仓库
 
-算力云提供内置的镜像仓库服务，用户可以存储和管理自定义镜像。
+ AI Lab 提供内置的镜像仓库服务，用户可以存储和管理自定义镜像。
 
 #### 访问仓库
 
@@ -303,10 +293,8 @@ docker compose logs
 # 查看仓库地址（示例）
 # 实际地址请参考平台提供的 _*我的镜像*_ 中仓库信息
 REGISTRY_URL="harbor.d.run"
-
 # 拉取镜像
 docker pull ${REGISTRY_URL}/my-namespace/my-app:latest
-
 # 推送镜像
 docker push ${REGISTRY_URL}/my-namespace/my-app:latest
 ```
@@ -320,12 +308,10 @@ docker push ${REGISTRY_URL}/my-namespace/my-app:latest
 手动配置认证：
 
 ```bash
-# 登录到算力云镜像仓库
+# 登录到 AI Lab 镜像仓库
 docker login registry.d.run -u your-username
-
 # 输入密码
 Password: your-password
-
 # 验证登录状态
 docker info | grep -A 5 "Registry Mirrors"
 ```
@@ -336,49 +322,45 @@ docker info | grep -A 5 "Registry Mirrors"
 
 - **容器启动失败**
 
-    ```bash
-    # 查看容器日志
-    docker logs container_name
-    
-    # 查看容器详细信息
-    docker inspect container_name
-    ```
+```bash
+# 查看容器日志
+docker logs container_name
+# 查看容器详细信息
+docker inspect container_name
+```
 
 - **端口访问问题**
 
-    ```bash
-    # 检查端口映射
-    docker port container_name
-    
-    # 检查防火墙设置
-    netstat -tlnp | grep :8080
-    ```
+```bash
+# 检查端口映射
+docker port container_name
+# 检查防火墙设置
+netstat -tlnp | grep :8080
+```
 
 - **存储挂载问题**
 
-    ```bash
-    # 检查挂载点
-    docker inspect container_name | grep -A 10 "Mounts"
-    
-    # 验证宿主机路径权限
-    ls -la /root/data
-    ```
+```bash
+# 检查挂载点
+docker inspect container_name | grep -A 10 "Mounts"
+# 验证宿主机路径权限
+ls -la /root/data
+```
 
 - **GPU 不可用**
 
-    ```bash
-    # 检查 GPU 状态
-    nvidia-smi
-    
-    # 验证容器内 GPU 访问
-    docker exec container_name nvidia-smi
-    ```
+```bash
+# 检查 GPU 状态
+nvidia-smi
+# 验证容器内 GPU 访问
+docker exec container_name nvidia-smi
+```
 
 !!! warning "重要提醒"
 
-    - 容器实例关机时，运行中的 Docker 容器会被停止
-    - 重启容器实例后，需要手动重启 Docker 容器
-    - 删除容器实例会同时删除所有 Docker 容器和未持久化的数据
+    - Notebook 关机时，运行中的 Docker 容器会被停止
+    - 重启 Notebook 后，需要手动重启 Docker 容器
+    - 删除 Notebook 会同时删除所有 Docker 容器和未持久化的数据
 
 !!! tip "最佳实践"
 
@@ -387,5 +369,5 @@ docker info | grep -A 5 "Registry Mirrors"
     - 为生产环境的容器配置健康检查和重启策略
     - 使用标准化的镜像命名和版本管理规范
 
-通过合理使用容器实例的 Docker 功能，开发者可以构建灵活、高效的容器化开发和部署环境，
-充分利用算力云平台的计算资源和存储能力。
+通过合理使用 Notebook 的 Docker 功能，开发者可以构建灵活、高效的容器化开发和部署环境，
+充分利用 AI Lab 平台的计算资源和存储能力。
