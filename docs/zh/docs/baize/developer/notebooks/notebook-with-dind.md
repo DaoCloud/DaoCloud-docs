@@ -1,24 +1,27 @@
 # 在 Notebook 中使用 Docker 功能
 
-当需要在 Notebook 中执行 Docker 命令（如构建、运行或推送镜像）时，请启用 docker 。
-若仅进行代码开发、数据分析或模型训练，且不涉及容器构建与管理，则无需启用。
+当需要在 Notebook 中执行 Docker 命令（如构建、运行或推送镜像）时，请启用 docker。
 
 ## 启用并使用 Docker
+
+### 前提条件
+
+已安装所需插件。
+具体操作步骤请参考教程：[管理 Helm 应用](../../../kpanda/user-guide/helm/helm-app.md)
 
 ### 启用 Docker 功能
 
 1. 登录 __AI Lab__ 平台，进入 Notebook 界面，点击 __创建__ 按钮。
+
+!!! Tip "更新操作"
+
+    若要更新，则先点击对应实例右侧的 __⁝__ 按钮，然后选择 __更新__.
 
 2. 在创建 Notebook 界面中填写基本信息后，点击 __下一步__。
 
 3. 完成资源配置后，点击 __下一步__。
    
 4. 在高级配置中，勾选 __启用 Docker__ 选项，点击 __确定__。
-
-    !!! caution
-
-        若启用 Docker 选项灰色，则需先安装KD2插件。
-        具体操作步骤请参考教程：[管理 Helm 应用](../../../kpanda/user-guide/helm/helm-app.md)
 
 5. 创建完成后，返回 Notebook 列表页面。
    
@@ -155,7 +158,7 @@ docker load -i my-image.tar
 
 ## 使用 GPU
 
-容器实例的 Docker 功能支持将 GPU 资源挂载到容器中，为 AI 训练和推理提供硬件加速能力。
+ Notebook 的 Docker 功能支持将 GPU 资源挂载到容器中，为 AI 训练和推理提供硬件加速能力。
 
 ### 先挂载 GPU
 
@@ -172,10 +175,9 @@ docker run --gpus device=0 -it nvidia/cuda:11.8-devel-ubuntu20.04
 
 ### 支持哪些 GPU
 
-Notebook 支持多种 GPU：
+Notebook 支持多种 GPU，详情见[GPU 支持矩阵](../../../kpanda/user-guide/gpu/gpu_matrix.md)）
 
-- Nvidia GPU：支持 CUDA 加速，兼容主流深度学习框架
-- 沐曦 GPU：国产 GPU 解决方案，支持 AI 计算加速
+
   
 ## 网络配置
 
@@ -197,36 +199,6 @@ docker run -d -p 127.0.0.1:8080:80 --name local-app nginx:latest
 docker run -d -P --name random-port nginx:latest
 ```
 
-## 制作镜像
-
-Docker 功能支持多种方式制作和保存自定义镜像，满足不同场景的需求。
-
-### docker build
-
-使用 Dockerfile 构建镜像是最常用的方式：
-
-```bash
-# 基本构建命令
-docker build -t my-app:latest .
-# 指定 Dockerfile 路径
-docker build -f /path/to/Dockerfile -t my-app:v1.0 .
-```
-
-### docker save
-
-将镜像导出为 tar 文件：
-
-```bash
-# 导出单个镜像
-docker save -o my-image.tar my-app:latest
-```
-
-导出的镜像可以通过 `docker load` 命令导入：
-
-```bash
-# 导入镜像
-docker load -i my-image.tar
-```
 
 ## 高级功能
 
@@ -281,18 +253,18 @@ docker compose logs
 
 ## 访问镜像仓库
 
- Notebook 的 Docker 功能支持访问 AI Lab 镜像仓库以及其他公有和私有镜像仓库。
+ Notebook 的 Docker 功能支持访问镜像仓库以及其他公有和私有镜像仓库。
 
-### AI Lab 镜像仓库
+### 镜像仓库
 
- AI Lab 提供内置的镜像仓库服务，用户可以存储和管理自定义镜像。
+ 本平台提供内置的[镜像仓库](../../../kangaroo/intro/index.md)服务，用户可以存储和管理自定义镜像。
 
 #### 访问仓库
 
 ```bash
 # 查看仓库地址（示例）
 # 实际地址请参考平台提供的 _*我的镜像*_ 中仓库信息
-REGISTRY_URL="harbor.d.run"
+REGISTRY_URL="harbor.io"
 # 拉取镜像
 docker pull ${REGISTRY_URL}/my-namespace/my-app:latest
 # 推送镜像
@@ -309,7 +281,7 @@ docker push ${REGISTRY_URL}/my-namespace/my-app:latest
 
 ```bash
 # 登录到 AI Lab 镜像仓库
-docker login registry.d.run -u your-username
+docker login registry.io -u your-username
 # 输入密码
 Password: your-password
 # 验证登录状态
@@ -336,15 +308,6 @@ docker inspect container_name
 docker port container_name
 # 检查防火墙设置
 netstat -tlnp | grep :8080
-```
-
-- **存储挂载问题**
-
-```bash
-# 检查挂载点
-docker inspect container_name | grep -A 10 "Mounts"
-# 验证宿主机路径权限
-ls -la /root/data
 ```
 
 - **GPU 不可用**
