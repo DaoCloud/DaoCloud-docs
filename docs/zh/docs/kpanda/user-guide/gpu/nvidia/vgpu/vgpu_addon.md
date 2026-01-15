@@ -55,6 +55,8 @@
 
 ### 从 2.6.1+1 升级到 2.7.1+1
 
+> `+1` 指的是对应版本的第 1 次构建，比如 2.6.1+1 指的是 v2.6.1 的第 1 次打包构建
+
 NVIDIA vGPU Addon 从 2.6.1+1 升级到 2.7.1+1 前需要删除 clusterrolebinding 资源 `nvidia-vgpu-hami-scheduler`。在控制台执行：
 
 ```shell
