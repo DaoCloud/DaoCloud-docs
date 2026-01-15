@@ -360,7 +360,7 @@ docker info | grep -A 5 "Registry Mirrors"
     - 使用 Docker Compose 管理复杂的多容器应用
     - [定期清理未使用的镜像和容器以节省存储空间](../../../kangaroo/space/reclaim.md)
     - [为生产环境的容器配置健康检查和重启策略](../../../kpanda/user-guide/workloads/pod-config/health-check.md)
-    - [使用标准化的镜像命名和版本管理规范](../../../amamba/user-guide/wizard/jar-java-app.md)
+    - [使用标准化的镜像命名和版本管理规范](https://docs.docker.com/reference/cli/docker/image/tag/)
 
 通过合理使用 Notebook 的 Docker 功能，开发者可以构建灵活、高效的容器化开发和部署环境，
 充分利用 AI Lab 平台的计算资源和存储能力。
