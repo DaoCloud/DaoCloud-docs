@@ -162,7 +162,7 @@ docker load -i my-image.tar
 
 ### 先挂载 GPU
 
-使用 `--gpus` 参数将 GPU 设备挂载到容器：
+使用 `--gpus` 参数将 GPU 挂载到容器：
 
 ```bash
 # 挂载所有 GPU
