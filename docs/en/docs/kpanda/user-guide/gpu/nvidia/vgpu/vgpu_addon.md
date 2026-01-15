@@ -35,12 +35,13 @@ After a successful installation, you can [deploy applications using vGPU resourc
     NVIDIA vGPU Addon does not support upgrading directly from the older v2.0.0 to the
     latest v2.0.0+1; To upgrade, please uninstall the older version and then reinstall the latest version.
 
-
 ## Upgrade Notes
 
-### Upgrade from 2.6.1+1 to 2.7.1+1
+### Upgrade from v2.6.1+1 to v2.7.1+1
 
-Before upgrading the NVIDIA vGPU Addon from version 2.6.1+1 to 2.7.1+1, you need to delete the `nvidia-vgpu-hami-scheduler`
+> `+1` refers to the first build of a specific version. For example, `2.6.1+1` indicates the first packaged build of version `v2.6.1`.
+
+Before upgrading the NVIDIA vGPU Addon from v2.6.1+1 to v2.7.1+1, you need to delete the `nvidia-vgpu-hami-scheduler`
 clusterrolebinding resource. Run the relevant operation in the console.
 
 ```shell
