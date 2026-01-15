@@ -31,14 +31,23 @@
 /docs/zh/docs/videos/baize.md @samzong @git-jxj @windsonsea @kebe7jun
 
 # ghippo
-/docs/zh/docs/ghippo/ @yitingdc @lemontrees123 @bzsuni @windsonsea
-/docs/zh/docs/download/modules/ghippo.md @yitingdc @lemontrees123 @bzsuni @windsonsea
-/docs/zh/docs/videos/ghippo.md @yitingdc @lemontrees123 @bzsuni @windsonsea
+/docs/zh/docs/ghippo/ @yitingdc @lemontrees123 @windsonsea
+/docs/zh/docs/download/modules/ghippo.md @yitingdc @lemontrees123 @windsonsea
+/docs/zh/docs/videos/ghippo.md @yitingdc @lemontrees123 @windsonsea
+
+# hydra
+/docs/zh/docs/hydra/ @kebe7jun @zhiyingfang2022 @windsonsea
+/docs/zh/docs/download/modules/hydra.md @kebe7jun @zhiyingfang2022 @windsonsea
+/docs/zh/docs/videos/hydra.md @kebe7jun @zhiyingfang2022 @windsonsea
 
 # insight
 /docs/zh/docs/insight/ @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
 /docs/zh/docs/download/modules/insight.md @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
 /docs/zh/docs/videos/insight.md @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+
+# install
+/docs/zh/docs/install/ @zhiyingfang2022 @FloatXD @windsonsea
+/docs/zh/docs/videos/install.md @zhiyingfang2022 @FloatXD @windsonsea
 
 # kairship
 /docs/zh/docs/kairship/ @yt-huang @samzong @windsonsea
@@ -55,41 +64,47 @@
 /docs/zh/docs/download/modules/kant.md @zhiyingfang2022 @git-jxj @windsonsea
 /docs/zh/docs/videos/kant.md @zhiyingfang2022 @git-jxj @windsonsea
 
-# install
-/docs/zh/docs/install/ @zhiyingfang2022 @FloatXD @windsonsea
-/docs/zh/docs/videos/install.md @zhiyingfang2022 @FloatXD @windsonsea
-
 # kpanda
 /docs/zh/docs/kpanda/ @lemontrees123 @shijinye @yt-huang @windsonsea
 /docs/zh/docs/download/modules/kpanda.md @lemontrees123 @shijinye @yt-huang @windsonsea
 /docs/zh/docs/download/modules/addon/ @lemontrees123 @shijinye @yt-huang @windsonsea
 /docs/zh/docs/videos/kpanda.md @lemontrees123 @shijinye @yt-huang @windsonsea
 
+# middleware
+/docs/zh/docs/middleware/ @samzong @windsonsea @drivebyer
+/docs/zh/docs/download/modules/middleware/ @samzong @windsonsea @drivebyer
+/docs/zh/docs/videos/middleware.md @samzong @windsonsea @drivebyer
+
 # mspider
-/docs/zh/docs/mspider/ @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
-/docs/zh/docs/download/modules/mspider.md @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
-/docs/zh/docs/videos/mspider.md @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
+/docs/zh/docs/mspider/ @zhiyingfang2022 @samzong @Cynthia-yun @windsonsea @kebe7jun
+/docs/zh/docs/download/modules/mspider.md @zhiyingfang2022 @samzong @Cynthia-yun @windsonsea @kebe7jun
+/docs/zh/docs/videos/mspider.md @zhiyingfang2022 @samzong @Cynthia-yun @windsonsea @kebe7jun
 
-# skoala
-/docs/zh/docs/skoala/ @Adityayxt @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
-/docs/zh/docs/download/modules/skoala.md @Adityayxt @tukwila @Cynthia-yun @windsonsea @wilsonwu
-/docs/zh/docs/videos/skoala.md @Adityayxt @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
+# native
+/docs/zh/docs/native/ @windsonsea
 
-# spidernet
+# network
 /docs/zh/docs/network/ @windsonsea
 /docs/zh/docs/download/modules/spidernet.md @windsonsea
 /docs/zh/docs/videos/spidernet.md @windsonsea
+
+# skoala
+/docs/zh/docs/skoala/ @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
+/docs/zh/docs/download/modules/skoala.md @tukwila @Cynthia-yun @windsonsea @wilsonwu
+/docs/zh/docs/videos/skoala.md @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
+
+# storage
+/docs/zh/docs/storage/ @FloatXD @windsonsea
+/docs/zh/docs/download/modules/hwameistor.md @FloatXD @windsonsea
+
+# topohub
+/docs/zh/docs/topohub/ @yitingdc @lemontrees123 @windsonsea
+/docs/zh/docs/download/modules/topohub.md @yitingdc @lemontrees123 @windsonsea
+/docs/zh/docs/videos/topohub.md @yitingdc @lemontrees123 @windsonsea
 
 # virtnest
 /docs/zh/docs/virtnest/ @bzsuni @windsonsea @yitingdc
 /docs/zh/docs/download/modules/virtnest.md @bzsuni @windsonsea @yitingdc
 /docs/zh/docs/videos/virtnest.md @bzsuni @windsonsea @yitingdc
 
-# middleware
-/docs/zh/docs/middleware/ @samzong @windsonsea @drivebyer
-/docs/zh/docs/download/modules/middleware/ @samzong @windsonsea @drivebyer
-/docs/zh/docs/videos/middleware.md @samzong @windsonsea @drivebyer
 
-# hwameistor
-/docs/zh/docs/storage/ @FloatXD @windsonsea
-/docs/zh/docs/download/modules/hwameistor.md @FloatXD @windsonsea
