@@ -7,6 +7,7 @@
 ### 前提条件
 
 已安装所需插件。
+
 具体操作步骤请参考教程：[管理 Helm 应用](../../../kpanda/user-guide/helm/helm-app.md)
 
 ### 启用 Docker 功能
@@ -31,7 +32,7 @@
 
 6. 当 Notebook 实例状态由 __等待中__ 变为 __运行中__ 时，表示实例已成功启动。如一直在 __等待中__ ，请刷新页面。
    
-7. 此时，实例右侧的 __打开__ 列的图标将由灰色变为黑色，处于可点击状态。点击该图标，进入对应的 Notebook 实例。
+7. 此时，实例右侧的 __打开__ 列的图标处于黑色可点击状态。点击该图标，进入对应的 Notebook 实例。
 
 ### 验证 Docker 功能是否可用
 
@@ -79,6 +80,7 @@ docker run -d -p 8080:80 --name web-server nginx:latest
 ### 管理容器
 
 查看容器状态：
+
 ```bash
 # 查看正在运行的容器
 docker ps
@@ -112,7 +114,7 @@ docker exec container_name ls -la /app
 
 !!! Tip
 
-    建议使用 docker exec 而不是 docker attach 来进入容器，因为 exec 会创建新的进程， 退出时不会影响容器的运行状态。
+    建议使用 docker exec 而不是 docker attach 来进入容器，因为 exec 会创建新的进程，退出时不会影响容器的运行状态。
 
 ## 挂载存储
 
