@@ -1305,7 +1305,7 @@ nav:
               - 开发控制台:
                   - 介绍: baize/developer/index.md
                   - 快速入门: baize/developer/quick-start.md
-                  - 使用 Notebooks 开发环境:
+                  - 使用Notebook开发环境:
                       - 创建 Notebook: baize/developer/notebooks/create.md
                       - 启动和暂停 Notebook: baize/developer/notebooks/start-pause.md
                       - Notebook 工作负载: baize/developer/notebooks/view.md
@@ -1315,7 +1315,7 @@ nav:
                       - 定制Notebook环境镜像: baize/developer/notebooks/customize-notebook-image.md
                       - baizectl 命令行工具: baize/developer/notebooks/baizectl.md
                       - baizess 换源工具: baize/developer/notebooks/baizess.md
-                      - Notebook闲置超时自动关机: baize/developer/notebooks/notebook-auto-close.md
+                      - Notebook闲置超时关机: baize/developer/notebooks/notebook-auto-close.md
                       - Notebook Docker 功能: baize/developer/notebooks/notebook-with-dind.md
                   - 任务管理:
                       - 创建任务: baize/developer/jobs/create.md
@@ -1349,16 +1349,16 @@ nav:
               - 最佳实践:
                   - 部署 NFS 做数据集预热: baize/best-practice/deploy-nfs-in-worker.md
                   - 更新 Notebook 内置镜像: baize/best-practice/change-notebook-image.md
-                  - Checkpoint 机制及使用介绍: baize/best-practice/checkpoint.md
+                  - Checkpoint机制及用法: baize/best-practice/checkpoint.md
                   - 拓扑感知调度训练任务: baize/best-practice/train-with-tas.md
-                  - 使用 AI Lab 微调 ChatGLM3: baize/best-practice/finetunel-llm.md
-                  - 提交 DeepSpeed 训练任务: baize/best-practice/train-with-deepspeed.md
+                  - 使用AI Lab微调ChatGLM3: baize/best-practice/finetunel-llm.md
+                  - 提交DeepSpeed训练任务: baize/best-practice/train-with-deepspeed.md
                   - 训练任务增加调度器选项: baize/best-practice/add-scheduler.md
                   - 部署 Label Studio: baize/best-practice/label-studio.md
               - 故障排查:
                   - 故障排查索引: baize/troubleshoot/index.md
                   - 集群下拉列表中找不到集群: baize/troubleshoot/cluster-not-found.md
-                  - Notebook 不受队列配额控制: baize/troubleshoot/notebook-not-controlled-by-quotas.md
+                  - Notebook不受队列配额控制: baize/troubleshoot/notebook-not-controlled-by-quotas.md
                   - 队列初始化失败: baize/troubleshoot/local-queue-initialization-failed.md
       - 边缘计算:
           - 云边协同:
