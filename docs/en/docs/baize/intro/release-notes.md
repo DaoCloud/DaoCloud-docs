@@ -13,6 +13,14 @@ so that you can learn its evolution path and feature changes.
     Features labeled as Beta may undergo changes; please use them with caution
     and provide prompt feedback if you encounter any issues.
 
+## 2025-12-31
+
+### v0.23.1
+
+- **Added** descriptive information for resource-priority and performance-priority scheduling strategies when creating training tasks  
+- **Fixed** an issue where the cluster dropdown list in the overview page was displaying incorrectly  
+- **Fixed** Notebook security vulnerability CVE-2025-47914
+
 ## 2025-11-30
 
 ### v0.23.0
