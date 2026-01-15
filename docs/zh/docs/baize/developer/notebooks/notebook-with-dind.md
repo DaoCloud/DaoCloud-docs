@@ -1,20 +1,22 @@
 # 在 Notebook 中使用 Docker 功能
 
-当需要在 Notebook 中执行 Docker 命令（如构建、运行或推送镜像）时，请启用 docker。
+在 Notebook 中使用 Docker 功能，可以将实验环境、依赖配置与计算过程进行统一封装，使 Notebook 不再依赖本地环境差异。
 
-## 启用并使用 Docker
+通过 Docker，Notebook 能够在不同节点、不同平台之间保持一致的运行行为,便于复现实验结果、共享分析过程，并与生产环境更好地对齐，尤其适用于数据分析、机器学习和模型验证等场景。
 
+本文简要说明如何在 Notebook 实例中启用、验证和使用 Docker 功能，还列出了一些 Docker 高级功能和常见的故障排查案例。
+
+## 启用 Docker
+ 
 ### 前提条件
 
-已安装所需插件。
-
-具体操作步骤请参考教程：[管理 Helm 应用](../../../kpanda/user-guide/helm/helm-app.md)
+参阅[管理 Helm 应用](../../../kpanda/user-guide/helm/helm-app.md)安装所需插件。
 
 ### 启用 Docker 功能
 
 1. 登录 __AI Lab__ 平台，进入 Notebook 界面，点击 __创建__ 按钮。
 
-    !!! Tip "更新操作"
+    !!! tip "更新操作"
 
         若要在已创建的实例中打开 docker ，则先点击对应实例右侧的 __⁝__ 按钮，然后选择 __更新__.
 
@@ -25,14 +27,12 @@
 4. 在高级配置中，勾选 __启用 Docker__ 选项，点击 __确定__。
 
 5. 创建完成后，返回 Notebook 列表页面。
-   
+6. 
     ![baize-agent](../../images/notebook-with-dind2.png)
 
-    ### 验证已启动 docker
-
-6. 当 Notebook 实例状态由 __等待中__ 变为 __运行中__ 时，表示实例已成功启动。如一直在 __等待中__ ，请刷新页面。
+7. 当 Notebook 实例状态由 __等待中__ 变为 __运行中__ 时，表示实例已成功启动。如一直在 __等待中__ ，请刷新页面。
    
-7. 此时，实例右侧的 __打开__ 列的图标处于黑色可点击状态。点击该图标，进入对应的 Notebook 实例。
+8. 此时，实例右侧的 __打开__ 列的图标处于黑色可点击状态。点击该图标，进入对应的 Notebook 实例。
 
 ### 验证 Docker 功能是否可用
 
@@ -49,7 +49,7 @@ docker inspect <container_name>
 
 若命令可正常执行，并返回 Docker 容器列表信息（即使列表为空），则表示 Docker 服务已正常启动。
 
-若提示 Docker 命令不存在或无法连接 Docker daemon，请确认在创建 Notebook 时已勾选 __启用 Docker__ 选项。
+若提示 Docker 命令不存在或无法连接 Docker daemon，请确认 [Docker 已被正确启用](#docker_1)。
 
 ## 基本容器管理
 
@@ -68,6 +68,7 @@ docker run -d --name my-app nginx:latest
 # 指定端口映射
 docker run -d -p 8080:80 --name web-server nginx:latest
 ```
+常用参数说明如下：
 
 | 参数 | 说明 |
 |------|------|
@@ -87,18 +88,18 @@ docker ps
 # 查看所有容器（包括已停止的）
 docker ps -a
 # 查看容器详细信息
-docker inspect container_name
+docker inspect <container_name>
 ```
 
 启动和停止容器：
 
 ```bash
 # 启动已停止的容器
-docker start container_name
+docker start <container_name>
 # 停止运行中的容器
-docker stop container_name
+docker stop <container_name>
 # 重启容器
-docker restart container_name
+docker restart <container_name>
 ```
 
 ### 进入容器
@@ -107,12 +108,12 @@ docker restart container_name
 
 ```bash
 # 进入容器的交互式终端  
-docker exec -it container_name /bin/bash
-# 执行单个命令  
-docker exec container_name ls -la /app
+docker exec -it <container_name> /bin/bash
+# 查看某个容器内的所有文件 
+docker exec <container_name> ls -la /app
 ```
 
-!!! Tip
+!!! tip
 
     建议使用 docker exec 而不是 docker attach 来进入容器，因为 exec 会创建新的进程，退出时不会影响容器的运行状态。
 
@@ -134,9 +135,9 @@ Docker 功能支持多种方式制作和保存自定义镜像，满足不同场�
 使用 Dockerfile 构建镜像是最常用的方式：
 
 ```bash
-#基本构建命令
+# 基本构建命令
 docker build -t my-app:latest .
-#指定 Dockerfile 路径
+# 指定 Dockerfile 路径
 docker build -f /path/to/Dockerfile -t my-app:v1.0 .
 ```
 
@@ -277,9 +278,9 @@ docker push ${REGISTRY_URL}/my-namespace/my-app:latest
 
 ```bash
 # 登录到 AI Lab 镜像仓库
-docker login registry.io -u your-username
+docker login registry.io -u <your-username>
 # 输入密码
-Password: your-password
+Password: <your-password>
 # 验证登录状态
 docker info | grep -A 5 "Registry Mirrors"
 ```
@@ -290,30 +291,30 @@ docker info | grep -A 5 "Registry Mirrors"
 
 - **容器启动失败**
 
-```bash
-# 查看容器日志
-docker logs container_name
-# 查看容器详细信息
-docker inspect container_name
-```
+    ```bash
+    # 查看容器日志
+    docker logs <container_name>
+    # 查看容器详细信息
+    docker inspect <container_name>
+    ```
 
 - **端口访问问题**
 
-```bash
-# 检查端口映射
-docker port container_name
-# 检查防火墙设置
-netstat -tlnp | grep :8080
-```
+    ```bash
+    # 检查端口映射
+    docker port <container_name>
+    # 检查防火墙设置
+    netstat -tlnp | grep :8080
+    ```
 
 - **GPU 不可用**
 
-```bash
-# 检查 GPU 状态
-nvidia-smi
-# 验证容器内 GPU 访问
-docker exec container_name nvidia-smi
-```
+    ```bash
+    # 检查 GPU 状态
+    nvidia-smi
+    # 验证容器内 GPU 访问
+    docker exec <container_name> nvidia-smi
+    ```
 
 !!! warning "重要提醒"
 
