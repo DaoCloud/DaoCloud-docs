@@ -41,8 +41,10 @@
 ```bash
 # 查看正在运行的容器
 docker ps
+
 # 查看所有容器（包括已停止的）
 docker ps -a
+
 # 查看指定容器的详细信息（将 <container_name> 替换为实际容器名或容器 ID）
 docker inspect <container_name>
 ```
@@ -63,8 +65,10 @@ Docker 功能提供完整的容器生命周期管理能力，支持容器的创�
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 # 运行一个简单的 Ubuntu 容器
 docker run -it ubuntu:20.04 /bin/bash
+
 # 后台运行容器
 docker run -d --name my-app nginx:latest
+
 # 指定端口映射
 docker run -d -p 8080:80 --name web-server nginx:latest
 ```
@@ -85,8 +89,10 @@ docker run -d -p 8080:80 --name web-server nginx:latest
 ```bash
 # 查看正在运行的容器
 docker ps
+
 # 查看所有容器（包括已停止的）
 docker ps -a
+
 # 查看容器详细信息
 docker inspect <container_name>
 ```
@@ -96,8 +102,10 @@ docker inspect <container_name>
 ```bash
 # 启动已停止的容器
 docker start <container_name>
+
 # 停止运行中的容器
 docker stop <container_name>
+
 # 重启容器
 docker restart <container_name>
 ```
@@ -109,6 +117,7 @@ docker restart <container_name>
 ```bash
 # 进入容器的交互式终端  
 docker exec -it <container_name> /bin/bash
+
 # 查看某个容器内的所有文件 
 docker exec <container_name> ls -la /app
 ```
@@ -137,6 +146,7 @@ Docker 功能支持多种方式制作和保存自定义镜像，满足不同场�
 ```bash
 # 基本构建命令
 docker build -t my-app:latest .
+
 # 指定 Dockerfile 路径
 docker build -f /path/to/Dockerfile -t my-app:v1.0 .
 ```
@@ -168,8 +178,10 @@ docker load -i my-image.tar
 ```bash
 # 挂载所有 GPU
 docker run --gpus all -it pytorch/pytorch:latest python
+
 # 挂载指定数量的 GPU
 docker run --gpus 2 -it tensorflow/tensorflow:latest-gpu python
+
 # 挂载指定的 GPU
 docker run --gpus device=0 -it nvidia/cuda:11.8-devel-ubuntu20.04
 ```
@@ -189,10 +201,13 @@ Docker 容器可以通过多种网络模式与宿主机和外部网络进行通�
 ```bash
 # 映射单个端口
 docker run -d -p 8080:80 --name web-app nginx:latest
+
 # 映射多个端口
 docker run -d \  -p 8080:80 \  -p 8443:443 \  --name web-server nginx:latest
+
 # 映射到指定 IP
 docker run -d -p 127.0.0.1:8080:80 --name local-app nginx:latest
+
 # 映射随机端口
 docker run -d -P --name random-port nginx:latest
 ```
@@ -210,10 +225,13 @@ Docker buildx 是 Docker 的扩展构建功能，支持多平台构建和高级�
 ```bash
 # 查看 buildx 版本
 docker buildx version
+
 # 查看可用的构建器
 docker buildx ls
+
 # 创建新的构建器
 docker buildx create --name mybuilder --use
+
 # 启动构建器
 docker buildx inspect --bootstrap
 ```
@@ -223,8 +241,10 @@ docker buildx inspect --bootstrap
 ```bash
 # 构建多平台镜像
 docker buildx build --platform linux/amd64,linux/arm64 -t my-app:latest .
+
 # 构建并推送到仓库
 docker buildx build --platform linux/amd64,linux/arm64 -t my-app:latest --push .
+
 # 构建特定平台
 docker buildx build --platform linux/amd64 -t my-app:amd64 .
 ```
@@ -238,12 +258,16 @@ Docker Compose 用于定义和运行多容器应用程序。
 ```bash
 # 检查 Compose 版本
 docker compose version
+
 # 启动服务
 docker compose up -d
+
 # 查看服务状态
 docker compose ps
+
 # 停止服务
 docker compose down
+
 # 查看日志
 docker compose logs
 ```
@@ -262,8 +286,10 @@ docker compose logs
 # 查看仓库地址（示例）
 # 实际地址请参考平台提供的 _*我的镜像*_ 中仓库信息
 REGISTRY_URL="harbor.io"
+
 # 拉取镜像
 docker pull ${REGISTRY_URL}/my-namespace/my-app:latest
+
 # 推送镜像
 docker push ${REGISTRY_URL}/my-namespace/my-app:latest
 ```
@@ -279,8 +305,10 @@ docker push ${REGISTRY_URL}/my-namespace/my-app:latest
 ```bash
 # 登录到 AI Lab 镜像仓库
 docker login registry.io -u <your-username>
+
 # 输入密码
 Password: <your-password>
+
 # 验证登录状态
 docker info | grep -A 5 "Registry Mirrors"
 ```
@@ -294,6 +322,7 @@ docker info | grep -A 5 "Registry Mirrors"
     ```bash
     # 查看容器日志
     docker logs <container_name>
+    
     # 查看容器详细信息
     docker inspect <container_name>
     ```
@@ -303,6 +332,7 @@ docker info | grep -A 5 "Registry Mirrors"
     ```bash
     # 检查端口映射
     docker port <container_name>
+
     # 检查防火墙设置
     netstat -tlnp | grep :8080
     ```
@@ -312,6 +342,7 @@ docker info | grep -A 5 "Registry Mirrors"
     ```bash
     # 检查 GPU 状态
     nvidia-smi
+    
     # 验证容器内 GPU 访问
     docker exec <container_name> nvidia-smi
     ```
