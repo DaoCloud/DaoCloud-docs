@@ -486,9 +486,9 @@ hide:
     1. 根据测试场景修改输入文档长度及并发数  
     2. 开启 UCM 情况下，使用 UC-Eval 测试结果如下：  
       
-        [benchmark_static_latency.md](attachments/image48__benchmark_static_latency.md)
+        [benchmark_static_latency.md](./attachments/image46__benchmark_static_latency.md)
 
-        [benchmark_static_latency.csv](attachments/image48__benchmark_static_latency.csv)
+        [benchmark_static_latency.csv](attachments/image46__benchmark_static_latency.csv)
 
         记录到最大并发数为 32，对应增量吞吐 292.7 tok/s  
 
