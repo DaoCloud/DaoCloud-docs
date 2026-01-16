@@ -189,7 +189,7 @@ Macvlan 接口，能够把 master 接口的 RDMA 设备共享给容器使用，�
     在高性能网络场景下，RDMA 网络对于丢包非常敏感，一旦发生丢包重传，性能会急剧下降。因此要使得 RDMA 网络性能不受影响，
     丢包率必须保证在 1e-05（十万分之一）以下，最好为零丢包。对于 Roce 网络，可通过 PFC + ECN 机制来保障网络传输过程不丢包。
 
-    可参考 [配置 RDMA 无损网络](../../roce-qos-zh_CN.md)
+    可参考[配置 RDMA 无损网络](https://spidernet-io.github.io/spiderpool/v1.1/usage/roce-qos/)
 
     > 配置无损网络要求必须在 RDMA Roce 网络环境下，不能是 InfiniBand
     > 配置无损网络必须要求交换机支持 PFC + ECN 机制，并且配置与主机侧对齐，否则不能工作
