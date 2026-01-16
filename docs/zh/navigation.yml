@@ -989,7 +989,7 @@ nav:
                       - 网格控制面组件: mspider/intro/comp-archi-ui/cp-component.md
                       - 系统命名空间: mspider/intro/comp-archi-ui/namespaces.md
                       - UI 支持的特性: mspider/intro/comp-archi-ui/features-on-ui.md
-                  - Istio 与 K8s 版本对应情况: mspider/intro/istio-k8s.md
+                  - Istio与K8s版本对应情况: mspider/intro/istio-k8s.md
                   - 网格漏洞修复标准与计划: mspider/intro/sla.md
                   - 常见问题: mspider/intro/faq.md
                   - Release Notes: mspider/intro/release-notes.md
@@ -1077,7 +1077,7 @@ nav:
                   - 服务网格中常见的 503 报错: mspider/troubleshoot/503-issue.md
                   - 监听localhost的应用如何被Pod访问: mspider/troubleshoot/localhost-by-pod.md
                   - 外部服务无法访问排障: mspider/troubleshoot/outbound-issue.md
-                  - 工作集群中 istio-init 容器启动失败: mspider/troubleshoot/istio-init-failed.md
+                  - 工作集群中istio-init容器启动失败: mspider/troubleshoot/istio-init-failed.md
               - 最佳实践:
                   - 网格定向服务访问限制: mspider/best-practice/use-egress-and-authorized-policy.md
                   - 接入自定义工作负载类型: mspider/best-practice/use-custom-workloads.md
@@ -1106,7 +1106,6 @@ nav:
                       - 适用场景: middleware/elasticsearch/intro/scenarios.md
                       - 基本概念: middleware/elasticsearch/intro/concepts.md
                       - 离线升级 ES: middleware/elasticsearch/intro/offline-install.md
-                      # - Release Notes: middleware/elasticsearch/release-notes.md
                   - ES 集群容量规划: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
                   - 快速入门:
                       - 实例生命周期管理:
@@ -1128,7 +1127,6 @@ nav:
                       - 适用场景: middleware/kafka/intro/scenarios.md
                       - 离线升级 kafka: middleware/kafka/intro/offline-install.md
                       - 常见术语: middleware/kafka/intro/concepts.md
-                      # - Release Notes: middleware/kafka/release-notes.md
                   - 快速入门:
                       - 创建 Kafka 实例: middleware/kafka/user-guide/create.md
                       - 查看/更新/删除 Kafka 实例: middleware/kafka/user-guide/view-update-delete.md
@@ -1144,7 +1142,6 @@ nav:
                       - 适用场景: middleware/minio/intro/scenarios.md
                       - 离线升级 MinIO: middleware/minio/intro/offline-install.md
                       - 常见术语: middleware/minio/intro/concepts.md
-                      # - Release Notes: middleware/minio/release-notes.md
                   - 快速入门:
                       - 创建 MinIO 实例: middleware/minio/user-guide/create.md
                       - 更新/删除 MinIO 实例: middleware/minio/user-guide/update-delete.md
@@ -1157,7 +1154,6 @@ nav:
                       - 什么是 MongoDB: middleware/mongodb/intro/index.md
                       - 技术特性: middleware/mongodb/intro/features.md
                       - 离线升级 MongoDB: middleware/mongodb/intro/offline-install.md
-                      # - Release Notes: middleware/mongodb/release-notes.md
                   - 快速入门:
                       - 创建 MongoDB 实例: middleware/mongodb/user-guide/create.md
                       - 更新 MongoDB 实例: middleware/mongodb/user-guide/update.md
@@ -1172,7 +1168,6 @@ nav:
                       - 竞争优势: middleware/mysql/intro/benefits.md
                       - 离线升级 MySQL: middleware/mysql/intro/offline-install.md
                       - 基本概念: middleware/mysql/intro/concepts.md
-                      # - Release Notes: middleware/mysql/release-notes.md
                   - 快速入门:
                       - 实例生命周期:
                           - 创建 MySQL 实例: middleware/mysql/user-guide/create.md
@@ -1205,7 +1200,6 @@ nav:
                       - 什么是 PostgreSQL: middleware/postgresql/intro/index.md
                       - 技术特性及基本概念: middleware/postgresql/intro/concepts.md
                       - 离线升级 PostgreSQL: middleware/postgresql/intro/offline-install.md
-                      # - Release Notes: middleware/postgresql/release-notes.md
                   - 快速入门:
                       - 创建 PostgreSQL 实例: middleware/postgresql/user-guide/create.md
                       - 更新 PostgreSQL 实例: middleware/postgresql/user-guide/update.md
@@ -1226,7 +1220,6 @@ nav:
                       - 适用场景: middleware/rabbitmq/intro/scenarios.md
                       - 离线升级 RabbitMQ: middleware/rabbitmq/intro/offline-install.md
                       - 基本概念: middleware/rabbitmq/intro/concepts.md
-                      # - Release Notes: middleware/rabbitmq/release-notes.md
                   - 快速入门:
                       - 创建 RabbitMQ 实例: middleware/rabbitmq/user-guide/create.md
                       - 更新 RabbitMQ 实例: middleware/rabbitmq/user-guide/update.md
@@ -1241,7 +1234,6 @@ nav:
                       - 什么是 Redis: middleware/redis/intro/index.md
                       - 适用场景: middleware/redis/intro/scenarios.md
                       - 离线升级 Redis: middleware/redis/intro/offline-install.md
-                      # - Release Notes: middleware/redis/release-notes.md
                   - 快速入门:
                       - 实例生命周期管理:
                           - 创建 Redis 实例: middleware/redis/user-guide/create.md
@@ -1264,7 +1256,6 @@ nav:
                       - 什么是 RocketMQ: middleware/rocketmq/intro/index.md
                       - 基本概念: middleware/rocketmq/intro/concepts.md
                       - 离线升级 RocketMQ: middleware/rocketmq/intro/offline-install.md
-                      # - Release Notes: middleware/rocketmq/release-notes.md
                   - 快速入门:
                       - 创建 RocketMQ 实例: middleware/rocketmq/quick-start/create-rocketmq.md
                       - 更新 RocketMQ 实例: middleware/rocketmq/quick-start/update-rocketmq.md

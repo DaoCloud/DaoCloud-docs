@@ -103,5 +103,5 @@
 
 ## 常见问题
 
-- [命名空间边车配置与工作负载边车冲突](./sidecar.md)
-- [边车占用大量内存](./sidecar-memory-err.md)
+- [命名空间边车配置与工作负载边车冲突](../../troubleshoot/sidecar.md)
+- [边车占用大量内存](../../troubleshoot/sidecar-memory-err.md)
