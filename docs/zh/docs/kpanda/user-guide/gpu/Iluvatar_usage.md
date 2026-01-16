@@ -29,7 +29,7 @@
 
 ### 使用 YAML 配置
 
-创建工作负载申请 GPU 资源，在资源申请和限制配置中增加`iluvatar.ai/vcuda-core: 1`、`iluvatar.ai/vcuda-memory: 200` 参数，配置 App 使用物理卡的资源。
+创建工作负载申请 GPU 资源，在资源申请和限制配置中增加 `iluvatar.ai/vcuda-core: 1`、`iluvatar.ai/vcuda-memory: 200` 参数，配置 App 使用物理卡的资源。
 
 ```yaml
 apiVersion: apps/v1

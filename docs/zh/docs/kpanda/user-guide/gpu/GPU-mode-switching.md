@@ -5,12 +5,12 @@
 ## 前置条件
 
 - 集群节点上已正确安装 GPU 设备。
-- 集群中已正确安装 [gpu-operator 组件](https://docs.daocloud.io/kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.html)和[Nvidia-vgpu 组件](https://docs.daocloud.io/kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.html)。
+- 集群中已正确安装 [gpu-operator 组件](./nvidia/install_nvidia_driver_of_operator.md)和[Nvidia-vgpu 组件](./nvidia/vgpu/vgpu_addon.md)。
 - 集群节点列表中，GPU 模式下存在 NVIDIA-vGPU、NVIDIA GPU 或 NVIDIA MIG 类型。
 
 ## 各模式使用场景
 
-| | 场景对比 | 功能对比 |
+| 模式 | 场景对比 | 功能对比 |
 | -- | ---- | ------- |
 | NVIDIA 整卡模式 | 整卡使用，用在资源消耗较多的场景，如 AI 训练 | 资源被独占，没有额外的开销。可以使用 NVLink 连接多块 GPU 卡 |
 | NVIDIA Mig | 最多可以虚拟化为 7 个实例，因为是物理隔离，服务 QOS 较高，可用于 AI 推理场景 | 进行 MIG 切割会存在显存被浪费的情况 |
@@ -32,4 +32,4 @@
 
     ![GPU模式3](./images/vgpuaddon3.png)
   
-3. 节点 GPU 模式切换成功后，[部署应用可使用 vGPU 资源](vgpu_user.md)。注意：切换过程稍有延迟，请在节点标签正确显示后再部署应用。
+3. 节点 GPU 模式切换成功后，[部署应用可使用 vGPU 资源](./nvidia/vgpu/vgpu_user.md)。注意：切换过程稍有延迟，请在节点标签正确显示后再部署应用。
