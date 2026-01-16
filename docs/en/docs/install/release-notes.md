@@ -16,6 +16,17 @@ the evolution path and feature changes of each version.
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 *[Hydra]: Dev codename for LLM Studio in DCE 5.0
 
+## 2025-12-31
+
+### v0.37.0
+
+- **Removed** redundant parameters from the Kubean installation command.
+- **Improved** the configuration handling logic of grafana-operator in Insight.
+- **Improved** the idempotency validation logic for middleware creation in Insight upgrade scripts.
+- **Fixed** issues with the idempotency validation logic for middleware creation.
+- **Fixed** issues related to the middleware offline image registry.
+- **Fixed** the charts-syncer version validation logic when installing prerequisite dependencies.
+
 ## 2025-11-30
 
 ### v0.36.0
