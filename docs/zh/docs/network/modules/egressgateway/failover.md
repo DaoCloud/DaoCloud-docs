@@ -44,7 +44,7 @@ status:
 
 在上述 EgressGateway 的定义中，通过设置 `egress: "true"`，将两个节点 node1 和 node2 作为 Egress Node。node1 为被选为了生效的节点，其有效 Egress IP 可在 status 中查看。如果 node1 遇到故障，那么 node2 将作为故障切换的节点。
 
-![primary-backup](./primary-backup.svg)
+![primary-backup](./images/primary-backup.svg)
 
 通过 Helm 的 values 配置，可以调整状态检测和 Egress IP 转移的时间。
 

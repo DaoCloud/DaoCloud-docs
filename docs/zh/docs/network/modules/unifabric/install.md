@@ -697,7 +697,9 @@ features:
 > **注意:** 由于 LLDP 邻居采集需要一定时间，默认情况下 unifabric-agent 会等待一分钟后才会将 LLDP 邻居信息同步到 FabricNode CRD 的 Status 字段中。如果需要调整等待时间，可以修改 Helm 参数 `agent.config.rdmaNeighbor.timeToWaitSyncLLDPToFabricNode` 配置，默认为 1 分钟
 
 ```bash
-~# kubectl get fabricnodes.unifabric.io sh-cube-master-3 -o yaml
+kubectl get fabricnodes.unifabric.io sh-cube-master-3 -o yaml
+```
+```yaml
 apiVersion: unifabric.io/v1beta1
 kind: FabricNode
 metadata:
@@ -789,7 +791,7 @@ ScaleoutLeafGroup 负责基于上述 LLDP 邻居发现信息自动将具有相�
 
 ScaleoutLeafGroup 自动分组功能依赖于 FabricNode CRD 的 Status 字段中的 LLDP 邻居发现信息，因此必须确保 FabricNode CRD 的 Status.computeNics 字段中的 LLDP 邻居发现正常上报并信息正确。默认情况下，unifabric-agent 等待一分钟后才会将 LLDP 邻居信息同步到 FabricNode CRD 的 Status 字段中。如果需要调整等待时间，可以修改 Helm 参数 `features.rdmaNeighbor.timeToWaitSyncLLDPToFabricNode` 配置，默认为 1 分钟。
 
-![rdma_neighbor](../images/rdma-neighbor.png)
+![rdma_neighbor](./images/rdma-neighbor.png)
 
 #### 配置示例
 
@@ -847,7 +849,9 @@ helm upgrade --install unifabric unifabric/unifabric -n unifabric -f values.yaml
 如下是一个 ScaleoutLeafGroup CRD 示例：
 
 ```bash
-~# kubectl get scaleoutleafgroups.unifabric.io 409bf491f7136a8a -o yaml
+kubectl get scaleoutleafgroups.unifabric.io 409bf491f7136a8a -o yaml
+```
+```yaml
 apiVersion: unifabric.io/v1beta1
 kind: ScaleoutLeafGroup
 metadata:
@@ -902,4 +906,4 @@ sh-inf-worker-1    Ready    gpu                        130d   v1.30.5
 
 ### 故障排查
 
-参考 [故障排查](../troubleshooting.md)
+参考[故障排查](./troubleshooting.md)

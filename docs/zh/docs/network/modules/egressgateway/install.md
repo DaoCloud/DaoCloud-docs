@@ -9,7 +9,7 @@ hide:
 
 ## 前提条件
 
-- 在 DCE 5.0 集群内使用 EgressGateway，需要结合 [Calico/Flannel/Weave/Spiderpool](../../modules/egressgateway/usage.md)。
+- 在 DCE 5.0 集群内使用 EgressGateway，需要结合 [Calico/Flannel/Weave/Spiderpool](../../modules/egressgateway/use-egpolicy.md)。
 
 - 建议安装 v0.4.0 及其以上的 EgressGateway 版本，安装后可以创建出口网关实例并配合出口网关策略使用。
 
