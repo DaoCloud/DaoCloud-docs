@@ -4,8 +4,8 @@
 
 ## 前提条件
 
-- 已经[部署 DCE 5.0](../../../install/index.md) 容器管理平台，且平台运行正常。
-- 容器管理模块[已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
+- 已经[部署 DCE 5.0](../../../../install/index.md) 容器管理平台，且平台运行正常。
+- 容器管理模块[已接入 Kubernetes 集群](../../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
 - 当前集群内 GPU 卡未进行任何虚拟化操作且未被其它 App 占用。
 
 ## 组件说明
@@ -14,7 +14,7 @@
   
 1. metax-gpu-extensions：包含 gpu-device 和 gpu-label 两个组件，且 Metax-extensions 仅适用于 GPU 整卡使用场景。
 2. metax-operator ：包含 gpu-device、gpu-label、driver-manager、container-runtime、operator-controller 这些组件。gpu-operator 适用于 GPU 整卡和 vGPU 场景。
-3. metax-exporter：包含 ServiceAccount、ConfigMap、Service、DaemonSet、和 ServiceMonitor，主要用于沐曦GPU卡的监控场景。
+3. metax-exporter：包含 ServiceAccount、ConfigMap、Service、DaemonSet、和 ServiceMonitor，主要用于沐曦 GPU 卡的监控场景。
 
 ## 操作步骤
 
@@ -55,11 +55,11 @@
             
             ```yaml
             metricRelabelings:
-             - action: replace
-             regex: mx_(.*)
-             sourceLabels:
-             - __name__
-             targetLabel: __name__
+              - action: replace
+                regex: mx_(.*)
+                sourceLabels:
+                  - __name__
+                targetLabel: __name__
             ```
             
             添加后的效果（需要保证格式和位置准确）：
