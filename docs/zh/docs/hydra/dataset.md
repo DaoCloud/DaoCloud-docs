@@ -222,7 +222,7 @@ spec:
     uri: dataset://public/qwen2-5-0-5b-instruct
 ```
 
-## Dataset Spec Reference
+## Dataset Spec 参考样例
 
 完整的 Dataset 结构以及各个字段的含义如下：
 
