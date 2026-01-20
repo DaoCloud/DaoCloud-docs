@@ -3,13 +3,18 @@ hide:
   - toc
 ---
 
-# Kubernetes 认证服务商
+# DaoCloud 是 Kubernetes 及 AI Platform 认证服务商
 
 CNCF 社区为各国的 Kubernetes 平台服务商提供了合规认证服务，以此证明这些服务商的资质和能力。
 
 DaoCloud 是[经 CNCF 官方认证的 Kubernetes 提供商](https://landscape.cncf.io/?group=certified-partners-and-providers&item=platform--certified-kubernetes-distribution--daocloud-enterprise)，
 即 Kubernetes Certified Service Provider (KCSP)，早在 2017 年就顺利通过了 Kubernetes 的官方认证，是国内最早涉足并得到 CNCF 官方认可的提供商。
 我们常年积极参与 CNCF 相关社区贡献，引领社区技术潮流。每次 Kubernetes 新版本发布，都会率先适配增强新特性，并将其推向实际生产环境。
+
+DaoCloud 出品的 DCE 5.0 是经 Kubernetes 官方认证的 AI 服务平台。
+目前在 **Certified Kubernetes - AI Platform** 细分子项中，DaoCloud 位列第一。
+
+[![DCE 是经认证的 AI Platform](./images/dce-ai-platform.png)](https://landscape.cncf.io/?group=certified-partners-and-providers)
 
 ## Kubernetes AI Conformance
 
