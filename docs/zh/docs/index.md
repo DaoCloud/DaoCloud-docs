@@ -6,7 +6,8 @@ hide:
 
 # DaoCloud Enterprise 5.0
 
-DaoCloud Enterprise 5.0 (DCE 5.0) 是一款高性能、可扩展的云原生操作系统。
+DaoCloud Enterprise 5.0 (DCE 5.0) 是一款高性能、可扩展的云原生操作系统，
+是[经 CNCF 认证的 Kubernetes - AI Platform](./dce/kcsp.md)。
 它能够在任何基础设施和任意环境中提供一致、稳定的体验，支持异构云、边缘云和多云编排。
 DCE 5.0 集成了最新的服务网格和微服务技术，能够跟踪每一个流量的生发始终，
 帮助您洞察集群、节点、应用和服务的详细指标，并通过动态仪表盘和拓扑大图可视化掌握应用健康状态。
