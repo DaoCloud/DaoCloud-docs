@@ -984,6 +984,7 @@ nav:
               - 性能测试:
                   - 云原生网关吞吐量测试: skoala/tests/gateway-stress-test.md
                   - Nacos 压测报告: skoala/tests/nacos-stress-test.md
+              - 升级注意事项: skoala/offline-upgrade/upgrade-notes.md
               - 参考文档:
                   - 微服务: skoala/reference/microservice.md
                   - 注册中心: skoala/reference/registry.md
