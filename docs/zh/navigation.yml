@@ -525,7 +525,6 @@ nav:
                   - Multus CR 管理: network/config/multus-cr.md
                   - SR-IOV 节点策略: network/config/sriov-node-policy.md
                   - 工作负载使用 RDMA:
-                      - 安装 Nvidia OFED 驱动: network/config/ofed_driver.md
                       - 工作负载使用 RDMA: network/config/userdma.md
                       - RDMA 使用方式对比: network/config/rdmatype.md
                   - KubeVirt 固定 IP 与 Underlay 网络: network/config/kubevirt.md
