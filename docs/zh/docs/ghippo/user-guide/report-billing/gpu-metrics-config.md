@@ -15,7 +15,7 @@
 1. 登录运营管理控制台。
 2. 在左侧导航栏选择 __配置管理__ -> __GPU 配置__ 。
 
-![GPU 配置列表](../images/gmagpie-gpu-configs-01.png)
+![GPU 配置列表](../../images/gmagpie-gpu-configs-01.png)
 
 ### 2. 新增或编辑配置
 
@@ -29,7 +29,7 @@
 
     代码编辑器支持实时语法校验。如果公式有误，编辑器下方会显示具体错误。
 
-![GPU 指标编辑表单](../images/gmagpie-gpu-configs-03.png)
+![GPU 指标编辑表单](../../images/gmagpie-gpu-configs-03.png)
 
 ### 3. 指标说明
 
@@ -41,7 +41,7 @@
 | **Pod GPU 利用率** | 单个 Pod 的 GPU 算力使用率 (%) | `avg(DCGM_FI_DEV_GPU_UTIL) by (pod)` |
 | **Pod 显存利用率** | 单个 Pod 的显存使用百分比 (%) | `sum(DCGM_FI_DEV_FB_USED) / sum(DCGM_FI_DEV_FB_TOTAL) * 100` |
 
-![Nvidia GPU 指标](../images/gmagpie-gpu-configs-02.png)
+![Nvidia GPU 指标](../../images/gmagpie-gpu-configs-02.png)
 
 !!! note
 
