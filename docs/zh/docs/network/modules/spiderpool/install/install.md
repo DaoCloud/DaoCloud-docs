@@ -125,6 +125,13 @@
 5. 点击右下角`确定`按钮即可完成安装。完成后，可参考
    [SpiderPool 的使用](../../../config/ippool/ippoolusage.md)进行 IP Pool 的使用。
 
+## AI/RDMA 场景推荐阅读
+
+- [AI/RDMA 网络方案总览](ai-rdma.md)
+- [共享 RDMA（Macvlan/IPvlan）](rdma-macvlan.md)
+- [独享 RDMA（SR-IOV RoCE）](rdma-sriov-roce.md)
+- [独享 RDMA（SR-IOV Infiniband）](rdma-sriov-ib.md)
+
 !!! note
 
     在安装过程中，可创建默认的 subnet 和 ippool；在安装完成后，在使用界面可创建更多的 subnet 和 ippool。
