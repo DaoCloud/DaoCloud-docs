@@ -1,4 +1,4 @@
-# RDMA 环境准备及安装
+# Spiderpool RDMA 安装参数
 
 本章节主要介绍安装 Spiderpool 时，RDMA 相关参数说明，目前 RDMA 支持如下两种使用方式：
 

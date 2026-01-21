@@ -1,5 +1,9 @@
 # Spiderpool Release Notes
 
+后续版本更新请参考 https://github.com/spidernet-io/spiderpool/releases
+
+---
+
 本页列出 Spiderpool 的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
 ## 2025-04-30

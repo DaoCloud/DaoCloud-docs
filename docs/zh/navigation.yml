@@ -517,6 +517,7 @@ nav:
                   - 静态 IP 池:
                       - 创建子网及 IP 池: network/config/ippool/createpool.md
                       - IP 池场景说明: network/config/ippool/ippoolusage.md
+                      - 跨网络区域 IP 分配: network/config/ippool/topology.md
                       - IP 预留: network/config/reserved-ip.md
                   - 使用 IP 池:
                       - 工作负载使用 IP 池: network/config/use-ippool/usage.md
@@ -526,7 +527,8 @@ nav:
                   - 工作负载使用 RDMA:
                       - 工作负载使用 RDMA: network/config/userdma.md
                       - RDMA 使用方式对比: network/config/rdmatype.md
-                      - RDMA 指标: network/config/rdma-metrics.md
+                  - KubeVirt 固定 IP 与 Underlay 网络: network/config/kubevirt.md
+                  - Istio 服务网格适配（Underlay）: network/config/istio.md
 
               - 网络性能:
                   - 网络 CNI 性能测试报告: network/performance/cni-performance.md
@@ -544,18 +546,29 @@ nav:
                   - 介绍: network/modules/spiderpool/index.md
                   - Release Notes: network/modules/spiderpool/release-notes.md
                   - 安装:
-                      - Spiderpool 安装: network/modules/spiderpool/install/install.md
-                      - RDMA 环境准备及安装: network/modules/spiderpool/install/rdmapara.md
-                      - 安装 Nvidia OFED 驱动: network/modules/spiderpool/install/ofed_driver.md
-                      - 为 AI 集群提供 RDMA 能力:  network/modules/spiderpool/install/ai_cluster_with_macvlan.md
-                      - Spiderpool 安装系统要求: network/modules/spiderpool/install/system-requirements.md
-                  - 升级: network/modules/spiderpool/upgrade.md
-                  - 配置参考: network/modules/spiderpool/config.md
-                  - 常用命令: network/modules/spiderpool/command.md
-                  - RDMA 看板: network/modules/spiderpool/rdma-dashboard.md                
-                  - 公有云适配:
-                      - 在阿里云环境运行: network/modules/spiderpool/public-cloud/alibabacloud.md
-                      - 在 AWS 环境运行: network/modules/spiderpool/public-cloud/awscloud.md
+                      - 系统要求: network/modules/spiderpool/install/system-requirements.md
+                      - 安装 Spiderpool: network/modules/spiderpool/install/install.md
+                      - 升级 Spiderpool: network/modules/spiderpool/upgrade.md
+                      - 公有云适配:
+                          - 在阿里云环境运行: network/modules/spiderpool/public-cloud/alibabacloud.md
+                          - 在 AWS 环境运行: network/modules/spiderpool/public-cloud/awscloud.md
+                  - AI/RDMA 网络:
+                      - 方案选型: network/modules/spiderpool/install/ai-rdma.md
+                      - 环境准备:
+                          - Spiderpool RDMA 安装参数: network/modules/spiderpool/install/rdmapara.md
+                      - 方案实施:
+                          - 共享 RDMA（Macvlan/IPvlan）: network/modules/spiderpool/install/rdma-macvlan.md
+                          - 独享 RDMA（SR-IOV RoCE）: network/modules/spiderpool/install/rdma-sriov-roce.md
+                          - 独享 RDMA（SR-IOV Infiniband）: network/modules/spiderpool/install/rdma-sriov-ib.md
+                      - AI 集群实战:
+                          - 使用 Macvlan 建设 AI 集群: network/modules/spiderpool/install/ai-macvlan.md
+                          - 使用 SR-IOV 建设 AI 集群: network/modules/spiderpool/install/ai-sriov.md
+                      - RDMA 监控:
+                          - RDMA 指标: network/modules/spiderpool/rdma-metrics.md
+                          - RDMA 看板: network/modules/spiderpool/rdma-dashboard.md
+                  - 使用:
+                      - 配置参考: network/modules/spiderpool/config.md
+                      - 常用命令: network/modules/spiderpool/command.md
               - 集成 EgressGateway:
                   - 介绍: network/modules/egressgateway/index.md
                   - Release Notes: network/modules/egressgateway/release-notes.md
@@ -581,7 +594,6 @@ nav:
                   - 安装: network/modules/sriov-network-operator/install.md
                   - SR-IOV: network/modules/multus-underlay/sriov.md
                   - DPDK: network/modules/multus-underlay/dpdk.md
-                  - 使用 SR-IOV 建设 AI 集群: network/modules/sriov-network-operator/ai-sriov.md
               - 集成 Calico:
                   - 介绍: network/modules/calico/index.md
                   - 安装参数配置: network/modules/calico/install.md
@@ -628,7 +640,6 @@ nav:
                   - 介绍: network/modules/multus-underlay/index.md
                   - 安装: network/modules/multus-underlay/install.md
                   - Macvlan: network/modules/multus-underlay/macvlan.md
-                  - 使用 Macvlan 建设 AI 集群: network/modules/multus-underlay/ai-macvlan.md
                   - NmState: network/modules/multus-underlay/nmstat.md
               - 集成 Submariner:
                   - 介绍: network/modules/submariner/index.md

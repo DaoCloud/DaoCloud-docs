@@ -57,19 +57,19 @@ helm upgrade --install spiderpool spiderpool/spiderpool --reuse-values --wait --
 
 Grafana RDMA Cluster 监控面板，可以查看当前集群每个节点的 RDMA 监控。
 
-![RDMA Dashboard](../images/rdma/rdma-cluster.png)
+![RDMA Dashboard](../../images/rdma/rdma-cluster.png)
 
 Grafana RDMA Node 监控面板，可以查看每个物理网卡的 RDMA 监控，以及该物理网卡的带宽利用率。同时提供了该节点宿主机的 vf 网卡统计，以及该节点 Pod 使用 RDMA 网卡的监控。
 
-![RDMA Dashboard](../images/rdma/rdma-node.png)
+![RDMA Dashboard](../../images/rdma/rdma-node.png)
 
 Grafana RDMA Pod 监控面板，可以查看 Pod 里面每张网卡的 RDMA 监控，同时提供了网卡错误统计信息，根据这些信息的统计可以排查问题。
 
-![RDMA Dashboard](../images/rdma/rdma-pod.png)
+![RDMA Dashboard](../../images/rdma/rdma-pod.png)
 
 Grafana RDMA Workload 监控面板。在进行 AI 推理和训练时，往往使用 Job、Deployment、KServer 等顶层资源下发 CR 启动一组 Pod 进行训练，可以查看每个顶层资源的 RDMA 监控。
 
-![RDMA Dashboard](../images/rdma/rdma-workload.png)
+![RDMA Dashboard](../../images/rdma/rdma-workload.png)
 
 ## 指标说明
 

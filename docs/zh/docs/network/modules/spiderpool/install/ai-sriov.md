@@ -36,7 +36,7 @@ Spiderpool 使用了 [sriov-network-operator](https://github.com/k8snetworkplumb
 
 本文将以如下典型的 AI 集群拓扑为例，介绍如何搭建 Spiderpool。
 
-![AI Cluster](../../images/ai-cluster.png)
+![AI Cluster](../../../images/ai-cluster.png)
 
 集群的网络规划如下：
 
