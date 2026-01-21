@@ -10,6 +10,7 @@ nav:
               - 适用场景: dce/scenario.md
               - 我们是 K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - v0.37.0-20251231 发布: dce/dce-rn/20251231.md
                   - v0.36.0-20251130 发布: dce/dce-rn/20251130.md
                   - v0.35.0-20251031 发布: dce/dce-rn/20251031.md
                   - v0.34.0-20250930 发布: dce/dce-rn/20250930.md
@@ -897,6 +898,7 @@ nav:
                   - 功能特性: skoala/intro/features.md
                   - 使用场景: skoala/intro/scenarios.md
                   - Release Notes: skoala/intro/release-notes.md
+                  - 升级注意事项: skoala/intro/upgrade-notes.md
               - 快速入门:
                   - 微服务引擎管理组件: skoala/quickstart/skoala.md
                   - 微服务引擎集群初始化组件: skoala/quickstart/skoala-init.md
@@ -984,7 +986,6 @@ nav:
               - 性能测试:
                   - 云原生网关吞吐量测试: skoala/tests/gateway-stress-test.md
                   - Nacos 压测报告: skoala/tests/nacos-stress-test.md
-              - 升级注意事项: skoala/offline-upgrade/upgrade-notes.md
               - 参考文档:
                   - 微服务: skoala/reference/microservice.md
                   - 注册中心: skoala/reference/registry.md
