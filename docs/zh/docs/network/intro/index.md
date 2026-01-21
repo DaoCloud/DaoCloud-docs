@@ -52,6 +52,15 @@ DCE 5.0 云原生网络基于多个开源技术构建，不仅提供单个 CNI �
 
 ![solution02](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/solution02.png)
 
+## AI/RDMA 快速入口
+
+如果您在构建 AI 集群或高性能计算集群，请优先阅读以下内容：
+
+- [AI/RDMA 网络方案总览](../modules/spiderpool/install/ai-rdma.md)
+- [共享 RDMA（Macvlan/IPvlan）](../modules/spiderpool/install/rdma-macvlan.md)
+- [独享 RDMA（SR-IOV RoCE）](../modules/spiderpool/install/rdma-sriov-roce.md)
+- [独享 RDMA（SR-IOV Infiniband）](../modules/spiderpool/install/rdma-sriov-ib.md)
+
 [下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
