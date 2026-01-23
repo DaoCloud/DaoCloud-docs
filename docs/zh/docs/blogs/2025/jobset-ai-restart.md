@@ -4,11 +4,11 @@
 项目如 [JobSet](https://github.com/kubernetes-sigs/jobset)、
 [Ray](https://github.com/ray-project/ray) 和
 [LeaderWorkerSet (LWS)](https://github.com/kubernetes-sigs/lws) 采用这些特性来显著提升
-效率。我们称之为**协同演进（Co-Evolving）**— 整个生态系统共同向前演进。
+效率。我们称之为 **协同演进（Co-Evolving）** — 整个生态系统共同向前演进。
 
 Kubernetes 最近引入了越来越多与 AI 相关的能力，但要在 AI 工作负载中充分发挥这些能力的潜力，
-需要其他项目的适配。今天，我们将探讨一个典型案例：**JobSet 利用 Kubernetes 原地容器重启实现
-92% 的重启速度提升**。
+需要其他项目的适配。今天，我们将探讨一个典型案例：
+**JobSet 利用 Kubernetes 原地容器重启实现 92% 的重启速度提升**。
 
 ## 问题：JobSet 重启速度慢
 
@@ -16,9 +16,9 @@ Kubernetes 最近引入了越来越多与 AI 相关的能力，但要在 AI 工�
 （由于临时故障、配置更新或检查点恢复）时，传统方法涉及：
 
 1. **删除 JobSet 中的所有 Pod**
-2. **等待 Pod 终止**完成
-3. 通过 Kubernetes 调度器**重新调度所有 Pod**
-4. **等待 Pod 启动**（包括镜像拉取、init 容器等）
+2. **等待 Pod 终止** 完成
+3. 通过 Kubernetes 调度器 **重新调度所有 Pod**
+4. **等待 Pod 启动** （包括镜像拉取、init 容器等）
 
 在拥有 5000 节点的大规模集群中，这个过程大约需要 **2 分 10 秒**。对于快速恢复至关重要的
 AI/ML 工作负载来说，这个开销是巨大的。
@@ -47,8 +47,7 @@ Kubernetes 引入了允许容器在不重建 Pod 的情况下重启的能力：
 
 ## 真实成果：JobSet 原地重启
 
-JobSet 团队开发了一个
-[原地重启原型](https://github.com/kubernetes-sigs/jobset/compare/main...GiuseppeTT:jobset:in-place-restart-prototype)，
+JobSet 团队开发了一个[原地重启原型](https://github.com/kubernetes-sigs/jobset/compare/main...GiuseppeTT:jobset:in-place-restart-prototype)，
 展示了显著的性能提升：
 
 | 指标 | 传统重启 | 原地重启 | 改进 |
@@ -227,8 +226,6 @@ JobSet 原地重启优化展示了 Kubernetes 生态系统中协同演进的力�
 相关的特性在 Kubernetes 中落地，我们可以期待 JobSet、Ray、LWS 等项目带来更多优化。
 
 AI 基础设施的未来是协同演进的 — 而这正在发生。
-
----
 
 ## 参考资料
 

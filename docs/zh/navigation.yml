@@ -1595,9 +1595,10 @@ nav:
                   - 全局管理: download/modules/ghippo.md
                   - 运营管理: download/modules/gmagpie.md
   - 博客:
-      - 博文索引: blogs/index.md‎
+      - 博文索引: blogs/index.md
       - 2025:
-          - Kubernetes x JobSet 让 AI 作业重启快 10 倍: blogs/2025/jobset-ai-restart.md
+          - 拓扑感知调度: blogs/2025/topology-aware-scheduling.md
+          - Kubernetes x JobSet 加速 AI: blogs/2025/jobset-ai-restart.md
           - DCE首批通过AI Conformance认证: blogs/2025/ai-conformance.md
           - Paco 连任 K8s 指导委员会: blogs/2025/paco-ksc.md
           - 聚焦 Kubernetes 指导委员会: blogs/2025/k8s-steering-spotlight.md
