@@ -12,6 +12,23 @@ technology, sorted by date by default.
 
 ## 2025
 
+- [Topology-Aware Scheduling: Building Smarter Scheduling Solutions for AI Workloads](./2025/topology-aware-scheduling.md)
+
+    At KubeCon NA 2025, one topic clearly dominated discussions in the AI/ML space:
+    **Topology**. Everyone was talking about topology-aware scheduling, as it is critical to optimizing the performance of AI workloads.
+
+- [Kubernetes x JobSet: How Co-evolution Makes AI Job Restarts 10× Faster](./2025/jobset-ai-restart.md)
+
+    JobSet leverages Kubernetes in-place container restarts to achieve a 92% improvement in restart speed.
+
+- [DaoCloud Among the First to Pass CNCF Kubernetes AI Conformance](./2025/ai-conformance.md)
+
+    [DCE 5.0](https://docs.daocloud.io/) is among the first to pass the CNCF Kubernetes AI Conformance certification.
+
+- [Back at the Peak of Cloud Native: Paco Xu Selected for the Kubernetes Steering Committee](./2025/paco-ksc.md)
+
+    Paco Xu has once again been successfully selected for the Kubernetes Steering Committee.
+
 - [Spotlight on the Kubernetes Steering Committee](./2025/k8s-steering-spotlight.md)
 
     The [Kubernetes Steering Committee](https://github.com/kubernetes/steering) is the backbone of the
@@ -22,7 +39,16 @@ technology, sorted by date by default.
     complex organizational challenges, empower contributors, and foster the thriving open source
     ecosystem that Kubernetes is celebrated for.
 
+- [Building, Operating, and Contributing to Open-Source Documentation](./2025/open-source-doc.md)
+
+    A discussion about open-source sites, especially those related to DaoCloud.
+
 ## 2024
+
+- [20241219 | Breaking News! DaoCloud Successfully Joins the Kubernetes Security Response Committee](2024/241219-sec-privacy.md)
+
+    On December 19, 2024, through the tireless efforts of Paco and the open source team, DaoCloud—recognized by the community as a Kubernetes distribution provider—successfully joined the
+    [Kubernetes Security Response Committee](https://github.com/kubernetes/k8s.io/blob/main/groups/committee-security-response/groups.yaml) (committee-security-response).
 
 - [20241108 | From Community Newbie to CNCF Ambassador](2024/241108-cncf-ambassador.md)
 
