@@ -1,0 +1,373 @@
+<svg preserveAspectRatio="xMidYMin meet" style="background-color: white" viewBox="0 0 818 530" xmlns="http://www.w3.org/2000/svg">
+<text fill="#1E293B" font-family="Arial, sans-serif" font-size="20" font-weight="bold" x="10" y="30">
+Repos pacoxu Contributed To
+</text>
+<text fill="#334155" font-family="Arial, sans-serif" font-size="12" font-style="italic" text-anchor="end" x="808" y="30">
+2025-11-06
+</text>
+<rect fill="#0F172A" height="40" rx="4" width="818" x="0" y="50"/>
+<text dominant-baseline="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" x="10" y="70">
+No.
+</text>
+<text dominant-baseline="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" x="60" y="70">
+Name
+</text>
+<text dominant-baseline="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" x="368" y="70">
+Stars
+</text>
+<text dominant-baseline="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" x="488" y="70">
+First PR
+</text>
+<text dominant-baseline="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" x="608" y="70">
+Last PR
+</text>
+<text dominant-baseline="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" x="728" y="70">
+PR Count
+</text>
+<rect fill="#ffffff" height="40" rx="4" width="818" x="0" y="90"/>
+<text dominant-baseline="middle" fill="#334155" font-family="Arial, sans-serif" font-size="14" x="10" y="110">
+1
+</text>
+<a href="https://github.com/kubernetes/kubernetes" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="60" y="110">
+kubernetes/kubernetes
+</text>
+</a>
+<g>
+<rect fill="#EAB308" height="20" opacity="0.2" rx="10" width="56" x="364" y="100"/>
+<text dominant-baseline="middle" fill="#EAB308" font-family="Arial, sans-serif" font-size="14" x="368" y="110">
+118403
+</text>
+<text dominant-baseline="middle" font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji" font-size="14" x="426" y="110">
+🔥
+</text>
+</g>
+<a href="https://github.com/kubernetes/kubernetes/pull/61039" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="488" y="110">
+2018-03-12
+</text>
+</a>
+<a href="https://github.com/kubernetes/kubernetes/pull/135121" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="608" y="110">
+2025-11-05
+</text>
+</a>
+<a href="https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+author%3Apacoxu" target="_blank">
+<g>
+<rect fill="#2DA44E" height="20" opacity="0.08" rx="10" width="32" x="724" y="100"/>
+<text dominant-baseline="middle" fill="#2DA44E" font-family="Arial, sans-serif" font-size="14" x="728" y="110">
+564
+</text>
+</g>
+</a>
+<rect fill="#F1F5F9" height="40" rx="4" width="818" x="0" y="130"/>
+<text dominant-baseline="middle" fill="#334155" font-family="Arial, sans-serif" font-size="14" x="10" y="150">
+2
+</text>
+<a href="https://github.com/kubernetes/website" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="60" y="150">
+kubernetes/website
+</text>
+</a>
+<g>
+<rect fill="#EAB308" height="20" opacity="0.15" rx="10" width="40" x="364" y="140"/>
+<text dominant-baseline="middle" fill="#EAB308" font-family="Arial, sans-serif" font-size="14" x="368" y="150">
+5046
+</text>
+</g>
+<a href="https://github.com/kubernetes/website/pull/15285" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="488" y="150">
+2019-07-04
+</text>
+</a>
+<a href="https://github.com/kubernetes/website/pull/53082" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="608" y="150">
+2025-11-04
+</text>
+</a>
+<a href="https://github.com/kubernetes/website/pulls?q=is%3Apr+author%3Apacoxu" target="_blank">
+<g>
+<rect fill="#2DA44E" height="20" opacity="0.08" rx="10" width="24" x="724" y="140"/>
+<text dominant-baseline="middle" fill="#2DA44E" font-family="Arial, sans-serif" font-size="14" x="728" y="150">
+66
+</text>
+</g>
+</a>
+<rect fill="#ffffff" height="40" rx="4" width="818" x="0" y="170"/>
+<text dominant-baseline="middle" fill="#334155" font-family="Arial, sans-serif" font-size="14" x="10" y="190">
+3
+</text>
+<a href="https://github.com/kubernetes/test-infra" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="60" y="190">
+kubernetes/test-infra
+</text>
+</a>
+<g>
+<rect fill="#EAB308" height="20" opacity="0.15" rx="10" width="40" x="364" y="180"/>
+<text dominant-baseline="middle" fill="#EAB308" font-family="Arial, sans-serif" font-size="14" x="368" y="190">
+3971
+</text>
+</g>
+<a href="https://github.com/kubernetes/test-infra/pull/20909" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="488" y="190">
+2021-02-19
+</text>
+</a>
+<a href="https://github.com/kubernetes/test-infra/pull/35503" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="608" y="190">
+2025-09-10
+</text>
+</a>
+<a href="https://github.com/kubernetes/test-infra/pulls?q=is%3Apr+author%3Apacoxu" target="_blank">
+<g>
+<rect fill="#2DA44E" height="20" opacity="0.08" rx="10" width="24" x="724" y="180"/>
+<text dominant-baseline="middle" fill="#2DA44E" font-family="Arial, sans-serif" font-size="14" x="728" y="190">
+56
+</text>
+</g>
+</a>
+<rect fill="#F1F5F9" height="40" rx="4" width="818" x="0" y="210"/>
+<text dominant-baseline="middle" fill="#334155" font-family="Arial, sans-serif" font-size="14" x="10" y="230">
+4
+</text>
+<a href="https://github.com/kubernetes/enhancements" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="60" y="230">
+kubernetes/enhancements
+</text>
+</a>
+<g>
+<rect fill="#EAB308" height="20" opacity="0.15" rx="10" width="40" x="364" y="220"/>
+<text dominant-baseline="middle" fill="#EAB308" font-family="Arial, sans-serif" font-size="14" x="368" y="230">
+3749
+</text>
+</g>
+<a href="https://github.com/kubernetes/enhancements/pull/1907" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="488" y="230">
+2020-07-27
+</text>
+</a>
+<a href="https://github.com/kubernetes/enhancements/pull/5640" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="608" y="230">
+2025-10-09
+</text>
+</a>
+<a href="https://github.com/kubernetes/enhancements/pulls?q=is%3Apr+author%3Apacoxu" target="_blank">
+<g>
+<rect fill="#2DA44E" height="20" opacity="0.08" rx="10" width="24" x="724" y="220"/>
+<text dominant-baseline="middle" fill="#2DA44E" font-family="Arial, sans-serif" font-size="14" x="728" y="230">
+32
+</text>
+</g>
+</a>
+<rect fill="#ffffff" height="40" rx="4" width="818" x="0" y="250"/>
+<text dominant-baseline="middle" fill="#334155" font-family="Arial, sans-serif" font-size="14" x="10" y="270">
+5
+</text>
+<a href="https://github.com/kubernetes/kubeadm" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="60" y="270">
+kubernetes/kubeadm
+</text>
+</a>
+<g>
+<rect fill="#EAB308" height="20" opacity="0.15" rx="10" width="40" x="364" y="260"/>
+<text dominant-baseline="middle" fill="#EAB308" font-family="Arial, sans-serif" font-size="14" x="368" y="270">
+3918
+</text>
+</g>
+<a href="https://github.com/kubernetes/kubeadm/pull/2421" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="488" y="270">
+2021-03-26
+</text>
+</a>
+<a href="https://github.com/kubernetes/kubeadm/pull/3256" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="608" y="270">
+2025-11-04
+</text>
+</a>
+<a href="https://github.com/kubernetes/kubeadm/pulls?q=is%3Apr+author%3Apacoxu" target="_blank">
+<g>
+<rect fill="#2DA44E" height="20" opacity="0.08" rx="10" width="24" x="724" y="260"/>
+<text dominant-baseline="middle" fill="#2DA44E" font-family="Arial, sans-serif" font-size="14" x="728" y="270">
+29
+</text>
+</g>
+</a>
+<rect fill="#F1F5F9" height="40" rx="4" width="818" x="0" y="290"/>
+<text dominant-baseline="middle" fill="#334155" font-family="Arial, sans-serif" font-size="14" x="10" y="310">
+6
+</text>
+<a href="https://github.com/kubernetes/k8s.io" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="60" y="310">
+kubernetes/k8s.io
+</text>
+</a>
+<g>
+<rect fill="#EAB308" height="20" opacity="0.08" rx="10" width="32" x="364" y="300"/>
+<text dominant-baseline="middle" fill="#EAB308" font-family="Arial, sans-serif" font-size="14" x="368" y="310">
+881
+</text>
+</g>
+<a href="https://github.com/kubernetes/k8s.io/pull/1577" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="488" y="310">
+2021-01-26
+</text>
+</a>
+<a href="https://github.com/kubernetes/k8s.io/pull/8700" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="608" y="310">
+2025-10-27
+</text>
+</a>
+<a href="https://github.com/kubernetes/k8s.io/pulls?q=is%3Apr+author%3Apacoxu" target="_blank">
+<g>
+<rect fill="#2DA44E" height="20" opacity="0.08" rx="10" width="24" x="724" y="300"/>
+<text dominant-baseline="middle" fill="#2DA44E" font-family="Arial, sans-serif" font-size="14" x="728" y="310">
+26
+</text>
+</g>
+</a>
+<rect fill="#ffffff" height="40" rx="4" width="818" x="0" y="330"/>
+<text dominant-baseline="middle" fill="#334155" font-family="Arial, sans-serif" font-size="14" x="10" y="350">
+7
+</text>
+<a href="https://github.com/klts-io/kubernetes-lts" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="60" y="350">
+klts-io/kubernetes-lts
+</text>
+</a>
+<g>
+<rect fill="#EAB308" height="20" opacity="0.08" rx="10" width="32" x="364" y="340"/>
+<text dominant-baseline="middle" fill="#EAB308" font-family="Arial, sans-serif" font-size="14" x="368" y="350">
+216
+</text>
+</g>
+<a href="https://github.com/klts-io/kubernetes-lts/pull/94" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="488" y="350">
+2021-11-04
+</text>
+</a>
+<a href="https://github.com/klts-io/kubernetes-lts/pull/204" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="608" y="350">
+2024-12-24
+</text>
+</a>
+<a href="https://github.com/klts-io/kubernetes-lts/pulls?q=is%3Apr+author%3Apacoxu" target="_blank">
+<g>
+<rect fill="#2DA44E" height="20" opacity="0.08" rx="10" width="24" x="724" y="340"/>
+<text dominant-baseline="middle" fill="#2DA44E" font-family="Arial, sans-serif" font-size="14" x="728" y="350">
+26
+</text>
+</g>
+</a>
+<rect fill="#F1F5F9" height="40" rx="4" width="818" x="0" y="370"/>
+<text dominant-baseline="middle" fill="#334155" font-family="Arial, sans-serif" font-size="14" x="10" y="390">
+8
+</text>
+<a href="https://github.com/DaoCloud-OpenSource/kubeadm-operator" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="60" y="390">
+DaoCloud-OpenSource/kubeadm-operator
+</text>
+</a>
+<g>
+<rect fill="#EAB308" height="20" opacity="0.08" rx="10" width="24" x="364" y="380"/>
+<text dominant-baseline="middle" fill="#EAB308" font-family="Arial, sans-serif" font-size="14" x="368" y="390">
+11
+</text>
+</g>
+<a href="https://github.com/DaoCloud-OpenSource/kubeadm-operator/pull/1" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="488" y="390">
+2022-04-20
+</text>
+</a>
+<a href="https://github.com/DaoCloud-OpenSource/kubeadm-operator/pull/89" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="608" y="390">
+2022-06-30
+</text>
+</a>
+<a href="https://github.com/DaoCloud-OpenSource/kubeadm-operator/pulls?q=is%3Apr+author%3Apacoxu" target="_blank">
+<g>
+<rect fill="#2DA44E" height="20" opacity="0.08" rx="10" width="24" x="724" y="380"/>
+<text dominant-baseline="middle" fill="#2DA44E" font-family="Arial, sans-serif" font-size="14" x="728" y="390">
+20
+</text>
+</g>
+</a>
+<rect fill="#ffffff" height="40" rx="4" width="818" x="0" y="410"/>
+<text dominant-baseline="middle" fill="#334155" font-family="Arial, sans-serif" font-size="14" x="10" y="430">
+9
+</text>
+<a href="https://github.com/containerd/containerd" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="60" y="430">
+containerd/containerd
+</text>
+</a>
+<g>
+<rect fill="#EAB308" height="20" opacity="0.2" rx="10" width="48" x="364" y="420"/>
+<text dominant-baseline="middle" fill="#EAB308" font-family="Arial, sans-serif" font-size="14" x="368" y="430">
+19517
+</text>
+<text dominant-baseline="middle" font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji" font-size="14" x="418" y="430">
+🔥
+</text>
+</g>
+<a href="https://github.com/containerd/containerd/pull/5200" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="488" y="430">
+2021-03-15
+</text>
+</a>
+<a href="https://github.com/containerd/containerd/pull/11557" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="608" y="430">
+2025-03-18
+</text>
+</a>
+<a href="https://github.com/containerd/containerd/pulls?q=is%3Apr+author%3Apacoxu" target="_blank">
+<g>
+<rect fill="#2DA44E" height="20" opacity="0.08" rx="10" width="24" x="724" y="420"/>
+<text dominant-baseline="middle" fill="#2DA44E" font-family="Arial, sans-serif" font-size="14" x="728" y="430">
+18
+</text>
+</g>
+</a>
+<rect fill="#F1F5F9" height="40" rx="4" width="818" x="0" y="450"/>
+<text dominant-baseline="middle" fill="#334155" font-family="Arial, sans-serif" font-size="14" x="10" y="470">
+10
+</text>
+<a href="https://github.com/kubernetes/system-validators" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="60" y="470">
+kubernetes/system-validators
+</text>
+</a>
+<g>
+<rect fill="#EAB308" height="20" opacity="0.08" rx="10" width="24" x="364" y="460"/>
+<text dominant-baseline="middle" fill="#EAB308" font-family="Arial, sans-serif" font-size="14" x="368" y="470">
+37
+</text>
+</g>
+<a href="https://github.com/kubernetes/system-validators/pull/29" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="488" y="470">
+2022-02-22
+</text>
+</a>
+<a href="https://github.com/kubernetes/system-validators/pull/59" target="_blank">
+<text dominant-baseline="middle" fill="#2563EB" font-family="Arial, sans-serif" font-size="14" x="608" y="470">
+2025-10-10
+</text>
+</a>
+<a href="https://github.com/kubernetes/system-validators/pulls?q=is%3Apr+author%3Apacoxu" target="_blank">
+<g>
+<rect fill="#2DA44E" height="20" opacity="0.08" rx="10" width="24" x="724" y="460"/>
+<text dominant-baseline="middle" fill="#2DA44E" font-family="Arial, sans-serif" font-size="14" x="728" y="470">
+17
+</text>
+</g>
+</a>
+<rect fill="#E2E8F0" height="40" rx="4" width="818" x="0" y="490"/>
+<text dominant-baseline="middle" fill="#334155" font-family="Arial, sans-serif" font-size="14" font-weight="bold" x="10" y="510">
+Total
+</text>
+<g>
+<rect fill="#2DA44E" height="20" opacity="0.08" rx="10" width="32" x="724" y="500"/>
+<text dominant-baseline="middle" fill="#2DA44E" font-family="Arial, sans-serif" font-size="14" font-weight="bold" x="728" y="510">
+854
+</text>
+</g>
+</svg>
