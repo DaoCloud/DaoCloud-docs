@@ -1,7 +1,7 @@
 # 拓扑感知调度：为 AI 工作负载打造更智能的调度方案
 
 > 原作者为 AI Infrastructure Learning Path 发表于 2025 年 11 月 25 日，相关标签为
-> #kubernetes #scheduling #topology #dra #device-plugin #gpu #nic
+> `#kubernetes #scheduling #topology #dra #device-plugin #gpu #nic`
 
 ## 为什么是拓扑？为什么是现在？
 
