@@ -11,6 +11,15 @@ hide:
 
 ## 2025 年
 
+- [拓扑感知调度：为 AI 工作负载打造更智能的调度方案](./2025/topology-aware-scheduling.md)
+
+    在 KubeCon NA 2025 上，AI/ML 领域的讨论中有一个主题占据主导地位：
+    **拓扑（Topology）** 。每个人都在讨论拓扑感知调度，因为它对优化 AI 工作负载性能至关重要。
+
+- [Kubernetes x JobSet：协同演进如何让 AI 作业重启快 10 倍](./2025/jobset-ai-restart.md)
+
+    JobSet 利用 Kubernetes 原地容器重启实现 92% 的重启速度提升。
+
 - [DaoCloud 首批通过 CNCF Kubernetes AI Conformance 认证](./2025/ai-conformance.md)
 
     [DCE 5.0](https://docs.daocloud.io/) 首批通过 CNCF Kubernetes AI Conformance 认证。
