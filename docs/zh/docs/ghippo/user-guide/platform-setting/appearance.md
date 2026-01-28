@@ -29,7 +29,7 @@
 高级定制能够通过 CSS 样式来修改整个容器平台的颜色、字体间隔、字号等。
 您需要熟悉 CSS 语法。删除黑色输入框的内容，可恢复到默认状态，当然也可以点击 __一键还原__ 按钮。
 
-**登录页定制的 CSS 样例：**
+### 登录页定制的 CSS
 
 ```css
 .test {
@@ -41,27 +41,43 @@
 }
 ```
 
-**登录后页面定制的 CSS 样例：**
+### 登录后页面定制的 CSS
+
+以“镜像仓库 -> 上传镜像”弹窗中的提示语为例，介绍如何通过 CSS 隐藏或修改提示内容。
+
+**隐藏提示消息**
 
 ```css
-.dao-icon.dao-iconfont.icon-service-global.dao-nav__head-icon {
-   color: red!important;
-}
-.ghippo-header-logo {
-  background-color: green!important;
-}
-.ghippo-header {
-  background-color: rgb(128, 115, 0)!important;
-}
-.ghippo-header-nav-main {
-  background-color: rgb(0, 19, 128)!important;
-}
-.ghippo-header-sub-nav-main .dao-popper-inner {
-  background-color: rgb(231, 82, 13) !important;
+.dao-message:has(.dao-message-upload-image) {
+  display: none !important;
 }
 ```
 
-**Footer（页面底部的版权、备案等信息）定制示例**
+**修改提示消息内容**
+
+无需 JavaScript，通过 CSS 覆盖显示新文案：
+
+```css
+/* 只命中“包含 upload-image 的 info message” */
+.dao-message:has(.dao-message-upload-image) .dao-message-upload-image {
+  color: transparent; /* 隐藏原文字 */
+  position: relative;
+}
+
+/* 覆盖显示新文案 */
+.dao-message:has(.dao-message-upload-image) .dao-message-upload-image::before {
+  content:
+    "1. 支持 tar、tar.gz 格式，文件大小（含解压后）不得超过 10 GB。\A\
+2. 请确保一个文件对应一个镜像，否则将导入失败。\A\
+3. 仅支持上传 1.11.2 及以上容器引擎客户端版本制作的镜像压缩包。";
+  white-space: pre-line;
+  color: #333;
+  position: absolute;
+  inset: 0;
+}
+```
+
+### Footer（页面底部的版权、备案等信息）定制示例
 
 ```css
 <div class="footer-content">
