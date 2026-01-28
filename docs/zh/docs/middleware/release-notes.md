@@ -12,6 +12,28 @@
 *[Redis]: 高性能键值对存储系统，广泛用于缓存、会话管理和分布式锁。
 *[RocketMQ]: 高可靠、可扩展的分布式消息中间件，适用于事务消息和顺序消息场景。
 
+## 2025-12-31
+
+### Elasticsearch v0.26.1
+- **修复** Elasticsearch dashboard 以适配 Grafana 升级
+- **升级** Elasticsearch 和 Kibana 从 8.17.10 到 8.18.8
+
+### Kafka v0.28.0
+- **新增** 支持配置静态 ip
+
+### MinIO v0.23.1
+- **修复** 实例状态无法反应 pod 状态的问题
+
+### MySQL v0.28.1
+- **修复** MGR operator arm 镜像问题
+- **修复** phpmyadmin yaml env 中引用密码的问题
+
+### RabbitMQ v0.30.0
+- **新增** 支持配置静态 ip
+
+### Redis v0.29.1
+- **修复** 哨兵 LB 模式下地址返回不完整的问题
+
 ## 2025-11-30
 
 ### Elasticsearch v0.26.0
