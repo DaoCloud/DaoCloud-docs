@@ -12,6 +12,28 @@ This page summarizes all middleware module release notes.
 *[Redis]: A high-performance key-value store, widely used for caching, session management, and distributed locks.  
 *[RocketMQ]: A highly reliable and scalable distributed messaging middleware, suitable for transactional and ordered message scenarios.  
 
+## 2025-12-31
+
+### Elasticsearch v0.26.1
+- **Fixed** Elasticsearch dashboards to adapt to the Grafana upgrade
+- **Upgraded** Elasticsearch and Kibana from 8.17.10 to 8.18.8
+
+### Kafka v0.28.0
+- **Added** support for configuring static IPs
+
+### MinIO v0.23.1
+- **Fixed** an issue where instance status did not correctly reflect pod status
+
+### MySQL v0.28.1
+- **Fixed** an issue with the MGR Operator ARM image
+- **Fixed** an issue where passwords were incorrectly referenced in phpMyAdmin YAML environment variables
+
+### RabbitMQ v0.30.0
+- **Added** support for configuring static IPs
+
+### Redis v0.29.1
+- **Fixed** an issue where addresses were returned incompletely in Sentinel LB mode
+
 ## 2025-11-30
 
 ### Elasticsearch v0.26.0
