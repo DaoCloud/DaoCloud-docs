@@ -10,16 +10,18 @@ technology, sorted by date by default.
 
 *[DCE]: Abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
 
-## 2025
+## 2026
 
-- [Topology-Aware Scheduling: Building Smarter Scheduling Solutions for AI Workloads](./2025/topology-aware-scheduling.md)
+- [Topology-Aware Scheduling: Building Smarter Scheduling Solutions for AI Workloads](./2026/topology-aware-scheduling.md)
 
     At KubeCon NA 2025, one topic clearly dominated discussions in the AI/ML space:
     **Topology**. Everyone was talking about topology-aware scheduling, as it is critical to optimizing the performance of AI workloads.
 
-- [Kubernetes x JobSet: How Co-evolution Makes AI Job Restarts 10× Faster](./2025/jobset-ai-restart.md)
+- [Kubernetes x JobSet: How Co-evolution Makes AI Job Restarts 10× Faster](./2026/jobset-ai-restart.md)
 
     JobSet leverages Kubernetes in-place container restarts to achieve a 92% improvement in restart speed.
+
+## 2025
 
 - [DaoCloud Among the First to Pass CNCF Kubernetes AI Conformance](./2025/ai-conformance.md)
 
