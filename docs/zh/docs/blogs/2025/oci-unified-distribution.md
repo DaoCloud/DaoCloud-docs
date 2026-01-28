@@ -128,6 +128,7 @@ Helm Chart 在 OCI 中使用特殊的 `mediaType` 来标识：
 ```json
 {
   "schemaVersion": 2,
+  "mediaType": "application/vnd.oci.image.manifest.v1+json",
   "config": {
     "mediaType": "application/vnd.cncf.helm.config.v1+json",
     "size": 117,
@@ -521,6 +522,7 @@ kind: Pod
 metadata:
   name: multi-artifact-pod
 spec:
+  runtimeClassName: wasmtime
   containers:
   # 容器镜像
   - name: app
@@ -530,7 +532,6 @@ spec:
   # WASM 模块
   - name: wasm-init
     image: registry.example.com/wasm/init:v1.0
-    runtimeClassName: wasmtime
   
   volumes:
   # Helm Chart（通过 init 容器拉取）
