@@ -1495,9 +1495,14 @@ nav:
                   - Operation Management: download/modules/gmagpie.md
   - Blogs:
       - Index: blogs/index.md
+      - 2026:
+          - Topology-Aware Scheduling: blogs/2026/topology-aware-scheduling.md
+          - Kubernetes x JobSet: blogs/2026/jobset-ai-restart.md
       - 2025:
           - DCE Passed CNCF Kubernetes AI Conformance: blogs/2025/ai-conformance.md
+          - Paco Xu Elected to the Kubernetes Steering Committee: blogs/2025/paco-ksc.md
           - Spotlight on the K8s Steering Committee: blogs/2025/k8s-steering-spotlight.md
+          - Open Source Documentation: blogs/2025/open-source-doc.md
       - 2024:
           - From Community Novice to CNCF Ambassador: blogs/2024/241108-cncf-ambassador.md
           - containerd v2.0, nerdctl v2.0, and Lima v1.0: blogs/2024/241106-containerd-nerdctl-lima.md
