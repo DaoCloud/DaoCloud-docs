@@ -1596,9 +1596,10 @@ nav:
                   - 运营管理: download/modules/gmagpie.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 2026:
+          - 拓扑感知调度让 AI 调度更智能: blogs/2026/topology-aware-scheduling.md
+          - Kubernetes x JobSet 加速 AI: blogs/2026/jobset-ai-restart.md
       - 2025:
-          - 拓扑感知调度让 AI 调度更智能: blogs/2025/topology-aware-scheduling.md
-          - Kubernetes x JobSet 加速 AI: blogs/2025/jobset-ai-restart.md
           - DCE率先认证 AI Conformance: blogs/2025/ai-conformance.md
           - Paco 连任 K8s 指导委员会: blogs/2025/paco-ksc.md
           - 聚焦 Kubernetes 指导委员会: blogs/2025/k8s-steering-spotlight.md
