@@ -2,6 +2,51 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化，[升级注意事项](../quickstart/install/upgrade-note.md)。
 
+## 2026-01-31
+
+### v0.40.1
+
+#### Insight Server
+- **修复** cleanJob 中 `GetGlobalClusterInfo` 被 `RunRuleController` 函数阻塞的问题
+
+#### Insight Agent
+
+## 2025-12-31
+
+### v0.40.0
+
+#### Insight Server
+- **新增** 为告警 `KubeSchedulerHighPodSchedulingAttempts` 和 `KubeControllerManagerHighRequestLatency` 增加 `cluster_name` 字段
+- **新增** 支持通过 spanID 查询调用链
+- **新增** 支持慢 SQL 分析（如 DMP 慢 SQL）
+- **修复** 清理过期告警任务
+- **修复** GetGlobalConfig API 问题
+- **修复** Insight 图表 Grafana CR 无法回滚问题
+- **修复** Grafana 12 仪表盘嵌入异常问题
+- **修复** license 节点数指标计算的 PromQL 表达式错误
+- **修复** Grafana Prometheus 数据源缺少 uid 参数问题
+- **修复** 查询调用链 API 中仅 error span 过滤异常问题
+- **修复** Insight 图表 Grafana CR 升级异常问题
+- **移除** 对 `global_cluster_info` 指标的依赖
+- **优化** 完全将 otel-col-gateway 与 aggregator 解耦，仅使用分布式架构
+- **优化** 在创建或更新通知模板时校验 go-template 语法
+- **优化** QueryEventCount API 支持 `containerRestartingFailed` 聚合并设为默认
+- **升级** elastic alert 镜像版本，修复 `elastic_alert_hits` gauge 指标异常问题
+- **升级** Grafana Operator 至 v5
+- **升级** Grafana 版本从 9.3.14 至 12.1.3
+
+#### Insight Agent
+- **新增** 为 OTel Instrumentation 设置默认镜像
+- **优化** 在 OTel 事件日志中忽略 scope 数据
+- **升级** helm-kubectl 至 3.19.1（修复 CVE-2024-56171）
+- **升级** Agent OTel Collector Chart 从 0.129.0 升级至 0.142.0（OTel Collector Contrib v0.141.0-9461e5d6）
+- **升级** Agent OTel Operator Chart 从 0.95.1（OTel Operator v0.135.0）升级至 0.102.0（OTel Operator v0.141.0）
+- **升级** Agent OTel Java Instrumentation 从 2.20.0-9d132e299f552bfe560190207f5e5c5868047866 升级至 2.23.0-2649bbd00bc2fbc662dc56f7a61c5f1b37bc4498
+- **升级** Agent OTel Node.js Instrumentation 从 0.64.1 升级至 0.67.3
+- **升级** Agent OTel Python Instrumentation 从 0.58b0 升级至 0.60b1
+- **升级** Agent OTel .NET Instrumentation 至 1.13.0
+- **升级** Insight OTel Collector 与 jaeger_v2_query 从 jaeger-2.10.0-b10b5835 升级至 jaeger-2.11.0-0d83e060
+
 ## 2025-11-30
 
 ### v0.39.2
