@@ -15,8 +15,6 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 #### Insight Server
 - **Fixed** cleanJob `GetGlobalClusterInfo` block by function `RunRuleController`
 
-#### Insight Agent
-
 ## 2025-12-31
 
 ### v0.40.0
@@ -56,8 +54,6 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 ## 2025-11-30
 
 ### v0.39.2
-
-#### Insight Server
 
 #### Insight Agent
 - **Fixed** apiserver ServiceMonitor dropping the `apiserver_request_terminations_total` metric
