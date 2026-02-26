@@ -9,8 +9,6 @@
 #### Insight Server
 - **修复** cleanJob 中 `GetGlobalClusterInfo` 被 `RunRuleController` 函数阻塞的问题
 
-#### Insight Agent
-
 ## 2025-12-31
 
 ### v0.40.0
@@ -50,8 +48,6 @@
 ## 2025-11-30
 
 ### v0.39.2
-
-#### Insight Server
 
 #### Insight Agent
 - **修复** `apiserver` ServiceMonitor 丢失 `apiserver_request_terminations_total` 指标的问题
