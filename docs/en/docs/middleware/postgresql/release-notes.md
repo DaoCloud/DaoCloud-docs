@@ -11,12 +11,30 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 
 *[Mcamel-PostgreSQL]: "Mcamel" is the dev name for DaoCloud's middlewares, and "PostgreSQL" is a relational database.
 
+## 2025-11-30
+
+### v0.20.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+
+## 2025-10-31
+
+### v0.19.0
+
+- **Added** support for toleration configuration
+- **Upgraded** pgAdmin to 9.6.0
+- **Upgraded** the exporter to v0.17.1
+- **Upgraded** the operator to 0.14.0
+
+
 ## 2024-09-30
 
 ### v0.16.0
 
 - **Fixed** an issue with permission leakage when querying the PostgreSQL list by selecting a workspace
 - **Fixed** an issue with missing audit logs for certain operations
+
 
 ## 2024-08-31
 
@@ -25,12 +43,14 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 - **Improved** the process so that abnormal clusters cannot be selected when creating instances.
 - **Fixed** the issue where managing PostgreSQL instances failed due to empty memory.
 
+
 ## 2024-06-30
 
 ### v0.13.0
 
 - **Added** support for enabling the PG Vector plugin.
 - **Improved** PostgreSQL which now supports v15.5.
+
 
 ## 2024-05-31
 
@@ -42,12 +62,14 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 - **Improved** support for batch modification of instance parameters
 - **Improved** support for configuring the number of replica nodes
 
+
 ## 2024-04-30
 
 ### v0.11.0
 
 - **Improved** When deleting backups, you can now choose to delete the backup data in S3
 - **Added** a prompt for namespace quota
+
 
 ## 2024-03-31
 
@@ -57,11 +79,13 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 - **Added** support for creating MongoDB instances via templates
 - **Fixed** an issue where comments in configuration access settings were ineffective
 
+
 ## 2024-01-31
 
 ### v0.9.0
 
 - **Improved** Added display of PostgreSQL version in global management
+
 
 ## 2023-12-31
 
@@ -70,6 +94,7 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 - **Improved** support for Chinese language in the monitoring dashboard
 - **Fixed** an issue where validation for special characters in input fields was not working when creating instances
 
+
 ## 2023-11-30
 
 ### v0.7.0
@@ -77,6 +102,7 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 - **Added** support for setting access whitelist for Mcamel-PostgreDB
 - **Added** support for recording operation audit logs
 - **Improved** prompt when instance list information is not obtained
+
 
 ## 2023-10-31
 
@@ -88,12 +114,14 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 - **Fixed** Pod list display to show Host IP
 - **Fixed** cloudshell permissions issue
 
+
 ## 2023-08-31
 
 ### v0.5.0
 
 - **Improved** syntax compatibility for KindBase
 - **Improved** page display during operator creation process
+
 
 ## 2023-07-31
 
@@ -103,12 +131,14 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 - **Improved** monitoring charts by removing distractions and adding time range selection
 - **Fixed** an issue where some panels in the monitoring charts were not displaying
 
+
 ## 2023-06-30
 
 ### v0.3.0
 
 - **Added** integration with the global management audit log module
 - **Improved** the monitoring charts by removing distracting elements and adding a time range selection
+
 
 ## 2023-04-27
 
@@ -119,6 +149,7 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 - **Added** __Mcamel-PostgreSQL__ PgAdmin supports LoadBalancer type
 - **Improved** __Mcamel-PostgreSQL__ Exporter does not have permission to connect to PostgreSQL in the case of IPv6
 - **Improved** __Mcamel-PostgreSQL__ scheduling strategy adds a sliding button
+
 
 ## 2023-04-20
 
@@ -132,8 +163,10 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 - **Added** __Mcamel-PostgreSQL__ supports PostgreSQL 15
 - **Added** __Mcamel-PostgreSQL__ supports PostgreSQL UI management interface
 
+
 ## 2023-03-29
 
 ### v0.0.2
 
 - **Added** __Mcamel-PostgreSQL__ supports PostgreSQL instance creation
+

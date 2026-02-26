@@ -11,11 +11,48 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 *[mcamel-mysql]: "mcamel" is the dev name for DaoCloud's middlewares, and "mysql" is a popular relational database
 
+## 2026-01-31
+
+### v0.28.2
+
+- **Fixed** Incorrect CPU and memory usage units displayed on the instance details page
+
+
+## 2025-12-31
+
+### v0.28.1
+
+- **Fixed** an issue with the MGR Operator ARM image
+- **Fixed** an issue where passwords were incorrectly referenced in phpMyAdmin YAML environment variables
+
+
+## 2025-11-30
+
+### v0.28.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+- **Added** alerts for failover events in primary–replica mode
+- **Fixed** an issue where the `mysql_router` account was occasionally not created in MGR mode
+- **Upgraded** phpMyAdmin to 5.2.3
+
+
+## 2025-10-31
+
+### v0.27.1
+
+- **Added** support for toleration configuration
+- **Added** timeout configuration for the ghippo workspace SDK
+- **Fixed** dashboard syntax issues
+- **Fixed** errors when updating parameters while enabling automatic backups
+- **Upgraded** MySQL from 5.7.31 to 5.7.44
+
+
 ## 2025-02-28
 
 ### v0.26.0
 
 - **Updated** the `mysqld-exporter` image and added support for alerting rules for `MySQL-MGR`.
+
 
 ## 2024-09-30
 
@@ -25,12 +62,14 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Added** support for configuring Router nodes in MGR instances
 - **Fixed** an issue with missing audit logs for certain operations
 
+
 ## 2024-08-31
 
 ### v0.21.0
 
 - **Improved** the process so that abnormal clusters cannot be selected when creating instances.
 - **Improved** the issue of permission leakage in the interface.
+
 
 ## 2024-05-31
 
@@ -42,6 +81,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Improved** `default max_connections` parameter to `512`
 - **Fixed** MySQL workspace interface errors
 - **Fixed** password not displaying in instance details
+
 
 ## 2024-04-30
 
@@ -56,17 +96,20 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Fixed** the issue where the master-slave delay was not selected by default
   in the instance monitoring dashboard
 
+
 ## 2024-03-31
 
 ### v0.16.0
 
 - **Improved** Prevent reading MySQL password when user permissions are insufficient
 
+
 ## 2024-01-31
 
 ### v0.15.0
 
 - **Improved** Added display of MySQL version in global management
+
 
 ## 2023-12-31
 
@@ -75,6 +118,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Added** support for creating instances in group replication mode
 - **Fixed** an issue where validation for special characters in input fields was not working when creating instances.
 
+
 ## 2023-11-30
 
 ### v0.13.0
@@ -82,6 +126,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Added** support for recording operation audit logs
 - **Improved** prompt when instance list information is not obtained
 - **Improved** display of Mcamel-MySQL monitoring dashboard in both Chinese and English
+
 
 ## 2023-10-31
 
@@ -94,6 +139,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Fixed** Pod list display to show Host IP
 - **Fixed** cloudshell permissions issue
 
+
 ## 2023-08-31
 
 ### v0.11.0
@@ -102,11 +148,13 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Improved** syntax compatibility for KindBase
 - **Improved** page display during operator creation process
 
+
 ## 2023-07-31
 
 ### v0.10.3
 
 - **Added** access restrictions for UI interface
+
 
 ## 2023-06-30
 
@@ -117,6 +165,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Improved** the source of storage capacity metrics for __mcamel-mysql__ by using neutral metrics
 - **Improved** the installation process of __mcamel-mysql__ ServiceMonitor
 
+
 ## 2023-05-30
 
 ### v0.9.0
@@ -124,7 +173,8 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Added** integration with the global management audit log module for __mcamel-mysql__ 
 - **Added** the ability to configure the interval for collecting monitoring data for __mcamel-mysql__ instances
 - **Fixed** an issue where Raft cluster couldn't be established properly when installing MySQL Operator with multiple replicas for __mcamel-mysql__ 
-- **Fixed** the PodDisruptionBudget version to v1 when upgrading MySQL Operator with multiple replicas for __mcamel-mysql__ 
+- **Fixed** the PodDisruptionBudget version to v1 when upgrading MySQL Operator with multiple replicas for __mcamel-mysql__
+
 
 ## 2023-04-27
 
@@ -135,6 +185,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Added** __mcamel-mysql__ custom role
 - **Added** __mcamel-mysql__ is connected to HwameiStor and supports storage capacity display (you need to manually create HwameiStor exporter ServiceMonitor)
 - **Upgraded** Optimize the scheduling strategy to add a sliding button
+
 
 ## 2023-03-28
 
@@ -147,6 +198,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Upgraded** GHippo SDK to v0.14.0
 - **Improved** __mcamel-mysql__ common-mysql supports multiple instance optimization
 - **Improved** __mcamel-mysql__ troubleshooting manual adds more processing methods
+
 
 ## 2023-02-23
 
@@ -177,6 +229,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Fixed** The binlog expiration time in __mcamel-mysql__ 8.0 environment is not as expected
 - **Fixed** __mcamel-mysql__ backup set listing would show older backup sets for clusters with the same name
 
+
 ## 2022-12-25
 
 ### v0.5.0
@@ -189,6 +242,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Fixed** After reconnecting to the cluster with changed name, the configuration management address display error
 - **Fixed** an issue of failed to save auto backup configuration
 - **Fixed** an issue that the automatic backup set cannot be displayed
+
 
 ## 2022-11-08
 
@@ -226,6 +280,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Fixed** After the backup job is deleted, the backup task list cannot be displayed
 - **Fixed** an issue that the image cannot be grabbed when it has uppercase and numbers
 
+
 ## 2022-10-18
 
 ### v0.3
@@ -241,3 +296,4 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Added** backup and restore source field in instance list interface
 - **Fixed** fuzzy search of backup list interface invalid
 - **Improved** uniformly adjust the timestamp api field to int64
+

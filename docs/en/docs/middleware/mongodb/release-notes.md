@@ -11,6 +11,25 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 *[Mcamel-MongoDB]: "mcamel" is the dev name for DaoCloud's middlewares, and "MongoDB" is a database middleware that provides services for documentation
 
+## 2025-11-30
+
+### v0.18.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+
+## 2025-10-31
+
+### v0.17.0
+
+- **Added** support for toleration configuration
+- **Added** support for configuring ghippo SDK cache expiration time in chart values
+- **Fixed** an issue where audit logs were lost in certain scenarios
+- **Fixed** potential permission leakage by adding the v1alpha2 API and including `workspace_id` in URLs
+- **Fixed** an issue where restored instances used NodePort as the Express service type
+- **Fixed** failures during MongoDB restore operations
+
+
 ## 2024-09-30
 
 ### v0.14.0
@@ -19,6 +38,7 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 - **Fixed** an issue with permission leakage when querying the MongoDB list by selecting a workspace
 - **Fixed** an issue with missing audit logs for certain operations
 - **Fixed** an issue with the failure to restore MongoDB
+
 
 ## 2024-08-31
 
@@ -33,11 +53,13 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 - **Upgraded** the mongodb-operator version to 0.10.0, with all basic images using ubi-minimal:8.6-994
 - **Fixed** the issue of failures when restoring MongoDB instances.
 
+
 ## 2024-07-31
 
 ### v0.12.0
 
 - **Added** a feature of MySQL slow log query
+
 
 ## 2024-05-31
 
@@ -46,6 +68,7 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 - **Added** parameter template import feature
 - **Improved** support for batch modification of instance parameters
 - **Improved** option to delete backup data in S3 when deleting backups
+
 
 ## 2024-04-30
 
@@ -56,6 +79,7 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 - **Fixed** the issue of mongodb-agent readinessProbe timing out in certain scenarios
 - **Fixed** incorrect search results for instance configuration parameters
 
+
 ## 2024-03-31
 
 ### v0.8.0
@@ -65,11 +89,13 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 - **Added** Ability to create MongoDB instances via templates
 - **Fixed** issue when the MongoDB backup source cluster does not exist
 
+
 ## 2024-01-31
 
 ### v0.7.0
 
 - **Added** display of MongoDB version in global management
+
 
 ## 2023-12-31
 
@@ -78,11 +104,13 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 - **Added** multilingual support for the monitoring dashboard
 - **Fixed** an issue where validation for special characters in input fields was not working when creating instances
 
+
 ## 2023-11-30
 
 ### v0.5.0
 
 - **Added** __Mcamel-MongoDB__ console MongoDB Express
+
 
 ## 2023-10-31
 
@@ -92,12 +120,14 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 - **Added** restart functionality for instances
 - **Fixed** cloudshell permissions issue
 
+
 ## 2023-08-31
 
 ### v0.3.0
 
 - **Improved** syntax compatibility for KindBase
 - **Improved** page display during operator creation process
+
 
 ## 2023-07-31
 
@@ -108,8 +138,10 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 - **Improved** ability to create MongoDB instances in namespaces other than the one where the Operator is located
 - **Improved** display information related to frontend interface permissions
 
+
 ## 2023-06-30
 
 ### v0.1.0
 
-- **Added** support for managing MongoDB instances such as creation, viewing, and deletion in __Mcamel-MongoDB__ 
+- **Added** support for managing MongoDB instances such as creation, viewing, and deletion in __Mcamel-MongoDB__
+
