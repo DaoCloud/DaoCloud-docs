@@ -8,11 +8,52 @@ date: 2025-06-23
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version. [Upgrade Notes](../quickstart/install/upgrade-note.md).
 
+## 2026-01-31
+
+### v0.40.1
+
+#### Insight Server
+- **Fixed** cleanJob `GetGlobalClusterInfo` block by function `RunRuleController`
+
+## 2025-12-31
+
+### v0.40.0
+
+#### Insight Server
+- **Added** cluster_name to alerts `KubeSchedulerHighPodSchedulingAttempts` and `KubeControllerManagerHighRequestLatency`
+- **Added** Support query span by spanID
+- **Added** Support slow sql analysis, like DMP slow sql
+- **Fixed** clean stale alert job
+- **Fixed** GetGlobalConfig API bug
+- **Fixed** insight chart grafana CR can't rollback
+- **Fixed** Grafana 12 dashboard embed dashboard
+- **Fixed** license node count metric calculation promql expression
+- **Fixed** Grafana prometheus datasource miss uid param
+- **Fixed** only error span filter bug in query spans API
+- **Fixed** insight chart grafana CR upgrade bug
+- **Removed** global_cluster_info metrics dependency
+- **Improved** Completely separate otel-col-gateway from aggeragator and use only the distributed architecture
+- **Improved** Validate template body go-template syntax when create or update notify template
+- **Improved** QueryEventCount API support containerRestartingFailed agg and use as default
+- **Upgraded** elastic alert image version to fix `elastic_alert_hits` gauge metrics not works
+- **Upgraded** Grafana operator to v5
+- **Upgraded** Grafana version from 9.3.14 to 12.1.3
+
+#### Insight Agent
+- **Added** default image to otel Instrumentation
+- **Improved** Ignore scope data in otel event log
+- **Upgraded** helm-kubectl to 3.19.1 for CVE-2024-56171
+- **Upgraded** agent OTel collector chart from 0.129.0 to 0.142.0(OTel Col contrib v0.141.0-9461e5d6).
+- **Upgraded** agent OTel operator chart from 0.95.1(OTel operator v0.135.0) to 0.102.0(OTel operator v0.141.0).
+- **Upgraded** agent OTel java instrumentation from 2.20.0-9d132e299f552bfe560190207f5e5c5868047866 to 2.23.0-2649bbd00bc2fbc662dc56f7a61c5f1b37bc4498.
+- **Upgraded** agent OTel nodejs instrumentation from 0.64.1 to 0.67.3.
+- **Upgraded** agent OTel python instrumentation from 0.58b0 to 0.60b1.
+- **Upgraded** agent OTel dotnet instrumentation from to 1.13.0
+- **Upgraded** insight otel-col and jaeger_v2_query from jaeger-2.10.0-b10b5835 to jaeger-2.11.0-0d83e060
+
 ## 2025-11-30
 
 ### v0.39.2
-
-#### Insight Server
 
 #### Insight Agent
 - **Fixed** apiserver ServiceMonitor dropping the `apiserver_request_terminations_total` metric
@@ -96,9 +137,9 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - **Fixed** missing `trace` output field in the `agentinstallparam` API.
 - **Fixed** trace duration calculation following Jaeger UI logic.
 - **Removed** unused `apiserver` and `ksm` metrics.
-- **Updated** `smon` CR in the insight chart.
 - **Improved** support for secure Kafka connections.
 - **Improved** OTelcol now sends events only to `es`/`kafka`.
+- **Updated** `smon` CR in the insight chart.
 - **Updated** default `insight-agent` spanmetrics configuration (coordinated with the server).
 - **Upgraded** `etcd-exporter` from v0.7.0 to v0.8.0.
 - **Upgraded** Jaeger to v2.
