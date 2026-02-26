@@ -98,18 +98,18 @@ hide:
 <tr>
 <td class="cat-label cat-ai">AI</td>
 <td><ul>
-<li>Inference runtime integration (vLLM / SGLang), domestic GPU support</li>
+<li>Inference runtime integration (vLLM/SGLang), domestic GPU support</li>
 <li>Model asset center MVP (user/project/repo management, model & dataset upload/download, CLI)</li>
-<li>Pre-integrated domestic model repos (Qwen / GLM / Baichuan)</li>
-<li>Inference acceleration: multi-level KV Cache, topology-aware scheduling (<a href="https://kueue.sigs.k8s.io/">Kueue</a> / Gang)</li>
+<li>Pre-integrated domestic model repos (Qwen/GLM/Baichuan)</li>
+<li>Inference acceleration: multi-level KV Cache, topology-aware scheduling (<a href="https://kueue.sigs.k8s.io/">Kueue</a>/Gang)</li>
 <li>Training-inference co-location basics</li>
 <li>AI fault diagnosis (multi-source log correlation + root cause analysis)</li>
 <li>Predictive alerting (time-series anomaly detection, resource exhaustion warnings)</li>
 </ul></td>
 <td><ul>
 <li><mark>DCE AI Runtime GA</mark></li>
-<li>Unified inference API (OpenAI API / Llama Stack compatible)</li>
-<li>Fine-tuning / LoRA support</li>
+<li>Unified inference API (OpenAI API/Llama Stack compatible)</li>
+<li>Fine-tuning/LoRA support</li>
 <li>Multi-modal inference (text-image, audio-video)</li>
 <li>Model asset center enhancements (remote replication/sync, security scanning, pre-warming, i18n)</li>
 <li><a href="https://github.com/matrixhub-ai/matrixhub">MatrixHub</a> CNCF submission<sup><a href="#fn-matrixhub">1</a></sup></li>
@@ -131,19 +131,19 @@ hide:
 <li>Ascend 910C NPU scheduling (CANN driver)</li>
 <li>Hygon DCU GPU scheduling</li>
 <li>AI high-performance storage (Lustre file system)</li>
-<li>Kueue / Gang Scheduling / <a href="https://lws.sigs.k8s.io/">LWS</a> / DRA integration</li>
+<li>Kueue/Gang Scheduling/<a href="https://lws.sigs.k8s.io/">LWS</a>/DRA integration</li>
 <li><a href="https://github.com/Project-HAMi/HAMi">HAMi</a> commercial edition integration<sup><a href="#fn-hami">2</a></sup></li>
 <li>containerd enhancements (container disk limits)</li>
 </ul></td>
 <td><ul>
-<li><mark>Domestic GPU full GA</mark> (MetaX / Ascend / Hygon / Biren)</li>
+<li><mark>Domestic GPU full GA</mark> (MetaX/Ascend/Hygon/Biren)</li>
 <li>MetaX supernode release</li>
 <li>Supernode solution (8/16-card high-density, GPU sharing scheduler)</li>
 <li>GPU Operator hybrid scheduling (CPU + GPU + NPU), utilization → 80%+</li>
 <li>Distributed storage solution (cloud scenarios)</li>
 </ul></td>
 <td><ul>
-<li>DPU / NPU unified scheduling</li>
+<li>DPU/NPU unified scheduling</li>
 <li>Computing network, multi-cluster compute federation</li>
 <li>InfiniBand topology discovery (via UFM)</li>
 </ul></td>
@@ -175,16 +175,16 @@ hide:
 <tr>
 <td class="cat-label cat-eco">Eco</td>
 <td><ul>
-<li>Kueue / LWS / Gang Scheduling K8s AI/ML SIG contributions</li>
+<li>Kueue/LWS/Gang Scheduling K8s AI/ML SIG contributions</li>
 <li><a href="https://github.com/spidernet-io/spiderpool">Spiderpool</a> DRA implementation, DRANet</li>
 <li>Spiderpool MetaX GPU support</li>
-<li>GAIE / NIXL / LMCache inference optimization project participation</li>
+<li>GAIE/NIXL/LMCache inference optimization project participation</li>
 </ul></td>
 <td><ul>
 <li>MatrixHub Sandbox</li>
 <li><a href="https://github.com/DaoCloud/unifabric">unifabric</a> 1.0 (network health check, disaster marking, KV Cache sync monitoring)</li>
 <li>metal-deployer engineering delivery</li>
-<li>GAIE / NIXL community seats</li>
+<li>GAIE/NIXL community seats</li>
 </ul></td>
 <td><ul>
 <li>unifabric Sandbox, InfiniBand support</li>
@@ -206,7 +206,7 @@ hide:
 
 ## Strategic Direction
 
-DCE already includes [AI Lab](../baize/intro/index.md) (training) and [LLM Service Platform](../hydra/intro/index.md) (model management & inference). In 2026, we focus on two priorities:
+DCE already includes [AI Lab](../baize/intro/index.md) (training) and [LLM Studio](../hydra/intro/index.md) (model management & inference). In 2026, we focus on two priorities:
 
 1. **AI Deepening** — Complete enterprise inference scenarios, support domestic GPUs, bridge training to inference
 2. **Platform Deepening** — Operations experience, deployment efficiency, compute management — solidify existing capabilities
@@ -221,19 +221,19 @@ All modules can be upgraded independently without platform-wide downtime.
 |--------|-------------|------|
 | **Container Management** | Multi-cluster management, cluster lifecycle, auto-scaling, Helm apps | [:material-book-open-outline:](../kpanda/intro/index.md) |
 | **Workbench** | CI/CD pipelines, GitOps, canary releases | [:material-book-open-outline:](../amamba/intro/index.md) |
-| **Multi-cloud Orchestration** | Cross-cloud resource scheduling & app orchestration | [:material-book-open-outline:](../kairship/intro/index.md) |
-| **Microservice Engine** | Spring Cloud / Dubbo management | [:material-book-open-outline:](../skoala/intro/index.md) |
+| **Multicloud Management** | Cross-cloud resource scheduling & app orchestration | [:material-book-open-outline:](../kairship/intro/index.md) |
+| **Microservice Engine** | Spring Cloud/Dubbo management | [:material-book-open-outline:](../skoala/intro/index.md) |
 | **Service Mesh** | Istio-based traffic governance & observability | [:material-book-open-outline:](../mspider/intro/index.md) |
-| **Cloud-native Networking** | Multi-CNI, network policies, load balancing | [:material-book-open-outline:](../network/intro/index.md) |
-| **Cloud-native Storage** | CSI standard, HwameiStor, multi-backend storage | [:material-book-open-outline:](../storage/index.md) |
-| **Observability** | Metrics / logs / traces, multi-dimensional alerting | [:material-book-open-outline:](../insight/intro/index.md) |
-| **Middleware** | Redis / MySQL / Kafka / ES / PG lifecycle management | [:material-book-open-outline:](../middleware/index.md) |
-| **Image Registry** | Multi-instance management, Harbor compatible | [:material-book-open-outline:](../kangaroo/intro/index.md) |
+| **Cloud Native Networking** | Multi-CNI, network policies, load balancing | [:material-book-open-outline:](../network/intro/index.md) |
+| **Cloud Native Storage** | CSI standard, HwameiStor, multi-backend storage | [:material-book-open-outline:](../storage/index.md) |
+| **Insight** | Metrics/logs/traces multi-dimensional alerting | [:material-book-open-outline:](../insight/intro/index.md) |
+| **Middleware** | Redis, MySQL, Kafka, ElasticSearch, and PostgreSQL lifecycle management | [:material-book-open-outline:](../middleware/index.md) |
+| **Container Registry** | Multi-instance management, Harbor compatible | [:material-book-open-outline:](../kangaroo/intro/index.md) |
 | **Global Management** | Authentication, multi-tenancy, RBAC, audit | [:material-book-open-outline:](../ghippo/intro/index.md) |
 | **Virtual Machines** | KubeVirt, VM management, snapshots, live migration | [:material-book-open-outline:](../virtnest/intro/index.md) |
-| **AI Lab** | Training & inference, PyTorch / TensorFlow | [:material-book-open-outline:](../baize/intro/index.md) |
-| **LLM Service** | LLM deployment & operations, vLLM / SGLang | [:material-book-open-outline:](../hydra/intro/index.md) |
-| **Cloud-Edge Collaboration** | Edge cluster & node management | [:material-book-open-outline:](../kant/intro/index.md) |
+| **AI Lab** | Training & inference, PyTorch/TensorFlow | [:material-book-open-outline:](../baize/intro/index.md) |
+| **LLM Studio** | LLM deployment & operations, vLLM/SGLang | [:material-book-open-outline:](../hydra/intro/index.md) |
+| **Cloud Edge Collaboration** | Edge clusters and nodes management | [:material-book-open-outline:](../kant/intro/index.md) |
 
 ---
 
@@ -246,14 +246,14 @@ All modules can be upgraded independently without platform-wide downtime.
 | **Offline Operation** | Fully offline deployment and operation, no external network dependency |
 | **Upgrade Rollback** | One-click rollback for all version upgrades |
 | **Security & Compliance** | MLPS Level 3, audit logs, image scanning, model access control |
-| **Identity** | LDAP / OIDC / enterprise identity platform integration |
+| **Identity** | LDAP/OIDC/enterprise identity platform integration |
 | **Technical Support** | [Documentation](https://docs.daocloud.io) + training certification + TAM + 7×24 emergency response |
 
 ---
 
 ## Ecosystem & Partnerships
 
-**Open Source Contributions:** TOP 1 in China and TOP 3 globally for Kubernetes core repository contributions. Active in Istio / Cilium / [Spiderpool](https://github.com/spidernet-io/spiderpool) / [HwameiStor](https://hwameistor.io) and other CNCF projects. Active contributors to Kueue / LWS / Gang Scheduling and other K8s AI/ML SIG projects.
+**Open Source Contributions:** TOP 1 in China and TOP 3 globally for Kubernetes core repository contributions. Active in Istio/Cilium/[Spiderpool](https://github.com/spidernet-io/spiderpool)/[HwameiStor](https://hwameistor.io) and other CNCF projects. Active contributors to Kueue/LWS/Gang Scheduling and other K8s AI/ML SIG projects.
 
 | Area | Partners |
 |------|----------|
