@@ -9,6 +9,30 @@ hide:
 
 *[mcamel-rabbitmq]: mcamel 是 DaoCloud 所有中间件的开发代号，rabbitmq 实现了高级消息队列协议 (AMQP) 的消息代理软件
 
+## 2025-12-31
+
+### v0.30.0
+
+- **新增** 支持配置静态 ip
+
+## 2025-11-30
+
+### v0.29.0
+
+- **新增** 创建实例时，支持展示绑定到工作空间的集群资源
+
+## 2025-10-31
+
+### v0.28.0
+
+- **新增** 增强默认参数模版
+- **新增** 适配 installer 安装的 RabbitMQ 页面展示
+- **新增** 支持 4.1.0 版本    
+- **修复** deployment 中 matchLabels 移除 istio 注入的 label
+- **修复** 无法创建配置模板的问题
+- **修复** 创建 managerment service 类型为 NodePort 时不生效的问题
+- **升级** RabbitMQ operator到 4.4.1 以支持 RabbitMQ 4.0.5
+
 ## 2025-08-31
 
 ### v0.27.3
@@ -140,7 +164,7 @@ hide:
 
 - **新增** __mcamel-rabbitmq__  NodePort 端口冲突提前检测
 - **新增** __mcamel-rabbitmq__  节点亲和性配置
-- **优化** __mcamel-rabbitmq-ui__  中间件样式走查优化  
+- **优化** __mcamel-rabbitmq-ui__  中间件样式走查优化
 
 ## 2022-11-28
 
@@ -183,3 +207,4 @@ hide:
 - **新增** 实例监控
 - **新增** 首次进入 RabbitMQ
 - **新增** 适用场景
+

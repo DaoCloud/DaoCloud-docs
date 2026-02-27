@@ -9,6 +9,29 @@ hide:
 
 *[mcamel-elasticsearch]: mcamel 是 DaoCloud 所有中间件的开发代号，elasticsearch 是提供分布式搜索和分析服务的中间件。
 
+## 2025-12-31
+
+### v0.26.1
+
+- **修复** Elasticsearch dashboard 以适配 Grafana 升级
+- **升级** Elasticsearch 和 Kibana 从 8.17.10 到 8.18.8
+
+## 2025-11-30
+
+### v0.26.0
+
+- **新增** 创建实例时，支持展示绑定到工作空间的集群资源
+
+## 2025-10-31
+
+### v0.25.2
+
+- **新增** 支持容忍配置
+- **修复** relok8s 解析问题
+- **修复** ghippo 升级日志错误
+- **升级** Elasticsearch & Kibana 从 8.17.1 到 8.17.10
+- **升级** operator 到 2.16.1
+
 ## 2025-08-31
 
 ### v0.25.0
@@ -257,3 +280,4 @@ hide:
 - **新增** 什么是 Elasticsearch
 - **新增** 基本概念
 - **新增** 集群容量规划
+

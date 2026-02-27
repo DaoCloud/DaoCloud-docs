@@ -11,6 +11,21 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 
 *[Mcamel-PostgreSQL]: "Mcamel" is the dev name for DaoCloud's middlewares, and "PostgreSQL" is a relational database.
 
+## 2025-11-30
+
+### v0.20.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+## 2025-10-31
+
+### v0.19.0
+
+- **Added** support for toleration configuration
+- **Upgraded** pgAdmin to 9.6.0
+- **Upgraded** the exporter to v0.17.1
+- **Upgraded** the operator to 0.14.0
+
 ## 2024-09-30
 
 ### v0.16.0
@@ -137,3 +152,4 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 ### v0.0.2
 
 - **Added** __Mcamel-PostgreSQL__ supports PostgreSQL instance creation
+

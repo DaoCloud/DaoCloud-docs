@@ -9,9 +9,28 @@ date: 2024-01-05
 
 This page provides the Release Notes for RocketMQ Message Queue, allowing you to understand the evolution and feature changes of each version.
 
-## 2025-02-28  
+## 2025-11-30
 
-### v0.14.0  
+### v0.17.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+- **Added** affinity and toleration configurations for Controller and NameServer
+
+## 2025-10-31
+
+### v0.16.0
+
+- **Added** support for persistent storage of NameServer logs
+- **Added** support for outputting Broker/Controller logs to the console
+- **Added** support for RocketMQ 5.3.3
+- **Added** support for toleration configuration
+- **Added** support for configuring ghippo SDK cache expiration time in chart values
+- **Fixed** an issue where using Operator version 0.15.0 could cause frequent Broker restarts
+- **Fixed** an issue where page updates could overwrite map/slice fields in user-defined custom resources
+
+## 2025-02-28
+
+### v0.14.0
 
 - **Added** support for configuring static IPs for `RocketMQ` instances.  
 - **Updated** support for configuring time zone environment variables.  
@@ -71,3 +90,4 @@ This page provides the Release Notes for RocketMQ Message Queue, allowing you to
 
 - **Added** support for RocketMQ middleware
 - **Added** offline upgrade functionality
+

@@ -11,15 +11,40 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 *[mcamel-kafka]: "mcamel" is the dev name for DaoCloud's middlewares, and "kafka" is the middleware that provides distributed messaging queue services
 
-## 2025-02-28  
+## 2025-12-31
 
-### v0.23.0  
+### v0.28.0
 
-- **Updated** the Kafka management tool from `CMAK` to `kafka-ui`.  
+- **Added** support for configuring static IPs
 
-## 2024-11-30  
+## 2025-11-30
 
-### v0.21.0  
+### v0.27.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+## 2025-10-31
+
+### v0.26.0
+
+- **Added** support for password configuration
+- **Added** support for configuring complex listener access
+- **Added** support for toleration configuration
+- **Added** support for Kafka 4.0
+- **Added** support for retrieving CPU, memory, storage capacity, and replica count from CRs
+- **Added** support for configuring ghippo SDK cache expiration time in chart values
+- **Fixed** dashboard display issues
+- **Fixed** errors when creating Kafka configuration templates
+
+## 2025-02-28
+
+### v0.23.0
+
+- **Updated** the Kafka management tool from `CMAK` to `kafka-ui`.
+
+## 2024-11-30
+
+### v0.21.0
 
 - **Updated** the `kafka-operator` image version to `0.40.0` and added support for creating Kafka instances with version `3.7.0`.  
 - **Updated** the memory limits for `kafka-operator`.
@@ -113,7 +138,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 - **Added** integration with the global management audit log module
 - **Added** support for __LoadBalancer__ service type
 - **Improved** interfering elements and added time range selection to monitoring charts
-- **Improved** closed-loop installation of __ServiceMonitor__ 
+- **Improved** closed-loop installation of __ServiceMonitor__
 
 ## 2023-04-27
 
@@ -212,3 +237,4 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 - **Added** support for ghippo permission linkage
 - **Added** __mcamel-elasticsearch__ interface to get user list
 - **Improved** the release note script and run the release-process specification
+

@@ -11,6 +11,23 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 *[Mcamel-MongoDB]: "mcamel" is the dev name for DaoCloud's middlewares, and "MongoDB" is a database middleware that provides services for documentation
 
+## 2025-11-30
+
+### v0.18.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+## 2025-10-31
+
+### v0.17.0
+
+- **Added** support for toleration configuration
+- **Added** support for configuring ghippo SDK cache expiration time in chart values
+- **Fixed** an issue where audit logs were lost in certain scenarios
+- **Fixed** potential permission leakage by adding the v1alpha2 API and including `workspace_id` in URLs
+- **Fixed** an issue where restored instances used NodePort as the Express service type
+- **Fixed** failures during MongoDB restore operations
+
 ## 2024-09-30
 
 ### v0.14.0
@@ -112,4 +129,5 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 ### v0.1.0
 
-- **Added** support for managing MongoDB instances such as creation, viewing, and deletion in __Mcamel-MongoDB__ 
+- **Added** support for managing MongoDB instances such as creation, viewing, and deletion in __Mcamel-MongoDB__
+

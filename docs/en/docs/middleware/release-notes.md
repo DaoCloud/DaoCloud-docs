@@ -12,6 +12,15 @@ This page summarizes all middleware module release notes.
 *[Redis]: A high-performance key-value store, widely used for caching, session management, and distributed locks.  
 *[RocketMQ]: A highly reliable and scalable distributed messaging middleware, suitable for transactional and ordered message scenarios.  
 
+## 2026-01-31
+
+### MySQL v0.28.2
+- **Fixed** Incorrect CPU and memory usage units displayed on the instance details page
+
+### Redis v0.29.2
+- **Fixed** helm-kubectl CVE vulnerability
+- **Fixed** Topology visualization issue when hash slots are not continuous
+
 ## 2025-12-31
 
 ### Elasticsearch v0.26.1

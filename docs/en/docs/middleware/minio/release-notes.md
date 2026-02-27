@@ -11,6 +11,33 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 
 *[mcamel-minio]: "mcamel" is the dev name for DaoCloud's middlewares, and "minio" is a light-weight middleware that provides object storage services
 
+## 2025-12-31
+
+### v0.23.1
+
+- **Fixed** an issue where instance status did not correctly reflect pod status
+
+## 2025-11-30
+
+### v0.23.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+## 2025-10-31
+
+### v0.22.0
+
+- **Added** early detection for NodePort port conflicts
+- **Added** support for node affinity configuration
+- **Added** support for toleration configuration
+- **Added** support for configuring ghippo SDK cache expiration time in chart values
+- **Optimized** by removing the authentication information input field
+- **Fixed** abnormal status display for single-instance deployments
+- **Fixed** missing name validation when creating instances
+- **Fixed** an issue where MinIO could not be restarted
+- **Upgraded** the MinIO Operator to 6.0.4
+- **Upgraded** the offline image validation script
+
 ## 2024-09-30
 
 ### v0.19.0
@@ -182,3 +209,4 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 - **Added** APIServer/UI supports mtls
 - **Fixed** In singleton mode, there is only one pod, fix the problem that grafana cannot obtain data
 - **Improved** Improve the feature of the calculator
+

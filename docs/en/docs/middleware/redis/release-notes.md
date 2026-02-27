@@ -11,15 +11,44 @@ This page lists the release notes for the Redis Cache service, providing you wit
 
 *[mcamel-redis]: "mcamel" is the dev name for DaoCloud's middlewares, and "redis" is the middleware that provides memory cache services.
 
-## 2025-02-28  
+## 2026-01-31
 
-### v0.27.0  
+### v0.29.2
 
-- **Added** support for creating `Redis` instances with version `7.2.7`.  
+- **Fixed** helm-kubectl CVE vulnerability
+- **Fixed** Topology visualization issue when hash slots are not continuous
 
-## 2024-11-30  
+## 2025-12-31
 
-### v0.24.0  
+### v0.29.1
+
+- **Fixed** an issue where addresses were returned incompletely in Sentinel LB mode
+
+## 2025-11-30
+
+### v0.29.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+- **Upgraded** the Opstree Operator to 0.22.2
+
+## 2025-10-31
+
+### v0.28.0
+
+- **Added** support for toleration configuration
+- **Fixed** audit log issues during ghippo upgrades
+- **Upgraded** Redis to 7.2.9 and removed versions 7.2.6 and 7.2.7
+- **Upgraded** RedisInsight to 2.70.0
+
+## 2025-02-28
+
+### v0.27.0
+
+- **Added** support for creating `Redis` instances with version `7.2.7`.
+
+## 2024-11-30
+
+### v0.24.0
 
 - **Updated** support for deploying `Redis` instances with version `7.2.6`.  
 - **Updated** Redis Sentinel mode to support setting non-dynamic parameters.  
@@ -131,7 +160,7 @@ This page lists the release notes for the Redis Cache service, providing you wit
 - **Improved** the creation dialog of __mcamel-redis__ instance by adding default anti-affinity label values, simplifying the configuration process
 - **Improved** the data recovery interface of __mcamel-redis__ 
 - **Improved** the display of frontend interface permissions for __mcamel-redis__ 
-- **Fixed** failure to close node affinity for __mcamel-redis__ 
+- **Fixed** failure to close node affinity for __mcamel-redis__
 
 ## 2023-06-30
 
@@ -151,7 +180,7 @@ This page lists the release notes for the Redis Cache service, providing you wit
 - **Added** the ability to configure instance anti-affinity for __mcamel-redis__ 
 - **Added** integration with the global management audit log module for __mcamel-redis__ 
 - **Fixed** an issue where backup-related content remained after deleting Redis instances for __mcamel-redis__ 
-- **Fixed** the incorrect display of Service addresses for sentinel clusters in __mcamel-redis__ 
+- **Fixed** the incorrect display of Service addresses for sentinel clusters in __mcamel-redis__
 
 ## 2023-04-27
 
@@ -160,7 +189,7 @@ This page lists the release notes for the Redis Cache service, providing you wit
 - **Added** event display on the details page for __mcamel-redis__ 
 - **Added** support for filtering by Cluster and Namespace fields in the list API for __mcamel-redis__ 
 - **Added** custom roles for __mcamel-redis__ 
-- **Fixed** sliding button in scheduling strategy optimization for __mcamel-redis__ 
+- **Fixed** sliding button in scheduling strategy optimization for __mcamel-redis__
 
 ## 2023-03-29
 
@@ -197,7 +226,7 @@ This page lists the release notes for the Redis Cache service, providing you wit
 - **Added** early detection of NodePort port conflicts for __mcamel-redis__ 
 - **Added** configuration for node affinity for __mcamel-redis__ 
 - **Fixed** issue where setting nodeport for singleton and cluster mode was not effective for __mcamel-redis__ 
-- **Fixed** issue where setting slave nodes to 0 in cluster mode was not allowed for __mcamel-redis__ 
+- **Fixed** issue where setting slave nodes to 0 in cluster mode was not allowed for __mcamel-redis__
 
 ## 2022-11-28
 
@@ -211,7 +240,7 @@ This page lists the release notes for the Redis Cache service, providing you wit
 - **Added** common fields for returning lists or details
 - **Added** return of alarm lists
 - **Added** validation for Service annotations
-- **Fixed** issue with service address display for __mcamel-redis__ 
+- **Fixed** issue with service address display for __mcamel-redis__
 
 ## 2022-10-26
 
@@ -225,3 +254,4 @@ This page lists the release notes for the Redis Cache service, providing you wit
 - **Added** support for WS permission isolation
 - **Added** support for online dynamic scaling
 - **Upgraded** release notes script
+

@@ -9,6 +9,31 @@ hide:
 
 *[mcamel-kafka]: mcamel 是 DaoCloud 所有中间件的开发代号，kafka
 
+## 2025-12-31
+
+### v0.28.0
+
+- **新增** 支持配置静态 ip
+
+## 2025-11-30
+
+### v0.27.0
+
+- **新增** 创建实例时，支持展示绑定到工作空间的集群资源
+
+## 2025-10-31
+
+### v0.26.0
+
+- **新增** 支持配置密码
+- **新增** 支持配置复杂 listener 访问
+- **新增** 支持容忍配置
+- **新增** 支持 Kafka 4.0
+- **新增** 支持 CPU、内存、存储容量及副本数从 CR 中获取
+- **新增** charts values 可配置 ghippo sdk 缓存过期时间
+- **修复** Dashboard 显示问题
+- **修复** 创建 Kafka 配置模版报错的问题
+
 ## 2025-08-31
 
 ### v0.25.0
@@ -168,7 +193,7 @@ hide:
 - **新增** __mcamel-kafka__ NodePort 端口冲突提前检测
 - **新增** __mcamel-kafka__ 节点亲和性配置
 - **优化** __mcamel-kafka__ manager 去掉 probe，防止 kafka 没准备好不能打开 manager  
-- **优化** __mcamel-kafka__ zooEntrance 重新打包镜像地址为 1.0.0  
+- **优化** __mcamel-kafka__ zooEntrance 重新打包镜像地址为 1.0.0
 
 ## 2022-11-28
 
@@ -217,3 +242,4 @@ hide:
 - **新增** 支持 ghippo 权限联动
 - **新增** __mcamel-kafka__ 获取用户列表接口
 - **优化** 更新 release note 脚本，执行 release-process 规范
+

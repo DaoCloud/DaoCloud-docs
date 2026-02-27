@@ -11,15 +11,38 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 *[mcamel-elasticsearch]: "mcamel" is the dev name for DaoCloud's middlewares, and "elasticsearch" is the middleware for distributed search and analytics services
 
-## 2025-02-28  
+## 2025-12-31
 
-### v0.24.0  
+### v0.26.1
 
-- **Added** support for creating `Elasticsearch` instances with version `8.17.1`.  
+- **Fixed** Elasticsearch dashboards to adapt to the Grafana upgrade
+- **Upgraded** Elasticsearch and Kibana from 8.17.10 to 8.18.8
 
-## 2024-11-30  
+## 2025-11-30
 
-### v0.23.0  
+### v0.26.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+## 2025-10-31
+
+### v0.25.2
+
+- **Added** support for toleration configuration
+- **Fixed** relok8s parsing issues
+- **Fixed** incorrect ghippo upgrade logs
+- **Upgraded** Elasticsearch and Kibana from 8.17.1 to 8.17.10
+- **Upgraded** the operator to 2.16.1
+
+## 2025-02-28
+
+### v0.24.0
+
+- **Added** support for creating `Elasticsearch` instances with version `8.17.1`.
+
+## 2024-11-30
+
+### v0.23.0
 
 - **Updated** the default configuration to disable the geoip database to avoid yellow health status.
 
@@ -122,7 +145,7 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 - **Added** integrationg with the global management audit log module for __mcamel-elasticsearch__ 
 - **Added** configurable instance monitoring data collection interval for __mcamel-elasticsearch__ 
-- **Fixed** incorrect pagination display in the Pod list for __mcamel-elasticsearch__ 
+- **Fixed** incorrect pagination display in the Pod list for __mcamel-elasticsearch__
 
 ## 2023-04-27
 
@@ -245,3 +268,4 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Added** What is Elasticsearch
 - **Added** Basic concept
 - **Added** Cluster Capacity Planning
+

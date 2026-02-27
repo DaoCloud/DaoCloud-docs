@@ -11,6 +11,30 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 *[mcamel-rabbitmq]: "mcamel" is the dev name for DaoCloud's middlewares, and "rabbitmq" is a message agent implemented on the basis of AMQP
 
+## 2025-12-31
+
+### v0.30.0
+
+- **Added** support for configuring static IPs
+
+## 2025-11-30
+
+### v0.29.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+
+## 2025-10-31
+
+### v0.28.0
+
+- **Added** enhanced default parameter templates
+- **Added** support for page display of RabbitMQ installed via installer
+- **Added** support for version 4.1.0
+- **Fixed** removal of Istio injection labels from `matchLabels` in deployments
+- **Fixed** an issue where configuration templates could not be created
+- **Fixed** an issue where the NodePort management service type did not take effect
+- **Upgraded** the RabbitMQ Operator to 4.4.1 to support RabbitMQ 4.0.5
+
 ## 2024-09-30
 
 ### v0.24.0
@@ -113,7 +137,7 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 ### v0.9.0
 
 - **Added** __mcamel-rabbitmq__ supports middleware traces adaptation
-- **Added** Enable traces according to parameter configuration when installing __mcamel-rabbitmq__ 
+- **Added** Enable traces according to parameter configuration when installing __mcamel-rabbitmq__
 
 ## 2023-02-23
 
@@ -178,3 +202,4 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Added** instance monitoring
 - **Added** Enter RabbitMQ for the first time
 - **Added** use cases
+

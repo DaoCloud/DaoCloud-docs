@@ -11,6 +11,38 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 *[mcamel-mysql]: "mcamel" is the dev name for DaoCloud's middlewares, and "mysql" is a popular relational database
 
+## 2026-01-31
+
+### v0.28.2
+
+- **Fixed** Incorrect CPU and memory usage units displayed on the instance details page
+
+## 2025-12-31
+
+### v0.28.1
+
+- **Fixed** an issue with the MGR Operator ARM image
+- **Fixed** an issue where passwords were incorrectly referenced in phpMyAdmin YAML environment variables
+
+## 2025-11-30
+
+### v0.28.0
+
+- **Added** support for displaying cluster resources bound to the workspace when creating an instance
+- **Added** alerts for failover events in primary–replica mode
+- **Fixed** an issue where the `mysql_router` account was occasionally not created in MGR mode
+- **Upgraded** phpMyAdmin to 5.2.3
+
+## 2025-10-31
+
+### v0.27.1
+
+- **Added** support for toleration configuration
+- **Added** timeout configuration for the ghippo workspace SDK
+- **Fixed** dashboard syntax issues
+- **Fixed** errors when updating parameters while enabling automatic backups
+- **Upgraded** MySQL from 5.7.31 to 5.7.44
+
 ## 2025-02-28
 
 ### v0.26.0
@@ -124,7 +156,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Added** integration with the global management audit log module for __mcamel-mysql__ 
 - **Added** the ability to configure the interval for collecting monitoring data for __mcamel-mysql__ instances
 - **Fixed** an issue where Raft cluster couldn't be established properly when installing MySQL Operator with multiple replicas for __mcamel-mysql__ 
-- **Fixed** the PodDisruptionBudget version to v1 when upgrading MySQL Operator with multiple replicas for __mcamel-mysql__ 
+- **Fixed** the PodDisruptionBudget version to v1 when upgrading MySQL Operator with multiple replicas for __mcamel-mysql__
 
 ## 2023-04-27
 
@@ -241,3 +273,4 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Added** backup and restore source field in instance list interface
 - **Fixed** fuzzy search of backup list interface invalid
 - **Improved** uniformly adjust the timestamp api field to int64
+
