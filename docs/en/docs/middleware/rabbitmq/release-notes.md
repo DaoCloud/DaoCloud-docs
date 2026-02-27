@@ -17,13 +17,11 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 - **Added** support for configuring static IPs
 
-
 ## 2025-11-30
 
 ### v0.29.0
 
 - **Added** support for displaying cluster resources bound to the workspace when creating an instance
-
 
 ## 2025-10-31
 
@@ -37,7 +35,6 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Fixed** an issue where the NodePort management service type did not take effect
 - **Upgraded** the RabbitMQ Operator to 4.4.1 to support RabbitMQ 4.0.5
 
-
 ## 2024-09-30
 
 ### v0.24.0
@@ -45,13 +42,11 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Fixed** an issue with missing audit logs for certain operations
 - **Fixed** an issue that prevented querying monitoring data after modifying the instance cluster name
 
-
 ## 2024-08-31
 
 ### v0.23.0
 
 - **Improved** the process so that abnormal clusters cannot be selected when creating instances
-
 
 ## 2024-05-31
 
@@ -60,13 +55,11 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Added** parameter templates
 - **Added** parameter template import and export features
 
-
 ## 2024-04-30
 
 ### v0.19.0
 
 - **Added** a prompt for namespace quota
-
 
 ## 2024-03-31
 
@@ -74,20 +67,17 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 - **Improved** support for Chinese monitoring dashboard in Chinese mode
 
-
 ## 2024-01-31
 
 ### v0.17.0
 
 - **Improved** Added display of RabbitMQ version in global management
 
-
 ## 2023-12-31
 
 ### v0.16.0
 
 - **Fixed** an issue where validation for special characters in input fields was not working when creating instances.
-
 
 ## 2023-11-30
 
@@ -97,7 +87,6 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Added** support for recording operation audit logs
 - **Improved** prompt when instance list information is not obtained
 
-
 ## 2023-10-31
 
 ### v0.14.0
@@ -105,7 +94,6 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Added** offline upgrade functionality
 - **Added** restart functionality for instances
 - **Fixed** cloudshell permissions issue
-
 
 ## 2023-08-31
 
@@ -115,7 +103,6 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Improved** page display during operator creation process
 - **Improved** default anti-affinity configuration on the creation page
 
-
 ## 2023-07-31
 
 ### v0.12.3
@@ -123,14 +110,12 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Added** workload anti-affinity capability
 - **Added** access restrictions for UI interface permissions
 
-
 ## 2023-06-30
 
 ### v0.11.0
 
 - **Added** __LoadBalancer__ service type
 - **Improved** the monitoring charts by removing distracting elements and adding a time range selection
-
 
 ## 2023-04-27
 
@@ -141,13 +126,11 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Added** __mcamel-rabbitmq__ supports access traces
 - **Improved** __mcamel-rabbitmq__ scheduling strategy adds a sliding button
 
-
 ## 2023-03-30
 
 ### v0.9.1
 
 - **Improved** __mcamel-rabbitmq__ improves Operator image to speed up addresses.
-
 
 ## 2023-03-28
 
@@ -155,7 +138,6 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 - **Added** __mcamel-rabbitmq__ supports middleware traces adaptation
 - **Added** Enable traces according to parameter configuration when installing __mcamel-rabbitmq__
-
 
 ## 2023-02-23
 
@@ -171,7 +153,6 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Fixed** an issue that __mcamel-rabbitmq__ instance name is too long and the custom resource cannot be created
 - **Fixed** __mcamel-rabbitmq__ workspace Editor user cannot view instance password
 
-
 ## 2022-12-25
 
 ### v0.7.0
@@ -179,7 +160,6 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Added** __mcamel-rabbitmq__ NodePort port conflict detection in advance
 - **Added** __mcamel-rabbitmq__ node affinity configuration
 - **Improved** __mcamel-rabbitmq-ui__ middleware style walkthrough optimization
-
 
 ## 2022-11-28
 
@@ -193,7 +173,6 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Added** Validation Service annotation
 - **Improved** Password verification is adjusted to MCamel medium password strength
 - **Fixed** page console may access wrong port
-
 
 ## 2022-10-27
 

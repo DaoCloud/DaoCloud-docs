@@ -18,13 +18,11 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Fixed** Elasticsearch dashboards to adapt to the Grafana upgrade
 - **Upgraded** Elasticsearch and Kibana from 8.17.10 to 8.18.8
 
-
 ## 2025-11-30
 
 ### v0.26.0
 
 - **Added** support for displaying cluster resources bound to the workspace when creating an instance
-
 
 ## 2025-10-31
 
@@ -36,20 +34,17 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Upgraded** Elasticsearch and Kibana from 8.17.1 to 8.17.10
 - **Upgraded** the operator to 2.16.1
 
-
 ## 2025-02-28
 
 ### v0.24.0
 
 - **Added** support for creating `Elasticsearch` instances with version `8.17.1`.
 
-
 ## 2024-11-30
 
 ### v0.23.0
 
 - **Updated** the default configuration to disable the geoip database to avoid yellow health status.
-
 
 ## 2024-09-30
 
@@ -59,13 +54,11 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Fixed** an issue where some audit logs are missing for certain operations
 - **Fixed** an issue with the failure to manage Elasticsearch instances created by the installer
 
-
 ## 2024-08-31
 
 ### v0.20.0
 
 - **Improved** the process so that abnormal clusters cannot be selected when creating instances
-
 
 ## 2024-07-31
 
@@ -75,14 +68,12 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Removed** node affinity for recovered instances and added source information in the recovered cluster
 - **Fixed**  request failures caused by special characters in passwords
 
-
 ## 2024-05-31
 
 ### v0.17.0
 
 - **Fixed** an issue where the container list resource usage uses limit as the denominator
 - **Fixed** an issue where exporter is unable to display resource utilization correctly
-
 
 ## 2024-04-30
 
@@ -91,13 +82,11 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Added** a prompt for namespace quota
 - **Fixed** some internal errors
 
-
 ## 2024-03-31
 
 ### v0.15.0
 
 - **Improved** Prevent reading Elasticsearch password when user permissions are insufficient
-
 
 ## 2024-01-31
 
@@ -106,13 +95,11 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Improved** Support for Chinese Dashboard in Elasticsearch instances
 - **Improved** Added display of Elasticsearch version in global management
 
-
 ## 2023-12-31
 
 ### v0.13.0
 
 - **Fixed** an issue where validation for special characters in input fields was not working when creating instances.
-
 
 ## 2023-11-30
 
@@ -129,7 +116,6 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Added** restart functionality for instances
 - **Fixed** cloudshell permissions issue
 
-
 ## 2023-08-31
 
 ### v0.10.0
@@ -138,13 +124,11 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Improved** default anti-affinity configuration on the creation page
 - **Improved** page display during operator creation process
 
-
 ## 2023-07-31
 
 ### v0.9.3
 
 - **Added** access restrictions for UI interface
-
 
 ## 2023-06-30
 
@@ -155,7 +139,6 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Improved** closed-loop installation of __mcamel-elasticsearch__ ServiceMonitor
 - **Fixed** the monitoring charts for __mcamel-elasticsearch__ , removing interfering elements and adding time range selection
 
-
 ## 2023-05-30
 
 ### v0.8.0
@@ -163,7 +146,6 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Added** integrationg with the global management audit log module for __mcamel-elasticsearch__ 
 - **Added** configurable instance monitoring data collection interval for __mcamel-elasticsearch__ 
 - **Fixed** incorrect pagination display in the Pod list for __mcamel-elasticsearch__
-
 
 ## 2023-04-27
 
@@ -174,7 +156,6 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Improved** __mcamel-elasticsearch__ scheduling strategy adds a sliding button
 - **Fixed** __mcamel-elasticsearch__ may interrupt the retry problem when managing clusters
 
-
 ## 2023-03-28
 
 ### v0.6.0
@@ -184,7 +165,6 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Added** __mcamel-elasticsearch__ Kibana supports LoadBalancer type
 - **Upgraded** golang.org/x/net to v0.7.0
 - **Upgraded** GHippo SDK to v0.14.0
-
 
 ## 2023-02-23
 
@@ -212,7 +192,6 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Fixed** __mcamel-elasticsearch__ password cannot use special characters
 - **Fixed** __mcamel-elasticsearch__ out of index causing panic issue
 
-
 ## 2022-12-25
 
 ### v0.4.0
@@ -235,7 +214,6 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Fixed** __mcamel-elasticsearch__ fixes the bug that port information is not returned after the es is successfully created
 - **Fixed** Kibana's service type does not meet expectations when __mcamel-elasticsearch__ queries instance list and details
 
-
 ## 2022-11-28
 
 ### v0.3.6
@@ -251,7 +229,6 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Upgraded** depends on eck operator version 2.3.0
 - **Improved** In some versions of K8s clusters, the default FD is insufficient and cannot be started
 - **Improved** Reduce the running permissions of the elasticsearch container
-
 
 ## 2022-10-28
 

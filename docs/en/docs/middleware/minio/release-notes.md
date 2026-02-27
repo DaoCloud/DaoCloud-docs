@@ -17,13 +17,11 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 
 - **Fixed** an issue where instance status did not correctly reflect pod status
 
-
 ## 2025-11-30
 
 ### v0.23.0
 
 - **Added** support for displaying cluster resources bound to the workspace when creating an instance
-
 
 ## 2025-10-31
 
@@ -40,14 +38,12 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 - **Upgraded** the MinIO Operator to 6.0.4
 - **Upgraded** the offline image validation script
 
-
 ## 2024-09-30
 
 ### v0.19.0
 
 - **Fixed** an issue with permission leakage when querying the MinIO list by selecting a workspace
 - **Fixed** an issue with missing audit logs for certain operations
-
 
 ## 2024-08-31
 
@@ -56,13 +52,11 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 - **Improved** the process so that abnormal clusters cannot be selected when creating instances
 - **Fixed** the error in the `minio operator` multi-replica exit mechanism, adjusting it to single-replica mode.
 
-
 ## 2024-07-31
 
 ### v0.17.0
 
 - **Fixed** incorrect MinIO image address after cluster restart
-
 
 ## 2024-04-30
 
@@ -70,13 +64,11 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 
 - **Added** a prompt for namespace quota
 
-
 ## 2024-03-31
 
 ### v0.13.0
 
 - **Improved** Prevent reading MySQL password when user permissions are insufficient
-
 
 ## 2024-01-31
 
@@ -85,7 +77,6 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 - **Improved** Support for Chinese Dashboard in MinIO instances
 - **Improved** Added display of MinIO version in global management
 
-
 ## 2023-12-31
 
 ### v0.11.0
@@ -93,14 +84,12 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 - **Updated** MinIO Operator version to v5.0.11
 - **Fixed** an issue where validation for special characters in input fields was not working when creating instances.
 
-
 ## 2023-11-30
 
 ### v0.10.0
 
 - **Added** support for recording operation audit logs
 - **Improved** prompt when instance list information is not obtained
-
 
 ## 2023-10-31
 
@@ -113,14 +102,12 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 - **Fixed** Pod list display to show Host IP
 - **Fixed** cloudshell permissions issue
 
-
 ## 2023-09-30
 
 ### v0.8.1
 
 - **Improved** relok8s file
 - **Upgraded** Operator image to v5.0.6
-
 
 ## 2023-08-31
 
@@ -130,13 +117,11 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 - **Improved** page display during operator creation process
 - **Upgraded** Operator image to v5.0.6
 
-
 ## 2023-07-31
 
 ### v0.7.3
 
 - **Added** access restrictions for UI interface
-
 
 ## 2023-06-30
 
@@ -144,7 +129,6 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 
 - **Added** integration with the global management audit log module
 - **Improved** interfering elements and added time range selection to monitoring charts
-
 
 ## 2023-04-27
 
@@ -154,7 +138,6 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 - **Added** __mcamel-minio__ supports custom roles
 - **Improved** __mcamel-minio__ scheduling strategy adds a sliding button
 
-
 ## 2023-03-28
 
 ### v0.4.1
@@ -163,7 +146,6 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 - **Fixed** __mcamel-minio__ should not verify wild storage configuration when removing MinIO.
 - **Fixed** __mcamel-minio__ fixed to create Bucket occasionally failed.
 - **Upgraded** __mcamel-minio__ golang.org/x/net to v0.7.0.
-
 
 ## 2023-02-23
 
@@ -180,7 +162,6 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 - **Upgraded** __mcamel-minio__ upgrades the offline mirror detection script.
 - **Added** log view operation instructions, support custom query, export and other features.
 
-
 ## 2022-12-25
 
 ### v0.2.0
@@ -190,7 +171,6 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 - **Fixed** __mcamel-minio__ fixes the problem that the status display is abnormal when a single instance is used.
 - **Fixed** __mcamel-minio__ did not verify name when creating instance.
 - **Improved** __mcamel-minio__ cancels the authentication information input box.
-
 
 ## 2022-11-28
 
@@ -211,7 +191,6 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 - **Added** the feature of judging whether sc supports capacity expansion and prompting in advance
 - **Improved** the prompt logic of installation environment check & adjust its style
 - **Improved** middleware style walkthrough optimization
-
 
 ## 2022-11-08
 
