@@ -20,8 +20,8 @@
 
 平台支持两种方式上传文件到文件存储。
 
-a. 通过 SFTP 工具上传本地文件，操作步骤请参考文件存储详情界面中的上传说明。
-b. 通过预热任务加载 Git 仓库、S3 对象存储、HTTP 文件、HuggingFace、ModelScope 等远端文件，操作步骤请参考 [远端文件预热](./file-preheat.md)。
+1. 通过 SFTP 工具上传本地文件，操作步骤请参考文件存储详情界面中的上传说明。
+2. 通过预热任务加载 Git 仓库、S3 对象存储、HTTP 文件、HuggingFace、ModelScope 等远端文件，操作步骤请参考 [远端文件预热](./file-preheat.md)。
 
 
 ## 删除文件
