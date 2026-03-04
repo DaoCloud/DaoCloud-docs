@@ -14,7 +14,7 @@
 
     以下修改方式仅对新创建的文件存储生效，对于已创建的文件存储，请参考下个章节“已创建文件存储扩容”介绍。
 
-方式一：安装 Global 组件时，修改 manifests.yaml 文件中 hydra 的产品设置 values.yaml
+- 方式一：安装 Global 组件时，修改 manifests.yaml 文件中 hydra 的产品设置 values.yaml
 
     ```yaml
     hydra:
