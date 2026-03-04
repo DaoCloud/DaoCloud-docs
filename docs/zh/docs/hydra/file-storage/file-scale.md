@@ -28,7 +28,7 @@
         global.config.file_storage.capacity: 500Gi
     ```
 
-方式二：如果产品已安装，可以前往 **全局服务集群** -> **配置项与密钥** -> **配置项**，找到 **hydra-system** 命名空间下的 ConfigMap 配置文件 **hydra**，配置定义与上述方式一字段一致
+- 方式二：如果产品已安装，可以前往 **全局服务集群** -> **配置项与密钥** -> **配置项**，找到 **hydra-system** 命名空间下的 ConfigMap 配置文件 **hydra**，配置定义与上述方式一字段一致
 
     ```yaml
     file_storage:
