@@ -1289,6 +1289,11 @@ nav:
                       - hydra/deploy/index.md
                       - 部署新模型: hydra/deploy/deploy.md
                       - 使用 Dataset 管理模型文件: hydra/dataset.md
+                  - 文件存储:
+                      - 创建文件存储: hydra/file-storage/storage.md
+                      - 管理文件: hydra/file-storage/file-manage.md
+                      - 远端文件预热: hydra/file-storage/file-preheat.md
+                      - 文件存储扩容: hydra/file-storage/file-scale.md
                   - API Key 管理: hydra/apikey.md
               - 运维管理:
                   - 模型广场管理: hydra/oam/index.md
