@@ -28,8 +28,6 @@ curl -X POST \
   "http://<api-address>/apis/gmagpie.io/v1alpha1/report/recalculate"
 ```
 
-![API 调用示例](../images/report-recalc-api.png)
-
 ### 2. 任务处理逻辑
 
 系统接收请求后会在后台按序处理：
