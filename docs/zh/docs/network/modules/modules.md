@@ -21,6 +21,8 @@ DCE 5.0 提供的网络方案对当前主流的开源网络组件进行优化组
 - [Spiderpool](../modules/spiderpool/index.md)：自动化管理 IP 资源
 - [Submariner](../modules/submariner/index.md)：跨集群的网络通讯方案
 - [Aliyun CNI](../modules/aliyun-terway/index.md)：运行在阿里云上的 CNI 插件，提供稳定、高性能，支持Kubernetes network policy、流控等高级特性。
+- [Higress](../modules/higress/index.md)：Higress 是一款云原生 API 网关，内核基于 Istio 和 Envoy，可以用 Go/Rust/JS 等编写 Wasm 插件，提供了数十个现成的通用插件，以及开箱即用的控制台。并且提供 Kubernetes Ingress 网关、 AI 网关、微服务网关等能力。
+- [Kgateway](../modules/kgateway/index.md)：kgateway 是一个基于 Envoy 代理并深度集成 Kubernetes Gateway API 的高性能、云原生 API 网关，旨在为 AI 推理、微服务治理及跨集群流量调度提供下一代控制面。
 
 !!! note
 
