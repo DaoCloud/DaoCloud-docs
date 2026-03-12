@@ -31,12 +31,14 @@
     - `higress` -> `higress-core` -> `global.Enable Gateway API`：启用 Gateway API 支持。开启该选项后，Higress 将会监听并接管集群中的 Gateway API 资源, 默认为 false。注意：如果集群中未安装 [Gateway API](https://kubernetes.io/docs/concepts/services-networking/gateway/)，请不要开启此选项, 否则 Higress 无法正常运行。
    
    ![parameter3](../../images/higress-install-6.png)
+
     以上的各项参数说明：
 
     - `higress` -> `higress-core` -> `global.Observability Settings`：开启 Higress 的可观测性设置，默认为 false。
     - `higress` -> `higress-core` -> `global.Promtail Configuration`：用于配置 Promtail 日志收集器的镜像设置，用于收集 Higress 的日志。
 
     ![parameter4](../../images/higress-install-7.png)
+
     上图中的各项参数说明：
 
     - `Higress` -> `Higress Core` -> `Controller`：设置 Controller 的的副本数，镜像配置，以及 tag，这些配置一般不需要变化。
@@ -68,5 +70,6 @@
 
     这部分参数主要是关于 Higress-console 的配置，Higress-console 是 Higress 的管理控制台，可以在 WEB UI 中管理 Higress 的配置，并且可以查看 Higress 的指标数据。参考文档：[Higress Console](https://higress.ai/blog/console-dev)
     - `Higress` -> `Higress-Console`: 包括开启监控配置，镜像配置，副本数量，一般不需要改动，默认即可。
+
 5. 对于更高级的配置可以通过点击 Tab 选项卡中 `YAML` 以通过 YAML 方式进行配置。
     点击右下角`确定`按钮即可完成创建。
