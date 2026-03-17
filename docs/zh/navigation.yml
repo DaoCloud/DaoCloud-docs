@@ -226,6 +226,11 @@ nav:
                       - 流水线部署多云应用: amamba/quickstart/pipeline-kairship.md
                   - 灰度发布实践: amamba/quickstart/contour-argorollout.md
                   - 基于 Argo Rollout 实现渐进式灰度发布: amamba/quickstart/argocd-rollout.md
+          - ClawOS 智能体:
+              - 介绍: clawos/index.md
+              - 快速入门: clawos/quickstart.md
+              - 飞书集成: clawos/feishu.md
+              - 常见问题: clawos/faq.md
       - 容器:
           - 容器管理:
               - 介绍:
