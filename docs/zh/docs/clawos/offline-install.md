@@ -186,7 +186,7 @@
 
 ### 通过 helm 命令安装
 
-1.添加 Helm 仓库
+1. 添加 Helm 仓库
 
     ```bash
     helm repo add agentclaw-release https://release.daocloud.io/chartrepo/clawos
