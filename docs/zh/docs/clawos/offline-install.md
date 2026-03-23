@@ -135,49 +135,50 @@
 
 2. 更新 hydra AuthorizationPolicy 允许 agent-claw-system 的流量
 
-```shell
-kubectl -n hydra-system edit AuthorizationPolicy hydra-apiserver  
-```
+    ```shell
+    kubectl -n hydra-system edit AuthorizationPolicy hydra-apiserver  
+    ```
 
-```diff
-apiVersion: security.istio.io/v1
-kind: AuthorizationPolicy
-metadata:
-  name: hydra-apiserver
-  namespace: hydra-system
-spec:
-  action: ALLOW
-  rules:
-  - from:
-    - source:
-        namespaces:
-        - dak-system
-+       - agentclaw-system
-```
+    ```diff
+    apiVersion: security.istio.io/v1
+    kind: AuthorizationPolicy
+    metadata:
+      name: hydra-apiserver
+      namespace: hydra-system
+    spec:
+      action: ALLOW
+      rules:
+      - from:
+        - source:
+            namespaces:
+            - dak-system
+    +       - agentclaw-system
+    ```
 
 3. 配置 insight-system 的 kube-state-metrics 的启动项
-```shell
-kubectl -n insight-system edit deployment insight-agent-kube-state-metrics
-```
 
-```diff
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-   name: insight-agent-kube-state-metrics
-   namespace: insight-system
-spec:
-   template:
-      spec:
-         containers:
-         - name: kube-state-metrics
-           args:
-          args:
-            - --metric-labels-allowlist=nodes=[feature.node.kubernetes.io/cpu-cpuid.HYPERVISOR]
-            - '--port=8080'
-            - --resources=configmaps,cronjobs,daemonsets,deployments,horizontalpodautoscalers,jobs,limitranges,namespaces,networkpolicies,nodes,persistentvolumeclaims,persistentvolumes,pods,replicasets,replicationcontrollers,resourcequotas,secrets,services,statefulsets,storageclasses
-+           - --metric-annotations-allowlist=deployments=[agentclaw.io/instance-name,agentclaw.io/workspace-id]
-```
+    ```shell
+    kubectl -n insight-system edit deployment insight-agent-kube-state-metrics
+    ```
+
+    ```diff
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+       name: insight-agent-kube-state-metrics
+       namespace: insight-system
+    spec:
+       template:
+          spec:
+             containers:
+             - name: kube-state-metrics
+               args:
+              args:
+                - --metric-labels-allowlist=nodes=[feature.node.kubernetes.io/cpu-cpuid.HYPERVISOR]
+                - '--port=8080'
+                - --resources=configmaps,cronjobs,daemonsets,deployments,horizontalpodautoscalers,jobs,limitranges,namespaces,networkpolicies,nodes,persistentvolumeclaims,persistentvolumes,pods,replicasets,replicationcontrollers,resourcequotas,secrets,services,statefulsets,storageclasses
+    +           - --metric-annotations-allowlist=deployments=[agentclaw.io/instance-name,agentclaw.io/workspace-id]
+    ```
 
 ### 通过 Kpanda UI 安装
 
@@ -187,13 +188,13 @@ spec:
 
 1.添加 Helm 仓库
 
-```bash
-helm repo add agentclaw-release https://release.daocloud.io/chartrepo/clawos
-helm repo update
-```
+    ```bash
+    helm repo add agentclaw-release https://release.daocloud.io/chartrepo/clawos
+    helm repo update
+    ```
 
 2. 安装 Chart
 
-```bash
-helm upgrade agentclaw agentclaw-release -n agentclaw-system --install --create-namespace
-```
+    ```bash
+    helm upgrade agentclaw agentclaw-release -n agentclaw-system --install --create-namespace
+    ```
