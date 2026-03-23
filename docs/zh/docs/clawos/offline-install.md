@@ -5,7 +5,7 @@
 ## 下载
 
 使用这个链接：https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_amd64.tar 下载 ClawOS 离线包。
-如果有后续新版本请求直接替换`v0.2.0`。 
+如果有后续新版本请直接替换`v0.2.0`。 
 
 ## 从离线包中加载镜像和 chart 包
 
@@ -126,14 +126,15 @@
 
 ### 前置条件
 
-#### 1. 安装前请确保目标 Kubernetes 集群已配置必要的依赖服务：
+1. 安装前请确保目标 Kubernetes 集群已配置必要的依赖服务：
 
     - hydra-apiserver
     - kpanda-apiserver
     - ghippo-apiserver
     - kpanda-clusterpedia-apiserver
 
-#### 2. 更新 hydra AuthorizationPolicy 允许 agent-claw-system 的流量
+2. 更新 hydra AuthorizationPolicy 允许 agent-claw-system 的流量
+
 ```shell
 kubectl -n hydra-system edit AuthorizationPolicy hydra-apiserver  
 ```
@@ -154,7 +155,7 @@ spec:
 +       - agentclaw-system
 ```
 
-#### 3. 配置 insight-system 的 kube-state-metrics 的启动项
+3. 配置 insight-system 的 kube-state-metrics 的启动项
 ```shell
 kubectl -n insight-system edit deployment insight-agent-kube-state-metrics
 ```
@@ -184,14 +185,14 @@ spec:
 
 ### 通过 helm 命令安装
 
-#### 1.添加 Helm 仓库
+1.添加 Helm 仓库
 
 ```bash
 helm repo add agentclaw-release https://release.daocloud.io/chartrepo/clawos
 helm repo update
 ```
 
-#### 2. 安装 Chart
+2. 安装 Chart
 
 ```bash
 helm upgrade agentclaw agentclaw-release -n agentclaw-system --install --create-namespace
