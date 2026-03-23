@@ -36,7 +36,7 @@
 
 2. 打开 OpenClaw 管理页面
 
-    ![访问后台](./images/access-backend.png)
+    ![访问后台](./images/chat-interface.png)
 
 !!! note
 
