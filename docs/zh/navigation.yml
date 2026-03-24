@@ -1615,6 +1615,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2026:
+          - KubeCon Europe 2026 见闻录: blogs/2026/kubecon-eu.md
           - DaoCloud 参与制定大模型推理加速等国家标准: blogs/2026/caict.md
           - OCI 正在悄悄「占领一切」: blogs/2026/oci.md
           - 拓扑感知调度让 AI 调度更智能: blogs/2026/topology-aware-scheduling.md
