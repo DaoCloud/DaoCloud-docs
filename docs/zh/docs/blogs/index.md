@@ -11,6 +11,11 @@ hide:
 
 ## 2026 年
 
+- [DaoCloud 在 KubeCon 2026：勾勒 AI 基础设施的关键路径](./2026/kubecon-eu.md)
+
+    欧洲 KubeCon 2026 在荷兰阿姆斯特丹 RAI 国际会展中心盛大召开，
+    DaoCloud 积极参与其中，助力全球勾勒 AI 基础设施的关键路径。
+
 - [DaoCloud 助力中国信通院制定大模型推理加速等国家标准](./2026/caict.md)
 
     喜讯！DaoCloud 凭借在算力互联网及算力互联互通领域的突出贡献，荣获
