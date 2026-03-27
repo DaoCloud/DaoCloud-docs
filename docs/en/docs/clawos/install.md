@@ -1,24 +1,26 @@
-# Offline Installation
+# Installation
+
+## Offline Installation
 
 This page describes how to download the ClawOS offline package and install it.
 
-## Download
+### Download
 
-Download the ClawOS offline package using the following link:  
+Download the ClawOS offline package using the following link:
 https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_amd64.tar
 
 If a newer version is released, replace `v0.2.0` accordingly.
 
-## Load Images and Chart Packages from the Offline Bundle
+### Load Images and Chart Packages from the Offline Bundle
 
 !!! info
 
     Prerequisite: Upload the offline package to the target node.
 
-You can load images using one of the following two methods.  
+You can load images using one of the following two methods.
 If a container registry is available in your environment, it is recommended to use **chart-syncer** to sync images to the registry, as it is more efficient and convenient.
 
-### Sync Images to a Container Registry Using chart-syncer
+#### Sync Images to a Container Registry Using chart-syncer
 
 1. Create `load-image.yaml`
 
@@ -90,7 +92,7 @@ If a container registry is available in your environment, it is recommended to u
     charts-syncer sync --config load-image.yaml
     ```
 
-### Load Images Directly Using Docker or containerd
+#### Load Images Directly Using Docker or containerd
 
 Extract the tar package and load images manually.
 
@@ -122,19 +124,19 @@ Extract the tar package and load images manually.
 
 !!! note
 
-    Each node must load images into Docker or containerd individually.  
+    Each node must load images into Docker or containerd individually.
     After loading, you must tag images to ensure Registry and Repository match the installation configuration.
 
-## Installation
+### Installation
 
-### Prerequisites
+#### Prerequisites
 
 1. Ensure the target Kubernetes cluster has the required dependencies installed:
 
-    - hydra-apiserver  
-    - kpanda-apiserver  
-    - ghippo-apiserver  
-    - kpanda-clusterpedia-apiserver  
+    - hydra-apiserver
+    - kpanda-apiserver
+    - ghippo-apiserver
+    - kpanda-clusterpedia-apiserver
 
 2. Update hydra AuthorizationPolicy to allow traffic from `agentclaw-system`:
 
@@ -182,17 +184,46 @@ Extract the tar package and load images manually.
     +         - --metric-annotations-allowlist=deployments=[agentclaw.io/instance-name,agentclaw.io/workspace-id]
     ```
 
-### Install via Kpanda UI
+#### Install via Kpanda UI
 
-After successfully syncing images and charts using chart-syncer, you can install directly from the Kpanda **Helm Applications** page.  
+After successfully syncing images and charts using chart-syncer, you can install directly from the Kpanda **Helm Applications** page.
 Update the offline repository, locate the `agentclaw` chart, and install it. No parameter changes are required.
 
-### Install via Helm CLI
+#### Install via Helm CLI
 
 1. Add Helm repository:
 
     ```bash
     helm repo add agentclaw-release https://release.daocloud.io/chartrepo/clawos
+    helm repo update
+    ```
+
+2. Install the chart:
+
+    ```bash
+    helm upgrade agentclaw agentclaw-release -n agentclaw-system --install --create-namespace
+    ```
+
+
+## Online Installation
+
+!!! info
+
+    The prerequisites for online installation are the same as for offline installation.
+
+
+### Install via Kpanda UI
+
+First, add the `agentclaw-release` repository in **Helm Apps** - **Helm Repositories**: `https://release.daocloud.io/chartrepo/agentclaw`,
+then find the `agentclaw` chart in **Helm Charts** and click **Install**. No parameter changes are required during installation.
+
+
+### Install via Helm
+
+1. Add the repository:
+
+    ```bash
+    helm repo add agentclaw-release https://release.daocloud.io/chartrepo/agentclaw
     helm repo update
     ```
 

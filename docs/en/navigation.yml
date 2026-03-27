@@ -1190,7 +1190,7 @@ nav:
       - Cloud Native AI:
           - ClawOS:
               - Intro: clawos/index.md
-              - Install: clawos/offline-install.md
+              - Install: clawos/install.md
               - Quick Start: clawos/quickstart.md
               - Integrate Feishu: clawos/feishu.md
               - FAQs: clawos/faq.md

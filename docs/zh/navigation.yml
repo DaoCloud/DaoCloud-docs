@@ -1284,7 +1284,7 @@ nav:
       - 云原生 AI:
           - ClawOS 智能体:
               - 介绍: clawos/index.md
-              - 安装: clawos/offline-install.md
+              - 安装: clawos/install.md
               - 快速入门: clawos/quickstart.md
               - 飞书集成: clawos/feishu.md
               - 常见问题: clawos/faq.md

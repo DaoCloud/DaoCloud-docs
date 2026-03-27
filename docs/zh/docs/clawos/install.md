@@ -1,8 +1,10 @@
-# 离线安装
+# 安装
+
+## 离线安装
 
 本页说明如何下载 CloawOS 离线包以及如何安装。
 
-## 下载
+### 下载
 
 使用以下链接下载 ClawOS 离线包：
 
@@ -12,7 +14,7 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_a
 
 如果有后续新版本请直接替换 `v0.2.0`。
 
-## 从离线包中加载镜像和 chart 包
+### 从离线包中加载镜像和 chart 包
 
 !!! info
 
@@ -20,7 +22,7 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_a
 
 您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 chart-syncer 同步镜像到镜像仓库，该方法更加高效便捷。
 
-### chart-syncer 同步镜像到镜像仓库
+#### chart-syncer 同步镜像到镜像仓库
 
 1. 创建 load-image.yaml
 
@@ -92,7 +94,7 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_a
     charts-syncer sync --config load-image.yaml
     ```
 
-### Docker 或 containerd 直接加载
+#### Docker 或 containerd 直接加载
 
 解压并加载镜像文件。
 
@@ -127,9 +129,9 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_a
     每个 node 都需要做 Docker 或 containerd 加载镜像操作，
     加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
-## 安装
+### 安装
 
-### 前置条件
+#### 前置条件
 
 1. 安装前请确保目标 Kubernetes 集群已配置必要的依赖服务：
 
@@ -185,17 +187,46 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_a
     +           - --metric-annotations-allowlist=deployments=[agentclaw.io/instance-name,agentclaw.io/workspace-id]
     ```
 
-### 通过 Kpanda UI 安装
+#### 通过 Kpanda UI 安装
 
 在 chart-syncer 成功同步镜像和 chart 后可以直接在 Kpanda **Helm 应用** 中先更新离线仓库，然后找到
 chart agentclaw 并开始安装, 安装时不需要更改任何参数。
 
-### 通过 Helm 命令安装
+#### 通过 Helm 命令安装
 
 1. 添加 Helm 仓库
 
     ```bash
     helm repo add agentclaw-release https://release.daocloud.io/chartrepo/clawos
+    helm repo update
+    ```
+
+2. 安装 Chart
+
+    ```bash
+    helm upgrade agentclaw agentclaw-release -n agentclaw-system --install --create-namespace
+    ```
+
+
+## 在线安装
+
+!!! info
+
+    在线按照的前置条件与离线安装一样。
+
+
+### 通过 Kpanda UI 安装
+
+先在 **Helm 应用** - **Helm 仓库** 中添加 `agentclaw-release` 仓库：`https://release.daocloud.io/chartrepo/agentclaw`,
+然后到 **Helm 模板** 中找到 `agentclaw` chart 并点击 **安装**，安装时不需要更改任何参数
+
+
+### 通过 helm 安装
+
+1. 添加仓库
+
+    ```bash
+    helm repo add agentclaw-release 
     helm repo update
     ```
 
