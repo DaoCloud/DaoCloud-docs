@@ -1,6 +1,6 @@
 # 快速入门
 
-本指南将帮助您快速创建和使用 OpenClaw 实例。
+本指南将帮助您在 DCE 上快速创建和使用 OpenClaw 实例。
 
 ## 前提条件
 
@@ -18,13 +18,13 @@
 
     点击右下角 **确定**
 
-    ![飞书集成](./images/feishu-integration.png)
+    ![飞书集成](images/feishu.png)
 
     > 有关如何获取飞书配置信息以及对接飞书的详细步骤，请参考[飞书集成](./feishu.md)文档。
 
 1. 耐心等待实例创建完成。
 
-    ![等待创建](./images/wait-for-creation.png)
+    ![等待创建](images/wait-for.png)
 
 ## 访问 OpenClaw
 
