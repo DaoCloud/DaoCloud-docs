@@ -4,8 +4,13 @@
 
 ## 下载
 
-使用这个链接：https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_amd64.tar 下载 ClawOS 离线包。
-如果有后续新版本请直接替换`v0.2.0`。 
+使用以下链接下载 ClawOS 离线包：
+
+```text
+https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_amd64.tar
+```
+
+如果有后续新版本请直接替换 `v0.2.0`。
 
 ## 从离线包中加载镜像和 chart 包
 
@@ -136,7 +141,7 @@
 2. 更新 hydra AuthorizationPolicy 允许 agent-claw-system 的流量
 
     ```shell
-    kubectl -n hydra-system edit AuthorizationPolicy hydra-apiserver  
+    kubectl -n hydra-system edit AuthorizationPolicy hydra-apiserver
     ```
 
     ```diff
@@ -155,7 +160,7 @@
     +       - agentclaw-system
     ```
 
-3. 配置 insight-system 的 kube-state-metrics 的启动项
+3. 配置 insight-system 的 kube-state-metrics 的启动项（需要给在部署 Agent 的集群添加此配置）
 
     ```shell
     kubectl -n insight-system edit deployment insight-agent-kube-state-metrics
@@ -182,9 +187,10 @@
 
 ### 通过 Kpanda UI 安装
 
-在 chart-syncer 成功同步镜像和 chart 后可以直接在 Kpanda 「Helm 应用」中先更新离线仓库，然后找到 chart agentclaw 并开始安装, 安装时不需要更改任何参数。
+在 chart-syncer 成功同步镜像和 chart 后可以直接在 Kpanda **Helm 应用** 中先更新离线仓库，然后找到
+chart agentclaw 并开始安装, 安装时不需要更改任何参数。
 
-### 通过 helm 命令安装
+### 通过 Helm 命令安装
 
 1. 添加 Helm 仓库
 
