@@ -1,8 +1,10 @@
 # 安装
 
+本页说明离线和在线安装 ClawOS 的两种安装方式。
+
 ## 离线安装
 
-本页说明如何下载 CloawOS 离线包以及如何安装。
+本页说明如何下载 ClawOS 离线包以及如何安装。
 
 ### 下载
 
@@ -12,7 +14,7 @@
 https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_amd64.tar
 ```
 
-如果有后续新版本请直接替换 `v0.2.0`。
+如果有更新版本，请替换以上 URL 中的 `v0.2.0`。
 
 ### 从离线包中加载镜像和 chart 包
 
@@ -129,7 +131,7 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_a
     每个 node 都需要做 Docker 或 containerd 加载镜像操作，
     加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
-### 安装
+### 离线安装步骤
 
 #### 前置条件
 
@@ -192,7 +194,7 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_a
 在 chart-syncer 成功同步镜像和 chart 后可以直接在 Kpanda **Helm 应用** 中先更新离线仓库，然后找到
 chart agentclaw 并开始安装, 安装时不需要更改任何参数。
 
-#### 通过 Helm 命令安装
+#### 通过 Helm 安装
 
 1. 添加 Helm 仓库
 
@@ -207,21 +209,19 @@ chart agentclaw 并开始安装, 安装时不需要更改任何参数。
     helm upgrade agentclaw agentclaw-release -n agentclaw-system --install --create-namespace
     ```
 
-
 ## 在线安装
 
 !!! info
 
-    在线按照的前置条件与离线安装一样。
-
+    在线安装的前置条件与[离线安装](#_4)一样。
 
 ### 通过 Kpanda UI 安装
 
-先在 **Helm 应用** - **Helm 仓库** 中添加 `agentclaw-release` 仓库：`https://release.daocloud.io/chartrepo/agentclaw`,
-然后到 **Helm 模板** 中找到 `agentclaw` chart 并点击 **安装**，安装时不需要更改任何参数
+先在 **Helm 应用** -> **Helm 仓库** 中添加 `agentclaw-release` 仓库：
+`https://release.daocloud.io/chartrepo/agentclaw`,
+然后到 **Helm 模板** 中找到 `agentclaw` chart 并点击 **安装** ，安装时不需要更改任何参数。
 
-
-### 通过 helm 安装
+### 通过 Helm 安装
 
 1. 添加仓库
 

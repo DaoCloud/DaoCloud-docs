@@ -1,5 +1,7 @@
 # 常见问题 (FAQ)
 
+本页列出 ClawOS 常见的一些问题和解决方案。
+
 ## 小龙虾的记忆会因为实例问题而丢失吗？
 
 **不会**
@@ -36,4 +38,4 @@ DaoCloud 的 ClawOS 是面向企业级的"养虾平台"：
 
 ## 飞书集成后不生效
 
-一个飞书应用同时只能被一个 OpenClaw 连接使用，如果有多个 OpenClaw 实例，每个 OpenClaw 用独立的 App ID/Secret。
+一个飞书应用同时只能被一个 OpenClaw 连接使用，如果有多个 OpenClaw 实例，每个 OpenClaw 需使用独立的 App ID 或 Secret。
