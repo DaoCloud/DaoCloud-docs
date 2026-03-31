@@ -17,3 +17,4 @@ Ingress Nginx is an Ingress controller hosted by the official Kubernetes communi
 - [Logs](./log.md)
 - [Upload Limit](./upload.md)
 - [Mirror Traffic](./mirror.md)
+- [Troubleshooting](./troubleshooting.md)
