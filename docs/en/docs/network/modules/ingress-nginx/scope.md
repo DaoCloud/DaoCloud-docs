@@ -2,62 +2,11 @@
 
 The IngressClass Scope can be used to specify whether the Ingress instance is limited to the cluster level、the namespace level and the workspace level.
 
-**Platform-level Load Balancing**
+## Cluster Level / Namespace Level
 
-* Platform-level Ingress instances can be set up in the same cluster that shares the same Ingress instance.
+You can refer to the diagram below to create a cluster-level or tenant-level ingress-nginx instance.
 
-**Namespace-level Load Balancing**
-
-Namespace-level load balancing consists of `Namespace Ingress instances` and `Workspace Ingress instances`.
-
-* Namespace-level Ingress instances can be set when a namespace use an exclusive Ingress instance for load isolation.
-* The workspace has an exclusive Ingress instance for load isolation, which can be set up as a `workspace-level Ingress instance`. The workspace corresponds to the namespace under the current cluster where all Pods can receive requests distributed by this load balancer.
-
-> If there are different applications in the same namespace in the same cluster that need to use different Ingress instances, please refer to [IngressClass](ingressclass.md).
-
-## Platform-level Ingress instances
-
-When creating an Ingress instance with `Ingress Scope` enabled, the IngressClass resource is created with `platform-level` Ingress instances in the following two cases:
-
-1. Only `parameters` is set but `.spec.parameters.scope` is not set
-2. `.spec.parameters.scope` is set to `cluster`
-
-```yaml
-# Example
-apiVersion: networking.k8s.io/v1
-kind: IngressClass
-metadata:
-  name: external-lb-1
-spec:
-  controller: example.com/ingress-controller
-  parameters:
-    scope: Cluster # Specify the scope of the Ingress instance as Cluster
-    apiGroup: k8s.example.net
-    kind: ClusterIngressParameter # Specify the Ingress instance Kind as ClusterIngressParameter
-    name: external-config-1
-```
-
-## Namespace-level Ingress instances
-
-When creating an Ingress instance, with  `Ingress Scope` enabled, and IngressClass set to `.spec.parameters`, and `.spec.parameters.scope` set to `Namespace`, then the Ingress Class of the Ingress instance is `namespace level` and the namespace to be used needs to be specified.
-
-Namespace-level Ingress instances are equivalent to the fact that the admin delegates Ingress usage rights to a namespace, allowing for resource isolation. If you set up namespace-level instances, you can select and use them in `Namespace-level Load Balancing` when you create routes.
-
-```yaml
-#Example
-apiVersion: networking.k8s.io/v1
-kind: IngressClass
-metadata:
-  name: external-lb-2
-spec:
-  controller: example.com/ingress-controller
-  parameters:
-    scope: Namespace # Specify the scope of the Ingress instance as Namespace
-    apiGroup: k8s.example.com
-    kind: IngressParameter # Specifies that the Ingress instance Kind is IngressParameter
-    namespace: default # Specify the namespace to be used
-    name: external-config
-```
+![ingress-class-en](../../images/ingress-class-en.png)
 
 ## Workspace-level Ingress instances
 

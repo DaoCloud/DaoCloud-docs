@@ -2,62 +2,12 @@
 
 IngressClass Scope 用于指定 Ingress 实例的使用范围为集群级、命名空间级和工作空间级。
 
-**平台级负载均衡**
+## 集群级/租户级
 
-* 同一个集群中，共享同一个 Ingress 实例，可设置`平台级 Ingress 实例`。
+可以参考下图创建集群级或者租户级 ingress nginx 实例。
 
-**租户级负载均衡**
+![ingress-class-zh](../../images/ingress-class-zh.png)
 
-租户级负载均衡分为 `命名空间 Ingress 实例` 和 `工作空间 Ingress 实例`
-
-* 单一命名空间独享一个 Ingress 实例实现负载隔离，可设置`命名空间级 Ingress 实例`。
-* 工作空间独享一个 Ingress 实例实现负载隔离，可设置`工作空间 Ingress 实例`，工作空间中对应当前集群下的命名空间，其中 Pod 都可以接收到由该负载均衡分发的请求。
-
-> 如果在同一个集群内，同一命名空间内有不同应用需要使用不同 Ingress 实例的需求，请参考 [IngressClass](ingressclass.md)。
-
-## 平台级 Ingress 实例
-
-创建 Ingress 实例时，如果启用 `Ingress Scope`，创建后的 IngressClass 资源在以下两种情况下， Ingress 实例的使用范围都为`平台级`：
-
-1. 仅设置了 `parameters` 但是未设置 ` .spec.parameters.scope` 
-2. 设置了 ` .spec.parameters.scope` 为 `cluster`
-
-```yaml
-#示例
-apiVersion: networking.k8s.io/v1
-kind: IngressClass
-metadata:
-  name: external-lb-1
-spec:
-  controller: example.com/ingress-controller
-  parameters:
-    scope: Cluster # 指定 Ingress 实例范围为 Cluster
-    apiGroup: k8s.example.net
-    kind: ClusterIngressParameter #指定 Ingress 实例 Kind 为 ClusterIngressParameter
-    name: external-config-1
-```
-
-## 命名空间级 Ingress 实例
-
-当创建 Ingress 实例时，如果启用 `Ingress Scope`，IngressClass 设置了 `.spec.parameters`，并且设置 `.spec.parameters.scope` 为 `Namespace`，那么 Ingress 实例的 Ingress Class 指向为`命名空间级`，需要指定待使用的命名空间。
-
-命名空间级的 Ingress 实例，相当于管理员将 Ingress 的使用权限下发给到某个命名空间，可以实现资源隔离，如设置了命名空间级实例，创建路由时，可在 `租户级负载均衡`中选择并使用。
-
-```yaml
-#示例
-apiVersion: networking.k8s.io/v1
-kind: IngressClass
-metadata:
-  name: external-lb-2
-spec:
-  controller: example.com/ingress-controller
-  parameters:
-    scope: Namespace # 指定 Ingress 实例范围为 Namespace
-    apiGroup: k8s.example.com
-    kind: IngressParameter # 指定 Ingress 实例 Kind 为 IngressParameter
-    namespace: default # 指定待使用的 Namespace
-    name: external-config
-```
 
 ## 工作空间 Ingress 实例
 
