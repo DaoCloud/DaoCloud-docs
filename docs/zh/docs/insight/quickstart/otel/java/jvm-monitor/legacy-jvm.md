@@ -3,11 +3,13 @@
 如果您的 Java 应用通过其他方式（比如 Spring Boot Actuator）暴露了 JVM 的监控指标，
 我们需要让监控数据被采集到。您可以通过在工作负载中添加注解（Kubernetes Annotations）的方式让 Insight 来采集已有的 JVM 指标：
 
+> 注意: 请先检查并确保 Metrics 的 URL 或者 Path 是否正确。比如 Spring Boot Actuator 默认的 Metrics 端口和路径为 :8080/actuator/prometheus
+
 ```yaml
 annatation: 
   insight.opentelemetry.io/metric-scrape: "true" # 是否采集
-  insight.opentelemetry.io/metric-path: "/"      # 采集指标的路径
-  insight.opentelemetry.io/metric-port: "9464"   # 采集指标的端口
+  insight.opentelemetry.io/metric-path: "/actuator/prometheus"      # 采集指标的路径
+  insight.opentelemetry.io/metric-port: "8080"   # 采集指标的端口
 ```
 
 例如为 __my-deployment-app__ 添加注解： 
@@ -30,8 +32,8 @@ spec:
         app.kubernetes.io/name: my-deployment-app
       annotations:
         insight.opentelemetry.io/metric-scrape: "true" # 是否采集
-        insight.opentelemetry.io/metric-path: "/"      # 采集指标的路径
-        insight.opentelemetry.io/metric-port: "9464"   # 采集指标的端口
+        insight.opentelemetry.io/metric-path: "/actuator/prometheus"     # 采集指标的路径
+        insight.opentelemetry.io/metric-port: "8080"   # 采集指标的端口
 ```
 
 以下是完整示例：
