@@ -16,3 +16,4 @@ hide:
 - [日志配置](./log.md)
 - [上传限制](./upload.md)
 - [镜像流量](./mirror.md)
+- [排障指南](./troubleshooting.md)
