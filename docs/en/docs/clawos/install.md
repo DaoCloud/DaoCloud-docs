@@ -18,7 +18,9 @@ If a newer version is released, replace `v0.2.0` accordingly.
 !!! info
 
     If you need the armd64 version, please use the link:
+    ```text
     https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_arm64.tar
+    ```
 
 
 ### Load Images and Chart Packages from the Offline Bundle
