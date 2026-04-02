@@ -19,7 +19,9 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_a
 !!! info
 
     如果你需要 armd64 版本，请使用链接：
+    ```text
     https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_arm64.tar
+    ```
 
 
 ### 从离线包中加载镜像和 chart 包
