@@ -7,9 +7,19 @@ This page describes how to download the ClawOS offline package and install it.
 ### Download
 
 Download the ClawOS offline package using the following link:
+
+```text
 https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_amd64.tar
+```
 
 If a newer version is released, replace `v0.2.0` accordingly.
+
+
+!!! info
+
+    If you need the armd64 version, please use the link:
+    https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_arm64.tar
+
 
 ### Load Images and Chart Packages from the Offline Bundle
 
