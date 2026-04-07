@@ -138,8 +138,8 @@ DaoCloud will provide remote software support for non-discontinued and certified
     | **Abbreviation** | **Full Name** | **Description** |
     | ---------------- | ------------- | --------------- |
     | GA | General Availability | Product released on June 1, 2023 |
-    | EOSS | End of Standard Support | Patch development and full support will cease on June 1, 2026, after product release |
-    | EOSL | End of Support Life | Service will cease on October 30, 2028, after product release |
+    | EOSS | End of Standard Support | Patch development and full support will cease on January 31, 2029, after product release |
+    | EOSL | End of Support Life | Service will cease on January 31, 2031, after product release |
 
 - DCE 4.y Series
 
