@@ -1616,6 +1616,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2026:
+          - Kubernetes v1.36 抢先一览: blogs/2026/k8s-136.md
           - DaoCloud 在 KubeCon 2026: blogs/2026/kubecon-eu.md
           - DaoCloud 参与制定大模型推理加速等国家标准: blogs/2026/caict.md
           - OCI 正在悄悄「占领一切」: blogs/2026/oci.md
