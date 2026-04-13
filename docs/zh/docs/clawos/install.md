@@ -11,16 +11,16 @@
 使用以下链接下载 ClawOS 离线包：
 
 ```text
-https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_amd64.tar
+https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.3_amd64.tar
 ```
 
-如果有更新版本，请替换以上 URL 中的 `v0.2.0`。
+如果有更新版本，请替换以上 URL 中的 `v0.2.3`。
 
 !!! info
 
     如果你需要 armd64 版本，请使用链接：
     ```text
-    https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_arm64.tar
+    https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.3_arm64.tar
     ```
 
 
