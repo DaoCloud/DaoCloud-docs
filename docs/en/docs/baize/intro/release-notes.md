@@ -13,6 +13,29 @@ so that you can learn its evolution path and feature changes.
     Features labeled as Beta may undergo changes; please use them with caution
     and provide prompt feedback if you encounter any issues.
 
+## 2026-03-31
+
+### v0.25.1
+
+- **Refactored** the dataset component that depends on the data space. Manual upgrade is required. See [Upgrade dataset](upgrade-notes.md#_1)
+- **Refactored** the scheduling-aware component (kueue). Manual upgrade is required. See [Upgrade kueue](upgrade-notes.md#_2)
+- **Fixed** an issue where SSH in Notebook could not work properly
+- **Fixed** an issue where images in the root directory of the integrated image registry could not be selected due to UI errors
+- **Fixed** vulnerability CVE-2026-26958
+- **Fixed** missing offline images in the offline package
+- **Fixed** an issue where the baizectl CLI could not work properly in Notebook
+
+## 2026-01-31
+
+### v0.24.1
+
+- **Added** Inference services now support custom inference frameworks
+- **Added** Notebook now supports custom startup commands
+- **Upgraded** vLLM to v0.12.0
+- **Added** support for Kubeflow Trainer v2 while remaining compatible with v1; training jobs run properly
+- **Fixed** an issue where Notebook required root privileges to run
+- **Fixed** an issue where the `secretRef` field was lost after updating the data space
+
 ## 2025-12-31
 
 ### v0.23.1
