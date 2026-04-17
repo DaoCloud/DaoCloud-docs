@@ -1295,6 +1295,7 @@ nav:
                   - 安装 AI Lab 组件: baize/intro/install.md
                   - 首次使用: baize/intro/first.md
                   - Release Notes: baize/intro/release-notes.md
+                  - 升级注意事项: baize/intro/upgrade-notes.md
               - 开发控制台:
                   - 介绍: baize/developer/index.md
                   - 快速入门: baize/developer/quick-start.md
@@ -1359,6 +1360,7 @@ nav:
                   - Release Notes: hydra/intro/release-notes.md
                   - 部署大模型服务平台: hydra/intro/deploy-ws.md
                   - 离线升级大模型服务平台: hydra/intro/offline-upgrade.md
+                  - 升级注意事项: hydra/intro/upgrade-notes.md
               - 普通用户视图:
                   - 模型广场: hydra/index.md
                   - 模型体验: hydra/exp.md
