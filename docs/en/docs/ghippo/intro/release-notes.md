@@ -3,6 +3,24 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2025-12-31
+
+### v0.45.0
+
+* **Added** (CSP) API support for user invitation registration and identity binding.
+* **Added** API support for integrating GProduct via Webhook.
+* **Added** API support for create, read, update, and delete operations on event notification.
+* **Optimized** SMS channel configuration approach.
+* **Fixed** issue where password reset SMS sending failed within a short time window.
+
+## 2025-11-30
+
+### v0.44.0
+
+* **Added** (CSP) automation for Keycloak initialization configuration in user registration and login features.
+* **Added** support for multi-condition fuzzy search in audit logs.
+* **Fixed** issue where email registration messages failed to send.
+
 ## 2025-10-31
 
 ## v0.43.0
