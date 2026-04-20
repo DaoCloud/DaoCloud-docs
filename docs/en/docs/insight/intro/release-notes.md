@@ -8,6 +8,33 @@ date: 2025-06-23
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version. [Upgrade Notes](../quickstart/install/upgrade-note.md).
 
+## 2025-03-31
+
+### v0.41.0
+
+#### Insight Server
+- **Added** "Agent Network Overview" dashboard to monitor agent network metrics
+- **Added** node exporter full dashboard
+- **Added** OTel spanmetrics dashboard
+- **Fixed** record insight_notify_manager_send_fail_total metrics bug
+- **Fixed** grafana require admin user to access insight-components folder and multi-cluster dashbaord bug
+- **Fixed** When watch VMRule CR been deleted, related Alerts and HistoryAlerts will also be deleted
+- **Fixed** verify wecom webhook response bug 
+- **Removed** jaeger chart in insight chart
+- **Improved** create/update inhibition and silence API validation logic
+- **Improved** create/update rule's API validation logic
+- **Improved** replace deprecated vGPUPodsDeviceAllocated with vGPUMemoryAllocated in GPU pod dashboard
+- **Improved** move node relative alert form kubernetes group to node group
+- **Improved** support dce5_installer kafka status in system component status API
+- **Improved** set CoreDNSRequestRateHigh alert threshold to 1000
+- **Improved** use more readable json struct to represent alert NotifyResponse
+- **Upgraded** hwameistor dashboard and alert
+
+#### Insight Agent
+- **Added** OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT environment variable to auto-instrumentation containers for length limitation
+- **Upgraded** fluent-bit image to 4.2.2 for CVE
+- **Upgraded** runbook nginx image to 1.29.5 for CVE
+
 ## 2026-01-31
 
 ### v0.40.1
