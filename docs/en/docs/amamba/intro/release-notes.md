@@ -8,6 +8,17 @@ date: 2025-03-18
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version. 
 
+## 2026-03-31
+
+### v0.40.1
+
+- **Added** support for enabling and disabling built-in pipeline templates
+- **Added** support for Git-type parameters in pipelines
+- **Added** support for multiple filtering criteria in the pipeline run history list
+- **Added** the return of the SonarQube name configured in Jenkins within toolchain details
+- **Added** support for password modification in the JFrog toolchain
+- **Optimized** the issue of excessive Jenkins load during full pipeline synchronization
+  
 ## 2025-11-30
 
 ### v0.39.0
