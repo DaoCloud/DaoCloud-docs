@@ -8,7 +8,7 @@ date: 2025-06-23
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version. [Upgrade Notes](../quickstart/install/upgrade-note.md).
 
-## 2025-03-31
+## 2026-03-31
 
 ### v0.41.0
 
