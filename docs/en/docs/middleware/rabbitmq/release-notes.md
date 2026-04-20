@@ -11,6 +11,13 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 *[mcamel-rabbitmq]: "mcamel" is the dev name for DaoCloud's middlewares, and "rabbitmq" is a message agent implemented on the basis of AMQP
 
+## 2026-03-31
+
+### v0.31.0
+
+- **Added** support for viewing RabbitMQ instances across all workspaces visible to the current user
+- **Improved** and adapted filtering criteria for the instance list
+
 ## 2025-12-31
 
 ### v0.30.0
