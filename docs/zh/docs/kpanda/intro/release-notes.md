@@ -6,23 +6,41 @@
 
 ## 2026-03-30
 
-### v0.46.0
+### v0.46
 
 - **新增** 支持 YAML 的创建、修改等操作审计。
 - **新增** 支持通过 Helm 模板安装商业版 HAMi 插件。
+- **新增** GetImageInfo API。
 - **优化** SDK 搜索能力优化。
+- **修复** GetImageInfo API 在 namespace 没有绑定任何 workspace 时返回 404 问题。
+- **修复** 节点打上 `gpu.kpanda.io/device-plugin.ignore` label 时不再自动设置 `nvidia.com/gpu.deploy.device-plugin` 为 false，允许用户手动控制该 label，避免影响用户自己安装的 gpu-operator 的 device-plugin 运行。
 
-## 2025-10-09
+## 2026-01-31
 
-### v0.43.0
+### v0.45
 
-- **新增**  gpu device 列表新增通过UUID和ID搜索功能。
+- **新增** 部分功能审计日志。
+
+## 2025-12-31
+
+### v0.44
+
+- **新增** ListCustomResources 和 List Event API 支持 fieldSelector 查询。
+- **修复** nginx 漏洞。
+
+## 2025-11-30
+
+### v0.43
+
+- **新增** gpu device 列表新增通过 UUID 和 ID 搜索功能。
+- **修复** 上传路径中包含 `upload` 字符导致文件上传失败。
+- **修复** kpanda-shell 漏洞。
 - **修复** cronjob 的 pause 状态显示不正确。
 - **修复** 通过修改集群高级配置 Helm 操作记录保留未生效。
 - **优化** NS Viewer 用户控制台权限校验，现在点击控制台时即会进行权限检查并提示，避免进入后报错。
-- **优化** 查询pod很慢，页面有报错。
-- **优化** GPU 管理支持显示 dashboard.
-- **优化** 获取的集群资源过滤掉 shim 集群的资源.
+- **优化** 查询 pod 很慢，页面有报错。
+- **优化** GPU 管理支持显示 dashboard。
+- **优化** 获取的集群资源过滤掉 shim 集群的资源。
 - **优化** 工作集群新增网络相关优化参数。
 - **升级** 更新 Kubean API 至 v0.28.4。
 

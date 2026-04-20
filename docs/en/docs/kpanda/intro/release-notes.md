@@ -10,6 +10,56 @@ understand the evolution path and feature changes from release to release.
 
 *[kpanda]: Internal development codename for DaoCloud container management
 
+## 2026-03-30
+
+### v0.46
+
+- **Added** audit for YAML create/edit and other operations.
+- **Added** installation of the commercial HAMi plugin via Helm template.
+- **Added** `GetImageInfo` API.
+- **Improved** SDK search capability.
+- **Fixed** an issue where the `GetImageInfo` API returned 404 when the namespace was not bound to any workspace.
+- **Fixed** an issue where `nvidia.com/gpu.deploy.device-plugin` was automatically set to `false` when a node was labeled with `gpu.kpanda.io/device-plugin.ignore`. Users can now control this label manually to avoid interfering with their own gpu-operator device-plugin.
+
+## 2026-01-31
+
+### v0.45
+
+- **Added** audit logs for selected features.
+
+## 2025-12-31
+
+### v0.44
+
+- **Added** `fieldSelector` query support for the `ListCustomResources` and `ListEvent` APIs.
+- **Fixed** nginx vulnerability.
+
+## 2025-11-30
+
+### v0.43
+
+- **Added** UUID and ID search for the GPU device list.
+- **Fixed** file upload failure when the upload path contained the string `upload`.
+- **Fixed** kpanda-shell vulnerability.
+- **Fixed** incorrect display of the cronjob pause state.
+- **Fixed** an issue where the Helm operation history retention did not take effect after modifying the cluster advanced configuration.
+- **Improved** NS Viewer user console permission checks. Permissions are now validated when the user clicks the console, providing a prompt instead of failing after entering.
+- **Improved** slow Pod queries that previously triggered page errors.
+- **Improved** GPU management to support displaying the dashboard.
+- **Improved** cluster resource retrieval to filter out resources from shim clusters.
+- **Improved** worker clusters with additional network-related tuning parameters.
+- **Upgraded** Kubean API to v0.28.4.
+
+## 2025-08-31
+
+### v0.42
+
+- **Added** support for third-party device plugins in GPU mode.
+- **Added** shim cluster support in kpanda.
+- **Added** adaptation for the kubespray `containerd_download_url` change.
+- **Improved** node checks: fail fast when a node is unreachable.
+- **Improved** adaptation for kubespray changes on RHEL 8 series and Kylin OS.
+
 ## 2025-07-31
 
 ### v0.41
@@ -51,6 +101,20 @@ understand the evolution path and feature changes from release to release.
 - **Fixed** an issue where Cluster Admin users successfully bound workspaces to clusters.  
 - **Fixed** inconsistent access permissions between container management page and main page for Namespace Admin users.  
 - **Fixed** unresponsive node checks after correcting timezone differences during cluster creation.  
+
+## 2025-04-30
+
+### v0.39
+
+- **Fixed** adaptation for the upstream kubean/kubespray change that removed the `v` prefix from component versions.
+- **Fixed** an issue where clusters could not use a dedicated `resolv.conf`.
+- **Fixed** an issue where a Helm application in a failed state could not be updated again, reporting a running Helm operation.
+- **Fixed** a memory leak in cloud-tty.
+- **Fixed** loss of Helm repository information when a Helm application was still installing or had failed.
+- **Fixed** an issue where GPU mode could not be switched after training tasks completed.
+- **Fixed** a broken jump link in permission settings.
+- **Updated** Helm applications.
+- **Improved** the Helm application retry count after failure, now set to 1 (Issue #5017).
 
 ## 2025-03-31
 
