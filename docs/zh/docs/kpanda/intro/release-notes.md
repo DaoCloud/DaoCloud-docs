@@ -25,7 +25,7 @@
 
 ### v0.44
 
-- **新增** ListCustomResources 和 List Event API 支持 fieldSelector 查询。
+- **新增** `ListCustomResources` 和 `ListEvent` API 支持 `fieldSelector` 查询。
 - **修复** nginx 漏洞。
 
 ## 2025-11-30
