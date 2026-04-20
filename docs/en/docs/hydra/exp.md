@@ -1,4 +1,4 @@
-# Model Trial
+# Playground
 
 *[Hydra]: Codename for LLM Studio
 
@@ -6,14 +6,14 @@ Most models in Hydra not only provide descriptive information but also offer an 
 
 ## Trial Entry Points
 
-Hydra provides two convenient entry points for model trial. Choose the one that best suits your needs:
+Hydra provides two convenient entry points for Playground. Choose the one that best suits your needs:
 
 - **Option 1:** On the [Model Gallery](./index.md) page, select a model you like and click **Try** to enter the trial interface.
-- **Option 2:** From the left menu, click **Model Trial**, select a model type, and begin. Currently supported types are **Text Models** and **Image Models**.
+- **Option 2:** From the left menu, click **Playground**, select a model type, and begin. Currently supported types are **Text Models** and **Image Models**.
 
 ## Trial Overview
 
-When you first enter the **Trial Center**, the system will recommend popular high-quality models for you to try. You can:
+When you first enter the **Playground**, the system will recommend popular high-quality models for you to try. You can:
 
 - Click on a recommended model to immediately start a chat with it;
 - Or select other models of interest from the **Public Models** list;
@@ -23,11 +23,11 @@ When you first enter the **Trial Center**, the system will recommend popular hig
 
 ### Text Models
 
-The Trial Center supports pre-configured conversational models, as well as your self-deployed models. Multiple online text models can be selected at once.
+The Playground supports pre-configured conversational models, as well as your self-deployed models. Multiple online text models can be selected at once.
 
 ### Image Models
 
-Currently supports the preconfigured image generation model `Hidream-l1-Dev`, along with user-deployed services. Only **one** image model can be used in a trial at a time.
+Currently supports the preconfigured image generation model, along with user-deployed services. Only **one** image model can be used in a trial at a time.
 
 ### Completing a Full Conversation
 

@@ -1262,7 +1262,7 @@ nav:
                       - hydra/index.md
                       - Call Models: hydra/api-call.md
                   - Playground: hydra/exp.md
-                  - Served Models:
+                  - Model Management:
                       - hydra/deploy/index.md
                       - Serve a New Model: hydra/deploy/deploy.md
                       - Use Dataset to Manage Model Files: hydra/dataset.md
