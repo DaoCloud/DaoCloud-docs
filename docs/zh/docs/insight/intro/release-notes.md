@@ -2,11 +2,41 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化，[升级注意事项](../quickstart/install/upgrade-note.md)。
 
+## 2025-03-31
+
+### v0.41.0
+
+#### Insight Server
+
+- **新增** “代理网络概览 (**Agent Network Overview**)” 仪表盘，用于监控代理网络指标
+- **新增** Node Exporter 完整版仪表盘
+- **新增** OTel Spanmetrics 仪表盘
+- **修复** `insight_notify_manager_send_fail_total` 指标记录错误的 Bug
+- **修复** Grafana 需要管理员权限才能访问 `insight-components` 文件夹及多集群仪表盘的问题
+- **修复** 当监听到 **VMRule CR** 被删除时，相关的告警（Alerts）和历史告警（HistoryAlerts）也将同步删除
+- **修复** 企业微信（WeCom）Webhook 响应校验的 Bug
+- **移除** Insight Chart 中原有的 Jaeger Chart
+- **优化** 创建/更新**抑制（Inhibition）**和**静默（Silence）** API 的校验逻辑
+- **优化** 创建/更新**规则（Rule）** API 的校验逻辑
+- **优化** GPU Pod 仪表盘：使用 `vGPUMemoryAllocated` 替换已弃用的 `vGPUPodsDeviceAllocated`
+- **优化** 将节点相关告警从 **Kubernetes** 分组移至 **Node** 分组
+- **优化** 系统组件状态 API 支持 `dce5_installer` 的 Kafka 状态
+- **优化** 将 `CoreDNSRequestRateHigh` 告警阈值设置为 **1000**
+- **优化** 使用更具可读性的 JSON 结构来表示告警 `NotifyResponse`
+- **升级** Hwameistor 仪表盘及告警
+
+#### Insight Agent
+
+- **新增** 在自动注入（Auto-instrumentation）容器中添加 `OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT` 环境变量，用于限制属性值长度
+- **升级** Fluent-bit 镜像至 **4.2.2**，修复已知 CVE 漏洞
+- **升级** Runbook Nginx 镜像至 **1.29.5**，修复已知 CVE 漏洞
+
 ## 2026-01-31
 
 ### v0.40.1
 
 #### Insight Server
+
 - **修复** cleanJob 中 `GetGlobalClusterInfo` 被 `RunRuleController` 函数阻塞的问题
 
 ## 2025-12-31
@@ -14,6 +44,7 @@
 ### v0.40.0
 
 #### Insight Server
+
 - **新增** 为告警 `KubeSchedulerHighPodSchedulingAttempts` 和 `KubeControllerManagerHighRequestLatency` 增加 `cluster_name` 字段
 - **新增** 支持通过 spanID 查询调用链
 - **新增** 支持慢 SQL 分析（如 DMP 慢 SQL）
@@ -34,6 +65,7 @@
 - **升级** Grafana 版本从 9.3.14 至 12.1.3
 
 #### Insight Agent
+
 - **新增** 为 OTel Instrumentation 设置默认镜像
 - **优化** 在 OTel 事件日志中忽略 scope 数据
 - **升级** helm-kubectl 至 3.19.1（修复 CVE-2024-56171）
@@ -50,6 +82,7 @@
 ### v0.39.2
 
 #### Insight Agent
+
 - **修复** `apiserver` ServiceMonitor 丢失 `apiserver_request_terminations_total` 指标的问题
 - **修复** Kubernetes 1.18.x 下 DCE4 对 `kube-state-metrics` 的适配问题
 - **修复** 内置 recording rules 不再依赖 `kube_(.*)_labels` 指标
