@@ -12,6 +12,69 @@ This page summarizes all middleware module release notes.
 *[Redis]: A high-performance key-value store, widely used for caching, session management, and distributed locks.  
 *[RocketMQ]: A highly reliable and scalable distributed messaging middleware, suitable for transactional and ordered message scenarios.  
 
+Here is the English version of the release notes, formatted for clarity and ready to use:
+
+## 2026-03-31
+
+### Elasticsearch v0.27.0
+
+- **Added** support for viewing Elasticsearch instances across all workspaces visible to the current user
+- **Fixed** security vulnerabilities by upgrading the Go version
+- **Improved** and adapted filtering criteria for the instance list
+
+### Kafka v0.29.0
+
+- **Added** support for viewing Kafka instances across all workspaces visible to the current user
+- **Fixed** an issue where Addon imports would fail
+- **Improved** and adapted filtering criteria for the instance list
+
+### MinIO v0.24.0
+
+- **Added** support for viewing MinIO instances across all workspaces visible to the current user
+- **Fixed** security vulnerabilities by upgrading the Go version
+- **Fixed** an issue where the instance status failed to accurately reflect the Pod status
+- **Improved** and adapted filtering criteria for the instance list
+
+### MongoDB v0.19.0
+
+- **Added** support for viewing MongoDB instances across all workspaces visible to the current user
+-  **Added** support for recording audit logs when modifying backup configurations
+- **Fixed** and mitigated **CVE-2025-14847** by disabling `mongod` zlib compression
+- **Improved** instance list filtering and unified the handling of workspace filtering criteria
+
+### MySQL v0.29.0
+
+- **Added** support for viewing MySQL instances across all workspaces visible to the current user
+- **Fixed** resource usage display by unifying the metric to `usage/limit` and correcting units
+- **Fixed** image issues for the **MGR operator** on ARM architecture
+- **Fixed** a bug regarding password referencing in the `phpmyadmin` YAML environment variables
+- **Fixed** incorrect CPU and memory usage units on the instance details page
+- **Improved** the update interface by adding parameter validation and refining the post-query verification process
+
+### PostgreSQL v0.21.0
+
+- **Fixed** an error where automatic backup set restoration would fail
+- **Fixed** timezone issues within CronJobs
+- **Fixed** security vulnerability **CVE-2025-68121** by upgrading the Go version
+- **Improved** instance list filtering and unified the handling of workspace filtering criteria
+
+### RabbitMQ v0.31.0
+
+- **Added** support for viewing RabbitMQ instances across all workspaces visible to the current user
+- **Improved** and adapted filtering criteria for the instance list
+
+### Redis v0.30.0
+
+- **Added** support for viewing Redis instances across all workspaces visible to the current user
+- **Fixed** topology diagram display issues occurring when shard slots are non-contiguous
+- **Fixed** security vulnerabilities by upgrading `helm-kubectl`
+- **Improved** instance list filtering and unified the handling of workspace filtering criteria
+
+### RocketMQ v0.18.0
+
+- **Added** support for viewing RocketMQ instances across all workspaces visible to the current user
+- **Improved** instance list filtering and unified the handling of workspace filtering criteria
+
 ## 2026-01-31
 
 ### MySQL v0.28.2
