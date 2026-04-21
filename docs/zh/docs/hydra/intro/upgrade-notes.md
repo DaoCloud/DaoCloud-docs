@@ -52,14 +52,8 @@ Hydra-agent 从 0.13.1 版本开始不再内置 dataset 组件，需要单独通
 
         Hydra-agent 从 v0.12.1 -> v0.13.1，移除了 dataset 组件。
 
-    ```bash
-    helm repo add hydra https://release-ci.daocloud.io/chartrepo/hydra
-
-    helm repo update
-
-    helm upgrade --install hydra-agent hydra/hydra-agent -n hydra-system --version  v0.13-dev-fdbdb95a --debug --set storageserver.volumeSettings.csi.driver=csi.juicefs.com --set storageserver.volumeSettings.csi.volumeHandle=hydra-storageserver-pv  
-    ```
-
+    进入工作集群 的 **Helm 应用** -> **Helm 应用** 页面，找到 **hydra-agent** 插件并更新。    
+    
 5. 验证dataset 
 
     ```bash
