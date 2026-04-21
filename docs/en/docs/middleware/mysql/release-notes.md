@@ -11,6 +11,17 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 *[mcamel-mysql]: "mcamel" is the dev name for DaoCloud's middlewares, and "mysql" is a popular relational database
 
+## 2026-03-31
+
+### v0.29.0
+
+- **Added** support for viewing MySQL instances across all workspaces visible to the current user
+- **Fixed** resource usage display by unifying the metric to `usage/limit` and correcting units
+- **Fixed** image issues for the **MGR operator** on ARM architecture
+- **Fixed** a bug regarding password referencing in the `phpmyadmin` YAML environment variables
+- **Fixed** incorrect CPU and memory usage units on the instance details page
+- **Improved** the update interface by adding parameter validation and refining the post-query verification process
+
 ## 2026-01-31
 
 ### v0.28.2

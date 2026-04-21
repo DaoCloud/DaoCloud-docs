@@ -11,6 +11,15 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 *[Mcamel-MongoDB]: "mcamel" is the dev name for DaoCloud's middlewares, and "MongoDB" is a database middleware that provides services for documentation
 
+## 2026-03-31
+
+### v0.19.0
+
+- **Added** support for viewing MongoDB instances across all workspaces visible to the current user
+- **Added** support for recording audit logs when modifying backup configurations
+- **Fixed** and mitigated **CVE-2025-14847** by disabling `mongod` zlib compression
+- **Improved** instance list filtering and unified the handling of workspace filtering criteria
+
 ## 2025-11-30
 
 ### v0.18.0

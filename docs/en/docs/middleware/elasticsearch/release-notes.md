@@ -11,6 +11,14 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 *[mcamel-elasticsearch]: "mcamel" is the dev name for DaoCloud's middlewares, and "elasticsearch" is the middleware for distributed search and analytics services
 
+## 2026-03-31
+
+### v0.27.0
+
+- **Added** support for viewing Elasticsearch instances across all workspaces visible to the current user
+- **Fixed** security vulnerabilities by upgrading the Go version
+- **Improved** and adapted filtering criteria for the instance list
+
 ## 2025-12-31
 
 ### v0.26.1

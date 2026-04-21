@@ -11,6 +11,14 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 *[mcamel-kafka]: "mcamel" is the dev name for DaoCloud's middlewares, and "kafka" is the middleware that provides distributed messaging queue services
 
+## 2026-03-31
+
+### v0.29.0
+
+- **Added** support for viewing Kafka instances across all workspaces visible to the current user
+- **Fixed** an issue where Addon imports would fail
+- **Improved** and adapted filtering criteria for the instance list
+
 ## 2025-12-31
 
 ### v0.28.0

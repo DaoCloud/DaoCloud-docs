@@ -9,6 +9,13 @@ date: 2024-01-05
 
 This page provides the Release Notes for RocketMQ Message Queue, allowing you to understand the evolution and feature changes of each version.
 
+## 2026-03-31
+
+### v0.18.0
+
+- **Added** support for viewing RocketMQ instances across all workspaces visible to the current user
+- **Improved** instance list filtering and unified the handling of workspace filtering criteria
+
 ## 2025-11-30
 
 ### v0.17.0
