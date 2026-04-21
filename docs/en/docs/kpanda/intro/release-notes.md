@@ -12,7 +12,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2026-03-30
 
-### v0.46
+### v0.46.0
 
 - **Added** audit for YAML create/edit and other operations.
 - **Added** installation of the commercial HAMi plugin via Helm template.
@@ -23,20 +23,20 @@ understand the evolution path and feature changes from release to release.
 
 ## 2026-01-31
 
-### v0.45
+### v0.45.0
 
 - **Added** audit logs for selected features.
 
 ## 2025-12-31
 
-### v0.44
+### v0.44.0
 
 - **Added** `fieldSelector` query support for the `ListCustomResources` and `ListEvent` APIs.
 - **Fixed** nginx vulnerability.
 
 ## 2025-11-30
 
-### v0.43
+### v0.43.3
 
 - **Added** UUID and ID search for the GPU device list.
 - **Fixed** file upload failure when the upload path contained the string `upload`.
@@ -52,7 +52,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2025-08-31
 
-### v0.42
+### v0.42.0
 
 - **Added** support for third-party device plugins in GPU mode.
 - **Added** shim cluster support in kpanda.
@@ -62,7 +62,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2025-07-31
 
-### v0.41
+### v0.41.0
 
 - **Added** GPU management support.  
 - **Improved** instructions for batch uploading nodes when creating clusters or onboarding nodes.  
@@ -80,7 +80,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2025-05-30
 
-### v0.40
+### v0.40.0
 
 - **Added** support for separate `limit` and `request` configuration for Helm task resources.  
 - **Added** support for cluster-specific `resolv.conf`.  
@@ -104,7 +104,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2025-04-30
 
-### v0.39
+### v0.39.0
 
 - **Fixed** adaptation for the upstream kubean/kubespray change that removed the `v` prefix from component versions.
 - **Fixed** an issue where clusters could not use a dedicated `resolv.conf`.
@@ -118,7 +118,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2025-03-31
 
-### v0.38
+### v0.38.0
 
 - **Added** support for installing container management via ARM packages, downloadable directly from the download site.  
 - **Fixed** an issue where namespace resource quota requests exceeded limits without warnings but could still be set successfully.  
@@ -127,7 +127,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2025-02-28
 
-### v0.37
+### v0.37.0
 
 - **Fixed** image pull errors for various services after offline installation of `metax-operator`.  
 - **Fixed** offline Helm installation failure for `metax-operator`.  
@@ -136,7 +136,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2025-01-31
 
-### v0.36
+### v0.36.0
 
 - **Added** a packaged addon for Muxi `metax-exporter`, used to collect Muxi GPU device metrics in the cluster environment, with graphical visualization available in the observability module after installation.
 - **Added** a packaged addon for Muxi `metax-extensions`, providing the `gpu-device` and `gpu-label` components to enable essential resource registration and allocation capabilities for containers using Muxi GPUs.
@@ -145,7 +145,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2024-12-31
 
-### v0.35
+### v0.35.0
 
 - **Updated** access restrictions so that only cluster admins can access the network settings module.
 - **Updated** the cloudshell readiness process to improve speed when no idle workers are available.
