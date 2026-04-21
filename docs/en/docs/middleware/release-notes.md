@@ -12,8 +12,6 @@ This page summarizes all middleware module release notes.
 *[Redis]: A high-performance key-value store, widely used for caching, session management, and distributed locks.  
 *[RocketMQ]: A highly reliable and scalable distributed messaging middleware, suitable for transactional and ordered message scenarios.  
 
-Here is the English version of the release notes, formatted for clarity and ready to use:
-
 ## 2026-03-31
 
 ### Elasticsearch v0.27.0
