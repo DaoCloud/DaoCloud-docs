@@ -285,7 +285,7 @@ spec:
 | k8sVersion | kuBean 安装集群的 K8s 版本必须跟 KuBean 和离线包相匹配 | - |
 | loadBalancer.insightVip | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给全局服务集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP | - |
 | loadBalancer.istioGatewayVip | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口 | - |
-| loadBalancer.type | 所使用的 LoadBalancer 的模式，物理环境用 metallb，POC 用 NodePort，公有云和 SDN CNI 环境用 cloudLB（暂时还未未支持 cloudLB 模式） | NodePort (default)、metallb、cloudLB (Cloud Controller) |
+| loadBalancer.type | 所使用的 LoadBalancer 的模式，物理环境用 metallb，POC 用 NodePort，公有云和 SDN CNI 环境用 cloudLB（暂时还未支持 cloudLB 模式） | NodePort (default)、metallb、cloudLB (Cloud Controller) |
 | loadBalancer.SourceIP | 审计日志获取源IP，副作用：在节点层面无法进行负载均衡 | auto |
 | fullPackagePath | 解压后的离线包的路径，离线模式下该字段必填 | - |
 | addonPackage.path | 应用商店 addon 包本地文件系统路径 | - |
