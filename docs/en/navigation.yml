@@ -1190,7 +1190,9 @@ nav:
                       - MinIO Identity Management: middleware/minio/user-guide/user-management.md
       - Cloud Native AI:
           - ClawOS:
-              - Intro: clawos/index.md
+              - Introduction:
+                  - What is ClawOS: clawos/intro/index.md
+                  - Release Notes: clawos/intro/release-notes.md
               - Install: clawos/install.md
               - Quick Start: clawos/quickstart.md
               - Integrate Feishu: clawos/feishu.md
