@@ -91,3 +91,5 @@ hide:
 </p>
 
 ![bottom banner](./images/ai-from-here.png)
+
+[进一步了解 d.run](https://d.run/product/drun){ .md-button .md-button--primary }

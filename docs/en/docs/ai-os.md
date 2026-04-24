@@ -89,3 +89,5 @@ hide:
 d.run is the foundation of the AI Operating System era—unifying compute, models, and AI applications into a single system, just as an operating system manages a computer.
 
 ![bottom banner](./images/ai-from-here.png)
+
+[Learn more about d.run](https://d.run/product/drun){ .md-button .md-button--primary }
