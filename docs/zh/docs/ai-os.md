@@ -90,6 +90,6 @@ hide:
   d.run 是 AI 操作系统时代的底座，让算力、模型与 AI 应用在一个系统中统一运行，就像操作系统管理计算机一样管理 AI 世界。
 </p>
 
-![bottom banner](./images/ai-from-here.png)
+![bottom banner](./images/ai-from-here.jpeg)
 
 [进一步了解 d.run](https://d.run/product/drun){ .md-button .md-button--primary }
