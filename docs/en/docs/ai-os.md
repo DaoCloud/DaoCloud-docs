@@ -6,7 +6,7 @@ hide:
 
 <div style="max-width: 900px; margin: 0 auto; text-align: center; line-height: 2.2;">
 
-  <h1 style="font-size: 30px; margin-bottom: 16px; font-weight: 800; color: #fff;">
+  <h1 style="font-size: 30px; margin-bottom: 16px; font-weight: 800;">
     d.run AI Operating System
   </h1>
 
@@ -18,12 +18,12 @@ hide:
 
 <div style="text-align: center; max-width: 900px; margin: 0 auto; line-height: 1.8;">
 
-  <p style="font-size: 18px; color: #444;">
+  <p style="font-size: 18px;">
     d.run is a next-generation <strong>AI Operating System</strong> that unifies compute resources, AI models, and applications into a cloud-native runtime environment,<br>
     enabling AI workloads to be scheduled, managed, and optimized just like processes in a traditional operating system.
   </p>
 
-  <p style="font-size: 18px; color: #444; margin-top: 12px;">
+  <p style="font-size: 18px; margin-top: 12px;">
     From GPUs to models, from training to deployment, <strong>d.run turns AI infrastructure into a fully systemized runtime</strong>.
   </p>
 

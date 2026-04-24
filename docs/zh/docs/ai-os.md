@@ -6,7 +6,7 @@ hide:
 
 <div style="max-width: 900px; margin: 0 auto; text-align: center; line-height: 2.2;">
 
-  <h1 style="font-size: 30px; margin-bottom: 16px; font-weight: 800; color: #fff;">
+  <h1 style="font-size: 30px; margin-bottom: 16px; font-weight: 800;">
     d.run AI 操作系统
   </h1>
 
@@ -18,12 +18,12 @@ hide:
 
 <div style="text-align: center; max-width: 900px; margin: 0 auto; line-height: 1.8;">
 
-  <p style="font-size: 18px; color: #444;">
+  <p style="font-size: 18px;">
     d.run 是一款新一代 <strong>AI 操作系统</strong>，将算力资源、AI 模型与应用统一纳入云原生运行体系，<br>
     让 AI 工作负载像操作系统进程一样被高效调度、管理与优化。
   </p>
 
-  <p style="font-size: 18px; color: #444; margin-top: 12px;">
+  <p style="font-size: 18px; margin-top: 12px;">
     从 GPU 到模型，从训练到应用，<strong>d.run 让 AI 基础设施真正实现系统化运行</strong>。
   </p>
 
