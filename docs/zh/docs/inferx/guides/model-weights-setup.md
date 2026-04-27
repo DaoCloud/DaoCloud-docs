@@ -48,7 +48,7 @@ InferX 支持以下两种模型权重管理方式：
 
 DCE 的 Addon 仓库已内置 Dataset Helm Chart，您可以通过界面一键安装。安装完成后，即可根据需求创建 Dataset 资源。
 
-![dce addon dataset](./imgs/dce-addon-dataset-helm.png)
+![dce addon dataset](images/dce-addon-dataset-helm.png)
 
 #### 方案三：手动 Helm 安装 Dataset
 
@@ -94,7 +94,7 @@ spec:
 
 创建 Dataset 后，系统会自动启动一个 Job 下载模型权重至对应的 PVC 中。可通过查看 Job 日志了解下载进度。
 
-![model-wh-download](./imgs/model-wh-download.png)
+![model-wh-download](images/model-wh-download.png)
 
 #### 跨命名空间共享现有 Dataset
 

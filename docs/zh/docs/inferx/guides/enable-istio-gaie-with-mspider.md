@@ -12,7 +12,7 @@
 
 登录 `mspider` 管理平台，在集群列表页面定位目标子集群，记录其对应的网格名称。
 
-![mspider](imgs/mspider-list.png)
+![mspider](images/mspider-list.png)
 
 ### 2. 定位 GlobalMesh 资源
 
@@ -23,7 +23,7 @@
 5. 在资源列表中找到目标子集群对应的网格实例（如 `ms-5090`）
 6. 点击操作列的 **编辑 YAML** 按钮
 
-![img.png](imgs/kpanda-globalmeshes-crd-list.png)
+![img.png](images/kpanda-globalmeshes-crd-list.png)
 
 ### 3. 配置 GAIE 特性参数
 
@@ -33,7 +33,7 @@
 istio.custom_params.values.pilot.env.ENABLE_GATEWAY_API_INFERENCE_EXTENSION: 'true'
 ```
 
-![img.png](imgs/kpanda-globalmeshes-crd.png)
+![img.png](images/kpanda-globalmeshes-crd.png)
 
 ### 4. 提交配置变更
 
