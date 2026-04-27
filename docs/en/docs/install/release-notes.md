@@ -16,6 +16,21 @@ the evolution path and feature changes of each version.
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 *[Hydra]: Dev codename for LLM Studio in DCE 5.0
 
+## 2025-03-31
+
+### v0.39.0
+
+- **Added** License testing support #3287
+- **Fixed** manifest components parsing errors
+
+## 2025-01-31
+
+### v0.38.0
+
+- **Improved** support for deploying workload clusters with Docker 28.x
+- **Fixed** persistence issues of sysctl configuration parameters on seed nodes
+- **Fixed** missing parameters in kubean ConfigMap during upgrade scenarios
+
 ## 2025-12-31
 
 ### v0.37.0

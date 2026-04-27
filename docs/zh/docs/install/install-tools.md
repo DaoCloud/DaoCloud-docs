@@ -25,7 +25,7 @@
 1. 下载脚本。
 
     ```bash
-    export VERSION=v0.35.0   # (1)!
+    export VERSION=v0.39.0   # (1)!
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
