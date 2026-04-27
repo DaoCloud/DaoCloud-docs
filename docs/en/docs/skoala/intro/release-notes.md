@@ -9,6 +9,42 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## 2026-03-31
+
+### v0.54.0
+
+- **Added** static IP field display for hosted Nacos list and detail views
+- **Added** support for hosted Nacos 3.x versions (due to compatibility issues, please use the native Nacos console for management)
+- **Optimized** Docker base image upgraded to 3.23.3
+
+## 2026-01-31
+
+### v0.53.0
+
+- **Added** support for custom annotations in Nacos create/update operations
+- **Added** automatic CRD updates during Chart upgrades
+- **Fixed** incorrect gateway list display under abnormal gateway conditions
+- **Fixed** namespace filtering issues in gateway queries
+- **Fixed** missing plugin-server image in the installer
+- **Fixed** successful response returned by AI Gateway creation API when skoala-init is not installed
+
+## 2025-12-31
+
+### v0.52.1
+
+- **Added** support for viewing all workspace data in AI Gateway and Nacos
+- **Added** version information display in AI Gateway list
+- **Optimized** AI Gateway installation logic
+- **Optimized** upgraded AI Gateway Higress version to v2.1.9
+
+!!! note
+
+    In this release, the AI Gateway Higress version has been upgraded and CRDs have changed. Before upgrading, run the following command in the corresponding workload cluster to manually update the CRD:
+
+    ```shell
+    kubectl apply -f skoala-init/charts/contour-provisioner/crds/higress.gen.yaml
+    ```
+
 ## 2025-11-30
 
 ### v0.51.0
