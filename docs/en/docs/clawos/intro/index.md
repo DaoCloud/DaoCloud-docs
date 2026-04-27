@@ -1,6 +1,6 @@
-# OpenClaw Agent: From “Conversational” to “Action-Oriented”
+# What is ClawOS
 
-## What is OpenClaw
+## ClawOS: OpenClaw Enterprise Management Platform
 
 **OpenClaw** is a new-generation open-source AI agent runtime that represents a leap in AI capabilities — no longer just passively answering questions, but actively planning tasks, invoking tools, and autonomously executing workflows, like a true digital employee handling end-to-end complex work.
 
@@ -22,7 +22,7 @@
 
 DCE now offers **ClawOS v0.1**, an enterprise-grade hosted runtime platform for OpenClaw. No need to configure environments or manually integrate models — your AI digital employee can be up and running in under 5 minutes.
 
-For detailed steps, see the [Quick Start](./quickstart.md) guide.
+For detailed steps, see the [Quick Start](../quickstart.md) guide.
 
 ### Feishu Integration
 
@@ -30,7 +30,7 @@ For detailed steps, see the [Quick Start](./quickstart.md) guide.
 
 Once configured, OpenClaw can send and receive messages, process files, and reply in group chats directly within Feishu — no need to switch interfaces.
 
-For detailed setup instructions, see the [Feishu Integration](./feishu.md) guide.
+For detailed setup instructions, see the [Feishu Integration](../feishu.md) guide.
 
 ## Typical Use Cases
 
@@ -38,9 +38,9 @@ For detailed setup instructions, see the [Feishu Integration](./feishu.md) guide
 
 Faced with dozens of PDF resumes in different formats, OpenClaw can automatically read, extract key technical skills, score candidates based on job requirements, and output structured evaluation reports. What used to take half a day can now be completed in minutes.
 
+![Use Case Example](../images/example-hr.JPEG)
 
-
-
+![Use Case Example](../images/example-hr2.png)
 
 !!! note
 
@@ -50,31 +50,31 @@ Faced with dozens of PDF resumes in different formats, OpenClaw can automaticall
 
 After integrating with GitHub, configure a multi-agent architecture (Main Agent + Research + Reviewer + Codex) to let OpenClaw analyze source code, identify bugs, create pull requests, and enforce CI standards — building a fully personalized automated development orchestrator.
 
-
+![Use Case Example](../images/example-coder.png)
 
 ### Batch Document Review
 
-Encapsulate the full workflow — “read documents → extract key data → validate rules → generate review comments” — into a reusable custom Skill using `createSkill`. With one click, process dozens of reports and output a consolidated CSV, eliminating repetitive work.
+Encapsulate the full workflow — "read documents → extract key data → validate rules → generate review comments" — into a reusable custom Skill using `createSkill`. With one click, process dozens of reports and output a consolidated CSV, eliminating repetitive work.
 
 ## Product Advantages
 
 | Advantage | Description |
 | --- | --- |
 | One-click setup, ready out of the box | No manual configuration of environments, model integration, or permissions required. The system automatically provisions sandboxes and injects tokens. Business users can start instantly without IT involvement. |
-| Secure sandbox isolation | Each OpenClaw instance runs in an isolated container sandbox powered by DaoCloud’s **zestU** kernel-level isolation technology. Even if compromised, the impact is strictly confined within the sandbox, preventing intrusion into internal networks or host file tampering. |
+| Secure sandbox isolation | Each OpenClaw instance runs in an isolated container sandbox powered by DaoCloud's **zestU** kernel-level isolation technology. Even if compromised, the impact is strictly confined within the sandbox, preventing intrusion into internal networks or host file tampering. |
 | Persistent data, memory never lost | The `~/.openclaw` directory is fully persisted in the DCE storage system. Conversations, configurations, and memory remain intact across restarts, pauses, or instance releases. |
 | Secure and controlled model access | All model calls are routed through the DCE AI gateway with enforced security policies — no direct exposure to the public internet. Your data and conversations stay protected within the platform. |
-| Full backend access | DCE provides both [SSH access and noVNC web access](quickstart.md#_4) to OpenClaw instances, supporting full CLI operations for advanced debugging and customization. |
+| Full backend access | DCE provides both [SSH access and noVNC web access](../quickstart.md#_4) to OpenClaw instances, supporting full CLI operations for advanced debugging and customization. |
 
 ## Features
 
 | Feature | Status |
 |---|---|
-| [One-click OpenClaw instance creation](./quickstart.md#openclaw) | Available |
-| [Feishu seamless integration](./feishu.md) | Available |
+| [One-click OpenClaw instance creation](../quickstart.md#openclaw) | Available |
+| [Feishu seamless integration](../feishu.md) | Available |
 | Secure container sandbox isolation | Available |
 | Persistent data storage | Available |
-| [SSH or noVNC web access](./quickstart.md#__tabbed_1_1) | Available |
+| [SSH or noVNC web access](../quickstart.md#__tabbed_1_1) | Available |
 | File management and upload | Available |
 | Token usage analytics and cost control | Coming soon |
 | More model support | Coming soon |

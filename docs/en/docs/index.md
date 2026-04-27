@@ -40,7 +40,7 @@ With extensive testing from thousands of industry customers in real production c
 - :material-engine: **Microservice Engine** [Microservice governance and gateway](skoala/intro/index.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider/intro/index.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/index.md)
-- :shrimp: **ClawOS** [OpenClaw Agent](./clawos/index.md)
+- :shrimp: **ClawOS** [OpenClaw Agent](clawos/intro/index.md)
 - :material-slot-machine: **AI Lab** [Cloud Native AI - Integrated Training and Inference Platform](baize/intro/index.md)
 - :simple-themodelsresource: **LLM Studio** [Use and maintain large language models](./hydra/intro/index.md)
 - :fontawesome-brands-edge: **Cloud Edge Collaboration** [Containers extend to edge](kant/intro/index.md)
