@@ -6,9 +6,9 @@
 
 #### 通过 kpanda Helm 模版
 
-![gateway-api-helm-charts](images/gateway-api-helm-charts.png)
+![gateway-api-helm-charts](guides/images/gateway-api-helm-charts.png)
 
-![install-gateway-api](images/install-gateway-api.png)
+![install-gateway-api](guides/images/install-gateway-api.png)
 
 #### 通过在线安装
 
