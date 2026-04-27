@@ -1,7 +1,5 @@
 # 启用集群的 Istio GAIE 特性
 
-## 概述
-
 本文档介绍如何在集群中启用 Istio GAIE（Gateway API Inference Extension）特性，通过配置 `mspider` 和 `kpanda` 平台完成相关资源设置。
 
 ## 前置条件
@@ -30,6 +28,7 @@
 ### 3. 配置 GAIE 特性参数
 
 在 YAML 编辑页面中，定位到 `controlPlaneParams` 配置节点，在其下添加以下配置项：
+
 ```yaml
 istio.custom_params.values.pilot.env.ENABLE_GATEWAY_API_INFERENCE_EXTENSION: 'true'
 ```
@@ -44,17 +43,14 @@ istio.custom_params.values.pilot.env.ENABLE_GATEWAY_API_INFERENCE_EXTENSION: 'tr
 
 配置生效后，建议通过以下方式验证：
 
-| 验证项  | 说明                                                                                                                                          |
-|------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| 资源状态 | 检查 `globalmeshes.discovery.mspider.io` 资源状态是否为 `SUCCEEDED`                                                                                  |
+| 验证项  | 说明 |
+|------|-----|
+| 资源状态 | 检查 `globalmeshes.discovery.mspider.io` 资源状态是否为 `SUCCEEDED` |
 | 配置生效 | 确认 `ENABLE_GATEWAY_API_INFERENCE_EXTENSION` 参数已正确应用，验证目标集群 `istiod` Pod 是否包含以下环境变量：ENABLE_GATEWAY_API_INFERENCE_EXTENSION 且 value 为 'true'` |
-| 功能测试 | 验证 Gateway API Inference Extension 相关功能是否正常工作                                                                                               |
+| 功能测试 | 验证 Gateway API Inference Extension 相关功能是否正常工作 |
 
+!!! note
 
-## 注意事项
-
-- 配置变更可能需要数分钟生效，请耐心等待
-- 修改前建议备份原有 YAML 配置
-- 如遇问题，请查看相关组件日志进行排查
-
-
+    - 配置变更可能需要数分钟生效，请耐心等待
+    - 修改前建议备份原有 YAML 配置
+    - 如遇问题，请查看相关组件日志进行排查
