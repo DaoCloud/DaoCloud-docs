@@ -152,7 +152,6 @@ plugins:
         "ghippo.md": "ghippo/intro/index.md"
         "video.md": "videos/index.md"
         "baize.md": "baize/intro/index.md"
-        "inferx.md": "inferx/index.md"
 
   # - git-revision-date: #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin
   #     enabled_if_env: "CI"
