@@ -1,6 +1,6 @@
-# ClawOS: OpenClaw Enterprise Management Platform
+# What is ClawOS
 
-## What is OpenClaw
+## ClawOS: OpenClaw Enterprise Management Platform
 
 **OpenClaw** is a new-generation open-source AI agent runtime that represents a leap in AI capabilities — no longer just passively answering questions, but actively planning tasks, invoking tools, and autonomously executing workflows, like a true digital employee handling end-to-end complex work.
 
