@@ -1,30 +1,29 @@
-# 升级注意事项
+# Upgrade Notes
 
-本页说明将 hydra 升级到新版本时需要注意的相关事项。
+This page describes important considerations when upgrading Hydra to a new version.
 
-## 从 v0.12.1（或更低版本）升级到 v0.13.1
+## Upgrading from v0.12.1 (or earlier) to v0.13.1
 
-Hydra-agent 从 0.13.1 版本开始不再内置 dataset 组件，需要单独通过 addon 仓库安装，为保证以前的 dataset CR 在升级之后不会丢失，请参考下述步骤进行升级。
+Starting from v0.13.1, hydra-agent no longer includes the dataset component by default. It must be installed separately via the addon repository. To ensure that existing dataset CRs are not lost after the upgrade, follow the steps below.
 
 !!! note
 
-    以下升级操作需要在每个子集群都执行一遍。
+    The following upgrade steps must be executed on each sub-cluster.
 
-1. 查看目前安装的 hydra-agent 以及所有的 dataset
+1. Check the currently installed hydra-agent and all datasets
 
     ```bash
     cloudshell-worker-ct8cbvdtb6:~# helm ls -n hydra-system | grep agent
     hydra-agent     hydra-system    1               2026-03-16 10:02:15.663202599 +0000 UTC deployed        hydra-agent-v0.12.3             v0.12.3           
-
 
     cloudshell-worker-ct8cbvdtb6:~# kubectl get datasets.dataset.baizeai.io -A
     NAMESPACE      NAME           TYPE          URI                            PHASE
     hydra-system   qwen3-0-6b-1   MODEL_SCOPE   modelscope://Qwen/Qwen3-0.6B   PROCESSING
     ```
 
-1. 执行以下命令修改 CRD，也可以在界面上编辑 CRD 的 yaml 添加 annotation 实现
+1. Run the following command to modify the CRD (you can also edit the CRD YAML in the UI to add annotations)
 
-    通过 helm 的机制 resource-policy=keep 使得 helm 升级的时候跳过此资源，同时修改 dataset 这个 CRD 的 release 相关字段，确保后续单独安装 dataset 不报错。
+    Use Helm’s `resource-policy=keep` to ensure this resource is skipped during upgrade. Also update the dataset CRD release-related fields to avoid errors when installing dataset separately later.
 
     ```bash
     cloudshell-worker-ct8cbvdtb6:~# kubectl annotate crd datasets.dataset.baizeai.io  \
@@ -35,26 +34,26 @@ Hydra-agent 从 0.13.1 版本开始不再内置 dataset 组件，需要单独通
     customresourcedefinition.apiextensions.k8s.io/datasets.dataset.baizeai.io annotated
     ```
 
-1. 执行以下命令修改 CR
+1. Run the following command to modify the CRs
 
     !!! note
 
-        推荐使用命令行的形式,可以一键修改，否则每个 CR 都需要改一遍。
+        It is recommended to use the CLI to update all resources at once; otherwise, each CR must be modified individually.
 
     ```bash
     cloudshell-worker-ct8cbvdtb6:~# kubectl annotate datasets.dataset.baizeai.io -A --all helm.sh/resource-policy=keep
     dataset.dataset.baizeai.io/qwen3-0-6b-1 annotated
     ```
 
-1. 开始升级
+1. Start the upgrade
 
     !!! note
 
-        Hydra-agent 从 v0.12.1 -> v0.13.1，移除了 dataset 组件。
+        hydra-agent removes the dataset component from v0.12.1 to v0.13.1.
 
-    进入工作集群 的 **Helm 应用** -> **Helm 应用** 页面，找到 **hydra-agent** 插件并更新。
+    Go to the **Helm Apps** -> **Helm Apps** page in the workload cluster, find the **hydra-agent** plugin, and upgrade it.
 
-1. 验证 dataset
+1. Verify dataset
 
     ```bash
     cloudshell-worker-ct8cbvdtb6:~# kubectl get datasets.dataset.baizeai.io -A
@@ -62,11 +61,11 @@ Hydra-agent 从 0.13.1 版本开始不再内置 dataset 组件，需要单独通
     hydra-system   qwen3-0-6b-1   MODEL_SCOPE   modelscope://Qwen/Qwen3-0.6B   PROCESSING
     ```
 
-1. 安装 dataset helm 应用
+1. Install the dataset Helm app
 
-    进入工作集群 的 **Helm 应用** -> **Helm 模板** 页面，找到 **dataset** 插件并安装。
+    Go to the **Helm Apps** -> **Helm Templates** page in the workload cluster, find the **dataset** plugin, and install it.
 
-1. 此时可以去掉 keep 的 annotation 了
+1. Remove the `keep` annotations
 
     ```bash
     cloudshell-worker-l2vhhlz6f4:~# kubectl annotate crd datasets.dataset.baizeai.io helm.sh/resource-policy-
@@ -76,10 +75,10 @@ Hydra-agent 从 0.13.1 版本开始不再内置 dataset 组件，需要单独通
     dataset.dataset.baizeai.io/qwen3-0-6b-1 annotated
     ```
 
-1. 更新 dataset
+1. Update dataset
 
-    为了确保旧的 CRD 的定义和最新的 dataset 保持一致，需要更新 dataset 插件。
+    To ensure the old CRD definition is consistent with the latest dataset version, update the dataset plugin.
 
     !!! note
 
-        不需要改任何参数，直接更新即可。
+        No parameter changes are required; simply perform the update.

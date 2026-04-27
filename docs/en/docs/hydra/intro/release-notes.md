@@ -4,6 +4,24 @@ This page lists the release notes for LLM Studio, helping you understand version
 
 *[hydra]: Internal codename for DaoCloud's LLM Studio
 
+## 2025-03-31
+
+### v0.13.1
+
+**User View**
+
+- **Added** support for user private model management, including configuration of deployment templates and management of model weight files
+- **Added** support for user-defined deployments, allowing modification of resource and runtime configurations during deployment
+- **Added** support for priority and topology-aware queue scheduling in inference services
+- **Added** support for user-defined runtime frameworks in inference services
+- **Added** support for creating and managing file storage for persistent storage of model files, datasets, etc.
+
+**Admin Console**
+
+- **Added** file storage module for uploading and persistent storage of model weight files in the model hub
+- **Added** UI-based management of model weight files in the model hub
+- **Optimized** deployment configuration management by integrating it into model hub management, supporting multiple configuration templates
+
 ## 2025-11-30
 
 ### v0.12.1
@@ -35,19 +53,19 @@ This page lists the release notes for LLM Studio, helping you understand version
 
 **Admin Console**
 
-* **Added** model list display
-* **Added** support for bulk importing models from URL address information
-* **Added** support for creating models
-* **Added** MaaS model list display
-* **Added** support for adding MaaS models
-* **Added** support for adding multiple upstream endpoint configurations
-* **Added** support for rate limiting at the **apikey** level
-* **Added** support for rate limiting at the **Workspace** level
-* **Added** support for defining multiple sets of rate-limiting rules
-* **Added** support for **round-robin load balancing**
-* **Added** model deployment management list display
-* **Added** support for configuring multiple sets of model parameters
-* **Added** support for deploying models with **vLLM**
+- **Added** model list display
+- **Added** support for bulk importing models from URL address information
+- **Added** support for creating models
+- **Added** MaaS model list display
+- **Added** support for adding MaaS models
+- **Added** support for adding multiple upstream endpoint configurations
+- **Added** support for rate limiting at the **apikey** level
+- **Added** support for rate limiting at the **Workspace** level
+- **Added** support for defining multiple sets of rate-limiting rules
+- **Added** support for **round-robin load balancing**
+- **Added** model deployment management list display
+- **Added** support for configuring multiple sets of model parameters
+- **Added** support for deploying models with **vLLM**
 
 ## 2025-07-04
 
