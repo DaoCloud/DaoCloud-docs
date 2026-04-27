@@ -1,4 +1,4 @@
-# ClawOS Release Notes
+# Release Notes
 
 This page lists the release notes for ClawOS, providing an overview of version evolution and feature changes.
 

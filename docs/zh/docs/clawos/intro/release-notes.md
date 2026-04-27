@@ -1,4 +1,4 @@
-# ClawOS Release Notes
+# Release Notes
 
 本页列出 ClawOS 的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
