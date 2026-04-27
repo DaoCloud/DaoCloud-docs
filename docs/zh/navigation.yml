@@ -1395,7 +1395,7 @@ nav:
                   - 离线环境安装 InferX: inferx/guides/offline.md
                   - 启用集群的 Istio GAIE 特性: inferx/guides/enable-istio-gaie-with-mspider.md
                   - 模型权重下载与配置: inferx/guides/model-weights-setup.md
-                  - 模型服务对外暴露 (Hydra / Knoway): inferx/guides/export-by-hydra.md
+                  - 模型服务对外暴露 (Hydra/Knoway): inferx/guides/export-by-hydra.md
       - 边缘计算:
           - 云边协同:
               - 介绍:
