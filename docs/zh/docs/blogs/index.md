@@ -39,7 +39,7 @@ hide:
 
     JobSet 利用 Kubernetes 原地容器重启实现 92% 的重启速度提升。
 
-- [2026 年 AI 基础设施领域五大趋势](./2026/ai-infra-trends.md)
+- [2026 下半年 AI 基础设施五大趋势](./2026/ai-infra-trends.md)
 
     从 GPU 芯片竞争到 DeepSeek V4 崛起，2026 年 AI 基础设施领域正在经历深刻变革。
 
