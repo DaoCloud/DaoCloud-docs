@@ -941,6 +941,7 @@ nav:
           - Service Mesh:
               - Intro:
                   - What is Service Mesh: mspider/intro/index.md
+                  - SLA Standards: mspider/intro/sla.md
                   - Features: mspider/intro/features.md
                   - Use Cases: mspider/intro/scenarios.md
                   - Permissions: ghippo/permissions/mspider.md
