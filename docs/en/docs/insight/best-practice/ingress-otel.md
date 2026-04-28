@@ -1,8 +1,9 @@
 # Integrate Nginx Ingress Trace Tracking
 
-Report the链路 information of the cluster's Nginx Ingress component to observable traces, and connect with backend service traces.
+Report the traces information of the cluster's Nginx Ingress component to observable traces, and connect with backend service traces.
 
 ## Enable Feature
+
 > The following uses Helm Chart to deploy Ingress-Nginx as an example:
 
 To enable OpenTelemetry feature for ingress-nginx, edit the `values.yaml` file of ingress-nginx helm and add specific configuration.
