@@ -663,6 +663,9 @@ nav:
                           - Deploy via Local Volume: storage/hwameistor/application/local.md
                           - Deploy via HA Volume: storage/hwameistor/application/ha.md
                   - FAQs: storage/hwameistor/faqs.md
+              - OceanStor:
+                  - Compatibility Test Report: storage/dorado/oceanstor.md
+                  - K8s CSI Driver Test: storage/dorado/dorado-test.md
               - Solutions to Integrate Open Source:
                   - Rook-Ceph:
                       - Rook-Ceph Intro: storage/solutions/rook-ceph.md
@@ -724,6 +727,10 @@ nav:
                   - Import Linux VM from VMWare: virtnest/best-practice/import-ubuntu.md
                   - Import Windows VM from VMWare: virtnest/best-practice/import-windows.md
                   - Create Windows VM: virtnest/best-practice/vm-windows.md
+              - FAQs:
+                  - Page API Error: virtnest/faq/index.md
+                  - VM Cannot Be Used: virtnest/faq/cannot-use.md
+                  - Disk Not Recognized: virtnest/faq/recog-disk.md
       - Microservice:
           - Insight:
               - Intro:
@@ -1269,6 +1276,11 @@ nav:
                       - hydra/deploy/index.md
                       - Serve a New Model: hydra/deploy/deploy.md
                       - Use Dataset to Manage Model Files: hydra/dataset.md
+                  - File Storage:
+                      - Create File Storage: hydra/file-storage/storage.md
+                      - Manage Files: hydra/file-storage/file-manage.md
+                      - Remote File Preheat: hydra/file-storage/file-preheat.md
+                      - File Storage Expansion: hydra/file-storage/file-scale.md
                   - API Keys: hydra/apikey.md
               - Admin Console:
                   - Manage Model Gallery: hydra/oam/index.md
@@ -1600,7 +1612,25 @@ nav:
       - Industry Insight:
           - Business Products: native/commerce.md
           - Open Source Projects: native/open.md
+      - Git Documentation:
+          - Git Docs Process: native/git/index.md
+          - Two-Factor Auth: native/git/2auth.md
+          - Git FAQ: native/git/rebase.md
+          - Common Git Commands: native/git/cmd.md
+          - VSCode Tips: native/git/vscode.md
+          - GitHub Tips: native/git/github.md
+          - GitLab UI Preview: native/git/ui-preview.md
+          - Proxy Settings: native/git/proxy.md
+          - Offline Docs: native/git/offline.md
       - Knowledge:
           - Knowledge Sharing: native/knowledge.md
+          - Troubleshooting: native/knowledge/troubleshoot.md
+          - Best Practices: native/knowledge/best-practice.md
+          - Tool Recommendations: native/knowledge/tools.md
+          - Product Selection: native/knowledge/products.md
+          - Hot Topics: native/knowledge/hot-spots.md
+          - Security Vulnerabilities: native/knowledge/bugs.md
+          - E-books: native/knowledge/ebooks.md
+          - Others: native/knowledge/other.md
   - Free Trial:
       - Free Trial: trial/index.md
