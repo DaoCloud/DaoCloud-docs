@@ -1392,7 +1392,7 @@ nav:
           - InferX 推理引擎:
               - 介绍:
                   - 什么是 InferX: inferx/index.md
-                  - FAQ: inferx/guides/faqs.md
+                  - FAQ: inferx/faqs.md
               - 最佳实践:
                   - 离线环境安装 InferX: inferx/guides/offline.md
                   - 启用集群的 Istio GAIE 特性: inferx/guides/enable-istio-gaie-with-mspider.md
