@@ -928,6 +928,7 @@ nav:
                   - Gateway Integration with Service Mesh: skoala/best-practice/gateway-mesh.md
                   - Custom Attributes for Gateway Request Logs: skoala/best-practice/add-custom-attributes.md
                   - HTTP to Dubbo Protocol Dynamic Routing: skoala/best-practice/http-to-dubbo.md
+                  - Nacos LDAP Integration: skoala/best-practice/nacos-ldap.md
               - Troubleshooting:
                   - skoala-init x-kubernets-validations Error: skoala/troubleshoot/auth-server.md
                   - Nacos Version Downgrade: skoala/troubleshoot/nacos.md
