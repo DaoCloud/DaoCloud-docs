@@ -9,7 +9,7 @@
 
 ## 1. GPU 芯片竞争加剧：TPU 与 Nvidia 的世纪对决
 
-![GPU 芯片对比](../blogs/2026/images/gpu-chip.jpg)
+![GPU 芯片对比](./images/gpu-chip.jpg)
 
 > *「我们不再只是卖芯片，而是在卖整个 AI 堆栈。」—— 黄仁勋*
 
@@ -32,7 +32,7 @@
 
 ## 2. Agentic AI 推动新型基础设施需求
 
-![AI Agent 架构](../blogs/2026/images/ai-tech.jpg)
+![AI Agent 架构](./images/ai-tech.jpg)
 
 > *「未来的 AI 不再是被动回答问题的工具，而是主动帮你完成任务的数字员工。」*
 
@@ -58,7 +58,7 @@
 
 ## 3. 推理基础设施的崛起：从「训得更快」到「推理更省」
 
-![推理集群](../blogs/2026/images/server-cloud.jpg)
+![推理集群](./images/server-cloud.jpg)
 
 > *「训练一次大模型需要几千万美元，但推理成本才是决定 AI 能否大规模商用的关键。」*
 
@@ -87,7 +87,7 @@
 
 ## 4. Kubernetes 成为 AI 平台标配
 
-![K8s AI 平台](../blogs/2026/images/kubernetes.jpg)
+![K8s AI 平台](./images/kubernetes.jpg)
 
 > *「如果你还不知道如何用 Kubernetes 跑 AI 工作负载，可能已经 out 了。」*
 
@@ -110,7 +110,7 @@ Kubernetes 已经成为 AI 基础设施的「操作系统」。
 
 ## 5. MLOps 走向平台化：端到端生命周期管理
 
-![MLOps 平台](../blogs/2026/images/data-ml.jpg)
+![MLOps 平台](./images/data-ml.jpg)
 
 > *「MLOps 不是工具的堆砌，而是要让数据科学家能专注模型，而不是运维。」*
 
@@ -140,7 +140,7 @@ Kubernetes 已经成为 AI 基础设施的「操作系统」。
 
 ## 6. 中国力量崛起：DeepSeek 重塑 AI 格局
 
-![DeepSeek](../blogs/2026/images/deepseek.jpg)
+![DeepSeek](./images/deepseek.jpg)
 
 > *「开源模型同样可以做到世界顶级。」—— DeepSeek 团队*
 
