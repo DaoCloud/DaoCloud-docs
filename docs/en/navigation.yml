@@ -134,9 +134,12 @@ nav:
                   - Build Git-based Microservice: amamba/user-guide/wizard/create-app-git.md
                   - Build Jar-based Java Apps: amamba/user-guide/wizard/jar-java-app.md
                   - Deploy Helm Apps: amamba/user-guide/wizard/helm.md
+                  - Helm Applications: amamba/user-guide/helm.md
               - Native Apps:
                   - Manage Native Apps: amamba/user-guide/native/manage.md
                   - Deploy Traditional Microservices with Native Apps: amamba/user-guide/native/native-app.md
+                  - OLM Applications: amamba/user-guide/olm.md
+                  - Code Repository: amamba/user-guide/repo.md
               - OAM Apps:
                   - OAM Concepts: amamba/user-guide/oam/concept.md
                   - Create OAM Apps: amamba/user-guide/oam/create.md
@@ -934,6 +937,7 @@ nav:
           - Service Mesh:
               - Intro:
                   - What is Service Mesh: mspider/intro/index.md
+                  - SLA Standards: mspider/intro/sla.md
                   - Features: mspider/intro/features.md
                   - Use Cases: mspider/intro/scenarios.md
                   - Permissions: ghippo/permissions/mspider.md
