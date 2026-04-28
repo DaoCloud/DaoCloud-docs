@@ -401,6 +401,10 @@ nav:
                   - Offline Deploy and Upgrade Legacy Kubean: kpanda/best-practice/kubean-low-version.md
                   - Replace a Master Node in Worker Cluster: kpanda/best-practice/replace-first-master-node.md
                   - Get Permanent Token for External Clusters: kpanda/best-practice/get-kubeconfig.md
+                  - Build Dify LLM Platform: kpanda/best-practice/dify-use.md
+                  - HAMi Enterprise Installation: kpanda/best-practice/hami-enterprise-installation.md
+                  - K3s Edge Cluster Management: kpanda/best-practice/k3s-lcm.md
+                  - Limit Docker Disk Usage: kpanda/best-practice/limit-disk-usage-docker.md
                   - Max Pods Running on a Physical Machine: kpanda/best-practice/max-pod.md
           - Multicloud Management:
               - Intro:
