@@ -685,6 +685,7 @@ nav:
                   - OpenEBS:
                       - OpenEBS Intro: storage/solutions/openebs.md
                       - Deploy OpenEBS with Helm: storage/solutions/openebs-helm.md
+                      - Fluid Intro: storage/solutions/fluid.md
                   - TiDB: storage/hwameistor/application/tidb.md
                   - MinIO: storage/hwameistor/application/minio/minio.md
               - Concepts:
