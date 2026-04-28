@@ -1628,6 +1628,8 @@ nav:
               - 全局&运营管理:
                   - 全局管理: download/modules/ghippo.md
                   - 运营管理: download/modules/gmagpie.md
+              - 推理:
+                  - 推理加速: download/modules/inferx.md
   - 博客:
       - 博文索引: blogs/index.md
       - 2026:
