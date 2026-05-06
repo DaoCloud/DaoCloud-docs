@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-03-07
+---
+
 # 安装依赖项
 
 安装 DCE 5.0 之前，需要先安装一些依赖项。
@@ -94,3 +99,4 @@
         ```
 
 接下来就可以安装 DCE 5.0 [社区版](community/resources.md)或[商业版](commercial/deploy-requirements.md)了。
+
