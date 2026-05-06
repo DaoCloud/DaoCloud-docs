@@ -22,7 +22,7 @@ Certain prerequisites must be met before creating a cluster:
 - It is recommended to use Kubernetes v1.29.5. For the specific version range, refer to the
   [DCE 5.0 Supported Clusters](./cluster-version.md). Currently, the supported version
   range for created worker clusters is `v1.28.0-v1.30.2`. If you need to create a cluster with a
-  lower version, refer to the [Supporterd Cluster Versions](./cluster-version.md) and
+  lower version, refer to the [Supported Cluster Versions](./cluster-version.md) and
   [Deploy and Upgrade from a Compatiable Kubean Version](../../best-practice/kubean-low-version.md).
 - The target host must allow IPv4 forwarding. If using IPv6 in Pods and Services,
   the target server needs to allow IPv6 forwarding.
@@ -108,7 +108,7 @@ Certain prerequisites must be met before creating a cluster:
 
 !!! note
 
-    - hen the cluster is in an unknown state, it means that the current cluster has been disconnected. 
+    - When the cluster is in an unknown state, it means that the current cluster has been disconnected. 
     - The data displayed by the system is the cached data before the disconnection, which does not represent real data.
     - Any operations performed in the disconnected state will not take effect. Please check the cluster network connectivity or Host Status.
 
@@ -117,3 +117,4 @@ Certain prerequisites must be met before creating a cluster:
 - [Create an Ubuntu Work Cluster on a CentOS Management Platform](../../best-practice/create-ubuntu-on-centos-platform.md)  
 - [Create a RedHat 9.2 Work Cluster on a CentOS Management Platform](../../best-practice/create-redhat9.2-on-centos-platform.md)  
 - [Create a Cluster on Non-Mainstream Operating Systems](../../best-practice/use-otherlinux-create-custer.md)
+
