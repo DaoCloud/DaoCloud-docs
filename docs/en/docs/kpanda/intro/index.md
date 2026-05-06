@@ -1,7 +1,10 @@
 ---
+MTPE: windsonsea
+date: 2024-01-10
 hide:
   - toc
 ---
+
 
 # Container Management
 
@@ -179,3 +182,4 @@ and quickly build an enterprise-grade container cloud management platform.
 [Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
 [Free Trial Now](../../dce/license0.md){ .md-button .md-button--primary }
+
