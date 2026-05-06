@@ -30,7 +30,7 @@ hide:
 
 1. 在 __集群列表__ 页面中，点击 __创建集群__ 按钮。
 
-    ![创建集群按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create001.png)
+    ![创建集群按钮](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/create001.png)
 
 1. 参考下列要求填写集群基本信息，并点击 __下一步__ 。
 
@@ -81,7 +81,7 @@ hide:
     - __Insecure_registries__ ：私有镜像仓库配置。使用私有镜像仓库创建集群时，为了避免证书问题导致容器引擎拒绝访问，需要在这里填写私有镜像仓库地址，以绕过容器引擎的证书认证而获取镜像。
     - __yum_repos__ ：填写 Yum 源仓库地址。离线环境下，默认给出的地址选项仅供参考，请根据实际情况填写。
 
-    ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew06.png)
+    ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/creatnew06.png)
 
 !!! tip
     
@@ -102,7 +102,7 @@ hide:
     - 创建集群耗时较长，需要耐心等待。其间，可以点击 __返回集群列表__ 按钮让安装过程后台运行。
     - 如需查看当前状态，可点击 __实时日志__ 。
 
-    ![查看实时日志](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create009.png)
+    ![查看实时日志](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/create009.png)
 
 !!! note
 
@@ -110,10 +110,11 @@ hide:
     - 系统展示数据为失联前缓存数据，不代表真实数据。
     - 同时失联状态下执行的任何操作都将不生效，请检查集群网络连通性或主机状态。
 
-    ![未知状态](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createnew07.png)
+    ![未知状态](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/createnew07.png)
 
 ## 参考文档
 
 - [在 CentOS 管理平台上创建 Ubuntu 工作集群](../../best-practice/create-ubuntu-on-centos-platform.md)
 - [在 CentOS 管理平台上创建 RedHat 9.2 工作集群](../../best-practice/create-redhat9.2-on-centos-platform.md)
 - [在非主流操作系统上创建集群](../../best-practice/use-otherlinux-create-custer.md)
+
