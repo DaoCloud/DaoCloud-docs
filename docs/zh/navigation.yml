@@ -1284,6 +1284,7 @@ nav:
                   - 最佳实践:
                       - RocketMQ 跨集群高可用: middleware/rocketmq/best-pratice/singleclustercrosszone.md
       - 云原生 AI:
+          - 索引: ai-os.md
           - ClawOS 智能体:
               - 介绍:
                   - 什么是 ClawOS: clawos/intro/index.md
