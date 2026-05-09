@@ -16,77 +16,63 @@ The installation components, trimming plan, and phased trimming approach for DCE
 
 Full view of Phase 1 lightweight trimming:
 
-## Optimization Measures
+### Optimization by Phase
 
-1. Under the premise of maintaining normal monitoring capabilities, the following Pods of **Insight** can be stopped:
+**Phase 1 Optimization**
 
-    | Pod name                                                 | Mem Size   |
-    | :------------------------------------------------------- | ---------- |
-    | insight-agent-fluent-bit-5x2rn                           | 99.62 MiB  |
-    | insight-agent-otel-kubernetes-collector-69f67cc745-xt5hj | 74.94 MiB  |
-    | insight-agent-tailing-sidecar-operator-6f85f7bb75-67xc8  | 46.81 MiB  |
-    | insight-elastic-alert-64bbb468dc-l4mk5                   | 30.38 MiB  |
-    | insight-jaeger-collector-5cd5b94dcc-mwgcl                | 32.50 MiB  |
-    | insight-jaeger-query-5495c59bbd-fk287                    | 28.88 MiB  |
-    | insight-opentelemetry-collector-5d47dd6c6b-nk54t         | 62.12 MiB  |
-    | Optimizable memory                                       | 375.25 MiB |
+Phase 1 trims non-essential infrastructure and component modules.
 
-2. Remove the Istio sidecar via the script [clean_istio_proxy.sh](https://gitlab.daocloud.cn/bo.jiang/installer-tools/-/blob/master/clean_istio_proxy.sh)
+1. Resource usage inside Bootstrap
 
-3. Disable the Seed **kind-cluster** and **elasticsearch** components
+    ![Resource usage inside Bootstrap](../images/light03.png)
 
-    1. Before installer deployment, disable the elasticSearch component in `manifest.yaml`
+2. Resource usage of Global + kind Bootstrap
 
-        [Not feasible] `insight-server` has a strong dependency on ES
+    ![Resource usage of Global + kind Bootstrap](../images/light04.png)
 
-    2. After installer deployment, shut down the kind-cluster container
+    ![Resource usage of Global + kind Bootstrap](../images/light05.png)
 
-        [Feasible] There is a hidden issue in the image pull policy; it needs to be changed to **IfNotPresent**
+According to script-based statistics, the total memory consumption is: **13.6 GiB**
 
-4. Deploy **registry** in Global, managed via **kangaroo** [Feasible]
-
-5. Deploy single-instance **MySQL**, using an external MySQL instance managed outside the container [Feasible]
-
-### Phase Optimizations
-
-**Phase1 Optimization**
-
-Phase1 trims non-essential components in **infrastructure & components**.
-
-1. Resource usage within Seed
-
-2. Resource usage of Global + kind Seed
-
-
-According to the script statistics, total memory consumption: **13.6 GiB**
-
-Theoretical memory usage of removable components:
+Estimated memory consumption of removable components:
 
 !!! note
 
-    The calculated statistics may differ from actual deployment usage, as dynamic cache generated during system operation also affects real memory consumption.
+    The calculated statistics may differ from actual deployment usage. For example, dynamic caches generated during system runtime can affect real memory consumption.
 
-| Component     | Usage                  |
-| :------------ | ---------------------- |
+| Component | Usage |
+| :---- | ----- |
 | elasticsearch | 2460.38 MiB (2.40 GiB) |
-| kind-cluster  | 1005.62 MiB (0.98 GiB) |
-| insight       | 2655.17 MiB (2.59 GiB) |
-| kangaroo      | 277.25 MiB (0.27 GiB)  |
-| Total         | 6.24 GiB               |
+| kind-cluster | 1005.62 MiB (0.98 GiB) |
+| insight | 2655.17 MiB (2.59 GiB) |
+| kangaroo | 277.25 MiB (0.27 GiB) |
+| Total | 6.24 GiB |
 
-If these four types of components are not installed, the memory consumption is expected to be **7.36 GiB**.
-However, previous community version trimming (without these four components) showed that **8G** memory can barely run it, but it is unstable.
+If these four categories of components are not installed, the estimated memory consumption would be **7.36 GiB**. However, previous community edition trimming tests (without these four components) showed that 8 GB memory could only run the system barely, and the system was unstable.
 
-**Phase2 Optimization**
+**Phase 2 Optimization**
 
-In Phase2, MySQL is consolidated from dual instances to a single instance, while trimming and optimizing some **Insight** components.
+In Phase 2, MySQL was consolidated from dual instances into a single instance, while some Insight components were further trimmed and optimized.
 
-**Phase3 Optimization**
+![Resource usage of Global + kind Bootstrap](../images/light06.png)
 
-Optimization item: Remove **ES** (replica = 0), according to [issue 2268](https://gitlab.daocloud.cn/ndx/engineering/insight/insight/-/issues/2268#note_558331)
+![Resource usage of Global + kind Bootstrap](../images/light07.png)
 
-**Phase4 Optimization**
+![Resource usage of Global + kind Bootstrap](../images/light08.png)
 
+**Phase 3 Optimization**
+
+Optimization item: remove ES (replicas = 0), based on [issue 2268](https://gitlab.daocloud.cn/ndx/engineering/insight/insight/-/issues/2268#note_558331)
+
+![Resource usage of Global + kind Bootstrap](../images/light09.png)
+
+![Resource usage of Global + kind Bootstrap](../images/light10.png)
+
+**Phase 4 Optimization**
+
+![Resource usage of Global + kind Bootstrap](../images/light11.png)
+
+![Resource usage of Global + kind Bootstrap](../images/light12.png)
 
 ## Conclusion
 
@@ -96,12 +82,12 @@ In actual real-world scenarios, with an **8Gi memory environment**, installation
 However, since some steps at the end require manually executing scripts, it triggers **deploy rolling updates**, causing a temporary surge in memory demand.
 Additionally, the operating system itself consumes part of the dynamic memory resources.
 
-Therefore, in summary, running the **DCE5 lightweight trimmed environment** in an **8G memory** setup still lacks sufficient resources.
+Therefore, in summary, running the **DCE 5.0 lightweight trimmed environment** in an **8G memory** setup still lacks sufficient resources.
 
 That is, **installation memory requirement ≠ idle state memory usage**
 
-Using **Phase 4** as the final trimming goal, at least **10G+ memory** is required.
-Using **Phase 3** as the final trimming goal (including observability components), at least **12G+ memory** is required.
+- Using **Phase 4** as the final trimming goal, at least **10G+ memory** is required.
+- Using **Phase 3** as the final trimming goal (including observability components), at least **12G+ memory** is required.
 
 For how to achieve lightweight deployment through the installer, refer to
 [Installer Lightweight Deployment Plan](./install-light.md).
