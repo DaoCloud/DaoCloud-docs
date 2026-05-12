@@ -8,9 +8,10 @@
 
 ## 使用方式
 
-- 提前替换脚本文件中的 public_key 和 private_key
+- 提前设置 `U_PUBLIC_KEY`、`U_PRIVATE_KEY`、`U_UPLOADSUFFIX`、`U_BUCKET`、`U_BUCKET_FOLDER`、`U_REMOTE_DOMAIN`
 - 执行脚本
   - 切换到仓库根目录
-  - 执行 `python scripts/upload_img_ucloud.py`
+  - 执行 `make sync-image`
+  - 执行 `make upload-images DOCS_PATH=docs`
     - 检查是否存在路径的存储问题
   - 上传成功后，会自动修改文档站内的图片引用路径

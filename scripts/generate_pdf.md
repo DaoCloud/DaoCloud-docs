@@ -10,7 +10,7 @@ The following command can be used to batch generate a complete Word file that in
 
 ```bash
 cd /path/to/this/repo
-python3 scripts/md2doc-v2.py docs/zh/docs # Generate Word files
+make docx DOCS_PATH=docs/zh/docs
 ```
 
 However, the resulting Word file will contain all the content from docs.daocloud.io, making it difficult to read.
@@ -27,7 +27,7 @@ find ./docs -type f -name "*.docx" ! -name "TiDBonHwameiStor.docx" | xargs rm -f
 
 ```bash
 cd /path/to/this/repo
-python3 scripts/md2doc-v2.py docs/zh/docs/kpanda # Generate Word files
+make docx DOCS_PATH=docs/zh/docs/kpanda
 ```
 
 > The above is an example to generate documentation for the `kpanda` folder.
@@ -35,7 +35,7 @@ python3 scripts/md2doc-v2.py docs/zh/docs/kpanda # Generate Word files
 If there are any errors during export, you can try running the following command to install the required dependencies:
 
 ```bash
-pip install python-docx
+make sync-pdf
 brew install pandoc
 ```
 
@@ -52,8 +52,7 @@ Currently, generating a full PDF file for all documents fails due to the large s
 1. Modify the [pdf.yaml](../docs/zh/pdf.yaml) file, only modifying 2 fields:
    - `docs_dir` for the folder name to be read
    - `output_path` for the location to export the PDF
-2. Run the `mkdocs build` command, ensuring that the poetry environment is properly configured
-   1. Use `poetry install` to install the dependencies
-   2. Run `poetry run mkdocs build -f pdf.yaml` to generate the PDF files
+2. Install PDF dependencies: `make sync-pdf`
+3. Run `make pdf` to generate the PDF files
 
 The secondary development of the documentation site is based on an open-source project. Currently, the supported features are limited, but they will be improved in the future.

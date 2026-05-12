@@ -50,18 +50,18 @@ This section describes how you can preview your changes before commit.
 ### With Docker
 
 1. Install and run [Docker](https://www.docker.com/).
-2. Run `make serve` and preview your changes.
+2. Run `make serve-docker` and preview your changes.
 
 ### With Git repo
 
 See [MkDocs documents to install](https://squidfunk.github.io/mkdocs-material/getting-started/)。
 
-1. Install Poetry and Python 3.9+
-   1. Configure Poetry: `poetry config virtualenvs.in-project true`
-   2. Enable venv: `poetry env use 3.9`
-2. Install dependencies: `poetry install`
-3. Run `poetry run mkdocs serve -f mkdocs.yml` in the repo folder locally
-4. Preview with <http://0.0.0.0:8000/>
+1. Install [uv](https://docs.astral.sh/uv/).
+2. Install dependencies: `uv sync`
+3. Preview Chinese docs: `make serve zh`
+4. Preview English docs: `make serve en`
+5. Build both sites: `make build all`
+6. Preview with <http://127.0.0.1:8000/>
 
 ## Naming conventions
 

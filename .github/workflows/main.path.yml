@@ -1,10 +1,6 @@
-# This is a basic workflow to help you get started with Actions
-
 name: deploy-for-main-path
 
-# Controls when the workflow will run
 on:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 env:
@@ -13,75 +9,38 @@ env:
   UCLOUD_REGION : ${{ secrets.UCLOUD_REGION }}
   UCLOUD_BUCKET : ${{ secrets.UCLOUD_BUCKET }}
   CI: 1
-  PIP_CONSTRAINT: /home/runner/work/DaoCloud-docs/DaoCloud-docs/constraints.txt
 
 concurrency:
   group: ${{ github.workflow_ref }}
   cancel-in-progress: true
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   deploy:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Required for mkdocs to be able to display pages last update info
-      
-      # Clone 
-      - name: Checkout public repository
+          fetch-depth: 0
+
+      - name: Checkout OpenAPI docs
         uses: actions/checkout@v4
         with:
           repository: daocloud/daocloud-api-docs
           path: dao-openapi
-          fetch-depth: 0 # Required for mkdocs to be able to display pages last update info
-      
+          fetch-depth: 0
+
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
-#           cache: 'pip'
-      
-      # Add ssh private key
-      - name: Setup SSH
-        uses: MrSquaare/ssh-setup-action@v1
-        with:
-          host: github.com
-          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        
-#       - run: pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+          python-version: '3.12'
 
-      # Install mkdocs-material-insiders
-      - run: git clone git@github.com:DaoCloud/mkdocs-material-insiders.git mkdocs-material
-      - run: pip install -e mkdocs-material
+      - uses: astral-sh/setup-uv@v8.1.0
 
-      # Runs a single command using the runners shell
-      - run: pip install -r requirements.txt -c $PIP_CONSTRAINT
-      
-      # add custom plugin with pdf support
-      - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
+      - run: make sync-upload
 
-      # merged openapi docs
-      - run: cp -av dao-openapi/docs/openapi docs/zh/docs/
-      - run: python scripts/merged_nav.py
+      - run: make merge-openapi-docs
 
-      # build docs
-      - run: pwd
-      - run: mkdocs build -f docs/zh/mkdocs.path.yaml -d ../../public/
-      - run: mkdocs build -f docs/en/mkdocs.path.yaml -d ../../public/en/
+      - run: make build-path all
 
-      # upload to ucloud bucket
-      - run: cd public && pwd && python ../scripts/upload-ucloud.py \
-                public_key=$UCLOUD_PUBLICKEY \
-                private_key=$UCLOUD_PRIVATEKEY \
-                region=$UCLOUD_REGION \
-                bucket=$UCLOUD_BUCKET
+      - run: make upload-ucloud
 
-      # refresh docs site cdn cache
-      - run: python scripts/refresh_cdn_cache.py \
-            publickey=$UCLOUD_PUBLICKEY \
-            privatekey=$UCLOUD_PRIVATEKEY
+      - run: make refresh-cdn-cache

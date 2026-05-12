@@ -5,12 +5,12 @@
 本文档为生成 Word 文档的脚步使用说明
 
 - 脚本所在位置 [../md2doc-v2.py](../md2doc-v2.py)
-- 生成命令：`python3 md2doc-v2.py docs/zh/docs/`
+- 生成命令：`make docx DOCS_PATH=docs/zh/docs`
 
 ### 依赖
 
 ```bash
-pip install pandoc python-docx docxcompose
+make sync-pdf
 ```
 
 - pandoc (<https://github.com/jgm/pandoc>)
@@ -19,7 +19,7 @@ pip install pandoc python-docx docxcompose
 
 执行脚本时，会根据传入的路径位置，会检测该路径下的所有 `.md` 文件，然后合并为一个 `.docx` 文件。
 
-- 生成命令：`python3 md2doc-v2.py [md文件目录]`
+- 生成命令：`make docx DOCS_PATH=[md文件目录]`
 - 默认目录：`docs/zh/docs/`
 - 生成 Word 文件路径为： `docs/` 下
 

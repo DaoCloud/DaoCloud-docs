@@ -7,9 +7,7 @@
 # PR_details_2023.xlsx 这是通过 pr-report.py 导出的 PR 记录表
 # id-name.txt 这是 github id 与姓名的对应关系
 #
-# 运行此脚本之前，需要安装 2 个库 pandas 和 openpyxl：
-# pip install pandas
-# pip install openpyxl
+# Before running, execute from the repository root: make sync-report
 
 import pandas as pd
 
