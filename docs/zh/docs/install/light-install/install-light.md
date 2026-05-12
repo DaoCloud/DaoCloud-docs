@@ -76,9 +76,9 @@
           variables:
     ```
 
-2. 集群配置文件 ClusterConfig.yaml 示例
+2. 集群配置文件 clusterConfig.yaml 示例
 
-    ```yaml title="ClusterConfig.yaml"
+    ```yaml title="clusterConfig.yaml"
     apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:

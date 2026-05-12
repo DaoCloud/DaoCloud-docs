@@ -6,7 +6,7 @@ This document describes how to perform a lightweight deployment of DCE 5.0 using
 
 ### Configuration Preparation
 
-1. Example component configuration file: manifest.yaml
+1. Example of manifest.yaml
 
     !!! note
 
@@ -75,9 +75,9 @@ This document describes how to perform a lightweight deployment of DCE 5.0 using
           variables:
     ```
 
-2. Example cluster configuration file: ClusterConfig.yaml
+2. Example of clusterConfig.yaml
 
-    ```yaml title="ClusterConfig.yaml"
+    ```yaml title="clusterConfig.yaml"
     apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:

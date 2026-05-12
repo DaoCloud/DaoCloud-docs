@@ -161,7 +161,7 @@ Error: Failed to download metadata for repo 'appstream': Cannot prepare internal
 
 clusterConfig.yaml 如下：
 
-```yaml
+```yaml title="clusterConfig.yaml"
   osRepos:
     type: external
     externalRepoType: rocky

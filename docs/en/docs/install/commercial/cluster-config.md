@@ -10,7 +10,7 @@ This file will define key parameters such as deployment mode and cluster node in
 
 ## ClusterConfig Example
 
-The following is an example of ClusterConfig.yaml.
+The following is an example of clusterConfig.yaml.
 
 ```yaml title="clusterConfig.yaml"
 apiVersion: provision.daocloud.io/v1alpha4
