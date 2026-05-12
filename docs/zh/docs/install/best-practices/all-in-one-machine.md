@@ -92,10 +92,10 @@
 
 **安装前注意事项：**
 
-- 在三台物理机中选择一台物理机作为火种机执行 DCE 5.0 的部署。其中集群配置文件 `ClusterConfig.yaml`
+- 在三台物理机中选择一台物理机作为火种机执行 DCE 5.0 的部署。其中集群配置文件 `clusterConfig.yaml`
   中的 bootstrapNode 参数可以指定火种机器的 IP。
 
-    ```yaml title="ClusterConfig.yaml"
+    ```yaml title="clusterConfig.yaml"
     apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
@@ -110,9 +110,9 @@
        可手动填入 IP 或域名，若为域名，如果检测到无法解析，将自动建立此域名和火种节点默认 IP 的映射
     2. 默认自动解析
 
-- 集群配置文件 ClusterConfig.yaml 中，将 3 台物理机的信息配置在 masterNodes 中即可。
+- 集群配置文件 `clusterConfig.yaml` 中，将 3 台物理机的信息配置在 masterNodes 中即可。
 
-    ```yaml title="ClusterConfig.yaml"
+    ```yaml title="clusterConfig.yaml"
     ...
     apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig

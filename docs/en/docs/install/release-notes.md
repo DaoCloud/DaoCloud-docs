@@ -786,8 +786,8 @@ If the output is different from the above cases, please follow the upgrade instr
 
 #### Features
 
-- **Added** Offline package separation osPackage, needs to define `osPackagePath` in ClusterConfig.yaml
-- **Added** support addon offline, you need to define `addonOfflinePackagePath` in ClusterConfig.yaml
+- **Added** Offline package separation osPackage, needs to define `osPackagePath` in clusterConfig.yaml
+- **Added** support addon offline, you need to define `addonOfflinePackagePath` in clusterConfig.yaml
 - **Added** Offline installation supports operating systems REHL 8.4, REHL 7.9
 
 #### Improvements

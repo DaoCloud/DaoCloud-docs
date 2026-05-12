@@ -97,7 +97,7 @@ If you need to allocate "static IP" for Pods, you need to create sub-interfaces 
 
 **Precautions before installation:**
 
-- Select one of the three physical machines as the boostrap machine to execute the deployment of DCE 5.0. in ClusterConfig.yaml `ClusterConfig.yaml`, the bootstrapNode parameter can specify the IP of the boostrap machine.
+- Select one of the three physical machines as the boostrap machine to execute the deployment of DCE 5.0. in `clusterConfig.yaml`, the bootstrapNode parameter can specify the IP of the boostrap machine.
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -113,9 +113,9 @@ If you need to allocate "static IP" for Pods, you need to create sub-interfaces 
     ...
     ```
 
-- In ClusterConfig.yaml, configure the information of the 3 physical machines in masterNodes.
+- In clusterConfig.yaml, configure the information of the 3 physical machines in masterNodes.
 
-    ```yaml
+    ```yaml title="clusterConfig.yaml"
     ...
     apiVersion: provision.daocloud.io/v1alpha3
     kind: ClusterConfig
