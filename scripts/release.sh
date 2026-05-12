@@ -31,7 +31,7 @@
 # Example:
 # GH_TOKEN=your_token PROJECT_REPO=spidernet-io/spiderpool PROJECT_NAME=spiderpool \
 # PROJECT_EN_RELEASE_NOTES_PATH=docs/en/docs/network/modules/spiderpool/release-notes \
-# MIN_SYNC_RELEASE_PROJECT_VERSION=v0.6.0 ./scripts/release.sh
+# MIN_SYNC_RELEASE_PROJECT_VERSION=v0.6.0 make release-notes
 #
 # Output:
 # The script will generate markdown files in the specified PROJECT_EN_RELEASE_NOTES_PATH

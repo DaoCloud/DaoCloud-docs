@@ -17,7 +17,7 @@
 
 # This script checks if the English version of a page has changed since a localized
 # page has been committed.
-# Instructions: in the repo directory, run `./scripts/lsync.sh docs/en/` to check
+# Instructions: in the repo directory, run `make lsync LSYNC_PATH=docs/en` to check
 # differences between en and zh.
 
 if [ "$#" -ne 1 ] ; then

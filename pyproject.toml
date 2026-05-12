@@ -1,48 +1,59 @@
-[tool.poetry]
-name = "DaoCloud-docs"
+[project]
+name = "daocloud-docs"
 version = "0.2.0"
 description = "DaoCloud Product Documents Repo."
-authors = ["samzong.lu <samzong.lu@gmail.com>"]
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "jieba>=0.42.1",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.6.0",
+    "mkdocs-material-extensions>=1.3.1",
+    "mkdocs-minify-plugin>=0.8.0",
+    "mkdocs-redirects>=1.2.2",
+    "mkdocs-swagger-ui-tag>=0.6.11",
+    "pymdown-extensions>=10.14",
+    "pyyaml>=6.0.2",
+]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-mkdocs-material = "^9.1.3"
-mkdocs-embed-external-markdown = "^2.2.1"
-mkdocs-minify-plugin = "^0.5.0"
-mkdocs-multirepo-plugin = "^0.4.7"
-jieba = "^0.42.1"
-pymdown-extensions = "^9.5"
-ufile = "^3.2.6"
-mkdocs-awesome-pages-plugin = "^2.8.0"
-mkdocs-git-revision-date-localized-plugin = "^1.1.0"
-mkdocs-git-revision-date-plugin = "^0.3.2"
-mkdocs-mermaid2-plugin = "^0.6.0"
-mkdocs-git-committers-plugin-2 = "^1.1.0"
-mkdocs-git-authors-plugin = "^0.6.4"
-mkdocs-material-extensions = "^1.0.3"
-regex = "^2022.9.13"
-mkdocs-redirects = "^1.2.0"
-mkdocs-with-pdf = "^0.9.3"
-mkdocs-print-site-plugin = "^2.3.4"
-googletrans = "3.1.0a0"
-python-docx = "^0.8.11"
-docxcompose = "^1.4.0"
-pandoc = "^2.3"
-beautifulsoup4 = "^4.11.2"
-mkdocs-swagger-ui-tag = "^0.6.1"
-mkdocs-rss-plugin = "^1.6.0"
-mkdocs-macros-plugin = "^0.7.0"
-anybadge = "^1.14.0"
-pydantic = "^1.10.6"
-lxml = "^4.9.3"
+[dependency-groups]
+pdf = [
+    "docxcompose>=1.4.0",
+    "livereload>=2.7.0",
+    "mkdocs-extra-sass-plugin>=0.1.0",
+    "mkdocs-with-pdf>=0.9.3",
+    "pandoc>=2.4",
+    "python-docx>=1.1.2",
+]
+upload = [
+    "requests>=2.32.0",
+    "ufile>=3.2.9",
+]
+translate = [
+    "googletrans==3.1.0a0",
+]
+report = [
+    "openpyxl>=3.1.5",
+    "pandas>=2.2.0",
+    "requests>=2.32.0",
+]
+image = [
+    "numpy>=2.0.0",
+    "pillow>=11.0.0",
+    "ufile>=3.2.9",
+]
+link-check = [
+    "pyyaml>=6.0.2",
+    "requests>=2.32.0",
+    "tabulate>=0.9.0",
+]
+pdf-tools = [
+    "pypdf2>=3.0.1",
+]
 
-[tool.poetry.dev-dependencies]
+[tool.uv]
+package = false
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
-
-[[tool.poetry.source]]
-name = "tsinghua"
-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-default = true
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"

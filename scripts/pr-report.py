@@ -5,9 +5,7 @@
 #
 # 此脚本会导出 repo 下的所有 PR 记录，方便汇总统计
 #
-# 需要安装 request 和 pandas 库：
-# pip install requests
-# pip install pandas
+# Before running, execute from the repository root: make sync-report
 #
 # 默认导出到 repo 根目录
 
@@ -69,9 +67,10 @@ def get_pr_details(pr):
     }
 
 def fetch_all_prs(url, headers, params, start_date, end_date):
-    df = pd.DataFrame(columns=["Date", "Author", "Title", "Labels", "Label Count", "Changed Files", "Additions", "Deletions", "PR Link"])
+    columns = ["Date", "Author", "Title", "Labels", "Label Count", "Changed Files", "Additions", "Deletions", "PR Link"]
+    rows = []
     page = 1
-    with ThreadPoolExecutor(max_workers=10) as executor: 
+    with ThreadPoolExecutor(max_workers=10) as executor:
         while True:
             params["page"] = page
             response = requests.get(url, headers=headers, params=params)
@@ -82,9 +81,9 @@ def fetch_all_prs(url, headers, params, start_date, end_date):
             for future in futures:
                 result = future.result()
                 if result is not None:
-                    df = df.append(result, ignore_index=True)
+                    rows.append(result)
             page += 1
-    return df
+    return pd.DataFrame(rows, columns=columns)
 
 # 获取所有 PR
 df = fetch_all_prs(url, headers, params, start_date, end_date)

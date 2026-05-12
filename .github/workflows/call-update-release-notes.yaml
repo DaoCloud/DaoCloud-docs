@@ -86,8 +86,7 @@ jobs:
           PROJECT_EN_RELEASE_NOTES_PATH: docs/en/docs/${{ env.component }}/modules/${{ env.repo_name }}/release-notes
           PROJECT_ZH_RELEASE_NOTES_PATH: ""
           MIN_SYNC_RELEASE_PROJECT_VERSION: ${{ inputs.min_version || github.event.inputs.min_version }}
-        run: |
-          ./scripts/release.sh
+        run: make release-notes
 
       - name: Create Pull Request
         if: steps.check_changes.outputs.changes == 'true'
