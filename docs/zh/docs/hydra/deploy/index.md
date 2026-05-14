@@ -15,5 +15,6 @@
 
 - 部署新模型：参考[部署新模型](./deploy.md)。
 - 管理已部署服务：参考[管理模型服务](./inference-manage.md)。
+- 查看部署详情（鉴权与 API 示例）：参考[部署详情](./deploy-detail.md)。
 - 获取 API Key：参考[API Key 管理](../apikey.md)。
 - 查看模型调用说明：参考[模型调用](../api-call.md)。

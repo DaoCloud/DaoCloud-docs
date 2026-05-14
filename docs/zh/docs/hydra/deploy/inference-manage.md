@@ -58,9 +58,5 @@ hide:
 
 - 访问鉴权：服务 API 使用 API Key 鉴权，请在请求头中携带 `Authorization: Bearer {API_KEY}`。
 - 获取 API Key：参考[API Key 管理](../apikey.md)。
-- API 调用示例：参考[模型调用](../api-call.md)。
-
-## 相关操作
-
-- 部署新的模型服务：参考[部署新模型](./deploy.md)。
-- 配置自定义模型元数据、模板与权重：参考[创建模型](../model-management/index.md)。
+- API 调用示例与响应字段说明：参考[模型服务详情](./deploy-detail.md)。
+- 更多调用方式：参考[模型调用](../api-call.md)。

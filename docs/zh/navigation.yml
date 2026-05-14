@@ -1374,6 +1374,7 @@ nav:
                   - 模型服务:
                       - 模型服务概览: hydra/deploy/index.md
                       - 部署新模型: hydra/deploy/deploy.md
+                      - 模型服务详情: hydra/deploy/deploy-detail.md
                       - 管理模型服务: hydra/deploy/inference-manage.md
                   - 文件存储:
                       - 创建文件存储: hydra/file-storage/storage.md
