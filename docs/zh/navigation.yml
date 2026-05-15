@@ -1368,10 +1368,14 @@ nav:
               - 普通用户视图:
                   - 模型广场: hydra/index.md
                   - 模型体验: hydra/exp.md
+                  - 模型管理:
+                      - 创建模型: hydra/model-management/index.md
+                      - 管理模型: hydra/model-management/model-manage.md
                   - 模型服务:
-                      - hydra/deploy/index.md
+                      - 模型服务概览: hydra/deploy/index.md
                       - 部署新模型: hydra/deploy/deploy.md
-                      - 使用 Dataset 管理模型文件: hydra/dataset.md
+                      - 模型服务详情: hydra/deploy/deploy-detail.md
+                      - 管理模型服务: hydra/deploy/inference-manage.md
                   - 文件存储:
                       - 创建文件存储: hydra/file-storage/storage.md
                       - 管理文件: hydra/file-storage/file-manage.md
