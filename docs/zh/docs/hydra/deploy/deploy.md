@@ -7,11 +7,9 @@ hide:
 
 *[Hydra]: 大模型服务平台的开发代号
 
-您可以从[模型广场](../index.md)、[模型管理](../model-management/index.md)页面直接部署模型，也可以从左侧导航进入 **模型服务** 页面后执行部署。
+将所选模型在目标集群上发布为可调用的模型服务，按需填写资源、运行时与实例等部署参数。您可从[模型广场](../index.md)、[模型管理](../model-management/index.md)或左侧导航 **模型服务- 部署新模型** 发起部署，下文说明步骤与参数含义。
 
-![deploy](../images/deploy-new-model-01.png)
-![deploy](../images/deploy-new-model-04.png)
-![deploy](../images/deploy-new-model-02.png)
+![deploy](../images/deploy-new-02.png)
 
 ## 前提条件
 
@@ -40,17 +38,12 @@ hide:
     | 分布式推理 | 开启后可配置单实例部署节点数 | 适用于单节点资源不足场景 |
     | 队列调度 | 可配置调度策略、优先级等 | 支持优先级与拓扑感知相关调度能力 |
 
-    ![deploy](../images/deploy-new-model-03.png)
+    ![deploy](../images/deploy-new-03.png)
 
 ## 部署后操作
 
 模型部署成功后，您可以：
 
-- 在模型服务列表中查看服务状态与详情。
-- 通过在线体验验证服务可用性。
+- 在模型服务列表中查看服务状态与详情，参考[管理模型服务](./inference-manage.md)。
+- 通过在线体验验证服务可用性，参考[在线体验](../exp.md)。
 - 按 API 方式调用模型，参考[模型调用](../api-call.md)。
-- 在服务详情页执行扩缩容、启停、删除等运维操作，参考[管理模型服务](./inference-manage.md)。
-
-!!! note
-
-    v0.13.1 之前版本的部署操作，请参考[部署新模型（历史版本）](./deploy-history.md)。
