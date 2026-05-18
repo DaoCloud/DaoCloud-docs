@@ -16,6 +16,13 @@ the evolution path and feature changes of each version.
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 *[Hydra]: Dev codename for LLM Studio in DCE 5.0
 
+## 2025-04-30
+
+### v0.40.0
+
+* **Improved** the labeling of hydra-agent to indicate it is used only for offline packages and not involved in installation.
+* **Improved** the installer to default the `kube_version` to `v1.33.8`.
+
 ## 2025-03-31
 
 ### v0.39.0
