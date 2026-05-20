@@ -12,6 +12,10 @@ technology, sorted by date by default.
 
 ## 2026
 
+- [Kubernetes v1.36: Server-Side Sharded List and Watch](./2026/server-side-sharded-list-and-watch.md)
+
+    Kubernetes v1.36 introduces **server-side sharded list and watch** as an alpha feature.
+
 - [Topology-Aware Scheduling: Building Smarter Scheduling Solutions for AI Workloads](./2026/topology-aware-scheduling.md)
 
     At KubeCon NA 2025, one topic clearly dominated discussions in the AI/ML space:
