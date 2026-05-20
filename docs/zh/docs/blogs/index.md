@@ -11,6 +11,10 @@ hide:
 
 ## 2026 年
 
+- [Kubernetes v1.36：服务端分片 List 与 Watch](./2026/server-side-sharded-list-and-watch.md)
+
+    Kubernetes v1.36 引入了 **服务端分片 List 与 Watch** 这一 Alpha 特性
+
 - [2026 下半年 AI 基础设施五大趋势](./2026/ai-infra-trends.md)
 
     当大模型从「技术展示」走向「商业落地」，基础设施正在经历一场静默的革命
