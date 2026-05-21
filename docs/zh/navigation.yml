@@ -1638,6 +1638,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2026:
+          - vLLM Elastic EP: blogs/2026/elastic-ep.md
           - 服务端分片 List 与 Watch: blogs/2026/server-side-sharded-list-and-watch.md
           - 2026 下半年 AI 基础设施五大趋势: blogs/2026/ai-infra-trends.md
           - Kubernetes v1.36 抢先一览: blogs/2026/k8s-136.md
