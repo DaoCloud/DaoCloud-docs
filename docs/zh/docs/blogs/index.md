@@ -11,6 +11,10 @@ hide:
 
 ## 2026 年
 
+- [vLLM Elastic EP：MoE 推理终于可以在线扩缩容了](./2026/elastic-ep.md)
+
+    Elastic EP 让 MoE 推理首次具备“运行时动态扩缩容”能力
+
 - [Kubernetes v1.36：服务端分片 List 与 Watch](./2026/server-side-sharded-list-and-watch.md)
 
     Kubernetes v1.36 引入了 **服务端分片 List 与 Watch** 这一 Alpha 特性

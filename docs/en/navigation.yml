@@ -1529,6 +1529,7 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2026:
+          - vLLM Elastic EP: blogs/2026/elastic-ep.md
           - Server-Side Sharded List and Watch: blogs/2026/server-side-sharded-list-and-watch.md
           - Topology-Aware Scheduling: blogs/2026/topology-aware-scheduling.md
           - Kubernetes x JobSet: blogs/2026/jobset-ai-restart.md

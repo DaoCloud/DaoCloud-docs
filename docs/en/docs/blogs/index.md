@@ -12,6 +12,10 @@ technology, sorted by date by default.
 
 ## 2026
 
+- [Elastic Expert Parallelism in vLLM](./2026/elastic-ep.md)
+
+    Elastic EP brings runtime dynamic scaling to MoE inference for the first time.
+
 - [Kubernetes v1.36: Server-Side Sharded List and Watch](./2026/server-side-sharded-list-and-watch.md)
 
     Kubernetes v1.36 introduces **server-side sharded list and watch** as an alpha feature.
