@@ -10,7 +10,7 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 
 ## 2026-04-30
 
-### v0.41.1
+### v0.41.2
 
 #### Insight Server
 - **Added** Add preference config api for security
