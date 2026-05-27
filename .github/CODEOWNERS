@@ -8,27 +8,27 @@
 /docs/zh/docs/blogs/ @windsonsea
 /docs/zh/docs/community/ @windsonsea
 /docs/zh/docs/native/ @windsonsea
-/docs/zh/docs/dce/ @windsonsea @samzong
+/docs/zh/docs/dce/ @windsonsea
 
 # code
-*.py @samzong @windsonsea
-*.yaml @samzong @windsonsea
-*.yml @samzong @windsonsea
-*.json @samzong @windsonsea
-/scripts/ @samzong @windsonsea
-/.github/ @samzong @windsonsea
-/docs/zh/themes/ @samzong @windsonsea
-/docs/en/themes/ @samzong @windsonsea
+*.py @windsonsea
+*.yaml @windsonsea
+*.yml @windsonsea
+*.json @windsonsea
+/scripts/ @windsonsea
+/.github/ @windsonsea
+/docs/zh/themes/ @windsonsea
+/docs/en/themes/ @windsonsea
 
 # amamba
-/docs/zh/docs/amamba/ @samzong @windsonsea
-/docs/zh/docs/download/modules/amamba.md @samzong @windsonsea
-/docs/zh/docs/videos/amamba.md @samzong @windsonsea
+/docs/zh/docs/amamba/ @windsonsea
+/docs/zh/docs/download/modules/amamba.md @windsonsea
+/docs/zh/docs/videos/amamba.md @windsonsea
 
 # baize
-/docs/zh/docs/baize/ @samzong @git-jxj @windsonsea @kebe7jun
-/docs/zh/docs/download/modules/baize.md @samzong @git-jxj @windsonsea @kebe7jun
-/docs/zh/docs/videos/baize.md @samzong @git-jxj @windsonsea @kebe7jun
+/docs/zh/docs/baize/ @git-jxj @windsonsea @kebe7jun
+/docs/zh/docs/download/modules/baize.md @git-jxj @windsonsea @kebe7jun
+/docs/zh/docs/videos/baize.md @git-jxj @windsonsea @kebe7jun
 
 # ghippo
 /docs/zh/docs/ghippo/ @yitingdc @lemontrees123 @windsonsea
@@ -41,18 +41,18 @@
 /docs/zh/docs/videos/hydra.md @kebe7jun @zhiyingfang2022 @windsonsea
 
 # insight
-/docs/zh/docs/insight/ @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
-/docs/zh/docs/download/modules/insight.md @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
-/docs/zh/docs/videos/insight.md @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+/docs/zh/docs/insight/ @Penguin-zlh @tukwila @windsonsea @FKAJerry
+/docs/zh/docs/download/modules/insight.md @Penguin-zlh @tukwila @windsonsea @FKAJerry
+/docs/zh/docs/videos/insight.md @Penguin-zlh @tukwila @windsonsea @FKAJerry
 
 # install
 /docs/zh/docs/install/ @zhiyingfang2022 @FloatXD @windsonsea
 /docs/zh/docs/videos/install.md @zhiyingfang2022 @FloatXD @windsonsea
 
 # kairship
-/docs/zh/docs/kairship/ @yt-huang @samzong @windsonsea
-/docs/zh/docs/download/modules/kairship.md @yt-huang @samzong @windsonsea
-/docs/zh/docs/videos/kairship.md @yt-huang @samzong @windsonsea
+/docs/zh/docs/kairship/ @yt-huang @windsonsea
+/docs/zh/docs/download/modules/kairship.md @yt-huang @windsonsea
+/docs/zh/docs/videos/kairship.md @yt-huang @windsonsea
 
 # kangaroo
 /docs/zh/docs/kangaroo/ @lemontrees123 @yt-huang @yitingdc @windsonsea
@@ -71,14 +71,14 @@
 /docs/zh/docs/videos/kpanda.md @lemontrees123 @shijinye @yt-huang @windsonsea
 
 # middleware
-/docs/zh/docs/middleware/ @samzong @windsonsea @drivebyer
-/docs/zh/docs/download/modules/middleware/ @samzong @windsonsea @drivebyer
-/docs/zh/docs/videos/middleware.md @samzong @windsonsea @drivebyer
+/docs/zh/docs/middleware/ @windsonsea @drivebyer
+/docs/zh/docs/download/modules/middleware/ @windsonsea @drivebyer
+/docs/zh/docs/videos/middleware.md @windsonsea @drivebyer
 
 # mspider
-/docs/zh/docs/mspider/ @zhiyingfang2022 @samzong @Cynthia-yun @windsonsea @kebe7jun
-/docs/zh/docs/download/modules/mspider.md @zhiyingfang2022 @samzong @Cynthia-yun @windsonsea @kebe7jun
-/docs/zh/docs/videos/mspider.md @zhiyingfang2022 @samzong @Cynthia-yun @windsonsea @kebe7jun
+/docs/zh/docs/mspider/ @zhiyingfang2022 @Cynthia-yun @windsonsea @kebe7jun
+/docs/zh/docs/download/modules/mspider.md @zhiyingfang2022 @Cynthia-yun @windsonsea @kebe7jun
+/docs/zh/docs/videos/mspider.md @zhiyingfang2022 @Cynthia-yun @windsonsea @kebe7jun
 
 # native
 /docs/zh/docs/native/ @windsonsea
@@ -89,9 +89,9 @@
 /docs/zh/docs/videos/spidernet.md @windsonsea
 
 # skoala
-/docs/zh/docs/skoala/ @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
+/docs/zh/docs/skoala/ @tukwila @Cynthia-yun @windsonsea @wilsonwu
 /docs/zh/docs/download/modules/skoala.md @tukwila @Cynthia-yun @windsonsea @wilsonwu
-/docs/zh/docs/videos/skoala.md @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
+/docs/zh/docs/videos/skoala.md @tukwila @Cynthia-yun @windsonsea @wilsonwu
 
 # storage
 /docs/zh/docs/storage/ @FloatXD @windsonsea
