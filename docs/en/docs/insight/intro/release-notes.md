@@ -13,10 +13,11 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 ### v0.41.2
 
 #### Insight Server
-- **Added** Add preference config api for security
-- **Added** Support gpu_summary in overview and cluster overview
-- **Fixed** Fix export log with timezone error
-- **Improved** Export CSV file with UTF-8 BOM
+
+- **Added** preference config api for security
+- **Added** support for gpu_summary in overview and cluster overview
+- **Fixed** export log with timezone error
+- **Improved** the export of CSV file with UTF-8 BOM
 
 ## 2026-03-31
 
