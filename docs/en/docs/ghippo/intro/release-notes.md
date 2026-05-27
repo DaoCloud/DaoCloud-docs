@@ -3,6 +3,16 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2026-01-31
+
+### v0.46.0
+
+* **Added** support for integrating SMS features via Webhook.
+* **Added** Japanese i18n support.
+* **Fixed** an issue where SMTP mail server username and password could not be saved as empty.
+* **Optimized** user displays to include firstname/lastname information.
+* **Optimized** SMTP email connection testing to support auto-adaptation of Plain, Noauth, and Login encryption methods.
+
 ## 2025-12-31
 
 ### v0.45.0
