@@ -9,6 +9,13 @@ hide:
 
 *[mcamel-minio]: mcamel 是 DaoCloud 所有中间件的开发代号，minio 是一款热门、轻量的对象存储中间件
 
+## 2026-04-30
+
+### v0.25.0
+
+- **新增** 前端新增日语翻译
+- **优化** 移除对 MinIO Operator API 的依赖，改为基于 CRD YAML 生成 API 类型
+
 ## 2026-03-31
 
 ### v0.24.0

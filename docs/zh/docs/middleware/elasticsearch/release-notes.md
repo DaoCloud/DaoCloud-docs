@@ -9,6 +9,12 @@ hide:
 
 *[mcamel-elasticsearch]: mcamel 是 DaoCloud 所有中间件的开发代号，elasticsearch 是提供分布式搜索和分析服务的中间件。
 
+## 2026-04-30
+
+### v0.28.0
+
+- **新增** 前端新增日语翻译
+
 ## 2026-03-31
 
 ### v0.27.0

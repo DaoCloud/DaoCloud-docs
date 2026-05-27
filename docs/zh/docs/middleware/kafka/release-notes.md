@@ -9,6 +9,13 @@ hide:
 
 *[mcamel-kafka]: mcamel 是 DaoCloud 所有中间件的开发代号，kafka
 
+## 2026-04-30
+
+### v0.30.0
+
+- **新增** 启用 Topic Operator（命名空间维度）
+- **新增** 前端新增日语翻译
+
 ## 2026-03-31
 
 ### v0.29.0

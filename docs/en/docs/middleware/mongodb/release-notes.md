@@ -11,6 +11,12 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 *[Mcamel-MongoDB]: "mcamel" is the dev name for DaoCloud's middlewares, and "MongoDB" is a database middleware that provides services for documentation
 
+## 2026-04-30
+
+### v0.20.0
+
+- **Added** Japanese translation support for the frontend
+
 ## 2026-03-31
 
 ### v0.19.0
