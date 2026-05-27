@@ -9,6 +9,12 @@ date: 2024-01-05
 
 This page provides the Release Notes for RocketMQ Message Queue, allowing you to understand the evolution and feature changes of each version.
 
+## 2026-04-30
+
+### v0.19.0
+
+- **Added** Japanese translation support for the frontend
+
 ## 2026-03-31
 
 ### v0.18.0

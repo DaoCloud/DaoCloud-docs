@@ -11,6 +11,13 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 
 *[mcamel-minio]: "mcamel" is the dev name for DaoCloud's middlewares, and "minio" is a light-weight middleware that provides object storage services
 
+## 2026-04-30
+
+### v0.25.0
+
+- **Added** Japanese translation support for the frontend
+- **Improved** Remove dependency on MinIO Operator API, switch to generating API types based on CRD YAML
+
 ## 2026-03-31
 
 ### v0.24.0

@@ -9,6 +9,13 @@ hide:
 
 *[Mcamel-PostgreSQL]: Mcamel 是 DaoCloud 所有中间件的开发代号，PostgreSQL 是一种功能丰富的关系型数据库。
 
+## 2026-04-30
+
+### v0.22.0
+
+- **新增** 支持 PostgreSQL 16.2 版本
+- **新增** 前端新增日语翻译
+
 ## 2026-03-31
 
 ### v0.21.0

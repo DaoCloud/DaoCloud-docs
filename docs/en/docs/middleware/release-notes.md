@@ -12,6 +12,48 @@ This page summarizes all middleware module release notes.
 *[Redis]: A high-performance key-value store, widely used for caching, session management, and distributed locks.  
 *[RocketMQ]: A highly reliable and scalable distributed messaging middleware, suitable for transactional and ordered message scenarios.  
 
+## 2026-04-30
+
+### Elasticsearch v0.28.0
+
+- **Added** Japanese translation support for the frontend
+
+### Kafka v0.30.0
+
+- **Added** Enable Topic Operator (namespace scope)
+- **Added** Japanese translation support for the frontend
+
+### MinIO v0.25.0
+
+- **Added** Japanese translation support for the frontend
+- **Improved** Remove dependency on MinIO Operator API, switch to generating API types based on CRD YAML
+
+### MongoDB v0.20.0
+
+- **Added** Japanese translation support for the frontend
+
+### MySQL v0.30.1
+
+- **Fixed** an issue where mgr-operator did not retry when the k8s apiserver returned 429
+
+### PostgreSQL v0.22.0
+
+- **Added** support for PostgreSQL 16.2
+- **Added** Japanese translation support for the frontend
+
+### RabbitMQ v0.32.0
+
+- **Added** Japanese translation support for the frontend
+- **Upgraded** RabbitMQ to 4.1.8
+
+### Redis v0.31.0
+
+- **Added** Japanese translation support for the frontend
+
+### RocketMQ v0.19.0
+
+- **Added** Japanese translation support for the frontend
+
 ## 2026-03-31
 
 ### Elasticsearch v0.27.0

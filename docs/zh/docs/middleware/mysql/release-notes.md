@@ -9,6 +9,12 @@ hide:
 
 *[mcamel-mysql]: mcamel 是 DaoCloud 所有中间件的开发代号，mysql 是应用最广泛的关系型数据库
 
+## 2026-04-30
+
+### v0.30.1
+
+- **修复** 修复了在 k8s apiserver 返回 429 的情况下 mgr-operator 没有重试的问题
+
 ## 2026-03-31
 
 ### v0.29.0
