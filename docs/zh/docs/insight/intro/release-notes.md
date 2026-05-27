@@ -2,6 +2,17 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化，[升级注意事项](../quickstart/install/upgrade-note.md)。
 
+## 2026-04-30
+
+### v0.41.2
+
+#### Insight Server
+
+- **新增** 新增安全偏好设置配置 API
+- **新增** 概览和集群概览支持 gpu_summary
+- **修复** 修复导出日志时时区错误的问题
+- **优化** 导出 CSV 文件时采用 UTF-8 BOM 编码
+
 ## 2026-03-31
 
 ### v0.41.0

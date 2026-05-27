@@ -8,6 +8,17 @@ date: 2025-06-23
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version. [Upgrade Notes](../quickstart/install/upgrade-note.md).
 
+## 2026-04-30
+
+### v0.41.2
+
+#### Insight Server
+
+- **Added** preference config api for security
+- **Added** support for gpu_summary in overview and cluster overview
+- **Fixed** export log with timezone error
+- **Improved** the export of CSV file with UTF-8 BOM
+
 ## 2026-03-31
 
 ### v0.41.0
