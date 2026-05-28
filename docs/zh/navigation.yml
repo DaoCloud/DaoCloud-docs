@@ -1545,6 +1545,7 @@ nav:
                   - 服务网格权限说明: ghippo/permissions/mspider.md
                   - 中间件服务权限说明: ghippo/permissions/mcamel.md
                   - AI Lab 权限说明: ghippo/permissions/baize.md
+                  - ClawOS 权限说明: ghippo/permissions/clawos.md
               - 最佳实践:
                   - 工作空间最佳实践: ghippo/best-practice/ws-best-practice.md
                   - 工作空间绑定命名空间: ghippo/best-practice/ws-to-ns.md
