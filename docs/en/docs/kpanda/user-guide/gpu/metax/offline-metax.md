@@ -27,4 +27,4 @@ DCE 5.0 ships with two built-in Helm chart packages: `metax-gpu-extensions` and 
 
 !!! bug "📢📢📢 Installation Notes"
 
-    1. The current `metax-operator` chart already includes `metax-exporter` by default, so you do not need to install it separately.
+    The current `metax-operator` chart already includes `metax-exporter` by default, so you do not need to install it separately.
