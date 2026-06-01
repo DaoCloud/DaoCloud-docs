@@ -27,5 +27,5 @@ DCE 5.0 内置了两个 helm-chart 包，一个是 metax-gpu-extensions，一个
 
 !!! bug "📢📢📢 安装注意事项"
 
-    1. 当前 metax-operator chart 已经默认内置 metax-exporter， 可以不用主动安装它。
+    当前 metax-operator chart 已经默认内置 metax-exporter， 可以不用主动安装它。
     
