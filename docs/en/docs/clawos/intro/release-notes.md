@@ -1,6 +1,37 @@
 # Release Notes
 
-This page lists the release notes for ClawOS, providing an overview of version evolution and feature changes.
+This page lists the release notes for ClawOS, providing an overview of version evolution and feature changes. ClawOS is designed for enterprise-grade AI agent scenarios, offering DCE-based OpenClaw managed runtime capabilities that help users quickly create, access, and manage their own AI digital employees. OpenClaw is no longer just a passive AI assistant that answers questions, but an agent runtime capable of proactively planning tasks, invoking tools, executing code, operating files, and completing end-to-end workflows.
+
+## 2026-05-31
+
+### v0.3.3
+
+- **Added** Support for customizing ClawOS roles
+- **Added** Skill marketplace support
+- **Optimized** Automatic isolation of API key visibility when creating OpenClaw instances
+
+
+## 2026-04-30
+
+### v0.3.2
+
+- **Added** One-click creation of OpenClaw instances
+- **Added** One-click Feishu integration
+- **Added** Support for manually configuring Feishu application information
+- **Added** Secure container sandbox isolation
+- **Added** Support for accessing OpenClaw instances via quick entry
+- **Added** Support for accessing OpenClaw instances via remote desktop
+- **Added** Support for uploading files through the file manager
+- **Added** Support for selecting public/private models when creating OpenClaw instances
+- **Added** Support for viewing workspace overview in administrator mode
+
+
+!!! info
+
+    Upgrading from v0.2.0 to v0.3.2 contains breaking changes. Existing OpenClaw instances need to be updated. Download the tool from
+    https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_upgrade_v0.3_patch_tool.tar.gz
+    to complete the update automatically. The detailed usage manual is included in the archive.
+
 
 ## 2026-03-23
 
