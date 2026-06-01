@@ -1,90 +1,42 @@
 # Installing and Using Metax GPU Components
 
-This section provides guidance on installing the Metax components—`gpu-extensions`, `gpu-operator`, etc.—as well as instructions for using Metax GPUs in both full-card and vGPU modes.
+This section provides guidance on installing the Metax `metax-gpu-extensions` and `metax-operator` components, as well as instructions for using Metax GPUs in both full-card and vGPU modes.
 
 ## Prerequisites
 
-1. Download and install the required tar package from the [Metax Software Center](https://sw-download.metax-tech.com/software-list).
-   This document uses `metax-gpu-k8s-package.0.7.10.tar.gz` as an example.
-2. Prepare a basic Kubernetes environment.
+1. A prepared DCE 5.0 base environment.
 
 ## Component Overview
 
-Metax provides two Helm chart packages: `metax-extensions` and `gpu-operator`. Choose which to install based on your usage scenario.
+DCE 5.0 ships with two built-in Helm chart packages: `metax-gpu-extensions` and `metax-operator`. Choose which to install based on your usage scenario.
 
-1. **metax-extensions**: Contains the `gpu-device` and `gpu-label` components. When using this approach, application container images **must be built based on the MXMACA® base image**. This solution **only supports full GPU usage**.
-2. **gpu-operator**: Contains components such as `gpu-device`, `gpu-label`, `driver-manager`, `container-runtime`, and `operator-controller`.
-   With this approach, application images **do not need to include the MXMACA® SDK**, and it supports **both full GPU and vGPU modes**.
+1. **metax-gpu-extensions**: Contains the `gpu-device` and `gpu-label` components. When using the Metax-extensions solution, application container images must be built based on the MXMACA® base image. This solution only supports the full GPU usage scenario.
+2. **metax-operator**: Contains the `gpu-device`, `gpu-label`, `driver-manager`, `container-runtime`, and `operator-controller` components.
+   With this approach, you can build application container images that do not include the MXMACA® SDK. It supports both full GPU and vGPU scenarios.
 
 ## Installation Steps
 
-1. Extract the contents from the tar file:
+### metax-gpu-extensions
 
-    From `/home/metax/metax-docs/k8s/metax-gpu-k8s-package.0.7.10.tar.gz`, extract:
+1. In the left navigation bar, go to __Container Management__ -> __Cluster Management__, and click the name of the target cluster.
+2. From the left navigation bar, click __Helm Apps__ -> __Helm Templates__, then search for __metax-gpu-extensions__.
+3. When the component appears, start the installation.
 
-    * `deploy-gpu-extensions.yaml` – deployment YAML file
-    * `metax-gpu-extensions-0.7.10.tgz`, `metax-operator-0.7.10.tgz` – Helm chart packages
-    * `metax-k8s-images.0.7.10.run` – offline image archive
+    ![Install gpu-extensions](../images/metax-gpu-extensions.png)
 
-2. Check if the driver is already installed:
-
-    ```bash
-    $ lsmod | grep metax 
-    metax 1605632 0 
-    ttm 86016 3 drm_vram_helper,metax,drm_ttm_helper 
-    drm 618496 7 drm_kms_helper,drm_vram_helper,ast,metax,drm_ttm_helper,ttm
-    ```
-
-    * If no output appears, the driver is not installed.
-    * If output appears, the driver is already installed.
-    * When using `gpu-operator`, **it is not recommended** to pre-install the MXMACA kernel driver on worker nodes. If already installed, you **do not need to uninstall it**.
-
-3. Install the driver
-
-### Installing `gpu-extensions`
-
-1. Push images:
-
-    ```bash
-    tar -xf metax-gpu-k8s-package.0.7.10.tar.gz
-    ./metax-k8s-images.0.7.10.run push {registry}/metax
-    ```
-
-2. Push Helm charts:
-
-    ```bash
-    helm plugin install https://github.com/chartmuseum/helm-push
-    helm repo add --username rootuser --password rootpass123 metax http://172.16.16.5:8081
-    helm cm-push metax-operator-0.7.10.tgz metax
-    helm cm-push metax-gpu-extensions-0.7.10.tgz metax
-    ```
-
-3. Install `metax-gpu-extensions` on the DCE 5.0 platform.
-
-    After successful deployment, you can verify the resources on the nodes:
+    After successful deployment, you can verify the resources on the nodes.
 
     ![Resource View](../images/metax-node.png)
 
-4. Once configured, nodes will be labeled with `Metax GPU`:
+    The node list in the DCE 5.0 platform will display the `Metax GPU` label.
 
     ![Metax Node Label](../images/metax-node1.png)
 
-### Installing `gpu-operator`
+### metax-operator
 
-Known issues when installing `gpu-operator`:
+Similar to installing gpu-extensions, search for __metax-operator__ and start the installation once it is found.
 
-1. The images for `metax-operator`, `gpu-label`, `gpu-device`, and `container-runtime` **must include the `amd64` suffix**.
-2. The `metax-maca` component image is **not included** in the `metax-k8s-images.0.7.13.run` package.
-    You must manually download images like `maca-mxc500-2.23.0.23-ubuntu20.04-x86_64.tar.xz`, load them, and update the `metax-maca` component image accordingly.
-3. The `metax-driver` image needs to be downloaded from
-    [`https://pub-docstore.metax-tech.com:7001`](https://pub-docstore.metax-tech.com:7001) as `k8s-driver-image.2.23.0.25.run`.
-    Then run:
-
-    ```bash
-    ./k8s-driver-image.2.23.0.25.run push {registry}/metax
-    ```
-
-    to push it to your image registry, and update the `metax-driver` image reference accordingly.
+![Install metax-operator](../images/metax-operator.png)
 
 ## Using the GPU
 
