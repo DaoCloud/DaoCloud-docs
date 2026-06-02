@@ -28,7 +28,7 @@
 
 !!! info
 
-    从 v0.2.0 升级到 v0.3.2 有 breaking change， 需要更新已有的 OpenClaw 实例，下载 https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_upgrade_v0.3_patch_tool.tar.gz
+    从 v0.2.0 升级到 v0.3.2 有 breaking change， 需要更新已有的 OpenClaw 实例，下载 [agentclaw_upgrade_v0.3_patch_tool.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_upgrade_v0.3_patch_tool.tar.gz) 
     工具，通过它自动完成更新。具体使用手册在压缩包中。
 
 
