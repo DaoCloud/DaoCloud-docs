@@ -25,6 +25,13 @@
 - **新增** 支持选择公有/私有模型创建 OpenClaw 实例
 - **新增** 支持在管理员模式下查看工作空间下的 overview
 
+
+!!! info
+
+    从 v0.2.0 升级到 v0.3.2 有 breaking change， 需要更新已有的 OpenClaw 实例，下载 [agentclaw_upgrade_v0.3_patch_tool.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_upgrade_v0.3_patch_tool.tar.gz) 
+    工具，通过它自动完成更新。具体使用手册在压缩包中。
+
+
 ## 2026-03-23
 
 ### v0.2.0
