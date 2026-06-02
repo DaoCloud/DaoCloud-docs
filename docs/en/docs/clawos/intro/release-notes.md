@@ -6,30 +6,30 @@ This page lists the release notes for ClawOS, providing an overview of version e
 
 ### v0.3.3
 
-- **Added** Support for customizing ClawOS roles
-- **Added** Skill marketplace support
-- **Optimized** Automatic isolation of API key visibility when creating OpenClaw instances
+- **Added** support for customizing ClawOS roles
+- **Added** skill marketplace support
+- **Optimized** automatic isolation of API key visibility when creating OpenClaw instances
 
 
 ## 2026-04-30
 
 ### v0.3.2
 
-- **Added** One-click creation of OpenClaw instances
-- **Added** One-click Feishu integration
-- **Added** Support for manually configuring Feishu application information
-- **Added** Secure container sandbox isolation
-- **Added** Support for accessing OpenClaw instances via quick entry
-- **Added** Support for accessing OpenClaw instances via remote desktop
-- **Added** Support for uploading files through the file manager
-- **Added** Support for selecting public/private models when creating OpenClaw instances
-- **Added** Support for viewing workspace overview in administrator mode
+- **Added** one-click creation of OpenClaw instances
+- **Added** one-click Feishu integration
+- **Added** support for manually configuring Feishu application information
+- **Added** secure container sandbox isolation
+- **Added** support for accessing OpenClaw instances via quick entry
+- **Added** support for accessing OpenClaw instances via remote desktop
+- **Added** support for uploading files through the file manager
+- **Added** support for selecting public/private models when creating OpenClaw instances
+- **Added** support for viewing workspace overview in administrator mode
 
 
 !!! info
 
     Upgrading from v0.2.0 to v0.3.2 contains breaking changes. Existing OpenClaw instances need to be updated. Download the tool from
-    https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_upgrade_v0.3_patch_tool.tar.gz
+    [agentclaw_upgrade_v0.3_patch_tool.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_upgrade_v0.3_patch_tool.tar.gz)
     to complete the update automatically. The detailed usage manual is included in the archive.
 
 
@@ -40,9 +40,9 @@ This page lists the release notes for ClawOS, providing an overview of version e
 #### AgentClaw Server
 
 - **Added** `ListWorkspaceAgentImage` API to list available Agent container images
-- **Added** Full CRUD API for Agent instances (**AgentInstance**): create, query, update, delete
+- **Added** full CRUD API for Agent instances (**AgentInstance**): create, query, update, delete
 - **Added** Grafana **Overview** dashboard
 - **Fixed** Nil token causing exceptions when listing Agent instances
-- **Fixed** Pagination errors in Agent instance list
-- **Optimized** Unified `/v1` prefix for all API base URLs
-- **Upgraded** Frontend UI to v0.1.0
+- **Fixed** pagination errors in Agent instance list
+- **Optimized** unified `/v1` prefix for all API base URLs
+- **Upgraded** frontend UI to v0.1.0
