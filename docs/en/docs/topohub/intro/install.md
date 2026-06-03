@@ -15,7 +15,7 @@ The installation process is as follows:
 
     For the commercial version installation process, please refer to the [installation guide](../../install/index.md).
 
-    By default, the `topohub-dashboard` component is not installed. Please update the **manifest** configuration file first.
+    By default, the `topohub-dashboard` component is not installed. Please update the **manifest** first.
 
     Example manifest:
 
@@ -40,11 +40,11 @@ The installation process is as follows:
 
     > The backend service component only needs to be installed in the [global service cluster](../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster).
 
-    Open the global service cluster, then navigate to __Helm Applications__ -> __Helm Templates__, locate `topohub`, and proceed with the installation.
+    Open the global service cluster, then navigate to __Helm Apps__ -> __Helm Templates__ , locate `topohub`, and proceed with the installation.
 
-    - **BMC username and password**: Default credentials for connecting to the host BMC.
-    - **DHCP Server**: The name of the NIC on the node that can access all managed device networks. It should be connected to the switch in trunk mode (e.g., `eth1`).
-    - **Topohub working node**: The node where the `topohub` component will be deployed and running.
+    - **BMC username and password** : Default credentials for connecting to the host BMC.
+    - **DHCP Server** : The name of the NIC on the node that can access all managed device networks. It should be connected to the switch in trunk mode (e.g., `eth1`).
+    - **Topohub working node** : The node where the `topohub` component will be deployed and running.
 
 ## Conclusion
 
