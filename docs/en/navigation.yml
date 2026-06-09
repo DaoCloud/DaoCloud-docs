@@ -415,7 +415,6 @@ nav:
                   - What is Multicloud Management: kairship/intro/index.md
                   - Features: kairship/intro/features.md
                   - Architecture: kairship/intro/architecture.md
-                  - FAQs: kairship/intro/faq.md
                   - Offline Upgrade: kairship/intro/offline-upgrade.md
                   - Multicloud Release Notes: kairship/intro/release-notes.md
               - Workspaces: kairship/workspace.md
@@ -449,6 +448,7 @@ nav:
               - Failover:
                   - Overview: kairship/failover/failover.md
                   - Optimize Failover Latency Sensitivity: kairship/failover/optimization-failover.md
+              - FAQs: kairship/intro/faq.md
               - Best Practices:
                   - DCE 4.0 to DCE 5.0: kairship/best-practice/one-click-conversion.md
                   - Cross-cluster autoscaling: kairship/best-practice/fhpa.md

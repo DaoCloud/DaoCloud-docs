@@ -429,7 +429,6 @@ nav:
                   - 什么是多云编排: kairship/intro/index.md
                   - 功能特性: kairship/intro/features.md
                   - 产品架构: kairship/intro/architecture.md
-                  - 常见问题: kairship/intro/faq.md
                   - 离线升级: kairship/intro/offline-upgrade.md
                   - Release Notes: kairship/intro/release-notes.md
               - 工作空间: kairship/workspace.md
@@ -463,6 +462,7 @@ nav:
               - 故障转移:
                   - 故障转移功能介绍: kairship/failover/failover.md
                   - 优化故障转移延迟灵敏度: kairship/failover/optimization-failover.md
+              - 常见问题: kairship/intro/faq.md
               - 最佳实践:
                   - 一键转换DCE 4.0到5.0应用: kairship/best-practice/one-click-conversion.md
                   - 跨集群弹性伸缩: kairship/best-practice/fhpa.md
