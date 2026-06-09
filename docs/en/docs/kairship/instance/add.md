@@ -36,7 +36,7 @@ To create an multicloud instance, follow the steps below:
    that is functioning normally and has a storage class (SC) installed, ensuring sufficient storage volume space. 
    Otherwise, the installation may fail. If failure occurs, follow these steps to troubleshoot:
 
-    - In the management cluster's StatefulSets page, confirm the running status of __etcd__.
+    - In the management cluster's StatefulSets page (global-cluster is not required), confirm the running status of __etcd__.
 
         ![check-etcd](../images/check-etcd.png)
 
@@ -49,7 +49,7 @@ To create an multicloud instance, follow the steps below:
         ![Update deployment](../images/update.png)
 
     - After entering the update page, modify the container configuration lifecycle startup command according to the actual situation of the management cluster.
-    
+
         ![Update Startup Command](../images/command.png)
 
     - If there is no PVC in the management cluster and hostPath is used instead, the installation can still succeed, but high availability cannot be achieved.
