@@ -1631,6 +1631,7 @@ nav:
                   - RocketMQ: download/modules/middleware/rocketmq.md
               - 云原生 AI:
                   - 大模型服务平台: download/modules/hydra.md
+                  - AI Lab: download/modules/baize.md
               - 云边协同: download/modules/kant.md
               - 全局&运营管理:
                   - 全局管理: download/modules/ghippo.md
