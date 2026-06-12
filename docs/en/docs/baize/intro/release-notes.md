@@ -13,6 +13,26 @@ so that you can learn its evolution path and feature changes.
     Features labeled as Beta may undergo changes; please use them with caution
     and provide prompt feedback if you encounter any issues.
 
+## 2026-05-31
+
+### v0.27.0
+
+* **Enhanced** Kcover upgraded to v0.0.8, supporting MetaX Day2 inspection tasks and automatic taint handling
+* **Enhanced** inference service fault-tolerance checks to support the latest MetaX supernodes
+* **Fixed** vulnerability CVE-2026-35469
+* **Fixed** vulnerability CVE-2026-29181
+* **Fixed** vulnerability CVE-2026-4117
+* **Fixed** vulnerability CVE-2026-41179
+* **Fixed** an issue where secrets in the inference service did not work properly
+
+## 2026-04-30
+
+### v0.26.0
+
+* **Added** support for downloading offline installation packages in the Download Center for offline installation or upgrade of the AI Lab module
+* **Enhanced** automatic image tag parsing when manually entering images in Notebook, training jobs, and inference services (requires the image repository to exist)
+* **Fixed** vulnerability CVE-2026-33186
+
 ## 2026-03-31
 
 ### v0.25.1

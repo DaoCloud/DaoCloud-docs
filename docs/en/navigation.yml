@@ -1523,10 +1523,16 @@ nav:
                   - RabbitMQ: download/modules/middleware/rabbitmq.md
                   - Redis: download/modules/middleware/redis.md
                   - RocketMQ: download/modules/middleware/rocketmq.md
+              - Cloud Native AI:
+                  - LLM Studio: download/modules/hydra.md
+                  - AI Lab: download/modules/baize.md
               - Cloud Edge Collaboration: download/modules/kant.md
               - Management:
                   - Global Management: download/modules/ghippo.md
                   - Operation Management: download/modules/gmagpie.md
+                  - Device Management: download/modules/topohub.md
+              - Inference:
+                  - Inference Acceleration: download/modules/inferx.md
   - Blogs:
       - Index: blogs/index.md
       - 2026:
