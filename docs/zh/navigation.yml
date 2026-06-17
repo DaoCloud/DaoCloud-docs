@@ -1293,6 +1293,7 @@ nav:
                   - Release Notes: clawos/intro/release-notes.md
               - 安装: clawos/install.md
               - 快速入门: clawos/quickstart.md
+              - OpenClaw 实例: clawos/openclaw.md
               - 飞书集成: clawos/feishu.md
               - 常见问题: clawos/faq.md
           - AI Lab:
