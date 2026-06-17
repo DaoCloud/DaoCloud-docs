@@ -18,16 +18,16 @@
 
     点击右下角 **确定**
     
-    ![创建](./images/creclaw.png)
+    ![创建](../images/creclaw.png)
      
 
-    ![飞书集成](images/feishu.png)
+    ![飞书集成](../images/feishu.png)
 
-    > 有关如何获取飞书配置信息以及对接飞书的详细步骤，请参考[飞书集成](./feishu.md)文档。
+    > 有关如何获取飞书配置信息以及对接飞书的详细步骤，请参考[飞书集成](../feishu.md)文档。
 
 1. 耐心等待实例创建完成。
 
-    ![等待创建](images/wait-for.png)
+    ![等待创建](../images/wait-for.png)
 
 ## 访问 OpenClaw
 
@@ -35,28 +35,28 @@
 
 1. 点击右侧的 **访问工具** -> **openclaw** 或 **noVNC**（浏览器里的远程桌面）
 
-    ![访问工具](./images/access-tools.png)
+    ![访问工具](../images/access-tools.png)
 
 2. 打开 OpenClaw 管理页面
 
-    ![访问openclaw](./images/chat-interface.png)
+    ![访问openclaw](../images/chat-interface.png)
 
 3. 打开 noVNC 管理页面
 
-    ![访问VNC](./images/novnc.png)
+    ![访问VNC](../images/novnc.png)
 
 !!! note
 
     - 某些情况下，由于网络波动，在创建实例后，可能需要等待 1-2 分钟才能访问。
     - 如果出现以下提示，可以点击 **继续访问网站** ，就能在聊天窗口中使用小龙虾智能体。
 
-    ![继续访问](./images/continue-access.png)
+    ![继续访问](../images/continue-access.png)
 
 ## 后台调试 OpenClaw
 
 您可以通过实例列表中 noVNC 进行快捷操作。
 
-    ![网页访问](./images/web-access.png)
+    ![网页访问](../images/web-access.png)
 
 ### 命令行操作
 
@@ -74,4 +74,4 @@ free -h
 
 ## OpenClaw 常见问题
 
-参阅[常见问题](./faq.md)文档。
+参阅[常见问题](../faq.md)文档。
