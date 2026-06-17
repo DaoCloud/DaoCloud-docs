@@ -198,7 +198,7 @@
 !!! caution
 
     对于未配置长连接的机器人应用，需要在获取 **App ID** 与 **App Secret** 后，启动 OpenClaw 实例，
-    才能保存事件与回调长连接配置。请参考 [OpenClaw 快速入门](./quickstart.md)文档启动 OpenClaw 实例。
+    才能保存事件与回调长连接配置。请参考 [OpenClaw 快速入门](./intro/quickstart.md)文档启动 OpenClaw 实例。
 
 ### 配置事件订阅
 
