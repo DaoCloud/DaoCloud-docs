@@ -1,6 +1,6 @@
 # 快速入门
 
-本指南将帮助您在 DCE 上快速创建和使用 OpenClaw 实例。
+本指南将帮助您在 DCE 5.0 上快速创建和使用 OpenClaw 实例。
 
 ## 前提条件
 
@@ -11,15 +11,12 @@
 ## 创建 OpenClaw 实例
 
 1. 从左侧导航栏，选择 **ClawOS** ，点击右侧的 **创建实例** 按钮
-1. 配置 OpenClaw 实例
+1. 配置 OpenClaw 实例后点击右下角 **确定**
 
     - 设置实例名称，选择对应的集群、命名空间、镜像版本，配置 CPU/内存资源、网络、模型（推荐使用 minimax 模型）和 API Key。
     - （可选）启用 **集成飞书** 并填入飞书的 App ID 和 App Secret。
 
-    点击右下角 **确定**
-    
     ![创建](../images/creclaw.png)
-     
 
     ![飞书集成](../images/feishu.png)
 
@@ -56,7 +53,7 @@
 
 您可以通过实例列表中 noVNC 进行快捷操作。
 
-    ![网页访问](../images/web-access.png)
+![网页访问](../images/web-access.png)
 
 ### 命令行操作
 
