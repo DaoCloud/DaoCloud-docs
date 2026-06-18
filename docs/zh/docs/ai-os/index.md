@@ -54,8 +54,8 @@ hide:
 
     主动规划任务、调用工具、自主执行，像一名真正的数字员工一样完成端到端的复杂工作
 
-    - [安装 ClawOS](../clawos/install.md)
-    - [ClawOS 快速入门](../clawos/quickstart.md)
+    - [安装 ClawOS](../clawos/intro/install.md)
+    - [ClawOS 快速入门](../clawos/intro/quickstart.md)
     - [在飞书上即成 ClawOS](../clawos/feishu.md)
     - [ClawOS 常见问题](../clawos/faq.md)
 
