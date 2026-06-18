@@ -1290,9 +1290,9 @@ nav:
           - ClawOS 智能体:
               - 介绍:
                   - 什么是 ClawOS: clawos/intro/index.md
+                  - 安装: clawos/intro/install.md
+                  - 快速入门: clawos/intro/quickstart.md
                   - Release Notes: clawos/intro/release-notes.md
-              - 安装: clawos/install.md
-              - 快速入门: clawos/quickstart.md
               - ClawHub:
                   - Skill 市场: clawos/skill.md
                   - Skill 管理: clawos/skill-manage.md
