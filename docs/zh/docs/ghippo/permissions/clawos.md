@@ -1,6 +1,6 @@
 # ClawOS 权限说明
 
-[ClawOS](../../clawos/quickstart.md)支持四种用户角色：
+[ClawOS](../../clawos/intro/quickstart.md)支持四种用户角色：
 
 - Admin ：拥有 `工作空间视角` 和 `运维管理` 全部功能的增删改查的权限。
 - Workspace Admin：拥有授权工作空间视角全部功能的增删改查的权限。
