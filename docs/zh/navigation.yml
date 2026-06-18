@@ -1293,6 +1293,7 @@ nav:
                   - 安装: clawos/intro/install.md
                   - 快速入门: clawos/intro/quickstart.md
                   - Release Notes: clawos/intro/release-notes.md
+              - OpenClaw 实例: clawos/openclaw.md
               - 飞书集成: clawos/feishu.md
               - 常见问题: clawos/faq.md
               - Skill 管理（管理员视角）: clawos/skillmanage-admin.md
