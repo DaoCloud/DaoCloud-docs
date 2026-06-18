@@ -1293,15 +1293,18 @@ nav:
                   - 安装: clawos/intro/install.md
                   - 快速入门: clawos/intro/quickstart.md
                   - Release Notes: clawos/intro/release-notes.md
-              - 工作空间视角: clawos/workspace/overview.md
-              - 管理员视角: clawos/admin/overview-admin.md
+              - 工作空间视角:
+                  - 概览: clawos/workspace/overview.md
+              - 管理员视角:
+                  - 概览: clawos/admin/overview-admin.md
+                  - 网络策略管理: clawos/admin/network-manage.md
+                  - Skill 管理: clawos/skillmanage-admin.md
               - ClawHub:
                   - Skill 市场: clawos/skill.md
                   - Skill 管理: clawos/skill-manage.md
               - OpenClaw 实例: clawos/openclaw.md
               - 飞书集成: clawos/feishu.md
               - 常见问题: clawos/faq.md
-              - Skill 管理（管理员视角）: clawos/skillmanage-admin.md
           - AI Lab:
               - 介绍:
                   - 什么是 AI Lab: baize/intro/index.md
