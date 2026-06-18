@@ -1295,6 +1295,8 @@ nav:
               - 快速入门: clawos/quickstart.md
               - 工作空间视角:
                   - 概览: clawos/workspace/overview.md
+              - 管理员视角:
+                  - 概览: clawos/admin/overview-admin.md
               - 飞书集成: clawos/feishu.md
               - 常见问题: clawos/faq.md
           - AI Lab:
