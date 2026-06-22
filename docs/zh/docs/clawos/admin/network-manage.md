@@ -103,7 +103,7 @@ ClawOS 中的网络策略模板可以分为以下几类。
 
 进入路径：**OpenClaw 实例** → **创建实例** → **网络策略**
 
-相关操作请参见 [OpenClaw 实例](../openclaw.md)。
+相关操作请参见 [OpenClaw 实例](../workspace/openclaw.md)。
 
 ### 平台默认策略
 

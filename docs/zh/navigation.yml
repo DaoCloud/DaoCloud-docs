@@ -1295,18 +1295,15 @@ nav:
                   - Release Notes: clawos/intro/release-notes.md
               - 工作空间视角:
                   - 概览: clawos/workspace/overview.md
+                  - ClawHub:
+                      - Skill 市场: clawos/workspace/skill.md
+                      - Skill 管理: clawos/workspace/skill-manage.md
+                  - OpenClaw 实例: clawos/workspace/openclaw.md
+                  - 飞书集成: clawos/workspace/feishu.md
               - 管理员视角:
                   - 概览: clawos/admin/overview-admin.md
+                  - Skill 管理: clawos/admin/skillmanage-admin.md
                   - 网络策略管理: clawos/admin/network-manage.md
-                  - Skill 管理: clawos/skillmanage-admin.md
-              - ClawHub:
-                  - Skill 市场: clawos/skill.md
-                  - Skill 管理: clawos/skill-manage.md
-              - OpenClaw 实例: clawos/openclaw.md
-              - 管理员视角:
-                  - 概览: clawos/admin/overview-admin.md
-                  - Skill 管理: clawos/skillmanage-admin.md
-              - 飞书集成: clawos/feishu.md
               - 常见问题: clawos/faq.md
           - AI Lab:
               - 介绍:
