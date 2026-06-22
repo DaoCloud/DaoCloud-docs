@@ -1,4 +1,4 @@
-# Kubean 集群集成 Karpenter AWS 弹性节点方案（含 GPU）
+# Kubean 集群集成 Karpenter AWS 弹性节点 Preview 方案（含 GPU）
 
 ## 1. 方案定位
 
@@ -326,3 +326,30 @@ spec:
         limits:
           nvidia.com/gpu: 1
 ```
+
+## 8. 验证与排障清单
+
+- [ ] Kubean 基础集群节点全部 Ready。
+- [ ] infra worker 已打标签并承载 Karpenter controller。
+- [ ] Karpenter controller 能访问 AWS API。
+- [ ] EC2 节点安全组能访问 API Server 6443。
+- [ ] 新节点 kubelet providerID 正确。
+- [ ] CPU workload 能触发 NodeClaim。
+- [ ] GPU workload 能触发 GPU NodeClaim。
+- [ ] GPU 节点上 `nvidia-smi` 正常。
+- [ ] Node allocatable 中出现 `nvidia.com/gpu`。
+- [ ] 空闲节点能按 disruption 策略回收。
+
+```bash
+kubectl get pods -A
+kubectl get nodes -o wide
+kubectl get nodeclaims
+kubectl get nodes -l node.lifecycle=karpenter
+kubectl get nodes -l node.accelerator=nvidia-gpu
+kubectl describe node &lt;GPU_NODE_NAME&gt; | grep -A5 "nvidia.com/gpu"
+kubectl logs -n karpenter deploy/karpenter
+kubectl logs cuda-vectoradd-test
+```
+
+**常见失败点：**
+API Server 安全组未开放、bootstrap token 过期、CA hash 错误、Karpenter controller 缺少 `iam:PassRole`、GPU AMI 未正确配置 NVIDIA container runtime、device plugin 没有容忍 GPU taint。
