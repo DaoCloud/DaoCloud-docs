@@ -1775,7 +1775,7 @@ nav:
           - mdctl 批量生成 Docx: native/git/md-docx.md
           - 视频剪辑帮助: native/git/video.md
           - K8s 相关资源: native/git/k8s.md
-          - Kubean 集群集成 Karpenter AWS 弹性节点方案: native/git/kubean-karpenter.md
+          - Kubean 集群集成 Karpenter AWS 弹性节点方案: native/knowledge/karpenter.md
       - 行业洞察:
           - 商业产品: native/commerce.md
           - 开源项目: native/open.md
