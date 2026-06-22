@@ -16,7 +16,12 @@
 - 通过 EC2NodeClass 和 NodePool 管理 CPU/GPU 弹性节点池
 - 节点空闲、漂移或低利用率时自动回收
 
-暂时无法在飞书文档外展示此内容
+| 组件 | 职责 |
+| --- | ---- |
+| **Kubean** | - 创建 control-plane、etcd、infra worker<br>- 维护 Kubernetes 版本、Kubespray 配置与基础组件<br>- 提供稳定承载 Karpenter controller 的基础节点 |
+| **Karpenter** | - 根据 pending pods 创建 AWS EC2 worker<br>- 通过 `EC2NodeClass` 和 `NodePool` 管理 CPU/GPU 弹性节点池<br>- 节点空闲、漂移或低利用率时自动回收 |
+
+![](./images/archi.png)
 
 ## 2. 可行性与关键约束
 
@@ -43,11 +48,13 @@
 | AMI | `<KARPENTER_CPU_WORKER_AMI_ID>`, `<KARPENTER_GPU_WORKER_AMI_ID>` | CPU/GPU 节点建议使用不同 AMI。 |
 | GPU | `<NVIDIA_DRIVER_VERSION>`, `<CUDA_VERSION>`, `<NVIDIA_DEVICE_PLUGIN_VERSION>` | GPU 节点镜像和插件版本。 |
 
-**建议：**生产环境优先使用 EC2 Instance Profile、SSM Parameter Store 或 Secrets Manager，避免把长期 AWS AK/SK 或长期 kubeadm token 写入 manifest。
+!!! note
+
+    生产环境优先使用 EC2 Instance Profile、SSM Parameter Store 或 Secrets Manager，避免把长期 AWS AK/SK 或长期 kubeadm token 写入 manifest。
 
 ## 4. 部署流程
 
-暂时无法在飞书文档外展示此内容
+![部署流程](./images/flow.png)
 
 1. 用 Kubean 创建 control-plane、etcd、infra worker。
 2. 安装并验证 CNI、AWS Cloud Controller Manager、EBS CSI Driver。
@@ -319,44 +326,3 @@ spec:
         limits:
           nvidia.com/gpu: 1
 ```
-
-## 8. 验证与排障清单
-
-- [ ] Kubean 基础集群节点全部 Ready。
-- [ ] infra worker 已打标签并承载 Karpenter controller。
-- [ ] Karpenter controller 能访问 AWS API。
-- [ ] EC2 节点安全组能访问 API Server 6443。
-- [ ] 新节点 kubelet providerID 正确。
-- [ ] CPU workload 能触发 NodeClaim。
-- [ ] GPU workload 能触发 GPU NodeClaim。
-- [ ] GPU 节点上 `nvidia-smi` 正常。
-- [ ] Node allocatable 中出现 `nvidia.com/gpu`。
-- [ ] 空闲节点能按 disruption 策略回收。
-
-```bash
-kubectl get pods -A
-kubectl get nodes -o wide
-kubectl get nodeclaims
-kubectl get nodes -l node.lifecycle=karpenter
-kubectl get nodes -l node.accelerator=nvidia-gpu
-kubectl describe node &lt;GPU_NODE_NAME&gt; | grep -A5 "nvidia.com/gpu"
-kubectl logs -n karpenter deploy/karpenter
-kubectl logs cuda-vectoradd-test
-```
-
-**常见失败点：**
-API Server 安全组未开放、bootstrap token 过期、CA hash 错误、Karpenter controller 缺少 `iam:PassRole`、GPU AMI 未正确配置 NVIDIA container runtime、device plugin 没有容忍 GPU taint。
-
-## 9. 推荐交付形态
-
-建议把这套能力封装成 Kubean 的 post-install addon 或标准化操作包。用户仍然通过 Kubean 创建集群；集群创建完成后自动安装 AWS 云组件、Karpenter、CPU/GPU NodePool 和验证资源。
-
-| 阶段 | POC | 生产化 |
-| :--- | :-- | :--- |
-| 凭证 | 静态 AWS AK/SK、短期 kubeadm token。 | Instance Profile、SSM/Secrets Manager、自动轮换 token。 |
-| AMI | 手工构建 CPU/GPU AMI。 | Packer/CI 自动构建并做版本准入。 |
-| GPU | 单个 G6 L4 NodePool。 | 按推理、训练、大模型分别拆 NodePool。 |
-| 运维 | 手动观察 NodeClaim 和节点日志。 | Prometheus 告警、容量水位、失败原因归因。 |
-
-**落地建议：**
-先做一个最小 POC：Kubean 基础集群 + CPU NodePool + G6 L4 GPU NodePool。确认 bootstrap、IAM、网络、device plugin 都跑通后，再扩展到多 AZ、多实例族、spot 策略和生产化凭证管理。
