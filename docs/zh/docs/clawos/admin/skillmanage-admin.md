@@ -36,11 +36,11 @@
 
 1. 平台管理员点击 **发布 Skill**，进入发布页面。
 
-    ![发布 Skill](./images/admin-skill1.png)
+    ![发布 Skill](../images/admin-skill1.png)
 
 2. 填写 Skill 信息并上传 Skill 文件包，提交发布。
 
-    ![发布 Skill 表单](./images/admin-skill02.png)
+    ![发布 Skill 表单](../images/admin-skill02.png)
 
 提交发布后，系统创建一条 Skill 记录，并进入审核流程。Skill **不会立即**出现在工作空间 Skill 市场中。
 

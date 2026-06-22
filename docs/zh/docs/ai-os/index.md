@@ -56,7 +56,7 @@ hide:
 
     - [安装 ClawOS](../clawos/intro/install.md)
     - [ClawOS 快速入门](../clawos/intro/quickstart.md)
-    - [在飞书上即成 ClawOS](../clawos/feishu.md)
+    - [在飞书上即成 ClawOS](../clawos/workspace/feishu.md)
     - [ClawOS 常见问题](../clawos/faq.md)
 
 - :material-developer-board:{ .lg .middle } __AI Lab：一站式机器学习服务__

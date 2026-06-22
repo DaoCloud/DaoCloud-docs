@@ -6,7 +6,7 @@
  
 点击 **快速生成** ，打开飞书 APP 扫码，按照提示步骤完成授权即可。
 
-![飞书](./images/feishu1.png)
+![飞书](../images/feishu1.png)
 
 ## 手动配置
 
@@ -16,13 +16,13 @@
 
 2. 点击 **创建企业自建应用** 按钮。
 
-    ![创建应用](./images/create-app.png)
+    ![创建应用](../images/create-app.png)
 
 ### 配置应用信息
 
 配置应用名称、描述及图标，点击 **创建** 按钮完成创建。
 
-![添加机器人](./images/add-bot.png)
+![添加机器人](../images/add-bot.png)
 
 ### 添加机器人能力
 
@@ -30,7 +30,7 @@
 2. 选择 **按能力添加** 页签
 3. 点击 **机器人** 能力卡片的 **添加** 按钮
 
-    ![权限管理入口](./images/add-bot-capability.png)
+    ![权限管理入口](../images/add-bot-capability.png)
 
 ## 配置权限
 
@@ -40,7 +40,7 @@
 
 2. 点击 **批量导入/导出权限** 按钮。
 
-    ![导入权限](./images/import-permissions.png)
+    ![导入权限](../images/import-permissions.png)
 
 3. 在 **导入** 页签中，粘贴[权限配置代码](#permission-config)。
 
@@ -48,7 +48,7 @@
 
 5. 在弹窗中确认权限无误后，点击 **申请开通** 按钮。
 
-    ![权限配置](./images/permission-config.png)
+    ![权限配置](../images/permission-config.png)
 
 ### 权限配置代码
 
@@ -171,19 +171,19 @@
 
 1. 点击顶部的 **创建版本** 按钮。
 
-    ![创建版本](./images/create-version.png)
+    ![创建版本](../images/create-version.png)
 
 2. 按需配置应用版本号、默认能力及更新说明等信息。
 
-    ![配置版本](./images/configure-version.png)
+    ![配置版本](../images/configure-version.png)
 
 3. 点击页面底部的 **保存** 按钮创建版本。
 
-    ![保存版本](./images/save-version.png)
+    ![保存版本](../images/save-version.png)
 
 4. 点击页面右上角的 **确认发布** 按钮完成应用发布。
 
-    ![发布应用](./images/publish-app.png)
+    ![发布应用](../images/publish-app.png)
 
 ### 获取配置信息
 
@@ -191,24 +191,24 @@
 
 2. 在 **应用凭证** 模块中，获取并记录 **App ID** 与 **App Secret** 信息。
 
-     ![获取配置](./images/get-credentials.png)
+     ![获取配置](../images/get-credentials.png)
 
 ## 配置事件订阅与回调长连接
 
 !!! caution
 
     对于未配置长连接的机器人应用，需要在获取 **App ID** 与 **App Secret** 后，启动 OpenClaw 实例，
-    才能保存事件与回调长连接配置。请参考 [OpenClaw 快速入门](./intro/quickstart.md)文档启动 OpenClaw 实例。
+    才能保存事件与回调长连接配置。请参考 [OpenClaw 快速入门](../intro/quickstart.md) 文档启动 OpenClaw 实例。
 
 ### 配置事件订阅
 
 1. 点击左侧事件与回调，配置 **事件订阅** 方式为 **长连接**
 
-    ![事件订阅](./images/event-subscription.png)
+    ![事件订阅](../images/event-subscription.png)
 
 2. 添加接收消息事件(可自定义其他事件)：
 
-    ![添加事件](./images/add-event.png)
+    ![添加事件](../images/add-event.png)
 
 ### 配置回调
 
@@ -216,20 +216,20 @@
 
 2. 配置方式选择 **长连接**
 
-    ![回调订阅](./images/callback-subscription.png)
+    ![回调订阅](../images/callback-subscription.png)
 
 3. 添加回调。
 
-    ![添加配置](./images/add-callback.png)
+    ![添加配置](../images/add-callback.png)
 
 ### 发布版本
 
 发布版本并等待审核通过。
 
-![发布版本](./images/publish-version.png)
+![发布版本](../images/publish-version.png)
 
 ## 开始对话
 
 在飞书中找到您的机器人，开始愉快地对话吧！
 
-![对话](./images/conversation.png)
+![对话](../images/conversation.png)
