@@ -43,15 +43,15 @@ Since the offline environment cannot connect to the internet, you need to prepar
     root     13024  0.0  0.0 112824   980 pts/0    S+   23:45   0:00 grep --color=auto docker
     ```
 
-2. Create a file named __manifest.yaml__ in the __/root__ directory of the integrated node with the following command:
+2. Create a file named __manifest.yml__ in the __/root__ directory of the integrated node with the following command:
 
     ```bash
-    vi manifest.yaml
+    vi manifest.yml
     ```
 
-    The content of __manifest.yaml__ should be as follows:
+    The content of __manifest.yml__ should be as follows:
 
-    ```yaml title="manifest.yaml"
+    ```yaml title="manifest.yml"
     image_arch:
     - "amd64"
     kube_version: # Specify the version of the cluster to be upgraded
@@ -71,7 +71,7 @@ Since the offline environment cannot connect to the internet, you need to prepar
 
     ```bash
     # Assuming the Kubean version is v0.13.9
-    docker run --rm -v $(pwd)/manifest.yaml:/manifest.yaml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.13.9
+    docker run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.13.9
     ```
 
     After the Docker service completes running, check the files in the __/data__ folder. The folder structure should look like this:

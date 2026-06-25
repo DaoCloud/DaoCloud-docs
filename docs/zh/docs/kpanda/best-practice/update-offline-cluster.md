@@ -2,13 +2,13 @@
 
 !!! note
 
-    本文仅针对离线模式下，使用 DCE 5.0 平台所创建的工作集群的 kubernetes 的版本进行部署或升级，
-    不包括其它 kubeneters 组件的部署或升级。
+    本文仅针对离线模式下，使用 DCE 5.0 平台所创建的工作集群的 Kubernetes 的版本进行部署或升级，
+    不包括其它 Kubernetes 组件的部署或升级。
 
 本文适用以下离线场景：
 
 - 用户可以通过以下操作指南，部署 DCE 5.0 平台所创建的非界面中推荐的 Kubernetes 版本。
-- 用户可以通过制作增量离线包的方式对使用 DCE 5.0 平台所创建的工作集群的 kubernetes 的版本进行升级。
+- 用户可以通过制作增量离线包的方式对使用 DCE 5.0 平台所创建的工作集群的 Kubernetes 的版本进行升级。
 
 整体的思路为：
 
@@ -19,7 +19,7 @@
 
 !!! note
 
-    目前支持构建的离线 kubernetes 版本，请参考 [kubean 支持的 kubernetes 版本列表](../../community/kubean.md#kubernetes)。
+    目前支持构建的离线 kubernetes 版本，请参考 [Kubean 支持的 Kubernetes 版本列表](../../community/kubean.md#kubernetes)。
 
 ## 在联网节点构建离线包
 
@@ -40,15 +40,15 @@
     root     13024  0.0  0.0 112824   980 pts/0    S+   23:45   0:00 grep --color=auto docker
     ```
 
-2. 在联网节点的 __/root__ 目录下创建一个名为 __manifest.yaml__ 的文件，命令如下：
+2. 在联网节点的 __/root__ 目录下创建一个名为 __manifest.yml__ 的文件，命令如下：
 
     ```bash
-    vi manifest.yaml
+    vi manifest.yml
     ```
 
-    __manifest.yaml__ 内容如下：
+    __manifest.yml__ 内容如下：
 
-    ```yaml title="manifest.yaml"
+    ```yaml title="manifest.yml"
     image_arch:
     - "amd64"
     kube_version: # 填写待升级的集群版本
@@ -56,7 +56,7 @@
     ```
 
     - __image_arch__ 用于指定 CPU 的架构类型，可填入的参数为 __amd64__ 和 __arm64__ 。
-    - __kube_version__ 用于指定需要构建的 kubernetes 离线包版本，可参考上文的支持构建的离线 kubernetes 版本。
+    - __kube_version__ 用于指定需要构建的 Kubernetes 离线包版本，可参考上文的支持构建的离线 Kubernetes 版本。
 
 3. 在 __/root__ 目录下新建一个名为 __/data__ 的文件夹来存储增量离线包。
 
@@ -64,7 +64,7 @@
     mkdir data
     ```
 
-    执行如下命令，使用 kubean `airgap-patch` 镜像生成离线包。
+    执行如下命令，使用 Kubean `airgap-patch` 镜像生成离线包。
     `airgap-patch` 镜像 tag 与 Kubean 版本一致，需确保 Kubean 版本覆盖需要升级的 Kubernetes 版本。
 
     ```bash
@@ -108,7 +108,7 @@
 
     `x.x.x.x` 为火种节点 IP 地址
 
-2. 在火种节点上将 __/data__ 文件内的镜像文件拷贝至火种节点内置的 docker resgitry 仓库。登录火种节点后执行如下命令：
+2. 在火种节点上将 __/data__ 文件内的镜像文件拷贝至火种节点内置的 Docker Registry 仓库。登录火种节点后执行如下命令：
 
     1. 进入镜像文件所在的目录
     
@@ -116,7 +116,7 @@
         cd data/amd64/images
         ```
 
-    2. 执行 __import_images.sh__ 脚本将镜像导入火种节点内置的 Docker Resgitry 仓库。
+    2. 执行 __import_images.sh__ 脚本将镜像导入火种节点内置的 Docker Registry 仓库。
    
         ```bash
         REGISTRY_ADDR="127.0.0.1"  ./import_images.sh
@@ -124,13 +124,13 @@
 
     !!! note
 
-        上述命令仅仅适用于火种节点内置的 Docker Resgitry 仓库，如果使用外部仓库请使用如下命令：
+        上述命令仅仅适用于火种节点内置的 Docker Registry 仓库，如果使用外部仓库请使用如下命令：
         
         ```shell
         REGISTRY_SCHEME=https REGISTRY_ADDR=${registry_address} REGISTRY_USER=${username} REGISTRY_PASS=${password} ./import_images.sh
         ```
 
-        - REGISTRY_ADDR 是镜像仓库的地址，比如1.2.3.4:5000
+        - REGISTRY_ADDR 是镜像仓库的地址，比如 `1.2.3.4:5000`
         - 当镜像仓库存在用户名密码验证时，需要设置 REGISTRY_USER 和 REGISTRY_PASS
 
 3. 在火种节点上将 __/data__ 文件内的二进制文件拷贝至火种节点内置的 Minio 服务上。
@@ -141,7 +141,7 @@
         cd data/amd64/files/
         ```
 
-    2. 执行 import_files.sh 脚本将二进制文件导入火种节点内置的 Minio 服务上。
+    2. 执行 import_files.sh 脚本将二进制文件导入火种节点内置的 MinIO 服务上。
     
         ```bash
         MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_files.sh http://127.0.0.1:9000
@@ -149,10 +149,10 @@
 
 !!! note
 
-    上述命令仅仅适用于火种节点内置的 Minio 服务，如果使用外部 Minio 请将 `http://127.0.0.1:9000` 替换为外部 Minio 的访问地址。
-    “rootuser” 和 “rootpass123”是火种节点内置的 Minio 服务的默认账户和密码。
+    上述命令仅仅适用于火种节点内置的 MinIO 服务，如果使用外部 MinIO 请将 `http://127.0.0.1:9000` 替换为外部 MinIO 的访问地址。
+    “rootuser” 和 “rootpass123”是火种节点内置的 MinIO 服务的默认账户和密码。
 
-## 更新全局服务集群的 kubernetes 版本清单
+## 更新全局服务集群的 Kubernetes 版本清单
 
 火种节点上执行如下命令，将 `manifest`、`localartifactset` 资源部署到全局服务集群：
 
