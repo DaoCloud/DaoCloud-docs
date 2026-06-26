@@ -180,8 +180,8 @@ GPU 节点建议与 CPU 节点完全拆开：单独 AMI、单独 EC2NodeClass、
 
 | 场景 | 推荐实例 | 调度策略 |
 | :-- | :------ | :------ |
-| 推理 / 视频处理 | g6.xlarge、g6.2xlarge、g6.4xlarge、g6.8xlarge | 可考虑 spot + on-demand 混合。 |
-| 中小训练 / A10G 生态 | g5.xlarge、g5.12xlarge、g5.24xlarge、g5.48xlarge | 建议先 on-demand，成熟后再放开 spot。 |
+| 推理/视频处理 | g6.xlarge、g6.2xlarge、g6.4xlarge、g6.8xlarge | 可考虑 spot + on-demand 混合。 |
+| 中小训练/A10G 生态 | g5.xlarge、g5.12xlarge、g5.24xlarge、g5.48xlarge | 建议先 on-demand，成熟后再放开 spot。 |
 | 大模型训练 | p4d、p5、p5e 等 | 单独 NodePool，结合队列、checkpoint 和容量预留。 |
 
 ```yaml
@@ -273,6 +273,8 @@ spec:
   disruption:
     consolidationPolicy: WhenEmpty
     consolidateAfter: 10m
+
+---
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
@@ -358,4 +360,10 @@ kubectl logs cuda-vectoradd-test
 ```
 
 **常见失败点：**
-API Server 安全组未开放、bootstrap token 过期、CA hash 错误、Karpenter controller 缺少 `iam:PassRole`、GPU AMI 未正确配置 NVIDIA container runtime、device plugin 没有容忍 GPU taint。
+
+- API 服务器安全组未开放
+- Bootstrap token 过期
+- CA hash 错误
+- Karpenter controller 缺少 `iam:PassRole`
+- GPU AMI 未正确配置 NVIDIA 容器运行时
+- device plugin 没有容忍 GPU taint
