@@ -79,7 +79,7 @@ settings:
 controller:
   env:
     - name: AWS_REGION
-      value: &lt;AWS_REGION&gt;
+      value: <AWS_REGION>
     - name: AWS_ACCESS_KEY_ID
       valueFrom:
         secretKeyRef:
@@ -139,6 +139,8 @@ spec:
       --discovery-token-ca-cert-hash sha256:&lt;KUBEADM_CA_CERT_HASH&gt; \
       --node-name "${INSTANCE_ID}"
     systemctl restart kubelet
+
+---
 apiVersion: karpenter.sh/v1
 kind: NodePool
 metadata:
@@ -225,6 +227,8 @@ spec:
       --discovery-token-ca-cert-hash sha256:&lt;KUBEADM_CA_CERT_HASH&gt; \
       --node-name "${INSTANCE_ID}"
     systemctl restart kubelet
+
+---
 apiVersion: karpenter.sh/v1
 kind: NodePool
 metadata:
@@ -306,6 +310,8 @@ spec:
         - name: device-plugin
           hostPath:
             path: /var/lib/kubelet/device-plugins
+
+---
 apiVersion: v1
 kind: Pod
 metadata:
