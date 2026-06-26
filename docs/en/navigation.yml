@@ -1222,6 +1222,7 @@ nav:
                   - Initialize AI Lab: baize/intro/install.md
                   - First Time Usage: baize/intro/first.md
                   - AI Lab Release Notes: baize/intro/release-notes.md
+                  - Upgrade Notes: baize/intro/upgrade-notes.md
               - Developer:
                   - Introduction: baize/developer/index.md
                   - Quick Start: baize/developer/quick-start.md
