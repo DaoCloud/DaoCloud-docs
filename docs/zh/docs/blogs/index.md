@@ -11,6 +11,10 @@ hide:
 
 ## 2026 年
 
+- [Kubernetes 官方修正几个历史 CVE 记录](./2026/k8s-cve.md)
+
+    Kubernetes 安全响应委员会（SRC）宣布，将于 2026 年 6 月 1 日修正部分历史 CVE 的元数据记录。
+
 - [vLLM Elastic EP：MoE 推理终于可以在线扩缩容了](./2026/elastic-ep.md)
 
     Elastic EP 让 MoE 推理首次具备“运行时动态扩缩容”能力
