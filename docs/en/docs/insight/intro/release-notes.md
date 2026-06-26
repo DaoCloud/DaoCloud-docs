@@ -8,6 +8,30 @@ date: 2025-06-23
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version. [Upgrade Notes](../quickstart/install/upgrade-note.md).
 
+## 2026-05-31
+
+### v0.42.0
+
+#### Insight Server
+
+- **Added** annotations to AlertSummary
+- **Added** text templates for webhook, DingTalk, WeCom, and Lark notifications
+- **Added** expr annotation injection to VMRule alert rules so notifications include the triggering PromQL expression
+- **Added** firing rule alert list API
+- **Added** support for the universal query interface for spans
+- **Fixed** kube-rbac-proxy CVE-2026-33186
+- **Fixed** insight-server CVE-2026-33186
+- **Fixed** otelcol and insight-server CVE-2026-33186
+- **Fixed** vector CVE
+- **Improved** span list API with root spans parameters
+- **Improved** Metax dashboard and added Metax alert rules
+
+#### Insight Agent
+
+- **Added** agentclaw metrics pipeline for receiving OpenClaw OTLP metrics
+- **Added** support for collecting Knoway gateway logs
+- **Improved** span naming with OTel semantic conventions to address high-cardinality issues in span metrics
+
 ## 2026-04-30
 
 ### v0.41.2

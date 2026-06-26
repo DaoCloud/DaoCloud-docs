@@ -2,6 +2,30 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化，[升级注意事项](../quickstart/install/upgrade-note.md)。
 
+## 2026-05-31
+
+### v0.42.0
+
+#### Insight Server
+
+- **新增** 为 AlertSummary 增加 annotations
+- **新增** Webhook、钉钉、企业微信和飞书通知支持文本模板
+- **新增** 为 VMRule 告警规则注入 expr annotation，使通知中包含触发告警的 PromQL 表达式
+- **新增** firing rule 的告警列表 API
+- **新增** 支持 span 通用查询接口
+- **修复** kube-rbac-proxy CVE-2026-33186 漏洞
+- **修复** insight-server CVE-2026-33186 漏洞
+- **修复** otelcol 和 insight-server CVE-2026-33186 漏洞
+- **修复** vector CVE 漏洞
+- **优化** span 列表 API 支持 root spans 参数
+- **优化** 更新 Metax 仪表盘并新增 Metax 告警规则
+
+#### Insight Agent
+
+- **新增** agentclaw metrics pipeline，用于接收 OpenClaw OTLP 指标
+- **新增** 支持采集 Knoway 网关日志
+- **优化** 基于 OTel 语义约定覆盖 span 名称，以解决 span metrics 中的高基数问题
+
 ## 2026-04-30
 
 ### v0.41.2
