@@ -12,6 +12,10 @@ technology, sorted by date by default.
 
 ## 2026
 
+- [Correcting Records for Unfixed Kubernetes CVEs](./2026/k8s-cve.md)
+
+    The Kubernetes Security Response Committee (SRC) will correct the affected CVE records on June 1, 2026.
+
 - [Elastic Expert Parallelism in vLLM](./2026/elastic-ep.md)
 
     Elastic EP brings runtime dynamic scaling to MoE inference for the first time.
