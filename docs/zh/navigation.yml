@@ -87,6 +87,7 @@ nav:
               - 升级:
                   - 升级 DCE 5.0 组件: install/upgrade.md
                   - 标准版升级白金版: install/evolve.md
+                  - 升级注意事项: install/upgrade-notes.md
               - 卸载和导入:
                   - 卸载: install/uninstall.md
                   - 导入离线资源: install/import.md
