@@ -2,7 +2,7 @@
 
 本页说明将安装器升级到新版本或者升级 Kubernetes 版本时需要注意的相关事项。
 
-## Kubernetes 升级到 v1.35 及更高版本
+## Kubernetes 升级到 v1.35 及更高版本，操作系统应采用 cgroup v2
 
 **核心建议：安装和升级到 Kubernetes v1.35 版本及以上的操作系统采用 cgroup v2。**
 
