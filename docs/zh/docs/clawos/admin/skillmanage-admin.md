@@ -35,7 +35,7 @@
 
 ## 发布 Skill
 
-1. 平台管理员点击 **发布 Skill**，进入发布页面。
+1. 平台管理员点击 **发布 Skill** ，进入发布页面。
 
     ![发布 Skill](../images/admin-skill1.png)
 
@@ -43,7 +43,7 @@
 
     ![发布 Skill 表单](../images/admin-skill02.png)
 
-提交发布后，系统创建一条 Skill 记录，并进入审核流程。Skill **不会立即**出现在工作空间 Skill 市场中。
+提交发布后，系统创建一条 Skill 记录，并进入审核流程。Skill **不会立即** 出现在工作空间 Skill 市场中。
 
 ### 发布后状态流转
 

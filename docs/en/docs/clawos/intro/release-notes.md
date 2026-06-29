@@ -10,7 +10,6 @@ This page lists the release notes for ClawOS, providing an overview of version e
 - **Added** skill marketplace support
 - **Optimized** automatic isolation of API key visibility when creating OpenClaw instances
 
-
 ## 2026-04-30
 
 ### v0.3.2
@@ -25,13 +24,11 @@ This page lists the release notes for ClawOS, providing an overview of version e
 - **Added** support for selecting public/private models when creating OpenClaw instances
 - **Added** support for viewing workspace overview in administrator mode
 
-
 !!! info
 
     Upgrading from v0.2.0 to v0.3.2 contains breaking changes. Existing OpenClaw instances need to be updated. Download the tool from
     [agentclaw_upgrade_v0.3_patch_tool.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_upgrade_v0.3_patch_tool.tar.gz)
     to complete the update automatically. The detailed usage manual is included in the archive.
-
 
 ## 2026-03-23
 

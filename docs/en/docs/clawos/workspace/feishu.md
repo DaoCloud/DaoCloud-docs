@@ -192,7 +192,7 @@ Set the application name, description, and icon, then click **Create** to finish
 !!! caution
 
     For bot applications without long connection enabled, you must start an OpenClaw instance after obtaining the **App ID** and **App Secret**
-    in order to save event subscription and callback long connection settings. See the [OpenClaw Quick Start](./quickstart.md) guide.
+    in order to save event subscription and callback long connection settings. See the [OpenClaw Quick Start](intro/quickstart.md) guide.
 
 ### Configure Event Subscription
 

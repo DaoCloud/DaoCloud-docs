@@ -1208,14 +1208,25 @@ nav:
                       - View Instance Details: middleware/minio/user-guide/view.md
                       - MinIO Identity Management: middleware/minio/user-guide/user-management.md
       - Cloud Native AI:
-          - ClawOS:
+          - Index: ai-os/index.md
+          - ClawOS Agent:
               - Introduction:
-                  - What is ClawOS: clawos/intro/index.md
+                  - What Is ClawOS: clawos/intro/index.md
+                  - Installation: clawos/intro/install.md
+                  - Quick Start: clawos/intro/quickstart.md
                   - Release Notes: clawos/intro/release-notes.md
-              - Install: clawos/install.md
-              - Quick Start: clawos/quickstart.md
-              - Integrate Feishu: clawos/feishu.md
-              - FAQs: clawos/faq.md
+              - Workspace View:
+                  - Overview: clawos/workspace/overview.md
+                  - ClawHub:
+                      - Skill Marketplace: clawos/workspace/skill.md
+                      - Skill Management: clawos/workspace/skill-manage.md
+                  - OpenClaw Instances: clawos/workspace/openclaw.md
+                  - Feishu Integration: clawos/workspace/feishu.md
+              - Administrator View:
+                  - Overview: clawos/admin/overview-admin.md
+                  - Skill Management: clawos/admin/skillmanage-admin.md
+                  - Network Policy Management: clawos/admin/network-manage.md
+              - FAQ: clawos/faq.md
           - AI Lab:
               - Introduction:
                   - What is AI Lab: baize/intro/index.md

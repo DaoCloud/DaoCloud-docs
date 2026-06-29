@@ -14,14 +14,12 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_a
 
 If a newer version is released, replace `v0.2.0` accordingly.
 
-
 !!! info
 
     If you need the armd64 version, please use the link:
     ```text
     https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.0_arm64.tar
     ```
-
 
 ### Load Images and Chart Packages from the Offline Bundle
 
@@ -216,19 +214,16 @@ Update the offline repository, locate the `agentclaw` chart, and install it. No 
     helm upgrade agentclaw agentclaw-release -n agentclaw-system --install --create-namespace
     ```
 
-
 ## Online Installation
 
 !!! info
 
     The prerequisites for online installation are the same as for offline installation.
 
-
 ### Install via Kpanda UI
 
 First, add the `agentclaw-release` repository in **Helm Apps** - **Helm Repositories**: `https://release.daocloud.io/chartrepo/agentclaw`,
 then find the `agentclaw` chart in **Helm Charts** and click **Install**. No parameter changes are required during installation.
-
 
 ### Install via Helm
 

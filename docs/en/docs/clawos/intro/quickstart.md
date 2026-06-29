@@ -21,7 +21,7 @@ This guide helps you quickly create and use an OpenClaw instance.
 
     
 
-    > For details on how to obtain Feishu configuration and complete integration, see the [Feishu Integration](./feishu.md) guide.
+    > For details on how to obtain Feishu configuration and complete integration, see the [Feishu Integration](../feishu.md) guide.
 
 3. Wait for the instance to be created.
 
@@ -33,11 +33,9 @@ Once the instance status shows **Running**:
 
 1. Click **Access Tools** → **openclaw** on the right side.
 
-    
+2. Open the OpenClaw UI.
 
-2. Open the OpenClaw management interface.
-
-    
+3. Open the noVNC UI.
 
 !!! note
 
@@ -80,4 +78,4 @@ openclaw skills list
 
 ## FAQ
 
-See the [FAQ](./faq.md) for common questions.
+See the [FAQ](../faq.md) for common questions.
