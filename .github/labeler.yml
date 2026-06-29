@@ -2,9 +2,17 @@ amamba:
   - "docs/en/docs/amamba/**/*"
   - "docs/zh/docs/amamba/**/*"
 
+baize:
+  - "docs/en/docs/baize/**/*"
+  - "docs/zh/docs/baize/**/*"
+
 blogs:
   - "docs/en/docs/blogs/**/*"
   - "docs/zh/docs/blogs/**/*"
+
+clawos:
+  - "docs/en/docs/clawos/**/*"
+  - "docs/zh/docs/clawos/**/*"
 
 dce:
   - "docs/en/docs/dce/**/*"
@@ -25,6 +33,10 @@ ghippo:
 hydra:
   - "docs/en/docs/hydra/**/*"
   - "docs/zh/docs/hydra/**/*"
+
+inferx:
+  - "docs/en/docs/inferx/**/*"
+  - "docs/zh/docs/inferx/**/*"
 
 insight:
   - "docs/en/docs/insight/**/*"
@@ -102,7 +114,3 @@ develop:
 
 i18n:
   - "docs/en/**/*"
-
-baize:
-  - "docs/en/docs/baize/**/*"
-  - "docs/zh/docs/baize/**/*"
