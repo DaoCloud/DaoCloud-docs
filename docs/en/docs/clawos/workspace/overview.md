@@ -44,9 +44,7 @@ Token quotas help administrators control model invocation costs and prevent a si
 
 !!! note
 
-```
-In the current prototype, "Current Month" means that this metric is calculated based on the calendar month or the monthly cycle configured by the platform.
-```
+    In the current prototype, "Current Month" means that this metric is calculated based on the calendar month or the monthly cycle configured by the platform.
 
 ### Total Instances
 
