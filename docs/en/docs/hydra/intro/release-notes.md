@@ -4,6 +4,35 @@ This page lists the release notes for LLM Studio, helping you understand version
 
 *[hydra]: Internal codename for DaoCloud's LLM Studio
 
+## 2026-05-31
+
+### v0.15.0
+
+- **Added** support for large language model fine-tuning, including dataset management, fine-tuning job management, model evaluation, and model export
+- **Added** pre-deployment health checks for model deployments, automatically validating critical hardware and software environments before deployment to identify issues in advance
+- **Added** support for token weight configuration in model deployments and MaaS models to ensure fair token quota allocation
+- **Added** support for enabling and disabling API Keys, allowing users to activate API Keys as needed
+- **Added** support for accounting of cached tokens in large language models
+- **Added** support for workspace token quota configuration in operations management, allowing users to set token limits for each workspace
+- **Added** support for gateway security policy management and audit logs in operations management, allowing users to configure gateway security policies such as sensitive word detection and model allowlists/blocklists
+- **Added** support for forwarding multimodal MaaS models, including speech-to-text, OCR, rerank, and embedding models
+- **Improved** model marketplace management by adding support for model deletion
+
+!!! note
+
+    Starting from version 0.15.0, Hydra integrates Higress into the Knoway gateway to provide capabilities such as AI security and token quota management. For details, see the [Upgrade Notes](upgrade-notes.md).
+
+## 2026-04-30
+
+### v0.14.0
+
+- **Added** support for API Key expiration settings
+- **Added** support for API Key token quota settings
+- **Improved** API Key management permissions, allowing each user to create and manage their own API Keys
+- **Improved** model experience authentication to support only user-created API Keys
+- **Improved** model deletion logic by adding validation for associated model services
+- **Improved** model deployment templates by supporting custom GPU types and custom runtime logic for more flexible model deployment
+
 ## 2025-03-31
 
 ### v0.13.1
