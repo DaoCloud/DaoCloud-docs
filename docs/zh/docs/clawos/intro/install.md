@@ -19,16 +19,16 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.3_a
 !!! info
 
     如果你需要 armd64 版本，请使用链接：
+
     ```text
     https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.3_arm64.tar
     ```
-
 
 ### 从离线包中加载镜像和 chart 包
 
 !!! info
 
-    前置条件：将离线包上传至目标节点
+    前置条件：将离线包上传至目标节点。
 
 您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 chart-syncer 同步镜像到镜像仓库，该方法更加高效便捷。
 
