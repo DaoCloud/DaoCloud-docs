@@ -1664,5 +1664,6 @@ nav:
           - Security Vulnerabilities: native/knowledge/bugs.md
           - E-books: native/knowledge/ebooks.md
           - Others: native/knowledge/other.md
+          - Kubean Cluster Integration with Karpenter: native/knowledge/karpenter.md
   - Free Trial:
       - Free Trial: trial/index.md
