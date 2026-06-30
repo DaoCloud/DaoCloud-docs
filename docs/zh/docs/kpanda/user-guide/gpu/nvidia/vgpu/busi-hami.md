@@ -13,19 +13,19 @@
 | 安装入口 | Helm 模板安装 | Helm 模板安装 |
 | Helm 模板 | `nvidia-vgpu` | `nvidia-vgpu-commercial` |
 | 安装参数 | 基本一致 | 基本一致 |
-| GPU 模式切换 | 支持切换到 vGPU 模式 | 支持切换到 vGPU 模式 |
+| GPU 模式切换 | 支持切换到 vGPU 模式或 MIG 模式 | 支持切换到 vGPU 模式或 MIG 模式 |
 | License | 不需要 | 必须导入 License 并激活 |
-| 激活方式 | 无 | 通过 Kubernetes Secret 导入 License |
 
 ### 功能区别
 
 | 功能项 | 开源版 | 商业版 | 说明 |
 | --- | --- | --- | --- |
-| vGPU 资源切分 | 支持 | 支持 | — |
-| 调度能力 | 支持 | 支持 | 商业版提供企业级调度增强能力 |
+| 异构卡支持 | 英伟达全部 | 英伟达全部；<br>PPU 全部；<br>昇腾 910A、910B2、910B3、910B4、910B4-1、910C（不支持切分）、310P；<br>沐曦曦云系列 GPU（含 C550/C500/C500X/C290/C280/N260 等型号）；<br>海光；<br>寒武纪；<br>燧原；<br>昆仑芯；<br>摩尔线程；<br>天数智芯等 | — |
+| vGPU 资源切分 | 算力切分 | 算力切分；<br>显存切分 | — |
+| 调度能力 | 对于 NVIDIA GPU：<br>Binpack/Spread<br>指定 GPU 卡型号<br>指定具体某一张卡 | 对于 NVIDIA GPU：<br>Binpack/Spread<br>指定 GPU 卡型号<br>指定具体某一张卡<br>任务优先级 | — |
 | 监控能力 | 支持 | 支持 | 可通过 ServiceMonitor 接入可观测性模块 |
-| 企业级支持 | 社区支持 | 商业支持 | 商业版由 HAMi 提供企业级技术支持 |
-| License 管理 | 不涉及 | 支持 | 商业版需完成 License 激活 |
+| 企业级支持 | 开源社区支持 | 商业支持 | — |
+| License 管理 | 无需 License | 需完成 License 激活 | — |
 
 ## 前提条件
 
@@ -85,7 +85,7 @@
 
     点击 **确定** 后，节点状态会变为 **GPU 模式切换中**。等待切换完成（即 vGPU 的 hami-nvidia-vgpu-device-plugin Pod 启动完毕）后，节点状态会变为 **Nvidia-vGPU**。
 
-    节点 GPU 模式切换成功后，可参考[应用使用 Nvidia vGPU](vgpu_user.md)部署工作负载。切换过程稍有延迟，请在节点标签正确显示后再部署应用。
+    节点 GPU 模式切换成功后，可参考[应用使用 Nvidia vGPU](vgpu_user.md) 部署工作负载。切换过程稍有延迟，请在节点标签正确显示后再部署应用。
 
 ## 导入 License 并激活
 
@@ -93,27 +93,7 @@
 
 ### 获取 License 申请信息
 
-安装前或安装后，需按 HAMi 要求准备 License 申请信息（如 GPU UUID 等）。详细步骤请参考 [获取商业版 HAMi License 信息](https://github.com/dynamia-ai/workshop/blob/main/lab1-load-license.md)。
-
-### 导入 License
-
-收到 License 文件后，通过 Kubernetes Secret 导入并激活：
-
-1. 在 HAMi 所在命名空间创建 Secret，将 License 内容写入 Secret。
-
-    ```bash
-    kubectl create secret generic hami-license \
-      -n <HAMi 所在命名空间> \
-      --from-file=license=<License 文件路径>
-    ```
-
-2. 若 Helm 安装参数中提供 License Secret 相关配置项，请在 Addon 配置中将 Secret 名称指向 `hami-license`（或您自定义的名称），保存后等待 Pod 重新加载。
-
-3. 确认 device plugin 等组件 Pod 重启后处于 Running 状态，且无 License 相关报错。
-
-!!! tip
-
-    License 的具体字段名称、Secret 挂载方式可能随 Addon 版本变化。如安装界面或 YAML 中有 `licenseSecret` 等参数，请以 Helm 模板中的参数说明为准。
+安装前或安装后，需按 HAMi 要求准备 License 申请信息（如 GPU UUID 等）。获取申请信息、导入 License 并完成激活的详细步骤，请参考 [获取商业版 HAMi License 信息并完成导入](https://github.com/dynamia-ai/workshop/blob/main/lab1-load-license.md)。
 
 ## 验证安装
 

@@ -369,6 +369,7 @@ nav:
                       - NVIDIA GPU整卡模式: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU模式:
                           - 安装 vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
+                          - 安装商业版 vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/busi-hami.md
                           - 使用 NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
                           - 构建 vGPU 显存超配镜像: kpanda/user-guide/gpu/nvidia/vgpu/hami.md
                           - 如何让集群纳管指定的 GPU 卡: kpanda/user-guide/gpu/nvidia/vgpu/manage_somegpu.md
