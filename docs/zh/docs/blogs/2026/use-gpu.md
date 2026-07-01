@@ -118,6 +118,27 @@ AI 算力仍然稀缺，但更稀缺的是把算力用好的工程能力。
 
 对于企业来说，AI Infra 的下一场硬仗，不一定是买到更多 GPU，而是把已经拥有的 GPU，真正变成可调度、可共享、可观测、可运营的生产力。
 
+可以，压缩成“短段落 + 表格 + 收束句”会更利落，适合放在推文最后：
+
+## DaoCloud：把 AI Infra 建在可信的云原生底座上
+
+AI Infra 的底层能力，离不开稳定、开放、可持续演进的云原生基础设施。
+DaoCloud 长期深度参与 Kubernetes 上游社区建设，并将社区能力沉淀到企业级 AI Infra 实践中。
+
+| 维度 | DaoCloud 实践 | 对 AI Infra 的价值 |
+|---|---|---|
+| 社区治理 | [Paco Xu 连任 Kubernetes Steering Committee 成员](../2025/paco-ksc.md)，也是国内唯一的 Kubernetes 指导委员会成员 | 深度参与 Kubernetes 项目治理，把握云原生底座演进方向 |
+| 安全响应 | [2024 年 DaoCloud 加入 Kubernetes 安全响应委员会](../2024/241219-sec-privacy.md) | 参与 Kubernetes 安全漏洞响应与披露流程，强化企业级 AI 平台安全底座 |
+| 上游贡献 | 在 Kubernetes 各个 SIG 中拥有十多位 Maintainer，代码贡献量全球前 10 | 持续参与调度、存储、网络、安全、文档、本地化等核心方向建设 |
+| 产业落地 | 助力多家上市公司、高校和科研机构建设 GPU 算力中心 | 支撑 AI 训练、推理、科研计算和行业大模型应用落地并实现市值成倍增长 |
+| 平台能力 | 通过云原生底座实现算力池化、任务调度、多租户管理、资源计量、弹性伸缩和安全治理 | 将 GPU 算力中心从“硬件堆叠”升级为“可运营的 AI 基础设施” |
+
+当 GPU 算力逐渐成为企业 AI 能力的底层资产，企业需要的不只是一个能运行模型的平台，而是一个能够承载模型生命周期、算力治理和业务规模化落地的云原生基础设施底座。
+
+![d.run](./images/ai-gpu05.png)
+
+DaoCloud 希望做的，正是帮助企业把 AI 算力从“昂贵资源”变成“可调度、可共享、可观测、可治理的生产力”。
+
 ## 参考资料
 
 - 前沿科技雷达 TechRadar: [“5% utilization is a math fail”: Millions of GPUs worth billions are mostly sitting idle, report finds](https://www.techradar.com/pro/5-utilization-is-a-math-fail-millions-of-gpus-worth-billions-are-mostly-sitting-idle-report-finds)
