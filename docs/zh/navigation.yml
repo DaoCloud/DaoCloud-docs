@@ -1654,6 +1654,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2026:
+          - 评估AI智能体的生产力: blogs/2026/ai-agent.md
           - AI 时代的 Token 工厂: blogs/2026/token-factory.md
           - AI Infra 的下一场硬仗: blogs/2026/use-gpu.md
           - K8s 修正几个历史 CVE: blogs/2026/k8s-cve.md
