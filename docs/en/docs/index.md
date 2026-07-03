@@ -16,8 +16,9 @@ By seamlessly integrating state-of-the-art service mesh and microservice technol
 
 A major advantage of DCE 5.0 is its native support for the DevOps development and operation mode, facilitating standardization and automation throughout the application delivery process. Additionally, DCE 5.0 effortlessly integrates a range of carefully selected databases and middleware, enhancing operational efficiency and governance. Each product module operates independently, ensuring flexible upgrades without disrupting critical business operations. Furthermore, DCE 5.0 seamlessly integrates with various cloud native ecosystem products, forming a comprehensive and robust solution system.
 
-DCE 5.0 comes with a built-in cloud-native, integrated training and inference platform, **AI Lab** , together with a **LLM Studio** , forming a complete AI capability foundation from compute to models:
+DCE 5.0 comes with an integrated AI foundation that includes the **ClawOS** multi-agent governance platform, the **AI Lab** cloud-native training and inference platform, and a large language model (LLM) serving platform, delivering a complete AI stack from computing infrastructure and models to AI agents.
 
+- **ClawOS** is an enterprise-grade multi-agent runtime and governance platform that enables organizations to centrally create, manage, integrate, observe, and operate AI agents across the enterprise.
 - **AI Lab** delivers a tightly integrated software-and-hardware AI computing experience by unifying heterogeneous compute resources and optimizing GPU performance. It enables centralized scheduling and refined operations of compute resources, maximizing utilization while reducing costs. In addition, it provides optimized AI development frameworks that simplify development and deployment, accelerating the adoption of AI applications across industries.
 - **LLM Studio** is designed for enterprise users and offers full lifecycle services covering model deployment, runtime, and operations management. It effectively addresses key challenges such as deployment complexity, model selection difficulty, runtime stability, and security risks, helping enterprises and developers efficiently access and leverage a wide range of large model capabilities, and continuously driving digital transformation and intelligent upgrades.
 
@@ -40,7 +41,7 @@ With extensive testing from thousands of industry customers in real production c
 - :material-engine: **Microservice Engine** [Microservice governance and gateway](skoala/intro/index.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider/intro/index.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/index.md)
-- :shrimp: **ClawOS** [OpenClaw Agent](clawos/intro/index.md)
+- :shrimp: **ClawOS** [Multi-Agent platform](clawos/intro/index.md)
 - :material-slot-machine: **AI Lab** [Cloud Native AI - Integrated Training and Inference Platform](baize/intro/index.md)
 - :simple-themodelsresource: **LLM Studio** [Use and maintain large language models](./hydra/intro/index.md)
 - :fontawesome-brands-edge: **Cloud Edge Collaboration** [Containers extend to edge](kant/intro/index.md)
