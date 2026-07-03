@@ -70,6 +70,14 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./hwameistor.md)
 
+-   :melon:{ .lg .middle } __HAMi__ :simple-cncf: 已入选 CNCF Landscape 和 Incubating 👏
+
+    ---
+
+    一站式管控、切分、使用国内外的异构 GPU
+
+    [:octicons-arrow-right-24: 了解更多](./hami.md)
+
 -   :simple-kasasmart:{ .lg .middle } __KasmCloud__
 
     ---
