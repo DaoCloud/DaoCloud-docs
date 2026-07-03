@@ -71,6 +71,14 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./hwameistor.md)
 
+-   :melon:{ .lg .middle } __HAMi__ :simple-cncf: Listed in CNCF Incubating 👏
+
+    ---
+
+    Manage your heterogeneous computing clusters with different GPUs
+
+    [:octicons-arrow-right-24: Learn more](./hami.md)
+
 -   :simple-kasasmart:{ .lg .middle } __KasmCloud__
 
     ---

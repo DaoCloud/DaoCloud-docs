@@ -1,6 +1,6 @@
 # HAMi - Heterogeneous Computing Virtualization Middleware
 
-**HAMi is already a project in the [Cloud Native Computing Foundation](https://cncf.io/) landscape. HAMi is applying to join the Sandbox and has currently [passed the voting stage](https://github.com/cncf/sandbox/issues/97), exceeding the 66% qualified score threshold. See [related post news](https://mp.weixin.qq.com/s/6Ze2i3-CQSFANhn8b7oNjA).**
+**HAMi is already a project in the [Cloud Native Computing Foundation](https://cncf.io/) landscape. HAMi is applying to join the Incubating and has currently [passed the voting stage](https://github.com/cncf/toc/issues/1775), exceeding the 66% qualified score threshold. See [related post news](https://www.linkedin.com/posts/project-hami-io_cloud-native-computing-foundation-cncf-activity-7478408149226483712-WXEM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEVs61IBXNInXWTUd9mBt7kXZX-scDMQjB8).**
 
 Supported Devices:
 [![Nvidia GPU](https://img.shields.io/badge/Nvidia-GPU-blue)](https://github.com/Project-HAMi/HAMi#preparing-your-gpu-nodes)
