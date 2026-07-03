@@ -39,7 +39,7 @@ DCE 5.0 内置多智能体治理平台 ClawOS、云原生训推一体化平台 A
 - :material-engine: **微服务引擎** [微服务治理中心和网关](skoala/intro/index.md)
 - :material-table-refresh: **服务网格** [非侵入式服务治理](mspider/intro/index.md)
 - :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](middleware/index.md)
-- :shrimp: **ClawOS** [龙虾智能体](clawos/intro/index.md)
+- :shrimp: **ClawOS** [智能体治理平台](clawos/intro/index.md)
 - :material-slot-machine: **AI Lab** [云原生 AI - 训推一体化平台](baize/intro/index.md)
 - :simple-themodelsresource: **大模型服务平台** [运营管控大模型](./hydra/intro/index.md)
 - :fontawesome-brands-edge: **云边协同** [容器能力扩展至边缘](kant/intro/index.md)
