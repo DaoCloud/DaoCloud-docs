@@ -50,6 +50,14 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     - [MinIO 实例监控](./minio/user-guide/insight-log-config.md)
     - [MinIO 身份管理](./minio/user-guide/user-management.md)
 
+- :material-file-tree:{ .lg .middle } __SeaweedFS 对象存储__
+
+    ---
+
+    一款开源分布式存储系统，兼容 S3 协议，适合海量小文件、对象存储和云原生非结构化数据场景。
+
+    - [什么是 SeaweedFS](./seaweedfs/intro/index.md)
+
 - :simple-mongodb:{ .lg .middle } __MongoDB 数据库__
 
     ---

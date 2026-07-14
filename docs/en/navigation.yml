@@ -1207,6 +1207,9 @@ nav:
                       - Instance Insight/Logs/Parameter Configuration: middleware/minio/user-guide/insight-log-config.md
                       - View Instance Details: middleware/minio/user-guide/view.md
                       - MinIO Identity Management: middleware/minio/user-guide/user-management.md
+              - SeaweedFS Object Storage:
+                  - Intro:
+                      - What is SeaweedFS: middleware/seaweedfs/intro/index.md
       - Cloud Native AI:
           - Index: ai-os/index.md
           - ClawOS Agent:

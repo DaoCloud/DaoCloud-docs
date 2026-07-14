@@ -40,6 +40,14 @@ Install and enable these middleware components as needed to achieve optimal perf
     - [MinIO Instance Monitoring](./minio/user-guide/insight-log-config.md)
     - [MinIO Identity Management](./minio/user-guide/user-management.md)
 
+- :material-file-tree:{ .lg .middle } __SeaweedFS Object Storage__
+
+    ---
+
+    An open-source distributed storage system compatible with the S3 API, suitable for massive small files, object storage, and cloud native unstructured data.
+
+    - [What is SeaweedFS](./seaweedfs/intro/index.md)
+
 </div>
 
 <div class="grid cards" markdown>
