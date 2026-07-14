@@ -9,6 +9,12 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## 2026-04-30
+
+### v0.55.0
+
+* **Added** Japanese language support in the UI
+
 ## 2026-03-31
 
 ### v0.54.0
