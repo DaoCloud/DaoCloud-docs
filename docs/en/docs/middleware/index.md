@@ -40,7 +40,7 @@ Install and enable these middleware components as needed to achieve optimal perf
     - [MinIO Instance Monitoring](./minio/user-guide/insight-log-config.md)
     - [MinIO Identity Management](./minio/user-guide/user-management.md)
 
-- :material-file-tree:{ .lg .middle } __SeaweedFS Object Storage__
+- :seaweedfs:{ .lg .middle } __SeaweedFS Object Storage__
 
     ---
 

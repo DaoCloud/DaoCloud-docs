@@ -50,7 +50,7 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     - [MinIO 实例监控](./minio/user-guide/insight-log-config.md)
     - [MinIO 身份管理](./minio/user-guide/user-management.md)
 
-- :material-file-tree:{ .lg .middle } __SeaweedFS 对象存储__
+- :seaweedfs:{ .lg .middle } __SeaweedFS 对象存储__
 
     ---
 
