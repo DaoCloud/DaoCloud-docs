@@ -90,6 +90,29 @@ metric_relabel_configs:
 
 ## Pod Monitor
 
+### Considerations
+
+A Pod Monitor does not go through a Service. Instead, it selects Pods directly via a label selector and scrapes them.
+For a Pod Monitor to discover and scrape targets properly, the Pod (workload) must satisfy the following rules:
+
+1. The Pod's labels must match the Pod Monitor's `spec.selector`.
+   For a Deployment/DaemonSet/StatefulSet, these are the labels in `spec.template.metadata.labels`.
+2. The namespace of the Pod must be selected by the Pod Monitor's `namespaceSelector`
+   (if not specified, only the namespace of the Pod Monitor itself is selected by default).
+3. `podMetricsEndpoints.port` refers to the __name of the container port__ , not the port number.
+   Therefore, the workload must explicitly declare a named `containerPort` in its containers
+   (for a Deployment, this is `spec.template.spec.containers.ports.name`).
+   If the container does not declare the corresponding named port, the Pod Monitor cannot discover
+   the scrape target even if the process is actually listening on that port.
+4. The process inside the container must actually listen on that port and expose a Prometheus-format
+   metrics endpoint (default path `/metrics`).
+
+!!! note
+
+    If the workload does not declare a `containerPort` and you cannot modify the workload directly,
+    you can use a Service Monitor instead: simply create a Service with a named port for it.
+    See the considerations for Service Monitor below.
+
 The explanation for the corresponding configmaps is as follows:
 
 ```yaml
@@ -179,6 +202,58 @@ static_configs:
 ```
 
 ## Service Monitor
+
+### Considerations
+
+A Service Monitor references a Service (not a Deployment or a Pod) by labels and by the __port name__ ,
+then finds the Pods behind the Service through its Endpoints. The actual scrape address is the
+Pod IP + targetPort from the Endpoints.
+For a Service Monitor to discover and scrape targets properly, the Service must satisfy the following rules:
+
+1. The Service's `metadata.labels` must match the Service Monitor's `spec.selector.matchLabels`.
+2. The corresponding port in the Service's `spec.ports` __must have a name defined__ .
+   The port name (`spec.ports.name`) is optional in Kubernetes, but it is required for a Service Monitor:
+   the Service Monitor's `endpoints.port` refers to this name, and only the name can be used, not the port number.
+3. The Service's `spec.selector` must match the labels of the target Pods so that the corresponding
+   Endpoints are generated. A Service Monitor referencing a Service that does not exist
+   (or that selects no Pods) will not produce any scrape targets.
+4. The Service's `spec.ports.targetPort` (defaults to the same value as `port` if not specified) must
+   point to the port that the container process is __actually listening__ on, and that port must expose
+   a Prometheus-format metrics endpoint (default path `/metrics`).
+5. The namespace of the Service must be selected by the Service Monitor's `namespaceSelector`
+   (if not specified, only the namespace of the Service Monitor itself is selected by default).
+
+The following example annotates how the fields of the Service Monitor, Service, and Pod correspond to each other:
+
+```yaml
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: example-app
+  namespace: cm-prometheus
+  labels:
+    operator.insight.io/managed-by: insight
+spec:
+  selector:
+    matchLabels:
+      app: example-app # ← matches the Service's metadata.labels
+  endpoints:
+    - port: web # ← matches the Service's spec.ports.name (port name, not port number)
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: example-app
+  labels:
+    app: example-app # ← selected by the ServiceMonitor's spec.selector
+spec:
+  selector:
+    app: example-app # ← matches the labels of the target Pods, generating Endpoints
+  ports:
+    - name: web # ← port name, required by the Service Monitor
+      port: 8080
+      targetPort: 8080 # ← the port the container process actually listens on
+```
 
 The explanation for the corresponding configmaps is as follows:
 

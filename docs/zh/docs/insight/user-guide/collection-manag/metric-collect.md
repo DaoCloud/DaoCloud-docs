@@ -90,6 +90,25 @@ metric_relabel_configs:
 
 ## Pod Monitor
 
+### 注意事项
+
+Pod Monitor 不经过 Service，而是直接通过 label selector 选中 Pod 进行抓取。
+要使 Pod Monitor 正常发现并抓取目标，Pod（工作负载）需要满足以下规则：
+
+1. Pod 的 label 必须与 Pod Monitor 的 `spec.selector` 匹配。
+   如果目标是 Deployment/DaemonSet/StatefulSet，对应的是 `spec.template.metadata.labels` 中的 label。
+2. Pod 所在的 namespace 必须被 Pod Monitor 的 `namespaceSelector` 选中（不填时默认只选取 Pod Monitor 自身所在的 namespace）。
+3. `podMetricsEndpoints.port` 填写的是 __容器端口的名称__ ，而不是端口号。
+   因此工作负载必须在容器中显式声明 `containerPort` 并为其命名
+   （Deployment 场景对应 `spec.template.spec.containers.ports.name`）。
+   若容器没有声明对应的命名端口，即使进程实际监听了该端口，Pod Monitor 也无法发现抓取目标。
+4. 容器内进程需要真实监听该端口并暴露 Prometheus 格式的指标接口（默认路径 `/metrics`）。
+
+!!! note
+
+    如果工作负载没有声明 `containerPort`，无法直接修改工作负载时，
+    可以改用 Service Monitor：只需为其创建一个带命名端口的 Service 即可，参见下文 Service Monitor 的注意事项。
+
 相应配置项说明如下：
 
 ```yaml
@@ -179,6 +198,54 @@ static_configs:
 ```
 
 ## Service Monitor
+
+### 注意事项
+
+Service Monitor 通过 label 和 __端口名称（port name）__ 关联 Service（而不是 Deployment 或 Pod），
+再经由 Service 对应的 Endpoints 找到背后的 Pod，实际抓取地址为 Endpoints 中的 Pod IP + targetPort。
+要使 Service Monitor 正常发现并抓取目标，Service 需要满足以下规则：
+
+1. Service 的 `metadata.labels` 必须与 Service Monitor 的 `spec.selector.matchLabels` 匹配。
+2. Service 的 `spec.ports` 中对应端口 __必须定义 name__ 。
+   端口名称（`spec.ports.name`）在 Kubernetes 中是可选的，但对 Service Monitor 是必需的：
+   Service Monitor 的 `endpoints.port` 引用的就是这个名称，且只能填名称、不能填端口号。
+3. Service 的 `spec.selector` 必须与目标 Pod 的 label 匹配，这样才能生成对应的 Endpoints；
+   引用了不存在（或选不中任何 Pod）的 Service 时，Service Monitor 不会产生任何抓取目标。
+4. Service 的 `spec.ports.targetPort`（不填时默认与 `port` 相同）必须指向容器进程 __实际监听__ 的端口，
+   并且该端口暴露 Prometheus 格式的指标接口（默认路径 `/metrics`）。
+5. Service 所在的 namespace 必须被 Service Monitor 的 `namespaceSelector` 选中（不填时默认只选取 Service Monitor 自身所在的 namespace）。
+
+以下示例标注了 Service Monitor 与 Service、Pod 之间各字段的对应关系：
+
+```yaml
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: example-app
+  namespace: cm-prometheus
+  labels:
+    operator.insight.io/managed-by: insight
+spec:
+  selector:
+    matchLabels:
+      app: example-app # ← 与 Service 的 metadata.labels 匹配
+  endpoints:
+    - port: web # ← 与 Service 的 spec.ports.name 匹配（端口名称，不是端口号）
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: example-app
+  labels:
+    app: example-app # ← 被 ServiceMonitor 的 spec.selector 选中
+spec:
+  selector:
+    app: example-app # ← 与目标 Pod 的 label 匹配，生成 Endpoints
+  ports:
+    - name: web # ← 端口名称，Service Monitor 必需
+      port: 8080
+      targetPort: 8080 # ← 容器进程实际监听的端口
+```
 
 相应配置项说明如下：
 
