@@ -1175,6 +1175,9 @@ nav:
                       - 查看实例详情: middleware/minio/user-guide/view.md
                       - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
                   - MinIO 灾备方案: middleware/minio/best-pratice/minio-replication.md
+              - SeaweedFS 对象存储:
+                  - 介绍:
+                      - 什么是 SeaweedFS: middleware/seaweedfs/intro/index.md
               - MongoDB 数据库:
                   - 介绍:
                       - 什么是 MongoDB: middleware/mongodb/intro/index.md
