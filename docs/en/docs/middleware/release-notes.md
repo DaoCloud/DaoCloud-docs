@@ -11,6 +11,24 @@ This page summarizes all middleware module release notes.
 *[RabbitMQ]: A message broker supporting multiple protocols, ideal for building reliable asynchronous communication systems.  
 *[Redis]: A high-performance key-value store, widely used for caching, session management, and distributed locks.  
 *[RocketMQ]: A highly reliable and scalable distributed messaging middleware, suitable for transactional and ordered message scenarios.  
+*[SeaweedFS]: An open-source distributed object storage system compatible with the S3 API, suitable for massive small-file and cloud native unstructured data scenarios.
+
+## 2026-06-30
+
+### SeaweedFS v0.1.4
+
+- **Added** SeaweedFS lifecycle management
+- **Added** LevelDB2 support as the Filer Meta Store, with instance types returned in the Pod list
+- **Added** Master, Filer, and Volume ready counts (`pod_ready_num`) to the instance Pod list
+- **Added** database connectivity checks
+- **Added** Japanese translations for the frontend
+- **Fixed** instance status display issues
+- **Fixed** Dashboard display issues
+- **Fixed** API version issues in the OpenAPI documentation
+- **Fixed** UI display and version issues
+- **Improved** parameter validation, and simplified Filer and Master exposure and storage configurations
+- **Improved** sensitive field handling by automatically filling sensitive fields before validation to avoid repeated input
+- **Upgraded** SeaweedFS to 4.35, including intermediate versions 4.19, 4.20, 4.21, 4.22, and 4.25, and added e2e test cases
 
 ## 2026-04-30
 
