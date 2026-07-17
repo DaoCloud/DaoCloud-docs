@@ -145,10 +145,13 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.3_a
 
 1. 安装前请确保目标 Kubernetes 集群已配置必要的依赖服务：
 
-    - hydra-apiserver
-    - kpanda-apiserver
-    - ghippo-apiserver
+    - hydra-apiserver（0.16.0 及以上）
+    - kpanda-apiserver（0.45.0 及以上）
+    - ghippo-apiserver（0.48.0 及以上）
     - kpanda-clusterpedia-apiserver
+    - insight-server（0.41.0 及以上）
+
+    注意：ClawOS v0.4.0 版本需要依赖 insight 0.42.2 版本。
 
 2. 更新 hydra AuthorizationPolicy 允许 agent-claw-system 的流量
 

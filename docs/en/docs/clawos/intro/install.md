@@ -145,10 +145,13 @@ Extract the package and load the image files.
 
 1. Before installation, ensure that the target Kubernetes cluster has the following required services configured:
 
-    - hydra-apiserver
-    - kpanda-apiserver
-    - ghippo-apiserver
+    - hydra-apiserver (0.16.0+)
+    - kpanda-apiserver (0.45.0+)
+    - ghippo-apiserver (0.48.0+)
     - kpanda-clusterpedia-apiserver
+    - insight-server (0.41.0+)
+
+    Note: ClawOS v0.4.0 requires insight 0.42.2.
 
 2. Update the hydra AuthorizationPolicy to allow traffic from `agentclaw-system`.
 
