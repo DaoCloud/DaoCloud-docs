@@ -2,6 +2,10 @@
 
 This page describes two installation methods for ClawOS: offline installation and online installation.
 
+!!! warning
+
+    ClawOS only supports WS mode and does not support CSP mode.
+
 ## Offline Installation
 
 This page explains how to download the ClawOS offline package and install it.
@@ -143,13 +147,12 @@ Extract the package and load the image files.
 
 #### Prerequisites
 
-1. Before installation, ensure that the target Kubernetes cluster has the following required services configured:
+1. Before installation, ensure that the target Kubernetes cluster has the following required helm Apps configured:
 
-    - hydra-apiserver (0.16.0+)
-    - kpanda-apiserver (0.45.0+)
-    - ghippo-apiserver (0.48.0+)
-    - kpanda-clusterpedia-apiserver
-    - insight-server (0.41.0+)
+    - kpanda (0.45.0+)
+    - ghippo (0.48.0+)
+    - insight (0.41.0+)
+    - hydra (WS version 0.16.0+)
 
     Note: ClawOS v0.4.0 requires insight 0.42.2.
 

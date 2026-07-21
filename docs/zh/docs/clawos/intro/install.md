@@ -2,6 +2,10 @@
 
 本页说明离线和在线安装 ClawOS 的两种安装方式。
 
+!!! warning
+
+    ClawOS 只支持 WS 模式，不支持 CSP 模式。
+
 ## 离线安装
 
 本页说明如何下载 ClawOS 离线包以及如何安装。
@@ -143,13 +147,12 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.3_a
 
 #### 前置条件
 
-1. 安装前请确保目标 Kubernetes 集群已配置必要的依赖服务：
+1. 安装前请确保目标 Kubernetes 集群已配置必要的依赖helm应用：
 
-    - hydra-apiserver（0.16.0 及以上）
-    - kpanda-apiserver（0.45.0 及以上）
-    - ghippo-apiserver（0.48.0 及以上）
-    - kpanda-clusterpedia-apiserver
-    - insight-server（0.41.0 及以上）
+    - kpanda（0.45.0 及以上）
+    - ghippo（0.48.0 及以上）
+    - insight（0.41.0 及以上）
+    - hydra（WS 版本 0.16.0 及以上）
 
     注意：ClawOS v0.4.0 版本需要依赖 insight 0.42.2 版本。
 
