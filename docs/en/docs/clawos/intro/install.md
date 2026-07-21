@@ -147,7 +147,7 @@ Extract the package and load the image files.
 
 #### Prerequisites
 
-1. Before installation, ensure that the target Kubernetes cluster has the following required services configured:
+1. Before installation, ensure that the target Kubernetes cluster has the following required helm Apps configured:
 
     - kpanda (0.45.0+)
     - ghippo (0.48.0+)

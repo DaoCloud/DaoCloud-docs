@@ -147,7 +147,7 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.3_a
 
 #### 前置条件
 
-1. 安装前请确保目标 Kubernetes 集群已配置必要的依赖服务：
+1. 安装前请确保目标 Kubernetes 集群已配置必要的依赖helm应用：
 
     - kpanda（0.45.0 及以上）
     - ghippo（0.48.0 及以上）
