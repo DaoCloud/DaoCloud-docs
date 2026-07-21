@@ -80,7 +80,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 1. 在联网节点执行如下命令，下载 __elfutils-libelf-devel-0.187-4.el8.x86_64.rpm__ 包：
 
     ```bash
-    wget https://rpmfind.net/linux/centos/8-stream/BaseOS/x86_64/os/Packages/elfutils-libelf-devel-0.187-4.el8.x86_64.rpm
+    wget https://dl.rockylinux.org/vault/rocky/8.7/BaseOS/x86_64/os/Packages/e/elfutils-libelf-devel-0.187-4.el8.x86_64.rpm
     ```
 
 2. 在当前目录下将 __elfutils-libelf-devel-0.187-4.el8.x86_64.rpm__ 包传输至步骤一中的节点上：
