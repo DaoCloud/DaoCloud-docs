@@ -1305,6 +1305,7 @@ nav:
                       - Skill 管理: clawos/workspace/skill-manage.md
                   - OpenClaw 实例: clawos/workspace/openclaw.md
                   - 飞书集成: clawos/workspace/feishu.md
+                  - Microsoft Teams 配置: clawos/workspace/teams-info.md
               - 管理员视角:
                   - 概览: clawos/admin/overview-admin.md
                   - Skill 管理: clawos/admin/skillmanage-admin.md
