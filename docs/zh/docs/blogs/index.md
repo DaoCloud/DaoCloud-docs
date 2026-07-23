@@ -11,6 +11,10 @@ hide:
 
 ## 2026 年
 
+- [从 GPU 利用率到 Token 产能：DaoCloud 的 GB300 NVL72 编排实践](./2026/gb300.md)
+
+    如何用好 NVIDIA GB300 NVL72。
+
 - [从 Copilot 到 Claude Code：如何评估 AI 编程智能体的真实生产力？](./2026/ai-agent.md)
 
     如何评估 AI 智能体稳定地把 Token、模型能力和工具调用，转化为真实的工程产出？
