@@ -48,7 +48,7 @@ OpenClaw 实例可以接入企业消息工具，让用户在飞书或 Microsoft 
 - Client ID
 - Client Secret
 - Tenant ID
-
+详情参照： [Microsoft Teams 配置](./teams-info.md)
 实例创建完成后，系统会在实例详情页生成 **Messaging endpoint**。请将该地址复制到 Microsoft Azure Bot 的 **Configuration > Messaging endpoint** 中。配置完成后，Teams 中的消息即可发送到对应 OpenClaw 实例，由 Agent 进行处理和回复。
 
 ## 实例详情
