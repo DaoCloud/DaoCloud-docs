@@ -115,9 +115,9 @@ Refer to the [7-Node Mode Description](./deploy-arch.md#7-node-mode-1--6).
 
 | **Count** | **Server Role** | **Purpose** | **CPU** | **Memory** | **System Disk** | **Unpartitioned Disk** |
 | --------- | --------------- | ----------- | ------- | ---------- | --------------- | ---------------------- |
-| 1 | Bootstrap node | 1. Run the installation program<br />2. Run the required image registry and chart museum | 2 cores | 4 GB | 200 GB | - |
-| 3 | Master | 1. Run DCE 5.0 components<br />2. Run Kubernetes system components | 8 cores | 16 GB | 100 GB | 200 GB |
-| 3 | Worker | Run logging-related components separately | 8 cores | 16 GB | 100 GB | 200 GB |
+| 1 | Bootstrap node | 1. Run the installation program<br />2. Run the required image registry and chart museum | 4 cores | 8 GB | 300 GB | - |
+| 3 | Master | 1. Run DCE 5.0 components<br />2. Run Kubernetes system components | 16 cores | 16 GB | 100 GB | 200 GB |
+| 3 | Worker | Run logging-related components separately | 16 cores | 32 GB | 100 GB | 200 GB |
 
 If disk partitioning is required, allocate disk resources according to the table below:
 
