@@ -48,12 +48,12 @@
     apiVersion: v1
     kind: ConfigMap
     metadata:
-    name: sample-vars-conf
-    namespace: kubean-system
+      name: sample-vars-conf
+      namespace: kubean-system
     data:
-    group_vars.yml: |
+      group_vars.yml: |
         kubelet_config_extra_args:
-        failCgroupV1: false
+          failCgroupV1: false
     ```
 
 2. 跳过 kubeadm 预检
@@ -72,12 +72,12 @@
     apiVersion: v1
     kind: ConfigMap
     metadata:
-    name: sample-vars-conf
-    namespace: kubean-system
+      name: sample-vars-conf
+      namespace: kubean-system
     data:
-    group_vars.yml: |
+      group_vars.yml: |
         kubeadm_ignore_preflight_errors:
-        - SystemVerification
+          - SystemVerification
     ```
 
     > ⚠️ **注意**：此操作会跳过完整的系统级验证，降低集群健康基线。
@@ -89,6 +89,3 @@
 - OOM 行为、资源指标统计等与 v2 存在差异，混合环境可能导致监控偏差。
 - 不早于 v1.38 将彻底删除 cgroup v1 代码，届时即使关闭 `FailCgroupV1` 也无法启动，集群将被锁定在最后一个支持版本。
 - 部分工作负载（如旧版 JVM、Node.js、监控/安全 Agent）在 v2 上的兼容性需单独评估；但反过来，这些组件的新版本已默认面向 v2 优化。
-
-
-

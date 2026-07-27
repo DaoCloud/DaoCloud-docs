@@ -86,7 +86,7 @@ nav:
                   - Verify Lightweight Deployment Plan: install/light-install/light-install-solution.md
                   - Lightweight Deployment: install/light-install/install-light.md
               - Upgrade:
-                  - Upgrade DCE 5.0 Components: install/upgrade.md
+                  - Upgrade DCE 5.0 Components: install/upgrade-notes.md
                   - Upgrade from Standard to Platinum: install/evolve.md
               - Uninstall and Import:
                   - Uninstall: install/uninstall.md
