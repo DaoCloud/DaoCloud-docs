@@ -623,7 +623,7 @@ If the output is `80` or `443`, the upgrade command needs to include the `infras
 ./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct
 ```
 
-If the output is different from the above cases, please follow the upgrade instructions in the document [Upgrade DCE 5.0 Product Modules](upgrade.md).
+If the output is different from the above cases, follow the upgrade instructions in the document [Upgrade DCE 5.0 Product Modules](upgrade.md).
 
 ## 2023-6-15
 
