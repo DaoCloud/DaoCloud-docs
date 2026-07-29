@@ -69,6 +69,10 @@
 
     ![扩容](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc15.png)
 
+    !!! note
+
+        需要现[在存储池中开启扩容](./sc.md)。
+
 3. 输入目标容量，然后点击 __确定__ 。
 
     ![克隆](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/pvc16.png)
