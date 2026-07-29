@@ -2,7 +2,7 @@
 
 A persistent volume claim (PersistentVolumeClaim, PVC) expresses a user's request for storage. PVC consumes PV resources and claims a data volume with a specific size and specific access mode. For example, the PV volume is required to be mounted in ReadWriteOnce, ReadOnlyMany or ReadWriteMany modes.
 
-## Create data volume statement
+## Create PVC
 
 Currently, there are two ways to create data volume declarations: YAML and form. These two ways have their own advantages and disadvantages, and can meet the needs of different users.
 
@@ -38,14 +38,14 @@ Currently, there are two ways to create data volume declarations: YAML and form.
     - After selecting the creation method, select the desired StorageClass/data volume/snapshot from the drop-down list.
     - access mode:
 
-      - ReadWriteOnce, the data volume declaration can be mounted by a node in read-write mode.
-      - ReadWriteMany, the data volume declaration can be mounted by multiple nodes in read-write mode.
-      - ReadOnlyMany, the data volume declaration can be mounted read-only by multiple nodes.
-      - ReadWriteOncePod, the data volume declaration can be mounted by a single Pod in read-write mode.
+        - ReadWriteOnce, the data volume declaration can be mounted by a node in read-write mode.
+        - ReadWriteMany, the data volume declaration can be mounted by multiple nodes in read-write mode.
+        - ReadOnlyMany, the data volume declaration can be mounted read-only by multiple nodes.
+        - ReadWriteOncePod, the data volume declaration can be mounted by a single Pod in read-write mode.
 
         
 
-## View data volume statement
+## View PVC
 
 Click the name of the target cluster in the cluster list, and then click __Container Storage__ -> __Data Volume Declaration (PVC)__ in the left navigation bar.
 
@@ -59,13 +59,13 @@ Click the name of the target cluster in the cluster list, and then click __Conta
 
     
 
-## Expansion data volume statement
+## Expansion PVC
 
 1. In the left navigation bar, click __Container Storage__ -> __Data Volume Declaration (PVC)__ , and find the data volume declaration whose capacity you want to adjust.
 
     
 
-2. Click the name of the data volume declaration, and then click the operation button in the upper right corner of the page and select __Expansion__ .
+2. Click the name of the data volume declaration, and then click the operation button in the upper right corner of the page and select __Expansion__ . You need to enable the feature while [creating a StorageClass](./sc.md).
 
     
 
@@ -73,7 +73,7 @@ Click the name of the target cluster in the cluster list, and then click __Conta
 
     
 
-## Clone data volume statement
+## Clone PVC
 
 By cloning a data volume claim, a new data volume claim can be recreated based on the configuration of the cloned data volume claim.
 
@@ -89,7 +89,7 @@ By cloning a data volume claim, a new data volume claim can be recreated based o
 
     
 
-## Update data volume statement
+## Update PVC
 
 There are two ways to update data volume claims. Support for updating data volume claims via form or YAML file.
 
@@ -103,13 +103,11 @@ There are two ways to update data volume claims. Support for updating data volum
 
 - Click the name of the data volume declaration, enter the details page of the data volume declaration, select __Update__ in the upper right corner of the page to update through the form, select __Edit YAML__ to update through YAML.
 
-    
-
-## Delete data volume statement
+## Delete PVC
 
 On the data volume declaration list page, find the data to be deleted, and select Delete in the operation column on the right.
 
-> You can also click the name of the data volume statement, click the operation button in the upper right corner of the details page and select __Delete__ .
+> You can also click the name of the PVC, click the operation button in the upper right corner of the details page and select __Delete__ .
 
 
 
@@ -119,9 +117,6 @@ On the data volume declaration list page, find the data to be deleted, and selec
 
 2. If there is no optional snapshot in the list, you can enter the details page of the data volume declaration and create a snapshot in the upper right corner.
 
-    
 
 3. If the StorageClass (SC) used by the data volume declaration is not enabled for snapshots, snapshots cannot be made, and the page will not display the "Make Snapshot" option.
 4. If the StorageClass (SC) used by the data volume declaration does not have the capacity expansion feature enabled, the data volume does not support capacity expansion, and the page will not display the capacity expansion option.
-
-    
