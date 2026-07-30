@@ -636,6 +636,7 @@ nav:
                   - 上传限制: network/modules/ingress-nginx/upload.md
                   - 镜像流量: network/modules/ingress-nginx/mirror.md
                   - 重定向: network/modules/ingress-nginx/redirect.md
+                  - 迁移到 Higress 或 kgateway: network/modules/ingress-nginx/migrate-to-higress-or-kgateway.md
                   - 排障指南: network/modules/ingress-nginx/troubleshooting.md
               - 集成 Higress:
                   - 介绍: network/modules/higress/index.md
