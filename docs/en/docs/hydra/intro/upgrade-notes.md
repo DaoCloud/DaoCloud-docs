@@ -2,6 +2,31 @@
 
 This page describes important considerations when upgrading Hydra to a new version.
 
+## Upgrading from v0.14.1 (or earlier) to v0.15.0
+
+Starting from Hydra v0.15.0, Higress is integrated into the Knoway gateway to provide AI security and token quota capabilities. When upgrading, note the following:
+
+1. Higress is disabled by default. Enable it in the hydra-agent Helm values:
+
+    ```yaml
+     knoway:
+       higress:
+         enabled: true
+    ```
+
+2. In v0.15.0, the Hydra version installed in the global management cluster is bound to the hydra-agent version in worker clusters. When you upgrade either component, upgrade both together. Otherwise, usage reporting and billing may be affected.
+
+3. After Higress is enabled, required Wasm plugin CRs are built into the product. Apply the CRDs in each worker cluster where hydra-agent is installed before upgrading; otherwise hydra-agent installation may fail:
+
+    ```bash
+    helm repo add hydra https://release.daocloud.io/chartrepo/hydra
+    helm repo update hydra
+    helm pull hydra/hydra-agent --version v0.15.0 --untar
+    kubectl apply -f hydra-agent/crds/
+    ```
+
+4. After Higress is enabled, you can configure [Security Policy Management](../oam/security-policy.md) in the Admin Console and query policy trigger records in [Security Audit Logs](../oam/security-audit-logs.md).
+
 ## Upgrading from v0.12.1 (or earlier) to v0.13.1
 
 Starting from v0.13.1, hydra-agent no longer includes the dataset component by default. It must be installed separately via the addon repository. To ensure that existing dataset CRs are not lost after the upgrade, follow the steps below.
