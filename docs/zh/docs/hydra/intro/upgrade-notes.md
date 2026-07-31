@@ -25,6 +25,8 @@ hydra 从 0.15.0 版本开始，在 knoway 网关中集成了 higress，以提�
     kubectl apply -f hydra-agent/crds/
     ```
 
+4. 启用 Higress 后，可在运维管理中配置[安全策略管理](../oam/security-policy.md)，并在[安全审计日志](../oam/security-audit-logs.md)中查询策略触发记录。
+
 ## 从 v0.12.1（或更低版本）升级到 v0.13.1
 
 Hydra-agent 从 0.13.1 版本开始不再内置 dataset 组件，需要单独通过 addon 仓库安装，为保证以前的 dataset CR 在升级之后不会丢失，请参考下述步骤进行升级。

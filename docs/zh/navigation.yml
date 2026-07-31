@@ -1406,6 +1406,8 @@ nav:
                   - 模型广场管理: hydra/oam/index.md
                   - MaaS模型管理: hydra/oam/maas.md
                   - 模型部署管理: hydra/oam/mdm.md
+                  - 安全策略管理: hydra/oam/security-policy.md
+                  - 安全审计日志: hydra/oam/security-audit-logs.md
               - 用户实践场景:
                   - 示例场景介绍: hydra/user-guides/index.md
                   - 在 VSCode 和 Cline 中使用: hydra/user-guides/cline-in-vscode.md

@@ -1314,6 +1314,8 @@ nav:
                   - Manage Model Gallery: hydra/oam/index.md
                   - MaaS Models: hydra/oam/maas.md
                   - Manage Deployed Models: hydra/oam/mdm.md
+                  - Security Policy Management: hydra/oam/security-policy.md
+                  - Security Audit Logs: hydra/oam/security-audit-logs.md
               - Best Practices:
                   - Intro: hydra/user-guides/index.md
                   - Use with VSCode and Cline: hydra/user-guides/cline-in-vscode.md
