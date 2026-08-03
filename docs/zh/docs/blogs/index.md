@@ -11,6 +11,10 @@ hide:
 
 ## 2026 年
 
+- [Kubernetes v1.37 抢先看](./2026/k8s-v137-seak.md)
+
+    Kubernetes v1.37 正在收敛为一次兼顾 **迁移准备、运行时安全和资源管理** 的版本更新。
+
 - [从 GPU 利用率到 Token 产能：DaoCloud 的 GB300 NVL72 编排实践](./2026/gb300.md)
 
     如何用好 NVIDIA GB300 NVL72。

@@ -1662,6 +1662,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2026:
+          - K8s v1.37 抢先看: blogs/2026/k8s-v137-seak.md
           - GB300 NVL72 编排实践: blogs/2026/gb300.md
           - 评估AI智能体的生产力: blogs/2026/ai-agent.md
           - 别让 Token 变成新 KPI: blogs/2026/token-kpi.md
