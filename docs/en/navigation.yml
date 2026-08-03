@@ -1226,10 +1226,11 @@ nav:
                       - Skill Management: clawos/workspace/skill-manage.md
                   - OpenClaw Instances: clawos/workspace/openclaw.md
                   - Feishu Integration: clawos/workspace/feishu.md
-              - Administrator View:
+                  - Configure Microsoft Teams: clawos/workspace/teams-info.md
+              - Admin View:
                   - Overview: clawos/admin/overview-admin.md
-                  - Skill Management: clawos/admin/skillmanage-admin.md
-                  - Network Policy Management: clawos/admin/network-manage.md
+                  - Skills: clawos/admin/skillmanage-admin.md
+                  - Network Policies: clawos/admin/network-manage.md
               - FAQ: clawos/faq.md
           - AI Lab:
               - Introduction:
