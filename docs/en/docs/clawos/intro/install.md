@@ -222,6 +222,11 @@ After chart-syncer successfully synchronizes the images and Charts, refresh the 
     helm upgrade agentclaw agentclaw-release -n agentclaw-system --install --create-namespace
     ```
 
+!!! info
+
+    To expose the instance UIs and the MS Teams callback through a single Gateway API entry point instead of direct
+    NodePort access, see [Gateway API Instance Access Configuration](../reference/gateway-access.md).
+
 ## Online Installation
 
 !!! info
