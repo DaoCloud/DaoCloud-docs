@@ -183,13 +183,14 @@ extra:
 
 # Customization Javascript
 extra_javascript:
-  - /stylesheets/zoom_image.js
-  - /stylesheets/language-redirect.js
+  - stylesheets/zoom_image.js
+  - stylesheets/language-redirect.js
   # - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js # disable fix mermaid not working
 
 # Customization css
 extra_css:
-  - /stylesheets/custom.css
+  - stylesheets/custom.css
+  - stylesheets/product-docs-menu.css
 
 # Extensions
 markdown_extensions:
