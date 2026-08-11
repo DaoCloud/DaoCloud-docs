@@ -223,6 +223,11 @@ chart agentclaw 并开始安装, 安装时不需要更改任何参数。
     helm upgrade agentclaw agentclaw-release -n agentclaw-system --install --create-namespace
     ```
 
+!!! info
+
+    若希望 OpenClaw 实例的 UI 与 MS Teams 回调通过 Gateway API 统一入口暴露（而非 NodePort 直连），
+    请参见 [Gateway API 实例访问配置](../reference/gateway-access.md)。
+
 ## 在线安装
 
 !!! info

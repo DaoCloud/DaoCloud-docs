@@ -1231,6 +1231,8 @@ nav:
                   - Overview: clawos/admin/overview-admin.md
                   - Skills: clawos/admin/skillmanage-admin.md
                   - Network Policies: clawos/admin/network-manage.md
+              - Reference:
+                  - Gateway API Instance Access: clawos/reference/gateway-access.md
               - FAQ: clawos/faq.md
           - AI Lab:
               - Introduction:

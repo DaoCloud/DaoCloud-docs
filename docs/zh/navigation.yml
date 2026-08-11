@@ -1312,6 +1312,8 @@ nav:
                   - 概览: clawos/admin/overview-admin.md
                   - Skill 管理: clawos/admin/skillmanage-admin.md
                   - 网络策略管理: clawos/admin/network-manage.md
+              - 参考文档:
+                  - Gateway API 实例访问配置: clawos/reference/gateway-access.md
               - 常见问题: clawos/faq.md
           - AI Lab:
               - 介绍:
