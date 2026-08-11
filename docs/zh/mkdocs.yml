@@ -211,6 +211,7 @@ extra_javascript:
 # Customization css
 extra_css:
   - stylesheets/custom.css
+  - stylesheets/product-docs-menu.css
 
 # Extensions
 markdown_extensions:
