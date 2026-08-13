@@ -17,7 +17,7 @@
 
 !!! note
 
-    hydra 从 v0.17.0 开始将模型元数据与 MaaS 数据解耦，升级前需完成 `maas_model` 数据表迁移，详情参见[升级注意事项](upgrade-notes.md)。
+    hydra 从 v0.17.1 开始将模型元数据与 MaaS 数据解耦，升级前需完成 `maas_model` 数据表迁移，详情参见[升级注意事项](upgrade-notes.md)。
 
 ## 2026-06-30
 
