@@ -16,7 +16,7 @@ usage is unlimited.
 - Memory Limit (MB)
 - Total Storage Request (GB)
 - Persistent Volume Claims (PVC)
-- GPU Type, Spec, Quantity (including but not limited to Nvidia, Ascend, ILLUVATAR, and other GPUs)
+- GPU Type, Compute, and Memory (including but not limited to Nvidia, Ascend, ILLUVATAR, and other GPUs)
 
 A resource (cluster) can be shared among multiple workspaces, and a workspace can use resources from
 multiple shared clusters simultaneously.

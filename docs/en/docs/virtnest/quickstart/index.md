@@ -230,3 +230,17 @@ Go to the Virtual Machine list page and click the __Create with YAML__ button.
                 name: systemdisk-example
               name: systemdisk-example
     ```
+
+## Search Virtual Machines
+
+Navigate to __Virtual Machines__ -> __VM__, select a cluster and namespace, and then search for virtual machines
+in the VM list. The search box supports the following four categories:
+
+- **Name**: Search by virtual machine name;
+- **Pod IP**: Search by virtual machine IP address;
+- **Operating System (OS)**: Search by the virtual machine operating system;
+- **Status**: Search by virtual machine status.
+
+Select a search category and enter a keyword to display matching virtual machines.
+
+![Search Virtual Machines](../images/vm-list-search-en.png)

@@ -1444,7 +1444,10 @@ nav:
                   - ghippo/user-guide/report-billing/index.md
                   - Reports: ghippo/user-guide/report-billing/report.md
                   - Upgrade Operations Management: ghippo/user-guide/report-billing/gmagpie-offline-install.md
+                  - Configure the Time Zone for Statistics: ghippo/user-guide/report-billing/statistic-timezone.md
                   - Billing and Accounting: ghippo/user-guide/report-billing/billing.md
+                  - Custom GPU Metrics Configuration: ghippo/user-guide/report-billing/gpu-metrics-config.md
+                  - Historical Data Recalculation: ghippo/user-guide/report-billing/report-recalculation.md
               - Platform Settings:
                   - Security Policies: ghippo/user-guide/platform-setting/security.md
                   - Mail Server Settings: ghippo/user-guide/platform-setting/mail-server.md
