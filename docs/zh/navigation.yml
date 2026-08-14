@@ -1547,6 +1547,7 @@ nav:
                   - ghippo/user-guide/report-billing/index.md
                   - 报表管理: ghippo/user-guide/report-billing/report.md
                   - 离线升级运营管理: ghippo/user-guide/report-billing/gmagpie-offline-install.md
+                  - 配置统计时区: ghippo/user-guide/report-billing/statistic-timezone.md
                   - 计费计量: ghippo/user-guide/report-billing/billing.md
                   - GPU 指标自定义配置: ghippo/user-guide/report-billing/gpu-metrics-config.md
                   - 历史数据重算: ghippo/user-guide/report-billing/report-recalculation.md
