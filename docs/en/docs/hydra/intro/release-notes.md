@@ -4,9 +4,36 @@ This page lists the release notes for LLM Studio, helping you understand version
 
 *[hydra]: Internal codename for DaoCloud's LLM Studio
 
+## 2026-07-31
+
+### v0.17.1
+
+**User View**
+
+- **Added** support for image-to-image generation and voice model experiences in Model Playground
+- **Added** support for environment variable configuration for fine-tuning and evaluation tasks
+- **Optimized** the Model Marketplace interface, including display, filtering, and sorting capabilities, to improve the user experience
+- **Optimized** distributed inference scenarios for model deployment, allowing separate startup commands and environment variables to be configured for Leader and Worker nodes
+
+!!! note
+
+    Starting from v0.17.1, Hydra decouples model metadata from MaaS data. Before upgrading, migrate the `maas_model` data table. For details, see [Upgrade Notes](upgrade-notes.md).
+
+## 2026-06-30
+
+### v0.16.0
+
+**User View**
+
+- **Added** container health checks for model deployments, including liveness, readiness, and startup probes
+- **Added** support for enabling metrics collection for model deployments to monitor their runtime status
+- **Added** support for mounting external configuration files to customize the runtime logic of model deployments
+
 ## 2026-05-31
 
 ### v0.15.0
+
+**User View**
 
 - **Added** support for large language model fine-tuning, including dataset management, fine-tuning job management, model evaluation, and model export
 - **Added** pre-deployment health checks for model deployments, automatically validating critical hardware and software environments before deployment to identify issues in advance
@@ -14,6 +41,9 @@ This page lists the release notes for LLM Studio, helping you understand version
 - **Added** support for enabling and disabling API Keys, allowing users to activate API Keys as needed
 - **Added** support for accounting of cached tokens in large language models
 - **Added** support for workspace token quota configuration in operations management, allowing users to set token limits for each workspace
+
+**Admin Console**
+
 - **Added** support for gateway security policy management and audit logs in operations management, allowing users to configure gateway security policies such as sensitive word detection and model allowlists/blocklists
 - **Added** support for forwarding multimodal MaaS models, including speech-to-text, OCR, rerank, and embedding models
 - **Improved** model marketplace management by adding support for model deletion
@@ -25,6 +55,8 @@ This page lists the release notes for LLM Studio, helping you understand version
 ## 2026-04-30
 
 ### v0.14.0
+
+**User View**
 
 - **Added** support for API Key expiration settings
 - **Added** support for API Key token quota settings
