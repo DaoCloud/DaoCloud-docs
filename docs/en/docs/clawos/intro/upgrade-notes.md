@@ -15,24 +15,21 @@ In v0.5.3, `openclawPrevious` is `2026.6.10`. It is not the target image for upg
 
 !!! note
 
-    Upgrading the AgentClaw Helm Chart only updates the instance template and default image configuration. It does not automatically update existing AgentInstance Deployments. After the upgrade, update or restart each existing instance so that its OpenClaw container uses `2026.7.1`.
-
-Before upgrading, confirm that `release.daocloud.io/agentclaw/openclaw:2026.7.1` is accessible from the environment. If the image cannot be pulled, updated instances will enter `ImagePullBackOff`.
+    After the upgrade, update each existing instance so that its OpenClaw container uses `2026.7.1`.
 
 ### SkillHub configuration
 
-During the upgrade, enable both the ClawOS SkillHub integration and the SkillHub subchart by default:
+SkillHub is disabled by default in v0.5.3. To enable it, set the following values:
 
 ```yaml
 skillhub:
   enabled: true
-  # A node IP or domain reachable when an OpenClaw instance runs npx clawhub install
+  # A node IP or domain reachable by OpenClaw instances when npx clawhub install is run
   publicHost: <reachable cluster node IP or domain>
 
 skillhubChart:
   enabled: true
   secrets:
-    bootstrapAdminPassword: <SkillHub admin password>
     scannerLlmApiKey: <LLM API key>
     scannerLlmBaseUrl: http://<internal model gateway>:<port>/v1
     scannerLlmModel: openai/public/minimax-m25
@@ -46,38 +43,7 @@ skillhubChart:
 
 The following values are important:
 
-- `skillhub.publicHost` must be a node IP or domain reachable when an OpenClaw instance runs `npx clawhub install`. NodePort listens on every cluster node; the master node is not required.
-- `skillhubChart.secrets.scannerLlmApiKey`, `scannerLlmBaseUrl`, `scannerLlmModel`, and `scanner.analyzers.llmProvider` configure LLM analysis for Skill Scanner. Do not commit a real API key to the values file.
+- `skillhub.publicHost` must be a node IP reachable by OpenClaw instances. NodePort listens on every cluster node; the master node is not required.
+- `skillhubChart.secrets.scannerLlmApiKey`, `scannerLlmBaseUrl`, `scannerLlmModel`, and `scanner.analyzers.llmProvider` configure LLM analysis for Skill Scanner.
 - `scannerLlmBaseUrl` must point to an OpenAI-compatible `/v1` endpoint. `scannerLlmModel` uses the LiteLLM route format, such as `openai/public/minimax-m25`.
 - When `useLlm`, `useBehavioral`, and `enableMeta` are all enabled, Scanner combines LLM, behavioral, and meta analysis results.
-
-Before enabling SkillHub, confirm the following:
-
-1. The released AgentClaw Chart package contains the `charts/skillhub` subchart; otherwise Helm dependency rendering fails.
-2. SkillHub, PostgreSQL, Redis, and Scanner images are available in the environment.
-3. A usable StorageClass/PV is available for SkillHub PVCs.
-4. With the default `global.ghippo.applyCR=true`, the cluster has the `ghippo.io/v1alpha1/GProductProxy` CRD. If the CRD is unavailable, set `global.ghippo.applyCR=false`; otherwise Helm deployment fails.
-
-### manager component
-
-v0.5.3 adds and enables the NetworkPolicy manager by default:
-
-```yaml
-manager:
-  enabled: true
-  serviceAccount:
-    create: true
-```
-
-The manager requires access to the Kpanda and Clusterpedia services, as well as Lease, ConfigMap, Event, and ClusterPedia resource permissions. When `manager.enabled=true` and `manager.serviceAccount.create=true`, the Chart automatically creates a dedicated ServiceAccount, ClusterRole, and ClusterRoleBinding for the manager; these RBAC resources do not need to be created manually.
-
-During the upgrade, confirm that the identity running Helm can create or update the cluster-scoped ClusterRole and ClusterRoleBinding. If `manager.serviceAccount.create` is set to `false`, provide a ServiceAccount that is already bound to the required permissions. Otherwise, the Helm upgrade may fail, or the manager Pod may not run because of insufficient permissions.
-
-If NetworkPolicy manager is not used in the environment, or the Kpanda/Clusterpedia services are unreachable, disable it in the upgrade values:
-
-```yaml
-manager:
-  enabled: false
-```
-
-Otherwise, the manager Pod may fail to start or repeatedly restart.
