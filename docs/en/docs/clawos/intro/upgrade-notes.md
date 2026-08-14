@@ -65,9 +65,15 @@ v0.5.3 adds and enables the NetworkPolicy manager by default:
 ```yaml
 manager:
   enabled: true
+  serviceAccount:
+    create: true
 ```
 
-The manager requires access to Kpanda and Clusterpedia, as well as Lease, ConfigMap, and Event permissions. If NetworkPolicy manager is not used in the environment, or its dependencies/API/RBAC are not ready, disable it in the upgrade values:
+The manager requires access to the Kpanda and Clusterpedia services, as well as Lease, ConfigMap, Event, and ClusterPedia resource permissions. When `manager.enabled=true` and `manager.serviceAccount.create=true`, the Chart automatically creates a dedicated ServiceAccount, ClusterRole, and ClusterRoleBinding for the manager; these RBAC resources do not need to be created manually.
+
+During the upgrade, confirm that the identity running Helm can create or update the cluster-scoped ClusterRole and ClusterRoleBinding. If `manager.serviceAccount.create` is set to `false`, provide a ServiceAccount that is already bound to the required permissions. Otherwise, the Helm upgrade may fail, or the manager Pod may not run because of insufficient permissions.
+
+If NetworkPolicy manager is not used in the environment, or the Kpanda/Clusterpedia services are unreachable, disable it in the upgrade values:
 
 ```yaml
 manager:

@@ -65,9 +65,15 @@ v0.5.3 默认新增并启用 NetworkPolicy manager：
 ```yaml
 manager:
   enabled: true
+  serviceAccount:
+    create: true
 ```
 
-manager 需要访问 Kpanda 和 Clusterpedia，并使用 Lease、ConfigMap、Event 相关权限。如果当前环境不部署 NetworkPolicy manager，或相关依赖/API/RBAC 尚未准备好，可以在升级参数中关闭：
+manager 需要访问 Kpanda 和 Clusterpedia，并使用 Lease、ConfigMap、Event 以及 ClusterPedia resources 相关权限。`manager.enabled=true` 且 `manager.serviceAccount.create=true` 时，Chart 会自动创建 manager 专用的 ServiceAccount、ClusterRole 和 ClusterRoleBinding，无需预先手工创建这些 RBAC 资源。
+
+升级时请确认执行 Helm 的身份有权限创建或更新集群级的 ClusterRole 和 ClusterRoleBinding。如果将 `manager.serviceAccount.create` 设置为 `false`，则需要提前提供已绑定上述权限的 ServiceAccount，否则 Helm 升级可能失败，或 manager Pod 因权限不足无法正常运行。
+
+如果当前环境不部署 NetworkPolicy manager，或 Kpanda/Clusterpedia 服务地址不可访问，可以在升级参数中关闭：
 
 ```yaml
 manager:
