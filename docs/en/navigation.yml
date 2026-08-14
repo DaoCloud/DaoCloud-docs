@@ -1219,6 +1219,7 @@ nav:
                   - Installation: clawos/intro/install.md
                   - Quick Start: clawos/intro/quickstart.md
                   - Release Notes: clawos/intro/release-notes.md
+                  - Upgrade Notes: clawos/intro/upgrade-notes.md
               - Workspace View:
                   - Overview: clawos/workspace/overview.md
                   - ClawHub:
