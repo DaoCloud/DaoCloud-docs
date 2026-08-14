@@ -2,6 +2,113 @@
 
 本页说明将 hydra 升级到新版本时需要注意的相关事项。
 
+## 从 v0.16.0（或更低版本）升级到 v0.17.1
+
+hydra 从 v0.17.1 开始，将原先混在 `model` 表中的模型元数据与 MaaS 相关数据解耦：新增 `maas_model` 表存储 MaaS 信息，`model` 表中的 MaaS 字段在迁移完成后将逐步废弃。为避免升级过程中模型元数据丢失，升级前请先完成下述数据表迁移。
+
+!!! warning
+
+    Model 与 MaaS 的解耦仍在进行中，后续可能将 `maas_model` 表信息直接记录到 Knoway 相关资源中，该表未来可能会被移除。如果没有升级到 v0.17.1 的特别需要，建议暂缓升级，待解耦工作完成后再升级。
+
+!!! note
+
+    以下操作在 Global 集群执行。
+
+1. 查看 hydra 当前连接的数据库
+
+    ```bash
+    APP_NS=hydra-system
+    kubectl -n "$APP_NS" get cm hydra -o jsonpath='{.data.config\.yaml}' | sed -n '/^db_config:/,/^[^ ]/p'
+    ```
+
+    请重点确认 host、port、数据库名、用户名和密码。输出类似于：
+
+    ```yaml
+    db_config:
+      dbType: mysql
+      dsn: hydra:hydraPwd@tcp(mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local:3306)/hydra?charset=utf8mb4&parseTime=true&loc=Local
+      autoMigrate: true
+      debug: false
+    ```
+
+1. 根据数据库连接参数准备环境变量，并准备迁移文件 `create_maas_model.sql`
+
+    ```bash
+    APP_NS=hydra-system
+    DB_NS=mcamel-system
+    DB_POD=mcamel-common-mysql-cluster-mysql-0
+    DB_HOST=mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local
+    DB_PORT=3306
+    DB_NAME=hydra
+    DB_USER=hydra
+    # 将迁移文件准备到对应目录
+    SQL_FILE=/home/create_maas_model.sql
+    ```
+
+    !!! note
+
+        请按上一步 ConfigMap 中的实际连接信息修改上述变量，不要直接使用示例值。
+
+1. 将 SQL 文件拷贝到 MySQL Pod
+
+    ```bash
+    kubectl -n "$DB_NS" cp "$SQL_FILE" "$DB_POD:/tmp/$(basename "$SQL_FILE")" -c mysql
+    ```
+
+1. 进入 MySQL Pod
+
+    ```bash
+    kubectl -n "$DB_NS" exec -it "$DB_POD" -- bash
+    ```
+
+    进入 Pod 后，请重新设置与第 2 步相同的环境变量，再执行后续命令。
+
+1. （可选）备份 `model` 表。若当前账号有权限，可先执行：
+
+    ```bash
+    mysqldump -h "$DB_HOST" -P "$DB_PORT" -u "$DB_USER" -p "$DB_NAME" model > /tmp/hydra-model-maas-backup.sql
+    ```
+
+    执行后会提示输入 hydra 数据库密码。该命令只备份 `model` 表。
+
+1. 执行迁移
+
+    ```bash
+    mysql -h "$DB_HOST" -P "$DB_PORT" -u "$DB_USER" -p "$DB_NAME" < "/tmp/$(basename "$SQL_FILE")"
+    ```
+
+    同样会提示输入密码。密码来自 hydra ConfigMap 中 DSN 对应的密码，请手工输入，不要写进命令行。
+
+1. 校验迁移结果
+
+    ```bash
+    mysql -h "$DB_HOST" -P "$DB_PORT" -u "$DB_USER" -p "$DB_NAME"
+    ```
+
+    进入 MySQL 后执行：
+
+    ```sql
+    SHOW TABLES LIKE 'maas_model';
+
+    SELECT COUNT(*) AS actual_count FROM maas_model;
+
+    SELECT COUNT(*) AS expected_count
+    FROM model
+    WHERE del_flag = 0
+      AND (
+        public_endpoint_enabled = 1
+        OR COALESCE(public_endpoint_base_url, '') <> ''
+        OR COALESCE(public_access_model_name, '') <> ''
+        OR COALESCE(public_endpoint_cluster, '') <> ''
+      );
+
+    SELECT model_id, workspace_visibility_scope
+    FROM maas_model
+    LIMIT 10;
+    ```
+
+    `actual_count` 应与 `expected_count` 一致；`workspace_visibility_scope` 应为 `ALL`。
+
 ## 从 v0.14.1（或更低版本）升级到 v0.15.0
 
 hydra 从 0.15.0 版本开始，在 knoway 网关中集成了 higress，以提供 AI 安全、token 限额等能力，升级时需要注意以下事项：
