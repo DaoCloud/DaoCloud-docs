@@ -1297,10 +1297,11 @@ nav:
           - ClawOS 智能体:
               - 介绍:
                   - 什么是 ClawOS: clawos/intro/index.md
-                  - 安装: clawos/intro/install.md
                   - 快速入门: clawos/intro/quickstart.md
                   - Release Notes: clawos/intro/release-notes.md
-                  - 升级注意事项: clawos/intro/upgrade-notes.md
+              - 安装与升级:
+                  - 安装: clawos/Installation and Upgrade/install.md
+                  - 升级注意事项: clawos/Installation and Upgrade/upgrade-notes.md
               - 工作空间视角:
                   - 概览: clawos/workspace/overview.md
                   - ClawHub:
