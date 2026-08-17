@@ -1651,15 +1651,8 @@ nav:
       - Piraeus: community/piraeus.md
       - Spiderpool: community/spiderpool.md
       - DaoCloud Icon Library: community/icons/index.md
-  - Cloud Native Institute:
-      - Cloud Native News:
-          - Cloud Native News 2024: native/news/news-2024.md
-          - Cloud Native News 2023: native/news/news-2023.md
-          - Cloud Native News 2022: native/news/news-2022.md
-      - Industry Insight:
-          - Business Products: native/commerce.md
-          - Open Source Projects: native/open.md
-      - Git Documentation:
+  - Contribution Guide:
+      - Git Tutorials:
           - Git Docs Process: native/git/index.md
           - Two-Factor Auth: native/git/2auth.md
           - Git FAQ: native/git/rebase.md
@@ -1669,7 +1662,7 @@ nav:
           - GitLab UI Preview: native/git/ui-preview.md
           - Proxy Settings: native/git/proxy.md
           - Offline Docs: native/git/offline.md
-      - Knowledge:
+      - Cloud Native Knowledge:
           - Knowledge Sharing: native/knowledge.md
           - Troubleshooting: native/knowledge/troubleshoot.md
           - Best Practices: native/knowledge/best-practice.md

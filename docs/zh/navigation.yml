@@ -1774,12 +1774,7 @@ nav:
       - Spiderpool: community/spiderpool.md
       - 公开镜像加速: community/mirror.md
       - DaoCloud 开源图标库: community/icons/index.md
-  - 云原生研究院:
-      - 社区要闻:
-          - 2025 云原生社区要闻: native/news/news-2025.md
-          - 2024 云原生社区要闻: native/news/news-2024.md
-          - 2023 云原生社区要闻: native/news/news-2023.md
-          - 2022 云原生社区要闻: native/news/news-2022.md
+  - 贡献和分享:
       - 编写和贡献指南:
           - Git 文档流程: native/git/index.md
           - Git开启两步安全验证: native/git/2auth.md
@@ -1794,10 +1789,6 @@ nav:
           - mdctl 批量生成 Docx: native/git/md-docx.md
           - 视频剪辑帮助: native/git/video.md
           - K8s 相关资源: native/git/k8s.md
-          - Kubean 集群集成 Karpenter AWS 弹性节点方案: native/knowledge/karpenter.md
-      - 行业洞察:
-          - 商业产品: native/commerce.md
-          - 开源项目: native/open.md
       - 知识分享:
           - 索引: native/knowledge/index.md
           - 排障方案: native/knowledge/troubleshoot.md
@@ -1807,6 +1798,6 @@ nav:
           - 前沿热点: native/knowledge/hot-spots.md
           - 安全漏洞: native/knowledge/bugs.md
           - 电子书: native/knowledge/ebooks.md
-          - 其他: native/knowledge/other.md
+          - Kubean 集群集成 Karpenter AWS 弹性节点方案: native/knowledge/karpenter.md
   - 免费体验:
       - 体验社区版: trial/index.md
