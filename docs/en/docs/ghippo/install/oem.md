@@ -30,12 +30,12 @@ Modify the corresponding values in the `.yaml` files to configure the text.
 ```yaml
 enabled: false
 icp:
-  copyright: "© 2009-2023 daocloud.com 版权所有"
+  copyright: "© 2009-2023 daocloud.com All rights reserved"
   names:
-    - name: "沪A2-20080101"
+    - name: "Shanghai A2-20080101"
       link: false
 police:
-  - name: "沪B2-20080101-4"
+  - name: "Shanghai B2-20080101-4"
     link: false
 ```
 
