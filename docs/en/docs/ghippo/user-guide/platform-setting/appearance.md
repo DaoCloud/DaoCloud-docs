@@ -25,6 +25,10 @@ In DCE 5.0, you have the option to customize the appearance of the login page, t
 
     ![advanced](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/appear05.png)
 
+## Using an OEM Image Before Ghippo Installation
+
+See [Using OEM Before Installation](../../install/oem.md) for detailed steps.
+
 !!! note
 
     If you wish to restore the default settings, simply click __Revert__ . This action will discard all customized settings.
