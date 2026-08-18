@@ -80,3 +80,78 @@ Configure the OEM image address with the following parameters:
 - `--set apiserver.oem.image.tag`: configure the image tag.
 
 These parameters must match the image that was built. Follow the Ghippo installation process to complete the OEM configuration.
+
+## Using Istio to Implement the Nginx Subpath Function
+
+Istio does not support the Subpath function itself, but Subpath can be implemented through an EnvoyFilter CRD.
+
+Modify the YAML file below and replace `/mysubpath` with the required path, for example `/dce5`:
+
+```yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: subpath-envoy-filter
+  namespace: istio-system
+spec:
+  workloadSelector:
+    labels:
+      istio: ingressgateway
+  configPatches:
+    - applyTo: HTTP_FILTER
+      match:
+        context: GATEWAY
+        listener:
+          filterChain:
+            filter:
+              name: envoy.filters.network.http_connection_manager
+              subFilter:
+                name: envoy.filters.http.router
+      patch:
+        operation: INSERT_BEFORE
+        value:
+          name: envoy.lua
+          typed_config:
+            "@type": type.googleapis.com/envoy.extensions.filters.http.lua.v3.Lua
+            inlineCode: |-
+              function envoy_on_request(request_handle)
+                local path = request_handle:headers():get(":path")
+                local mysubpath = "/mysubpath"
+                if string.sub(path,1,string.len(mysubpath)) ~= mysubpath then
+                    return
+                end
+                local _, _, rest = string.find(path, "/[^/]+/(.*)")
+                if rest then
+                  request_handle:headers():replace(":path", "/" .. rest)
+                end
+              end
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: mysubpath
+  namespace: istio-system
+spec:
+  rules:
+    - to:
+        - operation:
+            paths:
+              - /mysubpath*
+    - from:
+        - source:
+            requestPrincipals:
+              - "*"
+  selector:
+    matchLabels:
+      app: istio-ingressgateway
+```
+
+## Hiding “About - Technical Team”
+
+During Ghippo installation, set `global.enabledComponents.developers` to `false` to hide “Technical Team” from the “About” page.
+
+![About page in English](../images/oem-about-technical-team-en.png)
+
+```shell
+--set global.enabledComponents.developers=false
+```

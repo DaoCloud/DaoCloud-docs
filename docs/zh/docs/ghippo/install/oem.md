@@ -80,3 +80,78 @@ docker push xxx/ghippo/ghippo-oem:v0.0.8
 - `--set apiserver.oem.image.tag`：配置镜像的 tag。
 
 以上参数要求与构建的镜像保持一致。后续按照 Ghippo 安装流程即可完成 OEM 配置。
+
+## Istio 实现 Nginx Subpath 功能
+
+Istio 本身不支持 Subpath 功能，但可以通过 EnvoyFilter CRD 实现 Subpath。
+
+修改下面的 YAML 文件，将 `/mysubpath` 替换为所需的 path，例如 `/dce5`：
+
+```yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: subpath-envoy-filter
+  namespace: istio-system
+spec:
+  workloadSelector:
+    labels:
+      istio: ingressgateway
+  configPatches:
+    - applyTo: HTTP_FILTER
+      match:
+        context: GATEWAY
+        listener:
+          filterChain:
+            filter:
+              name: envoy.filters.network.http_connection_manager
+              subFilter:
+                name: envoy.filters.http.router
+      patch:
+        operation: INSERT_BEFORE
+        value:
+          name: envoy.lua
+          typed_config:
+            "@type": type.googleapis.com/envoy.extensions.filters.http.lua.v3.Lua
+            inlineCode: |-
+              function envoy_on_request(request_handle)
+                local path = request_handle:headers():get(":path")
+                local mysubpath = "/mysubpath"
+                if string.sub(path,1,string.len(mysubpath)) ~= mysubpath then
+                    return
+                end
+                local _, _, rest = string.find(path, "/[^/]+/(.*)")
+                if rest then
+                  request_handle:headers():replace(":path", "/" .. rest)
+                end
+              end
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: mysubpath
+  namespace: istio-system
+spec:
+  rules:
+    - to:
+        - operation:
+            paths:
+              - /mysubpath*
+    - from:
+        - source:
+            requestPrincipals:
+              - "*"
+  selector:
+    matchLabels:
+      app: istio-ingressgateway
+```
+
+## 隐藏“关于-技术团队”
+
+安装 Ghippo 过程中，将 `global.enabledComponents.developers` 设置为 `false`，即可不展示“关于”页面中的“技术团队”。
+
+![关于页面（中文）](../images/oem-about-technical-team-zh.png)
+
+```shell
+--set global.enabledComponents.developers=false
+```
