@@ -1500,6 +1500,7 @@ nav:
                   - 离线升级全局管理: ghippo/install/offline-install.md
                   - 自定义反向代理服务器地址: ghippo/install/reverse-proxy.md
                   - 开启Folder/WS的隔离模式: ghippo/install/user-isolation.md
+                  - 安装前使用 OEM 镜像定制全局管理: ghippo/install/oem.md
                   - 国密网关: ghippo/install/gm-gateway.md
                   - 登录: ghippo/install/login.md
               - 用户与访问控制:

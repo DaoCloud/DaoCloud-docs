@@ -24,6 +24,10 @@
 
     ![高级定制](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/appear05.png)
 
+## 未安装 Ghippo 时使用 OEM 镜像
+
+详细步骤请参阅[未安装时使用 OEM](../../install/oem.md)。
+
 ## 高级定制
 
 高级定制能够通过 CSS 样式来修改整个容器平台的颜色、字体间隔、字号等。

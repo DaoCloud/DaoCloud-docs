@@ -1,0 +1,157 @@
+# 未安装时使用 OEM
+
+## 配置图片以及文案
+
+用户需要自行创建目录结构，目录结构如下图：
+
+![OEM 配置目录结构](../images/oem-directory-structure.png)
+
+`login_page` 中的文件对应登录页的 OEM 设置。
+
+![登录页 OEM 设置](../images/oem-login-page-customization.png)
+
+若无需要，`record_filing`（版权信息）和 `theme`（自定义样式）中的文件均可为空白文件，但是文件必须创建。
+
+`top_nav` 中的文件对应顶部导航栏设置。
+
+![顶部导航栏 OEM 设置](../images/oem-top-nav-customization.png)
+
+- `login_page/favicon.*`：标签页图标。
+- `login_page/icon.*`：登录页图标。
+- `top_nav/favicon.*`：标签页图标。
+- `top_nav/icon.*`：导航栏图标。
+
+图标不能更换文件名，必须为 `favicon.*`、`icon.*`，文件类型可以为 `svg`、`jpg`、`png` 等。
+
+在 `.yaml` 文件中通过修改对应的值配置相关文案。
+
+`record_filing`：
+
+```yaml
+enabled: false
+icp:
+  copyright: "© 2009-2023 daocloud.com 版权所有"
+  names:
+    - name: "沪A2-20080101"
+      link: false
+police:
+  - name: "沪B2-20080101-4"
+    link: false
+```
+
+`topnav.yaml`：
+
+```yaml
+TabName: "DaoCloud Enterprise"
+```
+
+`login_page.yaml`：
+
+```yaml
+PlatformName: "DaoCloud"
+Copyright: "Powered By DaoCloud"
+TabName: ""
+```
+
+`Dockerfile`：
+
+```dockerfile
+FROM docker.m.daocloud.io/busybox:1.32
+COPY . /daocloud/
+```
+
+## 生成镜像并推送
+
+上述操作完成后，执行以下命令生成镜像。将 `xxx` 修改为当前使用的镜像仓库，然后推送到镜像仓库中：
+
+```shell
+docker build -t xxx/ghippo/ghippo-oem:v0.0.8 .
+docker push xxx/ghippo/ghippo-oem:v0.0.8
+```
+
+## 安装 Ghippo 参数
+
+设置 `--set apiserver.oem.enabled=true`，开启 OEM 功能。
+
+通过以下参数配置拉取 OEM 镜像的地址：
+
+- `--set apiserver.oem.image.registry`：配置镜像的 registry。
+- `--set apiserver.oem.image.repository`：配置镜像的 repository。
+- `--set apiserver.oem.image.tag`：配置镜像的 tag。
+
+以上参数要求与构建的镜像保持一致。后续按照 Ghippo 安装流程即可完成 OEM 配置。
+
+## Istio 实现 Nginx Subpath 功能
+
+Istio 本身不支持 Subpath 功能，但可以通过 EnvoyFilter CRD 实现 Subpath。
+
+修改下面的 YAML 文件，将 `/mysubpath` 替换为所需的 path，例如 `/dce5`：
+
+```yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: subpath-envoy-filter
+  namespace: istio-system
+spec:
+  workloadSelector:
+    labels:
+      istio: ingressgateway
+  configPatches:
+    - applyTo: HTTP_FILTER
+      match:
+        context: GATEWAY
+        listener:
+          filterChain:
+            filter:
+              name: envoy.filters.network.http_connection_manager
+              subFilter:
+                name: envoy.filters.http.router
+      patch:
+        operation: INSERT_BEFORE
+        value:
+          name: envoy.lua
+          typed_config:
+            "@type": type.googleapis.com/envoy.extensions.filters.http.lua.v3.Lua
+            inlineCode: |-
+              function envoy_on_request(request_handle)
+                local path = request_handle:headers():get(":path")
+                local mysubpath = "/mysubpath"
+                if string.sub(path,1,string.len(mysubpath)) ~= mysubpath then
+                    return
+                end
+                local _, _, rest = string.find(path, "/[^/]+/(.*)")
+                if rest then
+                  request_handle:headers():replace(":path", "/" .. rest)
+                end
+              end
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: mysubpath
+  namespace: istio-system
+spec:
+  rules:
+    - to:
+        - operation:
+            paths:
+              - /mysubpath*
+    - from:
+        - source:
+            requestPrincipals:
+              - "*"
+  selector:
+    matchLabels:
+      app: istio-ingressgateway
+```
+
+## 隐藏“关于-技术团队”
+
+安装 Ghippo 过程中，将 `global.enabledComponents.developers` 设置为 `false`，即可不展示“关于”页面中的“技术团队”。
+
+![关于页面（中文）](../images/oem-about-technical-team-zh.png)
+
+```shell
+--set global.enabledComponents.developers=false
+```
