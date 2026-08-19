@@ -3,7 +3,8 @@
 随着大模型从实验验证走向规模化生产，AI 基础设施正在经历一个明显变化：GPU 不再只是"有多少张卡"的问题，
 而逐渐演变为一个涉及硬件、驱动、计算库、AI 框架、推理引擎、调度系统和可观测性的完整系统工程。
 
-对于云原生 AI 平台而言，支持一种新的 GPU，第一步是让 [Kubernetes](https://kubernetes.io/zh-cn/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) 能够识别和分配 GPU；但真正决定应用价值的，是能否进一步释放 GPU 的计算能力，让模型获得稳定、可预测的推理性能。这也是国产 GPU 进入生产环境后面临的核心挑战：
+对于云原生 AI 平台而言，支持一种新的 GPU，第一步是让 [Kubernetes](https://kubernetes.io/zh-cn/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) 能够识别和分配 GPU；但真正决定应用价值的，是能否进一步释放 GPU 的计算能力，
+让模型获得稳定、可预测的推理性能。这也是国产 GPU 进入生产环境后面临的核心挑战：
 **从"能跑"走向"跑得快"，需要优化的不只是 GPU 本身，而是从硬件到软件、从单卡到集群的完整技术栈。**
 
 本文以沐曦 GPU 为例，介绍 DaoCloud 在异构 GPU 环境下围绕资源管理、软件栈适配、推理引擎和性能优化所关注的关键技术。
@@ -15,7 +16,8 @@
 将 GPU 暴露为可调度资源，用户通过资源请求将 GPU 分配给工作负载。对于基础 GPU 工作负载来说，这已经足够。
 
 但大模型推理的情况完全不同。
-一个现代大模型推理服务背后涉及从 GPU Runtime、GPU Software Stack、AI Framework（如 PyTorch）、推理引擎（如 vLLM），到 Attention/MoE/GEMM 算子和 GPU Kernel 的完整软件栈。对于云原生 AI 平台而言，Kubernetes 则负责将这些能力以可调度、
+一个现代大模型推理服务背后涉及从 GPU Runtime、GPU Software Stack、AI Framework（如 PyTorch）、推理引擎（如 vLLM），
+到 Attention/MoE/GEMM 算子和 GPU Kernel 的完整软件栈。对于云原生 AI 平台而言，Kubernetes 则负责将这些能力以可调度、
 可管理的方式交付给工作负载。其中任何一层出现瓶颈，
 都可能导致 GPU 利用率不足、推理吞吐下降、首 Token 延迟（TTFT）增加、显存占用过高或多 GPU 通信效率下降。
 
@@ -74,9 +76,14 @@ Fused MoE GEMM 可以将多个 Expert 的矩阵乘法组织为 Grouped GEMM，�
 Expert 的计算，减少 Kernel Launch 和数据访问开销，提高 GPU 计算资源利用率。
 同一套模型代码在不同 GPU 上并不一定拥有相同的最佳执行方式，硬件特性不同就需要重新设计 Kernel 和优化策略。
 
-**Attention 与显存优化**。随着模型上下文长度不断增加，Attention 和 KV Cache 已经成为大模型推理性能优化的重要方向。以最新的 DeepSeek-V4 为例，其采用新的混合 Attention 架构，并针对超长上下文和 Agent 场景进行了专门设计。V4-Pro 和 V4-Flash 均支持百万 Token 级上下文，这对 KV Cache 容量、Attention Kernel、显存访问以及推理调度提出了更高要求。
-对 GPU 推理而言，长上下文并不只是增加显存容量的问题。随着上下文长度和并发请求增加，KV Cache 的存储、Attention 计算以及内存访问都会成为性能瓶颈。因此，针对具体 GPU 架构优化 Attention Kernel、改进 KV Cache 管理和降低内存访问开销，是提升大模型推理性能的重要手段。
-这也意味着，面对 DeepSeek-V4 这类新一代大模型，GPU 适配不能停留在“模型能够运行”的层面，而需要进一步针对模型架构中的新算子和计算模式进行优化。
+**Attention 与显存优化**。随着模型上下文长度不断增加，Attention 和 KV Cache 已经成为大模型推理性能优化的重要方向。
+以最新的 DeepSeek-V4 为例，其采用新的混合 Attention 架构，并针对超长上下文和 Agent 场景进行了专门设计。
+V4-Pro 和 V4-Flash 均支持百万 Token 级上下文，这对 KV Cache 容量、Attention Kernel、显存访问以及推理调度提出了更高要求。
+对 GPU 推理而言，长上下文并不只是增加显存容量的问题。随着上下文长度和并发请求增加，KV Cache 的存储、
+Attention计算以及内存访问都会成为性能瓶颈。因此，针对具体 GPU 架构优化 Attention Kernel、
+改进 KV Cache 管理和降低内存访问开销，是提升大模型推理性能的重要手段。
+这也意味着，面对 DeepSeek-V4 这类新一代大模型，GPU 适配不能停留在“模型能够运行”的层面，
+而需要进一步针对模型架构中的新算子和计算模式进行优化。
 
 ## 端到端优化与统一管理
 
@@ -128,30 +135,17 @@ TTFT、TPOT、Throughput 和 Batch Size。沐曦生态中已提供包括 `mx-smi
 
 对 DaoCloud 而言，更重要的是将这些底层指标与 Kubernetes 工作负载关联起来：哪个 Pod 使用了哪张 GPU？
 这张 GPU 当前利用率是多少？哪个模型占用了多少显存？推理延迟升高时，是 Scheduler、KV Cache、Kernel
-还是 GPU 通信出现了瓶颈？只有建立这种关联，GPU 可观测性才真正能服务于 AI 性能优化。
+还是 GPU 通信出现了瓶颈？只有建立这种关联，GPU 可观测性才能真正服务于 AI 性能优化。
 
 在性能评估方面，单纯比较理论算力意义有限，AI 平台更应关注端到端指标：
 
-| 指标                  | 含义                                 |
-| ------------------- | ---------------------------------- |
-| TTFT                | 首 Token 延迟     |
-| TPOT                | 单 Token 输出延迟 |
-| Throughput          | 单位时间生成 Token 数                     |
-| GPU Utilization     | GPU 利用率                            |
-| KV Cache Usage      | KV Cache 使用情况                      |
-
-在 DaoCloud 的实际环境中，可以围绕以下指标建立性能基线，并通过优化前后的对比量化改进效果：
-
-| 对比维度              | 关注点                        | 优化方向                |
-| ------------------ | -------------------------- | ------------------- |
-| Prefill Throughput | 预填充阶段吞吐量                   | 提高 Kernel 计算密度       |
-| Decode Throughput  | 解码阶段吞吐量                    | 优化 KV Cache 访问与 Batch 策略 |
-| TTFT               | 首 Token 延迟                 | 减少 Scheduler 开销与 Kernel Launch |
-| TPOT               | 单 Token 输出延迟               | 优化 Attention 与 MoE Kernel |
-| GPU Utilization    | GPU 计算利用率                  | 减少 Memory Access 与通信开销 |
-| 显存利用率              | KV Cache 占用情况              | 优化 KV Cache 管理与显存访问   |
-
-最重要的不是得到一个"提升 XX%"的数字，而是建立从优化手段到性能指标的因果链，清晰地解释性能为什么提升、提升来自哪一层的优化。
+| 指标 | 含义 |
+| --- | --- |
+| TTFT | 首 Token 延迟 |
+| TPOT | 单 Token 输出延迟 |
+| Throughput | 单位时间生成 Token 数 |
+| GPU Utilization | GPU 利用率 |
+| KV Cache Usage | KV Cache 使用情况 |
 
 ## 从单卡到集群
 
