@@ -11,6 +11,10 @@ hide:
 
 ## 2026 年
 
+- [从 KV Cache Affinity 到 Token-aware Routing：llm-d 如何避免 LLM 推理热点](2026/token-aware.md)
+
+    llm-d 尝试 Sticky Until Saturated 来避免 LLM 推理热点。
+
 - [从"能跑"到"跑得快"：DaoCloud 异构 GPU 上的国产算力优化实践](2026/optimize-gpu.md)
 
     随着大模型从实验验证走向规模化生产，AI 基础设施正在经历一个明显变化：GPU 不再只是"有多少张卡"的问题，
