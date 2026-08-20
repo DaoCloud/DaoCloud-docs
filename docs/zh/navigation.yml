@@ -1660,12 +1660,13 @@ nav:
               - 云原生 AI:
                   - 大模型服务平台: download/modules/hydra.md
                   - AI Lab: download/modules/baize.md
+                  - 推理加速: download/modules/inferx.md
+                  - ClawOS: download/modules/agentclaw.md
               - 云边协同: download/modules/kant.md
               - 全局&运营管理:
                   - 全局管理: download/modules/ghippo.md
                   - 运营管理: download/modules/gmagpie.md
-              - 推理:
-                  - 推理加速: download/modules/inferx.md
+                  - 设备管理: download/modules/topohub.md
   - 博客:
       - 博文索引: blogs/index.md
       - 2026:
