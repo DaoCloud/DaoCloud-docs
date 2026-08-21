@@ -1,6 +1,6 @@
 # This file is used to split config and docs navigation
 # Project information
-site_name: DaoCloud Enterprise
+site_name: DaoCloud Documentation
 
 # custom module path
 docs_dir: docs/middleware/
