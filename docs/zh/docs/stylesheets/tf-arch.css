@@ -1,0 +1,171 @@
+/* Token Factory Architecture Diagram */
+
+.tf-arch {
+  margin: 1.5rem 0 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.tf-arch-layer {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: stretch;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.tf-arch-layer--model {
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.12), rgba(33, 150, 243, 0.04));
+}
+
+.tf-arch-layer--compute {
+  background: linear-gradient(135deg, rgba(0, 200, 83, 0.12), rgba(0, 200, 83, 0.04));
+}
+
+.tf-arch-layer--ops {
+  background: linear-gradient(135deg, rgba(255, 152, 0, 0.12), rgba(255, 152, 0, 0.04));
+}
+
+.tf-arch-layer-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--md-default-fg-color--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  flex-shrink: 0;
+}
+
+.tf-arch-cards {
+  display: flex;
+  gap: 0.75rem;
+  flex: 1;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+}
+
+.tf-arch-card {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: var(--md-default-bg-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.tf-arch-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  border-color: var(--md-primary-fg-color);
+}
+
+.tf-arch-card:active {
+  transform: translateY(-1px);
+}
+
+.tf-arch-card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.35rem;
+  line-height: 1;
+}
+
+.tf-arch-card-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color);
+  text-align: center;
+}
+
+.tf-arch-card-desc {
+  font-size: 0.72rem;
+  color: var(--md-default-fg-color--light);
+  text-align: center;
+  margin-top: 0.15rem;
+}
+
+.tf-arch-card--model:hover {
+  border-color: #2196f3;
+}
+
+.tf-arch-card--compute:hover {
+  border-color: #00c853;
+}
+
+.tf-arch-card--ops:hover {
+  border-color: #ff9800;
+}
+
+.tf-arch-arrow {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--md-default-fg-color--lighter);
+  padding: 0.15rem 0;
+  line-height: 1;
+}
+
+.tf-arch-card.is-active {
+  border-color: var(--md-primary-fg-color);
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.3);
+}
+
+@media screen and (max-width: 600px) {
+  .tf-arch-layer-label {
+    display: none;
+  }
+  .tf-arch-cards {
+    flex-direction: column;
+  }
+  .tf-arch-card {
+    min-width: auto;
+  }
+}
+
+[data-md-color-scheme="slate"] .tf-arch-card {
+  background: var(--md-default-fg-color--lightest);
+}
+
+[data-md-color-scheme="slate"] .tf-arch-card:hover {
+  background: var(--md-default-fg-color--lighter);
+}
+
+/* Compact variant — module name only, no description */
+.tf-arch--compact .tf-arch-card {
+  min-width: 100px;
+  padding: 0.5rem 0.75rem;
+}
+
+.tf-arch--compact .tf-arch-card-desc {
+  display: none;
+}
+
+.tf-arch--compact .tf-arch-card-title {
+  font-size: 0.8rem;
+}
+
+.tf-arch--compact .tf-arch-layer {
+  padding: 0.25rem 0.75rem;
+  gap: 0.5rem;
+}
+
+.tf-arch--compact .tf-arch-cards {
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+}
+
+.tf-arch--compact .tf-arch-arrow {
+  font-size: 0.9rem;
+  padding: 0.05rem 0;
+}

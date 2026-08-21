@@ -3,11 +3,11 @@
 INHERIT: navigation.yml
 
 # Project information
-site_name: DaoCloud Enterprise
+site_name: DaoCloud Documentation
 site_url: https://docs.daocloud.io/
 site_author: DaoCloud
 site_description: >-
-  DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。
+  DaoCloud 是全球 AI 领域的开源先锋，引领 AI 技术浪潮，助力推动数字化转型。
 
 # copyright
 copyright: Copyright &copy; 2016 - 2026 DaoCloud
@@ -41,7 +41,7 @@ theme:
     - content.code.annotate
     - content.code.copy
     - content.tooltips
-    # - navigation.indexes
+    - navigation.indexes
     - navigation.tabs
     # - navigation.instant
     - navigation.prune
@@ -87,6 +87,8 @@ theme:
     repo: fontawesome/brands/github
 
 # Plugins
+hooks:
+  - ../../scripts/tf_nav_hook.py
 plugins:
   - search:
       jieba_dict: dict.txt.small
@@ -203,12 +205,14 @@ extra:
 extra_javascript:
   - stylesheets/zoom_image.js
   - stylesheets/language-redirect.js
+  - stylesheets/tf-arch.js
   # - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js # disable fix mermaid not working
 
 # Customization css
 extra_css:
   - stylesheets/custom.css
   - stylesheets/product-docs-menu.css
+  - stylesheets/tf-arch.css
 
 # Extensions
 markdown_extensions:
