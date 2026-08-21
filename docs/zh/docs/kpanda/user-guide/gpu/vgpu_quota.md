@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-当前集群已通过 Operator 或手动方式部署对应类型 GPU 驱动（NVIDIA GPU、NVIDIA MIG、天数、昇腾）
+当前集群已通过 Operator 或手动方式部署对应类型 GPU 驱动（NVIDIA GPU、NVIDIA MIG、天数智芯、华为昇腾）
 
 ## 操作步骤
 
@@ -12,7 +12,7 @@
 
     ![配额管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/cluster-ns.png)
 
-2. 当前命名空间配额管理覆盖的卡类型为：NVIDIA vGPU、NVIDIA MIG、天数、昇腾。
+2. 当前命名空间配额管理覆盖的卡类型为：NVIDIA vGPU、NVIDIA MIG、天数智芯、华为昇腾。
 
     **NVIDIA vGPU 配额管理** ：配置具体可以使用的配额，会创建 ResourcesQuota CR：
 
