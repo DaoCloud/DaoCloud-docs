@@ -294,17 +294,32 @@ LLM 推理优化中，一个很容易出现的误区是：
 
 DaoCloud 自 2025 年起作为 **Contributor** 加入 llm-d 项目，在 [ADOPTERS.md](https://github.com/llm-d/llm-d/blob/main/ADOPTERS.md) 中被列为贡献者，其核心贡献围绕 **P/D 分离与 KV-cache 架构** 展开，并将这些能力落地到 DaoCloud 的 d.run MaaS 平台中。
 
-以下是目前在 llm-d 项目中活跃的 DaoCloud 贡献者：
+以下是目前在 llm-d 项目中活跃的 DaoCloud 贡献者（统计截至 2026 年 8 月，涵盖 llm-d 及 llm-d-incubation 仓库的已合并 PR）：
 
-| 贡献者 | GitHub | 提交数 | 主要贡献方向 |
-|-------|--------|-------|------------|
-| Kay Yan | [yankay](https://github.com/yankay) | 38 | KV-cache UDS Tokenization、CI/发布工作流、基础设施版本升级、P/D 分离架构 |
-| Wei Zhou Lan | [weizhoublue](https://github.com/weizhoublue) | 31 | vLLM 0.21 KV-offload 迁移兼容性、基础设施修复、KV-cache 调度与卸载 |
-| Linghao Su | [nekomeowww](https://github.com/nekomeowww) | 4 | Router RBAC 权限修复、推理网络资源 bug 修复 |
-| Peter Pan | [panpan0000](https://github.com/panpan0000) | 1 | DisaggregatedSet 部署路径开发（Wide-EP 支持） |
-| Kebe | [kebe7jun](https://github.com/kebe7jun) | 1 | NIXL decode 场景下 prefill cached tokens 修复 |
+| 贡献者 | 合并 PR 数 | 主要贡献方向 |
+|-------|-------|------------|
+| [yankay](https://github.com/yankay) | 38 | KV-cache UDS Tokenization、CI/发布工作流、基础设施版本升级、P/D 分离架构；同时担任 llm-d-kv-cache reviewer 与 llm-d-modelservice maintainer |
+| [weizhoublue](https://github.com/weizhoublue) | 31 | vLLM 0.21 KV-offload 迁移兼容性、基础设施修复、KV-cache 调度与卸载、Router bug 修复 |
+| [Iceber](https://github.com/Iceber) | 9 | Router 功能改进与 bug 修复、KV-cache 适配、主仓库维护 |
+| [learner0810](https://github.com/learner0810) | 8 | Router 功能开发与 bug 修复 |
+| [Alex-ai-future](https://github.com/Alex-ai-future) | 6 | llm-d-kv-cache 功能开发与优化 |
+| [setsunakute](https://github.com/setsunakute) | 4 | inference-sim 测试改进、KV-cache 与 Router 适配 |
+| [Phil-OSophy-42](https://github.com/Phil-OSophy-42) | 2 | Workload Autoscaler 开发、Router 功能改进 |
+| [ErikJiang](https://github.com/ErikJiang) | 2 | Router 功能开发、基础设施改进 |
+| [carlory](https://github.com/carlory) | 2 | Router bug 修复 |
+| [panpan0000](https://github.com/panpan0000) | 1 | DisaggregatedSet 部署路径开发（Wide-EP 支持） |
+| [kebe7jun](https://github.com/kebe7jun) | 1 | NIXL decode 场景下 prefill cached tokens 修复 |
+| [bzsuni](https://github.com/bzsuni) | 1 | 基础设施改进 |
+| [nicole-lihui](https://github.com/nicole-lihui) | 1 | Router 功能开发 |
+| [yyzxw](https://github.com/yyzxw) | 1 | KV-cache 修复 |
+| [my-git9](https://github.com/my-git9) | 1 | KV-cache 功能开发 |
+| [Frapschen](https://github.com/Frapschen) | 1 | KV-cache 功能开发 |
 
-其中，Kay Yan 和 Wei Zhou Lan 的提交量占 DaoCloud 总贡献的 92%，是核心贡献者。他们的工作集中在 `llm-d-kv-cache` 和 `llm-d` 主仓库，与本文讨论的 KV Cache 管理和路由调度方向高度一致。
+其中，yankay 和 weizhoublue 的提交量领先，是核心贡献者。yankay 不仅在代码层面持续贡献，还担任 **llm-d-kv-cache 的 reviewer**（见 [kv-cache CODEOWNERS](https://github.com/llm-d/llm-d-kv-cache/blob/main/CODEOWNERS)）和 **llm-d-modelservice 的 maintainer**（见 [modelservice CODEOWNERS](https://github.com/llm-d-incubation/llm-d-modelservice/blob/main/.github/CODEOWNERS)），在项目治理层面也发挥着重要作用。
+
+Iceber 的贡献覆盖 llm-d 主仓库、llm-d-router 和 llm-d-kv-cache 多个子项目，方向较为广泛，PR 数量也较为可观。Alex-ai-future 的贡献集中在 llm-d-kv-cache 子项目，围绕 KV Cache 相关功能开发展开。
+
+DaoCloud 团队的工作集中在 `llm-d-kv-cache`、`llm-d-router` 和 `llm-d` 主仓库，与本文讨论的 KV Cache 管理和路由调度方向高度一致。
 
 ## 写在最后
 
