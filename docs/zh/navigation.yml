@@ -1420,7 +1420,6 @@ nav:
                   - 在 Bob Translate 中使用: hydra/user-guides/bob-translate.md
                   - 在 LobeChat 中使用: hydra/user-guides/lobe-chat.md
                   - 自定义大模型推理运行时: hydra/user-guides/custom-runtime.md
-      - 推理加速:
           - InferX 推理引擎:
               - 介绍:
                   - 什么是 InferX: inferx/index.md
@@ -1479,16 +1478,6 @@ nav:
                   - Modbus 设备接入实践: kant/best-practice/modbus-device-demo.md
                   - 智能设备控制: kant/best-practice/custom-device-control.md
                   - 开发设备驱动应用mapper: kant/best-practice/develop-device-mapper.md
-      - 设备:
-          - 设备管理:
-              - 介绍:
-                  - 什么是设备管理: topohub/intro/index.md
-                  - 安装设备管理组件: topohub/intro/install.md
-                  - 设备管理 Release Notes: topohub/intro/release-notes.md
-              - 设备:
-                  - 接入设备: topohub/device/index.md
-                  - 批量接入设备: topohub/device/batch-access.md
-                  - 管理设备: topohub/device/manage-device.md
       - 管理:
           - 全局管理:
               - 介绍:
@@ -1599,6 +1588,15 @@ nav:
                   - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
                   - keycloak 无法启动: ghippo/troubleshooting/ghippo03.md
                   - 单独升级全局管理时失败: ghippo/troubleshooting/ghippo04.md
+          - 设备管理:
+              - 介绍:
+                  - 什么是设备管理: topohub/intro/index.md
+                  - 安装设备管理组件: topohub/intro/install.md
+                  - 设备管理 Release Notes: topohub/intro/release-notes.md
+              - 设备:
+                  - 接入设备: topohub/device/index.md
+                  - 批量接入设备: topohub/device/batch-access.md
+                  - 管理设备: topohub/device/manage-device.md
   - 视频教程:
       - 索引: videos/index.md
       - 入门:

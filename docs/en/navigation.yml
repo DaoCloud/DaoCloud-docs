@@ -1377,16 +1377,6 @@ nav:
                   - Instructions to Connect a Modbus Device: kant/best-practice/modbus-device-demo.md
                   - Smart Device Control: kant/best-practice/custom-device-control.md
                   - Develop Device Driver - Mapper: kant/best-practice/develop-device-mapper.md
-      - Devices:
-          - Device Management:
-              - Introduction:
-                  - What is Device Management: topohub/intro/index.md
-                  - Install Device Management Component: topohub/intro/install.md
-                  - Device Management Release Notes: topohub/intro/release-notes.md
-              - Devices:
-                  - Onboard Device: topohub/device/index.md
-                  - Batch Onboard Devices: topohub/device/batch-access.md
-                  - Manage Devices: topohub/device/manage-device.md
       - Management:
           - Global Management:
               - Intro:
@@ -1494,6 +1484,15 @@ nav:
                   - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md
                   - keycloak cannot start: ghippo/troubleshooting/ghippo03.md
                   - Failed to upgrade Global Management: ghippo/troubleshooting/ghippo04.md
+          - Device Management:
+              - Introduction:
+                  - What is Device Management: topohub/intro/index.md
+                  - Install Device Management Component: topohub/intro/install.md
+                  - Device Management Release Notes: topohub/intro/release-notes.md
+              - Devices:
+                  - Onboard Device: topohub/device/index.md
+                  - Batch Onboard Devices: topohub/device/batch-access.md
+                  - Manage Devices: topohub/device/manage-device.md
   - Video Tutorial:
       - Index: videos/index.md
       - Get Started:
