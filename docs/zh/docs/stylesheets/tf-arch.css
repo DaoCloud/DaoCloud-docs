@@ -181,31 +181,6 @@
   border-top-width: 7px;
 }
 
-/* ===== Section title accent — distinct color per product ===== */
-.tf-section h2 {
-  position: relative;
-  padding-left: 1rem;
-}
-
-.tf-section h2::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 3px;
-  bottom: 3px;
-  width: 5px;
-  border-radius: 3px;
-}
-
-/* DCE 5.0 — blue */
-.tf-section--dce h2::before { background: linear-gradient(180deg, #2196f3, #1565c0); }
-
-/* d.run — green */
-.tf-section--drun h2::before { background: linear-gradient(180deg, #00c853, #2e7d32); }
-
-/* Token Factory — orange */
-.tf-section--tf h2::before { background: linear-gradient(180deg, #ff9800, #e65100); }
-
 /* ===== Hero header ===== */
 .md-typeset h1 {
   background: linear-gradient(135deg, var(--md-primary-fg-color), #42a5f5);
@@ -378,3 +353,24 @@ a.tf-hero-badge--tf:hover {
 }
 
 /* Center section titles */
+
+/* ===== Tab labels — larger, bolder, colored ===== */
+.tabbed-labels label {
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.6rem 1.2rem;
+}
+
+.tabbed-labels .tabbed-label {
+  border-radius: 8px 8px 0 0;
+  transition: all 0.2s ease;
+}
+
+.tabbed-labels .tabbed-label:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* Active tab — colored underline accent */
+.tabbed-labels input:checked + .tabbed-label {
+  color: var(--md-primary-fg-color);
+}
