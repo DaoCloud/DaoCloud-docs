@@ -1,10 +1,11 @@
-/* Token Factory Architecture Diagram */
+/* ===== Architecture Diagram ===== */
 
 .tf-arch {
   margin: 1.5rem 0 2rem;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--md-default-fg-color--lightest);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .tf-arch-layer {
@@ -49,6 +50,7 @@
   padding: 0.5rem 0;
 }
 
+/* Card base */
 .tf-arch-card {
   flex: 1;
   min-width: 160px;
@@ -57,29 +59,75 @@
   align-items: center;
   text-decoration: none;
   padding: 0.85rem 1rem;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 2px solid transparent;
   background: var(--md-default-bg-color);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   position: relative;
+  overflow: hidden;
 }
 
+/* Colored left accent bar */
+.tf-arch-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 4px 0 0 4px;
+  transition: width 0.25s ease;
+}
+
+.tf-arch-card--model::before { background: #2196f3; }
+.tf-arch-card--compute::before { background: #00c853; }
+.tf-arch-card--ops::before { background: #ff9800; }
+
+/* Shimmer sweep on hover */
+.tf-arch-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.tf-arch-card:hover::after {
+  left: 120%;
+}
+
+.tf-arch-card:hover::before {
+  width: 6px;
+}
+
+/* Hover — colored glow matching layer */
 .tf-arch-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  border-color: var(--md-primary-fg-color);
+  transform: translateY(-4px);
+}
+
+.tf-arch-card--model:hover {
+  box-shadow: 0 8px 24px rgba(33, 150, 243, 0.28);
+  border-color: #2196f3;
+}
+
+.tf-arch-card--compute:hover {
+  box-shadow: 0 8px 24px rgba(0, 200, 83, 0.28);
+  border-color: #00c853;
+}
+
+.tf-arch-card--ops:hover {
+  box-shadow: 0 8px 24px rgba(255, 152, 0, 0.28);
+  border-color: #ff9800;
 }
 
 .tf-arch-card:active {
-  transform: translateY(-1px);
-}
-
-.tf-arch-card-icon {
-  font-size: 1.5rem;
-  margin-bottom: 0.35rem;
-  line-height: 1;
+  transform: translateY(-2px);
 }
 
 .tf-arch-card-title {
@@ -89,66 +137,28 @@
   text-align: center;
 }
 
-.tf-arch-card-desc {
-  font-size: 0.72rem;
-  color: var(--md-default-fg-color--light);
-  text-align: center;
-  margin-top: 0.15rem;
-}
-
-.tf-arch-card--model:hover {
-  border-color: #2196f3;
-}
-
-.tf-arch-card--compute:hover {
-  border-color: #00c853;
-}
-
-.tf-arch-card--ops:hover {
-  border-color: #ff9800;
-}
-
+/* Arrow — CSS drawn */
 .tf-arch-arrow {
   text-align: center;
-  font-size: 1.2rem;
-  color: var(--md-default-fg-color--lighter);
-  padding: 0.15rem 0;
+  padding: 0.2rem 0;
   line-height: 1;
 }
 
-.tf-arch-card.is-active {
-  border-color: var(--md-primary-fg-color);
-  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.3);
+.tf-arch-arrow::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 9px solid var(--md-default-fg-color--lighter);
+  opacity: 0.45;
 }
 
-@media screen and (max-width: 600px) {
-  .tf-arch-layer-label {
-    display: none;
-  }
-  .tf-arch-cards {
-    flex-direction: column;
-  }
-  .tf-arch-card {
-    min-width: auto;
-  }
-}
-
-[data-md-color-scheme="slate"] .tf-arch-card {
-  background: var(--md-default-fg-color--lightest);
-}
-
-[data-md-color-scheme="slate"] .tf-arch-card:hover {
-  background: var(--md-default-fg-color--lighter);
-}
-
-/* Compact variant — module name only, no description */
+/* ===== Compact variant ===== */
 .tf-arch--compact .tf-arch-card {
   min-width: 100px;
   padding: 0.5rem 0.75rem;
-}
-
-.tf-arch--compact .tf-arch-card-desc {
-  display: none;
 }
 
 .tf-arch--compact .tf-arch-card-title {
@@ -165,7 +175,206 @@
   padding: 0.25rem 0;
 }
 
-.tf-arch--compact .tf-arch-arrow {
-  font-size: 0.9rem;
-  padding: 0.05rem 0;
+.tf-arch--compact .tf-arch-arrow::after {
+  border-left-width: 6px;
+  border-right-width: 6px;
+  border-top-width: 7px;
 }
+
+/* ===== Section title accent — distinct color per product ===== */
+.tf-section h2 {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.tf-section h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  bottom: 3px;
+  width: 5px;
+  border-radius: 3px;
+}
+
+/* DCE 5.0 — blue */
+.tf-section--dce h2::before { background: linear-gradient(180deg, #2196f3, #1565c0); }
+
+/* d.run — green */
+.tf-section--drun h2::before { background: linear-gradient(180deg, #00c853, #2e7d32); }
+
+/* Token Factory — orange */
+.tf-section--tf h2::before { background: linear-gradient(180deg, #ff9800, #e65100); }
+
+/* ===== Hero header ===== */
+.md-typeset h1 {
+  background: linear-gradient(135deg, var(--md-primary-fg-color), #42a5f5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.3rem;
+}
+
+/* ===== Hero banner ===== */
+.tf-hero {
+  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  margin: 1rem 0 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.08), rgba(0, 200, 83, 0.06), rgba(255, 152, 0, 0.08));
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.tf-hero p {
+  margin: 0.5rem auto;
+  max-width: 50rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.tf-hero-badges {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.tf-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.tf-hero-badge--dce {
+  background: rgba(33, 150, 243, 0.12);
+  color: #1565c0;
+  border: 1px solid rgba(33, 150, 243, 0.3);
+}
+
+.tf-hero-badge--drun {
+  background: rgba(0, 200, 83, 0.12);
+  color: #2e7d32;
+  border: 1px solid rgba(0, 200, 83, 0.3);
+}
+
+.tf-hero-badge--tf {
+  background: rgba(255, 152, 0, 0.12);
+  color: #e65100;
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+/* ===== CTA buttons centered ===== */
+.tf-cta {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.06), rgba(255, 152, 0, 0.06));
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.tf-cta .md-button {
+  margin: 0;
+}
+
+/* ===== Section divider ===== */
+.tf-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--md-default-fg-color--lightest), transparent);
+  margin: 2.5rem 0;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 600px) {
+  .tf-arch-layer-label {
+    display: none;
+  }
+  .tf-arch-cards {
+    flex-direction: column;
+  }
+  .tf-arch-card {
+    min-width: auto;
+  }
+  .tf-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tf-hero {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ===== Dark mode ===== */
+[data-md-color-scheme="slate"] .tf-arch-card {
+  background: var(--md-default-fg-color--lightest);
+}
+
+[data-md-color-scheme="slate"] .tf-arch-card:hover {
+  background: var(--md-default-fg-color--lighter);
+}
+
+[data-md-color-scheme="slate"] .tf-arch-card--model:hover {
+  box-shadow: 0 8px 24px rgba(33, 150, 243, 0.45);
+}
+
+[data-md-color-scheme="slate"] .tf-arch-card--compute:hover {
+  box-shadow: 0 8px 24px rgba(0, 200, 83, 0.45);
+}
+
+[data-md-color-scheme="slate"] .tf-arch-card--ops:hover {
+  box-shadow: 0 8px 24px rgba(255, 152, 0, 0.45);
+}
+
+[data-md-color-scheme="slate"] .tf-hero {
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.15), rgba(0, 200, 83, 0.1), rgba(255, 152, 0, 0.12));
+}
+
+[data-md-color-scheme="slate"] .tf-cta {
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), rgba(255, 152, 0, 0.1));
+}
+
+[data-md-color-scheme="slate"] .tf-hero-badge--dce {
+  color: #64b5f6;
+}
+
+[data-md-color-scheme="slate"] .tf-hero-badge--drun {
+  color: #81c784;
+}
+
+[data-md-color-scheme="slate"] .tf-hero-badge--tf {
+  color: #ffb74d;
+}
+
+/* Hero badge links — clickable */
+a.tf-hero-badge {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a.tf-hero-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+a.tf-hero-badge--dce:hover {
+  background: rgba(33, 150, 243, 0.2);
+}
+
+a.tf-hero-badge--drun:hover {
+  background: rgba(0, 200, 83, 0.2);
+}
+
+a.tf-hero-badge--tf:hover {
+  background: rgba(255, 152, 0, 0.2);
+}
+
+/* Center section titles */
