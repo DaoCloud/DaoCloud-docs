@@ -11,6 +11,10 @@ hide:
 
 ## 2026 年
 
+- [Agent 技能的真相：为什么有效，什么时候会失效？](2026/skills.md)
+
+    聊到智能体，"技能"是个绕不开的词。
+
 - [从 KV Cache Affinity 到 Token-aware Routing：llm-d 如何避免 LLM 推理热点](2026/token-aware.md)
 
     llm-d 尝试 Sticky Until Saturated 来避免 LLM 推理热点。
