@@ -205,7 +205,6 @@ extra:
 extra_javascript:
   - stylesheets/zoom_image.js
   - stylesheets/language-redirect.js
-  - stylesheets/tf-arch.js
   # - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js # disable fix mermaid not working
 
 # Customization css

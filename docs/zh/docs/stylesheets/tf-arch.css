@@ -374,3 +374,53 @@ a.tf-hero-badge--tf:hover {
 .tabbed-labels input:checked + .tabbed-label {
   color: var(--md-primary-fg-color);
 }
+
+/* ===== Optional / pluggable cards ===== */
+.tf-arch-card--optional {
+  border-style: dashed;
+  border-width: 2px;
+  border-color: var(--md-default-fg-color--lighter);
+  opacity: 0.6;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--md-default-bg-color),
+    var(--md-default-bg-color) 6px,
+    rgba(0, 0, 0, 0.02) 6px,
+    rgba(0, 0, 0, 0.02) 12px
+  );
+}
+
+.tf-arch-card--optional .tf-arch-card-title::after {
+  content: "可选";
+  display: inline-block;
+  font-size: 0.55rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color--light);
+  background: var(--md-default-fg-color--lightest);
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+  letter-spacing: 0.05em;
+}
+
+.tf-arch-card--optional:hover {
+  opacity: 1;
+  border-style: solid;
+}
+
+[data-md-color-scheme="slate"] .tf-arch-card--optional {
+  border-color: var(--md-default-fg-color--light);
+  background: repeating-linear-gradient(
+    135deg,
+    var(--md-default-fg-color--lightest),
+    var(--md-default-fg-color--lightest) 6px,
+    rgba(255, 255, 255, 0.03) 6px,
+    rgba(255, 255, 255, 0.03) 12px
+  );
+}
+
+[data-md-color-scheme="slate"] .tf-arch-card--optional .tf-arch-card-title::after {
+  color: var(--md-default-fg-color--light);
+  background: rgba(255, 255, 255, 0.1);
+}
