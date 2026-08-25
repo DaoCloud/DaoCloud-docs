@@ -36,6 +36,6 @@ hide:
     1. Insight Agent 从 v0.16.x 开始不兼容 k8s v1.16.15
     2. Insight Agent v0.20.0 兼容 k8s v1.18.20
     3. Insight Agent v0.19.2/v0.18.2/v0.17.x 不兼容 k8s v1.18.20
-    4. Insight Agent 从 v0.30.x 不兼容 k8s v1.22.x 及 以下版本
-    5. Insight Agent 0.38.0 指标场景兼容 k8s 1.18.20 
-    6. Insight Agent 0.43.x 使用 prometheus operator v0.83.0 版本时 指标场景可兼容 k8s 1.18.20 
+    4. Insight Agent 从 v0.30.x 起在非指标场景下不兼容 k8s v1.22.x 及以下版本（指标场景例外见下文）
+    5. Insight Agent v0.38.0 指标场景兼容 k8s v1.18.20
+    6. Insight Agent v0.43.x 使用 prometheus operator v0.83.0 版本时指标场景可兼容 k8s v1.18.20
