@@ -41,7 +41,7 @@ metadata:
 
 创建后，VM Pod 在重启/重建场景下会持续获得相同 IP。
 
-## 注意事项
+!!! note
 
-- KubeVirt 热迁移场景下，Spiderpool 不进行 IP 冲突检测
-- passt 模式只支持单网卡；bridge 模式可多网卡但不支持 Service Mesh
+    - KubeVirt 热迁移场景下，Spiderpool 不进行 IP 冲突检测
+    - passt 模式只支持单网卡；bridge 模式可多网卡但不支持 Service Mesh

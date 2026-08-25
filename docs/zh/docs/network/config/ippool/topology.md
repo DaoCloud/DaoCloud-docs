@@ -71,7 +71,7 @@ metadata:
 kubectl get pod -o wide
 ```
 
-## 注意事项
+!!! note
 
-- `nodeName` 适合小规模集群，`nodeAffinity` 更适合大规模或按标签管理的场景
-- IPPool 子网与网关需与节点所在网络一致
+    - `nodeName` 适合小规模集群，`nodeAffinity` 更适合大规模或按标签管理的场景
+    - IPPool 子网与网关需与节点所在网络一致
