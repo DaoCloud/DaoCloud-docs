@@ -36,6 +36,6 @@ hide:
     1. Insight Agent is not compatible with k8s v1.16.15 starting from v0.16.x.
     2. Insight Agent v0.20.0 is compatible with k8s v1.18.20.
     3. Insight Agent v0.19.2/v0.18.2/v0.17.x is not compatible with k8s v1.18.20.
-    4. Insight Agent is not compatible with k8s v1.22.x and below versions from v0.30.x.
+    4. From v0.30.x, Insight Agent is not compatible with k8s v1.22.x and below in general (see the metric-scenario exceptions below).
     5. Insight Agent v0.38.0 supports Kubernetes v1.18.20 for metric scenarios.
     6. When Insight Agent v0.43.x uses Prometheus Operator v0.83.0, metric scenarios are compatible with Kubernetes v1.18.20.
