@@ -15,13 +15,13 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
       <a class="tf-arch-card tf-arch-card--model" href="../hydra/">
         <span class="tf-arch-card-title">大模型服务平台</span>
       </a>
-      <a class="tf-arch-card tf-arch-card--model" href="https://docs.d.run/leopard/">
+      <a class="tf-arch-card tf-arch-card--model" href="../leopard/">
         <span class="tf-arch-card-title">费用中心</span>
       </a>
-      <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="https://docs.d.run/zestu/">
+      <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="../zestu/">
         <span class="tf-arch-card-title">算力云</span>
       </a>
-      <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="https://docs.d.run/dak/">
+      <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="../dak/">
         <span class="tf-arch-card-title">AI 应用</span>
       </a>
       <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="../clawos/intro/">
@@ -37,12 +37,12 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
         <span class="tf-arch-card-title">Token 工厂</span>
       </a>
       <a class="tf-arch-card tf-arch-card--compute" href="../inferx/">
-        <span class="tf-arch-card-title">InferX 推理引擎</span>
+        <span class="tf-arch-card-title">InferX 推理</span>
       </a>
       <div class="tf-arch-card tf-arch-card--compute">
         <span class="tf-arch-card-title">智能工作台</span>
       </div>
-      <div class="tf-arch-card tf-arch-card--compute">
+      <div class="tf-arch-card tf-arch-card--compute" href="#-">
         <span class="tf-arch-card-title">驾驶舱</span>
       </div>
       <div class="tf-arch-card tf-arch-card--compute">

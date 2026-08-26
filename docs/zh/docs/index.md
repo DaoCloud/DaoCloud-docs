@@ -122,22 +122,22 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
       <div class="tf-arch-layer tf-arch-layer--model">
         <div class="tf-arch-layer-label">用户</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--model" href="https://docs.d.run/models/">
+          <a class="tf-arch-card tf-arch-card--model" href="models/">
             <span class="tf-arch-card-title">大模型服务平台</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="baize/intro/">
             <span class="tf-arch-card-title">AI Lab</span>
           </a>
-          <div class="tf-arch-card tf-arch-card--model" href="https://docs.d.run/leopard/">
+          <div class="tf-arch-card tf-arch-card--model" href="leopard/">
             <span class="tf-arch-card-title">费用中心</span>
           </div>
-          <div class="tf-arch-card tf-arch-card--model" href="https://docs.d.run/zestu/">
+          <div class="tf-arch-card tf-arch-card--model" href="zestu/">
             <span class="tf-arch-card-title">算力云</span>
           </div>
-          <a class="tf-arch-card tf-arch-card--model" href="https://docs.d.run/dak/">
+          <a class="tf-arch-card tf-arch-card--model" href="dak/">
             <span class="tf-arch-card-title">AI 应用</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="https://docs.d.run/clawos/">
+          <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="clawos/intro/">
             <span class="tf-arch-card-title">ClawOS</span>
           </a>
         </div>
@@ -155,7 +155,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
           <div class="tf-arch-card tf-arch-card--compute">
             <span class="tf-arch-card-title">智能工作台</span>
           </div>
-          <div class="tf-arch-card tf-arch-card--compute">
+          <div class="tf-arch-card tf-arch-card--compute" href="tf/#-">
             <span class="tf-arch-card-title">驾驶舱</span>
           </div>
           <div class="tf-arch-card tf-arch-card--compute">
@@ -164,7 +164,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
           <a class="tf-arch-card tf-arch-card--compute" href="ghippo/intro/">
             <span class="tf-arch-card-title">全局管理</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--compute tf-arch-card--optional" href="https://docs.d.run/clawos/">
+          <a class="tf-arch-card tf-arch-card--compute tf-arch-card--optional" href="clawos/intro/">
             <span class="tf-arch-card-title">ClawOS</span>
           </a>
         </div>
@@ -206,13 +206,13 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
           <a class="tf-arch-card tf-arch-card--model" href="hydra/">
             <span class="tf-arch-card-title">大模型服务平台</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model" href="https://docs.d.run/leopard/">
+          <a class="tf-arch-card tf-arch-card--model" href="leopard/">
             <span class="tf-arch-card-title">费用中心</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="https://docs.d.run/zestu/">
+          <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="zestu/">
             <span class="tf-arch-card-title">算力云</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="https://docs.d.run/dak/">
+          <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="dak/">
             <span class="tf-arch-card-title">AI 应用</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="clawos/intro/">
@@ -233,8 +233,8 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
           <div class="tf-arch-card tf-arch-card--compute">
             <span class="tf-arch-card-title">智能工作台</span>
           </div>
-          <div class="tf-arch-card tf-arch-card--compute">
-            <span class="tf-arch-card-title">驾驶舱大屏</span>
+          <div class="tf-arch-card tf-arch-card--compute" href="tf/#-">
+            <span class="tf-arch-card-title">驾驶舱</span>
           </div>
           <div class="tf-arch-card tf-arch-card--compute">
             <span class="tf-arch-card-title">商品管理</span>
