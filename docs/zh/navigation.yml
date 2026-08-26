@@ -1623,7 +1623,7 @@ nav:
       - 管理:
           - 全局管理: videos/ghippo.md
   - 下载中心:
-      - DaoCloud Enterprise 5.0:
+      - DaoCloud 下载站:
           - 导览页: download/index.md
           - 下载 DCE 5.0 社区版: download/free/dce5-installer-history.md
           - 下载 DCE 5.0 商业版: download/business/dce5-installer-history.md
