@@ -1519,7 +1519,7 @@ nav:
       - Management:
           - Global Management: videos/ghippo.md
   - Downloads:
-      - DaoCloud Enterprise 5.0:
+      - DaoCloud Download Hub:
           - Index: download/index.md
           - Download DCE 5.0 Community: download/free/dce5-installer-history.md
           - Download DCE 5.0 Enterprise: download/business/dce5-installer-history.md
