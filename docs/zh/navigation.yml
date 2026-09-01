@@ -1668,6 +1668,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2026:
+          - vLLM-SR 七大工作组: blogs/2026/vllm-sr.md
           - Agent 技能揭秘: blogs/2026/skills.md
           - llm-d 中的 Token 感知路由: blogs/2026/token-aware.md
           - 异构 GPU 上的国产算力优化实践: blogs/2026/optimize-gpu.md

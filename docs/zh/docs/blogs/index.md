@@ -11,6 +11,10 @@ hide:
 
 ## 2026 年
 
+- [vLLM Semantic Router 七大工作组](2026/vllm-sr.md)
+
+    vLLM Semantic Router（下称 vLLM-SR）现在有七个工作组，每个工作组负责一个持久的技术方向。
+
 - [Agent 技能的真相：为什么有效，什么时候会失效？](2026/skills.md)
 
     聊到智能体，"技能"是个绕不开的词。
