@@ -11,6 +11,10 @@ hide:
 
 ## 2026 年
 
+- [Kubernetes DRA 进阶指南](2026/k8s-dra.md)
+
+    以前 Pod 申请 GPU 只能"整块拿走"，现在 DRA 让这件事变得更精细、更灵活。
+
 - [vLLM Semantic Router 七大工作组](2026/vllm-sr.md)
 
     vLLM Semantic Router（下称 vLLM-SR）现在有七个工作组，每个工作组负责一个持久的技术方向。
