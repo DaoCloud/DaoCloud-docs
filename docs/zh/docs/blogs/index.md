@@ -11,7 +11,7 @@ hide:
 
 ## 2026 年
 
-- [Kubernetes DRA 进阶指南](2026/k8s-dra.md)
+- [Kubernetes v1.37 DRA 新变化](2026/k8s-dra.md)
 
     以前 Pod 申请 GPU 只能"整块拿走"，现在 DRA 让这件事变得更精细、更灵活。
 

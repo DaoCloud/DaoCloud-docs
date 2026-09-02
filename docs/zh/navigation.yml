@@ -1668,7 +1668,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2026:
-          - Kubernetes DRA 进阶指南: blogs/2026/k8s-dra.md
+          - K8s v1.37 DRA 新变化: blogs/2026/k8s-dra.md
           - vLLM-SR 七大工作组: blogs/2026/vllm-sr.md
           - Agent 技能揭秘: blogs/2026/skills.md
           - llm-d 中的 Token 感知路由: blogs/2026/token-aware.md

@@ -1,10 +1,8 @@
-# Kubernetes DRA 进阶指南：六大特性让异构资源管理更灵活
+# Kubernetes v1.37 DRA 新变化：六大特性让异构资源管理更灵活
 
-## 写在前面
+Kubernetes v1.37 为 DRA（动态资源分配）带来了一批重磅更新。如果你在集群里管理 GPU、网卡、FPGA 这类硬件设备，这次发布值得重点关注。
 
-如果你用过 Kubernetes 管理 GPU、网卡这类硬件设备，一定听说过 DRA（动态资源分配）。简单来说，DRA 就是 Kubernetes 里的"硬件资源管家"——以前 Pod 申请 GPU 只能"整块拿走"，现在 DRA 让这件事变得更精细、更灵活。
-
-这篇文章不讲 DRA 入门概念，而是聚焦六个**进阶特性**。它们解决的都是实际生产中会碰到的问题：
+DRA 早期的能力比较"粗"——Pod 申请 GPU 只能整块拿走，没法拆分、没法共享。v1.37 一次性引入了六个新特性，把这个问题从多个角度补齐了：
 
 - 一块 GPU 能不能拆成多份给不同 Pod 用？
 - 怎么避免把"打架"的设备模式分配到一起？
@@ -13,9 +11,7 @@
 - 纯控制平面的资源，能不能不在每个节点上都装驱动？
 - 容器里的应用怎么知道自己拿到了什么设备？
 
-读完这篇文章，你会对 DRA 的能力边界有更清晰的认识，也能更好地判断哪些特性能用在你的场景里。
-
-> 文中每个特性都会标注对应的特性门控（Feature Gate），方便你在集群中按需开启。
+下面逐一展开。每个特性都标注了对应的特性门控（Feature Gate），方便你在集群中按需开启。
 
 ## 一、可分区设备：把一块硬件拆成多份来用
 
@@ -293,7 +289,7 @@ status:
 
 为什么？因为更新 ResourceClaim 状态这件事，可能是调度器在做，也可能是某个节点上的 kubelet 在做。从安全角度看，理想状态是：**每个节点只能改跟自己相关的那部分状态**，而不是所有节点都有权力改所有 ResourceClaim 的状态。
 
-从 Kubernetes v1.36 开始，DRA 引入了**细粒度状态授权**，通过合成子资源（synthetic subresources）和节点感知动词（node-aware verbs），把授权粒度做得更细。
+从 Kubernetes v1.37 开始，DRA 引入了**细粒度状态授权**，通过合成子资源（synthetic subresources）和节点感知动词（node-aware verbs），把授权粒度做得更细。
 
 这意味着什么呢？简单来说：
 
@@ -394,28 +390,28 @@ KEP-5304 定义了这套协议的标准格式。如果你用官方的 [DRA kubel
 
 ### 协议的四条规则
 
-**1. 文件放哪**
+1. 文件放哪
 
-元数据文件统一放在容器的 `/var/run/kubernetes.io/dra-device-attributes` 目录下：
+    元数据文件统一放在容器的 `/var/run/kubernetes.io/dra-device-attributes` 目录下：
 
-- 直接引用 ResourceClaim：`resourceclaims/<claimName>/<requestName>/<driverName>-metadata.json`
-- 通过 ResourceClaimTemplate 创建：`resourceclaimtemplates/<podClaimName>/<requestName>/<driverName>-metadata.json`
+    - 直接引用 ResourceClaim：`resourceclaims/<claimName>/<requestName>/<driverName>-metadata.json`
+    - 通过 ResourceClaimTemplate 创建：`resourceclaimtemplates/<podClaimName>/<requestName>/<driverName>-metadata.json`
 
-路径常量定义在 [`k8s.io/dynamic-resource-allocation/api/metadata`](https://pkg.go.dev/k8s.io/dynamic-resource-allocation/api/metadata) 包里。
+    路径常量定义在 [`k8s.io/dynamic-resource-allocation/api/metadata`](https://pkg.go.dev/k8s.io/dynamic-resource-allocation/api/metadata) 包里。
 
-**2. 文件里有什么**
+2. 文件里有什么
 
-每个文件是一个或多个 `DeviceMetadata` 对象的 JSON 流，带有标准的 `apiVersion` 和 `kind` 字段。同一份元数据会按支持的 API 版本各编码一次（新版本在前），应用读第一个能解析的就行。
+    每个文件是一个或多个 `DeviceMetadata` 对象的 JSON 流，带有标准的 `apiVersion` 和 `kind` 字段。同一份元数据会按支持的 API 版本各编码一次（新版本在前），应用读第一个能解析的就行。
 
-参考 [`DeviceMetadata` API 文档](https://pkg.go.dev/k8s.io/dynamic-resource-allocation/api/metadata/v1alpha1#DeviceMetadata)了解字段详情。
+    参考 [`DeviceMetadata` API 文档](https://pkg.go.dev/k8s.io/dynamic-resource-allocation/api/metadata/v1alpha1#DeviceMetadata)了解字段详情。
 
-**3. 怎么判断更新了**
+3. 怎么判断更新了
 
-每次驱动更新元数据文件，都必须把 `metadata.generation` 加 1。应用通过观察这个字段就能知道数据变了。
+    每次驱动更新元数据文件，都必须把 `metadata.generation` 加 1。应用通过观察这个字段就能知道数据变了。
 
-**4. 怎么进容器**
+4. 怎么进容器
 
-通常是通过 CDI（Container Device Interface）绑定挂载进去的。只要文件路径正确、容器内只读，用其他方式也行。
+    通常是通过 CDI（Container Device Interface）绑定挂载进去的。只要文件路径正确、容器内只读，用其他方式也行。
 
 ### 它是怎么工作的
 
@@ -491,7 +487,7 @@ KEP-5304 定义了这套协议的标准格式。如果你用官方的 [DRA kubel
 
 ## 总结
 
-DRA 的六个进阶特性，从不同维度完善了 Kubernetes 的异构资源管理能力。它们不是孤立的，而是层层递进、互相配合：
+以上是 Kubernetes v1.37 为 DRA 带来的六个新特性，从不同维度补齐了异构资源管理的能力。它们不是孤立的，而是层层递进、互相配合：
 
 | 特性 | 一句话概括 | 关键 API 字段 |
 |------|-----------|--------------|
@@ -508,4 +504,4 @@ DRA 的六个进阶特性，从不同维度完善了 Kubernetes 的异构资源�
 - **DistinctAttribute** 约束是随 **可消耗容量** 一起引入的
 - **可选节点操作** 和 **节点声明特性** 配合，确保调度到支持的节点
 
-随着 Kubernetes 在 AI、高性能计算等场景的应用越来越广泛，DRA 这些特性会变得越来越重要。了解它们的能力边界，能帮助你更好地规划集群的硬件资源管理方案。
+随着 Kubernetes 在 AI、高性能计算等场景的应用越来越广泛，v1.37 这批 DRA 特性会变得越来越重要。如果你正在规划升级，建议先在测试集群中开启相关特性门控，验证驱动兼容性后再逐步推广到生产环境。
