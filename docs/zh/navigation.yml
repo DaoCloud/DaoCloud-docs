@@ -437,6 +437,7 @@ nav:
                   - 产品架构: kairship/intro/architecture.md
                   - 离线升级: kairship/intro/offline-upgrade.md
                   - Release Notes: kairship/intro/release-notes.md
+                  - 常见问题: kairship/intro/faq.md
               - 工作空间: kairship/workspace.md
               - 多云实例:
                   - 实例详情: kairship/instance/index.md
@@ -468,7 +469,6 @@ nav:
               - 故障转移:
                   - 故障转移功能介绍: kairship/failover/failover.md
                   - 优化故障转移延迟灵敏度: kairship/failover/optimization-failover.md
-              - 常见问题: kairship/intro/faq.md
               - 最佳实践:
                   - 一键转换DCE 4.0到5.0应用: kairship/best-practice/one-click-conversion.md
                   - 跨集群弹性伸缩: kairship/best-practice/fhpa.md
@@ -518,7 +518,7 @@ nav:
                   - 网络组件: network/modules/modules.md
                   - 离线升级云原生网络: network/intro/offline.md
                   - Release Notes: network/intro/release-notes.md
-                  - 网络组件已知问题: network/intro/issues.md
+                  - 网络组件 FAQ: network/intro/issues.md
               - 网络规划:
                   - 网卡规划: network/plans/ethplan.md
                   - 网络规划: network/plans/netplan.md
@@ -1021,7 +1021,7 @@ nav:
                       - UI 支持的特性: mspider/intro/comp-archi-ui/features-on-ui.md
                   - Istio与K8s版本对应情况: mspider/intro/istio-k8s.md
                   - 网格漏洞修复标准与计划: mspider/intro/sla.md
-                  - 常见问题: mspider/intro/faq.md
+                  - 常见问题 FAQ: mspider/intro/faq.md
                   - Release Notes: mspider/intro/release-notes.md
               - 安装、配置和升级:
                   - 安装部署网格: mspider/install/install.md
@@ -1303,6 +1303,7 @@ nav:
                   - 快速入门: clawos/intro/quickstart.md
                   - Release Notes: clawos/intro/release-notes.md
                   - 升级注意事项: clawos/intro/upgrade-notes.md
+                  - 常见问题 FAQ: clawos/faq.md
               - 工作空间视角:
                   - 概览: clawos/workspace/overview.md
                   - ClawHub:
@@ -1315,9 +1316,7 @@ nav:
                   - 概览: clawos/admin/overview-admin.md
                   - Skill 管理: clawos/admin/skillmanage-admin.md
                   - 网络策略管理: clawos/admin/network-manage.md
-              - 参考文档:
-                  - Gateway API 实例访问配置: clawos/reference/gateway-access.md
-              - 常见问题: clawos/faq.md
+              - Gateway API 实例访问配置参考: clawos/reference/gateway-access.md
           - AI Lab:
               - 介绍:
                   - 什么是 AI Lab: baize/intro/index.md
@@ -1423,7 +1422,7 @@ nav:
           - InferX 推理引擎:
               - 介绍:
                   - 什么是 InferX: inferx/index.md
-                  - FAQ: inferx/faqs.md
+                  - 常见问题 FAQ: inferx/faqs.md
               - 最佳实践:
                   - 离线环境安装 InferX: inferx/guides/offline.md
                   - 启用集群的 Istio GAIE 特性: inferx/guides/enable-istio-gaie-with-mspider.md
@@ -1439,7 +1438,7 @@ nav:
                   - 基本概念: kant/intro/concepts.md
                   - Release Notes: kant/intro/release-notes.md
                   - 离线升级云边协同: kant/intro/offline-upgrade.md
-                  - 常见问题: kant/intro/faq.md
+                  - 常见问题 FAQ: kant/intro/faq.md
               - 边缘单元:
                   - 创建专有边缘单元: kant/user-guide/edge-unit/create-internal-unit.md
                   - 创建外接边缘单元: kant/user-guide/edge-unit/create-external-unit.md
@@ -1485,6 +1484,7 @@ nav:
                   - 功能特性: ghippo/intro/features.md
                   - 常见术语: ghippo/intro/glossary.md
                   - Release Notes: ghippo/intro/release-notes.md
+                  - 常见问题 FAQ: ghippo/intro/faq.md
               - 安装、登录和升级:
                   - 离线升级全局管理: ghippo/install/offline-install.md
                   - 自定义反向代理服务器地址: ghippo/install/reverse-proxy.md
@@ -1583,11 +1583,6 @@ nav:
                       - 定制导航栏: ghippo/best-practice/menu/navigator.md
                       - 基于权限显示/隐藏导航栏菜单: ghippo/best-practice/menu/menu-display-or-hiding.md
                   - 系统消息: ghippo/best-practice/system-message.md
-              - 故障排查:
-                  - ingressgateway 无法启动: ghippo/troubleshooting/ghippo01.md
-                  - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
-                  - keycloak 无法启动: ghippo/troubleshooting/ghippo03.md
-                  - 单独升级全局管理时失败: ghippo/troubleshooting/ghippo04.md
           - 设备管理:
               - 介绍:
                   - 什么是设备管理: topohub/intro/index.md
