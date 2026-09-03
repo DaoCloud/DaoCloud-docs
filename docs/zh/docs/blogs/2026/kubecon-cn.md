@@ -1,5 +1,7 @@
 # KubeCon China 2026 参会指南：议程、门票与上海出行全攻略
 
+[![KubeCon China 2026](./images/kubecon-cn.png)](https://www.lfopensource.cn/kubecon-cloudnativecon-openinfra-summit-pytorch-conference-china/)
+
 KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 将于 9 月 7–9 日在上海举办。
 
 - 场馆：上海国际会议中心
@@ -12,7 +14,7 @@ KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 将�
 怎么破局？一句话：
 **先想清楚你要解决什么问题，再用议题 Track、项目展台和走廊交流把上下游串起来。**
 
-## 一、大会概览：三大社区为什么合办
+## 大会概览：三大社区为什么合办
 
 这不是简单的品牌联合。生产级 AI 天然跨社区：
 
@@ -33,7 +35,7 @@ KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 将�
 你不需要在三个领域都是专家。关键问题是：
 **哪个相邻层面正在拖你的后腿？** 平台工程师可以听 PyTorch 场次搞清楚工作负载到底在干什么，ML 工程师可以听调度和存储场次搞明白为什么部署环境和 Notebook 里表现不一样。
 
-## 二、日期、场馆与日程
+## 日期、场馆与日程
 
 大会于 **2026 年 9 月 7 日（周一）至 9 日（周三）** 在上海国际会议中心举行。9 月 7 日为同场活动日，主会议程在 8 日和 9 日两天。
 
@@ -43,13 +45,13 @@ KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 将�
 | 9 月 8 日（周二） | 主题演讲、分会场、教程、解决方案展示区 | 主技术会议首个完整日 |
 | 9 月 9 日（周三） | 主题演讲、分会场、解决方案展示区、项目活动 | 留时间做后续交流和逛展台 |
 
-**场馆： ** 上海国际会议中心，浦东滨江大道 2727 号。官方议程使用北京时间（UTC+8），座位先到先得。
+**场馆：** 上海国际会议中心，浦东滨江大道 2727 号。官方议程使用北京时间（UTC+8），座位先到先得。
 
 !!! tip
 
     出行前务必查阅最新的[活动概览](https://www.lfopensource.cn/kubecon-cloudnativecon-openinfra-summit-pytorch-conference-china/) —— 会议室、场次时间和现场流程随时可能调整。
 
-## 三、门票怎么选
+## 门票怎么选
 
 主会议设企业、个人、学术三类注册，按雇佣和付款状态区分，
 **与技术资历无关** 。
@@ -67,9 +69,9 @@ KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 将�
 主会议票包含：主题演讲、分会场、教程、社交活动、解决方案展示区和项目展区入场、茶歇、会议 T 恤、按需录像。
 **不自动包含 9 月 7 日的同场活动** —— 主票和附加票要分开决策。
 
-## 四、按问题选 Track，按成果排日程
+## 按问题选 Track，按成果排日程
 
-### 4.1 选 Track：从你的问题出发
+### 选 Track：从你的问题出发
 
 官方议程有十多个 Track，每个都蹭一点只会得到碎片化的日程。建议选
 **一条主 Track  + 一条相邻 Track  + 少量探索场次** 。
@@ -88,7 +90,7 @@ KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 将�
     Track 标签只是导航辅助，不是硬边界。对 AI 平台团队最相关的演讲，可能藏在存储、安全或硬件 Track 里。
     选场次前先浏览 [Linux 基金会官方 Track 描述](https://www.lfopensource.cn/kubecon-cloudnativecon-openinfra-summit-pytorch-conference-china/program/explore-the-tracks-2/)。
 
-### 4.2 排日程：五个原则
+### 排日程：五个原则
 
 动笔之前，先写下你希望大会回答的 **三个问题** 。比如：别人怎么公平共享加速器？突发流量下模型服务怎么扛？租户隔离从哪里切？维护者怎么测升级？有了这些问题，同一时段两场都想听的演讲就好取舍了。
 
@@ -101,7 +103,7 @@ KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 将�
 用 [Linux 基金会官方日程表](https://www.lfopensource.cn/kubecon-cloudnativecon-openinfra-summit-pytorch-conference-china/program/schedule/)筛场次、排个人议程。关键场次离线保存，
 **记下房间号而不只是标题** 。场馆网络拥挤或账号同步抽风时，截图能救命。
 
-## 五、9 月 7 日同场活动要不要去
+## 9 月 7 日同场活动要不要去
 
 9 月 7 日不是主会议的"热身"，而是各有独立焦点和注册要求的独立活动。
 **只有主题和受众跟你的角色匹配时才值得加** ；否则用这天赶路、做准备或开专注会议。
@@ -118,19 +120,19 @@ KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 将�
 
     别假设主会议票能直接入场。通过[官方活动站](https://www.lfopensource.cn/kubecon-cloudnativecon-openinfra-summit-pytorch-conference-china/)确认附加票状态、价格和注册路径。两个主题都想听？选跟你下季度要做的那次决策绑得更紧的那个。
 
-## 六、项目展台与维护者交流
+## 项目展台与维护者交流
 
-项目展区是**亲临现场最值得的理由之一**。项目展台让你直接面对维护者：问实现细节、了解贡献路径、判断某个项目到底适不适合你的真实约束。但前提是你得带着上下文去，而不是去要一份产品宣传册。
+项目展区是 **亲临现场最值得的理由之一** 。项目展台让你直接面对维护者：问实现细节、了解贡献路径、判断某个项目到底适不适合你的真实约束。但前提是你得带着上下文去，而不是去要一份产品宣传册。
 
-**到展台前准备好： **
+**到展台前准备好：**
 
 - 一分钟说清：工作负载、集群规模、版本号、故障模式
 - 把可复现的项目问题和厂商特定配置问题分开
-- 问清楚维护者偏好在哪个渠道处理 issue、设计讨论、文档修复和用户支持
+- 问清楚维护者偏好在哪个渠道处理 Issue、设计讨论、文档修复和用户支持
 - 记下相关仓库、SIG、工作组、Slack 频道或例会
 - **不要** 指望维护者在公共展台帮你调试敏感生产数据
 
-**时间节点： **
+**时间节点：**
 
 - 项目闪电演讲 —— 9 月 8 日
 - 维护者 Track —— 周二和周三
@@ -154,13 +156,11 @@ DaoCloud 在 S2 主展位和多个开源项目展台都安排了工程师驻场�
 
 !!! tip
 
-    DaoCloud 开源项目矩阵：[HwameiStor](https://github.com/hwameistor/hwameistor)（云原生存储）、[Spiderpool](https://github.com/spidernet-io/spiderpool)（K8s IPAM）、[Kubean](https://github.com/kubean-io/kubean)（集群生命周期管理）、[LWS](https://github.com/kubernetes-sigs/lws)（LeaderWorkerSet）、llm-d（LLM 推理调度）。
+    DaoCloud 开源项目矩阵：[HwameiStor](https://github.com/hwameistor/hwameistor)（云原生存储）、[Spiderpool](https://github.com/spidernet-io/spiderpool)（K8s IPAM）、[Kubean](https://github.com/kubean-io/kubean)（集群生命周期管理）、[LWS](https://github.com/kubernetes-sigs/lws)（LeaderWorkerSet）、llm-d（LLM 推理调度）、[HAMi](https://project-hami.io/zh/)
 
     更多信息：[DaoCloud 官网](https://www.daocloud.io) ｜ [d.run 算力平台](https://d.run/)
 
-## 七、DaoCloud 道客：7 场技术分享与展区信息
-
-> 演讲信息来源：[DaoCloud 微信公众号](https://mp.weixin.qq.com/s/xNtjhpEFAfxyaDhjZmiZdA)
+## DaoCloud 道客：7 场技术分享与展区信息
 
 当 AI 工作负载真正进入生产，很多问题才刚刚开始：怎么把昂贵的 GPU 调度得更高效？怎么快速找到推理变慢的真正原因？Kubernetes 又需要怎样演进，才能承载越来越复杂的 AI 工作负载？
 
@@ -233,11 +233,11 @@ DaoCloud 道客在本次大会带来 **7 场技术分享** ，沿三个方向展
 
     **Cybertwin-based Cloud Native Network（CCNN）** 架构探索：以 Kubernetes 作为 **Network OS** ，统一虚拟化、调度和管理计算、存储与网络资源。结合零信任 Personal Agent、数据与通信 Agent、分布式协同推理等场景展开实践。当调度中心从"机器"转向"应用"，网络是否也该像 GPU 一样成为可被 K8s 动态编排的资源？
 
-## 八、社交：带着问题去，而不是带着头衔去
+## 社交：带着问题去，而不是带着头衔去
 
 技术大会的社交效率，取决于你的自我介绍有多具体。"我们在把批处理推理搬到 K8s 上，正在比较几种调度方案"——对方立刻知道你是谁、在干什么、可能聊什么。一串职位头衔和技术名词做不到这一点。
 
-**社交三步走： **
+**社交三步走：**
 
 1. **会前** —— 锁定几位跟你工作有交集的演讲者、维护者或团队，先读摘要或仓库
 2. **会中** —— 问一个聚焦的问题，尊重对方时间
@@ -245,7 +245,7 @@ DaoCloud 道客在本次大会带来 **7 场技术分享** ，沿三个方向展
 
 官方 FAQ 推荐加入 CNCF Slack 工作区及其走廊频道。现场活动还有欢迎招待会、女性聚会、同辈导师活动和 PyTorch 社区之夜。部分活动有人数限制或需要 RSVP，出发前查一下[会议体验页](https://www.lfopensource.cn/kubecon-cloudnativecon-openinfra-summit-pytorch-conference-china/features-add-ons/experiences/)。
 
-## 九、随身携带清单
+## 随身携带清单
 
 两个密集技术日，满场馆平行对话。轻装上阵，带一套靠谱的笔记系统，比背一个"移动办公室"强。
 
@@ -263,22 +263,22 @@ DaoCloud 道客在本次大会带来 **7 场技术分享** ，沿三个方向展
 
     不要因为"可能聊到工作"就带上生产凭据、不受限的 kubeconfig、私有数据集或机密架构图。按组织安全政策使用脱敏示例和受限出差设备。
 
-## 十、上海出行攻略
+## 上海出行攻略
 
-**场馆位置： ** 上海国际会议中心，浦东滨江大道 2727 号。
+**场馆位置：** 上海国际会议中心，浦东滨江大道 2727 号。
 
-**机场距离（官方估算）： **
+**机场距离（官方估算）：**
 
 | 出发地 | 公路距离 | 备注 |
 |---|---|---|
 | 浦东国际机场（PVG） | 约 55–60 km | 行程时间取决于路况 |
 | 虹桥国际机场（SHA） | 约 18–20 km | 同上 |
 
-别在航班或高铁落地后立刻排关键场次，**留足抵达余量**。
+别在航班或高铁落地后立刻排关键场次， **留足抵达余量** 。
 
 官方会议酒店预订已关闭。订替代住宿时比三样东西：位置、取消条款、实际的早间通勤路线。一间便宜但需要赌路况跨城的房间，可能因为错过场次和消耗精力反而更贵。用中英文核对地址，离线保存，参考[官方场馆与出行指南](https://www.lfopensource.cn/kubecon-cloudnativecon-openinfra-summit-pytorch-conference-china/attend/venue-travel/)。
 
-**国际访客出发前确认： **
+**国际访客出发前确认：**
 
 - 护照有效期和入境要求
 - 支付方式（移动支付在国内几乎全覆盖，国际卡不一定通用）
@@ -289,7 +289,7 @@ DaoCloud 道客在本次大会带来 **7 场技术分享** ，沿三个方向展
 
     如需签证支持信，走活动的官方申请流程，别用通用邀请模板。
 
-## 十一、会后实践：把笔记变成实验
+## 会后实践：把笔记变成实验
 
 "以后再说" —— 这句话杀掉的会议灵感比什么都多。
 
@@ -297,7 +297,7 @@ DaoCloud 道客在本次大会带来 **7 场技术分享** ，沿三个方向展
 
 笔记本 VM 或现有一台服务器，对很多首次实验来说就够了。如果你想要一个可复用的多节点环境，紧凑型集群构建示例展示了如何用小型 x86 节点搭建分布式系统学习环境。
 
-对于专用测试节点，ZimaBoard 2 可以跑轻量级 K8s 服务、本地镜像仓库、可观测性工具或共享实验存储，而不需要主力笔记本一直开着。它**不是**大型 PyTorch 训练所需 GPU 基础设施的替代品 —— 把它用在与资源匹配的控制面和服务层上，加速器密集型工作放到合适的硬件上。
+对于专用测试节点，ZimaBoard 2 可以跑轻量级 K8s 服务、本地镜像仓库、可观测性工具或共享实验存储，而不需要主力笔记本一直开着。它 **不是** 大型 PyTorch 训练所需 GPU 基础设施的替代品 —— 把它用在与资源匹配的控制面和服务层上，加速器密集型工作放到合适的硬件上。
 
 ## 参会规划清单
 
