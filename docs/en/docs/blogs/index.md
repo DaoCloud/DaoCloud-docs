@@ -12,6 +12,10 @@ technology, sorted by date by default.
 
 ## 2026
 
+- [KubeCon China 2026 Guide](./2026/kubecon-cn.md)
+
+    KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 takes place September 7–9 in Shanghai.
+
 - [Correcting Records for Unfixed Kubernetes CVEs](./2026/k8s-cve.md)
 
     The Kubernetes Security Response Committee (SRC) will correct the affected CVE records on June 1, 2026.

@@ -1564,6 +1564,7 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2026:
+          - KubeCon China 2026 Guide: blogs/2026/kubecon-cn.md
           - Correcting Records for Unfixed K8s CVEs: blogs/2026/k8s-cve.md
           - Server-Side Sharded List and Watch: blogs/2026/server-side-sharded-list-and-watch.md
           - Topology-Aware Scheduling: blogs/2026/topology-aware-scheduling.md
