@@ -2,7 +2,7 @@
 
 ## 背景
 
-某客户生产环境在 CentOS 7.9 操作系统上部署了 DCE 5.0 工作集群，但是由于
+某客户生产环境在 CentOS 7.9 操作系统上部署了 DCE 工作集群，但是由于
 [CentOS 7.9 将停止维护](https://www.redhat.com/en/topics/linux/centos-linux-eol)，所以客户希望迁移到 Ubuntu 22.04。
 由于是生产环境，客户希望在不停机的情况下，从 CentOS 7.9 迁移到 Ubuntu 22.04。
 

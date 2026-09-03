@@ -39,6 +39,6 @@ AI Lab 提供软硬一体的 AI 智算体验，整合异构算力，优化 GPU �
 
 ![逻辑架构图](../images/image01.png)
 
-[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

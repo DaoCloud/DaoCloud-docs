@@ -12,7 +12,7 @@
 
 通常对私有的镜像空间，执行工作空间绑定，便于租户或成员使用其下的镜像。
 
-1. 使用具有 Admin 角色的用户登录 DCE 5.0，从左侧导航栏点击 __镜像仓库__ -> __仓库集成(管理员)__ 。
+1. 使用具有 Admin 角色的用户登录 DCE，从左侧导航栏点击 __镜像仓库__ -> __仓库集成(管理员)__ 。
 
     ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/integrated01.png)
 

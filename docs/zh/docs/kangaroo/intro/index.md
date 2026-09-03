@@ -9,7 +9,7 @@ hide:
 
 ## 功能特性
 
-镜像仓库是 DCE 5.0 商业版所包含的模块，其功能特性如下：
+镜像仓库是 DCE 商业版所包含的模块，其功能特性如下：
 
 | 功能特性 | 描述 |
 | ------- | --- |
@@ -24,6 +24,6 @@ hide:
 
 ![逻辑架构图](../images/harbordesign.jpg)
 
-[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

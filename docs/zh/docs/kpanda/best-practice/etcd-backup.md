@@ -4,7 +4,7 @@
 
 !!! note
 
-    - DCE 5.0 ETCD 备份还原仅限于针对同一集群（节点数和 IP 地址没有变化）进行备份与还原。
+    - DCE ETCD 备份还原仅限于针对同一集群（节点数和 IP 地址没有变化）进行备份与还原。
       例如，备份了 A 集群 的 etcd 数据后，只能将备份数据还原到 A 集群中，不能还原到 B 集群。
     - 对于跨集群的备份与还原，建议使用[应用备份还原](../user-guide/backup/deployment.md)功能。
     - 首先创建备份策略，备份当前状态，建议参考[ETCD 备份](../user-guide/backup/etcd-backup.md)功能。
@@ -49,12 +49,12 @@ INFO[0000] Go OS/Arch: linux/amd64
 
 还原之前需要检查下列事项：
 
-- 是否已经在 DCE 5.0 中成功备份了数据
+- 是否已经在 DCE 中成功备份了数据
 - 检查 S3 存储中备份数据是否存在
 
 !!! note
 
-    DCE 5.0 的备份是全量数据备份，还原时将还原最后一次备份的全量数据。
+    DCE 的备份是全量数据备份，还原时将还原最后一次备份的全量数据。
 
 ![minio](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/bp01.png)
 

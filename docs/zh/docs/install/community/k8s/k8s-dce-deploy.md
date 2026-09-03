@@ -1,6 +1,6 @@
-# 从零部署 K8s 集群到安装 DCE 5.0 社区版
+# 从零部署 K8s 集群到安装 DCE 社区版
 
-本文在 3 个节点的集群中完成了从 0 到 1 的 DCE 5.0 社区版安装，包含了 K8s 集群、依赖项、网络、存储等细节及更多注意事项。
+本文在 3 个节点的集群中完成了从 0 到 1 的 DCE 社区版安装，包含了 K8s 集群、依赖项、网络、存储等细节及更多注意事项。
 
 !!! note
 
@@ -22,7 +22,7 @@
 - CRI：containerd（因为新版本 K8s 已经不再直接支持 Docker）
 - CNI：Calico
 - StorageClass：local-path
-- DCE 5.0 社区版：v0.36.0
+- DCE 社区版：v0.36.0
 
 ## 准备节点
 
@@ -320,9 +320,9 @@ kubectl get sc # (3)!
 2. 等待 Pod 都 running
 3. 可以看到形如: local-path (default)
 
-## 安装 DCE 5.0 社区版
+## 安装 DCE 社区版
 
-现在一切准备就绪，开始安装 DCE 5.0 社区版。
+现在一切准备就绪，开始安装 DCE 社区版。
 
 ### 安装基础依赖
 
@@ -371,10 +371,10 @@ chmod +x ./dce5-installer
 
     ![登录](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/login.png)
 
-1. 以用户名 admin 密码 changeme 登录 DCE 5.0。
+1. 以用户名 admin 密码 changeme 登录 DCE。
 
     ![成功登录](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firstscreen.png)
 
-[下载 DCE 5.0](../../../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../index.md){ .md-button .md-button--primary }
+[下载 DCE](../../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../../index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../../dce/license0.md){ .md-button .md-button--primary }

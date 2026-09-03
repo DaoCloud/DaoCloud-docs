@@ -1,6 +1,6 @@
-# 从零部署 Kind 集群到安装 DCE 5.0 社区版
+# 从零部署 Kind 集群到安装 DCE 社区版
 
-本页说明如何使用 kind 集群实现新手尝鲜在线安装 DCE 5.0 社区版。
+本页说明如何使用 kind 集群实现新手尝鲜在线安装 DCE 社区版。
 
 !!! note
 
@@ -147,7 +147,7 @@ precheck pass..
     fire-kind-cluster
     ```
 
-## 安装 DCE 5.0 社区版
+## 安装 DCE 社区版
 
 1. [安装依赖项](../../install-tools.md)。
 
@@ -170,7 +170,7 @@ precheck pass..
     chmod +x ./dce5-installer
     ```
 
-1. 获取 kind 所在主机的 IP，然后开始安装 DCE 5.0。
+1. 获取 kind 所在主机的 IP，然后开始安装 DCE。
 
     ```shell
     myIP=$(ip -o route get 1.1.1.1 | cut -d " " -f 7)
@@ -188,14 +188,14 @@ precheck pass..
         ```
 
 1. 安装完成后，命令行会提示安装成功。恭喜您！
-   现在可以通过屏幕提示的 URL 使用 **默认的账号和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
+   现在可以通过屏幕提示的 URL 使用 **默认的账号和密码（admin/changeme）** 探索全新的 DCE 啦！
 
     ![安装成功](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
 !!! success
 
     - 请记录好提示的 URL，方便下次访问。
-    - 成功安装 DCE 5.0 社区版后，请[申请社区免费体验](../../../dce/license0.md)。
+    - 成功安装 DCE 社区版后，请[申请社区免费体验](../../../dce/license0.md)。
     - 如果安装过程中遇到什么问题，欢迎扫描二维码，与开发者畅快交流：
     
         ![社区版交流群](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)

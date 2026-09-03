@@ -1,6 +1,6 @@
 # 已有 Kubernetes 集群在线安装社区版
 
-本页简要说明如何在已有 Kubernetes 集群上在线安装 DCE 5.0 社区版。
+本页简要说明如何在已有 Kubernetes 集群上在线安装 DCE 社区版。
 
 !!! note
 
@@ -55,7 +55,7 @@
             insightVip: 10.6.229.11/32      # (2)!
         ```
 
-        1. 这是 Istio gateway 的 VIP，也是 DCE 5.0 控制台的浏览器访问 IP
+        1. 这是 Istio gateway 的 VIP，也是 DCE 控制台的浏览器访问 IP
         2. 全局服务集群的 Insight-Server 采集所有子集群监控指标的网络路径所用的 VIP
 
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 K8s 负载均衡能力, 配置文件范例如下:
@@ -68,7 +68,7 @@
             type: cloudLB
         ```
 
-3. 安装 DCE 5.0。
+3. 安装 DCE。
 
     ```shell
     ./dce5-installer install-app -c clusterConfig.yaml -z
@@ -83,7 +83,7 @@
         - `--serial` 指定后所有安装任务串行执行
 
 4. 安装完成后，命令行会提示安装成功。恭喜您！
-   现在可以通过屏幕提示的 URL 使用 **默认的账号和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
+   现在可以通过屏幕提示的 URL 使用 **默认的账号和密码（admin/changeme）** 探索全新的 DCE 啦！
 
     ![安装成功](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -91,4 +91,4 @@
 
         请记录好提示的 URL，方便下次访问。
 
-5. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../../../dce/license0.md)。
+5. 另外，安装 DCE 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../../../dce/license0.md)。

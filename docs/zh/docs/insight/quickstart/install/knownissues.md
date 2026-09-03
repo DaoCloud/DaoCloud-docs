@@ -27,7 +27,7 @@ helm uninstall insight-agent -n insight-system
     kubectl -n insight-system delete secret insight-agent-opentelemetry-operator-controller-manager-service-cert
     ```
 
-- **通过 UI 删除**：登录 DCE 5.0 容器管理，选择目标集群，从左侧导航进入`密钥`，输入
+- **通过 UI 删除**：登录 DCE 容器管理，选择目标集群，从左侧导航进入`密钥`，输入
    `insight-agent-opentelemetry-operator-controller-manager-service-cert`，选择`删除`。
 
 ## v0.22.0

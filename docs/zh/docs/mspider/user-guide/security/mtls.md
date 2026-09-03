@@ -7,7 +7,7 @@
 审计谁在什么时间访问了什么，根据他们使用的工作负载向客户收费，
 并拒绝任何未能支付账单的客户访问工作负载。
 
-DCE 5.0 服务网格身份模型使用经典的 __service identity__ （服务身份）来确定一个请求源端的身份。
+DCE 服务网格身份模型使用经典的 __service identity__ （服务身份）来确定一个请求源端的身份。
 这种模型有极好的灵活性和粒度，可以用服务身份来标识人类用户、单个工作负载或一组工作负载。
 在没有服务身份的平台上，服务网格可以使用其它可以对服务实例进行分组的身份，例如服务名称。
 
@@ -67,7 +67,7 @@ Istiod 使每个代理保持最新状态，并在适当时提供密钥。此外�
 mTLS 全称为 Mutual Transport Layer Security，即双向传输层安全认证。
 mTLS 允许通信双方在 SSL/TLS 握手的初始连接期间进行相互认证。
 
-DCE 5.0 服务网格通过客户端和服务器端
+DCE 服务网格通过客户端和服务器端
 [PEP](https://www.jerichosystems.com/technology/glossaryterms/policy_enforcement_point.html)(Policy Enforcement Policy)
 建立服务到服务的通信通道，PEP 被实现为 [Envoy 代理](https://www.envoyproxy.io/)。
 当一个工作负载使用 mTLS 认证向另一个工作负载发送请求时，

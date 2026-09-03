@@ -11,7 +11,7 @@ DaoCloud 是[经 CNCF 官方认证的 Kubernetes 提供商](https://landscape.cn
 即 Kubernetes Certified Service Provider (KCSP)，早在 2017 年就顺利通过了 Kubernetes 的官方认证，是国内最早涉足并得到 CNCF 官方认可的提供商。
 我们常年积极参与 CNCF 相关社区贡献，引领社区技术潮流。每次 Kubernetes 新版本发布，都会率先适配增强新特性，并将其推向实际生产环境。
 
-DaoCloud 出品的 DCE 5.0 是经 Kubernetes 官方认证的 AI 服务平台。
+DaoCloud 出品的 DCE 是经 Kubernetes 官方认证的 AI 服务平台。
 目前在 **Certified Kubernetes - AI Platform** 细分子项中，DaoCloud 位列第一。
 
 [![DCE 是经认证的 AI Platform](./images/dce-ai-platform.png)](https://landscape.cncf.io/?group=certified-partners-and-providers)
@@ -26,7 +26,7 @@ DaoCloud 出品的 DCE 5.0 是经 Kubernetes 官方认证的 AI 服务平台。
   ![logo](../blogs/images/CNCF_AI_Conformance_Logo.png){ width="200" }
 </figure>
 
-作为国内开源事业的领军企业，DaoCloud 紧跟云原生 AI 发展潮流。在社区推出 Kubernetes AI Conformance 合规标准后，率先针对目前广泛使用的 Kubernetes v1.33 启动 [DCE 5.0](https://docs.daocloud.io/) 平台的 AI Conformance 测试，并于 2025 年 10 月[成功通过认证](https://github.com/cncf/ai-conformance/pull/13)， 成为国内首个在该版本获得认证的企业级 AI/ML 平台。
+作为国内开源事业的领军企业，DaoCloud 紧跟云原生 AI 发展潮流。在社区推出 Kubernetes AI Conformance 合规标准后，率先针对目前广泛使用的 Kubernetes v1.33 启动 [DCE](https://docs.daocloud.io/) 平台的 AI Conformance 测试，并于 2025 年 10 月[成功通过认证](https://github.com/cncf/ai-conformance/pull/13)， 成为国内首个在该版本获得认证的企业级 AI/ML 平台。
 
 ## Kubernetes Conformance
 
@@ -69,6 +69,6 @@ Source: https://github.com/cncf/artwork/tree/master/projects/kubernetes/certifie
 
 有关 DaoCloud 开源贡献的更多信息，请参阅博客 [DaoCloud 是 K8s 资深认证服务商](../blogs/2022/221116-kcsp.md)。
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](license0.md){ .md-button .md-button--primary }

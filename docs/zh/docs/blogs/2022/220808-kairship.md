@@ -123,7 +123,7 @@
 
 - **问：5.0多云编排在第五代产品中的定位？**
 
-    答：在第五代产品中，多云编排模块处于承上启下的核心位置，对上：对接 DCE 5.0 应用工作台。对上层的场景化管理模块而言，多云编排模块能够把任何一个标准的 Kubernetes API 对上暴露，轻松实现应用跨集群分发、容灾部署。对下：对接容器管理平台 Kpanda，而 Kpanda 对接 Any Kubernetes ，例如边缘的 K3S、信创环境、DCE、DKG、DKE、以及外部的 Openshift，Tanzu、CCE等等，多云编排基于容器管理模块，快速实现多集群管理。
+    答：在第五代产品中，多云编排模块处于承上启下的核心位置，对上：对接 DCE 应用工作台。对上层的场景化管理模块而言，多云编排模块能够把任何一个标准的 Kubernetes API 对上暴露，轻松实现应用跨集群分发、容灾部署。对下：对接容器管理平台 Kpanda，而 Kpanda 对接 Any Kubernetes ，例如边缘的 K3S、信创环境、DCE、DKG、DKE、以及外部的 Openshift，Tanzu、CCE等等，多云编排基于容器管理模块，快速实现多集群管理。
 
     ![定位](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/kairship03.png)
 
@@ -133,6 +133,6 @@
 
 [了解多云编排](../../kairship/intro/index.md){ .md-button }
 
-[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

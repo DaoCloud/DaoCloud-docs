@@ -14,7 +14,7 @@ hide:
 
 操作步骤如下。
 
-1. 使用您的用户名/密码登录 DCE 5.0。点击左侧导航栏底部的 __全局管理__ 。
+1. 使用您的用户名/密码登录 DCE。点击左侧导航栏底部的 __全局管理__ 。
 
     ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 

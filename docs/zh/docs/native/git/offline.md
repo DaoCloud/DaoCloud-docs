@@ -5,7 +5,7 @@ hide:
 
 # 构建离线文档站
 
-DCE 5.0 文档完全开源，所有原始 Markdown 文件都托管在 [GitHub](https://github.com/DaoCloud/DaoCloud-docs) 上，
+DCE 文档完全开源，所有原始 Markdown 文件都托管在 [GitHub](https://github.com/DaoCloud/DaoCloud-docs) 上，
 采用 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 静态编译器编译，
 遵循 GitHub 标准化 CI 流程，以 [Netlify](https://www.netlify.com/) 构建后将编译生成的 HTML
 文件包存放在 UCloud 上，供海内外客户使用。
@@ -245,6 +245,6 @@ chmod +x build_and_run.sh
 
 ## 参考链接
 
-- [DCE 5.0 文档站仓库](https://github.com/DaoCloud/DaoCloud-docs)
+- [DCE 文档站仓库](https://github.com/DaoCloud/DaoCloud-docs)
 - [Material for MkDocs 官网](https://squidfunk.github.io/mkdocs-material/)
 - [Git 文档流程](https://docs.daocloud.io/native/git/)

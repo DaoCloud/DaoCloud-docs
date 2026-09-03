@@ -26,7 +26,7 @@ hide:
 3. 创建用户/打通用户体系
 
     由主平台管理员 Admin 在平台统一[创建用户](../user-guide/access-control/user.md)或通过 LDAP/OIDC/OAuth2.0
-    等[身份提供商](../user-guide/access-control/ldap.md)能力将用户统一对接到 DCE 5.0。
+    等[身份提供商](../user-guide/access-control/ldap.md)能力将用户统一对接到 DCE。
 
 4. 创建文件夹角色
 

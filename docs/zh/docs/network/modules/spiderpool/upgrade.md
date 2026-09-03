@@ -1,6 +1,6 @@
 # 升级 Spiderpool
 
-本页说明如何将 DCE 5.0 的旧版本 Spiderpool，升级到新版本。本文中以 Spiderpool 到 v0.9.6 为例。
+本页说明如何将 DCE 的旧版本 Spiderpool，升级到新版本。本文中以 Spiderpool 到 v0.9.6 为例。
 
 ## 前提条件
 
@@ -18,7 +18,7 @@ Spiderpool 的离线包存放在 Addon 中，您可以参考[下载 Addon 离线
 
 1. Addon 升级后，即可通过如下方式，获取 Chart 包
 
-    参考如下方式，通过 DCE 5.0 界面下载 v0.9.6 的 Chart 包：
+    参考如下方式，通过 DCE 界面下载 v0.9.6 的 Chart 包：
 
     ![spiderpool chart](../../images/spiderpool-upgrade-chart.png)
 
@@ -125,7 +125,7 @@ customresourcedefinition.apiextensions.k8s.io/spiderreservedips.spiderpool.spide
 customresourcedefinition.apiextensions.k8s.io/spidersubnets.spiderpool.spidernet.io configured
 ```
 
-## 通过 DCE 5.0 界面升级
+## 通过 DCE 界面升级
 
 在前面的步骤中，已经正确上传离线 Chart 与镜像包到离线环境中，现在可通过 5.0 界面执行升级。
 在低于 0.7.0 的版本中，Spiderpool 会搭配 Multus-underlay 插件使用，而更高的 Spiderpool 中已经集成了 Multus 插件。

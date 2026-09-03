@@ -8,7 +8,7 @@
 
 蓝色框内的 chart 即 `skoala-init` 组件，需要安装在工作集群。安装 `skoala-init`
 组件之后即可以使用微服务引擎的各项功能，例如创建注册中心、网关实例等。另外需要注意，
-`skoala-init` 组件依赖 DCE 5.0 可观测模块的 `insight-agent` 组件提供指标监控和链路追踪等功能。
+`skoala-init` 组件依赖 DCE 可观测模块的 `insight-agent` 组件提供指标监控和链路追踪等功能。
 如您需要使用该项功能，则需要事先安装好 `insight-agent` 组件，
 具体步骤可参考[安装组件 insight-agent](../../insight/quickstart/install/install-agent.md)。
 

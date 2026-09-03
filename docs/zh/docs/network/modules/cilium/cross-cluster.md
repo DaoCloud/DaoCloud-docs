@@ -246,7 +246,7 @@ vi $HOME/.kube/config
                 - localhost
     ```
 
-2. 在 DCE 5.0 中通过 yaml 文件快速分别创建两个集群 cluster01 和 cluster02 的应用。
+2. 在 DCE 中通过 yaml 文件快速分别创建两个集群 cluster01 和 cluster02 的应用。
 
     ![创建应用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster9.png)
 

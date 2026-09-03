@@ -4,7 +4,7 @@
 
 !!! note
 
-    - 由于 DCE 5.0 多云编排模块借用了开源项目 [Karmada](https://karmada.io/) 的能力，所以创建多云实例时会自动创建一个 Karmada 实例。
+    - 由于 DCE 多云编排模块借用了开源项目 [Karmada](https://karmada.io/) 的能力，所以创建多云实例时会自动创建一个 Karmada 实例。
 
     - 新建的多云实例默认位于[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md)，以虚拟集群的形式存在，用户无感知。
     
@@ -19,7 +19,7 @@
 2. 参考下列信息填写各项配置，最后在右下角点击 __确定__ 。
 
     - 管理面集群：可选的集群列表来自[容器管理](../../kpanda/intro/index.md)模块中接入或创建的集群。如果没有想选的集群，可以去容器管理模块中[接入](../../kpanda/user-guide/clusters/integrate-cluster.md)或[创建](../../kpanda/user-guide/clusters/create-cluster.md)集群。
-    - 实例释放：如果勾选，删除多云实例时会同步删除对应的 Karmada 实例。如果不删除，可以继续通过终端使用，但无法在 DCE 5.0 的多云编排模块内管理该 Karmada 实例。建议同步删除。
+    - 实例释放：如果勾选，删除多云实例时会同步删除对应的 Karmada 实例。如果不删除，可以继续通过终端使用，但无法在 DCE 的多云编排模块内管理该 Karmada 实例。建议同步删除。
 
         ![Management](../images/add-instance.png)
 

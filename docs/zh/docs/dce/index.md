@@ -3,13 +3,13 @@ hide:
   - toc
 ---
 
-# DCE 5.0 文档导航
+# DCE 文档导航
 
 在当今时代，人工智能、机器学习和云原生技术正在迅猛发展，席卷全球。想要抓住这一市场趋势，获得巨大的商业机遇，必须紧跟时代的脉搏。
 而将数据中心转型为 Kubernetes（简称 K8s）底座，无疑是实现云原生图景的最佳途径。
 
-DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的各项生产级功能，使得企业能够轻松构建和管理分布式应用。
-借助 DCE 5.0 的云原生天赋，企业可以充分利用云上云下优势，实现资源的最优利用，提高 IT 系统的可靠性和弹性，极大地加速应用的交付速度。
+DCE 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的各项生产级功能，使得企业能够轻松构建和管理分布式应用。
+借助 DCE 的云原生天赋，企业可以充分利用云上云下优势，实现资源的最优利用，提高 IT 系统的可靠性和弹性，极大地加速应用的交付速度。
 
 *[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
 
@@ -25,7 +25,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
     ---
 
-    DCE 5.0 支持[离线](../install/community/k8s/offline.md)和[在线](../install/community/k8s/online.md)两种安装方式，
+    DCE 支持[离线](../install/community/k8s/offline.md)和[在线](../install/community/k8s/online.md)两种安装方式，
     可以安装到[不同的 Linux 发行版上](../install/os-install/uos-v20-install-dce5.0.md)。
 
     - [安装依赖项](../install/install-tools.md)
@@ -38,7 +38,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
     ---
 
-    我们为 DCE 5.0 的各个模块和场景制作了精良的[视频教程](../videos/index.md)。
+    我们为 DCE 的各个模块和场景制作了精良的[视频教程](../videos/index.md)。
 
     - [场景化视频](../videos/use-cases.md)
     - [应用工作台视频](../videos/amamba.md)
@@ -85,7 +85,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
     ---
 
-    这是基于容器的 DevOps 云原生应用平台，在 DCE 5.0 中是创建应用的统一入口。
+    这是基于容器的 DevOps 云原生应用平台，在 DCE 中是创建应用的统一入口。
 
     - [基于向导创建应用](../amamba/user-guide/wizard/create-app-git.md)
     - [流水线](../amamba/user-guide/pipeline/create/custom.md)
@@ -97,7 +97,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
     ---
 
-    这是基于 K8s 构建的面向云原生应用的容器化管理模块，它是 DCE 5.0 的核心。
+    这是基于 K8s 构建的面向云原生应用的容器化管理模块，它是 DCE 的核心。
 
     - [集群管理](../kpanda/user-guide/clusters/create-cluster.md)
     - [节点管理](../kpanda/user-guide/nodes/add-node.md)
@@ -166,7 +166,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
     ---
 
-    DCE 5.0 针对实际应用场景，选用经典的中间件来处理数据。
+    DCE 针对实际应用场景，选用经典的中间件来处理数据。
 
     - [Elasticsearch 搜索服务](../middleware/elasticsearch/intro/index.md)
     - [MinIO 对象存储](../middleware/minio/intro/index.md)
@@ -228,9 +228,9 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
     
     ---
 
-    DCE 5.0 云原生存储基于 Kubernetes CSI 标准，可根据不同 SLA 要求及用户场景对接符合 CSI 标准的存储。
+    DCE 云原生存储基于 Kubernetes CSI 标准，可根据不同 SLA 要求及用户场景对接符合 CSI 标准的存储。
 
-    - [什么是 DCE 5.0 云原生存储](../storage/index.md)
+    - [什么是 DCE 云原生存储](../storage/index.md)
     - [HwameiStor 本地存储](../storage/hwameistor/intro/index.md)
     - [集成开源存储方案](../storage/solutions/rook-ceph.md)
 
@@ -244,7 +244,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
     
     ---
 
-    下载中心包含了 DCE 5.0 社区版、商业版以及各个子模块的离线安装包。
+    下载中心包含了 DCE 社区版、商业版以及各个子模块的离线安装包。
 
     - [下载社区版](../download/free/dce5-installer-history.md)
     - [下载商业版](../download/business/dce5-installer-history.md)
@@ -262,9 +262,9 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
 </div>
 
-*[Clusterpedia]: 内置在 DCE 5.0 中的多集群资源查询插件，捐献给 CNCF 后已入选 Sandbox
-*[HwameiStor]: 内置在 DCE 5.0 中的本地高可用存储方案，捐献给 CNCF 后已入选 Sandbox
-*[Merbridge]: 内置在 DCE 5.0 中基于 eBPF 构建的网格加速插件，捐献给 CNCF 后已入选 Sandbox
+*[Clusterpedia]: 内置在 DCE 中的多集群资源查询插件，捐献给 CNCF 后已入选 Sandbox
+*[HwameiStor]: 内置在 DCE 中的本地高可用存储方案，捐献给 CNCF 后已入选 Sandbox
+*[Merbridge]: 内置在 DCE 中基于 eBPF 构建的网格加速插件，捐献给 CNCF 后已入选 Sandbox
 
 !!! success
 
@@ -278,8 +278,8 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
       致敬曾经、现在和未来的努力吧！
     ```
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](./license0.md){ .md-button .md-button--primary }
 [最佳实践](./bphome.md){ .md-button .md-button--primary }
 [常见问题](./faq.md){ .md-button .md-button--primary }

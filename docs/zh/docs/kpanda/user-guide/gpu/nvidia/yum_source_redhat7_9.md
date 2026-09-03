@@ -2,7 +2,7 @@
 
 ## 使用场景介绍
 
-DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU Operator 离线包。其它 OS 类型的节点或内核需要用户手动构建离线 yum 源。
+DCE 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU Operator 离线包。其它 OS 类型的节点或内核需要用户手动构建离线 yum 源。
 
 本文介绍如何基于全局服务集群任意节点构建 Red Hat 7.9 离线 yum 源包，并在安装 Gpu Operator 时使用 `RepoConfig.ConfigMapName` 参数。
 

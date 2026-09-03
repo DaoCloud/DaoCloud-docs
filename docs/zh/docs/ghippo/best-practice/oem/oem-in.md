@@ -1,7 +1,7 @@
-# 如何将客户系统集成到 DCE 5.0（OEM IN）
+# 如何将客户系统集成到 DCE（OEM IN）
 
-OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 5.0 一级导航栏。
-用户通过 DCE 5.0 进行登录和统一管理。实现 OEM IN 共分为 5 步，分别是：
+OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE，出现在 DCE 一级导航栏。
+用户通过 DCE 进行登录和统一管理。实现 OEM IN 共分为 5 步，分别是：
 
 1. [统一域名](#_2)
 1. [打通用户体系](#_3)
@@ -15,15 +15,15 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
     以下使用开源软件 Label Studio 来做嵌套演示。实际场景需要自己解决客户系统的问题：
 
-    例如客户系统需要自己添加一个 Subpath，用于区分哪些是 DCE 5.0 的服务，哪些是客户系统的服务。
+    例如客户系统需要自己添加一个 Subpath，用于区分哪些是 DCE 的服务，哪些是客户系统的服务。
 
 ## 环境准备
 
-1. 部署 DCE 5.0 环境：
+1. 部署 DCE 环境：
 
-    `https://10.6.202.177:30443` 作为 DCE 5.0 的环境。
+    `https://10.6.202.177:30443` 作为 DCE 的环境。
 
-    ![DCE 5.0](./images/oem-dce5.png)
+    ![DCE](./images/oem-dce5.png)
 
 1. 部署客户系统环境：
 
@@ -32,14 +32,14 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
     应用过程中对客户系统的操作请根据实际情况进行调整。
 
 1. 规划客户系统的 Subpath 路径： `http://10.6.202.177:30123/label-studio`
-   （建议使用辨识度高的名称作为 Subpath，不能与主 DCE 5.0 的 HTTP router 发生冲突）。
+   （建议使用辨识度高的名称作为 Subpath，不能与主 DCE 的 HTTP router 发生冲突）。
    请确保用户通过 `http://10.6.202.177:30123/label-studio` 能够正常访问客户系统。
 
     ![Label Studio](./images/oem-label-studio.png)
 
 ## 统一域名和端口
 
-1. SSH 登录到 DCE 5.0 服务器。
+1. SSH 登录到 DCE 服务器。
 
     ```bash
     ssh root@10.6.202.177
@@ -138,29 +138,29 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 ## 打通用户体系
 
-将客户系统与 DCE 5.0 平台通过 OIDC/OAUTH 等协议对接，使用户登录 DCE 5.0 平台后进入客户系统时无需再次登录。
+将客户系统与 DCE 平台通过 OIDC/OAUTH 等协议对接，使用户登录 DCE 平台后进入客户系统时无需再次登录。
 
 !!! note
 
-    接入 SSO 需要 DCE 5.0 环境配置 SSL 证书，并使用 https 进行访问。
+    接入 SSO 需要 DCE 环境配置 SSL 证书，并使用 https 进行访问。
 
-1. 在两套 DCE 5.0 的场景下，可以在 DCE 5.0 中通过 __全局管理__ -> __用户与访问控制__ -> __接入管理__ 创建 SSO 接入。
+1. 在两套 DCE 的场景下，可以在 DCE 中通过 __全局管理__ -> __用户与访问控制__ -> __接入管理__ 创建 SSO 接入。
 
 
-    这里使用两套 DCE 5.0 相互对接来进行演示。涵盖将 DCE5 作为用户源登录客户平台，和将客户平台作为用户源登录 DCE5 平台两种场景。
+    这里使用两套 DCE 相互对接来进行演示。涵盖将 DCE5 作为用户源登录客户平台，和将客户平台作为用户源登录 DCE5 平台两种场景。
  
-1. **DCE 5.0 作为用户源，登录客户平台：**
-   首先将第一套 DCE 5.0 作为用户源，实现对接后第一套 DCE 5.0 中的用户可以通过 OIDC 直接登录第二套 DCE 5.0，
-   而无需在第二套中再次创建用户。在第一套 DCE 5.0 中通过 __全局管理__ -> __用户与访问控制__ -> __接入管理__ 创建 SSO 接入。
+1. **DCE 作为用户源，登录客户平台：**
+   首先将第一套 DCE 作为用户源，实现对接后第一套 DCE 中的用户可以通过 OIDC 直接登录第二套 DCE，
+   而无需在第二套中再次创建用户。在第一套 DCE 中通过 __全局管理__ -> __用户与访问控制__ -> __接入管理__ 创建 SSO 接入。
 
     ![接入管理列表](../oem/images/first1.png)
 
     ![接入管理列表](../oem/images/first2.png)
 
-1. **客户平台作为用户源，登录 DCE 5.0：**
-   将第一套 DCE5 中生成的客户端 ID、客户端密钥、单点登录 URL 等填写到第二套 DCE 5.0
+1. **客户平台作为用户源，登录 DCE：**
+   将第一套 DCE5 中生成的客户端 ID、客户端密钥、单点登录 URL 等填写到第二套 DCE
    __全局管理__ -> __用户与访问控制__ -> __身份提供商__ -> __OIDC__ 中，完成用户对接。
-   对接后，第一套 DCE 5.0 中的用户可以通过 OIDC 直接登录第二套 DCE 5.0，而无需在第二套中再次创建用户。
+   对接后，第一套 DCE 中的用户可以通过 OIDC 直接登录第二套 DCE，而无需在第二套中再次创建用户。
 
      ![oidc1](../oem/images/second2.png)
 
@@ -173,7 +173,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 !!! note
 
-    使用两套 DCE 5.0，表明客户只要支持 OIDC 协议，无论是 DCE 5.0 作为用户源，还是“客户平台”作为用户源，两种场景都支持。
+    使用两套 DCE，表明客户只要支持 OIDC 协议，无论是 DCE 作为用户源，还是“客户平台”作为用户源，两种场景都支持。
 
 ## 对接导航栏
 
@@ -181,7 +181,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 1. 下载 gproduct-demo-main.tar.gz 文件，打开 src/App-iframe.vue 文件，修改其中的 src 属性值（即进入客户系统的地址）：
 
-    - 绝对地址：`src="https://10.6.202.177:30443/label-studio" (DCE 5.0 地址 + Subpath)`
+    - 绝对地址：`src="https://10.6.202.177:30443/label-studio" (DCE 地址 + Subpath)`
     - 相对地址：`src="./external-anyproduct/insight"`
 
     ```html title="App-iframe.vue"
@@ -251,7 +251,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
     ...
     ```
 
-对接完成后，将在 DCE 5.0 的一级导航栏出现 __客户系统__ ，点击可进入客户系统。
+对接完成后，将在 DCE 的一级导航栏出现 __客户系统__ ，点击可进入客户系统。
 
 ![客户系统](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oemin-menu.png)
 
@@ -259,7 +259,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 !!! note
 
-    DCE 5.0 支持通过写 CSS 的方式来实现外观定制。实际应用中客户系统如何实现外观定制需要根据实际情况处理。
+    DCE 支持通过写 CSS 的方式来实现外观定制。实际应用中客户系统如何实现外观定制需要根据实际情况处理。
 
 登录客户系统，通过 __全局管理__ -> __平台设置__ -> __外观定制__ 可以自定义平台背景颜色、logo、名称等，
 具体操作请参照[外观定制](../../user-guide/platform-setting/appearance.md)。
@@ -269,15 +269,15 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 **方案思路一：**
 
 定制化团队可实现一定制模块，DCE 5 将每一次的用户登录事件通过 Webhook 的方式通知到定制模块，
-定制模块可自行调用 AnyProduct 和 DCE 5.0 的 [OpenAPI](https://docs.daocloud.io/openapi/index.html) 将该用户的权限信息同步。
+定制模块可自行调用 AnyProduct 和 DCE 的 [OpenAPI](https://docs.daocloud.io/openapi/index.html) 将该用户的权限信息同步。
 
 **方案思路二：**
 
 通过 Webhook 方式，将每一次的授权变化都通知到 AnyProduct（如有需求，后续可实现）。
 
-### AnyProduct 使用 DCE 5.0 的其他能力(可选)
+### AnyProduct 使用 DCE 的其他能力(可选)
 
-操作方法为调用 DCE 5.0 [OpenAPI](https://docs.daocloud.io/openapi/index.html)。
+操作方法为调用 DCE [OpenAPI](https://docs.daocloud.io/openapi/index.html)。
 
 ## 参考资料
 

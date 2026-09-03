@@ -4,7 +4,7 @@
 依赖于 K8s 的故障转移机制，当 Jenkins Pod 发生故障时，可以通过 K8s 的调度机制将 Pod 调度到其他节点上，从而实现高可用。
 因此 Jenkins 的高可用主要考虑得是数据存储层的高可用。
 
-在 DCE 5.0 中，通过使用 HwameiStor 的存储层来实现 Jenkins 的高可用。
+在 DCE 中，通过使用 HwameiStor 的存储层来实现 Jenkins 的高可用。
 HwameiStor 支持使用 DRBD 的方式，可以将一份数据副本同时挂载到多个节点上。
 当 Jenkins 所在节点宕机时，通过 K8s 的调度，可以将 Pod 调度到其他节点上，此时 Pod 依旧可以继续使用之前的数据，以此来实现高可用。
 

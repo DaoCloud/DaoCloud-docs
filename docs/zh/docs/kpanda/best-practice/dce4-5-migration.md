@@ -1,19 +1,19 @@
-# DCE 4.0 -> DCE 5.0 有限场景迁移
+# DCE 4.0 -> DCE 有限场景迁移
 
-本文介绍部分场景下 DCE 4.0 -> DCE 5.0 迁移流程。
+本文介绍部分场景下 DCE 4.0 -> DCE 迁移流程。
 
 ## 环境准备
 
 1. 可用的 DCE 4.0 环境
-1. 可用的 DCE 5.0 环境
+1. 可用的 DCE 环境
 1. 可用于数据还原的 Kubernetes 集群，以下简称 __还原集群__
 
 ## 前置步骤
 
 1. 在 DCE 4.0 上，安装 CoreDNS 插件。
 
-1. 将 DCE 4.0 纳管到 DCE 5.0，纳管步骤参考[接入 DCE 4.0](../user-guide/clusters/integrate-cluster.md)，
-   被纳管到 DCE 5.0 的 DCE 4.0 集群，以下简称 __备份集群__ 。
+1. 将 DCE 4.0 纳管到 DCE，纳管步骤参考[接入 DCE 4.0](../user-guide/clusters/integrate-cluster.md)，
+   被纳管到 DCE 的 DCE 4.0 集群，以下简称 __备份集群__ 。
 
     !!! note
 
@@ -21,7 +21,7 @@
 
 1. 在纳管的 DCE 4.0 集群上安装 velero，安装步骤参考 [安装 velero](../user-guide/backup/install-velero.md)。
 
-1. 将还原集群纳管到 DCE 5.0，通过创建集群方式或接入方式都可。
+1. 将还原集群纳管到 DCE，通过创建集群方式或接入方式都可。
 
 1. 在还原集群中安装 velero，安装步骤参考 [安装 velero](../user-guide/backup/install-velero.md)。
 
@@ -38,7 +38,7 @@
 
 !!! note
 
-    以下步骤都在被 DCE 5.0 纳管的还原集群中执行。
+    以下步骤都在被 DCE 纳管的还原集群中执行。
 
 ### 配置 Velero 插件
 
@@ -264,7 +264,7 @@ data:
         - 以上迁移流程同样适用于以下资源：
             - workload 的附属资源，如 secret、configmap
             - 多服务场景：Helm 应用 + Redis
-        - namespace 资源 和 cluster 资源如果配置了 RBAC，那对应类别的资源迁移成功后对应的 RBAC 也会一并迁移到 DCE 5.0
+        - namespace 资源 和 cluster 资源如果配置了 RBAC，那对应类别的资源迁移成功后对应的 RBAC 也会一并迁移到 DCE
 
 ### 镜像仓库镜像迁移
 
@@ -297,13 +297,13 @@ data:
 
 #### Calico 网络策略迁移
 
-参考资源和数据迁移流程，将 DCE 4.0 中的 Calico 服务迁移至 DCE 5.0。
+参考资源和数据迁移流程，将 DCE 4.0 中的 Calico 服务迁移至 DCE。
 由于 IPPool 名称不同，会导致服务异常，请迁移后手动删除服务 YAML 中的注解，以确保服务正常启动。
 
 !!! note
 	
     - DCE 4.0 中，名称为 default-ipv4-ippool
-    - DCE 5.0 中，名称为 default-pool
+    - DCE 中，名称为 default-pool
 
 ```yaml
 annotations:
@@ -322,7 +322,7 @@ annotations:
 下文介绍 Parcel Underlay 网络策略迁移步骤。
 
 !!! note
-    - 迁移时，DCE 5.0 中创建的 IP 地址，应与 DCE 4.0 中使用的 IP 地址保持一致，且创建的副本数量保持一致。
+    - 迁移时，DCE 中创建的 IP 地址，应与 DCE 4.0 中使用的 IP 地址保持一致，且创建的副本数量保持一致。
 
 1. 在 __还原集群__ 中安装 Helm 应用 spiderpool，安装流程参考[安装 spiderpool ](../../network/modules/spiderpool/install/install.md)。
 

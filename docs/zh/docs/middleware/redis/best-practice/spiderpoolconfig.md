@@ -7,7 +7,7 @@
 
 ## 前提
 
-DCE 5.0 集群内已部署 __multus-underlay__  和 __spiderpool__。
+DCE 集群内已部署 __multus-underlay__  和 __spiderpool__。
 
 ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool09.png)
 

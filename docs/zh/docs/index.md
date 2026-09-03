@@ -12,16 +12,16 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 本站提供三大产品线的文档内容，覆盖从基础设施、算力调度到模型推理和应用构建的全栈能力。
 
 <div class="tf-hero-badges">
-<a class="tf-hero-badge tf-hero-badge--dce" href="#__tabbed_1_1">DCE 5.0 云原生操作系统</a>
+<a class="tf-hero-badge tf-hero-badge--dce" href="#__tabbed_1_1">DCE 云原生操作系统</a>
 <a class="tf-hero-badge tf-hero-badge--drun" href="#__tabbed_1_2">d.run AI 操作系统</a>
 <a class="tf-hero-badge tf-hero-badge--tf" href="#__tabbed_1_3">Token 工厂效能平台</a>
 </div>
 
 </div>
 
-=== ":octicons-stack-16: DCE 5.0 云原生操作系统"
+=== ":octicons-stack-16: DCE 云原生操作系统"
 
-    DaoCloud Enterprise 5.0 (DCE 5.0) 是一款高性能、可扩展的云原生操作系统，
+    DaoCloud Enterprise (DCE) 是一款高性能、可扩展的云原生操作系统，
     是[经 CNCF 认证的 Kubernetes - AI Platform](./dce/kcsp.md)。
     它能够在任何基础设施和任意环境中提供一致、稳定的体验，支持异构云、边缘云和多云编排等。
 
@@ -272,7 +272,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 
 <div class="tf-cta" markdown>
 
-[申请 DCE 5.0 社区免费体验](./dce/license0.md){ .md-button .md-button--primary }
+[申请 DCE 社区免费体验](./dce/license0.md){ .md-button .md-button--primary }
 [注册体验 d.run](https://console.d.run/){ .md-button .md-button--primary }
 [Token 工厂概览](tf/index.md){ .md-button .md-button--primary }
 

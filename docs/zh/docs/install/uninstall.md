@@ -7,7 +7,7 @@ hide:
 
 ## 卸载社区版
 
-依次执行以下命令从集群卸载 DCE 5.0，卸载过程中不会进行任何备份，请谨慎操作。
+依次执行以下命令从集群卸载 DCE，卸载过程中不会进行任何备份，请谨慎操作。
 
 ```shell linenums="1"
 kubectl -n mcamel-system delete mysql mcamel-common-mysql-cluster

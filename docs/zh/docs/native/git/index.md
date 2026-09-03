@@ -261,4 +261,4 @@ npx prettier -w filename
 - [Discussions](https://github.com/DaoCloud/DaoCloud-docs/discussions)：
   类似于 Issue 频道，也列出了一些文档站的问题
 - [Material for MkDocs 帮助](https://squidfunk.github.io/mkdocs-material/reference/)：
-  这是 DCE 5.0 文档站的编译器帮助手册
+  这是 DCE 文档站的编译器帮助手册

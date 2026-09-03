@@ -1,6 +1,6 @@
 # 什么是云原生网络？
 
-DCE 5.0 云原生网络基于多个开源技术构建，不仅提供单个 CNI 网络支持，也提供多个 CNI 网络的组合方案。具体方案如下：
+DCE 云原生网络基于多个开源技术构建，不仅提供单个 CNI 网络支持，也提供多个 CNI 网络的组合方案。具体方案如下：
 
 ## 方案一：Cilium + Macvlan/SR-IOV/IPvlan + SpiderPool + Multus
 
@@ -61,6 +61,6 @@ DCE 5.0 云原生网络基于多个开源技术构建，不仅提供单个 CNI �
 - [独享 RDMA（SR-IOV RoCE）](../modules/spiderpool/install/rdma-sriov-roce.md)
 - [独享 RDMA（SR-IOV Infiniband）](../modules/spiderpool/install/rdma-sriov-ib.md)
 
-[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

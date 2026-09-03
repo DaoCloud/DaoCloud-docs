@@ -1,6 +1,6 @@
 # MinIO 的身份管理
 
-DCE 5.0 提供的 MinIO 服务自带网页控制台（Web Console）。了解 MinIO 的身份管理（identity management）有助于快速了解如何在 MinIO 内安全有效地管理子账号。
+DCE 提供的 MinIO 服务自带网页控制台（Web Console）。了解 MinIO 的身份管理（identity management）有助于快速了解如何在 MinIO 内安全有效地管理子账号。
 
 本文简单介绍 MinIO 的身份管理规则，更多详细说明可参考 [MinIO 的官方文档](http://docs.minio.org.cn/minio/baremetal/index.html)。
 
@@ -31,7 +31,7 @@ root 用户拥有所有资源的所有操作权限。
 
 #### Console 创建
 
-1. 在 DCE 5.0 的 MinIO 实例详情页面，点击访问地址，使用右侧的用户名和密码即可登录该实例的 Console 控制台。
+1. 在 DCE 的 MinIO 实例详情页面，点击访问地址，使用右侧的用户名和密码即可登录该实例的 Console 控制台。
 
     ![登录 Console](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/insight03.png)
 

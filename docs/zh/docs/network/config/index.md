@@ -5,7 +5,7 @@ hide:
 
 # 网络配置
 
-DCE 5.0 中的容器网络支持在[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)（即 kpanda-global-cluster）中：
+DCE 中的容器网络支持在[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)（即 kpanda-global-cluster）中：
 
 - 静态 IP 池
 

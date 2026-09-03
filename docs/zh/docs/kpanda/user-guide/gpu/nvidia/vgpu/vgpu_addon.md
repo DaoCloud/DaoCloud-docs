@@ -1,7 +1,7 @@
 # 安装 NVIDIA vGPU Addon
 
 如需将一张 NVIDIA 虚拟化成多个虚拟 GPU，并将其分配给不同的虚拟机或用户，您可以使用 NVIDIA 的 vGPU 能力。
-本节介绍如何在 DCE 5.0 平台中安装 vGPU 插件，并根据需求切换 GPU 模式。
+本节介绍如何在 DCE 平台中安装 vGPU 插件，并根据需求切换 GPU 模式。
 ## 前提条件
 
 - 参考 [GPU 支持矩阵](../../gpu_matrix.md) 确认集群节点上具有对应型号的 GPU 卡。

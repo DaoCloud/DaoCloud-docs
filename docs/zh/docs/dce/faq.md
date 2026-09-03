@@ -1,12 +1,12 @@
 # 常见问题
 
-这是一个 DCE 5.0 常见问题和故障排查的索引页面。
+这是一个 DCE 常见问题和故障排查的索引页面。
 
 ## 安装
 
 - UI 访问问题
-    - [安装结束后打不开 DCE 5.0 界面，可执行 diag.sh 脚本快速排障](../install/faq.md#dce-50-diagsh)
-    - [安装使用 Metallb 时因 VIP 访问不通导致 DCE 5.0 登录界面无法打开](../install/faq.md#metallb-vip-dce)
+    - [安装结束后打不开 DCE 界面，可执行 diag.sh 脚本快速排障](../install/faq.md#dce-50-diagsh)
+    - [安装使用 Metallb 时因 VIP 访问不通导致 DCE 登录界面无法打开](../install/faq.md#metallb-vip-dce)
 - 火种节点问题
     - [火种节点关机重启后，kind 集群无法正常重启](../install/faq.md#kind)
     - [Ubuntu 20.04 作为火种机器部署时缺失 ip6tables](../install/faq.md#ubuntu-2004-ip6tables)
@@ -24,7 +24,7 @@
     - [Manifest 开启 MySQL MGR 模式无效](../install/faq.md#manifest-mysql-mgr)
     - [MGR 模式 MySQL Common 实例初始化失败导致 DCE 安装失败](../install/faq.md#mgr-mysql-common-dce)
 - 社区版安装问题
-    - [kind 集群重装 DCE 5.0 时 Redis 卡住](../install/faq.md#kind-dce-50-redis)
+    - [kind 集群重装 DCE 时 Redis 卡住](../install/faq.md#kind-dce-50-redis)
     - [社区版安装 fluent-bit 失败](../install/faq.md#fluent-bit)
 
 ## 应用工作台

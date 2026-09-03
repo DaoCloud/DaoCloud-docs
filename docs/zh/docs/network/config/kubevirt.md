@@ -1,6 +1,6 @@
 # KubeVirt 固定 IP 与 Underlay 网络
 
-本页介绍在 DCE 5.0 中使用 Spiderpool 为 KubeVirt 虚拟机提供固定 IP 与 Underlay 网络能力的推荐配置。
+本页介绍在 DCE 中使用 Spiderpool 为 KubeVirt 虚拟机提供固定 IP 与 Underlay 网络能力的推荐配置。
 
 ## 适用场景
 

@@ -360,7 +360,7 @@
 
     [容器网络接口插件](https://kubernetes.io/zh-cn/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/)是遵循 appc/CNI 协议的一类网络插件。
 
-    DCE 5.0 支持的 CNI 包括但不限于：
+    DCE 支持的 CNI 包括但不限于：
 
     - [Calico](../network/modules/calico/index.md)
     - [Cilium](../network/modules/cilium/index.md)
@@ -1902,7 +1902,7 @@
 - Self Healing, 自愈
 
     一个自愈系统无需任何人为干预就能从某些类型的故障中恢复。
-    像 DCE 5.0 这种系统自带一个“收敛”或“控制”循环，可以主动查看系统的实际状态并将其与运营商最初期望的状态进行比较。
+    像 DCE 这种系统自带一个“收敛”或“控制”循环，可以主动查看系统的实际状态并将其与运营商最初期望的状态进行比较。
     如果有所差异（例如运行的应用程序实例数少于预期实例数），系统将自动采取修正措施（例如启动新的实例或 Pod）。
 
 - Shuffle Sharding, 混排切片
@@ -2261,6 +2261,6 @@
     采用零信任架构带来的主要好处是增加安全，减少攻击面。
     从您的企业系统中移除信任，现在增加了攻击者必须通过的安全门的数量和强度，以获得对系统的其他区域的访问。
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

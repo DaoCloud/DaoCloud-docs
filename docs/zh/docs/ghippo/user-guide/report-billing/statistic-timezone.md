@@ -20,7 +20,7 @@
 
 !!! note
 
-    如果不设置 `global.statisticTimezone`，系统使用 DCE 5.0 统一的默认时区 `UTC`。该参数必须使用有效的 IANA 时区标识。
+    如果不设置 `global.statisticTimezone`，系统使用 DCE 统一的默认时区 `UTC`。该参数必须使用有效的 IANA 时区标识。
 
 ## 安装时配置
 

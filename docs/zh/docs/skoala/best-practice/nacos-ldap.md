@@ -1,6 +1,6 @@
 # Nacos 对接 LDAP 进行用户管理
 
-Nacos 在 DCE 5.0 微服务引擎中名为注册中心。
+Nacos 在 DCE 微服务引擎中名为注册中心。
 本文说明如何通过 Nacos 对接 LDAP（Lightweight Directory Access Protocol，轻量级目录访问协议）来管理用户。
 
 ## 在 Kubernetes 上部署 LDAP

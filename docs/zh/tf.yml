@@ -199,9 +199,9 @@ nav:
                       - 接入导航栏: ghippo/best-practice/gproduct/nav.md
                       - 接入路由和登录认证: ghippo/best-practice/gproduct/route-auth.md
                   - 集成与被集成(OEM IN/OUT):
-                      - OEM IN(客户系统集成到 DCE 5.0): ghippo/best-practice/oem/oem-in.md
-                      - OEM OUT(DCE 5.0 集成到客户系统): ghippo/best-practice/oem/oem-out.md
-                      - 定制 DCE 5.0 对接 IdP: ghippo/best-practice/oem/custom-idp.md
+                      - OEM IN(客户系统集成到 DCE): ghippo/best-practice/oem/oem-in.md
+                      - OEM OUT(DCE 集成到客户系统): ghippo/best-practice/oem/oem-out.md
+                      - 定制 DCE 对接 IdP: ghippo/best-practice/oem/custom-idp.md
                       - Keycloak 自定义 IdP: ghippo/best-practice/oem/keycloak-idp.md
                   - 定制导航栏:
                       - 定制导航栏: ghippo/best-practice/menu/navigator.md

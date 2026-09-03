@@ -11,7 +11,7 @@
 - :three: [创建多云工作负载](#_4)
 - :four: [创建多云任务](#_5)
 - :five: [管理多云资源](#_6)
-- :six: [DCE 4.0 应用升级为 DCE 5.0 应用](#dce-40-dce-50)
+- :six: [DCE 4.0 应用升级为 DCE 应用](#dce-40-dce-50)
 
 </div>
 
@@ -74,9 +74,9 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-resoruces.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/kairship-resource.png"></video>
 </div>
 
-## DCE 4.0 应用升级为 DCE 5.0 应用
+## DCE 4.0 应用升级为 DCE 应用
 
-参阅文档：[如何实现 DCE 4.0 到 DCE 5.0 应用的一键转换](../kairship/best-practice/one-click-conversion.md)。
+参阅文档：[如何实现 DCE 4.0 到 DCE 应用的一键转换](../kairship/best-practice/one-click-conversion.md)。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-migrate.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/kairship-migrate.png"></video>
@@ -84,12 +84,12 @@
 
 ## 跨集群弹性伸缩
 
-<!--参阅文档：[如何实现 DCE 4.0 到 DCE 5.0 应用的一键转换](../kairship/best-practice/one-click-conversion.md)。-->
+<!--参阅文档：[如何实现 DCE 4.0 到 DCE 应用的一键转换](../kairship/best-practice/one-click-conversion.md)。-->
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-hpa.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/kairship-hpa.png"></video>
 </div>
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

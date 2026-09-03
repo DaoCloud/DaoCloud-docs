@@ -1,6 +1,6 @@
 # insight-agent 组件状态说明
 
-在 DCE 5.0 中可观测性 Insight 作为多集群观测产品，为了实现多集群观测数据的统一采集，需要用户安装 Helm 应用 __insight-agent__ 
+在 DCE 中可观测性 Insight 作为多集群观测产品，为了实现多集群观测数据的统一采集，需要用户安装 Helm 应用 __insight-agent__ 
 （默认安装在 insight-system 命名空间）。参阅[如何安装 __insight-agent__ ](../../quickstart/install/install-agent.md)。
 
 ## 状态说明

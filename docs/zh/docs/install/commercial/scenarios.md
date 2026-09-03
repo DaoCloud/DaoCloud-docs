@@ -1,6 +1,6 @@
 # 集群部署模式使用场景
 
-DCE 5.0 提供了[四种集群角色](../../kpanda/user-guide/clusters/cluster-role.md)，用以满足不同的使用场景。
+DCE 提供了[四种集群角色](../../kpanda/user-guide/clusters/cluster-role.md)，用以满足不同的使用场景。
 用户可以基于自身业务特性和基础设施场景，自由组合不同的集群部署组合。
 
 本文将对几种常用使用场景进行说明。

@@ -43,7 +43,7 @@ Koordinator 调度系统支持的 QoS 有五种类型:
 
 ### 前提条件
 
-- 已经部署 DCE 5.0 容器管理平台，且平台运行正常。
+- 已经部署 DCE 容器管理平台，且平台运行正常。
 - 容器管理模块已接入 Kubernetes 集群或者已创建 Kubernetes 集群，且能够访问集群的 UI 界面。
 - 当前集群已安装 koordinator 并正常运行，安装步骤可参考 [koordinator 离线安装](./install.md)。
 

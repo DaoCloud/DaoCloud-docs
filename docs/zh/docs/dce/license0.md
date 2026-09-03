@@ -1,7 +1,7 @@
-# 免费申请「DCE 5.0 社区版」
+# 免费申请「DCE 社区版」
 
-DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[可观测性](../insight/intro/index.md)等模块。
-建议[下载](../download/index.md)并[安装 DCE 5.0](../install/community/k8s/online.md) 之后，参照以下步骤进行激活。
+DCE 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[可观测性](../insight/intro/index.md)等模块。
+建议[下载](../download/index.md)并[安装 DCE](../install/community/k8s/online.md) 之后，参照以下步骤进行激活。
 
 ![license](https://docs.daocloud.io/daocloud-docs-images/docs/images/license01.png)
 
@@ -26,7 +26,7 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[�
 
     ![esn](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/dce/images/license02.png)
 
-4. 复制并粘贴上一步换取的离线授权码，点击 __立即激活__ 。恭喜您！现在可以探索全新的 DCE 5.0 啦！
+4. 复制并粘贴上一步换取的离线授权码，点击 __立即激活__ 。恭喜您！现在可以探索全新的 DCE 啦！
 
 *[ESN]: Electronic Serial Number（电子串行号码）的缩写。它是一种用于识别设备的唯一标识符，通常由八个字符组成。
 *[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
@@ -51,7 +51,7 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[�
 ### 按模块延续许可证
 
 这种方法需要对安装的每个模块延续许可证。
-例如 DCE 5.0 社区版包含了容器管理、全局管理、可观测性 3 个模块，每个模块有 1 个许可证。
+例如 DCE 社区版包含了容器管理、全局管理、可观测性 3 个模块，每个模块有 1 个许可证。
 这样就需要在[许可证页面](https://qingflow.com/f/58604bf8)，为每个模块选择 __许可证续期__ 。
 
 ![延期](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/dce/images/extend.png)
@@ -63,4 +63,4 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[�
 [申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }
 [查看许可证密钥](https://license.daocloud.io/dce5-licenses){ .md-button .md-button--primary }
 [换取离线授权码](https://license.daocloud.io/dce5-license){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[安装 DCE](../install/index.md){ .md-button .md-button--primary }

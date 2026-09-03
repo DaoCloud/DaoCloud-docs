@@ -6,7 +6,7 @@ Binpack 调度算法的目标是尽量把已被占用的节点填满（尽量不
 
 ## 前置条件
 
-预先在 DCE 5.0 上[安装 Volcano 组件](./volcano_user_guide.md)。
+预先在 DCE 上[安装 Volcano 组件](./volcano_user_guide.md)。
 
 ## Binpack 算法原理
 

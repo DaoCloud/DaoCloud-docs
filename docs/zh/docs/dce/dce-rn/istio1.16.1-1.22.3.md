@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# DCE 5.0 的 Istio 从 v1.16.1 升级到 v1.22.3
+# DCE 的 Istio 从 v1.16.1 升级到 v1.22.3
 
 Istio 升级涉及这几个部分：
 
@@ -14,7 +14,7 @@ Istio 升级涉及这几个部分：
 不支持金丝雀升级。在升级过程中，[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)的应用会因
 Istio 控制面更新而无法访问，可能需要人工干预。
 
-## 通过安装器升级 DCE 5.0 时涉及到的 Istio 升级
+## 通过安装器升级 DCE 时涉及到的 Istio 升级
 
 安装器升级到 v0.24.0 及更高版本时，由于安装器自动处理了相关逻辑，只需要重启未更新 GProduct 的 Pod。
 

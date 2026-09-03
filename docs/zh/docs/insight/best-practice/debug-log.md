@@ -5,7 +5,7 @@
 这些插件的工作状态决定了日志采集是否正常。
 下面是一个针对 __Fluent Bit__ 的仪表盘，它用来监控各个集群中 __Fluent Bit__ 的工作情况和插件的采集、处理、导出日志的情况。
 
-1. 使用 DCE 5.0 平台，进入 __可观测性__ ，选择左侧导航栏的 __仪表盘__ 。
+1. 使用 DCE 平台，进入 __可观测性__ ，选择左侧导航栏的 __仪表盘__ 。
 
     ![insight 入口](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight01.png)
 

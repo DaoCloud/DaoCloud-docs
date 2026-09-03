@@ -4,9 +4,9 @@
 
 ## UI 访问问题
 
-### DCE 5.0 界面打不开时，执行 diag.sh 脚本快速排障
+### DCE 界面打不开时，执行 diag.sh 脚本快速排障
 
-安装器自 [v0.12.0 版本](./release-notes.md#v0120)之后新增了 diag.sh 脚本，方便用户在 DCE 5.0 界面打不开时快速排障。
+安装器自 [v0.12.0 版本](./release-notes.md#v0120)之后新增了 diag.sh 脚本，方便用户在 DCE 界面打不开时快速排障。
 
 执行命令：
 
@@ -363,7 +363,7 @@ mysql> select user,host from mysql.user;
 
 ## 社区版问题
 
-### kind 集群重装 DCE 5.0 时 Redis 卡住
+### kind 集群重装 DCE 时 Redis 卡住
 
 问题：Redis Pod 出现了 0/4 running 很久的情况，提示：`primary ClusterIP can not unset`
 

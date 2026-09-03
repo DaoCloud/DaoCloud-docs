@@ -1,6 +1,6 @@
 # 通过 LoadBalancer 模式部署 Harbor
 
-目前 DCE 5.0 镜像仓库暂不支持使用 LoadBalancer 方式部署 Harbor，仅支持使用 Ingress 和 NodePort 方式。
+目前 DCE 镜像仓库暂不支持使用 LoadBalancer 方式部署 Harbor，仅支持使用 Ingress 和 NodePort 方式。
 本文简要说明如何手工修改访问类型为 LB。
 
 ## 1. 创建 NodePort 的 Harbor 服务

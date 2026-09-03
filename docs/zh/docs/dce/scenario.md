@@ -5,16 +5,16 @@ hide:
 
 # 适用场景
 
-DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经海量调测后熔于一炉，铸就新一代 PaaS 服务平台，在各类使用场景中都游刃有余。
+DCE 集成社区最优秀的众多技术，内置依赖项数以万计，经海量调测后熔于一炉，铸就新一代 PaaS 服务平台，在各类使用场景中都游刃有余。
 
-## DCE 5.0 场景化视频
+## DCE 场景化视频
 
 我们精心制作了 Step-By-Step 场景化视频，以满足具体的场景化业务需求：
 
 === "多云和混合云"
 
     - [如何将单云应用一键转换为多云应用？](../videos/use-cases.md#_2)
-    - [如何在 DCE 5.0 中部署混合云应用？](../videos/use-cases.md#dce-50)
+    - [如何在 DCE 中部署混合云应用？](../videos/use-cases.md#dce-50)
 
 === "可观测"
 
@@ -22,13 +22,13 @@ DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经
     
 === "流量治理"
 
-    - [如何将微服务接入 DCE 5.0 并治理南北向流量？](../videos/use-cases.md#_3)
+    - [如何将微服务接入 DCE 并治理南北向流量？](../videos/use-cases.md#_3)
     - [如何借助服务网格治理传统微服务东西向流量？](../videos/use-cases.md#_4)
 
 === "OEM IN 和 OUT"
 
-    - [如何将客户系统集成到 DCE 5.0？](../videos/use-cases.md#dce-50oem-in)
-    - [如何将 DCE 5.0 集成到客户系统？](../videos/use-cases.md#dce-50-oem-out)
+    - [如何将客户系统集成到 DCE？](../videos/use-cases.md#dce-50oem-in)
+    - [如何将 DCE 集成到客户系统？](../videos/use-cases.md#dce-50-oem-out)
 
 === "网络和通信"
 
@@ -45,9 +45,9 @@ DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经
     - [如何用中间件和 pgvector 部署 ChatGPT 应用？](../videos/use-cases.md#pgvector-chatgpt)
     - [如何实现 Redis 的跨集群数据同步？](../videos/use-cases.md#redis)
 
-## DCE 5.0 适用场景
+## DCE 适用场景
 
-DCE 5.0 从总体上看，可以支持以下场景：
+DCE 从总体上看，可以支持以下场景：
 
 === "生产级容器管理"
 
@@ -125,7 +125,7 @@ CI/CD 流水线能力自动化完成应用构建、部署工作。创新性引�
 
 方案优势：收录来自生态伙伴十大领域的软件产品，面向企业实际业务需求提供完整软件堆栈，可轻松查找、测试、和部署在 DaoCloud Enterprise 上运行的消息中间件、数据中间件、低代码/无代码应用等。
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](license0.md){ .md-button .md-button--primary }
-[DCE 5.0 场景化视频](../videos/use-cases.md){ .md-button .md-button--primary }
+[DCE 场景化视频](../videos/use-cases.md){ .md-button .md-button--primary }
