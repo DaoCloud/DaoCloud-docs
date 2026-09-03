@@ -5,25 +5,9 @@ hide:
 
 # 视频教程
 
-<span style="background-image: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
-    background-size: 200%;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: shine 5s infinite linear;">
-    我们为 DCE 5.0 的各个模块制作了精良的视频教程，供大家快速上手。
-</span>
+我们为各个模块制作了精良的视频教程，供大家快速上手。
 
-<style>
-    @keyframes shine {
-        0% {
-            background-position: -200%;
-        }
-        100% {
-            background-position: 200%;
-        }
-    }
-</style>
+## DCE 5.0
 
 <div class="grid cards" markdown>
 
@@ -42,6 +26,19 @@ hide:
 - :fontawesome-brands-edge-legacy: **云边协同** [容器能力延伸至边缘](kant.md)
 - :fontawesome-solid-user-group: **全局管理** [设置登录、访问权限、外观](ghippo.md)
 - :fontawesome-solid-computer: **虚拟机** [自动漂移](virtnest.md)
+
+</div>
+
+## d.run
+
+<div class="grid cards" markdown>
+
+- :technologist_tone1: [注册与登录](./d.run/login.md)
+- :octicons-cloud-16: [算力云](./d.run/zestu.md)
+- :simple-themodelsresource: [大模型服务平台](./d.run/models.md)
+- :octicons-apps-24: [AI 应用](./d.run/ai-app.md)
+- :fontawesome-solid-sack-dollar: [费用中心](./d.run/bills.md)
+- :octicons-gear-16: [个人中心](./d.run/login.md)
 
 </div>
 
