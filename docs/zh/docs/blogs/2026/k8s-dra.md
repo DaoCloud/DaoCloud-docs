@@ -505,3 +505,24 @@ KEP-5304 定义了这套协议的标准格式。如果你用官方的 [DRA kubel
 - **可选节点操作** 和 **节点声明特性** 配合，确保调度到支持的节点
 
 随着 Kubernetes 在 AI、高性能计算等场景的应用越来越广泛，v1.37 这批 DRA 特性会变得越来越重要。如果你正在规划升级，建议先在测试集群中开启相关特性门控，验证驱动兼容性后再逐步推广到生产环境。
+
+## KubeCon China 2026 现场分享：让 Kubernetes 真正"看懂"复杂 AI 资源
+
+本文涉及的 DRA 诸多特性，正是今年 KubeCon China 2026 上一场重点分享的内容。
+
+![paco speaker](./images/paco-dra.png)
+
+**演讲者：徐俊杰（Paco）** —— DaoCloud 开源团队负责人、Kubernetes 指导委员会成员
+
+如果未来的 Kubernetes 要真正成为 AI Infra 的资源调度底座，它首先得学会"看懂"一台 AI 服务器。哪张 GPU 与哪张 NIC 更近？NUMA 怎么分布？PCIe、NVLink、Fabric 之间是什么拓扑关系？这些过去隐藏在机器内部的细节，正在直接影响 AI 工作负载的性能。
+
+这场分享将从 DRA 完整架构出发，串联 v1.36–v1.37 中 DRA 相关 KEP 的最新进展，看 Kubernetes 如何从"分配 GPU"进一步走向
+**理解和调度复杂的异构资源关系** 。同时结合 NVIDIA Dynamo / GB200 的优化实践，展示千卡规模集群中
+**IMEX 分配延迟如何从分钟级压缩到秒级** 。
+
+!!! tip
+
+    KubeCon China 2026 将于 9 月 7–9 日在上海国际会议中心举办。
+    DaoCloud 在 S2 主展位和多个开源项目展台安排了工程师驻场，欢迎现场交流。
+    
+    更多信息：[DaoCloud 官网](https://www.daocloud.io) ｜ [d.run 算力平台](https://d.run/)
