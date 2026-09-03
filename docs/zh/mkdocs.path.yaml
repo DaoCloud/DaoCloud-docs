@@ -146,7 +146,7 @@ plugins:
       timezone: Asia/Shanghai
       type: date #日期格式，有效值为 date、datetime、iso_date、iso_datetime、timeago
       fallback_to_build_date: true #默认 false，启用则回退到 mkdocs build 执行的时间
-      enable_creation_date: true #最后更新日期旁边显示与页面关联的文件的创建日期
+      enable_creation_date: false #设为 true 时同时显示创建日期和最后更新日期
       exclude:
         - index.md
       enabled: !ENV [ENABLED_GIT_REVISION_DATE, true]

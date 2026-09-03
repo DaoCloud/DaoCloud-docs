@@ -23,3 +23,5 @@ jobs:
       - run: make sync
 
       - run: make build all
+        env:
+          ENABLED_GIT_REVISION_DATE: "false"
