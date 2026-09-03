@@ -1495,29 +1495,36 @@ nav:
                   - Manage Devices: topohub/device/manage-device.md
   - Video Tutorial:
       - Index: videos/index.md
-      - Get Started:
-          - Installation: videos/install.md
-          - Scenario-based Videos: videos/use-cases.md
-      - Workbench:
-          - Workbench: videos/amamba.md
-      - Container:
-          - Container Management: videos/kpanda.md
-          - Multicloud Management: videos/kairship.md
-          - Container Registry: videos/kangaroo.md
-          - Network: videos/network.md    
-          - Virtual Machine: videos/virtnest.md      
-      - Microservices:
-          - Insight: videos/insight.md
-          - Microservice Engine: videos/skoala.md
-          - Service Mesh: videos/mspider.md
-      - Data Service:
-          - Middleware: videos/mcamel.md
-      - Cloud Native AI:
-          - AI Lab: videos/baize.md
-      - Edge Computing:
-          - Cloud Edge Collaboration: videos/kant.md
-      - Management:
-          - Global Management: videos/ghippo.md
+      - DCE 5.0:
+          - Get Started:
+              - Installation: videos/install.md
+              - Scenario-based Videos: videos/use-cases.md
+          - Workbench:
+              - Workbench: videos/amamba.md
+          - Container:
+              - Container Management: videos/kpanda.md
+              - Multicloud Management: videos/kairship.md
+              - Container Registry: videos/kangaroo.md
+              - Network: videos/network.md    
+              - Virtual Machine: videos/virtnest.md      
+          - Microservices:
+              - Insight: videos/insight.md
+              - Microservice Engine: videos/skoala.md
+              - Service Mesh: videos/mspider.md
+          - Data Service:
+              - Middleware: videos/mcamel.md
+          - Cloud Native AI:
+              - AI Lab: videos/baize.md
+          - Edge Computing:
+              - Cloud Edge Collaboration: videos/kant.md
+          - Management:
+              - Global Management: videos/ghippo.md
+      - d.run:
+          - Regiester and Login: videos/login.md
+          - Compute Cloud: videos/zestu.md
+          - LLM Studio: videos/models.md
+          - AI Apps: videos/ai-app.md
+          - Billing Center: videos/bills.md
   - Downloads:
       - DaoCloud Download Hub:
           - Index: download/index.md

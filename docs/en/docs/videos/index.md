@@ -5,25 +5,9 @@ hide:
 
 # Video Tutorials
 
-<span style="background-image: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
-    background-size: 200%;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: shine 5s infinite linear;">
-    This page provides video tutorials to help you quickly get started with DCE 5.0.
-</span>
+This page provides video tutorials to help you quickly get started with our products.
 
-<style>
-    @keyframes shine {
-        0% {
-            background-position: -200%;
-        }
-        100% {
-            background-position: 200%;
-        }
-    }
-</style>
+## DCE 5.0
 
 <div class="grid cards" markdown>
 
@@ -42,6 +26,19 @@ hide:
 - :fontawesome-brands-edge-legacy: **Cloud Edge Collaboration** [Extend containers to edge](kant.md)
 - :fontawesome-solid-user-group: **Global Management** [Login settings, access permissions, appearance](ghippo.md)
 - :fontawesome-solid-computer: **Virtual Machine** [Auto-migration](virtnest.md)
+
+</div>
+
+## d.run
+
+<div class="grid cards" markdown>
+
+- :technologist_tone1: [Register and Login](./d.run/login.md)
+- :octicons-cloud-16: [Compute Cloud](./d.run/zestu.md)
+- :simple-themodelsresource: [LLM Studio](./d.run/models.md)
+- :octicons-apps-24: [AI Apps](./d.run/ai-app.md)
+- :fontawesome-solid-sack-dollar: [Billing Center](./d.run/bills.md)
+- :octicons-gear-16: [Personal Center](./d.run/login.md)
 
 </div>
 
