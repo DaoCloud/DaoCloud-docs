@@ -11,6 +11,10 @@ hide:
 
 ## 2026 年
 
+- [KubeCon China 2026 参会指南](2026/kubecon-cn.md)
+
+    KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 将于 9 月 7–9 日在上海举办。
+
 - [Kubernetes v1.37 DRA 新变化](2026/k8s-dra.md)
 
     以前 Pod 申请 GPU 只能"整块拿走"，现在 DRA 让这件事变得更精细、更灵活。

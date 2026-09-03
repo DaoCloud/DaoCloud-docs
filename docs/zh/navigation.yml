@@ -1668,6 +1668,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2026:
+          - KubeCon China 2026指南: blogs/2026/kubecon-cn.md
           - K8s v1.37 DRA 新变化: blogs/2026/k8s-dra.md
           - vLLM-SR 七大工作组: blogs/2026/vllm-sr.md
           - Agent 技能揭秘: blogs/2026/skills.md
