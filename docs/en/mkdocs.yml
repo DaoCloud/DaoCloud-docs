@@ -141,7 +141,7 @@ plugins:
       timezone: Asia/Shanghai
       type: date # Date format, valid values are 'date', 'datetime', 'iso_date', 'iso_datetime', 'timeago'
       fallback_to_build_date: true # Default is false, enables fallback to time when mkdocs build was executed
-      enable_creation_date: true # Show the file creation date next to the last update date
+      enable_creation_date: false # Set to true to also show the file creation date
       exclude:
         - index.md
       enabled: !ENV [ENABLED_GIT_REVISION_DATE, true]
