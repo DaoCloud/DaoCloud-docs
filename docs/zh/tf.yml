@@ -45,22 +45,42 @@ nav:
                   - 改进意见: dak/data-analysis/suggestions.md
               - 我的反馈: dak/my-feedback/my-feedback.md
           - 大模型服务平台:
-              - hydra/index.md
-              - 模型体验: hydra/exp.md
-              - 模型管理:
-                  - 创建模型: hydra/model-management/index.md
-                  - 管理模型: hydra/model-management/model-manage.md
-              - 模型服务:
-                  - 模型服务概览: hydra/deploy/index.md
-                  - 部署新模型: hydra/deploy/deploy.md
-                  - 模型服务详情: hydra/deploy/deploy-detail.md
-                  - 管理模型服务: hydra/deploy/inference-manage.md
-              - 文件存储:
-                  - 创建文件存储: hydra/file-storage/storage.md
-                  - 管理文件: hydra/file-storage/file-manage.md
-                  - 远端文件预热: hydra/file-storage/file-preheat.md
-                  - 文件存储扩容: hydra/file-storage/file-scale.md
-              - API Key 管理: hydra/apikey.md
+              - 介绍:
+                  - 什么是大模型服务平台: hydra/intro/index.md
+                  - Release Notes: hydra/intro/release-notes.md
+                  - 部署大模型服务平台: hydra/intro/deploy-ws.md
+                  - 离线升级大模型服务平台: hydra/intro/offline-upgrade.md
+                  - 升级注意事项: hydra/intro/upgrade-notes.md
+              - 普通用户视图:
+                  - 模型广场: hydra/index.md
+                  - 模型体验: hydra/exp.md
+                  - 模型管理:
+                      - 创建模型: hydra/model-management/index.md
+                      - 管理模型: hydra/model-management/model-manage.md
+                  - 模型服务:
+                      - 模型服务概览: hydra/deploy/index.md
+                      - 部署新模型: hydra/deploy/deploy.md
+                      - 模型服务详情: hydra/deploy/deploy-detail.md
+                      - 管理模型服务: hydra/deploy/inference-manage.md
+                  - 文件存储:
+                      - 创建文件存储: hydra/file-storage/storage.md
+                      - 管理文件: hydra/file-storage/file-manage.md
+                      - 远端文件预热: hydra/file-storage/file-preheat.md
+                      - 文件存储扩容: hydra/file-storage/file-scale.md
+                  - API Key 管理: hydra/apikey.md
+              - 运维管理:
+                  - 模型广场管理: hydra/oam/index.md
+                  - MaaS模型管理: hydra/oam/maas.md
+                  - 模型部署管理: hydra/oam/mdm.md
+                  - 安全策略管理: hydra/oam/security-policy.md
+                  - 安全审计日志: hydra/oam/security-audit-logs.md
+              - 用户实践场景:
+                  - 示例场景介绍: hydra/user-guides/index.md
+                  - 在 VSCode 和 Cline 中使用: hydra/user-guides/cline-in-vscode.md
+                  - 在 Cherry Studio 中使用: hydra/user-guides/cherry-studio.md
+                  - 在 Bob Translate 中使用: hydra/user-guides/bob-translate.md
+                  - 在 LobeChat 中使用: hydra/user-guides/lobe-chat.md
+                  - 自定义大模型推理运行时: hydra/user-guides/custom-runtime.md
           - InferX 推理:
               - inferx/index.md
               - FAQ: inferx/faqs.md
