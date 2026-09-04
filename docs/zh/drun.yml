@@ -1,7 +1,15 @@
 nav:
-  - Token 工厂文档:
-      - 概述: tf/index.md
+  - d.run 文档:
+      - 概述: drun/index.md
       - 云原生 AI:
+          - ClawOS:
+              - clawos/workspace/overview.md
+              - ClawHub:
+                  - Skill 市场: clawos/workspace/skill.md
+                  - Skill 管理: clawos/workspace/skill-manage.md
+              - OpenClaw 实例: clawos/workspace/openclaw.md
+              - 飞书集成: clawos/workspace/feishu.md
+              - Microsoft Teams 配置: clawos/workspace/teams-info.md
           - 大模型服务平台:
               - hydra/index.md
               - 模型体验: hydra/exp.md
@@ -19,28 +27,72 @@ nav:
                   - 远端文件预热: hydra/file-storage/file-preheat.md
                   - 文件存储扩容: hydra/file-storage/file-scale.md
               - API Key 管理: hydra/apikey.md
-          - Token 工厂:
-              - hydra/intro/index.md
+          - AI Lab:
               - 介绍:
-                  - 什么是 Token 工厂管理: hydra/intro/index.md
-                  - Release Notes: hydra/intro/release-notes.md
-                  - 部署 Token 工厂管理: hydra/intro/deploy-ws.md
-                  - 离线升级 Token 工厂管理: hydra/intro/offline-upgrade.md
-                  - 升级注意事项: hydra/intro/upgrade-notes.md
+                  - 什么是 AI Lab: baize/intro/index.md
+                  - 安装 AI Lab 组件: baize/intro/install.md
+                  - 首次使用: baize/intro/first.md
+                  - Release Notes: baize/intro/release-notes.md
+                  - 升级注意事项: baize/intro/upgrade-notes.md
+              - 开发控制台:
+                  - 介绍: baize/developer/index.md
+                  - 快速入门: baize/developer/quick-start.md
+                  - 使用Notebook开发环境:
+                      - 创建 Notebook: baize/developer/notebooks/create.md
+                      - 启动和暂停 Notebook: baize/developer/notebooks/start-pause.md
+                      - Notebook 工作负载: baize/developer/notebooks/view.md
+                      - 删除 Notebook: baize/developer/notebooks/delete.md
+                      - SSH 访问 Notebook: baize/developer/notebooks/notebook-with-ssh.md
+                      - Notebook 中使用环境: baize/developer/notebooks/notebook-with-envs.md
+                      - 定制Notebook环境镜像: baize/developer/notebooks/customize-notebook-image.md
+                      - baizectl 命令行工具: baize/developer/notebooks/baizectl.md
+                      - baizess 换源工具: baize/developer/notebooks/baizess.md
+                      - Notebook闲置超时关机: baize/developer/notebooks/notebook-auto-close.md
+                      - Notebook Docker 功能: baize/developer/notebooks/notebook-with-dind.md
+                  - 任务管理:
+                      - 创建任务: baize/developer/jobs/create.md
+                      - 创建 Pytorch 任务: baize/developer/jobs/pytorch.md
+                      - 创建 Tensorflow 任务: baize/developer/jobs/tensorflow.md
+                      - 创建 MPI 任务: baize/developer/jobs/mpi.md
+                      - 创建 MXNet 任务: baize/developer/jobs/mxnet.md
+                      - 创建 PaddlePaddle 任务: baize/developer/jobs/paddle.md
+                      - 删除任务: baize/developer/jobs/delete.md
+                      - 查看任务负载: baize/developer/jobs/view.md
+                      - 任务分析: baize/developer/jobs/tensorboard.md
+                  - 数据管理:
+                      - 数据集列表: baize/developer/dataset/create-use-delete.md
+                      - 环境依赖: baize/developer/dataset/environments.md
+                      - 数据标注: baize/developer/dataset/labeling.md
+                  - 模型服务:
+                      - 模型列表: baize/developer/inference/model-create.md
+                      - 模型支持情况: baize/developer/inference/models.md
+                      - 推理服务:
+                          - 创建 Triton 推理服务: baize/developer/inference/triton-inference.md
+                          - 创建 vLLM 推理服务: baize/developer/inference/vllm-inference.md
               - 运维管理:
-                  - 模型广场管理: hydra/oam/index.md
-                  - MaaS模型管理: hydra/oam/maas.md
-                  - 模型部署管理: hydra/oam/mdm.md
-                  - 安全策略管理: hydra/oam/security-policy.md
-                  - 安全审计日志: hydra/oam/security-audit-logs.md
-              - 用户实践场景:
-                  - 示例场景介绍: hydra/user-guides/index.md
-                  - 在 VSCode 和 Cline 中使用: hydra/user-guides/cline-in-vscode.md
-                  - 在 Cherry Studio 中使用: hydra/user-guides/cherry-studio.md
-                  - 在 Bob Translate 中使用: hydra/user-guides/bob-translate.md
-                  - 在 LobeChat 中使用: hydra/user-guides/lobe-chat.md
-                  - 自定义大模型推理运行时: hydra/user-guides/custom-runtime.md
-          - InferX 推理:
+                  - 介绍: baize/oam/index.md
+                  - 资源池管理:
+                      - 创建资源池: baize/oam/resource/create.md
+                      - 管理资源池: baize/oam/resource/manage.md
+                  - 队列管理:
+                      - 创建队列: baize/oam/queue/create.md
+                      - 删除队列: baize/oam/queue/delete.md
+                  - GPU 信息: baize/oam/gpu.md
+              - 最佳实践:
+                  - 部署 NFS 做数据集预热: baize/best-practice/deploy-nfs-in-worker.md
+                  - 更新 Notebook 内置镜像: baize/best-practice/change-notebook-image.md
+                  - Checkpoint机制及用法: baize/best-practice/checkpoint.md
+                  - 拓扑感知调度训练任务: baize/best-practice/train-with-tas.md
+                  - 使用AI Lab微调ChatGLM3: baize/best-practice/finetunel-llm.md
+                  - 提交DeepSpeed训练任务: baize/best-practice/train-with-deepspeed.md
+                  - 训练任务增加调度器选项: baize/best-practice/add-scheduler.md
+                  - 部署 Label Studio: baize/best-practice/label-studio.md
+              - 故障排查:
+                  - 故障排查索引: baize/troubleshoot/index.md
+                  - 集群下拉列表中找不到集群: baize/troubleshoot/cluster-not-found.md
+                  - Notebook不受队列配额控制: baize/troubleshoot/notebook-not-controlled-by-quotas.md
+                  - 队列初始化失败: baize/troubleshoot/local-queue-initialization-failed.md
+          - InferX 推理套件:
               - inferx/index.md
               - FAQ: inferx/faqs.md
               - 最佳实践:
@@ -48,70 +100,6 @@ nav:
                   - 启用集群的 Istio GAIE 特性: inferx/guides/enable-istio-gaie-with-mspider.md
                   - 模型权重下载与配置: inferx/guides/model-weights-setup.md
                   - 模型服务对外暴露 (Hydra/Knoway): inferx/guides/export-by-hydra.md
-          - AI 应用:
-              - dak/index.md
-              - 功能列表: dak/features.md
-              - 应用中心:
-                  - 创建应用: dak/user-guide/app-center/create-app.md
-                  - 应用对话: dak/user-guide/app-center/conversation.md
-              - 语料库:
-                  - 创建语料库: dak/user-guide/corpus/create-corpus.md
-                  - 语料管理: dak/user-guide/corpus/manage-corpus.md
-                  - 语料导入:
-                      - 文件导入: dak/user-guide/corpus/upload-date.md
-                      - 手动录入: dak/user-guide/corpus/manual.md
-                      - 图文导入: dak/user-guide/corpus/image-upload.md
-                      - 格式化导入: dak/user-guide/corpus/format-update.md
-              - 数据分析:
-                  - 问答质量: dak/data-analysis/qa-quality.md
-                  - 问答次数: dak/data-analysis/number-of-qa.md
-                  - 分片质量: dak/data-analysis/shard-quality.md
-                  - 分片命中率: dak/data-analysis/shard-hit-ratio.md
-                  - 改进意见: dak/data-analysis/suggestions.md
-              - 我的反馈: dak/my-feedback/my-feedback.md
-          - ClawOS:
-              - clawos/intro/index.md
-              - 介绍:
-                  - 安装: clawos/intro/install.md
-                  - 快速入门: clawos/intro/quickstart.md
-                  - Release Notes: clawos/intro/release-notes.md
-                  - 升级注意事项: clawos/intro/upgrade-notes.md
-              - 工作空间:
-                  - 概览: clawos/workspace/overview.md
-                  - ClawHub:
-                      - Skill 市场: clawos/workspace/skill.md
-                      - Skill 管理: clawos/workspace/skill-manage.md
-                  - OpenClaw 实例: clawos/workspace/openclaw.md
-                  - 飞书集成: clawos/workspace/feishu.md
-                  - Microsoft Teams 配置: clawos/workspace/teams-info.md
-              - 管理员视角:
-                  - 概览: clawos/admin/overview-admin.md
-                  - Skill 管理: clawos/admin/skillmanage-admin.md
-                  - 网络策略管理: clawos/admin/network-manage.md
-              - 参考文档:
-                  - Gateway API 实例访问配置: clawos/reference/gateway-access.md
-          - 算力云:
-              - zestu/index.md
-              - 容器实例:
-                  - 创建容器实例: zestu/instance.md
-                  - 创建包年包月容器实例: zestu/instance-prepaid.md
-                  - 容器实例开关机: zestu/instance-on-off.md
-                  - 容器实例更换配置: zestu/instance-update.md
-                  - 通过容器实例使用 DeepSeek: zestu/deepseek.md
-                  - JupyterLab: zestu/instance/jupyter.md
-                  - SSH: zestu/instance/ssh.md
-                  - VS Code: zestu/instance/vscode.md
-                  - 访问管理: zestu/instance/openport.md
-                  - 磁盘存储: zestu/instance/diskstorage.md
-                  - 容器实例内服务开机自启: zestu/instance/service-auto-start.md
-                  - 容器实例 Docker 功能: zestu/instance/docker.md
-              - 文件存储:
-                  - 初始化文件存储: zestu/filestorage/storage.md
-                  - 文件存储扩缩容: zestu/filestorage/filescale.md
-              - 我的镜像:
-                  - 镜像列表: zestu/myimages/images.md
-                  - 保存镜像: zestu/myimages/image-save.md
-              - 常见问题: zestu/faq.md
       - 云原生底座:
           - 容器管理:
               - kpanda/intro/index.md
@@ -308,6 +296,16 @@ nav:
                       - koordinator 安装: kpanda/best-practice/co-located/install.md
                   - 接入外部集群时获取永久 TOKEN: kpanda/best-practice/get-kubeconfig.md
                   - 单台物理机最大运行 Pod 数量的最佳实践: kpanda/best-practice/max-pod.md
+          - 设备管理:
+              - topohub/intro/index.md
+              - 介绍:
+                  - 什么是设备管理: topohub/intro/index.md
+                  - 安装设备管理组件: topohub/intro/install.md
+                  - 设备管理 Release Notes: topohub/intro/release-notes.md
+              - 设备:
+                  - 接入设备: topohub/device/index.md
+                  - 批量接入设备: topohub/device/batch-access.md
+                  - 管理设备: topohub/device/manage-device.md
           - 镜像仓库:
               - kangaroo/intro/index.md
               - 介绍:
@@ -347,24 +345,246 @@ nav:
                   - Harbor Nginx配置实践: kangaroo/best-practice/harbor-nginx.md
                   - 镜像仓库容量资源规划: kangaroo/best-practice/capacity-planning.md
                   - 通过LB模式部署Harbor: kangaroo/best-practice/lb.md
-          - 运营管理:
-              - ghippo/user-guide/report-billing/index.md
-              - 报表管理: ghippo/user-guide/report-billing/report.md
-              - 离线升级运营管理: ghippo/user-guide/report-billing/gmagpie-offline-install.md
-              - 配置统计时区: ghippo/user-guide/report-billing/statistic-timezone.md
-              - 计费计量: ghippo/user-guide/report-billing/billing.md
-              - GPU 指标自定义配置: ghippo/user-guide/report-billing/gpu-metrics-config.md
-              - 历史数据重算: ghippo/user-guide/report-billing/report-recalculation.md
-          - 设备管理:
-              - topohub/intro/index.md
+          - 云原生网络:
               - 介绍:
-                  - 什么是设备管理: topohub/intro/index.md
-                  - 安装设备管理组件: topohub/intro/install.md
-                  - 设备管理 Release Notes: topohub/intro/release-notes.md
-              - 设备:
-                  - 接入设备: topohub/device/index.md
-                  - 批量接入设备: topohub/device/batch-access.md
-                  - 管理设备: topohub/device/manage-device.md
+                  - 什么是容器网络: network/intro/index.md
+                  - 背景和挑战: network/intro/background.md
+                  - 网络组件: network/modules/modules.md
+                  - 离线升级云原生网络: network/intro/offline.md
+                  - Release Notes: network/intro/release-notes.md
+                  - 网络组件 FAQ: network/intro/issues.md
+              - 网络规划:
+                  - 网卡规划: network/plans/ethplan.md
+                  - 网络规划: network/plans/netplan.md
+              - 网络配置:
+                  - 网络配置: network/config/index.md
+                  - 静态 IP 池:
+                      - 创建子网及 IP 池: network/config/ippool/createpool.md
+                      - IP 池场景说明: network/config/ippool/ippoolusage.md
+                      - 跨网络区域 IP 分配: network/config/ippool/topology.md
+                      - IP 预留: network/config/reserved-ip.md
+                  - 使用 IP 池:
+                      - 工作负载使用 IP 池: network/config/use-ippool/usage.md
+                      - 第三方工作负载使用IP池: network/config/use-ippool/cutomizedusage.md
+                  - Multus CR 管理: network/config/multus-cr.md
+                  - SR-IOV 节点策略: network/config/sriov-node-policy.md
+                  - 工作负载使用 RDMA:
+                      - 工作负载使用 RDMA: network/config/userdma.md
+                      - RDMA 使用方式对比: network/config/rdmatype.md
+                  - KubeVirt 固定 IP 与 Underlay 网络: network/config/kubevirt.md
+                  - Istio 服务网格适配（Underlay）: network/config/istio.md
+              - 网络性能:
+                  - 网络 CNI 性能测试报告: network/performance/cni-performance.md
+                  - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
+                  - Cilium 性能测试报告:
+                      - 加速 Pod 访问 Service: network/performance/cilium-performance/cilium-service.md
+                      - Pod跨节点通信的性能测试: network/performance/cilium-performance/cilium-crossnode.md
+                      - nodePort场景的访问加速测试: network/performance/cilium-performance/cilium-nodeport.md
+                      - 基于eBPF实施Pod带宽管控下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
+                  - 基于eBPF实施网络策略场景下的性能测试: network/performance/ebpf-performance.md
+                  - Ingress 性能测试: network/performance/ingress-performance.md
+                  - Egress 性能测试: network/performance/egress-performance.md
+                  - CoreDNS 性能测试: network/performance/coredns-performance.md
+              - 集成 Spiderpool:
+                  - 介绍: network/modules/spiderpool/index.md
+                  - Release Notes: network/modules/spiderpool/release-notes.md
+                  - 安装:
+                      - 系统要求: network/modules/spiderpool/install/system-requirements.md
+                      - 安装 Spiderpool: network/modules/spiderpool/install/install.md
+                      - 升级 Spiderpool: network/modules/spiderpool/upgrade.md
+                      - 公有云适配:
+                          - 在阿里云环境运行: network/modules/spiderpool/public-cloud/alibabacloud.md
+                          - 在 AWS 环境运行: network/modules/spiderpool/public-cloud/awscloud.md
+                  - AI/RDMA 网络:
+                      - 方案选型: network/modules/spiderpool/install/ai-rdma.md
+                      - 环境准备:
+                          - Spiderpool RDMA 安装参数: network/modules/spiderpool/install/rdmapara.md
+                      - 方案实施:
+                          - 共享 RDMA（Macvlan/IPvlan）: network/modules/spiderpool/install/rdma-macvlan.md
+                          - 独享 RDMA（SR-IOV RoCE）: network/modules/spiderpool/install/rdma-sriov-roce.md
+                          - 独享 RDMA（SR-IOV Infiniband）: network/modules/spiderpool/install/rdma-sriov-ib.md
+                      - AI 集群实战:
+                          - 使用 Macvlan 建设 AI 集群: network/modules/spiderpool/install/ai-macvlan.md
+                          - 使用 SR-IOV 建设 AI 集群: network/modules/spiderpool/install/ai-sriov.md
+                      - RDMA 监控:
+                          - RDMA 指标: network/modules/spiderpool/rdma-metrics.md
+                          - RDMA 看板: network/modules/spiderpool/rdma-dashboard.md
+                  - 使用:
+                      - 配置参考: network/modules/spiderpool/config.md
+                      - 常用命令: network/modules/spiderpool/command.md
+              - 集成 EgressGateway:
+                  - 介绍: network/modules/egressgateway/index.md
+                  - Release Notes: network/modules/egressgateway/release-notes.md
+                  - 在 DCE 上安装运行:
+                      - 安装: network/modules/egressgateway/install.md
+                      - 创建网关实例: network/modules/egressgateway/create_eg.md
+                      - 创建网关策略: network/modules/egressgateway/create-egpolicy.md
+                      - 使用网关策略: network/modules/egressgateway/use-egpolicy.md
+                  - 从 AWS 安装 EgressGateway:
+                      - 安装: network/modules/egressgateway/aws/marketplace-install.md
+                      - 升级: network/modules/egressgateway/aws/upgrade-k8s.md
+                      - 卸载: network/modules/egressgateway/aws/uninstall-k8s.md
+                  - 租户级默认 EgressGateway: network/modules/egressgateway/namespace-eg.md
+                  - 集群级默认 EgressGateway: network/modules/egressgateway/cluster-eg.md
+                  - 出口网关节点间迁移 Egress IP: network/modules/egressgateway/move-ip.md
+                  - EgressGateway 故障转移: network/modules/egressgateway/failover.md
+                  - EgressGateway 故障排除: network/modules/egressgateway/troubleshooting.md
+                  - 公有云适配:
+                      - 在阿里云环境运行: network/modules/egressgateway/public-cloud/alicloud.md
+                      - 在 AWS 环境运行: network/modules/egressgateway/public-cloud/awswithcilium.md
+              - 集成 sriov-network-operator:
+                  - 介绍: network/modules/sriov-network-operator/index.md
+                  - 安装: network/modules/sriov-network-operator/install.md
+                  - SR-IOV: network/modules/multus-underlay/sriov.md
+                  - DPDK: network/modules/multus-underlay/dpdk.md
+              - 集成 Calico:
+                  - 介绍: network/modules/calico/index.md
+                  - 安装参数配置: network/modules/calico/install.md
+                  - ippool: network/modules/calico/ippool.md
+                  - 监控指标: network/modules/calico/metrics.md
+                  - Calico 网络策略: network/modules/calico/policy.md
+                  - 故障排查: network/modules/calico/debug.md
+              - 集成 Cilium:
+                  - 介绍: network/modules/cilium/index.md
+                  - 部署 Cilium: network/modules/cilium/deploy-cilium.md
+                  - 未支持功能说明: network/modules/cilium/not-support.md
+                  - Cilium 网络通信加速: network/modules/cilium/cilium-speedup.md
+                  - 应用跨集群通信: network/modules/cilium/cross-cluster.md
+                  - 实现IPVlan网络策略能力: network/modules/cilium/cilium_chaining.md
+              - 集成 Contour:
+                  - 介绍: network/modules/contour/index.md
+                  - 安装: network/modules/contour/install.md
+              - 集成 F5networks:
+                  - 介绍: network/modules/f5networks/index.md
+                  - 安装: network/modules/f5networks/install.md
+                  - 使用: network/modules/f5networks/usage.md
+                  - 调试: network/modules/f5networks/debug.md
+              - 集成 Ingress-nginx:
+                  - 介绍: network/modules/ingress-nginx/index.md
+                  - 安装: network/modules/ingress-nginx/install.md
+                  - Ingress Class: network/modules/ingress-nginx/ingressclass.md
+                  - Ingress Scope: network/modules/ingress-nginx/scope.md
+                  - 跨域配置: network/modules/ingress-nginx/cors.md
+                  - 负载均衡: network/modules/ingress-nginx/proxy.md
+                  - 超时配置: network/modules/ingress-nginx/timeout.md
+                  - 日志配置: network/modules/ingress-nginx/log.md
+                  - 上传限制: network/modules/ingress-nginx/upload.md
+                  - 镜像流量: network/modules/ingress-nginx/mirror.md
+                  - 重定向: network/modules/ingress-nginx/redirect.md
+                  - 迁移到 Higress 或 kgateway: network/modules/ingress-nginx/migrate-to-higress-or-kgateway.md
+                  - 排障指南: network/modules/ingress-nginx/troubleshooting.md
+              - 集成 Higress:
+                  - 介绍: network/modules/higress/index.md
+                  - 安装: network/modules/higress/install.md
+              - 集成 Kgateway:
+                  - 介绍: network/modules/kgateway/index.md
+                  - 安装: network/modules/kgateway/install.md
+              - 集成 Metallb:
+                  - 介绍: network/modules/metallb/index.md
+                  - 安装: network/modules/metallb/install.md
+                  - IPPool 修改和创建: network/modules/metallb/ippool-create.md
+                  - IPPool 使用说明: network/modules/metallb/usage.md
+                  - L2 和 BGP 模式说明: network/modules/metallb/l2-bgp.md
+                  - 获取客户端源 IP: network/modules/metallb/source_ip.md
+                  - 问题排查: network/modules/metallb/debug.md
+              - 集成 Multus-underlay:
+                  - 介绍: network/modules/multus-underlay/index.md
+                  - 安装: network/modules/multus-underlay/install.md
+                  - Macvlan: network/modules/multus-underlay/macvlan.md
+                  - NmState: network/modules/multus-underlay/nmstat.md
+              - 集成 Submariner:
+                  - 介绍: network/modules/submariner/index.md
+                  - 安装: network/modules/submariner/install.md
+                  - 使用说明: network/modules/submariner/usage.md
+              - 集成 Kdoctor:
+                    - 介绍: network/modules/kdoctor/index.md
+                    - 安装: network/modules/kdoctor/install.md
+              - 集成阿里云 Terway:
+                  - 介绍: network/modules/aliyun-terway/index.md
+                  - Terway 网络模式: network/modules/aliyun-terway/what.md
+                  - 使用说明: network/modules/aliyun-terway/usage.md
+                  - 阿里云运行 Calico: network/modules/aliyun-terway/aliyun-calico.md
+                  - 阿里云运行 Cilium: network/modules/aliyun-terway/aliyun-cilium.md
+                  - 常见问题: network/modules/aliyun-terway/Q_A.md
+              - 集成 Unifabric:
+                  - Unifabric 概述: network/modules/unifabric/index.md
+                  - Release Notes: network/modules/unifabric/release-notes.md
+                  - 安装 Unifabric: network/modules/unifabric/install.md
+                  - RDMA 延时监控使用指南: network/modules/unifabric/features/RdmaLatencyDetection.md
+          - 云原生存储:
+              - 介绍:
+                  - 什么是云原生存储: storage/index.md
+                  - 功能特性: storage/features.md
+                  - Release Notes: storage/hwameistor/release-notes.md
+              - HwameiStor 本地存储:
+                  - 什么是 HwameiStor: storage/hwameistor/intro/index.md
+                  - 组件:
+                      - 本地磁盘管理器: storage/hwameistor/intro/ldm.md
+                      - 本地存储: storage/hwameistor/intro/ls.md
+                      - DRBD 安装器:
+                          - 介绍: storage/hwameistor/intro/drbd.md
+                          - DRBD 适配的内核版本: storage/hwameistor/intro/drbd-support.md
+                          - DRBD 自助编译操作: storage/hwameistor/intro/drdb-kernel-make.md
+                      - 调度器: storage/hwameistor/intro/scheduler.md
+                      - 准入控制器: storage/hwameistor/intro/admission-controller.md
+                      - 驱逐器: storage/hwameistor/intro/evictor.md
+                      - 指标采集器: storage/hwameistor/intro/exporter.md
+                  - 资源介绍: storage/hwameistor/intro/resources.md
+                  - 安装管理:
+                      - 准备工作: storage/hwameistor/install/prereq.md
+                      - 资源要求: storage/hwameistor/install/proresource.md
+                      - 通过界面安装 HwameiStor: storage/hwameistor/install/deploy-ui.md
+                      - 通过 hwameistor-operator 安装: storage/hwameistor/install/deploy-operator.md
+                      - 安装后检查: storage/hwameistor/install/post-check.md
+                      - 存储网卡配置: storage/hwameistor/install/storage-eth.md
+                      - 自定义kubelet根目录: storage/hwameistor/install/customized-kubelet.md
+                      - 升级: storage/hwameistor/install/upgrade.md
+                      - 卸载: storage/hwameistor/install/uninstall.md
+                  - 节点和磁盘:
+                      - LVM 节点扩展: storage/hwameistor/resources/lvm-nodes.md
+                      - 磁盘节点扩展: storage/hwameistor/resources/disk-nodes.md
+                      - 磁盘扩展: storage/hwameistor/resources/disk-expansion.md
+                      - 磁盘预留: storage/hwameistor/resources/reserveddisk.md
+                  - 存储池: storage/hwameistor/resources/storageclass.md
+                  - 数据卷:
+                      - 数据卷迁移: storage/hwameistor/resources/migrate.md
+                      - 数据卷驱逐: storage/hwameistor/resources/volume-eviction.md
+                      - 数据卷扩容: storage/hwameistor/resources/expand.md
+                      - 数据卷 IO 限速: storage/hwameistor/resources/volume-ProvisionedIO.md
+                      - 数据卷快照: storage/hwameistor/resources/volume-snapshot.md
+                  - 系统审计日志: storage/hwameistor/resources/audit.md
+                  - 应用场景:
+                      - 应用场景概述: storage/hwameistor/application/overview.md
+                      - 部署有状态应用:
+                          - 使用本地卷部署: storage/hwameistor/application/local.md
+                          - 使用高可用卷部署: storage/hwameistor/application/ha.md
+                  - 常见问题: storage/hwameistor/faqs.md
+              - 集成开源存储方案:
+                  - Rook-Ceph:
+                      - Rook-Ceph 介绍: storage/solutions/rook-ceph.md
+                      - Rook-Ceph 部署 - 应用商店: storage/solutions/dce-rook-ceph.md
+                      - Rook-Ceph 部署 - Helm: storage/solutions/helm-rook-ceph.md
+                      - 如何接入 Ceph Dashboard: storage/solutions/ceph-dashboard.md
+                      - 创建 Ceph 文件存储(CephFS)存储类: storage/solutions/sc-cephfs.md
+                      - 创建 Ceph 块存储(RBD)存储类: storage/solutions/sc-cephrbd.md
+                      - 创建 Ceph 对象存储(RGW)存储类: storage/solutions/sc-cephrgw.md
+                  - Longhorn:
+                      - Longhorn 介绍: storage/solutions/longhorn.md
+                      - Longhorn部署 - 应用商店: storage/solutions/dce-longhorn.md
+                  - OpenEBS:
+                      - OpenEBS 介绍: storage/solutions/openebs.md
+                      - 通过Helm部署 OpenEBS: storage/solutions/openebs-helm.md
+                  - TiDB: storage/hwameistor/application/tidb.md
+                  - MinIO: storage/hwameistor/application/minio/minio.md
+                  - Fluid: storage/solutions/fluid.md
+              - 存储基本概念:
+                  - Kubernetes 存储: storage/terms/k8s_storage.md
+                  - CAS 存储: storage/terms/cas.md
+                  - CSI 接口: storage/terms/csi.md
+                  - CRD 和 CR: storage/terms/crd_and_cr.md
+                  - 存储卷: storage/terms/volume.md
+                  - LVM: storage/terms/lvm.md
+                  - PV 和 PVC: storage/terms/pv_pvc.md
       - 运营管理:
           - 费用中心:
               - leopard/index.md

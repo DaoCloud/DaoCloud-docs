@@ -89,6 +89,7 @@ theme:
 # Plugins
 hooks:
   - ../../scripts/tf_nav_hook.py
+  - ../../scripts/drun_nav_hook.py
 plugins:
   - search:
       jieba_dict: dict.txt.small
