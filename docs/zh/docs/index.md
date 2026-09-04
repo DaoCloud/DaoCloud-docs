@@ -19,6 +19,10 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 
 </div>
 
+<style>
+.tf-arch-card{min-width:calc(25% - 6px) !important}
+</style>
+
 === ":octicons-stack-16: DCE 云原生操作系统"
 
     DaoCloud Enterprise (DCE) 是一款高性能、可扩展的云原生操作系统，
@@ -26,86 +30,56 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
     它能够在任何基础设施和任意环境中提供一致、稳定的体验，支持异构云、边缘云和多云编排等。
 
     <div class="tf-arch tf-arch--compact">
-      <div class="tf-arch-layer tf-arch-layer--model">
-        <div class="tf-arch-layer-label">应用层</div>
-        <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--model" href="amamba/intro/">
-            <span class="tf-arch-card-title">应用工作台</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--model" href="baize/intro/">
-            <span class="tf-arch-card-title">AI Lab</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--model" href="hydra/intro/">
-            <span class="tf-arch-card-title">大模型服务平台</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--model" href="clawos/intro/">
-            <span class="tf-arch-card-title">ClawOS</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--model" href="kant/intro/">
-            <span class="tf-arch-card-title">云边协同</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--model" href="virtnest/intro/">
-            <span class="tf-arch-card-title">虚拟机</span>
-          </a>
-        </div>
-      </div>
-      <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--compute">
-        <div class="tf-arch-layer-label">治理层</div>
+        <div class="tf-arch-layer-label">云原生底座</div>
         <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--compute" href="middleware/">
+            <span class="tf-arch-card-title">中间件</span>
+          </a>
           <a class="tf-arch-card tf-arch-card--compute" href="kairship/intro/">
             <span class="tf-arch-card-title">多云编排</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--compute" href="skoala/intro/">
-            <span class="tf-arch-card-title">微服务引擎</span>
+          <a class="tf-arch-card tf-arch-card--compute" href="kangaroo/intro/">
+            <span class="tf-arch-card-title">镜像仓库</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="mspider/intro/">
             <span class="tf-arch-card-title">服务网格</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--compute" href="middleware/">
-            <span class="tf-arch-card-title">中间件</span>
+          <a class="tf-arch-card tf-arch-card--compute" href="skoala/intro/">
+            <span class="tf-arch-card-title">微服务引擎</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--compute" href="insight/intro/">
-            <span class="tf-arch-card-title">可观测性</span>
+          <a class="tf-arch-card tf-arch-card--compute" href="amamba/intro/">
+            <span class="tf-arch-card-title">应用工作台</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="kpanda/intro/">
+            <span class="tf-arch-card-title">容器管理</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="virtnest/intro/">
+            <span class="tf-arch-card-title">虚拟机</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="topohub/intro/">
+            <span class="tf-arch-card-title">设备管理</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="kant/intro/">
+            <span class="tf-arch-card-title">云边协同</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="network/config/">
+            <span class="tf-arch-card-title">云原生网络</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="storage/">
+            <span class="tf-arch-card-title">云原生存储</span>
           </a>
         </div>
       </div>
       <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
-        <div class="tf-arch-layer-label">底座层</div>
+        <div class="tf-arch-layer-label">运维管理</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--ops" href="kpanda/intro/">
-            <span class="tf-arch-card-title">容器管理</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--ops" href="kangaroo/intro/">
-            <span class="tf-arch-card-title">镜像仓库</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--ops" href="network/intro/">
-            <span class="tf-arch-card-title">云原生网络</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--ops" href="storage/">
-            <span class="tf-arch-card-title">云原生存储</span>
+          <a class="tf-arch-card tf-arch-card--ops" href="insight/intro/">
+            <span class="tf-arch-card-title">可观测性</span>
           </a>
           <a class="tf-arch-card tf-arch-card--ops" href="ghippo/intro/">
             <span class="tf-arch-card-title">全局管理</span>
-          </a>
-        </div>
-      </div>
-      <div class="tf-arch-arrow">▼</div>
-      <div class="tf-arch-layer tf-arch-layer--model">
-        <div class="tf-arch-layer-label">资源</div>
-        <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--model" href="install/">
-            <span class="tf-arch-card-title">安装</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--model" href="download/">
-            <span class="tf-arch-card-title">下载中心</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--model" href="dce/bphome/">
-            <span class="tf-arch-card-title">最佳实践</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--model" href="dce/faq/">
-            <span class="tf-arch-card-title">常见问题</span>
           </a>
         </div>
       </div>
@@ -120,73 +94,73 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 
     <div class="tf-arch tf-arch--compact">
       <div class="tf-arch-layer tf-arch-layer--model">
-        <div class="tf-arch-layer-label">用户</div>
+        <div class="tf-arch-layer-label">云原生 AI</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--model" href="models/">
+          <a class="tf-arch-card tf-arch-card--model" href="clawos/workspace/overview.md">
+            <span class="tf-arch-card-title">ClawOS</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="hydra/">
             <span class="tf-arch-card-title">大模型服务平台</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="baize/intro/">
             <span class="tf-arch-card-title">AI Lab</span>
           </a>
-          <div class="tf-arch-card tf-arch-card--model" href="leopard/">
-            <span class="tf-arch-card-title">费用中心</span>
-          </div>
-          <div class="tf-arch-card tf-arch-card--model" href="zestu/">
-            <span class="tf-arch-card-title">算力云</span>
-          </div>
           <a class="tf-arch-card tf-arch-card--model" href="dak/">
             <span class="tf-arch-card-title">AI 应用</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="clawos/intro/">
-            <span class="tf-arch-card-title">ClawOS</span>
+          <a class="tf-arch-card tf-arch-card--model" href="zestu/">
+            <span class="tf-arch-card-title">算力云</span>
           </a>
+          <a class="tf-arch-card tf-arch-card--model" href="inferx/">
+            <span class="tf-arch-card-title">InferX 推理套件</span>
+          </a>
+          <div class="tf-arch-card tf-arch-card--model">
+            <span class="tf-arch-card-title">redhare 分布式缓存</span>
+          </div>
         </div>
       </div>
       <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--compute">
-        <div class="tf-arch-layer-label">管理员</div>
+        <div class="tf-arch-layer-label">云原生底座</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--compute" href="hydra/intro/">
-            <span class="tf-arch-card-title">Token 工厂管理</span>
+          <a class="tf-arch-card tf-arch-card--compute" href="kpanda/intro/">
+            <span class="tf-arch-card-title">容器管理</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--compute" href="inferx/">
-            <span class="tf-arch-card-title">InferX 推理引擎</span>
+          <a class="tf-arch-card tf-arch-card--compute" href="topohub/intro/">
+            <span class="tf-arch-card-title">设备管理</span>
           </a>
-          <div class="tf-arch-card tf-arch-card--compute">
-            <span class="tf-arch-card-title">智能工作台</span>
-          </div>
-          <div class="tf-arch-card tf-arch-card--compute" href="tf/#-">
-            <span class="tf-arch-card-title">驾驶舱</span>
-          </div>
-          <div class="tf-arch-card tf-arch-card--compute">
-            <span class="tf-arch-card-title">商品管理</span>
-          </div>
-          <a class="tf-arch-card tf-arch-card--compute" href="ghippo/intro/">
-            <span class="tf-arch-card-title">全局管理</span>
+          <a class="tf-arch-card tf-arch-card--compute" href="kangaroo/intro/">
+            <span class="tf-arch-card-title">镜像仓库</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--compute tf-arch-card--optional" href="clawos/intro/">
-            <span class="tf-arch-card-title">ClawOS</span>
+          <a class="tf-arch-card tf-arch-card--compute" href="network/config/">
+            <span class="tf-arch-card-title">云原生网络</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="storage/">
+            <span class="tf-arch-card-title">云原生存储</span>
           </a>
         </div>
       </div>
       <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
-        <div class="tf-arch-layer-label">基础设施</div>
+        <div class="tf-arch-layer-label">运营管理</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--ops" href="kpanda/intro/">
-            <span class="tf-arch-card-title">容器管理</span>
-          </a>
+          <div class="tf-arch-card tf-arch-card--ops">
+            <span class="tf-arch-card-title">Copilot</span>
+          </div>
+          <div class="tf-arch-card tf-arch-card--ops">
+            <span class="tf-arch-card-title">运营驾驶舱</span>
+          </div>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--ops">
+        <div class="tf-arch-layer-label">运维管理</div>
+        <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--ops" href="insight/intro/">
             <span class="tf-arch-card-title">可观测性</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--ops" href="kangaroo/intro/">
-            <span class="tf-arch-card-title">镜像仓库</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--ops" href="ghippo/user-guide/report-billing/">
-            <span class="tf-arch-card-title">运营管理</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--ops tf-arch-card--optional" href="topohub/intro/">
-            <span class="tf-arch-card-title">设备管理</span>
+          <a class="tf-arch-card tf-arch-card--ops" href="ghippo/intro/">
+            <span class="tf-arch-card-title">全局管理</span>
           </a>
         </div>
       </div>
@@ -197,74 +171,77 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
     这是专为智算中心打造的高效能 AI Token 生产及经营系统，致力于将传统算力中心升级为高效、可盈利的 Token 工厂。
     平台统一纳管英伟达及国产异构算力，通过智能调度与推理优化，将分散的 GPU 算力转化为低成本、高稳定、可交易的标准化 Token 服务。
     依托 Token 工厂管家与统一运营体系，平台实现资源、生产、成本和供需的全局管理，服务终端用户、管理者、运营者与运维者，
-    推动智算中心从 “提供算力” 升级为 “生产和运营 Token”。
+    推动智算中心从 "提供算力" 升级为 "生产和运营 Token"。
 
     <div class="tf-arch tf-arch--compact">
       <div class="tf-arch-layer tf-arch-layer--model">
-        <div class="tf-arch-layer-label">用户</div>
+        <div class="tf-arch-layer-label">云原生 AI</div>
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--model" href="hydra/">
             <span class="tf-arch-card-title">大模型服务平台</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model" href="leopard/">
-            <span class="tf-arch-card-title">费用中心</span>
+          <a class="tf-arch-card tf-arch-card--model" href="hydra/intro/">
+            <span class="tf-arch-card-title">Token 工厂</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="zestu/">
-            <span class="tf-arch-card-title">算力云</span>
+          <a class="tf-arch-card tf-arch-card--model" href="inferx/">
+            <span class="tf-arch-card-title">InferX 推理</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="dak/">
+          <div class="tf-arch-card tf-arch-card--model">
+            <span class="tf-arch-card-title">智能工作台</span>
+          </div>
+          <a class="tf-arch-card tf-arch-card--model" href="dak/">
             <span class="tf-arch-card-title">AI 应用</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model tf-arch-card--optional" href="clawos/intro/">
+          <a class="tf-arch-card tf-arch-card--model" href="clawos/intro/">
             <span class="tf-arch-card-title">ClawOS</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="zestu/">
+            <span class="tf-arch-card-title">算力云</span>
           </a>
         </div>
       </div>
       <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--compute">
-        <div class="tf-arch-layer-label">管理员</div>
+        <div class="tf-arch-layer-label">云原生底座</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--compute" href="hydra/intro/">
-            <span class="tf-arch-card-title">Token 工厂管理</span>
+          <a class="tf-arch-card tf-arch-card--compute" href="kpanda/intro/">
+            <span class="tf-arch-card-title">容器管理</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--compute" href="inferx/">
-            <span class="tf-arch-card-title">InferX 推理引擎</span>
+          <a class="tf-arch-card tf-arch-card--compute" href="kangaroo/intro/">
+            <span class="tf-arch-card-title">镜像仓库</span>
           </a>
-          <div class="tf-arch-card tf-arch-card--compute">
-            <span class="tf-arch-card-title">智能工作台</span>
-          </div>
-          <div class="tf-arch-card tf-arch-card--compute" href="tf/#-">
-            <span class="tf-arch-card-title">驾驶舱</span>
-          </div>
-          <div class="tf-arch-card tf-arch-card--compute">
-            <span class="tf-arch-card-title">商品管理</span>
-          </div>
-          <a class="tf-arch-card tf-arch-card--compute" href="ghippo/intro/">
-            <span class="tf-arch-card-title">全局管理</span>
+          <a class="tf-arch-card tf-arch-card--compute" href="ghippo/user-guide/report-billing/">
+            <span class="tf-arch-card-title">运营管理</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--compute tf-arch-card--optional" href="clawos/intro/">
-            <span class="tf-arch-card-title">ClawOS</span>
+          <a class="tf-arch-card tf-arch-card--compute" href="topohub/intro/">
+            <span class="tf-arch-card-title">设备管理</span>
           </a>
         </div>
       </div>
       <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
-        <div class="tf-arch-layer-label">基础设施</div>
+        <div class="tf-arch-layer-label">运营管理</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--ops" href="kpanda/intro/">
-            <span class="tf-arch-card-title">容器管理</span>
+          <div class="tf-arch-card tf-arch-card--ops" href="tf/#-">
+            <span class="tf-arch-card-title">驾驶舱</span>
+          </div>
+          <div class="tf-arch-card tf-arch-card--ops">
+            <span class="tf-arch-card-title">商品管理</span>
+          </div>
+          <a class="tf-arch-card tf-arch-card--ops" href="leopard/">
+            <span class="tf-arch-card-title">费用中心</span>
           </a>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--ops">
+        <div class="tf-arch-layer-label">运维管理</div>
+        <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--ops" href="insight/intro/">
             <span class="tf-arch-card-title">可观测性</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--ops" href="kangaroo/intro/">
-            <span class="tf-arch-card-title">镜像仓库</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--ops" href="ghippo/user-guide/report-billing/">
-            <span class="tf-arch-card-title">运营管理</span>
-          </a>
-          <a class="tf-arch-card tf-arch-card--ops tf-arch-card--optional" href="topohub/intro/">
-            <span class="tf-arch-card-title">设备管理</span>
+          <a class="tf-arch-card tf-arch-card--ops" href="ghippo/intro/">
+            <span class="tf-arch-card-title">全局管理</span>
           </a>
         </div>
       </div>
@@ -273,7 +250,6 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 <div class="tf-cta" markdown>
 
 [申请 DCE 社区免费体验](./dce/license0.md){ .md-button .md-button--primary }
-[注册体验 d.run](https://console.d.run/){ .md-button .md-button--primary }
 [Token 工厂概览](tf/index.md){ .md-button .md-button--primary }
 
 </div>
