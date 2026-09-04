@@ -12,15 +12,49 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 本站提供三大产品线的文档内容，覆盖从基础设施、算力调度到模型推理和应用构建的全栈能力。
 
 <div class="tf-hero-badges">
-<a class="tf-hero-badge tf-hero-badge--tf" href="#__tabbed_1_3">Token 工厂效能平台</a>
+<a class="tf-hero-badge tf-hero-badge--tf" href="#__tabbed_1_1">Token 工厂效能平台</a>
 <a class="tf-hero-badge tf-hero-badge--drun" href="#__tabbed_1_2">d.run AI 操作系统</a>
-<a class="tf-hero-badge tf-hero-badge--dce" href="#__tabbed_1_1">DCE 云原生操作系统</a>
+<a class="tf-hero-badge tf-hero-badge--dce" href="#__tabbed_1_3">DCE 云原生操作系统</a>
 </div>
 
 </div>
 
 <style>
 .tf-arch-card{min-width:calc(25% - 6px) !important}
+.tf-arch{overflow:visible !important}
+.tf-arch-card{overflow:visible !important}
+.tf-arch-layer:first-child{border-radius:14px 14px 0 0 !important}
+.tf-arch-layer:last-child{border-radius:0 0 14px 14px !important}
+.tf-arch-card-tip{
+  opacity:0;
+  position:absolute;
+  bottom:calc(100% + 8px);
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,0.85);
+  color:#fff;
+  padding:0.35rem 0.65rem;
+  border-radius:6px;
+  font-size:0.72rem;
+  font-weight:500;
+  white-space:nowrap;
+  z-index:100;
+  pointer-events:none;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  transition:opacity 0.2s ease
+}
+.tf-arch-card-tip::after{
+  content:"";
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%);
+  border:5px solid transparent;
+  border-top-color:rgba(0,0,0,0.85)
+}
+.tf-arch-card:hover .tf-arch-card-tip{
+  opacity:1
+}
 </style>
 
 === ":material-factory: Token 工厂效能平台"
@@ -36,21 +70,27 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--model" href="clawos/intro/">
             <span class="tf-arch-card-title">ClawOS</span>
+            <span class="tf-arch-card-tip">多智能体运行与治理</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="dak/">
             <span class="tf-arch-card-title">AI 应用</span>
+            <span class="tf-arch-card-tip">智能问答等应用能力</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model" href="hydra/index.md">
+          <a class="tf-arch-card tf-arch-card--model" href="hydra/">
             <span class="tf-arch-card-title">大模型服务平台</span>
+            <span class="tf-arch-card-tip">模型部署与运维管理</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="inferx/">
             <span class="tf-arch-card-title">InferX 推理</span>
+            <span class="tf-arch-card-tip">推理加速与引擎管理</span>
           </a>
           <div class="tf-arch-card tf-arch-card--model">
             <span class="tf-arch-card-title">redhare 分布式缓存</span>
+            <span class="tf-arch-card-tip">分布式缓存加速服务</span>
           </div>
           <a class="tf-arch-card tf-arch-card--model" href="zestu/">
             <span class="tf-arch-card-title">算力云</span>
+            <span class="tf-arch-card-tip">异构算力纳管与调度</span>
           </a>
         </div>
       </div>
@@ -60,18 +100,23 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--compute" href="kpanda/intro/">
             <span class="tf-arch-card-title">容器管理</span>
+            <span class="tf-arch-card-tip">集群与工作负载管理</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="kangaroo/intro/">
             <span class="tf-arch-card-title">镜像仓库</span>
+            <span class="tf-arch-card-tip">镜像托管与集成</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="topohub/intro/">
             <span class="tf-arch-card-title">设备管理</span>
+            <span class="tf-arch-card-tip">硬件设备统一纳管</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="network/intro/">
             <span class="tf-arch-card-title">云原生网络</span>
+            <span class="tf-arch-card-tip">多 CNI 融合网络</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="storage/">
             <span class="tf-arch-card-title">云原生存储</span>
+            <span class="tf-arch-card-tip">容器化存储与 CSI</span>
           </a>
         </div>
       </div>
@@ -81,12 +126,15 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         <div class="tf-arch-cards">
           <div class="tf-arch-card tf-arch-card--ops">
             <span class="tf-arch-card-title">Copilot</span>
+            <span class="tf-arch-card-tip">智能运维助手</span>
           </div>
           <div class="tf-arch-card tf-arch-card--ops">
             <span class="tf-arch-card-title">驾驶舱</span>
+            <span class="tf-arch-card-tip">运营数据可视化</span>
           </div>
           <a class="tf-arch-card tf-arch-card--ops" href="leopard/">
             <span class="tf-arch-card-title">费用中心</span>
+            <span class="tf-arch-card-tip">计费与账单分析</span>
           </a>
         </div>
       </div>
@@ -96,9 +144,11 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--ops" href="insight/intro/">
             <span class="tf-arch-card-title">可观测性</span>
+            <span class="tf-arch-card-tip">指标日志链路观测</span>
           </a>
           <a class="tf-arch-card tf-arch-card--ops" href="ghippo/intro/">
             <span class="tf-arch-card-title">全局管理</span>
+            <span class="tf-arch-card-tip">用户权限与平台设置</span>
           </a>
         </div>
       </div>
@@ -117,18 +167,23 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--model" href="clawos/intro/">
             <span class="tf-arch-card-title">ClawOS</span>
+            <span class="tf-arch-card-tip">多智能体运行与治理</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="hydra/">
             <span class="tf-arch-card-title">大模型服务平台</span>
+            <span class="tf-arch-card-tip">模型部署与运维管理</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="baize/intro/">
             <span class="tf-arch-card-title">AI Lab</span>
+            <span class="tf-arch-card-tip">云原生训推一体化</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="inferx/">
             <span class="tf-arch-card-title">InferX 推理套件</span>
+            <span class="tf-arch-card-tip">推理加速与引擎管理</span>
           </a>
           <div class="tf-arch-card tf-arch-card--model">
             <span class="tf-arch-card-title">redhare 分布式缓存</span>
+            <span class="tf-arch-card-tip">分布式缓存加速服务</span>
           </div>
         </div>
       </div>
@@ -138,18 +193,23 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--compute" href="kpanda/intro/">
             <span class="tf-arch-card-title">容器管理</span>
+            <span class="tf-arch-card-tip">集群与工作负载管理</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="topohub/intro/">
             <span class="tf-arch-card-title">设备管理</span>
+            <span class="tf-arch-card-tip">硬件设备统一纳管</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="kangaroo/intro/">
             <span class="tf-arch-card-title">镜像仓库</span>
+            <span class="tf-arch-card-tip">镜像托管与集成</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="network/intro/">
             <span class="tf-arch-card-title">云原生网络</span>
+            <span class="tf-arch-card-tip">多 CNI 融合网络</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="storage/">
             <span class="tf-arch-card-title">云原生存储</span>
+            <span class="tf-arch-card-tip">容器化存储与 CSI</span>
           </a>
         </div>
       </div>
@@ -159,9 +219,11 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         <div class="tf-arch-cards">
           <div class="tf-arch-card tf-arch-card--ops">
             <span class="tf-arch-card-title">Copilot</span>
+            <span class="tf-arch-card-tip">智能运维助手</span>
           </div>
           <div class="tf-arch-card tf-arch-card--ops">
             <span class="tf-arch-card-title">运营驾驶舱</span>
+            <span class="tf-arch-card-tip">运营数据可视化</span>
           </div>
         </div>
       </div>
@@ -171,9 +233,11 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--ops" href="insight/intro/">
             <span class="tf-arch-card-title">可观测性</span>
+            <span class="tf-arch-card-tip">指标日志链路观测</span>
           </a>
           <a class="tf-arch-card tf-arch-card--ops" href="ghippo/intro/">
             <span class="tf-arch-card-title">全局管理</span>
+            <span class="tf-arch-card-tip">用户权限与平台设置</span>
           </a>
         </div>
       </div>
@@ -191,39 +255,51 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--compute" href="middleware/">
             <span class="tf-arch-card-title">中间件</span>
+            <span class="tf-arch-card-tip">数据库与消息队列</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="kairship/intro/">
             <span class="tf-arch-card-title">多云编排</span>
+            <span class="tf-arch-card-tip">多云与混合云编排</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="kangaroo/intro/">
             <span class="tf-arch-card-title">镜像仓库</span>
+            <span class="tf-arch-card-tip">镜像托管与集成</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="mspider/intro/">
             <span class="tf-arch-card-title">服务网格</span>
+            <span class="tf-arch-card-tip">非侵入式服务治理</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="skoala/intro/">
             <span class="tf-arch-card-title">微服务引擎</span>
+            <span class="tf-arch-card-tip">微服务治理与网关</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="amamba/intro/">
             <span class="tf-arch-card-title">应用工作台</span>
+            <span class="tf-arch-card-tip">CI/CD 与应用交付</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="kpanda/intro/">
             <span class="tf-arch-card-title">容器管理</span>
+            <span class="tf-arch-card-tip">集群与工作负载管理</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="virtnest/intro/">
             <span class="tf-arch-card-title">虚拟机</span>
+            <span class="tf-arch-card-tip">KubeVirt 虚拟机管理</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="topohub/intro/">
             <span class="tf-arch-card-title">设备管理</span>
+            <span class="tf-arch-card-tip">硬件设备统一纳管</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="kant/intro/">
             <span class="tf-arch-card-title">云边协同</span>
+            <span class="tf-arch-card-tip">边缘节点纳管与协同</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="network/config/">
             <span class="tf-arch-card-title">云原生网络</span>
+            <span class="tf-arch-card-tip">多 CNI 融合网络</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="storage/">
             <span class="tf-arch-card-title">云原生存储</span>
+            <span class="tf-arch-card-tip">容器化存储与 CSI</span>
           </a>
         </div>
       </div>
@@ -233,9 +309,11 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--ops" href="insight/intro/">
             <span class="tf-arch-card-title">可观测性</span>
+            <span class="tf-arch-card-tip">指标日志链路观测</span>
           </a>
           <a class="tf-arch-card tf-arch-card--ops" href="ghippo/intro/">
             <span class="tf-arch-card-title">全局管理</span>
+            <span class="tf-arch-card-tip">用户权限与平台设置</span>
           </a>
         </div>
       </div>
