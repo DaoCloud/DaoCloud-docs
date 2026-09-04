@@ -5,7 +5,7 @@ hide:
 
 # 什么是应用工作台？
 
-应用工作台是基于容器的 DevOps 云原生应用平台，提供了 DCE 5.0 应用创建的统一入口，通过界面化表单创建多种流水线、GitOps、金丝雀、蓝绿、AB 等渐进式发布策略、项目管理、工具链集成等多种功能。
+应用工作台是基于容器的 DevOps 云原生应用平台，提供了 DCE 应用创建的统一入口，通过界面化表单创建多种流水线、GitOps、金丝雀、蓝绿、AB 等渐进式发布策略、项目管理、工具链集成等多种功能。
 
 应用工作台着重企业应用自动化交付和基础设施变更的过程，提供业务应用从“开发 -> 测试 -> 部署 -> 运维”的全生命周期管理，能有效帮助企业实现数字化转型，提升企业的 IT 交付能力和竞争力。
 
@@ -23,7 +23,7 @@ hide:
 === "以云原生应用为中心"
 
     支持云原生场景下的“多形态”的云原生应用，包括 Kubernetes 原生应用、Helm 应用、OAM 应用等。
-    能够接入 SpringCloud、Dubbo、ServiceMesh 框架的微服务应用，实现微服务的治理，与 DCE 5.0 的[微服务引擎](../../skoala/intro/index.md)、[服务网格](../../mspider/intro/index.md)无缝集成。
+    能够接入 SpringCloud、Dubbo、ServiceMesh 框架的微服务应用，实现微服务的治理，与 DCE 的[微服务引擎](../../skoala/intro/index.md)、[服务网格](../../mspider/intro/index.md)无缝集成。
     支持云原生应用的全生命周期管理，例如应用的扩缩容、日志、监控查看、更新应用等等。
 
     ![多形态云原生应用](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/what02.png)
@@ -46,15 +46,15 @@ hide:
     
     Argo-Rollout Kubernetes Progressive Delivery Controller，提供更强大的部署能力。包括灰度发布、蓝绿部署、更新测试 (experimentation)、渐进式交付 (progressive delivery) 等特性。
 
-## 在 DCE 5.0 中的地位
+## 在 DCE 中的地位
 
 以容器管理为底座，借助全局管理实现层级资源管理，以 CI/CD 流水线和 GitOps 流程增删改查云原生应用，实现渐进式交付。
 
-![应用工作台在 DCE 5.0 中的地位](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/what00.png)
+![应用工作台在 DCE 中的地位](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/what00.png)
 
 ## 部署方法
 
-建议通过 [DCE 5.0 商业版安装包](../../install/commercial/start-install.md)安装应用工作台，因为这样可以一次性安装 DCE 5.0 的所有模块 ，无需担心组件不兼容的问题。
+建议通过 [DCE 商业版安装包](../../install/commercial/start-install.md)安装应用工作台，因为这样可以一次性安装 DCE 的所有模块 ，无需担心组件不兼容的问题。
 
 但是，如果你想单独安装或升级应用工作台模块，依次执行以下命令即可：
 
@@ -67,5 +67,5 @@ helm upgrade --install --create-namespace --cleanup-on-fail amamba amamba-releas
 
 1. 修改为实际部署的版本
 
-[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../../install/index.md){ .md-button .md-button--primary }

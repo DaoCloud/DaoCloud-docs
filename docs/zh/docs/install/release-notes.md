@@ -2,13 +2,13 @@
 
 本页列出安装器的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
-*[Amamba]: DCE 5.0 应用工作台的开发代号
-*[Ghippo]: DCE 5.0 全局管理的开发代号
-*[insight-agent]: DCE 5.0 实现可观测性 Insight 能力的必需组件，默认安装在 insight-system 命名空间
-*[Kangaroo]: DCE 5.0 镜像仓库的开发代号
-*[Kpanda]: DCE 5.0 容器管理的开发代号
-*[Skoala]: DCE 5.0 微服务引擎的开发代号
-*[Hydra]: DCE 5.0 大模型服务平台的开发代号
+*[Amamba]: DCE 应用工作台的开发代号
+*[Ghippo]: DCE 全局管理的开发代号
+*[insight-agent]: DCE 实现可观测性 Insight 能力的必需组件，默认安装在 insight-system 命名空间
+*[Kangaroo]: DCE 镜像仓库的开发代号
+*[Kpanda]: DCE 容器管理的开发代号
+*[Skoala]: DCE 微服务引擎的开发代号
+*[Hydra]: DCE 大模型服务平台的开发代号
 
 ## 2026-07-31
 
@@ -167,7 +167,7 @@
 - **新增** 通过 --show-feature-gates 参数展示安装器脚本内部的特殊功能开关
 - **新增** 构建 cloud 模式下的离线包
 - **新增** 适配火种 kind 版本 v0.27.0
-- **新增** 升级 DCE 5.0 时检测待升级组件的当前版本是否低于已存在版本
+- **新增** 升级 DCE 时检测待升级组件的当前版本是否低于已存在版本
 - **优化** AI 模式更新为 Cloud 模式
 - **优化** Cloud 模式下支持 metalLB
 - **优化** istio-ingressgateway 的镜像拉取策略为 'IfNotPresent'
@@ -175,8 +175,8 @@
 - **优化** 构建脚本中对火种离线资源的处理逻辑，移除冗余逻辑，提升后期维护性
 - **修复** 安装中间件 rabbitmq 时从公网拉取镜像的问题
 - **修复** chart values 里包含 '#' 字符时解析失败的问题
-- **修复** 离线升级 DCE 5.0 后 mcamel-mysql 组件使用镜像错误的问题
-- **修复** 升级 DCE 5.0 后覆盖之前手动修改的 metallb 组件相关的 CR L2Advertisement
+- **修复** 离线升级 DCE 后 mcamel-mysql 组件使用镜像错误的问题
+- **修复** 升级 DCE 后覆盖之前手动修改的 metallb 组件相关的 CR L2Advertisement
 
 ## 2025-03-31
 
@@ -636,7 +636,7 @@
 ./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct
 ```
 
-输出结果非上述情况时，升级操作直接参考文档[升级 DCE 5.0 产品功能模块](upgrade.md)。
+输出结果非上述情况时，升级操作直接参考文档[升级 DCE 产品功能模块](upgrade.md)。
 
 ## 2023-6-15
 
@@ -684,7 +684,7 @@
 - Addon 离线包暂不支持上传到 JFrog 外接服务
 - 容器管理平台离线模式暂无法支持工作集群添加节点
 - 离线场景下使用外置 osRepos 仓库时，即 clusterConfig.yaml 中定义 `osRepos.type=external`，
-  部署 DCE 5.0 成功后无法在容器管理中创建工作集群，临时解决方案如下：
+  部署 DCE 成功后无法在容器管理中创建工作集群，临时解决方案如下：
   全局服务集群安装完成后立即更新全局服务集群 kubean-system 命名空间的 configmap kubean-localservice，
   将 `yumRepos.external` 值中所有双引号改为单引号。如下示例，将文件内的双引号都替换为单引号：
 
@@ -724,7 +724,7 @@
 
 #### 新功能
 
-- **新增** 支持 Other Linux 来部署 DCE 5.0，[参考文档](os-install/otherlinux.md)
+- **新增** 支持 Other Linux 来部署 DCE，[参考文档](os-install/otherlinux.md)
 - **新增** 支持操作系统 OpenEuler 22.03
 - **新增** 支持外接 osReposs，[参考集群配置文件说明](commercial/cluster-config.md)
 - **新增** 支持内核参数调优，[参考集群配置文件说明](commercial/cluster-config.md)
@@ -755,7 +755,7 @@
     `calico_crds_download_url`，值为上述 calico_crds_download_url 的值
 
 - Kubean 存在低概率无法创建 spray-job 任务，通过手动删除对应的 clusteroperations CR 资源再重新执行安装命令
-- 使用外部 osRepos 部署 DCE 5.0 后，无法通过容器管理离线创建工作集群，通过手动修改全局服务集群 kubean-system
+- 使用外部 osRepos 部署 DCE 后，无法通过容器管理离线创建工作集群，通过手动修改全局服务集群 kubean-system
   命名空间的 configmap kubean-localservice 来解决。在 `yumRepos` 下新增如下配置，需要在 external 内填写
   clusterConfig.yaml 中配置的外部 osRepos 地址：
 
@@ -792,7 +792,7 @@
 
 - **新增** 支持一键升级 Gproduct 组件
 - **新增** 适配了操作系统：UOS V20 1020a / Ubuntu 20.04
-- **新增** 支持 OCP (OpenShift Container Platform)安装 DCE 5.0
+- **新增** 支持 OCP (OpenShift Container Platform)安装 DCE
 - **新增** CLI 支持生成 clusterConfig 模板
 - **新增** all in one 模式默认启动最小化安装模式
 - **新增** Gproduct 组件中新增了 Kcollie 组件
@@ -922,7 +922,7 @@
 
 #### 已知问题
 
-- 因为部分 Operator 需升级到支持 K8s 1.25，导致 DCE 5.0 向下不支持 K8s 1.20
+- 因为部分 Operator 需升级到支持 K8s 1.25，导致 DCE 向下不支持 K8s 1.20
 - Kubean 默认 K8s 版本和离线包仍然限制在 1.24 版本，还未能更新到 1.25（由于 postgres-operator 暂不支持）
 - Image Load 情况下，istio-ingressgateway imagePullPolicy 为 always
 - ARM 版本，不能执行安装脚本的第 16 步（harbor），因为 harbor 暂时不支持 ARM。

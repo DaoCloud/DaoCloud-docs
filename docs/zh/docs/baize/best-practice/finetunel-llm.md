@@ -1,6 +1,6 @@
 # 使用 AI Lab 微调 ChatGLM3 模型
 
-本文以 `ChatGLM3` 模型为例，演示如何在 DCE 5.0 AI Lab 中使用 LoRA（Low-Rank Adaptation，低秩自适应）微调 ChatGLM3 模型。
+本文以 `ChatGLM3` 模型为例，演示如何在 DCE AI Lab 中使用 LoRA（Low-Rank Adaptation，低秩自适应）微调 ChatGLM3 模型。
 Demo 程序来自 [ChatGLM3](https://github.com/THUDM/ChatGLM3/blob/main/finetune_demo/lora_finetune.ipynb) 官方案例。
 
 微调的大致流程为：
@@ -26,11 +26,11 @@ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 !!! info
 
-    在开始体验之前，请检查 DCE 5.0 以及 [AI Lab 部署](../intro/install.md)正确，GPU 队列资源初始化成功，且算力资源充足。
+    在开始体验之前，请检查 DCE 以及 [AI Lab 部署](../intro/install.md)正确，GPU 队列资源初始化成功，且算力资源充足。
 
 ## 数据准备
 
-利用 DCE 5.0 AI Lab 提供的数据集管理功能，快速将微调大模型所需的数据进行预热及持久化，减少因为准备数据导致的 GPU 资源占用，提高资源利用效率。
+利用 DCE AI Lab 提供的数据集管理功能，快速将微调大模型所需的数据进行预热及持久化，减少因为准备数据导致的 GPU 资源占用，提高资源利用效率。
 
 ![数据集列表](./images/fine-tunel-chatglm3-02.png)
 
@@ -44,7 +44,7 @@ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 ![image](./images/fine-tunel-chatglm3-03.png)
 
-DCE 5.0 AI Lab 会在后台进行全自动数据预热，以便后续的任务能够快速访问数据。
+DCE AI Lab 会在后台进行全自动数据预热，以便后续的任务能够快速访问数据。
 
 ### AdvertiseGen 数据集
 
@@ -65,9 +65,9 @@ DCE 5.0 AI Lab 会在后台进行全自动数据预热，以便后续的任务�
 对于模型开发者来说，准备模型开发需要的 Python 环境依赖是非常重要的，传统做法将环境依赖直接打包到开发工具的镜像中，
 或者直接在本地环境中安装，但是这样做会导致环境依赖的不一致，而且不利于环境的管理和依赖更新及同步。
 
-DCE 5.0 AI Lab 提供了环境管理的能力，将 Python 环境依赖包管理和开发工具、任务镜像等进行解耦，解决了依赖管理混乱，环境不一致等问题。
+DCE AI Lab 提供了环境管理的能力，将 Python 环境依赖包管理和开发工具、任务镜像等进行解耦，解决了依赖管理混乱，环境不一致等问题。
 
-这里使用 DCE 5.0 AI Lab 提供的环境管理功能，创建 ChatGLM3 微调所需的环境，以备后续使用。
+这里使用 DCE AI Lab 提供的环境管理功能，创建 ChatGLM3 微调所需的环境，以备后续使用。
 
 !!! warning
 
@@ -86,7 +86,7 @@ DCE 5.0 AI Lab 提供了环境管理的能力，将 Python 环境依赖包管理
 
 ## 使用 Notebook 作为 IDE
 
-DCE 5.0 AI Lab 提供了 Notebook 作为 IDE 的功能，可以让用户在浏览器中直接编写代码，运行代码，查看代码运行结果，非常适合于数据分析、机器学习、深度学习等领域的开发。
+DCE AI Lab 提供了 Notebook 作为 IDE 的功能，可以让用户在浏览器中直接编写代码，运行代码，查看代码运行结果，非常适合于数据分析、机器学习、深度学习等领域的开发。
 
 您可以使用 AI Lab 提供的 JupyterLab Notebook 来进行 ChatGLM3 的微调任务。
 
@@ -255,7 +255,7 @@ convert_adgen('data/AdvertiseGen', 'data/AdvertiseGen_fix')
 
 ### 使用 `baizectl` 提交任务
 
-DCE 5.0 AI Lab 的 Notebook 支持免认证直接使用 `baizectl` 命令行工具，
+DCE AI Lab 的 Notebook 支持免认证直接使用 `baizectl` 命令行工具，
 如果您喜欢使用 CLI，那么可以直接使用 `baizectl` 提供的命令行工具，提交任务。
 
 ```bash
@@ -289,7 +289,7 @@ baizectl job submit --name finetunel-chatglm3 -t PYTORCH \
 
 ### 配置模型运行时
 
-配置模型的运行时尤为重要，目前 DCE 5.0 AI Lab 已经支持 `vLLM` 作为模型推理服务的运行时，可以直接选择 `vLLM`。
+配置模型的运行时尤为重要，目前 DCE AI Lab 已经支持 `vLLM` 作为模型推理服务的运行时，可以直接选择 `vLLM`。
 
 > vLLM 支持非常丰富的大语言模型，建议访问 [vLLM](https://docs.vllm.ai) 了解更多信息，这些模型都可以很方便地在 AI Lab 中使用。
 
@@ -312,4 +312,4 @@ curl -X POST http://10.20.100.210:31118/v2/models/chatglm3-6b/generate \
 
 本文以 `ChatGLM3` 为例，带您快速了解和上手 **AI Lab** 的模型微调，使用 `LoRA` 微调了 ChatGLM3 模型。
 
-DCE 5.0 AI Lab 提供了非常丰富的功能，可以帮助模型开发者快速进行模型开发、微调、推理等任务，同时也提供了丰富的 OpenAPI 接口，可以方便地与第三方应用生态进行结合。
+DCE AI Lab 提供了非常丰富的功能，可以帮助模型开发者快速进行模型开发、微调、推理等任务，同时也提供了丰富的 OpenAPI 接口，可以方便地与第三方应用生态进行结合。

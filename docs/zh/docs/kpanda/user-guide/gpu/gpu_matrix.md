@@ -5,7 +5,7 @@ hide:
 
 # GPU 支持矩阵
 
-本页说明 DCE 5.0 支持的 GPU 及操作系统所对应的矩阵。
+本页说明 DCE 支持的 GPU 及操作系统所对应的矩阵。
 
 ## NVIDIA GPU
 

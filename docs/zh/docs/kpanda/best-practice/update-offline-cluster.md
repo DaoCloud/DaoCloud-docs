@@ -2,13 +2,13 @@
 
 !!! note
 
-    本文仅针对离线模式下，使用 DCE 5.0 平台所创建的工作集群的 Kubernetes 的版本进行部署或升级，
+    本文仅针对离线模式下，使用 DCE 平台所创建的工作集群的 Kubernetes 的版本进行部署或升级，
     不包括其它 Kubernetes 组件的部署或升级。
 
 本文适用以下离线场景：
 
-- 用户可以通过以下操作指南，部署 DCE 5.0 平台所创建的非界面中推荐的 Kubernetes 版本。
-- 用户可以通过制作增量离线包的方式对使用 DCE 5.0 平台所创建的工作集群的 Kubernetes 的版本进行升级。
+- 用户可以通过以下操作指南，部署 DCE 平台所创建的非界面中推荐的 Kubernetes 版本。
+- 用户可以通过制作增量离线包的方式对使用 DCE 平台所创建的工作集群的 Kubernetes 的版本进行升级。
 
 整体的思路为：
 
@@ -170,7 +170,7 @@ kubectl apply -f manifest-2.21-d6f688f.yaml
 
 ## 下一步
 
-登录 DCE 5.0 的 UI 管理界面，您可以继续执行以下操作：
+登录 DCE 的 UI 管理界面，您可以继续执行以下操作：
 
 1. 参照[创建集群的文档](../user-guide/clusters/create-cluster.md)进行工作集群创建，此时可以选择 Kubernetes 增量版本。
 

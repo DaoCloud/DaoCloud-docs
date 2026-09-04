@@ -1,6 +1,6 @@
 # 首次使用
 
-第一次进入 DCE 5.0 AI Lab 时，你需要了解：
+第一次进入 DCE AI Lab 时，你需要了解：
 
 - [首次使用](#首次使用)
   - [选择工作空间](#选择工作空间)
@@ -16,7 +16,7 @@
 
 ## 选择工作空间
 
-首次进入 DCE 5.0 AI Lab 时，首先必须选择一个[工作空间](../../ghippo/user-guide/workspace/workspace.md)。
+首次进入 DCE AI Lab 时，首先必须选择一个[工作空间](../../ghippo/user-guide/workspace/workspace.md)。
 
 ![选择工作空间](../images/workspace.png)
 
@@ -55,7 +55,7 @@
 
 ## 角色
 
-DCE 5.0 AI Lab 提供了两种角色，可以点击左下角的菜单项切换两种管理员角色：
+DCE AI Lab 提供了两种角色，可以点击左下角的菜单项切换两种管理员角色：
 
 - 管理员 - 开发控制台：可以处理 Notebook、训练任务和数据集等。
   参阅[开发控制台快速入门](../developer/quick-start.md)。
@@ -65,6 +65,6 @@ DCE 5.0 AI Lab 提供了两种角色，可以点击左下角的菜单项切换�
 
 ![运维概览](../images/oam-overview.png)
 
-[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

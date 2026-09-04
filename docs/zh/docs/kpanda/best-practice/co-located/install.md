@@ -3,7 +3,7 @@
 Koordinator 是一个基于 QoS 的 Kubernetes 混合工作负载调度系统。它旨在提高对延迟敏感的工作负载和批处理作业的运行时效率和可靠性，
 简化与资源相关的配置调整的复杂性，并增加 Pod 部署密度以提高资源利用率。
 
-DCE 5.0 预置了 Koordinator v1.5.0 离线包。 
+DCE 预置了 Koordinator v1.5.0 离线包。 
 
 本文介绍如何离线部署 Koordinator。
 

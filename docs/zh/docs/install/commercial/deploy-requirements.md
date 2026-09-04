@@ -1,30 +1,30 @@
 
 # 部署要求
 
-部署 DCE 5.0 时需要先做好软件规划、硬件规划、网络规划。
+部署 DCE 时需要先做好软件规划、硬件规划、网络规划。
 
 ## 操作系统要求
 
 | **架构** | **操作系统** | **测试 OS、Kernel 信息** | 备注（安装指导文档） |
 | -------- | ----------- | ----------------- | ----------------- |
-| AMD 64 | Redhat 8.X | Redhat 8.4<br />4.18.0-305.el8.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
-| | Redhat 7.X | Redhat 7.9<br />3.10.0-1160.e17.x86 | [离线安装 DCE 5.0 商业版](start-install.md) |
-| | Redhat 9.X | Redhat 9.2<br />5.14.0-284.11.1.e9_2.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
-| | Ubuntu 22.04 | 5.15.0-78-generic | [离线安装 DCE 5.0 商业版](start-install.md) |
-| | Ubuntu 24.04 | / | [离线安装 DCE 5.0 商业版](start-install.md) |
-| | Rocky Linux 9.2 | 5.14.0-284.11.1.el9_2.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
-| | 统信 UOS V20 （1020a） | 5.4.0-125-generic | [UOS V20 (1020a) 上部署 DCE 5.0 商业版](../os-install/uos-v20-install-dce5.0.md) |
-| | openEuler 22.03 | 5.10.0-60.18.0.50.oe2203.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
-| | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | [Oracle Linux R9 U1 上部署 DCE 5.0 商业版](../os-install/oracleLinux-install-dce5.0.md) |
-| | TencentOS Server 3.1 | 5.4.119-19.0009.14 | [TencentOS Server 3.1 上部署 DCE 5.0 商业版](../os-install/TencentOS-install-dce5.0.md) |
-| ARM 64 | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | [离线安装 DCE 5.0 商业版](start-install.md) |
-| | 银河麒麟 OS V10 SP3 | 4.19.90-89.11.v2401.ky10.aarch64 | [离线安装 DCE 5.0 商业版](start-install.md) |
+| AMD 64 | Redhat 8.X | Redhat 8.4<br />4.18.0-305.el8.x86_64 | [离线安装 DCE 商业版](start-install.md) |
+| | Redhat 7.X | Redhat 7.9<br />3.10.0-1160.e17.x86 | [离线安装 DCE 商业版](start-install.md) |
+| | Redhat 9.X | Redhat 9.2<br />5.14.0-284.11.1.e9_2.x86_64 | [离线安装 DCE 商业版](start-install.md) |
+| | Ubuntu 22.04 | 5.15.0-78-generic | [离线安装 DCE 商业版](start-install.md) |
+| | Ubuntu 24.04 | / | [离线安装 DCE 商业版](start-install.md) |
+| | Rocky Linux 9.2 | 5.14.0-284.11.1.el9_2.x86_64 | [离线安装 DCE 商业版](start-install.md) |
+| | 统信 UOS V20 （1020a） | 5.4.0-125-generic | [UOS V20 (1020a) 上部署 DCE 商业版](../os-install/uos-v20-install-dce5.0.md) |
+| | openEuler 22.03 | 5.10.0-60.18.0.50.oe2203.x86_64 | [离线安装 DCE 商业版](start-install.md) |
+| | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | [Oracle Linux R9 U1 上部署 DCE 商业版](../os-install/oracleLinux-install-dce5.0.md) |
+| | TencentOS Server 3.1 | 5.4.119-19.0009.14 | [TencentOS Server 3.1 上部署 DCE 商业版](../os-install/TencentOS-install-dce5.0.md) |
+| ARM 64 | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | [离线安装 DCE 商业版](start-install.md) |
+| | 银河麒麟 OS V10 SP3 | 4.19.90-89.11.v2401.ky10.aarch64 | [离线安装 DCE 商业版](start-install.md) |
 
 !!! note
 
     - CentOS 7 将在 2024 年 6 月 30 日结束支持，企业需根据自身情况进行替换操作系统
     - 上述的操作系统、内核均为测试人员使用的版本
-    - 若非上表中声明的操作系统，请参考文档[其他 Linux 离线部署 DCE 5.0 商业版](../os-install/otherlinux.md)进行安装部署。
+    - 若非上表中声明的操作系统，请参考文档[其他 Linux 离线部署 DCE 商业版](../os-install/otherlinux.md)进行安装部署。
 
 ## 内核要求
 
@@ -83,7 +83,7 @@
 | **数量** | **服务器角色** | **服务器用途** | **cpu 数量** | **内存容量** | **系统硬盘** | **未分区的硬盘** |
 | ------- | ------------- | ------------ | ----------- | ----------- | ----------- | -------------- |
 | 1 | 火种节点 | 1. 执行安装部署程序<br />2. 运行平台所需的镜像仓库和 chart museum | 2 核 | 4 GB | 200 GB | - |
-| 3 | 控制面 | 1. 运行 DCE 5.0 组件<br />2. 运行 kubernetes 系统组件 | 16核 | 32 GB | 100 GB | 200 GB |
+| 3 | 控制面 | 1. 运行 DCE 组件<br />2. 运行 kubernetes 系统组件 | 16核 | 32 GB | 100 GB | 200 GB |
 
 如果您需要对系统硬盘进行分区管理，请参考下表分配分区资源。
 
@@ -105,7 +105,7 @@
 | **数量** | **服务器角色** | **服务器用途** | **cpu 数量** | **内存容量** | **系统硬盘** | **未分区的硬盘** |
 | ------- | ------------- | ------------ | ----------- | ----------- | ----------- | -------------- |
 | 1 | 火种节点 | 1. 执行安装部署程序<br />2. 运行平台所需的镜像仓库和 chart museum | 4 核 | 8 GB | 300 GB | - |
-| 3 | master | 1. 运行 DCE 5.0 组件<br /> 2. 运行 kubernetes 系统组件 | 16 核 | 16 GB | 100 GB | 200 GB |
+| 3 | master | 1. 运行 DCE 组件<br /> 2. 运行 kubernetes 系统组件 | 16 核 | 16 GB | 100 GB | 200 GB |
 | 3 | worker | 单独运行日志相关组件 | 16 核 | 32 GB | 100 GB | 200 GB |
 
 如果您需要对系统硬盘进行分区管理，请参考下表分配分区资源。

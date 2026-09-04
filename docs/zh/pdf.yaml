@@ -2,11 +2,11 @@
 # This file is used to split config and docs navigation
 
 # Project information
-site_name: DaoCloud Enterprise
+site_name: DaoCloud Documentation
 site_url: https://docs.daocloud.io/
 site_author: DaoCloud
 site_description: >-
-  DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。
+  DaoCloud 是全球 AI 领域的开源先锋，引领 AI 技术浪潮，助力推动数字化转型。
 
 # copyright
 copyright: Copyright &copy; 2016 - 2026 DaoCloud

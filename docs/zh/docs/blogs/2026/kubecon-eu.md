@@ -174,7 +174,7 @@ llm-d 不再只是一个圈内人讨论的前沿方向，而是开始被放到�
     * 类似 KEP
     * 分为 MUST/SHOULD
 
-DaoCloud 已在 2025 年 10 月完成认证，其 DCE 5.0 成为：
+DaoCloud 已在 2025 年 10 月完成认证，其 DCE 成为：
 **国内首个通过 Kubernetes v1.33 AI Conformance 的企业级平台**
 
 这件事的意义不只是“通过认证”，而是：

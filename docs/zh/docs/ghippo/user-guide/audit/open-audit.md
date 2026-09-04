@@ -6,7 +6,7 @@
     - 日志输出开关已打开
     - 日志采集开关已打开
 
-## DCE 5.0 安装完成时状态
+## DCE 安装完成时状态
 
 - 社区版安装管理集群过程中未操作 K8s 审计日志开关
 - 商业版管理集群的 K8s 审计日志开关默认开启
@@ -149,7 +149,7 @@ helm upgrade --install --create-namespace --version ${insight_version_code} --cl
 
 将该按钮设置为启用状态，开启采集 K8s 审计日志功能。
 
-通过 DCE 5.0 创建工作集群时，确认该集群的 K8s 审计日志选择 ‘true'，这样创建出来的工作集群 K8s 审计日志是开启的。
+通过 DCE 创建工作集群时，确认该集群的 K8s 审计日志选择 ‘true'，这样创建出来的工作集群 K8s 审计日志是开启的。
 
 ![审计日志开启](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker03.png)
 

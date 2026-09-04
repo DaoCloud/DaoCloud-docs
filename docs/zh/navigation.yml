@@ -9,7 +9,7 @@ nav:
               - 功能和优势: dce/features.md
               - 适用场景: dce/scenario.md
               - 我们是 K8s 认证服务商: dce/kcsp.md
-              - DCE 5.0 Release Notes:
+              - DCE Release Notes:
                   - v0.43.0-20260731 发布: dce/dce-rn/20260731.md
                   - v0.42.0-20260630 发布: dce/dce-rn/20260630.md
                   - v0.41.0-20260531 发布: dce/dce-rn/20260531.md
@@ -47,7 +47,7 @@ nav:
                       - v0.10.0-20230731 发布: dce/dce-rn/20230731.md
                       - v0.9.0-20230630 发布: dce/dce-rn/20230630.md
                       - v0.8.0-20230531 发布: dce/dce-rn/20230531.md
-              - DCE 5.0 Roadmap: dce/roadmap.md
+              - DCE Roadmap: dce/roadmap.md
               - DaoCloud 产品支持政策: dce/support.md
               - 云原生词汇: dce/terms.md
           - 安装教程:
@@ -88,7 +88,7 @@ nav:
                   - 轻量化部署裁剪方案验证: install/light-install/light-install-solution.md
                   - 安装器实现轻量化部署: install/light-install/install-light.md
               - 升级:
-                  - 升级 DCE 5.0 组件: install/upgrade.md
+                  - 升级 DCE 组件: install/upgrade.md
                   - 标准版升级白金版: install/evolve.md
                   - 升级注意事项: install/upgrade-notes.md
               - 卸载和导入:
@@ -99,7 +99,7 @@ nav:
                   - 集群部署模式使用场景: install/commercial/scenarios.md
                   - Global 集群实践:
                       - etcd 采用host模式与控制面分离: install/best-practices/etcd-host-deploy.md
-                      - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
+                      - DCE 一体机部署: install/best-practices/all-in-one-machine.md
                   - 火种节点实践:
                       - 火种节点高可用方案: install/best-practices/thinder-ha.md
                       - 火种节点备份与还原: install/best-practices/thinder-restore.md
@@ -582,7 +582,7 @@ nav:
               - 集成 EgressGateway:
                   - 介绍: network/modules/egressgateway/index.md
                   - Release Notes: network/modules/egressgateway/release-notes.md
-                  - 在 DCE 5.0 上安装运行:
+                  - 在 DCE 上安装运行:
                       - 安装: network/modules/egressgateway/install.md
                       - 创建网关实例: network/modules/egressgateway/create_eg.md
                       - 创建网关策略: network/modules/egressgateway/create-egpolicy.md
@@ -1575,9 +1575,9 @@ nav:
                       - 接入导航栏: ghippo/best-practice/gproduct/nav.md
                       - 接入路由和登录认证: ghippo/best-practice/gproduct/route-auth.md
                   - 集成与被集成(OEM IN/OUT):
-                      - OEM IN(客户系统集成到 DCE 5.0): ghippo/best-practice/oem/oem-in.md
-                      - OEM OUT(DCE 5.0 集成到客户系统): ghippo/best-practice/oem/oem-out.md
-                      - 定制 DCE 5.0 对接 IdP: ghippo/best-practice/oem/custom-idp.md
+                      - OEM IN(客户系统集成到 DCE): ghippo/best-practice/oem/oem-in.md
+                      - OEM OUT(DCE 集成到客户系统): ghippo/best-practice/oem/oem-out.md
+                      - 定制 DCE 对接 IdP: ghippo/best-practice/oem/custom-idp.md
                       - Keycloak 自定义 IdP: ghippo/best-practice/oem/keycloak-idp.md
                   - 定制导航栏:
                       - 定制导航栏: ghippo/best-practice/menu/navigator.md
@@ -1594,7 +1594,7 @@ nav:
                   - 管理设备: topohub/device/manage-device.md
   - 视频教程:
       - 索引: videos/index.md
-      - DCE 5.0:
+      - DCE:
           - 入门:
               - 安装教程: videos/install.md
               - 场景化视频: videos/use-cases.md
@@ -1627,8 +1627,8 @@ nav:
   - 下载中心:
       - DaoCloud 下载站:
           - 导览页: download/index.md
-          - 下载 DCE 5.0 社区版: download/free/dce5-installer-history.md
-          - 下载 DCE 5.0 商业版: download/business/dce5-installer-history.md
+          - 下载 DCE 社区版: download/free/dce5-installer-history.md
+          - 下载 DCE 商业版: download/business/dce5-installer-history.md
           - 下载 Addon 离线包: download/addon/history.md
           - 下载子模块:
               - 应用工作台: download/modules/amamba.md
@@ -1747,7 +1747,7 @@ nav:
           - KWOK 介绍: blogs/2023/230301-kwok.md
           - 社区版涉及的开源项目: blogs/2023/230214-open-projects.md
           - DaoCloud 与 K8s: blogs/2023/230214-daocloud_k8s.md
-          - DCE 5.0 攻坚语录集: blogs/2023/230201-peter.md
+          - DCE 攻坚语录集: blogs/2023/230201-peter.md
           - 2023 年云原生预测: blogs/2023/230201-forecast.md
           - 让闲置算力跑起来: blogs/2023/230110-res-usage.md
       - 2022:

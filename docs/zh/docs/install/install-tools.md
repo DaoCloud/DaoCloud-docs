@@ -1,6 +1,6 @@
 # 安装依赖项
 
-安装 DCE 5.0 之前，需要先安装一些依赖项。
+安装 DCE 之前，需要先安装一些依赖项。
 
 - 对于社区版，请在 K8s Master 节点上安装依赖项。
 - 对于商业版，请在[火种节点](./commercial/deploy-arch.md)上安装依赖项。
@@ -93,4 +93,4 @@
         ./install_prerequisite_${VERSION}.sh offline full
         ```
 
-接下来就可以安装 DCE 5.0 [社区版](community/resources.md)或[商业版](commercial/deploy-requirements.md)了。
+接下来就可以安装 DCE [社区版](community/resources.md)或[商业版](commercial/deploy-requirements.md)了。

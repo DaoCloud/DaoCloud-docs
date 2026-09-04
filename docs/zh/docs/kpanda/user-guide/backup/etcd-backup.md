@@ -10,7 +10,7 @@ etcd 备份是以集群数据为核心的备份。在硬件设备损坏，开发
 
 - 创建[命名空间](../namespaces/createns.md)和[用户](../../../ghippo/user-guide/access-control/user.md)，并为用户授予 [NS Admin](../permissions/permission-brief.md#ns-admin) 或更高权限。详情可参考[命名空间授权](../permissions/cluster-ns-auth.md)。
 
-- 准备一个 MinIO 实例。建议通过 DCE 5.0 的 MinIO 中间件进行创建，具体步骤可参考 [MinIO 对象存储](../../../middleware/minio/user-guide/create.md)。
+- 准备一个 MinIO 实例。建议通过 DCE 的 MinIO 中间件进行创建，具体步骤可参考 [MinIO 对象存储](../../../middleware/minio/user-guide/create.md)。
 
 ## 创建 etcd 备份
 

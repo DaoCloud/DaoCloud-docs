@@ -1,6 +1,6 @@
 # 安装简介
 
-DCE 5.0 大体分为两个版本：社区版和商业版。 [下载 DCE 5.0 商业版安装部署手册 PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/dce5.0-install.pdf){ .md-button }
+DCE 大体分为两个版本：社区版和商业版。 [下载 DCE 商业版安装部署手册 PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/dce5.0-install.pdf){ .md-button }
 
 - 社区版包括容器管理、全局管理、可观测性三大模块，可永久免费使用。
 - 商业版在社区版的基础上可按需购买服务网格、微服务引擎、多云编排、数据服务中间件、镜像仓库、云边协同、容器化虚拟机等高级模块，
@@ -53,7 +53,7 @@ DCE 5.0 大体分为两个版本：社区版和商业版。 [下载 DCE 5.0 商�
 
 ## 社区版安装流程
 
-DCE 5.0 社区版的安装流程如下图：
+DCE 社区版的安装流程如下图：
 
 ```mermaid
 flowchart TB
@@ -77,7 +77,7 @@ subgraph first[安装社区版]
     tools -.-> s2[通过标准 k8s 集群<br>离线安装]
 end
 
-start([fa:fa-user DCE 5.0 社区版<br>安装和使用流程]) --> first
+start([fa:fa-user DCE 社区版<br>安装和使用流程]) --> first
 start --> second
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:px,color:#000000, font-size:15px;
@@ -109,12 +109,12 @@ click ask "https://docs.daocloud.io/install/index.html#_4"
 
 ## 商业版安装流程
 
-DCE 5.0 商业版的安装流程如下图：
+DCE 商业版的安装流程如下图：
 
 ```mermaid
 flowchart TB
 
-    start([fa:fa-user DCE 5.0 商业版<br>安装流程]) -.- arch[了解部署架构]
+    start([fa:fa-user DCE 商业版<br>安装流程]) -.- arch[了解部署架构]
     arch --> deploy[查阅部署要求]
     deploy --> prepare[准备工作]
     prepare --> download[下载离线包]
@@ -158,13 +158,13 @@ click other "https://docs.daocloud.io/install/os-install/otherlinux.html"
 
 ## 联系我们
 
-DCE 5.0 的安装流程可能会有变更。请收藏此页，关注更新动态，更多操作文档也在制作之中。
+DCE 的安装流程可能会有变更。请收藏此页，关注更新动态，更多操作文档也在制作之中。
 
 - 若有任何安装或使用问题，请[提出反馈](https://github.com/DaoCloud/DaoCloud-docs/issues)。
 - 欢迎扫描二维码，与开发者畅快交流：
 
     ![社区版交流群](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[下载 DCE](../download/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
 [安装常见问题](./faq.md){ .md-button .md-button--primary }

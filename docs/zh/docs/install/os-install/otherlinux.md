@@ -1,9 +1,9 @@
-# 在其他 Linux 上离线部署 DCE 5.0 商业版
+# 在其他 Linux 上离线部署 DCE 商业版
 
-本文将介绍如何在其他 Linux 上部署 DCE 5.0。
+本文将介绍如何在其他 Linux 上部署 DCE。
 [安装器 v0.7.0](../release-notes.md#v070) 及更高版本支持这种部署方式。
 
-其他 Linux 本质上是由于 DCE 5.0 对某些 Linux 没有提供安装系统离线包（OS package），需要您自己去制作。
+其他 Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离线包（OS package），需要您自己去制作。
 
 ## 已验证的操作系统
 
@@ -243,7 +243,7 @@
     }
     ```
 
-5. 开始安装 DCE 5.0。
+5. 开始安装 DCE。
 
     ```bash
     ./dce5-installer cluster-create -m ./sample/manifest.yaml -c ./sample/clusterConfig.yaml
@@ -258,7 +258,7 @@
         - `-d` 开启 debug 模式
         - `--serial` 指定后所有安装任务串行执行
 
-6. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
+6. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 啦！
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -266,4 +266,4 @@
 
         请记录好提示的 URL，方便下次访问。
 
-7. 成功安装 DCE 5.0 商业版之后，请联系我们授权：电邮 [info@daocloud.io](mailto:info@daocloud.io) 或致电 400 002 6898。
+7. 成功安装 DCE 商业版之后，请联系我们授权：电邮 [info@daocloud.io](mailto:info@daocloud.io) 或致电 400 002 6898。

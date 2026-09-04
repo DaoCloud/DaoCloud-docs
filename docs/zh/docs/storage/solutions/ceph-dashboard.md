@@ -1,8 +1,8 @@
 # 如何实现 Ceph Dashboard 仪表盘
 
-本页演示如何在 DCE 5.0 中导入并成功使用 Ceph 监控面板。
+本页演示如何在 DCE 中导入并成功使用 Ceph 监控面板。
 
-## 在 DCE 5.0 中部署 Rook-ceph
+## 在 DCE 中部署 Rook-ceph
 
 先[部署 Rook-ceph](./dce-rook-ceph.md)，再部署 rook-ceph-cluster。
 

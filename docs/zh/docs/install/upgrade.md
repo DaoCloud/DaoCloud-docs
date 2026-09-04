@@ -1,19 +1,19 @@
-# 升级 DCE 5.0 组件
+# 升级 DCE 组件
 
-DCE 5.0 组件的升级包含升级 DCE 5.0 产品功能模块、升级 DCE 5.0 基础设施模块。
+DCE 组件的升级包含升级 DCE 产品功能模块、升级 DCE 基础设施模块。
 
-- DCE 5.0 产品功能模块由容器管理、全局管理、可观测性等十几个子模块构成，主要指
+- DCE 产品功能模块由容器管理、全局管理、可观测性等十几个子模块构成，主要指
   [manifest.yaml](commercial/manifest.md) 文件中的 `components` 部分。
-- DCE 5.0 基础设施模块的组件特指 [manifest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分。
+- DCE 基础设施模块的组件特指 [manifest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分。
 
 !!! warning
 
-    - 由于 DCE 5.0 包含较多产品模块，所以使用安装器升级 DCE 5.0 组件时，建议逐版本升级，请勿跨多个版本进行升级！
-    - 升级 DCE 5.0 组件可能会覆盖您的业务数据，请先备份好数据，重要！！！
+    - 由于 DCE 包含较多产品模块，所以使用安装器升级 DCE 组件时，建议逐版本升级，请勿跨多个版本进行升级！
+    - 升级 DCE 组件可能会覆盖您的业务数据，请先备份好数据，重要！！！
 
 ## 前提条件
 
-- 您需要有一个 DCE 5.0 的集群环境，参阅[离线化部署商业版](commercial/start-install.md)
+- 您需要有一个 DCE 的集群环境，参阅[离线化部署商业版](commercial/start-install.md)
 - 请确保您的火种机器还存活
 - 请确认您想要升级的版本，参阅[版本发布说明](release-notes.md)
 
@@ -21,7 +21,7 @@ DCE 5.0 组件的升级包含升级 DCE 5.0 产品功能模块、升级 DCE 5.0 
 
 本次操作步骤演示如何从 v0.20.0 升级到 v0.21.0。
 
-### 第 1 步：下载 DCE 5.0 离线包
+### 第 1 步：下载 DCE 离线包
 
 可以在[下载中心](../download/index.md)下载最新版本。
 本文以 v0.21.0 为例。
@@ -90,9 +90,9 @@ spec:
 
 文件在解压后的离线包 `offline/sample` 目录下。
 
-#### 配置 DCE 5.0 产品功能模块
+#### 配置 DCE 产品功能模块
 
-DCE 5.0 产品功能模块的组件特指 [manifest.yaml](commercial/manifest.md) 文件中的 `components` 部分。
+DCE 产品功能模块的组件特指 [manifest.yaml](commercial/manifest.md) 文件中的 `components` 部分。
 如果有些产品组件不需要升级，可以在对应组件下选择关闭。如果采用以下配置，更新时将不会对 Kpanda（容器管理）进行升级：
 
 ```yaml title="manifest.yaml"
@@ -103,9 +103,9 @@ DCE 5.0 产品功能模块的组件特指 [manifest.yaml](commercial/manifest.md
       variables:
 ```
 
-#### 配置 DCE 5.0 基础设施模块
+#### 配置 DCE 基础设施模块
 
-DCE 5.0 基础设施模块的组件特指 [manifest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分，如下配置就是基础设施中的 `hwameiStor` 组件：
+DCE 基础设施模块的组件特指 [manifest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分，如下配置就是基础设施中的 `hwameiStor` 组件：
 
 ```yaml title="manifest.yaml"
   infrastructures:
@@ -117,7 +117,7 @@ DCE 5.0 基础设施模块的组件特指 [manifest.yaml](commercial/manifest.md
 
 ### 第 4 步：开始升级
 
-#### 升级 DCE 5.0 产品功能模块
+#### 升级 DCE 产品功能模块
 
 !!! note
 
@@ -136,7 +136,7 @@ DCE 5.0 基础设施模块的组件特指 [manifest.yaml](commercial/manifest.md
 ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade gproduct
 ```
 
-#### 升级 DCE 5.0 基础设施模块
+#### 升级 DCE 基础设施模块
 
 执行升级命令：
 
@@ -144,7 +144,7 @@ DCE 5.0 基础设施模块的组件特指 [manifest.yaml](commercial/manifest.md
 ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructure
 ```
 
-#### 升级 DCE 5.0
+#### 升级 DCE
 
 执行升级命令：
 
@@ -179,9 +179,9 @@ Global Flags:
 
 升级参数说明：
 
-- `install-app` 或 `cluster-create`，代表安装 DCE 5.0 的安装模式类型。如果最初的环境是通过 `cluster-create` 来安装的，则升级时也采用这个命令
+- `install-app` 或 `cluster-create`，代表安装 DCE 的安装模式类型。如果最初的环境是通过 `cluster-create` 来安装的，则升级时也采用这个命令
 - `--upgrade` 可以简写为 `-u`，目前支持升级：
-    - DCE 5.0 产品功能模块（gproduct）
+    - DCE 产品功能模块（gproduct）
     - 基础设施模块（infrastructure）
     - 本地存储模块（hwameistor）
 - 如果需要一起升级产品功能模块和基础设施模块，则可以指定参数 `--upgrade infrastructure,gproduct`
@@ -195,5 +195,5 @@ Global Flags:
 
     如果你在使用 `-m ./offline/sample/manifest.yaml` 运行命令时报错，可以尝试执行以下替换操作：
 
-    - 对于 DCE 5.0 社区版，替换为 `-m ./offline/sample/manifest-community.yaml`  
-    - 对于 DCE 5.0 商业版，替换为 `-m ./offline/sample/manifest-enterprise.yaml`
+    - 对于 DCE 社区版，替换为 `-m ./offline/sample/manifest-community.yaml`  
+    - 对于 DCE 商业版，替换为 `-m ./offline/sample/manifest-enterprise.yaml`

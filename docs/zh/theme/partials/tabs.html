@@ -2,19 +2,28 @@
 <nav class="md-tabs" aria-label="{{ lang.t('tabs') }}" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
+      {% set ns = namespace(tf_url="", tf_active=false) %}
+      {% for nav_item in nav.items %}
+        {% if nav_item.title == "Token 工厂文档" %}
+          {% set ns.tf_url = (nav_item.children | first).url | url %}
+          {% set ns.tf_active = nav_item.active %}
+        {% endif %}
+      {% endfor %}
       {% for nav_item in nav.items %}
         {% if nav_item.title == "产品文档" %}
-          <li class="md-tabs__item product-docs-menu{% if nav_item.active %} md-tabs__item--active{% endif %}">
+          <li class="md-tabs__item product-docs-menu{% if nav_item.active or ns.tf_active %} md-tabs__item--active{% endif %}">
             <details>
               <summary class="md-tabs__link" aria-label="产品文档">
                 产品文档 <span class="product-docs-menu__caret" aria-hidden="true">▾</span>
               </summary>
               <div class="product-docs-menu__list" role="menu" aria-label="产品文档">
-                <a href="{{ (nav_item.children | first).url | url }}" role="menuitem">DCE 5.0 文档</a>
+                <a href="{{ (nav_item.children | first).url | url }}" role="menuitem">DCE 文档</a>
                 <a href="https://docs.d.run/" rel="noopener noreferrer" role="menuitem">d.run 文档</a>
+                <a href="{{ ns.tf_url }}" role="menuitem">Token 工厂文档</a>
               </div>
             </details>
           </li>
+        {% elif nav_item.title == "Token 工厂文档" %}
         {% else %}
           {{ item.render(nav_item) }}
         {% endif %}

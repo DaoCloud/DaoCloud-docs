@@ -24,7 +24,7 @@ Elasticsearch 支持的通用功能特性如下：
 | 数据采集   | ElasticSearch 数据导入API、Maxcompute 数据导入工具、全量/增量采集方式 | 丰富的原生数据采集接口，集成 Maxcompute 数据导入工具 |
 | 服务鉴权   | 服务级别的用户鉴权机制                                       | 统一的用户鉴权设置                                   |
 
-在 DCE 5.0 中部署 Elasticsearch 后，还将支持以下特性：
+在 DCE 中部署 Elasticsearch 后，还将支持以下特性：
 
 - 支持 Elasticsearch 专有节点、热数据节点、冷数据节点、数据节点角色部署
 - 集成 Kibana

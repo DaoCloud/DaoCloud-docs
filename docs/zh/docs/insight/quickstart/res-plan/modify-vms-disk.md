@@ -7,7 +7,7 @@ vmstorge 磁盘规范请参考 [vmstorage 磁盘容量规划](../res-plan/vms-re
 
 ### 开启存储池扩容
 
-1. 以全局服务集群管理员权限登录 DCE 5.0 平台，点击 __容器管理__ -> __集群列表__ ，点击 __kpanda-global-cluster__ 集群。
+1. 以全局服务集群管理员权限登录 DCE 平台，点击 __容器管理__ -> __集群列表__ ，点击 __kpanda-global-cluster__ 集群。
 
 1. 选择左侧导航 __容器存储__ -> __数据卷声明(PVC)__ ，找到 vmstorage 绑定的数据卷声明。
 
@@ -27,7 +27,7 @@ vmstorge 磁盘规范请参考 [vmstorage 磁盘容量规划](../res-plan/vms-re
 
 ### 更改 vmstorage 的磁盘容量
 
-1. 以全局服务集群管理员权限登录 DCE 5.0 平台，进入 __kpanda-global-cluster__ 集群详情。
+1. 以全局服务集群管理员权限登录 DCE 平台，进入 __kpanda-global-cluster__ 集群详情。
 
 1. 选择左侧导航 __自定义资源__ ，找到 __vmcluster__ 的自定义资源。
 
@@ -57,7 +57,7 @@ vmstorge 磁盘规范请参考 [vmstorage 磁盘容量规划](../res-plan/vms-re
 
 若存储卷扩容失败，可参考以下方法克隆存储卷。
 
-1. 以全局服务集群管理员权限登录 DCE 5.0 平台，进入 __kpanda-global-cluster__ 集群详情。
+1. 以全局服务集群管理员权限登录 DCE 平台，进入 __kpanda-global-cluster__ 集群详情。
 
 1. 选择左侧导航 __工作负载__ -> __有状态负载__ ，找到 __vmstorage__ 的有状态负载，点击目标右侧的 __┇__ ，在弹出菜单中选择 __状态__ -> __停止__ -> __确定__ 。
 
@@ -69,7 +69,7 @@ vmstorge 磁盘规范请参考 [vmstorage 磁盘容量规划](../res-plan/vms-re
     kubectl cp -n insight-system vmstorage-insight-victoria-metrics-k8s-stack-1:vm-data ./vm-data
     ```
 
-1. 登录 DCE 5.0 平台进入 __kpanda-global-cluster__ 集群详情，选择左侧导航 __容器存储__ -> __数据卷(PV)__ ，点击右上角的 __克隆__ ，并修改数据卷的容量。
+1. 登录 DCE 平台进入 __kpanda-global-cluster__ 集群详情，选择左侧导航 __容器存储__ -> __数据卷(PV)__ ，点击右上角的 __克隆__ ，并修改数据卷的容量。
 
     ![克隆](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/vmdisk15.png)
 

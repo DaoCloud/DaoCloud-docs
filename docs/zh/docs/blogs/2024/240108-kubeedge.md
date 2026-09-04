@@ -2,7 +2,7 @@
 
 > 作者：[WillardHu](https://github.com/WillardHu) 和 [JiaweiGithub](https://github.com/JiaweiGithub)
 
-KubeEdge 是 DCE 5.0 [云边协同](../../kant/intro/index.md)的核心组件，DaoCloud
+KubeEdge 是 DCE [云边协同](../../kant/intro/index.md)的核心组件，DaoCloud
 持续积极跟随、推进、规划 KubeEdge 的各项特性。
 
 ## 版本变更

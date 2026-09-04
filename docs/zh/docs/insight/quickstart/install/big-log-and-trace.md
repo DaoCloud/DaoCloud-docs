@@ -65,7 +65,7 @@
 
 ## 通过安装器开启
 
-通过安装器部署/升级 DCE 5.0 时使用的 manifest.yaml 中存在 infrastructures.kafka 字段，
+通过安装器部署/升级 DCE 时使用的 manifest.yaml 中存在 infrastructures.kafka 字段，
 如果想开启可观测的大日志和大链路模式，则需要启用 kafka：
 
 ```yaml title="manifest.yaml"

@@ -11,18 +11,18 @@ AI 场景专属的功能、API 和配置要求，为 AI 工作负载的跨环境
     必须先获得 Kubernetes 合规认证，才能再申请 AI 合规认证。
 
 作为国内开源事业的领军企业，DaoCloud 紧跟云原生 AI 发展潮流。在社区推出 Kubernetes AI Conformance
-合规标准后，率先针对目前广泛使用的 Kubernetes v1.33 启动 [DCE 5.0](https://docs.daocloud.io/) 平台的
+合规标准后，率先针对目前广泛使用的 Kubernetes v1.33 启动 [DCE](https://docs.daocloud.io/) 平台的
 AI 合规测试，并于 2025 年 10 月[成功通过认证](https://github.com/cncf/ai-conformance/pull/13)，
 成为国内首个在该版本获得认证的企业级 AI/ML 平台。
 
 ![initial adopters](../images/ai-conf02.jpeg)
 
-[DCE 5.0](https://daocloud.io/products/index.html) 是一款高性能、可扩展的云原生 AI 操作系统，
+[DCE](https://daocloud.io/products/index.html) 是一款高性能、可扩展的云原生 AI 操作系统，
 可在任意基础设施和环境中提供一致、稳定的体验，支持异构云、边缘云与多云编排。
 平台集成服务网格与微服务技术，实现全链路流量可追踪，并通过智能监控和动态可视化仪表盘，让集群、节点、应用与服务的健康状态清晰可见；
 原生支持 DevOps 和 GitOps 模式，实现应用交付标准化与自动化，并内置精选数据库与中间件，使运维更高效智能。
 
-DCE 5.0 模块化设计确保各功能独立解耦、灵活升级无影响，同时可与丰富 AI 生态产品对接，提供完整解决方案。经过近千家客户生产环境验证，
+DCE 模块化设计确保各功能独立解耦、灵活升级无影响，同时可与丰富 AI 生态产品对接，提供完整解决方案。经过近千家客户生产环境验证，
 构建了可靠的数字底座，助力企业释放 AI 生产力，迈向智能化、AI 驱动的数字未来。
 
 ## AI 合规项说明
@@ -96,7 +96,7 @@ Red Hat Openshift、SUSE RKE2 等国际知名平台共同入选，彰显了中�
 - SUSE 的 RKE2
 - Sidero Labs 的 Talos Linux
 
-DCE 5.0 此次通过认证，意味着其能为企业提供兼容标准、可移植、高可靠的 AI 运行环境，无论是大规模模型训练、高性能推理还是
+DCE 此次通过认证，意味着其能为企业提供兼容标准、可移植、高可靠的 AI 运行环境，无论是大规模模型训练、高性能推理还是
 MLOps 流水线部署，都能实现高效承载与灵活扩展。未来，DaoCloud 将持续深耕云原生 AI 生态，为企业 AI 数字化转型提供更坚实的技术底座。
 
 ![intial adopters](../images/ai-conf03.jpeg)

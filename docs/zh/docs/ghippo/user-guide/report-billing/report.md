@@ -32,7 +32,7 @@ hide:
 
 ## 操作步骤
 
-1. 使用具有 __Admin__ 角色的用户登录 DCE 5.0。点击左侧导航栏底部的 __全局管理__ -> __运营管理__ 。
+1. 使用具有 __Admin__ 角色的用户登录 DCE。点击左侧导航栏底部的 __全局管理__ -> __运营管理__ 。
 
     ![报表管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/gmagpiereport.png)
 

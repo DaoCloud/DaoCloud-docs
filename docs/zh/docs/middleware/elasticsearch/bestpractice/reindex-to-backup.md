@@ -21,7 +21,7 @@
 - 访问地址：`172.30.120.85:9200`
 - 用户名/密码：elastic/root123!
 
-### DCE 5.0 部署 Elasticsearch 实例
+### DCE 部署 Elasticsearch 实例
 
 - 版本：7.16.3
 - ES 访问地址：`https://10.6.178.179:30486`
@@ -29,7 +29,7 @@
 
 ## 操作步骤
 
-1. 修改 DCE 5.0 ES 的 CR 内容，将虚拟机 ES 的访问地址添加到白名单，如下图所示。
+1. 修改 DCE ES 的 CR 内容，将虚拟机 ES 的访问地址添加到白名单，如下图所示。
 
     ```yaml
     nodeSets:
@@ -62,7 +62,7 @@
 
 ### 使用 reindex 迁移单个索引
 
-- 在 DCE 5.0 ES 执行以下命令：
+- 在 DCE ES 执行以下命令：
 
     ```bash
     POST _reindex
@@ -82,7 +82,7 @@
     }
     ```
 
-- 迁移完成后，在 DCE 5.0 ES 中查询迁移的索引数据。
+- 迁移完成后，在 DCE ES 中查询迁移的索引数据。
 
     ```shell
     GET _cat/indices/test_data1

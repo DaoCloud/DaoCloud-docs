@@ -28,7 +28,7 @@
 
 可以参阅[视频教程](../../videos/kangaroo.md#_2)熟悉以下操作步骤：
 
-1. 使用具有 Workspace Admin 角色的用户登录 DCE 5.0，从左侧导航栏点击 __镜像仓库__ -> __仓库集成(工作空间)__ 。
+1. 使用具有 Workspace Admin 角色的用户登录 DCE，从左侧导航栏点击 __镜像仓库__ -> __仓库集成(工作空间)__ 。
 
     ![镜像仓库](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/related01.png)
 

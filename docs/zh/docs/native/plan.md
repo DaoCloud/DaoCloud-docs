@@ -17,7 +17,7 @@ docs.daocloud.io 的源文件已分布在 **4 个独立仓库**中，分属两�
 
 | 仓库 | 组织 | 内容 | 对应 URL | 部署目标 |
 |------|------|------|---------|---------|
-| `DaoCloud/DaoCloud-docs` | DaoCloud | DCE 5.0 全部文档 + 博客/视频/社区/开源生态 | `/` (根级，无产品前缀) | Qiniu Kodo |
+| `DaoCloud/DaoCloud-docs` | DaoCloud | DCE 全部文档 + 博客/视频/社区/开源生态 | `/` (根级，无产品前缀) | Qiniu Kodo |
 | `DaoCloud/daocloud-api-docs` | DaoCloud | OpenAPI 文档 | `/openapi/` | Qiniu Kodo / UCloud |
 | `DaoCloud/daocloud-download-docs` | DaoCloud | 下载中心文档 | `/download/` | Qiniu Kodo |
 | `d-run/drun-docs` | **d-run** (独立组织) | d.run 智算平台文档 | `docs.d.run` (独立域名) | Cloudflare Pages |
@@ -173,7 +173,7 @@ docs.daocloud.io/
 │
 ├── /                               # 门户首页（产品导航卡片）
 │
-├── /dce/                            # ── DCE 5.0（源: DaoCloud-docs 仓库） ──
+├── /dce/                            # ── DCE（源: DaoCloud-docs 仓库） ──
 │   ├── /dce/intro/                  # 产品介绍
 │   ├── /dce/kpanda/                 # 容器管理
 │   ├── /dce/amamba/                 # 应用工作台
@@ -253,7 +253,7 @@ products:
     source_dir: "docs/zh/docs/dce"
     url_prefix: "/dce"
     nav_file: "docs/zh/navigation-dce.yml"
-    display_name: "DCE 5.0"
+    display_name: "DCE"
     icon: "📦"
 
   openapi:
@@ -563,7 +563,7 @@ OpenAPI 导航追加到末尾，无产品层级分隔。
 ```python
 # merged_nav.py 升级后
 nav = [
-  {section: "DCE 5.0", items: dce_nav},
+  {section: "DCE", items: dce_nav},
   {section: "d.run",   items: drun_nav},
   {section: "TF",      items: tf_nav},
   {section: "共享",     items: shared_nav},
@@ -583,7 +583,7 @@ nav:
   # ── 产品文档 ──
   - 首页: index.md
 
-  - 📦 DCE 5.0:                    # ← from DaoCloud-docs (主仓库自身)
+  - 📦 DCE:                    # ← from DaoCloud-docs (主仓库自身)
       - 产品介绍: dce/intro/index.md
       - 容器管理:
           - 概述: dce/kpanda/intro.md
@@ -621,7 +621,7 @@ nav:
                   │
                   ▼
          ┌──────────────────────────────┐
-         │  📦 DCE 5.0            → /dce/     │
+         │  📦 DCE            → /dce/     │
          │  ⚡ d.run 智算平台      → /drun/    │
          │  🏭 Token Factory      → /tf/      │
          └──────────────────────────────┘

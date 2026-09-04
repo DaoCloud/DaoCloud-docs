@@ -1,7 +1,7 @@
 # 为全局服务集群的工作节点扩容
 
 本文将介绍离线模式下，如何手动为全局服务集群的工作节点进行扩容。
-默认情况下，不建议在部署 DCE 5.0 后对[全局服务集群](../user-guide/clusters/cluster-role.md#_2)进行扩容，请在部署 DCE 5.0 前做好资源规划。
+默认情况下，不建议在部署 DCE 后对[全局服务集群](../user-guide/clusters/cluster-role.md#_2)进行扩容，请在部署 DCE 前做好资源规划。
 
 !!! note
 
@@ -9,7 +9,7 @@
 
 ## 前提条件
 
-- 已经通过[火种节点](../../install/commercial/deploy-arch.md)完成 DCE 5.0 平台的部署，并且火种节点上的 kind 集群运行正常。
+- 已经通过[火种节点](../../install/commercial/deploy-arch.md)完成 DCE 平台的部署，并且火种节点上的 kind 集群运行正常。
 - 必须使用平台 Admin 权限的用户登录。
 
 ## 获取火种节点上 kind 集群的 kubeconfig
@@ -157,9 +157,9 @@
     systemctl restart containerd
     ```
 
-## 将 kind 集群接入 DCE 5.0 集群列表
+## 将 kind 集群接入 DCE 集群列表
 
-1. 登录 DCE 5.0，进入容器管理，在集群列表页右侧点击 __接入集群__ 按钮，进入接入集群页面。
+1. 登录 DCE，进入容器管理，在集群列表页右侧点击 __接入集群__ 按钮，进入接入集群页面。
 
 2. 在接入配置处，填入并编辑刚刚复制的 kind 集群的 kubeconfig 配置。
 
@@ -191,7 +191,7 @@
 
 ## 为全局服务集群添加标签
 
-1. 登录 DCE 5.0，进入容器管理，找到 __kapnda-glabal-cluster__ 集群，在右侧操作列表找到 __基础配置__ 菜单项并进入基础配置界面。
+1. 登录 DCE，进入容器管理，找到 __kapnda-glabal-cluster__ 集群，在右侧操作列表找到 __基础配置__ 菜单项并进入基础配置界面。
 
 2. 在基础配置页面，为全局服务集群添加的标签 `kpanda.io/managed-by=my-cluster`：
 

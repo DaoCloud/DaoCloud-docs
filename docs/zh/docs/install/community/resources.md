@@ -5,7 +5,7 @@ hide:
 
 # 集群资源规划
 
-您可以在标准 Kubernetes 集群上安装 DCE 5.0，也可以在 kind 集群上安装 DCE 5.0。
+您可以在标准 Kubernetes 集群上安装 DCE，也可以在 kind 集群上安装 DCE。
 
 标准 Kubernetes 集群资源的要求如下：
 

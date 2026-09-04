@@ -1,4 +1,4 @@
-# 离线安装 DCE 5.0 商业版
+# 离线安装 DCE 商业版
 
 请在安装之前阅读并了解[部署要求](deploy-requirements.md)、[部署架构](deploy-arch.md)、[准备工作](prepare.md)。
 
@@ -10,7 +10,7 @@
 
 ### 离线镜像包（必需）
 
-离线镜像包包含安装 DCE 5.0 各个产品模块所需的配置文件、镜像资源以及 Chart 包。
+离线镜像包包含安装 DCE 各个产品模块所需的配置文件、镜像资源以及 Chart 包。
 可以在[下载中心](../../download/index.md)下载最新版本。
 
 | CPU 架构 | 版本 | 点击下载 |
@@ -604,7 +604,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
         | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-openeuler22.03-v0.6.6.tar.gz) |
         | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-oracle9-v0.6.6.tar.gz) |
 
-统信 UOS V20（1020a）osPackage 部署请参考 [UOS V20 (1020a) 操作系统上部署 DCE 5.0](../os-install/uos-v20-install-dce5.0.md)。
+统信 UOS V20（1020a）osPackage 部署请参考 [UOS V20 (1020a) 操作系统上部署 DCE](../os-install/uos-v20-install-dce5.0.md)。
 
 ### Addon 离线包（可选）
 
@@ -617,7 +617,7 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
 ### 一键下载所需离线包
 
-我们提供了脚本来[一键下载安装 DCE 5.0 所需的离线包](../air-tag-download.md)。
+我们提供了脚本来[一键下载安装 DCE 所需的离线包](../air-tag-download.md)。
 
 以下是包含的离线包：
 
@@ -640,7 +640,7 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
 ## 第 3 步：安装
 
-1. 执行以下命令开始安装 DCE 5.0，安装器二进制文件位于 `offline/dce5-installer`。
+1. 执行以下命令开始安装 DCE，安装器二进制文件位于 `offline/dce5-installer`。
 
     ```shell
     ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml
@@ -661,10 +661,10 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
         如果你在使用 `-m ./offline/sample/manifest.yaml` 运行命令时报错，可以尝试执行以下替换操作：
 
-        - 对于 DCE 5.0 社区版，替换为 `-m ./offline/sample/manifest-community.yaml`  
-        - 对于 DCE 5.0 商业版，替换为 `-m ./offline/sample/manifest-enterprise.yaml`
+        - 对于 DCE 社区版，替换为 `-m ./offline/sample/manifest-community.yaml`  
+        - 对于 DCE 商业版，替换为 `-m ./offline/sample/manifest-enterprise.yaml`
 
-2. 安装完成后，命令行会提示安装成功。恭喜您！现在可以通过屏幕提示的 URL 使用默认的账号和密码（admin/changeme）探索全新的 DCE 5.0 啦！
+2. 安装完成后，命令行会提示安装成功。恭喜您！现在可以通过屏幕提示的 URL 使用默认的账号和密码（admin/changeme）探索全新的 DCE 啦！
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -672,4 +672,4 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
         请记录好提示的 URL，方便下次访问。
 
-3. 成功安装 DCE 5.0 商业版之后，请联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898。
+3. 成功安装 DCE 商业版之后，请联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898。

@@ -10,14 +10,14 @@ hide:
 服务网格是一种具备高性能、高易用性的全托管服务网格产品，通过提供完整的非侵入式的微服务治理方案，能够统一治理多云多集群的复杂环境，
 以基础设施的方式为用户提供服务流量治理、安全性治理、服务流量监控以及传统微服务（SpringCloud、Dubbo）功能。
 
-DCE 5.0 的服务网格兼容社区原生 Istio 开源服务网格，提供原生 Istio 接入管理能力。在较高的层次上，服务网格有助于降低服务治理的复杂性，减轻开发运维团队的压力。
+DCE 的服务网格兼容社区原生 Istio 开源服务网格，提供原生 Istio 接入管理能力。在较高的层次上，服务网格有助于降低服务治理的复杂性，减轻开发运维团队的压力。
 
-服务网格作为 DCE 5.0 产品的体系一员，无缝对接[容器管理](../../kpanda/intro/index.md)平台，可以为用户提供开箱即用的上手体验，
+服务网格作为 DCE 产品的体系一员，无缝对接[容器管理](../../kpanda/intro/index.md)平台，可以为用户提供开箱即用的上手体验，
 并作为基础设施为[微服务引擎](../../skoala/intro/index.md)提供容器微服务治理支持，方便用户通过单一平台对各类微服务系统做统一管理。
 
 ## 产品优势
 
-DCE 5.0 服务网格相比其他产品具备以下优势：
+DCE 服务网格相比其他产品具备以下优势：
 
 - 简单易用
 
@@ -149,6 +149,6 @@ flowchart TD
 - [服务网格中常见的 503 报错](../troubleshoot/503-issue.md)
 - [如何使集群中监听 localhost 的应用被其它 Pod 访问](../troubleshoot/localhost-by-pod.md)
 
-[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

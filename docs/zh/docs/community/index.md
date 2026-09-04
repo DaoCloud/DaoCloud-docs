@@ -7,7 +7,7 @@ hide:
 
 !!! info
 
-    「DaoCloud 道客」开源生态启航！这些是 DCE 5.0 相关的开源项目。
+    「DaoCloud 道客」开源生态启航！这些是 DCE 相关的开源项目。
 
 <div class="grid cards" markdown>
 
@@ -194,6 +194,6 @@ hide:
 Clusterpedia、HwameiStor、Merbridge、Spiderpool 和 Kubean 均已入选 <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>。
 </p>
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

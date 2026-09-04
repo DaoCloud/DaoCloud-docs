@@ -5,7 +5,7 @@ hide:
 
 # 容器管理
 
-容器管理是基于 Kubernetes 构建的面向云原生应用的容器化管理模块。它是 DCE 5.0 的核心，
+容器管理是基于 Kubernetes 构建的面向云原生应用的容器化管理模块。它是 DCE 的核心，
 基于原生多集群架构，解耦底层基础设施，实现多云与多集群统一化管理，大幅简化企业的应用上云流程，
 有效降低运维管理和人力成本。通过容器管理，您可以便捷创建 Kubernetes 集群，快速搭建企业级的容器云管理平台。
 
@@ -19,7 +19,7 @@ hide:
 
     ---
 
-    DCE 5.0 容器管理目前支持四种集群：全局服务集群、管理集群、工作集群、接入集群。
+    DCE 容器管理目前支持四种集群：全局服务集群、管理集群、工作集群、接入集群。
 
     - [创建集群](../user-guide/clusters/create-cluster.md)或[接入集群](../user-guide/clusters/integrate-cluster.md)
     - [升级集群](../user-guide/clusters/upgrade-cluster.md)
@@ -55,7 +55,7 @@ hide:
 
     ---
 
-    工作负载是在 DCE 5.0 上所运行的各类应用程序。
+    工作负载是在 DCE 上所运行的各类应用程序。
 
     - 创建 [Deployment](../user-guide/workloads/create-deployment.md) 和 [StatefulSet](../user-guide/workloads/create-statefulset.md)
     - 创建 [DaemonSet](../user-guide/workloads/create-daemonset.md)
@@ -79,7 +79,7 @@ hide:
 
     ---
 
-    Helm 是 DCE 5.0 的包管理工具，提供了数百个 Helm 模板，方便用户快速部署应用。
+    Helm 是 DCE 的包管理工具，提供了数百个 Helm 模板，方便用户快速部署应用。
 
     - [Helm 模板](../user-guide/helm/README.md)
     - [Helm 应用](../user-guide/helm/helm-app.md)
@@ -93,7 +93,7 @@ hide:
 
     ---
 
-    DCE 5.0 自带的容器网络便于对外提供服务，通过 Ingress 定义路由规则，根据网络策略控制流量。
+    DCE 自带的容器网络便于对外提供服务，通过 Ingress 定义路由规则，根据网络策略控制流量。
 
     - [服务 Service](../user-guide/network/create-services.md)：ClusterIP、NodePort、LoadBalancer
     - [路由 Ingress](../user-guide/network/create-ingress.md)
@@ -103,7 +103,7 @@ hide:
 
     ---
 
-    DCE 5.0 容器管理奉行 Kubernetes 的容器化存储理念，支持原生 CSI，能够制备动态卷、卷快照、克隆等。
+    DCE 容器管理奉行 Kubernetes 的容器化存储理念，支持原生 CSI，能够制备动态卷、卷快照、克隆等。
 
     - [数据卷声明 PVC](../user-guide/storage/pvc.md)
     - [数据卷 Volume](../user-guide/storage/pv.md)
@@ -117,7 +117,7 @@ hide:
 
     ---
 
-    DCE 5.0 容器管理支持对节点、集群执行三种扫描：
+    DCE 容器管理支持对节点、集群执行三种扫描：
 
     - [合规性扫描](../user-guide/security/cis/config.md)
     - [权限扫描](../user-guide/security/audit.md)
@@ -127,7 +127,7 @@ hide:
 
     ---
 
-    DCE 5.0 容器管理支持以键值对的形式管理 ConfigMap 和 Secret：
+    DCE 容器管理支持以键值对的形式管理 ConfigMap 和 Secret：
 
     - [配置项 ConfigMap](../user-guide/configmaps-secrets/create-configmap.md)
     - [密钥 Secret](../user-guide/configmaps-secrets/create-secret.md)
@@ -165,10 +165,10 @@ hide:
 
     展望未来，容器虚拟化将帮助企业更好地利用混合云和多云环境，实现更优化的资源管理和应用部署。
 
-**DCE 5.0 容器管理的逻辑架构**
+**DCE 容器管理的逻辑架构**
 
 ![逻辑架构图](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/kpanda_architect.png)
 
-[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[下载 DCE](../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE](../../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

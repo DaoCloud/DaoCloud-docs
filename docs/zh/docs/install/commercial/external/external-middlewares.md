@@ -6,7 +6,7 @@
 
 ### 前置说明
 
-- DCE 5.0 产品模块中内置了 MySQL 数据库来存储数据，但是安装器支持了使用外接 MySQL、Kingbase、PostgreSQL 三种数据库外接的方式
+- DCE 产品模块中内置了 MySQL 数据库来存储数据，但是安装器支持了使用外接 MySQL、Kingbase、PostgreSQL 三种数据库外接的方式
 
 - 下述示例脚本仅用于演示目的，实际应用中应该根据具体的需求进行修改，例如数据库名称、用户名、密码等，
   并且可以将以下语句拆分至不同的 DBMS 执行
@@ -137,7 +137,7 @@
               dataSourceName: "dowl:password@tcp(172.30.41.0:3308)/dowl"
     ```
 
-4. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
+4. 完成上述配置后，可以继续执行[部署 DCE 商业版](../start-install.md)。
 
 ### 外接 Kingbase 数据库操作步骤
 
@@ -250,7 +250,7 @@
               dataSourceName: "host=172.30.41.2 user=dowl password=password dbname=dowl port=54321"
     ```
 
-4. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
+4. 完成上述配置后，可以继续执行[部署 DCE 商业版](../start-install.md)。
 
 ### 外接 PostgreSQL 数据库操作步骤
 
@@ -361,7 +361,7 @@
               dataSourceName: "host=172.30.41.2 user=dowl password=password dbname=dowl port=5432"
     ```
 
-4. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
+4. 完成上述配置后，可以继续执行[部署 DCE 商业版](../start-install.md)。
 
 ## 使用外接 Redis
 
@@ -389,7 +389,7 @@
         - Cluster URL 格式为：`redis://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]] 或 rediss://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]]`
         - 目前仅有容器管理产品模块使用到了 Redis 组件
 
-2. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
+2. 完成上述配置后，可以继续执行[部署 DCE 商业版](../start-install.md)。
 
 ## 使用外接 Elasticsearch
 
@@ -423,7 +423,7 @@
         目前仅有可观测产品模块使用到了 Elasticsearch 组件。
         如果使用外接中间件后，不建议使用 7 节点模式下的 worker 节点，不然占用资源。
 
-2. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
+2. 完成上述配置后，可以继续执行[部署 DCE 商业版](../start-install.md)。
 
 ## 使用外接 S3Storage
 
@@ -449,7 +449,7 @@
       ..........
     ```
 
-2. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
+2. 完成上述配置后，可以继续执行[部署 DCE 商业版](../start-install.md)。
 
 ## 使用外接 kafka
 
@@ -478,4 +478,4 @@
 
         目前仅有可观测产品模块使用到了 Kafka 组件。
 
-2. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
+2. 完成上述配置后，可以继续执行[部署 DCE 商业版](../start-install.md)。
