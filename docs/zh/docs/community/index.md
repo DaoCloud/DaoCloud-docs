@@ -7,7 +7,7 @@ hide:
 
 !!! info
 
-    「DaoCloud 道客」开源生态启航！这些是 DCE 相关的开源项目。
+    「DaoCloud 道客」开源生态启航！
 
 <div class="grid cards" markdown>
 
@@ -19,7 +19,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./cloudtty.md)
 
--   :simple-wikipedia:{ .lg .middle } __Clusterpedia__ :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
+-   :simple-wikipedia:{ .lg .middle } __Clusterpedia__ :simple-cncf: 已入选 CNCF Sandbox
 
     ---
 
@@ -27,7 +27,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./clusterpedia.md)
 
--   :simple-amazonapigateway:{ .lg .middle } __egressgateway__
+-   :material-gate:{ .lg .middle } __egressgateway__
 
     ---
 
@@ -62,7 +62,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./ferry.md)
 
--   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
+-   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF Sandbox
 
     ---
 
@@ -70,7 +70,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./hwameistor.md)
 
--   :melon:{ .lg .middle } __HAMi__ :simple-cncf: 已入选 CNCF Landscape 和 Incubating 👏
+-   :melon:{ .lg .middle } __HAMi__ :simple-cncf: 已入选 CNCF Incubating 👏
 
     ---
 
@@ -126,11 +126,11 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kwok.md)
 
--   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
+-   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: 已入选 CNCF Sandbox
 
     ---
 
-    使用 eBPF 加速您的服务网格，就像利用虫洞在网络世界中穿梭，已入选 CNCF Landscape 和 Sandbox
+    使用 eBPF 加速您的服务网格，就像利用虫洞在网络世界中穿梭，已入选 CNCF Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./merbridge.md)
 
@@ -142,7 +142,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./miragedebug.md)
 
--   :material-tape-drive:{ .lg .middle } __Piraeus__ :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
+-   :material-tape-drive:{ .lg .middle } __Piraeus__ :simple-cncf: 已入选 CNCF Sandbox
 
     ---
 
@@ -150,11 +150,11 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./piraeus.md)
 
--   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
+-   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Sandbox
 
     ---
 
-    云原生网络 Underlay 和 RDMA 网络方案，已入选 CNCF Landscape 和 Sandbox
+    云原生网络 Underlay 和 RDMA 网络方案，已入选 CNCF Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./spiderpool.md)
 
@@ -194,6 +194,6 @@ hide:
 Clusterpedia、HwameiStor、Merbridge、Spiderpool 和 Kubean 均已入选 <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>。
 </p>
 
-[下载 DCE](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[了解 d.run](drun/index.md){ .md-button .md-button--primary }
+[Token 工厂概览](tf/index.md){ .md-button .md-button--primary }
