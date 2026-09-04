@@ -3,15 +3,15 @@
   <div class="md-grid">
     <ul class="md-tabs__list">
       {% set ns = namespace(tf_url="", tf_active=false, drun_url="", drun_active=false) %}
-{% for nav_item in nav.items %}
-  {% if nav_item.title == "Token 工厂文档" %}
-    {% set ns.tf_url = (nav_item.children | first).url | url %}
-    {% set ns.tf_active = nav_item.active %}
-  {% elif nav_item.title == "d.run 文档" %}
-    {% set ns.drun_url = (nav_item.children | first).url | url %}
-    {% set ns.drun_active = nav_item.active %}
-  {% endif %}
-{% endfor %}
+      {% for nav_item in nav.items %}
+        {% if nav_item.title == "Token 工厂文档" %}
+          {% set ns.tf_url = (nav_item.children | first).url | url %}
+          {% set ns.tf_active = nav_item.active %}
+        {% elif nav_item.title == "d.run 文档" %}
+          {% set ns.drun_url = (nav_item.children | first).url | url %}
+          {% set ns.drun_active = nav_item.active %}
+        {% endif %}
+      {% endfor %}
       {% for nav_item in nav.items %}
         {% if nav_item.title == "产品文档" %}
           <li class="md-tabs__item product-docs-menu{% if nav_item.active or ns.tf_active or ns.drun_active %} md-tabs__item--active{% endif %}">
