@@ -65,9 +65,6 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
       <div class="tf-arch-card tf-arch-card--ops">
         <span class="tf-arch-card-title">运营驾驶舱</span>
       </div>
-      <a class="tf-arch-card tf-arch-card--ops" href="../leopard/">
-        <span class="tf-arch-card-title">费用中心</span>
-      </a>
     </div>
   </div>
   <div class="tf-arch-arrow">▼</div>
