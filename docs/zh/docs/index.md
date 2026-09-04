@@ -96,7 +96,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
       <div class="tf-arch-layer tf-arch-layer--model">
         <div class="tf-arch-layer-label">云原生 AI</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--model" href="clawos/workspace/overview.md">
+          <a class="tf-arch-card tf-arch-card--model" href="clawos/intro/">
             <span class="tf-arch-card-title">ClawOS</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="hydra/">
@@ -132,7 +132,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
           <a class="tf-arch-card tf-arch-card--compute" href="kangaroo/intro/">
             <span class="tf-arch-card-title">镜像仓库</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--compute" href="network/config/">
+          <a class="tf-arch-card tf-arch-card--compute" href="network/intro/">
             <span class="tf-arch-card-title">云原生网络</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="storage/">
@@ -177,7 +177,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
       <div class="tf-arch-layer tf-arch-layer--model">
         <div class="tf-arch-layer-label">云原生 AI</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--model" href="hydra/">
+          <a class="tf-arch-card tf-arch-card--model" href="hydra/index.md">
             <span class="tf-arch-card-title">大模型服务平台</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="hydra/intro/">
@@ -222,7 +222,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
       <div class="tf-arch-layer tf-arch-layer--ops">
         <div class="tf-arch-layer-label">运营管理</div>
         <div class="tf-arch-cards">
-          <div class="tf-arch-card tf-arch-card--ops" href="tf/#-">
+          <div class="tf-arch-card tf-arch-card--ops">
             <span class="tf-arch-card-title">驾驶舱</span>
           </div>
           <div class="tf-arch-card tf-arch-card--ops">

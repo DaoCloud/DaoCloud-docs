@@ -7,7 +7,7 @@ hide:
 
 我们为各个模块制作了精良的视频教程，供大家快速上手。
 
-## DCE
+## DaoCloud Enterprise (DCE)
 
 <div class="grid cards" markdown>
 
