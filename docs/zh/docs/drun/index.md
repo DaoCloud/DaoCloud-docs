@@ -11,8 +11,7 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
 全方位支撑业务智能化长期升级。
 
 <style>
-.tf-arch-cards{flex-wrap:wrap}
-.tf-arch-card{width:calc(25% - 8px);min-width:130px}
+.tf-arch-card{min-width:calc(25% - 6px) !important}
 </style>
 <div class="tf-arch tf-arch--compact">
   <div class="tf-arch-layer tf-arch-layer--model">

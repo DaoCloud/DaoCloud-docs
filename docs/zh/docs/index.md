@@ -20,8 +20,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 </div>
 
 <style>
-.tf-arch-cards{flex-wrap:wrap}
-.tf-arch-card{width:calc(25% - 8px);min-width:130px}
+.tf-arch-card{min-width:calc(25% - 6px) !important}
 </style>
 
 === ":octicons-stack-16: DCE 云原生操作系统"

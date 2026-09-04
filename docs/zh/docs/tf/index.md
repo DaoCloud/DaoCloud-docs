@@ -9,8 +9,7 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
 平台采用 **用户** 与 **管理员** 双视图架构：用户视图面向终端用户，提供大模型服务调用、费用管理和智能应用接入能力；管理员视图面向运维管理团队，提供模型托管、推理引擎、基础设施和全局运营的统一管控。
 
 <style>
-.tf-arch-cards{flex-wrap:wrap}
-.tf-arch-card{width:calc(25% - 8px);min-width:130px}
+.tf-arch-card{min-width:calc(25% - 6px) !important}
 </style>
 <div class="tf-arch tf-arch--compact">
   <div class="tf-arch-layer tf-arch-layer--model">
