@@ -77,8 +77,11 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
       </div>
       <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
-        <div class="tf-arch-layer-label">Copilot</div>
+        <div class="tf-arch-layer-label">运营管理</div>
         <div class="tf-arch-cards">
+          <div class="tf-arch-card tf-arch-card--ops">
+            <span class="tf-arch-card-title">Copilot</span>
+          </div>
           <div class="tf-arch-card tf-arch-card--ops">
             <span class="tf-arch-card-title">驾驶舱</span>
           </div>
