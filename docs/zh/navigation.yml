@@ -1,6 +1,6 @@
 # Page tree
 nav:
-  - DaoCloud 官网: https://www.daocloud.io/
+  - 首页: https://docs.daocloud.io/
   - 产品文档:
       - 文档导航: dce/index.md
       - 探索和安装:
