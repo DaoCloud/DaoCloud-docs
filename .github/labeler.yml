@@ -14,6 +14,10 @@ clawos:
   - "docs/en/docs/clawos/**/*"
   - "docs/zh/docs/clawos/**/*"
 
+dak:
+  - "docs/en/docs/dak/**/*"
+  - "docs/zh/docs/dak/**/*"
+
 dce:
   - "docs/en/docs/dce/**/*"
   - "docs/zh/docs/dce/**/*"
@@ -21,6 +25,10 @@ dce:
 download:
   - "docs/en/docs/download/**/*"
   - "docs/zh/docs/download/**/*"
+
+d.run:
+  - "docs/en/docs/drun/**/*"
+  - "docs/zh/docs/drun/**/*"
 
 eco:
   - "docs/en/docs/community/**/*"
@@ -62,6 +70,10 @@ kpanda:
   - "docs/en/docs/kpanda/**/*"
   - "docs/zh/docs/kpanda/**/*"
 
+leopard:
+  - "docs/en/docs/leopard/**/*"
+  - "docs/zh/docs/leopard/**/*"
+
 midware:
   - "docs/en/docs/middleware/**/*"
   - "docs/zh/docs/middleware/**/*"
@@ -89,6 +101,10 @@ storage:
 trial:
   - "docs/en/docs/trial/**/*"
   - "docs/zh/docs/trial/**/*"
+
+TF:
+  - "docs/en/docs/tf/**/*"
+  - "docs/zh/docs/tf/**/*"
 
 videos:
   - "docs/en/docs/videos/**/*"
