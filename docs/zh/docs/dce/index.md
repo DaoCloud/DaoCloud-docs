@@ -5,17 +5,116 @@ hide:
 
 # DCE 文档导航
 
-在当今时代，人工智能、机器学习和云原生技术正在迅猛发展，席卷全球。想要抓住这一市场趋势，获得巨大的商业机遇，必须紧跟时代的脉搏。
-而将数据中心转型为 Kubernetes（简称 K8s）底座，无疑是实现云原生图景的最佳途径。
-
-DCE 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的各项生产级功能，使得企业能够轻松构建和管理分布式应用。
+DaoCloud Enterprise (DCE) 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的各项生产级功能，使得企业能够轻松构建和管理分布式应用。
 借助 DCE 的云原生天赋，企业可以充分利用云上云下优势，实现资源的最优利用，提高 IT 系统的可靠性和弹性，极大地加速应用的交付速度。
 
-*[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
+<style>
+.tf-arch-card{min-width:calc(25% - 6px) !important}
+.tf-arch{overflow:visible !important}
+.tf-arch-card{overflow:visible !important}
+.tf-arch-layer:first-child{border-radius:14px 14px 0 0 !important}
+.tf-arch-layer:last-child{border-radius:0 0 14px 14px !important}
+.tf-arch-card-tip{
+  opacity:0;
+  position:absolute;
+  bottom:calc(100% + 8px);
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,0.85);
+  color:#fff;
+  padding:0.35rem 0.65rem;
+  border-radius:6px;
+  font-size:0.72rem;
+  font-weight:500;
+  white-space:nowrap;
+  z-index:100;
+  pointer-events:none;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  transition:opacity 0.2s ease
+}
+.tf-arch-card-tip::after{
+  content:"";
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%);
+  border:5px solid transparent;
+  border-top-color:rgba(0,0,0,0.85)
+}
+.tf-arch-card:hover .tf-arch-card-tip{
+  opacity:1
+}
+</style>
 
-!!! tip
-
-    掌舵 AI 浪潮，畅享 DaoCloud Enterprise 5.0，从这里启航！
+<div class="tf-arch tf-arch--compact">
+  <div class="tf-arch-layer tf-arch-layer--compute">
+    <div class="tf-arch-layer-label">云原生底座</div>
+    <div class="tf-arch-cards">
+      <a class="tf-arch-card tf-arch-card--compute" href="../middleware/">
+        <span class="tf-arch-card-title">中间件</span>
+        <span class="tf-arch-card-tip">数据库与消息队列</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="../kairship/intro/">
+        <span class="tf-arch-card-title">多云编排</span>
+        <span class="tf-arch-card-tip">多云与混合云编排</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="../kangaroo/intro/">
+        <span class="tf-arch-card-title">镜像仓库</span>
+        <span class="tf-arch-card-tip">镜像托管与集成</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="../mspider/intro/">
+        <span class="tf-arch-card-title">服务网格</span>
+        <span class="tf-arch-card-tip">非侵入式服务治理</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="../skoala/intro/">
+        <span class="tf-arch-card-title">微服务引擎</span>
+        <span class="tf-arch-card-tip">微服务治理与网关</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="../amamba/intro/">
+        <span class="tf-arch-card-title">应用工作台</span>
+        <span class="tf-arch-card-tip">CI/CD 与应用交付</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="../kpanda/intro/">
+        <span class="tf-arch-card-title">容器管理</span>
+        <span class="tf-arch-card-tip">集群与工作负载管理</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="../virtnest/intro/">
+        <span class="tf-arch-card-title">虚拟机</span>
+        <span class="tf-arch-card-tip">KubeVirt 虚拟机管理</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="../topohub/intro/">
+        <span class="tf-arch-card-title">设备管理</span>
+        <span class="tf-arch-card-tip">硬件设备统一纳管</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="../kant/intro/">
+        <span class="tf-arch-card-title">云边协同</span>
+        <span class="tf-arch-card-tip">边缘节点纳管与协同</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="../network/intro/">
+        <span class="tf-arch-card-title">云原生网络</span>
+        <span class="tf-arch-card-tip">多 CNI 融合网络</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="../storage/">
+        <span class="tf-arch-card-title">云原生存储</span>
+        <span class="tf-arch-card-tip">容器化存储与 CSI</span>
+      </a>
+    </div>
+  </div>
+  <div class="tf-arch-arrow">▼</div>
+  <div class="tf-arch-layer tf-arch-layer--ops">
+    <div class="tf-arch-layer-label">运维管理</div>
+    <div class="tf-arch-cards">
+      <a class="tf-arch-card tf-arch-card--ops" href="../insight/intro/">
+        <span class="tf-arch-card-title">可观测性</span>
+        <span class="tf-arch-card-tip">指标日志链路观测</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--ops" href="../ghippo/intro/">
+        <span class="tf-arch-card-title">全局管理</span>
+        <span class="tf-arch-card-tip">用户权限与平台设置</span>
+      </a>
+    </div>
+  </div>
+</div>
 
 ## 安装和教程
 
@@ -46,193 +145,6 @@ DCE 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的各�
     - [微服务视频](../videos/skoala.md)
     - [中间件视频](../videos/mcamel.md)
     - [全局管理视频](../videos/ghippo.md)
-
-</div>
-
-## 产品模块
-
-<div class="grid cards" markdown>
-
-- :simple-smart:{ .lg .middle } __AI Lab__
-
-    ---
-
-    提供软硬一体的 AI 智算体验，整合异构算力，优化 GPU 性能，实现算力资源统一调度和运营。
-
-    - [安装 AI Lab 组件](../baize/intro/install.md)
-    - [开发控制台 - 快速入门](../baize/developer/quick-start.md)
-    - [运维管理](../baize/oam/index.md)
-    - [部署 NFS 做数据集预热](../baize/best-practice/deploy-nfs-in-worker.md)
-    - [使用 AI Lab 微调 ChatGLM3 模型](../baize/best-practice/finetunel-llm.md)
-
-- :octicons-ai-model-24:{ .lg .middle } __大模型服务平台__
-
-    ---
-
-    专为企业级用户打造的综合性人工智能模型服务管理平台。
-
-    - [部署大模型服务平台（WS 模式）](../hydra/intro/deploy-ws.md)
-    - [普通用户视图 - 模型广场](../hydra/index.md)
-    - [普通用户视图 - 模型体验](../hydra/exp.md)
-    - [运维管理 - 模型广场管理](../hydra/oam/index.md)
-    - [自定义大模型推理运行时](../hydra/user-guides/custom-runtime.md)
-
-</div>
-
-<div class="grid cards" markdown>
-
-- :material-microsoft-azure-devops:{ .lg .middle } __应用工作台__
-
-    ---
-
-    这是基于容器的 DevOps 云原生应用平台，在 DCE 中是创建应用的统一入口。
-
-    - [基于向导创建应用](../amamba/user-guide/wizard/create-app-git.md)
-    - [流水线](../amamba/user-guide/pipeline/create/custom.md)
-    - [GitOps](../amamba/user-guide/gitops/create-argo-cd.md)
-    - [灰度发布](../amamba/user-guide/release/canary.md)
-    - [集成工具链](../amamba/user-guide/tools/integrated-toolchain.md)
-
-- :octicons-container-16:{ .lg .middle } __容器管理__
-
-    ---
-
-    这是基于 K8s 构建的面向云原生应用的容器化管理模块，它是 DCE 的核心。
-
-    - [集群管理](../kpanda/user-guide/clusters/create-cluster.md)
-    - [节点管理](../kpanda/user-guide/nodes/add-node.md)
-    - [命名空间管理](../kpanda/user-guide/namespaces/createns.md)
-    - [工作负载：Deployment, StatefulSet, DamemonSet, Job, CronJob](../kpanda/user-guide/workloads/create-deployment.md)
-    - [Helm 应用](../kpanda/user-guide/helm/helm-app.md)
-
-</div>
-
-<div class="grid cards" markdown>
-
-- :material-cloud-check:{ .lg .middle } __多云编排__
-
-    ---
-
-    这是以应用为中心、开箱即用的多云应用编排平台，实现了多云和混合云的集中管理。
-
-    - [多云工作集群](../kairship/cluster.md)
-    - [多云工作负载](../kairship/workload/deployment.md)
-    - [多云自定义资源](../kairship/crds/crd.md)
-    - [服务/路由/命名空间等资源管理](../kairship/resource/service.md)
-    - [策略管理](../kairship/policy/propagation.md)
-
-- :material-warehouse:{ .lg .middle } __镜像仓库__
-
-    ---
-
-    支持多实例生命期管理的云原生镜像托管服务，支持集成 Harbor 和 Docker 等镜像仓库。
-
-    - [镜像空间](../kangaroo/space/index.md)
-    - [仓库集成(工作空间)](../kangaroo/integrate/integrate-ws.md)
-    - [仓库集成(管理员)](../kangaroo/integrate/integrate-admin/integrate-admin.md)
-    - [托管 Harbor](../kangaroo/managed/intro.md)
-
-</div>
-
-<div class="grid cards" markdown>
-
-- :material-engine:{ .lg .middle } __微服务引擎__
-
-    ---
-
-    这是面向业界主流微服务生态的一站式微服务管理平台，主要提供微服务治理中心和微服务网关两个维度的功能。
-
-    - [云原生网关](../skoala/gateway/index.md)
-    - [云原生微服务](../skoala/cloud-ms/traffic-control.md)
-    - [传统微服务](../skoala/trad-ms/hosted/index.md)
-    - [插件中心](../skoala/plugins/intro.md)
-
-- :material-table-refresh:{ .lg .middle } __服务网格__
-
-    ---
-
-    基于 Istio 开源技术构建的面向云原生应用的下一代服务网格。
-
-    - [流量治理](../mspider/user-guide/traffic-governance/README.md)
-    - [安全治理](../mspider/user-guide/security/README.md)
-    - [边车管理](../mspider/user-guide/sidecar-management/workload-sidecar.md)
-    - [流量监控](../mspider/user-guide/traffic-monitor/README.md)
-
-</div>
-
-<div class="grid cards" markdown>
-
-- :material-middleware:{ .lg .middle } __中间件之一__
-
-    ---
-
-    DCE 针对实际应用场景，选用经典的中间件来处理数据。
-
-    - [Elasticsearch 搜索服务](../middleware/elasticsearch/intro/index.md)
-    - [MinIO 对象存储](../middleware/minio/intro/index.md)
-    - [MySQL 数据库](../middleware/mysql/intro/index.md)
-    - [PostgreSQL 数据库](../middleware/postgresql/intro/index.md)
-
-- :material-middleware:{ .lg .middle } __中间件之二__
-
-    ---
-
-    中间件涵盖的范围从内存缓存到各类消息队列，您可以按需部署。
-
-    - [MongoDB 数据库](../middleware/mongodb/intro/index.md)
-    - [Redis 缓存服务](../middleware/redis/intro/index.md)
-    - [RabbitMQ 消息队列](../middleware/rabbitmq/intro/index.md)
-    - [Kafka 消息队列](../middleware/kafka/intro/index.md)
-
-</div>
-
-<div class="grid cards" markdown>
-
-- :fontawesome-solid-user-group:{ .lg .middle } __全局管理__
-
-    ---
-
-    以用户为中心的综合性服务板块，包含用户与访问控制、工作空间与层级、审计日志、平台设置等基础服务。
-
-    - [用户与访问控制](../ghippo/user-guide/access-control/user.md)
-    - [工作空间与层级](../ghippo/user-guide/workspace/workspace.md)
-    - [审计日志](../ghippo/user-guide/audit/open-audit.md)
-    - [运营管理和系统设置](../ghippo/user-guide/platform-setting/appearance.md)
-
-- :material-monitor-dashboard:{ .lg .middle } __可观测性__
-
-    ---
-
-    这是以应用为中心、开箱即用的新一代可观测平台，实时监控应用及资源，采集各项指标、日志及事件等数据分析应用健康状态。
-
-    - [基础设施监控](../insight/user-guide/infra/cluster.md)
-    - [日志查询](../insight/user-guide/data-query/log.md)
-    - [链路追踪](../insight/user-guide/trace/trace.md)
-    - [告警](../insight/user-guide/alert-center/index.md)
-
-</div>
-
-<div class="grid cards" markdown>
-
-- :material-dot-net:{ .lg .middle } __云原生网络__
-    
-    ---
-
-    基于多个开源技术构建，不仅提供单个 CNI 网络支持，也提供多个 CNI 网络的组合方案。
-
-    - [网卡和网络规划](../network/plans/ethplan.md)
-    - [性能测试报告](../network/performance/cni-performance.md)
-    - [如何集成不同的 CNI](../network/modules/calico/install.md)
-
-- :simple-googlecloudstorage:{ .lg .middle } __云原生存储__
-    
-    ---
-
-    DCE 云原生存储基于 Kubernetes CSI 标准，可根据不同 SLA 要求及用户场景对接符合 CSI 标准的存储。
-
-    - [什么是 DCE 云原生存储](../storage/index.md)
-    - [HwameiStor 本地存储](../storage/hwameistor/intro/index.md)
-    - [集成开源存储方案](../storage/solutions/rook-ceph.md)
 
 </div>
 
@@ -278,10 +190,6 @@ DCE 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的各�
       致敬曾经、现在和未来的努力吧！
     ```
 
-[下载 DCE](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](./license0.md){ .md-button .md-button--primary }
 [最佳实践](./bphome.md){ .md-button .md-button--primary }
 [常见问题](./faq.md){ .md-button .md-button--primary }
-
-![启航图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/dce/images/sail.jpg)
