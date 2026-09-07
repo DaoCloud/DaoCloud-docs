@@ -12,6 +12,7 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
 .tf-arch-card{min-width:calc(25% - 6px) !important}
 .tf-arch{overflow:visible !important}
 .tf-arch-card{overflow:visible !important}
+.tf-arch-card::after{display:none !important}
 .tf-arch-layer:first-child{border-radius:14px 14px 0 0 !important}
 .tf-arch-layer:last-child{border-radius:0 0 14px 14px !important}
 .tf-arch-card-tip{
