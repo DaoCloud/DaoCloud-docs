@@ -1,7 +1,7 @@
 # Page tree
 nav:
   - 首页: https://docs.daocloud.io/
-  - DCE 文档:
+  - DCE 云原生操作系统:
       - 概览: dce/index.md
       - 探索和安装:
           - DCE 介绍:

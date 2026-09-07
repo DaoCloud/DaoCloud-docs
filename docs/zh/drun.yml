@@ -1,5 +1,5 @@
 nav:
-  - d.run 文档:
+  - d.run AI 操作系统:
       - 概述: drun/index.md
       - 云原生 AI:
           - ClawOS:
