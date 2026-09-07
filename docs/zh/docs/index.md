@@ -165,7 +165,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
       <div class="tf-arch-layer tf-arch-layer--model">
         <div class="tf-arch-layer-label">云原生 AI</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/intro/">
+          <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/workspace/">
             <span class="tf-arch-card-title">ClawOS</span>
             <span class="tf-arch-card-tip">多智能体运行与治理</span>
           </a>

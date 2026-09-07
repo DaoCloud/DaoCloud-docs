@@ -10,7 +10,7 @@ nav:
                   - Release Notes: tf/clawos/intro/release-notes.md
                   - 升级注意事项: tf/clawos/intro/upgrade-notes.md
               - 工作空间:
-                  - 概览: tf/clawos/workspace/overview.md
+                  - 概览: tf/clawos/workspace/index.md
                   - ClawHub:
                       - Skill 市场: tf/clawos/workspace/skill.md
                       - Skill 管理: tf/clawos/workspace/skill-manage.md
