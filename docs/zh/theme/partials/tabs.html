@@ -4,32 +4,32 @@
     <ul class="md-tabs__list">
       {% set ns = namespace(tf_url="", tf_active=false, drun_url="", drun_active=false, dce_url="", dce_active=false) %}
       {% for nav_item in nav.items %}
-        {% if nav_item.title == "Token 工厂文档" %}
+        {% if nav_item.title == "d.run Token 工厂效能平台" %}
           {% set ns.tf_url = (nav_item.children | first).url | url %}
           {% set ns.tf_active = nav_item.active %}
-        {% elif nav_item.title == "d.run 文档" %}
+        {% elif nav_item.title == "d.run AI 操作系统" %}
           {% set ns.drun_url = (nav_item.children | first).url | url %}
           {% set ns.drun_active = nav_item.active %}
-        {% elif nav_item.title == "DCE 文档" %}
+        {% elif nav_item.title == "DCE 云原生操作系统" %}
           {% set ns.dce_url = (nav_item.children | first).url | url %}
           {% set ns.dce_active = nav_item.active %}
         {% endif %}
       {% endfor %}
       {% for nav_item in nav.items %}
-        {% if nav_item.title == "DCE 文档" %}
+        {% if nav_item.title == "DCE 云原生操作系统" %}
           <li class="md-tabs__item product-docs-menu{% if ns.dce_active or ns.tf_active or ns.drun_active %} md-tabs__item--active{% endif %}">
             <details>
               <summary class="md-tabs__link" aria-label="产品文档">
                 产品文档 <span class="product-docs-menu__caret" aria-hidden="true">▾</span>
               </summary>
               <div class="product-docs-menu__list" role="menu" aria-label="产品文档">
-                <a href="{{ ns.tf_url }}" role="menuitem">Token 工厂文档</a>
-                <a href="{{ ns.drun_url }}" role="menuitem">d.run 文档</a>
-                <a href="{{ ns.dce_url }}" role="menuitem">DCE 文档</a>
+                <a href="{{ ns.tf_url }}" role="menuitem">d.run Token 工厂效能平台</a>
+                <a href="{{ ns.drun_url }}" role="menuitem">d.run AI 操作系统</a>
+                <a href="{{ ns.dce_url }}" role="menuitem">DCE 云原生操作系统</a>
               </div>
             </details>
           </li>
-        {% elif nav_item.title == "Token 工厂文档" or nav_item.title == "d.run 文档" %}
+        {% elif nav_item.title == "d.run Token 工厂效能平台" or nav_item.title == "d.run AI 操作系统" %}
         {% else %}
           {{ item.render(nav_item) }}
         {% endif %}

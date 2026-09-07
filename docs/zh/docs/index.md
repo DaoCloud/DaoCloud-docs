@@ -12,7 +12,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 本站提供三大产品线的文档内容，覆盖从基础设施、算力调度到模型推理和应用构建的全栈能力。
 
 <div class="tf-hero-badges">
-<a class="tf-hero-badge tf-hero-badge--tf" href="tf/">Token 工厂效能平台</a>
+<a class="tf-hero-badge tf-hero-badge--tf" href="tf/">d.run Token 工厂效能平台</a>
 <a class="tf-hero-badge tf-hero-badge--drun" href="drun/">d.run AI 操作系统</a>
 <a class="tf-hero-badge tf-hero-badge--dce" href="dce/">DCE 云原生操作系统</a>
 </div>
@@ -57,7 +57,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 }
 </style>
 
-=== ":material-factory: Token 工厂效能平台"
+=== ":material-factory: d.run Token 工厂效能平台"
 
     这是专为智算中心打造的高效能 AI Token 生产及经营系统，致力于将传统算力中心升级为高效、可盈利的 Token 工厂。
     平台统一纳管英伟达及国产异构算力，通过智能调度与推理优化，将分散的 GPU 算力转化为低成本、高稳定、可交易的标准化 Token 服务。
