@@ -3,7 +3,7 @@ nav:
       - 概述: drun/index.md
       - 云原生 AI:
           - ClawOS:
-              - drun/clawos/workspace/overview.md
+              - drun/clawos/workspace/index.md
               - ClawHub:
                   - Skill 市场: drun/clawos/workspace/skill.md
                   - Skill 管理: drun/clawos/workspace/skill-manage.md
