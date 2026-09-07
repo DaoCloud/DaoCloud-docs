@@ -1,10 +1,10 @@
 # Page tree
 nav:
   - 首页: https://docs.daocloud.io/
-  - 产品文档:
-      - 文档导航: dce/index.md
+  - DCE 文档:
+      - 概览: dce/index.md
       - 探索和安装:
-          - 产品介绍:
+          - DCE 介绍:
               - 申请社区免费体验: dce/license0.md
               - 功能和优势: dce/features.md
               - 适用场景: dce/scenario.md
@@ -50,7 +50,7 @@ nav:
               - DCE Roadmap: dce/roadmap.md
               - DaoCloud 产品支持政策: dce/support.md
               - 云原生词汇: dce/terms.md
-          - 安装教程:
+          - 安装 DCE:
               - 安装简介: install/index.md
               - 安装依赖项: install/install-tools.md
               - 安装社区版:
@@ -114,7 +114,7 @@ nav:
                   - 不停机迁移集群操作系统: install/best-practices/replace-os.md
               - 安装器 Release Notes: install/release-notes.md
           - 最佳实践: dce/bphome.md
-          - 常见问题: dce/faq.md
+          - DCE 常见问题: dce/faq.md
       - 工作台:
           - 应用工作台:
               - 介绍:
