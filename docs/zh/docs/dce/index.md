@@ -12,6 +12,7 @@ DaoCloud Enterprise (DCE) 以 K8s 作为开发底座，提供了高度可扩展�
 .tf-arch-card{min-width:calc(25% - 6px) !important}
 .tf-arch{overflow:visible !important}
 .tf-arch-card{overflow:visible !important}
+.tf-arch-card::after{display:none !important}
 .tf-arch-layer:first-child{border-radius:14px 14px 0 0 !important}
 .tf-arch-layer:last-child{border-radius:0 0 14px 14px !important}
 .tf-arch-card-tip{
