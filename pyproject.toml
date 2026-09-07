@@ -8,7 +8,6 @@ dependencies = [
     "jieba>=0.42.1",
     "mkdocs>=1.6.1",
     "mkdocs-material>=9.6.0",
-    "mkdocs-git-revision-date-localized-plugin>=1.5.0",
     "mkdocs-material-extensions>=1.3.1",
     "mkdocs-minify-plugin>=0.8.0",
     "mkdocs-redirects>=1.2.2",
