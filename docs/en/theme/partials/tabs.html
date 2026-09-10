@@ -4,32 +4,32 @@
     <ul class="md-tabs__list">
       {% set ns = namespace(tf_url="", tf_active=false, drun_url="", drun_active=false, dce_url="", dce_active=false) %}
       {% for nav_item in nav.items %}
-        {% if nav_item.title == "Token Factory" %}
+        {% if nav_item.title == "d.run Token Factory" %}
           {% set ns.tf_url = (nav_item.children | first).url | url %}
           {% set ns.tf_active = nav_item.active %}
         {% elif nav_item.title == "d.run AI OS" %}
           {% set ns.drun_url = (nav_item.children | first).url | url %}
           {% set ns.drun_active = nav_item.active %}
-        {% elif nav_item.title == "DCE Cloud Native OS" %}
+        {% elif nav_item.title == "DaoCloud Enterprise" %}
           {% set ns.dce_url = (nav_item.children | first).url | url %}
           {% set ns.dce_active = nav_item.active %}
         {% endif %}
       {% endfor %}
       {% for nav_item in nav.items %}
-        {% if nav_item.title == "DCE Cloud Native OS" %}
+        {% if nav_item.title == "DaoCloud Enterprise" %}
           <li class="md-tabs__item product-docs-menu{% if ns.dce_active or ns.tf_active or ns.drun_active %} md-tabs__item--active{% endif %}">
             <details>
               <summary class="md-tabs__link" aria-label="Product Docs">
                 Product Docs <span class="product-docs-menu__caret" aria-hidden="true">▾</span>
               </summary>
               <div class="product-docs-menu__list" role="menu" aria-label="Product Docs">
-                <a href="{{ ns.tf_url }}" role="menuitem">Token Factory</a>
+                <a href="{{ ns.tf_url }}" role="menuitem">d.run Token Factory</a>
                 <a href="{{ ns.drun_url }}" role="menuitem">d.run AI OS</a>
-                <a href="{{ ns.dce_url }}" role="menuitem">DCE Cloud Native OS</a>
+                <a href="{{ ns.dce_url }}" role="menuitem">DaoCloud Enterprise</a>
               </div>
             </details>
           </li>
-        {% elif nav_item.title == "Token Factory" or nav_item.title == "d.run AI OS" %}
+        {% elif nav_item.title == "d.run Token Factory" or nav_item.title == "d.run AI OS" %}
         {% else %}
           {{ item.render(nav_item) }}
         {% endif %}

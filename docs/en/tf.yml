@@ -1,5 +1,5 @@
 nav:
-  - Token Factory:
+  - d.run Token Factory:
       - Overview: tf/index.md
       - Cloud Native AI:
           - ClawOS:

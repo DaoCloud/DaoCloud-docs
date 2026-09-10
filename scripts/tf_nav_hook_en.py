@@ -20,7 +20,7 @@ def on_config(config):
     nav = [
         item
         for item in nav
-        if not (isinstance(item, dict) and "Token Factory" in item)
+        if not (isinstance(item, dict) and "d.run Token Factory" in item)
     ]
 
     insert_pos = len(nav)

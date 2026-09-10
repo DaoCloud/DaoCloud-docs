@@ -12,9 +12,9 @@ DaoCloud is an open-source pioneer in the global AI space, dedicated to accelera
 This site provides documentation for three product lines, covering full-stack capabilities from infrastructure and compute scheduling to model inference and application building.
 
 <div class="tf-hero-badges">
-<a class="tf-hero-badge tf-hero-badge--tf" href="tf/">Token Factory</a>
+<a class="tf-hero-badge tf-hero-badge--tf" href="tf/">d.run Token Factory</a>
 <a class="tf-hero-badge tf-hero-badge--drun" href="drun/">d.run AI OS</a>
-<a class="tf-hero-badge tf-hero-badge--dce" href="dce/">DCE Cloud Native OS</a>
+<a class="tf-hero-badge tf-hero-badge--dce" href="dce/">DaoCloud Enterprise</a>
 </div>
 
 </div>
@@ -57,7 +57,7 @@ This site provides documentation for three product lines, covering full-stack ca
 }
 </style>
 
-=== ":material-factory: Token Factory"
+=== ":material-factory: d.run Token Factory"
 
     This is a high-efficiency AI Token production and management system designed for intelligent computing centers, dedicated to upgrading traditional computing centers into efficient, profitable Token factories.
     The platform unifiedly manages NVIDIA and domestic heterogeneous computing power, transforming distributed GPU compute into low-cost, highly stable, and tradable standardized Token services through intelligent scheduling and inference optimization.
@@ -243,7 +243,7 @@ This site provides documentation for three product lines, covering full-stack ca
       </div>
     </div>
 
-=== ":octicons-stack-16: DCE Cloud Native OS"
+=== ":octicons-stack-16: DaoCloud Enterprise"
 
     DaoCloud Enterprise (DCE) is a high-performance, scalable cloud native operating system,
     and a [CNCF-certified Kubernetes – AI Platform](./dce/kcsp.md).

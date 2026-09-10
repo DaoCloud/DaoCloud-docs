@@ -25,7 +25,7 @@ def on_config(config):
 
     insert_pos = len(nav)
     for i, item in enumerate(nav):
-        if isinstance(item, dict) and "Token Factory" in item:
+        if isinstance(item, dict) and "d.run Token Factory" in item:
             insert_pos = i + 1
             break
 

@@ -3,9 +3,9 @@ hide:
   - toc
 ---
 
-# Token Factory
+# d.run Token Factory
 
-Token Factory is an integrated platform built by DaoCloud for AI intelligent computing scenarios, providing end-to-end capabilities around large model inference, compute scheduling, and cluster operations. The platform adopts a dual-view architecture of **User** and **Admin**: the user view serves end users, providing large model service invocation, cost management, and intelligent application access capabilities; the admin view serves operations and management teams, providing unified management of model hosting, inference engines, infrastructure, and global operations.
+d.run Token Factory is an integrated platform built by DaoCloud for AI intelligent computing scenarios, providing end-to-end capabilities around large model inference, compute scheduling, and cluster operations. The platform adopts a dual-view architecture of **User** and **Admin**: the user view serves end users, providing large model service invocation, cost management, and intelligent application access capabilities; the admin view serves operations and management teams, providing unified management of model hosting, inference engines, infrastructure, and global operations.
 
 <style>
 .tf-arch-card{min-width:calc(25% - 6px) !important}

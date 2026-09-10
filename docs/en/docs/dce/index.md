@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# DCE Documentation Navigation
+# DaoCloud Enterprise Docs
 
 DaoCloud Enterprise (DCE) is built on Kubernetes as its foundation, providing highly scalable, powerful, and flexible production-grade features that enable enterprises to easily build and manage distributed applications.
 With DCE's cloud native DNA, enterprises can fully leverage the advantages of both cloud and on-premises environments, achieve optimal resource utilization, improve the reliability and elasticity of IT systems, and greatly accelerate application delivery.

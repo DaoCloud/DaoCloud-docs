@@ -1,7 +1,7 @@
 # Page tree
 nav:
   - Home: https://www.daocloud.io/en/
-  - DCE Cloud Native OS:
+  - DaoCloud Enterprise:
       - Overview: dce/index.md
       - Learn and Install:
           - DCE Profile:
