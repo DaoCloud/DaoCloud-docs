@@ -28,7 +28,7 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./clusterpedia.md)
 
--   :simple-amazonapigateway:{ .lg .middle } __egressgateway__
+-   :material-gate:{ .lg .middle } __egressgateway__
 
     ---
 
@@ -71,7 +71,7 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./hwameistor.md)
 
--   :melon:{ .lg .middle } __HAMi__ :simple-cncf: Listed in CNCF Incubating 👏
+-   :melon:{ .lg .middle } __HAMi__ :simple-cncf: Listed in CNCF Incubation 👏
 
     ---
 

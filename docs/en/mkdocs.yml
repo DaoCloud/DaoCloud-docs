@@ -242,5 +242,5 @@ markdown_extensions:
   #       - includes/glossary.md
 
 hooks:
-  - ../../scripts/tf_nav_hook.py
-  - ../../scripts/drun_nav_hook.py
+  - ../../scripts/tf_nav_hook_en.py
+  - ../../scripts/drun_nav_hook_en.py

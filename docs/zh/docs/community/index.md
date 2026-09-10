@@ -70,7 +70,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./hwameistor.md)
 
--   :melon:{ .lg .middle } __HAMi__ :simple-cncf: 已入选 CNCF Incubating 👏
+-   :melon:{ .lg .middle } __HAMi__ :simple-cncf: 已入选 CNCF Incubation 👏
 
     ---
 
