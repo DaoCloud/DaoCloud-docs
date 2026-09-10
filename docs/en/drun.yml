@@ -10,14 +10,14 @@ nav:
               - OpenClaw Instance: drun/clawos/workspace/openclaw.md
               - Feishu Integration: drun/clawos/workspace/feishu.md
               - Microsoft Teams Configuration: drun/clawos/workspace/teams-info.md
-          - LLM Serving Platform:
-              - Introduction:
-                  - What is LLM Serving Platform: drun/hydra/intro/index.md
+          - LLM Studio:
+              - Intro:
+                  - What is LLM Studio: drun/hydra/intro/index.md
                   - Release Notes: drun/hydra/intro/release-notes.md
-                  - Deploy LLM Serving Platform: drun/hydra/intro/deploy-ws.md
-                  - Offline Upgrade LLM Serving Platform: drun/hydra/intro/offline-upgrade.md
+                  - Deploy LLM Studio: drun/hydra/intro/deploy-ws.md
+                  - Offline Upgrade LLM Studio: drun/hydra/intro/offline-upgrade.md
                   - Upgrade Notes: drun/hydra/intro/upgrade-notes.md
-              - User Perspective:
+              - User:
                   - Model Plaza: drun/hydra/index.md
                   - Model Experience: drun/hydra/exp.md
                   - Model Management:
@@ -34,28 +34,28 @@ nav:
                       - Remote File Preheat: drun/hydra/file-storage/file-preheat.md
                       - File Storage Scale: drun/hydra/file-storage/file-scale.md
                   - API Key Management: drun/hydra/apikey.md
-              - O&M Management:
+              - Admin:
                   - Model Plaza Management: drun/hydra/oam/index.md
                   - MaaS Model Management: drun/hydra/oam/maas.md
-                  - Model Deployment Management: drun/hydra/oam/mdm.md
+                  - Model Serving Management: drun/hydra/oam/mdm.md
                   - Security Policy Management: drun/hydra/oam/security-policy.md
                   - Security Audit Logs: drun/hydra/oam/security-audit-logs.md
               - User Practice Scenarios:
-                  - Example Scenarios Introduction: drun/hydra/user-guides/index.md
+                  - Example Scenarios Intro: drun/hydra/user-guides/index.md
                   - Use in VSCode and Cline: drun/hydra/user-guides/cline-in-vscode.md
                   - Use in Cherry Studio: drun/hydra/user-guides/cherry-studio.md
                   - Use in Bob Translate: drun/hydra/user-guides/bob-translate.md
                   - Use in LobeChat: drun/hydra/user-guides/lobe-chat.md
                   - Custom LLM Inference Runtime: drun/hydra/user-guides/custom-runtime.md
           - AI Lab:
-              - Introduction:
+              - Intro:
                   - What is AI Lab: drun/baize/intro/index.md
                   - Install AI Lab Components: drun/baize/intro/install.md
                   - First Use: drun/baize/intro/first.md
                   - Release Notes: drun/baize/intro/release-notes.md
                   - Upgrade Notes: drun/baize/intro/upgrade-notes.md
               - Developer Console:
-                  - Introduction: drun/baize/developer/index.md
+                  - Intro: drun/baize/developer/index.md
                   - Quick Start: drun/baize/developer/quick-start.md
                   - Use Notebook Development Environment:
                       - Create Notebook: drun/baize/developer/notebooks/create.md
@@ -89,8 +89,8 @@ nav:
                       - Inference Service:
                           - Create Triton Inference Service: drun/baize/developer/inference/triton-inference.md
                           - Create vLLM Inference Service: drun/baize/developer/inference/vllm-inference.md
-              - O&M Management:
-                  - Introduction: drun/baize/oam/index.md
+              - Admin:
+                  - Intro: drun/baize/oam/index.md
                   - Resource Pool Management:
                       - Create Resource Pool: drun/baize/oam/resource/create.md
                       - Manage Resource Pool: drun/baize/oam/resource/manage.md
@@ -114,7 +114,7 @@ nav:
                   - Queue Initialization Failed: drun/baize/troubleshoot/local-queue-initialization-failed.md
           - InferX Inference Suite:
               - drun/inferx/index.md
-              - FAQ: drun/inferx/faqs.md
+              - FAQs: drun/inferx/faqs.md
               - Best Practices:
                   - Install InferX in Offline Environment: drun/inferx/guides/offline.md
                   - Enable Istio GAIE Feature for Cluster: drun/inferx/guides/enable-istio-gaie-with-mspider.md
@@ -123,12 +123,12 @@ nav:
       - Cloud Native Foundation:
           - Container Management:
               - drun/kpanda/intro/index.md
-              - Introduction:
+              - Intro:
                   - Features: drun/kpanda/intro/features.md
                   - Scenarios and Advantages: drun/kpanda/intro/scenarios.md
                   - Release Notes: drun/kpanda/intro/release-notes.md
                   - Offline Upgrade Container Management: drun/kpanda/intro/offline-upgrade.md
-                  - FAQ: drun/kpanda/intro/faq.md
+                  - FAQs: drun/kpanda/intro/faq.md
               - Cluster Management:
                   - Create Cluster: drun/kpanda/user-guide/clusters/create-cluster.md
                   - Integrate/Scale/Uninstall Cluster:
@@ -179,7 +179,7 @@ nav:
                   - Create VPA Policy: drun/kpanda/user-guide/scale/create-vpa.md
                   - HPA and CronHPA Compatibility Rules: drun/kpanda/user-guide/scale/hpa-cronhpa-compatibility-rules.md
                   - Other Solutions:
-                    - Knative Introduction: drun/kpanda/user-guide/scale/knative/knative.md
+                    - Knative Intro: drun/kpanda/user-guide/scale/knative/knative.md
                     - Install Knative: drun/kpanda/user-guide/scale/knative/install.md
                     - Knative Scenarios: drun/kpanda/user-guide/scale/knative/scene.md
                     - Knative Practice: drun/kpanda/user-guide/scale/knative/playground.md
@@ -215,13 +215,13 @@ nav:
                   - Cluster Settings: drun/kpanda/user-guide/clusterops/cluster-settings.md
                   - Cluster Dynamic Resource Oversubscription: drun/kpanda/user-guide/clusterops/cluster-oversold.md
               - Cluster Inspection:
-                  - Introduction: drun/kpanda/user-guide/inspect/index.md
+                  - Intro: drun/kpanda/user-guide/inspect/index.md
                   - Create Inspection Configuration: drun/kpanda/user-guide/inspect/config.md
                   - Execute Inspection: drun/kpanda/user-guide/inspect/inspect.md
                   - View Inspection Report: drun/kpanda/user-guide/inspect/report.md
                   - Offline Upgrade Cluster Inspection: drun/kpanda/user-guide/inspect/offline-upgrade.md
               - Backup & Recovery:
-                  - Introduction: drun/kpanda/user-guide/backup/index.md
+                  - Intro: drun/kpanda/user-guide/backup/index.md
                   - Install Velero Plugin: drun/kpanda/user-guide/backup/install-velero.md
                   - Application Backup: drun/kpanda/user-guide/backup/deployment.md
                   - etcd Backup: drun/kpanda/user-guide/backup/etcd-backup.md
@@ -236,11 +236,11 @@ nav:
                   - Vulnerability Scan: drun/kpanda/user-guide/security/hunter.md
                   - Offline Upgrade Security Management: drun/kpanda/user-guide/security/offline-upgrade-dowl.md
                   - Integrate Falco Security Tools:
-                      - Introduction: drun/security/falco.md
+                      - Intro: drun/security/falco.md
                       - Install: drun/security/falco-install.md
                       - Falco-exporter: drun/security/falco-exporter.md
               - Permission Management:
-                  - Permission System Introduction: drun/kpanda/user-guide/permissions/permission-brief.md
+                  - Permission System Intro: drun/kpanda/user-guide/permissions/permission-brief.md
                   - Cluster and Namespace Authorization: drun/kpanda/user-guide/permissions/cluster-ns-auth.md
                   - Add Container Management Built-in Permissions: drun/kpanda/user-guide/permissions/custom-kpanda-role.md
               - GPU Management:
@@ -291,7 +291,7 @@ nav:
                       - Offline Install MetaX GPU Management: drun/kpanda/user-guide/gpu/metax/offline-metax.md
                   - Cambricon GPU Management: drun/kpanda/user-guide/gpu/mlu/use-mlu.md
                   - Pod and GPU Card Occupation: drun/kpanda/user-guide/gpu/gpupod.md
-                  - GPU FAQ: drun/kpanda/user-guide/gpu/FAQ.md
+                  - GPU FAQs: drun/kpanda/user-guide/gpu/FAQ.md
               - Best Practices:
                   - Deploy HAMi Enterprise Edition: drun/kpanda/best-practice/hami-enterprise-installation.md
                   - Backup and Restore etcd: drun/kpanda/best-practice/etcd-backup.md
@@ -318,7 +318,7 @@ nav:
                   - Best Practices for Maximum Pod Count per Physical Machine: drun/kpanda/best-practice/max-pod.md
           - Device Management:
               - drun/topohub/intro/index.md
-              - Introduction:
+              - Intro:
                   - What is Device Management: drun/topohub/intro/index.md
                   - Install Device Management Components: drun/topohub/intro/install.md
                   - Device Management Release Notes: drun/topohub/intro/release-notes.md
@@ -328,9 +328,9 @@ nav:
                   - Manage Devices: drun/topohub/device/manage-device.md
           - Image Registry:
               - drun/kangaroo/intro/index.md
-              - Introduction:
+              - Intro:
                   - Release Notes: drun/kangaroo/intro/release-notes.md
-                  - Image Registry FAQ: drun/kangaroo/intro/faq.md
+                  - Image Registry FAQs: drun/kangaroo/intro/faq.md
                   - Offline Upgrade Image Registry: drun/kangaroo/intro/upgrade.md
               - Quick Start:
                   - Manage External Image Registry: drun/kangaroo/quickstart/registry-in-one.md
@@ -366,13 +366,13 @@ nav:
                   - Image Registry Capacity Resource Planning: drun/kangaroo/best-practice/capacity-planning.md
                   - Deploy Harbor via LB Mode: drun/kangaroo/best-practice/lb.md
           - Cloud Native Networking:
-              - Introduction:
+              - Intro:
                   - What is Container Network: drun/network/intro/index.md
                   - Background and Challenges: drun/network/intro/background.md
                   - Network Components: drun/network/modules/modules.md
                   - Offline Upgrade Cloud Native Networking: drun/network/intro/offline.md
                   - Release Notes: drun/network/intro/release-notes.md
-                  - Network Components FAQ: drun/network/intro/issues.md
+                  - Network Components FAQs: drun/network/intro/issues.md
               - Network Planning:
                   - NIC Planning: drun/network/plans/ethplan.md
                   - Network Planning: drun/network/plans/netplan.md
@@ -406,7 +406,7 @@ nav:
                   - Egress Performance Test: drun/network/performance/egress-performance.md
                   - CoreDNS Performance Test: drun/network/performance/coredns-performance.md
               - Integrate Spiderpool:
-                  - Introduction: drun/network/modules/spiderpool/index.md
+                  - Intro: drun/network/modules/spiderpool/index.md
                   - Release Notes: drun/network/modules/spiderpool/release-notes.md
                   - Install:
                       - System Requirements: drun/network/modules/spiderpool/install/system-requirements.md
@@ -433,7 +433,7 @@ nav:
                       - Configuration Reference: drun/network/modules/spiderpool/config.md
                       - Common Commands: drun/network/modules/spiderpool/command.md
               - Integrate EgressGateway:
-                  - Introduction: drun/network/modules/egressgateway/index.md
+                  - Intro: drun/network/modules/egressgateway/index.md
                   - Release Notes: drun/network/modules/egressgateway/release-notes.md
                   - Install and Run on DCE:
                       - Install: drun/network/modules/egressgateway/install.md
@@ -453,34 +453,34 @@ nav:
                       - Run in Alibaba Cloud Environment: drun/network/modules/egressgateway/public-cloud/alicloud.md
                       - Run in AWS Environment: drun/network/modules/egressgateway/public-cloud/awswithcilium.md
               - Integrate sriov-network-operator:
-                  - Introduction: drun/network/modules/sriov-network-operator/index.md
+                  - Intro: drun/network/modules/sriov-network-operator/index.md
                   - Install: drun/network/modules/sriov-network-operator/install.md
                   - SR-IOV: drun/network/modules/multus-underlay/sriov.md
                   - DPDK: drun/network/modules/multus-underlay/dpdk.md
               - Integrate Calico:
-                  - Introduction: drun/network/modules/calico/index.md
+                  - Intro: drun/network/modules/calico/index.md
                   - Install Parameter Configuration: drun/network/modules/calico/install.md
                   - ippool: drun/network/modules/calico/ippool.md
                   - Monitoring Metrics: drun/network/modules/calico/metrics.md
                   - Calico Network Policy: drun/network/modules/calico/policy.md
                   - Troubleshooting: drun/network/modules/calico/debug.md
               - Integrate Cilium:
-                  - Introduction: drun/network/modules/cilium/index.md
+                  - Intro: drun/network/modules/cilium/index.md
                   - Deploy Cilium: drun/network/modules/cilium/deploy-cilium.md
                   - Unsupported Features: drun/network/modules/cilium/not-support.md
                   - Cilium Network Communication Acceleration: drun/network/modules/cilium/cilium-speedup.md
                   - Cross-Cluster Application Communication: drun/network/modules/cilium/cross-cluster.md
                   - Implement IPVlan Network Policy: drun/network/modules/cilium/cilium_chaining.md
               - Integrate Contour:
-                  - Introduction: drun/network/modules/contour/index.md
+                  - Intro: drun/network/modules/contour/index.md
                   - Install: drun/network/modules/contour/install.md
               - Integrate F5networks:
-                  - Introduction: drun/network/modules/f5networks/index.md
+                  - Intro: drun/network/modules/f5networks/index.md
                   - Install: drun/network/modules/f5networks/install.md
                   - Usage: drun/network/modules/f5networks/usage.md
                   - Debug: drun/network/modules/f5networks/debug.md
               - Integrate Ingress-nginx:
-                  - Introduction: drun/network/modules/ingress-nginx/index.md
+                  - Intro: drun/network/modules/ingress-nginx/index.md
                   - Install: drun/network/modules/ingress-nginx/install.md
                   - Ingress Class: drun/network/modules/ingress-nginx/ingressclass.md
                   - Ingress Scope: drun/network/modules/ingress-nginx/scope.md
@@ -494,13 +494,13 @@ nav:
                   - Migrate to Higress or kgateway: drun/network/modules/ingress-nginx/migrate-to-higress-or-kgateway.md
                   - Troubleshooting Guide: drun/network/modules/ingress-nginx/troubleshooting.md
               - Integrate Higress:
-                  - Introduction: drun/network/modules/higress/index.md
+                  - Intro: drun/network/modules/higress/index.md
                   - Install: drun/network/modules/higress/install.md
               - Integrate Kgateway:
-                  - Introduction: drun/network/modules/kgateway/index.md
+                  - Intro: drun/network/modules/kgateway/index.md
                   - Install: drun/network/modules/kgateway/install.md
               - Integrate Metallb:
-                  - Introduction: drun/network/modules/metallb/index.md
+                  - Intro: drun/network/modules/metallb/index.md
                   - Install: drun/network/modules/metallb/install.md
                   - IPPool Modify and Create: drun/network/modules/metallb/ippool-create.md
                   - IPPool Usage Notes: drun/network/modules/metallb/usage.md
@@ -508,31 +508,31 @@ nav:
                   - Get Client Source IP: drun/network/modules/metallb/source_ip.md
                   - Issue Troubleshooting: drun/network/modules/metallb/debug.md
               - Integrate Multus-underlay:
-                  - Introduction: drun/network/modules/multus-underlay/index.md
+                  - Intro: drun/network/modules/multus-underlay/index.md
                   - Install: drun/network/modules/multus-underlay/install.md
                   - Macvlan: drun/network/modules/multus-underlay/macvlan.md
                   - NmState: drun/network/modules/multus-underlay/nmstat.md
               - Integrate Submariner:
-                  - Introduction: drun/network/modules/submariner/index.md
+                  - Intro: drun/network/modules/submariner/index.md
                   - Install: drun/network/modules/submariner/install.md
                   - Usage Notes: drun/network/modules/submariner/usage.md
               - Integrate Kdoctor:
-                    - Introduction: drun/network/modules/kdoctor/index.md
+                    - Intro: drun/network/modules/kdoctor/index.md
                     - Install: drun/network/modules/kdoctor/install.md
               - Integrate Alibaba Cloud Terway:
-                  - Introduction: drun/network/modules/aliyun-terway/index.md
+                  - Intro: drun/network/modules/aliyun-terway/index.md
                   - Terway Network Mode: drun/network/modules/aliyun-terway/what.md
                   - Usage Notes: drun/network/modules/aliyun-terway/usage.md
                   - Run Calico in Alibaba Cloud: drun/network/modules/aliyun-terway/aliyun-calico.md
                   - Run Cilium in Alibaba Cloud: drun/network/modules/aliyun-terway/aliyun-cilium.md
-                  - FAQ: drun/network/modules/aliyun-terway/Q_A.md
+                  - FAQs: drun/network/modules/aliyun-terway/Q_A.md
               - Integrate Unifabric:
                   - Unifabric Overview: drun/network/modules/unifabric/index.md
                   - Release Notes: drun/network/modules/unifabric/release-notes.md
                   - Install Unifabric: drun/network/modules/unifabric/install.md
                   - RDMA Latency Monitoring Usage Guide: drun/network/modules/unifabric/features/RdmaLatencyDetection.md
           - Cloud Native Storage:
-              - Introduction:
+              - Intro:
                   - What is Cloud Native Storage: drun/storage/index.md
                   - Features: drun/storage/features.md
                   - Release Notes: drun/storage/hwameistor/release-notes.md
@@ -542,14 +542,14 @@ nav:
                       - Local Disk Manager: drun/storage/hwameistor/intro/ldm.md
                       - Local Storage: drun/storage/hwameistor/intro/ls.md
                       - DRBD Installer:
-                          - Introduction: drun/storage/hwameistor/intro/drbd.md
+                          - Intro: drun/storage/hwameistor/intro/drbd.md
                           - DRBD Supported Kernel Versions: drun/storage/hwameistor/intro/drbd-support.md
                           - DRBD Self-Compilation Operations: drun/storage/hwameistor/intro/drdb-kernel-make.md
                       - Scheduler: drun/storage/hwameistor/intro/scheduler.md
                       - Admission Controller: drun/storage/hwameistor/intro/admission-controller.md
                       - Evictor: drun/storage/hwameistor/intro/evictor.md
                       - Metrics Collector: drun/storage/hwameistor/intro/exporter.md
-                  - Resources Introduction: drun/storage/hwameistor/intro/resources.md
+                  - Resources Intro: drun/storage/hwameistor/intro/resources.md
                   - Install Management:
                       - Prerequisites: drun/storage/hwameistor/install/prereq.md
                       - Resource Requirements: drun/storage/hwameistor/install/proresource.md
@@ -578,10 +578,10 @@ nav:
                       - Deploy Stateful Applications:
                           - Deploy with Local Volume: drun/storage/hwameistor/application/local.md
                           - Deploy with HA Volume: drun/storage/hwameistor/application/ha.md
-                  - FAQ: drun/storage/hwameistor/faqs.md
+                  - FAQs: drun/storage/hwameistor/faqs.md
               - Integrate Open Source Storage Solutions:
                   - Rook-Ceph:
-                      - Rook-Ceph Introduction: drun/storage/solutions/rook-ceph.md
+                      - Rook-Ceph Intro: drun/storage/solutions/rook-ceph.md
                       - Rook-Ceph Deploy - App Store: drun/storage/solutions/dce-rook-ceph.md
                       - Rook-Ceph Deploy - Helm: drun/storage/solutions/helm-rook-ceph.md
                       - How to Integrate Ceph Dashboard: drun/storage/solutions/ceph-dashboard.md
@@ -589,10 +589,10 @@ nav:
                       - Create Ceph RBD Storage Class: drun/storage/solutions/sc-cephrbd.md
                       - Create Ceph RGW Storage Class: drun/storage/solutions/sc-cephrgw.md
                   - Longhorn:
-                      - Longhorn Introduction: drun/storage/solutions/longhorn.md
+                      - Longhorn Intro: drun/storage/solutions/longhorn.md
                       - Longhorn Deploy - App Store: drun/storage/solutions/dce-longhorn.md
                   - OpenEBS:
-                      - OpenEBS Introduction: drun/storage/solutions/openebs.md
+                      - OpenEBS Intro: drun/storage/solutions/openebs.md
                       - Deploy OpenEBS via Helm: drun/storage/solutions/openebs-helm.md
                   - TiDB: drun/storage/hwameistor/application/tidb.md
                   - MinIO: drun/storage/hwameistor/application/minio/minio.md
@@ -608,7 +608,7 @@ nav:
       - IT Operations:
           - Insight:
               - drun/insight/intro/index.md
-              - Introduction:
+              - Intro:
                   - Features: drun/insight/intro/features.md
                   - Benefits: drun/insight/intro/benefits.md
                   - Application Scenarios: drun/insight/intro/scenarios.md
@@ -706,7 +706,7 @@ nav:
                   - Kubernetes Compatibility Testing: drun/insight/compati-test/k8s-compatibility.md
                   - Rancher Compatibility Testing: drun/insight/compati-test/rancher-compatibility.md
                   - Openshift Compatibility Testing: drun/insight/compati-test/ocp-compatibility.md
-              - FAQ:
+              - FAQs:
                   - Trace Data Clock Skew: drun/insight/faq/traceclockskew.md
                   - Log Collection Troubleshooting Guide: drun/insight/best-practice/debug-log.md
                   - Trace Collection Troubleshooting Guide: drun/insight/best-practice/debug-trace.md
@@ -720,11 +720,11 @@ nav:
                   - Fluent Bit Failed on NeoKylin Linux: drun/insight/faq/kylin-fluentbit.md
           - Global Management:
               - drun/ghippo/intro/index.md
-              - Introduction:
+              - Intro:
                   - Features: drun/ghippo/intro/features.md
                   - Glossary: drun/ghippo/intro/glossary.md
                   - Release Notes: drun/ghippo/intro/release-notes.md
-                  - FAQ: drun/ghippo/intro/faq.md
+                  - FAQs: drun/ghippo/intro/faq.md
               - Install, Login and Upgrade:
                   - Offline Upgrade Global Management: drun/ghippo/install/offline-install.md
                   - Custom Reverse Proxy Server Address: drun/ghippo/install/reverse-proxy.md

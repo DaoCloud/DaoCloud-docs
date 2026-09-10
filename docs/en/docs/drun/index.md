@@ -56,7 +56,7 @@ d.run leverages the world's top-three Kubernetes scheduling technology and core 
       </a>
       <a class="tf-arch-card tf-arch-card--model" href="hydra/">
         <span class="tf-arch-card-title">LLM Studio</span>
-        <span class="tf-arch-card-tip">Model deployment and O&M management</span>
+        <span class="tf-arch-card-tip">Model serving and O&M management</span>
       </a>
       <a class="tf-arch-card tf-arch-card--model" href="baize/intro/">
         <span class="tf-arch-card-title">AI Lab</span>

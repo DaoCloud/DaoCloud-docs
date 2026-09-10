@@ -256,11 +256,11 @@ dataset.dataset.baizeai.io/qwen3-0.6b created
 
 Try the model in DCE.
 
-## Model Deployment
+## Model Serving
 
 If running without GPUs, note:
 
-1. Model deployment without GPU (deployment detects no GPU and fails)
+1. Model serving without GPU (deployment detects no GPU and fails)
 
     Therefore, deploy `gpu-operator-fake` (pulling external images requires proxy):
 

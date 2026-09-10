@@ -73,12 +73,12 @@ This site provides documentation for three product lines, covering full-stack ca
             <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="tf/dak/">
-            <span class="tf-arch-card-title">AI Applications</span>
+            <span class="tf-arch-card-title">AI Apps</span>
             <span class="tf-arch-card-tip">Intelligent Q&A and application capabilities</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="tf/hydra/">
-            <span class="tf-arch-card-title">LLM Serving Platform</span>
-            <span class="tf-arch-card-tip">Model deployment and O&M management</span>
+            <span class="tf-arch-card-title">LLM Studio</span>
+            <span class="tf-arch-card-tip">Model serving and O&M management</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="tf/inferx/">
             <span class="tf-arch-card-title">InferX Inference</span>
@@ -171,7 +171,7 @@ This site provides documentation for three product lines, covering full-stack ca
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="drun/hydra/">
             <span class="tf-arch-card-title">LLM Studio</span>
-            <span class="tf-arch-card-tip">Model deployment and O&M management</span>
+            <span class="tf-arch-card-tip">Model serving and O&M management</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="drun/baize/intro/">
             <span class="tf-arch-card-title">AI Lab</span>

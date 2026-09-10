@@ -1,6 +1,6 @@
-# AI Applications
+# AI Apps
 
-This page lists operation videos related to the AI Application Center, corpora, and data analysis.
+This page lists operation videos related to the AI App Center, corpora, and data analysis.
 
 ## Create an AI Application
 

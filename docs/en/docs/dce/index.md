@@ -103,7 +103,7 @@ With DCE's cloud native DNA, enterprises can fully leverage the advantages of bo
   </div>
   <div class="tf-arch-arrow">▼</div>
   <div class="tf-arch-layer tf-arch-layer--ops">
-    <div class="tf-arch-layer-label">O&M Management</div>
+    <div class="tf-arch-layer-label">OAM</div>
     <div class="tf-arch-cards">
       <a class="tf-arch-card tf-arch-card--ops" href="../insight/intro/">
         <span class="tf-arch-card-title">Observability</span>

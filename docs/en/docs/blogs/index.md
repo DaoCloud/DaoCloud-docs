@@ -5,8 +5,8 @@ hide:
 
 # Blog Posts
 
-This page summarizes blogs and public account articles related to DCE and cloud native
-technology, sorted by date by default.
+This page summarizes blogs and public account articles related to AI and cloud native
+technologies, sorted by date by default.
 
 *[DCE]: Abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
 
