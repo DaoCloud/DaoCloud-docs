@@ -5,12 +5,12 @@ hide:
 
 # Mail Server
 
-DCE 5.0 will send an e-mail to the user to verify the e-mail address if the user forgets the password to ensure that the user is acting in person.
-In order for DCE 5.0 to be able to send email, you need to provide your mail server address first.
+DCE will send an e-mail to the user to verify the e-mail address if the user forgets the password to ensure that the user is acting in person.
+In order for DCE to be able to send email, you need to provide your mail server address first.
 
 The specific operation steps are as follows:
 
-1. Log in to DCE 5.0 as a user with __admin__ role. Click __Global Management__ at the bottom of the left navigation bar.
+1. Log in to DCE as a user with __admin__ role. Click __Global Management__ at the bottom of the left navigation bar.
 
     
 

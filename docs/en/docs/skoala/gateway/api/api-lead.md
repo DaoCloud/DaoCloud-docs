@@ -12,7 +12,7 @@ the request format and processing logic.
 Select **Microservice Engine** -> **Cloud Native Gateway** .
 Click the name of a functioning gateway, then in the left navigation bar, choose **API Management** .
 Click the **Import API** button in the top right corner to upload or enter new API information
-into the DCE 5.0 microservice engine.
+into the DCE microservice engine.
 
 ![API Import](./images/api-lead.png)
 

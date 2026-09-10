@@ -34,7 +34,7 @@ Therefore, please manually delete the corresponding `secret` using one of the fo
     kubectl -n insight-system delete secret insight-agent-opentelemetry-operator-controller-manager-service-cert
     ```
 
-- **Delete via UI**: Log in to DCE 5.0 container management, select the target cluster, select **Secret**
+- **Delete via UI**: Log in to DCE container management, select the target cluster, select **Secret**
   from the left menu, input `insight-agent-opentelemetry-operator-controller-manager-service-cert`,
   then select `Delete`.
 

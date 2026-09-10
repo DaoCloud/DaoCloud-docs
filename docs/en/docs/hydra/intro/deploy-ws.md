@@ -254,7 +254,7 @@ dataset.dataset.baizeai.io/qwen3-0.6b created
 
 ## Try the Model
 
-Try the model in DCE 5.0.
+Try the model in DCE.
 
 ## Model Deployment
 

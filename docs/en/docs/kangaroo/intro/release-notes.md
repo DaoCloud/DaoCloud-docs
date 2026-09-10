@@ -50,7 +50,7 @@ understand the evolution path and feature changes of each version.
 - **Added** a feature of quickly creating managed Harbor instances through a one-click setup for Redis/Minio/PostgreSQL.
 - **Improved** the validation of middleware instances when creating managed Harbor, to reuse is disabled now.
 - **Improved** the adaptability to middlewares, so that a middleware created through the container registry can also
-  be managed by the DCE 5.0 middleware (`mcamel`) module.
+  be managed by the DCE middleware (`mcamel`) module.
 - **Added** cluster status validation when creating managed Harbor; Harbor can only be created in running clusters.
 - **Fixed** the issue of missing audit logs when editing or deleting managed Harbor.
 - **Fixed** the error when pulling images through the built-in middleware interface.
@@ -219,7 +219,7 @@ understand the evolution path and feature changes of each version.
 
 - **Added** support for creating managed Harbor instances with `NodePort` exposure and validation of port availability.
 - **Added** support for creating managed Harbor instances with `https` exposure.
-- **Added** support for creating managed Harbor instances with `DCE 5.0 ODIC` integration, allowing users to log in to Harbor using `DCE 5.0` credentials.
+- **Added** support for creating managed Harbor instances with `DCE ODIC` integration, allowing users to log in to Harbor using `DCE` credentials.
 - **Added** support for validating the installation of `harbor-operator` in the deployed cluster when creating managed Harbor instances.
 - **Added** support for deploying `redis` instances using the middleware module in managed Harbor instances.
 - **Added** support for modifying `Admin` password, resource quotas, `Redis` instances, and access types in managed Harbor instances.

@@ -8,7 +8,7 @@ hide:
 # What is Workbench?
 
 Workbench is a container-based DevOps cloud native application platform.
-It provides a unified entry point for creating applications in DCE 5.0.
+It provides a unified entry point for creating applications in DCE.
 It offers various functionalities such as graphical form-based creation
 of multiple pipelines, GitOps, canary deployments, blue/green deployments,
 AB testing, project management, and toolchain integration.
@@ -32,7 +32,7 @@ helps enterprises achieve digital transformation and improve IT delivery capabil
 === "Cloud-Native Applications as a Center"
 
     Supports "polyform" cloud native applications in cloud native scenarios, including Kubernetes native applications, Helm apps, and OAM applications.
-    Can integrate microservice applications based on SpingCloud, Dubbo, and ServiceMesh frameworks to achieve microservice governance. Seamlessly integrates with DCE 5.0's [Microservice Engine](../../skoala/intro/index.md) and [Service Mesh](../../mspider/intro/index.md).
+    Can integrate microservice applications based on SpingCloud, Dubbo, and ServiceMesh frameworks to achieve microservice governance. Seamlessly integrates with DCE's [Microservice Engine](../../skoala/intro/index.md) and [Service Mesh](../../mspider/intro/index.md).
     Provides lifecycle management for cloud native applications, such as scaling, logging, monitoring, and application updates.
 
     ![Cloud native apps](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/what02.png)
@@ -55,19 +55,19 @@ helps enterprises achieve digital transformation and improve IT delivery capabil
     
     Argo-Rollout Kubernetes Progressive Delivery Controller provides powerful deployment capabilities, including canary releases, blue/green deployments, experimentation, and progressive delivery features.
 
-## Positioning in DCE 5.0
+## Positioning in DCE
 
 Built on container management, hierarchical resource management through global management,
 creating and managing cloud native applications with CI/CD pipelines and GitOps processes,
 facilitating progressive delivery.
 
-![Workbench Role in DCE 5.0](../images/what00.jpg)
+![Workbench Role in DCE](../images/what00.jpg)
 
 ## Deploy
 
 It is recommended to install Workbench using the
-[DCE 5.0 Enterprise Package](../../install/commercial/start-install.md),
-as it installs all modules of DCE 5.0 at once, without worrying about component compatibility.
+[DCE Enterprise Package](../../install/commercial/start-install.md),
+as it installs all modules of DCE at once, without worrying about component compatibility.
 
 However, if you want to install or upgrade the Workbench module separately, run the following command successively:
 
@@ -80,5 +80,5 @@ helm upgrade --install --create-namespace --cleanup-on-fail amamba amamba-releas
 
 1. Replace with the actual version to be deployed
 
-[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../../install/index.md){ .md-button .md-button--primary }

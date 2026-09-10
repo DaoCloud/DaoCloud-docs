@@ -1,7 +1,7 @@
 # Enable ArgoCD-Native UI
 
 To facilitate users in directly viewing ArgoCD application details using ArgoCD's native UI from the Workbench,
-DCE 5.0 Workbench provides a feature to enable the ArgoCD UI.
+DCE Workbench provides a feature to enable the ArgoCD UI.
 This document will guide you on how to enable the ArgoCD UI.
 
 !!! note

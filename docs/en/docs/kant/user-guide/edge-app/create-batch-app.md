@@ -47,7 +47,7 @@ Follow these steps to create a Deployment using an image.
           or number (e.g., nginx-01).
         - Image: Enter the image address or name. If you enter a image name, it will default
           to pulling from the official [DockerHub](https://hub.docker.com/). After integrating with
-          the Docker Distribution module in DCE 5.0, you can click the image selection button
+          the Docker Distribution module in DCE, you can click the image selection button
           to choose an image from the repository.
         - Mirror Pull Policy: By selecting __Always pull the image__ , the workload will pull the image from
           the repository every time it restarts/upgrades. If not selected, it will only pull the

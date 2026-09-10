@@ -5,7 +5,7 @@ hide:
 
 # Multicloud Instance Details
 
-In DCE 5.0 Multicloud Management, you can easily view the details of each multicloud instance.
+In DCE Multicloud Management, you can easily view the details of each multicloud instance.
 
 1. In the multicloud instance list, click the name of a specific instance and enter overview page.
 

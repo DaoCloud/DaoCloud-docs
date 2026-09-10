@@ -1,12 +1,12 @@
 # Webhook Message Notification
 
-With DCE 5.0 integrated into the client's system, you can create Webhooks to send message notifications when users are created, updated, deleted, logged in, or logged out.
+With DCE integrated into the client's system, you can create Webhooks to send message notifications when users are created, updated, deleted, logged in, or logged out.
 
 Webhook is a mechanism for implementing real-time event notifications. It allows an application to push data or events to another application without the need for polling or continuous querying. By configuring Webhooks, you can specify that the target application receives and processes notifications when a certain event occurs.
 
 The working principle of Webhook is as follows:
 
-1. The source application (DCE 5.0) performs a specific operation or event.
+1. The source application (DCE) performs a specific operation or event.
 2. The source application packages the relevant data and information into an HTTP request and sends it to the URL specified by the target application (e.g., enterprise WeChat group robot).
 3. The target application receives the request and processes it based on the data and information provided.
 
@@ -24,7 +24,7 @@ Common use cases include:
 
 ## Configuration Steps
 
-The steps to configure Webhooks in DCE 5.0 are as follows:
+The steps to configure Webhooks in DCE are as follows:
 
 1. On the left nav, click __Global Management__ -> __Access Control__ -> __Docking Portal__ , create a client ID.
 
@@ -60,7 +60,7 @@ The steps to configure Webhooks in DCE 5.0 are as follows:
 
 **Default Message Body**
 
-DCE 5.0 predefines some variables that you can use in the message body based on your needs.
+DCE predefines some variables that you can use in the message body based on your needs.
 
 ```json
 {

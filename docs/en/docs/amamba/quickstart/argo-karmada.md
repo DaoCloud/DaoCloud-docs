@@ -5,7 +5,7 @@ Date: 2024-08-02
 
 # Rollout Multicloud Applications with ArgoCD
 
-This page explains how to integrate multicloud management with ArgoCD in the DCE 5.0 Workbench
+This page explains how to integrate multicloud management with ArgoCD in the DCE Workbench
 to roll out multicloud applications.
 
 ## Prerequisites

@@ -7,7 +7,7 @@ Date: 2024-01-22
 
 This page lists the features supported by Insight.
 
-| Category | Subcategory  | Description | DCE 5.0 Community | DCE 5.0 Enterprise |
+| Category | Subcategory  | Description | DCE Community | DCE Enterprise |
 | -------- | ------------ | ----------- | ----------- | ----------- |
 | Dashboard | Platform Components | Provides open source selected dashboards through native Grafana, provides built-in dashboards to support monitoring of etcd, APIServer and other components. | ✓ | ✓ |
 |  | Cluster Resources | Provides monitoring for multiple dimensions such as clusters, nodes, and namespaces. The data source used by Grafana supports viewing data from multiple clusters. | ✓ | ✓ |

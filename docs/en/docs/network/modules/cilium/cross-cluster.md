@@ -259,7 +259,7 @@ Run the following commands to verify cluster connectivity:
                 - localhost
     ```
 
-2. Quickly create two applications for cluster01 and cluster02 in DCE 5.0 using yaml file.
+2. Quickly create two applications for cluster01 and cluster02 in DCE using yaml file.
 
     ![Create Application](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross9.png)
 

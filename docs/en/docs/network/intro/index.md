@@ -5,7 +5,7 @@ date: 2024-10-10
 
 # Network Portfolio Solutions
 
-Based on open source projects, DCE 5.0 Cloud Native Networking provides not only single CNI network support, but also multiple CNI portfolio solutions.
+Based on open source projects, DCE Cloud Native Networking provides not only single CNI network support, but also multiple CNI portfolio solutions.
 
 [Free Trial Now](../../dce/license0.md){ .md-button .md-button--primary }
 
@@ -53,7 +53,7 @@ This solution is suitable for low kernel versions of Linux OS, and applicable fo
 
 ## Network components
 
-Regrading the two solutions mentioned above, DCE 5.0 allows to install the following network components:
+Regrading the two solutions mentioned above, DCE allows to install the following network components:
 
 - Cert Manager：certificate manager
 - [Calico](../modules/calico/index.md)：a network solution based on iptables

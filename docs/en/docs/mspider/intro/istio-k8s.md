@@ -5,7 +5,7 @@ hide:
   - toc
 ---
 
-# Istio and K8s Versions Supported in DCE 5.0 Service Mesh
+# Istio and K8s Versions Supported in DCE Service Mesh
 
 | Istio Versions | Supported K8s Versions | K8s Versions Tested but not supported|
 | ------- | ----------------------------- | ------------------- |

@@ -48,7 +48,7 @@ Compared to similar products, the DaoCloud Microservice Engine offers the follow
 
 - **Open and Compatible**
 
-    Supports both traditional and cloud-native registries and mainstream open-source microservice frameworks such as Spring Cloud and Dubbo, as well as open-source gateways like Envoy and Contour. It can also be combined with [DCE 5.0](../../dce/index.md) modules for multi-cloud orchestration, data middleware, service mesh, and application workbench, enabling highly customizable and fine-grained functionality.
+    Supports both traditional and cloud-native registries and mainstream open-source microservice frameworks such as Spring Cloud and Dubbo, as well as open-source gateways like Envoy and Contour. It can also be combined with [DCE](../../dce/index.md) modules for multi-cloud orchestration, data middleware, service mesh, and application workbench, enabling highly customizable and fine-grained functionality.
 
 - **Visual Interface and Data**
 

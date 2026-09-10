@@ -9,7 +9,7 @@ hide:
 
 The sidecar log is used to record the operation of the workload's sidecar. By controlling the log level, you can control the output of the sidecar log, thereby reducing log output, storage, and transmission.
 
-When deploying a mesh instance, DCE 5.0 supports configuring the global default sidecar log level. By default, all workload sidecars will use this configuration.
+When deploying a mesh instance, DCE supports configuring the global default sidecar log level. By default, all workload sidecars will use this configuration.
 
 ## Sidecar Log Level Configuration
 

@@ -1,6 +1,6 @@
 # Identity management for MinIO
 
-The MinIO service provided by DCE 5.0 comes with a web console (Web Console). Understanding MinIO's identity management (identity management) helps to quickly understand how to manage sub-accounts safely and effectively within MinIO.
+The MinIO service provided by DCE comes with a web console (Web Console). Understanding MinIO's identity management (identity management) helps to quickly understand how to manage sub-accounts safely and effectively within MinIO.
 
 This article briefly introduces MinIO's identity management rules. For more details, please refer to [MinIO's official documentation](http://docs.minio.org.cn/minio/baremetal/index.html).
 
@@ -31,7 +31,7 @@ There are three ways to create normal users:
 
 #### Console Creation
 
-1. On the MinIO instance details page of DCE 5.0, click the access address, and use the username and password on the right to log in to the console of the instance.
+1. On the MinIO instance details page of DCE, click the access address, and use the username and password on the right to log in to the console of the instance.
 
     <!--screenshot-->
 

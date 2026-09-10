@@ -3,12 +3,12 @@ hide:
   - toc
 ---
 
-# DCE 5.0 Best Practices Portal
+# DCE Best Practices Portal
 
-This page summarizes the best practice documents for various modules of DCE 5.0.
+This page summarizes the best practice documents for various modules of DCE.
 These best practices refer to methods and processes that have been widely recognized as
 effective and reliable through long-term experience and validation in the use and management
-of the DCE 5.0 platform. The content covers aspects such as installation, cluster creation and integration,
+of the DCE platform. The content covers aspects such as installation, cluster creation and integration,
 application management, multicloud management, middleware, and more, aiming to help users run
 and maintain containerized applications more efficiently and stably.
 
@@ -26,7 +26,7 @@ and maintain containerized applications more efficiently and stably.
 
     Supports both offline and online installation methods, and can be installed on various Linux and K8s distributions
 
-    - [Deploy DCE 5.0 on All-in-One Machine](../install/best-practices/all-in-one-machine.md)
+    - [Deploy DCE on All-in-One Machine](../install/best-practices/all-in-one-machine.md)
     - [High Availability Solution for Bootstrap Seed Node](../install/best-practices/thinder-ha.md)
     - [Using Host Mode for etcd and Separating Control Plane During Installation](../install/best-practices/etcd-host-deploy.md)
     - [Install on Different Linux Distributions](../install/os-install/uos-v20-install-dce5.0.md)
@@ -54,13 +54,13 @@ and maintain containerized applications more efficiently and stably.
 
     ---
 
-    Building worker clusters and nodes based on K8s, which is the core of DCE 5.0
+    Building worker clusters and nodes based on K8s, which is the core of DCE
 
     - [Create Ubuntu Worker Cluster on CentOS](../kpanda/best-practice/create-ubuntu-on-centos-platform.md)
     - [Create RedHat 9.2 Worker Cluster on CentOS](../kpanda/best-practice/create-redhat9.2-on-centos-platform.md)
-    - [Migrate from DCE 4.0 to DCE 5.0](../kpanda/best-practice/dce4-5-migration.md)
+    - [Migrate from DCE 4.0 to DCE](../kpanda/best-practice/dce4-5-migration.md)
     - [Deploy and Upgrade Kubean Backward Compatible Versions](../kpanda/best-practice/kubean-low-version.md)
-    - [Use NVIDIA GPU on DCE 5.0](../kpanda/user-guide/gpu/nvidia/index.md)
+    - [Use NVIDIA GPU on DCE](../kpanda/user-guide/gpu/nvidia/index.md)
 
 - :octicons-container-16:{ .lg .middle } __Container Management Part 2__
 
@@ -118,8 +118,8 @@ and maintain containerized applications more efficiently and stably.
     **Virtual Machines** is a containerized virtual machine platform built on KubeVirt.
 
     - [Cross-Cluster Scaling](../kairship/best-practice/fhpa.md)
-    - [One-Click Conversion from DCE 4.0 to DCE 5.0 Multicloud Applications](../kairship/best-practice/one-click-conversion.md)
-    - [Import VMware Virtual Machines to DCE 5.0](../virtnest/best-practice/import-ubuntu.md)
+    - [One-Click Conversion from DCE 4.0 to DCE Multicloud Applications](../kairship/best-practice/one-click-conversion.md)
+    - [Import VMware Virtual Machines to DCE](../virtnest/best-practice/import-ubuntu.md)
 
 </div>
 

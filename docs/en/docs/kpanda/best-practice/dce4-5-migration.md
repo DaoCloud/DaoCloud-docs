@@ -1,16 +1,16 @@
-# Limited Scenario Migration from DCE 4.0 to DCE 5.0
+# Limited Scenario Migration from DCE 4.0 to DCE
 
 ## Environment Preparation
 
 1. Available DCE 4.0 environment.
-2. Available DCE 5.0 environment.
+2. Available DCE environment.
 3. Kubernetes cluster for data restoration, referred to as the __restoration cluster__.
 
 ## Prerequisites
 
 1. Install the CoreDNS plugin on DCE 4.0. Refer to [Install CoreDNS](https://dwiki.daocloud.io/pages/viewpage.action?pageId=36668076) for installation steps.
 
-2. Migrate DCE 4.0 to DCE 5.0. Refer to [Integrate Cluster](../user-guide/clusters/integrate-cluster.md) for migration steps. The DCE 4.0 cluster migrated to DCE 5.0 is referred to as the __backup cluster__.
+2. Migrate DCE 4.0 to DCE. Refer to [Integrate Cluster](../user-guide/clusters/integrate-cluster.md) for migration steps. The DCE 4.0 cluster migrated to DCE is referred to as the __backup cluster__.
 
     !!! note
 
@@ -18,7 +18,7 @@
 
 3. Install Velero on the managed DCE 4.0 cluster. Refer to [Install Velero](../user-guide/backup/install-velero.md) for installation steps.
 
-4. Migrate the restoration cluster to DCE 5.0, which can be done by creating a cluster or integrating it.
+4. Migrate the restoration cluster to DCE, which can be done by creating a cluster or integrating it.
 
 5. Install Velero on the restoration cluster. Refer to [Install Velero](../user-guide/backup/install-velero.md) for installation steps.
 
@@ -34,7 +34,7 @@ If you need to perform pod migration, follow these steps after completing the pr
 
 !!! note
 
-    These steps are executed in the restoration cluster managed by DCE 5.0.
+    These steps are executed in the restoration cluster managed by DCE.
 
 ### Configure the Velero Plugin
 
@@ -165,13 +165,13 @@ The following steps describe how to migrate images between image repositories.
 
 #### Calico Network Policy Migration
 
-Refer to the resource and data migration process to migrate the Calico service from DCE 4.0 to DCE 5.0.
+Refer to the resource and data migration process to migrate the Calico service from DCE 4.0 to DCE.
 Due to the different ippool names, services may be abnormal after migration. Manually delete the annotations in the service YAML after migration to ensure that the service starts properly.
 
 !!! note
 
     - In DCE 4.0, the name is default-ipv4-ippool.
-    - In DCE 5.0, the name is default-pool.
+    - In DCE, the name is default-pool.
 
 ```yaml
 annotations:

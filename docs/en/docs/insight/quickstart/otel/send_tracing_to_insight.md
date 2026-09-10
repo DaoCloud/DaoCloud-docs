@@ -8,7 +8,7 @@ This document describes how customers can send trace data to Insight on their ow
 In each cluster where Insight Agent is installed, there is an __insight-agent-otel-col__ component
 that is used to receive trace data from that cluster. Therefore, this component serves as the
 entry point for user access and needs to obtain its address first. You can get the address of
-the Opentelemetry Collector in the cluster through the DCE 5.0 interface, such as
+the Opentelemetry Collector in the cluster through the DCE interface, such as
  __insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317__ :
 
 In addition, there are some slight differences for different reporting methods:

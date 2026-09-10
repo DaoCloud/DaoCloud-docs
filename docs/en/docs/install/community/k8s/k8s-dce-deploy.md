@@ -3,9 +3,9 @@ MTPE: windsonsea
 date: 2024-05-11
 ---
 
-# Deploy a K8s Cluster from Scratch to DCE 5.0 Community
+# Deploy a K8s Cluster from Scratch to DCE Community
 
-This article covers the installation of DCE 5.0 Community from scratch in a 3-node cluster,
+This article covers the installation of DCE Community from scratch in a 3-node cluster,
 including details on Kubernetes cluster, dependencies, networking, storage, and more considerations.
 
 !!! note
@@ -30,7 +30,7 @@ The components used in this example are:
 - CRI: containerd (as Docker is no longer directly supported in newer versions of Kubernetes)
 - CNI: Calico
 - StorageClass: local-path
-- DCE 5.0 Community: v0.33.0
+- DCE Community: v0.33.0
 
 ## Prepare Nodes
 
@@ -328,9 +328,9 @@ kubectl get sc # (3)!
 2. Wait for all Pods to be running
 3. You will see something like: local-path (default)
 
-## Install DCE 5.0 Community
+## Install DCE Community
 
-Now that everything is ready, let's install DCE 5.0 Community.
+Now that everything is ready, let's install DCE Community.
 
 ### Install Basic Dependencies
 
@@ -382,10 +382,10 @@ chmod +x ./dce5-installer
 
     ![Login](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/login.png)
 
-4. Log in to DCE 5.0 with the username `admin` and password `changeme`.
+4. Log in to DCE with the username `admin` and password `changeme`.
 
     ![Successful login](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firstscreen.png)
 
-[Download DCE 5.0](../../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../index.md){ .md-button .md-button--primary }
+[Download DCE](../../../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../../index.md){ .md-button .md-button--primary }
 [Free Trial](../../../dce/license0.md){ .md-button .md-button--primary }

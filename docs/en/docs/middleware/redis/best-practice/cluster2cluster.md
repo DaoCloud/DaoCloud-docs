@@ -19,7 +19,7 @@ Diagram: Data Synchronization  **instance redis-a** >> **instance redis-b**
 
 ### Configuring Services for the Source Instance
 
-If the source instance is part of a DCE 5.0 cluster, you can enable the solution under __Data Services__ -> __Redis__ -> __Solutions__ -> __Cross-cluster Master-Slave Synchronization__ , which will automatically configure the services.
+If the source instance is part of a DCE cluster, you can enable the solution under __Data Services__ -> __Redis__ -> __Solutions__ -> __Cross-cluster Master-Slave Synchronization__ , which will automatically configure the services.
 
 If the source instance is in a third-party cluster, manual service configuration is required. The configuration process is described below:
 
@@ -61,7 +61,7 @@ In __Container Management__ -> __Target Redis Cluster__ -> __Configuration and S
     ```
 
 - Access password for the source instance: You can obtain the access password for the source instance through one of the following methods:
-- If the source instance is a DCE 5.0 cluster, you can find the password in the deployment details page of the Redis service.
+- If the source instance is a DCE cluster, you can find the password in the deployment details page of the Redis service.
 - If the source instance is a third-party cluster, you need to obtain the password from the corresponding configuration or contact the administrator.
 
 Modify the following content accordingly:

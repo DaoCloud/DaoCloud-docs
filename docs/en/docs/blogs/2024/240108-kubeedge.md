@@ -2,7 +2,7 @@
 
 > Authors: [WillardHu](https://github.com/WillardHu) and [JiaweiGithub](https://github.com/JiaweiGithub)
 
-KubeEdge is the core component of DCE 5.0 [Cloud Edge Collaboration](../../kant/intro/index.md)
+KubeEdge is the core component of DCE [Cloud Edge Collaboration](../../kant/intro/index.md)
 and DaoCloud has been actively following, promoting, and planning features of KubeEdge.
 
 ## What have been changed

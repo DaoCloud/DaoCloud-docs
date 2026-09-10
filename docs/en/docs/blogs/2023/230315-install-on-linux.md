@@ -182,6 +182,6 @@ If you already have Docker on the host, and the version is higher than 1.18, you
 
 1. After the installation is complete, the command line will prompt that the installation is successful. congratulations!
 
-     Now you can use the **default account and password (admin/changeme)** to explore the new DCE 5.0 through the URL prompted on the screen (the default is `https://${host IP}:8888`)!
+     Now you can use the **default account and password (admin/changeme)** to explore the new DCE through the URL prompted on the screen (the default is `https://${host IP}:8888`)!
 
      ![Installation succeeded](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)

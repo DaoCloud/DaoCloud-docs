@@ -13,10 +13,10 @@ solutions for certain errors encountered during use.
 
 !!! warning
 
-    This documentation is only applicable to version DCE 5.0. If you encounter issues with
+    This documentation is only applicable to version DCE. If you encounter issues with
     the use of AI Lab, please refer to this troubleshooting guide first.
 
-In DCE 5.0, the module name for AI Lab is `baize`,
+In DCE, the module name for AI Lab is `baize`,
 which offers one-stop solutions for model training, inference, model management, and more.
 
 ## Common Troubleshooting Cases

@@ -5,9 +5,9 @@ date: 2024-06-28
 
 # manifest.yaml
 
-This YAML file contains information about all modules of DCE 5.0, which are mainly divided into the base configuration module and product feature modules.
+This YAML file contains information about all modules of DCE, which are mainly divided into the base configuration module and product feature modules.
 
-For upgrading instructions, refer to [Upgrade DCE 5.0](../upgrade.md).
+For upgrading instructions, refer to [Upgrade DCE](../upgrade.md).
 
 ## Manifest Example
 
@@ -154,7 +154,7 @@ It includes components related to the infrastructure and products involved in th
 
 | Fields                          | Description                                         |
 | :------------------------------ | :-------------------------------------------------- |
-| infrastructures                 | DCE 5.0 product infrastructure modules              |
+| infrastructures                 | DCE product infrastructure modules              |
 | infrastructures.xxx.enable      | Whether to enable the current module, default: true |
 | infrastructures.xxx.helmVersion | The chart package version for the current module    |
 | infrastructures.hwameiStor      | HwameiStor local storage                            |
@@ -164,7 +164,7 @@ It includes components related to the infrastructure and products involved in th
 | infrastructures.cert-manager    | Cert Manager certificate management                 |
 | infrastructures.mysql           | Mysql database                                      |
 | infrastructures.redis           | Redis database                                      |
-| components                      | DCE 5.0 product feature                             |
+| components                      | DCE product feature                             |
 | components.kubean               | Cluster lifecycle management                        |
 | components.ghippo               | Global management                                   |
 | components.kpanda               | Container management                                |

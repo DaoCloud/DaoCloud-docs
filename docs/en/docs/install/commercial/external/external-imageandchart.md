@@ -37,4 +37,4 @@ This document describes how to use third-party container registry and chart repo
         - The container registry supports all types of open-source repositories available in the community.
         - The chart repository only supports three types: chartmuseum, harbor, and jfrog.
 
-2. After completing the above configuration, you can proceed with the [deployment of DCE 5.0 Enterprise](../start-install.md).
+2. After completing the above configuration, you can proceed with the [deployment of DCE Enterprise](../start-install.md).

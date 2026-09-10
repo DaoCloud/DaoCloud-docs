@@ -3,7 +3,7 @@ MTPE: ModetaNiu
 date: 2026-04-27
 ---
 
-# Offline Install DCE 5.0 Enterprise
+# Offline Install DCE Enterprise
 
 Ensure that you have read and understood the [deployment requirements](deploy-requirements.md),
 [deployment architecture](deploy-arch.md), and [preparation](prepare.md) before installation.
@@ -18,7 +18,7 @@ Download the appropriate version of the offline package in accordance with your 
 ### Offline Image Package (Required)
 
 The offline image package contains configuration files, image resources, and
-chart packages required for installing DCE 5.0 modules.
+chart packages required for installing DCE modules.
 
 You can download the latest version from the [Download Center](../../download/index.md).
 
@@ -626,8 +626,8 @@ Download the osPackage offline package based on the corresponding version:
         | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-openeuler22.03-v0.6.6.tar.gz) |
         | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-oracle9-v0.6.6.tar.gz) |
 
-For deploying DCE 5.0 on UOS V20 (1020a) operating system, refer to
-[Deploying DCE 5.0 on UOS V20 (1020a)](../os-install/uos-v20-install-dce5.0.md).
+For deploying DCE on UOS V20 (1020a) operating system, refer to
+[Deploying DCE on UOS V20 (1020a)](../os-install/uos-v20-install-dce5.0.md).
 
 ### Addon Offline Packages (Optional)
 
@@ -643,7 +643,7 @@ in [clusterConfig.yaml](./cluster-config.md).
 
 ### One-Click Download Required Offline Packages
 
-We provide a script for [one-click downloading and installing the offline packages required for DCE 5.0](../air-tag-download.md).
+We provide a script for [one-click downloading and installing the offline packages required for DCE](../air-tag-download.md).
 
 The following packages are included:
 
@@ -669,7 +669,7 @@ For detailed parameter introduction, refer to [clusterConfig.yaml](cluster-confi
 
 ## Install
 
-1. Run the following command to start installing DCE 5.0. The installer binary file is
+1. Run the following command to start installing DCE. The installer binary file is
    located at `offline/dce5-installer`.
 
     ```shell
@@ -688,7 +688,7 @@ For detailed parameter introduction, refer to [clusterConfig.yaml](cluster-confi
         - For more options, use `--help` to query.
 
 1. After the installation is complete, the command line will prompt a successful installation.
-   Congratulations! Now you can explore the brand new DCE 5.0 using the URL provided with the
+   Congratulations! Now you can explore the brand new DCE using the URL provided with the
    default account and password (admin/changeme) as shown in the screen prompt.
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
@@ -697,5 +697,5 @@ For detailed parameter introduction, refer to [clusterConfig.yaml](cluster-confi
 
         Please record the provided URL for future access.
 
-1. After successfully installing DCE 5.0 Enterprise, contact us for
+1. After successfully installing DCE Enterprise, contact us for
    authorization: email info@daocloud.io or call 400 002 6898.

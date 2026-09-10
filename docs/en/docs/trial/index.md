@@ -10,7 +10,7 @@ hide:
   <p style="font-size: 28px; color: green;">DCE Community <img src="https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/trial/images/hu02.gif" alt="Image" width="80"></p>
 </div>
 
-DCE 5.0, with cloud native infrastructure at its core, is supported by self-developed open-source components. It provides cloud native computing, networking, storage, and other capabilities, supporting unified management of multi-cloud and multi-cluster lifecycles. It abstracts the complexity of underlying infrastructure, reduces the threshold for enterprises to use cloud native applications, and improves application development efficiency.
+DCE, with cloud native infrastructure at its core, is supported by self-developed open-source components. It provides cloud native computing, networking, storage, and other capabilities, supporting unified management of multi-cloud and multi-cluster lifecycles. It abstracts the complexity of underlying infrastructure, reduces the threshold for enterprises to use cloud native applications, and improves application development efficiency.
 
 <div style="text-align: center;">
   <p style="font-size: 24px; color: green;">Unlease DCE Community in 3 Steps</p>
@@ -89,7 +89,7 @@ If you have limited network access, you can choose to perform an offline install
 
 4. After receiving the license email, go back to the [Get Offline Authorization Code](https://license.daocloud.io/dce5-license) page. Enter the unique ESN of your device and the license key to obtain the offline authorization code.
 
-5. Copy and paste the offline authorization code obtained in the previous step, go back to the ESN code retrieval page, and enter the offline authorization code in the code block at the bottom. Click __Activate Now__ . Congratulations! You can now explore the brand new DCE 5.0!
+5. Copy and paste the offline authorization code obtained in the previous step, go back to the ESN code retrieval page, and enter the offline authorization code in the code block at the bottom. Click __Activate Now__ . Congratulations! You can now explore the brand new DCE!
 
 !!! note
 

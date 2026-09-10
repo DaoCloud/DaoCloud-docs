@@ -5,16 +5,16 @@ hide:
 
 # Delete/Remove Clusters
 
-Clusters created in DCE 5.0 [Container Management](../../intro/index.md) can be either deleted or removed. Clusters integrated into DCE 5.0 can only be removed.
+Clusters created in DCE [Container Management](../../intro/index.md) can be either deleted or removed. Clusters integrated into DCE can only be removed.
 
 !!! Info
 
     If you want to delete an integrated cluster, you should delete it in the platform where it is created.
 
-In DCE 5.0, the difference between __Delete__ and __Remove__ is:
+In DCE, the difference between __Delete__ and __Remove__ is:
 
 - __Delete__ will destroy the cluster and reset the data of all nodes under the cluster. All data will be totally cleared and lost. Making a backup before deleting a cluster is a recommended best practice. You can no longer use that cluster anymore.
-- __Remove__ just removes the cluster from DCE 5.0. It will not destroy the cluster and no data will be lost. You can still use the cluster in other platforms or re-integrate it into DCE 5.0 later if needed.
+- __Remove__ just removes the cluster from DCE. It will not destroy the cluster and no data will be lost. You can still use the cluster in other platforms or re-integrate it into DCE later if needed.
 
 !!! note
 

@@ -54,7 +54,7 @@ This mode is referred to as the Kafka mode, and the data flow diagram is shown b
 
 ## Enabling via Installer
 
-When deploying/upgrading DCE 5.0 using the installer, the `manifest.yaml` file includes the `infrastructures.kafka` field. 
+When deploying/upgrading DCE using the installer, the `manifest.yaml` file includes the `infrastructures.kafka` field. 
 To enable observable Big Log and Big Trace modes, Kafka must be activated:
 
 ```yaml title="manifest.yaml"

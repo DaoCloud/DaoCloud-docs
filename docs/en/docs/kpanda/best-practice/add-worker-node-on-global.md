@@ -1,8 +1,8 @@
 # Scaling the Worker Nodes of the Global Service Cluster
 
 This page introduces how to manually scale the worker nodes of the global service cluster in offline mode.
-By default, it is not recommended to scale the [global service cluster](../user-guide/clusters/cluster-role.md#global-service-cluster) after deploying DCE 5.0.
-Please ensure proper resource planning before deploying DCE 5.0.
+By default, it is not recommended to scale the [global service cluster](../user-guide/clusters/cluster-role.md#global-service-cluster) after deploying DCE.
+Please ensure proper resource planning before deploying DCE.
 
 !!! note
 
@@ -162,9 +162,9 @@ Please ensure proper resource planning before deploying DCE 5.0.
     systemctl restart containerd
     ```
 
-## Integrate a Kind cluster into the DCE 5.0 cluster list
+## Integrate a Kind cluster into the DCE cluster list
 
-1. Log in to DCE 5.0, navigate to Container Management, and on the right side of the cluster list,
+1. Log in to DCE, navigate to Container Management, and on the right side of the cluster list,
    click the __Integrate Cluster__ button.
 
 2. In the integration configuration section, fill in and edit the kubeconfig of the Kind cluster.
@@ -197,7 +197,7 @@ Please ensure proper resource planning before deploying DCE 5.0.
 
 ## Add Labels to the Global Service Cluster
 
-1. Log in to DCE 5.0, navigate to Container Management, find the __kapnda-global-cluster__ ,
+1. Log in to DCE, navigate to Container Management, find the __kapnda-global-cluster__ ,
    and in the right-side, find the __Basic Configuration__ menu options.
 
 2. In the Basic Configuration page, add the label `kpanda.io/managed-by=my-cluster` for the global service cluster:

@@ -1,6 +1,6 @@
 # Sample application experience microservice governance
 
-The micro service engine is a feature of DCE 5.0 Advanced edition, which includes registry center, configuration center, micro service governance (traditional micro service, cloud native micro service), cloud native gateway and other features. This page will walk you through the microservice governance capabilities of a sample application.
+The micro service engine is a feature of DCE Advanced edition, which includes registry center, configuration center, micro service governance (traditional micro service, cloud native micro service), cloud native gateway and other features. This page will walk you through the microservice governance capabilities of a sample application.
 
 The full process of this best practice is as follows:
 
@@ -11,7 +11,7 @@ The full process of this best practice is as follows:
 
 ## Sample application introduction
 
-The sample application used in this practice is based on the OpenTelemetry standard demo application. The DaoCloud Large and Micro Services team has optimized it based on DCE 5.0 features to better reflect cloud native and observable capabilities, and to show the effects of microservice governance. The sample application is open source on Github, visit [Github registry address ](https://github.com/openinsight-proj/openinsight-helm-charts) for more details.
+The sample application used in this practice is based on the OpenTelemetry standard demo application. The DaoCloud Large and Micro Services team has optimized it based on DCE features to better reflect cloud native and observable capabilities, and to show the effects of microservice governance. The sample application is open source on Github, visit [Github registry address ](https://github.com/openinsight-proj/openinsight-helm-charts) for more details.
 
 The architecture diagram for the sample application is as follows:
 
@@ -19,7 +19,7 @@ The architecture diagram for the sample application is as follows:
 
 ## Application deployment
 
-[Workbench](../../amamba/intro/index.md) is an application management module of DCE 5.0. It supports the creation and maintenance of various types of applications, GitOps, and grayscale publishing, and can quickly deploy applications to any cluster. Workbench supports deployment of applications based on Git repository, Jar package, container image and Helm chart. This practice deployable the sample application based on `Helm chart`.
+[Workbench](../../amamba/intro/index.md) is an application management module of DCE. It supports the creation and maintenance of various types of applications, GitOps, and grayscale publishing, and can quickly deploy applications to any cluster. Workbench supports deployment of applications based on Git repository, Jar package, container image and Helm chart. This practice deployable the sample application based on `Helm chart`.
 
 <!--![]()screenshots-->
 
@@ -77,7 +77,7 @@ Before deploying applications, the following conditions must be met:
 
 ### Java project development and debugging
 
-If other deployment modes are used, the method of configuring the registry address may be different. Java projects need to integrate the SDK of Nacos during development, and the registry provided by DCE 5.0 is fully compatible with open source Nacos, so you can directly use the SDK of open source Nacos. For details, see [ Deploy Java applications based on Jar packages ](../../amamba/user-guide/wizard/jar-java-app.md).
+If other deployment modes are used, the method of configuring the registry address may be different. Java projects need to integrate the SDK of Nacos during development, and the registry provided by DCE is fully compatible with open source Nacos, so you can directly use the SDK of open source Nacos. For details, see [ Deploy Java applications based on Jar packages ](../../amamba/user-guide/wizard/jar-java-app.md).
 
 When using `java -jar` to start a project, add the corresponding environment variable configuration
 
@@ -147,7 +147,7 @@ Create a cloud native gateway. For details, see [Create Gateway](../gateway/inde
 
 ### Access service
 
-Based on the DCE 5.0 feature, the cloud native gateway can automatically discover services in the managed namespace. Therefore, you do not need to manually access services.
+Based on the DCE feature, the cloud native gateway can automatically discover services in the managed namespace. Therefore, you do not need to manually access services.
 
 Nacos Registry services are adopted in this demonstration, which greatly expands the number of services accessible to the gateway. Services accessible to Nacos registry can be selected from `Add Service`.
 
@@ -177,11 +177,11 @@ After the gateway API is created, you can access the application page by using *
 
 ## Conclusion
 
-This is the experience of the entire microservices engine module. With the support of the entire DCE 5.0 capability, we successfully completed application deployment, enabling microservice governance, configuring and testing microservice governance policies, opening apis through cloud native gateway, and actually accessing applications.
+This is the experience of the entire microservices engine module. With the support of the entire DCE capability, we successfully completed application deployment, enabling microservice governance, configuring and testing microservice governance policies, opening apis through cloud native gateway, and actually accessing applications.
 
 ### More capabilities
 
-After our application is deployed successfully, we rely heavily on the observation capability provided by DCE 5.0 for subsequent application maintenance. Next, we will add the corresponding observable capability practice.
+After our application is deployed successfully, we rely heavily on the observation capability provided by DCE for subsequent application maintenance. Next, we will add the corresponding observable capability practice.
 
 - View the topology of the deployed application
 - View application logs

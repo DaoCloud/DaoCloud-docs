@@ -5,7 +5,7 @@ date: 2024-01-08
 
 # Supported Kubernetes Versions
 
-In DCE 5.0, the [integrated clusters](cluster-status.md) and [created clusters](./cluster-status.md) have different version support mechanisms.
+In DCE, the [integrated clusters](cluster-status.md) and [created clusters](./cluster-status.md) have different version support mechanisms.
 
 This page focuses on the version support mechanism for created clusters.
 
@@ -15,17 +15,17 @@ latest version released by the community is 1.27, the supported version range by
 will be 1.27, 1.28, and 1.29.
 
 To ensure the security and stability of the clusters, when creating clusters
-in DCE 5.0, the supported version range will always be one version lower than the community's
+in DCE, the supported version range will always be one version lower than the community's
 version.
 
 For instance, if the Kubernetes community supports v1.25, v1.26, and v1.27, then the
-version range for creating worker clusters in DCE 5.0 will be
+version range for creating worker clusters in DCE will be
 v1.24, v1.25, and v1.26. Additionally, a stable version, such as 1.24.7, will be recommended to users.
 
-Furthermore, the version range for creating worker clusters in DCE 5.0
+Furthermore, the version range for creating worker clusters in DCE
 will remain highly synchronized with the community. When the community version increases
 incrementally, the version range for creating worker clusters in
-DCE 5.0 will also increase by one version.
+DCE will also increase by one version.
 
 ## Supported Kubernetes Versions
 
@@ -35,7 +35,7 @@ DCE 5.0 will also increase by one version.
       <th>Kubernetes Community Versions</th>
       <th>Created Worker Cluster Versions</th>
       <th>Recommended Versions for Created Worker Cluster</th>
-      <th>DCE 5.0 Installer</th>
+      <th>DCE Installer</th>
       <th>Release Date</th>
     </tr>
   </thead>

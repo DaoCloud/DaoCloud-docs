@@ -7,13 +7,13 @@ DATE: 2024-08-19
 
 # Admin quickly uses the container registry to serve the platform
 
-In DCE 5.0, there are two methods for managing container registries: Managed Harbor (self-built Harbor on DCE) and 
+In DCE, there are two methods for managing container registries: Managed Harbor (self-built Harbor on DCE) and 
 Integrated Registry (integrating external Harbor or Docker Registry).
 
 - [Managed Harbor](../managed/intro.md)（suggested）
 - [Integrated Registry](../integrate/integrate-admin/integrate-admin.md)
 
-Harbor is mainly promoted as the Container Registry in DCE 5.0 to provide image services.
+Harbor is mainly promoted as the Container Registry in DCE to provide image services.
 
 ## Sharing public images 
 

@@ -28,7 +28,7 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./clusterpedia.md)
 
--   :simple-amazonapigateway:{ .lg .middle } __egressgateway__
+-   :material-gate:{ .lg .middle } __egressgateway__
 
     ---
 
@@ -71,7 +71,7 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./hwameistor.md)
 
--   :melon:{ .lg .middle } __HAMi__ :simple-cncf: Listed in CNCF Incubating 👏
+-   :melon:{ .lg .middle } __HAMi__ :simple-cncf: Listed in CNCF Incubation 👏
 
     ---
 
@@ -195,6 +195,6 @@ hide:
 Clusterpedia, HwameiStor, Merbridge, Spiderpool, and Kubean have been selected for the <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>.
 </p>
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

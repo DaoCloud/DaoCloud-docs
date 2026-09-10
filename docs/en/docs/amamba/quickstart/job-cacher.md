@@ -13,7 +13,7 @@ The application workspace itself provides a cache mechanism based on `hostPathVo
 using the local path of the node to cache default paths such as `/root/.m2`,
 `/home/jenkins/go/pkg`, `/root/.cache/pip`.
 
-However, in the multi-tenant scenario of DCE 5.0, more users want to maintain cache isolation
+However, in the multi-tenant scenario of DCE, more users want to maintain cache isolation
 to avoid intrusion and conflicts. Here, we introduce a cache mechanism based on the
 Jenkins plugin [Job Cacher](https://plugins.jenkins.io/jobcacher/).
 
@@ -24,7 +24,7 @@ to achieve pipeline-level cache isolation.
 
 1. Provide an S3 or S3-like storage backend, you can refer to
    [Create MinIO Instance - DaoCloud Enterprise](../../middleware/minio/user-guide/create.md)
-   to create a MinIO on DCE 5.0, create a bucket, and prepare `access key` and `secret`.
+   to create a MinIO on DCE, create a bucket, and prepare `access key` and `secret`.
 
     ![Prepare S3](../images/job-cacher01.png)
 

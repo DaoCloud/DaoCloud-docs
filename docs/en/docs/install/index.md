@@ -5,12 +5,12 @@ date: 2024-05-11
 
 # Overview
 
-DCE 5.0 has two versions: DCE Community and DCE 5.0 Enterprise.
+DCE has two versions: DCE Community and DCE Enterprise.
 
 - DCE Community includes Container Management, Global Management, and Insight modules,
   which can be used for free permanently.
 
-- DCE 5.0 Enterprise can be purchased on demand with advanced modules such as Service Mesh,
+- DCE Enterprise can be purchased on demand with advanced modules such as Service Mesh,
   Microservice Engine, Multicloud Management, Data Middleware, Container Registry,
   Cloud Edge Collaboration, and Containerized VM on the basis of DCE Community.
   It has more comprehensive features and applicable to a variety of production environments.
@@ -38,7 +38,7 @@ DCE 5.0 has two versions: DCE Community and DCE 5.0 Enterprise.
       </td>
     </tr>
     <tr>
-      <td>DCE 5.0 Enterprise</td>
+      <td>DCE Enterprise</td>
       <td> <p>On top of DCE Community, more modules are added:</p>
         <ul>
           <li><a href="https://docs.daocloud.io/en/amamba/intro/"><span style="white-space: nowrap;">Workbench</span></a></li>
@@ -114,14 +114,14 @@ click ask "https://docs.daocloud.io/en/install/index.html#contact-us"
 
     Click the blue text in the diagram, you can go to the proper page for details.
 
-## Install DCE 5.0 Enterprise
+## Install DCE Enterprise
 
-The installation process of DCE 5.0 Enterprise is as follows:
+The installation process of DCE Enterprise is as follows:
 
 ```mermaid
 flowchart TB
 
-    start([fa:fa-user DCE 5.0 Enterprise<br>Installation Process]) -.- arch[Learn Deployment Architecture]
+    start([fa:fa-user DCE Enterprise<br>Installation Process]) -.- arch[Learn Deployment Architecture]
     arch --> deploy[Check Deployment Requirements]
     deploy --> prepare[Prepare Environment]
     prepare --> download[Download Offline Package]
@@ -174,5 +174,5 @@ The installation guide may change. Please bookmark this page and follow the upda
 
     ![DCE Community Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Download DCE](../download/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

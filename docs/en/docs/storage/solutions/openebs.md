@@ -1,6 +1,6 @@
 # OpenEBS storage solution
 
-DCE 5.0 supports many third-party storage solutions. We tested OpenEBS and finally integrated it in the app store as an Addon.
+DCE supports many third-party storage solutions. We tested OpenEBS and finally integrated it in the app store as an Addon.
 The following is the research and evaluation of OpenEBS.
 
 Instructions for installing, deploying, and uninstalling the graphical interface of the App Store Addon will be provided later.

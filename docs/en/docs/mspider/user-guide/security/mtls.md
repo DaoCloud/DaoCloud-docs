@@ -12,7 +12,7 @@ On the server side, the server can determine what information the client can acc
 Audit who accesses what when, bill customers based on the workload they use,
 And deny access to workloads to any customers who fail to pay their bills.
 
-The DCE 5.0 service mesh identity model uses the classic __service identity__ (service identity) to determine the identity of a request source.
+The DCE service mesh identity model uses the classic __service identity__ (service identity) to determine the identity of a request source.
 This model has great flexibility and granularity, and service identities can be used to identify human users, individual workloads, or groups of workloads.
 On platforms without service identities, service meshes can use other identities that group service instances, such as service names.
 
@@ -70,7 +70,7 @@ to help you understand how policy changes will affect your security posture befo
 The full name of mTLS is Mutual Transport Layer Security, that is, two-way transport layer security authentication.
 mTLS allows communicating parties to mutually authenticate during the initial connection of the SSL/TLS handshake.
 
-DCE 5.0 service mesh through client and server
+DCE service mesh through client and server
 [PEP](https://www.jerichosystems.com/technology/glossaryterms/policy_enforcement_point.html)(Policy Enforcement Policy)
 To establish a service-to-service communication channel, the PEP is implemented as [Envoy Proxy](https://www.envoyproxy.io/).
 When one workload sends a request to another workload using mTLS authentication,

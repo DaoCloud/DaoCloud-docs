@@ -5,7 +5,7 @@ Date: 2024-04-24
 
 # Features
 
-DCE 5.0 Cloud Native Storage offers the following features:
+DCE Cloud Native Storage offers the following features:
 
 | Features | Description |
 | ------- | --- |

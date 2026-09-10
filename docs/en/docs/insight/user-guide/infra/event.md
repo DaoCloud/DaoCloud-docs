@@ -1,6 +1,6 @@
 # Event Query
 
-DCE 5.0 Insight supports event querying by cluster and namespace.
+DCE Insight supports event querying by cluster and namespace.
 
 ![event](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/event01.png)
 

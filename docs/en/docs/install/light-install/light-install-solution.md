@@ -1,6 +1,6 @@
 # Lightweight Deployment Trimming Plan Verification
 
-Considering that in some scenarios, especially in the military industry, cloud software deployment faces stringent resource constraints, this document introduces a lightweight trimming and verification plan for deploying **DCE 5.0 Community Edition**, aiming to meet customers' requirements for lightweight deployment.
+Considering that in some scenarios, especially in the military industry, cloud software deployment faces stringent resource constraints, this document introduces a lightweight trimming and verification plan for deploying **DCE Community Edition**, aiming to meet customers' requirements for lightweight deployment.
 
 This trimming plan is verified step by step through four phases, detailed as follows:
 
@@ -12,7 +12,7 @@ This trimming plan is verified step by step through four phases, detailed as fol
 
 ## Installed Components and Resource Statistics
 
-The installation components, trimming plan, and phased trimming approach for DCE 5.0 are as follows:
+The installation components, trimming plan, and phased trimming approach for DCE are as follows:
 
 Full view of Phase 1 lightweight trimming:
 
@@ -82,7 +82,7 @@ In actual real-world scenarios, with an **8Gi memory environment**, installation
 However, since some steps at the end require manually executing scripts, it triggers **deploy rolling updates**, causing a temporary surge in memory demand.
 Additionally, the operating system itself consumes part of the dynamic memory resources.
 
-Therefore, in summary, running the **DCE 5.0 lightweight trimmed environment** in an **8G memory** setup still lacks sufficient resources.
+Therefore, in summary, running the **DCE lightweight trimmed environment** in an **8G memory** setup still lacks sufficient resources.
 
 That is, **installation memory requirement ≠ idle state memory usage**
 

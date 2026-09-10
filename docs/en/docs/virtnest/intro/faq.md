@@ -8,8 +8,8 @@ DATE: 2024-08-21
 The virtual machine consists of two parts: apiserver and agent.
 When you encounter an issue, you can refer to this page to perform troubleshooting.
 
-*[kpanda]: Codename for container management in DCE 5.0
-*[virtnest]: Codename for virtual machine in DCE 5.0
+*[kpanda]: Codename for container management in DCE
+*[virtnest]: Codename for virtual machine in DCE
 *[PVC]: PersistentVolumeClaim
 *[PV]: PersistentVolume
 *[VM]: Virtual Machine

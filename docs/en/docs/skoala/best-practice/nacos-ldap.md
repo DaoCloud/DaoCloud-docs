@@ -1,6 +1,6 @@
 # Nacos LDAP Integration for User Management
 
-Nacos is called Service Registry in DCE 5.0 Microservice Engine.
+Nacos is called Service Registry in DCE Microservice Engine.
 This article explains how to manage users by integrating Nacos with LDAP (Lightweight Directory Access Protocol).
 
 ## Deploy LDAP on Kubernetes

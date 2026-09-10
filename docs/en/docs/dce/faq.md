@@ -1,12 +1,12 @@
 # Frequently Asked Questions
 
-This is an index page for FAQs and troubleshooting for DCE 5.0.
+This is an index page for FAQs and troubleshooting for DCE.
 
 ## Installation
 
 - UI Login Issues
-    - [Cannot open DCE 5.0 interface after installation is complete; you can execute the diag.sh script for quick troubleshooting](../install/faq.md#troubleshoot-dce-50-ui-issues-with-diagsh)
-    - [DCE 5.0 login interface cannot be opened due to VIP access issues when installing with Metallb](../install/faq.md#vip-access-issues-when-using-metallb-preventing-the-dce-login-page-from-opening)
+    - [Cannot open DCE interface after installation is complete; you can execute the diag.sh script for quick troubleshooting](../install/faq.md#troubleshoot-dce-50-ui-issues-with-diagsh)
+    - [DCE login interface cannot be opened due to VIP access issues when installing with Metallb](../install/faq.md#vip-access-issues-when-using-metallb-preventing-the-dce-login-page-from-opening)
 - bootstrap node Issues
     - [After shutting down and restarting the bootstrap node, the kind cluster cannot restart properly](../install/faq.md#after-shutting-down-and-restarting-the-bootstrap-node-the-kind-cluster-cannot-restart-properly)
     - [Missing ip6tables when deploying Ubuntu 20.04 as a seed machine](../install/faq.md#missing-ip6tables-when-deploying-ubuntu-2004-as-a-bootstrap-node)
@@ -21,7 +21,7 @@ This is an index page for FAQs and troubleshooting for DCE 5.0.
     - [Error during installation on CentOS 7.6](../install/faq.md#error-during-installation-on-centos-76)
     - [CentOS environment preparation issues](../install/faq.md#centos-environment-preparation-issues)
 - Community Edition Installation Issues
-    - [Redis gets stuck during DCE 5.0 reinstallation in kind cluster](../install/faq.md#redis-hanging-during-dce-50-reinstallation-of-the-kind-cluster)
+    - [Redis gets stuck during DCE reinstallation in kind cluster](../install/faq.md#redis-hanging-during-dce-50-reinstallation-of-the-kind-cluster)
     - [Failed to install fluent-bit in the community edition](../install/faq.md#community-version-fluent-bit-installation-failure)
 
 ## Workbench

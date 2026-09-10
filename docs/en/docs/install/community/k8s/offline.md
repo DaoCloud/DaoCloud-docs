@@ -103,7 +103,7 @@ This page will guide you to install DCE Community package offline in a standard 
         2. Container registry
         3. Container registry address, must be http or https
 
-1. Install DCE 5.0.
+1. Install DCE.
 
     ```shell
     ./dce5-installer install-app -c clusterConfig.yaml
@@ -119,7 +119,7 @@ This page will guide you to install DCE Community package offline in a standard 
 
 1. After the installation is complete, the command line will prompt that the installation is successful. Congratulations!
     
-    Now you can use the **default account and password (admin/changeme)** to explore the new DCE 5.0 through the URL prompted on the screen!
+    Now you can use the **default account and password (admin/changeme)** to explore the new DCE through the URL prompted on the screen!
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -127,6 +127,6 @@ This page will guide you to install DCE Community package offline in a standard 
 
         It's recommended to write down the prompted URL for your next visit.
 
-1. Before fully explore the features of DCE 5.0, you need to apply for a license.
+1. Before fully explore the features of DCE, you need to apply for a license.
    The Community package is provided for free. All you need to do is to
    [apply for a free license](../../../dce/license0.md).

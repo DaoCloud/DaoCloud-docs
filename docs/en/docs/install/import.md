@@ -5,14 +5,14 @@ date: 2024-02-21
 
 # Import Offline Resource
 
-The DCE 5.0 installer (only supports v0.9.0 and above) introduces the `import-artifact` command
+The DCE installer (only supports v0.9.0 and above) introduces the `import-artifact` command
 for importing offline resources. Currently, the following offline resources can be imported:
 
 - `*.iso` operating system ISO image files
 - `os-pkgs-${disto}-${kubean_version}.tar.gz` osPackage offline package provided by Kubean
 - `offline-${install_version}-${arch}.tar` Full mode offline image package for the installer:
     - K8s binaries & images
-    - Images and charts for various modules of DCE 5.0
+    - Images and charts for various modules of DCE
 
 ## Use Cases
 

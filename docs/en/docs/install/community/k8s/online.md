@@ -63,7 +63,7 @@ This page will guide you to install DCE Community package online in a standard K
             insightVip: 10.6.229.11/32 # (2)!
         ```
 
-        1. This is the VIP of the Istio gateway and also the browser URL of the DCE 5.0
+        1. This is the VIP of the Istio gateway and also the browser URL of the DCE
         2. The VIP used by the Insight-Server of the global service cluster to collect the network paths
            of all sub-cluster monitoring metrics
 
@@ -77,7 +77,7 @@ This page will guide you to install DCE Community package online in a standard K
             type: cloudLB
         ```
 
-3. Install DCE 5.0.
+3. Install DCE.
 
     ```shell
     ./dce5-installer install-app -c clusterConfig.yaml -z
@@ -94,7 +94,7 @@ This page will guide you to install DCE Community package online in a standard K
 
 4. After the installation is complete, the command line will prompt that the installation is successful. Congratulations!
     
-    Now you can use the **default account and password (admin/changeme)** to explore the new DCE 5.0 through the URL prompted on the screen!
+    Now you can use the **default account and password (admin/changeme)** to explore the new DCE through the URL prompted on the screen!
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -102,6 +102,6 @@ This page will guide you to install DCE Community package online in a standard K
 
         Please write down the prompted URL for your next visit.
 
-5. Before fully explore the features of DCE 5.0, you need to apply for a license.
+5. Before fully explore the features of DCE, you need to apply for a license.
    The Community package is provided for free. All you need to do is to
    [apply for a free license](../../../dce/license0.md).

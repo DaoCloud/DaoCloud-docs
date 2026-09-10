@@ -1,8 +1,8 @@
-# Customizing DCE 5.0 Integration with IdP
+# Customizing DCE Integration with IdP
 
-Identity Provider (IdP): In DCE 5.0, when a client system needs to be used as the user source and user
+Identity Provider (IdP): In DCE, when a client system needs to be used as the user source and user
 authentication is performed through the client system's login interface, the client system is referred to
-as the Identity Provider for DCE 5.0.
+as the Identity Provider for DCE.
 
 ## Use Cases
 

@@ -1,7 +1,7 @@
 # GPU Scheduling Configuration (Binpack and Spread)
 
 This page introduces how to reduce GPU resource fragmentation and prevent single points of failure through
-Binpack and Spread when using NVIDIA vGPU, achieving advanced scheduling for vGPU. The DCE 5.0 platform
+Binpack and Spread when using NVIDIA vGPU, achieving advanced scheduling for vGPU. The DCE platform
 provides Binpack and Spread scheduling policies across two dimensions: clusters and workloads,
 meeting different usage requirements in various scenarios.
 

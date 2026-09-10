@@ -350,7 +350,7 @@ For key field descriptions in this YAML file, see the table below.
 **In the offline mode, use the `builtin` method to install**
 
 The `builtin` mode means that the required third-party software (such as ChartMuseum, Minio, Docker registry)
-will be deployed and provided by the installer for use in the DCE 5.0 platform.
+will be deployed and provided by the installer for use in the DCE platform.
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha4
@@ -389,7 +389,7 @@ spec:
 
 The `external` mode means that the required third-party software (such as ChartMuseum, Minio, and Docker registry)
 does not need to be installed by the installer. Instead, the user provides the addresses for these services
-to be used by the DCE 5.0 platform.
+to be used by the DCE platform.
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha4
@@ -446,8 +446,8 @@ spec:
 
 **Online mode is installed by `official-service`**
 
-In the `official-service` mode, when users choose to install DCE 5.0 online, the resources used by
-the DCE 5.0 platform will be obtained from DaoCloud's official repository.
+In the `official-service` mode, when users choose to install DCE online, the resources used by
+the DCE platform will be obtained from DaoCloud's official repository.
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha4

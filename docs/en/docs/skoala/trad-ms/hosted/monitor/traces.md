@@ -1,6 +1,6 @@
 # Tracing
 
-DCE 5.0 supports service-level tracing and query to view the link latency distribution of each microservice and quickly locate faults when faults occur.
+DCE supports service-level tracing and query to view the link latency distribution of each microservice and quickly locate faults when faults occur.
 
 !!! note
 

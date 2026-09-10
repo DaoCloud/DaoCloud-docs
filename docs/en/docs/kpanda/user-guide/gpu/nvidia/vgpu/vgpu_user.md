@@ -1,6 +1,6 @@
 # Using NVIDIA vGPU in Applications
 
-This section explains how to use the vGPU capability in the DCE 5.0 platform.
+This section explains how to use the vGPU capability in the DCE platform.
 
 ## Prerequisites
 

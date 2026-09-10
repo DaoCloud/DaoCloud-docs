@@ -24,7 +24,7 @@ A large volume of traffic passing through the sidecar, high request latency, and
 
 ## Case 3
 
-Memory leak in the sidecar. Check using monitoring components, such as DCE 5.0 component Insight.
+Memory leak in the sidecar. Check using monitoring components, such as DCE component Insight.
 If the cluster traffic scale has not changed but the sidecar memory usage continues to rise, it could be a memory leak. Contact us to diagnose the issue.
 
 ![Memory Usage Check](./images/sidecar-memory-query-01.png)

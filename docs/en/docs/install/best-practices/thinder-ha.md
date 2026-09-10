@@ -109,13 +109,13 @@ Set up dnsServer information on the machine `xxx.xx.xx.192`. The following confi
     - If an external DNS service is used to resolve the domain name, make sure that the /etc/hosts file of each node, including the bootstrap node, does not contain the domain name configuration.
     - You can use the nslookup command to check the domain name resolution status. Make sure that each node, including the bootstrap node, can use nslookup to check the resolution status.
 
-### Install DCE 5.0 Based on External Domain Name Mode
+### Install DCE Based on External Domain Name Mode
 
 Overall architecture:
 
 ![dce01](../images/dce01.png)
 
-1. Refer to the installation process in [Offline Installation of DCE 5.0 Enterprise](../commercial/start-install.md)
+1. Refer to the installation process in [Offline Installation of DCE Enterprise](../commercial/start-install.md)
 
 1. Example of a well-defined clusterConfig file:
 

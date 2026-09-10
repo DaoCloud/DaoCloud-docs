@@ -5,10 +5,10 @@ date: 2024-03-07
 
 # Install Dependencies
 
-Before installing DCE 5.0, you need to install some dependencies.
+Before installing DCE, you need to install some dependencies.
 
 - For DCE Community, install the dependencies on the K8s Master node.
-- For DCE 5.0 Enterprise, install the dependencies on the [Bootstrap Node](./commercial/deploy-arch.md).
+- For DCE Enterprise, install the dependencies on the [Bootstrap Node](./commercial/deploy-arch.md).
 
 !!! note
 
@@ -51,7 +51,7 @@ Before installing DCE 5.0, you need to install some dependencies.
         bash install_prerequisite_${VERSION}.sh online community
         ```
 
-    - For DCE 5.0 Enterprise:
+    - For DCE Enterprise:
 
         ```bash
         bash install_prerequisite_${VERSION}.sh online full
@@ -91,7 +91,7 @@ Offline installation means that the target host is in an offline state and canno
         ./install_prerequisite_${VERSION}.sh offline community
         ```
 
-    - For DCE 5.0 Enterprise:
+    - For DCE Enterprise:
 
         ```bash
         export BINARY_TAR=prerequisite_${VERSION}_amd64.tar.gz
@@ -99,5 +99,5 @@ Offline installation means that the target host is in an offline state and canno
         ./install_prerequisite_${VERSION}.sh offline full
         ```
 
-You can now proceed to install DCE 5.0 [Community](community/resources.md) or
+You can now proceed to install DCE [Community](community/resources.md) or
 [Enterprise](commercial/deploy-requirements.md).

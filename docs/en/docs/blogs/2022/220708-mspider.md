@@ -6,7 +6,7 @@ The following figure shows a normal model of mesh-like services. How can such a 
 
 DaoCloud Service Mesh is a fully-managed service mesh product with high performance and ease of use. By providing a complete non-invasive microservices governance solution, it can well support unified governance of complex environments with multiple clouds and clusters, and provide users with service traffic governance, security governance, service traffic monitoring, and support for traditional microservices (SpringCloud, Dubbo) access as an infrastructure service. It is also compatible with the community-native Istio open source service mesh and provides native management capabilities for Istio access. At a higher level, Service Mesh helps reduce the complexity of service governance and alleviate the pressure on development and operation teams.
 
-As a member of DCE 5.0 product system, DaoCloud service mesh seamlessly interfaces with container management platform, providing users with plug-and-play experience. It also serves as the infrastructure to support container microservice governance for microservice engine, enabling users to manage various microservice systems through a single platform.
+As a member of DCE product system, DaoCloud service mesh seamlessly interfaces with container management platform, providing users with plug-and-play experience. It also serves as the infrastructure to support container microservice governance for microservice engine, enabling users to manage various microservice systems through a single platform.
 
 ![mspiderlocation](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/mspider02.png)
 
@@ -105,6 +105,6 @@ In the service mesh, the following graphical interactive features are implemente
 
 [Learn about Service Mesh](../../mspider/intro/index.md){ .md-button }
 
-[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../../install/index.md){ .md-button .md-button--primary }
 [Free Trial Now](../../dce/license0.md){ .md-button .md-button--primary }

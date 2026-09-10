@@ -1,6 +1,6 @@
 # GPU Quota Management
 
-This section describes how to use vGPU capabilities on the DCE 5.0 platform.
+This section describes how to use vGPU capabilities on the DCE platform.
 
 ## Prerequisites
 
@@ -8,7 +8,7 @@ The corresponding GPU driver (NVIDIA GPU, NVIDIA MIG, Days, Ascend) has been dep
 
 ## Procedure
 
-Follow these steps to manage GPU quotas in DCE 5.0:
+Follow these steps to manage GPU quotas in DCE:
 
 1. Go to Namespaces and click __Quota Management__ to configure the GPU resources that can be used by a specific namespace.
 

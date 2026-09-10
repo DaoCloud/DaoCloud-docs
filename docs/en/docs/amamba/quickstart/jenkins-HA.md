@@ -4,7 +4,7 @@ Due to the architecture design of Jenkins itself, it does not natively support a
 
 Thus, the primary focus for Jenkins high availability is on ensuring high availability at the data storage layer.
 
-In DCE 5.0, Jenkins high availability is achieved by utilizing the storage layer of HwameiStor. HwameiStor supports the use of DRBD (Distributed Replicated Block Device) to mount duplicate data copies simultaneously on multiple nodes. When the node hosting Jenkins goes down, Kubernetes can schedule the Pod onto another node seamlessly, allowing continued access to the previous data and thereby achieving high availability.
+In DCE, Jenkins high availability is achieved by utilizing the storage layer of HwameiStor. HwameiStor supports the use of DRBD (Distributed Replicated Block Device) to mount duplicate data copies simultaneously on multiple nodes. When the node hosting Jenkins goes down, Kubernetes can schedule the Pod onto another node seamlessly, allowing continued access to the previous data and thereby achieving high availability.
 
 !!! tip
 

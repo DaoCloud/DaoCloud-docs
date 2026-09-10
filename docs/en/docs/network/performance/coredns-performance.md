@@ -6,7 +6,7 @@ Latency data of CoreDNS in a standard environment.
 
 ## Benchmark
 
-This article is based on the environment installed with DCE 5.0, where one group of environments only installed CoreDNS, and another group installed CoreDNS and nodelocaldns, with the remaining parameters set to default configuration.
+This article is based on the environment installed with DCE, where one group of environments only installed CoreDNS, and another group installed CoreDNS and nodelocaldns, with the remaining parameters set to default configuration.
 
 ### Physical Machine
 

@@ -7,7 +7,7 @@ DATE: 2024-09-18
 
 # Using External Container Registries in Workspaces as a Workspace Admin
 
-In DCE 5.0, Workspace Admin can integrate two external container registries: Harbor and Docker Registry, 
+In DCE, Workspace Admin can integrate two external container registries: Harbor and Docker Registry, 
 by associating registries. After integration, members of the workspace can see all images of the integrated registry 
 in the image list and can select the image in the registry for deployment through the image selector when 
 deploying the application in the namespace under the workspace.

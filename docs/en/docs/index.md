@@ -1,242 +1,328 @@
 ---
-MTPE: windsonsea
-date: 2024-01-09
 hide:
   - navigation
   - toc
 ---
 
-# DaoCloud Enterprise 5.0
+# DaoCloud Docs Hub
 
-DaoCloud Enterprise 5.0 (DCE 5.0) is a high-performance, scalable cloud native AI operating system.
-It is a [CNCF-certified Kubernetes – AI Platform](./dce/kcsp.md).
-Designed for modern enterprises, DCE 5.0 delivers a consistent, reliable experience across any infrastructure, enabling seamless orchestration across hybrid, edge, and multicloud environments.
+<div class="tf-hero" markdown>
 
-By seamlessly integrating state-of-the-art service mesh and microservice technologies, DCE 5.0 enables comprehensive tracking of the entire traffic lifecycle. Users can gain valuable insights into detailed metrics related to clusters, nodes, applications, and services. Visualizing the health status of applications through dynamic dashboards and topology maps empowers users with actionable information to optimize performance.
+DaoCloud is an open-source pioneer in the global AI space, dedicated to accelerating enterprise intelligent transformation through cloud native technology.
+This site provides documentation for three product lines, covering full-stack capabilities from infrastructure and compute scheduling to model inference and application building.
 
-A major advantage of DCE 5.0 is its native support for the DevOps development and operation mode, facilitating standardization and automation throughout the application delivery process. Additionally, DCE 5.0 effortlessly integrates a range of carefully selected databases and middleware, enhancing operational efficiency and governance. Each product module operates independently, ensuring flexible upgrades without disrupting critical business operations. Furthermore, DCE 5.0 seamlessly integrates with various cloud native ecosystem products, forming a comprehensive and robust solution system.
-
-DCE 5.0 comes with an integrated AI foundation that includes the **ClawOS** multi-agent governance platform, the **AI Lab** cloud-native training and inference platform, and a large language model (LLM) serving platform, delivering a complete AI stack from computing infrastructure and models to AI agents.
-
-- **ClawOS** is an enterprise-grade multi-agent runtime and governance platform that enables organizations to centrally create, manage, integrate, observe, and operate AI agents across the enterprise.
-- **AI Lab** delivers a tightly integrated software-and-hardware AI computing experience by unifying heterogeneous compute resources and optimizing GPU performance. It enables centralized scheduling and refined operations of compute resources, maximizing utilization while reducing costs. In addition, it provides optimized AI development frameworks that simplify development and deployment, accelerating the adoption of AI applications across industries.
-- **LLM Studio** is designed for enterprise users and offers full lifecycle services covering model deployment, runtime, and operations management. It effectively addresses key challenges such as deployment complexity, model selection difficulty, runtime stability, and security risks, helping enterprises and developers efficiently access and leverage a wide range of large model capabilities, and continuously driving digital transformation and intelligent upgrades.
-
-With extensive testing from thousands of industry customers in real production cases, DCE 5.0 has established itself as a solid and trustworthy digital foundation. It assists enterprises in defining their digital boundaries and unleashing the full potential of cloud native productivity. Embrace DCE 5.0 to elevate your organization's capabilities in the cloud native landscape.
-
-*[DCE]: An abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
-*[AI]: DCE 5.0 has an integrated AI Lab for efficient management of LLM jobs, datasets, GPU, CPU, and memory resources
-
-<div class="grid cards" markdown>
-
-- :fontawesome-solid-jet-fighter-up: **Install** [Installation instructions](install/index.md)
-- :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](amamba/intro/index.md)
-- :octicons-container-16: **Container Management** [Cluster/node/workloads](kpanda/intro/index.md)
-- :material-cloud-check: **Multicloud Management** [Multicloud instance/workload/policy](kairship/intro/index.md)
-- :material-warehouse: **Container Registry** [Integrate and host registries](kangaroo/intro/index.md)
-- :material-dot-net: **Network** [Multi-CNI fusion solution](network/intro/index.md)
-- :simple-googlecloudstorage: **Storage** [Containerized storage](storage/index.md)
-- :material-train-car-container: **Virtual Machine** [Containerized virtual machine](virtnest/intro/index.md)
-- :material-monitor-dashboard: **Insight** [One-stop graphical dashboard](insight/intro/index.md)
-- :material-engine: **Microservice Engine** [Microservice governance and gateway](skoala/intro/index.md)
-- :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider/intro/index.md)
-- :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/index.md)
-- :shrimp: **ClawOS** [Multi-Agent platform](clawos/intro/index.md)
-- :material-slot-machine: **AI Lab** [Cloud Native AI - Integrated Training and Inference Platform](baize/intro/index.md)
-- :simple-themodelsresource: **LLM Studio** [Use and maintain large language models](./hydra/intro/index.md)
-- :fontawesome-brands-edge: **Cloud Edge Collaboration** [Containers extend to edge](kant/intro/index.md)
-- :fontawesome-solid-user-group: **Global Management** [Login/permissions/appearance](ghippo/intro/index.md)
-- :material-download: **Download Hub** [Download offline packages](download/index.md)
-- :simple-youtubestudio: **Best Practices** [Practice enables your business](dce/bphome.md)
-- :material-frequently-asked-questions: **FAQs** [troubleshooting](dce/faq.md)
-- [Free Trial :free:](./trial/index.md){ .md-button }
+<div class="tf-hero-badges">
+<a class="tf-hero-badge tf-hero-badge--tf" href="tf/">d.run Token Factory</a>
+<a class="tf-hero-badge tf-hero-badge--drun" href="drun/">d.run AI OS</a>
+<a class="tf-hero-badge tf-hero-badge--dce" href="dce/">DaoCloud Enterprise</a>
+</div>
 
 </div>
 
-![modules](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/dce-modules04.jpg)
+<style>
+.tf-arch-card{min-width:calc(25% - 6px) !important}
+.tf-arch{overflow:visible !important}
+.tf-arch-card{overflow:visible !important}
+.tf-arch-layer:first-child{border-radius:14px 14px 0 0 !important}
+.tf-arch-layer:last-child{border-radius:0 0 14px 14px !important}
+.tf-arch-card-tip{
+  opacity:0;
+  position:absolute;
+  bottom:calc(100% + 8px);
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,0.85);
+  color:#fff;
+  padding:0.35rem 0.65rem;
+  border-radius:6px;
+  font-size:0.72rem;
+  font-weight:500;
+  white-space:nowrap;
+  z-index:100;
+  pointer-events:none;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  transition:opacity 0.2s ease
+}
+.tf-arch-card-tip::after{
+  content:"";
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%);
+  border:5px solid transparent;
+  border-top-color:rgba(0,0,0,0.85)
+}
+.tf-arch-card:hover .tf-arch-card-tip{
+  opacity:1
+}
+</style>
 
-Over the past ten years, DaoCloud has made significant investments to explore
-and develop a cloud native operating system with customizable and scalable modules
-that facilitate business digitalization. Each module can be used as a LEGO brick,
-allowing for zero downtime while upgrading any module. DCE 5.0 is also easy to
-integrate with hundreds of cloud native ecological plugins, making it simple to
-customize solutions for various use cases. This modular style allows for continuous growth, improving over time.
+=== ":material-factory: d.run Token Factory"
 
-=== "Cloud Native Base"
+    This is a high-efficiency AI Token production and management system designed for intelligent computing centers, dedicated to upgrading traditional computing centers into efficient, profitable Token factories.
+    The platform unifiedly manages NVIDIA and domestic heterogeneous computing power, transforming distributed GPU compute into low-cost, highly stable, and tradable standardized Token services through intelligent scheduling and inference optimization.
+    Built on the Token Factory manager and unified operations system, the platform enables global management of resources, production, costs, and supply-demand, serving end users, administrators, operators, and O&M teams,
+    driving intelligent computing centers to evolve from "providing compute" to "producing and operating Tokens".
 
-    DCE 5.0 provides cloud native computing, networking, storage, and other capabilities,
-    compatible with various cluster access. It supports the entire lifecycle of the cluster
-    from deployment, version upgrades, certificate changes, configuration changes, and recycling,
-    enabling lifecycle management. 
+    <div class="tf-arch tf-arch--compact">
+      <div class="tf-arch-layer tf-arch-layer--model">
+        <div class="tf-arch-layer-label">CNAI</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--model" href="tf/clawos/intro/">
+            <span class="tf-arch-card-title">ClawOS</span>
+            <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="tf/dak/">
+            <span class="tf-arch-card-title">AI Applications</span>
+            <span class="tf-arch-card-tip">Intelligent Q&A and application capabilities</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="tf/hydra/">
+            <span class="tf-arch-card-title">LLM Serving Platform</span>
+            <span class="tf-arch-card-tip">Model deployment and O&M management</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="tf/inferx/">
+            <span class="tf-arch-card-title">InferX Inference</span>
+            <span class="tf-arch-card-tip">Inference acceleration and engine management</span>
+          </a>
+          <div class="tf-arch-card tf-arch-card--model">
+            <span class="tf-arch-card-title">redhare Distributed Cache</span>
+            <span class="tf-arch-card-tip">Distributed cache acceleration service</span>
+          </div>
+          <a class="tf-arch-card tf-arch-card--model" href="tf/zestu/">
+            <span class="tf-arch-card-title">Compute Cloud</span>
+            <span class="tf-arch-card-tip">Heterogeneous compute management and scheduling</span>
+          </a>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--compute">
+        <div class="tf-arch-layer-label">CN Infra</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--compute" href="tf/kpanda/intro/">
+            <span class="tf-arch-card-title">Container Management</span>
+            <span class="tf-arch-card-tip">Cluster and workload management</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="tf/kangaroo/intro/">
+            <span class="tf-arch-card-title">Container Registry</span>
+            <span class="tf-arch-card-tip">Image hosting and integration</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="tf/topohub/intro/">
+            <span class="tf-arch-card-title">Device Management</span>
+            <span class="tf-arch-card-tip">Unified hardware device management</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="tf/network/intro/">
+            <span class="tf-arch-card-title">Cloud Native Network</span>
+            <span class="tf-arch-card-tip">Multi-CNI fused network</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="tf/storage/">
+            <span class="tf-arch-card-title">Cloud Native Storage</span>
+            <span class="tf-arch-card-tip">Containerized storage and CSI</span>
+          </a>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--ops">
+        <div class="tf-arch-layer-label">Ops</div>
+        <div class="tf-arch-cards">
+          <div class="tf-arch-card tf-arch-card--ops">
+            <span class="tf-arch-card-title">Copilot</span>
+            <span class="tf-arch-card-tip">Intelligent O&M assistant</span>
+          </div>
+          <div class="tf-arch-card tf-arch-card--ops">
+            <span class="tf-arch-card-title">Dashboard</span>
+            <span class="tf-arch-card-tip">Operations data visualization</span>
+          </div>
+          <a class="tf-arch-card tf-arch-card--ops" href="tf/leopard/">
+            <span class="tf-arch-card-title">Cost Center</span>
+            <span class="tf-arch-card-tip">Billing and invoice analysis</span>
+          </a>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--ops">
+        <div class="tf-arch-layer-label">OAM</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--ops" href="tf/insight/intro/">
+            <span class="tf-arch-card-title">Observability</span>
+            <span class="tf-arch-card-tip">Metrics, logs, and tracing</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--ops" href="tf/ghippo/intro/">
+            <span class="tf-arch-card-title">Global Management</span>
+            <span class="tf-arch-card-tip">User permissions and platform settings</span>
+          </a>
+        </div>
+      </div>
+    </div>
 
-    This capability breaks through K8s API performance bottlenecks, allowing large-scale
-    enterprise users to use multiple clusters concurrently. Additionally, for the enterprise
-    environment, it provides scenario-based network solutions to maximize the reuse of
-    current enterprise network infrastructure and lower the threshold for enterprises
-    to adopt cloud native applications.
+=== ":material-robot-happy: d.run AI OS"
 
-    - **About Cloud Native Computing**: Abstracts underlying infrastructure to support upper-layer 
-    applications and other modules, including computing and storage.
-    - **About Cloud Native Networking**: Adapts to various overlay and underlay network environments, 
-    supporting multiple network modes like Spiderpool, Cillium, Macvlan, and Multus.
-    - **About Cloud Native Security**: Integrates RBAC permission authentication systems to safeguard 
-    operational security.
+    Leveraging top-three globally ranked Kubernetes scheduling technology and core contributions to mainstream open-source inference engines like vLLM, d.run unifiedly manages diverse heterogeneous computing power,
+    achieving granular scheduling, full-stack inference optimization, and end-to-end Token governance. With compute utilization exceeding 80%, it efficiently transforms compute into manageable, controllable Token-based AI productivity.
+    The platform aggregates global mainstream large model ecosystems, equipped with a visual operations dashboard and d.run Copilot intelligent assistant, delivering stable and efficient AI services across all enterprise departments,
+    comprehensively supporting long-term business intelligent transformation.
 
-    **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
-    [Cluster Lifecycle Management](community/kubean.md), [cloud native network](network/intro/index.md),
-    [cloud native storage](storage/index.md)
+    <div class="tf-arch tf-arch--compact">
+      <div class="tf-arch-layer tf-arch-layer--model">
+        <div class="tf-arch-layer-label">CNAI</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/workspace/">
+            <span class="tf-arch-card-title">ClawOS</span>
+            <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="drun/hydra/">
+            <span class="tf-arch-card-title">LLM Studio</span>
+            <span class="tf-arch-card-tip">Model deployment and O&M management</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="drun/baize/intro/">
+            <span class="tf-arch-card-title">AI Lab</span>
+            <span class="tf-arch-card-tip">Cloud-native integrated training and inference</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="drun/inferx/">
+            <span class="tf-arch-card-title">InferX Inference Suite</span>
+            <span class="tf-arch-card-tip">Inference acceleration and engine management</span>
+          </a>
+          <div class="tf-arch-card tf-arch-card--model">
+            <span class="tf-arch-card-title">redhare Distributed Cache</span>
+            <span class="tf-arch-card-tip">Distributed cache acceleration service</span>
+          </div>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--compute">
+        <div class="tf-arch-layer-label">CN Infra</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--compute" href="drun/kpanda/intro/">
+            <span class="tf-arch-card-title">Container Management</span>
+            <span class="tf-arch-card-tip">Cluster and workload management</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="drun/topohub/intro/">
+            <span class="tf-arch-card-title">Device Management</span>
+            <span class="tf-arch-card-tip">Unified hardware device management</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="drun/kangaroo/intro/">
+            <span class="tf-arch-card-title">Container Registry</span>
+            <span class="tf-arch-card-tip">Image hosting and integration</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="drun/network/intro/">
+            <span class="tf-arch-card-title">Cloud Native Network</span>
+            <span class="tf-arch-card-tip">Multi-CNI fused network</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="drun/storage/">
+            <span class="tf-arch-card-title">Cloud Native Storage</span>
+            <span class="tf-arch-card-tip">Containerized storage and CSI</span>
+          </a>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--ops">
+        <div class="tf-arch-layer-label">Ops</div>
+        <div class="tf-arch-cards">
+          <div class="tf-arch-card tf-arch-card--ops">
+            <span class="tf-arch-card-title">Copilot</span>
+            <span class="tf-arch-card-tip">Intelligent O&M assistant</span>
+          </div>
+          <div class="tf-arch-card tf-arch-card--ops">
+            <span class="tf-arch-card-title">Operations Dashboard</span>
+            <span class="tf-arch-card-tip">Operations data visualization</span>
+          </div>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--ops">
+        <div class="tf-arch-layer-label">OAM</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--ops" href="drun/insight/intro/">
+            <span class="tf-arch-card-title">Observability</span>
+            <span class="tf-arch-card-tip">Metrics, logs, and tracing</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--ops" href="drun/ghippo/intro/">
+            <span class="tf-arch-card-title">Global Management</span>
+            <span class="tf-arch-card-tip">User permissions and platform settings</span>
+          </a>
+        </div>
+      </div>
+    </div>
 
-=== "Multicloud"
+=== ":octicons-stack-16: DaoCloud Enterprise"
 
-    DCE 5.0 supports unified and centralized management of multicloud and hybrid clouds,
-    providing cross-cloud resource retrieval and application deployment, release, and
-    operation and maintenance capabilities. This enables efficient management and control
-    of multicloud applications, scaling of applications based on cluster resources,
-    and global load balancing.
-    
-    Furthermore, DCE 5.0 offers fault recovery capabilities that
-    effectively solve the problem of multicloud application disaster recovery, helping
-    enterprises build robust multicloud and hybrid cloud digital infrastructure.
+    DaoCloud Enterprise (DCE) is a high-performance, scalable cloud native operating system,
+    and a [CNCF-certified Kubernetes – AI Platform](./dce/kcsp.md).
+    It delivers a consistent, stable experience across any infrastructure and environment, supporting heterogeneous clouds, edge clouds, and multicloud orchestration.
 
-    **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Multicloud Management](kairship/intro/index.md), [cloud native network](network/intro/index.md), [cloud native storage](storage/index.md), Heterogeneous architecture
+    <div class="tf-arch tf-arch--compact">
+      <div class="tf-arch-layer tf-arch-layer--compute">
+        <div class="tf-arch-layer-label">CN Infra</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--compute" href="middleware/">
+            <span class="tf-arch-card-title">Middleware</span>
+            <span class="tf-arch-card-tip">Databases and message queues</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="kairship/intro/">
+            <span class="tf-arch-card-title">Multicloud Orchestration</span>
+            <span class="tf-arch-card-tip">Multicloud and hybrid cloud orchestration</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="kangaroo/intro/">
+            <span class="tf-arch-card-title">Container Registry</span>
+            <span class="tf-arch-card-tip">Image hosting and integration</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="mspider/intro/">
+            <span class="tf-arch-card-title">Service Mesh</span>
+            <span class="tf-arch-card-tip">Non-intrusive service governance</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="skoala/intro/">
+            <span class="tf-arch-card-title">Microservice Engine</span>
+            <span class="tf-arch-card-tip">Microservice governance and gateway</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="amamba/intro/">
+            <span class="tf-arch-card-title">Workbench</span>
+            <span class="tf-arch-card-tip">CI/CD and application delivery</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="kpanda/intro/">
+            <span class="tf-arch-card-title">Container Management</span>
+            <span class="tf-arch-card-tip">Cluster and workload management</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="virtnest/intro/">
+            <span class="tf-arch-card-title">Virtual Machine</span>
+            <span class="tf-arch-card-tip">KubeVirt virtual machine management</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="topohub/intro/">
+            <span class="tf-arch-card-title">Device Management</span>
+            <span class="tf-arch-card-tip">Unified hardware device management</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="kant/intro/">
+            <span class="tf-arch-card-title">Cloud Edge Collaboration</span>
+            <span class="tf-arch-card-tip">Edge node management and collaboration</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="network/intro/">
+            <span class="tf-arch-card-title">Cloud Native Network</span>
+            <span class="tf-arch-card-tip">Multi-CNI fused network</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="storage/">
+            <span class="tf-arch-card-title">Cloud Native Storage</span>
+            <span class="tf-arch-card-tip">Containerized storage and CSI</span>
+          </a>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--ops">
+        <div class="tf-arch-layer-label">OAM</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--ops" href="insight/intro/">
+            <span class="tf-arch-card-title">Observability</span>
+            <span class="tf-arch-card-tip">Metrics, logs, and tracing</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--ops" href="ghippo/intro/">
+            <span class="tf-arch-card-title">Global Management</span>
+            <span class="tf-arch-card-tip">User permissions and platform settings</span>
+          </a>
+        </div>
+      </div>
+    </div>
 
-    ![multicloud](./images/01multi-cloud.png)
+<div class="tf-cta" markdown>
 
-=== "Middleware"
+[Apply for DCE Community Free Trial](./dce/license0.md){ .md-button .md-button--primary }
+[Learn about d.run](drun/index.md){ .md-button .md-button--primary }
+[Token Factory Overview](tf/index.md){ .md-button .md-button--primary }
 
-    The cloud native local storage capability, specially designed for stateful applications, meets
-    the high I/O storage requirements of middleware and improves the efficiency of operation and
-    maintenance management. It offers middleware management capabilities for the entire lifecycle
-    of multi-tenancy, deployment, observation, backup, operation, and maintenance operations, among others.
-
-    This capability supports various middleware such as databases, distributed messages, log retrieval,
-    enabling self-service application, elastic expansion, high concurrent processing, and high
-    stability and availability of data services.
-
-    **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Cloud Native Network](network/intro/index.md), [cloud native storage](storage/index.md), [selected middleware](middleware/index.md)
-
-    ![data](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/02data.jpg)
-
-=== "Microservice"
-
-    DCE 5.0 provides non-intrusive traffic management features, supporting non-sensing access to
-    traditional microservices, cloud native microservices, and open-source microservice frameworks.
-    It achieves integrated management of existing microservice systems and new and legacy microservice systems of enterprises.
-
-    This capability supports the lifecycle management of microservices from development, deployment,
-    access, observation, operation, and maintenance. It also provides high-performance cloud native
-    microservice gateways, ensuring continuous availability of microservice applications. Additionally,
-    DCE 5.0 introduces independent open-source eBPF mesh acceleration technology to comprehensively improve traffic forwarding efficiency.
-
-    **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Microservice Engine](skoala/intro/index.md), [Service Mesh](mspider/intro/index.md), [Observability](insight/intro/index.md), [Workbench](amamba/intro/index.md), [Cloud Native Network](network/intro/index.md), [Cloud Native Storage](storage/index.md)
-
-    ![microservie engine](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/03msgov.jpg)
-
-=== "Observability"
-
-    DCE 5.0 comprehensively collects service data based on logs, traces, metrics,
-    eBPF, and other technical means. It acquires detailed request link information 
-    and dynamically observes and multi-dimensionally controls real-time changes
-    in clusters, nodes, applications, and services.
-    
-    This capability enables the querying of all clusters and observation of load data
-    through a unified control plane. Additionally, it introduces topology analysis
-    technology to visualize the application health status and achieves second-level fault location.
-
-    *[eBPF]: Extended Berkeley Packet Filter, which is a component of the Linux kernel that can run sandboxed programs in the kernel
-
-    **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
-    [Observability](insight/intro/index.md), [cloud native network](network/intro/index.md), [cloud native storage](storage/index.md)
-
-    ![Observability](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/04insight.jpg)
-
-=== "App Store"
-
-    DCE 5.0 includes software products from ecological partners in ten major fields,
-    such as big data and AI, middleware, etc. This enables the integration of ecological
-    technology, products, operation services, and other capabilities. Additionally, it
-    provides out-of-the-box ecological application software, creating a complete solution system.
-
-    **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
-    [Cloud Native Network](network/intro/index.md), [cloud native storage](storage/index.md), app store, product ecology
-
-=== "App Delivery"
-
-    DCE 5.0 realizes self-service migration to the cloud through a consistent and
-    scalable app delivery process. It supports flexible tenant systems, dynamically
-    adapting to user organizational structure planning and real-time resource allocation.
-
-    This capability is based on cloud native CI/CD pipelines, integrating rich toolchains,
-    and supporting efficient concurrent execution flow. Additionally, it automates the
-    construction and deployment of applications, innovatively introducing GitOps and
-    progressive delivery capability systems, achieving more refined management and operation of applications.
-
-    **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
-    [Workbench](amamba/intro/index.md), [container registry](kangaroo/intro/index.md), [cloud native network](network/intro/index.md),
-    [cloud native storage](storage/index.md)
-
-    ![app delivery](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/06appdeliv.jpg)
-
-=== "Heterogeneous Architecture"
-
-    DCE 5.0 adopts a heterogeneous cloud native technology architecture, compatible
-    with domestic chips and servers. It supports a heterogeneous operating system and
-    application ecosystem, shielding the complexity of underlying
-    heterogeneous infrastructure, and liberating traditional operating systems
-    from the need for long-term software ecological compatibility.
-
-    This capability realizes the flexible scheduling of mixed heterogeneous clusters,
-    ensuring the stability and reliability of the heterogeneous application operating
-    environment. Furthermore, it helps speed up the heterogeneous process.
-
-    **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
-    [Cluster Lifecycle Management](community/kubean.md), [Middleware](middleware/index.md),
-    [Cloud Native Network](network/intro/index.md), [Cloud Native Storage](storage/index.md)
-
-    ![Heterogeneous](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/08xinchuan.jpg)
-
-=== "Cloud Edge Collaboration"
-
-    DCE 5.0 extends cloud native capabilities to the edge by adopting the edge cluster
-    and edge node mode. It moves the computing power of the data center down, while
-    elevate the computing power of the end device. This unifies control and scheduling
-    of discrete and heterogeneous computing resources, solving the problem of massive edge and end devices.
-
-    This capability unifies the requirements of large-scale app delivery, operation
-    and maintenance, management, and control on the Internet. Additionally, it realizes
-    true integration of cloud and edge by bringing cloud native capabilities to the edge.
-
-    ![Cloud edge collaboration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge.png)
-
-=== "Virtual Machine"
-
-    Based on KubeVirt technology, virtual machines are managed as cloud native applications, seamlessly integrated with containers,
-    allowing users to easily manage the entire lifecycle of virtual machines, including capabilities such as snapshots, recovery,
-    cloning, and live migration. Users can enjoy a smooth experience similar to container applications.
-
-    **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Cloud Native Networking](network/intro/index.md), [Cloud Native Storage](storage/index.md)
-
-    ![virtual machine](./images/virtnest.png)
-
-=== "AI Lab"
-
-    Integrate MLOps and large language models (LLMs) seamlessly into a cloud-native platform to create a comprehensive
-    AI AI Lab solution with an end-to-end R&D lifecycle. This platform supports a variety of deep learning
-    frameworks, including PyTorch and TensorFlow, and offers capabilities for dataset management, model development, training,
-    inference, monitoring, and operations. Users can concentrate solely on developing and deploying models, without the need
-    to manage underlying resource scheduling, administration, or monitoring tasks.
-
-    **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Cloud Native Networking](network/intro/index.md), [AI Lab](./baize/intro/index.md)
-
-    ![AI Lab](./images/baize.png)
-
-Once you have obtained the [license authorization](./dce/license0.md) and successfully logged into DCE 5.0
-for the first time, you will be greeted by a user-friendly dashboard. This dashboard provides an intuitive display
-of various information, including the status of running containers and pods, CPU and memory usage, health status
-of clusters/nodes/pods, alerts, resource utilization, and an overview of available functionalities.
-
-![dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/ipavo.png)
-
-[Download DCE 5.0](download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](install/index.md){ .md-button .md-button--primary }
-[Free Trial](dce/license0.md){ .md-button .md-button--primary }
+</div>

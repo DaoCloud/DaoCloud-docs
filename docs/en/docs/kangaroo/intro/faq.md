@@ -2,9 +2,9 @@
 
 This page lists some common issues and solutions when using the container registry.
 
-## Middleware deployment is not available in the DCE 5.0 standard package
+## Middleware deployment is not available in the DCE standard package
 
-The DCE 5.0 standard package does not include middleware. Middleware is only available in the Platinum package.
+The DCE standard package does not include middleware. Middleware is only available in the Platinum package.
 
 ## How to verify if the configured middleware network is connectable
 
@@ -78,7 +78,7 @@ Currently, `Harbor` does not support the use of `redis` cluster mode.
 
 ## Can private images be seen in a module other than container registry?
 
-The container registry strictly follows the authority of DCE 5.0.
+The container registry strictly follows the authority of DCE.
 To view private registry space under the current tenant, users must belong to a specific tenant.
 Even administrators cannot view it without belonging to the tenant.
 

@@ -20,7 +20,7 @@ The specific operational steps are as follows:
 
 3. Create Users/Integrate User Systems
 
-    The main platform administrator Admin can [create users](../user-guide/access-control/user.md) on the platform or integrate users through LDAP/OIDC/OAuth2.0 and other [identity providers](../user-guide/access-control/ldap.md) to DCE 5.0.
+    The main platform administrator Admin can [create users](../user-guide/access-control/user.md) on the platform or integrate users through LDAP/OIDC/OAuth2.0 and other [identity providers](../user-guide/access-control/ldap.md) to DCE.
 
 4. Create Folder Roles
 

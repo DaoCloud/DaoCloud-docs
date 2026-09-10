@@ -1,6 +1,6 @@
 # Install DCE Community
 
-DCE 5.0 is divided into DCE Community and Enterprise Package. The DCE Community is free to use and includes three modules: global management, container management, and observability. With the Enterprise Package, you can order any module such as microservices, service mesh, multicloud, middleware, etc. For more details, please refer to [What is DCE 5.0](../dce/index.md) and [Use Cases](../dce/scenario.md).
+DCE is divided into DCE Community and Enterprise Package. The DCE Community is free to use and includes three modules: global management, container management, and observability. With the Enterprise Package, you can order any module such as microservices, service mesh, multicloud, middleware, etc. For more details, please refer to [What is DCE](../dce/index.md) and [Use Cases](../dce/scenario.md).
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
@@ -39,6 +39,6 @@ See [Online Install DCE Community](../install/index.md#_2).
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/online-install-community.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/install-online.png"></video>
 </div>
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

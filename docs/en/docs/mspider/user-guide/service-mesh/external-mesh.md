@@ -5,7 +5,7 @@ hide:
 
 # Create External Mesh
 
-External mesh means that the existing mesh can be connected to the DCE 5.0 service mesh for management.
+External mesh means that the existing mesh can be connected to the DCE service mesh for management.
 
 1. On the right corner of the mesh list, click the __Create Mesh__ button and select __Create external mesh__ from the dropdown list.
 

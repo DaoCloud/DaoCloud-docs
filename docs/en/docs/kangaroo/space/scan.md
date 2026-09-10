@@ -23,7 +23,7 @@ a container image has a vulnerability, they need to identify the issue's source 
 
 ## Image Scan Features
 
-DCE 5.0 Container Registry module supports the following image scanning:
+DCE Container Registry module supports the following image scanning:
 
 - Managed Harbor registries support Trivy scanning.
 - Native Harbor registries support Clair and Trivy scanning, depending on what plugins the user has installed.

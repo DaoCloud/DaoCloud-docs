@@ -625,13 +625,13 @@ the development and feature changes in each version.
 #### New Features
 
 - Continuous release of jenkins-agent image
-- The option to use the mysql component from DCE 5.0 data service module as the database
+- The option to use the mysql component from DCE data service module as the database
 - Upgrad Jenkins from 2.319.1 to 2.346.2, and kubernetes plugin to 3734.v562b_b_a_627ea_c, along with other related plugins
 
 #### Improvements
 
 - Improved performance for obtaining rollout image lists, application group lists, and native application lists
-- The image used in creating app from jar packages is provided by env variable, instead of being hardcoded in the source code. Also ensure that the whole DCE 5.0 install package can obtain that image
+- The image used in creating app from jar packages is provided by env variable, instead of being hardcoded in the source code. Also ensure that the whole DCE install package can obtain that image
 
 #### Fixes
 

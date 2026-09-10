@@ -11,7 +11,7 @@ Then, you can manage resources under this instance.
 
 !!! note
 
-    - DCE 5.0 Multicloud Management is developed based on the open source project [Karmada](https://karmada.io/), 
+    - DCE Multicloud Management is developed based on the open source project [Karmada](https://karmada.io/), 
       so a Karmada instance will be automatically created when you create a multicloud instance.
 
     - The newly-created multicloud instance is deployed in the global management cluster by default, in the form 
@@ -27,8 +27,8 @@ To create an multicloud instance, follow the steps below:
 
 2. Fill in information and click "OK".
 
-    - Management Cluster: available clusters come from those integrated or created in DCE 5.0 [Container Management](../../kpanda/intro/index.md) module. If no target cluster is found, go to Container Management module to [integrate](../../kpanda/user-guide/clusters/integrate-cluster.md) or [create](../../kpanda/user-guide/clusters/create-cluster.md) a cluster.
-    - Delete Instance: if checked，the Karmada instance will also be deleted when you delete the multicloud management instance. If not checked, the Karmada instance will remain and you can use it in terminal, but not in DCE 5.0 Multicloud Management anymore. It is recommended to delete it simultaneously.
+    - Management Cluster: available clusters come from those integrated or created in DCE [Container Management](../../kpanda/intro/index.md) module. If no target cluster is found, go to Container Management module to [integrate](../../kpanda/user-guide/clusters/integrate-cluster.md) or [create](../../kpanda/user-guide/clusters/create-cluster.md) a cluster.
+    - Delete Instance: if checked，the Karmada instance will also be deleted when you delete the multicloud management instance. If not checked, the Karmada instance will remain and you can use it in terminal, but not in DCE Multicloud Management anymore. It is recommended to delete it simultaneously.
 
     ![add](../images/add-instance.png)
 

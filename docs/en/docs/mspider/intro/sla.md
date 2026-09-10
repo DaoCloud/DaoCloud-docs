@@ -4,7 +4,7 @@ This solution aims at design in technical implementation, detection, and fix. Ac
 
 ## Scanning Solution
 
-DCE 5.0 uses `trivy` as the image vulnerability scanning tool by default, and all modules are scanned when released.
+DCE uses `trivy` as the image vulnerability scanning tool by default, and all modules are scanned when released.
 
 - What is trivy? See <https://trivy.dev/>
 - Why choose trivy?

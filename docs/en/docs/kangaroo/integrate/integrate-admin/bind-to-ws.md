@@ -16,7 +16,7 @@ administrator before members under the workspace can use them, ensuring the secu
 
 Generally, for private registry spaces, binding to a workspace is helpful to allow members to use the images.
 
-1. Log in to DCE 5.0 as a user with the Admin role, click __Container Registry__ -> __Integrated Registry (Admin)__ 
+1. Log in to DCE as a user with the Admin role, click __Container Registry__ -> __Integrated Registry (Admin)__ 
    from the left navigation bar.
 
     ![Integration](../images/integrated01.png)

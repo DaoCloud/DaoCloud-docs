@@ -6,7 +6,7 @@ Since Redis itself does not provide the ability for external access to the clust
 
 ## Prerequisites
 
-The __multus-underlay__ and __spiderpool__ have been deployed in the DCE 5.0 cluster.
+The __multus-underlay__ and __spiderpool__ have been deployed in the DCE cluster.
 
 ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool09.png)
 

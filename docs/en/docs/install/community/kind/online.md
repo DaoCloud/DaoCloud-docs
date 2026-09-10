@@ -172,7 +172,7 @@ precheck pass...
     chmod +x ./dce5-installer
     ```
 
-3. Get the IP of the node where kind is installed, and start installing DCE 5.0.
+3. Get the IP of the node where kind is installed, and start installing DCE.
 
     ```shell
     myIP=$(ip -o route get 1.1.1.1 | cut -d " " -f 7)
@@ -191,7 +191,7 @@ precheck pass...
 
 4. After the installation is complete, the command line will prompt that the installation is successful. Congratulations!
 
-    Now you can use the **default account and password (admin/changeme)** to explore the new DCE 5.0 through the URL prompted on the screen!
+    Now you can use the **default account and password (admin/changeme)** to explore the new DCE through the URL prompted on the screen!
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -201,8 +201,8 @@ precheck pass...
 
 !!! success
 
-     - Keep the DCE 5.0 URL for the next visit.
+     - Keep the DCE URL for the next visit.
      - As DCE Community package is installed, please [apply for a free license](../../../dce/license0.md).
-     - If you have any problems about DCE 5.0, please scan the QR code and communicate with the developer freely:
+     - If you have any problems about DCE, please scan the QR code and communicate with the developer freely:
     
         ![DCE Community Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)

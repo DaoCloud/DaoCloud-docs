@@ -6,7 +6,7 @@ Different organizations have various scenarios when defining pipelines, so the r
 
 The development of custom steps is defined through a pure YAML declaration model. You can learn more by referring to the [Custom Step Development Guide](./customize-develop.md).
 
-Additionally, the DCE 5.0 Workbench offers several built-in custom steps for users.
+Additionally, the DCE Workbench offers several built-in custom steps for users.
 
 ## Creating Custom Steps
 

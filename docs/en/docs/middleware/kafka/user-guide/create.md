@@ -60,5 +60,5 @@ In the Kafka message queue, follow these steps to create a Kafka instance.
 
 !!! note
 
-    In addition, DCE 5.0's Kafka provides parameter templates to simplify instance creation.
+    In addition, DCE's Kafka provides parameter templates to simplify instance creation.
     You can use these predefined [parameter templates](./template.md) to create instances.

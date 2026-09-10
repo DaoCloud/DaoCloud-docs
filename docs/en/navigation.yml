@@ -1,8 +1,8 @@
 # Page tree
 nav:
-  - DaoCloud Website: https://www.daocloud.io/en/
-  - Documentation:
-      - Get Started: dce/index.md
+  - Home: https://www.daocloud.io/en/
+  - DaoCloud Enterprise:
+      - Overview: dce/index.md
       - Learn and Install:
           - DCE Profile:
               - Free Trial: dce/license0.md
@@ -47,7 +47,7 @@ nav:
                       - v0.10.0-20230731 Released: dce/dce-rn/20230731.md
                       - v0.9.0-20230630 Released: dce/dce-rn/20230630.md
                       - v0.8.0-20230531 Released: dce/dce-rn/20230531.md
-              - DCE 5.0 Roadmap: dce/roadmap.md
+              - DCE Roadmap: dce/roadmap.md
               - DaoCloud Product Support Policy: dce/support.md
               - Glossary: dce/terms.md
           - Installation:
@@ -59,7 +59,7 @@ nav:
                   - Deploy a K8s Cluster from Scratch: install/community/k8s/k8s-dce-deploy.md
                   - Online Install in K8s Cluster: install/community/k8s/online.md
                   - Offline Install in K8s Cluster: install/community/k8s/offline.md
-              - Install DCE 5.0 Enterprise:
+              - Install DCE Enterprise:
                   - Introduction: 
                       - Deployment Architecture: install/commercial/deploy-arch.md
                       - Configuration:
@@ -88,7 +88,7 @@ nav:
                   - Verify Lightweight Deployment Plan: install/light-install/light-install-solution.md
                   - Lightweight Deployment: install/light-install/install-light.md
               - Upgrade:
-                  - Upgrade DCE 5.0 Components: install/upgrade-notes.md
+                  - Upgrade DCE Components: install/upgrade-notes.md
                   - Upgrade from Standard to Platinum: install/evolve.md
               - Uninstall and Import:
                   - Uninstall: install/uninstall.md
@@ -98,7 +98,7 @@ nav:
                   - Cluster Deployment Scenarios: install/commercial/scenarios.md
                   - Global Cluster Practices:
                       - etcd Deployed in Host and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
-                      - Deploying on DCE 5.0 Appliance: install/best-practices/all-in-one-machine.md
+                      - Deploying on DCE Appliance: install/best-practices/all-in-one-machine.md
                   - Thinder Practices:
                       - HA Bootstrap Nodes: install/best-practices/thinder-ha.md
                       - Backup and Restore of Bootstrap Node: install/best-practices/thinder-restore.md
@@ -405,7 +405,7 @@ nav:
                   - Create Red Hat 9.2 Worker Cluster on CentOS: kpanda/best-practice/create-redhat9.2-on-centos-platform.md
                   - Scale Controller Nodes of Worker Cluster: kpanda/best-practice/add-master-node.md
                   - Create Cluster with Non-supported OS: kpanda/best-practice/use-otherlinux-create-custer.md
-                  - Migrate DCE 4.0 to DCE 5.0: kpanda/best-practice/dce4-5-migration.md
+                  - Migrate DCE 4.0 to DCE: kpanda/best-practice/dce4-5-migration.md
                   - Offline Deploy and Upgrade Legacy Kubean: kpanda/best-practice/kubean-low-version.md
                   - Replace a Master Node in Worker Cluster: kpanda/best-practice/replace-first-master-node.md
                   - Get Permanent Token for External Clusters: kpanda/best-practice/get-kubeconfig.md
@@ -454,7 +454,7 @@ nav:
                   - Optimize Failover Latency Sensitivity: kairship/failover/optimization-failover.md
               - FAQs: kairship/intro/faq.md
               - Best Practices:
-                  - DCE 4.0 to DCE 5.0: kairship/best-practice/one-click-conversion.md
+                  - DCE 4.0 to DCE: kairship/best-practice/one-click-conversion.md
                   - Cross-cluster autoscaling: kairship/best-practice/fhpa.md
           - Container Registry:
               - Intro:
@@ -545,7 +545,7 @@ nav:
               - EgressGateway:
                   - Intro: network/modules/egressgateway/index.md
                   - Release Notes: network/modules/egressgateway/release-notes.md
-                  - Install on DCE 5.0:
+                  - Install on DCE:
                       - Install: network/modules/egressgateway/install.md
                       - Create Gateway Instance: network/modules/egressgateway/create_eg.md
                       - Create Gateway Policy: network/modules/egressgateway/create-egpolicy.md
@@ -1473,7 +1473,7 @@ nav:
                   - OEM IN and OUT:
                       - OEM IN: ghippo/best-practice/oem/oem-in.md
                       - OEM OUT: ghippo/best-practice/oem/oem-out.md
-                      - Customize DCE 5.0 to Sync IdP: ghippo/best-practice/oem/custom-idp.md
+                      - Customize DCE to Sync IdP: ghippo/best-practice/oem/custom-idp.md
                       - Customize IdP with Keycloak: ghippo/best-practice/oem/keycloak-idp.md
                   - Customize Nav Bar:
                       - Customize Nav Bar: ghippo/best-practice/menu/navigator.md
@@ -1495,7 +1495,7 @@ nav:
                   - Manage Devices: topohub/device/manage-device.md
   - Video Tutorial:
       - Index: videos/index.md
-      - DCE 5.0:
+      - DCE:
           - Get Started:
               - Installation: videos/install.md
               - Scenario-based Videos: videos/use-cases.md
@@ -1528,8 +1528,8 @@ nav:
   - Downloads:
       - DaoCloud Download Hub:
           - Index: download/index.md
-          - Download DCE 5.0 Community: download/free/dce5-installer-history.md
-          - Download DCE 5.0 Enterprise: download/business/dce5-installer-history.md
+          - Download DCE Community: download/free/dce5-installer-history.md
+          - Download DCE Enterprise: download/business/dce5-installer-history.md
           - Download Addon: download/addon/history.md
           - Download Modules:
               - Workbench: download/modules/amamba.md
@@ -1625,7 +1625,7 @@ nav:
           - Introduction to KWOK: blogs/2023/230301-kwok.md
           - Open Source Projects in DCE Community: blogs/2023/230214-open-projects.md
           - DaoCloud and K8s: blogs/2023/230214-daocloud_k8s.md
-          - DCE 5.0 Dev Quotations: blogs/2023/230201-peter.md
+          - DCE Dev Quotations: blogs/2023/230201-peter.md
           - 2023 Cloud Native Forecast: blogs/2023/230201-forecast.md
           - Leverage Your Idle Computing Power: blogs/2023/230110-res-usage.md
       - 2022:
@@ -1636,7 +1636,7 @@ nav:
           - What is Workbench: blogs/2022/220925-amamba.md
           - What is Multicloud Management: blogs/2022/220808-kairship.md
           - What is Service Mesh: blogs/2022/220708-mspider.md
-          - DCE 5.0 Dev Background: blogs/2022/221008-dce-bg.md
+          - DCE Dev Background: blogs/2022/221008-dce-bg.md
   - DaoCloud Ecosystem:
       - Index: community/index.md
       - CloudTTY: community/cloudtty.md

@@ -1,0 +1,58 @@
+#imgBaseDiv > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 99%;
+    max-height: 99%;
+}
+
+#imgBaseDiv {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.9);
+    top: 0;
+    left: 0;
+    z-index: 1050;
+}
+
+.responsive-video-container {
+    position: relative;
+    margin-bottom: 1em;
+    padding-bottom: 62.50%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+iframe:not(.giscus-frame):not(.swagger-ui-iframe),
+object,
+embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100%;
+}
+
+.md-footer__inner {
+    display: none
+}
+
+/* Maximum space for text block */
+.md-grid {
+    max-width: 94%; /* or 100%, if you want to stretch to full-width */
+}
+
+
+/*
+img {
+    height: auto;
+    width: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 4px;
+    background-color: #fff;
+}
+*/

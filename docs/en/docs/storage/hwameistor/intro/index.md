@@ -28,6 +28,6 @@ HwameiStor is a Kubernetes-native container attached storage (CAS) solution that
     Dynamically expand clusters according to their sizes and flexibly meet the data persistence requirements of the application.
 
 [HwameiStor Release](https://github.com/hwameistor/hwameistor/releases){ .md-button .md-button--primary }
-[Download DCE 5.0](../../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../../../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../../../install/index.md){ .md-button .md-button--primary }
 [Free Trial Now](../../../dce/license0.md){ .md-button .md-button--primary }

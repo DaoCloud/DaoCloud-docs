@@ -27,7 +27,7 @@ but also the permissions of [Cluster Admin](../../../kpanda/user-guide/permissio
 
 ## Binding to Workspace
 
-Using John's account to log in to DCE 5.0, on the **Container Management** -> **Clusters** page, 
+Using John's account to log in to DCE, on the **Container Management** -> **Clusters** page, 
  John can bind the specified cluster to his own workspace by using the **Bind Workspace** button.
 
 !!! note

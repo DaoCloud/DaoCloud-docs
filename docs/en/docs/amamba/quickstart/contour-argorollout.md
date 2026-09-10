@@ -16,7 +16,7 @@ based on a cloud-native gateway, divided into the following steps:
 
 ## Creating Application Resources
 
-After logging into DCE 5.0, click **Workbench** -> **Wizard** -> **Based on Container Image** in the left navigation bar,
+After logging into DCE, click **Workbench** -> **Wizard** -> **Based on Container Image** in the left navigation bar,
 and create an application `rollouts-demo` in the target cluster/namespace.
 
 **Notes:**

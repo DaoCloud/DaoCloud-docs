@@ -44,7 +44,7 @@ Native applications are designed to provide customers with applications composed
 
     - Advanced Configuration:
 
-        - Access Microservices: Integrate the traditional microservice being added with the [Microservice Engine](../../../skoala/intro/index.md) module of DCE 5.0.
+        - Access Microservices: Integrate the traditional microservice being added with the [Microservice Engine](../../../skoala/intro/index.md) module of DCE.
         - Select Framework: The framework used by the microservice, such as __Spring Cloud__ or __Dubbo__ .
         - Registry Instance: Select which registry the microservice will be connected to. The available options come from the managed Nacos registry instances created under the current workspace through the Microservice Engine module.
         - Registry Namespace: The Nacos namespace for the microservice application.

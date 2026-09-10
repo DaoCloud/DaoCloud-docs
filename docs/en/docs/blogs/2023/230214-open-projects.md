@@ -1,4 +1,4 @@
-# How many open source projects are involved in DCE 5.0
+# How many open source projects are involved in DCE
 
 I often hear customers, community members, contributors, pre-sales, delivery, and project teams within the company asking "what open source projects does DCE involve?"
 

@@ -33,7 +33,7 @@ plugins:
   #     media_type: print
   - extra-sass
   - with-pdf:
-      cover_subtitle: DaoCloud Enterprise Product Documentation
+      cover_subtitle: DaoCloud Documentation
       back_cover: true
       toc_level: 2
       ordered_chapter_level: 2

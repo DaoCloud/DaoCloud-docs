@@ -1,6 +1,6 @@
 # Alert Policies
 
-In addition to the built-in alert policies, DCE 5.0 allows users to create custom alert policies. Each alert policy is a collection of alert rules that can be set for clusters, nodes, and workloads. When an alert object reaches the threshold set by any of the rules in the policy, an alert is automatically triggered and a notification is sent.
+In addition to the built-in alert policies, DCE allows users to create custom alert policies. Each alert policy is a collection of alert rules that can be set for clusters, nodes, and workloads. When an alert object reaches the threshold set by any of the rules in the policy, an alert is automatically triggered and a notification is sent.
 
 Taking the built-in alerts as an example, click the first alert policy __alertmanager.rules__ .
 

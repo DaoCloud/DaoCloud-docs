@@ -3,17 +3,17 @@
 Deployment Structure of Microservice Engine Management Components
 
 The chart inside the blue box represents the `skoala` component, which needs to be installed in
-the control plane cluster, specifically the global cluster `kpanda-global-cluster` of DCE 5.0.
-For details, refer to the deployment architecture of DCE 5.0.
+the control plane cluster, specifically the global cluster `kpanda-global-cluster` of DCE.
+For details, refer to the deployment architecture of DCE.
 
 After installing the `skoala` component, you can see the Microservice Engine module in the
-primary navigation bar of DCE 5.0. Also, please note that before installing `skoala`, you
+primary navigation bar of DCE. Also, please note that before installing `skoala`, you
 need to install the required `common-mysql` component for resource storage.
 
 ## Online Install
 
 If you need to install the Microservice Engine, it is recommended to use the installation package of
-[DCE 5.0 Enterprise Package](../../install/commercial/start-install.md) for installation. The
+[DCE Enterprise Package](../../install/commercial/start-install.md) for installation. The
 Enterprise Package allows you to install all modules of DCE at once.
 
 This tutorial is intended to supplement the scenario of manually installing the Microservice Engine
@@ -113,7 +113,7 @@ for the Microservice Engine:
 ### Check the Dependent Monitoring Component
 
 The Microservice Engine relies on the capabilities of the
-[DCE 5.0 Insight](../../insight/intro/index.md) module. If you need to
+[DCE Insight](../../insight/intro/index.md) module. If you need to
 monitor various metrics and trace the service calls of your microservices,
 you need to install the corresponding `insight-agent` in your cluster.
 For detailed instructions, refer to [Installing the insight-agent](../../insight/quickstart/install/install-agent.md).
@@ -200,7 +200,7 @@ After adding the Skoala-release repository, there are typically two charts that 
 
 `Skoala` is the control-side service of the Microservice Engine:
 
-- Once installed, you can see the entry point for the Microservice Engine on the DCE 5.0 platform.
+- Once installed, you can see the entry point for the Microservice Engine on the DCE platform.
 - It includes three components: skoala-ui, hive, and sesame.
 - It needs to be installed in the global management cluster.
 
@@ -253,7 +253,7 @@ of the Microservice Engine.
 The Microservice Engine consists of two components:
 
 - The `skoala` component is installed in the control plane cluster and is responsible for
-  loading the Microservice Engine modules in the DCE 5.0 primary navigation bar.
+  loading the Microservice Engine modules in the DCE primary navigation bar.
 - The `skoala-init` component is installed in the workspace cluster and provides core
   functionalities of the Microservice Engine, such as creating registry instances and gateway instances.
 
@@ -294,7 +294,7 @@ the following steps need to be performed in the control plane cluster.
 
 ## Offline Upgrade
 
-DCE 5.0 modules are loosely coupled and support independent installation and upgrade of each module.
+DCE modules are loosely coupled and support independent installation and upgrade of each module.
 This document is applicable to offline upgrades performed after installing the Microservice Engine.
 
 ### Synchronize Images

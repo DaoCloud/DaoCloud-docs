@@ -47,7 +47,7 @@ On the Create VMs page, enter the information according to the table below and c
 
 The template list will appear, and you can choose either an internal template or a custom template based on your needs.
 
-- Select an Internal Template: DCE 5.0 Virtual Machine provides several standard templates that cannot be edited or deleted. When selecting an internal template, the image source, operating system, image address, and other information will be based on the template and cannot be modified. GPU quota will also be based on the template but can be modified.
+- Select an Internal Template: DCE Virtual Machine provides several standard templates that cannot be edited or deleted. When selecting an internal template, the image source, operating system, image address, and other information will be based on the template and cannot be modified. GPU quota will also be based on the template but can be modified.
 
     ![Template01](../images/template01.png)
 

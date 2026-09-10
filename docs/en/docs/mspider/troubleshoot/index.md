@@ -12,8 +12,8 @@ If you encounter problems with the use of the service mesh, please review this t
   and a virtual cluster is created to store managed Istio CRD resources
 
      When creating a hosted mesh, a managed control plane virtual cluster API Server will be created in the managed control plane cluster to store Istio CRD resources;
-     In principle, only one hosted mesh is allowed in a DCE 5.0 environment.
-     The global cluster of DCE 5.0 contains Istio-related components that global management depends on.
+     In principle, only one hosted mesh is allowed in a DCE environment.
+     The global cluster of DCE contains Istio-related components that global management depends on.
      It is not allowed to use this cluster to create a hosted mesh, and you can use an external mesh to create it during demo.
 
 - Dedicated mesh: control plane and data plane are deployed in one cluster

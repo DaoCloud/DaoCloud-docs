@@ -21,7 +21,7 @@ The following are the general features supported by Elasticsearch:
 | Data collection  | Elasticsearch data import API,MaxCompute data import tool, full/incremental acquisition method | Rich native interfaces for data collection, integrates Maxcompute data import tools |
 | Service authentication | Service-level user authentication | Unified user authentication settings |
 
-After deploying Elasticsearch in DCE 5.0, the following features will also be supported:
+After deploying Elasticsearch in DCE, the following features will also be supported:
 
 - Support to deploy Elasticsearch proprietary nodes, hot/cold data nodes, and data nodes
 - Integrate with Kibana

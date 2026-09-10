@@ -1,6 +1,6 @@
 # Job Analysis
 
-DCE 5.0 AI Lab provides important visualization analysis tools provided for the model development
+DCE AI Lab provides important visualization analysis tools provided for the model development
 process, used to display the training process and results of machine learning models. This document will
 introduce the basic concepts of Job Analysis (Tensorboard), its usage in the AI Lab system,
 and how to configure the log content of datasets.

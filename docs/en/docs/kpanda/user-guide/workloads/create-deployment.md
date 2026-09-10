@@ -9,7 +9,7 @@ This page describes how to create deployments through images and YAML files.
 
 [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) is a common resource in Kubernetes, mainly [Pod](https://kubernetes.io/docs/concepts/workloads/pods/) and [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) provide declarative updates, support scaling, rolling upgrades, and version rollbacks features. Declare the desired Pod state in the Deployment, and the Deployment Controller will modify the current state through the ReplicaSet to make it reach the pre-declared desired state. Deployment is stateless and does not support data persistence. It is suitable for deploying stateless applications that do not need to save data and can be restarted and rolled back at any time.
 
-Through the container management module of [DCE 5.0](../../../dce/index.md), workloads on multicloud and multiclusters can be easily managed based on corresponding role permissions, including the creation of deployments, Full lifecycle management such as update, deletion, scaling, restart, and version rollback.
+Through the container management module of [DCE](../../../dce/index.md), workloads on multicloud and multiclusters can be easily managed based on corresponding role permissions, including the creation of deployments, Full lifecycle management such as update, deletion, scaling, restart, and version rollback.
 
 ## Prerequisites
 
@@ -71,7 +71,7 @@ Container setting is divided into six parts: basic information, lifecycle, healt
     - Image:
         - Image: Select an appropriate image from the list. When entering the image name, the default is to pull the image 
          from the official [DockerHub](https://hub.docker.com/).
-          After integrating the [Image Repository](../../../kangaroo/intro/index.md) module of DCE 5.0, 
+          After integrating the [Image Repository](../../../kangaroo/intro/index.md) module of DCE, 
           you can click the __Choose an image__ button on the right to choose an image.
         - Image Version: Select an appropriate version from the dropdown list.
         - Image Pull Policy: By checking __Always pull the image__, the image will be pulled from the repository each time 

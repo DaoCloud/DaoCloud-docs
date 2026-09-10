@@ -5,7 +5,7 @@ hide:
 
 # Creating Inspection Configuration
 
-DCE 5.0 Container Management module provides cluster inspection functionality, which supports inspection at the cluster, node, and pod levels.
+DCE Container Management module provides cluster inspection functionality, which supports inspection at the cluster, node, and pod levels.
 
 - Cluster level: Check the running status of system components in the cluster, including cluster status, resource usage, and specific inspection items for control nodes such as __kube-apiserver__ and __etcd__ .
 - Node level: Includes common inspection items for both control nodes and worker nodes, such as node resource usage, handle count, PID status, and network status.

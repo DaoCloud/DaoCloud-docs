@@ -5,7 +5,7 @@ date: 2024-05-11
 
 # Prerequisites Check
 
-This page describes the preparation work required for deploying DCE 5.0.
+This page describes the preparation work required for deploying DCE.
 
 !!! note
 

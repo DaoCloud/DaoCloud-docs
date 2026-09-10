@@ -166,6 +166,6 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of features, and the typic
 - Provides a rich plug-in system to extend the functionality of cloud container clusters, such as Multus,
   Cillum, Contour, and other [network plug-ins](../network/intro/index.md).
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](license0.md){ .md-button .md-button--primary }

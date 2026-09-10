@@ -129,7 +129,7 @@ allowing you to understand the evolution path and feature changes of each versio
 
 #### Features
 
-- **Added** support for importing virtual machines from VMware into the virtual machine module of DCE 5.0
+- **Added** support for importing virtual machines from VMware into the virtual machine module of DCE
 - **Added** IPv6 pool for virtual machine networks
 - **Added** support for configuring network information when creating virtual machines from templates
 

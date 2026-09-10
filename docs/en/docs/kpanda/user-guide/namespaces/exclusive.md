@@ -74,7 +74,7 @@ If you do need to enable namespace exclusive nodes on the Global cluster, please
 
     After enabling the admission controllers, you need to add toleration annotations to the namespace where the platform components are located to ensure the high availability of the platform components.
 
-    The system component namespaces for DCE 5.0 are as follows:
+    The system component namespaces for DCE are as follows:
 
     | Namespace            | System Components Included                                   |
     | ------------------- | ------------------------------------------------------------ |
@@ -111,7 +111,7 @@ If you do need to enable namespace exclusive nodes on the Global cluster, please
 
 3. Use the interface to set exclusive nodes for the namespace
 
-    After confirming that the __PodNodeSelector__ and __PodTolerationRestriction__ admission controllers on the cluster API server have been enabled, please follow the steps below to use the DCE 5.0 UI management interface to set exclusive nodes for the namespace.
+    After confirming that the __PodNodeSelector__ and __PodTolerationRestriction__ admission controllers on the cluster API server have been enabled, please follow the steps below to use the DCE UI management interface to set exclusive nodes for the namespace.
 
     1. Click the cluster name in the cluster list page, then click __Namespace__ in the left navigation bar.
 
@@ -175,7 +175,7 @@ To enable namespace exclusive nodes on non-Global clusters, please follow the st
 
 2. Use the interface to set exclusive nodes for the namespace
 
-    After confirming that the __PodNodeSelector__ and __PodTolerationRestriction__ admission controllers on the cluster API server have been enabled, please follow the steps below to use the DCE 5.0 UI management interface to set exclusive nodes for the namespace.
+    After confirming that the __PodNodeSelector__ and __PodTolerationRestriction__ admission controllers on the cluster API server have been enabled, please follow the steps below to use the DCE UI management interface to set exclusive nodes for the namespace.
 
     1. Click the cluster name in the cluster list page, then click __Namespace__ in the left navigation bar.
 

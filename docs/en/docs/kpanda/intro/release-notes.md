@@ -225,7 +225,7 @@ understand the evolution path and feature changes from release to release.
 - **Fixed** an issue in container management -> node management where global service clusters could not add or remove nodes
 - **Fixed** an issue where a cluster showed as deleting indefinitely despite having actually failed to uninstall
 - **Fixed** an issue where finalizers resources under `kpanda-system` were not deleted when detaching a cluster, preventing the deletion of the `kpanda-system` namespace
-- **Fixed** an issue where the downgrade compatibility package for kubean in DCE 5.0 environments did not successfully delete low-version clusters
+- **Fixed** an issue where the downgrade compatibility package for kubean in DCE environments did not successfully delete low-version clusters
 - **Fixed** an issue of incorrect display of backup recovery trigger times
 - **Fixed** an issue where the cluster inspection configuration's scheduled task hour did not match the trigger time with the configured time.
 
@@ -585,7 +585,7 @@ understand the evolution path and feature changes from release to release.
 - **Added** integration of clusterpedia with OTEL Tracing
 - **Added** support for minimal installation of security, inspection, backup, and virtual machine components
 - **Added** documentation for importing custom helm charts into the system's built-in addon repository
-- **Added** documentation for migration scenarios from DCE 4.0 to DCE 5.0 in limited cases
+- **Added** documentation for migration scenarios from DCE 4.0 to DCE in limited cases
 
 #### Improvements
 

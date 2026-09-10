@@ -123,7 +123,7 @@ The Multicloud Management module supports Kubernetes-native workload type deploy
 
 - **Q: What is the positioning of 5.0 Multicloud Management in the fifth generation of products?**
 
-    Answer: In the fifth-generation product, the Multicloud Management module is at the core of connecting the past and the future. Right: docking with the DCE 5.0 Workbench. For the upper-level scenario-based management module, the Multicloud Management module can expose any standard Kubernetes API, and easily realize cross-cluster application distribution and disaster recovery deployment. For the next: docking container management platform Kpanda, and Kpanda docking Any Kubernetes, such as edge K3S, Xinchuang environment, DCE, DKG, DKE, and external Openshift, Tanzu, abd CCE, Multicloud Management based on container management module, quick implementation Multicluster management.
+    Answer: In the fifth-generation product, the Multicloud Management module is at the core of connecting the past and the future. Right: docking with the DCE Workbench. For the upper-level scenario-based management module, the Multicloud Management module can expose any standard Kubernetes API, and easily realize cross-cluster application distribution and disaster recovery deployment. For the next: docking container management platform Kpanda, and Kpanda docking Any Kubernetes, such as edge K3S, Xinchuang environment, DCE, DKG, DKE, and external Openshift, Tanzu, abd CCE, Multicloud Management based on container management module, quick implementation Multicluster management.
 
     ![Positioning](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/kairship03.png)
 
@@ -133,6 +133,6 @@ The Multicloud Management module supports Kubernetes-native workload type deploy
 
 [Learn about Multicloud Management](../../kairship/intro/index.md){ .md-button }
 
-[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../../dce/license0.md){ .md-button .md-button--primary }

@@ -64,8 +64,8 @@ Workbench supports building applications in four ways: [Git Repo](create-app-git
 
 5. Refer to the following instructions to choose whether to enable advanced features, and then click __Create and Upload Jar Package__ .
 
-    - Service Mesh: Choose whether to enable the [Service Mesh for DCE 5.0](../../../mspider/intro/index.md) module to govern microservice traffic.
-    - Microservice Engine: Whether to connect the newly created application to the [DCE 5.0 Microservice Engine](../../../skoala/intro/index.md) module.
+    - Service Mesh: Choose whether to enable the [Service Mesh for DCE](../../../mspider/intro/index.md) module to govern microservice traffic.
+    - Microservice Engine: Whether to connect the newly created application to the [DCE Microservice Engine](../../../skoala/intro/index.md) module.
         
         > For the configuration of the microservice engine, refer to [Build Microservice Application Based on Git Repository](create-app-git.md).
     

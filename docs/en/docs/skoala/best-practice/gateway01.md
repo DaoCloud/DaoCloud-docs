@@ -1,6 +1,6 @@
 # Accessing a Service through Gateway
 
-This article demonstrates how to integrate a microservice with DCE 5.0 Cloud Native Gateway and access the service through the gateway.
+This article demonstrates how to integrate a microservice with DCE Cloud Native Gateway and access the service through the gateway.
 
 ## Prerequisite
 
@@ -9,7 +9,7 @@ This article demonstrates how to integrate a microservice with DCE 5.0 Cloud Nat
 
 ## Integrate Service with Gateway
 
-DCE 5.0 Cloud Native Gateway supports two methods for importing services: manual integration and automatic discovery. Choose one according to your situation.
+DCE Cloud Native Gateway supports two methods for importing services: manual integration and automatic discovery. Choose one according to your situation.
 
 ### Automatic Discovery of Services
 

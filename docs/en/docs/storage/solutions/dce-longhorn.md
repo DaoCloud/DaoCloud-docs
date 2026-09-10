@@ -1,6 +1,6 @@
 # Deploy Longhorn via App Store
 
-This page will provide the operation steps and instructions for deploying the Longhorn cloud native storage system in the DCE 5.0 app store with the Addon graphical UI.
+This page will provide the operation steps and instructions for deploying the Longhorn cloud native storage system in the DCE app store with the Addon graphical UI.
 
 ## Format conversion of Longhorn helm charts
 
@@ -113,7 +113,7 @@ anaconda-ks.cfg helm-v3.10.1-linux-amd64.tar.gz longhorn longhorn-v1.3.2.tgz roo
 calico.yaml linux-amd64 longhorn-1.3.2.tgz rook rook-ceph-image.zip
 ```
 
-## Upload the chart package to DCE 5.0 registry
+## Upload the chart package to DCE registry
 
 <!-- add images later -->
 
@@ -121,7 +121,7 @@ calico.yaml linux-amd64 longhorn-1.3.2.tgz rook rook-ceph-image.zip
 
 <!-- add images later -->
 
-## Install Longhorn via DCE 5.0 App Store
+## Install Longhorn via DCE App Store
 
 <!-- add images later -->
 
@@ -177,4 +177,4 @@ Get access to the Longhorn UI:
 
 ![longhorn ui](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/longhorn-2.png)
 
-So far, the Longhorn storage system has been successfully deployed in the DCE 5.0 app store!
+So far, the Longhorn storage system has been successfully deployed in the DCE app store!

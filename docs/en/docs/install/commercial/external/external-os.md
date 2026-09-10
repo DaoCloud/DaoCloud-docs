@@ -141,7 +141,7 @@ The following content assumes that CentOS 7.9 x86_64 is used as the cluster node
       ..........
     ```
 
-7. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).
+7. After completing the above configuration, you can proceed with [deploying DCE Enterprise](../start-install.md).
 
 ### Appendix
 
