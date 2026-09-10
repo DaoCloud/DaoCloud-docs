@@ -14,7 +14,7 @@ Prerequisite: [Cert Manager](https://cert-manager.io/docs/installation/) and [Ha
      For Harbor instances, in addition to using administrator accounts,
      robot accounts are also supported for access.
 
-1. Log in to DCE 5.0 as a user with the Admin role, and click __Container Registry__ -> __Managed Harbor__ from 
+1. Log in to DCE as a user with the Admin role, and click __Container Registry__ -> __Managed Harbor__ from 
    the navigation bar.
 
      ![nav](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/hosted01.png)

@@ -11,7 +11,7 @@ This document describes how to use third-party middleware services, including My
 
 ### Prerequisites
 
-- DCE 5.0 uses MySQL database to store data, so only external MySQL database is supported.
+- DCE uses MySQL database to store data, so only external MySQL database is supported.
 
 - The example scripts provided below are for demonstration purposes only. In actual applications, you should modify them according to specific requirements, such as database name, username, and password, and you can split the statements to be executed on different DBMS.
 
@@ -142,7 +142,7 @@ This document describes how to use third-party middleware services, including My
               dataSourceName: "dowl:password@tcp(172.30.41.0:3308)/dowl"
     ```
 
-4. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).
+4. After completing the above configuration, you can proceed with [deploying DCE Enterprise](../start-install.md).
 
 ## Use External Redis
 
@@ -170,7 +170,7 @@ The steps to configure external Redis are as follows:
         - Cluster URL format: `redis://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]]` or `rediss://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]]`
         - Currently, only the container management product module uses the Redis component.
 
-2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).
+2. After completing the above configuration, you can proceed with [deploying DCE Enterprise](../start-install.md).
 
 ## Use External Elasticsearch
 
@@ -205,7 +205,7 @@ The steps to configure external Elasticsearch are as follows:
         If an external middleware is used, it is not recommended to use worker nodes in 7-node mode,
         as it may consume too many resources.
 
-2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).
+2. After completing the above configuration, you can proceed with [deploying DCE Enterprise](../start-install.md).
 
 ## Use External S3Storage
 
@@ -231,7 +231,7 @@ The steps to configure external S3Storage are as follows:
       ..........
     ```
 
-2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).
+2. After completing the above configuration, you can proceed with [deploying DCE Enterprise](../start-install.md).
 
 ## Use External Kafka
 
@@ -260,4 +260,4 @@ Follow the steps below:
 
         Currently, only the observability module uses the Kafka component.
 
-2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Business Edition](../start-install.md).
+2. After completing the above configuration, you can proceed with [deploying DCE Business Edition](../start-install.md).

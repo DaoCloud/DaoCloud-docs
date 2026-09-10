@@ -1,8 +1,8 @@
 # How to implement the Ceph Dashboard dashboard
 
-This page demonstrates how to import and successfully use the Ceph Monitoring Plane in DCE 5.0.
+This page demonstrates how to import and successfully use the Ceph Monitoring Plane in DCE.
 
-## Deploy Rook-ceph in DCE 5.0
+## Deploy Rook-ceph in DCE
 
 [Deploy Rook-ceph](./dce-rook-ceph.md) first, then deploy rook-ceph-cluster.
 

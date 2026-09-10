@@ -106,5 +106,5 @@ In basic information page to view the registry `Basic Info`, `Governance Info` (
 !!! note
 
 
-    - Remove: The registry is removed from the DCE 5.0 microservice engine. The original registry and data are not deleted. You can access the registry again later.
+    - Remove: The registry is removed from the DCE microservice engine. The original registry and data are not deleted. You can access the registry again later.
     - Delete: Deletes the registry and all the data in it. The registry cannot be used again. You need to create a new registry.

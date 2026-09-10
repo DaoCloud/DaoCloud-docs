@@ -5,7 +5,7 @@ Date: 2024-01-19
 
 # Application Backup
 
-This article explains how to backup applications in DCE 5.0. The demo application used in this tutorial is called __dao-2048__ , which is a deployment.
+This article explains how to backup applications in DCE. The demo application used in this tutorial is called __dao-2048__ , which is a deployment.
 
 ## Prerequisites
 

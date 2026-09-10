@@ -1,6 +1,6 @@
 # How to Harden a Self-built Work Cluster
 
-In DCE 5.0, when using the CIS Benchmark (CIS) scan on a work cluster created using the user interface, some scan items did not pass the scan. This article provides hardening instructions based on different versions of CIS Benchmark.
+In DCE, when using the CIS Benchmark (CIS) scan on a work cluster created using the user interface, some scan items did not pass the scan. This article provides hardening instructions based on different versions of CIS Benchmark.
 
 ## CIS Benchmark 1.27
 
@@ -59,7 +59,7 @@ To address these security scan issues, kubespray has added default values in v2.
     kubelet_rotate_server_certificates: true
     ```
 
-- In DCE 5.0, there is also a feature to configure advanced parameters through the user interface. Add custom parameters in the last step of cluster creation:
+- In DCE, there is also a feature to configure advanced parameters through the user interface. Add custom parameters in the last step of cluster creation:
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/hardening05.png)
 

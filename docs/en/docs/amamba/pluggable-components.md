@@ -22,15 +22,15 @@ The corresponding functionalities for each component are as follows:
 !!! note
 
     If you want to enable or disable the related components of the Workbench during the deployment
-    of DCE 5.0, you can set the __enable__ keyword in the __manifest.yaml__ file to true or false to
+    of DCE, you can set the __enable__ keyword in the __manifest.yaml__ file to true or false to
     choose whether to enable them.
 
 ## Deploying the argo-cd component
 
-If you chose not to enable it during the deployment of DCE 5.0, follow the instructions below
+If you chose not to enable it during the deployment of DCE, follow the instructions below
 to deploy it and use the continuous deployment capability provided by the Workbench.
 
-1. In the DCE 5.0 product module, go to __Container Management__ -> __Clusters__ and enter the details page of the __kpanda-global-cluster__ .
+1. In the DCE product module, go to __Container Management__ -> __Clusters__ and enter the details page of the __kpanda-global-cluster__ .
 
 2. In the cluster details page, navigate to the menu on the left side and go to __Helm Apps__ -> __Helm Charts__
    -> select the __All__ repository. Search for __argo-cd__ , click it to enter the details page, and install it.
@@ -109,10 +109,10 @@ metadata:
 
 ## Deploying the vela-core component
 
-If you chose not to enable it during the deployment of DCE 5.0, follow the instructions below
+If you chose not to enable it during the deployment of DCE, follow the instructions below
 to deploy and utilize the OAM application capabilities provided by the Workbench.
 
-1. In the DCE 5.0 product module, go to __Container Management__ -> __Clusters__ and enter
+1. In the DCE product module, go to __Container Management__ -> __Clusters__ and enter
    the details page of the __kpanda-global-cluster__ cluster.
 
 2. In the cluster details page, navigate to the left sidebar menu and select __Helm Apps__ -> __Helm Charts__ -> choose the addon repository. Search for __vela-core__ , click it to enter the details page, and proceed with the installation.
@@ -154,9 +154,9 @@ to deploy and utilize the OAM application capabilities provided by the Workbench
 
 ## Deploying the argo-rollouts component
 
-If you chose not to enable it during the deployment of DCE 5.0, follow the instructions below to deploy and utilize the gray release capabilities provided by the Workbench.
+If you chose not to enable it during the deployment of DCE, follow the instructions below to deploy and utilize the gray release capabilities provided by the Workbench.
 
-1. In the DCE 5.0 product module, go to __Container Management__ -> __Clusters__ and enter the details page of the __kpanda-global-cluster__ cluster (the cluster where you want to perform gray releases on applications).
+1. In the DCE product module, go to __Container Management__ -> __Clusters__ and enter the details page of the __kpanda-global-cluster__ cluster (the cluster where you want to perform gray releases on applications).
 
 2. In the cluster details page, navigate to the left sidebar menu and select __Helm Apps__ -> __Helm Charts__ -> choose
    the addon repository. Search for __argo-rollouts__ , click it to enter the details page, and proceed with the installation.

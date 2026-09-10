@@ -9,7 +9,7 @@ The access key can be used to access the openAPI and continuous delivery. Users 
 
 ## Get key
 
-Log in to DCE 5.0, find __Personal Center__ in the drop-down menu in the upper right corner, and you can manage the access key of the account on the __Access Keys__ page.
+Log in to DCE, find __Personal Center__ in the drop-down menu in the upper right corner, and you can manage the access key of the account on the __Access Keys__ page.
 
 ![key list](../../images/platform02.png)
 
@@ -22,7 +22,7 @@ Log in to DCE 5.0, find __Personal Center__ in the drop-down menu in the upper r
 
 ## Use the key to access API
 
-When accessing DCE 5.0 openAPI, add the header `Authorization:Bearer ${token}` to the request to identify the visitor, where `${token}` is the key obtained in the previous step. For the specific API, see [OpenAPI Documentation](https://docs.daocloud.io/openapi/).
+When accessing DCE openAPI, add the header `Authorization:Bearer ${token}` to the request to identify the visitor, where `${token}` is the key obtained in the previous step. For the specific API, see [OpenAPI Documentation](https://docs.daocloud.io/openapi/).
 
 **Request Example**
 

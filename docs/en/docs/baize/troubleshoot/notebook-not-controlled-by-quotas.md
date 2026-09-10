@@ -14,7 +14,7 @@ they find that even if the selected queue lacks resources, the Notebook can stil
 
     The queue management capability in AI Lab is provided by [Kueue](https://kueue.sigs.k8s.io/),
     and the Notebook service is provided through [JupyterHub](https://jupyter.org/hub). JupyterHub has high
-    requirements for the Kubernetes version. For versions below v1.27, even if queue quotas are set in DCE 5.0,
+    requirements for the Kubernetes version. For versions below v1.27, even if queue quotas are set in DCE,
     and users select the quota when creating a Notebook, the Notebook will not actually be restricted by the queue quota.
 
     ![local-queue-initialization-failed](./images/kueue-k8s127.png)

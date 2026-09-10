@@ -7,16 +7,16 @@ hide:
 
 # Use Cases
 
-DCE 5.0 integrates numerous excellent technologies from the community, with tens of thousands of built-in dependencies. After extensive testing, they are fused together to create a new generation PaaS service platform that excels in various usage scenarios.
+DCE integrates numerous excellent technologies from the community, with tens of thousands of built-in dependencies. After extensive testing, they are fused together to create a new generation PaaS service platform that excels in various usage scenarios.
 
-## DCE 5.0 Scenario Videos
+## DCE Scenario Videos
 
 We have carefully created Step-By-Step scenario videos to meet specific business requirements in various scenarios:
 
 === "Multicloud and Hybrid Cloud"
 
     - [How to convert a single-cloud application into a multicloud application with one click?](../videos/use-cases.md#one-click-transformation-from-single-cloud-application-to-multicloud-application)
-    - [How to deploy hybrid cloud applications in DCE 5.0?](../videos/use-cases.md#deploying-hybrid-cloud-applications-in-dce-50)
+    - [How to deploy hybrid cloud applications in DCE?](../videos/use-cases.md#deploying-hybrid-cloud-applications-in-dce-50)
 
 === "Insight"
 
@@ -24,13 +24,13 @@ We have carefully created Step-By-Step scenario videos to meet specific business
 
 === "Traffic Governance"
 
-    - [How to connect microservices to DCE 5.0 and govern north-south traffic?](../videos/use-cases.md#traditional-microservice-governance-north-south-traffic)
+    - [How to connect microservices to DCE and govern north-south traffic?](../videos/use-cases.md#traditional-microservice-governance-north-south-traffic)
     - [How to leverage service mesh to govern east-west traffic for traditional microservices?](../videos/use-cases.md#traditional-microservice-governance-east-west-traffic)
 
 === "OEM IN and OUT"
 
-    - [How to integrate customer systems into DCE 5.0?](../videos/use-cases.md#integrating-customer-systems-into-dce-50-oem-in)
-    - [How to integrate DCE 5.0 into customer systems?](../videos/use-cases.md#integrating-dce-50-into-customer-systems-oem-out)
+    - [How to integrate customer systems into DCE?](../videos/use-cases.md#integrating-customer-systems-into-dce-50-oem-in)
+    - [How to integrate DCE into customer systems?](../videos/use-cases.md#integrating-dce-50-into-customer-systems-oem-out)
 
 === "Networking and Communication"
 
@@ -47,9 +47,9 @@ We have carefully created Step-By-Step scenario videos to meet specific business
     - [How to deploy ChatGPT application using middleware and pgvector?](../videos/use-cases.md#deploying-chatgpt-with-middleware-and-pgvector)
     - [How to achieve cross-cluster data synchronization for Redis?](../videos/use-cases.md#redis-cross-cluster-data-synchronization)
 
-## DCE 5.0 Use Cases
+## DCE Use Cases
 
-In general, DCE 5.0 can support the following use cases:
+In general, DCE can support the following use cases:
 
 === "Production-Grade Container Management"
 
@@ -127,6 +127,6 @@ Involved modules: [Container Management](../kpanda/intro/index.md), [Multicloud 
 
 Advantages of the solution: Innovative technology completes cross-cloud disaster recovery, high concurrency performance of cross-cloud resource retrieval, combined with container platform capabilities to adapt to edge and credit creation use cases.
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](license0.md){ .md-button .md-button--primary }

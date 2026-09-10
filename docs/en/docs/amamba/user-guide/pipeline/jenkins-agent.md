@@ -5,7 +5,7 @@ Date: 2024-07-16
 
 # Custom Jenkins Agent
 
-If you need to use a Jenkins Agent with a specific environment, such as a special version of JDK or specific tools, you can achieve this by creating a custom Jenkins Agent. This document describes how to customize a Jenkins Agent in DCE 5.0. The added Agent will be global, meaning all pipelines can use this Agent.
+If you need to use a Jenkins Agent with a specific environment, such as a special version of JDK or specific tools, you can achieve this by creating a custom Jenkins Agent. This document describes how to customize a Jenkins Agent in DCE. The added Agent will be global, meaning all pipelines can use this Agent.
 
 ## Configure Jenkins
 

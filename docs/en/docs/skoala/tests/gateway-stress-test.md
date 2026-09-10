@@ -1,26 +1,26 @@
 Gateway Load Test Report
 
-This article introduces the performance of the DCE 5.0 Cloud-Native Gateway in different scenarios, enabling you to configure appropriate resources for the gateway based on your needs.
+This article introduces the performance of the DCE Cloud-Native Gateway in different scenarios, enabling you to configure appropriate resources for the gateway based on your needs.
 
 ## Test Environment
 
-Before starting the test, it is necessary to deploy DCE 5.0, download and install the testing tool and prepare stress-testing machines.
+Before starting the test, it is necessary to deploy DCE, download and install the testing tool and prepare stress-testing machines.
 
 | Object | Role | Description |
 | --- | --- | --- |
-| DCE 5.0 Cloud-Native Gateway | Test Object | Deployed in master-slave mode, located at: 172.30.120.211 |
+| DCE Cloud-Native Gateway | Test Object | Deployed in master-slave mode, located at: 172.30.120.211 |
 | Locust | Testing Tool | Running in a 1+4 master-slave distributed mode, with four stress-testing machines' resource configurations at 8 cores and 8 G |
-| Nginx | Demo service for testing gateway performance | Accessed through DCE 5.0 Cloud-Native Gateway, access address: http://172.30.120.211:30296/|
-| contour | Control plane of DCE 5.0 Cloud-Native Gateway | Version 1.23.1 |
-| envoy | Data plane of DCE 5.0 Cloud-Native Gateway | Version 1.24.0 |
-| Global Management | Components that DCE 5.0 Cloud-Native Gateway depends on | Version 0.12.1 |
-| Container Management | Components that DCE 5.0 Cloud-Native Gateway depends on | Version 0.13.1 |
-| Microservice Engine | Components that DCE 5.0 Cloud-Native Gateway depends on | Version 0.15.1 |
+| Nginx | Demo service for testing gateway performance | Accessed through DCE Cloud-Native Gateway, access address: http://172.30.120.211:30296/|
+| contour | Control plane of DCE Cloud-Native Gateway | Version 1.23.1 |
+| envoy | Data plane of DCE Cloud-Native Gateway | Version 1.24.0 |
+| Global Management | Components that DCE Cloud-Native Gateway depends on | Version 0.12.1 |
+| Container Management | Components that DCE Cloud-Native Gateway depends on | Version 0.13.1 |
+| Microservice Engine | Components that DCE Cloud-Native Gateway depends on | Version 0.15.1 |
 
 ## Performance Indicators
 
-- Throughput (RPS): The number of requests processed per second. Combined with CPU utilization, it determines the maximum number of concurrent requests that can be processed per second under a specific resource configuration for the DCE 5.0 Cloud-Native Gateway. The higher the throughput, the better the gateway performance.
-- CPU utilization: The CPU usage of the DCE 5.0 Cloud-Native Gateway instance when processing a specific number of concurrent requests during the test. When the CPU usage exceeds 90%, it is considered to be approaching full load, and the throughput (RPS) at this point is the maximum number of concurrent requests that can be processed normally with the current configuration.
+- Throughput (RPS): The number of requests processed per second. Combined with CPU utilization, it determines the maximum number of concurrent requests that can be processed per second under a specific resource configuration for the DCE Cloud-Native Gateway. The higher the throughput, the better the gateway performance.
+- CPU utilization: The CPU usage of the DCE Cloud-Native Gateway instance when processing a specific number of concurrent requests during the test. When the CPU usage exceeds 90%, it is considered to be approaching full load, and the throughput (RPS) at this point is the maximum number of concurrent requests that can be processed normally with the current configuration.
 
 ## Test Script
 
@@ -84,7 +84,7 @@ Before starting the test, it is necessary to deploy DCE 5.0, download and instal
 
 !!! success
 
-    Based on the above, when three replicas of the service are deployed with no resource usage limitations, the DCE 5.0 Cloud-Native Gateway can handle approximately 6,000 to 7,000 concurrent requests, which is excellent performance compared to similar products.
+    Based on the above, when three replicas of the service are deployed with no resource usage limitations, the DCE Cloud-Native Gateway can handle approximately 6,000 to 7,000 concurrent requests, which is excellent performance compared to similar products.
 
 ### Test Process Screenshots
 
@@ -105,9 +105,9 @@ Before starting the test, it is necessary to deploy DCE 5.0, download and instal
 
 ## Investigating the Impact of Contour Resource Configuration on Envoy Performance
 
-The DCE 5.0 Cloud-Native Gateway is further developed and optimized based on the open-source projects Contour and Envoy. Contour acts as the control plane of the gateway, and Envoy acts as the data plane.
+The DCE Cloud-Native Gateway is further developed and optimized based on the open-source projects Contour and Envoy. Contour acts as the control plane of the gateway, and Envoy acts as the data plane.
 
-When creating the DCE 5.0 Cloud-Native Gateway, the system requires that the gateway be configured with no less than 1 core and 1 G of resources. Therefore, in this test, the minimum resource limit for Contour is set to 1 core and 1 G.
+When creating the DCE Cloud-Native Gateway, the system requires that the gateway be configured with no less than 1 core and 1 G of resources. Therefore, in this test, the minimum resource limit for Contour is set to 1 core and 1 G.
 
 To better demonstrate the impact of Contour's resource configuration, Envoy's resource limit is set to 6 cores and 3 G to ensure that Envoy itself always has high performance and does not affect the test results due to insufficient resources.
 

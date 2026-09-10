@@ -7,7 +7,7 @@ date: 2024-06-14
 
 ## Introduction
 
-DCE 5.0 comes with a pre-installed CentOS 7.9 with GPU Operator offline package for kernel 3.10.0-1160.
+DCE comes with a pre-installed CentOS 7.9 with GPU Operator offline package for kernel 3.10.0-1160.
 You need to manually build an offline yum repository for other OS types or nodes with different kernels.
 
 This page explains how to build an offline yum repository for Red Hat 7.9 based on any node in the Global cluster, and how to use the `RepoConfig.ConfigMapName` parameter when installing the GPU Operator.

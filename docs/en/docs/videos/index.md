@@ -7,7 +7,7 @@ hide:
 
 This page provides video tutorials to help you quickly get started with our products.
 
-## DCE 5.0
+## DCE
 
 <div class="grid cards" markdown>
 
@@ -42,6 +42,6 @@ This page provides video tutorials to help you quickly get started with our prod
 
 </div>
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

@@ -1,7 +1,7 @@
 # System Messages
 
 System messages are used to notify all users, similar to system announcements, and will be displayed
-at the top bar of the DCE 5.0 UI at specific times.
+at the top bar of the DCE UI at specific times.
 
 ## Configure System Messages
 

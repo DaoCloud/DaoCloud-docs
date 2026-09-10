@@ -9,7 +9,7 @@ This document describes how to enable the cluster to manage specified GPU cards.
 
 ## Prerequisites
 
-* The DCE 5.0 container management platform has been [deployed](../../../../../install/index.md) and is running normally.
+* The DCE container management platform has been [deployed](../../../../../install/index.md) and is running normally.
 * The container management module has either [connected to a Kubernetes cluster](../../../clusters/integrate-cluster.md) or [created a Kubernetes cluster](../../../clusters/create-cluster.md), and the cluster UI is accessible.
 * The current cluster has installed the [GPU operator](../install_nvidia_driver_of_operator.md).
 * The current cluster has installed [NVIDIA-vGPU](./vgpu_addon.md), with NVIDIA-vGPU version 2.4.0+1 or above.

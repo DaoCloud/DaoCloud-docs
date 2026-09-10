@@ -6,13 +6,13 @@
 
 We currently have 2 websites:
 
-- [DCE 5.0 Website](https://docs.daocloud.io/): DCE external product documentation and news portal
+- [DCE Website](https://docs.daocloud.io/): DCE external product documentation and news portal
 - [d.run Website](https://docs.d.run/): d.run external product documentation and news portal
 
 GitHub hosts 3 repositories related to Technical Writer:
 
-- [DaoCloud/DaoCloud-docs](https://github.com/DaoCloud/DaoCloud-docs): Source files for DCE 5.0 website
-- [DaoCloud/daocloud-api-docs](https://github.com/DaoCloud/daocloud-api-docs): Open API documentation for DCE 5.0
+- [DaoCloud/DaoCloud-docs](https://github.com/DaoCloud/DaoCloud-docs): Source files for DCE website
+- [DaoCloud/daocloud-api-docs](https://github.com/DaoCloud/daocloud-api-docs): Open API documentation for DCE
 - [d-run/drun-docs](https://github.com/d-run/drun-docs): Source files for d.run website
 
 ## Product Documentation Work

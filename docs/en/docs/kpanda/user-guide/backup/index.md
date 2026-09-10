@@ -26,9 +26,9 @@ Therefore, backup and restore are vital as the last line of defense for maintain
 and ensuring data security.
 
 Backups are typically classified into three types: full backups, incremental backups,
-and differential backups. Currently, DCE 5.0 supports full backups and incremental backups.
+and differential backups. Currently, DCE supports full backups and incremental backups.
 
-The backup and restore provided by DCE 5.0 can be divided into two categories:
+The backup and restore provided by DCE can be divided into two categories:
 **Application Backup** and **ETCD Backup**. It supports both manual backups
 and scheduled automatic backups using CronJobs.
 

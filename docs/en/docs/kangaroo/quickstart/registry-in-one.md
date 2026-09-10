@@ -5,7 +5,7 @@ DATE: 2024-07-30
 
 # Manage External Registry
 
-If you have one or more Harbor, Docker and Jfrog Artifacty container registries, you can use the DCE 5.0 container registry 
+If you have one or more Harbor, Docker and Jfrog Artifacty container registries, you can use the DCE container registry 
 for unified management. Depending on the role permissions of the operator, two methods can be used:
 
 - Integrated Registry (Workspace): Support Harbor, Docker and Jfrog Artifacty

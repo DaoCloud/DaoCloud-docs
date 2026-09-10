@@ -1,6 +1,6 @@
 # Security Policy
 
-DCE 5.0 offers robust security measures, including password policies and access control for the graphical interface.
+DCE offers robust security measures, including password policies and access control for the graphical interface.
 
 ## Password Policy
 

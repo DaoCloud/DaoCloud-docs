@@ -4,7 +4,7 @@ This page describes how to view defects within the project of a Jira instance.
 
 ## Enable the Project Management Navigation Menu
 
-By default, after DCE 5.0 Workbench is deployed, the feature of project management is hidden
+By default, after DCE Workbench is deployed, the feature of project management is hidden
 in the navigation bar. You can enable this feature by modifying the configuration file.
 
 1. In __Container Management__, select the

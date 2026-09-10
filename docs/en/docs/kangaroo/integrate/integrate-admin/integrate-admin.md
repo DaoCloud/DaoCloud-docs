@@ -33,7 +33,7 @@ by binding the registry space to the workspace, or set the registry space as pub
 
 Refer to [Video Tutorial](../../videos/kangaroo.md#integrate-registry-admin) to familiarize yourself with the following operating steps:
 
-1. Log in to DCE 5.0 as a user with the Admin role, click __Container Registry__ -> __Integrated Registry (Admin)__
+1. Log in to DCE as a user with the Admin role, click __Container Registry__ -> __Integrated Registry (Admin)__
   from the left navigation bar.
 
     ![Integration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/integrated01.png)

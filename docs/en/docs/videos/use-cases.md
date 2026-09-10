@@ -1,6 +1,6 @@
 # Scenario-based Videos
 
-The best practice video on this page demonstrates how to leverage the key features of DCE 5.0
+The best practice video on this page demonstrates how to leverage the key features of DCE
 to meet common and practical business requirements in specific scenarios.
 
 !!! tip
@@ -34,7 +34,7 @@ to meet common and practical business requirements in specific scenarios.
 
 For details, refer to the [Multicloud Management Documentation](../kairship/intro/index.md).
 
-## Deploying Hybrid Cloud Applications in DCE 5.0
+## Deploying Hybrid Cloud Applications in DCE
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hybridcloud.mov" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/hybridcloud.png"></video>
@@ -56,7 +56,7 @@ For details, refer to the [Service Mesh - Traffic Governance Documentation](../m
 
 For details, refer to the [Service Mesh - Traffic Governance Documentation](../mspider/user-guide/traffic-governance/README.md).
 
-## Integrating DCE 5.0 into Customer Systems (OEM OUT)
+## Integrating DCE into Customer Systems (OEM OUT)
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oem-out.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/oem-out.png"></video>
@@ -64,7 +64,7 @@ For details, refer to the [Service Mesh - Traffic Governance Documentation](../m
 
 For details, refer to the [OEM OUT Documentation](../ghippo/best-practice/oem/oem-out.md).
 
-## Integrating Customer Systems into DCE 5.0 (OEM IN)
+## Integrating Customer Systems into DCE (OEM IN)
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oemin-istio.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/oemin-istio.png"></video>

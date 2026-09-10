@@ -213,7 +213,7 @@ DCE already includes [AI Lab](../baize/intro/index.md) (training) and [LLM Studi
 
 ---
 
-## DCE 5.0 Existing Capabilities
+## DCE Existing Capabilities
 
 All modules can be upgraded independently without platform-wide downtime.
 

@@ -22,6 +22,6 @@ Through the data layer abstraction provided by Kubernetes services, data can be 
 
 ## Deploy Fluid via Helm Template
 
-DCE 5.0 supports Fluid and has integrated it into the App Store as an Addon.
+DCE supports Fluid and has integrated it into the App Store as an Addon.
 
 1. Enter the `Container Management` module and find the cluster where you need to install Fluid in the `Cluster List`. Click the cluster name.

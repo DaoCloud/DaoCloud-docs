@@ -6,7 +6,7 @@ DATE: 2024-07-12
 # Import a Linux Virtual Machine with Ubuntu from an External Platform
 
 This page provides a detailed introduction on how to import Linux virtual machines from the external platform VMware 
-into the virtual machines of DCE 5.0 through the command line.
+into the virtual machines of DCE through the command line.
 
 !!! info
 

@@ -5,7 +5,7 @@ date: 2024-05-11
 
 # Offline Upgrade of Cloud Native Network
 
-The modules in DCE 5.0 are loosely coupled, allowing for independent installation and upgrading of each module. This document provides instructions for offline upgrading of the cloud native network module Spidernet.
+The modules in DCE are loosely coupled, allowing for independent installation and upgrading of each module. This document provides instructions for offline upgrading of the cloud native network module Spidernet.
 
 Spidernet is a cloud native network management engine that primarily manages functionalities such as Spidernet, Multus CR, and Egress IP.
 

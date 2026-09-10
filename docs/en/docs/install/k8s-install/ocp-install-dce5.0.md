@@ -1,10 +1,10 @@
-# Install DCE 5.0 Enterprise on OpenShift OCP
+# Install DCE Enterprise on OpenShift OCP
 
-This page describes how to install DCE 5.0 on OCP.
+This page describes how to install DCE on OCP.
 
 ## Prerequisites
 
-- The default Kubernetes versions supported by DCE 5.0 are v1.22.x, v1.23.x, v1.24.x, v1.25.x, v1.26.x
+- The default Kubernetes versions supported by DCE are v1.22.x, v1.23.x, v1.24.x, v1.25.x, v1.26.x
 - Already have an OCP environment, and the version is not lower than v1.22.x
 - Prepare a private container registry and ensure that the cluster can access it
 - Ensure sufficient resources, it is recommended that the cluster has at least 12 cores and 24 GB of available resources
@@ -56,7 +56,7 @@ This page describes how to install DCE 5.0 on OCP.
          If you want to use `hwameiStor` as StorageClass, please make sure there is no default StorageClass in the current cluster.
          If present, it needs to be removed. If it is not removed, the default StorageClass needs to close `hwameiStor`, that is, change the value of enable to `fasle`.
 
-5. Start the installation of DCE 5.0.
+5. Start the installation of DCE.
 
      ```bash
      ./offline/dce5-installer install-app -m ./offline/sample/manifest.yaml -c ./offline/sample/clusterConfig.yaml --platform openshift -z
@@ -69,10 +69,10 @@ This page describes how to install DCE 5.0 on OCP.
          - `-z` minimal install
          - `-c` specifies the cluster configuration file, and does not need to specify -c when using NodePort to expose the console
          - `-d` enable debug mode
-         - `--platform` is used to declare which Kubernetes distribution to deploy DCE 5.0 on, currently only supports openshift
+         - `--platform` is used to declare which Kubernetes distribution to deploy DCE on, currently only supports openshift
          - `--serial` specifies that all installation tasks are executed serially
 
-6. After the installation is complete, the command line will prompt that the installation is successful. congratulations! :smile: Now you can use the default account and password (admin/changeme) to explore the new DCE 5.0 through the URL prompted on the screen!
+6. After the installation is complete, the command line will prompt that the installation is successful. congratulations! :smile: Now you can use the default account and password (admin/changeme) to explore the new DCE through the URL prompted on the screen!
 
      ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -80,4 +80,4 @@ This page describes how to install DCE 5.0 on OCP.
 
          Please record the prompted URL for your next visit.
 
-7. After successfully installing DCE 5.0 Enterprise, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.
+7. After successfully installing DCE Enterprise, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

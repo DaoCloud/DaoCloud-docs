@@ -35,7 +35,7 @@ for the Deployment object defined by the HPA.
 HPA's definition configures the Deployment in the `scaleTargetRef` field, and then the Deployment
 uses its definition to locate the ReplicaSet, which ultimately adjusts the actual number of replicas.
 
-In DCE 5.0, the `scaleTargetRef` in CronHPA is set to the HPA object, and it uses the HPA object
+In DCE, the `scaleTargetRef` in CronHPA is set to the HPA object, and it uses the HPA object
 to find the actual `scaleTargetRef`, allowing CronHPA to be aware of HPA's current state.
 
 <!-- add images later -->

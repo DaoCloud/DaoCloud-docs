@@ -52,7 +52,7 @@ This issue can be caused by the presence of special characters in the __mysql ro
 
     Using the above methods to clean and rebuild will result in the database being reset and data loss.
 
-## The Following MySQL Message in the DCE 5.0 Platform
+## The Following MySQL Message in the DCE Platform
 
 When the following message appears during operations in the management platform, it indicates that 
 the master-replica relationship of the MySQL nodes has changed. 

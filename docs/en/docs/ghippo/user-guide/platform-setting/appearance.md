@@ -5,11 +5,11 @@ hide:
 
 # Customize Appearance
 
-In DCE 5.0, you have the option to customize the appearance of the login page, top navigation bar, bottom copyright and ICP registration to enhance your product recognition.
+In DCE, you have the option to customize the appearance of the login page, top navigation bar, bottom copyright and ICP registration to enhance your product recognition.
 
 ## Customizing Login Page and Top Navigation Bar
 
-1. To get started, log in to DCE 5.0 as a user with the __admin__ role and navigate to __Global Management__ -> __Settings__ found at the bottom of the left navigation bar.
+1. To get started, log in to DCE as a user with the __admin__ role and navigate to __Global Management__ -> __Settings__ found at the bottom of the left navigation bar.
 
     ![settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/appear01.png)
 

@@ -63,14 +63,14 @@ See [Multicloud Services](../kairship/resource/service.md), [Multicloud Namespac
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-resoruces.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kairship-resource.png"></video>
 </div>
 
-## Migrating Applications from DCE 4.0 to DCE 5.0
+## Migrating Applications from DCE 4.0 to DCE
 
-Refer to the documentation: [How to Migrate Applications from DCE 4.0 to DCE 5.0 with One-Click](../kairship/best-practice/one-click-conversion.md).
+Refer to the documentation: [How to Migrate Applications from DCE 4.0 to DCE with One-Click](../kairship/best-practice/one-click-conversion.md).
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-migrate.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kairship-migrate.png"></video>
 </div>
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

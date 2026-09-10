@@ -3,10 +3,10 @@ MTPE: WANG0608GitHub
 Date: 2024-08-15
 ---
 
-# Integrating Customer Systems into DCE 5.0 (OEM IN)
+# Integrating Customer Systems into DCE (OEM IN)
 
-OEM IN refers to the partner's platform being embedded as a submodule in DCE 5.0, appearing in the primary
-navigation bar of DCE 5.0. Users can log in and manage it uniformly through DCE 5.0. The implementation
+OEM IN refers to the partner's platform being embedded as a submodule in DCE, appearing in the primary
+navigation bar of DCE. Users can log in and manage it uniformly through DCE. The implementation
 of OEM IN is divided into 5 steps:
 
 1. [Unify Domain](#unify-domain-name-and-port)
@@ -22,14 +22,14 @@ For specific operational demonstrations, refer to the [OEM IN Best Practices Vid
     The open source software Label Studio is used for nested demonstrations below. In actual scenarios,
     you need to solve the following issues in the customer system:
 
-    The customer system needs to add a Subpath to distinguish which services belong to DCE 5.0 
+    The customer system needs to add a Subpath to distinguish which services belong to DCE 
     and which belong to the customer system.
 
 ## Environment Preparation
 
-1. Deploy the DCE 5.0 environment:
+1. Deploy the DCE environment:
 
-    `https://10.6.202.177:30443` as DCE 5.0
+    `https://10.6.202.177:30443` as DCE
 
     <!-- add image later -->
 
@@ -40,14 +40,14 @@ For specific operational demonstrations, refer to the [OEM IN Best Practices Vid
     Adjust the operations on the customer system during the application according to the actual situation.
 
 1. Plan the Subpath path of the customer system: `http://10.6.202.177:30123/label-studio` (It is recommended to use a recognizable name as the Subpath, which should not conflict with
-   the HTTP router of the main DCE 5.0). Ensure that users can access the customer system through
+   the HTTP router of the main DCE). Ensure that users can access the customer system through
    `http://10.6.202.177:30123/label-studio`.
 
     <!-- add image later -->
 
 ## Unify Domain Name and Port
 
-1. SSH into the DCE 5.0 server.
+1. SSH into the DCE server.
 
     ```bash
     ssh root@10.6.202.177
@@ -146,10 +146,10 @@ For specific operational demonstrations, refer to the [OEM IN Best Practices Vid
 
 ## Integrate User Systems
 
-Integrate the customer system with the DCE 5.0 platform through protocols like OIDC/OAUTH,
-allowing users to enter the customer system without logging in again after logging into the DCE 5.0 platform.
+Integrate the customer system with the DCE platform through protocols like OIDC/OAUTH,
+allowing users to enter the customer system without logging in again after logging into the DCE platform.
 
-1. In the scenario of two DCE 5.0, you can create SSO access through __Global Management__ -> __Access Control__ -> __Docking Portal__.
+1. In the scenario of two DCE, you can create SSO access through __Global Management__ -> __Access Control__ -> __Docking Portal__.
 
     <!-- add image later -->
 
@@ -162,7 +162,7 @@ allowing users to enter the customer system without logging in again after loggi
     <!-- add image later -->
 
 3. After integration, the customer system login page will display the OIDC (Custom) option.
-   Select to log in via OIDC the first time entering the customer system from the DCE 5.0 platform,
+   Select to log in via OIDC the first time entering the customer system from the DCE platform,
    and subsequently, you will directly enter the customer system without selecting again.
 
     <!-- add image later -->
@@ -174,7 +174,7 @@ and embed the customer system into this empty shell application in the form of a
 
 1. Download the gproduct-demo-main.tar.gz file and change the value of the src attribute in App-iframe.vue under the src folder (the user entering the customer system):
 
-    - The absolute address: `src="https://10.6.202.177:30443/label-studio" (DCE 5.0 address + Subpath)`
+    - The absolute address: `src="https://10.6.202.177:30443/label-studio" (DCE address + Subpath)`
     - The relative address, such as `src="./external-anyproduct/insight"`
 
     ```html title="App-iframe.vue"
@@ -244,7 +244,7 @@ and embed the customer system into this empty shell application in the form of a
     ...
     ```
 
-After integration, the __Customer System__ will appear in the primary navigation bar of DCE 5.0,
+After integration, the __Customer System__ will appear in the primary navigation bar of DCE,
 and clicking it will allow users to enter the customer system.
 
 <!-- add image later -->
@@ -253,7 +253,7 @@ and clicking it will allow users to enter the customer system.
 
 !!! note
 
-    DCE 5.0 supports customizing the appearance by writing CSS. How the customer system implements
+    DCE supports customizing the appearance by writing CSS. How the customer system implements
     appearance customization in actual applications needs to be handled according to the actual situation.
 
 Log in to the customer system, and through __Global Management__ -> __Settings__ -> __Appearance__,
@@ -266,15 +266,15 @@ you can customize platform background colors, logos, and names. For specific ope
 
 Customized teams can implement a customized module that DCE 5 will notify each user login event to
 the customized module via Webhook, and the customized module can call the [OpenAPI](https://docs.daocloud.io/openapi/index.html)
-of AnyProduct and DCE 5.0 to synchronize the user's permission information.
+of AnyProduct and DCE to synchronize the user's permission information.
 
 **Method Two:**
 
 Through Webhook, notify AnyProduct of each authorization change (if required, it can be implemented later).
 
-### Use Other Capabilities of DCE 5.0 in AnyProduct (Optional)
+### Use Other Capabilities of DCE in AnyProduct (Optional)
 
-The method is to call the DCE 5.0 [OpenAPI](https://docs.daocloud.io/openapi/index.html).
+The method is to call the DCE [OpenAPI](https://docs.daocloud.io/openapi/index.html).
 
 ## References
 

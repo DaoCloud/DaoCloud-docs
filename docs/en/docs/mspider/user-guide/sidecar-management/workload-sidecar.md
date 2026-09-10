@@ -118,7 +118,7 @@ You can clean up the sidecar policy for one or more workloads that have had side
 
 ## Sidecar Upgrade
 
-In DCE 5.0 Service Mesh, a sidecar refers to an Envoy proxy used to implement traffic control
+In DCE Service Mesh, a sidecar refers to an Envoy proxy used to implement traffic control
 and routing rules within the service mesh. Sidecar upgrade refers to upgrading the Envoy proxy
 from an older version to a newer version.
 

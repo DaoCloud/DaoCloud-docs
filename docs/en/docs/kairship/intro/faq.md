@@ -41,7 +41,7 @@ hide:
 
 9. How about the permission system? <a id="no9" />
 
-    It uses the existing [permission system of DCE 5.0](../../ghippo/user-guide/access-control/role.md), and bound Karmada instances with workspaces.
+    It uses the existing [permission system of DCE](../../ghippo/user-guide/access-control/role.md), and bound Karmada instances with workspaces.
 
 10. How to query multicluster events? <a id="no10" />
 

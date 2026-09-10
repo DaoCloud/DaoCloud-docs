@@ -5,7 +5,7 @@ Date: 2024-01-24
 
 # Offline Install gpu-operator
 
-DCE 5.0 comes with pre-installed `driver` images for the following three operating systems: Ubuntu 22.04, Ubuntu 20.04,
+DCE comes with pre-installed `driver` images for the following three operating systems: Ubuntu 22.04, Ubuntu 20.04,
 and CentOS 7.9. The driver version is `535.104.12`. Additionally, it includes the required `Toolkit` images for each
 operating system, so users no longer need to manually provide offline `toolkit` images.
 

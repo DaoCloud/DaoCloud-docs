@@ -187,6 +187,8 @@ extra_javascript:
 extra_css:
   - stylesheets/custom.css
   - stylesheets/product-docs-menu.css
+  - stylesheets/tf-arch.css
+  - stylesheets/landing.css
 
 # Extensions
 markdown_extensions:
@@ -238,3 +240,7 @@ markdown_extensions:
   - pymdownx.snippets
   #     auto_append:
   #       - includes/glossary.md
+
+hooks:
+  - ../../scripts/tf_nav_hook.py
+  - ../../scripts/drun_nav_hook.py

@@ -5,7 +5,7 @@ DATE: 2024-07-18
 
 # Troubleshooting Service Issues with Insight
 
-This article serves as a guide on using Insight to identify and analyze abnormal components in DCE 5.0 and determine 
+This article serves as a guide on using Insight to identify and analyze abnormal components in DCE and determine 
 the root causes of component exceptions.
 
 Please note that this post assumes you have a basic understanding of Insight's product features or vision.

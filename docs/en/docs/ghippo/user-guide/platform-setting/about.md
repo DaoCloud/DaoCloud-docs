@@ -9,7 +9,7 @@ The __About__ page primarily showcases the latest versions of each module, highl
 
 Steps to view are as follows:
 
-1. Log in to DCE 5.0 as a user with __Admin__ role. Click __Global Management__ at the bottom of the left navigation bar.
+1. Log in to DCE as a user with __Admin__ role. Click __Global Management__ at the bottom of the left navigation bar.
 
     ![about](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/about01.png)
 

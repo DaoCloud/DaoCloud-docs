@@ -19,7 +19,7 @@ This article introduces the steps to create a device model. The process is as fo
 
     - __Model Name__ : A combination of lowercase letters, numbers, hyphens (-), and dots (.), with no consecutive symbols,
     and it must start and end with a letter or number and contain up to 253 characters.
-    - __Protocol__ : DCE 5.0 Cloud Edge Collaboration supports the connection of various protocol devices, including Modbus.
+    - __Protocol__ : DCE Cloud Edge Collaboration supports the connection of various protocol devices, including Modbus.
     - __Namespace__ : The resources in the namespace where the device is located are isolated from each other.
     - __Description__ : Description information of the device model.
 

@@ -5,7 +5,7 @@ hide:
 
 # Latest News on Container Management Features
 
-This page provides updates on DCE 5.0 container management.
+This page provides updates on DCE container management.
 
 ## April 2023
 

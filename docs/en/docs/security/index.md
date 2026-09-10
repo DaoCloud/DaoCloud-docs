@@ -7,7 +7,7 @@ Date: 2023-01-04
 
 # Cloud Native Security
 
-DCE 5.0 provides a fully automated security implementation for containers, Pods, images, runtimes, and microservices.
+DCE provides a fully automated security implementation for containers, Pods, images, runtimes, and microservices.
 The following table lists some of the security features that have been implemented or are in the process of being implemented.
 
 | Security Features | Specific Items | Description |

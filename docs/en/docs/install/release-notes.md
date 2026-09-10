@@ -8,13 +8,13 @@ Date: 2024-03-17
 This page lists the Release Notes of the installer, so that you can understand
 the evolution path and feature changes of each version.
 
-*[Amamba]: Dev codename for Workbench in DCE 5.0
-*[Ghippo]: Dev codename for Global Management in DCE 5.0
-*[insight-agent]: Essential component that implements observability capabilities in DCE 5.0. It is installed by default in the insight-system namespace.
-*[Kangaroo]: Dev codename for the Container Registry in DCE 5.0
-*[Kpanda]: Dev codename for Container Management in DCE 5.0
-*[Skoala]: Dev codename for Microservice Engine in DCE 5.0
-*[Hydra]: Dev codename for LLM Studio in DCE 5.0
+*[Amamba]: Dev codename for Workbench in DCE
+*[Ghippo]: Dev codename for Global Management in DCE
+*[insight-agent]: Essential component that implements observability capabilities in DCE. It is installed by default in the insight-system namespace.
+*[Kangaroo]: Dev codename for the Container Registry in DCE
+*[Kpanda]: Dev codename for Container Management in DCE
+*[Skoala]: Dev codename for Microservice Engine in DCE
+*[Hydra]: Dev codename for LLM Studio in DCE
 
 ## 2025-04-30
 
@@ -623,7 +623,7 @@ If the output is `80` or `443`, the upgrade command needs to include the `infras
 ./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct
 ```
 
-If the output is different from the above cases, follow the upgrade instructions in the document [Upgrade DCE 5.0 Product Modules](upgrade.md).
+If the output is different from the above cases, follow the upgrade instructions in the document [Upgrade DCE Product Modules](upgrade.md).
 
 ## 2023-6-15
 
@@ -669,7 +669,7 @@ If the output is different from the above cases, follow the upgrade instructions
 
 - Addon offline package does not currently support uploading to external JFrog services
 - The container management platform offline mode currently does not support adding nodes to worker clusters
-- When using an external OS Repo repository in an offline scenario, i.e. defining `osRepos.type=external` in clusterConfig.yaml, after successfully deploying DCE 5.0, you cannot create worker clusters in the container management. A temporary solution is as follows:
+- When using an external OS Repo repository in an offline scenario, i.e. defining `osRepos.type=external` in clusterConfig.yaml, after successfully deploying DCE, you cannot create worker clusters in the container management. A temporary solution is as follows:
   After installing the global cluster, immediately update the configmap kubean-localservice in the kubean-system namespace of the global cluster to replace all double quotes with single quotes in the value of `yumRepos.external`. For example, replace all double quotes in the file with single quotes:
 
     ```yaml
@@ -706,7 +706,7 @@ If the output is different from the above cases, follow the upgrade instructions
 
 #### Features
 
-- **Added** support for Other Linux to deploy DCE 5.0, [Reference Documentation](os-install/otherlinux.md)
+- **Added** support for Other Linux to deploy DCE, [Reference Documentation](os-install/otherlinux.md)
 - **Added** support for operating system OpenEuler 22.03
 - **Added** support for external OS Repos, [refer to cluster configuration file description](commercial/cluster-config.md)
 - **Added** support for kernel parameter tuning, [refer to cluster configuration file description](commercial/cluster-config.md)
@@ -736,7 +736,7 @@ If the output is different from the above cases, follow the upgrade instructions
     At the same time, creating a worker cluster online through container management also has the same problem. You need to add the above configuration in the custom parameters of the advanced configuration on the cluster creation page. The key is `calico_crds_download_url`, and the value is the value of the above calico_crds_download_url
 
 - There is a low probability that Kubean cannot create a spray-job task. Manually delete the corresponding clusteroperations CR resource and run the installation command again
-- After deploying DCE 5.0 using an external OS Repo, the worker cluster cannot be created offline through container management, which can be solved by manually modifying the configmap kubean-localservice of the kubean-system namespace of the global cluster.
+- After deploying DCE using an external OS Repo, the worker cluster cannot be created offline through container management, which can be solved by manually modifying the configmap kubean-localservice of the kubean-system namespace of the global cluster.
   Add the following configuration under `yumRepos`, you need to fill in the external OS Repo address configured in clusterConfig.yaml in external:
 
     ```yaml
@@ -763,7 +763,7 @@ If the output is different from the above cases, follow the upgrade instructions
 
 - **Added** support for one-click upgrade of Gproduct components
 - **Added** Adapted operating system: UOS V20 1020a / Ubuntu 20.04
-- **Added** support OCP (OpenShift Container Platform) to install DCE 5.0
+- **Added** support OCP (OpenShift Container Platform) to install DCE
 - **Added** CLI supports generating clusterConfig templates
 - **Added** all-in-one mode starts the minimal installation mode by default
 - **Added** Kcollie component in Gproduct component
@@ -881,7 +881,7 @@ If the output is different from the above cases, follow the upgrade instructions
 
 #### Known issues
 
-- Because some operators need to be upgraded to support 1.25, DCE 5.0 does not support 1.20 downwards.
+- Because some operators need to be upgraded to support 1.25, DCE does not support 1.20 downwards.
 - The default k8s version of kubean and the offline package are still limited to k8s 1.24 version, which has not been updated to 1.25 (postgres-operator is not supported yet).
 - In the case of Image Load, the istio-ingressgateway imagePullPolicy is always.
 - For the ARM version, step 16 (harbor) cannot be performed, because harbor does not support ARM for the time being.

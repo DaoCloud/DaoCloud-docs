@@ -1,4 +1,4 @@
-# Customize DCE 5.0 Reverse Proxy Server Address
+# Customize DCE Reverse Proxy Server Address
 
 The specific setup steps are as follows:
 

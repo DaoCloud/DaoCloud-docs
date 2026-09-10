@@ -49,6 +49,6 @@ The container registry cooperates with the [Container Management](../../kpanda/i
 
 ![architecture](../images/harbordesign01.jpg)
 
-[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../../dce/license0.md){ .md-button .md-button--primary }

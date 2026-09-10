@@ -4,7 +4,7 @@ When integrating a service with the Sentinel cluster flow control, configuration
 
 ## Sentinel Cluster Flow Control Server
 
-DCE 5.0 does not provide a managed Sentinel server, so users need to start the Sentinel cluster flow control server provided by the official Sentinel. The server should meet the following requirements:
+DCE does not provide a managed Sentinel server, so users need to start the Sentinel cluster flow control server provided by the official Sentinel. The server should meet the following requirements:
 
 - Connect to Nacos to read persistent configurations.
 
@@ -25,7 +25,7 @@ DCE 5.0 does not provide a managed Sentinel server, so users need to start the S
 
 ## Sentinel Cluster Flow Control Client
 
-Since the official Sentinel client SDK `sentinel-cluster-client-default` is only compatible with in-memory mode, and DCE 5.0 also provides persistence for cluster flow control client configuration, the original official client SDK is no longer applicable.
+Since the official Sentinel client SDK `sentinel-cluster-client-default` is only compatible with in-memory mode, and DCE also provides persistence for cluster flow control client configuration, the original official client SDK is no longer applicable.
 
 1. First, you need to import the following code:
 

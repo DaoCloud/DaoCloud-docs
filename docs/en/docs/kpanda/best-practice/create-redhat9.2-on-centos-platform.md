@@ -4,16 +4,16 @@ This article explains how to create a RedHat 9.2 worker cluster on an existing C
 
 !!! note
 
-    This article only applies to the offline mode, using the DCE 5.0 platform to create a worker cluster. The architecture of the management platform and the cluster to be created are both AMD.
+    This article only applies to the offline mode, using the DCE platform to create a worker cluster. The architecture of the management platform and the cluster to be created are both AMD.
     When creating a cluster, heterogeneous deployment (mixing AMD and ARM) is not supported. After the cluster is created, you can use the method of connecting heterogeneous nodes to achieve mixed deployment and management of the cluster.
 
 ## Prerequisites
 
-A DCE 5.0 full-mode has been deployed, and the spark node is still alive. For deployment, see the document [Offline Install DCE 5.0 Enterprise](../../install/commercial/start-install.md).
+A DCE full-mode has been deployed, and the spark node is still alive. For deployment, see the document [Offline Install DCE Enterprise](../../install/commercial/start-install.md).
 
 ## Download and Import RedHat Offline Packages
 
-Make sure you are logged into the spark node! And the clusterConfig.yaml file used when deploying DCE 5.0 is still available.
+Make sure you are logged into the spark node! And the clusterConfig.yaml file used when deploying DCE is still available.
 
 ### Download the Relevant RedHat Offline Packages
 

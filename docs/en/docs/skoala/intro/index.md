@@ -12,7 +12,7 @@ in the industry. It mainly provides two dimensions of functionalities: Microserv
 Microservice Gateway. It covers various management scenarios throughout the microservice lifecycle, including
 service registration and discovery, configuration management, traffic governance, service-level tracing, API management,
 domain management, monitoring, and alerting. The Microservice Engine has strong compatibility and can seamlessly
-integrate with other components of DCE 5.0. It also perfectly supports open-source ecosystems such as Spring Cloud
+integrate with other components of DCE. It also perfectly supports open-source ecosystems such as Spring Cloud
 and Dubbo, helping you to build your own microservice system using open-source microservice technologies more conveniently.
 
 <div class="grid cards" markdown>

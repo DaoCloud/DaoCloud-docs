@@ -5,7 +5,7 @@ date: 2024-05-11
 
 # Background and Challenges
 
-This page briefly explains the research and development background and challenges faced by DCE 5.0 container networking.
+This page briefly explains the research and development background and challenges faced by DCE container networking.
 
 ## Network Background
 

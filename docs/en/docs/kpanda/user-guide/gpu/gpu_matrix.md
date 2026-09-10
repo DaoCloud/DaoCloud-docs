@@ -5,7 +5,7 @@ hide:
 
 # GPU Support Matrix
 
-This page describes the GPU and OS compatibility matrix for DCE 5.0.
+This page describes the GPU and OS compatibility matrix for DCE.
 
 ## NVIDIA GPU
 

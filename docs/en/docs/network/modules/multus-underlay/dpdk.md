@@ -5,7 +5,7 @@ DATE: 2024-08-02
 
 # DPDK
 
-This page mainly introduces how to quickly create the first DPDK application in DCE 5.0.
+This page mainly introduces how to quickly create the first DPDK application in DCE.
 
 ## Prerequisites and dependencies
 

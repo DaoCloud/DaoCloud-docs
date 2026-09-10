@@ -9,7 +9,7 @@ Folders have the capability to map permissions, allowing users/user groups to ha
 
 Follow the steps below to create a folder:
 
-1. Log in to DCE 5.0 with a user account having the admin/folder admin role.
+1. Log in to DCE with a user account having the admin/folder admin role.
    Click __Global Management__ -> __Workspace and Folder__ at the bottom of the left navigation bar.
 
     ![Global Management](../images/ws01.png)

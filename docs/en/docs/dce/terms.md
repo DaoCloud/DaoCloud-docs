@@ -1,6 +1,6 @@
 # Glossary
 
-This page lists some terms common to DCE 5.0 in alphabetical order.
+This page lists some terms common to DCE in alphabetical order.
 
 ### A
 
@@ -501,7 +501,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
     [CNI](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/)
     is a kind of network plugin that follows appc/CNI protocols.
 
-    CNIs supported by DCE 5.0 include but not limited to:
+    CNIs supported by DCE include but not limited to:
 
     - Calico
     - Cilium
@@ -1850,7 +1850,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Self Healing
 
-    A self-healing system can recover from certain types of failures without any human intervention. For example, DCE 5.0 has a "convergence" or "control" loop that actively checks the system's actual state against the operator's initial expected state. If there is a difference (e.g., the number of running application instances is less than the expected number), the system will automatically take corrective action (e.g., start new instances or pods).
+    A self-healing system can recover from certain types of failures without any human intervention. For example, DCE has a "convergence" or "control" loop that actively checks the system's actual state against the operator's initial expected state. If there is a difference (e.g., the number of running application instances is less than the expected number), the system will automatically take corrective action (e.g., start new instances or pods).
 
 - Shuffle Sharding
 
@@ -2035,6 +2035,6 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
     The main benefit of adopting Zero Trust Architecture is increased security and reduced attack surface. Removing trust from your enterprise system now increases the number and strength of security gates that attackers must pass through to gain access to other areas of the system.
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](license0.md){ .md-button .md-button--primary }

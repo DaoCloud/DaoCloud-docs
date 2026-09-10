@@ -5,7 +5,7 @@ DATE: 2024-08-09
 
 # Registry space
 
-DCE 5.0 Container Registry provides a feature of isolating images based on registry spaces.
+DCE Container Registry provides a feature of isolating images based on registry spaces.
 Registry spaces are divided into two types: public and private.
 
 - Public registry: accessible by all users, usually storing public images. There is a default public registry space.

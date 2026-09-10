@@ -5,7 +5,7 @@ hide:
 
 # Integrate Registry
 
-If you want to monitor or trace your existing microservices without creating a new registry, then you can just integrate your registries into the Microservices module of DCE 5.0.
+If you want to monitor or trace your existing microservices without creating a new registry, then you can just integrate your registries into the Microservices module of DCE.
 
 Supported registries: [Nacos Registry](../../../reference/basic-knowledge/registry.md#nacos-registry), [Eureka Registry](../../../reference/basic-knowledge/registry.md#eureka-registry), [Zookeeper Registry](../../../reference/basic-knowledge/registry.md#zookeeper-registry), [Kubernetes Registry](../../../reference/basic-knowledge/registry.md#kubernetes-registry), and [Mesh Registry](../../../reference/basic-knowledge/registry.md#service-mesh-registry).
 
@@ -65,5 +65,5 @@ If you want to update Kubernetes/Service Mesh registries, you can either remove 
 
     Integrated registries can be `removed`, while hosted registries can be`deleted`. The difference between the two is:
     
-    - Remove: The registry is removed from the DCE 5.0 Microservices module. The registry itself and data are not deleted. You can access the registry again later.
+    - Remove: The registry is removed from the DCE Microservices module. The registry itself and data are not deleted. You can access the registry again later.
     - Delete: Deletes the registry and all the data in it. The registry cannot be used again. You need to create a new registry.

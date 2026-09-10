@@ -7,7 +7,7 @@ date: 2024-06-28
 
 # Create External Edge Unit
 
-**External Edge Unit** refers to integrating the existing KubeEdge installed in the enterprise system into DCE 5.0 Cloud Edge for unified management.
+**External Edge Unit** refers to integrating the existing KubeEdge installed in the enterprise system into DCE Cloud Edge for unified management.
 
 KubeEdge: An open-source system that extends native containerized application orchestration capabilities to edge nodes.
 

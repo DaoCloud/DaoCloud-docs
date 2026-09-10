@@ -5,7 +5,7 @@ hide:
 
 # Manage Devices
 
-After devices are successfully onboarded, DCE 5.0 allows you to perform operations such as power on/off, reboot, and PXE provisioning.
+After devices are successfully onboarded, DCE allows you to perform operations such as power on/off, reboot, and PXE provisioning.
 
 ## Prerequisites
 

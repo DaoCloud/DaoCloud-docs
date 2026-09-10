@@ -1,6 +1,6 @@
 # Lightweight Deployment Using the Installer
 
-This document describes how to perform a lightweight deployment of DCE 5.0 using the installer. If you want to understand what specific optimizations and reductions have been made for the lightweight version, please refer to [Lightweight Deployment Optimization Validation](./light-install-solution.md).
+This document describes how to perform a lightweight deployment of DCE using the installer. If you want to understand what specific optimizations and reductions have been made for the lightweight version, please refer to [Lightweight Deployment Optimization Validation](./light-install-solution.md).
 
 ## Preparation
 

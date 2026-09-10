@@ -1,6 +1,6 @@
 # Install insight-agent in DCE 4.0
 
-In DCE 5.0, previous DCE 4.0 can be accessed as a subcluster. This guide provides potential issues and solutions when installing insight-agent in a DCE 4.0 cluster.
+In DCE, previous DCE 4.0 can be accessed as a subcluster. This guide provides potential issues and solutions when installing insight-agent in a DCE 4.0 cluster.
 
 ## Issue One
 

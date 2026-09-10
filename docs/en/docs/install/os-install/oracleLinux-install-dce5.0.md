@@ -1,6 +1,6 @@
-# Deploy DCE 5.0 Enterprise on Oracle Linux R9/R8 U1
+# Deploy DCE Enterprise on Oracle Linux R9/R8 U1
 
-This page will guide you on how to deploy DCE 5.0 on Oracle Linux R9/R8 U1.
+This page will guide you on how to deploy DCE on Oracle Linux R9/R8 U1.
 Installer v0.8.0 and higher versions support this deployment method.
 
 ## Prerequisites
@@ -92,7 +92,7 @@ Installer v0.8.0 and higher versions support this deployment method.
         stating `failed to create fsnotify watcher: too many open files.`, it is necessary to
         set `node_sysctl_tuning: true` in the `clusterConfig.yaml` file.
 
-7. Start the installation of DCE 5.0.
+7. Start the installation of DCE.
 
     ```bash
     ./dce5-installer cluster-create -m ./sample/manifest.yaml -c ./sample/clusterConfig.yaml
@@ -108,7 +108,7 @@ Installer v0.8.0 and higher versions support this deployment method.
         - `--serial`: Run all installation tasks in a serial manner
 
 8. After the installation is complete, the command line will prompt for a successful installation.
-   Congratulations! 🎉 Now you can explore the brand new DCE 5.0 using the default account and
+   Congratulations! 🎉 Now you can explore the brand new DCE using the default account and
    password (admin/changeme) provided in the URL shown on the screen.
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
@@ -117,5 +117,5 @@ Installer v0.8.0 and higher versions support this deployment method.
 
         Please make sure to record the URL provided for future access.
 
-9. After successfully installing DCE 5.0 Enterprise, please contact us for
+9. After successfully installing DCE Enterprise, please contact us for
    authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

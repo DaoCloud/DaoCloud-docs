@@ -41,7 +41,7 @@ Follow the steps below to get a license for your DCE Community:
 
     ![esn](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/license02.png)
 
-4. Paste the offline authorization code, and click __Activate Now__ . Congratulations! :smile: It's time to explore the new DCE 5.0 now!
+4. Paste the offline authorization code, and click __Activate Now__ . Congratulations! :smile: It's time to explore the new DCE now!
 
 !!! info "📢 Tips"
 
@@ -75,4 +75,4 @@ The pages you may frequently access in the process of above procedure are listed
 [Apply for a license](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }
 [View your license](https://license.daocloud.io/dce5-licenses){ .md-button .md-button--primary }
 [Get an offline authorization code](https://license.daocloud.io/dce5-license){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[Install DCE](../install/index.md){ .md-button .md-button--primary }

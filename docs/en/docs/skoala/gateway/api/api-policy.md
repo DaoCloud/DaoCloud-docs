@@ -5,7 +5,7 @@ Date: 2024-07-10
 
 # Configuring API policies
 
-DCE 5.0 Microservice gateway supports twelve API policies: load balancing, path rewriting, timeout configuration, retry mechanism, request header rewriting, response header rewriting, WebSocket, local traffic limit, health check, global rate limit, cookie rewriting, and black/white list. You can use a single policy or a combination of policies to achieve best practices.
+DCE Microservice gateway supports twelve API policies: load balancing, path rewriting, timeout configuration, retry mechanism, request header rewriting, response header rewriting, WebSocket, local traffic limit, health check, global rate limit, cookie rewriting, and black/white list. You can use a single policy or a combination of policies to achieve best practices.
 <!-- For combination configuration of API policies, see [ API policy configuration Best practices ]() -->
 
 There are two ways to configure API policies:

@@ -5,7 +5,7 @@ DATE: 2024-08-08
 
 # Deploy Harbor through LoadBalancer mode
 
-Currently, DCE 5.0 Container Registry does not support deploying Harbor using LoadBalancer mode.
+Currently, DCE Container Registry does not support deploying Harbor using LoadBalancer mode.
 It only supports Ingress and NodePort modes.
 This document briefly explains how to manually change the access type to LB.
 

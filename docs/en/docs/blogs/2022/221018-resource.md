@@ -7,7 +7,7 @@ How to efficiently manage these resources?
 ![resource](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/resource01.png)
 
 The essence of resource-based management capabilities is to establish a set of relationship structures related to the enterprise and based on the use of resources.
-In DCE 5.0, it is mainly realized through the workspace and hierarchical module, which has the characteristics of global consistency, which is convenient for you to efficiently plan and manage various resources in multiple sub-modules on the platform based on this relationship structure.
+In DCE, it is mainly realized through the workspace and hierarchical module, which has the characteristics of global consistency, which is convenient for you to efficiently plan and manage various resources in multiple sub-modules on the platform based on this relationship structure.
 
 There are two concepts in the Workspace and Folder module: hierarchy and workspace.
 Hierarchy can be mapped to concepts such as project, environment, and supplier in the enterprise, so that you can build an enterprise hierarchical relationship that reflects resource relationships based on the business or ecological environment of the enterprise.
@@ -48,7 +48,7 @@ At the same time, shared resources also have certain requirements for the resour
 
 ## Resource management elements
 
-After installing DCE 5.0, the platform will automatically create a root level for the user during the initialization phase. The root level is located at the top level of the resource hierarchy of the resource management module and has no parent. Resource relationships are distributed downwards according to the root level, and up to 5 levels of hierarchy are supported.
+After installing DCE, the platform will automatically create a root level for the user during the initialization phase. The root level is located at the top level of the resource hierarchy of the resource management module and has no parent. Resource relationships are distributed downwards according to the root level, and up to 5 levels of hierarchy are supported.
 
 ### Hierarchy
 
@@ -62,7 +62,7 @@ The newly created hierarchy must have a parent, and the lower hierarchy and work
 Workspace is a resource isolation unit in the resource management module, which has two modes: resource group and shared resource, and is directly associated with resources.
 A workspace has one and only one parent level, and the workspace and the resources under it will inherit the permissions of the parent level.
 
-In DCE 5.0, due to the different authorization methods of resources, resources that strongly depend on workspace authorization, such as gateways, and pipelines are derived; and resources that can be selectively bound to workspaces, such as Cluster and Namespace.
+In DCE, due to the different authorization methods of resources, resources that strongly depend on workspace authorization, such as gateways, and pipelines are derived; and resources that can be selectively bound to workspaces, such as Cluster and Namespace.
 
 Since the resources of Workbench, microservice engine, and service mesh take the workspace as the top-level concept, the resources are completely dependent on the workspace for authorization, so the resources will be automatically bound to a certain workspace, and the owner of the workspace is The owner of the resource.
 Such resources do not need to be manually bound, and the resources do not need to be displayed in the resource group of the workspace. The prerequisite for users (groups) to use resources is to be granted the corresponding permissions in the workspace.
@@ -113,7 +113,7 @@ Enterprise users who need to manage K8S, microservice engine, service mesh and o
 
      A: The resource is directly associated with the workspace, and the resource will inherit the permissions of the workspace.
      When the number of resources is large, the unified authorization of resources through the workspace can effectively reduce the workload of resource operation and maintenance.
-     In addition, in DCE 5.0, the resources in Workbench, microservice engine, and service mesh depend on the workspace authorization, so the prerequisite for creating such resources is to have the corresponding permissions of the workspace.
+     In addition, in DCE, the resources in Workbench, microservice engine, and service mesh depend on the workspace authorization, so the prerequisite for creating such resources is to have the corresponding permissions of the workspace.
 
 3. What is the relationship between hierarchy, workspace and resources?
 
@@ -139,6 +139,6 @@ Enterprise users who need to manage K8S, microservice engine, service mesh and o
 
 [Learn about service mesh](../../ghippo/intro/index.md){ .md-button }
 
-[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../../dce/license0.md){ .md-button .md-button--primary }

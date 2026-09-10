@@ -10,7 +10,7 @@ hide:
 Job management refers to the functionality of creating and managing job lifecycles through job scheduling 
 and control components.
 
-DCE 5.0 Smart Computing Capability adopts Kubernetes' Job mechanism to schedule various AI inference and 
+DCE Smart Computing Capability adopts Kubernetes' Job mechanism to schedule various AI inference and 
 training jobs.
 
 1. Click **Job Center** -> **Jobs** in the left navigation bar to enter the job list. Click the **Create** button 

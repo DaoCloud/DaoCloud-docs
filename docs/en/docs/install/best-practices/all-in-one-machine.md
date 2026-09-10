@@ -3,9 +3,9 @@ MTPE: windsonsea
 date: 2024-05-11
 ---
 
-# Deploy DCE 5.0 All-in-One
+# Deploy DCE All-in-One
 
-This document explains how to deploy DCE 5.0 on an all-in-one machine.
+This document explains how to deploy DCE on an all-in-one machine.
 
 ## Environment Preparation
 
@@ -97,7 +97,7 @@ If you need to allocate "static IP" for Pods, you need to create sub-interfaces 
 
 **Precautions before installation:**
 
-- Select one of the three physical machines as the boostrap machine to execute the deployment of DCE 5.0. in `clusterConfig.yaml`, the bootstrapNode parameter can specify the IP of the boostrap machine.
+- Select one of the three physical machines as the boostrap machine to execute the deployment of DCE. in `clusterConfig.yaml`, the bootstrapNode parameter can specify the IP of the boostrap machine.
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3

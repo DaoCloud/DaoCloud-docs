@@ -10,7 +10,7 @@ Hotspot refers to frequently accessed data. Hotspot rules are used to control th
 - Restricting the purchase of the most frequent product IDs in a certain period of time to prevent cache penetration and excessive requests to the database.
 - Restricting frequent access to user IDs within a certain period of time to prevent malicious activities.
 
-**In DCE 5.0, when a hotspot rule is triggered, the flow control effect is direct failure. This means that when the set threshold is reached, subsequent requests for the resource will fail directly instead of being queued.**
+**In DCE, when a hotspot rule is triggered, the flow control effect is direct failure. This means that when the set threshold is reached, subsequent requests for the resource will fail directly instead of being queued.**
 
 Follow the steps below to create a hotspot rule:
 

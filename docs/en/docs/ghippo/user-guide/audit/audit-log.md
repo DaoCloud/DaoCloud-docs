@@ -28,9 +28,9 @@ The audit log feature has the following characteristics:
 
 ## View Audit Logs
 
-1. Log in to DCE 5.0 with a user account that has the __admin__ or __Audit Owner__ role.
+1. Log in to DCE with a user account that has the __admin__ or __Audit Owner__ role.
 
-    ![Log in to DCE 5.0](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/lang00.png)
+    ![Log in to DCE](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/lang00.png)
 
 2. At the bottom of the left navigation bar, click __Global Management__ -> __Audit Logs__ .
 

@@ -11,14 +11,14 @@ to an AMD architecture worker cluster with CentOS 7.9 operating system.
 !!! note
 
     This page is only applicable to adding heterogeneous nodes to a worker cluster created
-    using the DCE 5.0 platform in offline mode, excluding connected clusters.
+    using the DCE platform in offline mode, excluding connected clusters.
 
 ## Prerequisites
 
-- A DCE 5.0 Full Mode deployment has been successfully completed, and the bootstrap node is still alive.
-  Refer to the documentation [Offline Installation of DCE 5.0 Enterprise](../../install/commercial/start-install.md) for the deployment process.
+- A DCE Full Mode deployment has been successfully completed, and the bootstrap node is still alive.
+  Refer to the documentation [Offline Installation of DCE Enterprise](../../install/commercial/start-install.md) for the deployment process.
 - A worker cluster with AMD architecture and CentOS 7.9 operating system has been created through the
-  DCE 5.0 platform. Refer to the documentation
+  DCE platform. Refer to the documentation
   [Creating a Worker Cluster](../user-guide/clusters/create-cluster.md) for the creation process.
 
 ## Procedure
@@ -28,7 +28,7 @@ to an AMD architecture worker cluster with CentOS 7.9 operating system.
 Take ARM architecture and Kylin v10 sp2 operating system as examples.
 
 Make sure you are logged into the bootstrap node! Also, make sure the
-__clusterConfig.yaml__ file used during the DCE 5.0 deployment is available.
+__clusterConfig.yaml__ file used during the DCE deployment is available.
 
 #### Offline Image Package
 
@@ -86,7 +86,7 @@ Run the import-artifact command:
 
     Parameter Explanation:
 
-    - __-c clusterConfig.yaml__ specifies the clusterConfig.yaml file used during the previous DCE 5.0 deployment.
+    - __-c clusterConfig.yaml__ specifies the clusterConfig.yaml file used during the previous DCE deployment.
     - __--offline-path__ specifies the file path of the downloaded offline image package.
     - __--iso-path__ specifies the file path of the downloaded ISO operating system image.
     - __--os-pkgs-path__ specifies the file path of the downloaded osPackage offline package.
@@ -97,12 +97,12 @@ After a successful import command execution, the offline package will be uploade
 
 !!! note
 
-    If the version of DCE 5.0 you have installed is higher than (inclusive of)
+    If the version of DCE you have installed is higher than (inclusive of)
     [DCE5.0-20230731](../../dce/dce-rn/20230731.md), after completing the above steps,
     you can directly integrate nodes via UI; if not, you will need to continue with
     the following steps to integrate heterogeneous nodes.
 
-Make sure you are logged into the management node of the DCE 5.0
+Make sure you are logged into the management node of the DCE
 [Global Service Cluster](../user-guide/clusters/cluster-role.md#global-service-cluster).
 
 #### Modify the Host Manifest

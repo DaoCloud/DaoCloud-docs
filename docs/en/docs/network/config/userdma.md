@@ -6,7 +6,7 @@ Date: 2024-08-16
 # Using RDMA in Deployments
 
 This chapter mainly introduces how to configure and use RDMA resources in deployments.
-DCE 5.0 provides three methods for RDMA passthrough. See [RDMA Usage Comparison](rdmatype.md) for details.
+DCE provides three methods for RDMA passthrough. See [RDMA Usage Comparison](rdmatype.md) for details.
 
 !!! note
 

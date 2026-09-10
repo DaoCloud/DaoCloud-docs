@@ -7,12 +7,12 @@ date: 2024-02-18
 
 If all members in your enterprise or organization are managed in WeCom, you can use the
 identity provider feature based on the OAuth 2.0 protocol provided by Global Management,
-without the need to create a username/password for each organization member in DCE 5.0.
-You can grant these external user identities permission to use DCE 5.0 resources.
+without the need to create a username/password for each organization member in DCE.
+You can grant these external user identities permission to use DCE resources.
 
 ## Steps
 
-1. Log in to DCE 5.0 with a user who has the **admin** role. Click
+1. Log in to DCE with a user who has the **admin** role. Click
    **Global Management** -> **Access Control** at the bottom of the left navigation bar.
 
     ![Users and Access Control](../../images/access.png)

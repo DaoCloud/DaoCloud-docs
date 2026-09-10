@@ -1,11 +1,11 @@
 # Cross-Cluster Backup and Recovery of MySQL Application and Data
 
-This demonstration will show how to use the application backup feature in DCE 5.0 to
+This demonstration will show how to use the application backup feature in DCE to
 perform cross-cluster backup migration for a stateful application.
 
 !!! note
 
-    The current operator should have admin privileges on the DCE 5.0 platform.
+    The current operator should have admin privileges on the DCE platform.
 
 ## Prepare the Demonstration Environment
 
@@ -565,7 +565,7 @@ Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) doc
 
 ## Cross-Cluster Recovery of MySQL Application and Data
 
-1. Log in to the DCE 5.0 platform and select __Container Management__ -> __Backup & Restore__ -> __Application Backup__ from the left navigation menu.
+1. Log in to the DCE platform and select __Container Management__ -> __Backup & Restore__ -> __Application Backup__ from the left navigation menu.
 
    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql06.png)
 

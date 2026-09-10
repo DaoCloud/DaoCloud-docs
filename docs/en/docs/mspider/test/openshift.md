@@ -6,7 +6,7 @@ Using OpenShift 4.11 as an example, this test report provides a detailed descrip
 
 ## Test Objectives
 
-The objective is to validate the compatibility of creating a proprietary mesh based on native Istio on DCE 5.0 service mesh, aggregating the control plane and data plane in OpenShift's single cluster mode.
+The objective is to validate the compatibility of creating a proprietary mesh based on native Istio on DCE service mesh, aggregating the control plane and data plane in OpenShift's single cluster mode.
 
 ## Test Environment
 

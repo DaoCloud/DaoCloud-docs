@@ -115,6 +115,6 @@ Refer to the [Sentinel Authorization Rules](../skoala/trad-ms/hosted/services/au
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/authn-rule.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/authn-rule.jpg"></video>
 </div>
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

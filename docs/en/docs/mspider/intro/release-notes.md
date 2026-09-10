@@ -95,7 +95,7 @@ providing convenience for users to learn about the evolution path and feature ch
 ### Background
 
 The Istio community announced the deprecation of the In-Cluster Operator in [1.23](https://istio.io/latest/blog/2024/in-cluster-operator-deprecation-announcement/) and it will be fully deprecated in 1.24.
-DCE 5.0's service mesh uses the Istio In-Cluster Operator, so to ensure that versions 1.23 and later of Istio can be installed correctly, we have developed and open-sourced the [Pluma Operator](https://github.com/pluma-tools/pluma-operator).
+DCE's service mesh uses the Istio In-Cluster Operator, so to ensure that versions 1.23 and later of Istio can be installed correctly, we have developed and open-sourced the [Pluma Operator](https://github.com/pluma-tools/pluma-operator).
 When the Istio version in the service mesh is 1.23 or higher, the Operator will automatically switch from the Istio In-Cluster Operator to the Pluma Operator.
 
 ### Upgrade Changes
@@ -746,5 +746,5 @@ Since Kubernetes does not allow updating `Deployment` selectorLabels, it is nece
 - **Fixed** an issue of mesh upgrades not executing k8s version restrictions
 - **Fixed** an issue of invalid workload sidecar resource configuration in the sidecar management interface
 - **Fixed** an issue where clusters could not be removed due to monitoring detection failures within the mesh
-- **Fixed** an issue where the data plane image was not packaged into the DCE 5.0 offline package
+- **Fixed** an issue where the data plane image was not packaged into the DCE offline package
 - **Fixed** an issue where Ckube could not automatically update configurations

@@ -63,9 +63,9 @@ This page introduces how to install Jenkins before using the pipeline features.
 
 ## Integrate Jenkins
 
-Note: Currently, only integration with Jenkins installed via the DCE 5.0 platform is supported.
+Note: Currently, only integration with Jenkins installed via the DCE platform is supported.
 
-1. Log in to DCE 5.0 with a user who has the role of a Workbench Administrator and go to the Workbench.
+1. Log in to DCE with a user who has the role of a Workbench Administrator and go to the Workbench.
 
     ![Deployment Completed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins16.png)
 

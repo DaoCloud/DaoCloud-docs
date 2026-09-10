@@ -58,7 +58,7 @@ click creates "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-acr
 In order to meet the multi-tenant  use cases, the workspace forms an isolated resource environment based on multiple resources such as clusters, cluster namespaces, meshs, mesh namespaces, multicloud, and multicloud namespaces.
 Workspaces can be mapped to various concepts such as projects, tenants, enterprises, and suppliers.
 
-1. Log in to DCE 5.0 as a user with the admin/folder admin role, and click __Global Management__ at the bottom of the left navigation bar.
+1. Log in to DCE as a user with the admin/folder admin role, and click __Global Management__ at the bottom of the left navigation bar.
 
     ![Global Management](../../images/ws01.png)
 

@@ -5,7 +5,7 @@ date: 2024-05-21
 
 # First Time Usage
 
-When entering DCE 5.0 AI Lab for the first time, you need to:
+When entering DCE AI Lab for the first time, you need to:
 
 - [Choose a Workspace](#select-a-workspace)
 - [Select a Cluster](#select-cluster)
@@ -13,7 +13,7 @@ When entering DCE 5.0 AI Lab for the first time, you need to:
 
 ## Select a Workspace
 
-When first entering DCE 5.0 AI Lab, you should select a [workspace](../../ghippo/user-guide/workspace/workspace.md).
+When first entering DCE AI Lab, you should select a [workspace](../../ghippo/user-guide/workspace/workspace.md).
 
 ![Choose a Workspac](../images/workspace.png)
 
@@ -52,7 +52,7 @@ If the cluster you want is not in the cluster list, you need to bind the cluster
 
 ## Roles
 
-DCE 5.0 AI Lab provides two roles. You can switch between the two administrator roles by clicking the menu item at the bottom left:
+DCE AI Lab provides two roles. You can switch between the two administrator roles by clicking the menu item at the bottom left:
 
 - Administrator - Developer: With capabilities of Notebooks, training tasks, and datasets.
 - Platform Administrator - Operator: With capabilities of managing GPU resources and queues.
@@ -61,6 +61,6 @@ Each role has an overview page that displays the current data that can be proces
 
 ![Operations Overview](../images/oam-overview.png)
 
-[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../../dce/license0.md){ .md-button .md-button--primary }

@@ -51,6 +51,6 @@ across different industries.
     AI Lab allows for the creation of queues and their association with workspaces to ensure
     efficient coordination and resource isolation within different clusters.
 
-[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../../dce/license0.md){ .md-button .md-button--primary }

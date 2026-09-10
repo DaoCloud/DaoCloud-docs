@@ -2,7 +2,7 @@
 
 [Dify](https://dify.ai) is an open-source large language model (LLM) application development platform that provides one-stop capabilities including Agent workflow, RAG Pipeline, rich integrations, and observability, enabling users to quickly build production-grade generative AI applications.
 
-This article mainly introduces how to use __Helm Application__ in DCE 5.0 to deploy __dify-chart__ plugin, quickly build Dify LLM application development platform, and implement usage examples of Dify application/workflow based on Qwen-turbo.
+This article mainly introduces how to use __Helm Application__ in DCE to deploy __dify-chart__ plugin, quickly build Dify LLM application development platform, and implement usage examples of Dify application/workflow based on Qwen-turbo.
 
 ## Prerequisites
 

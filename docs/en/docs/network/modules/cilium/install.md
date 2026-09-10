@@ -6,7 +6,7 @@ This page describes the configuration of various parameters when installing Cili
 
 1. Make sure the OS Kernel version number >= 4.9.17, 5.10+ is recommended.
 
-2. To install Cilium in DCE 5.0, you need to select `cilium` for `Network Plugins` on the `Create Cluster`->`Network Configuration` page. For creating a cluster, see [create worker cluster](../../../kpanda/user-guide/clusters/create-cluster.md).
+2. To install Cilium in DCE, you need to select `cilium` for `Network Plugins` on the `Create Cluster`->`Network Configuration` page. For creating a cluster, see [create worker cluster](../../../kpanda/user-guide/clusters/create-cluster.md).
 
    ![network setting](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-install-1.png)
 

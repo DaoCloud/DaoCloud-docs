@@ -20,7 +20,7 @@ For available time zone values, see [IANA Time Zones](https://timeapi.io/documen
 
 !!! note
 
-    If `global.statisticTimezone` is not set, the system uses the unified default time zone `UTC` in DCE 5.0. The parameter must be a valid IANA time zone identifier.
+    If `global.statisticTimezone` is not set, the system uses the unified default time zone `UTC` in DCE. The parameter must be a valid IANA time zone identifier.
 
 ## Configure during installation
 

@@ -12,7 +12,7 @@ different users and user groups can be assigned to each workspace.
 
 Follow the steps below to create a workspace:
 
-1. Log in to DCE 5.0 with a user account having the admin/folder admin role.
+1. Log in to DCE with a user account having the admin/folder admin role.
    Click __Global Management__ -> __Workspace and Folder__ at the bottom of the left navigation bar.
 
     ![Global Management](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ws01.png)

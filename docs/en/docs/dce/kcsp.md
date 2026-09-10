@@ -13,7 +13,7 @@ DaoCloud is a [CNCF-certified Kubernetes Certified Service Provider (KCSP)](http
 As early as 2017, DaoCloud passed the official certification, becoming one of the earliest CNCF-recognized Kubernetes service providers in China.  
 We have remained deeply involved in the community for years — contributing code, docs and practices — and always stay aligned with the community’s upstream. With every new Kubernetes release, we are among the first to adapt and enhance new features, and deliver them into production environments.
 
-DCE 5.0, developed by DaoCloud, is an AI service platform officially certified by Kubernetes.
+DCE, developed by DaoCloud, is an AI service platform officially certified by Kubernetes.
 Currently, within the **Certified Kubernetes – AI Platform** category, DaoCloud ranks first.
 
 [![DCE is a Certified AI Platform](./images/dce-ai-platform.png)](https://landscape.cncf.io/?group=certified-partners-and-providers)
@@ -30,7 +30,7 @@ Certified platforms are authorized by CNCF to use the “AI Conformance” badge
 </figure>
 
 As a leader in cloud-native open source in China, DaoCloud keeps pace with the community:  
-after the AI Conformance standard was released, we were among the first to start AI Conformance testing for the mainstream Kubernetes v1.33 on our [DCE 5.0](https://docs.daocloud.io/) platform, and in October 2025 we [successfully passed the certification](https://github.com/cncf/ai-conformance/pull/13) —  
+after the AI Conformance standard was released, we were among the first to start AI Conformance testing for the mainstream Kubernetes v1.33 on our [DCE](https://docs.daocloud.io/) platform, and in October 2025 we [successfully passed the certification](https://github.com/cncf/ai-conformance/pull/13) —  
 **becoming the first enterprise-grade AI/ML platform in China to achieve certification for this version.**
 
 ## Kubernetes Conformance
@@ -77,6 +77,6 @@ Source: https://github.com/cncf/artwork/tree/master/projects/kubernetes/certifie
 For more information about DaoCloud's open source contributions, refer to the blog
 [DaoCloud is a K8s senior certification service provider](../blogs/2022/221116-kcsp.md).
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[Download DCE](../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](license0.md){ .md-button .md-button--primary }

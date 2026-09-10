@@ -1,10 +1,10 @@
 # baizess Source Switch Tool Usage Guide
 
-`baizess` is a built-in, out-of-the-box source switch tool within the Notebook of DCE 5.0 AI Lab module. It provides a streamlined command-line interface to facilitate the management of package sources for various programming environments. With baizess, users can easily switch sources for commonly used package managers, ensuring seamless access to the latest libraries and dependencies. This tool enhances the efficiency of developers and data scientists by simplifying the process of managing package sources.
+`baizess` is a built-in, out-of-the-box source switch tool within the Notebook of DCE AI Lab module. It provides a streamlined command-line interface to facilitate the management of package sources for various programming environments. With baizess, users can easily switch sources for commonly used package managers, ensuring seamless access to the latest libraries and dependencies. This tool enhances the efficiency of developers and data scientists by simplifying the process of managing package sources.
 
 ## Installation
 
-Currently, `baizess` is integrated within DCE 5.0 AI Lab. Once you create a Notebook, you can directly use `baizess` within it.
+Currently, `baizess` is integrated within DCE AI Lab. Once you create a Notebook, you can directly use `baizess` within it.
 
 ## Getting Started
 

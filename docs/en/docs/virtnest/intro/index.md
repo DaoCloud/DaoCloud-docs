@@ -61,4 +61,4 @@ containerization capabilities, providing users with a superior virtual machine m
 
 !!! note
 
-    The Virtual Machine, __Virtnest__ , is a feature exclusive to the DCE 5.0 Enterprise Package (Standard, Advanced, and Platinum editions).
+    The Virtual Machine, __Virtnest__ , is a feature exclusive to the DCE Enterprise Package (Standard, Advanced, and Platinum editions).

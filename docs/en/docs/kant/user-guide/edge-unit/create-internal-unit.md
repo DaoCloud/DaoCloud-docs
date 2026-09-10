@@ -19,13 +19,13 @@ orchestration capabilities to edge nodes.
 - CloudCore: KubeEdge cloud-side core component.
 - ControllerManager: KubeEdge CRD extension, currently applied to edge applications and edge node groups.
 
-DCE 5.0 Cloud Edge supports two types of edge units:
+DCE Cloud Edge supports two types of edge units:
 
 - **Internal Edge Unit** is to install the KubeEdge cloud suite (CloudCore, ControllerManager) for 
   a specified worker cluster and manage it throughout its lifecycle.
 
 - **External Edge Unit** refers to integrating the existing KubeEdge installed in the enterprise system 
-  into DCE 5.0 Cloud Edge for unified management. See [Creating External Edge Unit](./create-external-unit.md)
+  into DCE Cloud Edge for unified management. See [Creating External Edge Unit](./create-external-unit.md)
 
 ## Steps
 

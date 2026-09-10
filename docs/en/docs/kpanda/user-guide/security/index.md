@@ -1,6 +1,6 @@
 # Types of Security Scans
 
-DCE 5.0 Container Management provides three types of security scans:
+DCE Container Management provides three types of security scans:
 
 - Compliance Scan: Conducts security scans on cluster nodes based on [CIS Benchmark](https://github.com/aquasecurity/kube-bench/tree/main/cfg).
 - Authorization Scan: Checks for security and compliance issues in the Kubernetes cluster, records and verifies authorized access, object changes, events, and other activities related to the Kubernetes API.

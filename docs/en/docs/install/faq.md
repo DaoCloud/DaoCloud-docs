@@ -10,10 +10,10 @@ making it easier for users to quickly resolve issues encountered during installa
 
 ## UI Issues
 
-### Troubleshoot DCE 5.0 UI issues with diag.sh
+### Troubleshoot DCE UI issues with diag.sh
 
 Since [installer v0.12.0](./release-notes.md#v0120),the diag.sh script has been added
-to help users quickly troubleshoot the DCE 5.0 UI issues.
+to help users quickly troubleshoot the DCE UI issues.
 
 Run the command:
 
@@ -228,7 +228,7 @@ Other parameters such as `pvcSize` are also ineffective, and only the `enable` p
 
 ## Community Package Issues
 
-### Redis hanging during DCE 5.0 reinstallation of the kind cluster
+### Redis hanging during DCE reinstallation of the kind cluster
 
 Issue: The Redis Pod has been stuck at 0/4 running for a long time, indicating: `primary ClusterIP can not unset`
 
