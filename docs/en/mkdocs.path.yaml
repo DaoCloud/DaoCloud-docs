@@ -3,12 +3,11 @@
 INHERIT: navigation.yml
 
 # Project information
-site_name: DaoCloud Enterprise
+site_name: DaoCloud Docs Hub
 site_url: https://docs.daocloud.io/
 site_author: DaoCloud
 site_description: >-
-  DaoCloud Enterprise 5.0 is the next-generation PaaS platform, created with many leading cloud-native technologies,
-  to easily promote and boost your digital business.
+  DaoCloud is a global pioneer in open source for AI, leading the wave of AI innovation and helping drive digital transformation.
 
 # copyright
 copyright: Copyright &copy; 2016 - 2026 DaoCloud

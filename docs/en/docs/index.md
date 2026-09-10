@@ -66,7 +66,7 @@ This site provides documentation for three product lines, covering full-stack ca
 
     <div class="tf-arch tf-arch--compact">
       <div class="tf-arch-layer tf-arch-layer--model">
-        <div class="tf-arch-layer-label">Cloud Native AI</div>
+        <div class="tf-arch-layer-label">CNAI</div>
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--model" href="tf/clawos/intro/">
             <span class="tf-arch-card-title">ClawOS</span>
@@ -96,7 +96,7 @@ This site provides documentation for three product lines, covering full-stack ca
       </div>
       <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--compute">
-        <div class="tf-arch-layer-label">Cloud Native Base</div>
+        <div class="tf-arch-layer-label">CN Infra</div>
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--compute" href="tf/kpanda/intro/">
             <span class="tf-arch-card-title">Container Management</span>
@@ -122,7 +122,7 @@ This site provides documentation for three product lines, covering full-stack ca
       </div>
       <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
-        <div class="tf-arch-layer-label">Operations Management</div>
+        <div class="tf-arch-layer-label">Ops</div>
         <div class="tf-arch-cards">
           <div class="tf-arch-card tf-arch-card--ops">
             <span class="tf-arch-card-title">Copilot</span>
@@ -140,7 +140,7 @@ This site provides documentation for three product lines, covering full-stack ca
       </div>
       <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
-        <div class="tf-arch-layer-label">O&M Management</div>
+        <div class="tf-arch-layer-label">OAM</div>
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--ops" href="tf/insight/intro/">
             <span class="tf-arch-card-title">Observability</span>
@@ -163,14 +163,14 @@ This site provides documentation for three product lines, covering full-stack ca
 
     <div class="tf-arch tf-arch--compact">
       <div class="tf-arch-layer tf-arch-layer--model">
-        <div class="tf-arch-layer-label">Cloud Native AI</div>
+        <div class="tf-arch-layer-label">CNAI</div>
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/workspace/">
             <span class="tf-arch-card-title">ClawOS</span>
             <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="drun/hydra/">
-            <span class="tf-arch-card-title">LLM Serving Platform</span>
+            <span class="tf-arch-card-title">LLM Studio</span>
             <span class="tf-arch-card-tip">Model deployment and O&M management</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="drun/baize/intro/">
@@ -189,7 +189,7 @@ This site provides documentation for three product lines, covering full-stack ca
       </div>
       <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--compute">
-        <div class="tf-arch-layer-label">Cloud Native Base</div>
+        <div class="tf-arch-layer-label">CN Infra</div>
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--compute" href="drun/kpanda/intro/">
             <span class="tf-arch-card-title">Container Management</span>
@@ -215,7 +215,7 @@ This site provides documentation for three product lines, covering full-stack ca
       </div>
       <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
-        <div class="tf-arch-layer-label">Operations Management</div>
+        <div class="tf-arch-layer-label">Ops</div>
         <div class="tf-arch-cards">
           <div class="tf-arch-card tf-arch-card--ops">
             <span class="tf-arch-card-title">Copilot</span>
@@ -229,7 +229,7 @@ This site provides documentation for three product lines, covering full-stack ca
       </div>
       <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
-        <div class="tf-arch-layer-label">O&M Management</div>
+        <div class="tf-arch-layer-label">OAM</div>
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--ops" href="drun/insight/intro/">
             <span class="tf-arch-card-title">Observability</span>
@@ -251,7 +251,7 @@ This site provides documentation for three product lines, covering full-stack ca
 
     <div class="tf-arch tf-arch--compact">
       <div class="tf-arch-layer tf-arch-layer--compute">
-        <div class="tf-arch-layer-label">Cloud Native Base</div>
+        <div class="tf-arch-layer-label">CN Infra</div>
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--compute" href="middleware/">
             <span class="tf-arch-card-title">Middleware</span>
@@ -305,7 +305,7 @@ This site provides documentation for three product lines, covering full-stack ca
       </div>
       <div class="tf-arch-arrow">▼</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
-        <div class="tf-arch-layer-label">O&M Management</div>
+        <div class="tf-arch-layer-label">OAM</div>
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--ops" href="insight/intro/">
             <span class="tf-arch-card-title">Observability</span>
