@@ -67,7 +67,7 @@ Administrators can edit model parameter information anytime after model creation
 
         Editing model parameters does not affect the model’s current online status, but it is recommended to perform edits during idle periods.
 
-## Model Deployment / Withdrawal
+## Model Serving / Withdrawal
 
 Administrators can manually control the display status of models in the marketplace based on operational strategies or resource scheduling.
 

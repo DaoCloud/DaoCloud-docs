@@ -12,7 +12,7 @@ LLM Studio is a comprehensive AI model management solution designed for enterpri
 - One-Click Deployment and Simplified Operations
 
     - Dual Support for GUI and API: Offers an intuitive web interface and complete API endpoints
-    - One-Click Model Deployment: Supports mainstream large models to go live within minutes
+    - One-Click Model Serving: Supports mainstream large models to go live within minutes
     - Dynamic Inference Backends: Compatible with multiple inference engines such as vLLM and SGLang
     - Real-Time Scaling: Flexibly adjust the number of instances based on business needs
     - Multi-Region Deployment: Choose deployment regions on demand for local services
@@ -68,12 +68,12 @@ The platform enables unified management, trial, and rapid deployment of models t
 - **Standard User View**:
     - Access the **Model Trial** section to test configured models online without local deployment.
 
-### 3️⃣ Model Deployment Management: Configure Deployment Parameters
+### 3️⃣ Model Serving Management: Configure Deployment Parameters
 
 - **Operations Management**:
-    - Create deployment configuration files for resources and environments (e.g., GPU, memory, runtime framework) in **Model Deployment Management**.
+    - Create deployment configuration files for resources and environments (e.g., GPU, memory, runtime framework) in **Model Serving Management**.
 - **Standard User View**:
-    - Quickly complete deployment by selecting a model in the **Model Deployment** page.
+    - Quickly complete deployment by selecting a model in the **Model Serving** page.
     - Simplifies workflows without requiring manual input of complex parameters.
   
 ### 4️⃣ Model File Download: Foundation for Deployment

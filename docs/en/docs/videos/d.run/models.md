@@ -10,9 +10,9 @@ Refer to the documentation on [Model Marketplace](../models/index.md).
   <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/llm-model-store.mp4" preload="metadata" poster="./images/model-store.png"></video>
 </div>
 
-## Model Deployment
+## Model Serving
 
-Refer to the documentation on [Model Deployment](../models/deploy.md).
+Refer to the documentation on [Model Serving](../models/deploy.md).
 
 <div class="responsive-video-container">
   <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/deploy-model.mp4" preload="metadata" poster="./images/deploy-model.png"></video>

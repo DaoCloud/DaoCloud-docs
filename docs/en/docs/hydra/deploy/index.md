@@ -1,4 +1,4 @@
-# Model Deployment
+# Model Serving
 
 Model Service is a solution that allows you to quickly deploy open-source or fine-tuned large language models as callable services.  
 With one-click deployment, it simplifies complex model management into a standardized service format, enabling compatibility with mainstream API calls and ensuring immediate usability.

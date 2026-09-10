@@ -15,7 +15,7 @@ hide:
 </div>
 
 <p style="color: green; font-size: 28px; text-align: center;">
-  An Enterprise Platform That Unifies Compute, Models, and AI Applications
+  An Enterprise Platform That Unifies Compute, Models, and AI Apps
 </p>
 
 <div style="text-align: center; max-width: 900px; margin: 0 auto; line-height: 1.8;">
@@ -83,7 +83,7 @@ hide:
     * [Deploy the Large Model Service Platform](../hydra/intro/deploy-ws.md)
     * [Model Marketplace](../hydra/index.md)
     * [Model Playground](../hydra/exp.md)
-    * [Model Deployment](../hydra/deploy/deploy.md)
+    * [Model Serving](../hydra/deploy/deploy.md)
     * [Operations Management](../hydra/oam/index.md)
 
 </div>

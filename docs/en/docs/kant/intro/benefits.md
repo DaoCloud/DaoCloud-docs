@@ -37,5 +37,5 @@ Cloud Edge Collaboration offers six core capabilities that address various busin
 
 ## Edge Intelligence
 
-- **Containerized Model Deployment:** Supports running models in container mode on edge nodes.
+- **Containerized Model Serving:** Supports running models in container mode on edge nodes.
 - **Batch Deployment and Upgrading of Models:** Enables efficient batch deployment and upgrading of models, ensuring up-to-date intelligence at the edge.

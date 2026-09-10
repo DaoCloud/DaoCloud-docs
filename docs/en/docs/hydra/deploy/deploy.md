@@ -7,7 +7,7 @@ hide:
 
 *[Hydra]: Internal codename for LLM Studio
 
-You can deploy a model either from the [Model Gallery](../index.md) or the [Model Deployment](./index.md) page. Below are the configuration parameters explained:
+You can deploy a model either from the [Model Gallery](../index.md) or the [Model Serving](./index.md) page. Below are the configuration parameters explained:
 
 ![deploy](../images/deploy01.png)
 

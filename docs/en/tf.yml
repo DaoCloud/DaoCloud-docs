@@ -4,7 +4,7 @@ nav:
       - Cloud Native AI:
           - ClawOS:
               - tf/clawos/intro/index.md
-              - Introduction:
+              - Intro:
                   - Install: tf/clawos/intro/install.md
                   - Quick Start: tf/clawos/intro/quickstart.md
                   - Release Notes: tf/clawos/intro/release-notes.md
@@ -23,10 +23,10 @@ nav:
                   - Network Policy Management: tf/clawos/admin/network-manage.md
               - Reference:
                   - Gateway API Instance Access Configuration: tf/clawos/reference/gateway-access.md
-          - AI Applications:
+          - AI Apps:
               - tf/dak/index.md
               - Features: tf/dak/features.md
-              - Application Center:
+              - App Center:
                   - Create Application: tf/dak/user-guide/app-center/create-app.md
                   - Application Conversation: tf/dak/user-guide/app-center/conversation.md
               - Corpus:
@@ -44,14 +44,14 @@ nav:
                   - Shard Hit Ratio: tf/dak/data-analysis/shard-hit-ratio.md
                   - Improvement Suggestions: tf/dak/data-analysis/suggestions.md
               - My Feedback: tf/dak/my-feedback/my-feedback.md
-          - LLM Serving Platform:
-              - Introduction:
-                  - What is LLM Serving Platform: tf/hydra/intro/index.md
+          - LLM Studio:
+              - Intro:
+                  - What is LLM Studio: tf/hydra/intro/index.md
                   - Release Notes: tf/hydra/intro/release-notes.md
-                  - Deploy LLM Serving Platform: tf/hydra/intro/deploy-ws.md
-                  - Offline Upgrade LLM Serving Platform: tf/hydra/intro/offline-upgrade.md
+                  - Deploy LLM Studio: tf/hydra/intro/deploy-ws.md
+                  - Offline Upgrade LLM Studio: tf/hydra/intro/offline-upgrade.md
                   - Upgrade Notes: tf/hydra/intro/upgrade-notes.md
-              - User Perspective:
+              - User:
                   - Model Plaza: tf/hydra/index.md
                   - Model Experience: tf/hydra/exp.md
                   - Model Management:
@@ -68,14 +68,14 @@ nav:
                       - Remote File Preheat: tf/hydra/file-storage/file-preheat.md
                       - File Storage Scale: tf/hydra/file-storage/file-scale.md
                   - API Key Management: tf/hydra/apikey.md
-              - O&M Management:
+              - Admin:
                   - Model Plaza Management: tf/hydra/oam/index.md
                   - MaaS Model Management: tf/hydra/oam/maas.md
-                  - Model Deployment Management: tf/hydra/oam/mdm.md
+                  - Model Serving Management: tf/hydra/oam/mdm.md
                   - Security Policy Management: tf/hydra/oam/security-policy.md
                   - Security Audit Logs: tf/hydra/oam/security-audit-logs.md
               - User Practice Scenarios:
-                  - Example Scenarios Introduction: tf/hydra/user-guides/index.md
+                  - Example Scenarios Intro: tf/hydra/user-guides/index.md
                   - Use in VSCode and Cline: tf/hydra/user-guides/cline-in-vscode.md
                   - Use in Cherry Studio: tf/hydra/user-guides/cherry-studio.md
                   - Use in Bob Translate: tf/hydra/user-guides/bob-translate.md
@@ -83,7 +83,7 @@ nav:
                   - Custom LLM Inference Runtime: tf/hydra/user-guides/custom-runtime.md
           - InferX Inference:
               - tf/inferx/index.md
-              - FAQ: tf/inferx/faqs.md
+              - FAQs: tf/inferx/faqs.md
               - Best Practices:
                   - Install InferX in Offline Environment: tf/inferx/guides/offline.md
                   - Enable Istio GAIE Feature for Cluster: tf/inferx/guides/enable-istio-gaie-with-mspider.md
@@ -110,16 +110,16 @@ nav:
               - My Images:
                   - Image List: tf/zestu/myimages/images.md
                   - Save Image: tf/zestu/myimages/image-save.md
-              - FAQ: tf/zestu/faq.md
+              - FAQs: tf/zestu/faq.md
       - Cloud Native Foundation:
           - Container Management:
               - tf/kpanda/intro/index.md
-              - Introduction:
+              - Intro:
                   - Features: tf/kpanda/intro/features.md
                   - Scenarios and Advantages: tf/kpanda/intro/scenarios.md
                   - Release Notes: tf/kpanda/intro/release-notes.md
                   - Offline Upgrade Container Management: tf/kpanda/intro/offline-upgrade.md
-                  - FAQ: tf/kpanda/intro/faq.md
+                  - FAQs: tf/kpanda/intro/faq.md
               - Cluster Management:
                   - Create Cluster: tf/kpanda/user-guide/clusters/create-cluster.md
                   - Integrate/Scale/Uninstall Cluster:
@@ -170,7 +170,7 @@ nav:
                   - Create VPA Policy: tf/kpanda/user-guide/scale/create-vpa.md
                   - HPA and CronHPA Compatibility Rules: tf/kpanda/user-guide/scale/hpa-cronhpa-compatibility-rules.md
                   - Other Solutions:
-                    - Knative Introduction: tf/kpanda/user-guide/scale/knative/knative.md
+                    - Knative Intro: tf/kpanda/user-guide/scale/knative/knative.md
                     - Install Knative: tf/kpanda/user-guide/scale/knative/install.md
                     - Knative Scenarios: tf/kpanda/user-guide/scale/knative/scene.md
                     - Knative Practice: tf/kpanda/user-guide/scale/knative/playground.md
@@ -206,13 +206,13 @@ nav:
                   - Cluster Settings: tf/kpanda/user-guide/clusterops/cluster-settings.md
                   - Cluster Dynamic Resource Oversubscription: tf/kpanda/user-guide/clusterops/cluster-oversold.md
               - Cluster Inspection:
-                  - Introduction: tf/kpanda/user-guide/inspect/index.md
+                  - Intro: tf/kpanda/user-guide/inspect/index.md
                   - Create Inspection Configuration: tf/kpanda/user-guide/inspect/config.md
                   - Execute Inspection: tf/kpanda/user-guide/inspect/inspect.md
                   - View Inspection Report: tf/kpanda/user-guide/inspect/report.md
                   - Offline Upgrade Cluster Inspection: tf/kpanda/user-guide/inspect/offline-upgrade.md
               - Backup & Recovery:
-                  - Introduction: tf/kpanda/user-guide/backup/index.md
+                  - Intro: tf/kpanda/user-guide/backup/index.md
                   - Install Velero Plugin: tf/kpanda/user-guide/backup/install-velero.md
                   - Application Backup: tf/kpanda/user-guide/backup/deployment.md
                   - etcd Backup: tf/kpanda/user-guide/backup/etcd-backup.md
@@ -227,11 +227,11 @@ nav:
                   - Vulnerability Scan: tf/kpanda/user-guide/security/hunter.md
                   - Offline Upgrade Security Management: tf/kpanda/user-guide/security/offline-upgrade-dowl.md
                   - Integrate Falco Security Tools:
-                      - Introduction: tf/security/falco.md
+                      - Intro: tf/security/falco.md
                       - Install: tf/security/falco-install.md
                       - Falco-exporter: tf/security/falco-exporter.md
               - Permission Management:
-                  - Permission System Introduction: tf/kpanda/user-guide/permissions/permission-brief.md
+                  - Permission System Intro: tf/kpanda/user-guide/permissions/permission-brief.md
                   - Cluster and Namespace Authorization: tf/kpanda/user-guide/permissions/cluster-ns-auth.md
                   - Add Container Management Built-in Permissions: tf/kpanda/user-guide/permissions/custom-kpanda-role.md
               - GPU Management:
@@ -282,7 +282,7 @@ nav:
                       - Offline Install MetaX GPU Management: tf/kpanda/user-guide/gpu/metax/offline-metax.md
                   - Cambricon GPU Management: tf/kpanda/user-guide/gpu/mlu/use-mlu.md
                   - Pod and GPU Card Occupation: tf/kpanda/user-guide/gpu/gpupod.md
-                  - GPU FAQ: tf/kpanda/user-guide/gpu/FAQ.md
+                  - GPU FAQs: tf/kpanda/user-guide/gpu/FAQ.md
               - Best Practices:
                   - Deploy HAMi Enterprise Edition: tf/kpanda/best-practice/hami-enterprise-installation.md
                   - Backup and Restore etcd: tf/kpanda/best-practice/etcd-backup.md
@@ -309,9 +309,9 @@ nav:
                   - Best Practices for Maximum Pod Count per Physical Machine: tf/kpanda/best-practice/max-pod.md
           - Image Registry:
               - tf/kangaroo/intro/index.md
-              - Introduction:
+              - Intro:
                   - Release Notes: tf/kangaroo/intro/release-notes.md
-                  - Image Registry FAQ: tf/kangaroo/intro/faq.md
+                  - Image Registry FAQs: tf/kangaroo/intro/faq.md
                   - Offline Upgrade Image Registry: tf/kangaroo/intro/upgrade.md
               - Quick Start:
                   - Manage External Image Registry: tf/kangaroo/quickstart/registry-in-one.md
@@ -348,7 +348,7 @@ nav:
                   - Deploy Harbor via LB Mode: tf/kangaroo/best-practice/lb.md
           - Device Management:
               - tf/topohub/intro/index.md
-              - Introduction:
+              - Intro:
                   - What is Device Management: tf/topohub/intro/index.md
                   - Install Device Management Components: tf/topohub/intro/install.md
                   - Device Management Release Notes: tf/topohub/intro/release-notes.md
@@ -357,13 +357,13 @@ nav:
                   - Batch Integrate Devices: tf/topohub/device/batch-access.md
                   - Manage Devices: tf/topohub/device/manage-device.md
           - Cloud Native Networking:
-              - Introduction:
+              - Intro:
                   - What is Container Network: tf/network/intro/index.md
                   - Background and Challenges: tf/network/intro/background.md
                   - Network Components: tf/network/modules/modules.md
                   - Offline Upgrade Cloud Native Networking: tf/network/intro/offline.md
                   - Release Notes: tf/network/intro/release-notes.md
-                  - Network Components FAQ: tf/network/intro/issues.md
+                  - Network Components FAQs: tf/network/intro/issues.md
               - Network Planning:
                   - NIC Planning: tf/network/plans/ethplan.md
                   - Network Planning: tf/network/plans/netplan.md
@@ -397,7 +397,7 @@ nav:
                   - Egress Performance Test: tf/network/performance/egress-performance.md
                   - CoreDNS Performance Test: tf/network/performance/coredns-performance.md
               - Integrate Spiderpool:
-                  - Introduction: tf/network/modules/spiderpool/index.md
+                  - Intro: tf/network/modules/spiderpool/index.md
                   - Release Notes: tf/network/modules/spiderpool/release-notes.md
                   - Install:
                       - System Requirements: tf/network/modules/spiderpool/install/system-requirements.md
@@ -424,7 +424,7 @@ nav:
                       - Configuration Reference: tf/network/modules/spiderpool/config.md
                       - Common Commands: tf/network/modules/spiderpool/command.md
               - Integrate EgressGateway:
-                  - Introduction: tf/network/modules/egressgateway/index.md
+                  - Intro: tf/network/modules/egressgateway/index.md
                   - Release Notes: tf/network/modules/egressgateway/release-notes.md
                   - Install and Run on DCE:
                       - Install: tf/network/modules/egressgateway/install.md
@@ -444,34 +444,34 @@ nav:
                       - Run in Alibaba Cloud Environment: tf/network/modules/egressgateway/public-cloud/alicloud.md
                       - Run in AWS Environment: tf/network/modules/egressgateway/public-cloud/awswithcilium.md
               - Integrate sriov-network-operator:
-                  - Introduction: tf/network/modules/sriov-network-operator/index.md
+                  - Intro: tf/network/modules/sriov-network-operator/index.md
                   - Install: tf/network/modules/sriov-network-operator/install.md
                   - SR-IOV: tf/network/modules/multus-underlay/sriov.md
                   - DPDK: tf/network/modules/multus-underlay/dpdk.md
               - Integrate Calico:
-                  - Introduction: tf/network/modules/calico/index.md
+                  - Intro: tf/network/modules/calico/index.md
                   - Install Parameter Configuration: tf/network/modules/calico/install.md
                   - ippool: tf/network/modules/calico/ippool.md
                   - Monitoring Metrics: tf/network/modules/calico/metrics.md
                   - Calico Network Policy: tf/network/modules/calico/policy.md
                   - Troubleshooting: tf/network/modules/calico/debug.md
               - Integrate Cilium:
-                  - Introduction: tf/network/modules/cilium/index.md
+                  - Intro: tf/network/modules/cilium/index.md
                   - Deploy Cilium: tf/network/modules/cilium/deploy-cilium.md
                   - Unsupported Features: tf/network/modules/cilium/not-support.md
                   - Cilium Network Communication Acceleration: tf/network/modules/cilium/cilium-speedup.md
                   - Cross-Cluster Application Communication: tf/network/modules/cilium/cross-cluster.md
                   - Implement IPVlan Network Policy: tf/network/modules/cilium/cilium_chaining.md
               - Integrate Contour:
-                  - Introduction: tf/network/modules/contour/index.md
+                  - Intro: tf/network/modules/contour/index.md
                   - Install: tf/network/modules/contour/install.md
               - Integrate F5networks:
-                  - Introduction: tf/network/modules/f5networks/index.md
+                  - Intro: tf/network/modules/f5networks/index.md
                   - Install: tf/network/modules/f5networks/install.md
                   - Usage: tf/network/modules/f5networks/usage.md
                   - Debug: tf/network/modules/f5networks/debug.md
               - Integrate Ingress-nginx:
-                  - Introduction: tf/network/modules/ingress-nginx/index.md
+                  - Intro: tf/network/modules/ingress-nginx/index.md
                   - Install: tf/network/modules/ingress-nginx/install.md
                   - Ingress Class: tf/network/modules/ingress-nginx/ingressclass.md
                   - Ingress Scope: tf/network/modules/ingress-nginx/scope.md
@@ -485,13 +485,13 @@ nav:
                   - Migrate to Higress or kgateway: tf/network/modules/ingress-nginx/migrate-to-higress-or-kgateway.md
                   - Troubleshooting Guide: tf/network/modules/ingress-nginx/troubleshooting.md
               - Integrate Higress:
-                  - Introduction: tf/network/modules/higress/index.md
+                  - Intro: tf/network/modules/higress/index.md
                   - Install: tf/network/modules/higress/install.md
               - Integrate Kgateway:
-                  - Introduction: tf/network/modules/kgateway/index.md
+                  - Intro: tf/network/modules/kgateway/index.md
                   - Install: tf/network/modules/kgateway/install.md
               - Integrate Metallb:
-                  - Introduction: tf/network/modules/metallb/index.md
+                  - Intro: tf/network/modules/metallb/index.md
                   - Install: tf/network/modules/metallb/install.md
                   - IPPool Modify and Create: tf/network/modules/metallb/ippool-create.md
                   - IPPool Usage Notes: tf/network/modules/metallb/usage.md
@@ -499,31 +499,31 @@ nav:
                   - Get Client Source IP: tf/network/modules/metallb/source_ip.md
                   - Issue Troubleshooting: tf/network/modules/metallb/debug.md
               - Integrate Multus-underlay:
-                  - Introduction: tf/network/modules/multus-underlay/index.md
+                  - Intro: tf/network/modules/multus-underlay/index.md
                   - Install: tf/network/modules/multus-underlay/install.md
                   - Macvlan: tf/network/modules/multus-underlay/macvlan.md
                   - NmState: tf/network/modules/multus-underlay/nmstat.md
               - Integrate Submariner:
-                  - Introduction: tf/network/modules/submariner/index.md
+                  - Intro: tf/network/modules/submariner/index.md
                   - Install: tf/network/modules/submariner/install.md
                   - Usage Notes: tf/network/modules/submariner/usage.md
               - Integrate Kdoctor:
-                    - Introduction: tf/network/modules/kdoctor/index.md
+                    - Intro: tf/network/modules/kdoctor/index.md
                     - Install: tf/network/modules/kdoctor/install.md
               - Integrate Alibaba Cloud Terway:
-                  - Introduction: tf/network/modules/aliyun-terway/index.md
+                  - Intro: tf/network/modules/aliyun-terway/index.md
                   - Terway Network Mode: tf/network/modules/aliyun-terway/what.md
                   - Usage Notes: tf/network/modules/aliyun-terway/usage.md
                   - Run Calico in Alibaba Cloud: tf/network/modules/aliyun-terway/aliyun-calico.md
                   - Run Cilium in Alibaba Cloud: tf/network/modules/aliyun-terway/aliyun-cilium.md
-                  - FAQ: tf/network/modules/aliyun-terway/Q_A.md
+                  - FAQs: tf/network/modules/aliyun-terway/Q_A.md
               - Integrate Unifabric:
                   - Unifabric Overview: tf/network/modules/unifabric/index.md
                   - Release Notes: tf/network/modules/unifabric/release-notes.md
                   - Install Unifabric: tf/network/modules/unifabric/install.md
                   - RDMA Latency Monitoring Usage Guide: tf/network/modules/unifabric/features/RdmaLatencyDetection.md
           - Cloud Native Storage:
-              - Introduction:
+              - Intro:
                   - What is Cloud Native Storage: tf/storage/index.md
                   - Features: tf/storage/features.md
                   - Release Notes: tf/storage/hwameistor/release-notes.md
@@ -533,14 +533,14 @@ nav:
                       - Local Disk Manager: tf/storage/hwameistor/intro/ldm.md
                       - Local Storage: tf/storage/hwameistor/intro/ls.md
                       - DRBD Installer:
-                          - Introduction: tf/storage/hwameistor/intro/drbd.md
+                          - Intro: tf/storage/hwameistor/intro/drbd.md
                           - DRBD Supported Kernel Versions: tf/storage/hwameistor/intro/drbd-support.md
                           - DRBD Self-Compilation Operations: tf/storage/hwameistor/intro/drdb-kernel-make.md
                       - Scheduler: tf/storage/hwameistor/intro/scheduler.md
                       - Admission Controller: tf/storage/hwameistor/intro/admission-controller.md
                       - Evictor: tf/storage/hwameistor/intro/evictor.md
                       - Metrics Collector: tf/storage/hwameistor/intro/exporter.md
-                  - Resources Introduction: tf/storage/hwameistor/intro/resources.md
+                  - Resources Intro: tf/storage/hwameistor/intro/resources.md
                   - Install Management:
                       - Prerequisites: tf/storage/hwameistor/install/prereq.md
                       - Resource Requirements: tf/storage/hwameistor/install/proresource.md
@@ -569,10 +569,10 @@ nav:
                       - Deploy Stateful Applications:
                           - Deploy with Local Volume: tf/storage/hwameistor/application/local.md
                           - Deploy with HA Volume: tf/storage/hwameistor/application/ha.md
-                  - FAQ: tf/storage/hwameistor/faqs.md
+                  - FAQs: tf/storage/hwameistor/faqs.md
               - Integrate Open Source Storage Solutions:
                   - Rook-Ceph:
-                      - Rook-Ceph Introduction: tf/storage/solutions/rook-ceph.md
+                      - Rook-Ceph Intro: tf/storage/solutions/rook-ceph.md
                       - Rook-Ceph Deploy - App Store: tf/storage/solutions/dce-rook-ceph.md
                       - Rook-Ceph Deploy - Helm: tf/storage/solutions/helm-rook-ceph.md
                       - How to Integrate Ceph Dashboard: tf/storage/solutions/ceph-dashboard.md
@@ -580,10 +580,10 @@ nav:
                       - Create Ceph RBD Storage Class: tf/storage/solutions/sc-cephrbd.md
                       - Create Ceph RGW Storage Class: tf/storage/solutions/sc-cephrgw.md
                   - Longhorn:
-                      - Longhorn Introduction: tf/storage/solutions/longhorn.md
+                      - Longhorn Intro: tf/storage/solutions/longhorn.md
                       - Longhorn Deploy - App Store: tf/storage/solutions/dce-longhorn.md
                   - OpenEBS:
-                      - OpenEBS Introduction: tf/storage/solutions/openebs.md
+                      - OpenEBS Intro: tf/storage/solutions/openebs.md
                       - Deploy OpenEBS via Helm: tf/storage/solutions/openebs-helm.md
                   - TiDB: tf/storage/hwameistor/application/tidb.md
                   - MinIO: tf/storage/hwameistor/application/minio/minio.md
@@ -611,7 +611,7 @@ nav:
       - IT Operations:
           - Insight:
               - tf/insight/intro/index.md
-              - Introduction:
+              - Intro:
                   - Features: tf/insight/intro/features.md
                   - Benefits: tf/insight/intro/benefits.md
                   - Application Scenarios: tf/insight/intro/scenarios.md
@@ -709,7 +709,7 @@ nav:
                   - Kubernetes Compatibility Testing: tf/insight/compati-test/k8s-compatibility.md
                   - Rancher Compatibility Testing: tf/insight/compati-test/rancher-compatibility.md
                   - Openshift Compatibility Testing: tf/insight/compati-test/ocp-compatibility.md
-              - FAQ:
+              - FAQs:
                   - Trace Data Clock Skew: tf/insight/faq/traceclockskew.md
                   - Log Collection Troubleshooting Guide: tf/insight/best-practice/debug-log.md
                   - Trace Collection Troubleshooting Guide: tf/insight/best-practice/debug-trace.md
@@ -723,11 +723,11 @@ nav:
                   - Fluent Bit Failed on NeoKylin Linux: tf/insight/faq/kylin-fluentbit.md
           - Global Management:
               - tf/ghippo/intro/index.md
-              - Introduction:
+              - Intro:
                   - Features: tf/ghippo/intro/features.md
                   - Glossary: tf/ghippo/intro/glossary.md
                   - Release Notes: tf/ghippo/intro/release-notes.md
-                  - FAQ: tf/ghippo/intro/faq.md
+                  - FAQs: tf/ghippo/intro/faq.md
               - Install, Login and Upgrade:
                   - Offline Upgrade Global Management: tf/ghippo/install/offline-install.md
                   - Custom Reverse Proxy Server Address: tf/ghippo/install/reverse-proxy.md
