@@ -3,7 +3,7 @@
 INHERIT: navigation.yml
 
 # Project information
-site_name: DaoCloud Documentation
+site_name: DaoCloud 文档中心
 site_url: https://docs.daocloud.io/
 site_author: DaoCloud
 site_description: >-

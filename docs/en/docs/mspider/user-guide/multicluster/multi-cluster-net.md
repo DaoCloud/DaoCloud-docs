@@ -238,6 +238,6 @@ Summarize the advantages of the service mesh technology selection scheme:
 
 ## Reference
 
-Some pictures in This page are from [Istio official website](https://istio.io/latest/docs/) and [DaoCloud documentation website](https://docs.daocloud.io/).
+Some pictures in This page are from [Istio official website](https://istio.io/latest/docs/) and [DaoCloud Docs Hub](https://docs.daocloud.io/).
 
 See [Istio Deployment Models](https://istio.io/latest/docs/ops/deployment/deployment-models/).

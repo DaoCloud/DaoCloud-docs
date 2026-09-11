@@ -49,7 +49,7 @@ With DCE's cloud native DNA, enterprises can fully leverage the advantages of bo
 
 <div class="tf-arch tf-arch--compact">
   <div class="tf-arch-layer tf-arch-layer--compute">
-    <div class="tf-arch-layer-label">Cloud Native Base</div>
+    <div class="tf-arch-layer-label">Cloud Native Infra</div>
     <div class="tf-arch-cards">
       <a class="tf-arch-card tf-arch-card--compute" href="../middleware/">
         <span class="tf-arch-card-title">Middleware</span>
