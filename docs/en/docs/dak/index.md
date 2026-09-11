@@ -11,5 +11,3 @@ This method addresses the issues of user privacy data protection and model hallu
 Here, you can create apps and plugins to build a corpus for AI conversations, and then optimize user experience through data analysis feedback.
 
 ![App Center](./images/app-center.jpg)
-
-[Register and Try d.run](https://console.d.run/){ .md-button .md-button--primary }

@@ -20,5 +20,3 @@ d.run 智能问答（AI 应用）是基于 **RAG（Retrieval-Augmented Generatio
 无论是在线客服、知识管理，还是内部知识检索，d.run 智能问答都能帮助您快速构建 **高效、可信、可控** 的 AI 知识服务体系。
 
 ![应用中心](./images/app-center.jpg)
-
-[注册并体验 d.run](https://console.d.run/){ .md-button .md-button--primary }
