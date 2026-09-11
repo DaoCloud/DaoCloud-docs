@@ -28,6 +28,12 @@ DaoCloud 出品的 DCE 是经 Kubernetes 官方认证的 AI 服务平台。
 
 作为国内开源事业的领军企业，DaoCloud 紧跟云原生 AI 发展潮流。在社区推出 Kubernetes AI Conformance 合规标准后，率先针对目前广泛使用的 Kubernetes v1.33 启动 [DCE](https://docs.daocloud.io/) 平台的 AI Conformance 测试，并于 2025 年 10 月[成功通过认证](https://github.com/cncf/ai-conformance/pull/13)， 成为国内首个在该版本获得认证的企业级 AI/ML 平台。
 
+DaoCloud 产品已通过 CNCF AI 合规认证支持以下 Kubernetes 版本：
+
+[![1.35](../images/ai-1.35.png)](https://github.com/cncf/k8s-ai-conformance/pull/121)
+[![1.34](../images/ai-1.34.png)](https://github.com/cncf/k8s-ai-conformance/pull/114)
+[![1.33](../images/ai-1.33.png)](https://github.com/cncf/k8s-ai-conformance/pull/13)
+
 ## Kubernetes Conformance
 
 作为一家经过官方严格审核的 Kubernetes 服务提供商，DaoCloud 在帮助企业采用 Kubernetes 成功部署大规模集群方面有深厚的经验。
@@ -39,29 +45,30 @@ DaoCloud 作为一家经验丰富的 KCSP 意味着：
 - 最终用户选用 Kubernetes 部署集群时，DaoCloud 是 CNCF 云原生社区公认并推荐的品牌供应商
 - 常年位列 KCSP 的 DaoCloud 掌握云原生领域领先技术，时刻引领云原生社区发展方向
 
-目前 DaoCloud 经授权合规的 Kubernetes 版本包括但不限于：
+DaoCloud 产品已通过 CNCF 合规认证支持以下 Kubernetes 版本：
 
-K8s 官方维护的当前 4 个版本：
-
-[![1.29](../images/1.29.png)](https://github.com/cncf/k8s-conformance/pull/3203)
-[![1.30](../images/1.30.png)](https://github.com/cncf/k8s-conformance/pull/3578)
-[![1.31](../images/1.31.png)](https://github.com/cncf/k8s-conformance/pull/3675)
+[![1.36](../images/1.36.png)](https://github.com/cncf/k8s-conformance/pull/4353)
+[![1.35](../images/1.35.png)](https://github.com/cncf/k8s-conformance/pull/4195)
+[![1.34](../images/1.34.png)](https://github.com/cncf/k8s-conformance/pull/4022)
+[![1.33](../images/1.33.png)](https://github.com/cncf/k8s-conformance/pull/3927)
 [![1.32](../images/1.32.png)](https://github.com/cncf/k8s-conformance/pull/3810)
-
-K8s 官方不再维护（但 DaoCloud [KLTS](https://klts.io/) 会持续维护）的历史版本：
-
-[![1.7](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
-[![1.9](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
-[![1.13](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
-[![1.15](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
-[![1.18](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
-[![1.20](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
-[![1.23](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
-[![1.24](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
-[![1.25](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
-[![1.26](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
-[![1.27](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
+[![1.31](../images/1.31.png)](https://github.com/cncf/k8s-conformance/pull/3675)
+[![1.30](../images/1.30.png)](https://github.com/cncf/k8s-conformance/pull/3578)
+[![1.29](../images/1.29.png)](https://github.com/cncf/k8s-conformance/pull/3203)
 [![1.28](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
+[![1.27](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
+[![1.26](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
+[![1.25](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
+[![1.24](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
+[![1.23](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
+[![1.20](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
+[![1.18](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
+[![1.15](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
+[![1.13](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
+[![1.9](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
+[![1.7](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
+
+> 其中较旧的历史版本由 DaoCloud 开源的 [KLTS](https://klts.io/) 持续维护。
 
 <!--
 Source: https://github.com/cncf/artwork/tree/master/projects/kubernetes/certified-kubernetes
