@@ -5,8 +5,6 @@
 
 [中文版](README_zh.md) ｜ English
 
-DaoCloud is a Certified Kubernetes Service Provider (KCSP) and Certified AI Platform. Its products have been certified with the following Kubernetes releases:
-
 DaoCloud is a certified Kubernetes and AI service provider.
 
 - Its products have passed CNCF AI Conformance certification to support the following Kubernetes versions:
@@ -39,7 +37,7 @@ DaoCloud is a certified Kubernetes and AI service provider.
   [![1.7](./images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
 
 > Legacy versions that are no longer maintained by the K8s community but will continue to be maintained by DaoCloud's [KLTS](https://klts.io/).
-> 
+>
 > This website is created with MkDocs. All pages are written in markdown. We use GitOps to control workflow and versions.
 
 ## Open a PR
