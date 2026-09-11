@@ -111,7 +111,7 @@ nav:
                   - Image List: tf/zestu/myimages/images.md
                   - Save Image: tf/zestu/myimages/image-save.md
               - FAQs: tf/zestu/faq.md
-      - Cloud Native Foundation:
+      - Cloud Native Infra:
           - Container Management:
               - tf/kpanda/intro/index.md
               - Intro:
@@ -596,8 +596,8 @@ nav:
                   - Storage Volume: tf/storage/terms/volume.md
                   - LVM: tf/storage/terms/lvm.md
                   - PV and PVC: tf/storage/terms/pv_pvc.md
-      - Operations Management:
-          - Cost Center:
+      - Operations:
+          - Billing Center:
               - tf/leopard/index.md
               - Transactions: tf/leopard/transactions.md
               - Orders: tf/leopard/orders.md
@@ -608,7 +608,7 @@ nav:
               - Voucher: tf/leopard/voucher.md
               - Credit Limit: tf/leopard/credit_limit.md
               - Activity Center: tf/leopard/activitycenter.md
-      - IT Operations:
+      - OAM:
           - Insight:
               - tf/insight/intro/index.md
               - Intro:
