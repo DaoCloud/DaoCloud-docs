@@ -120,7 +120,7 @@ nav:
                   - Enable Istio GAIE Feature for Cluster: drun/inferx/guides/enable-istio-gaie-with-mspider.md
                   - Model Weight Download and Configuration: drun/inferx/guides/model-weights-setup.md
                   - Expose Model Service Externally (Hydra/Knoway): drun/inferx/guides/export-by-hydra.md
-      - Cloud Native Foundation:
+      - Cloud Native Infra:
           - Container Management:
               - drun/kpanda/intro/index.md
               - Intro:
@@ -605,7 +605,7 @@ nav:
                   - Storage Volume: drun/storage/terms/volume.md
                   - LVM: drun/storage/terms/lvm.md
                   - PV and PVC: drun/storage/terms/pv_pvc.md
-      - IT Operations:
+      - OAM:
           - Insight:
               - drun/insight/intro/index.md
               - Intro:
