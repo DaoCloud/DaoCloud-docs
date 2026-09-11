@@ -866,6 +866,7 @@ nav:
                   - 通知配置: insight/user-guide/alert-center/message.md
                   - 配置通知服务器: insight/user-guide/alert-center/sms-provider.md
                   - 消息模板: insight/user-guide/alert-center/msg-template.md
+                  - 通知策略: insight/user-guide/alert-center/notify-policy.md
                   - 告警静默: insight/user-guide/alert-center/silent.md
                   - 告警抑制: insight/user-guide/alert-center/inhibition.md
               - 数据采集:
