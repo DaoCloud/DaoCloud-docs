@@ -1,36 +1,44 @@
-# DaoCloud Enterprise 5.0 Documentation
+# DaoCloud Docs Hub
 
 [![Contributors](https://img.shields.io/github/contributors/daocloud/daocloud-docs?color=purple)](CONTRIBUTING.md)
 [![Build](https://github.com/DaoCloud/DaoCloud-docs/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/DaoCloud/DaoCloud-docs/actions/workflows/main.yml)
 
 [中文版](README_zh.md) ｜ English
 
-DaoCloud is a Certified Kubernetes Service Provider (KCSP). DCE has been certified with the following releases:
+DaoCloud is a certified Kubernetes and AI service provider.
 
-Current releases maintained by K8s community:
+- Its products have passed CNCF AI Conformance certification to support the following Kubernetes versions:
 
-[![1.29](./images/1.29.png)](https://github.com/cncf/k8s-conformance/pull/3203)
-[![1.30](./docs/zh/docs/images/1.30.png)](https://github.com/cncf/k8s-conformance/pull/3578)
-[![1.31](./docs/zh/docs/images/1.31.png)](https://github.com/cncf/k8s-conformance/pull/3675)
-[![1.32](./docs/zh/docs/images/1.32.png)](https://github.com/cncf/k8s-conformance/pull/3810)
+  [![1.35](./docs/zh/docs/images/1.35.png)](https://github.com/cncf/k8s-ai-conformance/pull/121)
+  [![1.34](./docs/zh/docs/images/1.34.png)](https://github.com/cncf/k8s-ai-conformance/pull/114)
+  [![1.33](./docs/zh/docs/images/1.33.png)](https://github.com/cncf/k8s-ai-conformance/pull/13)
 
-Legacy versions that are no longer maintained by the K8s community but will continue to be maintained by DaoCloud's [KLTS](https://klts.io/):
+- Its products have passed CNCF Conformance certification to support the following Kubernetes versions:
 
-[![1.7](./images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
-[![1.9](./images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
-[![1.13](./images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
-[![1.15](./images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
-[![1.18](./images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
-[![1.20](./images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
-[![1.23](./images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
-[![1.24](./images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
-[![1.25](./images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
-[![1.26](./images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
-[![1.27](./images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
-[![1.28](./images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
+  [![1.36](./docs/zh/docs/images/1.36.png)](https://github.com/cncf/k8s-conformance/pull/4353)
+  [![1.35](./docs/zh/docs/images/1.35.png)](https://github.com/cncf/k8s-conformance/pull/4195)
+  [![1.34](./docs/zh/docs/images/1.34.png)](https://github.com/cncf/k8s-conformance/pull/4022)
+  [![1.33](./docs/zh/docs/images/1.33.png)](https://github.com/cncf/k8s-conformance/pull/3927)
+  [![1.32](./docs/zh/docs/images/1.32.png)](https://github.com/cncf/k8s-conformance/pull/3810)
+  [![1.31](./docs/zh/docs/images/1.31.png)](https://github.com/cncf/k8s-conformance/pull/3675)
+  [![1.30](./docs/zh/docs/images/1.30.png)](https://github.com/cncf/k8s-conformance/pull/3578)
+  [![1.29](./images/1.29.png)](https://github.com/cncf/k8s-conformance/pull/3203)
+  [![1.28](./images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
+  [![1.27](./images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
+  [![1.26](./images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
+  [![1.25](./images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
+  [![1.24](./images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
+  [![1.23](./images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
+  [![1.20](./images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
+  [![1.18](./images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
+  [![1.15](./images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
+  [![1.13](./images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
+  [![1.9](./images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
+  [![1.7](./images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
 
-DCE 5.0 website is created with MkDocs. All pages are written in markdown.
-We use GitOps to control workflow and versions.
+> Legacy versions that are no longer maintained by the K8s community but will continue to be maintained by DaoCloud's [KLTS](https://klts.io/).
+>
+> This website is created with MkDocs. All pages are written in markdown. We use GitOps to control workflow and versions.
 
 ## Open a PR
 
