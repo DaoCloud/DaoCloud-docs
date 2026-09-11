@@ -92,7 +92,6 @@ hide:
     
     请求成功后，可在[收支明细](./transactions.md)中查看记录。
 
-
 ## 余额提醒
 
 1. 点击 **现金余额** 旁的 **余额提醒已关闭**（默认为关闭状态），即可开启。
@@ -103,4 +102,3 @@ hide:
   
      ![balance_setting](images/balance_setting.png){width=900px}
 
-[注册并体验 d.run](https://console.d.run/){ .md-button .md-button--primary }

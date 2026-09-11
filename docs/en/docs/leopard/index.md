@@ -32,5 +32,3 @@ You can top-up your account online in the **Wallet** , and the top-up amount can
 
 3. After the top-up is completed, check the total balance of your account in **Balance** ,
    and you can view the top-up records in **Transactions**.
-
-[Register and Try d.run](https://console.d.run/){ .md-button .md-button--primary }

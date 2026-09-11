@@ -20,5 +20,3 @@ resource types and billing methods to create container instances based on their 
 Click **Buy Now** to go to [Create Container Instance](instance.md).
 
 ![Compute Market](../images/regis01.png)
-
-[Register and Try d.run](https://console.d.run/){ .md-button .md-button--primary }
