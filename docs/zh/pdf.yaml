@@ -2,7 +2,7 @@
 # This file is used to split config and docs navigation
 
 # Project information
-site_name: DaoCloud Documentation
+site_name: DaoCloud 文档中心
 site_url: https://docs.daocloud.io/
 site_author: DaoCloud
 site_description: >-
@@ -33,7 +33,7 @@ plugins:
   #     media_type: print
   - extra-sass
   - with-pdf:
-      cover_subtitle: DaoCloud Documentation
+      cover_subtitle: DaoCloud 文档中心
       back_cover: true
       toc_level: 2
       ordered_chapter_level: 2
