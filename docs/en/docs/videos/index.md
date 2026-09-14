@@ -33,12 +33,12 @@ This page provides video tutorials to help you quickly get started with our prod
 
 <div class="grid cards" markdown>
 
-- :technologist_tone1: [Register and Login](./d.run/login.md)
-- :octicons-cloud-16: [Compute Cloud](./d.run/zestu.md)
-- :simple-themodelsresource: [LLM Studio](./d.run/models.md)
-- :octicons-apps-24: [AI Apps](./d.run/ai-app.md)
-- :fontawesome-solid-sack-dollar: [Billing Center](./d.run/bills.md)
-- :octicons-gear-16: [Personal Center](./d.run/login.md)
+- :technologist_tone1: [Register and Login](drun/login.md)
+- :octicons-cloud-16: [Compute Cloud](drun/zestu.md)
+- :simple-themodelsresource: [LLM Studio](drun/models.md)
+- :octicons-apps-24: [AI Apps](drun/ai-app.md)
+- :fontawesome-solid-sack-dollar: [Billing Center](drun/bills.md)
+- :octicons-gear-16: [Personal Center](drun/login.md)
 
 </div>
 

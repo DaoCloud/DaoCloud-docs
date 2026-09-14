@@ -195,6 +195,6 @@ hide:
 Clusterpedia, HwameiStor, Merbridge, Spiderpool, and Kubean have been selected for the <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>.
 </p>
 
-[Download DCE](../download/index.md){ .md-button .md-button--primary }
-[Install DCE](../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+[Free Try DCE](../dce/license0.md){ .md-button .md-button--primary }
+[Learn d.run](../drun/index.md){ .md-button .md-button--primary }
+[Token Factory Overview](../tf/index.md){ .md-button .md-button--primary }

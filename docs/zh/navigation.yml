@@ -1483,12 +1483,12 @@ nav:
           - 管理:
               - 全局管理: videos/ghippo.md
       - d.run:
-          - 注册与登录: videos/login.md
-          - 算力云: videos/zestu.md
-          - 大模型服务平台: videos/models.md
-          - AI Lab: videos/baize.md
-          - AI 应用: videos/ai-app.md
-          - 费用中心: videos/bills.md
+          - 注册与登录: videos/drun/login.md
+          - 算力云: videos/drun/zestu.md
+          - 大模型服务平台: videos/drun/models.md
+          - AI Lab: videos/drun/baize.md
+          - AI 应用: videos/drun/ai-app.md
+          - 费用中心: videos/drun/bills.md
   - 下载中心:
       - DaoCloud 下载站:
           - 导览页: download/index.md

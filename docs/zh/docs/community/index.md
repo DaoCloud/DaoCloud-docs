@@ -195,5 +195,5 @@ Clusterpedia、HwameiStor、Merbridge、Spiderpool 和 Kubean 均已入选 <a hr
 </p>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
-[了解 d.run](drun/index.md){ .md-button .md-button--primary }
-[Token 工厂概览](tf/index.md){ .md-button .md-button--primary }
+[了解 d.run](../drun/index.md){ .md-button .md-button--primary }
+[Token 工厂概览](../tf/index.md){ .md-button .md-button--primary }

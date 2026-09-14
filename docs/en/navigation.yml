@@ -1508,11 +1508,11 @@ nav:
           - Management:
               - Global Management: videos/ghippo.md
       - d.run:
-          - Regiester and Login: videos/login.md
-          - Compute Cloud: videos/zestu.md
-          - LLM Studio: videos/models.md
-          - AI Apps: videos/ai-app.md
-          - Billing Center: videos/bills.md
+          - Regiester and Login: videos/drun/login.md
+          - Compute Cloud: videos/drun/zestu.md
+          - LLM Studio: videos/drun/models.md
+          - AI Apps: videos/drun/ai-app.md
+          - Billing Center: videos/drun/bills.md
   - Downloads:
       - DaoCloud Download Hub:
           - Index: download/index.md

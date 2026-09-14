@@ -33,12 +33,12 @@ hide:
 
 <div class="grid cards" markdown>
 
-- :technologist_tone1: [注册与登录](./d.run/login.md)
-- :octicons-cloud-16: [算力云](./d.run/zestu.md)
-- :simple-themodelsresource: [大模型服务平台](./d.run/models.md)
-- :octicons-apps-24: [AI 应用](./d.run/ai-app.md)
-- :fontawesome-solid-sack-dollar: [费用中心](./d.run/bills.md)
-- :octicons-gear-16: [个人中心](./d.run/login.md)
+- :technologist_tone1: [注册与登录](drun/login.md)
+- :octicons-cloud-16: [算力云](drun/zestu.md)
+- :simple-themodelsresource: [大模型服务平台](drun/models.md)
+- :octicons-apps-24: [AI 应用](drun/ai-app.md)
+- :fontawesome-solid-sack-dollar: [费用中心](drun/bills.md)
+- :octicons-gear-16: [个人中心](drun/login.md)
 
 </div>
 
