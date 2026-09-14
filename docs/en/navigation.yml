@@ -723,7 +723,6 @@ nav:
                   - Live Migration: virtnest/vm/live-migration.md
                   - Migrate VM across Clusters: virtnest/vm/cross-cluster-migrate.md
                   - VM Monitor: virtnest/vm/monitor.md
-                  - VM GPU: virtnest/vm/vm-gpu.md
                   - VM Network: virtnest/vm/vm-network.md
                   - VM Storage: virtnest/vm/vm-sc.md
                   - VM Drift: virtnest/vm/auto-migrate.md

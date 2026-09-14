@@ -22,6 +22,8 @@ jobs:
 
       - run: make sync
 
+      - run: make check-redirects
+
       - run: make build all
         env:
           ENABLED_GIT_REVISION_DATE: "false"
