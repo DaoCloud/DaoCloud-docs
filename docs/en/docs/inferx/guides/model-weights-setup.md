@@ -40,25 +40,25 @@ For more detailed examples, please refer to the related documentation:
 
 ### Dataset Installation
 
-#### Option 1: Use DCE Hydra Built-in Dataset Capability
+- Option 1: Use DCE Hydra Built-in Dataset Capability
 
-If **Hydra** is installed in your DCE environment, you can directly use Hydra's model weight download feature. Hydra implements model weight management based on **Dataset** without additional installation.
+    If **Hydra** is installed in your DCE environment, you can directly use Hydra's model weight download feature. Hydra implements model weight management based on **Dataset** without additional installation.
 
-#### Option 2: Install Dataset Addon via DCE UI
+- Option 2: Install Dataset Addon via DCE UI
 
-The DCE Addon repository has a built-in Dataset Helm Chart. You can install it with one click through the UI. After installation, you can create Dataset resources as needed.
+    The DCE Addon repository has a built-in Dataset Helm Chart. You can install it with one click through the UI. After installation, you can create Dataset resources as needed.
 
-![dce addon dataset](images/dce-addon-dataset-helm.png)
+    ![dce addon dataset](images/dce-addon-dataset-helm.png)
 
-#### Option 3: Manual Helm Installation of Dataset
+- Option 3: Manual Helm Installation of Dataset
 
-```bash
-helm repo add baizeai https://baizeai.github.io/charts
-helm repo update
-helm install dataset baizeai/dataset \
-  -n dataset-system \
-  --create-namespace
-```
+    ```bash
+    helm repo add baizeai https://baizeai.github.io/charts
+    helm repo update
+    helm install dataset baizeai/dataset \
+      -n dataset-system \
+      --create-namespace
+    ```
 
 ### Model Weight Download
 

@@ -40,25 +40,25 @@ InferX 支持以下两种模型权重管理方式：
 
 ### Dataset 安装
 
-#### 方案一：通过 DCE Hydra 内置 Dataset 能力
+- 方案一：通过 DCE Hydra 内置 Dataset 能力
 
-如果您的 DCE 环境中已安装 **Hydra**，则可以直接使用 Hydra 的模型权重下载功能。Hydra 基于 **Dataset** 实现模型权重的管理，无需额外安装。
+    如果您的 DCE 环境中已安装 **Hydra**，则可以直接使用 Hydra 的模型权重下载功能。Hydra 基于 **Dataset** 实现模型权重的管理，无需额外安装。
 
-#### 方案二：在 DCE 界面通过 Helm 安装 Dataset Addon
+- 方案二：在 DCE 界面通过 Helm 安装 Dataset Addon
 
-DCE 的 Addon 仓库已内置 Dataset Helm Chart，您可以通过界面一键安装。安装完成后，即可根据需求创建 Dataset 资源。
+    DCE 的 Addon 仓库已内置 Dataset Helm Chart，您可以通过界面一键安装。安装完成后，即可根据需求创建 Dataset 资源。
 
-![dce addon dataset](images/dce-addon-dataset-helm.png)
+    ![dce addon dataset](images/dce-addon-dataset-helm.png)
 
-#### 方案三：手动 Helm 安装 Dataset
+- 方案三：手动 Helm 安装 Dataset
 
-```bash
-helm repo add baizeai https://baizeai.github.io/charts
-helm repo update
-helm install dataset baizeai/dataset \
-  -n dataset-system \
-  --create-namespace
-```
+    ```bash
+    helm repo add baizeai https://baizeai.github.io/charts
+    helm repo update
+    helm install dataset baizeai/dataset \
+      -n dataset-system \
+      --create-namespace
+    ```
 
 ### 模型权重下载
 

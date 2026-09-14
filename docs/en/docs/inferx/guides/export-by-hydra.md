@@ -1,4 +1,4 @@
-# Expose Model Service Externally (Hydra / Knoway)
+# Expose Model Service Externally (Hydra/Knoway)
 
 After the InferX model is successfully deployed, you can expose and access it through the following two methods:
 
@@ -23,10 +23,12 @@ After the InferX model is successfully deployed, you can expose and access it th
 On the MaaS O&M management page, fill in the following core information for the target model:
 
 1. **Model ID**
-   It is recommended to keep it consistent with the InferX model name, e.g.: `Qwen/Qwen3-0.6B`
+   
+    It is recommended to keep it consistent with the InferX model name, e.g.: `Qwen/Qwen3-0.6B`
 
 2. **Endpoint**
-   InferX models are exposed uniformly through a Gateway. You can get the gateway address with the following command:
+   
+    InferX models are exposed uniformly through a Gateway. You can get the gateway address with the following command:
 
     ```bash
     NAMESPACE=public
@@ -67,20 +69,18 @@ metadata:
   name: custom-qwen3-06b
   namespace: default
 spec:
-  modelName: public/Qwen3-0.6B # Model name must be unique
+  modelName: public/Qwen3-0.6B # (1)!
   provider: vLLM
   upstream:
-    baseUrl: http://qwen3-06b-inference-gateway-istio.public.svc.cluster.local/v1
+    baseUrl: http://qwen3-06b-inference-gateway-istio.public.svc.cluster.local/v1 # (2)!
     overrideParams:
       openai:
-        model: Qwen/Qwen3-0.6B
+        model: Qwen/Qwen3-0.6B # (3)!
 ```
 
-Parameter description:
-
-- `spec.modelName`: The exposed model name (used for business calls), must be unique
-- `spec.upstream.baseUrl`: InferX Gateway address, must include `/v1`
-- `spec.upstream.overrideParams.openai.model`: The actual model name passed through to the inference service
+1. The exposed model name (used for business calls), must be unique
+2. InferX Gateway address, must include `/v1`
+3. The actual model name passed through to the inference service
 
 ### Verification
 
