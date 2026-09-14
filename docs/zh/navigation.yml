@@ -1492,6 +1492,8 @@ nav:
   - 下载中心:
       - DaoCloud 下载站:
           - 导览页: download/index.md
+          - 下载 d.run Token 工厂效能平台: download/tf/index.md
+          - 下载 d.run AI 操作系统: download/drun/index.md
           - 下载 DCE 社区版: download/free/dce5-installer-history.md
           - 下载 DCE 商业版: download/business/dce5-installer-history.md
           - 下载 Addon 离线包: download/addon/history.md
