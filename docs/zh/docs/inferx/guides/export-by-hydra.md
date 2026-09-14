@@ -1,4 +1,4 @@
-# 模型服务对外暴露（Hydra / Knoway）
+# 模型服务对外暴露（Hydra/Knoway）
 
 InferX 模型部署成功后，可以通过以下两种方式对外暴露并访问：
 
@@ -23,10 +23,12 @@ InferX 模型部署成功后，可以通过以下两种方式对外暴露并访�
 在 MaaS 运维管理页面，为目标模型填写以下核心信息：
 
 1. **模型 ID**
-   建议与 InferX 模型名保持一致，例如：`Qwen/Qwen3-0.6B`
+   
+    建议与 InferX 模型名保持一致，例如：`Qwen/Qwen3-0.6B`
 
 2. **Endpoint**
-   InferX 模型统一通过 Gateway 暴露，可通过以下命令获取网关地址：
+   
+    InferX 模型统一通过 Gateway 暴露，可通过以下命令获取网关地址：
 
     ```bash
     NAMESPACE=public
@@ -67,20 +69,18 @@ metadata:
   name: custom-qwen3-06b
   namespace: default
 spec:
-  modelName: public/Qwen3-0.6B # 模型名必须唯一
+  modelName: public/Qwen3-0.6B # (1)!
   provider: vLLM
   upstream:
-    baseUrl: http://qwen3-06b-inference-gateway-istio.public.svc.cluster.local/v1
+    baseUrl: http://qwen3-06b-inference-gateway-istio.public.svc.cluster.local/v1 # (2)!
     overrideParams:
       openai:
-        model: Qwen/Qwen3-0.6B
+        model: Qwen/Qwen3-0.6B # (3)!
 ```
 
-参数说明：
-
-- `spec.modelName`：对外暴露的模型名（业务调用时使用）, 必须唯一
-- `spec.upstream.baseUrl`：InferX Gateway 地址，必须包含 `/v1`
-- `spec.upstream.overrideParams.openai.model`：透传到推理服务的实际模型名
+1. 对外暴露的模型名（业务调用时使用）, 必须唯一
+2. InferX Gateway 地址，必须包含 `/v1`
+3. 透传到推理服务的实际模型名
 
 ### 验证
 

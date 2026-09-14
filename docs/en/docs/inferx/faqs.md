@@ -4,7 +4,7 @@
 
 ### Install Gateway API
 
-#### Via kpanda Helm Template
+#### Via kpanda Helm Charts
 
 ![gateway-api-helm-charts](guides/images/gateway-api-helm-charts.png)
 
@@ -35,6 +35,7 @@ helm install lws https://github.com/kubernetes-sigs/lws/releases/download/$VERSI
 ### inferencepools CRD Conflict During Installation
 
 You can skip the inferencepools CRD installation by adding the `--skip-crds` parameter:
+
 ```bash
 export INFERX_CHART_VERSION=0.1.0-xxx
 helm -n public upgrade --install qwen3-06b inferx/inferx --version $INFERX_CHART_VERSION --skip-crds -f manifests/examples/inference-scheduling/values-single-vgpu.yaml
@@ -68,5 +69,5 @@ reason: InvalidKind
 
 2. Enable the GAIE feature:
 
-    - For istio installed via `mspider`, refer to [Enable Istio GAIE Feature in Cluster](enable-istio-gaie-with-mspider.md) for configuration
-    - For istio or agent-gateway installed via other methods, refer to community documentation to enable the GAIE feature
+    - For istio installed via `mspider`, refer to [Enable Istio GAIE Feature in Cluster](./guides/enable-istio-gaie-with-mspider.md) for configuration.
+    - For istio or agent-gateway installed via other methods, refer to community documentation to enable the GAIE feature.
