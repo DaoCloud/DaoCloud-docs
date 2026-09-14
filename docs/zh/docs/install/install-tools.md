@@ -25,7 +25,7 @@
 1. 下载脚本。
 
     ```bash
-    export VERSION=v0.43.0   # (1)!
+    export VERSION=v0.44.0   # (1)!
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
@@ -58,20 +58,20 @@
 1. 找一台能连通外网的机器，下载安装脚本。
 
     ```bash
-    export VERSION=v0.43.0
+    export VERSION=v0.44.0
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
 2. 下载前置依赖组件离线包。
 
     ```bash
-    export VERSION=v0.43.0  
+    export VERSION=v0.44.0  
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz
     ```
 
     !!! note
 
-        - 如果是 arm 架构，请使用下载地址：
+        - 如果是 ARM 架构，请使用下载地址：
           <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_arm64.tar.gz>
         - 确保离线包与脚本在同一个目录层级
 
