@@ -231,6 +231,11 @@ check-links: ## Check compatibility links and write check-results.txt
 	uv run --group link-check python scripts/check_links.py > check-results.txt
 	@printf '$(GREEN)OK wrote check-results.txt$(RESET)\n\n'
 
+check-redirects: ## Validate redirect_maps of every MkDocs config
+	@printf '\n$(BOLD)Checking redirect maps$(RESET)\n'
+	uv run python scripts/check_redirect_targets.py
+	@printf '$(GREEN)OK redirect maps verified$(RESET)\n\n'
+
 release-notes: ## Sync project release notes from GitHub releases
 	@printf '\n$(BOLD)Syncing project release notes$(RESET)\n'
 	bash scripts/release.sh
@@ -272,4 +277,4 @@ help: ## Show available targets
 zh en all:
 	@:
 
-.PHONY: clean serve build build-path sync sync-upload sync-link-check sync-pdf sync-pdf-tools sync-translate sync-report sync-image generate-nav netlify-preview docx word-count lsync translate-file translate-folder translate-all upload-images upload-md-images pdf-unlock pdf merge-openapi-docs merge-download-docs merge-external-docs check-links release-notes upload-ucloud refresh-cdn-cache serve-docker help zh en all
+.PHONY: clean serve build build-path sync sync-upload sync-link-check sync-pdf sync-pdf-tools sync-translate sync-report sync-image generate-nav netlify-preview docx word-count lsync translate-file translate-folder translate-all upload-images upload-md-images pdf-unlock pdf merge-openapi-docs merge-download-docs merge-external-docs check-links check-redirects release-notes upload-ucloud refresh-cdn-cache serve-docker help zh en all
