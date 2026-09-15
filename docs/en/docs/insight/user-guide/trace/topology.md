@@ -53,6 +53,6 @@ In the Service Map, there can be nodes that are not part of the cluster. These e
 
 1. Update the `insight-server` chart values, locate the parameter shown in the image below, and change `false` to `true`.
 
-   ![change-parameters](../../image/servicemap.png)
+   ![change-parameters](../../images/servicemap.png)
 
 2. In the display settings of the service map, check the **Virtual Services** option to enable it.

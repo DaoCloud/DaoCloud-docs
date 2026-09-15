@@ -49,7 +49,7 @@ There are mainly the following conditions:
 
 In the left navigation bar, select **Alert** -> **Alert Policy**, and click the policy name to view the rule details.
 
-  ![Rule details](../../image/inhibition.png)
+  ![Rule details](../../images/inhibition.png)
 
     !!! note
 
@@ -59,7 +59,7 @@ In the left navigation bar, select **Alert** -> **Alert Policy**, and click the 
 
 In the left navigation bar, select **Alert** -> **Alerts**, and click the policy name to view details.
 
-  ![Alert details](../../image/inhibition-01.png)
+  ![Alert details](../../images/inhibition-01.png)
 
     !!! note
 

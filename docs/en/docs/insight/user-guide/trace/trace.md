@@ -53,7 +53,7 @@ Please follow these steps to search for a trace:
 1. Go to the __Insight__ product module.
 2. Select __Tracing__ -> __Traces__ from the left navigation bar.
 
-    ![jaeger](../../image/trace00.png)
+    ![jaeger](../../images/trace00.png)
 
     !!! note
 
@@ -83,7 +83,7 @@ Please follow these steps to search for a trace:
 2. Click __View More__ to jump to the __Associated Log__ page with conditions.
 3. By default, all logs are searched, but you can filter by the TraceID or the relevant container logs from the trace call process using the dropdown.
 
-    ![tracelog](../../image/tracelog.png)
+    ![tracelog](../../images/tracelog.png)
 
     !!! note
 

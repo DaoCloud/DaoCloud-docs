@@ -25,6 +25,6 @@ the trend of resource consumption such as CPU, memory, and disk.
     - **Resource Consumption**: Shows the actual usage and total capacity of CPU, memory, and disk for the selected node.
     - **Metric Explanations**: Describes the trends in CPU, memory, disk I/O, and network traffic for the selected node.
 
-    ![Node Monitoring](../../image/node.png){ width="1000"}
+    ![Node Monitoring](../../images/node.png){ width="1000"}
 
 3. Click __Resource Level Monitor__, you can view more metrics of the current cluster.

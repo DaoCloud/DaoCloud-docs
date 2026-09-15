@@ -22,7 +22,7 @@ Components: Fluentbit + Elasticsearch
 
 This mode is referred to as the ES mode, and the data flow diagram is shown below:
 
-![Log Mode](../../image/big-log01.png)
+![Log Mode](../../images/big-log01.png)
 
 ### Big Log Mode
 
@@ -30,7 +30,7 @@ Components: Fluentbit + **Kafka** + **Vector** + Elasticsearch
 
 This mode is referred to as the Kafka mode, and the data flow diagram is shown below:
 
-![Big Log Mode](../../image/big-log02.png)
+![Big Log Mode](../../images/big-log02.png)
 
 ## Traces
 
@@ -42,7 +42,7 @@ Components: Agent opentelemetry-collector + Global opentelemetry-collector + Jae
 
 This mode is referred to as the OTlp mode, and the data flow diagram is shown below:
 
-![Trace Mode](../../image/big-log03.png)
+![Trace Mode](../../images/big-log03.png)
 
 ### Big Trace Mode
 
@@ -50,7 +50,7 @@ Components: Agent opentelemetry-collector + Kafka + Global opentelemetry-collect
 
 This mode is referred to as the Kafka mode, and the data flow diagram is shown below:
 
-![Big Trace Mode](../../image/big-log04.png)
+![Big Trace Mode](../../images/big-log04.png)
 
 ## Enabling via Installer
 

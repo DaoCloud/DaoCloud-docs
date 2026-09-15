@@ -37,7 +37,7 @@ Lucene 的语法搜索格式允许您以灵活的方式构建搜索查询，以�
 
 1. 指定字段
 
-    ```lucene
+    ```text
     field1:keyword1 AND (field2:keyword2 OR field3:keyword3) NOT field4:keyword4
     ```
 
@@ -49,7 +49,7 @@ Lucene 的语法搜索格式允许您以灵活的方式构建搜索查询，以�
 
 2. 不指定字段
 
-    ```lucene
+    ```text
     keyword1 AND (keyword2 OR keyword3) NOT keyword4
     ```
 
@@ -63,7 +63,7 @@ Lucene 的语法搜索格式允许您以灵活的方式构建搜索查询，以�
 
 在 Lucene 中，模糊查询可以通过波浪号 __~__ 来实现近似匹配。您可以指定一个编辑距离来限制匹配的相似度程度。
 
-```lucene
+```text
 term~
 ```
 
@@ -90,7 +90,7 @@ Lucene 支持以下两种通配符查询：
 
 #### 举例说明
 
-```lucene
+```text
 te?t
 ```
 
@@ -129,7 +129,7 @@ Lucene 语法支持范围查询，您可以使用方括号 __[ ]__ 或花括号 
 
 1. 指定字段
 
-    ```lucene
+    ```text
     timestamp:[2022-01-01 TO 2022-01-31]
     ```
 
@@ -137,7 +137,7 @@ Lucene 语法支持范围查询，您可以使用方括号 __[ ]__ 或花括号 
 
 2. 不指定字段
 
-    ```lucene
+    ```text
     *:[value1 TO value2]
     ```
 
@@ -166,11 +166,12 @@ Lucene 语法支持范围查询，您可以使用方括号 __[ ]__ 或花括号 
 
 1. 查询指定 Pod 中指定容器的日志
 
-    ```lucene
+    ```text
     kubernetes.pod_name.keyword:nginx-pod AND kubernetes.container_name.keyword:nginx
     ```
+
 2. 查询 Pod 名称中包含 `nginx-pod` 的容器日志
 
-    ```lucene
+    ```text
     kubernetes.pod_name:nginx-pod
     ```

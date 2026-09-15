@@ -830,6 +830,11 @@ nav:
                   - Lucene Syntax: insight/reference/lucene.md
                   - Collect Logs with Sidecar: insight/reference/tailing-sidecar.md
                   - VictoriaMetrics Resource Plan: insight/best-practice/vm-resource-plan.md
+                  - Create Remote Sampling Server: insight/reference/remote-sampling.md
+                  - Insight and Insight-agent Connects Kafka Securely: insight/reference/security-connect-kafka.md
+                  - Configure Alertmanager to Send Alert Notifications Individually: insight/reference/send-alert-notifications-individually.md
+                  - Using Kafka and Elasticsearch for Large-Scale Log Processing: insight/best-practice/insight-kafka.md
+                  - Enabling Span Metrics Alerts and Custom Span Alerts: insight/reference/span-metrics-alert.md
               - Compatibility Test:
                   - K8s Compatibility Test: insight/compati-test/k8s-compatibility.md
                   - Rancher Compatibility Test: insight/compati-test/rancher-compatibility.md
@@ -843,6 +848,9 @@ nav:
                   - Container Log Blacklist: insight/faq/ignore-pod-log-collect.md  
                   - Configure Prometheus Cluster Labels: insight/faq/alertinfo-trans-clusterid-to-name.md  
                   - Enabling Insight Alert v1alpha2: insight/faq/alertnotify-enable-v2api.md
+                  - Optimize Logstash Parameters: insight/faq/logstash-optimize.md
+                  - Fluent Bit Routing Based on Namespace: insight/faq/fluentbit-dynamic-kafka-topic.md
+                  - NeoKylin Linux System Running Fluent Bit Failed: insight/faq/kylin-fluentbit.md
           - Microservices:
               - Intro:
                   - Index: skoala/intro/index.md
