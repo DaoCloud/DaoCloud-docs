@@ -25,7 +25,7 @@
 
 ### 创建分布式训练任务
 
-参阅[创建训练任务](../baize/developer/jobs/create.md)文档。
+参阅[创建训练任务](../baize/developer/jobs/index.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-job.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/create-distributed-job.png"></video>
@@ -33,7 +33,7 @@
 
 ### Notebook 使用 vGPU
 
-参阅[创建 Notebook](../baize/developer/notebooks/create.md)文档。
+参阅[创建 Notebook](../baize/developer/notebooks/index.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/notebook.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/notebook.jpg"></video>
@@ -43,7 +43,7 @@
 
 ### 创建和使用数据集
 
-参阅[创建数据集](../baize/developer/dataset/create-use-delete.md)文档。
+参阅[创建数据集](../baize/developer/dataset/index.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/dataset.jpg"></video>

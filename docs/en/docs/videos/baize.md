@@ -26,7 +26,7 @@ We welcome any form of feedback. Thank you 🙏
 
 ### Create and use datasets
 
-Refer to the [Create Datasets](../baize/developer/dataset/create-use-delete.md) document.
+Refer to the [Create Datasets](../baize/developer/dataset/index.md) document.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/dataset.jpg"></video>
@@ -44,7 +44,7 @@ Refer to the [Create Datasets](../baize/developer/dataset/create-use-delete.md) 
 
 ### Create a distributed job
 
-See also the document to [create a job](../baize/developer/jobs/create.md).
+See also the document to [create a job](../baize/developer/jobs/index.md).
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-job.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/create-distributed-job.png"></video>
@@ -52,7 +52,7 @@ See also the document to [create a job](../baize/developer/jobs/create.md).
 
 ### Notebook using vGPU
 
-See also the [Create Notebook](../baize/developer/notebooks/create.md) document.
+See also the [Create Notebook](../baize/developer/notebooks/index.md) document.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/notebook.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/notebook.jpg"></video>

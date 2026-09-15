@@ -58,7 +58,7 @@ nav:
                   - 介绍: drun/baize/developer/index.md
                   - 快速入门: drun/baize/developer/quick-start.md
                   - 使用Notebook开发环境:
-                      - 创建 Notebook: drun/baize/developer/notebooks/create.md
+                      - 创建 Notebook: drun/baize/developer/notebooks/index.md
                       - 启动和暂停 Notebook: drun/baize/developer/notebooks/start-pause.md
                       - Notebook 工作负载: drun/baize/developer/notebooks/view.md
                       - 删除 Notebook: drun/baize/developer/notebooks/delete.md
@@ -70,7 +70,7 @@ nav:
                       - Notebook闲置超时关机: drun/baize/developer/notebooks/notebook-auto-close.md
                       - Notebook Docker 功能: drun/baize/developer/notebooks/notebook-with-dind.md
                   - 任务管理:
-                      - 创建任务: drun/baize/developer/jobs/create.md
+                      - 创建任务: drun/baize/developer/jobs/index.md
                       - 创建 Pytorch 任务: drun/baize/developer/jobs/pytorch.md
                       - 创建 Tensorflow 任务: drun/baize/developer/jobs/tensorflow.md
                       - 创建 MPI 任务: drun/baize/developer/jobs/mpi.md
@@ -80,11 +80,11 @@ nav:
                       - 查看任务负载: drun/baize/developer/jobs/view.md
                       - 任务分析: drun/baize/developer/jobs/tensorboard.md
                   - 数据管理:
-                      - 数据集列表: drun/baize/developer/dataset/create-use-delete.md
+                      - 数据集列表: drun/baize/developer/dataset/index.md
                       - 环境依赖: drun/baize/developer/dataset/environments.md
                       - 数据标注: drun/baize/developer/dataset/labeling.md
                   - 模型服务:
-                      - 模型列表: drun/baize/developer/inference/model-create.md
+                      - 模型列表: drun/baize/developer/inference/index.md
                       - 模型支持情况: drun/baize/developer/inference/models.md
                       - 推理服务:
                           - 创建 Triton 推理服务: drun/baize/developer/inference/triton-inference.md
@@ -99,7 +99,7 @@ nav:
                       - 删除队列: drun/baize/oam/queue/delete.md
                   - GPU 信息: drun/baize/oam/gpu.md
               - 最佳实践:
-                  - 部署 NFS 做数据集预热: drun/baize/best-practice/deploy-nfs-in-worker.md
+                  - 部署 NFS 做数据集预热: drun/baize/best-practice/index.md
                   - 更新 Notebook 内置镜像: drun/baize/best-practice/change-notebook-image.md
                   - Checkpoint机制及用法: drun/baize/best-practice/checkpoint.md
                   - 拓扑感知调度训练任务: drun/baize/best-practice/train-with-tas.md

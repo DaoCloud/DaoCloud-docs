@@ -197,7 +197,7 @@ hide:
     **AI Lab** 是 AI 训推一体化平台，整合异构算力，优化 GPU 性能。
     而 **云边协同** 则将容器能力扩展到了边缘。
 
-    - [部署 NFS 做数据集预热](../baize/best-practice/deploy-nfs-in-worker.md)
+    - [部署 NFS 做数据集预热](../baize/best-practice/index.md)
     - [更新 Notebook 内置镜像](../baize/best-practice/change-notebook-image.md)
     - [Checkpoint 机制及使用介绍](../baize/best-practice/checkpoint.md)
     - [智能设备控制](../kant/best-practice/custom-device-control.md)

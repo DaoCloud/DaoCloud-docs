@@ -52,7 +52,7 @@ Follow the steps in [Creating a Queue](../oam/queue/create.md). Choose the resou
 
 ### 4. Create a Training Job
 
-With the TAS configuration in place, you can now create a training job using a PodTemplate that includes TAS settings. Refer to [Creating a Training Job](../developer/jobs/create.md) for guidance.
+With the TAS configuration in place, you can now create a training job using a PodTemplate that includes TAS settings. Refer to [Creating a Training Job](../developer/jobs/index.md) for guidance.
 
 The queue specified in the training job references a resource flavor with topology information. Based on the TAS configuration, scheduling is automated. Scheduling all related Pods within the same topology domain is a **preference**, not a **requirement**. By default, TAS matches the lowest level in the topology; if a `PodSet` cannot be scheduled within a given topology domain, the scheduler will attempt the next higher level.
 
