@@ -21,8 +21,6 @@
 > **重要提示：**
 > 禁用分组后，告警消息的发送将变得更加频繁。这将 **显著增加** 目标 Webhook 接口（如 Insight Server、企业微信、钉钉等）的请求量和负载。在应用此配置前，请务必评估下游系统的接收和处理能力。
 
------
-
 我们提供两种方法来调整配置，强烈推荐使用 [Helm 方式](#helm) 进行变更，以便于配置的跟踪和管理。
 
 ### 方法一：通过 Helm 调整 (推荐)
@@ -67,8 +65,6 @@ helm upgrade insight \
  --set vm_alertmanager.config.route.group_by={"..."}
 ```
 
------
-
 ### 方法二：手动编辑 Kubernetes Secret (不推荐)
 
 **警告：** 此方法绕过了 Helm 的配置管理，可能导致后续 Helm 升级时配置被覆盖。仅在紧急或测试情况下使用。
@@ -100,15 +96,9 @@ helm upgrade insight \
     ```
 
     保存并退出编辑器后，配置将自动更新到 Alertmanager 的 Pod 中。
-    
------
 
 ## 验证配置
 
 配置生效后，您可以访问 Alertmanager 的 Web UI。在 "Status" 页面，您将看到原有的分组规则（如 `alertname`, `group_id`）已消失，表明它们是按唯一的标签组合进行分组的。
 
 ![vmalertmanager-status](../images/vmalertmanager-status.png)
-
-
-
-

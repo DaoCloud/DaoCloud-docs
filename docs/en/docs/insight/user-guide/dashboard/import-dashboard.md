@@ -123,7 +123,7 @@ which is used to load GrafanaDashboard(v1alpha1) resources and ConfigMaps into t
 
 The architecture diagram of dashboard-discover is as follows:
 
-![img](../../image/dashboard-discover.jpg)
+![img](../../images/dashboard-discover.jpg)
 
 The watched resources require the labels below:
 
@@ -207,18 +207,18 @@ If AngularJS panel migration is not completed, the following issues will occur i
 2. Configured AngularJS data sources will not appear in the data source list.
 3. Original AngularJS panels in the dashboard will show error messages such as `Error loading: plugin_name` or `Panel plugin not found: plugin_name`; see the figure below:
 
-    ![img](../../image/upgrade-note02.png)
+    ![img](../../images/upgrade-note02.png)
 
     Similar panels or plugins can be manually replaced.
 
 4. Original data sources in the dashboard will be lost, with errors such as `Datasource XXX was not found`; see the figure below:
 
-    ![img](../../image/upgrade-note03.png)
+    ![img](../../images/upgrade-note03.png)
 
     You can manually create a `Datasource variable`:
 
-    ![img](../../image/upgrade-note04.png)
+    ![img](../../images/upgrade-note04.png)
 
     Then apply it in the panel:
 
-    ![img](../../image/upgrade-note05.png)
+    ![img](../../images/upgrade-note05.png)

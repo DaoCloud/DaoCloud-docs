@@ -38,7 +38,7 @@ On the __Notification Settings__ page, you can configure how to send messages to
 1. In the left navigation bar, click __Alert Center__ -> __Notification Settings__ -> __Lark__ . Click __Add Group Bot__ 
    and add one or more group bots.
 
-    ![Lark](../../image/notify-01.png)
+    ![Lark](../../images/notify-01.png)
 
     !!! note
 
@@ -68,7 +68,7 @@ On the __Notification Settings__ page, you can configure how to send messages to
 
     You can add and notify multiple users for a message.
 
-    ![message](../../image/notify-02.png)
+    ![message](../../images/notify-02.png)
 
 2. After configuration, you will be automatically redirected to the list page. Click __┇__ on the right side of 
    the list and select __Send Test Message__ .

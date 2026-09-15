@@ -40,7 +40,7 @@ to combine multiple keywords. Lucene supports the following operators:
 
 1. Specify fields
 
-    ```lucene
+    ```text
     field1:keyword1 AND (field2:keyword2 OR field3:keyword3) NOT field4:keyword4
     ```
 
@@ -53,7 +53,7 @@ to combine multiple keywords. Lucene supports the following operators:
 
 2. Not specify fields
 
-    ```lucene
+    ```text
     keyword1 AND (keyword2 OR keyword3) NOT keyword4
     ```
 
@@ -68,7 +68,7 @@ to combine multiple keywords. Lucene supports the following operators:
 In Lucene, fuzzy queries can be performed using the tilde ( __~__ ) operator for approximate matching.
 You can specify an edit distance to limit the degree of similarity in the matches.
 
-```lucene
+```text
 term~
 ```
 
@@ -97,18 +97,18 @@ Lucene supports the following wildcard queries:
 
 #### Example
 
-```lucene
+```text
 te?t
 ```
 
 In the above example, __te?t__ represents a word that starts with "te", followed by
 any single character, and ends with "t". This query can match words like "test", "text", and "tent".
 
-It is important to note that the question mark ( `?` ) represents only a single character.
+It is important to note that the question mark (`?`) represents only a single character.
 If you want to match multiple characters or varying lengths of characters, you can use the
-asterisk ( `*` ) for multi-character wildcard matching. Additionally, the question mark will not match an empty string.
+asterisk (`*`) for multi-character wildcard matching. Additionally, the question mark will not match an empty string.
 
-To summarize, in Lucene syntax, the question mark ( `?` ) is used as a single-character wildcard
+To summarize, in Lucene syntax, the question mark (`?`) is used as a single-character wildcard
 to match any single character. By using the question mark in your search keywords, you can
 perform more flexible and specific pattern matching.
 
@@ -148,7 +148,7 @@ to represent a range. Here are examples of range queries:
 
 1. Specify a field
 
-    ```lucene
+    ```text
     timestamp:[2022-01-01 TO 2022-01-31]
     ```
 
@@ -156,7 +156,7 @@ to represent a range. Here are examples of range queries:
 
 2. Not specify a field
 
-    ```lucene
+    ```text
     *:[value1 TO value2]
     ```
 
@@ -186,11 +186,12 @@ e.g. `kubernetes.containername.keyword`.
 
 1. Query container logs of the specified container in the specified Pod
 
-    ```lucene
+    ```text
     kubernetes.pod_name.keyword:nginx-pod AND kubernetes.container_name.keyword:nginx
     ```
+
 2. Query container logs containing 'nginx pod' in the Pod name
 
-    ```lucene
+    ```text
     kubernetes.pod_name:nginx-pod
     ```

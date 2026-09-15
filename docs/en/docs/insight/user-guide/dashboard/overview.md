@@ -17,5 +17,5 @@ __Insight__ only collects data from clusters that have __insight-agent__ install
 
 Select __Overview__ in the left navigation bar to enter the details page.
 
-![overview](../../image/overview.png){ width="1000"}
+![overview](../../images/overview.png){ width="1000"}
 

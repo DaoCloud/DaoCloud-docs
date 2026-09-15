@@ -27,7 +27,7 @@ Follow these steps to view service monitoring metrics:
 
 3. Switch between tabs at the top to view data for different types of workloads.
 
-    ![container insight](../../image/workload00.png){ width="1000"}
+    ![container insight](../../images/workload00.png){ width="1000"}
 
 4. Click the target workload name to view the details.
 
@@ -35,11 +35,11 @@ Follow these steps to view service monitoring metrics:
     2. Resource Consumption: Shows the CPU, memory, and network usage of the workload.
     3. Monitoring Metrics: Provides the trends of CPU, Memory, Network, and disk usage for the workload over the past hour.
 
-    ![container insight](../../image/workload.png){ width="1000"}
+    ![container insight](../../images/workload.png){ width="1000"}
 
 5. Switch to the __Pods__ tab to view the status of various pods for the workload, including their nodes, restart counts, and other information.
 
-    ![container insight](../../image/workload-1.png){ width="1000"}
+    ![container insight](../../images/workload-1.png){ width="1000"}
 
 6. Switch to the __JVM monitor__ tab to view the JVM metrics for each pods
 

@@ -25,7 +25,7 @@ is in __running__ state.
     - **Resource Consumption**: Shows the actual usage and total capacity of CPU, memory, and disk for the selected cluster.
     - **Metric Explanations**: Describes the trends in CPU, memory, disk I/O, and network bandwidth.
 
-    ![Monitor](../../image/cluster.png){ width="1000"}
+    ![Monitor](../../images/cluster.png){ width="1000"}
 
 3. Click __Resource Level Monitor__, you can view more metrics of the current cluster.
 
