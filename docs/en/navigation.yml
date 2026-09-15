@@ -1244,7 +1244,7 @@ nav:
                   - Intro: baize/developer/index.md
                   - Quick Start: baize/developer/quick-start.md
                   - Notebooks:
-                      - Create Notebook: baize/developer/notebooks/create.md
+                      - Create Notebook: baize/developer/notebooks/index.md
                       - Start and Pause Notebook: baize/developer/notebooks/start-pause.md
                       - View Notebook Workload: baize/developer/notebooks/view.md
                       - Delete Notebook: baize/developer/notebooks/delete.md
@@ -1254,16 +1254,18 @@ nav:
                       - baizess Source Switch Tool Guide: baize/developer/notebooks/baizess.md
                       - Shut down Idle Notebooks: baize/developer/notebooks/notebook-auto-close.md
                   - Job Center:
-                      - Create Job: baize/developer/jobs/create.md
+                      - Create Job: baize/developer/jobs/index.md
                       - Create Pytorch Job: baize/developer/jobs/pytorch.md
                       - Create Tensorflow Job: baize/developer/jobs/tensorflow.md
                       - Delete Job: baize/developer/jobs/delete.md
                       - View Job Load: baize/developer/jobs/view.md
                       - Job Analysis: baize/developer/jobs/tensorboard.md
                   - Data Management:
-                      - Datasets: baize/developer/dataset/create-use-delete.md
+                      - Datasets: baize/developer/dataset/index.md
                       - Environments: baize/developer/dataset/environments.md
+                      - Data Labeling: baize/developer/dataset/labeling.md
                   - Model Service:
+                      - Model List: baize/developer/inference/index.md
                       - Supported Models: baize/developer/inference/models.md
                       - Inference Service:
                           - Create with Triton Framework: baize/developer/inference/triton-inference.md
@@ -1278,7 +1280,7 @@ nav:
                       - Delete Queue: baize/oam/queue/delete.md
                   - GPUs: baize/oam/gpu.md
               - Best Practices:
-                  - Deploy NFS to Preload Dataset: baize/best-practice/deploy-nfs-in-worker.md
+                  - Deploy NFS to Preload Dataset: baize/best-practice/index.md
                   - Update Notebook Built-in Images: baize/best-practice/change-notebook-image.md
                   - Checkpoint Mechanism and Usage: baize/best-practice/checkpoint.md
                   - Fine-Tune ChatGLM3 with AI Lab: baize/best-practice/finetunel-llm.md

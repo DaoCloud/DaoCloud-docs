@@ -68,7 +68,7 @@ hide:
     - [安装 AI Lab 组件](../baize/intro/install.md)
     - [开发控制台 - 快速入门](../baize/developer/quick-start.md)
     - [运维管理](../baize/oam/index.md)
-    - [部署 NFS 做数据集预热](../baize/best-practice/deploy-nfs-in-worker.md)
+    - [部署 NFS 做数据集预热](../baize/best-practice/index.md)
     - [使用 AI Lab 微调 ChatGLM3 模型](../baize/best-practice/finetunel-llm.md)
 
 - :octicons-ai-model-16:{ .lg .middle } __大模型服务平台：企业级服务__

@@ -58,7 +58,7 @@ nav:
                   - Intro: drun/baize/developer/index.md
                   - Quick Start: drun/baize/developer/quick-start.md
                   - Use Notebook Development Environment:
-                      - Create Notebook: drun/baize/developer/notebooks/create.md
+                      - Create Notebook: drun/baize/developer/notebooks/index.md
                       - Start and Pause Notebook: drun/baize/developer/notebooks/start-pause.md
                       - Notebook Workloads: drun/baize/developer/notebooks/view.md
                       - Delete Notebook: drun/baize/developer/notebooks/delete.md
@@ -70,7 +70,7 @@ nav:
                       - Notebook Idle Timeout Shutdown: drun/baize/developer/notebooks/notebook-auto-close.md
                       - Notebook Docker Features: drun/baize/developer/notebooks/notebook-with-dind.md
                   - Job Management:
-                      - Create Job: drun/baize/developer/jobs/create.md
+                      - Create Job: drun/baize/developer/jobs/index.md
                       - Create PyTorch Job: drun/baize/developer/jobs/pytorch.md
                       - Create TensorFlow Job: drun/baize/developer/jobs/tensorflow.md
                       - Create MPI Job: drun/baize/developer/jobs/mpi.md
@@ -80,11 +80,11 @@ nav:
                       - View Job Workload: drun/baize/developer/jobs/view.md
                       - Job Analysis: drun/baize/developer/jobs/tensorboard.md
                   - Data Management:
-                      - Dataset List: drun/baize/developer/dataset/create-use-delete.md
+                      - Dataset List: drun/baize/developer/dataset/index.md
                       - Environment Dependencies: drun/baize/developer/dataset/environments.md
                       - Data Labeling: drun/baize/developer/dataset/labeling.md
                   - Model Service:
-                      - Model List: drun/baize/developer/inference/model-create.md
+                      - Model List: drun/baize/developer/inference/index.md
                       - Model Support: drun/baize/developer/inference/models.md
                       - Inference Service:
                           - Create Triton Inference Service: drun/baize/developer/inference/triton-inference.md
@@ -99,7 +99,7 @@ nav:
                       - Delete Queue: drun/baize/oam/queue/delete.md
                   - GPU Info: drun/baize/oam/gpu.md
               - Best Practices:
-                  - Deploy NFS for Dataset Preheat: drun/baize/best-practice/deploy-nfs-in-worker.md
+                  - Deploy NFS for Dataset Preheat: drun/baize/best-practice/index.md
                   - Update Notebook Built-in Image: drun/baize/best-practice/change-notebook-image.md
                   - Checkpoint Mechanism and Usage: drun/baize/best-practice/checkpoint.md
                   - Topology-Aware Scheduling Training Task: drun/baize/best-practice/train-with-tas.md

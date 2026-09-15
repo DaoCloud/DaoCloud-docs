@@ -11,7 +11,7 @@
 
 - [开发控制台快速入门](../developer/quick-start.md)
 - [平台管理员运维管理](../oam/index.md)
-- [AI Lab 最佳实践](../best-practice/deploy-nfs-in-worker.md)
+- [AI Lab 最佳实践](../best-practice/index.md)
 - [AI Lab 故障排查](../troubleshoot/index.md)
 
 ## 选择工作空间
