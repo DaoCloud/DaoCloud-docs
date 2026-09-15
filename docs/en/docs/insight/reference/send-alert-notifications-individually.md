@@ -21,8 +21,6 @@ This special value `...` instructs Alertmanager to group by __all__ labels (incl
 > **Important:**
 > After grouping is disabled, alert messages are sent much more frequently. This will __significantly increase__ the request volume and load on the target webhook endpoints (such as Insight Server, WeCom, and DingTalk). Before applying this configuration, be sure to evaluate the receiving and processing capacity of downstream systems.
 
------
-
 Two methods are provided to adjust the configuration. It is strongly recommended to use the [Helm method](#method-1-adjust-through-helm-recommended) so that the configuration can be tracked and managed.
 
 ### Method 1: Adjust Through Helm (Recommended)
@@ -67,8 +65,6 @@ helm upgrade insight \
  --set vm_alertmanager.config.route.group_by={"..."}
 ```
 
------
-
 ### Method 2: Edit the Kubernetes Secret Manually (Not Recommended)
 
 __Warning:__ This method bypasses Helm's configuration management and may cause the configuration to be overwritten during a subsequent Helm upgrade. Use it only in emergency or test scenarios.
@@ -100,8 +96,6 @@ __Warning:__ This method bypasses Helm's configuration management and may cause 
     ```
 
     After you save and exit the editor, the configuration is automatically updated in the Alertmanager Pod.
-    
------
 
 ## Verify the Configuration
 
