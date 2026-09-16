@@ -126,6 +126,14 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kwok.md)
 
+-   :material-brain:{ .lg .middle } __MatrixHub__ :simple-cncf: 正在加入 CNCF Landscape
+
+    ---
+
+    企业级自托管 AI 模型仓库，Hugging Face 的私有化平替，为 vLLM、SGLang 和 Dynamo 加速模型分发
+
+    [:octicons-arrow-right-24: 了解更多](./matrixhub.md)
+
 -   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: 已入选 CNCF Sandbox
 
     ---

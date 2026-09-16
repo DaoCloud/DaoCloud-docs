@@ -1643,6 +1643,7 @@ nav:
       - kube-node-tuning: community/kube-node-tuning.md
       - Kubean: community/kubean.md
       - KWOK: community/kwok.md
+      - MatrixHub: community/matrixhub.md
       - MirageDebug: community/miragedebug.md
       - Merbridge: community/merbridge.md
       - Piraeus: community/piraeus.md
