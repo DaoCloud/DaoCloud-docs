@@ -56,7 +56,16 @@ achieving a more flexible and diverse network architecture.
     1. Bridge modes support manually adding NICs. Click __Add NIC__ to configure the NIC IP pool. Choose a Multus CR 
        that matches the network mode, if not available, it needs to be created manually.
     
-    2. If the __Use Default IP Pool__ switch is turned on, it will use the default IP pool in the multus CR 
-       configuration. If turned off, manually select the IP pool.
+    2. In the __NIC IP Pool Configuration__ dialog, select a Multus CR and an IPv4 pool. Click __Add__ to add more
+       IP pools, and use the up and down arrows to adjust their order.
        
         ![Add NIC](../images/createvm-net03.png)
+
+    3. After the configuration is complete, the network list displays the Multus CR and IP pool used by each NIC.
+
+        !!! warning
+
+            To avoid network communication issues, the IP pools used by different NICs must belong to different
+            subnets. Do not select the same Multus CR and IP pool combination for different NICs.
+
+        ![NIC network configuration](../images/createvm-net04.png)
