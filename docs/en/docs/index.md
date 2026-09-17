@@ -319,6 +319,71 @@ This site provides documentation for three product lines, covering full-stack ca
       </div>
     </div>
 
+## Explore Product Modules
+
+<div class="grid cards" markdown>
+
+- :material-robot:{ .lg .middle } __Cloud Native AI__
+
+    ---
+
+    - [ClawOS](tf/clawos/intro/)
+    - [AI Apps](tf/dak/)
+    - [LLM Studio](tf/hydra/intro/)
+    - [InferX Inference Suite](tf/inferx/)
+    - [AI Lab](drun/baize/intro/)
+    - [Computing Cloud](tf/zestu/)
+
+- :material-server:{ .lg .middle } __Containers__
+
+    ---
+
+    - [Container Management](kpanda/intro/)
+    - [Multicloud Management](kairship/intro/)
+    - [Container Registry](kangaroo/intro/)
+    - [Cloud Native Network](network/intro/)
+    - [Cloud Native Storage](storage/)
+    - [Virtual Machine](virtnest/intro/)
+
+- :material-file-document-multiple-outline:{ .lg .middle } __Microservices__
+
+    ---
+
+    - [Observability](insight/intro/)
+    - [Microservice Engine](skoala/intro/)
+    - [Service Mesh](mspider/intro/)
+
+</div>
+
+<div class="grid cards" markdown>
+
+- :material-human-greeting:{ .lg .middle } __Workbench__
+
+    ---
+
+    - [Workbench](amamba/intro/)
+
+- :material-database:{ .lg .middle } __Data Services__
+
+    ---
+
+    - [Middleware](middleware/)
+
+- :material-cloud-outline:{ .lg .middle } __Edge Computing__
+
+    ---
+
+    - [Cloud Edge Collaboration](kant/intro/)
+
+- :material-cog-outline:{ .lg .middle } __Management__
+
+    ---
+
+    - [Global Management](ghippo/intro/)
+    - [Device Management](topohub/intro/)
+
+</div>
+
 <div class="tf-cta" markdown>
 
 [Apply for DCE Community Free Trial](./dce/license0.md){ .md-button .md-button--primary }
