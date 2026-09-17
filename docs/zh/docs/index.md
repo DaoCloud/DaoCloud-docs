@@ -319,6 +319,71 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
       </div>
     </div>
 
+## 探索产品模块
+
+<div class="grid cards" markdown>
+
+- :material-robot:{ .lg .middle } __云原生 AI__
+
+    ---
+
+    - [ClawOS 智能体](clawos/intro/)
+    - [AI 应用](dak/)
+    - [大模型服务平台](hydra/intro/)
+    - [InferX 推理套件](inferx/)
+    - [AI Lab](baize/intro/)
+    - [算力云](zestu/)
+
+- :material-server:{ .lg .middle } __容器__
+
+    ---
+
+    - [容器管理](kpanda/intro/)
+    - [多云编排](kairship/intro/)
+    - [镜像仓库](kangaroo/intro/)
+    - [云原生网络](network/intro/)
+    - [云原生存储](storage/)
+    - [虚拟机](virtnest/intro/)
+
+- :material-file-document-multiple-outline:{ .lg .middle } __微服务__
+
+    ---
+
+    - [可观测性](insight/intro/)
+    - [微服务引擎](skoala/intro/)
+    - [服务网格](mspider/intro/)
+
+</div>
+
+<div class="grid cards" markdown>
+
+- :material-human-greeting:{ .lg .middle } __工作台__
+
+    ---
+
+    - [应用工作台](amamba/intro/)
+
+- :material-database:{ .lg .middle } __数据服务__
+
+    ---
+
+    - [中间件](middleware/)
+
+- :material-cloud-outline:{ .lg .middle } __边缘计算__
+
+    ---
+
+    - [云边协同](kant/intro/)
+
+- :material-cog-outline:{ .lg .middle } __管理__
+
+    ---
+
+    - [全局管理](ghippo/intro/)
+    - [设备管理](topohub/intro/)
+
+</div>
+
 <div class="tf-cta" markdown>
 
 [申请 DCE 社区免费体验](./dce/license0.md){ .md-button .md-button--primary }
