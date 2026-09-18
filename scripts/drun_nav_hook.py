@@ -20,12 +20,12 @@ def on_config(config):
     nav = [
         item
         for item in nav
-        if not (isinstance(item, dict) and "d.run 文档" in item)
+        if not (isinstance(item, dict) and "d.run AI 操作系统" in item)
     ]
 
     insert_pos = len(nav)
     for i, item in enumerate(nav):
-        if isinstance(item, dict) and "Token 工厂文档" in item:
+        if isinstance(item, dict) and "d.run Token 工厂效能平台" in item:
             insert_pos = i + 1
             break
 

@@ -10,9 +10,9 @@
 3. **纯云原生存储**，此种类型的存储类型天然为云原生而生，构筑于云原生平台之上，能比较好的契合云原生特性，
    并可随着应用 Pod 的迁移而迁移，具备如下特性：高可扩展性，高可用性，但相对于 通过 CSI 标准接入的传统存储可靠性低一些。
 
-## DCE 云原生存储
+## 云原生存储
 
-DCE 云原生存储基于 Kubernetes CSI 标准，可根据不同 SLA 要求及用户场景对接符合 CSI 标准的存储。
+云原生存储基于 Kubernetes CSI 标准，可根据不同 SLA 要求及用户场景对接符合 CSI 标准的存储。
 DaoCloud 推出的云原生本地存储天然具备云原生特性，满足容器场景中高扩展性、高可用性等特点。
 
 ![云原生存储](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/nativestorage.jpg)
