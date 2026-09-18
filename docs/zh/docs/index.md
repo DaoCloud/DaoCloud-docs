@@ -63,6 +63,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
     平台统一纳管英伟达及国产异构算力，通过智能调度与推理优化，将分散的 GPU 算力转化为低成本、高稳定、可交易的标准化 Token 服务。
     依托 Token 工厂管家与统一运营体系，平台实现资源、生产、成本和供需的全局管理，服务终端用户、管理者、运营者与运维者，
     推动智算中心从 "提供算力" 升级为 "生产和运营 Token"。
+    [查看/下载 Token 工厂彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/tf.pdf){ .md-button }
 
     <div class="tf-arch tf-arch--compact">
       <div class="tf-arch-layer tf-arch-layer--model">
@@ -160,6 +161,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
     实现颗粒化调度、全栈推理优化与全链路 Token 治理，算力利用率超 80%，将算力高效转化为可管可控的 Token 化 AI 生产力；
     平台汇聚全球主流大模型生态，配备可视化运营驾驶舱与 d.run Copilot 智能助手，面向企业全部门输出稳定高效的 AI 服务，
     全方位支撑业务智能化长期升级。
+    [查看/下载 d.run AI 操作系统彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/drun.pdf){ .md-button }
 
     <div class="tf-arch tf-arch--compact">
       <div class="tf-arch-layer tf-arch-layer--model">
@@ -248,6 +250,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
     DaoCloud Enterprise (DCE) 是一款高性能、可扩展的云原生操作系统，
     是[经 CNCF 认证的 Kubernetes - AI Platform](./dce/kcsp.md)。
     它能够在任何基础设施和任意环境中提供一致、稳定的体验，支持异构云、边缘云和多云编排等。
+    [查看/下载 DCE 云原生操作系统彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/dce.pdf){ .md-button }
 
     <div class="tf-arch tf-arch--compact">
       <div class="tf-arch-layer tf-arch-layer--compute">
