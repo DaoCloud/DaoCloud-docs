@@ -6,6 +6,8 @@ hide:
 
 # DaoCloud 文档中心
 
+*[DCE]: DaoCloud Enterprise 的简称
+
 <div class="tf-hero" markdown>
 
 DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加速企业智能化转型。
@@ -250,7 +252,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
     DaoCloud Enterprise (DCE) 是一款高性能、可扩展的云原生操作系统，
     是[经 CNCF 认证的 Kubernetes - AI Platform](./dce/kcsp.md)。
     它能够在任何基础设施和任意环境中提供一致、稳定的体验，支持异构云、边缘云和多云编排等。
-    [查看/下载 DCE 云原生操作系统彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/dce.pdf){ .md-button }
+    [查看/下载 DaoCloud Enterprise 彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/dce.pdf){ .md-button }
 
     <div class="tf-arch tf-arch--compact">
       <div class="tf-arch-layer tf-arch-layer--compute">
