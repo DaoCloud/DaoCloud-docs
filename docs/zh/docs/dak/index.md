@@ -9,6 +9,7 @@ d.run 智能问答（AI 应用）是基于 **RAG（Retrieval-Augmented Generatio
 它会先将您的专属语料库进行 **向量化处理**，并通过 **相似度搜索** 精准检索与问题相关的内容，再由
 **大语言模型（LLM）** 生成自然流畅的答案。这种方式不仅显著减少了模型的“幻觉”现象，还能在保障
 **隐私数据安全** 的同时，为您提供更精准、更个性化的回复。
+[查看/下载 AI 应用手册](https://harbor-test2.cn-sh2.ufileos.com/docs/download/dak.pdf){ .md-button }
 
 在这里，您可以：
 
