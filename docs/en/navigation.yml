@@ -1526,9 +1526,12 @@ nav:
   - Downloads:
       - DaoCloud Download Hub:
           - Index: download/index.md
-          - Download DCE Community: download/free/dce5-installer-history.md
-          - Download DCE Enterprise: download/business/dce5-installer-history.md
-          - Download Addon: download/addon/history.md
+          - Download d.run Token Factory: download/tf/index.md
+          - Download d.run AI OS: download/drun/index.md
+          - Download DaoCloud Enterprise:
+              - Download DCE Community: download/free/dce5-installer-history.md
+              - Download DCE Enterprise: download/business/dce5-installer-history.md
+          - Download Addons: download/addon/history.md
           - Download Modules:
               - Workbench: download/modules/amamba.md
               - Container:
