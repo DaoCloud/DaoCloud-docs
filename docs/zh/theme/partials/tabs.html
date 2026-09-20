@@ -10,13 +10,13 @@
         {% elif nav_item.title == "d.run AI 操作系统" %}
           {% set ns.drun_url = (nav_item.children | first).url | url %}
           {% set ns.drun_active = nav_item.active %}
-        {% elif nav_item.title == "DCE 云原生操作系统" %}
+        {% elif nav_item.title == "DaoCloud Enterprise" %}
           {% set ns.dce_url = (nav_item.children | first).url | url %}
           {% set ns.dce_active = nav_item.active %}
         {% endif %}
       {% endfor %}
       {% for nav_item in nav.items %}
-        {% if nav_item.title == "DCE 云原生操作系统" %}
+        {% if nav_item.title == "DaoCloud Enterprise" %}
           <li class="md-tabs__item product-docs-menu{% if ns.dce_active or ns.tf_active or ns.drun_active %} md-tabs__item--active{% endif %}">
             <details>
               <summary class="md-tabs__link" aria-label="产品文档">
@@ -25,7 +25,7 @@
               <div class="product-docs-menu__list" role="menu" aria-label="产品文档">
                 <a href="{{ ns.tf_url }}" role="menuitem">d.run Token 工厂效能平台</a>
                 <a href="{{ ns.drun_url }}" role="menuitem">d.run AI 操作系统</a>
-                <a href="{{ ns.dce_url }}" role="menuitem">DCE 云原生操作系统</a>
+                <a href="{{ ns.dce_url }}" role="menuitem">DaoCloud Enterprise</a>
               </div>
             </details>
           </li>
@@ -45,7 +45,7 @@
             <ul class="product-nav-menu__links">
               <li><a href="{{ ns.tf_url }}">d.run Token 工厂效能平台</a></li>
               <li><a href="{{ ns.drun_url }}">d.run AI 操作系统</a></li>
-              <li><a href="{{ ns.dce_url }}">DCE 云原生操作系统</a></li>
+              <li><a href="{{ ns.dce_url }}">DaoCloud Enterprise</a></li>
             </ul>
           </div>
           <div class="product-nav-menu__col">

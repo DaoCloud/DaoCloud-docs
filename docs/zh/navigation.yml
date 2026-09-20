@@ -1,7 +1,7 @@
 # Page tree
 nav:
   - 首页: https://docs.daocloud.io/
-  - DCE 云原生操作系统:
+  - DaoCloud Enterprise:
       - 概览: dce/index.md
       - 探索和安装:
           - DCE 介绍:
@@ -1464,7 +1464,7 @@ nav:
           - 导览页: download/index.md
           - 下载 d.run Token 工厂效能平台: download/tf/index.md
           - 下载 d.run AI 操作系统: download/drun/index.md
-          - 下载 DCE 云原生操作系统:
+          - 下载 DaoCloud Enterprise:
               - 下载 DCE 社区版: download/free/dce5-installer-history.md
               - 下载 DCE 商业版: download/business/dce5-installer-history.md
           - 下载 Addon 离线包: download/addon/history.md

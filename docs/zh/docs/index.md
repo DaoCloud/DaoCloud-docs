@@ -16,7 +16,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 <div class="tf-hero-badges">
 <a class="tf-hero-badge tf-hero-badge--tf" href="tf/">d.run Token 工厂效能平台</a>
 <a class="tf-hero-badge tf-hero-badge--drun" href="drun/">d.run AI 操作系统</a>
-<a class="tf-hero-badge tf-hero-badge--dce" href="dce/">DCE 云原生操作系统</a>
+<a class="tf-hero-badge tf-hero-badge--dce" href="dce/">DaoCloud Enterprise</a>
 </div>
 
 </div>
@@ -247,7 +247,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
       </div>
     </div>
 
-=== ":octicons-stack-16: DCE 云原生操作系统"
+=== ":octicons-stack-16: DaoCloud Enterprise"
 
     DaoCloud Enterprise (DCE) 是一款高性能、可扩展的云原生操作系统，
     是[经 CNCF 认证的 Kubernetes - AI Platform](./dce/kcsp.md)。
