@@ -1,8 +1,135 @@
 # 升级注意事项
 
-本页说明将 Hydra 升级到新版本时需要注意的相关事项。
+本页说明将 Hydra 升级到新版本时需要注意的相关事项。请根据当前版本选择对应章节。
 
-## 从 v0.16.0（或更低版本）升级到 v0.17.1
+## 从 v0.16.0 / v0.17.1 升级到 v0.18.3 {#upgrade-to-v0183}
+
+Hydra 从 v0.18.3 开始，MaaS 启停状态、集群和 Workspace 可见范围统一以 Knoway `ModelRoute` CR 为准。
+旧数据库字段暂时保留，仅作为升级迁移源。
+
+升级 `hydra-agent` 会自动升级 Knoway。Knoway 是 `hydra-agent` Chart 的子 Chart，默认 `knoway.enabled=true`，无需单独升级。
+
+!!! warning
+
+    必须按以下顺序执行：先备份数据库和 `ModelRoute`，再升级所有工作集群的 `hydra-agent`（由其自动升级 Knoway），
+    然后升级全局服务集群的 Hydra，最后检查 MaaS 迁移结果。
+
+    如果环境配置了 `knoway.enabled=false`，或 Knoway 由独立 Helm Release 管理，必须先单独升级 Knoway，再升级全局服务集群的 Hydra。
+
+!!! note
+
+    从 v0.16.0 直升 v0.18.3 时，**不要**执行 `create_maas_model.sql`。
+    升级 Job 会在没有 `maas_model` 表时自动读取 `model` 表。
+
+本节适用于：
+
+- 从 v0.17.1 升级到 v0.18.3
+- 从 v0.16.0（未执行 MaaS 数据表迁移）直升到 v0.18.3
+
+| 起始版本 | 自动使用的迁移源 | 迁移结果 |
+| -------- | ---------------- | -------- |
+| v0.17.1 | `maas_model` 表 | 保留启停状态及 `ALL` / `SPECIFIED` Workspace 可见范围 |
+| v0.16.0 | `model.public_endpoint_*` | 保留启停状态，可见范围统一设置为 `ALL` |
+
+全局服务集群升级会先运行 `hydra-maas-migrate` Job。迁移失败会阻断升级，新 apiserver 不会提前滚动。
+
+### 升级前准备
+
+1. 备份数据库。至少备份以下数据：
+
+    - `model` 表
+    - v0.17.1 环境的 `maas_model` 表
+    - 条件允许时，备份整个 Hydra 数据库
+
+    建议由 DBA 使用受控凭据执行备份。不要把数据库密码写入命令、脚本或工单。
+
+    查看 Hydra 当前连接的数据库，可参考下文[从 v0.16.0（或更低版本）升级到 v0.17.1](#upgrade-to-v0171) 中的步骤。
+
+1. 导出 `ModelRoute`。在每个工作集群执行：
+
+    ```bash
+    kubectl get modelroutes.llm.knoway.dev -A -o yaml > <worker>-modelroutes-backup.yaml
+    ```
+
+    将 `<worker>` 替换为工作集群名称，便于区分备份文件。
+
+### 升级工作集群 hydra-agent
+
+在每个工作集群的 **Helm 应用** 页面升级 **hydra-agent**。建议先升级一个非核心集群，确认正常后再升级其余集群。
+
+默认情况下，此操作会同时自动升级：
+
+- Knoway Controller 和 Gateway
+- `ModelRoute` CRD
+- hydra-agent 其他组件
+
+每个工作集群升级后执行以下检查：
+
+```bash
+kubectl -n hydra-system get pods
+kubectl get crd modelroutes.llm.knoway.dev
+kubectl get modelroutes.llm.knoway.dev -A
+kubectl explain modelroute.spec.enabled --api-version=llm.knoway.dev/v1alpha1
+kubectl explain modelroute.spec.metadata.visibilityScope --api-version=llm.knoway.dev/v1alpha1
+kubectl explain modelroute.spec.metadata.visibleWorkspaces --api-version=llm.knoway.dev/v1alpha1
+```
+
+进入下一步的条件：hydra-agent 和 Knoway Pod 全部 Ready，且上述三个 `ModelRoute` 字段均存在。
+
+!!! note
+
+    最新 Chart 已避免把同一 hydra-agent Release 原有的 NodePort 误判为冲突。
+    如果仍提示端口被其他 Service 使用，说明存在真实冲突，需要调整端口后重试。
+
+### 升级全局服务集群 Hydra
+
+所有工作集群 hydra-agent 升级完成后，在全局服务集群的 **Helm 应用** 页面升级 Hydra。
+
+升级期间观察 MaaS 迁移 Job：
+
+```bash
+kubectl -n hydra-system get job,pod -l app=hydra-maas-migrate -w
+```
+
+发现 Job 后查看日志：
+
+```bash
+kubectl -n hydra-system logs job/hydra-maas-migrate -f
+```
+
+默认 Job 名为 `hydra-maas-migrate`。Job 成功后会自动删除，建议升级期间保存日志。
+
+!!! note
+
+    迁移 Job 可重复执行。失败时修复问题并重新升级即可。
+
+### 常见失败处理
+
+| 日志或现象 | 处理方式 |
+| ---------- | -------- |
+| `ModelRoute` CRD 缺少 `enabled` 或可见范围字段 | 对报错的工作集群重新升级 hydra-agent，确认 Knoway 自动升级成功 |
+| 存在旧 MaaS 数据，但 Clusterpedia 查不到 `ModelRoute` | 检查 Clusterpedia 同步、权限和网络 |
+| 启用的 MaaS 数据没有对应 `ModelRoute` | 恢复对应 CR；或经业务确认后先在旧版本禁用该模型 |
+| DB 与 CR 状态不一致 | 迁移默认以 CR 为准，按迁移告警核对业务期望 |
+| NodePort 被其他 Service 占用 | 调整真实冲突的 Service 或 hydra-agent 端口 |
+| 迁移 Job 超时或失败 | 保存日志，修复 DB、Clusterpedia 或集群连接后重新执行升级 |
+
+!!! warning
+
+    不要通过删除 `maas_model` 表、跳过迁移 Job 或强制删除 `ModelRoute` 来绕过错误。
+
+### 升级后验收
+
+- 全局服务集群 Hydra、所有 hydra-agent 和 Knoway Pod Ready
+- MaaS 模型数量与升级前一致
+- MaaS 列表分页的 items、pageSize 和总数正常
+- 原启用模型仍可用，原禁用模型仍保持禁用
+- v0.17.1 的 Workspace 可见范围保持不变
+- v0.16.0 迁移的 MaaS 模型默认对所有 Workspace 可见
+- MaaS API Key、智能路由和公共端点调用正常
+- 迁移日志没有未处理的 error，warning 已逐条确认
+
+## 从 v0.16.0（或更低版本）升级到 v0.17.1 {#upgrade-to-v0171}
 
 Hydra 从 v0.17.1 开始，将原先混在 `model` 表中的模型元数据与 MaaS 相关数据解耦：
 新增 `maas_model` 表存储 MaaS 信息，`model` 表中的 MaaS 字段在迁移完成后将逐步废弃。
@@ -10,8 +137,10 @@ Hydra 从 v0.17.1 开始，将原先混在 `model` 表中的模型元数据与 M
 
 !!! warning
 
-    Model 与 MaaS 的解耦仍在进行中，后续可能将 `maas_model` 表信息直接记录到 Knoway 相关资源中，
-    该表未来可能会被移除。如果没有升级到 v0.17.1 的特别需要，建议暂缓升级，待解耦工作完成后再升级。
+    如果目标版本是 v0.18.3 或更高版本，请勿执行本节中的 `create_maas_model.sql`，
+    请直接参考上文[从 v0.16.0 / v0.17.1 升级到 v0.18.3](#upgrade-to-v0183)。
+
+    仅当必须先升级到 v0.17.1 时，才需要完成本节的数据表迁移。
 
 !!! note
 

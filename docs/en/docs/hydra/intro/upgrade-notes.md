@@ -1,8 +1,147 @@
 # Upgrade Notes
 
 This page describes important considerations when upgrading Hydra to a new version.
+Choose the section that matches your current version.
 
-## Upgrading from v0.16.0 (or Earlier) to v0.17.1
+## Upgrading from v0.16.0 / v0.17.1 to v0.18.0 {#upgrade-to-v0180}
+
+Starting from Hydra v0.18.0, MaaS enablement status, cluster assignment, and Workspace visibility
+are all based on the Knoway `ModelRoute` CR. The old database fields are kept temporarily
+and are used only as the source for upgrade migration.
+
+Upgrading `hydra-agent` automatically upgrades Knoway. Knoway is a subchart of the `hydra-agent` Chart,
+with `knoway.enabled=true` by default, so a separate Knoway upgrade is not required.
+
+!!! warning
+
+    Follow this order: back up the database and `ModelRoute` objects, upgrade `hydra-agent` on every
+    worker cluster (which automatically upgrades Knoway), then upgrade Hydra on the global service cluster,
+    and finally verify the MaaS migration results.
+
+    If the environment has `knoway.enabled=false`, or Knoway is managed as an independent Helm Release,
+    upgrade Knoway separately before upgrading Hydra on the global service cluster.
+
+!!! note
+
+    When upgrading directly from v0.16.0 to v0.18.0, **do not** run `create_maas_model.sql`.
+    The upgrade Job automatically reads the `model` table if the `maas_model` table does not exist.
+
+This section applies to:
+
+- Upgrading from v0.17.1 to v0.18.0
+- Upgrading directly from v0.16.0 (without the MaaS table migration) to v0.18.0
+
+| Source version | Migration source used automatically | Migration result |
+| -------------- | ----------------------------------- | ---------------- |
+| v0.17.1 | `maas_model` table | Keeps enablement status and `ALL` / `SPECIFIED` Workspace visibility |
+| v0.16.0 | `model.public_endpoint_*` | Keeps enablement status; visibility is set to `ALL` |
+
+The global Hydra upgrade first runs the `hydra-maas-migrate` Job. A failed migration blocks the upgrade,
+and the new apiserver will not roll out early.
+
+### Before You Upgrade
+
+1. Back up the database. At a minimum, back up:
+
+    - The `model` table
+    - The `maas_model` table on v0.17.1 environments
+    - The entire Hydra database when possible
+
+    Have a DBA run the backup with controlled credentials.
+    Do not put the database password in commands, scripts, or tickets.
+
+    To inspect the database currently used by Hydra, see the steps in
+    [Upgrading from v0.16.0 (or Earlier) to v0.17.1](#upgrade-to-v0171).
+
+1. Export `ModelRoute` objects. On every worker cluster, run:
+
+    ```bash
+    kubectl get modelroutes.llm.knoway.dev -A -o yaml > <worker>-modelroutes-backup.yaml
+    ```
+
+    Replace `<worker>` with the worker cluster name so backup files are easy to tell apart.
+
+### Upgrade hydra-agent on Worker Clusters
+
+Upgrade **hydra-agent** on the **Helm Apps** page of each worker cluster.
+Upgrade a non-critical cluster first, confirm it is healthy, and then upgrade the remaining clusters.
+
+By default, this also upgrades:
+
+- Knoway Controller and Gateway
+- The `ModelRoute` CRD
+- Other hydra-agent components
+
+After each worker cluster upgrade, run:
+
+```bash
+kubectl -n hydra-system get pods
+kubectl get crd modelroutes.llm.knoway.dev
+kubectl get modelroutes.llm.knoway.dev -A
+kubectl explain modelroute.spec.enabled --api-version=llm.knoway.dev/v1alpha1
+kubectl explain modelroute.spec.metadata.visibilityScope --api-version=llm.knoway.dev/v1alpha1
+kubectl explain modelroute.spec.metadata.visibleWorkspaces --api-version=llm.knoway.dev/v1alpha1
+```
+
+Continue only when all hydra-agent and Knoway Pods are Ready, and the three `ModelRoute` fields above exist.
+
+!!! note
+
+    The latest Chart no longer treats the NodePort that already belongs to the same hydra-agent Release
+    as a conflict. If the upgrade still reports that the port is in use by another Service,
+    it is a real conflict; change the port and retry.
+
+### Upgrade Hydra on the Global Service Cluster
+
+After hydra-agent has been upgraded on every worker cluster, upgrade Hydra on the
+**Helm Apps** page of the global service cluster.
+
+Watch the MaaS migration Job during the upgrade:
+
+```bash
+kubectl -n hydra-system get job,pod -l app=hydra-maas-migrate -w
+```
+
+When the Job appears, follow its logs:
+
+```bash
+kubectl -n hydra-system logs job/hydra-maas-migrate -f
+```
+
+The default Job name is `hydra-maas-migrate`. The Job is deleted automatically after it succeeds,
+so save the logs while the upgrade is running.
+
+!!! note
+
+    The migration Job is idempotent. If it fails, fix the issue and rerun the upgrade.
+
+### Common Failures
+
+| Log or symptom | What to do |
+| -------------- | ---------- |
+| The `ModelRoute` CRD is missing `enabled` or visibility fields | Re-upgrade hydra-agent on the failing worker cluster and confirm Knoway upgraded automatically |
+| Legacy MaaS data exists, but Clusterpedia cannot find `ModelRoute` | Check Clusterpedia sync, permissions, and network |
+| Enabled MaaS data has no matching `ModelRoute` | Restore the corresponding CR, or disable the model on the old version after business confirmation |
+| DB and CR status do not match | Migration treats the CR as the source of truth; review migration warnings against the expected behavior |
+| A NodePort is used by another Service | Change the conflicting Service or hydra-agent port |
+| The migration Job times out or fails | Save the logs, fix the database, Clusterpedia, or cluster connectivity, then rerun the upgrade |
+
+!!! warning
+
+    Do not bypass errors by dropping the `maas_model` table, skipping the migration Job, or force-deleting `ModelRoute` objects.
+
+### After You Upgrade
+
+- Hydra on the global service cluster, and all hydra-agent and Knoway Pods, are Ready
+- The number of MaaS models matches the count before the upgrade
+- MaaS list pagination (`items`, `pageSize`, and total) works as expected
+- Previously enabled models remain available; previously disabled models remain disabled
+- Workspace visibility from v0.17.1 is unchanged
+- MaaS models migrated from v0.16.0 are visible to all Workspaces by default
+- MaaS API Keys, intelligent routing, and public endpoint calls work as expected
+- Migration logs contain no unhandled errors, and every warning has been reviewed
+
+## Upgrading from v0.16.0 (or Earlier) to v0.17.1 {#upgrade-to-v0171}
 
 Starting from v0.17.1, hydra decouples model metadata from MaaS-related data that was previously stored
 together in the `model` table. A new `maas_model` table is introduced to store MaaS information.
@@ -11,10 +150,10 @@ To prevent model metadata loss during the upgrade, complete the following data t
 
 !!! warning
 
-    The decoupling of Model and MaaS is still in progress. In the future, information in the `maas_model`
-    table may be recorded directly in Knoway-related resources, and this table may eventually be removed.
-    If there is no specific need to upgrade to v0.17.1, it is recommended to postpone the upgrade
-    until the decoupling work is complete.
+    If the target version is v0.18.0 or later, do not run `create_maas_model.sql` in this section.
+    Follow [Upgrading from v0.16.0 / v0.17.1 to v0.18.0](#upgrade-to-v0180) instead.
+
+    Complete this table migration only when you must upgrade to v0.17.1 first.
 
 !!! note
 
