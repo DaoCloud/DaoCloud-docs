@@ -127,6 +127,14 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./kwok.md)
 
+-   :material-brain:{ .lg .middle } __MatrixHub__ :simple-cncf: Joining CNCF Landscape
+
+    ---
+
+    Enterprise self-hosted AI model registry, a private alternative to Hugging Face, accelerating model distribution for vLLM, SGLang, and Dynamo
+
+    [:octicons-arrow-right-24: Learn more](./matrixhub.md)
+
 -   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: Listed in CNCF Sandbox
 
     ---
