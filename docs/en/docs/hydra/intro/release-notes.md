@@ -17,7 +17,7 @@ This page lists the release notes for LLM Studio, helping you understand version
 
 !!! note
 
-    Starting from v0.17.1, Hydra decouples model metadata from MaaS data. Before upgrading, migrate the `maas_model` data table. For details, see [Upgrade Notes](upgrade-notes.md).
+    Starting from v0.17.1, Hydra decouples model metadata from MaaS data. Before upgrading to v0.17.1, migrate the `maas_model` data table. If you are upgrading directly to v0.18.0, do not run that SQL. For details, see [Upgrade Notes](upgrade-notes.md).
 
 ## 2026-06-30
 
