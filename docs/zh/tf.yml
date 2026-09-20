@@ -576,6 +576,10 @@ nav:
                   - LVM: tf/storage/terms/lvm.md
                   - PV 和 PVC: tf/storage/terms/pv_pvc.md
       - 运营管理:
+          - 驾驶舱:
+              - 什么是驾驶舱: tf/crane/intro/index.md
+              - 单页大屏: tf/crane/user-guide/singlepage.md
+              - Release Notes: tf/crane/intro/release-notes.md
           - 费用中心:
               - tf/leopard/index.md
               - 收支明细: tf/leopard/transactions.md
