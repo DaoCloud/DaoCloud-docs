@@ -142,4 +142,4 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
 Token 工厂运营中心是 AI 时代的智能生产驾驶舱，将 Token 生产全链路转化为可量化、可追踪、可优化的实时数据视图，
 让运营团队对平台的每一秒运转都了如指掌。驾驶舱以毫秒级数据刷新呈现平台实时运转状态。
 
-详见 [什么是驾驶舱](crane/intro/index.md) 与 [单页大屏](crane/user-guide/singlepage.md)。
+详见 [什么是驾驶舱](crane/intro/index.md) 与 [经营概览面板](crane/user-guide/singlepage.md)。
