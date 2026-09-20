@@ -62,7 +62,7 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
         <span class="tf-arch-card-title">AI Lab</span>
         <span class="tf-arch-card-tip">云原生训推一体化</span>
       </a>
-      <a class="tf-arch-card tf-arch-card--model" href="clawos/workspace/">
+      <a class="tf-arch-card tf-arch-card--model" href="clawos/intro/">
         <span class="tf-arch-card-title">ClawOS</span>
         <span class="tf-arch-card-tip">多智能体运行与治理</span>
       </a>

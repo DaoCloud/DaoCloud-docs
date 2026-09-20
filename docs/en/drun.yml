@@ -105,13 +105,27 @@ nav:
                   - Notebook Not Controlled by Queue Quota: drun/baize/troubleshoot/notebook-not-controlled-by-quotas.md
                   - Queue Initialization Failed: drun/baize/troubleshoot/local-queue-initialization-failed.md
           - ClawOS:
-              - drun/clawos/workspace/index.md
-              - ClawHub:
-                  - Skill Market: drun/clawos/workspace/skill.md
-                  - Skill Management: drun/clawos/workspace/skill-manage.md
-              - OpenClaw Instance: drun/clawos/workspace/openclaw.md
-              - Feishu Integration: drun/clawos/workspace/feishu.md
-              - Microsoft Teams Configuration: drun/clawos/workspace/teams-info.md
+              - Intro:
+                  - What Is ClawOS: drun/clawos/intro/index.md
+                  - Installation: drun/clawos/intro/install.md
+                  - Quick Start: drun/clawos/intro/quickstart.md
+                  - Release Notes: drun/clawos/intro/release-notes.md
+                  - Upgrade Notes: drun/clawos/intro/upgrade-notes.md
+              - Workspace View:
+                  - Overview: drun/clawos/workspace/index.md
+                  - ClawHub:
+                      - Skill Market: drun/clawos/workspace/skill.md
+                      - Skill Management: drun/clawos/workspace/skill-manage.md
+                  - OpenClaw Instance: drun/clawos/workspace/openclaw.md
+                  - Feishu Integration: drun/clawos/workspace/feishu.md
+                  - Microsoft Teams Configuration: drun/clawos/workspace/teams-info.md
+              - Admin View:
+                  - Overview: drun/clawos/admin/index.md
+                  - Skill Management: drun/clawos/admin/skillmanage-admin.md
+                  - Network Policy Management: drun/clawos/admin/network-manage.md
+              - Reference:
+                  - Gateway API Instance Access: drun/clawos/reference/gateway-access.md
+              - FAQ: drun/clawos/faq.md
           - InferX Suite:
               - drun/inferx/index.md
               - FAQs: drun/inferx/faqs.md
