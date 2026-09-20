@@ -246,7 +246,7 @@ This site provides documentation for three product lines, covering full-stack ca
             <span class="tf-arch-card-tip">Databases and message queues</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="kairship/intro/">
-            <span class="tf-arch-card-title">Multicloud Orchestration</span>
+            <span class="tf-arch-card-title">Multicloud Manageent</span>
             <span class="tf-arch-card-tip">Multicloud and hybrid cloud orchestration</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="kangaroo/intro/">
