@@ -2,14 +2,6 @@ nav:
   - d.run AI OS:
       - Overview: drun/index.md
       - Cloud Native AI:
-          - ClawOS:
-              - drun/clawos/workspace/index.md
-              - ClawHub:
-                  - Skill Market: drun/clawos/workspace/skill.md
-                  - Skill Management: drun/clawos/workspace/skill-manage.md
-              - OpenClaw Instance: drun/clawos/workspace/openclaw.md
-              - Feishu Integration: drun/clawos/workspace/feishu.md
-              - Microsoft Teams Configuration: drun/clawos/workspace/teams-info.md
           - LLM Studio:
               - Intro:
                   - What is LLM Studio: drun/hydra/intro/index.md
@@ -112,7 +104,15 @@ nav:
                   - Cluster Not Found in Dropdown List: drun/baize/troubleshoot/cluster-not-found.md
                   - Notebook Not Controlled by Queue Quota: drun/baize/troubleshoot/notebook-not-controlled-by-quotas.md
                   - Queue Initialization Failed: drun/baize/troubleshoot/local-queue-initialization-failed.md
-          - InferX Inference Suite:
+          - ClawOS:
+              - drun/clawos/workspace/index.md
+              - ClawHub:
+                  - Skill Market: drun/clawos/workspace/skill.md
+                  - Skill Management: drun/clawos/workspace/skill-manage.md
+              - OpenClaw Instance: drun/clawos/workspace/openclaw.md
+              - Feishu Integration: drun/clawos/workspace/feishu.md
+              - Microsoft Teams Configuration: drun/clawos/workspace/teams-info.md
+          - InferX Suite:
               - drun/inferx/index.md
               - FAQs: drun/inferx/faqs.md
               - Best Practices:

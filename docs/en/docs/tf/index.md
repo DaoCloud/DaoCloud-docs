@@ -50,26 +50,18 @@ d.run Token Factory is an integrated platform built by DaoCloud for AI intellige
   <div class="tf-arch-layer tf-arch-layer--model">
     <div class="tf-arch-layer-label">CNAI</div>
     <div class="tf-arch-cards">
-      <a class="tf-arch-card tf-arch-card--model" href="clawos/intro/">
-        <span class="tf-arch-card-title">ClawOS</span>
-        <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
+      <a class="tf-arch-card tf-arch-card--model" href="hydra/">
+        <span class="tf-arch-card-title">LLM Studio</span>
+        <span class="tf-arch-card-tip">Model serving and O&M management</span>
       </a>
       <a class="tf-arch-card tf-arch-card--model" href="dak/">
         <span class="tf-arch-card-title">AI Apps</span>
         <span class="tf-arch-card-tip">Intelligent Q&A and other application capabilities</span>
       </a>
-      <a class="tf-arch-card tf-arch-card--model" href="hydra/">
-        <span class="tf-arch-card-title">LLM Studio</span>
-        <span class="tf-arch-card-tip">Model serving and O&M management</span>
-      </a>
       <a class="tf-arch-card tf-arch-card--model" href="inferx/">
-        <span class="tf-arch-card-title">InferX Inference</span>
+        <span class="tf-arch-card-title">InferX Suite</span>
         <span class="tf-arch-card-tip">Inference acceleration and engine management</span>
       </a>
-      <div class="tf-arch-card tf-arch-card--model">
-        <span class="tf-arch-card-title">redhare Distributed Cache</span>
-        <span class="tf-arch-card-tip">Distributed cache acceleration service</span>
-      </div>
       <a class="tf-arch-card tf-arch-card--model" href="zestu/">
         <span class="tf-arch-card-title">Compute Cloud</span>
         <span class="tf-arch-card-tip">Heterogeneous compute management and scheduling</span>

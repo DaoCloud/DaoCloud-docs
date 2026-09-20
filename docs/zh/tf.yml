@@ -2,48 +2,6 @@ nav:
   - d.run Token 工厂效能平台:
       - 概述: tf/index.md
       - 云原生 AI:
-          - ClawOS:
-              - tf/clawos/intro/index.md
-              - 介绍:
-                  - 安装: tf/clawos/intro/install.md
-                  - 快速入门: tf/clawos/intro/quickstart.md
-                  - Release Notes: tf/clawos/intro/release-notes.md
-                  - 升级注意事项: tf/clawos/intro/upgrade-notes.md
-              - 工作空间:
-                  - 概览: tf/clawos/workspace/index.md
-                  - ClawHub:
-                      - Skill 市场: tf/clawos/workspace/skill.md
-                      - Skill 管理: tf/clawos/workspace/skill-manage.md
-                  - OpenClaw 实例: tf/clawos/workspace/openclaw.md
-                  - 飞书集成: tf/clawos/workspace/feishu.md
-                  - Microsoft Teams 配置: tf/clawos/workspace/teams-info.md
-              - 管理员视角:
-                  - 概览: tf/clawos/admin/overview-admin.md
-                  - Skill 管理: tf/clawos/admin/skillmanage-admin.md
-                  - 网络策略管理: tf/clawos/admin/network-manage.md
-              - 参考文档:
-                  - Gateway API 实例访问配置: tf/clawos/reference/gateway-access.md
-          - AI 应用:
-              - tf/dak/index.md
-              - 功能列表: tf/dak/features.md
-              - 应用中心:
-                  - 创建应用: tf/dak/user-guide/app-center/create-app.md
-                  - 应用对话: tf/dak/user-guide/app-center/conversation.md
-              - 语料库:
-                  - 创建语料库: tf/dak/user-guide/corpus/create-corpus.md
-                  - 语料管理: tf/dak/user-guide/corpus/manage-corpus.md
-                  - 语料导入:
-                      - 文件导入: tf/dak/user-guide/corpus/upload-date.md
-                      - 手动录入: tf/dak/user-guide/corpus/manual.md
-                      - 图文导入: tf/dak/user-guide/corpus/image-upload.md
-                      - 格式化导入: tf/dak/user-guide/corpus/format-update.md
-              - 数据分析:
-                  - 问答质量: tf/dak/data-analysis/qa-quality.md
-                  - 问答次数: tf/dak/data-analysis/number-of-qa.md
-                  - 分片质量: tf/dak/data-analysis/shard-quality.md
-                  - 分片命中率: tf/dak/data-analysis/shard-hit-ratio.md
-                  - 改进意见: tf/dak/data-analysis/suggestions.md
-              - 我的反馈: tf/dak/my-feedback/my-feedback.md
           - 大模型服务平台:
               - 介绍:
                   - 什么是大模型服务平台: tf/hydra/intro/index.md
@@ -81,7 +39,28 @@ nav:
                   - 在 Bob Translate 中使用: tf/hydra/user-guides/bob-translate.md
                   - 在 LobeChat 中使用: tf/hydra/user-guides/lobe-chat.md
                   - 自定义大模型推理运行时: tf/hydra/user-guides/custom-runtime.md
-          - InferX 推理:
+          - AI 应用:
+              - tf/dak/index.md
+              - 功能列表: tf/dak/features.md
+              - 应用中心:
+                  - 创建应用: tf/dak/user-guide/app-center/create-app.md
+                  - 应用对话: tf/dak/user-guide/app-center/conversation.md
+              - 语料库:
+                  - 创建语料库: tf/dak/user-guide/corpus/create-corpus.md
+                  - 语料管理: tf/dak/user-guide/corpus/manage-corpus.md
+                  - 语料导入:
+                      - 文件导入: tf/dak/user-guide/corpus/upload-date.md
+                      - 手动录入: tf/dak/user-guide/corpus/manual.md
+                      - 图文导入: tf/dak/user-guide/corpus/image-upload.md
+                      - 格式化导入: tf/dak/user-guide/corpus/format-update.md
+              - 数据分析:
+                  - 问答质量: tf/dak/data-analysis/qa-quality.md
+                  - 问答次数: tf/dak/data-analysis/number-of-qa.md
+                  - 分片质量: tf/dak/data-analysis/shard-quality.md
+                  - 分片命中率: tf/dak/data-analysis/shard-hit-ratio.md
+                  - 改进意见: tf/dak/data-analysis/suggestions.md
+              - 我的反馈: tf/dak/my-feedback/my-feedback.md
+          - InferX 推理套件:
               - tf/inferx/index.md
               - FAQ: tf/inferx/faqs.md
               - 最佳实践:

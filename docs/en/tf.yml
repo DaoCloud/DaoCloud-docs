@@ -2,48 +2,6 @@ nav:
   - d.run Token Factory:
       - Overview: tf/index.md
       - Cloud Native AI:
-          - ClawOS:
-              - tf/clawos/intro/index.md
-              - Intro:
-                  - Install: tf/clawos/intro/install.md
-                  - Quick Start: tf/clawos/intro/quickstart.md
-                  - Release Notes: tf/clawos/intro/release-notes.md
-                  - Upgrade Notes: tf/clawos/intro/upgrade-notes.md
-              - Workspaces:
-                  - Overview: tf/clawos/workspace/index.md
-                  - ClawHub:
-                      - Skill Market: tf/clawos/workspace/skill.md
-                      - Skill Management: tf/clawos/workspace/skill-manage.md
-                  - OpenClaw Instance: tf/clawos/workspace/openclaw.md
-                  - Feishu Integration: tf/clawos/workspace/feishu.md
-                  - Microsoft Teams Configuration: tf/clawos/workspace/teams-info.md
-              - Admin Perspective:
-                  - Overview: tf/clawos/admin/overview-admin.md
-                  - Skill Management: tf/clawos/admin/skillmanage-admin.md
-                  - Network Policy Management: tf/clawos/admin/network-manage.md
-              - Reference:
-                  - Gateway API Instance Access Configuration: tf/clawos/reference/gateway-access.md
-          - AI Apps:
-              - tf/dak/index.md
-              - Features: tf/dak/features.md
-              - App Center:
-                  - Create Application: tf/dak/user-guide/app-center/create-app.md
-                  - Application Conversation: tf/dak/user-guide/app-center/conversation.md
-              - Corpus:
-                  - Create Corpus: tf/dak/user-guide/corpus/create-corpus.md
-                  - Corpus Management: tf/dak/user-guide/corpus/manage-corpus.md
-                  - Corpus Import:
-                      - File Import: tf/dak/user-guide/corpus/upload-date.md
-                      - Manual Entry: tf/dak/user-guide/corpus/manual.md
-                      - Image-Text Import: tf/dak/user-guide/corpus/image-upload.md
-                      - Formatted Import: tf/dak/user-guide/corpus/format-update.md
-              - Data Analysis:
-                  - QA Quality: tf/dak/data-analysis/qa-quality.md
-                  - QA Count: tf/dak/data-analysis/number-of-qa.md
-                  - Shard Quality: tf/dak/data-analysis/shard-quality.md
-                  - Shard Hit Ratio: tf/dak/data-analysis/shard-hit-ratio.md
-                  - Improvement Suggestions: tf/dak/data-analysis/suggestions.md
-              - My Feedback: tf/dak/my-feedback/my-feedback.md
           - LLM Studio:
               - Intro:
                   - What is LLM Studio: tf/hydra/intro/index.md
@@ -81,7 +39,28 @@ nav:
                   - Use in Bob Translate: tf/hydra/user-guides/bob-translate.md
                   - Use in LobeChat: tf/hydra/user-guides/lobe-chat.md
                   - Custom LLM Inference Runtime: tf/hydra/user-guides/custom-runtime.md
-          - InferX Inference:
+          - AI Apps:
+              - tf/dak/index.md
+              - Features: tf/dak/features.md
+              - App Center:
+                  - Create Application: tf/dak/user-guide/app-center/create-app.md
+                  - Application Conversation: tf/dak/user-guide/app-center/conversation.md
+              - Corpus:
+                  - Create Corpus: tf/dak/user-guide/corpus/create-corpus.md
+                  - Corpus Management: tf/dak/user-guide/corpus/manage-corpus.md
+                  - Corpus Import:
+                      - File Import: tf/dak/user-guide/corpus/upload-date.md
+                      - Manual Entry: tf/dak/user-guide/corpus/manual.md
+                      - Image-Text Import: tf/dak/user-guide/corpus/image-upload.md
+                      - Formatted Import: tf/dak/user-guide/corpus/format-update.md
+              - Data Analysis:
+                  - QA Quality: tf/dak/data-analysis/qa-quality.md
+                  - QA Count: tf/dak/data-analysis/number-of-qa.md
+                  - Shard Quality: tf/dak/data-analysis/shard-quality.md
+                  - Shard Hit Ratio: tf/dak/data-analysis/shard-hit-ratio.md
+                  - Improvement Suggestions: tf/dak/data-analysis/suggestions.md
+              - My Feedback: tf/dak/my-feedback/my-feedback.md
+          - InferX Suite:
               - tf/inferx/index.md
               - FAQs: tf/inferx/faqs.md
               - Best Practices:
