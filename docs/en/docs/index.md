@@ -316,11 +316,11 @@ This site provides documentation for three product lines, covering full-stack ca
     ---
 
     - [ClawOS](drun/clawos/intro/)
+    - [AI Lab](drun/baize/intro/)
     - [AI Apps](tf/dak/)
     - [LLM Studio](tf/hydra/intro/)
     - [InferX Suite](tf/inferx/)
-    - [AI Lab](drun/baize/intro/)
-    - [Computing Cloud](tf/zestu/)
+    - [Compute Cloud](tf/zestu/)
 
 - :material-server:{ .lg .middle } __Containers__
 
