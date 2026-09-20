@@ -212,6 +212,7 @@ extra_javascript:
 extra_css:
   - stylesheets/custom.css
   - stylesheets/product-docs-menu.css
+  - stylesheets/product-nav-menu.css
   - stylesheets/tf-arch.css
 
 # Extensions

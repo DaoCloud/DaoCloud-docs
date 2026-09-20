@@ -34,6 +34,62 @@
           {{ item.render(nav_item) }}
         {% endif %}
       {% endfor %}
+
+      <li class="md-tabs__item product-nav-menu product-nav-menu--trailer" aria-haspopup="true">
+        <span class="product-nav-menu__burger" aria-label="产品导航">
+          <span></span><span></span><span></span>
+        </span>
+        <div class="product-nav-menu__panel" role="menu" aria-label="产品导航">
+          <div class="product-nav-menu__col">
+            <h4 class="product-nav-menu__heading">产品探索</h4>
+            <ul class="product-nav-menu__links">
+              <li><a href="{{ ns.tf_url }}">d.run Token 工厂效能平台</a></li>
+              <li><a href="{{ ns.drun_url }}">d.run AI 操作系统</a></li>
+              <li><a href="{{ ns.dce_url }}">DCE 云原生操作系统</a></li>
+            </ul>
+          </div>
+          <div class="product-nav-menu__col">
+            <h4 class="product-nav-menu__heading">云原生 AI</h4>
+            <ul class="product-nav-menu__links">
+              <li><a href="{{ '/tf/hydra/intro/' | url }}">大模型服务平台</a></li>
+              <li><a href="{{ '/tf/inferx/' | url }}">InferX 推理套件</a></li>
+              <li><a href="{{ '/drun/baize/intro/' | url }}">AI Lab</a></li>
+              <li><a href="{{ '/drun/clawos/intro/' | url }}">ClawOS 智能体</a></li>
+              <li><a href="{{ '/tf/zestu/' | url }}">算力云</a></li>
+              <li><a href="{{ '/tf/dak/' | url }}">AI 应用</a></li>
+            </ul>
+          </div>
+          <div class="product-nav-menu__col">
+            <h4 class="product-nav-menu__heading">容器</h4>
+            <ul class="product-nav-menu__links">
+              <li><a href="{{ '/kpanda/intro/' | url }}">容器管理</a></li>
+              <li><a href="{{ '/kairship/intro/' | url }}">多云编排</a></li>
+              <li><a href="{{ '/kangaroo/intro/' | url }}">镜像仓库</a></li>
+              <li><a href="{{ '/network/intro/' | url }}">云原生网络</a></li>
+              <li><a href="{{ '/storage/' | url }}">云原生存储</a></li>
+              <li><a href="{{ '/virtnest/intro/' | url }}">虚拟机</a></li>
+            </ul>
+          </div>
+          <div class="product-nav-menu__col">
+            <h4 class="product-nav-menu__heading">微服务</h4>
+            <ul class="product-nav-menu__links">
+              <li><a href="{{ '/insight/intro/' | url }}">可观测性</a></li>
+              <li><a href="{{ '/skoala/intro/' | url }}">微服务引擎</a></li>
+              <li><a href="{{ '/mspider/intro/' | url }}">服务网格</a></li>
+            </ul>
+          </div>
+          <div class="product-nav-menu__col">
+            <h4 class="product-nav-menu__heading">平台</h4>
+            <ul class="product-nav-menu__links">
+              <li><a href="{{ '/amamba/intro/' | url }}">应用工作台</a></li>
+              <li><a href="{{ '/middleware/' | url }}">中间件</a></li>
+              <li><a href="{{ '/kant/intro/' | url }}">云边协同</a></li>
+              <li><a href="{{ '/ghippo/intro/' | url }}">全局管理</a></li>
+              <li><a href="{{ '/topohub/intro/' | url }}">设备管理</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>

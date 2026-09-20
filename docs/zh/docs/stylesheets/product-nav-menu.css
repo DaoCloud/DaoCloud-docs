@@ -1,0 +1,173 @@
+/* ============================================================
+   产品导航悬浮大面板（顶部蓝色 tab 栏）
+   三条横线图标常驻，hover 时横线旋转成竖线并弹出大面板
+   ============================================================ */
+
+.product-nav-menu {
+  position: relative;
+  /* 横向扩大 hover 热区而不改变视觉位置 */
+  padding-inline: 10px;
+  margin-inline: -10px;
+}
+
+/* 桥接按钮与面板之间的间隙：鼠标从按钮滑向面板时保持 hover，面板不会立刻消失 */
+.product-nav-menu::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -5px;
+  right: -5px;
+  height: .45rem;
+}
+
+/* 最右那个入口：贴到二级导航栏最右侧 */
+.product-nav-menu--trailer {
+  margin-left: auto;
+}
+
+.product-nav-menu__burger {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.product-nav-menu__burger > span {
+  position: absolute;
+  left: 1px;
+  width: 16px;
+  height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+  transform-origin: center;
+  transition: transform 280ms cubic-bezier(.4, 0, .2, 1);
+}
+
+/* 三条横线：上、中、下堆叠 */
+.product-nav-menu__burger > span:nth-child(1) { top: 0; }
+.product-nav-menu__burger > span:nth-child(2) { top: 7px; }
+.product-nav-menu__burger > span:nth-child(3) { top: 14px; }
+
+/* hover 时三条横线旋转 90° 变竖线，并水平并排错开，避免重叠成一条 */
+.product-nav-menu:hover .product-nav-menu__burger > span:nth-child(1),
+.product-nav-menu:focus-within .product-nav-menu__burger > span:nth-child(1) {
+  transform: translate(-6px, 7px) rotate(90deg);
+}
+.product-nav-menu:hover .product-nav-menu__burger > span:nth-child(2),
+.product-nav-menu:focus-within .product-nav-menu__burger > span:nth-child(2) {
+  transform: translate(0, 0) rotate(90deg);
+}
+.product-nav-menu:hover .product-nav-menu__burger > span:nth-child(3),
+.product-nav-menu:focus-within .product-nav-menu__burger > span:nth-child(3) {
+  transform: translate(6px, -7px) rotate(90deg);
+}
+
+/* 大面板默认隐藏 */
+.product-nav-menu__panel {
+  display: none;
+  border-radius: .2rem;
+  box-shadow: var(--md-shadow-z3);
+  column-gap: 1.75rem;
+  margin: 0;
+  padding: 1.1rem 1.4rem 1.4rem;
+  position: absolute;
+  top: calc(100% + .2rem);
+  width: min(72rem, calc(100vw - 2rem));
+  z-index: 40;
+}
+
+.product-nav-menu:hover .product-nav-menu__panel,
+.product-nav-menu:focus-within .product-nav-menu__panel {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(9rem, 1fr));
+}
+
+/* 最右入口：面板右缘对齐，避免超出右侧视口 */
+.product-nav-menu--trailer .product-nav-menu__panel {
+  left: auto;
+  right: 0;
+}
+
+.product-nav-menu__heading {
+  font-size: .78rem;
+  font-weight: 700;
+  margin: 0 0 .35rem;
+  padding-bottom: .3rem;
+  border-bottom: 1px solid;
+}
+
+.product-nav-menu__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-nav-menu__links li {
+  margin: 0;
+}
+
+.product-nav-menu__links a {
+  display: block;
+  font-size: .72rem;
+  line-height: 1.35;
+  padding: .28rem 0;
+  white-space: nowrap;
+}
+
+.product-nav-menu__links a:focus,
+.product-nav-menu__links a:hover {
+  color: var(--md-accent-fg-color) !important;
+}
+
+/* 明色配色 */
+[data-md-color-scheme="default"] .product-nav-menu__panel {
+  background: #fff;
+  color: #1f2937;
+}
+
+[data-md-color-scheme="default"] .product-nav-menu__panel a {
+  color: #374151 !important;
+}
+
+[data-md-color-scheme="default"] .product-nav-menu__heading {
+  border-color: #e5e7eb;
+  color: #111827;
+}
+
+[data-md-color-scheme="default"] .product-nav-menu__links a:focus,
+[data-md-color-scheme="default"] .product-nav-menu__links a:hover {
+  background: #eef2ff;
+}
+
+/* 暗色配色 */
+[data-md-color-scheme="slate"] .product-nav-menu__panel {
+  background: #1e2129;
+  color: #fff;
+}
+
+[data-md-color-scheme="slate"] .product-nav-menu__panel a {
+  color: #d1d5db !important;
+}
+
+[data-md-color-scheme="slate"] .product-nav-menu__heading {
+  border-color: #3a4150;
+  color: #f9fafb;
+}
+
+[data-md-color-scheme="slate"] .product-nav-menu__links a:focus,
+[data-md-color-scheme="slate"] .product-nav-menu__links a:hover {
+  background: #363b47;
+}
+
+/* 面板弹出需要该区域允许溢出显示在蓝色 tab 条之外 */
+@media screen and (min-width: 76.25em) {
+  .md-tabs,
+  .md-tabs__list {
+    overflow: visible;
+  }
+
+  .md-tabs__list {
+    contain: none;
+  }
+}
