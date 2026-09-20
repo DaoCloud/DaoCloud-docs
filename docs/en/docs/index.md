@@ -68,26 +68,18 @@ This site provides documentation for three product lines, covering full-stack ca
       <div class="tf-arch-layer tf-arch-layer--model">
         <div class="tf-arch-layer-label">CNAI</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--model" href="tf/clawos/intro/">
-            <span class="tf-arch-card-title">ClawOS</span>
-            <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
+          <a class="tf-arch-card tf-arch-card--model" href="tf/hydra/">
+            <span class="tf-arch-card-title">LLM Studio</span>
+            <span class="tf-arch-card-tip">Model serving and O&M management</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="tf/dak/">
             <span class="tf-arch-card-title">AI Apps</span>
             <span class="tf-arch-card-tip">Intelligent Q&A and application capabilities</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model" href="tf/hydra/">
-            <span class="tf-arch-card-title">LLM Studio</span>
-            <span class="tf-arch-card-tip">Model serving and O&M management</span>
-          </a>
           <a class="tf-arch-card tf-arch-card--model" href="tf/inferx/">
-            <span class="tf-arch-card-title">InferX Inference</span>
+            <span class="tf-arch-card-title">InferX Suite</span>
             <span class="tf-arch-card-tip">Inference acceleration and engine management</span>
           </a>
-          <div class="tf-arch-card tf-arch-card--model">
-            <span class="tf-arch-card-title">redhare Distributed Cache</span>
-            <span class="tf-arch-card-tip">Distributed cache acceleration service</span>
-          </div>
           <a class="tf-arch-card tf-arch-card--model" href="tf/zestu/">
             <span class="tf-arch-card-title">Compute Cloud</span>
             <span class="tf-arch-card-tip">Heterogeneous compute management and scheduling</span>
@@ -165,10 +157,6 @@ This site provides documentation for three product lines, covering full-stack ca
       <div class="tf-arch-layer tf-arch-layer--model">
         <div class="tf-arch-layer-label">CNAI</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/workspace/">
-            <span class="tf-arch-card-title">ClawOS</span>
-            <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
-          </a>
           <a class="tf-arch-card tf-arch-card--model" href="drun/hydra/">
             <span class="tf-arch-card-title">LLM Studio</span>
             <span class="tf-arch-card-tip">Model serving and O&M management</span>
@@ -177,14 +165,14 @@ This site provides documentation for three product lines, covering full-stack ca
             <span class="tf-arch-card-title">AI Lab</span>
             <span class="tf-arch-card-tip">Cloud-native integrated training and inference</span>
           </a>
+          <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/workspace/">
+            <span class="tf-arch-card-title">ClawOS</span>
+            <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
+          </a>
           <a class="tf-arch-card tf-arch-card--model" href="drun/inferx/">
-            <span class="tf-arch-card-title">InferX Inference Suite</span>
+            <span class="tf-arch-card-title">InferX Suite</span>
             <span class="tf-arch-card-tip">Inference acceleration and engine management</span>
           </a>
-          <div class="tf-arch-card tf-arch-card--model">
-            <span class="tf-arch-card-title">redhare Distributed Cache</span>
-            <span class="tf-arch-card-tip">Distributed cache acceleration service</span>
-          </div>
         </div>
       </div>
       <div class="tf-arch-arrow">▼</div>
@@ -327,10 +315,10 @@ This site provides documentation for three product lines, covering full-stack ca
 
     ---
 
-    - [ClawOS](tf/clawos/intro/)
+    - [ClawOS](drun/clawos/workspace/)
     - [AI Apps](tf/dak/)
     - [LLM Studio](tf/hydra/intro/)
-    - [InferX Inference Suite](tf/inferx/)
+    - [InferX Suite](tf/inferx/)
     - [AI Lab](drun/baize/intro/)
     - [Computing Cloud](tf/zestu/)
 

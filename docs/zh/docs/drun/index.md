@@ -54,10 +54,6 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
   <div class="tf-arch-layer tf-arch-layer--model">
     <div class="tf-arch-layer-label">云原生 AI</div>
     <div class="tf-arch-cards">
-      <a class="tf-arch-card tf-arch-card--model" href="clawos/workspace/">
-        <span class="tf-arch-card-title">ClawOS</span>
-        <span class="tf-arch-card-tip">多智能体运行与治理</span>
-      </a>
       <a class="tf-arch-card tf-arch-card--model" href="hydra/">
         <span class="tf-arch-card-title">大模型服务平台</span>
         <span class="tf-arch-card-tip">模型部署与运维管理</span>
@@ -66,14 +62,14 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
         <span class="tf-arch-card-title">AI Lab</span>
         <span class="tf-arch-card-tip">云原生训推一体化</span>
       </a>
+      <a class="tf-arch-card tf-arch-card--model" href="clawos/workspace/">
+        <span class="tf-arch-card-title">ClawOS</span>
+        <span class="tf-arch-card-tip">多智能体运行与治理</span>
+      </a>
       <a class="tf-arch-card tf-arch-card--model" href="inferx/">
         <span class="tf-arch-card-title">InferX 推理套件</span>
         <span class="tf-arch-card-tip">推理加速与引擎管理</span>
       </a>
-      <div class="tf-arch-card tf-arch-card--model">
-        <span class="tf-arch-card-title">redhare 分布式缓存</span>
-        <span class="tf-arch-card-tip">分布式缓存加速服务</span>
-      </div>
     </div>
   </div>
   <div class="tf-arch-arrow">▼</div>

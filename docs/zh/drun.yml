@@ -2,14 +2,6 @@ nav:
   - d.run AI 操作系统:
       - 概述: drun/index.md
       - 云原生 AI:
-          - ClawOS:
-              - drun/clawos/workspace/index.md
-              - ClawHub:
-                  - Skill 市场: drun/clawos/workspace/skill.md
-                  - Skill 管理: drun/clawos/workspace/skill-manage.md
-              - OpenClaw 实例: drun/clawos/workspace/openclaw.md
-              - 飞书集成: drun/clawos/workspace/feishu.md
-              - Microsoft Teams 配置: drun/clawos/workspace/teams-info.md
           - 大模型服务平台:
               - 介绍:
                   - 什么是大模型服务平台: drun/hydra/intro/index.md
@@ -112,6 +104,14 @@ nav:
                   - 集群下拉列表中找不到集群: drun/baize/troubleshoot/cluster-not-found.md
                   - Notebook不受队列配额控制: drun/baize/troubleshoot/notebook-not-controlled-by-quotas.md
                   - 队列初始化失败: drun/baize/troubleshoot/local-queue-initialization-failed.md
+          - ClawOS:
+              - drun/clawos/workspace/index.md
+              - ClawHub:
+                  - Skill 市场: drun/clawos/workspace/skill.md
+                  - Skill 管理: drun/clawos/workspace/skill-manage.md
+              - OpenClaw 实例: drun/clawos/workspace/openclaw.md
+              - 飞书集成: drun/clawos/workspace/feishu.md
+              - Microsoft Teams 配置: drun/clawos/workspace/teams-info.md
           - InferX 推理套件:
               - drun/inferx/index.md
               - FAQ: drun/inferx/faqs.md

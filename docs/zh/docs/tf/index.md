@@ -52,26 +52,18 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
   <div class="tf-arch-layer tf-arch-layer--model">
     <div class="tf-arch-layer-label">云原生 AI</div>
     <div class="tf-arch-cards">
-      <a class="tf-arch-card tf-arch-card--model" href="clawos/intro/">
-        <span class="tf-arch-card-title">ClawOS</span>
-        <span class="tf-arch-card-tip">多智能体运行与治理</span>
+      <a class="tf-arch-card tf-arch-card--model" href="hydra/">
+        <span class="tf-arch-card-title">大模型服务平台</span>
+        <span class="tf-arch-card-tip">模型部署与运维管理</span>
       </a>
       <a class="tf-arch-card tf-arch-card--model" href="dak/">
         <span class="tf-arch-card-title">AI 应用</span>
         <span class="tf-arch-card-tip">智能问答等应用能力</span>
       </a>
-      <a class="tf-arch-card tf-arch-card--model" href="hydra/">
-        <span class="tf-arch-card-title">大模型服务平台</span>
-        <span class="tf-arch-card-tip">模型部署与运维管理</span>
-      </a>
       <a class="tf-arch-card tf-arch-card--model" href="inferx/">
-        <span class="tf-arch-card-title">InferX 推理</span>
+        <span class="tf-arch-card-title">InferX 推理套件</span>
         <span class="tf-arch-card-tip">推理加速与引擎管理</span>
       </a>
-      <div class="tf-arch-card tf-arch-card--model">
-        <span class="tf-arch-card-title">redhare 分布式缓存</span>
-        <span class="tf-arch-card-tip">分布式缓存加速服务</span>
-      </div>
       <a class="tf-arch-card tf-arch-card--model" href="zestu/">
         <span class="tf-arch-card-title">算力云</span>
         <span class="tf-arch-card-tip">异构算力纳管与调度</span>
