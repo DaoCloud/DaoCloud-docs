@@ -1,11 +1,11 @@
 import os
 import yaml
 
-# d.run 条目固定在「DCE 云原生操作系统」之后，和 docs/zh/theme/partials/tabs.html
+# d.run 条目固定在「DaoCloud Enterprise」之后，和 docs/zh/theme/partials/tabs.html
 # 里「产品文档」下拉的分组保持一致。
 # 注意：不要用「视频教程」之类的条目做锚点，否则 d.run 条目会跟着无关条目的
 # 位置漂移（抽屉导航 md-nav--primary 会按真实 nav 顺序渲染这些顶层条目）。
-ANCHOR_TITLE = "DCE 云原生操作系统"
+ANCHOR_TITLE = "DaoCloud Enterprise"
 TF_TITLE = "d.run Token 工厂效能平台"
 
 
