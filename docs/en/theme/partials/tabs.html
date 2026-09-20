@@ -34,6 +34,62 @@
           {{ item.render(nav_item) }}
         {% endif %}
       {% endfor %}
+
+      <li class="md-tabs__item product-nav-menu product-nav-menu--trailer" aria-haspopup="true">
+        <span class="product-nav-menu__burger" aria-label="Product Navigation">
+          <span></span><span></span><span></span>
+        </span>
+        <div class="product-nav-menu__panel" role="menu" aria-label="Product Navigation">
+          <div class="product-nav-menu__col">
+            <h4 class="product-nav-menu__heading">Explore Products</h4>
+            <ul class="product-nav-menu__links">
+              <li><a href="{{ ns.tf_url }}">d.run Token Factory</a></li>
+              <li><a href="{{ ns.drun_url }}">d.run AI OS</a></li>
+              <li><a href="{{ ns.dce_url }}">DaoCloud Enterprise</a></li>
+            </ul>
+          </div>
+          <div class="product-nav-menu__col">
+            <h4 class="product-nav-menu__heading">Cloud Native AI</h4>
+            <ul class="product-nav-menu__links">
+              <li><a href="{{ '/en/tf/hydra/intro/' | url }}">LLM Studio</a></li>
+              <li><a href="{{ '/en/tf/inferx/' | url }}">InferX Suite</a></li>
+              <li><a href="{{ '/en/drun/baize/intro/' | url }}">AI Lab</a></li>
+              <li><a href="{{ '/en/drun/clawos/intro/' | url }}">ClawOS</a></li>
+              <li><a href="{{ '/en/tf/zestu/' | url }}">Compute Cloud</a></li>
+              <li><a href="{{ '/en/tf/dak/' | url }}">AI Apps</a></li>
+            </ul>
+          </div>
+          <div class="product-nav-menu__col">
+            <h4 class="product-nav-menu__heading">Containers</h4>
+            <ul class="product-nav-menu__links">
+              <li><a href="{{ '/en/kpanda/intro/' | url }}">Container Management</a></li>
+              <li><a href="{{ '/en/kairship/intro/' | url }}">Multicloud Management</a></li>
+              <li><a href="{{ '/en/kangaroo/intro/' | url }}">Container Registry</a></li>
+              <li><a href="{{ '/en/network/intro/' | url }}">Cloud Native Network</a></li>
+              <li><a href="{{ '/en/storage/' | url }}">Cloud Native Storage</a></li>
+              <li><a href="{{ '/en/virtnest/intro/' | url }}">Virtual Machine</a></li>
+            </ul>
+          </div>
+          <div class="product-nav-menu__col">
+            <h4 class="product-nav-menu__heading">Microservices</h4>
+            <ul class="product-nav-menu__links">
+              <li><a href="{{ '/en/insight/intro/' | url }}">Insight</a></li>
+              <li><a href="{{ '/en/skoala/intro/' | url }}">Microservice Engine</a></li>
+              <li><a href="{{ '/en/mspider/intro/' | url }}">Service Mesh</a></li>
+            </ul>
+          </div>
+          <div class="product-nav-menu__col">
+            <h4 class="product-nav-menu__heading">Platform</h4>
+            <ul class="product-nav-menu__links">
+              <li><a href="{{ '/en/amamba/intro/' | url }}">Workbench</a></li>
+              <li><a href="{{ '/en/middleware/' | url }}">Middleware</a></li>
+              <li><a href="{{ '/en/kant/intro/' | url }}">Cloud Edge Collaboration</a></li>
+              <li><a href="{{ '/en/ghippo/intro/' | url }}">Global Management</a></li>
+              <li><a href="{{ '/en/topohub/intro/' | url }}">Device Management</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>

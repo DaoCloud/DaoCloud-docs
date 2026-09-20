@@ -1,16 +1,18 @@
 /* ============================================================
-   产品导航悬浮大面板（顶部蓝色 tab 栏）
-   三条横线图标常驻，hover 时横线旋转成竖线并弹出大面板
+   Hover mega menu for the top (blue) tab bar
+   A three-line icon is always visible; on hover the lines
+   rotate into vertical bars and a large panel pops out
    ============================================================ */
 
 .product-nav-menu {
   position: relative;
-  /* 横向扩大 hover 热区而不改变视觉位置 */
+  /* widen the hover zone horizontally without moving the visual position */
   padding-inline: 22px;
   margin-inline: -22px;
 }
 
-/* 桥接按钮与面板之间的间隙：鼠标从按钮滑向面板时保持 hover，面板不会立刻消失 */
+/* Bridge the gap between the button and the panel: the hover state is
+   kept while the mouse moves from the button to the panel */
 .product-nav-menu::before {
   content: "";
   position: absolute;
@@ -20,7 +22,7 @@
   height: .8rem;
 }
 
-/* 最右那个入口：贴到二级导航栏最右侧 */
+/* The trailing entry: sits flush against the right side of the secondary nav bar */
 .product-nav-menu--trailer {
   margin-left: auto;
 }
@@ -44,12 +46,13 @@
   transition: transform 280ms cubic-bezier(.4, 0, .2, 1);
 }
 
-/* 三条横线：上、中、下堆叠 */
+/* Three horizontal lines stacked top / middle / bottom */
 .product-nav-menu__burger > span:nth-child(1) { top: 0; }
 .product-nav-menu__burger > span:nth-child(2) { top: 7px; }
 .product-nav-menu__burger > span:nth-child(3) { top: 14px; }
 
-/* hover 时三条横线旋转 90° 变竖线，并水平并排错开，避免重叠成一条 */
+/* On hover the three lines rotate 90° into vertical bars that fan
+   out horizontally so they do not overlap into a single line */
 .product-nav-menu:hover .product-nav-menu__burger > span:nth-child(1),
 .product-nav-menu:focus-within .product-nav-menu__burger > span:nth-child(1) {
   transform: translate(-6px, 7px) rotate(90deg);
@@ -63,7 +66,7 @@
   transform: translate(6px, -7px) rotate(90deg);
 }
 
-/* 大面板默认隐藏 */
+/* The panel is hidden by default */
 .product-nav-menu__panel {
   display: none;
   border-radius: .2rem;
@@ -83,7 +86,8 @@
   grid-template-columns: repeat(5, minmax(9rem, 1fr));
 }
 
-/* 最右入口：面板右缘对齐，避免超出右侧视口 */
+/* The trailing entry: right-align the panel so it does not overflow
+   the right edge of the viewport */
 .product-nav-menu--trailer .product-nav-menu__panel {
   left: auto;
   right: 0;
@@ -120,7 +124,7 @@
   color: var(--md-accent-fg-color) !important;
 }
 
-/* 明色配色 */
+/* Light color scheme */
 [data-md-color-scheme="default"] .product-nav-menu__panel {
   background: #fff;
   color: #1f2937;
@@ -140,7 +144,7 @@
   background: #eef2ff;
 }
 
-/* 暗色配色 */
+/* Dark color scheme */
 [data-md-color-scheme="slate"] .product-nav-menu__panel {
   background: #1e2129;
   color: #fff;
@@ -160,7 +164,7 @@
   background: #363b47;
 }
 
-/* 面板弹出需要该区域允许溢出显示在蓝色 tab 条之外 */
+/* The panel needs this area to allow overflow outside the blue tab bar */
 @media screen and (min-width: 76.25em) {
   .md-tabs,
   .md-tabs__list {
