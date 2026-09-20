@@ -58,7 +58,7 @@ d.run leverages the world's top-three Kubernetes scheduling technology and core 
         <span class="tf-arch-card-title">AI Lab</span>
         <span class="tf-arch-card-tip">Cloud Native integrated training and inference</span>
       </a>
-      <a class="tf-arch-card tf-arch-card--model" href="clawos/workspace/">
+      <a class="tf-arch-card tf-arch-card--model" href="clawos/intro/">
         <span class="tf-arch-card-title">ClawOS</span>
         <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
       </a>

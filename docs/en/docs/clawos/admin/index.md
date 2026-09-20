@@ -1,4 +1,4 @@
-# Overview (Administrator View)
+# Overview (Admin View)
 
 The Platform Administrator Overview is designed to monitor the overall usage, resource consumption, instance status, and user/API Key distribution of the ClawOS platform from a **global perspective**. It helps administrators quickly determine whether the platform is operating in a healthy, stable, and manageable state.
 

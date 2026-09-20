@@ -165,7 +165,7 @@ This site provides documentation for three product lines, covering full-stack ca
             <span class="tf-arch-card-title">AI Lab</span>
             <span class="tf-arch-card-tip">Cloud-native integrated training and inference</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/workspace/">
+          <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/intro/">
             <span class="tf-arch-card-title">ClawOS</span>
             <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
           </a>
@@ -315,7 +315,7 @@ This site provides documentation for three product lines, covering full-stack ca
 
     ---
 
-    - [ClawOS](drun/clawos/workspace/)
+    - [ClawOS](drun/clawos/intro/)
     - [AI Apps](tf/dak/)
     - [LLM Studio](tf/hydra/intro/)
     - [InferX Suite](tf/inferx/)
