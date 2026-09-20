@@ -321,10 +321,10 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
     ---
 
     - [ClawOS](drun/clawos/intro/)
+    - [AI Lab](drun/baize/intro/)
     - [AI 应用](tf/dak/)
     - [大模型服务平台](tf/hydra/intro/)
     - [InferX 推理套件](tf/inferx/)
-    - [AI Lab](drun/baize/intro/)
     - [算力云](tf/zestu/)
 
 - :material-server:{ .lg .middle } __容器__
