@@ -1461,7 +1461,7 @@ nav:
                   - 管理设备: topohub/device/manage-device.md
   - 下载中心:
       - DaoCloud 下载站:
-          - 导览页: download/index.md
+          - download/index.md
           - 下载 d.run Token 工厂效能平台: download/tf/index.md
           - 下载 d.run AI 操作系统: download/drun/index.md
           - 下载 DaoCloud Enterprise:
@@ -1498,7 +1498,7 @@ nav:
               - 云原生 AI:
                   - 大模型服务平台: download/modules/hydra.md
                   - AI Lab: download/modules/baize.md
-                  - 推理加速: download/modules/inferx.md
+                  - InferX 推理套件: download/modules/inferx.md
                   - ClawOS: download/modules/agentclaw.md
               - 云边协同: download/modules/kant.md
               - 全局&运营管理:
