@@ -102,10 +102,10 @@ d.run leverages the world's top-three Kubernetes scheduling technology and core 
         <span class="tf-arch-card-title">Copilot</span>
         <span class="tf-arch-card-tip">Intelligent O&M assistant</span>
       </div>
-      <div class="tf-arch-card tf-arch-card--ops">
+      <a class="tf-arch-card tf-arch-card--ops" href="crane/intro/">
         <span class="tf-arch-card-title">Cockpit</span>
         <span class="tf-arch-card-tip">Operations data visualization</span>
-      </div>
+      </a>
     </div>
   </div>
   <div class="tf-arch-arrow">▼</div>

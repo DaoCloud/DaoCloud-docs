@@ -620,6 +620,11 @@ nav:
                   - Storage Volume: drun/storage/terms/volume.md
                   - LVM: drun/storage/terms/lvm.md
                   - PV and PVC: drun/storage/terms/pv_pvc.md
+      - Operations:
+          - Cockpit:
+              - What Is Cockpit: drun/crane/intro/index.md
+              - Business Overview Panel: drun/crane/user-guide/singlepage.md
+              - Release Notes: drun/crane/intro/release-notes.md
       - OAM:
           - Insight:
               - drun/insight/intro/index.md

@@ -620,6 +620,11 @@ nav:
                   - 存储卷: drun/storage/terms/volume.md
                   - LVM: drun/storage/terms/lvm.md
                   - PV 和 PVC: drun/storage/terms/pv_pvc.md
+      - 运营管理:
+          - 驾驶舱:
+              - 什么是驾驶舱: drun/crane/intro/index.md
+              - 经营概览面板: drun/crane/user-guide/singlepage.md
+              - Release Notes: drun/crane/intro/release-notes.md
       - 运维管理:
           - 可观测性:
               - drun/insight/intro/index.md

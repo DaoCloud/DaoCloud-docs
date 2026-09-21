@@ -120,10 +120,10 @@ This site provides documentation for three product lines, covering full-stack ca
             <span class="tf-arch-card-title">Copilot</span>
             <span class="tf-arch-card-tip">Intelligent O&M assistant</span>
           </div>
-          <div class="tf-arch-card tf-arch-card--ops">
+          <a class="tf-arch-card tf-arch-card--ops" href="tf/crane/intro/">
             <span class="tf-arch-card-title">Dashboard</span>
             <span class="tf-arch-card-tip">Operations data visualization</span>
-          </div>
+          </a>
           <a class="tf-arch-card tf-arch-card--ops" href="tf/leopard/">
             <span class="tf-arch-card-title">Billing Center</span>
             <span class="tf-arch-card-tip">Billing and invoice analysis</span>
@@ -209,10 +209,10 @@ This site provides documentation for three product lines, covering full-stack ca
             <span class="tf-arch-card-title">Copilot</span>
             <span class="tf-arch-card-tip">Intelligent O&M assistant</span>
           </div>
-          <div class="tf-arch-card tf-arch-card--ops">
+          <a class="tf-arch-card tf-arch-card--ops" href="drun/crane/intro/">
             <span class="tf-arch-card-title">Operations Dashboard</span>
             <span class="tf-arch-card-tip">Operations data visualization</span>
-          </div>
+          </a>
         </div>
       </div>
       <div class="tf-arch-arrow">▼</div>
