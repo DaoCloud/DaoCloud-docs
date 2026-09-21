@@ -1373,6 +1373,13 @@ nav:
                   - Onboard Device: topohub/device/index.md
                   - Batch Onboard Devices: topohub/device/batch-access.md
                   - Manage Devices: topohub/device/manage-device.md
+  # OpenAPI 目前只有中文版（上游 daocloud-api-docs 只有 docs/openapi 与一份 openapi-nav.yml），
+  # 中文站的 OpenAPI 顶层 tab 由 CI 的 `make merge-openapi-docs` → scripts/merged_nav.py 注入。
+  # 这里手动补一个英文入口、直链中文站，让中英文顶部导航保持一致（modified: 2026-09-21）。
+  # 该条目不会被 CI 覆写（merged_nav.py 只重写 docs/zh/navigation.yml）。
+  # 若将来上游补齐英文 OpenAPI：给 merged_nav.py 增加 en 分支，再把下面这行改回内部条目
+  # （如 `openapi/index.md`），并删除本注释。
+  - OpenAPI Docs: https://docs.daocloud.io/openapi/
   - Downloads:
       - Download Hub:
           - download/index.md
