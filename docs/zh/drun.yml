@@ -1,6 +1,10 @@
 nav:
   - d.run AI 操作系统:
       - 概述: drun/index.md
+      - 安装:
+          - 安装简介: install/index.md
+          - 选产品与 manifest: install/commercial/product-manifest.md
+          - 开始安装: install/commercial/start-install.md
       - 云原生 AI:
           - drun/ai-os/index.md
           - 大模型服务平台:

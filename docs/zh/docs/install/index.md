@@ -1,55 +1,18 @@
 # 安装简介
 
-DCE 大体分为两个版本：社区版和商业版。 [下载 DCE 商业版安装部署手册 PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/dce5.0-install.pdf){ .md-button }
+DaoCloud 产品共用同一套安装器。安装前先选产品，再用对应的 manifest（或社区版流程）。
 
-- 社区版包括容器管理、全局管理、可观测性三大模块，可永久免费使用。
-- 商业版在社区版的基础上可按需购买服务网格、微服务引擎、多云编排、数据服务中间件、镜像仓库、云边协同、容器化虚拟机等高级模块，
-  功能更全面，更能适应各类生产环境需求。
+| 产品 | 说明 | 下一步 |
+| --- | --- | --- |
+| [DCE 社区版](../dce/license0.md) | 全局管理、容器管理、可观测性，永久免费 | [社区版安装流程](#社区版安装流程) |
+| [DCE 商业版](../dce/index.md) | 云原生操作系统，按需组合微服务、多云、中间件等模块 | [选产品与 manifest](commercial/product-manifest.md) → [开始安装](commercial/start-install.md) |
+| [d.run AI 操作系统](../drun/index.md) | 面向企业的算力、模型与 AI 应用平台 | 同上，使用 `manifest-cloud.yaml` |
+| [d.run Token 工厂效能平台](../tf/index.md) | 面向智算中心的 Token 生产与运营平台 | 同上，使用 `manifest-cloud-tokfact.yaml` |
 
-<table>
-  <thead>
-    <tr>
-      <th>版本</th>
-      <th>包含的模块</th>
-      <th>描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>社区版</td>
-      <td>
-        <ul>
-          <li><a href="https://docs.daocloud.io/ghippo/intro/">全局管理</a></li>
-          <li><a href="https://docs.daocloud.io/kpanda/intro/">容器管理</a></li>
-          <li><a href="https://docs.daocloud.io/insight/intro/">可观测性</a></li>
-        </ul>
-      </td>
-      <td>
-        <a href="https://docs.daocloud.io/dce/license0.html">永久免费授权</a>，3 个模块会保持持续更新，可随时
-        <a href="https://docs.daocloud.io/download/index.html#_3">下载子模块的离线包</a>
-      </td>
-    </tr>
-    <tr>
-      <td>商业版</td>
-      <td><p>社区版上增加了：</p>
-        <ul>
-          <li><a href="https://docs.daocloud.io/amamba/intro/"><span style="white-space: nowrap;">应用工作台</span></a></li>
-          <li><a href="https://docs.daocloud.io/kairship/intro/">多云编排</a></li>
-          <li><a href="https://docs.daocloud.io/skoala/intro/"><span style="white-space: nowrap;">微服务引擎</span></a></li>
-          <li><a href="https://docs.daocloud.io/mspider/intro/">服务网格</a></li>
-          <li><a href="https://docs.daocloud.io/middleware/index.html"><span style="white-space: nowrap;">精选中间件</span></a></li>
-          <li><a href="https://docs.daocloud.io/kangaroo/intro/">镜像仓库</a></li>
-          <li><a href="https://docs.daocloud.io/kant/intro/">云边协同</a></li>
-          <li><a href="https://docs.daocloud.io/virtnest/intro/">容器化的虚拟机</a></li>
-        </ul>
-      </td>
-      <td>
-        联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898，各个模块可按需自由组合，可随时
-        <a href="https://docs.daocloud.io/download/index.html#_3">下载子模块的离线包</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+DCE 商业版、d.run、Token 工厂下载的是**同一类完整离线包**，靠 manifest 区分产品；社区版使用独立的 `offline-community-*` 包。详见[选产品与 manifest](commercial/product-manifest.md)。
+
+[下载离线包](../download/index.md){ .md-button .md-button--primary }
+[申请社区免费体验](../dce/license0.md){ .md-button }
 
 ## 社区版安装流程
 
@@ -107,14 +70,15 @@ click ask "https://docs.daocloud.io/install/index.html#_4"
 
     上图中的蓝色文字可点击跳转。
 
-## 商业版安装流程
+## 商业产品安装流程
 
-DCE 商业版的安装流程如下图：
+DCE 商业版、d.run AI 操作系统、Token 工厂共用下列流程；下载完整离线包后，按产品选择对应的 manifest：
 
 ```mermaid
 flowchart TB
 
-    start([fa:fa-user DCE 商业版<br>安装流程]) -.- arch[了解部署架构]
+    start([fa:fa-user 商业产品<br>安装流程]) -.- pick[选产品与<br>manifest]
+    pick --> arch[了解部署架构]
     arch --> deploy[查阅部署要求]
     deploy --> prepare[准备工作]
     prepare --> download[下载离线包]
@@ -140,8 +104,9 @@ classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
 classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-class arch,deploy,prepare,download,config,install,ocp,ali,uos,oracle,tencent,other cluster
+class pick,arch,deploy,prepare,download,config,install,ocp,ali,uos,oracle,tencent,other cluster
 
+click pick "https://docs.daocloud.io/install/commercial/product-manifest.html"
 click arch "https://docs.daocloud.io/install/commercial/deploy-arch.html"
 click deploy "https://docs.daocloud.io/install/commercial/deploy-requirements.html"
 click prepare "https://docs.daocloud.io/install/commercial/prepare.html"
@@ -158,13 +123,13 @@ click other "https://docs.daocloud.io/install/os-install/otherlinux.html"
 
 ## 联系我们
 
-DCE 的安装流程可能会有变更。请收藏此页，关注更新动态，更多操作文档也在制作之中。
+安装流程可能会有变更。请收藏此页，关注更新动态。
 
 - 若有任何安装或使用问题，请[提出反馈](https://github.com/DaoCloud/DaoCloud-docs/issues)。
 - 欢迎扫描二维码，与开发者畅快交流：
 
     ![社区版交流群](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
-[下载 DCE](../download/index.md){ .md-button .md-button--primary }
+[下载离线包](../download/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
 [安装常见问题](./faq.md){ .md-button .md-button--primary }

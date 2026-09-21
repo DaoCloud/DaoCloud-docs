@@ -50,7 +50,7 @@ nav:
               - DCE Roadmap: dce/roadmap.md
               - DaoCloud 产品支持政策: dce/support.md
               - 云原生词汇: dce/terms.md
-          - 安装 DCE:
+          - 安装:
               - 安装简介: install/index.md
               - 安装依赖项: install/install-tools.md
               - 安装社区版:
@@ -59,7 +59,8 @@ nav:
                   - 从零部署 K8s 集群: install/community/k8s/k8s-dce-deploy.md
                   - 在线安装到 K8s 集群: install/community/k8s/online.md
                   - 离线安装到 K8s 集群: install/community/k8s/offline.md
-              - 安装商业版:
+              - 安装商业产品:
+                  - 选产品与 manifest: install/commercial/product-manifest.md
                   - 安装介绍:
                       - 部署架构: install/commercial/deploy-arch.md
                       - 编辑配置文件:

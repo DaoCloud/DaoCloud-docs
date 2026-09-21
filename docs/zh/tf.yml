@@ -1,6 +1,10 @@
 nav:
   - d.run Token 工厂效能平台:
       - 概述: tf/index.md
+      - 安装:
+          - 安装简介: install/index.md
+          - 选产品与 manifest: install/commercial/product-manifest.md
+          - 开始安装: install/commercial/start-install.md
       - 云原生 AI:
           - tf/ai-os/index.md
           - 大模型服务平台:
