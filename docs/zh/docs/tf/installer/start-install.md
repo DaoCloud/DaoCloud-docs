@@ -1,10 +1,8 @@
 # 离线安装 d.run Token 工厂效能平台
 
-本文介绍如何离线安装 **d.run Token 工厂效能平台**。安装时请使用产品清单文件 `manifest-cloud-tokfact.yaml`。
+本文介绍如何离线安装 **d.run Token 工厂效能平台（下文简称 Token 工厂）**。安装时请使用产品清单文件 `manifest-cloud-tokfact.yaml`。
 
 请在安装之前阅读并了解[部署要求](../../install/commercial/deploy-requirements.md)、[部署架构](../../install/commercial/deploy-arch.md)、[准备工作](../../install/commercial/prepare.md)，并先完成[安装依赖项](../../install/install-tools.md)。
-
-查阅[安装器 Release Notes](../../install/release-notes.md)，避免所安装版本的已知问题，还可以从中查阅新增的功能特性。
 
 ## 第 1 步：下载离线包
 
@@ -57,7 +55,7 @@ ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](../
 osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源项目为 Linux
 操作系统离线软件源做的补充内容，例如 openEuler 22.03 中缺少了selinux-policy-35.5-15.oe2203.noarch.rpm。
 
-安装器从 v0.5.0 版本，需要提供操作系统的 osPackage 离线包，并在[集群配置文件 clusterConfig.yaml](../../install/commercial/cluster-config.md)中定义 `osPackagePath`。
+安装器需要提供操作系统的 osPackage 离线包，并在[集群配置文件 clusterConfig.yaml](../../install/commercial/cluster-config.md)中定义 `osPackagePath`。
 
 其中 [Kubean](https://github.com/kubean-io/kubean) 提供了不同操作系统的osPackage 离线包，
 可以前往 <https://github.com/kubean-io/kubean/releases> 查看。
@@ -119,7 +117,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
 Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单请参考 [Addon](../../download/addon/history.md)。
 
-安装器从 v0.5.0 版本，支持了 Addon 的离线包导入能力，如果需要支持 Addon 中所有的 Helm Chart 离线化。
+安装器支持了 Addon 的离线包导入能力，如果需要支持 Addon 中所有的 Helm Chart 离线化。
 可以在[下载中心](../../download/index.md)下载最新版本。
 
 首先需要事先下载好离线包，并在[集群配置文件 clusterConfig.yaml](../../install/commercial/cluster-config.md)中定义 `addonOfflinePackagePath`。
@@ -149,7 +147,7 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
 ## 第 3 步：安装
 
-1. 执行以下命令开始安装 Token 工厂。安装器二进制文件位于 `offline/dce5-installer`，产品清单请使用 `manifest-cloud-tokfact.yaml`。
+1. 执行以下命令开始安装 Token 工厂。安装器二进制文件位于 `offline/dce5-installer`，产品清单请使用离线包内的 `offline/sample/manifest-cloud-tokfact.yaml`。
 
     ```shell
     ./offline/dce5-installer cluster-create \
@@ -168,9 +166,42 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
         - `--use-original-repo` 从源站下载可执行文件、拉取镜像等
         - 更多参数请使用 `--help` 查询
 
-2. 安装完成后，命令行会提示安装成功。可通过屏幕提示的 URL，使用默认账号和密码（admin/changeme）访问控制台。
+    `manifest-cloud-tokfact.yaml` 示例如下（字段与版本以解压后的离线包为准，此处仅说明结构）：
 
-    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
+    ```yaml title="manifest-cloud-tokfact.yaml"
+    apiVersion: manifest.daocloud.io/v1alpha3
+    kind: DCEManifest
+    metadata:
+      creationTimestamp: null
+    global:
+      helmRepo: https://release.daocloud.io/chartrepo
+      imageRepo: release.daocloud.io
+      installMode: cloud
+    infrastructures:
+      # ... 详见离线包
+    middlewares:
+      # ... 详见离线包
+    components:
+      hydra:
+        enable: true
+        helmVersion: v0.18.3
+        variables:
+          global.tokenfactory.enable: true
+        dependencies:
+          - ghippo
+          - kpanda
+          - mspider
+          - insight
+          - leopard
+    ```
+
+    Token 工厂清单核心字段说明如下：
+
+    - `global.installMode` 为 `cloud`
+    - 核心组件启用 `global.tokenfactory.enable: true` 参数
+    - 默认开启大模型服务平台（`hydra`）与驾驶舱（`crane`）
+
+2. 安装完成后，命令行会提示安装成功。可通过屏幕提示的 URL，使用默认账号和密码（admin/changeme）访问控制台。
 
     !!! success
 
