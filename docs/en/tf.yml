@@ -2,6 +2,7 @@ nav:
   - d.run Token Factory:
       - Overview: tf/index.md
       - Cloud Native AI:
+          - tf/ai-os/index.md
           - LLM Studio:
               - Intro:
                   - What is LLM Studio: tf/hydra/intro/index.md

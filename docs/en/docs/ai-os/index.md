@@ -1,9 +1,6 @@
 ---
-
 hide:
-
-* toc
-
+  - toc
 ---
 
 <div style="max-width: 900px; margin: 0 auto; text-align: center; line-height: 2.2;">
