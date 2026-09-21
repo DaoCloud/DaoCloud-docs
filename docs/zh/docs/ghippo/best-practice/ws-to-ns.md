@@ -124,4 +124,4 @@ click createns "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_
 
 1. 选择要授权的 __用户/用户组__ 、 __角色__ 后，点击 __确定__ 完成授权。
 
-    ![确定](../../images/wsauth02.png)
+    ![确定](../images/wsauth02.png)

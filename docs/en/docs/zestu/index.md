@@ -18,5 +18,3 @@ resource types and billing methods to create container instances based on their 
 - Resource Types: Types of GPU resources that can be purchased based on demand when inventory is sufficient.
 
 Click **Buy Now** to go to [Create Container Instance](instance.md).
-
-![Compute Market](../images/regis01.png)

@@ -4,9 +4,9 @@
 
 ### Throughput
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs1.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs1.png)
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs2.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs2.png)
 
 | Panel Name                             | Panel Description                                                     |
 | :------------------------------------- | :------------------------------------------------------------------- |
@@ -19,13 +19,13 @@
 
 ### Basic (ECN/CNP/SEQ)
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs3.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs3.png)
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs4.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs4.png)
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs5.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs5.png)
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs6.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs6.png)
 
 | Panel Name                               | Panel Description                                                     |
 | :--------------------------------------- | :------------------------------------------------------------------- |
@@ -40,15 +40,15 @@
 
 ### Detail
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs7.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs7.png)
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs8.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs8.png)
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs9.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs9.png)
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs10.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs10.png)
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs11.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs11.png)
 
 | Panel Name                             | Panel Description                                                     |
 | :------------------------------------- | :------------------------------------------------------------------- |
@@ -82,7 +82,7 @@
 
 ### RoCE
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs12.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs12.png)
 
 | Panel Name                                 | Panel Description                                                     |
 | :----------------------------------------- | :------------------------------------------------------------------- |
@@ -93,7 +93,7 @@
 
 ## Spiderpool RDMA Cluster - Cluster Dashboard
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs13.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs13.png)
 
 This dashboard is divided into 3 sections:
 
@@ -130,7 +130,7 @@ This dashboard is divided into 3 sections:
 
 ## Spiderpool RDMA AI Workload - Workload Dashboard
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs14.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs14.png)
 
 RDMA Workload can be used to monitor Pods of a specific workload group. For example, PytorchJob often spans multiple nodes, and sometimes a single Pod anomaly can cause the entire PytorchJob training to fail.
 
@@ -138,6 +138,6 @@ The Workload perspective makes it easy to locate problematic Pods. The specific 
 
 ## Spiderpool RDMA SRIOV Pod - RDMA Pod Dashboard
 
-![RDMA Dashboard](../../../images/rdma/rdma-docs15.png)
+![RDMA Dashboard](../../images/rdma/rdma-docs15.png)
 
 RDMA Pod is for monitoring a specific Pod. When troubleshooting at the cluster or node level identifies a Pod with issues, the Pod panel can be used for interference-free investigation. The specific metric meanings can refer to the Node panel descriptions above; the only difference here is that the object is a single Pod.
