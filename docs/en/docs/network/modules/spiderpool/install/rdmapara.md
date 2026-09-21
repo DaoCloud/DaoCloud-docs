@@ -20,6 +20,8 @@ Currently, RDMA supports the following two usage modes:
 
 ## Exposing RoCE NIC based on Macvlan/IPVLAN
 
+<a id="macvlan-ipvlan-roce"></a>
+
 1. When exposing the RoCE NIC based on Macvlan/IPVLAN, you need to make sure that the RDMA
    subsystem on the host is working in **Shared mode**. Otherwise, please switch to **Shared mode**.
 

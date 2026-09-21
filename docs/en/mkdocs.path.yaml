@@ -227,3 +227,6 @@ markdown_extensions:
   # - pymdownx.snippets:
   #     auto_append:
   #       - includes/glossary.md
+
+hooks:
+  - ../../scripts/redirect_html_hook.py

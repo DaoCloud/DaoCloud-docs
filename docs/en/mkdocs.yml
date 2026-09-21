@@ -244,3 +244,4 @@ markdown_extensions:
 hooks:
   - ../../scripts/tf_nav_hook_en.py
   - ../../scripts/drun_nav_hook_en.py
+  - ../../scripts/redirect_html_hook.py
