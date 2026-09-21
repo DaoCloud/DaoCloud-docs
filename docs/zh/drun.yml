@@ -2,6 +2,7 @@ nav:
   - d.run AI 操作系统:
       - 概述: drun/index.md
       - 云原生 AI:
+          - drun/ai-os/index.md
           - 大模型服务平台:
               - 介绍:
                   - 什么是大模型服务平台: drun/hydra/intro/index.md

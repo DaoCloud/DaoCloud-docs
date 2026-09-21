@@ -2,6 +2,7 @@ nav:
   - d.run AI OS:
       - Overview: drun/index.md
       - Cloud Native AI:
+          - drun/ai-os/index.md
           - LLM Studio:
               - Intro:
                   - What is LLM Studio: drun/hydra/intro/index.md
