@@ -42,7 +42,7 @@ theme:
     - content.code.annotate
     - content.code.copy
     - content.tooltips
-    # - navigation.indexes
+    - navigation.indexes
     - navigation.tabs
     # - navigation.instant
     - navigation.prune
