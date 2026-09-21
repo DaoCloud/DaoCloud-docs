@@ -1374,8 +1374,8 @@ nav:
                   - Batch Onboard Devices: topohub/device/batch-access.md
                   - Manage Devices: topohub/device/manage-device.md
   - Downloads:
-      - DaoCloud Download Hub:
-          - Index: download/index.md
+      - Download Hub:
+          - download/index.md
           - Download d.run Token Factory: download/tf/index.md
           - Download d.run AI OS: download/drun/index.md
           - Download DaoCloud Enterprise:
@@ -1412,7 +1412,7 @@ nav:
               - Cloud Native AI:
                   - LLM Studio: download/modules/hydra.md
                   - AI Lab: download/modules/baize.md
-                  - Inference Acceleration: download/modules/inferx.md
+                  - InferX Suite: download/modules/inferx.md
                   - ClawOS: download/modules/agentclaw.md
               - Cloud Edge Collaboration: download/modules/kant.md
               - Management:
@@ -1421,7 +1421,7 @@ nav:
                   - Device Management: download/modules/topohub.md
   - Videos:
       - Index: videos/index.md
-      - DCE:
+      - DaoCloud Enterprise:
           - Get Started:
               - Installation: videos/install.md
               - Scenario-based Videos: videos/use-cases.md
