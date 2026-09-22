@@ -61,7 +61,7 @@ nav:
                   - 分片命中率: tf/dak/data-analysis/shard-hit-ratio.md
                   - 改进意见: tf/dak/data-analysis/suggestions.md
               - 我的反馈: tf/dak/my-feedback/my-feedback.md
-          - InferX 推理套件:
+          - 推理加速服务:
               - tf/inferx/index.md
               - FAQ: tf/inferx/faqs.md
               - 最佳实践:
