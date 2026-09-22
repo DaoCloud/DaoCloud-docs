@@ -7,16 +7,16 @@
 
 | **架构** | **操作系统** | **测试 OS、Kernel 信息** | 备注（安装指导文档） |
 | -------- | ----------- | ----------------- | ----------------- |
- | Redhat 9.X | Redhat 9.2<br />5.14.0-284.11.1.e9_2.x86_64 | [离线安装 DCE 商业版](start-install.md) |
-| | Ubuntu 22.04 | 5.15.0-78-generic | [离线安装 DCE 商业版](start-install.md) |
-| | Ubuntu 24.04 | / | [离线安装 DCE 商业版](start-install.md) |
-| | Rocky Linux 9.2 | 5.14.0-284.11.1.el9_2.x86_64 | [离线安装 DCE 商业版](start-install.md) |
-| | 统信 UOS V20 （1020a） | 5.4.0-125-generic | [UOS V20 (1020a) 上部署 DCE 商业版](../os-install/uos-v20-install-dce5.0.md) |
-| | openEuler 22.03 | 5.10.0-60.18.0.50.oe2203.x86_64 | [离线安装 DCE 商业版](start-install.md) |
-| | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | [Oracle Linux R9 U1 上部署 DCE 商业版](../os-install/oracleLinux-install-dce5.0.md) |
-| | TencentOS Server 3.1 | 5.4.119-19.0009.14 | [TencentOS Server 3.1 上部署 DCE 商业版](../os-install/TencentOS-install-dce5.0.md) |
-| ARM 64 | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | [离线安装 DCE 商业版](start-install.md) |
-| | 银河麒麟 OS V10 SP3 | 4.19.90-89.11.v2401.ky10.aarch64 | [离线安装 DCE 商业版](start-install.md) |
+| Redhat 9.X | Redhat 9.2<br />5.14.0-284.11.1.e9_2.x86_64 | / | [离线安装步骤](start-install.md) |
+| | Ubuntu 22.04 | 5.15.0-78-generic | [离线安装步骤](start-install.md) |
+| | Ubuntu 24.04 | / | [离线安装步骤](start-install.md) |
+| | Rocky Linux 9.2 | 5.14.0-284.11.1.el9_2.x86_64 | [离线安装步骤](start-install.md) |
+| | 统信 UOS V20 （1020a） | 5.4.0-125-generic | [UOS V20 (1020a) 上部署步骤](../os-install/uos-v20-install-dce5.0.md) |
+| | openEuler 22.03 | 5.10.0-60.18.0.50.oe2203.x86_64 | [离线安装步骤](start-install.md) |
+| | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | [Oracle Linux R9 U1 上部署步骤](../os-install/oracleLinux-install-dce5.0.md) |
+| | TencentOS Server 3.1 | 5.4.119-19.0009.14 | [TencentOS Server 3.1 上部署步骤](../os-install/TencentOS-install-dce5.0.md) |
+| ARM 64 | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | [离线安装步骤](start-install.md) |
+| | 银河麒麟 OS V10 SP3 | 4.19.90-89.11.v2401.ky10.aarch64 | [离线安装步骤](start-install.md) |
 
 !!! note
 
