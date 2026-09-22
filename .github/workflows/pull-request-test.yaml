@@ -9,10 +9,16 @@ on:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    # zh / en 拆成两个并行 job：原来在同一个 job 里顺序构建两种语言，
+    # 墙钟时间 = zh + en；拆开后 ≈ max(zh, en)。公共仓库的 Actions 分钟数不额外计费。
+    strategy:
+      fail-fast: false
+      matrix:
+        lang: [zh, en]
+    name: build-test (${{ matrix.lang }})
     steps:
+      # 站点没有启用依赖 git 历史的插件，默认浅克隆即可
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -22,8 +28,10 @@ jobs:
 
       - run: make sync
 
-      - run: make check-redirects
+      # redirect_maps 逐份配置校验，跑一次就够
+      - if: matrix.lang == 'zh'
+        run: make check-redirects
 
-      - run: make build all
+      - run: make build ${{ matrix.lang }}
         env:
           ENABLED_GIT_REVISION_DATE: "false"
