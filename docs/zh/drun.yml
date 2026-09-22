@@ -2,7 +2,8 @@ nav:
   - d.run AI 操作系统:
       - 概述: drun/index.md
       - 安装:
-          - 开始安装: drun/installer/start-install.md
+          - 安装依赖项: drun/install/index.md
+          - 安装 d.run AI 操作系统: drun/install/start-install.md
       - 云原生 AI:
           - drun/ai-os/index.md
           - 大模型服务平台:
