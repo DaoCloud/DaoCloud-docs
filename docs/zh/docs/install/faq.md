@@ -4,9 +4,9 @@
 
 ## UI 访问问题
 
-### DCE 界面打不开时，执行 diag.sh 脚本快速排障
+### UI 界面打不开时，执行 diag.sh 脚本快速排障
 
-安装器自 [v0.12.0 版本](./release-notes.md#v0120)之后新增了 diag.sh 脚本，方便用户在 DCE 界面打不开时快速排障。
+安装器自 [v0.12.0 版本](./release-notes.md#v0120)之后新增了 diag.sh 脚本，方便用户在 UI 界面打不开时快速排障。
 
 执行命令：
 
@@ -18,7 +18,7 @@
 
 ![FAQ1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/faq11.png)
 
-### 使用 Metallb 时 VIP 访问不通导致 DCE 登录界面无法打开
+### 使用 Metallb 时 VIP 访问不通导致登录界面无法打开
 
 1. 排查 VIP 的地址是否和主机在同一个网段，Metallb L2 模式下需要确保在同一个网段
 2. 如果是在全局服务集群中的控制节点新增了网卡导致访问不通，需要手动配置 L2Advertisement。
@@ -217,21 +217,21 @@ dce5-installer 自 v0.30 无法通过 Manifest 开启 MGR mysql。
     ./dce5-installer cluster-create -c clusterConfig.yml -m manifest-enterprise.yaml -z -s installer.sh
     ```
 
-### MGR 模式 MySQL Common 实例初始化失败导致 DCE 安装失败
+### MGR 模式 MySQL Common 实例初始化失败导致安装失败
 
-在执行 DCE 安装过程中，`mcamel-common` 实例的 MySQL 初始化阶段失败。  
+在安装过程中，`mcamel-common` 实例的 MySQL 初始化阶段失败。  
 通过观察发现，`mysqlrouter` 用户在 MySQL 中丢失，导致 `router` 的 Deployment
 副本数 (`replica`) 一直为 `0`，从而导致整个安装过程无法继续。
 
 ```text
 mcamel-common 实例未能成功重建 mysqlrouter 用户
 → router deployment replica = 0
-→ DCE 安装卡住/失败
+→ 安装卡住/失败
 ```
 
-* **影响模块：** DCE 安装器的 MySQL 初始化流程
+* **影响模块：** 安装器的 MySQL 初始化流程
 * **影响范围：** 所有使用 MGR 模式的 `common` MySQL 实例
-* **影响版本：** v0.27.0, v0.28.0, v0.29.0 等
+* **影响版本：** v0.27.0、v0.28.0、v0.29.0 等
 * **现象总结：**
 
     * router 无法连接 MGR 集群
@@ -359,11 +359,11 @@ mysql> select user,host from mysql.user;
     mcamel-common-mgr-cluster-router            2/2     2            2           2d2h
     ```
 
-    此时 `router` 正常运行，DCE 安装流程恢复正常。
+    此时 `router` 正常运行，安装流程恢复正常。
 
 ## 社区版问题
 
-### kind 集群重装 DCE 时 Redis 卡住
+### kind 集群重装时 Redis 卡住
 
 问题：Redis Pod 出现了 0/4 running 很久的情况，提示：`primary ClusterIP can not unset`
 

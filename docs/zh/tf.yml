@@ -2,7 +2,13 @@ nav:
   - d.run Token 工厂效能平台:
       - 概述: tf/index.md
       - 安装:
-          - 开始安装: tf/installer/start-install.md
+          - 安装 Token 工厂: tf/install/index.md
+          - 安装依赖项: tf/install/install-tools.md
+          - 安装排障: tf/install/faq.md
+          - 升级:
+              - 升级组件模块: tf/install/upgrade.md
+              - 升级注意事项: tf/install/upgrade-notes.md
+          - Release Notes: tf/install/release-notes.md
       - 云原生 AI:
           - tf/ai-os/index.md
           - 大模型服务平台:
