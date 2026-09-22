@@ -96,10 +96,7 @@ build: ## Build docs with uv, defaults to all
 	fi
 	@set -e; \
 	if [ "$(LANG)" = "all" ]; then \
-		printf '\n$(BOLD)[1/2] Building zh docs$(RESET)\n'; \
-		uv run mkdocs build -f docs/zh/mkdocs.yml -d ../../public/; \
-		printf '\n$(BOLD)[2/2] Building en docs$(RESET)\n'; \
-		uv run mkdocs build -f docs/en/mkdocs.yml -d ../../public/en/; \
+		bash scripts/build_all.sh build; \
 	elif [ "$(LANG)" = "zh" ]; then \
 		printf '\n$(BOLD)Building zh docs$(RESET)\n'; \
 		uv run mkdocs build -f docs/zh/mkdocs.yml -d ../../public/; \
@@ -116,10 +113,7 @@ build-path: ## Build path-based docs with uv, defaults to all
 	fi
 	@set -e; \
 	if [ "$(LANG)" = "all" ]; then \
-		printf '\n$(BOLD)[1/2] Building zh path docs$(RESET)\n'; \
-		uv run mkdocs build -f docs/zh/mkdocs.path.yaml -d ../../public/; \
-		printf '\n$(BOLD)[2/2] Building en path docs$(RESET)\n'; \
-		uv run mkdocs build -f docs/en/mkdocs.path.yaml -d ../../public/en/; \
+		bash scripts/build_all.sh build-path; \
 	elif [ "$(LANG)" = "zh" ]; then \
 		printf '\n$(BOLD)Building zh path docs$(RESET)\n'; \
 		uv run mkdocs build -f docs/zh/mkdocs.path.yaml -d ../../public/; \
@@ -218,9 +212,6 @@ merge-download-docs: ## Merge download docs into Chinese and English docs
 	@printf '\n$(BOLD)Merging download docs$(RESET)\n'
 	cp -av daocloud-download-docs/docs/zh/docs/download docs/zh/docs/
 	cp -av daocloud-download-docs/docs/en/docs/download docs/en/docs/
-	@# 产品 tab 子树（tf 等）下镜像的页面以相对路径引用 download/，构建期需把 download 链入该子树，否则会 404
-	@if [ -d docs/zh/docs/tf ]; then ln -sfn ../download docs/zh/docs/tf/download; fi
-	@if [ -d docs/zh/docs/drun ]; then ln -sfn ../download docs/zh/docs/drun/download; fi
 	@printf '\n$(GREEN)OK download docs merged$(RESET)\n\n'
 
 merge-external-docs: ## Merge all checked-out external docs
@@ -266,7 +257,7 @@ serve-docker: ## Preview Chinese docs with Docker
 
 clean: ## Remove generated site files
 	@printf '\n$(BOLD)Removing generated site files$(RESET)\n'
-	rm -rf public site docs/zh/site docs/en/site
+	rm -rf public site docs/zh/site docs/en/site qiniu-upload .qiniu-manifest.json
 	@printf '$(GREEN)OK clean complete$(RESET)\n\n'
 
 # -- Help --------------------------------------------------------------------

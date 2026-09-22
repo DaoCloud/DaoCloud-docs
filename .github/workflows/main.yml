@@ -5,6 +5,10 @@ on:
     branches: [ main ]
     paths:
       - 'docs/**'
+      - 'Makefile'
+      - 'scripts/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
   workflow_dispatch:
 
 env:
@@ -22,23 +26,21 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # fetch-depth 保持默认（1）：站点未启用 git-revision-date 类插件，
+      # 全历史克隆（.git 约 1.8G）只会让 checkout 白白多花 ~30s。
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Checkout OpenAPI docs
         uses: actions/checkout@v4
         with:
           repository: daocloud/daocloud-api-docs
           path: dao-openapi
-          fetch-depth: 0
 
       - name: Checkout download docs
         uses: actions/checkout@v4
         with:
           repository: daocloud/daocloud-download-docs
           path: daocloud-download-docs
-          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -50,14 +52,32 @@ jobs:
 
       - run: make merge-external-docs
 
+      # make build all 由 scripts/build_all.sh 并行构建 zh + en（详见该脚本注释）
       - run: make build all
 
+      # ↓ 增量上传：只把内容有变化的产物推给七牛，避免每次全量 POST 上万个文件
+      - name: Restore upload manifest
+        uses: actions/cache@v4
+        with:
+          path: .qiniu-manifest.json
+          key: qiniu-manifest-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            qiniu-manifest-${{ github.ref_name }}-
+
+      - name: Compute changed files
+        id: changed
+        run: python3 scripts/ci/qiniu_changed.py public .qiniu-manifest.json qiniu-upload
+
       - name: Upload to Qiniu Kodo
+        if: steps.changed.outputs.changed != '0'
         uses: samzong/action-qiniu-upload-nodejs@v0.0.8
         with:
           access_key: ${{ secrets.QINIU_ACCESS_KEY }}
           secret_key: ${{ secrets.QINIU_SECRET_KEY }}
           bucket: ${{ secrets.QINIU_BUCKET }}
-          source_dir: public
+          source_dir: qiniu-upload
           dest_dir: /
-          concurrency: 50
+          # 这里只放「内容有变化」的文件，所以用 always：确保改动过的图片等媒体文件也会被覆盖。
+          # （若把整个 public/ 交给它，smart 策略会跳过媒体文件，导致更新过的图片推不上去）
+          overwrite: always
+          concurrency: 100
