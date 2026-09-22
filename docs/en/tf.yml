@@ -577,6 +577,10 @@ nav:
                   - LVM: tf/storage/terms/lvm.md
                   - PV and PVC: tf/storage/terms/pv_pvc.md
       - Operations:
+          - Cockpit:
+              - What Is Cockpit: tf/crane/intro/index.md
+              - Business Overview Panel: tf/crane/user-guide/singlepage.md
+              - Release Notes: tf/crane/intro/release-notes.md
           - Billing Center:
               - tf/leopard/index.md
               - Transactions: tf/leopard/transactions.md

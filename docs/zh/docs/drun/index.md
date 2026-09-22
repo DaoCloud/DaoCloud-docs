@@ -106,10 +106,10 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
         <span class="tf-arch-card-title">Copilot</span>
         <span class="tf-arch-card-tip">智能运维助手</span>
       </div>
-      <div class="tf-arch-card tf-arch-card--ops">
+      <a class="tf-arch-card tf-arch-card--ops" href="crane/intro/">
         <span class="tf-arch-card-title">运营驾驶舱</span>
         <span class="tf-arch-card-tip">运营数据可视化</span>
-      </div>
+      </a>
     </div>
   </div>
   <div class="tf-arch-arrow">▼</div>
