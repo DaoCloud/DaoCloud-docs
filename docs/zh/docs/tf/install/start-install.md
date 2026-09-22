@@ -2,7 +2,7 @@
 
 本文介绍如何离线安装 **d.run Token 工厂效能平台（下文简称 Token 工厂）**。安装时请使用产品清单文件 `manifest-cloud-tokfact.yaml`。
 
-请在安装之前阅读并了解[部署要求](../../install/commercial/deploy-requirements.md)、[部署架构](../../install/commercial/deploy-arch.md)、[准备工作](../../install/commercial/prepare.md)，并先完成[安装依赖项](../../install/install-tools.md)。
+请在安装之前阅读并了解[部署要求](./commercial/deploy-requirements.md)、[部署架构](./commercial/deploy-arch.md)、[准备工作](./commercial/prepare.md)，并先完成[安装依赖项](index.md)。
 
 ## 第 1 步：下载离线包
 
@@ -28,7 +28,7 @@ tar -xvf offline-v0.44.0-amd64.tar
 
 对于 ISO 格式的操作系统镜像文件，在安装过程中请根据不同操作系统来下载对应的 ISO 文件。
 
-ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](../../install/commercial/cluster-config.md)中进行配置。
+ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](./commercial/cluster-config.md)中进行配置。
 
 | CPU 架构 | 操作系统版本 | 点击下载 |
 | :------- | :--------- | :------- |
@@ -120,11 +120,11 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 安装器支持了 Addon 的离线包导入能力，如果需要支持 Addon 中所有的 Helm Chart 离线化。
 可以在[下载中心](../../download/index.md)下载最新版本。
 
-首先需要事先下载好离线包，并在[集群配置文件 clusterConfig.yaml](../../install/commercial/cluster-config.md)中定义 `addonOfflinePackagePath`。
+首先需要事先下载好离线包，并在[集群配置文件 clusterConfig.yaml](./commercial/cluster-config.md)中定义 `addonOfflinePackagePath`。
 
 ### 一键下载所需离线包
 
-我们提供了脚本来[一键下载所需的离线包](../../install/air-tag-download.md)。
+我们提供了脚本来[一键下载所需的离线包](air-tag-download.md)。
 
 以下是包含的离线包：
 
@@ -138,7 +138,7 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
 ## 第 2 步：配置 clusterConfig.yaml
 
-这是集群配置文件，位于离线镜像包 `offline/sample` 目录下，具体的参数介绍请参考 [clusterConfig.yaml](../../install/commercial/cluster-config.md)。
+这是集群配置文件，位于离线镜像包 `offline/sample` 目录下，具体的参数介绍请参考 [clusterConfig.yaml](./commercial/cluster-config.md)。
 
 !!! note
 

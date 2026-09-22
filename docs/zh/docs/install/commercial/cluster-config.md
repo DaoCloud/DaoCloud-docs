@@ -32,7 +32,7 @@ spec:
  
     # NodePort(default), metallb, cloudLB (Cloud Controller 暂不支持)
     type: metallb
-    istioGatewayVip: xx.xx.xx.xx/32 # 当 loadBalancer.type 是 metallb 时必填，为 DCE 提供 UI 和 OpenAPI 访问权限
+    istioGatewayVip: xx.xx.xx.xx/32 # 当 loadBalancer.type 是 metallb 时必填，提供 UI 和 OpenAPI 访问权限
     insightVip: xx.xx.xx.xx/32 # 别丢弃 /32，当 loadBalancer.type 是 metallb 时必填，用作全局服务集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
     SourceIP: auto # 默认值auto表示开启审计日志获取源IP功能，设置为false则关闭审计日志获取源IP功能
  
@@ -284,7 +284,7 @@ spec:
 | privateKeyPath | kuBean 部署集群的 SSH 私钥文件路径，如果填写则不需要定义 ansibleUser、ansiblePass | - |
 | k8sVersion | kuBean 安装集群的 K8s 版本必须跟 KuBean 和离线包相匹配 | - |
 | loadBalancer.insightVip | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给全局服务集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP | - |
-| loadBalancer.istioGatewayVip | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口 | - |
+| loadBalancer.istioGatewayVip | 如果负载均衡模式是 metallb，则需要指定一个 VIP，提供 UI 界面和 OpenAPI 访问入口 | - |
 | loadBalancer.type | 所使用的 LoadBalancer 的模式，物理环境用 metallb，POC 用 NodePort，公有云和 SDN CNI 环境用 cloudLB（暂时还未支持 cloudLB 模式） | NodePort (default)、metallb、cloudLB (Cloud Controller) |
 | loadBalancer.SourceIP | 审计日志获取源IP，副作用：在节点层面无法进行负载均衡 | auto |
 | fullPackagePath | 解压后的离线包的路径，离线模式下该字段必填 | - |
@@ -346,7 +346,7 @@ spec:
 
 **离线模式下采用 builtin 方式安装**
 
-builtin 模式意味着所需的第三方软件（如 chartMusem 、Minio、Docker registry）将由安装器进行部署并提供 DCE 平台使用。
+builtin 模式意味着所需的第三方软件（如 chartMusem、Minio、Docker registry）将由安装器进行部署并提供平台使用。
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha4
@@ -384,7 +384,7 @@ spec:
 
 **离线模式下采用 external 方式安装**
 
-external 模式意味着所需的第三方软件（如 chartMusem 、Minio、Docker registry 等等）无需安装器安装，由使用者提供地址供 DCE 平台使用。
+external 模式意味着所需的第三方软件（如 chartMusem、Minio、Docker registry 等等）无需安装器安装，由使用者提供地址供平台使用。
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha4
@@ -434,7 +434,7 @@ spec:
 
 **在线模式采用 official-service 方式安装**
 
-official-service 模式，当使用者采用在线安装 DCE 时，DCE 平台使用的资源将从 DaoCloud 的官方仓库进行获取。
+official-service 模式，当使用者采用在线安装时，平台使用的资源将从 DaoCloud 的官方仓库进行获取。
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha4
@@ -493,7 +493,7 @@ spec:
 ./dce5-installer generate-config --master=3 --access-type=external
 ```
 
-### 全模式 7节点模式
+### 全模式 7 节点模式
 
 ``` bash
 # 官方在线
@@ -512,7 +512,7 @@ spec:
 ./dce5-installer generate-config --master=3 --worker=3 --access-type=external
 ```
 
-### 社区版
+### 对于 DCE 社区版
 
 ``` bash
 # 官方在线

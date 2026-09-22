@@ -1,6 +1,6 @@
 # 前置检查
 
-本页说明了部署 DCE 需要进行的准备工作。
+本页说明了部署 DaoCloud 产品需要进行的准备工作。
 
 !!! note
 
@@ -8,17 +8,17 @@
 
 ## 机器检查
 
-| **检查项** | **具体要求**  | **说明** |
+| **检查项** | **具体要求** | **说明** |
 | --------- | ------------ | ------- |
-| 用户权限   | root                                   | 必须使用 root 用户部署，各个服务器也必须允许 root 用户 ssh 登录 |
-| swap       | 关闭                                   | 如果不满足，系统会有一定几率出现 io 飙升，造成 容器运行时 卡死 |
-| 防火墙     | 关闭（不强制）                         | -                                                            |
-| selinux    | 关闭（不强制）                         | -                                                            |
-| 时间同步   | 所有集群节点要求时间必须同步           | 这是 Docker 和 Kubernetes 官方要求。否则 kube.conf 会报错 `Unable to connect to the server: x509: certificate has expired or is not yet` |
-| 时区       | 所有服务器时区必须统一                 | 建议设置为 Asia/Shanghai。 <br />参考命令：timedatectl set-timezone Asia/Shanghai |
+| 用户权限 | root | 必须使用 root 用户部署，各个服务器也必须允许 root 用户 ssh 登录 |
+| swap | 关闭 | 如果不满足，系统会有一定几率出现 io 飙升，造成 容器运行时 卡死 |
+| 防火墙 | 关闭（不强制） | - |
+| selinux | 关闭（不强制） | - |
+| 时间同步 | 所有集群节点要求时间必须同步 | 这是 Docker 和 Kubernetes 官方要求。否则 kube.conf 会报错 `Unable to connect to the server: x509: certificate has expired or is not yet` |
+| 时区 | 所有服务器时区必须统一 | 建议设置为 Asia/Shanghai。 <br />参考命令：timedatectl set-timezone Asia/Shanghai |
 | Nameserver | /etc/resolv.conf 至少有一个 Nameserver | CoreDNS 要求，否则会有报错。该 nameserver 在纯离线环境下可以是一个不存在的 IP 地址。Centos8minial 默认没有 /etc/resolv 文件，需要手动创建 |
-| 网络配置   | 支持 ipv6 | 火种节点使用 podman 时必须开启 ipv6, 否则导致kind内K8S集群无法访问，可使用如 `sysctl net.ipv6.conf.all.disable_ipv6` 确认为0 |
-| 网络转发   | 打开 ip_forward | 火种节点需要确认 ip_forward 打开并持久化，可通过如 `sysctl net.ipv4.ip_forward` 确认为1 |
+| 网络配置 | 支持 ipv6 | 火种节点使用 podman 时必须开启 ipv6, 否则导致kind内K8S集群无法访问，可使用如 `sysctl net.ipv6.conf.all.disable_ipv6` 确认为0 |
+| 网络转发 | 打开 ip_forward | 火种节点需要确认 ip_forward 打开并持久化，可通过如 `sysctl net.ipv4.ip_forward` 确认为1 |
 
 ## 火种机器依赖组件检查
 
@@ -32,7 +32,7 @@
 | yq           | ≥ 4.31.1   | -       |
 | minio client | `mc.RELEASE.2023-02-16T19-20-11Z` | |
 
-如果不存在依赖组件，通过脚本进行安装依赖组件，[安装前置依赖](../install-tools.md)。
+如果不存在依赖组件，通过脚本进行安装依赖组件，[安装前置依赖](../index.md)。
 
 ```bash
 export VERSION=v0.16.0

@@ -1,6 +1,6 @@
 # 集群部署模式使用场景
 
-DCE 提供了[四种集群角色](../../kpanda/user-guide/clusters/cluster-role.md)，用以满足不同的使用场景。
+DaoCloud 产品提供了[四种集群角色](../../kpanda/user-guide/clusters/cluster-role.md)，用以满足不同的使用场景。
 用户可以基于自身业务特性和基础设施场景，自由组合不同的集群部署组合。
 
 本文将对几种常用使用场景进行说明。
@@ -28,13 +28,13 @@ DCE 提供了[四种集群角色](../../kpanda/user-guide/clusters/cluster-role.
 
 当用户需要在当前单数据中心内新增一个管理集群用于管理新业务集群的生命周期，
 此时无需再次使用火种节点的方式进行安装，只需要在已经创建的某个工作集群上安装
-kubean Operator 组件即可赋予这个集群管理集群的能力和角色。如下图：
+Kubean Operator 组件即可赋予这个集群管理集群的能力和角色。如下图：
 
 ![模式示意图](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/scenario02.png)
 
 前提：已经完成上一步单数据中心单管理集群的部署。
 
-1. 在某个工作集群详情界面使用 [helm 模板](../../kpanda/user-guide/helm/README.md)安装 kubean，等待 kubean 状态变为运行中。
+1. 在某个工作集群详情界面使用 [Helm 模板](../../kpanda/user-guide/helm/README.md)安装 kubean，等待 kubean 状态变为运行中。
 
 1. 当前工作集群安装完成 kubean 后，集群角色将自动变为管理集群，
    按需在平台下的容器管理模块上基于管理集群创建一个或多个工作集群。
