@@ -3,7 +3,18 @@ nav:
       - 概述: drun/index.md
       - 安装:
           - 安装依赖项: drun/install/index.md
+          - 安装准备:
+              - 部署要求: drun/install/commercial/deploy-requirements.md
+              - 部署架构: drun/install/commercial/deploy-arch.md
+              - 前置检查: drun/install/commercial/prepare.md
+              - 端口要求: drun/install/commercial/port-requirements.md
+              - 了解 clusterConfig.yaml: drun/install/commercial/cluster-config.md
           - 安装 d.run AI 操作系统: drun/install/start-install.md
+          - 安装排障: drun/install/faq.md
+          - 升级:
+              - 升级组件模块: drun/install/upgrade.md
+              - 升级注意事项: drun/install/upgrade-notes.md
+          - Release Notes: drun/install/release-notes.md
       - 云原生 AI:
           - drun/ai-os/index.md
           - 大模型服务平台:

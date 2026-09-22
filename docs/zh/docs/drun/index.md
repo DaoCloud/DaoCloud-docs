@@ -9,8 +9,6 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
 实现颗粒化调度、全栈推理优化与全链路 Token 治理，算力利用率超 80%，将算力高效转化为可管可控的 Token 化 AI 生产力；
 平台汇聚全球主流大模型生态，配备可视化运营驾驶舱与 d.run Copilot 智能助手，面向企业全部门输出稳定高效的 AI 服务，
 全方位支撑业务智能化长期升级。
-[查看/下载 d.run AI 操作系统彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/drun.pdf){ .md-button }
-[开始安装](installer/start-install.md){ .md-button .md-button--primary }
 
 <style>
 .tf-arch-card{min-width:calc(25% - 6px) !important}
@@ -133,3 +131,6 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
 平台统一纳管英伟达及国产异构算力，依靠颗粒化调度与全栈推理优化，把分散 GPU 算力转化为低成本、高稳定的 Token 服务；
 配备可视化运营驾驶舱，实时呈现算力消耗、模型调用与 Token 产出全链路数据；
 内置 d.run Copilot 智能助手，降低企业全部门使用 AI 的门槛，推动业务智能化长期升级。
+
+[查看/下载 d.run AI 操作系统彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/drun.pdf){ .md-button .md-button--primary }
+[开始安装](installer/start-install.md){ .md-button .md-button--primary }

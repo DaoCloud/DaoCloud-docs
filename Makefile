@@ -220,6 +220,7 @@ merge-download-docs: ## Merge download docs into Chinese and English docs
 	cp -av daocloud-download-docs/docs/en/docs/download docs/en/docs/
 	@# 产品 tab 子树（tf 等）下镜像的页面以相对路径引用 download/，构建期需把 download 链入该子树，否则会 404
 	@if [ -d docs/zh/docs/tf ]; then ln -sfn ../download docs/zh/docs/tf/download; fi
+	@if [ -d docs/zh/docs/drun ]; then ln -sfn ../download docs/zh/docs/drun/download; fi
 	@printf '\n$(GREEN)OK download docs merged$(RESET)\n\n'
 
 merge-external-docs: ## Merge all checked-out external docs

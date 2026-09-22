@@ -2,7 +2,7 @@
 
 本文介绍如何离线安装 **d.run AI 操作系统（下文简称 d.run）**。安装时请使用产品清单文件 `manifest-cloud.yaml`。
 
-请在安装之前阅读并了解[部署要求](../../install/commercial/deploy-requirements.md)、[部署架构](../../install/commercial/deploy-arch.md)、[准备工作](../../install/commercial/prepare.md)，并先完成[安装依赖项](../../install/install-tools.md)。
+请在安装之前阅读并了解[部署要求](./commercial/deploy-requirements.md)、[部署架构](./commercial/deploy-arch.md)、[准备工作](./commercial/prepare.md)，并先完成[安装依赖项](index.md)。
 
 ## 第 1 步：下载离线包
 
@@ -28,7 +28,7 @@ tar -xvf offline-v0.44.0-amd64.tar
 
 对于 ISO 格式的操作系统镜像文件，在安装过程中请根据不同操作系统来下载对应的 ISO 文件。
 
-ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](../../install/commercial/cluster-config.md)中进行配置。
+ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](./commercial/cluster-config.md)中进行配置。
 
 | CPU 架构 | 操作系统版本 | 点击下载 |
 | :------- | :--------- | :------- |
@@ -55,7 +55,7 @@ ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](../
 osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源项目为 Linux
 操作系统离线软件源做的补充内容，例如 openEuler 22.03 中缺少了selinux-policy-35.5-15.oe2203.noarch.rpm。
 
-安装器需要提供操作系统的 osPackage 离线包，并在[集群配置文件 clusterConfig.yaml](../../install/commercial/cluster-config.md)中定义 `osPackagePath`。
+安装器需要提供操作系统的 osPackage 离线包，并在[集群配置文件 clusterConfig.yaml](./commercial/cluster-config.md)中定义 `osPackagePath`。
 
 其中 [Kubean](https://github.com/kubean-io/kubean) 提供了不同操作系统的osPackage 离线包，
 可以前往 <https://github.com/kubean-io/kubean/releases> 查看。
@@ -120,11 +120,11 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 安装器支持了 Addon 的离线包导入能力，如果需要支持 Addon 中所有的 Helm Chart 离线化。
 可以在[下载中心](../../download/index.md)下载最新版本。
 
-首先需要事先下载好离线包，并在[集群配置文件 clusterConfig.yaml](../../install/commercial/cluster-config.md)中定义 `addonOfflinePackagePath`。
+首先需要事先下载好离线包，并在[集群配置文件 clusterConfig.yaml](./commercial/cluster-config.md)中定义 `addonOfflinePackagePath`。
 
 ### 一键下载所需离线包
 
-我们提供了脚本来[一键下载所需的离线包](../../install/air-tag-download.md)。
+我们提供了脚本来[一键下载所需的离线包](air-tag-download.md)。
 
 以下是包含的离线包：
 
@@ -138,7 +138,7 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
 ## 第 2 步：配置 clusterConfig.yaml
 
-这是集群配置文件，位于离线镜像包 `offline/sample` 目录下，具体的参数介绍请参考 [clusterConfig.yaml](../../install/commercial/cluster-config.md)。
+这是集群配置文件，位于离线镜像包 `offline/sample` 目录下，具体的参数介绍请参考 [clusterConfig.yaml](./commercial/cluster-config.md)。
 
 !!! note
 
@@ -198,7 +198,7 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
     - `global.installMode` 为 `cloud`
     - 默认开启大模型服务平台（`hydra`）；驾驶舱（`crane`）默认关闭
-    - 与 [Token 工厂](../../tf/installer/start-install.md) 的区别：不启用 `global.tokenfactory.enable`，且驾驶舱不会默认打开
+    - 与 [Token 工厂](../../tf/install/index.md)的区别：不启用 `global.tokenfactory.enable`，且驾驶舱不会默认打开
 
 2. 安装完成后，命令行会提示安装成功。可通过屏幕提示的 URL，使用默认账号和密码（admin/changeme）访问控制台。
 
