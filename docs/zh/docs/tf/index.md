@@ -60,7 +60,7 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
         <span class="tf-arch-card-tip">智能问答等应用能力</span>
       </a>
       <a class="tf-arch-card tf-arch-card--model" href="inferx/">
-        <span class="tf-arch-card-title">InferX 推理套件</span>
+        <span class="tf-arch-card-title">推理加速服务</span>
         <span class="tf-arch-card-tip">推理加速与引擎管理</span>
       </a>
       <a class="tf-arch-card tf-arch-card--model" href="zestu/">

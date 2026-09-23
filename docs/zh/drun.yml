@@ -141,7 +141,7 @@ nav:
               - 参考文档:
                   - Gateway API 实例访问: drun/clawos/reference/gateway-access.md
               - FAQ: drun/clawos/faq.md
-          - InferX 推理套件:
+          - 推理加速服务:
               - drun/inferx/index.md
               - FAQ: drun/inferx/faqs.md
               - 最佳实践:
