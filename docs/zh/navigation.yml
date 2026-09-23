@@ -10,6 +10,7 @@ nav:
               - 适用场景: dce/scenario.md
               - 我们是 K8s 认证服务商: dce/kcsp.md
               - DCE Release Notes:
+                  - v0.44.0-20260831 发布: dce/dce-rn/20260831.md
                   - v0.43.0-20260731 发布: dce/dce-rn/20260731.md
                   - v0.42.0-20260630 发布: dce/dce-rn/20260630.md
                   - v0.41.0-20260531 发布: dce/dce-rn/20260531.md
