@@ -485,7 +485,7 @@ KEP-5304 定义了这套协议的标准格式。如果你用官方的 [DRA kubel
 2. 每次更新 `metadata.generation` 要加 1
 3. 通过 CDI 或类似机制把文件以只读方式挂进容器
 
-## 总结
+## 小结
 
 以上是 Kubernetes v1.37 为 DRA 带来的六个新特性，从不同维度补齐了异构资源管理的能力。它们不是孤立的，而是层层递进、互相配合：
 
@@ -510,19 +510,94 @@ KEP-5304 定义了这套协议的标准格式。如果你用官方的 [DRA kubel
 
 本文涉及的 DRA 诸多特性，正是今年 KubeCon China 2026 上一场重点分享的内容。
 
-![paco speaker](./images/paco-dra.png)
+![paco-dra-live](./images/paco-dra-live.jpg)
 
-**演讲者：徐俊杰（Paco）** —— DaoCloud 开源团队负责人、Kubernetes 指导委员会成员
+- **演讲者：徐俊杰（Paco）** · DaoCloud 开源团队负责人 · Kubernetes 指导委员会成员（Kubeadm 维护者、CNCF Ambassador）
+- **联合演讲者：Kang Zhang** · NVIDIA 高级解决方案架构师 · Grove / Dynamo 维护者
 
-如果未来的 Kubernetes 要真正成为 AI Infra 的资源调度底座，它首先得学会"看懂"一台 AI 服务器。哪张 GPU 与哪张 NIC 更近？NUMA 怎么分布？PCIe、NVLink、Fabric 之间是什么拓扑关系？这些过去隐藏在机器内部的细节，正在直接影响 AI 工作负载的性能。
+这场分享的主题是 **《Kubernetes DRA Architecture：Scheduling, Status, and Topology at Scale》**。演讲者开场就抛出一个判断：DRA 不只是一个"把 GPU 分给 Pod"的接口，而是一套完整的**资源模型 + 调度协议 + 状态边界**。它要回答的，也正是本文开头那六个问题背后的同一个终极问题——不是**"有多少 GPU 可用"**，而是**"该用哪一张、应该怎么用、它现在准备好了吗"**。
 
-这场分享将从 DRA 完整架构出发，串联 v1.36–v1.37 中 DRA 相关 KEP 的最新进展，看 Kubernetes 如何从"分配 GPU"进一步走向
-**理解和调度复杂的异构资源关系** 。同时结合 NVIDIA Dynamo / GB200 的优化实践，展示千卡规模集群中
-**IMEX 分配延迟如何从分钟级压缩到秒级** 。
+如果说前面的六个特性是"零件"，那这场分享恰好把它们的**设计初心**串了起来，归结为三条主线。
 
-!!! tip
+### 三条设计主线
 
-    KubeCon China 2026 将于 9 月 7–9 日在上海国际会议中心举办。
-    DaoCloud 在 S2 主展位和多个开源项目展台安排了工程师驻场，欢迎现场交流。
-    
-    更多信息：[DaoCloud 官网](https://www.daocloud.io) ｜ [d.run 算力平台](https://d.run/)
+| 主线 | 一句话 | 对应本文特性 |
+|------|--------|--------------|
+| 01 资源结构化 | 属性、容量、可访问节点沉淀为"调度事实" | 可分区设备、可消耗容量 |
+| 02 拓扑参与决策 | PodGroup 放置与设备分配共享同一约束空间 | 设备兼容性组、DistinctAttribute |
+| 03 状态与拓扑对齐 | 归属边界决定冲突域与收敛速度 | 细粒度状态授权 |
+
+![dra-principles](./images/dra-principles.png)
+
+> 一句话总结这场分享的立场：**DRA 是一套资源模型、一个调度协议、一条状态边界——而不是"一个 GPU 开关"。**
+
+### 一条清晰的演进路线：1.32 → 1.37 → 1.38
+
+分享用一张 KEP 演进表，快速带过了 DRA 从 1.32 一路走到 1.37 的节奏。除了本文详述的六个特性，v1.37 里还有一批值得留意的"邻居"：
+
+| 特性 | 阶段 | 一句话 |
+|------|------|--------|
+| KEP-5004 扩展资源请求 | Stable | Pod 继续写 `limits`，DeviceClass 把资源名映射到 DRA，自动生成隐式 Claim |
+| KEP-4817 设备状态写回 | Stable | 驱动把运行状态写回 `ResourceClaim.status.devices`，可直接读 Ready 与网卡信息 |
+| KEP-5055 设备 Taint | Stable | 给具体设备打 NoExecute，调度前挡掉或驱逐现有使用者 |
+| KEP-6072 标准 numaNode 属性 | Stable | GPU/网卡共享标准属性，用一条 `matchAttribute` 跨驱动做 NUMA 共置 |
+| KEP-5729 工作负载级共享 | Beta | PodGroup 里多个 Pod 共享一份模板化 Claim，Pod 只持有逻辑名 |
+| KEP-5517 节点可分配资源 | Alpha | 设备分配同步算入节点 CPU/内存可分配量，避免隐性超卖 |
+| KEP-5677 容量可见性 | Alpha | 池级容量摘要，供 autoscaler 决策 |
+| KEP-6080 派生属性 | Alpha | 用 CEL 统一跨厂商属性命名，跨驱动共置 |
+
+v1.38 的规划方向也在现场同步了：
+
+| 走向 | 特性 |
+|------|------|
+| 走向 Stable | 可消耗容量 · 可分区设备 · 设备元数据 |
+| 进入 Beta | 可选节点操作 · 设备兼容性组 · 派生属性 · 节点可分配资源 |
+| 新能力 | 抢占（preemption，推迟到 1.38） · 共享可消耗容量 · 共享亲和性 |
+
+### GPU 请求如何"进化"：从一枚整数到任意形状
+
+分享用 NVIDIA 的 `dra-driver-nvidia-gpu` 演示了这套模型落地后长什么样。在 Device Plugin 时代，Pod 只能声明 `nvidia.com/gpu: 1`—— **一个整数** ，共享还是不共享由节点级配置文件说了算。进入 DRA 之后，请求的单位从一个数字，变成了一个 **可命名、可共享、可筛选的对象** ：
+
+| 形态 | 资源域 | 隔离级别 | 使用场景 |
+|------|--------|----------|----------|
+| 整卡 | `gpu.nvidia.com` | 无 | 独占一整张 GPU |
+| MIG 切片 | `mig.nvidia.com` | 硬件 | 一张卡切成隔离分区 |
+| 时间切片 / MPS | `TimeSlicingSettings` / `MPSSupport` | 软件 | 共享算力，物理隔离交给硬件 |
+| 直通（Pass-through） | `vfio.gpu.nvidia.com` | 整卡 + NVLink | 直接交付给 VM |
+
+![dra-gpu-shapes](./images/dra-gpu-shapes.png)
+
+> 而且这一切都能写进 Claim：共享方式不再是集群策略，而是工作负载自己声明；筛选也直接在 Claim 里用 **CEL 选择器** 按属性挑设备。分享里那句点题的总结是： **"共享是软件，隔离是硬件，直通把驱动交还给你——全在一张 Claim 里。"**
+
+### 千卡规模的工程问题：ComputeDomain 与 IMEX
+
+对应到 GB200 这类超节点，分享重点讲了 **ComputeDomain 与 IMEX** 。IMEX 让 GPU 内存在域内的节点之间可以共享，是百卡、千卡集群里 AI 工作负载的关键底座。工程上最棘手的，是 **大规模下的收敛速度** ：
+
+| 阶段 | 做法 | 效果 |
+|------|------|------|
+| 早期 | 所有 daemon 乐观锁同一个对象抢 index | 409 冲突 + 429 流量限制，256 Pod 的作业启动拖几分钟 |
+| ComputeDomainCliques | 索引协商拆到单个 NVLink clique 内部 | 300+ 节点规模收敛到 **≈3 秒** |
+| v0.5.0 host-managed | 把 daemon 编排逐出作业启动路径 | 分配延迟从**分钟级压到秒级** |
+
+![dra-computedomain](./images/dra-computedomain.png)
+
+> 这正是这场分享最受关注的一个落点——千卡集群的 IMEX 分配延迟，如何从分钟级一路压到秒级。
+
+### 生态协同：DRA 正在成为 AI 资源管理的统一入口
+
+放在更大的图景里，Kubernetes 正在成为 AI 的"基础操作系统"。分享援引的数据显示：Google GKE / Anthropic 单集群已到 13 万节点、2026 年 Hypercluster 有望突破百万 GPU；字节、蚂蚁、DeepSeek、美团等领头羊的集群规模与真实落地也在快速放大。
+
+![dra-ai-infra](./images/dra-ai-infra.png)
+
+v1.36 的 **AI Conformance** 更是把 DRA 摆到了关键位置——安全的加速器访问、高性能网络（DRANET）、驱动与运行时校验、静态/动态 GPU 共享、虚拟化加速器，都可以由 DRA 满足。在生态层，DRA 也不是孤军作战，而是多项目协同分工：
+
+| 生态角色 | 代表项目 | 分工 |
+|----------|----------|------|
+| 准入与配额 | Kueue | 队列、优先级、配额 |
+| 批量与 gang 调度 | KAI / Volcano | 批量、gang、拓扑感知调度 |
+| 小份额共享 | HAMi | 分数共享 + 运行时隔离 |
+| 低成本模拟 | KWOK | 近乎零成本的资源 mock |
+
+DaoCloud 的开源 vGPU 等能力，也在其中贡献了"提升网络带宽利用率、降低算力运营成本"的实践。
+
+> 参阅 [KubeCon 演讲回放](https://www.youtube.com/c/cloudnativefdn/videos)。
