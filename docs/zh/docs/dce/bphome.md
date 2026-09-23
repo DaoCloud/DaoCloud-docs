@@ -204,5 +204,3 @@ hide:
     - [开发设备驱动应用 mapper](../kant/best-practice/develop-device-mapper.md)
 
 </div>
-
-![best practices](../images/bphome.jpeg)
