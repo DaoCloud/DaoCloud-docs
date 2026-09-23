@@ -8,35 +8,71 @@ Date: 2024-03-17
 This page lists the Release Notes of the installer, so that you can understand
 the evolution path and feature changes of each version.
 
-*[Amamba]: Dev codename for Workbench in DCE
-*[Ghippo]: Dev codename for Global Management in DCE
-*[insight-agent]: Essential component that implements observability capabilities in DCE. It is installed by default in the insight-system namespace.
-*[Kangaroo]: Dev codename for the Container Registry in DCE
-*[Kpanda]: Dev codename for Container Management in DCE
-*[Skoala]: Dev codename for Microservice Engine in DCE
-*[Hydra]: Dev codename for LLM Studio in DCE
+*[Amamba]: Dev codename for Workbench
+*[Ghippo]: Dev codename for Global Management
+*[insight-agent]: Essential component that implements observability capabilities. It is installed by default in the `insight-system` namespace.
+*[Kangaroo]: Dev codename for the Container Registry
+*[Kpanda]: Dev codename for Container Management
+*[Skoala]: Dev codename for Microservice Engine
+*[Hydra]: Dev codename for LLM Studio
 
-## 2025-04-30
+## 2026-08-31
+
+### v0.44.0
+
+- **Added** support for the basic framework of GitOps mode deployment.
+- **Added** support for minimal deployment of components in GitOps mode.
+- **Fixed** the serial detection issue of Bootstrap Node images #3447.
+- **Fixed** the issue of the helm rollback process hanging #3461.
+
+## 2026-07-31
+
+### v0.43.0
+
+- **Added** support for the clean capability of offline images.
+- **Added** the agentclaw component to the installer.
+- **Improved** in MetalLB load balancing mode, ES and Kafka reuse insightVip for external exposure instead of falling back to node IPs.
+- **Fixed** the OCI index parsing failure and missed image collection when importing images by script.
+
+## 2026-06-30
+
+### v0.42.0
+
+- **Added** support for generating manifest configurations in Token Factory mode.
+- **Added** support for parsing the mgr image tag from the deployment.
+- **Improved** kube_version updated to v1.35.5.
+- **Improved** support for RHEL10 offline os package dependencies.
+- **Fixed** the offline conversion issue of the argocd image.
+
+## 2026-05-31
+
+### v0.41.0
+
+- **Improved** the installer to update the default `kube_version` to `v1.34.7`.
+- **Improved** the image acceleration address.
+- **Fixed** the kafka PDB issue in upgrade scenarios.
+
+## 2026-04-30
 
 ### v0.40.0
 
 * **Improved** the labeling of hydra-agent to indicate it is used only for offline packages and not involved in installation.
 * **Improved** the installer to default the `kube_version` to `v1.33.8`.
 
-## 2025-03-31
+## 2026-03-31
 
 ### v0.39.0
 
-- **Added** License testing support #3287
-- **Fixed** manifest components parsing errors
+- **Added** License testing support #3287.
+- **Fixed** manifest components parsing errors.
 
-## 2025-01-31
+## 2026-01-31
 
 ### v0.38.0
 
-- **Improved** support for deploying workload clusters with Docker 28.x
-- **Fixed** persistence issues of sysctl configuration parameters on seed nodes
-- **Fixed** missing parameters in kubean ConfigMap during upgrade scenarios
+- **Improved** support for deploying workload clusters with Docker 28.x.
+- **Fixed** persistence issues of sysctl configuration parameters on seed nodes.
+- **Fixed** missing parameters in kubean ConfigMap during upgrade scenarios.
 
 ## 2025-12-31
 
@@ -66,8 +102,8 @@ the evolution path and feature changes of each version.
 
 - **Added** e2e upgrade tests for Kubernetes v1.32.
 - **Added** QA testing for cloud mode.
-- **Optimized** default URL parameters for etcd metrics.
-- **Optimized** default Kubernetes version to v1.32.
+- **Improved** default URL parameters for etcd metrics.
+- **Improved** default Kubernetes version to v1.32.
 - **Fixed** issue where kubean manifest template rendering order caused ConfigMap configuration to not take effect.
 - **Fixed** offline image issue in Skoala AI Gateway.
 
@@ -81,46 +117,46 @@ the evolution path and feature changes of each version.
 - **Added** default `rp_filter` sysctl parameter configuration.
 - **Fixed** offline scenario issue with `tailing-sidecar-operator` image addresses.
 - **Fixed** Kylin V11 environment compatibility issue with Kind clusters using cgroup v2.
-- **Fixed** issue where `nodeAffinity` parameters in manifest configuration components did not take effect.
+- **Fixed** an issue where `nodeAffinity` parameters in manifest configuration components did not take effect.
 
 ## 2025-08-31
 
 ### v0.33.0
 
-- **Updated** the minimum required Helm version in pre-checks to v3.14.0
-- **Optimized** pre-requisite scripts
-- **Fixed** cluster deployment failures on RHEL8 series due to low default Python version
-- **Fixed** errors on kylin v10 when system `VERSION_ID` is non-numeric during cluster deployment
-- **Fixed** MySQL DSN URL parsing validation errors
-- **Fixed** duplicate MySQL query parameter issue in Hydra
-- **Fixed** minimal deployment replica configuration issue in Hydra
-- **Fixed** database charset issues in Hydra
-- **Fixed** rollback failure for `rollback-app mcamel` in Hydra
+- **Updated** the minimum required Helm version in pre-checks to v3.14.0.
+- **Improved** pre-requisite scripts.
+- **Fixed** cluster deployment failures on RHEL8 series due to low default Python version.
+- **Fixed** errors on kylin v10 when system `VERSION_ID` is non-numeric during cluster deployment.
+- **Fixed** MySQL DSN URL parsing validation errors.
+- **Fixed** duplicate MySQL query parameter issue in Hydra.
+- **Fixed** minimal deployment replica configuration issue in Hydra.
+- **Fixed** database charset issues in Hydra.
+- **Fixed** rollback failure for `rollback-app mcamel` in Hydra.
 
 ## 2025-07-31
 
 ### v0.32.0
 
-- **Added** support for deleting `kind` and `kind` cluster data
-- **Added** support for component failure rollback
-- **Added** Kafka and Zookeeper monitoring metrics
-- **Optimized** MySQL installation process
-- **Optimized** RabbitMQ reinstallation logic
-- **Optimized** Kafka CA certificate validity to 10 years
-- **Fixed** version retrieval failures in infra and middleware components
-- **Fixed** data loss issue during YAML deserialization
-- **Fixed** Fluent Bit image issue
-- **Fixed** pre-requisite script installation failure with high-version `sudo`
+- **Added** support for deleting `kind` and `kind` cluster data.
+- **Added** support for component failure rollback.
+- **Added** Kafka and Zookeeper monitoring metrics.
+- **Improved** MySQL installation process.
+- **Improved** RabbitMQ reinstallation logic.
+- **Improved** Kafka CA certificate validity to 10 years.
+- **Fixed** version retrieval failures in infra and middleware components.
+- **Fixed** data loss issue during YAML deserialization.
+- **Fixed** Fluent Bit image issue.
+- **Fixed** pre-requisite script installation failure with high-version `sudo`.
 
 ## 2025-06-30
 
 ### v0.31.0
 
-- **Added** support for configurable k8s certificate issuance validity period
-- **Optimized** default behavior to disable `kernel_unattended_upgrades` in Ubuntu cluster environments
-- **Updated** installer to Go 1.24 and GolangCI-Lint v2
-- **Fixed** issue where enabling node kernel tuning would always call `nf-conntrack` playbook
-- **Fixed** parameter issues in URLs for online scenarios
+- **Added** support for configurable k8s certificate issuance validity period.
+- **Improved** default behavior to disable `kernel_unattended_upgrades` in Ubuntu cluster environments.
+- **Updated** installer to Go 1.24 and GolangCI-Lint v2.
+- **Fixed** an issue where enabling node kernel tuning would always call `nf-conntrack` playbook.
+- **Fixed** parameter issues in URLs for online scenarios.
 
 ## 2025-05-31
 
@@ -129,12 +165,12 @@ the evolution path and feature changes of each version.
 - **Added** support for offline installation on Ubuntu 24.04 (Noble).
 - **Added** offline support for Cilium.
 - **Added** support for using different installation modes to generate corresponding `manifest.yaml` files.
-- **Optimized** the naming convention for component installation function prefixes and
+- **Improved** the naming convention for component installation function prefixes and
   the directory structure for component charts within offline packages.
-- **Optimized** by removing the build process for macOS binary packages.
-- **Optimized** by updating the versions of prerequisite tools.
-- **Optimized** the read/write logic for Helm revision record files.
-- **Optimized** the installation process for Ubuntu-based clusters by stopping and
+- **Improved** by removing the build process for macOS binary packages.
+- **Improved** by updating the versions of prerequisite tools.
+- **Improved** the read/write logic for Helm revision record files.
+- **Improved** the installation process for Ubuntu-based clusters by stopping and
   disabling the `unattended-upgrades` service beforehand.
 - **Fixed** an issue where `cert-manager` CRDs were not installed together during installation.
 - **Fixed** the log output for failed upgrade attempts to make error messages clearer.
@@ -154,10 +190,10 @@ the evolution path and feature changes of each version.
 - **Improved** `istio-ingressgateway` image pull policy set to `IfNotPresent`.
 - **Improved** handling of historical upgrade records when using the `dce5-installer rollback` subcommand.
 - **Improved** logic for handling Huozhong offline resources in build scripts by removing redundant code and improving maintainability.
-- **Fixed** issue with pulling RabbitMQ images from the public internet during middleware installation.
+- **Fixed** an issue with pulling RabbitMQ images from the public internet during middleware installation.
 - **Fixed** failure to parse chart values containing the `#` character.
 - **Fixed** incorrect image used for the `mcamel-mysql` component after offline DCE5 upgrade.
-- **Fixed** issue where DCE5 upgrade overwrote previously manually modified CR `L2Advertisement` related to the MetalLB component.
+- **Fixed** an issue where DCE5 upgrade overwrote previously manually modified CR `L2Advertisement` related to the MetalLB component.
 
 ## 2025-03-31
 
@@ -444,7 +480,7 @@ component in the mainfest.yaml file during the upgrade process.
 
 ### v0.13.0
 
-#### New Features
+#### Features
 
 - **Added** support separate deployment of etcd nodes.
 - **Added** support external Kafka component.
@@ -474,7 +510,7 @@ component in the mainfest.yaml file during the upgrade process.
 - **Added** Installer now checks if lvm2 is installed on each host node when enabling Brow Storage component.
 - **Added** Default Kubernetes version in the installer upgraded to `1.27.5`.
 
-#### Optimized
+#### Improvements
 
 - **Improved** Removed CPU/Memory resource request and limit for Global Management, Container Management, and Observability components in community edition minimal installation with `-z` flag.
 - **Improved** error handling for installer's `-m` parameter, now it throws an error and exits installation when manifest file is not specified for `-m`.
@@ -506,7 +542,7 @@ component in the mainfest.yaml file during the upgrade process.
 
 ### v0.11.0
 
-#### New Features
+#### Features
 
 - **Added** Update the k8s version of Global clusters to v1.26.7 to avoid security vulnerabilities in older versions
 - **Added** support for setting ansible extension parameters in clusterConfig.yaml
@@ -521,7 +557,7 @@ component in the mainfest.yaml file during the upgrade process.
 
 #### Bug Fixes
 
-- **Fixed** issue where redis sentinel mode does not support sentinel instance password
+- **Fixed** an issue where redis sentinel mode does not support sentinel instance password
 - **Fixed** failure when adding TencentOS 3.1 system nodes to the worker cluster
 
 ## 2023-7-31
@@ -547,12 +583,12 @@ component in the mainfest.yaml file during the upgrade process.
 
 - **Fixed** incorrect detection of external image service address
 - **Fixed** formatting error in kubeconfig output by spark kind cluster
-- **Fixed** issue of multiple version charts appearing due to unpacking different version offline packages to the same directory
+- **Fixed** an issue of multiple version charts appearing due to unpacking different version offline packages to the same directory
 - **Fixed** incorrect instruction set architecture information in prerequisite.tgz
 - **Fixed** import-artifact exception when -C is not specified
-- **Fixed** issue where incorrect exit command caused installer exit prompt message not to be displayed
+- **Fixed** an issue where incorrect exit command caused installer exit prompt message not to be displayed
 - **Fixed** certificate authentication failure for kube-controller-manager and kube-scheduler caused by podman base + kind restart
-- **Fixed** issue where printing embedded manifest subcommand command indicator would return full mode manifest as long as it is not specified as `install-app`
+- **Fixed** an issue where printing embedded manifest subcommand command indicator would return full mode manifest as long as it is not specified as `install-app`
 - **Fixed** command name typo for printing embedded manifest subcommand
 - **Fixed** failure to import arm64 package again for existing amd64 resources in import-artifact subcommand
 
@@ -577,7 +613,7 @@ component in the mainfest.yaml file during the upgrade process.
 
 ### v0.9.0
 
-#### New Features
+#### Features
 
 - **Added** The `istio-ingressgateway` now supports high availability mode. When upgrading from v0.8.x or earlier to v0.9.0, the following command must be executed: `./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
 - **Added** support configuring the exposed bootstrapping kind address and port in the clusterConfig.yaml file.
@@ -627,7 +663,7 @@ If the output is different from the above cases, follow the upgrade instructions
 
 ## 2023-6-15
 
-### v0.8.0
+### v0.8.1
 
 #### Improvements
 
@@ -648,7 +684,7 @@ If the output is different from the above cases, follow the upgrade instructions
 
 ### v0.8.0
 
-#### New Features
+#### Features
 
 - **Added** other Linux mode supports the OpenAnolis 8.8 GA operating system
 - **Added** supports the OracleLinux R9 U1 operating system
@@ -746,7 +782,7 @@ If the output is different from the above cases, follow the upgrade instructions
 
     After the modification is complete, select the new configuration for the yum source of the node configuration on the container management creation cluster page
 
-## 2022-4-11
+## 2023-4-11
 
 ### v0.6.1
 
@@ -755,7 +791,7 @@ If the output is different from the above cases, follow the upgrade instructions
 - **Upgraded** Kpanda to v0.16.1
 - **Upgraded** Skoala to v0.19.4
 
-## 2022-4-06
+## 2023-4-06
 
 ### v0.6.0
 
@@ -787,7 +823,7 @@ If the output is different from the above cases, follow the upgrade instructions
 - **Fixed** an issue of sequence dependency when Amamba and Amamba-jenkins are installed concurrently
 - **Fixed** an issue that the installer command line -j parameter parsing fails
 
-## 2022-2-28
+## 2023-2-28
 
 ### v0.5.0
 
@@ -829,7 +865,7 @@ If the output is different from the above cases, follow the upgrade instructions
 - **Added** support cluster deployment in private key mode
 - **Added** supports external container registry for deployment
 
-#### Optimized
+#### Improvements
 
 - **Improved** The offline package no longer includes the ISO of the operating system, which needs to be downloaded separately. In the case of pure offline, the absolute path of the ISO needs to be defined in the clusterConfig file
 - **Improved** Commercial version uses Contour as default ingress-controller
@@ -844,7 +880,7 @@ If the output is different from the above cases, follow the upgrade instructions
 #### Known Issues
 
 - The default installation mode does not support unpartitioned SSD disks. If you want to support it, you need to manually intervene.
-- Pure offline environment, no app store by default. Please manually connect the chart-museum of the bootstrapping node to the global cluster, registry address: http://{Tinder IP}:8081, username rootuser, password rootpass123
+- Pure offline environment, no app store by default. Please manually connect the chart-museum of the bootstrapping node to the global cluster, registry address: `http://{Tinder IP}:8081`, username rootuser, password rootpass123
 - There is a known problem in the metallb community. There is a dadfailed IPV6 loopback address in the main network card, and metallb cannot work. Before installing, you need to ensure that the main network card is not dadfailed
 - If the machine is too stuck during the startup of insight-api-server, the initialization (migrate) of the database cannot be completed during the Liveness health check cycle, resulting in the need for manual intervention
 - The iso path in the clusterConfig configuration file must be an absolute path, relative paths are not supported
@@ -865,7 +901,7 @@ If the output is different from the above cases, follow the upgrade instructions
 - **Added** support for cluster deployment in private key mode.
 - **Added** The workload is elastically scaled based on custom metrics, which is closer to the user's actual business autoscaling needs.
 
-#### Optimized
+#### Improvements
 
 - **Improved** Create permanent harbor with operator, enable HTTPS, and use Postgressql operator.
 - **Improved** Commercial version uses contour as default ingress-controller.
@@ -885,5 +921,5 @@ If the output is different from the above cases, follow the upgrade instructions
 - The default k8s version of kubean and the offline package are still limited to k8s 1.24 version, which has not been updated to 1.25 (postgres-operator is not supported yet).
 - In the case of Image Load, the istio-ingressgateway imagePullPolicy is always.
 - For the ARM version, step 16 (harbor) cannot be performed, because harbor does not support ARM for the time being.
-  The manifest.yaml file needs to be modified, the postgressql operator is fasle, and
-  -j 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 should be added when executing the installation command
+  The `manifest.yaml` file needs to be modified, the postgressql operator is fasle, and
+  `-j 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15` should be added when executing the installation command
