@@ -1,6 +1,20 @@
 nav:
   - d.run Token Factory:
       - Overview: tf/index.md
+      - Installation:
+          - Install Dependencies: tf/install/index.md
+          - Preparation:
+              - Deployment Requirements: tf/install/commercial/deploy-requirements.md
+              - Deployment Architecture: tf/install/commercial/deploy-arch.md
+              - Preparation: tf/install/commercial/prepare.md
+              - Ports: tf/install/commercial/port-requirements.md
+              - clusterConfig.yaml: tf/install/commercial/cluster-config.md
+          - Install Token Factory: tf/install/start-install.md
+          - FAQs: tf/install/faq.md
+          - Upgrade:
+              - Upgrade Modules: tf/install/upgrade.md
+              - Upgrade Notes: tf/install/upgrade-notes.md
+          - Release Notes: tf/install/release-notes.md
       - Cloud Native AI:
           - tf/ai-os/index.md
           - LLM Studio:

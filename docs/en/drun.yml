@@ -1,6 +1,20 @@
 nav:
   - d.run AI OS:
       - Overview: drun/index.md
+      - Installation:
+          - Install Dependencies: drun/install/index.md
+          - Preparation:
+              - Deployment Requirements: drun/install/commercial/deploy-requirements.md
+              - Deployment Architecture: drun/install/commercial/deploy-arch.md
+              - Preparation: drun/install/commercial/prepare.md
+              - Ports: drun/install/commercial/port-requirements.md
+              - clusterConfig.yaml: drun/install/commercial/cluster-config.md
+          - Install d.run AI OS: drun/install/start-install.md
+          - FAQs: drun/install/faq.md
+          - Upgrade:
+              - Upgrade Modules: drun/install/upgrade.md
+              - Upgrade Notes: drun/install/upgrade-notes.md
+          - Release Notes: drun/install/release-notes.md
       - Cloud Native AI:
           - drun/ai-os/index.md
           - LLM Studio:
