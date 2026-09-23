@@ -206,5 +206,3 @@ and maintain containerized applications more efficiently and stably.
     - [Develop Device Driver Applications Mapper](../kant/best-practice/develop-device-mapper.md)
 
 </div>
-
-![best practices](../images/bphome.jpeg)
