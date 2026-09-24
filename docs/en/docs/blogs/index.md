@@ -16,6 +16,49 @@ technologies, sorted by date by default.
 
     KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 takes place September 7–9 in Shanghai.
 
+- [Kubernetes v1.37 DRA: What's New](./2026/k8s-dra.md)
+
+    Pods used to be able to claim a GPU only as a whole device. DRA now makes that far more granular and flexible.
+
+- [vLLM Semantic Router's Seven Working Groups](./2026/vllm-sr.md)
+
+    vLLM Semantic Router (vLLM-SR for short) now has seven working groups, each responsible for a durable technical direction.
+
+- [Demystifying Agent Skills: Why They Work — Until They Don't](./2026/skills.md)
+
+    When the conversation turns to agents, "skills" is a word you cannot get around.
+
+- [From KV Cache Affinity to Token-aware Routing](./2026/token-aware.md)
+
+    llm-d experiments with "Sticky Until Saturated" to avoid LLM inference hotspots.
+
+- [From "Runs" to "Runs Fast": Optimizing Domestic Accelerators on Heterogeneous GPUs](./2026/optimize-gpu.md)
+
+    As large models move from lab validation to production at scale, AI infrastructure is undergoing a clear shift:
+    GPUs are no longer just a question of "how many cards you have," but are evolving into a complete systems
+    engineering problem spanning hardware, drivers, compute libraries, AI frameworks, inference engines,
+    scheduling systems, and observability.
+
+- [Kubernetes v1.37 Preview](./2026/k8s-v137-seak.md)
+
+    Kubernetes v1.37 is converging on a release that balances **migration preparation, runtime security, and resource management**.
+
+- [From GPU Utilization to Token Throughput: Orchestrating GB300 NVL72](./2026/gb300.md)
+
+    How to make the most of NVIDIA GB300 NVL72.
+
+- [From Copilot to Claude Code: Evaluating the Real Productivity of AI Coding Agents](./2026/ai-agent.md)
+
+    How to evaluate whether an AI agent can reliably turn tokens, model capabilities, and tool calls into real engineering output?
+
+- [Don't Let Token Become the New KPI](./2026/token-kpi.md)
+
+    Tokens can serve as a signal, but they should never become a KPI.
+
+- [The Next Hard Battle for AI Infra: Putting 95% of Idle Compute to Use](./2026/use-gpu.md)
+
+    AI Infra faces a very real pivot: the next stage of competition is not just "who owns more GPUs," but "who can put their GPUs to fuller use."
+
 - [Correcting Records for Unfixed Kubernetes CVEs](./2026/k8s-cve.md)
 
     The Kubernetes Security Response Committee (SRC) will correct the affected CVE records on June 1, 2026.
@@ -27,6 +70,31 @@ technologies, sorted by date by default.
 - [Kubernetes v1.36: Server-Side Sharded List and Watch](./2026/server-side-sharded-list-and-watch.md)
 
     Kubernetes v1.36 introduces **server-side sharded list and watch** as an alpha feature.
+
+- [Five Key Trends in AI Infrastructure for the Second Half of 2026](./2026/ai-infra-trends.md)
+
+    As large models move from "technology demos" to "business adoption," infrastructure is undergoing a quiet revolution.
+
+- [A Sneak Peek at Kubernetes v1.36](./2026/k8s-136.md)
+
+    Kubernetes v1.36 is expected in late April 2026. This release includes several removals and deprecations,
+    as well as a considerable number of feature enhancements.
+
+- [DaoCloud at KubeCon 2026: Charting the Critical Path for AI Infrastructure](./2026/kubecon-eu.md)
+
+    KubeCon Europe 2026 was grandly held at the RAI Amsterdam convention center in the Netherlands.
+    DaoCloud took an active part, helping chart the critical path for AI infrastructure worldwide.
+
+- [DaoCloud Supports CAICT in Drafting National Standards for Large-Model Inference Acceleration](./2026/caict.md)
+
+    Good news! In recognition of its outstanding contributions to the computing power internet and computing power
+    interconnection, DaoCloud was named an **Outstanding Contributor to Computing Power Internet and Computing Power
+    Interconnection Standardization in 2025**.
+
+- [OCI Is Quietly "Taking Over Everything"](./2026/oci.md)
+
+    After KubeCon North America (the Atlanta one) wrapped up recently, one article summed it up perfectly:
+    OCI is quietly pulling all kinds of things into its own system.
 
 - [Topology-Aware Scheduling: Building Smarter Scheduling Solutions for AI Workloads](./2026/topology-aware-scheduling.md)
 
