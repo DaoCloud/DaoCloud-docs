@@ -1456,8 +1456,24 @@ nav:
       - Index: blogs/index.md
       - 2026:
           - KubeCon China 2026 Guide: blogs/2026/kubecon-cn.md
+          - K8s v1.37 DRA Changes: blogs/2026/k8s-dra.md
+          - vLLM-SR Seven Working Groups: blogs/2026/vllm-sr.md
+          - Agent Skills Demystified: blogs/2026/skills.md
+          - Token-aware Routing in llm-d: blogs/2026/token-aware.md
+          - Domestic Accelerator Optimization: blogs/2026/optimize-gpu.md
+          - K8s v1.37 Sneak Peek: blogs/2026/k8s-v137-seak.md
+          - GB300 NVL72 Orchestration: blogs/2026/gb300.md
+          - Evaluating AI Agent Productivity: blogs/2026/ai-agent.md
+          - Token Is Not a KPI: blogs/2026/token-kpi.md
+          - AI Infra's Next Hard Battle: blogs/2026/use-gpu.md
           - Correcting Records for Unfixed K8s CVEs: blogs/2026/k8s-cve.md
+          - vLLM Elastic EP: blogs/2026/elastic-ep.md
           - Server-Side Sharded List and Watch: blogs/2026/server-side-sharded-list-and-watch.md
+          - AI Infra Trends for H2 2026: blogs/2026/ai-infra-trends.md
+          - Kubernetes v1.36 Sneak Peek: blogs/2026/k8s-136.md
+          - DaoCloud at KubeCon 2026: blogs/2026/kubecon-eu.md
+          - National Standards for Inference Acceleration: blogs/2026/caict.md
+          - OCI Is Taking Over Everything: blogs/2026/oci.md
           - Topology-Aware Scheduling: blogs/2026/topology-aware-scheduling.md
           - Kubernetes x JobSet: blogs/2026/jobset-ai-restart.md
       - 2025:
