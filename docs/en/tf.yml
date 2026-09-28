@@ -591,6 +591,7 @@ nav:
                   - LVM: tf/storage/terms/lvm.md
                   - PV and PVC: tf/storage/terms/pv_pvc.md
       - Operations:
+          - Copilot Workbench: tf/copilot/index.md
           - Cockpit:
               - What Is Cockpit: tf/crane/intro/index.md
               - Business Overview Panel: tf/crane/user-guide/singlepage.md

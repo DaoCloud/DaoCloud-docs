@@ -635,6 +635,7 @@ nav:
                   - LVM: drun/storage/terms/lvm.md
                   - PV and PVC: drun/storage/terms/pv_pvc.md
       - Operations:
+          - Copilot Workbench: drun/copilot/index.md
           - Cockpit:
               - What Is Cockpit: drun/crane/intro/index.md
               - Business Overview Panel: drun/crane/user-guide/singlepage.md

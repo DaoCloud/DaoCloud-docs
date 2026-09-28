@@ -635,6 +635,7 @@ nav:
                   - LVM: drun/storage/terms/lvm.md
                   - PV 和 PVC: drun/storage/terms/pv_pvc.md
       - 运营管理:
+          - Copilot 智能工作台: drun/copilot/index.md
           - 驾驶舱:
               - 什么是驾驶舱: drun/crane/intro/index.md
               - 经营概览面板: drun/crane/user-guide/singlepage.md
