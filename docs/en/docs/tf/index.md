@@ -98,10 +98,10 @@ d.run Token Factory is an integrated platform built by DaoCloud for AI intellige
   <div class="tf-arch-layer tf-arch-layer--ops">
     <div class="tf-arch-layer-label">Ops</div>
     <div class="tf-arch-cards">
-      <div class="tf-arch-card tf-arch-card--ops">
+      <a class="tf-arch-card tf-arch-card--ops" href="copilot/">
         <span class="tf-arch-card-title">Copilot</span>
         <span class="tf-arch-card-tip">Intelligent O&M assistant</span>
-      </div>
+      </a>
       <a class="tf-arch-card tf-arch-card--ops" href="crane/intro/">
         <span class="tf-arch-card-title">Cockpit</span>
         <span class="tf-arch-card-tip">Operations data visualization</span>
