@@ -147,7 +147,6 @@ pt-archiver \
 
     ```mysql
     # Add --dry-run to view the generated query, pay attention to WHERE (1=1) AND ( __id__ < '3')
-    ```
     
     pt-archiver \
     --source h=172.30.47.0,u=root,p='ZoO1l1K%YbG!zlh',P=31898,D=test,t=myTableSimple \
@@ -233,7 +232,7 @@ pt-archiver \
     --dest h=172.30.47.0,u=root,p='12345678@',P=31507 \
     --where "1=1"
     Cannot find an ascendable index in table at /usr/bin/pt-archiver line 3261.
-    解决办法：在–source 的 DSN 里通过 i=other_index 指定其他索引
+    Solution: Specify another index in the --source DSN via i=other_index
 
     pt-archiver \
     --source h=172.30.47.0,u=root,p='ZoO1l1K%YbG!zlh',P=31898,D=test,t=myTableNoPrimaryKey,i=name_index \

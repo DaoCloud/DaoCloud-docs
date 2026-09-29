@@ -64,3 +64,25 @@ The MySQL server is running with the read-only option so it cannot execute this 
 ```
 
 Solution: Go to the __Container Management__ platform and restart all related __replica__ nodes.
+
+## Error Code 1045 in the Operator or Related MySQL Resources
+
+### Cause: Poor Disk Performance Interrupts MySQL Initialization
+
+When this error occurs, log in to MySQL and execute:
+
+```shell
+mysql -uroot
+```
+
+If you can log in directly, it is most likely that MySQL initialization was interrupted due to poor disk performance.
+
+### Temporary Solution
+
+1. Scale the mysql-operator StatefulSet down to 0.
+2. Delete the probe of the MySQL container in the corresponding MySQL StatefulSet.
+3. Delete the PVC of MySQL.
+4. Delete the Pod of MySQL and wait for MySQL to reinitialize.
+5. (After MySQL starts successfully) Log in to MySQL with `mysql -uroot` and check whether you can log in.
+   If you cannot log in, it means MySQL was initialized successfully.
+6. Scale the mysql-operator StatefulSet back up to its original value.

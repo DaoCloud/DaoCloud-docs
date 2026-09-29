@@ -51,6 +51,13 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 - **Fixed** dashboard display issues
 - **Fixed** errors when creating Kafka configuration templates
 
+## 2025-08-31
+
+### v0.25.0
+
+- **Added** support for toleration configuration when creating Kafka instances
+- **Added** support for configuring complex listener access when creating Kafka instances
+
 ## 2025-02-28
 
 ### v0.23.0
@@ -73,7 +80,7 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 ## 2024-08-31
 
-### v0.20.0
+### v0.18.0
 
 - **Improved** the process so that abnormal clusters cannot be selected when creating instances
 

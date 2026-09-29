@@ -49,6 +49,13 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 - **Fixed** an issue where the NodePort management service type did not take effect
 - **Upgraded** the RabbitMQ Operator to 4.4.1 to support RabbitMQ 4.0.5
 
+## 2025-08-31
+
+### v0.27.3
+
+- **Fixed** an issue where configuration templates could not be created
+- **Fixed** an issue where the NodePort management service did not take effect
+
 ## 2024-09-30
 
 ### v0.24.0
