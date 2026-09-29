@@ -1,4 +1,4 @@
-#nmstate
+# nmstate
 
 With the advent of hybrid cloud, node network setup becomes more challenging. Different environments have different network requirements.
 The Container Network Interface (CNI) standard implements a different solution, which solves the communication problem of Pods in the cluster, including setting IPs and creating routes for them.
@@ -8,7 +8,7 @@ Setting up networking in a dynamic, heterogeneous cluster, with dynamic network 
 
 The nmstate project aims to configure the network on the node through k8s CRD, which can simplify the network configuration to a certain extent.
 
-## limit
+## Limitations
 
 `nmstate` depends on NetworkManager, so not all Linux distributions support it, such as ubuntu, etc. do not support it. And the version of NetworkManager must be `>= 1.20`
 
@@ -50,9 +50,9 @@ NAME AGE
 10-6-185-40 3d4h
 ```
 
-Each nns object is nmstate to collect all network information of the node, including all interfaces, IP addresses, routes, etc.
+Each nns object is the collection of all the network information of that node gathered by nmstate, including all interfaces, IP addresses, routes, and so on.
 
-## use
+## Usage
 
 This section shows some examples.
 
@@ -69,7 +69,7 @@ This section shows some examples.
         kubernetes.io/hostname: node02
       desiredState:
         interfaces:
-        -name: eth1
+        - name: eth1
           type: ethernet
           state: up
           ipv4:
@@ -80,7 +80,7 @@ This section shows some examples.
             enabled: true
     ```
 
-    in,
+    Where:
     
     - `nodeSelector`: indicates which node this network configuration will take effect on
     - `desiredState`: Indicates the desired configuration, including network card, IP, etc.
@@ -146,7 +146,7 @@ This section shows some examples.
           state: up
           ipv4:
             address:
-            -ip: 172.144.185.30
+            - ip: 172.144.185.30
               prefix-length: 16
             dhcp: false
             enabled: true

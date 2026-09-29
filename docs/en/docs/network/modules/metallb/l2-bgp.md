@@ -205,7 +205,7 @@ But which node to choose, each router manufacturer has a specific algorithm to a
       namespace: metallb-system
     spec:
       ipAddressPools:
-      -bgp-pool
+      - bgp-pool
       aggregationLength: 32
     ```
 

@@ -145,7 +145,7 @@ cilium_enable_ipv6: false # true enable IPV6
     ```yaml
     - dns
     - drop
-    -tcp
+    - tcp
     - flow
     - icmp
     - http

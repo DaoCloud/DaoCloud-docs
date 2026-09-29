@@ -145,8 +145,8 @@ A simple example is given below:
     spec:
       ingressClassName: ${INGRESS_CLASS}
       tls:
-      -hosts:
-          -test.example.com
+      - hosts:
+          - test.example.com
           secretName: ingress1-ssl
       rules:
       ....
