@@ -37,8 +37,13 @@ The functional architecture of the edge computing platform includes the followin
 
 ## Edge Device Management
 
-- Supports the connection of end devices to edge nodes, with access through the Modbus protocol.
+- Supports connecting end devices to edge nodes, with access through multiple protocols.
 - Once connected, end devices can be uniformly managed from the cloud.
+
+## Edge Mesh
+
+Supports service discovery and traffic proxy, thereby implementing a closed loop of edge business traffic
+and solving the communication problem between edge-to-edge businesses in edge scenarios.
 
 ## Data Management
 

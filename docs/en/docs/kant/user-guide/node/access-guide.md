@@ -1,75 +1,124 @@
 # Edge Node Onboarding
 
-According to the node access guide, obtain the installation files and access commands, install the EdgeCore edge core software on the node, so that the edge node can establish a connection with the platform and be included in platform management.
+According to the node access configuration, obtain the installation files and access commands, and install the EdgeCore edge core software on the node, so that the edge node can establish a connection with DCE Cloud Edge Collaboration and be included in platform management.
 
 When the edge node is first onboarded, the latest version of the EdgeCore edge core software is automatically installed.
 
 !!! note
 
-    The relationship between the access guide and the actual edge node machine is one-to-many. The installation files and access commands from one access guide can be used on multiple actual edge nodes.
+    - The relationship between the access configuration and the actual edge node machine is one-to-one. The installation files and access commands from one access configuration can only be used on a single actual edge node.
+    - This onboarding guide only applies to Cloud Edge Collaboration module v0.20 and later versions. If your version is earlier than v0.20, refer to the archived [Edge Node Onboarding Guide](./access-guide-v0.19.md).
+
+This document mainly describes the single-node onboarding procedure. If you want to onboard nodes in batches quickly, refer to [Batch Onboard Edge Nodes](./batch-access-guide.md).
 
 ## Prerequisites
 
-- The node has been prepared as required and the node environment has been configured, please refer to [Edge Node Access Requirements](./join-rqmt.md) for details
-- The edge node access guide has been created, please refer to [Creating an Access Guide](./create-access-guide.md) for details
+- The node has been prepared as required and the node environment has been configured, please refer to [Requirements to Join Edge Node](./join-rqmt.md) for details.
+- The edge node access configuration has been created, please refer to [Create an Access Configuration](./create-access-guide.md) for details.
 
-<!-- Add screenshot later -->
+!!! note
+
+    If you are onboarding heterogeneous nodes in an offline environment, first perform the multi-architecture merge of Helm applications. For the procedure, refer to [Multi-Architecture Merge and Upgrade Import Steps for Helm Applications](../../../kpanda/user-guide/helm/multi-archi-helm.md).
 
 ## Steps
 
-1. On the Edge Node List page, click the **Access Guide** button, and a pop-up window with the access guide will appear on the right.
+1. On the Edge Node List page, click the **Onboard Node** button to enter the node onboarding page.
 
-1. Based on the node environment configuration, select the corresponding access guide.
+    ![Node List](../../images/access-guide-06.png)
 
-1. Click the **Download File** button, which will redirect you to the download center. In the download list, select the edge installation package corresponding to the version and architecture: `kantadm_{version}_{architecture}.tar.gz`. It is recommended to choose the latest version.
+1. Based on the node environment configuration, select the corresponding access configuration, enter the node name, and then click **Get Onboarding Steps**.
 
-    <!-- Add screenshot later -->
+    ![Onboard Node](../../images/access-guide-07.png)
 
-1. Copy the edge installation package to the edge node to be accessed and unzip it.
+1. Onboard the node by executing the operations for the online or offline onboarding method.
 
-    Unzip command:
+    === "Online Onboarding"
 
-    ```shell
-    tar -zxf kantadm_{version}_{architecture}.tar.gz
-    ```
+        If your environment can access the Internet, the online onboarding method is recommended.
 
-    !!! note
+        1. In the onboarding steps drawer, click the __Online Onboarding__ tab to display the online onboarding steps.
 
-        Place the unpacked kantadm binary file in the `/usr/local/bin` directory.
+            ![Online Onboarding](../../images/access-guide-08.png)
 
-1. Access the node by executing the command using either a token or certificate.
+        1. Use the script to prepare the keadm tool, and execute the command displayed in the interface.
 
-    **Token Installation**
+            !!! note
 
-    1. On the access guide interface, click the __Token Installation__ tab in the third step to display the token installation steps.
+                It is recommended to create an empty working directory first and run the script in that directory.
 
-        !!! note
+            ```shell
+            curl -sfL https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/keadm_init.sh | sudo MULTI_ARCH=false WITH_CONTAINERD=false bash -s --
+            ```
 
-            The token in the installation command is valid for 24 hours. For a long-term valid installation method, please use certificate installation.
+        1. Execute the onboarding command displayed in the interface to onboard the node.
 
-    1. Access the node by executing the following command.
+            !!! note
 
-        ```shell
-        kantadm join --cloudcore-host=10.31.226.14 --websocket-port=30000 --node-prefix=edge --token=b2d6bb5d9312c39ffac08ecfd5030bed006b8b67d0799d632d381f19fca9e765.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NTk3NDV9.0sdaWbYSTURmAYmQwDn_zF7P9TwcRTSMhwPw6l87U7E --cgroup-driver=cgroupfs --remote-runtime-endpoint= --version=v1.12.2 --batch-name=edge --edge-registry=docker.m.daocloud.io/kubeedge --quic-port=30001 --http-port=30002 --stream-port=30003  --tunnel-port=30004 --labels=test=1,test1=1
-        ```
+                Pay attention to the validity period of the token in the onboarding command. If the token expires, refresh the page to obtain a new one.
 
-    **Certificate Installation**
+            Command example:
 
-    1. On the access guide interface, click the __Certificate Installation__ tab in the third step to display the certificate installation steps.
+            ```shell
+            keadm join \
+              --cgroupdriver=cgroupfs \
+              --cloudcore-ipport=10.64.24.29:30000 \
+              --hub-protocol=websocket \
+              --certport=30002 \
+              --image-repository=docker.m.daocloud.io/kubeedge \
+              --labels=batch-node.kant.io/protocol-type=websocket,kant.io/batch=test \
+              --kubeedge-version=v1.20.0 \
+              --remote-runtime-endpoint=unix:///run/containerd/containerd.sock \
+              --set \
+                modules.edgeStream.server=10.64.24.29:30004,\
+                modules.edgeStream.enable=true,\
+                modules.metaManager.enable=true,\
+                modules.metaManager.metaServer.enable=true,\
+                modules.serviceBus.enable=true,\
+                modules.edgeHub.websocket.server=10.64.24.29:30000 \
+              --token=f06150c1f9469047fd459187f6c1eb539b2778373ff874e55786c1c721ff8a29.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTEwNzY3ODd9.ATFgzWCHJhGGTYDwCk7E6SrbXh0STv40JuZwCUgX2H0
+            ```
 
-    1. Click the __Download Certificate__ button to download the certificate to your local machine.
+    === "Offline Onboarding"
 
-    1. Save the certificate and execute the following command.
+        If your environment cannot access the Internet, choose the offline onboarding method.
 
-        ```shell
-        mkdir -p /etc/kant && mv ./cert.tar /etc/kant/cert.tar
-        ```
+        1. In the onboarding steps drawer, click the __Offline Onboarding__ tab to display the offline onboarding steps.
 
-    1. Access the node by executing the following command.
+            ![Online Onboarding](../../images/access-guide-09.png)
 
-        ```shell
-        kantadm join --cloudcore-host=10.2.129.13 --websocket-port=30000 --node-prefix=sh --remote-runtime-endpoint=unix:///run/containerd/containerd.sock --cgroup-driver=cgroupfs --version=v1.12.6 --batch-name=guide-test --edge-registry=docker.m.daocloud.io/kubeedge --quic-port=30001 --http-port=30002 --stream-port=30003 --tunnel-port=30004
-        ```
+        1. Click the **Download File** button, which will redirect you to the download center. In the download list, select the edge installation package and initialization script for the corresponding architecture.
+
+        1. Copy the installation package file and the script file to the same directory on the edge node to be onboarded, and run the initialization script in that directory.
+
+            !!! note
+
+                It is recommended to create an empty working directory to store the related files.
+
+            ```shell
+            sudo MULTI_ARCH=false WITH_CONTAINERD=false bash -c keadm_init.sh
+            ```
+
+        1. Onboard the node by executing the following command.
+
+            ```shell
+            keadm join \
+              --cgroupdriver=cgroupfs \
+              --cloudcore-ipport=10.64.24.29:30000 \
+              --hub-protocol=websocket \
+              --certport=30002 \
+              --image-repository=docker.m.daocloud.io/kubeedge \
+              --labels=batch-node.kant.io/protocol-type=websocket,kant.io/batch=test \
+              --kubeedge-version=v1.20.0 \
+              --remote-runtime-endpoint=unix:///run/containerd/containerd.sock \
+              --set \
+                modules.edgeStream.server=10.64.24.29:30004,\
+                modules.edgeStream.enable=true,\
+                modules.metaManager.enable=true,\
+                modules.metaManager.metaServer.enable=true,\
+                modules.serviceBus.enable=true,\
+                modules.edgeHub.websocket.server=10.64.24.29:30000 \
+              --token=f06150c1f9469047fd459187f6c1eb539b2778373ff874e55786c1c721ff8a29.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTEwNzY3ODd9.ATFgzWCHJhGGTYDwCk7E6SrbXh0STv40JuZwCUgX2H0
+            ```
 
 1. Verify if the edge node has been successfully onboarded.
 
@@ -81,4 +130,4 @@ When the edge node is first onboarded, the latest version of the EdgeCore edge c
 
     1. Check the status of the edge node. If the current status is __Healthy__, it means the onboarding was successful.
 
-        <!-- Add screenshot later -->
+    ![Edge Node Onboarded Successfully](../../images/access-guide-05.png)
