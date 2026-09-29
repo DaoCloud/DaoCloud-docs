@@ -115,6 +115,8 @@ plugins:
         "insight/quickstart/jvm-monitor/jmx-exporter.md": "insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md"
         "insight/user-guide/scenario-insight/topology-helper.md": "insight/user-guide/trace/topology.md"
         "network/modules/spiderpool/rdmapara.md": "network/modules/spiderpool/install/rdmapara.md"
+        "network/modules/cilium/notSupport.md": "network/modules/cilium/not-support.md"
+        "network/modules/egressgateway/release-note.md": "network/modules/egressgateway/release-notes.md"
         "kangaroo/integrate/bind-to-ws.md": "kangaroo/integrate/integrate-admin/bind-to-ws.md"
         "skoala/intro/what.md": "skoala/intro/index.md"
         "skoala/quickstart/install.md": "skoala/quickstart/skoala.md"

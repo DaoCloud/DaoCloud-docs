@@ -301,6 +301,7 @@ nav:
                   - Create Service: kpanda/user-guide/network/create-services.md
                   - Create Ingress: kpanda/user-guide/network/create-ingress.md
                   - Network Policies: kpanda/user-guide/network/network-policy.md
+                  - Network Configuration: network/config/index.md
               - CRDs: kpanda/user-guide/custom-resources/create.md
               - Container Storage:
                   - Volume Claim: kpanda/user-guide/storage/pvc.md
@@ -496,136 +497,171 @@ nav:
                   - Deploy Harbor through LoadBalancer: kangaroo/best-practice/lb.md
           - Cloud Native Network:
               - Intro:
-                  - What is Network: network/intro/index.md
+                  - What is Container Network: network/intro/index.md
                   - Background and Challenges: network/intro/background.md
-                  - Components: network/modules/modules.md
-                  - Offline Upgrade: network/intro/offline.md
+                  - Network Components: network/modules/modules.md
+                  - Offline Upgrade Cloud Native Networking: network/intro/offline.md
                   - Release Notes: network/intro/release-notes.md
-                  - Known Issues: network/intro/issues.md
-              - Plan:
-                  - Eth card plan: network/plans/ethplan.md
-                  - Network plan: network/plans/netplan.md
-              - Network Config:
-                  - IP Pool:
+                  - Network Components FAQs: network/intro/issues.md
+              - Network Planning:
+                  - NIC Planning: network/plans/ethplan.md
+                  - Network Planning: network/plans/netplan.md
+              - Network Configuration:
+                  - Network Configuration: network/config/index.md
+                  - Static IP Pool:
                       - Create Subnet and IP Pool: network/config/ippool/createpool.md
                       - IP Pool Scenarios: network/config/ippool/ippoolusage.md
-                  - IP Pool Usage:
-                      - Use IP Pool by Workload: network/config/use-ippool/usage.md
-                      - Use IP Pool by Workload from 3rd party: network/config/use-ippool/cutomizedusage.md
-                  - Workload Uses RDMA: network/config/userdma.md
-                  - Multus CR: network/config/multus-cr.md
-                  - SR-IOV NodePolicy: network/modules/sriov-node-policy.md
-              - Performance reports:
-                  - Network CNI performance test report: network/performance/cni-performance.md
-                  - Spiderpool performance test report: network/performance/spiderpool-performance.md
-                  - Cilium performance test reports:
-                      - Accelerate Pod access to Services: network/performance/cilium-performance/cilium-service.md
-                      - Cross-node communication between Pods: network/performance/cilium-performance/cilium-crossnode.md
-                      - Access acceleration test in the nodePort mode: network/performance/cilium-performance/cilium-nodeport.md
-                      - eBPF-based Pod bandwidth management: network/performance/cilium-performance/cilium-bandwidth.md
-                  - Performance test in eBPF-based network policies: network/performance/ebpf-performance.md
+                      - Cross-Network Zone IP Allocation: network/config/ippool/topology.md
+                      - IP Reservation: network/config/reserved-ip.md
+                  - Use IP Pool:
+                      - Workloads Use IP Pool: network/config/use-ippool/usage.md
+                      - Third-party Workloads Use IP Pool: network/config/use-ippool/cutomizedusage.md
+                  - Multus CR Management: network/config/multus-cr.md
+                  - SR-IOV Node Policy: network/config/sriov-node-policy.md
+                  - Workloads Use RDMA:
+                      - Workloads Use RDMA: network/config/userdma.md
+                      - RDMA Usage Comparison: network/config/rdmatype.md
+                  - KubeVirt Fixed IP and Underlay Network: network/config/kubevirt.md
+                  - Istio Service Mesh Adaptation (Underlay): network/config/istio.md
+              - Network Performance:
+                  - Network CNI Performance Test Report: network/performance/cni-performance.md
+                  - Spiderpool Performance Test Report: network/performance/spiderpool-performance.md
+                  - Cilium Performance Test Report:
+                      - Accelerate Pod Access to Service: network/performance/cilium-performance/cilium-service.md
+                      - Pod Cross-Node Communication Performance Test: network/performance/cilium-performance/cilium-crossnode.md
+                      - nodePort Access Acceleration Test: network/performance/cilium-performance/cilium-nodeport.md
+                      - Performance Test under eBPF Pod Bandwidth Control: network/performance/cilium-performance/cilium-bandwidth.md
+                  - Performance Test under eBPF Network Policy: network/performance/ebpf-performance.md
                   - Ingress Performance Test: network/performance/ingress-performance.md
                   - Egress Performance Test: network/performance/egress-performance.md
                   - CoreDNS Performance Test: network/performance/coredns-performance.md
-              - Spiderpool:
+              - Integrate Spiderpool:
                   - Intro: network/modules/spiderpool/index.md
                   - Release Notes: network/modules/spiderpool/release-notes.md
-                  - Install: 
+                  - Install:
+                      - System Requirements: network/modules/spiderpool/install/system-requirements.md
                       - Install Spiderpool: network/modules/spiderpool/install/install.md
-                      - Prepare and install RDMA: network/modules/spiderpool/install/rdmapara.md
-                      - Install Nvidia OFED Driver: network/modules/spiderpool/install/ofed_driver.md
-                  - Upgrade: network/modules/spiderpool/upgrade.md
-                  - Config: network/modules/spiderpool/config.md
-                  - Commands: network/modules/spiderpool/command.md
-                  - RDMA Dashboard: network/modules/spiderpool/rdma-dashboard.md           
-                  - Public Cloud:
-                      - Running on Alibaba Cloud: network/modules/spiderpool/public-cloud/alibabacloud.md
-                      - Running on AWS: network/modules/spiderpool/public-cloud/awscloud.md
-              - EgressGateway:
+                      - Upgrade Spiderpool: network/modules/spiderpool/upgrade.md
+                      - Public Cloud Adaptation:
+                          - Run in Alibaba Cloud Environment: network/modules/spiderpool/public-cloud/alibabacloud.md
+                          - Run in AWS Environment: network/modules/spiderpool/public-cloud/awscloud.md
+                  - AI/RDMA Network:
+                      - Solution Selection: network/modules/spiderpool/install/ai-rdma.md
+                      - Environment Preparation:
+                          - Spiderpool RDMA Install Parameters: network/modules/spiderpool/install/rdmapara.md
+                          - Install Nvidia OFED Driver: network/modules/spiderpool/install/ofed_driver.md
+                      - Solution Implementation:
+                          - Shared RDMA (Macvlan/IPvlan): network/modules/spiderpool/install/rdma-macvlan.md
+                          - Dedicated RDMA (SR-IOV RoCE): network/modules/spiderpool/install/rdma-sriov-roce.md
+                          - Dedicated RDMA (SR-IOV Infiniband): network/modules/spiderpool/install/rdma-sriov-ib.md
+                      - AI Cluster Practice:
+                          - Build AI Cluster with Macvlan: network/modules/spiderpool/install/ai-macvlan.md
+                          - Build AI Cluster with SR-IOV: network/modules/spiderpool/install/ai-sriov.md
+                      - RDMA Monitoring:
+                          - RDMA Metrics: network/modules/spiderpool/rdma-metrics.md
+                          - RDMA Dashboard: network/modules/spiderpool/rdma-dashboard.md
+                  - Usage:
+                      - Configuration Reference: network/modules/spiderpool/config.md
+                      - Common Commands: network/modules/spiderpool/command.md
+              - Integrate EgressGateway:
                   - Intro: network/modules/egressgateway/index.md
                   - Release Notes: network/modules/egressgateway/release-notes.md
-                  - Install on DCE:
+                  - Install and Run on DCE:
                       - Install: network/modules/egressgateway/install.md
                       - Create Gateway Instance: network/modules/egressgateway/create_eg.md
                       - Create Gateway Policy: network/modules/egressgateway/create-egpolicy.md
                       - Use Gateway Policy: network/modules/egressgateway/use-egpolicy.md
-                  - Install on AWS:
+                  - Install EgressGateway from AWS:
                       - Install: network/modules/egressgateway/aws/marketplace-install.md
                       - Upgrade: network/modules/egressgateway/aws/upgrade-k8s.md
                       - Uninstall: network/modules/egressgateway/aws/uninstall-k8s.md
-                  - Default EgressGateway for Tenant: network/modules/egressgateway/namespace-eg.md
-                  - Default EgressGateway for Cluster: network/modules/egressgateway/cluster-eg.md
-                  - Migrate Egress IP Between Gateway Nodes: network/modules/egressgateway/move-ip.md
+                  - Tenant-level Default EgressGateway: network/modules/egressgateway/namespace-eg.md
+                  - Cluster-level Default EgressGateway: network/modules/egressgateway/cluster-eg.md
+                  - Migrate Egress IP Between Egress Gateway Nodes: network/modules/egressgateway/move-ip.md
                   - EgressGateway Failover: network/modules/egressgateway/failover.md
                   - EgressGateway Troubleshooting: network/modules/egressgateway/troubleshooting.md
-                  - For Public Cloud:
-                      - Run on Alibaba Cloud: network/modules/egressgateway/public-cloud/alicloud.md
-                      - Run on AWS: network/modules/egressgateway/public-cloud/awswithcilium.md
-              - sriov-network-operator:
+                  - Public Cloud Adaptation:
+                      - Run in Alibaba Cloud Environment: network/modules/egressgateway/public-cloud/alicloud.md
+                      - Run in AWS Environment: network/modules/egressgateway/public-cloud/awswithcilium.md
+              - Integrate sriov-network-operator:
                   - Intro: network/modules/sriov-network-operator/index.md
                   - Install: network/modules/sriov-network-operator/install.md
                   - SR-IOV: network/modules/multus-underlay/sriov.md
                   - DPDK: network/modules/multus-underlay/dpdk.md
-              - Calico:
+              - Integrate Calico:
                   - Intro: network/modules/calico/index.md
-                  - Install: network/modules/calico/install.md
+                  - Install Parameter Configuration: network/modules/calico/install.md
                   - ippool: network/modules/calico/ippool.md
-                  - Metrics: network/modules/calico/metrics.md
-                  - Calico Policies: network/modules/calico/policy.md
-                  - Troubleshoot: network/modules/calico/debug.md
-              - Cilium:
+                  - Monitoring Metrics: network/modules/calico/metrics.md
+                  - Calico Network Policy: network/modules/calico/policy.md
+                  - Troubleshooting: network/modules/calico/debug.md
+              - Integrate Cilium:
                   - Intro: network/modules/cilium/index.md
                   - Deploy Cilium: network/modules/cilium/deploy-cilium.md
-                  - Unsupported Features: network/modules/cilium/notSupport.md
-                  - Cilium Network Acceleration: network/modules/cilium/cilium-speedup.md
+                  - Unsupported Features: network/modules/cilium/not-support.md
+                  - Cilium Network Communication Acceleration: network/modules/cilium/cilium-speedup.md
                   - Cross-Cluster Application Communication: network/modules/cilium/cross-cluster.md
-                  - Cilium Network Policy Support for IPVlan: network/modules/cilium/cilium_chaining.md
-              - Contour:
+                  - Implement IPVlan Network Policy: network/modules/cilium/cilium_chaining.md
+              - Integrate Contour:
                   - Intro: network/modules/contour/index.md
                   - Install: network/modules/contour/install.md
-              - F5networks:
+              - Integrate F5networks:
                   - Intro: network/modules/f5networks/index.md
                   - Install: network/modules/f5networks/install.md
-                  - Use: network/modules/f5networks/usage.md
+                  - Usage: network/modules/f5networks/usage.md
                   - Debug: network/modules/f5networks/debug.md
-              - Ingress-nginx:
+              - Integrate Ingress-nginx:
                   - Intro: network/modules/ingress-nginx/index.md
                   - Install: network/modules/ingress-nginx/install.md
                   - Ingress Class: network/modules/ingress-nginx/ingressclass.md
                   - Ingress Scope: network/modules/ingress-nginx/scope.md
-                  - Load Balance: network/modules/ingress-nginx/proxy.md
-                  - Configure timeout: network/modules/ingress-nginx/timeout.md
-                  - Configure log: network/modules/ingress-nginx/log.md
-                  - Upload limit: network/modules/ingress-nginx/upload.md
-                  - Traffic mirror: network/modules/ingress-nginx/mirror.md
-                  - Cross-Origin Resource Sharing: network/modules/ingress-nginx/cors.md
+                  - Cross-domain Configuration: network/modules/ingress-nginx/cors.md
+                  - Load Balancing: network/modules/ingress-nginx/proxy.md
+                  - Timeout Configuration: network/modules/ingress-nginx/timeout.md
+                  - Log Configuration: network/modules/ingress-nginx/log.md
+                  - Upload Limit: network/modules/ingress-nginx/upload.md
+                  - Image Traffic: network/modules/ingress-nginx/mirror.md
                   - Redirect: network/modules/ingress-nginx/redirect.md
-                  - Troubleshooting: network/modules/ingress-nginx/troubleshooting.md
-              - Metallb:
+                  - Migrate to Higress or kgateway: network/modules/ingress-nginx/migrate-to-higress-or-kgateway.md
+                  - Troubleshooting Guide: network/modules/ingress-nginx/troubleshooting.md
+              - Integrate Higress:
+                  - Intro: network/modules/higress/index.md
+                  - Install: network/modules/higress/install.md
+              - Integrate Kgateway:
+                  - Intro: network/modules/kgateway/index.md
+                  - Install: network/modules/kgateway/install.md
+              - Integrate Metallb:
                   - Intro: network/modules/metallb/index.md
                   - Install: network/modules/metallb/install.md
-                  - Instructions for IP pool use: network/modules/metallb/usage.md
-                  - L2 and BGP mode: network/modules/metallb/l2-bgp.md
-                  - Get Client Source IPs: network/modules/metallb/source_ip.md
-                  - Debug: network/modules/metallb/debug.md
-              - Multus-underlay:
+                  - IPPool Modify and Create: network/modules/metallb/ippool-create.md
+                  - IPPool Usage Notes: network/modules/metallb/usage.md
+                  - L2 and BGP Mode Notes: network/modules/metallb/l2-bgp.md
+                  - Get Client Source IP: network/modules/metallb/source_ip.md
+                  - Issue Troubleshooting: network/modules/metallb/debug.md
+              - Integrate Multus-underlay:
                   - Intro: network/modules/multus-underlay/index.md
                   - Install: network/modules/multus-underlay/install.md
-                  - MacVLAN: network/modules/multus-underlay/macvlan.md
-                  - SR-IOV: network/modules/multus-underlay/sriov.md
-                  - DPDK: network/modules/multus-underlay/dpdk.md
+                  - Macvlan: network/modules/multus-underlay/macvlan.md
                   - NmState: network/modules/multus-underlay/nmstat.md
-              - Submariner:
+              - Integrate Submariner:
                   - Intro: network/modules/submariner/index.md
                   - Install: network/modules/submariner/install.md
-                  - Use: network/modules/submariner/usage.md
-              - Alibaba Cloud Terway:
+                  - Usage Notes: network/modules/submariner/usage.md
+              - Integrate Kdoctor:
+                  - Intro: network/modules/kdoctor/index.md
+                  - Install: network/modules/kdoctor/install.md
+              - Integrate Alibaba Cloud Terway:
                   - Intro: network/modules/aliyun-terway/index.md
-                  - Terway Network: network/modules/aliyun-terway/what.md
-                  - Usage: network/modules/aliyun-terway/usage.md
-                  - Run Calico on Alibaba Cloud: network/modules/aliyun-terway/aliyun-calico.md
-                  - Run Cilium on Alibaba Cloud: network/modules/aliyun-terway/aliyun-cilium.md
+                  - Terway Network Mode: network/modules/aliyun-terway/what.md
+                  - Usage Notes: network/modules/aliyun-terway/usage.md
+                  - Run Calico in Alibaba Cloud: network/modules/aliyun-terway/aliyun-calico.md
+                  - Run Cilium in Alibaba Cloud: network/modules/aliyun-terway/aliyun-cilium.md
                   - FAQs: network/modules/aliyun-terway/Q_A.md
+              - Integrate Unifabric:
+                  - Unifabric Overview: network/modules/unifabric/index.md
+                  - Release Notes: network/modules/unifabric/release-notes.md
+                  - Install Unifabric: network/modules/unifabric/install.md
+                  - RDMA Latency Monitoring Usage Guide: network/modules/unifabric/features/RdmaLatencyDetection.md
           - Cloud Native Storage:
               - Intro:
                   - What is Storage: storage/index.md
