@@ -549,7 +549,6 @@ nav:
                       - Solution Selection: network/modules/spiderpool/install/ai-rdma.md
                       - Environment Preparation:
                           - Spiderpool RDMA Install Parameters: network/modules/spiderpool/install/rdmapara.md
-                          - Install Nvidia OFED Driver: network/modules/spiderpool/install/ofed_driver.md
                       - Solution Implementation:
                           - Shared RDMA (Macvlan/IPvlan): network/modules/spiderpool/install/rdma-macvlan.md
                           - Dedicated RDMA (SR-IOV RoCE): network/modules/spiderpool/install/rdma-sriov-roce.md

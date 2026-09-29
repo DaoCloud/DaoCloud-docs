@@ -8,7 +8,7 @@ There are many public cloud providers available today, such as Alibaba Cloud, Hu
 Tencent Cloud, AWS, etc. However, it is difficult to run mainstream CNI plugins in an Underlay network
 mode on these cloud platforms. Instead, proprietary CNI plugins provided by each cloud provider must be
 used, resulting in a lack of unified public cloud Underlay solutions. This document introduces a
-Underlay network solution, called [Spiderpool](../../../README.md), suitable for any public cloud
+Underlay network solution, called [Spiderpool](../index.md), suitable for any public cloud
 environment, especially in hybrid cloud scenarios where a unified CNI solution facilitates
 multi-cloud management.
 
@@ -228,7 +228,7 @@ The Spiderpool CRD, `SpiderIPPool`, provides the `nodeName`, `multusName`, and `
   specified by `nodeName`. Each IP address should correspond to a unique instance interface.
 
 Based on the network interfaces and corresponding secondary IP information of the AWS EC2 instances mentioned in the
-[AWS Environment](./get-started-aws.md#AWS-Environment) section, use the following YAML to create a SpiderIPPool
+[AWS Environment](#aws-environment) section, use the following YAML to create a SpiderIPPool
 for each network interface (`ens5` and `ens6`) of each node.
 These SpiderIPPools will provide IP addresses for Pods on different nodes.
 
@@ -359,7 +359,7 @@ nginx-lb-1-55d4c48fc8-jl8b9   1/1     Running   0          5s    180.17.16.14   
 
 #### Outbound Traffic from Pods in the Cluster
 
-With the AWS NAT Gateway created earlier in the [AWS Environment](./get-started-aws.md#AWS-Environment) section,
+With the AWS NAT Gateway created earlier in the [AWS Environment](#aws-environment) section,
 the private network in our VPC can now access the internet.
 
 ```shell
@@ -409,7 +409,7 @@ to complete the deployment of `aws-load-balancer-controller`.
     - For LBs with public internet access, you need to tag the public subnet in the availability zone
       where your instance is located with `kubernetes.io/role/elb:1`. For LBs with inter-VPC access,
       create a private subnet and tag it with `kubernetes.io/role/internal-elb:1`.
-      Please create the required subnets based on the [AWS Environment](./get-started-aws.md#AWS-Environment) section:
+      Please create the required subnets based on the [AWS Environment](#aws-environment) section:
 
       > - For LBs exposed to the internet, create a public subnet: In the AWS VPC Dashboard Subnets section,
       >   select "Create subnet" and choose the same availability zone as your EC2 instance. Then, associate
@@ -441,7 +441,7 @@ to complete the deployment of `aws-load-balancer-controller`.
 
 ##### Create a Load Balancer for Application Access
 
-In the previous section, we created the [application](./get-started-aws.md#Create-Applications).
+In the previous section, we created the [application](#create-applications).
 Now we will create a Kubernetes Service of type LoadBalancer for it. If you have a dual-stack requirement,
 uncomment the `service.beta.kubernetes.io/aws-load-balancer-ip-address-type: dualstack` annotation.
 

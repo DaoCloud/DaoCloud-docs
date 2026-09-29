@@ -7,7 +7,7 @@ Date: 2023-01-29
 
 # Instructions for Using the IPPools
 
-This page describes the different cases for using IPPools when using Spiderpool for IP allocation and management. Please make sure that [Spiderpool has been installed correctly](../../modules/spiderpool/install.md) before using it.
+This page describes the different cases for using IPPools when using Spiderpool for IP allocation and management. Please make sure that [Spiderpool has been installed correctly](../../modules/spiderpool/install/install.md) before using it.
 
 ## Fixed IPs for workloads
 

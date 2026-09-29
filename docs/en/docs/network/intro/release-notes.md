@@ -15,6 +15,26 @@ evolution path and feature changes of each version.
 *[SR-IOV]: Single Root IO Virtualization
 *[RDMA]: Remote Direct Memory Access, a popular tech to support LLM and GPT
 
+## 2025-11-30
+
+### v0.16.6
+
+- **Fixed** an issue where users could not access the network management interface due to
+  permission problems.
+- **Fixed** an issue where NS-level IP pools could only be used by applications in their own
+  namespace; other namespaces are blocked from using them.
+
+## 2025-09-30
+
+### v0.16.5
+
+- **Added** support so that the automatic IP pool feature is unavailable in the UI when it is
+  disabled in Spiderpool.
+- **Added** permission validation for Multus CRs: users other than Cluster Admins cannot create,
+  update, or delete Multus CRs.
+- **Fixed** an issue where the expected IP pools could not be obtained when using the
+  `selectNamespace` query parameter to get Spiderpool IP pools.
+
 ## 2025-07-30
 
 ### v0.16.4
