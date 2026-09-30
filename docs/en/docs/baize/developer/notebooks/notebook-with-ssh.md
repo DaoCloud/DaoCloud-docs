@@ -42,6 +42,10 @@ First, you need to generate an SSH public and private key pair on your computer.
 
 ### Add SSH Public Key to Personal Center (Optional)
 
+!!! note
+
+    For detailed operations, refer to [Configure SSH Public Key](../../../ghippo/user-guide/personal-center/ssh-key.md).
+
 1. Open the generated public key file, usually located at `~/.ssh/id_rsa.pub` (if you did not change the default path).
 2. Copy the public key content.
 3. Log in to the system's personal center.
@@ -62,10 +66,13 @@ First, you need to generate an SSH public and private key pair on your computer.
 Assume the SSH command you obtained is as follows:
 
 ```bash
-ssh username@mockhost -p 2222
+# ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
+ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
 ```
 
-Replace `username` with your username, `mockhost` with the actual hostname, and `2222` with the actual port number.
+- Replace `DCE5_USERNAME` with your username
+- Replace `DCE5_UI_LOGIN_IP` with the actual hostname
+- Replace `DCE5_UI_LOGIN_IP` with the actual port number
 
 ### Windows
 
@@ -85,7 +92,8 @@ It is recommended to use PuTTY or Git Bash for SSH connection.
     2. Enter the ssh command to access your machine:
 
         ```bash
-        ssh username@mockhost -p 2222
+        # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
+        ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
         ```
 
     3. Press Enter.
@@ -96,7 +104,8 @@ It is recommended to use PuTTY or Git Bash for SSH connection.
 2. Enter the ssh command to access your machine
 
     ```bash
-    ssh username@mockhost -p 2222
+    # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
+    ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
     ```
 
 3. If prompted to accept the host's identity, type `yes`.
@@ -117,7 +126,8 @@ In addition to using command line tools for SSH connection, you can also utilize
     4. Enter the SSH connection command, for example:
 
         ```bash
-        ssh username@mockhost -p 2222
+        # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
+        ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
         ```
 
     5. Press Enter. Replace `username`, `mockhost`, and `2222` with your actual username, hostname, and port number.

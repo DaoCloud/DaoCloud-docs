@@ -199,7 +199,7 @@ and maintain containerized applications more efficiently and stably.
     **AI Lab** is an integrated platform for training and inference.
     **Cloud Edge Collaboration** extends container capabilities to the edge.
 
-    - [Deploy NFS for Data Preheating](../baize/best-practice/deploy-nfs-in-worker.md)
+    - [Deploy NFS for Data Preheating](../baize/best-practice/index.md)
     - [Update Notebook Built-in Images](../baize/best-practice/change-notebook-image.md)
     - [Checkpoint Mechanism and Usage](../baize/best-practice/checkpoint.md)
     - [Intelligent Device Control](../kant/best-practice/custom-device-control.md)

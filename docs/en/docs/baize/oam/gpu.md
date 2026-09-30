@@ -10,3 +10,7 @@ The platform automatically aggregates GPU resource information and provides deta
 After entering **Operations Management**, click **GPUs** in the left navigation panel to view GPU cards and associated training jobs.
 
 <!-- ![GPU Information](../images/resource.png) -->
+
+Click a **Device ID** to view the details of the GPU.
+
+<!-- ![GPU Details](../images/gpu-detail.png) -->

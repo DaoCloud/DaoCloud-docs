@@ -20,7 +20,7 @@ To meet the needs of different operations and maintenance (O&M) scenarios, the O
   Used to define available compute resource objects in the cluster, including CPU, memory, and GPU resources. Through resource pools, workloads can be bound to specific node types, enabling fine-grained resource allocation and management, thereby improving scheduling efficiency and overall cluster performance.
 
 - **Queue Management**  
-  Used to manage and optimize batch workloads by scheduling tasks through a queue system. Queue management enables合理 resource allocation and balances the execution order of high-priority and low-priority tasks, improving cluster throughput and reducing resource idle time.
+  Used to manage and optimize batch workloads by scheduling tasks through a queue system. Queue management enables reasonable resource allocation and balances the execution order of high-priority and low-priority tasks, improving cluster throughput and reducing resource idle time.
 
 - **GPU Info**  
   Automatically aggregates GPU resource information across the entire platform and provides detailed visibility into GPU device status. Administrators can view per-GPU load statistics, power usage, temperature, and running tasks, supporting GPU resource monitoring and optimized scheduling.

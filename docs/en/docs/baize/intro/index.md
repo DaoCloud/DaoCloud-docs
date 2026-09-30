@@ -7,13 +7,16 @@ hide:
 
 # What is AI Lab
 
-AI Lab is a cloud native AI computing platform developed by DaoCloud that can running on any K8s-based system.
-This innovative platform, known as Cloud Native AI Platform, offers a seamless integration of software
+AI Lab is an AI computing platform based on a cloud native operating system, launched by DaoCloud
+(formerly known as Intelligent Computing).
+It offers a seamless integration of software
 and hardware for a superior AI computing experience. AI Lab combines various computing powers,
 optimizes GPU performance, streamlines the scheduling and management of computing resources,
 and enhances computing efficiency. With its focus on reducing costs and simplifying AI development,
 AI Lab provides optimized AI development frameworks that accelerate the implementation of AI applications
 across different industries.
+
+[View or Download the AI Lab User Manual](https://harbor-test2.cn-sh2.ufileos.com/docs/download/ai-lab.pdf){ .md-button }
 
 **Key Features**
 
@@ -50,6 +53,10 @@ across different industries.
 
     AI Lab allows for the creation of queues and their association with workspaces to ensure
     efficient coordination and resource isolation within different clusters.
+
+**Product Logic Architecture**
+
+<!-- ![Logic Architecture Diagram](../images/image01.png) -->
 
 [Download DCE](../../download/index.md){ .md-button .md-button--primary }
 [Install DCE](../../install/index.md){ .md-button .md-button--primary }
