@@ -1111,7 +1111,9 @@ nav:
                           - Update MySQL Instance: middleware/mysql/user-guide/update.md
                           - Delete MySQL Instance: middleware/mysql/user-guide/delete.md
                           - View MySQL Instance: middleware/mysql/user-guide/view.md
+                          - Manually Switch Primary/Standby Nodes: middleware/mysql/user-guide/manual-switch-role.md
                       - View MySQL Logs: middleware/mysql/user-guide/logs.md
+                      - MySQL Slow Log: middleware/mysql/user-guide/mysql-slow-query.md
                       - Instance Topology: middleware/mysql/user-guide/instancemap.md
                       - Data Backup:
                           - Manage Backup: middleware/mysql/user-guide/backup-restore/backup-config.md
@@ -1140,6 +1142,7 @@ nav:
                       - Delete MongoDB Instance: middleware/mongodb/user-guide/delete.md
                       - View MongoDB Instance: middleware/mongodb/user-guide/view.md
                       - View MongoDB Logs: middleware/mongodb/user-guide/logs.md
+                      - Backup Management: middleware/mongodb/user-guide/backup.md
               - PostgreSQL Database:
                   - Intro:
                       - What is PostgreSQL: middleware/postgresql/intro/index.md
@@ -1151,8 +1154,12 @@ nav:
                       - Delete PostgreSQL Instance: middleware/postgresql/user-guide/delete.md
                       - View PostgreSQL Logs: middleware/postgresql/user-guide/logs.md
                       - Manually Set Antiaffinity: middleware/postgresql/user-guide/antiaffinity.md
+                      - Backup Management: middleware/postgresql/user-guide/backup.md
                       - Auto Backup: middleware/postgresql/user-guide/auto-backup.md
-                      - Topology: middleware/postgresql/user-guide/instancemap.md
+                      - Parameter Template: middleware/postgresql/user-guide/template.md
+                      - Instance Monitoring: middleware/postgresql/user-guide/instancemap.md
+                  - References:
+                      - Enable the PGVector Plugin: middleware/postgresql/user-guide/pgvector.md
               - Redis Cache Service:
                   - Intro:
                       - What is Redis: middleware/redis/intro/index.md
@@ -1162,9 +1169,11 @@ nav:
                       - Create Redis Instance: middleware/redis/user-guide/create.md
                       - Update Redis Instance: middleware/redis/user-guide/update.md
                       - Delete Redis Instance: middleware/redis/user-guide/delete.md
+                      - Manually Switch Primary/Standby: middleware/redis/user-guide/manual-switch-role.md
                       - View Redis Logs: middleware/redis/user-guide/logs.md
                       - Slow Query: middleware/redis/user-guide/slow-query.md
-                      - Topology: middleware/redis/user-guide/instancemap.md
+                      - Instance Topology: middleware/redis/user-guide/instancemap.md
+                      - Backup and Restore: middleware/redis/user-guide/backup-and-restore.md
                   - Best Practice:
                       - HA Deployment Across Data Centers: middleware/redis/best-practice/singleclustercrosszone.md
                       - Data Synchronization Intro: middleware/redis/best-practice/index.md
@@ -1189,8 +1198,11 @@ nav:
                       - Monitor Instance: middleware/elasticsearch/user-guide/monitor.md
                       - View ES Logs: middleware/elasticsearch/user-guide/logs.md
                       - Backup and Recovery: middleware/elasticsearch/user-guide/snapshot-recover.md
-                  - Migrate ES across Nodes: middleware/elasticsearch/user-guide/migrate-es.md
                   - ES Troubleshoot: middleware/elasticsearch/faq/common-question-es.md
+                  - Best Practice:
+                      - Deploy ES Across Two Data Centers: middleware/elasticsearch/bestpractice/esin2IDC.md
+                      - Migrate ES across Nodes: middleware/elasticsearch/user-guide/migrate-es.md
+                      - Migrate ES Data Using reindex: middleware/elasticsearch/bestpractice/reindex-to-backup.md
               - Kafka Message Queue:
                   - Intro:
                       - What is Kafka: middleware/kafka/intro/index.md
@@ -1203,6 +1215,9 @@ nav:
                       - Instance Insight/Logs: middleware/kafka/user-guide/insight-log.md
                       - Config Parameters: middleware/kafka/user-guide/config.md
                       - Parameter Template: middleware/kafka/user-guide/template.md
+                      - Kafka Topic Usage: middleware/kafka/user-guide/useage-topic.md
+                  - Best Practice:
+                      - Kafka Cross-Data-Center Disaster Recovery: middleware/kafka/bestpractice/kafkain2IDC.md
               - RabbitMQ Message Queue:
                   - Intro:
                       - What is RabbitMQ: middleware/rabbitmq/intro/index.md
@@ -1242,6 +1257,7 @@ nav:
                       - Instance Insight/Logs/Parameter Configuration: middleware/minio/user-guide/insight-log-config.md
                       - View Instance Details: middleware/minio/user-guide/view.md
                       - MinIO Identity Management: middleware/minio/user-guide/user-management.md
+                  - MinIO Disaster Recovery Solution: middleware/minio/best-pratice/minio-replication.md
               - SeaweedFS Object Storage:
                   - Intro:
                       - What is SeaweedFS: middleware/seaweedfs/intro/index.md

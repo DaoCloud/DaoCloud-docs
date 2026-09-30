@@ -42,6 +42,13 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 - **Upgraded** the exporter to v0.17.1
 - **Upgraded** the operator to 0.14.0
 
+## 2025-08-31
+
+### v0.19.0
+
+- **Added** support for toleration configuration when creating PostgreSQL instances
+- **Improved** upgraded pgAdmin to 9.6.0
+
 ## 2024-09-30
 
 ### v0.16.0

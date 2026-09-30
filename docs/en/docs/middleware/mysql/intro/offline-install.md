@@ -130,6 +130,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
         ```shell
         helm repo update mcamel/mcamel-mysql # If the helm version is too low, it may fail. In that case, try executing __helm update repo__ .
+        ```
 
     1. Select the version you want to install (it is recommended to install the latest version).
 

@@ -71,6 +71,13 @@ and serves to encapsulate data as messages in RocketMQ and send the messages to 
 RocketMQ uses a transaction messaging mechanism that requires a producer to
 implement a transaction checker to ensure eventual consistency of transactions.
 
+## TransactionResolution
+
+A status identifier of a transaction during the sending of a transactional message in
+RocketMQ. The broker controls whether a transactional message should be committed and
+delivered based on the transaction status. Transaction states include transaction commit,
+transaction rollback, and transaction pending.
+
 ## ConsumerGroup
 
 A consumer group is a load balancing group that contains consumers that use
@@ -82,8 +89,63 @@ A consumer is an entity that receives and processes messages in RocketMQ. Consum
 are usually integrated in business systems. They obtain messages from RocketMQ brokers
 and convert the messages into information that can be perceived and processed by business logic.
 
+## ConsumeResult
+
+The result returned by a PushConsumer message listener in RocketMQ after it finishes
+processing a message, used to indicate whether the message was processed correctly.
+The consumption result includes consumption success and consumption failure.
+
 ## Subscription
 
 A subscription is the rule and status settings for consumers to obtain and process messages
 in RocketMQ. Subscriptions are dynamically registered by consumer groups with brokers.
 Messages are then matched and consumed based on the filter rules defined by subscriptions.
+
+## Message Filtering
+
+Consumers can filter messages by subscribing to specified message tags (Tag), ensuring
+that only the filtered message set is ultimately received. The calculation and matching
+of filter rules are completed on the RocketMQ broker.
+
+## Reset Consumer Offset
+
+Using the timeline as the coordinate, reset the consumption progress of a consumer group
+on a subscribed topic within the time range of message persistence. After the setting is
+complete, the consumer will receive the messages that the producer sends to the RocketMQ
+broker after the specified point in time.
+
+## Message Trace
+
+The complete link information aggregated from data such as the time and place of each
+related node during the process from a message being sent by the producer to being
+received and processed by the consumer. With message traces, you can clearly locate the
+complete path of a message from the producer, through the RocketMQ broker, to the
+consumer, which facilitates troubleshooting.
+
+## Message Accumulation
+
+The producer has already sent messages to the RocketMQ broker, but because the consuming
+capacity of the consumer is limited, it cannot correctly consume all messages within a
+short period of time. At this point, unconsumed messages are stored on the broker. This
+state is called message accumulation.
+
+## Transactional Messages
+
+Transactional messages are an advanced message type provided by RocketMQ, supporting
+eventual consistency between message production and local transactions in distributed
+scenarios.
+
+## Scheduled/Delayed Messages
+
+Scheduled/delayed messages are an advanced message type provided by RocketMQ. After a
+message is sent to the broker, it can only be consumed by the consumer after a specified
+time. By setting a certain scheduled time, a delayed scheduling trigger effect in
+distributed scenarios can be achieved.
+
+## Ordered Messages
+
+Ordered messages are an advanced message type provided by RocketMQ, supporting consumers
+to obtain messages in the order in which they were sent, thereby achieving sequential
+processing in business scenarios.
+
+For more information, see the [Apache RocketMQ official documentation](https://rocketmq.apache.org/zh/).

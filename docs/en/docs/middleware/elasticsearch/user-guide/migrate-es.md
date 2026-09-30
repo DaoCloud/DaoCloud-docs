@@ -104,7 +104,7 @@ rfr-mcamel-common-redis-cluster 3/3 20h
 
 > The following is a demonstration of the command
 
-[![asciicast](https://asciinema.org/a/581583.svg)](https://asciinema.org/a/581583)](https://asciinema.org/a/NUqARym7BTS8BpudRpbmjroFz)
+[![asciicast](https://asciinema.org/a/581583.svg)](https://asciinema.org/a/581583)
 
 ### Create a migration task
 
