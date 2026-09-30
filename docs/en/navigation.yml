@@ -131,25 +131,28 @@ nav:
                       - Install Jenkins: amamba/user-guide/pipeline/install-jenkins.md
                       - Jenkins HA Solution: amamba/quickstart/jenkins-HA.md
                       - Jenkins Scenarios: amamba/quickstart/scenarios-config.md
+                      - Retain Jenkins Configuration: amamba/user-guide/pipeline/retain-jenkins-config.md
                   - Argo CD HA Deployment: amamba/quickstart/argo-cd-HA.md
                   - Feature Gates: amamba/quickstart/feature-gates.md
-              - Namespaces: 
-                  - Create Namespace: amamba/user-guide/namespace/namespace.md
-                  - Create MultiCloud Namespace: amamba/user-guide/namespace/multi-namespace.md
+                  - Enable Component Observability: amamba/components-grafana-dashboard.md
               - Wizard:
                   - Build Git-based Microservice: amamba/user-guide/wizard/create-app-git.md
                   - Build Jar-based Java Apps: amamba/user-guide/wizard/jar-java-app.md
+                  - Build Apps with Container Images: amamba/user-guide/wizard/image-app.md
                   - Deploy Helm Apps: amamba/user-guide/wizard/helm.md
+              - Applications:
+                  - Native Apps:
+                      - Manage Native Apps: amamba/user-guide/native/manage.md
+                      - Deploy Traditional Microservices with Native Apps: amamba/user-guide/native/native-app.md
                   - Helm Applications: amamba/user-guide/helm.md
-              - Native Apps:
-                  - Manage Native Apps: amamba/user-guide/native/manage.md
-                  - Deploy Traditional Microservices with Native Apps: amamba/user-guide/native/native-app.md
+                  - OAM Apps:
+                      - OAM Concepts: amamba/user-guide/oam/concept.md
+                      - Create OAM Apps: amamba/user-guide/oam/create.md
+                      - Manage OAM Apps: amamba/user-guide/oam/manage.md
                   - OLM Applications: amamba/user-guide/olm.md
-                  - Code Repository: amamba/user-guide/repo.md
-              - OAM Apps:
-                  - OAM Concepts: amamba/user-guide/oam/concept.md
-                  - Create OAM Apps: amamba/user-guide/oam/create.md
-                  - Manage OAM Apps: amamba/user-guide/oam/manage.md
+              - Namespaces: 
+                  - Create Namespace: amamba/user-guide/namespace/namespace.md
+                  - Create MultiCloud Namespace: amamba/user-guide/namespace/multi-namespace.md
               - Pipelines:
                   - Quickly Create Pipeline: amamba/quickstart/deploy-pipeline.md
                   - Create Pipeline:
@@ -177,6 +180,8 @@ nav:
                           - Custom Pipeline: amamba/user-guide/pipeline/template/custom-template.md
                           - Templates: amamba/user-guide/pipeline/template/info.md
                       - Pipeline Group: amamba/user-guide/pipeline/group/group.md
+                      - Release Stats: amamba/user-guide/pipeline/release-stats.md
+                      - Advanced Parameters: amamba/user-guide/pipeline/advanced_parameters.md
                   - Pipeline Buffer: amamba/user-guide/pipeline/pipeline_cache.md
                   - Custom Steps:
                       - Intro: amamba/customize-step.md
@@ -184,11 +189,11 @@ nav:
                   - More Skills:
                       - Custom Image for Jenkins Agent: amamba/user-guide/pipeline/jenkins-agent.md
                       - Custom Toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
-                      - Run on a Specific Node: amamba/quickstart/pipeline-on-node.md                    
+                      - Run on a Specific Node: amamba/quickstart/pipeline-on-node.md
                       - Build Multi-Arch Image: amamba/user-guide/pipeline/podman.md
-                      - Use Cacher in Pipeline: amamba/quickstart/job-cacher.md
                       - System Env Variables: amamba/user-guide/pipeline/system-env.md
                       - Pipeline Metrics: amamba/user-guide/pipeline/jenkins-metric.md
+                      - Migrate Jenkins Agent Images: amamba/user-guide/pipeline/migrate-jenkins-agent-images.md
               - GitOps:
                   - Import Repository: amamba/user-guide/gitops/import-repo.md
                   - Create Argo CD App: amamba/user-guide/gitops/create-argo-cd.md
@@ -196,12 +201,14 @@ nav:
                   - Manually Sync App: amamba/user-guide/gitops/sync-manually.md
                   - Eanble Credential in GitOps: amamba/user-guide/gitops/gitops-secret.md
                   - Enable ArgoCD-Native UI: amamba/user-guide/gitops/integrate-argocd-ui.md
+                  - Enable ApplicationSet: amamba/user-guide/gitops/applicationset.md
               - Canary Release:
-                  - Grayscale based on Argo Rollout: amamba/quickstart/argocd-rollout.md
                   - Create a Canary Delivery Job: amamba/user-guide/release/canary.md
                   - View a Canary Delivery Job: amamba/user-guide/release/check-canary.md
                   - Create Blue/Green Job: amamba/user-guide/release/blue-green.md
                   - View Blue/Green Job: amamba/user-guide/release/check-bluegreen.md
+                  - Canary Release Example: amamba/user-guide/release/canary-guide.md
+              - Code Repository: amamba/user-guide/repo.md
               - Toolchain Integration:
                   - Integrate Toolchain: amamba/user-guide/tools/integrated-toolchain.md
                   - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
@@ -217,12 +224,15 @@ nav:
                       - Use GitOps in a Hosted Mesh: amamba/quickstart/istio_argocd.md
                       - Progressive Delivery in a Hosted Mesh: amamba/quickstart/istio_argocd_rollout.md
                       - Rollout Multicloud Apps with ArgoCD: amamba/quickstart/argo-karmada.md
+                      - Release Multicloud Resources with Pipelines: amamba/quickstart/pipeline-kairship.md
                   - CI Practices:
                       - Scan Code with Pipelines: amamba/quickstart/scan-with-pipeline.md
                       - Integrate Harbor to Scan Image: amamba/quickstart/scan-with-harbor.md
                       - Jenkins Delivers App to VM: amamba/user-guide/pipeline/cicd_vm.md
                       - Integrate Jenkins on Physical/Virtual Machine: amamba/quickstart/jenkins-integration.md
+                      - Deploy Multicloud Apps with Pipelines: amamba/quickstart/pipeline-kairship.md
                   - Progressive Delivery Practices: amamba/quickstart/contour-argorollout.md
+                  - Progressive Delivery with Argo Rollout: amamba/quickstart/argocd-rollout.md
       - Container:
           - Container Management:
               - Intro:

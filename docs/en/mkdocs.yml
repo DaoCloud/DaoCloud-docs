@@ -107,6 +107,9 @@ plugins:
   - redirects:
       redirect_maps:
         "api.md": "dce/index.md"
+        "amamba/quickstart/helm.md": "amamba/user-guide/helm.md"
+        "amamba/quickstart/olm.md": "amamba/user-guide/olm.md"
+        "amamba/quickstart/repo.md": "amamba/user-guide/repo.md"
         "dce/what-is-dce.md": "dce/index.md"
         "install/install-dce.md": "install/community/k8s/online.md"
         "dce/what.md": "dce/index.md"

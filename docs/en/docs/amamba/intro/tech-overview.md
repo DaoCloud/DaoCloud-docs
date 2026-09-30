@@ -131,7 +131,7 @@ Based on this, Workbench is also planning to support Jenkins deployments using t
     - Custom steps: WIP
 - Acceleration (WIP, missing a systematic document):
     - [Running Pipelines on Specified Nodes - DaoCloud Enterprise](../quickstart/pipeline-on-node.md)
-    - [Using Cache in Pipelines - DaoCloud Enterprise](../quickstart/job-cacher.md)
+    - [Using Cache in Pipelines - DaoCloud Enterprise](../user-guide/pipeline/pipeline_cache.md)
 - Integration:
     - SornaQube: [Code Scanning with Pipelines - DaoCloud Enterprise](../quickstart/scan-with-pipeline.md)
     - Integrated Gitlab: WIP (basic principles, how to use)

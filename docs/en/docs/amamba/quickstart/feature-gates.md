@@ -38,3 +38,44 @@ The following table summarizes the feature gates that can be set on different Am
 | PipelineAdvancedParameters        | false   | Alpha | 0.38  | -     |
 | ReleaseStats        | false   | Alpha | 0.36  | -     |
 | DAGv2               | false   | Alpha | 0.27  | 0.27  |
+| DAGv2               | true    | Beta  | 0.28  | 0.30  |
+| DAGv2               | true    | GA    | 0.30  | -     |
+| Gitlab              | false   | Beta  | 0.24  | -     |
+| Jira                | false   | Beta  | 0.24  | -     |
+| KairshipApplication | false   | Beta  | 0.21  | -     |
+
+## Graduated and Deprecated Feature Gates
+
+| Feature             | Default | Stage | Since | Until |
+|---------------------|---------|-------|-------|-------|
+|                     |         |       |       |       |
+
+# Use Features
+
+## Feature Gates List
+
+Each feature gate is used to enable or disable a specific feature:
+
+- `ReleaseStats`:
+   Show the statistical list of release information based on pipelines.
+
+- `DAGv2`:
+   Use the new pipeline editing UI.
+
+- `Gitlab`:
+   Support managing GitLab projects on the UI.
+
+- `Jira`:
+   Support viewing Jira projects on the UI.
+
+- `KairshipApplication`:
+   Support managing multi-tenant-level multicloud applications.
+
+- `PipelineAdvancedParameters`:
+   Support the multi-select, git branch, image tag, artifact version, and global parameter types in the pipeline configuration options.
+
+- `AdminGlobalBuildParameter`:
+   Support configuring global parameters of pipelines in Workbench Management.
+
+- `UpstreamPipeline`:
+   Support specifying the upstream pipeline and run ID when running a pipeline through OpenAPI, so as to keep the same triggering user.
