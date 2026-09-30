@@ -181,3 +181,21 @@ If all the above configmaps are correct, but the status of Jenkins pipeline stil
 3. Search for __jenkins-casc-config__, and click __Edit YAML__ in the operation column.
 
 4. Search for `eventDispatcher.receiver` in __data__ -> __jenkins.yaml__, its value should be `http://amamba-devops-server.amamba-system:80/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins` where `amamba-system` is the namespace where the workbench is deployed.
+
+## ARM Architecture Build Error: "systemd cgroup flag passed, but systemd support for managing cgroups is not available"
+
+The cgroup manager supports systemd and cgroupfs. By default, podman in the agent container uses cgroupfs (configured in the /etc/containers/containers.conf file). However, in some cases it may not be recognized correctly, and you need to specify it manually on the command line:
+
+```bash
+podman build --cgroups-manager=cgroupfs .
+```
+
+At this point, if the error becomes: "error adding seccamp filter rule for syscall bdflush: permission denied"
+
+This is due to a problem with a specific runc version and podman. Refer to [containers/podman #10735](https://github.com/containers/podman/issues/10735)
+
+You can go to the crun [release page](https://github.com/containers/crun/releases) to download the corresponding binary, move it to /usr/local/bin, and specify the runtime when building:
+
+```bash
+podman build --cgroups-manager=cgroupfs --runtime=/usr/local/bin/crun .
+```

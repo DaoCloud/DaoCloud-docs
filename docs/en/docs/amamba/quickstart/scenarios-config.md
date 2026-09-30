@@ -91,7 +91,7 @@ resources:
 
 ### Agent Configuration
 
-Refer to the agent configuration in [Scenario 1](#agent).
+Refer to the agent configuration in [Scenario 1](#agent-configuration).
 
 ## Scenario 3: Running 200 Concurrent Pipelines
 
@@ -128,7 +128,7 @@ resources:
 
 ### Agent Configuration
 
-Refer to the agent configuration in [Scenario 1](#agent).
+Refer to the agent configuration in [Scenario 1](#agent-configuration).
 
 !!! note 
 

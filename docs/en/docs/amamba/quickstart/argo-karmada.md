@@ -22,7 +22,7 @@ to roll out multicloud applications.
 
     <!-- add image later -->
 
-2. Refer to [Integrate Cluster](../../kairship/cluster.md#add-a-cluster) to add worker clusters to the
+2. Refer to [Integrate Cluster](../../kairship/cluster.md#integrate-a-cluster) to add worker clusters to the
    multicloud instance. Connect the worker clusters named `zxw-dev`, `kpanda-global-cluster`, and `gwt-68`:
 
     <!-- add image later -->

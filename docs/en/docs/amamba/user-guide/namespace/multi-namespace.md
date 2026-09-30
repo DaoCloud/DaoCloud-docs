@@ -12,7 +12,7 @@ A multicloud namespace is a resource in the multicloud orchestration platform th
 
     <!-- ![namespace-listpng](../../images/mutinamespace.png) -->
 
-2. For binding resource operations, see the document [Bind/Unbind Workspace](../../../kairship/workspace.md#_3).
+2. For binding resource operations, see the document [Bind/Unbind Workspace](../../../kairship/workspace.md#bindunbind-workspace).
 
 ## How to Use MultiCloud Namespace
 
