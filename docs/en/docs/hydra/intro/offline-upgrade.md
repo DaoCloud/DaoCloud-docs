@@ -1,6 +1,6 @@
 # Offline Upgrade of the LLM Studio
 
-This page explains how to install or upgrade after [downloading the LLM Studio module](../../../download/modules/hydra.md).
+This page explains how to install or upgrade after [downloading the LLM Studio module](https://docs.daocloud.io/download/modules/hydra/).
 
 !!! info
 

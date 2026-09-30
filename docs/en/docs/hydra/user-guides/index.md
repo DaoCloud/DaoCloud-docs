@@ -4,10 +4,10 @@
 
 You can refer to the following example scenarios to configure and use the model services provided by Hydra in your development work.
 
-## Model Invocation Examples
+## Model Management and Invocation
 
-- Refer to [Model Invocation Examples](../api-call.md) to choose how to call models.
-- Refer to [Obtaining API Key](../apikey.md) to get your key.
+- Refer to [MaaS Model Management](../oam/maas.md) to learn how to manage MaaS models.
+- Refer to [Obtaining an API Key](../apikey.md) to get your key.
 
 ## Scenario List
 
@@ -19,6 +19,7 @@ The scenarios are described as follows:
 | [Cherry Studio](https://cherry-ai.com) | [Using Hydra’s model services in Cherry Studio](./cherry-studio.md) |
 | [Bob Translate](https://bobtranslate.com) | [Using Hydra’s model services in Bob Translate](./bob-translate.md) |
 | [Lobe Chat](https://github.com/lobehub/lobe-chat) | [Using Hydra’s model services in Lobe Chat](./lobe-chat.md) |
+| [Custom LLM Inference Runtime](./custom-runtime.md) | [Using Hydra’s model services in a custom LLM inference runtime](./custom-runtime.md) |
 
 ## Contribution Notes
 

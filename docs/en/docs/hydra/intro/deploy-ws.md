@@ -7,7 +7,7 @@ This document explains how to deploy the privatized WS (Workspace) mode of the L
 
 ## Global Service Cluster
 
-In the [Global Service Cluster](../../kpanda/user-guide/clusters/cluster-role.md#_2), you need to install:
+In the [Global Service Cluster](../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster), you need to install:
 
 - Hydra: manually install or install via the installer
 - [Service Mesh](../../mspider/install/install.md) (depends on Istio to create gateways for routing)
