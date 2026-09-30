@@ -1,4 +1,6 @@
 ---
+hide:
+  - toc
 MTPE: Fan-Lin
 Date: 2024-01-23
 ---
@@ -9,7 +11,7 @@ HwameiStor is a Kubernetes-native container attached storage (CAS) solution that
 
 ![architecture](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/architecture.png)
 
-## Features
+The specific features are as follows:
 
 1. Automated Maintenance
 
@@ -26,6 +28,31 @@ HwameiStor is a Kubernetes-native container attached storage (CAS) solution that
 4. Agile Linear Scalability
 
     Dynamically expand clusters according to their sizes and flexibly meet the data persistence requirements of the application.
+
+## Product Advantages
+
+**I/O Localization**
+
+100% local throughput with no network overhead. When a node fails, the Pod starts on the replica node and uses the replica volume for local IO read and write.
+
+**High Performance and High Availability**
+
+- 100% IO localization to achieve high-performance local throughput
+- 2-replica volume redundancy to ensure high data availability
+
+**Linear Scalability**
+
+- Independent node units, with a minimum of 1 node and unlimited expansion
+- Separation of the control plane and data plane; node expansion does not affect data I/O of business applications
+
+**Low CPU and Memory Overhead**
+
+With IO localization, CPU remains stable without significant fluctuation for the same IO read and write, and memory resource overhead is low
+
+**Production-Ready Operability**
+
+- Supports migration at the node, disk, and volume group (VG) levels
+- Supports operations such as disk replacement
 
 [HwameiStor Release](https://github.com/hwameistor/hwameistor/releases){ .md-button .md-button--primary }
 [Download DCE](../../../download/index.md){ .md-button .md-button--primary }

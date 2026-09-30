@@ -191,7 +191,9 @@ Each data engine either runs on top of a configuration provided during installat
 
 Data Engine Operators can operate cluster-wide or on specific nodes.
 Cluster-wide operators are typically involved in operations that involve interacting with Kubernetes components - coordinating the scheduling or migration of pools and volumes on various nodes.
-Node-level operators operate on local operations such as creating volumes, replicas, snapshots, etc. on storage or pools available on the node.Data Engine Operators are also often referred to as the control plane of a data engine, as they help manage the volumes and data services provided by the corresponding data engine.
+Node-level operators operate on local operations such as creating volumes, replicas, snapshots, etc. on storage or pools available on the node.
+
+Data Engine Operators are also often referred to as the control plane of a data engine, as they help manage the volumes and data services provided by the corresponding data engine.
 Some data engines such as cstor, jiva, and mayastor can have multiple Operators depending on the functionality provided or required, where local volume operations can be embedded directly into the corresponding CSI controller/configurator.
 
 #### CSI Driver (Dynamic Volume Configurator)
