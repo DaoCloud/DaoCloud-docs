@@ -19,7 +19,7 @@ You need to fill the following fields one by one:
 | Endpoint | The full HTTP(S) address of the upstream service, e.g., `https://api.deepseek.com` | Yes |
 | API Key | Fill in if the upstream service requires token authentication | No |
 
-### Rate Limiting Rules (Optional)
+**Rate Limiting Rules (Optional):**
 
 If rate limiting is required, you can enable this configuration.
 
@@ -36,9 +36,7 @@ If rate limiting is required, you can enable this configuration.
 - **duration:** Time period in seconds, e.g., 60  
 - Multiple rules can be added
 
-### Load Balancing Policies
-
-Currently, only the **round-robin** policy is supported.
+**Load Balancing Policies:** Currently, only the **round-robin** policy is supported.
 
 1. **Round-robin (default):** Sequentially forwards requests to multiple endpoints  
 2. **Random:** Randomly selects an endpoint  

@@ -4,6 +4,28 @@ This page lists the release notes for LLM Studio, helping you understand version
 
 *[hydra]: Internal codename for DaoCloud's LLM Studio
 
+## 2026-08-31
+
+### v0.18.3
+
+**User View**
+
+- **Added** support for administrators to assign created API Keys to users, so that users can use the API Keys assigned to them
+- **Added** support for viewing and displaying the usage of deleted API keys in usage statistics
+- **Added** a workload viewing action in the model deployment list, so that users can quickly jump to the details of the associated workload
+- **Added** support for displaying multimodal model API call examples in the model gallery details
+
+**Admin Console**
+
+- **Added** intelligent routing, where each cluster can be configured with one `model=auto` route. It supports basic rule-based routing (request length and custom rules) and advanced semantic model selection (domain classification, semantic embedding, complexity, and context length), and falls back to the default model when no rule matches
+- **Added** support for token-based rate limiting for MaaS models
+- **Added** content security detection policy management, which calls security capabilities to perform risk and compliance detection on request content. General security detection is completed by the platform's own security model, with configurable risk types and risk determination thresholds. Module-shield security detection is an integration with the NSFOCUS AI security fence service, completing content detection through NSFOCUS open APIs
+
+!!! note
+
+    Starting from v0.18.3, the MaaS enablement status, cluster, and workspace visibility scope of Hydra are uniformly based on the Knoway ModelRoute CR.
+    When upgrading from v0.16.0 or v0.17.1, upgrade the hydra-agent of all worker clusters first, and then upgrade the global Hydra. For details, see [Upgrade Notes](upgrade-notes.md).
+
 ## 2026-07-31
 
 ### v0.17.1
@@ -17,7 +39,7 @@ This page lists the release notes for LLM Studio, helping you understand version
 
 !!! note
 
-    Starting from v0.17.1, Hydra decouples model metadata from MaaS data. Before upgrading to v0.17.1, migrate the `maas_model` data table. If you are upgrading directly to v0.18.0, do not run that SQL. For details, see [Upgrade Notes](upgrade-notes.md).
+    Starting from v0.17.1, Hydra decouples model metadata from MaaS data. Before upgrading to v0.17.1, migrate the `maas_model` data table. If you are upgrading directly to v0.18.3, do not run that SQL. For details, see [Upgrade Notes](upgrade-notes.md).
 
 ## 2026-06-30
 
@@ -65,7 +87,7 @@ This page lists the release notes for LLM Studio, helping you understand version
 - **Improved** model deletion logic by adding validation for associated model services
 - **Improved** model deployment templates by supporting custom GPU types and custom runtime logic for more flexible model deployment
 
-## 2025-03-31
+## 2026-03-31
 
 ### v0.13.1
 

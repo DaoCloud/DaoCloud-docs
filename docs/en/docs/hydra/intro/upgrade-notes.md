@@ -3,7 +3,7 @@
 This page describes important considerations when upgrading Hydra to a new version.
 Choose the section that matches your current version.
 
-## Upgrading from v0.16.0 / v0.17.1 to v0.18.0 {#upgrade-to-v0180}
+## Upgrading from v0.16.0 / v0.17.1 to v0.18.3 {#upgrade-to-v0183}
 
 Starting from Hydra v0.18.0, MaaS enablement status, cluster assignment, and Workspace visibility
 are all based on the Knoway `ModelRoute` CR. The old database fields are kept temporarily
@@ -151,7 +151,7 @@ To prevent model metadata loss during the upgrade, complete the following data t
 !!! warning
 
     If the target version is v0.18.0 or later, do not run `create_maas_model.sql` in this section.
-    Follow [Upgrading from v0.16.0 / v0.17.1 to v0.18.0](#upgrade-to-v0180) instead.
+    Follow [Upgrading from v0.16.0 / v0.17.1 to v0.18.3](#upgrade-to-v0183) instead.
 
     Complete this table migration only when you must upgrade to v0.17.1 first.
 
