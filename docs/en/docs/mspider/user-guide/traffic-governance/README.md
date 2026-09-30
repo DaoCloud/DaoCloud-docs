@@ -31,3 +31,8 @@ Users can freely choose according to their preferences.
 - YAML creation format is more suitable for experienced users. Users can directly write
   YAML files to create governance policies. The creation window also provides commonly used
   governance policy templates to improve user writing speed.
+
+## Video Tutorials
+
+- [How to integrate microservices into DCE and govern north-south traffic?](../../../videos/use-cases.md#traditional-microservice-governance-north-south-traffic)
+- [How to govern east-west traffic of traditional microservices with the service mesh?](../../../videos/use-cases.md#traditional-microservice-governance-east-west-traffic)

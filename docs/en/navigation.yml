@@ -989,7 +989,6 @@ nav:
           - Service Mesh:
               - Intro:
                   - What is Service Mesh: mspider/intro/index.md
-                  - SLA Standards: mspider/intro/sla.md
                   - Features: mspider/intro/features.md
                   - Use Cases: mspider/intro/scenarios.md
                   - Permissions: ghippo/permissions/mspider.md
@@ -1000,6 +999,7 @@ nav:
                       - System Namespaces: mspider/intro/comp-archi-ui/namespaces.md
                       - Features Supported on UI: mspider/intro/comp-archi-ui/features-on-ui.md
                   - Supported Istio and K8s Versions: mspider/intro/istio-k8s.md
+                  - SLA Standards: mspider/intro/sla.md
                   - FAQs: mspider/intro/faq.md
                   - Service Mesh Release Notes: mspider/intro/release-notes.md
               - Install, Config, and Upgrade:
@@ -1008,11 +1008,13 @@ nav:
                   - Upgrade Sidecar: mspider/install/sidecar-update.md
                   - Offline Upgrade Service Mesh: mspider/install/offline-upgrade.md
               - Create/Delete Mesh:
-                  - Create managed/private mesh: mspider/user-guide/service-mesh/README.md
-                  - Create external mesh: mspider/user-guide/service-mesh/external-mesh.md
-                  - Delete mesh: mspider/user-guide/service-mesh/delete.md
-                  - Resource capacity: mspider/user-guide/service-mesh/capacity-resources.md
-                  - Parameters to create mesh: mspider/user-guide/service-mesh/params.md
+                  - Mesh Types: mspider/user-guide/service-mesh/index.md
+                  - Create Hosted Mesh: mspider/user-guide/service-mesh/hosted-mesh.md
+                  - Create Dedicated Mesh: mspider/user-guide/service-mesh/dedicated-mesh.md
+                  - Create External Mesh: mspider/user-guide/service-mesh/external-mesh.md
+                  - Delete Mesh: mspider/user-guide/service-mesh/delete.md
+                  - Resource Usage for Mesh Scale: mspider/user-guide/service-mesh/capacity-resources.md
+                  - Parameters for Mesh Creation: mspider/user-guide/service-mesh/params.md
               - Service Management:
                   - mspider/user-guide/service-list/README.md
                   - Integrate VM: mspider/user-guide/service-list/vm.md
@@ -1026,6 +1028,7 @@ nav:
                   - Destination Rule: mspider/user-guide/traffic-governance/destination-rules.md
                   - Gateway: mspider/user-guide/traffic-governance/gateway-rules.md
                   - Traffic Failover: mspider/user-guide/traffic-governance/traffic-failover.md
+                  - Traffic Lane: mspider/user-guide/traffic-lane/index.md
               - Security:
                   - Intro: mspider/user-guide/security/README.md
                   - Peer Authentication: mspider/user-guide/security/peer.md
@@ -1058,7 +1061,8 @@ nav:
                   - Istio Resource Management: mspider/user-guide/mesh-config/istio-resources.md
                   - TLS Key Management: mspider/user-guide/mesh-config/tls-secret.md
                   - Custom Component Resource: mspider/user-guide/mesh-config/custom-res.md
-                  - Component Resoruce HPA: mspider/user-guide/mesh-config/component-hpa.md
+                  - Component Resource HPA: mspider/user-guide/mesh-config/component-hpa.md
+                  - Supported Gateway API: mspider/user-guide/mesh-config/gateway-api.md
               - Test:
                   - Join OCP to Mesh: mspider/test/ocp.md
                   - Openshift and Mesh Compatibility Test: mspider/test/openshift.md
@@ -1079,11 +1083,17 @@ nav:
                   - Issue with Sidecar Configuration Activation: mspider/troubleshoot/sidecar.md
                   - Sidecar Uses a Large Amount of Memory: mspider/troubleshoot/sidecar-memory-err.md
                   - Unknown Cluster Exists in List: mspider/troubleshoot/cluster-already-exist.md
+                  - Common 503 Errors in Service Mesh: mspider/troubleshoot/503-issue.md
+                  - How Apps Listening on localhost Are Accessed by Pods: mspider/troubleshoot/localhost-by-pod.md
+                  - Troubleshoot Unreachable External Services: mspider/troubleshoot/outbound-issue.md
+                  - istio-init Container Fails to Start in Worker Cluster: mspider/troubleshoot/istio-init-failed.md
               - Best Practice:
                   - Restrict Service Access with Mesh: mspider/best-practice/use-egress-and-authorized-policy.md
                   - Support for Custom Workload Types: mspider/best-practice/use-custom-workloads.md
                   - Optimize Sidecar Resource Usage: mspider/best-practice/optimize-sidecar-resource.md
                   - Traffic Control for Multicloud Mesh: mspider/best-practice/multinet-control.md
+                  - How to Choose an Egress Traffic Policy: mspider/best-practice/outbound-traffic.md
+                  - Sync Worker Cluster Resources of Hosted Mesh: mspider/best-practice/managed-mesh-to-sync.md
       - Data Service:
           - Middleware:
               - Intro:

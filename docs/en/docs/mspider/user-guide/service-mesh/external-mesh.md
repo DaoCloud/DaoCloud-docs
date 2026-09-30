@@ -26,3 +26,7 @@ External mesh means that the existing mesh can be connected to the DCE service m
     ![Mesh List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/external03.png)
 
 Next step: [Service Management](../service-list/README.md)
+
+## FAQs
+
+- [Tracking DCE 4.0 Integration Issues](../../troubleshoot/dce4.0-issues.md)

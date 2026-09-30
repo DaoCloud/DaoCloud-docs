@@ -28,7 +28,7 @@ You can use the following two installation schemes to install Istio in the clust
 
 - Refer to the [Istio Official Installation Guide](https://istio.io/latest/zh/docs/setup/install/)
 
-- [Create a Dedicated Mesh Through the Platform's Service Mesh Module](../../../mspider/user-guide/service-mesh/README.md#create-hosted-or-dedicated-mesh)
+- [Create a Dedicated Mesh Through the Platform's Service Mesh Module](../../../mspider/user-guide/service-mesh/dedicated-mesh.md)
 
 ## Steps
 

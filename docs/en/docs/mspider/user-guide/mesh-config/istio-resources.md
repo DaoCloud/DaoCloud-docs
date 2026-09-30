@@ -4,6 +4,10 @@ The __Istio Resource Management__ page lists all Istio resources by resource typ
 
 This page provides the following resource types:
 
+## Istio Resource Types
+
+The common Istio resource types are as follows:
+
 ### Traffic management class
 
 | **Resource Type** | **Description** |

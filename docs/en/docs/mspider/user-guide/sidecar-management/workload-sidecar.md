@@ -102,20 +102,6 @@ You can set CPU and memory limits for one or more workloads that have had sideca
 3. Return to the workload list, and you can see that the resource quotas of the selected
    workloads are displayed in the __CPU Request/Limit__ and __Memory Request/Limit__ columns.
 
-## Cleanup Policy
-
-You can clean up the sidecar policy for one or more workloads that have had sidecars injected. Follow these steps:
-
-1. Select one or more workloads that have had sidecars injected, click __Cleanup Policy__ at the top right.
-
-    ![Cleanup policy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sc-disable01.png)
-
-2. In the pop-up dialog, confirm the selected workload(s) and click __OK__ .
-
-    ![Confirm Selection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/wl-sidecar10.png)
-
-3. Return to the workload list, and you can see that the sidecar policy of the selected workloads has been cleaned up.
-
 ## Sidecar Upgrade
 
 In DCE Service Mesh, a sidecar refers to an Envoy proxy used to implement traffic control
@@ -137,3 +123,8 @@ However, before upgrading the sidecar, sufficient testing and verification are n
 the upgrade process does not have any negative impact on the service mesh.
 
 For specific operational steps, refer to [Sidecar Upgrade](../../install/sidecar-update.md).
+
+## FAQs
+
+- [Namespace Sidecar Configuration Conflicts with Workload Sidecar](../../troubleshoot/sidecar.md)
+- [Sidecar Consuming a Large Amount of Memory](../../troubleshoot/sidecar-memory-err.md)

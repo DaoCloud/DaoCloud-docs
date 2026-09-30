@@ -5,14 +5,17 @@ hide:
 
 # Managing Mesh Gateways
 
-The Mesh Gateway module provides lifecycle management for Mesh Gateway instances, including creation, update, and deletion. Users can use this page to manage all the managed Gateway instances within the current mesh.
+## Gateway Introduction
+
+The Mesh Gateway module provides lifecycle management for Mesh Gateway instances, including creation, update, and deletion.
+Users can use this page to manage all the managed Gateway instances within the current mesh.
 
 Mesh Gateways are divided into two categories: Ingress and Egress.
 
 * Ingress Gateways are used to define the traffic entry points for applications within the service mesh. All incoming traffic to applications within the service mesh should go through the Ingress Gateway.
 * Egress Gateways are used to define the traffic exit points for applications within the mesh. They allow traffic from external services to flow through the Egress Gateway, enabling more precise traffic control.
 
-Gateway instances run Envoy, similar to sidecars, but gateways run as separate instances.
+Gateway instances also run Envoy, but unlike sidecars, the mesh runs them as separate instances.
 
 ## Create a Mesh Gateway
 
@@ -36,4 +39,5 @@ The steps to create a Mesh Gateway are as follows.
 
 !!! info
 
-    For a more intuitive operation demonstration, refer to [Video Tutorial](../../../videos/mspider.md).
+    If there is any exception, check the exception prompt and try to solve the problem.
+    For more information, refer to [Video Tutorial](../../../videos/mspider.md).
