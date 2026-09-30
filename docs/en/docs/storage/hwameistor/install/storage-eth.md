@@ -1,10 +1,10 @@
-# Store NIC configuration
+# Storage NIC Configuration
 
 HwameiStor supports the use of a separate network card for data volume synchronization, which can avoid traffic congestion caused by using a communication network card.
 
 !!! note
 
-    -【🔥Advance configuration】: The configuration of the storage network card belongs to the pre-configuration of the storage system. It is recommended to **configure in advance** before installing the HwameiStor system.
+    - 【🔥Advance configuration】: The configuration of the storage network card belongs to the pre-configuration of the storage system. It is recommended to **configure in advance** before installing the HwameiStor system.
     - [Configuration during operation]: If HwameiStor has been deployed, and the above configuration modification is performed later, then **will not take effect on the previously created data volume**, that is, the previous network card will be used for data volume synchronization.
     - If you need to modify the storage network cards of multiple nodes, please configure them one by one. Currently, batch configuration is not possible
 
@@ -32,7 +32,7 @@ You can use two methods to configure it:
 
 4. Click `Save` when finished, and select the next node to modify.
 
-### via node comment markup
+### Mark by Node Annotation
 
 1. View the value of ENV: **NODE_ANNOTATION_KEY_STORAGE_IPV4** of local-storage, the default is
     **[localstorage.hwameistor.io/storage-ipv4](http://localstorage.hwameistor.io/storage-ipv4)**

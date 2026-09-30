@@ -1,17 +1,10 @@
-# Kubernetes storage
+# Kubernetes Storage
 
-Kubernetes provides several enhancements for container platforms (or cluster administrators) and application developers to support running StatefulSets. These features ensure that whenever scheduling containers (including volume provisioning/creation, attaching, mounting, unmounting, splitting, and deleting), storage capacity management (container ephemeral storage usage, volume scaling, etc.), can be used Different types of file and block storage (ephemeral or persistent, local or remote), which affect storage-based container scheduling (data gravity, availability, etc.) and general storage operations like snapshots.
+Kubernetes provides several enhancements for container platforms (or cluster administrators) and application developers to support running stateful workloads. These features ensure that whenever scheduling containers (including volume provisioning/creation, attaching, mounting, unmounting, splitting, and deleting), storage capacity management (container ephemeral storage usage, volume scaling, etc.), can be used Different types of file and block storage (ephemeral or persistent, local or remote), which affect storage-based container scheduling (data gravity, availability, etc.) and general storage operations like snapshots.
 
-When using HwameiStor to run StatefulSets, you need to understand several abstract concepts of Kubernetes storage:
+When using HwameiStor to run stateful workloads, you need to understand several abstract concepts of Kubernetes storage:
 
-- [Kubernetes-storage](#kubernetes-storage)
-  - [Container Storage Interface](#Container Storage Interface)
-  - [Storage classes and dynamic provisioning](#Storage classes and dynamic provisioning)
-  - [PersistentVolume Claim](#PersistentVolumeStatement)
-  - [PersistentVolume](#PersistentVolume)
-  - [stateful and stateless](#stateful and stateless)
-
-## Container storage interface
+## Container Storage Interface
 
 The Container Storage Interface (CSI) is a standard for exposing arbitrary file storage and block storage systems to containerized workloads on a container orchestration architecture such as Kubernetes. With CSI, third-party storage providers like HwameiStor can write and deploy new storage volume plugins, such as HwameiStor LocalDisk and LocalVolumeReplica, without modifying the Kubernetes core code.
 
@@ -43,8 +36,8 @@ PersistentVolumes (PVs) are provisioned dynamically by storage providers when a 
 
 The HwameiStor control plane dynamically sets up HwameiStor local volumes and replicas, and helps create PV objects in the cluster.
 
-## Stateful and stateless
+## Stateful and Stateless
 
-Kubernetes provides several built-in stateful and stateless workload resources to let application developers define workloads to run on Kubernetes. It is possible to run StatefulSets by creating a Kubernetes stateless/StatefulSet and connecting it to a PV using a PVC.
+Kubernetes provides several built-in stateful and stateless workload resources to let application developers define workloads to run on Kubernetes. It is possible to run stateful workloads by creating a Kubernetes stateless/stateful workload and connecting it to a PV using a PVC.
 
-For example, a MySQL deployment that references a PVC can be created in YAML. MySQL PVCs referenced by stateless loads should be created with the requested size and StorageClass. Once the HwameiStor control plane provides the PV for the required StorageClass and capacity, the claim is set as satisfied. Kubernetes will then mount the PV and start the MySQL stateless load.
+For example, a MySQL workload that references a PVC can be created in YAML. MySQL PVCs referenced by stateless workloads should be created with the requested size and StorageClass. Once the HwameiStor control plane provides the PV for the required StorageClass and capacity, the claim is set as satisfied. Kubernetes will then mount the PV and start the MySQL stateless workload.

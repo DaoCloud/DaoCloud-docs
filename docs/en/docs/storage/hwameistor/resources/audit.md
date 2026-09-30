@@ -8,7 +8,6 @@ hide:
 To record the usage and operational history of the HwameiStor cluster system,
 HwameiStor provides system Operation Log. These logs follow the HwameiStor
 semantics, making them easy for users to review and parse.
-
 The operation log records usage and operation information for each type of resource
 in the HwameiStor. These resources include: Cluster, Node, StoragePool, Volume, and more.
 
@@ -26,14 +25,14 @@ The specific steps to view Operation Log are as follows:
 
     The supported resource types include:
 
-    - Cluster  
-    - StorageNode  
-    - Disk  
-    - DiskNode  
-    - Pool  
-    - Volume  
-    - DiskVolume  
+    - Cluster
+    - StorageNode
+    - Disk
+    - DiskNode
+    - Pool
+    - Volume
+    - DiskVolume
 
-    Click **View** to check details about each operation.
+    Click **View** to check details of an operation. The figure below shows the operation details of an audit record for the `StorageNode` resource.
 
     ![audit02](../../images/audit02.png)

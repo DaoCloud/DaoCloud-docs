@@ -15,7 +15,7 @@ This page describes how to install HwameiStor on UI.
 - Completed the items in [Preparation](prereq.md)
 - If you need to use high-availability data volumes, please complete [DRBD installation](drbdinstall.md) in advance
 - If the deployment environment is a production environment, please read [Resource Requirements for
-Production Environment](proresource.md) in advance
+   Production Environment](proresource.md) in advance
 - If your Kubernetes distribution uses a different `kubelet` directory, please confirm `kubeletRootDir` in advance.
    For details, please refer to [Customize kubelet root directory](customized-kubelet.md).
 
