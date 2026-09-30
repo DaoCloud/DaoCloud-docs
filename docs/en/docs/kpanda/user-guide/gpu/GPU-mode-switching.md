@@ -32,5 +32,5 @@ This document explains how to switch between full GPU mode, virtualization mode,
 
     ![GPU Mode 3](../images/vgpuaddon3.png) -->
 
-3. After the node successfully switches GPU modes, you can [deploy applications using vGPU resources](vgpu_user.md).
+3. After the node successfully switches GPU modes, you can [deploy applications using vGPU resources](./nvidia/vgpu/vgpu_user.md). Note: there is a slight delay during the switch. Deploy applications only after the node labels are displayed correctly.
    **Note**: There may be a slight delay during the switching process. Please wait until the node label is correctly displayed before deploying applications.

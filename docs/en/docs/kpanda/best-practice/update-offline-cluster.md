@@ -71,8 +71,18 @@ Since the offline environment cannot connect to the internet, you need to prepar
 
     ```bash
     # Assuming the Kubean version is v0.13.9
-    docker run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.13.9
+    docker run \
+        -v $(pwd)/data:/data \
+        -v $(pwd)/manifest.yml:/manifest.yml \
+        -e ZONE=CN \
+        -e MODE=FULL \
+        ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.13.9
     ```
+
+    | Environment Variable | Description of Available Values | Default Value |
+    | ------ | --------- | ----- |
+    | ZONE | - `DEFAULT`: Download the offline resources from the default original address<br/> - `CN`: Download the offline resources from the mainland DaoCloud accelerator address | `DEFAULT` |
+    | MODE | - `INCR`: Build the offline resources only for the components specified in the configuration (that is, an incremental package)<br/> - `FULL`: Build the offline resources for the components specified in the configuration as well as other components required for cluster deployment (that is, a full package) | `INCR` |
 
     After the Docker service completes running, check the files in the __/data__ folder. The folder structure should look like this:
 

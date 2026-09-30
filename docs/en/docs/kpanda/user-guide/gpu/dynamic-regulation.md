@@ -1,72 +1,112 @@
-# GPU Scheduling Configuration (Binpack and Spread)
+# GPU Resource Dynamic Regulation
 
-This page introduces how to reduce GPU resource fragmentation and prevent single points of failure through
-Binpack and Spread when using NVIDIA vGPU, achieving advanced scheduling for vGPU. The DCE platform
-provides Binpack and Spread scheduling policies across two dimensions: clusters and workloads,
-meeting different usage requirements in various scenarios.
-
-## Prerequisites
-
-- GPU devices are correctly installed on the cluster nodes.
-- The [gpu-operator component](./nvidia/install_nvidia_driver_of_operator.md)
-  and [Nvidia-vgpu component](./nvidia/vgpu/vgpu_addon.md) are correctly installed in the cluster.
-- The NVIDIA-vGPU type exists in the GPU mode in the node list in the cluster.
+GPU resource dynamic adjustment is provided, allowing you to adjust already allocated vGPU resources in real time and dynamically without reloading, resetting, or restarting the entire running environment.
+This feature is designed to minimize the impact on business operations, ensure that your business can continue to run stably, and flexibly adjust GPU resources according to actual needs.
 
 ## Use Cases
 
-- Scheduling policy based on GPU dimension
+- **Elastic Resource Allocation**: When business needs or workloads change, GPU resources can be adjusted quickly to meet new performance requirements.
+- **Instant Response**: When facing sudden high loads or business needs, GPU resources can be increased rapidly without interrupting business operations, ensuring service stability and performance.
 
-    - Binpack: Prioritizes using the same GPU on a node, suitable for increasing GPU utilization and reducing resource fragmentation.
-    - Spread: Multiple Pods are distributed across different GPUs on nodes, suitable for high availability scenarios to avoid single card failures.
+## Procedure
 
-- Scheduling policy based on node dimension
+The following is a specific operation example showing how to dynamically adjust the computing power and memory of a vGPU without restarting the vGPU Pod:
 
-    - Binpack: Multiple Pods prioritize using the same node, suitable for increasing GPU utilization and reducing resource fragmentation.
-    - Spread: Multiple Pods are distributed across different nodes, suitable for high availability scenarios to avoid single node failures.
+### Create a vGPU Pod
 
-## Use Binpack and Spread at Cluster-Level
+First, use the following YAML to create a vGPU Pod, whose computing power is initially unlimited and whose memory limit is 200 MB.
 
-!!! note
+```yaml
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: gpu-burn-test
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gpu-burn-test
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: gpu-burn-test
+    spec:
+      containers:
+        - name: container-1
+          image: docker.io/chrstnhntschl/gpu_burn:latest
+          command:
+            - sleep
+            - '100000'
+          resources:
+            limits:
+              cpu: 1m
+              memory: 1Gi
+              nvidia.com/gpucores: '0'
+              nvidia.com/gpumem: '200'
+              nvidia.com/vgpu: '1'
+```
 
-    By default, workloads will follow the cluster-level Binpack and Spread. If a workload sets its
-    own Binpack and Spread scheduling policies that differ from the cluster, the workload will prioritize
-    its own scheduling policy.
+Check the GPU resource allocation in the `Pod` before adjustment:
 
-1. On the __Clusters__ page, select the cluster for which you want to adjust the Binpack and Spread scheduling
-   policies. Click the __┇__ icon on the right and select __GPU Scheduling Configuration__ from the dropdown list.
+![gpu-dynamic-regulation-before.png](./images/gpu-dynamic-regulation-before.png)
 
-    ![Cluster List](images/gpu-scheduler-clusterlist.png)
+### Dynamically Adjust the Computing Power
 
-2. Adjust the GPU scheduling configuration according to your business scenario, and click __OK__ to save.
+If you need to change the computing power to 10%, follow the steps below:
 
-    ![Binpack Configuration](images/gpu-scheduler-clusterrule.png)
+1. Enter the container:
 
-## Use Binpack and Spread at Workload-Level
+    ```bash
+    kubectl exec -it <pod-name> -- /bin/bash
+    ```
 
-!!! note
+1. Execute:
 
-    When the Binpack and Spread scheduling policies at the workload level conflict with the
-    cluster-level configuration, the workload-level configuration takes precedence.
+    ```bash
+    export CUDA_DEVICE_SM_LIMIT=10
+    ```
 
-Follow the steps below to create a deployment using an image and configure Binpack and Spread
-scheduling policies within the workload.
+1. Run directly in the current terminal:
 
-1. Click __Clusters__ in the left navigation bar, then click the name of the target cluster to
-   enter the __Cluster Details__ page.
+    ```bash
+    ./gpu_burn 60
+    ```
 
-    ![Cluster List](images/clusterlist1.png)
+    The program will take effect. Note that you must not exit the current Bash terminal.
 
-2. On the Cluster Details page, click __Workloads__ -> __Deployments__ in the left navigation bar,
-   then click the __Create by Image__ button in the upper right corner of the page.
+### Dynamically Adjust the Memory
 
-    ![Create Workload](images/gpu-createdeploy.png)
+If you need to change the memory to 300 MB, follow the steps below:
 
-3. Sequentially fill in the [Basic Information](../workloads/create-deployment.md#basic-information),
-   [Container Settings](../workloads/create-deployment.md#container-settings),
-   and in the __Container Configuration__ section, enable GPU configuration, selecting the GPU type as NVIDIA vGPU.
-   Click __Advanced Settings__, enable the Binpack / Spread scheduling policy, and adjust the GPU scheduling
-   configuration according to the business scenario. After configuration, click __Next__ to proceed to
-   [Service Settings](../workloads/create-deployment.md#service-settings)
-   and [Advanced Settings](../workloads/create-deployment.md#advanced-settings).
-   Finally, click __OK__ at the bottom right of the page to complete the creation.
+1. Enter the container:
 
+    ```bash
+    kubectl exec -it <pod-name> -- /bin/bash
+    ```
+
+1. Execute the following commands to set the memory limit:
+
+    ```bash
+    export CUDA_DEVICE_MEMORY_LIMIT_0=300m
+    export CUDA_DEVICE_MEMORY_SHARED_CACHE=/usr/local/vgpu/d.cache
+    ```
+
+    !!! note
+
+        Each time you change the memory size, the file name `d.cache` needs to be changed, for example to `a.cache`, `1.cache`, etc., to avoid cache conflicts.
+
+1. Run directly in the current terminal:
+
+    ```bash
+    ./gpu_burn 60
+    ```
+
+    The program will take effect. Likewise, you must not exit the current Bash terminal.
+
+Check the GPU resource allocation in the `Pod` after adjustment:
+
+![gpu-dynamic-regulation-after.png](./images/gpu-dynamic-regulation-after.png)
+
+Through the above steps, you can dynamically adjust the computing power and memory of a vGPU Pod without restarting it, thereby meeting business needs more flexibly and optimizing resource utilization.

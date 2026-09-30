@@ -9,7 +9,7 @@ In order to meet the customer's demand for building Kubernetes (K8s) clusters wi
 Kubean provides the capability to be compatible with lower versions and create K8s clusters with those versions.
 
 Currently, the supported versions for self-built worker clusters range from `1.26.0-v1.28`.
-Refer to the [DCE Cluster Version Support System](./cluster-version.md) for more information.
+Refer to the [DCE Cluster Version Support System](../user-guide/clusters/cluster-version.md) for more information.
 
 This article will demonstrate how to deploy a K8s cluster with a lower version.
 
@@ -24,7 +24,7 @@ This article will demonstrate how to deploy a K8s cluster with a lower version.
 
 - Prepare a management cluster where kubean resides, and the current environment has deployed the `podman`,
   `skopeo`, and `minio client` commands. If not supported, you can install the dependent components through
-  the script, [Installing Prerequisite Dependencies](../install-tools.md).
+  the script, [Installing Prerequisite Dependencies](../../install/install-tools.md).
 
 - Go to [kubean](https://github.com/kubean-io/kubean) to view the released
   [artifacts](https://kubean-io.github.io/kubean/en/releases/artifacts/), and choose the specific artifact
@@ -34,8 +34,10 @@ This article will demonstrate how to deploy a K8s cluster with a lower version.
     | Artifact Version | Cluster Range | DCE Support |
     | ----------- | ----------- | ------ |
     | release-2.21 | v1.23.0 ~ v1.25.6 | Supported since installer v0.14.0 |
-    | release-2.22 | v1.24.0 ~ v1.26.9 | Supported since installer v0.15.0 |
-    | release-2.23 | v1.25.0 ~ v1.27.7 | Expected to support from installer v0.16.0 |
+    | release-2.22 | v1.24.0 ~ v1.26.13 | Supported since installer v0.15.0 |
+    | release-2.23 | v1.25.0 ~ v1.27.10 | Supported since installer v0.16.0 |
+    | release-2.24 | v1.26.0 ~ v1.29.1 | Supported since installer v0.17.0 |
+    | release-2.25 | v1.27.0 ~ v1.29.5 | Supported since installer v0.20.0 |
 
     This article demonstrates the offline deployment of a K8s cluster with version 1.23.0 and the
     offline upgrade of a K8s cluster from version 1.23.0 to 1.24.0, so we choose the artifact `release-2.21`.

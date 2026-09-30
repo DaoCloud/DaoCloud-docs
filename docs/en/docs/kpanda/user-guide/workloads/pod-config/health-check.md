@@ -21,14 +21,15 @@ The configuration of LivenessProbe is similar to that of ReadinessProbe, the onl
 
 | Parameter | Description |
 | --------- | ----------- |
-| Path (Path) | The requested path for access. Such as: /healthz path in the example |
-| Port (Port) | Service listening port. Such as: port 8080 in the example |
-| protocol | access protocol, Http or Https |
-| Delay time (initialDelaySeconds) | Delay check time, in seconds, this setting is related to the normal startup time of business programs. For example, if it is set to 30, it means that the health check will start 30 seconds after the container is started, which is the time reserved for business program startup. |
+| URL path (Path) | The requested path for access, such as the __/healthz__ path in the example |
+| Port (Port) | Service listening port, such as port 8080 in the example |
+| Request address (requestPath) | The requested address for access, such as the 10.244.0.144 address in the example |
+| Protocol (scheme) | Access protocol, Http or Https |
+| Delay time (initialDelaySeconds) | Delay check time, in seconds. This setting is related to the normal startup time of business programs. For example, if it is set to 30, it means that the health check will start 30 seconds after the container is started, and this time is reserved for business program startup. The default is 0 seconds, and the minimum is 0. |
 | Timeout (timeoutSeconds) | Timeout, in seconds. For example, if it is set to 10, it indicates that the timeout waiting period for executing the health check is 10 seconds. If this time is exceeded, the health check will be regarded as a failure. If set to 0 or not set, the default timeout waiting time is 1 second. |
-| Timeout (timeoutSeconds) | Timeout, in seconds. For example, if it is set to 10, it indicates that the timeout waiting period for executing the health check is 10 seconds. If this time is exceeded, the health check will be regarded as a failure. If set to 0 or not set, the default timeout waiting time is 1 second. |
-| SuccessThreshold (successThreshold) | The minimum number of consecutive successes that are considered successful after a probe fails. The default value is 1, and the minimum value is 1. This value must be 1 for liveness and startup probes. |
-| Maximum number of failures (failureThreshold) | The number of retries when the probe fails. Giving up in case of a liveness probe means restarting the container. Pods that are abandoned due to readiness probes are marked as not ready. The default value is 3. The minimum value is 1. |
+| Check interval (checkInterval) | The time interval for executing probes, in seconds. The default is 10 seconds. The minimum value is 1. |
+| Success threshold (successThreshold) | The minimum number of consecutive successes that are considered successful after a probe fails. The default value is 1, and the minimum value is 1. This value must be 1 for liveness and startup probes. |
+| Failure threshold (failureThreshold) | The number of retries when the probe fails. Giving up in case of a liveness probe means restarting the container. Pods that are abandoned due to readiness probes are marked as not ready. The default value is 3. The minimum value is 1. |
 
 ### Check with HTTP GET request
 
@@ -66,9 +67,13 @@ According to the set rules, Kubelet sends an HTTP GET request to the service run
 
 | Parameter | Description |
 | --------- | ----------- |
-| Port (Port) | Service listening port. Such as: port 8080 in the example |
-| Delay time (initialDelaySeconds) | Delay check time, in seconds, this setting is related to the normal startup time of business programs. For example, if it is set to 30, it means that the health check will start 30 seconds after the container is started, which is the time reserved for business program startup. |
+| Port (Port) | Service listening port, such as port 8080 in the example |
+| Request address (requestPath) | The requested address for access, such as the 10.244.0.144 address in the example |
+| Delay time (initialDelaySeconds) | Delay check time, in seconds. This setting is related to the normal startup time of business programs. For example, if it is set to 30, it means that the health check will start 30 seconds after the container is started, and this time is reserved for business program startup. |
 | Timeout (timeoutSeconds) | Timeout, in seconds. For example, if it is set to 10, it indicates that the timeout waiting period for executing the health check is 10 seconds. If this time is exceeded, the health check will be regarded as a failure. If set to 0 or not set, the default timeout waiting time is 1 second. |
+| Check interval (checkInterval) | The time interval for executing probes, in seconds. The default is 10 seconds. The minimum value is 1. |
+| Success threshold (successThreshold) | The minimum number of consecutive successes that are considered successful after a probe fails. The default value is 1, and the minimum value is 1. This value must be 1 for liveness and startup probes. |
+| Failure threshold (failureThreshold) | The number of retries when the probe fails. Giving up in case of a liveness probe means restarting the container. Pods that are abandoned due to readiness probes are marked as not ready. The default value is 3. The minimum value is 1. |
 
 For a container that provides TCP communication services, based on this configuration, the cluster establishes a TCP connection to the container according to the set rules. If the connection is successful, it proves that the detection is successful, otherwise the detection fails. If you choose the TCP port detection method, you must specify the port that the container listens to.
 

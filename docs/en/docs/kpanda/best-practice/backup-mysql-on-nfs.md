@@ -543,9 +543,9 @@ Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) doc
 1. Add a unique label, __backup=mysql__ , to the MySQL application and PVC data. This will facilitate resource selection during backup.
 
     ```
-    kubectl label deploy mysql-deploy backup=mysql #为 __mysql-deploy__ 负载添加标签
-    kubectl label pod mysql-deploy-5d6f94cb5c-gkrks backup=mysql #为 mysql pod 添加标签
-    kubectl label pvc mydata backup=mysql #为 mysql 的 pvc 添加标签
+    kubectl label deploy mysql-deploy backup=mysql # Add a label to the __mysql-deploy__ workload
+    kubectl label pod mysql-deploy-5d6f94cb5c-gkrks backup=mysql # Add a label to the mysql pod
+    kubectl label pvc mydata backup=mysql # Add a label to the mysql PVC
     ```
 
 2. Refer to the steps described in [Application Backup](../user-guide/backup/deployment.md#application-backup) and the parameters below to create an application backup.
@@ -585,15 +585,15 @@ Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) doc
 
 4. Refresh the backup plan list and wait for the backup plan execution to complete.
 
-## 验证数据是否成功恢复
+## Verify Whether the Data Is Restored Successfully
 
-1. 登录 __recovery-cluster__ 集群的控制节点，查看 __mysql-deploy__ 负载是否已经成功备份到当前集群。
+1. Log in to the control node of the __recovery-cluster__ cluster and check whether the __mysql-deploy__ workload has been successfully restored to the current cluster.
 
     ```bash
     kubectl get pod
     ```
 
-    Expected output如下：
+    The expected output is as follows:
     
     ```
     NAME                               READY   STATUS    RESTARTS   AGE
@@ -606,7 +606,7 @@ Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) doc
     kubectl exec deploy/mysql-deploy -- mysql -uroot -pdangerous -e "SELECT * FROM test.users;"
     ```
 
-    Expected output如下：
+    The expected output is as follows:
     ```
     [root@g-master1 ~]# kubectl exec deploy/mysql-deploy -- mysql -uroot -pdangerous -e "SELECT * FROM test.users;"
     mysql: [Warning] Using a password on the command line interface can be insecure.

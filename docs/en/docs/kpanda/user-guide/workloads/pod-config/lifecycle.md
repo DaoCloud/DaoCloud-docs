@@ -7,13 +7,13 @@ Date: 2024-10-15
 
 Pods follow a predefined lifecycle, starting in the __Pending__ phase and entering the __Running__ state if at least one container in the Pod starts normally. If any container in the Pod ends in a failed state, the state becomes __Failed__ . The following __phase__ field values ​​indicate which phase of the lifecycle a Pod is in.
 
-| Value | Description |
-| ----- | ----------- |
-| __Pending__ | The Pod has been accepted by the system, but one or more containers have not yet been created or run. This phase includes waiting for the pod to be scheduled and downloading the image over the network. |
-| __Running__ | The Pod has been bound to a node, and all containers in the Pod have been created. At least one container is still running, or in the process of starting or restarting. |
-| __Succeeded__ | All containers in the Pod were successfully terminated and will not be restarted. |
-| __Failed__ | All containers in the Pod have terminated, and at least one container terminated due to failure. That is, the container exited with a non-zero status or was terminated by the system. |
-| __Unknown__ | The status of the Pod cannot be obtained for some reason, usually due to a communication failure with the host where the Pod resides. |
+Value | Description
+:-----|:---
+__Pending__ | The Pod has been accepted by the system, but one or more containers have not yet been created or run. This phase includes waiting for the pod to be scheduled and downloading the image over the network.
+__Running__ | The Pod has been bound to a node, and all containers in the Pod have been created. At least one container is still running, or in the process of starting or restarting.
+__Succeeded__ | All containers in the Pod were successfully terminated and will not be restarted.
+__Failed__ | All containers in the Pod have terminated, and at least one container terminated due to failure. That is, the container exited with a non-zero status or was terminated by the system.
+__Unknown__ | The status of the Pod cannot be obtained for some reason, usually due to a communication failure with the host where the Pod resides.
 
 When creating a workload in DCE container management, images are usually used to specify the running environment in the container. By default, when building an image, the __Entrypoint__ and __CMD__ fields can be used to define the commands and parameters to be executed when the container is running. If you need to change the commands and parameters of the container image before starting, after starting, and before stopping, you can override the default commands and parameters in the image by setting the lifecycle event commands and parameters of the container.
 

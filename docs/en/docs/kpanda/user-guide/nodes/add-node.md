@@ -28,3 +28,10 @@ Only clusters [created through the container management module](../clusters/crea
 !!! note
 
     Accessing the node takes about 20 minutes, please be patient.
+
+## References
+
+- [Scaling Controller Nodes in a Worker Cluster](../../best-practice/add-master-node.md)
+- [How to Add Heterogeneous Nodes to a Worker Cluster](../../best-practice/multi-arch.md)
+- [Scaling the Worker Nodes of the Global Service Cluster](../../best-practice/add-worker-node-on-global.md)
+- [Replace the first master node of the worker cluster](../../best-practice/replace-first-master-node.md)

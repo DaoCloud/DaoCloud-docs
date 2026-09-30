@@ -58,7 +58,7 @@ This page describes the GPU and OS compatibility matrix for DCE.
 
 | Vendor & Type | Supported GPU Models | Compatible OS (Online) | Recommended Kernel | Recommended OS & Kernel | Installation Guide |
 | ------------- | ------------------ | ------- | ----- | ------- | -------- |
-| Metax (Full Card / vGPU) | Xiyun C500 | | | | [Metax GPU Installation Guide](./metax/usemetax.md) |
+| Metax (Full Card / vGPU) | Xiyun C500 | | | | [Metax GPU Installation Guide](./metax/online-metax.md) |
 
 ## Enflame GPU
 
@@ -75,3 +75,11 @@ This page describes the GPU and OS compatibility matrix for DCE.
 | Birentech (Full Card) | Biren 110E | Ubuntu 22.04 | | | |
 | | Biren 106M | | | | |
 | | Biren 106B, 106C | | | | |
+
+## Cambricon (MLU)
+
+| Vendor & Type | Supported GPU Models | Compatible OS (Online) | Recommended Kernel | Recommended OS & Kernel | Installation Guide |
+| :--: | :--: | :--: | :--: | :--: | :--: |
+| Cambricon MLU (Full Card) | To be added | | | | |
+| MLU Share | | | | | |
+| MLU VGPU | | | | | |

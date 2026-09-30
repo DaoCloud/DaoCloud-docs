@@ -70,6 +70,28 @@ Follow the steps below to update the Helm app.
 
      
 
+### Note:
+
+If the update takes a long time, it may be caused by resource limits. You can adjust the Helm job resource quota through the following steps:
+
+1. Check the resources occupied by updating this Helm app.
+
+    ```bash
+    # Get the job name for updating the Helm app
+    kubectl -n default get job
+    
+    # Check the resources occupied by this job that updates the Helm app
+    kubectl -n zestu-system get job **replace with jobname** -oyaml|grep resources -A 6
+    ```
+
+2. Adjust the resource quota for the Helm job.
+
+    Go to __Cluster Details__ -> __Cluster Operations__ -> __Cluster Settings__ -> __Advanced Settings__ , adjust the Helm job resource quota, and click __OK__ to save.
+    
+    ![Update Helm App](../images/updatehelm.png)
+
+Note: After the Helm app update is complete, you can change the resource quota back to the default value to reduce resource costs.
+
 ## View Helm operation records
 
 Every installation, update, and deletion of Helm apps has detailed operation records and logs for viewing.

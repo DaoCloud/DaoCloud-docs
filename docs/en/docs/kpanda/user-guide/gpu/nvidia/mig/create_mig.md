@@ -19,7 +19,7 @@ For more details, refer to the [NVIDIA GPU Card Usage Modes](../index.md).
   ([NVIDIA H100](https://www.nvidia.com/en-us/data-center/h100/),
   [A100](https://www.nvidia.com/en-us/data-center/a100/),
   and [A30](https://www.nvidia.com/en-us/data-center/products/a30-gpu/) Tensor Core GPUs).
-  For more information, see the [GPU Support Matrix](gpu_matrix.md).
+  For more information, see the [GPU Support Matrix](../../gpu_matrix.md).
 - All GPUs on the nodes must belong to the same product line (e.g., A100-SXM-40GB).
 
 ## Install GPU Operator Addon
