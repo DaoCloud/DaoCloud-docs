@@ -147,7 +147,7 @@ Perform the following steps on any local node where __kubelet__ is installed:
 1. Configure kubelet token.
 
     ```bash
-    kubectl config set-credentials rancher-rke --token= __rancher-rke-secret__ 里面的 token 信息
+    kubectl config set-credentials rancher-rke --token= the token in __rancher-rke-secret__
     ```
 
     For example,
@@ -216,6 +216,7 @@ Perform the following steps on any local node where __kubelet__ is installed:
       - name: eks-admin
       user:
         token: eyJhbGciOiJSUzI1NiIsImtpZCI6ImcxTjJwNkktWm5IbmRJU1RFRExvdWY1TGFWVUtGQ3VIejFtNlFQcUNFalEifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2V
+    ```
 
 ### Step 3: Connect the cluster in the DCE Interface
 

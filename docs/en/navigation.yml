@@ -228,9 +228,7 @@ nav:
               - Intro:
                   - What is Container Management: kpanda/intro/index.md
                   - Features: kpanda/intro/features.md
-                  - Benefits: kpanda/intro/benefits.md
-                  - Use Cases: kpanda/intro/scenarios.md
-                  - Concepts: kpanda/intro/concepts.md
+                  - Scenarios and Advantages: kpanda/intro/scenarios.md
                   - Release Notes: kpanda/intro/release-notes.md
                   - Offline Upgrade: kpanda/intro/offline-upgrade.md
                   - FAQs: kpanda/intro/faq.md
@@ -313,10 +311,12 @@ nav:
                   - Use ConfigMap: kpanda/user-guide/configmaps-secrets/use-configmap.md
                   - Create Secret: kpanda/user-guide/configmaps-secrets/create-secret.md
                   - Use Secret: kpanda/user-guide/configmaps-secrets/use-secret.md
+                  - ConfigMap/Secret Hot Reloading: kpanda/user-guide/configmaps-secrets/configmap-hot-loading.md
               - Operation and Maintenance:
                   - Recent Operations: kpanda/user-guide/clusterops/latest-operations.md
                   - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
                   - Cluster Settings: kpanda/user-guide/clusterops/cluster-settings.md
+                  - Cluster Dynamic Resource Oversubscription: kpanda/user-guide/clusterops/cluster-oversold.md
               - Cluster Inspection:
                   - Intro: kpanda/user-guide/inspect/index.md
                   - Create Inspection Settings: kpanda/user-guide/inspect/config.md
@@ -346,6 +346,7 @@ nav:
                   - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
                   - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
                   - Add RBAC Rules to System Roles: kpanda/user-guide/permissions/custom-kpanda-role.md 
+                  - Remove RBAC Rules from System Roles: kpanda/user-guide/permissions/reduce-kpanda-role.md
               - GPU Management:
                   - Intro: kpanda/user-guide/gpu/index.md
                   - GPU Matrix: kpanda/user-guide/gpu/gpu_matrix.md
@@ -361,6 +362,7 @@ nav:
                       - NVIDIA GPU Full Card: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU Mode:
                           - Install vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
+                          - Install Commercial vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/busi-hami.md
                           - Use NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
                           - Build vGPU Overprovision Image: kpanda/user-guide/gpu/nvidia/vgpu/hami.md
                           - How a Cluster can Manage a Specific GPU: kpanda/user-guide/gpu/nvidia/vgpu/manage_somegpu.md
@@ -412,6 +414,9 @@ nav:
                   - Build Dify LLM Platform: kpanda/best-practice/dify-use.md
                   - HAMi Enterprise Installation: kpanda/best-practice/hami-enterprise-installation.md
                   - K3s Edge Cluster Management: kpanda/best-practice/k3s-lcm.md
+                  - Co-located Workloads:
+                      - Intro: kpanda/best-practice/co-located/index.md
+                      - Koordinator Offline Installation: kpanda/best-practice/co-located/install.md
                   - Limit Docker Disk Usage: kpanda/best-practice/limit-disk-usage-docker.md
                   - Max Pods Running on a Physical Machine: kpanda/best-practice/max-pod.md
           - Multicloud Management:

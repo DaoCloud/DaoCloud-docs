@@ -22,8 +22,8 @@ The steps to add/delete tags and annotations are as follows:
 
 2. Click __Nodes__ on the left navigation bar, click the __┇__ operation icon on the right side of the node, and click __Edit Labels__ or __Edit Annotations__ .
 
-    ![暂停调度](../images/labels01.png)
+    ![Suspend Scheduling](../images/labels01.png)
 
 3. Click __➕ Add__ to add tags or annotations, click __X__ to delete tags or annotations, and finally click __OK__ .
 
-    ![节点管理](../images/labels02.png)
+    ![Node Management](../images/labels02.png)

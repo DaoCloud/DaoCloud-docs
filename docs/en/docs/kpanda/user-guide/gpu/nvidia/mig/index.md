@@ -36,7 +36,7 @@ MIG allows multiple vGPUs (and virtual machines) to run in parallel on a single 
 
 The following diagram provides an overview of MIG, illustrating how it virtualizes one physical GPU card into seven GPU instances that can be used by multiple users.
 
-
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mig_overview.png)
 
 ## Important Concepts
 
@@ -45,21 +45,34 @@ The following diagram provides an overview of MIG, illustrating how it virtualiz
 * __GPU SM Slice__ : The smallest computational unit of SMs on a GPU. When configuring in MIG mode, the GPU SM slice is approximately one-seventh of the total available SMs in the GPU.
 * __GPU Slice__ : The GPU slice represents the smallest portion of the GPU, consisting of a single GPU memory slice and a single GPU SM slice combined together.
 * __GPU Instance__ (GI): A GPU instance is the combination of a GPU slice and GPU engines (DMA, NVDEC, etc.). Anything within a GPU instance always shares all GPU memory slices and other GPU engines, but its SM slice can be further subdivided into Compute Instances (CIs). A GPU instance provides memory QoS. Each GPU slice contains dedicated GPU memory resources, limiting available capacity and bandwidth while providing memory QoS. Each GPU memory slice gets one-eighth of the total GPU memory resources, and each GPU SM slice gets one-seventh of the total SM count.
-* __Compute Instance__ (CI): A Compute Instance represents the smallest computational unit within a GPU instance. It consists of a subset of SMs, along with dedicated register files, shared memory, and other resources. Each CI has its own CUDA context and can run independent CUDA kernels. The number of CIs in a GPU instance depends on the number of available SMs and the configuration chosen during MIG setup.
-* __Instance Slice__ : An Instance Slice represents a single CI within a GPU instance. It is the combination of a subset of SMs and a portion of the GPU memory slice. Each Instance Slice provides isolation and resource allocation for individual applications or users running on the GPU instance.
+* __Compute Instance__ (CI): The compute slice of a GPU instance can be further subdivided into multiple Compute Instances (CIs), where CIs share the engines and memory of the parent GI, but each CI has dedicated SM resources.
 
-## Key Benefits of MIG
+### GPU Instance (GI)
 
-- **Resource Sharing**: MIG allows a single physical GPU to be divided into multiple GPU instances, providing efficient sharing of GPU resources among different users or applications. This maximizes GPU utilization and enables improved performance isolation.
+This section describes how to create various partitions on a GPU. It uses A100-40GB as an example to demonstrate how to partition a single physical GPU card.
 
-- **Fine-Grained Resource Allocation**: With MIG, GPU resources can be allocated at a finer granularity, allowing for more precise partitioning and allocation of compute power and memory capacity.
+GPU partitioning is done using memory slices, so an A100-40GB GPU can be considered to have 8x5GB memory slices and 7 GPU SM slices, as shown in the figure below, which displays the memory slices available on the A100.
 
-- **Improved Performance Isolation**: Each MIG instance operates independently with its dedicated resources, ensuring predictable throughput and latency for individual users or applications. This improves performance isolation and prevents interference between different workloads running on the same GPU.
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mig_7m.png)
 
-- **Enhanced Security and Fault Isolation**: MIG provides better security and fault isolation by ensuring that each user or application has its dedicated GPU resources. This prevents unauthorized access to data and mitigates the impact of faults or errors in one instance on others.
+As described above, creating a GPU Instance (GI) requires combining a certain number of memory slices with a certain number of compute slices.
+In the figure below, one 5GB memory slice is combined with 1 compute slice to create the __1g.5gb__ GI profile:
 
-- **Increased Scalability**: MIG enables the simultaneous usage of GPU resources by multiple users or applications, increasing system scalability and accommodating the needs of various workloads.
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mig_1g5gb.png)
 
-- **Efficient Containerization**: By using MIG in containerized environments, GPU resources can be effectively allocated to different containers, improving performance isolation and resource utilization.
+Likewise, 4x5GB memory slices can be combined with 4x1 compute slices to create the __4g.20gb__ GI profile:
 
-Overall, MIG offers significant advantages in terms of resource sharing, fine-grained allocation, performance isolation, security, scalability, and containerization, making it a valuable feature for various GPU computing scenarios.
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mig_4g20gb.png)
+
+### Compute Instance (CI)
+
+The compute slice of a GPU Instance (GI) can be further subdivided into multiple Compute Instances (CIs), where CIs share the engines and memory of the parent GI, but each CI has dedicated SM resources. Using the same __4g.20gb__ example above, you can create a CI to use only the first compute slice, with the __1c.4g.20gb__ compute profile, as shown in the blue part of the figure below:
+
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mig_1c.4g.20gb.png)
+
+In this case, 4 different CIs can be created by selecting any of the compute slices. You can also combine two compute slices together to create the __2c.4g.20gb__ compute profile:
+
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mig2c.4g.20gb.png)
+
+In addition, you can combine 3 compute slices to create a compute profile, or combine all 4 compute slices to create the __3c.4g.20gb__ and __4c.4g.20gb__ compute profiles.
+When all 4 compute slices are combined, the profile is simply referred to as __4g.20gb__ .

@@ -39,3 +39,8 @@ In DCE Container Management module, you can integrate a cluster of the following
 !!! note
 
     The status of the newly integrated cluster is __Integrating__ , which will become __Running__ after the integration succeeds.
+
+## References
+
+- [How to Add Heterogeneous Nodes to a Worker Cluster](../../best-practice/multi-arch.md)
+- [Limited Scenario Migration from DCE 4.0 to DCE](../../best-practice/dce4-5-migration.md)

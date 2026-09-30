@@ -10,6 +10,34 @@ understand the evolution path and feature changes from release to release.
 
 *[kpanda]: Internal development codename for DaoCloud container management
 
+## 2026-08-30
+
+### v0.50.0
+
+- **Added** support for the OCI format in Helm repositories.
+- **Added** display of the allocatable GPU computing power and memory in the GPU card list.
+- **Added** timeout configuration for Helm.
+  
+## 2026-07-30
+
+### v0.49.0
+
+- **Added** support for Alibaba PPU heterogeneous GPU cards.
+- **Added** upgrade of the HAMi community edition to v2.9.0.
+- **Added** support for connecting etcd backup to HTTPS object storage.
+- **Improved** added GPU usage and memory usage columns to the namespace list page.
+- **Improved** specified GPU cards require insight-agent to be installed.
+- **Improved** the node check timeout.
+
+## 2026-06-30
+
+### v0.48.0
+
+- **Added** support for Alibaba PPU heterogeneous GPU cards.
+- **Added** upgrade of the HAMi community edition to v2.9.0.
+- **Added** support for the Gateway API.
+- **Improved** the remaining allocatable GPU logic in conjunction with modules such as Global Management.
+
 ## 2026-03-30
 
 ### v0.46.0
