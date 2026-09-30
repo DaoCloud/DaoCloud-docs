@@ -38,7 +38,7 @@ We have crafted the following video tutorials for service mesh, any kind of feed
 
 ## Create mesh
 
-See [Create mesh](../mspider/user-guide/service-mesh/README.md) for reference.
+See [Create mesh](../mspider/user-guide/service-mesh/index.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-mesh.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/mspider-create-mesh.png"></video>

@@ -9,7 +9,7 @@ hide:
 
 The DCE service mesh supports three types of meshes: hosted mesh, dedicated mesh, and External mesh. The user interface provides the following features for each type of mesh:
 
-## Mesh Management
+**Mesh Management**
 
 | Features | Hosted mesh | Dedicated mesh | External mesh |
 | -- | ------ | ------ | ------ |
@@ -17,20 +17,20 @@ The DCE service mesh supports three types of meshes: hosted mesh, dedicated mesh
 | Configure | √ | √ | √ |
 | Delete | √ | √ | √ |
 
-## Mesh Overview
+**Mesh Overview**
 
 | Features | Hosted mesh | Dedicated mesh | External mesh |
 | -- | ------ | ------ | ------ |
 | Overview | √ | √ | √ |
 
-## Cluster Management
+**Cluster Management**
 
 | Features | Hosted mesh | Dedicated mesh | External mesh |
 | -- | ------ | ------ | ------ |
 | Integrate | √ | × | × |
 | Remove | √ | × | × |
 
-## Service Management
+**Service Management**
 
 | Features | Hosted mesh | Dedicated mesh | External mesh |
 | ------------------ | ------ | ------ | ------ |
@@ -39,7 +39,7 @@ The DCE service mesh supports three types of meshes: hosted mesh, dedicated mesh
 | Edit Service | √ | √ | √ |
 | Manage Service Entry (add, delete, modify, query) | √ | √ | √ |
 
-## Traffic Management
+**Traffic Management**
 
 | Features | Hosted mesh | Dedicated mesh | External mesh |
 | ------------------ | ------ | ------ | ------ |
@@ -47,7 +47,7 @@ The DCE service mesh supports three types of meshes: hosted mesh, dedicated mesh
 | Destination Rules (add, delete, modify, check) | √ | √ | √ |
 | Gateway Rules (add, delete, modify, check) | √ | √ | √ |
 
-## Security Governance
+**Security Governance**
 
 | Features | Hosted mesh | Dedicated mesh | External mesh |
 | ------------------------ | -------- | -------- | ------ |
@@ -55,14 +55,14 @@ The DCE service mesh supports three types of meshes: hosted mesh, dedicated mesh
 | Request Authentication (add, delete, modify, query) | √ | √ | √ |
 | Authorization Policy (add, delete, modify, query) | √ | √ | √ |
 
-## Traffic Monitor
+**Traffic Monitor**
 
 | Features | Hosted mesh | Dedicated mesh | External mesh |
 | -- | ------ | ------ | ------ |
 | Topology | √ | √ | √ |
 | Charts | √ | √ | √ |
 
-## Sidecar Management
+**Sidecar Management**
 
 | Features | Hosted mesh | Dedicated mesh | External mesh |
 | -- | ------ | ------ | ------ |
@@ -70,7 +70,7 @@ The DCE service mesh supports three types of meshes: hosted mesh, dedicated mesh
 | Uninstall | √ | √ | √ |
 | Resource Limit | √ | √ | × |
 
-## Mesh Gateway
+**Mesh Gateway**
 
 | Features | Hosted mesh | Dedicated mesh | External mesh |
 | -- | ------ | ------ | ------ |
@@ -78,7 +78,7 @@ The DCE service mesh supports three types of meshes: hosted mesh, dedicated mesh
 | Delete | √ | √ | × |
 | Settings | √ | √ | × |
 
-## Istio Resource Management
+**Istio Resource Management**
 
 | Features | Hosted mesh | Dedicated mesh | External mesh |
 | -- | ------ | ------ | ------ |

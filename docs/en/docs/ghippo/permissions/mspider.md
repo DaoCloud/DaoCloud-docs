@@ -24,10 +24,10 @@ The specific permissions for each role are shown in the following table.
 
 | Menu Object | Action | Admin | Workspace Admin | Workspace Editor | Workspace Viewer |
 | ----------- | ------ | ----- | --------------- | ---------------- | ---------------- |
-| Service Mesh List | [Create Mesh](../../mspider/user-guide/service-mesh/README.md) | &check; | &cross; | &cross; | &cross; |
+| Service Mesh List | [Create Mesh](../../mspider/user-guide/service-mesh/index.md) | &check; | &cross; | &cross; | &cross; |
 | | Edit Mesh | &check; | &check; | &cross; | &cross; |
 | | [Delete Mesh](../../mspider/user-guide/service-mesh/delete.md) | &check; | &cross; | &cross; | &cross; |
-| | [View Mesh](../../mspider/user-guide/service-mesh/README.md) | &check; | &check; | &check; | &check; |
+| | [View Mesh](../../mspider/user-guide/service-mesh/index.md) | &check; | &check; | &check; | &check; |
 | Mesh Overview | View | &check; | &check; | &check; | &check; |
 | Service List | View | &check; | &check; | &check; | &check; |
 | | Create VM | &check; | &check; | &check; | &cross; |

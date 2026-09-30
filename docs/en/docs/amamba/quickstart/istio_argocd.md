@@ -16,7 +16,7 @@ Scenario: How can customers deploy Istio-related resources in a Hosted Mesh work
 
 ### Steps
 
-1. Click **Service Mesh** and refer to [Create a Hosted Mesh](../../mspider/user-guide/service-mesh/README.md).
+1. Click **Service Mesh** and refer to [Create a Hosted Mesh](../../mspider/user-guide/service-mesh/index.md).
 
 2. Select **Load Balancer** as the Entry of Control Plane, and keep other settings as default.
 
@@ -123,7 +123,7 @@ dubbo3-consumer will forward the request to dubbo3-provider.
 3. After creating application, manually **synchronize** the application resources.
 
 4. Go to the service mesh and check the vs, dr, and gateway resources synchronized in the worker cluster under the hosted mesh. 
-   If not found, check if the notes in the **[Create a Hosted Mesh and Manage the Worker Cluster](../../mspider/user-guide/service-mesh/README.md)** section are configured correctly.
+   If not found, check if the notes in the **[Create a Hosted Mesh and Manage the Worker Cluster](../../mspider/user-guide/service-mesh/index.md)** section are configured correctly.
 
 5. By default, the load balancer of the worker cluster exposes port `80`, so you need to modify the gateway port of the service 
    to 80 in the worker cluster to access the service.

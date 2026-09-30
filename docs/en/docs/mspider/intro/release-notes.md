@@ -168,14 +168,9 @@ Since Kubernetes does not allow updating `Deployment` selectorLabels, it is nece
 
 ### v0.29.0
 
-#### Features
-
 - **Added** support for managed meshes to quickly synchronize traffic management policies (VS, DR, Gateway)
   of worker clusters to the control plane and provide online viewing capabilities.
 - **Added** a feature to inject waypoint and ztunnel sidecar components under the Ambient Mesh mode.
-
-#### Fixes
-
 - **Fixed** an issue with the connectivity detection feature of the mesh network in offline environments due to missing necessary images.
 - **Fixed** an issue of missing `GatewayAPI` Custom Resource Definitions (CRD) in Ambient Mesh.
 - **Fixed** the calculation issue of waypoint injection status that did not account for namespace dimensions.
@@ -235,14 +230,9 @@ Since Kubernetes does not allow updating `Deployment` selectorLabels, it is nece
 
 ### v0.25.0
 
-#### Features
-
 - **Added** built-in mesh alert rules, and observability alert configurations can be directly used.
 - **Added** compatibility with `Istio` versions `v1.19.9`,`v1.20.5`, `v1.21.1`.
 - **Added** a new field `.status.replicas` to `WorkloadShadow` in `OpenAPI` to record the total number of `Pods` at runtime.
-
-#### Fixes
-
 - **Fixed** an security issue with the low version of `xz` and upgraded `cloudtty` image to version `v0.7.1`.
 - **Fixed** an issue of changes to `Pod` not triggering workload status changes in `Ambient` mode.
 - **Fixed** an issue of incorrect display of topology nodes due to lack of permissions.
@@ -269,12 +259,17 @@ Since Kubernetes does not allow updating `Deployment` selectorLabels, it is nece
 - **Fixed** double metric data issues and inaccurate client metrics.
 - **Fixed** an issue where `envoy filter` is needed for custom metric monitoring in proprietary meshes with `Istio` version lower than `1.20`.
 
-### 2024-01-30
+## 2024-01-30
 
-#### v0.23.0
+### v0.23.0
+
+#### Features
 
 - **Added** monitoring dashboards for service and workload monitoring panels, including traffic distribution for upstream and downstream.
 - **Added** compatibility with `Istio` versions `v1.18.7`, `v1.19.6`, `v1.20.2`.
+
+#### Fixes
+
 - **Fixed** an issue where `Consumer` services could not be identified as `Dubbo` services when using `Dubbo` and `Zookeeper` simultaneously.
 - **Fixed** an issue with retrieval of valid `Istio` version list not being filtered based on cluster version.
 - **Fixed** an issue with inability to enable multi-cloud connectivity with `Istio` `v1.20`.
@@ -512,7 +507,7 @@ Since Kubernetes does not allow updating `Deployment` selectorLabels, it is nece
 
 ## 2023-05-31
 
-### v0.16.1
+### v0.16.2
 
 #### Features
 

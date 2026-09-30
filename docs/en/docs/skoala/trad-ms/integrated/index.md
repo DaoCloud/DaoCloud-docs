@@ -27,7 +27,7 @@ To integrate a registry, follow these steps:
 
         - If your expected cluster doesn't appear in the drop-down list, go to the Container Management module to [Integrate Cluster](../../../kpanda/user-guide/clusters/integrate-cluster) or [Create Cluster]( ../../../kpanda/user-guide/clusters/create-cluster.md).
 
-        - If your expected mesh doesn't appear in the drop-down list, go to the Service Mesh module to [Create Mesh](../../../mspider/user-guide/service-mesh/README.md).
+        - If your expected mesh doesn't appear in the drop-down list, go to the Service Mesh module to [Create Mesh](../../../mspider/user-guide/service-mesh/index.md).
 
             ![Integrate Mesh/Kubernetes](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate02.png)
 
@@ -41,7 +41,7 @@ To integrate a registry, follow these steps:
 
 Update Nacos/Zookeeper/Eureka registries with this guide.
 
-If you want to update Kubernetes/Service Mesh registries, you can either remove it and reintegrate another one, or you can [update the Kubernetes cluster](../../../kpanda/user-guide/clusters/upgrade-cluster.md)/[update the mesh](../../../mspider/user-guide/service-mesh/README.md).
+If you want to update Kubernetes/Service Mesh registries, you can either remove it and reintegrate another one, or you can [update the Kubernetes cluster](../../../kpanda/user-guide/clusters/upgrade-cluster.md)/[update the mesh](../../../mspider/user-guide/service-mesh/index.md).
 
 1. In the `Registry List` find registry you need to update, on the right side click __┇__ and select __Edit__ .
 
