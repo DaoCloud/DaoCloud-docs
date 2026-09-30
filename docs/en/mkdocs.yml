@@ -139,6 +139,9 @@ plugins:
         "video.md": "videos/index.md"
         "baize.md": "baize/intro/index.md"
 
+        # baize page renames
+        "baize/best-practice/deploy-nfs-in-worker.md": "baize/best-practice/index.md"
+
   # - git-revision-date: # Display the last update date on the bottom of each page, install with 'pip install mkdocs-git-revision-date-plugin'
   #     enabled_if_env: "CI"
   # - git-revision-date-localized: # Add localized creation and update dates on the bottom of each page (disabled: slows build)

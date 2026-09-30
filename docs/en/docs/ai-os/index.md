@@ -68,7 +68,7 @@ hide:
     * [Install AI Lab Components](../baize/intro/install.md)
     * [Developer Console - Quick Start](../baize/developer/quick-start.md)
     * [Operations Management](../baize/oam/index.md)
-    * [Deploy NFS for Dataset Preloading](../baize/best-practice/deploy-nfs-in-worker.md)
+    * [Deploy NFS for Dataset Preloading](../baize/best-practice/index.md)
     * [Fine-Tune the ChatGLM3 Model with AI Lab](../baize/best-practice/finetunel-llm.md)
 
 * :octicons-ai-model-16:{ .lg .middle } **Large Model Service Platform: Enterprise AI Services**

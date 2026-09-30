@@ -39,7 +39,7 @@ The directory structure in this example is as follows:
 
 Currently, form-based creation is supported, allowing you to create services with field prompts in the interface.
 
-![点击创建](../../images/triton-infer-0.png)
+![Click to create](../../images/triton-infer-0.png)
 
 ### Configure Model Path
 
@@ -47,7 +47,7 @@ The model path `model-repo/mnist-cnn/1/model.pt` must be consistent with the dir
 
 ## Model Configuration
 
-![点击创建](../../images/triton-infer-1.png)
+![Click to create](../../images/triton-infer-1.png)
 
 ### Configure Input and Output Parameters
 
@@ -61,7 +61,7 @@ You can import the environment created in [Manage Python Environment Dependencie
 
 ## Advanced Settings
 
-![点击创建](../../images/triton-infer-2.png)
+![Click to create](../../images/triton-infer-2.png)
 
 ### Configure Authentication Policy
 
@@ -73,7 +73,7 @@ Supports automated affinity scheduling based on GPU resources and other node con
 
 ## Access
 
-![点击创建](../../images/triton-infer-3.png)
+![Click to create](../../images/triton-infer-3.png)
 
 <!-- The model inference service provides multiple access methods by default, enabling clients to interact with the inference service through different protocols. You can access the service in the following ways:
 

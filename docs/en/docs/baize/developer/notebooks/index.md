@@ -8,6 +8,7 @@ hide:
 # Create Notebook
 
 Notebook provides an online web interactive programming environment, making it convenient for developers to quickly conduct data science and machine learning experiments.
+To embrace the AI trend, AI Lab has integrated the most popular Jupyter Notebook data science interactive development environment (IDE).
 
 Upon entering the developer console, developers can create and manage Notebooks in different clusters and namespaces.
 
@@ -19,7 +20,7 @@ Upon entering the developer console, developers can create and manage Notebooks 
 
     ![fill forms](../../images/notebook02.png)
 
-1. In the **Resources** page, the system will pre-fill part of configuration data, including the image type, image URL and resource specs, while you can manually add the data and environment settings.
+1. In the **Resources** page, the system will pre-fill part of configuration data, including the Notebook image type, image URL, resource specs, and user directory, while you can manually add the data and environment settings.
 
     ![fill forms](../../images/notebook06.png)
 

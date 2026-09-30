@@ -162,7 +162,7 @@ and it is recommended to use the NFS service:
 
     * If an NFS already exists, you can skip this step.
     * If it does not exist, you can refer to the
-      [NFS Service Deployment](../../baize/best-practice/deploy-nfs-in-worker.md) in best practices.
+      [NFS Service Deployment](../../baize/best-practice/index.md) in best practices.
 
 * Deploy `nfs-driver-csi`
 * Deploy `StorageClass`

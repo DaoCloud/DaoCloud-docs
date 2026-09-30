@@ -51,7 +51,6 @@ Here is a simple YAML deployment file that can be used directly.
     Be sure to check the `image:` and modify it to a domestic mirror based on the location of the cluster.
 
 ```yaml title="nfs-server.yaml"
----
 kind: Service
 apiVersion: v1
 metadata:
@@ -166,7 +165,7 @@ parameters:
   # csi.storage.k8s.io/provisioner-secret is only needed for providing mountOptions in DeleteVolume
   # csi.storage.k8s.io/provisioner-secret-name: "mount-options"
   # csi.storage.k8s.io/provisioner-secret-namespace: "default"
-reclaimPolicy: Delete
+reclaimPolicy: Retain
 volumeBindingMode: Immediate
 mountOptions:
   - nfsvers=4.1
