@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">启用与未启用节点交换时的 Pod 密度对比</title>
+  <desc id="desc">在 c4-standard-32 节点（32 vCPU、120 GB RAM）上，把交换内存放到本地 SSD 后：无头 Chrome（Kata）从 40 个并发 Pod 提升到 50 个（+25%），无头 Chrome（gVisor）从 80 个提升到 160 个（+100%），Python 沙箱（gVisor）从 80 个提升到 240 个（+200%）。</desc>
+  <defs>
+    <linearGradient id="gBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b6c0cd"/><stop offset="1" stop-color="#98a2b3"/>
+    </linearGradient>
+    <linearGradient id="gSwap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5cb8ff"/><stop offset="1" stop-color="#2088eb"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .s{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif}
+    .t{font-size:38px;font-weight:760;fill:#111827;letter-spacing:-.6px}
+    .sub{font-size:20px;fill:#475467}
+    .ax{font-size:18px;fill:#667085}
+    .cat{font-size:19px;font-weight:600;fill:#344054}
+    .val{font-size:18px;font-weight:750}
+    .lg{font-size:18px;fill:#344054}
+    .dl{font-size:16px;font-weight:760;fill:#1d6fd0}
+    .grid{stroke:#e4e7ec;stroke-width:1.5}
+    .axis{stroke:#98a2b3;stroke-width:2}
+  </style>
+
+  <rect x="0" y="0" width="1200" height="760" fill="#ffffff"/>
+  <text class="s t" x="80" y="64">启用与未启用节点交换时的 Pod 密度</text>
+  <text class="s sub" x="80" y="102">测试节点：c4-standard-32（32 vCPU、120 GB RAM），交换内存落在本地 SSD 上</text>
+
+  <!-- 网格线与 Y 轴刻度 -->
+  <g class="grid">
+    <line x1="150" y1="190" x2="1140" y2="190"/>
+    <line x1="150" y1="276" x2="1140" y2="276"/>
+    <line x1="150" y1="362" x2="1140" y2="362"/>
+    <line x1="150" y1="448" x2="1140" y2="448"/>
+    <line x1="150" y1="534" x2="1140" y2="534"/>
+  </g>
+  <g class="s ax" text-anchor="end">
+    <text x="132" y="196">250</text>
+    <text x="132" y="282">200</text>
+    <text x="132" y="368">150</text>
+    <text x="132" y="454">100</text>
+    <text x="132" y="540">50</text>
+    <text x="132" y="626">0</text>
+  </g>
+  <line class="axis" x1="150" y1="620" x2="1140" y2="620"/>
+
+  <!-- 第 1 组：无头 Chrome（Kata） -->
+  <rect x="221" y="551.2" width="84" height="68.8" rx="4" fill="url(#gBase)"/>
+  <text class="s val" x="263" y="537.2" text-anchor="middle" fill="#475467">40</text>
+  <rect x="325" y="534" width="84" height="86" rx="4" fill="url(#gSwap)"/>
+  <text class="s val" x="367" y="520" text-anchor="middle" fill="#1d6fd0">50</text>
+  <rect x="329" y="443" width="76" height="30" rx="15" fill="#eaf3ff" stroke="#b9d9ff"/>
+  <text class="s dl" x="367" y="463.5" text-anchor="middle">+25%</text>
+
+  <!-- 第 2 组：无头 Chrome（gVisor） -->
+  <rect x="551" y="482.4" width="84" height="137.6" rx="4" fill="url(#gBase)"/>
+  <text class="s val" x="593" y="468.4" text-anchor="middle" fill="#475467">80</text>
+  <rect x="655" y="344.8" width="84" height="275.2" rx="4" fill="url(#gSwap)"/>
+  <text class="s val" x="697" y="330.8" text-anchor="middle" fill="#1d6fd0">160</text>
+  <rect x="659" y="253.8" width="76" height="30" rx="15" fill="#eaf3ff" stroke="#b9d9ff"/>
+  <text class="s dl" x="697" y="274.3" text-anchor="middle">+100%</text>
+
+  <!-- 第 3 组：Python 沙箱（gVisor） -->
+  <rect x="881" y="482.4" width="84" height="137.6" rx="4" fill="url(#gBase)"/>
+  <text class="s val" x="923" y="468.4" text-anchor="middle" fill="#475467">80</text>
+  <rect x="985" y="207.2" width="84" height="412.8" rx="4" fill="url(#gSwap)"/>
+  <text class="s val" x="1027" y="193.2" text-anchor="middle" fill="#1d6fd0">240</text>
+  <rect x="989" y="116.2" width="76" height="30" rx="15" fill="#eaf3ff" stroke="#b9d9ff"/>
+  <text class="s dl" x="1027" y="136.7" text-anchor="middle">+200%</text>
+
+  <!-- X 轴分类 -->
+  <g class="s cat" text-anchor="middle">
+    <text x="315" y="662">无头 Chrome（Kata）</text>
+    <text x="645" y="662">无头 Chrome（gVisor）</text>
+    <text x="975" y="662">Python 沙箱（gVisor）</text>
+  </g>
+
+  <!-- 图例 -->
+  <rect x="360" y="702" width="26" height="26" rx="5" fill="url(#gBase)"/>
+  <text class="s lg" x="396" y="722">无交换内存（基准容量）</text>
+  <rect x="680" y="702" width="26" height="26" rx="5" fill="url(#gSwap)"/>
+  <text class="s lg" x="716" y="722">本地 SSD 交换内存</text>
+</svg>
