@@ -8,24 +8,37 @@
 
     ```shell
     helm repo add insight https://release.daocloud.io/chartrepo/insight
-    helm repo upgrade
+    helm repo update
     helm search repo  insight/insight-agent --versions
     ```
 
 2. 安装 __Insight Agent__ 需要确保全局服务集群中的 __Insight Server__ 正常运行，执行以下安装命令安装 __Insight Agent__ 社区版，该配置不启用 Tracing 功能：
 
+    先设置部署版本、服务地址和端口以及 Elasticsearch 的用户名和密码。
+    服务地址可参考下方的 __如何获取连接地址__ 获取。请将以下占位值替换为实际配置：
+
     ```shell
+    version="<部署版本>"
+    es_host="<Elasticsearch 地址>"
+    es_port="<Elasticsearch 端口>"
+    es_user="<Elasticsearch 用户名>"
+    es_password="<Elasticsearch 密码>"
+    vminsert_host="<vminsert 地址>"
+    vminsert_port="<vminsert 端口>"
+    otel_col_host="<opentelemetry-collector 地址>"
+    otel_col_auditlog_port="<opentelemetry-collector 审计日志端口>"
+
     helm upgrade --install --create-namespace --cleanup-on-fail \
-        --version ${version} \      # 请指定部署版本
+        --version "${version}" \
         insight-agent  insight/insight-agent \
-        --set global.exporters.logging.elasticsearch.host=10.10.10.x \    # 请替换“10.10.10.x" 为全局服务集群或外置的 Elasticsearch 的地址
-        --set global.exporters.logging.elasticsearch.port=32517 \     # 请替换“32517" 为全局服务集群或外置的 Elasticsearch 暴露的端口
-        --set global.exporters.logging.elasticsearch.user=elastic \     # 请替换“elastic" 为全局服务集群或外置的 Elasticsearch 的用户名
-        --set global.exporters.logging.elasticsearch.password=dangerous \  # 请替换“dangerous" 为全局服务集群或外置的 Elasticsearch 的密码
-        --set global.exporters.metric.host=${vminsert_address} \    # 请替换“10.10.10.x" 为全局服务集群中 vminsert 的地址
-        --set global.exporters.metric.port=${vminsert_port} \    # 请替换“32517" 为全局服务集群中 vminsert 的地址
-        --set global.exporters.auditLog.host=${opentelemetry-collector address} \     # 请替换“32517" 为全局服务集群中 opentelemetry-collector 的端口
-        --set global.exporters.auditLog.port=${otel_col_auditlog_port}\   # 请替换“32517" 为全局服务集群中 opentelemetry-collector 容器端口为 8006 的 service 对外访问的地址
+        --set global.exporters.logging.elasticsearch.host="${es_host}" \
+        --set global.exporters.logging.elasticsearch.port="${es_port}" \
+        --set global.exporters.logging.elasticsearch.user="${es_user}" \
+        --set global.exporters.logging.elasticsearch.password="${es_password}" \
+        --set global.exporters.metric.host="${vminsert_host}" \
+        --set global.exporters.metric.port="${vminsert_port}" \
+        --set global.exporters.auditLog.host="${otel_col_host}" \
+        --set global.exporters.auditLog.port="${otel_col_auditlog_port}" \
         -n insight-system
     ```
 
@@ -117,7 +130,7 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 2. 执行以下命令更新仓库。
 
     ```shell
-    helm repo upgrade
+    helm repo update
     ```
 
 3. 执行以下命令进行升级。
@@ -126,7 +139,7 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
     helm upgrade insight-agent insight/insight-agent \
     -n insight-system \
     -f ./insight-agent.yaml \
-    --version ${version}   # 指定升级版本
+    --version "${version}"   # 指定升级版本
     ```
 
 4. 执行以下命令确认安装状态：
