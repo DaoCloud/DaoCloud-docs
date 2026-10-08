@@ -1,4 +1,4 @@
-# 可观测性 Release Notes {#insight-release-notes}
+# 可观测性 Release Notes
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化，[升级注意事项](../quickstart/install/upgrade-note.md)。
 
