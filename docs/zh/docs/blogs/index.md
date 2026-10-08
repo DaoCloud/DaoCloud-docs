@@ -11,7 +11,7 @@ hide:
 
 ## 2026 年
 
-- [Kubernetes 节点交换：AI 工作负载的 Pod 密度最多可提升 3 倍](2026/k8s-node-swap.md)
+- [Kubernetes 节点交换内存：AI 工作负载的 Pod 密度最多可提升 3 倍](2026/k8s-node-swap.md)
 
     把交换内存放到本地 SSD 上，AI 智能体闲置的内存就能被换出，单节点 Pod 密度最多可提升 3 倍。
 
