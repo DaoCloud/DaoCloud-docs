@@ -8,7 +8,7 @@ Here are the specific steps:
 
 ### Prepare the new storage disk
 
-Add a new node to the Kubernetes cluster or select an existing cluster node (non-HwameiStor node). This node must meet all the requirements listed in the [Prerequisites](/../install/prereq.md) section. In this example, the details of the new storage node and disk used are as follows:
+Add a new node to the Kubernetes cluster or select an existing cluster node (non-HwameiStor node). This node must meet all the requirements listed in the [Prerequisites](../install/prereq.md) section. In this example, the details of the new storage node and disk used are as follows:
 
 - Name: k8s-worker-4
 - Device path: /dev/sdb

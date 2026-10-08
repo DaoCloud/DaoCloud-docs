@@ -724,24 +724,24 @@ nav:
                           - Deploy via Local Volume: storage/hwameistor/application/local.md
                           - Deploy via HA Volume: storage/hwameistor/application/ha.md
                   - FAQs: storage/hwameistor/faqs.md
-              - OceanStor:
-                  - Compatibility Test Report: storage/dorado/oceanstor.md
-                  - K8s CSI Driver Test: storage/dorado/dorado-test.md
               - Solutions to Integrate Open Source:
                   - Rook-Ceph:
                       - Rook-Ceph Intro: storage/solutions/rook-ceph.md
                       - Deploy Rook-Ceph with App Store: storage/solutions/dce-rook-ceph.md
                       - Deploy Rook-Ceph with Helm: storage/solutions/helm-rook-ceph.md
                       - How to Connect Ceph Dashboard: storage/solutions/ceph-dashboard.md
+                      - Create CephFS StorageClass: storage/solutions/sc-cephfs.md
+                      - Create RBD StorageClass: storage/solutions/sc-cephrbd.md
+                      - Create RGW StorageClass: storage/solutions/sc-cephrgw.md
                   - Longhorn:
                       - Longhorn Intro: storage/solutions/longhorn.md
                       - Deploy Longhorn with App Store: storage/solutions/dce-longhorn.md
                   - OpenEBS:
                       - OpenEBS Intro: storage/solutions/openebs.md
                       - Deploy OpenEBS with Helm: storage/solutions/openebs-helm.md
-                      - Fluid Intro: storage/solutions/fluid.md
                   - TiDB: storage/hwameistor/application/tidb.md
                   - MinIO: storage/hwameistor/application/minio/minio.md
+                  - Fluid: storage/solutions/fluid.md
               - Concepts:
                   - Kubernetes storage: storage/terms/k8s_storage.md
                   - CAS: storage/terms/cas.md

@@ -166,26 +166,6 @@ the evolution path and feature changes for each version.
 
 - **Improved** Permissions-related content in Helm templates.
 
-## 2023-7-05
-
-### v0.11.1
-
-- **Added** support for automatic detection of `cgroup` version
-
-## 2023-6-25
-
-### v0.11.0
-
-- **Added** implementation of IO limitation or QoS
-- **Added** identification of virtual block devices using /virtual/
-- **Fixed** an inconsistency issue with StorageClass creation time field
-
-## 2023-5-26
-
-### v0.10.3
-
-- **Improved** permissions-related content in Helm Charts
-
 ## 2023-5-25
 
 ### v0.10.2
