@@ -82,6 +82,6 @@ Cilium 是基于 eBPF 的网络、可观测与安全项目，已从 CNCF 毕业�
 
 Road to KubeCon 是由 HPE 呈现的八篇系列，面向盐湖城的 KubeCon + CloudNativeCon North America。出发前，不妨了解 HPE Software 如何帮助 IT 团队用更少复杂度做更多事。
 
-与此同时，你也可以回看往期内容：Kubernetes v1.37、推理成本、OpenTelemetry 更新，以及云原生 AI harness 等，或浏览完整存档。
+与此同时，你也可以回看往期内容：[Kubernetes v1.37](https://thenewstack.io/kubecon-kubernetes-updates-security/)、[推理成本](https://thenewstack.io/kubernetes-ai-inference-costs/)、[OpenTelemetry 更新](https://thenewstack.io/opentelemetry-prometheus-observability-interoperability/)，以及[云原生 AI harness](https://thenewstack.io/kubecon-agent-harness-koordinator/) 等，或浏览[完整存档](https://thenewstack.io/kubecon-cloudnativecon-na-2026/road-to-kubecon/)。
 
 本系列作者 Bill Doerrfeld 欢迎投稿。可通过其个人联系页发送 PR、动态、项目、引言或观点。
