@@ -139,7 +139,7 @@ Package the entire workflow—"read documents → extract key data → validate 
 | --------- | ----------- |
 | One-Click Creation, Ready to Use | No manual environment configuration, model integration, or permission setup is required. The system automatically creates sandboxes and injects Tokens, allowing business users to start immediately without IT involvement. |
 | Secure Sandbox Isolation | Each OpenClaw instance runs in an isolated container sandbox powered by DaoCloud's **zestU** kernel-level isolation technology. Even if compromised, the impact is strictly confined to the sandbox and cannot penetrate the internal network or tamper with host files. |
-| Persistent Data and Durable Memory | The `~/.openclaw` directory is fully persisted in the DCE storage system. Conversations, configurations, and memories remain intact after instance restarts, pauses, or releases. |
+| Persistent Data | `/openclaw/data` is stored on a persistent volume, so OpenClaw work files and FileBrowser uploads are retained when the Pod restarts or is recreated. Files saved in noVNC under `/home/node` or other directories are not guaranteed to persist. See the [FAQ](../faq.md). |
 | Secure and Controlled Model Access | All model requests are routed through the DCE AI Gateway and governed by security policies, without exposing public endpoints. Data and conversations remain protected within the platform. |
 | Full Backend Access | DCE provides both [SSH access and noVNC web access](./quickstart.md#openclaw_2), supporting full CLI operations and meeting advanced debugging and customization requirements. |
 

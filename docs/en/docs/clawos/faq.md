@@ -1,12 +1,10 @@
 # FAQ
 
-??? "Will OpenClaw lose its memory due to instance issues?"
+??? "Which directories are persisted?"
 
-    **No**
+    ClawOS currently persists files in `/openclaw/data` on a persistent volume. This is OpenClaw's working directory, and FileBrowser uploads are stored there. These files are retained when the Pod restarts or is recreated.
 
-    Memory will not be lost whether you restart OpenClaw, pause the instance (feature coming soon), or release the instance.
-
-    This is because all data under `~/.openclaw` is persistently stored in the DCE storage system.
+    In the noVNC desktop, the `node` user can create and edit files under `/home/node`, but this directory is not on the persistent volume. Files saved under `/home/node` or elsewhere outside `/openclaw/data` are not guaranteed to survive Pod recreation. To keep files, save them under `/openclaw/data` or upload them there through FileBrowser.
 
 ??? "Is my OpenClaw secure?"
 
