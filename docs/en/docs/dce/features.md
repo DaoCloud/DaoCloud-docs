@@ -9,6 +9,8 @@ hide:
 
 DaoCloud Enterprise (DCE) 5.0 combines a large number of features, and the typical features currently supported are as follows.
 
+## Features
+
 === "[Multicluster management](../kpanda/intro/index.md)"
 
 - Unified management of multicluster, supporting Kubernetes clusters in all version ranges to be included
