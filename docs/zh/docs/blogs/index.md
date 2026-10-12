@@ -13,7 +13,7 @@ hide:
 
 - [Kubernetes 上的 cgroup v1 已死：接下来会发生什么](2026/kubernetes-node-swap-ai.md)
 
-    Road to KubeCon：节点交换内存最高可将密度提升约 3 倍，cgroup v2 全面接管，Edge Day 与 CiliumCon 回归。
+    节点交换内存最高可将密度提升约 3 倍，cgroup v2 全面接管，Edge Day 与 CiliumCon 回归。
 
 - [Kubernetes 节点交换内存：AI 工作负载的 Pod 密度最多可提升 3 倍](2026/k8s-node-swap.md)
 
