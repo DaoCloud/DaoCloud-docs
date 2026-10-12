@@ -9,6 +9,7 @@ MatrixHub 是由「DaoCloud 道客」开源并持续孵化的**自托管 AI 模�
 
 MatrixHub 使用 Go 语言编写，采用 [Apache License 2.0](https://github.com/matrixhub-ai/matrixhub/blob/main/LICENSE) 协议开源，
 并已取得 [OpenSSF Best Practices](https://www.bestpractices.dev/projects/13641) **Passing** 级认证。
+MatrixHub 现已加入 [CNCF 云原生全景图](https://landscape.cncf.io/?group=ai-native&item=ai-native-infra--model-asset-and-registry--matrixhub)（AI Native Infrastructure → Model Asset and Registry）。
 
 [了解 MatrixHub GitHub 社区](https://github.com/matrixhub-ai/matrixhub){ .md-button }
 [查阅 MatrixHub 官网](https://matrixhub.ai/){ .md-button }
@@ -194,6 +195,7 @@ MatrixHub 是一个开放的开源项目，欢迎通过 Issue、PR 与讨论参�
 - [GitHub 仓库](https://github.com/matrixhub-ai/matrixhub)
 - [文档站点](https://matrixhub.ai/docs/overview/)
 - [GitHub Discussions](https://github.com/matrixhub-ai/matrixhub/discussions)
+- [CNCF 云原生全景图](https://landscape.cncf.io/?group=ai-native&item=ai-native-infra--model-asset-and-registry--matrixhub)
 - [CNCF Slack `#matrixhub`](https://cloud-native.slack.com/archives/C0A8UKWR8HG)
 - [DeepWiki 代码解读](https://deepwiki.com/matrixhub-ai/matrixhub)
 - [版本发布记录](https://github.com/matrixhub-ai/matrixhub/releases)
