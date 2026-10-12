@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="731.09" viewBox="0 0 1250 731.09">
+  <rect x="0" y="0" width="1250" height="731.09" fill="#ffffff"/>
+  <g transform="translate(10,10)">
+    <rect x="0" y="0" width="1230" height="711.09" rx="16" fill="#ffffff"/>
+    <rect x="0" y="0" width="1230" height="711.09" rx="16" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <rect x="15" y="15" width="94" height="61" rx="10" fill="#f3f6fa"/>
+    <rect x="15" y="15" width="94" height="61" rx="10" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="27.06" y="49.71" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Use Cases</text>
+    <rect x="117" y="15" width="1098" height="61" rx="12" fill="#ffffff"/>
+    <rect x="117" y="15" width="1098" height="61" rx="12" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <rect x="130" y="30" width="134.97" height="31" rx="7" fill="#f8fafc"/>
+    <rect x="130" y="30" width="134.97" height="31" rx="7" fill="none" stroke="#d3dbe6" stroke-width="1"/>
+    <text x="147" y="49.5" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Knowledge Base</text>
+    <rect x="274.97" y="30" width="86.17" height="31" rx="7" fill="#f8fafc"/>
+    <rect x="274.97" y="30" width="86.17" height="31" rx="7" fill="none" stroke="#d3dbe6" stroke-width="1"/>
+    <text x="291.97" y="49.5" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">AI Agent</text>
+    <rect x="371.14" y="30" width="52.3" height="31" rx="7" fill="#f8fafc"/>
+    <rect x="371.14" y="30" width="52.3" height="31" rx="7" fill="none" stroke="#d3dbe6" stroke-width="1"/>
+    <text x="388.14" y="49.5" font-size="12.5" font-weight="600" fill="#9aa5b4" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">···</text>
+    <svg x="449.44" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <circle cx="12" cy="12" r="9"></circle><path d="M9 9l3 3 3-3M12 12v5M9.5 14.5h5"></path>
+    </svg>
+    <text x="438.22" y="61.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Finance</text>
+    <svg x="540.59" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M4 14l2-5 4 2 4-2 2 5z"></path><path d="M4 14h16v3H4z"></path><circle cx="8" cy="17" r="1.4"></circle><circle cx="16" cy="17" r="1.4"></circle>
+    </svg>
+    <text x="495.44" y="61.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Autonomous Driving</text>
+    <svg x="632.86" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M3 8l9-4 9 4-9 4z"></path><path d="M7 10.5V15c0 1.2 2.2 2 5 2s5-.8 5-2v-4.5"></path>
+    </svg>
+    <text x="615.75" y="61.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Education</text>
+    <svg x="722.22" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M9 3h6M10 3v6l-4 9a2 2 0 0 0 1.8 3h8.4A2 2 0 0 0 18 18l-4-9V3"></path><path d="M8 14h8"></path>
+    </svg>
+    <text x="679.98" y="61.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Scientific Research</text>
+    <svg x="824.03" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M3 21V9l5 3V9l5 3V9l5 3v9z"></path><path d="M18 12V6a2 2 0 0 1 2-2"></path>
+    </svg>
+    <text x="794.47" y="61.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Manufacturing</text>
+    <svg x="906.98" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M3 21h18M5 21V8l7-5 7 5v13"></path><path d="M9 21v-6h6v6"></path>
+    </svg>
+    <text x="883.61" y="61.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Government</text>
+    <svg x="979.95" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <rect x="4" y="4" width="16" height="16" rx="3"></rect><path d="M12 8v8M8 12h8"></path>
+    </svg>
+    <text x="960.36" y="61.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Healthcare</text>
+    <text x="1050.39" y="49.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">···</text>
+    <svg x="119" y="87" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="163" y="87" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="213" y="87" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="363.41" y="87" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="513.8" y="87" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="664.2" y="87" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="814.59" y="87" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="965" y="87" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <rect x="15" y="118" width="94" height="125.97" rx="10" fill="#f3f6fa"/>
+    <rect x="15" y="118" width="94" height="125.97" rx="10" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="48.02" y="176.09" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">LLM</text>
+    <text x="33.11" y="194.3" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Services</text>
+    <rect x="117" y="118" width="870" height="125.97" rx="12" fill="#f1fdf5"/>
+    <rect x="117" y="118" width="870" height="125.97" rx="12" fill="none" stroke="#8ee0ab" stroke-width="1"/>
+    <rect x="127" y="128" width="213.11" height="34" rx="7" fill="#ffffff"/>
+    <rect x="127" y="128" width="213.11" height="34" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="169.13" y="148.69" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Model Store</text>
+    <svg x="252.98" y="136" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M12 2c3.5 2.5 5 6 5 9.5 0 2.5-2 4.5-5 4.5s-5-2-5-4.5C7 8 8.5 4.5 12 2z"></path><circle cx="12" cy="9" r="1.6"></circle><path d="M9 15l-2 5 3-1.6M15 15l2 5-3-1.6"></path>
+    </svg>
+    <svg x="279.98" y="136" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M10 4h4a1 1 0 0 1 1 1v1.2a1.6 1.6 0 0 0 2.6 1.2l.9-.6a1 1 0 0 1 1.3.3l2 3.4a1 1 0 0 1-.3 1.3l-1 .7a1.6 1.6 0 0 0 0 2.6l1 .7a1 1 0 0 1 .3 1.3l-2 3.4a1 1 0 0 1-1.3.3l-.9-.6a1.6 1.6 0 0 0-2.6 1.2V21a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.2a1.6 1.6 0 0 0-2.6-1.2l-.9.6a1 1 0 0 1-1.3-.3l-2-3.4a1 1 0 0 1 .3-1.3l1-.7a1.6 1.6 0 0 0 0-2.6l-1-.7a1 1 0 0 1-.3-1.3l2-3.4a1 1 0 0 1 1.3-.3l.9.6A1.6 1.6 0 0 0 9 6.2V5a1 1 0 0 1 1-1z"></path>
+    </svg>
+    <rect x="347.11" y="128" width="152.22" height="34" rx="7" fill="#ffffff"/>
+    <rect x="347.11" y="128" width="152.22" height="34" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="363" y="148.69" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Model Management</text>
+    <rect x="506.33" y="128" width="152.22" height="34" rx="7" fill="#ffffff"/>
+    <rect x="506.33" y="128" width="152.22" height="34" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="535.66" y="148.69" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Model Services</text>
+    <rect x="665.55" y="128" width="152.22" height="34" rx="7" fill="#ffffff"/>
+    <rect x="665.55" y="128" width="152.22" height="34" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="687.28" y="148.69" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Model Experience</text>
+    <rect x="824.77" y="128" width="152.22" height="34" rx="7" fill="#ffffff"/>
+    <rect x="824.77" y="128" width="152.22" height="34" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="864.88" y="148.69" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">MCP Server</text>
+    <rect x="127" y="169" width="238.84" height="64.97" rx="7" fill="#ffffff"/>
+    <rect x="127" y="169" width="238.84" height="64.97" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="157.03" y="196.58" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Model Inference Acceleration</text>
+    <text x="211.5" y="214.06" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">vLLM/SGLang</text>
+    <rect x="372.84" y="169" width="358.3" height="64.97" rx="7" fill="#ffffff"/>
+    <rect x="372.84" y="169" width="358.3" height="64.97" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="503.08" y="189.5" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">LLM AI Gateway</text>
+    <text x="384.95" y="206.99" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Route Management / Load Balancing / Traffic Control / Compliance</text>
+    <text x="525.91" y="221.16" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">&amp; Security</text>
+    <rect x="738.14" y="169" width="238.86" height="64.97" rx="7" fill="#ffffff"/>
+    <rect x="738.14" y="169" width="238.86" height="64.97" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="807.69" y="196.58" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Usage Statistics</text>
+    <text x="810.64" y="214.06" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">API Key / Call Logs</text>
+    <rect x="15" y="251.97" width="94" height="70.8" rx="10" fill="#f3f6fa"/>
+    <rect x="15" y="251.97" width="94" height="70.8" rx="10" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="51.97" y="282.46" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">ML</text>
+    <text x="33.11" y="300.68" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Services</text>
+    <rect x="117" y="251.97" width="870" height="70.8" rx="12" fill="#f4f9ff"/>
+    <rect x="117" y="251.97" width="870" height="70.8" rx="12" fill="none" stroke="#bfdbfe" stroke-width="1"/>
+    <rect x="127" y="261.97" width="153.64" height="50.8" rx="7" fill="#ffffff"/>
+    <rect x="127" y="261.97" width="153.64" height="50.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="152.23" y="291.05" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Data Preparation</text>
+    <rect x="287.64" y="261.97" width="153.64" height="50.8" rx="7" fill="#ffffff"/>
+    <rect x="287.64" y="261.97" width="153.64" height="50.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="334.28" y="283.23" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Algorithm</text>
+    <text x="324.06" y="298.86" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Development</text>
+    <rect x="448.28" y="261.97" width="207.42" height="50.8" rx="7" fill="#ffffff"/>
+    <rect x="448.28" y="261.97" width="207.42" height="50.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="506.83" y="282.47" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Model Training</text>
+    <text x="503.09" y="299.95" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Pytorch/Tensorflow</text>
+    <rect x="662.7" y="261.97" width="153.64" height="50.8" rx="7" fill="#ffffff"/>
+    <rect x="662.7" y="261.97" width="153.64" height="50.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="682.91" y="291.05" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Model Fine-Tuning</text>
+    <rect x="823.34" y="261.97" width="153.66" height="50.8" rx="7" fill="#ffffff"/>
+    <rect x="823.34" y="261.97" width="153.66" height="50.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="848.03" y="291.05" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Model Evaluation</text>
+    <rect x="15" y="330.77" width="94" height="76.66" rx="10" fill="#f3f6fa"/>
+    <rect x="15" y="330.77" width="94" height="76.66" rx="10" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="55.02" y="355.09" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">AI</text>
+    <text x="25.09" y="373.3" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Computing</text>
+    <text x="33.11" y="391.52" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Services</text>
+    <rect x="117" y="330.77" width="870" height="76.66" rx="12" fill="#f1fdfb"/>
+    <rect x="117" y="330.77" width="870" height="76.66" rx="12" fill="none" stroke="#9be9db" stroke-width="1"/>
+    <rect x="127" y="340.77" width="164.39" height="56.66" rx="7" fill="#ffffff"/>
+    <rect x="127" y="340.77" width="164.39" height="56.66" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="184.7" y="372.78" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">VSCode</text>
+    <rect x="298.39" y="340.77" width="164.41" height="56.66" rx="7" fill="#ffffff"/>
+    <rect x="298.39" y="340.77" width="164.41" height="56.66" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="357.06" y="372.78" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Jupyter</text>
+    <rect x="469.8" y="340.77" width="164.39" height="56.66" rx="7" fill="#ffffff"/>
+    <rect x="469.8" y="340.77" width="164.39" height="56.66" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="490.72" y="372.78" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Container Instances</text>
+    <rect x="641.19" y="340.77" width="164.41" height="56.66" rx="7" fill="#ffffff"/>
+    <rect x="641.19" y="340.77" width="164.41" height="56.66" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="683.42" y="372.78" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Data Storage</text>
+    <rect x="812.59" y="340.77" width="164.39" height="56.66" rx="7" fill="#ffffff"/>
+    <rect x="812.59" y="340.77" width="164.39" height="56.66" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="848.84" y="372.78" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Image Registry</text>
+    <rect x="15" y="415.42" width="94" height="221.39" rx="10" fill="#f1fdf5"/>
+    <rect x="15" y="415.42" width="94" height="221.39" rx="10" fill="none" stroke="#8ee0ab" stroke-width="1"/>
+    <text x="16.44" y="521.21" font-size="13.5" font-weight="700" fill="#16a34a" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">AI Computing</text>
+    <text x="15.69" y="539.43" font-size="13.5" font-weight="700" fill="#16a34a" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Orchestration</text>
+    <rect x="117" y="415.42" width="870" height="221.39" rx="12" fill="#f4fdf7"/>
+    <rect x="117" y="415.42" width="870" height="221.39" rx="12" fill="none" stroke="#8ee0ab" stroke-width="1"/>
+    <rect x="127" y="425.42" width="82" height="48.8" rx="7" fill="#e9fbf0"/>
+    <rect x="127" y="425.42" width="82" height="48.8" rx="7" fill="none" stroke="#8ee0ab" stroke-width="1"/>
+    <text x="135.45" y="452.52" font-size="11.5" font-weight="700" fill="#16a34a" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Scheduling</text>
+    <rect x="216" y="425.42" width="185" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="216" y="425.42" width="185" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="275.69" y="444.92" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Job Queue</text>
+    <text x="271.17" y="462.41" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Kueue/Volcano</text>
+    <rect x="408" y="425.42" width="185" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="408" y="425.42" width="185" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="439.58" y="444.92" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Resource Allocation</text>
+    <text x="446.05" y="462.41" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Gang/Binpack/Spread</text>
+    <rect x="600" y="425.42" width="185" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="600" y="425.42" width="185" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="627.61" y="444.92" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Distributed Inference</text>
+    <text x="681.31" y="462.41" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">LWS</text>
+    <rect x="792" y="425.42" width="185" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="792" y="425.42" width="185" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="823.78" y="444.92" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Distributed Training</text>
+    <text x="865.3" y="462.41" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Job Set</text>
+    <rect x="127" y="481.22" width="82" height="48.8" rx="7" fill="#e9fbf0"/>
+    <rect x="127" y="481.22" width="82" height="48.8" rx="7" fill="none" stroke="#8ee0ab" stroke-width="1"/>
+    <text x="130.67" y="508.32" font-size="11.5" font-weight="700" fill="#16a34a" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Optimization</text>
+    <rect x="216" y="481.22" width="249" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="216" y="481.22" width="249" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="301.77" y="500.72" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">GPU Sharing</text>
+    <text x="315.19" y="518.2" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">HAMI/MIG</text>
+    <rect x="472" y="481.22" width="249" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="472" y="481.22" width="249" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="530.58" y="500.72" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Network Acceleration</text>
+    <text x="569.17" y="518.2" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Spiderpool</text>
+    <rect x="728" y="481.22" width="249" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="728" y="481.22" width="249" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="797.55" y="500.72" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">GPU Management</text>
+    <text x="770.7" y="518.2" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">GPU Operator/Network Operator</text>
+    <rect x="127" y="537.02" width="82" height="48.8" rx="7" fill="#e9fbf0"/>
+    <rect x="127" y="537.02" width="82" height="48.8" rx="7" fill="none" stroke="#8ee0ab" stroke-width="1"/>
+    <text x="146.3" y="564.12" font-size="11.5" font-weight="700" fill="#16a34a" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Pooling</text>
+    <rect x="216" y="537.02" width="249" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="216" y="537.02" width="249" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="258.16" y="556.52" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Heterogeneous Computing</text>
+    <text x="329.58" y="574" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">DRA</text>
+    <rect x="472" y="537.02" width="249" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="472" y="537.02" width="249" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="512.23" y="556.52" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">High-Performance Network</text>
+    <text x="561.39" y="574" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">NVLink/RDMA</text>
+    <rect x="728" y="537.02" width="249" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="728" y="537.02" width="249" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="790.11" y="556.52" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">High-Speed Storage</text>
+    <text x="805.17" y="574" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Lustre/Hwameistor</text>
+    <rect x="127" y="594.81" width="850" height="32" rx="7" fill="#ffffff"/>
+    <rect x="127" y="594.81" width="850" height="32" rx="7" fill="none" stroke="#8ee0ab" stroke-width="1" stroke-dasharray="5 4"/>
+    <svg x="348.95" y="602.81" width="16" height="16" viewBox="0 0 24 24" color="#1e2937" overflow="visible">
+      <path fill="#326ce5" d="M12 1.6l8.6 4.1 2.1 9.3-6 7.4H7.3l-6-7.4 2.1-9.3z"></path><circle cx="12" cy="12" r="3.4" fill="#fff"></circle><circle cx="12" cy="12" r="1.5" fill="#326ce5"></circle>
+    </svg>
+    <text x="372.95" y="614.65" font-size="12" font-weight="700" fill="#326ce5" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">kubernetes</text>
+    <text x="445.05" y="614.65" font-size="12" font-weight="400" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">The De Facto Standard for AI Computing Orchestration</text>
+    <rect x="995" y="118" width="106" height="518.81" rx="12" fill="#f8fafc"/>
+    <rect x="995" y="118" width="106" height="518.81" rx="12" fill="none" stroke="#dbe1ea" stroke-width="1"/>
+    <text x="1009" y="148.32" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Operational</text>
+    <text x="1009" y="164.32" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Observability</text>
+    <rect x="1005" y="183" width="86" height="57.13" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="183" width="86" height="57.13" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1015.88" y="215.4" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Dashboard</text>
+    <rect x="1005" y="247.13" width="86" height="57.14" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="247.13" width="86" height="57.14" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1011.94" y="279.53" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Alert Center</text>
+    <rect x="1005" y="311.27" width="86" height="57.13" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="311.27" width="86" height="57.13" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1020.38" y="336.17" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Resource</text>
+    <text x="1016.02" y="351.17" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Monitoring</text>
+    <rect x="1005" y="375.39" width="86" height="57.14" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="375.39" width="86" height="57.14" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1033.42" y="400.29" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Fault</text>
+    <text x="1022.45" y="415.29" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Tracking</text>
+    <rect x="1005" y="439.53" width="86" height="59" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="439.53" width="86" height="59" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1037.17" y="457.87" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Log</text>
+    <text x="1012.17" y="472.87" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Collection &amp;</text>
+    <text x="1030.06" y="487.87" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Query</text>
+    <rect x="1005" y="505.53" width="86" height="57.14" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="505.53" width="86" height="57.14" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1011.98" y="537.93" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Trace Query</text>
+    <rect x="1005" y="569.67" width="86" height="57.14" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="569.67" width="86" height="57.14" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1015.38" y="594.57" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">AI Network</text>
+    <text x="1016.02" y="609.57" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Monitoring</text>
+    <rect x="1109" y="118" width="106" height="518.81" rx="12" fill="#f8fafc"/>
+    <rect x="1109" y="118" width="106" height="518.81" rx="12" fill="none" stroke="#dbe1ea" stroke-width="1"/>
+    <text x="1125" y="148.32" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Operations</text>
+    <text x="1123" y="164.32" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Management</text>
+    <rect x="1119" y="183" width="86" height="57.39" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="183" width="86" height="57.39" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1125.36" y="208.03" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Multi-tenant</text>
+    <text x="1121.52" y="223.03" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Configuration</text>
+    <rect x="1119" y="247.39" width="86" height="57.41" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="247.39" width="86" height="57.41" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1107.91" y="272.43" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Permissions/Roles</text>
+    <text x="1123.61" y="287.43" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Management</text>
+    <rect x="1119" y="311.8" width="86" height="57.39" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="311.8" width="86" height="57.39" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1140.84" y="336.82" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Access</text>
+    <text x="1140.11" y="351.82" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Control</text>
+    <rect x="1119" y="376.19" width="86" height="57.41" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="376.19" width="86" height="57.41" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1139.27" y="401.23" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Identity</text>
+    <text x="1130.25" y="416.23" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Federation</text>
+    <rect x="1119" y="440.59" width="86" height="57.41" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="440.59" width="86" height="57.41" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1144.14" y="465.64" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Quota</text>
+    <text x="1123.63" y="480.64" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Management</text>
+    <rect x="1119" y="505" width="86" height="57.41" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="505" width="86" height="57.41" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1137.38" y="530.04" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Metered</text>
+    <text x="1143.77" y="545.04" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Billing</text>
+    <rect x="1119" y="569.41" width="86" height="57.41" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="569.41" width="86" height="57.41" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1148.27" y="594.45" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Data</text>
+    <text x="1132.92" y="609.45" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Reporting</text>
+    <rect x="15" y="644.81" width="94" height="51.28" rx="10" fill="#f3f6fa"/>
+    <rect x="15" y="644.81" width="94" height="51.28" rx="10" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="43.58" y="674.66" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">GPUs</text>
+    <rect x="117" y="644.81" width="1098" height="51.28" rx="12" fill="#f8fafc"/>
+    <rect x="117" y="644.81" width="1098" height="51.28" rx="12" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <svg x="138" y="660.45" width="20" height="20" class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#3d4a5c" overflow="visible">
+      <path d="M3 20l9-16 9 16"></path><path d="M7 20l5-9 5 9"></path>
+    </svg>
+    <text x="165" y="668.97" font-size="13" font-weight="700" fill="#4a5568" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">天数智芯</text>
+    <text x="165" y="680.13" font-size="9" font-weight="400" fill="#9aa5b4" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">ILUVATAR COREX</text>
+    <svg x="347.91" y="660.45" width="20" height="20" class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#3d4a5c" overflow="visible">
+      <path d="M12 3l9 9-9 9-9-9z"></path><path d="M12 8l4 4-4 4-4-4z"></path>
+    </svg>
+    <text x="374.91" y="675.25" font-size="15" font-weight="700" fill="#4a5568" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Ascend</text>
+    <svg x="531.05" y="660.45" width="20" height="20" class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#3d4a5c" overflow="visible">
+      <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z"></path><circle cx="12" cy="12" r="3"></circle>
+    </svg>
+    <text x="558.05" y="675.25" font-size="15" font-weight="700" fill="#4a5568" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">NVIDIA</text>
+    <svg x="711.98" y="660.45" width="20" height="20" class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#3d4a5c" overflow="visible">
+      <path d="M3 18V9l4 4 3-6 3 6 4-4v9"></path>
+    </svg>
+    <text x="738.98" y="668.97" font-size="13" font-weight="700" fill="#4a5568" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">METAX</text>
+    <text x="738.98" y="680.13" font-size="9" font-weight="400" fill="#9aa5b4" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">沐曦</text>
+    <svg x="886.16" y="660.45" width="20" height="20" class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#3d4a5c" overflow="visible">
+      <path d="M12 3c3 4 3 8 0 12-3-4-3-8 0-12z"></path><path d="M6 12c3 1 5 3 6 6-3 0-5-2-6-6zM18 12c-3 1-5 3-6 6 3 0 5-2 6-6z"></path>
+    </svg>
+    <text x="913.16" y="668.97" font-size="13" font-weight="700" fill="#4a5568" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Enflame</text>
+    <text x="913.16" y="680.13" font-size="9" font-weight="400" fill="#9aa5b4" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">燧原科技</text>
+    <svg x="1067.06" y="660.45" width="20" height="20" class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#3d4a5c" overflow="visible">
+      <rect x="3" y="3" width="8" height="8" rx="1.5"></rect><rect x="13" y="13" width="8" height="8" rx="1.5"></rect><path d="M11 7h4v6"></path>
+    </svg>
+    <text x="1094.06" y="668.97" font-size="13" font-weight="700" fill="#4a5568" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">璧仞科技</text>
+    <text x="1094.06" y="680.13" font-size="9" font-weight="400" fill="#9aa5b4" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">BIREN TECHNOLOGY</text>
+  </g>
+</svg>

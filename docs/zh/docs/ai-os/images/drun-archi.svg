@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="697.89" viewBox="0 0 1250 697.89">
+  <rect x="0" y="0" width="1250" height="697.89" fill="#ffffff"/>
+  <g transform="translate(10,10)">
+    <rect x="0" y="0" width="1230" height="677.89" rx="16" fill="#ffffff"/>
+    <rect x="0" y="0" width="1230" height="677.89" rx="16" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <rect x="15" y="15" width="94" height="64" rx="10" fill="#f3f6fa"/>
+    <rect x="15" y="15" width="94" height="64" rx="10" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="35" y="51.21" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">应用场景</text>
+    <rect x="117" y="15" width="1098" height="64" rx="12" fill="#ffffff"/>
+    <rect x="117" y="15" width="1098" height="64" rx="12" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <rect x="130" y="30.5" width="71.5" height="33" rx="7" fill="#f8fafc"/>
+    <rect x="130" y="30.5" width="71.5" height="33" rx="7" fill="none" stroke="#d3dbe6" stroke-width="1"/>
+    <text x="147" y="51" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">知识库</text>
+    <rect x="211.5" y="30.5" width="71.5" height="33" rx="7" fill="#f8fafc"/>
+    <rect x="211.5" y="30.5" width="71.5" height="33" rx="7" fill="none" stroke="#d3dbe6" stroke-width="1"/>
+    <text x="228.5" y="51" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">智能体</text>
+    <rect x="293" y="31.5" width="52.3" height="31" rx="7" fill="#f8fafc"/>
+    <rect x="293" y="31.5" width="52.3" height="31" rx="7" fill="none" stroke="#d3dbe6" stroke-width="1"/>
+    <text x="310" y="51" font-size="12.5" font-weight="600" fill="#9aa5b4" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">···</text>
+    <svg x="371.3" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <circle cx="12" cy="12" r="9"></circle><path d="M9 9l3 3 3-3M12 12v5M9.5 14.5h5"></path>
+    </svg>
+    <text x="369.8" y="62.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">金融</text>
+    <svg x="433.3" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M4 14l2-5 4 2 4-2 2 5z"></path><path d="M4 14h16v3H4z"></path><circle cx="8" cy="17" r="1.4"></circle><circle cx="16" cy="17" r="1.4"></circle>
+    </svg>
+    <text x="420.3" y="62.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">自动驾驶</text>
+    <svg x="495.3" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M3 8l9-4 9 4-9 4z"></path><path d="M7 10.5V15c0 1.2 2.2 2 5 2s5-.8 5-2v-4.5"></path>
+    </svg>
+    <text x="493.8" y="62.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">教育</text>
+    <svg x="557.3" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M9 3h6M10 3v6l-4 9a2 2 0 0 0 1.8 3h8.4A2 2 0 0 0 18 18l-4-9V3"></path><path d="M8 14h8"></path>
+    </svg>
+    <text x="555.8" y="62.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">科研</text>
+    <svg x="619.3" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M3 21V9l5 3V9l5 3V9l5 3v9z"></path><path d="M18 12V6a2 2 0 0 1 2-2"></path>
+    </svg>
+    <text x="617.8" y="62.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">制造</text>
+    <svg x="681.3" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M3 21h18M5 21V8l7-5 7 5v13"></path><path d="M9 21v-6h6v6"></path>
+    </svg>
+    <text x="679.8" y="62.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">政务</text>
+    <svg x="743.3" y="27" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <rect x="4" y="4" width="16" height="16" rx="3"></rect><path d="M12 8v8M8 12h8"></path>
+    </svg>
+    <text x="741.8" y="62.18" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">医疗</text>
+    <text x="810.13" y="50.68" font-size="11.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">···</text>
+    <svg x="119" y="90" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="163" y="90" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="213" y="90" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="363.41" y="90" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="513.8" y="90" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="664.2" y="90" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="814.59" y="90" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <svg x="965" y="90" width="16" height="20" viewBox="0 0 16 20" fill="currentColor" color="#16a34a" overflow="visible">
+      <path d="M8 0l6 7H10v13H6V7H2z"></path>
+    </svg>
+    <rect x="15" y="121" width="94" height="111.8" rx="10" fill="#f3f6fa"/>
+    <rect x="15" y="121" width="94" height="111.8" rx="10" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="28.25" y="181.1" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">大模型服务</text>
+    <rect x="117" y="121" width="870" height="111.8" rx="12" fill="#f1fdf5"/>
+    <rect x="117" y="121" width="870" height="111.8" rx="12" fill="none" stroke="#8ee0ab" stroke-width="1"/>
+    <rect x="127" y="131" width="213.11" height="34" rx="7" fill="#ffffff"/>
+    <rect x="127" y="131" width="213.11" height="34" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="181.05" y="151.69" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">模型广场</text>
+    <svg x="241.05" y="139" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M12 2c3.5 2.5 5 6 5 9.5 0 2.5-2 4.5-5 4.5s-5-2-5-4.5C7 8 8.5 4.5 12 2z"></path><circle cx="12" cy="9" r="1.6"></circle><path d="M9 15l-2 5 3-1.6M15 15l2 5-3-1.6"></path>
+    </svg>
+    <svg x="268.05" y="139" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#5b6b7f" overflow="visible">
+      <path d="M10 4h4a1 1 0 0 1 1 1v1.2a1.6 1.6 0 0 0 2.6 1.2l.9-.6a1 1 0 0 1 1.3.3l2 3.4a1 1 0 0 1-.3 1.3l-1 .7a1.6 1.6 0 0 0 0 2.6l1 .7a1 1 0 0 1 .3 1.3l-2 3.4a1 1 0 0 1-1.3.3l-.9-.6a1.6 1.6 0 0 0-2.6 1.2V21a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.2a1.6 1.6 0 0 0-2.6-1.2l-.9.6a1 1 0 0 1-1.3-.3l-2-3.4a1 1 0 0 1 .3-1.3l1-.7a1.6 1.6 0 0 0 0-2.6l-1-.7a1 1 0 0 1-.3-1.3l2-3.4a1 1 0 0 1 1.3-.3l.9.6A1.6 1.6 0 0 0 9 6.2V5a1 1 0 0 1 1-1z"></path>
+    </svg>
+    <rect x="347.11" y="131" width="152.22" height="34" rx="7" fill="#ffffff"/>
+    <rect x="347.11" y="131" width="152.22" height="34" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="398.22" y="151.69" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">模型管理</text>
+    <rect x="506.33" y="131" width="152.22" height="34" rx="7" fill="#ffffff"/>
+    <rect x="506.33" y="131" width="152.22" height="34" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="557.44" y="151.69" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">模型服务</text>
+    <rect x="665.55" y="131" width="152.22" height="34" rx="7" fill="#ffffff"/>
+    <rect x="665.55" y="131" width="152.22" height="34" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="716.66" y="151.69" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">模型体验</text>
+    <rect x="824.77" y="131" width="152.22" height="34" rx="7" fill="#ffffff"/>
+    <rect x="824.77" y="131" width="152.22" height="34" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="864.88" y="151.69" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">MCP Server</text>
+    <rect x="127" y="172" width="238.84" height="50.8" rx="7" fill="#ffffff"/>
+    <rect x="127" y="172" width="238.84" height="50.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="208.92" y="192.5" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">模型推理加速</text>
+    <text x="211.5" y="209.99" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">vLLM/SGLang</text>
+    <rect x="372.84" y="172" width="358.3" height="50.8" rx="7" fill="#ffffff"/>
+    <rect x="372.84" y="172" width="358.3" height="50.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="511.16" y="192.5" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">大模型 AI 网关</text>
+    <text x="453.91" y="209.99" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">路由管理 / 负载均衡 / 流量控制 / 合规安全</text>
+    <rect x="738.14" y="172" width="238.86" height="50.8" rx="7" fill="#ffffff"/>
+    <rect x="738.14" y="172" width="238.86" height="50.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="832.56" y="192.5" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">用量统计</text>
+    <text x="812.75" y="209.99" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">API Key / 调用记录</text>
+    <rect x="15" y="240.8" width="94" height="70.8" rx="10" fill="#f3f6fa"/>
+    <rect x="15" y="240.8" width="94" height="70.8" rx="10" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="28.25" y="271.29" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">机器学习服</text>
+    <text x="55.25" y="289.51" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">务</text>
+    <rect x="117" y="240.8" width="870" height="70.8" rx="12" fill="#f4f9ff"/>
+    <rect x="117" y="240.8" width="870" height="70.8" rx="12" fill="none" stroke="#bfdbfe" stroke-width="1"/>
+    <rect x="127" y="250.8" width="153.64" height="50.8" rx="7" fill="#ffffff"/>
+    <rect x="127" y="250.8" width="153.64" height="50.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="178.81" y="279.88" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">数据准备</text>
+    <rect x="287.64" y="250.8" width="153.64" height="50.8" rx="7" fill="#ffffff"/>
+    <rect x="287.64" y="250.8" width="153.64" height="50.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="339.45" y="279.88" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">算法开发</text>
+    <rect x="448.28" y="250.8" width="207.42" height="50.8" rx="7" fill="#ffffff"/>
+    <rect x="448.28" y="250.8" width="207.42" height="50.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="526.98" y="271.3" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">模型训练</text>
+    <text x="503.09" y="288.78" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Pytorch/Tensorflow</text>
+    <rect x="662.7" y="250.8" width="153.64" height="50.8" rx="7" fill="#ffffff"/>
+    <rect x="662.7" y="250.8" width="153.64" height="50.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="714.52" y="279.88" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">模型精调</text>
+    <rect x="823.34" y="250.8" width="153.66" height="50.8" rx="7" fill="#ffffff"/>
+    <rect x="823.34" y="250.8" width="153.66" height="50.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="875.17" y="279.88" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">模型评估</text>
+    <rect x="15" y="319.59" width="94" height="53.63" rx="10" fill="#f3f6fa"/>
+    <rect x="15" y="319.59" width="94" height="53.63" rx="10" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="35" y="350.62" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">算力服务</text>
+    <rect x="117" y="319.59" width="870" height="53.63" rx="12" fill="#f1fdfb"/>
+    <rect x="117" y="319.59" width="870" height="53.63" rx="12" fill="none" stroke="#9be9db" stroke-width="1"/>
+    <rect x="127" y="329.59" width="164.39" height="33.63" rx="7" fill="#ffffff"/>
+    <rect x="127" y="329.59" width="164.39" height="33.63" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="184.7" y="350.09" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">VSCode</text>
+    <rect x="298.39" y="329.59" width="164.41" height="33.63" rx="7" fill="#ffffff"/>
+    <rect x="298.39" y="329.59" width="164.41" height="33.63" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="357.06" y="350.09" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Jupyter</text>
+    <rect x="469.8" y="329.59" width="164.39" height="33.63" rx="7" fill="#ffffff"/>
+    <rect x="469.8" y="329.59" width="164.39" height="33.63" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="526.98" y="350.09" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">容器实例</text>
+    <rect x="641.19" y="329.59" width="164.41" height="33.63" rx="7" fill="#ffffff"/>
+    <rect x="641.19" y="329.59" width="164.41" height="33.63" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="698.39" y="350.09" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">数据存储</text>
+    <rect x="812.59" y="329.59" width="164.39" height="33.63" rx="7" fill="#ffffff"/>
+    <rect x="812.59" y="329.59" width="164.39" height="33.63" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="869.78" y="350.09" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">镜像仓库</text>
+    <rect x="15" y="381.22" width="94" height="222.39" rx="10" fill="#f1fdf5"/>
+    <rect x="15" y="381.22" width="94" height="222.39" rx="10" fill="none" stroke="#8ee0ab" stroke-width="1"/>
+    <text x="48.5" y="487.51" font-size="13.5" font-weight="700" fill="#16a34a" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">智能</text>
+    <text x="35" y="505.73" font-size="13.5" font-weight="700" fill="#16a34a" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">算力调度</text>
+    <rect x="117" y="381.22" width="870" height="222.39" rx="12" fill="#f4fdf7"/>
+    <rect x="117" y="381.22" width="870" height="222.39" rx="12" fill="none" stroke="#8ee0ab" stroke-width="1"/>
+    <rect x="127" y="391.22" width="82" height="48.8" rx="7" fill="#e9fbf0"/>
+    <rect x="127" y="391.22" width="82" height="48.8" rx="7" fill="none" stroke="#8ee0ab" stroke-width="1"/>
+    <text x="133.5" y="418.32" font-size="11.5" font-weight="700" fill="#16a34a" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">算力感知调度</text>
+    <rect x="216" y="391.22" width="185" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="216" y="391.22" width="185" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="271" y="410.72" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">作业队列调度</text>
+    <text x="271.17" y="428.2" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Kueue/Volcano</text>
+    <rect x="408" y="391.22" width="185" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="408" y="391.22" width="185" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="463" y="410.72" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">资源分配调度</text>
+    <text x="446.05" y="428.2" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Gang/Binpack/Spread</text>
+    <rect x="600" y="391.22" width="185" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="600" y="391.22" width="185" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="648.75" y="410.72" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">分布式推理调度</text>
+    <text x="681.31" y="428.2" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">LWS</text>
+    <rect x="792" y="391.22" width="185" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="792" y="391.22" width="185" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="840.75" y="410.72" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">分布式训练调度</text>
+    <text x="865.3" y="428.2" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Job Set</text>
+    <rect x="127" y="447.02" width="82" height="48.8" rx="7" fill="#e9fbf0"/>
+    <rect x="127" y="447.02" width="82" height="48.8" rx="7" fill="none" stroke="#8ee0ab" stroke-width="1"/>
+    <text x="133.5" y="474.12" font-size="11.5" font-weight="700" fill="#16a34a" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">算力资源优化</text>
+    <rect x="216" y="447.02" width="249" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="216" y="447.02" width="249" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="312.84" y="466.52" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">GPU 共享</text>
+    <text x="315.19" y="484" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">HAMI/MIG</text>
+    <rect x="472" y="447.02" width="249" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="472" y="447.02" width="249" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="556.34" y="466.52" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">GPU 网络加速</text>
+    <text x="569.17" y="484" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Spiderpool</text>
+    <rect x="728" y="447.02" width="249" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="728" y="447.02" width="249" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="824.84" y="466.52" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">GPU 管理</text>
+    <text x="770.7" y="484" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">GPU Operator/Network Operator</text>
+    <rect x="127" y="502.81" width="82" height="48.8" rx="7" fill="#e9fbf0"/>
+    <rect x="127" y="502.81" width="82" height="48.8" rx="7" fill="none" stroke="#8ee0ab" stroke-width="1"/>
+    <text x="133.5" y="529.91" font-size="11.5" font-weight="700" fill="#16a34a" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">算力资源池化</text>
+    <rect x="216" y="502.81" width="249" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="216" y="502.81" width="249" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="315.5" y="522.31" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">异构计算</text>
+    <text x="329.58" y="539.8" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">DRA</text>
+    <rect x="472" y="502.81" width="249" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="472" y="502.81" width="249" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="565.25" y="522.31" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">高性能网络</text>
+    <text x="561.39" y="539.8" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">NVLink/RDMA</text>
+    <rect x="728" y="502.81" width="249" height="48.8" rx="7" fill="#ffffff"/>
+    <rect x="728" y="502.81" width="249" height="48.8" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="808.75" y="522.31" font-size="12.5" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">高速分布式存储</text>
+    <text x="805.17" y="539.8" font-size="10.5" font-weight="400" fill="#64748b" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Lustre/Hwameistor</text>
+    <rect x="127" y="560.61" width="850" height="33" rx="7" fill="#ffffff"/>
+    <rect x="127" y="560.61" width="850" height="33" rx="7" fill="none" stroke="#8ee0ab" stroke-width="1" stroke-dasharray="5 4"/>
+    <svg x="442.61" y="569.11" width="16" height="16" viewBox="0 0 24 24" color="#1e2937" overflow="visible">
+      <path fill="#326ce5" d="M12 1.6l8.6 4.1 2.1 9.3-6 7.4H7.3l-6-7.4 2.1-9.3z"></path><circle cx="12" cy="12" r="3.4" fill="#fff"></circle><circle cx="12" cy="12" r="1.5" fill="#326ce5"></circle>
+    </svg>
+    <text x="466.61" y="580.95" font-size="12" font-weight="700" fill="#326ce5" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">kubernetes</text>
+    <text x="538.7" y="580.95" font-size="12" font-weight="400" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">AI 算力调度的事实标准</text>
+    <rect x="995" y="121" width="106" height="482.61" rx="12" fill="#f8fafc"/>
+    <rect x="995" y="121" width="106" height="482.61" rx="12" fill="none" stroke="#dbe1ea" stroke-width="1"/>
+    <text x="1014.25" y="152.32" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">运维可观测</text>
+    <rect x="1005" y="173" width="86" height="54.08" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="173" width="86" height="54.08" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1030" y="203.87" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">仪表盘</text>
+    <rect x="1005" y="234.08" width="86" height="54.09" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="234.08" width="86" height="54.09" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1024" y="264.97" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">告警中心</text>
+    <rect x="1005" y="295.17" width="86" height="54.08" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="295.17" width="86" height="54.08" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1024" y="326.04" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">资源监控</text>
+    <rect x="1005" y="356.25" width="86" height="54.09" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="356.25" width="86" height="54.09" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1024" y="387.14" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">故障追踪</text>
+    <rect x="1005" y="417.34" width="86" height="54.08" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="417.34" width="86" height="54.08" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1012" y="448.22" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">日志采集查询</text>
+    <rect x="1005" y="478.42" width="86" height="54.09" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="478.42" width="86" height="54.09" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1024" y="509.31" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">链路查询</text>
+    <rect x="1005" y="539.52" width="86" height="54.09" rx="7" fill="#ffffff"/>
+    <rect x="1005" y="539.52" width="86" height="54.09" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1016.31" y="570.4" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">AI 网络监控</text>
+    <rect x="1109" y="121" width="106" height="482.61" rx="12" fill="#f8fafc"/>
+    <rect x="1109" y="121" width="106" height="482.61" rx="12" fill="none" stroke="#dbe1ea" stroke-width="1"/>
+    <text x="1135" y="152.32" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">运营管理</text>
+    <rect x="1119" y="173" width="86" height="54.08" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="173" width="86" height="54.08" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1132" y="203.87" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">多租户配置</text>
+    <rect x="1119" y="234.08" width="86" height="54.09" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="234.08" width="86" height="54.09" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1124.05" y="264.97" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">权限/角色管理</text>
+    <rect x="1119" y="295.17" width="86" height="54.08" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="295.17" width="86" height="54.08" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1138" y="326.04" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">访问控制</text>
+    <rect x="1119" y="356.25" width="86" height="54.09" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="356.25" width="86" height="54.09" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1126" y="387.14" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">统一身份认证</text>
+    <rect x="1119" y="417.34" width="86" height="54.08" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="417.34" width="86" height="54.08" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1138" y="448.22" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">配额管理</text>
+    <rect x="1119" y="478.42" width="86" height="54.09" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="478.42" width="86" height="54.09" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1138" y="509.31" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">计量计费</text>
+    <rect x="1119" y="539.52" width="86" height="54.09" rx="7" fill="#ffffff"/>
+    <rect x="1119" y="539.52" width="86" height="54.09" rx="7" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="1138" y="570.4" font-size="12" font-weight="600" fill="#1e2937" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">数据报表</text>
+    <rect x="15" y="611.61" width="94" height="51.28" rx="10" fill="#f3f6fa"/>
+    <rect x="15" y="611.61" width="94" height="51.28" rx="10" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <text x="35" y="641.46" font-size="13.5" font-weight="700" fill="#334155" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">算力硬件</text>
+    <rect x="117" y="611.61" width="1098" height="51.28" rx="12" fill="#f8fafc"/>
+    <rect x="117" y="611.61" width="1098" height="51.28" rx="12" fill="none" stroke="#e4e9f0" stroke-width="1"/>
+    <svg x="138" y="627.25" width="20" height="20" class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#3d4a5c" overflow="visible">
+      <path d="M3 20l9-16 9 16"></path><path d="M7 20l5-9 5 9"></path>
+    </svg>
+    <text x="165" y="635.77" font-size="13" font-weight="700" fill="#4a5568" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">天数智芯</text>
+    <text x="165" y="646.93" font-size="9" font-weight="400" fill="#9aa5b4" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">ILUVATAR COREX</text>
+    <svg x="347.91" y="627.25" width="20" height="20" class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#3d4a5c" overflow="visible">
+      <path d="M12 3l9 9-9 9-9-9z"></path><path d="M12 8l4 4-4 4-4-4z"></path>
+    </svg>
+    <text x="374.91" y="642.05" font-size="15" font-weight="700" fill="#4a5568" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Ascend</text>
+    <svg x="531.05" y="627.25" width="20" height="20" class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#3d4a5c" overflow="visible">
+      <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z"></path><circle cx="12" cy="12" r="3"></circle>
+    </svg>
+    <text x="558.05" y="642.05" font-size="15" font-weight="700" fill="#4a5568" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">NVIDIA</text>
+    <svg x="711.98" y="627.25" width="20" height="20" class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#3d4a5c" overflow="visible">
+      <path d="M3 18V9l4 4 3-6 3 6 4-4v9"></path>
+    </svg>
+    <text x="738.98" y="635.77" font-size="13" font-weight="700" fill="#4a5568" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">METAX</text>
+    <text x="738.98" y="646.93" font-size="9" font-weight="400" fill="#9aa5b4" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">沐曦</text>
+    <svg x="886.16" y="627.25" width="20" height="20" class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#3d4a5c" overflow="visible">
+      <path d="M12 3c3 4 3 8 0 12-3-4-3-8 0-12z"></path><path d="M6 12c3 1 5 3 6 6-3 0-5-2-6-6zM18 12c-3 1-5 3-6 6 3 0 5-2 6-6z"></path>
+    </svg>
+    <text x="913.16" y="635.77" font-size="13" font-weight="700" fill="#4a5568" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">Enflame</text>
+    <text x="913.16" y="646.93" font-size="9" font-weight="400" fill="#9aa5b4" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">燧原科技</text>
+    <svg x="1067.06" y="627.25" width="20" height="20" class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" color="#3d4a5c" overflow="visible">
+      <rect x="3" y="3" width="8" height="8" rx="1.5"></rect><rect x="13" y="13" width="8" height="8" rx="1.5"></rect><path d="M11 7h4v6"></path>
+    </svg>
+    <text x="1094.06" y="635.77" font-size="13" font-weight="700" fill="#4a5568" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">璧仞科技</text>
+    <text x="1094.06" y="646.93" font-size="9" font-weight="400" fill="#9aa5b4" font-family="system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">BIREN TECHNOLOGY</text>
+  </g>
+</svg>

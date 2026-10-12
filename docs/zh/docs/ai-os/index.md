@@ -36,7 +36,7 @@ hide:
 
 </div>
 
-![d.run 架构](./images/drun-archi.png)
+![d.run 架构](./images/drun-archi.svg)
 
 <div style="max-width: 900px; margin: 0 auto; text-align: center; line-height: 1.8;">
 
