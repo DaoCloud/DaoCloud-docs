@@ -89,8 +89,9 @@ nav:
                   - Verify Lightweight Deployment Plan: install/light-install/light-install-solution.md
                   - Lightweight Deployment: install/light-install/install-light.md
               - Upgrade:
-                  - Upgrade DCE Components: install/upgrade-notes.md
+                  - Upgrade DCE Components: install/upgrade.md
                   - Upgrade from Standard to Platinum: install/evolve.md
+                  - Upgrade Notes: install/upgrade-notes.md
               - Uninstall and Import:
                   - Uninstall: install/uninstall.md
                   - Import Offline Resources: install/import.md
@@ -500,9 +501,9 @@ nav:
                   - Managed Harbor: kangaroo/managed/intro.md
                   - Install Harbor Operator: kangaroo/managed/operator.md
                   - Create Harbor Instance: kangaroo/managed/harbor.md
-                  - Create Registry Space: kangaroo/integrate/registry-space.md
+                  - Create Registry Space: kangaroo/integrate/integrate-admin/registry-space.md
                   - Bind/Unbind Workspace: kangaroo/integrate/integrate-admin/bind-to-ws.md
-                  - Sync Images: kangaroo/integrate/sync.md
+                  - Sync Images: kangaroo/integrate/integrate-admin/sync.md
                   - Migrate Your Harbor Registry: kangaroo/managed/harbor-migration.md
               - Best Practice:
                   - Ingress or NodePort for Managed Harbor: kangaroo/best-practice/managed-harbor-select-access-type.md

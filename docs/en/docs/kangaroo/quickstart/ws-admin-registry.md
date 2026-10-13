@@ -15,12 +15,12 @@ deploying the application in the namespace under the workspace.
 Assuming that you have created an external Harbor or Docker Registry, follow the steps below to share 
 the external Harbor or Docker Registry with workspace members:
 
-## Prerequisites
+The prerequisites are:
 
 1. You are a Workspace Admin, and some namespaces are bound under this workspace.
 2. You have one or more external container registries (Harbor or Docker Registry).
 
-## Steps
+Concrete steps are as follows:
 
 ```mermaid
 graph TB

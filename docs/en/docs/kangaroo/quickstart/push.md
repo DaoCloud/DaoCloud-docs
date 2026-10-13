@@ -18,7 +18,7 @@ and container registry you actually created.
     docker login --username=<container registry login name> <container registry address>
     ```
 
-    Example：
+    Example:
 
     ```bash
     docker login --username=admin http://test.lrf02.kangaroo.com
@@ -32,7 +32,7 @@ and container registry you actually created.
     docker tag <container registry name>:<artifact version> <container registry address>/<registry space name>/<container registry name>:<artifact version>
     ```
 
-    Example：
+    Example:
 
     ```bash
     docker tag nginx:latest test.lrf02.kangaroo.com/library/nginx:latest
@@ -44,7 +44,7 @@ and container registry you actually created.
     docker push <container registry address>/<registry space name>/<container registry name>:<artifact version>
     ```
 
-    Example：
+    Example:
 
     ```bash
     docker push test.lrf02.kangaroo.com/library/nginx:latest
@@ -56,7 +56,7 @@ and container registry you actually created.
     docker pull <container registry address>/<registry space name>/<container registry name>:<artifact version>
     ```
 
-    Example：
+    Example:
 
     ```bash
     docker pull test.lrf02.kangaroo.com/library/nginx:latest
@@ -81,9 +81,9 @@ and container registry you actually created.
 
 4. Click the push command on the right to view the push commands provided by native Harbor.
 
-    ![push command](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/push03.png)
+    ![push command](../images/push04.png)
 
-!!! Tip
+!!! tip
 
     Compared with [method 1](#push-method-1), the push command of the native Harbor automatically
     fills in the address of the container registry and the name of the registry space.

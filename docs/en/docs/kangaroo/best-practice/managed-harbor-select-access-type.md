@@ -2,7 +2,6 @@
 
 When creating a managed Harbor, you need to choose an access type.
 Currently, there are two supported types: Ingress and NodePort.
-
 The table below explains the advantages and disadvantages of these two access types:
 
 <table>
