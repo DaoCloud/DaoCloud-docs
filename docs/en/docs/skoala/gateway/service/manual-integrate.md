@@ -4,10 +4,6 @@ The services that are successfully added will be displayed on the service list p
 in the list as the target back-end services when adding apis. The microservice gateway supports manual access and
 automatic discovery to add services. This page describes how to manually add services.
 
-**Prerequisites**
-
-You need to add the corresponding service source in Source management so that you can select the corresponding service source type when manually adding services.
-
 ## Access service
 
 1. In the __Gateway List__ page click the name of the target gateway, enter the gateway overview page, in the left navigation bar click __Add Service__ -> __Service List__ .
@@ -63,6 +59,8 @@ You need to add the corresponding service source in Source management so that yo
 ## Update service
 
 ### Update basic information
+
+Updating the basic configuration refers to modifying the connection information such as the service name, protocol, address, and port.
 
 1. In the __Service List__ page find need to update the service, in the service of right click __ⵗ__ , choose __Basic Info__ .
 

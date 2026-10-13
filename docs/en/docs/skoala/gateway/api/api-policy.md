@@ -18,6 +18,8 @@ There are two ways to configure API policies:
 - [Advanced Configuration of API Policy (1)](../../../videos/skoala.md#api-1)
 - [Advanced Configuration of API Policy (2)](../../../videos/skoala.md#api-2)
 
+**The configuration of each policy is described as follows**:
+
 ## Load balancing
 
 When the target back-end service of an API serves multiple instances, you can use load balancing policies to control traffic distribution and adjust the traffic received by instances of different services based on service use cases.
@@ -126,6 +128,12 @@ The configuration shown in the following figure indicates that a maximum of 8 re
 
 ![ratelimit](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/ratelimit.png)
 
+!!! info
+
+    In addition to the local traffic limiting capability at the API level, you can also
+    [configure a domain policy](../domain/domain-policy.md) to perform traffic limiting for the entire domain.
+    When traffic limiting policies are configured for both the API and the domain, the API-level policy prevails.
+
 ## Health examination
 
 By setting the health check address, you can ensure that the gateway automatically adjusts the load balancing when the back-end service is abnormal. Flag an unhealthy back-end service and stop distributing traffic to it. After the back-end service recovers and passes the specified health check conditions, traffic distribution is automatically resumed.
@@ -165,7 +173,7 @@ After `Black List` is enabled, only IP requests in the whitelist are allowed to 
 
 - Remote: If the IP source is Remote, whether the whitelist takes effect depends on the number of proxy layers before the gateway. When the number of proxy layers is n, the IP address of the n+1 endpoints from the gateway takes effect. For example, `**Client-Nginx-Gateway**` If the number of proxy layers before the gateway is 1, this parameter takes effect only for the IP address of the second endpoint before the gateway, that is, the IP address of the client. If you fill in the IP address of Nginx, the whitelist will not take effect.
 
-    <!-- ![黑白名单]() 待补充-->
+    <!--![]()screenshots-->
 
 - Peer: If the IP source is Peer, the whitelist is valid only for the **direct** peer IP address of the gateway, regardless of the number of proxy layers before the gateway. For example `Client-...-Nginx-Gateway`, no matter how many proxy endpoints there are between the client and Nginx, the whitelist is only valid for the IP of the last Nginx.
 
