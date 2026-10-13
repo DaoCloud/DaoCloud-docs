@@ -39,7 +39,7 @@ in the implementation specifications:
 
 !!! info
 
-    View GitHub for code implementation：
+    View GitHub for code implementation:
 
     1. [Skywalking Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/skywalkingreceiver)
     2. [PR: Create skywalking component folder/structure](https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/8107)
@@ -55,7 +55,7 @@ SegmentId and SpanId, and convert it to the SpanId in OpenTelemetry.
 
 !!! info
 
-    View GitHub for code implementation：
+    View GitHub for code implementation:
 
     1. [Skywalking Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/skywalkingreceiver)
     2. [PR: Fix skywalking traceid and spanid convertion](https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/11562)
@@ -76,7 +76,7 @@ to the OpenTelemetry Attributes.
 
 !!! info
 
-    View GitHub for code implementation：
+    View GitHub for code implementation:
 
     1. [Skywalking Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/skywalkingreceiver)
     2. [Add extra link attributes from skywalking ref](https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/12651)
@@ -95,6 +95,7 @@ First, deploy the OpenTelemetry Agent and enable the following configuration to 
 ```yaml
 # otel-agent config
 receivers:
+  # add the following config
   skywalking:
     protocols:
       grpc:
@@ -104,6 +105,7 @@ receivers:
 service: 
   pipelines: 
     traces:      
+      # add receiver __skywalking__ 
       receivers: [skywalking]
       
 # otel-agent service yaml
@@ -139,6 +141,3 @@ Additionally, you can view the original SkyWalking Id information on the Jaeger 
 with application logs:
 
 ![sw2otel-05](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sw2otel-05.png)
-
-By following these steps, you can seamlessly integrate SkyWalking trace data into OpenTelemetry and leverage 
-the capabilities of the Insight platform.

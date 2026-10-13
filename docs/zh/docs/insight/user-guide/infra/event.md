@@ -46,4 +46,4 @@ Pod 调度失败次数、容器 OOM 内存耗尽次数、存储卷挂载失败�
 
 ## 参考
 
-有关系统自带的 Event 事件的详细含义，请参阅 [Kubenetest API 事件列表](https://kubernetes.io/zh-cn/docs/reference/kubernetes-api/cluster-resources/event-v1/)。
+有关系统自带的 Event 事件的详细含义，请参阅 [Kubernetes API 事件列表](https://kubernetes.io/zh-cn/docs/reference/kubernetes-api/cluster-resources/event-v1/)。

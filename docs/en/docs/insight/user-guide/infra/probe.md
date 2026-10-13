@@ -2,7 +2,7 @@
 
 Probe refers to the use of black-box monitoring to regularly test the connectivity of targets through HTTP, TCP, and other methods, enabling quick detection of ongoing faults.
 
-Insight uses the Prometheus Blackbox Exporter tool to probe the network using protocols such as HTTP, HTTPS, DNS, TCP, and ICMP, and returns the probe results to understand the network status.
+Insight uses the [Prometheus Blackbox Exporter](https://github.com/prometheus/blackbox_exporter) tool to probe the network using protocols such as HTTP, HTTPS, DNS, TCP, and ICMP, and returns the probe results to understand the network status.
 
 ## Prerequisites
 
@@ -14,23 +14,24 @@ The __insight-agent__ has been successfully deployed in the target cluster and i
 2. Select __Infrastructure__ -> __Probes__ in the left navigation bar.
 
     - Click the cluster or namespace dropdown in the table to switch between clusters and namespaces.
-    - The list displays the name, probe method, probe target, connectivity status, and creation time of the probes by default.
-    - The connectivity status can be:
+    - You can click the ⚙️ icon on the right to modify the displayed columns. By default, they are probe name, probe method, probe target, connectivity status, and creation time.
+    - The connectivity status has 3 types:
         - Normal: The probe successfully connects to the target, and the target returns the expected response.
         - Abnormal: The probe fails to connect to the target, or the target does not return the expected response.
         - Pending: The probe is attempting to connect to the target.
-    - Supports fuzzy search of probe names.
+    - You can type a name in the 🔍 search box to perform a fuzzy search for certain probe tasks.
 
+    ![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe00.png){ width=1000px}
 
 ## Create a Probe
 
 1. Click __Create Probe__ .
 2. Fill in the basic information and click __Next__ .
 
-    - Name: The name can only contain lowercase letters, numbers, and hyphens (-), and must start and end with a lowercase letter or number, with a maximum length of 63 characters.
     - Cluster: Select the cluster for the probe task.
     - Namespace: The namespace where the probe task is located.
 
+    ![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe01.png){ width=1000px}
 
 3. Configure the probe parameters.
 
@@ -44,15 +45,25 @@ The __insight-agent__ has been successfully deployed in the target cluster and i
     - Probe Interval: The interval between probes.
     - Probe Timeout: The maximum waiting time when probing the target.
 
+    ![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe02.png){ width=1000px}
+
 4. After configuring, click **OK** to complete the creation.
 
 !!! warning
 
     After the probe task is created, it takes about 3 minutes to synchronize the configuration. During this period, no probes will be performed, and probe results cannot be viewed.
 
+## Edit a Probe
+
+Click __┇__ -> __Edit__ on the right side of the list, and click __OK__ after completing the edit.
+
+![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe04.png){ width=1000px}
+
 ## View Monitoring Dashboards
 
-Click __ ...__ in the operations column and click __View Monitoring Dashboard__ .
+Click the probe name to view the monitoring status of each target in the probe task, which displays the probe results for the network conditions in the form of charts.
+
+![probe](https://docs.daocloud.io/insight/images/probe03.png){ width=1000px}
 
 | Metric Name | Description |
 | -- | -- |
@@ -113,11 +124,12 @@ spec:
             severity: warning
 ```
 
-## Edit a Probe
-
-Click __ ...__ in the operations column and click __Edit__ .
-
-
 ## Delete a Probe
 
-Click __ ...__ in the operations column and click __Delete__ .
+Click __┇__ -> __Delete__ on the right side of the list, and click __OK__ after confirming.
+
+![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe05.png){ width=1000px}
+
+!!! caution
+
+    Delete operations cannot be recovered, so proceed with caution.

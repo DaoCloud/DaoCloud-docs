@@ -7,11 +7,13 @@ Date: 2024-10-16
 
 If your Java application exposes JVM monitoring metrics through other means (such as Spring Boot Actuator), you will need to ensure that the monitoring data is collected. You can achieve this by adding annotations (Kubernetes Annotations) to your workload to allow Insight to scrape the existing JVM metrics:
 
+> Note: Please check and ensure that the Metrics URL or Path is correct. For example, the default Metrics port and path of Spring Boot Actuator is :8080/actuator/prometheus
+
 ```yaml
 annotations: 
   insight.opentelemetry.io/metric-scrape: "true"  # Whether to scrape
-  insight.opentelemetry.io/metric-path: "/"         # Path to scrape metrics
-  insight.opentelemetry.io/metric-port: "9464"      # Port to scrape metrics
+  insight.opentelemetry.io/metric-path: "/actuator/prometheus"      # Path to scrape metrics
+  insight.opentelemetry.io/metric-port: "8080"   # Port to scrape metrics
 ```
 
 For example, to add annotations to the **my-deployment-app**:
@@ -34,8 +36,8 @@ spec:
         app.kubernetes.io/name: my-deployment-app
       annotations:
         insight.opentelemetry.io/metric-scrape: "true"  # Whether to scrape
-        insight.opentelemetry.io/metric-path: "/"         # Path to scrape metrics
-        insight.opentelemetry.io/metric-port: "9464"      # Port to scrape metrics
+        insight.opentelemetry.io/metric-path: "/actuator/prometheus"     # Path to scrape metrics
+        insight.opentelemetry.io/metric-port: "8080"   # Port to scrape metrics
 ```
 
 Here is a complete example:

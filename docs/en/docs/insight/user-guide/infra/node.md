@@ -11,7 +11,7 @@ the trend of resource consumption such as CPU, memory, and disk.
 
 ## Prerequisites
 
-- The cluster has [insight-agent installed](../../quickstart/install/install-agent.md) and the application is in __running__ state.
+The cluster has [insight-agent installed](../../quickstart/install/install-agent.md) and the application is in __running__ state.
 
 ## Steps
 
@@ -27,4 +27,14 @@ the trend of resource consumption such as CPU, memory, and disk.
 
     ![Node Monitoring](../../images/node.png){ width="1000"}
 
-3. Click __Resource Level Monitor__, you can view more metrics of the current cluster.
+3. Click __Resource Level Monitor__, you can view more metrics of the current node.
+
+    ![Node Monitoring](https://docs.daocloud.io/insight/images/cluster-1.png){ width="1000"}
+
+4. If the selected node is a GPU node, you can see __GPU Monitoring__ in the tab below the node, and from __GPU Monitoring__ you can monitor the GPU resources.
+
+    ![gpu-node](https://docs.daocloud.io/insight/images/gpu-node.png){ width="1000"}
+
+    !!! note
+
+        Currently, only NVIDIA and Huawei Ascend GPU monitoring are supported.

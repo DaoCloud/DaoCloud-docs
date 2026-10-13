@@ -18,7 +18,7 @@ Here are the specific steps to follow:
     ```yaml
     metadata:
       annotations:
-        tailing-sidecar: <sidecar-name-0>:<volume-name-0>:<path-to-tail-0>;<sidecar-name-1>:<volume-name-1>:<path-to -tail-1>
+        tailing-sidecar: <sidecar-name-0>:<volume-name-0>:<path-to-tail-0>;<sidecar-name-1>:<volume-name-1>:<path-to-tail-1>
     ```
 
     Field description:

@@ -64,7 +64,7 @@
   
 3. 增加 `vmselect` 的 CPU 和内存可以提升复杂查询的性能，尤其是处理大量时间序列和原始样本时。扩展 `vmselect` 的副本数可以提高查询的并发处理能力，因为传入的请求可以在更多的 vmselect 节点之间分配，从而提升查询的最大速度。
 
-4. 正常安装模式下 `VictoriaMetrics` 使用官方默认配置。指标 `vm_concurrent_insert_capacity` 默认为指标 `vm_available_cpu_coresvm_available_cpu_cores{job="vminsert-insight-victoria-metrics-k8s-stack"}` 的 2 倍；`vm_concurrent_select_capacity` 默认为 `vm_available_cpu_cores{job="vmselect-insight-victoria-metrics-k8s-stack"}`的 2 倍。当给定组件的 CPU 不足时，可能出现 `vm_concurrent_insert_current 或vm_concurrent_select_current` 达到上限，这种情况下需根据实际情况在 CR 中增加以下配置：
+4. 正常安装模式下 `VictoriaMetrics` 使用官方默认配置。指标 `vm_concurrent_insert_capacity` 默认为指标 `vm_available_cpu_cores{job="vminsert-insight-victoria-metrics-k8s-stack"}` 的 2 倍；`vm_concurrent_select_capacity` 默认为 `vm_available_cpu_cores{job="vmselect-insight-victoria-metrics-k8s-stack"}`的 2 倍。当给定组件的 CPU 不足时，可能出现 `vm_concurrent_insert_current` 或 `vm_concurrent_select_current` 达到上限，这种情况下需根据实际情况在 CR 中增加以下配置：
 
 ```shell
 # vmcluster的cr中，在spec.vminsert.extraArgs下增加如下，则可以将最大并发提高到32 

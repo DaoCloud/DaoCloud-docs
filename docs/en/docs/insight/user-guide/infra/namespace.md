@@ -9,7 +9,7 @@ With namespaces as the dimension, you can quickly query resource consumption and
 
 ## Prerequisites
 
-- Insight Agent is [installed](../../quickstart/install/install-agent.md) in the cluster and the applications are in the __Running__ state.
+Insight Agent is [installed](../../quickstart/install/install-agent.md) in the cluster and the applications are in the __Running__ state.
 
 ## Steps
 
@@ -23,6 +23,7 @@ With namespaces as the dimension, you can quickly query resource consumption and
     4. **Events**: Shows the number of Warning level events within the selected namespace in the past 24 hours.
     5. **Resource Consumption**: Provides the sum of CPU and memory usage for Pods within the selected namespace, along with the CPU and memory quota information.
 
+    ![Namespace](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/namespace00.png){ width="1000"}
 
 ### Metric Explanations
 

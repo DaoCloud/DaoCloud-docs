@@ -26,7 +26,7 @@ Insight currently provides an easy way to enhance .Net NodeJS, Java, Python and 
 
 - Best practices for integrate trace: [Application Non-Intrusive Enhancement via Operator](./operator.md)
 - Manual instrumentation with Go language as an example: [Enhance Go application with OpenTelemetry SDK](golang/golang.md)
-- [Using ebpf to implement non-intrusive auto-instrumetation in Go language](./golang-ebpf.md) (experimental feature)
+- [Using eBPF to implement non-intrusive auto-instrumentation in Go language](https://github.com/keyval-dev/opentelemetry-go-instrumentation/blob/master/docs/getting-started/README.md) (experimental feature)
 
 <!--
 ## Log Enhancement

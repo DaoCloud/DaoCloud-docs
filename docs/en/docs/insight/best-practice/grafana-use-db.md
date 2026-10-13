@@ -17,7 +17,7 @@ database for the Grafana instance provided by Insight.
 
 ## Using an External Database
 
-Based on the official Grafana documentation (as of image version 9.3.14), follow
+Based on the official Grafana documentation (as of image version 12.1.3), follow
 these steps to set up an external database, using MySQL as an example:
 
 1. Create a new database in your external database (MySQL/PostgreSQL).
@@ -91,6 +91,8 @@ these steps to set up an external database, using MySQL as an example:
         --set grafana-operator.grafana.config.database.user=grafana \
         --set grafana-operator.grafana.config.database.password=grafana_password 
     ```
+
+After enabling the database using the helm command, you may encounter the issue of the admin user being unable to log in when upgrading subsequent versions of the insight chart. For specific solutions, see **Note 3**.
 
 ## Important Notes
 
