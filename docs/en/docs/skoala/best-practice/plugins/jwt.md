@@ -34,7 +34,7 @@ Bind a workspace to the target mesh to allow the mesh to use resources from the 
 
 ### Connect Services in the Microservice Engine
 
-Go to the Microservice Engine module and import the demo application into the cloud-native microservice module. For detailed steps, refer to [Importing Services](../../cloud-ms/index.md).
+Go to the Microservice Engine module and import the demo application into the cloud-native microservice module. For detailed steps, refer to [Importing Services](../../cloud-ms/traffic-control.md).
 
 
 

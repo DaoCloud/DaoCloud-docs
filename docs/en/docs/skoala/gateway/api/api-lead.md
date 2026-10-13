@@ -115,6 +115,3 @@ spec:
 status:
   loadBalancer: {}
 ```
-
-This YAML structure outlines various policies and configurations for your API, including routing,
-health checks, and rate limiting.

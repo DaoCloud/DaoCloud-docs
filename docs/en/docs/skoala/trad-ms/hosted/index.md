@@ -40,7 +40,9 @@ The steps to create a hosted registry are as follows.
         ![recommended quotas](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create02.png)
 
     - Access mode: If `NodePort` is selected, the registry can be accessed externally through **Service port + destination port**. If `Internal Access` is selected, the registry can be accessed through service ports only in the cluster where the registry resides. The default service port is 8848.
+    - Service authentication: When service authentication is enabled, services registered with the registry need authentication information. The default username/password is nacos/nacos. When data is persisted in the built-in database mode, enabling service authentication is not supported.
     - Deployment mode: If high availability mode is selected, the number of nodes must be at least three. In the production environment, the `High Availability` mode is recommended.
+    - Image version: Currently, the v2.0.4-slim, v2.1.1-slim, and v2.2.3-slim versions are supported.
 
         ![ha](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create03.png)
 

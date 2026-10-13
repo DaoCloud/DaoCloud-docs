@@ -48,7 +48,7 @@ and Dubbo, helping you to build your own microservice system using open-source m
 
     ---
 
-    - [Import/Remove Services](../cloud-ms/index.md)
+    - [Import/Remove Services](../cloud-ms/traffic-control.md)
     - [Traffic Governance](../cloud-ms/traffic-control.md)
     - [Nacos Stress Testing Report](../tests/nacos-stress-test.md)
 

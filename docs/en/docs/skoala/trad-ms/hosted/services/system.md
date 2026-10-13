@@ -35,3 +35,5 @@ Follow the steps below to create a system rule:
 4. After creating the rule, you can view it in the list of system rules. Click the more options button on the right side to update or delete the rule.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov16.png)
+
+Refer to the video tutorial: [Sentinel System Rules](../../../../videos/skoala.md#sentinel-system-rules)

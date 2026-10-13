@@ -6,7 +6,6 @@ hide:
 # Cloud-Native Gateway
 
 A gateway is an intermediate layer between clients and server-side applications, through which all external requests must pass. Cloud-native gateway refers to a decoupled gateway based on the concept of cloud-native declarative APIs. Examples of cloud-native gateways include Zuul, Kong, Nginx, Spring Cloud Gateway, Envoy, and more. The most notable feature of cloud-native gateways is the ability to define the runtime configuration of the gateway through declarations, which can be automatically generated through the control plane's declarations.
-
 The functionality of cloud-native gateways is similar to that of microservices gateways. It includes features such as authentication, routing, monitoring, load balancing, caching, service upgrade and downgrade, static response handling, traffic control, logging, retries, and circuit breaking.
 
 - Envoy

@@ -921,15 +921,14 @@ nav:
                   - Gateway Management: skoala/gateway/index.md
                   - Domain Management:
                       - Add Domain: skoala/gateway/domain/index.md
-                      - Update/Delete Domain: skoala/gateway/domain/update-domain.md
                       - Domain Policies: skoala/gateway/domain/domain-policy.md
                   - API Management:
                       - Add API: skoala/gateway/api/index.md
                       - Configure API Policy: skoala/gateway/api/api-policy.md
                       - Import API: skoala/gateway/api/api-lead.md
                   - Service List:
-                      - Manual Acess: skoala/gateway/service/manual-integrate.md
-                      - Automatic nanotubes: skoala/gateway/service/auto-manage.md
+                      - Manual Access: skoala/gateway/service/manual-integrate.md
+                      - Automatic Management: skoala/gateway/service/auto-manage.md
                   - Monitor and Alert: skoala/gateway/alert.md
                   - Logs:
                       - Request Logs: skoala/gateway/logs/reqlog.md

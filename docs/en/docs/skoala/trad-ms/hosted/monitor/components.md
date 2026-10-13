@@ -1,5 +1,9 @@
 # Component monitoring
 
+!!! note
+
+    You shall [install insight-agent](../../../../insight/quickstart/install/install-agent.md) before using the monitor function.
+
 The Microservice engine provides a full range of Grafana monitoring capabilities covering various microservices, system components, and service invocation traces. Among them, the component monitoring feature can provide monitoring information for Nacos and Sentinel, including the number of nodes, the number of services, CPU/ memory consumption, the number of JVM threads, the total time of http requests and other dimensions.
 
 To view component monitoring, perform the following steps:
@@ -44,6 +48,7 @@ To view component monitoring, perform the following steps:
 | HTTP Request Time | Total time taken to process an HTTP request, including sending the request, server processing, and response |
 | HTTP Requests | Total number of HTTP requests sent by clients to Nacos servers |
 | Average Push Time | Average time taken to push service information to all clients subscribed to the service in Nacos registration |
+| HTTP Request Time | Total time taken to process an HTTP request, including sending the request, server processing, and response |
 | Config Connections | Number of long-lived connections established and maintained between Nacos instances and servers |
 | System Load | System load of Nacos |
 | HTTP Requests | Number of HTTP requests sent by clients to Nacos servers within a specific time period |
