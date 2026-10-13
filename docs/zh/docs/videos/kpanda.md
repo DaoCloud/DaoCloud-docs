@@ -109,7 +109,7 @@
 参阅 [HwameiStor 简介](../storage/hwameistor/intro/index.md)文档，本视频也上传到了[YouTube](https://youtu.be/6D1vgj86hHY)。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hwa.mp4" preload="metadata" poster="images/hwacover.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hwa.mp4" preload="metadata"></video>
 </div>
 
 [下载 DCE](../download/index.md){ .md-button .md-button--primary }

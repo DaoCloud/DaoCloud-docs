@@ -14,6 +14,7 @@ We have crafted the following video tutorials for service mesh, any kind of feed
 - :six: [Upgrade sidecar](#sidecar-upgrade)
 - :seven: [Traffic passthrough](#traffic-passthrough)
 - :eight: [Multicloud interconnection](#multicloud-interconnection)
+- :nine: [Custom Workload Types](#custom-workload-types)
 
 </div>
 

@@ -49,6 +49,14 @@ Refer to the [API Policy Configuration](../skoala/gateway/api/api-policy.md) doc
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/api-policy2.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/skoala-api2.png"></video>
 </div>
 
+### Microservice Gateway Proxy for Large Model Services
+
+Refer to the [Access Services through Gateway](../skoala/best-practice/gateway01.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gateway-service.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/gateway-service.jpg"></video>
+</div>
+
 ## Cloud-Native Microservices
 
 Refer to the [Traffic Governance of Microservices by Service Mesh](../mspider/user-guide/traffic-governance/README.md) documentation page.

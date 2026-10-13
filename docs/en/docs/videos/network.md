@@ -4,6 +4,20 @@ We have crafted the following video tutorials for network, any kind of feedback 
 
 > If there is a problem with the video display, please refresh the page, or try to clear the browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Create a Pod multi-NIC scenario](#create-a-pod-multi-nic-scenario)
+- :two: [Installation and use of F5network](#installation-and-use-of-f5network)
+- :three: [Installation and use of SR-IOV](#installation-and-use-of-sr-iov)
+- :four: [Installation and use of Ingress Nginx](#installation-and-use-of-ingress-nginx)
+- :five: [Installation and use of MetalLB](#installation-and-use-of-metallb)
+- :six: [Installation and use of Kdoctor](#installation-and-use-of-kdoctor)
+- :seven: [Running Spiderpool in Alibaba Cloud](#running-spiderpool-in-alibaba-cloud)
+- :eight: [Installing EgressGateway on a self-built cluster](#installing-egressgateway-on-a-self-built-cluster)
+- :nine: [How to use RDMA](#how-to-use-rdma)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;
@@ -69,6 +83,30 @@ Refer to [Kdoctor website](https://kdoctor-io.github.io/kdoctor/v0.1/).
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kdoctor.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/net-kdoctor.jpg"></video>
+</div>
+
+## Running Spiderpool in Alibaba Cloud
+
+Refer to the Spiderpool documentation on [running in Alibaba Cloud](https://docs.daocloud.io/network/modules/spiderpool/alibabacloud.html).
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/alicloud.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/net-spiderpool.jpeg"></video>
+</div>
+
+## Installing EgressGateway on a self-built cluster
+
+Refer to [Installing EgressGateway on a self-built cluster](https://spidernet-io.github.io/egressgateway/dev/usage/Install/).
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/egress-gw.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/egress.jpg"></video>
+</div>
+
+## How to use RDMA
+
+Refer to [RDMA environment preparation, installation, and usage](../network/modules/spiderpool/install/rdmapara.md).
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/rdma.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/rdma.jpg"></video>
 </div>
 
 [Download DCE](../download/index.md){ .md-button .md-button--primary }

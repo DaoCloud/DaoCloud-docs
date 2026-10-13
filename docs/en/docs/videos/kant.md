@@ -38,3 +38,7 @@ Please refer to the [Cloud Edge Collaboration](../kant/intro/index.md) documenta
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/edge-unit.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/edge-unit.jpg"></video>
 </div>
+
+[Download DCE](../download/index.md){ .md-button .md-button--primary }
+[Install DCE](../install/index.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }

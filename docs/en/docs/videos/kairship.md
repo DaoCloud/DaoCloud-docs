@@ -4,6 +4,18 @@ We have crafted the following video tutorials for multicloud orchestration, any 
 
 > If there is a problem with the video display, please refresh the page, or try to clear the browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Multicloud Module Introduction](#multicloud-module-introduction)
+- :two: [Creating Multicloud Instances](#creating-multicloud-instances)
+- :three: [Creating Multicloud Workloads](#creating-multicloud-workloads)
+- :four: [Creating Multicloud Jobs](#creating-multicloud-jobs-and-cronjobs)
+- :five: [Managing Multicloud Resources](#managing-multicloud-resources)
+- :six: [Migrating Applications from DCE 4.0 to DCE](#migrating-applications-from-dce-40-to-dce)
+- :seven: [Cross-Cluster Elastic Scaling](#cross-cluster-elastic-scaling)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;
@@ -69,6 +81,14 @@ Refer to the documentation: [How to Migrate Applications from DCE 4.0 to DCE wit
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-migrate.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kairship-migrate.png"></video>
+</div>
+
+## Cross-Cluster Elastic Scaling
+
+<!--Refer to the documentation: [How to Migrate Applications from DCE 4.0 to DCE with One-Click](../kairship/best-practice/one-click-conversion.md).-->
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-hpa.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kairship-hpa.png"></video>
 </div>
 
 [Download DCE](../download/index.md){ .md-button .md-button--primary }

@@ -88,7 +88,7 @@ Refer to the [Enable Audit Logs](../ghippo/user-guide/audit/open-audit.md) docum
 
 ### Disable Audit Logs
 
-Refer to the [Disable Audit Logs](../ghippo/user-guide/audit/open-audit.md#_4) documentation page.
+Refer to the [Disable Audit Logs](../ghippo/user-guide/audit/open-audit.md#steps-to-enable-audit-log-collection-when-creating-a-cluster) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-off.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/ghippo-auditoff.png"></video>

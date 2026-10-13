@@ -42,6 +42,8 @@ This page provides video tutorials to help you quickly get started with our prod
 
 </div>
 
+*[DCE]: An abbreviation for DaoCloud Enterprise, a cloud-native operating system and next-generation AI intelligent computing platform
+
 [Download DCE](../download/index.md){ .md-button .md-button--primary }
 [Install DCE](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

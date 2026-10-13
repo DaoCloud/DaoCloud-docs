@@ -31,6 +31,14 @@ Refer to [Automatic VM Drifting](../virtnest/vm/auto-migrate.md) documentation p
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/VM-drifting.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/vm-drifting.png"></video>
 </div>
 
+## Migrating Virtual Machines from VMware to the K8s Platform
+
+Refer to the documents on [Importing a traditional Linux VM from VMware](../virtnest/best-practice/import-ubuntu.md) and [Importing a traditional Windows VM from VMware](../virtnest/best-practice/import-windows.md).
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/migrate-from-vmware.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/migrate-from-vmware.png"></video>
+</div>
+
 [Download DCE](../download/index.md){ .md-button .md-button--primary }
 [Install DCE](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }
