@@ -33,7 +33,7 @@ See [Online Install DCE Community with kind](../install/community/kind/online.md
 
 ## Install the DCE Community online
 
-See [Online Install DCE Community](../install/index.md#_2).
+See [Online Install DCE Community](../install/index.md#install-dce-community).
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/online-install-community.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/install-online.png"></video>
