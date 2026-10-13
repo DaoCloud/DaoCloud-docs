@@ -217,6 +217,8 @@ understand the evolution path and feature changes of each version.
 
 ### v0.5.0
 
+#### New Features
+
 - **Added** support for creating managed Harbor instances with `NodePort` exposure and validation of port availability.
 - **Added** support for creating managed Harbor instances with `https` exposure.
 - **Added** support for creating managed Harbor instances with `DCE ODIC` integration, allowing users to log in to Harbor using `DCE` credentials.
@@ -230,6 +232,9 @@ understand the evolution path and feature changes of each version.
 - **Added** support for fuzzy searching in the repository integration list.
 - **Added** support for editing the visibility of projects as public or private.
 - **Added** support for displaying multi-architecture images in the pages of Harbor and Docker Registry repositories.
+
+#### Fixes
+
 - **Fixed** support for accessing Harbor and Docker Registry repositories via `https` integration.
 
 ## 2022-12-30

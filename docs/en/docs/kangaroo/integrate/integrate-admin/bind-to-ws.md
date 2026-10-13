@@ -19,7 +19,7 @@ Generally, for private registry spaces, binding to a workspace is helpful to all
 1. Log in to DCE as a user with the Admin role, click __Container Registry__ -> __Integrated Registry (Admin)__ 
    from the left navigation bar.
 
-    ![Integration](../images/integrated01.png)
+    ![Integration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/integrated01.png)
 
 1. Click a registry name.
 

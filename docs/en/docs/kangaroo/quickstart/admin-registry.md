@@ -10,7 +10,7 @@ DATE: 2024-08-19
 In DCE, there are two methods for managing container registries: Managed Harbor (self-built Harbor on DCE) and 
 Integrated Registry (integrating external Harbor or Docker Registry).
 
-- [Managed Harbor](../managed/intro.md)（suggested）
+- [Managed Harbor](../managed/intro.md) (suggested)
 - [Integrated Registry](../integrate/integrate-admin/integrate-admin.md)
 
 Harbor is mainly promoted as the Container Registry in DCE to provide image services.
