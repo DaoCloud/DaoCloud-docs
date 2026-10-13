@@ -112,7 +112,7 @@ hide:
 <li>Fine-tuning/LoRA support</li>
 <li>Multi-modal inference (text-image, audio-video)</li>
 <li>Model asset center enhancements (remote replication/sync, security scanning, pre-warming, i18n)</li>
-<li><a href="https://github.com/matrixhub-ai/matrixhub">MatrixHub</a> CNCF submission<sup><a href="#fn-matrixhub">1</a></sup></li>
+<li><mark><a href="https://github.com/matrixhub-ai/matrixhub">MatrixHub</a> joins the CNCF Landscape</mark><sup><a href="#fn-matrixhub">1</a></sup></li>
 <li>AI Agent infrastructure Beta (sandbox, memory & context, semantic routing)</li>
 <li>Fault self-healing (integrated training/inference framework auto-recovery)</li>
 <li>Alert noise reduction (automatic correlated alert grouping)</li>

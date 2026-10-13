@@ -126,7 +126,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kwok.md)
 
--   :material-brain:{ .lg .middle } __MatrixHub__ :simple-cncf: 正在加入 CNCF Landscape
+-   :material-brain:{ .lg .middle } __MatrixHub__ :simple-cncf: 已入选 CNCF Landscape
 
     ---
 
