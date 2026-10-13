@@ -14,10 +14,19 @@
 
 2. 当前命名空间配额管理覆盖的卡类型为：NVIDIA vGPU、NVIDIA MIG、天数智芯、华为昇腾。
 
-    **NVIDIA vGPU 配额管理** ：配置具体可以使用的配额，会创建 ResourcesQuota CR：
+3. **NVIDIA vGPU 配额管理**：配置具体可以使用的配额，会创建 `ResourceQuota` CR：
 
-    - 物理卡数量（nvidia.com/vgpu）：表示当前 POD 需要挂载几张物理卡，并且要 **小于等于** 宿主机上的卡数量。
-    - GPU 算力（nvidia.com/gpucores）：表示每张卡占用的 GPU 算力，值范围为 0-100；如果配置为 0，则认为不强制隔离；配置为 100，则认为独占整张卡。
-    - GPU 显存（nvidia.com/gpumem）：表示每张卡占用的 GPU 显存，值单位为 MB，最小值为 1，最大值为整卡的显存值。
+    - **GPU 算力**（`nvidia.com/gpucores`）：当前命名空间可分配的 GPU 总算力，是多张 GPU 算力之和，因此可以超过 100%。
+    - **GPU 显存**（`nvidia.com/gpumem`）：当前命名空间可分配的 GPU 总显存，是多张 GPU 显存之和。
 
-    ![卡类型](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-quota.png)
+    ![设置命名空间 GPU 配额](./images/vgpu-quota.png)
+
+    !!! note
+
+        新版配额模型不再单独设置物理卡数量。
+
+4. 命名空间的 GPU 配额从工作空间的共享资源总配额中分配：
+
+    - **总配额**：为当前命名空间设置的 GPU 配额。
+    - **可分配配额**：工作空间共享资源中当前还可分配给命名空间的 GPU 配额。
+    - 工作空间下所有命名空间的配额总和不能超过共享资源总配额，否则无法将该命名空间绑定到工作空间。

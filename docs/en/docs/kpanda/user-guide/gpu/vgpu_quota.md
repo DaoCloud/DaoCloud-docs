@@ -14,12 +14,26 @@ Follow these steps to manage GPU quotas in DCE:
 
     
 
-2. The currently supported card types for quota management in a namespace are: NVIDIA vGPU, NVIDIA MIG, Days, and Ascend.
+2. The GPU types supported by namespace quota management are: NVIDIA vGPU, NVIDIA MIG, Iluvatar, and Huawei Ascend.
 
-   - **NVIDIA vGPU Quota Management**: Configure the specific quota that can be used. This will create a ResourcesQuota CR.
+3. **NVIDIA vGPU Quota Management**: Configure the specific quota that can be used. This will create a
+   `ResourceQuota` CR:
 
-        - Physical Card Count (nvidia.com/vgpu): Indicates the number of physical cards that the current pod needs to mount. The input value must be an integer and **less than or equal to** the number of cards on the host machine.
-        - GPU Core Count (nvidia.com/gpucores): Indicates the GPU compute power occupied by each card. The value ranges from 0 to 100. If configured as 0, it is considered not to enforce isolation. If configured as 100, it is considered to exclusively occupy the entire card.
-        - GPU Memory Usage (nvidia.com/gpumem): Indicates the amount of GPU memory occupied by each card. The value is in MB, with a minimum value of 1 and a maximum value equal to the entire memory of the card.
+    - **GPU Computing Power** (`nvidia.com/gpucores`): The total GPU computing power that the namespace
+      can allocate. It is the sum across multiple GPUs and can therefore exceed 100%.
+    - **GPU Memory** (`nvidia.com/gpumem`): The total GPU memory that the namespace can allocate. It is
+      the sum of GPU memory across multiple GPUs.
 
-    
+    ![Configure namespace GPU quotas](./images/vgpu-quota.png)
+
+    !!! note
+
+        A separate physical GPU count is no longer required in the new quota model.
+
+4. A namespace GPU quota is allocated from the workspace shared-resource quota:
+
+    - **Total Quotas**: The GPU quota set for the current namespace.
+    - **Allocatable Quota**: The GPU quota currently available to the namespace from the workspace
+      shared resources.
+    - The sum of all namespace quotas cannot exceed the workspace shared-resource quota. Otherwise, the
+      namespace cannot be bound to the workspace.
