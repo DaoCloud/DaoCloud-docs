@@ -29,3 +29,17 @@ controller:
     otel-sampler-ratio: "1.0"
     otel-sampler-parent-based: "false"
 ```
+
+Note that the `otel-service-name` parameter should be in the `xxx.xxx` format, where the first part is the `service` name and the second part is the `k8s.namespace.name` attribute. After ingress-nginx reports traces to `insight-agent-opentelemetry-collector`, the `insight-agent-opentelemetry-collector` will parse them according to this format.
+
+## Verify the Result
+
+After the configuration is complete, all traces passing through ingress-nginx can be observed.
+
+![ingress-nginx trace](https://docs.daocloud.io/insight/images/ingress-nginx-otel.png)
+
+## References
+
+- [Enable opentelemetry in Ingress-Nginx (official demo)]( https://kubernetes.github.io/ingress-nginx/user-guide/third-party-addons/opentelemetry/)
+- [Configuration parameters of the nginx OTel module in Ingress-Nginx](https://github.com/open-telemetry/opentelemetry-cpp-contrib/tree/main/instrumentation/nginx)
+- [Configmap parameters in Ingress-Nginx](https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/nginx-configuration/configmap.md)

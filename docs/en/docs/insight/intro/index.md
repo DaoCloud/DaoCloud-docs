@@ -3,44 +3,15 @@ MTPE: windsonsea
 date: 2024-05-13
 ---
 
-# What is Insight？
+# What is Insight
 
 Insight is a next-generation, cloud native observability platform that focuses on application analysis.
 Its out-of-the-box real-time resource monitoring, metrics, logs, events, and other data assist enterprises
 in analyzing application status. Furthermore, it is compatible with popular open-source components,
 providing alerting, multi-dimensional data visualization, fault locating, and one-click monitoring and diagnosis.
 
-Insight implements unified collection of metrics, logs, and traces, which supports multi-dimension alerting
-on metrics and logs. The platform offers a web UI for enterprises to easily navigate. It provides several
-monitoring components, including multi-dimensional monitoring of containers, services, nodes, and clusters,
-and monitors CPU, memory, storage, and network resources. The integration with Grafana enables the creation of
-comprehensive dashboards.
-
-The platform allows for collection and search of workload logs, system logs, Kubernetes events,
-and context log queries. It supports service topology visualization and transparent tracing,
-including real-time service metrics, request per second, error rates, and latency. The platform
-supports distributed tracing based on open-source technologies and comes with pre-defined alerting rules,
-while also enabling users to define their metrics, logs, and alerts.
-
-Insight provides flexible configuration options for alerting rules, and notifications can be sent
-via multiple channels such as email, WeChat, and Webhook. It ensures the persistence of metrics,
-logs and tracing data, catering to the data storage needs of enterprises.
-
-The main features as following:
-
-- Provide multi-dimensional monitoring of containers, services, nodes and clusters.
-- CPU, memory, storage, network monitoring.
-- Integrated with grafana to provide comprehensive dashboards.
-- Collect and search workloads logs, system logs and kubernetes events.
-- Contextual logs query.
-- Services topology.
-- Transparence tracing supports, fully supported services real-time RPS, error rates, and latency metrics.
-- Open source based distributed tracing.
-- Out-of-the-box alerting rules.
-- User-defined metics, logs and other alerts.
-- Flexible configuration of alerting rules.
-- Multiple notification channels, such as email, WeChat, nail and Webhook.
-- Persistence of metics, logs, and tracing data.
+Insight implements unified collection of metrics, logs, and traces, supports multi-dimensional alerting
+on metrics and logs, and provides a concise and clear visual management interface.
 
 ## Module Guide
 
@@ -64,11 +35,11 @@ The main features as following:
 
     Use OpenTelemetry technology to observe your applications.
 
-    - Understand [OpenTelemetry](../quickstart/otel/otel.md), send observability data to Insight [Sending Observability Data](../quickstart/otel/send_tracing_to_insight.md)
+    - Understand [OpenTelemetry](../quickstart/otel/otel.md) and [send observability data](../quickstart/otel/send_tracing_to_insight.md) to Insight
     - Enhance applications in a [non-intrusive](../quickstart/otel/operator.md) manner
-    - Observability for [Java Applications](../quickstart/jvm-monitor/jvm-catelogy.md)
+    - Observability for [Java Applications](../quickstart/otel/java/index.md)
     - Observability for [Golang Applications](../quickstart/otel/golang/golang.md)
-    - [Integrating Other Observability Technologies](../best-practice/sw-to-otel.md)
+    - [Integrating Other Observability Technologies](../best-practice/index.md)
 
 </div>
 

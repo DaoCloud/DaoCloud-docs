@@ -14,9 +14,9 @@
 helm uninstall insight-agent -n insight-system
 ```
 
-`otel-oprator` 所使用的 `tls secret` 未被卸载掉。
+`otel-operator` 所使用的 `tls secret` 未被卸载掉。
 
-`otel-operator` 定义的“重复利用 tls secret”的逻辑中，会去判断 `otel-oprator` 的 `MutationConfiguration`
+`otel-operator` 定义的“重复利用 tls secret”的逻辑中，会去判断 `otel-operator` 的 `MutationConfiguration`
 是否存在并重复利用 MutationConfiguration 中绑定的 CA cert。但是由于 `helm uninstall` 已卸载 `MutationConfiguration`，导致出现空值。
 
 综上请手动删除对应的 `secret`，以下两种方式任选一种即可：

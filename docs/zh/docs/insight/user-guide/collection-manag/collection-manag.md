@@ -15,7 +15,7 @@ hide:
 
 ## 操作步骤
 
-1. 点击左上角的，选择 __可观测性__。
+1. 点击左上角的 **≡**，选择 __可观测性__。
 
     ![一级导航](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/collectmanage01.png){ width="1000"}
 

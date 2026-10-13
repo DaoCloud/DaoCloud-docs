@@ -6,8 +6,8 @@ The resource consumption of `VictoriaMetrics` components in actual `Prometheus R
 
 After continuous monitoring of metrics from `Prometheus RemoteWrite` to `VictoriaMetrics`, we observed that the resource usage of `VictoriaMetrics` components is generally positively correlated with the **ingestion rate**, which is also positively correlated with the number of Pods.
 
-- **Ingestion_rate**：sum(rate(vm_rows_inserted_total{job="vminsert-insight-victoria-metrics-k8s-stack"}[1m]))
-- **Pod 数量**：sum(kube_pod_info)
+- **Ingestion_rate**: sum(rate(vm_rows_inserted_total{job="vminsert-insight-victoria-metrics-k8s-stack"}[1m]))
+- **Number of Pods**: sum(kube_pod_info)
 
 This shows how many data points per second are inserted into `vminsert` (replication is not accounted for in this metric).
 If you need to know the ingestion rate including the replication factor, use:  
@@ -48,7 +48,7 @@ The following table shows the approximate resource requirements for `VictoriaMet
 | 100 | 8k | 0.3 | 160 MB | 600 KB/s | 200 KB/s | 0.28 | 1.6 GB | 240 KB/s |
 | 200 | 17k | 0.48 | 340 MB | 1.1 MB/s | 380 KB/s | 0.64 | 3.3 GB | 510 KB/s |
 | 300 | 25k | 0.64 | 500 MB | 1.6 MB/s | 540 KB/s | 0.96 | 4.9 GB | 750 KB/s |
-| 400 | 34k | 0.84 | 500 MB | 2.1 MB/s | 720 KB/s | 1.32 | 6.7 GB | 1,020 KB/s |
+| 400 | 34k | 0.84 | 500 MB | 2.1 MB/s | 720 KB/s | 1.32 | 6.7 GB | 1020 KB/s |
 | 500 | 42k | 0.98 | 500 MB | 2.6 MB/s | 880 KB/s | 1.64 | 8.2 GB | 1.3 MB/s |
 | 800 | 67k | 1.48 | 500 MB | 4.1 MB/s | 1.4 MB/s | 2.64 | 13.1 GB | 2 MB/s |
 | 1000 | 84k | 1.82 | 500 MB | 5.1 MB/s | 1.7 MB/s | 3.32 | 16.4 GB | 2.5 MB/s |
@@ -65,10 +65,7 @@ The following table shows the approximate resource requirements for `VictoriaMet
 1. Scaling out `vminsert` replicas increases ingestion capacity, as incoming data can be distributed across more `vminsert` nodes.
 2. Scaling out `vmstorage` replicas or adding more CPU and memory can increase the number of active time series it can handle. Replica scaling is preferred, as it improves query performance and cluster stability, especially under high churn rates.
 3. Increasing `vmselect` CPU and memory improves performance for complex queries, particularly those processing large numbers of time series or raw samples. Adding `vmselect` replicas improves query concurrency by distributing requests across more nodes.
-4. Under standard installation modes, `VictoriaMetrics` uses default configurations:
-   - The `vm_concurrent_insert_capacity` defaults to twice the value of `vm_available_cpu_cores{job="vminsert-insight-victoria-metrics-k8s-stack"}`.
-   - The `vm_concurrent_select_capacity` defaults to twice the value of `vm_available_cpu_cores{job="vmselect-insight-victoria-metrics-k8s-stack"}`.
-   - If CPU resources are insufficient, `vm_concurrent_insert_current` or `vm_concurrent_select_current` may hit their limits. In that case, you can increase the limits in the `CR` by adding the following:
+4. Under standard installation modes, `VictoriaMetrics` uses default configurations. The `vm_concurrent_insert_capacity` metric defaults to twice the `vm_available_cpu_cores{job="vminsert-insight-victoria-metrics-k8s-stack"}` metric; `vm_concurrent_select_capacity` defaults to twice the `vm_available_cpu_cores{job="vmselect-insight-victoria-metrics-k8s-stack"}` metric. When the CPU allocated to a given component is insufficient, `vm_concurrent_insert_current` or `vm_concurrent_select_current` may reach their limits. In this case, you need to add the following configuration to the CR according to the actual situation:
 
 ```shell
 # In the vmcluster CR, under spec.vminsert.extraArgs:

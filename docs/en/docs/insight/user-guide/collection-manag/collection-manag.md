@@ -5,12 +5,9 @@ hide:
 
 # Data Collection
 
-__Data Collection__ is mainly to centrally manage and display the entrance of the
-cluster installation collection plug-in __insight-agent__ , which helps users quickly
-view the health status of the cluster collection plug-in, and provides a quick entry
-to configure collection rules.
+ __Data Collection__ is mainly to centrally manage and display the entrance of the cluster installation collection plug-in __insight-agent__ , which helps users quickly view the health status of the cluster collection plug-in, and provides a quick entry to configure collection rules.
 
-Insight supports creating a CRD ServiceMonitor through __Container Management__ to meet your custom service discovery collection needs. Users can define the Namespace scope for Pod discovery and use __matchLabel__ to select the Services to be monitored.
+ Insight supports creating a CRD ServiceMonitor through __Container Management__ to meet your custom service discovery collection needs. Users can define the Namespace scope for Pod discovery and use __matchLabel__ to select the Services to be monitored.
 
 ## Prerequisites
 
@@ -18,21 +15,23 @@ The cluster has installed the Helm application __insight-agent__ and it is runni
 
 ## Steps
 
-1. Click in the upper left corner and select __Insight__ -> __Data Collection__ .
+1. Click **≡** in the upper left corner and select __Insight__.
 
     ![Data Collection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/collectmanage01.png)
 
-2. You can view the status of all cluster collection plug-ins.
+2. Select __Data Collection__ in the left navigation bar to view the status of all cluster collection plug-ins.
 
     ![Data Collection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/collectmanage02.png)
 
-3. When the cluster is connected to __insight-agent__ and is running, click a cluster name
-   to enter the details。
+3. When the cluster is connected to __insight-agent__ and is running, click a cluster name to enter the details.
 
     ![Data Collection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/collectmanage03.png)
 
-4. In the __Service Monitor__ tab, click the shortcut link to jump to __Container Management__ -> __CRD__ 
-   to add service discovery rules.
+4. On the collection details page of the cluster, select the __Metrics Collection Status__ tab to view the detailed status of the Targets collected by Prometheus in the current cluster and the labels of each Target.
+
+    ![Data Collection](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/target-status.png)
+
+5. In the __Service Monitor__ tab, click the shortcut link to jump to __Container Management__ -> __Custom Resources__ to add a service discovery rule.
 
     ![Data Collection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/collectmanage04.png)
 

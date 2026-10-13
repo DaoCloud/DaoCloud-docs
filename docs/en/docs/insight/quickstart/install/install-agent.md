@@ -10,7 +10,7 @@ insight-agent is a plugin for collecting insight data, supporting unified observ
 
 ## Prerequisites
 
-Please confirm that your cluster has successfully connected to the __container management__ platform. You can refer to [Integrate Clusters](../../../kpanda/user-guide/clusters/integrate-cluster.md) for details.
+- The cluster has been successfully connected to the __container management__ module. For how to connect a cluster, refer to [Integrate Clusters](../../../kpanda/user-guide/clusters/integrate-cluster.md)
 
 ## Steps
 
@@ -26,15 +26,17 @@ Please confirm that your cluster has successfully connected to the __container m
 
     ![Install](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/quickstart/images/insight-agent03.png)
 
-1. Fill in the name, select the namespace and version, and fill in the addresses of logging, metric, audit, and trace reporting data in the yaml file. The system has filled in the address of the component for data reporting by default, please check it before clicking __OK__ to install.
+1. Select the version to install and fill in the addresses of the corresponding data storage components in the global service cluster in the form below. After confirming that the information is correct, click __OK__ .
 
-    If you need to modify the data reporting address, please refer to [Get Data Reporting Address](./gethosturl.md).
+    - By default, insight-agent is deployed in the `insight-system` namespace of the cluster.
+    - It is recommended to install the latest version of insight-agent.
+      - The system has filled in the address of the component for data reporting by default. Please still check it before clicking __OK__  to install. If you need to modify the data reporting address, please refer to [Get Data Reporting Address](../install/gethosturl.md).
 
     ![Sheet Fill1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/quickstart/images/insight-agent04-1.png)
 
     ![Sheet Fill2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/quickstart/images/insight-agent04-2.png)
 
-1. The system will automatically return to __Helm Apps__ . When the application status changes from __Unknown__ to __Deployed__ , it means that insight-agent is installed successfully.
+1. The system will automatically return to the __Helm Apps__ list. When the status of the insight-agent application changes from __Not Ready__ to __Deployed__ and all component statuses are __Running__ , the installation is successful. After a while, you can view the data of this cluster in the __Insight__ module.
 
     ![Finish Page](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/quickstart/images/insight-agent05.png)
 

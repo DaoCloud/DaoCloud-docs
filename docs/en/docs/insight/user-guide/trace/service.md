@@ -41,17 +41,23 @@ Follow these steps to view service insight metrics:
         2. If multiple services have the same name and none of them have the correct __Namespace__ environment variable configured, 
            the metrics displayed in the list and service details page will be aggregated for all those services.
 
-3. Click a service name (taking insight-system as an example) to view the detailed metrics and operation metrics for that service.
+3. Click a service name (taking insight-server as an example) to view the detailed metrics and operation metrics for that service.
 
     1. In the Service Topology section, you can view the service topology one layer above or below the current service. 
        When you hover over a node, you can see its information.
     2. In the Traffic Metrics section, you can view the monitoring metrics for all requests to the service within 
        the past hour (including inbound and outbound traffic).
     3. You can use the time selector in the upper right corner to quickly select a time range or specify a custom time range.
-    4. Sorting is available for throughput, error rate, and request latency in the operation metrics.
-    5. Clicking on the icon next to an individual operation will take you to the __Traces__ page to quickly search for related traces.
+    4. In the __Associated Containers__ module, click the pod name to jump to the pod details page.
 
     ![Service Monitoring](../images/service01.png){: width="1000px"}
+
+4. Click the Tab to switch to __Operation Metrics__ , where you can query the aggregated traffic metrics of the same operation across multiple selected services.
+
+    1. Sorting is available for throughput, error rate, and request latency in the operation metrics.
+    2. Clicking on the icon next to an individual operation will take you to the __Traces__ page to quickly search for related traces.
+
+    ![Service Monitoring](https://docs.daocloud.io/insight/images/service-1.png){ width="1000px"}
 
 ### Service Metric Explanations
 

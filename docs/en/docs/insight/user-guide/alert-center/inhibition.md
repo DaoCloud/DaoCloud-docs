@@ -47,29 +47,30 @@ There are mainly the following conditions:
 
 ### View Rule Details
 
-In the left navigation bar, select **Alert** -> **Alert Policy**, and click the policy name to view the rule details.
+1. In the left navigation bar, select **Alert** -> **Alert Policy**, and click the policy to view the policy details.
+2. Click the target rule name to view the rule details and the labels of the alert rule.
 
-  ![Rule details](../../images/inhibition.png)
+    ![Rule details](../../images/inhibition.png)
 
     !!! note
 
-        You can add cuntom tags when adding rules.
+        You can add custom tags when adding rules.
 
 ### View Alert Details
 
-In the left navigation bar, select **Alert** -> **Alerts**, and click the policy name to view details.
+1. In the left navigation bar, select **Alert** -> **Alerts**, and click the alert row to view the alert details.
 
-  ![Alert details](../../images/inhibition-01.png)
+    ![Alert details](../../images/inhibition-01.png)
 
     !!! note
 
-        Alert details show information and settings for creating inhibitions.
+        Alert labels describe the detailed information and attributes of an alert and can be used to create inhibition rules.
 
 ## Edit Inhibition Rule
 
-Click **┇** next to the target rule, then click **Edit** to enter the editing page for the inhibition rule.
+1. Click **┇** next to the target rule, then click **Edit** to enter the editing page for the inhibition rule.
 
-![Edit Rules](../../user-guide/images/inhibition03.png){ width=1000px}
+    ![Edit Rules](../../user-guide/images/inhibition03.png){ width=1000px}
 
 ## Delete Inhibition Rule
 

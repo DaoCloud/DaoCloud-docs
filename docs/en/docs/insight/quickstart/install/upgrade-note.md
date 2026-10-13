@@ -15,7 +15,6 @@ This page provides some considerations for upgrading insight and insight-agent c
 
 In version v0.40.0, the Grafana Operator will be upgraded from v4 to v5, introducing significant CRD((v1alpha1 -> v1beta1)) changes. 
 The upgrade process will be automatically completed by `helm upgrade`.
-
 If users need to perform a `helm rollback` to a previous version (e.g., from v0.40.0 to v0.39.0), 
 they must manually clean up the v5 Custom Resources (CRs) using the following commands:
 ```shell

@@ -13,7 +13,7 @@ see the number of active alerts and the trend of resource consumption such as CP
 
 ## Prerequisites
 
-- The cluster has insight-agent installed, and all pods are in the __Running__ state.
+The cluster has insight-agent installed, and all pods are in the __Running__ state.
 
 - To install insight-agent, please refer to: [Installing insight-agent online](../../quickstart/install/install-agent.md) or [Offline upgrade of insight-agent](../../quickstart/install/offline-install.md).
 
@@ -43,14 +43,22 @@ Follow these steps to view service monitoring metrics:
 
 6. Switch to the __JVM monitor__ tab to view the JVM metrics for each pods
 
-    <!-- add images later -->
+    ![JVM monitor](https://docs.daocloud.io/insight/images/workload-2.png)
 
     !!! note
 
         1. The JVM monitoring feature only supports the Java language.
         2. To enable the JVM monitoring feature, refer to [Getting Started with Monitoring Java Applications](../../quickstart/otel/java/index.md).
 
-### Metric Explanations
+7. If the selected pod is configured with GPU resources, you can see __GPU Monitoring__ on the pod details page, and from __GPU Monitoring__ you can monitor the GPU resources.
+
+    ![gpu-pod](https://docs.daocloud.io/insight/images/gpu-pod.png)
+
+    !!! note
+
+        This tab appears only after GPU resources are configured for the pod.
+
+## Metric Explanations
 
 | **Metric Name** | **Description** |
 | -- | -- |

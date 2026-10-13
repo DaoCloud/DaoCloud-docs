@@ -815,9 +815,8 @@ nav:
                       - Get Data Storage Address of Global Service Cluster: insight/quickstart/install/gethosturl.md
                       - Upgrade Notes: insight/quickstart/install/upgrade-note.md
                       - Known Issues: insight/quickstart/install/knownissues.md
-                      - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
-                      - Customize Insight Scheduling Policies: insight/quickstart/install/component-scheduling.md
                       - Enable Big Log and Big Trace: insight/quickstart/install/big-log-and-trace.md
+                      - Customize Insight Scheduling Policies: insight/quickstart/install/component-scheduling.md
                   - Install insight-agent on Other Distributions:
                       - DCE 4.0: insight/quickstart/other/install-agentindce.md
                       - OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
@@ -832,10 +831,14 @@ nav:
                       - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md
                       - Use OTel Java Agent to Expose JVM Metrics: insight/quickstart/otel/java/jvm-monitor/otel-java-agent.md
                       - Java App with JVM Metrics Enables Insight: insight/quickstart/otel/java/jvm-monitor/legacy-jvm.md
+                      - Writing TraceId and SpanId into Java Application Logs: insight/quickstart/otel/java/mdc.md
                   - Golang App Insight:
                       - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang/golang.md
+                      - Writing TraceId and SpanId into Golang Application Logs: insight/quickstart/otel/golang/traceid_logs.md
                   - Other Integrations:
-                      - Use OTel to Receive SkyWalking Traces: insight/best-practice/sw-to-otel.md  
+                      - insight/best-practice/index.md
+                      - Use OTel to Receive SkyWalking Traces: insight/best-practice/sw-to-otel.md
+                      - Integrate Nginx Ingress Trace Tracking: insight/best-practice/ingress-otel.md
               - Dashboard:
                   - Overview: insight/user-guide/dashboard/overview.md
                   - Dashboard: insight/user-guide/dashboard/dashboard.md

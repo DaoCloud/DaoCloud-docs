@@ -11,6 +11,8 @@ it is common practice to introduce a streaming architecture using Kafka to handl
 The collected log data flows through Kafka and is consumed by corresponding components,
 which then store the data into Elasticsearch for visualization and analysis using Insight.
 
+If you need to enable the Kafka architecture, please refer to [Enable Big Log and Big Trace Modes](../quickstart/install/big-log-and-trace.md).
+
 This article will introduce two solutions:
 
 - Fluentbit + Kafka + Logstash + Elasticsearch
@@ -112,9 +114,9 @@ logstashPipeline:
       kafka {
         add_field => {"kafka_topic" => "insight-event"}
         topics => ["insight-event"]         
-        bootstrap_servers => "172.30.120.189:32082" # kafka的ip 和端口
+        bootstrap_servers => "172.30.120.189:32082" # Kafka IP and port
         enable_auto_commit => true
-        consumer_threads => 1                       # 对应 partition 的数量
+        consumer_threads => 1                       # Number of the corresponding partitions
         decorate_events => true
         codec => "plain"
       }
@@ -136,10 +138,10 @@ logstashPipeline:
     output {
       if [kafka_topic] == "insight-event" {
         elasticsearch {
-          hosts => ["https://172.30.120.201:32427"] # elasticsearch 地址
-          user => 'elastic'                         # elasticsearch 用户名
+          hosts => ["https://172.30.120.201:32427"] # Elasticsearch address
+          user => 'elastic'                         # Elasticsearch username
           ssl => 'true'
-          password => '0OWj4D54GTH3xK06f9Gg01Zk'    # elasticsearch 密码
+          password => '0OWj4D54GTH3xK06f9Gg01Zk'    # Elasticsearch password
           ssl_certificate_verification => 'false'
           action => "create"
           index => "insight-es-k8s-event-logs-alias"

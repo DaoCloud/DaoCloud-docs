@@ -57,6 +57,10 @@ You have permission to use `&check;`, but you don't have permission to use `&cro
 | | View Built-in Alert Rule | &check; | &cross; | &cross; | &cross; |
 | | Modify Built-in Alert Rule | &check; | &cross; | &cross; | &cross; |
 | | YAML Import Alert Rule | &check; | &check; | &check; | &cross; |
+| Alert Template | View Alert Templates List | &check; | &check; | &check; | &check; |
+| | Create Alert Template | &check; | &cross; | &cross; | &cross; |
+| | Edit Alert Template | &check; | &cross; | &cross; | &cross; |
+| | Delete Alert Template | &check; | &cross; | &cross; | &cross; |
 | Notification Objects | View Notification Objects | &check; | &check; | &check; | &check; |
 | | Add Notification Objects | &check; | &cross; | &cross; | &cross; |
 | | Modify Notification Objects | &check; | &cross; | &cross; | &cross; |
@@ -69,6 +73,10 @@ You have permission to use `&check;`, but you don't have permission to use `&cro
 | | Create Silence Rule | &check; | &check; | &check; | &cross; |
 | | Edit Silence Rule | &check; | &check; | &check; | &cross; |
 | | Delete Silence Rule | &check; | &check; | &check; | &cross; |
+| Alert Inhibition | View Inhibition Rules List | &check; | &check; | &check; | &check; |
+| | Create Inhibition Rule | &check; | &check; | &check; | &cross; |
+| | Edit Inhibition Rule | &check; | &check; | &check; | &cross; |
+| | Delete Inhibition Rule | &check; | &check; | &check; | &cross; |
 | Collection Management | View Agent List | &check; | &check; | &check; | &check; |
 | | Install/Uninstall Agent | &check; | &check; | &check; | &check; |
 | | View Agent Details | &check; | &check; | &check; | &check; |

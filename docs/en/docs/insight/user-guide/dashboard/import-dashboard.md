@@ -15,11 +15,11 @@ Insight v0.40.0 now supports importing dashboards using the latest GrafanaDashbo
 
 3. Click __YAML Create__ and use the following template. Replace the dashboard JSON in the __Json__ field.
 
-    - __metadata.name__ ：Provide a name for the dashboard.
-    - __metadata.namespace__ ：Specify the target namespace.
-    - __metadata.labels__ ：Mandatory， __operator.insight.io/managed-by: insight__ .
-    - __spec.allowCrossNamespaceImport__ ：Mandatory, __true__ .
-    - __spec.instanceSelector.matchLabels__ ：Mandatory，__operator.insight.io/managed-by: insight__ .
+    - __metadata.name__: Provide a name for the dashboard.
+    - __metadata.namespace__: Specify the target namespace.
+    - __metadata.labels__: Mandatory, __operator.insight.io/managed-by: insight__ .
+    - __spec.allowCrossNamespaceImport__: Mandatory, __true__ .
+    - __spec.instanceSelector.matchLabels__: Mandatory, __operator.insight.io/managed-by: insight__ .
 
     ```yaml
     apiVersion: grafana.integreatly.org/v1beta1
@@ -70,7 +70,7 @@ Insight v0.40.0 now supports importing dashboards using the latest GrafanaDashbo
 
 ## Using v1alpha1 CRD
 
-Currently, users can still import dashboards using the old version of CRD：
+Currently, users can still import dashboards using the old version of CRD:
 
 - __namespace__ : Specify the target namespace.
 - __name__ : Provide a name for the dashboard.
@@ -199,7 +199,7 @@ AngularJS and prioritized React instead. For details, refer to the [community an
 Dashboards maintained by Insight and other gproduct have been automatically migrated and are ready to use out of the box.
 For customer-maintained dashboards, Grafana 12.1.3 provides automatic migration support for some core pre-installed AngularJS panels.
 When a customer opens a custom dashboard in Grafana 12.1.3 for the first time, Grafana will automatically trigger the migration.
-**After migration is complete, be sure to click the 「Save」 button on the dashboard to save changes, preventing repeated migrations on each load.**
+**After migration is complete, be sure to click the **Save** button on the dashboard to save changes, preventing repeated migrations on each load.**
 
 If AngularJS panel migration is not completed, the following issues will occur in Grafana 12.1.3 and later versions:
 

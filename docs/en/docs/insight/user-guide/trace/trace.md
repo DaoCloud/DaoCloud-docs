@@ -15,17 +15,17 @@ In the **Call Chain** section, you can view trace data from two dimensions: **Al
 ## Terminology
 
 1. **TraceID:** A unique identifier used to trace and identify a complete request chain. It helps developers and operators correlate requests between different services in a distributed system for monitoring and troubleshooting.  
-2. **Operation:** Refers to the specific task or event performed within a Span. Each Span represents the execution process of an operation, usually associated with a service function or business logic.  
-3. **Entry Span:** The first Span in a request trace, marking the starting point of the request. It typically corresponds to the moment an external request is received.  
-4. **Latency:** The total time elapsed from receiving a request to completing a response. It’s a key performance indicator for identifying bottlenecks and optimization opportunities.  
-5. **Span:** A single unit of operation in a trace, representing an action executed within a specific time frame. A complete request trace may consist of multiple Spans, each recording its start time, end time, duration, and contextual information.  
-6. **Start Time:** The specific timestamp when the trace started, usually marking when the request was received. It is used to calculate latency and analyze request processing.  
-7. **Tag:** A set of key-value pairs that annotate a Span with additional context. Each Span can have multiple tags that provide more details about the operation and its state.
+1. **Operation:** Refers to the specific task or event performed within a Span. Each Span represents the execution process of an operation, usually associated with a service function or business logic.  
+1. **Entry Span:** The first Span in a request trace, marking the starting point of the request. It typically corresponds to the moment an external request is received.  
+1. **Latency:** The total time elapsed from receiving a request to completing a response. It’s a key performance indicator for identifying bottlenecks and optimization opportunities.  
+1. **Span:** A single unit of operation in a trace, representing an action executed within a specific time frame. A complete request trace may consist of multiple Spans, each recording its start time, end time, duration, and contextual information.  
+1. **Start Time:** The specific timestamp when the trace started, usually marking when the request was received. It is used to calculate latency and analyze request processing.  
+1. **Tag:** A set of key-value pairs that annotate a Span with additional context. Each Span can have multiple tags that provide more details about the operation and its state.
 
 ## Viewing All Spans
 
 1. Go to the **Observability** module.  
-2. In the left navigation panel, select **Trace Tracking → Call Chain**.  
+1. In the left navigation panel, select **Trace Tracking → Call Chain**.  
    The page will display **All Spans** by default.
 
     - Click the time control in the upper-right corner to adjust the time range for querying Spans.  
@@ -48,8 +48,6 @@ Click the operation name of the target Span to view a waterfall chart of the tra
 
 ## Viewing Traces (Top-Level Spans)
 
-Please follow these steps to search for a trace:
-
 1. Go to the __Insight__ product module.
 2. Select __Tracing__ -> __Traces__ from the left navigation bar.
 
@@ -61,15 +59,13 @@ Please follow these steps to search for a trace:
 
 3. Click the __TraceID Query__ in the filter bar to switch to TraceID search.
 
-   - To search using TraceID, please enter the complete TraceID.
+    To search using TraceID, please enter the complete TraceID.
 
-    <!-- add image later -->
-
-## Other Operations
+    ![traceidsearch](https://docs.daocloud.io/insight/images/traceidsearch.png)
 
 ### View Trace Details
 
-1. Click the TraceID of a trace in the trace list to view its detailed call information.
+Click the TraceID of a trace in the trace list to view its detailed call information.
 
     ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace03.png)
 
