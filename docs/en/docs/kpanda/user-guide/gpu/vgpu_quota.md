@@ -16,8 +16,8 @@ Follow these steps to manage GPU quotas in DCE:
 
 2. The GPU types supported by namespace quota management are: NVIDIA vGPU, NVIDIA MIG, Iluvatar, and Huawei Ascend.
 
-3. **NVIDIA vGPU Quota Management**: Configure the available quota. After you save the settings, the
-   system creates or updates a `ResourceQuota` CR:
+3. **NVIDIA vGPU Quota Management**: Configure the specific quota that can be used. This will create a
+   `ResourceQuota` CR:
 
     - **GPU Computing Power** (`nvidia.com/gpucores`): The total GPU computing power that the namespace
       can allocate. It is the sum across multiple GPUs and can therefore exceed 100%.
@@ -32,7 +32,8 @@ Follow these steps to manage GPU quotas in DCE:
 
 4. A namespace GPU quota is allocated from the workspace shared-resource quota:
 
-    - **Allocated** is the sum of quotas assigned from the workspace to its namespaces, not real-time GPU usage.
-    - **Remaining = Quota - Allocated**.
+    - **Total Quotas**: The GPU quota set for the current namespace.
+    - **Allocatable Quota**: The GPU quota currently available to the namespace from the workspace
+      shared resources.
     - The sum of all namespace quotas cannot exceed the workspace shared-resource quota. Otherwise, the
       namespace cannot be bound to the workspace.
