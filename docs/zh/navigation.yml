@@ -1541,6 +1541,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2026:
+          - Dynamo v1.5.0 发布: blogs/2026/dynamo-v1.5.0.md
           - cgroup v1 已死: blogs/2026/kubernetes-node-swap-ai.md
           - 节点交换内存提升 Pod 密度: blogs/2026/k8s-node-swap.md
           - KubeCon China 2026指南: blogs/2026/kubecon-cn.md
