@@ -1,11 +1,12 @@
-# Dynamo v1.5.0 发布：NVIDIA 开源推理平台路由走向可编程，DaoCloud 是贡献最多的外部贡献者
+# NVIDIA Dynamo v1.5.0 发布：DaoCloud 是贡献最多的外部贡献者
 
 > 本文基于 NVIDIA 官方发布说明整理：[Dynamo v1.5.0 Release Notes](https://docs.dynamo.nvidia.com/dynamo/v1.5.0/reference/releases/v1-5-0)。
 > Dynamo 是 [NVIDIA 开源](https://github.com/ai-dynamo/dynamo)的分布式 LLM 推理平台；文中标注的版本信息与贡献者名单均出自该发布说明，PR 统计数据来自 GitHub 合并记录。
 
 2026 年 9 月 18 日，[Dynamo](https://github.com/ai-dynamo/dynamo) v1.5.0 正式 GA。
-这是 Dynamo 作为 NVIDIA 开源分布式推理平台的 **第 18 个功能版本** ，也是形态变化最大的一版之一：
-路由从"内置策略"变成"可插拔策略"，Kubernetes 侧完成了 CRD 存储版本与 Endpoint Picker 语言的更替，KVBM 正式进入废弃流程，AIConfigurator 独立成了 AISimulate。
+这是 Dynamo 作为 NVIDIA 开源分布式推理平台的 **第 18 个功能版本** ，也是迄今为止形态变化最大的一版：
+路由从"内置策略"变成"可插拔策略"，Kubernetes 侧完成了 CRD 存储版本与 Endpoint Picker 语言的更替，
+KVBM 正式进入废弃流程，AIConfigurator 独立成了 AISimulate。
 
 同时，NVIDIA 在发布说明里把外部贡献者的组织归属完整列了出来 ——
 **DaoCloud 以 8 位贡献者排在这份名单的第一位，是本次发布贡献最多的外部贡献者。**
@@ -52,7 +53,7 @@ NVIDIA 官方按 **提交作者邮箱域名或公开 GitHub 主页** 识别了�
 | Yandex Cloud | 1 | @jellysnack |
 | Independent | 5 | @avinash-rafay、@cmdy、@elizabetht、@hnt2601、@Jonny-Skelton |
 
-**DaoCloud 是这份名单里贡献者人数最多的外部组织**，8 人几乎是第二名 CoreWeave 的两倍，也占了 40 位外部贡献者的五分之一。
+**DaoCloud 是这份名单里贡献者人数最多的外部组织** ，8 人几乎是第二名 CoreWeave 的两倍，也占了 40 位外部贡献者的五分之一。
 
 如果进一步看实际提交量：按 GitHub 合并记录统计（合并日期 2026-08-27 至 2026-09-19，即 v1.4.2 与 v1.5.0 两个 tag 之间的窗口），
 DaoCloud 团队在这个窗口内合并了 **33 个 PR** ，而其他所有外部贡献者加起来约 12 个 —— 单是一家公司，就接近其余外部贡献总量的三倍。
@@ -71,7 +72,7 @@ Dynamo 是 NVIDIA 开源的 **分布式推理平台** ，目标是把一堆 GPU 
 
 如果你正在 Kubernetes 上跑 LLM 推理，Dynamo 解决的就是"Prefill/Decode 怎么拆、KV Cache 怎么复用、流量来了缩哪一边"这类问题。
 
-## v1.5.0 的九个变化
+## v1.5.0 的九个重点变化
 
 ### 1. Dynamo Router：Worker 选择从内置策略变成可插拔策略
 

@@ -11,7 +11,7 @@ hide:
 
 ## 2026 年
 
-- [Dynamo v1.5.0 发布：NVIDIA 开源推理平台路由走向可编程，DaoCloud 是贡献最多的外部贡献者](2026/dynamo-v1.5.0.md)
+- [Dynamo v1.5.0 发布：DaoCloud 是贡献最多的外部贡献者](2026/dynamo-v1.5.0.md)
 
     NVIDIA 开源分布式推理平台 Dynamo 发布第 18 个功能版本，Worker 选择变成可插拔策略；本次发布的 40 位外部贡献者中，DaoCloud 以 8 人排在名单首位。
 
