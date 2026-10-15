@@ -5,6 +5,8 @@ hide:
 
 # Failure to Upgrade Global Management Separately
 
+## CRD Not Updated Error
+
 If the upgrade fails and includes the following message, you can refer to the
 [Offline Upgrade](../install/offline-install.md#__tabbed_3_2) section to complete
 the installation of CRDs by following the steps for updating the ghippo crd.

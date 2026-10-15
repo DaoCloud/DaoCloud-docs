@@ -1345,6 +1345,7 @@ nav:
                   - Features: ghippo/intro/features.md
                   - Glossary: ghippo/intro/glossary.md
                   - Release Notes: ghippo/intro/release-notes.md
+                  - FAQs: ghippo/intro/faq.md
               - Install, Login, and Upgrade:
                   - Offline Upgrade: ghippo/install/offline-install.md
                   - Customize Reverse Proxy Address: ghippo/install/reverse-proxy.md
@@ -1364,10 +1365,10 @@ nav:
                       - ghippo/user-guide/access-control/idprovider.md
                       - LDAP: ghippo/user-guide/access-control/ldap.md
                       - OIDC: ghippo/user-guide/access-control/oidc.md
+                      - OAuth 2.0 for WeCom: ghippo/user-guide/access-control/oauth2.0.md
                   - Docking Portal:
                       - ghippo/user-guide/access-control/docking.md
                       - Webhook: ghippo/user-guide/access-control/webhook.md
-                      - OAuth 2.0 for WeCom: ghippo/user-guide/access-control/oauth2.0.md
               - Workspaces and Folders:
                   - ghippo/user-guide/workspace/ws-folder.md
                   - Create and Delete Workspace: ghippo/user-guide/workspace/workspace.md
@@ -1411,6 +1412,7 @@ nav:
                   - Reset Password: ghippo/user-guide/password.md
               - Personal Center:
                   - Security Settings: ghippo/user-guide/personal-center/security-setting.md
+                  - Two-Factor Authentication: ghippo/user-guide/personal-center/2fa.md
                   - Access Key: ghippo/user-guide/personal-center/accesstoken.md
                   - SSH Public Key: ghippo/user-guide/personal-center/ssh-key.md
                   - Language Settings: ghippo/user-guide/personal-center/language.md
@@ -1421,6 +1423,7 @@ nav:
                   - Service Mesh Permissions: ghippo/permissions/mspider.md
                   - Middleware Permissions: ghippo/permissions/mcamel.md
                   - AI Lab Permissions: ghippo/permissions/baize.md
+                  - ClawOS Permissions: ghippo/permissions/clawos.md
               - Best Practices:
                   - Workspace Practices: ghippo/best-practice/ws-best-practice.md
                   - Bind a Workspace to Namespace: ghippo/best-practice/ws-to-ns.md
@@ -1441,11 +1444,6 @@ nav:
                       - Customize Nav Bar: ghippo/best-practice/menu/navigator.md
                       - Display/Hide Navigation Bar Menu Based on Permissions: ghippo/best-practice/menu/menu-display-or-hiding.md
                   - System Messages: ghippo/best-practice/system-message.md
-              - Troubleshoot:
-                  - ingressgateway cannot start: ghippo/troubleshooting/ghippo01.md
-                  - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md
-                  - keycloak cannot start: ghippo/troubleshooting/ghippo03.md
-                  - Failed to upgrade Global Management: ghippo/troubleshooting/ghippo04.md
           - Device Management:
               - Intro:
                   - What is Device Management: topohub/intro/index.md

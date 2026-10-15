@@ -55,7 +55,7 @@ For detailed instructions, refer to the [OEM OUT Best Practices video tutorial](
     ```
 
 3. Assuming the nginx entry address is 10.6.165.50, follow the
-   [Customize DCE Reverse Proxy Server Address](../install/reverse-proxy.md) to
+   [Customize DCE Reverse Proxy Server Address](../../install/reverse-proxy.md) to
    set the DCE_PROXY reverse proxy as `http://10.6.165.50/dce5`. Ensure that DCE
    can be accessed via `http://10.6.165.50/dce5`. The customer system also needs
    to configure the reverse proxy based on its specific requirements.
@@ -83,7 +83,7 @@ integration depends on the customer system and needs to be handled based on spec
 
 Use __Global Management__ -> __Settings__ -> __Appearance__ to customize
 the platform's background color, logo, and name. For detailed instructions,
-refer to [Appearance Customization](../user-guide/platform-setting/appearance.md).
+refer to [Appearance Customization](../../user-guide/platform-setting/appearance.md).
 
 ## Permission System Integration (optional)
 

@@ -1,4 +1,4 @@
-# Customize DCE Reverse Proxy Server Address
+# Enable Isolation Mode Between Folders and Workspaces
 
 The specific setup steps are as follows:
 
@@ -25,9 +25,6 @@ The specific setup steps are as follows:
 3. Set environment variables for easier use in the following steps.
 
     ```shell
-    # Your reverse proxy address, for example `export DCE_PROXY="https://demo-alpha.daocloud.io"` 
-    export DCE_PROXY="https://domain:port"
-
     # Helm --set parameter backup file
     export GHIPPO_VALUES_BAK="ghippo-values-bak.yaml"
 
@@ -41,7 +38,7 @@ The specific setup steps are as follows:
     helm get values ghippo -n ghippo-system -o yaml > ${GHIPPO_VALUES_BAK}
     ```
 
-5. Add your reverse proxy address.
+5. Turn on the isolation mode switch between Folder and WS.
 
     !!! note
 

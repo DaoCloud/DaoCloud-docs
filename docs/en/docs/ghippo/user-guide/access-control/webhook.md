@@ -84,3 +84,8 @@ DCE predefines some variables that you can use in the message body based on your
     }
 }
 ```
+
+## References
+
+- [OEM OUT](../../best-practice/oem/oem-out.md)
+- [OEM IN](../../best-practice/oem/oem-in.md)
