@@ -41,7 +41,7 @@ You can assign the following values to the labels: container, vm-passthrough, an
     gpu-operator.sandboxWorkloads.enabled=true
     gpu-operator.vfioManager.enabled=true
     gpu-operator.sandboxDevicePlugin.enabled=true
-    gpu-operator.sandboxDevicePlugin.version=v1.2.4   // version should be >= v1.2.4
+    gpu-operator.sandboxDevicePlugin.version=v1.2.4   # version should be >= v1.2.4
     gpu-operator.toolkit.version=v1.14.3-ubuntu20.04
     ```
 
