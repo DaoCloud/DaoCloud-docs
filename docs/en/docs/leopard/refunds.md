@@ -85,7 +85,7 @@ By default, automatic refunds are credited back to the account wallet balance. T
 
 For refund requests or policy inquiries, please contact us via:
 
-- [Contact Support](../contact/index.md)  
+- Contact Support  
 - **Working hours**: Monday–Friday, 9:00–18:00  
 - **Response time**: Within 1 hour during working hours  
 

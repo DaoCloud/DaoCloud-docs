@@ -5,13 +5,15 @@ hide:
 
 # Transactions
 
-**Transactions** records the spending and income situation of the cash balance in the wallet in detail.
+**Transactions** records every cash flow in the wallet account in detail, covering all income and expense items.  
+Users can clearly view the time, type, amount, and corresponding business scenario of each transaction, ensuring transparent accounts and clear details.  
+With Transactions, enterprises can accurately grasp cash flow, effectively supporting financial accounting and fund management, and improving the efficiency of fund use.
 
 ## Steps
 
 On the Transactions page, you can view the detailed changes in the cash balance.
 
-- Click the search box to select filtering criteria, supporting search or filtering by transaction ID, associated bill ID, income/expense, transaction type, and transaction channel.
+- Click the search box to select filtering criteria, supporting search or filtering by transaction ID, associated [bill](./bills.md) ID, income/expense, transaction type, and transaction channel.
 - Primary accounts can use the **Account** selector to filter primary-account or sub-account transactions. Sub-accounts can view transactions for the currently signed-in account only.
 - The **Account** selector includes the primary account and all of its managed sub-accounts.
 - Click the date picker to query detailed bills within a specific time range.
@@ -25,8 +27,6 @@ Primary accounts can view transactions for the primary account and its sub-accou
 After signing in, a sub-account sees only its own transaction records. The list displays the username and User ID.
 
 ![Sub-account transactions](images/sub-account-transactions-en.png){width=900px}
-
-## Detailed Fields in Transactions
 
 | **Fields** | **Description** |
 | --- | --- |
