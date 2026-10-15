@@ -4,6 +4,28 @@
 
 *[skoala]: DaoCloud 微服务引擎的内部开发代号
 
+## 2026-09-30
+
+### v0.57.2
+
+- **修复** 与 Insight 的对接问题：网关 API 平均耗时查询改用 Elasticsearch 的 fixed_interval，不再使用已废弃的 interval。
+- **修复** 权限问题，概览、注册中心、网格、网关、插件等资源的 get 动作不再带空的依赖权限字段。
+
+## 2026-08-31
+
+### v0.57.0
+
+- **修复** 托管 Nacos 3.x 健康检查端口和路径问题
+- **修复** 托管 Nacos 实例删除失败、配置列表为空问题
+
+## 2026-07-31
+
+### v0.56.0
+
+- **优化** 托管 Nacos 可临时脱离 Operator。 给 Nacos 实例加上注解 nacos.io/unmanaged=true（也接受 1 / yes / on）后，Operator 跳过调谐，方便手工排障。
+- **优化** 云原生网关可临时脱离 Operator。 Contour 镜像从 v1.33.0 升到 v1.33.5。
+- **优化** Higress 等 CRD 从 templates 挪到 Helm Chart 的 crds 目录，去掉原来的 skoala-crd-prereq 子 chart。
+
 ## 2026-04-30
 
 ### v0.55.0
