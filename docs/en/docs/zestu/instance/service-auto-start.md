@@ -5,7 +5,7 @@ To enable auto-start for your custom service, simply register it with **s6**.
 
 ## Prerequisites
 
-- Logged in to your d.run account  
+- Logged in to your [d.run account](../../index.md)  
 - A container instance has been [created via Compute Cloud](../instance.md), and its status is **Running**
 
 ## Register a Custom Service

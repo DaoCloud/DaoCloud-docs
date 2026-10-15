@@ -29,13 +29,13 @@ On the d.run platform, you can either use the cloud-based version of VSCode or c
 
     !!! note
 
-        If Remote-SSH is already installed, you can skip this step and go directly to [Step 2](#2-ssh-connect-to-your-instance).
+        If Remote-SSH is already installed, you can skip this step and go directly to [Step 2](#step2).
 
     Open the **Extensions** panel in your local VSCode, search for `Remote-SSH`, and install it.
 
     ![terminal8](../images/terminal8.png)
 
-2. **SSH connect to your d.run container instance**
+2. **SSH connect to your d.run container instance** <a id="step2"></a>
 
     Follow the steps ① → ② → ③ to add a new SSH host.
 
@@ -43,7 +43,7 @@ On the d.run platform, you can either use the cloud-based version of VSCode or c
 
     ![terminal10](../images/terminal10.png)
 
-3. Get your instance's SSH login information from the platform.
+3. Get your instance's SSH login information from the platform. <a id="step3"></a>
 
     ![terminal11](../images/terminal11.png)
 
@@ -61,7 +61,7 @@ On the d.run platform, you can either use the cloud-based version of VSCode or c
 
     ![terminal15](../images/terminal15.png)
 
-6. Copy your instance login password (refer to [Step 3](#3-get-your-instance-login-info)), paste it when prompted, and press **Enter**.
+6. Copy your instance login password (refer to [Step 3](#step3)), paste it when prompted, and press **Enter**.
 
     ![terminal16](../images/terminal16.png)
 

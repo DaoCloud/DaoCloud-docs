@@ -11,7 +11,7 @@ This guide uses **nginx** as an example to demonstrate how to open a port using 
 
 ## Prerequisites
 
-- Logged in to your d.run account
+- Logged in to your [d.run account](../../index.md)
 - A container instance has already been [created via Compute Cloud](../instance.md), and its status is **Running**
 
 ## Steps

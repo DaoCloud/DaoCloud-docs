@@ -15,7 +15,7 @@ Plus, d.run offers flexible auto-renewal and management features to help you opt
 
 ## Prerequisites
 
-- A d.run account.  
+- A [d.run account](../index.md).  
 - An account balance that covers the total cost of your chosen subscription.  
 - A clear understanding of your GPU resource and configuration needs.
 
@@ -107,10 +107,9 @@ For instances set to **Auto-renew (Annual/Monthly)**, the platform ensures unint
 
     - Annual/monthly instances bill continuously during the subscription.  
     - Ensure your account balance is sufficient to avoid auto-shutdown.  
-    - Renewal mode can be updated anytime; changes apply from the next renewal.  
+    - Renewal mode can be updated at any time to flexibly respond to changing business needs.  
+    - Changing the renewal mode does not affect the current subscription period; it takes effect only at the next renewal.  
     - Releasing an instance is permanent—backup your data before proceeding.
-
-## Notes
 
 !!! note
 
@@ -118,4 +117,4 @@ For instances set to **Auto-renew (Annual/Monthly)**, the platform ensures unint
     - Shutdown does not stop billing but keeps resources reserved for instant restart.  
     - Early release refunds are proportional to remaining time minus a small service fee.
 
-For assistance, contact our support hotline: **1-400-002-6898**
+For assistance, contact our support hotline: **400-002-6898**
