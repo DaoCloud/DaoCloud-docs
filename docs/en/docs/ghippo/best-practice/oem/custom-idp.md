@@ -38,7 +38,7 @@ Ghippo v0.15.0 and above.
 
 ### Deploying Ghippo Keycloak Plugin Steps
 
-1. [Upgrade Ghippo to v0.15.0 or above](../install/offline-install.md).
+1. [Upgrade Ghippo to v0.15.0 or above](../../install/offline-install.md).
    You can also directly install and deploy Ghippo v0.15.0, but make sure to
    manually record the following information.
 

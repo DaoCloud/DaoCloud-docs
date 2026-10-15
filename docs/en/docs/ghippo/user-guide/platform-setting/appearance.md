@@ -39,7 +39,7 @@ Advanced customization allows you to modify the color, font spacing, and font si
 
 To reset any advanced customizations, delete the contents of the black input box or click the __Revert__ button.
 
-**Sample CSS for Login Page Customization:**
+### CSS for Login Page Customization
 
 ```css
 .test {
@@ -51,7 +51,7 @@ To reset any advanced customizations, delete the contents of the black input box
 }
 ```
 
-**CSS sample for page customization after login:**
+### CSS for Top Navigation Bar Customization
 
 ```css
 .dao-icon.dao-iconfont.icon-service-global.dao-nav__head-icon {
@@ -71,7 +71,43 @@ To reset any advanced customizations, delete the contents of the black input box
 }
 ```
 
-**CSS sample for custom footer (including copyright, filing, and other information at the bottom)**
+### CSS for Page Customization After Login
+
+The following examples show how to hide or modify the message content in the "Container Registry -> Upload Image" dialog through CSS.
+
+**Hide the message**
+
+```css
+.dao-message:has(.dao-message-upload-image) {
+  display: none !important;
+}
+```
+
+**Modify the message content**
+
+No JavaScript is required. Override the display with CSS to show new text:
+
+```css
+/* Only matches the info message that contains upload-image */
+.dao-message:has(.dao-message-upload-image) .dao-message-upload-image {
+  color: transparent; /* Hide the original text */
+  position: relative;
+}
+
+/* Override to display the new text */
+.dao-message:has(.dao-message-upload-image) .dao-message-upload-image::before {
+  content:
+    "1. tar and tar.gz formats are supported. The file size (including after extraction) must not exceed 10 GB.\A\
+2. Make sure one file corresponds to one image, otherwise the import will fail.\A\
+3. Only image archives created with container engine client version 1.11.2 or later are supported.";
+  white-space: pre-line;
+  color: #333;
+  position: absolute;
+  inset: 0;
+}
+```
+
+### CSS for Custom Footer (including copyright, filing, and other information at the bottom)
 
 ```css
 <div class="footer-content">

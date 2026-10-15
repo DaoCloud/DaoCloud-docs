@@ -108,3 +108,11 @@ If the user forgets the password when logging in, please refer to [Reset Passwor
 2. Click __Delete__ to finish deleting the user.
 
     ![Confirm deletion](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/deleteuser02.png)
+
+## Reset Two-Factor Authentication for a User
+
+The administrator enters __Access Control__, selects __Users__, enters the user details, and clicks __Security Settings__ -> __Reset__ to reset two-factor authentication.
+
+![Reset two-factor authentication](../../images/2fa03.png)
+
+After the reset, the user must scan the QR code again to obtain new two-factor authentication when logging in.
