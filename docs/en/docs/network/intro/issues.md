@@ -18,7 +18,7 @@ Accessing services may encounter 1s delay or failed requests.
     1. Accessing services through Service experiences a 1s delay.
     2. Some requests fail during a rolling update.
 
-- Impacts：
+- Impacts:
 
     | kubernetes Versions | kube-proxy Behaviors | Symptoms |
     | ------ | -------------- | -------- |
