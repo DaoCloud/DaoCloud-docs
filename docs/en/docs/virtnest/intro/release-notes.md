@@ -8,6 +8,18 @@ Date: 2024-10-10
 This page provides the release notes for VirtNest (Virtual Machine),
 allowing you to understand the evolution path and feature changes of each version.
 
+## 2025-08-31
+
+### v0.19.0
+
+### Features
+
+- **Added** a restriction that different network cards cannot use the same MultusCR and the same IP pool when configuring a virtual machine network.
+- **Added** support for setting DNS when creating or updating a virtual machine.
+- **Optimized** the adaptation to spiderpool v1.0.2.
+- **Fixed** the problem that some time content of virtual machines was incorrect.
+- **Fixed** the error that occurred when scaling up or down virtual machine storage.
+
 ## 2025-07-30
 
 ### v0.18.1

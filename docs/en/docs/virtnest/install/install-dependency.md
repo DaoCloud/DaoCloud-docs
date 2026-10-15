@@ -37,7 +37,7 @@ You can use the following script to check if the current node's CPU is usable:
 
     If you encounter a message like the one shown below, you can safely ignore it as it does not impact the final result.
     
-    ```bash title="示例"
+    ```bash title="Example"
     $ sh detect-cpu.sh
     detect-cpu.sh: line 3: fpu: command not found
     ```   

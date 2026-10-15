@@ -231,6 +231,11 @@ Go to the Virtual Machine list page and click the __Create with YAML__ button.
               name: systemdisk-example
     ```
 
+## Create from a Template
+
+Custom templates are converted from virtual machine configurations.
+See [Create a Virtual Machine from a Template](../template/index.md).
+
 ## Search Virtual Machines
 
 Navigate to __Virtual Machines__ -> __VM__, select a cluster and namespace, and then search for virtual machines

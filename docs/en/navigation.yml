@@ -756,7 +756,6 @@ nav:
                   - What: virtnest/intro/index.md
                   - VM Features: virtnest/intro/features.md
                   - Release Notes: virtnest/intro/release-notes.md
-                  - FAQs: virtnest/intro/faq.md
               - Install:   
                   - Install Virtual Machine: virtnest/install/index.md
                   - Install Dependencies: virtnest/install/install-dependency.md
@@ -770,14 +769,17 @@ nav:
                   - VM Details: virtnest/quickstart/detail.md
               - Manage Virtual Machine:
                   - Create Secret: virtnest/vm/create-secret.md
+                  - Clone Virtual Machine: virtnest/vm/clone.md
                   - Snapshots: virtnest/vm/snapshot.md
                   - Scheduled Snapshot: virtnest/vm/scheduled-snapshot.md
                   - Live Migration: virtnest/vm/live-migration.md
+                  - Cold Migration within a Cluster: virtnest/vm/migratiom.md
                   - Migrate VM across Clusters: virtnest/vm/cross-cluster-migrate.md
                   - VM Monitor: virtnest/vm/monitor.md
                   - VM Network: virtnest/vm/vm-network.md
                   - VM Storage: virtnest/vm/vm-sc.md
                   - VM Drift: virtnest/vm/auto-migrate.md
+                  - VM Health Check: virtnest/vm/health-check.md
               - VM GPU:
                   - VM GPU: virtnest/gpu/vm-gpu.md
                   - VM vGPU: virtnest/gpu/vm-vgpu.md

@@ -125,10 +125,10 @@ This is an index page for FAQs and troubleshooting for DCE.
 
 ## Virtual Machine
 
-- [API error on the virtual machine page](../virtnest/intro/faq.md#page-api-errors)
-- [Virtual machine creation failed](../virtnest/intro/faq.md#vm-creation-failure)
-- [Virtual machine created successfully but cannot be used](../virtnest/intro/faq.md#vm-creation-failure)
-- [VNC can start but network is inaccessible](../virtnest/intro/faq.md#vnc-can-start-but-network-is-unreachable)
+- [API error on the virtual machine page](../virtnest/faq/index.md#page-api-error)
+- [Virtual machine creation failed](../virtnest/faq/cannot-use.md#vm-creation-failed)
+- [Virtual machine created successfully but cannot be used](../virtnest/faq/cannot-use.md#vm-created-successfully-but-cannot-be-used)
+- [VNC can start but network is inaccessible](../virtnest/faq/cannot-use.md#vnc-starts-but-the-network-is-unreachable)
 
 ## Insight
 
