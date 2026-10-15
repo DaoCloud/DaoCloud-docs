@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Compute Cloud Frequently Asked Questions
 
 This page lists some common issues you may encounter in Compute Cloud (Zestu) and provides convenient troubleshooting solutions.

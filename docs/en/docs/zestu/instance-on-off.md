@@ -1,6 +1,12 @@
 # Container Instance Power On/Off
 
-After the container instance is created, it supports power off and power on operations. Powering on starts billing, while powering off stops billing.
+After a container instance is created, you can perform **power on** and **power off** operations through the UI, the console, or the API, so as to flexibly manage the usage and cost of computing resources.
+
+- **Power on**: After the container instance is started, computing resources (such as CPU, GPU, and memory) are allocated and put into operation, and the system begins billing according to the selected billing mode.
+- **Power off**: Powering off releases computing resources and **stops billing**, but retains the instance's system disk data and configuration so that it can be quickly restored later.
+
+For scenarios involving **intermittent tasks** or **on-demand use of computing power**, such as model training, batch computing, or test environment deployment,
+arranging power on and power off times sensibly lets users reduce resource costs effectively while ensuring business continuity.
 
 ## Power Off
 
@@ -14,16 +20,16 @@ The steps are as follows:
 
     <!-- ![Power Off 1](./images/poweroff1.png) -->
 
-2. In the pop-up prompt, carefully read the power off notice, then click **OK**
+2. In the pop-up prompt, carefully read the power off notice, choose whether to save the system disk, and then click **OK**
 
     <!-- ![Power Off 2](./images/poweroff2.png) -->
 
 !!! note
 
-    - Currently, powering off an instance does not support saving the system disk, please ensure data backup is done. Support is expected in February 2025.
     - Instances that have not been powered on for 15 days will be automatically released.
     - GPU resources will not be reserved after power off. If there are insufficient
       available GPU resources of the required model when powering back on, you will need to wait.
+    - If the image space quota is insufficient, saving the system disk may fail. Please make sure the image space quota is sufficient.
 
 ## Power On
 

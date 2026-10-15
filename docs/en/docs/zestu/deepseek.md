@@ -10,7 +10,7 @@ This article introduces how to directly use DeepSeek through container instances
 
 ## Prerequisites
 
-- Register and log in to d.run
+- [Register and log in to d.run](../index.md)
 - Account balance must be greater than or equal to the unit price of the selected resource type
 
 ## Create DeepSeek Instance

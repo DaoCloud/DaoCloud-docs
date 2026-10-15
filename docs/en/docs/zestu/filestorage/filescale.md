@@ -1,6 +1,13 @@
 # File Storage Scaling (Expansion and Reduction)
 
-This document demonstrates how to scale (expand or reduce) file storage in **d.run**.
+In Compute Cloud or containerized application environments, file storage scaling refers to dynamically adjusting the capacity of shared file storage according to business needs.
+Scaling up lets you quickly add storage space as data grows, avoiding business interruptions caused by insufficient capacity;
+scaling down lets you release excess storage resources after data cleanup or a decline in business scale, reducing costs.
+
+File storage scaling supports online adjustment without service interruption. During the adjustment, all container instances that mount this storage can still read and write data normally.
+This capability suits scenarios with large data fluctuations or a need for long-term, stable access to shared files, such as log archiving, model training datasets, and media file processing.
+
+The following demonstrates how to scale file storage in d.run.
 
 ## Prerequisites
 

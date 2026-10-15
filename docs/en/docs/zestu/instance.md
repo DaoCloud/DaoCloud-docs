@@ -5,12 +5,17 @@ hide:
 
 # Create Container Instance
 
-Container instances are commonly used for algorithm development and inference.
-Various GPU types can be selected during creation to flexibly match computing requirements.
-Instances automatically associate with file storage for easier data management.
-They support using system-built images for rapid environment deployment and allow
-convenient development and access through tools like Jupyter Notebook, VSCode, and SSH,
-aiding in efficient algorithm research and inference tasks.
+Container instances are lightweight, elastically scalable compute units that are widely used for algorithm development, model training, and inference.
+With container instances, users can quickly launch an independent runtime environment and achieve on-demand allocation and efficient use of computing power.
+
+When creating a container instance, multiple GPU types are available to meet different computing needs, covering everything from entry level to high-performance computing.
+Instances are automatically associated with file storage, making it easier to manage data and model files in a unified way and improving data processing efficiency.
+
+In addition, container instances support using the system's built-in standard images, helping users quickly set up a development environment and reducing environment configuration time.
+Developers can access instances in a variety of ways, such as Jupyter Notebook, the VSCode remote plugin, and SSH,
+making it easy to debug code and run algorithm experiments and greatly improving development efficiency.
+
+In short, container instances provide a flexible, convenient, and efficient computing platform for algorithm development and inference, and are important infrastructure in modern AI and data science workflows.
 
 ## Prerequisites
 
@@ -29,14 +34,17 @@ aiding in efficient algorithm research and inference tasks.
 
     | Name | Description |
     |------|------------- |
-    | Optional | Up to 64 characters, can only include lowercase letters, numbers, separators ("-"), and dots ("."). Must start and end with a lowercase letter or number. |
-    | Billing Type | - Pay-as-you-go: Cost = Duration * Unit Price. Duration = Shutdown Time - Startup Time, accurate to the second; no charges during startup or waiting periods. Hourly billing is supported; if usage is less than an hour, charges will be based on actual usage time, accurate to the second. <br/> - Annual and Monthly Packages: Annual and monthly packages will soon be supported, with more favorable pricing for single cards. Stay tuned. |
+    | Instance Name | Up to 64 characters; can only contain lowercase letters, numbers, separators ("-"), and dots ("."). Must start and end with a lowercase letter or number. Optional. |
+    | Billing Type | - Pay-as-you-go: Cost = Duration * Unit Price. Duration = Shutdown Time - Startup Time, accurate to the second; no charges during startup or waiting periods. Hourly billing is supported; if usage is less than an hour, charges will be based on actual usage time, accurate to the second. <br/> - Annual and Monthly Packages: Reserve resources by month or year, paid in full at rental time. If you select this billing mode, you need to configure parameters such as the subscription duration, whether to auto-renew, and the renewal duration. |
     | Region | It is recommended to choose a region close to your location to create instances and initialize file storage for faster upload and download speeds. |
     | Resource Type | GPU model |
     | Resource | Supports full GPU and vGPU resources; select based on demand. |
-    | File Storage | After initializing file storage, it will be automatically mounted to the instance, with the default mount path being: /root/zestu-data |
-    | Image | Supports Pytorch and TensorFlow; more system images and custom images will be supported in the future, stay tuned. |
-    | Quick Login | You can choose to access the container instance via Jupyter Notebook and VSCode. If unchecked, related components will not be installed, and access tools cannot be changed after creation. |
+    | System Disk | Free capacity is 30 GB, and expansion is not supported. The system disk can be saved to My Images. |
+    | Data Disk | - Free capacity is 50 GB, with support for paid expansion. Billing continues even when the instance is shut down. <br/> - The default maximum expandable capacity is 200 GB. For a larger quota, contact 400-002-6898. The disk cannot be shrunk after expansion. <br/> - Strongly bound to the lifecycle of the container instance: it is automatically mounted when the instance is created and automatically deleted when the instance is deleted. <br/> - Data sharing between instances is not supported. |
+    | File Storage | After initializing file storage, it will be automatically mounted to the instance, with the default mount path being: /root/data |
+    | Image | - Basic images: Supports Pytorch, TensorFlow, Paddle, vLLM, SGLang, and more. <br/> - Application images: Supports popular AI application images such as DeepSeek and ComfyUI. <br/> - My Images: Supports creating container instances from images saved in My Images. <br/> - Image Address: A public or user private image address. For a private image, enter the username and password. |
+    | Access Tools | You can choose to access the container instance via Jupyter Notebook and VSCode. If unchecked, the related components will not be installed, and the access tools cannot be changed after creation. |
+    | Scheduled Shutdown | Supports shutdown at a specified time. |
   
 3. Click **OK** to complete the instance creation.
 
