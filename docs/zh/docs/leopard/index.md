@@ -28,7 +28,7 @@ hide:
 
     !!! note
     
-        为了合规性要求，线上充值前必须完成[实名认证](../manage/personal/authn.md)！
+        为了合规性要求，线上充值前必须完成实名认证！
     
     1. 进入 **钱包** ，点击 **线上充值** ，输入充值金额，并选择付款方式。
     
@@ -61,7 +61,7 @@ hide:
     2. 发送入账请求：通过命令行或 API 工具执行以下请求。请务必核实参数，**一旦提交暂不支持通过 API 回退**。
     
     ```bash
-    curl --location '[https://console.d.run/apis/leopard.io/v1alpha1/wallet/corporate-transfer/recharge](https://console.d.run/apis/leopard.io/v1alpha1/wallet/corporate-transfer/recharge)' \
+    curl --location 'https://console.d.run/apis/leopard.io/v1alpha1/wallet/corporate-transfer/recharge' \
     --header "Authorization: Bearer <您的TOKEN>" \
     --header 'Content-Type: application/json' \
     --data '{

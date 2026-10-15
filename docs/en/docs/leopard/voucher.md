@@ -5,7 +5,9 @@ hide:
 
 # Vouchers
 
-Vouchers can be used as a substitute for cash. They can be activated using a redemption code and applied to offset eligible spending under specified conditions.
+**Vouchers** are discount certificates that can be used as a substitute for cash, and users can activate them with a redemption code.  
+In specified scenarios that meet the usage rules and conditions, vouchers can directly offset the corresponding consumption amount, helping users reduce costs.  
+The d.run platform provides convenient voucher management, which supports viewing validity periods, usage records, and remaining balance, improving the transparency and convenience of using discounts.
 
 ## Steps
 
