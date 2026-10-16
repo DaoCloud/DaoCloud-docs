@@ -3,6 +3,20 @@
 This page lists the Release Notes of the d.run AI installer, so that you can
 understand the evolution path and feature changes of each version.
 
+## 2026-09-30
+
+### v0.45.0
+
+- **Added** support for the Zestu GitOps installation mode.
+- **Added** support for the Skoala GitOps installation mode.
+- **Added** support for the GitOps installation mode of the Agent component.
+- **Added** support for Copilot installation, the GitOps installation mode, and ExistingSecret.
+- **Added** support for Insight to use ExistingSecret.
+- **Added** support for Ghippo credentials to use an Existing Secret.
+- **Fixed** the installation failure caused by the incompatible `--local` parameter used when importing offline images.
+- **Fixed** the Service Unit startup failure when Kind uses Podman.
+- **Fixed** the issue that the kubectl image registry configuration was not synchronized when upgrading the Redis Cluster Operator.
+
 ## 2026-08-31
 
 ### v0.44.0

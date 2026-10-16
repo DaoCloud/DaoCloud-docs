@@ -2,6 +2,20 @@
 
 本页列出 Token 工厂安装器的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2026-09-30
+
+### v0.45.0
+
+- **新增** 支持 Zestu GitOps 安装模式
+- **新增** 支持 Skoala GitOps 安装模式
+- **新增** 支持 Agent 组件 GitOps 安装模式
+- **新增** 支持 Copilot 安装、GitOps 安装模式和 ExistingSecret
+- **新增** 支持 Insight 使用 ExistingSecret
+- **新增** 支持 Ghippo 凭证使用 Existing Secret
+- **修复** 离线镜像导入使用不兼容的 --local 参数导致安装失败问题
+- **修复** Kind 使用 Podman 时 Service Unit 启动失败问题
+- **修复** 升级 Redis Cluster Operator 时 kubectl 镜像仓库配置未同步问题
+
 ## 2026-08-31
 
 ### v0.44.0
