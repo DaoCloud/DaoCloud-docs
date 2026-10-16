@@ -2,7 +2,7 @@
 
 The Platform Administrator Overview is designed to monitor the overall usage, resource consumption, instance status, and user/API Key distribution of the ClawOS platform from a **global perspective**. It helps administrators quickly determine whether the platform is operating in a healthy, stable, and manageable state.
 
-Unlike the [Overview](../workspace/overview.md) in the workspace view, this page is intended for **platform administrators** and displays aggregated data across all workspaces for platform-level operations and governance.
+Unlike the [Overview](../workspace/index.md) in the workspace view, this page is intended for **platform administrators** and displays aggregated data across all workspaces for platform-level operations and governance.
 
 ## Purpose
 
@@ -99,4 +99,4 @@ The Platform Administrator Overview is designed to help answer the following que
 * Are the instances running healthily?
 * Are there abnormal requests, sudden cost increases, or model usage deviations?
 
-To view the operational status of a specific workspace, see [Workspace Overview](../workspace/overview.md).
+To view the operational status of a specific workspace, see [Workspace Overview](../workspace/index.md).

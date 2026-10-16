@@ -45,6 +45,8 @@ After selecting Microsoft Teams, you need to provide:
 * Client Secret
 * Tenant ID
 
+For details, see [Microsoft Teams Configuration](./teams-info.md).
+
 After the instance is created, the system generates a **Messaging endpoint** on the instance details page. Copy this address to **Configuration > Messaging endpoint** in your Microsoft Azure Bot configuration. Once configured, messages from Teams are sent to the corresponding OpenClaw instance and processed by the Agent.
 
 ## Instance Details

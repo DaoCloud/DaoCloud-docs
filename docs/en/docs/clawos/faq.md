@@ -1,5 +1,7 @@
 # FAQ
 
+This page lists some common questions and solutions for ClawOS.
+
 ??? "Which directories are persisted?"
 
     ClawOS currently persists files in `/openclaw/data` on a persistent volume. This is OpenClaw's working directory, and FileBrowser uploads are stored there. These files are retained when the Pod restarts or is recreated.
