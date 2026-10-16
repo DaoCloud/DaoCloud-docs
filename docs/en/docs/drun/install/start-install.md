@@ -16,14 +16,14 @@ You can download the latest version from the [Download Center - d.run AI OS](../
 
 | CPU Architecture | Version | Download |
 | :------- | :----- | :-----|
-| AMD64 | v0.44.0 | [offline-v0.44.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.44.0-amd64.tar) |
-| <font color="green">ARM64</font> | v0.44.0 | [offline-v0.44.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.44.0-arm64.tar) |
+| AMD64 | v0.45.0 | [offline-v0.45.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.45.0-amd64.tar) |
+| <font color="green">ARM64</font> | v0.45.0 | [offline-v0.45.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.45.0-arm64.tar) |
 
 After downloading, extract the offline package.
 Take the amd64 architecture offline package as an example:
 
 ```bash
-tar -xvf offline-v0.44.0-amd64.tar
+tar -xvf offline-v0.45.0-amd64.tar
 ```
 
 ### ISO Operating System Image Files (Required)
@@ -68,6 +68,23 @@ operating systems. You can visit <https://github.com/kubean-io/kubean/releases> 
 
 Currently, the osPackage offline package version must match the installer version.
 Download the osPackage offline package according to the corresponding version:
+
+=== "V0.45.0"
+
+    | Operating System | Download |
+    | :--------- | :------ |
+    | Redhat 8     | [os-pkgs-redhat8-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-redhat8-v0.38.0.tar.gz) |
+    | Redhat 7     | [os-pkgs-redhat7-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-redhat7-v0.38.0.tar.gz) |
+    | Redhat 9     | [os-pkgs-redhat9-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-redhat9-v0.38.0.tar.gz) |
+    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-ubuntu2004-v0.38.0.tar.gz) |
+    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-ubuntu2204-v0.38.0.tar.gz) |
+    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-openeuler22.03-v0.38.0.tar.gz) |
+    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-oracle9-v0.38.0.tar.gz) |
+    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-oracle8-v0.38.0.tar.gz) |
+    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.38.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-rocky9-v0.38.0.tar.gz) |
+    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.38.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-rocky8-v0.38.0.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-kylin-v10sp2-v0.38.0.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-kylin-v10sp3-v0.38.0.tar.gz) |
 
 === "V0.44.0"
 
