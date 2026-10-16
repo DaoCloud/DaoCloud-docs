@@ -10,9 +10,9 @@ This document explains how to deploy the privatized WS (Workspace) mode of the L
 In the [Global Service Cluster](../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster), you need to install:
 
 - Hydra: manually install or install via the installer
-- [Service Mesh](../../mspider/install/install.md) (depends on Istio to create gateways for routing)
-- [MySQL](../../middleware/mysql/intro/offline-install.md)
-- [Redis](../../middleware/redis/intro/offline-install.md)
+- [Service Mesh](https://docs.daocloud.io/mspider/install/install/) (depends on Istio to create gateways for routing)
+- [MySQL](https://docs.daocloud.io/en/middleware/mysql/intro/offline-install/)
+- [Redis](https://docs.daocloud.io/en/middleware/mysql/intro/offline-install/)
 
 !!! tip
 
