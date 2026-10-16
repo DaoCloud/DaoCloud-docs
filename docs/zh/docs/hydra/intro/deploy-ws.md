@@ -10,9 +10,9 @@
 在[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)中，需要安装：
 
 - Hydra：手动安装或通过安装器安装
-- [服务网格](../../mspider/install/install.md)（依赖 Istio 创建网关进行路由）
-- [MySQL](../../middleware/mysql/intro/offline-install.md)
-- [Redis](../../middleware/redis/intro/offline-install.md)
+- [服务网格](https://docs.daocloud.io/mspider/install/install/)（依赖 Istio 创建网关进行路由）
+- [MySQL](https://docs.daocloud.io/middleware/mysql/intro/offline-install/)
+- [Redis](https://docs.daocloud.io/middleware/redis/intro/offline-install/)
 
 !!! tip
 
