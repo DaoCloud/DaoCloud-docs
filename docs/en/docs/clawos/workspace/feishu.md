@@ -2,7 +2,11 @@
 
 This document explains how to integrate OpenClaw with Feishu to enable conversations with OpenClaw directly in Feishu.
 
-## Creating a Feishu Application
+## Quick Configuration (Recommended)
+
+Click **Quick Generate**, scan the QR code with the Feishu app, and follow the prompts to complete the authorization.
+
+## Manual Configuration
 
 ### Create an Enterprise Self-Built Application
 
@@ -192,7 +196,7 @@ Set the application name, description, and icon, then click **Create** to finish
 !!! caution
 
     For bot applications without long connection enabled, you must start an OpenClaw instance after obtaining the **App ID** and **App Secret**
-    in order to save event subscription and callback long connection settings. See the [OpenClaw Quick Start](intro/quickstart.md) guide.
+    in order to save event subscription and callback long connection settings. See the [OpenClaw Quick Start](../intro/quickstart.md) guide.
 
 ### Configure Event Subscription
 

@@ -231,7 +231,7 @@ After chart-syncer successfully synchronizes the images and Charts, refresh the 
 
 !!! info
 
-    The prerequisites for online installation are the same as those for the offline installation.
+    The prerequisites for online installation are the same as those for the [offline installation](#offline-installation-steps).
 
 ### Install Through the Kpanda UI
 
