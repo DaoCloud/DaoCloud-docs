@@ -33,6 +33,11 @@ Before using live migration, the following prerequisites must be met:
 
     ![Pop-up box](../images/vm02.png)
 
-3. After a successful migration, you can view the node information in the virtual machine list. At this time, the node has been migrated to __controller-node-2__ .
+3. During migration, the VM status is __Running (Migrating)__ in the VM list.
+
+4. After a successful migration, you can view the node information in the virtual machine list. At this time,
+   the node has been migrated to __controller-node-2__ .
 
     ![Successful](../images/vm03.png)
+
+    If the migration fails, the page displays a failure status prompt. Follow the prompt to handle the failure or start the migration again.
