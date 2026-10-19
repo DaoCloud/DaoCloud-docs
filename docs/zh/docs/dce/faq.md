@@ -8,7 +8,7 @@
 
 ### UI 访问问题
 
-??? "安装结束后打不开 DCE 界面，可执行 diag.sh 脚本快速排障"
+??? "安装结束后打不开界面，可执行 diag.sh 脚本快速排障"
 
     安装器自 [v0.12.0 版本](../install/release-notes.md#v0120)之后新增了 diag.sh 脚本，方便用户在 UI 界面打不开时快速排障。
 
@@ -22,7 +22,7 @@
 
     ![FAQ1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/faq11.png)
 
-??? "安装使用 Metallb 时因 VIP 访问不通导致 DCE 登录界面无法打开"
+??? "安装使用 Metallb 时因 VIP 访问不通导致登录界面无法打开"
 
     1. 排查 VIP 的地址是否和主机在同一个网段，Metallb L2 模式下需要确保在同一个网段
     2. 如果是在全局服务集群中的控制节点新增了网卡导致访问不通，需要手动配置 L2Advertisement。
@@ -221,7 +221,7 @@
         ./dce5-installer cluster-create -c clusterConfig.yml -m manifest-enterprise.yaml -z -s installer.sh
         ```
 
-??? "MGR 模式 MySQL Common 实例初始化失败导致 DCE 安装失败"
+??? "MGR 模式 MySQL Common 实例初始化失败导致安装失败"
 
     在安装过程中，`mcamel-common` 实例的 MySQL 初始化阶段失败。
     通过观察发现，`mysqlrouter` 用户在 MySQL 中丢失，导致 `router` 的 Deployment
@@ -367,7 +367,7 @@
 
 ### 社区版安装问题
 
-??? "kind 集群重装 DCE 时 Redis 卡住"
+??? "在 kind 集群重装产品时 Redis 卡住"
 
     问题：Redis Pod 出现了 0/4 running 很久的情况，提示：`primary ClusterIP can not unset`
 
@@ -548,7 +548,7 @@
 
     4. 在 __data__ -> __jenkins.yaml__ -> 搜索 `eventDispatcher.receiver`，它的值应该为 `http://localhost:9090/event`
 
-        如果 Jenkins 是部署在工作集群（需要穿透 DCE 的网关），则还需要检查以下几个配置项。
+        如果 Jenkins 是部署在工作集群（需要穿透网关），则还需要检查以下几个配置项。
 
     5. 再次查询名为 __event-proxy-config__ 的配置项，查看 YAML，配置项说明：
 
@@ -558,12 +558,12 @@
           proto: http                                   # (2)!
         ```
 
-        1. 此处为 DCE 的网关地址，如果为 dce5-installer 安装的 Jenkins，此处不需要修改
-        2. 此处为 DCE 的网关协议（http 或者 https）
+        1. 此处为网关地址，如果为 dce5-installer 安装的 Jenkins，此处不需要修改
+        2. 此处为网关协议（http 或者 https）
 
     6. 在 Jenkins 所在集群， __配置与密钥__ -> __配置项__ 中搜索密钥 __amamba-jenkins__ 。
 
-    7. 检查密钥中的 __event-proxy-token__ 是否正确。此 Token 用于 DCE 的网关认证。
+    7. 检查密钥中的 __event-proxy-token__ 是否正确。此 Token 用于网关认证。
        如果不正确，Jenkins 将无法发送事件到工作台。有关如何生成此 Token，
        可以查看[访问密钥](../ghippo/user-guide/personal-center/accesstoken.md)。
 
@@ -1463,7 +1463,7 @@
 
     **VM 创建成功但无法使用**
 
-    若 VM 创建成功但无法使用，应在 DCE 页面检查 VM 的 VNC 页面是否正常。
+    若 VM 创建成功但无法使用，应在界面上检查 VM 的 VNC 页面是否正常。
     若显示但仅限启动信息，请检查[依赖条件](../virtnest/install/install-dependency.md)。
     若依赖条件齐全，应[咨询开发人员](../install/index.md#_4)。
 
@@ -1562,7 +1562,7 @@
     这些插件的工作状态决定了日志采集是否正常。
     下面是一个针对 __Fluent Bit__ 的仪表盘，它用来监控各个集群中 __Fluent Bit__ 的工作情况和插件的采集、处理、导出日志的情况。
 
-    1. 使用 DCE 平台，进入 __可观测性__ ，选择左侧导航栏的 __仪表盘__ 。
+    1. 进入 __可观测性__ ，选择左侧导航栏的 __仪表盘__ 。
 
         ![insight 入口](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight01.png)
 
@@ -1635,7 +1635,7 @@
 
     如上图所示，在任一步骤传输失败都会导致无法查询出链路数据。如果您在完成应用链路增强后发现没有链路数据，请执行以下步骤：
 
-    1. 使用 DCE 平台，进入 __可观测性__ ，选择左侧导航栏的 __仪表盘__ 。
+    1. 进入 __可观测性__ ，选择左侧导航栏的 __仪表盘__ 。
 
         ![insight 入口](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight01.png)
 
@@ -1685,7 +1685,7 @@
 
 ??? "使用 Insight 定位应用异常"
 
-    本文将以 DCE 中举例，讲解如何通过 Insight 发现 DCE 中异常的组件并分析出组件异常的根因。
+    本文将以 DCE 中举例，讲解如何通过 Insight 发现其中异常的组件并分析出组件异常的根因。
 
     本文假设你已经了解 Insight 的产品功能或愿景。
 
@@ -2635,7 +2635,7 @@
 
     **情况 3**
 
-    边车内存泄漏。通过监控组件查看，比如 DCE 组件 Insight 等。
+    边车内存泄漏。通过监控组件查看，比如 Insight 组件等。
     若集群规模流量未变化，边车内存占用不断上升，则可能是内存泄漏，联系我们以定位问题。
 
     ![内存占用查看](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/troubleshoot/images/sidecar-memory-query-01.png)
@@ -4290,7 +4290,7 @@
     !!! note
 
         此地址快速跳转 `https://<dce_host>/kpanda/clusters/<cluster_name>/helm/charts/addon/baize-agent`。
-        注意将 `<dce_host>` 替换为实际的 DCE 控制台地址，`<cluster_name>` 替换为实际的集群名称。
+        注意将 `<dce_host>` 替换为实际的控制台地址，`<cluster_name>` 替换为实际的集群名称。
 
     **安装 `baize-agent` 时未配置集群名称**
 
@@ -4315,7 +4315,7 @@
 
         AI Lab 中的队列管理能力由 [Kueue](https://kueue.sigs.k8s.io/) 提供，
         Notebook 服务是通过 [JupyterHub](https://jupyter.org/hub) 提供的。
-        JupyterHub 对 Kubernetes 的版本要求较高，对于低于 v1.27 的版本，即使在 DCE 中设置了队列配额，
+        JupyterHub 对 Kubernetes 的版本要求较高，对于低于 v1.27 的版本，即使设置了队列配额，
         用户在创建 Notebook 时也选择了配额，但 Notebook 实际也不会受到队列配额的限制。
 
         ![local-queue-initialization-failed](../baize/troubleshoot/images/kueue-k8s127.png)
@@ -4443,7 +4443,7 @@
 
 ??? "Keycloak 无法启动"
 
-    *[Ghippo]: DCE 全局管理的开发代号
+    *[Ghippo]: 全局管理的开发代号
 
     **常见故障**
 
@@ -5128,7 +5128,7 @@
 
     !!! info
 
-        自 DCE 的 [v0.6.0](../download/index.md) 起，全局管理模块支持为服务网格配置自定义角色，
+        自 [安装器 v0.6.0](../download/index.md) 起，全局管理模块支持为服务网格配置自定义角色，
         即除了使用系统默认角色外，还可以在服务网格中自定义角色并授予不同权限。
 
     <!--

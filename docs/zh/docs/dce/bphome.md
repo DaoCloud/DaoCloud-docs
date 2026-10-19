@@ -3,10 +3,10 @@ hide:
   - toc
 ---
 
-# DCE 最佳实践汇总
+# 最佳实践汇总
 
-本页汇总了 DCE 各模块的最佳实践文档。
-这些最佳实践是指在使用和管理 DCE 平台过程中，通过长期经验积累和验证，被广泛认可为比较有效、可靠的方法和流程。
+本页汇总了各产品模块的最佳实践文档。
+这些最佳实践是指在使用和管理 DaoCloud 产品过程中，通过长期经验积累和验证，被广泛认可为比较有效、可靠的方法和流程。
 这些内容涵盖了安装、集群创建和接入、应用管理、多云编排、中间件等方面，旨在帮助用户更高效、更稳定地运行和维护容器化应用。
 
 !!! tip "有人说"
@@ -52,7 +52,7 @@ hide:
 
     ---
 
-    基于 K8s 构建工作集群和节点，它是 DCE 的核心
+    基于 K8s 构建工作集群和节点，它是容器化编排调度的核心
 
     - [在 CentOS 上创建 Ubuntu 工作集群](../kpanda/best-practice/create-ubuntu-on-centos-platform.md)
     - [在 CentOS 上创建 RedHat 9.2 工作集群](../kpanda/best-practice/create-redhat9.2-on-centos-platform.md)

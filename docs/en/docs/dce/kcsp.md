@@ -35,9 +35,9 @@ after the AI Conformance standard was released, we were among the first to start
 
 DaoCloud's products have passed CNCF AI Conformance certification to support the following Kubernetes versions:
 
-[![1.35](../images/ai-1.35.png)](https://github.com/cncf/k8s-ai-conformance/pull/121)
-[![1.34](../images/ai-1.34.png)](https://github.com/cncf/k8s-ai-conformance/pull/114)
-[![1.33](../images/ai-1.33.png)](https://github.com/cncf/k8s-ai-conformance/pull/13)
+[![1.35](https://harbor-test2.cn-sh2.ufileos.com/docs/images/ai-1.35.png)](https://github.com/cncf/k8s-ai-conformance/pull/121)
+[![1.34](https://harbor-test2.cn-sh2.ufileos.com/docs/images/ai-1.34.png)](https://github.com/cncf/k8s-ai-conformance/pull/114)
+[![1.33](https://harbor-test2.cn-sh2.ufileos.com/docs/images/ai-1.33.png)](https://github.com/cncf/k8s-ai-conformance/pull/13)
 
 ## Kubernetes Conformance
 
@@ -54,14 +54,14 @@ Being a certified KCSP means that:
 
 DaoCloud products have passed CNCF Conformance certification to support the following Kubernetes versions:
 
-[![1.36](../images/1.36.png)](https://github.com/cncf/k8s-conformance/pull/4353)
-[![1.35](../images/1.35.png)](https://github.com/cncf/k8s-conformance/pull/4195)
-[![1.34](../images/1.34.png)](https://github.com/cncf/k8s-conformance/pull/4022)
-[![1.33](../images/1.33.png)](https://github.com/cncf/k8s-conformance/pull/3927)
-[![1.32](../images/1.32.png)](https://github.com/cncf/k8s-conformance/pull/3810)
-[![1.31](../images/1.31.png)](https://github.com/cncf/k8s-conformance/pull/3675)
-[![1.30](../images/1.30.png)](https://github.com/cncf/k8s-conformance/pull/3578)
-[![1.29](../images/1.29.png)](https://github.com/cncf/k8s-conformance/pull/3203)
+[![1.36](https://harbor-test2.cn-sh2.ufileos.com/docs/images/1.36.png)](https://github.com/cncf/k8s-conformance/pull/4353)
+[![1.35](https://harbor-test2.cn-sh2.ufileos.com/docs/images/1.35.png)](https://github.com/cncf/k8s-conformance/pull/4195)
+[![1.34](https://harbor-test2.cn-sh2.ufileos.com/docs/images/1.34.png)](https://github.com/cncf/k8s-conformance/pull/4022)
+[![1.33](https://harbor-test2.cn-sh2.ufileos.com/docs/images/1.33.png)](https://github.com/cncf/k8s-conformance/pull/3927)
+[![1.32](https://harbor-test2.cn-sh2.ufileos.com/docs/images/1.32.png)](https://github.com/cncf/k8s-conformance/pull/3810)
+[![1.31](https://harbor-test2.cn-sh2.ufileos.com/docs/images/1.31.png)](https://github.com/cncf/k8s-conformance/pull/3675)
+[![1.30](https://harbor-test2.cn-sh2.ufileos.com/docs/images/1.30.png)](https://github.com/cncf/k8s-conformance/pull/3578)
+[![1.29](https://harbor-test2.cn-sh2.ufileos.com/docs/images/1.29.png)](https://github.com/cncf/k8s-conformance/pull/3203)
 [![1.28](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
 [![1.27](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
 [![1.26](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
