@@ -84,11 +84,28 @@ jobs:
           overwrite: always
           concurrency: 100
 
-      # ↓ 七牛给未设元数据的对象默认下发 Cache-Control: max-age=31536000，
-      #   对「URL 不变但内容每次都变」的 HTML / 搜索索引是致命的：
-      #   浏览器会一直用旧副本，用户必须强制刷新。这里在上传后逐对象补上 no-cache。
+      # ↓ 缓存策略分两层，不要混为一谈：
+      #
+      #   ① 空间默认值：七牛对「未设 Cache-Control 元数据」的对象默认下发
+      #      max-age=31536000（1 年）。管理员已在 Kodo 控制台把 docs-daocloud-io
+      #      的空间设置「文件客户端缓存 maxAge」改为 300 秒，因此之后新上传的文件
+      #      （含图片、PDF 等本脚本不覆盖的类型）最迟 5 分钟即可更新。
+      #      注意：该属性只作用于新上传的文件，存量对象不受影响。
+      #
+      #   ② 本步骤：把 HTML / 搜索索引 / sitemap 精确设成 no-cache，比 300 秒更严格，
+      #      发版后立即生效（内容没变时只是 304 校验，开销很小）。同时承担一次性
+      #      修存量的职责 —— 空间属性改不了已有对象，全站 6198 个 HTML 目前仍是 1 年，
+      #      首次运行状态文件为空，会全量走 /batch 改一遍（约 7 次请求）。
+      #
+      #   CDN 刷新阶段已停用：docs.daocloud.io 的 CNAME 指向 iovip-z0.qiniuio.com，
+      #   属于 Kodo 源站直连、未接入 CDN，刷新接口恒返回 400032。
+      #   因此这里不传 --refresh；将来真接了 CDN，再加回
+      #   `--refresh https://docs.daocloud.io/ --max-refresh <每日上限>` 即可。
+      - name: Selftest cache-control script
+        run: python3 scripts/ci/qiniu_set_cache.py --selftest
+
       - name: Fix Cache-Control for HTML and search index
-        run: python3 scripts/ci/qiniu_set_cache.py public --state .qiniu-cache-state.json --refresh https://docs.daocloud.io/
+        run: python3 scripts/ci/qiniu_set_cache.py public --state .qiniu-cache-state.json
         env:
           QINIU_ACCESS_KEY: ${{ secrets.QINIU_ACCESS_KEY }}
           QINIU_SECRET_KEY: ${{ secrets.QINIU_SECRET_KEY }}

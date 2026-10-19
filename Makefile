@@ -243,9 +243,11 @@ upload-ucloud: ## Upload public directory to UCloud
 	cd public && uv run --group upload python ../scripts/upload-ucloud.py public_key=$$UCLOUD_PUBLICKEY private_key=$$UCLOUD_PRIVATEKEY region=$$UCLOUD_REGION bucket=$$UCLOUD_BUCKET
 	@printf '\n$(GREEN)OK UCloud upload complete$(RESET)\n\n'
 
-qiniu-set-cache: ## Fix Cache-Control of HTML/search index on Qiniu Kodo [DRY_RUN=1] [URL_PREFIX=...]
+qiniu-set-cache: ## Fix Cache-Control on Qiniu Kodo and refresh CDN [DRY_RUN=1] [REFRESH=1] [MAX_REFRESH=N] [URL_PREFIX=...]
 	@printf '\n$(BOLD)Fixing Cache-Control on Qiniu Kodo$(RESET)\n'
-	uv run python scripts/ci/qiniu_set_cache.py "$(PUBLIC_PATH)" --state .qiniu-cache-state.json $(if $(DRY_RUN),--dry-run,) --refresh "$(URL_PREFIX)"
+	@printf '  $(CYAN)默认只改对象元数据、不刷 CDN；当前域名是 Kodo 源站直连（未接 CDN），REFRESH=1 会返回 400032$(RESET)\n'
+	@printf '  $(CYAN)MAX_REFRESH 是每自然日（北京时间）的累计上限，不是单次运行上限$(RESET)\n'
+	uv run python scripts/ci/qiniu_set_cache.py "$(PUBLIC_PATH)" --state .qiniu-cache-state.json $(if $(filter-out 0,$(DRY_RUN)),--dry-run,) $(if $(filter-out 0,$(REFRESH)),--refresh "$(URL_PREFIX)",) $(if $(filter-out 0,$(MAX_REFRESH)),--max-refresh "$(MAX_REFRESH)",)
 	@printf '\n$(GREEN)OK Cache-Control fixed$(RESET)\n\n'
 
 refresh-cdn-cache: ## Refresh UCloud CDN cache
