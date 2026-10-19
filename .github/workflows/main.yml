@@ -59,7 +59,9 @@ jobs:
       - name: Restore upload manifest
         uses: actions/cache@v4
         with:
-          path: .qiniu-manifest.json
+          path: |
+            .qiniu-manifest.json
+            .qiniu-cache-state.json
           key: qiniu-manifest-${{ github.ref_name }}-${{ github.run_id }}
           restore-keys: |
             qiniu-manifest-${{ github.ref_name }}-
@@ -81,3 +83,13 @@ jobs:
           # （若把整个 public/ 交给它，smart 策略会跳过媒体文件，导致更新过的图片推不上去）
           overwrite: always
           concurrency: 100
+
+      # ↓ 七牛给未设元数据的对象默认下发 Cache-Control: max-age=31536000，
+      #   对「URL 不变但内容每次都变」的 HTML / 搜索索引是致命的：
+      #   浏览器会一直用旧副本，用户必须强制刷新。这里在上传后逐对象补上 no-cache。
+      - name: Fix Cache-Control for HTML and search index
+        run: python3 scripts/ci/qiniu_set_cache.py public --state .qiniu-cache-state.json --refresh https://docs.daocloud.io/
+        env:
+          QINIU_ACCESS_KEY: ${{ secrets.QINIU_ACCESS_KEY }}
+          QINIU_SECRET_KEY: ${{ secrets.QINIU_SECRET_KEY }}
+          QINIU_BUCKET: ${{ secrets.QINIU_BUCKET }}

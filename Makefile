@@ -13,6 +13,8 @@ LANGS := zh en
 BUILD_TARGETS := zh en all
 DOCS_PATH ?= docs/zh/docs
 LSYNC_PATH ?= docs/en
+PUBLIC_PATH ?= public
+URL_PREFIX ?= https://docs.daocloud.io
 FILE ?=
 FOLDER ?=
 PDF ?=
@@ -241,6 +243,11 @@ upload-ucloud: ## Upload public directory to UCloud
 	cd public && uv run --group upload python ../scripts/upload-ucloud.py public_key=$$UCLOUD_PUBLICKEY private_key=$$UCLOUD_PRIVATEKEY region=$$UCLOUD_REGION bucket=$$UCLOUD_BUCKET
 	@printf '\n$(GREEN)OK UCloud upload complete$(RESET)\n\n'
 
+qiniu-set-cache: ## Fix Cache-Control of HTML/search index on Qiniu Kodo [DRY_RUN=1] [URL_PREFIX=...]
+	@printf '\n$(BOLD)Fixing Cache-Control on Qiniu Kodo$(RESET)\n'
+	uv run python scripts/ci/qiniu_set_cache.py "$(PUBLIC_PATH)" --state .qiniu-cache-state.json $(if $(DRY_RUN),--dry-run,) --refresh "$(URL_PREFIX)"
+	@printf '\n$(GREEN)OK Cache-Control fixed$(RESET)\n\n'
+
 refresh-cdn-cache: ## Refresh UCloud CDN cache
 	@printf '\n$(BOLD)Refreshing CDN cache$(RESET)\n'
 	uv run --group upload python scripts/refresh_cdn_cache.py publickey=$$UCLOUD_PUBLICKEY privatekey=$$UCLOUD_PRIVATEKEY
@@ -257,7 +264,7 @@ serve-docker: ## Preview Chinese docs with Docker
 
 clean: ## Remove generated site files
 	@printf '\n$(BOLD)Removing generated site files$(RESET)\n'
-	rm -rf public site docs/zh/site docs/en/site qiniu-upload .qiniu-manifest.json
+	rm -rf public site docs/zh/site docs/en/site qiniu-upload .qiniu-manifest.json .qiniu-cache-state.json
 	@printf '$(GREEN)OK clean complete$(RESET)\n\n'
 
 # -- Help --------------------------------------------------------------------
@@ -271,4 +278,4 @@ help: ## Show available targets
 zh en all:
 	@:
 
-.PHONY: clean serve build build-path sync sync-upload sync-link-check sync-pdf sync-pdf-tools sync-translate sync-report sync-image generate-nav netlify-preview docx word-count lsync translate-file translate-folder translate-all upload-images upload-md-images pdf-unlock pdf merge-openapi-docs merge-download-docs merge-external-docs check-links check-redirects release-notes upload-ucloud refresh-cdn-cache serve-docker help zh en all
+.PHONY: clean serve build build-path sync sync-upload sync-link-check sync-pdf sync-pdf-tools sync-translate sync-report sync-image generate-nav netlify-preview docx word-count lsync translate-file translate-folder translate-all upload-images upload-md-images pdf-unlock pdf merge-openapi-docs merge-download-docs merge-external-docs check-links check-redirects release-notes upload-ucloud qiniu-set-cache refresh-cdn-cache serve-docker help zh en all
