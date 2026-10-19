@@ -12,10 +12,12 @@
     `cacheControl`，即可在不改动上传流程的前提下修正缓存行为。
 
 做法：
-    不改动上传流程，只在上传完成后调用七牛的「资源元信息修改」接口
-    （POST /chgm）写入 cacheControl。为避免每次部署都重刷上万次接口，
-    脚本把「已处理过的内容指纹」记在状态文件里，只处理新增或内容变化的文件：
-    首次运行等于全量兜底（把历史遗留的 HTML 一并修正），之后即为增量。
+    不改动上传流程，只在上传完成后调用七牛的「批量操作」接口（POST /batch），
+    批量执行 /chgm 写入 cacheControl（单请求最多 1000 个操作）。
+
+    为避免每次部署都重刷上万次接口，脚本把「已处理过的内容指纹」记在状态文件里，
+    只处理新增或内容变化的文件：首次运行等于全量兜底（把历史遗留的 HTML 一并修正），
+    之后即为增量——通常整个部署只需要 1 次批量请求。
 
 用法：
     python3 scripts/ci/qiniu_set_cache.py <site_dir> [选项]
@@ -39,8 +41,8 @@ import json
 import os
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
-from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 # 七牛资源管理接口（rs）与 CDN 接口（fusion）
@@ -54,7 +56,8 @@ NO_CACHE_FILES = {"search_index.json"}
 NO_CACHE_SUFFIXES = {".html"}
 
 CHUNK = 1 << 20  # 1 MiB
-MAX_WORKERS = 32
+# 七牛 /batch 单次请求的操作数上限（各官方 SDK 统一取 1000）
+BATCH_MAX = 1000
 # 七牛的 CDN 刷新有配额限制，超出就放弃刷新（只影响 CDN 边缘节点，不影响对象元数据本身）
 MAX_REFRESH = 1000
 
@@ -96,30 +99,52 @@ def encoded_entry_uri(bucket: str, key: str) -> str:
     return urlsafe_base64_encode(f"{bucket}:{key}".encode("utf-8"))
 
 
-def set_cache_control(
-    bucket: str,
-    key: str,
-    cache_control: str,
-    access_key: str,
-    secret_key: str,
-    dry_run: bool = False,
-) -> bool:
-    """调用 /chgm 修改单个对象的 Cache-Control。"""
-    path = (
+def chgm_op(bucket: str, key: str, cache_control: str) -> str:
+    """/chgm 操作指令：/chgm/<EncodedEntryURI>/cacheControl/<EncodedCacheControl>。"""
+    return (
         f"/chgm/{encoded_entry_uri(bucket, key)}"
         f"/cacheControl/{urlsafe_base64_encode(cache_control.encode('utf-8'))}"
     )
-    content_type = "application/x-www-form-urlencoded"
 
-    if dry_run:
-        return True
+
+def batch_body(bucket: str, keys: list[str], cache_control: str) -> str:
+    """构造 /batch 的请求体：`op=<urlencoded op>&op=<urlencoded op>...`。
+
+    op 里含 base64 的 `=` 填充，必须整体做百分号编码后再拼进表单体。
+    """
+    return "&".join(
+        "op=" + urllib.parse.quote(chgm_op(bucket, key, cache_control), safe="")
+        for key in keys
+    )
+
+
+def batch_set_cache_control(
+    bucket: str,
+    keys: list[str],
+    cache_control: str,
+    access_key: str,
+    secret_key: str,
+) -> tuple[set[str], dict[str, str]]:
+    """用 /batch 一次修改多个对象的 Cache-Control。
+
+    请求体为 `op=<op>&op=<op>...`（form-urlencoded），响应是同序的 JSON 数组，
+    每项形如 {"code": 200} 或 {"code": 4xx, "data": {"error": "..."}}。
+
+    返回 (成功的 key 集合, {失败的 key: 错误信息})。
+    """
+    path = "/batch"
+    content_type = "application/x-www-form-urlencoded"
+    body = batch_body(bucket, keys, cache_control)
+
+    def all_failed(message: str) -> tuple[set[str], dict[str, str]]:
+        return set(), {key: message for key in keys}
 
     token = management_token(
-        "POST", path, RS_HOST, access_key, secret_key, content_type
+        "POST", path, RS_HOST, access_key, secret_key, content_type, body
     )
     req = urllib.request.Request(
         f"https://{RS_HOST}{path}",
-        data=b"",
+        data=body.encode("utf-8"),
         method="POST",
         headers={
             "Authorization": f"Qiniu {token}",
@@ -127,13 +152,30 @@ def set_cache_control(
         },
     )
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return 200 <= resp.status < 300
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            payload = resp.read().decode("utf-8")
     except urllib.error.HTTPError as exc:
-        print(f"  ERROR {key}: HTTP {exc.code} {exc.read().decode(errors='replace')}")
+        return all_failed(f"HTTP {exc.code} {exc.read().decode(errors='replace')}")
     except urllib.error.URLError as exc:
-        print(f"  ERROR {key}: {exc.reason}")
-    return False
+        return all_failed(f"连接失败：{exc.reason}")
+
+    try:
+        results = json.loads(payload)
+    except json.JSONDecodeError:
+        return all_failed(f"响应无法解析：{payload[:200]}")
+
+    if not isinstance(results, list) or len(results) != len(keys):
+        return all_failed(f"响应条数与请求不符（{len(results)} != {len(keys)}）")
+
+    ok: set[str] = set()
+    errors: dict[str, str] = {}
+    for key, item in zip(keys, results):
+        if item.get("code") == 200:
+            ok.add(key)
+        else:
+            data = item.get("data") or {}
+            errors[key] = str(data.get("error") or f"code {item.get('code')}")
+    return ok, errors
 
 
 def refresh_cdn(urls: list[str], access_key: str, secret_key: str) -> bool:
@@ -245,17 +287,47 @@ def refresh_urls(url_prefix: str, keys: list[str]) -> list[str]:
 
 
 def selftest() -> int:
-    """用官方文档的测试向量校验签名算法，无需网络和凭据。"""
+    """校验签名算法与 /batch 请求体构造，无需网络和凭据。"""
+    failures: list[str] = []
+
+    # 1) 官方文档给出的管理凭证测试向量
     path = "/move/bmV3ZG9jczpmaW5kX21hbi50eHQ=/bmV3ZG9jczpmaW5kLm1hbi50eHQ="
     token = management_token(
         "POST", path, "rs.qiniu.com", "MY_ACCESS_KEY", "MY_SECRET_KEY"
     )
     expected = "MY_ACCESS_KEY:1uLvuZM6l6oCzZFqkJ6oI4oFMVQ="
-    if token == expected:
-        print("签名自检通过")
-        return 0
-    print(f"签名自检失败\n  期望: {expected}\n  实际: {token}")
-    return 1
+    if token != expected:
+        failures.append(f"签名不符\n    期望: {expected}\n    实际: {token}")
+
+    # 2) 操作指令格式
+    op_expected = (
+        "/chgm/"
+        + urlsafe_base64_encode(b"mybucket:drun/index.html")
+        + "/cacheControl/"
+        + urlsafe_base64_encode(b"no-cache")
+    )
+    op = chgm_op("mybucket", "drun/index.html", "no-cache")
+    if op != op_expected:
+        failures.append(f"chgm op 不符\n    期望: {op_expected}\n    实际: {op}")
+
+    # 3) 请求体构成与往返解码
+    body = batch_body("mybucket", ["a.html", "b.html"], "no-cache")
+    parts = body.split("&")
+    if len(parts) != 2 or not all(p.startswith("op=") for p in parts):
+        failures.append(f"batch 请求体结构不符: {body}")
+    else:
+        for part, key in zip(parts, ["a.html", "b.html"]):
+            decoded = urllib.parse.unquote_plus(part[len("op=") :])
+            if decoded != chgm_op("mybucket", key, "no-cache"):
+                failures.append(f"batch 请求体往返解码不符: {decoded}")
+
+    if failures:
+        print("自检失败：")
+        for item in failures:
+            print(f"  - {item}")
+        return 1
+    print("自检通过（签名 / op 构造 / batch 请求体编码）")
+    return 0
 
 
 def main() -> int:
@@ -291,12 +363,14 @@ def main() -> int:
         return 1
 
     targets = collect_targets(site)
-    state = load_state(state_path)
-    pending = {
-        key: path
-        for key, path in targets.items()
-        if state.get(key) != fingerprint(path)
-    }
+    # 丢掉已从站点移除的 key，避免状态文件无限膨胀
+    state = {k: v for k, v in load_state(state_path).items() if k in targets}
+    # {相对 key: 内容指纹}，只保留「新增或内容变化」的
+    pending: dict[str, str] = {}
+    for key, path in targets.items():
+        current = fingerprint(path)
+        if state.get(key) != current:
+            pending[key] = current
 
     print(f"待修正 Cache-Control 的文件：{len(pending)} / {len(targets)}（其余已处理过）")
     if not pending:
@@ -312,31 +386,33 @@ def main() -> int:
 
     if dry_run:
         for key in sorted(pending)[:5]:
-            print(f"  [dry-run] POST https://{RS_HOST}/chgm/<bucket>:{key} -> {CACHE_POLICY}")
+            print(f"  [dry-run] /batch op={chgm_op(bucket or '<bucket>', key, CACHE_POLICY)}")
         if len(pending) > 5:
             print(f"  [dry-run] …… 其余 {len(pending) - 5} 个同上")
+        batches = -(-len(pending) // BATCH_MAX)
+        print(f"  [dry-run] 共 {len(pending)} 个操作，拆成 {batches} 次 /batch 请求")
     else:
-        def apply(item: tuple[str, Path]) -> tuple[str, str, bool]:
-            key, path = item
-            ok = set_cache_control(
-                bucket, key, CACHE_POLICY, access_key, secret_key, dry_run=False
+        keys = sorted(pending)
+        applied: set[str] = set()
+        errors: dict[str, str] = {}
+
+        for start in range(0, len(keys), BATCH_MAX):
+            chunk = keys[start : start + BATCH_MAX]
+            ok, errs = batch_set_cache_control(
+                bucket, chunk, CACHE_POLICY, access_key, secret_key
             )
-            return key, fingerprint(path), ok
+            applied |= ok
+            errors |= errs
+            print(f"  批次 {start // BATCH_MAX + 1}：{len(ok)}/{len(chunk)} 成功")
 
-        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
-            results = list(pool.map(apply, sorted(pending.items())))
-
-        failed = 0
-        for key, fp, ok in results:
-            if ok:
-                state[key] = fp
-            else:
-                failed += 1
+        for key in applied:
+            state[key] = pending[key]
         save_state(state_path, state)
-        print(f"  OK 已修正 {len(results) - failed} 个（失败 {failed} 个）")
 
-        if failed:
-            print("完成，但有失败项")
+        if errors:
+            print(f"  完成，但 {len(errors)} 个失败，例如：")
+            for key, message in sorted(errors.items())[:5]:
+                print(f"    {key}: {message}")
             return 1
 
     if url_prefix:
