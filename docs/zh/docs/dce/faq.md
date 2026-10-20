@@ -1905,7 +1905,7 @@
     1. 找到需要降级的 Nacos CR 资源
 
         ```bash
-        kubecl get nacos -A
+        kubectl get nacos -A
         ```
 
     2. 修改 `image` 字段，替换成需要降级的版本

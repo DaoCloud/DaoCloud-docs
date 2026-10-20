@@ -20,25 +20,25 @@
 3. 点击链接跳转到 __容器管理__ 中创建 Service Monitor。
 
 	```yaml
-	apiVersion: monitoring.coreos.com/v1
-	kind: ServiceMonitor
-	metadata:
-	  name: micrometer-demo # (1)
-	  namespace: insight-system # (2)
-	  labels:
-	    operator.insight.io/managed-by: insight
-	spec:
-	  endpoints: # (3)
-	    - honorLabels: true
-	      interval: 15s
-	      path: /actuator/prometheus
-	      port: http
-	  namespaceSelector: # (4)
-	    matchNames:
-	      - insight-system  # (5)
-	  selector: # (6)
-	    matchLabels:
-              micrometer-prometheus-discovery: "true"
+    apiVersion: monitoring.coreos.com/v1
+    kind: ServiceMonitor
+    metadata:
+      name: micrometer-demo # (1)
+      namespace: insight-system # (2)
+      labels:
+        operator.insight.io/managed-by: insight
+    spec:
+      endpoints: # (3)
+        - honorLabels: true
+          interval: 15s
+          path: /actuator/prometheus
+          port: http
+      namespaceSelector: # (4)
+        matchNames:
+          - insight-system  # (5)
+      selector: # (6)
+        matchLabels:
+          micrometer-prometheus-discovery: "true"
 	```
 
 	1. 指定 ServiceMonitor 的名称
@@ -57,10 +57,10 @@
 		  两个命名空间中的 Service，那么 __matchNames__ 设置如下：
 
 		    ```yaml
-			namespaceSelector:
-			  matchNames:
-			    - default
-			    - insight-system
+            namespaceSelector:
+              matchNames:
+                - default
+                - insight-system
 			```
 
 	5. 此处匹配的命名空间为需要暴露指标的应用所在的命名空间

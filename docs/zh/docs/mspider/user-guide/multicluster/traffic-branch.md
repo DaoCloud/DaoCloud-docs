@@ -45,11 +45,11 @@
       host: helloworld
       subsets:
         - labels:
-    ​      version: v1
-    ​      name: v1
+            version: v1
+            name: v1
         - labels:
-    ​      version: v2
-          name: v2
+            version: v2
+            name: v2
     ```
 
 1. 在左侧导航栏点击 __流量治理__ -> __网关规则__ -> __创建__ ，创建网关规则。
@@ -69,11 +69,11 @@
         istio: ingressgateway
       servers:
         - hosts:
-    ​      - hello.m.daocloud
+            - hello.m.daocloud
           port:
-    ​        name: http
-    ​        number: 80
-    ​        protocol: http
+            name: http
+            number: 80
+            protocol: http
     ```
 
 1. 在左侧导航栏点击 __流量治理__ -> __虚拟服务__ -> __创建__ ，创建路由规则，基于权重比例把流量分流至两个集群：

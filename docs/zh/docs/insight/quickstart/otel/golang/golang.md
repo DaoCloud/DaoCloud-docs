@@ -168,7 +168,7 @@ env:
   - name: OTEL_EXPORTER_OTLP_ENDPOINT
     value: 'http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317'
   - name: OTEL_SERVICE_NAME
-    value: "your depolyment name" # (1)!
+    value: "your deployment name" # (1)!
   - name: OTEL_K8S_NAMESPACE
     valueFrom:
       fieldRef:

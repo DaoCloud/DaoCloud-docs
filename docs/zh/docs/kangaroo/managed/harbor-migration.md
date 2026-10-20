@@ -22,10 +22,10 @@
     pg_dump --username=<原始数据库用户名> --host=<原始数据库主机> --port=<原始数据库端口> --format=plain --file=harbor_backup.sql <数据库名>
     ```
 
-    请将尖括号中的参数替换为实际的值。例如，如果原始数据库用户名为 `postgres`，原始数据库主机为 `locahost`，端口为 `32332`，数据库名为 `core`，则命令应为：
+    请将尖括号中的参数替换为实际的值。例如，如果原始数据库用户名为 `postgres`，原始数据库主机为 `localhost`，端口为 `32332`，数据库名为 `core`，则命令应为：
 
     ```sh
-    pg_dump --username=postgres --host=locahost --port=32332 --format=plain --file=harbor_backup.sql core
+    pg_dump --username=postgres --host=localhost --port=32332 --format=plain --file=harbor_backup.sql core
     ```
 
 2. 将数据库备份文件 `harbor_backup.sql` 从原始 Harbor 环境传输到新的 PostgreSQL 环境。
@@ -36,10 +36,10 @@
     psql --host=<新数据库主机> --port=<新数据库端口> --username=<新数据库用户名> --dbname=<数据库名> --file=harbor_backup.sql
     ```
 
-    请将尖括号中的参数替换为实际的值。例如，如果新数据库主机为 `locahost`，端口为 `32209`，新数据库用户名为 `postgres`，数据库名为 `core`，则命令应为：
+    请将尖括号中的参数替换为实际的值。例如，如果新数据库主机为 `localhost`，端口为 `32209`，新数据库用户名为 `postgres`，数据库名为 `core`，则命令应为：
 
     ```sh
-    psql --host=locahost --port=32209 --username=postgres --dbname=core --file=harbor_backup.sql
+    psql --host=localhost --port=32209 --username=postgres --dbname=core --file=harbor_backup.sql
     ```
 
 完成以上步骤后，您已经成功将 Harbor 的 PostgreSQL 数据库迁移至新的集群环境。请确保在整个迁移过程中做好备份，并在迁移前做好充分的测试，以确保数据的安全性和业务的连续性。

@@ -215,7 +215,7 @@ metadata:
   labels:
     hydra.io/model-id: "qwen2-0.5b-instruct"
   name: qwen2-5-0-5b-instruct
-  namespace: another-namepsace
+  namespace: another-namespace
 spec:
   source:
     type: REFERENCE

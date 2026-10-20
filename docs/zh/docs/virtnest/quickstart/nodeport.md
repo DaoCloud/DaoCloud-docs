@@ -26,19 +26,19 @@
     ```yaml
     apiVersion: v1
     kind: Service
-      metadata:
-        name: test-ssh
+    metadata:
+      name: test-ssh
     spec:
       ports:
       - name: tcp-ssh
         nodePort: 32090
         protocol: TCP
-        // 22 端口，不要更改
+        # 22 端口，不要更改
         port: 22 
         targetPort: 22
       selector:
-        // 虚拟机的 name
-       vm.kubevirt.io/name: test-image-s3
+        # 虚拟机的 name
+        vm.kubevirt.io/name: test-image-s3
       type: NodePort
     ```
 

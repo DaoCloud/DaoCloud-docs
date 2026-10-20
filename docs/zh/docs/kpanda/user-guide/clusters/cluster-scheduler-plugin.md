@@ -28,7 +28,7 @@
 1. 在 **创建集群** -> **高级配置** -> **自定义参数** 中添加 scheduler-plugins 参数
 
     ```yaml
-    scheduler_plugins_enabled:true
+    scheduler_plugins_enabled: true
     scheduler_plugins_plugin_config:
       - name: Coscheduling
         args:

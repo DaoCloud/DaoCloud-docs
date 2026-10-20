@@ -142,6 +142,7 @@ func toDateInZone(fmt string, date interface{}, zone string) string
 
 ```go-templates
 {{ toDateInZone "2006-01-02T15:04:05" .StartsAt "Asia/Shanghai" }}
+```
 
 ## 阈值模板说明
 

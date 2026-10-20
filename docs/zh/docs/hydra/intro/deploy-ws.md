@@ -97,7 +97,7 @@
         name: default
         port: 80
         protocol: HTTP
-    - allowedRoutes:
+      - allowedRoutes:
           namespaces:
             from: All
         hostname: 'cn-sh-a1'

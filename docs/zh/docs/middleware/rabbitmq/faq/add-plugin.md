@@ -20,9 +20,6 @@ RabbitMQ 有很多插件，但是在安装 RabbitMQ 时，只能安装默认的�
 > 修改示例实例代码
 
 ```yaml
-- 
-
-```yaml
 apiVersion: rabbitmq.com/v1beta1
 kind: RabbitmqCluster
 metadata:

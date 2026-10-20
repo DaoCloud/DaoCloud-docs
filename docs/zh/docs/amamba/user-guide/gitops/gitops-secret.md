@@ -491,9 +491,9 @@ spec:
     immutable: true
     metadata:
       labels:
-        "xxxx":"xxxx"
+        "xxxx": "xxxx"
       annotations:
-        "xxxx":"xxxx"
+        "xxxx": "xxxx"
 ```
 
 1. 通过 kubeseal 生成的密文
