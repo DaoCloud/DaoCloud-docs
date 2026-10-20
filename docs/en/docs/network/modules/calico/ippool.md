@@ -85,7 +85,6 @@ spec:
   blockSize: 26
   vxlanMode: Always
   natOutgoing: true
-EOF
 ```
 
 - `cidr`: IP address range can be determined by the actual environment.
@@ -131,7 +130,6 @@ Match specific nodes in `IPPool` based on the `nodeSelector` field, and only spe
       vxlanMode: Always
       natOutgoing: true
       nodeSelector: type=="test"
-    EOF
     ```
 
 However, this `IPPool` does not affect Pods already created by this node, and to update its Pod to assign addresses from this `IPPool`, you need to `recreate pod`.
@@ -245,7 +243,6 @@ How to change `BlockSize`:
       cidr: 192.0.0.0/16
       ipipMode: Always
       natOutgoing: true
-    EOF
     ```
 
     !!! note

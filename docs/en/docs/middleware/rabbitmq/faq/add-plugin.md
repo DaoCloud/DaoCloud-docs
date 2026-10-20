@@ -20,9 +20,6 @@ Here, taking rabbitmq_message_timestamp-3.8.0.ez as an example, the main content
 > Modify the sample instance code
 
 ```yaml
--
-
-```yaml
 apiVersion: rabbitmq.com/v1beta1
 kind: RabbitmqCluster
 metadata:

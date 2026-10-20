@@ -124,13 +124,13 @@ vi $HOME/.kube/config
     ```yaml
     contexts:
     - context: #Add the cluster01's `context` information
-        cluster: {{cluster01 name}}
-        user: {{cluster01 name}}
-      name: {{cluster01 name}}
+        cluster: "{{cluster01 name}}"
+        user: "{{cluster01 name}}"
+      name: "{{cluster01 name}}"
     - context: #Add the cluster02's `context` information
-        cluster: {{cluster02 name}}
-        user: {{cluster02 name}}
-      name: {{cluster02 name}}
+        cluster: "{{cluster02 name}}"
+        user: "{{cluster02 name}}"
+      name: "{{cluster02 name}}"
     current-context: kubernetes-admin@cluster.local
     ```
 

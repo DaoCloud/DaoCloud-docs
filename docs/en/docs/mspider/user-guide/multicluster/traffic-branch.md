@@ -35,11 +35,11 @@ Configuration steps:
        host: helloworld
        subsets:
          - labels:
-     ​ version: v1
-     ​ name: v1
+             version: v1
+             name: v1
          - labels:
-     ​ version: v2
-           name: v2
+             version: v2
+             name: v2
      ```
 
 1. On the left navigation bar, click __Traffic Management__ -> __Gateways__ -> __Create__ to create a gateway rule.
@@ -56,12 +56,12 @@ Configuration steps:
        selector:
          istio: ingressgateway
        servers:
-         -hosts:
-     ​ - hello.m.daocloud
+         - hosts:
+             - hello.m.daocloud
            port:
-     name: http
-     ​number: 80
-     ​ protocol: http
+             name: http
+             number: 80
+             protocol: http
      ```
 
 1. On the left navigation bar, click __Traffic Management__ -> __Virtual Service__ -> __Create__ , create routing rules, and divide traffic to two clusters based on the weight ratio:

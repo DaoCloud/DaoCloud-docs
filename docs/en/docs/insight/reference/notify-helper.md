@@ -142,6 +142,7 @@ This will return __2022-08-15T13:59:08__. Additionally, you can achieve the same
 
 ```go-templates
 {{ toDateInZone "2006-01-02T15:04:05" .StartsAt "Asia/Shanghai" }}
+```
 
 ## Threshold Template Description
 

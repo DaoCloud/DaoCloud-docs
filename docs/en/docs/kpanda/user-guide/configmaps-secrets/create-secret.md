@@ -82,8 +82,8 @@ You can create ConfigMaps with two methods:
        name: secretdemo
      type: Opaque
      data:
-       username: ****
-       password: ****
+       username: "****"
+       password: "****"
      ```
 
 [Next step: use secret](use-secret.md){ .md-button .md-button--primary }

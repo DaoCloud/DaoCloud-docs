@@ -230,7 +230,7 @@ kubectl get lv
 ![kubectl-get-lv](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-lv.png)
 
 ```sh
-kubect get lvr
+kubectl get lvr
 ```
 
 ![kubectl-get-lvr](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-lvr.png)
