@@ -366,20 +366,20 @@ helm install nginx --set service.type=NodePort my-repo/nginx
       entry: the-entry
       templates:
         - name: the-entry
-        templateType: Parallel
-        deadline: 240s
-        children:
-          - workflow-pod-chaos
+          templateType: Parallel
+          deadline: 240s
+          children:
+            - workflow-pod-chaos
         - name: workflow-pod-chaos
-        templateType: PodChaos
-        deadline: 20s
-        podChaos:
+          templateType: PodChaos
+          deadline: 20s
+          podChaos:
             action: pod-kill
             mode: one
             selector:
-            namespaces:
+              namespaces:
                 - default
-            labelSelectors:
+              labelSelectors:
                 "app.kubernetes.io/instance": "nginx"
     ```
 

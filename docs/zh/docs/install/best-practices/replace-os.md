@@ -51,7 +51,7 @@
       action: scale.yml
       preHook:
         - actionType: playbook
-        action: ping.yml
+          action: ping.yml
         - actionType: playbook
           action: enable-repo.yml  # (1)!
           extraArgs: |
@@ -182,7 +182,7 @@ Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 
       preHook:
         - actionType: playbook
           action: disable-firewalld.yml
-       postHook:
+      postHook:
         - actionType: playbook
           action: upgrade-cluster.yml
           extraArgs: --limit=etcd,kube_control_plane -e ignore_assert_errors=yes

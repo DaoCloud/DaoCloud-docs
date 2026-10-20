@@ -116,7 +116,7 @@
 1. 先创建新的 Gateway，并且自定义 App、Istio label
 
     ```yaml
-    app：$gateway_name
+    app: $gateway_name
     Istio: $gateway_name
     ```
 

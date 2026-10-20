@@ -49,7 +49,7 @@
         cilium_enable_bpf_masquerade: "true" #设置该参数为 true 之后，如果使用了 masquerading 特性，那么会基于 eBPF 来替代 iptables 的实现，需要内核 5.10 及之后版本，否则就算开启也会降级到 iptables 实现
         cilium_enable_ipv6_masquerade: "false" #对于 POD 访问外界的流量做源地址转换，如果使用 tunnel 模式需要开启，如果是通过 BGP 打通了物理网络则禁用
         cilium_enable_host_legacy_routing: "false" # 关闭可以主机处理数据包时绕过其内核协议栈，加快数据转发。默认情况下打开，但如果主机内核不支持，则回退到传统行为
-        cilium_enable_bandwidth_manager: "true # 打开bandwidth_manager，提高tcp、udp的性能
+        cilium_enable_bandwidth_manager: "true" # 打开bandwidth_manager，提高tcp、udp的性能
         cilium_kube_proxy_replacement: strict  # 启用 kube_proxy replacement 功能，需要删除 kube_proxy 组件
         cilium_tunnel_mode: disabled # 关闭隧道模式
         cilium_enable_bbr: "true" #（可选） bbr网络阻塞控制，提供更高的带宽及更低的延时。要求内核大于5.18

@@ -149,7 +149,6 @@ apiVersion: apiserver.config.k8s.io/v1beta1
 kind: TracingConfiguration
 endpoint: 10.6.9.3:4317
 samplingRatePerMillion: 100000  #采样频率，根据自身需要设置
-vim /etc/kubernetes/manifests/kube-apiserver.yaml
 spec:
   containers:
   - command:

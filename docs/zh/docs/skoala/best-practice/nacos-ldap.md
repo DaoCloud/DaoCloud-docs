@@ -110,7 +110,7 @@ metadata:
 spec:
   ports:
     - port: 389
-  type: NodePort
+  type: NodePort
   selector:
     app: ldap
 ```
@@ -169,7 +169,7 @@ spec:
   - name: "8080"
     port: 8080
     targetPort: 80
-  type: NodePort
+  type: NodePort
   selector:
     io.kompose.service: phpldapadmin
 ```

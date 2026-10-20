@@ -121,30 +121,30 @@ LocalVolumeMigrate 需要部署在 Kubernetes 系统中，需要部署应用满�
     - apiVersion: hwameistor.io/v1alpha1
       kind: LocalVolumeMigrate
       metadata:
-      annotations:
-      kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"hwameistor.io/v1alpha1","kind":"LocalVolumeMigrate","metadata":{"annotations":{},"name":"localvolumemigrate-1","namespace":"hwameistor"},"spec":{"migrateAllVols":true,"sourceNodesNames":["dce-172-30-40-61"],"targetNodesNames":["172-30-45-223"],"volumeName":"pvc-1a0913ac-32b9-46fe-8258-39b4e3b696a4"}}
-      creationTimestamp: "2022-07-07T12:34:31Z"
-      generation: 1
-      name: localvolumemigrate-1
-      namespace: hwameistor
-      resourceVersion: "12828637"
-      uid: 78af7f1b-d701-4b03-84de-27fafca58764
+        annotations:
+          kubectl.kubernetes.io/last-applied-configuration: |
+            {"apiVersion":"hwameistor.io/v1alpha1","kind":"LocalVolumeMigrate","metadata":{"annotations":{},"name":"localvolumemigrate-1","namespace":"hwameistor"},"spec":{"migrateAllVols":true,"sourceNodesNames":["dce-172-30-40-61"],"targetNodesNames":["172-30-45-223"],"volumeName":"pvc-1a0913ac-32b9-46fe-8258-39b4e3b696a4"}}
+        creationTimestamp: "2022-07-07T12:34:31Z"
+        generation: 1
+        name: localvolumemigrate-1
+        namespace: hwameistor
+        resourceVersion: "12828637"
+        uid: 78af7f1b-d701-4b03-84de-27fafca58764
       spec:
-      abort: false
-      migrateAllVols: true
-      sourceNodesNames:
-      - dce-172-30-40-61
+        abort: false
+        migrateAllVols: true
+        sourceNodesNames:
+        - dce-172-30-40-61
         targetNodesNames:
-      - 172-30-45-223
+        - 172-30-45-223
         volumeName: pvc-1a0913ac-32b9-46fe-8258-39b4e3b696a4
-        status:
+      status:
         replicaNumber: 1
         state: InProgress
-        kind: List
-        metadata:
-        resourceVersion: ""
-        selfLink: ""
+    kind: List
+    metadata:
+      resourceVersion: ""
+      selfLink: ""
     ```
 
 7. 查看迁移成功状态

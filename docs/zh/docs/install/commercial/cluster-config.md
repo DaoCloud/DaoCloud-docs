@@ -406,7 +406,7 @@ spec:
     isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso" # (3)!
     osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz" # (3)!
     externalRepoType: centos # (4)!
-    externalRepoURLs: ["https://extertal-repo.daocloud.io/centos/\$releasever/os/\$basearch/"]
+    externalRepoURLs: ["https://extertal-repo.daocloud.io/centos/$releasever/os/$basearch/"]
   imagesAndCharts:
     type: external # (5)!
     externalImageRepo: https://external-registry.daocloud.io # (6)!

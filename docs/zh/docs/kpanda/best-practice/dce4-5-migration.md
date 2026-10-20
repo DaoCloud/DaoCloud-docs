@@ -189,12 +189,12 @@ metadata:
     velero.io/plugin-config: "" # (4)!
     velero.io/change-image-name: RestoreItemAction # (5)!
 data:
-  "case1":"1.1.1.1:5000,2.2.2.2:3000" # (6)!
-  "case2":"5000,3000"
-  "case3":"abc:test,edf:test"
-  "case5":"test,latest"
-  "case4":"1.1.1.1:5000/abc:test,2.2.2.2:3000/edf:test"
-  "case5":"dev/,test/" # (7)!
+  "case1": "1.1.1.1:5000,2.2.2.2:3000" # (6)!
+  "case2": "5000,3000"
+  "case3": "abc:test,edf:test"
+  "case5": "test,latest"
+  "case4": "1.1.1.1:5000/abc:test,2.2.2.2:3000/edf:test"
+  "case5": "dev/,test/" # (7)!
 ```
 
 1. any name can be used; Velero uses the labels (below) to identify it rather than the name

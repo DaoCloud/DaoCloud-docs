@@ -699,7 +699,7 @@
 
     ```yaml
     yumRepos:
-      external: [ "http://10.5.14.100:8081/centos/\$releasever/os/\$basearch","http://10.5.14.100:8081/centos-iso/\$releasever/os/\$basearch" ]
+      external: [ "http://10.5.14.100:8081/centos/$releasever/os/$basearch","http://10.5.14.100:8081/centos-iso/$releasever/os/$basearch" ]
     ```
 
     替换为：

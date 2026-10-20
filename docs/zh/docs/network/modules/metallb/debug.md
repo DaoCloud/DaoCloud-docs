@@ -18,7 +18,7 @@
 ```yaml
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
-  metadata:
+metadata:
     name: default
     namespace: metallb-system
 ```
