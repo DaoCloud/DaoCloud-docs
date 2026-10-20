@@ -5,6 +5,8 @@ hide:
 
 # DaoCloud Product Support Policy
 
+[View or Download the Support Policy PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/support.pdf){ .md-button }
+
 Unless otherwise specified, the policies described herein apply to the maintenance and support of DaoCloud Enterprise (DCE) software and its included modules.
 
 "Customer" refers to an entity that has ordered product maintenance and support services from DaoCloud.
