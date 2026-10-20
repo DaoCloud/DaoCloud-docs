@@ -418,7 +418,7 @@ spec:
      # `debian` as Debian
      # `ubuntu` as Ubuntu
      externalRepoType: centos
-     externalRepoURLs: ["https://extertal-repo.daocloud.io/centos/\$releasever/os/\$basearch/"]
+     externalRepoURLs: ["https://extertal-repo.daocloud.io/centos/$releasever/os/$basearch/"]
    imagesAndCharts:
      # official-service(if omit or empty), builtin or external
      # Not Support External S3 so far... FIXME

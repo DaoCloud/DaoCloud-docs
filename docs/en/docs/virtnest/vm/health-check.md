@@ -50,7 +50,7 @@ However, note that you must modify the YAML configuration after the virtual mach
                         source:
                           registry:
                             url: >-
-                          docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
+                              docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
                   runStrategy: Halted
                   template:
                     metadata:
@@ -171,7 +171,7 @@ Configure `livenessProbe.tcpSocket` in `spec.template.spec`.
                 source:
                   registry:
                     url: >-
-                  docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
+                      docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
           runStrategy: Halted
           template:
             metadata:
@@ -275,7 +275,7 @@ Configure `readiness` in `spec.template.spec`.
                 source:
                   registry:
                     url: >-
-                  docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
+                      docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
           runStrategy: Halted
           template:
             metadata:
