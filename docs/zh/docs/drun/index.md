@@ -134,7 +134,3 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
 
 [查看/下载 d.run AI 操作系统彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/drun.pdf){ .md-button .md-button--primary }
 [开始安装](installer/start-install.md){ .md-button .md-button--primary }
-
-[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
-[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
-[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

@@ -136,7 +136,3 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
 
 [安装 Token 工厂](install/index.md){ .md-button .md-button--primary }
 [查看/下载 Token 工厂彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/tf.pdf){ .md-button .md-button--primary }
-
-[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
-[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
-[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
