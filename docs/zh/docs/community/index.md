@@ -202,10 +202,6 @@ hide:
 Clusterpedia、HwameiStor、Merbridge、Spiderpool 和 Kubean 均已入选 <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>。
 </p>
 
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
-[了解 d.run](../drun/index.md){ .md-button .md-button--primary }
-[Token 工厂概览](../tf/index.md){ .md-button .md-button--primary }
-
 [下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
 [了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
 [了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

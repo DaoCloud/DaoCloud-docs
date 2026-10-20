@@ -154,9 +154,6 @@ Package the entire workflow—"read documents → extract key data → validate 
 * [Release Notes](./release-notes.md)
 * [ClawOS Permissions](../../ghippo/permissions/clawos.md)
 
-[Quick Start](./quickstart.md){ .md-button .md-button--primary }
-[Feishu Integration](../workspace/feishu.md){ .md-button .md-button--primary }
-
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
 [Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
 [Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }
