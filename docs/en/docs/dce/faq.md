@@ -8,7 +8,7 @@ For more questions, refer to [Installation Troubleshooting](../install/faq.md).
 
 ### UI Login Issues
 
-??? "Cannot open DCE interface after installation is complete; you can execute the diag.sh script for quick troubleshooting"
+??? "Cannot open the interface after installation is complete; you can execute the diag.sh script for quick troubleshooting"
 
     Since [installer v0.12.0](../install/release-notes.md#v0120), the diag.sh script has been added
     to help users quickly troubleshoot the UI issues.
@@ -23,7 +23,7 @@ For more questions, refer to [Installation Troubleshooting](../install/faq.md).
 
     ![FAQ1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/faq11.png)
 
-??? "DCE login interface cannot be opened due to VIP access issues when installing with Metallb"
+??? "Login interface cannot be opened due to VIP access issues when installing with Metallb"
 
     1. Check if the VIP address is in the same subnet as the host. In Metallb L2 mode, it is necessary to ensure they are in the same subnet.
     2. If a network card was added to the control node in a Global cluster causing access issues, L2Advertisement needs to be configured manually.
@@ -373,7 +373,7 @@ For more questions, refer to [Installation Troubleshooting](../install/faq.md).
 
 ### Community Edition Installation Issues
 
-??? "Redis gets stuck during DCE reinstallation in kind cluster"
+??? "Redis gets stuck when reinstalling the product in a kind cluster"
 
     Issue: The Redis Pod has been stuck at 0/4 running for a long time, indicating: `primary ClusterIP can not unset`
 
@@ -553,7 +553,7 @@ For more questions, refer to [Workbench](../amamba/intro/index.md).
 
     4. Search for `eventDispatcher.receiver` in __data__ -> __jenkins.yaml__, its value should be `http://localhost:9090/event`.
 
-        If Jenkins is deployed in the worker cluster (need to penetrate the gateway of DCE), you also need to check the following configmaps.
+        If Jenkins is deployed in the worker cluster (need to penetrate the gateway), you also need to check the following configmaps.
 
     5. Query the configmap named __event-proxy-config__ again, check YAML, and the configmap description:
 
@@ -563,12 +563,12 @@ For more questions, refer to [Workbench](../amamba/intro/index.md).
           proto: http  # (2)!
         ```
 
-        1. This is the gateway address of dce5. If it is Jenkins installed by dce5-installer, this does not need to be modified
-        2. This is the gateway protocol of dce5 (http or https)
+        1. This is the gateway address. If it is Jenkins installed by dce5-installer, this does not need to be modified
+        2. This is the gateway protocol (http or https)
 
     6. In the cluster where Jenkins is located, search for the secret __amamba-jenkins__ in __ConfigMaps & Secrets__ -> __ConfigMaps__.
 
-    7. Check whether the __event-proxy-token__ in the secret is correct. This Token is used for the gateway authentication of DCE.
+    7. Check whether the __event-proxy-token__ in the secret is correct. This Token is used for the gateway authentication.
        If it is incorrect, Jenkins will not be able to send events to the workbench. For how to generate this Token, you can check [Access Key](../ghippo/user-guide/personal-center/accesstoken.md).
 
     If all the above configmaps are correct, but the status of Jenkins pipeline still cannot be updated, please first check the container log of __event-proxy__ in Jenkins.
@@ -1497,7 +1497,7 @@ For more questions, refer to [Virtual Machine FAQs](../virtnest/faq/index.md).
 
     **VM Created Successfully but Cannot Be Used**
 
-    If the VM is created successfully but cannot be used, check whether the VNC page of the VM works normally on the DCE page.
+    If the VM is created successfully but cannot be used, check whether the VNC page of the VM works normally on the UI.
     If only startup information is displayed, check the [dependencies](../virtnest/install/install-dependency.md).
     If the dependencies are complete, [consult developers](../install/index.md#configure-helm-repo).
 
@@ -1592,7 +1592,7 @@ For more questions, refer to [Insight](../insight/intro/index.md).
 
     After installing the __insight-agent__ in the cluster, __Fluent Bit__ in __insight-agent__ will collect logs in the cluster by default, including Kubernetes event logs, node logs, and container logs. __Fluent Bit__ has already configured various log collection plugins, related filter plugins, and log output plugins. The working status of these plugins determines whether log collection is normal. Below is a dashboard for __Fluent Bit__ that monitors the working conditions of each __Fluent Bit__ in the cluster and the collection, processing, and export of plugin logs.
 
-    1. Use DCE platform, enter __Insight__ , and select the __Dashboard__ in the left navigation bar.
+    1. Enter __Insight__ , and select the __Dashboard__ in the left navigation bar.
 
         ![nav](../insight/best-practice/images/insight01.png)
 
@@ -1667,7 +1667,7 @@ For more questions, refer to [Insight](../insight/intro/index.md).
     As shown in the above figure, any transmission failure at any step will result in the inability to query trace data. 
     If you find that there is no trace data after completing the application trace enhancement, please perform the following steps:
 
-    1. Use DCE platform, enter __Insight__ , and select the __Dashboard__ in the left navigation bar.
+    1. Enter __Insight__ , and select the __Dashboard__ in the left navigation bar.
 
         ![nav](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/insight01.png)
 
@@ -1719,7 +1719,7 @@ For more questions, refer to [Insight](../insight/intro/index.md).
 
 ??? "Using Insight to locate application anomalies"
 
-    This article serves as a guide on using Insight to identify and analyze abnormal components in DCE and determine 
+    This article serves as a guide on using Insight to identify and analyze abnormal components and determine 
     the root causes of component exceptions.
 
     Please note that this post assumes you have a basic understanding of Insight's product features or vision.
@@ -2683,7 +2683,7 @@ For more questions, refer to [FAQs](../mspider/intro/faq.md).
 
     **Case 3**
 
-    Memory leak in the sidecar. Check using monitoring components, such as DCE component Insight.
+    Memory leak in the sidecar. Check using monitoring components, such as the Insight component.
     If the cluster traffic scale has not changed but the sidecar memory usage continues to rise, it could be a memory leak. Contact us to diagnose the issue.
 
     ![Memory Usage Check](../mspider/troubleshoot/images/sidecar-memory-query-01.png)
@@ -4355,7 +4355,7 @@ For more questions, refer to [Troubleshooting](../baize/troubleshoot/index.md).
     !!! note
 
         Quickly jump to this address: `https://<dce_host>/kpanda/clusters/<cluster_name>/helm/charts/addon/baize-agent`.
-        Note to replace `<dce_host>` with the actual DCE console address, and `<cluster_name>` with the actual cluster name.
+        Note to replace `<dce_host>` with the actual console address, and `<cluster_name>` with the actual cluster name.
 
     **Cluster name not configured in the process of installing `baize-agent`**
 
@@ -4386,7 +4386,7 @@ For more questions, refer to [Troubleshooting](../baize/troubleshoot/index.md).
 
         The queue management capability in AI Lab is provided by [Kueue](https://kueue.sigs.k8s.io/),
         and the Notebook service is provided through [JupyterHub](https://jupyter.org/hub). JupyterHub has high
-        requirements for the Kubernetes version. For versions below v1.27, even if queue quotas are set in DCE,
+        requirements for the Kubernetes version. For versions below v1.27, even if queue quotas are set,
         and users select the quota when creating a Notebook, the Notebook will not actually be restricted by the queue quota.
 
         ![local-queue-initialization-failed](../baize/troubleshoot/images/kueue-k8s127.png)
@@ -5203,7 +5203,7 @@ For more questions, refer to [Permissions of All Modules](../ghippo/permissions/
 
     !!! info
 
-        Starting from installer [v0.6.0](../download/index.md) of DCE, the global management module supports custom roles configuration for Service Mesh, meaning that in addition to using default system roles, custom roles can be defined and granted different permissions within Service Mesh.
+        Starting from [installer v0.6.0](../download/index.md), the global management module supports custom roles configuration for Service Mesh, meaning that in addition to using default system roles, custom roles can be defined and granted different permissions within Service Mesh.
 
     <!--
     Use `&check;`for permissions granted and `&cross;`for permissions not granted.

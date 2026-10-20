@@ -3,12 +3,12 @@ hide:
   - toc
 ---
 
-# DCE Best Practices Portal
+# Best Practices Portal
 
-This page summarizes the best practice documents for various modules of DCE.
+This page summarizes the best practice documents for various product modules.
 These best practices refer to methods and processes that have been widely recognized as
 effective and reliable through long-term experience and validation in the use and management
-of the DCE platform. The content covers aspects such as installation, cluster creation and integration,
+of DaoCloud products. The content covers aspects such as installation, cluster creation and integration,
 application management, multicloud management, middleware, and more, aiming to help users run
 and maintain containerized applications more efficiently and stably.
 
@@ -54,7 +54,7 @@ and maintain containerized applications more efficiently and stably.
 
     ---
 
-    Building worker clusters and nodes based on K8s, which is the core of DCE
+    Building worker clusters and nodes based on K8s, which is the core of container orchestration and scheduling
 
     - [Create Ubuntu Worker Cluster on CentOS](../kpanda/best-practice/create-ubuntu-on-centos-platform.md)
     - [Create RedHat 9.2 Worker Cluster on CentOS](../kpanda/best-practice/create-redhat9.2-on-centos-platform.md)
