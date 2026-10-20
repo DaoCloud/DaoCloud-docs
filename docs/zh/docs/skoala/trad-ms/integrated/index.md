@@ -66,3 +66,7 @@
 
     - 移除：只是将注册中心从 DCE 的微服务引擎中移除，不会删除原有的注册中心和数据，后续还可以再次接入该注册中心。
     - 删除：删除注册中心及其中的所有数据，后续无法再次使用该注册中心，需要重新创建新的注册中心。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

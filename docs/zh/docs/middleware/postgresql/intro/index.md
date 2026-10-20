@@ -32,3 +32,7 @@ PostgreSQL 还有一些其他的特点，如稳定性强、性能优异、易于
 - 可靠性和安全性：容器化技术提供了一个隔离的运行环境，可以有效地保护 PostgreSQL 实例免受外部攻击和运行环境的影响。
 
 [创建 PostgreSQL 实例](../user-guide/create.md){ .md-button .md-button--primary }
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

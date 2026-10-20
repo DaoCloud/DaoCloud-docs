@@ -154,3 +154,7 @@ There are also two ways to delete a gateway. To ensure that services are not aff
 - After entering into the overview page, click the gateway name in the upper right corner of the __...__ and select __Delete__ .
 
     ![delete-gateway](./images/delete-gateway.png)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

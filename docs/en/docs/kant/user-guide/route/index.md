@@ -22,3 +22,7 @@ For different types of message endpoints, the platform provides the following me
 - Rest -> ServiceBus: User applications invoke REST APIs in the cloud to send messages, and the messages are ultimately sent to edge applications.
 
 Next Step: [Create Message Routes](./create-route.md)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

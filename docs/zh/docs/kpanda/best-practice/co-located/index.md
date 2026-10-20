@@ -294,3 +294,7 @@ Koordinator 调度系统支持的 QoS 有五种类型:
     [root@controller-node-1 ~]# ./get_cpuset.sh nginx-be-577c946b89-js2qn
     CPU set for Pod nginx-be-577c946b89-js2qn (BestEffort QoS): 2,4-12
     ```
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

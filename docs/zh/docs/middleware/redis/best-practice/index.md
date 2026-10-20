@@ -11,3 +11,7 @@ Redis-Shake 是一个用于合并、同步和迁移 Redis 数据的工具，可�
 - [集群模式 to 哨兵模式](./cluster2sentinel.md)
 
 请参阅视频教程：[Redis 跨集群数据同步](../../../videos/use-cases.md#redis)。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

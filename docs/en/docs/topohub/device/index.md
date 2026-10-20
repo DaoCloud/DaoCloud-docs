@@ -32,3 +32,7 @@ This guide describes the process for a single device. For rapid batch onboarding
 3. After completing the configuration, click **OK** to finish onboarding the device. You will automatically return to the device list.
 
 Next step: [Manage Devices](./manage-device.md)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

@@ -35,3 +35,7 @@ on the platform. It calculates the consumption for each resource during the stat
 the usage of CPU, memory, storage and GPU, as well as user-configured prices and currency units. Depending
 on the selected time span, such as monthly, quarterly, or annually, it can quickly calculate the actual
 consumption for that period.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

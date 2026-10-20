@@ -40,3 +40,7 @@ first arriving at a certain Leader node) based on each different connection.
     - When a node fails, all BGP sessions will be interrupted
     - Calico BGP mode cannot coexist with MetaLB L3 mode, as conflicts will arise.
       For more details, please refer to [ISSUES WITH CALICO](https://metallb.universe.tf/configuration/calico/)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

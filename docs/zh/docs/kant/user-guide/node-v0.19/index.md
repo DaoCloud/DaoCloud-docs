@@ -28,3 +28,7 @@ click require "https://docs.daocloud.io/kant/user-guide/node/join-rqmt.html"
 click config "https://docs.daocloud.io/kant/user-guide/node/access-guide.html"
 click oam "https://docs.daocloud.io/kant/user-guide/node/manage-node.html"
 ```
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

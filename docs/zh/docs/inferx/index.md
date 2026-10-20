@@ -16,3 +16,7 @@
 - [模型权重下载与配置](guides/model-weights-setup.md)
 - [模型服务对外暴露 (Hydra/Knoway)](guides/export-by-hydra.md)
 - [常见问题解答 (FAQ)](faqs.md)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

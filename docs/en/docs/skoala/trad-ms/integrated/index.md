@@ -71,3 +71,7 @@ The microservice engine currently only supports updating the configuration of Na
 
     - Remove: The registry is removed from the DCE Microservices module. The registry itself and data are not deleted. You can access the registry again later.
     - Delete: Deletes the registry and all the data in it. The registry cannot be used again. You need to create a new registry.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

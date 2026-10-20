@@ -44,3 +44,7 @@ Upon entering the developer console, developers can create and manage Notebooks 
     ```config
     NVIDIA_VISIBLE_DEVICES=""
     ```
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

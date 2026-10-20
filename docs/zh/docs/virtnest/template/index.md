@@ -96,3 +96,7 @@
 4. 点击 __确定__。系统将同时创建指定数量的虚拟机，并按照“前缀-序号”的格式自动命名，例如 `demo-1`、`demo-2`、`demo-3`。创建成功后，虚拟机将进入运行状态；虚拟机名称的总长度不能超过 60 个字符。
 
 批量创建的虚拟机使用相同的模板配置以及批量创建页面中填写的集群、命名空间、存储和网络等配置。网络支持 `masquerade` 和 `bridge` 两种模式，IP 地址均由系统从 IP 池中随机分配；如果 IP 池中没有可用 IP，批量创建将失败。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

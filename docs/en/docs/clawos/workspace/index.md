@@ -127,3 +127,7 @@ For example, if high-cost models account for a large proportion of usage, admini
 ### Time Range
 
 Some cards on the page support time range filtering, such as the last 7 days, last 30 days, or the current month. After switching the time range, related metrics and trend charts are updated accordingly.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

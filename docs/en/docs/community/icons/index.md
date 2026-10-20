@@ -254,3 +254,7 @@ This page lists the icons of DaoCloud's self-developed open source projects, as 
     <td></td>
   </tr>
 </table>
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

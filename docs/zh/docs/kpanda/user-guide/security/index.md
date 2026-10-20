@@ -61,3 +61,7 @@
 !!! tip
 
     使用合规性扫描时，需要先创建扫描策略。执行扫描策略之后，可以查看扫描报告。详情可参考[漏洞扫描](hunter.md)。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

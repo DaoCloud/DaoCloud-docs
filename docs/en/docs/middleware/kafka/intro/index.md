@@ -21,3 +21,7 @@ Currently supported features include:
 ![kafka page](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/kafka/images/what01.png)
 
 [Create Kafka Instance](../user-guide/create.md){ .md-button .md-button--primary }
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

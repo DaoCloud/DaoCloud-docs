@@ -49,3 +49,7 @@ To meet the needs of different operations and maintenance (O&M) scenarios, the O
 
 5. **O&M Reports**  
    Generate periodic reports covering resource usage trends, task completion status, and GPU efficiency to provide data-driven support for decision-making.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

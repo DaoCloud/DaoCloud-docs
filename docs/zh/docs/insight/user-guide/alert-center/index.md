@@ -26,3 +26,7 @@
 
 DCE 告警中心是一个功能强大的告警管理平台，可帮助用户及时发现和解决集群中出现的问题，
 提高业务稳定性和可用性，便于集群巡检和故障排查。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

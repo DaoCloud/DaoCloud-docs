@@ -16,3 +16,7 @@ hide:
 应用智能、安全与隐私保护等方面的关键需求。
 
 ![边缘地位](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/what.png)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

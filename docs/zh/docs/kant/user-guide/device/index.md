@@ -30,3 +30,7 @@
 4. [管理和控制终端设备](./manage-device.md)，监测终端设备状态
 
 下一步：[创建设备模型](./create-device-model.md)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

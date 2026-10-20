@@ -100,3 +100,7 @@ hide:
 审计功能是保障大模型服务平台安全性、合规性和高效运营的关键工具。
 
 有关审计项列表参见[大模型服务平台审计项](../../ghippo/user-guide/audit/gproduct-audit/hydra.md)。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

@@ -18,3 +18,7 @@ as inference services that can be called within the platform.
 - View deployment details (authentication and API examples): See [Model Service Details](./deploy-detail.md).
 - Obtain an API Key: See [API Key Management](../apikey.md).
 - View model invocation instructions: See [Model Invocation](../api-call.md).
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

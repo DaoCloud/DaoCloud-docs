@@ -17,3 +17,7 @@ InferX is a cloud-native AI inference engine extension and management tool desig
 - [Model Weight Download and Configuration](guides/model-weights-setup.md)
 - [Expose Model Service Externally (Hydra/Knoway)](guides/export-by-hydra.md)
 - [FAQ](faqs.md)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

@@ -38,3 +38,7 @@ is consistent with the process in the Container Management module. In the detail
 go to the __ConfigMaps and Secrets__ menu. Refer to
 [Creating ConfigMaps](../../../kpanda/user-guide/configmaps-secrets/create-configmap.md)
 for the creation and usage process.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

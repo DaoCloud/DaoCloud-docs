@@ -79,6 +79,6 @@ Refer to the [Middleware Workload Anti-Affinity](../middleware/common/antiaffini
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/anti-affinity.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/mcamel-anti-affinity.png"></video>
 </div>
 
-[Download DCE](../download/index.md){ .md-button .md-button--primary }
-[Install DCE](../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

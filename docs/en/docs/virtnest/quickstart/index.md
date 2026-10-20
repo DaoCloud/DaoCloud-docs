@@ -249,3 +249,7 @@ in the VM list. The search box supports the following four categories:
 Select a search category and enter a keyword to display matching virtual machines.
 
 ![Search Virtual Machines](../images/vm-list-search-en.png)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

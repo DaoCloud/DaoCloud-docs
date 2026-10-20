@@ -101,3 +101,7 @@ Currently, **Online Top-up** and **Offline Remittance** are supported.
 2. In the dialog box, enable the alert and set a threshold. When the balance falls below the specified amount, the system sends an SMS message to the bound phone number.
 
      ![balance_setting](images/balance_setting.png){width=900px}
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

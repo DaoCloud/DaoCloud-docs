@@ -64,3 +64,7 @@ Regrading the two solutions mentioned above, DCE allows to install the following
 - [Spiderpool](../modules/spiderpool/index.md)：an automation tool to manage IP resources
 
 Other components such as CNI and Ingress can be installed on demand.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

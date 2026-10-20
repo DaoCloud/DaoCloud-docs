@@ -11,3 +11,7 @@
 链路追踪：通过[应用工作台](../../../../amamba/intro/index.md)创建服务时，可以选择否接入 [OpenTelemetry](https://opentelemetry.io/docs/concepts/what-is-opentelemetry/) 链路追踪组件。
 
 是否可以治理：判断该微服务是否满足治理条件，例如是否开启了治理插件、是否正确配置插件信息、是否被网格纳管等要求。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

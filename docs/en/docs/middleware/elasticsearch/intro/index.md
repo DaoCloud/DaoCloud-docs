@@ -20,3 +20,7 @@ Raw data flows into Elasticsearch from multiple sources, including logs, system 
 Kibana is a data visualization and management tool designed for Elasticsearch. It can provide real-time histograms, line charts, pie charts, and maps. Kibana also includes advanced applications such as Canvas and Elastic Maps, among others. Canvas allows users to create customized dynamic infographics based on their own data, while Elastic Maps can be used to visualize geospatial data.
 
 [Create Elasticsearch Instance](../user-guide/create.md){ .md-button .md-button--primary }
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

@@ -37,3 +37,7 @@ DCE AI Lab 采用 Kubernetes 的 Job 机制来调度各项 AI 推理、训练任
 
 - [查看任务负载](./view.md)
 - [删除任务](./delete.md)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

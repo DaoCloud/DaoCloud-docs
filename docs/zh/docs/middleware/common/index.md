@@ -33,3 +33,7 @@ hide:
 3. 初次使用时，可以点击[__立即部署__](../minio/user-guide/create.md)来创建 MinIO 实例。
 
     ![立即部署](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/what03.png)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
