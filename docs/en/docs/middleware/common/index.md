@@ -33,3 +33,7 @@ The following describes how to select a workspace using MinIO as an example, and
 3. For the first use, you can click [__Create Now__](../minio/user-guide/create.md) to create a MinIO instance.
 
     ![Create Now](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/common/images/middleware03.png)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

@@ -87,3 +87,7 @@ If you find a dataset to be redundant, expired, or no longer needed, you can del
 !!! caution
 
     Once a dataset is deleted, it cannot be recovered, so please proceed with caution.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

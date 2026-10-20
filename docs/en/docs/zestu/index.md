@@ -20,3 +20,7 @@ resource types and billing methods to create container instances based on their 
 - Resource Types: Types of GPU resources that can be purchased based on demand when inventory is sufficient.
 
 Click **Buy Now** to go to [Create Container Instance](instance.md).
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

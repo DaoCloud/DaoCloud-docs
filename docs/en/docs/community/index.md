@@ -206,3 +206,7 @@ Clusterpedia, HwameiStor, Merbridge, Spiderpool, and Kubean have been selected f
 [Free Try DCE](../dce/license0.md){ .md-button .md-button--primary }
 [Learn d.run](../drun/index.md){ .md-button .md-button--primary }
 [Token Factory Overview](../tf/index.md){ .md-button .md-button--primary }
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

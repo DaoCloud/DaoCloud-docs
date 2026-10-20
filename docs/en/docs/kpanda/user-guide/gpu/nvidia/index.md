@@ -36,3 +36,7 @@ You can refer to the following links to quickly start using Daocloud's managemen
 - **[Using Full NVIDIA GPU](full_gpu_userguide.md)**
 - **[Using NVIDIA vGPU](vgpu/vgpu_user.md)**
 - **[Using NVIDIA MIG](mig/mig_usage.md)**
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

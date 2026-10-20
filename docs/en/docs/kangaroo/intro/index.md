@@ -31,6 +31,6 @@ The container registry is a module included in the DCE Commercial Edition, and i
 
 ![Architecture](../images/harbordesign01.jpg)
 
-[Download DCE](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE](../../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../../dce/license0.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

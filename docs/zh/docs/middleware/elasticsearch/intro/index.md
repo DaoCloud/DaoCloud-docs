@@ -20,3 +20,7 @@ DCE 内置的搜索服务基于 Elasticsearch，能够提供分布式搜索服�
 Kibana 是一款适用于 Elasticsearch 的数据可视化和管理工具，可以提供实时的直方图、线形图、饼状图和地图。Kibana 同时还包括诸如 Canvas 和 Elastic Maps 等高级应用程序；其中 Canvas 允许用户基于自身数据创建定制的动态信息图表，而 Elastic Maps 则可用来对地理空间数据进行可视化。
 
 [创建 Elasticsearch 实例](../user-guide/create.md){ .md-button .md-button--primary }
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

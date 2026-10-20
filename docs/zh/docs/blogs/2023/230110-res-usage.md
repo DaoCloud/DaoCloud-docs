@@ -158,6 +158,6 @@ Kubernetes 可以使⽤多种⽅式来提升资源利⽤率。通过设置 Pod �
 总的来说，要提升 Kubernetes 的资源利⽤率，只要对应⽤程序的运⾏⽅式和资源使⽤情况进⾏全⾯分析，
 并使⽤适当的⼯具和⽅法来提升资源利⽤率，就能够让 Kubernetes 集群更加⾼效地运⾏。
 
-[下载 DCE](../../download/index.md){ .md-button .md-button--primary }
-[安装 DCE](../../install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

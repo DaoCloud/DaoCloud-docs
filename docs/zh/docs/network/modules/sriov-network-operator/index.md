@@ -113,3 +113,7 @@ spec:
 2. 此 Policy 在哪些节点生效。注：会安装 sriov-device-plugin 组件到指定节点
 3. 只作用于 10-20-1-240 这个节点
 4. 渴望的 VFs 数量
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

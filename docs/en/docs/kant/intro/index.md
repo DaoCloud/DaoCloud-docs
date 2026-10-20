@@ -23,3 +23,7 @@ industries' digitization, such as agile connections, real-time business, data op
 security, and privacy protection.
 
 ![Edge Status](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/what.png)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

@@ -55,3 +55,7 @@ SeaweedFS 适用于以下场景：
 - 管理海量小文件，降低传统集中式元数据服务的压力。
 - 为数据分析、数据湖或归档场景提供兼容 S3 的存储后端。
 - 在本地集群和云存储之间进行冷热数据分层或异步复制。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

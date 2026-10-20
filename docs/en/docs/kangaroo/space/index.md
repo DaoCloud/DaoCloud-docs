@@ -35,3 +35,7 @@ Please note that the file size should not exceed 2 GB, and each file corresponds
 Currently, only image compression packages made with container runtime v1.11.2 and above are supported to upload.
 
 ![Upload Image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/push-cmd03.png)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

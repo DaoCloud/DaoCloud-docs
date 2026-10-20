@@ -25,3 +25,7 @@ DCE 云边协同提供以下三种类型消息端点：
 ![路径](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/overview01.png)
 
 后续操作：[创建消息路由](./create-route.md)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

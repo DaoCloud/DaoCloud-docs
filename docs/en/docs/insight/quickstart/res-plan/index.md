@@ -17,3 +17,7 @@ The storage components of Insight mainly include Elasticsearch and VictoriaMetri
 The collector within Insight Agent includes **Prometheus**. Although Prometheus is typically a standalone component, in this case, it is embedded within Insight Agent for data collection. Therefore, it also requires resource planning.
 
 * **Prometheus**: Its resource usage is related to the amount of metrics collected. You can refer to [Prometheus Resource Planning](./prometheus-res.md) for adjustment.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

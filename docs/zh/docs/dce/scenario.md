@@ -125,7 +125,7 @@ CI/CD 流水线能力自动化完成应用构建、部署工作。创新性引�
 
 方案优势：收录来自生态伙伴十大领域的软件产品，面向企业实际业务需求提供完整软件堆栈，可轻松查找、测试、和部署在 DaoCloud Enterprise 上运行的消息中间件、数据中间件、低代码/无代码应用等。
 
-[下载 DCE](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE](../install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](license0.md){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
 [DCE 场景化视频](../videos/use-cases.md){ .md-button .md-button--primary }

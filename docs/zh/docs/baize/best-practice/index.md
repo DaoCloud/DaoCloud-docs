@@ -206,3 +206,7 @@ bad option; for several filesystems (e.g. nfs, cifs) you might need a /sbin/moun
 sudo mkdir -p /mnt/test
 sudo mount -t nfs <nfs-server>:/nfsdata /mnt/test
 ```
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

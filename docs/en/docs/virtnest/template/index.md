@@ -109,3 +109,7 @@ You can create multiple virtual machines with the same configuration based on a 
 4. Click __OK__. The system creates the specified number of virtual machines simultaneously and names them in the format `prefix-number`, for example, `demo-1`, `demo-2`, and `demo-3`. After creation succeeds, the virtual machines enter the running state. Each virtual machine name must not exceed 60 characters.
 
 The virtual machines created in a batch use the same template configuration and the cluster, namespace, storage, and network settings specified on the batch creation page. The network supports `masquerade` and `bridge` modes. IP addresses are randomly assigned from the IP pool. Batch creation fails if the IP pool has no available IP addresses.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

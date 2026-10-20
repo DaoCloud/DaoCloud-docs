@@ -24,3 +24,7 @@ which offers one-stop solutions for model training, inference, model management,
 - [Cluster Not Found in Drop-Down List](./cluster-not-found.md)
 - [Notebook Not Controlled by Queue Quotas](./notebook-not-controlled-by-quotas.md)
 - [Queue Initialization Failed](./local-queue-initialization-failed.md)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

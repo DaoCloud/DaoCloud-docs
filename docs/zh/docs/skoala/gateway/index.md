@@ -154,3 +154,7 @@
 - 点击网关名称进入进入概览页面后，在右上角 __...__ 并选择 __删除__ 。
 
     ![移除网关](./images/delete-gateway.png)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

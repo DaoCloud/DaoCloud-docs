@@ -26,3 +26,7 @@ DCE 镜像仓库提供了基于镜像空间的镜像隔离功能。镜像空间�
 注意不要超过 2GB，一个文件对应一个镜像，目前仅支持上传 1.11.2 及以上容器引擎客户端版本制作的镜像压缩包。
 
 ![上传镜像](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/push-cmd03.png)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

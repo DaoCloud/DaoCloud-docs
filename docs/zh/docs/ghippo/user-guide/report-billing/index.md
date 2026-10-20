@@ -26,3 +26,7 @@ DCE 提供了管理员和租户两种视角：
 
 计量计费针对平台上的集群、节点、容器组、命名空间和工作空间 5 种资源进行计费统计。根据不同资源中 CPU、内存、存储和 GPU 的使用量，
 以及用户手动配置的价格和货币单位自动计算出每种资源在统计时间的消费情况，根据所选时间跨度不同，可快速计算出该跨度内的实际消费情况，如月度、季度、年度等。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

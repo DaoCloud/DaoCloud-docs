@@ -176,6 +176,6 @@ and quickly build an enterprise-grade container cloud management platform.
     Looking ahead, container virtualization will help enterprises make better use of hybrid and
     multi-cloud environments, enabling optimized resource management and application deployment.
 
-[Download DCE](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE](../../install/index.md){ .md-button .md-button--primary }
-[Free Trial Now](../../dce/license0.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

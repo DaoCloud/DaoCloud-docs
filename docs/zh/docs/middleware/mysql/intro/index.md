@@ -10,3 +10,7 @@ MySQL 是应用最广泛的关系型数据库，是许多常见网站、应用�
 它是应用层协议的一个开放标准，是面向消息的中间件而设计，基于此协议的客户端与数据库来传递消息，不受产品、开发语言等条件的限制。
 
 [创建 MySQL 实例](../user-guide/create.md){ .md-button .md-button--primary }
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

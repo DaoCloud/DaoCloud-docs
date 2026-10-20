@@ -60,3 +60,7 @@ DaoCloud 推出的云原生本地存储天然具备云原生特性，满足容�
 2. 构建、配置、维护和扩展应用程序的复杂性（不同的部署环境及软件技术栈）
 3. 存储瓶颈：解决计算瓶颈之后，则存储能力将成为制约计算密度的瓶颈
 4. 业务应用按照业务峰值规划及设计，计算资源、存储资源的闲置率 ≥ 50%。成本高，如何感知业务进行自动扩容等资源均衡。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

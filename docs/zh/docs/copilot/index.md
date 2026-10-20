@@ -64,3 +64,7 @@ Copilot 是 Token 工厂的智能工作入口，不等于 Token 工厂的全部�
 - 涉及生产环境、资源变更和费用影响的操作需要确认；
 - 对成本、容量、性能和故障原因的分析应结合实际指标验证；
 - Copilot 给出的建议不能替代变更评审、运维流程和业务确认。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

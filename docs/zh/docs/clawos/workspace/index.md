@@ -123,3 +123,7 @@
 ### 时间范围
 
 页面中部分卡片支持按时间范围筛选，例如近 7 天、近 30 天或当月。切换时间范围后，相关指标和趋势图会同步更新。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

@@ -237,3 +237,7 @@
 选择搜索类别并输入关键词后，系统将展示匹配的虚拟机。
 
 ![搜索虚拟机](../images/vm-list-search.png)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

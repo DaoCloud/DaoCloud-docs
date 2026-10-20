@@ -40,3 +40,7 @@ Component composition:
 
 - kdoctor controller: Resides as a Deployment and performs CR monitoring, task creation, and task report aggregation.
 - kdoctor agent: Dynamically created on demand as a Deployment or DaemonSet, and is the executor of tasks.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

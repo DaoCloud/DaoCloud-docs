@@ -22,3 +22,7 @@ hide:
 点击 **立即购买** 即可前往[创建容器实例](instance.md)。
 
 ![算力市场](images/market.png)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

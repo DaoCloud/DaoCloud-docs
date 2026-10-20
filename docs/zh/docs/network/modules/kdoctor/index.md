@@ -28,3 +28,7 @@ kdoctor 是一个基于主动式压力注入的 Kubernetes 数据面测试组件
 
 * kdoctor controller：以 Deployment 形式常驻，实施 CR 监控，任务创建，任务报告汇聚等。
 * kdoctor agent：以 Deployment 或 DaemonSet 形式按需动态创建，任务的执行者。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

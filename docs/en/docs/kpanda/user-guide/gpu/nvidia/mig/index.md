@@ -76,3 +76,7 @@ In this case, 4 different CIs can be created by selecting any of the compute sli
 
 In addition, you can combine 3 compute slices to create a compute profile, or combine all 4 compute slices to create the __3c.4g.20gb__ and __4c.4g.20gb__ compute profiles.
 When all 4 compute slices are combined, the profile is simply referred to as __4g.20gb__ .
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

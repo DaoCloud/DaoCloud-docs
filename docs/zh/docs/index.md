@@ -384,3 +384,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 [Token 工厂概览](tf/index.md){ .md-button .md-button--primary }
 
 </div>
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

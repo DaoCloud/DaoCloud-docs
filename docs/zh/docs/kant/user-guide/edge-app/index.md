@@ -33,3 +33,7 @@ DCE 云边协同支持下发容器应用到边缘节点。容器应用可以直�
 
 云边协同模块的配置项和密钥的创建和使用流程和容器管理模块的流程一致，在边缘单元详情页，进入到 __配置项和密钥__ 菜单。
 创建和使用流程参考[创建配置项](../../../kpanda/user-guide/configmaps-secrets/create-configmap.md)。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

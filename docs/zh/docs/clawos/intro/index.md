@@ -165,3 +165,7 @@ ClawOS 的核心价值，不是证明某个 Agent 比 ChatGPT、Claude、Codex �
 
 [快速入门](./quickstart.md){ .md-button .md-button--primary }
 [飞书集成](../workspace/feishu.md){ .md-button .md-button--primary }
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

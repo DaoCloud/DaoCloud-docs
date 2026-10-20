@@ -44,3 +44,7 @@ MinIO 为云原生而设计，可以作为轻量级容器运行，由外部编�
 ![MinIO 主界面](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/what01.png)
 
 [创建 MinIO 实例](../user-guide/create.md){ .md-button .md-button--primary }
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

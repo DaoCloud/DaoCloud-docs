@@ -112,6 +112,6 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hwa.mp4" preload="metadata"></video>
 </div>
 
-[下载 DCE](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE](../install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

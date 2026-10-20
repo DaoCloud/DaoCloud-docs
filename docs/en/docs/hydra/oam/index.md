@@ -86,3 +86,7 @@ Administrators can manually control the display status of models in the marketpl
 ---
 
 By following the above operations, platform administrators can efficiently complete model import, configuration, and publication, ensuring the Model Gallery content is updated timely and configured accurately to meet diverse business needs.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

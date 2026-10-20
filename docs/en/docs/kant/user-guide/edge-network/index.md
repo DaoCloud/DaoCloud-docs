@@ -16,3 +16,7 @@ As shown in the diagram below, application instances on edge nodes can communica
 
 Edge mesh capabilities rely on EdgeMesh. Before using the mesh capabilities, users need to
 deploy EdgeMesh. Refer to the deployment process in [Deploying EdgeMesh](./deploy-edgemesh.md).
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

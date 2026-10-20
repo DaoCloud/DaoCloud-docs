@@ -26,3 +26,7 @@ __insight-agent__ 是可观测性实现对多集群数据采集的工具，安�
 - [kubernetes 集群兼容性测试](../../compati-test/k8s-compatibility.md)
 - [Openshift 4.x 集群兼容性测试](../../compati-test/ocp-compatibility.md)
 - [Rancher 集群兼容性测试](../../compati-test/rancher-compatibility.md)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

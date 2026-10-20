@@ -47,3 +47,7 @@ for popular versions of Kubernetes. Please refer to:
 - [Kubernetes cluster compatibility testing](../../compati-test/k8s-compatibility.md)
 - [Openshift 4.x cluster compatibility testing](../../compati-test/ocp-compatibility.md)
 - [Rancher cluster compatibility testing](../../compati-test/rancher-compatibility.md)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

@@ -76,3 +76,7 @@ hide:
     如果域名正在被某个 API 使用，需要页面提示点击 __查看服务详情__ 去删除对应的 API。<!--待ui更新后更新描述-->
 
     ![在详情页删除](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/domain/images/delete-domain-3.png)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

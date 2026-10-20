@@ -53,3 +53,7 @@ AI Lab 支持从 魔搭社区 和 HuggingFace 下载模型，您可以在 [Model
 !!! caution
 
     模型一旦删除将不可恢复，请谨慎操作。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

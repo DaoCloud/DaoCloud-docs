@@ -28,3 +28,7 @@ DCE 提供的备份恢复可以分为 **应用备份** 和 **ETCD 备份** 两�
     etcd 是 Kubernetes 的数据存储组件，Kubernetes 将自身的组件数据和其中的应用数据都存储在 etcd 中。因此，备份 etcd 就相当于备份整个集群的数据，可以在故障时快速将集群恢复到之前某一时点的状态。
 
     需要注意的是，目前仅支持将 etcd 备份数据恢复到同一集群（原集群）。如需了解与此相关的最佳实践，可参考 [ETCD 备份还原](../../best-practice/etcd-backup.md)。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
