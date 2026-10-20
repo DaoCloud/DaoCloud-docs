@@ -113,10 +113,6 @@ DCE 社区版以云原生底座为核心，自研开源组件加持，提供云�
 
 <p style="font-size: 20px; color: green;">DaoCloud Enterprise 社区版包括这 3 个组件：</p>
 
-[容器管理](../kpanda/intro/index.md){ .md-button .md-button--primary }
-[全局管理](../ghippo/intro/index.md){ .md-button .md-button--primary }
-[可观测性](../insight/intro/index.md){ .md-button .md-button--primary }
-
 [下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
 [了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
 [了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

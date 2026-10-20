@@ -89,8 +89,6 @@ hide:
   d.run is the foundation of the AI Operating System era, enabling compute, models, and AI applications to run in a unified system—managing the AI world just as an operating system manages a computer.
 </p>
 
-[Learn More About d.run](https://d.run/product/drun){ .md-button .md-button--primary }
-
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
 [Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
 [Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }
