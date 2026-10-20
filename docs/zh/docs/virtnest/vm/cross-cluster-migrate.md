@@ -201,7 +201,7 @@ Corefile: |
         # 自行替换 example-export 替换为创建的 VirtualMachineExport 名称 和命名空间
         manifesturl=$(kubectl get VirtualMachineExport example-export -n default -o=jsonpath='{.status.links.internal.manifests[0].url}')
         secreturl=$(kubectl get VirtualMachineExport example-export -n default -o=jsonpath='{.status.links.internal.manifests[1].url}')
-        # 自行替换 secert 名称和命名空间
+        # 自行替换 secret 名称和命名空间
         token=$(kubectl get secret example-token -n default -o=jsonpath='{.data.token}' | base64 -d)
     
         curl -H "Accept: application/yaml" -H "x-kubevirt-export-token: $token"  --insecure  $secreturl > manifest.yaml
