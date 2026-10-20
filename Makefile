@@ -13,6 +13,8 @@ LANGS := zh en
 BUILD_TARGETS := zh en all
 DOCS_PATH ?= docs/zh/docs
 LSYNC_PATH ?= docs/en
+PUBLIC_PATH ?= public
+URL_PREFIX ?= https://docs.daocloud.io
 FILE ?=
 FOLDER ?=
 PDF ?=
@@ -241,6 +243,13 @@ upload-ucloud: ## Upload public directory to UCloud
 	cd public && uv run --group upload python ../scripts/upload-ucloud.py public_key=$$UCLOUD_PUBLICKEY private_key=$$UCLOUD_PRIVATEKEY region=$$UCLOUD_REGION bucket=$$UCLOUD_BUCKET
 	@printf '\n$(GREEN)OK UCloud upload complete$(RESET)\n\n'
 
+qiniu-set-cache: ## Fix Cache-Control on Qiniu Kodo and refresh CDN [DRY_RUN=1] [REFRESH=1] [MAX_REFRESH=N] [URL_PREFIX=...]
+	@printf '\n$(BOLD)Fixing Cache-Control on Qiniu Kodo$(RESET)\n'
+	@printf '  $(CYAN)默认只改对象元数据、不刷 CDN；当前域名是 Kodo 源站直连（未接 CDN），REFRESH=1 会返回 400032$(RESET)\n'
+	@printf '  $(CYAN)MAX_REFRESH 是每自然日（北京时间）的累计上限，不是单次运行上限$(RESET)\n'
+	uv run python scripts/ci/qiniu_set_cache.py "$(PUBLIC_PATH)" --state .qiniu-cache-state.json $(if $(filter-out 0,$(DRY_RUN)),--dry-run,) $(if $(filter-out 0,$(REFRESH)),--refresh "$(URL_PREFIX)",) $(if $(filter-out 0,$(MAX_REFRESH)),--max-refresh "$(MAX_REFRESH)",)
+	@printf '\n$(GREEN)OK Cache-Control fixed$(RESET)\n\n'
+
 refresh-cdn-cache: ## Refresh UCloud CDN cache
 	@printf '\n$(BOLD)Refreshing CDN cache$(RESET)\n'
 	uv run --group upload python scripts/refresh_cdn_cache.py publickey=$$UCLOUD_PUBLICKEY privatekey=$$UCLOUD_PRIVATEKEY
@@ -257,7 +266,7 @@ serve-docker: ## Preview Chinese docs with Docker
 
 clean: ## Remove generated site files
 	@printf '\n$(BOLD)Removing generated site files$(RESET)\n'
-	rm -rf public site docs/zh/site docs/en/site qiniu-upload .qiniu-manifest.json
+	rm -rf public site docs/zh/site docs/en/site qiniu-upload .qiniu-manifest.json .qiniu-cache-state.json
 	@printf '$(GREEN)OK clean complete$(RESET)\n\n'
 
 # -- Help --------------------------------------------------------------------
@@ -271,4 +280,4 @@ help: ## Show available targets
 zh en all:
 	@:
 
-.PHONY: clean serve build build-path sync sync-upload sync-link-check sync-pdf sync-pdf-tools sync-translate sync-report sync-image generate-nav netlify-preview docx word-count lsync translate-file translate-folder translate-all upload-images upload-md-images pdf-unlock pdf merge-openapi-docs merge-download-docs merge-external-docs check-links check-redirects release-notes upload-ucloud refresh-cdn-cache serve-docker help zh en all
+.PHONY: clean serve build build-path sync sync-upload sync-link-check sync-pdf sync-pdf-tools sync-translate sync-report sync-image generate-nav netlify-preview docx word-count lsync translate-file translate-folder translate-all upload-images upload-md-images pdf-unlock pdf merge-openapi-docs merge-download-docs merge-external-docs check-links check-redirects release-notes upload-ucloud qiniu-set-cache refresh-cdn-cache serve-docker help zh en all
