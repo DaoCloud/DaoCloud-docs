@@ -3,54 +3,35 @@ MTPE: windsonsea
 Date: 2024-10-25
 ---
 
-# Common Issues in Container Management <a id="top" />
+# Common Issues in Container Management
 
 This page lists some common issues that may be encountered in container management (Kpanda) and provides convenient troubleshooting solutions.
 
-- [Permission issues in container management and global management modules](#permissions)
-- Helm installation:
-    - [Helm application installation failed with "OOMKilled" message](#oomkilled)
-    - [Unable to pull kpanda-shell image during Helm application installation](#kpanda-shell)
-    - [Helm chart interface does not display the most recently uploaded chart to Helm repo](#no-chart)
-    - [Stuck in installing state and unable to remove application for reinstallation after Helm installation failure](#cannot-remove-app)
-- [Scheduling exception after removing node affinity and other scheduling policies](#scheduling-exception)
-- Application backup:
-    - [What is the logic behind Kcoral's detection of Velero status in the working cluster?](#kcoral-logic-for-velero)
-    - [How does Kcoral obtain available clusters during cross-cluster backup and restore?](#kcoral-get-cluster)
-    - [Kcoral backed up pods and deployments with the same label, but two pods appear after restore](#2pod-with-same-label)
-- [Why do scaling records still exist after uninstalling VPA, HPA, and CronHPA?](#autoscaling-log)
-- [Why does the console open abnormally in low-version clusters?](#console-error)
-- Creating and integrating clusters:
-    - [How to reset a created cluster](#reset-cluster)
-    - [Failed to install plugins when integrating cluster](#failed-plugin)
-    - [Why does cluster creation fail when enabling **kernel tuning for newly created clusters** in advanced settings?](#conntrack)
-    - [`kpanda-system` namespace remains in terminating state after cluster disconnection](#ns-terminating)
+## Permission Issues
 
-## Permission Issues <a id="permissions" />
+??? "Permission issues in container management and global management modules"
 
-Regarding permission issues in the container management and global management modules, users often ask why they can see a certain cluster or why they cannot see a cluster. Here are three cases to investigate related permission issues:
+    Regarding permission issues in the container management and global management modules, users often ask why they can see a certain cluster or why they cannot see a cluster. Here are three cases to investigate related permission issues:
 
-- Permissions in the container management module are divided into cluster permissions and namespace permissions. If a user is bound, they can view the corresponding clusters and resources. For specific permission details, refer to [Cluster Permission Description](../user-guide/permissions/permission-brief.md).
+    - Permissions in the container management module are divided into cluster permissions and namespace permissions. If a user is bound, they can view the corresponding clusters and resources. For specific permission details, refer to [Cluster Permission Description](../user-guide/permissions/permission-brief.md).
 
-    ![Container Management Permissions](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq201.png)
+        ![Container Management Permissions](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq201.png)
 
-- User authorization in the global management module: Use the admin account to visit __Global Management__ -> __User and Access Control__ -> __Users__, and find the corresponding user. In the __Authorized User Groups__ tab, if there are roles like Admin, Kpanda Owner, etc., that have container management permissions, then even if there are no cluster or namespace permissions bound in container management, the user can still see all clusters. Refer to the [User Authorization Documentation](../../ghippo/user-guide/access-control/user.md).
+    - User authorization in the global management module: Use the admin account to visit __Global Management__ -> __User and Access Control__ -> __Users__, and find the corresponding user. In the __Authorized User Groups__ tab, if there are roles like Admin, Kpanda Owner, etc., that have container management permissions, then even if there are no cluster or namespace permissions bound in container management, the user can still see all clusters. Refer to the [User Authorization Documentation](../../ghippo/user-guide/access-control/user.md).
 
-    ![Global Management User Authorization](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq202.png)
+        ![Global Management User Authorization](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq202.png)
 
-- Workspace binding in the global management module: Log in to __Global Management__ -> __Workspaces and Hierarchies__ to see your authorized workspaces. Click on the workspace name.
+    - Workspace binding in the global management module: Log in to __Global Management__ -> __Workspaces and Hierarchies__ to see your authorized workspaces. Click on the workspace name.
 
-    1. If the workspace is authorized only to you, you can see your account in the authorization tab and then check the resource group or shared resource tabs. If the resource group is bound to a namespace or shared resources are bound to a cluster, your account will be able to see the corresponding cluster.
+        1. If the workspace is authorized only to you, you can see your account in the authorization tab and then check the resource group or shared resource tabs. If the resource group is bound to a namespace or shared resources are bound to a cluster, your account will be able to see the corresponding cluster.
 
-    2. If you are granted a global management-related role, you will not see your account in the authorization tab, nor will you see the cluster resources bound to the workspace in the container management module.
+        2. If you are granted a global management-related role, you will not see your account in the authorization tab, nor will you see the cluster resources bound to the workspace in the container management module.
 
-    ![Global Management Workspace Binding](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq203.png)
-
-[Back to Top :arrow_up:](#top)
+        ![Global Management Workspace Binding](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq203.png)
 
 ## Issues with Helm Installation
 
-1. Helm installation failed with "OOMKilled" message <a id="oomkilled" />
+??? "Helm installation failed with "OOMKilled" message"
 
     ![Failure Situation](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/faq1.png)
 
@@ -85,9 +66,7 @@ Regarding permission issues in the container management and global management mo
 
             Modify the clusterSetting -> helm_operation_job_template_resources to appropriate values. The values corresponding to v0.6.1 are cpu: 100m, memory: 400Mi.
 
-    [Back to Top :arrow_up:](#top)
-
-2. Unable to pull kpanda-shell image during Helm installation <a id="kpanda-shell" />
+??? "Unable to pull kpanda-shell image during Helm installation"
 
     When integrating an offline environment, clusters often encounter failures to pull the kpanda-shell image when installing Helm applications, as shown:
 
@@ -97,9 +76,7 @@ Regarding permission issues in the container management and global management mo
 
     ![Modify Image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq302.png)
 
-    [Back to Top :arrow_up:](#top)
-
-3. Helm chart UI does not display the most recently uploaded chart to Helm repo <a id="no-chart" />
+??? "Helm chart UI does not display the most recently uploaded chart to Helm repo"
 
     ![Template](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq401.png)
 
@@ -107,9 +84,7 @@ Regarding permission issues in the container management and global management mo
 
     ![Refresh Repository](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq402.png)
 
-    [Back to Top :arrow_up:](#top)
-
-4. Stuck in installing state and unable to remove application for reinstallation after Helm installation failure <a id="cannot-remove-app" />
+??? "Stuck in installing state and unable to remove application for reinstallation after Helm installation failure"
 
     ![Deletion Failure](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq501.png)
 
@@ -119,29 +94,27 @@ Regarding permission issues in the container management and global management mo
 
     ![Delete CR](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq503.png)
 
-    [Back to Top :arrow_up:](#top)
+## Scheduling Issues
 
-## Scheduling Issues <a id="scheduling-exception" />
+??? "Scheduling exception after removing node affinity and other scheduling policies"
 
-After removing node affinity and other scheduling policies through **Workload**, scheduling exceptions occur.
+    After removing node affinity and other scheduling policies through **Workload**, scheduling exceptions occur.
 
-![Scheduling Exception](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq601.png)
+    ![Scheduling Exception](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq601.png)
 
-At this time, it may be because the policies were not deleted cleanly. Click edit and delete all policies.
+    At this time, it may be because the policies were not deleted cleanly. Click edit and delete all policies.
 
-![Edit](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq602.png)
+    ![Edit](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq602.png)
 
-![Delete](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq603.png)
+    ![Delete](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq603.png)
 
-![Normal Scheduling](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq604.png)
-
-[Back to Top :arrow_up:](#top)
+    ![Normal Scheduling](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq604.png)
 
 ## Application Backup Issues
 
 Kcoral is the development code for application backup.
 
-1. What is the logic behind Kcoral's detection of Velero status in the working cluster? <a id="kcoral-logic-for-velero" />
+??? "What is the logic behind Kcoral's detection of Velero status in the working cluster?"
 
     ![Detection](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq701.png)
 
@@ -150,7 +123,7 @@ Kcoral is the development code for application backup.
     - The velero data plane node agent is running and has reached the desired replica count.
     - Velero has successfully connected to the target MinIO (BSL status is Available).
 
-2. How does Kcoral obtain available clusters during cross-cluster backup and restore? <a id="kcoral-get-cluster" />
+??? "How does Kcoral obtain available clusters during cross-cluster backup and restore?"
 
     When Kcoral performs cross-cluster backup and restore of applications, it helps users filter the list of clusters that can perform cross-cluster restores on the restore page. The logic is as follows:
 
@@ -162,47 +135,43 @@ Kcoral is the development code for application backup.
 
     Therefore, as long as they connect to the same MinIO and Bucket, and Velero is running, cross-cluster backups (with write permissions) and restores can be performed.
 
-3. Kcoral backed up pods and deployments with the same label, but two pods appear after restore. <a id="2pod-with-same-label" />
+??? "Kcoral backed up pods and deployments with the same label, but two pods appear after restore."
 
     The reason for this phenomenon is that during restoration, the Pod labels were modified, causing their labels to not match the parent resource ReplicaSet / Deployment labels at the time of backup, resulting in two times the number of Pods upon restoration.
 
     To avoid this situation, try to avoid modifying the labels of any resources in the associated resources.
 
-    [Back to Top :arrow_up:](#top)
+## Log Issues
 
-## Log Issues <a id="autoscaling-log" />
+??? "Why do scaling records still exist after uninstalling VPA, HPA, and CronHPA?"
 
-Why do scaling records still exist after uninstalling VPA, HPA, and CronHPA?
+    Although the corresponding components were uninstalled through the Helm Addon market, the records related to application scaling still remain, as shown in the figure:
 
-Although the corresponding components were uninstalled through the Helm Addon market, the records related to application scaling still remain, as shown in the figure:
+    ![Edit](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq901.png)
 
-![Edit](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq901.png)
+    This is an issue with helm uninstall, as it does not uninstall the corresponding CRD, leading to data residue. At this point, we need to manually uninstall the corresponding CRD to complete the final cleanup.
 
-This is an issue with helm uninstall, as it does not uninstall the corresponding CRD, leading to data residue. At this point, we need to manually uninstall the corresponding CRD to complete the final cleanup.
+## Console Issues
 
-## Console Issues <a id="console-error" />
+??? "Why does the console open abnormally in low-version clusters?"
 
-Why does the console open abnormally in low-version clusters?
+    In Kubernetes clusters with low versions (below v1.18), opening the console may result in CSR resource request failures. When opening the console, a certificate request is made through the CSR resource by the currently logged-in user in the target cluster. If the cluster version is too low or this feature's controller is not enabled, it will lead to certificate request failures, thus preventing connection to the target cluster.
 
-In Kubernetes clusters with low versions (below v1.18), opening the console may result in CSR resource request failures. When opening the console, a certificate request is made through the CSR resource by the currently logged-in user in the target cluster. If the cluster version is too low or this feature's controller is not enabled, it will lead to certificate request failures, thus preventing connection to the target cluster.
+    For the certificate request process, refer to [kubernetes website](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/).
 
-For the certificate request process, refer to [kubernetes website](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/).
+    **Solution:**
 
-**Solution:**
+    - If the cluster version is above v1.18, check if the kube-controller-manager has the CSR feature enabled, and ensure the following controllers are functioning properly:
 
-- If the cluster version is above v1.18, check if the kube-controller-manager has the CSR feature enabled, and ensure the following controllers are functioning properly:
+        ```shell
+        ttl-after-finished,bootstrapsigner,csrapproving,csrcleaner,csrsigning
+        ```
 
-    ```shell
-    ttl-after-finished,bootstrapsigner,csrapproving,csrcleaner,csrsigning
-    ```
-
-- For low-version clusters, the only solution is to upgrade the version.
-
-    [Back to Top :arrow_up:](#top)
+    - For low-version clusters, the only solution is to upgrade the version.
 
 ## Issues with Creating and Integrating Clusters
 
-1. How to reset a created cluster? <a id="reset-cluster" />
+??? "How to reset a created cluster?"
 
     There are two situations for created clusters:
 
@@ -213,9 +182,7 @@ For the certificate request process, refer to [kubernetes website](https://kuber
 
     ![Uninstall Cluster](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq1102.png)
 
-    [Back to Top :arrow_up:](#top)
-
-2. Failed to install plugins when integrating cluster <a id="failed-plugin" />
+??? "Failed to install plugins when integrating cluster"
 
     For clusters integrated in an offline environment, you need to configure the CRI proxy repository to ignore TLS verification before installing plugins (this needs to be executed on all nodes).
 
@@ -226,7 +193,7 @@ For the certificate request process, refer to [kubernetes website](https://kuber
         2. Add "insecure-registries": ["172.30.120.243","temp-registry.daocloud.io"],
 
             The content after modification should be as follows:
-        
+
             ![Modify Configuration](../images/faq01.png)
 
         3. Restart Docker 
@@ -250,7 +217,7 @@ For the certificate request process, refer to [kubernetes website](https://kuber
             [plugins."io.containerd.grpc.v1.cri".registry.configs."http://temp-registry.daocloud.io".tls]
             insecure_skip_verify = true
             ```
-            
+
             ![Modify Configuration](../images/faq02.png)
 
         3. Pay attention to spaces and line breaks to ensure the configuration is correct. After modification, run:
@@ -259,7 +226,7 @@ For the certificate request process, refer to [kubernetes website](https://kuber
             systemctl restart containerd
             ```
 
-3. Why does cluster creation fail when enabling **kernel tuning for newly created clusters** in advanced settings? <a id="conntrack" />
+??? "Why does cluster creation fail when enabling **kernel tuning for newly created clusters** in advanced settings?"
 
     1. Check if the kernel module conntrack is loaded by executing the following command:
 
@@ -272,17 +239,15 @@ For the certificate request process, refer to [kubernetes website](https://kuber
         ```shell
         modprobe ip_conntrack
         ```
-        
+
     !!! note
 
         If the kernel module has been upgraded, it may also lead to cluster creation failure.
 
-4. `kpanda-system` namespace remains in terminating state after cluster disconnection. <a id="ns-terminating" />
+??? "`kpanda-system` namespace remains in terminating state after cluster disconnection."
 
     Check if the APIServices status is normal. The command to check is as follows. If the current status is false, try to repair the APIServices or delete the service.
 
     ```shell
     kubectl get apiservices
     ```
-
-    [Back to Top :arrow_up:](#top)
