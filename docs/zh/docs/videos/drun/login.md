@@ -7,19 +7,19 @@
 参阅文档[注册账号](../index.md)。
 
 <div class="responsive-video-container">
-  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/registration.mp4" preload="metadata" poster="./images/register.png"></video>
+  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/registration.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/images/register.png"></video>
 </div>
 
 ## 登录演示
 
 <div class="responsive-video-container">
-  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/login.mp4" preload="metadata" poster="./images/login.png"></video>
+  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/login.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/images/login.png"></video>
 </div>
 
 ## 忘记密码
 
 <div class="responsive-video-container">
-  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/forget-pass.mp4" preload="metadata" poster="./images/forget-pass.png"></video>
+  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/forget-pass.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/images/forget-pass.png"></video>
 </div>
 
 ## 个人中心 - 安全设置
@@ -27,7 +27,7 @@
 参阅文档[安全设置](../manage/personal/index.md)。
 
 <div class="responsive-video-container">
-  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/security.mp4" preload="metadata" poster="./images/security.png"></video>
+  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/security.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/images/security.png"></video>
 </div>
 
 ## 个人中心 - 语言设置
@@ -35,5 +35,5 @@
 参阅文档[语言设置](../manage/personal/language.md)。
 
 <div class="responsive-video-container">
-  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/lang-settings.mp4" preload="metadata" poster="./images/language.png"></video>
+  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/lang-settings.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/images/language.png"></video>
 </div>
