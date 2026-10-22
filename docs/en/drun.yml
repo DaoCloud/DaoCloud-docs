@@ -644,7 +644,8 @@ nav:
               - What Is Cockpit: drun/crane/intro/index.md
               - Business Overview Panel: drun/crane/user-guide/singlepage.md
               - Release Notes: drun/crane/intro/release-notes.md
-          - Copilot Workbench: drun/copilot/index.md
+          - Copilot Workbench:
+              - drun/copilot/index.md
       - OAM:
           - Insight:
               - drun/insight/intro/index.md
