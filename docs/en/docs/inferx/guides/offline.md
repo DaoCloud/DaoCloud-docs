@@ -1,5 +1,7 @@
 # Install InferX in Offline Environment
 
+*[InferX]: The development codename for the Inference Acceleration Service
+
 ## Download and Extract InferX Offline Package
 
 1. helm

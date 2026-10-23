@@ -1,18 +1,17 @@
-# InferX Introduction
+# Inference Acceleration
 
-InferX is a cloud-native AI inference engine extension and management tool designed to simplify the deployment, scheduling, and operations of large language models (LLMs) on Kubernetes clusters. It deeply integrates high-performance networking and storage capabilities from the Kubernetes ecosystem, providing users with stable and scalable inference service infrastructure.
+The Inference Acceleration Service is an integrated platform for optimizing the inference performance of large models. Built on heterogeneous GPU computing power and a cloud-native foundation, it continuously introduces industry-leading inference architectures and performance optimization techniques to reduce inference costs and improve service efficiency. It also covers the complete lifecycle from model deployment to runtime assurance, helping users build faster, more stable, and more cost-effective large model inference services.
 
 ## Core Capabilities
 
-- **High-Performance Inference Networking**: Based on Kubernetes Gateway API Inference Extension (GAIE), supports high-performance inference request routing and traffic management.
-- **Flexible Model Management**: Supports automatic model weight download and mounting via Dataset (BaizeAI), while also being compatible with PVC, NFS, and other storage methods.
-- **Multi-Hardware Adaptation**: Deeply optimized scheduling and GPU memory management for NVIDIA GPUs (supports HAMi vGPU).
-- **Offline-Environment Friendly**: Provides complete offline installation packages and synchronization tools to meet deployment needs in private cloud and offline environments.
-- **Multi-Model Framework Support**: Compatible with mainstream inference frameworks such as vLLM, supports quickly exposing models as standard OpenAI-compatible interfaces.
+- **Model Deployment: Rapidly deploy high-performance inference services**: Compatible with mainstream inference frameworks and heterogeneous GPUs, supports high-performance architectures such as PD disaggregation and KV Cache offloading, and quickly adapts to new models, new frameworks, and new GPUs / domestic accelerator cards.
+- **Inference Acceleration: Continuously improve Token production efficiency**: Based on high-performance inference frameworks, combined with concurrency tuning, long-context, and operator optimization techniques, it improves throughput and GPU utilization while reducing latency and per-Token cost.
+- **Service Acceptance: Ensure high-quality rollout of model services**: Before rollout, complete inference performance, model accuracy, API compatibility, and functional tests, and produce standardized acceptance results and performance optimization reports.
+- **Runtime Assurance: Ensure stable operation of inference services**: Continuously observe service performance and stability, detect issues such as performance degradation, latency jitter, and traffic bursts in a timely manner, quickly locate runtime risks, and ensure service SLA.
 
 ## Quick Start
 
-- [Install InferX in Offline Environment](guides/offline.md)
+- [Install Inference Acceleration Service in Offline Environment](guides/offline.md)
 - [Enable Istio GAIE Feature in Cluster](guides/enable-istio-gaie-with-mspider.md)
 - [Model Weight Download and Configuration](guides/model-weights-setup.md)
 - [Expose Model Service Externally (Hydra/Knoway)](guides/export-by-hydra.md)

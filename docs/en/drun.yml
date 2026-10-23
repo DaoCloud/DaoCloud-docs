@@ -148,7 +148,7 @@ nav:
                   - Gateway API Instance Access: drun/clawos/reference/gateway-access.md
               - FAQ: drun/clawos/faq.md
           - InferX Suite:
-              - drun/inferx/index.md
+              - What is InferX: drun/inferx/index.md
               - FAQs: drun/inferx/faqs.md
               - Best Practices:
                   - Install InferX in Offline Environment: drun/inferx/guides/offline.md
