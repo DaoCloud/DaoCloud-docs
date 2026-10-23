@@ -5,7 +5,7 @@ to meet common and practical business requirements in specific scenarios.
 
 !!! tip
 
-    Click a video name in the in-page navigation on the right to quickly jump to the corresponding video.
+    Click a video name in the index below, or use the in-page navigation on the right, to quickly jump to the corresponding video.
 
 **Multicloud, Hybrid Cloud, and Microservice Governance**
 
