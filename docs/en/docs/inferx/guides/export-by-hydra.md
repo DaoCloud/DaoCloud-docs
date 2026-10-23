@@ -1,5 +1,7 @@
 # Expose Model Service Externally (Hydra/Knoway)
 
+*[InferX]: The development codename for the Inference Acceleration Service
+
 After the InferX model is successfully deployed, you can expose and access it through the following two methods:
 
 - Configure the model service in Hydra's MaaS model management page (recommended)

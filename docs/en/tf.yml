@@ -81,7 +81,7 @@ nav:
                   - Improvement Suggestions: tf/dak/data-analysis/suggestions.md
               - My Feedback: tf/dak/my-feedback/my-feedback.md
           - InferX Suite:
-              - tf/inferx/index.md
+              - What is InferX: tf/inferx/index.md
               - FAQs: tf/inferx/faqs.md
               - Best Practices:
                   - Install InferX in Offline Environment: tf/inferx/guides/offline.md

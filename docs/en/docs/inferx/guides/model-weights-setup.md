@@ -1,5 +1,7 @@
 # Model Weight Download and Configuration
 
+*[InferX]: The development codename for the Inference Acceleration Service
+
 Before deploying a large model inference service, you need to download the model weight files to a storage location accessible by the inference service.
 
 It is recommended to use **Dataset** to manage model weights, which can automatically complete model download, PVC creation, and cross-namespace sharing, avoiding repeated downloads and simplifying model management.

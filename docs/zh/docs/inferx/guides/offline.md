@@ -1,5 +1,7 @@
 # 离线环境安装 Inferx
 
+*[InferX]: 推理加速服务的开发代号
+
 ## 下载并解压 Inferx 离线包
 
 1. helm
