@@ -674,10 +674,10 @@ nav:
                   - Run Cilium in Alibaba Cloud: network/modules/aliyun-terway/aliyun-cilium.md
                   - FAQs: network/modules/aliyun-terway/Q_A.md
               - Integrate Unifabric:
-                  - Unifabric Overview: network/modules/unifabric/index.md
-                  - Release Notes: network/modules/unifabric/release-notes.md
-                  - Install Unifabric: network/modules/unifabric/install.md
-                  - RDMA Latency Monitoring Usage Guide: network/modules/unifabric/features/RdmaLatencyDetection.md
+                  - Overview: network/modules/unifabric/index.md
+                  - Installation:
+                      - Install Spiderfabric on the Global Cluster: network/modules/unifabric/install-spiderfabric.md
+                      - Install Unifabric on a Worker Cluster: network/modules/unifabric/install-unifabric.md
           - Cloud Native Storage:
               - Intro:
                   - What is Storage: storage/index.md

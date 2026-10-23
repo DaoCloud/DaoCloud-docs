@@ -517,10 +517,10 @@ nav:
                   - 阿里云运行 Cilium: tf/network/modules/aliyun-terway/aliyun-cilium.md
                   - 常见问题: tf/network/modules/aliyun-terway/Q_A.md
               - 集成 Unifabric:
-                  - Unifabric 概述: tf/network/modules/unifabric/index.md
-                  - Release Notes: tf/network/modules/unifabric/release-notes.md
-                  - 安装 Unifabric: tf/network/modules/unifabric/install.md
-                  - RDMA 延时监控使用指南: tf/network/modules/unifabric/features/RdmaLatencyDetection.md
+                  - 介绍: tf/network/modules/unifabric/index.md
+                  - 安装:
+                      - 全局集群安装 Spiderfabric: tf/network/modules/unifabric/install-spiderfabric.md
+                      - 工作集群安装 Unifabric: tf/network/modules/unifabric/install-unifabric.md
           - 云原生存储:
               - 介绍:
                   - 什么是云原生存储: tf/storage/index.md
