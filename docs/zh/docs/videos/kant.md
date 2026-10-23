@@ -4,6 +4,13 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<div class="grid cards" markdown>
+
+- :one: [终端设备 Demo - AI 手势控制](#demo-ai)
+- :two: [创建边缘单元](#_2)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

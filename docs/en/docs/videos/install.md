@@ -4,6 +4,13 @@ DCE is divided into DCE Community and Enterprise Package. The DCE Community is f
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Use kind to build a cluster](#use-kind-to-build-a-cluster)
+- :two: [Install the DCE Community online](#install-the-dce-community-online)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

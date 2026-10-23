@@ -4,6 +4,15 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<div class="grid cards" markdown>
+
+- :one: [用户与访问控制](#_2)
+- :two: [工作空间与层级](#_4)
+- :three: [审计日志](#_6)
+- :four: [平台外观定制](#_9)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

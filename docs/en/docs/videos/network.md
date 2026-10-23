@@ -87,7 +87,7 @@ Refer to [Kdoctor website](https://kdoctor-io.github.io/kdoctor/v0.1/).
 
 ## Running Spiderpool in Alibaba Cloud
 
-Refer to the Spiderpool documentation on [running in Alibaba Cloud](https://docs.daocloud.io/network/modules/spiderpool/alibabacloud.html).
+Refer to the Spiderpool documentation on [running in Alibaba Cloud](../network/modules/spiderpool/public-cloud/alibabacloud.md).
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/alicloud.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/net-spiderpool.jpeg"></video>

@@ -4,6 +4,13 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<div class="grid cards" markdown>
+
+- :one: [虚拟机自动漂移](#_2)
+- :two: [从 VMware 迁移虚拟机到 K8s 平台](#vmware-k8s)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

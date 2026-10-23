@@ -5,6 +5,13 @@ DCE 分为社区版和商业版。社区版可免费使用，包括全局管理�
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<div class="grid cards" markdown>
+
+- :one: [使用 kind 搭建集群](#kind)
+- :two: [在线安装社区版](#_2)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

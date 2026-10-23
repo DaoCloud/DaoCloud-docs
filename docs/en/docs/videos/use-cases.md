@@ -7,6 +7,25 @@ to meet common and practical business requirements in specific scenarios.
 
     Click a video name in the in-page navigation on the right to quickly jump to the corresponding video.
 
+<div class="grid cards" markdown>
+
+- ++1++ [One-Click Conversion to Multicloud](#one-click-conversion-to-multicloud)
+- ++2++ [Deploying Hybrid Cloud Applications in DCE](#deploying-hybrid-cloud-applications-in-dce)
+- ++3++ [Traditional Microservice Governance (North-South Traffic)](#traditional-microservice-governance-north-south-traffic)
+- ++4++ [Traditional Microservice Governance (East-West Traffic)](#traditional-microservice-governance-east-west-traffic)
+- ++5++ [Integrating DCE into Customer Systems (OEM OUT)](#integrating-dce-into-customer-systems-oem-out)
+- ++6++ [Integrating Customer Systems into DCE (OEM IN)](#integrating-customer-systems-into-dce-oem-in)
+- ++7++ [Configuring and Using Underlay IP](#configuring-and-using-underlay-ip)
+- ++8++ [Application Acceleration and Cross-Cluster Communication](#application-acceleration-and-cross-cluster-communication)
+- ++9++ [Rapid Troubleshooting and Issue Resolution](#rapid-troubleshooting-and-issue-resolution)
+- ++10++ [Application Deployment with CICD](#application-deployment-with-cicd)
+- ++11++ [Continuous Deployment of Cloud-Native Applications with GitOps](#continuous-deployment-of-cloud-native-applications-with-gitops)
+- ++12++ [Deploying ChatGPT with Middleware and pgvector](#deploying-chatgpt-with-middleware-and-pgvector)
+- ++13++ [Redis Cross-Cluster Data Synchronization](#redis-cross-cluster-data-synchronization)
+- ++14++ [AI Model Training and Inference Scenario Demo](#ai-model-training-and-inference-scenario-demo)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;
