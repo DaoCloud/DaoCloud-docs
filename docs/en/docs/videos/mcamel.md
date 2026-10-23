@@ -4,6 +4,18 @@ We have crafted the following video tutorials for middleware, any kind of feedba
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Elasticsearch Search Service Instance Management](#elasticsearch-search-service-instance-management)
+- :two: [Kafka Message Instance Management](#kafka-message-instance-management)
+- :three: [MinIO Storage Instance Management](#minio-storage-instance-management)
+- :four: [MySQL Database Instance Management](#mysql-database-instance-management)
+- :five: [RabbitMQ Message Queue Instance Management](#rabbitmq-message-queue-instance-management)
+- :six: [Redis Cache Instance Management](#redis-cache-instance-management)
+- :seven: [Middleware Workload Anti-Affinity](#middleware-workload-anti-affinity)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

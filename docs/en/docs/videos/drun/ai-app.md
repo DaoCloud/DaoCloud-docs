@@ -2,6 +2,15 @@
 
 This page lists operation videos related to the AI App Center, corpora, and data analysis.
 
+<div class="grid cards" markdown>
+
+- :one: [Create an AI Application](#create-an-ai-application)
+- :two: [AI Application Chat](#ai-application-chat)
+- :three: [Corpus](#corpus)
+- :four: [Data Analysis](#data-analysis)
+
+</div>
+
 ## Create an AI Application
 
 <div class="responsive-video-container">

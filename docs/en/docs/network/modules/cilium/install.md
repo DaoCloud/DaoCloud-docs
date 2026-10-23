@@ -199,7 +199,7 @@ cilium_enable_ipv6: false # true enable IPV6
 
 - Kubespray supported parameters
 
-    [Kubean](../../../community/kubean.md) calls Kubespray by default to install the cluster, see the following documentation:
+    [Kubean](https://docs.daocloud.io/en/community/kubean/) calls Kubespray by default to install the cluster, see the following documentation:
 
     - [Install Cilium via Kubespray](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/cilium.md)
     - [Cilium default parameters](https://github.com/kubernetes-sigs/kubespray/blob/b289f533b3b49ecf03baf755bd18b2da48608b3f/roles/network_plugin/cilium/defaults/main.yml)

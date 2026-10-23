@@ -4,6 +4,14 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<div class="grid cards" markdown>
+
+- :one: [仓库集成（工作空间）](#_2)
+- :two: [仓库集成（管理员）](#_3)
+- :three: [托管 Harbor](#harbor)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

@@ -37,7 +37,7 @@ The main features of container management are as follows:
 | Authority Management | Supports [Namespace Authorization](../user-guide/permissions/cluster-ns-auth.md). Through permission settings, different users or user groups can have permission to operate different Kubernetes resources under the specified namespace. |
 | Cluster Operation and Maintenance | All-Round Cluster Monitoring: Comprehensive coverage of cluster and node metric monitoring and alerts, real-time understanding and viewing of cluster and node status, and timely implementation of operation and maintenance measures to ensure business continuity. |
 | | Open API: Provides native Kubernetes OpenAPI capabilities. |
-| | [CloudShell](../../community/cloudtty.md) Access to Clusters: Supports connecting to the cluster through CloudShell and accessing the cluster through kubectl. |
+| | [CloudShell](https://docs.daocloud.io/en/community/cloudtty/) Access to Clusters: Supports connecting to the cluster through CloudShell and accessing the cluster through kubectl. |
 | Heterogeneous Acceleration | Supports heterogeneous GPU hardware acceleration for NVIDIA, Iluvatar, Ascend, and more. |
 | | Supports computing power, memory, and slicing for a single physical GPU card. Multiple service containers can share a single GPU card, and the GPU computing power and memory quotas occupied by each service container can be limited and isolated. |
 | | Supports GPU resource quota management by project. |

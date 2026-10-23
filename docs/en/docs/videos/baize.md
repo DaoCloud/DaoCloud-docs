@@ -3,6 +3,15 @@
 DaoCloud has created the following video tutorials for AI Lab.
 We welcome any form of feedback. Thank you 🙏
 
+<div class="grid cards" markdown>
+
+- :one: [Training task](#training-task)
+- :two: [Data management](#data-management)
+- :three: [Model Inference Service](#model-inference-service)
+- :four: [What's New in AI Lab v0.7.0](#whats-new-in-ai-lab-v070)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

@@ -4,6 +4,14 @@ We have crafted the following video tutorials for Container Registry, any kind o
 
 > If there is a problem with the video display, please refresh the page, or try to clear the browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Integrate registry (workspace)](#integrate-registry-workspace)
+- :two: [Integrate registry (Admin)](#integrate-registry-admin)
+- :three: [Managed Harbor](#managed-harbor)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

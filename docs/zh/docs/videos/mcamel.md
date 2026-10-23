@@ -4,6 +4,18 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<div class="grid cards" markdown>
+
+- :one: [Elasticsearch 搜索服务实例管理](#elasticsearch)
+- :two: [Kafka 消息实例管理](#kafka)
+- :three: [MinIO 存储实例管理](#minio)
+- :four: [MySQL 数据库实例管理](#mysql)
+- :five: [RabbitMQ 消息队列实例管理](#rabbitmq)
+- :six: [Redis 缓存实例管理](#redis)
+- :seven: [中间件工作负载反亲和性](#_1)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

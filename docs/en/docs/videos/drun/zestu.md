@@ -2,9 +2,18 @@
 
 This page lists practical videos related to the compute market, container instances, and file storage.
 
+<div class="grid cards" markdown>
+
+- :one: [Compute Market](#compute-market)
+- :two: [Create Container Instance](#create-container-instance)
+- :three: [Power On/Off Container Instance](#power-onoff-container-instance)
+- :four: [File Storage](#file-storage)
+
+</div>
+
 ## Compute Market
 
-Refer to the documentation on [Compute Market](../zestu/index.md).
+Refer to the documentation on [Compute Market](../../zestu/index.md).
 
 <div class="responsive-video-container">
   <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/purchase.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/images/purchase.png"></video>

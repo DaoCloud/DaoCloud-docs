@@ -2,6 +2,15 @@
 
 我们为AI Lab精心制作了以下视频教程，欢迎任何形式的反馈，谢谢 🙏
 
+<div class="grid cards" markdown>
+
+- :one: [任务中心](#_1)
+- :two: [数据管理](#_3)
+- :three: [模型推理服务](#_6)
+- :four: [AI Lab v0.7.0 版本动态](#ai-lab-v070)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

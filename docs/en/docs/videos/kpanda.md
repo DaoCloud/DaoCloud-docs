@@ -4,6 +4,17 @@ We have crafted the following video tutorials for container management, any kind
 
 > If there is a problem with the video display, please refresh the page, or try to clear the browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Clusters](#clusters)
+- :two: [Namespace Exclusive Nodes](#namespace-exclusive-nodes)
+- :three: [Workloads](#workloads)
+- :four: [Backup and Restore](#backup-and-restore)
+- :five: [GPU](#gpu)
+- :six: [HwameiStor Storage](#hwameistor-storage)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;
@@ -85,7 +96,7 @@ Refer to the [Create Metric-based HPA Policy](../kpanda/user-guide/scale/create-
 
 ## Backup and Restore
 
-Install the Velero plugin to achieve application backup and restore across clusters. 
+Install the [Velero plugin](../kpanda/user-guide/backup/install-velero.md) to achieve application backup and restore across clusters. 
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kpanda-velero.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kpanda-velero.png"></video>

@@ -19,7 +19,7 @@
 
 !!! note
 
-    目前支持构建的离线 kubernetes 版本，请参考 [Kubean 支持的 Kubernetes 版本列表](../../community/kubean.md#kubernetes)。
+    目前支持构建的离线 kubernetes 版本，请参考 [Kubean 支持的 Kubernetes 版本列表](https://docs.daocloud.io/community/kubean/#kubernetes)。
 
 ## 在联网节点构建离线包
 

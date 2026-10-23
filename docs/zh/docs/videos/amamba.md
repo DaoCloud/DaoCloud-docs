@@ -4,6 +4,15 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<div class="grid cards" markdown>
+
+- :one: [命名空间](#_2)
+- :two: [流水线](#_3)
+- :three: [GitOps](#gitops)
+- :four: [灰度发布](#_4)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

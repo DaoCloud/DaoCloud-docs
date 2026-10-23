@@ -26,7 +26,7 @@
 
 ## 操作步骤
 
-可以参阅[视频教程](../../videos/kangaroo.md#_2)熟悉以下操作步骤：
+可以参阅[视频教程](https://docs.daocloud.io/videos/kangaroo/#_2)熟悉以下操作步骤：
 
 1. 使用具有 Workspace Admin 角色的用户登录 DCE，从左侧导航栏点击 __镜像仓库__ -> __仓库集成(工作空间)__ 。
 
@@ -43,4 +43,4 @@
     !!! note
 
         1. Docker Registry 镜像仓库若未设置密码可不填写，Harbor 仓库必须填写用户名/密码。
-        1. 有关实际操作演示，请参阅[仓库集成(工作空间)视频演示](../../videos/kangaroo.md)
+        1. 有关实际操作演示，请参阅[仓库集成(工作空间)视频演示](https://docs.daocloud.io/videos/kangaroo/)

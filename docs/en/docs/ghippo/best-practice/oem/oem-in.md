@@ -15,7 +15,7 @@ of OEM IN is divided into 5 steps:
 1. [Customize Appearance](#customize-appearance)
 1. [Integrate Permission System (Optional)](#integrate-permission-system-optional)
 
-For specific operational demonstrations, refer to the [OEM IN Best Practices Video Tutorial](../../../videos/use-cases.md#integrating-customer-systems-into-dce-50-oem-in).
+For specific operational demonstrations, refer to the [OEM IN Best Practices Video Tutorial](https://docs.daocloud.io/en/videos/use-cases/#integrating-customer-systems-into-dce-oem-in).
 
 !!! note
 

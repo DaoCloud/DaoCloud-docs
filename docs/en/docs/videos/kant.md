@@ -4,6 +4,13 @@ We have crafted the following video tutorials for Cloud Edge Collaboration, any 
 
 > If there are any issues with the videos, please refresh the page or try clearing your browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [End Device Demo - AI Gesture Control](#end-device-demo-ai-gesture-control)
+- :two: [Create an Edge Unit](#create-an-edge-unit)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

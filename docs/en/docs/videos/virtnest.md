@@ -4,6 +4,13 @@ We have crafted the following video tutorials for virtual machine, any kind of f
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Automatically Drift a VM](#automatically-drift-a-vm)
+- :two: [Migrating Virtual Machines from VMware to the K8s Platform](#migrating-virtual-machines-from-vmware-to-the-k8s-platform)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;

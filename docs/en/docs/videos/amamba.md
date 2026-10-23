@@ -5,6 +5,15 @@ We sincerely appreciate any feedback you may have. Thank you 🙏
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Namespaces](#namespaces)
+- :two: [Pipelines](#pipelines)
+- :three: [GitOps](#gitops)
+- :four: [Canary Release](#canary-release)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;
