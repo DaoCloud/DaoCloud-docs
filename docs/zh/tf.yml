@@ -35,6 +35,14 @@ nav:
                   - 模型管理:
                       - 创建模型: tf/hydra/model-management/index.md
                       - 管理模型: tf/hydra/model-management/model-manage.md
+                  - 模型微调:
+                      - 模型微调操作指南: tf/hydra/finetune/index.md
+                      - 模型管理: tf/hydra/finetune/create-model.md
+                      - 数据集管理: tf/hydra/finetune/create-dataset.md
+                      - 微调配置: tf/hydra/finetune/create-finetune-config.md
+                      - 微调任务: tf/hydra/finetune/create-finetune-task.md
+                      - 评估任务: tf/hydra/finetune/create-evaluation-task.md
+                      - 导出任务: tf/hydra/finetune/create-export-task.md
                   - 模型服务:
                       - 模型服务概览: tf/hydra/deploy/index.md
                       - 部署新模型: tf/hydra/deploy/deploy.md
