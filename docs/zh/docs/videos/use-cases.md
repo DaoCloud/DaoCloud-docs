@@ -6,22 +6,31 @@
 
     在右侧的页内导航点击视频名称，可快速定位到对应的视频画面。
 
+**多云、混合云与微服务治理**
+
 <div class="grid cards" markdown>
 
-- ++1++ [单云应用一键转换为多云应用](#_2)
-- ++2++ [在 DCE 中部署混合云应用](#dce)
-- ++3++ [传统微服务治理（南北向流量）](#_3)
-- ++4++ [传统微服务治理（东西向流量）](#_4)
-- ++5++ [将 DCE 集成到客户系统（OEM OUT）](#dce-oem-out)
-- ++6++ [将客户系统集成到 DCE（OEM IN）](#dceoem-in)
-- ++7++ [配置并使用 Underlay IP](#underlay-ip)
-- ++8++ [应用加速与跨集群通信](#_5)
-- ++9++ [快速定位异常与排障](#_6)
-- ++10++ [基于 CICD 的应用发布](#cicd)
-- ++11++ [基于 GitOps 持续部署云原生应用](#gitops)
-- ++12++ [使用中间件与 pgvector 部署 ChatGPT](#pgvector-chatgpt)
-- ++13++ [Redis 跨集群数据同步](#redis)
-- ++14++ [AI 模型训练推理场景演示](#ai)
+- :one: [单云应用一键转换为多云应用](#_2)
+- :two: [在 DCE 中部署混合云应用](#dce)
+- :three: [传统微服务治理（南北向流量）](#_3)
+- :four: [传统微服务治理（东西向流量）](#_4)
+- :five: [将 DCE 集成到客户系统（OEM OUT）](#dce-oem-out)
+- :six: [将客户系统集成到 DCE（OEM IN）](#dceoem-in)
+- :seven: [配置并使用 Underlay IP](#underlay-ip)
+
+</div>
+
+**运维、应用发布与平台能力**
+
+<div class="grid cards" markdown>
+
+- :one: [应用加速与跨集群通信](#_5)
+- :two: [快速定位异常与排障](#_6)
+- :three: [基于 CICD 的应用发布](#cicd)
+- :four: [基于 GitOps 持续部署云原生应用](#gitops)
+- :five: [使用中间件与 pgvector 部署 ChatGPT](#pgvector-chatgpt)
+- :six: [Redis 跨集群数据同步](#redis)
+- :seven: [AI 模型训练推理场景演示](#ai)
 
 </div>
 
