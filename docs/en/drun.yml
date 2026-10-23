@@ -131,6 +131,7 @@ nav:
                   - Quick Start: drun/clawos/intro/quickstart.md
                   - Release Notes: drun/clawos/intro/release-notes.md
                   - Upgrade Notes: drun/clawos/intro/upgrade-notes.md
+                  - Compatibility: drun/clawos/intro/compatibility.md
               - Workspace View:
                   - Overview: drun/clawos/workspace/index.md
                   - ClawHub:

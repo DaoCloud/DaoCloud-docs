@@ -131,6 +131,7 @@ nav:
                   - 快速入门: drun/clawos/intro/quickstart.md
                   - Release Notes: drun/clawos/intro/release-notes.md
                   - 升级注意事项: drun/clawos/intro/upgrade-notes.md
+                  - 兼容性: drun/clawos/intro/compatibility.md
               - 工作空间视角:
                   - 概览: drun/clawos/workspace/index.md
                   - ClawHub:
