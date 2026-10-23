@@ -29,7 +29,7 @@ The simple steps to perform this operation are as follows:
     !!! note
 
        1. If the Docker Registry container registry has not set a password, you can leave it blank, but the Harbor registry must fill in the username/password.
-       2. For a hands-on demo, see [Integrated Registry Video Demo](https://docs.daocloud.io/en/videos/kangaroo/).
+       2. For a hands-on demo, see [Integrated Registry Video Demo](../../videos/kangaroo.md).
 
 ## Integrated Registry (Admin)
 

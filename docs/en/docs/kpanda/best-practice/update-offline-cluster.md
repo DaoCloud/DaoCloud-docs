@@ -23,7 +23,7 @@ The overall approach is as follows:
 
 !!! note
 
-    For a list of currently supported offline Kubernetes versions, refer to the [list of Kubernetes versions supported by Kubean](https://docs.daocloud.io/en/community/kubean/#kubernetes-compatibility).
+    For a list of currently supported offline Kubernetes versions, refer to the [list of Kubernetes versions supported by Kubean](../../community/kubean.md#kubernetes-compatibility).
 
 ## Building the Offline Package on an Integrated Node
 

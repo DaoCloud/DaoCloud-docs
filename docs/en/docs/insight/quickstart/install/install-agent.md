@@ -43,4 +43,4 @@ insight-agent is a plugin for collecting insight data, supporting unified observ
     !!! note
 
         - Click __┇__ on the far right, and you can perform more operations such as __Update__ , __View YAML__ and __Delete__ in the pop-up menu.
-        - For a practical installation demo, watch [Video demo of installing insight-agent](https://docs.daocloud.io/en/videos/insight/#installing-insight-agent)
+        - For a practical installation demo, watch [Video demo of installing insight-agent](../../../videos/insight.md#installing-insight-agent)

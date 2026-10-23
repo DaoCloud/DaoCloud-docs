@@ -25,7 +25,7 @@ hide:
     !!! note
 
         1. Docker Registry 镜像仓库若未设置密码可不填写，Harbor 镜像仓库必须填写用户名/密码。
-        2. 有关实际操作演示，请参阅[仓库集成视频演示](https://docs.daocloud.io/videos/kangaroo/)。
+        2. 有关实际操作演示，请参阅[仓库集成视频演示](../../videos/kangaroo.md)。
 
 ## 仓库集成(管理员)
 

@@ -15,7 +15,7 @@ The OEM OUT integration involves 5 steps:
 4. [Customize appearance](#customizie-appearance)
 5. [Permission system integration (optional)](#permission-system-integration-optional)
 
-For detailed instructions, refer to the [OEM OUT Best Practices video tutorial](https://docs.daocloud.io/en/videos/use-cases/#integrating-dce-into-customer-systems-oem-out).
+For detailed instructions, refer to the [OEM OUT Best Practices video tutorial](../../../videos/use-cases.md#integrating-dce-into-customer-systems-oem-out).
 
 ## Unify Domain Name
 

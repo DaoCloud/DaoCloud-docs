@@ -42,7 +42,7 @@ Support for integrating three registries:
 
 ## Steps
 
-Refer to [Video Tutorial](https://docs.daocloud.io/en/videos/kangaroo/#integrate-registry-workspace) to familiarize yourself with the following operating steps:
+Refer to [Video Tutorial](../../videos/kangaroo.md#integrate-registry-workspace) to familiarize yourself with the following operating steps:
 
 1. Log in to DCE as a user with the Workspace Admin role, and click __Container Registry__ -> __Integrated Registry (Workspace)__ from the left navigation bar.
 
@@ -60,4 +60,4 @@ Refer to [Video Tutorial](https://docs.daocloud.io/en/videos/kangaroo/#integrate
 
         1. If the Docker Registry hasn't been set a password, you can leave it blank,
            but the Harbor Registry requires filling in the username/password.
-        1. For a hands-on demo, see [Integrated Registry Video Demo](https://docs.daocloud.io/en/videos/kangaroo/)
+        1. For a hands-on demo, see [Integrated Registry Video Demo](../../videos/kangaroo.md)

@@ -42,7 +42,7 @@ The specific operation steps are as follows.
     1. Users who log in for the first time will not be given any default permissions and need to be authorized
        by an administrator (the administrator can be a platform administrator, submodule administrator 
        or resource administrator).
-    1. For practical tutorials, please refer to [OIDC Operation Video Tutorials](https://docs.daocloud.io/en/videos/ghippo/#integration-with-oidc-users),
+    1. For practical tutorials, please refer to [OIDC Operation Video Tutorials](../../../videos/ghippo.md#integration-with-oidc-users),
        or refer to [Azure OpenID Connect (OIDC) Access Process](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-protocols-oidc).
 
 ## User identity authentication interaction process

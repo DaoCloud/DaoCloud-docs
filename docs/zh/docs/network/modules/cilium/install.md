@@ -200,7 +200,7 @@
 
 - Kubespray 支持的参数
 
-    [Kubean](https://docs.daocloud.io/community/kubean/) 默认调用 Kubespray 来安装集群，参阅以下文档：
+    [Kubean](../../../community/kubean.md) 默认调用 Kubespray 来安装集群，参阅以下文档：
 
     - [通过 Kubespray 安装 Cilium](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/cilium.md)
     - [Cilium 默认参数](https://github.com/kubernetes-sigs/kubespray/blob/b289f533b3b49ecf03baf755bd18b2da48608b3f/roles/network_plugin/cilium/defaults/main.yml)

@@ -37,7 +37,7 @@
 | 权限管理 | 支持[命名空间授权](../user-guide/permissions/cluster-ns-auth.md)，通过权限设置可以让不同的用户或用户组拥有操作指定命名空间下不同的 Kubernetes 资源的权限。 |
 | 集群运维 | 全方位集群监控：全方位覆盖集群、节点的指标监控及告警，实时了解和查看集群和节点状态，及时实施运维措施，保障业务连续性。 |
 | | 开放式 API：提供原生的 Kubernetes OpenAPI 能力。 |
-| | [CloudShell](https://docs.daocloud.io/community/cloudtty/) 访问集群：支持通过 CloudShell 连接集群并通过 Kubectl 访问集群。 |
+| | [CloudShell](../../community/cloudtty.md) 访问集群：支持通过 CloudShell 连接集群并通过 Kubectl 访问集群。 |
 | 异构加速 | 支持 Nvidia、天数智芯、昇腾等异构 GPU 硬件加速。 |
 | | 支持物理 GPU 单卡资源算力、显存、切分功能。多个服务容器可共享单张 GPU 卡，并支持限制和隔离每个服务容器所占用的GPU算力、显存额度。 |
 | | 支持按照项目对 GPU 资源进行配额管理。 |
