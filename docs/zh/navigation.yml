@@ -1298,6 +1298,7 @@ nav:
                   - 安装: clawos/intro/install.md
                   - 快速入门: clawos/intro/quickstart.md
                   - Release Notes: clawos/intro/release-notes.md
+                  - 兼容性: clawos/intro/compatibility.md
               - 工作空间视角:
                   - 概览: clawos/workspace/overview.md
                   - ClawHub:
