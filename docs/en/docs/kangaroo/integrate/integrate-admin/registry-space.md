@@ -12,7 +12,7 @@ Harbor provides the image isolation feature based on the registry space (project
 
 Prerequisite: An external Harbor registry has been created or integrated.
 
-1. Log in to DCE 5.0 as a user with the Admin role, and click __Container Registry__ -> __Integrated Registry (Admin)__ from the left navigation bar.
+1. Log in to DCE as a user with the Admin role, and click __Container Registry__ -> __Integrated Registry (Admin)__ from the left navigation bar.
 
     ![Integrated Registry (Admin)](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/bind01.png)
 

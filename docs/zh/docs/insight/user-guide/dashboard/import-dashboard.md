@@ -7,7 +7,7 @@ Insight v0.40.0 已经支持使用 Grafana 社区最新的 GrafanaDashboard(v1be
 
 ##  使用 v1beta1 CRD 导入仪表盘
 
-1. 登录 DCE 5.0 平台，进入 __容器管理__ ，在集群列表中选择 __kpanda-global-cluster__ 。
+1. 登录 DCE 平台，进入 __容器管理__ ，在集群列表中选择 __kpanda-global-cluster__ 。
 
 2. 选择左侧导航栏的 __自定义资源__ ，在列表中查找 __grafanadashboards.grafana.integreatly.org__ 文件，进入详情。
 

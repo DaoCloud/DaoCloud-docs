@@ -39,7 +39,7 @@ RabbitMQ 的通用功能特性包括：
 
     RabbitMQ 提供了许多插件，支持从多方面进行扩展，也可以编写自己的插件。
 
-在 DCE 5.0 中部署 RabbitMQ 后，还将支持以下特性：
+在 DCE 中部署 RabbitMQ 后，还将支持以下特性：
 
 - 支持单节点和多节点 RabbitMQ 集群部署
 - 支持 RabbitMQ Managerment 插件，提供管理页面

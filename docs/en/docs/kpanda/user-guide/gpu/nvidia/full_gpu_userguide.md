@@ -1,10 +1,10 @@
 # Using the Whole NVIDIA GPU Card for an Application
 
-This section describes how to allocate the entire NVIDIA GPU card to a single application on the DCE 5.0 platform.
+This section describes how to allocate the entire NVIDIA GPU card to a single application on the DCE platform.
 
 ## Prerequisites
 
-- DCE 5.0 container management platform has been [deployed](https://docs.daocloud.io/install/index.html) and is running properly.
+- DCE container management platform has been [deployed](https://docs.daocloud.io/install/index.html) and is running properly.
 - The container management module has been [connected to a Kubernetes cluster](../../clusters/integrate-cluster.md) or a Kubernetes cluster has been [created](../../clusters/create-cluster.md), and you can access the UI interface of the cluster.
 - GPU Operator has been offline installed and NVIDIA DevicePlugin has been enabled on the current cluster. Refer to [Offline Installation of GPU Operator](install_nvidia_driver_of_operator.md) for instructions.
 - The GPU card in the current cluster has not undergone any virtualization operations or been occupied by other applications.

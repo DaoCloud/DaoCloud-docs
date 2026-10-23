@@ -5,6 +5,8 @@ On the system component page, you can quickly view the running status of the sys
 1. Go to __Insight__ product module,
 2. In the left navigation bar, select __System Management -> System Components__ .
 
+    ![System Components](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/system00.png)
+
 ## Component description
 
 |Module| Component Name | Description |
@@ -19,3 +21,7 @@ On the system component page, you can quickly view the running status of the sys
 |Link| insight-jaeger-query | Responsible for querying the trace data collected in each cluster. |
 |Link| insight-opentelemetry-collector | Responsible for receiving trace data forwarded by each sub-cluster |
 |Log| elasticsearch | Responsible for storing the log data of each cluster. |
+
+!!! note
+
+    If an external Elasticsearch is used, some data may not be available, resulting in the Elasticsearch information being empty.

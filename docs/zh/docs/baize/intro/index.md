@@ -9,6 +9,8 @@ AI Lab 是 DaoCloud 推出的基于云原生操作系统的 AI 算力平台（�
 AI Lab 提供软硬一体的 AI 智算体验，整合异构算力，优化 GPU 性能，实现算力资源统一调度和运营，
 最大化算力效用并降低算力开销，并且还提供了优化的 AI 开发框架，简化 AI 开发和部署，加速推动各行业的 AI 应用场景落地。
 
+[查看/下载 AI Lab 用户手册](https://harbor-test2.cn-sh2.ufileos.com/docs/download/ai-lab.pdf){ .md-button }
+
 **功能特性**
 
 - 算力资源全托管
@@ -39,6 +41,6 @@ AI Lab 提供软硬一体的 AI 智算体验，整合异构算力，优化 GPU �
 
 ![逻辑架构图](../images/image01.png)
 
-[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

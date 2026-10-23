@@ -1,6 +1,6 @@
-# Install DCE 5.0 Enterprise Package on Alibaba Cloud ECS
+# Install DCE Enterprise Package on Alibaba Cloud ECS
 
-This page will guide you through the process of installing DCE 5.0 on Alibaba Cloud ECS.
+This page will guide you through the process of installing DCE on Alibaba Cloud ECS.
 
 ## Prerequisites
 
@@ -9,7 +9,7 @@ This page will guide you through the process of installing DCE 5.0 on Alibaba Cl
 
 ## Deployment Steps
 
-When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for load balancing capability. Since CloudProvider is not installed in the virtual machines, LoadBalancer-type services cannot be recognized. Therefore, we provide three possible solutions:
+When deploying DCE on Alibaba Cloud ECS, special handling is required for load balancing capability. Since CloudProvider is not installed in the virtual machines, LoadBalancer-type services cannot be recognized. Therefore, we provide three possible solutions:
 
 - Solution 1: NodePort + Alibaba Cloud SLB
 - Solution 2: cloudLB + CCM component deployment
@@ -73,7 +73,7 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 6. Create an Alibaba Cloud SLB and direct the public TCP traffic of the SLB to the ECS hosts' port 32060. This needs to be done for all three hosts.
 
 
-7. Modify the ghippo reverse proxy configuration following the documentation at [Custom Reverse Proxy Server Address](../../ghippo/install/reverse-proxy.md#customize-dce-50-reverse-proxy-server-address). After modification, you can directly access DCE 5.0 using the SLB's public IP address + Port, as shown in the following image:
+7. Modify the ghippo reverse proxy configuration following the documentation at [Custom Reverse Proxy Server Address](../../ghippo/install/reverse-proxy.md#customize-dce-50-reverse-proxy-server-address). After modification, you can directly access DCE using the SLB's public IP address + Port, as shown in the following image:
 
     ![ghippo](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/7.1.png)
 
@@ -138,7 +138,7 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 
     ![cc02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/ccm01.png)
 
-5. Continue the installation of DCE 5.0 and install all product components
+5. Continue the installation of DCE and install all product components
 
     Use the -j parameter to specify step 7 and above to complete the remaining steps.
 
@@ -146,7 +146,7 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
     ./dce5-installer cluster-create -c sample/clusterConfig.yaml -j 7+
     ```
 
-6. After successful installation, a public LB instance will be created by default, and DCE 5.0 can be accessed based on the assigned IP.
+6. After successful installation, a public LB instance will be created by default, and DCE can be accessed based on the assigned IP.
 
     ![dce5.02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/dce501.png)
 

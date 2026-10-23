@@ -73,8 +73,8 @@
       name: secretdemo
     type: Opaque
     data:
-      username: ******
-      password: ******
+      username: "******"
+      password: "******"
     ```
 
 [下一步：使用密钥](use-secret.md){ .md-button .md-button--primary }

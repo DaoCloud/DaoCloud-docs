@@ -122,7 +122,7 @@ file to change the dependency source. You can follow these steps:
 
 ## How to modify the number of concurrent running of Jenkins pipelines
 
-Currently, the number of concurrent running of Jenkins pipelines after DCE 5.0 deployment is 2. The following will describe how to change the number of concurrent running:
+Currently, the number of concurrent running of Jenkins pipelines after DCE deployment is 2. The following will describe how to change the number of concurrent running:
 
 1. Go to the Container Management module, find the cluster where the Jenkins component is located, and click the cluster name.
 
@@ -152,7 +152,7 @@ Based on whether this container is enabled or not, please check whether the diff
 
 4. Search for `eventDispatcher.receiver` in __data__ -> __jenkins.yaml__, its value should be `http://localhost:9090/event`.
 
-    If Jenkins is deployed in the worker cluster (need to penetrate the gateway of DCE 5.0), you also need to check the following configmaps.
+    If Jenkins is deployed in the worker cluster (need to penetrate the gateway of DCE), you also need to check the following configmaps.
 
 5. Query the configmap named __event-proxy-config__ again, check YAML, and the configmap description:
 
@@ -167,7 +167,7 @@ Based on whether this container is enabled or not, please check whether the diff
 
 6. In the cluster where Jenkins is located, search for the secret __amamba-jenkins__ in __ConfigMaps & Secrets__ -> __ConfigMaps__.
 
-7. Check whether the __event-proxy-token__ in the secret is correct. This Token is used for the gateway authentication of DCE 5.0.
+7. Check whether the __event-proxy-token__ in the secret is correct. This Token is used for the gateway authentication of DCE.
    If it is incorrect, Jenkins will not be able to send events to the workbench. For how to generate this Token, you can check [Access Key](../../ghippo/user-guide/personal-center/accesstoken.md).
 
 If all the above configmaps are correct, but the status of Jenkins pipeline still cannot be updated, please first check the container log of __event-proxy__ in Jenkins.
@@ -181,3 +181,21 @@ If all the above configmaps are correct, but the status of Jenkins pipeline stil
 3. Search for __jenkins-casc-config__, and click __Edit YAML__ in the operation column.
 
 4. Search for `eventDispatcher.receiver` in __data__ -> __jenkins.yaml__, its value should be `http://amamba-devops-server.amamba-system:80/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins` where `amamba-system` is the namespace where the workbench is deployed.
+
+## ARM Architecture Build Error: "systemd cgroup flag passed, but systemd support for managing cgroups is not available"
+
+The cgroup manager supports systemd and cgroupfs. By default, podman in the agent container uses cgroupfs (configured in the /etc/containers/containers.conf file). However, in some cases it may not be recognized correctly, and you need to specify it manually on the command line:
+
+```bash
+podman build --cgroups-manager=cgroupfs .
+```
+
+At this point, if the error becomes: "error adding seccamp filter rule for syscall bdflush: permission denied"
+
+This is due to a problem with a specific runc version and podman. Refer to [containers/podman #10735](https://github.com/containers/podman/issues/10735)
+
+You can go to the crun [release page](https://github.com/containers/crun/releases) to download the corresponding binary, move it to /usr/local/bin, and specify the runtime when building:
+
+```bash
+podman build --cgroups-manager=cgroupfs --runtime=/usr/local/bin/crun .
+```

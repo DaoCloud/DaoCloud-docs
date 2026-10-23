@@ -1,4 +1,4 @@
-# Insight Release Notes
+# 可观测性 Release Notes
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化，[升级注意事项](../quickstart/install/upgrade-note.md)。
 
@@ -558,7 +558,7 @@
 
 #### 新功能
 
-- **新增** Kubenetes 事件分析及查询功能
+- **新增** Kubernetes 事件分析及查询功能
 - **新增** 内置告警策略提供告警修复建议
 - **新增** 支持自定义日志导出字段及格式
 

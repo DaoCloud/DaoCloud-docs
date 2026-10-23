@@ -16,7 +16,7 @@ This page lists some issues related to the installation and uninstallation of In
 When you run the following command to uninstall Insight Agent,
 
 ```sh
-helm uninstall insight agent
+helm uninstall insight-agent -n insight-system
 ```
 
 The `tls secret` used by `otel-operator` is failed to uninstall.
@@ -34,9 +34,11 @@ Therefore, please manually delete the corresponding `secret` using one of the fo
     kubectl -n insight-system delete secret insight-agent-opentelemetry-operator-controller-manager-service-cert
     ```
 
-- **Delete via UI**: Log in to DCE 5.0 container management, select the target cluster, select **Secret**
+- **Delete via UI**: Log in to DCE container management, select the target cluster, select **Secret**
   from the left menu, input `insight-agent-opentelemetry-operator-controller-manager-service-cert`,
   then select `Delete`.
+
+## v0.22.0
 
 ### Insight Agent
 

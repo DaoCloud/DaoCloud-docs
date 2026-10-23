@@ -79,7 +79,6 @@ spec:
   blockSize: 26
   vxlanMode: Always
   natOutgoing: true
-EOF
 ```
 
 其中，
@@ -127,7 +126,6 @@ EOF
       vxlanMode: Always
       natOutgoing: true
       nodeSelector: type=="test"
-    EOF
     ```
 
 但此 `IPPool` 不会影响到该节点已经创建的 Pod，如果要更新其 Pod 从该 `IPPool` 分配地址，则需要 `recreate pod`。
@@ -241,7 +239,6 @@ kubectl annotate pod  test-pod "cni.projectcalico.org/ipv4pools"='["extra-ippool
       cidr: 192.0.0.0/16
       ipipMode: Always
       natOutgoing: true
-    EOF
     ```
 
     !!! note

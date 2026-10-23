@@ -5,6 +5,15 @@ We sincerely appreciate any feedback you may have. Thank you 🙏
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [User and Access Control](#user-and-access-control)
+- :two: [Workspaces and Hierarchy](#workspaces-and-hierarchy)
+- :three: [Audit Logs](#audit-logs)
+- :four: [Platform Customization](#platform-customization)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;
@@ -88,7 +97,7 @@ Refer to the [Enable Audit Logs](../ghippo/user-guide/audit/open-audit.md) docum
 
 ### Disable Audit Logs
 
-Refer to the [Disable Audit Logs](../ghippo/user-guide/audit/open-audit.md#_4) documentation page.
+Refer to the [Disable Audit Logs](../ghippo/user-guide/audit/open-audit.md#steps-to-enable-audit-log-collection-when-creating-a-cluster) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-off.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/ghippo-auditoff.png"></video>
@@ -102,6 +111,6 @@ Refer to the [Appearance Customization](../ghippo/user-guide/platform-setting/ap
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/appearance.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/ghippo-appearance.png"></video>
 </div>
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

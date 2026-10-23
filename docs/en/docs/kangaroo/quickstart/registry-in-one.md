@@ -5,7 +5,7 @@ DATE: 2024-07-30
 
 # Manage External Registry
 
-If you have one or more Harbor, Docker and Jfrog Artifacty container registries, you can use the DCE 5.0 container registry 
+If you have one or more Harbor, Docker and Jfrog Artifacty container registries, you can use the DCE container registry 
 for unified management. Depending on the role permissions of the operator, two methods can be used:
 
 - Integrated Registry (Workspace): Support Harbor, Docker and Jfrog Artifacty
@@ -28,20 +28,17 @@ The simple steps to perform this operation are as follows:
 
     !!! note
 
-        - If the Docker Registry container registry has not set a password, you can leave it blank, but the Harbor registry must fill in the username/password.
-        - For a hands-on demo, see [Integrated Registry Video Demo](../../videos/kangaroo.md).
+       1. If the Docker Registry container registry has not set a password, you can leave it blank, but the Harbor registry must fill in the username/password.
+       2. For a hands-on demo, see [Integrated Registry Video Demo](../../videos/kangaroo.md).
 
 ## Integrated Registry (Admin)
 
 If you are an Admin (platform administrator), you can also integrate an existing container registry
 with the DCE platform using the registry integration feature.
-
 Registry integration serves as a centralized management entry for platform container registry.
 Platform administrators can bind a registry space to one or more workspaces (namespaces within workspaces)
 by allocating a private registry space to them. Alternatively, they can set a registry space to be public and
 accessible to all namespaces on the platform.
-
-The steps are as follows:
 
 1. Log in with the Admin role, and click __Integrated Registry (Admin)__ on the left navigation bar.
 

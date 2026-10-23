@@ -5,15 +5,13 @@ Date: 2024-01-05
 
 # Manage End Device
 
-## Edit End Device
-
-The platform supports editing and modifying the basic information, twin properties, labels, and access settings of end device.
+The platform supports editing and modifying the basic information, twin properties, labels, and access settings of end devices.
 
 !!! note
 
-    End device can only be edited when they are not bound to edge nodes.
+    End devices can only be edited when they are not bound to edge nodes.
 
-### Edit basic information
+## Edit Basic Information
 
 The steps to perform this operation are as follows:
 
@@ -25,7 +23,7 @@ The steps to perform this operation are as follows:
 
 ![Basic Info](../images/manage-device-01.png)
 
-### Edit twin properties
+## Edit Twin Properties
 
 The steps to perform this operation are as follows:
 
@@ -36,7 +34,7 @@ The steps to perform this operation are as follows:
 
 ![Edit Twins](../images/manage-device-02.png)
 
-### Edit labels
+## Edit Labels
 
 The steps to perform this operation are as follows:
 
@@ -47,7 +45,7 @@ The steps to perform this operation are as follows:
 
 ![Edit Labels](../images/manage-device-03.png)
 
-### Edit access settings
+## Edit Access Settings
 
 The steps to perform this operation are as follows:
 
@@ -58,7 +56,7 @@ The steps to perform this operation are as follows:
 
 ![Edit Access Settings](../images/manage-device-04.png)
 
-### Delete end device
+## Delete End Device
 
 On the right side of the end device list, click the __┇__ button and select __Delete__ from the pop-up menu.
 

@@ -5,7 +5,7 @@ DATE: 2024-07-30
 
 # Import a Windows Virtual Machine from the External Platform
 
-This page provides a detailed introduction on how to import virtual machines from an external platform -- VMware, into the virtual machines of DCE 5.0 using the command line.
+This page provides a detailed introduction on how to import virtual machines from an external platform -- VMware, into the virtual machines of DCE using the command line.
 
 !!! info
 
@@ -27,7 +27,7 @@ Similar to importing a virtual machine with a Linux operating system, refer to [
 
 ### Check the Boot Type of Windows
 
-When importing a virtual machine from an external platform into the DCE 5.0 virtualization platform, 
+When importing a virtual machine from an external platform into the DCE virtualization platform, 
 you need to configure it according to the boot type (BIOS or UEFI) to ensure it can boot and run correctly.
 
 You can check whether Windows uses BIOS or UEFI through "System Summary." If it uses UEFI, you need to 

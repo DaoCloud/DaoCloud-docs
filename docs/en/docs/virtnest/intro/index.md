@@ -61,4 +61,8 @@ containerization capabilities, providing users with a superior virtual machine m
 
 !!! note
 
-    The Virtual Machine, __Virtnest__ , is a feature exclusive to the DCE 5.0 Enterprise Package (Standard, Advanced, and Platinum editions).
+    The Virtual Machine, __Virtnest__ , is a feature exclusive to the DCE Enterprise Package (Standard, Advanced, and Platinum editions).
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

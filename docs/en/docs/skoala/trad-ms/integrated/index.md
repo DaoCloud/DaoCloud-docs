@@ -5,11 +5,12 @@ hide:
 
 # Integrate Registry
 
-If you want to monitor or trace your existing microservices without creating a new registry, then you can just integrate your registries into the Microservices module of DCE 5.0.
+Supported registries: [Nacos Registry](../../reference/registry.md), [Eureka Registry](../../reference/registry.md),
+[Zookeeper Registry](../../reference/registry.md), Consul Registry, [Kubernetes Registry](../../reference/registry.md),
+[Mesh Registry](../../reference/registry.md).
 
-Supported registries: [Nacos Registry](../../../reference/basic-knowledge/registry.md#nacos-registry), [Eureka Registry](../../../reference/basic-knowledge/registry.md#eureka-registry), [Zookeeper Registry](../../../reference/basic-knowledge/registry.md#zookeeper-registry), [Kubernetes Registry](../../../reference/basic-knowledge/registry.md#kubernetes-registry), and [Mesh Registry](../../../reference/basic-knowledge/registry.md#service-mesh-registry).
-
-However, compared with hosted registries, integrated registries can only use some basic features, such as checking basic information, monitoring information, and tracing. To experience more fantastic and surprising boasted features, it is suggested to create a [Hosted Registry](../hosted/index.md).
+Compared with hosted registries, integrated registries only support some basic operations, such as viewing basic information and monitoring information.
+If you want to experience more advanced and comprehensive management operations, you need to create a [Hosted Registry](../hosted/index.md).
 
 ## Integrate
 
@@ -25,23 +26,19 @@ To integrate a registry, follow these steps:
 
     - Kubernetes/Mesh registry: directly select a cluster or service service
 
-        - If your expected cluster doesn't appear in the drop-down list, go to the Container Management module to [Integrate Cluster](../../../kpanda/user-guide/clusters/integrate-cluster) or [Create Cluster]( ../../../kpanda/user-guide/clusters/create-cluster.md).
+        - If your expected cluster doesn't appear in the drop-down list, go to the Container Management module to [Integrate Cluster](../../../kpanda/user-guide/clusters/integrate-cluster.md) or [Create Cluster](../../../kpanda/user-guide/clusters/create-cluster.md).
 
-        - If your expected mesh doesn't appear in the drop-down list, go to the Service Mesh module to [Create Mesh](../../../mspider/user-guide/service-mesh/README.md).
+        - If your expected mesh doesn't appear in the drop-down list, go to the Service Mesh module to [Create Mesh](../../../mspider/user-guide/service-mesh/index.md).
 
             ![Integrate Mesh/Kubernetes](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate02.png)
 
-    - Nacos/Zookeeper/Eureka registries: fill in the name and address of the registry, and click __OK__ at the bottom of the page.
-
-        Click __+ Add__ to enter multiple addresses.
+    - Nacos/Zookeeper/Eureka/Consul registries: fill in the name and address of the registry, and click __OK__ , and service authentication is also supported.
 
         ![Nacos/Zookeeper/Eureka](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate03.png)
 
 ## Update
 
-Update Nacos/Zookeeper/Eureka registries with this guide.
-
-If you want to update Kubernetes/Service Mesh registries, you can either remove it and reintegrate another one, or you can [update the Kubernetes cluster](../../../kpanda/user-guide/clusters/upgrade-cluster.md)/[update the mesh](../../../mspider/user-guide/service-mesh/README.md).
+The microservice engine currently only supports updating the configuration of Nacos/Zookeeper/Eureka registries.
 
 1. In the `Registry List` find registry you need to update, on the right side click __┇__ and select __Edit__ .
 
@@ -50,6 +47,13 @@ If you want to update Kubernetes/Service Mesh registries, you can either remove 
 2. Add or remove the registry address, then click __OK__ at the bottom of the page.
 
     ![Edit](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate-update02.png)
+
+!!! note
+
+    To update a Kubernetes/Mesh registry:
+
+    - You can first [remove the integrated registry](#remove), and then integrate another registry.
+    - You can also go to the Container Management module to [update the corresponding cluster](../../../kpanda/user-guide/clusters/upgrade-cluster.md), or go to the Service Mesh module to [update the corresponding mesh service](../../../mspider/user-guide/service-mesh/index.md).
 
 ## Remove
 
@@ -63,7 +67,11 @@ If you want to update Kubernetes/Service Mesh registries, you can either remove 
 
 !!! note
 
-    Integrated registries can be `removed`, while hosted registries can be`deleted`. The difference between the two is:
-    
-    - Remove: The registry is removed from the DCE 5.0 Microservices module. The registry itself and data are not deleted. You can access the registry again later.
+    Integrated registries can be `removed`, while hosted registries can be `deleted`. The difference between the two is:
+
+    - Remove: The registry is removed from the DCE Microservices module. The registry itself and data are not deleted. You can access the registry again later.
     - Delete: Deletes the registry and all the data in it. The registry cannot be used again. You need to create a new registry.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

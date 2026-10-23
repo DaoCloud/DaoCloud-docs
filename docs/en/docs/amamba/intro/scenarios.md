@@ -1,6 +1,6 @@
 # Use Cases and Benefits
 
-The workbench is a module that enables continuous delivery of applications through methods such as pipelines, GitOps, and Jenkins. It provides a unified entry point for application deployment in DCE 5.0 and supports the entire lifecycle management of cloud native applications. This reduces the barriers for enterprises to adopt cloud native applications and improves the efficiency of software development to application delivery.
+The workbench is a module that enables continuous delivery of applications through methods such as pipelines, GitOps, and Jenkins. It provides a unified entry point for application deployment in DCE and supports the entire lifecycle management of cloud native applications. This reduces the barriers for enterprises to adopt cloud native applications and improves the efficiency of software development to application delivery.
 
 ## Use Cases
 
@@ -61,7 +61,7 @@ With years of leading experience in cloud native field, DaoCloud developed a bra
 
 | Concepts | Description |
 |--------- |-------------|
-| Workspace | A [Workspace](../../ghippo/user-guide/workspace/ws-folder.md) coordinates permissions of Global Management and other modules of DCE 5.0 to address resource aggregation and mapping hierarchy issues. Each workspace can be used as a resource space for one project. You can assign different resources (clusters and namespaces) to a workspace, then users who have admin or editing access to that workspace can use and manage these resources in that workspace, such as creating an application in this workspace. |
+| Workspace | A [Workspace](../../ghippo/user-guide/workspace/ws-folder.md) coordinates permissions of Global Management and other modules of DCE to address resource aggregation and mapping hierarchy issues. Each workspace can be used as a resource space for one project. You can assign different resources (clusters and namespaces) to a workspace, then users who have admin or editing access to that workspace can use and manage these resources in that workspace, such as creating an application in this workspace. |
 | Namespace | A namespace is a smaller (than workspace), isolated resource space. A workspace can [have many namespaces](../../kpanda/user-guide/namespaces/createns.md), but the total resource quotas of these namespaces should not exceed the workspace quota. The namespace allocates resources with a finer granularity, limits container sizes (CPU and memory), improving resource utilization. |
 | Pipeline | Use [Pipeline](../quickstart/deploy-pipeline.md) to create a customizable, visualized, and automatic delivery pipeline that helps shorten the delivery cycle and improve efficiency. The pipeline feature in Workbench is based on Jenkins implementation. |
 | Credential | To allow pipeline interaction with third-party applications, the user must configure Jenkins [credentials](../user-guide/pipeline/credential.md). |

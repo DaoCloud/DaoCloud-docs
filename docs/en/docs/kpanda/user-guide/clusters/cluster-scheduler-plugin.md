@@ -37,7 +37,7 @@ of scheduler-plugins as an example to introduce how to install and use scheduler
 1. Add the scheduler-plugins parameter in **Create Cluster** -> **Advanced Settings** -> **Custom Parameters**.
 
     ```yaml
-    scheduler_plugins_enabled:true
+    scheduler_plugins_enabled: true
     scheduler_plugins_plugin_config:
       - name: Coscheduling
         args:

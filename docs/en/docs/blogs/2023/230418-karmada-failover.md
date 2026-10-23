@@ -359,7 +359,7 @@ In this way, failover can be realized to ensure high availability and continuity
 
 As shown above, the user has joined three clusters in Karmada: member1, member2 and member3.
 Deploy a deployment called foo with two replicas, created on the Karmada control plane.
-Propagate the deployement to cluster member1 and member2 by using pp (PropagationPolicy).
+Propagate the deployment to cluster member1 and member2 by using pp (PropagationPolicy).
 
 When cluster member1 fails, if it is a replica split strategy, the Pods on cluster member1 will be cleared and migrated to cluster member2 that meets the requirements.
 If it is a full-volume strategy, the deployment on cluster member1 will be removed and migrated to cluster member3 that meets the requirements.

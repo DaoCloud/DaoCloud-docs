@@ -360,7 +360,7 @@ Karmada 故障恢复支持两种方式：
 
 如上图，用户在 Karmada 中加入了三个集群: member1、member2 和 member3。
 部署一个名为 foo 的 deployment，它有两个副本，在 Karmada 控制平面上创建。
-通过使用 pp (PropagationPolicy) 将 deployement 传播到集群 member1 和 member2。
+通过使用 pp (PropagationPolicy) 将 deployment 传播到集群 member1 和 member2。
 
 当集群 member1 发生故障时，如果是副本拆分策略，集群 member1 上的 Pod 将被清除并迁移到满足要求的集群 member2。
 如果是全量策略，集群 member1 上的 deployment 将会被移除并迁移到满足要求的集群 member3。

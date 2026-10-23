@@ -192,22 +192,22 @@
 
     ```yaml
     apiVersion: v1
-      clusters:
+    clusters:
       - cluster:
         insecure-skip-tls-verify: true
         server: https://77C321BCF072682C70C8665ED4BFA10D.gr7.ap-southeast-1.eks.amazonaws.com
-      name: joincluster
-      contexts:
-      - context:
+    name: joincluster
+    contexts:
+    - context:
         cluster: joincluster
         user: eks-admin
-      name: ekscontext
-      current-context: ekscontext
-      kind: Config
-      preferences: {}
-      users:
-      - name: eks-admin
-      user:
+    name: ekscontext
+    current-context: ekscontext
+    kind: Config
+    preferences: {}
+    users:
+    - name: eks-admin
+    user:
         token: eyJhbGciOiJSUzI1NiIsImtpZCI6ImcxTjJwNkktWm5IbmRJU1RFRExvdWY1TGFWVUtGQ3VIejFtNlFQcUNFalEifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2V
     ```
 

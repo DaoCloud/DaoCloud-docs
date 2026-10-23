@@ -100,13 +100,13 @@
     - 如果使用外部 dns 服务解析域名时，需要确保各个节点包括火种节点的 /etc/hosts 文件中不能出现该域名配置
     - 可以使用 nslookup 命令检查域名解析状况，需要保证各个节点包括火种节点中，都能使用 nslookup 来检验解析状况
 
-### 基于外部域名模式，安装 DCE 5.0
+### 基于外部域名模式，安装 DCE
 
 整体架构如下
 
 ![dce01](../images/dce01.png)
 
-1. 安装流程请参考[离线安装 DCE 5.0 商业版](../commercial/start-install.md)
+1. 安装流程请参考[离线安装 DCE 商业版](../commercial/start-install.md)
 
 1. 定义好的 clusterConfig 文件参考：
 

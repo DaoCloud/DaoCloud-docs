@@ -1,12 +1,12 @@
 # 标准版升级到白金版
 
-DCE 5.0 支持多种版本，除社区版以外的其他版本均为商业版，本文演示如何从标准版升级到白金版。
+DCE 支持多种版本，除社区版以外的其他版本均为商业版，本文演示如何从标准版升级到白金版。
 
 ![模块图](https://docs.daocloud.io/daocloud-docs-images/docs/images/dce-modules04.png)
 
 ## 前提条件
 
-- 您需要有一个 DCE 5.0 的集群环境，参阅[离线化部署商业版](commercial/start-install.md)
+- 您需要有一个 DCE 的集群环境，参阅[离线化部署商业版](commercial/start-install.md)
 - 请确保您的火种机器还存活，并且当前环境对应的离线包还在，否则需要重新下载
 
 ## 操作步骤

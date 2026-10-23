@@ -1,17 +1,17 @@
 # Using Cambricon GPUs
 
-This document describes how to use Cambricon GPUs in DCE 5.0.
+This document describes how to use Cambricon GPUs in DCE.
 
 ## Prerequisites
 
-* DCE 5.0 container management platform has been [deployed](../../../../install/index.md) and is running properly.
+* DCE container management platform has been [deployed](../../../../install/index.md) and is running properly.
 * The container management module has either [connected to a Kubernetes cluster](../../clusters/integrate-cluster.md) or [created a Kubernetes cluster](../../clusters/create-cluster.md), and the UI interface of the cluster is accessible.
 * The current cluster has installed the Cambricon firmware, drivers, and DevicePlugin component. For installation details, please refer to the official documentation:
 
     * [Driver and Firmware Installation](https://www.cambricon.com/docs/sdk_1.15.0/driver_5.10.22/user_guide/index.html)
     * [DevicePlugin Installation](https://github.com/Cambricon/cambricon-k8s-device-plugin/blob/master/device-plugin/README.md)
 
-> **Note:** When installing the DevicePlugin, make sure to disable the `--enable-device-type` parameter; otherwise, DCE 5.0 will not be able to recognize Cambricon GPUs correctly.
+> **Note:** When installing the DevicePlugin, make sure to disable the `--enable-device-type` parameter; otherwise, DCE will not be able to recognize Cambricon GPUs correctly.
 
 ## Cambricon GPU Modes
 
@@ -22,7 +22,7 @@ Cambricon GPUs support the following modes:
 * **Dynamic SMLU mode**: Provides fine-grained resource allocation, allowing control over the amount of GPU memory and compute assigned to each container.
 * **MIM mode**: Splits a Cambricon GPU into multiple fixed-spec virtual GPUs for use.
 
-## Using Cambricon in DCE 5.0
+## Using Cambricon in DCE
 
 Taking **Dynamic SMLU mode** as an example:
 

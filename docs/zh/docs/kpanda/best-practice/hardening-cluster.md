@@ -1,6 +1,6 @@
 # 如何加固自建工作集群
 
-在 DCE 5.0 中，使用 CIS Benchmark (CIS) 扫描使用界面创建的工作集群，有一些扫描项并没有通过扫描。
+在 DCE 中，使用 CIS Benchmark (CIS) 扫描使用界面创建的工作集群，有一些扫描项并没有通过扫描。
 本文将基于不同的 CIS Benchmark 版本进行加固说明。
 
 ## CIS Benchmark 1.27
@@ -61,7 +61,7 @@ kubespray 官方为了解决这些安全扫描问题，在 v2.22 中添加默认
     kubelet_rotate_server_certificates: true
     ```
 
-- 在 DCE 5.0 中，也提供了通过 UI 来配置高级参数的功能，在创建集群最后一步添加自定义参数：
+- 在 DCE 中，也提供了通过 UI 来配置高级参数的功能，在创建集群最后一步添加自定义参数：
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/hardening05.png)
 

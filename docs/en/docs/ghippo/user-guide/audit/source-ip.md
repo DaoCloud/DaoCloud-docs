@@ -8,7 +8,7 @@ Date: 2024-08-13
 The source IP in audit logs plays a critical role in system and network management.
 It helps track activities, maintain security, resolve issues, and ensure system
 compliance. However, getting the source IP can result in some performance overhead,
-so that audit logs are not always enabled in DCE 5.0.
+so that audit logs are not always enabled in DCE.
 The default enablement of source IP in audit logs and the methods to enable it vary
 depending on the installation mode. The following sections will explain the default
 enablement and the steps to enable source IP in audit logs based on the installation mode.
@@ -17,7 +17,7 @@ enablement and the steps to enable source IP in audit logs based on the installa
 
     Enabling audit logs will modify the replica count of the istio-ingressgateway, resulting in a certain performance overhead.
     Enabling audit logs requires disabling LoadBalance of kube-proxy and Topology Aware Routing, which can have a certain impact on cluster performance.
-    After enabling audit logs, it is essential to ensure that the istio-ingressgateway exists on the proper node to the access IP. If the istio-ingressgateway drifts due to node health issues or other issues, it needs to be manually rescheduled back to that node. Otherwise, it will affect the normal operation of DCE 5.0.
+    After enabling audit logs, it is essential to ensure that the istio-ingressgateway exists on the proper node to the access IP. If the istio-ingressgateway drifts due to node health issues or other issues, it needs to be manually rescheduled back to that node. Otherwise, it will affect the normal operation of DCE.
 
 ## Determine the Installation Mode
 

@@ -12,7 +12,7 @@ in the industry. It mainly provides two dimensions of functionalities: Microserv
 Microservice Gateway. It covers various management scenarios throughout the microservice lifecycle, including
 service registration and discovery, configuration management, traffic governance, service-level tracing, API management,
 domain management, monitoring, and alerting. The Microservice Engine has strong compatibility and can seamlessly
-integrate with other components of DCE 5.0. It also perfectly supports open-source ecosystems such as Spring Cloud
+integrate with other components of DCE. It also perfectly supports open-source ecosystems such as Spring Cloud
 and Dubbo, helping you to build your own microservice system using open-source microservice technologies more conveniently.
 
 <div class="grid cards" markdown>
@@ -48,7 +48,7 @@ and Dubbo, helping you to build your own microservice system using open-source m
 
     ---
 
-    - [Import/Remove Services](../cloud-ms/index.md)
+    - [Import/Remove Services](../cloud-ms/traffic-control.md)
     - [Traffic Governance](../cloud-ms/traffic-control.md)
     - [Nacos Stress Testing Report](../tests/nacos-stress-test.md)
 
@@ -76,3 +76,7 @@ and Dubbo, helping you to build your own microservice system using open-source m
         - [Service Tracing](../trad-ms/integrated/trace.md)
 
 </div>
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

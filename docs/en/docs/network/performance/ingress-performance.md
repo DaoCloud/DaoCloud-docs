@@ -6,7 +6,7 @@ Verify that the throughput of Ingress-nginx can increase linearly after horizont
 
 ## Benchmark
 
-This article is based on the installation of Ingress-Nginx in DCE 5.0, with all parameters set to default configuration and without enabling features such as keepalive.
+This article is based on the installation of Ingress-Nginx in DCE, with all parameters set to default configuration and without enabling features such as keepalive.
 
 ![ingress-arch](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/ingress-nginx-arch.png)
 

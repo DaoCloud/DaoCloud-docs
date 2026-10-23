@@ -1,8 +1,6 @@
 ---
 MTPE: WANG0608GitHub
 Date: 2024-09-10
-hide:
-  - toc
 ---
 
 # FAQs
@@ -19,8 +17,6 @@ When an application (Deployment or StatefulSet) is created, the pods of the appl
 to worker nodes that have been configured with HwameiStor local storage capability.
 
 ## How does HwameiStor handle scheduling for applications with multiple replicas?
-
-Some users may want to understand the scheduling methods used for applications with replicas and how they differ from traditional shared storage systems.
 
 HwameiStor recommends using StatefulSet for applications with multiple replicas.
 
@@ -48,7 +44,7 @@ HwameiStor provides volume eviction and migration features. When removing or res
 and volumes on that node can be automatically migrated to other available nodes, ensuring that the pods continue to
 run and provide services.
 
-## Removing a node
+### Removing a node
 
 To ensure the continuous operation of pods and the availability of HwameiStor local data, before removing a Kubernetes
 node, you need to migrate the pods and local volumes on that node to other available nodes. This can be done through
@@ -115,7 +111,7 @@ the following steps:
     kubectl delete nodes NODE
     ```
 
-## Restarting a node
+### Restarting a node
 
 Restarting a node usually takes a long time to restore the node to normal. During this time, all pods and local data on
 that node cannot run normally. This can be a significant cost, or even unacceptable, for some applications such as databases.
@@ -156,7 +152,7 @@ schedule pods to other nodes that have replicas of the volumes.
     kubectl uncordon NODE
     ```
 
-## For traditional shared storage
+### For traditional shared storage
 
 StatefulSet deploys the replicated replicas to different nodes to distribute the workload, but creates a proper PV volume
 for each pod replica. Only when the number of replicas exceeds the number of Worker nodes will multiple replicas be on

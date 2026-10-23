@@ -5,11 +5,11 @@ hide:
 
 # 创建托管网格
 
-DCE 5.0 服务网格支持 3 种网格：
+DCE 服务网格支持 3 种网格：
 
-- [托管网格](./hosted-mesh.md)完全托管在 DCE 5.0 服务网格内。这种网格将核心控制面组件从工作集群中分离，控制面可以部署到一个独立的集群中，能够对同一网格中的多集群服务进行统一治理。
+- [托管网格](./hosted-mesh.md)完全托管在 DCE 服务网格内。这种网格将核心控制面组件从工作集群中分离，控制面可以部署到一个独立的集群中，能够对同一网格中的多集群服务进行统一治理。
 - [专有网格](./dedicated-mesh.md)采用 Istio 传统结构，仅支持一个集群，集群内设有专门的控制面。
-- [外接网格](./external-mesh.md)指的是可以将企业现成的网格接入到 DCE 5.0 服务网格中进行统一管理。参见[创建外接网格](external-mesh.md)。
+- [外接网格](./external-mesh.md)指的是可以将企业现成的网格接入到 DCE 服务网格中进行统一管理。参见[创建外接网格](external-mesh.md)。
 
 ## 常见问题
 
@@ -24,3 +24,7 @@ DCE 5.0 服务网格支持 3 种网格：
 - [托管网格多云互联异常](../../troubleshoot/cluster-interconnect.md)
 - [创建网格时，集群列表存在未知集群](../../troubleshoot/cluster-already-exist.md)
 - [托管网格 APIServer 证书过期处理办法](../../troubleshoot/hosted-apiserver-cert-expiration.md)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

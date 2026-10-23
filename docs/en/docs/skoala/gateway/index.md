@@ -69,7 +69,6 @@ To create a microservice gateway, perform the following steps:
     - Log Level: Sets log levels for working node (envoy) and Pod
     - Update Mode: 'Recreate' means to delete the original gateway and create a new gateway, 'rolling update' means not to delete the gateway, but to roll to update the gateway related Pod
     - Front-end Proxy: specifies how many proxy endpoints a request must pass through before reaching the gateway from the client. Set this parameter based on actual conditions. For example, 'client-nginx-gateway' has one agent layer because only one Nginx agent endpoint passes through it.
-    - Gateway tracing: After this function is enabled, link information can be generated based on requests made through the gateway and sent to the observable module for data collection.
     - Gateway Tracing: You need to enable `autoinstrumentation` in the insight-agent and also enable the gateway traces
       in the gateway instance. This allows the generation of trace information for requests passing through the gateway,
       which is then sent to the Insight module for data collection.
@@ -78,7 +77,7 @@ To create a microservice gateway, perform the following steps:
     
     ![fill in advanced settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create08.png)
 
-5. Please refer to the following information to fill in the plug-in configuration (optional), and finally click **OK** in the lower right corner of the page.
+5. Please refer to the following information to fill in the plug-in configuration (optional), and finally click __OK__ in the lower right corner of the page.
     
     Select whether to enable the Global Rate Limit plugin.
 
@@ -88,7 +87,7 @@ To create a microservice gateway, perform the following steps:
 
 !!! note
 
-    Click __OK__ at the lower right corner of the page to return to the microservice gateway page. You can perform the operations [Update Gateway](update-gateway.md) or [Delte Gateway](delete-gateway.md) on the right.
+    Click __OK__ at the lower right corner of the page to return to the microservice gateway page. You can perform the operations [Update Gateway](index.md#update) or [Delete Gateway](index.md#delete) on the right.
 
     ![confirm the information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create10.png)
 
@@ -96,11 +95,13 @@ To create a microservice gateway, perform the following steps:
 
 You can view the gateway details on `Overview`, including the name, deployment location, gateway running status, service entry mode, controller/working node health status, API, and plug-in information.
 
-### Gateway details
+### Enter the Gateway Details Page
 
 On the __Gateways__ page, click the name of the target gateway to check the gateway overview.
 
 ![overview](./images/overview.png)
+
+### Gateway Details
 
 Gateway details are divided into basic information, network information, TOP10 popular apis, resource information, resource load, and plug-in information.
 
@@ -119,8 +120,8 @@ Some of the data are described as follows:
 
 In addition to viewing the gateway details, you can update the gateway configuration and delete the gateway on the gateway details page.
 
-- Update gateway: Click __Edit__ at the top of the page to jump to the page for updating gateway configuration. For details, see [Update Gateway Settings](update-gateway.md).
-- Delete gateway: Click __...__ at the top of the page and select __Delete__ to go to the page for deleting gateway. For details, see [Delete Gateway](delete-gateway.md).
+- Update gateway: Click __Edit__ at the top of the page to jump to the page for updating gateway configuration. For details, see [Update Gateway Settings](index.md#update).
+- Delete gateway: Click __...__ at the top of the page and select __Delete__ to go to the page for deleting gateway. For details, see [Delete Gateway](index.md#delete).
 
 ## Update
 
@@ -153,3 +154,7 @@ There are also two ways to delete a gateway. To ensure that services are not aff
 - After entering into the overview page, click the gateway name in the upper right corner of the __...__ and select __Delete__ .
 
     ![delete-gateway](./images/delete-gateway.png)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

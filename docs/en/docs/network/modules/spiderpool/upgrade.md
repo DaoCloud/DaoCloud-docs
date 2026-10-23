@@ -5,7 +5,7 @@ Date: 2024-09-12
 
 # Upgrade Spiderpool
 
-This page explains how to upgrade an old version of Spiderpool in DCE 5.0 to a newer version. This document
+This page explains how to upgrade an old version of Spiderpool in DCE to a newer version. This document
 uses the upgrade to Spiderpool v0.9.6 as an example.
 
 ## Prerequisites
@@ -26,7 +26,7 @@ where Addon is located, and complete the upgrade of the Addon offline package.
 
 1. After upgrading Addon, you can obtain the Chart package as follows:
 
-    Download the v0.9.6 Chart package through the DCE 5.0 UI as follows:
+    Download the v0.9.6 Chart package through the DCE UI as follows:
 
     ![spiderpool chart](../../images/spiderpool-upgrade-chart.png)
 
@@ -139,7 +139,7 @@ customresourcedefinition.apiextensions.k8s.io/spiderreservedips.spiderpool.spide
 customresourcedefinition.apiextensions.k8s.io/spidersubnets.spiderpool.spidernet.io configured
 ```
 
-## Upgrade via DCE 5.0 UI
+## Upgrade via DCE UI
 
 After correctly uploading the offline Chart and image packages to the offline environment
 in the previous steps, you can now perform the upgrade via the 5.0 UI.

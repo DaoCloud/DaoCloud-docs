@@ -1,0 +1,38 @@
+# Compute Cloud
+
+This page lists practical videos related to the compute market, container instances, and file storage.
+
+<div class="grid cards" markdown>
+
+- :one: [Compute Market](#compute-market)
+- :two: [Create Container Instance](#create-container-instance)
+- :three: [Power On/Off Container Instance](#power-onoff-container-instance)
+- :four: [File Storage](#file-storage)
+
+</div>
+
+## Compute Market
+
+Refer to the documentation on [Compute Market](../../zestu/index.md).
+
+<div class="responsive-video-container">
+  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/purchase.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/images/purchase.png"></video>
+</div>
+
+## Create Container Instance
+
+<div class="responsive-video-container">
+  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/create-instance.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/images/create-instance.png"></video>
+</div>
+
+## Power On/Off Container Instance
+
+<div class="responsive-video-container">
+  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/power-on-off.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/images/power-on-off.png"></video>
+</div>
+
+## File Storage
+
+<div class="responsive-video-container">
+  <video controls src="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/file-storage.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/drun/videos/images/file-storage.png"></video>
+</div>

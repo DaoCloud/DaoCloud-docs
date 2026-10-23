@@ -1,35 +1,44 @@
-# DaoCloud Enterprise 5.0 文档站
+# DaoCloud 文档中心
 
 [![Contributors](https://img.shields.io/github/contributors/daocloud/daocloud-docs?color=purple)](CONTRIBUTING.md)
 [![Build](https://github.com/DaoCloud/DaoCloud-docs/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/DaoCloud/DaoCloud-docs/actions/workflows/main.yml)
 
 中文版 ｜ [English](README.md)
 
-DaoCloud 是经认证的 K8s 服务提供商。目前 DCE 经 CNCF 认证可以完美支持以下版本：
+DaoCloud 是经认证的 Kubernetes 和 AI 服务提供商。
 
-K8s 社区在维护的几个版本：
+- 其产品已通过 CNCF AI 合规认证支持以下 Kubernetes 版本：
 
-[![1.29](./images/1.29.png)](https://github.com/cncf/k8s-conformance/pull/3203)
-[![1.30](./docs/zh/docs/images/1.30.png)](https://github.com/cncf/k8s-conformance/pull/3578)
-[![1.31](./docs/zh/docs/images/1.31.png)](https://github.com/cncf/k8s-conformance/pull/3675)
-[![1.32](./docs/zh/docs/images/1.32.png)](https://github.com/cncf/k8s-conformance/pull/3810)
+  [![1.35](./docs/zh/docs/images/ai-1.35.png)](https://github.com/cncf/k8s-ai-conformance/pull/121)
+  [![1.34](./docs/zh/docs/images/ai-1.34.png)](https://github.com/cncf/k8s-ai-conformance/pull/114)
+  [![1.33](./docs/zh/docs/images/ai-1.33.png)](https://github.com/cncf/k8s-ai-conformance/pull/13)
 
-K8s 社区不再维护，但 DaoCloud [KLTS](https://klts.io/) 项目组会持续维护的历史版本：
+- 其产品已通过 CNCF 合规认证支持以下 Kubernetes 版本：
 
-[![1.7](./images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
-[![1.9](./images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
-[![1.13](./images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
-[![1.15](./images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
-[![1.18](./images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
-[![1.20](./images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
-[![1.23](./images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
-[![1.24](./images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
-[![1.25](./images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
-[![1.26](./images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
-[![1.27](./images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
-[![1.28](./images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
+  [![1.36](./docs/zh/docs/images/1.36.png)](https://github.com/cncf/k8s-conformance/pull/4353)
+  [![1.35](./docs/zh/docs/images/1.35.png)](https://github.com/cncf/k8s-conformance/pull/4195)
+  [![1.34](./docs/zh/docs/images/1.34.png)](https://github.com/cncf/k8s-conformance/pull/4022)
+  [![1.33](./docs/zh/docs/images/1.33.png)](https://github.com/cncf/k8s-conformance/pull/3927)
+  [![1.32](./docs/zh/docs/images/1.32.png)](https://github.com/cncf/k8s-conformance/pull/3810)
+  [![1.31](./docs/zh/docs/images/1.31.png)](https://github.com/cncf/k8s-conformance/pull/3675)
+  [![1.30](./docs/zh/docs/images/1.30.png)](https://github.com/cncf/k8s-conformance/pull/3578)
+  [![1.29](./images/1.29.png)](https://github.com/cncf/k8s-conformance/pull/3203)
+  [![1.28](./images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
+  [![1.27](./images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
+  [![1.26](./images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
+  [![1.25](./images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
+  [![1.24](./images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
+  [![1.23](./images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
+  [![1.20](./images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
+  [![1.18](./images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
+  [![1.15](./images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
+  [![1.13](./images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
+  [![1.9](./images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
+  [![1.7](./images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
 
-本文档站采用 MkDocs 编译而成，文档内容通过 Markdown 格式写作，并在 GitHub 上完成版本管理、协作开发等工作。
+> 其中较旧的历史版本由 DaoCloud 开源的 [KLTS](https://klts.io/) 持续维护。
+>
+> 本文档站采用 MkDocs 编译而成，文档内容通过 Markdown 格式写作，并在 GitHub 上完成版本管理、协作开发等工作。
 
 ## 提交 PR 修改文档
 

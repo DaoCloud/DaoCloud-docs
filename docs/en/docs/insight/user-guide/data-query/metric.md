@@ -6,28 +6,22 @@ Metric query supports querying the index data of each container resource, and yo
 
 - The cluster has [insight-agent installed](../../quickstart/install/install-agent.md) and the application is in __running__ state.
 
-## Common query
+## Steps
 
-1. In the left navigation bar, click __Data Query__ -> __metric Query__ .
+1. Click the primary navigation bar to enter __Insight__.
 
-2. After selecting query conditions such as cluster, type, node, and metric name, click __Search__ ,
-   and the corresponding metric chart and data details will be displayed on the right side of the screen.
+2. In the left navigation bar, select __Metric__.
 
-    
+3. After selecting query conditions such as cluster, type, node, and metric name, click __Search__, and the corresponding metric chart and data details will be displayed on the right side of the screen.
 
-!!! tip
+   - Support custom time range. You can manually click the __Refresh__ icon or select a default time interval to refresh.
 
-    Support custom time range. You can manually click the __Refresh__ icon or select a default time interval to refresh.
+    ![Query result](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/metrics00.png)
 
-## Advanced Search
+4. Click the __Advanced Query__ tab to query with native PromQL.
 
-1. In the left navigation bar, click __Data Query__ -> __metric Query__ ,
-   click the __Advanced Query__ tab to switch to the advanced query page.
+    ![Advanced query](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/metics01.png)
 
-    
+!!! NOTE
 
-2. Enter a PromQL statement
-   (see [PromQL Syntax](https://prometheus.io/docs/prometheus/latest/querying/basics/)),
-   click __Query__ , and the query metric chart and data details will be displayed.
-
-    
+    See [PromQL Syntax](https://prometheus.io/docs/prometheus/latest/querying/basics/).

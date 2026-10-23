@@ -1,6 +1,6 @@
 # 安装 AI Lab 组件
 
-在 DCE 5.0 的安装器 v0.17.0 之后商业版安装时可以同步安装 AI Lab 组件，
+在 DCE 的安装器 v0.17.0 之后商业版安装时可以同步安装 AI Lab 组件，
 **无需自行安装** ；请联系交付支持团队获取商业版安装包。
 
 ## 在全局服务集群
@@ -146,7 +146,7 @@ AI Lab 模块提供的数据管理中，数据集的预热能力依赖存储服�
 
 * 部署 NFS Server
     * 如果已存在 NFS 可以跳过此步骤
-    * 如果不存在，可以参考 [NFS 服务部署](../../baize/best-practice/deploy-nfs-in-worker.md)
+    * 如果不存在，可以参考 [NFS 服务部署](../best-practice/index.md)
 * 部署 `nfs-driver-csi`
 * 部署 `StorageClass`
 

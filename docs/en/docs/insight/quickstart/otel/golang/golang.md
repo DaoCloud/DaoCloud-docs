@@ -5,9 +5,11 @@ Date: 2024-10-16
 
 # Enhance Go applications with OTel SDK
 
-This page contains instructions on how to set up OpenTelemetry enhancements in a Go application.
+For non-intrusive trace integration of a Golang application, refer to the document [Non-intrusive Enhancement of Applications via Operator](../operator.md) to automatically integrate traces through annotations.
 
 OpenTelemetry, also known simply as OTel, is an open-source observability framework that helps generate and collect telemetry data: traces, metrics, and logs in Go apps.
+
+This page contains instructions on how to set up OpenTelemetry enhancements in a Go application.
 
 ## Enhance Go apps with the OpenTelemetry SDK
 
@@ -16,13 +18,13 @@ OpenTelemetry, also known simply as OTel, is an open-source observability framew
 Dependencies related to the OpenTelemetry exporter and SDK must be installed first. If you are using another request router, please refer to [request routing](#request-routing).
 After switching/going into the application source folder run the following command:
 
-```golang
-go get go.opentelemetry.io/otel@v1.8.0 \
-  go.opentelemetry.io/otel/trace@v1.8.0 \
-  go.opentelemetry.io/otel/sdk@v1.8.0 \
-  go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.33.0 \
-  go.opentelemetry.io/otel/exporters/otlp/otlptrace@v1.7.0 \
-  go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc@v1.4.1
+```bash
+$ go get go.opentelemetry.io/otel@v1.19.0 \
+  go.opentelemetry.io/otel/trace@v1.19.0 \
+  go.opentelemetry.io/otel/sdk@v1.19.0 \
+  go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.46.1 \
+  go.opentelemetry.io/otel/exporters/otlp/otlptrace@v1.19.0 \
+  go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc@v1.19.0
 ```
 
 ### Create an initialization feature using the OpenTelemetry SDK
@@ -171,7 +173,7 @@ env:
   - name: OTEL_EXPORTER_OTLP_ENDPOINT
     value: 'http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317'
   - name: OTEL_SERVICE_NAME
-    value: "your depolyment name" # modify it.
+    value: "your deployment name" # (1)!
   - name: OTEL_K8S_NAMESPACE
     valueFrom:
       fieldRef:
@@ -192,6 +194,8 @@ env:
 ······
 ```
 
+1. Modify this value
+
 ## Request Routing
 
 ### OpenTelemetry gin/gonic enhancements
@@ -204,7 +208,7 @@ middleware "go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin
 Then inject the OpenTelemetry middleware:
 
 ```golang
-router. Use(middleware. Middleware("my-app"))
+router.Use(middleware.Middleware("my-app"))
 ```
 
 ### OpenTelemetry gorillamux enhancements
@@ -217,7 +221,7 @@ middleware "go.opentelemetry.io/contrib/instrumentation/github.com/gorilla/mux/o
 Then inject the OpenTelemetry middleware:
 
 ```golang
-router. Use(middleware. Middleware("my-app"))
+router.Use(middleware.Middleware("my-app"))
 ```
 
 ### gRPC enhancements
@@ -329,7 +333,7 @@ span := trace.SpanFromContext(c.Request.Context())
 ### Set properties in the current Span
 
 ```golang
-span.SetAttributes(attribute. String("controller", "books"))
+span.SetAttributes(attribute.String("controller", "books"))
 ```
 
 ### Add an Event to the current Span

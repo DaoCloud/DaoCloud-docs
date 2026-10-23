@@ -30,7 +30,7 @@ This starkly contrasted the standalone Office suite or corporate intranet Wiki p
 
 ![start](../images/cncf02copy.png)
 
-In 2022, DaoCloud's R&D department began recruiting more talent to develop the fifth-generation containerized platform, which later became the cloud-native operating system DCE 5.0. Michael was responsible for documentation and began researching how to build a documentation site. He explored options like [GitBook](https://www.gitbook.com/), [Docusaurus](https://docusaurus.io/), [Hugo](https://www.gohugo.org/), and [MkDocs](https://www.mkdocs.org/). Initially, he set up documentation sites for various Scrum teams using GitBook on the intranet but faced limitations due to a lack of IT support, resulting in only basic styling. Additionally, after GitBook commercialized, updates for the community version stagnated, causing the documentation for different Scrum teams to become disjointed and inconsistent.
+In 2022, DaoCloud's R&D department began recruiting more talent to develop the fifth-generation containerized platform, which later became the cloud-native operating system DCE. Michael was responsible for documentation and began researching how to build a documentation site. He explored options like [GitBook](https://www.gitbook.com/), [Docusaurus](https://docusaurus.io/), [Hugo](https://www.gohugo.org/), and [MkDocs](https://www.mkdocs.org/). Initially, he set up documentation sites for various Scrum teams using GitBook on the intranet but faced limitations due to a lack of IT support, resulting in only basic styling. Additionally, after GitBook commercialized, updates for the community version stagnated, causing the documentation for different Scrum teams to become disjointed and inconsistent.
 
 ### Entering GitHub
 

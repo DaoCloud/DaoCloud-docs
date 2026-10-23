@@ -40,7 +40,7 @@ This page explains about the functional features of MySQL.
 
     You can set automatic backup policies, monitoring and alert policies, automatic capacity expansion policies, etc.
 
-After MySQL is deployed in DCE 5.0, the following features will also be supported:
+After MySQL is deployed in DCE, the following features will also be supported:
 
 - Implement MySQL high availability and topology management based on Orchestrator
 - Support single node and active/standby mode

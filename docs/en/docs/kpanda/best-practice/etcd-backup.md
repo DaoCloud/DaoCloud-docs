@@ -9,7 +9,7 @@ Using the ETCD backup feature to create a backup policy, you can back up the etc
 
 !!! note
 
-    - DCE 5.0 ETCD backup restores are limited to backups and restores for the same cluster (with no change in the number of nodes and IP addresses). For example, after the etcd data of Cluster A is backed up, the backup data can only be restored to Cluster A, not to Cluster B.
+    - DCE ETCD backup restores are limited to backups and restores for the same cluster (with no change in the number of nodes and IP addresses). For example, after the etcd data of Cluster A is backed up, the backup data can only be restored to Cluster A, not to Cluster B.
     - The feature is recommended [app backup and restore](../user-guide/backup/deployment.md) for cross-cluster backups and restores.
     - First, create a backup policy to back up the current status. It is recommended to refer to the [ETCD backup](../user-guide/backup/etcd-backup.md).
 
@@ -51,12 +51,12 @@ INFO[0000] Go OS/Arch: linux/amd64
 
 You need to check the following before restoring:
 
-- Have you successfully backed up your data in DCE 5.0
+- Have you successfully backed up your data in DCE
 - Check if backup data exists in S3 storage
 
 !!! note
 
-    The backup of DCE 5.0 is a full data backup, and the full data of the last backup will be restored when restoring.
+    The backup of DCE is a full data backup, and the full data of the last backup will be restored when restoring.
 
 ### Shut down the cluster
 

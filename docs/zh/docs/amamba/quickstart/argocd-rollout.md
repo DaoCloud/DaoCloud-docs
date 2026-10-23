@@ -5,7 +5,7 @@
 ## 前提条件
 
 - 示例中的镜像需要访问公网： __argoproj/rollouts-demo:yellow__ 和 __argoproj/rollouts-demo:blue__ 。
-- 仅适用于通过安装器以 metallb 方式部署出来的 DCE 5.0 平台。
+- 仅适用于通过安装器以 metallb 方式部署出来的 DCE 平台。
 - 使用灰度发布能力需要所在集群中安装 Istio 和 Argo Rollout 组件。
 
 ## 操作步骤

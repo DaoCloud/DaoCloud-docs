@@ -6,8 +6,8 @@
 
 1. 请确认 操作系统 Kernel 版本号 >= 4.9.17，推荐 5.10+。
 
-2. DCE 5.0 安装时，选择的网络 CNI 为 Cilium 
-   在 DCE 5.0 中安装 Cilium，需要在`创建集群`—>`网络配置`页面下，`网络插件`选择 `cilium`。关于创建集群，请参阅[创建工作集群](../../../kpanda/user-guide/clusters/create-cluster.md)。
+2. DCE 安装时，选择的网络 CNI 为 Cilium 
+   在 DCE 中安装 Cilium，需要在`创建集群`—>`网络配置`页面下，`网络插件`选择 `cilium`。关于创建集群，请参阅[创建工作集群](../../../kpanda/user-guide/clusters/create-cluster.md)。
 
    ![网络设置](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/cilium-install1.jpg)
 

@@ -22,6 +22,8 @@ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 click apply "https://docs.daocloud.io/en/dce/license0.html#apply-for-a-license"
 ```
 
+![license](https://docs.daocloud.io/daocloud-docs-images/docs/images/license01.png)
+
 ## Apply for a License
 
 Follow the steps below to get a license for your DCE Community:
@@ -35,18 +37,22 @@ Follow the steps below to get a license for your DCE Community:
     ![get-auth-code](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/license012.png)
 
 3. Input the license you just received and input your ESN, click __Get an offline authorization code__ .
+    ![offline-auth-code](https://docs.daocloud.io/daocloud-docs-images/docs/images/license03.png)
 
     ESN is the unique device code of the cluster system.
     Follow the steps to get your ESN: Open DCE, click __Global Management__ -> __Settings__ -> __Licenses__ , click __Manage License__ , and copy the ESN code.
 
     ![esn](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/license02.png)
 
-4. Paste the offline authorization code, and click __Activate Now__ . Congratulations! :smile: It's time to explore the new DCE 5.0 now!
+4. Paste the offline authorization code, and click __Activate Now__ . Congratulations! :smile: It's time to explore the new DCE now!
 
 !!! info "📢 Tips"
 
     The offline authorization code is bound to the device ESN. Please keep the license key email safe and secure.
     You can contact the DaoCloud delivery team at any time to reapply, as we have saved all your license keys for you.
+
+*[ESN]: Abbreviation for Electronic Serial Number. It is a unique identifier used to identify a device, typically consisting of eight characters.
+*[DCE]: Abbreviation for DaoCloud Enterprise, a next-generation AI computing platform.
 
 ## Renew License
 
@@ -75,4 +81,4 @@ The pages you may frequently access in the process of above procedure are listed
 [Apply for a license](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }
 [View your license](https://license.daocloud.io/dce5-licenses){ .md-button .md-button--primary }
 [Get an offline authorization code](https://license.daocloud.io/dce5-license){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[Install DCE](../install/index.md){ .md-button .md-button--primary }

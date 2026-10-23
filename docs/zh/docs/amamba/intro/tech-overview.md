@@ -1,7 +1,7 @@
 # 应用工作台技术概览
 
-*[Amamba]: DCE 5.0 应用工作台开发代号
-*[Mspider]: DCE 5.0 服务网格开发代号
+*[Amamba]: DCE 应用工作台开发代号
+*[Mspider]: DCE 服务网格开发代号
 
 ## 目标
 
@@ -126,7 +126,7 @@ Amamba [Jenkins](https://github.com/amamba-io/jenkins-agent) 基于
 ### Argo CD
 
 Amamba 使用 [Argo CD](https://argo-cd.readthedocs.io/en/stable/)
-作为引擎实现 GitOps 的能力，相比原生的 Argo CD，我们主要在和 DCE 5.0 的集成上做了增强：
+作为引擎实现 GitOps 的能力，相比原生的 Argo CD，我们主要在和 DCE 的集成上做了增强：
 
 1. 应用按照租户的粒度隔离，只能部署到对应的集群和命名空间下；
 2. 权限按照全局 RBAC 的策略控制，只有对应权限点的用户才能执行对应操作；

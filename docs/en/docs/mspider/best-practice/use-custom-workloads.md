@@ -1,12 +1,12 @@
 # Support for Custom Workload Types
 
-DCE 5.0 provides an enhanced service mesh module that can be deployed in a Kubernetes cluster and automatically manages services within the cluster, enabling features like traffic control, service discovery, traffic monitoring, and fault tolerance.
+DCE provides an enhanced service mesh module that can be deployed in a Kubernetes cluster and automatically manages services within the cluster, enabling features like traffic control, service discovery, traffic monitoring, and fault tolerance.
 
-By default, DCE 5.0 service mesh supports injecting sidecars into Deployment, DaemonSet, and StatefulSet workload types, allowing services to be added to the mesh directly from the workload page.
+By default, DCE service mesh supports injecting sidecars into Deployment, DaemonSet, and StatefulSet workload types, allowing services to be added to the mesh directly from the workload page.
 
 However, in real production scenarios, there may be special workload types that cannot be governed by the capabilities of traditional service meshes due to cluster distribution versions.
 
-The Istio version provided by DCE 5.0 service mesh has enhanced this capability, allowing users to easily configure governance for special workload types.
+The Istio version provided by DCE service mesh has enhanced this capability, allowing users to easily configure governance for special workload types.
 
 ## Enabling Custom Workload Capability in the Mesh Control Plane
 
@@ -280,4 +280,4 @@ In the service list, you can see the corresponding service. At this point, the s
 
 ## Conclusion
 
-Through the above steps, we can see that by simple configuration, we can support custom workload types. This enables support for more types of workloads, allowing users to utilize the DCE 5.0 service mesh more flexibly.
+Through the above steps, we can see that by simple configuration, we can support custom workload types. This enables support for more types of workloads, allowing users to utilize the DCE service mesh more flexibly.

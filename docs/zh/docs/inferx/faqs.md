@@ -4,7 +4,7 @@
 
 ### 安装 Gateway API
 
-#### 通过 kpanda Helm 模版
+#### 通过 kpanda Helm 模板
 
 ![gateway-api-helm-charts](guides/images/gateway-api-helm-charts.png)
 
@@ -35,6 +35,7 @@ helm install lws https://github.com/kubernetes-sigs/lws/releases/download/$VERSI
 ### 安装时 inferencepools CRD 冲突
 
 可以通过添加 `--skip-crds` 参数来跳过 inferencepools CRD 安装
+
 ```bash
 export INFERX_CHART_VERSION=0.1.0-xxx
 helm -n public upgrade --install qwen3-06b inferx/inferx --version $INFERX_CHART_VERSION --skip-crds -f manifests/examples/inference-scheduling/values-single-vgpu.yaml
@@ -68,5 +69,5 @@ reason: InvalidKind
 
 2. 启用 GAIE 特性：
 
-    - 通过 `mspider` 安装 istio，请参考文档 [启用集群的 Istio GAIE 特性](enable-istio-gaie-with-mspider.md) 进行配置
-    - 通过其他方式安装的 istio 或者 agent-gateway 可以参考社区文档启用 GAIE 特性
+    - 通过 `mspider` 安装 istio，请参考文档 [启用集群的 Istio GAIE 特性](./guides/enable-istio-gaie-with-mspider.md) 进行配置。
+    - 通过其他方式安装的 Istio 或者 agent-gateway 可以参考社区文档启用 GAIE 特性。

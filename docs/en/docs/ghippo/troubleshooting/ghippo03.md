@@ -1,6 +1,6 @@
 # Keycloak Unable to Start
 
-*[Ghippo]: The dev code for DCE 5.0 Global Management
+*[Ghippo]: The dev code for DCE Global Management
 
 ## Common Issues
 

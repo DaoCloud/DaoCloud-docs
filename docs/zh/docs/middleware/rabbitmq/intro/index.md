@@ -17,3 +17,7 @@ RabbitMQ 是应用层协议的一个开放标准，为面向消息的中间件�
 ![架构数据流](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/flow.png)
 
 [创建 RabbitMQ 实例](../user-guide/create.md){ .md-button .md-button--primary }
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

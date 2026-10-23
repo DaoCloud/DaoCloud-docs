@@ -21,7 +21,7 @@ Also see [etcd Backup and Restore Best Practices](../../best-practice/etcd-backu
   and granted [`NS Admin`](../permissions/permission-brief.md#ns-admin) or higher permissions to the user.
   For details, refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
 
-- Prepared a MinIO instance. It is recommended to create it through DCE 5.0's MinIO middleware.
+- Prepared a MinIO instance. It is recommended to create it through DCE's MinIO middleware.
   For specific steps, refer to [MinIO Object Storage](../../../middleware/minio/user-guide/create.md).
 
 ## Create etcd backup

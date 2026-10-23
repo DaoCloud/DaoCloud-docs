@@ -7,7 +7,9 @@ hide:
 
 # Uninstall
 
-Run the following commands in order to uninstall DCE 5.0 from your environment.
+## Uninstall DCE Community
+
+Run the following commands in order to uninstall DCE from your environment.
 
 !!! warning
 

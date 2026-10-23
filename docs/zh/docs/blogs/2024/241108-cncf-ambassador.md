@@ -45,7 +45,7 @@ Google 搜索引擎有一个规则：**有效内容更新频繁的网站会显�
 
 ![start](../images/cncf02.png)
 
-这一年 DaoCloud 研发部门招兵买马开始研发第五代容器化平台，也就是后来的云原生操作系统 DCE 5.0。
+这一年 DaoCloud 研发部门招兵买马开始研发第五代容器化平台，也就是后来的云原生操作系统 DCE。
 Michael 负责文档资料，也开始调研用什么来建设文档站，他先后调研了 [GitBook](https://www.gitbook.com/),
 [Docusaurus](https://docusaurus.io/), [Hugo](https://www.gohugo.org/), [MkDocs](https://www.mkdocs.org/)。
 最初以 GitBook 在内网搭建了各个 Scrum 团队的文档站，但没有 IT 支持，只能实现一些简单的样式。

@@ -4,7 +4,7 @@ This section explains how applications can use MIG GPU resources.
 
 ## Prerequisites
 
-- DCE 5.0 container management platform is deployed and running successfully.
+- DCE container management platform is deployed and running successfully.
 - The container management module is integrated with a Kubernetes cluster or a Kubernetes cluster is created, and the UI interface of the cluster can be accessed.
 - NVIDIA DevicePlugin and MIG capabilities are enabled. Refer to [Offline installation of GPU Operator](../install_nvidia_driver_of_operator.md) for details.
 - The nodes in the cluster have GPUs of the corresponding models.

@@ -45,3 +45,7 @@
         ```
 
 以上是构建虚拟机镜像的详细步骤和说明。通过按照这些步骤操作，您将能够成功构建并推送用于虚拟机的镜像，以满足您的使用需求。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

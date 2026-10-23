@@ -355,10 +355,10 @@ chmod +x ./dce5-installer
 
      ![Login](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/login.png)
 
-1. Log in to DCE 5.0 with username __admin__ and password __changeme__ .
+1. Log in to DCE with username __admin__ and password __changeme__ .
 
      ![Successful login](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firstscreen.png)
 
-[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../../dce/license0.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

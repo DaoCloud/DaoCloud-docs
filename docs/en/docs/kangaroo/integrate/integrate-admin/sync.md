@@ -5,7 +5,7 @@ In software development or system management, this sync method is often used to 
 so as to ensure consistency and reduce workload during deployment. Typically, image content can be synchronized in real-time to other servers via registry synchronization, 
 ensuring that images on multiple servers are up-to-date.
 
-DCE 5.0 container registry allows users to create synchronization policies and add destination repositories.
+DCE container registry allows users to create synchronization policies and add destination repositories.
 
 !!! note
 

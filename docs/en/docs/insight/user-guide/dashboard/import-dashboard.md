@@ -8,18 +8,18 @@ Insight v0.40.0 now supports importing dashboards using the latest GrafanaDashbo
 
 ## Using v1beta1 CRD
 
-1. Log in to the DCE 5.0 platform and go to __Container Management__ . Select the __kpanda-global-cluster__ from the cluster list.
+1. Log in to the DCE platform and go to __Container Management__ . Select the __kpanda-global-cluster__ from the cluster list.
 
 2. Choose __Custom Resources__ from the left navigation bar. Look for the __grafana.integreatly.org__ 
    file in the list and click it to view the details.
 
 3. Click __YAML Create__ and use the following template. Replace the dashboard JSON in the __Json__ field.
 
-    - __metadata.name__ ：Provide a name for the dashboard.
-    - __metadata.namespace__ ：Specify the target namespace.
-    - __metadata.labels__ ：Mandatory， __operator.insight.io/managed-by: insight__ .
-    - __spec.allowCrossNamespaceImport__ ：Mandatory, __true__ .
-    - __spec.instanceSelector.matchLabels__ ：Mandatory，__operator.insight.io/managed-by: insight__ .
+    - __metadata.name__: Provide a name for the dashboard.
+    - __metadata.namespace__: Specify the target namespace.
+    - __metadata.labels__: Mandatory, __operator.insight.io/managed-by: insight__ .
+    - __spec.allowCrossNamespaceImport__: Mandatory, __true__ .
+    - __spec.instanceSelector.matchLabels__: Mandatory, __operator.insight.io/managed-by: insight__ .
 
     ```yaml
     apiVersion: grafana.integreatly.org/v1beta1
@@ -70,7 +70,7 @@ Insight v0.40.0 now supports importing dashboards using the latest GrafanaDashbo
 
 ## Using v1alpha1 CRD
 
-Currently, users can still import dashboards using the old version of CRD：
+Currently, users can still import dashboards using the old version of CRD:
 
 - __namespace__ : Specify the target namespace.
 - __name__ : Provide a name for the dashboard.
@@ -123,7 +123,7 @@ which is used to load GrafanaDashboard(v1alpha1) resources and ConfigMaps into t
 
 The architecture diagram of dashboard-discover is as follows:
 
-![img](../../image/dashboard-discover.jpg)
+![img](../../images/dashboard-discover.jpg)
 
 The watched resources require the labels below:
 
@@ -199,7 +199,7 @@ AngularJS and prioritized React instead. For details, refer to the [community an
 Dashboards maintained by Insight and other gproduct have been automatically migrated and are ready to use out of the box.
 For customer-maintained dashboards, Grafana 12.1.3 provides automatic migration support for some core pre-installed AngularJS panels.
 When a customer opens a custom dashboard in Grafana 12.1.3 for the first time, Grafana will automatically trigger the migration.
-**After migration is complete, be sure to click the 「Save」 button on the dashboard to save changes, preventing repeated migrations on each load.**
+**After migration is complete, be sure to click the **Save** button on the dashboard to save changes, preventing repeated migrations on each load.**
 
 If AngularJS panel migration is not completed, the following issues will occur in Grafana 12.1.3 and later versions:
 
@@ -207,18 +207,18 @@ If AngularJS panel migration is not completed, the following issues will occur i
 2. Configured AngularJS data sources will not appear in the data source list.
 3. Original AngularJS panels in the dashboard will show error messages such as `Error loading: plugin_name` or `Panel plugin not found: plugin_name`; see the figure below:
 
-    ![img](../../image/upgrade-note02.png)
+    ![img](../../images/upgrade-note02.png)
 
     Similar panels or plugins can be manually replaced.
 
 4. Original data sources in the dashboard will be lost, with errors such as `Datasource XXX was not found`; see the figure below:
 
-    ![img](../../image/upgrade-note03.png)
+    ![img](../../images/upgrade-note03.png)
 
     You can manually create a `Datasource variable`:
 
-    ![img](../../image/upgrade-note04.png)
+    ![img](../../images/upgrade-note04.png)
 
     Then apply it in the panel:
 
-    ![img](../../image/upgrade-note05.png)
+    ![img](../../images/upgrade-note05.png)

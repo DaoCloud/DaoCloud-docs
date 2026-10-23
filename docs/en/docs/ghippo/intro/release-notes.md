@@ -265,24 +265,40 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.24.0
 
+#### Features
+
 - **Added** resource quotas limiting GPU
 - **Added** support for DCE5 logged-in users to access Insight's Grafana and other components
+
+#### Improvements
+
 - **Improved** rate limiting with single flight mechanism when triggering FoldersAuthz CR
 - **Improved** to filter out duplicate authorizations
 - **Improved** the condition where Workspace authorization information is not stored in FoldersAuthz CR
 - **Improved** a full update of FoldersAuthz CR upon ghippo-controller-manager restart
+
+#### Fixes
+
 - **Fixed** an issue where a large number of authorization requests caused FoldersAuthz CR updates to overwhelm k8s
 
 ## 2023-12-29
 
 ### v0.23.0
 
-- **Added** a feature to automatically log out from the identity provider page when logging out of DCE 5.0
+#### Features
+
+- **Added** a feature to automatically log out from the identity provider page when logging out of DCE
 - **Added** support for usernames with underscores and other special characters
 - **Added** removal of the restriction on authorizing usernames with special characters
 - **Added** a user isolation mode between Folders
 - **Added** support for authorizing multiple roles to Folder/Workspace users
+
+#### Improvements
+
 - **Improved** initial username and password (admin/changeme) to be stored in Secret instead of ConfigMap
+
+#### Fixes
+
 - **Fixed** an issue with the redirection of offline environment documentation site
 - **Fixed** an issue with installer version 0.13 upgrade failure
 - **Fixed** an issue with workspace large-scale test performance
@@ -301,7 +317,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 - **Added** auto-expanding active navigation bar
 - **Added** SDK support for usernames with underscores
-- **Added** support for DCE 4.0 to DCE 5.0 migration validation
+- **Added** support for DCE 4.0 to DCE migration validation
 - **Added** __Operations Management__ precise search in list
 - **Improved** Chinese language support to the __About__ - __Product Versions__ submodule
   for kcoral, dowl, kcollie, and virtnest
@@ -353,13 +369,21 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.19.0
 
+#### Features
+
 - **Added** support for integrating project group IDP login without clicking
 - **Added** resource group binding to mesh / mesh-namespace
 - **Added** tips for custom role permission points
 - **Added** Settings -> Security Policies -> limiting multiple concurrent sessions for a single user
 - **Added** Settings -> Security Policies -> limiting the maximum number of concurrent session connections
   for the system
+
+#### Improvements
+
 - **Improved** support for customized parameters in Webhook URL
+
+#### Fixes
+
 - **Fixed** an issue with errors when filling in the mail server
 - **Fixed** an issue where LDAP users could not join groups
 
@@ -529,7 +553,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Features
 
-- **Added** support for deploying a GM (Guomi) gateway in front of DCE 5.0 and accessing DCE 5.0 using a GM browser
+- **Added** support for deploying a GM (Guomi) gateway in front of DCE and accessing DCE using a GM browser
 - **Added** an option in Helm values to enable/disable Istio Sidecar functionality with one click
 - **Added** Workspace and Folder Owner roles 
 - **Added** setting where only users with Workspace/Folder Admin and Kpanda Owner permissions can bind resources
@@ -552,6 +576,8 @@ so that you can understand the evolution path and feature changes of each versio
 ## 2022-11-30
 
 ### v0.12.1
+
+#### Improvements
 
 - **Improved** automatic construction of pure offline packages through CI
 - **Improved** Ghippo upgrade documentation
@@ -585,6 +611,8 @@ so that you can understand the evolution path and feature changes of each versio
 ## 2022-11-01
 
 ### v0.11.2
+
+#### Fixes
 
 - **Fixed** an issue with resource group binding to clusters
 - **Fixed** an issue where workspaces could not be created when there were no workspaces

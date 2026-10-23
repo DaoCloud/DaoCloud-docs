@@ -1,7 +1,7 @@
 # GPU 调度配置（Binpack 和 Spread ）
   
 本文介绍使用 NVIDIA vGPU 时，如何通过 Binpack 和 Spread 的 GPU 调度配置减少 GPU 资源碎片、防止单点故障等，实现 vGPU 的高级调度。
-DCE 5.0 平台提供了集群和工作负载两种维度的 Binpack 和 Spread 调度策略，分别满足不同场景下的使用需求。
+DCE 平台提供了集群和工作负载两种维度的 Binpack 和 Spread 调度策略，分别满足不同场景下的使用需求。
 
 ## 前置条件
   

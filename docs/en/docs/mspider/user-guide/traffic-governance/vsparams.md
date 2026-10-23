@@ -81,8 +81,7 @@ In addition, 6 optional settings are provided, which you can enable or disable a
 
 | UI Elements | YAML Fields | Description |
 | -------- | -------------- | ----------- |
-| timeout | `spec.http.-name.timeout` | Optional. Disabled by default. The timeout feature is used to define the waiting time for initiating a request to the target service. |
-| Timeout | `spec.http.-name.timeout` | Required. The tolerable timeout period. Input format: number + unit (s, m, h, ms). |
+| Timeout | `spec.http.-name.timeout` | Optional. Disabled by default. The timeout feature is used to define the tolerable waiting time for initiating a request to the target service. Input format: number + unit (s, m, h, ms). |
 
 **Retry**
 

@@ -5,7 +5,7 @@ hide:
 
 # Building Offline Documentation Site
 
-DCE 5.0 documentation is completely open source. All original Markdown files are hosted on [GitHub](https://github.com/DaoCloud/DaoCloud-docs),
+DCE documentation is completely open source. All original Markdown files are hosted on [GitHub](https://github.com/DaoCloud/DaoCloud-docs),
 using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) static compiler,
 following GitHub standardized CI process, built with [Netlify](https://www.netlify.com/), the compiled HTML
 files are stored on UCloud for customers in China and abroad.

@@ -92,9 +92,6 @@ Test file: test/integration/apiserver/tracing/tracing_test.go
 The local interactive test code needs to modify the configuration to send the collected data to Jaeger.
 
 ```go
-#test/integration/apiserver/tracing### Update Configuration for Jaeger Backend
-
-```go
 #test/integration/apiserver/tracing/tracing_test.go:125
 
 if err := os.WriteFile(tracingConfigFile.Name(), []byte(fmt.Sprintf(`
@@ -149,7 +146,6 @@ apiVersion: apiserver.config.k8s.io/v1beta1
 kind: TracingConfiguration
 endpoint: 10.6.9.3:4317
 samplingRatePerMillion: 100000 #Set the sampling frequency according to your needs
-vim /etc/kubernetes/manifests/kube-apiserver.yaml
 spec:
   containers:
   - command:

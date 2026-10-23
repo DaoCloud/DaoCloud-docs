@@ -1,9 +1,6 @@
 ---
-
 hide:
-
-* toc
-
+  - toc
 ---
 
 <div style="max-width: 900px; margin: 0 auto; text-align: center; line-height: 2.2;">
@@ -15,7 +12,7 @@ hide:
 </div>
 
 <p style="color: green; font-size: 28px; text-align: center;">
-  An Enterprise Platform That Unifies Compute, Models, and AI Applications
+  An Enterprise Platform That Unifies Compute, Models, and AI Apps
 </p>
 
 <div style="text-align: center; max-width: 900px; margin: 0 auto; line-height: 1.8;">
@@ -39,7 +36,7 @@ hide:
 
 </div>
 
-![d.run Architecture](../images/drun-archi.png)
+![d.run Architecture](./images/drun-archi.svg)
 
 <div style="max-width: 900px; margin: 0 auto; text-align: center; line-height: 1.8;">
 
@@ -71,7 +68,7 @@ hide:
     * [Install AI Lab Components](../baize/intro/install.md)
     * [Developer Console - Quick Start](../baize/developer/quick-start.md)
     * [Operations Management](../baize/oam/index.md)
-    * [Deploy NFS for Dataset Preloading](../baize/best-practice/deploy-nfs-in-worker.md)
+    * [Deploy NFS for Dataset Preloading](../baize/best-practice/index.md)
     * [Fine-Tune the ChatGLM3 Model with AI Lab](../baize/best-practice/finetunel-llm.md)
 
 * :octicons-ai-model-16:{ .lg .middle } **Large Model Service Platform: Enterprise AI Services**
@@ -83,7 +80,7 @@ hide:
     * [Deploy the Large Model Service Platform](../hydra/intro/deploy-ws.md)
     * [Model Marketplace](../hydra/index.md)
     * [Model Playground](../hydra/exp.md)
-    * [Model Deployment](../hydra/deploy/deploy.md)
+    * [Model Serving](../hydra/deploy/deploy.md)
     * [Operations Management](../hydra/oam/index.md)
 
 </div>
@@ -92,4 +89,6 @@ hide:
   d.run is the foundation of the AI Operating System era, enabling compute, models, and AI applications to run in a unified system—managing the AI world just as an operating system manages a computer.
 </p>
 
-[Learn More About d.run](https://d.run/product/drun){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

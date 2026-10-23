@@ -79,7 +79,7 @@ Use `&check;`for permissions granted and `&cross;`for permissions not granted.
 | | | Status - Stop | &#x2714; | &#x2714; | &#x2714; | &#x2718; |
 | | | Status - Restart | &check; | &check; | &check; | &cross; |
 | | | Delete | &check; | &check; | &check; | &cross; |
-| | 守护进程 | View list | &check; | &check; | &check; | &check; |
+| | DaemonSet | View list | &check; | &check; | &check; | &check; |
 | | | View/Manage details | &check; | &check; | &check; | &check; (Only view) |
 | | | Create by YAML | &check; | &check; | &check; | &cross; |
 | | | Create by image | &check; | &check; | &check; | &cross; |

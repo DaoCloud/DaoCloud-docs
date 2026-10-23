@@ -74,7 +74,7 @@ Perform the following steps on a node with internet access. Before proceeding, e
 1. Run the following command on the node with internet access to download the __elfutils-libelf-devel-0.187-4.el8.x86_64.rpm__ package:
 
     ```bash
-    wget https://rpmfind.net/linux/centos/8-stream/BaseOS/x86_64/os/Packages/elfutils-libelf-devel-0.187-4.el8.x86_64.rpm
+    wget https://dl.rockylinux.org/vault/rocky/8.7/BaseOS/x86_64/os/Packages/e/elfutils-libelf-devel-0.187-4.el8.x86_64.rpm
     ```
 
 2. Transfer the __elfutils-libelf-devel-0.187-4.el8.x86_64.rpm__ package from the current directory to the node mentioned in step 1:

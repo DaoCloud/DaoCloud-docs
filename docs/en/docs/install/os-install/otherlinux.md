@@ -1,6 +1,6 @@
-# Deploy DCE 5.0 Enterprise on Other Linux Distributions
+# Deploy DCE Enterprise on Other Linux Distributions
 
-This page introduces how to deploy DCE 5.0 on other Linux distributions.
+This page introduces how to deploy DCE on other Linux distributions.
 Installer v0.7.0 and higher versions support this deployment method.
 
 Other Linux is essentially because DCE does not provide the installation system offline package (OS package) for some Linux distributions, and customers need to make it themselves.
@@ -247,7 +247,7 @@ Other Linux is essentially because DCE does not provide the installation system 
     }
     ```
 
-5. Start the installation of DCE 5.0.
+5. Start the installation of DCE.
 
     ```bash
     ./dce5-installer cluster-create -m ./sample/manifest.yaml -c ./sample/clusterConfig.yaml
@@ -264,7 +264,7 @@ Other Linux is essentially because DCE does not provide the installation system 
 
 6. After the installation is complete, the command line will prompt that the installation is successful.
    congratulations! :smile: Now you can use the default account and password (admin/changeme) to explore
-   the new DCE 5.0 through the URL prompted on the screen!
+   the new DCE through the URL prompted on the screen!
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -272,5 +272,5 @@ Other Linux is essentially because DCE does not provide the installation system 
 
         Please record the prompted URL for your next visit.
 
-7. After successfully installing DCE 5.0 Enterprise, please contact us for authorization: email
+7. After successfully installing DCE Enterprise, please contact us for authorization: email
    [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

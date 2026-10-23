@@ -1,6 +1,6 @@
 # 服务接入 Sentinel 规范
 
-为了正常使用 DCE 5.0 微服务引擎提供的 [Sentinel 流量治理](../trad-ms/hosted/plugins/sentinel.md)和查看
+为了正常使用 DCE 微服务引擎提供的 [Sentinel 流量治理](../trad-ms/hosted/plugins/sentinel.md)和查看
 [Sentinel 数据监控](../trad-ms/hosted/monitor/components.md)，需要将应用接入 Sentinel 控制台，并且传递应用参数时需要满足一定规范。
 
 ## JAVA（无框架）
@@ -119,8 +119,8 @@ password: 98985ba0-da90-41f6-b6dc-96f2ec49d973
 
 !!! note
 
-    - 满足上述三项条件后，DCE 5.0 微服务引擎并不强制要求使用某种特定的接入方式。
-    - DCE 5.0 微服务引擎完全兼容相关开源框架使用，开发者可以根据需求灵活使用合适的接入方式。
+    - 满足上述三项条件后，DCE 微服务引擎并不强制要求使用某种特定的接入方式。
+    - DCE 微服务引擎完全兼容相关开源框架使用，开发者可以根据需求灵活使用合适的接入方式。
 
 <!--- 代码可参考：https://gitlab.daocloud.cn/ndx/sentinel/-/tree/main/sentinel-demo/daocloud-springcloud-->
 

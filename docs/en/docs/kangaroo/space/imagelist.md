@@ -9,7 +9,7 @@ The image list is displayed based on the workspace, showing all available public
 private images under the tenant. There are two main sources of images:
 
 1. The first part includes all public images in the integrated or hosted container registry
-   of the DCE 5.0 Container Registry, as well as private images assigned to the workspace separately through the binding of 
+   of the DCE Container Registry, as well as private images assigned to the workspace separately through the binding of 
    registry space and workspace.
 2. The second part includes all public or private images obtained by the workspace actively associating with 
    a specific container registry.
@@ -21,12 +21,12 @@ private images under the tenant. There are two main sources of images:
 - Rapid application deployment: Both the image list and Workbench take the workspace
   as the dimension, so when you select the same workspace to deploy the application under Workbench, 
   you can click the __Choose Image__ button to obtain all visible images under the workspace.
-- Fine-grained allocation: After integrating or creating a managed Harbor instance in the DCE 5.0 Container Registry, the administrator 
+- Fine-grained allocation: After integrating or creating a managed Harbor instance in the DCE Container Registry, the administrator 
   can assign different registry spaces to different workspaces by binding the registry space to the workspace.
 - Image scanning: Image list provides image scanning and analysis features. You can visually check the
   level and distribution of bugs. Log scanning is supported for tracking bugs.
 - Image pushing: The image can be pushed to the authorized registry space through the
-  commands provided by the DCE 5.0 Container Registry.
+  commands provided by the DCE Container Registry.
 - View details such as levels: Provides a display of detailed information such as
   image versions, level information, creators, and create time for images within the visible range.
 

@@ -13,6 +13,27 @@ so that you can learn its evolution path and feature changes.
     Features labeled as Beta may undergo changes; please use them with caution
     and provide prompt feedback if you encounter any issues.
 
+## 2026-08-31
+
+### v0.29.2
+
+- **Added** the data space now supports uploading local data via SCP and SFTP
+- **Added** support for binding one queue to multiple workspaces, making it convenient for users to share queue resources across workspaces
+- **Enhanced** the product interaction experience of shared data spaces
+- **Enhanced** migrated the kcover component into the addon
+- **Fixed** security vulnerabilities: CVE-2026-33186, CVE-2026-31789, CVE-2024-45337
+- **Fixed** an issue where the vLLM dashboard was displayed inaccurately
+- **Fixed** an issue where the status generated when insight-agent was integrated was inaccurate
+- **Fixed** an issue where incorrect data space labels caused abnormal data space visibility
+
+## 2026-06-30
+
+### v0.28.0
+
+- **Enhanced** the product interaction of workloads and queues for vGPU
+- **Fixed** an issue where the pre-check threshold for training jobs did not take effect
+- **Fixed** image synchronization issues
+
 ## 2026-05-31
 
 ### v0.27.0
@@ -37,8 +58,8 @@ so that you can learn its evolution path and feature changes.
 
 ### v0.25.1
 
-- **Refactored** the dataset component that depends on the data space. Manual upgrade is required. See [Upgrade dataset](upgrade-notes.md#_1)
-- **Refactored** the scheduling-aware component (kueue). Manual upgrade is required. See [Upgrade kueue](upgrade-notes.md#_2)
+- **Refactored** the dataset component that depends on the data space. Manual upgrade is required. See [Upgrade dataset](upgrade-notes.md#upgrade-dataset)
+- **Refactored** the scheduling-aware component (kueue). Manual upgrade is required. See [Upgrade kueue](upgrade-notes.md#upgrade-kueue)
 - **Fixed** an issue where SSH in Notebook could not work properly
 - **Fixed** an issue where images in the root directory of the integrated image registry could not be selected due to UI errors
 - **Fixed** vulnerability CVE-2026-26958

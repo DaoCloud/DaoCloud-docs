@@ -204,8 +204,8 @@ In the Calico underlay scenario, we can use Spiderpool to easily help us realize
 
 For more features, please refer to [Spiderpool Official Documentation](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/).
 
-[Learn about DCE 5.0 Cloud Native Networking](../../network/intro/index.md){ .md-button }
+[Learn about DCE Cloud Native Networking](../../network/intro/index.md){ .md-button }
 
-[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../../dce/license0.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

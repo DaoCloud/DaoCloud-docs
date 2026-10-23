@@ -50,7 +50,7 @@ Currently, the following reports are supported:
 
 ## Operating Steps
 
-1. Log in to DCE 5.0 as a user with the __admin__ role. Click __Global Management__ -> __Operations Management__ at the bottom of the left navigation bar.
+1. Log in to DCE as a user with the __admin__ role. Click __Global Management__ -> __Operations Management__ at the bottom of the left navigation bar.
 
     ![Report Management](../../images/gmagpiereport.png)
 

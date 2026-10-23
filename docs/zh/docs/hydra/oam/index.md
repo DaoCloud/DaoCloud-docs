@@ -77,3 +77,7 @@
         如需彻底移除，请前往 **模型部署管理** 页面使用 **删除** 功能。
 
 通过以上操作，平台管理员可以高效地完成模型的导入、配置与发布，确保平台模型广场内容的更新及时、配置准确，满足多样化的业务需求。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

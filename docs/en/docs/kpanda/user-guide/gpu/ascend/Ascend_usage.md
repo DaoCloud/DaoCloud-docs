@@ -5,7 +5,7 @@ Date: 2024-07-30
 
 # Use Ascend NPU
 
-This section explains how to use Ascend NPU on the DCE 5.0 platform.
+This section explains how to use Ascend NPU on the DCE platform.
 
 ## Prerequisites
 

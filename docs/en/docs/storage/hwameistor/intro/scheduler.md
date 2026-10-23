@@ -1,20 +1,29 @@
+---
+hide:
+  - toc
+---
+
 # Scheduler
 
-The scheduler is one of the important components of HwameiStor. It automatically schedules Pods to the correct nodes with HwameiStor storage volumes. With the scheduler, Pods no longer have to use the NodeAffinity or NodeSelector fields to select nodes. The scheduler can handle LVM and Disk storage volumes.
+The scheduler is one of the important components of HwameiStor.
+It automatically schedules Pods to the correct nodes with HwameiStor storage volumes.
+With the scheduler, Pods no longer have to use the NodeAffinity or NodeSelector fields to select nodes.
+The scheduler can handle LVM and Disk storage volumes.
 
-## Install
+- Install
 
-The scheduler should be deployed in HA mode in the cluster, which is a best practice in production environments.
+    The scheduler should be deployed in HA mode in the cluster, which is a best practice in production environments.
 
-## Install via hwameistor-operator
+- Install via hwameistor-operator
 
-Once hwameistor-operator is installed, it will automatically launch the HwameiStor-related components. Refer to [Installing HwameiStor via hwameistor-operator](../install/deploy-operator.md).
+    Once hwameistor-operator is installed, it will automatically launch the HwameiStor-related components.
+    Refer to [Installing HwameiStor via hwameistor-operator](../install/deploy-operator.md).
 
-## Deploy via YAML (for development)
+- Deploy via YAML (for development)
 
-```bash
-kubectl apply -f deploy/scheduler.yaml
-```
+    ```bash
+    kubectl apply -f deploy/scheduler.yaml
+    ```
 
 <details>
     <summary>Click here to view scheduler.yaml</summary>

@@ -20,14 +20,13 @@ components. The hwameistor-operator is responsible for the following:
     - Apiserver
     - Graph UI
 - Configuring node disks for different purposes and use cases
-- Automatically discovering the type of node disks and creating HwameiStor StorageClass accordingly
+- Automatically discovering the type of node disks and creating HwameiStor storage pools accordingly
 - Automatically creating proper StorageClasses based on the configuration and features of the HwameiStor system
 
 ## Prerequisites
 
 - Nodes intended for use with HwameiStor must have sufficient free HDD and SSD disks.
 - Ensure that all prerequisites in the [Preparation](prereq.md) documentation are met.
-- If you plan to use high-availability data volumes, complete the [DRBD installation](drbdinstall.md) process beforehand.
 - If deploying to a production environment, please review the [Resource Requirements for Production Environment](proresource.md) documentation beforehand.
 - If your Kubernetes distribution uses a different `kubelet` directory, confirm the `kubeletRootDir` parameter beforehand. For more details, refer to [Customize kubelet root directory](customized-kubelet.md).
 

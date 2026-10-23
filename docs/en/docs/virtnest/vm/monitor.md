@@ -18,6 +18,20 @@ Before viewing the virtual machine monitoring information, the following prerequ
 
 - The insight-agent component needs to be installed in the same cluster where the virtual machine is located.
 
+## Virtual Machine Overview
+
+Navigate to __Virtual Machines__ -> __Overview__ in the left navigation menu. After selecting a
+cluster and namespace, you can view the overall status of virtual machines, including:
+
+- **VM Status**: The number of running, processing, error, and powered-off virtual machines;
+- **Event Logs**: Events related to virtual machines in the selected cluster;
+- **VM Disk**: The number of system disks and data disks;
+- **VM Network**: The number of NIC IP pools and network modes;
+- **VM Template**: The number of built-in templates and custom templates;
+- **Metrics**: CPU, memory, network, and disk monitoring metrics for virtual machines.
+
+![Virtual Machine Overview](../images/vm-overview-en.png)
+
 ## Virtual Machine Monitoring
 
 Navigate to the VM Detail page and click __Overview__ to view the monitoring content of the virtual machine. 

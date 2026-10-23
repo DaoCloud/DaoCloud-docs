@@ -162,3 +162,7 @@ Calicoctl 命令行作为二进制或容器需要单独安装，支持在任何�
 这使得用户可以使用各自的编排器来管理 Calico 网络。
 当需要时，编排器插件会将 Calico 网络的反馈信息提供给编排器。
 例如，提供关于 Felix liveness 的信息，并在网络设置失败时将特定端点标记为失败。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

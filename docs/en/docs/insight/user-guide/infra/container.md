@@ -13,7 +13,7 @@ see the number of active alerts and the trend of resource consumption such as CP
 
 ## Prerequisites
 
-- The cluster has insight-agent installed, and all pods are in the __Running__ state.
+The cluster has insight-agent installed, and all pods are in the __Running__ state.
 
 - To install insight-agent, please refer to: [Installing insight-agent online](../../quickstart/install/install-agent.md) or [Offline upgrade of insight-agent](../../quickstart/install/offline-install.md).
 
@@ -27,7 +27,7 @@ Follow these steps to view service monitoring metrics:
 
 3. Switch between tabs at the top to view data for different types of workloads.
 
-    ![container insight](../../image/workload00.png){ width="1000"}
+    ![container insight](../../images/workload00.png){ width="1000"}
 
 4. Click the target workload name to view the details.
 
@@ -35,22 +35,30 @@ Follow these steps to view service monitoring metrics:
     2. Resource Consumption: Shows the CPU, memory, and network usage of the workload.
     3. Monitoring Metrics: Provides the trends of CPU, Memory, Network, and disk usage for the workload over the past hour.
 
-    ![container insight](../../image/workload.png){ width="1000"}
+    ![container insight](../../images/workload.png){ width="1000"}
 
 5. Switch to the __Pods__ tab to view the status of various pods for the workload, including their nodes, restart counts, and other information.
 
-    ![container insight](../../image/workload-1.png){ width="1000"}
+    ![container insight](../../images/workload-1.png){ width="1000"}
 
 6. Switch to the __JVM monitor__ tab to view the JVM metrics for each pods
 
-    <!-- add images later -->
+    ![JVM monitor](https://docs.daocloud.io/insight/images/workload-2.png)
 
     !!! note
 
         1. The JVM monitoring feature only supports the Java language.
         2. To enable the JVM monitoring feature, refer to [Getting Started with Monitoring Java Applications](../../quickstart/otel/java/index.md).
 
-### Metric Explanations
+7. If the selected pod is configured with GPU resources, you can see __GPU Monitoring__ on the pod details page, and from __GPU Monitoring__ you can monitor the GPU resources.
+
+    ![gpu-pod](https://docs.daocloud.io/insight/images/gpu-pod.png)
+
+    !!! note
+
+        This tab appears only after GPU resources are configured for the pod.
+
+## Metric Explanations
 
 | **Metric Name** | **Description** |
 | -- | -- |

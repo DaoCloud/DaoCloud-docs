@@ -3,15 +3,15 @@ MTPE: windsonsea
 date: 2024-05-11
 ---
 
-# Upgrade DCE 5.0 Standard to Platinum
+# Upgrade DCE Standard to Platinum
 
-DCE 5.0 supports multiple versions, and all versions except DCE Community are DCE 5.0 Enterprise. This page demonstrates how to upgrade from DCE 5.0 Standard to DCE 5.0 Platinum.
+DCE supports multiple versions, and all versions except DCE Community are DCE Enterprise. This page demonstrates how to upgrade from DCE Standard to DCE Platinum.
 
 ![Modules](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/dce-modules04.jpg)
 
 ## Prerequisites
 
-- You need to have a cluster environment of DCE 5.0, refer to [Offline Deployment of DCE 5.0 Enterprise](commercial/start-install.md)
+- You need to have a cluster environment of DCE, refer to [Offline Deployment of DCE Enterprise](commercial/start-install.md)
 - Ensure that your bootstrap machine is still alive, and the corresponding offline package of the current environment is still available. Otherwise, you need to redownload it.
 
 ## Steps

@@ -15,7 +15,7 @@ combination to achieve the desired delay sensitivity effect.
 
 ## Introduction to Failover Features
 
-After enabling failover in DCE 5.0 Multicloud Management, the following configuration options are provided:
+After enabling failover in DCE Multicloud Management, the following configuration options are provided:
 
 | Parameter | Description | Field Name | Default Value |
 | --------- | ----------- | --------------- | ------------- |

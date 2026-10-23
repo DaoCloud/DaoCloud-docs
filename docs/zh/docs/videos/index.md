@@ -5,25 +5,9 @@ hide:
 
 # 视频教程
 
-<span style="background-image: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
-    background-size: 200%;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: shine 5s infinite linear;">
-    我们为 DCE 5.0 的各个模块制作了精良的视频教程，供大家快速上手。
-</span>
+我们为各个模块制作了精良的视频教程，供大家快速上手。
 
-<style>
-    @keyframes shine {
-        0% {
-            background-position: -200%;
-        }
-        100% {
-            background-position: 200%;
-        }
-    }
-</style>
+## DaoCloud Enterprise (DCE)
 
 <div class="grid cards" markdown>
 
@@ -45,8 +29,21 @@ hide:
 
 </div>
 
+## d.run
+
+<div class="grid cards" markdown>
+
+- :technologist_tone1: [注册与登录](drun/login.md)
+- :octicons-cloud-16: [算力云](drun/zestu.md)
+- :simple-themodelsresource: [大模型服务平台](drun/models.md)
+- :octicons-apps-24: [AI 应用](drun/ai-app.md)
+- :fontawesome-solid-sack-dollar: [费用中心](drun/bills.md)
+- :octicons-gear-16: [个人中心](drun/login.md)
+
+</div>
+
 *[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

@@ -35,4 +35,4 @@ hide:
         - 镜像仓库基本支持社区中开源的所有镜像仓库类型
         - Chart 仓库仅支持 chartmuseum、harbor、jfrog 三种
 
-2. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
+2. 完成上述配置后，可以继续执行[部署 DCE 商业版](../start-install.md)。

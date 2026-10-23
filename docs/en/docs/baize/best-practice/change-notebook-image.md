@@ -27,7 +27,7 @@ This Notebook includes basic development tools. Taking `baize-notebook:v0.5.0` (
 
 !!! note
 
-    With each version iteration, DCE 5.0 will proactively maintain and update.
+    With each version iteration, DCE will proactively maintain and update.
 
 However, sometimes users may need custom images. This page explains how to update images and add them to the Notebook creation interface for selection.
 

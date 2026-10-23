@@ -62,6 +62,7 @@ hide:
 | AMD 64           | CentOS 7.4+                     | Recommended: CentOS 7.9  |
 |                  | Red Hat 8.4+                    | Recommended: Red Hat 8.4 |
 |                  | Red Hat 7.4+                    | Recommended: Red Hat 7.9 |
+|                  | Ubuntu 19+                      | Recommended: Ubuntu 20.04 |
 | ARM 64           | Kylin OS V10 SP2                | Kylin OS V10 SP2          |
 
 ## Secure Boot

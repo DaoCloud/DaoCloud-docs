@@ -2,6 +2,10 @@
 
 This page describes two installation methods for ClawOS: offline installation and online installation.
 
+!!! warning
+
+    ClawOS only supports WS mode and does not support CSP mode.
+
 ## Offline Installation
 
 This page explains how to download the ClawOS offline package and install it.
@@ -143,12 +147,14 @@ Extract the package and load the image files.
 
 #### Prerequisites
 
-1. Before installation, ensure that the target Kubernetes cluster has the following required services configured:
+1. Before installation, ensure that the target Kubernetes cluster has the following required helm Apps configured:
 
-    - hydra-apiserver
-    - kpanda-apiserver
-    - ghippo-apiserver
-    - kpanda-clusterpedia-apiserver
+    - kpanda (0.45.0+)
+    - ghippo (0.48.0+)
+    - insight (0.41.0+)
+    - hydra (WS version 0.16.0+)
+
+    Note: ClawOS v0.4.0 requires insight 0.42.2.
 
 2. Update the hydra AuthorizationPolicy to allow traffic from `agentclaw-system`.
 
@@ -216,11 +222,16 @@ After chart-syncer successfully synchronizes the images and Charts, refresh the 
     helm upgrade agentclaw agentclaw-release -n agentclaw-system --install --create-namespace
     ```
 
+!!! info
+
+    To expose the instance UIs and the MS Teams callback through a single Gateway API entry point instead of direct
+    NodePort access, see [Gateway API Instance Access Configuration](../reference/gateway-access.md).
+
 ## Online Installation
 
 !!! info
 
-    The prerequisites for online installation are the same as those for the offline installation.
+    The prerequisites for online installation are the same as those for the [offline installation](#offline-installation-steps).
 
 ### Install Through the Kpanda UI
 

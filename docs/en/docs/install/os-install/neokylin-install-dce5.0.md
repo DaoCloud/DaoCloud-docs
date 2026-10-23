@@ -1,6 +1,6 @@
-# Deploying DCE 5.0 Enterprise on NeoKylin Linux Advanced Server V7Update6
+# Deploying DCE Enterprise on NeoKylin Linux Advanced Server V7Update6
 
-This article will introduce how to deploy DCE 5.0 on the NeoKylin Linux Advanced Server V7Update6 operating system.
+This article will introduce how to deploy DCE on the NeoKylin Linux Advanced Server V7Update6 operating system.
 
 ## Prerequisites
 
@@ -98,7 +98,7 @@ This article will introduce how to deploy DCE 5.0 on the NeoKylin Linux Advanced
 
     1. Change to `none`.
 
-6. Start installing DCE 5.0.
+6. Start installing DCE.
 
     ```bash
     ./dce5-installer cluster-create -m ./sample/manifest.yaml -c ./sample/clusterConfig.yaml
@@ -113,7 +113,7 @@ This article will introduce how to deploy DCE 5.0 on the NeoKylin Linux Advanced
         - `-d` Enable debug mode
         - `--serial` Specify all installation tasks to be executed serially
 
-7. After the installation is completed, the command line will indicate a successful installation. Congratulations! :smile: You can now explore the brand new DCE 5.0 using the URL provided in the prompt with the default account and password (admin/changeme)!
+7. After the installation is completed, the command line will indicate a successful installation. Congratulations! :smile: You can now explore the brand new DCE using the URL provided in the prompt with the default account and password (admin/changeme)!
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -123,4 +123,4 @@ This article will introduce how to deploy DCE 5.0 on the NeoKylin Linux Advanced
 
     ![control-UI](../images/ui-neoky.png)
 
-8. After successfully installing DCE 5.0 Enterprise, please contact us for authorization: Email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.
+8. After successfully installing DCE Enterprise, please contact us for authorization: Email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

@@ -74,7 +74,7 @@
 | 要求项 | 是否必须 | 要求值 | 说明 |
 | ----- | ------- | ----- | --- |
 | 服务访问方式 | 否 | 服务之间访问，需要以服务名的方式进行访问，或者 ClusterIP，不可以直接使用 Pod IP 或者 NodePort。 | 由于服务网格的数据平面需要以服务名的方式策略匹配，所以应用不可以直接使用 Pod IP 或者 NodePort，否则可能造成策略失效或者无法访问。 |
-| 端口协议 | 否 | 正确配置 Service 的端口的协议，且在多集群模式下，确保服务在所有集群的配置保持一致（即同一个 ns 下的同名服务（Service），Service.spec 应当保持一致）。 | 可在 DCE 5.0 服务网格界面（ __服务管理__ -> __服务列表__ -> __地址信息__ ）中修改具体端口的协议，或者按照 [Istio 文档](https://istio.io/latest/docs/ops/configuration/traffic-management/protocol-selection/)进行配置。错误的配置可能引起访问问题或者策略问题。 |
+| 端口协议 | 否 | 正确配置 Service 的端口的协议，且在多集群模式下，确保服务在所有集群的配置保持一致（即同一个 ns 下的同名服务（Service），Service.spec 应当保持一致）。 | 可在 DCE 服务网格界面（ __服务管理__ -> __服务列表__ -> __地址信息__ ）中修改具体端口的协议，或者按照 [Istio 文档](https://istio.io/latest/docs/ops/configuration/traffic-management/protocol-selection/)进行配置。错误的配置可能引起访问问题或者策略问题。 |
 
 ### 对接链路追踪
 

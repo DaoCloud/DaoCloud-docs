@@ -8,6 +8,19 @@ date: 2025-06-23
 This page lists the release notes for Cloud Edge Collaboration, providing an overview
 of the evolution path and feature changes in each version.
 
+## 2025-12-31
+
+### v0.22.0
+
+- **Improved** the workspace permission design.
+
+## 2025-09-30
+
+### v0.21.0
+
+- **Added** support for batch updating and upgrading edge node components.
+- **Improved** the display of the edge application image preheating status.
+
 ## 2025-06-30
 
 ### v0.20.0

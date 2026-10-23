@@ -4,6 +4,13 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<div class="grid cards" markdown>
+
+- :one: [终端设备 Demo - AI 手势控制](#demo-ai)
+- :two: [创建边缘单元](#_2)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;
@@ -39,6 +46,6 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/edge-unit.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/edge-unit.jpg"></video>
 </div>
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

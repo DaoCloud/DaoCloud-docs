@@ -71,7 +71,5 @@ the space is not automatically released. You must run garbage collection to free
 that are no longer referenced by manifests from the file system. 
 For details, please refer to [Garbage Collection](https://goharbor.io/docs/edge/administration/garbage-collection/).
 
-To ensure efficient resource utilization, it is recommended to consider the following:
-
 - Disabled GC: If GC is not enabled, continuous storage of images in the repository requires consideration of the storage requirements for existing images as well as the incremental storage and growth rate.
 - Periodic GC: Running periodic GC helps alleviate storage pressure on the image repository. However, enabling periodic GC should be based on actual conditions and specific requirements. Consult the native Harbor documentation for instructions on enabling GC.

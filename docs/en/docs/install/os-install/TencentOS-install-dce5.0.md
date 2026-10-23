@@ -1,6 +1,6 @@
-# Deploy DCE 5.0 Enterprise on TencentOS Server 3.1
+# Deploy DCE Enterprise on TencentOS Server 3.1
 
-This document will guide you on how to deploy DCE 5.0 on TencentOS Server 3.1.
+This document will guide you on how to deploy DCE on TencentOS Server 3.1.
 Installer v0.9.0 and higher versions support this deployment method.
 
 ## Prerequisites
@@ -87,7 +87,7 @@ Installer v0.9.0 and higher versions support this deployment method.
             ansible -m setup -a 'filter=ansible_os_family' -e "ansible_user=${USER} ansible_password=${PASS}" -i ${ADDR}, all
             ```
 
-6. Start installing DCE 5.0.
+6. Start installing DCE.
 
     ```bash
     ./dce5-installer cluster-create -m ./sample/manifest.yaml -c ./sample/clusterConfig.yaml
@@ -102,7 +102,7 @@ Installer v0.9.0 and higher versions support this deployment method.
         - `-d`: Enable debug mode
         - `--serial`: Run all installation tasks sequentially
 
-7. After the installation is complete, the command line will prompt a successful installation. Congratulations! :smile: Now you can explore the brand new DCE 5.0 using the default account and password (admin/changeme) provided in the URL shown on the screen.
+7. After the installation is complete, the command line will prompt a successful installation. Congratulations! :smile: Now you can explore the brand new DCE using the default account and password (admin/changeme) provided in the URL shown on the screen.
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -110,4 +110,4 @@ Installer v0.9.0 and higher versions support this deployment method.
 
         Please make a note of the provided URL for future access.
 
-8. After successfully installing DCE 5.0 Enterprise, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.
+8. After successfully installing DCE Enterprise, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

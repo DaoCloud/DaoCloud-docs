@@ -20,7 +20,7 @@ The platform periodically releases new versions, and you can upgrade their edge 
 1. On the Edge Node List page, click the __Batch Management__ button to enter the __Batch Management__ page.
    Select the __Batch Upgrade__ tab and click the __Create Upgrade Task__ button in the upper right corner.
 
-    ![Batch Upgrade](../../images/batch-register01.png)
+    ![Batch Management](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/batch-register01.png)
 
     ![Batch Upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/batch-upgrade-01.png)
 

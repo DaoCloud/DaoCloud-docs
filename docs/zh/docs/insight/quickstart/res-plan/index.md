@@ -17,3 +17,7 @@ Insight 的存储组件主要包括 ElasticSearch 和 VictoriaMetrics. 其中，
 Insight Agent 的采集器中包含 Proemtheus，虽然 Prometheus 本身是一个独立的组件，但是在 Insight Agent 中，Prometheus 会被用于采集数据，因此需要对 Prometheus 的资源进行规划。
 
 * **Prometheus**：其资源用量与采集的指标量有关，可以参考 [Prometheus 资源规划](./prometheus-res.md) 进行调整。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

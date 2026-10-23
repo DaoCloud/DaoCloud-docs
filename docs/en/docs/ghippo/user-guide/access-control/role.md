@@ -3,7 +3,7 @@
 A role corresponds to a set of permissions that determine the actions that can be
 performed on resources. Granting a user a role means granting all the permissions included in that role.
 
-DCE 5.0 platform provides three levels of roles, which effectively solve your permission-related issues:
+DCE platform provides three levels of roles, which effectively solve your permission-related issues:
 
 - [Platform Roles](#platform-roles)
 - [Workspace Roles](#workspace-roles)
@@ -14,7 +14,7 @@ DCE 5.0 platform provides three levels of roles, which effectively solve your pe
 Platform roles are coarse-grained permissions that grant corresponding permissions to
 all relevant resources on the platform. By assigning platform roles, users can have
 permissions to create, delete, modify, and view all clusters and workspaces, but not
-specifically to a particular cluster or workspace. DCE 5.0 provides 5 pre-defined
+specifically to a particular cluster or workspace. DCE provides 5 pre-defined
 platform roles that users can directly use:
 
 - Admin
@@ -25,7 +25,7 @@ platform roles that users can directly use:
 
 ![5 pre-defined platform roles](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole01.png)
 
-Additionally, DCE 5.0 supports the creation of custom platform roles with customized content
+Additionally, DCE supports the creation of custom platform roles with customized content
 as needed. For example, creating a platform role that includes all functional permissions in
 the Workbench. Since the Workbench depends on workspaces, the platform will automatically
 select the "view" permission for workspaces by default. Please do not manually deselect it.
@@ -58,7 +58,7 @@ There are three ways to authorize platform roles:
 
 Workspace roles are fine-grained roles that grant users management permissions, view permissions,
 or Workbench-related permissions for a specific workspace. Users with these roles can only manage
-the assigned workspace and cannot access other workspaces. DCE 5.0 provides 3 pre-defined workspace
+the assigned workspace and cannot access other workspaces. DCE provides 3 pre-defined workspace
 roles that users can directly use:
 
 - Workspace Admin
@@ -67,7 +67,7 @@ roles that users can directly use:
 
 ![3 pre-defined workspace roles](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole06.png)
 
-Moreover, DCE 5.0 supports the creation of custom workspace roles with customized content as needed.
+Moreover, DCE supports the creation of custom workspace roles with customized content as needed.
 For example, creating a workspace role that includes all functional permissions in the Workbench.
 Since the Workbench depends on workspaces, the platform will automatically select the "view" permission
 for workspaces by default. Please do not manually deselect it. If User A is granted this role in
@@ -96,7 +96,7 @@ in enterprises. For example, User B is a leader of a first-level department and 
 permissions over the first-level department, all second-level departments under it, and projects within
 those departments. In this scenario, User B is granted admin permissions for the first-level folder,
 which also grants corresponding permissions for the second-level folders and workspaces below them.
-DCE 5.0 provides 3 pre-defined folder roles that users can directly use:
+DCE provides 3 pre-defined folder roles that users can directly use:
 
 - Folder Admin
 - Folder Editor
@@ -104,7 +104,7 @@ DCE 5.0 provides 3 pre-defined folder roles that users can directly use:
 
 ![3 pre-defined folder roles](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole09.png)
 
-Additionally, DCE 5.0 supports the creation of custom folder roles with customized content as needed.
+Additionally, DCE supports the creation of custom folder roles with customized content as needed.
 For example, creating a folder role that includes all functional permissions in the Workbench.
 If User A is granted this role in Folder 01, they will have all functional permissions related
 to the Workbench in all workspaces within Folder 01.

@@ -1,10 +1,15 @@
 # Event Query
 
-DCE 5.0 Insight supports event querying by cluster and namespace.
+DCE Insight supports event querying by cluster and namespace.
 
-![event](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/event01.png)
+## Steps
 
-## Event Status Distribution
+1. Click the first-level navigation bar to enter __Insight__.
+2. In the left navigation bar, select __Basic Settings > Events__.
+
+    ![event](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/event01.png)
+
+### Event Status Distribution
 
 By default, the events that occurred within the last 12 hours are displayed.
 You can select a different time range in the upper right corner to view longer or shorter periods.
@@ -17,11 +22,11 @@ On the other hand, if events are dispersed, you can effectively schedule other m
 
 By considering the event status distribution chart and the selected time range, you can better plan and manage your cluster operations and maintenance work, ensuring system stability and reliability.
 
-## Event Count and Statistics
+### Event Count and Statistics
 
 Through important event statistics, you can easily understand the number of image pull failures, health check failures, Pod execution failures, Pod scheduling failures, container OOM (Out-of-Memory) occurrences, volume mounting failures, and the total count of all events. These events are typically categorized as "Warning" and "Normal".
 
-## Event List
+### Event List
 
 The event list is presented chronologically based on time. You can sort the events by __Last Occurrend At__ and __Type__ .
 
@@ -29,11 +34,15 @@ By clicking on the ⚙️ icon on the right side, you can customize the displaye
 
 Additionally, you can click the refresh icon to update the current event list when needed.
 
-![list](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/event02.png)
+## Other Operations
 
-In the operation column on the right, clicking the icon allows you to view the history of a specific event.
+1. Click the icon in the Operation column of the event list to view the metadata of an event.
 
-![history](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/event03.png)
+    ![history](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/event02.png)
+
+2. Click the __Context__ tab at the top to view the historical event records of the resource corresponding to the event.
+
+    ![history](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/event03.png)
 
 ## Reference
 

@@ -6,6 +6,9 @@ _book/
 .idea/
 .vscode/
 public/
+qiniu-upload/
+.qiniu-manifest.json
+.qiniu-cache-state.json
 scripts/config.py
 __pycache__
 .VSCodeCounter

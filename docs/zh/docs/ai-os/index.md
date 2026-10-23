@@ -36,7 +36,7 @@ hide:
 
 </div>
 
-![d.run 架构](../images/drun-archi.png)
+![d.run 架构](./images/drun-archi.svg)
 
 <div style="max-width: 900px; margin: 0 auto; text-align: center; line-height: 1.8;">
 
@@ -68,7 +68,7 @@ hide:
     - [安装 AI Lab 组件](../baize/intro/install.md)
     - [开发控制台 - 快速入门](../baize/developer/quick-start.md)
     - [运维管理](../baize/oam/index.md)
-    - [部署 NFS 做数据集预热](../baize/best-practice/deploy-nfs-in-worker.md)
+    - [部署 NFS 做数据集预热](../baize/best-practice/index.md)
     - [使用 AI Lab 微调 ChatGLM3 模型](../baize/best-practice/finetunel-llm.md)
 
 - :octicons-ai-model-16:{ .lg .middle } __大模型服务平台：企业级服务__
@@ -89,6 +89,8 @@ hide:
   d.run 是 AI 操作系统时代的底座，让算力、模型与 AI 应用在一个系统中统一运行，就像操作系统管理计算机一样管理 AI 世界。
 </p>
 
-![bottom banner](../images/ai-from-here.jpeg)
+![bottom banner](./images/ai-from-here.jpeg)
 
-[进一步了解 d.run](https://d.run/product/drun){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

@@ -855,7 +855,49 @@ docker build -t {your-firefly-registry}/nvcr.m.daocloud.io/nvidia/driver:535.183
 docker push {your-firefly-registry}/nvcr.m.daocloud.io/nvidia/driver:535.183.06-01-rhel9.2
 ```
 
+## Configure the Offline yum Repository
+
+Before installing GPU Operator, configure an offline yum repository that contains the RHEL 9.2 kernel and required driver dependencies. Run the following steps on a control-plane node of the target GPU Operator cluster.
+
+1. Create a `redhat.repo` file. Replace the example address with the address of your offline yum repository.
+
+    ```bash
+    # The file name must be redhat.repo, otherwise it will not be recognized when installing gpu-operator
+    cat > redhat.repo << EOF
+    [extension-0]
+    baseurl = http://{Firefly node IP}:9000/redhat-base/redhat-base-repo/Packages
+    gpgcheck = 0
+    name = kubean extension 0
+
+    [extension-1]
+    baseurl = http://{Firefly node IP}:9000/redhat-base/redhat-base-repo/Packages
+    gpgcheck = 0
+    name = kubean extension 1
+    EOF
+    ```
+
+2. Create a ConfigMap in the `gpu-operator` namespace to store the yum repository configuration:
+
+    ```bash
+    kubectl create configmap local-repo-config \
+      -n gpu-operator \
+      --from-file=./redhat.repo
+    ```
+
+    Expected output:
+
+    ```console
+    configmap/local-repo-config created
+    ```
+
+3. Verify the ConfigMap contents to confirm that the offline yum repository configuration was saved:
+
+    ```bash
+    kubectl get configmap local-repo-config -n gpu-operator -oyaml
+    ```
+
 ## Install the Driver
 
 1. Install the `gpu-operator` addon.
 2. Set `driver.version=535.183.06-01`.
+3. Set `Driver.RepoConfig.ConfigMapName=local-repo-config` to use the offline yum repository configuration created above.

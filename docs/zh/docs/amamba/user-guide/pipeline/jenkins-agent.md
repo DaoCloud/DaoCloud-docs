@@ -1,7 +1,7 @@
 # 自定义 Jenkins Agent
 
 如果需要使用特定环境的 Jenkins Agent，如特殊版本的JDK，或者特定的工具，可以通过自定义 Jenkins Agent 来实现。
-本文档描述了如何在 DCE 5.0 中自定义 Jenkins Agent，其中工作台支持全局范围的自定义 Agent、流水线级别的自定义 Agent，可根据实际使用场景来决定选用哪种方式。
+本文档描述了如何在 DCE 中自定义 Jenkins Agent，其中工作台支持全局范围的自定义 Agent、流水线级别的自定义 Agent，可根据实际使用场景来决定选用哪种方式。
 
 关于如何构建自定义的镜像请参考文档[在 Jenkins 中使用自定义工具链](../../quickstart/jenkins-custom.md#_1)
 

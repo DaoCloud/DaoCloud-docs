@@ -6,7 +6,7 @@
 > 注意: 请先检查并确保 Metrics 的 URL 或者 Path 是否正确。比如 Spring Boot Actuator 默认的 Metrics 端口和路径为 :8080/actuator/prometheus
 
 ```yaml
-annatation: 
+annotations: 
   insight.opentelemetry.io/metric-scrape: "true" # 是否采集
   insight.opentelemetry.io/metric-path: "/actuator/prometheus"      # 采集指标的路径
   insight.opentelemetry.io/metric-port: "8080"   # 采集指标的端口

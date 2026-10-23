@@ -244,7 +244,7 @@ Allow pods in the `insight-system` namespace to tolerate the `node.daocloud.io=i
 1. Adjust the `apiserver` configuration file `/etc/kubernetes/manifests/kube-apiserver.yaml` to include
    `PodTolerationRestriction,PodNodeSelector`. See the following picture:
 
-    ![insight-ns-toleration](../../image/insight-ns-toleration.png)
+    ![insight-ns-toleration](../../images/insight-ns-toleration.png)
 
 2. Add an annotation to the `insight-system` namespace:
 

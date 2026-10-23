@@ -1,53 +1,58 @@
 # Page tree
 nav:
-  - DaoCloud 官网: https://www.daocloud.io/
-  - 产品文档:
-      - 文档导航: dce/index.md
+  - 首页: https://docs.daocloud.io/
+  - DaoCloud Enterprise:
+      - 概览: dce/index.md
       - 探索和安装:
-          - 产品介绍:
+          - DCE 介绍:
               - 申请社区免费体验: dce/license0.md
               - 功能和优势: dce/features.md
               - 适用场景: dce/scenario.md
               - 我们是 K8s 认证服务商: dce/kcsp.md
-              - DCE 5.0 Release Notes:
+              - DCE Release Notes:
+                  - v0.45.0-20260930 发布: dce/dce-rn/20260930.md
+                  - v0.44.0-20260831 发布: dce/dce-rn/20260831.md
+                  - v0.43.0-20260731 发布: dce/dce-rn/20260731.md
+                  - v0.42.0-20260630 发布: dce/dce-rn/20260630.md
                   - v0.41.0-20260531 发布: dce/dce-rn/20260531.md
                   - v0.40.0-20260430 发布: dce/dce-rn/20260430.md
-                  - v0.39.0-20260331 发布: dce/dce-rn/20260331.md
-                  - v0.38.0-20260131 发布: dce/dce-rn/20260131.md
-                  - v0.37.0-20251231 发布: dce/dce-rn/20251231.md
-                  - v0.36.0-20251130 发布: dce/dce-rn/20251130.md
-                  - v0.35.0-20251031 发布: dce/dce-rn/20251031.md
-                  - v0.34.0-20250930 发布: dce/dce-rn/20250930.md
-                  - v0.33.0-20250831 发布: dce/dce-rn/20250831.md
-                  - v0.32.0-20250731 发布: dce/dce-rn/20250731.md
-                  - v0.31.0-20250630 发布: dce/dce-rn/20250630.md
-                  - v0.30.0-20250530 发布: dce/dce-rn/20250530.md
-                  - v0.29.0-20250430 发布: dce/dce-rn/20250430.md
-                  - v0.28.0-20250331 发布: dce/dce-rn/20250331.md
-                  - v0.27.0-20250228 发布: dce/dce-rn/20250228.md
-                  - v0.26.0-20250131 发布: dce/dce-rn/20250131.md
-                  - v0.25.0-20241231 发布: dce/dce-rn/20241231.md
-                  - v0.24.0-20241130 发布: dce/dce-rn/20241130.md
-                  - v0.23.0-20241030 发布: dce/dce-rn/20241030.md
-                  - v0.22.0-20240930 发布: dce/dce-rn/20240930.md
-                  - v0.21.0-20240830 发布: dce/dce-rn/20240830.md
-                  - v0.20.0-20240730 发布: dce/dce-rn/20240730.md
-                  - v0.19.0-20240630 发布: dce/dce-rn/20240630.md
-                  - v0.18.0-20240530 发布: dce/dce-rn/20240530.md
-                  - v0.17.0-20240430 发布: dce/dce-rn/20240430.md
-                  - v0.16.0-20240330 发布: dce/dce-rn/20240330.md
-                  - v0.15.0-20240130 发布: dce/dce-rn/20240130.md
-                  - v0.14.0-20231231 发布: dce/dce-rn/20231231.md
-                  - v0.13.0-20231130 发布: dce/dce-rn/20231130.md
-                  - v0.12.0-20231031 发布: dce/dce-rn/20231031.md
-                  - v0.11.0-20230831 发布: dce/dce-rn/20230831.md
-                  - v0.10.0-20230731 发布: dce/dce-rn/20230731.md
-                  - v0.9.0-20230630 发布: dce/dce-rn/20230630.md
-                  - v0.8.0-20230531 发布: dce/dce-rn/20230531.md
-              - DCE 5.0 Roadmap: dce/roadmap.md
+                  - 更多历史发布:
+                      - v0.39.0-20260331 发布: dce/dce-rn/20260331.md
+                      - v0.38.0-20260131 发布: dce/dce-rn/20260131.md
+                      - v0.37.0-20251231 发布: dce/dce-rn/20251231.md
+                      - v0.36.0-20251130 发布: dce/dce-rn/20251130.md
+                      - v0.35.0-20251031 发布: dce/dce-rn/20251031.md
+                      - v0.34.0-20250930 发布: dce/dce-rn/20250930.md
+                      - v0.33.0-20250831 发布: dce/dce-rn/20250831.md
+                      - v0.32.0-20250731 发布: dce/dce-rn/20250731.md
+                      - v0.31.0-20250630 发布: dce/dce-rn/20250630.md
+                      - v0.30.0-20250530 发布: dce/dce-rn/20250530.md
+                      - v0.29.0-20250430 发布: dce/dce-rn/20250430.md
+                      - v0.28.0-20250331 发布: dce/dce-rn/20250331.md
+                      - v0.27.0-20250228 发布: dce/dce-rn/20250228.md
+                      - v0.26.0-20250131 发布: dce/dce-rn/20250131.md
+                      - v0.25.0-20241231 发布: dce/dce-rn/20241231.md
+                      - v0.24.0-20241130 发布: dce/dce-rn/20241130.md
+                      - v0.23.0-20241030 发布: dce/dce-rn/20241030.md
+                      - v0.22.0-20240930 发布: dce/dce-rn/20240930.md
+                      - v0.21.0-20240830 发布: dce/dce-rn/20240830.md
+                      - v0.20.0-20240730 发布: dce/dce-rn/20240730.md
+                      - v0.19.0-20240630 发布: dce/dce-rn/20240630.md
+                      - v0.18.0-20240530 发布: dce/dce-rn/20240530.md
+                      - v0.17.0-20240430 发布: dce/dce-rn/20240430.md
+                      - v0.16.0-20240330 发布: dce/dce-rn/20240330.md
+                      - v0.15.0-20240130 发布: dce/dce-rn/20240130.md
+                      - v0.14.0-20231231 发布: dce/dce-rn/20231231.md
+                      - v0.13.0-20231130 发布: dce/dce-rn/20231130.md
+                      - v0.12.0-20231031 发布: dce/dce-rn/20231031.md
+                      - v0.11.0-20230831 发布: dce/dce-rn/20230831.md
+                      - v0.10.0-20230731 发布: dce/dce-rn/20230731.md
+                      - v0.9.0-20230630 发布: dce/dce-rn/20230630.md
+                      - v0.8.0-20230531 发布: dce/dce-rn/20230531.md
+              - DCE Roadmap: dce/roadmap.md
               - DaoCloud 产品支持政策: dce/support.md
               - 云原生词汇: dce/terms.md
-          - 安装教程:
+          - 安装 DCE:
               - 安装简介: install/index.md
               - 安装依赖项: install/install-tools.md
               - 安装社区版:
@@ -85,7 +90,7 @@ nav:
                   - 轻量化部署裁剪方案验证: install/light-install/light-install-solution.md
                   - 安装器实现轻量化部署: install/light-install/install-light.md
               - 升级:
-                  - 升级 DCE 5.0 组件: install/upgrade.md
+                  - 升级 DCE 组件: install/upgrade.md
                   - 标准版升级白金版: install/evolve.md
                   - 升级注意事项: install/upgrade-notes.md
               - 卸载和导入:
@@ -96,7 +101,7 @@ nav:
                   - 集群部署模式使用场景: install/commercial/scenarios.md
                   - Global 集群实践:
                       - etcd 采用host模式与控制面分离: install/best-practices/etcd-host-deploy.md
-                      - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
+                      - DCE 一体机部署: install/best-practices/all-in-one-machine.md
                   - 火种节点实践:
                       - 火种节点高可用方案: install/best-practices/thinder-ha.md
                       - 火种节点备份与还原: install/best-practices/thinder-restore.md
@@ -111,7 +116,7 @@ nav:
                   - 不停机迁移集群操作系统: install/best-practices/replace-os.md
               - 安装器 Release Notes: install/release-notes.md
           - 最佳实践: dce/bphome.md
-          - 常见问题: dce/faq.md
+          - DCE 常见问题: dce/faq.md
       - 工作台:
           - 应用工作台:
               - 介绍:
@@ -353,6 +358,7 @@ nav:
                   - 权限体系介绍: kpanda/user-guide/permissions/permission-brief.md
                   - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
                   - 增加容器管理内置权限点: kpanda/user-guide/permissions/custom-kpanda-role.md
+                  - 减少容器管理内置权限点: kpanda/user-guide/permissions/reduce-kpanda-role.md
               - GPU 管理:
                   - GPU 管理概述: kpanda/user-guide/gpu/index.md
                   - GPU 支持矩阵: kpanda/user-guide/gpu/gpu_matrix.md
@@ -434,6 +440,7 @@ nav:
                   - 产品架构: kairship/intro/architecture.md
                   - 离线升级: kairship/intro/offline-upgrade.md
                   - Release Notes: kairship/intro/release-notes.md
+                  - 常见问题: kairship/intro/faq.md
               - 工作空间: kairship/workspace.md
               - 多云实例:
                   - 实例详情: kairship/instance/index.md
@@ -465,7 +472,6 @@ nav:
               - 故障转移:
                   - 故障转移功能介绍: kairship/failover/failover.md
                   - 优化故障转移延迟灵敏度: kairship/failover/optimization-failover.md
-              - 常见问题: kairship/intro/faq.md
               - 最佳实践:
                   - 一键转换DCE 4.0到5.0应用: kairship/best-practice/one-click-conversion.md
                   - 跨集群弹性伸缩: kairship/best-practice/fhpa.md
@@ -515,7 +521,7 @@ nav:
                   - 网络组件: network/modules/modules.md
                   - 离线升级云原生网络: network/intro/offline.md
                   - Release Notes: network/intro/release-notes.md
-                  - 网络组件已知问题: network/intro/issues.md
+                  - 网络组件 FAQ: network/intro/issues.md
               - 网络规划:
                   - 网卡规划: network/plans/ethplan.md
                   - 网络规划: network/plans/netplan.md
@@ -579,7 +585,7 @@ nav:
               - 集成 EgressGateway:
                   - 介绍: network/modules/egressgateway/index.md
                   - Release Notes: network/modules/egressgateway/release-notes.md
-                  - 在 DCE 5.0 上安装运行:
+                  - 在 DCE 上安装运行:
                       - 安装: network/modules/egressgateway/install.md
                       - 创建网关实例: network/modules/egressgateway/create_eg.md
                       - 创建网关策略: network/modules/egressgateway/create-egpolicy.md
@@ -635,6 +641,7 @@ nav:
                   - 上传限制: network/modules/ingress-nginx/upload.md
                   - 镜像流量: network/modules/ingress-nginx/mirror.md
                   - 重定向: network/modules/ingress-nginx/redirect.md
+                  - 迁移到 Higress 或 kgateway: network/modules/ingress-nginx/migrate-to-higress-or-kgateway.md
                   - 排障指南: network/modules/ingress-nginx/troubleshooting.md
               - 集成 Higress:
                   - 介绍: network/modules/higress/index.md
@@ -670,10 +677,10 @@ nav:
                   - 阿里云运行 Cilium: network/modules/aliyun-terway/aliyun-cilium.md
                   - 常见问题: network/modules/aliyun-terway/Q_A.md
               - 集成 Unifabric:
-                  - Unifabric 概述: network/modules/unifabric/index.md
-                  - Release Notes: network/modules/unifabric/release-notes.md
-                  - 安装 Unifabric: network/modules/unifabric/install.md
-                  - RDMA 延时监控使用指南: network/modules/unifabric/features/RdmaLatencyDetection.md
+                  - 介绍: network/modules/unifabric/index.md
+                  - 安装:
+                      - 全局集群安装 Spiderfabric: network/modules/unifabric/install-spiderfabric.md
+                      - 工作集群安装 Unifabric: network/modules/unifabric/install-unifabric.md
           - 云原生存储:
               - 介绍:
                   - 什么是云原生存储: storage/index.md
@@ -898,7 +905,7 @@ nav:
                   - 日志采集排障指南: insight/best-practice/debug-log.md
                   - 链路采集排障指南: insight/best-practice/debug-trace.md
                   - 使用 Insight 定位异常: insight/best-practice/find_root_cause.md
-                  - Elasticsearch 数据塞满时如何操作: insight/faq/expand-once-es-full.md
+                  - ES 数据塞满时如何操作: insight/faq/expand-once-es-full.md
                   - 容器日志黑名单: insight/faq/ignore-pod-log-collect.md
                   - Prometheus 集群标签配置: insight/faq/alertinfo-trans-clusterid-to-name.md
                   - Insight 告警通知开启 v1alpha2: insight/faq/alertnotify-enable-v2api.md
@@ -1017,7 +1024,7 @@ nav:
                       - UI 支持的特性: mspider/intro/comp-archi-ui/features-on-ui.md
                   - Istio与K8s版本对应情况: mspider/intro/istio-k8s.md
                   - 网格漏洞修复标准与计划: mspider/intro/sla.md
-                  - 常见问题: mspider/intro/faq.md
+                  - 常见问题 FAQ: mspider/intro/faq.md
                   - Release Notes: mspider/intro/release-notes.md
               - 安装、配置和升级:
                   - 安装部署网格: mspider/install/install.md
@@ -1290,137 +1297,6 @@ nav:
                       - 更新 RocketMQ 实例: middleware/rocketmq/quick-start/update-rocketmq.md
                   - 最佳实践:
                       - RocketMQ 跨集群高可用: middleware/rocketmq/best-pratice/singleclustercrosszone.md
-      - 云原生 AI:
-          - 索引: ai-os/index.md
-          - ClawOS 智能体:
-              - 介绍:
-                  - 什么是 ClawOS: clawos/intro/index.md
-                  - 安装: clawos/intro/install.md
-                  - 快速入门: clawos/intro/quickstart.md
-                  - Release Notes: clawos/intro/release-notes.md
-                  - 兼容性: clawos/intro/compatibility.md
-              - 工作空间视角:
-                  - 概览: clawos/workspace/overview.md
-                  - ClawHub:
-                      - Skill 市场: clawos/workspace/skill.md
-                      - Skill 管理: clawos/workspace/skill-manage.md
-                  - OpenClaw 实例: clawos/workspace/openclaw.md
-                  - 飞书集成: clawos/workspace/feishu.md
-              - 管理员视角:
-                  - 概览: clawos/admin/overview-admin.md
-                  - Skill 管理: clawos/admin/skillmanage-admin.md
-                  - 网络策略管理: clawos/admin/network-manage.md
-              - 常见问题: clawos/faq.md
-          - AI Lab:
-              - 介绍:
-                  - 什么是 AI Lab: baize/intro/index.md
-                  - 安装 AI Lab 组件: baize/intro/install.md
-                  - 首次使用: baize/intro/first.md
-                  - Release Notes: baize/intro/release-notes.md
-                  - 升级注意事项: baize/intro/upgrade-notes.md
-              - 开发控制台:
-                  - 介绍: baize/developer/index.md
-                  - 快速入门: baize/developer/quick-start.md
-                  - 使用Notebook开发环境:
-                      - 创建 Notebook: baize/developer/notebooks/create.md
-                      - 启动和暂停 Notebook: baize/developer/notebooks/start-pause.md
-                      - Notebook 工作负载: baize/developer/notebooks/view.md
-                      - 删除 Notebook: baize/developer/notebooks/delete.md
-                      - SSH 访问 Notebook: baize/developer/notebooks/notebook-with-ssh.md
-                      - Notebook 中使用环境: baize/developer/notebooks/notebook-with-envs.md
-                      - 定制Notebook环境镜像: baize/developer/notebooks/customize-notebook-image.md
-                      - baizectl 命令行工具: baize/developer/notebooks/baizectl.md
-                      - baizess 换源工具: baize/developer/notebooks/baizess.md
-                      - Notebook闲置超时关机: baize/developer/notebooks/notebook-auto-close.md
-                      - Notebook Docker 功能: baize/developer/notebooks/notebook-with-dind.md
-                  - 任务管理:
-                      - 创建任务: baize/developer/jobs/create.md
-                      - 创建 Pytorch 任务: baize/developer/jobs/pytorch.md
-                      - 创建 Tensorflow 任务: baize/developer/jobs/tensorflow.md
-                      - 创建 MPI 任务: baize/developer/jobs/mpi.md
-                      - 创建 MXNet 任务: baize/developer/jobs/mxnet.md
-                      - 创建 PaddlePaddle 任务: baize/developer/jobs/paddle.md
-                      - 删除任务: baize/developer/jobs/delete.md
-                      - 查看任务负载: baize/developer/jobs/view.md
-                      - 任务分析: baize/developer/jobs/tensorboard.md
-                  - 数据管理:
-                      - 数据集列表: baize/developer/dataset/create-use-delete.md
-                      - 环境依赖: baize/developer/dataset/environments.md
-                      - 数据标注: baize/developer/dataset/labeling.md
-                  - 模型服务:
-                      - 模型列表: baize/developer/inference/model-create.md
-                      - 模型支持情况: baize/developer/inference/models.md
-                      - 推理服务:
-                          - 创建 Triton 推理服务: baize/developer/inference/triton-inference.md
-                          - 创建 vLLM 推理服务: baize/developer/inference/vllm-inference.md
-              - 运维管理:
-                  - 介绍: baize/oam/index.md
-                  - 资源池管理:
-                      - 创建资源池: baize/oam/resource/create.md
-                      - 管理资源池: baize/oam/resource/manage.md
-                  - 队列管理:
-                      - 创建队列: baize/oam/queue/create.md
-                      - 删除队列: baize/oam/queue/delete.md
-                  - GPU 信息: baize/oam/gpu.md
-              - 最佳实践:
-                  - 部署 NFS 做数据集预热: baize/best-practice/deploy-nfs-in-worker.md
-                  - 更新 Notebook 内置镜像: baize/best-practice/change-notebook-image.md
-                  - Checkpoint机制及用法: baize/best-practice/checkpoint.md
-                  - 拓扑感知调度训练任务: baize/best-practice/train-with-tas.md
-                  - 使用AI Lab微调ChatGLM3: baize/best-practice/finetunel-llm.md
-                  - 提交DeepSpeed训练任务: baize/best-practice/train-with-deepspeed.md
-                  - 训练任务增加调度器选项: baize/best-practice/add-scheduler.md
-                  - 部署 Label Studio: baize/best-practice/label-studio.md
-              - 故障排查:
-                  - 故障排查索引: baize/troubleshoot/index.md
-                  - 集群下拉列表中找不到集群: baize/troubleshoot/cluster-not-found.md
-                  - Notebook不受队列配额控制: baize/troubleshoot/notebook-not-controlled-by-quotas.md
-                  - 队列初始化失败: baize/troubleshoot/local-queue-initialization-failed.md
-          - 大模型服务平台:
-              - 介绍:
-                  - 什么是大模型服务平台: hydra/intro/index.md
-                  - Release Notes: hydra/intro/release-notes.md
-                  - 部署大模型服务平台: hydra/intro/deploy-ws.md
-                  - 离线升级大模型服务平台: hydra/intro/offline-upgrade.md
-                  - 升级注意事项: hydra/intro/upgrade-notes.md
-              - 普通用户视图:
-                  - 模型广场: hydra/index.md
-                  - 模型体验: hydra/exp.md
-                  - 模型管理:
-                      - 创建模型: hydra/model-management/index.md
-                      - 管理模型: hydra/model-management/model-manage.md
-                  - 模型服务:
-                      - 模型服务概览: hydra/deploy/index.md
-                      - 部署新模型: hydra/deploy/deploy.md
-                      - 模型服务详情: hydra/deploy/deploy-detail.md
-                      - 管理模型服务: hydra/deploy/inference-manage.md
-                  - 文件存储:
-                      - 创建文件存储: hydra/file-storage/storage.md
-                      - 管理文件: hydra/file-storage/file-manage.md
-                      - 远端文件预热: hydra/file-storage/file-preheat.md
-                      - 文件存储扩容: hydra/file-storage/file-scale.md
-                  - API Key 管理: hydra/apikey.md
-              - 运维管理:
-                  - 模型广场管理: hydra/oam/index.md
-                  - MaaS模型管理: hydra/oam/maas.md
-                  - 模型部署管理: hydra/oam/mdm.md
-              - 用户实践场景:
-                  - 示例场景介绍: hydra/user-guides/index.md
-                  - 在 VSCode 和 Cline 中使用: hydra/user-guides/cline-in-vscode.md
-                  - 在 Cherry Studio 中使用: hydra/user-guides/cherry-studio.md
-                  - 在 Bob Translate 中使用: hydra/user-guides/bob-translate.md
-                  - 在 LobeChat 中使用: hydra/user-guides/lobe-chat.md
-                  - 自定义大模型推理运行时: hydra/user-guides/custom-runtime.md
-      - 推理加速:
-          - InferX 推理引擎:
-              - 介绍:
-                  - 什么是 InferX: inferx/index.md
-                  - FAQ: inferx/faqs.md
-              - 最佳实践:
-                  - 离线环境安装 InferX: inferx/guides/offline.md
-                  - 启用集群的 Istio GAIE 特性: inferx/guides/enable-istio-gaie-with-mspider.md
-                  - 模型权重下载与配置: inferx/guides/model-weights-setup.md
-                  - 模型服务对外暴露 (Hydra/Knoway): inferx/guides/export-by-hydra.md
       - 边缘计算:
           - 云边协同:
               - 介绍:
@@ -1431,7 +1307,7 @@ nav:
                   - 基本概念: kant/intro/concepts.md
                   - Release Notes: kant/intro/release-notes.md
                   - 离线升级云边协同: kant/intro/offline-upgrade.md
-                  - 常见问题: kant/intro/faq.md
+                  - 常见问题 FAQ: kant/intro/faq.md
               - 边缘单元:
                   - 创建专有边缘单元: kant/user-guide/edge-unit/create-internal-unit.md
                   - 创建外接边缘单元: kant/user-guide/edge-unit/create-external-unit.md
@@ -1470,16 +1346,6 @@ nav:
                   - Modbus 设备接入实践: kant/best-practice/modbus-device-demo.md
                   - 智能设备控制: kant/best-practice/custom-device-control.md
                   - 开发设备驱动应用mapper: kant/best-practice/develop-device-mapper.md
-      - 设备:
-          - 设备管理:
-              - 介绍:
-                  - 什么是设备管理: topohub/intro/index.md
-                  - 安装设备管理组件: topohub/intro/install.md
-                  - 设备管理 Release Notes: topohub/intro/release-notes.md
-              - 设备:
-                  - 接入设备: topohub/device/index.md
-                  - 批量接入设备: topohub/device/batch-access.md
-                  - 管理设备: topohub/device/manage-device.md
       - 管理:
           - 全局管理:
               - 介绍:
@@ -1487,10 +1353,12 @@ nav:
                   - 功能特性: ghippo/intro/features.md
                   - 常见术语: ghippo/intro/glossary.md
                   - Release Notes: ghippo/intro/release-notes.md
+                  - 常见问题 FAQ: ghippo/intro/faq.md
               - 安装、登录和升级:
                   - 离线升级全局管理: ghippo/install/offline-install.md
                   - 自定义反向代理服务器地址: ghippo/install/reverse-proxy.md
                   - 开启Folder/WS的隔离模式: ghippo/install/user-isolation.md
+                  - 安装前使用 OEM 镜像定制全局管理: ghippo/install/oem.md
                   - 国密网关: ghippo/install/gm-gateway.md
                   - 登录: ghippo/install/login.md
               - 用户与访问控制:
@@ -1540,6 +1408,7 @@ nav:
                   - ghippo/user-guide/report-billing/index.md
                   - 报表管理: ghippo/user-guide/report-billing/report.md
                   - 离线升级运营管理: ghippo/user-guide/report-billing/gmagpie-offline-install.md
+                  - 配置统计时区: ghippo/user-guide/report-billing/statistic-timezone.md
                   - 计费计量: ghippo/user-guide/report-billing/billing.md
                   - GPU 指标自定义配置: ghippo/user-guide/report-billing/gpu-metrics-config.md
                   - 历史数据重算: ghippo/user-guide/report-billing/report-recalculation.md
@@ -1575,49 +1444,31 @@ nav:
                       - 接入导航栏: ghippo/best-practice/gproduct/nav.md
                       - 接入路由和登录认证: ghippo/best-practice/gproduct/route-auth.md
                   - 集成与被集成(OEM IN/OUT):
-                      - OEM IN(客户系统集成到 DCE 5.0): ghippo/best-practice/oem/oem-in.md
-                      - OEM OUT(DCE 5.0 集成到客户系统): ghippo/best-practice/oem/oem-out.md
-                      - 定制 DCE 5.0 对接 IdP: ghippo/best-practice/oem/custom-idp.md
+                      - OEM IN(客户系统集成到 DCE): ghippo/best-practice/oem/oem-in.md
+                      - OEM OUT(DCE 集成到客户系统): ghippo/best-practice/oem/oem-out.md
+                      - 定制 DCE 对接 IdP: ghippo/best-practice/oem/custom-idp.md
                       - Keycloak 自定义 IdP: ghippo/best-practice/oem/keycloak-idp.md
                   - 定制导航栏:
                       - 定制导航栏: ghippo/best-practice/menu/navigator.md
                       - 基于权限显示/隐藏导航栏菜单: ghippo/best-practice/menu/menu-display-or-hiding.md
                   - 系统消息: ghippo/best-practice/system-message.md
-              - 故障排查:
-                  - ingressgateway 无法启动: ghippo/troubleshooting/ghippo01.md
-                  - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
-                  - keycloak 无法启动: ghippo/troubleshooting/ghippo03.md
-                  - 单独升级全局管理时失败: ghippo/troubleshooting/ghippo04.md
-  - 视频教程:
-      - 索引: videos/index.md
-      - 入门:
-          - 安装教程: videos/install.md
-          - 场景化视频: videos/use-cases.md
-      - 工作台:
-          - 应用工作台: videos/amamba.md
-      - 容器:
-          - 容器管理: videos/kpanda.md
-          - 多云编排: videos/kairship.md
-          - 镜像仓库: videos/kangaroo.md
-          - 容器网络: videos/network.md
-          - 虚拟机: videos/virtnest.md
-      - 微服务:
-          - 可观测性: videos/insight.md
-          - 微服务引擎: videos/skoala.md
-          - 服务网格: videos/mspider.md
-      - 数据服务:
-          - 中间件: videos/mcamel.md
-      - 云原生 AI:
-          - AI Lab: videos/baize.md
-      - 边缘计算:
-          - 云边协同: videos/kant.md
-      - 管理:
-          - 全局管理: videos/ghippo.md
+          - 设备管理:
+              - 介绍:
+                  - 什么是设备管理: topohub/intro/index.md
+                  - 安装设备管理组件: topohub/intro/install.md
+                  - 设备管理 Release Notes: topohub/intro/release-notes.md
+              - 设备:
+                  - 接入设备: topohub/device/index.md
+                  - 批量接入设备: topohub/device/batch-access.md
+                  - 管理设备: topohub/device/manage-device.md
   - 下载中心:
-      - DaoCloud Enterprise 5.0:
-          - 导览页: download/index.md
-          - 下载 DCE 5.0 社区版: download/free/dce5-installer-history.md
-          - 下载 DCE 5.0 商业版: download/business/dce5-installer-history.md
+      - DaoCloud 下载站:
+          - download/index.md
+          - 下载 d.run Token 工厂效能平台: download/tf/index.md
+          - 下载 d.run AI 操作系统: download/drun/index.md
+          - 下载 DaoCloud Enterprise:
+              - 下载 DCE 社区版: download/free/dce5-installer-history.md
+              - 下载 DCE 商业版: download/business/dce5-installer-history.md
           - 下载 Addon 离线包: download/addon/history.md
           - 下载子模块:
               - 应用工作台: download/modules/amamba.md
@@ -1649,30 +1500,74 @@ nav:
               - 云原生 AI:
                   - 大模型服务平台: download/modules/hydra.md
                   - AI Lab: download/modules/baize.md
+                  - InferX 推理套件: download/modules/inferx.md
+                  - ClawOS: download/modules/agentclaw.md
               - 云边协同: download/modules/kant.md
               - 全局&运营管理:
                   - 全局管理: download/modules/ghippo.md
                   - 运营管理: download/modules/gmagpie.md
-              - 推理:
-                  - 推理加速: download/modules/inferx.md
+                  - 设备管理: download/modules/topohub.md
+  - 视频教程:
+      - 索引: videos/index.md
+      - DaoCloud Enterprise:
+          - 入门:
+              - 安装教程: videos/install.md
+              - 场景化视频: videos/use-cases.md
+          - 工作台:
+              - 应用工作台: videos/amamba.md
+          - 容器:
+              - 容器管理: videos/kpanda.md
+              - 多云编排: videos/kairship.md
+              - 镜像仓库: videos/kangaroo.md
+              - 容器网络: videos/network.md
+              - 虚拟机: videos/virtnest.md
+          - 微服务:
+              - 可观测性: videos/insight.md
+              - 微服务引擎: videos/skoala.md
+              - 服务网格: videos/mspider.md
+          - 数据服务:
+              - 中间件: videos/mcamel.md
+          - 云原生 AI:
+              - AI Lab: videos/baize.md
+          - 边缘计算:
+              - 云边协同: videos/kant.md
+          - 管理:
+              - 全局管理: videos/ghippo.md
+      - d.run:
+          - 注册与登录: videos/drun/login.md
+          - 算力云: videos/drun/zestu.md
+          - 大模型服务平台: videos/drun/models.md
+          - AI 应用: videos/drun/ai-app.md
+          - 费用中心: videos/drun/bills.md
   - 博客:
       - 博文索引: blogs/index.md
       - 2026:
+          - Dynamo v1.5.0 发布: blogs/2026/dynamo-v1.5.0.md
+          - cgroup v1 已死: blogs/2026/kubernetes-node-swap-ai.md
+          - 节点交换内存提升 Pod 密度: blogs/2026/k8s-node-swap.md
+          - KubeCon China 2026指南: blogs/2026/kubecon-cn.md
+          - K8s v1.37 DRA 新变化: blogs/2026/k8s-dra.md
+          - vLLM-SR 七大工作组: blogs/2026/vllm-sr.md
+          - Agent 技能揭秘: blogs/2026/skills.md
+          - llm-d 中的 Token 感知路由: blogs/2026/token-aware.md
+          - 异构 GPU 上的国产算力优化实践: blogs/2026/optimize-gpu.md
+          - K8s v1.37 抢先看: blogs/2026/k8s-v137-seak.md
+          - GB300 NVL72 编排实践: blogs/2026/gb300.md
           - 评估AI智能体的生产力: blogs/2026/ai-agent.md
           - 别让 Token 变成新 KPI: blogs/2026/token-kpi.md
           - AI Infra 的下一场硬仗: blogs/2026/use-gpu.md
           - K8s 修正几个历史 CVE: blogs/2026/k8s-cve.md
           - vLLM Elastic EP: blogs/2026/elastic-ep.md
           - 服务端分片 List 与 Watch: blogs/2026/server-side-sharded-list-and-watch.md
-          - 2026 下半年 AI 基础设施五大趋势: blogs/2026/ai-infra-trends.md
+          - 2026下半年 AI Infra五大趋势: blogs/2026/ai-infra-trends.md
           - Kubernetes v1.36 抢先一览: blogs/2026/k8s-136.md
           - DaoCloud 在 KubeCon 2026: blogs/2026/kubecon-eu.md
-          - DaoCloud 参与制定大模型推理加速等国家标准: blogs/2026/caict.md
+          - DaoCloud参与制定大模型推理加速等国家标准: blogs/2026/caict.md
           - OCI 正在悄悄「占领一切」: blogs/2026/oci.md
           - 拓扑感知调度让 AI 调度更智能: blogs/2026/topology-aware-scheduling.md
           - Kubernetes x JobSet 加速 AI: blogs/2026/jobset-ai-restart.md
       - 2025:
-          - DCE率先认证 AI Conformance: blogs/2025/ai-conformance.md
+          - DCE率先认证AI Conformance: blogs/2025/ai-conformance.md
           - Paco 连任 K8s 指导委员会: blogs/2025/paco-ksc.md
           - 聚焦 Kubernetes 指导委员会: blogs/2025/k8s-steering-spotlight.md
           - 开源文档的构建/运营/贡献: blogs/2025/open-source-doc.md
@@ -1727,7 +1622,7 @@ nav:
           - KWOK 介绍: blogs/2023/230301-kwok.md
           - 社区版涉及的开源项目: blogs/2023/230214-open-projects.md
           - DaoCloud 与 K8s: blogs/2023/230214-daocloud_k8s.md
-          - DCE 5.0 攻坚语录集: blogs/2023/230201-peter.md
+          - DCE 攻坚语录集: blogs/2023/230201-peter.md
           - 2023 年云原生预测: blogs/2023/230201-forecast.md
           - 让闲置算力跑起来: blogs/2023/230110-res-usage.md
       - 2022:
@@ -1756,45 +1651,12 @@ nav:
       - kube-node-tuning: community/kube-node-tuning.md
       - Kubean: community/kubean.md
       - KWOK: community/kwok.md
+      - MatrixHub: community/matrixhub.md
       - MirageDebug: community/miragedebug.md
       - Merbridge: community/merbridge.md
       - Piraeus: community/piraeus.md
       - Spiderpool: community/spiderpool.md
       - 公开镜像加速: community/mirror.md
       - DaoCloud 开源图标库: community/icons/index.md
-  - 云原生研究院:
-      - 社区要闻:
-          - 2025 云原生社区要闻: native/news/news-2025.md
-          - 2024 云原生社区要闻: native/news/news-2024.md
-          - 2023 云原生社区要闻: native/news/news-2023.md
-          - 2022 云原生社区要闻: native/news/news-2022.md
-      - 编写和贡献指南:
-          - Git 文档流程: native/git/index.md
-          - Git开启两步安全验证: native/git/2auth.md
-          - Git 常见问题: native/git/rebase.md
-          - 常用 Git 命令: native/git/cmd.md
-          - VSCode 编辑技巧: native/git/vscode.md
-          - GitLab i18n 翻译预览: native/git/ui-preview.md
-          - GitHub 混迹技巧: native/git/github.md
-          - Git 同步中英文档: native/git/lsync.md
-          - 文档站工作说明: native/git/works.md
-          - 维护 ChatBot: native/git/chatbot.md
-          - mdctl 批量生成 Docx: native/git/md-docx.md
-          - 视频剪辑帮助: native/git/video.md
-          - K8s 相关资源: native/git/k8s.md
-          - Kubean 集群集成 Karpenter AWS 弹性节点方案: native/knowledge/karpenter.md
-      - 行业洞察:
-          - 商业产品: native/commerce.md
-          - 开源项目: native/open.md
-      - 知识分享:
-          - 索引: native/knowledge/index.md
-          - 排障方案: native/knowledge/troubleshoot.md
-          - 最佳实践: native/knowledge/best-practice.md
-          - 工具推荐: native/knowledge/tools.md
-          - 产品选型: native/knowledge/products.md
-          - 前沿热点: native/knowledge/hot-spots.md
-          - 安全漏洞: native/knowledge/bugs.md
-          - 电子书: native/knowledge/ebooks.md
-          - 其他: native/knowledge/other.md
-  - 免费体验:
-      - 体验社区版: trial/index.md
+      - Kubean 集群集成 Karpenter AWS 弹性节点方案: native/knowledge/karpenter.md
+  - DaoCloud 官网: https://daocloud.io/

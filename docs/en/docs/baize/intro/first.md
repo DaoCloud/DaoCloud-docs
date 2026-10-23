@@ -5,21 +5,28 @@ date: 2024-05-21
 
 # First Time Usage
 
-When entering DCE 5.0 AI Lab for the first time, you need to:
+When entering DCE AI Lab for the first time, you need to:
 
 - [Choose a Workspace](#select-a-workspace)
 - [Select a Cluster](#select-cluster)
 - [Confirm your Role](#roles)
 
+See also:
+
+- [Developer Console Quick Start](../developer/quick-start.md)
+- [Platform Administrator Operator Guide](../oam/index.md)
+- [AI Lab Best Practices](../best-practice/index.md)
+- [AI Lab Troubleshooting](../troubleshoot/index.md)
+
 ## Select a Workspace
 
-When first entering DCE 5.0 AI Lab, you should select a [workspace](../../ghippo/user-guide/workspace/workspace.md).
+When first entering DCE AI Lab, you should select a [workspace](../../ghippo/user-guide/workspace/workspace.md).
 
-![Choose a Workspac](../images/workspace.png)
+![Choose a Workspace](../images/workspace.png)
 
 If you need to change the current workspace, you can click the change icon in the left sidebar to select a different workspace.
 
-![Change a Workspac](../images/change-ws.png)
+![Change a Workspace](../images/change-ws.png)
 
 !!! note
 
@@ -52,15 +59,15 @@ If the cluster you want is not in the cluster list, you need to bind the cluster
 
 ## Roles
 
-DCE 5.0 AI Lab provides two roles. You can switch between the two administrator roles by clicking the menu item at the bottom left:
+DCE AI Lab provides two roles. You can switch between the two administrator roles by clicking the menu item at the bottom left:
 
-- Administrator - Developer: With capabilities of Notebooks, training tasks, and datasets.
-- Platform Administrator - Operator: With capabilities of managing GPU resources and queues.
+- Administrator - Developer: With capabilities of Notebooks, training tasks, and datasets. See [Developer Console Quick Start](../developer/quick-start.md).
+- Platform Administrator - [Operator](../oam/index.md): With capabilities of managing GPU resources and queues.
 
 Each role has an overview page that displays the current data that can be processed through graphical dashboards.
 
 ![Operations Overview](../images/oam-overview.png)
 
-[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../../dce/license0.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

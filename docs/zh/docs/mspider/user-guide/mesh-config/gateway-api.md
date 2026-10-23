@@ -7,7 +7,7 @@ Istio 支持 Gateway API 并计划将其作为未来流量管理的默认 API。
 
 ## 网格模式说明
 
-DCE 5.0 服务网格支持三种网格模式：
+DCE 服务网格支持三种网格模式：
 
 - **托管网格:** 控制面由 mspider 统一管理
 - **专有网格:** 独立的 Istio 控制面
@@ -68,7 +68,7 @@ kubectl get crd gateways.gateway.networking.k8s.io &> /dev/null || \
 
 **方式二：通过容器管理平台安装**
 
-在 DCE 5.0 容器管理平台中进行安装配置。
+在 DCE 容器管理平台中进行安装配置。
 
 ### 外部网格模式
 
@@ -78,7 +78,7 @@ kubectl get crd gateways.gateway.networking.k8s.io &> /dev/null || \
 
 您可以通过以下方式操作 Gateway API 资源：
 
-- **容器管理平台:** 在 DCE 5.0 容器管理平台中直接操作
+- **容器管理平台:** 在 DCE 容器管理平台中直接操作
 
 更多详细的操作步骤和配置示例，请查看 [Istio 资源管理文档](https://docs.daocloud.io/mspider/user-guide/mesh-config/istio-resources.html)
 

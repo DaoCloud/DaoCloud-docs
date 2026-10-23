@@ -96,7 +96,7 @@ Enter the following parameters:
 
 - __CNI Type__ : Select SR-IOV.
 - __VLAN ID__ : Must be filled in as `0`.
-- __RDMA__ : Not enabled by default. If you need to enable it, please meet the [RDMA resource usage requirements](../modules/spiderpool/rdmapara.md).
+- __RDMA__ : Not enabled by default. If you need to enable it, please meet the [RDMA resource usage requirements](../modules/spiderpool/install/rdmapara.md).
 - __SR-IOV Resources__ : Only used for the `sriov` type, enter the resource name,
 which cannot be empty. Refer to [SR-IOV CNI Configuration](../modules/multus-underlay/sriov.md) for how to view SR-IOV resources.
 

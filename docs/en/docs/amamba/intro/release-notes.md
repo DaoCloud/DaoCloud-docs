@@ -8,6 +8,20 @@ date: 2025-03-18
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version. 
 
+## 2026-07-03
+
+### v0.41.1
+
+- **Added** support for configuring timezones to display pipeline log timestamps
+- **Added** more sorting options in the pipeline list
+- **Added** a new FeatureGate `PipelineRerunConfirm` to support configurable secondary confirmation for pipeline reruns
+- **Added** support for using default pipeline parameters when parameter names are not provided in API-triggered pipeline runs
+- **Fixed** an issue where the value of a choice-type parameter was displayed incorrectly when no value was provided in the API-triggered pipeline run request
+- **Fixed** a permission error when retrieving the JFrog project list
+- **Fixed** an issue where querying the pipeline list by recent run status failed
+- **Fixed** an issue where the pipeline run node was empty
+- **Fixed** an issue where the pipeline run node status was inconsistent with the pipeline status
+
 ## 2026-03-31
 
 ### v0.40.1
@@ -611,13 +625,13 @@ the development and feature changes in each version.
 #### New Features
 
 - Continuous release of jenkins-agent image
-- The option to use the mysql component from DCE 5.0 data service module as the database
+- The option to use the mysql component from DCE data service module as the database
 - Upgrad Jenkins from 2.319.1 to 2.346.2, and kubernetes plugin to 3734.v562b_b_a_627ea_c, along with other related plugins
 
 #### Improvements
 
 - Improved performance for obtaining rollout image lists, application group lists, and native application lists
-- The image used in creating app from jar packages is provided by env variable, instead of being hardcoded in the source code. Also ensure that the whole DCE 5.0 install package can obtain that image
+- The image used in creating app from jar packages is provided by env variable, instead of being hardcoded in the source code. Also ensure that the whole DCE install package can obtain that image
 
 #### Fixes
 

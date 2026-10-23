@@ -6,7 +6,7 @@ date: 2024-07-09
 # Create StorageClass
 
 This chapter describes the native command-line operations for managing StorageClass in HwameiStor.
-After integrating HwameiStor as local storage in DCE 5.0, a graphical UI is provided, allowing users to
+After integrating HwameiStor as local storage in DCE, a graphical UI is provided, allowing users to
 [create StorageClass using forms and YAML](../../../kpanda/user-guide/storage/sc.md). It is recommended
 to use the UI for performing create, read, update and delete operations on StorageClass, as it offers a convenient and intuitive
 interface for managing various types of StorageClass.

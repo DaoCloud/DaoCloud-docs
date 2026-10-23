@@ -1,10 +1,10 @@
 # 外观定制
 
-在 DCE 5.0 中，可通过 __外观定制__ 更换登录界面、顶部导航栏以及底部版权和备案信息，帮助用户更好地辨识产品。
+在 DCE 中，可通过 __外观定制__ 更换登录界面、顶部导航栏以及底部版权和备案信息，帮助用户更好地辨识产品。
 
 ## 定制说明
 
-1. 使用具有 __admin__ 角色的用户登录 DCE 5.0。点击左侧导航栏底部的 __全局管理__ -> __平台设置__ 。
+1. 使用具有 __admin__ 角色的用户登录 DCE。点击左侧导航栏底部的 __全局管理__ -> __平台设置__ 。
 
     ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 
@@ -23,6 +23,10 @@
 5. 点击 __高级定制__ ，可以用 CSS 样式设置登录页、导航栏、底部版权及备案信息。
 
     ![高级定制](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/appear05.png)
+
+## 未安装 Ghippo 时使用 OEM 镜像
+
+详细步骤请参阅[未安装时使用 OEM](../../install/oem.md)。
 
 ## 高级定制
 

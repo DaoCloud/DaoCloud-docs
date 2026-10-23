@@ -7,12 +7,12 @@ This document explains how to deploy the privatized WS (Workspace) mode of the L
 
 ## Global Service Cluster
 
-In the [Global Service Cluster](../../kpanda/user-guide/clusters/cluster-role.md#_2), you need to install:
+In the [Global Service Cluster](../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster), you need to install:
 
 - Hydra: manually install or install via the installer
-- [Service Mesh](../../mspider/install/install.md) (depends on Istio to create gateways for routing)
-- [MySQL](../../middleware/mysql/intro/offline-install.md)
-- [Redis](../../middleware/redis/intro/offline-install.md)
+- [Service Mesh](https://docs.daocloud.io/mspider/install/install/) (depends on Istio to create gateways for routing)
+- [MySQL](https://docs.daocloud.io/en/middleware/mysql/intro/offline-install/)
+- [Redis](https://docs.daocloud.io/en/middleware/mysql/intro/offline-install/)
 
 !!! tip
 
@@ -92,7 +92,7 @@ The worker cluster needs Hydra Agent and metallb installed.
         name: default
         port: 80
         protocol: HTTP
-    - allowedRoutes:
+      - allowedRoutes:
           namespaces:
             from: All
         hostname: 'cn-sh-a1'
@@ -254,13 +254,13 @@ dataset.dataset.baizeai.io/qwen3-0.6b created
 
 ## Try the Model
 
-Try the model in DCE 5.0.
+Try the model in DCE.
 
-## Model Deployment
+## Model Serving
 
 If running without GPUs, note:
 
-1. Model deployment without GPU (deployment detects no GPU and fails)
+1. Model serving without GPU (deployment detects no GPU and fails)
 
     Therefore, deploy `gpu-operator-fake` (pulling external images requires proxy):
 

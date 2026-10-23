@@ -5,7 +5,7 @@ hide:
 
 # Create External Mesh
 
-External mesh means that the existing mesh can be connected to the DCE 5.0 service mesh for management.
+External mesh means that the existing mesh can be connected to the DCE service mesh for management.
 
 1. On the right corner of the mesh list, click the __Create Mesh__ button and select __Create external mesh__ from the dropdown list.
 
@@ -26,3 +26,7 @@ External mesh means that the existing mesh can be connected to the DCE 5.0 servi
     ![Mesh List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/external03.png)
 
 Next step: [Service Management](../service-list/README.md)
+
+## FAQs
+
+- [Tracking DCE 4.0 Integration Issues](../../troubleshoot/dce4.0-issues.md)

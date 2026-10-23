@@ -11,7 +11,7 @@ This article introduces how to implement progressive delivery based on the open-
 
 - The images in the example need to access the public network: __argoproj/rollouts-demo:yellow__ and __argoproj/rollouts-demo:blue__.
 
-- Only applicable to DCE 5.0 platform deployed via installer with metallb.
+- Only applicable to DCE platform deployed via installer with metallb.
 
 - The use of canary deployment capabilities requires the installation of Istio and Argo Rollout components in the cluster.
 

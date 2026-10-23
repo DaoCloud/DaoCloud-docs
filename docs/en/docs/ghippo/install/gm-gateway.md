@@ -1,6 +1,6 @@
-# Use Guomi Gateway to proxy DCE 5.0
+# Use Guomi Gateway to proxy DCE
 
-Follow the steps below to configure the Guomi Gateway for DCE 5.0.
+Follow the steps below to configure the Guomi Gateway for DCE.
 
 ## Software Introduction
 
@@ -163,7 +163,7 @@ nginx -s reload
 
 ## Next Steps
 
-After successfully deploying the Guomi gateway, [customize the DCE 5.0 reverse proxy server address](reverse-proxy.md).
+After successfully deploying the Guomi gateway, [customize the DCE reverse proxy server address](reverse-proxy.md).
 
 ## Verification
 

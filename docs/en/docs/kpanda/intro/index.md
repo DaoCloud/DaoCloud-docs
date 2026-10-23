@@ -6,7 +6,7 @@ hide:
 # Container Management
 
 Container management is a containerization management module for cloud native applications
-built on Kubernetes. It is the core of DCE 5.0. Based on a native multi-cluster architecture,
+built on Kubernetes. Based on a native multi-cluster architecture,
 it decouples the underlying infrastructure to achieve unified management across multiple clouds and clusters.
 This greatly simplifies the process of migrating enterprise applications to the cloud and reduces
 operational and manpower costs. With container management, you can easily create Kubernetes clusters
@@ -23,7 +23,7 @@ and quickly build an enterprise-grade container cloud management platform.
 
     ---
 
-    DCE 5.0 container management currently supports four types of clusters:
+    Container management currently supports four types of clusters:
     global service cluster, management cluster, worker cluster, and integrated cluster.
 
     - [Create a Cluster](../user-guide/clusters/create-cluster.md) or [Integrate a Cluster](../user-guide/clusters/integrate-cluster.md)
@@ -61,7 +61,7 @@ and quickly build an enterprise-grade container cloud management platform.
 
     ---
 
-    Workloads refer to various types of applications running on DCE 5.0.
+    Workloads refer to various types of applications running in a cluster.
 
     - Create [Deployment](../user-guide/workloads/create-deployment.md) and [StatefulSet](../user-guide/workloads/create-statefulset.md)
     - Create [DaemonSet](../user-guide/workloads/create-daemonset.md)
@@ -85,7 +85,7 @@ and quickly build an enterprise-grade container cloud management platform.
 
     ---
 
-    Helm is DCE 5.0's package management tool, providing hundreds of Helm templates for easy application deployment.
+    Helm is a package management tool, providing hundreds of Helm templates for easy application deployment.
 
     - [Helm Charts](../user-guide/helm/README.md)
     - [Helm Apps](../user-guide/helm/helm-app.md)
@@ -99,8 +99,7 @@ and quickly build an enterprise-grade container cloud management platform.
 
     ---
 
-    DCE 5.0 comes with a container network that facilitates external service provision,
-    routing rules defined through Ingress, and traffic control based on network policies.
+    Routing rules are defined through Ingress, and traffic is controlled based on network policies.
 
     - [Service](../user-guide/network/create-services.md): ClusterIP, NodePort, LoadBalancer
     - [Ingress](../user-guide/network/create-ingress.md): Path-based, Name-based
@@ -110,7 +109,7 @@ and quickly build an enterprise-grade container cloud management platform.
 
     ---
 
-    DCE 5.0 container management follows the containerized storage concept of Kubernetes, supporting native CSI for dynamic volume provisioning, volume snapshots, cloning, and more.
+    Container management follows the containerized storage concept of Kubernetes, supporting native CSI for dynamic volume provisioning, volume snapshots, cloning, and more.
 
     - [Persistent Volume Claim (PVC)](../user-guide/storage/pvc.md)
     - [Persistent Volume (PV)](../user-guide/storage/pv.md)
@@ -124,7 +123,7 @@ and quickly build an enterprise-grade container cloud management platform.
 
     ---
 
-    DCE 5.0 container management supports three types of scanning at the node and cluster level:
+    Container management supports three types of scanning at the node and cluster level:
 
     - [Compliance Scanning](../user-guide/security/cis/config.md)
     - [Permission Scanning](../user-guide/security/audit.md)
@@ -134,7 +133,7 @@ and quickly build an enterprise-grade container cloud management platform.
 
     ---
 
-    DCE 5.0 container management allows the management of ConfigMaps and Secrets in a key-value format:
+    Container management allows the management of ConfigMaps and Secrets in a key-value format:
 
     - [ConfigMap](../user-guide/configmaps-secrets/create-configmap.md)
     - [Secrets](../user-guide/configmaps-secrets/create-secret.md)
@@ -176,6 +175,10 @@ and quickly build an enterprise-grade container cloud management platform.
     Looking ahead, container virtualization will help enterprises make better use of hybrid and
     multi-cloud environments, enabling optimized resource management and application deployment.
 
-[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
-[Free Trial Now](../../dce/license0.md){ .md-button .md-button--primary }
+**Logical Architecture of Container Management**
+
+![Logical Architecture](../images/kpanda_architect.svg)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

@@ -1,6 +1,6 @@
 # shared StorageClass
 
-The DCE 5.0 container management module supports sharing a StorageClass with multiple namespaces to improve resource utilization efficiency.
+The DCE container management module supports sharing a StorageClass with multiple namespaces to improve resource utilization efficiency.
 
 1. Find the StorageClass that needs to be shared in the StorageClass list, and click __Authorize Namespace__ under the operation bar on the right.
 

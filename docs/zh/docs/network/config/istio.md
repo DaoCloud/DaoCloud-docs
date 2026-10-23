@@ -10,9 +10,7 @@ Underlay Pod 的流量通过 veth0 转发，Istio 使用 iptables 规则劫持�
 
 ### 方式一：集群级开启（推荐）
 
-在安装 Spiderpool 时设置：
-
-- `coordinator.vethLinkAddress=169.254.100.1`
+在安装 Spiderpool 时设置 `coordinator.vethLinkAddress=169.254.100.1`
 
 安装入口参考 [安装 Spiderpool](../modules/spiderpool/install/install.md)。
 
@@ -44,7 +42,7 @@ kubectl exec -it <pod-name> -n <namespace> -- ip addr show veth0
 
 确认 veth0 具备配置的 link-local 地址。
 
-## 注意事项
+!!! note
 
-- `vethLinkAddress` 必须是合法的 IP 地址
-- 建议全局统一配置，避免不同网卡行为不一致
+    - `vethLinkAddress` 必须是合法的 IP 地址
+    - 建议全局统一配置，避免不同网卡行为不一致

@@ -4,7 +4,7 @@ The goal of the Binpack scheduling algorithm is to fill up already occupied node
 
 ## Prerequisites
 
-Volcano must be pre-installed on DCE 5.0. See [Volcano Installation Guide](./volcano_user_guide.md).
+Volcano must be pre-installed on DCE. See [Volcano Installation Guide](./volcano_user_guide.md).
 
 ## Binpack Algorithm Principle
 

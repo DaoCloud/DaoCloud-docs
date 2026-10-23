@@ -240,7 +240,7 @@
 
 ### 前提条件
 
-在安装 DCE 5.0 或在产品模块升级前已执行以下命令：
+在安装 DCE 或在产品模块升级前已执行以下命令：
 
 ```shell
 ~/dce5-installer cluster-create -c /home/offline/sample/clusterConfig.yaml -m /home/offline/sample/manifest.yaml -d -j 14,15

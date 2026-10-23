@@ -1,54 +1,68 @@
 # Alert Policies
 
-In addition to the built-in alert policies, DCE 5.0 allows users to create custom alert policies. Each alert policy is a collection of alert rules that can be set for clusters, nodes, and workloads. When an alert object reaches the threshold set by any of the rules in the policy, an alert is automatically triggered and a notification is sent.
+An alert policy is a set of rules and conditions defined in the observability system, used to detect and trigger alerts so that the relevant personnel or systems can be notified in time when the system is abnormal or reaches a preset threshold.
 
-Taking the built-in alerts as an example, click the first alert policy __alertmanager.rules__ .
+Each alert policy is a collection of alert rules. It supports setting alert rules for resources such as clusters, nodes, and workloads, as well as logs and events. When an alert object reaches the threshold set by any rule under the policy, an alert is automatically triggered and a notification is sent.
 
-![alert policy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy01.png)
+## View Alert Policies
 
-You can see that some alert rules have been set under it. You can add more rules under this policy, or edit or delete them at any time. You can also view the historical and active alerts related to this alert policy and edit the notification configuration.
+1. Click __Observability__ in the top navigation bar.
+2. In the left navigation bar, select __Alert Center__ -> __Alert Policies__.
 
-![alertmanager.rules](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy02.png)
-
-## Create Alert Policies
-
-1. Select __Alert Center__ -> __Alert Policies__ , and click the __Create Alert Policy__ button.
+    - Cluster: Click the cluster drop-down box to switch clusters.
+    - Namespace: Click the namespace drop-down box to switch namespaces.
 
     ![alert policy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy01.png)
 
-2. Fill in the basic information, select one or more clusters, nodes, or workloads as the alert objects, and click __Next__ .
+3. Click the alert policy name to view the basic information, rules, and notification configuration of the policy.
+
+    1. In the rule list, you can view the rule type, rule expression, level, status, and other information.
+    2. In the policy details, you can add, edit, or delete the alert rules under it.
+
+    ![alertmanager.rules](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy02.png)
+
+## Create Alert Policies
+
+1. Fill in the basic information, select one or more clusters, nodes, or workloads as the alert objects, and click __Next__ .
 
     ![basic information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy03.png)
 
-3. The list must have at least one rule. If the list is empty, please __Add Rule__ .
+    !!! note
+
+        - Selecting `all clusters, nodes, or workloads`: The created alert rules take effect for all clusters with insight-agent installed.
+        - Selecting a single or multiple clusters, nodes, or workloads: The created alert rules only take effect for the selected resource objects.
+        - In addition, users can only set alert rules for clusters and namespaces they have permission to.
+
+### Manually Add Rules
+
+1. In the second step of creating an alert policy, click `Add Rule` in the upper-right corner of the list.
 
     ![add rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy04.png)
 
-    Create an alert rule in the pop-up window, fill in the parameters, and click __OK__ .
+2. Create an alert rule in the pop-up window, fill in the parameters, and click __OK__ .
 
     ![create rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy05.png)
 
-    - Template rules: Pre-defined basic metrics that can monitor CPU, memory, disk, and network.
-    - PromQL rules: Input a PromQL expression, please [query Prometheus expressions](https://prometheus.io/docs/prometheus/latest/querying/basics/).
-    - Duration: After the alert is triggered and the duration reaches the set value, the alert policy will become a triggered state.
+    - Template rules: Pre-defined basic metrics, and you can set metrics to monitor by CPU, memory, disk, and network.
+    - PromQL rules: Input a PromQL expression. For details, please [query Prometheus expressions](https://prometheus.io/docs/prometheus/latest/querying/basics/).
+    - Duration: After the alert is triggered and the duration reaches the set value, the alert policy will become a triggering state.
     - Alert level: Including emergency, warning, and information levels.
     - Advanced settings: Custom tags and annotations.
 
-4. After clicking __Next__ , configure notifications.
+    !!! info
 
-    ![notification configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy06.png)
+        The system defines built-in labels. If the `key` value of a custom label is the same as that of a built-in label, the custom label does not take effect.
+        The built-in labels are: `severity`, `rule_id`, `source`, `cluster_name`, `group_id`, `target_type`, and `target`.
 
-5. After the configuration is complete, click the __OK__ button to return to the Alert Policy list.
-
-!!! tip
-
-    The newly created alert policy is in the __Not Triggered__ state. Once the threshold conditions and duration specified in the rules are met, it will change to the __Triggered__ state.
-
-### Create Log Rules
+#### Create Log Rules
 
 After filling in the basic information, click __Add Rule__ and select __Log Rule__ as the rule type.
 
-Creating log rules is supported only when the resource object is selected as a node or workload.
+!!! note
+
+    Creating log rules is supported only when the resource object is selected as a node or workload.
+
+![notification configuration](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy10.png)
 
 **Field Explanation:**
 
@@ -58,11 +72,15 @@ Creating log rules is supported only when the resource object is selected as a n
 - __Threshold Condition__ : Enter the alert threshold value in the input box. When the set threshold is reached, an alert will be triggered. Supported comparison operators are: >, ≥, =, ≤, <.
 - __Alert Level__ : Select the alert level to indicate the severity of the alert.
 
-### Create Event Rules
+#### Create Event Rules
 
 After filling in the basic information, click __Add Rule__ and select __Event Rule__ as the rule type.
 
-Creating event rules is supported only when the resource object is selected as a workload.
+!!! note
+
+    Creating event rules is supported only when the resource object is selected as a workload.
+
+![notification configuration](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy04.png)
 
 **Field Explanation:**
 
@@ -72,12 +90,39 @@ Creating event rules is supported only when the resource object is selected as a
 - __Threshold Condition__ : When the generated events reach the set threshold, an alert event will be triggered.
 - __Trend Chart__ : By default, it queries the trend of event changes within the last 10 minutes. The value at each point represents the total number of occurrences within a certain period of time (time range) from the current time point to a previous time.
 
-## Other Operations
+### Import Rule Templates
 
-Click __┇__ at the right side of the list, then choose __Delete__ from the pop-up menu to delete an alert policy. By clicking on the policy name, you can enter the policy details where you can add, edit, or delete the alert rules under it.
+1. Click __Import Template__ to batch import alert rules from alert templates already created by the platform administrator.
 
-![alert rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy07.png)
+    ![alert template](../../images/import-template.png){ width=1000px}
+
+1. After clicking __Next__ , configure notifications.
+
+    ![notification configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy06.png)
+
+2. After the configuration is complete, click the __OK__ button to return to the Alert Policy list.
+
+!!! tip
+
+    The newly created alert policy is in the __Not Triggered__ state. Once the threshold conditions and duration specified in the rules are met, it will change to the __Triggered__ state.
+
 
 !!! warning
 
-    Deleted alert strategies will be permanently removed, so please proceed with caution.
+    Deleted alert policies will be completely removed, so please proceed with caution.
+
+## Import Alert Policies via YAML
+
+1. Go to the alert policy list and click __Create from YAML__.
+
+   - The selection of cluster and namespace is for the management permission of the alert policy.
+   - In the YAML editor, please fill in __spec__ and its content; only one group can be imported.
+   - The __alert rule name__ must comply with the specification: the name can only contain uppercase and lowercase letters, digits, underscores (_), and hyphens (-), must start with a letter, and can be up to 63 characters long.
+   - The __severity__ field is required and must comply with the specification: critical, warning, info.
+   - The __expr__ expression is required.
+
+    ![create from yaml](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/create-from-yaml.png){ width=1000px}
+
+2. After importing the YAML file, click __Preview__ to validate the format of the imported YAML and quickly confirm the imported alert rules.
+
+    ![create from yaml](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/create-from-yaml01.png){ width=1000px}

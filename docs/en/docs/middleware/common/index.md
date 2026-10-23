@@ -5,7 +5,7 @@ Date: 2024-01-19
 
 # First Time Use of Middleware
 
-When using DCE 5.0 for the first time, [Elasticsearch Service](../elasticsearch/intro/index.md), [Kafka Message Queue](../kafka/intro/index.md), [MinIO Object Storage](../minio/intro/index.md), [MySQL Data](../mysql/intro/index.md), [RabbitMQ Messages](../rabbitmq/intro/index.md), [PostgreSQL Database](../postgresql/intro/index.md), [Redis Database](../redis/intro/index.md), [MongoDB Database](../mongodb/intro/index.md), [RocketMQ Message Queue](../rocketmq/intro/index.md), and other middlewares, you need to select a workspace.
+When using DCE for the first time, [Elasticsearch Service](../elasticsearch/intro/index.md), [Kafka Message Queue](../kafka/intro/index.md), [MinIO Object Storage](../minio/intro/index.md), [MySQL Data](../mysql/intro/index.md), [RabbitMQ Messages](../rabbitmq/intro/index.md), [PostgreSQL Database](../postgresql/intro/index.md), [Redis Database](../redis/intro/index.md), [MongoDB Database](../mongodb/intro/index.md), [RocketMQ Message Queue](../rocketmq/intro/index.md), and other middlewares, you need to select a workspace.
 
 For a detailed introduction to workspaces, you can refer to [Workspace and Folder](../../ghippo/user-guide/workspace/ws-folder.md).
 
@@ -13,8 +13,8 @@ The following describes how to select a workspace using MinIO as an example, and
 
 ## Prerequisites
 
-1. Create a [workspace](../../ghippo/user-guide/workspace/workspace.md) in the DCE 5.0 platform
-2. If you need to create a middleware instance directly, you also need to [create](../../kpanda/user-guide/clusters/create-cluster.md) or [integrate](../../kpanda/user-guide/clusters/integrate-cluster.md) a cluster in the DCE 5.0 container management module.
+1. Create a [workspace](../../ghippo/user-guide/workspace/workspace.md) in the DCE platform
+2. If you need to create a middleware instance directly, you also need to [create](../../kpanda/user-guide/clusters/create-cluster.md) or [integrate](../../kpanda/user-guide/clusters/integrate-cluster.md) a cluster in the DCE container management module.
 
 ## Procedure
 
@@ -33,3 +33,7 @@ The following describes how to select a workspace using MinIO as an example, and
 3. For the first use, you can click [__Create Now__](../minio/user-guide/create.md) to create a MinIO instance.
 
     ![Create Now](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/common/images/middleware03.png)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

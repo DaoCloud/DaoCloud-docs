@@ -4,12 +4,12 @@
 
     在生产环境场景下进行扩展参数配置之前，建议先充分了解相关参数的行为，明确配置可能存在的副作用后，再决定是否实际使用，建议先进行可行性验证后在上生产！
 
-本文将从 DCE 5.0 [全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)、
+本文将从 DCE [全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)、
 [工作集群](../../kpanda/user-guide/clusters/cluster-role.md#_3)两个方面描述如何配置扩展参数。
 
 ## 支持的扩展参数
 
-DCE 5.0 部署集群依赖了开源软件 Kubespray，所以基本上 Kubespray 支持的配置参数都可以通过 DCE 5.0 下配置。
+DCE 部署集群依赖了开源软件 Kubespray，所以基本上 Kubespray 支持的配置参数都可以通过 DCE 下配置。
 
 关于 Kubespray 支持的可配置参数可查看[社区文档](https://github.com/kubernetes-sigs/kubespray/blob/v2.25.0/docs/ansible/vars.md#common-vars-that-are-used-in-kubespray)。
 
@@ -29,7 +29,7 @@ DCE 5.0 部署集群依赖了开源软件 Kubespray，所以基本上 Kubespray 
 
 ## 安装全局服务集群时配置可扩展参数
 
-参考[离线安装 DCE 5.0 商业版第二步](../commercial/start-install.md/#2-clusterconfigyaml)。
+参考[离线安装 DCE 商业版第二步](../commercial/start-install.md/#2-clusterconfigyaml)。
 
 在 [ClusterConfig.yml](../commercial/cluster-config.md) 配置文件中，更新 kubeanConfig 参数信息，如下：
 

@@ -100,7 +100,7 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
       ..........
     ```
 
-6. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
+6. 完成上述配置后，可以继续执行[部署 DCE 商业版](../start-install.md)。
 
 ### 附录
 

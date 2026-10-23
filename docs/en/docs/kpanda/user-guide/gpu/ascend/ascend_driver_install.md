@@ -170,4 +170,4 @@ Once everything is ready, you can select the corresponding NPU device when creat
 
 !!! note
 
-    For detailed information of how to use, refer to [Using Ascend (Ascend) NPU](https://docs.daocloud.io/kpanda/user-guide/gpu/Ascend_usage/).
+    For detailed usage steps, refer to [Using Ascend NPU](./ascend_usage.md).

@@ -1,6 +1,6 @@
-# LVM Node Expansion
+# Disk Node Expansion
 
-The storage system can be expanded by adding storage nodes. In HwameiStor, new storage nodes can be added by following these steps.
+A bare disk storage node provides bare disk type data volumes for applications and maintains the mapping between the bare disks and the bare disk data volumes on that storage node.
 
 ## Steps
 
@@ -47,7 +47,7 @@ spec:
 ...
 ```
 
-To add a storage node, create a LocalStorageClaim resource to build a StorageClass for the new storage node. By doing this, the node will be successfully added to the HwameiStor system. Follow the steps below:
+To add a storage node, create a LocalStorageClaim resource to build a storage pool for the new storage node. By doing this, the node will be successfully added to the HwameiStor system. Follow the steps below:
 
 ```console
 $ kubectl apply -f - <<EOF
@@ -65,13 +65,10 @@ EOF
 
 ### 3. Post-check
 
-After completing the above steps, check the status of the new storage node and its StorageClass to ensure the normal operation of the node and HwameiStor system. Follow the steps below:
+After completing the above steps, check the status of the new storage node and its storage pool to ensure the normal operation of the node and HwameiStor system. Follow the steps below:
 
-```shell
-kubectl get localdisknode k8s-worker-2 -o yaml
-```
-
-```yaml
+```console
+$ kubectl get localdisknode k8s-worker-2 -o yaml
 apiVersion: hwameistor.io/v1alpha1
 kind: LocalDiskNode
 metadata:

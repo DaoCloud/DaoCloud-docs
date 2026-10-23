@@ -1,6 +1,6 @@
 # Lightweight Deployment Trimming Plan Verification
 
-Considering that in some scenarios, especially in the military industry, cloud software deployment faces stringent resource constraints, this document introduces a lightweight trimming and verification plan for deploying **DCE 5.0 Community Edition**, aiming to meet customers' requirements for lightweight deployment.
+Considering that in some scenarios, especially in the military industry, cloud software deployment faces stringent resource constraints, this document introduces a lightweight trimming and verification plan for deploying **DCE Community Edition**, aiming to meet customers' requirements for lightweight deployment.
 
 This trimming plan is verified step by step through four phases, detailed as follows:
 
@@ -12,9 +12,44 @@ This trimming plan is verified step by step through four phases, detailed as fol
 
 ## Installed Components and Resource Statistics
 
-The installation components, trimming plan, and phased trimming approach for DCE 5.0 are as follows:
+The installation components, trimming plan, and phased trimming approach for DCE are as follows:
+
+![Installation components and trimming approach](../images/light01.png)
 
 Full view of Phase 1 lightweight trimming:
+
+![Full view of Phase 1](../images/light02.png)
+
+## Optimization Measures
+
+1. Insight can stop the following Pods while ensuring normal monitoring capabilities:
+
+    | Pod name                                                 | Mem Size   |
+    | :------------------------------------------------------- | ---------- |
+    | insight-agent-fluent-bit-5x2rn                           | 99.62 MiB  |
+    | insight-agent-otel-kubernetes-collector-69f67cc745-xt5hj | 74.94 MiB  |
+    | insight-agent-tailing-sidecar-operator-6f85f7bb75-67xc8  | 46.81 MiB  |
+    | insight-elastic-alert-64bbb468dc-l4mk5                   | 30.38 MiB  |
+    | insight-jaeger-collector-5cd5b94dcc-mwgcl                | 32.50 MiB  |
+    | insight-jaeger-query-5495c59bbd-fk287                    | 28.88 MiB  |
+    | insight-opentelemetry-collector-5d47dd6c6b-nk54t         | 62.12 MiB  |
+    | Optimizable memory                                       | 375.25 MiB |
+
+2. Remove the Istio sidecar using the script [clean_istio_proxy.sh](https://gitlab.daocloud.cn/bo.jiang/installer-tools/-/blob/master/clean_istio_proxy.sh)
+
+3. Shut down the Bootstrap kind-cluster and the elasticsearch component
+
+    1. Disable the elasticSearch component in manifest.yaml before the installer deployment
+
+        [Not Feasible] insight-server strongly depends on es
+
+    2. Shut down the kind-cluster container after the installer deployment is complete
+
+        [Feasible] The image pull policy has hidden risks and needs to be adjusted to **IfNotPresent**
+
+4. Deploy an image registry in the global management cluster, and manage it through kangaroo [Feasible]
+
+5. Deploy a single-instance MySQL, and use it as the external MySQL instance for Container Management [Feasible]
 
 ### Optimization by Phase
 
@@ -82,7 +117,7 @@ In actual real-world scenarios, with an **8Gi memory environment**, installation
 However, since some steps at the end require manually executing scripts, it triggers **deploy rolling updates**, causing a temporary surge in memory demand.
 Additionally, the operating system itself consumes part of the dynamic memory resources.
 
-Therefore, in summary, running the **DCE 5.0 lightweight trimmed environment** in an **8G memory** setup still lacks sufficient resources.
+Therefore, in summary, running the **DCE lightweight trimmed environment** in an **8G memory** setup still lacks sufficient resources.
 
 That is, **installation memory requirement ≠ idle state memory usage**
 

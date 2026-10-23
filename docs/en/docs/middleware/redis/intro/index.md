@@ -28,3 +28,7 @@ Redis cache service is an in-memory database cache service provided by DaoCloud.
     Visualize the web management interface to complete operations such as instance restart and parameter modification online. A RESTful API is also provided to facilitate further automated instance management.
 
 [Create a Redis instance](../user-guide/create.md){ .md-button .md-button--primary }
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

@@ -1,6 +1,6 @@
 # AI/RDMA 网络方案总览
 
-本页介绍在 DCE 5.0 中使用 Spiderpool 为 AI 工作负载提供 RDMA 网络能力的整体方案与选型建议，适用于 RoCE 与 Infiniband 场景。
+本页介绍在 DCE 中使用 Spiderpool 为 AI 工作负载提供 RDMA 网络能力的整体方案与选型建议，适用于 RoCE 与 Infiniband 场景。
 
 ## 适用场景
 
@@ -31,7 +31,7 @@
 
 ## 环境要求
 
-- DCE 5.0
+- DCE
 - Spiderpool v1.0.x
 - RDMA 网卡与驱动已安装（建议参考 [安装 Nvidia OFED 驱动](ofed_driver.md)）
 - RoCE 场景建议提前完成无损网络与 MTU 规划

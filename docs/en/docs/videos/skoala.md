@@ -4,6 +4,14 @@ We have crafted the following video tutorials for Microservice Governance, any k
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Cloud-Native Gateway](#cloud-native-gateway)
+- :two: [Cloud-Native Microservices](#cloud-native-microservices)
+- :three: [Traditional Microservices](#traditional-microservices)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;
@@ -47,6 +55,14 @@ Refer to the [API Policy Configuration](../skoala/gateway/api/api-policy.md) doc
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/api-policy2.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/skoala-api2.png"></video>
+</div>
+
+### Microservice Gateway Proxy for Large Model Services
+
+Refer to the [Access Services through Gateway](../skoala/best-practice/gateway01.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gateway-service.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/gateway-service.jpg"></video>
 </div>
 
 ## Cloud-Native Microservices
@@ -115,6 +131,6 @@ Refer to the [Sentinel Authorization Rules](../skoala/trad-ms/hosted/services/au
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/authn-rule.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/authn-rule.jpg"></video>
 </div>
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

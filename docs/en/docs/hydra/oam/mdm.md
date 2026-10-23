@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Model Deployment Management
+# Model Serving Management
 
 Platform administrators can manage model deployments in **Operations Management**, including creating, editing, deleting, starting, and stopping model deployment configuration files.
 
@@ -12,11 +12,11 @@ Platform administrators can manage model deployments in **Operations Management*
     Here, you are creating **model deployment configuration files**, not the model files themselves.
     To manage or download model files, please refer to [Managing Model Files with Dataset](../dataset.md).
 
-## Model Deployment List
+## Model Serving List
 
 This list displays all created model deployment configurations, including the model name and the number of available configurations for each.
 
-![Model Deployment Management List](images/list.png)
+![Model Serving Management List](images/list.png)
 
 ## Create
 
@@ -30,12 +30,12 @@ On the creation page, users need to:
 
 After completing the configuration, click **Confirm** to finish creation.
 
-![Model Deployment Management Model Selection](images/select.png)
+![Model Serving Management Model Selection](images/select.png)
 
-![Model Deployment Management Creation](images/create.png)
+![Model Serving Management Creation](images/create.png)
 
 ## View Details
 
 Users can click a model in the list to view detailed information of created configurations, including resource allocation and runtime parameters.
 
-![Model Deployment Management Details](images/xiangqing.png)
+![Model Serving Management Details](images/xiangqing.png)

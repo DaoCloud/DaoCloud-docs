@@ -47,3 +47,7 @@ hide:
 
 5. **运维报表**  
    可生成定期报表，包括资源使用趋势、任务完成情况和 GPU 使用效率，为决策提供数据支撑。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

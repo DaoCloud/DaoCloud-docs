@@ -7,7 +7,7 @@ keyword: 兼容版本,向下兼容,部署和升级 Kubernetes,部署和升级 K8
 
 为了满足客户对低版本的 K8s 集群的搭建，Kubean 提供了向下兼容并创建低版本的 K8s 集群能力，简称向下兼容版本的能力。
 
-目前支持自建工作集群版本范围在 `v1.26-v1.28`，可以参阅 [DCE 5.0 集群版本支持体系](../user-guide/clusters/cluster-version.md)。
+目前支持自建工作集群版本范围在 `v1.26-v1.28`，可以参阅 [DCE 集群版本支持体系](../user-guide/clusters/cluster-version.md)。
 
 本文将演示如何部署低版本的 K8s 集群。
 
@@ -26,7 +26,7 @@ keyword: 兼容版本,向下兼容,部署和升级 Kubernetes,部署和升级 K8
 - 前往 [kubean](https://github.com/kubean-io/kubean) 查看发布的[制品](https://kubean-io.github.io/kubean/zh/releases/artifacts/)，
   并根据实际情况选择具体的制品版本。目前支持的制品版本及对应的集群版本范围如下：
 
-    | 制品包版本        | 支持集群范围            | DCE 5.0 支持情况     |
+    | 制品包版本        | 支持集群范围            | DCE 支持情况     |
     |--------------|-------------------|------------------|
     | release-2.21 | v1.23.0 ~ v1.25.6 | 安装器 v0.14.0+ 已支持 |
     | release-2.22 | v1.24.0 ~ v1.26.13 | 安装器 v0.15.0+ 已支持 |

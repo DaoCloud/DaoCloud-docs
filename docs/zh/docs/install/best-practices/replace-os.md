@@ -2,7 +2,7 @@
 
 ## 背景
 
-某客户生产环境在 CentOS 7.9 操作系统上部署了 DCE 5.0 工作集群，但是由于
+某客户生产环境在 CentOS 7.9 操作系统上部署了 DCE 工作集群，但是由于
 [CentOS 7.9 将停止维护](https://www.redhat.com/en/topics/linux/centos-linux-eol)，所以客户希望迁移到 Ubuntu 22.04。
 由于是生产环境，客户希望在不停机的情况下，从 CentOS 7.9 迁移到 Ubuntu 22.04。
 
@@ -51,7 +51,7 @@
       action: scale.yml
       preHook:
         - actionType: playbook
-        action: ping.yml
+          action: ping.yml
         - actionType: playbook
           action: enable-repo.yml  # (1)!
           extraArgs: |
@@ -182,7 +182,7 @@ Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 
       preHook:
         - actionType: playbook
           action: disable-firewalld.yml
-       postHook:
+      postHook:
         - actionType: playbook
           action: upgrade-cluster.yml
           extraArgs: --limit=etcd,kube_control_plane -e ignore_assert_errors=yes

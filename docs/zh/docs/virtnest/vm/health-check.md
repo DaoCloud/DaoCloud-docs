@@ -50,7 +50,7 @@
                 source:
                   registry:
                     url: >-
-                  docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
+                      docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
           runStrategy: Halted
           template:
             metadata:
@@ -171,7 +171,7 @@
             source:
               registry:
                 url: >-
-              docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
+                  docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
       runStrategy: Halted
       template:
         metadata:
@@ -275,7 +275,7 @@
             source:
               registry:
                 url: >-
-              docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
+                  docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
       runStrategy: Halted
       template:
         metadata:

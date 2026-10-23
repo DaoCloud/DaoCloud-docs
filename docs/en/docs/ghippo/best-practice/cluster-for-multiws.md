@@ -53,7 +53,7 @@ Workspaces are designed to meet multi-tenant usage scenarios, forming isolated r
 cluster namespaces, meshes, mesh namespaces, multicloud, multicloud namespaces, and other resources. Workspaces
 can be mapped to various concepts such as projects, tenants, enterprises, and suppliers.
 
-1. Log in to DCE 5.0 with a user having the admin/folder admin role and click __Global Management__ at the bottom of the left navigation bar.
+1. Log in to DCE with a user having the admin/folder admin role and click __Global Management__ at the bottom of the left navigation bar.
 
     ![Global Management](../images/ws01.png)
 

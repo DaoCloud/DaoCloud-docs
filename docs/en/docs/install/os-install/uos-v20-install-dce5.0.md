@@ -1,6 +1,6 @@
-# Deploy DCE 5.0 Enterprise on UOS V20 (1020a)
+# Deploy DCE Enterprise on UOS V20 (1020a)
 
-This page introduces how to deploy DCE 5.0 on UOS V20(1020a).
+This page introduces how to deploy DCE on UOS V20(1020a).
 Installer v0.6.0 and higher versions support this deployment method.
 
 ## Prerequisites
@@ -85,7 +85,7 @@ Installer v0.6.0 and higher versions support this deployment method.
         type: builtin
     ```
 
-7. Start the installation of DCE 5.0.
+7. Start the installation of DCE.
 
     ```bash
     ./dce5-installer cluster-create -m ./sample/manifest.yaml -c ./sample/clusterConfig.yaml
@@ -102,7 +102,7 @@ Installer v0.6.0 and higher versions support this deployment method.
 
 8. After the installation is complete, the command line will prompt that the installation is successful.
    Congratulations! :smile: Now you can use the default account and password (admin/changeme) to explore
-   the new DCE 5.0 through the URL prompted on the screen!
+   the new DCE through the URL prompted on the screen!
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -110,4 +110,4 @@ Installer v0.6.0 and higher versions support this deployment method.
 
         Please record the prompted URL for your next visit.
 
-9. After successfully installing DCE 5.0 Enterprise, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.
+9. After successfully installing DCE Enterprise, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

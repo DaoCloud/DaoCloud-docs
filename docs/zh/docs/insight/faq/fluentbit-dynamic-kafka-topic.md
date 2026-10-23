@@ -11,9 +11,11 @@ Fluent Bit 根据 Kubernetes Namespace Name 发送到不同 Topic 的使用场�
 5. 监控与告警：可以针对不同 Topic 的日志设置不同的监控规则和告警策略。例如，当某个 Namespace 的日志出现异常时，能够及时触发告警，方便运维人员快速响应。
 
 ## 实现思路
+
 借助 Fluent Bit Kafka output 根据 [topic_key][1] 动态路由到不同 Topic 的能力实现。
 
 ## 实现步骤
+
 1. 在现有 `insight-agent-Fluent Bit-luascripts-config` Configmap 中对 Lua 脚本 `container_log_filter.lua` 中增加如下逻辑(可根据实际需求调整), 该逻辑将从 `kubernetes.namespace_name` 取值并赋值给 `router` 字段。
 
     ```diff
@@ -29,6 +31,7 @@ Fluent Bit 根据 Kubernetes Namespace Name 发送到不同 Topic 的使用场�
     ```
 
 2. 在现有 `insight-agent-Fluent Bit-config` Configmap 中对  Kafka Output 增加 `topic_key` 配置并开启 `dynamic_topic`:
+
     ```diff
             Topics      insight-logs
             format      json

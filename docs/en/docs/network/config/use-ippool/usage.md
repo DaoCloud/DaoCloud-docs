@@ -36,9 +36,9 @@ This page describes how to configure multiple NICs for workload Pods in combinat
 
     - `NIC info`: If the created application container needs to use multiple NICs, such as one for east-west traffic and another for north-south traffic.
 
-        - eth0 (default NIC): Overlay CNI, Calico/Cilium is the default.
+        - eth0 (default NIC): Overlay CNI is the default, and you can choose Calico/Cilium/Macvlan CR. Before configuring, make sure that the [Multus CR has been created](../multus-cr.md). When eth0 (the default NIC) is set to an Underlay CNI such as Macvlan, newly added NICs such as net1 and net2 can only use Underlay CNIs.
 
-        - net1: Underlay CNI configuration is optiional, such as Macvlan/SR-IOV. The example here is Macvlan.
+        - net1: You can select an Underlay CNI configuration, such as Macvlan/SR-IOV. The example in this document is Macvlan.
 
     - `IPPool config`: Rules for Underlay CNI IP allocation.
 
@@ -47,13 +47,17 @@ This page describes how to configure multiple NICs for workload Pods in combinat
         - `Custom route`: Custom routes can be added when applications are created with special routing needs.
         - `NIC IPPool`:  Select the subnet to be used by the corresponding NIC or the corresponding IP pool.
 
+        - `Use default IPPool`: When enabled, the default IP pool is selected for all newly added container NICs (eth0, net1, net2).
+
+    There are two ways to use an IP pool for a workload. For the differences in scenarios and procedures between the two ways, see [IPPool Usage Instructions](../../config/ippool/ippoolusage.md).
+
     **Manually select an existing IP pool**
 
     To manually select an IP pool, you need to create an IP pool in advance. You can select the range of the IP pool as `shared IP pool`, add the current `application affinity IP pool`, and add the current `namespace affinity IP pool`.
 
     ![Manual Selection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/useippool03.png)
 
-    Note: If the chosen [IP Pool Creation Time](../ippool/createpool.md) has added node affinity like: `zone:beijing`, please add the corresponding label `zone:beijing` when creating the workload. For use cases, please refer to: [Instructions f../../config/ippool/ippoolusage.mdool](ippoolusage.md)![zone-beijing](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/zone-beijing.png)
+    Note: If the chosen [IP Pool Creation Time](../ippool/createpool.md) has added node affinity like: `zone:beijing`, please add the corresponding label `zone:beijing` when creating the workload. For use cases, please refer to: [Instructions for use](../../config/ippool/ippoolusage.md)![zone-beijing](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/zone-beijing.png)
 
     **Automatically create fixed IP pool**
 
@@ -96,7 +100,7 @@ This page describes how to configure multiple NICs for workload Pods in combinat
             app: workload01
         spec:
           containers:
-          -name: workload01
+          - name: workload01
             image: busybox
             imagePullPolicy: IfNotPresent
             command: ["/bin/sh", "-c", "trap : TERM INT; sleep infinity & wait"]

@@ -231,11 +231,11 @@ Kubernetes uses a zero-trust model by default, meaning that all Pods and hosts i
               from: frontend
               to: database
           protocol: TCP
-            source:
-              selector: app == 'client'
-            destination:
-              ports:
-               - 8080
+          source:
+            selector: app == 'client'
+          destination:
+            ports:
+              - 8080
       egress:
         - action: Allow
     ```

@@ -55,6 +55,13 @@ This page lists the release notes for the Redis Cache service, providing you wit
 - **Upgraded** Redis to 7.2.9 and removed versions 7.2.6 and 7.2.7
 - **Upgraded** RedisInsight to 2.70.0
 
+## 2025-08-31
+
+### v0.28.0
+
+- **Added** support for toleration configuration when creating Redis instances
+- **Improved** support for deploying Redis instances of versions 7.2.10 and 6.2.19
+
 ## 2025-02-28
 
 ### v0.27.0
@@ -149,9 +156,9 @@ This page lists the release notes for the Redis Cache service, providing you wit
 - **Improved** prompt when instance list information is not obtained
 - **Improved** display of Mcamel-Redis monitoring dashboard in both Chinese and English
 
-### 2023-10-31
+## 2023-10-31
 
-#### v0.12.0
+### v0.12.0
 
 - **Added** offline upgrade functionality
 - **Added** restart functionality for instances

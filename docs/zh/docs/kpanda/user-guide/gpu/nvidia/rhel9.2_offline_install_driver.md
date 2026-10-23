@@ -855,7 +855,49 @@ docker build -t {火种registry}/nvcr.m.daocloud.io/nvidia/driver:535.183.06-01-
 docker push {火种registry}/nvcr.m.daocloud.io/nvidia/driver:535.183.06-01-rhel9.2
 ```
 
+## 配置离线 yum 源
+
+安装 GPU Operator 前，需要为驱动容器配置包含 RHEL 9.2 内核及相关依赖的离线 yum 源。以下操作在待部署 GPU Operator 集群的控制节点上执行。
+
+1. 创建 `redhat.repo` 文件。将示例中的地址替换为实际的离线 yum 源地址。
+
+    ```bash
+    # 文件名称必须为 redhat.repo，否则安装 gpu-operator 时无法被识别
+    cat > redhat.repo << EOF
+    [extension-0]
+    baseurl = http://{火种节点 IP}:9000/redhat-base/redhat-base-repo/Packages
+    gpgcheck = 0
+    name = kubean extension 0
+
+    [extension-1]
+    baseurl = http://{火种节点 IP}:9000/redhat-base/redhat-base-repo/Packages
+    gpgcheck = 0
+    name = kubean extension 1
+    EOF
+    ```
+
+2. 在 `gpu-operator` 命名空间中创建保存 yum 源配置的 ConfigMap：
+
+    ```bash
+    kubectl create configmap local-repo-config \
+      -n gpu-operator \
+      --from-file=./redhat.repo
+    ```
+
+    预期输出如下：
+
+    ```console
+    configmap/local-repo-config created
+    ```
+
+3. 查看 ConfigMap 内容，确认离线 yum 源配置已保存：
+
+    ```bash
+    kubectl get configmap local-repo-config -n gpu-operator -oyaml
+    ```
+
 ## 安装驱动
 
-1. 安装 gpu-operator addon
-2. 设置 `driver.version=535.183.06-01`
+1. 安装 gpu-operator addon。
+2. 设置 `driver.version=535.183.06-01`。
+3. 设置 `Driver.RepoConfig.ConfigMapName=local-repo-config`，使用上一步创建的离线 yum 源配置。

@@ -5,7 +5,7 @@ Date: 2024-01-24
 
 # Offline Install gpu-operator
 
-DCE 5.0 comes with pre-installed `driver` images for the following three operating systems: Ubuntu 22.04, Ubuntu 20.04,
+DCE comes with pre-installed `driver` images for the following three operating systems: Ubuntu 22.04, Ubuntu 20.04,
 and CentOS 7.9. The driver version is `535.104.12`. Additionally, it includes the required `Toolkit` images for each
 operating system, so users no longer need to manually provide offline `toolkit` images.
 
@@ -125,3 +125,10 @@ After completing the configuration and creation of the above parameters:
         ```
 
     After spliting, applications can [use MIG GPU resources](mig/mig_usage.md).
+
+## Upgrade Notes
+
+1. Known issue: After upgrading gpu-operator from v23.9.0+3 to v24.6.0+1, `gpu-operator-node-feature-discovery-master` stays in a crash state.
+2. Solution: On the __Helm Applications__ page, search for __gpu-operator__ , click the __Update__ button in the operation column, enter the update page, select version 24.6.0+1, and then set upgradeCRD to true.
+
+    ![Upgrade GPU operator](../images/updategpuoperator.png)

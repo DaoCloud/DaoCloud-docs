@@ -30,7 +30,6 @@ Here's an example:
 1. In the scenario where Harbor is managed using Helm templates, deploy ingress-nginx.
    You can find the nginx-config in __Container Management__ -> __Clusters__ -> __ConfigMaps & Secrets__ -> __ConfigMaps__ .
 
-
 2. Access the details and click the __Update__ button to add the proxy configuration shown below, modifying the timeout to 900s (15 minutes). Save the changes and restart the Pod.
 
     ![ConfigMap Details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/nginx-configdetail1.png)
@@ -65,7 +64,6 @@ Here's an example:
 
 1. In the scenario where Harbor is managed using Helm templates, deploy ingress-nginx.
    You can find the nginx-config in __Container Management__ -> __Clusters__ -> __ConfigMaps & Secrets__ -> __ConfigMaps__ .
-
 
 2. Access the details of the config and click the __Update__ button to add the
    proxy configuration shown below. Save the changes and restart the Pod.

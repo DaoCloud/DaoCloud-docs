@@ -112,7 +112,7 @@ hide:
 <li>微调/LoRA 支持</li>
 <li>多模态推理（图文、音视频）</li>
 <li>模型资产中心完善（远程复制/同步、安全扫描、预热加速、多语言）</li>
-<li><a href="https://github.com/matrixhub-ai/matrixhub">MatrixHub</a> 提交 CNCF<sup><a href="#fn-matrixhub">1</a></sup></li>
+<li><mark><a href="https://github.com/matrixhub-ai/matrixhub">MatrixHub</a> 加入 CNCF Landscape</mark><sup><a href="#fn-matrixhub">1</a></sup></li>
 <li>AI Agent 基础设施 Beta（沙箱、记忆与上下文、语义路由）</li>
 <li>故障自愈（集成训练/推理框架自动恢复）</li>
 <li>告警降噪（相关告警自动归并）</li>
@@ -213,7 +213,7 @@ DCE 已具备 [AI Lab](../baize/intro/index.md)（训练）和[大模型服务�
 
 ---
 
-## DCE 5.0 现有能力
+## DCE 现有能力
 
 各模块可独立升级，不需要整体停机。
 

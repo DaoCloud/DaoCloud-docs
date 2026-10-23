@@ -5,25 +5,9 @@ hide:
 
 # Video Tutorials
 
-<span style="background-image: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
-    background-size: 200%;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: shine 5s infinite linear;">
-    This page provides video tutorials to help you quickly get started with DCE 5.0.
-</span>
+This page provides video tutorials to help you quickly get started with our products.
 
-<style>
-    @keyframes shine {
-        0% {
-            background-position: -200%;
-        }
-        100% {
-            background-position: 200%;
-        }
-    }
-</style>
+## DCE
 
 <div class="grid cards" markdown>
 
@@ -45,6 +29,21 @@ hide:
 
 </div>
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+## d.run
+
+<div class="grid cards" markdown>
+
+- :technologist_tone1: [Register and Login](drun/login.md)
+- :octicons-cloud-16: [Compute Cloud](drun/zestu.md)
+- :simple-themodelsresource: [LLM Studio](drun/models.md)
+- :octicons-apps-24: [AI Apps](drun/ai-app.md)
+- :fontawesome-solid-sack-dollar: [Billing Center](drun/bills.md)
+- :octicons-gear-16: [Personal Center](drun/login.md)
+
+</div>
+
+*[DCE]: An abbreviation for DaoCloud Enterprise, a cloud-native operating system and next-generation AI intelligent computing platform
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

@@ -5,7 +5,7 @@ hide:
 
 # Parameter Templates
 
-DCE 5.0 Kafka provides a parameter template feature to facilitate instance creation.
+DCE Kafka provides a parameter template feature to facilitate instance creation.
 
 1. On the Kafka message queue page, click **Configuration Management** in the top right corner.
 

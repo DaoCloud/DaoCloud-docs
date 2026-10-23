@@ -7,9 +7,9 @@ hide:
 
 # Integrate Clusters
 
-With the features of integrating clusters, DCE 5.0 allows you to manage on-premise and cloud clusters of various providers in a unified manner. This is quite important in avoiding the risk of being locked in by a certain providers, helping enterprises safely migrate their business to the cloud.
+With the features of integrating clusters, DCE allows you to manage on-premise and cloud clusters of various providers in a unified manner. This is quite important in avoiding the risk of being locked in by a certain providers, helping enterprises safely migrate their business to the cloud.
 
-In DCE 5.0 Container Management module, you can integrate a cluster of the following providers: standard Kubernetes clusters, Redhat Openshift, SUSE Rancher, VMware Tanzu, Amazon EKS, Aliyun ACK, Huawei CCE, Tencent TKE, etc.
+In DCE Container Management module, you can integrate a cluster of the following providers: standard Kubernetes clusters, Redhat Openshift, SUSE Rancher, VMware Tanzu, Amazon EKS, Aliyun ACK, Huawei CCE, Tencent TKE, etc.
 
 ## Prerequisites
 
@@ -39,3 +39,8 @@ In DCE 5.0 Container Management module, you can integrate a cluster of the follo
 !!! note
 
     The status of the newly integrated cluster is __Integrating__ , which will become __Running__ after the integration succeeds.
+
+## References
+
+- [How to Add Heterogeneous Nodes to a Worker Cluster](../../best-practice/multi-arch.md)
+- [Limited Scenario Migration from DCE 4.0 to DCE](../../best-practice/dce4-5-migration.md)

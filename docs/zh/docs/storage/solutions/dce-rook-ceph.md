@@ -1,6 +1,6 @@
 # 通过应用商店部署 Rook-ceph
 
-本文将提供在 DCE 5.0 应用商店 Addon 的图形化界面安装、部署 Rook-ceph 云原生存储系统的操作步骤及说明。
+本文将提供在 DCE 应用商店 Addon 的图形化界面安装、部署 Rook-ceph 云原生存储系统的操作步骤及说明。
 
 ## Rook-ceph helm chart 格式转换
 
@@ -76,9 +76,9 @@ rook-ceph-cluster-v1.10.5.tgz rook-ceph-v1.10.5.tgz rook-ceph rook-ceph-cluster 
 
 ![镜像仓库上传 chart 包](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/addon-rook-registry-3.png)
 
-## DCE 5.0 集群安装 Rook-ceph
+## DCE 集群安装 Rook-ceph
 
-### 将集群接入 DCE 5.0
+### 将集群接入 DCE
 
 ![集群接入](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/addon-rook-cluster-1.png)
 
@@ -129,4 +129,4 @@ NAME READY STATUS RESTARTS AGE IP NODE NOMINATED NODE READINESS GATES
 wordpress-mysql-79966d6c5b-5v2r4 1/1 Running 0 12m 10.244.19.148 k8s-10-6-162-31 <none> <none>
 ```
 
-至此，Rook-ceph 在 DCE 5.0 Add-on 应用商店的部署安装验证测试完成！
+至此，Rook-ceph 在 DCE Add-on 应用商店的部署安装验证测试完成！

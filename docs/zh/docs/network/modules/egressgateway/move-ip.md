@@ -46,7 +46,7 @@ status:
 在迁移前，Egress IP 在 workstation2 节点。
 
 ```shell
-node@workstation:~$ kubecti get egp
+node@workstation:~$ kubectl get egp
 NAME       GATEWAY          IPW4          IPV6       EGRESSNODE
 policy-1   egressgateway    10.6.92.209              workstation3
 ```
@@ -63,7 +63,7 @@ Successfully moved VIP 10.6.92.209 to node workstation2
 迁移后 Egress IP 节点已经转移到 workstation2 节点。
 
 ```shell
-node@workstation:~$ kubecti get egp
+node@workstation:~$ kubectl get egp
 NAME       GATEWAY          IPW4          IPV6       EGRESSNODE
 policy-1   egressgateway    10.6.92.209              workstation2
 ```

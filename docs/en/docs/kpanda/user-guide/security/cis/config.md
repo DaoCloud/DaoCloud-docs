@@ -16,7 +16,7 @@ The steps for creating a scan configuration are as follows:
 
 3. Fill in the configuration name, select the configuration template, and optionally check the scan items, then click __OK__ .
 
-    Scan Template: Currently, two templates are provided. The __kubeadm__ template is suitable for general Kubernetes clusters. The __daocloud__ template ignores scan items that are not applicable to DCE 5.0 based on the __kubeadm__ template and the platform design of DCE 5.0.
+    Scan Template: Currently, two templates are provided. The __kubeadm__ template is suitable for general Kubernetes clusters. The __daocloud__ template ignores scan items that are not applicable to DCE based on the __kubeadm__ template and the platform design of DCE.
 
     
 

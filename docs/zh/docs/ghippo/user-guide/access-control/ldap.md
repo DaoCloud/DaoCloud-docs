@@ -9,12 +9,12 @@ LDAP 英文全称为 Lightweight Directory Access Protocol，即轻型目录访�
 通过 IP 协议提供访问控制和维护分布式信息的目录信息。
 
 如果您的企业或组织已有自己的账号体系，同时您的企业用户管理系统支持 LDAP 协议，就可以使用全局管理提供的基于
-LDAP 协议的身份提供商功能，而不必在 DCE 5.0 中为每一位组织成员创建用户名/密码。
-您可以向这些外部用户身份授予使用 DCE 5.0 资源的权限。
+LDAP 协议的身份提供商功能，而不必在 DCE 中为每一位组织成员创建用户名/密码。
+您可以向这些外部用户身份授予使用 DCE 资源的权限。
 
 在全局管理中，其操作步骤如下：
 
-1. 使用具有 __admin__ 角色的用户登录 DCE 5.0。点击左侧导航栏左下角的 __全局管理__ -> __用户与访问控制__ 。
+1. 使用具有 __admin__ 角色的用户登录 DCE。点击左侧导航栏左下角的 __全局管理__ -> __用户与访问控制__ 。
 
     ![global](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/ws01.png)
 
@@ -35,7 +35,7 @@ LDAP 协议的身份提供商功能，而不必在 DCE 5.0 中为每一位组织
     | 密码（Bind credentials）            |   LDAP 管理员的密码。该字段可以从 vault 中获取其值，使用 ${vault.ID} 格式。         | 
     | 用户 DN（Users DN）                 | 您的用户所在的 LDAP 树的完整 DN。此 DN 是 LDAP 用户的父级。例如，假设您的典型用户的 DN 类似于“uid='john',ou=users,dc=example,dc=com”，则可以是“ou=users,dc=example,dc=com”。 | dc=daocloud,dc=io     |
     | 用户对象类（User object classes）   | LDAP 中用户的 LDAP objectClass 属性的所有值，以逗号分隔。例如：“inetOrgPerson，organizationalPerson”。新创建的 Keycloak 用户将与所有这些对象类一起写入 L​​DAP，并且只要现有 LDAP 用户记录包含所有这些对象类，就会找到它们。  | 
-    | 是否启用TLS（Enable StartTLS）      | 启用后将加密 DCE 5.0 与 LDAP 的连接      |
+    | 是否启用TLS（Enable StartTLS）      | 启用后将加密 DCE 与 LDAP 的连接      |
     | 预设权限（Default permission）      | 同步后的用户/用户组默认没有任何权限            | 
     | 全名映射（First/Last name mapping） | 对应 First name 和 Last Name          | 
     | 用户名映射（User name mapping）     | 用户唯一的用户名         | 
@@ -67,6 +67,6 @@ LDAP 协议的身份提供商功能，而不必在 DCE 5.0 中为每一位组织
 
 !!! note
 
-    1. 当您通过 LDAP 协议将企业用户管理系统与 DCE 5.0 建立信任关系后，可通过手动同步或自动同步的方式，将企业用户管理系统中的用户或用户组一次性同步至 DCE 5.0。
-    1. 同步后管理员可对用户组/用户组进行批量授权，同时用户可通过在企业用户管理系统中的账号/密码登录 DCE 5.0。
+    1. 当您通过 LDAP 协议将企业用户管理系统与 DCE 建立信任关系后，可通过手动同步或自动同步的方式，将企业用户管理系统中的用户或用户组一次性同步至 DCE。
+    1. 同步后管理员可对用户组/用户组进行批量授权，同时用户可通过在企业用户管理系统中的账号/密码登录 DCE。
     1. 有关实际操作教程，请参阅 [LDAP 操作演示视频](../../../videos/ghippo.md#ldap)。

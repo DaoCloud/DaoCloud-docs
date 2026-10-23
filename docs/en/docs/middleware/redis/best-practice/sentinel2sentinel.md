@@ -20,7 +20,7 @@ Diagram: Data synchronization **instance redis-a** >> **instance redis-b**
 
 ### Configuring Service for the Source Instance
 
-If the source instance is in a DCE 5.0 cluster, you can enable the solution in __Data Services__ -> __Redis__ -> __Cross-Cluster Master-Slave Synchronization__ , and the service configuration will be automatically completed.
+If the source instance is in a DCE cluster, you can enable the solution in __Data Services__ -> __Redis__ -> __Cross-Cluster Master-Slave Synchronization__ , and the service configuration will be automatically completed.
 
 
 If the source instance is in a third-party cluster, you need to manually configure the service. The configuration method is described below:

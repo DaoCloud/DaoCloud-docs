@@ -226,11 +226,11 @@ Kubernetes 默认采用零信任模型，即集群内所有 Pod、主机之间�
               from: frontend
               to: database
           protocol: TCP
-            source:
-              selector: app == 'client'
-            destination:
-              ports:
-               - 8080
+          source:
+            selector: app == 'client'
+          destination:
+            ports:
+              - 8080
       egress:
         - action: Allow
     ```

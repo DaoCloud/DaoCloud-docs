@@ -5,13 +5,20 @@ hide:
 
 # Creating Inspection Configuration
 
-DCE 5.0 Container Management module provides cluster inspection functionality, which supports inspection at the cluster, node, and pod levels.
+DCE Container Management module provides cluster inspection functionality, which supports inspection at the cluster, node, and pod levels.
 
 - Cluster level: Check the running status of system components in the cluster, including cluster status, resource usage, and specific inspection items for control nodes such as __kube-apiserver__ and __etcd__ .
 - Node level: Includes common inspection items for both control nodes and worker nodes, such as node resource usage, handle count, PID status, and network status.
 - Pod level: Check the CPU and memory usage, running status, PV and PVC status of Pods.
 
 Here's how to create an inspection configuration.
+
+## Prerequisites
+
+- [Integrated](../clusters/integrate-cluster.md) or [created a cluster](../clusters/create-cluster.md) in the container management module.
+- The selected cluster is in the __Running__ state, and the [insight component has been installed](../../../insight/quickstart/install/install-agent.md) in the cluster.
+
+## Procedure
 
 1. Click __Cluster Inspection__ in the left navigation bar.
 
@@ -25,7 +32,7 @@ Here's how to create an inspection configuration.
 
     - Cluster: Select the clusters that you want to inspect from the dropdown list. **If you select multiple clusters, multiple inspection configurations will be automatically generated (only the inspected clusters are inconsistent, all other configurations are identical).**
     - Scheduled Inspection: When enabled, it allows for regular automatic execution of cluster inspections based on a pre-set inspection frequency.
-    - Inspection Frequency: Set the interval for automatic inspections, e.g., every Tuesday at 10 AM. It supports custom CronExpressios, refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax) for more information.
+    - Inspection Frequency: Set the interval for automatic inspections, e.g., every Tuesday at 10 AM. It supports custom CronExpressions, refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax) for more information.
     - Number of Inspection Records to Retain: Specifies the maximum number of inspection records to be retained, including all inspection records for each cluster.
     - Parameter Configuration: The parameter configuration is divided into three parts: cluster level, node level, and pod level. You can enable or disable specific inspection items based on your requirements.
 

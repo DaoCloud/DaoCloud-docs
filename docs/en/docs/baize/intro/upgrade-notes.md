@@ -55,7 +55,7 @@ The CRD used by baize changes from **datasets.dataset.baize.io** to **datasets.d
     ```bash
     #!/bin/bash
 
-    # 检查参数
+    # Check the arguments
     if [ $# -ne 2 ]; then
         echo "Usage: $0 <namespace> <dataset-name>"
         echo "Example: $0 default my-dataset"
@@ -73,7 +73,7 @@ The CRD used by baize changes from **datasets.dataset.baize.io** to **datasets.d
     echo "Job Name: $JOB_NAME"
     echo ""
 
-    # ========== 第零步：获取 Dataset 信息并判断类型 ==========
+    # ========== Step 0: Get the Dataset information and determine the type ==========
     echo "Step 0: Checking Dataset source type..."
     DATASET_TYPE=$(kubectl get dataset.dataset.baize.io "$DATASET_NAME" -n "$NAMESPACE" -o jsonpath='{.spec.source.type}' 2>/dev/null)
 
@@ -83,7 +83,7 @@ The CRD used by baize changes from **datasets.dataset.baize.io** to **datasets.d
     fi
     echo "Dataset source type: $DATASET_TYPE"
 
-    # 判断是否需要创建 Job
+    # Determine whether a Job needs to be created
     SKIP_JOB=false
     if [ "$DATASET_TYPE" = "NFS" ] || [ "$DATASET_TYPE" = "PVC" ]; then
         SKIP_JOB=true
@@ -91,10 +91,10 @@ The CRD used by baize changes from **datasets.dataset.baize.io** to **datasets.d
     fi
     echo ""
 
-    # ========== 第一步：更新 Dataset ==========
+    # ========== Step 1: Update the Dataset ==========
     echo "Step 1: Updating Dataset..."
 
-    # 构建 jq 命令，根据类型决定是否添加 rcloneOp
+    # Build the jq command and decide whether to add rcloneOp based on the type
     if [ "$DATASET_TYPE" = "S3" ] || [ "$DATASET_TYPE" = "HTTP" ]; then
         echo "Type is S3 or HTTP, setting rcloneOp to syncMode"
         kubectl get dataset.dataset.baize.io "$DATASET_NAME" -n "$NAMESPACE" -o json | jq '
@@ -139,16 +139,16 @@ The CRD used by baize changes from **datasets.dataset.baize.io** to **datasets.d
     echo "Dataset updated successfully"
     echo ""
 
-    # 如果类型为 PVC，只执行完第一步就结束
+    # If the type is PVC, finish right after the first step
     if [ "$DATASET_TYPE" = "PVC" ]; then
         echo "Type is PVC, only updating Dataset. Done."
         exit 0
     fi
 
-    # 等待 Dataset 创建完成
+    # Wait for the Dataset to be created
     sleep 10
 
-    # ========== 第二步：获取 Dataset 的 UID ==========
+    # ========== Step 2: Get the Dataset UID ==========
     echo "Step 2: Getting Dataset UID..."
     DATASET_UID=$(kubectl get dataset.dataset.baizeai.io "$DATASET_NAME" -n "$NAMESPACE" -o jsonpath='{.metadata.uid}')
 
@@ -159,7 +159,7 @@ The CRD used by baize changes from **datasets.dataset.baize.io** to **datasets.d
     echo "Dataset UID: $DATASET_UID"
     echo ""
 
-    # ========== 第三步：更新 PVC ==========
+    # ========== Step 3: Update the PVC ==========
     echo "Step 3: Checking PVC before update..."
     echo "Current PVC ownerReferences:"
     kubectl get pvc "$PVC_NAME" -n "$NAMESPACE" -o json | jq '.metadata.ownerReferences // "null"'
@@ -187,7 +187,7 @@ The CRD used by baize changes from **datasets.dataset.baize.io** to **datasets.d
     echo "PVC updated successfully"
     echo ""
 
-    # ========== 第三步（附加）：如果是 NFS 类型，更新 PV ==========
+    # ========== Step 3 (additional): if the type is NFS, update the PV ==========
     if [ "$DATASET_TYPE" = "NFS" ]; then
         echo "Step 3.5: Getting PV name from PVC..."
         PV_NAME=$(kubectl get pvc "$PVC_NAME" -n "$NAMESPACE" -o jsonpath='{.spec.volumeName}')
@@ -221,7 +221,7 @@ The CRD used by baize changes from **datasets.dataset.baize.io** to **datasets.d
         echo ""
     fi
 
-    # ========== 第四步：创建 Job（条件判断）==========
+    # ========== Step 4: Create the Job (conditional) ==========
     if [ "$SKIP_JOB" = true ]; then
         echo "Step 4: Skipping Job creation (type is $DATASET_TYPE)"
     else
@@ -266,7 +266,7 @@ The CRD used by baize changes from **datasets.dataset.baize.io** to **datasets.d
     fi
     echo ""
 
-    # ========== 验证结果 ==========
+    # ========== Verify the results ==========
     echo "=== Verification ==="
     echo "Dataset UID: $(kubectl get dataset "$DATASET_NAME" -n "$NAMESPACE" -o jsonpath='{.metadata.uid}' 2>/dev/null || echo 'N/A')"
     echo "PVC Owner UID: $(kubectl get pvc "$PVC_NAME" -n "$NAMESPACE" -o jsonpath='{.metadata.ownerReferences[0].uid}' 2>/dev/null || echo 'N/A')"
@@ -303,7 +303,7 @@ Starting from Baize v0.25.1, the `kueue` component is decoupled from `baize-agen
     set -e
 
     # ==========================================
-    # 环境变量配置区 (根据你的实际情况核对)
+    # Environment variable configuration section (verify against your actual situation)
     # ==========================================
     OLD_NAMESPACE="baize-system"
     OLD_RELEASE="baize-agent"
@@ -359,36 +359,36 @@ Starting from Baize v0.25.1, the `kueue` component is decoupled from `baize-agen
       kubectl annotate "$resource" helm.sh/resource-policy=keep --overwrite
     }
 
-    echo "🚀 开始：Kueue 资源所有权转移与旧控制器停机..."
+    echo "🚀 Start: transferring Kueue resource ownership and stopping the old controller..."
 
-    # 1. 数据备份
-    echo "📦 [1/4] 正在备份当前集群中的 Kueue CRD 和实例数据..."
+    # 1. Data backup
+    echo "📦 [1/4] Backing up the Kueue CRDs and instance data in the current cluster..."
     mkdir -p "$BACKUP_DIR"
     kubectl get crd -o yaml | grep -A 10 "kueue.x-k8s.io" > "$BACKUP_DIR/kueue-crds-backup.yaml" || true
     kubectl get clusterqueue,localqueue,resourceflavor,workload,topology -A -o yaml > "$BACKUP_DIR/kueue-data-backup.yaml" 2>/dev/null || true
-    echo "✅ 备份完成，保存在 ${BACKUP_DIR} 目录下。"
+    echo "✅ Backup completed and saved in the ${BACKUP_DIR} directory."
 
-    # 2. 转移 CRD 所有权并添加防删保护
-    echo "🔀 [2/4] 正在将集群级别 CRD 的 Helm 所有权转移给新 Release (${NEW_RELEASE})..."
+    # 2. Transfer the CRD ownership and add deletion protection
+    echo "🔀 [2/4] Transferring the Helm ownership of cluster-level CRDs to the new release (${NEW_RELEASE})..."
     CRDS=$(kubectl get crd -o name | grep 'kueue.x-k8s.io' || true)
     if [ -n "$CRDS" ]; then
       for crd in $CRDS; do
         annotate_release "$crd"
         annotate_keep_policy "$crd"
-        echo "  - 已接管: $crd"
+        echo "  - Taken over: $crd"
       done
     else
-      echo "⚠️ 未找到任何 Kueue CRD，请确认集群状态。"
+      echo "⚠️ No Kueue CRD found. Please confirm the cluster status."
     fi
 
-    # 批量修改 v1beta1 和 v1beta2 的所有权标记
+    # Batch modify the ownership annotations of v1beta1 and v1beta2
     for version in v1beta1 v1beta2; do
       annotate_release "apiservice/${version}.visibility.kueue.x-k8s.io"
-      echo "✅ APIService ${version} 已成功转移所有权"
+      echo "✅ Ownership of APIService ${version} transferred successfully"
     done
 
-    # 3. 转移 ClusterRole 和 Binding 所有权
-    echo "🔀 [3/4] 正在转移 ClusterRole 和 ClusterRoleBinding 的所有权..."
+    # 3. Transfer the ownership of ClusterRole and Binding
+    echo "🔀 [3/4] Transferring the ownership of ClusterRole and ClusterRoleBinding..."
     ROLES=$(kubectl get clusterrole,clusterrolebinding -o name | grep 'kueue' || true)
     if [ -n "$ROLES" ]; then
       for role in $ROLES; do
@@ -396,24 +396,24 @@ Starting from Baize v0.25.1, the `kueue` component is decoupled from `baize-agen
       done
     fi
 
-    # 4. 控制面平滑静默
-    echo "⏸️  [4/4] 正在停止旧的 Kueue 控制器并清理 Webhook..."
-    kubectl scale deployment -l app.kubernetes.io/name=kueue -n "$OLD_NAMESPACE" --replicas=0 || echo "⚠️ 未找到旧 Deployment，可能已停止。"
+    # 4. Gracefully silence the control plane
+    echo "⏸️  [4/4] Stopping the old Kueue controller and cleaning up Webhooks..."
+    kubectl scale deployment -l app.kubernetes.io/name=kueue -n "$OLD_NAMESPACE" --replicas=0 || echo "⚠️ Old Deployment not found, it may already be stopped."
     kubectl delete validatingwebhookconfigurations,mutatingwebhookconfigurations -l app.kubernetes.io/name=kueue --ignore-not-found
 
     annotate_release_in_namespace rolebinding "$VISIBILITY_ROLE_NAME" "$VISIBILITY_ROLE_NAMESPACE"
 
     annotate_release_in_namespace_ignore_error role "$VISIBILITY_ROLE_NAME" "$VISIBILITY_ROLE_NAMESPACE"
 
-    # 给所有名字包含 kueue 的 ClusterRole 和 ClusterRoleBinding 加上 keep 策略
+    # Add the keep policy to all ClusterRoles and ClusterRoleBindings whose names contain kueue
     for res in $(kubectl get clusterrole,clusterrolebinding,serviceaccount -o name | grep kueue); do
       annotate_keep_policy "$res"
-      echo "🛡️ 已为 $res 添加防删保护"
+      echo "🛡️ Deletion protection added for $res"
     done
     echo ""
-    echo "🎉 完成！此时集群内的旧控制器已静默，CRD 已安全隔离。"
-    echo "👉 现有的 Job 不受影响，但新提交的 Job 会短暂 Pending。"
-    echo "请立即执行: kueue的安装与baize-agent的升级。"
+    echo "🎉 Done! The old controller in the cluster is now silent, and the CRDs are safely isolated."
+    echo "👉 Existing Jobs are not affected, but newly submitted Jobs will be Pending briefly."
+    echo "Please immediately proceed to: install kueue and upgrade baize-agent."
     ```
 
 2. Navigate to the worker cluster's **Helm Apps** -> **Helm Templates** page, locate the **kueue** addon, and install it.

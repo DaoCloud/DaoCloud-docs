@@ -69,4 +69,4 @@ Permissions are indicated with `✅` for granted access and `❌` for denied acc
 
 !!! note
 
-     For a more detailed introduction to roles and permissions of DCE 5.0, refer to [Role and permission management](../../ghippo/user-guide/access-control/role.md).
+     For a more detailed introduction to roles and permissions of DCE, refer to [Role and permission management](../../ghippo/user-guide/access-control/role.md).

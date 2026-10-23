@@ -4,6 +4,14 @@ We have crafted the following video tutorials for Container Registry, any kind o
 
 > If there is a problem with the video display, please refresh the page, or try to clear the browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Integrate registry (workspace)](#integrate-registry-workspace)
+- :two: [Integrate registry (Admin)](#integrate-registry-admin)
+- :three: [Managed Harbor](#managed-harbor)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;
@@ -47,6 +55,6 @@ See [Managed Harbor](../kangaroo/managed/harbor.md) for reference.
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/harbor.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kangaroo-harbor.png"></video>
 </div>
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

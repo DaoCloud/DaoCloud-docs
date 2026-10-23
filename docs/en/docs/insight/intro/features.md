@@ -7,10 +7,11 @@ Date: 2024-01-22
 
 This page lists the features supported by Insight.
 
-| Category | Subcategory  | Description | DCE 5.0 Community | DCE 5.0 Enterprise |
+| Category | Subcategory  | Description | DCE Community | DCE Enterprise |
 | -------- | ------------ | ----------- | ----------- | ----------- |
 | Dashboard | Platform Components | Provides open source selected dashboards through native Grafana, provides built-in dashboards to support monitoring of etcd, APIServer and other components. | ✓ | ✓ |
 |  | Cluster Resources | Provides monitoring for multiple dimensions such as clusters, nodes, and namespaces. The data source used by Grafana supports viewing data from multiple clusters. | ✓ | ✓ |
+|  | Core Components | Provides dashboards to monitor the core components of the platform and detect component running status in real time | ✓ | ✓ |
 | Infrastructure | Multiclusters | Provides centralized insight of multi-cluster business<br />Admins manage multicluster alerts uniformly, and meet the data isolation of cluster and tenant administrators<br />Supports persistent metrics and log data of clusters. | ✓ | ✓ |
 |  | Clusters | Provides an overview of a single cluster's insight, allowing to view the running status of the cluster, understand the resource usage of the cluster, and the current alerts occurring in the cluster. | ✓ | ✓ |
 |  | Nodes | Supports viewing the running status of nodes, and understanding the changes in CPU, memory, network and other resources of the node. | ✓ | ✓ |
@@ -30,6 +31,7 @@ This page lists the features supported by Insight.
 | Alert | Active Alerts | Provides a histogram to view the changing trend of alert time<br />Supports viewing all active rules and details. | ✓ | ✓ |
 |  | Historical Alerts | Can query all alerts that have been automatically recovered or manually resolved. | ✓ | ✓ |
 |  | Alert Policy | Built-in 100+ alert rules provide predefined alert rules for cluster components and container resources.<br />Administrators can create global alert rules for clusters with installed insight agents for unified alert management<br />Supports creating alert rules using predefined metrics<br />Supports creating alert rules using PromQL statements<br />Supports customizing thresholds, duration, and notification methods<br />Can customize the level of alerts, supporting urgent, warning, and informational levels. | ✓ | ✓ |
+|  | Log/Event Alerts | Set alert rules for log keywords and event status frequency |  | ✓ |
 |  | Notification Settings | On this page, you can configure sending messages to users through email groups, WeCom, DingTalk, and Webhook.<br />Supports notifying multiple alert objects simultaneously. | ✓ | ✓ |
 |  | Message Templates | The message template feature supports customizing the content of message templates and can notify specified objects through email, WeCom, DingTalk, and Webhook. | ✓ | ✓ |
 |  | Alert Silence | By configuring silence rules, you can stop receiving alert notifications during specified time periods. | ✓ | ✓ |

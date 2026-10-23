@@ -805,13 +805,13 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - **Added** built-in message template
 - **Added** chart metric Calculation Instructions
 
-### Improvements
+#### Improvements
 
 - **Improved** log list field display
 - **Improved** the judgment logic of insight-agent
 - **Upgraded** Jaeger Chart version upgraded from v0.62.1 to 0.65.1
 
-### Fixes
+#### Fixes
 
 - **Fixed** Some built-in alert rules do not take effect
 - **Fixed** an error that the name can be duplicated when creating a rule
@@ -823,7 +823,7 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 
 ## 2022-11-28
 
-### v0.12
+### v0.12.0
 
 #### Features
 
@@ -851,7 +851,7 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 
 ## 2022-11-21
 
-### v0.11
+### v0.11.0
 
 #### Improvements
 
@@ -876,7 +876,7 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 
 ## 2022-10-20
 
-### v0.10
+### v0.10.0
 
 #### Features
 
@@ -905,9 +905,9 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - Added OTel collector grafana dashboard
 - Add Insight overview Chinese page
 
-## 2022-09-25
+## 2022-9-25
 
-### v0.9
+### v0.9.0
 
 #### Features
 
@@ -936,9 +936,9 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - Add OTel collector grafana dashboard.
 - Add Insight Overview Chinese version.
 
-## 2022-08-21
+## 2022-8-21
 
-### v0.8
+### v0.8.0
 
 #### Features
 
@@ -963,9 +963,9 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - Add audit log enable/disable feature.
 - Move Fluentbit config to a ConfigMap.
 
-## 2022-07-20
+## 2022-7-20
 
-### v0.7
+### v0.7.0
 
 #### Break changes
 
@@ -994,9 +994,9 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - Replace insight-overview dashboard.
 - Add GrafanaDashboard, GrafanaDatasource CRDs.
 
-## 2022-06-23
+## 2022-6-23
 
-### v0.6
+### v0.6.0
 
 #### Break changes
 
@@ -1033,9 +1033,9 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - Add servicemonitor for components in victoria-metrics-k8s-stack.
 - Modify insight components resource.
 
-## 2022-05-18
+## 2022-5-18
 
-### v0.5
+### v0.5.0
 
 #### Features
 
@@ -1067,9 +1067,9 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - Added user guides - documents such as scene monitoring, data query, and alert center
 - New additions to the document site: [Product Benefits](benefits.md), [Metric Query](../user-guide/data-query/metric.md), [trace query](../user-guide/trace/trace.md), dashboard, [overview](../user-guide/dashboard/overview.md)
 
-## 2022-04-22
+## 2022-4-22
 
-### v0.4
+### v0.4.0
 
 #### Features
 
@@ -1097,9 +1097,9 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - Merge document ROADMAP content into total ROADMAP file
 - Update document structure
 
-## 2022-03-18
+## 2022-3-18
 
-### v0.3
+### v0.3.0
 
 #### Features
 
@@ -1117,11 +1117,9 @@ the evolution path and feature changes of each version. [Upgrade Notes](../quick
 - Support for metrics queries with extraLabels
 - Add metrics documentation.
 - Realize basic scenario cases in monitor
-
-#### Helm Charts
-
-- Add Jaeger helm chart
-- Add OpenTelemetry collector helm chart
-- Add tailing-sidecar-operator as an accessory/solution/plugin for log collection
-- Add /variables/log/message collection in fluentbit
-- Add kube exporter to collecot kube cluster event log
+- Helm Charts
+    - Add Jaeger helm chart
+    - Add OpenTelemetry collector helm chart
+    - Add tailing-sidecar-operator as an accessory/solution/plugin for log collection
+    - Add /variables/log/message collection in fluentbit
+    - Add kube exporter to collecot kube cluster event log

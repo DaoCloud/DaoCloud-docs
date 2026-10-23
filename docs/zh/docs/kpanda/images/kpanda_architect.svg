@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1255 1072" width="100%" role="img" aria-label="DCE 容器管理逻辑架构图" font-family="'Noto Sans SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB','Source Han Sans SC',system-ui,sans-serif">
+  <title>DCE 容器管理逻辑架构</title>
+  <rect width="1255" height="1072" fill="#FFFFFF"/>
+  <rect x="6" y="6" width="1243" height="646" rx="4" fill="none" stroke="#C9D2DC" stroke-width="2.5" stroke-dasharray="9 7"/>
+  <text x="36" y="44" font-size="26" font-weight="700" fill="#191A1B">容器管理</text>
+  <!-- 第一层：四类应用（微服务 / 企业应用现代化 / 大数据 / 数据库应用） -->
+  <rect x="32" y="62" width="288" height="124" fill="#FFFFFF" stroke="#0B3FE5" stroke-width="3"/>
+  <text x="46" y="96" font-size="21" font-weight="700" fill="#191A1B">微服务</text>
+  <rect x="46" y="128" width="124" height="50" fill="#003FF9"/>
+  <text x="108.0" y="150" font-size="18" font-weight="600" fill="#FFFFFF" text-anchor="middle">Spring</text>
+  <text x="108.0" y="170" font-size="18" font-weight="600" fill="#FFFFFF" text-anchor="middle">Cloud</text>
+  <rect x="180" y="128" width="124" height="50" fill="#003FF9"/>
+  <text x="242.0" y="160.0" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">Dubbo</text>
+  <rect x="331" y="62" width="288" height="124" fill="#FFFFFF" stroke="#0B3FE5" stroke-width="3"/>
+  <text x="345" y="96" font-size="21" font-weight="700" fill="#191A1B">企业应用现代化</text>
+  <rect x="345" y="128" width="124" height="50" fill="#003FF9"/>
+  <text x="407.0" y="160.0" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">.Net</text>
+  <rect x="479" y="128" width="124" height="50" fill="#003FF9"/>
+  <text x="541.0" y="160.0" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">Java</text>
+  <rect x="630" y="62" width="288" height="124" fill="#FFFFFF" stroke="#0B3FE5" stroke-width="3"/>
+  <text x="644" y="96" font-size="21" font-weight="700" fill="#191A1B">大数据</text>
+  <rect x="644" y="128" width="124" height="50" fill="#003FF9"/>
+  <text x="706.0" y="160.0" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">Hadoop</text>
+  <rect x="778" y="128" width="124" height="50" fill="#003FF9"/>
+  <text x="840.0" y="160.0" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">Cbase</text>
+  <rect x="929" y="62" width="288" height="124" fill="#FFFFFF" stroke="#0B3FE5" stroke-width="3"/>
+  <text x="943" y="96" font-size="21" font-weight="700" fill="#191A1B">数据库应用</text>
+  <rect x="943" y="128" width="124" height="50" fill="#003FF9"/>
+  <text x="1005.0" y="160.0" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">MySQL</text>
+  <rect x="1077" y="128" width="124" height="50" fill="#003FF9"/>
+  <text x="1139.0" y="160.0" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">Redis</text>
+  <!-- 统一入口：开放式 OpenAPI -->
+  <rect x="32" y="203" width="1186" height="63" fill="#003FF9"/>
+  <text x="625" y="244" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">开放式 OpenAPI</text>
+  <!-- 第二层：四大管理域（集群 / 应用 / 策略 / 运维） -->
+  <rect x="32" y="279" width="286" height="290" fill="#D1EBFE"/>
+  <text x="50" y="319" font-size="21" font-weight="700" fill="#191A1B">集群管理</text>
+  <rect x="50" y="330" width="250" height="62" fill="#003FF9"/>
+  <text x="175" y="368.0" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="middle">集群统一纳管</text>
+  <rect x="50" y="410" width="250" height="62" fill="#003FF9"/>
+  <text x="175" y="436" font-size="17" font-weight="600" fill="#FFFFFF" text-anchor="middle">集群全生命周期管理</text>
+  <text x="175" y="456" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">（DKE/DKG）</text>
+  <rect x="50" y="490" width="250" height="62" fill="#003FF9"/>
+  <text x="175" y="528.0" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="middle">集群升级</text>
+  <rect x="330" y="279" width="286" height="290" fill="#D1EBFE"/>
+  <text x="348" y="319" font-size="21" font-weight="700" fill="#191A1B">应用管理</text>
+  <rect x="348" y="330" width="250" height="62" fill="#003FF9"/>
+  <text x="473" y="368.0" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="middle">应用管理</text>
+  <rect x="348" y="410" width="250" height="62" fill="#003FF9"/>
+  <text x="473" y="448.0" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="middle">应用编排</text>
+  <rect x="348" y="490" width="250" height="62" fill="#003FF9"/>
+  <text x="473" y="528.0" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="middle">应用弹性伸缩</text>
+  <rect x="628" y="279" width="286" height="290" fill="#D1EBFE"/>
+  <text x="646" y="319" font-size="21" font-weight="700" fill="#191A1B">策略管理</text>
+  <rect x="646" y="330" width="119" height="62" fill="#003FF9"/>
+  <text x="705.5" y="368.0" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">网络策略</text>
+  <rect x="777" y="330" width="119" height="62" fill="#003FF9"/>
+  <text x="836.5" y="368.0" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">配额策略</text>
+  <rect x="646" y="410" width="119" height="62" fill="#003FF9"/>
+  <text x="705.5" y="448.0" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">资源限制</text>
+  <rect x="777" y="410" width="119" height="62" fill="#003FF9"/>
+  <text x="836.5" y="448.0" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">安全限制</text>
+  <rect x="646" y="490" width="250" height="62" fill="#003FF9"/>
+  <text x="771" y="528.0" font-size="19" font-weight="600" fill="#FFFFFF" text-anchor="middle">灾备策略</text>
+  <rect x="926" y="279" width="286" height="290" fill="#D1EBFE"/>
+  <text x="944" y="319" font-size="21" font-weight="700" fill="#191A1B">运维管理</text>
+  <rect x="944" y="330" width="250" height="62" fill="#003FF9"/>
+  <text x="1069" y="368.0" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="middle">日志</text>
+  <rect x="944" y="410" width="250" height="62" fill="#003FF9"/>
+  <text x="1069" y="448.0" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="middle">监控</text>
+  <rect x="944" y="490" width="250" height="62" fill="#003FF9"/>
+  <text x="1069" y="528.0" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="middle">事件</text>
+  <!-- 多云/混合云容器管理 -->
+  <rect x="32" y="582" width="1186" height="63" fill="#003FF9"/>
+  <text x="625" y="623" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">多云/混合云容器管理</text>
+  <!-- 容器云平台：已支持的 Kubernetes 发行版 -->
+  <rect x="32" y="658" width="1186" height="178" fill="#FFFFFF" stroke="#003FF9" stroke-width="5"/>
+  <text x="50" y="692" font-size="19" font-weight="700" fill="#191A1B">容器云平台</text>
+  <!-- DaoCloud：六边形分块 -->
+  <polygon points="95.0,738.0 71.6,751.5 71.6,778.5 95.0,792.0 118.4,778.5 118.4,751.5" fill="#00CB59"/>
+  <polygon points="102.5,752.0 87.5,752.0 80.0,765.0 87.5,778.0 102.5,778.0 110.0,765.0" fill="#FFFFFF"/>
+  <line x1="95.0" y1="751.0" x2="95.0" y2="738.0" stroke="#FFFFFF" stroke-width="2.8"/>
+  <line x1="82.9" y1="758.0" x2="71.6" y2="751.5" stroke="#FFFFFF" stroke-width="2.8"/>
+  <line x1="82.9" y1="772.0" x2="71.6" y2="778.5" stroke="#FFFFFF" stroke-width="2.8"/>
+  <line x1="95.0" y1="779.0" x2="95.0" y2="792.0" stroke="#FFFFFF" stroke-width="2.8"/>
+  <line x1="107.1" y1="772.0" x2="118.4" y2="778.5" stroke="#FFFFFF" stroke-width="2.8"/>
+  <line x1="107.1" y1="758.0" x2="118.4" y2="751.5" stroke="#FFFFFF" stroke-width="2.8"/>
+  <text x="130" y="778" font-size="33" font-weight="700" fill="#191A1B">DaoCloud</text>
+  <!-- Kubernetes：七边形 + 七辐舵轮 -->
+  <polygon points="448.0,703.0 421.4,715.8 414.9,744.6 433.2,767.6 462.8,767.6 481.1,744.6 474.6,715.8" fill="#2760DB"/>
+  <circle cx="448" cy="737" r="20" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <line x1="448.0" y1="731.0" x2="448.0" y2="717.0" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="448.0" cy="717.0" r="2.6" fill="#FFFFFF"/>
+  <line x1="443.3" y1="733.3" x2="432.4" y2="724.5" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="432.4" cy="724.5" r="2.6" fill="#FFFFFF"/>
+  <line x1="442.2" y1="738.3" x2="428.5" y2="741.5" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="428.5" cy="741.5" r="2.6" fill="#FFFFFF"/>
+  <line x1="445.4" y1="742.4" x2="439.3" y2="755.0" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="439.3" cy="755.0" r="2.6" fill="#FFFFFF"/>
+  <line x1="450.6" y1="742.4" x2="456.7" y2="755.0" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="456.7" cy="755.0" r="2.6" fill="#FFFFFF"/>
+  <line x1="453.8" y1="738.3" x2="467.5" y2="741.5" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="467.5" cy="741.5" r="2.6" fill="#FFFFFF"/>
+  <line x1="452.7" y1="733.3" x2="463.6" y2="724.5" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="463.6" cy="724.5" r="2.6" fill="#FFFFFF"/>
+  <circle cx="448" cy="737" r="5" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <text x="448" y="807" font-size="26" font-weight="700" fill="#191A1B" text-anchor="middle">kubernetes</text>
+  <!-- OpenShift：三段断环 -->
+  <path d="M732.0 707.9 A40 40 0 0 0 677.4 739.4" fill="none" stroke="#DF1F30" stroke-width="15"/>
+  <path d="M677.4 750.6 A40 40 0 0 0 732.0 782.1" fill="none" stroke="#DF1F30" stroke-width="15"/>
+  <path d="M741.6 776.5 A40 40 0 0 0 741.6 713.5" fill="none" stroke="#DF1F30" stroke-width="15"/>
+  <text x="717" y="814" font-size="14.5" font-weight="700" fill="#191A1B" letter-spacing="1.2" text-anchor="middle">OPENSHIFT</text>
+  <!-- 其他平台：蓝牛剪影 + 更多 -->
+  <g fill="#1F46F9">
+    <rect x="888" y="742" width="74" height="27" rx="3"/>
+    <path d="M956 738 h22 a9 9 0 0 1 9 9 v19 a8 8 0 0 1 -8 8 h-23 z"/>
+    <path d="M960 740 l-3 -16 l13 10 z"/>
+    <path d="M983 742 l10 -13 l4 9 l-8 8 z"/>
+    <rect x="890" y="768" width="21" height="16" rx="2"/>
+    <rect x="943" y="770" width="21" height="16" rx="2"/>
+    <path d="M888 742 l4 7 l-14 10 l-2 -3 z"/>
+  </g>
+  <line x1="1006" y1="740" x2="1006" y2="790" stroke="#C9CCCE" stroke-width="1.5"/>
+  <text x="1020" y="772" font-size="24" fill="#191A1B">…</text>
+  <text x="1064" y="773" font-size="19" fill="#191A1B">More</text>
+  <!-- 数据中心：公有云 / 私有云 / 专有云 -->
+  <rect x="32" y="852" width="1186" height="212" fill="#FFFFFF" stroke="#003FF9" stroke-width="5"/>
+  <text x="50" y="884" font-size="19" font-weight="700" fill="#191A1B">数据中心</text>
+  <rect x="50" y="898" width="366" height="46" fill="#FFFFFF" stroke="#191A1B" stroke-width="2"/>
+  <path d="M181 925 a9 9 0 0 1 9 -11 a12 12 0 0 1 23 3 a8 8 0 0 1 -2 14 h-23 a7 7 0 0 1 -7 -6 z" fill="#008BD2"/>
+  <text x="246" y="926" font-size="18" fill="#191A1B">公有云</text>
+  <rect x="440" y="898" width="366" height="46" fill="#FFFFFF" stroke="#191A1B" stroke-width="2"/>
+  <path d="M571 925 a9 9 0 0 1 9 -11 a12 12 0 0 1 23 3 a8 8 0 0 1 -2 14 h-23 a7 7 0 0 1 -7 -6 z" fill="#0F7FD4"/>
+  <text x="636" y="926" font-size="18" fill="#191A1B">私有云</text>
+  <rect x="830" y="898" width="366" height="46" fill="#FFFFFF" stroke="#191A1B" stroke-width="2"/>
+  <path d="M961 925 a9 9 0 0 1 9 -11 a12 12 0 0 1 23 3 a8 8 0 0 1 -2 14 h-23 a7 7 0 0 1 -7 -6 z" fill="none" stroke="#0F9BD8" stroke-width="2.4"/>
+  <text x="1026" y="926" font-size="18" fill="#191A1B">专有云</text>
+  <!-- 底层基础设施 -->
+  <rect x="50" y="985" width="1146" height="54" fill="#CFD1D2"/>
+  <text x="623" y="1018" font-size="20" font-weight="700" fill="#191A1B" text-anchor="middle">计算 + 存储 + 网络</text>
+</svg>

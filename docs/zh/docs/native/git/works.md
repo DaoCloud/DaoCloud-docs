@@ -6,13 +6,13 @@
 
 我们目前有 2 个网站：
 
-- [DCE 5.0 Website](https://docs.daocloud.io/)：DCE 对外的产品文档和新闻门户
+- [DCE Website](https://docs.daocloud.io/)：DCE 对外的产品文档和新闻门户
 - [d.run Website](https://docs.d.run/)：d.run 对外的产品文档和新闻门户
 
 GitHub 上托管了 3 个仓库跟 Technical Writer 有关：
 
-- [DaoCloud/DaoCloud-docs](https://github.com/DaoCloud/DaoCloud-docs)：DCE 5.0 网站的源文件
-- [DaoCloud/daocloud-api-docs](https://github.com/DaoCloud/daocloud-api-docs)：DCE 5.0 有关的 Open API 文档
+- [DaoCloud/DaoCloud-docs](https://github.com/DaoCloud/DaoCloud-docs)：DCE 网站的源文件
+- [DaoCloud/daocloud-api-docs](https://github.com/DaoCloud/daocloud-api-docs)：DCE 有关的 Open API 文档
 - [d-run/drun-docs](https://github.com/d-run/drun-docs)：d.run 网站的源文件
 
 ## 产品文档工作

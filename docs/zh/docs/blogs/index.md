@@ -5,11 +5,56 @@ hide:
 
 # 博客文章
 
-本页汇总 DCE 5.0 及云原生技术相关的博客和公众号文章，默认按时间排序。
+本页汇总 AI 及云原生技术相关的博客和公众号文章，默认按时间排序。
 
 *[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
 
 ## 2026 年
+
+- [Dynamo v1.5.0 发布：DaoCloud 是贡献最多的外部贡献者](2026/dynamo-v1.5.0.md)
+
+    NVIDIA 开源分布式推理平台 Dynamo 发布第 18 个功能版本，Worker 选择变成可插拔策略；本次发布的 40 位外部贡献者中，DaoCloud 以 8 人排在名单首位。
+
+- [Kubernetes 上的 cgroup v1 已死：接下来会发生什么](2026/kubernetes-node-swap-ai.md)
+
+    节点交换内存最高可将密度提升约 3 倍，cgroup v2 全面接管，Edge Day 与 CiliumCon 回归。
+
+- [Kubernetes 节点交换内存：AI 工作负载的 Pod 密度最多可提升 3 倍](2026/k8s-node-swap.md)
+
+    把交换内存放到本地 SSD 上，AI 智能体闲置的内存就能被换出，单节点 Pod 密度最多可提升 3 倍。
+
+- [KubeCon China 2026 参会指南](2026/kubecon-cn.md)
+
+    KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 将于 9 月 7–9 日在上海举办。
+
+- [Kubernetes v1.37 DRA 新变化](2026/k8s-dra.md)
+
+    以前 Pod 申请 GPU 只能"整块拿走"，现在 DRA 让这件事变得更精细、更灵活。
+
+- [vLLM Semantic Router 七大工作组](2026/vllm-sr.md)
+
+    vLLM Semantic Router（下称 vLLM-SR）现在有七个工作组，每个工作组负责一个持久的技术方向。
+
+- [Agent 技能的真相：为什么有效，什么时候会失效？](2026/skills.md)
+
+    聊到智能体，"技能"是个绕不开的词。
+
+- [从 KV Cache Affinity 到 Token-aware Routing：llm-d 如何避免 LLM 推理热点](2026/token-aware.md)
+
+    llm-d 尝试 Sticky Until Saturated 来避免 LLM 推理热点。
+
+- [从"能跑"到"跑得快"：DaoCloud 异构 GPU 上的国产算力优化实践](2026/optimize-gpu.md)
+
+    随着大模型从实验验证走向规模化生产，AI 基础设施正在经历一个明显变化：GPU 不再只是"有多少张卡"的问题，
+    而逐渐演变为一个涉及硬件、驱动、计算库、AI 框架、推理引擎、调度系统和可观测性的完整系统工程。
+
+- [Kubernetes v1.37 抢先看](./2026/k8s-v137-seak.md)
+
+    Kubernetes v1.37 正在收敛为一次兼顾 **迁移准备、运行时安全和资源管理** 的版本更新。
+
+- [从 GPU 利用率到 Token 产能：DaoCloud 的 GB300 NVL72 编排实践](./2026/gb300.md)
+
+    如何用好 NVIDIA GB300 NVL72。
 
 - [从 Copilot 到 Claude Code：如何评估 AI 编程智能体的真实生产力？](./2026/ai-agent.md)
 
@@ -75,7 +120,7 @@ hide:
 
 - [DaoCloud 首批通过 CNCF Kubernetes AI Conformance 认证](./2025/ai-conformance.md)
 
-    [DCE 5.0](https://docs.daocloud.io/) 首批通过 CNCF Kubernetes AI Conformance 认证。
+    [DCE](https://docs.daocloud.io/) 首批通过 CNCF Kubernetes AI Conformance 认证。
 
 - [再登云原生之巅：Paco Xu 入选 Kubernetes 指导委员会](./2025/paco-ksc.md)
 
@@ -311,9 +356,9 @@ hide:
     Spiderpool 是一个 Kubernetes 的 IPAM 插件项目，主要针对 Underlay 网络的 IP 地址管理需求而设计，
     能够为任何兼容第三方 IPAM 插件的 CNI 项目所使用。
 
-- [20230405 | 保姆式安装 DCE 5.0 社区版](2023/230405-step-by-step-dce5.md)
+- [20230405 | 保姆式安装 DCE 社区版](2023/230405-step-by-step-dce5.md)
 
-    本文在 3 个节点的集群中完成了从 0 到 1 的 DCE 5.0 社区版安装，
+    本文在 3 个节点的集群中完成了从 0 到 1 的 DCE 社区版安装，
     包含了 K8s 集群、依赖项、网络、存储等细节及更多注意事项。
 
 - [20230317 | 边缘原生应用准则白皮书](2023/230317-edge-app-wp.md)
@@ -321,14 +366,14 @@ hide:
     物联网边缘工作组（IOT Edge Working Group）一直在探索边缘原生的定义，
     以及“云原生”和“边缘原生”之间的异同，并发布了《边缘原生应用准则白皮书》。
 
-- [20230315 | 在 Linux 上安装单机 DCE 5.0 社区版](2023/230315-install-on-linux.md)
+- [20230315 | 在 Linux 上安装单机 DCE 社区版](2023/230315-install-on-linux.md)
 
-    讲述如何在一台 Linux 机器上使用 Docker 和 kind 在线安装 DCE 5.0 社区版。
+    讲述如何在一台 Linux 机器上使用 Docker 和 kind 在线安装 DCE 社区版。
     这是一种极简安装方式，便于学习和体验，性能优于 macOS 单机版。
 
-- [20230315 | 在 macOS 上安装单机 DCE 5.0 社区版](2023/230315-install-on-macos.md)
+- [20230315 | 在 macOS 上安装单机 DCE 社区版](2023/230315-install-on-macos.md)
 
-    使用 macOS 笔记本电脑创建单节点的 kind 集群，然后在线安装 DCE 5.0 社区版。
+    使用 macOS 笔记本电脑创建单节点的 kind 集群，然后在线安装 DCE 社区版。
     适合初学者体验和学习，不适合生产环境。
 
 - [20230301 | 开源项目 KWOK 介绍](2023/230301-kwok.md)
@@ -338,7 +383,7 @@ hide:
     KWOK 是 Kubernetes WithOut Kubelet 的缩写，即没有 Kubelet 的 Kubernetes。
     帮助你在几秒钟内搭建一个由数千个节点构成的集群，用少量资源模拟几千个真实的节点。
 
-- [20230214 | DCE 5.0 社区版包含多少开源项目](2023/230214-open-projects.md)
+- [20230214 | DCE 社区版包含多少开源项目](2023/230214-open-projects.md)
 
     时常听闻客户、社区成员、贡献者、公司内部的售前、交付、项目组在询问 “DCE 到底涉及了哪些开源项目？”
     这篇博文详细列出了社区版所包含的开源项目。
@@ -351,9 +396,9 @@ hide:
 
     基于 CNCF 发布的云原生报告畅谈 2023 年云原生领域的各项技术和趋势发展。
 
-- [20230201 | DCE 5.0 攻坚语录集](2023/230201-peter.md)
+- [20230201 | DCE 攻坚语录集](2023/230201-peter.md)
 
-    2022 年，上海，疫情肆虐，封城、管控、居家，程序猿们奔走在病毒 🦠 的缝隙中，那一年是 DCE 5.0 攻坚的日子，也是每个中国人艰难的一年。
+    2022 年，上海，疫情肆虐，封城、管控、居家，程序猿们奔走在病毒 🦠 的缝隙中，那一年是 DCE 攻坚的日子，也是每个中国人艰难的一年。
 
 ## 2022 年
 
@@ -411,24 +456,24 @@ hide:
 
     Kubean 采用 Kubespray 作为底层技术依赖，一方面简化了集群部署的操作流程，降低了用户的使用门槛。
     另一方面在 Kubespray 能力基础上增加了集群操作记录、离线版本记录等诸多新特性。
-    Kubean 还提供了界面化创建集群的能力（需要结合社区版 DCE 5.0 容器管理功能），让新手用户也能一键创建和管理集群。
+    Kubean 还提供了界面化创建集群的能力（需要结合社区版 DCE 容器管理功能），让新手用户也能一键创建和管理集群。
 
 - [20221028 | 激活医疗、人工智能的数字新动能 | 云原生底座](https://mp.weixin.qq.com/s/VoUCiXaUuEy0wKlHmTqo4w)
 
     10 月 28 日，由「DaoCloud 道客」主办的「论道原生｜云原生数字生态私享会・上海」成功举办。
     本次活动从云原生思维和技术出发，分享了云原生在医疗和人工智能方面的应用与实践。让我们一起回顾一下本次活动的精彩内容吧。
 
-- [20221026 | DCE 5.0 容器管理能力介绍](2022/221026-kpanda.md)
+- [20221026 | DCE 容器管理能力介绍](2022/221026-kpanda.md)
 
-    说明 DCE 5.0 容器管理模块提供的能力。
+    说明 DCE 容器管理模块提供的能力。
 
-- [20221018 | DCE 5.0 资源管理能力介绍](2022/221018-resource.md)
+- [20221018 | DCE 资源管理能力介绍](2022/221018-resource.md)
 
-    说明 DCE 5.0 全局管理模块提供的能力。
+    说明 DCE 全局管理模块提供的能力。
 
-- [20220925 | DCE 5.0 应用工作台能力介绍](2022/220925-amamba.md)
+- [20220925 | DCE 应用工作台能力介绍](2022/220925-amamba.md)
 
-    说明 DCE 5.0 应用工作台模块提供的能力。
+    说明 DCE 应用工作台模块提供的能力。
 
 - [20220914 | Merbridge 入选 eBPF 全景图](https://mp.weixin.qq.com/s/Ia9Oi3pKuLcrFJwazmpEjg)
 
@@ -460,13 +505,13 @@ hide:
     名字源于 Wikipedia，寓意是打造多集群的百科全书，可以与多个集群同步资源，
     并在与 Kubernetes OpenAPI 兼容的基础上，提供更强大的搜索功能，以帮助您快速、简便、有效地获取任何多集群资源。
 
-- [20220808 | DCE 5.0 多云编排能力介绍](2022/220808-kairship.md)
+- [20220808 | DCE 多云编排能力介绍](2022/220808-kairship.md)
 
-    说明 DCE 5.0 多云编排模块提供的能力。
+    说明 DCE 多云编排模块提供的能力。
 
-- [20220708 | DCE 5.0 服务网格能力介绍](2022/220708-mspider.md)
+- [20220708 | DCE 服务网格能力介绍](2022/220708-mspider.md)
 
-    说明 DCE 5.0 服务网格模块提供的能力。
+    说明 DCE 服务网格模块提供的能力。
 
 - [20220622 | Clusterpedia 作为首个多云检索开源项目正式进入 CNCF 沙箱](https://mp.weixin.qq.com/s/K2jG64msI4j-mWqPF0qkKg)
 
@@ -491,7 +536,7 @@ hide:
     其中最大的问题是不能适配注入 Istio 的 Sidecar Annotation，这就导致 Merbridge 无法排除某些端口或 IP 段的流量等。
     同时，由于之前 Merbridge 只处理 Pod 内部的连接请求，这就导致，如果是外部发送到 Pod 的流量，Merbridge 将无法处理。
 
-- [20220606 | DCE 5.0 研发背景](2022/221008-dce-bg.md)
+- [20220606 | DCE 研发背景](2022/221008-dce-bg.md)
 
     简述新一代云原生操作系统 DaoCloud Enterprise 5.0 诞生的背景。
 
@@ -506,3 +551,7 @@ hide:
 
 [^1]: CNCF：全称 Cloud Native Computing Foundation (云原生计算基金会)，隶属于 Linux 基金会，成立于 2015 年 12 月，是非营利性组织，致力于培育和维护一个厂商中立的开源生态系统，来推广云原生技术，普及云原生应用。
 [^2]: 云原生全景图：由 CNCF 从 2016 年 12 月开始维护，汇总了社区成熟和使用范围较广、具有最佳实践的产品和方案，并加以分类，为企业构建云原生体系提供参考，在云生态研发、运维领域具有广泛影响力。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

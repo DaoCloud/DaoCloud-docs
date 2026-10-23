@@ -75,3 +75,8 @@ You can select one or more namespaces and clean up the namespace-level sidecar p
     ![Not Set](../../images/ns-sidecar10.png)
 
 Next: [Workload Sidecar Management](./workload-sidecar.md)
+
+## FAQs
+
+- [Namespace Sidecar Configuration Conflicts with Workload Sidecar](../../troubleshoot/sidecar.md)
+- [Sidecar Consuming a Large Amount of Memory](../../troubleshoot/sidecar-memory-err.md)

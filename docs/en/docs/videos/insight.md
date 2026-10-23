@@ -5,6 +5,20 @@ We sincerely appreciate any feedback you may have. Thank you 🙏
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Installing insight-agent](#installing-insight-agent)
+- :two: [Dashboard](#dashboard)
+- :three: [Container Monitoring](#container-monitoring)
+- :four: [Scenario Monitoring and Distributed Tracing](#scenario-monitoring)
+- :five: [Log Query](#log-query)
+- :six: [Event Query](#event-query)
+- :seven: [Alert Center](#alert-center)
+- :eight: [System Management](#system-management)
+- :nine: [Probe](#probe)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;
@@ -88,6 +102,14 @@ Refer to the [Modify System Configuration](../insight/user-guide/system-config/m
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sys-config.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/insight-sysconfig.png"></video>
 </div>
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+## Probe
+
+Refer to the [Probe](../insight/user-guide/infra/probe.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/Insight-probe.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/insight-probe.png"></video>
+</div>
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

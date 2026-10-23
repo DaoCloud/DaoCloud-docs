@@ -5,7 +5,7 @@ Date: 2024-07-30
 
 # Add Job Scheduler
 
-DCE 5.0 AI Lab provides a job scheduler to help you better manage jobs.
+DCE AI Lab provides a job scheduler to help you better manage jobs.
 In addition to the basic scheduler, it also supports custom schedulers.
 
 ## Introduction to Job Scheduler

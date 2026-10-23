@@ -40,7 +40,9 @@ The steps to create a hosted registry are as follows.
         ![recommended quotas](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create02.png)
 
     - Access mode: If `NodePort` is selected, the registry can be accessed externally through **Service port + destination port**. If `Internal Access` is selected, the registry can be accessed through service ports only in the cluster where the registry resides. The default service port is 8848.
+    - Service authentication: When service authentication is enabled, services registered with the registry need authentication information. The default username/password is nacos/nacos. When data is persisted in the built-in database mode, enabling service authentication is not supported.
     - Deployment mode: If high availability mode is selected, the number of nodes must be at least three. In the production environment, the `High Availability` mode is recommended.
+    - Image version: Currently, the v2.0.4-slim, v2.1.1-slim, and v2.2.3-slim versions are supported.
 
         ![ha](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create03.png)
 
@@ -106,5 +108,9 @@ In basic information page to view the registry `Basic Info`, `Governance Info` (
 !!! note
 
 
-    - Remove: The registry is removed from the DCE 5.0 microservice engine. The original registry and data are not deleted. You can access the registry again later.
+    - Remove: The registry is removed from the DCE microservice engine. The original registry and data are not deleted. You can access the registry again later.
     - Delete: Deletes the registry and all the data in it. The registry cannot be used again. You need to create a new registry.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

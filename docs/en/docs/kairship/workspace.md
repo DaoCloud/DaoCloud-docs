@@ -1,6 +1,6 @@
 # Workspaces
 
-Workspaces are a hierarchical mapping of resources designed for managing global resources in DCE 5.0. A workspace can be understood as a project within a department, and administrators map the relationship between departments and projects using folders and workspaces. For more detailed information about workspaces, refer to the [Workspace and Folder](../ghippo/user-guide/workspace/workspace.md) documentation.
+Workspaces are a hierarchical mapping of resources designed for managing global resources in DCE. A workspace can be understood as a project within a department, and administrators map the relationship between departments and projects using folders and workspaces. For more detailed information about workspaces, refer to the [Workspace and Folder](../ghippo/user-guide/workspace/workspace.md) documentation.
 
 ## Considerations
 
@@ -14,7 +14,7 @@ Workspaces are a hierarchical mapping of resources designed for managing global 
 
 ## Bind/Unbind Workspace
 
-In the Multicloud Management module, admin of the DCE 5.0 platform can bind multicloud instances or multicloud namespaces to a workspace.
+In the Multicloud Management module, admin of the DCE platform can bind multicloud instances or multicloud namespaces to a workspace.
 
 After the binding, users of that workspace can operate instances or namespaces within their permission scope.
 

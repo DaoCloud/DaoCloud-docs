@@ -5,7 +5,7 @@ hide:
 
 # GProduct 如何对接全局管理
 
-GProduct 是 DCE 5.0 中除全局管理外的所有其他模块的统称，这些模块需要与全局管理对接后才能加入到 DCE 5.0 中。
+GProduct 是 DCE 中除全局管理外的所有其他模块的统称，这些模块需要与全局管理对接后才能加入到 DCE 中。
 
 ## 对接什么
 
@@ -24,13 +24,13 @@ GProduct 是 DCE 5.0 中除全局管理外的所有其他模块的统称，这�
 
 ## 视频演示和 PDF
 
-将 DCE 5.0 集成到客户系统（OEM OUT），参阅 [OEM OUT 文档](../oem/oem-out.md)。
+将 DCE 集成到客户系统（OEM OUT），参阅 [OEM OUT 文档](../oem/oem-out.md)。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oem-out.mp4" preload="metadata" poster="../../../videos/images/oem-out.png"></video>
 </div>
 
-将客户系统集成到 DCE 5.0（OEM IN），参阅 [OEM IN 文档](../oem/oem-in.md)。
+将客户系统集成到 DCE（OEM IN），参阅 [OEM IN 文档](../oem/oem-in.md)。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oemin-istio.mp4" preload="metadata" poster="../../../videos/images/oem-in.png"></video>

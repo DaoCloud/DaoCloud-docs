@@ -11,6 +11,8 @@ hide:
 系统预置了通义千问、Meta、DeepSeek 等主流提供商提供的各类大语言模型。
 用户可根据业务需求灵活部署。
 
+[查阅和下载《大模型服务平台》用户手册](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/hydra-docs.pdf){ .md-button .md-button--primary }
+
 ## 筛选模型
 
 通过模型广场的标签，可以快速检索模型列表，支持标签多选，也可以随时清空筛选条件。
@@ -45,3 +47,7 @@ hide:
 在模型卡片上，点击 **部署** 图标可以开始模型的部署。
 
 你也可以点击左侧导航栏的 **模型部署** ，进入模型部署页面来部署模型。参见[各项部署参数说明](./deploy/deploy.md)。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

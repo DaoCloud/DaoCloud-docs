@@ -116,7 +116,7 @@ __解决方案__ ：
 
 ## 如何修改 Jenkins 流水线并发执行数量
 
-目前 DCE 5.0 部署出来后 Jenkins 流水线并发执行数量为 2，下述将描述如何更改并发执行数量：
+目前 DCE 部署出来后 Jenkins 流水线并发执行数量为 2，下述将描述如何更改并发执行数量：
 
 1. 点击左上角的 **≡** 打开导航栏，前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
 
@@ -148,7 +148,7 @@ __解决方案__ ：
 
 4. 在 __data__ -> __jenkins.yaml__ -> 搜索 `eventDispatcher.receiver`，它的值应该为 `http://localhost:9090/event` 
 
-    如果 Jenkins 是部署在工作集群（需要穿透 DCE 5.0 的网关），则还需要检查以下几个配置项。
+    如果 Jenkins 是部署在工作集群（需要穿透 DCE 的网关），则还需要检查以下几个配置项。
 
 5. 再次查询名为 __event-proxy-config__ 的配置项，查看 YAML，配置项说明：
 
@@ -158,12 +158,12 @@ __解决方案__ ：
       proto: http                                   # (2)!
     ```
 
-    1. 此处为 DCE 5.0 的网关地址，如果为 dce5-installer 安装的 Jenkins，此处不需要修改
-    2. 此处为 DCE 5.0 的网关协议（http 或者 https）
+    1. 此处为 DCE 的网关地址，如果为 dce5-installer 安装的 Jenkins，此处不需要修改
+    2. 此处为 DCE 的网关协议（http 或者 https）
 
 6. 在 Jenkins 所在集群， __配置与密钥__ -> __配置项__ 中搜索密钥 __amamba-jenkins__ 。
 
-7. 检查密钥中的 __event-proxy-token__ 是否正确。此 Token 用于 DCE 5.0 的网关认证。
+7. 检查密钥中的 __event-proxy-token__ 是否正确。此 Token 用于 DCE 的网关认证。
    如果不正确，Jenkins 将无法发送事件到工作台。有关如何生成此 Token，
    可以查看[访问密钥](../../ghippo/user-guide/personal-center/accesstoken.md)。
 

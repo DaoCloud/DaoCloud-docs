@@ -1,10 +1,15 @@
 # Microservice Engine Cluster Init Components
 
+This tutorial aims to supplement the scenario where the microservice engine cluster init component
+needs to be **manually installed online separately**. The `skoala-init` appearing below is the internal
+development code name of the microservice engine cluster init component, and refers to the microservice
+engine cluster init component.
+
 Deployment structure of the microservice engine cluster init components:
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/skoala-init-cn.png)
 
-The chart inside the blue box, namely the `skoala-init` component, needs to be installed in the worker cluster. After installing the `skoala-init` component, you can use various features of the microservice engine, such as creating a registry center, and gateway instances. Additionally, please note that the `skoala-init` component depends on the `insight-agent` component of the DCE 5.0 observability module to provide metric monitoring and distributed tracing functionalities. If you need to use these features, you need to install the `insight-agent` component beforehand. For specific steps, refer to [Install the insight-agent component](../../insight/quickstart/install/install-agent.md).
+The chart inside the blue box, namely the `skoala-init` component, needs to be installed in the worker cluster. After installing the `skoala-init` component, you can use various features of the microservice engine, such as creating a registry center, and gateway instances. Additionally, please note that the `skoala-init` component depends on the `insight-agent` component of the DCE observability module to provide metric monitoring and distributed tracing functionalities. If you need to use these features, you need to install the `insight-agent` component beforehand. For specific steps, refer to [Install the insight-agent component](../../insight/quickstart/install/install-agent.md).
 
 !!! note
 
@@ -38,7 +43,7 @@ skoala-release/skoala-init	0.27.1       	0.27.1     	A Helm Chart for Skoala ini
 ......
 ```
 
-Run the following command. Note that you shall change the version to a proper nubmer.
+Run the following command. Note that you shall change the version to a proper number.
 
 ```bash
 helm upgrade --install skoala-init --create-namespace -n skoala-system --cleanup-on-fail \
@@ -61,14 +66,21 @@ sentinel-operator-6fb9dc98f4-d44k5                    1/1     Running     0     
 skoala-agent-54d4df7897-7p4pz                         1/1     Running     0          2d6h
 ```
 
+In addition to installing through the terminal, you can also find `skoala-init` in
+`Container Management` -> __Helm Apps__ and install it.
+
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/skoala-init.png)
+
 ## Online Upgrade
 
-Since the `skoala-init` component is installed in the worker cluster, you need to perform the following steps in each worker cluster. <!--If an upgrade is required, it will be emphasized in the release notes.-->
+Since the `skoala-init` component is installed in the worker cluster, you need to perform the following steps in each worker cluster.
+
+<!--If an upgrade is required, it will be emphasized in the release notes.-->
 
 1. Backup the original parameters.
 
     ```bash
-    helm -n skoala-system get values skoala-init > skoala-init.yaml
+    helm get values skoala-init -n skoala-system -o yaml > skoala-init.yaml
     ```
 
 2. Add the Helm repository for the microservice engine.
@@ -92,7 +104,7 @@ Since the `skoala-init` component is installed in the worker cluster, you need t
 5. Run the `helm upgrade` command.
 
     ```bash
-    helm --kubeconfig /tmp/deploy-kube-config upgrade --install --create-namespace -n skoala-system skoala-init skoala/skoala-init --version=0.28.1 --set nacos-operator.image.tag=v0.28.1 --set skoala-agent.image.tag=v0.28.1 --set sentinel-operator.image.tag=v0.28.1 --set seata-operator.image.tag=v0.28.1 -f skoala-init.yaml
+    helm upgrade --install --create-namespace -n skoala-system skoala-init skoala/skoala-init --version=0.28.1 --set nacos-operator.image.tag=v0.28.1 --set skoala-agent.image.tag=v0.28.1 --set sentinel-operator.image.tag=v0.28.1 --set seata-operator.image.tag=v0.28.1 -f skoala-init.yaml
     ```
 
     !!! note
@@ -115,6 +127,39 @@ Refer to the offline upgrade method for the microservice engine management compo
 
 ## Uninstalling the Microservice Engine Cluster Init Component
 
+!!! note
+
+    - The crds of nacos, sentinel and seata will be uninstalled along with it. Note especially that the related crs will be deleted.
+    - The gateway-related crds will not be uninstalled along with it. If you need to clear them, you need to handle it manually. Note especially that when clearing the crds, the related crs will be deleted.
+
+??? note "List of Gateway-Related crds"
+
+    contourconfigurations.projectcontour.io  
+    contourdeployments.projectcontour.io  
+    extensionservices.projectcontour.io  
+    gatewayclasses.gateway.networking.k8s.io  
+    gateways.gateway.networking.k8s.io  
+    grpcroutes.gateway.networking.k8s.io  
+    httpproxies.projectcontour.io  
+    httproutes.gateway.networking.k8s.io  
+    referencegrants.gateway.networking.k8s.io  
+    tcproutes.gateway.networking.k8s.io  
+    tlscertificatedelegations.projectcontour.io  
+    tlsroutes.gateway.networking.k8s.io  
+    udproutes.gateway.networking.k8s.io  
+
 ```bash
 helm uninstall skoala-init -n skoala-system
+```
+
+### Manually Clear the gateway-api Related Jobs
+
+```bash
+kubectl delete jobs gateway-api-admission gateway-api-admission-patch -n skoala-system
+```
+
+### Manually Clear the Gateway-Related crds
+
+```bash
+kubectl delete crds `kubectl get crds | grep -E "projectcontour.io|gateway.networking.k8s.io" | awk '{print $1}'`
 ```

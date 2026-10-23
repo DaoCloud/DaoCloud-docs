@@ -47,7 +47,7 @@ On the Create VMs page, enter the information according to the table below and c
 
 The template list will appear, and you can choose either an internal template or a custom template based on your needs.
 
-- Select an Internal Template: DCE 5.0 Virtual Machine provides several standard templates that cannot be edited or deleted. When selecting an internal template, the image source, operating system, image address, and other information will be based on the template and cannot be modified. GPU quota will also be based on the template but can be modified.
+- Select an Internal Template: DCE Virtual Machine provides several standard templates that cannot be edited or deleted. When selecting an internal template, the image source, operating system, image address, and other information will be based on the template and cannot be modified. GPU quota will also be based on the template but can be modified.
 
     ![Template01](../images/template01.png)
 
@@ -85,3 +85,31 @@ The template list will appear, and you can choose either an internal template or
 - SSH: When selecting SSH login, you can bind an SSH key to the virtual machine for future login purposes.
 
 ![Login Settings](../images/login-settings.png)
+
+## Batch Create Virtual Machines
+
+You can create multiple virtual machines with the same configuration based on a virtual machine template.
+
+1. In the left navigation menu, click __Virtual Machines__ -> __VM Template__ to open the VM Template list.
+
+2. Find the target virtual machine template, click __┇__ on the right, and select __Batch Create VMs__.
+
+    ![Batch Create VMs](../images/batch-create-vm-template.png)
+
+3. Configure the batch creation parameters:
+
+    - Prefix: Used to generate virtual machine names.
+    - Cluster: Select the cluster where the virtual machines will run.
+    - Namespace: Select the namespace to which the virtual machines belong.
+    - Number of VMs: Specify the number of virtual machines to create. Up to 10 virtual machines can be created at a time.
+    - Custom Password: Set the login password for the virtual machines created in this batch.
+    - Storage Pool: Select the storage pool used by the virtual machines.
+    - PVC Read Mode: Select the PVC read mode.
+
+4. Click __OK__. The system creates the specified number of virtual machines simultaneously and names them in the format `prefix-number`, for example, `demo-1`, `demo-2`, and `demo-3`. After creation succeeds, the virtual machines enter the running state. Each virtual machine name must not exceed 60 characters.
+
+The virtual machines created in a batch use the same template configuration and the cluster, namespace, storage, and network settings specified on the batch creation page. The network supports `masquerade` and `bridge` modes. IP addresses are randomly assigned from the IP pool. Batch creation fails if the IP pool has no available IP addresses.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

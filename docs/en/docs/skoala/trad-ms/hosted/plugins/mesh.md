@@ -17,7 +17,7 @@ Perform the following steps to eanble the plugin:
 
 3. Select the service mesh you want to bind to and click __OK__ at the bottom of the box.
 
-    If you can"t find the service mesh you want, go to the service mesh module [Create Service Mesh](../../../../mspider/user-guide/service-mesh/README.md).
+    If you can"t find the service mesh you want, go to the service mesh module [Create Service Mesh](../../../../mspider/user-guide/service-mesh/index.md).
 
    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/mesh02.png)
 

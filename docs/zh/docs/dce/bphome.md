@@ -3,10 +3,10 @@ hide:
   - toc
 ---
 
-# DCE 5.0 最佳实践汇总
+# 最佳实践汇总
 
-本页汇总了 DCE 5.0 各模块的最佳实践文档。
-这些最佳实践是指在使用和管理 DCE 5.0 平台过程中，通过长期经验积累和验证，被广泛认可为比较有效、可靠的方法和流程。
+本页汇总了各产品模块的最佳实践文档。
+这些最佳实践是指在使用和管理 DaoCloud 产品过程中，通过长期经验积累和验证，被广泛认可为比较有效、可靠的方法和流程。
 这些内容涵盖了安装、集群创建和接入、应用管理、多云编排、中间件等方面，旨在帮助用户更高效、更稳定地运行和维护容器化应用。
 
 !!! tip "有人说"
@@ -24,7 +24,7 @@ hide:
 
     支持离线和在线安装方式，可安装到各种 Linux 和 K8s 发行版上
 
-    - [在一体机上部署 DCE 5.0](../install/best-practices/all-in-one-machine.md)
+    - [在一体机上部署 DCE](../install/best-practices/all-in-one-machine.md)
     - [Bootstrap 火种节点高可用方案](../install/best-practices/thinder-ha.md)
     - [安装时 etcd 采用 host 模式与控制平面分离](../install/best-practices/etcd-host-deploy.md)
     - [安装到不同 Linux 发行版](../install/os-install/uos-v20-install-dce5.0.md)
@@ -52,13 +52,13 @@ hide:
 
     ---
 
-    基于 K8s 构建工作集群和节点，它是 DCE 5.0 的核心
+    基于 K8s 构建工作集群和节点，它是容器化编排调度的核心
 
     - [在 CentOS 上创建 Ubuntu 工作集群](../kpanda/best-practice/create-ubuntu-on-centos-platform.md)
     - [在 CentOS 上创建 RedHat 9.2 工作集群](../kpanda/best-practice/create-redhat9.2-on-centos-platform.md)
-    - [从 DCE 4.0 迁移到 DCE 5.0](../kpanda/best-practice/dce4-5-migration.md)
+    - [从 DCE 4.0 迁移到 DCE](../kpanda/best-practice/dce4-5-migration.md)
     - [部署与升级 Kubean 向下兼容版本](../kpanda/best-practice/kubean-low-version.md)
-    - [在 DCE 5.0 上使用 NVIDIA GPU](../kpanda/user-guide/gpu/nvidia/index.md)
+    - [在 DCE 上使用 NVIDIA GPU](../kpanda/user-guide/gpu/nvidia/index.md)
 
 - :octicons-container-16:{ .lg .middle } [__容器管理之二__](../kpanda/intro/index.md)
 
@@ -116,8 +116,8 @@ hide:
     **虚拟机** 是基于 KubeVirt 构建的容器化虚拟机平台。
 
     - [跨集群弹性伸缩](../kairship/best-practice/fhpa.md)
-    - [DCE 4.0 一键转换为 DCE 5.0 多云应用](../kairship/best-practice/one-click-conversion.md)
-    - [将 VMWare 虚拟机导入到 DCE 5.0](../virtnest/best-practice/import-ubuntu.md)
+    - [DCE 4.0 一键转换为 DCE 多云应用](../kairship/best-practice/one-click-conversion.md)
+    - [将 VMWare 虚拟机导入到 DCE](../virtnest/best-practice/import-ubuntu.md)
 
 </div>
 
@@ -197,12 +197,10 @@ hide:
     **AI Lab** 是 AI 训推一体化平台，整合异构算力，优化 GPU 性能。
     而 **云边协同** 则将容器能力扩展到了边缘。
 
-    - [部署 NFS 做数据集预热](../baize/best-practice/deploy-nfs-in-worker.md)
+    - [部署 NFS 做数据集预热](../baize/best-practice/index.md)
     - [更新 Notebook 内置镜像](../baize/best-practice/change-notebook-image.md)
     - [Checkpoint 机制及使用介绍](../baize/best-practice/checkpoint.md)
     - [智能设备控制](../kant/best-practice/custom-device-control.md)
     - [开发设备驱动应用 mapper](../kant/best-practice/develop-device-mapper.md)
 
 </div>
-
-![best practices](../images/bphome.jpeg)

@@ -10,6 +10,34 @@ understand the evolution path and feature changes from release to release.
 
 *[kpanda]: Internal development codename for DaoCloud container management
 
+## 2026-08-30
+
+### v0.50.0
+
+- **Added** support for the OCI format in Helm repositories.
+- **Added** display of the allocatable GPU computing power and memory in the GPU card list.
+- **Added** timeout configuration for Helm.
+  
+## 2026-07-30
+
+### v0.49.0
+
+- **Added** support for Alibaba PPU heterogeneous GPU cards.
+- **Added** upgrade of the HAMi community edition to v2.9.0.
+- **Added** support for connecting etcd backup to HTTPS object storage.
+- **Improved** added GPU usage and memory usage columns to the namespace list page.
+- **Improved** specified GPU cards require insight-agent to be installed.
+- **Improved** the node check timeout.
+
+## 2026-06-30
+
+### v0.48.0
+
+- **Added** support for Alibaba PPU heterogeneous GPU cards.
+- **Added** upgrade of the HAMi community edition to v2.9.0.
+- **Added** support for the Gateway API.
+- **Improved** the remaining allocatable GPU logic in conjunction with modules such as Global Management.
+
 ## 2026-03-30
 
 ### v0.46.0
@@ -225,7 +253,7 @@ understand the evolution path and feature changes from release to release.
 - **Fixed** an issue in container management -> node management where global service clusters could not add or remove nodes
 - **Fixed** an issue where a cluster showed as deleting indefinitely despite having actually failed to uninstall
 - **Fixed** an issue where finalizers resources under `kpanda-system` were not deleted when detaching a cluster, preventing the deletion of the `kpanda-system` namespace
-- **Fixed** an issue where the downgrade compatibility package for kubean in DCE 5.0 environments did not successfully delete low-version clusters
+- **Fixed** an issue where the downgrade compatibility package for kubean in DCE environments did not successfully delete low-version clusters
 - **Fixed** an issue of incorrect display of backup recovery trigger times
 - **Fixed** an issue where the cluster inspection configuration's scheduled task hour did not match the trigger time with the configured time.
 
@@ -585,7 +613,7 @@ understand the evolution path and feature changes from release to release.
 - **Added** integration of clusterpedia with OTEL Tracing
 - **Added** support for minimal installation of security, inspection, backup, and virtual machine components
 - **Added** documentation for importing custom helm charts into the system's built-in addon repository
-- **Added** documentation for migration scenarios from DCE 4.0 to DCE 5.0 in limited cases
+- **Added** documentation for migration scenarios from DCE 4.0 to DCE in limited cases
 
 #### Improvements
 

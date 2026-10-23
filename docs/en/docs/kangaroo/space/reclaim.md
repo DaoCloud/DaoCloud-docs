@@ -18,9 +18,9 @@ other resources on your system, while also keeping the system clean and optimize
 
 You can create retention rules for the current registry space.
 All retention rules are calculated independently and apply to all images that meet the conditions.
-Currently, DCE 5.0 Container Registry supports up to 15 retention rules.
+Currently, DCE Container Registry supports up to 15 retention rules.
 
-1. Log in to DCE 5.0 with a user who has the Workspace Admin role.
+1. Log in to DCE with a user who has the Workspace Admin role.
    Click the __Registry Space__ on the left navigation bar, click a name in the list.
 
     ![Switch Instance](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/space01.png)

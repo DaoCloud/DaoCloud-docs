@@ -6,7 +6,7 @@ CoreDNS 在标准环境下的延时数据。
 
 ## Benchmark
 
-本文基于 DCE 5.0 安装的环境，其中一组环境只安装了 CoreDNS，另一组安装了 CoreDNS 与 nodelocaldns，其余参数为默认配置。
+本文基于 DCE 安装的环境，其中一组环境只安装了 CoreDNS，另一组安装了 CoreDNS 与 nodelocaldns，其余参数为默认配置。
 
 ### 物理机
 

@@ -37,36 +37,47 @@ Ingress is an API object that manages external access to services in the cluster
 
 ### Create HTTP protocol ingress
 
-| Parameter | Description | Example value |
-| --------- | ----------- | ------------- |
-| Ingress name | [Type] Required<br />[Meaning] Enter the name of the new ingress. <br />[Note] Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter, lowercase English letters or numbers. | Ing-01 |
-| Namespace | [Type] Required<br />[Meaning] Select the namespace where the new service is located. For more information about namespaces, refer to [Namespace Overview](../namespaces/createns.md). <br />[Note] Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | default |
-| Protocol | [Type] Required<br /> [Meaning] Refers to the protocol that authorizes inbound access to the cluster service, and supports HTTP (no identity authentication required) or HTTPS (identity authentication needs to be configured) protocol. Here select the ingress of HTTP protocol. | HTTP |
-| Domain Name | [Type] Required<br /> [Meaning] Use the domain name to provide external access services. The default is the domain name of the cluster | testing.daocloud.io |
-| LB Type | [Type] Required<br /> [Meaning] The usage range of the Ingress instance. [Scope of use of Ingress](../../../network/modules/ingress-nginx/scope.md)<br /> __Platform-level load balancer__ : In the same cluster, share the same Ingress instance, where all Pods can receive requests distributed by the load balancer. <br /> __Tenant-level load balancer__ : Tenant load balancer, the Ingress instance belongs exclusively to the current namespace, or belongs to a certain workspace, and the set workspace includes the current namespace, and all Pods can receive it Requests distributed by this load balancer. | Platform Level Load Balancer |
-| Ingress Class | [Type] Optional<br />[Meaning] Select the corresponding Ingress instance, and import traffic to the specified Ingress instance after selection. When it is None, the default DefaultClass is used. Please set the DefaultClass when creating an Ingress instance. For more information, refer to [Ingress Class](../../../network/modules/ingress-nginx/ingressclass.md)< br /> | Ngnix |
-| Session persistence| [Type] Optional<br />[Meaning] Session persistence is divided into three types: __L4 source address hash__ , __Cookie Key__ , __L7 Header Name__ . Keep<br /> __L4 Source Address Hash__ : : When enabled, the following tag is added to the Annotation by default: nginx.ingress.kubernetes.io/upstream-hash-by: "$binary_remote_addr"<br /> __Cookie Key__ : When enabled, the connection from a specific client will be passed to the same Pod. After enabled, the following parameters are added to the Annotation by default:<br /> nginx.ingress.kubernetes.io/affinity: "cookie"<br /> nginx.ingress.kubernetes .io/affinity-mode: persistent<br /> __L7 Header Name__ : After enabled, the following tag is added to the Annotation by default: nginx.ingress.kubernetes.io/upstream-hash-by: "$http_x_forwarded_for" | Close |
-| Path Rewriting| [Type] Optional<br /> [Meaning] __rewrite-target__ , in some cases, the URL exposed by the backend service is different from the path specified in the Ingress rule. If no URL rewriting configuration is performed, There will be an error when accessing. | close |
-| Redirect | [Type] Optional<br />[Meaning] __permanent-redirect__ , permanent redirection, after entering the rewriting path, the access path will be redirected to the set address. | close |
-| Traffic Distribution | [Type] Optional<br />[Meaning] After enabled and set, traffic distribution will be performed according to the set conditions. <br /> __Based on weight__ : After setting the weight, add the following Annotation to the created Ingress: __nginx.ingress.kubernetes.io/canary-weight: "10"__ <br /> __Based on Cookie__ : set After the cookie rules, the traffic will be distributed according to the set cookie conditions<br /> __Based on Header__ : After setting the header rules, the traffic will be distributed according to the set header conditions | Close |
-| Labels | [Type] Optional<br /> [Meaning] Add a label for the ingress<br /> | - |
-| Annotations | [Type] Optional<br /> [Meaning] Add annotation for ingress<br /> | - |
+Enter the following parameters:
+
+![Create Ingress](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ingress03.png)
+
+| Field | Subfield | Description | Required |
+|------|------|------|------|
+| Ingress Name | – | Enter the name of the new ingress | Required |
+| Namespace | – | Select the namespace where the new service is located. For more information about namespaces, refer to the namespace overview. | Required |
+| Set Routing Rules | Domain Name | Use the domain name to provide external access services. The default is the domain name of the cluster. | Required |
+|  | Protocol | Refers to the protocol that authorizes inbound access to the cluster service, and supports HTTP (no identity authentication required) or HTTPS (identity authentication needs to be configured). | Required |
+|  | Forwarding Policy | Specify the access policy of the Ingress | Optional |
+|  | Path | Specify the URL path for service access. The default is the root path. | Optional |
+|  | Target Service | The name of the service to be routed | Required |
+|  | Target Service Port | The port exposed by the service | Required |
+| Load Balancer Type | Platform-level Load Balancer | In the same cluster, share the same Ingress instance, where all Pods can receive requests distributed by the load balancer | Required |
+|  | Tenant-level Load Balancer | The Ingress instance belongs exclusively to the current namespace, or exclusively to a certain workspace that includes the current namespace, and all Pods can receive distributed requests | Required |
+| Ingress Class | – | Select the corresponding Ingress instance, and after selection, traffic is directed to the specified instance. When it is None, DefaultClass is used | Optional |
+|  | Session Persistence | Session persistence is divided into L4 source address hash / Cookie Key / L7 Header Name. Once enabled, session persistence is performed according to the rules. | Optional |
+| Session Persistence | L4 Source Address Hash | When enabled, by default the following is added to the Annotation: `nginx.ingress.kubernetes.io/upstream-hash-by: "$binary_remote_addr"` | Optional |
+|  | Cookie Key | When enabled, connections from a specific client will be passed to the same Pod. Default Annotation: `nginx.ingress.kubernetes.io/affinity: "cookie"` , `nginx.ingress.kubernetes.io/affinity-mode: persistent` | Optional |
+|  | L7 Header Name | When enabled, default Annotation: `nginx.ingress.kubernetes.io/upstream-hash-by: "$http_x_forwarded_for"` | Optional |
+| Path Rewriting | – | rewrite-target, used for URL rewriting when the URL exposed by the backend service differs from the Ingress path | Optional |
+| Redirect | – | permanent-redirect, permanent redirection. After entering the rewrite path, access will be redirected to that address | Optional |
+| Traffic Distribution | Based on Weight | After setting the weight, Annotation: `nginx.ingress.kubernetes.io/canary-weight: "10"` | Optional |
+|  | Based on Cookie | After the Cookie rules are set, traffic is distributed according to the Cookie conditions | Optional |
+|  | Based on Header | After the Header rules are set, traffic is distributed according to the Header conditions | Optional |
+| Labels | – | Add labels to the ingress | Optional |
+| Annotations | – | Add annotations to the ingress | Optional |
 
 ### Create HTTPS protocol ingress
 
-| Parameter | Description | Example value |
-| --------- | ----------- | ------------- |
-| Ingress name | [Type] Required<br />[Meaning] Enter the name of the new ingress. <br />[Note] Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter, lowercase English letters or numbers. | Ing-01 |
-| Namespace | [Type] Required<br />[Meaning] Select the namespace where the new service is located. For more information about namespaces, refer to [Namespace Overview](../namespaces/createns.md). <br />[Note] Please enter a string of 4 to 63 characters, which can contain lowercase English letters, numbers and dashes (-), and start with a lowercase English letter and end with a lowercase English letter or number. | default |
-| Protocol | [Type] Required<br /> [Meaning] Refers to the protocol that authorizes inbound access to the cluster service, and supports HTTP (no identity authentication required) or HTTPS (identity authentication needs to be configured) protocol. Here select the ingress of HTTPS protocol. | HTTPS |
-| Domain Name | [Type] Required<br /> [Meaning] Use the domain name to provide external access services. The default is the domain name of the cluster | testing.daocloud.io |
-| Secret | [Type] Required<br /> [Meaning] Https TLS certificate, [Create Secret](../configmaps-secrets/create-secret.md). | |
-| Forwarding policy | [Type] Optional<br />[Meaning] Specify the access policy of Ingress. <br />**Path**: Specifies the URL path for service access, the default is the root path/<br />**directoryTarget service**: Service name for ingress<br />**Target service port**: Port exposed by the service | |
-| LB Type | [Type] Required<br /> [Meaning] The usage range of the Ingress instance. <br /> __Platform-level load balancer__ : In the same cluster, the same Ingress instance is shared, and all Pods can receive requests distributed by the load balancer. <br /> __Tenant-level load balancer__ : Tenant load balancer, the Ingress instance belongs exclusively to the current namespace or to a certain workspace. This workspace contains the current namespace, and all Pods can receive the workload from this Balanced distribution of requests. | Platform Level Load Balancer |
-| Ingress Class | [Type] Optional<br />[Meaning] Select the corresponding Ingress instance, and import traffic to the specified Ingress instance after selection. When it is None, the default DefaultClass is used. Please set the DefaultClass when creating an Ingress instance. For more information, refer to [Ingress Class](../../../network/modules/ingress-nginx/ingressclass.md)< br /> | None |
-| Session persistence| [Type] Optional<br />[Meaning] Session persistence is divided into three types: __L4 source address hash__ , __Cookie Key__ , __L7 Header Name__ . Keep<br /> __L4 Source Address Hash__ : : When enabled, the following tag is added to the Annotation by default: nginx.ingress.kubernetes.io/upstream-hash-by: "$binary_remote_addr"<br /> __Cookie Key__ : When enabled, the connection from a specific client will be passed to the same Pod. After enabled, the following parameters are added to the Annotation by default:<br /> nginx.ingress.kubernetes.io/affinity: "cookie"<br /> nginx.ingress.kubernetes .io/affinity-mode: persistent<br /> __L7 Header Name__ : After enabled, the following tag is added to the Annotation by default: nginx.ingress.kubernetes.io/upstream-hash-by: "$http_x_forwarded_for" | Close |
-| Labels | [Type] Optional<br /> [Meaning] Add a label for the ingress | |
-| Annotations | [Type] Optional<br />[Meaning] Add annotation for ingress | |
+Enter the following parameters:
+
+![Create Ingress](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ingress04.png)
+
+!!! note
+
+    Note: Unlike the __Set Routing Rules__ of the HTTP protocol, you additionally need to select a certificate by secret; other configurations are basically the same.
+
+- __Protocol__ : Required. Refers to the protocol that authorizes inbound access to the cluster service, and supports the HTTP (no identity authentication required) or HTTPS (identity authentication needs to be configured) protocol. Here select the ingress of the HTTPS protocol.
+- __Secret__ : Required. HTTPS TLS certificate, [Create Secret](../configmaps-secrets/create-secret.md).
 
 ### Create ingress successfully
 

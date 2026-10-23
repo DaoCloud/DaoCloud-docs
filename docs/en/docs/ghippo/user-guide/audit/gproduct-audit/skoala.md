@@ -122,4 +122,4 @@ hide:
 | DeletePlugin-SkoalaPluginTemplate | SkoalaPluginTemplate | |
 | CreateVirtualhost-Virtualhost | Virtualhost | |
 | UpdateVirtualhost-Virtualhost | Virtualhost | |
-| 删除域名：DeleteVirtualhost-Virtualhost | Virtualhost | |
+| DeleteVirtualhost-Virtualhost | Virtualhost | |

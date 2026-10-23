@@ -24,7 +24,7 @@ hide:
 
 ## 情况 3
 
-边车内存泄漏。通过监控组件查看，比如 DCE 5.0 组件 Insight 等。
+边车内存泄漏。通过监控组件查看，比如 DCE 组件 Insight 等。
 若集群规模流量未变化，边车内存占用不断上升，则可能是内存泄漏，联系我们以定位问题。
 
 ![内存占用查看](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/troubleshoot/images/sidecar-memory-query-01.png)

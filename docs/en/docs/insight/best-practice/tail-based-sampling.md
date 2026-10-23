@@ -101,17 +101,13 @@ the tail sampling strategy.
 
 ## Specific Changes to Insight
 
-Introduce an Opentelemetry Collector Gateway component with load balancing capabilities in front of
-the `insight-opentelemetry-collector` in the Global cluster, allowing the same group of Traces to be
-routed to the same Opentelemetry Collector instance based on the TraceID.
+Add an Opentelemetry Collector Gateway component with load balancing capabilities in front of
+the `insight-opentelemetry-collector` in the global service cluster, allowing the same group of Traces
+to be routed to the same Opentelemetry Collector instance based on the TraceID.
 
 1. Deploy an OTEL COL Gateway component with load balancing capabilities.
 
-    If you are using Insight V0.25.x, you can quickly enable this by using the Helm Upgrade parameter
-    `--set opentelemetry-collector-gateway.enabled=true`, thereby skipping the deployment process
-    described below.
-
-    Refer to the following YAML to deploy the component.
+    You can refer to the following YAML configuration to deploy.
 
     ??? note "Click to view deployment configuration"
 
@@ -172,7 +168,7 @@ routed to the same Opentelemetry Collector instance based on the TraceID.
               zpages:
                 endpoint: :55679
             exporters:
-              logging:
+              debug:
               loadbalancing:
                 routing_key: "traceID"
                 protocol:
@@ -204,7 +200,7 @@ routed to the same Opentelemetry Collector instance based on the TraceID.
           name: insight-otel-collector-gateway
           namespace: insight-system
         spec:
-          replicas: 2
+          replicas: 1
           selector:
             matchLabels:
               app.kubernetes.io/component: opentelemetry-collector
@@ -226,7 +222,7 @@ routed to the same Opentelemetry Collector instance based on the TraceID.
                     fieldRef:
                       apiVersion: v1
                       fieldPath: metadata.name
-                image: ghcr.m.daocloud.io/openinsight-proj/opentelemetry-collector-contrib:5baef686672cfe5551e03b5c19d3072c432b6f33
+                image: ghcr.m.daocloud.io/openinsight-proj/opentelemetry-collector-contrib:v0.137.0-1a9ef1dc
                 imagePullPolicy: IfNotPresent
                 livenessProbe:
                   failureThreshold: 3
@@ -419,7 +415,7 @@ routed to the same Opentelemetry Collector instance based on the TraceID.
     ....
         exporters:
           otlp/global:
-            endpoint: insight-opentelemetry-collector-lb.insight-system.svc.cluster.local:4317  # 👈 Modify to lb address
+            endpoint: insight-opentelemetry-collector-gateway.insight-system.svc.cluster.local:4317  # 👈 Modify to the gateway/lb address
     ```
 
 ## Reference

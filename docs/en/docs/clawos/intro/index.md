@@ -2,6 +2,8 @@
 
 ClawOS is an enterprise-grade Agent runtime and governance platform for creating, managing, integrating, observing, and operating AI Agents within an organization. In the current release, the primary type of Agent managed by ClawOS is the OpenClaw instance. In the future, the platform can be extended to support more types of enterprise Agents.
 
+[View or Download the ClawOS User Manual](https://harbor-test2.cn-sh2.ufileos.com/docs/download/ClawOS.pdf){ .md-button }
+
 ## ClawOS: An Enterprise Agent Runtime and Governance Platform
 
 > In simple terms, ClawOS is the **control plane** and **governance plane** for running AI Agents within an enterprise.
@@ -139,9 +141,9 @@ Package the entire workflow—"read documents → extract key data → validate 
 | --------- | ----------- |
 | One-Click Creation, Ready to Use | No manual environment configuration, model integration, or permission setup is required. The system automatically creates sandboxes and injects Tokens, allowing business users to start immediately without IT involvement. |
 | Secure Sandbox Isolation | Each OpenClaw instance runs in an isolated container sandbox powered by DaoCloud's **zestU** kernel-level isolation technology. Even if compromised, the impact is strictly confined to the sandbox and cannot penetrate the internal network or tamper with host files. |
-| Persistent Data and Durable Memory | The `~/.openclaw` directory is fully persisted in the DCE storage system. Conversations, configurations, and memories remain intact after instance restarts, pauses, or releases. |
+| Persistent Data | `/openclaw/data` is stored on a persistent volume, so OpenClaw work files and FileBrowser uploads are retained when the Pod restarts or is recreated. Files saved in noVNC under `/home/node` or other directories are not guaranteed to persist. See the [FAQ](../faq.md). |
 | Secure and Controlled Model Access | All model requests are routed through the DCE AI Gateway and governed by security policies, without exposing public endpoints. Data and conversations remain protected within the platform. |
-| Full Backend Access | DCE provides both [SSH access and noVNC web access](./quickstart.md#openclaw_2), supporting full CLI operations and meeting advanced debugging and customization requirements. |
+| Full Backend Access | DCE provides both [SSH access and noVNC web access](./quickstart.md#backend-debugging-for-openclaw), supporting full CLI operations and meeting advanced debugging and customization requirements. |
 
 ## Documentation Guide
 
@@ -152,5 +154,6 @@ Package the entire workflow—"read documents → extract key data → validate 
 * [Release Notes](./release-notes.md)
 * [ClawOS Permissions](../../ghippo/permissions/clawos.md)
 
-[Quick Start](./quickstart.md){ .md-button .md-button--primary }
-[Feishu Integration](../workspace/feishu.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

@@ -21,7 +21,7 @@
 
 ### 为源端实例配置服务
 
-如果源端实例处于 DCE 5.0 的集群中，可在 __数据服务__  -> __Redis__  -> __解决方案__  -> __跨集群主从同步__ 中开启方案，将自动完成服务配置工作。
+如果源端实例处于 DCE 的集群中，可在 __数据服务__  -> __Redis__  -> __解决方案__  -> __跨集群主从同步__ 中开启方案，将自动完成服务配置工作。
 
 ![svc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync17.png)
 

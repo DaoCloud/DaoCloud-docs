@@ -1,6 +1,6 @@
-# 在 NeoKylin Linux Advanced Server V7Update6 上部署 DCE 5.0 商业版
+# 在 NeoKylin Linux Advanced Server V7Update6 上部署 DCE 商业版
 
-本文将介绍如何在 NeoKylin Linux Advanced Server V7Update6 操作系统上部署 DCE 5.0。
+本文将介绍如何在 NeoKylin Linux Advanced Server V7Update6 操作系统上部署 DCE。
 
 ## 前提条件
 
@@ -98,7 +98,7 @@
 
     1. 需要修改成 none
 
-6. 开始安装 DCE 5.0。
+6. 开始安装 DCE。
 
     ```bash
     ./dce5-installer cluster-create -m ./sample/manifest.yaml -c ./sample/clusterConfig.yaml
@@ -113,7 +113,7 @@
         - `-d` 开启 debug 模式
         - `--serial` 指定后所有安装任务串行执行
 
-7. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
+7. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 啦！
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -123,4 +123,4 @@
 
     ![control-UI](../images/ui-neoky.png)
 
-8. 成功安装 DCE 5.0 商业版之后，请联系我们授权：电邮 [info@daocloud.io](mailto:info@daocloud.io) 或致电 400 002 6898。
+8. 成功安装 DCE 商业版之后，请联系我们授权：电邮 [info@daocloud.io](mailto:info@daocloud.io) 或致电 400 002 6898。

@@ -19,7 +19,7 @@ class sdk,workload,otel,jaeger,es cluster
 
 如上图所示，在任一步骤传输失败都会导致无法查询出链路数据。如果您在完成应用链路增强后发现没有链路数据，请执行以下步骤：
 
-1. 使用 DCE 5.0 平台，进入 __可观测性__ ，选择左侧导航栏的 __仪表盘__ 。
+1. 使用 DCE 平台，进入 __可观测性__ ，选择左侧导航栏的 __仪表盘__ 。
 
     ![insight 入口](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight01.png)
 

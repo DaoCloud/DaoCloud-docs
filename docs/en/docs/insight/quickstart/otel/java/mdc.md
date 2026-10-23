@@ -24,7 +24,7 @@ Spring Boot projects come with a built-in logging framework and use Logback as t
 Set `logging.pattern.level` in `application.properties`, adding `%mdc{trace_id}` and `%mdc{span_id}` to the logs.
 
 ```bash
-logging.pattern.level=trace_id=%mdc{trace_id} span_id=%mdc{span_id} %5p ....omited...
+logging.pattern.level=trace_id=%mdc{trace_id} span_id=%mdc{span_id} %5p ....omitted...
 ```
 
 Here is an example of the logs:

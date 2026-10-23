@@ -1,6 +1,6 @@
 # Creating a Cluster on Non-Supported Operating Systems
 
-This document outlines how to create a worker cluster on an **unsupported OS** in offline mode. For the range of OS supported by DCE 5.0, refer to [DCE 5.0 Supported Operating Systems](../../install/commercial/deploy-requirements.md).
+This document outlines how to create a worker cluster on an **unsupported OS** in offline mode. For the range of OS supported by DCE, refer to [DCE Supported Operating Systems](../../install/commercial/deploy-requirements.md).
 
 The main process for creating a worker cluster on an unsupported OS in offline mode is illustrated in the diagram below:
 
@@ -10,12 +10,10 @@ Next, we will use the openAnolis operating system as an example to demonstrate h
 
 ## Prerequisites
 
-- DCE 5.0 Full Mode has been deployed following the documentation: [Offline Installation of DCE 5.0 Enterprise](../../install/commercial/start-install.md).
+- DCE Full Mode has been deployed following the documentation: [Offline Installation of DCE Enterprise](../../install/commercial/start-install.md).
 - At least one node with the same architecture and version that can connect to the internet.
 
-## Procedure
-
-### Online Node - Building an Offline Package
+## Online Node - Building an Offline Package
 
 Find an online environment with the same architecture and OS as the nodes in the target cluster. In this example, we will use [AnolisOS 8.8 GA](https://openanolis.cn/download). Run the following command to generate an offline __os-pkgs__ package:
 
@@ -35,7 +33,7 @@ After executing the above command, you should have a compressed package named __
     └── os-pkgs-anolis-8.8.tar.gz
 ```
 
-### Offline Node - Installing the Offline Package
+## Offline Node - Installing the Offline Package
 
 Copy the three files generated on the online node ( __other_os_pkgs.sh__ , __pkgs.yml__ , and __os-pkgs-anolis-8.8.tar.gz__ ) to **all** nodes in the target cluster in the offline environment.
 
@@ -53,6 +51,6 @@ $ ./other_os_pkgs.sh install # Install the offline package
 
 After executing the above command, wait for the interface to prompt: __All packages for node (X.X.X.X) have been installed__ , which indicates that the installation is complete.
 
-### Go to the User Interface to Create Cluster
+## Next Steps
 
 Refer to the documentation on [Creating a Worker Cluster](../user-guide/clusters/create-cluster.md) to create an openAnolis cluster.

@@ -43,6 +43,7 @@ server {
 
     location / {
         try_files \$uri \$uri/ \$uri.html =404;
+        add_header Cache-Control "no-cache, must-revalidate";
         add_header X-Frame-Options "SAMEORIGIN" always;
         add_header X-Content-Type-Options "nosniff" always;
         add_header Referrer-Policy "no-referrer-when-downgrade" always;
@@ -50,6 +51,7 @@ server {
 
     location /en/ {
         try_files \$uri \$uri/ \$uri.html =404;
+        add_header Cache-Control "no-cache, must-revalidate";
     }
 
     location /health {

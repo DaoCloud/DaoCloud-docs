@@ -6,7 +6,7 @@
 
 ## Benchmark
 
-本文基于 DCE 5.0 安装 Ingress-Nginx，所有参数为默认配置，未开启 keepalive 等特性。
+本文基于 DCE 安装 Ingress-Nginx，所有参数为默认配置，未开启 keepalive 等特性。
 
 ![ingress-arch](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/ingress-nginx-arch.png)
 

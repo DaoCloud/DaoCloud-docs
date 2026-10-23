@@ -1,6 +1,6 @@
 # 已有 Kubernetes 集群离线安装社区版
 
-本页简要说明如何在已有 Kubernetes 集群上离线安装 DCE 5.0 社区版。
+本页简要说明如何在已有 Kubernetes 集群上离线安装 DCE 社区版。
 
 点击[社区版部署 Demo](../../../videos/install.md)可观看视频演示。
 
@@ -17,7 +17,7 @@
 - [安装依赖项](../../install-tools.md)。
 
     如果集群中已安装所有依赖项，请确保依赖项版本符合要求：
-        
+
     - helm ≥ 3.11.1
     - skopeo ≥ 1.11.1
     - kubectl ≥ 1.25.6
@@ -27,10 +27,10 @@
 
 1. 先找一台能连通外网的机器，运行以下命令下载社区版离线包并解压（也可以从网页[下载中心](../../../download/index.md)下载离线包并解压）：
 
-    假定版本 VERSION=v0.41.0
+    假定版本 VERSION=v0.45.0
 
     ```bash
-    export VERSION=v0.41.0
+    export VERSION=v0.45.0
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```
@@ -99,7 +99,7 @@
         2. 镜像仓库
         3. 镜像仓库地址，必须是 http 或者 https
 
-1. 在 K8s 集群控制平面节点安装 DCE 5.0。
+1. 在 K8s 集群控制平面节点安装 DCE。
 
     ```shell
     ./dce5-installer install-app -c clusterConfig.yaml
@@ -114,7 +114,7 @@
         - `--serial` 指定后所有安装任务串行执行
 
 1. 安装完成后，命令行会提示安装成功。恭喜您！
-   现在可以通过屏幕提示的 URL 使用默认的账号和密码（admin/changeme）探索全新的 DCE 5.0 啦！
+   现在可以通过屏幕提示的 URL 使用默认的账号和密码（admin/changeme）探索全新的 DCE 啦！
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -122,4 +122,4 @@
 
         请记录好提示的 URL，方便下次访问。
 
-1. 另外，安装 DCE 5.0 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../../../dce/license0.md)。
+1. 另外，安装 DCE 成功之后，您需要正版授权后使用，请参考[申请社区免费体验](../../../dce/license0.md)。

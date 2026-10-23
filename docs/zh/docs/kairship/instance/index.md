@@ -5,7 +5,7 @@ hide:
 
 # 多云实例详情
 
-在 DCE 5.0 多云编排中，你可以方便地查看每个多云实例的详情。
+在 DCE 多云编排中，你可以方便地查看每个多云实例的详情。
 
 1. 在多云实例列表中，点击某个实例的名称可以进入概览页面。
 
@@ -24,3 +24,7 @@ hide:
     ![instance](../images/instance-edit.png)
 
     ![instance](../images/certificate.png)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

@@ -11,7 +11,7 @@ this proactive cluster check allows administrators to monitor the cluster status
 potential issues in advance. It eliminates the previous dilemma of passive troubleshooting during failures,
 enabling proactive monitoring and prevention.
 
-The cluster inspection feature provided by DCE 5.0's container management module supports custom inspection
+The cluster inspection feature provided by DCE's container management module supports custom inspection
 items at the cluster, node, and pod levels. After the inspection is completed,
 it automatically generates visual inspection reports.
 
@@ -24,4 +24,8 @@ it automatically generates visual inspection reports.
   and the status of PV (Persistent Volume) and PVC (PersistentVolumeClaim).
 
 For information on security inspections or executing security-related inspections,
-refer to the [supported security scan types](../security/index.md) in DCE 5.0.
+refer to the [supported security scan types](../security/index.md) in DCE.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

@@ -1,6 +1,6 @@
 # GPU Alerting Rules
 
-This document describes how to set up GPU-related alerting rules on the DCE 5.0 platform.
+This document describes how to set up GPU-related alerting rules on the DCE platform.
 
 ## Prerequisites
 

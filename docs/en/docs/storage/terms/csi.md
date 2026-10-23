@@ -6,8 +6,6 @@ CSI aims to define an industry standard that will enable CSI-enabled storage pro
 
 The diagram below depicts a high-level Kubernetes archetype integrated with CSI.
 
-
-
 - Introduced three new external components to decouple Kubernetes and storage provider logic
 - The blue arrows indicate the normal way of making calls against the API server
 - The red arrow shows gRPC to make calls against the Volume Driver
@@ -16,7 +14,7 @@ The diagram below depicts a high-level Kubernetes archetype integrated with CSI.
 
 To implement the ability to extend volumes on Kubernetes, several components should be extended, including the CSI specification, the "in-tree" volume plugin, external-provisioner, and external-attacher.
 
-## Extended CSI specification
+## Extend the CSI Specification
 
 The latest CSI 0.2.0 still does not define the ability to extend volumes. 3 new RPCs should be introduced: `RequiresFSResize`, `ControllerResizeVolume` and `NodeResizeVolume`.
 
@@ -55,18 +53,18 @@ RequiresFSResize() bool
 
 Finally, to abstract implementation complexity, separate storage provider management logic should be hardcoded into the following features, which are clearly defined in the CSI specification:
 
--CreateVolume
--DeleteVolume
+- CreateVolume
+- DeleteVolume
 - ControllerPublishVolume
--ControllerUnpublishVolume
+- ControllerUnpublishVolume
 - ValidateVolumeCapabilities
--ListVolumes
+- ListVolumes
 - GetCapacity
--ControllerGetCapabilities
--RequiresFSResize
--ControllerResizeVolume
+- ControllerGetCapabilities
+- RequiresFSResize
+- ControllerResizeVolume
 
-## exhibit
+## Demonstration
 
 Demonstrate this functionality with a concrete user case.
 

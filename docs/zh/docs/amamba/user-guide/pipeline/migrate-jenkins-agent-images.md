@@ -3,9 +3,9 @@
 > 本文适用于：
 > - Jenkins v0.5.0 及以上
 > - 应用工作台 v0.35 及以上
-> - DCE 5.0 安装器 v0.27 及以上
+> - DCE 安装器 v0.27 及以上
 
-自 Jenkins 升级到 **v0.4.8** 版本以后，我们对 Jenkins 的 Chart 进行了精简，避免在安装 DCE 5.0
+自 Jenkins 升级到 **v0.4.8** 版本以后，我们对 Jenkins 的 Chart 进行了精简，避免在安装 DCE
 时因为镜像体积过大导致安装时间过长，这加快了安装速度，同时提升了系统的稳定性。从 v0.4.8 开始，Jenkins 的 Chart 分为两个：
 
 - Jenkins 精简版，包含 Jenkins 的核心功能。其中，Jenkins Agent 的镜像仅包含：
@@ -22,7 +22,7 @@
   例如 Python 包含 3.8.19、2.7.9、3.11.9 等多个版本的镜像，具体的 Agent 镜像版本查阅
   [Agent 版本列表](https://github.com/amamba-io/jenkins-agent/blob/main/version.yaml)。
 
-为了保证 DCE 5.0 升级的兼容性，Jenkins 升级以后虽然名称不变，但是可选的镜像列表发生了变化（镜像依旧存在于镜像仓库中），需要手动修改 Agent 镜像的映射关系。
+为了保证 DCE 升级的兼容性，Jenkins 升级以后虽然名称不变，但是可选的镜像列表发生了变化（镜像依旧存在于镜像仓库中），需要手动修改 Agent 镜像的映射关系。
 
 如果您仅使用到了 base、golang、nodejs、maven、python，
 **不需要** 执行以下操作。本文仅适用于使用了非默认 Agent 镜像的用户。
@@ -32,7 +32,7 @@
 
 Jenkins 可用的 Agent 镜像通过 ConfigMap 进行映射，修改步骤如下：
 
-1. 在 DCE 5.0 的界面中，点击左上角的 **≡** 打开导航栏，选择 __容器管理__ -> __集群列表__ ，找到并点击集群名称 `kpanda-global-cluster`。
+1. 在 DCE 的界面中，点击左上角的 **≡** 打开导航栏，选择 __容器管理__ -> __集群列表__ ，找到并点击集群名称 `kpanda-global-cluster`。
 1. 在左侧导航栏中选择 __存储和密钥__ -> __配置项__ ，命名空间选择 `amamba-system` 集群，名称搜素 `global-jenkins-casc-config`
 1. 进入详情，点击右上角的 **编辑 YAML** , YAML 的路径为 data -> jenkins.yaml -> jenkins -> clouds -> kubernetes -> templates
 

@@ -26,7 +26,7 @@ class sdk,workload,otel,jaeger,es cluster
 As shown in the above figure, any transmission failure at any step will result in the inability to query trace data. 
 If you find that there is no trace data after completing the application trace enhancement, please perform the following steps:
 
-1. Use DCE 5.0 platform, enter __Insight__ , and select the __Dashboard__ in the left navigation bar.
+1. Use DCE platform, enter __Insight__ , and select the __Dashboard__ in the left navigation bar.
 
     ![nav](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/insight01.png)
 

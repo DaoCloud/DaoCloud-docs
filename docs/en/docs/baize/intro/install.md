@@ -5,7 +5,7 @@ date: 2024-10-14
 
 # Deploy AI Lab Components
 
-Starting from version 0.17.0 of the DCE 5.0 installer, the AI Lab module can be installed concurrently
+Starting from version 0.17.0 of the DCE installer, the AI Lab module can be installed concurrently
 during the installation of the commercial version, **without the need for separate installation** ;
 please contact the delivery support team to obtain the commercial installation package.
 
@@ -162,7 +162,7 @@ and it is recommended to use the NFS service:
 
     * If an NFS already exists, you can skip this step.
     * If it does not exist, you can refer to the
-      [NFS Service Deployment](../../baize/best-practice/deploy-nfs-in-worker.md) in best practices.
+      [NFS Service Deployment](../../baize/best-practice/index.md) in best practices.
 
 * Deploy `nfs-driver-csi`
 * Deploy `StorageClass`

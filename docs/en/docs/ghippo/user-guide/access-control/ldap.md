@@ -11,12 +11,12 @@ for distributed information through the IP protocol.
 
 If your enterprise or organization has its own account system, and your enterprise user management
 system supports the LDAP protocol, you can use the identity provider feature based on the LDAP protocol
-provided by the Global Management instead of creating usernames/passwords for each member in DCE 5.0.
-You can grant permissions to use DCE 5.0 resources to these external user identities.
+provided by the Global Management instead of creating usernames/passwords for each member in DCE.
+You can grant permissions to use DCE resources to these external user identities.
 
 In Global Management, the operation steps are as follows:
 
-1. Log in to DCE 5.0 as a user with __admin__ role. Click __Global Management__ -> __Access Control__
+1. Log in to DCE as a user with __admin__ role. Click __Global Management__ -> __Access Control__
    in the lower left corner of the left navigation bar.
 
     ![access control](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ws01.png)
@@ -39,7 +39,7 @@ In Global Management, the operation steps are as follows:
     | Bind credentials | The password of the LDAP administrator. This field can retrieve its value from a vault using the ${vault.ID} format. |
     | Users DN | The full DN of the LDAP tree where your users are located. This DN is the parent of the LDAP users. For example, if the DN of a typical user is similar to “uid='john',ou=users,dc=example,dc=com”, it can be “ou=users,dc=example,dc=com”. | dc=daocloud,dc=io |
     | User Object Classes | All values of the LDAP objectClass attribute for users in LDAP, separated by commas. For example: “inetOrgPerson,organizationalPerson”. New Keycloak users will be written to LDAP with all of these object classes, and existing LDAP user records will be found if they contain all of these object classes.|
-    | Enable StartTLS | Encrypts the connection between DCE 5.0 and LDAP when enabled |
+    | Enable StartTLS | Encrypts the connection between DCE and LDAP when enabled |
     | Default Permission | Users/groups have no permissions by default after synchronization |
     | Full name mapping | Corresponding First name and Last Name |
     | User Name Mapping | The unique username for the user |
@@ -70,8 +70,8 @@ In Global Management, the operation steps are as follows:
 !!! note
 
     1. After you have established a trust relationship between the enterprise user management system
-       and DCE 5.0 through the LDAP protocol, you can synchronize the users or groups in the enterprise
-       user management system to DCE 5.0 at one time through auto/manual synchronization.
+       and DCE through the LDAP protocol, you can synchronize the users or groups in the enterprise
+       user management system to DCE at one time through auto/manual synchronization.
     1. After synchronization, the administrator can authorize groups/groups in batches, and users
-       can log in to DCE 5.0 through the account/password in the enterprise user management system.
+       can log in to DCE through the account/password in the enterprise user management system.
     1. See the [LDAP Operations Demo Video](../../../videos/ghippo.md#integration-with-ldap-users-and-user-groups) for a hands-on tutorial.

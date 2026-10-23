@@ -4,6 +4,17 @@ We have crafted the following video tutorials for container management, any kind
 
 > If there is a problem with the video display, please refresh the page, or try to clear the browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Clusters](#clusters)
+- :two: [Namespace Exclusive Nodes](#namespace-exclusive-nodes)
+- :three: [Workloads](#workloads)
+- :four: [Backup and Restore](#backup-and-restore)
+- :five: [GPU](#gpu)
+- :six: [HwameiStor Storage](#hwameistor-storage)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;
@@ -85,13 +96,20 @@ Refer to the [Create Metric-based HPA Policy](../kpanda/user-guide/scale/create-
 
 ## Backup and Restore
 
-Install the Velero plugin to achieve application backup and restore across clusters. 
+Install the [Velero plugin](../kpanda/user-guide/backup/install-velero.md) to achieve application backup and restore across clusters. 
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kpanda-velero.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kpanda-velero.png"></video>
 </div>
 
 ## GPU
+
+### Using Nvidia vGPU
+
+Refer to the following documents: [Installing GPU Operator offline](../kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md),
+[Installing NVIDIA vGPU](../kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md),
+[Building an offline yum repository for CentOS 7.9](../kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md),
+and [Building an offline yum repository for Red Hat 8.4](../kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md).
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/vgpu.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kpanda-vgpu.png"></video>
@@ -102,7 +120,9 @@ Install the Velero plugin to achieve application backup and restore across clust
 Refer to the [HwameiStor Introduction](../storage/hwameistor/intro/index.md) documentation page. You can also find this video uploaded on [YouTube](https://youtu.be/6D1vgj86hHY).
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hwa.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/hwacover.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hwa.mp4" preload="metadata"></video>
 </div>
 
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

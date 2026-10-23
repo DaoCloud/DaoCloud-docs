@@ -527,8 +527,8 @@ Here are the steps to add the Nacos SDK:
 
     int main() {
         Properties props;
-        props[PropertyKeyConst::SERVER_ADDR] = "127.0.0.1:8848"; //nacos地址
-        props[PropertyKeyConst::NAMESPACE] = "public"; // 命名空间ID
+        props[PropertyKeyConst::SERVER_ADDR] = "127.0.0.1:8848"; //nacos address
+        props[PropertyKeyConst::NAMESPACE] = "public"; // namespace ID
         NacosServiceFactory *factory = new NacosServiceFactory(props);
         ResourceGuard <NacosServiceFactory> _guardFactory(factory);
         ConfigService *n = factory->CreateConfigService();

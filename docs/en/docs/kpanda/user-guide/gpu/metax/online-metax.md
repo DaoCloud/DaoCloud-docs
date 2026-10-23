@@ -4,11 +4,11 @@ This section provides guidance on installing the Metax `metax-gpu-extensions` an
 
 ## Prerequisites
 
-1. A prepared DCE 5.0 base environment.
+1. A prepared DCE base environment.
 
 ## Component Overview
 
-DCE 5.0 ships with two built-in Helm chart packages: `metax-gpu-extensions` and `metax-operator`. Choose which to install based on your usage scenario.
+DCE ships with two built-in Helm chart packages: `metax-gpu-extensions` and `metax-operator`. Choose which to install based on your usage scenario.
 
 1. **metax-gpu-extensions**: Contains the `gpu-device` and `gpu-label` components. When using the Metax-extensions solution, application container images must be built based on the MXMACA® base image. This solution only supports the full GPU usage scenario.
 2. **metax-operator**: Contains the `gpu-device`, `gpu-label`, `driver-manager`, `container-runtime`, and `operator-controller` components.
@@ -28,7 +28,7 @@ DCE 5.0 ships with two built-in Helm chart packages: `metax-gpu-extensions` and 
 
     ![Resource View](../images/metax-node.png)
 
-    The node list in the DCE 5.0 platform will display the `Metax GPU` label.
+    The node list in the DCE platform will display the `Metax GPU` label.
 
     ![Metax Node Label](../images/metax-node1.png)
 

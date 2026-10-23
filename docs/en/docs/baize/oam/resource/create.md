@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Create a Resource Flavor
 
 A **resource flavor** defines the available compute resources within a cluster and enables fine-grained resource management by associating workloads with specific node types.

@@ -26,9 +26,9 @@ Therefore, backup and restore are vital as the last line of defense for maintain
 and ensuring data security.
 
 Backups are typically classified into three types: full backups, incremental backups,
-and differential backups. Currently, DCE 5.0 supports full backups and incremental backups.
+and differential backups. Currently, DCE supports full backups and incremental backups.
 
-The backup and restore provided by DCE 5.0 can be divided into two categories:
+The backup and restore provided by DCE can be divided into two categories:
 **Application Backup** and **ETCD Backup**. It supports both manual backups
 and scheduled automatic backups using CronJobs.
 
@@ -50,3 +50,7 @@ and scheduled automatic backups using CronJobs.
     It's worth noting that currently, restoring etcd backup data is only supported within the same
     cluster (the original cluster). To learn more about related best practices, refer to the
     [ETCD Backup and Restore](../../best-practice/etcd-backup.md) guide.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

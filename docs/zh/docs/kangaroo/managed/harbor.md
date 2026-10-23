@@ -11,7 +11,7 @@ hide:
 
     对于 Harbor 实例，除了接入管理员账号外，还可以接入机器人账号达到同样的接入效果。
 
-1. 使用具有 Admin 角色的用户登录 DCE 5.0，从左侧导航栏点击 __镜像仓库__ -> __托管 Harbor__ 。
+1. 使用具有 Admin 角色的用户登录 DCE，从左侧导航栏点击 __镜像仓库__ -> __托管 Harbor__ 。
 
     ![harbor 实例入口](../images/harbor-access.png)
 

@@ -246,7 +246,7 @@ If you enable the tracing capability of the Mspider(Service Mesh), you need to a
 
 ### The operation steps
 
-1. Log in to DCE 5.0, then enter __Container Management__ and select the target cluster.
+1. Log in to DCE, then enter __Container Management__ and select the target cluster.
 2. Click __CRDs__ in the left navigation bar, find __instrumentations.opentelemetry.io__, and enter the details page.
 3. Select the __insight-system__ namespace, then edit __insight-opentelemetry-autoinstrumentation__, and add the following content under `spec:env:`:
 
@@ -256,6 +256,8 @@ If you enable the tracing capability of the Mspider(Service Mesh), you need to a
             fieldRef:
               fieldPath: metadata.labels['app'] 
     ```
+
+    ![otel-mesh](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/otel-mesh.png)
 
     The complete example (for Insight v0.21.x) is as follows:
 
@@ -562,7 +564,7 @@ spec:
 +         mountPath: /otel-auto-instrumentation-java
 ```
 
-🔔 Automatically injected YAML may not be entirely consistent across different versions."
+🔔 Automatically injected YAML may not be entirely consistent across different versions.
 
 ## Trace query
 
@@ -587,7 +589,7 @@ Typical use cases include:
 
 **Core principle** : Use multiple CRs to "divide and conquer," avoiding the limitations of a single configuration when handling multidimensional needs.
 
-### Examples
+For example:
 
 1. Create another `insight-opentelemetry-autoinstrumentation-debug` Instrumentation CR for Project Group B to test a new Java Agent version:
 

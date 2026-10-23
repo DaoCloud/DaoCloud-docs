@@ -1,6 +1,6 @@
 # GPU Operator 离线安装
 
-DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统的 Driver 镜像，驱动版本是 535.104.12；
+DCE 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统的 Driver 镜像，驱动版本是 535.104.12；
 并且内置了各操作系统所需的 Toolkit 镜像，用户不再需要手动离线 Toolkit 镜像。
 
 本文使用 AMD 架构的 CentOS 7.9（3.10.0-1160）进行演示。如需使用 Red Hat 8.4 部署，

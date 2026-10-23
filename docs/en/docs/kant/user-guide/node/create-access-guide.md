@@ -1,29 +1,29 @@
-# Create an Integration Guide
+# Create an Access Configuration
 
-Nodes of the same type can be configured with the same edge node configuration. By creating an integration guide, you can obtain the edge node configuration file and installation program. The relationship between the installation guide and the edge nodes follows a one-to-many relationship, which improves management efficiency and saves operational costs.
+Nodes of the same type can be configured with the same edge node configuration. By creating an access configuration, you can obtain the edge node configuration file and installation program.
+The relationship between the access configuration and the edge nodes is one-to-many, which improves management efficiency and saves operational costs.
 
-The following explains the steps to create an integration guide and manage integration guides.
+The following describes the steps to create an access configuration and how to manage access configurations.
 
 ## Steps
 
-1. On the Edge Node List page, click the **Guide Management** button to enter the guide management list page, then click the **Create Integration Guide** button in the top right corner.
+1. Click the **Edge Node** menu in the left navigation bar to enter the page, select **Access Configuration** to enter the configuration management list page, and click the **Create Access Configuration** button in the top right corner.
 
-    <!-- ![Guide Management](../../images/integration-guide-01.png) -->
+    ![Guide Management](../../images/access-guide-011.png)
 
 2. Fill in the registration information.
 
     - Guide Name: The guide name cannot be empty and is limited to 253 characters.
-    - Node Prefix: The node name consists of "node prefix-random code".
     - Driver Mode: The control group (CGroup) driver used for resource management and configuration of Pods and containers, such as CPU and memory resource requests and limits.
     - CRI Service Address: The socket file or TCP address for communication between the CRI Client and CRI Server locally, for example, `unix:///run/containerd/containerd.sock`.
-    - KubeEdge Edge Container Registry: The repository address for storing KubeEdge components (Mosquitto, installation package, pause) images. If the edge and cloud images are in the same repository, you can click the **Reference Cloud Address** button to quickly fill it in.
-    - Description: Description information for the integration guide.
-    - Tags: Tags information for the integration guide.
+    - KubeEdge Edge Container Registry: The repository address for storing KubeEdge components (Mosquitto, installation-package, pause) images. If the edge and cloud images are in the same repository, you can click the **Reference Cloud Address** button to quickly fill it in.
+    - Description: Description information for the access configuration.
+    - Tags: Tags information for the access configuration.
 
-    <!-- ![Create Integration Guide](../../images/integration-guide-02.png) -->
+    ![Create Access Configuration](../../images/access-guide-022.png)
 
-3. After completing the information filling, click the **OK** button to complete the creation of the integration guide.
+3. After completing the information, click the **OK** button to complete the creation of the access configuration.
 
 ## Next Steps
 
-After creating the guide, you can view the **Integration Guide** and follow the integration process prompts to complete the onboarding operation for the edge nodes. For details, please refer to the [Node Integration Guide](./integration-guide.md).
+After creating the access configuration, you can go to the Edge Node list and click **Onboard Node** to complete the onboarding operation for the edge node. For details, please refer to the [Node Onboarding Guide](./access-guide.md).

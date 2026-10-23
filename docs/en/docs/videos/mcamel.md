@@ -4,6 +4,18 @@ We have crafted the following video tutorials for middleware, any kind of feedba
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
+<div class="grid cards" markdown>
+
+- :one: [Elasticsearch Search Service Instance Management](#elasticsearch-search-service-instance-management)
+- :two: [Kafka Message Instance Management](#kafka-message-instance-management)
+- :three: [MinIO Storage Instance Management](#minio-storage-instance-management)
+- :four: [MySQL Database Instance Management](#mysql-database-instance-management)
+- :five: [RabbitMQ Message Queue Instance Management](#rabbitmq-message-queue-instance-management)
+- :six: [Redis Cache Instance Management](#redis-cache-instance-management)
+- :seven: [Middleware Workload Anti-Affinity](#middleware-workload-anti-affinity)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;
@@ -79,6 +91,6 @@ Refer to the [Middleware Workload Anti-Affinity](../middleware/common/antiaffini
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/anti-affinity.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/mcamel-anti-affinity.png"></video>
 </div>
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

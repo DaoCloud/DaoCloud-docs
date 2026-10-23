@@ -44,4 +44,4 @@ hide:
 ## 参考文档
 
 - [为工作集群添加异构节点](../../best-practice/multi-arch.md)
-- [DCE 4.0 -> DCE 5.0 有限场景迁移](../../best-practice/dce4-5-migration.md)
+- [DCE 4.0 -> DCE 有限场景迁移](../../best-practice/dce4-5-migration.md)

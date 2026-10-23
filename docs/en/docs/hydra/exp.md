@@ -59,12 +59,33 @@ Click **Model Config** in the top bar to adjust settings.
 
 Hover over the **?** next to each parameter to see its detailed explanation.
 
-| Parameter      | Description |
-| -------------- | ----------- |
-| System         | System role: Defines the model’s behavior guidelines and background. For example: “You are an AI assistant.” |
-| Temperature    | Higher values produce more diverse and random outputs; lower values produce more focused and deterministic responses. Recommended to set **either** this or top_p. |
-| TopP           | Controls output diversity. Higher values yield richer responses. Recommended to set **only one** of top_p or temperature. |
-| Max_tokens     | Maximum number of tokens the model can generate. Set to 0 for no limit. Suggested values: 500–800 for chat, 800–2000 for short text, 2000–3600 for code, 4000+ for long text. |
-| <span style=";color:red">* | Required fields are marked with a red asterisk. |
+| Parameter | Description | Suggested Value |
+| ----- | ------- | ------ |
+| System Role | Defines the model's behavior guidelines and background information, clarifying the responsibilities the model needs to take on and the role it plays. | For example, "You are an AI assistant". |
+| top_p | Controls the diversity of the output text. The larger the value, the richer and more diverse the generated text. | 0.8 |
+| temperature | The higher the value, the more random and diverse the output; the lower the value, the more focused and deterministic the output. | 0.7 |
+| max_tokens | The maximum number of tokens the model can generate. If set to 0, there is no limit. | General chat: 500–800;<br>Short text: 800–2000;<br>Code: 2000–3600;<br>Long text: 4000+ |
+
+!!! note
+
+    Both `temperature` and `top_p` can control the randomness of the model output, but in different ways.
+
+    - `temperature` adjusts the overall probability distribution. The higher the value, the more random and
+      creative the output; the lower the value, the more stable and deterministic the output.
+      You can think of it as "a knob for adjusting how bold the model is".
+    - `top_p` limits the range of candidate words that participate in sampling. The model only selects the next
+      word from high-probability words whose cumulative probability reaches the threshold, thereby filtering
+      out low-probability "long-tail" words. You can think of it as "removing unreliable options before
+      picking a word".
+
+    In engineering practice, usually only one of them is needed:
+
+    - When you want stable and controllable output, prefer `temperature`
+    - When you want the output to be natural and fluent without being too divergent, prefer `top_p`
+
+    For more information, see the [parameter descriptions in the Hugging Face documentation](https://huggingface.co/docs/transformers/).
+
+<!-- | <span style=";color:red">* | Required fields are marked with a red asterisk. |
 | Negative Prompt | For image generation: specify content you **do not** want in the output. |
 | Guidance scale | Controls how closely the image adheres to the text description. Higher values mean more accurate images; lower values allow more creativity. |
+-->

@@ -15,9 +15,9 @@
 
 ## 查看审计日志
 
-1. 使用具有 __admin__ 或 __Audit Owner__ 角色的用户登录 DCE 5.0。
+1. 使用具有 __admin__ 或 __Audit Owner__ 角色的用户登录 DCE。
 
-    ![登录 DCE 5.0](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/lang00.png)
+    ![登录 DCE](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/lang00.png)
 
 2. 在左侧导航栏底部，点击 __全局管理__ -> __审计日志__ 。
 

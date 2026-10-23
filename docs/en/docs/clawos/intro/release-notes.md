@@ -2,6 +2,33 @@
 
 This page lists the release notes for ClawOS, providing an overview of version evolution and feature changes. ClawOS is designed for enterprise-grade AI agent scenarios, offering DCE-based OpenClaw managed runtime capabilities that help users quickly create, access, and manage their own AI digital employees. OpenClaw is no longer just a passive AI assistant that answers questions, but an agent runtime capable of proactively planning tasks, invoking tools, executing code, operating files, and completing end-to-end workflows.
 
+## 2026-08-31
+
+### v0.6.2
+
+- **Added** support for Skill approval and listing/unlisting from the workspace view
+- **Added** support for accessing OpenClaw instances through the Gateway API
+
+## 2026-07-31
+
+### v0.5.3
+
+- **Added** support for chatting with OpenClaw instances through Microsoft Teams
+- **Added** support for custom roles in ClawOS
+- **Added** ClawOS to the installer
+- **Added** ClawOS to the download center
+- **Added** support for accessing OpenClaw instances through a unified address
+- **Optimized** deleting an OpenClaw instance now also deletes the corresponding PVC
+
+## 2026-06-30
+
+### v0.4.1
+
+- **Added** overview page in the workspace view
+- **Added** support for viewing OpenClaw instance details
+- **Added** support for selecting a backup model when creating an OpenClaw instance
+- **Added** support for creating network policies to manage OpenClaw instances
+
 ## 2026-05-31
 
 ### v0.3.3

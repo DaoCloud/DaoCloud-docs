@@ -2,9 +2,9 @@
 
 This page lists some common issues and solutions when using the container registry.
 
-## Middleware deployment is not available in the DCE 5.0 standard package
+## Middleware deployment is not available in the DCE standard package
 
-The DCE 5.0 standard package does not include middleware. Middleware is only available in the Platinum package.
+The DCE standard package does not include middleware. Middleware is only available in the Platinum package.
 
 ## How to verify if the configured middleware network is connectable
 
@@ -66,11 +66,7 @@ You can use a combination of uppercase and lowercase letters and numbers instead
 
 ## Harbor Operator installation failed
 
-If the installation of `Harbor Operator` is unsuccessful, you should check the following:
-
-- Ensure that `cert-manager` has been successfully installed.
-- Verify that the `installCRDs` setting is set to `true`.
-- Confirm that the `helm` job for installing the `Harbor operator` was successful.
+If `harbor-operator` fails to be installed, check whether `cert-manager` has been installed successfully and whether `installCRDs` is set to `true`. Also check whether the __helm__ job for installing harbor-operator was successful.
 
 ## Can I use redis cluster mode when creating a managed Harbor?
 
@@ -78,7 +74,7 @@ Currently, `Harbor` does not support the use of `redis` cluster mode.
 
 ## Can private images be seen in a module other than container registry?
 
-The container registry strictly follows the authority of DCE 5.0.
+The container registry strictly follows the authority of DCE.
 To view private registry space under the current tenant, users must belong to a specific tenant.
 Even administrators cannot view it without belonging to the tenant.
 
@@ -99,37 +95,37 @@ which occurs every 10 minutes, and it will return to the original state after th
 
 - A1: Incorrect user entries for the database, Redis, S3 storage, or other information may
   result in a connection failure. Troubleshoot by checking log files. You may notice that
-  several core services have Pod startup failures. Review the logs to determine the cause of the failure.
+  several core services have Pod startup failures. Review the logs to determine the cause of the failure. <a id="a1" />
 
     ```shell
     kubectl -n kangaroo-lrf04 get pods
     ```
 
     ```none
-    NAME READY STATUS RESTARTS AGE
-    trust-node-port-harbor-harbor-chartmuseum-57fdfb9cdc-qznwc 1/1 Running 0 20h
-    trust-node-port-harbor-harbor-core-855f8df46c-cgqb9 1/1 Running 0 20h
-    trust-node-port-harbor-harbor-jobservice-6b958dbc57-ks997 1/1 Running 0 20h
-    trust-node-port-harbor-harbor-portal-5cf6bf659b-kj6gd 1/1 Running 0 20h
-    trust-node-port-harbor-harbor-registry-5ccbf457c5-qrtx5 2/2 Running 0 20h
-    trust-node-port-harbor-harbor-trivy-dbdc8945-xh6rv 1/1 Running 0 20h
-    trust-node-port-nginx-deployment-677c74576-7kmh4 1/1 Running 0 20h
+    NAME                                                         READY   STATUS    RESTARTS   AGE
+    trust-node-port-harbor-harbor-chartmuseum-57fdfb9cdc-qznwc   1/1     Running   0          20h
+    trust-node-port-harbor-harbor-core-855f8df46c-cgqb9          1/1     Running   0          20h
+    trust-node-port-harbor-harbor-jobservice-6b958dbc57-ks997    1/1     Running   0          20h
+    trust-node-port-harbor-harbor-portal-5cf6bf659b-kj6gd        1/1     Running   0          20h
+    trust-node-port-harbor-harbor-registry-5ccbf457c5-qrtx5      2/2     Running   0          20h
+    trust-node-port-harbor-harbor-trivy-dbdc8945-xh6rv           1/1     Running   0          20h
+    trust-node-port-nginx-deployment-677c74576-7kmh4             1/1     Running   0          20h
     ```
 
-- A2: If the troubleshooting in A1 is correct, check whether the `harborcluster` resource is
-  healthy, and check the `harborcluster` resource status with the following command.
+- A2: If the troubleshooting in [A1](#a1) is correct, check whether the `harborcluster` resource is
+  healthy, and check the `harborcluster` resource status with the following command. <a id="a2" />
 
     ```shell
     kubectl -n kangaroo-lrf04 get harborclusters.goharbor.io
     ```
 
     ```none
-    NAME PUBLIC URL STATUS
-    trust-node-port https://10.6.232.5:30010 healthy
+    NAME              PUBLIC URL                 STATUS
+    trust-node-port   https://10.6.232.5:30010   healthy
     ```
 
-- A3: If the troubleshooting in A2 is correct, check whether the `registrysecrets.kangaroo.io`
-  resource is created and the status of `status` on the `kpanda-global-cluster` cluster.
+- A3: If the troubleshooting in [A2](#a2) is correct, check whether the `registrysecrets.kangaroo.io`
+  resource is created and the status of `status` on the `kpanda-global-cluster` cluster. <a id="a3" />
 
     Tip: The default namespace is `kangaroo-system`.
 
@@ -138,8 +134,8 @@ which occurs every 10 minutes, and it will return to the original state after th
     ```
 
     ```none
-    NAME AGE
-    inte-bz-harbor-1 34d
+    NAME                        AGE
+    inte-bz-harbor-1            34d
     ```
 
     ```shell
@@ -148,10 +144,10 @@ which occurs every 10 minutes, and it will return to the original state after th
 
 !!! tip
 
-    - The above A1 and A2 are all troubleshooting on the cluster hosting Harbor,
+    - The above [A1](#a1) and [A2](#a2) are all troubleshooting on the cluster hosting Harbor,
       and the target cluster can be viewed through the following page path: 
       `registry Instance` -> `Overview` -> `Deployment Location`.
-    - The above A3 was verified on `kpanda-global-cluster` cluster.
+    - The above [A3](#a3) was verified on `kpanda-global-cluster` cluster.
 
 ## Issue with registry space and storage after creating a Project or uploading an image
 
@@ -163,22 +159,20 @@ any changes are reflected.
 
 ## Registry integration status is unhealthy
 
-If you encounter an issue where the registry integration status is unhealthy, follow these steps:
+First, check whether the instance is healthy. If it is not, you need to troubleshoot the instance.
+If the instance is healthy, check whether the `registrysecrets.kangaroo.io` resource has been created
+on the `kpanda-global-cluster` cluster, and check the status of `status`. This will help you initially
+identify the problem.
 
-1. First, check whether the instance is healthy. If it's not, then troubleshoot the instance.
-2. If the instance is healthy, verify whether the resource `registrysecrets.kangaroo.io`
-   on the `kpanda-global-cluster` cluster has been created or not.
-3. Check the status of the resource `status` to identify the problem initially.
-
-**Note:** Ensure to check the default namespace, which is `kangaroo-system`.
+Note: The default namespace is `kangaroo-system`.
 
 ```shell
 kubectl -n kangaroo-system get registrysecrets.kangaroo.io
 ```
 
 ```none
-NAME AGE
-trust-test-xjw 34d
+NAME                     AGE
+trust-test-xjw           34d
 ```
 
 ```shell
@@ -220,8 +214,8 @@ please refer to [Unhealthy Confirmation Method after Registry Integration](#regi
     ```
 
     ```none
-    NAME TYPE DATA AGE
-    registry-secret kubernetes.io/dockerconfigjson 1 78d
+    NAME              TYPE                             DATA   AGE
+    registry-secret   kubernetes.io/dockerconfigjson   1      78d
     ```
 
 - A2: If you confirm that the `secret` named `registry-secret` has been generated,

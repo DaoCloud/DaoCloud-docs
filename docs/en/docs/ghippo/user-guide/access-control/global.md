@@ -2,11 +2,11 @@
 
 ## Use cases
 
-DCE 5.0 provides predefined system roles to help users simplify the process of role permission usage.
+DCE provides predefined system roles to help users simplify the process of role permission usage.
 
 !!! note
 
-    DCE 5.0 provides three types of system roles: platform role, workspace role, and folder role.
+    DCE provides three types of system roles: platform role, workspace role, and folder role.
 
     - Platform role: has proper permissions for all related resources on the platform. Please go to user/group page for authorization.
     - Workspace role: has proper permissions for a specific workspace. Please go to the specific workspace page for authorization.

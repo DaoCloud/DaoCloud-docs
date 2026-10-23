@@ -145,11 +145,11 @@ Kpanda 是[容器管理模块](../../kpanda/intro/index.md)的内部代码。
     ```yaml
     ownerReferences:
     - apiVersion: kubean.io/v1alpha1
-        blockOwnerDeletion: true
-        controller: true
-        kind: Cluster
-        name: mig-cluster
-        uid: 6b81413c-270e-4720-b215-fe7cf1364d45 # (1)!
+      blockOwnerDeletion: true
+      controller: true
+      kind: Cluster
+      name: mig-cluster
+      uid: 6b81413c-270e-4720-b215-fe7cf1364d45 # (1)!
     resourceVersion: "15986"
     uid: 9075713e-79ca-436a-8765-db9d25e2667b
     ```
@@ -177,11 +177,11 @@ Kpanda 是[容器管理模块](../../kpanda/intro/index.md)的内部代码。
     ```yaml
     ownerReferences:
     - apiVersion: cluster.kpanda.io/v1alpha1
-        blockOwnerDeletion: true
-        controller: true
-        kind: Cluster
-        name: mig-cluster
-        uid: 6dc22267-ab04-430d-afd5-e332d509c7d3 # (1)!
+      blockOwnerDeletion: true
+      controller: true
+      kind: Cluster
+      name: mig-cluster
+      uid: 6dc22267-ab04-430d-afd5-e332d509c7d3 # (1)!
     resourceVersion: "1006873"
     uid: f726d1e3-c2aa-4341-88ad-ce9322d5d1ba
     type: Opaque

@@ -1,6 +1,6 @@
 # 边云消息概述
 
-DCE 5.0 云边协同平台提供了边云消息路由功能，用户可以配置消息路由，
+DCE 云边协同平台提供了边云消息路由功能，用户可以配置消息路由，
 平台根据消息路由将消息转发至对应端点，让消息按照规定的路径转发，灵活控制数据路由，并提高数据安全性。
 
 - 消息端点：发送或接收消息的一方，可以是边缘应用、云服务等。
@@ -8,7 +8,7 @@ DCE 5.0 云边协同平台提供了边云消息路由功能，用户可以配置
 
 ## 消息端点
 
-DCE 5.0 云边协同提供以下三种类型消息端点：
+DCE 云边协同提供以下三种类型消息端点：
 
 - Rest：云端端点，向边缘发送消息请求的源端点。或者作为目标端点，从边缘接收消息。
 - Event Bus：边端端点，可作为源端点，向云端发送数据。或者作为目标端点，从云端接收消息。
@@ -16,7 +16,7 @@ DCE 5.0 云边协同提供以下三种类型消息端点：
 
 ## 消息路由
 
-对应不同类型的消息端点，DCE 5.0 云边协同提供以下消息转发路径：
+对应不同类型的消息端点，DCE 云边协同提供以下消息转发路径：
 
 - Rest -> EventBus：用户应用调用云端的 REST API 发送消息，最终消息发送到边缘中的 MQTT broker。
 - EventBus -> Rest：用户向边缘中的 MQTT broker 发布消息，最终将消息发送到云端的 REST API。
@@ -25,3 +25,7 @@ DCE 5.0 云边协同提供以下三种类型消息端点：
 ![路径](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/overview01.png)
 
 后续操作：[创建消息路由](./create-route.md)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

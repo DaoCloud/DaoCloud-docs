@@ -1,6 +1,6 @@
 # Types of Security Scans
 
-DCE 5.0 Container Management provides three types of security scans:
+DCE Container Management provides three types of security scans:
 
 - Compliance Scan: Conducts security scans on cluster nodes based on [CIS Benchmark](https://github.com/aquasecurity/kube-bench/tree/main/cfg).
 - Authorization Scan: Checks for security and compliance issues in the Kubernetes cluster, records and verifies authorized access, object changes, events, and other activities related to the Kubernetes API.
@@ -59,3 +59,7 @@ Vulnerability scanning focuses on scanning potential malicious attacks and secur
 !!! tip
 
     To use vulnerability scanning, you need to create a scan policy first. After executing the scan policy, you can view the scan report. For details, refer to [Vulnerability Scan](hunter.md).
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

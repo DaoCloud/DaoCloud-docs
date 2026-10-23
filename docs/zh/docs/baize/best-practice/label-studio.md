@@ -14,7 +14,7 @@
 
 Label Studio 通过其灵活性和功能丰富性，为数据科学家和机器学习工程师提供了强大的数据标注解决方案。
 
-## 部署到 DCE 5.0
+## 部署到 DCE
 
 要想在 AI Lab 中使用 Label Studio，需将其部署到[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)，
 你可以通过 Helm 的方式快速部署。
@@ -42,7 +42,7 @@ Label Studio 通过其灵活性和功能丰富性，为数据科学家和机器�
       image:
         repository: heartexlabs/label-studio   # 如果无法访问 docker.io，在此处配置代理地址
       extraEnvironmentVars:
-        LABEL_STUDIO_HOST: https://{DCE_访问地址}/label-studio    # 使用 DCE 5.0 的登录地址，请参阅当前网页 URL
+        LABEL_STUDIO_HOST: https://{DCE_访问地址}/label-studio    # 使用 DCE 的登录地址，请参阅当前网页 URL
         LABEL_STUDIO_USERNAME: {用户邮箱}    # 必须是邮箱，替换为自己的
         LABEL_STUDIO_PASSWORD: {用户密码}    
     app:
@@ -68,7 +68,7 @@ global:
   image:
     repository: heartexlabs/label-studio   # 如果无法访问 docker.io，在此处配置代理地址
   extraEnvironmentVars:
-    LABEL_STUDIO_HOST: https://{DCE_访问地址}/label-studio    # 使用 DCE 5.0 的登录地址，参阅当前网页 URL
+    LABEL_STUDIO_HOST: https://{DCE_访问地址}/label-studio    # 使用 DCE 的登录地址，参阅当前网页 URL
     LABEL_STUDIO_USERNAME: {用户邮箱}    # 必须是邮箱，替换为自己的
     LABEL_STUDIO_PASSWORD: {用户密码}    
 app:
@@ -89,7 +89,7 @@ externalPostgresql:
 
 ## 添加 GProduct 到导航栏
 
-如果要添加 Label Studio 到 DCE 5.0 导航栏，可以参考[全局管理 OEM IN](../../ghippo/best-practice/oem/oem-in.md) 的方式。
+如果要添加 Label Studio 到 DCE 导航栏，可以参考[全局管理 OEM IN](../../ghippo/best-practice/oem/oem-in.md) 的方式。
 以下案例是增加到 AI Lab 二级导航的添加方式。
 
 ### 添加代理访问

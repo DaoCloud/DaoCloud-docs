@@ -34,7 +34,7 @@ Currently, the following reports are supported:
 
 ## Steps
 
-1. Log in to DCE 5.0 as a user with the __Admin__ role. Click __Global Management__ -> __Operations Management__ at the bottom of the left sidebar.
+1. Log in to DCE as a user with the __Admin__ role. Click __Global Management__ -> __Operations Management__ at the bottom of the left sidebar.
 
     ![Report Management](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/gmagpiereport.png)
    

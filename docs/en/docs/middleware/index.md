@@ -5,13 +5,13 @@ hide:
 
 # Middleware Data Services
 
-DCE 5.0 offers a comprehensive set of middleware solutions tailored for various application scenarios.
+DCE offers a comprehensive set of middleware solutions tailored for various application scenarios.
 These middleware services address data handling requirements and provide development and maintenance support.
 Install and enable these middleware components as needed to achieve optimal performance.
 
 !!! tip
 
-    Empower your applications with DCE 5.0 containerized middleware,
+    Empower your applications with DCE containerized middleware,
     enhancing database performance, enabling high availability, and providing robust scalability.
 
 <div class="grid cards" markdown>
@@ -81,7 +81,7 @@ Install and enable these middleware components as needed to achieve optimal perf
 
     ---
 
-    DCE 5.0 uses containerization technology to run PostgreSQL instances in an isolated environment.
+    DCE uses containerization technology to run PostgreSQL instances in an isolated environment.
 
     - [What is PostgreSQL](./postgresql/intro/index.md)
     - [Create/Update/Delete PostgreSQL Instances](./postgresql/user-guide/create.md)
@@ -152,3 +152,7 @@ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class update,overview,monitor,migrate,practice plain
 ```
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

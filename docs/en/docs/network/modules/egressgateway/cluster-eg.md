@@ -1,5 +1,7 @@
 # Cluster-Wide Default EgressGateway
 
+## Introduction
+
 Setting a default EgressGateway for the entire cluster simplifies the process of defining EgressPolicies for tenants or using EgressClusterPolicy at the cluster level, eliminating the need to specify an `EgressGateway` name each time. Note that only one default EgressGateway can be set per cluster.
 
 ## Prerequisites

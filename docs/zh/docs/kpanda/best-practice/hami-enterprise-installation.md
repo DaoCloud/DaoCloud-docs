@@ -1,10 +1,10 @@
 # HAMi 企业版安装和配置指南
 
-本文介绍如何在 DCE 5.0 平台上安装和配置 HAMi（异构 AI 计算虚拟化中间件）企业版，实现 GPU 虚拟化功能。
+本文介绍如何在 DCE 平台上安装和配置 HAMi（异构 AI 计算虚拟化中间件）企业版，实现 GPU 虚拟化功能。
 
 !!! note
 
-    本文适用于已部署 DCE 5.0 平台的企业用户，需要启用 GPU 虚拟化功能以支持多容器共享 GPU 资源。
+    本文适用于已部署 DCE 平台的企业用户，需要启用 GPU 虚拟化功能以支持多容器共享 GPU 资源。
     HAMi 企业版提供更强大的 GPU 资源管理和虚拟化能力，详细信息请参考 [HAMi 项目官网](https://project-hami.io)。
 
 ## 前提条件
@@ -13,7 +13,7 @@
 
 ### 系统要求
 
-- 已成功部署 DCE 5.0 平台
+- 已成功部署 DCE 平台
 - Kubernetes 集群版本 1.20 或更高
 - 集群中至少有一个配置了 GPU 的节点 （本文以 NVIDIA GPU 卡为例）
 - 具有集群管理员权限
@@ -243,9 +243,9 @@ HAMi 企业版部署完成后，需要进行一些后续配置以确保系统正
 
 ### 在容器管理界面切换 GPU 模式
 
-1. **登录 DCE 5.0 管理界面**
+1. **登录 DCE 管理界面**
 
-    使用管理员账户登录 DCE 5.0 平台的 Web 管理界面。
+    使用管理员账户登录 DCE 平台的 Web 管理界面。
 
 2. **进入容器管理模块**
 
@@ -452,4 +452,4 @@ HAMi 企业版安装完成后，您可以：
 
 - [HAMi 项目官网](https://project-hami.io) - HAMi 项目的官方网站和文档
 - [HAMi GitHub 仓库](https://github.com/Project-HAMi/HAMi) - 源代码和问题反馈
-- [DCE 5.0 容器管理文档](../user-guide/clusters/create-cluster.md) - DCE 5.0 集群创建和管理指南
+- [DCE 容器管理文档](../user-guide/clusters/create-cluster.md) - DCE 集群创建和管理指南

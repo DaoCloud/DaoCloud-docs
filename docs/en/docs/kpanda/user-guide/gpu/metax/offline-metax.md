@@ -4,14 +4,14 @@ This section provides guidance on the offline installation of Metax components s
 
 ## Prerequisites
 
-- [DCE 5.0](../../../../install/index.md) container management platform has been deployed and is functioning properly.
+- [DCE](../../../../install/index.md) container management platform has been deployed and is functioning properly.
 - The container management module has either [joined an existing Kubernetes cluster](../../clusters/integrate-cluster.md) or [created a new one](../../clusters/create-cluster.md), and the UI interface of the cluster is accessible.
 - The GPU cards in the current cluster are not virtualized and are not in use by other applications.
 - The image registry has imported the [Addon offline installation package](https://docs.daocloud.io/download/addon/history/). For usage, refer to [Using the Addon offline installation package](https://docs.daocloud.io/download/addon/v0.40.0/#_3).
 
 ## Component Overview
 
-DCE 5.0 ships with two built-in Helm chart packages: `metax-gpu-extensions` and `metax-operator`. Choose which to install based on your usage scenario.
+DCE ships with two built-in Helm chart packages: `metax-gpu-extensions` and `metax-operator`. Choose which to install based on your usage scenario.
 
 1. **metax-gpu-extensions**: Contains the `gpu-device` and `gpu-label` components. When using the Metax-extensions solution, application container images must be built based on the MXMACA® base image. This solution only supports the full GPU usage scenario.
 2. **metax-operator**: Contains the `gpu-device`, `gpu-label`, `driver-manager`, `container-runtime`, and `operator-controller` components.

@@ -123,7 +123,7 @@
 
 1. 创建一组 TLS 证书。
 
-2. 创建 secret（注意：secert 的 key 必须是 tls.key 和 tls.crt）。
+2. 创建 secret（注意：secret 的 key 必须是 tls.key 和 tls.crt）。
 
     ```shell
     kubectl  delete secret ingress1-ssl

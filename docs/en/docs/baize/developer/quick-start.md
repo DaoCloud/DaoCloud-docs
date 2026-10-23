@@ -61,7 +61,7 @@ Prepare your development environment by clicking on **Notebooks** in the navigat
 - Associate the [three datasets](#preparing-your-dataset) you prepared earlier, filling in the mount paths as shown in the image below. Make sure to configure the empty dataset in the output dataset location.
 
 
-- Select and bind the [environment dependency package](#tensorflow).
+- Select and bind the [environment dependency package](#environment-dependency-tensorflow).
 
     Wait for the Notebook to be successfully created, then click the access link in the list to enter the Notebook. In the Notebook terminal, run the following command to start the training job:
 

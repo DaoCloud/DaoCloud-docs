@@ -28,7 +28,7 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./clusterpedia.md)
 
--   :simple-amazonapigateway:{ .lg .middle } __egressgateway__
+-   :material-gate:{ .lg .middle } __egressgateway__
 
     ---
 
@@ -71,7 +71,7 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./hwameistor.md)
 
--   :melon:{ .lg .middle } __HAMi__ :simple-cncf: Listed in CNCF Incubating 👏
+-   :melon:{ .lg .middle } __HAMi__ :simple-cncf: Listed in CNCF Incubation 👏
 
     ---
 
@@ -126,6 +126,14 @@ hide:
     Simulating thousands of kubelets with minimal resources has been used by OpenAI, Apple, IBM, Alibaba Cloud, and others for testing environments.
 
     [:octicons-arrow-right-24: Learn more](./kwok.md)
+
+-   :material-brain:{ .lg .middle } __MatrixHub__ :simple-cncf: Listed in CNCF Landscape
+
+    ---
+
+    Enterprise self-hosted AI model registry, a private alternative to Hugging Face, accelerating model distribution for vLLM, SGLang, and Dynamo
+
+    [:octicons-arrow-right-24: Learn more](./matrixhub.md)
 
 -   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: Listed in CNCF Sandbox
 
@@ -195,6 +203,6 @@ hide:
 Clusterpedia, HwameiStor, Merbridge, Spiderpool, and Kubean have been selected for the <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>.
 </p>
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

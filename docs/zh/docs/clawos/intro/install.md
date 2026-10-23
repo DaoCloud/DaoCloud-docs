@@ -2,6 +2,10 @@
 
 本页说明离线和在线安装 ClawOS 的两种安装方式。
 
+!!! warning
+
+    ClawOS 只支持 WS 模式，不支持 CSP 模式。
+
 ## 离线安装
 
 本页说明如何下载 ClawOS 离线包以及如何安装。
@@ -143,12 +147,14 @@ https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/agentclaw_v0.2.3_a
 
 #### 前置条件
 
-1. 安装前请确保目标 Kubernetes 集群已配置必要的依赖服务：
+1. 安装前请确保目标 Kubernetes 集群已配置必要的依赖helm应用：
 
-    - hydra-apiserver
-    - kpanda-apiserver
-    - ghippo-apiserver
-    - kpanda-clusterpedia-apiserver
+    - kpanda（0.45.0 及以上）
+    - ghippo（0.48.0 及以上）
+    - insight（0.41.0 及以上）
+    - hydra（WS 版本 0.16.0 及以上）
+
+    注意：ClawOS v0.4.0 版本需要依赖 insight 0.42.2 版本。
 
 2. 更新 hydra AuthorizationPolicy 允许 agent-claw-system 的流量
 
@@ -216,6 +222,11 @@ chart agentclaw 并开始安装, 安装时不需要更改任何参数。
     ```bash
     helm upgrade agentclaw agentclaw-release -n agentclaw-system --install --create-namespace
     ```
+
+!!! info
+
+    若希望 OpenClaw 实例的 UI 与 MS Teams 回调通过 Gateway API 统一入口暴露（而非 NodePort 直连），
+    请参见 [Gateway API 实例访问配置](../reference/gateway-access.md)。
 
 ## 在线安装
 

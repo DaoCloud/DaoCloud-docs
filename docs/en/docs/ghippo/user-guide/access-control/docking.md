@@ -3,7 +3,7 @@
 When two or more platforms need to integrate or embed with each other,
 user system integration is usually required. During the process of user system integration,
 the __Docking Portal__ mainly provides SSO (Single Sign-On) capability.
-If you want to integrate DCE 5.0 as a user source into a client platform,
+If you want to integrate DCE as a user source into a client platform,
 you can achieve it by docking a product through __Docking Portal__ .
 
 ## Docking a product

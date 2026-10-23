@@ -48,6 +48,12 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Upgraded** Elasticsearch and Kibana from 8.17.1 to 8.17.10
 - **Upgraded** the operator to 2.16.1
 
+## 2025-08-31
+
+### v0.25.0
+
+- **Added** support for toleration configuration when creating `Elasticsearch` instances
+
 ## 2025-02-28
 
 ### v0.24.0
@@ -122,9 +128,9 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Added** support for recording operation audit logs
 - **Improved** prompt when instance list information is not obtained
 
-### 2023-10-31
+## 2023-10-31
 
-#### v0.11.0
+### v0.11.0
 
 - **Added** offline upgrade functionality
 - **Added** restart functionality for instances
@@ -163,7 +169,7 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 ## 2023-04-27
 
-### v0.5.1
+### v0.7.2
 
 - **Added** __mcamel-elasticsearch__ details page displays related events
 - **Added** __mcamel-elasticsearch__ supports custom roles
@@ -248,14 +254,22 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 ### v0.3.4
 
+#### New features
+
 - **Added** sync pod status to instance details page
 - **Added** interface to get user list
 - **Added** support arm architecture
+
+#### Improvements
+
 - **Improved** workspace interface logic adjustment
 - **Improved** Style adjustments that do not conform to design specifications
 - **Improved** password acquisition logic adjustment
 - **Improved** cpu&memory request amount should be less than limit logic adjustment
 - **Improved** The instance version does not allow modification, the drop-down box should be text
+
+#### Fixes
+
 - **Fixed** Update the instance service settings, confirm that there is no response, and cannot be submitted
 
 ## 2022-9-25

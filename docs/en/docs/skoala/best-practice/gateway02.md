@@ -1,6 +1,6 @@
 # Gateway API Policies
 
-DCE 5.0 cloud native gateway supports several API policies, including load balancing, timeout, retries, and blacklisting/whitelisting. This article demonstrates how to configure these policies and their specific effects using a real microservice application.
+DCE cloud native gateway supports several API policies, including load balancing, timeout, retries, and blacklisting/whitelisting. This article demonstrates how to configure these policies and their specific effects using a real microservice application.
 
 !!! note
 

@@ -1,6 +1,6 @@
-# 部署 DCE 5.0 商业版时，etcd 组件采用 host 模式部署与控制平面分离
+# 部署 DCE 商业版时，etcd 组件采用 host 模式部署与控制平面分离
 
-安装器在 v0.13.0 版本之后进行部署 DCE 5.0 时，能够支持 host 模式部署 etcd（即 etcd 所在节点 和 master 节点之间分离），以便与控制平面分离解耦，实现独立的高可用 etcd。
+安装器在 v0.13.0 版本之后进行部署 DCE 时，能够支持 host 模式部署 etcd（即 etcd 所在节点 和 master 节点之间分离），以便与控制平面分离解耦，实现独立的高可用 etcd。
 
 ## 前提条件
 
@@ -76,7 +76,7 @@
 
 1. 配置 manifest 文件（可选），可以在离线包 `offline/sample` 下获取该文件并按需修改。
 
-1. 开始安装 DCE 5.0。
+1. 开始安装 DCE。
 
     ```bash
     ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml 
@@ -86,8 +86,8 @@
 
         如果你在使用 `-m ./offline/sample/manifest.yaml` 运行命令时报错，可以尝试执行以下替换操作：
 
-        - 对于 DCE 5.0 社区版，替换为 `-m ./offline/sample/manifest-community.yaml`  
-        - 对于 DCE 5.0 商业版，替换为 `-m ./offline/sample/manifest-enterprise.yaml`
+        - 对于 DCE 社区版，替换为 `-m ./offline/sample/manifest-community.yaml`  
+        - 对于 DCE 商业版，替换为 `-m ./offline/sample/manifest-enterprise.yaml`
 
 1. 安装完成后，查看验证当前集群及控制面节点是否部署了 etcd？
 

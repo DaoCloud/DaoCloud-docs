@@ -1,6 +1,6 @@
-# Linux 单机在线体验 DCE 5.0 社区版
+# Linux 单机在线体验 DCE 社区版
 
-本页说明如何通过 Docker 和 kind 在一台 Linux 机器上在线安装单机 DCE 5.0 社区版。
+本页说明如何通过 Docker 和 kind 在一台 Linux 机器上在线安装单机 DCE 社区版。
 
 !!! tip
 
@@ -152,7 +152,7 @@ precheck pass..
     fire-kind-cluster
     ```
 
-## 安装 DCE 5.0 社区版
+## 安装 DCE 社区版
 
 1. 安装依赖项，另请参阅[依赖项安装说明](../../install/install-tools.md)
 
@@ -183,6 +183,6 @@ precheck pass..
 
 1. 安装完成后，命令行会提示安装成功。恭喜您！
 
-    现在可以通过屏幕提示的 URL（默认为 `https://${主机 IP}:8888__`），使用 **默认的账号和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
+    现在可以通过屏幕提示的 URL（默认为 `https://${主机 IP}:8888__`），使用 **默认的账号和密码（admin/changeme）** 探索全新的 DCE 啦！
 
     ![安装成功](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)

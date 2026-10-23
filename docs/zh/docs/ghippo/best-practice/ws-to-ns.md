@@ -58,7 +58,7 @@ click createns "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_
 工作空间是为了满足多租户的使用场景，基于集群、集群命名空间、网格、网格命名空间、多云、多云命名空间等多种资源形成相互隔离的资源环境。
 工作空间可以映射为项目、租户、企业、供应商等多种概念。
 
-1. 使用 admin/folder admin 角色的用户登录 DCE 5.0，点击左侧导航栏底部的 __全局管理__ 。
+1. 使用 admin/folder admin 角色的用户登录 DCE，点击左侧导航栏底部的 __全局管理__ 。
 
     ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
 
@@ -124,4 +124,4 @@ click createns "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_
 
 1. 选择要授权的 __用户/用户组__ 、 __角色__ 后，点击 __确定__ 完成授权。
 
-    ![确定](../../images/wsauth02.png)
+    ![确定](../images/wsauth02.png)

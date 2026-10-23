@@ -14,10 +14,10 @@ KubeEdge 是一个开源系统，将原生的容器化应用程序编排功能�
 - CloudCore：KubeEdge 云端核心组件。
 - ControllerManager：KubeEdge CRD 扩展，目前应用于边缘应用和边缘节点组。
 
-DCE 5.0 云边协同支持两种边缘单元：
+DCE 云边协同支持两种边缘单元：
 
 - **专有边缘单元** 给指定工作集群安装 KubeEdge 云端套件（CloudCore、ControllerManager），并且对其进行全生命周期管理。
-- **外接边缘单元** 指的是将企业系统中已安装的 KubeEdge 接入到 DCE 5.0
+- **外接边缘单元** 指的是将企业系统中已安装的 KubeEdge 接入到 DCE
   云边协同中进行统一管理。参见[创建外接边缘单元](./create-external-unit.md)
 
 ## 操作步骤

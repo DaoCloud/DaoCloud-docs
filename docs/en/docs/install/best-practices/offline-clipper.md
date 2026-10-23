@@ -5,7 +5,7 @@ Date: 2024-04-08
 
 # Offline Clipper Script User Manual
 
-The offline package contains offline resources for all products of DCE 5.0. However, in actual usage,
+The offline package contains offline resources for all products of DCE. However, in actual usage,
 customers may not need to deploy all products. Therefore, the offline package clipper script
 `offline/utils/offline-clipper.sh` in installer v0.16.0 provides the `offline-clipper.sh` script
 to trim the offline package. This allows customers to decide which products' offline resources to use based on their actual needs.

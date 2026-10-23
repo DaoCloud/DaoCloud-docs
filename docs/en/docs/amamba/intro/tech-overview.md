@@ -1,7 +1,7 @@
 # Workbench Technical Overview
 
-*[Amamba]: dev codename of DCE 5.0 Workbench
-*[Mspider]: dev codename of DCE 5.0 Service Mesh
+*[Amamba]: dev codename of DCE Workbench
+*[Mspider]: dev codename of DCE Service Mesh
 
 ## Objectives
 
@@ -131,7 +131,7 @@ Based on this, Workbench is also planning to support Jenkins deployments using t
     - Custom steps: WIP
 - Acceleration (WIP, missing a systematic document):
     - [Running Pipelines on Specified Nodes - DaoCloud Enterprise](../quickstart/pipeline-on-node.md)
-    - [Using Cache in Pipelines - DaoCloud Enterprise](../quickstart/job-cacher.md)
+    - [Using Cache in Pipelines - DaoCloud Enterprise](../user-guide/pipeline/pipeline_cache.md)
 - Integration:
     - SornaQube: [Code Scanning with Pipelines - DaoCloud Enterprise](../quickstart/scan-with-pipeline.md)
     - Integrated Gitlab: WIP (basic principles, how to use)
@@ -147,7 +147,7 @@ Based on this, Workbench is also planning to support Jenkins deployments using t
 ### Argo CD
 
 Amamba uses [Argo CD](https://argo-cd.readthedocs.io/en/stable/) as the engine to
-implement GitOps capabilities. Compared to native Argo CD, we have mainly enhanced integration with DCE 5.0:
+implement GitOps capabilities. Compared to native Argo CD, we have mainly enhanced integration with DCE:
 
 1. Applications are isolated by tenant and can only be deployed to the corresponding clusters and namespaces.
 2. Permissions are controlled according to the global RBAC policy, and only users with proper rules

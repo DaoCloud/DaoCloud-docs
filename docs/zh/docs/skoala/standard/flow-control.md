@@ -4,7 +4,7 @@
 
 ## 集群流控服务器
 
-DCE 5.0 不提供托管的 Sentinel 服务器，所以用户需自己启动 Sentinel 官方提供的集群流控服务器，且该服务器需要满足以下条件：
+DCE 不提供托管的 Sentinel 服务器，所以用户需自己启动 Sentinel 官方提供的集群流控服务器，且该服务器需要满足以下条件：
 
 - 连接 Nacos，以便从 Nacos 读取持久化配置
 
@@ -25,7 +25,7 @@ DCE 5.0 不提供托管的 Sentinel 服务器，所以用户需自己启动 Sent
 
 ## 集群流控客户端
 
-由于 Sentinel 官方提供的客户端 `sentinel-cluster-client-default` SDK 只适配内存模式使用。而 DCE 5.0 也为集群流控客户端配置做了持久化，所以官方原始客户端 SDK 已无效。
+由于 Sentinel 官方提供的客户端 `sentinel-cluster-client-default` SDK 只适配内存模式使用。而 DCE 也为集群流控客户端配置做了持久化，所以官方原始客户端 SDK 已无效。
 
 1. 首先，用户需引入如下代码：
 

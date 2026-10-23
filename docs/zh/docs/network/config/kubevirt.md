@@ -1,6 +1,6 @@
 # KubeVirt 固定 IP 与 Underlay 网络
 
-本页介绍在 DCE 5.0 中使用 Spiderpool 为 KubeVirt 虚拟机提供固定 IP 与 Underlay 网络能力的推荐配置。
+本页介绍在 DCE 中使用 Spiderpool 为 KubeVirt 虚拟机提供固定 IP 与 Underlay 网络能力的推荐配置。
 
 ## 适用场景
 
@@ -41,7 +41,7 @@ metadata:
 
 创建后，VM Pod 在重启/重建场景下会持续获得相同 IP。
 
-## 注意事项
+!!! note
 
-- KubeVirt 热迁移场景下，Spiderpool 不进行 IP 冲突检测
-- passt 模式只支持单网卡；bridge 模式可多网卡但不支持 Service Mesh
+    - KubeVirt 热迁移场景下，Spiderpool 不进行 IP 冲突检测
+    - passt 模式只支持单网卡；bridge 模式可多网卡但不支持 Service Mesh

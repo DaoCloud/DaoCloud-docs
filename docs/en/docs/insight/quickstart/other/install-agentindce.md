@@ -1,6 +1,6 @@
 # Install insight-agent in DCE 4.0
 
-In DCE 5.0, previous DCE 4.0 can be accessed as a subcluster. This guide provides potential issues and solutions when installing insight-agent in a DCE 4.0 cluster.
+In DCE, previous DCE 4.0 can be accessed as a subcluster. This guide provides potential issues and solutions when installing insight-agent in a DCE 4.0 cluster.
 
 ## Issue One
 
@@ -12,9 +12,12 @@ Enable the parameters of the prometheus operator, retain the prometheus operator
 
 ### Steps
 
-1. Log in to the console.
-2. Enable the __--deny-namespaces__ parameter in the two prometheus operators respectively.
-3. Run the following command (the following command is for reference only, the actual command needs to replace the prometheus operator name and namespace in the command).
+1. Log in to the DCE 4.0 cluster, go to __Settings__ -> __Space Management__ -> __insight-system__ -> __Oversell Policy__ , and delete the oversell policy under insight-system.
+
+    ![dce4](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/dce4-limit-range.png)
+
+2. Log in to the console of the DCE 4.0 cluster. Enable the __--deny-namespaces__ parameter in the two Prometheus Operators respectively.
+   Run the following command (the following command is for reference only; in practice you need to replace the Prometheus Operator name and namespace in the command).
 
     ```bash
     kubectl edit deploy insight-agent-kube-prometh-operator -n insight-system
@@ -23,6 +26,7 @@ Enable the parameters of the prometheus operator, retain the prometheus operator
     ![operatoryaml](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/promerator.png)
 
 !!! note
+
     - As shown in the figure above, the dx-insight component is deployed under the dx-insight tenant, and the insight-agent is deployed under the insight-system tenant.
       Add __--deny-namespaces=insight-system__ in the prometheus operator in dx-insight,
       Add __--deny-namespaces=dx-insight__ in the prometheus operator in insight-agent.
@@ -35,6 +39,7 @@ The open-source __node-exporter__ turns on hostnetwork by default and the defaul
 If the monitoring system of the cluster has installed __node-exporter__ , then installing __insight-agent__ at this time will cause node-exporter port conflict and it cannot run normally.
 
 !!! note
+
     Insight's __node exporter__ will enable some features to collect special indicators, so it is recommended to install.
 
 Currently, it does not support modifying the port in the installation command. After __helm install insight-agent__ , you need to manually modify the related ports of the insight node-exporter daemonset and svc.
@@ -42,6 +47,10 @@ Currently, it does not support modifying the port in the installation command. A
 ## Issue Two
 
 After Insight Agent is successfully deployed, fluentbit does not collect logs of DCE 4.0.
+
+!!! note
+
+    This issue has been fixed in Insight Agent v0.22.0, and it no longer exists after installation or upgrade.
 
 ### Solution
 

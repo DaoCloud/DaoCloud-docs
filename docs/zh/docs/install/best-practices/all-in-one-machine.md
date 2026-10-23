@@ -1,6 +1,6 @@
-# DCE 5.0 一体机部署
+# DCE 一体机部署
 
-本文说明如何在一体机上部署 DCE 5.0。
+本文说明如何在一体机上部署 DCE。
 
 ## 环境准备
 
@@ -92,7 +92,7 @@
 
 **安装前注意事项：**
 
-- 在三台物理机中选择一台物理机作为火种机执行 DCE 5.0 的部署。其中集群配置文件 `clusterConfig.yaml`
+- 在三台物理机中选择一台物理机作为火种机执行 DCE 的部署。其中集群配置文件 `clusterConfig.yaml`
   中的 bootstrapNode 参数可以指定火种机器的 IP。
 
     ```yaml title="clusterConfig.yaml"

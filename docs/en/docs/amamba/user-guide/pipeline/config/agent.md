@@ -101,4 +101,4 @@ The runtime supports both Docker and Podman, but the operating system varies:
 
 ## Custom podTemplate
 
-If you have specific build environment requirements, refer to [Creating a Custom Image](../../../quickstart/jenkins-custom.md#_1) for implementation details.
+If you have specific build environment requirements, refer to [Creating a Custom Image](../../../quickstart/jenkins-custom.md#create-a-custom-image) for implementation details.

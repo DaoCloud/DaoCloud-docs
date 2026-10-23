@@ -1,7 +1,7 @@
 # 开启 ArgoCD UI
 
 为了方便用户直接在应用工作台中利用 ArgoCD 的原生 UI 查看 ArgoCD 的应用详情，
-DCE 5.0 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导您如何开启 ArgoCD UI。
+DCE 应用工作台提供了开启 ArgoCD UI 的功能。本文档将指导您如何开启 ArgoCD UI。
 
 !!! note
 

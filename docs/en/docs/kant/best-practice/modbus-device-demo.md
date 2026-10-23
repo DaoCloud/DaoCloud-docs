@@ -5,7 +5,7 @@ Date: 2024-07-30
 
 # Instructions to Connect a Modbus Device
 
-This article introduces how to connect an end devices based on the Modbus protocol to DCE 5.0 Cloud Edge Collaboration and interact with the cloud.
+This article introduces how to connect an end devices based on the Modbus protocol to DCE Cloud Edge Collaboration and interact with the cloud.
 A simulated device is used as an example to introduce the overall implementation process.
 
 The process to connect an end device is as follows:

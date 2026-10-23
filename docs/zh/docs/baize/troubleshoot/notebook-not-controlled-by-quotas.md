@@ -8,7 +8,7 @@
 
     AI Lab 中的队列管理能力由 [Kueue](https://kueue.sigs.k8s.io/) 提供，
     Notebook 服务是通过 [JupyterHub](https://jupyter.org/hub) 提供的。
-    JupyterHub 对 Kubernetes 的版本要求较高，对于低于 v1.27 的版本，即使在 DCE 5.0 中设置了队列配额，
+    JupyterHub 对 Kubernetes 的版本要求较高，对于低于 v1.27 的版本，即使在 DCE 中设置了队列配额，
     用户在创建 Notebook 时也选择了配额，但 Notebook 实际也不会受到队列配额的限制。
 
     ![local-queue-initialization-failed](./images/kueue-k8s127.png)

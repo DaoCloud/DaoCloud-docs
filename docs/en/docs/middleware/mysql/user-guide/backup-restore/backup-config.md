@@ -11,7 +11,7 @@ DCE Data Services provides MySQL with backup and restore capabilities to ensure 
 
 3. Select the type of backup configuration.
 
-    - When using the MinIO instance provided by DCE 5.0 Data Services, select the MinIO instance where you want to backup data. The system will automatically fetch the address of the selected MinIO. You need to fill in the Access_Key, Secret_Key, and Bucket name of the selected MinIO instance. Ensure that the specified Bucket already exists in MinIO.
+    - When using the MinIO instance provided by DCE Data Services, select the MinIO instance where you want to backup data. The system will automatically fetch the address of the selected MinIO. You need to fill in the Access_Key, Secret_Key, and Bucket name of the selected MinIO instance. Ensure that the specified Bucket already exists in MinIO.
 
     - When using other S3 object storage: Fill in the access address, Access_Key, Secret_Key, and Bucket name of the S3 you want to use.
 

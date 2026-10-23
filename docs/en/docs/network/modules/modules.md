@@ -5,10 +5,10 @@ hide:
 
 # Network components
 
-The network solution provided by DCE 5.0 is an optimized combination of current mainstream
+The network solution provided by DCE is an optimized combination of current mainstream
 open source network components, which can meet the needs of various complex cases.
 
-Currently, the network components supported by DCE 5.0 include:
+Currently, the network components supported by DCE include:
 
 - [Calico](../modules/calico/index.md): Virtual Router implemented based on Linux kernel technology to complete data plane forwarding.
 - [Cilium](../modules/cilium/index.md): Network solution based on eBPF kernel

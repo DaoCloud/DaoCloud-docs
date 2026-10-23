@@ -6,7 +6,7 @@ This article describes the method for expanding the vmstorage disk. Please refer
 
 ### Enable StorageClass expansion
 
-1. Log in to the DCE 5.0 platform as a global service cluster administrator. Click __Container Management__ -> __Clusters__ and go to the details of the __kpanda-global-cluster__ cluster.
+1. Log in to the DCE platform as a global service cluster administrator. Click __Container Management__ -> __Clusters__ and go to the details of the __kpanda-global-cluster__ cluster.
 
 2. Select the left navigation menu __Container Storage__ -> __PVCs__ and find the PVC bound to the vmstorage.
 
@@ -26,7 +26,7 @@ This article describes the method for expanding the vmstorage disk. Please refer
 
 ### Modify the disk capacity of vmstorage
 
-1. Log in to the DCE 5.0 platform as a global service cluster administrator and go to the details of the __kpanda-global-cluster__ cluster.
+1. Log in to the DCE platform as a global service cluster administrator and go to the details of the __kpanda-global-cluster__ cluster.
 
 2. Select the left navigation menu __CRDs__ and find the custom resource for __vmcluster__ .
 
@@ -56,7 +56,7 @@ This article describes the method for expanding the vmstorage disk. Please refer
 
 If the storage volume expansion fails, you can refer to the following method to clone the storage volume.
 
-1. Log in to the DCE 5.0 platform as a global service cluster administrator and go to the details of the __kpanda-global-cluster__ cluster.
+1. Log in to the DCE platform as a global service cluster administrator and go to the details of the __kpanda-global-cluster__ cluster.
 
 2. Select the left navigation menu __Workloads__ -> __StatefulSets__ and find the statefulset for __vmstorage__ . Click the __┇__ on the right side of the target and select __Status__ -> __Stop__ -> __OK__ in the popup menu.
 
@@ -68,7 +68,7 @@ If the storage volume expansion fails, you can refer to the following method to 
     kubectl cp -n insight-system vmstorage-insight-victoria-metrics-k8s-stack-1:vm-data ./vm-data
     ```
 
-4. Log in to the DCE 5.0 platform and go to the details of the __kpanda-global-cluster__ cluster. Select the left navigation menu __Container Storage__ -> __PVs__ , click __Clone__ in the upper right corner, and modify the capacity of the volume.
+4. Log in to the DCE platform and go to the details of the __kpanda-global-cluster__ cluster. Select the left navigation menu __Container Storage__ -> __PVs__ , click __Clone__ in the upper right corner, and modify the capacity of the volume.
 
     ![Clone](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/quickstart/images/vmdisk12.png)
 

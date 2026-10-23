@@ -15,7 +15,7 @@ Types of Cloud Native Storage in the market:
 
 ## DCE Cloud Native Storage
 
-DCE 5.0 Cloud Native Storage is based on the Kubernetes CSI standard and can connect to CSI-compliant storage according to different SLA requirements and user scenarios. The cloud native local storage offered by DaoCloud naturally possesses cloud native characteristics, fulfilling the needs for high scalability and high availability in containerized environments.
+DCE Cloud Native Storage is based on the Kubernetes CSI standard and can connect to CSI-compliant storage according to different SLA requirements and user scenarios. The cloud native local storage offered by DaoCloud naturally possesses cloud native characteristics, fulfilling the needs for high scalability and high availability in containerized environments.
 
 ![Cloud Native Storage](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/nativestorage.jpg)
 
@@ -59,3 +59,7 @@ As data center computing density increases, addressing storage performance bottl
 2. Managing the complexity of building, configuring, maintaining, and scaling applications across different deployment environments and software technology stacks.
 3. Addressing storage bottlenecks: Once computational bottlenecks are resolved, storage capacity can become the limiting factor for computing density.
 4. Business applications are often designed based on peak demand, leading to idle rates of computing and storage resources exceeding 50%. This high cost necessitates the ability to sense business needs for automatic scaling and resource balancing.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

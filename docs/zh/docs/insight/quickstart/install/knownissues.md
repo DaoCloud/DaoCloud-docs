@@ -14,9 +14,9 @@
 helm uninstall insight-agent -n insight-system
 ```
 
-`otel-oprator` 所使用的 `tls secret` 未被卸载掉。
+`otel-operator` 所使用的 `tls secret` 未被卸载掉。
 
-`otel-operator` 定义的“重复利用 tls secret”的逻辑中，会去判断 `otel-oprator` 的 `MutationConfiguration`
+`otel-operator` 定义的“重复利用 tls secret”的逻辑中，会去判断 `otel-operator` 的 `MutationConfiguration`
 是否存在并重复利用 MutationConfiguration 中绑定的 CA cert。但是由于 `helm uninstall` 已卸载 `MutationConfiguration`，导致出现空值。
 
 综上请手动删除对应的 `secret`，以下两种方式任选一种即可：
@@ -27,7 +27,7 @@ helm uninstall insight-agent -n insight-system
     kubectl -n insight-system delete secret insight-agent-opentelemetry-operator-controller-manager-service-cert
     ```
 
-- **通过 UI 删除**：登录 DCE 5.0 容器管理，选择目标集群，从左侧导航进入`密钥`，输入
+- **通过 UI 删除**：登录 DCE 容器管理，选择目标集群，从左侧导航进入`密钥`，输入
    `insight-agent-opentelemetry-operator-controller-manager-service-cert`，选择`删除`。
 
 ## v0.22.0

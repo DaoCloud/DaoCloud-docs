@@ -1,6 +1,6 @@
 # IP 预留
 
-DCE 5.0 容器网络（Spiderpool）通过 ReservedIP CR 为整个 Kubernetes 集群保留一些 IP 地址，这些 IP 地址将不会被 IPAM 分配。
+DCE 容器网络（Spiderpool）通过 ReservedIP CR 为整个 Kubernetes 集群保留一些 IP 地址，这些 IP 地址将不会被 IPAM 分配。
 
 ## 功能介绍
 
@@ -67,7 +67,7 @@ macvlan-ens192   27m
 
 ### 通过 UI 创建 
 
-在 DCE 5.0 中，进入 kpanda-global-cluster 集群，
+在 DCE 中，进入 kpanda-global-cluster 集群，
 
 1. 在左侧导航栏，点击 **容器网络** -> **网络配置**
 1. 点击 **静态 IP 池** -> **IP 预留** - **预留 IP**

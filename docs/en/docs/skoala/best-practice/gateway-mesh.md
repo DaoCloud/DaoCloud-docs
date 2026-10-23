@@ -1,10 +1,10 @@
 # Integrating Gateway with Service Mesh
 
-This article describes how to integrate the DCE 5.0 cloud-native gateway with a service mesh, allowing access to services within the service mesh through the gateway. This integration enables the use of all traffic management capabilities of the service mesh, such as virtual services and destination rules.
+This article describes how to integrate the DCE cloud-native gateway with a service mesh, allowing access to services within the service mesh through the gateway. This integration enables the use of all traffic management capabilities of the service mesh, such as virtual services and destination rules.
 
 ## Current Situation
 
-Currently, the DCE 5.0 cloud-native gateway uses Contour as the control plane and does not synchronize policies with Istio. When accessing services within the service mesh through the cloud-native gateway, the gateway API directly connects to the services within the mesh. However, without synchronizing Istio's policies, the capabilities of the service mesh, such as virtual services and destination rules, cannot be applied, resulting in a lack of mesh capabilities.
+Currently, the DCE cloud-native gateway uses Contour as the control plane and does not synchronize policies with Istio. When accessing services within the service mesh through the cloud-native gateway, the gateway API directly connects to the services within the mesh. However, without synchronizing Istio's policies, the capabilities of the service mesh, such as virtual services and destination rules, cannot be applied, resulting in a lack of mesh capabilities.
 
 ## Integration Approach
 

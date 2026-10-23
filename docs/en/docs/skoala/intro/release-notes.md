@@ -333,11 +333,7 @@ Please follow these steps to manually update the gateway CRD files that need upg
 #### Features
 
 - **Added** support for integrating LDAP authentication in Nacos.
-- **Added** logic for removing associated resources when Nacos is deleted.
-- **Added** display of policy activation status in gateway domain names, APIs, and service lists.
 - **Added** pre-deletion detection capability for Nacos.
-- **Added** support for displaying detailed gateway exception information.
-- **Added** a rule tag column to the lists of gateway services, APIs, and domain names.
 
 #### Fixes
 
@@ -441,10 +437,7 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 #### Features
 
-- **Added** Log query functionality for gateway API testing
-- **Added** Support for multiple instances of external services for the gateway
-- **Added** API latency statistics for the gateway
-- **Added** Exception information for distributed transaction component in the overview
+- **Added** support for gateway custom plug-ins
 
 #### Bug Fixes
 
@@ -561,6 +554,19 @@ Please follow these steps to manually update the gateway CRD files that need upg
 ### v0.33.1
 
 - **Fixed** a logic related to cascading deletion in Nacos
+
+## 2024-01-18
+
+### v0.33.0
+
+- **Added** the gateway supports custom logic plug-ins
+- **Fixed** an issue with abnormal query of the service list of a mesh-type gateway
+- **Fixed** an issue with inaccurate number of completed requests in gateway API statistics
+- **Fixed** an issue with cascading deletion of Seata and Sentinel configurations under hosted Nacos
+- **Fixed** the Header Check error in the gateway debugging log
+- **Fixed** an issue that the latest data cannot be obtained due to the sliding TTL in some logic
+- **Improved** the API password return logic uses Base64 encoding to enhance security
+- **Improved** the cloud native gateway sidecar injection implementation follows the Gateway API standard
 
 ## 2024-01-18
 
@@ -688,9 +694,9 @@ Please follow these steps to manually update the gateway CRD files that need upg
 - **Improved** loading speed of gateway resource list
 - **Improved** configuration details for gateway timeout settings
 
-### 2023-11-07
+## 2023-11-07
 
-#### v0.28.1
+### v0.28.1
 
 - **Fixed** sorting issue in the gateway service list
 - **Fixed** multiple line break issue when importing gateway APIs
@@ -747,16 +753,20 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.27.1
 
+#### Fixes
+
 - **Fixed** an issue of duplicate details in batch deletion response
 - **Fixed** Problem with sorting plugin information in cloud native microservices port list
 - **Fixed** an issue with abnormal display of traffic swimlane list
 - **Fixed** Inconsistent container names for frontend components
 - **Fixed** Some errors in Sentinel business application monitoring reports
 
+#### Improvements
+
 - **Improved** Upgraded Insight version to 0.19.2
 - **Improved** Upgraded Ghippo version to 0.20.0
 
-!!! note "Important Note"
+!!! note
 
     If your Microservice Engine version is greater than `v0.24.2`,
     it is important to note that there are incompatible updates for versions `v0.24.2`
@@ -770,19 +780,10 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 #### Features
 
-- **Added** Permission dependencies for various module functionalities
-- **Added** Exception details API field for managed resources
-- **Added** API interface to retrieve user permission points
-- **Added** Duplicate check API for gateway domain creation
-- **Added** Failure reason API information for service addition in traffic swimlane
-- **Added** API interfaces for managed Nacos gray release
-- **Added** Support for multiple Envoy instances in a single machine for the gateway, resolving
-  injection failure issues for edge cars in the mesh as gateways
-- **Added** API interface to retrieve port rate limiting rules list
-- **Added** Regular expression and exact path matching modes for API matching in the gateway
-- **Added** Authentication-related API interfaces for Sentinel console
-- **Added** Export and import interfaces for API configuration in the gateway
-- **Added** API interfaces for relevant statistics data in the gateway overview
+- **Added** support for connecting to the Consul registry center
+- **Added** support for security authentication configuration at the gateway instance level
+- **Added** support for precisely controlling the total traffic calls of the entire cluster
+- **Added** traffic lanes
 
 #### Fixes
 
@@ -806,7 +807,7 @@ Please follow these steps to manually update the gateway CRD files that need upg
 - **Improved** Front-end component Deployment port from 80 to 8080
 - **Improved** Upgraded Ghippo SDK to v0.20.0-dev2
 
-!!! note "Important Note"
+!!! note
 
     When the Microservice Engine version is greater than `v0.24.2`, there are incompatible updates
     for versions `v0.24.2` and earlier. Since the gateway involves changes in the open-source component
@@ -838,13 +839,12 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 #### Features
 
-- **Added** interface for viewing Sentinel flow control rules.
-- **Added** APIs for cloud native microservice governance.
-- **Added** APIs for cloud native microservice traffic lanes.
-- **Added** support for version 0.19 of the observability module.
-- **Added** API for displaying audit log in the overall overview.
-- **Added** API for displaying resources in the gateway overview page.
-- **Added** APIs for global validation plugin capabilities at the gateway level.
+- **Added** support for injecting the Istio Sidecar Envoy proxy into the Envoy runtime of the gateway.
+- **Added** API-level global rate limiting.
+- **Added** domain-level global rate limiting.
+- **Added** batch operations (online/offline/delete) for the API list.
+- **Added** support for extending the governance capability of cloud native microservices through plug-ins, including JWT plug-ins, Auth plug-ins, and global rate limiting plug-ins.
+- **Added** viewing of service information details and port lists for cloud native microservices.
 
 #### Fixes
 
@@ -1107,12 +1107,13 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.19.1
 
-- Fixed CVE-2022-31045
-- Plugin API
-- Gateway restart
-- Version cannot be updated when the plugin is updated
-- Nacos and Sentinel verify account by default
-- Gateway API sorting in overview page
+- **Fixed** CVE-2022-31045
+- **Fixed** Plugin API
+- **Fixed** Gateway restart
+- **Fixed** Version cannot be updated when the plugin is updated
+- **Fixed** Nacos and Sentinel verify account by default
+- **Fixed** Gateway API sorting in overview page
+- **Fixed** Nacos support for version rollback to 2.0.4
 
 ## 2023-03-24
 
@@ -1159,16 +1160,11 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.18.0
 
-#### Features
-
-- APIs to separate registries and configuration centers
-- APIs related to overview
-
-#### Fixes
-
-- Image version of gateway-api
-- IP pool loading issues of gateways under load balancer mode
-- Health check issues
+- **Added** APIs to separate registries and configuration centers
+- **Added** APIs related to overview
+- **Fixed** Image version of gateway-api
+- **Fixed** IP pool loading issues of gateways under load balancer mode
+- **Fixed** Health check issues
 
 ## 2023-02-22
 
@@ -1225,27 +1221,17 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.16.1
 
-#### Fixes
-
-- Repetitive builder creation when building an image
-
-#### Improvements
-
-- Details in Sentinel application monitor panel
+- **Fixed** Repetitive builder creation when building an image
+- **Improved** Details in Sentinel application monitor panel
 
 ## 2022-12-29
 
 ### v0.16.0
 
-#### Fixes
-
-- Error in Sentinel invoking Nacos interface with authentication enabled
-- Error of nacos-operator frequently modifying service resources
-
-#### Improvements
-
-- Add Grafana monitor panel for Sentinel service
-- Insight to the latest version to support querying monitoring data by cluster name
+- **Fixed** Error in Sentinel invoking Nacos interface with authentication enabled
+- **Fixed** Error of nacos-operator frequently modifying service resources
+- **Improved** Add Grafana monitor panel for Sentinel service
+- **Improved** Insight to the latest version to support querying monitoring data by cluster name
 
 ## 2022-12-28
 
@@ -1334,16 +1320,11 @@ Please follow these steps to manually update the gateway CRD files that need upg
 
 ### v0.12.2
 
-#### Features
-
-- Add Grafana template for Sentinel"s own monitoring
-- Add configuration information of the customized gateway index
-
-#### Fixes
-
-- Status error of Insight after added into microservices
-- Status error of Mesh plugin after enabled in managed registries
-- Error in gateway log index
-- Error in pre-dependency check interface
-- Logical error of Sentinel matching Nacos default namespace
-- Logic error in handling port connected to the container management module is wrong
+- **Added** Add Grafana template for Sentinel's own monitoring
+- **Added** Add configuration information of the customized gateway index
+- **Fixed** Status error of Insight after added into microservices
+- **Fixed** Status error of Mesh plugin after enabled in managed registries
+- **Fixed** Error in gateway log index
+- **Fixed** Error in pre-dependency check interface
+- **Fixed** Logical error of Sentinel matching Nacos default namespace
+- **Fixed** Logic error in handling port connected to the container management module is wrong

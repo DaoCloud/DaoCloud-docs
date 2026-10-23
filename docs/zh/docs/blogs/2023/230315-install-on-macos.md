@@ -1,6 +1,6 @@
 # 通过 Docker 和 kind 在 macOS 电脑上安装社区版
 
-本页说明如何使用 macOS 笔记本电脑创建单节点的 kind 集群，然后在线安装 DCE 5.0 社区版。
+本页说明如何使用 macOS 笔记本电脑创建单节点的 kind 集群，然后在线安装 DCE 社区版。
 
 !!! tip
 
@@ -103,7 +103,7 @@ NAME                              STATUS   ROLES           AGE   VERSION
 fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
 ```
 
-## 安装 DCE 5.0 社区版
+## 安装 DCE 社区版
 
 1. 安装依赖项
 
@@ -155,7 +155,7 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
     docker exec -it fire-kind-cluster-control-plane kubectl get po -A -w
     ```
 
-    当看到以下提示，则表示 DCE 5.0 社区版安装成功了。
+    当看到以下提示，则表示 DCE 社区版安装成功了。
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/success.jpg)
 
@@ -163,7 +163,7 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
 
 ## 体验使用
 
-申请到许可证后，将进入 DCE 5.0 主界面，显示当前安装的组件、集群/节点/资源、告警等信息。
+申请到许可证后，将进入 DCE 主界面，显示当前安装的组件、集群/节点/资源、告警等信息。
 
 您可以尝试：
 
@@ -178,7 +178,7 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
 
 ## 卸载
 
-1. 卸载 [DCE 5.0 社区版](../../install/uninstall.md)。
+1. 卸载 [DCE 社区版](../../install/uninstall.md)。
 1. 删除 kind 集群。
 
     ```

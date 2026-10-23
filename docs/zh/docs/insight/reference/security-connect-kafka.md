@@ -615,7 +615,7 @@ spec:
 EOF
 ```
 
-后续则使用生成的 secert dce 中 user.key、user.crt 和根证书 ca.crt 对应字段。按照下方脚本获取：
+后续则使用生成的 secret dce 中 user.key、user.crt 和根证书 ca.crt 对应字段。按照下方脚本获取：
 
 ```yaml
 kubectl get secret dce -n mcamel-system -o jsonpath='{.data.user\.key}' | base64 --decode 

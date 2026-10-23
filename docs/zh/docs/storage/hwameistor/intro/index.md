@@ -54,6 +54,6 @@ IO 本地化，相同的 IO 读写，CPU 平稳，无较大波动，内存资源
 - 支持换盘等运维行为
 
 [HwameiStor 发行版本](https://github.com/hwameistor/hwameistor/releases){ .md-button .md-button--primary }
-[下载 DCE 5.0](../../../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../../install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](../../../dce/license0.md){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

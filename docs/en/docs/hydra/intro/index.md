@@ -7,12 +7,14 @@ hide:
 
 LLM Studio is a comprehensive AI model management solution designed for enterprise users. It addresses key challenges enterprises face when adopting large models, such as deployment complexity, model selection difficulties, stability issues, and potential security risks. By offering end-to-end lifecycle services—from model deployment to operational management—the platform helps enterprises and developers efficiently integrate and utilize large-scale AI capabilities, accelerating digital transformation and intelligent innovation.
 
+[Read or Download the LLM Studio User Manual](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/hydra-docs.pdf){ .md-button }
+
 **Key Features**
 
 - One-Click Deployment and Simplified Operations
 
     - Dual Support for GUI and API: Offers an intuitive web interface and complete API endpoints
-    - One-Click Model Deployment: Supports mainstream large models to go live within minutes
+    - One-Click Model Serving: Supports mainstream large models to go live within minutes
     - Dynamic Inference Backends: Compatible with multiple inference engines such as vLLM and SGLang
     - Real-Time Scaling: Flexibly adjust the number of instances based on business needs
     - Multi-Region Deployment: Choose deployment regions on demand for local services
@@ -68,14 +70,42 @@ The platform enables unified management, trial, and rapid deployment of models t
 - **Standard User View**:
     - Access the **Model Trial** section to test configured models online without local deployment.
 
-### 3️⃣ Model Deployment Management: Configure Deployment Parameters
+### 3️⃣ Model Serving Management: Configure Deployment Parameters
 
 - **Operations Management**:
-    - Create deployment configuration files for resources and environments (e.g., GPU, memory, runtime framework) in **Model Deployment Management**.
+    - Create deployment configuration files for resources and environments (e.g., GPU, memory, runtime framework) in **Model Serving Management**.
 - **Standard User View**:
-    - Quickly complete deployment by selecting a model in the **Model Deployment** page.
+    - Quickly complete deployment by selecting a model in the **Model Serving** page.
     - Simplifies workflows without requiring manual input of complex parameters.
   
 ### 4️⃣ Model File Download: Foundation for Deployment
 
-- Operations staff need to download model files to designated locations.
+- Operations staff need to [download model files to designated locations](../dataset.md).
+
+## Audit
+
+The audit feature is a core part of the LLM Studio module, designed to provide comprehensive operation
+tracking and security monitoring to meet the requirements of compliance, traceability, and security auditing.
+
+The audit feature ensures that user behavior and system changes are traceable by recording key operation
+events. The main audit items include:
+
+- **Model Management:** Such as creating, updating, and deleting models (Model), enabling/disabling the MaaS
+  model trial feature (EnabledMAASModel), and publishing/unpublishing models (PublishModel/UnPublishModel).
+- **Deployment Template Management:** Such as adding and updating model deployment templates
+  (AddDeployTemplates/UpdateDeployTemplates).
+- **Model Provider Management:** Such as creating, updating, and deleting model providers (ModelProvider).
+- **Workspace API Key Management:** Such as creating and deleting workspace API keys
+  (CreateWSAPIKey/DeleteWSAPIKey).
+- **Model Service Management:** Such as creating and deleting workspace model services
+  (CreateWSModelServing/DeleteWSModelServing), updating the number of replicas
+  (UpdateWSModelServingReplicas), and performing service actions (DoModelWSServingAction).
+
+These audit items cover every aspect of the model lifecycle, ensuring that every operation is traceable.
+The audit feature is a key tool for ensuring the security, compliance, and efficient operation of LLM Studio.
+
+For the list of audit items, see [LLM Studio Audit Items](../../ghippo/user-guide/audit/gproduct-audit/hydra.md).
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

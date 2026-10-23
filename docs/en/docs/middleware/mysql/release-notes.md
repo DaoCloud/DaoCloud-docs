@@ -60,6 +60,13 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Fixed** errors when updating parameters while enabling automatic backups
 - **Upgraded** MySQL from 5.7.31 to 5.7.44
 
+## 2025-08-31
+
+### v0.27.0
+
+- **Added** support for toleration configuration when creating MySQL instances
+- **Fixed** syntax errors in the Chinese Grafana dashboard for MySQL
+
 ## 2025-02-28
 
 ### v0.26.0
@@ -177,7 +184,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 ## 2023-04-27
 
-### v0.8.1
+### v0.8.2
 
 - **Added** __mcamel-mysql__ details page displays related events
 - **Added** __mcamel-mysql__ openapi list interface supports Cluster and Namespace field filtering
@@ -189,9 +196,14 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 ### v0.7.0
 
+#### New features
+
 - **Added** __mcamel-mysql__ supports middleware traces adaptation
 - **Added** Install __mcamel-mysql__ to enable traces according to parameter configuration.
 - **Added** __mcamel-mysql__ PhpMyAdmin supports LoadBalancer type
+
+#### Upgrade
+
 - **Upgraded** golang.org/x/net to v0.7.0
 - **Upgraded** GHippo SDK to v0.14.0
 - **Improved** __mcamel-mysql__ common-mysql supports multiple instance optimization
@@ -216,6 +228,9 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Added** __mcamel-mysql__ Operator finalizers permission to support openshift
 - **Added** __UI__ adds MySQL master-slave replication delay display
 - **Added** __Documentation__ adds log viewing operation instructions, supports custom query, export and other features
+
+#### Improvements
+
 - **Upgraded** __mcamel-mysql__ upgrade offline mirror detection script
 
 #### Fixes

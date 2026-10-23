@@ -247,7 +247,7 @@ There are two upgrade methods. You can choose the proper upgrade plan based on t
 
 ### Prerequisites
 
-Run the following command before installing DCE 5.0 or upgrading the product module:
+Run the following command before installing DCE or upgrading the product module:
 
 ```shell
 ~/dce5-installer cluster-create -c /home/dce5/sample/clusterConfig.yaml -m /home/dce5/sample/manifest.yaml -d -j 14,15

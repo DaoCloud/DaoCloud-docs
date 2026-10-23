@@ -5,7 +5,7 @@ Date: 2024-01-23
 
 # One-click Diagnosis and Repair
 
-DCE 5.0 service mesh has built-in one-click diagnosis and repair functions for managed services, which can be operated through a graphical interface.
+DCE service mesh has built-in one-click diagnosis and repair functions for managed services, which can be operated through a graphical interface.
 
 1. Enter a specific Service Mesh and click __Service Management__ -> __Service List__ .
    In the __Diagnose Config__ column, next to services with an __Abnormal__ status,
@@ -43,7 +43,7 @@ DCE 5.0 service mesh has built-in one-click diagnosis and repair functions for m
 | K8s System Namespace   | kube-system        | Control plane components      |
 |                      | kube-public        | Cluster configurations and certificates |
 |                      | kube-node-lease    | Monitors and maintains node activity |
-| DCE 5.0 System Namespace | amamba-system      | Workbench         |
+| DCE System Namespace | amamba-system      | Workbench         |
 |                      | ghippo-system      | Global management             |
 |                      | insight-system     | Observability                 |
 |                      | ipavo-system       | Homepage dashboard            |

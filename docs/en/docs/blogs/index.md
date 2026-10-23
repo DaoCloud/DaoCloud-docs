@@ -5,12 +5,16 @@ hide:
 
 # Blog Posts
 
-This page summarizes blogs and public account articles related to DCE 5.0 and cloud native
-technology, sorted by date by default.
+This page summarizes blogs and public account articles related to AI and cloud native
+technologies, sorted by date by default.
 
 *[DCE]: Abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
 
 ## 2026
+
+- [KubeCon China 2026 Guide](./2026/kubecon-cn.md)
+
+    KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 takes place September 7–9 in Shanghai.
 
 - [Correcting Records for Unfixed Kubernetes CVEs](./2026/k8s-cve.md)
 
@@ -37,7 +41,7 @@ technology, sorted by date by default.
 
 - [DaoCloud Among the First to Pass CNCF Kubernetes AI Conformance](./2025/ai-conformance.md)
 
-    [DCE 5.0](https://docs.daocloud.io/) is among the first to pass the CNCF Kubernetes AI Conformance certification.
+    [DCE](https://docs.daocloud.io/) is among the first to pass the CNCF Kubernetes AI Conformance certification.
 
 - [Back at the Peak of Cloud Native: Paco Xu Selected for the Kubernetes Steering Committee](./2025/paco-ksc.md)
 
@@ -270,9 +274,9 @@ technology, sorted by date by default.
 
     Based on CNCF's Cloud-Native Report, this article talks about the development of various technologies and trends in the cloud native field in 2023.
 
-- [20230201 | DCE 5.0 Struggle Quotations Collection](2023/230201-peter.md)
+- [20230201 | DCE Struggle Quotations Collection](2023/230201-peter.md)
 
-    In 2022, in Shanghai, ravaged by the epidemic, lockdowns, controls, and home stays, programmers ran between the cracks of the virus 🦠. That year was the time when DCE 5.0 struggled, and it was also a difficult year for every Chinese person.
+    In 2022, in Shanghai, ravaged by the epidemic, lockdowns, controls, and home stays, programmers ran between the cracks of the virus 🦠. That year was the time when DCE struggled, and it was also a difficult year for every Chinese person.
 
 ## 2022
 
@@ -324,17 +328,17 @@ technology, sorted by date by default.
 
     On October 20th, 2022, DaoCloud officially released its container container registry service based on Alibaba Cloud Object Storage Service (OSS). This service provides users with secure and reliable storage and management of container images, helping them reduce the cost of image storage and improve image access efficiency. Moreover, by using Alibaba Cloud OSS as the underlying storage engine, DaoCloud can provide users with more diversified storage options, such as cold storage and disaster recovery.
 
-- [20221026 | Introduction to Container Management Capability of DCE 5.0](2022/221026-kpanda.md)
+- [20221026 | Introduction to Container Management Capability of DCE](2022/221026-kpanda.md)
 
-    This article explains the capabilities provided by the container management module of DCE 5.0.
+    This article explains the capabilities provided by the container management module of DCE.
 
-- [20221018 | Introduction to Resource Management Capability of DCE 5.0](2022/221018-resource.md)
+- [20221018 | Introduction to Resource Management Capability of DCE](2022/221018-resource.md)
 
-    This article explains the capabilities provided by the global management module of DCE 5.0.
+    This article explains the capabilities provided by the global management module of DCE.
 
-- [20220925 | Introduction to Workbench Capability of DCE 5.0](2022/220925-amamba.md)
+- [20220925 | Introduction to Workbench Capability of DCE](2022/220925-amamba.md)
 
-    This article explains the capabilities provided by the Workbench module of DCE 5.0.
+    This article explains the capabilities provided by the Workbench module of DCE.
 
 - [20220914 | Merbridge Selected in eBPF Panorama](https://mp.weixin.qq.com/s/Ia9Oi3pKuLcrFJwazmpEjg)
 
@@ -356,13 +360,13 @@ technology, sorted by date by default.
 
     Clusterpedia is a CNCF sandbox project for cross-cluster complex resource retrieval. It can synchronize resources with multiple clusters and provide more powerful search features based on Kubernetes OpenAPI compatibility to help you quickly, easily, and effectively obtain any multicluster resources.
 
-- [20220808 | Introduction to Multicloud Management Capability of DCE 5.0](2022/220808-kairship.md)
+- [20220808 | Introduction to Multicloud Management Capability of DCE](2022/220808-kairship.md)
 
-    This article explains the capabilities provided by the Multicloud Management module of DCE 5.0.
+    This article explains the capabilities provided by the Multicloud Management module of DCE.
 
-- [20220708 | Introduction to Service Mesh Capability of DCE 5.0](2022/220708-mspider.md)
+- [20220708 | Introduction to Service Mesh Capability of DCE](2022/220708-mspider.md)
 
-    This article explains the capabilities provided by the service mesh module of DCE 5.0.
+    This article explains the capabilities provided by the service mesh module of DCE.
 
 - [20220622 | Clusterpedia Officially Enters CNCF Sandbox as the First multicloud Retrieval Open Source Project](https://mp.weixin.qq.com/s/K2jG64msI4j-mWqPF0qkKg)
 
@@ -380,7 +384,7 @@ technology, sorted by date by default.
 
     The emergence of Merbridge CNI mode aims to better adapt to the features of service mesh. When there was no CNI mode before, Merbridge could do relatively little. The biggest problem was that it couldn't adapt to the Sidecar Annotation injected by Istio, which made Merbridge unable to exclude traffic from certain ports or IP ranges. At the same time, because Merbridge only processed connection requests within the Pod before, it meant that if it was external traffic sent to the Pod, Merbridge would not be able to handle it.
 
-- [20220606 | DCE 5.0 Development Background](2022/221008-dce-bg.md)
+- [20220606 | DCE Development Background](2022/221008-dce-bg.md)
 
     Describes the background of the birth of DaoCloud Enterprise 5.0, the new generation of cloud native operating system.
 
@@ -394,3 +398,7 @@ technology, sorted by date by default.
 
 [^1]: CNCF: Cloud Native Computing Foundation, affiliated with the Linux Foundation, was established in December 2015 as a non-profit organization dedicated to cultivating and maintaining a vendor-neutral open-source ecosystem to promote cloud native technology and popularize cloud native applications.
 [^2]: Cloud native landscape: Maintained by CNCF since December 2016, it summarizes mature and widely used products and solutions in the community, classifies them, and provides references for enterprises to build a cloud native system. It has extensive influence in the development and operation and maintenance fields of the cloud ecosystem.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

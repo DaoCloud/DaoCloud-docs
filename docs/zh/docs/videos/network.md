@@ -87,7 +87,7 @@
 
 ## 在阿里云环境运行 Spiderpool
 
-参阅 Spiderpool [阿里云环境运行](https://docs.daocloud.io/network/modules/spiderpool/alibabacloud.html)文档。
+参阅 Spiderpool [阿里云环境运行](../network/modules/spiderpool/public-cloud/alibabacloud.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/alicloud.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/net-spiderpool.jpeg"></video>
@@ -109,6 +109,6 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/rdma.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/rdma.jpg"></video>
 </div>
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

@@ -317,9 +317,9 @@ spec:
         k8s:
           env:
             - name: ISTIO_META_REQUESTED_NETWORK_VIEW
-              value: ${CLUSTER_NET_ID}  # 修改为当前集群的网络 ID
+              value: ${CLUSTER_NET_ID}  # Change it to the network ID of the current cluster
           service:
-            loadBalancerIP: ${LB_IP}  # 修改为本集群为东西网关规划的 LB IP
+            loadBalancerIP: ${LB_IP}  # Change it to the LB IP planned for the east-west gateway of this cluster
             ports:
               - name: tls
                 port: 15443
@@ -328,7 +328,7 @@ spec:
         label:
           app: istio-eastwestgateway
           istio: eastwestgateway
-          topology.istio.io/network: ${CLUSTER_NET_ID}  # 修改为当前集群的网络 ID
+          topology.istio.io/network: ${CLUSTER_NET_ID}  # Change it to the network ID of the current cluster
         name: istio-eastwestgateway
   profile: empty
   tag: ${ISTIO_VERSION}

@@ -3,15 +3,14 @@
 INHERIT: navigation.yml
 
 # Project information
-site_name: DaoCloud Enterprise
+site_name: DaoCloud Docs Hub
 site_url: https://docs.daocloud.io/
 site_author: DaoCloud
 site_description: >-
-  DaoCloud Enterprise 5.0 is the next-generation PaaS platform, created with many leading cloud-native technologies,
-  to easily promote and boost your digital business.
+  DaoCloud is a global pioneer in open source for AI, leading the wave of AI innovation and helping drive digital transformation.
 
 # copyright
-copyright: Copyright &copy; 2016 - 2025 DaoCloud
+copyright: Copyright &copy; 2016 - 2026 DaoCloud
 
 # Repository
 repo_name: DaoCloud/DaoCloud-docs
@@ -43,7 +42,7 @@ theme:
     - content.code.annotate
     - content.code.copy
     - content.tooltips
-    # - navigation.indexes
+    - navigation.indexes
     - navigation.tabs
     # - navigation.instant
     - navigation.prune
@@ -100,9 +99,6 @@ plugins:
       htmlmin_opts:
         remove_comments: true
 
-  # - git-revision-date-localized:
-  #     enable_creation_date: false
-
   # - git-committers:
   #     repository: DaoCloud/DaoCloud-docs
   #     branch: main
@@ -110,42 +106,53 @@ plugins:
   
   - redirects:
       redirect_maps:
-        "en/api.md": "en/dce/index.md"
-        "en/dce/what-is-dce.md": "en/dce/index.md"
-        "en/install/install-dce.md": "en/install/community/k8s/online.md"
-        "en/dce/what.md": "en/dce/index.md"
-        "en/insight/user-guide/quickstart/jvm-monitor/otel-java-agent.md": "en/insight/quickstart/otel/java/jvm-monitor/otel-java-agent.md"
-        "en/insight/user-guide/quickstart/otel/otel.md": "en/insight/quickstart/otel/otel.md"
-        "en/insight/quickstart/jvm-monitor/jmx-exporter.md": "en/insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md"
-        "en/insight/user-guide/scenario-insight/topology-helper.md": "en/insight/user-guide/trace/topology.md"
-        "en/network/modules/spiderpool/rdmapara.md": "en/network/modules/spiderpool/install/rdmapara.md"
-        "en/kangaroo/integrate/bind-to-ws.md": "en/kangaroo/integrate/integrate-admin/bind-to-ws.md"
-        "en/skoala/intro/what.md": "en/skoala/intro/index.md"
-        "en/skoala/quickstart/install.md": "en/skoala/quickstart/skoala.md"
-        "en/virtnest/quick-start/create-secret.md": "en/virtnest/vm/create-secret.md"
-        "en/virtnest/vm/vm-gpu.md": "en/virtnest/gpu/vm-gpu.md"
+        "api.md": "dce/index.md"
+        "amamba/quickstart/helm.md": "amamba/user-guide/helm.md"
+        "amamba/quickstart/olm.md": "amamba/user-guide/olm.md"
+        "amamba/quickstart/repo.md": "amamba/user-guide/repo.md"
+        "dce/what-is-dce.md": "dce/index.md"
+        "install/install-dce.md": "install/community/k8s/online.md"
+        "dce/what.md": "dce/index.md"
+        "insight/user-guide/quickstart/jvm-monitor/otel-java-agent.md": "insight/quickstart/otel/java/jvm-monitor/otel-java-agent.md"
+        "insight/user-guide/quickstart/otel/otel.md": "insight/quickstart/otel/otel.md"
+        "insight/quickstart/jvm-monitor/jmx-exporter.md": "insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md"
+        "insight/user-guide/scenario-insight/topology-helper.md": "insight/user-guide/trace/topology.md"
+        "network/modules/spiderpool/rdmapara.md": "network/modules/spiderpool/install/rdmapara.md"
+        "network/modules/cilium/notSupport.md": "network/modules/cilium/not-support.md"
+        "network/modules/egressgateway/release-note.md": "network/modules/egressgateway/release-notes.md"
+        "kangaroo/integrate/bind-to-ws.md": "kangaroo/integrate/integrate-admin/bind-to-ws.md"
+        "skoala/intro/what.md": "skoala/intro/index.md"
+        "skoala/quickstart/install.md": "skoala/quickstart/skoala.md"
+        "virtnest/quick-start/create-secret.md": "virtnest/vm/create-secret.md"
+        "virtnest/vm/vm-gpu.md": "virtnest/gpu/vm-gpu.md"
+        "virtnest/intro/faq.md": "virtnest/faq/index.md"
+        "kant/user-guide/node/batch-registration.md": "kant/user-guide/node-v0.19/batch-registration.md"
+        "kpanda/intro/benefits.md": "kpanda/intro/scenarios.md"
+        "kpanda/intro/concepts.md": "kpanda/intro/scenarios.md"
 
         # module quick links
-        "en/kairship.md": "en/kairship/intro/index.md"
-        "en/skoala.md": "en/skoala/intro/index.md"
-        "en/mspider.md": "en/mspider/intro/index.md"
-        "en/insight.md": "en/insight/intro/index.md"
-        "en/mcamel.md": "en/middleware/index.md"
-        "en/kpanda.md": "en/kpanda/intro/index.md"
-        "en/amamba.md": "en/amamba/intro/index.md"
-        "en/blog.md": "en/blogs/index.md"
-        "en/ghippo.md": "en/ghippo/intro/index.md"
-        "en/video.md": "en/videos/index.md"
-        "en/baize.md": "en/baize/intro/index.md"
+        "kairship.md": "kairship/intro/index.md"
+        "skoala.md": "skoala/intro/index.md"
+        "mspider.md": "mspider/intro/index.md"
+        "insight.md": "insight/intro/index.md"
+        "mcamel.md": "middleware/index.md"
+        "kpanda.md": "kpanda/intro/index.md"
+        "amamba.md": "amamba/intro/index.md"
+        "blog.md": "blogs/index.md"
+        "ghippo.md": "ghippo/intro/index.md"
+        "video.md": "videos/index.md"
+        "baize.md": "baize/intro/index.md"
+
+        # baize page renames
+        "baize/best-practice/deploy-nfs-in-worker.md": "baize/best-practice/index.md"
 
   # - git-revision-date: # Display the last update date on the bottom of each page, install with 'pip install mkdocs-git-revision-date-plugin'
   #     enabled_if_env: "CI"
-  # - git-revision-date-localized: # Add localized creation and update dates on the bottom of each page, install with 'pip install mkdocs-git-revision-date-localized-plugin'
+  # - git-revision-date-localized: # Add localized creation and update dates on the bottom of each page (disabled: slows build)
   #     timezone: Asia/Shanghai
-  #     type: timeago # Date format, valid values are 'date', 'datetime', 'iso_date', 'iso_datetime' and 'timeago'
-  #     fallback_to_build_date: true # Default is false, enables fallback to time when mkdocs build was executed
-  #     enable_creation_date: true # Show the file creation date next to the last update date
-
+  #     type: date
+  #     fallback_to_build_date: true
+  #     enable_creation_date: false
   #     exclude:
   #       - index.md
   #     enabled: !ENV [ENABLED_GIT_REVISION_DATE, true]
@@ -183,13 +190,17 @@ extra:
 
 # Customization Javascript
 extra_javascript:
-  - /stylesheets/zoom_image.js
-  - /stylesheets/language-redirect.js
+  - stylesheets/zoom_image.js
+  - stylesheets/language-redirect.js
   # - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js # disable fix mermaid not working
 
 # Customization css
 extra_css:
-  - /stylesheets/custom.css
+  - stylesheets/custom.css
+  - stylesheets/product-docs-menu.css
+  - stylesheets/product-nav-menu.css
+  - stylesheets/tf-arch.css
+  - stylesheets/landing.css
 
 # Extensions
 markdown_extensions:
@@ -241,3 +252,8 @@ markdown_extensions:
   - pymdownx.snippets
   #     auto_append:
   #       - includes/glossary.md
+
+hooks:
+  - ../../scripts/tf_nav_hook_en.py
+  - ../../scripts/drun_nav_hook_en.py
+  - ../../scripts/redirect_html_hook.py

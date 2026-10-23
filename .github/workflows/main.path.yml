@@ -18,16 +18,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # 站点未启用依赖 git 历史的插件，默认浅克隆即可
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Checkout OpenAPI docs
         uses: actions/checkout@v4
         with:
           repository: daocloud/daocloud-api-docs
           path: dao-openapi
-          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:

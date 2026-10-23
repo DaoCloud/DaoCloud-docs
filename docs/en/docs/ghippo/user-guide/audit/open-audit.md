@@ -6,11 +6,11 @@
   prerequisite for collecting Kubernetes audit logs are that the cluster has enabled Kubernetes audit logs,  the 
   export of audit logs has been allowed, and the collection of audit logs has been opened.
 
-## DCE 5.0 Installation Status
+## DCE Installation Status
 
 - For DCE Community installations, the Kubernetes audit log switch was not operated during the management cluster
   installation process.
-- For DCE 5.0 Enterprise installations, the Kubernetes audit log switch is enabled by default.
+- For DCE Enterprise installations, the Kubernetes audit log switch is enabled by default.
     - To set it to default off, you can modify the installer's __clusterConfig.yaml__ file 
       (set __logPath__ to empty "").
 - The collection of Kubernetes audit logs switch is disabled by default for the management cluster.
@@ -18,7 +18,7 @@
 
 ## Management Cluster Collection of Kubernetes Audit Logs Switch
 
-### DCE 5.0 Enterprise Installation Environment
+### DCE Enterprise Installation Environment
 
 #### Confirm Enabling Kubernetes Audit Logs
 
@@ -154,7 +154,7 @@ By default, the collection of K8s audit logs is turned off. If you need to enabl
 
 Set the switch to the enabled state to enable the collection of K8s audit logs.
 
-When creating a worker cluster via DCE 5.0, ensure that the K8s audit log option for the cluster is set to 'true' so
+When creating a worker cluster via DCE, ensure that the K8s audit log option for the cluster is set to 'true' so
 that the created worker cluster will have audit logs enabled.
 
 ![Audit Logs Enabled](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker03.png)

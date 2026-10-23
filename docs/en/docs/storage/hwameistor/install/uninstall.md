@@ -1,5 +1,7 @@
 # Uninstall
 
+This section describes two ways to uninstall the HwameiStor system.
+
 !!! danger
 
     Please make sure to back up all data before uninstalling HwameiStor.

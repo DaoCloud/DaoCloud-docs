@@ -7,7 +7,7 @@ Date: 2023-01-04
 
 # Cloud Native Security
 
-DCE 5.0 provides a fully automated security implementation for containers, Pods, images, runtimes, and microservices.
+DCE provides a fully automated security implementation for containers, Pods, images, runtimes, and microservices.
 The following table lists some of the security features that have been implemented or are in the process of being implemented.
 
 | Security Features | Specific Items | Description |
@@ -21,3 +21,7 @@ The following table lists some of the security features that have been implement
 | Micro-isolation | Intelligent recommendation of isolation policies | Support for recording historical access traffic to resources, and intelligent policy recommendation based on historical access traffic when configuring isolation policies for resources. |
 | - | Tenant isolation | Support isolation control of tenants in Kubernetes clusters, with the ability to set different network security groups for different tenants, and supports tenant-level security policies to achieve inter-tenant network access and isolation. |
 | Microservices security | Service and API security scanning |Supports automatic, manual and periodic scanning of services and APIs within a cluster. Support all traditional web scanning items including XSS vulnerabilities, SQL injection, command/code injection, directory enumeration, path traversal, XML entity injection, poc, file upload, weak password, jsonp, ssrf, arbitrary jump, CRLF injection and other risks. For vulnerabilities found in the container environment, support vulnerability type display, url display, parameter display, danger level display, test method display, etc.|
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

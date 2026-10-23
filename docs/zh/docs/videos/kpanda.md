@@ -4,6 +4,17 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<div class="grid cards" markdown>
+
+- :one: [集群](#_2)
+- :two: [命名空间独享节点](#_6)
+- :three: [工作负载](#_7)
+- :four: [备份恢复](#_9)
+- :five: [GPU](#gpu)
+- :six: [HwameiStor 存储](#hwameistor)
+
+</div>
+
 <style>
 .responsive-video-container {
     position: relative;
@@ -80,7 +91,7 @@
 参阅[创建基于指标的 HPA 策略](../kpanda/user-guide/scale/create-hpa.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hpa.mp4" preload="metadata" poster="images/kpanda-hpa.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hpa.mp4" preload="metadata" poster="../images/kpanda-hpa.png"></video>
 </div>
 
 ## 备份恢复
@@ -88,7 +99,7 @@
 [安装 velero 插件](../kpanda/user-guide/backup/install-velero.md)实现应用跨集群的备份恢复。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kpanda-velero.mp4" preload="metadata" poster="images/kpanda-velero.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kpanda-velero.mp4" preload="metadata" poster="../images/kpanda-velero.png"></video>
 </div>
 
 ## GPU
@@ -101,7 +112,7 @@
 [构建 Red Hat 8.4 离线 yum 源](../kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md) 文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gpu.mp4" preload="metadata" poster="images/gpu.jpg"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gpu.mp4" preload="metadata" poster="../images/gpu.jpg"></video>
 </div>
 
 ## HwameiStor 存储
@@ -109,9 +120,9 @@
 参阅 [HwameiStor 简介](../storage/hwameistor/intro/index.md)文档，本视频也上传到了[YouTube](https://youtu.be/6D1vgj86hHY)。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hwa.mp4" preload="metadata" poster="images/hwacover.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hwa.mp4" preload="metadata"></video>
 </div>
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

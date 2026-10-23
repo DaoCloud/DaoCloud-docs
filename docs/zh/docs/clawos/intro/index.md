@@ -2,6 +2,8 @@
 
 ClawOS 是面向企业的 Agent 运行与治理平台，用于统一创建、管理、集成、观测和运维企业内部的 AI Agent。当前版本中，ClawOS 管理的 Agent 类型主要为 OpenClaw 实例；后续平台可扩展支持更多类型的企业 Agent。
 
+[查看/下载 ClawOS 用户手册](https://harbor-test2.cn-sh2.ufileos.com/docs/download/ClawOS.pdf){ .md-button }
+
 ## ClawOS：企业级 Agent 运行与治理平台
 
 > 可以简单理解为：ClawOS 是企业内部运行 AI Agent 的 **控制面** 和 **治理面** 。
@@ -148,7 +150,7 @@ ClawOS 的核心价值，不是证明某个 Agent 比 ChatGPT、Claude、Codex �
 | --- | --- |
 | 一键创建，开箱即用 | 无需手动配置环境、接入模型和权限，系统自动完成沙箱创建和 Token 注入，业务人员无需 IT 介入即可立即使用 |
 | 安全沙箱隔离 | 每个 OpenClaw 实例运行在独立容器沙箱中，基于 DaoCloud **zestU** 内核级隔离技术，即使被攻破也严格限制在沙箱内，无法入侵内网或篡改宿主机文件 |
-| 数据持久化，记忆不丢失 | `~/.openclaw` 目录完整持久化在 DCE 存储系统中，对话、配置和记忆在重启、暂停或释放实例后依然保留 |
+| 数据持久化 | `/openclaw/data` 通过持久卷保存，OpenClaw 工作文件和 FileBrowser 上传的文件在 Pod 重启或重建后仍会保留。noVNC 中保存在 `/home/node` 等其他目录的文件不保证保留，详见[常见问题](../faq.md)。 |
 | 安全可控的模型访问 | 所有模型调用通过 DCE AI 网关统一转发并执行安全策略，不直接暴露公网，数据和对话在平台内受保护 |
 | 完整后台访问能力 | DCE 提供 [SSH 登录和 noVNC 网页访问](./quickstart.md#openclaw_2) 两种方式，支持完整 CLI 操作，满足高级调试和自定义需求 |
 
@@ -161,5 +163,6 @@ ClawOS 的核心价值，不是证明某个 Agent 比 ChatGPT、Claude、Codex �
 - [Release Notes](./release-notes.md)
 - [ClawOS 权限说明](../../ghippo/permissions/clawos.md)
 
-[快速入门](./quickstart.md){ .md-button .md-button--primary }
-[飞书集成](../workspace/feishu.md){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

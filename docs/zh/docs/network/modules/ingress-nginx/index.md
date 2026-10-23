@@ -16,4 +16,9 @@ hide:
 - [日志配置](./log.md)
 - [上传限制](./upload.md)
 - [镜像流量](./mirror.md)
+- [迁移到 Higress 或 kgateway](./migrate-to-higress-or-kgateway.md)
 - [排障指南](./troubleshooting.md)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

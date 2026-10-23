@@ -10,12 +10,12 @@ and configuration requirements, to provide a uniform benchmark for cross-environ
     It is worth noting that any vendor’s customized Kubernetes platform or distribution must **first** obtain the Kubernetes Conformance certification before it is eligible to apply for AI Conformance.
 
 As a leading open-source company in China, DaoCloud keeps pace with cloud-native AI. Once the community released the Kubernetes AI Conformance standard, DaoCloud immediately launched AI Conformance testing for its widely deployed Kubernetes v1.33-based
-[DCE 5.0](https://docs.daocloud.io/) platform — and **successfully passed** in October 2025
+[DCE](https://docs.daocloud.io/) platform — and **successfully passed** in October 2025
 ([link to certificate PR](https://github.com/cncf/ai-conformance/pull/13)) — becoming the **first enterprise-grade AI/ML platform in China** to pass the certification for this version.
 
-[DCE 5.0](https://daocloud.io/products/index.html) is a high-performance, scalable, cloud-native AI operating system. It delivers a consistent and stable experience across any infrastructure or environment, supports heterogeneous clouds, edge clouds and multi-cloud orchestration. The platform integrates service mesh and microservice technologies for full-link traffic tracing, and provides intelligent monitoring and dynamic visualization dashboards to make the health of clusters, nodes, apps and services clearly observable. It also natively supports DevOps and GitOps, enabling standardized and automated application delivery, and comes with curated databases and middleware to make ops more efficient.
+[DCE](https://daocloud.io/products/index.html) is a high-performance, scalable, cloud-native AI operating system. It delivers a consistent and stable experience across any infrastructure or environment, supports heterogeneous clouds, edge clouds and multi-cloud orchestration. The platform integrates service mesh and microservice technologies for full-link traffic tracing, and provides intelligent monitoring and dynamic visualization dashboards to make the health of clusters, nodes, apps and services clearly observable. It also natively supports DevOps and GitOps, enabling standardized and automated application delivery, and comes with curated databases and middleware to make ops more efficient.
 
-DCE 5.0’s modular architecture ensures each capability is decoupled and upgradeable, while also integrating with a rich AI ecosystem to provide end-to-end solutions. Validated in production by nearly a thousand enterprise customers, it forms a robust digital foundation that helps enterprises unlock AI productivity and move toward an intelligent, AI-driven digital future.
+DCE’s modular architecture ensures each capability is decoupled and upgradeable, while also integrating with a rich AI ecosystem to provide end-to-end solutions. Validated in production by nearly a thousand enterprise customers, it forms a robust digital foundation that helps enterprises unlock AI productivity and move toward an intelligent, AI-driven digital future.
 
 ## About AI Conformance Requirements
 
@@ -93,4 +93,4 @@ Red Hat OpenShift, SUSE RKE2 and other globally recognized platforms — demonst
   ![v1.33 compliance list](../images/ai-conf01.png){ width="700" }
 </figure>
 
-DCE 5.0’s certification proves it can deliver standards-compliant, portable and highly reliable AI run-time — whether large-scale model training, high-performance inference, or MLOps pipelines — with efficiency and elasticity. Going forward, DaoCloud will continue to invest in cloud-native AI and provide a stronger foundation for enterprise AI transformation.
+DCE’s certification proves it can deliver standards-compliant, portable and highly reliable AI run-time — whether large-scale model training, high-performance inference, or MLOps pipelines — with efficiency and elasticity. Going forward, DaoCloud will continue to invest in cloud-native AI and provide a stronger foundation for enterprise AI transformation.

@@ -1,6 +1,6 @@
 # Using JWT Plugin in Cloud Native Microservices
 
-DCE 5.0 Microservice Engine supports the use of the JWT plugin in cloud-native microservices to add security authentication to services.
+DCE Microservice Engine supports the use of the JWT plugin in cloud-native microservices to add security authentication to services.
 
 ## Prerequisites
 
@@ -8,10 +8,10 @@ To use the JWT plugin in cloud-native microservices, the following prerequisites
 
 ### Create a Service Mesh
 
-First, you need to create a service mesh for the cluster where the target service resides in the Service Mesh module of DCE 5.0.
+First, you need to create a service mesh for the cluster where the target service resides in the Service Mesh module of DCE.
 Currently, three types of meshes are supported: Hosted Mesh, Dedicated Mesh, and External Mesh.
 
-For specific steps on creating a mesh, refer to [Creating a Hosted/Dedicated Mesh](../../../mspider/user-guide/service-mesh/README.md) or [Creating an External Mesh](../../../mspider/user-guide/service-mesh/external-mesh.md).
+For specific steps on creating a mesh, refer to [Creating a Hosted/Dedicated Mesh](../../../mspider/user-guide/service-mesh/index.md) or [Creating an External Mesh](../../../mspider/user-guide/service-mesh/external-mesh.md).
 
 
 
@@ -34,7 +34,7 @@ Bind a workspace to the target mesh to allow the mesh to use resources from the 
 
 ### Connect Services in the Microservice Engine
 
-Go to the Microservice Engine module and import the demo application into the cloud-native microservice module. For detailed steps, refer to [Importing Services](../../cloud-ms/index.md).
+Go to the Microservice Engine module and import the demo application into the cloud-native microservice module. For detailed steps, refer to [Importing Services](../../cloud-ms/traffic-control.md).
 
 
 

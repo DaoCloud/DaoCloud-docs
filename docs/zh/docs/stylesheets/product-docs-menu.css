@@ -1,0 +1,98 @@
+.product-docs-menu {
+  position: relative;
+}
+
+.product-docs-menu details {
+  position: relative;
+}
+
+.product-docs-menu summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.product-docs-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.product-docs-menu__caret {
+  display: inline-block;
+  font-size: .7rem;
+  margin-left: .15rem;
+  transition: transform 125ms;
+}
+
+.product-docs-menu details[open] .product-docs-menu__caret {
+  transform: rotate(180deg);
+}
+
+.product-docs-menu__list {
+  border-radius: .1rem;
+  box-shadow: var(--md-shadow-z2);
+  display: none;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  min-width: 9rem;
+  padding: .3rem 0;
+  position: absolute;
+  top: calc(100% + .2rem);
+  z-index: 10;
+}
+
+.product-docs-menu:focus-within .product-docs-menu__list,
+.product-docs-menu:hover .product-docs-menu__list,
+.product-docs-menu details[open] .product-docs-menu__list {
+  display: block;
+}
+
+.product-docs-menu__list a {
+  display: block;
+  font-size: .7rem;
+  padding: .45rem .8rem;
+  white-space: nowrap;
+}
+
+.product-docs-menu__list a:focus,
+.product-docs-menu__list a:hover {
+  color: var(--md-accent-fg-color) !important;
+}
+
+[data-md-color-scheme="default"] .product-docs-menu__list {
+  background: #fff;
+  color: #1f2937;
+}
+
+[data-md-color-scheme="default"] .product-docs-menu__list a {
+  color: #1f2937 !important;
+}
+
+[data-md-color-scheme="default"] .product-docs-menu__list a:focus,
+[data-md-color-scheme="default"] .product-docs-menu__list a:hover {
+  background: #eef2ff;
+}
+
+[data-md-color-scheme="slate"] .product-docs-menu__list {
+  background: #1e2129;
+  color: #fff;
+}
+
+[data-md-color-scheme="slate"] .product-docs-menu__list a {
+  color: #fff !important;
+}
+
+[data-md-color-scheme="slate"] .product-docs-menu__list a:focus,
+[data-md-color-scheme="slate"] .product-docs-menu__list a:hover {
+  background: #363b47;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-tabs,
+  .md-tabs__list {
+    overflow: visible;
+  }
+
+  .md-tabs__list {
+    contain: none;
+  }
+}

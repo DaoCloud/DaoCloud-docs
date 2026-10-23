@@ -5,7 +5,7 @@ Date: 2024-07-22
 
 # Traffic Topology
 
-DCE 5.0 Service Mesh provides a dynamic flow visualization feature called Traffic Topology.
+DCE Service Mesh provides a dynamic flow visualization feature called Traffic Topology.
 
 In the left navigation menu, click __Traffic Monitor__ -> __Traffic Topology__ .
 Here, you can choose the __View__ , __Namespace__ , __Collection Source__ , and __Time__ to view the service topology.

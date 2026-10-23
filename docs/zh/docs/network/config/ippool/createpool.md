@@ -61,8 +61,8 @@ hide:
     - **网关:** 默认继承 **子网网关** ，可修改。
     - **自定义路由:** 当用户有特殊路由需求时，可基于 IP 池粒度的进行自定义。
     - **Multus 实例:** Multus CNI 中的具体配置实例，可添加多个，添加后创建的 **IPPool** 和 **Multus 实例** 进行关联。
-      [创建应用时选择 Multus 实例仅可使用已关联的 IPPool](../use-ippool/usage.md) ，更多信息可参考
-      [SpiderIPPool Affinity](https://spidernet-io.github.io/spiderpool/v0.8/usage/spider-affinity-zh_CN/#ippool_3)。
+        [创建应用时选择 Multus 实例仅可使用已关联的 IPPool](../use-ippool/usage.md) ，更多信息可参考
+        [SpiderIPPool Affinity](https://spidernet-io.github.io/spiderpool/v0.8/usage/spider-affinity-zh_CN/#ippool_3)。
     - **工作负载亲和性:** 工作负载标签（如 `app: workload01`）。IP 池创建后，仅可被对应的工作负载选择，实现固定 IP 池效果。
     - **节点亲和性:** 有3种设置方式，分别为不设置；指定节点，可多选（如节点`worker1`，`controller`）；
       节点选择器如 `zone:beijing`）。IP 池创建后，工作负载 Pod 需要调度到对应节点才能使用创建的 IP 池。

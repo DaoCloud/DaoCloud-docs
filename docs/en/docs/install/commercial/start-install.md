@@ -3,7 +3,7 @@ MTPE: ModetaNiu
 date: 2026-04-27
 ---
 
-# Offline Install DCE 5.0 Enterprise
+# Offline Install DCE Enterprise
 
 Ensure that you have read and understood the [deployment requirements](deploy-requirements.md),
 [deployment architecture](deploy-arch.md), and [preparation](prepare.md) before installation.
@@ -18,20 +18,20 @@ Download the appropriate version of the offline package in accordance with your 
 ### Offline Image Package (Required)
 
 The offline image package contains configuration files, image resources, and
-chart packages required for installing DCE 5.0 modules.
+chart packages required for installing DCE modules.
 
 You can download the latest version from the [Download Center](../../download/index.md).
 
 | CPU Architecture | Version | Download |
 | :--------------- | :------ | :------- |
-| AMD64 | v0.41.0 | [offline-v0.41.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.41.0-amd64.tar) |
-| <font color="green">ARM64</font> | v0.41.0 | [offline-v0.41.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.41.0-arm64.tar) |
+| AMD64 | v0.45.0 | [offline-v0.45.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.45.0-amd64.tar) |
+| <font color="green">ARM64</font> | v0.45.0 | [offline-v0.45.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.45.0-arm64.tar) |
 
 After downloading, extract the offline package.
 Take the amd64 architecture offline package as an example
 
 ```bash
-tar -xvf offline-v0.41.0-amd64.tar
+tar -xvf offline-v0.45.0-amd64.tar
 ```
 
 ### ISO Operating System Image Files (Required)
@@ -78,6 +78,74 @@ operating systems, which can be found at <https://github.com/kubean-io/kubean/re
 Currently, the installer version requires the osPackage offline package version to match.
 Download the osPackage offline package based on the corresponding version:
 
+=== "V0.45.0"
+
+    | Operating System | Download |
+    | :--------- | :------ |
+    | Redhat 8     | [os-pkgs-redhat8-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-redhat8-v0.38.0.tar.gz) |
+    | Redhat 7     | [os-pkgs-redhat7-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-redhat7-v0.38.0.tar.gz) |
+    | Redhat 9     | [os-pkgs-redhat9-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-redhat9-v0.38.0.tar.gz) |
+    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-ubuntu2004-v0.38.0.tar.gz) |
+    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-ubuntu2204-v0.38.0.tar.gz) |
+    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-openeuler22.03-v0.38.0.tar.gz) |
+    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-oracle9-v0.38.0.tar.gz) |
+    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-oracle8-v0.38.0.tar.gz) |
+    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.38.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-rocky9-v0.38.0.tar.gz) |
+    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.38.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-rocky8-v0.38.0.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-kylin-v10sp2-v0.38.0.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.38.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.38.0/os-pkgs-kylin-v10sp3-v0.38.0.tar.gz) |
+
+=== "V0.44.0"
+
+    | Operating System | Download |
+    | :--------- | :------ |
+    | Redhat 8     | [os-pkgs-redhat8-v0.37.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.37.0/os-pkgs-redhat8-v0.37.0.tar.gz) |
+    | Redhat 7     | [os-pkgs-redhat7-v0.37.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.37.0/os-pkgs-redhat7-v0.37.0.tar.gz) |
+    | Redhat 9     | [os-pkgs-redhat9-v0.37.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.37.0/os-pkgs-redhat9-v0.37.0.tar.gz) |
+    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.37.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.37.0/os-pkgs-ubuntu2004-v0.37.0.tar.gz) |
+    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.37.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.37.0/os-pkgs-ubuntu2204-v0.37.0.tar.gz) |
+    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.37.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.37.0/os-pkgs-openeuler22.03-v0.37.0.tar.gz) |
+    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.37.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.37.0/os-pkgs-oracle9-v0.37.0.tar.gz) |
+    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.37.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.37.0/os-pkgs-oracle8-v0.37.0.tar.gz) |
+    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.37.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.37.0/os-pkgs-rocky9-v0.37.0.tar.gz) |
+    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.37.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.37.0/os-pkgs-rocky8-v0.37.0.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.37.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.37.0/os-pkgs-kylin-v10sp2-v0.37.0.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.37.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.37.0/os-pkgs-kylin-v10sp3-v0.37.0.tar.gz) |
+
+=== "V0.43.0"
+
+    | Operating System | Download |
+    | :--------- | :------ |
+    | Redhat 8     | [os-pkgs-redhat8-v0.36.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.36.0/os-pkgs-redhat8-v0.36.0.tar.gz) |
+    | Redhat 7     | [os-pkgs-redhat7-v0.36.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.36.0/os-pkgs-redhat7-v0.36.0.tar.gz) |
+    | Redhat 9     | [os-pkgs-redhat9-v0.36.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.36.0/os-pkgs-redhat9-v0.36.0.tar.gz) |
+    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.36.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.36.0/os-pkgs-ubuntu2004-v0.36.0.tar.gz) |
+    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.36.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.36.0/os-pkgs-ubuntu2204-v0.36.0.tar.gz) |
+    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.36.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.36.0/os-pkgs-openeuler22.03-v0.36.0.tar.gz) |
+    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.36.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.36.0/os-pkgs-oracle9-v0.36.0.tar.gz) |
+    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.36.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.36.0/os-pkgs-oracle8-v0.36.0.tar.gz) |
+    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.36.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.36.0/os-pkgs-rocky9-v0.36.0.tar.gz) |
+    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.36.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.36.0/os-pkgs-rocky8-v0.36.0.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.36.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.36.0/os-pkgs-kylin-v10sp2-v0.36.0.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.36.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.36.0/os-pkgs-kylin-v10sp3-v0.36.0.tar.gz) |
+
+=== "V0.42.0"
+
+    | Operating System | Download |
+    | :--------- | :------ |
+    | Redhat 8     | [os-pkgs-redhat8-v0.35.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.35.1/os-pkgs-redhat8-v0.35.1.tar.gz) |
+    | Redhat 7     | [os-pkgs-redhat7-v0.35.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.35.1/os-pkgs-redhat7-v0.35.1.tar.gz) |
+    | Redhat 9     | [os-pkgs-redhat9-v0.35.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.35.1/os-pkgs-redhat9-v0.35.1.tar.gz) |
+    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.35.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.35.1/os-pkgs-ubuntu2004-v0.35.1.tar.gz) |
+    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.35.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.35.1/os-pkgs-ubuntu2204-v0.35.1.tar.gz) |
+    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.35.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.35.1/os-pkgs-openeuler22.03-v0.35.1.tar.gz) |
+    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.35.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.35.1/os-pkgs-oracle9-v0.35.1.tar.gz) |
+    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.35.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.35.1/os-pkgs-oracle8-v0.35.1.tar.gz) |
+    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.35.1.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.35.1/os-pkgs-rocky9-v0.35.1.tar.gz) |
+    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.35.1.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.35.1/os-pkgs-rocky8-v0.35.1.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.35.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.35.1/os-pkgs-kylin-v10sp2-v0.35.1.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.35.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.35.1/os-pkgs-kylin-v10sp3-v0.35.1.tar.gz) |
+
 === "V0.41.0"
 
     | Operating System | Download |
@@ -95,503 +163,505 @@ Download the osPackage offline package based on the corresponding version:
     | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.34.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.34.2/os-pkgs-kylin-v10sp2-v0.34.2.tar.gz) |
     | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.34.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.34.2/os-pkgs-kylin-v10sp3-v0.34.2.tar.gz) |
 
-=== "V0.40.0"
+??? note "Click to check osPackage history"
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | Redhat 8     | [os-pkgs-redhat8-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-redhat8-v0.33.2.tar.gz) |
-    | Redhat 7     | [os-pkgs-redhat7-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-redhat7-v0.33.2.tar.gz) |
-    | Redhat 9     | [os-pkgs-redhat9-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-redhat9-v0.33.2.tar.gz) |
-    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-ubuntu2004-v0.33.2.tar.gz) |
-    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-ubuntu2204-v0.33.2.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-openeuler22.03-v0.33.2.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-oracle9-v0.33.2.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-oracle8-v0.33.2.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.33.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-rocky9-v0.33.2.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.33.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-rocky8-v0.33.2.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-kylin-v10sp2-v0.33.2.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-kylin-v10sp3-v0.33.2.tar.gz) |
+    === "V0.40.0"
 
-=== "V0.38.0 / v0.39.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | Redhat 8     | [os-pkgs-redhat8-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-redhat8-v0.33.2.tar.gz) |
+        | Redhat 7     | [os-pkgs-redhat7-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-redhat7-v0.33.2.tar.gz) |
+        | Redhat 9     | [os-pkgs-redhat9-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-redhat9-v0.33.2.tar.gz) |
+        | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-ubuntu2004-v0.33.2.tar.gz) |
+        | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-ubuntu2204-v0.33.2.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-openeuler22.03-v0.33.2.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-oracle9-v0.33.2.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-oracle8-v0.33.2.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.33.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-rocky9-v0.33.2.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.33.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-rocky8-v0.33.2.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-kylin-v10sp2-v0.33.2.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.33.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.33.2/os-pkgs-kylin-v10sp3-v0.33.2.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | Redhat 8     | [os-pkgs-redhat8-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-redhat8-v0.32.4.tar.gz) |
-    | Redhat 7     | [os-pkgs-redhat7-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-redhat7-v0.32.4.tar.gz) |
-    | Redhat 9     | [os-pkgs-redhat9-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-redhat9-v0.32.4.tar.gz) |
-    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-ubuntu2004-v0.32.4.tar.gz) |
-    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-ubuntu2204-v0.32.4.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-openeuler22.03-v0.32.4.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-oracle9-v0.32.4.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-oracle8-v0.32.4.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.32.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-rocky9-v0.32.4.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.32.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-rocky8-v0.32.4.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-kylin-v10sp2-v0.32.4.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-kylin-v10sp3-v0.32.4.tar.gz) |
+    === "V0.38.0 / v0.39.0"
 
-=== "V0.37.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | Redhat 8     | [os-pkgs-redhat8-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-redhat8-v0.32.4.tar.gz) |
+        | Redhat 7     | [os-pkgs-redhat7-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-redhat7-v0.32.4.tar.gz) |
+        | Redhat 9     | [os-pkgs-redhat9-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-redhat9-v0.32.4.tar.gz) |
+        | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-ubuntu2004-v0.32.4.tar.gz) |
+        | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-ubuntu2204-v0.32.4.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-openeuler22.03-v0.32.4.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-oracle9-v0.32.4.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-oracle8-v0.32.4.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.32.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-rocky9-v0.32.4.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.32.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-rocky8-v0.32.4.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-kylin-v10sp2-v0.32.4.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.32.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.32.4/os-pkgs-kylin-v10sp3-v0.32.4.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | Redhat 8     | [os-pkgs-redhat8-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-redhat8-v0.31.0.tar.gz) |
-    | Redhat 7     | [os-pkgs-redhat7-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-redhat7-v0.31.0.tar.gz) |
-    | Redhat 9     | [os-pkgs-redhat9-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-redhat9-v0.31.0.tar.gz) |
-    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-ubuntu2004-v0.31.0.tar.gz) |
-    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-ubuntu2204-v0.31.0.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-openeuler22.03-v0.31.0.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-oracle9-v0.31.0.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-oracle8-v0.31.0.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.31.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-rocky9-v0.31.0.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.31.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-rocky8-v0.31.0.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-kylin-v10sp2-v0.31.0.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-kylin-v10sp3-v0.31.0.tar.gz) |
+    === "V0.37.0"
 
-=== "V0.36.0 / v0.36.1"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | Redhat 8     | [os-pkgs-redhat8-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-redhat8-v0.31.0.tar.gz) |
+        | Redhat 7     | [os-pkgs-redhat7-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-redhat7-v0.31.0.tar.gz) |
+        | Redhat 9     | [os-pkgs-redhat9-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-redhat9-v0.31.0.tar.gz) |
+        | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-ubuntu2004-v0.31.0.tar.gz) |
+        | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-ubuntu2204-v0.31.0.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-openeuler22.03-v0.31.0.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-oracle9-v0.31.0.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-oracle8-v0.31.0.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.31.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-rocky9-v0.31.0.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.31.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-rocky8-v0.31.0.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-kylin-v10sp2-v0.31.0.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.31.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.31.0/os-pkgs-kylin-v10sp3-v0.31.0.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | Redhat 8     | [os-pkgs-redhat8-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-redhat8-v0.30.2.tar.gz) |
-    | Redhat 7     | [os-pkgs-redhat7-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-redhat7-v0.30.2.tar.gz) |
-    | Redhat 9     | [os-pkgs-redhat9-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-redhat9-v0.30.2.tar.gz) |
-    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-ubuntu2004-v0.30.2.tar.gz) |
-    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-ubuntu2204-v0.30.2.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-openeuler22.03-v0.30.2.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-oracle9-v0.30.2.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-oracle8-v0.30.2.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.30.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-rocky9-v0.30.2.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.30.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-rocky8-v0.30.2.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-kylin-v10sp2-v0.30.2.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-kylin-v10sp3-v0.30.2.tar.gz) |
+    === "V0.36.0 / v0.36.1"
 
-=== "V0.35.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | Redhat 8     | [os-pkgs-redhat8-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-redhat8-v0.30.2.tar.gz) |
+        | Redhat 7     | [os-pkgs-redhat7-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-redhat7-v0.30.2.tar.gz) |
+        | Redhat 9     | [os-pkgs-redhat9-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-redhat9-v0.30.2.tar.gz) |
+        | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-ubuntu2004-v0.30.2.tar.gz) |
+        | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-ubuntu2204-v0.30.2.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-openeuler22.03-v0.30.2.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-oracle9-v0.30.2.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-oracle8-v0.30.2.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.30.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-rocky9-v0.30.2.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.30.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-rocky8-v0.30.2.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-kylin-v10sp2-v0.30.2.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.30.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.30.2/os-pkgs-kylin-v10sp3-v0.30.2.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | Redhat 8     | [os-pkgs-redhat8-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-redhat8-v0.29.1.tar.gz) |
-    | Redhat 7     | [os-pkgs-redhat7-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-redhat7-v0.29.1.tar.gz) |
-    | Redhat 9     | [os-pkgs-redhat9-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-redhat9-v0.29.1.tar.gz) |
-    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-ubuntu2004-v0.29.1.tar.gz) |
-    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-ubuntu2204-v0.29.1.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-openeuler22.03-v0.29.1.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-oracle9-v0.29.1.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/vv0.29.1/os-pkgs-oracle8-v0.29.1.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.29.1.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-rocky9-v0.29.1.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.29.1.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-rocky8-v0.29.1.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-kylin-v10sp2-v0.29.1.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-kylin-v10sp3-v0.29.1.tar.gz) |
+    === "V0.35.0"
 
-=== "V0.34.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | Redhat 8     | [os-pkgs-redhat8-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-redhat8-v0.29.1.tar.gz) |
+        | Redhat 7     | [os-pkgs-redhat7-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-redhat7-v0.29.1.tar.gz) |
+        | Redhat 9     | [os-pkgs-redhat9-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-redhat9-v0.29.1.tar.gz) |
+        | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-ubuntu2004-v0.29.1.tar.gz) |
+        | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-ubuntu2204-v0.29.1.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-openeuler22.03-v0.29.1.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-oracle9-v0.29.1.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/vv0.29.1/os-pkgs-oracle8-v0.29.1.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.29.1.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-rocky9-v0.29.1.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.29.1.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-rocky8-v0.29.1.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-kylin-v10sp2-v0.29.1.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.29.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.29.1/os-pkgs-kylin-v10sp3-v0.29.1.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | Redhat 8     | [os-pkgs-redhat8-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-redhat8-v0.28.5.tar.gz) |
-    | Redhat 7     | [os-pkgs-redhat7-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-redhat7-v0.28.5.tar.gz) |
-    | Redhat 9     | [os-pkgs-redhat9-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-redhat9-v0.28.5.tar.gz) |
-    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-ubuntu2004-v0.28.5.tar.gz) |
-    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-ubuntu2204-v0.28.5.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-openeuler22.03-v0.28.5.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-oracle9-v0.28.5.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-oracle8-v0.28.5.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.28.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-rocky9-v0.28.5.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.28.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-rocky8-v0.28.5.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-kylin-v10sp2-v0.28.5.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-kylin-v10sp3-v0.28.5.tar.gz) |
+    === "V0.34.0"
 
-=== "v0.33.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | Redhat 8     | [os-pkgs-redhat8-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-redhat8-v0.28.5.tar.gz) |
+        | Redhat 7     | [os-pkgs-redhat7-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-redhat7-v0.28.5.tar.gz) |
+        | Redhat 9     | [os-pkgs-redhat9-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-redhat9-v0.28.5.tar.gz) |
+        | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-ubuntu2004-v0.28.5.tar.gz) |
+        | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-ubuntu2204-v0.28.5.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-openeuler22.03-v0.28.5.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-oracle9-v0.28.5.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-oracle8-v0.28.5.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.28.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-rocky9-v0.28.5.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.28.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-rocky8-v0.28.5.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-kylin-v10sp2-v0.28.5.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.28.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.28.5/os-pkgs-kylin-v10sp3-v0.28.5.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | Redhat 8     | [os-pkgs-redhat8-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-redhat8-v0.27.3.tar.gz) |
-    | Redhat 7     | [os-pkgs-redhat7-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-redhat7-v0.27.3.tar.gz) |
-    | Redhat 9     | [os-pkgs-redhat9-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-redhat9-v0.27.3.tar.gz) |
-    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-ubuntu2004-v0.27.3.tar.gz) |
-    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-ubuntu2204-v0.27.3.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-openeuler22.03-v0.27.3.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-oracle9-v0.27.3.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-oracle8-v0.27.3.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.27.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-rocky9-v0.27.3.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.27.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-rocky8-v0.27.3.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-kylin-v10sp2-v0.27.3.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-kylin-v10sp3-v0.27.3.tar.gz) |
+    === "v0.33.0"
 
-=== "V0.32.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | Redhat 8     | [os-pkgs-redhat8-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-redhat8-v0.27.3.tar.gz) |
+        | Redhat 7     | [os-pkgs-redhat7-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-redhat7-v0.27.3.tar.gz) |
+        | Redhat 9     | [os-pkgs-redhat9-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-redhat9-v0.27.3.tar.gz) |
+        | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-ubuntu2004-v0.27.3.tar.gz) |
+        | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-ubuntu2204-v0.27.3.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-openeuler22.03-v0.27.3.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-oracle9-v0.27.3.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-oracle8-v0.27.3.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.27.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-rocky9-v0.27.3.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.27.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-rocky8-v0.27.3.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-kylin-v10sp2-v0.27.3.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.27.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.27.3/os-pkgs-kylin-v10sp3-v0.27.3.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | Redhat 8     | [os-pkgs-redhat8-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-redhat8-v0.26.4.tar.gz) |
-    | Redhat 7     | [os-pkgs-redhat7-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-redhat7-v0.26.4.tar.gz) |
-    | Redhat 9     | [os-pkgs-redhat9-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-redhat9-v0.26.4.tar.gz) |
-    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-ubuntu2004-v0.26.4.tar.gz) |
-    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-ubuntu2204-v0.26.4.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-openeuler22.03-v0.26.4.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-oracle9-v0.26.4.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-oracle8-v0.26.4.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.26.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-rocky9-v0.26.4.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.26.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-rocky8-v0.26.4.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-kylin-v10sp2-v0.26.4.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-kylin-v10sp3-v0.26.4.tar.gz) |
+    === "V0.32.0"
 
-=== "V0.31.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | Redhat 8     | [os-pkgs-redhat8-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-redhat8-v0.26.4.tar.gz) |
+        | Redhat 7     | [os-pkgs-redhat7-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-redhat7-v0.26.4.tar.gz) |
+        | Redhat 9     | [os-pkgs-redhat9-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-redhat9-v0.26.4.tar.gz) |
+        | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-ubuntu2004-v0.26.4.tar.gz) |
+        | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-ubuntu2204-v0.26.4.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-openeuler22.03-v0.26.4.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-oracle9-v0.26.4.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-oracle8-v0.26.4.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.26.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-rocky9-v0.26.4.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.26.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-rocky8-v0.26.4.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-kylin-v10sp2-v0.26.4.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.26.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.4/os-pkgs-kylin-v10sp3-v0.26.4.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | Redhat 8     | [os-pkgs-redhat8-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-redhat8-v0.26.3.tar.gz) |
-    | Redhat 7     | [os-pkgs-redhat7-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-redhat7-v0.26.3.tar.gz) |
-    | Redhat 9     | [os-pkgs-redhat9-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-redhat9-v0.26.3.tar.gz) |
-    | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-ubuntu2004-v0.26.3.tar.gz) |
-    | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-ubuntu2204-v0.26.3.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-openeuler22.03-v0.26.3.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-oracle9-v0.26.3.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-oracle8-v0.26.3.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.26.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-rocky9-v0.26.3.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.26.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-rocky8-v0.26.3.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-kylin-v10sp2-v0.26.3.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-kylin-v10sp3-v0.26.3.tar.gz) |
+    === "V0.31.0"
 
-=== "V0.30.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | Redhat 8     | [os-pkgs-redhat8-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-redhat8-v0.26.3.tar.gz) |
+        | Redhat 7     | [os-pkgs-redhat7-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-redhat7-v0.26.3.tar.gz) |
+        | Redhat 9     | [os-pkgs-redhat9-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-redhat9-v0.26.3.tar.gz) |
+        | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-ubuntu2004-v0.26.3.tar.gz) |
+        | Ubuntu 22.04  | [os-pkgs-ubuntu2204-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-ubuntu2204-v0.26.3.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-openeuler22.03-v0.26.3.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-oracle9-v0.26.3.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-oracle8-v0.26.3.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.26.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-rocky9-v0.26.3.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.26.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-rocky8-v0.26.3.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-kylin-v10sp2-v0.26.3.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.26.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.26.3/os-pkgs-kylin-v10sp3-v0.26.3.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | Redhat 8 | [os-pkgs-redhat8-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-redhat8-v0.25.2.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-redhat7-v0.25.2.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-redhat9-v0.25.2.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-ubuntu2004-v0.25.2.tar.gz) |
-    | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-ubuntu2204-v0.25.2.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-openeuler22.03-v0.25.2.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-oracle9-v0.25.2.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-oracle8-v0.25.2.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.25.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-rocky9-v0.25.2.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.25.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-rocky8-v0.25.2.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-kylin-v10sp2-v0.25.2.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-kylin-v10sp3-v0.25.2.tar.gz) |
+    === "V0.30.0"
 
-=== "V0.29.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | Redhat 8 | [os-pkgs-redhat8-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-redhat8-v0.25.2.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-redhat7-v0.25.2.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-redhat9-v0.25.2.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-ubuntu2004-v0.25.2.tar.gz) |
+        | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-ubuntu2204-v0.25.2.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-openeuler22.03-v0.25.2.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-oracle9-v0.25.2.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-oracle8-v0.25.2.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.25.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-rocky9-v0.25.2.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.25.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-rocky8-v0.25.2.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-kylin-v10sp2-v0.25.2.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.25.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.25.2/os-pkgs-kylin-v10sp3-v0.25.2.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | Redhat 8 | [os-pkgs-redhat8-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-redhat8-v0.24.2.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-redhat7-v0.24.2.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-redhat9-v0.24.2.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-ubuntu2004-v0.24.2.tar.gz) |
-    | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-ubuntu2204-v0.24.2.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-openeuler22.03-v0.24.2.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-oracle9-v0.24.2.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-oracle8-v0.24.2.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.24.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-rocky9-v0.24.2.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.24.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-rocky8-v0.24.2.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-kylin-v10sp2-v0.24.2.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-kylin-v10sp3-v0.24.2.tar.gz) |
+    === "V0.29.0"
 
-=== "V0.28.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | Redhat 8 | [os-pkgs-redhat8-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-redhat8-v0.24.2.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-redhat7-v0.24.2.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-redhat9-v0.24.2.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-ubuntu2004-v0.24.2.tar.gz) |
+        | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-ubuntu2204-v0.24.2.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-openeuler22.03-v0.24.2.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-oracle9-v0.24.2.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-oracle8-v0.24.2.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.24.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-rocky9-v0.24.2.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.24.2.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-rocky8-v0.24.2.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-kylin-v10sp2-v0.24.2.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.24.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.24.2/os-pkgs-kylin-v10sp3-v0.24.2.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | CentOS 7 | [os-pkgs-centos7-v0.23.6.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-centos7-v0.23.6.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-redhat8-v0.23.6.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-redhat7-v0.23.6.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-redhat9-v0.23.6.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-ubuntu2004-v0.23.6.tar.gz) |
-    | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-ubuntu2204-v0.23.6.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-openeuler22.03-v0.23.6.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-oracle9-v0.23.6.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-oracle8-v0.23.6.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.23.6.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-rocky9-v0.23.6.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.22.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-rocky8-v0.23.6.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-kylin-v10sp2-v0.23.6.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-kylin-v10sp3-v0.23.6.tar.gz) |
+    === "V0.28.0"
 
-=== "v0.27.0 / V0.27.1"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | CentOS 7 | [os-pkgs-centos7-v0.23.6.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-centos7-v0.23.6.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-redhat8-v0.23.6.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-redhat7-v0.23.6.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-redhat9-v0.23.6.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-ubuntu2004-v0.23.6.tar.gz) |
+        | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-ubuntu2204-v0.23.6.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-openeuler22.03-v0.23.6.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-oracle9-v0.23.6.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-oracle8-v0.23.6.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.23.6.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-rocky9-v0.23.6.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.22.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-rocky8-v0.23.6.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-kylin-v10sp2-v0.23.6.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-kylin-v10sp3-v0.23.6.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | CentOS 7 | [os-pkgs-centos7-v0.22.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-centos7-v0.22.5.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-redhat8-v0.22.5.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-redhat7-v0.22.5.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-redhat9-v0.22.5.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-ubuntu2004-v0.22.5.tar.gz) |
-    | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-ubuntu2204-v0.22.5.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-openeuler22.03-v0.22.5.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-oracle9-v0.22.5.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-oracle8-v0.22.5.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.22.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-rocky9-v0.22.5.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.22.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-rocky8-v0.22.5.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-kylin-v10sp2-v0.22.5.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-kylin-v10sp3-v0.22.5.tar.gz) |
+    === "v0.27.0 / V0.27.1"
 
-=== "V0.26.0 / V0.26.1"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | CentOS 7 | [os-pkgs-centos7-v0.22.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-centos7-v0.22.5.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-redhat8-v0.22.5.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-redhat7-v0.22.5.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-redhat9-v0.22.5.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-ubuntu2004-v0.22.5.tar.gz) |
+        | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-ubuntu2204-v0.22.5.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-openeuler22.03-v0.22.5.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-oracle9-v0.22.5.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-oracle8-v0.22.5.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.22.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-rocky9-v0.22.5.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.22.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-rocky8-v0.22.5.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-kylin-v10sp2-v0.22.5.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-kylin-v10sp3-v0.22.5.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | CentOS 7 | [os-pkgs-centos7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-centos7-v0.22.4.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat8-v0.22.4.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat7-v0.22.4.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat9-v0.22.4.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-ubuntu2004-v0.22.4.tar.gz) |
-    | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-ubuntu2204-v0.22.4.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-openeuler22.03-v0.22.4.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-oracle9-v0.22.4.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-oracle8-v0.22.4.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.22.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-rocky9-v0.22.4.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.22.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-rocky8-v0.22.4.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-kylin-v10sp2-v0.22.4tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-kylin-v10sp3-v0.22.4.tar.gz) |
+    === "V0.26.0 / V0.26.1"
 
-=== "V0.25.0 / V0.25.1"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | CentOS 7 | [os-pkgs-centos7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-centos7-v0.22.4.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat8-v0.22.4.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat7-v0.22.4.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat9-v0.22.4.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-ubuntu2004-v0.22.4.tar.gz) |
+        | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-ubuntu2204-v0.22.4.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-openeuler22.03-v0.22.4.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-oracle9-v0.22.4.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-oracle8-v0.22.4.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.22.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-rocky9-v0.22.4.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.22.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-rocky8-v0.22.4.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-kylin-v10sp2-v0.22.4tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-kylin-v10sp3-v0.22.4.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | CentOS 7 | [os-pkgs-centos7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-centos7-v0.22.4.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat8-v0.22.4.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat7-v0.22.4.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat9-v0.22.4.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-ubuntu2004-v0.22.4.tar.gz) |
-    | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-ubuntu2204-v0.22.4.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-openeuler22.03-v0.22.4.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-oracle9-v0.22.4.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-oracle8-v0.22.4.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.22.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-rocky9-v0.22.4.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.22.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-rocky8-v0.22.4.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-kylin-v10sp2-v0.22.4.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-kylin-v10sp3-v0.22.4.tar.gz) |
+    === "V0.25.0 / V0.25.1"
 
-=== "V0.24.0 / V0.24.1"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | CentOS 7 | [os-pkgs-centos7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-centos7-v0.22.4.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat8-v0.22.4.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat7-v0.22.4.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat9-v0.22.4.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-ubuntu2004-v0.22.4.tar.gz) |
+        | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-ubuntu2204-v0.22.4.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-openeuler22.03-v0.22.4.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-oracle9-v0.22.4.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-oracle8-v0.22.4.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.22.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-rocky9-v0.22.4.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.22.4.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-rocky8-v0.22.4.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-kylin-v10sp2-v0.22.4.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-kylin-v10sp3-v0.22.4.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | CentOS 7 | [os-pkgs-centos7-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-centos7-v0.21.1.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-redhat8-v0.21.1.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-redhat7-v0.21.1.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-redhat9-v0.21.1.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-ubuntu2004-v0.21.1.tar.gz) |
-    | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-ubuntu2204-v0.21.1.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-openeuler22.03-v0.21.1.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-oracle9-v0.21.1.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-oracle8-v0.21.1.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.21.1.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-rocky9-v0.21.1.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.21.1.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-rocky8-v0.21.1.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-kylin-v10sp2-v0.21.1.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-kylin-v10sp3-v0.21.1.tar.gz) |
+    === "V0.24.0 / V0.24.1"
 
-=== "V0.23.0 / V0.23.1"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | CentOS 7 | [os-pkgs-centos7-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-centos7-v0.21.1.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-redhat8-v0.21.1.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-redhat7-v0.21.1.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-redhat9-v0.21.1.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-ubuntu2004-v0.21.1.tar.gz) |
+        | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-ubuntu2204-v0.21.1.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-openeuler22.03-v0.21.1.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-oracle9-v0.21.1.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-oracle8-v0.21.1.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.21.1.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-rocky9-v0.21.1.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.21.1.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-rocky8-v0.21.1.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-kylin-v10sp2-v0.21.1.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-kylin-v10sp3-v0.21.1.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | CentOS 7 | [os-pkgs-centos7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-centos7-v0.19.0.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat8-v0.19.0.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat7-v0.19.0.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat9-v0.19.0.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-ubuntu2004-v0.19.0.tar.gz) |
-    | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-ubuntu2204-v0.19.0.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-openeuler22.03-v0.19.0.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-oracle9-v0.19.0.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-oracle8-v0.19.0.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.19.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-rocky9-v0.19.0.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.19.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-rocky8-v0.19.0.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-kylin-v10sp2-v0.19.0.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-kylin-v10sp3-v0.19.0.tar.gz) |
+    === "V0.23.0 / V0.23.1"
 
-=== "V0.22.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | CentOS 7 | [os-pkgs-centos7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-centos7-v0.19.0.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat8-v0.19.0.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat7-v0.19.0.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat9-v0.19.0.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-ubuntu2004-v0.19.0.tar.gz) |
+        | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-ubuntu2204-v0.19.0.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-openeuler22.03-v0.19.0.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-oracle9-v0.19.0.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-oracle8-v0.19.0.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.19.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-rocky9-v0.19.0.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.19.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-rocky8-v0.19.0.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-kylin-v10sp2-v0.19.0.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-kylin-v10sp3-v0.19.0.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | CentOS 7 | [os-pkgs-centos7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-centos7-v0.19.0.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat8-v0.19.0.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat7-v0.19.0.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat9-v0.19.0.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-ubuntu2004-v0.19.0.tar.gz) |
-    | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-ubuntu2204-v0.19.0.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-openeuler22.03-v0.19.0.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-oracle9-v0.19.0.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-oracle8-v0.19.0.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.19.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-rocky9-v0.19.0.tar.gz) |
-    | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.19.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-rocky8-v0.19.0.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-kylin-v10sp2-v0.19.0.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-kylin-v10sp3-v0.19.0.tar.gz) |
+    === "V0.22.0"
 
-=== "V0.21.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | CentOS 7 | [os-pkgs-centos7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-centos7-v0.19.0.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat8-v0.19.0.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat7-v0.19.0.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat9-v0.19.0.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-ubuntu2004-v0.19.0.tar.gz) |
+        | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-ubuntu2204-v0.19.0.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-openeuler22.03-v0.19.0.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-oracle9-v0.19.0.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-oracle8-v0.19.0.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.19.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-rocky9-v0.19.0.tar.gz) |
+        | Rocky Linux 8.10 | [os-pkgs-rocky8-v0.19.0.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-rocky8-v0.19.0.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-kylin-v10sp2-v0.19.0.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-kylin-v10sp3-v0.19.0.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | CentOS 7 | [os-pkgs-centos7-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-centos7-v0.18.5.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-redhat8-v0.18.5.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-redhat7-v0.18.5.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-redhat9-v0.18.5.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-ubuntu2004-v0.18.5.tar.gz) |
-    | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-ubuntu2204-v0.18.5.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-openeuler22.03-v0.18.5.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-oracle9-v0.18.5.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-oracle8-v0.18.5.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.18.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-rocky9-v0.18.5.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-kylin-v10sp2-v0.18.5.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-kylin-v10sp3-v0.18.5.tar.gz) |
+    === "V0.21.0"
 
-=== "V0.20.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | CentOS 7 | [os-pkgs-centos7-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-centos7-v0.18.5.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-redhat8-v0.18.5.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-redhat7-v0.18.5.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-redhat9-v0.18.5.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-ubuntu2004-v0.18.5.tar.gz) |
+        | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-ubuntu2204-v0.18.5.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-openeuler22.03-v0.18.5.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-oracle9-v0.18.5.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-oracle8-v0.18.5.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.18.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-rocky9-v0.18.5.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-kylin-v10sp2-v0.18.5.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.18.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-kylin-v10sp3-v0.18.5.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | CentOS 7 | [os-pkgs-centos7-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-centos7-v0.17.5.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-redhat8-v0.17.5.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-redhat7-v0.17.5.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-redhat9-v0.17.5.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-ubuntu2004-v0.17.5.tar.gz) |
-    | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-ubuntu2204-v0.17.5.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-openeuler22.03-v0.17.5.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-oracle9-v0.17.5.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-oracle8-v0.17.5.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.17.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-rocky9-v0.17.5.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-kylin-v10sp2-v0.17.5.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-kylin-v10sp3-v0.17.5.tar.gz) |
+    === "V0.20.0"
 
-=== "V0.19.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | CentOS 7 | [os-pkgs-centos7-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-centos7-v0.17.5.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-redhat8-v0.17.5.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-redhat7-v0.17.5.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-redhat9-v0.17.5.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-ubuntu2004-v0.17.5.tar.gz) |
+        | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-ubuntu2204-v0.17.5.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-openeuler22.03-v0.17.5.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-oracle9-v0.17.5.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-oracle8-v0.17.5.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.17.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-rocky9-v0.17.5.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-kylin-v10sp2-v0.17.5.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Halberd) SP3 | [os-pkgs-kylinv10sp3-v0.17.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.17.5/os-pkgs-kylin-v10sp3-v0.17.5.tar.gz) |
 
-    | Operating System | Download |
-    | :--------- | :------ |
-    | CentOS 7 | [os-pkgs-centos7-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-centos7-v0.16.3.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-redhat8-v0.16.3.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-redhat7-v0.16.3.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-redhat9-v0.16.3.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-kylinv10-v0.16.3.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-ubuntu2004-v0.16.3.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-openeuler22.03-v0.16.3.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-oracle9-v0.16.3.tar.gz) |
-    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-oracle8-v0.16.3.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.16.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-rocky9-v0.16.3.tar.gz) |
+    === "V0.19.0"
 
-=== "V0.18.0"
+        | Operating System | Download |
+        | :--------- | :------ |
+        | CentOS 7 | [os-pkgs-centos7-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-centos7-v0.16.3.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-redhat8-v0.16.3.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-redhat7-v0.16.3.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-redhat9-v0.16.3.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-kylinv10-v0.16.3.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-ubuntu2004-v0.16.3.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-openeuler22.03-v0.16.3.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-oracle9-v0.16.3.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-oracle8-v0.16.3.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.16.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-rocky9-v0.16.3.tar.gz) |
 
-    | Operating System | Download |
-    | :--------------- | :--------- |
-    | CentOS 7 | [os-pkgs-centos7-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-centos7-v0.15.3.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-redhat8-v0.15.3.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-redhat7-v0.15.3.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-redhat9-v0.15.3.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-kylinv10-v0.15.3.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-ubuntu2004-v0.15.3.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-openeuler22.03-v0.15.3.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-oracle9-v0.15.3.tar.gz) |
-     | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-oracle8-v0.15.3.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.15.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-rocky9-v0.15.3.tar.gz) |
+    === "V0.18.0"
 
-=== "V0.17.0"
+        | Operating System | Download |
+        | :--------------- | :--------- |
+        | CentOS 7 | [os-pkgs-centos7-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-centos7-v0.15.3.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-redhat8-v0.15.3.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-redhat7-v0.15.3.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-redhat9-v0.15.3.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-kylinv10-v0.15.3.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-ubuntu2004-v0.15.3.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-openeuler22.03-v0.15.3.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-oracle9-v0.15.3.tar.gz) |
+        | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-oracle8-v0.15.3.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.15.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-rocky9-v0.15.3.tar.gz) |
 
-    | Operating System | Download |
-    | :--------------- | :--------- |
-    | CentOS 7 | [os-pkgs-centos7-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-centos7-v0.13.11.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-redhat8-v0.13.11.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-redhat7-v0.13.11.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-redhat9-v0.13.11.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-kylinv10-v0.13.11.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-ubuntu2004-v0.13.11.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-openeuler22.03-v0.13.11.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-oracle9-v0.13.11.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.13.11.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-rocky9-v0.13.11.tar.gz) |
+    === "V0.17.0"
 
-=== "V0.16.1"
+        | Operating System | Download |
+        | :--------------- | :--------- |
+        | CentOS 7 | [os-pkgs-centos7-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-centos7-v0.13.11.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-redhat8-v0.13.11.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-redhat7-v0.13.11.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-redhat9-v0.13.11.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-kylinv10-v0.13.11.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-ubuntu2004-v0.13.11.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-openeuler22.03-v0.13.11.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-oracle9-v0.13.11.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.13.11.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-rocky9-v0.13.11.tar.gz) |
 
-    | Operating System | Download |
-    | :--------------- | :--------- |
-    | CentOS 7 | [os-pkgs-centos7-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-centos7-v0.13.9.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-redhat8-v0.13.9.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-redhat7-v0.13.9.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-redhat9-v0.13.9.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-kylinv10-v0.13.9.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-ubuntu2004-v0.13.9.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-openeuler22.03-v0.13.9.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-oracle9-v0.13.9.tar.gz) |
-    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.13.9.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-rocky9-v0.13.9.tar.gz) |
+    === "V0.16.1"
 
-=== "V0.15.0"
+        | Operating System | Download |
+        | :--------------- | :--------- |
+        | CentOS 7 | [os-pkgs-centos7-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-centos7-v0.13.9.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-redhat8-v0.13.9.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-redhat7-v0.13.9.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-redhat9-v0.13.9.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-kylinv10-v0.13.9.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-ubuntu2004-v0.13.9.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-openeuler22.03-v0.13.9.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-oracle9-v0.13.9.tar.gz) |
+        | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.13.9.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-rocky9-v0.13.9.tar.gz) |
 
-    | Operating System | Download |
-    | :--------------- | :--------- |
-    | CentOS 7 | [os-pkgs-centos7-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-centos7-v0.12.2.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-redhat8-v0.12.2.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-redhat7-v0.12.2.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-redhat9-v0.12.2.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-kylinv10-v0.12.2.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-ubuntu2004-v0.12.2.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-openeuler22.03-v0.12.2.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-oracle9-v0.12.2.tar.gz) |
+    === "V0.15.0"
 
-=== "V0.14.0"
+        | Operating System | Download |
+        | :--------------- | :--------- |
+        | CentOS 7 | [os-pkgs-centos7-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-centos7-v0.12.2.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-redhat8-v0.12.2.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-redhat7-v0.12.2.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-redhat9-v0.12.2.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-kylinv10-v0.12.2.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-ubuntu2004-v0.12.2.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-openeuler22.03-v0.12.2.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.12.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.2/os-pkgs-oracle9-v0.12.2.tar.gz) |
 
-    | Operating System | Download |
-    | :--------------- | :--------- |
-    | CentOS 7 | [os-pkgs-centos7-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-centos7-v0.11.2.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-redhat8-v0.11.2.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-redhat7-v0.11.2.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-redhat9-v0.11.2.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-kylinv10-v0.11.2.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-ubuntu2004-v0.11.2.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-openeuler22.03-v0.11.2.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-oracle9-v0.11.2.tar.gz) |
+    === "V0.14.0"
 
-=== "V0.13.0"
+        | Operating System | Download |
+        | :--------------- | :--------- |
+        | CentOS 7 | [os-pkgs-centos7-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-centos7-v0.11.2.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-redhat8-v0.11.2.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-redhat7-v0.11.2.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-redhat9-v0.11.2.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-kylinv10-v0.11.2.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-ubuntu2004-v0.11.2.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-openeuler22.03-v0.11.2.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-oracle9-v0.11.2.tar.gz) |
 
-    | Operating System | Download |
-    | :--------------- | :--------- |
-    | CentOS 7 | [os-pkgs-centos7-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-centos7-v0.10.0.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-redhat8-v0.10.0.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-redhat7-v0.10.0.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-redhat9-v0.10.0.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-kylinv10-v0.10.0.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-ubuntu2004-v0.10.0.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-openeuler22.03-v0.10.0.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-oracle9-v0.10.0.tar.gz) |
+    === "V0.13.0"
 
-=== "V0.12.0"
+        | Operating System | Download |
+        | :--------------- | :--------- |
+        | CentOS 7 | [os-pkgs-centos7-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-centos7-v0.10.0.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-redhat8-v0.10.0.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-redhat7-v0.10.0.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-redhat9-v0.10.0.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-kylinv10-v0.10.0.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-ubuntu2004-v0.10.0.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-openeuler22.03-v0.10.0.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-oracle9-v0.10.0.tar.gz) |
 
-    | Operating System | Download |
-    | :-------------- | :--------- |
-    | CentOS 7 | [os-pkgs-centos7-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-centos7-v0.9.3.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat8-v0.9.3.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat7-v0.9.3.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat9-v0.9.3.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-kylinv10-v0.9.3.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-ubuntu2004-v0.9.3.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-openeuler22.03-v0.9.3.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-oracle9-v0.9.3.tar.gz) |
+    === "V0.12.0"
 
-=== "V0.11.0"
+        | Operating System | Download |
+        | :-------------- | :--------- |
+        | CentOS 7 | [os-pkgs-centos7-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-centos7-v0.9.3.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat8-v0.9.3.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat7-v0.9.3.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat9-v0.9.3.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-kylinv10-v0.9.3.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-ubuntu2004-v0.9.3.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-openeuler22.03-v0.9.3.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-oracle9-v0.9.3.tar.gz) |
 
-    | Operating System | Download |
-    | :--------------- | :-------- |
-    | CentOS 7 | [os-pkgs-centos7-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-centos7-v0.8.6.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-redhat8-v0.8.6.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-redhat7-v0.8.6.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-redhat9-v0.8.6.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-kylinv10-v0.8.6.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-ubuntu2004-v0.8.6.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-openeuler22.03-v0.8.6.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-oracle9-v0.8.6.tar.gz) |
+    === "V0.11.0"
 
-=== "V0.10.0"
+        | Operating System | Download |
+        | :--------------- | :-------- |
+        | CentOS 7 | [os-pkgs-centos7-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-centos7-v0.8.6.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-redhat8-v0.8.6.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-redhat7-v0.8.6.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-redhat9-v0.8.6.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-kylinv10-v0.8.6.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-ubuntu2004-v0.8.6.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-openeuler22.03-v0.8.6.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-oracle9-v0.8.6.tar.gz) |
 
-    | Operating System | Download |
-    | :--------------- | :-------- |
-    | CentOS 7 | [os-pkgs-centos7-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-centos7-v0.7.4.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-redhat8-v0.7.4.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-redhat7-v0.7.4.tar.gz) |
-    | Redhat 9 | [os-pkgs-redhat9-v0.8.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.3/os-pkgs-redhat9-v0.8.3.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-kylinv10-v0.7.4.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-ubuntu2004-v0.7.4.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-openeuler22.03-v0.7.4.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-oracle9-v0.7.4.tar.gz) |
+    === "V0.10.0"
 
-=== "V0.9.0"
+        | Operating System | Download |
+        | :--------------- | :-------- |
+        | CentOS 7 | [os-pkgs-centos7-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-centos7-v0.7.4.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-redhat8-v0.7.4.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-redhat7-v0.7.4.tar.gz) |
+        | Redhat 9 | [os-pkgs-redhat9-v0.8.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.3/os-pkgs-redhat9-v0.8.3.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-kylinv10-v0.7.4.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-ubuntu2004-v0.7.4.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-openeuler22.03-v0.7.4.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-oracle9-v0.7.4.tar.gz) |
 
-    | Operating System | Download |
-    | :--------------- | :-------- |
-    | CentOS 7 | [os-pkgs-centos7-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-centos7-v0.6.6.tar.gz) |
-    | Redhat 8 | [os-pkgs-redhat8-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-redhat8-v0.6.6.tar.gz) |
-    | Redhat 7 | [os-pkgs-redhat7-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-redhat7-v0.6.6.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-kylinv10-v0.6.6.tar.gz) |
-    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-ubuntu2004-v0.6.6.tar.gz) |
-    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-openeuler22.03-v0.6.6.tar.gz) |
-    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-oracle9-v0.6.6.tar.gz) |
+    === "V0.9.0"
 
-For deploying DCE 5.0 on UOS V20 (1020a) operating system, refer to
-[Deploying DCE 5.0 on UOS V20 (1020a)](../os-install/uos-v20-install-dce5.0.md).
+        | Operating System | Download |
+        | :--------------- | :-------- |
+        | CentOS 7 | [os-pkgs-centos7-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-centos7-v0.6.6.tar.gz) |
+        | Redhat 8 | [os-pkgs-redhat8-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-redhat8-v0.6.6.tar.gz) |
+        | Redhat 7 | [os-pkgs-redhat7-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-redhat7-v0.6.6.tar.gz) |
+        | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-kylinv10-v0.6.6.tar.gz) |
+        | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-ubuntu2004-v0.6.6.tar.gz) |
+        | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-openeuler22.03-v0.6.6.tar.gz) |
+        | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-oracle9-v0.6.6.tar.gz) |
+
+For deploying DCE on UOS V20 (1020a) operating system, refer to
+[Deploying DCE on UOS V20 (1020a)](../os-install/uos-v20-install-dce5.0.md).
 
 ### Addon Offline Packages (Optional)
 
@@ -607,7 +677,7 @@ in [clusterConfig.yaml](./cluster-config.md).
 
 ### One-Click Download Required Offline Packages
 
-We provide a script for [one-click downloading and installing the offline packages required for DCE 5.0](../air-tag-download.md).
+We provide a script for [one-click downloading and installing the offline packages required for DCE](../air-tag-download.md).
 
 The following packages are included:
 
@@ -633,7 +703,7 @@ For detailed parameter introduction, refer to [clusterConfig.yaml](cluster-confi
 
 ## Install
 
-1. Run the following command to start installing DCE 5.0. The installer binary file is
+1. Run the following command to start installing DCE. The installer binary file is
    located at `offline/dce5-installer`.
 
     ```shell
@@ -652,7 +722,7 @@ For detailed parameter introduction, refer to [clusterConfig.yaml](cluster-confi
         - For more options, use `--help` to query.
 
 1. After the installation is complete, the command line will prompt a successful installation.
-   Congratulations! Now you can explore the brand new DCE 5.0 using the URL provided with the
+   Congratulations! Now you can explore the brand new DCE using the URL provided with the
    default account and password (admin/changeme) as shown in the screen prompt.
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
@@ -661,5 +731,5 @@ For detailed parameter introduction, refer to [clusterConfig.yaml](cluster-confi
 
         Please record the provided URL for future access.
 
-1. After successfully installing DCE 5.0 Enterprise, contact us for
+1. After successfully installing DCE Enterprise, contact us for
    authorization: email info@daocloud.io or call 400 002 6898.

@@ -1,6 +1,6 @@
 # Accessing a Service through Gateway
 
-This article demonstrates how to integrate a microservice with DCE 5.0 Cloud Native Gateway and access the service through the gateway.
+This article demonstrates how to integrate a microservice with DCE Cloud Native Gateway and access the service through the gateway.
 
 ## Prerequisite
 
@@ -9,11 +9,13 @@ This article demonstrates how to integrate a microservice with DCE 5.0 Cloud Nat
 
 ## Integrate Service with Gateway
 
-DCE 5.0 Cloud Native Gateway supports two methods for importing services: manual integration and automatic discovery. Choose one according to your situation.
+DCE Cloud Native Gateway supports two methods for importing services: manual integration and automatic discovery. Choose one according to your situation.
 
 ### Automatic Discovery of Services
 
-1. Refer to the documentation [Creating a Gateway](../gateway/index.md) to create a gateway. **Add the namespace where the service is located as the jurisdictional namespace of the gateway**.
+1. Refer to the documentation [Creating a Gateway](../gateway/index.md) to create a gateway.
+   **Add the namespace where the service is located as the jurisdictional namespace of the gateway** .
+   In this demo, the service used is located in the `webstore-demo` namespace. Therefore, the following configuration should be made when creating the gateway:
 
 2. After the namespace where the service is located is added as a "jurisdictional namespace", all services under that namespace will be automatically integrated with the gateway without the need for manual intervention.
 
@@ -28,9 +30,11 @@ DCE 5.0 Cloud Native Gateway supports two methods for importing services: manual
 2. Refer to the document [Manual Integration](../gateway/service/manual-integrate.md) to integrate the service with the gateway.
 
 3. Refer to [Adding Domain Names](../gateway/domain/index.md) to create a domain name under the gateway, such as `adservice.virtualhost`.
-4. Refer to [Adding APIs](../gateway/api/index.md) to create an API under the gateway. **Add the service as the backend service of the API**.
+4. Refer to [Adding APIs](../gateway/api/index.md) to create an API under the gateway.
 
-    When adding a backend service, select the target service from the "manually integrated" services, and click __OK__ .
+**Add the service as the backend service of the API** .
+
+When adding a backend service, select the target service from the "manually integrated" services, and click __OK__ .
 
 ## Obtain Gateway Address
 
@@ -70,6 +74,7 @@ In this demo, you can use `curl adservice.virtualhost:30040/`.
 
 You can access the `adservice` service through the gateway from any node in the cluster where the gateway is located.
 
-In this demo, there are three worker nodes in the gateway cluster named `dev-worker1`, `dev-worker2`, and `dev-worker3`. On these three nodes, you can use their internal
+In this demo, there are three worker nodes in the gateway cluster named `dev-worker1`, `dev-worker2`, and `dev-worker3`.
+On these three nodes, you can successfully access the service using their internal IPs.
 
 ![internal visit](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/br-gw10.png)

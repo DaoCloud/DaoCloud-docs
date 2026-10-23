@@ -21,7 +21,7 @@ and complete all steps before `Create a Hosted Mesh and Manage the Worker Cluste
 1. After the application is successfully created,  **synchronize** the application resources.
 
 1. Go to the service mesh and check the vs, dr, and gateway resources synchronized in the worker cluster under the hosted mesh.
-   If not found, check if the notes in the **[Create a Hosted Mesh and Manage the Worker Cluster](../../mspider/user-guide/service-mesh/README.md)** section are configured correctly.
+   If not found, check if the notes in the **[Create a Hosted Mesh and Manage the Worker Cluster](../../mspider/user-guide/service-mesh/index.md)** section are configured correctly.
 
 1. By default, the load balancer of the worker cluster exposes port `80`, so you need to modify the gateway port 
    of the service to 80 in the worker cluster to access the service.
@@ -96,7 +96,7 @@ The `dubbo3-consumer` and `dubbo3-provider` services are related. When accessing
 1. After an applcation is successfully created, **synchronize** the application resources.
 
 1. Go to the service mesh and check the vs, dr, and gateway resources synchronized in the worker cluster under the hosted mesh. 
-   If not found, check if the notes in the **[Create a Hosted Mesh and Manage the Worker Cluster](../../mspider/user-guide/service-mesh/README.md)** section are configured correctly.
+   If not found, check if the notes in the **[Create a Hosted Mesh and Manage the Worker Cluster](../../mspider/user-guide/service-mesh/index.md)** section are configured correctly.
 
 1. By default, the load balancer of the worker cluster exposes port `80`, so you need to modify the gateway port
    of the service to 80 in the worker cluster to access the service.

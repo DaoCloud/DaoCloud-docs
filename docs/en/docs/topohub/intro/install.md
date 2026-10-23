@@ -6,7 +6,7 @@ hide:
 # Install the Device Management Component
 
 The Device Management module requires installing both the frontend UI component and the backend service component.  
-Starting from DCE 5.0 installer v0.33.0 and above, installation of the Device Management frontend UI component is supported and **does not require manual installation**.  
+Starting from DCE installer v0.33.0 and above, installation of the Device Management frontend UI component is supported and **does not require manual installation**.  
 Please contact the delivery support team to obtain the commercial installation package.
 
 The installation process is as follows:
@@ -48,5 +48,5 @@ The installation process is as follows:
 
 ## Conclusion
 
-After completing the above steps, you can fully experience all the features of Device Management in DCE 5.0.  
+After completing the above steps, you can fully experience all the features of Device Management in DCE.  
 Enjoy your usage!

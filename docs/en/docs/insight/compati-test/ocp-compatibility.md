@@ -36,7 +36,3 @@
 | Notification Method - CRUD operations                                                                         | Manual      | ✅                    | -       |
 | Link Query                                                                                                    | Manual      | ✅                    | -       |
 | Topology Query                                                                                                | Manual      | ✅                    | -       |
-
-The table above represents the Openshift 4.x cluster compatibility test. It includes various test cases, their corresponding test method (manual), and the test results for the OCP version 4.10 (with Kubernetes version 1.23.0).
-
-Please note that this is not an exhaustive list, and additional test scenarios may exist.

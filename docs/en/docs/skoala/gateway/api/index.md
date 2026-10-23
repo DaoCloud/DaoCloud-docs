@@ -103,3 +103,7 @@ You can remove an API in two ways.
 - Click the API names into the API details page, at the upper right corner of the page by clicking on the __ⵗ__ hold and select __Remove__ .
 
     ![delete-api-2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/delete-api-2.png)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

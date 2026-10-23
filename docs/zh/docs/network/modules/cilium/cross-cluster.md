@@ -112,13 +112,13 @@ vi $HOME/.kube/config
     ```yaml
     contexts:
     - context: #添加本集群 cluster01 `context` 信息
-        cluster: {{cluster01 name}}
-        user: {{cluster01 name}}
-      name: {{cluster01 name}}
+        cluster: "{{cluster01 name}}"
+        user: "{{cluster01 name}}"
+      name: "{{cluster01 name}}"
     - context: #添加对端集群 cluster02 `context`信息
-        cluster: {{cluster02 name}}
-        user: {{cluster02 name}}
-      name: {{cluster02 name}}
+        cluster: "{{cluster02 name}}"
+        user: "{{cluster02 name}}"
+      name: "{{cluster02 name}}"
     current-context: kubernetes-admin@cluster.local
     ```
 
@@ -246,7 +246,7 @@ vi $HOME/.kube/config
                 - localhost
     ```
 
-2. 在 DCE 5.0 中通过 yaml 文件快速分别创建两个集群 cluster01 和 cluster02 的应用。
+2. 在 DCE 中通过 yaml 文件快速分别创建两个集群 cluster01 和 cluster02 的应用。
 
     ![创建应用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster9.png)
 

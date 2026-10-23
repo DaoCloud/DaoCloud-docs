@@ -10,7 +10,7 @@ To manage edge nodes, the following steps need to be completed:
 1. Prepare and configure the edge nodes. The edge nodes need to meet specific requirements,
    which can be found in the [Edge Node Access Requirements](./join-rqmt.md).
 
-2. Create an access guide in the Cloud-Edge Collaboration module to obtain the edge node configuration file and installation program. For details, please refer to [Creating an Access Guide](./create-access-guide.md).
+2. Create an access configuration in the Cloud-Edge Collaboration module to obtain the edge node configuration file and installation program. For details, please refer to [Create an Access Configuration](./create-access-guide.md).
 
 3. Follow the installation guide to complete the onboarding operation for the edge nodes. For details, please refer to [Edge Node Onboarding](./access-guide.md).
 
@@ -31,3 +31,7 @@ click require "https://docs.daocloud.io/en/kant/user-guide/node/join-rqmt.html"
 click config "https://docs.daocloud.io/en/kant/user-guide/node/access-guide.html"
 click oam "https://docs.daocloud.io/en/kant/user-guide/node/manage-node.html"
 ```
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

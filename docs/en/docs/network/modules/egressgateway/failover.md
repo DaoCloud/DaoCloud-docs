@@ -44,7 +44,7 @@ status:
 
 In the above `EgressGateway` definition, by setting `egress: "true"`, both `node1` and `node2` are designated as Egress Nodes. `node1` is the active node, and its assigned Egress IPs can be viewed in the `status` field. If `node1` fails, `node2` will take over as the failover node.
 
-![primary-backup](./primary-backup.svg)
+![primary-backup](./images/primary-backup.svg)
 
 ### Configuring Failover Timing
 

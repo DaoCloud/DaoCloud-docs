@@ -32,3 +32,7 @@ hide:
 1. 完成以上信息配置后，点击 **确定** 按钮，完成设备接入，自动返回设备列表。
 
 下一步：[管理设备](./manage-device.md)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

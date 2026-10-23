@@ -11,7 +11,7 @@ DCE 数据服务提供的 MySQL 支持对数据库进行备份和恢复，以保
 
 3. 选择备份配置的类型。
 
-    - 使用 DCE 5.0 数据服务中提供的 MinIO 实例时，选中需要备份数据的 MinIO 实例，
+    - 使用 DCE 数据服务中提供的 MinIO 实例时，选中需要备份数据的 MinIO 实例，
       系统会自动获取所选 MinIO 的地址，用户需要填写所选 MinIO 实例的 Access_Key、Secret_Key、Bucket 名称。请确保 MinIO 中已存在填写的 Bucket。
 
     - 使用其他 S3 对象存储：填写要使用的 S3 的访问地址、Access_Key、Secret_Key 以及 Bucket 名称。

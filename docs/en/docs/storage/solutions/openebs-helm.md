@@ -1,7 +1,7 @@
 # Deploy and verify OpenEBS via Helm
 
 This page will provide the steps and instructions for deploying and verifying the OpenEBS cloud
-native storage system with Helm. DCE 5.0 supports many third-party storage solutions. We tested
+native storage system with Helm. DCE supports many third-party storage solutions. We tested
 OpenEBS and finally integrated it in the app store as an Addon. The following is the research and
 evaluation of OpenEBS.
 

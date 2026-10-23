@@ -93,3 +93,7 @@ GPU 实例的计算切片(GI)可以进一步细分为多个计算实例（CI）�
 
 除此之外，还可以组合 3 个计算切片以创建计算配置文件，或者可以组合所有 4 个计算切片以创建 __3c.4g.20gb__ 、 __4c.4g.20gb__ 计算配置文件。
 合并所有 4 个计算切片时，配置文件简称为 __4g.20gb__ 。
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

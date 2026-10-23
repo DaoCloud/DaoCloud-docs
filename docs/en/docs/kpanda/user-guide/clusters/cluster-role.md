@@ -9,7 +9,7 @@ DaoCloud Enterprise 5.0 categorizes clusters based on different functionalities 
 
 ## Global Service Cluster
 
-This cluster is used to run DCE 5.0 components such as
+This cluster is used to run DCE components such as
 [Container Management](../../intro/index.md), [Global Management](../../../ghippo/intro/index.md),
 [Insight](../../../insight/intro/index.md), [Container Registry](../../../kangaroo/intro/index.md).
 It generally does not carry business workloads.

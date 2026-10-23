@@ -9,12 +9,16 @@ hide:
 
 !!! warning
 
-    本文档仅适用于 DCE 5.0 版本，若遇到 AI Lab 的使用问题，请优先查看此排障手册。
+    本文档仅适用于 DCE 版本，若遇到 AI Lab 的使用问题，请优先查看此排障手册。
 
-AI Lab 在 DCE 5.0 中模块名称 `baize`，提供了一站式的模型训练、推理、模型管理等功能。
+AI Lab 在 DCE 中模块名称 `baize`，提供了一站式的模型训练、推理、模型管理等功能。
 
 ## 常见故障案例
 
 - [集群下拉列表中找不到集群](./cluster-not-found.md)
 - [Notebook 不受队列配额控制](./notebook-not-controlled-by-quotas.md)
 - [队列初始化失败](./local-queue-initialization-failed.md)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

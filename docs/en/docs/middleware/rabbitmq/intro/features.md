@@ -39,7 +39,7 @@ Common features of RabbitMQ include:
 
     RabbitMQ provides many plug-ins that support extensions in many ways, and you can also write your own plug-ins.
 
-After deploying RabbitMQ in DCE 5.0, the following features will also be supported:
+After deploying RabbitMQ in DCE, the following features will also be supported:
 
 - Support single-node and multi-node RabbitMQ cluster deployment
 - Support RabbitMQ Managerment plug-in, provide management page

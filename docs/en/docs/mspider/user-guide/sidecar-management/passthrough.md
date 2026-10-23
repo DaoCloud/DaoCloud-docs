@@ -2,7 +2,7 @@
 
 Traffic passthrough refers to the fact that all or part of the upstream and downstream traffic of the workload is directly sent to the workload itself without being forwarded by the sidecar.
 
-The DCE 5.0 service mesh realizes the controllable sidecar passthrough of workload outbound/inbound traffic, and can implement interception settings for specific ports and IP segments.
+The DCE service mesh realizes the controllable sidecar passthrough of workload outbound/inbound traffic, and can implement interception settings for specific ports and IP segments.
 
 - Feature setting object: Workload
 - Setting parameters: port, IP segment

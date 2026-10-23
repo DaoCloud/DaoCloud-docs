@@ -42,7 +42,7 @@ hide:
             另外，上图中的对应关系为：
        
             1.  `{{(index.0).Labels.severity}}` 对应 `${severity}`，表示告警事件的级别；
-            2.  `{{index.0).Labels.alertname }}` 对应 `${alertname}`，表示告警的规则名称；
+            2.  `{{(index.0).Labels.alertname}}` 对应 `${alertname}`，表示告警的规则名称；
             3.  `{{(index.0).StartsAt}}` 对应 `${startat}`，表示告警事件的开始时间。
 
     === "配置腾讯云服务器"

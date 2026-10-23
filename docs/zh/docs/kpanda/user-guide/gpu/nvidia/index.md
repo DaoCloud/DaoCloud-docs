@@ -43,3 +43,7 @@ Daocloud 容器管理平台全面兼容了上述 NVIDIA 的能力特性，用户
 - **[NVIDIA GPU 整卡使用](full_gpu_userguide.md)**
 - **[NVIDIA vGPU 使用](vgpu/vgpu_user.md)**
 - **[NVIDIA MIG 使用](mig/mig_usage.md)**
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

@@ -1,6 +1,6 @@
 # Keycloak 无法启动
 
-*[Ghippo]: DCE 5.0 全局管理的开发代号
+*[Ghippo]: DCE 全局管理的开发代号
 
 ## 常见故障
 

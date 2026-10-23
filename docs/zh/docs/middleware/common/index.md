@@ -5,7 +5,7 @@ hide:
 
 # 首次进入中间件
 
-首次使用 DCE 5.0 的 [Elasticsearch 搜索服务](../elasticsearch/intro/index.md)、[Kafka 消息队列](../kafka/intro/index.md)、[MinIO 对象存储](../minio/intro/index.md)、[MySQL 数据](../mysql/intro/index.md)、[RabbitMQ 消息](../rabbitmq/intro/index.md)、[PostgreSQL 数据库](../postgresql/intro/index.md)、[Redis 数据库](../redis/intro/index.md)、[MongoDB 数据库](../mongodb/intro/index.md)、[RocketMQ 消息队列](../rocketmq/intro/index.md)等中间件时，需要选择工作空间。
+首次使用 DCE 的 [Elasticsearch 搜索服务](../elasticsearch/intro/index.md)、[Kafka 消息队列](../kafka/intro/index.md)、[MinIO 对象存储](../minio/intro/index.md)、[MySQL 数据](../mysql/intro/index.md)、[RabbitMQ 消息](../rabbitmq/intro/index.md)、[PostgreSQL 数据库](../postgresql/intro/index.md)、[Redis 数据库](../redis/intro/index.md)、[MongoDB 数据库](../mongodb/intro/index.md)、[RocketMQ 消息队列](../rocketmq/intro/index.md)等中间件时，需要选择工作空间。
 
 有关工作空间的详细介绍，可参考[工作空间与层级](../../ghippo/user-guide/workspace/ws-folder.md)。
 
@@ -13,8 +13,8 @@ hide:
 
 ## 前提条件
 
-1. 在 DCE 5.0 平台中创建[工作空间](../../ghippo/user-guide/workspace/workspace.md)
-2. 如需直接创建中间件实例，还需要在 DCE 5.0 容器管理模块中[创建](../../kpanda/user-guide/clusters/create-cluster.md)或[接入](../../kpanda/user-guide/clusters/integrate-cluster.md)集群。
+1. 在 DCE 平台中创建[工作空间](../../ghippo/user-guide/workspace/workspace.md)
+2. 如需直接创建中间件实例，还需要在 DCE 容器管理模块中[创建](../../kpanda/user-guide/clusters/create-cluster.md)或[接入](../../kpanda/user-guide/clusters/integrate-cluster.md)集群。
 
 ## 操作步骤
 
@@ -33,3 +33,7 @@ hide:
 3. 初次使用时，可以点击[__立即部署__](../minio/user-guide/create.md)来创建 MinIO 实例。
 
     ![立即部署](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/what03.png)
+
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

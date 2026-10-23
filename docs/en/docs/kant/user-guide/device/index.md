@@ -23,7 +23,7 @@ real-time feedback on its actual state, and the device twin simultaneously recor
 actual values of the end device. When the end device comes online again after being offline, its state
 is synchronized with the device twin.
 
-In DCE 5.0 Cloud Edge Collaboration module, end device can be created and associated with edge nodes.
+In DCE Cloud Edge Collaboration module, end device can be created and associated with edge nodes.
 Once associated, the twin attribute information of the associated device is stored on the edge node.
 Applications running on the edge node can access the actual values of the device twin attributes and
 modify the desired values to change the device's state.
@@ -38,3 +38,7 @@ The typical steps for managing and controlling end device are as follows:
 4. Manage and control end devices, and monitor device status
 
 Next step: [Create End Device](create-device.md)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

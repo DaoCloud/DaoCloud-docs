@@ -8,17 +8,12 @@ LVM encapsulates the underlying hard disk. When we operate the underlying physic
 
 ## LVM main components
 
-**Physical storage media (PM, physical media)**: LVM storage media can be partitions, disks, RAID arrays, or SAN disks.
-
-**Physical volume (PV, physical volume): **Physical volume is the basic storage logical block of LVM, but compared with basic physical storage media (such as partitions, disks, etc.), it contains management parameters related to LVM. Create A physical volume can be partitioned by a disk or by the disk itself. Disk devices must be initialized as LVM physical volumes to be used with LVM.
-
-**Volume Group (VG, Volume Group): **LVM volume group consists of one or more physical volumes.
-
-**Logical volume (LV, logical volume): **LV is built on top of VG, and a file system can be built on top of LV.
-
-**Physical extent (PE, physical extents): **The minimum storage unit that can be allocated in the PV physical volume. The size of PE can be specified, and the default is 4MB.
-
-**Logical extent (LE, logical extents): **The smallest storage unit that can be allocated in an LV logical volume. In the same volume group, the size of LE is the same as that of PE, and there is a one-to-one correspondence.
+- **Physical storage media (PM, physical media)**: LVM storage media can be partitions, disks, RAID arrays, or SAN disks.
+- **Physical volume (PV, physical volume)**: Physical volume is the basic storage logical block of LVM, but compared with basic physical storage media (such as partitions, disks, etc.), it contains management parameters related to LVM. Create A physical volume can be partitioned by a disk or by the disk itself. Disk devices must be initialized as LVM physical volumes to be used with LVM.
+- **Volume Group (VG, Volume Group)**: LVM volume group consists of one or more physical volumes.
+- **Logical volume (LV, logical volume)**: LV is built on top of VG, and a file system can be built on top of LV.
+- **Physical extent (PE, physical extents)**: The minimum storage unit that can be allocated in the PV physical volume. The size of PE can be specified, and the default is 4MB.
+- **Logical extent (LE, logical extents)**: The smallest storage unit that can be allocated in an LV logical volume. In the same volume group, the size of LE is the same as that of PE, and there is a one-to-one correspondence.
 
 ## LVM advantages
 

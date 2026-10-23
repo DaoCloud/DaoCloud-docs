@@ -55,7 +55,7 @@ Extension modules that run through the overall architecture include observabilit
 
 - **Workbench**
 
-    Workbench is a core module of DCE 5.0, which is used to provide users with unified capabilities
+    Workbench is a core module of DCE, which is used to provide users with unified capabilities
     such as application orchestration, deployment, pipeline management, CICD, application monitoring, and log querying.
 
 ## Functional Architecture

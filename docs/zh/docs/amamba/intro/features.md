@@ -5,11 +5,11 @@ hide:
 
 # 应用工作台功能特性
 
-应用工作台是 DCE 5.0 商业版所包含的模块，提供以下功能特性。
+应用工作台是 DCE 商业版所包含的模块，提供以下功能特性。
 
 | **功能特性** | **描述** |
 |-------------|---------|
-| 应用管理 | <ul><li>支持云原生场景下的“多形态”的云原生应用，包括 Kubernetes 原生应用、Helm 应用、OAM 应用等。</li><li>提供云原生应用的全生命周期管理，例如应用的扩缩容、日志、监控查看、更新应用等。</li><li>支持接入 SpringCloud、Dubbo、ServiceMesh 框架的微服务应用，实现微服务的治理，与 DCE 5.0 的<a href="../../skoala/intro/index.md">微服务引擎</a>、<a href="../../mspider/intro/index.md">服务网格</a>无缝集成。</li></ul> |
+| 应用管理 | <ul><li>支持云原生场景下的“多形态”的云原生应用，包括 Kubernetes 原生应用、Helm 应用、OAM 应用等。</li><li>提供云原生应用的全生命周期管理，例如应用的扩缩容、日志、监控查看、更新应用等。</li><li>支持接入 SpringCloud、Dubbo、ServiceMesh 框架的微服务应用，实现微服务的治理，与 DCE 的<a href="../../skoala/intro/index.md">微服务引擎</a>、<a href="../../mspider/intro/index.md">服务网格</a>无缝集成。</li></ul> |
 | 流水线编排 | <ul><li>支持四种创建流水线的模式：自定义创建、基于 Jenkinsfile 创建、基于模板创建、创建多分支流水线。</li><li>支持流水线图形化编辑。</li><li>可通过 Git 源码、Jar 包、Helm Chart、容器镜像的方式来构建应用。</li></ul> |
 | 凭证管理 | <ul><li>为流水线中的代码库、镜像仓库提供不同类型的凭证管理功能。</li></ul> |
 | 持续部署 | <ul><li>引入 GitOps 理念实现应用持续部署，用于把控代码构建之后的应用发布与部署交付流程。</li><li>基于 Argo CD，以自动化方式，频繁且持续性地将企业的应用部署到生产环境。</li><li>提供 Argo CD Application 的创建、同步、删除管理。</li></ul> |

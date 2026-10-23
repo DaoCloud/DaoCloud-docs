@@ -10,7 +10,7 @@
 
 ## 前提条件
 
-- 已经通过 DCE 5.0 平台创建好一个工作集群，可参考文档[创建工作集群](../user-guide/clusters/create-cluster.md)。
+- 已经通过 DCE 平台创建好一个工作集群，可参考文档[创建工作集群](../user-guide/clusters/create-cluster.md)。
 - 工作集群的被纳管集群存在当前平台中，并且状态运行正常。
 
 !!! note

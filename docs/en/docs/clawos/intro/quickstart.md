@@ -1,81 +1,59 @@
 # Quick Start
 
-This guide helps you quickly create and use an OpenClaw instance.
+This guide helps you quickly create and use an OpenClaw instance on DCE.
 
 ## Prerequisites
 
-- A DCE platform account  
-- Real-name verification completed  
-- Sufficient account balance or vouchers  
+- You have the WS Editor, WS Admin, or Admin role
+- An NS is already bound to the resource group of the WS
+- An API Key has already been created in the same WS of the LLM Studio
 
 ## Create an OpenClaw Instance
 
-1. From the left navigation bar, select **ClawOS**, then click **Create Instance** on the right.
+1. From the left navigation bar, select **ClawOS**, then click the **Create Instance** button on the right.
 
-2. Configure the OpenClaw instance:
+1. Configure the OpenClaw instance, then click **Confirm** in the bottom-right corner.
 
-    - Set an English name, choose the target cluster, namespace, image version, and configure CPU/memory resources, networking, model settings, and API keys  
-    - (Optional) Enable **Feishu Integration** and provide the Feishu App ID and App Secret  
+    - Set the instance name, select the target cluster, namespace, and image version, and configure the CPU/memory resources, networking, model (the minimax model is recommended), and API Key.
+    - (Optional) Enable **Feishu Integration** and enter the Feishu App ID and App Secret.
 
-    Click **Confirm** in the bottom-right corner.
+    > For details on how to obtain Feishu configuration and complete the integration, see the [Feishu Integration](../workspace/feishu.md) guide.
 
-    
-
-    > For details on how to obtain Feishu configuration and complete integration, see the [Feishu Integration](../feishu.md) guide.
-
-3. Wait for the instance to be created.
-
-    
+1. Wait for the instance to be created.
 
 ## Access OpenClaw
 
-Once the instance status shows **Running**:
+After an instance's status shows **Running**:
 
-1. Click **Access Tools** → **openclaw** on the right side.
+1. Click **Access Tools** -> **openclaw** or **noVNC** (a remote desktop in the browser) on the right side.
 
-2. Open the OpenClaw UI.
+2. Open the OpenClaw management page.
 
-3. Open the noVNC UI.
+3. Open the noVNC management page.
 
 !!! note
 
-    - In some cases, due to network delays, it may take 1–2 minutes after creation before the instance becomes accessible.  
-    - If you see a warning prompt, click **Continue to Website** to enter the chat interface and start using the OpenClaw agent.
-
-    
+    - In some cases, due to network fluctuations, you may need to wait 1-2 minutes after creating the instance before it becomes accessible.
+    - If the following prompt appears, click **Continue to Website** to use the OpenClaw agent in the chat window.
 
 ## Backend Debugging for OpenClaw
 
-DCE provides multiple ways to access the backend, including SSH login and web-based noVNC access.
-
-=== "Method 1: SSH Login"
-
-    Access the OpenClaw secure sandbox via SSH.
-
-    
-
-=== "Method 2: Web VNC Client"
-
-    Access the backend via a web-based VNC client.
-
-    
+You can perform quick operations through noVNC in the instance list.
 
 ### CLI Operations
 
-Before using the OpenClaw CLI, switch to the `node` user:
+Check disk space:
 
 ```bash
-su node  # switch to node user
+df -h  # check disk space
 ```
 
-List installed skills:
+Check memory details:
 
 ```bash
-openclaw skills list
+free -h
 ```
 
+## OpenClaw FAQ
 
-
-## FAQ
-
-See the [FAQ](../faq.md) for common questions.
+See the [FAQ](../faq.md) document.

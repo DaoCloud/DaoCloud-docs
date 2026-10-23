@@ -109,3 +109,7 @@ spec:
 2. Nodes where this Policy will be effective. Note: sriov-device-plugin component will be installed on specified nodes.
 3. Only applicable to node 10-20-1-240.
 4. Desired number of VFs.
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

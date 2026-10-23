@@ -4,7 +4,7 @@ DaoCloud Enterprise 5.0 基于集群的不同功能定位对集群进行了角�
 
 ## 全局服务集群
 
-此集群用于运行 DCE 5.0 组件，例如[容器管理](../../intro/index.md)、[全局管理](../../../ghippo/intro/index.md)、[可观测性](../../../insight/intro/index.md)、[镜像仓库](../../../kangaroo/intro/index.md)等。
+此集群用于运行 DCE 组件，例如[容器管理](../../intro/index.md)、[全局管理](../../../ghippo/intro/index.md)、[可观测性](../../../insight/intro/index.md)、[镜像仓库](../../../kangaroo/intro/index.md)等。
 一般不承载业务负载。
 
 | 支持的功能 | 描述 |

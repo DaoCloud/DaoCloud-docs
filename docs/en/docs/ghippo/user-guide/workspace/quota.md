@@ -16,7 +16,7 @@ usage is unlimited.
 - Memory Limit (MB)
 - Total Storage Request (GB)
 - Persistent Volume Claims (PVC)
-- GPU Type, Spec, Quantity (including but not limited to Nvidia, Ascend, ILLUVATAR, and other GPUs)
+- GPU Type, Compute, and Memory (including but not limited to Nvidia, Ascend, ILLUVATAR, and other GPUs)
 
 A resource (cluster) can be shared among multiple workspaces, and a workspace can use resources from
 multiple shared clusters simultaneously.
@@ -49,6 +49,34 @@ Cluster resources in both shared resources and resource groups are derived from 
 
     Unlike resource groups, when sharing a cluster with a workspace, the roles of the users in the workspace
     will not be mapped to the resources. Therefore, Workspace Admin will not be mapped as Cluster Admin.
+
+## Configure Shared Resource Quotas
+
+1. In **Global Management** -> **Workspaces and Hierarchies**, select the target workspace and open the
+   **Shared Resources** tab.
+2. Locate the target shared cluster and select **Quota Management** from its action menu.
+3. Set the CPU, memory, storage, and GPU quotas in the **Quota** column as needed, and click **OK**.
+   Select a GPU type, and then set the GPU computing power and GPU memory quotas:
+
+    - **GPU Computing Power**: The total GPU computing power that the workspace can allocate to all its
+      namespaces. It is the sum across multiple GPUs and can therefore exceed 100%.
+    - **GPU Memory**: The total GPU memory that the workspace can allocate to all its namespaces. It is
+      the sum of GPU memory across multiple GPUs.
+
+    ![Configure shared-resource GPU quotas](../../images/workspace-gpu-quota.png)
+
+The quota values have the following meanings:
+
+- **Quota**: The resource limit assigned from the shared cluster to the current workspace. Set a specific
+  value as needed or leave it unlimited. A separate physical GPU count is no longer required for vGPU quotas.
+- **Allocated**: The sum of quotas assigned to namespaces bound to the workspace. It is not real-time GPU usage.
+- **Remaining**: Quota minus Allocated. For example, if the computing-power quota is 240% and 230% is
+  allocated, 10% remains available.
+
+!!! note
+
+    The sum of all namespace quotas in a workspace cannot exceed the shared-resource quota. Otherwise,
+    the namespace cannot be bound to the workspace.
 
 This section demonstrates three scenarios related to resource quotas.
 

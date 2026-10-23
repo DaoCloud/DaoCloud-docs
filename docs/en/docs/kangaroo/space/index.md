@@ -5,7 +5,7 @@ DATE: 2024-08-09
 
 # Registry space
 
-DCE 5.0 Container Registry provides a feature of isolating images based on registry spaces.
+DCE Container Registry provides a feature of isolating images based on registry spaces.
 Registry spaces are divided into two types: public and private.
 
 - Public registry: accessible by all users, usually storing public images. There is a default public registry space.
@@ -35,3 +35,7 @@ Please note that the file size should not exceed 2 GB, and each file corresponds
 Currently, only image compression packages made with container runtime v1.11.2 and above are supported to upload.
 
 ![Upload Image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/push-cmd03.png)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

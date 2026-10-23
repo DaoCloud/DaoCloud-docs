@@ -17,9 +17,9 @@ After decompression, two bundle packages can be obtained, namely insight and ins
 
 ```shell
 $ ll insight_v0.25.3_amd64
-总用量 2899996
--rw-r--r-- 1 root root 2367463936 4月   2 18:36 insight_0.25.3.bundle.tar
--rw-r--r-- 1 root root  602125824 4月   2 18:35 insight-agent_0.25.3.bundle.tar
+total 2899996
+-rw-r--r-- 1 root root 2367463936 Apr   2 18:36 insight_0.25.3.bundle.tar
+-rw-r--r-- 1 root root  602125824 Apr   2 18:35 insight-agent_0.25.3.bundle.tar
 ```
 
 ## Load the image from the installation package

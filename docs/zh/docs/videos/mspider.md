@@ -12,9 +12,9 @@
 - :four: [安全治理](#_5)
 - :five: [Istio 版本升级](#istio)
 - :six: [边车升级](#_6)
-- :seven: [流量透传](#_7)
-- :eight: [多云网络互联](#_8)
-- :nine: [自定义工作负载类型](#_9)
+- :seven: [流量透传](#_8)
+- :eight: [多云网络互联](#_9)
+- :nine: [自定义工作负载类型](#_10)
 
 </div>
 
@@ -117,6 +117,6 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/custom-workload.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/custom-workload.jpg"></video>
 </div>
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }

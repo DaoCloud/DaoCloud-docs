@@ -101,9 +101,9 @@ spec:
       annotations:
         autoscaling.knative.dev/target: "10"
         autoscaling.knative.dev/class: "kpa.autoscaling.knative.dev"
-        autoscaling.knative.dev/target-utilization-percentage: "70" 
-        autoscaling.knative.dev/metric: "concurrency"
-     spec:
+        autoscaling.knative.dev/target-utilization-percentage: "70" 
+        autoscaling.knative.dev/metric: "concurrency"
+    spec:
       containers:
         - image: m.daocloud.io/ghcr.io/knative/helloworld-go:latest
           ports:

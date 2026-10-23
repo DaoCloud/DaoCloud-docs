@@ -5,7 +5,7 @@ hide:
 
 # DaoCloud 产品支持政策
 
-[阅读和下载 PDF](./support.pdf){ .md-button }
+[阅读和下载 PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/support.pdf){ .md-button }
 
 除非另有说明，本文所述的这些政策适用于 DaoCloud Enterprise（简称 DCE）软件及其所含模块的维护与支持。
 

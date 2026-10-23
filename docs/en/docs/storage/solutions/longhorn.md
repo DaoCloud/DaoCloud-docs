@@ -1,6 +1,6 @@
 # Longhorn Storage Solution
 
-DCE 5.0 supports many third-party storage solutions. We have conducted detailed tests on Longhorn and finally integrated it into the app store as an Addon.
+DCE supports many third-party storage solutions. We have conducted detailed tests on Longhorn and finally integrated it into the app store as an Addon.
 The following is a brief research and evaluation report on Longhorn.
 
 Longhorn is a lightweight cloud native Kubernetes distributed storage platform that can run on any infrastructure.

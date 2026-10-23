@@ -11,12 +11,12 @@ date: 2024-06-27
     of the relevant parameters and be aware of any potential side effects. Only then should you decide whether to actually use them. 
     It is advisable to conduct feasibility verification before going live!
 
-This article will describe how to configure extended parameters for both DCE 5.0 [global-service-clusters](../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster) and [worker clusters](../../kpanda/user-guide/clusters/cluster-role.md#worker-clusters).
+This article will describe how to configure extended parameters for both DCE [global-service-clusters](../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster) and [worker clusters](../../kpanda/user-guide/clusters/cluster-role.md#worker-clusters).
 
 ## Supported Extended Parameters
 
-DCE 5.0 relies on the open-source software Kubespray for cluster deployment, so basically, any configuration parameters 
-supported by Kubespray can be configured under DCE 5.0.
+DCE relies on the open-source software Kubespray for cluster deployment, so basically, any configuration parameters 
+supported by Kubespray can be configured under DCE.
 
 For configurable parameters supported by Kubespray, refer to the [community documentation](https://github.com/kubernetes-sigs/kubespray/blob/v2.25.0/docs/ansible/vars.md#common-vars-that-are-used-in-kubespray).
 
@@ -36,7 +36,7 @@ For configurable parameters supported by Kubespray, refer to the [community docu
 
 ## Configuring Extended Parameters When Installing a Global Cluster
 
-Refer to [Step 2 of the Offline Installation of DCE 5.0 Commercial Version](../commercial/start-install.md/#step-2-edit-clusterconfigyaml).
+Refer to [Step 2 of the Offline Installation of DCE Commercial Version](../commercial/start-install.md/#step-2-edit-clusterconfigyaml).
 
 In the [ClusterConfig.yml](../commercial/cluster-config.md) configuration file, update the `kubeanConfig` parameter information as follows:
 

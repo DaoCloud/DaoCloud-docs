@@ -4,166 +4,383 @@ hide:
   - toc
 ---
 
-# DaoCloud Enterprise 5.0
+# DaoCloud 文档中心
 
-DaoCloud Enterprise 5.0 (DCE 5.0) 是一款高性能、可扩展的云原生 AI 操作系统，
-是[经 CNCF 认证的 Kubernetes - AI Platform](./dce/kcsp.md)。
-它能够在任何基础设施和任意环境中提供一致、稳定的体验，支持异构云、边缘云和多云编排。
-DCE 5.0 集成了最新的服务网格和微服务技术，能够跟踪每一个流量的生发始终，
-帮助您洞察集群、节点、应用和服务的详细指标，并通过动态仪表盘和拓扑大图可视化掌握应用健康状态。
+*[DCE]: DaoCloud Enterprise 的简称
 
-DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全流程标准化和自动化，并集成各类精选数据库和中间件，使运维治理更加高效。
-各个产品模块独立解耦，支持灵活升级，对业务没有影响，并且能够与众多云原生生态产品对接，提供完整的解决方案体系。
-它经过了近千家行业客户的生产场景检验，构建了坚实、可靠的数字底座，帮助企业定义数字边界，释放云原生生产力。
+<div class="tf-hero" markdown>
 
-DCE 5.0 内置多智能体治理平台 ClawOS、云原生训推一体化平台 AI Lab、大模型服务平台，形成从算力到模型到智能体的完整 AI 能力底座：
+DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加速企业智能化转型。
+本站提供三大产品线的文档内容，覆盖从基础设施、算力调度到模型推理和应用构建的全栈能力。
 
-- **ClawOS** 是面向企业的多智能体运行与治理平台，用于统一创建、管理、集成、观测和运维企业内部的 AI Agent；
-- **AI Lab** 提供软硬一体的 AI 智算体验，整合异构算力、优化 GPU 性能，实现算力资源的统一调度与精细化运营，在最大化算力效用、降低成本的同时，配套优化的 AI 开发框架，简化开发与部署流程，加速 AI 应用在各行业落地；
-- **大模型服务平台** 则面向企业级用户，提供覆盖模型部署、运行与运维管理的全生命周期服务，有效解决模型部署复杂、选型困难、运行稳定性与安全风险等关键问题，帮助企业和开发者高效接入并使用多种大模型能力，持续推动企业数字化转型与智能化升级。
-
-*[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
-*[AI]: DCE 5.0 内置 AI Lab，高效管控各类大模型任务、数据集、GPU、CPU、内存等资源
-
-<div class="grid cards" markdown>
-
-- :fontawesome-solid-jet-fighter-up: **安装** [详尽的安装教程](install/index.md)
-- :material-microsoft-azure-devops: **应用工作台** [CI/CD 流水线](amamba/intro/index.md)
-- :octicons-container-16: **容器管理** [集群/节点/负载等基础设施](kpanda/intro/index.md)
-- :material-cloud-check: **多云编排** [多云实例/负载/策略](kairship/intro/index.md)
-- :material-warehouse: **镜像仓库** [镜像集成和托管服务](kangaroo/intro/index.md)
-- :material-dot-net: **云原生网络** [多 CNI 融合方案](network/intro/index.md)
-- :simple-googlecloudstorage: **云原生存储** [容器化存储综合方案](storage/index.md)
-- :material-train-car-container: **虚拟机** [容器化的虚拟机](virtnest/intro/index.md)
-- :material-monitor-dashboard: **可观测性** [一站式图形化仪表盘](insight/intro/index.md)
-- :material-engine: **微服务引擎** [微服务治理中心和网关](skoala/intro/index.md)
-- :material-table-refresh: **服务网格** [非侵入式服务治理](mspider/intro/index.md)
-- :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](middleware/index.md)
-- :shrimp: **ClawOS** [智能体治理平台](clawos/intro/index.md)
-- :material-slot-machine: **AI Lab** [云原生 AI - 训推一体化平台](baize/intro/index.md)
-- :simple-themodelsresource: **大模型服务平台** [运营管控大模型](./hydra/intro/index.md)
-- :fontawesome-brands-edge: **云边协同** [容器能力扩展至边缘](kant/intro/index.md)
-- :fontawesome-solid-user-group: **全局管理** [设置登录/访问权限/外观](ghippo/intro/index.md)
-- :material-download: **下载中心** [下载各模块离线包](download/index.md)
-- :simple-youtubestudio: **最佳实践** [实践出真知](dce/bphome.md)
-- :material-frequently-asked-questions: **常见问题** [答疑解惑排查故障](dce/faq.md)
-- [免费体验 :free:](./trial/index.md){ .md-button }
+<div class="tf-hero-badges">
+<a class="tf-hero-badge tf-hero-badge--tf" href="tf/">d.run Token 工厂效能平台</a>
+<a class="tf-hero-badge tf-hero-badge--drun" href="drun/">d.run AI 操作系统</a>
+<a class="tf-hero-badge tf-hero-badge--dce" href="dce/">DaoCloud Enterprise</a>
+</div>
 
 </div>
 
-![模块图](https://docs.daocloud.io/daocloud-docs-images/docs/images/dce-modules04.png)
+<style>
+.tf-arch-card{min-width:calc(25% - 6px) !important}
+.tf-arch{overflow:visible !important}
+.tf-arch-card{overflow:visible !important}
+.tf-arch-layer:first-child{border-radius:14px 14px 0 0 !important}
+.tf-arch-layer:last-child{border-radius:0 0 14px 14px !important}
+.tf-arch-card-tip{
+  opacity:0;
+  position:absolute;
+  bottom:calc(100% + 8px);
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,0.85);
+  color:#fff;
+  padding:0.35rem 0.65rem;
+  border-radius:6px;
+  font-size:0.72rem;
+  font-weight:500;
+  white-space:nowrap;
+  z-index:100;
+  pointer-events:none;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  transition:opacity 0.2s ease
+}
+.tf-arch-card-tip::after{
+  content:"";
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%);
+  border:5px solid transparent;
+  border-top-color:rgba(0,0,0,0.85)
+}
+.tf-arch-card:hover .tf-arch-card-tip{
+  opacity:1
+}
+</style>
 
-DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，可以应对海量应用场景。
+=== ":material-factory: d.run Token 工厂效能平台"
 
-这些模块就像乐高搭积木一样，糅合社区最优秀的几十种开源技术，经过众多辩证选型、攻坚克难、编码调试、海量测试，“十年磨一剑，一朝试锋芒”，全新搭建的新一代容器化平台能够满足企业上云的各类场景需求。
+    这是专为智算中心打造的高效能 AI Token 生产及经营系统，致力于将传统算力中心升级为高效、可盈利的 Token 工厂。
+    平台统一纳管英伟达及国产异构算力，通过智能调度与推理优化，将分散的 GPU 算力转化为低成本、高稳定、可交易的标准化 Token 服务。
+    依托 Token 工厂管家与统一运营体系，平台实现资源、生产、成本和供需的全局管理，服务终端用户、管理者、运营者与运维者，
+    推动智算中心从 "提供算力" 升级为 "生产和运营 Token"。
+    [查看/下载 Token 工厂彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/tf.pdf){ .md-button }
 
-=== "云原生底座"
+    <div class="tf-arch tf-arch--compact">
+      <div class="tf-arch-layer tf-arch-layer--model">
+        <div class="tf-arch-layer-label">云原生 AI</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--model" href="tf/hydra/">
+            <span class="tf-arch-card-title">大模型服务平台</span>
+            <span class="tf-arch-card-tip">模型部署与运维管理</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="tf/dak/">
+            <span class="tf-arch-card-title">AI 应用</span>
+            <span class="tf-arch-card-tip">智能问答等应用能力</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="tf/inferx/">
+            <span class="tf-arch-card-title">InferX 推理套件</span>
+            <span class="tf-arch-card-tip">推理加速与引擎管理</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="tf/zestu/">
+            <span class="tf-arch-card-title">算力云</span>
+            <span class="tf-arch-card-tip">异构算力纳管与调度</span>
+          </a>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--compute">
+        <div class="tf-arch-layer-label">云原生底座</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--compute" href="tf/kpanda/intro/">
+            <span class="tf-arch-card-title">容器管理</span>
+            <span class="tf-arch-card-tip">集群与工作负载管理</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="tf/kangaroo/intro/">
+            <span class="tf-arch-card-title">镜像仓库</span>
+            <span class="tf-arch-card-tip">镜像托管与集成</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="tf/topohub/intro/">
+            <span class="tf-arch-card-title">设备管理</span>
+            <span class="tf-arch-card-tip">硬件设备统一纳管</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="tf/network/intro/">
+            <span class="tf-arch-card-title">云原生网络</span>
+            <span class="tf-arch-card-tip">多 CNI 融合网络</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="tf/storage/">
+            <span class="tf-arch-card-title">云原生存储</span>
+            <span class="tf-arch-card-tip">容器化存储与 CSI</span>
+          </a>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--ops">
+        <div class="tf-arch-layer-label">运营管理</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--ops" href="tf/copilot/">
+            <span class="tf-arch-card-title">Copilot</span>
+            <span class="tf-arch-card-tip">智能运维助手</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--ops" href="tf/crane/intro/">
+            <span class="tf-arch-card-title">驾驶舱</span>
+            <span class="tf-arch-card-tip">运营数据可视化</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--ops" href="tf/leopard/">
+            <span class="tf-arch-card-title">费用中心</span>
+            <span class="tf-arch-card-tip">计费与账单分析</span>
+          </a>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--ops">
+        <div class="tf-arch-layer-label">运维管理</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--ops" href="tf/insight/intro/">
+            <span class="tf-arch-card-title">可观测性</span>
+            <span class="tf-arch-card-tip">指标日志链路观测</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--ops" href="tf/ghippo/intro/">
+            <span class="tf-arch-card-title">全局管理</span>
+            <span class="tf-arch-card-tip">用户权限与平台设置</span>
+          </a>
+        </div>
+      </div>
+    </div>
 
-    提供云原生计算、网络、存储等能力，兼容各种集群接入，支持集群从部署、版本升级、证书变更、配置变更、回收等全生命周期管理，突破 K8s API 性能瓶颈，实现企业超大规模用户并发使用多集群。
-    针对企业环境，提供场景化的网络方案，实现当前企业网络基础设施复用的最大化，降低企业使用云原生应用门槛。
+=== ":material-robot-happy: d.run AI 操作系统"
 
-    - **云原生计算内核**：抽象底层基础设施，为上层应用及其它模块提供计算、存储等强大内核能力。
-    - **云原生网络内核**：适配 overlay、underlay 等网络环境，支持 Spiderpool、Cillium、Macvlan、Multus 等多种网络模式
-    - **云原生安全内核**：融合 RBAC 权限认证体系，为运维安全保驾护航
+    d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推理引擎核心贡献积淀，统一纳管多元异构算力，
+    实现颗粒化调度、全栈推理优化与全链路 Token 治理，算力利用率超 80%，将算力高效转化为可管可控的 Token 化 AI 生产力；
+    平台汇聚全球主流大模型生态，配备可视化运营驾驶舱与 d.run Copilot 智能助手，面向企业全部门输出稳定高效的 AI 服务，
+    全方位支撑业务智能化长期升级。
+    [查看/下载 d.run AI 操作系统彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/drun.pdf){ .md-button }
 
-    *[Spiderpool]: DaoCloud 捐献给 CNCF 的 Underlay 和 RDMA 网络方案，已入选 CNCF Sandbox
+    <div class="tf-arch tf-arch--compact">
+      <div class="tf-arch-layer tf-arch-layer--model">
+        <div class="tf-arch-layer-label">云原生 AI</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--model" href="drun/hydra/">
+            <span class="tf-arch-card-title">大模型服务平台</span>
+            <span class="tf-arch-card-tip">模型部署与运维管理</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="drun/baize/intro/">
+            <span class="tf-arch-card-title">AI Lab</span>
+            <span class="tf-arch-card-tip">云原生训推一体化</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/intro/">
+            <span class="tf-arch-card-title">ClawOS</span>
+            <span class="tf-arch-card-tip">多智能体运行与治理</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="drun/inferx/">
+            <span class="tf-arch-card-title">InferX 推理套件</span>
+            <span class="tf-arch-card-tip">推理加速与引擎管理</span>
+          </a>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--compute">
+        <div class="tf-arch-layer-label">云原生底座</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--compute" href="drun/kpanda/intro/">
+            <span class="tf-arch-card-title">容器管理</span>
+            <span class="tf-arch-card-tip">集群与工作负载管理</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="drun/topohub/intro/">
+            <span class="tf-arch-card-title">设备管理</span>
+            <span class="tf-arch-card-tip">硬件设备统一纳管</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="drun/kangaroo/intro/">
+            <span class="tf-arch-card-title">镜像仓库</span>
+            <span class="tf-arch-card-tip">镜像托管与集成</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="drun/network/intro/">
+            <span class="tf-arch-card-title">云原生网络</span>
+            <span class="tf-arch-card-tip">多 CNI 融合网络</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="drun/storage/">
+            <span class="tf-arch-card-title">云原生存储</span>
+            <span class="tf-arch-card-tip">容器化存储与 CSI</span>
+          </a>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--ops">
+        <div class="tf-arch-layer-label">运营管理</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--ops" href="drun/copilot/">
+            <span class="tf-arch-card-title">Copilot</span>
+            <span class="tf-arch-card-tip">智能运维助手</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--ops" href="drun/crane/intro/">
+            <span class="tf-arch-card-title">运营驾驶舱</span>
+            <span class="tf-arch-card-tip">运营数据可视化</span>
+          </a>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--ops">
+        <div class="tf-arch-layer-label">运维管理</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--ops" href="drun/insight/intro/">
+            <span class="tf-arch-card-title">可观测性</span>
+            <span class="tf-arch-card-tip">指标日志链路观测</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--ops" href="drun/ghippo/intro/">
+            <span class="tf-arch-card-title">全局管理</span>
+            <span class="tf-arch-card-tip">用户权限与平台设置</span>
+          </a>
+        </div>
+      </div>
+    </div>
 
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
+=== ":octicons-stack-16: DaoCloud Enterprise"
 
-    ![云原生底座](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/07base.png)
+    DaoCloud Enterprise (DCE) 是一款高性能、可扩展的云原生操作系统，
+    是[经 CNCF 认证的 Kubernetes - AI Platform](./dce/kcsp.md)。
+    它能够在任何基础设施和任意环境中提供一致、稳定的体验，支持异构云、边缘云和多云编排等。
+    [查看/下载 DaoCloud Enterprise 彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/dce.pdf){ .md-button }
 
-=== "多云编排"
+    <div class="tf-arch tf-arch--compact">
+      <div class="tf-arch-layer tf-arch-layer--compute">
+        <div class="tf-arch-layer-label">云原生底座</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--compute" href="middleware/">
+            <span class="tf-arch-card-title">中间件</span>
+            <span class="tf-arch-card-tip">数据库与消息队列</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="kairship/intro/">
+            <span class="tf-arch-card-title">多云编排</span>
+            <span class="tf-arch-card-tip">多云与混合云编排</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="kangaroo/intro/">
+            <span class="tf-arch-card-title">镜像仓库</span>
+            <span class="tf-arch-card-tip">镜像托管与集成</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="mspider/intro/">
+            <span class="tf-arch-card-title">服务网格</span>
+            <span class="tf-arch-card-tip">非侵入式服务治理</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="skoala/intro/">
+            <span class="tf-arch-card-title">微服务引擎</span>
+            <span class="tf-arch-card-tip">微服务治理与网关</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="amamba/intro/">
+            <span class="tf-arch-card-title">应用工作台</span>
+            <span class="tf-arch-card-tip">CI/CD 与应用交付</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="kpanda/intro/">
+            <span class="tf-arch-card-title">容器管理</span>
+            <span class="tf-arch-card-tip">集群与工作负载管理</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="virtnest/intro/">
+            <span class="tf-arch-card-title">虚拟机</span>
+            <span class="tf-arch-card-tip">KubeVirt 虚拟机管理</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="topohub/intro/">
+            <span class="tf-arch-card-title">设备管理</span>
+            <span class="tf-arch-card-tip">硬件设备统一纳管</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="kant/intro/">
+            <span class="tf-arch-card-title">云边协同</span>
+            <span class="tf-arch-card-tip">边缘节点纳管与协同</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="network/intro/">
+            <span class="tf-arch-card-title">云原生网络</span>
+            <span class="tf-arch-card-tip">多 CNI 融合网络</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="storage/">
+            <span class="tf-arch-card-title">云原生存储</span>
+            <span class="tf-arch-card-tip">容器化存储与 CSI</span>
+          </a>
+        </div>
+      </div>
+      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-layer tf-arch-layer--ops">
+        <div class="tf-arch-layer-label">运维管理</div>
+        <div class="tf-arch-cards">
+          <a class="tf-arch-card tf-arch-card--ops" href="insight/intro/">
+            <span class="tf-arch-card-title">可观测性</span>
+            <span class="tf-arch-card-tip">指标日志链路观测</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--ops" href="ghippo/intro/">
+            <span class="tf-arch-card-title">全局管理</span>
+            <span class="tf-arch-card-tip">用户权限与平台设置</span>
+          </a>
+        </div>
+      </div>
+    </div>
 
-    支持多云和混合云的统一集中管理，提供跨云资源检索及跨云的应用部署、发布和运维能力，实现多云应用高效管控，提供基于集群资源的应用弹性扩缩，实现全局负载均衡，具备故障恢复能力，有效解决多云应用灾备问题，助力企业构建多云、混合云的数字基础设施。
+## 探索产品模块
 
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、信创异构
+<div class="grid cards" markdown>
 
-    多云应用的跨区域/集群分发机制如下：
+- :material-robot:{ .lg .middle } __云原生 AI__
 
-    ![多云](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/01multi-cloud.png)
+    ---
 
-=== "数据中间件服务"
+    - [ClawOS](drun/clawos/intro/)
+    - [AI Lab](drun/baize/intro/)
+    - [AI 应用](tf/dak/)
+    - [大模型服务平台](tf/hydra/intro/)
+    - [InferX 推理套件](tf/inferx/)
+    - [算力云](tf/zestu/)
 
-    专为有状态应用设计的云原生本地存储能力，满足中间件高 I/O 的存储需求，提升运维管理效率。精选各类数据库、分布式消息和日志检索等中间件，
-    提供多租户、部署、观测、备份、运维操作等全生命周期的中 间件管理能力，实现数据服务的自助化申请、弹性扩展、 高并发处理和稳定高可用。
+- :material-server:{ .lg .middle } __容器__
 
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、[精选中间件](middleware/index.md)
+    ---
 
-    ![数据](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/02data.png)
+    - [容器管理](kpanda/intro/)
+    - [多云编排](kairship/intro/)
+    - [镜像仓库](kangaroo/intro/)
+    - [云原生网络](network/intro/)
+    - [云原生存储](storage/)
+    - [虚拟机](virtnest/intro/)
 
-=== "微服务治理"
+- :material-file-document-multiple-outline:{ .lg .middle } __微服务__
 
-    提供非侵入式流量治理功能，支持无感接入传统微服务、云原生微服务和开源微服务框架，实现企业现有微服务体系及新旧微服务体系的融合治理，
-    支持微服务从开发、部署、接入、观测、运维的全生命周期管理，提供高性能云原生微服务网关，保证微服务应用的连续可用性；引入自主开源的 eBPF 网格加速技术，全面提高流量转发效率。
+    ---
 
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[微服务治理](skoala/intro/index.md)、[服务网格](mspider/intro/index.md)、[可观测性](insight/intro/index.md)、[应用工作台](amamba/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
+    - [可观测性](insight/intro/)
+    - [微服务引擎](skoala/intro/)
+    - [服务网格](mspider/intro/)
 
-    ![微服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/03msgov.png)
+</div>
 
-=== "可观测性"
+<div class="grid cards" markdown>
 
-    基于日志、链路、指标、eBPF 等技术手段，全面采集服务数据，深入获取请求链路信息，动态观测、多维度掌控集群、节点、应用和服务的实时变化，
-    通过统一控制面实现所有集群及负载观测数据的查询，引入拓扑分析技术可视化掌握应用健康状态，实现秒级故障定位。
+- :material-human-greeting:{ .lg .middle } __工作台__
 
-    *[eBPF]: Extended Berkeley Packet Filter，这是 Linux 内核自带的组件，可以在内核中运行沙盒程序
+    ---
 
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[可观测性](insight/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
+    - [应用工作台](amamba/intro/)
 
-    ![观测](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/04insight.png)
+- :material-database:{ .lg .middle } __数据服务__
 
-=== "应用商店"
+    ---
 
-    收录来自大数据、AI、中间件等十大领域生态伙伴的软件产品，实现生态技术、产品、运营服务等能力的整合，提供开箱即用的生态应用软件，面向企业实际业务需求，打造完整的解决方案体系。
+    - [中间件](middleware/)
 
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
+- :material-cloud-outline:{ .lg .middle } __边缘计算__
 
-=== "应用交付"
+    ---
 
-    通过一致性可推广的应用交付流程实现自助式上云，支持柔性租户体系，动态适配用户组织架构规划和实时资源分配，基于云原生化的 CI/CD 流水线，集成丰富的工具链并支持流水线高效并发执行流转，
-    自动化完成应用的构建、部署，创新性引入 Gitops、渐进式交付能力体系，实现应用更精细的管理运维。
+    - [云边协同](kant/intro/)
 
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[应用工作台](amamba/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、[镜像仓库](kangaroo/intro/index.md)
+- :material-cog-outline:{ .lg .middle } __管理__
 
-    ![应用交付](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/06appdeliv.png)
+    ---
 
-=== "信创异构"
+    - [全局管理](ghippo/intro/)
+    - [设备管理](topohub/intro/)
 
-    采用信创云原生技术架构，兼容国产芯片及服务器，支持信创操作系统及信创应用生态体系，屏蔽底层异构基础设施的复杂性，把传统操作系统从需要长期积累的软件生态兼容适配中解放出来，
-    实现混合异构集群的灵活调度，保证信创应用运行环境的稳定高可靠，助力信创进程进一步提速。
+</div>
 
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[集群生命周期管理](community/kubean.md)、[信创中间件](middleware/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
+<div class="tf-cta" markdown>
 
-    ![信创](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/08xinchuan.png)
+[申请 DCE 社区免费体验](./dce/license0.md){ .md-button .md-button--primary }
+[了解 d.run](drun/index.md){ .md-button .md-button--primary }
+[Token 工厂概览](tf/index.md){ .md-button .md-button--primary }
 
-=== "云边协同"
-
-    将云原生能力延伸至边缘，采用边缘集群、边缘节点模式，将数据中心算力下移，端设备算力上移，统一管控和调度离散、异构的计算资源，解决在海量边、端设备上统一完成大规模应用交付、运维、管控的诉求，实现云边的真正一体化。
-
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、[云边协同](kant/intro/index.md)、弱网集群
-
-    ![云边](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/09cloud-edge.png)
-
-=== "虚拟机"
-
-    基于 KubeVirt 技术将虚拟机作为云原生应用进行管理，与容器无缝地衔接在一起，使用户能够轻松地实现虚拟机本身的全生命周期管理、虚拟机的快照、恢复、克隆、热迁移等能力，享受与容器应用一致的丝滑体验。
-
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
-
-    ![虚拟机](./images/virtnest.png)
-
-=== "AI Lab"
-
-    将 MLOps 与 LLMs 全面融合到云原生平台，实现 AI 智算平台的训推一体化的全生命周期研发流程，支持Pytorch、Tensorflow 等多种深度学习框架，支持数据集、模型开发、训练、推理、监控、运营等功能；用户只需提供关注模型的开发及使用，无需关心底层的资源调度、管理、监控等问题。
-
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[AI Lab](./baize/intro/index.md)
-
-    ![AI Lab](baize/images/image01.png)
-
-在成功获取[许可证授权](./dce/license0.md)后，首次登录 DCE 5.0 将会呈现一个仪表盘。
-该仪表盘以直观的方式展示了各种信息，包括正在运行的容器和 Pod、CPU 和内存使用情况、集群/节点/Pod 的健康状态、告警信息、资源利用情况以及功能一览等内容。
-
-![dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/dce/images/ipavo.png)
-
-[下载 DCE 5.0](download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](./dce/license0.md){ .md-button .md-button--primary }
+</div>

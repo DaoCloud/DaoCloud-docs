@@ -17,7 +17,7 @@ Golang can expose runtime metrics through the SDK by adding the following method
 
 Navigate to your application’s source folder and run the following command:
 
-```bash
+```golang
 go get go.opentelemetry.io/otel \
   go.opentelemetry.io/otel/attribute \
   go.opentelemetry.io/otel/exporters/prometheus \
@@ -28,7 +28,7 @@ go get go.opentelemetry.io/otel \
 
 ### Create an Initialization Function Using OTel SDK
 
-```go
+```golang
 import (
     .....
 
@@ -85,7 +85,7 @@ The above method will expose a metrics endpoint for your application at: `http:/
 
 Next, initialize it in `main.go`:
 
-```go
+```golang
 func main() {
     // ...
     tp := initMeter()
@@ -95,7 +95,7 @@ func main() {
 
 If you want to add custom metrics, you can refer to the following:
 
-```go
+```golang
 // exposeClusterMetric exposes a metric like "insight_logging_count{} 1"
 func (s *insightServer) exposeLoggingMetric(lserver *log.LogService) {
     s.meter = global.Meter("insight.io/basic")
@@ -119,7 +119,7 @@ func (s *insightServer) exposeLoggingMetric(lserver *log.LogService) {
 
 Then, call this method in `main.go`:
 
-```go
+```golang
 // ...
 s.exposeLoggingMetric(lservice)
 // ...

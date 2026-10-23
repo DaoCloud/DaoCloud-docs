@@ -16,11 +16,11 @@ of complex environments with multiple clouds and clusters. It offers service tra
 security governance, service traffic monitoring, and integration with traditional microservices
 (such as Spring Cloud and Dubbo).
 
-DCE 5.0's service mesh is compatible with the native Istio open-source service mesh and provides
+DCE's service mesh is compatible with the native Istio open-source service mesh and provides
 native Istio access management capabilities. At a higher level, a service mesh helps reduce the
 complexity of service governance and alleviate the pressure on development and operations teams.
 
-As a member of the DCE 5.0 product system, the service mesh seamlessly integrates with the
+As a member of the DCE product system, the service mesh seamlessly integrates with the
 [container management platform](../../kpanda/intro/index.md), providing users with an
 out-of-the-box experience. It also serves as infrastructure support for the
 [microservice engine](../../skoala/intro/index.md), enabling unified management of various
@@ -28,7 +28,7 @@ microservice systems through a single platform.
 
 ## Product Advantages
 
-DCE 5.0's service mesh has the following advantages compared to other products:
+DCE's service mesh has the following advantages compared to other products:
 
 - Simple and easy to use
 
@@ -174,6 +174,6 @@ flowchart TD
 - [Common 503 Errors in Service Mesh](../troubleshoot/503-issue.md)
 - [How to Allow Applications Listening on Localhost to Be Accessed by Other Pods](../troubleshoot/localhost-by-pod.md)
 
-[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../../dce/license0.md){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

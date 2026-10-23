@@ -8,11 +8,11 @@ This section lists some of DaoCloud’s open source projects and sites, both sel
 
 ### Self-Hosted Products
 
-DaoCloud’s main products currently include the cloud-native operating system DCE 5.0 and the compute management platform d.run.
+DaoCloud’s main products currently include the cloud-native operating system DCE and the compute management platform d.run.
 
 | Site | Description | Generator | Build Method | Repo |
 |-----|-----|-------|---------|----------|
-| [DCE 5.0](https://docs.daocloud.io) | A high-performance, scalable cloud-native OS. Its documentation source is fully open source | mkdocs-material | cloudflare/wrangler-action@v3 | https://github.com/DaoCloud/DaoCloud-docs |
+| [DCE](https://docs.daocloud.io) | A high-performance, scalable cloud-native OS. Its documentation source is fully open source | mkdocs-material | cloudflare/wrangler-action@v3 | https://github.com/DaoCloud/DaoCloud-docs |
 | [d.run](https://docs.d.run) | AIGC integrated compute management, large model services, and operations platform. Documentation source fully open | mkdocs-material | cloudflare/wrangler-action@v3 | https://github.com/d-run/drun-docs |
 
 ### CNCF Sandbox

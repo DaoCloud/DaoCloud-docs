@@ -5,7 +5,7 @@ date: 2024-05-11
 
 # etcd Components Deployed in Host Mode and Separated from the Control Plane
 
-Starting from v0.13.0, the installer supports deploying DCE 5.0 in host mode for etcd
+Starting from v0.13.0, the installer supports deploying DCE in host mode for etcd
 (i.e., separating the etcd node from the master node). This allows for decoupling from the
 control plane, thereby achieving an independent high-availability etcd.
 
@@ -87,7 +87,7 @@ control plane, thereby achieving an independent high-availability etcd.
 3. Configure the manifest file (optional). You can obtain this file from the
    offline package `offline/sample` and modify it as needed.
 
-4. Start the installation of DCE 5.0.
+4. Start the installation of DCE.
 
     ```bash
     ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml 

@@ -7,7 +7,7 @@ Date: 2024-02-23
 
 The container Vertical Pod Autoscaler (VPA) calculates the most suitable CPU and memory request values ​​for the Pod by monitoring the Pod's resource application and usage over a period of time. Using VPA can allocate resources to each Pod in the cluster more reasonably, improve the overall resource utilization of the cluster, and avoid waste of cluster resources.
 
-DCE 5.0 supports VPA through containers. Based on this feature, the Pod request value can be dynamically adjusted according to the usage of container resources. DCE 5.0 supports manual and automatic modification of resource request values, and you can configure them according to actual needs.
+DCE supports VPA through containers. Based on this feature, the Pod request value can be dynamically adjusted according to the usage of container resources. DCE supports manual and automatic modification of resource request values, and you can configure them according to actual needs.
 
 This page describes how to configure VPA for deployment.
 

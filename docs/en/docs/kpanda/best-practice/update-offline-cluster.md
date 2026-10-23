@@ -7,19 +7,19 @@ Date: 2024-10-25
 
 !!! note
 
-    This document is specifically designed for deploying or upgrading the Kubernetes version of worker clusters created on the DCE 5.0 platform in offline mode. It does not cover the deployment or upgrade of other Kubernetes components.
+    This document is specifically designed for deploying or upgrading the Kubernetes version of worker clusters created on the DCE platform in offline mode. It does not cover the deployment or upgrade of other Kubernetes components.
 
 This guide is applicable to the following offline scenarios:
 
-- You can follow the operational guidelines to deploy the recommended Kubernetes version in a non-GUI environment created by the DCE 5.0 platform.
-- You can upgrade the Kubernetes version of worker clusters created using the DCE 5.0 platform by generating incremental offline packages.
+- You can follow the operational guidelines to deploy the recommended Kubernetes version in a non-GUI environment created by the DCE platform.
+- You can upgrade the Kubernetes version of worker clusters created using the DCE platform by generating incremental offline packages.
 
 The overall approach is as follows:
 
 1. Build the offline package on an integrated node.
 2. Import the offline package to the bootstrap node.
 3. Update the Kubernetes version manifest for the [global service cluster](../user-guide/clusters/cluster-role.md#global-service-cluster).
-4. Use the DCE 5.0 UI to create or upgrade the Kubernetes version of the worker cluster.
+4. Use the DCE UI to create or upgrade the Kubernetes version of the worker cluster.
 
 !!! note
 
@@ -71,8 +71,18 @@ Since the offline environment cannot connect to the internet, you need to prepar
 
     ```bash
     # Assuming the Kubean version is v0.13.9
-    docker run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.13.9
+    docker run \
+        -v $(pwd)/data:/data \
+        -v $(pwd)/manifest.yml:/manifest.yml \
+        -e ZONE=CN \
+        -e MODE=FULL \
+        ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.13.9
     ```
+
+    | Environment Variable | Description of Available Values | Default Value |
+    | ------ | --------- | ----- |
+    | ZONE | - `DEFAULT`: Download the offline resources from the default original address<br/> - `CN`: Download the offline resources from the mainland DaoCloud accelerator address | `DEFAULT` |
+    | MODE | - `INCR`: Build the offline resources only for the components specified in the configuration (that is, an incremental package)<br/> - `FULL`: Build the offline resources for the components specified in the configuration as well as other components required for cluster deployment (that is, a full package) | `INCR` |
 
     After the Docker service completes running, check the files in the __/data__ folder. The folder structure should look like this:
 
@@ -153,7 +163,7 @@ kubectl apply -f data/kubeanofflineversion.cr.patch.yaml
 
 ## Next Steps
 
-Log into the DCE 5.0 UI management interface to continue with the following actions:
+Log into the DCE UI management interface to continue with the following actions:
 
 1. Refer to the [Creating Cluster Documentation](../user-guide/clusters/create-cluster.md) to create a worker cluster, where you can select the incremental version of Kubernetes.
 

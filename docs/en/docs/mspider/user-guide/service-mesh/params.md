@@ -5,7 +5,7 @@ This page lists the detailed meanings of some error parameters for reference.
 
 ## Max Retries
 
-The service mesh embeds Envoy components, and some parameters related to Envoy can be set when [creating the mesh](./README.md).
+The service mesh embeds Envoy components, and some parameters related to Envoy can be set when [creating the mesh](./index.md).
 For more details, refer to the [Envoy documentation](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on).
 
 ### HTTP

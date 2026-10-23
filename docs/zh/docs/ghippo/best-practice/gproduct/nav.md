@@ -46,7 +46,7 @@ hide:
 
     全局管理的导航栏 __category__ 配置在 ConfigMap，暂时不能以注册方式增加，需要联系全局管理团队来添加。
 
-2. `kpanda` 前端作为微前端接入到 DCE 5.0 父应用 Anakin 中
+2. `kpanda` 前端作为微前端接入到 DCE 父应用 Anakin 中
 
     前端使用 [qiankun](https://qiankun.umijs.org/zh) 来接入子应用 UI，
     可以参考[快速上手](https://qiankun.umijs.org/zh/guide/getting-started)。

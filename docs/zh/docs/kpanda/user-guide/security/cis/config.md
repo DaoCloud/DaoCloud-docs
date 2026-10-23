@@ -16,7 +16,7 @@
 
 3. 填写配置名称、选择配置模板、按需勾选扫描项，最后点击 __确定__ 。
 
-    扫描模板：目前提供了两个模板。 __kubeadm__ 模板适用于一般情况下的 Kubernetes 集群。 __daocloud__ 模板在 __kubeadm__ 模板基础上，结合 DCE 5.0 的平台设计忽略了不适用于 DCE 5.0 的扫描项。
+    扫描模板：目前提供了两个模板。 __kubeadm__ 模板适用于一般情况下的 Kubernetes 集群。 __daocloud__ 模板在 __kubeadm__ 模板基础上，结合 DCE 的平台设计忽略了不适用于 DCE 的扫描项。
 
     ![安全管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security03.png)
 

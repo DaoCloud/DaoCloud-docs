@@ -36,3 +36,5 @@ Follow the steps below to create a circuit breaking rule:
 4. After creating the rule, you can view it in the list of circuit breaking rules. Click the more options button on the right side to update or delete the rule.
 
    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov07.png)
+
+Refer to the video tutorial: [Sentinel Circuit Breaker Rules](../../../../videos/skoala.md#sentinel-circuit-breaker-rules).

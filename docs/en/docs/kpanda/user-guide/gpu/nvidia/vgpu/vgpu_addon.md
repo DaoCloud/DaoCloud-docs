@@ -1,7 +1,7 @@
 # Installing NVIDIA vGPU Addon
 
 To virtualize a single NVIDIA GPU into multiple virtual GPUs and allocate them to different virtual machines or users, you can use NVIDIA's vGPU capability.
-This section explains how to install the vGPU plugin in the DCE 5.0 platform, which is a prerequisite for using NVIDIA vGPU capability.
+This section explains how to install the vGPU plugin in the DCE platform, which is a prerequisite for using NVIDIA vGPU capability.
 
 ## Prerequisites
 

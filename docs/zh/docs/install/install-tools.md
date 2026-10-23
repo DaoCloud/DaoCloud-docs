@@ -1,6 +1,6 @@
 # 安装依赖项
 
-安装 DCE 5.0 之前，需要先安装一些依赖项。
+安装 DCE 之前，需要先安装一些依赖项。
 
 - 对于社区版，请在 K8s Master 节点上安装依赖项。
 - 对于商业版，请在[火种节点](./commercial/deploy-arch.md)上安装依赖项。
@@ -25,7 +25,7 @@
 1. 下载脚本。
 
     ```bash
-    export VERSION=v0.41.0   # (1)!
+    export VERSION=v0.45.0   # (1)!
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
@@ -58,20 +58,20 @@
 1. 找一台能连通外网的机器，下载安装脚本。
 
     ```bash
-    export VERSION=v0.41.0
+    export VERSION=v0.45.0
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
 2. 下载前置依赖组件离线包。
 
     ```bash
-    export VERSION=v0.41.0  
+    export VERSION=v0.45.0  
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz
     ```
 
     !!! note
 
-        - 如果是 arm 架构，请使用下载地址：
+        - 如果是 ARM 架构，请使用下载地址：
           <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_arm64.tar.gz>
         - 确保离线包与脚本在同一个目录层级
 
@@ -93,4 +93,4 @@
         ./install_prerequisite_${VERSION}.sh offline full
         ```
 
-接下来就可以安装 DCE 5.0 [社区版](community/resources.md)或[商业版](commercial/deploy-requirements.md)了。
+接下来就可以安装 DCE [社区版](community/resources.md)或[商业版](commercial/deploy-requirements.md)了。

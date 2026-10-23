@@ -8,11 +8,11 @@
 
 ### 自主产品
 
-目前 DaoCloud 的主打产品为云原生操作系统 DCE 5.0 和算力运营管控平台 d.run。
+目前 DaoCloud 的主打产品为云原生操作系统 DCE 和算力运营管控平台 d.run。
 
 | 网站 | 介绍 | 生成器 | 构建方式 | Repo 地址 |
 |-----|-----|-------|---------|----------|
-| [DCE 5.0](https://docs.daocloud.io) | 一款高性能、可扩展的云原生操作系统。其文档站的源代码完全开源 | mkdocs-material | cloudflare/wrangler-action@v3 | https://github.com/DaoCloud/DaoCloud-docs |
+| [DCE](https://docs.daocloud.io) | 一款高性能、可扩展的云原生操作系统。其文档站的源代码完全开源 | mkdocs-material | cloudflare/wrangler-action@v3 | https://github.com/DaoCloud/DaoCloud-docs |
 | [d.run](https://docs.d.run) | AIGC 综合算力运维、大模型服务和运营平台。其文档站的源代码完全开源 | mkdocs-material | cloudflare/wrangler-action@v3 | https://github.com/d-run/drun-docs |
 
 ### CNCF Sandbox

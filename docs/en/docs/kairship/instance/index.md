@@ -5,7 +5,7 @@ hide:
 
 # Multicloud Instance Details
 
-In DCE 5.0 Multicloud Management, you can easily view the details of each multicloud instance.
+In DCE Multicloud Management, you can easily view the details of each multicloud instance.
 
 1. In the multicloud instance list, click the name of a specific instance and enter overview page.
 
@@ -28,3 +28,7 @@ In DCE 5.0 Multicloud Management, you can easily view the details of each multic
     ![edit](../images/instance-edit.png)
 
     ![certificate](../images/certificate.png)
+
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

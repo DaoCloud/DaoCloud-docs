@@ -3,9 +3,9 @@ MTPE: FanLin
 Date: 2024-01-05
 ---
 
-# Implement One-Click Migration from DCE 4.0 to DCE 5.0
+# Implement One-Click Migration from DCE 4.0 to DCE
 
-This section provides a walkthrough on how to achieve one-click migrating applications from DCE 4.0 to DCE 5.0 using the deployment nginx as an example, facilitated through the Multicloud Management interface.
+This section provides a walkthrough on how to achieve one-click migrating applications from DCE 4.0 to DCE using the deployment nginx as an example, facilitated through the Multicloud Management interface.
 
 ## Prerequisites
 

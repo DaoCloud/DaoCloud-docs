@@ -7,7 +7,7 @@ Date: 2024-01-18
 
 velero is an open source tool for backing up and restoring Kubernetes cluster resources. It can back up resources in a Kubernetes cluster to cloud storage services, local storage, or other locations, and restore those resources to the same or a different cluster when needed.
 
-This section introduces how to deploy the Velero plugin in DCE 5.0 using the __Helm Apps__.
+This section introduces how to deploy the Velero plugin in DCE using the __Helm Apps__.
 
 ## Prerequisites
 

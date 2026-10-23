@@ -29,7 +29,7 @@ controller:
     otel-sampler-parent-based: "false"
 ```
 
-需要注意的是 `otel-service-name` 参数应该是 `xxx.xxx`格式  前面是 `service` 名、后面是 `k8s.namespace.name` 属性，ingress-nginx 上报链路至 `insight-agent-opentelemetry-collector` 后， `insight-agent-opentelemetry-collector` 会按照该格式进行解析。理
+需要注意的是 `otel-service-name` 参数应该是 `xxx.xxx`格式  前面是 `service` 名、后面是 `k8s.namespace.name` 属性，ingress-nginx 上报链路至 `insight-agent-opentelemetry-collector` 后， `insight-agent-opentelemetry-collector` 会按照该格式进行解析。
 
 ## 验证结果
 配置完成后，所有经过 ingress-nginx 的链路都能被观测到。
