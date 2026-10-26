@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-date: 2024-01-09
+date: 2026-10-26
 hide:
   - toc
 ---
@@ -9,50 +9,41 @@ hide:
 
 The modules included in DCE Community are [Global Management](../ghippo/intro/index.md),
 [Container Management](../kpanda/intro/index.md), and [Insight](../insight/intro/index.md).
+You are advised to [download](../download/index.md) and [install](../install/community/k8s/online.md)
+DCE Community first, and then follow the steps below to activate it.
 
-```mermaid
-graph LR
-
-apply[Apply for a license] --> get[Get offline authorization] --> activate[Activate offline authorization]
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-click apply "https://docs.daocloud.io/en/dce/license0.html#apply-for-a-license"
-```
-
-![license](https://docs.daocloud.io/daocloud-docs-images/docs/images/license01.png)
+![DCE Community license application and activation flow](images/license-flow.svg)
 
 ## Apply for a License
 
 Follow the steps below to get a license for your DCE Community:
 
-1. Click [Apply for license](https://qingflow.com/f/58604bf8){ .md-button } and click __Submit__ after you fill in required information in the form.
+1. Click [Apply for a license key](https://qingflow.com/f/58604bf8){ .md-button } and click __Submit__ after you fill in required information in the form.
 
     ![license](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/license011.png)
 
-2. Follow the on-screen instructions, check your email containing the license, and then click [Get an offline authorization code](https://license.daocloud.io/dce5-license){ .md-button }.
+2. Follow the on-screen instructions, check your email containing the license key, and then click [Get an offline authorization code](https://license.daocloud.io/dce5-license){ .md-button } .
 
     ![get-auth-code](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/license012.png)
 
-3. Input the license you just received and input your ESN, click __Get an offline authorization code__ .
+3. Input the license key obtained in the previous step, input the unique ESN of the device, and click __Get an offline authorization code__ .
+
     ![offline-auth-code](https://docs.daocloud.io/daocloud-docs-images/docs/images/license03.png)
 
     ESN is the unique device code of the cluster system.
-    Follow the steps to get your ESN: Open DCE, click __Global Management__ -> __Settings__ -> __Licenses__ , click __Manage License__ , and copy the ESN code.
+    To obtain it, open DCE, click __Global Management__ -> __Settings__ -> __Licenses__ , click the __Manage License__ button to open the __Manage License__ page, and copy the ESN code.
 
     ![esn](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/license02.png)
 
-4. Paste the offline authorization code, and click __Activate Now__ . Congratulations! :smile: It's time to explore the new DCE now!
+4. Copy and paste the offline authorization code obtained in the previous step, and click __Activate Now__ . Congratulations! :smile: It's time to explore the new DCE now!
+
+*[ESN]: Abbreviation for Electronic Serial Number. It is a unique identifier used to identify a device, typically consisting of eight characters.
+*[DCE]: Abbreviation for DaoCloud Enterprise, a next-generation AI computing platform.
 
 !!! info "📢 Tips"
 
     The offline authorization code is bound to the device ESN. Please keep the license key email safe and secure.
     You can contact the DaoCloud delivery team at any time to reapply, as we have saved all your license keys for you.
-
-*[ESN]: Abbreviation for Electronic Serial Number. It is a unique identifier used to identify a device, typically consisting of eight characters.
-*[DCE]: Abbreviation for DaoCloud Enterprise, a next-generation AI computing platform.
 
 ## Renew License
 
@@ -64,7 +55,7 @@ If your license expires for any reason, you can follow the steps below to renew 
 
     ![clear ESN](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/esn.png)
 
-2. Refer to the previous section to reapply for the license.
+2. Refer to [the previous section](#apply-for-a-license) to reapply for the license.
 
 ### Renew License by Modules
 
@@ -78,7 +69,7 @@ To do this, go to the [license page](https://qingflow.com/f/58604bf8) and select
 
 The pages you may frequently access in the process of above procedure are listed as follows:
 
-[Apply for a license](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }
-[View your license](https://license.daocloud.io/dce5-licenses){ .md-button .md-button--primary }
+[Apply for a license key](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }
+[View license keys](https://license.daocloud.io/dce5-licenses){ .md-button .md-button--primary }
 [Get an offline authorization code](https://license.daocloud.io/dce5-license){ .md-button .md-button--primary }
 [Install DCE](../install/index.md){ .md-button .md-button--primary }

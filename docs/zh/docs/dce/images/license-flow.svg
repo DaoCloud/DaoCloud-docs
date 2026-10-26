@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 478" width="100%" role="img" aria-label="DCE 社区版许可证申请与激活流程：申请许可证密钥 → 换取离线授权码 → 激活离线授权码" font-family="'Noto Sans SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB','Source Han Sans SC',system-ui,sans-serif">
+  <title>DCE 社区版许可证申请与激活流程</title>
+  <rect width="1920" height="478" fill="#F5F6FA"/>
+
+  <!-- 三个步骤节点：① 申请 → ② 换取 → ③ 激活 -->
+  <g fill="none" stroke="#445057" stroke-width="4">
+    <circle cx="240" cy="129.5" r="34"/>
+    <circle cx="990" cy="129.5" r="34"/>
+    <circle cx="1682" cy="129.5" r="34"/>
+  </g>
+
+  <!-- 节点序号 -->
+  <g fill="#445057" font-size="51" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif">
+    <text x="240" y="148">1</text>
+    <text x="990" y="148">2</text>
+    <text x="1682" y="148">3</text>
+  </g>
+
+  <!-- 连接箭头 -->
+  <g stroke="#445057" stroke-width="4" fill="#445057">
+    <line x1="274" y1="129.5" x2="938" y2="129.5"/>
+    <polygon points="938,120.5 954,129.5 938,138.5"/>
+    <line x1="1024" y1="129.5" x2="1632" y2="129.5"/>
+    <polygon points="1632,120.5 1648,129.5 1632,138.5"/>
+  </g>
+
+  <!-- 步骤标签 -->
+  <g fill="#445057" font-size="36.5" text-anchor="middle">
+    <text x="240" y="245">步骤一</text>
+    <text x="990" y="245">步骤二</text>
+    <text x="1682" y="245">步骤三</text>
+  </g>
+
+  <!-- 步骤说明 -->
+  <g fill="#445057" font-size="51" text-anchor="middle">
+    <text x="240" y="356">申请许可证密钥</text>
+    <text x="990" y="356">换取离线授权码</text>
+    <text x="1682" y="356">激活离线授权码</text>
+  </g>
+</svg>
