@@ -21,7 +21,6 @@ nav:
                   - 升级注意事项: tf/install/upgrade-notes.md
               - Release Notes: tf/install/release-notes.md
       - 云原生 AI:
-          - tf/ai-os/index.md
           - 大模型服务平台:
               - 介绍:
                   - 什么是大模型服务平台: tf/hydra/intro/index.md

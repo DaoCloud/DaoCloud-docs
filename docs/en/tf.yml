@@ -21,7 +21,6 @@ nav:
                   - Upgrade Notes: tf/install/upgrade-notes.md
               - Release Notes: tf/install/release-notes.md
       - Cloud Native AI:
-          - tf/ai-os/index.md
           - LLM Studio:
               - Intro:
                   - What is LLM Studio: tf/hydra/intro/index.md
