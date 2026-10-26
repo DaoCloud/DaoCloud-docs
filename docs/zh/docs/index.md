@@ -169,13 +169,13 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
             <span class="tf-arch-card-title">AI Lab</span>
             <span class="tf-arch-card-tip">云原生训推一体化</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/intro/">
-            <span class="tf-arch-card-title">ClawOS</span>
-            <span class="tf-arch-card-tip">多智能体运行与治理</span>
-          </a>
           <a class="tf-arch-card tf-arch-card--model" href="drun/inferx/">
             <span class="tf-arch-card-title">推理加速</span>
             <span class="tf-arch-card-tip">推理加速与引擎管理</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/intro/">
+            <span class="tf-arch-card-title">ClawOS</span>
+            <span class="tf-arch-card-tip">多智能体运行与治理</span>
           </a>
         </div>
       </div>
@@ -187,13 +187,13 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
             <span class="tf-arch-card-title">容器管理</span>
             <span class="tf-arch-card-tip">集群与工作负载管理</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--compute" href="drun/topohub/intro/">
-            <span class="tf-arch-card-title">设备管理</span>
-            <span class="tf-arch-card-tip">硬件设备统一纳管</span>
-          </a>
           <a class="tf-arch-card tf-arch-card--compute" href="drun/kangaroo/intro/">
             <span class="tf-arch-card-title">镜像仓库</span>
             <span class="tf-arch-card-tip">镜像托管与集成</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="drun/topohub/intro/">
+            <span class="tf-arch-card-title">设备管理</span>
+            <span class="tf-arch-card-tip">硬件设备统一纳管</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="drun/network/intro/">
             <span class="tf-arch-card-title">云原生网络</span>
@@ -214,7 +214,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
             <span class="tf-arch-card-tip">智能运维助手</span>
           </a>
           <a class="tf-arch-card tf-arch-card--ops" href="drun/crane/intro/">
-            <span class="tf-arch-card-title">运营驾驶舱</span>
+            <span class="tf-arch-card-title">驾驶舱</span>
             <span class="tf-arch-card-tip">运营数据可视化</span>
           </a>
         </div>
@@ -314,7 +314,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 
 ## 探索产品模块
 
-<div class="grid cards" markdown>
+<div class="grid cards home-cards" markdown>
 
 - :material-robot:{ .lg .middle } __云原生 AI__
 
@@ -348,7 +348,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 
 </div>
 
-<div class="grid cards" markdown>
+<div class="grid cards home-cards" markdown>
 
 - :material-human-greeting:{ .lg .middle } __工作台__
 
