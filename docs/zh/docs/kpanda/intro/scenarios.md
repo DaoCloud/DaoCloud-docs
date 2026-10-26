@@ -2,43 +2,51 @@
 
 ## 适用场景
 
-### 应用的多云部署及跨云容灾
+=== "应用的多云部署及跨云容灾"
 
-**多云组合部署**
+    **多云组合部署**
 
-根据不同性价比的云平台组合，结合不同应用场景，进行多云组合，降低总体成本。对于金融等安全性要求高的行业用户，基于业务数据的安全性和敏感性要求，将部分业务应用部署在私有云环境中，而将非敏感性应用部署在云上集群中，并进行统一管理。
+    根据不同性价比的云平台组合，结合不同应用场景，进行多云组合，降低总体成本。对于金融等安全性要求高的行业用户，基于业务数据的安全性和敏感性要求，将部分业务应用部署在私有云环境中，而将非敏感性应用部署在云上集群中，并进行统一管理。
 
-![场景一](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sce1.jpg)
+    ![多云组合部署](../images/sce1.svg)
 
-**跨云容灾备份**
+    **跨云容灾备份**
 
-为保证业务高可用，同时将业务部署在不同地域的多个云容器平台上，帮助应用实现多地域的流量分发，并且实现跨云应用在同一平台管理，减少运维成本。另外当某个云容器平台发生故障时，通过统一流量分发的机制，自动的将业务流量切换到其他云容器平台上。
+    为保证业务高可用，同时将业务部署在不同地域的多个云容器平台上，帮助应用实现多地域的流量分发，并且实现跨云应用在同一平台管理，减少运维成本。另外当某个云容器平台发生故障时，通过统一流量分发的机制，自动的将业务流量切换到其他云容器平台上。
 
-![场景二](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sce2.jpg)
+    ![跨云容灾备份](../images/sce2.svg)
 
-### 跨云集群统一管理
+    相关操作：[创建工作集群](../user-guide/clusters/create-cluster.md)、[接入集群](../user-guide/clusters/integrate-cluster.md)、[应用备份](../user-guide/backup/deployment.md)。
 
-**跨云集群统一纳管**
+=== "跨云集群统一纳管与运维"
 
-无论基于不同基础设施环境（公有云，私有云和混合云），或者不同容器云厂商搭建的 Kubernetes 平台，容器管理模块可统一纳管。
+    **跨云集群统一纳管**
 
-降低因不同基础设施、不同云提供商带来的额外管理成本，统一管理流程，降低成本。
+    无论基于不同基础设施环境（公有云，私有云和混合云），或者不同容器云厂商搭建的 Kubernetes 平台，容器管理模块可统一纳管。
 
-**跨云集群统一运维**
+    降低因不同基础设施、不同云提供商带来的额外管理成本，统一管理流程，降低成本。
 
-不同的云容器提供商基于不同的 Kubernetes 发行版为客户提供不同云平台监控，实现统一平台监控运维难度大，无法便捷地了解整体运行状况，掌控故障处理进程和结果，基于容器管理模块，可基于集群的统一纳管实现一体化监控服务，实现多维度、跨云的统一监控运维。
+    **跨云集群统一运维**
 
-![场景三](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sce3.jpg)
+    不同的云容器提供商基于不同的 Kubernetes 发行版为客户提供不同云平台监控，实现统一平台监控运维难度大，无法便捷地了解整体运行状况，掌控故障处理进程和结果，基于容器管理模块，可基于集群的统一纳管实现一体化监控服务，实现多维度、跨云的统一监控运维。
 
-### 弹性扩缩应对流量高峰
+    ![跨云集群统一纳管与运维](../images/sce3.svg)
 
-**集群的弹性扩缩容**
+    相关操作：[接入集群](../user-guide/clusters/integrate-cluster.md)、[集群状态](../user-guide/clusters/cluster-status.md)、[执行集群巡检](../user-guide/inspect/inspect.md)。
 
-应对企业客户应对流量高峰，当业务应用部署所在 Kubernetes 容器平台资源已经达到阈值，需要结合底层 IaaS 弹性扩缩容能力，自动弹性扩缩容集群节点，从而应对超大流量的业务高峰，并在业务低谷期进行缩容，节约成本。
+=== "弹性扩缩应对流量高峰"
 
-**应用的弹性扩缩容**
+    **集群的弹性扩缩容**
 
-电商客户遇到双 11 等促销、限时秒杀等活动中，业务访问量迅速上升，需及时扩容应用计算资源，并根据用户设定的扩缩容策略自动调整，业务容器组数量随业务访问量上升而增加，随业务访问量下降而减少。
+    应对企业客户应对流量高峰，当业务应用部署所在 Kubernetes 容器平台资源已经达到阈值，需要结合底层 IaaS 弹性扩缩容能力，自动弹性扩缩容集群节点，从而应对超大流量的业务高峰，并在业务低谷期进行缩容，节约成本。
+
+    相关操作：[集群节点扩容](../user-guide/nodes/add-node.md)、[集群节点缩容](../user-guide/nodes/delete-node.md)。
+
+    **应用的弹性扩缩容**
+
+    电商客户遇到双 11 等促销、限时秒杀等活动中，业务访问量迅速上升，需及时扩容应用计算资源，并根据用户设定的扩缩容策略自动调整，业务容器组数量随业务访问量上升而增加，随业务访问量下降而减少。
+
+    相关操作：[基于内置指标创建 HPA](../user-guide/scale/create-hpa.md)、[基于自定义指标创建 HPA](../user-guide/scale/custom-hpa.md)、[创建 VPA](../user-guide/scale/create-vpa.md)。
 
 ## 优势
 
@@ -47,13 +55,13 @@
 **集群的统一管理**
 
 - 支持不同集群统一纳管，支持所有特定版本范围内的任意 Kubernetes 集群纳入容器管理范围，实现云上、云下、多云、混合云容器云平台的统一管理，规避厂商锁定。
-- 可通过 Web 界面一键式完成 Kubernetes 集群的平滑升级。
+- 可通过 Web 界面一键式完成 Kubernetes 集群的[平滑升级](../user-guide/clusters/upgrade-cluster.md)。
 - 统一 Web 界面实现集群创建、集群节点的扩缩容等管理能力。
 - 支持超大规模集群的统一纳管。
 
 **应用生产就绪**
 
-- 一站式应用分发，可通过镜像、YAML、Helm 进行应用分发，并实现跨云/跨集群的统一管理。
+- 一站式应用分发，可通过镜像、YAML、[Helm](../user-guide/helm/helm-app.md) 进行应用分发，并实现跨云/跨集群的统一管理。
 - 应用高可用，支持应用的分布式部署，支持单点故障流量的自动切换。
 - 丰富的监控指标，实现应用的全方位监控，提前预警应用流量高峰，应用故障。
 
@@ -66,7 +74,7 @@
 - 自建集群默认为高可用部署模式，保障您的业务高可用。当节点出现故障、自然灾害时，应用可持续运行，保障生产环境的高可用，实现业务应用系统不中断。
 - 跨地域应用高可用，支持跨地域部署不同的容器集群，能够同时将业务部署在不同地域的多个云容器集群上，帮助应用实现多地域的流量分发。
   当某个云容器集群发生故障、机房宕机或者自然灾害时，通过统一流量分发的机制，自动将业务流量切换到其他云容器平台上，保障应用的高可用。
-- 完善的用户权限体系，整合 [Kubernetes RBAC 权限体系](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/rbac/)，支持为不同用户设置不同粒度权限。
+- 完善的用户权限体系，整合 [Kubernetes RBAC 权限体系](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/rbac/)，支持为不同用户设置不同粒度权限，详见[容器管理权限说明](../user-guide/permissions/permission-brief.md)。
 
 **异构兼容**
 
@@ -84,25 +92,25 @@
 
 | 概念| 描述|
 |----|-----|
-| 集群 (Cluster)| 集群指容器运行所需要的云资源组合，关联了若干云服务器节点。可以创建若干集群或接入若干 Kubernetes 标准集群。|
-| 节点 (Node)| 每一个节点对应一台虚拟机/物理服务器，所有容器应用运行在集群的节点上。节点类型分为控制器节点（Controller）及工作节点（Worker）。|
-| 容器组 (Pod)| Pod 是 Kubernetes 部署应用或服务的最小基本单位，可以封装一个或多个应用容器、存储资源、一个独立的网络 IP。|
-| 容器 (Container)| 容器是通过容器镜像部署的实例，将应用程序从底层的主机设施中解耦，便于在不同的云或 OS 环境中部署。|
-| 工作负载 (Workload)| 在 Kubernetes 上运行的应用程序，包括无状态服务、状态服务、守护进程服务、普通任务和定时任务等。|
+| [集群 (Cluster)](../user-guide/clusters/cluster-role.md) | 集群指容器运行所需要的云资源组合，关联了若干云服务器节点。可以创建若干集群或接入若干 Kubernetes 标准集群。|
+| [节点 (Node)](../user-guide/nodes/add-node.md) | 每一个节点对应一台虚拟机/物理服务器，所有容器应用运行在集群的节点上。节点类型分为控制器节点（Controller）及工作节点（Worker）。|
+| [容器组 (Pod)](../user-guide/workloads/create-deployment.md) | Pod 是 Kubernetes 部署应用或服务的最小基本单位，可以封装一个或多个应用容器、存储资源、一个独立的网络 IP。|
+| 容器 (Container) | 容器是通过容器镜像部署的实例，将应用程序从底层的主机设施中解耦，便于在不同的云或 OS 环境中部署。|
+| [工作负载 (Workload)](../user-guide/workloads/create-deployment.md)| 在 Kubernetes 上运行的应用程序，包括无状态服务、状态服务、守护进程服务、普通任务和定时任务等。|
 | 应用模板| 标准模板的统一资源管理和调度，支持管理和部署社区标准应用模板及自定义业务应用模板。|
 | 镜像 (Image)| 容器镜像是一个容器应用打包的标准格式模板，用于创建容器，包含程序、库、资源、配置等文件。|
 | 命名空间 (Namespace)| 对一组资源和对象的抽象整合，不同命名空间中的数据彼此隔离。|
-| 服务 (Service)| 将运行在一组 Pod 上的应用程序公开为网络服务的抽象方法，支持 ClusterIP、NodePort 和 LoadBalancer 等类型。|
-| 七层负载均衡 (Ingress)| 为进入集群的请求提供路由规则的集合，支持 URL、负载均衡、SSL 终止等功能。|
-| 网络策略 (NetworkPolicy)| 提供基于策略的网络控制，用于隔离应用并减少攻击面。|
-| 配置项 (ConfigMap)| 保存配置非机密性的数据到键值对中，容器组可以将其用作环境变量、命令行参数或配置文件。|
-| 密钥 (Secret)| 用于保存机密数据的配置信息，如密码、Token、密钥等。|
+| [服务 (Service)](../user-guide/network/create-services.md)| 将运行在一组 Pod 上的应用程序公开为网络服务的抽象方法，支持 ClusterIP、NodePort 和 LoadBalancer 等类型。|
+| [七层负载均衡 (Ingress)](../user-guide/network/create-ingress.md)| 为进入集群的请求提供路由规则的集合，支持 URL、负载均衡、SSL 终止等功能。|
+| [网络策略 (NetworkPolicy)](../user-guide/network/network-policy.md)| 提供基于策略的网络控制，用于隔离应用并减少攻击面。|
+| [配置项 (ConfigMap)](../user-guide/configmaps-secrets/create-configmap.md)| 保存配置非机密性的数据到键值对中，容器组可以将其用作环境变量、命令行参数或配置文件。|
+| [密钥 (Secret)](../user-guide/configmaps-secrets/create-secret.md)| 用于保存机密数据的配置信息，如密码、Token、密钥等。|
 | 标签 (Label)| 一对 key/value 关联到对象上，用于标示对象的特点。|
 | 选择器 (LabelSelector)| Kubernetes 核心的分组机制，通过 Label Selector 识别一组有共同特征的资源对象。|
 | 注解 (Annotation)| 将 Kubernetes 资源对象关联到任意的非标识性元数据，可以通过注解检索这些元数据。|
-| 存储卷 (PersistentVolume)| 提供方便的持久化卷，PV 提供网络存储资源，PVC 申领存储资源。|
-| 存储声明 (PersistentVolumeClaim)| 对 PV 的申领请求，类似于 Pod 消费 Node 资源。|
-| 弹性扩缩 (HPA)| Kubernetes 中实现 Pod 水平自动扩缩的功能。|
+| [存储卷 (PersistentVolume)](../user-guide/storage/pv.md)| 提供方便的持久化卷，PV 提供网络存储资源，PVC 申领存储资源。|
+| [存储声明 (PersistentVolumeClaim)](../user-guide/storage/pvc.md)| 对 PV 的申领请求，类似于 Pod 消费 Node 资源。|
+| [弹性扩缩 (HPA)](../user-guide/scale/create-hpa.md)| Kubernetes 中实现 Pod 水平自动扩缩的功能。|
 | 亲和性与反亲和性| 通过亲和性和反亲和性定义约束类型，实现就近部署和高可靠性。|
 | 节点亲和性 (NodeAffinity)| 限制容器组被调度到特定的节点上。|
 | 节点反亲和性 (NodeAntiAffinity)| 限制容器组不被调度到特定的节点上。|

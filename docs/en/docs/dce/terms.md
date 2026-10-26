@@ -719,7 +719,7 @@ This page lists some terms common to DCE in alphabetical order.
     The control plane is a set of system services that configure the mesh or subnet of the mesh to manage
     communication between workload instances. All instances of the control plane in a single mesh share the same configuration resources.
 
-- [CRD](../kpanda/user-guide/custom-resources/create.md), CustomResourceDefinition
+- [CRD](../kpanda/user-guide/crd/create.md), CustomResourceDefinition
 
     CustomResourceDefinition (CRD) allows you to add resource objects to your Kubernetes API server with
     customized code without having to compile a complete custom API server. When the API resources supported

@@ -186,7 +186,7 @@ nav:
                   - Create Ingress: tf/kpanda/user-guide/network/create-ingress.md
                   - Network Policy: tf/kpanda/user-guide/network/network-policy.md
                   - Network Configuration: tf/network/config/index.md
-              - Custom Resources: tf/kpanda/user-guide/custom-resources/create.md
+              - Custom Resources: tf/kpanda/user-guide/crd/create.md
               - Container Storage:
                   - PVC: tf/kpanda/user-guide/storage/pvc.md
                   - PV: tf/kpanda/user-guide/storage/pv.md

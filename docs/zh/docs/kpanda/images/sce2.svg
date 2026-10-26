@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1354 856" width="100%" role="img" aria-label="容器管理适用场景：跨云容灾备份示意" font-family="'Noto Sans SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB','Source Han Sans SC',system-ui,sans-serif">
+  <title>KPanda 跨云容灾备份示意</title>
+  <rect width="1354" height="856" fill="#FFFFFF"/>
+  <rect x="14.5" y="4.5" width="1318" height="674" fill="none" stroke="#E4E4E4" stroke-width="4" stroke-dasharray="12 6"/>
+  <text x="54" y="58" font-size="30" fill="#1C1C1E">KPanda 容器管理平台</text>
+  <path d="M648 55 H691 V100 H705 L669.5 133 L634 100 H648 Z" fill="#1E4AF5"/>  <rect x="397.5" y="134.5" width="566" height="91" fill="none" stroke="#1E4AF5" stroke-width="4"/>
+  <g transform="translate(555,150) scale(1.0,1.0)">
+    <rect x="16" y="1.6" width="26" height="16.8" rx="3" fill="none" stroke="#3A3A3C" stroke-width="3"/>
+    <line x1="29" y1="18.4" x2="29" y2="31" stroke="#3A3A3C" stroke-width="3" stroke-linecap="butt"/>    <line x1="7.5" y1="31" x2="50.5" y2="31" stroke="#3A3A3C" stroke-width="3" stroke-linecap="butt"/>    <line x1="7.5" y1="31" x2="7.5" y2="37.4" stroke="#3A3A3C" stroke-width="3" stroke-linecap="butt"/>    <line x1="29" y1="31" x2="29" y2="37.4" stroke="#3A3A3C" stroke-width="3" stroke-linecap="butt"/>    <line x1="50.5" y1="31" x2="50.5" y2="37.4" stroke="#3A3A3C" stroke-width="3" stroke-linecap="butt"/>    <rect x="0.8" y="37.4" width="13.4" height="18" rx="2.4" fill="none" stroke="#3A3A3C" stroke-width="3"/>
+    <rect x="22.3" y="37.4" width="13.4" height="18" rx="2.4" fill="none" stroke="#3A3A3C" stroke-width="3"/>
+    <rect x="43.8" y="37.4" width="13.4" height="18" rx="2.4" fill="none" stroke="#3A3A3C" stroke-width="3"/>
+  </g>
+  <text x="637" y="190" font-size="28" fill="#1C1C1E">负载均衡</text>
+  <line x1="651" y1="227" x2="255" y2="300" stroke="#1E4AF5" stroke-width="4.5" stroke-linecap="butt"/>
+  <line x1="679.5" y1="227" x2="679.5" y2="300" stroke="#1E4AF5" stroke-width="4.5" stroke-linecap="butt"/>
+  <line x1="711" y1="227" x2="1100" y2="300" stroke="#1E4AF5" stroke-width="4.5" stroke-linecap="butt"/>
+  <text x="701" y="277" font-size="22" fill="#1C1C1E">50%</text>
+  <text x="937" y="262" font-size="22" fill="#1C1C1E">50%</text>
+  <rect x="57.5" y="302.5" width="377" height="353" fill="none" stroke="#1E4AF5" stroke-width="6"/>
+  <text x="74.0" y="345" font-size="22" font-weight="700" fill="#1C1C1E">容器云引擎（北京）</text>
+  <rect x="89.5" y="380" width="313" height="90" fill="#1E4AF5"/>
+  <text x="246.0" y="437" font-size="23" text-anchor="middle" fill="#FFFFFF">App01</text>
+  <g transform="translate(112.0,562.5) scale(0.9814814814814815,1.0)">
+    <path d="M27 0.5 L53 14 L53 43 L27 56.5 L1 43 L1 14 Z M27 13.5 L40.5 20 L40.5 32.5 L27 39 L13.5 32.5 L13.5 20 Z" fill="#5CC96B" fill-rule="evenodd"/>    <line x1="58" y1="28.5" x2="40.5" y2="26" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="41" y1="4.5" x2="33.75" y2="16.75" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="13" y1="4.5" x2="20.25" y2="16.75" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="-4" y1="28.5" x2="13.5" y2="26" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="13" y1="52.5" x2="20.25" y2="35.75" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="41" y1="52.5" x2="33.75" y2="35.75" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>  </g>
+  <text x="180.0" y="604" font-size="38" font-weight="700" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" textLength="168" lengthAdjust="spacingAndGlyphs" fill="#111214">DaoCloud</text>
+  <rect x="492.5" y="302.5" width="377" height="353" fill="none" stroke="#1E4AF5" stroke-width="6"/>
+  <text x="509.0" y="345" font-size="22" font-weight="700" fill="#1C1C1E">容器云引擎（上海）</text>
+  <rect x="524.5" y="380" width="313" height="90" fill="#1E4AF5"/>
+  <text x="681.0" y="437" font-size="23" text-anchor="middle" fill="#FFFFFF">App02</text>
+  <g transform="translate(547.0,562.5) scale(0.9814814814814815,1.0)">
+    <path d="M27 0.5 L53 14 L53 43 L27 56.5 L1 43 L1 14 Z M27 13.5 L40.5 20 L40.5 32.5 L27 39 L13.5 32.5 L13.5 20 Z" fill="#5CC96B" fill-rule="evenodd"/>    <line x1="58" y1="28.5" x2="40.5" y2="26" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="41" y1="4.5" x2="33.75" y2="16.75" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="13" y1="4.5" x2="20.25" y2="16.75" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="-4" y1="28.5" x2="13.5" y2="26" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="13" y1="52.5" x2="20.25" y2="35.75" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="41" y1="52.5" x2="33.75" y2="35.75" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>  </g>
+  <text x="615.0" y="604" font-size="38" font-weight="700" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" textLength="168" lengthAdjust="spacingAndGlyphs" fill="#111214">DaoCloud</text>
+  <rect x="922.5" y="302.5" width="377" height="353" fill="none" stroke="#1E4AF5" stroke-width="6"/>
+  <text x="939.0" y="345" font-size="22" font-weight="700" fill="#1C1C1E">容器云引擎（深圳）</text>
+  <rect x="954.5" y="380" width="313" height="90" fill="#1E4AF5"/>
+  <text x="1111.0" y="437" font-size="23" text-anchor="middle" fill="#FFFFFF">App03</text>
+  <g transform="translate(977.0,562.5) scale(0.9814814814814815,1.0)">
+    <path d="M27 0.5 L53 14 L53 43 L27 56.5 L1 43 L1 14 Z M27 13.5 L40.5 20 L40.5 32.5 L27 39 L13.5 32.5 L13.5 20 Z" fill="#5CC96B" fill-rule="evenodd"/>    <line x1="58" y1="28.5" x2="40.5" y2="26" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="41" y1="4.5" x2="33.75" y2="16.75" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="13" y1="4.5" x2="20.25" y2="16.75" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="-4" y1="28.5" x2="13.5" y2="26" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="13" y1="52.5" x2="20.25" y2="35.75" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>    <line x1="41" y1="52.5" x2="33.75" y2="35.75" stroke="#FFFFFF" stroke-width="4.0" stroke-linecap="butt"/>  </g>
+  <text x="1045.0" y="604" font-size="38" font-weight="700" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" textLength="168" lengthAdjust="spacingAndGlyphs" fill="#111214">DaoCloud</text>
+  <line x1="135" y1="381" x2="371" y2="617" stroke="#C63520" stroke-width="32" stroke-linecap="butt"/>
+  <line x1="371" y1="381" x2="135" y2="617" stroke="#C63520" stroke-width="32" stroke-linecap="butt"/>
+  <rect x="55.5" y="682.5" width="1244" height="164" fill="none" stroke="#1E4AF5" stroke-width="6"/>
+  <text x="62" y="720.5" font-size="22" font-weight="700" fill="#1C1C1E">数据中心</text>
+  <rect x="70.5" y="735.5" width="371" height="64" fill="none" stroke="#1C1C1E" stroke-width="4"/>
+  <rect x="490.5" y="735.5" width="371" height="64" fill="none" stroke="#1C1C1E" stroke-width="4"/>
+  <rect x="927.5" y="735.5" width="371" height="64" fill="none" stroke="#1C1C1E" stroke-width="4"/>
+  <g transform="translate(166.00,743.50) scale(2.0833,2.3750) translate(0,-4)">
+    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" fill="#4A90D9"/>    <circle cx="17.4" cy="14.2" r="6.1" fill="#FFFFFF"/>
+    <path d="M21.30 14.20 L19.35 17.58 L15.45 17.58 L13.50 14.20 L15.45 10.82 L19.35 10.82 Z" fill="none" stroke="#4A90D9" stroke-width="1.8" stroke-linejoin="round"/>  </g>
+  <text x="236.5" y="773.5" font-size="22" fill="#1C1C1E">公有云</text>
+  <g transform="translate(587.00,740.50) scale(2.0000,2.7500) translate(0,-4)">
+    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" fill="none" stroke="#4A90D9" stroke-width="2.1" stroke-linejoin="round"/>    <path d="M15.9 13.2v-1.7a2.5 2.5 0 0 1 5 0v1.7" fill="none" stroke="#FFFFFF" stroke-width="4.4"/>
+    <rect x="14.1" y="12.4" width="8.6" height="7.0" rx="1.5" fill="#FFFFFF"/>
+    <path d="M15.9 13.2v-1.7a2.5 2.5 0 0 1 5 0v1.7" fill="none" stroke="#4A90D9" stroke-width="1.9"/>
+    <rect x="14.6" y="12.9" width="7.6" height="6.0" rx="1.2" fill="#4A90D9"/>
+  </g>
+  <text x="656.5" y="773.5" font-size="22" fill="#1C1C1E">私有云</text>
+  <g transform="translate(1025.00,736.50) scale(0.9200,1.0000)">
+    <path d="M49.20 26.00 L37.10 48.00 L12.90 48.00 L0.80 26.00 L12.90 4.00 L37.10 4.00 Z" fill="none" stroke="#4A90D9" stroke-width="2.2" stroke-linejoin="round"/>    <g transform="translate(25,27) scale(0.74) translate(-12,-12)">
+      <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" fill="none" stroke="#4A90D9" stroke-width="3.6" stroke-linejoin="round"/>    </g>
+    <circle cx="25" cy="48.5" r="2.6" fill="#FFFFFF" stroke="#4A90D9" stroke-width="2.2"/>
+    <circle cx="47.5" cy="26" r="2.6" fill="#FFFFFF" stroke="#4A90D9" stroke-width="2.2"/>
+  </g>
+  <text x="1093.5" y="773.5" font-size="22" fill="#1C1C1E">专有云</text>
+</svg>

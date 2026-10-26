@@ -232,7 +232,7 @@ nav:
                   - 创建路由: drun/kpanda/user-guide/network/create-ingress.md
                   - 网络策略: drun/kpanda/user-guide/network/network-policy.md
                   - 网络配置: drun/network/config/index.md
-              - 自定义资源: drun/kpanda/user-guide/custom-resources/create.md
+              - 自定义资源: drun/kpanda/user-guide/crd/create.md
               - 容器存储:
                   - 数据卷声明: drun/kpanda/user-guide/storage/pvc.md
                   - 数据卷: drun/kpanda/user-guide/storage/pv.md
