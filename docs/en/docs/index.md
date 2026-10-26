@@ -165,13 +165,13 @@ This site provides documentation for three product lines, covering full-stack ca
             <span class="tf-arch-card-title">AI Lab</span>
             <span class="tf-arch-card-tip">Cloud-native integrated training and inference</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/intro/">
-            <span class="tf-arch-card-title">ClawOS</span>
-            <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
-          </a>
           <a class="tf-arch-card tf-arch-card--model" href="drun/inferx/">
             <span class="tf-arch-card-title">InferX Suite</span>
             <span class="tf-arch-card-tip">Inference acceleration and engine management</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/intro/">
+            <span class="tf-arch-card-title">ClawOS</span>
+            <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
           </a>
         </div>
       </div>
@@ -183,13 +183,13 @@ This site provides documentation for three product lines, covering full-stack ca
             <span class="tf-arch-card-title">Container Management</span>
             <span class="tf-arch-card-tip">Cluster and workload management</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--compute" href="drun/topohub/intro/">
-            <span class="tf-arch-card-title">Device Management</span>
-            <span class="tf-arch-card-tip">Unified hardware device management</span>
-          </a>
           <a class="tf-arch-card tf-arch-card--compute" href="drun/kangaroo/intro/">
             <span class="tf-arch-card-title">Container Registry</span>
             <span class="tf-arch-card-tip">Image hosting and integration</span>
+          </a>
+          <a class="tf-arch-card tf-arch-card--compute" href="drun/topohub/intro/">
+            <span class="tf-arch-card-title">Device Management</span>
+            <span class="tf-arch-card-tip">Unified hardware device management</span>
           </a>
           <a class="tf-arch-card tf-arch-card--compute" href="drun/network/intro/">
             <span class="tf-arch-card-title">Cloud Native Network</span>
@@ -210,7 +210,7 @@ This site provides documentation for three product lines, covering full-stack ca
             <span class="tf-arch-card-tip">Intelligent O&M assistant</span>
           </a>
           <a class="tf-arch-card tf-arch-card--ops" href="drun/crane/intro/">
-            <span class="tf-arch-card-title">Operations Dashboard</span>
+            <span class="tf-arch-card-title">Dashboard</span>
             <span class="tf-arch-card-tip">Operations data visualization</span>
           </a>
         </div>
@@ -309,7 +309,7 @@ This site provides documentation for three product lines, covering full-stack ca
 
 ## Explore Product Modules
 
-<div class="grid cards" markdown>
+<div class="grid cards home-cards" markdown>
 
 - :material-robot:{ .lg .middle } __Cloud Native AI__
 
@@ -343,7 +343,7 @@ This site provides documentation for three product lines, covering full-stack ca
 
 </div>
 
-<div class="grid cards" markdown>
+<div class="grid cards home-cards" markdown>
 
 - :material-human-greeting:{ .lg .middle } __Workbench__
 

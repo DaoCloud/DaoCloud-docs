@@ -196,7 +196,7 @@
   padding: 2rem 1.5rem;
   margin: 1rem 0 2rem;
   text-align: center;
-  background: linear-gradient(135deg, rgba(33, 150, 243, 0.08), rgba(0, 200, 83, 0.06), rgba(255, 152, 0, 0.08));
+  background: rgba(33, 150, 243, 0.05);
   border: 1px solid var(--md-default-fg-color--lightest);
 }
 
@@ -252,7 +252,7 @@
   margin-top: 2rem;
   padding: 1.5rem;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(33, 150, 243, 0.06), rgba(255, 152, 0, 0.06));
+  background: rgba(33, 150, 243, 0.05);
   border: 1px solid var(--md-default-fg-color--lightest);
 }
 
@@ -310,11 +310,11 @@
 }
 
 [data-md-color-scheme="slate"] .tf-hero {
-  background: linear-gradient(135deg, rgba(33, 150, 243, 0.15), rgba(0, 200, 83, 0.1), rgba(255, 152, 0, 0.12));
+  background: rgba(33, 150, 243, 0.1);
 }
 
 [data-md-color-scheme="slate"] .tf-cta {
-  background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), rgba(255, 152, 0, 0.1));
+  background: rgba(33, 150, 243, 0.1);
 }
 
 [data-md-color-scheme="slate"] .tf-hero-badge--dce {
@@ -423,4 +423,48 @@ a.tf-hero-badge--tf:hover {
 [data-md-color-scheme="slate"] .tf-arch-card--optional .tf-arch-card-title::after {
   color: var(--md-default-fg-color--light);
   background: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Homepage module cards =====
+   index.md 里的 grid cards 加 .home-cards，模块列表从逐行项目符号改成 chip，
+   卡片更紧凑、同一屏能看到更多入口。
+   注意：Material 有 `.md-typeset ul:not([hidden]){display:flow-root}`（特异性 0,2,1），
+   这里必须用足够高的选择器才能把 display 改成 flex */
+.md-typeset .grid.cards.home-cards>ul>li>ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  list-style: none;
+  margin: 0.45rem 0 0;
+  padding: 0;
+}
+
+.md-typeset .grid.cards.home-cards>ul>li>ul>li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.md-typeset .grid.cards.home-cards>ul>li>ul>li::before {
+  display: none;
+}
+
+.md-typeset .grid.cards.home-cards>ul>li>ul a {
+  display: inline-block;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+  background: var(--md-default-fg-color--lightest);
+  border: 1px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.md-typeset .grid.cards.home-cards>ul>li>ul a:hover {
+  background: rgba(33, 150, 243, 0.12);
+  border-color: rgba(33, 150, 243, 0.35);
+  color: var(--md-primary-fg-color);
 }
