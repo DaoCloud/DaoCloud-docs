@@ -342,7 +342,6 @@ nav:
                   - Create Ubuntu Working Cluster on CentOS: drun/kpanda/best-practice/create-ubuntu-on-centos-platform.md
                   - Create Red Hat Working Cluster on CentOS: drun/kpanda/best-practice/create-redhat9.2-on-centos-platform.md
                   - Create Cluster on Non-mainstream OS: drun/kpanda/best-practice/use-otherlinux-create-custer.md
-                  - DCE 4.0 to 5.0 Limited Scenario Migration: drun/kpanda/best-practice/dce4-5-migration.md
                   - Deploy/Upgrade Kubean Compatible Version: drun/kpanda/best-practice/kubean-low-version.md
                   - Limit Docker Single Container Disk Space: drun/kpanda/best-practice/limit-disk-usage-docker.md
                   - Edge Cluster Deployment and Management Practice: drun/kpanda/best-practice/k3s-lcm.md
@@ -470,7 +469,7 @@ nav:
               - Integrate EgressGateway:
                   - Intro: drun/network/modules/egressgateway/index.md
                   - Release Notes: drun/network/modules/egressgateway/release-notes.md
-                  - Install and Run on DCE:
+                  - Install and Run:
                       - Install: drun/network/modules/egressgateway/install.md
                       - Create Gateway Instance: drun/network/modules/egressgateway/create_eg.md
                       - Create Gateway Policy: drun/network/modules/egressgateway/create-egpolicy.md
@@ -671,9 +670,6 @@ nav:
                       - Known Issues: drun/insight/quickstart/install/knownissues.md
                       - Enable Large Log and Large Trace Mode: drun/insight/quickstart/install/big-log-and-trace.md
                       - Customize Insight Component Scheduling Policy: drun/insight/quickstart/install/component-scheduling.md
-                  - Install insight-agent on Other Distributions:
-                      - DCE 4.0: drun/insight/quickstart/other/install-agentindce.md
-                      - OpenShift 4.x: drun/insight/quickstart/other/install-agent-on-ocp.md
               - Start Observing:
                   - OpenTelemetry Observing:
                       - Use OTel for Application Observability: drun/insight/quickstart/otel/otel.md
@@ -818,10 +814,6 @@ nav:
                   - Language Settings: drun/ghippo/user-guide/personal-center/language.md
               - Module Permission Notes:
                   - Container Management Permission Notes: drun/ghippo/permissions/kpanda.md
-                  - Microservice Engine Permission Notes: drun/ghippo/permissions/skoala.md
-                  - Workbench Permission Notes: drun/ghippo/permissions/amamba.md
-                  - Service Mesh Permission Notes: drun/ghippo/permissions/mspider.md
-                  - Middleware Service Permission Notes: drun/ghippo/permissions/mcamel.md
                   - AI Lab Permission Notes: drun/ghippo/permissions/baize.md
                   - ClawOS Permission Notes: drun/ghippo/permissions/clawos.md
               - Best Practices:
@@ -836,11 +828,12 @@ nav:
                       - Integrate Navigation Bar: drun/ghippo/best-practice/gproduct/nav.md
                       - Integrate Routing and Login Authentication: drun/ghippo/best-practice/gproduct/route-auth.md
                   - Integration (OEM IN/OUT):
-                      - OEM IN (Customer System Integrated to DCE): drun/ghippo/best-practice/oem/oem-in.md
-                      - OEM OUT (DCE Integrated to Customer System): drun/ghippo/best-practice/oem/oem-out.md
-                      - Customize DCE to Connect IdP: drun/ghippo/best-practice/oem/custom-idp.md
+                      - OEM IN (Integrate Customer System): drun/ghippo/best-practice/oem/oem-in.md
+                      - OEM OUT (Integrate into Customer System): drun/ghippo/best-practice/oem/oem-out.md
+                      - Customize and Connect IdP: drun/ghippo/best-practice/oem/custom-idp.md
                       - Keycloak Custom IdP: drun/ghippo/best-practice/oem/keycloak-idp.md
                   - Customize Navigation Bar:
                       - Customize Navigation Bar: drun/ghippo/best-practice/menu/navigator.md
                       - Show/Hide Navigation Bar Menu by Permission: drun/ghippo/best-practice/menu/menu-display-or-hiding.md
                   - System Message: drun/ghippo/best-practice/system-message.md
+
