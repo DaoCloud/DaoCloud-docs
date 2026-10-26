@@ -342,7 +342,6 @@ nav:
                   - CentOS上创建Ubuntu工作集群: drun/kpanda/best-practice/create-ubuntu-on-centos-platform.md
                   - CentOS上创建Red Hat工作集群: drun/kpanda/best-practice/create-redhat9.2-on-centos-platform.md
                   - 非主流操作系统上创建集群: drun/kpanda/best-practice/use-otherlinux-create-custer.md
-                  - DCE 4.0到5.0有限场景迁移: drun/kpanda/best-practice/dce4-5-migration.md
                   - 部署/升级Kubean兼容版本: drun/kpanda/best-practice/kubean-low-version.md
                   - 限制Docker单容器磁盘空间: drun/kpanda/best-practice/limit-disk-usage-docker.md
                   - 边缘集群部署和管理实践: drun/kpanda/best-practice/k3s-lcm.md
@@ -470,7 +469,7 @@ nav:
               - 集成 EgressGateway:
                   - 介绍: drun/network/modules/egressgateway/index.md
                   - Release Notes: drun/network/modules/egressgateway/release-notes.md
-                  - 在 DCE 上安装运行:
+                  - 安装运行:
                       - 安装: drun/network/modules/egressgateway/install.md
                       - 创建网关实例: drun/network/modules/egressgateway/create_eg.md
                       - 创建网关策略: drun/network/modules/egressgateway/create-egpolicy.md
@@ -671,9 +670,6 @@ nav:
                       - 已知问题: drun/insight/quickstart/install/knownissues.md
                       - 开启大日志和大链路模式: drun/insight/quickstart/install/big-log-and-trace.md
                       - 定制Insight组件调度策略: drun/insight/quickstart/install/component-scheduling.md
-                  - 其他发行版安装insight-agent:
-                      - DCE 4.0: drun/insight/quickstart/other/install-agentindce.md
-                      - OpenShift 4.x: drun/insight/quickstart/other/install-agent-on-ocp.md
               - 开始观测:
                   - OpenTelemetry 观测:
                       - 使用OTel赋予应用可观测: drun/insight/quickstart/otel/otel.md
@@ -818,10 +814,6 @@ nav:
                   - 语言设置: drun/ghippo/user-guide/personal-center/language.md
               - 各模块权限说明:
                   - 容器管理权限说明: drun/ghippo/permissions/kpanda.md
-                  - 微服务引擎权限说明: drun/ghippo/permissions/skoala.md
-                  - 应用工作台权限说明: drun/ghippo/permissions/amamba.md
-                  - 服务网格权限说明: drun/ghippo/permissions/mspider.md
-                  - 中间件服务权限说明: drun/ghippo/permissions/mcamel.md
                   - AI Lab 权限说明: drun/ghippo/permissions/baize.md
                   - ClawOS 权限说明: drun/ghippo/permissions/clawos.md
               - 最佳实践:
@@ -836,9 +828,9 @@ nav:
                       - 接入导航栏: drun/ghippo/best-practice/gproduct/nav.md
                       - 接入路由和登录认证: drun/ghippo/best-practice/gproduct/route-auth.md
                   - 集成与被集成(OEM IN/OUT):
-                      - OEM IN(客户系统集成到 DCE): drun/ghippo/best-practice/oem/oem-in.md
-                      - OEM OUT(DCE 集成到客户系统): drun/ghippo/best-practice/oem/oem-out.md
-                      - 定制 DCE 对接 IdP: drun/ghippo/best-practice/oem/custom-idp.md
+                      - OEM IN(将客户系统集成进来): drun/ghippo/best-practice/oem/oem-in.md
+                      - OEM OUT(集成到客户系统): drun/ghippo/best-practice/oem/oem-out.md
+                      - 定制并对接 IdP: drun/ghippo/best-practice/oem/custom-idp.md
                       - Keycloak 自定义 IdP: drun/ghippo/best-practice/oem/keycloak-idp.md
                   - 定制导航栏:
                       - 定制导航栏: drun/ghippo/best-practice/menu/navigator.md
