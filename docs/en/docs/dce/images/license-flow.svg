@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 520" width="100%" role="img" aria-label="DCE Community license application and activation flow: apply for a license key, get an offline authorization code, activate the offline authorization code" lang="en" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif">
+  <title>DCE Community License Application and Activation Flow</title>
+  <rect width="1920" height="520" fill="#F5F6FA"/>
+
+  <!-- Three step nodes: 1 apply, 2 exchange, 3 activate -->
+  <g fill="none" stroke="#445057" stroke-width="4">
+    <circle cx="202" cy="129.5" r="34"/>
+    <circle cx="952" cy="129.5" r="34"/>
+    <circle cx="1644" cy="129.5" r="34"/>
+  </g>
+
+  <!-- Node numbers -->
+  <g fill="#445057" font-size="51" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif">
+    <text x="202" y="148">1</text>
+    <text x="952" y="148">2</text>
+    <text x="1644" y="148">3</text>
+  </g>
+
+  <!-- Connector arrows -->
+  <g stroke="#445057" stroke-width="4" fill="#445057">
+    <line x1="236" y1="129.5" x2="900" y2="129.5"/>
+    <polygon points="900,120.5 916,129.5 900,138.5"/>
+    <line x1="986" y1="129.5" x2="1592" y2="129.5"/>
+    <polygon points="1592,120.5 1608,129.5 1592,138.5"/>
+  </g>
+
+  <!-- Step labels -->
+  <g fill="#445057" font-size="36.5" text-anchor="middle">
+    <text x="202" y="245">Step 1</text>
+    <text x="952" y="245">Step 2</text>
+    <text x="1644" y="245">Step 3</text>
+  </g>
+
+  <!-- Step descriptions (wrapped to two lines so the three columns stay clear) -->
+  <g fill="#445057" font-size="46" text-anchor="middle">
+    <text x="202" y="352">Apply for a<tspan x="202" dy="54">License Key</tspan></text>
+    <text x="952" y="352">Get an Offline<tspan x="952" dy="54">Authorization Code</tspan></text>
+    <text x="1644" y="352">Activate the Offline<tspan x="1644" dy="54">Authorization Code</tspan></text>
+  </g>
+</svg>
