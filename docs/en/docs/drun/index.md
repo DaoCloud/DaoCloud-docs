@@ -58,13 +58,13 @@ d.run leverages the world's top-three Kubernetes scheduling technology and core 
         <span class="tf-arch-card-title">AI Lab</span>
         <span class="tf-arch-card-tip">Cloud Native integrated training and inference</span>
       </a>
-      <a class="tf-arch-card tf-arch-card--model" href="clawos/intro/">
-        <span class="tf-arch-card-title">ClawOS</span>
-        <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
-      </a>
       <a class="tf-arch-card tf-arch-card--model" href="inferx/">
         <span class="tf-arch-card-title">InferX Suite</span>
         <span class="tf-arch-card-tip">Inference acceleration and engine management</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--model" href="clawos/intro/">
+        <span class="tf-arch-card-title">ClawOS</span>
+        <span class="tf-arch-card-tip">Multi-agent runtime and governance</span>
       </a>
     </div>
   </div>
@@ -76,13 +76,13 @@ d.run leverages the world's top-three Kubernetes scheduling technology and core 
         <span class="tf-arch-card-title">Container Management</span>
         <span class="tf-arch-card-tip">Cluster and workload management</span>
       </a>
-      <a class="tf-arch-card tf-arch-card--compute" href="topohub/intro/">
-        <span class="tf-arch-card-title">Device Management</span>
-        <span class="tf-arch-card-tip">Unified hardware device management</span>
-      </a>
       <a class="tf-arch-card tf-arch-card--compute" href="kangaroo/intro/">
         <span class="tf-arch-card-title">Container Registry</span>
         <span class="tf-arch-card-tip">Image hosting and integration</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="topohub/intro/">
+        <span class="tf-arch-card-title">Device Management</span>
+        <span class="tf-arch-card-tip">Unified hardware device management</span>
       </a>
       <a class="tf-arch-card tf-arch-card--compute" href="network/intro/">
         <span class="tf-arch-card-title">Cloud Native Network</span>

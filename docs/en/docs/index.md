@@ -121,7 +121,7 @@ This site provides documentation for three product lines, covering full-stack ca
             <span class="tf-arch-card-tip">Intelligent O&M assistant</span>
           </a>
           <a class="tf-arch-card tf-arch-card--ops" href="tf/crane/intro/">
-            <span class="tf-arch-card-title">Dashboard</span>
+            <span class="tf-arch-card-title">Cockpit</span>
             <span class="tf-arch-card-tip">Operations data visualization</span>
           </a>
           <a class="tf-arch-card tf-arch-card--ops" href="tf/leopard/">
@@ -150,7 +150,7 @@ This site provides documentation for three product lines, covering full-stack ca
 
     Leveraging top-three globally ranked Kubernetes scheduling technology and core contributions to mainstream open-source inference engines like vLLM, d.run unifiedly manages diverse heterogeneous computing power,
     achieving granular scheduling, full-stack inference optimization, and end-to-end Token governance. With compute utilization exceeding 80%, it efficiently transforms compute into manageable, controllable Token-based AI productivity.
-    The platform aggregates global mainstream large model ecosystems, equipped with a visual operations dashboard and d.run Copilot intelligent assistant, delivering stable and efficient AI services across all enterprise departments,
+    The platform aggregates global mainstream large model ecosystems, equipped with a visual cockpit and d.run Copilot intelligent assistant, delivering stable and efficient AI services across all enterprise departments,
     comprehensively supporting long-term business intelligent transformation.
 
     <div class="tf-arch tf-arch--compact">
@@ -210,7 +210,7 @@ This site provides documentation for three product lines, covering full-stack ca
             <span class="tf-arch-card-tip">Intelligent O&M assistant</span>
           </a>
           <a class="tf-arch-card tf-arch-card--ops" href="drun/crane/intro/">
-            <span class="tf-arch-card-title">Dashboard</span>
+            <span class="tf-arch-card-title">Cockpit</span>
             <span class="tf-arch-card-tip">Operations data visualization</span>
           </a>
         </div>
