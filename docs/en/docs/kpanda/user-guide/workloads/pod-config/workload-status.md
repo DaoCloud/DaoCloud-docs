@@ -13,7 +13,7 @@ A workload is an application running on Kubernetes, and in Kubernetes, whether y
 - [Job](../create-job.md)
 - [CronJob](../create-cronjob.md)
 
-You can also expand workload resources by setting [Custom Resource CRD](../../custom-resources/create.md). In the fifth-generation container management, it supports lifecycle management of workloads such as creation, update, capacity expansion, monitoring, logging, deletion, and version management.
+You can also expand workload resources by setting [Custom Resource CRD](../../crd/create.md). In the fifth-generation container management, it supports lifecycle management of workloads such as creation, update, capacity expansion, monitoring, logging, deletion, and version management.
 
 ## Pod Status
 

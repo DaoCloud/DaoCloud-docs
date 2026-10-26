@@ -551,7 +551,7 @@
     控制平面是一组系统服务，这些服务配置网格或者网格的子网来管理工作负载实例之间的通信。
     单个网格中控制平面的所有实例共享相同的配置资源。
 
-- [CRD](../kpanda/user-guide/custom-resources/create.md), CustomResourceDefinition, 自定义资源定义
+- [CRD](../kpanda/user-guide/crd/create.md), CustomResourceDefinition, 自定义资源定义
 
     通过定制化的代码给您的 Kubernetes API 服务器增加资源对象，而无需编译完整的定制 API 服务器。
 

@@ -232,7 +232,7 @@ nav:
                   - Create Ingress: drun/kpanda/user-guide/network/create-ingress.md
                   - Network Policy: drun/kpanda/user-guide/network/network-policy.md
                   - Network Configuration: drun/network/config/index.md
-              - Custom Resources: drun/kpanda/user-guide/custom-resources/create.md
+              - Custom Resources: drun/kpanda/user-guide/crd/create.md
               - Container Storage:
                   - PVC: drun/kpanda/user-guide/storage/pvc.md
                   - PV: drun/kpanda/user-guide/storage/pv.md

@@ -312,7 +312,7 @@ nav:
                   - Create Ingress: kpanda/user-guide/network/create-ingress.md
                   - Network Policies: kpanda/user-guide/network/network-policy.md
                   - Network Configuration: network/config/index.md
-              - CRDs: kpanda/user-guide/custom-resources/create.md
+              - CRDs: kpanda/user-guide/crd/create.md
               - Container Storage:
                   - Volume Claim: kpanda/user-guide/storage/pvc.md
                   - Volume: kpanda/user-guide/storage/pv.md
