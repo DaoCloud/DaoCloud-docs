@@ -7,7 +7,7 @@
 
 | **架构** | **操作系统** | **测试 OS、Kernel 信息** | 备注（安装指导文档） |
 | -------- | ----------- | ----------------- | ----------------- |
-| Redhat 9.X | Redhat 9.2<br />5.14.0-284.11.1.e9_2.x86_64 | / | [离线安装步骤](start-install.md) |
+| Redhat 9.X | Redhat 9.2<br />5.14.0-284.11.1.el9_2.x86_64 | / | [离线安装步骤](start-install.md) |
 | | Ubuntu 22.04 | 5.15.0-78-generic | [离线安装步骤](start-install.md) |
 | | Ubuntu 24.04 | / | [离线安装步骤](start-install.md) |
 | | Rocky Linux 9.2 | 5.14.0-284.11.1.el9_2.x86_64 | [离线安装步骤](start-install.md) |
