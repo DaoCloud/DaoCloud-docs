@@ -1,6 +1,23 @@
+---
+hide:
+  - toc
+---
+
 # Inference Acceleration
 
 The Inference Acceleration Service is an integrated platform for optimizing the inference performance of large models. Built on heterogeneous GPU computing power and a cloud-native foundation, it continuously introduces industry-leading inference architectures and performance optimization techniques to reduce inference costs and improve service efficiency. It also covers the complete lifecycle from model deployment to runtime assurance, helping users build faster, more stable, and more cost-effective large model inference services.
+
+## Architecture Positioning
+
+The Inference Acceleration Service sits in the middle of the cloud-native AI stack rather than at its edge: below it are Kubernetes clusters and heterogeneous GPUs / domestic accelerator cards, above it are model serving entry points (Knoway, Hydra) and business applications such as agents and RAG. It is the layer where compute is turned into Tokens that applications can consume.
+
+![Where inference acceleration sits in the cloud-native AI stack: bottom-up, heterogeneous compute, cloud-native AI platform, inference acceleration, model serving entry, and business applications](images/inferx-position.svg)
+
+Three things define that position:
+
+- **It does not replace inference frameworks**: on top of mainstream frameworks such as vLLM and llm-d, it improves performance through PD disaggregation, KV Cache offloading, multi-node deployment, and scheduling optimization.
+- **It is not tied to a single hardware vendor**: the same deployment model runs on NVIDIA / AMD GPUs and domestic accelerator cards, which keeps replacement and scaling straightforward.
+- **Its gains are measurable**: pre-rollout acceptance results for performance and accuracy, plus post-rollout monitoring of degradation and latency jitter, so acceleration gains can be verified and regression-tested.
 
 ## Core Capabilities
 

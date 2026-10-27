@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="680" viewBox="0 0 1000 680" role="img" aria-labelledby="title desc">
+  <title id="title">推理加速服务在云原生 AI 栈中的位置</title>
+  <desc id="desc">自下而上共五层：异构算力层（NVIDIA/AMD GPU、国产算力卡、d.run 算力云、DCE 集群）、云原生 AI 平台层（kpanda、mspider、模型仓库、数据与语料、任务编排）、推理加速服务 InferX（模型部署、推理加速、服务验收、运行保障）、模型服务入口层（Knoway/Istio GAIE、Hydra MaaS、多模型路由）、业务应用层（AI Agent、RAG 知识库、智能问答、代码助手）。InferX 位于平台与业务之间，把异构算力稳定转化为可计量的 Token 产出。</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b3c0d2"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3366d6"/>
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="999" height="679" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
+
+  <!-- 标题 -->
+  <text x="44" y="46" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#1a2330">推理加速服务在云原生 AI 栈中的位置</text>
+  <text x="44" y="70" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#6b7688">自下而上：异构算力 → 云原生 AI 平台 → 推理加速 → 模型服务入口 → 业务应用</text>
+
+  <!-- 左侧 Token 生产链路箭头 -->
+  <line x1="16" y1="576" x2="16" y2="112" stroke="#c3cddd" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="38" y="344" transform="rotate(-90 38 344)" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#93a0b4">Token 生产链路</text>
+
+  <!-- 1. 业务应用层 -->
+  <rect x="44" y="96" width="620" height="74" rx="10" fill="#f7f9fc" stroke="#dfe5ee"/>
+  <text x="68" y="126" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#1a2330">业务应用层</text>
+  <text x="68" y="148" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#5c6775">AI Agent · RAG 知识库 · 智能问答 · 代码助手 · 内容生成</text>
+
+  <!-- 2. 模型服务入口层 -->
+  <rect x="44" y="184" width="620" height="74" rx="10" fill="#f7f9fc" stroke="#dfe5ee"/>
+  <text x="68" y="214" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#1a2330">模型服务入口层</text>
+  <text x="68" y="236" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#5c6775">Knoway（Istio GAIE）· Hydra MaaS 模型管理 · 多模型路由与灰度</text>
+
+  <!-- 3. 推理加速服务 InferX（高亮） -->
+  <rect x="44" y="272" width="620" height="140" rx="12" fill="#eef4ff" stroke="#3366d6" stroke-width="1.8"/>
+  <text x="68" y="302" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#1c3f8f">推理加速服务 InferX</text>
+  <rect x="524" y="285" width="112" height="22" rx="11" fill="#3366d6"/>
+  <text x="580" y="300" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11" fill="#ffffff">本页主题</text>
+  <text x="68" y="324" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" fill="#4a6795">覆盖从模型部署到运行保障的完整生命周期，把算力转化为 Token</text>
+
+  <rect x="68" y="336" width="133" height="32" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="134" y="357" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#2b4a86">模型部署</text>
+  <rect x="209" y="336" width="133" height="32" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="275" y="357" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#2b4a86">推理加速</text>
+  <rect x="350" y="336" width="133" height="32" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="416" y="357" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#2b4a86">服务验收</text>
+  <rect x="491" y="336" width="133" height="32" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="557" y="357" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#2b4a86">运行保障</text>
+
+  <text x="68" y="394" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#5b7bb0">llm-d · PD 分离 · KV Cache 卸载 · 多机多卡 · 长上下文与算子优化</text>
+
+  <!-- 4. 云原生 AI 平台层 -->
+  <rect x="44" y="426" width="620" height="74" rx="10" fill="#f7f9fc" stroke="#dfe5ee"/>
+  <text x="68" y="456" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#1a2330">云原生 AI 平台层</text>
+  <text x="68" y="478" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#5c6775">kpanda 集群管理 · mspider 服务网格 · 模型仓库 · 数据与语料 · 任务编排</text>
+
+  <!-- 5. 异构算力层 -->
+  <rect x="44" y="514" width="620" height="74" rx="10" fill="#f7f9fc" stroke="#dfe5ee"/>
+  <text x="68" y="544" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#1a2330">异构算力层</text>
+  <text x="68" y="566" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#5c6775">NVIDIA / AMD GPU · 国产算力卡 · d.run 算力云 · DCE 集群</text>
+
+  <!-- 右侧：收益面板 -->
+  <line x1="668" y1="342" x2="686" y2="342" stroke="#3366d6" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <rect x="692" y="96" width="268" height="492" rx="12" fill="#f7f9fc" stroke="#dfe5ee"/>
+  <text x="712" y="126" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#1a2330">推理加速带来的变化</text>
+
+  <rect x="712" y="142" width="228" height="64" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="726" y="168" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#1c3f8f">GPU 利用率 ↑</text>
+  <text x="726" y="190" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#5c6775">同一张卡承载更高并发</text>
+
+  <rect x="712" y="216" width="228" height="64" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="726" y="242" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#1c3f8f">首 Token 延迟 ↓</text>
+  <text x="726" y="264" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#5c6775">长上下文场景响应更稳</text>
+
+  <rect x="712" y="290" width="228" height="64" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="726" y="316" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#1c3f8f">单位 Token 成本 ↓</text>
+  <text x="726" y="338" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#5c6775">吞吐提升摊薄算力开销</text>
+
+  <line x1="712" y1="374" x2="940" y2="374" stroke="#dfe5ee"/>
+  <text x="712" y="400" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#1a2330">效果可度量</text>
+  <text x="712" y="424" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#5c6775">上线前：性能、精度、API 兼容性验收</text>
+  <text x="712" y="446" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#5c6775">上线后：性能退化与延迟抖动观测</text>
+  <text x="712" y="468" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#5c6775">持续输出验收结果与优化报告</text>
+
+  <line x1="712" y1="496" x2="940" y2="496" stroke="#dfe5ee"/>
+  <text x="712" y="522" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#1a2330">典型场景</text>
+  <text x="712" y="546" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#5c6775">长上下文对话 · 高并发在线推理</text>
+  <text x="712" y="568" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#5c6775">私有化部署 · 国产算力适配</text>
+
+  <!-- 页脚说明 -->
+  <text x="44" y="632" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#8a96a8">说明：InferX 位于平台与业务之间，把异构算力稳定转化为可计量的 Token 产出；上下游组件可按实际部署替换。</text>
+</svg>
