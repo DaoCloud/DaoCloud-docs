@@ -25,14 +25,9 @@ On top of the base [Kubernetes Conformance](https://github.com/cncf/k8s-conforma
 
 Certified platforms are authorized by CNCF to use the “AI Conformance” badge — meaning the distribution is recognized as AI-friendly and ready for AI/ML production use.
 
-<figure markdown="span">
-  ![logo](https://docs.daocloud.io/en/blogs/images/CNCF_AI_Conformance_Logo.png){ width="200" }
-</figure>
-
 As a leader in cloud-native open source in China, DaoCloud keeps pace with the community:  
 after the AI Conformance standard was released, we were among the first to start AI Conformance testing for the mainstream Kubernetes v1.33 on our products, and in October 2025 we [successfully passed the certification](https://github.com/cncf/ai-conformance/pull/13) —  
 **becoming the first enterprise-grade AI/ML platform in China to achieve certification for this version.**
-
 DaoCloud's products have passed CNCF AI Conformance certification to support the following Kubernetes versions:
 
 [![1.36](https://harbor-test2.cn-sh2.ufileos.com/docs/images/ai-1.36.png)](https://github.com/cncf/k8s-ai-conformance/pull/143)
