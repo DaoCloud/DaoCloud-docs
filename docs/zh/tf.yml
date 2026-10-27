@@ -7,7 +7,8 @@ nav:
               - Release Notes: tf/tf-rn/20260930.md
               - DaoCloud 产品支持政策: tf/intro/support.md
           - 安装:
-              - 安装依赖项: tf/install/index.md
+              - 安装依赖项:
+                  - tf/install/index.md
               - 安装准备:
                   - 部署要求: tf/install/commercial/deploy-requirements.md
                   - 部署架构: tf/install/commercial/deploy-arch.md

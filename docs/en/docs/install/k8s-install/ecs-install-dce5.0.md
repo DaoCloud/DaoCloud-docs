@@ -32,7 +32,7 @@ When deploying DCE on Alibaba Cloud ECS, special handling is required for load b
     Use the following configuration, making sure to set `loadBalancer.type = NodePort` and fill in the private IP addresses of the hosts:
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     spec:
       loadBalancer:
@@ -94,7 +94,7 @@ When deploying DCE on Alibaba Cloud ECS, special handling is required for load b
     Use the following configuration, making sure to set `loadBalancer.type = cloudLB` and fill in the private IP addresses of the hosts:
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     spec:
       loadBalancer:
@@ -170,7 +170,7 @@ When deploying DCE on Alibaba Cloud ECS, special handling is required for load b
     and fill in the private IP addresses of the hosts:
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     spec:
       loadBalancer:

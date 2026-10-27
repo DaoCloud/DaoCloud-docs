@@ -1,1 +1,1 @@
-../../install/faq.md
+../../drun/install/faq.md

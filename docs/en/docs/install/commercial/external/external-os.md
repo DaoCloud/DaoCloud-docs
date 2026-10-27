@@ -9,38 +9,36 @@ This document describes how to use a third-party storage service for OS repo res
 
 ## Prerequisites
 
-- Download the [ISO operating system image file](../start-install.md/#iso) according to the environment to be deployed.
-- Download the [osPackage offline package](../start-install.md/#ospackage) according to the environment to be deployed.
+- Download the [ISO operating system image file](../download-file.md) according to the environment to be deployed.
+- Download the [osPackage offline package](../../index.md) according to the environment to be deployed.
 
-## Procedure
-
-### Using S3-Compatible Service
+## Using S3-Compatible Service
 
 Configuring an S3-compatible service is straightforward and requires only simple configuration in the [clusterConfig.yaml](../cluster-config.md). No further actions are needed.
 
-1. In the [clusterConfig.yaml](../cluster-config.md), configure the `osRepo` related parameters:
+In the [clusterConfig.yaml](../cluster-config.md), configure the `osRepo` related parameters:
 
-    ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
-    kind: ClusterConfig
-    metadata:
-    spec:
-    ..........
-    osRepos:
-        type: external
-        isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
-        osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
-        externalRepoEndpoint: https://external-repo.daocloud.io
-        externalRepoUsername: rootuser
-        externalRepoPassword: rootpass123
-    ..........
-    ```
+```yaml
+apiVersion: provision.daocloud.io/v1alpha4
+kind: ClusterConfig
+metadata:
+spec:
+  ..........
+  osRepos:
+    type: external
+    isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
+    osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
+    externalRepoEndpoint: https://external-repo.daocloud.io
+    externalRepoUsername: rootuser
+    externalRepoPassword: rootpass123
+  ..........
+```
 
-    !!! note
+!!! note
 
-        The given username should have read and write permissions for the bucket.
+    The given username should have read and write permissions for the bucket.
 
-### Using Non-S3-Compatible Service
+## Using Non-S3-Compatible Service
 
 For non-S3-compatible services, you need to manually import the downloaded ISO operating system image file and osPackage offline package. Then, configure the relevant parameters in the [clusterConfig.yaml](../cluster-config.md).
 
@@ -52,13 +50,13 @@ The following content assumes that CentOS 7.9 x86_64 is used as the cluster node
 
     !!! note
 
-        The ISO import script is located in the [offline package](../start-install.md#offline-image-package-required) at the path `./offline/offline-iso/import_iso.sh`.
+        The ISO import script is located in the [offline package](../download-file.md) at the path `./offline/offline-iso/import_iso.sh`.
 
 3. Determine the path to import:
 
-   - To check the mapping relationship between the file path on the Nginx service node and the URL path, use the nginx.conf file (`nginx -t` command to view the file path). The example below is provided for reference:
+    1. To check the mapping relationship between the file path on the Nginx service node and the URL path, use the nginx.conf file (`nginx -t` command to view the file path). The example below is provided for reference:
 
-        ```bash
+        ```nginx
         http {
             server {
                 listen       8080;
@@ -71,11 +69,11 @@ The following content assumes that CentOS 7.9 x86_64 is used as the cluster node
         }
         ```
 
-       The above configuration indicates that the root path for accessing the nginx HTTP service is mapped to the local directory `/usr/share/nginx/html`.
+        The above configuration indicates that the root path for accessing the nginx HTTP service is mapped to the local directory `/usr/share/nginx/html`.
 
-   - If Nginx service is deployed in the usual way, select the import path as `/usr/share/nginx/html`.
+    2. If Nginx service is deployed in the usual way, select the import path as `/usr/share/nginx/html`.
 
-   - If Nginx service is deployed in a container, the host path should be mounted into the container, and the mounted host path corresponds to the mapped local path of the container's HTTP service. This means that there is a relationship as follows: `http-path -> container-path -> host-path`. The import path should be the host-path, which needs to be manually confirmed according to Appendix 2.
+    3. If Nginx service is deployed in a container, the host path should be mounted into the container, and the mounted host path corresponds to the mapped local path of the container's HTTP service. This means that there is a relationship as follows: `http-path -> container-path -> host-path`. The import path should be the host-path, which needs to be manually confirmed according to Appendix 2.
 
 4. Run the following command to import the ISO operating system image file and osPackage offline package:
 
@@ -99,7 +97,7 @@ The following content assumes that CentOS 7.9 x86_64 is used as the cluster node
 
 5. Verify the successful import
 
-   Log in to a node in the global service cluster. Assuming the Nginx access address is `http://10.0.1.1:8080`, refer to Appendix 1 for configuration and run the following command:
+    Log in to a node in the global service cluster. Assuming the Nginx access address is `http://10.0.1.1:8080`, refer to Appendix 1 for configuration and run the following command:
 
     ```bash
     cat > /etc/yum.repos.d/test.repo << "EOF"
@@ -124,7 +122,7 @@ The following content assumes that CentOS 7.9 x86_64 is used as the cluster node
 6. In the [clusterConfig.yaml](../cluster-config.md), configure the `osRepo` related parameters, and for `externalRepoURLs`, refer to Appendix 1.
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:
@@ -141,11 +139,11 @@ The following content assumes that CentOS 7.9 x86_64 is used as the cluster node
       ..........
     ```
 
-7. After completing the above configuration, you can proceed with [deploying DCE Enterprise](../start-install.md).
+7. After completing the above configuration, you can proceed with [product deployment steps](../../index.md).
 
-### Appendix
+## Appendix
 
-#### 1. Operating Systems and Corresponding RepoURLs
+### 1. Operating Systems and Corresponding RepoURLs
 
 Replace `${address_prefix}` with the external access address of the HTTP service, such as `http://10.0.1.1:8080`.
 
@@ -160,7 +158,7 @@ Replace `${address_prefix}` with the external access address of the HTTP service
 | Ubuntu bionic | ['deb [trusted=yes] \${address_prefix}/kubean/ubuntu/amd64 bionic/','deb [trusted=yes] \${address_prefix}/kubean/ubuntu-iso bionic main restricted'] |
 | Ubuntu focal | ['deb [trusted=yes] \${address_prefix}/kubean/ubuntu/amd64 focal/','deb [trusted=yes] \${address_prefix}/kubean/ubuntu-iso focal main restricted']|
 
-#### 2. View the list of mounted volumes for containers
+### 2. View the Mounted Volumes of Containers
 
 | CLI tool | Command |
 | --- | --- |
@@ -168,5 +166,5 @@ Replace `${address_prefix}` with the external access address of the HTTP service
 |nerdctl|`nerdctl inspect ${CONTAINER_ID} -f '{{range .Mounts}}{{printf "hostPath: %s containerPath: %s\n" .Source .Destination}}{{end}}'`|
 |podman| `podman inspect ${CONTAINER_ID} -f '{{range .Mounts}}{{printf "hostPath: %s containerPath: %s\n" .Source .Destination}}{{end}}'`|
 |crictl| `crictl inspect -o go-template --template '{{range .status.mounts}}{{printf "hostPath: %s containerPath: %s\n" .hostPath .containerPath }}{{end}}' ${CONTAINER_ID}`|
-|ctr| `ctr c info ${CONTAINER_ID} --spec` check the mounts field |
+|ctr| `ctr c info ${CONTAINER_ID} --spec` Check the mounts field |
 |kubectl|`kubectl -n ${NAMESPACE} get pod ${POD_NAME} -oyaml` Check the volumes and volumeMounts fields |

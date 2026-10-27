@@ -5,7 +5,7 @@ date: 2024-05-11
 
 # Prerequisites Check
 
-This page describes the preparation work required for deploying DCE.
+This page describes the preparation work required for deploying DaoCloud products.
 
 !!! note
 
@@ -39,7 +39,7 @@ This page describes the preparation work required for deploying DCE.
 | yq | ≥ 4.31.1 | - |
 | minio client | `mc.RELEASE.2023-02-16T19-20-11Z` | |
 
-If dependency components do not exist, install them through scripts. Refer to [Install Prerequisites](../install-tools.md).
+If dependency components do not exist, install them through scripts. Refer to [Install Prerequisites](../index.md).
 
 ```bash
 export VERSION=v0.16.0

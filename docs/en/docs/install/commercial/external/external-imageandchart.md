@@ -5,14 +5,14 @@ hide:
   - toc
 ---
 
-# Use External Container Registry and Chart Repository
+# Use External Container Registry and Chart Repository to Store Images and Chart Packages
 
 This document describes how to use third-party container registry and chart repositories.
 
 1. In the [clusterConfig.yaml](../cluster-config.md), configure the `imagesAndCharts` parameter as follows:
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:
@@ -37,4 +37,4 @@ This document describes how to use third-party container registry and chart repo
         - The container registry supports all types of open-source repositories available in the community.
         - The chart repository only supports three types: chartmuseum, harbor, and jfrog.
 
-2. After completing the above configuration, you can proceed with the [deployment of DCE Enterprise](../start-install.md).
+2. After completing the above configuration, you can proceed with the [product deployment steps](../../index.md).

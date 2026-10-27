@@ -11,7 +11,7 @@ This document describes how to use third-party middleware services, including My
 
 ### Prerequisites
 
-- DCE product modules have a built-in MySQL database for data storage, but the installer also supports using external MySQL, Kingbase, and PostgreSQL databases.
+- Product modules have a built-in MySQL database for data storage, but the installer also supports using external MySQL, Kingbase, and PostgreSQL databases.
 
 - The example scripts provided below are for demonstration purposes only. In actual applications, you should modify them according to specific requirements, such as database name, username, and password, and you can split the statements to be executed on different DBMS.
 
@@ -103,13 +103,13 @@ This document describes how to use third-party middleware services, including My
               # readwrite(default) or readonly
               accessType: readwrite
               # The maximum number of open connections to the database.
-              #maxOpenConnections: 100
+              # maxOpenConnections: 100
               # The maximum number of connections in the idle connection pool.
-              #maxIdleConnections: 10
+              # maxIdleConnections: 10
               # The maximum amount of time a connection may be reused.
-              #connectionMaxLifetimeSeconds: 3600
+              # connectionMaxLifetimeSeconds: 3600
               # The maximum amount of time a connection may be idle.
-              #connectionMaxIdleSeconds: 1800
+              # connectionMaxIdleSeconds: 1800
           ghippoApiserver:
             - dbDriverName: "mysql"
               dataSourceName: "ghippo:password@tcp(localhost:3306)/ghippo"
@@ -142,7 +142,7 @@ This document describes how to use third-party middleware services, including My
               dataSourceName: "dowl:password@tcp(172.30.41.0:3308)/dowl"
     ```
 
-4. After completing the above configuration, you can proceed with [deploying DCE Enterprise](../start-install.md).
+4. After completing the above configuration, you can proceed with [product deployment steps](../../index.md).
 
 ### Steps for External Kingbase Database
 
@@ -221,7 +221,7 @@ This document describes how to use third-party middleware services, including My
               # The maximum number of connections in the idle connection pool.
               # maxIdleConnections: 10
               # The maximum amount of time a connection may be reused.
-              #connectionMaxLifetimeSeconds: 3600
+              # connectionMaxLifetimeSeconds: 3600
               # The maximum amount of time a connection may be idle.
               # connectionMaxIdleSeconds: 1800
           ghippoApiserver:
@@ -256,7 +256,7 @@ This document describes how to use third-party middleware services, including My
               dataSourceName: "host=172.30.41.2 user=dowl password=password dbname=dowl port=54321"
     ```
 
-4. After completing the above configuration, you can proceed with [deploying DCE Enterprise](../start-install.md).
+4. After completing the above configuration, you can proceed with [product deployment steps](../../index.md).
 
 ### Steps for External PostgreSQL Database
 
@@ -367,7 +367,7 @@ This document describes how to use third-party middleware services, including My
               dataSourceName: "host=172.30.41.2 user=dowl password=password dbname=dowl port=5432"
     ```
 
-4. After completing the above configuration, you can proceed with [deploying DCE Enterprise](../start-install.md).
+4. After completing the above configuration, you can proceed with [product deployment steps](../../index.md).
 
 ## Use External Redis
 
@@ -395,7 +395,7 @@ The steps to configure external Redis are as follows:
         - Cluster URL format: `redis://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]]` or `rediss://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]]`
         - Currently, only the container management product module uses the Redis component.
 
-2. After completing the above configuration, you can proceed with [deploying DCE Enterprise](../start-install.md).
+2. After completing the above configuration, you can proceed with [product deployment steps](../../index.md).
 
 ## Use External Elasticsearch
 
@@ -430,7 +430,7 @@ The steps to configure external Elasticsearch are as follows:
         If an external middleware is used, it is not recommended to use worker nodes in 7-node mode,
         as it may consume too many resources.
 
-2. After completing the above configuration, you can proceed with [deploying DCE Enterprise](../start-install.md).
+2. After completing the above configuration, you can proceed with [product deployment steps](../../index.md).
 
 ## Use External S3Storage
 
@@ -456,7 +456,7 @@ The steps to configure external S3Storage are as follows:
       ..........
     ```
 
-2. After completing the above configuration, you can proceed with [deploying DCE Enterprise](../start-install.md).
+2. After completing the above configuration, you can proceed with [product deployment steps](../../index.md).
 
 ## Use External Kafka
 
@@ -485,4 +485,4 @@ Follow the steps below:
 
         Currently, only the observability module uses the Kafka component.
 
-2. After completing the above configuration, you can proceed with [deploying DCE Business Edition](../start-install.md).
+2. After completing the above configuration, you can proceed with [product deployment steps](../../index.md).

@@ -81,7 +81,7 @@ spec:
  
   addonPackage:
   binaries:
-    type: builtin  # (1)
+    type: builtin  # (1)!
 ```
 
 1. `official-service` (if omitted or empty), `builtin`, or `external`
@@ -200,3 +200,5 @@ Upgrade parameter descriptions:
 
     - For Community Edition, replace it with `-m ./offline/sample/manifest-community.yaml`.
     - For Commercial Edition, replace it with `-m ./offline/sample/manifest-enterprise.yaml`.
+    - For d.run Token Factory, replace it with `-m ./offline/sample/manifest-cloud-tokfact.yaml`.
+    - For d.run AI OS, replace it with `-m ./offline/sample/manifest-cloud.yaml`.

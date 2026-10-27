@@ -17,14 +17,14 @@ This page describes how to install DCE on OCP.
 
      | CPU Architecture | Version | Download URL |
      | -------- | ------ | --------------------- |
-     | AMD64 | v0.21.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-amd64.tar> |
-     | <font color="green">ARM64</font> | v0.21.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.21.0-arm64.tar> |
+     | AMD64 | v0.26.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.26.0-amd64.tar> |
+     | <font color="green">ARM64</font> | v0.26.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.26.0-arm64.tar> |
 
      Unzip the offline package after downloading:
 
      ```bash
      # Take the amd64 architecture offline package as an example
-     tar -xvf offline-v0.21.0-amd64.tar
+     tar -xvf offline-v0.26.0-amd64.tar
      ```
 
 3. Set [clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package `offline/sample` and modified as needed.
@@ -32,7 +32,7 @@ This page describes how to install DCE on OCP.
      The reference configuration is:
 
      ```yaml
-     apiVersion: provision.daocloud.io/v1alpha3
+     apiVersion: provision.daocloud.io/v1alpha4
      kind: ClusterConfig
      metadata:
        creationTimestamp: null
@@ -71,6 +71,13 @@ This page describes how to install DCE on OCP.
          - `-d` enable debug mode
          - `--platform` is used to declare which Kubernetes distribution to deploy DCE on, currently only supports openshift
          - `--serial` specifies that all installation tasks are executed serially
+
+     !!! note
+
+         If you encounter an error when running the command with `-m ./offline/sample/manifest.yaml`, try the following replacements:
+
+         - For DCE Community, replace it with `-m ./offline/sample/manifest-community.yaml`
+         - For DCE Enterprise, replace it with `-m ./offline/sample/manifest-enterprise.yaml`
 
 6. After the installation is complete, the command line will prompt that the installation is successful. congratulations! :smile: Now you can use the default account and password (admin/changeme) to explore the new DCE through the URL prompted on the screen!
 

@@ -120,13 +120,13 @@ Overall architecture:
 1. Example of a well-defined clusterConfig file:
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
       creationTimestamp: null
     spec:
       clusterName: my-cluster
-      bootstrapNode: www.tinder-node-server.com # Based on external domain name mode
+      bootstrapNode: www.tinder-node-server.com # (1)!
     
       masterNodes:
         - nodeName: "g-master1"
@@ -142,12 +142,15 @@ Overall architecture:
     
       imagesAndCharts:
         type: builtin
-        additionalSSLSubjectAltName: "xxx.xx.xx.193" # Domain name resolved by the dns service
+        additionalSSLSubjectAltName: "xxx.xx.xx.193" # (2)!
     
       addonPackage:
       binaries:
         type: builtin
     ```
+
+    1. Based on external domain name mode
+    2. The domain name resolved by the DNS service
 
 1. Start the installation
 
@@ -182,13 +185,13 @@ Overall architecture:
 1. Example of a well-defined clusterConfig file: Start the installation of the bootstrap node using IP mode (bootstrapNode is set to auto or the specific IP address of the bootstrap node)
 
     ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
       creationTimestamp: null
     spec:
       clusterName: my-cluster
-      bootstrapNode: 172.30.41.194 # IP-based mode
+      bootstrapNode: 172.30.41.194 # (1)!
     
       masterNodes:
         - nodeName: "g-master1"
@@ -204,11 +207,14 @@ Overall architecture:
     
       imagesAndCharts:
         type: builtin
-        additionalSSLSubjectAltName: "www.tinder-node-server.com" # Domain name resolved by the dns service
+        additionalSSLSubjectAltName: "www.tinder-node-server.com" # (2)!
       addonPackage:
       binaries:
         type: builtin
     ```
+
+    1. Based on IP mode
+    2. The domain name resolved by the DNS service
 
 1. Run specific steps `1,2,3,4,5` on the backup bootstrap node
 

@@ -19,20 +19,20 @@ Installer v0.6.0 and higher versions support this deployment method.
     dnf install -y --downloadonly --downloaddir=rpm/python36
 
     # start the installation
-    rpm -ivh python3-pip-9.0.3-18.uelc20.01.noarch.rpm python3-setuptools-39.2.0-7.uelc20.2.noarch.rpm python36-3.6.8-2.module+uelc20+36 +6174170c.x86_64.rpm
+    rpm -ivh python3-pip-9.0.3-18.uelc20.01.noarch.rpm python3-setuptools-39.2.0-7.uelc20.2.noarch.rpm python36-3.6.8-2.module+uelc20+36+6174170c.x86_64.rpm
     ```
 
 2. Download the full mode offline package, you can download the latest version in [Download Center](../../download/index.md).
 
     | CPU Architecture | Version | Download URL |
     | -------- | ------ | --------------------- |
-    | AMD64 | v0.17.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.17.0-amd64.tar> |
+    | AMD64 | v0.26.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.26.0-amd64.tar> |
 
     Unzip the offline package after downloading:
 
     ```bash
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.17.0-amd64.tar
-    tar -xvf offline-v0.17.0-amd64.tar
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.26.0-amd64.tar
+    tar -xvf offline-v0.26.0-amd64.tar
     ```
 
 3. Download the UnionTech Server V20 1020a ISO image.
@@ -67,11 +67,15 @@ Installer v0.6.0 and higher versions support this deployment method.
     metadata:
     spec:
       clusterName: my-cluster
+      loadBalancer:
+        type: metallb
+        istioGatewayVip: 172.30.41.XXX/32
+        insightVip: 172.30.41.XXX/32
       masterNodes:
         - nodeName: "g-master1"
-          ip: 10.5.14.XX
+          ip: 10.5.14.XXX
           ansibleUser: "root"
-          ansiblePass: "XXXX"
+          ansiblePass: "******"
       fullPackagePath: "/home/offline"
       osRepos:
         type: builtin

@@ -54,7 +54,7 @@ This page will guide you to install DCE Community package online in a standard K
       Here is an example of `clusterConfig.yaml`:
 
         ```yaml title="clusterConfig.yaml"
-        apiVersion: provision.daocloud.io/v1alpha3
+        apiVersion: provision.daocloud.io/v1alpha4
         kind: ClusterConfig
         spec:
           loadBalancer:
@@ -70,7 +70,7 @@ This page will guide you to install DCE Community package online in a standard K
      - If it is a public cloud environment that already has a Kubernetes load balancer, set `clusterConfig.yaml` as follows:
 
         ```yaml title="clusterConfig.yaml"
-        apiVersion: provision.daocloud.io/v1alpha3
+        apiVersion: provision.daocloud.io/v1alpha4
         kind: ClusterConfig
         spec:
           loadBalancer:

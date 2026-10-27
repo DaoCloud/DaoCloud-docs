@@ -791,6 +791,15 @@ If the output is different from the above cases, follow the upgrade instructions
 - **Upgraded** Kpanda to v0.16.1
 - **Upgraded** Skoala to v0.19.4
 
+#### Known Issues
+
+- When installing in 7-node mode, the dedicated ES node is not successfully reserved, which is expected to be fixed in the next version.
+- An error occurs when the installer imports images into the registry on the bootstrapping node:
+
+    ```console
+    skopeo copy 500 Internal Error -- "NAME_UNKNOWN","message":"repository name not known to registry
+    ```
+
 ## 2023-4-06
 
 ### v0.6.0
@@ -876,6 +885,15 @@ If the output is different from the above cases, follow the upgrade instructions
 - **Improved** infrastructure support 1.25: upgrade redis-operator, eck-operator, hwameiStor
 - **Improved** upgrade to keycloakX
 - **Improved** istio version upgrade v1.16.1
+
+#### Fixes
+
+- **Fixed** [the HwameiStor operator randomly cleans up Jobs in the cluster](https://github.com/hwameistor/hwameistor/issues/588)
+- **Improved** MySQL enhanced semi-sync to resolve data inconsistency caused by frequent primary-secondary switchover
+- **Improved** resolved the issue that MySQL disks were filled up by clusterPedia
+- **Improved** coredns automatically injects registry VIP resolution
+- **Improved** fixed the svc issue on public clouds
+- **Improved** fixed image and Helm issues of various submodules
 
 #### Known Issues
 

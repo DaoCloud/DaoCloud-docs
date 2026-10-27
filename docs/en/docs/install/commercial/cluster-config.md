@@ -37,8 +37,9 @@ spec:
 
     # NodePort (default), metallb, cloudLB (Cloud Controller is not supported currently)
     type: metallb
-    istioGatewayVip: xx.xx.xx.xx/32 # Required when loadBalancer.type is metallb, providing UI and OpenAPI access for DCE
+    istioGatewayVip: xx.xx.xx.xx/32 # Required when loadBalancer.type is metallb, providing UI and OpenAPI access
     insightVip: xx.xx.xx.xx/32 # Do not discard /32, required when loadBalancer.type is metallb, used as the Insight data collection entry point for the global cluster, where the insight-agent of sub-clusters can report data to
+    SourceIP: auto # The default value auto enables obtaining the source IP for audit logs; set it to false to disable it
 
   # Specify SSH private key, no need to define ansibleUser and ansiblePass for nodes after defining this
   # privateKeyPath: /root/.ssh/id_rsa_sample
@@ -287,7 +288,7 @@ For key field descriptions in this YAML file, see the table below.
 | privateKeyPath | Path to the SSH private key file for deploying the cluster. If specified, ansibleUser and ansiblePass are not required | - |
 | k8sVersion | K8s version for installing the cluster, must match KuBean and offline package | - |
 | loadBalancer.insightVip | VIP used for Insight data collection in the Global cluster, required when loadBalancer.type is metallb | - |
-| loadBalancer.istioGatewayVip | VIP used for DCE UI and OpenAPI access when loadBalancer.type is metallb | - |
+| loadBalancer.istioGatewayVip | VIP used for UI and OpenAPI access when loadBalancer.type is metallb | - |
 | loadBalancer.type | Load balancer mode used, metallb for physical environments, NodePort for POC, cloudLB (not supported currently) for public cloud and SDN CNI environments | NodePort (default), metallb, cloudLB (Cloud Controller) |
 | loadBalancer.SourceIP | Side effect: Unable to perform load balancing at the node level when obtaining source IP from audit logs. | auto |
 | fullPackagePath | Path to the extracted offline package, required in offline mode | - |
@@ -350,120 +351,116 @@ For key field descriptions in this YAML file, see the table below.
 **In the offline mode, use the `builtin` method to install**
 
 The `builtin` mode means that the required third-party software (such as ChartMuseum, Minio, Docker registry)
-will be deployed and provided by the installer for use in the DCE platform.
+will be deployed and provided by the installer for use in the platform.
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
-   creationTimestamp: null
+  creationTimestamp: null
 spec:
-   clusterName: my-cluster
-   masterNodes:
-     - nodeName: "g-master1" # (1)!
-       ip: xx.xx.xx.xx
-       ansibleUser: "root"
-       ansiblePass: "dangerous"
-   workerNodes:
-   fullPackagePath: "/root/offline"
-   osRepos:
-     type: builtin # (2)!
-     isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
-     osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
-   imagesAndCharts:
-     type: builtin # (3)!
-   addonPackage:
+  clusterName: my-cluster
+  masterNodes:
+    - nodeName: "g-master1" # (1)!
+      ip: xx.xx.xx.xx
+      ansibleUser: "root"
+      ansiblePass: "dangerous"
+  workerNodes:
+  fullPackagePath: "/root/offline"
+  osRepos:
+    type: builtin # (2)!
+    isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
+    osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
+  imagesAndCharts:
+    type: builtin # (3)!
+  addonPackage:
     #path:
     #  - "/root/standard-addon-offline-package-v0.18.0-amd64.tar.gz"
     #  - "/root/gpu-addon-offline-package-v0.18.0-amd64.tar.gz"
-   binaries:
-     type: builtin # (4)!
+  binaries:
+    type: builtin # (4)!
 ```
 
-1. nodeName will override hostName and should comply with RFC1123 standards.
-2. official-service (if omit or empty), builtin, or external.
-3. official-service (if omit or empty), builtin, or external. Currently, External S3 is not supported... FIXME.
+1. `nodeName` overrides `hostName` and should comply with the RFC1123 standard.
+2. official-service (if omitted or empty), builtin, or external.
+3. official-service (if omitted or empty), builtin, or external.
+   External S3 is not supported yet... FIXME.
 4. official-service (if omitted or empty), builtin, or external.
 
-**Installation in `external` mode in offline mode**
+**Installation in the `external` mode in offline mode**
 
 The `external` mode means that the required third-party software (such as ChartMuseum, Minio, and Docker registry)
 does not need to be installed by the installer. Instead, the user provides the addresses for these services
-to be used by the DCE platform.
+to be used by the platform.
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
-   creationTimestamp: null
+  creationTimestamp: null
 spec:
-   clusterName: my-cluster
-   masterNodes:
-     # nodeName will override hostName, should conform to RFC1123 standard
-     - nodeName: "g-master1"
-       ip: xx.xx.xx.xx
-       ansibleUser: "root"
-       ansiblePass: "dangerous"
-   workerNodes:
-    
-   fullPackagePath: "/root/offline"
-   osRepos:
-     # official-service(if omit or empty), builtin or external
-     type: external
-     # Optional only if external repo already have full required resources
-     isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
-     # Optional only if external repo already have full required resources
-     osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
-     # `centos` as CentOS, RedHat, kylin AlmaLinux or Fedora
-     # `debian` as Debian
-     # `ubuntu` as Ubuntu
-     externalRepoType: centos
-     externalRepoURLs: ["https://extertal-repo.daocloud.io/centos/$releasever/os/$basearch/"]
-   imagesAndCharts:
-     # official-service(if omit or empty), builtin or external
-     # Not Support External S3 so far... FIXME
-     type: external
-     # Optional only if external repo already have full required resources
-     # IP or domain name
-     externalImageRepo: https://external-registry.daocloud.io
-     externalImageRepoUsername: admin
-     externalImageRepoPassword: Harbor12345
-     #chartmuseum or harbor
-     externalChartRepoType: chartmuseum
-     # IP or domain name
-     externalChartRepo: https://external-charts.daocloud.io:8081
-     externalChartUsername: rootuser
-     externalChartMuseumPassword: rootpass123
-   addonPackage:
-     path: "/root/addon-offline-full-package-v0.4.8-amd64.tar.gz"
-   binaries:
-     # official-service(if omit or empty), builtin or external
-     type: external
-     # Optional only if external repo already have full required resources
-     # IP or domain name
-     externalRepository: https://external-binaries.daocloud.io:9000/kubean
+  clusterName: my-cluster
+  masterNodes:
+    - nodeName: "g-master1" # (1)!
+      ip: xx.xx.xx.xx
+      ansibleUser: "root"
+      ansiblePass: "dangerous"
+  workerNodes:
+
+  fullPackagePath: "/root/offline"
+  osRepos:
+    type: external # (2)!
+    isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso" # (3)!
+    osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz" # (3)!
+    externalRepoType: centos # (4)!
+    externalRepoURLs: ["https://extertal-repo.daocloud.io/centos/$releasever/os/$basearch/"]
+  imagesAndCharts:
+    type: external # (5)!
+    externalImageRepo: https://external-registry.daocloud.io # (6)!
+    externalImageRepoUsername: admin
+    externalImageRepoPassword: Harbor12345
+    externalChartRepoType: chartmuseum # (7)!
+    externalChartRepo: https://external-charts.daocloud.io:8081 # (8)!
+    externalChartUsername: rootuser
+    externalChartMuseumPassword: rootpass123
+  addonPackage:
+    path: "/root/addon-offline-full-package-v0.4.8-amd64.tar.gz"
+  binaries:
+    type: external # (2)!
+    externalRepository: https://external-binaries.daocloud.io:9000/kubean # (6)!
 ```
+
+1. `nodeName` overrides `hostName` and should comply with the RFC1123 standard.
+2. official-service (if omitted or empty), builtin, or external.
+3. Optional only if the external repo already has all the required resources.
+4. `centos` for CentOS, RedHat, Kylin, AlmaLinux, or Fedora; `debian` for Debian; `ubuntu` for Ubuntu.
+5. official-service (if omitted or empty), builtin, or external. External S3 is not supported yet... FIXME.
+6. Optional only if the external repo already has all the required resources. IP or domain name.
+7. chartmuseum or harbor.
+8. IP or domain name.
 
 **Online mode is installed by `official-service`**
 
-In the `official-service` mode, when users choose to install DCE online, the resources used by
-the DCE platform will be obtained from DaoCloud's official repository.
+In the `official-service` mode, when users choose to install online, the resources used by
+the platform will be obtained from DaoCloud's official repository.
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
-   creationTimestamp: null
+  creationTimestamp: null
 spec:
-   clusterName: my-cluster
-   masterNodes:
-     # nodeName will override hostName, should conform to RFC1123 standard
-     - nodeName: "g-master1"
-       ip: xx.xx.xx.xx
-       ansibleUser: "root"
-       ansiblePass: "dangerous"
-   workerNodes:
+  clusterName: my-cluster
+  masterNodes:
+    - nodeName: "g-master1" # (1)!
+      ip: xx.xx.xx.xx
+      ansibleUser: "root"
+      ansiblePass: "dangerous"
+  workerNodes:
 ```
+
+1. `nodeName` overrides `hostName` and should comply with the RFC1123 standard.
+
 
 ## Generate a clusterConfig template on CLI
 
@@ -471,7 +468,7 @@ spec:
 
 ``` bash
 # Official online
-./dce5-installergenerate-config --install-mode=cluster-create --master=1 --access-type=official-service
+./dce5-installer generate-config --install-mode=cluster-create --master=1 --access-type=official-service
 # Official online simplified version
 ./dce5-installer generate-config --master=1
 
@@ -524,7 +521,7 @@ spec:
 ./dce5-installer generate-config --master=3 --worker=3 --access-type=external
 ```
 
-### DCE Community
+### For DCE Community Package
 
 ``` bash
 # Official online

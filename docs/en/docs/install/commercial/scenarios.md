@@ -5,7 +5,7 @@ date: 2024-03-01
 
 # Cluster Deployment Scenarios
 
-DCE provides [four cluster roles](../../kpanda/user-guide/clusters/cluster-role.md) to meet
+DaoCloud products provide [four cluster roles](../../kpanda/user-guide/clusters/cluster-role.md) to meet
 different usage scenarios. You can freely combine different cluster deployment combinations based
 on your business characteristics and infrastructure scenarios.
 
@@ -37,7 +37,7 @@ with the nodes to be created in the cluster.
 ## Single Data Center Multiple Management Clusters
 
 When you need to add a management cluster within the current single data center to manage the lifecycle
-of new business clusters, there is no need to install the bootstrap node again. Just install the kubean Operator
+of new business clusters, there is no need to install the bootstrap node again. Just install the Kubean Operator
 component on an already created work cluster to give this cluster the ability and role of a management cluster.
 As shown in the figure below:
 
@@ -45,7 +45,7 @@ As shown in the figure below:
 
 Prerequisite: The deployment of a single data center single management cluster has been completed in the previous step.
 
-1. Use [helm templates](../../kpanda/user-guide/helm/README.md) to install kubean on a work cluster details page,
+1. Use [Helm templates](../../kpanda/user-guide/helm/README.md) to install kubean on a work cluster details page,
    wait for the kubean status to change to running.
 
 1. After kubean is installed on the current work cluster, the cluster role will automatically change

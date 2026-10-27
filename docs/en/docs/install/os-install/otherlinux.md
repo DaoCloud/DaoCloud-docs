@@ -32,15 +32,12 @@ Other Linux is essentially because DCE does not provide the installation system 
 
     ```bash
     cd /home
-    curl -Lo ./pkgs.yml https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/pkgs.yml
     curl -Lo ./other_os_pkgs.sh https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/other_os_pkgs.sh && chmod +x other_os_pkgs.sh
     ```
 
 2. Build the operating system offline package
 
     ```bash
-    # Specify the path of the pkgs.yml package configuration file (if pkgs.yml is located in the same path as other_os_pkgs.sh, you can not set this environment variable)
-    export PKGS_YML_PATH=/home/pkgs.yml
     # Run the system offline package build command
     ./other_os_pkgs.sh build
     ```
@@ -48,15 +45,13 @@ Other Linux is essentially because DCE does not provide the installation system 
 3. Install the OS offline package
 
     ```bash
-    # Specify the path of the pkgs.yml package configuration file (if pkgs.yml is located in the same path as other_os_pkgs.sh, you can not set this environment variable)
-    export PKGS_YML_PATH=/home/pkgs.yml
     # Specify the path of the os pkgs offline package
     export PKGS_TAR_PATH=/home/os-pkgs-${DISTRO}-${VERSION}.tar.gz
     # Specify the cluster master/worker node IP (multi-node IP addresses are separated by spaces)
     export HOST_IPS='192.168.10.11 192.168.10.12'
     # Specify the target node access information for installation (multi-node usernames and passwords must be consistent)
     export SSH_USER=root
-    export SSH_PASS=dangerous
+    export SSH_CRED=dangerous
     # Run the installation command and output the log
     ./other_os_pkgs.sh install >>log.txt
     ```
@@ -90,20 +85,20 @@ Other Linux is essentially because DCE does not provide the installation system 
     [INFO]   All packages for Node (192.168.10.11) have been installed.
     ```
 
-### Notice
+!!! note
 
-1. Check the installation status by `cat log.txt |egrep 'INFO|WARN'`:
+    - Check the installation status by `cat log.txt |egrep 'INFO|WARN'`:
 
-    If the `failed to install package` keyword appears, it means that the installation is not successful, and when it finally fails, `the packages that failed to install are: ipset ipvsadm xfsprogs` will be output.
+        If the `failed to install package` keyword appears, it means that the installation is not successful, and when it finally fails, `the packages that failed to install are: ipset ipvsadm xfsprogs` will be output.
 
-2. The package names corresponding to different versions (major version) of the same system family (os family) are different:
+    - The package names corresponding to different versions (major version) of the same system family (os family) are different:
 
-    | OS family | Version | Package |
-    | --------- | ----- | --------- |
-    | Debian | < 11 | python-apt |
-    | | >= 11 | python3-apt |
-    | Redhat Major Version | < 8 | libselinux-python |
-    | | \>= 8 | python3-libselinux |
+        | OS family | Version | Package |
+        | --------- | ----- | --------- |
+        | Debian | < 11 | python-apt |
+        | | >= 11 | python3-apt |
+        | Redhat Major Version | < 8 | libselinux-python |
+        | | \>= 8 | python3-libselinux |
 
 ## Offline installation
 
@@ -111,13 +106,13 @@ Other Linux is essentially because DCE does not provide the installation system 
 
     | CPU Architecture | Version | Download URL |
     | -------- | ------ | ---------------- |
-    | AMD64 | v0.17.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.17.0-amd64.tar> |
+    | AMD64 | v0.26.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.26.0-amd64.tar> |
 
     Unzip the offline package after downloading:
 
     ```bash
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.17.0-amd64.tar
-    tar -xvf offline-v0.17.0-amd64.tar
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.26.0-amd64.tar
+    tar -xvf offline-v0.26.0-amd64.tar
     ```
 
 2. Refer to [Create an offline OS package](#make-the-offline-os-package).
