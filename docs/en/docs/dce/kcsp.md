@@ -35,6 +35,7 @@ after the AI Conformance standard was released, we were among the first to start
 
 DaoCloud's products have passed CNCF AI Conformance certification to support the following Kubernetes versions:
 
+[![1.36](https://harbor-test2.cn-sh2.ufileos.com/docs/images/ai-1.36.png)](https://github.com/cncf/k8s-ai-conformance/pull/143)
 [![1.35](https://harbor-test2.cn-sh2.ufileos.com/docs/images/ai-1.35.png)](https://github.com/cncf/k8s-ai-conformance/pull/121)
 [![1.34](https://harbor-test2.cn-sh2.ufileos.com/docs/images/ai-1.34.png)](https://github.com/cncf/k8s-ai-conformance/pull/114)
 [![1.33](https://harbor-test2.cn-sh2.ufileos.com/docs/images/ai-1.33.png)](https://github.com/cncf/k8s-ai-conformance/pull/13)

@@ -9,6 +9,7 @@ DaoCloud 是经认证的 Kubernetes 和 AI 服务提供商。
 
 - 其产品已通过 CNCF AI 合规认证支持以下 Kubernetes 版本：
 
+  [![1.36](./docs/zh/docs/images/ai-1.36.png)](https://github.com/cncf/k8s-ai-conformance/pull/143)
   [![1.35](./docs/zh/docs/images/ai-1.35.png)](https://github.com/cncf/k8s-ai-conformance/pull/121)
   [![1.34](./docs/zh/docs/images/ai-1.34.png)](https://github.com/cncf/k8s-ai-conformance/pull/114)
   [![1.33](./docs/zh/docs/images/ai-1.33.png)](https://github.com/cncf/k8s-ai-conformance/pull/13)
