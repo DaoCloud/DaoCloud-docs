@@ -357,7 +357,6 @@ Download the osPackage offline package based on the corresponding version:
         | Operating System | Download |
         | :--------- | :------ |
         | CentOS 7 | [os-pkgs-centos7-v0.23.6.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-centos7-v0.23.6.tar.gz) |
-        | Redhat 8 | [os-pkgs-redhat8-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-redhat8-v0.23.6.tar.gz) |
         | Redhat 7 | [os-pkgs-redhat7-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-redhat7-v0.23.6.tar.gz) |
         | Redhat 9 | [os-pkgs-redhat9-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-redhat9-v0.23.6.tar.gz) |
         | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.23.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.23.6/os-pkgs-ubuntu2004-v0.23.6.tar.gz) |
@@ -375,7 +374,6 @@ Download the osPackage offline package based on the corresponding version:
         | Operating System | Download |
         | :--------- | :------ |
         | CentOS 7 | [os-pkgs-centos7-v0.22.5.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-centos7-v0.22.5.tar.gz) |
-        | Redhat 8 | [os-pkgs-redhat8-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-redhat8-v0.22.5.tar.gz) |
         | Redhat 7 | [os-pkgs-redhat7-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-redhat7-v0.22.5.tar.gz) |
         | Redhat 9 | [os-pkgs-redhat9-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-redhat9-v0.22.5.tar.gz) |
         | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.22.5.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.5/os-pkgs-ubuntu2004-v0.22.5.tar.gz) |
@@ -393,7 +391,6 @@ Download the osPackage offline package based on the corresponding version:
         | Operating System | Download |
         | :--------- | :------ |
         | CentOS 7 | [os-pkgs-centos7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-centos7-v0.22.4.tar.gz) |
-        | Redhat 8 | [os-pkgs-redhat8-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat8-v0.22.4.tar.gz) |
         | Redhat 7 | [os-pkgs-redhat7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat7-v0.22.4.tar.gz) |
         | Redhat 9 | [os-pkgs-redhat9-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat9-v0.22.4.tar.gz) |
         | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-ubuntu2004-v0.22.4.tar.gz) |
@@ -411,7 +408,6 @@ Download the osPackage offline package based on the corresponding version:
         | Operating System | Download |
         | :--------- | :------ |
         | CentOS 7 | [os-pkgs-centos7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-centos7-v0.22.4.tar.gz) |
-        | Redhat 8 | [os-pkgs-redhat8-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat8-v0.22.4.tar.gz) |
         | Redhat 7 | [os-pkgs-redhat7-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat7-v0.22.4.tar.gz) |
         | Redhat 9 | [os-pkgs-redhat9-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-redhat9-v0.22.4.tar.gz) |
         | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.22.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.22.4/os-pkgs-ubuntu2004-v0.22.4.tar.gz) |
@@ -429,7 +425,6 @@ Download the osPackage offline package based on the corresponding version:
         | Operating System | Download |
         | :--------- | :------ |
         | CentOS 7 | [os-pkgs-centos7-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-centos7-v0.21.1.tar.gz) |
-        | Redhat 8 | [os-pkgs-redhat8-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-redhat8-v0.21.1.tar.gz) |
         | Redhat 7 | [os-pkgs-redhat7-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-redhat7-v0.21.1.tar.gz) |
         | Redhat 9 | [os-pkgs-redhat9-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-redhat9-v0.21.1.tar.gz) |
         | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.21.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.21.1/os-pkgs-ubuntu2004-v0.21.1.tar.gz) |
@@ -447,7 +442,6 @@ Download the osPackage offline package based on the corresponding version:
         | Operating System | Download |
         | :--------- | :------ |
         | CentOS 7 | [os-pkgs-centos7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-centos7-v0.19.0.tar.gz) |
-        | Redhat 8 | [os-pkgs-redhat8-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat8-v0.19.0.tar.gz) |
         | Redhat 7 | [os-pkgs-redhat7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat7-v0.19.0.tar.gz) |
         | Redhat 9 | [os-pkgs-redhat9-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat9-v0.19.0.tar.gz) |
         | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-ubuntu2004-v0.19.0.tar.gz) |
@@ -465,7 +459,6 @@ Download the osPackage offline package based on the corresponding version:
         | Operating System | Download |
         | :--------- | :------ |
         | CentOS 7 | [os-pkgs-centos7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-centos7-v0.19.0.tar.gz) |
-        | Redhat 8 | [os-pkgs-redhat8-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat8-v0.19.0.tar.gz) |
         | Redhat 7 | [os-pkgs-redhat7-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat7-v0.19.0.tar.gz) |
         | Redhat 9 | [os-pkgs-redhat9-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-redhat9-v0.19.0.tar.gz) |
         | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.19.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.19.0/os-pkgs-ubuntu2004-v0.19.0.tar.gz) |
@@ -522,6 +515,7 @@ Download the osPackage offline package based on the corresponding version:
         | Redhat 9 | [os-pkgs-redhat9-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-redhat9-v0.16.3.tar.gz) |
         | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-kylinv10-v0.16.3.tar.gz) |
         | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-ubuntu2004-v0.16.3.tar.gz) |
+        | Ubuntu 22.04 | [os-pkgs-ubuntu2204-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-ubuntu2204-v0.16.3.tar.gz) |
         | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-openeuler22.03-v0.16.3.tar.gz) |
         | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-oracle9-v0.16.3.tar.gz) |
         | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.16.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-oracle8-v0.16.3.tar.gz) |
@@ -720,6 +714,13 @@ For detailed parameter introduction, refer to [clusterConfig.yaml](cluster-confi
         - Use `-d` to enable debug mode.
         - Use `--use-original-repo` to download binaries and pull images
         - For more options, use `--help` to query.
+
+    !!! note
+
+        If you encounter an error when running the command with `-m ./offline/sample/manifest.yaml`, you can try the following replacements:
+
+        - For DCE Community Edition, replace it with `-m ./offline/sample/manifest-community.yaml`
+        - For DCE Enterprise, replace it with `-m ./offline/sample/manifest-enterprise.yaml`
 
 1. After the installation is complete, the command line will prompt a successful installation.
    Congratulations! Now you can explore the brand new DCE using the URL provided with the

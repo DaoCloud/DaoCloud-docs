@@ -7,7 +7,8 @@ nav:
               - Release Notes: drun/drun-rn/20260930.md
               - DaoCloud Support Policy: drun/intro/support.md
           - Installation:
-              - Install Dependencies: drun/install/index.md
+              - Install Dependencies:
+                  - drun/install/index.md
               - Preparation:
                   - Deployment Requirements: drun/install/commercial/deploy-requirements.md
                   - Deployment Architecture: drun/install/commercial/deploy-arch.md

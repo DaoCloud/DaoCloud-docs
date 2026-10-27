@@ -9,7 +9,7 @@ hide:
 
 ## Uninstall DCE Community
 
-Run the following commands in order to uninstall DCE from your environment.
+Run the following commands in order to uninstall the product from your environment.
 
 !!! warning
 

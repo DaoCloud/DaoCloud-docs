@@ -16,7 +16,7 @@ For S3 compatible services, simply configure the [clusterConfig.yaml](../cluster
 1. Configure the clusterConfig.yaml file by setting the parameters related to binaries as follows:
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:
@@ -35,7 +35,7 @@ For S3 compatible services, simply configure the [clusterConfig.yaml](../cluster
 
 ### Using Non-S3 Compatible Service
 
-For non-S3 compatible services, you need to manually import the offline binaries package `offline/kubespray-binary/offline-files.tar.gz` from the downloaded [image offline package](../start-install.md#offline-installation-steps) directory,
+For non-S3 compatible services, you need to manually import the offline binaries package `offline/kubespray-binary/offline-files.tar.gz` from the downloaded [image offline package](../download-file.md) directory,
 and then configure the relevant parameters in the [clusterConfig.yaml](../cluster-config.md).
 
 The following instructions assume that CentOS 7.9 x86_64 is used as the cluster node and Nginx is used as the HTTP server.
@@ -94,7 +94,7 @@ In theory, other generic HTTP servers can also be supported, but pay attention t
 5. In the [clusterConfig.yaml](../cluster-config.md), configure the parameters related to `binaries`.
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:
@@ -105,7 +105,7 @@ In theory, other generic HTTP servers can also be supported, but pay attention t
       ..........
     ```
 
-6. After completing the above configurations, you can continue with the [deployment of DCE Enterprise](../start-install.md).
+6. After completing the above configurations, you can continue with the [product deployment steps](../../index.md).
 
 ### Appendix
 

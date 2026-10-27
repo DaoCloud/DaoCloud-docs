@@ -130,6 +130,10 @@ plugins:
         "kpanda/intro/benefits.md": "kpanda/intro/scenarios.md"
         "kpanda/intro/concepts.md": "kpanda/intro/scenarios.md"
 
+        # install: retired duplicate of the product install page
+        "drun/install/commercial/start-install.md": "drun/install/start-install.md"
+        "tf/install/commercial/start-install.md": "tf/install/start-install.md"
+
         # module quick links
         "kairship.md": "kairship/intro/index.md"
         "skoala.md": "skoala/intro/index.md"

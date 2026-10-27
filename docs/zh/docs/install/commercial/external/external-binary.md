@@ -31,7 +31,7 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
 
 ### 使用非 S3 兼容服务
 
-非 S3 兼容的服务需要先手动将下载好的[镜像离线包](../start-install.md/#_1) 目录下的 `offline/kubespray-binary/offline-files.tar.gz` binaries 离线包导入，
+非 S3 兼容的服务需要先手动将下载好的[镜像离线包](../download-file.md) 目录下的 `offline/kubespray-binary/offline-files.tar.gz` binaries 离线包导入，
 然后在[集群配置文件 clusterConfig.yaml](../cluster-config.md) 中配置相关参数。
 
 以下内容以 CentOS 7.9 x86_64 作为集群节点，使用 nignx 作为 http server，
@@ -100,7 +100,7 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
       ..........
     ```
 
-6. 完成上述配置后，可以继续执行[部署 DCE 商业版](../start-install.md)。
+6. 完成上述配置后，可以继续执行[产品部署步骤](../../index.md)。
 
 ### 附录
 

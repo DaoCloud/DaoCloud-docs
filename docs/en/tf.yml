@@ -7,7 +7,8 @@ nav:
               - Release Notes: tf/tf-rn/20260930.md
               - DaoCloud Support Policy: tf/intro/support.md
           - Installation:
-              - Install Dependencies: tf/install/index.md
+              - Install Dependencies:
+                  - tf/install/index.md
               - Preparation:
                   - Deployment Requirements: tf/install/commercial/deploy-requirements.md
                   - Deployment Architecture: tf/install/commercial/deploy-arch.md

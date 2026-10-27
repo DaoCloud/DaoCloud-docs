@@ -41,7 +41,7 @@ Refer to [Step 2 of the Offline Installation of DCE Commercial Version](../comme
 In the [ClusterConfig.yml](../commercial/cluster-config.md) configuration file, update the `kubeanConfig` parameter information as follows:
 
 ```yaml
-apiVersion: provision.daocloud.io/v1alpha3
+apiVersion: provision.daocloud.io/v1alpha4
 kind: ClusterConfig
 metadata:
   creationTimestamp: null

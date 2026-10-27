@@ -5,7 +5,7 @@ date: 2024-03-07
 
 # Download All Offline Packages with One-Click
 
-This page provides a script to easily download all the offline packages required for installing DCE.
+This page provides a script to easily download all the offline packages required for installation.
 
 ## Download Script
 

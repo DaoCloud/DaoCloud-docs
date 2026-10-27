@@ -4,8 +4,8 @@
 
 ## 前提条件
 
-- 根据要部署的环境下载 [ISO 操作系统镜像文件](../start-install.md/#iso)
-- 根据要部署的环境下载 [osPackage 离线包](../start-install.md/#ospackage)
+- 根据要部署的环境下载 [ISO 操作系统镜像文件](../download-file.md)
+- 根据要部署的环境下载 [osPackage 离线包](../../index.md)
 
 ## 使用 S3 兼容服务
 
@@ -47,7 +47,7 @@ spec:
 
     !!! note
 
-        ISO 导入脚本在[离线包镜像包](../start-install.md/#_2)中，路径为 `./offline/offline-iso/import_iso.sh`
+        ISO 导入脚本在[离线包镜像包](../download-file.md)中，路径为 `./offline/offline-iso/import_iso.sh`
 
 1. 确定需要导入的路径；
 
@@ -119,7 +119,7 @@ spec:
 1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `osRepo` 相关的参数，`externalRepoURLs` 参考附录 1。
 
     ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:
@@ -136,11 +136,11 @@ spec:
       ..........
     ```
 
-1. 完成上述配置后，可以继续执行[部署 DCE 商业版](../start-install.md)。
+1. 完成上述配置后，可以继续执行[产品部署步骤](../../index.md)。
 
 ## 附录
 
-### 操作系统与对应的 RepoURLs
+### 1. 操作系统与对应的 RepoURLs
 
 `${address_prefix}` 替换为 HTTP 服务的外部访问地址，如 `http://10.0.1.1:8080`
 
@@ -155,7 +155,7 @@ spec:
 | Ubuntu bionic | ['deb [trusted=yes] \${address_prefix}/kubean/ubuntu/amd64 bionic/','deb [trusted=yes] \${address_prefix}/kubean/ubuntu-iso bionic main restricted'] |
 | Ubuntu focal | ['deb [trusted=yes] \${address_prefix}/kubean/ubuntu/amd64 focal/','deb [trusted=yes] \${address_prefix}/kubean/ubuntu-iso focal main restricted']|
 
-### 查看容器卷挂载列表
+### 2. 查看容器卷挂载列表
 
 | CLI tool | Command |
 | --- | --- |

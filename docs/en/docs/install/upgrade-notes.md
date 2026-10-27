@@ -1,6 +1,8 @@
 ---
 MTPE: windsonsea
 date: 2024-05-11
+hide:
+  - toc
 ---
 
 # Upgrade Notes

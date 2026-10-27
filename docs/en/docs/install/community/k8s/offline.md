@@ -44,7 +44,7 @@ This page will guide you to install DCE Community package offline in a standard 
     - For non-public cloud environments (VMs or physical machines), enable load balancing (Metallb) to avoid instability caused by NodePort due to changing node IPs. Carefully plan your network and set up 2 necessary VIPs. Here is a sample configuration:
 
         ```yaml title="clusterConfig.yaml"
-        apiVersion: provision.daocloud.io/v1alpha3
+        apiVersion: provision.daocloud.io/v1alpha4
         kind: ClusterConfig
         spec:
           loadBalancer:
@@ -66,7 +66,7 @@ This page will guide you to install DCE Community package offline in a standard 
     - For public cloud environments that provide Kubernetes load balancing through a pre-configured Cloud Controller Manager, use the following sample configuration:
 
         ```yaml title="clusterConfig.yaml"
-        apiVersion: provision.daocloud.io/v1alpha3
+        apiVersion: provision.daocloud.io/v1alpha4
         kind: ClusterConfig
         spec:
           loadBalancer:
@@ -86,7 +86,7 @@ This page will guide you to install DCE Community package offline in a standard 
     - If using NodePort to expose the console (only recommended for PoC), use the following sample configuration:
 
         ```yaml title="clusterConfig.yaml"
-        apiVersion: provision.daocloud.io/v1alpha3
+        apiVersion: provision.daocloud.io/v1alpha4
         kind: ClusterConfig
         spec:
           loadBalancer:

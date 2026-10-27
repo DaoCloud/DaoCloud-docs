@@ -52,7 +52,7 @@ If you need to allocate "static IP" for Pods, you need to create sub-interfaces 
 
 | Physical Machine | CPU | Memory | containerd and k8s use the root disk by default | Remarks |
 | --- | --- | --- | --- | --- |
-| master01 | >= 12 C | >= 20 G | 480G, SSD disk, RAID1 | Recommended to allocate higher resources as "boostrap machine + cluster control node" |
+| master01 | >= 12 C | >= 20 G | 480G, SSD disk, RAID1 | Recommended to allocate higher resources as "bootstrap machine + cluster control node" |
 | master02 | >= 12 C | >= 20 G | 480G, SSD disk, RAID1 | - |
 | master03 | >= 12 C | >= 20 G | 480G, SSD disk, RAID1 | - |
 
@@ -97,33 +97,34 @@ If you need to allocate "static IP" for Pods, you need to create sub-interfaces 
 
 **Precautions before installation:**
 
-- Select one of the three physical machines as the boostrap machine to execute the deployment of DCE. in `clusterConfig.yaml`, the bootstrapNode parameter can specify the IP of the boostrap machine.
+- Select one of the three physical machines as the bootstrap machine to execute the deployment of DCE. in `clusterConfig.yaml`, the bootstrapNode parameter can specify the IP of the bootstrap machine.
 
-    ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
+    ```yaml title="clusterConfig.yaml"
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:
-      clusterName: my-cluster
-    
-      # The domain name or IP of the boostrap node, which is resolved to the IP of the default gateway of the boostrap node by default;
-      # You can manually enter the IP or domain name, if it is a domain name, if it is unable to resolve, an automatic mapping between this domain name and the default IP of the boostrap node will be established
-      # bootstrapNode: auto  ## Automatically resolved by default
+      clusterName: my-cluster # (1)!
+      bootstrapNode: auto # (2)!
       ...
     ...
     ```
+
+    1. The domain name or IP of the bootstrap node. By default, it is resolved to the IP of the NIC where the default gateway of the bootstrap node resides.
+       You can also enter the IP or domain name manually. If a domain name is entered and cannot be resolved, a mapping between the domain name and the default IP of the bootstrap node is created automatically.
+    2. Resolved automatically by default.
 
 - In clusterConfig.yaml, configure the information of the 3 physical machines in masterNodes.
 
     ```yaml title="clusterConfig.yaml"
     ...
-    apiVersion: provision.daocloud.io/v1alpha3
+    apiVersion: provision.daocloud.io/v1alpha4
     kind: ClusterConfig
     metadata:
     spec:
       ...
       masterNodes:
-        - nodeName: "g-master1" # Physical machine 1 acts as the control plane node + boostrap node
+        - nodeName: "g-master1" # (1)!
           ip: xx.xx.xx.xx
           ansibleUser: "root"
           ansiblePass: "dangerous"
@@ -144,3 +145,5 @@ If you need to allocate "static IP" for Pods, you need to create sub-interfaces 
         ...
     ...
     ```
+
+    1. Physical machine 1 acts as the control plane node and the bootstrap node.
