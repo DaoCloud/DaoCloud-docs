@@ -9,19 +9,20 @@ DaoCloud is a certified Kubernetes and AI service provider.
 
 - Its products have passed CNCF AI Conformance certification to support the following Kubernetes versions:
 
-  [![1.35](./docs/zh/docs/images/ai-1.35.png)](https://github.com/cncf/k8s-ai-conformance/pull/121)
-  [![1.34](./docs/zh/docs/images/ai-1.34.png)](https://github.com/cncf/k8s-ai-conformance/pull/114)
-  [![1.33](./docs/zh/docs/images/ai-1.33.png)](https://github.com/cncf/k8s-ai-conformance/pull/13)
+  [![1.36](./docs/en/docs/images/ai-1.36.png)](https://github.com/cncf/k8s-ai-conformance/pull/143)
+  [![1.35](./docs/en/docs/images/ai-1.35.png)](https://github.com/cncf/k8s-ai-conformance/pull/121)
+  [![1.34](./docs/en/docs/images/ai-1.34.png)](https://github.com/cncf/k8s-ai-conformance/pull/114)
+  [![1.33](./docs/en/docs/images/ai-1.33.png)](https://github.com/cncf/k8s-ai-conformance/pull/13)
 
 - Its products have passed CNCF Conformance certification to support the following Kubernetes versions:
 
-  [![1.36](./docs/zh/docs/images/1.36.png)](https://github.com/cncf/k8s-conformance/pull/4353)
-  [![1.35](./docs/zh/docs/images/1.35.png)](https://github.com/cncf/k8s-conformance/pull/4195)
-  [![1.34](./docs/zh/docs/images/1.34.png)](https://github.com/cncf/k8s-conformance/pull/4022)
-  [![1.33](./docs/zh/docs/images/1.33.png)](https://github.com/cncf/k8s-conformance/pull/3927)
-  [![1.32](./docs/zh/docs/images/1.32.png)](https://github.com/cncf/k8s-conformance/pull/3810)
-  [![1.31](./docs/zh/docs/images/1.31.png)](https://github.com/cncf/k8s-conformance/pull/3675)
-  [![1.30](./docs/zh/docs/images/1.30.png)](https://github.com/cncf/k8s-conformance/pull/3578)
+  [![1.36](./docs/en/docs/images/1.36.png)](https://github.com/cncf/k8s-conformance/pull/4353)
+  [![1.35](./docs/en/docs/images/1.35.png)](https://github.com/cncf/k8s-conformance/pull/4195)
+  [![1.34](./docs/en/docs/images/1.34.png)](https://github.com/cncf/k8s-conformance/pull/4022)
+  [![1.33](./docs/en/docs/images/1.33.png)](https://github.com/cncf/k8s-conformance/pull/3927)
+  [![1.32](./docs/en/docs/images/1.32.png)](https://github.com/cncf/k8s-conformance/pull/3810)
+  [![1.31](./docs/en/docs/images/1.31.png)](https://github.com/cncf/k8s-conformance/pull/3675)
+  [![1.30](./docs/en/docs/images/1.30.png)](https://github.com/cncf/k8s-conformance/pull/3578)
   [![1.29](./images/1.29.png)](https://github.com/cncf/k8s-conformance/pull/3203)
   [![1.28](./images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
   [![1.27](./images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
