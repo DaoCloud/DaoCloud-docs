@@ -1,18 +1,18 @@
-# Upgrade DCE Components
+# Upgrade Product Components
 
-Upgrading DCE components includes upgrading DCE product functional modules and DCE infrastructure modules.
+Upgrading product components includes upgrading functional modules and infrastructure modules.
 
-- DCE product functional modules consist of more than a dozen sub-modules, including Container Management, Global Management, Observability, and more. They mainly refer to the `components` section in the [manifest.yaml](commercial/manifest.md) file.
-- DCE infrastructure modules specifically refer to the `infrastructures` section in the [manifest.yaml](commercial/manifest.md) file.
+- Functional modules consist of more than a dozen sub-modules, including Container Management, Global Management, Observability, and more. They mainly refer to the `components` section in the [manifest.yaml](commercial/manifest.md) file.
+- Infrastructure modules specifically refer to the `infrastructures` section in the [manifest.yaml](commercial/manifest.md) file.
 
 !!! warning
 
-    - Since DCE contains many product modules, it is recommended to upgrade DCE components version by version using the installer. Do not skip multiple versions when upgrading!
-    - Upgrading DCE components may overwrite your business data. Please back up your data first. This is important!
+    - Since the product contains many modules, it is recommended to upgrade components version by version using the installer. Do not skip multiple versions when upgrading!
+    - Upgrading Product components may overwrite your business data. Please back up your data first. This is important!
 
 ## Prerequisites
 
-- You need to have a DCE cluster environment. See [Offline Deployment of the Commercial Edition](commercial/start-install.md).
+- You need to have a proper cluster environment. See [Offline Deployment of the Commercial Edition](commercial/start-install.md).
 - Ensure that your bootstrap machine is still available.
 - Confirm the target version you want to upgrade to. See [Release Notes](release-notes.md).
 
@@ -20,7 +20,7 @@ Upgrading DCE components includes upgrading DCE product functional modules and D
 
 This procedure demonstrates how to upgrade from v0.20.0 to v0.21.0.
 
-### Step 1: Download the DCE Offline Package
+### Step 1: Download the Offline Package
 
 You can download the latest version from the [Download Center](../download/index.md).
 
@@ -90,9 +90,9 @@ spec:
 
 The file is located in the extracted offline package directory `offline/sample`.
 
-#### Configure DCE Product Functional Modules
+#### Configure Product Functional Modules
 
-DCE product functional modules specifically refer to the `components` section in the [manifest.yaml](commercial/manifest.md) file.
+The functional modules specifically refer to the `components` section in the [manifest.yaml](commercial/manifest.md) file.
 
 If some product components do not need to be upgraded, you can disable them under the corresponding component configuration. With the following configuration, Kpanda (Container Management) will not be upgraded during the update:
 
@@ -104,9 +104,9 @@ If some product components do not need to be upgraded, you can disable them unde
       variables:
 ```
 
-#### Configure DCE Infrastructure Modules
+#### Configure Infrastructure Modules
 
-DCE infrastructure modules specifically refer to the `infrastructures` section in the [manifest.yaml](commercial/manifest.md) file. The following configuration enables the `hwameiStor` component in the infrastructure modules:
+Infrastructure modules specifically refer to the `infrastructures` section in the [manifest.yaml](commercial/manifest.md) file. The following configuration enables the `hwameiStor` component in the infrastructure modules:
 
 ```yaml title="manifest.yaml"
   infrastructures:
@@ -118,7 +118,7 @@ DCE infrastructure modules specifically refer to the `infrastructures` section i
 
 ### Step 4: Start Upgrade
 
-#### Upgrade DCE Product Functional Modules
+#### Upgrade Functional Modules
 
 !!! note
 
@@ -137,7 +137,7 @@ Run the upgrade command:
 ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade gproduct
 ```
 
-#### Upgrade DCE Infrastructure Modules
+#### Upgrade Infrastructure Modules
 
 Run the upgrade command:
 
@@ -145,7 +145,7 @@ Run the upgrade command:
 ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructure
 ```
 
-#### Upgrade DCE
+#### Upgrade
 
 Run the upgrade command:
 
@@ -180,10 +180,10 @@ Global Flags:
 
 Upgrade parameter descriptions:
 
-* `install-app` or `cluster-create` indicates the installation mode used for installing DCE. If the original environment was installed using `cluster-create`, use the same command for upgrades.
+* `install-app` or `cluster-create` indicates the installation mode. If the original environment was installed using `cluster-create`, use the same command for upgrades.
 * `--upgrade` can be abbreviated as `-u`. The following upgrade targets are currently supported:
 
-    * DCE product functional modules (`gproduct`)
+    * Functional modules (`gproduct`)
     * Infrastructure modules (`infrastructure`)
     * Local storage module (`hwameistor`)
 
@@ -198,5 +198,5 @@ Upgrade parameter descriptions:
 
     If you encounter an error when running the command with `-m ./offline/sample/manifest.yaml`, try the following replacements:
 
-    - For DCE Community Edition, replace it with `-m ./offline/sample/manifest-community.yaml`.
-    - For DCE Commercial Edition, replace it with `-m ./offline/sample/manifest-enterprise.yaml`.
+    - For Community Edition, replace it with `-m ./offline/sample/manifest-community.yaml`.
+    - For Commercial Edition, replace it with `-m ./offline/sample/manifest-enterprise.yaml`.
