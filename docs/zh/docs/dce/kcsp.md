@@ -22,13 +22,8 @@ DaoCloud 产品是经 Kubernetes 官方认证的 AI 服务平台。
 
 通过认证的平台可获得 CNCF 官方授权使用 AI Conformance 标识，成为行业认可的 AI 友好型 Kubernetes 发行版。
 
-<figure markdown="span">
-  ![logo](../blogs/images/CNCF_AI_Conformance_Logo.png){ width="200" }
-</figure>
-
 作为国内开源事业的领军企业，DaoCloud 紧跟云原生 AI 发展潮流。在社区推出 Kubernetes AI Conformance 合规标准后，率先针对目前广泛使用的 Kubernetes v1.33 启动 DaoCloud 产品的 AI Conformance 测试，并于 2025 年 10 月[成功通过认证](https://github.com/cncf/ai-conformance/pull/13)， 成为国内首个在该版本获得认证的企业级 AI/ML 平台。
-
-DaoCloud 产品已通过 CNCF AI 合规认证支持以下 Kubernetes 版本：
+目前 DaoCloud 产品已通过 CNCF AI 合规认证支持以下 Kubernetes 版本：
 
 [![1.36](https://harbor-test2.cn-sh2.ufileos.com/docs/images/ai-1.36.png)](https://github.com/cncf/k8s-ai-conformance/pull/143)
 [![1.35](https://harbor-test2.cn-sh2.ufileos.com/docs/images/ai-1.35.png)](https://github.com/cncf/k8s-ai-conformance/pull/121)
