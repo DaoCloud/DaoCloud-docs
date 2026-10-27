@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="680" viewBox="0 0 1000 680" role="img" aria-labelledby="title desc">
+  <title id="title">Where inference acceleration sits in the cloud-native AI stack</title>
+  <desc id="desc">Five layers, bottom-up: heterogeneous compute (NVIDIA/AMD GPUs, domestic accelerator cards, d.run compute cloud, DCE clusters), cloud-native AI platform (kpanda clusters, mspider service mesh, model registry, data, orchestration), the Inference Acceleration Service InferX (model deployment, inference acceleration, service acceptance, runtime assurance), model serving entry (Knoway/Istio GAIE, Hydra MaaS, multi-model routing), and business applications (AI agents, RAG knowledge bases, chatbots, code assistants). InferX sits between the platform and the business layers, turning heterogeneous compute into measurable Token output.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b3c0d2"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3366d6"/>
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="999" height="679" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
+
+  <!-- Header -->
+  <text x="44" y="46" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="600" fill="#1a2330">Inference Acceleration in the Cloud-Native AI Stack</text>
+  <text x="44" y="70" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" fill="#6b7688">Bottom-up: compute → cloud-native AI platform → inference acceleration → model serving → applications</text>
+
+  <!-- Token production path arrow -->
+  <line x1="16" y1="576" x2="16" y2="112" stroke="#c3cddd" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="38" y="344" transform="rotate(-90 38 344)" text-anchor="middle" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#93a0b4">Token production path</text>
+
+  <!-- 1. Business applications -->
+  <rect x="44" y="96" width="620" height="74" rx="10" fill="#f7f9fc" stroke="#dfe5ee"/>
+  <text x="68" y="126" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1a2330">Business Applications</text>
+  <text x="68" y="148" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" fill="#5c6775">AI agents · RAG knowledge bases · Chatbots · Code assistants · Content generation</text>
+
+  <!-- 2. Model serving entry -->
+  <rect x="44" y="184" width="620" height="74" rx="10" fill="#f7f9fc" stroke="#dfe5ee"/>
+  <text x="68" y="214" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1a2330">Model Serving Entry</text>
+  <text x="68" y="236" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" fill="#5c6775">Knoway (Istio GAIE) · Hydra MaaS model management · Multi-model routing</text>
+
+  <!-- 3. Inference Acceleration Service (highlighted) -->
+  <rect x="44" y="272" width="620" height="140" rx="12" fill="#eef4ff" stroke="#3366d6" stroke-width="1.8"/>
+  <text x="68" y="302" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#1c3f8f">Inference Acceleration Service (InferX)</text>
+  <rect x="524" y="285" width="112" height="22" rx="11" fill="#3366d6"/>
+  <text x="580" y="300" text-anchor="middle" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#ffffff">This page</text>
+  <text x="68" y="324" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#4a6795">Full lifecycle from model deployment to runtime assurance, turning compute into Tokens</text>
+
+  <rect x="68" y="336" width="137" height="32" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="136" y="357" text-anchor="middle" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#2b4a86">Model Deployment</text>
+  <rect x="213" y="336" width="137" height="32" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="281" y="357" text-anchor="middle" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#2b4a86">Inference Acceleration</text>
+  <rect x="358" y="336" width="137" height="32" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="426" y="357" text-anchor="middle" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#2b4a86">Service Acceptance</text>
+  <rect x="503" y="336" width="137" height="32" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="571" y="357" text-anchor="middle" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#2b4a86">Runtime Assurance</text>
+
+  <text x="68" y="394" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#5b7bb0">llm-d · PD disaggregation · KV Cache offloading · Multi-node · Operator tuning</text>
+
+  <!-- 4. Cloud-native AI platform -->
+  <rect x="44" y="426" width="620" height="74" rx="10" fill="#f7f9fc" stroke="#dfe5ee"/>
+  <text x="68" y="456" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1a2330">Cloud-Native AI Platform</text>
+  <text x="68" y="478" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" fill="#5c6775">kpanda clusters · mspider service mesh · Model registry · Data · Orchestration</text>
+
+  <!-- 5. Heterogeneous compute -->
+  <rect x="44" y="514" width="620" height="74" rx="10" fill="#f7f9fc" stroke="#dfe5ee"/>
+  <text x="68" y="544" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1a2330">Heterogeneous Compute</text>
+  <text x="68" y="566" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" fill="#5c6775">NVIDIA / AMD GPUs · Domestic accelerator cards · d.run compute cloud · DCE</text>
+
+  <!-- Right panel -->
+  <line x1="668" y1="342" x2="686" y2="342" stroke="#3366d6" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <rect x="692" y="96" width="268" height="492" rx="12" fill="#f7f9fc" stroke="#dfe5ee"/>
+  <text x="712" y="126" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1a2330">What acceleration changes</text>
+
+  <rect x="712" y="142" width="228" height="64" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="726" y="168" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1c3f8f">GPU utilization ↑</text>
+  <text x="726" y="190" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#5c6775">Higher concurrency per GPU</text>
+
+  <rect x="712" y="216" width="228" height="64" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="726" y="242" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1c3f8f">First-Token latency ↓</text>
+  <text x="726" y="264" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#5c6775">Stable in long-context workloads</text>
+
+  <rect x="712" y="290" width="228" height="64" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="726" y="316" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1c3f8f">Cost per Token ↓</text>
+  <text x="726" y="338" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#5c6775">Throughput amortizes cost</text>
+
+  <line x1="712" y1="374" x2="940" y2="374" stroke="#dfe5ee"/>
+  <text x="712" y="400" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1a2330">Measurable results</text>
+  <text x="712" y="424" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#5c6775">Before: performance, accuracy, API</text>
+  <text x="712" y="446" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#5c6775">After: degradation, latency jitter</text>
+  <text x="712" y="468" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#5c6775">Acceptance and tuning reports</text>
+
+  <line x1="712" y1="496" x2="940" y2="496" stroke="#dfe5ee"/>
+  <text x="712" y="522" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1a2330">Typical scenarios</text>
+  <text x="712" y="546" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#5c6775">Long-context chat · High QPS</text>
+  <text x="712" y="568" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#5c6775">Private · Domestic accelerators</text>
+
+  <!-- Footer -->
+  <text x="44" y="632" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#8a96a8">Note: InferX sits between the platform and business layers, turning heterogeneous compute into measurable Token output.</text>
+</svg>
