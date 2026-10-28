@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1258 940" font-family="-apple-system, 'Helvetica Neue', Arial, 'PingFang SC', sans-serif">
+  <title>Microservice Engine Architecture</title>
+  <rect x="0" y="0" width="1258" height="940" fill="#FFFFFF"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1A1A1A"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <polygon points="29,34 58,34 46,56 17,56" fill="#00A958"/>
+  <text x="110" y="60" font-size="42" font-weight="bold" fill="#000000">Microservice Engine Architecture</text>
+
+  <!-- ===== Left white boxes ===== -->
+  <g fill="#FFFFFF" stroke="#8C8C8C" stroke-width="1.5">
+    <rect x="74.5" y="153.5" width="192" height="62"/>
+    <rect x="74.5" y="236.5" width="192" height="62"/>
+    <rect x="74.5" y="330.5" width="192" height="63"/>
+    <rect x="71.5" y="527.5" width="192" height="63"/>
+    <rect x="71.5" y="599.5" width="192" height="62"/>
+    <rect x="71.5" y="670.5" width="192" height="62"/>
+    <rect x="71.5" y="741.5" width="192" height="63"/>
+    <rect x="71.5" y="813.5" width="192" height="62"/>
+  </g>
+  <g font-size="22" fill="#1A1A1A" text-anchor="middle">
+    <text x="170" y="192">Sentinel SDK</text>
+    <text x="170" y="275">Service Mesh</text>
+    <text x="170" y="369">Observability</text>
+    <text x="167" y="566">Eureka</text>
+    <text x="167" y="638">Zookeeper</text>
+    <text x="167" y="709">Nacos</text>
+    <text x="167" y="780">Kubernetes</text>
+    <text x="167" y="852">Mesh</text>
+  </g>
+
+  <!-- ===== Microservice Engine dashed frame ===== -->
+  <rect x="380.5" y="143.5" width="522" height="571" fill="none" stroke="#00A958" stroke-width="2" stroke-dasharray="8,6"/>
+  <text x="640" y="196" font-size="36" font-weight="bold" fill="#00A958" text-anchor="middle">Microservice Engine</text>
+
+  <!-- Engine inner gray boxes -->
+  <g fill="#E8E8E8">
+    <rect x="402" y="220" width="472" height="70"/>
+    <rect x="402" y="310" width="140" height="86"/>
+    <rect x="710" y="310" width="164" height="210"/>
+    <rect x="402" y="434" width="140" height="86"/>
+    <rect x="402" y="546" width="472" height="70"/>
+    <rect x="402" y="628" width="472" height="70"/>
+  </g>
+  <rect x="572" y="310" width="100" height="210" fill="#BCBCBC"/>
+  <g font-size="22" fill="#1A1A1A" text-anchor="middle">
+    <text x="638" y="262">Gateway Configuration (for services)</text>
+    <text x="472" y="348" font-size="20">Service</text>
+    <text x="472" y="374" font-size="20">Governance</text>
+    <text x="472" y="485" font-size="19">Observability</text>
+    <text x="638" y="589">Service Registry</text>
+    <text x="638" y="671">Registry Instance Management</text>
+    <text x="792" y="402" font-size="20">Configuration</text>
+    <text x="792" y="430" font-size="20">(for services)</text>
+  </g>
+  <text x="622" y="421" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Services</text>
+
+  <!-- ===== Microservice Gateway dashed frame ===== -->
+  <rect x="946.5" y="545.5" width="279" height="169" fill="none" stroke="#00A958" stroke-width="2" stroke-dasharray="8,6"/>
+  <text x="1086" y="596" font-size="24" font-weight="bold" fill="#00A958" text-anchor="middle">Microservice Gateway</text>
+  <rect x="982" y="622" width="206" height="64" fill="#E8E8E8"/>
+  <g font-size="20" fill="#1A1A1A" text-anchor="middle">
+    <text x="1085" y="648">Gateway Instance</text>
+    <text x="1085" y="672">Management</text>
+  </g>
+
+  <!-- ===== Bottom cluster containers ===== -->
+  <g fill="#E8E8E8" stroke="#767676" stroke-width="1">
+    <rect x="412.5" y="792.5" width="261" height="121"/>
+    <rect x="690.5" y="792.5" width="177" height="125"/>
+    <rect x="946.5" y="778.5" width="275" height="145"/>
+  </g>
+  <g font-size="16" fill="#3E3E3E">
+    <text x="427" y="813">Cluster 01</text>
+    <text x="705" y="813">Cluster 02</text>
+    <text x="963" y="800">Cluster 01</text>
+  </g>
+  <g fill="#BCBCBC">
+    <rect x="438" y="840" width="98" height="56"/>
+    <rect x="560" y="840" width="98" height="56"/>
+    <rect x="720" y="840" width="96" height="56"/>
+    <rect x="978" y="840" width="96" height="54"/>
+    <rect x="1098" y="840" width="98" height="54"/>
+  </g>
+  <g font-size="15" fill="#3F3F3F" text-anchor="middle">
+    <text x="487" y="873">Nacos</text>
+    <text x="609" y="873">Nacos</text>
+    <text x="768" y="873">Nacos</text>
+    <text x="1026" y="872">GW01</text>
+    <text x="1147" y="872">GW01</text>
+  </g>
+
+  <!-- ===== Lines and arrows ===== -->
+  <g stroke="#1A1A1A" stroke-width="2" fill="none">
+    <!-- Upper three boxes: Sentinel SDK + Service Mesh converge -> Service Governance -->
+    <line x1="267" y1="184" x2="333" y2="184"/>
+    <line x1="267" y1="268" x2="333" y2="268"/>
+    <polyline points="333,184 333,353 393,353" marker-end="url(#arr)"/>
+    <!-- Observability has its own line, only into Observability inside the engine -->
+    <line x1="267" y1="362" x2="333" y2="362"/>
+    <polyline points="333,362 333,478 393,478" marker-end="url(#arr)"/>
+    <!-- Lower five boxes converge -->
+    <line x1="264" y1="559" x2="333" y2="559"/>
+    <line x1="264" y1="630" x2="333" y2="630"/>
+    <line x1="264" y1="701" x2="333" y2="701"/>
+    <line x1="264" y1="773" x2="333" y2="773"/>
+    <line x1="264" y1="844" x2="333" y2="844"/>
+    <polyline points="333,559 333,581"/>
+    <polyline points="333,581 333,845"/>
+    <line x1="333" y1="563" x2="393" y2="563" marker-end="url(#arr)"/>
+    <line x1="333" y1="581" x2="393" y2="581" marker-end="url(#arr)"/>
+    <!-- Branch to Cluster 01 Nacos -->
+    <polyline points="364,581 364,868"/>
+    <line x1="364" y1="868" x2="429" y2="868" marker-end="url(#arr)"/>
+    <!-- Gateway -> Gateway Configuration (managed) -->
+    <polyline points="1087,545 1087,255 885,255" marker-end="url(#arr)"/>
+    <!-- Gateway -> right cluster (managed) -->
+    <line x1="1087" y1="715" x2="1087" y2="769" marker-end="url(#arr)"/>
+    <!-- Configuration -> Cluster 02 Nacos -->
+    <polyline points="874,414 912,414 912,868 829,868" marker-end="url(#arr)"/>
+  </g>
+  <g font-size="17" fill="#1A1A1A">
+    <text x="937" y="464">Managed</text>
+    <text x="1044" y="748">Managed</text>
+  </g>
+</svg>
