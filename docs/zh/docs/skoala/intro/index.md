@@ -73,7 +73,7 @@ hide:
 
 </div>
 
-![微服务引擎架构](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/archi.png)
+![微服务引擎架构](../images/archi.svg)
 
 [下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
 [了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }

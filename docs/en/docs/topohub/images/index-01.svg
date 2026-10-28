@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1458 787" font-family="-apple-system, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif">
   <title>Device Management Logical Architecture</title>
+  <rect x="0" y="0" width="1458" height="787" fill="#FFFFFF"/>
 
   <!-- ========== Layer 1: Management & Control Layer ========== -->
   <rect x="1.5" y="1.5" width="1455" height="162" rx="8" fill="#F8FAFC" stroke="#595959" stroke-width="3"/>
