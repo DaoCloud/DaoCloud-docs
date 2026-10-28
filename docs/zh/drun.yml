@@ -58,6 +58,7 @@ nav:
               - 运维管理:
                   - 模型广场管理: drun/hydra/oam/index.md
                   - MaaS模型管理: drun/hydra/oam/maas.md
+                  - 智能路由: drun/hydra/oam/auto-route.md
                   - 模型部署管理: drun/hydra/oam/mdm.md
                   - 安全策略管理: drun/hydra/oam/security-policy.md
                   - 安全审计日志: drun/hydra/oam/security-audit-logs.md
