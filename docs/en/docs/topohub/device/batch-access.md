@@ -18,12 +18,12 @@ This guide explains how to import multiple devices at once using an Excel templa
 
 1. In the left navigation bar, select **Devices** to enter the device management list page, then click the **Batch Onboard** button at the top right corner.
 
-    <!-- ![Device Management List](../images/batch-access-device-01.png) -->
+    ![Device Management List](../images/batch-access-device-01.png)
 
 2. In the **Batch Device Onboarding** popup, click **Download Template** to get the Excel template, and fill in the device information row by row according to the template headers.  
    If you have already prepared the Excel file according to the template, skip this step.
 
-    <!-- ![Batch Device Onboarding](../images/batch-access-device-02.png) -->
+    ![Batch Device Onboarding](../images/batch-access-device-02.png)
 
 3. Click **Select File**, choose the prepared `.xlsx` file, and after confirming the selection, click **Onboard Devices**.
 

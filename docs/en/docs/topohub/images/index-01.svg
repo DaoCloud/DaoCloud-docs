@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1458 787" font-family="-apple-system, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif">
+  <title>Device Management Logical Architecture</title>
+
+  <!-- ========== Layer 1: Management & Control Layer ========== -->
+  <rect x="1.5" y="1.5" width="1455" height="162" rx="8" fill="#F8FAFC" stroke="#595959" stroke-width="3"/>
+  <text x="56" y="76" font-size="24" font-weight="bold" fill="#000000">Management &amp;</text>
+  <text x="56" y="104" font-size="24" font-weight="bold" fill="#000000">Control Layer</text>
+  <g stroke="#595959" stroke-width="2.5" fill="#FFFFFF">
+    <rect x="309.5" y="61" width="258" height="56" rx="3"/>
+    <rect x="593.5" y="61" width="257" height="56" rx="3"/>
+    <rect x="876.5" y="61" width="257" height="56" rx="3"/>
+    <rect x="1154.5" y="61" width="258" height="56" rx="3"/>
+  </g>
+  <g font-size="22" fill="#0A0A0A" text-anchor="middle">
+    <text x="438" y="82">Device Discovery &amp;</text>
+    <text x="438" y="108">Onboarding</text>
+    <text x="722" y="96">Remote Power Control</text>
+    <text x="1005" y="96">PXE Boot Provisioning</text>
+    <text x="1283" y="82">Hardware Health</text>
+    <text x="1283" y="108">Monitoring</text>
+  </g>
+
+  <!-- ========== Layer 2: Network & Access Layer ========== -->
+  <rect x="1.5" y="187.5" width="1455" height="161" rx="8" fill="#F8FAFC" stroke="#595959" stroke-width="3"/>
+  <text x="56" y="262" font-size="24" font-weight="bold" fill="#000000">Network &amp;</text>
+  <text x="56" y="290" font-size="24" font-weight="bold" fill="#000000">Access Layer</text>
+  <g stroke="#595959" stroke-width="2.5" fill="#FFFFFF">
+    <rect x="299.5" y="247" width="367" height="56" rx="3"/>
+    <rect x="689.5" y="247" width="351" height="56" rx="3"/>
+    <rect x="1063.5" y="247" width="338" height="56" rx="3"/>
+  </g>
+  <g font-size="22" fill="#0A0A0A" text-anchor="middle">
+    <text x="483" y="282">DHCP Address Assignment</text>
+    <text x="865" y="268">In-band/Out-of-band</text>
+    <text x="865" y="294">Subnet Management</text>
+    <text x="1232" y="282">Persistent IP-MAC Binding</text>
+  </g>
+
+  <!-- ========== Layer 3: Remote Connection Methods ========== -->
+  <rect x="1.5" y="376.5" width="1455" height="82" rx="8" fill="#F8FAFC" stroke="#595959" stroke-width="3"/>
+  <text x="56" y="408" font-size="24" font-weight="bold" fill="#000000">Remote Connection</text>
+  <text x="56" y="436" font-size="24" font-weight="bold" fill="#000000">Methods</text>
+  <g stroke="#595959" stroke-width="2.5" fill="#FFFFFF">
+    <rect x="301.5" y="389" width="365" height="56" rx="3"/>
+    <rect x="689.5" y="389" width="351" height="56" rx="3"/>
+    <rect x="1063.5" y="389" width="338" height="56" rx="3"/>
+  </g>
+  <g font-size="22" fill="#0A0A0A" text-anchor="middle">
+    <text x="484" y="424">Redfish</text>
+    <text x="865" y="424">IPMI</text>
+    <text x="1232" y="424">SSH</text>
+  </g>
+
+  <!-- ========== Layer 4: Physical Device Layer ========== -->
+  <rect x="1.5" y="486.5" width="1455" height="297" rx="8" fill="#F8FAFC" stroke="#595959" stroke-width="3"/>
+  <text x="56" y="645" font-size="24" font-weight="bold" fill="#000000">Physical Device Layer</text>
+
+  <!-- Group boxes -->
+  <g stroke="#595959" stroke-width="2.5" fill="#FFFFFF">
+    <rect x="303.5" y="518" width="505" height="225" rx="6"/>
+    <rect x="841.5" y="518" width="352" height="225" rx="6"/>
+    <rect x="1225.5" y="518" width="201" height="225" rx="6"/>
+  </g>
+  <g font-size="24" font-weight="bold" fill="#0A0A0A" text-anchor="middle">
+    <text x="556" y="554">Bare Metal Servers</text>
+    <text x="1017" y="554">Network Devices</text>
+    <text x="1326" y="554">Storage Devices</text>
+  </g>
+
+  <!-- Icon: rack server -->
+  <g stroke="#4D4D4D" stroke-width="3" fill="none">
+    <rect x="356" y="595" width="48" height="62" rx="4"/>
+    <line x1="356" y1="616" x2="404" y2="616"/>
+    <line x1="356" y1="637" x2="404" y2="637"/>
+  </g>
+  <g fill="#4D4D4D">
+    <circle cx="367" cy="606" r="3"/>
+    <circle cx="367" cy="627" r="3"/>
+    <circle cx="367" cy="648" r="3"/>
+    <rect x="377" y="603" width="18" height="5" rx="2"/>
+    <rect x="377" y="624" width="18" height="5" rx="2"/>
+    <rect x="377" y="645" width="18" height="5" rx="2"/>
+  </g>
+
+  <!-- Icon: tower server -->
+  <g stroke="#4D4D4D" stroke-width="3" fill="none">
+    <rect x="526" y="592" width="46" height="66" rx="4"/>
+    <line x1="526" y1="614" x2="572" y2="614"/>
+    <line x1="526" y1="636" x2="572" y2="636"/>
+  </g>
+  <g fill="#4D4D4D">
+    <circle cx="537" cy="603" r="3"/>
+    <circle cx="537" cy="625" r="3"/>
+    <circle cx="537" cy="647" r="3"/>
+    <rect x="547" y="600" width="16" height="5" rx="2"/>
+    <rect x="547" y="622" width="16" height="5" rx="2"/>
+    <rect x="547" y="644" width="16" height="5" rx="2"/>
+  </g>
+
+  <!-- Icon: blade server -->
+  <g stroke="#4D4D4D" stroke-width="3" fill="none">
+    <rect x="684" y="600" width="62" height="56" rx="4"/>
+    <line x1="684" y1="619" x2="746" y2="619"/>
+    <line x1="684" y1="638" x2="746" y2="638"/>
+  </g>
+  <g fill="#4D4D4D">
+    <circle cx="695" cy="610" r="3"/>
+    <circle cx="695" cy="629" r="3"/>
+    <circle cx="695" cy="648" r="3"/>
+    <rect x="705" y="607" width="16" height="5" rx="2"/>
+    <rect x="705" y="626" width="16" height="5" rx="2"/>
+    <rect x="705" y="645" width="16" height="5" rx="2"/>
+  </g>
+
+  <!-- Icon: switch -->
+  <g stroke="#4D4D4D" stroke-width="3" fill="none">
+    <line x1="906" y1="602" x2="946" y2="602"/>
+    <path d="M940 596 L948 602 L940 608" fill="none"/>
+    <line x1="962" y1="612" x2="922" y2="612"/>
+    <path d="M928 606 L920 612 L928 618" fill="none"/>
+    <rect x="906" y="626" width="56" height="28" rx="4"/>
+  </g>
+  <g fill="#4D4D4D">
+    <circle cx="918" cy="640" r="2.5"/>
+    <circle cx="931" cy="640" r="2.5"/>
+    <circle cx="944" cy="640" r="2.5"/>
+  </g>
+
+  <!-- Icon: router -->
+  <g stroke="#4D4D4D" stroke-width="3" fill="none">
+    <line x1="1078" y1="626" x2="1070" y2="598"/>
+    <line x1="1118" y1="626" x2="1126" y2="598"/>
+    <rect x="1064" y="626" width="68" height="28" rx="6"/>
+    <path d="M1088 612 a14 14 0 0 1 20 0" fill="none"/>
+  </g>
+  <g fill="#4D4D4D">
+    <circle cx="1082" cy="640" r="2.5"/>
+    <circle cx="1096" cy="640" r="2.5"/>
+    <circle cx="1110" cy="640" r="2.5"/>
+  </g>
+
+  <!-- Icon: storage cylinder -->
+  <g stroke="#4D4D4D" stroke-width="3" fill="none">
+    <ellipse cx="1326" cy="604" rx="42" ry="13"/>
+    <line x1="1284" y1="604" x2="1284" y2="650"/>
+    <line x1="1368" y1="604" x2="1368" y2="650"/>
+    <path d="M1284 650 a42 13 0 0 0 84 0" fill="none"/>
+  </g>
+
+  <!-- Sub labels -->
+  <g font-size="22" fill="#595959" text-anchor="middle">
+    <text x="380" y="736">Rack</text>
+    <text x="549" y="736">Tower</text>
+    <text x="715" y="736">Blade...</text>
+    <text x="934" y="736">Switch</text>
+    <text x="1098" y="736">Router</text>
+    <text x="1326" y="736">SAN/NAS...</text>
+  </g>
+</svg>

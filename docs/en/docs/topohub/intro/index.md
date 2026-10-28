@@ -35,7 +35,7 @@ The Device Management module is a Kubernetes-native infrastructure management co
 
 **Product Logical Architecture**
 
-<!-- ![Logical Architecture Diagram](../images/index-01.png) -->
+![Logical Architecture Diagram](../images/index-01.svg)
 
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
 [Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }

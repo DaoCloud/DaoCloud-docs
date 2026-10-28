@@ -6,6 +6,7 @@ hide:
 # 什么是设备管理
 
 设备管理模块是面向智算中心打造的 Kubernetes 云原生基础设施管理组件，能够统一管理主机、交换机等硬件资源。它内置多实例 DHCP 服务，支持自动分配并固定 IP 与 MAC 地址，覆盖主机带内与带外网络，简化 BMC 管理与操作系统部署。通过 PXE 引导实现自动化装机，并提供 WebUI 管理界面，集中管理 IOS、TFTP、ZTP 及相关配置文件。设备管理模块帮助智算中心实现网络、主机与文件服务的一体化管理，全面提升运维效率与自动化水平。
+[查看/下载《设备管理用户手册》PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/topohub.pdf){ .md-button }
 
 **功能特性**
 
@@ -35,7 +36,7 @@ hide:
 
 **产品逻辑架构**
 
-![逻辑架构图](../images/index-01.png)
+![逻辑架构图](../images/index-01.svg)
 
 [下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
 [了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }

@@ -18,7 +18,7 @@ Follow these steps:
 
 1. In the left navigation bar, click **Device Management** -> **Devices** to enter the device list page. Locate the target device and click the __┇__ on the right to expand the action menu.
 
-    <!-- ![Device List and Action Menu](../images/manage-device-00.png) -->
+    ![Device List and Action Menu](../images/manage-device-00.png)
 
 2. Select the desired function:
 
