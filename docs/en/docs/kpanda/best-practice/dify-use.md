@@ -8,9 +8,9 @@ This article mainly introduces how to use __Helm Application__ in DCE to deploy 
 
 Before installing __dify-chart__ plugin, the following prerequisites must be met:
 
-- Container Management module has [integrated with Kubernetes cluster](../clusters/integrate-cluster.md) or [created a Kubernetes cluster](../clusters/create-cluster.md), and can access the cluster's UI.
+- Container Management module has [integrated with Kubernetes cluster](../user-guide/clusters/integrate-cluster.md) or [created a Kubernetes cluster](../user-guide/clusters/create-cluster.md), and can access the cluster's UI.
 
-- The current operating user should have [NS Editor](../permissions/permission-brief.md#ns-editor) or higher permissions. For details, refer to [Namespace Authorization](../namespaces/createns.md).
+- The current operating user should have [NS Editor](../user-guide/permissions/permission-brief.md#ns-editor) or higher permissions. For details, refer to [Namespace Authorization](../user-guide/namespaces/createns.md).
 
 ## Installation Process
 

@@ -141,6 +141,10 @@ k8s-certs-renew.timer
 
 ## Configure Certificate Validity Period
 
+!!! note
+
+    Configuring the certificate validity period is supported in container management (kpanda) v0.41 and later.
+
 By default, certificates are valid for one year. To change this duration, set the following parameters in the advanced cluster configuration:
 
 ```yaml

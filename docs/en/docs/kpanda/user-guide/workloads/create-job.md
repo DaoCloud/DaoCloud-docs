@@ -60,14 +60,35 @@ Container setting is divided into six parts: basic information, lifecycle, healt
 
     When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the settings with reference to the following requirements, click __OK__ .
 
+    - Container Type: defaults to `Working Container`. For init containers, refer to the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/).
     - Container Name: Up to 63 characters, lowercase letters, numbers and separators ("-") are supported. Must start and end with a lowercase letter or number, eg nginx-01.
-    - Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/intro/index.md) module of DCE, you can click __Select Image__ on the right to select an image.
-    - Image Pull Policy: After checking __Always pull image__ , the image will be pulled from the registry every time the workload restarts/upgrades. If it is not checked, only the local image will be pulled, and only when the image does not exist locally, it will be re-pulled from the container registry. For more details, refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
+    - Image:
+        - Container Image: Select a suitable image from the list. When you enter an image name, the image is pulled from the official [DockerHub](https://hub.docker.com/) by default. After you integrate the [container registry](../../../kangaroo/intro/index.md) module with DCE, you can click __Select Image__ on the right to select an image.
+        - Image Version: Select a suitable version from the drop-down list.
+        - Image Pull Policy: After checking __Always pull image__ , the image will be pulled from the registry every time the workload restarts/upgrades. If it is not checked, only the local image will be pulled, and only when the image does not exist locally, it will be re-pulled from the container registry. For more details, refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
+        - Image Registry Secret: Optional. If the target registry requires a Secret for access, [create a secret](../configmaps-secrets/create-secret.md) first.
     - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host.
     - CPU/Memory Quota: Requested value (minimum resource to be used) and limit value (maximum resource allowed to be used) of CPU/Memory resource. Please configure resources for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default value is shown in the figure.
-    - GPU Exclusive: Configure the GPU usage for the container, only positive integers are supported. The GPU quota setting supports setting exclusive use of the entire GPU card or part of the vGPU for the container. For example, for an 8-core GPU card, enter the number __8__ to let the container exclusively use the entire length of the card, and enter the number __1__ to configure a 1-core vGPU for the container.
+    - GPU Configuration: Configure the GPU usage for the container, only positive integers are supported.
+        - Full Card Mode:
+            - Number of Physical Cards: the number of physical GPU cards that the container can use. Once configured, the container occupies an entire physical GPU card. The number of physical cards must be less than or equal to the maximum number of GPU cards inserted on a single node.
+        - Virtualization Mode:
+            - Number of Physical Cards: the number of physical GPU cards that the container can use. The number must be less than or equal to the maximum number of GPU cards inserted on a single node.
+            - GPU Compute: the percentage of compute power to be used on each physical GPU card, up to 100%.
+            - Memory: the amount of memory to be used on each physical card.
+            - Scheduling Policy (Binpack/Spread): supports two scheduling policies based on GPU cards and based on nodes. Binpack is a centralized scheduling policy that preferentially schedules containers to the same GPU card on the same node. Spread is a decentralized scheduling policy that preferentially schedules containers to different GPU cards on different nodes. You can combine them according to actual scenarios. (When the Binpack/Spread scheduling policy at the workload level conflicts with that at the cluster level, the workload-level policy takes precedence.)
+            - Task Priority: GPU compute is preferentially allocated to high-priority tasks. Normal tasks reduce or even suspend their use of GPU compute until high-priority tasks are finished, and then resume. This is commonly used in online-offline colocation scenarios.
+            - Specified Model: schedules the workload to GPU cards of a specified model, which is suitable for scenarios with special requirements for GPU models.
+        - MIG Mode:
+            - Specification: the specification of the partitioned physical GPU card.
+            - Count: the number of GPUs to use with this specification.
 
-    > Before setting exclusive GPU, the administrator needs to install the GPU card and driver plug-in on the cluster nodes in advance, and enable the GPU feature in [Cluster Settings](../clusterops/cluster-settings.md).
+    !!! tip
+
+        Before setting GPU, the administrator needs to install
+        [GPU Operator](../gpu/nvidia/install_nvidia_driver_of_operator.md)
+        and [nvidia-vgpu](../gpu/nvidia/vgpu/vgpu_addon.md) (only required for vGPU mode) on the cluster in advance,
+        and enable the GPU feature in [Cluster Settings](../clusterops/cluster-settings.md).
 
 === "Lifecycle (optional)"
 

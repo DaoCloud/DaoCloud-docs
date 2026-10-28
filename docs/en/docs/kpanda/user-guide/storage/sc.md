@@ -50,7 +50,9 @@ Currently, it supports creating StorageClass through YAML and forms. These two m
     - Recycling policy: When deleting a data volume, keep the data in the data volume or delete the data in it.
     - Snapshot/Expansion: After it is enabled, the data volume/data volume declaration based on the StorageClass can support the expansion and snapshot features, but **the premise is that the underlying storage driver supports the snapshot and expansion features**.
 
-    
+    !!! note
+
+        HwameiStor currently supports the xfs and ext4 file systems, and xfs is used by default. To switch to ext4, add __csi.storage.k8s.io/fstype: ext4__ in the custom parameters.
 
 ## Update StorageClass (SC)
 

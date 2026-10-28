@@ -65,7 +65,13 @@ Click the name of the target cluster in the cluster list, and then click __Conta
 
     
 
-2. Click the name of the data volume declaration, and then click the operation button in the upper right corner of the page and select __Expansion__ . You need to enable the feature while [creating a StorageClass](./sc.md).
+2. Click the name of the data volume declaration, and then click the operation button in the upper right corner of the page and select __Expansion__ .
+
+    !!! note
+
+        You need to [enable expansion in the StorageClass](./sc.md) first.
+
+3. Enter the target capacity and click __OK__ .
 
     
 

@@ -24,20 +24,24 @@ In DCE, you can upgrade the Kubernetes cluster with one click through the web UI
 
 1. Click the name of the target cluster in the cluster list.
 
-    
-
 2. Then click __Cluster Operation and Maintenance__ -> __Cluster Upgrade__ in the left navigation bar, and click __Version Upgrade__ in the upper right corner of the page.
-
-    
 
 3. Select the version that can be upgraded, and enter the cluster name to confirm.
 
-      
+    !!! note
+
+        If you want to modify cluster parameters by upgrading, refer to the following steps:
+
+        1. Find the ConfigMap of the cluster. Log in to the control node and run the following command to find the ConfigMap name in `varsConfRef`.
+
+            ```shell
+            kubectl get cluster.kubean.io <clustername> -o yaml
+            ```
+
+        2. Modify the parameters in the ConfigMap as needed.
+
+        3. Select the same version here to perform the upgrade. After the upgrade is complete, the cluster parameters are updated successfully.
 
 4. After clicking __OK__ , you can see the upgrade progress of the cluster.
 
-      
-
 5. The cluster upgrade is expected to take 30 minutes. You can click the __Real-time Log__ button to view the detailed log of the cluster upgrade.
-
-    

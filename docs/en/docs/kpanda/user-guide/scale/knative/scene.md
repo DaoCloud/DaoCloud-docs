@@ -7,6 +7,10 @@
 * A large number of applications need to scale down to 0 to improve resource utilization
 * AI Serving services that scale based on specific metrics
 
+!!! tip
+
+    For high concurrency business with short connections and businesses that require scaling, HPA and VPA are recommended.
+
 ## Unsuitable Cases
 
 * Long-lived connection business
