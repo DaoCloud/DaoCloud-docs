@@ -56,3 +56,45 @@ img {
     background-color: #fff;
 }
 */
+/* ==========================================================================
+   Mermaid diagrams, global dark-mode adaptation
+
+   Render path (this dictates the only viable fix):
+   Material's bundle maps every `pre.mermaid` to mermaid.render() and injects
+   the resulting SVG into attachShadow({mode:"closed"}), so page selectors can
+   never reach it. The themeCSS Material injects, however, takes every colour
+   from CSS custom properties, and custom properties DO inherit into the shadow
+   tree => redefining them on the host div.mermaid is the only lever available.
+   Material hardcodes initialize({startOnLoad:false, themeCSS}) and offers no
+   way to pass themeVariables, so "configure theme variables" is not an option.
+
+   Why slate breaks: mermaid's own theme fills nodes with light colours while
+   Material supplies --md-mermaid-label-fg-color = --md-code-fg-color (86%
+   lightness) as label text, i.e. light text on light fill; edge labels keep a
+   dark background and render as solid black blocks.
+
+   Strategy: in dark mode render diagrams as "white card + dark text", matching
+   the hand-drawn SVGs used elsewhere in the site.
+   The 8 variables below map one-to-one onto themeCSS references; removing any
+   of them makes some diagram text unreadable in slate mode.
+   ========================================================================== */
+
+.md-typeset div.mermaid {
+    margin: 1em 0;
+    overflow-x: auto; /* scroll wide diagrams instead of squashing them */
+}
+
+[data-md-color-scheme="slate"] .md-typeset div.mermaid {
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 12px;
+    /* Inherited into the shadow tree; affects diagram internals only */
+    --md-default-bg-color: #ffffff;            /* referenced twice by themeCSS */
+    --md-default-fg-color--lightest: #eeeeee;  /* subgraph fill */
+    --md-default-fg-color--lighter: #cccccc;   /* subgraph border */
+    --md-mermaid-label-bg-color: #ffffff;      /* edge label fill; dark block if unset */
+    --md-mermaid-label-fg-color: #1a1a1a;      /* edge label text */
+    --md-mermaid-edge-color: #1a1a1a;          /* edges and arrowheads (15 refs) */
+    --md-mermaid-node-bg-color: #f7f8fa;       /* node fill */
+    --md-mermaid-node-fg-color: #1a1a1a;       /* node border */
+}

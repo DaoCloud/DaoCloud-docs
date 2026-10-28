@@ -17,6 +17,17 @@
   {% include "overrides/partials/content.html" %}
 {% endblock %}
 {% block scripts %}
+  {#- Self-hosted Mermaid (v11.17.2): this file only exposes the global `mermaid`
+      object. Rendering is done by the Material bundle below, which hands every
+      <pre class="mermaid"> to mermaid.render() and injects the SVG into a closed
+      shadow root; its loader falls back to unpkg.com only while
+      `typeof mermaid == "undefined"`, so this must come first (a missing file
+      still degrades to the CDN instead of leaving blank diagrams).
+      Do not call mermaid.run() here: the bundle replaces each <pre> with an
+      already-rendered <div>, so a second pass would render an empty node. -#}
+  {%- if page and page.content and 'class="mermaid"' in page.content %}
+  <script src="{{ 'overrides/assets/javascripts/mermaid.min.js' | url }}"></script>
+  {%- endif %}
   {{ super() }}
   <script src="{{ 'overrides/assets/javascripts/bundle.b97a6647.min.js' | url }}"></script>
   <script>
@@ -28,5 +39,4 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
-  <script src="{{ 'overrides/assets/javascripts/mermaid.esm.min.mjs' | url }}"></script>
 {% endblock %}

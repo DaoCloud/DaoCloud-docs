@@ -17,6 +17,16 @@
   {% include "overrides/partials/content.html" %}
 {% endblock %}
 {% block scripts %}
+  {#- 自托管 mermaid（v11.17.2）：本文件只负责提供全局 mermaid 对象，渲染由下面的
+      Material bundle 完成 —— 它把每个 <pre class="mermaid"> 交给 mermaid.render()，
+      再把 SVG 注入 closed shadow root；其加载器仅在
+      `typeof mermaid == "undefined"` 时才回落到 unpkg.com，所以必须先于 bundle
+      引入（本文件缺失时仍会自动降级到 CDN，不会白图）。
+      不要在这里调用 mermaid.run()：bundle 会把 <pre> 替换成已渲染的 <div>，
+      再跑一遍等于渲染空节点。 -#}
+  {%- if page and page.content and 'class="mermaid"' in page.content %}
+  <script src="{{ 'overrides/assets/javascripts/mermaid.min.js' | url }}"></script>
+  {%- endif %}
   {{ super() }}
   <script src="{{ 'overrides/assets/javascripts/bundle.b97a6647.min.js' | url }}"></script>
   <script>
@@ -28,5 +38,4 @@
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
-    <script src="{{ 'overrides/assets/javascripts/mermaid.esm.min.mjs' | url }}"></script>
 {% endblock %}

@@ -56,3 +56,41 @@ img {
     background-color: #fff;
 }
 */
+/* ==========================================================================
+   Mermaid 图表全局适配
+
+   渲染路径（决定为什么只能这样改）：
+   Material bundle 扫描 pre.mermaid → mermaid.render() → 把生成的 SVG 注入
+   attachShadow({mode:"closed"})，页面 CSS 选择器进不了影子树。但 Material
+   注入的 themeCSS 取色全部走 CSS 自定义属性，而自定义属性可以从宿主
+   div.mermaid 继承进去 ⇒ 在宿主上重定义变量是唯一可用的配色干预点。
+   Material 硬编码 initialize({startOnLoad:false, themeCSS})，站点无法传
+   themeVariables，所以也不存在"改用 themeVariables"这条路。
+
+   暗色问题的根源：slate 下 mermaid 自带的主题给节点填浅色，而 Material
+   提供的 --md-mermaid-label-fg-color 是浅色文字（= --md-code-fg-color，
+   86% 亮度），形成浅底浅字；连线标签的底色则留在深色，成为黑块。
+
+   策略：暗色模式统一渲染为「白底卡片 + 深色文字」，与站内手绘 SVG 一致。
+   下面 8 个变量逐条对应 themeCSS 里的引用，删任何一个都会在暗色下失读。
+   ========================================================================== */
+
+.md-typeset div.mermaid {
+    margin: 1em 0;
+    overflow-x: auto; /* 宽图横向滚动，避免被压缩变形 */
+}
+
+[data-md-color-scheme="slate"] .md-typeset div.mermaid {
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 12px;
+    /* 以下变量靠继承进入影子树，只影响图内，不影响页面其它元素 */
+    --md-default-bg-color: #ffffff;            /* themeCSS 中 2 处直接引用 */
+    --md-default-fg-color--lightest: #eeeeee;  /* 子图（subgraph）填充 */
+    --md-default-fg-color--lighter: #cccccc;   /* 子图（subgraph）描边 */
+    --md-mermaid-label-bg-color: #ffffff;      /* 连线标签底色，不设即为深色块 */
+    --md-mermaid-label-fg-color: #1a1a1a;      /* 连线标签文字 */
+    --md-mermaid-edge-color: #1a1a1a;          /* 连线与箭头（themeCSS 引用 15 次） */
+    --md-mermaid-node-bg-color: #f7f8fa;       /* 节点填充 */
+    --md-mermaid-node-fg-color: #1a1a1a;       /* 节点描边 */
+}
