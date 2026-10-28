@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1458 787" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif">
+  <title>设备管理逻辑架构图</title>
+
+  <!-- ========== 第一层：管理与控制层 ========== -->
+  <rect x="1.5" y="1.5" width="1455" height="162" rx="8" fill="#F8FAFC" stroke="#595959" stroke-width="3"/>
+  <text x="56" y="96" font-size="32" font-weight="bold" fill="#000000">管理与控制层</text>
+  <g stroke="#595959" stroke-width="2.5" fill="#FFFFFF">
+    <rect x="309.5" y="61" width="258" height="56" rx="3"/>
+    <rect x="593.5" y="61" width="257" height="56" rx="3"/>
+    <rect x="876.5" y="61" width="257" height="56" rx="3"/>
+    <rect x="1154.5" y="61" width="258" height="56" rx="3"/>
+  </g>
+  <g font-size="28" fill="#0A0A0A" text-anchor="middle">
+    <text x="438" y="98">设备发现与纳管</text>
+    <text x="722" y="98">远程电源控制</text>
+    <text x="1005" y="98">PXE 引导装机</text>
+    <text x="1283" y="98">硬件健康监控</text>
+  </g>
+
+  <!-- ========== 第二层：网络与接入层 ========== -->
+  <rect x="1.5" y="187.5" width="1455" height="161" rx="8" fill="#F8FAFC" stroke="#595959" stroke-width="3"/>
+  <text x="56" y="282" font-size="32" font-weight="bold" fill="#000000">网络与接入层</text>
+  <g stroke="#595959" stroke-width="2.5" fill="#FFFFFF">
+    <rect x="299.5" y="247" width="367" height="56" rx="3"/>
+    <rect x="689.5" y="247" width="351" height="56" rx="3"/>
+    <rect x="1063.5" y="247" width="338" height="56" rx="3"/>
+  </g>
+  <g font-size="28" fill="#0A0A0A" text-anchor="middle">
+    <text x="483" y="284">DHCP 地址分配</text>
+    <text x="865" y="284">带内/带外子网管理</text>
+    <text x="1232" y="284">IP-MAC 持久化绑定</text>
+  </g>
+
+  <!-- ========== 第三层：远程连接方式 ========== -->
+  <rect x="1.5" y="376.5" width="1455" height="82" rx="8" fill="#F8FAFC" stroke="#595959" stroke-width="3"/>
+  <text x="56" y="431" font-size="32" font-weight="bold" fill="#000000">远程连接方式</text>
+  <g stroke="#595959" stroke-width="2.5" fill="#FFFFFF">
+    <rect x="301.5" y="389" width="365" height="56" rx="3"/>
+    <rect x="689.5" y="389" width="351" height="56" rx="3"/>
+    <rect x="1063.5" y="389" width="338" height="56" rx="3"/>
+  </g>
+  <g font-size="28" fill="#0A0A0A" text-anchor="middle">
+    <text x="484" y="426">Redfish</text>
+    <text x="865" y="426">IPMI</text>
+    <text x="1232" y="426">SSH</text>
+  </g>
+
+  <!-- ========== 第四层：物理设备层 ========== -->
+  <rect x="1.5" y="486.5" width="1455" height="297" rx="8" fill="#F8FAFC" stroke="#595959" stroke-width="3"/>
+  <text x="56" y="648" font-size="32" font-weight="bold" fill="#000000">物理设备层</text>
+
+  <!-- 分组框 -->
+  <g stroke="#595959" stroke-width="2.5" fill="#FFFFFF">
+    <rect x="303.5" y="518" width="505" height="225" rx="6"/>
+    <rect x="841.5" y="518" width="352" height="225" rx="6"/>
+    <rect x="1225.5" y="518" width="201" height="225" rx="6"/>
+  </g>
+  <g font-size="28" font-weight="bold" fill="#0A0A0A" text-anchor="middle">
+    <text x="556" y="556">裸金属服务器</text>
+    <text x="1017" y="556">网络设备</text>
+    <text x="1326" y="556">存储设备</text>
+  </g>
+
+  <!-- 图标：机架式 -->
+  <g stroke="#4D4D4D" stroke-width="3" fill="none">
+    <rect x="356" y="595" width="48" height="62" rx="4"/>
+    <line x1="356" y1="616" x2="404" y2="616"/>
+    <line x1="356" y1="637" x2="404" y2="637"/>
+  </g>
+  <g fill="#4D4D4D">
+    <circle cx="367" cy="606" r="3"/>
+    <circle cx="367" cy="627" r="3"/>
+    <circle cx="367" cy="648" r="3"/>
+    <rect x="377" y="603" width="18" height="5" rx="2"/>
+    <rect x="377" y="624" width="18" height="5" rx="2"/>
+    <rect x="377" y="645" width="18" height="5" rx="2"/>
+  </g>
+
+  <!-- 图标：塔式 -->
+  <g stroke="#4D4D4D" stroke-width="3" fill="none">
+    <rect x="526" y="592" width="46" height="66" rx="4"/>
+    <line x1="526" y1="614" x2="572" y2="614"/>
+    <line x1="526" y1="636" x2="572" y2="636"/>
+  </g>
+  <g fill="#4D4D4D">
+    <circle cx="537" cy="603" r="3"/>
+    <circle cx="537" cy="625" r="3"/>
+    <circle cx="537" cy="647" r="3"/>
+    <rect x="547" y="600" width="16" height="5" rx="2"/>
+    <rect x="547" y="622" width="16" height="5" rx="2"/>
+    <rect x="547" y="644" width="16" height="5" rx="2"/>
+  </g>
+
+  <!-- 图标：刀片 -->
+  <g stroke="#4D4D4D" stroke-width="3" fill="none">
+    <rect x="684" y="600" width="62" height="56" rx="4"/>
+    <line x1="684" y1="619" x2="746" y2="619"/>
+    <line x1="684" y1="638" x2="746" y2="638"/>
+  </g>
+  <g fill="#4D4D4D">
+    <circle cx="695" cy="610" r="3"/>
+    <circle cx="695" cy="629" r="3"/>
+    <circle cx="695" cy="648" r="3"/>
+    <rect x="705" y="607" width="16" height="5" rx="2"/>
+    <rect x="705" y="626" width="16" height="5" rx="2"/>
+    <rect x="705" y="645" width="16" height="5" rx="2"/>
+  </g>
+
+  <!-- 图标：交换机 -->
+  <g stroke="#4D4D4D" stroke-width="3" fill="none">
+    <line x1="906" y1="602" x2="946" y2="602"/>
+    <path d="M940 596 L948 602 L940 608" fill="none"/>
+    <line x1="962" y1="612" x2="922" y2="612"/>
+    <path d="M928 606 L920 612 L928 618" fill="none"/>
+    <rect x="906" y="626" width="56" height="28" rx="4"/>
+  </g>
+  <g fill="#4D4D4D">
+    <circle cx="918" cy="640" r="2.5"/>
+    <circle cx="931" cy="640" r="2.5"/>
+    <circle cx="944" cy="640" r="2.5"/>
+  </g>
+
+  <!-- 图标：路由器 -->
+  <g stroke="#4D4D4D" stroke-width="3" fill="none">
+    <line x1="1078" y1="626" x2="1070" y2="598"/>
+    <line x1="1118" y1="626" x2="1126" y2="598"/>
+    <rect x="1064" y="626" width="68" height="28" rx="6"/>
+    <path d="M1088 612 a14 14 0 0 1 20 0" fill="none"/>
+  </g>
+  <g fill="#4D4D4D">
+    <circle cx="1082" cy="640" r="2.5"/>
+    <circle cx="1096" cy="640" r="2.5"/>
+    <circle cx="1110" cy="640" r="2.5"/>
+  </g>
+
+  <!-- 图标：存储（圆柱） -->
+  <g stroke="#4D4D4D" stroke-width="3" fill="none">
+    <ellipse cx="1326" cy="604" rx="42" ry="13"/>
+    <line x1="1284" y1="604" x2="1284" y2="650"/>
+    <line x1="1368" y1="604" x2="1368" y2="650"/>
+    <path d="M1284 650 a42 13 0 0 0 84 0" fill="none"/>
+  </g>
+
+  <!-- 子标签 -->
+  <g font-size="26" fill="#595959" text-anchor="middle">
+    <text x="380" y="738">机架式</text>
+    <text x="549" y="738">塔式</text>
+    <text x="715" y="738">刀片...</text>
+    <text x="934" y="738">交换机</text>
+    <text x="1098" y="738">路由器</text>
+    <text x="1326" y="738">SAN/NAS...</text>
+  </g>
+</svg>
