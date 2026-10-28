@@ -8,8 +8,7 @@ hide:
 算力市场是 d.run 搭建的开放式平台，聚合来自独立算力资源供应商的多种 GPU 计算资源与配套服务。
 用户可以在算力市场中按需浏览、筛选和购买不同规格的 GPU 资源，并选择合适的计费模式，
 快速创建满足业务需求的容器实例，实现高效、灵活的算力获取与使用。
-
-[查看/下载算力云用户手册](https://harbor-test2.cn-sh2.ufileos.com/docs/download/zestu.pdf){ .md-button }
+[查看/下载算力云用户手册](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/zestu.pdf){ .md-button }
 
 - 按量付费：费用 = 时长 * 单价
 

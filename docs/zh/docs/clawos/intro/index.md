@@ -1,8 +1,7 @@
 # 什么是 ClawOS
 
 ClawOS 是面向企业的 Agent 运行与治理平台，用于统一创建、管理、集成、观测和运维企业内部的 AI Agent。当前版本中，ClawOS 管理的 Agent 类型主要为 OpenClaw 实例；后续平台可扩展支持更多类型的企业 Agent。
-
-[查看/下载 ClawOS 用户手册](https://harbor-test2.cn-sh2.ufileos.com/docs/download/ClawOS.pdf){ .md-button }
+[查看/下载 ClawOS 用户手册](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/ClawOS.pdf){ .md-button }
 
 ## ClawOS：企业级 Agent 运行与治理平台
 

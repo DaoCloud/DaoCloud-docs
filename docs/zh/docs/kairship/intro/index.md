@@ -5,7 +5,9 @@ hide:
 
 # 什么是多云编排
 
-国内的云计算已经发展了近 15 年，随着技术的成熟，企业应用不单单是简单的上云，出现了更多更复杂的多云需求。云计算从单云到多云的发展历程简单示意如下。
+国内的云计算已经发展了近 15 年，随着技术的成熟，企业应用不单单是简单的上云，出现了更多更复杂的多云需求。[查看/下载《多云编排用户手册》PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/kairship.pdf){ .md-button }
+
+云计算从单云到多云的发展历程简单示意如下。
 
 ![单云到多云](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/what.png)
 

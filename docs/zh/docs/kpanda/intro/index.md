@@ -8,6 +8,7 @@ hide:
 容器管理是基于 Kubernetes 构建的面向云原生应用的容器化管理模块。
 基于原生多集群架构，解耦底层基础设施，实现多云与多集群统一化管理，大幅简化企业的应用上云流程，
 有效降低运维管理和人力成本。通过容器管理，您可以便捷创建 Kubernetes 集群，快速搭建企业级的容器云管理平台。
+[查看/下载《容器管理用户手册》PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/kpanda.pdf){ .md-button }
 
 !!! tip
 

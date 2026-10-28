@@ -6,6 +6,7 @@ hide:
 # 什么是虚拟机 (Virtnest)
 
 虚拟机（Virtnest）基于 KubeVirt 技术将虚拟机作为云原生应用进行管理，与容器无缝地衔接在一起，使用户能够轻松地部署虚拟机应用，享受与容器应用一致的丝滑体验。
+[查看/下载《虚拟机用户手册》PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/virtnest.pdf){ .md-button }
 
 以下是使用 Virtnest 的大致步骤：
 

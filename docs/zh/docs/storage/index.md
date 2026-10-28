@@ -14,6 +14,7 @@
 
 云原生存储基于 Kubernetes CSI 标准，可根据不同 SLA 要求及用户场景对接符合 CSI 标准的存储。
 DaoCloud 推出的云原生本地存储天然具备云原生特性，满足容器场景中高扩展性、高可用性等特点。
+[查看/下载《云原生存储用户手册》PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/storage.pdf){ .md-button }
 
 ![云原生存储](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/nativestorage.jpg)
 

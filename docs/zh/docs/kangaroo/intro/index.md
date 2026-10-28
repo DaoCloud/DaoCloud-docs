@@ -6,6 +6,7 @@ hide:
 # 什么是镜像仓库
 
 镜像仓库是一个支持多实例生命周期管理的云原生镜像托管服务，支持将镜像仓库实例部署至任意云原生基础环境，同时支持集成外部镜像仓库（Harbor Registry 、 Docker Registry 和 Jfrog Registry）。通过镜像仓库服务，您可以将私有镜像空间分配给一个或多个工作空间（租户）使用，确保私有镜像的安全性，也可以将镜像空间公开给所有 Kubernetes 命名空间使用，镜像仓库配合[容器管理](../../kpanda/intro/index.md)服务帮助用户快速部署应用。
+[查看/下载《镜像仓库用户手册》PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/kangaroo.pdf){ .md-button }
 
 ## 功能特性
 

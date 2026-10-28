@@ -1,6 +1,7 @@
 # 什么是云原生网络？
 
-云原生网络基于多个开源技术构建，不仅提供单个 CNI 网络支持，也提供多个 CNI 网络的组合方案。具体方案如下：
+云原生网络基于多个开源技术构建，不仅提供单个 CNI 网络支持，也提供多个 CNI 网络的组合方案。
+[查看/下载《云原生网络用户手册》PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/network.pdf){ .md-button }
 
 ## 方案一：Cilium + Macvlan/SR-IOV/IPvlan + SpiderPool + Multus
 
