@@ -7,6 +7,7 @@ hide:
 
 DCE 针对实际应用场景，精选了一些经典的中间件来处理数据，能够满足各类应用场景的开发和维护。
 您可以按需安装/启用这些中间件，即插即用。
+[查看/下载《数据服务用户手册》PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/mcamel.pdf){ .md-button }
 
 !!! tip
 

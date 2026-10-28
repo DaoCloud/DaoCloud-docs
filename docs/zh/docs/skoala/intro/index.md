@@ -9,6 +9,7 @@ hide:
 具体包括服务注册发现、配置管理、流量治理、服务级别的链路追踪、API 管理、域名管理、监控告警等，覆盖了微服务生命周期中的各种管理场景。
 微服务引擎具有很强的兼容性，不仅可以无缝对接 DCE 的其他组件，也可以完美兼容 Spring Cloud、Dubbo 等开源生态，
 帮助您更便捷地使用开源微服务技术构建自己的微服务体系。
+[查看/下载《微服务引擎用户手册》PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/skoala.pdf){ .md-button }
 
 <div class="grid cards" markdown>
 

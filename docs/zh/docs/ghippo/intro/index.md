@@ -1,6 +1,7 @@
 # 什么是全局管理？
 
 全局管理是以用户为中心的综合性服务板块，包含用户与访问控制、工作空间与层级、审计日志、平台设置等基础服务模块。
+[查看/下载《全局管理用户手册》PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/ghippo.pdf){ .md-button }
 
 - [用户与访问控制](../user-guide/access-control/global.md)：帮助用户安全管理资源的访问权限。您可以通过用户与访问控制创建、管理、删除用户/用户组，并灵活配置用户/用户组权限，来完成用户职能权限的划分。
 
