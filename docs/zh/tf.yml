@@ -603,6 +603,10 @@ nav:
           - 驾驶舱:
               - 什么是驾驶舱: tf/crane/intro/index.md
               - 经营概览面板: tf/crane/user-guide/singlepage.md
+              - 经营价值: tf/crane/user-guide/business-value.md
+              - 财务运营: tf/crane/user-guide/finops.md
+              - 生产运营: tf/crane/user-guide/production-operations.md
+              - 风险防护: tf/crane/user-guide/security-protection.md
               - Release Notes: tf/crane/intro/release-notes.md
           - Copilot 智能工作台:
               - tf/copilot/index.md
