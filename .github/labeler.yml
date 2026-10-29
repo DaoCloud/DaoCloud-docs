@@ -14,6 +14,14 @@ clawos:
   - "docs/en/docs/clawos/**/*"
   - "docs/zh/docs/clawos/**/*"
 
+copilot:
+  - "docs/en/docs/copilot/**/*"
+  - "docs/zh/docs/copilot/**/*"
+
+crane:
+  - "docs/en/docs/crane/**/*"
+  - "docs/zh/docs/crane/**/*"
+
 dak:
   - "docs/en/docs/dak/**/*"
   - "docs/zh/docs/dak/**/*"
