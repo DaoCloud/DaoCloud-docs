@@ -645,6 +645,10 @@ nav:
           - Cockpit:
               - What Is Cockpit: drun/crane/intro/index.md
               - Business Overview Panel: drun/crane/user-guide/singlepage.md
+              - Business Value: drun/crane/user-guide/business-value.md
+              - Financial Operations: drun/crane/user-guide/finops.md
+              - Production Operations: drun/crane/user-guide/production-operations.md
+              - Security Protection: drun/crane/user-guide/security-protection.md
               - Release Notes: drun/crane/intro/release-notes.md
           - Copilot Workbench:
               - drun/copilot/index.md

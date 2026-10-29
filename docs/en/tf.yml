@@ -595,6 +595,10 @@ nav:
           - Cockpit:
               - What Is Cockpit: tf/crane/intro/index.md
               - Business Overview Panel: tf/crane/user-guide/singlepage.md
+              - Business Value: tf/crane/user-guide/business-value.md
+              - Financial Operations: tf/crane/user-guide/finops.md
+              - Production Operations: tf/crane/user-guide/production-operations.md
+              - Security Protection: tf/crane/user-guide/security-protection.md
               - Release Notes: tf/crane/intro/release-notes.md
           - Copilot Workbench:
               - tf/copilot/index.md
