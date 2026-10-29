@@ -50,8 +50,8 @@ tar -xvf offline-v0.21.0-arm64.tar
 
 其中 [Kubean](https://github.com/kubean-io/kubean) 提供了不同操作系统的osPackage 离线包，可以前往 <https://github.com/kubean-io/kubean/releases> 查看。
 
-| 操作系统版本 | 下载地址                                                                                                |
-| :--------- |:----------------------------------------------------------------------------------------------------|
+| 操作系统版本 | 下载地址 |
+| :--------- |:--------|
 | Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://github.com/kubean-io/kubean/releases/download/v0.18.5/os-pkgs-kylin-v10sp2-v0.18.5.tar.gz> |
 
 
