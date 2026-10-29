@@ -50,6 +50,7 @@ nav:
               - Admin:
                   - Model Plaza Management: drun/hydra/oam/index.md
                   - MaaS Model Management: drun/hydra/oam/maas.md
+                  - Smart Routing: drun/hydra/oam/auto-route.md
                   - Model Serving Management: drun/hydra/oam/mdm.md
                   - Security Policy Management: drun/hydra/oam/security-policy.md
                   - Security Audit Logs: drun/hydra/oam/security-audit-logs.md

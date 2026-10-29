@@ -49,6 +49,7 @@ nav:
               - Admin:
                   - Model Plaza Management: tf/hydra/oam/index.md
                   - MaaS Model Management: tf/hydra/oam/maas.md
+                  - Smart Routing: tf/hydra/oam/auto-route.md
                   - Model Serving Management: tf/hydra/oam/mdm.md
                   - Security Policy Management: tf/hydra/oam/security-policy.md
                   - Security Audit Logs: tf/hydra/oam/security-audit-logs.md
