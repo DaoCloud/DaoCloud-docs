@@ -2,9 +2,9 @@
 
 DCE 大体分为两个版本：社区版和商业版。
 
-- 社区版包括容器管理、全局管理、可观测性三大模块，可永久免费使用。[查阅和下载 DCE 社区版安装手册 PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/dce5-community.pdf){ .md-button }
-- 商业版在社区版的基础上可按需购买服务网格、微服务引擎、多云编排、数据服务中间件、镜像仓库、云边协同、容器化虚拟机等高级模块，
-  功能更全面，更能适应各类生产环境需求。[查阅和下载 DCE 商业版安装手册 PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/dce5.0-install.pdf){ .md-button }
+- 社区版包括容器管理、全局管理、可观测性三大模块，可永久免费使用。[DCE 社区版安装手册 PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/dce5-community.pdf){ .md-button }
+- 商业版在社区版的基础上可按需增加服务网格、微服务引擎、多云编排、数据服务中间件、镜像仓库、云边协同、容器化虚拟机等模块，
+  功能更全面，更能适应各类生产环境需求。[DCE 商业版安装手册 PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/dce5.0-install.pdf){ .md-button }
 
 <table>
   <thead>
@@ -40,12 +40,12 @@ DCE 大体分为两个版本：社区版和商业版。
           <li><a href="https://docs.daocloud.io/middleware/index.html"><span style="white-space: nowrap;">精选中间件</span></a></li>
           <li><a href="https://docs.daocloud.io/kangaroo/intro/">镜像仓库</a></li>
           <li><a href="https://docs.daocloud.io/kant/intro/">云边协同</a></li>
-          <li><a href="https://docs.daocloud.io/virtnest/intro/">容器化的虚拟机</a></li>
+          <li><a href="https://docs.daocloud.io/virtnest/intro/">容器化虚拟机</a></li>
         </ul>
       </td>
       <td>
-        联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898，各个模块可按需自由组合，可随时
-        <a href="https://docs.daocloud.io/download/index.html#_3">下载子模块的离线包</a>
+        联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898，各个模块可按需自由组合，
+        可随时<a href="https://docs.daocloud.io/download/index.html#_3">下载子模块的离线包</a>
       </td>
     </tr>
   </tbody>
