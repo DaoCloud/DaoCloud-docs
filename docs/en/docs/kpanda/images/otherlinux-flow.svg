@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2120 620" width="100%" role="img" aria-label="Workflow for creating a cluster on a non-mainstream operating system: build the offline package in the online environment, copy it to the offline nodes and install it there, then create the DCE 5.0 cluster" font-family="'PingFang SC','Noto Sans SC','Source Han Sans SC','Microsoft YaHei','Hiragino Sans GB',system-ui,sans-serif">
+  <title>Workflow for creating a cluster on a non-mainstream operating system</title>
+  <rect width="2120" height="620" fill="#FFFFFF"/>
+
+  <!-- Overall title -->
+  <text x="50" y="74" font-size="36" font-weight="600" fill="#333333">Environment preparation</text>
+
+  <!-- Dashed frame: steps 1 and 2 both belong to environment preparation -->
+  <rect x="46" y="123" width="1383" height="460" rx="70" fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="7 8"/>
+
+  <!-- Step labels -->
+  <g font-size="36" font-weight="500" fill="#333333">
+    <text x="103" y="228">1. Build the offline package</text>
+    <text x="866" y="228">2. Install the offline package</text>
+    <text x="1662" y="228">3. Create a cluster</text>
+  </g>
+
+  <!-- Three nodes: online node → offline node → DCE 5.0 -->
+  <g stroke="#000000" stroke-width="2">
+    <rect x="78" y="379" width="510" height="126" rx="15" fill="#EBFDD1"/>
+    <rect x="856" y="379" width="458" height="126" rx="15" fill="#D6FDA4"/>
+    <rect x="1608" y="379" width="459" height="126" rx="15" fill="#C3FC7C"/>
+  </g>
+
+  <g font-size="66" fill="#000000" text-anchor="middle">
+    <text x="333" y="467">Online node</text>
+    <text x="1085" y="467">Offline node</text>
+    <text x="1837" y="466">DCE 5.0</text>
+  </g>
+
+  <!-- Step 1 → step 2: copy the offline package (dashed arrow) -->
+  <text x="715" y="425" font-size="22" fill="#333333" text-anchor="middle">Copy offline package</text>
+  <line x1="590" y1="443" x2="835" y2="443" stroke="#000000" stroke-width="2" stroke-dasharray="7 8"/>
+  <polygon points="832,433 855,443 832,453" fill="#000000"/>
+
+  <!-- Step 3: leave the preparation stage and create the cluster (solid arrow) -->
+  <line x1="1427" y1="443" x2="1588" y2="443" stroke="#000000" stroke-width="2"/>
+  <polygon points="1585,433 1608,443 1585,453" fill="#000000"/>
+</svg>

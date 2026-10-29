@@ -4,7 +4,7 @@ This document outlines how to create a worker cluster on an **unsupported OS** i
 
 The main process for creating a worker cluster on an unsupported OS in offline mode is illustrated in the diagram below:
 
-![Process](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/otherlinux.png)
+![Process for creating a cluster on a non-mainstream operating system](../images/otherlinux-flow.svg)
 
 Next, we will use the openAnolis operating system as an example to demonstrate how to create a cluster on a non-mainstream operating system.
 
@@ -19,9 +19,9 @@ Find an online environment with the same architecture and OS as the nodes in the
 
 ```bash
 # Download relevant scripts and build os packages package
-$ curl -Lo ./pkgs.yml https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/pkgs.yml
-$ curl -Lo ./other_os_pkgs.sh https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/other_os_pkgs.sh && chmod +x other_os_pkgs.sh
-$ ./other_os_pkgs.sh build # Build the offline package
+curl -Lo ./pkgs.yml https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/pkgs.yml
+curl -Lo ./other_os_pkgs.sh https://raw.githubusercontent.com/kubean-io/kubean/main/build/os-packages/others/other_os_pkgs.sh && chmod +x other_os_pkgs.sh
+./other_os_pkgs.sh build # Build the offline package
 ```
 
 After executing the above command, you should have a compressed package named __os-pkgs-anolis-8.8.tar.gz__ in the current directory. The file structure in the current directory should look like this:
@@ -41,12 +41,12 @@ Login to any one of the nodes in the offline environment that is part of the tar
 
 ```bash
 # Configure environment variables
-$ export PKGS_YML_PATH=/root/workspace/os-pkgs/pkgs.yml # Path to the pkgs.yml file on the current offline node
-$ export PKGS_TAR_PATH=/root/workspace/os-pkgs/os-pkgs-anolis-8.8.tar.gz # Path to the os-pkgs-anolis-8.8.tar.gz file on the current offline node
-$ export SSH_USER=root # Username for the current offline node
-$ export SSH_PASS=dangerous # Password for the current offline node
-$ export HOST_IPS='172.30.41.168' # IP address of the current offline node
-$ ./other_os_pkgs.sh install # Install the offline package
+export PKGS_YML_PATH=/root/workspace/os-pkgs/pkgs.yml # Path to the pkgs.yml file on the current offline node
+export PKGS_TAR_PATH=/root/workspace/os-pkgs/os-pkgs-anolis-8.8.tar.gz # Path to the os-pkgs-anolis-8.8.tar.gz file on the current offline node
+export SSH_USER=root # Username for the current offline node
+export SSH_PASS=dangerous # Password for the current offline node
+export HOST_IPS='172.30.41.168' # IP address of the current offline node
+./other_os_pkgs.sh install # Install the offline package
 ```
 
 After executing the above command, wait for the interface to prompt: __All packages for node (X.X.X.X) have been installed__ , which indicates that the installation is complete.
