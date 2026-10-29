@@ -104,6 +104,10 @@ custom-config:
 
 After completing the settings, you can [use GPU MIG resources](mig_usage.md) when confirming the deployment of the application.
 
+!!! note
+
+    If the sharding policy configuration file is updated later, restart nvidia-mig-manager; otherwise, the new sharding policy does not take effect.
+
 ## Switch Node GPU Mode
 
 After successfully installing the GPU operator, the node is in full card mode by default. There will be an indicator on the node management page, as shown below:

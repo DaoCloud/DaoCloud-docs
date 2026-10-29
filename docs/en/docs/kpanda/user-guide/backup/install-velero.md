@@ -80,4 +80,33 @@ Please perform the following steps to install the __velero__ plugin for your clu
 
         ![Parameter Settings](../../images/backup4.png)
 
+        !!! note
+
+            Make sure that the time difference between the S3 storage service and the cluster that performs backup and restore is within 10 minutes, and ideally keep them synchronized. Otherwise, the backup operation cannot be performed.
+
+    - migration plugin configuration: After it is enabled, the following content is added to the YAML code section in the next step:
+
+        ```yaml
+        ...
+        initContainers:
+          - image: 'release.daocloud.io/kcoral/velero-plugin-for-migration:v0.3.0'
+            imagePullPolicy: IfNotPresent
+            name: velero-plugin-for-migration
+            volumeMounts:
+              - mountPath: /target
+                name: plugins
+          - image: 'docker.m.daocloud.io/velero/velero-plugin-for-csi:v0.7.0'
+            imagePullPolicy: IfNotPresent
+            name: velero-plugin-for-csi
+            volumeMounts:
+              - mountPath: /target
+                name: plugins
+          - image: 'docker.m.daocloud.io/velero/velero-plugin-for-aws:v1.9.0'
+            imagePullPolicy: IfNotPresent
+            name: velero-plugin-for-aws
+            volumeMounts:
+              - mountPath: /target
+                name: plugins
+        ```
+
 5. Click the __OK__ button to complete the installation of the __Velero__ plugin. The system will automatically jump to the __Helm Apps__ list page. After waiting for a few minutes, refresh the page, and you can see the application just installed.

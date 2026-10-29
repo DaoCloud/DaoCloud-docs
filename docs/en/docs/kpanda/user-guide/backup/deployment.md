@@ -60,3 +60,7 @@ Follow the steps below to backup the deployment __dao-2048__ .
 6. At this point, the __Last Execution State__ of the cluster will change to __in progress__ . After the backup is complete, you can click the name of the backup plan to view the details of the backup plan.
 
     ![Backup Details](../../images/backupd20486.png)
+
+!!! note
+
+    If the status of a Job-type workload is **Completed**, it cannot be backed up.

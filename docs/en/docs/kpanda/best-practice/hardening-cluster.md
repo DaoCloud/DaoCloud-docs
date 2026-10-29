@@ -11,14 +11,14 @@ Scan Environment:
 - Kubean version: 0.4.9
 - Kubespray version: v2.22
 
-#### Failed Scan Items
+### Failed Scan Items
 
 1. [FAIL] 1.2.5 Ensure that the --kubelet-certificate-authority argument is set as appropriate (Automated)
 2. [FAIL] 1.3.7 Ensure that the --bind-address argument is set to 127.0.0.1 (Automated)
 3. [FAIL] 1.4.1 Ensure that the --profiling argument is set to false (Automated)
 4. [FAIL] 1.4.2 Ensure that the --bind-address argument is set to 127.0.0.1 (Automated)
 
-#### Analysis of Scan Failures
+### Analysis of Scan Failures
 
 1. [FAIL] 1.2.5 Ensure that the --kubelet-certificate-authority argument is set as appropriate (Automated)
 
@@ -44,7 +44,7 @@ Scan Environment:
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/hardening04.png)
 
-#### Hardening Configuration to Pass CIS Scan
+### Hardening Configuration to Pass CIS Scan
 
 To address these security scan issues, kubespray has added default values in v2.22 to solve some of the problems. For more details, refer to the [kubespray hardening documentation](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/hardening.md).
 

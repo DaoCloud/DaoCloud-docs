@@ -24,6 +24,28 @@ Clusters integrated or created using the DCE [Container Management](../../intro/
 
     <!--![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-access01.png)-->
 
+!!! note
+
+    To access an AWS cluster through CloudShell, you need to upgrade kpanda to v0.29.x or later and manually adjust the configuration of the kpanda-apiserver service. The detailed procedure is as follows:
+
+    1. Go to the __Global Service Cluster__ . In the __Workloads__ -> __Deployments__ list, find the kpanda-apiserver service.
+
+        ![kpanda-apiserver service](../../images/access-cluster-100.png)
+
+    1. Enter the details page of the deployment, click __┇__ in the upper right corner of the page, and click __Update__ in the drop-down list.
+
+        ![Update kpanda-apiserver service](../../images/access-cluster-101.png)
+
+    1. In step 2 __Container Settings__ of the wizard, find the parameter __--feature-gates=__ under __Lifecycle__ -> __Startup Command__ and change it to __--feature-gates=UseTokenInCloudShell=true__ .
+
+        ![Modify startup command parameters](../../images/access-cluster-102.png)
+
+    1. After the modification, enter the details page of the kpanda-apiserver deployment, click __┇__ in the upper right corner of the page, and click __Restart__ in the drop-down list.
+
+        ![Restart kpanda-apiserver service](../../images/access-cluster-103.png)
+
+    After completing the steps above, you can access AWS clusters through CloudShell.
+
 ## Access via kubectl
 
 If you want to access and manage remote clusters from a local node, make sure you have met these prerequisites:

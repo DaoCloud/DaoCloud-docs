@@ -56,3 +56,15 @@ Refer to the following steps to configure the built-in index auto scaling policy
 5. After completing the parameter configuration, click the __OK__ button to automatically return to the scaling details page. Click __┇__ on the right side of the list to perform edit and delete operations.
 
     ![Successfully Configurate](../images/createVpaScale02.png)
+
+!!! note
+
+    By default, `--min-replicas` is set to 2, which means VPA takes effect only when the number of replicas is greater than 1. You can change this default behavior by modifying the `--min-replicas` parameter of the updater.
+
+    ```yaml
+    spec: 
+      containers: 
+      - name: updater 
+      args: 
+      - "--min-replicas=2"
+    ```

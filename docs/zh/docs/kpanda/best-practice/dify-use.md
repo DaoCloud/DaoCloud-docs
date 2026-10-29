@@ -8,9 +8,9 @@
 
 安装 __dify-chart__ 插件前，需要满足以下前提条件：
 
-- 容器管理模块[已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
+- 容器管理模块[已接入 Kubernetes 集群](../user-guide/clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../user-guide/clusters/create-cluster.md)，且能够访问集群的 UI 界面。
 
-- 当前操作用户应具有 [NS Editor](../permissions/permission-brief.md#ns-editor) 或更高权限，详情可参考[命名空间授权](../namespaces/createns.md)。
+- 当前操作用户应具有 [NS Editor](../user-guide/permissions/permission-brief.md#ns-editor) 或更高权限，详情可参考[命名空间授权](../user-guide/namespaces/createns.md)。
 
 ## 安装流程
 
@@ -64,12 +64,11 @@
 
     ![访问界面](../images/dify-use01.png)
 
-
 3. 设置 Dify 应用的管理员账户，用于创建应用和管理 LLM 供应商等，点击 __设置__ 后完成初始化。
 
     ![管理员账户](../images/dify-use02.png)
 
-4. 登陆上一步设置的管理员账户即可进入 Dify 平台主页 。
+4. 登录上一步设置的管理员账户即可进入 Dify 平台主页 。
 
     ![应用主页](../images/dify-use15.png)
 
@@ -111,7 +110,7 @@
     ![编排应用](../images/dify-use07.png)
 
     - 前缀提示词：提示词用于约束 AI 给出专业的回复，让回应更加精确。用户可以借助内置的提示生成器，编写合适的提示词。
-    - 变量：变量将以表单形式让用户在对话前填写，提示词中的变量的值会替换成用户填写的值，支持设置最大长度，例如 {{query}}。
+    - 变量：变量将以表单形式让用户在对话前填写，提示词中的变量的值会替换成用户填写的值，支持设置最大长度，例如 `{{query}}`。
     - 上下文：上下文可以理解为向 LLM 提供的背景信息，常用于填写知识检索的输出变量。
 
 3.  点击右上角 __发布__ ，即可完成一个简单应用的快速构建。
@@ -136,11 +135,11 @@ Dify 工作流分为两种类型：
     ![创建工作流](../images/dify-use10.png)
 
 2.  创建后会自动跳转到编排界面，通过点击鼠标右键或上一节点末尾的 __+ 号__ 添加节点，编排工作流。
- 
+
     ![编排工作流](../images/dify-use11.png)
 
 3.  添加 __LLM__ 节点，调用大模型后填写和配置参数。
- 
+
     ![调用大模型](../images/dify-use12.png)
 
     - 模型：调用大语言模型回答问题，例如 qwen-turbo。
@@ -156,7 +155,7 @@ Dify 工作流分为两种类型：
     ![调试工作流](../images/dify-use13.png)
 
 5. 点击右上角 __发布__ ，即可完成一个简单工作流的快速构建。
- 
+
     ![调用大模型](../images/dify-use14.png)
 
 更多 Dify 应用开发平台使用功能请参阅 [Dify 官方文档](https://dify.ai)。

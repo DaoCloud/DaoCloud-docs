@@ -39,8 +39,12 @@ This article will demonstrate how to deploy a K8s cluster with a lower version.
     | release-2.24 | v1.26.0 ~ v1.29.1 | Supported since installer v0.17.0 |
     | release-2.25 | v1.27.0 ~ v1.29.5 | Supported since installer v0.20.0 |
 
-    This article demonstrates the offline deployment of a K8s cluster with version 1.23.0 and the
-    offline upgrade of a K8s cluster from version 1.23.0 to 1.24.0, so we choose the artifact `release-2.21`.
+!!! tip
+
+    When choosing an artifact version, you need to consider not only the cluster version range but also whether the version ranges of the corresponding components (such as calico and containerd) in the manifest resource of that artifact cover the versions of these components in the current cluster.
+
+This article demonstrates the offline deployment of a K8s cluster with version 1.23.0 and the
+offline upgrade of a K8s cluster from version 1.23.0 to 1.24.0, so we choose the artifact `release-2.21`.
 
 ## Procedure
 

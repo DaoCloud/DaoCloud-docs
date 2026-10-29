@@ -38,7 +38,7 @@ systemReserved: {cpu: "2", memory: "2Gi", ephemeral-storage: "10Gi"}
 
 ### containerd
 
-```yaml
+```toml
 # /etc/containerd/config.toml
 [plugins."io.containerd.grpc.v1.cri"]
  max_concurrent_downloads = 10 # 并发镜像下载数 (默认 3)，需要合理评估
@@ -46,7 +46,7 @@ systemReserved: {cpu: "2", memory: "2Gi", ephemeral-storage: "10Gi"}
 
 ### kube-apiserver
 
-```yaml
+```bash
 --max-requests-inflight=4000 # 提升并发请求数 (默认 400)
 --max-mutating-requests-inflight=2000 # 提升写请求并发 (默认 200)
 --watch-cache=true # 开启 watch 缓存
@@ -56,7 +56,7 @@ systemReserved: {cpu: "2", memory: "2Gi", ephemeral-storage: "10Gi"}
 
 ### kube-controller-manager
 
-```yaml
+```bash
 --concurrent-service-syncs=10 # 默认值1
 --concurrent-deployment-syncs=50 # 默认值5
 --concurrent-replicaset-syncs=50 # 默认值5
@@ -65,7 +65,7 @@ systemReserved: {cpu: "2", memory: "2Gi", ephemeral-storage: "10Gi"}
 
 ### kube-scheduler
 
-```yaml
+```bash
 --http2-max-streams-per-connection=1000 # 提升 HTTP/2 流数量（非必需）
 ```
 
