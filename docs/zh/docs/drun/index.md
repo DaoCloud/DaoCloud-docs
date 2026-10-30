@@ -133,5 +133,7 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
 配备可视化运营驾驶舱，实时呈现算力消耗、模型调用与 Token 产出全链路数据；
 内置 d.run Copilot 智能助手，降低企业全部门使用 AI 的门槛，推动业务智能化长期升级。
 
+![d.run AI 操作系统模块与场景全景：四层能力、13 个内置模块。云原生 AI 层有大模型服务平台、AI Lab、推理加速服务、ClawOS；云原生底座层有容器管理、设备管理、镜像仓库、云原生网络、云原生存储；运营管理有驾驶舱、Copilot，运维管理有可观测性、全局管理。每张卡片列出该模块的功能特性与典型使用场景](images/drun-modules.svg)
+
 [查看/下载 d.run AI 操作系统彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/drun.pdf){ .md-button .md-button--primary }
-[开始安装](installer/start-install.md){ .md-button .md-button--primary }
+[安装 d.run AI 操作系统](installer/start-install.md){ .md-button .md-button--primary }

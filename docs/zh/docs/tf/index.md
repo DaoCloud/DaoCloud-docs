@@ -135,5 +135,7 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
 依托 Token 工厂管家与统一运营体系，完成资源、生产、成本、供需的全局管控，面向终端用户、管理员、运营者、运维者提供能力，
 推动智算中心业务定位从 "提供算力" 升级为 "生产和运营 Token"。
 
+![d.run Token 工厂模块与场景全景：用户 / 管理员双视图，四层能力、14 个内置模块。云原生 AI 层有大模型服务平台、AI 应用、推理加速服务、算力云；云原生底座层有容器管理、镜像仓库、设备管理、云原生网络、云原生存储；运营管理有驾驶舱、Copilot、费用中心，运维管理有可观测性、全局管理。每张卡片列出该模块的功能特性与典型使用场景](images/tf-modules.svg)
+
 [安装 Token 工厂](install/index.md){ .md-button .md-button--primary }
 [查看/下载 Token 工厂彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/tf.pdf){ .md-button .md-button--primary }

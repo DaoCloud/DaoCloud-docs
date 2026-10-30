@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
+  <title id="title">d.run Token 工厂：模块与场景全景</title>
+  <desc id="desc">d.run Token 工厂由用户视图与管理员视图两个视角、四层能力、14 个内置模块组成。云原生 AI 层：大模型服务平台 Hydra、AI 应用 dak、推理加速服务 InferX、算力云 zestu；云原生底座层：容器管理、镜像仓库、设备管理、云原生网络、云原生存储；运营管理层：驾驶舱、Copilot、费用中心；运维管理层：可观测性、全局管理。把异构算力转化为可计量、可交易的 Token 服务。</desc>
+
+  <rect x="0.5" y="0.5" width="999" height="539" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
+
+  <!-- 标题 -->
+  <text x="44" y="42" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#1a2330">d.run Token 工厂：模块与场景全景</text>
+  <text x="44" y="64" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#6b7688">用户 / 管理员双视图 · 四层能力 · 14 个内置模块 —— 把异构算力转化为可计量、可交易的 Token 服务</text>
+
+  <!-- 云原生 AI · Token 生产与推理 -->
+  <rect x="44" y="81" width="5" height="11" rx="2" fill="#3366d6"/>
+  <text x="57" y="90" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1c3f8f">云原生 AI · Token 生产与推理</text>
+  <rect x="44" y="102" width="912" height="106" rx="10" fill="#eef4ff" stroke="#3366d6" stroke-width="1.6"/>
+  <rect x="55" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="66" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">大模型服务平台</text>
+  <text x="257.5" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">Hydra</text>
+  <text x="66" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">模型广场 · 部署 · 微调 · API Key</text>
+  <text x="66" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">一站式 MaaS 与模型服务</text>
+  <rect x="280.5" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="291.5" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">AI 应用</text>
+  <text x="483" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">dak</text>
+  <text x="291.5" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">知识库 · 向量检索 · 智能问答</text>
+  <text x="291.5" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">专属语料的智能问答</text>
+  <rect x="506" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="517" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">推理加速服务</text>
+  <text x="708.5" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">InferX</text>
+  <text x="517" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">部署 · 加速 · 验收 · 保障</text>
+  <text x="517" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">高并发低延迟 Token 产出</text>
+  <rect x="731.5" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="742.5" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">算力云</text>
+  <text x="934" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">zestu</text>
+  <text x="742.5" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">GPU 实例 · 算力市场 · 计费</text>
+  <text x="742.5" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">弹性获取异构算力</text>
+
+  <!-- 云原生底座 · 算力纳管与调度 -->
+  <rect x="44" y="217" width="5" height="11" rx="2" fill="#9aa8bd"/>
+  <text x="57" y="226" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#41506a">云原生底座 · 算力纳管与调度</text>
+  <rect x="44" y="238" width="912" height="106" rx="10" fill="#f7f9fc" stroke="#dfe5ee" stroke-width="1"/>
+  <rect x="55" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="66" y="272" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">容器管理</text>
+  <text x="66" y="295" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">集群 · 工作负载 · 多集群</text>
+  <text x="66" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">业务上云与多集群编排</text>
+  <rect x="235" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="246" y="272" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">镜像仓库</text>
+  <text x="246" y="295" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">镜像托管 · 分发 · 集成</text>
+  <text x="246" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">私有镜像中心与供应链</text>
+  <rect x="415" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="426" y="272" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">设备管理</text>
+  <text x="426" y="295" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">主机 · 交换机 · 自动装机</text>
+  <text x="426" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">智算中心硬件统一纳管</text>
+  <rect x="595" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="606" y="272" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">云原生网络</text>
+  <text x="606" y="295" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">多 CNI 融合 · 子网划分</text>
+  <text x="606" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">跨集群互通与流量治理</text>
+  <rect x="775" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="786" y="272" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">云原生存储</text>
+  <text x="786" y="295" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">CSI · 分布式存储</text>
+  <text x="786" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">训练数据与模型持久化</text>
+
+  <!-- 运营管理 · 看得见、算得清 -->
+  <rect x="44" y="353" width="5" height="11" rx="2" fill="#9aa8bd"/>
+  <text x="57" y="362" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#41506a">运营管理 · 看得见、算得清</text>
+  <rect x="582" y="353" width="5" height="11" rx="2" fill="#9aa8bd"/>
+  <text x="595" y="362" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#41506a">运维管理 · 稳得住、管得住</text>
+  <rect x="44" y="374" width="912" height="106" rx="10" fill="#f7f9fc" stroke="#dfe5ee" stroke-width="1"/>
+  <line x1="590" y1="386" x2="590" y2="468" stroke="#e3e8f0" stroke-width="1"/>
+  <rect x="55" y="385" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="66" y="408" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">驾驶舱</text>
+  <text x="66" y="431" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">算力 · Token · 收入成本</text>
+  <text x="66" y="451" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">一屏掌握经营与生产</text>
+  <rect x="235" y="385" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="246" y="408" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Copilot</text>
+  <text x="246" y="431" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">自然语言问答 · 策略执行</text>
+  <text x="246" y="451" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">生产运营的智能入口</text>
+  <rect x="415" y="385" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="426" y="408" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">费用中心</text>
+  <text x="426" y="431" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">钱包 · 账单 · 订单 · 代金券</text>
+  <text x="426" y="451" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Token 用量计费与结算</text>
+  <rect x="595" y="385" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="606" y="408" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">可观测性</text>
+  <text x="606" y="431" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">指标 · 日志 · 链路 · 告警</text>
+  <text x="606" y="451" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">故障定位与容量规划</text>
+  <rect x="775" y="385" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="786" y="408" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">全局管理</text>
+  <text x="786" y="431" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">用户 · 角色 · 工作空间</text>
+  <text x="786" y="451" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">统一身份、权限与配额</text>
+
+  <!-- 页脚说明 -->
+  <text x="44" y="512" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#8a96a8">模块可按需跨层组合，交付形态支持私有化与托管两种。</text>
+</svg>

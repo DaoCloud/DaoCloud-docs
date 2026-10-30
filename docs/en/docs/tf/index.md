@@ -130,6 +130,8 @@ d.run Token Factory is an integrated platform built by DaoCloud for AI intellige
 
 As a high-efficiency AI Token production and management system built for intelligent computing centers, Token Factory helps traditional computing centers upgrade to an efficient, profitable Token production and operations model. The platform uniformly manages NVIDIA and domestic heterogeneous computing power, relying on intelligent scheduling and inference optimization to transform distributed GPU resources into low-cost, highly stable, tradable standardized token services. Through the Token Factory manager and unified operations system, it achieves global management of resources, production, costs, and supply-demand, providing capabilities to end users, administrators, operators, and O&M personnel, and driving the intelligent computing center's business positioning to upgrade from "providing compute power" to "producing and operating tokens."
 
+![d.run Token Factory modules and scenarios at a glance: user and admin dual views, four capability layers and 14 built-in modules. Cloud-Native AI: LLM Studio, AI Apps, InferX Suite, Compute Cloud. Cloud-Native Infrastructure: Container Management, Image Registry, Device Management, Cloud Native Networking, Cloud Native Storage. Operations: Cockpit, Copilot Workbench, Billing Center. O&M: Insight, Global Management. Each card lists the module's features and typical use cases](images/tf-modules.svg)
+
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
 [Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
 [Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

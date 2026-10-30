@@ -126,6 +126,8 @@ d.run leverages the world's top-three Kubernetes scheduling technology and core 
 
 As an AI operating system designed for enterprises, d.run integrates compute scheduling, large model inference, and operations governance into a unified platform. The platform uniformly manages NVIDIA and domestic heterogeneous computing power, relying on granular scheduling and full-stack inference optimization to transform distributed GPU resources into low-cost, highly stable token services. It features a visual operations cockpit that presents real-time data across the entire chain of compute consumption, model invocations, and token production. The built-in d.run Copilot intelligent assistant lowers the barrier for all enterprise departments to adopt AI, driving long-term business intelligence upgrades.
 
+![d.run AI Operating System modules and scenarios at a glance: four capability layers and 13 built-in modules. Cloud-Native AI: LLM Studio, AI Lab, InferX Suite, ClawOS. Cloud-Native Infrastructure: Container Management, Device Management, Container Registry, Cloud Native Network, Cloud Native Storage. Operations: Cockpit, Copilot. O&M: Insight, Global Management. Each card lists the module's features and typical use cases](images/drun-modules.svg)
+
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
 [Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
 [Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }

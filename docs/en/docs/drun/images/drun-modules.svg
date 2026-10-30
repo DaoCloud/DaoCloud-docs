@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
+  <title id="title">d.run AI Operating System: Modules and Scenarios at a Glance</title>
+  <desc id="desc">d.run AI Operating System consists of four capability layers and 13 built-in modules. Cloud-Native AI: LLM Studio (Hydra), AI Lab, InferX Suite, ClawOS. Cloud-Native Infrastructure: Container Management (kpanda), Device Management (topohub), Container Registry (kangaroo), Cloud Native Network (mspider), Cloud Native Storage. Operations: Cockpit (crane), Copilot. O&amp;M: Insight, Global Management (ghippo). Bottom-up, it turns heterogeneous compute into metered AI productivity.</desc>
+
+  <rect x="0.5" y="0.5" width="999" height="539" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
+
+  <!-- 标题 -->
+  <text x="44" y="42" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#1a2330">d.run AI Operating System: Modules and Scenarios at a Glance</text>
+  <text x="44" y="64" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#6b7688">Four capability layers, 13 built-in modules — turning heterogeneous compute into metered AI productivity</text>
+
+  <!-- Cloud-Native AI · Model production & inference -->
+  <rect x="44" y="81" width="5" height="11" rx="2" fill="#3366d6"/>
+  <text x="57" y="90" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1c3f8f">Cloud-Native AI · Model production &amp; inference</text>
+  <rect x="44" y="102" width="912" height="106" rx="10" fill="#eef4ff" stroke="#3366d6" stroke-width="1.6"/>
+  <rect x="55" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="66" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">LLM Studio</text>
+  <text x="257.5" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#a9b4c6">Hydra</text>
+  <text x="66" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Model plaza · Deploy · Fine-tune · API</text>
+  <text x="66" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">One-stop MaaS and model serving</text>
+  <rect x="280.5" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="291.5" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">AI Lab</text>
+  <text x="483" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#a9b4c6">baize</text>
+  <text x="291.5" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Notebooks · Training jobs · Labeling</text>
+  <text x="291.5" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Train and serve in one workspace</text>
+  <rect x="506" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="517" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">InferX Suite</text>
+  <text x="708.5" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#a9b4c6">InferX</text>
+  <text x="517" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Deploy · Accelerate · Validate</text>
+  <text x="517" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">High-concurrency online inference</text>
+  <rect x="731.5" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
+  <text x="742.5" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">ClawOS</text>
+  <text x="742.5" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Agent runtime · Skill marketplace</text>
+  <text x="742.5" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Digital workers via Feishu / Teams</text>
+
+  <!-- Cloud-Native Infrastructure · Resource management & scheduling -->
+  <rect x="44" y="217" width="5" height="11" rx="2" fill="#9aa8bd"/>
+  <text x="57" y="226" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#41506a">Cloud-Native Infrastructure · Resource management &amp; scheduling</text>
+  <rect x="44" y="238" width="912" height="106" rx="10" fill="#f7f9fc" stroke="#dfe5ee" stroke-width="1"/>
+  <rect x="55" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="66" y="272" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Container Management</text>
+  <text x="66" y="295" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Clusters · Workloads</text>
+  <text x="66" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Multi-cluster orchestration</text>
+  <rect x="235" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="246" y="272" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Device Management</text>
+  <text x="246" y="295" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Heterogeneous devices</text>
+  <text x="246" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">GPU pooling, topology-aware</text>
+  <rect x="415" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="426" y="272" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Container Registry</text>
+  <text x="426" y="295" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Images · Distribution</text>
+  <text x="426" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Private registry, supply chain</text>
+  <rect x="595" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="606" y="272" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Cloud Native Network</text>
+  <text x="606" y="295" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Multi-CNI · Service mesh</text>
+  <text x="606" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Cross-cluster traffic control</text>
+  <rect x="775" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="786" y="272" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Cloud Native Storage</text>
+  <text x="786" y="295" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">CSI · Distributed storage</text>
+  <text x="786" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Data and model persistence</text>
+
+  <!-- Operations · Visibility and metering -->
+  <rect x="44" y="353" width="5" height="11" rx="2" fill="#9aa8bd"/>
+  <text x="57" y="362" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#41506a">Operations · Visibility and metering</text>
+  <rect x="493" y="353" width="5" height="11" rx="2" fill="#9aa8bd"/>
+  <text x="506" y="362" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#41506a">O&amp;M · Stability and governance</text>
+  <rect x="44" y="374" width="912" height="106" rx="10" fill="#f7f9fc" stroke="#dfe5ee" stroke-width="1"/>
+  <line x1="500" y1="386" x2="500" y2="468" stroke="#e3e8f0" stroke-width="1"/>
+  <rect x="55" y="385" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="66" y="408" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Cockpit</text>
+  <text x="257.5" y="407" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#a9b4c6">crane</text>
+  <text x="66" y="431" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Compute · Model · Token views</text>
+  <text x="66" y="451" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Monitoring and billing</text>
+  <rect x="280.5" y="385" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="291.5" y="408" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Copilot</text>
+  <text x="291.5" y="431" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Assistant · Natural language O&amp;M</text>
+  <text x="291.5" y="451" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Lower adoption barrier</text>
+  <rect x="506" y="385" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="517" y="408" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Insight</text>
+  <text x="708.5" y="407" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#a9b4c6">insight</text>
+  <text x="517" y="431" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Metrics · Logs · Traces · Alerts</text>
+  <text x="517" y="451" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Troubleshooting and planning</text>
+  <rect x="731.5" y="385" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#dbe4f2"/>
+  <text x="742.5" y="408" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Global Management</text>
+  <text x="934" y="407" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#a9b4c6">ghippo</text>
+  <text x="742.5" y="431" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Users · Roles · Tenants</text>
+  <text x="742.5" y="451" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Identity, permissions, quotas</text>
+
+  <!-- 页脚说明 -->
+  <text x="44" y="512" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#8a96a8">Modules can be combined across layers; deploy on-premises or hosted.</text>
+</svg>
