@@ -55,6 +55,22 @@ This site provides documentation for three product lines, covering full-stack ca
 .tf-arch-card:hover .tf-arch-card-tip{
   opacity:1
 }
+/* Homepage: three-product relationship diagram */
+.tf-relation{box-sizing:border-box;margin:1.5rem 0 2rem;background:var(--md-default-bg-color,#fff);color:var(--md-default-fg-color,#0F1D33);font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;padding:18px 14px;line-height:1.6;text-align:center;border:1px solid var(--md-default-fg-color--lightest);box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.tf-relation-kicker{font-size:12px;letter-spacing:2px;color:#5A6A85;font-weight:600;margin-bottom:10px}
+.tf-relation-box{border-radius:12px;padding:12px 14px;border:1.5px solid transparent}
+.tf-relation-box--tf{background:#FDF0E1;border-color:#E8720C}
+.tf-relation-box--drun{background:#E8F7EE;border-color:#00C853}
+.tf-relation-box--dce{background:#EAF1FE;border-color:#1B66F5}
+.tf-relation-box-title{font-size:14.5px;font-weight:800}
+.tf-relation-box-sub{font-size:12.5px;color:#5A6A85;margin-top:2px}
+.tf-relation-box-detail{font-size:11.5px;color:#0F1D33;margin-top:5px}
+.tf-relation-arrow{text-align:center;color:#8A98B0;font-size:15px;line-height:1.1;padding:3px 0}
+.tf-relation-foot{font-size:12px;color:#8A98B0;margin-top:10px}
+[data-md-color-scheme="slate"] .tf-relation{background:var(--md-default-fg-color--lightest)}
+[data-md-color-scheme="slate"] .tf-relation-box--tf{background:rgba(232,114,12,0.12);border-color:rgba(232,114,12,0.4)}
+[data-md-color-scheme="slate"] .tf-relation-box--drun{background:rgba(0,200,83,0.12);border-color:rgba(0,200,83,0.4)}
+[data-md-color-scheme="slate"] .tf-relation-box--dce{background:rgba(27,102,245,0.14);border-color:rgba(27,102,245,0.45)}
 </style>
 
 === ":material-factory: d.run Token Factory"
@@ -306,6 +322,35 @@ This site provides documentation for three product lines, covering full-stack ca
         </div>
       </div>
     </div>
+
+<div class="tf-relation">
+
+  <div class="tf-relation-kicker">DaoCloud Product Family · How the Three Fit Together</div>
+
+  <div class="tf-relation-box tf-relation-box--tf">
+    <div class="tf-relation-box-title">Token Factory · Token production &amp; operations for AI compute centers</div>
+    <div class="tf-relation-box-sub">Dual user/admin views · Turns compute into measurable, tradable, revenue-ready Token capacity</div>
+    <div class="tf-relation-box-detail">LLM Studio · AI Apps (RAG) · Inference (InferX) · Compute Cloud · Copilot / Cockpit / Billing Center</div>
+  </div>
+
+  <div class="tf-relation-arrow">▲</div>
+
+  <div class="tf-relation-box tf-relation-box--drun">
+    <div class="tf-relation-box-title">d.run AI OS · Enterprise AI operating system</div>
+    <div class="tf-relation-box-sub">Unified scheduling of heterogeneous compute, inference &amp; governance · AI for every team</div>
+    <div class="tf-relation-box-detail">Cloud-native AI (LLM Studio, AI Lab, ClawOS, InferX) · Cloud native base · Ops &amp; management</div>
+  </div>
+
+  <div class="tf-relation-arrow">▲</div>
+
+  <div class="tf-relation-box tf-relation-box--dce">
+    <div class="tf-relation-box-title">DCE · Enterprise cloud native operating system (foundation)</div>
+    <div class="tf-relation-box-sub">Lego-style modular assembly · Core capabilities in containers, networking, storage, middleware, observability &amp; more</div>
+  </div>
+
+  <div class="tf-relation-foot">All three are DaoCloud products sharing one cloud native foundation and AI stack — differing in who they serve and why.</div>
+
+</div>
 
 ## Explore Product Modules
 

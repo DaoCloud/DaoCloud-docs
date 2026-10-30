@@ -57,6 +57,22 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 .tf-arch-card:hover .tf-arch-card-tip{
   opacity:1
 }
+/* 首页：三款 DaoCloud 产品关系图 */
+.tf-relation{box-sizing:border-box;margin:1.5rem 0 2rem;background:var(--md-default-bg-color,#fff);color:var(--md-default-fg-color,#0F1D33);font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;padding:18px 14px;line-height:1.6;text-align:center;border:1px solid var(--md-default-fg-color--lightest);box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.tf-relation-kicker{font-size:12px;letter-spacing:2px;color:#5A6A85;font-weight:600;margin-bottom:10px}
+.tf-relation-box{border-radius:12px;padding:12px 14px;border:1.5px solid transparent}
+.tf-relation-box--tf{background:#FDF0E1;border-color:#E8720C}
+.tf-relation-box--drun{background:#E8F7EE;border-color:#00C853}
+.tf-relation-box--dce{background:#EAF1FE;border-color:#1B66F5}
+.tf-relation-box-title{font-size:14.5px;font-weight:800}
+.tf-relation-box-sub{font-size:12.5px;color:#5A6A85;margin-top:2px}
+.tf-relation-box-detail{font-size:11.5px;color:#0F1D33;margin-top:5px}
+.tf-relation-arrow{text-align:center;color:#8A98B0;font-size:15px;line-height:1.1;padding:3px 0}
+.tf-relation-foot{font-size:12px;color:#8A98B0;margin-top:10px}
+[data-md-color-scheme="slate"] .tf-relation{background:var(--md-default-fg-color--lightest)}
+[data-md-color-scheme="slate"] .tf-relation-box--tf{background:rgba(232,114,12,0.12);border-color:rgba(232,114,12,0.4)}
+[data-md-color-scheme="slate"] .tf-relation-box--drun{background:rgba(0,200,83,0.12);border-color:rgba(0,200,83,0.4)}
+[data-md-color-scheme="slate"] .tf-relation-box--dce{background:rgba(27,102,245,0.14);border-color:rgba(27,102,245,0.45)}
 </style>
 
 === ":material-factory: d.run Token 工厂效能平台"
@@ -311,6 +327,35 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         </div>
       </div>
     </div>
+
+<div class="tf-relation">
+
+  <div class="tf-relation-kicker">DaoCloud 产品族 ·「道生三，三生万物」</div>
+
+  <div class="tf-relation-box tf-relation-box--tf">
+    <div class="tf-relation-box-title">Token 工厂 · 面向智算中心的 Token 生产与经营系统</div>
+    <div class="tf-relation-box-sub">用户/管理员双视图 · 把算力转化为可计量、可交易、可运营的 Token 产能</div>
+    <div class="tf-relation-box-detail">大模型服务平台 · AI 应用 (RAG) · 推理加速 InferX · 算力云 · Copilot/驾驶舱/费用中心</div>
+  </div>
+
+  <div class="tf-relation-arrow">▲</div>
+
+  <div class="tf-relation-box tf-relation-box--drun">
+    <div class="tf-relation-box-title">d.run AI 操作系统 · 面向企业的 AI 操作系统</div>
+    <div class="tf-relation-box-sub">异构算力调度 + 模型推理 + 运营治理一体 · 面向企业全部门输出 AI 服务</div>
+    <div class="tf-relation-box-detail">云原生 AI（Hydra/AI Lab/ClawOS/InferX）· 云原生底座 · 运营与运维管理</div>
+  </div>
+
+  <div class="tf-relation-arrow">▲</div>
+
+  <div class="tf-relation-box tf-relation-box--dce">
+    <div class="tf-relation-box-title">DCE · 企业级云原生操作系统（底座）</div>
+    <div class="tf-relation-box-sub">乐高式模块化搭建 · 容器/网络/存储/中间件/可观测/全局管理等基础能力</div>
+  </div>
+
+  <div class="tf-relation-foot">三者同属 DaoCloud 产品族，共享云原生底座与 AI 组件，差异在“服务对象”与“经营目标”</div>
+
+</div>
 
 ## 探索产品模块
 
