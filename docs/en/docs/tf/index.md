@@ -68,7 +68,7 @@ d.run Token Factory is an integrated platform built by DaoCloud for AI intellige
       </a>
     </div>
   </div>
-  <div class="tf-arch-arrow">▼</div>
+  <div class="tf-arch-arrow">▲</div>
   <div class="tf-arch-layer tf-arch-layer--compute">
     <div class="tf-arch-layer-label">CN Infra</div>
     <div class="tf-arch-cards">
@@ -94,7 +94,7 @@ d.run Token Factory is an integrated platform built by DaoCloud for AI intellige
       </a>
     </div>
   </div>
-  <div class="tf-arch-arrow">▼</div>
+  <div class="tf-arch-arrow">▲</div>
   <div class="tf-arch-layer tf-arch-layer--ops">
     <div class="tf-arch-layer-label">Ops</div>
     <div class="tf-arch-cards">
@@ -112,7 +112,7 @@ d.run Token Factory is an integrated platform built by DaoCloud for AI intellige
       </a>
     </div>
   </div>
-  <div class="tf-arch-arrow">▼</div>
+  <div class="tf-arch-arrow">▲</div>
   <div class="tf-arch-layer tf-arch-layer--ops">
     <div class="tf-arch-layer-label">OAM</div>
     <div class="tf-arch-cards">

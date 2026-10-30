@@ -70,7 +70,7 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
       </a>
     </div>
   </div>
-  <div class="tf-arch-arrow">▼</div>
+  <div class="tf-arch-arrow">▲</div>
   <div class="tf-arch-layer tf-arch-layer--compute">
     <div class="tf-arch-layer-label">云原生底座</div>
     <div class="tf-arch-cards">
@@ -96,7 +96,7 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
       </a>
     </div>
   </div>
-  <div class="tf-arch-arrow">▼</div>
+  <div class="tf-arch-arrow">▲</div>
   <div class="tf-arch-layer tf-arch-layer--ops">
     <div class="tf-arch-layer-label">运营管理</div>
     <div class="tf-arch-cards">
@@ -114,7 +114,7 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
       </a>
     </div>
   </div>
-  <div class="tf-arch-arrow">▼</div>
+  <div class="tf-arch-arrow">▲</div>
   <div class="tf-arch-layer tf-arch-layer--ops">
     <div class="tf-arch-layer-label">运维管理</div>
     <div class="tf-arch-cards">

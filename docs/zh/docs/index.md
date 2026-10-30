@@ -105,7 +105,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
           </a>
         </div>
       </div>
-      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-arrow">▲</div>
       <div class="tf-arch-layer tf-arch-layer--compute">
         <div class="tf-arch-layer-label">云原生底座</div>
         <div class="tf-arch-cards">
@@ -131,7 +131,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
           </a>
         </div>
       </div>
-      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-arrow">▲</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
         <div class="tf-arch-layer-label">运营管理</div>
         <div class="tf-arch-cards">
@@ -149,7 +149,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
           </a>
         </div>
       </div>
-      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-arrow">▲</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
         <div class="tf-arch-layer-label">运维管理</div>
         <div class="tf-arch-cards">
@@ -195,7 +195,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
           </a>
         </div>
       </div>
-      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-arrow">▲</div>
       <div class="tf-arch-layer tf-arch-layer--compute">
         <div class="tf-arch-layer-label">云原生底座</div>
         <div class="tf-arch-cards">
@@ -221,7 +221,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
           </a>
         </div>
       </div>
-      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-arrow">▲</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
         <div class="tf-arch-layer-label">运营管理</div>
         <div class="tf-arch-cards">
@@ -235,7 +235,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
           </a>
         </div>
       </div>
-      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-arrow">▲</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
         <div class="tf-arch-layer-label">运维管理</div>
         <div class="tf-arch-cards">
@@ -312,7 +312,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
           </a>
         </div>
       </div>
-      <div class="tf-arch-arrow">▼</div>
+      <div class="tf-arch-arrow">▲</div>
       <div class="tf-arch-layer tf-arch-layer--ops">
         <div class="tf-arch-layer-label">运维管理</div>
         <div class="tf-arch-cards">

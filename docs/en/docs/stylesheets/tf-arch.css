@@ -151,7 +151,7 @@
   height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 9px solid var(--md-default-fg-color--lighter);
+  border-bottom: 9px solid var(--md-default-fg-color--lighter);
   opacity: 0.45;
 }
 
@@ -178,7 +178,7 @@
 .tf-arch--compact .tf-arch-arrow::after {
   border-left-width: 6px;
   border-right-width: 6px;
-  border-top-width: 7px;
+  border-bottom-width: 7px;
 }
 
 /* ===== Hero header ===== */
