@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1848 1184" width="100%" role="img" aria-label="IAM architecture: platform or access control administrators create users, groups, custom roles and identity providers; users are added to groups and granted roles; enterprise users are connected to DCE through identity providers" font-family="'Noto Sans SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB','Source Han Sans SC',system-ui,sans-serif">
+  <title>IAM</title>
+  <rect width="1848" height="1184" fill="#F5F6FA"/>
+
+  <!-- Five nodes: platform admin, user, group, role, identity provider -->
+  <g fill="none" stroke="#445057" stroke-width="4">
+    <rect x="866.5" y="112.5" width="387" height="118.5"/>
+    <rect x="864.5" y="414.5" width="397" height="114"/>
+    <rect x="864.5" y="719" width="407" height="116.5"/>
+    <rect x="864.5" y="1021" width="410.5" height="111.5"/>
+    <rect x="45" y="572" width="374" height="120.5"/>
+  </g>
+
+  <!-- Solid connectors: left trunk and branches -->
+  <g fill="none" stroke="#445057" stroke-width="5" stroke-linecap="butt">
+    <path d="M421 632 H641"/>
+    <path d="M641 171 V1077"/>
+    <path d="M641 171 H844"/>
+    <path d="M641 471.5 H842"/>
+    <path d="M641 777 H842"/>
+    <path d="M641 1077 H842"/>
+    <path d="M1063 232 V392"/>
+    <path d="M1273 777 H1336 V171 H1276"/>
+    <path d="M1336 471.5 H1295"/>
+  </g>
+
+  <!-- Arrowheads -->
+  <g fill="#445057">
+    <polygon points="865,171 844,159 844,183"/>
+    <polygon points="863,471.5 842,459.5 842,483.5"/>
+    <polygon points="863,777 842,765 842,789"/>
+    <polygon points="863,1077 842,1065 842,1089"/>
+    <polygon points="1256,171 1276,160 1276,182"/>
+    <polygon points="1270,471.5 1295,459.5 1295,483.5"/>
+    <polygon points="1063,413 1051.5,392 1074.5,392"/>
+  </g>
+
+  <!-- Blue dashed path: connect enterprise users to DCE through an identity provider -->
+  <path d="M1296 171 H1478 V1077 H1276" fill="none" stroke="#4198DE" stroke-width="5" stroke-dasharray="15 16"/>
+  <polygon points="1274,171 1296,160 1296,182" fill="#4198DE"/>
+
+  <!-- Labels: node names and actions -->
+  <g fill="#445057" font-size="30">
+    <text x="856" y="146" text-anchor="end">Create User</text>
+    <text x="1059" y="186" text-anchor="middle">User</text>
+    <text x="1069" y="317">Add User to Group</text>
+    <text x="857" y="430" text-anchor="end">Create Group</text>
+    <text x="1063.5" y="480" text-anchor="middle">Group</text>
+    <text x="1067.5" y="770" text-anchor="middle">Role</text>
+    <text x="1068" y="807" text-anchor="middle">(System Role/Custom Role)</text>
+    <text x="1068.5" y="1085" text-anchor="middle">Identity Provider</text>
+    <text x="231" y="626" text-anchor="middle">Platform Admin or</text>
+    <text x="234" y="668" text-anchor="middle">Access Control Admin</text>
+    <text x="659" y="720" font-size="28">Create Custom</text>
+    <text x="658" y="760" font-size="28">Role</text>
+    <text x="659" y="1014" font-size="28">Create Identity</text>
+    <text x="658" y="1060" font-size="28">Provider</text>
+    <text x="1366" y="581">Grant Roles to Users</text>
+    <text x="1366" y="619">and Groups</text>
+  </g>
+
+  <!-- Blue note: identity provider -->
+  <g fill="#4198DE">
+    <text x="1500" y="918" font-size="26">Via the identity provider,</text>
+    <text x="1499" y="961" font-size="26">connect enterprise users</text>
+    <text x="1500" y="1004" font-size="26">to the DCE platform</text>
+  </g>
+</svg>
