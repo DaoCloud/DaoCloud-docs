@@ -101,7 +101,7 @@ With DCE's cloud native DNA, enterprises can fully leverage the advantages of bo
       </a>
     </div>
   </div>
-  <div class="tf-arch-arrow">▼</div>
+  <div class="tf-arch-arrow">▲</div>
   <div class="tf-arch-layer tf-arch-layer--ops">
     <div class="tf-arch-layer-label">OAM</div>
     <div class="tf-arch-cards">

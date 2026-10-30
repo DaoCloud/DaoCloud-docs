@@ -72,7 +72,7 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
       </a>
     </div>
   </div>
-  <div class="tf-arch-arrow">▼</div>
+  <div class="tf-arch-arrow">▲</div>
   <div class="tf-arch-layer tf-arch-layer--compute">
     <div class="tf-arch-layer-label">云原生底座</div>
     <div class="tf-arch-cards">
@@ -98,7 +98,7 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
       </a>
     </div>
   </div>
-  <div class="tf-arch-arrow">▼</div>
+  <div class="tf-arch-arrow">▲</div>
   <div class="tf-arch-layer tf-arch-layer--ops">
     <div class="tf-arch-layer-label">运营管理</div>
     <div class="tf-arch-cards">
@@ -112,7 +112,7 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
       </a>
     </div>
   </div>
-  <div class="tf-arch-arrow">▼</div>
+  <div class="tf-arch-arrow">▲</div>
   <div class="tf-arch-layer tf-arch-layer--ops">
     <div class="tf-arch-layer-label">运维管理</div>
     <div class="tf-arch-cards">
