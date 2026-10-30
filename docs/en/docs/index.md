@@ -56,21 +56,28 @@ This site provides documentation for three product lines, covering full-stack ca
   opacity:1
 }
 /* Homepage: three-product relationship diagram */
-.tf-relation{box-sizing:border-box;margin:1.5rem 0 2rem;background:var(--md-default-bg-color,#fff);color:var(--md-default-fg-color,#0F1D33);font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;padding:18px 14px;line-height:1.6;text-align:center;border:1px solid var(--md-default-fg-color--lightest);box-shadow:0 2px 12px rgba(0,0,0,0.06)}
-.tf-relation-kicker{font-size:12px;letter-spacing:2px;color:#5A6A85;font-weight:600;margin-bottom:10px}
-.tf-relation-box{border-radius:12px;padding:12px 14px;border:1.5px solid transparent}
+.tf-relation{box-sizing:border-box;margin:1.5rem 0 2rem;background:#F4F7FB;color:#0F1D33;font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;padding:20px 18px;line-height:1.65;text-align:center;border-radius:12px}
+.tf-relation-kicker{font-size:13px;letter-spacing:2px;color:#5A6A85;font-weight:600;margin-bottom:12px}
+.tf-relation-box{border-radius:12px;padding:14px 16px;border:1.5px solid transparent}
 .tf-relation-box--tf{background:#FDF0E1;border-color:#E8720C}
-.tf-relation-box--drun{background:#E8F7EE;border-color:#00C853}
+.tf-relation-box--drun{background:#E3F6F5;border-color:#0E9F9F}
 .tf-relation-box--dce{background:#EAF1FE;border-color:#1B66F5}
-.tf-relation-box-title{font-size:14.5px;font-weight:800}
-.tf-relation-box-sub{font-size:12.5px;color:#5A6A85;margin-top:2px}
-.tf-relation-box-detail{font-size:11.5px;color:#0F1D33;margin-top:5px}
-.tf-relation-arrow{text-align:center;color:#8A98B0;font-size:15px;line-height:1.1;padding:3px 0}
-.tf-relation-foot{font-size:12px;color:#8A98B0;margin-top:10px}
-[data-md-color-scheme="slate"] .tf-relation{background:var(--md-default-fg-color--lightest)}
-[data-md-color-scheme="slate"] .tf-relation-box--tf{background:rgba(232,114,12,0.12);border-color:rgba(232,114,12,0.4)}
-[data-md-color-scheme="slate"] .tf-relation-box--drun{background:rgba(0,200,83,0.12);border-color:rgba(0,200,83,0.4)}
-[data-md-color-scheme="slate"] .tf-relation-box--dce{background:rgba(27,102,245,0.14);border-color:rgba(27,102,245,0.45)}
+.tf-relation-box-title{font-size:17px;font-weight:800}
+.tf-relation-box-sub{font-size:13.5px;color:#5A6A85;margin-top:4px}
+.tf-relation-box-detail{font-size:12.5px;color:#0F1D33;margin-top:6px}
+.tf-relation-arrow{text-align:center;color:#8A98B0;font-size:17px;line-height:1.1;padding:3px 0}
+.tf-relation-foot{font-size:13px;color:#8A98B0;margin-top:12px}
+/* Dark mode: dark surfaces + saturated brand borders + light text */
+[data-md-color-scheme="slate"] .tf-relation{background:rgba(255,255,255,0.05);color:#e6eaf2}
+[data-md-color-scheme="slate"] .tf-relation-kicker{color:#94a3b8}
+[data-md-color-scheme="slate"] .tf-relation-box--tf{background:#3a2a17;border-color:#ff9800}
+[data-md-color-scheme="slate"] .tf-relation-box--drun{background:#14351f;border-color:#00c853}
+[data-md-color-scheme="slate"] .tf-relation-box--dce{background:#182742;border-color:#42a5f5}
+[data-md-color-scheme="slate"] .tf-relation-box-title{color:#ffffff}
+[data-md-color-scheme="slate"] .tf-relation-box-sub{color:#c3cede}
+[data-md-color-scheme="slate"] .tf-relation-box-detail{color:#dae3f0}
+[data-md-color-scheme="slate"] .tf-relation-arrow{color:#7d8ba3}
+[data-md-color-scheme="slate"] .tf-relation-foot{color:#94a3b8}
 </style>
 
 === ":material-factory: d.run Token Factory"
@@ -328,7 +335,7 @@ This site provides documentation for three product lines, covering full-stack ca
   <div class="tf-relation-kicker">DaoCloud Product Family · How the Three Fit Together</div>
 
   <div class="tf-relation-box tf-relation-box--tf">
-    <div class="tf-relation-box-title">Token Factory · Token production &amp; operations for AI compute centers</div>
+    <div class="tf-relation-box-title">d.run Token Factory · Token production &amp; operations for AI compute centers</div>
     <div class="tf-relation-box-sub">Dual user/admin views · Turns compute into measurable, tradable, revenue-ready Token capacity</div>
     <div class="tf-relation-box-detail">LLM Studio · AI Apps (RAG) · Inference (InferX) · Compute Cloud · Copilot / Cockpit / Billing Center</div>
   </div>

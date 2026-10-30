@@ -58,21 +58,28 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
   opacity:1
 }
 /* 首页：三款 DaoCloud 产品关系图 */
-.tf-relation{box-sizing:border-box;margin:1.5rem 0 2rem;background:var(--md-default-bg-color,#fff);color:var(--md-default-fg-color,#0F1D33);font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;padding:18px 14px;line-height:1.6;text-align:center;border:1px solid var(--md-default-fg-color--lightest);box-shadow:0 2px 12px rgba(0,0,0,0.06)}
-.tf-relation-kicker{font-size:12px;letter-spacing:2px;color:#5A6A85;font-weight:600;margin-bottom:10px}
-.tf-relation-box{border-radius:12px;padding:12px 14px;border:1.5px solid transparent}
+.tf-relation{box-sizing:border-box;margin:1.5rem 0 2rem;background:#F4F7FB;color:#0F1D33;font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;padding:20px 18px;line-height:1.65;text-align:center;border-radius:12px}
+.tf-relation-kicker{font-size:13px;letter-spacing:2px;color:#5A6A85;font-weight:600;margin-bottom:12px}
+.tf-relation-box{border-radius:12px;padding:14px 16px;border:1.5px solid transparent}
 .tf-relation-box--tf{background:#FDF0E1;border-color:#E8720C}
-.tf-relation-box--drun{background:#E8F7EE;border-color:#00C853}
+.tf-relation-box--drun{background:#E3F6F5;border-color:#0E9F9F}
 .tf-relation-box--dce{background:#EAF1FE;border-color:#1B66F5}
-.tf-relation-box-title{font-size:14.5px;font-weight:800}
-.tf-relation-box-sub{font-size:12.5px;color:#5A6A85;margin-top:2px}
-.tf-relation-box-detail{font-size:11.5px;color:#0F1D33;margin-top:5px}
-.tf-relation-arrow{text-align:center;color:#8A98B0;font-size:15px;line-height:1.1;padding:3px 0}
-.tf-relation-foot{font-size:12px;color:#8A98B0;margin-top:10px}
-[data-md-color-scheme="slate"] .tf-relation{background:var(--md-default-fg-color--lightest)}
-[data-md-color-scheme="slate"] .tf-relation-box--tf{background:rgba(232,114,12,0.12);border-color:rgba(232,114,12,0.4)}
-[data-md-color-scheme="slate"] .tf-relation-box--drun{background:rgba(0,200,83,0.12);border-color:rgba(0,200,83,0.4)}
-[data-md-color-scheme="slate"] .tf-relation-box--dce{background:rgba(27,102,245,0.14);border-color:rgba(27,102,245,0.45)}
+.tf-relation-box-title{font-size:17px;font-weight:800}
+.tf-relation-box-sub{font-size:13.5px;color:#5A6A85;margin-top:4px}
+.tf-relation-box-detail{font-size:12.5px;color:#0F1D33;margin-top:6px}
+.tf-relation-arrow{text-align:center;color:#8A98B0;font-size:17px;line-height:1.1;padding:3px 0}
+.tf-relation-foot{font-size:13px;color:#8A98B0;margin-top:12px}
+/* 暗色模式：深色实底 + 高饱和品牌色描边 + 亮色文字 */
+[data-md-color-scheme="slate"] .tf-relation{background:rgba(255,255,255,0.05);color:#e6eaf2}
+[data-md-color-scheme="slate"] .tf-relation-kicker{color:#94a3b8}
+[data-md-color-scheme="slate"] .tf-relation-box--tf{background:#3a2a17;border-color:#ff9800}
+[data-md-color-scheme="slate"] .tf-relation-box--drun{background:#14351f;border-color:#00c853}
+[data-md-color-scheme="slate"] .tf-relation-box--dce{background:#182742;border-color:#42a5f5}
+[data-md-color-scheme="slate"] .tf-relation-box-title{color:#ffffff}
+[data-md-color-scheme="slate"] .tf-relation-box-sub{color:#c3cede}
+[data-md-color-scheme="slate"] .tf-relation-box-detail{color:#dae3f0}
+[data-md-color-scheme="slate"] .tf-relation-arrow{color:#7d8ba3}
+[data-md-color-scheme="slate"] .tf-relation-foot{color:#94a3b8}
 </style>
 
 === ":material-factory: d.run Token 工厂效能平台"
@@ -333,7 +340,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
   <div class="tf-relation-kicker">DaoCloud 产品族 ·「道生三，三生万物」</div>
 
   <div class="tf-relation-box tf-relation-box--tf">
-    <div class="tf-relation-box-title">Token 工厂 · 面向智算中心的 Token 生产与经营系统</div>
+    <div class="tf-relation-box-title">d.run Token 工厂效能平台 · 面向智算中心的 Token 生产与经营系统</div>
     <div class="tf-relation-box-sub">用户/管理员双视图 · 把算力转化为可计量、可交易、可运营的 Token 产能</div>
     <div class="tf-relation-box-detail">大模型服务平台 · AI 应用 (RAG) · 推理加速 InferX · 算力云 · Copilot/驾驶舱/费用中心</div>
   </div>
@@ -349,7 +356,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
   <div class="tf-relation-arrow">▲</div>
 
   <div class="tf-relation-box tf-relation-box--dce">
-    <div class="tf-relation-box-title">DCE · 企业级云原生操作系统（底座）</div>
+    <div class="tf-relation-box-title">DaoCloud Enterprise · 企业级云原生操作系统（底座）</div>
     <div class="tf-relation-box-sub">乐高式模块化搭建 · 容器/网络/存储/中间件/可观测/全局管理等基础能力</div>
   </div>
 
