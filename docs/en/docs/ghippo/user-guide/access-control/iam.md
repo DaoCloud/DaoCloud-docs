@@ -2,6 +2,8 @@
 
 IAM (Identity and Access Management) is an important module of global management. You can create, manage and destroy users (groups) through the access control module, and use system roles and custom roles to control other users Access to the DCE Platform.
 
+![IAM architecture](../../images/iam-flow.svg)
+
 ## Benefits
 
 - Simple and smooth
@@ -16,9 +18,9 @@ IAM (Identity and Access Management) is an important module of global management
 
     When you want your company's employees to use the company's internal authentication system to log in to the DCE platform without creating corresponding users on the DCE platform, you can use the identity provider feature of access control to establish a trust relationship between your company and DCE, Through joint authentication, employees can directly log in to the DCE platform with the existing account of the enterprise, realizing single sign-on.
 
-## Usage Process
+## Work Flow
 
-Here is a typical process to perform access control.
+Here is a typical work flow to perform access control.
 
 ```mermaid
 graph TD

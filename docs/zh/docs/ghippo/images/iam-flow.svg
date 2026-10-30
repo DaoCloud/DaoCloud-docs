@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1848 1184" width="100%" role="img" aria-label="IAM 架构图：平台管理员或用户与访问控制管理员创建用户、用户组、自定义角色、身份提供商，将用户加入用户组，并给用户/用户组授予角色；通过身份提供商将企业用户对接到 DCE 平台" font-family="'Noto Sans SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB','Source Han Sans SC',system-ui,sans-serif">
+  <title>IAM 定义</title>
+  <rect width="1848" height="1184" fill="#F5F6FA"/>
+
+  <!-- 五个节点：平台管理员 / 用户 / 用户组 / 角色 / 身份提供商 -->
+  <g fill="none" stroke="#445057" stroke-width="4">
+    <rect x="866.5" y="112.5" width="387" height="118.5"/>
+    <rect x="864.5" y="414.5" width="397" height="114"/>
+    <rect x="864.5" y="719" width="407" height="116.5"/>
+    <rect x="864.5" y="1021" width="410.5" height="111.5"/>
+    <rect x="45" y="572" width="374" height="120.5"/>
+  </g>
+
+  <!-- 实线连接：左侧主干与各分支 -->
+  <g fill="none" stroke="#445057" stroke-width="5" stroke-linecap="butt">
+    <path d="M421 632 H641"/>
+    <path d="M641 171 V1077"/>
+    <path d="M641 171 H844"/>
+    <path d="M641 471.5 H842"/>
+    <path d="M641 777 H842"/>
+    <path d="M641 1077 H842"/>
+    <path d="M1063 232 V392"/>
+    <path d="M1273 777 H1336 V171 H1276"/>
+    <path d="M1336 471.5 H1295"/>
+  </g>
+
+  <!-- 箭头 -->
+  <g fill="#445057">
+    <polygon points="865,171 844,159 844,183"/>
+    <polygon points="863,471.5 842,459.5 842,483.5"/>
+    <polygon points="863,777 842,765 842,789"/>
+    <polygon points="863,1077 842,1065 842,1089"/>
+    <polygon points="1256,171 1276,160 1276,182"/>
+    <polygon points="1270,471.5 1295,459.5 1295,483.5"/>
+    <polygon points="1063,413 1051.5,392 1074.5,392"/>
+  </g>
+
+  <!-- 蓝色虚线：通过身份提供商将企业用户对接到 DCE -->
+  <path d="M1296 171 H1478 V1077 H1276" fill="none" stroke="#4198DE" stroke-width="5" stroke-dasharray="15 16"/>
+  <polygon points="1274,171 1296,160 1296,182" fill="#4198DE"/>
+
+  <!-- 深色文字：节点名与操作说明 -->
+  <g fill="#445057" font-size="30">
+    <text x="666" y="144">创建用户</text>
+    <text x="1060.5" y="184" text-anchor="middle">用户</text>
+    <text x="1065" y="321">将用户加入用户组</text>
+    <text x="660" y="434">创建用户组</text>
+    <text x="1064" y="484" text-anchor="middle">用户组</text>
+    <text x="1068.5" y="768" text-anchor="middle">角色</text>
+    <text x="1069" y="808" text-anchor="middle">（系统角色/自定义角色）</text>
+    <text x="1070" y="1089" text-anchor="middle">身份提供商</text>
+    <text x="232" y="624" text-anchor="middle">平台管理员或</text>
+    <text x="232.5" y="666" text-anchor="middle">用户与访问控制管理员</text>
+    <text x="644" y="760">创建自定义角色</text>
+    <text x="644" y="1039">创建身份提供商</text>
+    <text x="1366" y="576">给用户/用户组</text>
+    <text x="1366" y="623">授予角色</text>
+  </g>
+
+  <!-- 蓝色文字：身份提供商说明 -->
+  <g fill="#4198DE">
+    <text x="1523" y="921" font-size="30">通过身份提供商</text>
+    <text x="1523" y="964" font-size="30">将企业用户对接</text>
+    <text x="1551" y="1007" font-size="30">到DCE平台</text>
+  </g>
+</svg>

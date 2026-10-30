@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1460 1022" width="100%" role="img" aria-label="工作空间与层级示意图：根文件夹下依次包含文件夹（企业、部门 A/B/C、部门 D/E）、工作空间（项目 01/02/03）与资源，展示五级文件夹层级结构。" font-family="'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif">
+<title>工作空间与层级</title>
+<rect width="1460" height="1022" fill="#F5F6FA"/>
+<g fill="#F9F9F6" stroke="#AEB6BB" stroke-width="1.6" stroke-dasharray="1.7 2.3">
+<rect x="14" y="19.5" width="1430" height="159"/>
+<rect x="14" y="223.5" width="1430" height="340"/>
+<rect x="14" y="618.5" width="1430" height="159"/>
+<rect x="14" y="836.5" width="1430" height="162.5"/>
+</g>
+<g fill="none" stroke="#445057" stroke-width="3">
+<path d="M759.5 141 V207"/>
+<path d="M340 207 H1180"/>
+<path d="M340 207 V255"/>
+<path d="M759.5 207 V255"/>
+<path d="M1180 207 V255"/>
+<path d="M760 357 V397"/>
+<path d="M585 397 H937"/>
+<path d="M585 397 V419"/>
+<path d="M937 397 V419"/>
+<path d="M585.5 521 V587"/>
+<path d="M937 521 V587"/>
+<path d="M340 587 H760"/>
+<path d="M937 587 H1180"/>
+<path d="M340 587 V637"/>
+<path d="M760 587 V637"/>
+<path d="M1180 587 V637"/>
+<path d="M760 739 V807"/>
+<path d="M340 807 H1180"/>
+<path d="M340 807 V857"/>
+<path d="M760 807 V857"/>
+<path d="M1180 807 V857"/>
+</g>
+<g fill="#445057">
+<polygon points="331.5,255 348.5,255 340,272"/>
+<polygon points="751,255 768,255 759.5,272"/>
+<polygon points="1171.5,255 1188.5,255 1180,272"/>
+<polygon points="576.5,419 593.5,419 585,436"/>
+<polygon points="928.5,419 945.5,419 937,436"/>
+<polygon points="331.5,637 348.5,637 340,654"/>
+<polygon points="751.5,637 768.5,637 760,654"/>
+<polygon points="1171.5,637 1188.5,637 1180,654"/>
+<polygon points="331.5,857 348.5,857 340,874"/>
+<polygon points="751.5,857 768.5,857 760,874"/>
+<polygon points="1171.5,857 1188.5,857 1180,874"/>
+</g>
+<g fill="#F9F9F6" stroke="#445057" stroke-width="3">
+<rect x="615" y="57" width="287" height="84"/>
+<rect x="197" y="274" width="287" height="83"/>
+<rect x="617" y="274" width="287" height="83"/>
+<rect x="1036" y="274" width="287" height="83"/>
+<rect x="442" y="438" width="287" height="83"/>
+<rect x="793" y="438" width="287" height="83"/>
+<rect x="197" y="656" width="287" height="83"/>
+<rect x="617" y="656" width="287" height="83"/>
+<rect x="1036" y="656" width="287" height="83"/>
+<rect x="197" y="876" width="287" height="84"/>
+<rect x="617" y="876" width="287" height="84"/>
+<rect x="1036" y="876" width="287" height="84"/>
+</g>
+<path d="M47 72 V41 H56.86 L60.86 46 H81 V72 Z" fill="none" stroke="#445057" stroke-width="3"/><path d="M47 51.72 H81" fill="none" stroke="#445057" stroke-width="3"/>
+<path d="M35 281 V250 H45.15 L49.15 255 H70 V281 Z" fill="none" stroke="#445057" stroke-width="3.5"/><path d="M35 260.72 H70" fill="none" stroke="#445057" stroke-width="3.5"/>
+<path d="M54 638.5 L69.5 644.7 V662.68 L54 669.5 L38.5 662.68 V644.7 Z" fill="none" stroke="#445057" stroke-width="3"/><path d="M38.5 644.7 L54 652.45 L69.5 644.7" fill="none" stroke="#445057" stroke-width="3"/><path d="M54 652.45 V666.5" fill="none" stroke="#445057" stroke-width="3"/>
+<g fill="none" stroke="#445057" stroke-width="3"><ellipse cx="44" cy="876" rx="9.5" ry="4"/><path d="M34.5 876 V891"/><path d="M53.5 876 V891"/><path d="M34.5 881 a9.5 4 0 0 0 19 0"/><path d="M34.5 886 a9.5 4 0 0 0 19 0"/><path d="M34.5 891 a9.5 4 0 0 0 19 0"/></g>
+<g fill="#445057" font-size="28" text-anchor="middle">
+<text x="758" y="110">企业</text>
+<text x="340.5" y="327">部门 A</text>
+<text x="760.5" y="327">部门 B</text>
+<text x="1179.5" y="327">部门 C</text>
+<text x="585.5" y="491">部门 D</text>
+<text x="936.5" y="491">部门 E</text>
+<text x="340.5" y="709">项目 01</text>
+<text x="760.5" y="709">项目 02</text>
+<text x="1179.5" y="709">项目 03</text>
+<text x="340.5" y="929">资源</text>
+<text x="760.5" y="929">资源</text>
+<text x="1179.5" y="929">资源</text>
+</g>
+<g fill="#445057" font-size="28" text-anchor="start">
+<text x="118" y="77">根文件夹</text>
+<text x="78" y="276">文件夹</text>
+<text x="92" y="669">工作空间</text>
+<text x="64" y="894">资源</text>
+</g>
+</svg>

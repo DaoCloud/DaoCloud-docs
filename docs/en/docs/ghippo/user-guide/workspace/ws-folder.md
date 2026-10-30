@@ -8,6 +8,8 @@ hide:
 Workspace and Folder is a feature that provides resource isolation and grouping, addressing issues
 related to unified authorization, resource grouping, and resource quotas.
 
+![Hierarchy](../../images/fdpractice-flow.svg)
+
 Workspace and Folder involves two concepts: workspaces and folders.
 
 ## Workspaces
