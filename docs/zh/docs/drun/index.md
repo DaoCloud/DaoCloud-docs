@@ -136,4 +136,4 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
 ![d.run AI 操作系统全景图](images/drun-modules.svg)
 
 [查看/下载 d.run AI 操作系统彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/drun.pdf){ .md-button .md-button--primary }
-[安装 d.run AI 操作系统](installer/start-install.md){ .md-button .md-button--primary }
+[安装 d.run AI 操作系统](install/index.md){ .md-button .md-button--primary }

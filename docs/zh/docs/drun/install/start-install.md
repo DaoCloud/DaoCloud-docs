@@ -2,7 +2,8 @@
 
 本文介绍如何离线安装 **d.run AI 操作系统（下文简称 d.run）**。安装时请使用产品清单文件 `manifest-cloud.yaml`。
 
-请在安装之前阅读并了解[部署要求](./commercial/deploy-requirements.md)、[部署架构](./commercial/deploy-arch.md)、[准备工作](./commercial/prepare.md)，并先完成[安装依赖项](index.md)。
+请在安装之前阅读并了解[部署要求](./commercial/deploy-requirements.md)、[部署架构](./commercial/deploy-arch.md)、[准备工作](./commercial/prepare.md)，并先完成[安装依赖项](./dependency.md)。
+本页覆盖[安装指南](./index.md)中的第 3 至第 7 步。
 
 ## 第 1 步：下载离线包
 
