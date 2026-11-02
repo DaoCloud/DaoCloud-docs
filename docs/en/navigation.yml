@@ -1625,6 +1625,7 @@ nav:
       - Merbridge: community/merbridge.md
       - Piraeus: community/piraeus.md
       - Spiderpool: community/spiderpool.md
+      - Unifabric: community/unifabric.md
       - DaoCloud Icon Library: community/icons/index.md
       - Kubean Cluster Integration with Karpenter: native/knowledge/karpenter.md
   - DaoCloud Website: https://daocloud.io/

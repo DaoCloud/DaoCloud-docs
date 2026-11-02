@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# 开源社区
+# DaoCloud 开源项目
 
 !!! info
 
@@ -35,33 +35,6 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./egress-gw.md)
 
--   :material-run-fast:{ .lg .middle } __Fast__
-
-    ---
-
-    基于 eBPF 实现的 Kubernetes CNI。目前已实现了以下两个功能：
-
-    - 基于 eBPF 的网络基本连通性
-    - 管理集群容器的 IP 地址
-
-    [:octicons-arrow-right-24: 了解更多](./fast.md)
-
--   :fontawesome-brands-trade-federation:{ .lg .middle } __FedState__
-
-    ---
-
-    赋能多云、多集群、多数据中心场景下的自动运维
-
-    [:octicons-arrow-right-24: 了解更多](./fedstate.md)
-
--   :material-ferry:{ .lg .middle } __Ferry__
-
-    ---
-
-    Kubernetes 多集群通信组件，消除多集群复杂度，让您就像管理一个单集群
-
-    [:octicons-arrow-right-24: 了解更多](./ferry.md)
-
 -   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF Sandbox
 
     ---
@@ -70,21 +43,13 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./hwameistor.md)
 
--   :melon:{ .lg .middle } __HAMi__ :simple-cncf: 已入选 CNCF Incubation 👏
+-   :melon:{ .lg .middle } __HAMi__ :simple-cncf: **已入选 CNCF Incubation** 👏
 
     ---
 
     一站式管控、切分、使用国内外的异构 GPU
 
     [:octicons-arrow-right-24: 了解更多](./hami.md)
-
--   :simple-kasasmart:{ .lg .middle } __KasmCloud__
-
-    ---
-
-    在 Kubernetes 中管理和运行 Actor、Provider 和 Link
-
-    [:octicons-arrow-right-24: Learn more](./kasmcloud.md)
 
 -   :material-doctor:{ .lg .middle } __kdoctor__
 
@@ -165,6 +130,14 @@ hide:
     云原生网络 Underlay 和 RDMA 网络方案，已入选 CNCF Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./spiderpool.md)
+
+- :material-lan:{ .lg .middle } __Unifabric__
+
+    ---
+
+    面向 AI 高速网络的云原生可观测性平台：拓扑发现、RDMA/NVLink 流量归因、网络健康检查
+
+    [:octicons-arrow-right-24: 了解更多](./unifabric.md)
 
 -   :speedboat:{ .lg .middle } __公开镜像加速__
 

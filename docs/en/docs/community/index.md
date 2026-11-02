@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-# DaoCloud Ecosystem
+# DaoCloud Open Source Projects
 
 !!! info
 
@@ -36,33 +36,6 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./egress-gw.md)
 
--   :material-run-fast:{ .lg .middle } __Fast__
-
-    ---
-
-    Fast is a Kubernetes CNI based on [eBPF](https://ebpf.io) implementation. At present, the following two capabilities have been realized
-
-    - Network basic connectivity based on eBPF
-    - Manage cluster containers' IP address
-
-    [:octicons-arrow-right-24: Learn more](./fast.md)
-
--   :fontawesome-brands-trade-federation:{ .lg .middle } __FedState__
-
-    ---
-
-    Empowering automatic operation and maintenance under multi-cloud, multi-cluster, and multi-data center scenarios.
-
-    [:octicons-arrow-right-24: Learn more](./fedstate.md)
-
--   :material-ferry:{ .lg .middle } __Ferry__
-
-    ---
-
-    Kubernetes multi-cluster communication component that eliminates multi-cluster complexity and allows you to manage it like a single cluster.
-
-    [:octicons-arrow-right-24: Learn more](./ferry.md)
-
 -   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: Listed in CNCF Sandbox
 
     ---
@@ -71,21 +44,13 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./hwameistor.md)
 
--   :melon:{ .lg .middle } __HAMi__ :simple-cncf: Listed in CNCF Incubation 👏
+-   :melon:{ .lg .middle } __HAMi__ :simple-cncf: **Listed in CNCF Incubation** 👏
 
     ---
 
     Manage your heterogeneous computing clusters with different GPUs
 
     [:octicons-arrow-right-24: Learn more](./hami.md)
-
--   :simple-kasasmart:{ .lg .middle } __KasmCloud__
-
-    ---
-
-    Managing and Running Actors, Providers, and Links in Kubernetes.
-
-    [:octicons-arrow-right-24: Learn more](./kasmcloud.md)
 
 -   :material-doctor:{ .lg .middle } __kdoctor__
 
@@ -174,6 +139,14 @@ hide:
     An underlay and RDMA network solution for Kubernetes with bare metal, virtual machines, and public clouds.
 
     [:octicons-arrow-right-24: Learn more](./spiderpool.md)
+
+-   :material-lan:{ .lg .middle } __Unifabric__
+
+    ---
+
+    Cloud native observability for high-speed AI networks: topology discovery, RDMA/NVLink traffic attribution, and network health checks
+
+    [:octicons-arrow-right-24: Learn more](./unifabric.md)
 
 -   :simple-iconify:{ .lg .middle } __DaoCloud Icons Library__
 
