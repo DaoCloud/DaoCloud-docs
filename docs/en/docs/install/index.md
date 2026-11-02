@@ -67,7 +67,6 @@ flowchart TB
 
 subgraph second[Instructions]
     direction TB
-    U[ ] -.-
     free[Apply for free trial] --- kpanda[Container Management]
     kpanda --- ghippo[Global Management]
     ghippo --- insight[Insight]
@@ -76,7 +75,6 @@ end
 
 subgraph first[Install DCE Community]
     direction TB
-    S[ ] -.-
     plan[Resource Planning] --> k8s[Prepare K8s Cluster]
     k8s --> tools[Install Dependencies]
     tools -.-> kind[Online Install with kind]
@@ -86,16 +84,6 @@ end
 
 start([fa:fa-user DCE Community<br>Installation Process]) --> first
 start --> second
-
-classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:px,color:#000000, font-size:15px;
-classDef white fill:#ffffff,stroke:#000,stroke-width:px,color:#000,font-weight:bold
-classDef spacewhite fill:#ffffff,stroke:#fff,stroke-width:0px,color:#000
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class plan,k8s,tools,kind,s1,s2,kpanda,ghippo,insight,free,ask cluster;
-class S,U spacewhite
 
 click plan "https://docs.daocloud.io/en/install/community/resources.html"
 click k8s "https://docs.daocloud.io/en/install/community/kind/online.html#install-kind-cluster"
@@ -109,10 +97,6 @@ click insight "https://docs.daocloud.io/en/insight/intro/"
 click free "https://docs.daocloud.io/en/dce/license0.html"
 click ask "https://docs.daocloud.io/en/install/index.html#contact-us"
 ```
-
-!!! tip
-
-    Click the blue text in the diagram, you can go to the proper page for details.
 
 ## Install DCE Enterprise
 
@@ -138,16 +122,6 @@ flowchart TB
     other-os -.-> oracle[Install on<br>Oracle Linux]
     other-os -.-> tencent[Install on<br>TencentOS Server]
     other-os -.-> other[Install on<br>Other Linux]
-
-
-classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:1px,color:#000000, font-size:15px;
-classDef white fill:#ffffff,stroke:#000,stroke-width:1px,color:#000,font-weight:bold
-classDef spacewhite fill:#ffffff,stroke:#fff,stroke-width:0px,color:#000
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class arch,deploy,prepare,download,config,install,ocp,ali,uos,oracle,tencent,other cluster
 
 click arch "https://docs.daocloud.io/en/install/commercial/deploy-arch.html"
 click deploy "https://docs.daocloud.io/en/install/commercial/deploy-requirements.html"

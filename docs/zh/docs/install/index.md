@@ -92,10 +92,6 @@ click free "https://docs.daocloud.io/dce/license0.html"
 click ask "https://docs.daocloud.io/install/index.html#_4"
 ```
 
-!!! tip
-
-    上图中的蓝色文字可点击跳转。
-
 ## 商业版安装流程
 
 DCE 商业版的安装流程如下图：
