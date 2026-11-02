@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
-  <title id="title">d.run Token Factory: Modules and Scenarios at a Glance</title>
+  <title id="title">d.run Token Factory Efficiency Platform at a Glance</title>
   <desc id="desc">d.run Token Factory consists of user and admin views, four capability layers, and 14 built-in modules. Cloud-Native AI: LLM Studio (Hydra), AI Apps (dak), InferX Suite, Compute Cloud (zestu). Cloud-Native Infrastructure: Container Management, Image Registry, Device Management, Cloud Native Networking, Cloud Native Storage. Operations: Cockpit, Copilot Workbench, Billing Center. O&amp;M: Insight, Global Management. It turns heterogeneous compute into metered, tradable Token services.</desc>
 
   <rect x="0.5" y="0.5" width="999" height="539" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
 
   <!-- 标题 -->
-  <text x="44" y="42" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#1a2330">d.run Token Factory: Modules and Scenarios at a Glance</text>
+  <text x="44" y="42" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#1a2330">d.run Token Factory Efficiency Platform at a Glance</text>
   <text x="44" y="64" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#6b7688">User / admin dual view · four capability layers · 14 built-in modules — turning compute into metered, tradable Tokens</text>
 
   <!-- Cloud-Native AI · Token production & inference -->
