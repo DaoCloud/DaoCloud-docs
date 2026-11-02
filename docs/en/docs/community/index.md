@@ -36,33 +36,6 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./egress-gw.md)
 
--   :material-run-fast:{ .lg .middle } __Fast__
-
-    ---
-
-    Fast is a Kubernetes CNI based on [eBPF](https://ebpf.io) implementation. At present, the following two capabilities have been realized
-
-    - Network basic connectivity based on eBPF
-    - Manage cluster containers' IP address
-
-    [:octicons-arrow-right-24: Learn more](./fast.md)
-
--   :fontawesome-brands-trade-federation:{ .lg .middle } __FedState__
-
-    ---
-
-    Empowering automatic operation and maintenance under multi-cloud, multi-cluster, and multi-data center scenarios.
-
-    [:octicons-arrow-right-24: Learn more](./fedstate.md)
-
--   :material-ferry:{ .lg .middle } __Ferry__
-
-    ---
-
-    Kubernetes multi-cluster communication component that eliminates multi-cluster complexity and allows you to manage it like a single cluster.
-
-    [:octicons-arrow-right-24: Learn more](./ferry.md)
-
 -   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: Listed in CNCF Sandbox
 
     ---
@@ -78,14 +51,6 @@ hide:
     Manage your heterogeneous computing clusters with different GPUs
 
     [:octicons-arrow-right-24: Learn more](./hami.md)
-
--   :simple-kasasmart:{ .lg .middle } __KasmCloud__
-
-    ---
-
-    Managing and Running Actors, Providers, and Links in Kubernetes.
-
-    [:octicons-arrow-right-24: Learn more](./kasmcloud.md)
 
 -   :material-doctor:{ .lg .middle } __kdoctor__
 
