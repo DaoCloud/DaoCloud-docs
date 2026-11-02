@@ -33,8 +33,8 @@ nav:
                   - Model Plaza: tf/hydra/index.md
                   - Model Experience: tf/hydra/exp.md
                   - Model Management:
-                      - Create Model: tf/hydra/model-management/index.md
-                      - Manage Models: tf/hydra/model-management/model-manage.md
+                      - Create Model: tf/hydra/models/index.md
+                      - Manage Models: tf/hydra/models/model-manage.md
                   - Model Service:
                       - Model Service Overview: tf/hydra/deploy/index.md
                       - Deploy New Model: tf/hydra/deploy/deploy.md

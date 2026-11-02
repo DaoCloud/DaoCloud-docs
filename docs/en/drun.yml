@@ -34,8 +34,8 @@ nav:
                   - Model Plaza: drun/hydra/index.md
                   - Model Experience: drun/hydra/exp.md
                   - Model Management:
-                      - Create Model: drun/hydra/model-management/index.md
-                      - Manage Models: drun/hydra/model-management/model-manage.md
+                      - Create Model: drun/hydra/models/index.md
+                      - Manage Models: drun/hydra/models/model-manage.md
                   - Model Service:
                       - Model Service Overview: drun/hydra/deploy/index.md
                       - Deploy New Model: drun/hydra/deploy/deploy.md
