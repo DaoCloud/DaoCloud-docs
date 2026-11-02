@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" font-family="-apple-system, 'PingFang SC', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <!-- outer canvas -->
+  <rect x="6" y="6" width="1188" height="788" rx="18" fill="#f7faff" stroke="#d7e5f7" stroke-width="2"/>
+
+  <!-- ============ Band 1: AI Workloads ============ -->
+  <rect x="28" y="24" width="1144" height="86" rx="12" fill="#e9f1fc"/>
+  <text x="48" y="76" font-size="21" font-weight="700" fill="#16305e">AI Workloads</text>
+
+  <!-- Training card -->
+  <rect x="225" y="35" width="520" height="64" rx="10" fill="#ffffff" stroke="#dbe7f8" stroke-width="1.5"/>
+  <g stroke="#1f7ae0" stroke-width="2.5" fill="none">
+    <rect x="262" y="53" width="28" height="28" rx="5"/>
+    <rect x="270" y="61" width="12" height="12" rx="2" fill="#1f7ae0" stroke="none"/>
+    <line x1="270" y1="48" x2="270" y2="53"/><line x1="282" y1="48" x2="282" y2="53"/>
+    <line x1="270" y1="81" x2="270" y2="86"/><line x1="282" y1="81" x2="282" y2="86"/>
+    <line x1="257" y1="61" x2="262" y2="61"/><line x1="257" y1="73" x2="262" y2="73"/>
+    <line x1="290" y1="61" x2="295" y2="61"/><line x1="290" y1="73" x2="295" y2="73"/>
+  </g>
+  <text x="330" y="62" font-size="16" font-weight="700" fill="#16305e">Training</text>
+  <text x="330" y="82" font-size="12.5" fill="#5a6c92">Distributed training (DDP/MoE)</text>
+
+  <!-- Inference card -->
+  <rect x="765" y="35" width="395" height="64" rx="10" fill="#ffffff" stroke="#dbe7f8" stroke-width="1.5"/>
+  <g stroke="#1f7ae0" stroke-width="2.5" fill="none">
+    <ellipse cx="802" cy="53" rx="12" ry="5"/>
+    <path d="M790 53 v18 c0 3 5.4 5 12 5 s12 -2 12 -5 v-18"/>
+    <path d="M790 62 c0 3 5.4 5 12 5 s12 -2 12 -5"/>
+  </g>
+  <text x="845" y="62" font-size="16" font-weight="700" fill="#16305e">Inference</text>
+  <text x="845" y="82" font-size="12.5" fill="#5a6c92">LLM inference / vLLM</text>
+
+  <!-- ============ Band 2: Schedulers &amp; Observability ============ -->
+  <rect x="28" y="122" width="1144" height="86" rx="12" fill="#e9f1fc"/>
+  <text x="48" y="158" font-size="19" font-weight="700" fill="#16305e">Schedulers</text>
+  <text x="48" y="182" font-size="19" font-weight="700" fill="#16305e">&amp; Observability</text>
+
+  <!-- Schedulers card -->
+  <rect x="215" y="132" width="505" height="66" rx="10" fill="#ffffff" stroke="#dbe7f8" stroke-width="1.5"/>
+  <text x="467" y="148" font-size="12" font-weight="700" fill="#16305e" text-anchor="middle">Schedulers</text>
+  <!-- Kueue pill -->
+  <rect x="228" y="154" width="155" height="38" rx="8" fill="#f2f7fe" stroke="#dbe7f8" stroke-width="1"/>
+  <g stroke="#1f7ae0" stroke-width="2" fill="none">
+    <path d="M246 166 l10 -5 10 5 -10 5 z"/>
+    <path d="M246 172 l10 5 10 -5"/>
+    <path d="M246 178 l10 5 10 -5"/>
+  </g>
+  <text x="274" y="178" font-size="13.5" font-weight="700" fill="#16305e">Kueue</text>
+  <!-- Volcano pill -->
+  <rect x="391" y="154" width="155" height="38" rx="8" fill="#f2f7fe" stroke="#dbe7f8" stroke-width="1"/>
+  <g stroke="#f2871e" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M400 186 l7 -13 h11 l7 13 z"/>
+    <path d="M405 168 l-3 -5 M412 166 v-6 M419 168 l3 -5"/>
+  </g>
+  <text x="452" y="178" font-size="13.5" font-weight="700" fill="#16305e">Volcano</text>
+  <!-- KAI pill -->
+  <rect x="554" y="154" width="154" height="38" rx="8" fill="#f2f7fe" stroke="#dbe7f8" stroke-width="1"/>
+  <g stroke="#1f7ae0" stroke-width="2" fill="none">
+    <path d="M566 162 l10 -5 10 5 v11 l-10 5 -10 -5 z"/>
+    <path d="M566 162 l10 5 10 -5 M576 167 v11"/>
+  </g>
+  <text x="596" y="178" font-size="13.5" font-weight="700" fill="#16305e">KAI Scheduler</text>
+
+  <!-- Grafana card -->
+  <rect x="732" y="132" width="205" height="66" rx="10" fill="#ffffff" stroke="#dbe7f8" stroke-width="1.5"/>
+  <circle cx="756" cy="152" r="11" fill="#f2871e"/>
+  <path d="M750 152 a6 6 0 0 1 10 -4 a5 5 0 0 1 2 9" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <text x="774" y="158" font-size="15" font-weight="700" fill="#16305e">Grafana</text>
+  <text x="744" y="182" font-size="10.5" fill="#5a6c92">Visualization &amp; Dashboards</text>
+
+  <!-- Prometheus card -->
+  <rect x="949" y="132" width="211" height="66" rx="10" fill="#ffffff" stroke="#dbe7f8" stroke-width="1.5"/>
+  <circle cx="973" cy="152" r="11" fill="#e04f2e"/>
+  <path d="M973 144 c4 4 5 7 3 10 c-2 3 -7 3 -8 -1 c-1 -3 2 -5 5 -9" fill="#ffffff"/>
+  <text x="991" y="158" font-size="15" font-weight="700" fill="#16305e">Prometheus</text>
+  <text x="961" y="182" font-size="10.5" fill="#5a6c92">Metrics Collection &amp; Alerting</text>
+
+  <!-- ============ Arrows: consumers <-> Unifabric ============ -->
+  <g stroke="#1f5fd0" stroke-width="2" fill="none">
+    <path d="M340 216 v30 M335 221 l5 -6 5 6 M335 241 l5 6 5 -6"/>
+    <path d="M680 216 v30 M675 221 l5 -6 5 6 M675 241 l5 6 5 -6"/>
+    <path d="M1020 216 v30 M1015 221 l5 -6 5 6 M1015 241 l5 6 5 -6"/>
+  </g>
+  <text x="356" y="229" font-size="12" font-weight="700" fill="#16305e">Node Topology Labels</text>
+  <text x="356" y="245" font-size="11" fill="#5a6c92">(for scheduling)</text>
+  <text x="696" y="229" font-size="12" font-weight="700" fill="#16305e">Topology / Traffic / Health</text>
+  <text x="696" y="245" font-size="11" fill="#5a6c92">(visualization)</text>
+  <text x="1036" y="229" font-size="12" font-weight="700" fill="#16305e">Metrics &amp; Events</text>
+  <text x="1036" y="245" font-size="11" fill="#5a6c92">(collection &amp; alerting)</text>
+
+  <!-- ============ Unifabric main box ============ -->
+  <rect x="20" y="256" width="1160" height="366" rx="14" fill="#e3eefc" stroke="#c7dcf6" stroke-width="1.5"/>
+  <text x="600" y="288" font-size="26" font-weight="800" fill="#16305e" text-anchor="middle">Unifabric</text>
+  <text x="600" y="310" font-size="14" fill="#4a5d85" text-anchor="middle">Cloud native Observability for the high-speed AI networks</text>
+
+  <!-- Column 1: Topology Discovery (blue)  col: x=42..403, header 322..370, body 378..608 -->
+  <path d="M42 370 v-36 a12 12 0 0 1 12 -12 h337 a12 12 0 0 1 12 12 v36 z" fill="#1f7ae0"/>
+  <g stroke="#ffffff" stroke-width="2" fill="none">
+    <circle cx="72" cy="338" r="3.5"/>
+    <circle cx="62" cy="353" r="3.5"/>
+    <circle cx="82" cy="353" r="3.5"/>
+    <line x1="72" y1="341.5" x2="63" y2="350"/>
+    <line x1="72" y1="341.5" x2="81" y2="350"/>
+  </g>
+  <text x="100" y="343" font-size="14.5" font-weight="700" fill="#ffffff">Topology Discovery</text>
+  <text x="100" y="360" font-size="10.5" fill="#d8e7fb">NVIDIA Topograph, etc.</text>
+  <rect x="42" y="378" width="361" height="230" rx="10" fill="#dfeafb"/>
+  <!-- item 1 -->
+  <rect x="54" y="392" width="337" height="60" rx="8" fill="#ffffff" stroke="#dbe7f8" stroke-width="1"/>
+  <g stroke="#1f7ae0" stroke-width="2" fill="none">
+    <rect x="70" y="402" width="10" height="8" rx="1.5"/>
+    <rect x="60" y="420" width="10" height="8" rx="1.5"/>
+    <rect x="80" y="420" width="10" height="8" rx="1.5"/>
+    <line x1="75" y1="410" x2="65" y2="420"/><line x1="75" y1="410" x2="85" y2="420"/>
+  </g>
+  <text x="112" y="417" font-size="14" font-weight="700" fill="#16305e">Node Topology Labels</text>
+  <text x="112" y="437" font-size="11.5" fill="#5a6c92">(leaf / spine / other tiers)</text>
+  <!-- item 2 -->
+  <rect x="54" y="468" width="337" height="60" rx="8" fill="#ffffff" stroke="#dbe7f8" stroke-width="1"/>
+  <g stroke="#1f7ae0" stroke-width="2" fill="none">
+    <path d="M66 498 a16 10 0 0 0 26 0 a16 10 0 0 0 -26 0"/>
+    <circle cx="79" cy="498" r="4.5"/>
+  </g>
+  <text x="112" y="493" font-size="14" font-weight="700" fill="#16305e">Topology Visualization</text>
+  <text x="112" y="513" font-size="11.5" fill="#5a6c92">(Kubernetes CRDs + Grafana)</text>
+  <!-- item 3 -->
+  <rect x="54" y="544" width="337" height="60" rx="8" fill="#ffffff" stroke="#dbe7f8" stroke-width="1"/>
+  <g stroke="#1f7ae0" stroke-width="2" fill="none">
+    <path d="M64 558 l14 -7 14 7 -14 7 z"/>
+    <path d="M64 565 l14 7 14 -7"/>
+    <path d="M64 572 l14 7 14 -7"/>
+  </g>
+  <text x="112" y="569" font-size="14" font-weight="700" fill="#16305e">Multi Plane Support</text>
+  <text x="112" y="589" font-size="11.5" fill="#5a6c92">(Scale-out / Scale-up / Storage)</text>
+
+  <!-- Column 2: High-Speed Network Traffic Observability (green)  col: x=419..780 -->
+  <path d="M419 370 v-36 a12 12 0 0 1 12 -12 h337 a12 12 0 0 1 12 12 v36 z" fill="#1f9d55"/>
+  <g fill="#ffffff">
+    <rect x="443" y="352" width="5" height="8"/>
+    <rect x="451" y="346" width="5" height="14"/>
+    <rect x="459" y="340" width="5" height="20"/>
+  </g>
+  <text x="478" y="343" font-size="14" font-weight="700" fill="#ffffff">High-Speed Network</text>
+  <text x="478" y="360" font-size="14" font-weight="700" fill="#ffffff">Traffic Observability</text>
+  <rect x="419" y="378" width="361" height="230" rx="10" fill="#e2f4e8"/>
+  <!-- item 1: RDMA Metrics -->
+  <rect x="431" y="390" width="337" height="36" rx="8" fill="#ffffff" stroke="#cfe9d8" stroke-width="1"/>
+  <g stroke="#1f9d55" stroke-width="2" fill="none">
+    <rect x="443" y="399" width="16" height="12" rx="2"/><line x1="447" y1="402" x2="455" y2="402"/><line x1="447" y1="406" x2="455" y2="406"/><line x1="451" y1="411" x2="451" y2="414"/>
+  </g>
+  <text x="470" y="405" font-size="12.5" font-weight="700" fill="#16305e">RDMA Metrics</text>
+  <text x="470" y="419" font-size="10.5" fill="#5a6c92">(Host + Pod)</text>
+  <!-- item 2: Switch Metrics -->
+  <rect x="431" y="434" width="337" height="36" rx="8" fill="#ffffff" stroke="#cfe9d8" stroke-width="1"/>
+  <g stroke="#1f9d55" stroke-width="2" fill="none">
+    <rect x="443" y="443" width="16" height="14" rx="2"/><line x1="447" y1="447" x2="455" y2="447"/><line x1="447" y1="452" x2="455" y2="452"/><line x1="451" y1="457" x2="451" y2="460"/>
+  </g>
+  <text x="470" y="449" font-size="12.5" font-weight="700" fill="#16305e">Switch Metrics</text>
+  <text x="470" y="463" font-size="10.5" fill="#5a6c92">(Scale-out / Storage)</text>
+  <!-- item 3: NVLink Metrics -->
+  <rect x="431" y="478" width="337" height="36" rx="8" fill="#ffffff" stroke="#cfe9d8" stroke-width="1"/>
+  <g stroke="#1f9d55" stroke-width="2" fill="none">
+    <rect x="443" y="488" width="16" height="16" rx="2"/><rect x="447" y="492" width="8" height="8"/><line x1="451" y1="484" x2="451" y2="488"/><line x1="451" y1="504" x2="451" y2="508"/>
+  </g>
+  <text x="470" y="493" font-size="12.5" font-weight="700" fill="#16305e">NVLink Metrics</text>
+  <text x="470" y="507" font-size="10.5" fill="#5a6c92">(Scale-up, intra-node)</text>
+  <!-- item 4: eBPF-based RDMA Tracing -->
+  <rect x="431" y="522" width="337" height="36" rx="8" fill="#ffffff" stroke="#cfe9d8" stroke-width="1"/>
+  <g stroke="#1f9d55" stroke-width="2" fill="none">
+    <circle cx="450" cy="537" r="6"/><line x1="455" y1="542" x2="460" y2="547"/>
+  </g>
+  <text x="470" y="537" font-size="12.5" font-weight="700" fill="#16305e">eBPF-based RDMA Tracing</text>
+  <text x="470" y="551" font-size="10.5" fill="#5a6c92">(who talks to whom, when, how much)</text>
+  <!-- item 5: End-to-End Traffic Path Tracing -->
+  <rect x="431" y="566" width="337" height="36" rx="8" fill="#ffffff" stroke="#cfe9d8" stroke-width="1"/>
+  <g stroke="#1f9d55" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M442 584 h18 m-5 -4 5 4 -5 4"/>
+    <path d="M460 592 h-18 m5 -4 -5 4 5 4"/>
+  </g>
+  <text x="470" y="583" font-size="12.5" font-weight="700" fill="#16305e">End-to-End Traffic Path Tracing</text>
+  <text x="470" y="597" font-size="10.5" fill="#5a6c92">(per workload → Pod → Host → Switch)</text>
+
+  <!-- Column 3: Network Health Checks (orange)  col: x=796..1157 -->
+  <path d="M796 370 v-36 a12 12 0 0 1 12 -12 h337 a12 12 0 0 1 12 12 v36 z" fill="#f2871e"/>
+  <g stroke="#ffffff" stroke-width="2" fill="none">
+    <path d="M818 336 l10 -4 10 4 v8 c0 6 -4.5 9.5 -10 12 c-5.5 -2.5 -10 -6 -10 -12 z"/>
+    <path d="M822 345 l4 4 7 -8"/>
+  </g>
+  <text x="850" y="352" font-size="14.5" font-weight="700" fill="#ffffff">Network Health Checks</text>
+  <rect x="796" y="378" width="361" height="230" rx="10" fill="#fdf1de"/>
+  <!-- Passive -->
+  <rect x="808" y="394" width="337" height="100" rx="8" fill="#ffffff" stroke="#f5ddb8" stroke-width="1"/>
+  <g stroke="#f2871e" stroke-width="2" fill="none">
+    <path d="M822 430 c0 -5 4 -8 8 -8 c3 0 5 1.5 6 3.5 c1 -2 3 -3.5 6 -3.5 c4 0 8 3 8 8 c0 7 -9 12 -14 15 c-5 -3 -14 -8 -14 -15 z"/>
+  </g>
+  <text x="866" y="428" font-size="14" font-weight="700" fill="#16305e">Passive Health Status</text>
+  <text x="866" y="450" font-size="11.5" fill="#5a6c92">(LLDP readiness, switch connectivity,</text>
+  <text x="866" y="468" font-size="11.5" fill="#5a6c92">probe results)</text>
+  <!-- Active (planned, dashed) -->
+  <rect x="808" y="510" width="337" height="88" rx="8" fill="#fffdf8" stroke="#f2a04c" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <g stroke="#f2871e" stroke-width="2" fill="none">
+    <circle cx="828" cy="546" r="8"/><line x1="834" y1="552" x2="842" y2="560"/>
+  </g>
+  <text x="866" y="546" font-size="14" font-weight="700" fill="#16305e">Active Path Probing</text>
+  <text x="866" y="566" font-size="11.5" fill="#5a6c92">(link degradation detection)</text>
+  <text x="866" y="584" font-size="10.5" fill="#b98a4e">planned</text>
+
+  <!-- ============ Arrows: Infrastructure -> Unifabric ============ -->
+  <g stroke="#1f5fd0" stroke-width="2" fill="none">
+    <path d="M222 664 v-24 M217 647 l5 -7 5 7"/>
+    <path d="M600 664 v-24 M595 647 l5 -7 5 7"/>
+    <path d="M976 664 v-24 M971 647 l5 -7 5 7"/>
+  </g>
+
+  <!-- ============ Band 3: Infrastructure ============ -->
+  <rect x="28" y="670" width="1144" height="86" rx="12" fill="#e9f1fc"/>
+  <text x="48" y="722" font-size="20" font-weight="700" fill="#16305e">Infrastructure</text>
+
+  <!-- Scale-out card -->
+  <rect x="225" y="681" width="300" height="64" rx="10" fill="#ffffff" stroke="#dbe7f8" stroke-width="1.5"/>
+  <g stroke="#16305e" stroke-width="2" fill="none">
+    <rect x="243" y="695" width="26" height="18" rx="2"/>
+    <line x1="249" y1="701" x2="263" y2="701"/><line x1="249" y1="707" x2="263" y2="707"/>
+    <circle cx="266" cy="698" r="1" fill="#16305e" stroke="none"/><circle cx="266" cy="704" r="1" fill="#16305e" stroke="none"/>
+  </g>
+  <text x="288" y="708" font-size="14" font-weight="700" fill="#16305e">Scale-out Network</text>
+  <text x="288" y="727" font-size="10.5" fill="#5a6c92">SONIC RoCE · Spectrum-X · InfiniBand</text>
+
+  <!-- Scale-up card -->
+  <rect x="537" y="681" width="300" height="64" rx="10" fill="#ffffff" stroke="#dbe7f8" stroke-width="1.5"/>
+  <g stroke="#16305e" stroke-width="2" fill="none">
+    <rect x="553" y="696" width="26" height="26" rx="4"/><rect x="560" y="703" width="12" height="12"/>
+    <line x1="558" y1="692" x2="558" y2="696"/><line x1="566" y1="692" x2="566" y2="696"/><line x1="574" y1="692" x2="574" y2="696"/>
+    <line x1="558" y1="722" x2="558" y2="726"/><line x1="566" y1="722" x2="566" y2="726"/><line x1="574" y1="722" x2="574" y2="726"/>
+    <line x1="549" y1="700" x2="553" y2="700"/><line x1="549" y1="709" x2="553" y2="709"/><line x1="549" y1="718" x2="553" y2="718"/>
+    <line x1="579" y1="700" x2="583" y2="700"/><line x1="579" y1="709" x2="583" y2="709"/><line x1="579" y1="718" x2="583" y2="718"/>
+  </g>
+  <text x="600" y="708" font-size="14" font-weight="700" fill="#16305e">Scale-up Network</text>
+  <text x="600" y="727" font-size="10.5" fill="#5a6c92">NVLink · NVSwitch</text>
+
+  <!-- Storage card -->
+  <rect x="849" y="681" width="311" height="64" rx="10" fill="#ffffff" stroke="#dbe7f8" stroke-width="1.5"/>
+  <g stroke="#16305e" stroke-width="2" fill="none">
+    <ellipse cx="872" cy="697" rx="12" ry="5"/>
+    <path d="M860 697 v16 c0 3 5.4 5 12 5 s12 -2 12 -5 v-16"/>
+    <path d="M860 705 c0 3 5.4 5 12 5 s12 -2 12 -5"/>
+  </g>
+  <text x="912" y="708" font-size="14" font-weight="700" fill="#16305e">Storage Network</text>
+  <text x="912" y="727" font-size="10.5" fill="#5a6c92">RoCE · InfiniBand</text>
+</svg>

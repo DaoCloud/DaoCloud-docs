@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-# DaoCloud Ecosystem
+# DaoCloud Open Source Projects
 
 !!! info
 
@@ -71,7 +71,7 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./hwameistor.md)
 
--   :melon:{ .lg .middle } __HAMi__ :simple-cncf: Listed in CNCF Incubation 👏
+-   :melon:{ .lg .middle } __HAMi__ :simple-cncf: **Listed in CNCF Incubation** 👏
 
     ---
 
@@ -174,6 +174,14 @@ hide:
     An underlay and RDMA network solution for Kubernetes with bare metal, virtual machines, and public clouds.
 
     [:octicons-arrow-right-24: Learn more](./spiderpool.md)
+
+-   :material-lan:{ .lg .middle } __Unifabric__
+
+    ---
+
+    Cloud native observability for high-speed AI networks: topology discovery, RDMA/NVLink traffic attribution, and network health checks
+
+    [:octicons-arrow-right-24: Learn more](./unifabric.md)
 
 -   :simple-iconify:{ .lg .middle } __DaoCloud Icons Library__
 
