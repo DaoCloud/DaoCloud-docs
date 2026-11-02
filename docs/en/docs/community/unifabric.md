@@ -6,7 +6,7 @@ Modern AI clusters rely on three high-speed networks — the scale-out network f
 
 > **Unifabric fills the "last mile" of AI workload observability in a cloud native way.**
 >
-> It automatically discovers the topology of the three networks, observes RDMA and NVLink traffic with attribution to workloads, and actively probes network health.
+> It automatically discovers the topology of the three networks, observes RDMA traffic with attribution to workloads, and passively collects network health status; NVLink traffic metrics and active path probing are planned.
 
 Unifabric is written in Go and released under the [Apache License 2.0](https://github.com/unifabric-io/unifabric/blob/main/LICENSE).
 The project was created by DaoCloud on 2026-04-19 and is under active incubation.

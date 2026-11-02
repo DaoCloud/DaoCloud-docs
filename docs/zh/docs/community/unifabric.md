@@ -1,6 +1,6 @@
 # Unifabric
 
-Unifabric 是由「DaoCloud 道客」开源的**面向 AI 高速网络的云原生可观测性平台**。
+Unifabric 是由「DaoCloud 道客」开源的 **面向 AI 高速网络的云原生可观测性平台** 。
 
 现代 AI 集群依赖三张高速网络——GPU 跨节点通信的 Scale-out 网络（RoCE/InfiniBand）、
 节点内 GPU 互联的 Scale-up 网络（NVLink 等），以及高速存储网络。训练与推理的性能高度依赖这三张网络：
@@ -8,7 +8,7 @@ Unifabric 是由「DaoCloud 道客」开源的**面向 AI 高速网络的云原�
 
 > **Unifabric 用云原生的方式，补上 AI workload 可观测的“最后一公里”。**
 >
-> 自动识别三张网络的拓扑，观测 RDMA 和 NVLink 流量并归因到 workload，主动探测网络健康。
+> 自动识别三张网络的拓扑，观测 RDMA 流量并归因到 workload，持续采集网络健康状态；NVLink 流量指标与主动路径探测已在规划中。
 
 Unifabric 使用 Go 语言编写，采用 [Apache License 2.0](https://github.com/unifabric-io/unifabric/blob/main/LICENSE) 协议开源，
 由「DaoCloud 道客」于 2026-04-19 创建并持续孵化。
