@@ -60,7 +60,6 @@ flowchart TB
 
 subgraph second[使用说明]
     direction TB
-    U[ ] -.-
     free[申请免费体验] --- kpanda[容器管理]
     kpanda --- ghippo[全局管理]
     ghippo --- insight[可观测性]
@@ -69,7 +68,6 @@ end
 
 subgraph first[安装社区版]
     direction TB
-    S[ ] -.-
     plan[资源规划] --> k8s[准备 K8s 集群]
     k8s --> tools[安装依赖项]
     tools -.-> kind[通过 kind 集群<br>在线安装]
@@ -80,15 +78,6 @@ end
 start([fa:fa-user DCE 社区版<br>安装和使用流程]) --> first
 start --> second
 
-classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:px,color:#000000, font-size:15px;
-classDef white fill:#ffffff,stroke:#000,stroke-width:px,color:#000,font-weight:bold
-classDef spacewhite fill:#ffffff,stroke:#fff,stroke-width:0px,color:#000
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class plan,k8s,tools,kind,s1,s2,kpanda,ghippo,insight,free,ask cluster;
-class S,U spacewhite
 
 click plan "https://docs.daocloud.io/install/community/resources.html"
 click k8s "https://docs.daocloud.io/install/community/kind/online.html#kind"
@@ -102,10 +91,6 @@ click insight "https://docs.daocloud.io/insight/intro/"
 click free "https://docs.daocloud.io/dce/license0.html"
 click ask "https://docs.daocloud.io/install/index.html#_4"
 ```
-
-!!! tip
-
-    上图中的蓝色文字可点击跳转。
 
 ## 商业版安装流程
 
@@ -131,16 +116,6 @@ flowchart TB
     other-os -.-> oracle[安装到<br>Oracle Linux]
     other-os -.-> tencent[安装到<br>TencentOS Server]
     other-os -.-> other[安装到<br>更多 Linux]
-
-
-classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:1px,color:#000000, font-size:15px;
-classDef white fill:#ffffff,stroke:#000,stroke-width:1px,color:#000,font-weight:bold
-classDef spacewhite fill:#ffffff,stroke:#fff,stroke-width:0px,color:#000
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class arch,deploy,prepare,download,config,install,ocp,ali,uos,oracle,tencent,other cluster
 
 click arch "https://docs.daocloud.io/install/commercial/deploy-arch.html"
 click deploy "https://docs.daocloud.io/install/commercial/deploy-requirements.html"
