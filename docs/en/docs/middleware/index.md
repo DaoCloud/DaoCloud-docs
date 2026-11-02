@@ -145,12 +145,6 @@ graph TD
     create -.-> monitor[Instance Monitoring]
     create -.-> migrate[Data Management<br/>Migration and Synchronization]
     create -.-> practice[Best Practices<br/>and Troubleshooting]
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class update,overview,monitor,migrate,practice plain
 ```
 
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }

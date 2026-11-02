@@ -15,13 +15,6 @@ ns --> topo[Dependency-based access topology] --> health1[With health checks]
 
 vs --> export[Add exportTo] --> health2[With health checks]
 vs --> limit[Dependency-based service level restrict]
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class ns,vs cluster;
-class nss,topo,health1,health2,export,limit plain;
 ```
 
 To alleviate the issue of resource consumption, you can implement the following configurations.

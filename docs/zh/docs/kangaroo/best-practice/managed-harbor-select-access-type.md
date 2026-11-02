@@ -75,12 +75,6 @@ subgraph cluster[Cluster]
 end
 
 client([Client]) -.->|以 LB 或 NodePort 暴露服务| ingress
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class client plain;
 ```
 
 对于 **私有云** ，使用 Ingress 部署完托管 Harbor 之后，需要在 DNS 服务中添加域名解析，
@@ -138,10 +132,4 @@ subgraph cluster[Cluster]
 end
 
 client([Client]) -.->|以 NodePort 暴露服务| harbor
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class client plain;
 ```

@@ -33,13 +33,6 @@ preparews[Prepare Workspace] --> preparecs[Prepare Cluster]
 judge -.Greater than remaining quota.->modifyns[Modify Namespace Quota]
 judge -.Less than remaining quota.->createns[Create Namespace]
 
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class preparews,preparecs,share, cluster;
-class judge plain
-
 click preparews "https://docs.daocloud.io/en/ghippo/user-guide/workspace/cluster-for-multiws/#prepare-a-workspace"
 click preparecs "https://docs.daocloud.io/en/ghippo/user-guide/workspace/cluster-for-multiws/#prepare-a-cluster"
 click share "https://docs.daocloud.io/en/ghippo/user-guide/workspace/cluster-for-multiws/#add-a-cluster-to-the-workspace"

@@ -23,13 +23,6 @@ preparews[准备工作空间] --> preparecs[准备集群]
 judge -.大于剩余额度.->modifyns[修改命名空间额度]
 judge -.小于剩余额度.->createns[创建命名空间]
 
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class preparews,preparecs,share, cluster;
-class judge plain
-
 click preparews "https://docs.daocloud.io/ghippo/user-guide/workspace/cluster-for-multiws/#_2"
 click preparecs "https://docs.daocloud.io/ghippo/user-guide/workspace/cluster-for-multiws/#_3"
 click share "https://docs.daocloud.io/ghippo/user-guide/workspace/cluster-for-multiws/#_4"

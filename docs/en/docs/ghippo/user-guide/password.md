@@ -55,10 +55,4 @@ pass[Forgot password] --> usern[Enter username]
         
 send --> click[Click the mail link] --> config[Config dynamic password] --> reset[Reset password]
 --> success[Successfully reset]
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class pass,usern,button,tip1,send,tip2,send,click,config,reset,success plain;
 ```

@@ -14,13 +14,6 @@ ns --> topo[依赖 NS 之间的访问拓控制] --> health1[配合健康检查]
 
 vs --> export[增加 exportTo] --> health2[配合健康检查]
 vs --> limit[依赖服务级别的限制]
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class ns,vs cluster;
-class nss,topo,health1,health2,export,limit plain;
 ```
 
 为了缓解资源占用问题，可以通过以下设置来缓解。

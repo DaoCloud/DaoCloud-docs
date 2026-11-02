@@ -18,12 +18,6 @@ graph TB
 
 start1([开始]) --> require[了解边缘节点接入要求] --> config[配置边缘节点] -->oam[运维边缘节点] --> end1([结束])
 
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class require,config,oam cluster
-
 click require "https://docs.daocloud.io/kant/user-guide/node/join-rqmt.html"
 click config "https://docs.daocloud.io/kant/user-guide/node/access-guide.html"
 click oam "https://docs.daocloud.io/kant/user-guide/node/manage-node.html"

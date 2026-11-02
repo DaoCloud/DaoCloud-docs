@@ -23,13 +23,6 @@ graph TB
 user[Input username] --> pass[Input password] --> judge([Click Login and verify username and password])
 judge -.Correct.->success[Success]
 judge -.Incorrect.->fail[Fail]
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class user,pass cluster;
-class judge plain
 ```
 
 The user login screen is as shown in the figure below. For the specific login screen, please refer to the actual product.

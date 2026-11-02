@@ -1656,12 +1656,6 @@ For more questions, refer to [Insight](../insight/intro/index.md).
     --> otel[Global cluster otel collector]
     --> jaeger[Global cluster jaeger collector]
     --> es[Elasticsearch cluster]
-
-    classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-    classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-    class sdk,workload,otel,jaeger,es cluster
     ```
 
     As shown in the above figure, any transmission failure at any step will result in the inability to query trace data. 

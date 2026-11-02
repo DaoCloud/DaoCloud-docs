@@ -23,12 +23,6 @@ create[创建托管 Harbor] --> setpublic[创建镜像空间并设置为公开]
 --> push[推送镜像]
 --> deploy[部署应用]
 
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class create,setpublic,push,deploy cluster;
-
 click create "https://docs.daocloud.io/kangaroo/hosted/"
 click setpublic "https://docs.daocloud.io/kangaroo/integrate/create-space/"
 click push "https://docs.daocloud.io/kangaroo/quickstart/push/"
@@ -52,12 +46,6 @@ graph TB
 
 create[已创建工作空间] --> bind[命名空间已绑定工作空间]
 
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class create,bind cluster;
-
 click create "https://docs.daocloud.io/ghippo/user-guide/workspace/Workspaces/"
 click bind "https://docs.daocloud.io/ghippo/user-guide/workspace/quota/#_4"
 ```
@@ -71,12 +59,6 @@ create[创建托管 Harbor] --> setpublic[创建镜像空间并设置为公开]
 --> push[推送镜像]
 --> bind[镜像空间绑定工作空间]
 --> deploy[部署应用]
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class create,setpublic,push,bind,deploy cluster;
 
 click create "https://docs.daocloud.io/kangaroo/hosted/"
 click setpublic "https://docs.daocloud.io/kangaroo/integrate/create-space/"

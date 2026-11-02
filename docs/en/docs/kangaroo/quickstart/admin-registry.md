@@ -27,12 +27,6 @@ create[Create managed Harbor] --> setpublic[Create a registry space and set it t
 --> push[Push image]
 --> deploy[Deploy application]
 
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class create,setpublic,push,deploy cluster;
-
 click create "https://docs.daocloud.io/en/kangaroo/hosted/"
 click setpublic "https://docs.daocloud.io/en/kangaroo/integrate/create-space/"
 click push "https://docs.daocloud.io/en/kangaroo/quickstart/push/"
@@ -58,12 +52,6 @@ graph TB
 
 create[Workspace created] --> bind[Namespace and workspace binded]
 
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class create,bind cluster;
-
 click create "https://docs.daocloud.io/en/ghippo/user-guide/workspace/workspace/"
 click bind "https://docs.daocloud.io/en/ghippo/user-guide/workspace/quota/"
 ```
@@ -76,12 +64,6 @@ create[Create managed Harbor] --> setpublic[Create a registry space and set it t
 --> push[Push image]
 --> bind[Registry space binding workspace]
 --> deploy[Deploy application]
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class create,setpublic,push,bind,deploy cluster;
 
 click create "https://docs.daocloud.io/en/kangaroo/hosted/"
 click setpublic "https://docs.daocloud.io/en/kangaroo/integrate/create-space/"
