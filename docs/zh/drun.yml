@@ -34,8 +34,8 @@ nav:
                   - 模型广场: drun/hydra/index.md
                   - 模型体验: drun/hydra/exp.md
                   - 模型管理:
-                      - 创建模型: drun/hydra/model-management/index.md
-                      - 管理模型: drun/hydra/model-management/model-manage.md
+                      - 创建模型: drun/hydra/models/index.md
+                      - 管理模型: drun/hydra/models/model-manage.md
                   - 模型微调:
                       - 模型微调操作指南: drun/hydra/finetune/index.md
                       - 模型管理: drun/hydra/finetune/create-model.md

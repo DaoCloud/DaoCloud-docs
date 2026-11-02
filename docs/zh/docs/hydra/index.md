@@ -10,8 +10,7 @@ hide:
 大模型服务平台的模型广场提供了多样化的模型选择，涵盖文本生成、图像生成、图片理解等领域，
 系统预置了通义千问、Meta、DeepSeek 等主流提供商提供的各类大语言模型。
 用户可根据业务需求灵活部署。
-
-[查阅和下载《大模型服务平台》用户手册](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/hydra.pdf){ .md-button .md-button--primary }
+[查阅和下载《大模型服务平台》用户手册](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/hydra.pdf){ .md-button }
 
 ## 筛选模型
 

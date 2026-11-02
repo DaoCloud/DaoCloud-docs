@@ -9,7 +9,7 @@ hide:
 
 Publish the selected model on a target cluster as a callable model service, filling in deployment parameters
 such as resources, runtime, and instances as needed. You can initiate a deployment from the
-[Model Gallery](../index.md), [Model Management](../model-management/index.md), or the left navigation
+[Model Gallery](../index.md), [Model Management](../models/index.md), or the left navigation
 **Model Serving - Deploy New Model**. The following sections describe the steps and the meaning of each parameter.
 
 ![deploy](../images/deploy-new-02.png)
@@ -18,7 +18,7 @@ such as resources, runtime, and instances as needed. You can initiate a deployme
 
 - The target cluster and namespace are available.
 - To deploy a custom model, you have completed the model metadata, deployment template, or model weight file
-  configuration in [Create Model](../model-management/index.md).
+  configuration in [Create Model](../models/index.md).
 
 ## Steps
 
