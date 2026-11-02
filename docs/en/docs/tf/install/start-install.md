@@ -2,7 +2,7 @@
 
 This page describes how to install **d.run Token Factory (hereinafter referred to as Token Factory)** offline. Use the manifest file `manifest-cloud-tokfact.yaml` during installation.
 
-Before installation, read and understand the [deployment requirements](./commercial/deploy-requirements.md), [deployment architecture](./commercial/deploy-arch.md), and [preparation](./commercial/prepare.md), and first complete [installing the dependencies](index.md).
+Before installation, read and understand the [deployment requirements](./commercial/deploy-requirements.md), [deployment architecture](./commercial/deploy-arch.md), and [preparation](./commercial/prepare.md), and first complete [installing the dependencies](./dependency.md).
 
 ## Step 1: Download Offline Packages
 

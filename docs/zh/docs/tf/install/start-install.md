@@ -2,7 +2,7 @@
 
 本文介绍如何离线安装 **d.run Token 工厂效能平台（下文简称 Token 工厂）**。安装时请使用产品清单文件 `manifest-cloud-tokfact.yaml`。
 
-请在安装之前阅读并了解[部署要求](./commercial/deploy-requirements.md)、[部署架构](./commercial/deploy-arch.md)、[准备工作](./commercial/prepare.md)，并先完成[安装依赖项](index.md)。
+请在安装之前阅读并了解[部署要求](./commercial/deploy-requirements.md)、[部署架构](./commercial/deploy-arch.md)、[准备工作](./commercial/prepare.md)，并先完成[安装依赖项](./dependency.md)。
 
 ## 第 1 步：下载离线包
 
