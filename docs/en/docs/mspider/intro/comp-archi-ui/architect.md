@@ -94,12 +94,6 @@ click list "https://docs.daocloud.io/en/mspider/user-guide/traffic-monitor/monit
 click ns "https://docs.daocloud.io/en/mspider/user-guide/sidecar-management/ns-sidecar/"
 click workload "https://docs.daocloud.io/en/mspider/user-guide/sidecar-management/workload-sidecar/"
 click istio "https://docs.daocloud.io/en/mspider/user-guide/mesh-config/istio-resources/"
-
- classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
- classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
- classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
- class vs,dr,gw,peer,request,authz,tp,list,ns,workload,global,istio cluster;
 ```
 
 As shown in the figure above, the service mesh provides nine modules and twelve sub-module features, realizing the ability of diversified cluster access and mesh management in multiple modes.

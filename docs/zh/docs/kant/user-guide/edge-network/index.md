@@ -16,11 +16,6 @@ graph TD
     B -->|容器端口 8099| C[应用实例 1]
     B -->|容器端口 8099| D[应用实例 2]
     B -->|容器端口 8099| E[应用实例 3]
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
 ```
 
 应用网格能力依赖 EdgeMesh 应用，用户在使用网格能力前，需要先部署 EdgeMesh 应用。

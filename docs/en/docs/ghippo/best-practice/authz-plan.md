@@ -19,13 +19,6 @@ click ns "https://docs.daocloud.io/en/kpanda/user-guide/namespaces/createns/"
 click ws "https://docs.daocloud.io/en/ghippo/user-guide/workspace/workspace/"
 click ws-to-ns "https://docs.daocloud.io/en/ghippo/user-guide/workspace/ws-to-ns-across-clus/"
 click authu "https://docs.daocloud.io/en/ghippo/user-guide/workspace/wspermission/"
-
- classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
- classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
- classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
- 
- class user,ns,ws,ws-to-ns,authu cluster;
- class start,complete plain;
 ```
 
 After authorization, the permissions of ordinary users in each module are:

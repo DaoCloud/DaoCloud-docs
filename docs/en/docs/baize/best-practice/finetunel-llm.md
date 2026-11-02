@@ -12,10 +12,6 @@ graph LR
   C[Prepare Env] --> B
   B --> D[Training Task<br>with UI or baizectl]
   D --> E[Interference]
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 ```
 
 ## Environment Requirements

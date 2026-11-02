@@ -48,10 +48,4 @@ pass[忘记密码] --> usern[输入用户名]
         
 send --> click[点击邮件中的链接] --> config[配置动态口令] --> reset[重置密码]
 --> success[成功重置密码]
-
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class pass,usern,button,tip1,send,tip2,send,click,config,reset,success plain;
 ```

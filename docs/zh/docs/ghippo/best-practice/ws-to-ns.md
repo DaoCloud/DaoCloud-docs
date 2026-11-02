@@ -35,13 +35,6 @@ preparews[准备工作空间] --> preparens[准备命名空间]
 judge -.未绑定.->nstows[将命名空间绑定到工作空间] --> wsperm[管理工作空间访问权限]
 judge -.已绑定.->createns[创建新的命名空间]
 
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class preparews,preparens,createns,nstows,wsperm cluster;
-class judge plain
-
 click preparews "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_3"
 click preparens "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_4"
 click nstows "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_5"

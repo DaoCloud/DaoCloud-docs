@@ -35,13 +35,6 @@ preparews[prepare workspace] --> preparens[prepare namespace]
 judge -.unbound.->nstows[bind namespace to workspace] -->wsperm[manage workspace access]
 judge -.bound.->createns[Create a new namespace]
 
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill: #326ce5, stroke: #fff, stroke-width: 1px, color: #fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class preparews, preparens, createns, nstows, wsperm cluster;
-class judge plain
-
 click preparews "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-across-clus/#_3"
 click prepares "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-across-clus/#_4"
 click nstows "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-across-clus/#_5"

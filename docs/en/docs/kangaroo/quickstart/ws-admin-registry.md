@@ -27,12 +27,6 @@ graph TB
 
 integrate[Associating Registry] --> push[Pushing Image] --> deploy[Deploying App]
 
-classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
-
-class integrate,push,deploy cluster;
-
 click integrate "https://docs.daocloud.io/en/kangaroo/related-registry/"
 click push "https://docs.daocloud.io/en/kangaroo/quickstart/push/"
 click deploy "https://docs.daocloud.io/en/kpanda/user-guide/workloads/create-deployment/"
