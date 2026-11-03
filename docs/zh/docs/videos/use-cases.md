@@ -158,7 +158,7 @@
 
 ## 宁波银行 AI 资源管理与推理服务体系
 
-参阅[DaoCloud 助力宁波银行构建云原生 AI 资源管理与推理服务体系](../blogs/2026/ningbo-bank.md)文档。
+参阅 [DaoCloud 助力宁波银行构建云原生 AI 资源管理与推理服务体系](../blogs/2026/ningbo-bank.md)。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ningbo-bank.mp4" preload="metadata" poster="../images/ningbo-bank.svg"></video>

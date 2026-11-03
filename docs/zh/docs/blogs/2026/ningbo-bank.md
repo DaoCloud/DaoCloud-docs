@@ -141,3 +141,7 @@ HAMi 在部署时分配资源，Higress 在运行时调度流量。当同一规�
 - **探索实时动态流量加权**：在推理引擎指标、服务发现、监控系统与权重控制机制就绪后，研究基于实时时延、并发水平与节点健康状态的动态流量分配。
 - **引入 Kueue**：当跨部门算力共享与批量训练负载达到足够规模时，增加队列优先级与配额管理。
 - **沉淀实践经验**：持续总结城商行异构 AI 集群的经验，将场景化需求回馈 HAMi 与 Higress 社区。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ningbo-bank.mp4" preload="metadata" poster="../../videos/images/ningbo-bank.svg"></video>
+</div>
