@@ -31,6 +31,7 @@
 - :five: [使用中间件与 pgvector 部署 ChatGPT](#pgvector-chatgpt)
 - :six: [Redis 跨集群数据同步](#redis)
 - :seven: [AI 模型训练推理场景演示](#ai)
+- :eight: [宁波银行 AI 资源管理与推理服务体系](#ai_1)
 
 </div>
 
@@ -153,6 +154,14 @@
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ai-model.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ai-model.jpg"></video>
+</div>
+
+## 宁波银行 AI 资源管理与推理服务体系
+
+参阅[DaoCloud 助力宁波银行构建云原生 AI 资源管理与推理服务体系](../blogs/2026/ningbo-bank.md)文档。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ningbo-bank.mp4" preload="metadata" poster="../images/ningbo-bank.svg"></video>
 </div>
 
 [下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
