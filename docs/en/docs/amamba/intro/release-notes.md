@@ -8,9 +8,44 @@ date: 2025-03-18
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version. 
 
+## 2026-10-08
+
+### v0.42.0
+
+- **Added** support for binding the same GitLab repository to multiple workspaces
+- **Fixed** an issue where expired GitLab project access tokens were not rotated automatically
+- **Fixed** an issue where Argo CD connections failed to recover automatically
+- **Fixed** errors when restarting, stopping, or pausing upgrades for native applications
+- **Fixed** VirtualService API version incompatibility during Istio-based canary releases by detecting the version supported by the target cluster
+- **Upgraded** the Workbench frontend to v0.44.0
+
+## 2026-08-26
+
+### v0.41.3
+
+- **Upgraded** OpenAPI-related Go dependencies, including kin-openapi to v0.144.0
+
+## 2026-08-26
+
+### v0.41.2
+
+- **Fixed** an issue where disconnected Argo CD connections required a service restart to recover
+
 ## 2026-07-03
 
 ### v0.41.1
+
+- **Upgraded** the Workbench frontend to v0.42.2
+
+## 2026-07-03
+
+### v0.40.6
+
+- **Upgraded** the Workbench frontend to v0.40.3
+
+## 2026-06-30
+
+### v0.41.0
 
 - **Added** support for configuring timezones to display pipeline log timestamps
 - **Added** more sorting options in the pipeline list
@@ -21,10 +56,48 @@ the development and feature changes in each version.
 - **Fixed** an issue where querying the pipeline list by recent run status failed
 - **Fixed** an issue where the pipeline run node was empty
 - **Fixed** an issue where the pipeline run node status was inconsistent with the pipeline status
+- **Upgraded** Argo CD to v3.3.4 and KubeVela to v1.10.8
+- **Upgraded** the Workbench frontend to v0.42.0
 
-## 2026-03-31
+## 2026-06-10
+
+### v0.40.5
+
+- **Fixed** an incorrect default value for choice-type parameters when parameter names were omitted from API-triggered pipeline runs
+- **Fixed** a permission error when retrieving the JFrog project list
+- **Fixed** issues where pipeline run nodes were empty or their status differed from the pipeline status
+- **Upgraded** the Workbench frontend to v0.40.2
+
+## 2026-05-12
+
+### v0.40.4
+
+- **Fixed** an issue where newly created pipelines that had never run were missing when filtering by the last run status
+
+## 2026-05-08
+
+### v0.40.3
+
+- **Fixed** incorrect query results when filtering the pipeline list for pipelines that had not run
+
+## 2026-04-21
+
+### v0.40.2
+
+- **Added** support for configuring timezones to display pipeline log timestamps
+- **Added** the `PipelineRerunConfirm` FeatureGate to configure confirmation before rerunning a pipeline
+- **Added** support for using default pipeline parameters when parameter names are omitted from API-triggered runs
+- **Upgraded** the Workbench frontend to v0.40.1
+
+## 2026-04-01
 
 ### v0.40.1
+
+- **Upgraded** the Workbench frontend to v0.40.0
+
+## 2026-03-25
+
+### v0.40.0
 
 - **Added** support for enabling and disabling built-in pipeline templates
 - **Added** support for Git-type parameters in pipelines
@@ -32,7 +105,7 @@ the development and feature changes in each version.
 - **Added** the return of the SonarQube name configured in Jenkins within toolchain details
 - **Added** support for password modification in the JFrog toolchain
 - **Optimized** the issue of excessive Jenkins load during full pipeline synchronization
-  
+
 ## 2025-11-30
 
 ### v0.39.0
