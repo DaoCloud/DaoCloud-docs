@@ -135,5 +135,54 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
 
 ![d.run AI 操作系统全景图](images/drun-modules.svg)
 
-[查看/下载 d.run AI 操作系统彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/drun.pdf){ .md-button .md-button--primary }
-[安装 d.run AI 操作系统](install/index.md){ .md-button .md-button--primary }
+## 学习路径
+
+<style>
+.drun-path{display:flex;gap:0.75rem;margin:1.25rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.drun-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.drun-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.drun-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.drun-path-step:last-child::after{display:none}
+.drun-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.drun-path-title{font-weight:700;font-size:0.95rem}
+.drun-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.drun-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.drun-path-step::after{display:none}}
+</style>
+
+<div class="drun-path">
+  <a class="drun-path-step" style="--path-c:#2196f3" href="install/">
+    <span class="drun-path-num">1</span>
+    <span class="drun-path-title">部署平台</span>
+    <span class="drun-path-desc">离线安装 d.run AI 操作系统</span>
+    <span class="drun-path-go">前往 →</span>
+  </a>
+  <a class="drun-path-step" style="--path-c:#00acc1" href="kpanda/intro/">
+    <span class="drun-path-num">2</span>
+    <span class="drun-path-title">纳管算力</span>
+    <span class="drun-path-desc">接入集群，纳管异构 GPU 算力</span>
+    <span class="drun-path-go">前往 →</span>
+  </a>
+  <a class="drun-path-step" style="--path-c:#43a047" href="hydra/">
+    <span class="drun-path-num">3</span>
+    <span class="drun-path-title">部署模型</span>
+    <span class="drun-path-desc">模型广场选型，一键部署推理服务</span>
+    <span class="drun-path-go">前往 →</span>
+  </a>
+  <a class="drun-path-step" style="--path-c:#fb8c00" href="clawos/intro/">
+    <span class="drun-path-num">4</span>
+    <span class="drun-path-title">部署智能体</span>
+    <span class="drun-path-desc">编排多智能体，落地业务场景</span>
+    <span class="drun-path-go">前往 →</span>
+  </a>
+  <a class="drun-path-step" style="--path-c:#8e24aa" href="crane/intro/">
+    <span class="drun-path-num">5</span>
+    <span class="drun-path-title">运营洞察</span>
+    <span class="drun-path-desc">驾驶舱看全链路 Token 运营</span>
+    <span class="drun-path-go">前往 →</span>
+  </a>
+</div>
+
+[下载 d.run AI 操作系统离线包](https://docs.daocloud.io/download/tf/){ .md-button }
+[查阅 d.run AI 操作系统彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/drun.pdf){ .md-button }
+[安装 d.run AI 操作系统](install/index.md){ .md-button }
