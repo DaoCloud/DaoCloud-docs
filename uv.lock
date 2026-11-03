@@ -187,7 +187,6 @@ source = { virtual = "." }
 dependencies = [
     { name = "jieba" },
     { name = "mkdocs" },
-    { name = "mkdocs-git-revision-date-localized-plugin" },
     { name = "mkdocs-material" },
     { name = "mkdocs-material-extensions" },
     { name = "mkdocs-minify-plugin" },
@@ -236,7 +235,6 @@ upload = [
 requires-dist = [
     { name = "jieba", specifier = ">=0.42.1" },
     { name = "mkdocs", specifier = ">=1.6.1" },
-    { name = "mkdocs-git-revision-date-localized-plugin", specifier = ">=1.5.0" },
     { name = "mkdocs-material", specifier = ">=9.6.0" },
     { name = "mkdocs-material-extensions", specifier = ">=1.3.1" },
     { name = "mkdocs-minify-plugin", specifier = ">=0.8.0" },
@@ -629,21 +627,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/ce/25/b3cccb187655b9393572bde9b09261d267c3bf2f2cdabe347673be5976a6/mkdocs_get_deps-0.2.2.tar.gz", hash = "sha256:8ee8d5f316cdbbb2834bc1df6e69c08fe769a83e040060de26d3c19fad3599a1", size = 11047 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/88/29/744136411e785c4b0b744d5413e56555265939ab3a104c6a4b719dad33fd/mkdocs_get_deps-0.2.2-py3-none-any.whl", hash = "sha256:e7878cbeac04860b8b5e0ca31d3abad3df9411a75a32cde82f8e44b6c16ff650", size = 9555 },
-]
-
-[[package]]
-name = "mkdocs-git-revision-date-localized-plugin"
-version = "1.5.4"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "babel" },
-    { name = "gitpython" },
-    { name = "mkdocs" },
-    { name = "tzdata", marker = "sys_platform == 'win32'" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/06/43/7c2f67a2ab0f9d2627d52a5a0a12b4206e4468a109ae7a091eeeb45f6825/mkdocs_git_revision_date_localized_plugin-1.5.4.tar.gz", hash = "sha256:07a785522008e881ff4c307e3259ad3ce00931b2d2147a22cdfbb532ff25e4ab", size = 452896 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/0c/7c/a19cdb6e1c6f033cd35df847688f99c4f9b80b626fad87483f2069a6dc5a/mkdocs_git_revision_date_localized_plugin-1.5.4-py3-none-any.whl", hash = "sha256:b5e6b4b9e7d169750b6eb078fd91151bc855e65c019a065accce537ec6e69e05", size = 26155 },
 ]
 
 [[package]]
