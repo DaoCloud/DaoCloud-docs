@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1602" height="1001" viewBox="0 0 1602 1001" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif">
+  <rect width="1602" height="1001" fill="#ffffff"/>
+
+  <!-- 背景浅灰箭头 -->
+  <polygon points="900,-80 1660,340 900,760 980,760 1740,340 980,-80" fill="#f0f2f5"/>
+  <polygon points="1180,180 1940,600 1180,1020 1260,1020 2020,600 1260,180" fill="#e3e7ec"/>
+  <polygon points="1420,420 1980,740 1420,1060 1490,1060 2050,740 1490,420" fill="#d4dae1"/>
+
+  <!-- 蓝色主箭头（双翼） -->
+  <polygon points="640,180 1180,500 640,820 730,820 1270,500 730,180" fill="#2b5cff"/>
+  <polygon points="640,180 1180,500 640,820 700,820 1240,500 700,180" fill="#4d7dff"/>
+
+  <!-- 左上 logo：立方体 + 文字 + 竖线 + 标语 -->
+  <g transform="translate(90,58) scale(0.52)">
+    <path d="M69.5,69.35 L67.8,94.25 L54,104.65 L40,94.25 L38.4,69.35 L54.1,79.75 L69.5,69.35 Z M97.5,50.55 L94.6,74.05 L75.2,88.65 L76.9,64.45 L97.5,50.55 Z M10.3,50.55 L31,64.45 L32.6,88.65 L13.1,74.15 L10.3,50.55 Z M22.5,16.95 L46.1,28.65 L29.3,36.95 L30.5,55.55 L9.2,41.45 L7.2,23.65 L22.5,16.95 Z M85.3,16.95 L100.8,23.65 L98.6,41.35 L77.5,55.55 L78.8,36.95 L61.9,28.65 L85.3,16.95 Z M53.9,3.35 L76.9,13.35 L54,24.65 L30.9,13.25 L53.9,3.35 Z" fill="#0FD15D" fill-rule="nonzero"/>
+  </g>
+  <text x="160" y="98" font-size="34" font-weight="700" fill="#24292f">DaoCloud</text>
+  <line x1="332" y1="64" x2="332" y2="104" stroke="#d5d9de" stroke-width="1.5"/>
+  <text x="350" y="80" font-size="15" fill="#8a919c">驾驭数字方程式</text>
+  <text x="350" y="101" font-size="12" letter-spacing="1" fill="#a8aeb7">THE FORMULA DIGITAL</text>
+
+  <!-- 标题与副标题 -->
+  <text x="92" y="440" font-size="68" font-weight="700" fill="#1a1a1a">宁波银行 AI 资源管理</text>
+  <text x="92" y="540" font-size="68" font-weight="700" fill="#1a1a1a">与推理服务体系</text>
+  <text x="92" y="660" font-size="36" fill="#8a919c">DaoCloud 场景化视频演示</text>
+
+  <!-- 右下角 -->
+  <text x="1330" y="950" font-size="22" fill="#9aa1ab">Powered By</text>
+  <text x="1458" y="950" font-size="22" font-weight="600" fill="#6b7280">DaoCloud</text>
+</svg>
