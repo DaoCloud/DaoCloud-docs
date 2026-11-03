@@ -11,6 +11,10 @@ hide:
 
 ## 2026 年
 
+- [DaoCloud 助力宁波银行构建云原生 AI 资源管理与推理服务体系](2026/ningbo-bank.md)
+
+    宁波银行与 DaoCloud 联合提交 CNCF 最终用户技术顾问委员会的用户案例：以 Kubernetes 为底座、HAMi 与 Higress 为核心，治理 GPU 与国产加速器异构算力。该案例将在 KubeCon 北美 2026 的 Keynote 中被提及。
+
 - [Dynamo v1.5.0 发布：DaoCloud 是贡献最多的外部贡献者](2026/dynamo-v1.5.0.md)
 
     NVIDIA 开源分布式推理平台 Dynamo 发布第 18 个功能版本，Worker 选择变成可插拔策略；本次发布的 40 位外部贡献者中，DaoCloud 以 8 人排在名单首位。
