@@ -25,13 +25,13 @@
 
 ## 相关开源项目
 
-| 项目 | 介绍 | 官网 | 备注 |
-| ---- | ---- | ---- | ---- |
-| Kubernetes | 在银行金融私有云上提供容器编排、资源调度与集群自愈，是跨芯片型号与机型进行资源管理和推理服务治理的标准化底座。 | <https://kubernetes.io/zh-cn/> | CNCF 毕业项目，DaoCloud 参与维护且贡献量全球第三 |
-| HAMi | 将 NVIDIA 等 GPU 与国产异构 GPU 纳入 Kubernetes 资源模型，提供相对一致的资源视图、资源申请机制与调度流程，并按设备能力选择整卡分配或细粒度切分。 | <https://project-hami.github.io/HAMi/> | CNCF 孵化项目，由 DaoCloud 联合开源和维护 |
-| Higress | 为推理服务提供统一入口与流量治理，包括基于请求属性的模型路由、后端加权选择、健康检查与不健康后端摘除，以及基础可观测性。 | <https://higress.cn/> | CNCF Sandbox 项目 |
-| Spiderpool | Underlay 网络 IPAM，为集群内容器提供 IP 地址分配与网络编排，是本方案的支撑性基础组件。 | <https://spidernet-io.github.io/spiderpool/> | CNCF Sandbox 项目，由 DaoCloud 开源和维护 |
-| Kueue | Kubernetes 原生队列与配额管理，供未来跨部门算力共享与批量训练负载扩大时启用。 | <https://kueue.sigs.k8s.io/> | Kubernetes SIG 子项目，DaoCloud 参与维护 |
+| 项目 | 介绍 | 备注 |
+| ---- | ---- | ---- |
+| [Kubernetes](https://kubernetes.io/) | 在银行金融私有云上提供容器编排、资源调度与集群自愈，是跨芯片型号与机型进行资源管理和推理服务治理的标准化底座。 | CNCF 毕业项目，DaoCloud 参与维护且贡献量全球第三 |
+| [HAMi](https://project-hami.github.io/HAMi/) | 将 NVIDIA 等 GPU 与国产异构 GPU 纳入 Kubernetes 资源模型，提供相对一致的资源视图、资源申请机制与调度流程，并按设备能力选择整卡分配或细粒度切分。 | CNCF 孵化项目，由 DaoCloud 联合开源和维护 |
+| [Higress](https://higress.cn/) | 为推理服务提供统一入口与流量治理，包括基于请求属性的模型路由、后端加权选择、健康检查与不健康后端摘除，以及基础可观测性。 | CNCF Sandbox 项目 |
+| [Spiderpool](https://spidernet-io.github.io/spiderpool/) | Underlay 网络 IPAM，为集群内容器提供 IP 地址分配与网络编排，是本方案的支撑性基础组件。 | CNCF Sandbox 项目，由 DaoCloud 开源和维护 |
+| [Kueue](https://kueue.sigs.k8s.io/) | Kubernetes 原生队列与配额管理，供未来跨部门算力共享与批量训练负载扩大时启用。 | Kubernetes SIG 子项目，DaoCloud 参与维护 |
 
 ## 宁波银行简介
 
