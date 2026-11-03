@@ -132,6 +132,54 @@ As a high-efficiency AI Token production and management system built for intelli
 
 ![The d.run Token Factory at a glance](images/tf-modules.svg)
 
+## Learning Path
+
+<style>
+.tf-path{display:flex;gap:0.75rem;margin:1.25rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.tf-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.tf-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.tf-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.tf-path-step:last-child::after{display:none}
+.tf-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.tf-path-title{font-weight:700;font-size:0.95rem}
+.tf-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.tf-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.tf-path-step::after{display:none}}
+</style>
+
+<div class="tf-path">
+  <a class="tf-path-step" style="--path-c:#2196f3" href="install/">
+    <span class="tf-path-num">1</span>
+    <span class="tf-path-title">Deploy the Platform</span>
+    <span class="tf-path-desc">Install Token Factory offline, complete initialization and licensing</span>
+    <span class="tf-path-go">Go →</span>
+  </a>
+  <a class="tf-path-step" style="--path-c:#00acc1" href="kpanda/intro/">
+    <span class="tf-path-num">2</span>
+    <span class="tf-path-title">Onboard Compute</span>
+    <span class="tf-path-desc">Attach GPU nodes and create worker clusters</span>
+    <span class="tf-path-go">Go →</span>
+  </a>
+  <a class="tf-path-step" style="--path-c:#43a047" href="hydra/">
+    <span class="tf-path-num">3</span>
+    <span class="tf-path-title">Deploy Models</span>
+    <span class="tf-path-desc">Pick models from the catalog and deploy inference services in one click</span>
+    <span class="tf-path-go">Go →</span>
+  </a>
+  <a class="tf-path-step" style="--path-c:#fb8c00" href="dak/">
+    <span class="tf-path-num">4</span>
+    <span class="tf-path-title">Build Applications</span>
+    <span class="tf-path-desc">Set up corpus libraries and intelligent Q&A applications</span>
+    <span class="tf-path-go">Go →</span>
+  </a>
+  <a class="tf-path-step" style="--path-c:#8e24aa" href="crane/intro/">
+    <span class="tf-path-num">5</span>
+    <span class="tf-path-title">Operate &amp; Settle</span>
+    <span class="tf-path-desc">Cockpit for operations, Billing Center for metering</span>
+    <span class="tf-path-go">Go →</span>
+  </a>
+</div>
+
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
 [Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
 [Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }
