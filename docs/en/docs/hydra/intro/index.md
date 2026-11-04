@@ -122,7 +122,7 @@ flowchart LR
 @media screen and (max-width: 768px){.hydra-path-step::after{display:none}}
 </style>
 
-=== "Admin: deploy and operate the platform"
+=== ":material-shield-account: Admin: deploy and operate the platform"
 
     <div class="hydra-path">
       <a class="hydra-path-step" style="--path-c:#2196f3" href="deploy-ws/">
@@ -157,7 +157,7 @@ flowchart LR
       </a>
     </div>
 
-=== "User: try and call models"
+=== ":material-account: User: try and call models"
 
     <div class="hydra-path">
       <a class="hydra-path-step" style="--path-c:#2196f3" href="../">
