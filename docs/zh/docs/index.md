@@ -94,7 +94,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
       <div class="tf-arch-layer tf-arch-layer--model">
         <div class="tf-arch-layer-label">云原生 AI</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--model" href="tf/hydra/">
+          <a class="tf-arch-card tf-arch-card--model" href="tf/hydra/intro/">
             <span class="tf-arch-card-title">大模型服务平台</span>
             <span class="tf-arch-card-tip">模型部署与运维管理</span>
           </a>
@@ -184,7 +184,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
       <div class="tf-arch-layer tf-arch-layer--model">
         <div class="tf-arch-layer-label">云原生 AI</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--model" href="drun/hydra/">
+          <a class="tf-arch-card tf-arch-card--model" href="drun/hydra/intro/">
             <span class="tf-arch-card-title">大模型服务平台</span>
             <span class="tf-arch-card-tip">模型部署与运维管理</span>
           </a>

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <desc>LLM Studio (Hydra) architecture: user view, operations management view, and inference runtime</desc>
+  <style>
+    /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
+    @media (prefers-color-scheme: dark) {
+      /* outer card: transparent so it blends with the page background */
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      /* surfaces */
+      [fill="#ffffff"]:not([x="0.5"]) { fill: #232936; }
+      [fill="#e8f3fd"] { fill: #1c2838; }
+      [fill="#e6f7ec"] { fill: #1b2c22; }
+      [fill="#fff3e0"] { fill: #2b2519; }
+      /* text */
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#6b7688"] { fill: #8b95a5; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#8a96a8"] { fill: #7e8794; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#2e7d32"] { fill: #81c784; }
+      [fill="#e65100"] { fill: #ffb74d; }
+      /* strokes */
+      [stroke="#2196f3"] { stroke: #42a5f5; }
+      [stroke="#66bb6a"] { stroke: #4caf50; }
+      [stroke="#ffa726"] { stroke: #ffb74d; }
+      [stroke="#bbdefb"] { stroke: #2c4a6e; }
+      [stroke="#c8e6c9"] { stroke: #2c5940; }
+      [stroke="#ffe0b2"] { stroke: #5c4a26; }
+    }
+  </style>
+  <rect x="0.5" y="0.5" width="999" height="519" rx="14" fill="#ffffff" stroke="#dfe5ee"/>
+
+  <text x="500" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">LLM Studio · Hydra</text>
+  <text x="500" y="57" text-anchor="middle" font-size="12" fill="#6b7688">Enterprise LLM lifecycle services — Deploy · Try · Operate · Audit</text>
+
+  <!-- Layer 1: user view (blue) -->
+  <rect x="20" y="78" width="960" height="122" rx="12" fill="#e8f3fd" stroke="#2196f3"/>
+  <rect x="40" y="88" width="5" height="18" rx="2" fill="#2196f3"/>
+  <text x="54" y="102" font-size="12.5" font-weight="600" fill="#1565c0">Cloud-native AI · Standard user view</text>
+  <rect x="40" y="112" width="221" height="54" rx="9" fill="#ffffff" stroke="#bbdefb"/>
+  <text x="150" y="134" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">Model Plaza</text>
+  <text x="150" y="153" text-anchor="middle" font-size="10.5" fill="#6b7688">Text / image models to explore</text>
+  <rect x="273" y="112" width="221" height="54" rx="9" fill="#ffffff" stroke="#bbdefb"/>
+  <text x="383" y="134" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">Model Experience</text>
+  <text x="383" y="153" text-anchor="middle" font-size="10.5" fill="#6b7688">Online trial, no local deployment</text>
+  <rect x="506" y="112" width="221" height="54" rx="9" fill="#ffffff" stroke="#bbdefb"/>
+  <text x="616" y="134" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">Model Service</text>
+  <text x="616" y="153" text-anchor="middle" font-size="10.5" fill="#6b7688">One-click launch in minutes</text>
+  <rect x="739" y="112" width="221" height="54" rx="9" fill="#ffffff" stroke="#bbdefb"/>
+  <text x="849" y="134" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">OpenAI-compatible API</text>
+  <text x="849" y="153" text-anchor="middle" font-size="10.5" fill="#6b7688">Seamless client integration</text>
+
+  <!-- Layer 2: ops view (green) -->
+  <rect x="20" y="212" width="960" height="122" rx="12" fill="#e6f7ec" stroke="#66bb6a"/>
+  <rect x="40" y="222" width="5" height="18" rx="2" fill="#00c853"/>
+  <text x="54" y="236" font-size="12.5" font-weight="600" fill="#2e7d32">Platform management · Operations view</text>
+  <rect x="40" y="246" width="176" height="54" rx="9" fill="#ffffff" stroke="#c8e6c9"/>
+  <text x="128" y="268" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">Model Plaza Management</text>
+  <text x="128" y="287" text-anchor="middle" font-size="10.5" fill="#6b7688">Import, create, publish models</text>
+  <rect x="226" y="246" width="176" height="54" rx="9" fill="#ffffff" stroke="#c8e6c9"/>
+  <text x="314" y="268" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">MaaS Model Management</text>
+  <text x="314" y="287" text-anchor="middle" font-size="10.5" fill="#6b7688">Configure trial environments</text>
+  <rect x="412" y="246" width="176" height="54" rx="9" fill="#ffffff" stroke="#c8e6c9"/>
+  <text x="500" y="268" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">Model Serving Management</text>
+  <text x="500" y="287" text-anchor="middle" font-size="10.5" fill="#6b7688">GPU / memory / framework</text>
+  <rect x="598" y="246" width="176" height="54" rx="9" fill="#ffffff" stroke="#c8e6c9"/>
+  <text x="686" y="268" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">Smart Routing</text>
+  <text x="686" y="287" text-anchor="middle" font-size="10.5" fill="#6b7688">Weight &amp; QPS traffic policies</text>
+  <rect x="784" y="246" width="176" height="54" rx="9" fill="#ffffff" stroke="#c8e6c9"/>
+  <text x="872" y="268" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">Security &amp; Audit</text>
+  <text x="872" y="287" text-anchor="middle" font-size="10.5" fill="#6b7688">Full operation traceability</text>
+
+  <!-- Layer 3: runtime (orange) -->
+  <rect x="20" y="346" width="960" height="122" rx="12" fill="#fff3e0" stroke="#ffa726"/>
+  <rect x="40" y="356" width="5" height="18" rx="2" fill="#ff9800"/>
+  <text x="54" y="370" font-size="12.5" font-weight="600" fill="#e65100">Inference runtime · Engines &amp; heterogeneous compute</text>
+  <rect x="40" y="380" width="298" height="54" rx="9" fill="#ffffff" stroke="#ffe0b2"/>
+  <text x="189" y="402" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">Inference Engine</text>
+  <text x="189" y="421" text-anchor="middle" font-size="10.5" fill="#6b7688">vLLM · SGLang dynamic backends</text>
+  <rect x="350" y="380" width="298" height="54" rx="9" fill="#ffffff" stroke="#ffe0b2"/>
+  <text x="499" y="402" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">Heterogeneous Compute</text>
+  <text x="499" y="421" text-anchor="middle" font-size="10.5" fill="#6b7688">NVIDIA · Ascend · Biren · Muxi</text>
+  <rect x="660" y="380" width="298" height="54" rx="9" fill="#ffffff" stroke="#ffe0b2"/>
+  <text x="809" y="402" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">Model Files</text>
+  <text x="809" y="421" text-anchor="middle" font-size="10.5" fill="#6b7688">Unified Dataset download &amp; management</text>
+
+  <text x="500" y="496" text-anchor="middle" font-size="11" fill="#8a96a8">Full model lifecycle: import → trial → deploy → operate, fully auditable</text>
+</svg>

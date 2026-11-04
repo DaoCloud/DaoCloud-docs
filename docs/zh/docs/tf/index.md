@@ -52,7 +52,7 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
   <div class="tf-arch-layer tf-arch-layer--model">
     <div class="tf-arch-layer-label">云原生 AI</div>
     <div class="tf-arch-cards">
-      <a class="tf-arch-card tf-arch-card--model" href="hydra/">
+      <a class="tf-arch-card tf-arch-card--model" href="hydra/intro/">
         <span class="tf-arch-card-title">大模型服务平台</span>
         <span class="tf-arch-card-tip">模型部署与运维管理</span>
       </a>
@@ -165,7 +165,7 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
     <span class="tf-path-desc">接入 GPU 节点，创建工作集群</span>
     <span class="tf-path-go">前往 →</span>
   </a>
-  <a class="tf-path-step" style="--path-c:#43a047" href="hydra/">
+  <a class="tf-path-step" style="--path-c:#43a047" href="hydra/intro/">
     <span class="tf-path-num">3</span>
     <span class="tf-path-title">部署模型</span>
     <span class="tf-path-desc">模型广场选型，一键部署推理服务</span>

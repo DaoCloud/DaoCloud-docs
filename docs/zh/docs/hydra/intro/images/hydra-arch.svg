@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif">
+  <desc>大模型服务平台 Hydra 架构：普通用户视图、运维管理视图与推理运行时三层能力</desc>
+  <style>
+    /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
+    @media (prefers-color-scheme: dark) {
+      /* outer card: transparent so it blends with the page background */
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      /* surfaces */
+      [fill="#ffffff"]:not([x="0.5"]) { fill: #232936; }
+      [fill="#e8f3fd"] { fill: #1c2838; }
+      [fill="#e6f7ec"] { fill: #1b2c22; }
+      [fill="#fff3e0"] { fill: #2b2519; }
+      /* text */
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#6b7688"] { fill: #8b95a5; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#8a96a8"] { fill: #7e8794; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#2e7d32"] { fill: #81c784; }
+      [fill="#e65100"] { fill: #ffb74d; }
+      /* strokes */
+      [stroke="#2196f3"] { stroke: #42a5f5; }
+      [stroke="#66bb6a"] { stroke: #4caf50; }
+      [stroke="#ffa726"] { stroke: #ffb74d; }
+      [stroke="#bbdefb"] { stroke: #2c4a6e; }
+      [stroke="#c8e6c9"] { stroke: #2c5940; }
+      [stroke="#ffe0b2"] { stroke: #5c4a26; }
+    }
+  </style>
+  <rect x="0.5" y="0.5" width="999" height="519" rx="14" fill="#ffffff" stroke="#dfe5ee"/>
+
+  <text x="500" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">大模型服务平台 · Hydra</text>
+  <text x="500" y="57" text-anchor="middle" font-size="12" fill="#6b7688">企业级大模型全生命周期服务 —— 部署 · 体验 · 运营 · 审计</text>
+
+  <!-- Layer 1: user view (blue) -->
+  <rect x="20" y="78" width="960" height="122" rx="12" fill="#e8f3fd" stroke="#2196f3"/>
+  <rect x="40" y="88" width="5" height="18" rx="2" fill="#2196f3"/>
+  <text x="54" y="102" font-size="12.5" font-weight="600" fill="#1565c0">云原生 AI · 普通用户视图</text>
+  <rect x="40" y="112" width="221" height="54" rx="9" fill="#ffffff" stroke="#bbdefb"/>
+  <text x="150" y="134" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">模型广场</text>
+  <text x="150" y="153" text-anchor="middle" font-size="10.5" fill="#6b7688">文本 / 图像生成与理解</text>
+  <rect x="273" y="112" width="221" height="54" rx="9" fill="#ffffff" stroke="#bbdefb"/>
+  <text x="383" y="134" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">模型体验</text>
+  <text x="383" y="153" text-anchor="middle" font-size="10.5" fill="#6b7688">在线试用，免本地部署</text>
+  <rect x="506" y="112" width="221" height="54" rx="9" fill="#ffffff" stroke="#bbdefb"/>
+  <text x="616" y="134" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">模型部署</text>
+  <text x="616" y="153" text-anchor="middle" font-size="10.5" fill="#6b7688">分钟级一键上线</text>
+  <rect x="739" y="112" width="221" height="54" rx="9" fill="#ffffff" stroke="#bbdefb"/>
+  <text x="849" y="134" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">OpenAI 兼容 API</text>
+  <text x="849" y="153" text-anchor="middle" font-size="10.5" fill="#6b7688">客户端与应用无缝接入</text>
+
+  <!-- Layer 2: ops view (green) -->
+  <rect x="20" y="212" width="960" height="122" rx="12" fill="#e6f7ec" stroke="#66bb6a"/>
+  <rect x="40" y="222" width="5" height="18" rx="2" fill="#00c853"/>
+  <text x="54" y="236" font-size="12.5" font-weight="600" fill="#2e7d32">平台管理 · 运维管理视图</text>
+  <rect x="40" y="246" width="176" height="54" rx="9" fill="#ffffff" stroke="#c8e6c9"/>
+  <text x="128" y="268" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">模型广场管理</text>
+  <text x="128" y="287" text-anchor="middle" font-size="10.5" fill="#6b7688">导入、创建与上线模型</text>
+  <rect x="226" y="246" width="176" height="54" rx="9" fill="#ffffff" stroke="#c8e6c9"/>
+  <text x="314" y="268" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">MaaS 模型管理</text>
+  <text x="314" y="287" text-anchor="middle" font-size="10.5" fill="#6b7688">配置在线试用环境</text>
+  <rect x="412" y="246" width="176" height="54" rx="9" fill="#ffffff" stroke="#c8e6c9"/>
+  <text x="500" y="268" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">模型部署管理</text>
+  <text x="500" y="287" text-anchor="middle" font-size="10.5" fill="#6b7688">GPU / 内存 / 框架配置</text>
+  <rect x="598" y="246" width="176" height="54" rx="9" fill="#ffffff" stroke="#c8e6c9"/>
+  <text x="686" y="268" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">智能路由</text>
+  <text x="686" y="287" text-anchor="middle" font-size="10.5" fill="#6b7688">权重与 QPS 流量策略</text>
+  <rect x="784" y="246" width="176" height="54" rx="9" fill="#ffffff" stroke="#c8e6c9"/>
+  <text x="872" y="268" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">安全策略与审计</text>
+  <text x="872" y="287" text-anchor="middle" font-size="10.5" fill="#6b7688">操作留痕，合规可查</text>
+
+  <!-- Layer 3: runtime (orange) -->
+  <rect x="20" y="346" width="960" height="122" rx="12" fill="#fff3e0" stroke="#ffa726"/>
+  <rect x="40" y="356" width="5" height="18" rx="2" fill="#ff9800"/>
+  <text x="54" y="370" font-size="12.5" font-weight="600" fill="#e65100">推理运行时 · 引擎与异构算力</text>
+  <rect x="40" y="380" width="298" height="54" rx="9" fill="#ffffff" stroke="#ffe0b2"/>
+  <text x="189" y="402" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">推理引擎</text>
+  <text x="189" y="421" text-anchor="middle" font-size="10.5" fill="#6b7688">vLLM · SGLang 动态推理后端</text>
+  <rect x="350" y="380" width="298" height="54" rx="9" fill="#ffffff" stroke="#ffe0b2"/>
+  <text x="499" y="402" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">异构算力</text>
+  <text x="499" y="421" text-anchor="middle" font-size="10.5" fill="#6b7688">NVIDIA · 昇腾 · 壁仞 · 沐曦</text>
+  <rect x="660" y="380" width="298" height="54" rx="9" fill="#ffffff" stroke="#ffe0b2"/>
+  <text x="809" y="402" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a2330">模型文件</text>
+  <text x="809" y="421" text-anchor="middle" font-size="10.5" fill="#6b7688">Dataset 统一下载与管理</text>
+
+  <text x="500" y="496" text-anchor="middle" font-size="11" fill="#8a96a8">模型全生命周期：引入 → 试用 → 部署 → 运营，全流程可审计</text>
+</svg>

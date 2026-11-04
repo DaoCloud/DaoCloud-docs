@@ -54,7 +54,7 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
   <div class="tf-arch-layer tf-arch-layer--model">
     <div class="tf-arch-layer-label">云原生 AI</div>
     <div class="tf-arch-cards">
-      <a class="tf-arch-card tf-arch-card--model" href="hydra/">
+      <a class="tf-arch-card tf-arch-card--model" href="hydra/intro/">
         <span class="tf-arch-card-title">大模型服务平台</span>
         <span class="tf-arch-card-tip">模型部署与运维管理</span>
       </a>
@@ -163,7 +163,7 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
     <span class="drun-path-desc">接入集群，纳管异构 GPU 算力</span>
     <span class="drun-path-go">前往 →</span>
   </a>
-  <a class="drun-path-step" style="--path-c:#43a047" href="hydra/">
+  <a class="drun-path-step" style="--path-c:#43a047" href="hydra/intro/">
     <span class="drun-path-num">3</span>
     <span class="drun-path-title">部署模型</span>
     <span class="drun-path-desc">模型广场选型，一键部署推理服务</span>
