@@ -69,6 +69,8 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 .tf-relation-box-detail{font-size:12.5px;color:#0F1D33;margin-top:6px}
 .tf-relation-arrow{text-align:center;color:#8A98B0;font-size:17px;line-height:1.1;padding:3px 0}
 .tf-relation-foot{font-size:13px;color:#8A98B0;margin-top:12px}
+.tf-relation-box-title a.tf-relation-box-link{color:inherit;text-decoration:none;cursor:pointer}
+.tf-relation-box-title a.tf-relation-box-link:hover{text-decoration:underline;text-underline-offset:3px}
 /* 暗色模式：深色实底 + 高饱和品牌色描边 + 亮色文字 */
 [data-md-color-scheme="slate"] .tf-relation{background:rgba(255,255,255,0.05);color:#e6eaf2}
 [data-md-color-scheme="slate"] .tf-relation-kicker{color:#94a3b8}
@@ -340,7 +342,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
   <div class="tf-relation-kicker">DaoCloud 产品族 ·「道生三，三生万物」</div>
 
   <div class="tf-relation-box tf-relation-box--tf">
-    <div class="tf-relation-box-title">d.run Token 工厂效能平台 · 面向智算中心的 Token 生产与经营系统</div>
+    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="tf/">d.run Token 工厂效能平台 · 面向智算中心的 Token 生产与经营系统</a></div>
     <div class="tf-relation-box-sub">用户/管理员双视图 · 把算力转化为可计量、可交易、可运营的 Token 产能</div>
     <div class="tf-relation-box-detail">大模型服务平台 · AI 应用 (RAG) · 推理加速 InferX · 算力云 · Copilot/驾驶舱/费用中心</div>
   </div>
@@ -348,7 +350,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
   <div class="tf-relation-arrow">▲</div>
 
   <div class="tf-relation-box tf-relation-box--drun">
-    <div class="tf-relation-box-title">d.run AI 操作系统 · 面向企业的 AI 操作系统</div>
+    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="drun/">d.run AI 操作系统 · 面向企业的 AI 操作系统</a></div>
     <div class="tf-relation-box-sub">异构算力调度 + 模型推理 + 运营治理一体 · 面向企业全部门输出 AI 服务</div>
     <div class="tf-relation-box-detail">云原生 AI（Hydra/AI Lab/ClawOS/InferX）· 云原生底座 · 运营与运维管理</div>
   </div>
@@ -356,7 +358,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
   <div class="tf-relation-arrow">▲</div>
 
   <div class="tf-relation-box tf-relation-box--dce">
-    <div class="tf-relation-box-title">DaoCloud Enterprise · 企业级云原生操作系统（底座）</div>
+    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="dce/">DaoCloud Enterprise · 企业级云原生操作系统（底座）</a></div>
     <div class="tf-relation-box-sub">乐高式模块化搭建 · 容器/网络/存储/中间件/可观测/全局管理等基础能力</div>
   </div>
 
@@ -408,22 +410,17 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 
     - [应用工作台](amamba/intro/)
 
-- :material-database:{ .lg .middle } __数据服务__
-
-    ---
-
-    - [中间件](middleware/)
-
 - :material-cloud-outline:{ .lg .middle } __边缘计算__
 
     ---
 
     - [云边协同](kant/intro/)
 
-- :material-cog-outline:{ .lg .middle } __管理__
+- :material-database:{ .lg .middle } __数据服务和管理__
 
     ---
 
+    - [中间件](middleware/)
     - [全局管理](ghippo/intro/)
     - [设备管理](topohub/intro/)
 
