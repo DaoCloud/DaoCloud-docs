@@ -411,7 +411,7 @@ This site provides documentation for three product lines, covering full-stack ca
 
     - [Cloud Edge Collaboration](kant/intro/)
 
-- :material-database:{ .lg .middle } __Data Services and Settings__
+- :material-database:{ .lg .middle } __Data Services and Management__
 
     ---
 
