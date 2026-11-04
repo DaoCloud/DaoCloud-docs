@@ -1,6 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
   <title id="title">d.run AI 操作系统全景图</title>
   <desc id="desc">d.run AI 操作系统由四层能力、13 个内置模块组成。云原生 AI 层：大模型服务平台 Hydra、AI Lab、推理加速服务 InferX、ClawOS；云原生底座层：容器管理 kpanda、设备管理 topohub、镜像仓库 kangaroo、云原生网络 mspider、云原生存储；运营管理层：驾驶舱 crane、Copilot；运维管理层：可观测性 insight、全局管理 ghippo。自下而上把异构算力转化为可计量的 AI 生产力。</desc>
+  <style>
+    /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
+    @media (prefers-color-scheme: dark) {
+      /* outer card: transparent so it blends with the page background */
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      /* surfaces */
+      [fill="#ffffff"]:not([x="0.5"]) { fill: #232936; }
+      [fill="#eef4ff"] { fill: #1c2838; }
+      [fill="#f7f9fc"] { fill: #1e232b; }
+      /* text */
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#6b7688"] { fill: #8b95a5; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#8a96a8"] { fill: #7e8794; }
+      [fill="#a9b4c6"] { fill: #5c6878; }
+      [fill="#41506a"] { fill: #9fb0c8; }
+      [fill="#1c3f8f"] { fill: #82a8ea; }
+      /* accents */
+      [fill="#3366d6"] { fill: #5b86dd; }
+      [fill="#9aa8bd"] { fill: #8291a8; }
+      /* strokes */
+      [stroke="#dbe4f2"] { stroke: #333b48; }
+      [stroke="#b9cdf0"] { stroke: #3c5382; }
+      [stroke="#dfe5ee"] { stroke: #2b323d; }
+      [stroke="#e3e8f0"] { stroke: #2b323d; }
+    }
+  </style>
 
   <rect x="0.5" y="0.5" width="999" height="539" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
 
