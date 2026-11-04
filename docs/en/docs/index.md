@@ -67,6 +67,8 @@ This site provides documentation for three product lines, covering full-stack ca
 .tf-relation-box-detail{font-size:12.5px;color:#0F1D33;margin-top:6px}
 .tf-relation-arrow{text-align:center;color:#8A98B0;font-size:17px;line-height:1.1;padding:3px 0}
 .tf-relation-foot{font-size:13px;color:#8A98B0;margin-top:12px}
+.tf-relation-box-title a.tf-relation-box-link{color:inherit;text-decoration:none;cursor:pointer}
+.tf-relation-box-title a.tf-relation-box-link:hover{text-decoration:underline;text-underline-offset:3px}
 /* Dark mode: dark surfaces + saturated brand borders + light text */
 [data-md-color-scheme="slate"] .tf-relation{background:rgba(255,255,255,0.05);color:#e6eaf2}
 [data-md-color-scheme="slate"] .tf-relation-kicker{color:#94a3b8}
@@ -335,7 +337,7 @@ This site provides documentation for three product lines, covering full-stack ca
   <div class="tf-relation-kicker">DaoCloud Product Family · How the Three Fit Together</div>
 
   <div class="tf-relation-box tf-relation-box--tf">
-    <div class="tf-relation-box-title">d.run Token Factory · Token production &amp; operations for AI compute centers</div>
+    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="tf/">d.run Token Factory · Token production &amp; operations for AI compute centers</a></div>
     <div class="tf-relation-box-sub">Dual user/admin views · Turns compute into measurable, tradable, revenue-ready Token capacity</div>
     <div class="tf-relation-box-detail">LLM Studio · AI Apps (RAG) · Inference (InferX) · Compute Cloud · Copilot / Cockpit / Billing Center</div>
   </div>
@@ -343,7 +345,7 @@ This site provides documentation for three product lines, covering full-stack ca
   <div class="tf-relation-arrow">▲</div>
 
   <div class="tf-relation-box tf-relation-box--drun">
-    <div class="tf-relation-box-title">d.run AI OS · Enterprise AI operating system</div>
+    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="drun/">d.run AI OS · Enterprise AI operating system</a></div>
     <div class="tf-relation-box-sub">Unified scheduling of heterogeneous compute, inference &amp; governance · AI for every team</div>
     <div class="tf-relation-box-detail">Cloud-native AI (LLM Studio, AI Lab, ClawOS, InferX) · Cloud native base · Ops &amp; management</div>
   </div>
@@ -351,7 +353,7 @@ This site provides documentation for three product lines, covering full-stack ca
   <div class="tf-relation-arrow">▲</div>
 
   <div class="tf-relation-box tf-relation-box--dce">
-    <div class="tf-relation-box-title">DCE · Enterprise cloud native operating system (foundation)</div>
+    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="dce/">DCE · Enterprise cloud native operating system (foundation)</a></div>
     <div class="tf-relation-box-sub">Lego-style modular assembly · Core capabilities in containers, networking, storage, middleware, observability &amp; more</div>
   </div>
 
@@ -403,22 +405,17 @@ This site provides documentation for three product lines, covering full-stack ca
 
     - [Workbench](amamba/intro/)
 
-- :material-database:{ .lg .middle } __Data Services__
-
-    ---
-
-    - [Middleware](middleware/)
-
 - :material-cloud-outline:{ .lg .middle } __Edge Computing__
 
     ---
 
     - [Cloud Edge Collaboration](kant/intro/)
 
-- :material-cog-outline:{ .lg .middle } __Management__
+- :material-database:{ .lg .middle } __Data Services and Settings__
 
     ---
 
+    - [Middleware](middleware/)
     - [Global Management](ghippo/intro/)
     - [Device Management](topohub/intro/)
 
