@@ -188,3 +188,4 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
 [下载 Token 工厂离线包](https://docs.daocloud.io/download/tf/){ .md-button }
 [安装 Token 工厂](install/index.md){ .md-button }
 [查看/下载 Token 工厂彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/tf.pdf){ .md-button }
+{: .tf-footer-cta }

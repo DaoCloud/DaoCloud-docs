@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
   <title id="title">d.run Token Factory at a Glance</title>
-  <desc id="desc">d.run Token Factory consists of user and admin views, four capability layers, and 14 built-in modules. Cloud-Native AI: LLM Studio (Hydra), AI Apps (dak), InferX Suite, Compute Cloud (zestu). Cloud-Native Infrastructure: Container Management, Image Registry, Device Management, Cloud Native Networking, Cloud Native Storage. Operations: Cockpit, Copilot Workbench, Billing Center. O&amp;M: Insight, Global Management. It turns heterogeneous compute into metered, operable Token services.</desc>
+  <desc id="desc">d.run Token Factory consists of user and admin views, four capability layers, and Lego-style composable modules. Cloud-Native AI: LLM Studio (Hydra), AI Apps (dak), InferX Suite, Compute Cloud (zestu). Cloud-Native Infrastructure: Container Management, Image Registry, Device Management, Cloud Native Networking, Cloud Native Storage. Operations: Cockpit, Copilot Workbench, Billing Center. O&amp;M: Insight, Global Management. It turns heterogeneous compute into metered, operable Token services.</desc>
   <style>
     /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
     @media (prefers-color-scheme: dark) {
@@ -34,7 +34,7 @@
 
   <!-- 标题 -->
   <text x="500" text-anchor="middle" y="42" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#1a2330">d.run Token Factory at a Glance</text>
-  <text x="500" text-anchor="middle" y="64" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#6b7688">User / admin dual view · four capability layers · 14 built-in modules — turning compute into metered, operable Tokens</text>
+  <text x="500" text-anchor="middle" y="64" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#6b7688">User / admin dual view · four capability layers · Lego-style composable modules — turning compute into metered, operable Tokens</text>
 
   <!-- Cloud-Native AI · Token production & inference -->
   <rect x="44" y="81" width="5" height="11" rx="2" fill="#2196f3"/>
@@ -42,7 +42,7 @@
   <rect x="44" y="102" width="912" height="106" rx="10" fill="#e8f3fd" stroke="#2196f3" stroke-width="1.6"/>
   <rect x="55" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#bbdefb"/>
   <text x="66" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">LLM Studio</text>
-  <text x="257.5" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">Hydra</text>
+  <text x="257.5" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">hydra</text>
   <text x="66" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Model plaza · Deploy · Fine-tune · API</text>
   <text x="66" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">One-stop MaaS and model serving</text>
   <rect x="280.5" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#bbdefb"/>
@@ -52,7 +52,7 @@
   <text x="291.5" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Q&amp;A over your own corpus</text>
   <rect x="506" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#bbdefb"/>
   <text x="517" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">InferX Suite</text>
-  <text x="708.5" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">InferX</text>
+  <text x="708.5" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">inferx</text>
   <text x="517" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Deploy · Accelerate · Validate</text>
   <text x="517" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">High-concurrency Token output</text>
   <rect x="731.5" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#bbdefb"/>
@@ -94,7 +94,7 @@
   <!-- Operations · Visibility and metering -->
   <rect x="44" y="353" width="5" height="11" rx="2" fill="#ff9800"/>
   <text x="57" y="362" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#e65100">Operations · Visibility and metering</text>
-  <rect x="582" y="353" width="5" height="11" rx="2" fill="#ff9800"/>
+  <rect x="587.5" y="353" width="5" height="11" rx="2" fill="#ff9800"/>
   <text x="595" y="362" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#e65100">O&amp;M · Stability and governance</text>
   <rect x="44" y="374" width="912" height="106" rx="10" fill="#fff3e0" stroke="#ffa726" stroke-width="1"/>
   <line x1="590" y1="386" x2="590" y2="468" stroke="#ffa726" stroke-width="1.5"/>

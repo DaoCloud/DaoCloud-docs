@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
   <title id="title">d.run Token 工厂效能平台全景图</title>
-  <desc id="desc">d.run Token 工厂由用户视图与管理员视图两个视角、四层能力、14 个内置模块组成。云原生 AI 层：大模型服务平台 Hydra、AI 应用 dak、推理加速服务 InferX、算力云 zestu；云原生底座层：容器管理、镜像仓库、设备管理、云原生网络、云原生存储；运营管理层：驾驶舱、Copilot、费用中心；运维管理层：可观测性、全局管理。把异构算力转化为可计量、可运营的 Token 服务。</desc>
+  <desc id="desc">d.run Token 工厂由用户视图与管理员视图两个视角、四层能力、乐高式组合模块组成。云原生 AI 层：大模型服务平台 Hydra、AI 应用 dak、推理加速服务 InferX、算力云 zestu；云原生底座层：容器管理、镜像仓库、设备管理、云原生网络、云原生存储；运营管理层：驾驶舱、Copilot、费用中心；运维管理层：可观测性、全局管理。把异构算力转化为可计量、可运营的 Token 服务。</desc>
   <style>
     /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
     @media (prefers-color-scheme: dark) {
@@ -34,7 +34,7 @@
 
   <!-- 标题 -->
   <text x="500" text-anchor="middle" y="42" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#1a2330">d.run Token 工厂效能平台全景图</text>
-  <text x="500" text-anchor="middle" y="64" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#6b7688">用户 / 管理员双视图 · 四层能力 · 14 个内置模块 —— 把异构算力转化为可计量、可运营的 Token 服务</text>
+  <text x="500" text-anchor="middle" y="64" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#6b7688">用户 / 管理员双视图 · 四层能力 · 乐高式组合模块 —— 把异构算力转化为可计量、可运营的 Token 服务</text>
 
   <!-- 云原生 AI · Token 生产与运营 -->
   <rect x="44" y="81" width="5" height="11" rx="2" fill="#2196f3"/>
@@ -42,7 +42,7 @@
   <rect x="44" y="102" width="912" height="106" rx="10" fill="#e8f3fd" stroke="#2196f3" stroke-width="1.6"/>
   <rect x="55" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#bbdefb"/>
   <text x="66" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">大模型服务平台</text>
-  <text x="257.5" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">Hydra</text>
+  <text x="257.5" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">hydra</text>
   <text x="66" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">模型广场 · 部署 · 微调 · API Key</text>
   <text x="66" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">一站式 MaaS 与模型服务</text>
   <rect x="280.5" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#bbdefb"/>
@@ -52,7 +52,7 @@
   <text x="291.5" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">专属语料的智能问答</text>
   <rect x="506" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#bbdefb"/>
   <text x="517" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">推理加速服务</text>
-  <text x="708.5" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">InferX</text>
+  <text x="708.5" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">inferx</text>
   <text x="517" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">部署 · 加速 · 验收 · 保障</text>
   <text x="517" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">高并发低延迟 Token 产出</text>
   <rect x="731.5" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#bbdefb"/>
@@ -94,7 +94,7 @@
   <!-- 运营管理 · 看得见、算得清 -->
   <rect x="44" y="353" width="5" height="11" rx="2" fill="#ff9800"/>
   <text x="57" y="362" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#e65100">运营管理 · 看得见、算得清</text>
-  <rect x="582" y="353" width="5" height="11" rx="2" fill="#ff9800"/>
+  <rect x="587.5" y="353" width="5" height="11" rx="2" fill="#ff9800"/>
   <text x="595" y="362" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#e65100">运维管理 · 稳得住、管得住</text>
   <rect x="44" y="374" width="912" height="106" rx="10" fill="#fff3e0" stroke="#ffa726" stroke-width="1"/>
   <line x1="590" y1="386" x2="590" y2="468" stroke="#ffa726" stroke-width="1.5"/>

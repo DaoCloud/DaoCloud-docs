@@ -181,3 +181,4 @@ As an AI operating system designed for enterprises, d.run integrates compute sch
 [Download d.run AI OS Package](https://docs.daocloud.io/download/drun/){ .md-button }
 [View the d.run AI OS brochure](https://harbor-test2.cn-sh2.ufileos.com/docs/download/drun.pdf){ .md-button }
 [Install d.run AI Operating System](install/index.md){ .md-button }
+{: .tf-footer-cta }

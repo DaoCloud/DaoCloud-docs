@@ -468,3 +468,19 @@ a.tf-hero-badge--tf:hover {
   border-color: rgba(33, 150, 243, 0.35);
   color: var(--md-primary-fg-color);
 }
+
+/* ===== Module overview diagrams: center + fill content width ===== */
+.md-typeset img[src$="-modules.svg"] {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+}
+
+/* ===== Center footer CTA buttons (drun/tf index pages) ===== */
+.md-typeset p.tf-footer-cta {
+  text-align: center;
+}
+.md-typeset p.tf-footer-cta .md-button {
+  margin: 0.25rem 0.3rem;
+}
