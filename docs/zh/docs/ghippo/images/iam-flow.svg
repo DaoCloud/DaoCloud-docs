@@ -63,4 +63,11 @@
     <text x="1523" y="964" font-size="30">将企业用户对接</text>
     <text x="1551" y="1007" font-size="30">到DCE平台</text>
   </g>
+<style>
+@media (prefers-color-scheme: dark) {
+  g[fill="#445057" i]{fill:#aeb8c6}
+  g[stroke="#445057" i]{stroke:#aeb8c6}
+  rect[fill="#F5F6FA" i]{fill:#232a36}
+}
+</style>
 </svg>

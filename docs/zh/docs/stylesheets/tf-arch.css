@@ -469,8 +469,31 @@ a.tf-hero-badge--tf:hover {
   color: var(--md-primary-fg-color);
 }
 
-/* ===== Module overview diagrams: center + fill content width ===== */
-.md-typeset img[src$="-modules.svg"] {
+/* ===== Content SVG diagrams: opt-in fill content width + center =====
+   Only the SVGs listed here become responsive (fill content width).
+   A global img[src$=".svg"] rule was tried and reverted: it also caught
+   emoji shortcodes (<img class="twemoji" src="....svg">), icons with
+   explicit sizes (e.g. <img width="800"> in blogs), and small diagrams.
+   To make another SVG adaptive, append its filename to the selector:
+   .md-typeset img[src$="<file>.svg"], */
+.md-typeset img[src$="-modules.svg"],
+.md-typeset img[src$="hydra-arch.svg"],
+.md-typeset img[src$="unifabric.svg"],
+.md-typeset img[src$="license-flow.svg"],
+.md-typeset img[src$="fdpractice-flow.svg"],
+.md-typeset img[src$="iam-flow.svg"],
+.md-typeset img[src$="inferx-position.svg"],
+.md-typeset img[src$="kernel-baseline.svg"],
+.md-typeset img[src$="os-support-matrix.svg"],
+.md-typeset img[src$="kpanda_architect.svg"],
+.md-typeset img[src$="otherlinux-flow.svg"],
+.md-typeset img[src$="sce1.svg"],
+.md-typeset img[src$="sce2.svg"],
+.md-typeset img[src$="sce3.svg"],
+.md-typeset img[src$="archi.svg"],
+.md-typeset img[src$="index-01.svg"],
+.md-typeset img[src$="ningbo-bank-arch.svg"],
+.md-typeset img[src$="ningbo-bank.svg"] {
   display: block;
   width: 100%;
   height: auto;

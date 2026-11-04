@@ -65,4 +65,11 @@
     <text x="1499" y="961" font-size="26">connect enterprise users</text>
     <text x="1500" y="1004" font-size="26">to the DCE platform</text>
   </g>
+<style>
+@media (prefers-color-scheme: dark) {
+  g[fill="#445057" i]{fill:#aeb8c6}
+  g[stroke="#445057" i]{stroke:#aeb8c6}
+  rect[fill="#F5F6FA" i]{fill:#232a36}
+}
+</style>
 </svg>

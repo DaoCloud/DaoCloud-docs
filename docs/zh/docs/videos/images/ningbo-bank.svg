@@ -27,4 +27,16 @@
   <!-- 右下角 -->
   <text x="1330" y="950" font-size="22" fill="#9aa1ab">Powered By</text>
   <text x="1458" y="950" font-size="22" font-weight="600" fill="#6b7280">DaoCloud</text>
+<style>
+@media (prefers-color-scheme: dark) {
+  line[stroke="#d5d9de" i]{stroke:#8a94a6}
+  polygon[fill="#d4dae1" i]{fill:#232a36}
+  polygon[fill="#e3e7ec" i]{fill:#232a36}
+  polygon[fill="#f0f2f5" i]{fill:#232a36}
+  rect[fill="#ffffff" i]{fill:#232a36}
+  text[fill="#1a1a1a" i]{fill:#dfe5ee}
+  text[fill="#24292f" i]{fill:#dfe5ee}
+  text[fill="#6b7280" i]{fill:#dfe5ee}
+}
+</style>
 </svg>

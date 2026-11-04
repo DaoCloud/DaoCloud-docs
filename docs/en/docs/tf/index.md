@@ -50,7 +50,7 @@ d.run Token Factory is an integrated platform built by DaoCloud for AI intellige
   <div class="tf-arch-layer tf-arch-layer--model">
     <div class="tf-arch-layer-label">CNAI</div>
     <div class="tf-arch-cards">
-      <a class="tf-arch-card tf-arch-card--model" href="hydra/">
+      <a class="tf-arch-card tf-arch-card--model" href="hydra/intro/">
         <span class="tf-arch-card-title">LLM Studio</span>
         <span class="tf-arch-card-tip">Model serving and O&M management</span>
       </a>
@@ -160,7 +160,7 @@ As a high-efficiency AI Token production and management system built for intelli
     <span class="tf-path-desc">Attach GPU nodes and create worker clusters</span>
     <span class="tf-path-go">Go →</span>
   </a>
-  <a class="tf-path-step" style="--path-c:#43a047" href="hydra/">
+  <a class="tf-path-step" style="--path-c:#43a047" href="hydra/intro/">
     <span class="tf-path-num">3</span>
     <span class="tf-path-title">Deploy Models</span>
     <span class="tf-path-desc">Pick models from the catalog and deploy inference services in one click</span>

@@ -104,4 +104,18 @@
   <text x="360" y="386" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11" fill="#b0b9c7">✕</text>
   <text x="377" y="386" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#6b7688">低于下限，需升级内核或改用替代方案</text>
   <text x="60" y="412" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11" fill="#8792a4">注：判定依据为内核主次版本号与组件下限的比较，仅用于快速选型；具体可用性以各组件的兼容性文档和实测结果为准。</text>
+<style>
+@media (prefers-color-scheme: dark) {
+  circle[fill="#e8f6ee" i]{fill:#232a36}
+  circle[fill="#f7f8fa" i]{fill:#232a36}
+  circle[stroke="#b6e0c6" i]{stroke:#8a94a6}
+  rect[fill="#f2f5fa" i]{fill:#232a36}
+  rect[fill="#fafbfd" i]{fill:#232a36}
+  rect[fill="#ffffff" i]{fill:#232a36}
+  text[fill="#1a2330" i]{fill:#dfe5ee}
+  text[fill="#2c3849" i]{fill:#dfe5ee}
+  text[fill="#5c6775" i]{fill:#dfe5ee}
+  text[fill="#6b7688" i]{fill:#dfe5ee}
+}
+</style>
 </svg>

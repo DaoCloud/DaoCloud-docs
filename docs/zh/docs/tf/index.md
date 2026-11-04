@@ -7,7 +7,6 @@ hide:
 
 Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕大模型推理、算力调度和集群运维提供端到端能力支撑。
 平台采用 **用户** 与 **管理员** 双视图架构：用户视图面向终端用户，提供大模型服务调用、费用管理和智能应用接入能力；管理员视图面向运维管理团队，提供模型托管、推理引擎、基础设施和全局运营的统一管控。
-[查看/下载 Token 工厂彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/tf.pdf){ .md-button }
 
 <style>
 .tf-arch-card{min-width:calc(25% - 6px) !important}
@@ -52,7 +51,7 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
   <div class="tf-arch-layer tf-arch-layer--model">
     <div class="tf-arch-layer-label">云原生 AI</div>
     <div class="tf-arch-cards">
-      <a class="tf-arch-card tf-arch-card--model" href="hydra/">
+      <a class="tf-arch-card tf-arch-card--model" href="hydra/intro/">
         <span class="tf-arch-card-title">大模型服务平台</span>
         <span class="tf-arch-card-tip">模型部署与运维管理</span>
       </a>
@@ -165,7 +164,7 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
     <span class="tf-path-desc">接入 GPU 节点，创建工作集群</span>
     <span class="tf-path-go">前往 →</span>
   </a>
-  <a class="tf-path-step" style="--path-c:#43a047" href="hydra/">
+  <a class="tf-path-step" style="--path-c:#43a047" href="hydra/intro/">
     <span class="tf-path-num">3</span>
     <span class="tf-path-title">部署模型</span>
     <span class="tf-path-desc">模型广场选型，一键部署推理服务</span>
@@ -187,5 +186,5 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
 
 [下载 Token 工厂离线包](https://docs.daocloud.io/download/tf/){ .md-button }
 [安装 Token 工厂](install/index.md){ .md-button }
-[查看/下载 Token 工厂彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/tf.pdf){ .md-button }
+[查阅 Token 工厂彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/tf.pdf){ .md-button }
 {: .tf-footer-cta }

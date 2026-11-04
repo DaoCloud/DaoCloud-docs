@@ -138,4 +138,17 @@
   <!-- 底层基础设施 -->
   <rect x="50" y="985" width="1146" height="54" fill="#CFD1D2"/>
   <text x="623" y="1018" font-size="20" font-weight="700" fill="#191A1B" text-anchor="middle">计算 + 存储 + 网络</text>
+<style>
+@media (prefers-color-scheme: dark) {
+  circle[fill="#FFFFFF" i]{fill:#232a36}
+  line[stroke="#C9CCCE" i]{stroke:#8a94a6}
+  polygon[fill="#FFFFFF" i]{fill:#232a36}
+  rect[fill="#CFD1D2" i]{fill:#2b3444}
+  rect[fill="#D1EBFE" i]{fill:#232a36}
+  rect[fill="#FFFFFF" i]{fill:#232a36}
+  rect[stroke="#191A1B" i]{stroke:#cfd6e0}
+  rect[stroke="#C9D2DC" i]{stroke:#8a94a6}
+  text[fill="#191A1B" i]{fill:#dfe5ee}
+}
+</style>
 </svg>

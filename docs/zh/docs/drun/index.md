@@ -9,7 +9,6 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
 实现颗粒化调度、全栈推理优化与全链路 Token 治理，算力利用率超 80%，将算力高效转化为可管可控的 Token 化 AI 生产力；
 平台汇聚全球主流大模型生态，配备可视化运营驾驶舱与 d.run Copilot 智能助手，面向企业全部门输出稳定高效的 AI 服务，
 全方位支撑业务智能化长期升级。
-[查看/下载 d.run AI 操作系统彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/drun.pdf){ .md-button }
 
 <style>
 .tf-arch-card{min-width:calc(25% - 6px) !important}
@@ -54,7 +53,7 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
   <div class="tf-arch-layer tf-arch-layer--model">
     <div class="tf-arch-layer-label">云原生 AI</div>
     <div class="tf-arch-cards">
-      <a class="tf-arch-card tf-arch-card--model" href="hydra/">
+      <a class="tf-arch-card tf-arch-card--model" href="hydra/intro/">
         <span class="tf-arch-card-title">大模型服务平台</span>
         <span class="tf-arch-card-tip">模型部署与运维管理</span>
       </a>
@@ -163,7 +162,7 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
     <span class="drun-path-desc">接入集群，纳管异构 GPU 算力</span>
     <span class="drun-path-go">前往 →</span>
   </a>
-  <a class="drun-path-step" style="--path-c:#43a047" href="hydra/">
+  <a class="drun-path-step" style="--path-c:#43a047" href="hydra/intro/">
     <span class="drun-path-num">3</span>
     <span class="drun-path-title">部署模型</span>
     <span class="drun-path-desc">模型广场选型，一键部署推理服务</span>

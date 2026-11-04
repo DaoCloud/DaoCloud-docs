@@ -103,4 +103,17 @@
   <text x="184" y="572" font-size="11.5" fill="#5a7184">实线边框：本期范围</text>
   <rect x="620" y="562" width="26" height="12" fill="#ffffff" stroke="#9db4c8" stroke-width="1.5" stroke-dasharray="5 3"/>
   <text x="654" y="572" font-size="11.5" fill="#5a7184">虚线边框：规划范围</text>
+<style>
+@media (prefers-color-scheme: dark) {
+  g[fill="#2d4a66" i]{fill:#aeb8c6}
+  rect[fill="#eef3f9" i]{fill:#232a36}
+  rect[fill="#f6f8fb" i]{fill:#232a36}
+  rect[fill="#f8fafc" i]{fill:#232a36}
+  rect[fill="#ffffff" i]{fill:#232a36}
+  rect[stroke="#9db4c8" i]{stroke:#8a94a6}
+  rect[stroke="#c3cfdd" i]{stroke:#8a94a6}
+  text[fill="#1c3d5a" i]{fill:#8294a4}
+  text[fill="#5a7184" i]{fill:#dfe5ee}
+}
+</style>
 </svg>

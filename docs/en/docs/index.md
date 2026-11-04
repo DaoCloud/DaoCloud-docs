@@ -93,7 +93,7 @@ This site provides documentation for three product lines, covering full-stack ca
       <div class="tf-arch-layer tf-arch-layer--model">
         <div class="tf-arch-layer-label">CNAI</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--model" href="tf/hydra/">
+          <a class="tf-arch-card tf-arch-card--model" href="tf/hydra/intro/">
             <span class="tf-arch-card-title">LLM Studio</span>
             <span class="tf-arch-card-tip">Model serving and O&M management</span>
           </a>
@@ -182,7 +182,7 @@ This site provides documentation for three product lines, covering full-stack ca
       <div class="tf-arch-layer tf-arch-layer--model">
         <div class="tf-arch-layer-label">CNAI</div>
         <div class="tf-arch-cards">
-          <a class="tf-arch-card tf-arch-card--model" href="drun/hydra/">
+          <a class="tf-arch-card tf-arch-card--model" href="drun/hydra/intro/">
             <span class="tf-arch-card-title">LLM Studio</span>
             <span class="tf-arch-card-tip">Model serving and O&M management</span>
           </a>

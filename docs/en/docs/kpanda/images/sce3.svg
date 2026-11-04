@@ -59,4 +59,17 @@
   <text x="1433" y="205" font-size="22" text-anchor="middle" fill="#1C1C1E">Logs</text>
   <text x="1433" y="327" font-size="22" text-anchor="middle" fill="#1C1C1E">Monitoring</text>
   <text x="1433" y="449" font-size="22" text-anchor="middle" fill="#1C1C1E">Events</text>
-  <path d="M1342 304 H1301 V286 L1276 316 L1301 346 V330 H1342 Z" fill="#1E4AF5"/></svg>
+  <path d="M1342 304 H1301 V286 L1276 316 L1301 346 V330 H1342 Z" fill="#1E4AF5"/><style>
+@media (prefers-color-scheme: dark) {
+  circle[fill="#FFFFFF" i]{fill:#232a36}
+  rect[fill="#D6D7D9" i]{fill:#2b3444}
+  rect[fill="#FFFFFF" i]{fill:#232a36}
+  rect[stroke="#1C1C1E" i]{stroke:#cfd6e0}
+  text[fill="#111214" i]{fill:#dfe5ee}
+  text[fill="#16171A" i]{fill:#dfe5ee}
+  text[fill="#1C1C1E" i]{fill:#dfe5ee}
+  text[fill="#363435" i]{fill:#dfe5ee}
+  text[fill="#3A3A3C" i]{fill:#dfe5ee}
+}
+</style>
+</svg>

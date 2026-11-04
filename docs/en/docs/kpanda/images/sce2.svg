@@ -62,4 +62,15 @@
     <circle cx="47.5" cy="26" r="2.6" fill="#FFFFFF" stroke="#4A90D9" stroke-width="2.2"/>
   </g>
   <text x="1093.5" y="773.5" font-size="22" fill="#1C1C1E">Dedicated Cloud</text>
+<style>
+@media (prefers-color-scheme: dark) {
+  circle[fill="#FFFFFF" i]{fill:#232a36}
+  line[stroke="#3A3A3C" i]{stroke:#aeb8c6}
+  rect[fill="#FFFFFF" i]{fill:#232a36}
+  rect[stroke="#1C1C1E" i]{stroke:#cfd6e0}
+  rect[stroke="#3A3A3C" i]{stroke:#aeb8c6}
+  text[fill="#111214" i]{fill:#dfe5ee}
+  text[fill="#1C1C1E" i]{fill:#dfe5ee}
+}
+</style>
 </svg>

@@ -36,4 +36,19 @@
   <!-- 第 3 步：从环境准备阶段出来，创建工作集群（实线箭头） -->
   <line x1="1427" y1="443" x2="1588" y2="443" stroke="#000000" stroke-width="2"/>
   <polygon points="1585,433 1608,443 1585,453" fill="#000000"/>
+<style>
+@media (prefers-color-scheme: dark) {
+  g[fill="#000000" i]{fill:#cfd6e0}
+  g[fill="#333333" i]{fill:#cfd6e0}
+  g[stroke="#000000" i]{stroke:#cfd6e0}
+  line[stroke="#000000" i]{stroke:#cfd6e0}
+  polygon[fill="#000000" i]{fill:#cfd6e0}
+  rect[fill="#C3FC7C" i]{fill:#435444}
+  rect[fill="#D6FDA4" i]{fill:#47544c}
+  rect[fill="#EBFDD1" i]{fill:#232a36}
+  rect[fill="#FFFFFF" i]{fill:#232a36}
+  rect[stroke="#000000" i]{stroke:#cfd6e0}
+  text[fill="#333333" i]{fill:#dfe5ee}
+}
+</style>
 </svg>
