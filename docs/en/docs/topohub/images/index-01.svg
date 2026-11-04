@@ -157,4 +157,18 @@
     <text x="1098" y="736">Router</text>
     <text x="1326" y="736">SAN/NAS...</text>
   </g>
+<style>
+@media (prefers-color-scheme: dark) {
+  g[fill="#0A0A0A" i]{fill:#cfd6e0}
+  g[fill="#4D4D4D" i]{fill:#aeb8c6}
+  g[fill="#595959" i]{fill:#aeb8c6}
+  g[fill="#FFFFFF" i]{fill:#232a36}
+  g[stroke="#4D4D4D" i]{stroke:#aeb8c6}
+  g[stroke="#595959" i]{stroke:#aeb8c6}
+  rect[fill="#F8FAFC" i]{fill:#232a36}
+  rect[fill="#FFFFFF" i]{fill:#232a36}
+  rect[stroke="#595959" i]{stroke:#aeb8c6}
+  text[fill="#000000" i]{fill:#dfe5ee}
+}
+</style>
 </svg>

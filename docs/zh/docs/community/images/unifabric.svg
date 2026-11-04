@@ -246,4 +246,22 @@
   </g>
   <text x="912" y="708" font-size="14" font-weight="700" fill="#16305e">Storage Network</text>
   <text x="912" y="727" font-size="10.5" fill="#5a6c92">RoCE · InfiniBand</text>
+<style>
+@media (prefers-color-scheme: dark) {
+  g[fill="#ffffff" i]{fill:#232a36}
+  path[fill="#ffffff" i]{fill:#232a36}
+  rect[fill="#dfeafb" i]{fill:#232a36}
+  rect[fill="#e2f4e8" i]{fill:#232a36}
+  rect[fill="#e3eefc" i]{fill:#232a36}
+  rect[fill="#e9f1fc" i]{fill:#232a36}
+  rect[fill="#f2f7fe" i]{fill:#232a36}
+  rect[fill="#f7faff" i]{fill:#232a36}
+  rect[fill="#fdf1de" i]{fill:#232a36}
+  rect[fill="#fffdf8" i]{fill:#232a36}
+  rect[fill="#ffffff" i]{fill:#232a36}
+  text[fill="#16305e" i]{fill:#7f8da6}
+  text[fill="#4a5d85" i]{fill:#dfe5ee}
+  text[fill="#5a6c92" i]{fill:#dfe5ee}
+}
+</style>
 </svg>

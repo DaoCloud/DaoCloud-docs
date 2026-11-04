@@ -79,4 +79,15 @@
 <text x="78" y="276" fill="#445057" font-size="28" text-anchor="start">Folder</text>
 <text x="92" y="649" fill="#445057" font-size="26" text-anchor="start">Workspace</text>
 <text x="64" y="894" fill="#445057" font-size="28" text-anchor="start">Resource</text>
+<style>
+@media (prefers-color-scheme: dark) {
+  g[fill="#445057" i]{fill:#aeb8c6}
+  g[fill="#F9F9F6" i]{fill:#232a36}
+  g[stroke="#445057" i]{stroke:#aeb8c6}
+  g[stroke="#AEB6BB" i]{stroke:#8a94a6}
+  path[stroke="#445057" i]{stroke:#aeb8c6}
+  rect[fill="#F5F6FA" i]{fill:#232a36}
+  text[fill="#445057" i]{fill:#dfe5ee}
+}
+</style>
 </svg>

@@ -37,4 +37,11 @@
     <text x="952" y="352">Get an Offline<tspan x="952" dy="54">Authorization Code</tspan></text>
     <text x="1644" y="352">Activate the Offline<tspan x="1644" dy="54">Authorization Code</tspan></text>
   </g>
+<style>
+@media (prefers-color-scheme: dark) {
+  g[fill="#445057" i]{fill:#aeb8c6}
+  g[stroke="#445057" i]{stroke:#aeb8c6}
+  rect[fill="#F5F6FA" i]{fill:#232a36}
+}
+</style>
 </svg>

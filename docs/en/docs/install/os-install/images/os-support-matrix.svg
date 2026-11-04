@@ -85,4 +85,18 @@
   <text x="681" y="580" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#1c3f8f">≥ 5.9</text>
   <text x="681" y="602" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#6b7688">recommended kernel; ≥ 5.15 for GPU</text>
   <text x="60" y="654" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#8792a4">Note: version and kernel requirements follow Deployment Requirements. NeoKylin AS V7Update6 has a dedicated guide but is not on the official support list.</text>
+<style>
+@media (prefers-color-scheme: dark) {
+  rect[fill="#eaf1ff" i]{fill:#232a36}
+  rect[fill="#f6f8fb" i]{fill:#232a36}
+  rect[fill="#f7f9fc" i]{fill:#232a36}
+  rect[fill="#fff8ea" i]{fill:#232a36}
+  rect[fill="#ffffff" i]{fill:#232a36}
+  text[fill="#1a2330" i]{fill:#dfe5ee}
+  text[fill="#1c3f8f" i]{fill:#8295c1}
+  text[fill="#2c3849" i]{fill:#dfe5ee}
+  text[fill="#5c6775" i]{fill:#dfe5ee}
+  text[fill="#6b7688" i]{fill:#dfe5ee}
+}
+</style>
 </svg>

@@ -477,7 +477,23 @@ a.tf-hero-badge--tf:hover {
    To make another SVG adaptive, append its filename to the selector:
    .md-typeset img[src$="<file>.svg"], */
 .md-typeset img[src$="-modules.svg"],
-.md-typeset img[src$="hydra-arch.svg"] {
+.md-typeset img[src$="hydra-arch.svg"],
+.md-typeset img[src$="unifabric.svg"],
+.md-typeset img[src$="license-flow.svg"],
+.md-typeset img[src$="fdpractice-flow.svg"],
+.md-typeset img[src$="iam-flow.svg"],
+.md-typeset img[src$="inferx-position.svg"],
+.md-typeset img[src$="kernel-baseline.svg"],
+.md-typeset img[src$="os-support-matrix.svg"],
+.md-typeset img[src$="kpanda_architect.svg"],
+.md-typeset img[src$="otherlinux-flow.svg"],
+.md-typeset img[src$="sce1.svg"],
+.md-typeset img[src$="sce2.svg"],
+.md-typeset img[src$="sce3.svg"],
+.md-typeset img[src$="archi.svg"],
+.md-typeset img[src$="index-01.svg"],
+.md-typeset img[src$="ningbo-bank-arch.svg"],
+.md-typeset img[src$="ningbo-bank.svg"] {
   display: block;
   width: 100%;
   height: auto;
