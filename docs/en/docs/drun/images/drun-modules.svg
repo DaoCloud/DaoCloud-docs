@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
   <title id="title">The d.run AI Operating System at a Glance</title>
-  <desc id="desc">d.run AI Operating System consists of four capability layers and Lego-style composable modules. Cloud-Native AI: LLM Studio (Hydra), AI Lab, InferX Suite, ClawOS. Cloud-Native Infrastructure: Container Management (kpanda), Device Management (topohub), Container Registry (kangaroo), Cloud Native Network (mspider), Cloud Native Storage. Operations: Cockpit (crane), Copilot. O&amp;M: Insight, Global Management (ghippo). Bottom-up, it turns heterogeneous compute into metered AI productivity.</desc>
+  <desc id="desc">d.run AI Operating System consists of four capability layers and Lego-style composable modules. Cloud-Native AI: LLM Studio (Hydra), AI Lab, InferX Suite, ClawOS. Cloud-Native Infrastructure: Container Management (kpanda), Device Management (topohub), Container Registry (kangaroo), Cloud Native Network (network), Cloud Native Storage. Operations: Cockpit (crane), Copilot. O&amp;M: Insight, Global Management (ghippo). Bottom-up, it turns heterogeneous compute into metered AI productivity.</desc>
   <style>
     /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
     @media (prefers-color-scheme: dark) {
@@ -82,7 +82,7 @@
   <text x="426" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Private registry, supply chain</text>
   <rect x="595" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#c8e6c9"/>
   <text x="606" y="272" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Cloud Native Network</text>
-  <text x="754" y="271" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">mspider</text>
+  <text x="754" y="271" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">network</text>
   <text x="606" y="295" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Multi-CNI · Service mesh</text>
   <text x="606" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Cross-cluster traffic control</text>
   <rect x="775" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#c8e6c9"/>
