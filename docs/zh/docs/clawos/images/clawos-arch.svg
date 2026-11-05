@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="568" viewBox="0 0 1000 568" role="img" aria-labelledby="title desc">
+  <title id="title">ClawOS 逻辑架构</title>
+  <desc id="desc">ClawOS 逻辑架构自上而下四层：访问与协作层（飞书、Teams、Web 控制台、openclaw CLI、noVNC、开放 API）；ClawOS 控制面与治理面（Agent 运行管理：实例生命周期、沙箱运行时、持久化存储；企业治理：权限与多租户、网络策略、Skill 货架；可观测与运维：Token 与成本、调用与稳定性、日志与回放）；运行底座（Kubernetes · DCE、容器沙箱、持久卷 PVC、内网私有化部署）；模型接入（DCE AI 网关、minimax、DeepSeek、Qwen、私有模型）。</desc>
+  <style>
+    /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
+    @media (prefers-color-scheme: dark) {
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      /* surfaces */
+      [fill="#ffffff"]:not([x="0.5"]) { fill: #232936; }
+      [fill="#f5f7fa"] { fill: #1e2530; }
+      [fill="#f8fafc"] { fill: #1a212c; }
+      [fill="#e8f3fd"] { fill: #1c2838; }
+      [fill="#e6f7ec"] { fill: #1b2c22; }
+      [fill="#fff3e0"] { fill: #2b2519; }
+      /* text */
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#6b7688"] { fill: #8b95a5; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#2e7d32"] { fill: #81c784; }
+      [fill="#e65100"] { fill: #ffb74d; }
+      [fill="#9aa8bc"] { fill: #8291a8; }
+      /* strokes */
+      [stroke="#e0e6ee"] { stroke: #2e3540; }
+      [stroke="#e6eaf1"] { stroke: #2e3540; }
+      [stroke="#cfd8e3"] { stroke: #3a4450; }
+      [stroke="#90caf9"] { stroke: #2c4a6e; }
+      [stroke="#81c784"] { stroke: #2c5940; }
+      [stroke="#ffb74d"] { stroke: #5c4a26; }
+      /* accent bars */
+      [fill="#2196f3"] { fill: #42a5f5; }
+      [fill="#00c853"] { fill: #4caf50; }
+      [fill="#ff9800"] { fill: #ffb74d; }
+    }
+  </style>
+
+  <rect x="0.5" y="0.5" width="999" height="567" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
+
+  <!-- 标题 -->
+  <text x="500" text-anchor="middle" y="40" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#1a2330">ClawOS 逻辑架构</text>
+  <text x="500" text-anchor="middle" y="62" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#6b7688">企业 Agent 运行与治理 · 沙箱隔离 · 统一可观测</text>
+
+  <!-- 第 1 层 访问与协作 -->
+  <rect x="44" y="80" width="912" height="56" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="114" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">访问与协作</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" text-anchor="middle">
+    <rect x="150" y="92" width="128" height="32" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="214" y="112" fill="#1a2330">飞书</text>
+    <rect x="286" y="92" width="128" height="32" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="350" y="112" fill="#1a2330">Microsoft Teams</text>
+    <rect x="422" y="92" width="128" height="32" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="486" y="112" fill="#1a2330">Web 控制台</text>
+    <rect x="558" y="92" width="128" height="32" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="622" y="112" fill="#1a2330">openclaw CLI</text>
+    <rect x="694" y="92" width="128" height="32" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="758" y="112" fill="#1a2330">noVNC</text>
+    <rect x="830" y="92" width="128" height="32" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="894" y="112" fill="#1a2330">开放 API</text>
+  </g>
+
+  <!-- 下行箭头 -->
+  <g fill="#9aa8bc">
+    <path d="M 300 154 L 308 140 L 316 154 Z"/>
+    <path d="M 490 154 L 498 140 L 506 154 Z"/>
+    <path d="M 680 154 L 688 140 L 696 154 Z"/>
+  </g>
+
+  <!-- 第 2 层 ClawOS 平台 -->
+  <rect x="44" y="166" width="912" height="238" rx="12" fill="#f8fafc" stroke="#e0e6ee"/>
+  <text x="68" y="190" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#2e7d32">ClawOS 控制面 · 治理面</text>
+
+  <!-- 运行管理（蓝） -->
+  <rect x="60" y="202" width="288" height="190" rx="10" fill="#ffffff" stroke="#e0e6ee"/>
+  <rect x="72" y="216" width="5" height="18" rx="2" fill="#2196f3"/>
+  <text x="86" y="230" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1565c0">Agent 运行管理</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif">
+    <rect x="72" y="242" width="264" height="44" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="86" y="261" font-size="12.5" font-weight="700" fill="#1a2330">实例生命周期</text>
+    <text x="86" y="277" font-size="11" fill="#5c6775">创建 · 配置 · 重启 · 删除</text>
+    <rect x="72" y="294" width="264" height="44" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="86" y="313" font-size="12.5" font-weight="700" fill="#1a2330">沙箱运行时</text>
+    <text x="86" y="329" font-size="11" fill="#5c6775">zestU 内核级隔离</text>
+    <rect x="72" y="346" width="264" height="34" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="86" y="368" font-size="12.5" font-weight="700" fill="#1a2330">持久化存储 /openclaw/data</text>
+  </g>
+
+  <!-- 企业治理（绿） -->
+  <rect x="356" y="202" width="288" height="190" rx="10" fill="#ffffff" stroke="#e0e6ee"/>
+  <rect x="368" y="216" width="5" height="18" rx="2" fill="#00c853"/>
+  <text x="382" y="230" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#2e7d32">企业治理</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif">
+    <rect x="368" y="242" width="264" height="44" rx="7" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="382" y="261" font-size="12.5" font-weight="700" fill="#1a2330">权限与多租户</text>
+    <text x="382" y="277" font-size="11" fill="#5c6775">用户 · 租户 · 平台管理员</text>
+    <rect x="368" y="294" width="264" height="44" rx="7" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="382" y="313" font-size="12.5" font-weight="700" fill="#1a2330">网络策略</text>
+    <text x="382" y="329" font-size="11" fill="#5c6775">可控的出入站边界</text>
+    <rect x="368" y="346" width="264" height="34" rx="7" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="382" y="368" font-size="12.5" font-weight="700" fill="#1a2330">ClawHub Skill 货架</text>
+  </g>
+
+  <!-- 可观测运维（橙） -->
+  <rect x="652" y="202" width="288" height="190" rx="10" fill="#ffffff" stroke="#e0e6ee"/>
+  <rect x="664" y="216" width="5" height="18" rx="2" fill="#ff9800"/>
+  <text x="678" y="230" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#e65100">可观测与运维</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif">
+    <rect x="664" y="242" width="264" height="44" rx="7" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="678" y="261" font-size="12.5" font-weight="700" fill="#1a2330">Token 与成本</text>
+    <text x="678" y="277" font-size="11" fill="#5c6775">配额 · 消耗 · Top 用户</text>
+    <rect x="664" y="294" width="264" height="44" rx="7" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="678" y="313" font-size="12.5" font-weight="700" fill="#1a2330">调用与稳定性</text>
+    <text x="678" y="329" font-size="11" fill="#5c6775">调用次数 · 错误率</text>
+    <rect x="664" y="346" width="264" height="34" rx="7" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="678" y="368" font-size="12.5" font-weight="700" fill="#1a2330">Session / Trajectory 日志</text>
+  </g>
+
+  <!-- 下行箭头 -->
+  <g fill="#9aa8bc">
+    <path d="M 300 424 L 308 410 L 316 424 Z"/>
+    <path d="M 490 424 L 498 410 L 506 424 Z"/>
+    <path d="M 680 424 L 688 410 L 696 424 Z"/>
+  </g>
+
+  <!-- 第 3 层 运行底座 -->
+  <rect x="44" y="436" width="912" height="54" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="469" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">运行底座</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" text-anchor="middle">
+    <rect x="196" y="448" width="170" height="30" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="281" y="468" fill="#1a2330">Kubernetes · DCE</text>
+    <rect x="382" y="448" width="170" height="30" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="467" y="468" fill="#1a2330">容器沙箱</text>
+    <rect x="568" y="448" width="170" height="30" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="653" y="468" fill="#1a2330">持久卷 PVC</text>
+    <rect x="754" y="448" width="170" height="30" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="839" y="468" fill="#1a2330">内网私有化部署</text>
+  </g>
+
+  <!-- 箭头 -->
+  <g fill="#9aa8bc">
+    <path d="M 490 504 L 498 490 L 506 504 Z"/>
+  </g>
+
+  <!-- 第 4 层 模型接入 -->
+  <rect x="44" y="510" width="912" height="46" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="539" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">模型接入</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" text-anchor="middle">
+    <rect x="196" y="520" width="140" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="266" y="538" fill="#1a2330">DCE AI 网关</text>
+    <rect x="344" y="520" width="140" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="414" y="538" fill="#1a2330">minimax</text>
+    <rect x="492" y="520" width="140" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="562" y="538" fill="#1a2330">DeepSeek</text>
+    <rect x="640" y="520" width="140" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="710" y="538" fill="#1a2330">Qwen</text>
+    <rect x="788" y="520" width="136" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="856" y="538" fill="#1a2330">私有模型</text>
+  </g>
+</svg>

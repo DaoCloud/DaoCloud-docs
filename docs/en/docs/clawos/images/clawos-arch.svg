@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="568" viewBox="0 0 1000 568" role="img" aria-labelledby="title desc">
+  <title id="title">ClawOS Logical Architecture</title>
+  <desc id="desc">ClawOS logical architecture has four layers: Access (Feishu, Microsoft Teams, Web Console, openclaw CLI, noVNC, Open API); ClawOS control plane and governance plane (Agent runtime: Instance Lifecycle, Sandbox Runtime, Persistent Storage; Enterprise governance: Access and Tenancy, Network Policy, ClawHub Skill Shelf; Observability and Ops: Token and Cost, Requests and Stability, Session and Trajectory Logs); Runtime foundation (Kubernetes and DCE, Container Sandbox, Persistent Volume PVC, On-prem Deployment); Model access (DCE AI Gateway, minimax, DeepSeek, Qwen, Private Models).</desc>
+  <style>
+    /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
+    @media (prefers-color-scheme: dark) {
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      /* surfaces */
+      [fill="#ffffff"]:not([x="0.5"]) { fill: #232936; }
+      [fill="#f5f7fa"] { fill: #1e2530; }
+      [fill="#f8fafc"] { fill: #1a212c; }
+      [fill="#e8f3fd"] { fill: #1c2838; }
+      [fill="#e6f7ec"] { fill: #1b2c22; }
+      [fill="#fff3e0"] { fill: #2b2519; }
+      /* text */
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#6b7688"] { fill: #8b95a5; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#2e7d32"] { fill: #81c784; }
+      [fill="#e65100"] { fill: #ffb74d; }
+      [fill="#9aa8bc"] { fill: #8291a8; }
+      /* strokes */
+      [stroke="#e0e6ee"] { stroke: #2e3540; }
+      [stroke="#e6eaf1"] { stroke: #2e3540; }
+      [stroke="#cfd8e3"] { stroke: #3a4450; }
+      [stroke="#90caf9"] { stroke: #2c4a6e; }
+      [stroke="#81c784"] { stroke: #2c5940; }
+      [stroke="#ffb74d"] { stroke: #5c4a26; }
+      /* accent bars */
+      [fill="#2196f3"] { fill: #42a5f5; }
+      [fill="#00c853"] { fill: #4caf50; }
+      [fill="#ff9800"] { fill: #ffb74d; }
+    }
+  </style>
+
+  <rect x="0.5" y="0.5" width="999" height="567" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
+
+  <!-- Title -->
+  <text x="500" text-anchor="middle" y="40" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="600" fill="#1a2330">ClawOS Logical Architecture</text>
+  <text x="500" text-anchor="middle" y="62" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" fill="#6b7688">Enterprise Agent runtime &amp; governance · Sandbox isolation · Unified observability</text>
+
+  <!-- Layer 1 Access -->
+  <rect x="44" y="80" width="912" height="56" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="114" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">Access</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="middle">
+    <rect x="150" y="92" width="128" height="32" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="214" y="112" fill="#1a2330">Feishu</text>
+    <rect x="286" y="92" width="128" height="32" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="350" y="112" fill="#1a2330">MS Teams</text>
+    <rect x="422" y="92" width="128" height="32" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="486" y="112" fill="#1a2330">Web Console</text>
+    <rect x="558" y="92" width="128" height="32" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="622" y="112" fill="#1a2330">openclaw CLI</text>
+    <rect x="694" y="92" width="128" height="32" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="758" y="112" fill="#1a2330">noVNC</text>
+    <rect x="830" y="92" width="128" height="32" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="894" y="112" fill="#1a2330">Open API</text>
+  </g>
+
+  <!-- Down arrows -->
+  <g fill="#9aa8bc">
+    <path d="M 300 154 L 308 140 L 316 154 Z"/>
+    <path d="M 490 154 L 498 140 L 506 154 Z"/>
+    <path d="M 680 154 L 688 140 L 696 154 Z"/>
+  </g>
+
+  <!-- Layer 2 ClawOS platform -->
+  <rect x="44" y="166" width="912" height="238" rx="12" fill="#f8fafc" stroke="#e0e6ee"/>
+  <text x="68" y="190" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="700" fill="#2e7d32">ClawOS Control Plane · Governance Plane</text>
+
+  <!-- Runtime (blue) -->
+  <rect x="60" y="202" width="288" height="190" rx="10" fill="#ffffff" stroke="#e0e6ee"/>
+  <rect x="72" y="216" width="5" height="18" rx="2" fill="#2196f3"/>
+  <text x="86" y="230" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1565c0">Agent Runtime</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="72" y="242" width="264" height="44" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="86" y="261" font-size="12.5" font-weight="700" fill="#1a2330">Instance Lifecycle</text>
+    <text x="86" y="277" font-size="11" fill="#5c6775">Create · Configure · Restart</text>
+    <rect x="72" y="294" width="264" height="44" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="86" y="313" font-size="12.5" font-weight="700" fill="#1a2330">Sandbox Runtime</text>
+    <text x="86" y="329" font-size="11" fill="#5c6775">zestU kernel-level isolation</text>
+    <rect x="72" y="346" width="264" height="34" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="86" y="368" font-size="12.5" font-weight="700" fill="#1a2330">Storage /openclaw/data</text>
+  </g>
+
+  <!-- Governance (green) -->
+  <rect x="356" y="202" width="288" height="190" rx="10" fill="#ffffff" stroke="#e0e6ee"/>
+  <rect x="368" y="216" width="5" height="18" rx="2" fill="#00c853"/>
+  <text x="382" y="230" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#2e7d32">Enterprise Governance</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="368" y="242" width="264" height="44" rx="7" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="382" y="261" font-size="12.5" font-weight="700" fill="#1a2330">Access &amp; Tenancy</text>
+    <text x="382" y="277" font-size="11" fill="#5c6775">Users · Tenants · Admins</text>
+    <rect x="368" y="294" width="264" height="44" rx="7" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="382" y="313" font-size="12.5" font-weight="700" fill="#1a2330">Network Policy</text>
+    <text x="382" y="329" font-size="11" fill="#5c6775">Controlled ingress &amp; egress</text>
+    <rect x="368" y="346" width="264" height="34" rx="7" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="382" y="368" font-size="12.5" font-weight="700" fill="#1a2330">ClawHub Skill Shelf</text>
+  </g>
+
+  <!-- Observability (orange) -->
+  <rect x="652" y="202" width="288" height="190" rx="10" fill="#ffffff" stroke="#e0e6ee"/>
+  <rect x="664" y="216" width="5" height="18" rx="2" fill="#ff9800"/>
+  <text x="678" y="230" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#e65100">Observability &amp; Ops</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="664" y="242" width="264" height="44" rx="7" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="678" y="261" font-size="12.5" font-weight="700" fill="#1a2330">Token &amp; Cost</text>
+    <text x="678" y="277" font-size="11" fill="#5c6775">Quota · Usage · Top users</text>
+    <rect x="664" y="294" width="264" height="44" rx="7" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="678" y="313" font-size="12.5" font-weight="700" fill="#1a2330">Requests &amp; Stability</text>
+    <text x="678" y="329" font-size="11" fill="#5c6775">Calls · Error rate</text>
+    <rect x="664" y="346" width="264" height="34" rx="7" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="678" y="368" font-size="12.5" font-weight="700" fill="#1a2330">Session / Trajectory Logs</text>
+  </g>
+
+  <!-- Down arrows -->
+  <g fill="#9aa8bc">
+    <path d="M 300 424 L 308 410 L 316 424 Z"/>
+    <path d="M 490 424 L 498 410 L 506 424 Z"/>
+    <path d="M 680 424 L 688 410 L 696 424 Z"/>
+  </g>
+
+  <!-- Layer 3 Runtime foundation -->
+  <rect x="44" y="436" width="912" height="54" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="469" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">Foundation</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="middle">
+    <rect x="196" y="448" width="170" height="30" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="281" y="468" fill="#1a2330">Kubernetes · DCE</text>
+    <rect x="382" y="448" width="170" height="30" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="467" y="468" fill="#1a2330">Container Sandbox</text>
+    <rect x="568" y="448" width="170" height="30" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="653" y="468" fill="#1a2330">Persistent Volume</text>
+    <rect x="754" y="448" width="170" height="30" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="839" y="468" fill="#1a2330">On-prem Deployment</text>
+  </g>
+
+  <!-- Arrow -->
+  <g fill="#9aa8bc">
+    <path d="M 490 504 L 498 490 L 506 504 Z"/>
+  </g>
+
+  <!-- Layer 4 Model access -->
+  <rect x="44" y="510" width="912" height="46" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="539" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">Models</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="middle">
+    <rect x="196" y="520" width="140" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="266" y="538" fill="#1a2330">DCE AI Gateway</text>
+    <rect x="344" y="520" width="140" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="414" y="538" fill="#1a2330">minimax</text>
+    <rect x="492" y="520" width="140" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="562" y="538" fill="#1a2330">DeepSeek</text>
+    <rect x="640" y="520" width="140" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="710" y="538" fill="#1a2330">Qwen</text>
+    <rect x="788" y="520" width="136" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="856" y="538" fill="#1a2330">Private Models</text>
+  </g>
+</svg>
