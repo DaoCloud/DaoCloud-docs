@@ -90,24 +90,16 @@ complete the closed loop of data preparation, Notebook development, training job
 in the developer console.
 
 ```mermaid
-flowchart LR
+flowchart TB
     subgraph OAM["Ops · Admin"]
-        direction TB
-        A["① Create resource pool<br/>Bind clusters & nodes"]
-        B["② Create queue<br/>Link workspaces"]
+        direction LR
+        A["① Create resource pool<br/>Bind clusters & nodes"] --> B["② Create queue<br/>Link workspaces"]
     end
     subgraph DEV["Dev Console · Developer"]
-        direction TB
-        C["③ Prepare datasets<br/>Code / data / output"]
-        D["④ Notebook dev<br/>JupyterLab · CodeServer"]
-        E["⑤ Training jobs<br/>PyTorch · Tensorflow · MPI"]
-        F["⑥ Inference services<br/>Triton · vLLM"]
+        direction LR
+        C["③ Prepare datasets<br/>Code / data / output"] --> D["④ Notebook dev<br/>JupyterLab · CodeServer"] --> E["⑤ Training jobs<br/>PyTorch · Tensorflow · MPI"] --> F["⑥ Inference services<br/>Triton · vLLM"]
     end
-    A --> B
-    B -->|Allocate to workspaces| C
-    C --> D
-    D --> E
-    E --> F
+    OAM -->|Allocate to workspaces| DEV
     click A href "../oam/resource/create/"
     click B href "../oam/queue/create/"
     click C href "../developer/dataset/"
@@ -184,25 +176,25 @@ flowchart LR
         <span class="baize-path-desc">Full workflow from dataset to training</span>
         <span class="baize-path-go">Go →</span>
       </a>
-      <a class="baize-path-step" style="--path-c:#00acc1" href="../developer/notebooks/index.md">
+      <a class="baize-path-step" style="--path-c:#00acc1" href="../developer/notebooks/">
         <span class="baize-path-num">2</span>
         <span class="baize-path-title">Create a Notebook</span>
         <span class="baize-path-desc">Mount GPUs and datasets in one click</span>
         <span class="baize-path-go">Go →</span>
       </a>
-      <a class="baize-path-step" style="--path-c:#43a047" href="../developer/jobs/index.md">
+      <a class="baize-path-step" style="--path-c:#43a047" href="../developer/jobs/">
         <span class="baize-path-num">3</span>
         <span class="baize-path-title">Submit a training job</span>
         <span class="baize-path-desc">PyTorch / Tensorflow / MPI</span>
         <span class="baize-path-go">Go →</span>
       </a>
-      <a class="baize-path-step" style="--path-c:#fb8c00" href="../developer/dataset/index.md">
+      <a class="baize-path-step" style="--path-c:#fb8c00" href="../developer/dataset/">
         <span class="baize-path-num">4</span>
         <span class="baize-path-title">Manage datasets</span>
         <span class="baize-path-desc">Multi-source access and labeling</span>
         <span class="baize-path-go">Go →</span>
       </a>
-      <a class="baize-path-step" style="--path-c:#8e24aa" href="../developer/inference/index.md">
+      <a class="baize-path-step" style="--path-c:#8e24aa" href="../developer/inference/">
         <span class="baize-path-num">5</span>
         <span class="baize-path-title">Deploy an inference service</span>
         <span class="baize-path-desc">Triton / vLLM serving</span>

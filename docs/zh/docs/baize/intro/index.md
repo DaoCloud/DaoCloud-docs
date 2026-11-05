@@ -67,28 +67,20 @@ AI Lab（曾用名智能算力）是基于云原生操作系统打造的 AI 算�
 
 ## 使用流程
 
-AI Lab 的使用分为**运维准备**与**开发使用**两个阶段：管理员先创建资源池和队列，把算力资源分配给工作空间；
+AI Lab 的使用分为 **运维准备** 与 **开发使用** 两个阶段：管理员先创建资源池和队列，把算力资源分配给工作空间；
 开发者在开发控制台完成数据准备、Notebook 开发、训练任务与模型服务的完整闭环。
 
 ```mermaid
-flowchart LR
+flowchart TB
     subgraph OAM["运维管理 · 管理员"]
-        direction TB
-        A["① 创建资源池<br/>绑定集群与节点"]
-        B["② 创建队列<br/>关联工作空间"]
+        direction LR
+        A["① 创建资源池<br/>绑定集群与节点"] --> B["② 创建队列<br/>关联工作空间"]
     end
     subgraph DEV["开发控制台 · 开发者"]
-        direction TB
-        C["③ 准备数据集<br/>代码 / 数据 / 输出"]
-        D["④ Notebook 开发<br/>JupyterLab · CodeServer"]
-        E["⑤ 提交训练任务<br/>PyTorch · Tensorflow · MPI"]
-        F["⑥ 部署模型服务<br/>Triton · vLLM"]
+        direction LR
+        C["③ 准备数据集<br/>代码 / 数据 / 输出"] --> D["④ Notebook 开发<br/>JupyterLab · CodeServer"] --> E["⑤ 提交训练任务<br/>PyTorch · Tensorflow · MPI"] --> F["⑥ 部署模型服务<br/>Triton · vLLM"]
     end
-    A --> B
-    B -->|算力分配到工作空间| C
-    C --> D
-    D --> E
-    E --> F
+    OAM -->|算力分配到工作空间| DEV
     click A href "../oam/resource/create/"
     click B href "../oam/queue/create/"
     click C href "../developer/dataset/"
@@ -165,25 +157,25 @@ flowchart LR
         <span class="baize-path-desc">走通数据集到训练全流程</span>
         <span class="baize-path-go">前往 →</span>
       </a>
-      <a class="baize-path-step" style="--path-c:#00acc1" href="../developer/notebooks/index.md">
+      <a class="baize-path-step" style="--path-c:#00acc1" href="../developer/notebooks/">
         <span class="baize-path-num">2</span>
         <span class="baize-path-title">创建 Notebook</span>
         <span class="baize-path-desc">一键挂载 GPU 与数据集</span>
         <span class="baize-path-go">前往 →</span>
       </a>
-      <a class="baize-path-step" style="--path-c:#43a047" href="../developer/jobs/index.md">
+      <a class="baize-path-step" style="--path-c:#43a047" href="../developer/jobs/">
         <span class="baize-path-num">3</span>
         <span class="baize-path-title">提交训练任务</span>
         <span class="baize-path-desc">PyTorch / Tensorflow / MPI</span>
         <span class="baize-path-go">前往 →</span>
       </a>
-      <a class="baize-path-step" style="--path-c:#fb8c00" href="../developer/dataset/index.md">
+      <a class="baize-path-step" style="--path-c:#fb8c00" href="../developer/dataset/">
         <span class="baize-path-num">4</span>
         <span class="baize-path-title">管理数据集</span>
         <span class="baize-path-desc">多数据源接入与数据标注</span>
         <span class="baize-path-go">前往 →</span>
       </a>
-      <a class="baize-path-step" style="--path-c:#8e24aa" href="../developer/inference/index.md">
+      <a class="baize-path-step" style="--path-c:#8e24aa" href="../developer/inference/">
         <span class="baize-path-num">5</span>
         <span class="baize-path-title">部署模型服务</span>
         <span class="baize-path-desc">Triton / vLLM 推理上线</span>
