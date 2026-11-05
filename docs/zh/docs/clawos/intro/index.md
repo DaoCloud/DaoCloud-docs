@@ -1,20 +1,193 @@
+---
+hide:
+  - toc
+---
+
 # 什么是 ClawOS
 
 ClawOS 是面向企业的 Agent 运行与治理平台，用于统一创建、管理、集成、观测和运维企业内部的 AI Agent。当前版本中，ClawOS 管理的 Agent 类型主要为 OpenClaw 实例；后续平台可扩展支持更多类型的企业 Agent。
-[查看/下载 ClawOS 用户手册](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/ClawOS.pdf){ .md-button }
 
-## ClawOS：企业级 Agent 运行与治理平台
+可以简单理解为：ClawOS 是企业内部运行 AI Agent 的**控制面**和**治理面**。它不是简单的 Agent 列表管理平台，而是把 Agent 纳入企业已有的权限、网络、协作、审计和运维体系，让 Agent 的执行能力在企业环境中**可管理、可审计、可集成、可规模化**地落地。
 
-> 可以简单理解为：ClawOS 是企业内部运行 AI Agent 的 **控制面** 和 **治理面** 。
+![ClawOS 逻辑架构](../images/clawos-arch.svg)
 
-它不是一个简单的 Agent 列表管理平台，也不是只负责创建几个智能体实例的后台。它更接近企业 Agent 时代的基础设施：帮助企业把 Agent 安全、稳定、可控地运行起来，并纳入企业已有的权限、网络、协作、审计和运维体系。
+## 核心能力
 
-如果说 OpenClaw 让 AI Agent 具备了「执行任务」的能力，那么 ClawOS 要解决的是：如何让这种执行能力在企业环境中
-**可管理、可审计、可集成、可规模化** 地落地。
+<div class="grid cards" markdown>
 
-## OpenClaw 是什么
+- :material-cube-outline:{ .lg .middle } __实例生命周期管理__
 
-**OpenClaw**（小龙虾）是新一代开源 AI Agent 运行时，目标是将 AI 从「被动回答问题」升级为「主动规划并执行任务」。OpenClaw 不只是和用户聊天，还可以结合模型能力、工具调用、文件系统、终端命令、浏览器控制、API、Skill 和多 Agent 协作，完成更复杂的端到端任务。
+    ---
+
+    在控制台中创建、查看、编辑、删除 OpenClaw 实例。每个实例对应实际运行的服务资源，运行在 Kubernetes、DCE 等云原生底座之上；修改镜像、资源规格、模型、API Key 等关键配置对运行的影响会清晰呈现给用户。
+
+    [:arrow_forward: 管理 OpenClaw 实例](../workspace/openclaw.md)
+
+- :material-shield-account:{ .lg .middle } __权限与多租户隔离__
+
+    ---
+
+    面向企业组织结构划分能力边界：普通用户只能管理自己的实例，租户管理员可以查看工作空间内实例运行情况，平台管理员可以管理全局资源、策略和配置。
+
+    [:arrow_forward: 查看 ClawOS 权限说明](../../ghippo/permissions/clawos.md)
+
+- :material-lan-connect:{ .lg .middle } __网络策略治理__
+
+    ---
+
+    统一管理 Agent 的网络访问边界：哪些实例可以访问内网服务、哪些只能访问指定 API、哪些策略由平台默认强制启用、哪些允许用户自行选择。
+
+    [:arrow_forward: 配置网络策略](../admin/network-manage.md)
+
+- :material-package-variant-closed:{ .lg .middle } __Skill 管理与分发__
+
+    ---
+
+    ClawHub 是企业能力货架：Skill 经过审核、上架、分发、授权、追踪和下架，企业可以把高价值 Skill 沉淀下来，按权限分发给不同团队和实例复用。
+
+    [:arrow_forward: 浏览 Skill 市场](../workspace/skill.md)
+
+- :material-forum-outline:{ .lg .middle } __消息渠道集成__
+
+    ---
+
+    集成飞书、Microsoft Teams 等企业消息渠道，让 OpenClaw 实例在群聊、私信、频道中收发消息、处理文件、响应任务，从「平台里的一个实例」变成「协作系统里的数字员工」。
+
+    [:arrow_forward: 对接飞书](../workspace/feishu.md)
+
+- :material-chart-line:{ .lg .middle } __可观测与运维__
+
+    ---
+
+    提供实例状态、Token 用量、调用次数、错误率、Top 用户与模型分布等指标，以及 Session transcript、Trajectory log 等运行记录，让管理员知道 Agent 是否正常、成本是否失控、某次任务到底执行了什么。
+
+    [:arrow_forward: 查看工作空间概览](../workspace/index.md)
+
+</div>
+
+## 使用流程
+
+ClawOS 的使用分为 **平台准备** 与 **工作空间使用** 两个阶段：管理员先完成安装、权限与网络策略规划，并把审核过的 Skill 上架到 ClawHub；
+工作空间用户随后创建 OpenClaw 实例，通过 OpenClaw 页面或 noVNC 访问调试，按需接入飞书、Teams 等消息渠道，并在概览页持续观测用量与成本。
+
+```mermaid
+flowchart TB
+    subgraph ADMIN["平台管理员"]
+        direction LR
+        A["① 安装 ClawOS<br/>离线 / 在线安装"] --> B["② 权限与网络策略<br/>角色 · 隔离边界"] --> C["③ 审核并上架 Skill<br/>ClawHub 货架"]
+    end
+    subgraph WS["工作空间用户"]
+        direction LR
+        D["④ 创建实例<br/>模型 · API Key · 资源"] --> E["⑤ 访问与调试<br/>OpenClaw · noVNC · CLI"] --> F["⑥ 接入消息渠道<br/>飞书 · Teams"] --> G["⑦ 观测用量<br/>Token · 调用 · 错误率"]
+    end
+    ADMIN -->|平台就绪后开放工作空间| WS
+    click A href "install/"
+    click B href "../admin/network-manage/"
+    click C href "../admin/skillmanage-admin/"
+    click D href "quickstart/"
+    click E href "quickstart/"
+    click F href "../workspace/feishu/"
+    click G href "../workspace/"
+```
+
+| 步骤 | 角色 | 说明 |
+| --- | --- | --- |
+| [① 安装 ClawOS](install.md) | 平台管理员 | 通过离线包或 Helm 在线安装 ClawOS 组件，接入 DCE 环境 |
+| [② 权限与网络策略](../admin/network-manage.md) | 平台管理员 | 规划角色能力边界，定义实例可访问的内网服务与外部 API |
+| [③ 审核并上架 Skill](../admin/skillmanage-admin.md) | 平台管理员 | 审核 Skill 内容后上架到 ClawHub，按权限分发给各团队 |
+| [④ 创建实例](quickstart.md) | 工作空间用户 | 选择集群、命名空间、镜像与资源，配置模型、API Key 和消息渠道 |
+| [⑤ 访问与调试](quickstart.md) | 工作空间用户 | 通过 OpenClaw 页面、noVNC 远程桌面或 CLI 操作实例 |
+| [⑥ 接入消息渠道](../workspace/feishu.md) | 工作空间用户 | 配置飞书自建应用或 Teams，把 Agent 接入日常协作流程 |
+| [⑦ 观测用量](../workspace/index.md) | 租户管理员 | 查看 Token 配额与消耗、调用趋势、错误率与模型使用分布 |
+
+## 快速上手
+
+<style>
+.clawos-path{display:flex;gap:0.75rem;margin:1rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.clawos-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.clawos-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.clawos-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.clawos-path-step:last-child::after{display:none}
+.clawos-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.clawos-path-title{font-weight:700;font-size:0.95rem}
+.clawos-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.clawos-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.clawos-path-step::after{display:none}}
+</style>
+
+=== ":material-shield-account: 管理员：平台准备与治理"
+
+    <div class="clawos-path">
+      <a class="clawos-path-step" style="--path-c:#2196f3" href="install/">
+        <span class="clawos-path-num">1</span>
+        <span class="clawos-path-title">安装 ClawOS</span>
+        <span class="clawos-path-desc">离线包 / Helm 在线安装</span>
+        <span class="clawos-path-go">前往 →</span>
+      </a>
+      <a class="clawos-path-step" style="--path-c:#00acc1" href="../../ghippo/permissions/clawos/">
+        <span class="clawos-path-num">2</span>
+        <span class="clawos-path-title">权限规划</span>
+        <span class="clawos-path-desc">用户 · 租户 · 平台管理员</span>
+        <span class="clawos-path-go">前往 →</span>
+      </a>
+      <a class="clawos-path-step" style="--path-c:#43a047" href="../admin/network-manage/">
+        <span class="clawos-path-num">3</span>
+        <span class="clawos-path-title">网络策略</span>
+        <span class="clawos-path-desc">定义出入站访问边界</span>
+        <span class="clawos-path-go">前往 →</span>
+      </a>
+      <a class="clawos-path-step" style="--path-c:#fb8c00" href="../admin/skillmanage-admin/">
+        <span class="clawos-path-num">4</span>
+        <span class="clawos-path-title">Skill 上架</span>
+        <span class="clawos-path-desc">审核并发布到 ClawHub</span>
+        <span class="clawos-path-go">前往 →</span>
+      </a>
+      <a class="clawos-path-step" style="--path-c:#8e24aa" href="../admin/">
+        <span class="clawos-path-num">5</span>
+        <span class="clawos-path-title">全局概览</span>
+        <span class="clawos-path-desc">全平台用量与风险</span>
+        <span class="clawos-path-go">前往 →</span>
+      </a>
+    </div>
+
+=== ":material-account: 工作空间用户：创建与使用 Agent"
+
+    <div class="clawos-path">
+      <a class="clawos-path-step" style="--path-c:#2196f3" href="quickstart/">
+        <span class="clawos-path-num">1</span>
+        <span class="clawos-path-title">快速入门</span>
+        <span class="clawos-path-desc">创建并访问首个实例</span>
+        <span class="clawos-path-go">前往 →</span>
+      </a>
+      <a class="clawos-path-step" style="--path-c:#00acc1" href="../workspace/openclaw/">
+        <span class="clawos-path-num">2</span>
+        <span class="clawos-path-title">实例管理</span>
+        <span class="clawos-path-desc">查看 · 编辑 · 删除实例</span>
+        <span class="clawos-path-go">前往 →</span>
+      </a>
+      <a class="clawos-path-step" style="--path-c:#43a047" href="../workspace/feishu/">
+        <span class="clawos-path-num">3</span>
+        <span class="clawos-path-title">飞书集成</span>
+        <span class="clawos-path-desc">让 Agent 进入群聊与私信</span>
+        <span class="clawos-path-go">前往 →</span>
+      </a>
+      <a class="clawos-path-step" style="--path-c:#fb8c00" href="../workspace/teams-info/">
+        <span class="clawos-path-num">4</span>
+        <span class="clawos-path-title">Teams 配置</span>
+        <span class="clawos-path-desc">对接 Microsoft Teams</span>
+        <span class="clawos-path-go">前往 →</span>
+      </a>
+      <a class="clawos-path-step" style="--path-c:#8e24aa" href="../workspace/">
+        <span class="clawos-path-num">5</span>
+        <span class="clawos-path-title">用量观测</span>
+        <span class="clawos-path-desc">Token · 调用 · 错误率</span>
+        <span class="clawos-path-go">前往 →</span>
+      </a>
+    </div>
+
+## OpenClaw 与 ClawOS 的关系
+
+**OpenClaw**（小龙虾）是新一代开源 AI Agent 运行时，目标是把 AI 从「被动回答问题」升级为「主动规划并执行任务」：它结合模型能力、工具调用、文件系统、终端命令、浏览器控制、API、Skill 和多 Agent 协作，完成更复杂的端到端任务。
 
 | 能力维度 | 传统 AI 助手 | OpenClaw 智能体 |
 | --- | --- | --- |
@@ -22,102 +195,12 @@ ClawOS 是面向企业的 Agent 运行与治理平台，用于统一创建、管
 | 能力边界 | 仅输出文字 | 调用工具、操作系统、执行代码 |
 | 适用场景 | 信息查询、简单生成 | 端到端自动化工作流 |
 
-**OpenClaw** 通常具备以下几类核心能力：
-
-- **任务规划** ：理解用户目标，并拆解执行步骤
-- **工具调用** ：调用文件系统、命令行、浏览器、API、第三方工具
-- **Skill 扩展** ：通过 Skill 封装可复用能力
-- **上下文管理** ：在多轮任务中维持任务状态
-- **记忆与知识** ：结合短期会话、长期记忆或知识库完成任务
-- **多模型接入** ：可对接不同大模型或企业私有模型
-
-OpenClaw 更像是一个具体能干活的 Agent 运行实例；而 ClawOS 则是管理这些 OpenClaw 实例的平台。
-
-### ClawOS 与 OpenClaw 的关系
-
 | 对象 | 定位 |
 | --- | --- |
 | OpenClaw | 运行对象，负责让 Agent 具备执行能力 |
 | ClawOS | 运行和治理平台，负责让 Agent 在企业里可控地运行 |
 
-在企业场景中，一个团队可能会创建多个 OpenClaw 实例：有的用于总结飞书消息，有的用于处理工单，有的用于知识库问答，有的用于研发辅助，有的用于文档审查。
-
-如果每个 OpenClaw 实例都由个人自行配置、自行维护、自行接入模型和工具，企业很快就会遇到管理问题：权限不可控、成本不可见、日志不可查、网络边界不清、Skill 无法复用、异常无人排查。
-
-ClawOS 的价值，就是把这些分散的 Agent **运行起来、管起来、看起来、审起来**。
-
-## 主要能力
-
-ClawOS 首先解决的是 **Agent 企业化运行** 的问题。个人使用 Agent 时，重点通常是体验是否顺手、模型是否聪明、任务是否完成；但企业使用 Agent 时，重点会变成安全、治理、成本、集成和运维。
-
-### 实例生命周期管理
-
-用户或管理员可以在 ClawOS 中创建、查看、编辑、删除 OpenClaw 实例。每个实例背后对应实际运行的服务资源，通常运行在 Kubernetes 或 DCE 等云原生底座之上。
-
-当用户修改镜像、资源规格、模型配置、API Key、消息渠道等关键配置时，可能会触发实例重启或短暂不可用。因此，ClawOS 需要把这些运行影响清晰呈现给用户。
-
-详细操作请参见[快速入门](./quickstart.md)。
-
-### 权限与多租户隔离
-
-ClawOS 面向企业组织结构，不同角色拥有不同能力边界：
-
-- 普通用户只能管理自己的实例
-- 租户管理员可以查看工作空间内实例运行情况
-- 平台管理员可以管理全局资源、策略和配置
-
-这种权限模型保证 Agent 不会变成一个「谁都能乱用」的黑盒工具，而是被纳入企业身份、角色和空间隔离体系。详见
-[ClawOS 权限说明](../../ghippo/permissions/clawos.md)。
-
-### 网络策略治理
-
-Agent 一旦能够访问网络、调用工具、连接系统，就必须有明确的网络边界。ClawOS 可以帮助企业管理 Agent 的网络访问策略，例如：
-
-- 哪些实例可以访问内网服务
-- 哪些实例只能访问指定 API
-- 哪些策略由平台默认强制启用
-- 哪些策略允许用户选择
-
-Agent 的能力越强，越需要清楚地限制它能访问哪里、不能访问哪里。
-
-### Skill 管理与分发
-
-Skill 是 Agent 能力扩展的重要方式。在个人场景里，用户可以自己安装或编写 Skill；但在企业里，Skill 需要被审核、上架、分发、授权、追踪和下架。
-
-因此，ClawOS 中的 ClawHub/SkillHub 更像是企业能力货架。企业可以把高价值 Skill 沉淀下来，统一管理，并按权限分发给不同团队和实例使用。
-
-### 消息渠道集成
-
-Agent 不应该只存在于控制台里。真正有价值的 Agent，应该进入员工日常工作流。
-
-ClawOS 可以集成飞书、Teams 等企业消息渠道，让 OpenClaw 实例在群聊、私信、频道等场景中收发消息、处理文件、响应任务。这样，Agent 从「平台里的一个实例」变成了「协作系统里的数字员工」。
-
-飞书对接步骤请参见[飞书集成](../workspace/feishu.md)。
-
-### 可观测、日志与运维
-
-企业环境中，Agent 不能只是能回答，还必须能被排查、被追踪、被审计。ClawOS 需要提供实例状态、运行日志、Session transcript、Trajectory log、Token 用量、调用次数、错误率、告警等信息。
-
-这些能力让管理员知道 Agent 是否正常运行、哪里出现异常、成本是否失控、某次任务到底执行了什么。
-
-## 核心价值
-
-ClawOS 的核心价值，不是证明某个 Agent 比 ChatGPT、Claude、Codex 或 Cursor 更好用——这些个人 AI 工具解决的是个人效率问题。ClawOS 解决的是
-**企业规模化使用 Agent** 的问题。
-
-它让企业能够回答这些问题：
-
-- 我们有多少 Agent 在运行？
-- 它们分别服务哪些团队？
-- 哪些 Agent 正常，哪些异常？
-- 哪些用户和实例消耗最多 Token？
-- 哪些 Skill 被频繁使用？
-- 哪些模型成本最高？
-- 哪些任务失败率异常？
-- 哪些操作需要审计和回放？
-- 哪些网络访问存在风险？
-
-换句话说，ClawOS 让 Agent 从「个人工具」变成「企业可运营资产」。
+如果每个 OpenClaw 实例都由个人自行配置、维护、接入模型和工具，企业很快会遇到权限不可控、成本不可见、日志不可查、Skill 无法复用等问题。ClawOS 的价值，就是把分散的 Agent **运行起来、管起来、看起来、审起来**，让 Agent 从「个人工具」变成「企业可运营资产」。
 
 ## 典型应用场景
 
@@ -143,7 +226,7 @@ ClawOS 的核心价值，不是证明某个 Agent 比 ChatGPT、Claude、Codex �
 
 将「读取文档 → 提取关键数据 → 校验规则 → 生成审查意见」全流程封装为可复用的自定义 Skill（`createSkill`），一键处理数十份报告并输出汇总 CSV，告别重复劳动。
 
-## 产品优势
+## 为什么选择 ClawOS
 
 | 优势 | 说明 |
 | --- | --- |
@@ -151,17 +234,47 @@ ClawOS 的核心价值，不是证明某个 Agent 比 ChatGPT、Claude、Codex �
 | 安全沙箱隔离 | 每个 OpenClaw 实例运行在独立容器沙箱中，基于 DaoCloud **zestU** 内核级隔离技术，即使被攻破也严格限制在沙箱内，无法入侵内网或篡改宿主机文件 |
 | 数据持久化 | `/openclaw/data` 通过持久卷保存，OpenClaw 工作文件和 FileBrowser 上传的文件在 Pod 重启或重建后仍会保留。noVNC 中保存在 `/home/node` 等其他目录的文件不保证保留，详见[常见问题](../faq.md)。 |
 | 安全可控的模型访问 | 所有模型调用通过 DCE AI 网关统一转发并执行安全策略，不直接暴露公网，数据和对话在平台内受保护 |
-| 完整后台访问能力 | DCE 提供 [SSH 登录和 noVNC 网页访问](./quickstart.md#openclaw_2) 两种方式，支持完整 CLI 操作，满足高级调试和自定义需求 |
+| 完整后台访问能力 | DCE 提供 [SSH 登录和 noVNC 网页访问](quickstart.md#openclaw_2) 两种方式，支持完整 CLI 操作，满足高级调试和自定义需求 |
 
-## 模块指引
+## 更多资源
 
-- [安装](./install.md)
-- [快速入门](./quickstart.md)
-- [飞书集成](../workspace/feishu.md)
-- [常见问题](../faq.md)
-- [Release Notes](./release-notes.md)
-- [ClawOS 权限说明](../../ghippo/permissions/clawos.md)
+<div class="grid cards" markdown>
+
+- :material-format-list-bulleted:{ .lg .middle } __常见问题__
+
+    ---
+
+    实例创建与访问、数据持久化目录、Token 配额等常见问题的解答。
+
+    [:arrow_forward: 查看 FAQ](../faq.md)
+
+- :material-rocket-launch:{ .lg .middle } __Release Notes__
+
+    ---
+
+    了解 ClawOS 各版本的功能更新与缺陷修复。
+
+    [:arrow_forward: 查看 Release Notes](release-notes.md)
+
+- :material-book-open-page-variant:{ .lg .middle } __升级与兼容性__
+
+    ---
+
+    升级注意事项与版本兼容性说明，升级前请务必阅读。
+
+    [:arrow_forward: 查看升级指引](upgrade-notes.md)
+
+- :material-console:{ .lg .middle } __Gateway API 实例访问__
+
+    ---
+
+    通过 Gateway API 访问 OpenClaw 实例的参考配置。
+
+    [:arrow_forward: 查看参考文档](../reference/gateway-access.md)
+
+</div>
 
 [下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
 [了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
 [了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
+[查阅 ClawOS 用户手册 PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/ClawOS.pdf){ .md-button .md-button--primary }
