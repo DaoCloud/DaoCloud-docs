@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
   <title id="title">d.run AI 操作系统全景图</title>
-  <desc id="desc">d.run AI 操作系统由四层能力、乐高式组合模块组成。云原生 AI 层：大模型服务平台 Hydra、AI Lab、推理加速服务 InferX、ClawOS；云原生底座层：容器管理 kpanda、设备管理 topohub、镜像仓库 kangaroo、云原生网络 mspider、云原生存储；运营管理层：驾驶舱 crane、Copilot；运维管理层：可观测性 insight、全局管理 ghippo。自下而上把异构算力转化为可计量的 AI 生产力。</desc>
+  <desc id="desc">d.run AI 操作系统由四层能力、乐高式组合模块组成。云原生 AI 层：大模型服务平台 Hydra、AI Lab、推理加速服务 InferX、ClawOS；云原生底座层：容器管理 kpanda、设备管理 topohub、镜像仓库 kangaroo、云原生网络 network、云原生存储；运营管理层：驾驶舱 crane、Copilot；运维管理层：可观测性 insight、全局管理 ghippo。自下而上把异构算力转化为可计量的 AI 生产力。</desc>
   <style>
     /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
     @media (prefers-color-scheme: dark) {
@@ -82,7 +82,7 @@
   <text x="426" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">私有镜像中心与供应链</text>
   <rect x="595" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#c8e6c9"/>
   <text x="606" y="272" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">云原生网络</text>
-  <text x="754" y="271" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">mspider</text>
+  <text x="754" y="271" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">network</text>
   <text x="606" y="295" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">多 CNI 融合 · 服务网格</text>
   <text x="606" y="315" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">跨集群互通与流量治理</text>
   <rect x="775" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#c8e6c9"/>
