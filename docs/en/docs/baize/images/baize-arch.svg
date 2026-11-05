@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">AI Lab Logical Architecture</title>
+  <desc id="desc">AI Lab logical architecture, five layers from top to bottom: AI Applications (AI Computing, Data Science, LLM, AIGC Knowledge Base, Media Generation, Intelligent Assistant); DaoCloud AI Platform; DaoCloud Enterprise AI (Training &amp; Inference: Dataset Acceleration, Develop &amp; Train, Model Inference; Computing Operations: Tenants &amp; Quotas, Metering &amp; Billing, Observability; Optimized Scheduling: Infra Acceleration vGPU/MIG, RDMA/SR-IOV, Spiderpool, MinIO/HwameiStor, GPU Operator, DRA/Kueue/KWOK); GPU vendors (NVIDIA, Ascend, Iluvatar CoreX, Enflame, BIREN); Infra (Public Cloud, Private Cloud, Hybrid Cloud, Xinchuang, Edge).</desc>
+  <style>
+    /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
+    @media (prefers-color-scheme: dark) {
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      /* surfaces */
+      [fill="#ffffff"]:not([x="0.5"]) { fill: #232936; }
+      [fill="#f5f7fa"] { fill: #1e2530; }
+      [fill="#f8fafc"] { fill: #1a212c; }
+      [fill="#eef2f6"] { fill: #232b38; }
+      [fill="#e8f3fd"] { fill: #1c2838; }
+      [fill="#e6f7ec"] { fill: #1b2c22; }
+      [fill="#fff3e0"] { fill: #2b2519; }
+      /* text */
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#6b7688"] { fill: #8b95a5; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#2e7d32"] { fill: #81c784; }
+      [fill="#e65100"] { fill: #ffb74d; }
+      [fill="#9aa8bc"] { fill: #8291a8; }
+      /* strokes */
+      [stroke="#e0e6ee"] { stroke: #2e3540; }
+      [stroke="#e6eaf1"] { stroke: #2e3540; }
+      [stroke="#cfd8e3"] { stroke: #3a4450; }
+      [stroke="#90caf9"] { stroke: #2c4a6e; }
+      [stroke="#81c784"] { stroke: #2c5940; }
+      [stroke="#ffb74d"] { stroke: #5c4a26; }
+      [stroke="#ffcc80"] { stroke: #5c4a26; }
+      /* accent bars */
+      [fill="#2196f3"] { fill: #42a5f5; }
+      [fill="#ff9800"] { fill: #ffb74d; }
+      [stroke="#2196f3"] { stroke: #42a5f5; }
+    }
+  </style>
+
+  <rect x="0.5" y="0.5" width="999" height="599" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
+
+  <!-- Title -->
+  <text x="500" text-anchor="middle" y="40" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#1a2330">AI Lab Logical Architecture</text>
+  <text x="500" text-anchor="middle" y="62" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#6b7688">GPU hosting · Train &amp; infer · Optimized scheduling</text>
+
+  <!-- Layer 1: AI Applications -->
+  <rect x="44" y="80" width="912" height="58" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="114" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#1a2330">AI Apps</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" text-anchor="middle">
+    <rect x="150" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="214" y="113" fill="#1a2330">AI Computing</text>
+    <rect x="286" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="350" y="113" fill="#1a2330">Data Science</text>
+    <rect x="422" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="486" y="113" fill="#1a2330">LLM</text>
+    <rect x="558" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="622" y="113" fill="#1a2330">AIGC Knowledge</text>
+    <rect x="694" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="758" y="113" fill="#1a2330">Media Generation</text>
+    <rect x="830" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="894" y="113" fill="#1a2330">AI Assistant</text>
+  </g>
+
+  <!-- Upward arrows -->
+  <g fill="#9aa8bc">
+    <path d="M 300 166 L 308 152 L 316 166 Z"/>
+    <path d="M 490 166 L 498 152 L 506 166 Z"/>
+    <path d="M 680 166 L 688 152 L 696 166 Z"/>
+  </g>
+
+  <!-- Layer 2: platform banner -->
+  <rect x="44" y="174" width="912" height="32" rx="8" fill="#00c853"/>
+  <text x="500" text-anchor="middle" y="195" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14.5" font-weight="700" fill="#ffffff">DaoCloud AI Platform</text>
+
+  <!-- Layer 3: DaoCloud Enterprise AI -->
+  <rect x="44" y="222" width="912" height="246" rx="12" fill="#f8fafc" stroke="#e0e6ee"/>
+  <text x="68" y="244" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#2e7d32">DaoCloud Enterprise AI</text>
+
+  <!-- Training & Inference (blue) -->
+  <rect x="60" y="262" width="5" height="44" rx="2" fill="#2196f3"/>
+  <text x="74" y="289" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#1565c0">Training &amp; Inference</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif">
+    <rect x="220" y="258" width="215" height="50" rx="10" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="327" y="279" text-anchor="middle" font-size="13" font-weight="600" fill="#1565c0">Dataset Acceleration</text>
+    <text x="327" y="297" text-anchor="middle" font-size="11.5" fill="#5c6775">Cache · NFS acceleration</text>
+    <line x1="440" y1="283" x2="458" y2="283" stroke="#2196f3" stroke-width="1.8" marker-end="url(#arrb)"/>
+    <rect x="465" y="258" width="290" height="50" rx="10" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="610" y="279" text-anchor="middle" font-size="13" font-weight="600" fill="#1565c0">Develop &amp; Train</text>
+    <text x="610" y="297" text-anchor="middle" font-size="11.5" fill="#5c6775">PyTorch · TensorFlow · Paddle</text>
+    <line x1="760" y1="283" x2="778" y2="283" stroke="#2196f3" stroke-width="1.8" marker-end="url(#arrb)"/>
+    <rect x="785" y="258" width="171" height="50" rx="10" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="870" y="279" text-anchor="middle" font-size="13" font-weight="600" fill="#1565c0">Model Inference</text>
+    <text x="870" y="297" text-anchor="middle" font-size="11.5" fill="#5c6775">Triton · vLLM</text>
+  </g>
+  <defs>
+    <marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2196f3"/>
+    </marker>
+  </defs>
+
+  <!-- Computing Operations (green) -->
+  <rect x="60" y="328" width="5" height="44" rx="2" fill="#00c853"/>
+  <text x="74" y="355" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#2e7d32">Computing Operations</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" text-anchor="middle">
+    <rect x="220" y="324" width="226" height="50" rx="10" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="333" y="353" font-size="13" font-weight="600" fill="#2e7d32">Tenants &amp; Quotas</text>
+    <rect x="475" y="324" width="226" height="50" rx="10" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="588" y="353" font-size="13" font-weight="600" fill="#2e7d32">Metering &amp; Billing</text>
+    <rect x="730" y="324" width="226" height="50" rx="10" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="843" y="353" font-size="13" font-weight="600" fill="#2e7d32">Observability</text>
+  </g>
+
+  <!-- Optimized Scheduling (orange) -->
+  <rect x="60" y="394" width="5" height="60" rx="2" fill="#ff9800"/>
+  <text x="74" y="429" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#e65100">Optimized Scheduling</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" text-anchor="middle">
+    <rect x="220" y="390" width="245" height="72" rx="10" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="342" y="409" font-size="12.5" font-weight="600" fill="#e65100">Infra Acceleration</text>
+    <rect x="234" y="420" width="105" height="26" rx="6" fill="#ffffff" stroke="#ffcc80"/>
+    <text x="286" y="437" font-size="11.5" fill="#5c6775">vGPU / MIG</text>
+    <rect x="349" y="420" width="105" height="26" rx="6" fill="#ffffff" stroke="#ffcc80"/>
+    <text x="401" y="437" font-size="11.5" fill="#5c6775">RDMA / SR-IOV</text>
+    <rect x="485" y="390" width="471" height="72" rx="10" fill="#fff3e0" stroke="#ffb74d"/>
+    <rect x="497" y="402" width="138" height="26" rx="6" fill="#ffffff" stroke="#ffcc80"/>
+    <text x="566" y="419" font-size="11.5" fill="#5c6775">Spiderpool</text>
+    <rect x="647" y="402" width="180" height="26" rx="6" fill="#ffffff" stroke="#ffcc80"/>
+    <text x="737" y="419" font-size="11.5" fill="#5c6775">MinIO / HwameiStor</text>
+    <rect x="839" y="402" width="105" height="26" rx="6" fill="#ffffff" stroke="#ffcc80"/>
+    <text x="891" y="419" font-size="11.5" fill="#5c6775">GPU Operator</text>
+    <rect x="497" y="434" width="447" height="26" rx="6" fill="#ffffff" stroke="#ffcc80"/>
+    <text x="720" y="451" font-size="11.5" fill="#5c6775">DRA / Kueue / KWOK</text>
+  </g>
+
+  <!-- Layer 4: Heterogeneous GPUs -->
+  <rect x="44" y="484" width="912" height="48" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="513" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#2e7d32">GPU Vendors</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" text-anchor="middle">
+    <rect x="210" y="494" width="118" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="269" y="512" fill="#1a2330">NVIDIA</text>
+    <rect x="336" y="494" width="118" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="395" y="512" fill="#1a2330">Ascend</text>
+    <rect x="462" y="494" width="118" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="521" y="512" fill="#1a2330">Iluvatar CoreX</text>
+    <rect x="588" y="494" width="118" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="647" y="512" fill="#1a2330">Enflame</text>
+    <rect x="714" y="494" width="118" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="773" y="512" fill="#1a2330">BIREN Tech</text>
+    <rect x="840" y="494" width="118" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="899" y="512" fill="#1a2330">···</text>
+  </g>
+
+  <!-- Layer 5: Infrastructure -->
+  <rect x="44" y="548" width="912" height="40" rx="10" fill="#eef2f6" stroke="#e0e6ee"/>
+  <text x="68" y="573" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#1a2330">Infra</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" text-anchor="middle">
+    <rect x="210" y="555" width="138" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="279" y="572" fill="#1a2330">Public Cloud</text>
+    <rect x="358" y="555" width="138" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="427" y="572" fill="#1a2330">Private Cloud</text>
+    <rect x="506" y="555" width="138" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="575" y="572" fill="#1a2330">Hybrid Cloud</text>
+    <rect x="654" y="555" width="138" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="723" y="572" fill="#1a2330">Xinchuang</text>
+    <rect x="802" y="555" width="138" height="26" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="871" y="572" fill="#1a2330">Edge</text>
+  </g>
+</svg>

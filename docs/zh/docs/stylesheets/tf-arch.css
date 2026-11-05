@@ -478,6 +478,7 @@ a.tf-hero-badge--tf:hover {
    .md-typeset img[src$="<file>.svg"], */
 .md-typeset img[src$="-modules.svg"],
 .md-typeset img[src$="hydra-arch.svg"],
+.md-typeset img[src$="baize-arch.svg"],
 .md-typeset img[src$="unifabric.svg"],
 .md-typeset img[src$="license-flow.svg"],
 .md-typeset img[src$="fdpractice-flow.svg"],
