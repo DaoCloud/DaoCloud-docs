@@ -19,7 +19,7 @@ In simple terms, ClawOS is the **control plane** and **governance plane** for ru
 
     ---
 
-    Create, view, edit, and delete OpenClaw instances in the console. Each instance corresponds to actual service resources running on cloud-native infrastructure such as Kubernetes or DCE. Operational impacts of modifying key configurations (images, resource specifications, models, API Keys) are clearly presented to users.
+    Create, view, edit, and delete Agent instances in the console. Each instance corresponds to actual service resources running on cloud-native infrastructure such as Kubernetes. Operational impacts of modifying key configurations (images, resource specifications, models, API Keys) are clearly presented to users.
 
     [:arrow_forward: Manage OpenClaw instances](../workspace/openclaw.md)
 
@@ -92,7 +92,7 @@ flowchart TB
 
 | Step | Role | Description |
 | ---- | ---- | ----------- |
-| [① Install ClawOS](install.md) | Platform Administrator | Install ClawOS components from offline packages or Helm, and integrate with DCE |
+| [① Install ClawOS](install.md) | Platform Administrator | Install ClawOS components from offline packages or Helm, and integrate with d.run or similar environments |
 | [② Permissions and network policy](../admin/network-manage.md) | Platform Administrator | Plan role boundaries and define internal services and external APIs that instances can access |
 | [③ Review and publish Skills](../admin/skillmanage-admin.md) | Platform Administrator | Review Skill content, publish to ClawHub, and distribute to teams by permission |
 | [④ Create an instance](quickstart.md) | Workspace User | Select cluster, namespace, image, and resources; configure models, API Keys, and messaging channels |
@@ -210,7 +210,7 @@ When dealing with dozens of PDF resumes in different formats, OpenClaw can autom
 
 !!! note
 
-    Resumes contain personally identifiable information (PII). DCE private deployment ensures that data never leaves the internal network and prevents resumes from being sent to external public cloud APIs.
+    Resumes contain personally identifiable information (PII). d.run private deployment ensures that data never leaves the internal network and prevents resumes from being sent to external public cloud APIs.
 
 ### Software Development Assistant
 
@@ -227,8 +227,8 @@ Package the entire workflow—"read documents → extract key data → validate 
 | One-Click Creation, Ready to Use | No manual environment configuration, model integration, or permission setup is required. The system automatically creates sandboxes and injects Tokens, allowing business users to start immediately without IT involvement. |
 | Secure Sandbox Isolation | Each OpenClaw instance runs in an isolated container sandbox powered by DaoCloud's **zestU** kernel-level isolation technology. Even if compromised, the impact is strictly confined to the sandbox and cannot penetrate the internal network or tamper with host files. |
 | Persistent Data | `/openclaw/data` is stored on a persistent volume, so OpenClaw work files and FileBrowser uploads are retained when the Pod restarts or is recreated. Files saved in noVNC under `/home/node` or other directories are not guaranteed to persist. See the [FAQ](../faq.md). |
-| Secure and Controlled Model Access | All model requests are routed through the DCE AI Gateway and governed by security policies, without exposing public endpoints. Data and conversations remain protected within the platform. |
-| Full Backend Access | DCE provides both [SSH access and noVNC web access](quickstart.md#backend-debugging-for-openclaw), supporting full CLI operations and meeting advanced debugging and customization requirements. |
+| Secure and Controlled Model Access | All model requests are routed through the AI Gateway and governed by security policies, without exposing public endpoints. Data and conversations remain protected within the platform. |
+| Full Backend Access | Provides both [SSH access and noVNC web access](quickstart.md#backend-debugging-for-openclaw), supporting full CLI operations and meeting advanced debugging and customization requirements. |
 
 ## More Resources
 
@@ -241,14 +241,6 @@ Package the entire workflow—"read documents → extract key data → validate 
     Answers to common questions about instance creation and access, data persistence directories, Token quotas, and more.
 
     [:arrow_forward: View the FAQ](../faq.md)
-
-- :material-rocket-launch:{ .lg .middle } __Release Notes__
-
-    ---
-
-    Learn about feature updates and bug fixes in each ClawOS release.
-
-    [:arrow_forward: View release notes](release-notes.md)
 
 - :material-book-open-page-variant:{ .lg .middle } __Upgrade and Compatibility__
 

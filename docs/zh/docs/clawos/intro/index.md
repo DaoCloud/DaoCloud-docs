@@ -7,7 +7,7 @@ hide:
 
 ClawOS 是面向企业的 Agent 运行与治理平台，用于统一创建、管理、集成、观测和运维企业内部的 AI Agent。当前版本中，ClawOS 管理的 Agent 类型主要为 OpenClaw 实例；后续平台可扩展支持更多类型的企业 Agent。
 
-可以简单理解为：ClawOS 是企业内部运行 AI Agent 的**控制面**和**治理面**。它不是简单的 Agent 列表管理平台，而是把 Agent 纳入企业已有的权限、网络、协作、审计和运维体系，让 Agent 的执行能力在企业环境中**可管理、可审计、可集成、可规模化**地落地。
+可以简单理解为：ClawOS 是企业内部运行 AI Agent 的 **控制面** 和 **治理面** 。它不是简单的 Agent 列表管理平台，而是把 Agent 纳入企业已有的权限、网络、协作、审计和运维体系，让 Agent 的执行能力在企业环境中 **可管理、可审计、可集成、可规模化** 地落地。
 
 ![ClawOS 逻辑架构](../images/clawos-arch.svg)
 
@@ -19,7 +19,7 @@ ClawOS 是面向企业的 Agent 运行与治理平台，用于统一创建、管
 
     ---
 
-    在控制台中创建、查看、编辑、删除 OpenClaw 实例。每个实例对应实际运行的服务资源，运行在 Kubernetes、DCE 等云原生底座之上；修改镜像、资源规格、模型、API Key 等关键配置对运行的影响会清晰呈现给用户。
+    在控制台中增删改查智能体实例。每个实例对应实际运行的服务资源，运行在 Kubernetes 等云原生底座之上；修改镜像、资源规格、模型、API Key 等关键配置对运行的影响会清晰呈现给用户。
 
     [:arrow_forward: 管理 OpenClaw 实例](../workspace/openclaw.md)
 
@@ -92,7 +92,7 @@ flowchart TB
 
 | 步骤 | 角色 | 说明 |
 | --- | --- | --- |
-| [① 安装 ClawOS](install.md) | 平台管理员 | 通过离线包或 Helm 在线安装 ClawOS 组件，接入 DCE 环境 |
+| [① 安装 ClawOS](install.md) | 平台管理员 | 通过离线包或 Helm 在线安装 ClawOS 组件，接入 d.run 等环境 |
 | [② 权限与网络策略](../admin/network-manage.md) | 平台管理员 | 规划角色能力边界，定义实例可访问的内网服务与外部 API |
 | [③ 审核并上架 Skill](../admin/skillmanage-admin.md) | 平台管理员 | 审核 Skill 内容后上架到 ClawHub，按权限分发给各团队 |
 | [④ 创建实例](quickstart.md) | 工作空间用户 | 选择集群、命名空间、镜像与资源，配置模型、API Key 和消息渠道 |
@@ -214,7 +214,7 @@ flowchart TB
 
 !!! note
 
-    简历包含敏感个人信息（PII）。DCE 私有化部署确保数据不出内网，禁止将简历发送至外部公有云 API。
+    简历包含敏感个人信息（PII）。d.run 私有化部署确保数据不出内网，禁止将简历发送至外部公有云 API。
 
 ### 软件开发助手
 
@@ -233,8 +233,8 @@ flowchart TB
 | 一键创建，开箱即用 | 无需手动配置环境、接入模型和权限，系统自动完成沙箱创建和 Token 注入，业务人员无需 IT 介入即可立即使用 |
 | 安全沙箱隔离 | 每个 OpenClaw 实例运行在独立容器沙箱中，基于 DaoCloud **zestU** 内核级隔离技术，即使被攻破也严格限制在沙箱内，无法入侵内网或篡改宿主机文件 |
 | 数据持久化 | `/openclaw/data` 通过持久卷保存，OpenClaw 工作文件和 FileBrowser 上传的文件在 Pod 重启或重建后仍会保留。noVNC 中保存在 `/home/node` 等其他目录的文件不保证保留，详见[常见问题](../faq.md)。 |
-| 安全可控的模型访问 | 所有模型调用通过 DCE AI 网关统一转发并执行安全策略，不直接暴露公网，数据和对话在平台内受保护 |
-| 完整后台访问能力 | DCE 提供 [SSH 登录和 noVNC 网页访问](quickstart.md#openclaw_2) 两种方式，支持完整 CLI 操作，满足高级调试和自定义需求 |
+| 安全可控的模型访问 | 所有模型调用通过 AI 网关统一转发并执行安全策略，不直接暴露公网，数据和对话在平台内受保护 |
+| 完整后台访问能力 | 提供 [SSH 登录和 noVNC 网页访问](quickstart.md#openclaw_2) 两种方式，支持完整 CLI 操作，满足高级调试和自定义需求 |
 
 ## 更多资源
 
@@ -247,14 +247,6 @@ flowchart TB
     实例创建与访问、数据持久化目录、Token 配额等常见问题的解答。
 
     [:arrow_forward: 查看 FAQ](../faq.md)
-
-- :material-rocket-launch:{ .lg .middle } __Release Notes__
-
-    ---
-
-    了解 ClawOS 各版本的功能更新与缺陷修复。
-
-    [:arrow_forward: 查看 Release Notes](release-notes.md)
 
 - :material-book-open-page-variant:{ .lg .middle } __升级与兼容性__
 
