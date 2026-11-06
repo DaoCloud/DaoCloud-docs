@@ -100,6 +100,7 @@ flowchart TB
         C["③ Prepare datasets<br/>Code / data / output"] --> D["④ Notebook dev<br/>JupyterLab · CodeServer"] --> E["⑤ Training jobs<br/>PyTorch · Tensorflow · MPI"] --> F["⑥ Inference services<br/>Triton · vLLM"]
     end
     OAM -->|Allocate to workspaces| DEV
+
     click A href "../oam/resource/create/"
     click B href "../oam/queue/create/"
     click C href "../developer/dataset/"

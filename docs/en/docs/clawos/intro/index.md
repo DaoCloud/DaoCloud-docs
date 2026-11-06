@@ -81,6 +81,7 @@ flowchart TB
         D["④ Create an instance<br/>Model · API Key · resources"] --> E["⑤ Access & debug<br/>OpenClaw · noVNC · CLI"] --> F["⑥ Integrate channels<br/>Feishu · Teams"] --> G["⑦ Monitor usage<br/>Token · calls · errors"]
     end
     ADMIN -->|Open workspaces after the platform is ready| WS
+
     click A href "install/"
     click B href "../admin/network-manage/"
     click C href "../admin/skillmanage-admin/"

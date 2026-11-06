@@ -81,6 +81,7 @@ flowchart TB
         C["③ 准备数据集<br/>代码 / 数据 / 输出"] --> D["④ Notebook 开发<br/>JupyterLab · CodeServer"] --> E["⑤ 提交训练任务<br/>PyTorch · Tensorflow · MPI"] --> F["⑥ 部署模型服务<br/>Triton · vLLM"]
     end
     OAM -->|算力分配到工作空间| DEV
+
     click A href "../oam/resource/create/"
     click B href "../oam/queue/create/"
     click C href "../developer/dataset/"

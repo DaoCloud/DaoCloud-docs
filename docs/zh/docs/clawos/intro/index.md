@@ -81,6 +81,7 @@ flowchart TB
         D["④ 创建实例<br/>模型 · API Key · 资源"] --> E["⑤ 访问与调试<br/>OpenClaw · noVNC · CLI"] --> F["⑥ 接入消息渠道<br/>飞书 · Teams"] --> G["⑦ 观测用量<br/>Token · 调用 · 错误率"]
     end
     ADMIN -->|平台就绪后开放工作空间| WS
+
     click A href "install/"
     click B href "../admin/network-manage/"
     click C href "../admin/skillmanage-admin/"
