@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
+  <title id="title">Insight Observability Architecture</title>
+  <desc id="desc">Insight observability architecture from top to bottom: observed targets (DCE clusters, OpenShift clusters, nodes, containers and workloads, application services, K8s events); unified collection via insight-agent (metrics Prometheus, logs Fluent Bit, traces OpenTelemetry, events); the Insight observability platform (visualization and query: dashboards, infrastructure, metric query, log query, events and probes; distributed tracing: service topology, services, traces, remote sampling; alert center: alert rules, alert templates, message templates, silence and inhibition, notification config); notification channels (email, WeChat Work, DingTalk, Webhook, SMS).</desc>
+  <style>
+    /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
+    @media (prefers-color-scheme: dark) {
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      /* surfaces */
+      [fill="#ffffff"]:not([x="0.5"]) { fill: #232936; }
+      [fill="#f5f7fa"] { fill: #1e2530; }
+      [fill="#f8fafc"] { fill: #1a212c; }
+      [fill="#eef2f6"] { fill: #232b38; }
+      [fill="#e8f3fd"] { fill: #1c2838; }
+      [fill="#e6f7ec"] { fill: #1b2c22; }
+      [fill="#fff3e0"] { fill: #2b2519; }
+      /* text */
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#6b7688"] { fill: #8b95a5; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#2e7d32"] { fill: #81c784; }
+      [fill="#e65100"] { fill: #ffb74d; }
+      [fill="#9aa8bc"] { fill: #8291a8; }
+      /* strokes */
+      [stroke="#e0e6ee"] { stroke: #2e3540; }
+      [stroke="#e6eaf1"] { stroke: #2e3540; }
+      [stroke="#cfd8e3"] { stroke: #3a4450; }
+      [stroke="#90caf9"] { stroke: #2c4a6e; }
+      [stroke="#81c784"] { stroke: #2c5940; }
+      [stroke="#ffb74d"] { stroke: #5c4a26; }
+      /* accent bars */
+      [fill="#2196f3"] { fill: #42a5f5; }
+      [fill="#00c853"] { fill: #4caf50; }
+      [fill="#ff9800"] { fill: #ffb74d; }
+    }
+  </style>
+
+  <rect x="0.5" y="0.5" width="999" height="619" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
+
+  <!-- Title -->
+  <text x="500" text-anchor="middle" y="40" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="600" fill="#1a2330">Insight Observability Architecture</text>
+  <text x="500" text-anchor="middle" y="62" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" fill="#6b7688">Unified collection of metrics · logs · traces — multi-dimensional alerting and visualization</text>
+
+  <!-- Layer 1: Observed targets -->
+  <rect x="44" y="80" width="912" height="58" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="106" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">Observed</text>
+  <text x="68" y="126" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">Targets</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="middle">
+    <rect x="150" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="214" y="113" fill="#1a2330">DCE Clusters</text>
+    <rect x="286" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="350" y="113" fill="#1a2330">OpenShift</text>
+    <rect x="422" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="486" y="113" fill="#1a2330">Nodes</text>
+    <rect x="558" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="622" y="113" fill="#1a2330" font-size="11.5">Containers &amp; Workloads</text>
+    <rect x="694" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="758" y="113" fill="#1a2330">Applications</text>
+    <rect x="830" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="894" y="113" fill="#1a2330">K8s Events</text>
+  </g>
+
+  <!-- Down arrows -->
+  <g fill="#9aa8bc">
+    <path d="M 300 142 L 316 142 L 308 154 Z"/>
+    <path d="M 492 142 L 508 142 L 500 154 Z"/>
+    <path d="M 684 142 L 700 142 L 692 154 Z"/>
+  </g>
+
+  <!-- Layer 2: Unified collection -->
+  <rect x="44" y="160" width="912" height="58" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="184" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">Unified</text>
+  <text x="68" y="204" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#6b7688">insight-agent</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="middle">
+    <rect x="150" y="172" width="190" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="245" y="193" fill="#1a2330">Metrics Prometheus</text>
+    <rect x="356" y="172" width="190" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="451" y="193" fill="#1a2330">Logs Fluent Bit</text>
+    <rect x="562" y="172" width="190" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="657" y="193" fill="#1a2330" font-size="11.5">Traces OpenTelemetry</text>
+    <rect x="768" y="172" width="190" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="863" y="193" fill="#1a2330">Events Kubernetes</text>
+  </g>
+
+  <!-- Down arrow -->
+  <g fill="#9aa8bc">
+    <path d="M 492 222 L 508 222 L 500 234 Z"/>
+  </g>
+
+  <!-- Platform banner -->
+  <rect x="44" y="242" width="912" height="32" rx="8" fill="#1976d2"/>
+  <text x="500" text-anchor="middle" y="263" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="700" fill="#ffffff">Insight Observability Platform</text>
+
+  <!-- Layer 3: Platform capabilities -->
+  <rect x="44" y="290" width="912" height="240" rx="12" fill="#f8fafc" stroke="#e0e6ee"/>
+
+  <!-- Visualization & Query (blue) -->
+  <rect x="60" y="306" width="5" height="42" rx="2" fill="#2196f3"/>
+  <text x="74" y="322" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1565c0">Visualization</text>
+  <text x="74" y="342" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1565c0">&amp; Query</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle">
+    <rect x="200" y="298" width="144" height="58" rx="10" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="272" y="322" font-size="13" font-weight="600" fill="#1565c0">Dashboards</text>
+    <text x="272" y="342" font-size="11.5" fill="#5c6775">Grafana · import</text>
+    <rect x="352" y="298" width="144" height="58" rx="10" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="424" y="322" font-size="13" font-weight="600" fill="#1565c0">Infrastructure</text>
+    <text x="424" y="342" font-size="11.5" fill="#5c6775">Cluster · Node · Pod</text>
+    <rect x="504" y="298" width="144" height="58" rx="10" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="576" y="322" font-size="13" font-weight="600" fill="#1565c0">Metric Query</text>
+    <text x="576" y="342" font-size="11.5" fill="#5c6775">PromQL · custom</text>
+    <rect x="656" y="298" width="144" height="58" rx="10" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="728" y="322" font-size="13" font-weight="600" fill="#1565c0">Log Query</text>
+    <text x="728" y="342" font-size="11.5" fill="#5c6775">Lucene · context</text>
+    <rect x="808" y="298" width="144" height="58" rx="10" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="880" y="322" font-size="13" font-weight="600" fill="#1565c0">Events &amp; Probes</text>
+    <text x="880" y="342" font-size="11.5" fill="#5c6775">black-box probing</text>
+  </g>
+
+  <!-- Tracing (green) -->
+  <rect x="60" y="380" width="5" height="42" rx="2" fill="#00c853"/>
+  <text x="74" y="396" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#2e7d32">Distributed</text>
+  <text x="74" y="416" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#2e7d32">Tracing</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle">
+    <rect x="200" y="372" width="181" height="58" rx="10" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="290" y="396" font-size="13" font-weight="600" fill="#2e7d32">Service Topology</text>
+    <text x="290" y="416" font-size="11.5" fill="#5c6775">calls · traffic direction</text>
+    <rect x="389" y="372" width="181" height="58" rx="10" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="479" y="396" font-size="13" font-weight="600" fill="#2e7d32">Services</text>
+    <text x="479" y="416" font-size="11.5" fill="#5c6775">throughput · error · latency</text>
+    <rect x="578" y="372" width="181" height="58" rx="10" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="668" y="396" font-size="13" font-weight="600" fill="#2e7d32">Traces</text>
+    <text x="668" y="416" font-size="11.5" fill="#5c6775">span analysis · log context</text>
+    <rect x="767" y="372" width="181" height="58" rx="10" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="857" y="396" font-size="13" font-weight="600" fill="#2e7d32">Remote Sampling</text>
+    <text x="857" y="416" font-size="11.5" fill="#5c6775">tail-based sampling</text>
+  </g>
+
+  <!-- Alert Center (orange) -->
+  <rect x="60" y="454" width="5" height="42" rx="2" fill="#ff9800"/>
+  <text x="74" y="481" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#e65100">Alert Center</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle">
+    <rect x="200" y="446" width="144" height="58" rx="10" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="272" y="470" font-size="13" font-weight="600" fill="#e65100">Alert Rules</text>
+    <text x="272" y="490" font-size="11.5" fill="#5c6775">PromQL · 100+ built-in</text>
+    <rect x="352" y="446" width="144" height="58" rx="10" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="424" y="470" font-size="13" font-weight="600" fill="#e65100">Alert Templates</text>
+    <text x="424" y="490" font-size="11.5" fill="#5c6775">template-based</text>
+    <rect x="504" y="446" width="144" height="58" rx="10" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="576" y="470" font-size="13" font-weight="600" fill="#e65100">Message Templates</text>
+    <text x="576" y="490" font-size="11.5" fill="#5c6775">customizable</text>
+    <rect x="656" y="446" width="144" height="58" rx="10" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="728" y="470" font-size="13" font-weight="600" fill="#e65100">Silence &amp; Inhibition</text>
+    <text x="728" y="490" font-size="11.5" fill="#5c6775">time windows</text>
+    <rect x="808" y="446" width="144" height="58" rx="10" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="880" y="470" font-size="13" font-weight="600" fill="#e65100">Notifications</text>
+    <text x="880" y="490" font-size="11.5" fill="#5c6775">multi-channel</text>
+  </g>
+
+  <!-- Down arrows -->
+  <g fill="#9aa8bc">
+    <path d="M 300 534 L 316 534 L 308 546 Z"/>
+    <path d="M 492 534 L 508 534 L 500 546 Z"/>
+    <path d="M 684 534 L 700 534 L 692 546 Z"/>
+  </g>
+
+  <!-- Layer 4: Notification channels -->
+  <rect x="44" y="552" width="912" height="48" rx="10" fill="#eef2f6" stroke="#e0e6ee"/>
+  <text x="68" y="573" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">Notification</text>
+  <text x="68" y="591" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">Channels</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="middle">
+    <rect x="150" y="560" width="128" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="214" y="578" fill="#1a2330">Email</text>
+    <rect x="286" y="560" width="128" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="350" y="578" fill="#1a2330">WeChat Work</text>
+    <rect x="422" y="560" width="128" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="486" y="578" fill="#1a2330">DingTalk</text>
+    <rect x="558" y="560" width="128" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="622" y="578" fill="#1a2330">Webhook</text>
+    <rect x="694" y="560" width="128" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="758" y="578" fill="#1a2330">SMS</text>
+    <rect x="830" y="560" width="128" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="894" y="578" fill="#1a2330">···</text>
+  </g>
+</svg>

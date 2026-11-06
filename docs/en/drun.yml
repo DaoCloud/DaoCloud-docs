@@ -678,6 +678,7 @@ nav:
                       - Customize Insight Component Scheduling Policy: drun/insight/quickstart/install/component-scheduling.md
               - Start Observing:
                   - OpenTelemetry Observing:
+                      - drun/insight/quickstart/otel/index.md
                       - Use OTel for Application Observability: drun/insight/quickstart/otel/otel.md
                       - Operator Non-intrusive Application Enhancement: drun/insight/quickstart/otel/operator.md
                       - Send Trace Data to Insight: drun/insight/quickstart/otel/send_tracing_to_insight.md
@@ -685,10 +686,12 @@ nav:
                   - Java Application Observing:
                       - drun/insight/quickstart/otel/java/index.md
                       - Use JMX Exporter to Expose JVM Metrics: drun/insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md
+                      - drun/insight/quickstart/otel/java/jvm-monitor/index.md
                       - Use OTel Java Agent to Expose JVM Metrics: drun/insight/quickstart/otel/java/jvm-monitor/otel-java-agent.md
                       - Connect Java Application with Existing JVM Metrics to Insight: drun/insight/quickstart/otel/java/jvm-monitor/legacy-jvm.md
                       - Write TraceId and SpanId to Java Application Logs: drun/insight/quickstart/otel/java/mdc.md
                   - Golang Application Observing:
+                      - drun/insight/quickstart/otel/golang/index.md
                       - OTel SDK Enhance Go Application: drun/insight/quickstart/otel/golang/golang.md
                       - Write TraceId and SpanId to Golang Application Logs: drun/insight/quickstart/otel/golang/traceid_logs.md
                   - Other Observability Integration:
@@ -696,10 +699,12 @@ nav:
                       - Use OTel to Receive SkyWalking Trace Data: drun/insight/best-practice/sw-to-otel.md
                       - Integrate Nginx Ingress Tracing: drun/insight/best-practice/ingress-otel.md
               - Dashboard:
+                  - drun/insight/user-guide/dashboard/index.md
                   - Overview: drun/insight/user-guide/dashboard/overview.md
                   - Dashboard: drun/insight/user-guide/dashboard/dashboard.md
                   - Import Custom Dashboard: drun/insight/user-guide/dashboard/import-dashboard.md
               - Infrastructure:
+                  - drun/insight/user-guide/infra/index.md
                   - Cluster Monitoring: drun/insight/user-guide/infra/cluster.md
                   - Node Monitoring: drun/insight/user-guide/infra/node.md
                   - Namespace Monitoring: drun/insight/user-guide/infra/namespace.md
@@ -709,6 +714,7 @@ nav:
               - Metrics: drun/insight/user-guide/data-query/metric.md
               - Log: drun/insight/user-guide/data-query/log.md
               - Tracing:
+                  - drun/insight/user-guide/trace/index.md
                   - Service Topology: drun/insight/user-guide/trace/topology.md
                   - Service: drun/insight/user-guide/trace/service.md
                   - Trace: drun/insight/user-guide/trace/trace.md
@@ -722,16 +728,19 @@ nav:
                   - Alerting Silence: drun/insight/user-guide/alert-center/silent.md
                   - Alerting Inhibition: drun/insight/user-guide/alert-center/inhibition.md
               - Data Collection:
+                  - drun/insight/user-guide/collection-manag/index.md
                   - Collection Management: drun/insight/user-guide/collection-manag/collection-manag.md
                   - Service Monitoring: drun/insight/user-guide/collection-manag/service-monitor.md
                   - insight-agent Collection Component Status: drun/insight/user-guide/collection-manag/agent-status.md
               - System Configuration:
+                  - drun/insight/user-guide/system-config/index.md
                   - System Components: drun/insight/user-guide/system-config/system-component.md
                   - System Configuration: drun/insight/user-guide/system-config/system-config.md
                   - Modify Configuration: drun/insight/user-guide/system-config/modify-config.md
               - Network Monitoring:
                   - Integrate DeepFlow: drun/insight/best-practice/integration_deepflow.md
               - Reference:
+                  - drun/insight/reference/index.md
                   - Observability Reference Metrics: drun/insight/reference/used-metric-in-insight.md
                   - Insight Grafana Persist to Database: drun/insight/best-practice/grafana-use-db.md
                   - Custom Probe Method: drun/insight/user-guide/collection-manag/probe-module.md
@@ -747,10 +756,12 @@ nav:
                   - Handle Large-scale Logs with Kafka and Elasticsearch Streaming Architecture: drun/insight/best-practice/insight-kafka.md
                   - Enable Trace Metrics Alerting Rules and Custom Trace Alerting Rules: drun/insight/reference/span-metrics-alert.md
               - Compatibility Testing:
+                  - drun/insight/compati-test/index.md
                   - Kubernetes Compatibility Testing: drun/insight/compati-test/k8s-compatibility.md
                   - Rancher Compatibility Testing: drun/insight/compati-test/rancher-compatibility.md
                   - Openshift Compatibility Testing: drun/insight/compati-test/ocp-compatibility.md
               - FAQs:
+                  - drun/insight/faq/index.md
                   - Trace Data Clock Skew: drun/insight/faq/traceclockskew.md
                   - Log Collection Troubleshooting Guide: drun/insight/best-practice/debug-log.md
                   - Trace Collection Troubleshooting Guide: drun/insight/best-practice/debug-trace.md

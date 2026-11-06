@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
+  <title id="title">可观测模块逻辑架构</title>
+  <desc id="desc">可观测模块逻辑架构自上而下：被观测对象（DCE 集群、OpenShift 集群、节点、容器与工作负载、应用服务、K8s 事件）；统一采集 insight-agent（指标 Prometheus、日志 Fluent Bit、链路 OpenTelemetry、事件 Events）；Insight 可观测平台（可视化与查询：仪表盘、基础设施、指标查询、日志查询、事件与拨测；链路追踪：服务拓扑、服务列表、调用链、远程采样；告警中心：告警规则、告警模板、消息模板、静默与抑制、通知配置）；通知渠道（邮件、企业微信、钉钉、Webhook、短信）。</desc>
+  <style>
+    /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
+    @media (prefers-color-scheme: dark) {
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      /* surfaces */
+      [fill="#ffffff"]:not([x="0.5"]) { fill: #232936; }
+      [fill="#f5f7fa"] { fill: #1e2530; }
+      [fill="#f8fafc"] { fill: #1a212c; }
+      [fill="#eef2f6"] { fill: #232b38; }
+      [fill="#e8f3fd"] { fill: #1c2838; }
+      [fill="#e6f7ec"] { fill: #1b2c22; }
+      [fill="#fff3e0"] { fill: #2b2519; }
+      /* text */
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#6b7688"] { fill: #8b95a5; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#2e7d32"] { fill: #81c784; }
+      [fill="#e65100"] { fill: #ffb74d; }
+      [fill="#9aa8bc"] { fill: #8291a8; }
+      /* strokes */
+      [stroke="#e0e6ee"] { stroke: #2e3540; }
+      [stroke="#e6eaf1"] { stroke: #2e3540; }
+      [stroke="#cfd8e3"] { stroke: #3a4450; }
+      [stroke="#90caf9"] { stroke: #2c4a6e; }
+      [stroke="#81c784"] { stroke: #2c5940; }
+      [stroke="#ffb74d"] { stroke: #5c4a26; }
+      /* accent bars */
+      [fill="#2196f3"] { fill: #42a5f5; }
+      [fill="#00c853"] { fill: #4caf50; }
+      [fill="#ff9800"] { fill: #ffb74d; }
+    }
+  </style>
+
+  <rect x="0.5" y="0.5" width="999" height="619" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
+
+  <!-- 标题 -->
+  <text x="500" text-anchor="middle" y="40" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#1a2330">可观测模块逻辑架构</text>
+  <text x="500" text-anchor="middle" y="62" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#6b7688">指标 · 日志 · 链路统一采集 · 多维告警 · 数据可视化</text>
+
+  <!-- 第 1 层 被观测对象 -->
+  <rect x="44" y="80" width="912" height="58" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="114" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">被观测对象</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" text-anchor="middle">
+    <rect x="150" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="214" y="113" fill="#1a2330">DCE 集群</text>
+    <rect x="286" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="350" y="113" fill="#1a2330">OpenShift 集群</text>
+    <rect x="422" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="486" y="113" fill="#1a2330">节点</text>
+    <rect x="558" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="622" y="113" fill="#1a2330">容器与工作负载</text>
+    <rect x="694" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="758" y="113" fill="#1a2330">应用服务</text>
+    <rect x="830" y="92" width="128" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="894" y="113" fill="#1a2330">K8s 事件</text>
+  </g>
+
+  <!-- 下行箭头 -->
+  <g fill="#9aa8bc">
+    <path d="M 300 142 L 316 142 L 308 154 Z"/>
+    <path d="M 492 142 L 508 142 L 500 154 Z"/>
+    <path d="M 684 142 L 700 142 L 692 154 Z"/>
+  </g>
+
+  <!-- 第 2 层 统一采集 -->
+  <rect x="44" y="160" width="912" height="58" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="186" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">统一采集</text>
+  <text x="68" y="205" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#6b7688">insight-agent</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" text-anchor="middle">
+    <rect x="150" y="172" width="190" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="245" y="193" fill="#1a2330">指标 Prometheus</text>
+    <rect x="356" y="172" width="190" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="451" y="193" fill="#1a2330">日志 Fluent Bit</text>
+    <rect x="562" y="172" width="190" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="657" y="193" fill="#1a2330">链路 OpenTelemetry</text>
+    <rect x="768" y="172" width="190" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="863" y="193" fill="#1a2330">事件 Events</text>
+  </g>
+
+  <!-- 下行箭头 -->
+  <g fill="#9aa8bc">
+    <path d="M 492 222 L 508 222 L 500 234 Z"/>
+  </g>
+
+  <!-- 平台横幅 -->
+  <rect x="44" y="242" width="912" height="32" rx="8" fill="#1976d2"/>
+  <text x="500" text-anchor="middle" y="263" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14.5" font-weight="700" fill="#ffffff">Insight 可观测平台</text>
+
+  <!-- 第 3 层 平台能力 -->
+  <rect x="44" y="290" width="912" height="240" rx="12" fill="#f8fafc" stroke="#e0e6ee"/>
+
+  <!-- 可视化与查询（蓝） -->
+  <rect x="60" y="306" width="5" height="42" rx="2" fill="#2196f3"/>
+  <text x="74" y="333" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#1565c0">可视化与查询</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" text-anchor="middle">
+    <rect x="200" y="298" width="144" height="58" rx="10" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="272" y="322" font-size="13" font-weight="600" fill="#1565c0">仪表盘</text>
+    <text x="272" y="342" font-size="11.5" fill="#5c6775">Grafana 原生 · 导入</text>
+    <rect x="352" y="298" width="144" height="58" rx="10" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="424" y="322" font-size="13" font-weight="600" fill="#1565c0">基础设施</text>
+    <text x="424" y="342" font-size="11.5" fill="#5c6775">集群 · 节点 · 容器</text>
+    <rect x="504" y="298" width="144" height="58" rx="10" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="576" y="322" font-size="13" font-weight="600" fill="#1565c0">指标查询</text>
+    <text x="576" y="342" font-size="11.5" fill="#5c6775">PromQL · 自定义</text>
+    <rect x="656" y="298" width="144" height="58" rx="10" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="728" y="322" font-size="13" font-weight="600" fill="#1565c0">日志查询</text>
+    <text x="728" y="342" font-size="11.5" fill="#5c6775">Lucene · 上下文</text>
+    <rect x="808" y="298" width="144" height="58" rx="10" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="880" y="322" font-size="13" font-weight="600" fill="#1565c0">事件与拨测</text>
+    <text x="880" y="342" font-size="11.5" fill="#5c6775">黑盒监控</text>
+  </g>
+
+  <!-- 链路追踪（绿） -->
+  <rect x="60" y="380" width="5" height="42" rx="2" fill="#00c853"/>
+  <text x="74" y="407" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#2e7d32">链路追踪</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" text-anchor="middle">
+    <rect x="200" y="372" width="181" height="58" rx="10" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="290" y="396" font-size="13" font-weight="600" fill="#2e7d32">服务拓扑</text>
+    <text x="290" y="416" font-size="11.5" fill="#5c6775">调用关系 · 流量方向</text>
+    <rect x="389" y="372" width="181" height="58" rx="10" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="479" y="396" font-size="13" font-weight="600" fill="#2e7d32">服务列表</text>
+    <text x="479" y="416" font-size="11.5" fill="#5c6775">吞吐率 · 错误率 · 延时</text>
+    <rect x="578" y="372" width="181" height="58" rx="10" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="668" y="396" font-size="13" font-weight="600" fill="#2e7d32">调用链</text>
+    <text x="668" y="416" font-size="11.5" fill="#5c6775">Span 分析 · 关联日志</text>
+    <rect x="767" y="372" width="181" height="58" rx="10" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="857" y="396" font-size="13" font-weight="600" fill="#2e7d32">远程采样</text>
+    <text x="857" y="416" font-size="11.5" fill="#5c6775">Tail-based Sampling</text>
+  </g>
+
+  <!-- 告警中心（橙） -->
+  <rect x="60" y="454" width="5" height="42" rx="2" fill="#ff9800"/>
+  <text x="74" y="481" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#e65100">告警中心</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" text-anchor="middle">
+    <rect x="200" y="446" width="144" height="58" rx="10" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="272" y="470" font-size="13" font-weight="600" fill="#e65100">告警规则</text>
+    <text x="272" y="490" font-size="11.5" fill="#5c6775">PromQL · 100+ 内置</text>
+    <rect x="352" y="446" width="144" height="58" rx="10" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="424" y="470" font-size="13" font-weight="600" fill="#e65100">告警模板</text>
+    <text x="424" y="490" font-size="11.5" fill="#5c6775">模板创建策略</text>
+    <rect x="504" y="446" width="144" height="58" rx="10" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="576" y="470" font-size="13" font-weight="600" fill="#e65100">消息模板</text>
+    <text x="576" y="490" font-size="11.5" fill="#5c6775">自定义内容</text>
+    <rect x="656" y="446" width="144" height="58" rx="10" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="728" y="470" font-size="13" font-weight="600" fill="#e65100">静默与抑制</text>
+    <text x="728" y="490" font-size="11.5" fill="#5c6775">时段免打扰</text>
+    <rect x="808" y="446" width="144" height="58" rx="10" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="880" y="470" font-size="13" font-weight="600" fill="#e65100">通知配置</text>
+    <text x="880" y="490" font-size="11.5" fill="#5c6775">多渠道多对象</text>
+  </g>
+
+  <!-- 下行箭头 -->
+  <g fill="#9aa8bc">
+    <path d="M 300 534 L 316 534 L 308 546 Z"/>
+    <path d="M 492 534 L 508 534 L 500 546 Z"/>
+    <path d="M 684 534 L 700 534 L 692 546 Z"/>
+  </g>
+
+  <!-- 第 4 层 通知渠道 -->
+  <rect x="44" y="552" width="912" height="48" rx="10" fill="#eef2f6" stroke="#e0e6ee"/>
+  <text x="68" y="581" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">通知渠道</text>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" text-anchor="middle">
+    <rect x="150" y="560" width="128" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="214" y="578" fill="#1a2330">邮件</text>
+    <rect x="286" y="560" width="128" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="350" y="578" fill="#1a2330">企业微信</text>
+    <rect x="422" y="560" width="128" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="486" y="578" fill="#1a2330">钉钉</text>
+    <rect x="558" y="560" width="128" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="622" y="578" fill="#1a2330">Webhook</text>
+    <rect x="694" y="560" width="128" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="758" y="578" fill="#1a2330">短信</text>
+    <rect x="830" y="560" width="128" height="28" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="894" y="578" fill="#1a2330">···</text>
+  </g>
+</svg>
