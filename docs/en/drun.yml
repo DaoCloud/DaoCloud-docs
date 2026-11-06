@@ -780,6 +780,7 @@ nav:
                   - Release Notes: drun/ghippo/intro/release-notes.md
                   - FAQs: drun/ghippo/intro/faq.md
               - Install, Login and Upgrade:
+                  - drun/ghippo/install/index.md
                   - Offline Upgrade Global Management: drun/ghippo/install/offline-install.md
                   - Custom Reverse Proxy Server Address: drun/ghippo/install/reverse-proxy.md
                   - Enable Folder/WS Isolation Mode: drun/ghippo/install/user-isolation.md
@@ -787,6 +788,7 @@ nav:
                   - National Crypto Gateway: drun/ghippo/install/gm-gateway.md
                   - Login: drun/ghippo/install/login.md
               - User & Access Control:
+                  - drun/ghippo/user-guide/access-control/index.md
                   - What is User & Access Control: drun/ghippo/user-guide/access-control/iam.md
                   - Users: drun/ghippo/user-guide/access-control/user.md
                   - User Groups: drun/ghippo/user-guide/access-control/group.md
@@ -803,7 +805,8 @@ nav:
                       - drun/ghippo/user-guide/access-control/docking.md
                       - Webhook: drun/ghippo/user-guide/access-control/webhook.md
               - Workspaces & Hierarchy:
-                  - drun/ghippo/user-guide/workspace/ws-folder.md
+                  - drun/ghippo/user-guide/workspace/index.md
+                  - Workspace and Folder: drun/ghippo/user-guide/workspace/ws-folder.md
                   - Create and Delete Workspaces: drun/ghippo/user-guide/workspace/workspace.md
                   - Workspace Permissions: drun/ghippo/user-guide/workspace/ws-permission.md
                   - Create and Delete Folders: drun/ghippo/user-guide/workspace/folders.md
@@ -812,27 +815,32 @@ nav:
                   - Difference Between Resource Groups and Shared Resources: drun/ghippo/user-guide/workspace/res-gp-and-shared-res.md
                   - Resource Binding Permission Notes: drun/ghippo/user-guide/workspace/wsbind-permission.md
               - Audit Logs:
+                  - drun/ghippo/user-guide/audit/index.md
                   - Collect K8s Audit Logs: drun/ghippo/user-guide/audit/open-audit.md
                   - Generate K8s Audit Logs: drun/ghippo/user-guide/audit/open-k8s-audit.md
                   - Download and Export Audit Logs: drun/ghippo/user-guide/audit/audit-log.md
                   - Get Audit Log Source IP: drun/ghippo/user-guide/audit/source-ip.md
               - Platform Settings:
+                  - drun/ghippo/user-guide/platform-setting/index.md
                   - Security Policy: drun/ghippo/user-guide/platform-setting/security.md
                   - Mail Server Settings: drun/ghippo/user-guide/platform-setting/mail-server.md
                   - Appearance Customization: drun/ghippo/user-guide/platform-setting/appearance.md
                   - About Platform: drun/ghippo/user-guide/platform-setting/about.md
                   - Password Reset: drun/ghippo/user-guide/password.md
               - Personal Center:
+                  - drun/ghippo/user-guide/personal-center/index.md
                   - Security Settings: drun/ghippo/user-guide/personal-center/security-setting.md
                   - Two-Factor Authentication: drun/ghippo/user-guide/personal-center/2fa.md
                   - Access Token: drun/ghippo/user-guide/personal-center/accesstoken.md
                   - SSH Public Key: drun/ghippo/user-guide/personal-center/ssh-key.md
                   - Language Settings: drun/ghippo/user-guide/personal-center/language.md
               - Module Permission Notes:
+                  - drun/ghippo/permissions/index.md
                   - Container Management Permission Notes: drun/ghippo/permissions/kpanda.md
                   - AI Lab Permission Notes: drun/ghippo/permissions/baize.md
                   - ClawOS Permission Notes: drun/ghippo/permissions/clawos.md
               - Best Practices:
+                  - drun/ghippo/best-practice/index.md
                   - Workspace Best Practices: drun/ghippo/best-practice/ws-best-practice.md
                   - Workspace Bind Namespace: drun/ghippo/best-practice/ws-to-ns.md
                   - Single Cluster for Multiple Workspaces: drun/ghippo/best-practice/cluster-for-multiws.md
@@ -840,10 +848,11 @@ nav:
                   - Regular User Authorization Planning: drun/ghippo/best-practice/authz-plan.md
                   - Large Enterprise Architecture Management: drun/ghippo/best-practice/super-group.md
                   - GProduct Integration with Global Management:
-                      - drun/ghippo/best-practice/gproduct/intro.md
+                      - drun/ghippo/best-practice/gproduct/index.md
                       - Integrate Navigation Bar: drun/ghippo/best-practice/gproduct/nav.md
                       - Integrate Routing and Login Authentication: drun/ghippo/best-practice/gproduct/route-auth.md
                   - Integration (OEM IN/OUT):
+                      - drun/ghippo/best-practice/oem/index.md
                       - OEM IN (Integrate Customer System): drun/ghippo/best-practice/oem/oem-in.md
                       - OEM OUT (Integrate into Customer System): drun/ghippo/best-practice/oem/oem-out.md
                       - Customize and Connect IdP: drun/ghippo/best-practice/oem/custom-idp.md

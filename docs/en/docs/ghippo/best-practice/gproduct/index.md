@@ -1,6 +1,8 @@
 ---
 hide:
   - toc
+MTPE: windsonsea
+date: 2026-11-06
 ---
 
 # How GProduct connects to global management

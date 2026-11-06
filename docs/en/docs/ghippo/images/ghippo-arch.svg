@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+  <title id="title">Global Management Architecture</title>
+  <desc id="desc">Global Management architecture top-down: access entry (console, unified module entry, SSO login, 2FA, access token); user and access control (users, groups, roles, custom roles, identity providers); workspaces and folders (folders and hierarchy, workspaces, resource binding and authorization, quota, shared resources); platform services (audit logs: operation, K8s audit, module audit; platform settings: security policy, mail server, appearance, license; reports and billing: usage report, billing, report recalculation; personal center: 2FA, access token, SSH key, language).</desc>
+  <style>
+    /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
+    @media (prefers-color-scheme: dark) {
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      /* surfaces */
+      [fill="#ffffff"]:not([x="0.5"]) { fill: #232936; }
+      [fill="#f5f7fa"] { fill: #1e2530; }
+      [fill="#f8fafc"] { fill: #1a212c; }
+      [fill="#e8f3fd"] { fill: #1c2838; }
+      [fill="#e6f7ec"] { fill: #1b2c22; }
+      [fill="#fff3e0"] { fill: #2b2519; }
+      /* text */
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#6b7688"] { fill: #8b95a5; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#2e7d32"] { fill: #81c784; }
+      [fill="#e65100"] { fill: #ffb74d; }
+      [fill="#9aa8bc"] { fill: #8291a8; }
+      /* strokes */
+      [stroke="#e0e6ee"] { stroke: #2e3540; }
+      [stroke="#e6eaf1"] { stroke: #2e3540; }
+      [stroke="#cfd8e3"] { stroke: #3a4450; }
+      [stroke="#90caf9"] { stroke: #2c4a6e; }
+      [stroke="#81c784"] { stroke: #2c5940; }
+      [stroke="#ffb74d"] { stroke: #5c4a26; }
+      /* accent bars */
+      [fill="#2196f3"] { fill: #42a5f5; }
+      [fill="#00c853"] { fill: #4caf50; }
+      [fill="#ff9800"] { fill: #ffb74d; }
+    }
+  </style>
+
+  <rect x="0.5" y="0.5" width="999" height="599" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
+
+  <!-- Title -->
+  <text x="500" text-anchor="middle" y="40" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="600" fill="#1a2330">Global Management Architecture</text>
+  <text x="500" text-anchor="middle" y="62" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" fill="#6b7688">Unified Identity · Access Control · Resource Isolation · Audit &amp; Personalization</text>
+
+  <!-- Layer 1 access entry -->
+  <rect x="44" y="80" width="912" height="58" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="114" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">Access Entry</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="middle">
+    <rect x="150" y="92" width="150" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="225" y="113" fill="#1a2330">Console</text>
+    <rect x="308" y="92" width="150" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="383" y="113" fill="#1a2330">Unified Module Entry</text>
+    <rect x="466" y="92" width="150" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="541" y="113" fill="#1a2330">SSO Login</text>
+    <rect x="624" y="92" width="150" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="699" y="113" fill="#1a2330">Two-Factor Auth</text>
+    <rect x="782" y="92" width="150" height="34" rx="7" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="857" y="113" fill="#1a2330">Access Token</text>
+  </g>
+
+  <!-- arrows -->
+  <g fill="#9aa8bc">
+    <path d="M 375 142 L 391 142 L 383 154 Z"/>
+    <path d="M 533 142 L 549 142 L 541 154 Z"/>
+    <path d="M 691 142 L 707 142 L 699 154 Z"/>
+  </g>
+
+  <!-- Layer 2 access control -->
+  <rect x="44" y="160" width="912" height="58" rx="10" fill="#f5f7fa" stroke="#e0e6ee"/>
+  <text x="68" y="186" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">Access Control</text>
+  <text x="68" y="205" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#6b7688">IAM · IdP</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="middle">
+    <rect x="210" y="172" width="136" height="34" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="278" y="193" fill="#1565c0">Users</text>
+    <rect x="356" y="172" width="136" height="34" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="424" y="193" fill="#1565c0">Groups</text>
+    <rect x="502" y="172" width="136" height="34" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="570" y="193" fill="#1565c0">Roles</text>
+    <rect x="648" y="172" width="136" height="34" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="716" y="193" fill="#1565c0">Custom Roles</text>
+    <rect x="794" y="172" width="136" height="34" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="862" y="193" fill="#1565c0">Identity Providers</text>
+  </g>
+
+  <!-- arrow -->
+  <g fill="#9aa8bc">
+    <path d="M 492 222 L 508 222 L 500 234 Z"/>
+  </g>
+
+  <!-- banner -->
+  <rect x="44" y="242" width="912" height="32" rx="8" fill="#1976d2"/>
+  <text x="500" text-anchor="middle" y="263" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="700" fill="#ffffff">Global Management (Ghippo)</text>
+
+  <!-- Layer 3 workspaces and folders -->
+  <rect x="44" y="290" width="912" height="70" rx="10" fill="#f8fafc" stroke="#e0e6ee"/>
+  <text x="68" y="318" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">Workspaces</text>
+  <text x="68" y="336" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">&amp; Folders</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="middle">
+    <rect x="210" y="298" width="136" height="54" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="278" y="329" fill="#1565c0">Folders &amp; Hierarchy</text>
+    <rect x="356" y="298" width="136" height="54" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="424" y="329" fill="#1565c0">Workspaces</text>
+    <rect x="502" y="298" width="136" height="54" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="570" y="329" fill="#1565c0">Resource Binding</text>
+    <rect x="648" y="298" width="136" height="54" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="716" y="329" fill="#1565c0">Quota</text>
+    <rect x="794" y="298" width="136" height="54" rx="7" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="862" y="329" fill="#1565c0">Shared Resources</text>
+  </g>
+
+  <!-- arrow -->
+  <g fill="#9aa8bc">
+    <path d="M 492 364 L 508 364 L 500 376 Z"/>
+  </g>
+
+  <!-- Layer 4 platform services -->
+  <rect x="44" y="384" width="912" height="196" rx="12" fill="#f8fafc" stroke="#e0e6ee"/>
+  <text x="68" y="410" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1a2330">Platform Services</text>
+
+  <!-- Audit logs (blue) -->
+  <rect x="210" y="398" width="360" height="80" rx="10" fill="#ffffff" stroke="#cfd8e3"/>
+  <rect x="222" y="406" width="5" height="18" rx="2" fill="#2196f3"/>
+  <text x="236" y="420" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#1565c0">Audit Logs</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" text-anchor="middle">
+    <rect x="228" y="438" width="104" height="26" rx="6" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="280" y="455" fill="#1565c0">Operation</text>
+    <rect x="340" y="438" width="104" height="26" rx="6" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="392" y="455" fill="#1565c0">K8s Audit</text>
+    <rect x="452" y="438" width="104" height="26" rx="6" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="504" y="455" fill="#1565c0">Module Audit</text>
+  </g>
+
+  <!-- Platform settings (green) -->
+  <rect x="596" y="398" width="360" height="80" rx="10" fill="#ffffff" stroke="#cfd8e3"/>
+  <rect x="608" y="406" width="5" height="18" rx="2" fill="#00c853"/>
+  <text x="622" y="420" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#2e7d32">Platform Settings</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle">
+    <rect x="614" y="438" width="78" height="26" rx="6" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="653" y="455" fill="#2e7d32">Security</text>
+    <rect x="698" y="438" width="78" height="26" rx="6" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="737" y="455" fill="#2e7d32">Mail Server</text>
+    <rect x="782" y="438" width="78" height="26" rx="6" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="821" y="455" fill="#2e7d32">Appearance</text>
+    <rect x="866" y="438" width="78" height="26" rx="6" fill="#e6f7ec" stroke="#81c784"/>
+    <text x="905" y="455" fill="#2e7d32">License</text>
+  </g>
+
+  <!-- Reports and billing (orange) -->
+  <rect x="210" y="490" width="360" height="80" rx="10" fill="#ffffff" stroke="#cfd8e3"/>
+  <rect x="222" y="498" width="5" height="18" rx="2" fill="#ff9800"/>
+  <text x="236" y="512" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#e65100">Reports &amp; Billing</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle">
+    <rect x="228" y="530" width="104" height="26" rx="6" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="280" y="547" fill="#e65100">Usage Report</text>
+    <rect x="340" y="530" width="104" height="26" rx="6" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="392" y="547" fill="#e65100">Billing</text>
+    <rect x="452" y="530" width="104" height="26" rx="6" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="504" y="547" fill="#e65100">Recalculation</text>
+  </g>
+
+  <!-- Personal center (blue) -->
+  <rect x="596" y="490" width="360" height="80" rx="10" fill="#ffffff" stroke="#cfd8e3"/>
+  <rect x="608" y="498" width="5" height="18" rx="2" fill="#2196f3"/>
+  <text x="622" y="512" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#1565c0">Personal Center</text>
+  <g font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" text-anchor="middle">
+    <rect x="614" y="530" width="78" height="26" rx="6" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="653" y="547" fill="#1565c0">2FA</text>
+    <rect x="698" y="530" width="78" height="26" rx="6" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="737" y="547" fill="#1565c0">Access Token</text>
+    <rect x="782" y="530" width="78" height="26" rx="6" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="821" y="547" fill="#1565c0">SSH Key</text>
+    <rect x="866" y="530" width="78" height="26" rx="6" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="905" y="547" fill="#1565c0">Language</text>
+  </g>
+</svg>

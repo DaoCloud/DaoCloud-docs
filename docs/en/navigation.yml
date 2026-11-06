@@ -1361,6 +1361,7 @@ nav:
                   - Release Notes: ghippo/intro/release-notes.md
                   - FAQs: ghippo/intro/faq.md
               - Install, Login, and Upgrade:
+                  - ghippo/install/index.md
                   - Offline Upgrade: ghippo/install/offline-install.md
                   - Customize Reverse Proxy Address: ghippo/install/reverse-proxy.md
                   - Enable Isolation Mode between Folders/Workspaces: ghippo/install/user-isolation.md
@@ -1368,6 +1369,7 @@ nav:
                   - National Secret Gateway: ghippo/install/gm-gateway.md
                   - Login: ghippo/install/login.md
               - Access Control:
+                  - ghippo/user-guide/access-control/index.md
                   - Intro: ghippo/user-guide/access-control/iam.md
                   - Users: ghippo/user-guide/access-control/user.md
                   - Groups: ghippo/user-guide/access-control/group.md
@@ -1384,7 +1386,8 @@ nav:
                       - ghippo/user-guide/access-control/docking.md
                       - Webhook: ghippo/user-guide/access-control/webhook.md
               - Workspaces and Folders:
-                  - ghippo/user-guide/workspace/ws-folder.md
+                  - ghippo/user-guide/workspace/index.md
+                  - Workspace and Folder: ghippo/user-guide/workspace/ws-folder.md
                   - Create and Delete Workspace: ghippo/user-guide/workspace/workspace.md
                   - Workspace Permissions: ghippo/user-guide/workspace/ws-permission.md
                   - Create and Delete Folder: ghippo/user-guide/workspace/folders.md
@@ -1393,11 +1396,13 @@ nav:
                   - Compare Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
                   - Resource Binding Permission Instructions: ghippo/user-guide/workspace/wsbind-permission.md
               - Audit Logs:
+                  - ghippo/user-guide/audit/index.md
                   - Enable/Disable Collection of K8s Audit Logs: ghippo/user-guide/audit/open-audit.md
                   - Enable/Disable Output of K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
                   - Download and Export: ghippo/user-guide/audit/audit-log.md
                   - Get Source IP in Audit Logs: ghippo/user-guide/audit/source-ip.md
                   - Audit Items Summary:
+                      - ghippo/user-guide/audit/gproduct-audit/index.md
                       - Workbench Audit Items: ghippo/user-guide/audit/gproduct-audit/amamba.md
                       - Container Management Audit Items: ghippo/user-guide/audit/gproduct-audit/kpanda.md
                       - Multicloud Management Audit Items: ghippo/user-guide/audit/gproduct-audit/kairship.md
@@ -1419,18 +1424,21 @@ nav:
                   - Custom GPU Metrics Configuration: ghippo/user-guide/report-billing/gpu-metrics-config.md
                   - Historical Data Recalculation: ghippo/user-guide/report-billing/report-recalculation.md
               - Platform Settings:
+                  - ghippo/user-guide/platform-setting/index.md
                   - Security Policies: ghippo/user-guide/platform-setting/security.md
                   - Mail Server Settings: ghippo/user-guide/platform-setting/mail-server.md
                   - Custom Appearance: ghippo/user-guide/platform-setting/appearance.md
                   - About: ghippo/user-guide/platform-setting/about.md
                   - Reset Password: ghippo/user-guide/password.md
               - Personal Center:
+                  - ghippo/user-guide/personal-center/index.md
                   - Security Settings: ghippo/user-guide/personal-center/security-setting.md
                   - Two-Factor Authentication: ghippo/user-guide/personal-center/2fa.md
                   - Access Key: ghippo/user-guide/personal-center/accesstoken.md
                   - SSH Public Key: ghippo/user-guide/personal-center/ssh-key.md
                   - Language Settings: ghippo/user-guide/personal-center/language.md
               - Permissions:
+                  - ghippo/permissions/index.md
                   - Container Management Permissions: ghippo/permissions/kpanda.md
                   - Microservice Permissions: ghippo/permissions/skoala.md
                   - Workbench Permissions: ghippo/permissions/amamba.md
@@ -1439,6 +1447,7 @@ nav:
                   - AI Lab Permissions: ghippo/permissions/baize.md
                   - ClawOS Permissions: ghippo/permissions/clawos.md
               - Best Practices:
+                  - ghippo/best-practice/index.md
                   - Workspace Practices: ghippo/best-practice/ws-best-practice.md
                   - Bind a Workspace to Namespace: ghippo/best-practice/ws-to-ns.md
                   - Allocate a Cluster to Workspaces: ghippo/best-practice/cluster-for-multiws.md
@@ -1446,10 +1455,11 @@ nav:
                   - Normal Authorization Planning: ghippo/best-practice/authz-plan.md
                   - Architecture for Large Enterprises: ghippo/best-practice/super-group.md
                   - Docking with GProduct:
-                      - ghippo/best-practice/gproduct/intro.md
+                      - ghippo/best-practice/gproduct/index.md
                       - Join Nav Bar: ghippo/best-practice/gproduct/nav.md
                       - Join Ingress and Login Authentication: ghippo/best-practice/gproduct/route-auth.md
                   - OEM IN and OUT:
+                      - ghippo/best-practice/oem/index.md
                       - OEM IN: ghippo/best-practice/oem/oem-in.md
                       - OEM OUT: ghippo/best-practice/oem/oem-out.md
                       - Customize DCE to Sync IdP: ghippo/best-practice/oem/custom-idp.md
@@ -1639,3 +1649,4 @@ nav:
       - DaoCloud Icon Library: community/icons/index.md
       - Kubean Cluster Integration with Karpenter: native/knowledge/karpenter.md
   - DaoCloud Website: https://daocloud.io/
+

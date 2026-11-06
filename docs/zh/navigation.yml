@@ -1366,6 +1366,7 @@ nav:
                   - Release Notes: ghippo/intro/release-notes.md
                   - 常见问题 FAQ: ghippo/intro/faq.md
               - 安装、登录和升级:
+                  - ghippo/install/index.md
                   - 离线升级全局管理: ghippo/install/offline-install.md
                   - 自定义反向代理服务器地址: ghippo/install/reverse-proxy.md
                   - 开启Folder/WS的隔离模式: ghippo/install/user-isolation.md
@@ -1373,6 +1374,7 @@ nav:
                   - 国密网关: ghippo/install/gm-gateway.md
                   - 登录: ghippo/install/login.md
               - 用户与访问控制:
+                  - ghippo/user-guide/access-control/index.md
                   - 什么是用户与访问控制: ghippo/user-guide/access-control/iam.md
                   - 用户: ghippo/user-guide/access-control/user.md
                   - 用户组: ghippo/user-guide/access-control/group.md
@@ -1389,7 +1391,8 @@ nav:
                       - ghippo/user-guide/access-control/docking.md
                       - Webhook: ghippo/user-guide/access-control/webhook.md
               - 工作空间与层级:
-                  - ghippo/user-guide/workspace/ws-folder.md
+                  - ghippo/user-guide/workspace/index.md
+                  - 工作空间与层级: ghippo/user-guide/workspace/ws-folder.md
                   - 创建和删除工作空间: ghippo/user-guide/workspace/workspace.md
                   - 工作空间权限: ghippo/user-guide/workspace/ws-permission.md
                   - 创建和删除文件夹: ghippo/user-guide/workspace/folders.md
@@ -1398,11 +1401,13 @@ nav:
                   - 资源组与共享资源的区别: ghippo/user-guide/workspace/res-gp-and-shared-res.md
                   - 资源绑定权限说明: ghippo/user-guide/workspace/wsbind-permission.md
               - 审计日志:
+                  - ghippo/user-guide/audit/index.md
                   - 采集 K8s 审计日志: ghippo/user-guide/audit/open-audit.md
                   - 生成 K8s 审计日志: ghippo/user-guide/audit/open-k8s-audit.md
                   - 下载和导出审计日志: ghippo/user-guide/audit/audit-log.md
                   - 获取审计日志源IP: ghippo/user-guide/audit/source-ip.md
                   - 审计项汇总:
+                      - ghippo/user-guide/audit/gproduct-audit/index.md
                       - 应用工作台审计项: ghippo/user-guide/audit/gproduct-audit/amamba.md
                       - 容器管理审计项: ghippo/user-guide/audit/gproduct-audit/kpanda.md
                       - 多云编排审计项: ghippo/user-guide/audit/gproduct-audit/kairship.md
@@ -1424,18 +1429,21 @@ nav:
                   - GPU 指标自定义配置: ghippo/user-guide/report-billing/gpu-metrics-config.md
                   - 历史数据重算: ghippo/user-guide/report-billing/report-recalculation.md
               - 平台设置:
+                  - ghippo/user-guide/platform-setting/index.md
                   - 安全策略: ghippo/user-guide/platform-setting/security.md
                   - 邮箱服务器设置: ghippo/user-guide/platform-setting/mail-server.md
                   - 外观定制: ghippo/user-guide/platform-setting/appearance.md
                   - 关于平台: ghippo/user-guide/platform-setting/about.md
                   - 密码重置: ghippo/user-guide/password.md
               - 个人中心:
+                  - ghippo/user-guide/personal-center/index.md
                   - 安全设置: ghippo/user-guide/personal-center/security-setting.md
                   - 双因子认证: ghippo/user-guide/personal-center/2fa.md
                   - 访问密钥: ghippo/user-guide/personal-center/accesstoken.md
                   - SSH 公钥: ghippo/user-guide/personal-center/ssh-key.md
                   - 语言设置: ghippo/user-guide/personal-center/language.md
               - 各模块权限说明:
+                  - ghippo/permissions/index.md
                   - 容器管理权限说明: ghippo/permissions/kpanda.md
                   - 微服务引擎权限说明: ghippo/permissions/skoala.md
                   - 应用工作台权限说明: ghippo/permissions/amamba.md
@@ -1444,6 +1452,7 @@ nav:
                   - AI Lab 权限说明: ghippo/permissions/baize.md
                   - ClawOS 权限说明: ghippo/permissions/clawos.md
               - 最佳实践:
+                  - ghippo/best-practice/index.md
                   - 工作空间最佳实践: ghippo/best-practice/ws-best-practice.md
                   - 工作空间绑定命名空间: ghippo/best-practice/ws-to-ns.md
                   - 单集群分配给多个工作空间: ghippo/best-practice/cluster-for-multiws.md
@@ -1451,10 +1460,11 @@ nav:
                   - 普通用户授权规划: ghippo/best-practice/authz-plan.md
                   - 超大型企业的架构管理: ghippo/best-practice/super-group.md
                   - GProduct 对接全局管理:
-                      - ghippo/best-practice/gproduct/intro.md
+                      - ghippo/best-practice/gproduct/index.md
                       - 接入导航栏: ghippo/best-practice/gproduct/nav.md
                       - 接入路由和登录认证: ghippo/best-practice/gproduct/route-auth.md
                   - 集成与被集成(OEM IN/OUT):
+                      - ghippo/best-practice/oem/index.md
                       - OEM IN(客户系统集成到 DCE): ghippo/best-practice/oem/oem-in.md
                       - OEM OUT(DCE 集成到客户系统): ghippo/best-practice/oem/oem-out.md
                       - 定制 DCE 对接 IdP: ghippo/best-practice/oem/custom-idp.md
@@ -1672,3 +1682,4 @@ nav:
       - DaoCloud 开源图标库: community/icons/index.md
       - Kubean 集群集成 Karpenter AWS 弹性节点方案: native/knowledge/karpenter.md
   - DaoCloud 官网: https://daocloud.io/
+

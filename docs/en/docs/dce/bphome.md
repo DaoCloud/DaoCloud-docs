@@ -189,7 +189,7 @@ and maintain containerized applications more efficiently and stably.
     - [Bind Cross-Cluster Namespace to Workspace (Tenant)](../ghippo/best-practice/ws-to-ns.md)
     - [Allocate Single Cluster to Multiple Workspaces (Tenants)](../ghippo/best-practice/cluster-for-multiws.md)
     - [Architecture Management for Large Enterprises](../ghippo/best-practice/super-group.md)
-    - [GProduct Integration with Global Management](../ghippo/best-practice/gproduct/intro.md)
+    - [GProduct Integration with Global Management](../ghippo/best-practice/gproduct/index.md)
     - [OEM IN and OEM OUT](../ghippo/best-practice/oem/oem-in.md)
 
 - :material-slot-machine:{ .lg .middle } __AI Lab and Cloud Edge Collaboration__
