@@ -21,7 +21,7 @@ Global Management (Ghippo) is a comprehensive, user-centric service module that 
 
     Create and manage users, groups, and roles with flexible permissions. Supports identity providers such as OIDC, LDAP, and OAuth2.
 
-    [:arrow_forward: Access Control](../user-guide/access-control/global.md)
+    [:arrow_forward: Access Control](../user-guide/access-control/iam.md)
 
 - :material-view-grid-outline:{ .lg .middle } __Workspaces and Folders__
 

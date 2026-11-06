@@ -187,7 +187,7 @@ hide:
     - [工作空间(租户)绑定跨集群命名空间](../ghippo/best-practice/ws-to-ns.md)
     - [将单集群分配给多个工作空间(租户)](../ghippo/best-practice/cluster-for-multiws.md)
     - [超大型企业的架构管理](../ghippo/best-practice/super-group.md)
-    - [GProduct 对接全局管理](../ghippo/best-practice/gproduct/intro.md)
+    - [GProduct 对接全局管理](../ghippo/best-practice/gproduct/index.md)
     - [OEM IN 和 OEM OUT](../ghippo/best-practice/oem/oem-in.md)
 
 - :material-slot-machine:{ .lg .middle } [__AI Lab__](../baize/intro/index.md)和[__云边协同__](../kant/intro/index.md)

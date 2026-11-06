@@ -19,7 +19,7 @@ hide:
 
     创建并管理用户、用户组与角色，灵活配置权限，支持接入 OIDC、LDAP、OAuth2 等身份提供商。
 
-    [:arrow_forward: 用户与访问控制](../user-guide/access-control/global.md)
+    [:arrow_forward: 用户与访问控制](../user-guide/access-control/iam.md)
 
 - :material-view-grid-outline:{ .lg .middle } __工作空间与层级__
 
