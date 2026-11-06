@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc"> role="img" aria-labelledby="title desc">
   <title id="title">全局管理逻辑架构</title>
   <desc id="desc">全局管理逻辑架构自上而下：访问入口（控制台、模块统一入口、SSO 单点登录、2FA 双因子、个人令牌）；用户与访问控制（用户管理、用户组、角色、自定义角色、身份提供商）；工作空间与层级（层级与文件夹、工作空间、资源绑定与授权、资源配额、共享资源）；平台基础服务（审计日志：操作审计、K8s 审计、模块审计；平台设置：安全策略、邮件服务、外观定制、正版授权；报表与计费：使用报表、计费管理、报表重算；个人中心：双因子认证、AccessToken、SSH 密钥、语言偏好）。</desc>
   <style>
