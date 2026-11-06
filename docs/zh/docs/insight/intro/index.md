@@ -62,6 +62,7 @@ hide:
     管理 insight-agent 与指标、日志采集任务，自定义指标、日志、链路数据的保存时长。
 
     [:arrow_forward: 日志采集和查询](../user-guide/collection-manag/collection-manag.md)
+    [:arrow_forward: 系统配置与保存时长](../user-guide/system-config/index.md)
 
 </div>
 

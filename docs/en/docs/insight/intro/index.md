@@ -1,4 +1,6 @@
 ---
+hide:
+  - toc
 MTPE: windsonsea
 date: 2026-11-06
 ---
@@ -66,6 +68,7 @@ on metrics and logs, and provides a concise and clear visual management interfac
     Manage insight-agent and metric/log collection tasks, and customize the retention duration of metrics, logs, and traces.
 
     [:arrow_forward: Log collection and query](../user-guide/collection-manag/collection-manag.md)
+    [:arrow_forward: System configuration and retention](../user-guide/system-config/index.md)
 
 </div>
 
