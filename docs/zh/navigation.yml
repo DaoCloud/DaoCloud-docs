@@ -837,7 +837,6 @@ nav:
                   - Java 应用观测:
                       - insight/quickstart/otel/java/index.md
                       - 使用JMX Exporter暴露JVM监控指标: insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md
-                      - insight/quickstart/otel/java/jvm-monitor/index.md
                       - 使用OTel Java Agent暴露JVM监控指标: insight/quickstart/otel/java/jvm-monitor/otel-java-agent.md
                       - 已有JVM指标的Java应用对接可观测性: insight/quickstart/otel/java/jvm-monitor/legacy-jvm.md
                       - 将 TraceId 和 SpanId 写入 Java 应用日志: insight/quickstart/otel/java/mdc.md

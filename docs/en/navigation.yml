@@ -834,7 +834,6 @@ nav:
                   - Java Insight:
                       - insight/quickstart/otel/java/index.md
                       - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/otel/java/jvm-monitor/jmx-exporter.md
-                      - insight/quickstart/otel/java/jvm-monitor/index.md
                       - Use OTel Java Agent to Expose JVM Metrics: insight/quickstart/otel/java/jvm-monitor/otel-java-agent.md
                       - Java App with JVM Metrics Enables Insight: insight/quickstart/otel/java/jvm-monitor/legacy-jvm.md
                       - Writing TraceId and SpanId into Java Application Logs: insight/quickstart/otel/java/mdc.md
