@@ -741,6 +741,7 @@ nav:
                   - Release Notes: tf/ghippo/intro/release-notes.md
                   - FAQs: tf/ghippo/intro/faq.md
               - Install, Login and Upgrade:
+                  - tf/ghippo/install/index.md
                   - Offline Upgrade Global Management: tf/ghippo/install/offline-install.md
                   - Custom Reverse Proxy Server Address: tf/ghippo/install/reverse-proxy.md
                   - Enable Folder/WS Isolation Mode: tf/ghippo/install/user-isolation.md
@@ -748,6 +749,7 @@ nav:
                   - National Crypto Gateway: tf/ghippo/install/gm-gateway.md
                   - Login: tf/ghippo/install/login.md
               - User & Access Control:
+                  - tf/ghippo/user-guide/access-control/index.md
                   - What is User & Access Control: tf/ghippo/user-guide/access-control/iam.md
                   - Users: tf/ghippo/user-guide/access-control/user.md
                   - User Groups: tf/ghippo/user-guide/access-control/group.md
@@ -764,7 +766,8 @@ nav:
                       - tf/ghippo/user-guide/access-control/docking.md
                       - Webhook: tf/ghippo/user-guide/access-control/webhook.md
               - Workspaces & Hierarchy:
-                  - tf/ghippo/user-guide/workspace/ws-folder.md
+                  - tf/ghippo/user-guide/workspace/index.md
+                  - Workspace and Folder: tf/ghippo/user-guide/workspace/ws-folder.md
                   - Create and Delete Workspaces: tf/ghippo/user-guide/workspace/workspace.md
                   - Workspace Permissions: tf/ghippo/user-guide/workspace/ws-permission.md
                   - Create and Delete Folders: tf/ghippo/user-guide/workspace/folders.md
@@ -773,25 +776,30 @@ nav:
                   - Difference Between Resource Groups and Shared Resources: tf/ghippo/user-guide/workspace/res-gp-and-shared-res.md
                   - Resource Binding Permission Notes: tf/ghippo/user-guide/workspace/wsbind-permission.md
               - Audit Logs:
+                  - tf/ghippo/user-guide/audit/index.md
                   - Collect K8s Audit Logs: tf/ghippo/user-guide/audit/open-audit.md
                   - Generate K8s Audit Logs: tf/ghippo/user-guide/audit/open-k8s-audit.md
                   - Download and Export Audit Logs: tf/ghippo/user-guide/audit/audit-log.md
                   - Get Audit Log Source IP: tf/ghippo/user-guide/audit/source-ip.md
               - Platform Settings:
+                  - tf/ghippo/user-guide/platform-setting/index.md
                   - Security Policy: tf/ghippo/user-guide/platform-setting/security.md
                   - Mail Server Settings: tf/ghippo/user-guide/platform-setting/mail-server.md
                   - Appearance Customization: tf/ghippo/user-guide/platform-setting/appearance.md
                   - About Platform: tf/ghippo/user-guide/platform-setting/about.md
                   - Password Reset: tf/ghippo/user-guide/password.md
               - Personal Center:
+                  - tf/ghippo/user-guide/personal-center/index.md
                   - Security Settings: tf/ghippo/user-guide/personal-center/security-setting.md
                   - Two-Factor Authentication: tf/ghippo/user-guide/personal-center/2fa.md
                   - Access Token: tf/ghippo/user-guide/personal-center/accesstoken.md
                   - SSH Public Key: tf/ghippo/user-guide/personal-center/ssh-key.md
                   - Language Settings: tf/ghippo/user-guide/personal-center/language.md
               - Module Permission Notes:
+                  - tf/ghippo/permissions/index.md
                   - Container Management Permission Notes: tf/ghippo/permissions/kpanda.md
               - Best Practices:
+                  - tf/ghippo/best-practice/index.md
                   - Workspace Best Practices: tf/ghippo/best-practice/ws-best-practice.md
                   - Workspace Bind Namespace: tf/ghippo/best-practice/ws-to-ns.md
                   - Single Cluster for Multiple Workspaces: tf/ghippo/best-practice/cluster-for-multiws.md
@@ -799,10 +807,11 @@ nav:
                   - Regular User Authorization Planning: tf/ghippo/best-practice/authz-plan.md
                   - Large Enterprise Architecture Management: tf/ghippo/best-practice/super-group.md
                   - GProduct Integration with Global Management:
-                      - tf/ghippo/best-practice/gproduct/intro.md
+                      - tf/ghippo/best-practice/gproduct/index.md
                       - Integrate Navigation Bar: tf/ghippo/best-practice/gproduct/nav.md
                       - Integrate Routing and Login Authentication: tf/ghippo/best-practice/gproduct/route-auth.md
                   - Integration (OEM IN/OUT):
+                      - tf/ghippo/best-practice/oem/index.md
                       - OEM IN (Integrate Customer System): tf/ghippo/best-practice/oem/oem-in.md
                       - OEM OUT (Integrate into Customer System): tf/ghippo/best-practice/oem/oem-out.md
                       - Customize and Connect IdP: tf/ghippo/best-practice/oem/custom-idp.md
@@ -811,4 +820,6 @@ nav:
                       - Customize Navigation Bar: tf/ghippo/best-practice/menu/navigator.md
                       - Show/Hide Navigation Bar Menu by Permission: tf/ghippo/best-practice/menu/menu-display-or-hiding.md
                   - System Message: tf/ghippo/best-practice/system-message.md
+
+
 

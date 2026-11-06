@@ -788,6 +788,7 @@ nav:
                   - Release Notes: drun/ghippo/intro/release-notes.md
                   - 常见问题 FAQ: drun/ghippo/intro/faq.md
               - 安装、登录和升级:
+                  - drun/ghippo/install/index.md
                   - 离线升级全局管理: drun/ghippo/install/offline-install.md
                   - 自定义反向代理服务器地址: drun/ghippo/install/reverse-proxy.md
                   - 开启Folder/WS的隔离模式: drun/ghippo/install/user-isolation.md
@@ -795,6 +796,7 @@ nav:
                   - 国密网关: drun/ghippo/install/gm-gateway.md
                   - 登录: drun/ghippo/install/login.md
               - 用户与访问控制:
+                  - drun/ghippo/user-guide/access-control/index.md
                   - 什么是用户与访问控制: drun/ghippo/user-guide/access-control/iam.md
                   - 用户: drun/ghippo/user-guide/access-control/user.md
                   - 用户组: drun/ghippo/user-guide/access-control/group.md
@@ -811,7 +813,8 @@ nav:
                       - drun/ghippo/user-guide/access-control/docking.md
                       - Webhook: drun/ghippo/user-guide/access-control/webhook.md
               - 工作空间与层级:
-                  - drun/ghippo/user-guide/workspace/ws-folder.md
+                  - drun/ghippo/user-guide/workspace/index.md
+                  - 工作空间与层级: drun/ghippo/user-guide/workspace/ws-folder.md
                   - 创建和删除工作空间: drun/ghippo/user-guide/workspace/workspace.md
                   - 工作空间权限: drun/ghippo/user-guide/workspace/ws-permission.md
                   - 创建和删除文件夹: drun/ghippo/user-guide/workspace/folders.md
@@ -820,27 +823,32 @@ nav:
                   - 资源组与共享资源的区别: drun/ghippo/user-guide/workspace/res-gp-and-shared-res.md
                   - 资源绑定权限说明: drun/ghippo/user-guide/workspace/wsbind-permission.md
               - 审计日志:
+                  - drun/ghippo/user-guide/audit/index.md
                   - 采集 K8s 审计日志: drun/ghippo/user-guide/audit/open-audit.md
                   - 生成 K8s 审计日志: drun/ghippo/user-guide/audit/open-k8s-audit.md
                   - 下载和导出审计日志: drun/ghippo/user-guide/audit/audit-log.md
                   - 获取审计日志源IP: drun/ghippo/user-guide/audit/source-ip.md
               - 平台设置:
+                  - drun/ghippo/user-guide/platform-setting/index.md
                   - 安全策略: drun/ghippo/user-guide/platform-setting/security.md
                   - 邮箱服务器设置: drun/ghippo/user-guide/platform-setting/mail-server.md
                   - 外观定制: drun/ghippo/user-guide/platform-setting/appearance.md
                   - 关于平台: drun/ghippo/user-guide/platform-setting/about.md
                   - 密码重置: drun/ghippo/user-guide/password.md
               - 个人中心:
+                  - drun/ghippo/user-guide/personal-center/index.md
                   - 安全设置: drun/ghippo/user-guide/personal-center/security-setting.md
                   - 双因子认证: drun/ghippo/user-guide/personal-center/2fa.md
                   - 访问密钥: drun/ghippo/user-guide/personal-center/accesstoken.md
                   - SSH 公钥: drun/ghippo/user-guide/personal-center/ssh-key.md
                   - 语言设置: drun/ghippo/user-guide/personal-center/language.md
               - 各模块权限说明:
+                  - drun/ghippo/permissions/index.md
                   - 容器管理权限说明: drun/ghippo/permissions/kpanda.md
                   - AI Lab 权限说明: drun/ghippo/permissions/baize.md
                   - ClawOS 权限说明: drun/ghippo/permissions/clawos.md
               - 最佳实践:
+                  - drun/ghippo/best-practice/index.md
                   - 工作空间最佳实践: drun/ghippo/best-practice/ws-best-practice.md
                   - 工作空间绑定命名空间: drun/ghippo/best-practice/ws-to-ns.md
                   - 单集群分配给多个工作空间: drun/ghippo/best-practice/cluster-for-multiws.md
@@ -848,10 +856,11 @@ nav:
                   - 普通用户授权规划: drun/ghippo/best-practice/authz-plan.md
                   - 超大型企业的架构管理: drun/ghippo/best-practice/super-group.md
                   - GProduct 对接全局管理:
-                      - drun/ghippo/best-practice/gproduct/intro.md
+                      - drun/ghippo/best-practice/gproduct/index.md
                       - 接入导航栏: drun/ghippo/best-practice/gproduct/nav.md
                       - 接入路由和登录认证: drun/ghippo/best-practice/gproduct/route-auth.md
                   - 集成与被集成(OEM IN/OUT):
+                      - drun/ghippo/best-practice/oem/index.md
                       - OEM IN(将客户系统集成进来): drun/ghippo/best-practice/oem/oem-in.md
                       - OEM OUT(集成到客户系统): drun/ghippo/best-practice/oem/oem-out.md
                       - 定制并对接 IdP: drun/ghippo/best-practice/oem/custom-idp.md
@@ -860,3 +869,5 @@ nav:
                       - 定制导航栏: drun/ghippo/best-practice/menu/navigator.md
                       - 基于权限显示/隐藏导航栏菜单: drun/ghippo/best-practice/menu/menu-display-or-hiding.md
                   - 系统消息: drun/ghippo/best-practice/system-message.md
+
+
