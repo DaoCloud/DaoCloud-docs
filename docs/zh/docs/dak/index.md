@@ -84,6 +84,7 @@ flowchart LR
     end
     B -->|发布应用| C
     D -->|优化语料与配置| A
+
     click A href "user-guide/corpus/create-corpus/"
     click B href "user-guide/app-center/create-app/"
     click C href "user-guide/app-center/conversation/"

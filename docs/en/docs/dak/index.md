@@ -81,6 +81,7 @@ flowchart LR
     end
     B -->|Publish the app| C
     D -->|Improve corpus & settings| A
+
     click A href "user-guide/corpus/create-corpus/"
     click B href "user-guide/app-center/create-app/"
     click C href "user-guide/app-center/conversation/"

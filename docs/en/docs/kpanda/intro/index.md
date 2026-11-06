@@ -12,173 +12,167 @@ This greatly simplifies the process of migrating enterprise applications to the 
 operational and manpower costs. With container management, you can easily create Kubernetes clusters
 and quickly build an enterprise-grade container cloud management platform.
 
-!!! tip
+![Container Management Logical Architecture](../images/kpanda_architect.svg)
 
-    Containerization is an essential trend in data center development, as it is
-    a natural extension of application encapsulation, deployment, and hosting.
-
-<div class="grid cards" markdown>
-
-- :material-server:{ .lg .middle } __Clusters__
-
-    ---
-
-    Container management currently supports four types of clusters:
-    global service cluster, management cluster, worker cluster, and integrated cluster.
-
-    - [Create a Cluster](../user-guide/clusters/create-cluster.md) or [Integrate a Cluster](../user-guide/clusters/integrate-cluster.md)
-    - [Upgrade a Cluster](../user-guide/clusters/upgrade-cluster.md)
-    - [Cluster Roles](../user-guide/clusters/cluster-role.md) and [Cluster Status](../user-guide/clusters/cluster-status.md)
-    - [Choose a Runtime](../user-guide/clusters/runtime.md)
-
-- :fontawesome-brands-node:{ .lg .middle } __Nodes__
-
-    ---
-
-    Nodes run components such as kubelet, container runtime, and kube-proxy.
-
-    - [Node Scheduling](../user-guide/nodes/schedule.md)
-    - [Labels and Annotations](../user-guide/nodes/labels-annotations.md), [Taints Management](../user-guide/nodes/taints.md)
-    - Node [Scaling Up](../user-guide/nodes/add-node.md)/[Scaling Down](../user-guide/nodes/delete-node.md)
-    - [Node Authentication](../user-guide/nodes/node-authentication.md), [Node Availability Check](../user-guide/nodes/node-check.md)
-
-</div>
+## Key Capabilities
 
 <div class="grid cards" markdown>
 
-- :simple-myspace:{ .lg .middle } __Namespaces__
+- :material-server:{ .lg .middle } __Cluster Management__
 
     ---
 
-    Namespaces provide a way to build virtual space to isolate physical resources and only
-    affect objects with namespaces.
+    Supports four cluster types — global service cluster, management cluster, worker cluster, and integrated cluster — covering creation, integration, upgrade, roles and status, and runtime selection.
 
-    - [Create/Delete Namespaces](../user-guide/namespaces/createns.md)
-    - [Namespace-exclusive Nodes](../user-guide/namespaces/exclusive.md)
-    - [Configure Pod Security Policies for Namespaces](../user-guide/namespaces/podsecurity.md)
+    [:arrow_forward: Create a cluster](../user-guide/clusters/create-cluster.md)
 
-- :octicons-tasklist-16:{ .lg .middle } __Workloads__
+- :fontawesome-brands-node:{ .lg .middle } __Nodes & Namespaces__
 
     ---
 
-    Workloads refer to various types of applications running in a cluster.
+    Node scheduling, labels and annotations, taint management, scale-out/in, and availability checks; namespace isolation, dedicated nodes, and Pod security policies.
 
-    - Create [Deployment](../user-guide/workloads/create-deployment.md) and [StatefulSet](../user-guide/workloads/create-statefulset.md)
-    - Create [DaemonSet](../user-guide/workloads/create-daemonset.md)
-    - Create [Job](../user-guide/workloads/create-job.md) and [CronJob](../user-guide/workloads/create-cronjob.md)
+    [:arrow_forward: Node scheduling](../user-guide/nodes/schedule.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
-- :material-expand-all:{ .lg .middle } __Autoscaling__
+- :octicons-tasklist-16:{ .lg .middle } __Workloads & Autoscaling__
 
     ---
 
-    Autoscaling of workloads is achieved by configuring HPA (Horizontal Pod Autoscaler) and VPA (Vertical Pod Autoscaler) policies.
+    Create Deployments, StatefulSets, DaemonSets, and Jobs/CronJobs, and scale workloads automatically with HPA and VPA policies.
 
-    - Install [metrics-server](../user-guide/scale/install-metrics-server.md), [kubernetes-cronhpa-controller](../user-guide/scale/install-cronhpa.md), and [VPA](../user-guide/scale/install-vpa.md) plugins
-    - [Create HPA Policy](../user-guide/scale/create-hpa.md)
-    - [Create VPA Policy](../user-guide/scale/create-vpa.md)
+    [:arrow_forward: Create a Deployment](../user-guide/workloads/create-deployment.md)
 
 - :simple-helm:{ .lg .middle } __Helm Apps__
 
     ---
 
-    Helm is a package management tool, providing hundreds of Helm templates for easy application deployment.
+    Hundreds of Helm charts for one-click deployment, with app and repository management to bring business applications online quickly.
 
-    - [Helm Charts](../user-guide/helm/README.md)
-    - [Helm Apps](../user-guide/helm/helm-app.md)
-    - [Helm Repo](../user-guide/helm/helm-repo.md)
+    [:arrow_forward: Browse Helm charts](../user-guide/helm/README.md)
+
+- :material-dot-net:{ .lg .middle } __Networking & Storage__
+
+    ---
+
+    Manage traffic and routing with Services, Ingresses, and NetworkPolicies; native CSI support for dynamic provisioning, volume snapshots, and cloning.
+
+    [:arrow_forward: Services](../user-guide/network/create-services.md)
+
+- :material-security:{ .lg .middle } __Security & Inspection__
+
+    ---
+
+    Compliance, permission, and vulnerability scans for nodes and clusters; cluster inspection checks the overall health status automatically or on demand.
+
+    [:arrow_forward: Create an inspection](../user-guide/inspect/config.md)
 
 </div>
+
+## Workflow
+
+Using container management typically involves two stages: **platform preparation** and **running applications**. Administrators first create or integrate clusters and plan namespaces; business users then deploy workloads and expose services, with autoscaling and inspection keeping applications healthy over time.
+
+```mermaid
+flowchart LR
+    A["① Create/integrate cluster<br/>Global · worker clusters"] --> B["② Create a namespace<br/>Isolation · dedicated nodes"]
+    B --> C["③ Deploy workloads<br/>Deployment · Helm"]
+    C --> D["④ Expose services & storage<br/>Service · Ingress · PVC"]
+    D --> E["⑤ Autoscaling & inspection<br/>HPA · reports"]
+
+    click A href "../user-guide/clusters/create-cluster/"
+    click B href "../user-guide/namespaces/createns/"
+    click C href "../user-guide/workloads/create-deployment/"
+    click D href "../user-guide/network/create-services/"
+    click E href "../user-guide/scale/create-hpa/"
+```
+
+| Step | Role | Description |
+| ---- | ---- | ----------- |
+| ① [Create/integrate a cluster](../user-guide/clusters/create-cluster.md) | Platform Administrator | Create global service, management, and worker clusters, or integrate existing Kubernetes clusters |
+| ② [Create a namespace](../user-guide/namespaces/createns.md) | Platform Administrator | Define resource isolation boundaries, with dedicated nodes and Pod security policies |
+| ③ [Deploy workloads](../user-guide/workloads/create-deployment.md) | Business User | Deploy Deployments, StatefulSets, and more from images or Helm charts |
+| ④ [Expose services](../user-guide/network/create-services.md) and [mount storage](../user-guide/storage/pvc.md) | Business User | Create Services / Ingresses to expose applications, and mount persistent storage through PVCs |
+| ⑤ [Autoscaling & inspection](../user-guide/scale/create-hpa.md) | Platform Administrator | Configure HPA/VPA for load fluctuations, and run periodic inspections for cluster health |
+
+## Quick Start
+
+<style>
+.kpanda-path{display:flex;gap:0.75rem;margin:1rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.kpanda-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.kpanda-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.kpanda-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.kpanda-path-step:last-child::after{display:none}
+.kpanda-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.kpanda-path-title{font-weight:700;font-size:0.95rem}
+.kpanda-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.kpanda-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.kpanda-path-step::after{display:none}}
+</style>
+
+<div class="kpanda-path">
+  <a class="kpanda-path-step" style="--path-c:#2196f3" href="../user-guide/clusters/create-cluster/">
+    <span class="kpanda-path-num">1</span>
+    <span class="kpanda-path-title">Create a cluster</span>
+    <span class="kpanda-path-desc">Create or integrate Kubernetes clusters</span>
+    <span class="kpanda-path-go">Go →</span>
+  </a>
+  <a class="kpanda-path-step" style="--path-c:#00acc1" href="../user-guide/namespaces/createns/">
+    <span class="kpanda-path-num">2</span>
+    <span class="kpanda-path-title">Create a namespace</span>
+    <span class="kpanda-path-desc">Isolation · dedicated nodes</span>
+    <span class="kpanda-path-go">Go →</span>
+  </a>
+  <a class="kpanda-path-step" style="--path-c:#43a047" href="../user-guide/workloads/create-deployment/">
+    <span class="kpanda-path-num">3</span>
+    <span class="kpanda-path-title">Deploy workloads</span>
+    <span class="kpanda-path-desc">Deployments · Helm charts</span>
+    <span class="kpanda-path-go">Go →</span>
+  </a>
+  <a class="kpanda-path-step" style="--path-c:#fb8c00" href="../user-guide/network/create-services/">
+    <span class="kpanda-path-num">4</span>
+    <span class="kpanda-path-title">Expose services</span>
+    <span class="kpanda-path-desc">Services · Ingresses · PVCs</span>
+    <span class="kpanda-path-go">Go →</span>
+  </a>
+  <a class="kpanda-path-step" style="--path-c:#8e24aa" href="../user-guide/scale/create-hpa/">
+    <span class="kpanda-path-num">5</span>
+    <span class="kpanda-path-title">Autoscaling</span>
+    <span class="kpanda-path-desc">HPA · VPA policies</span>
+    <span class="kpanda-path-go">Go →</span>
+  </a>
+</div>
+
+## More Resources
 
 <div class="grid cards" markdown>
 
-- :material-dot-net:{ .lg .middle } __Container Networking__
+- :material-format-list-bulleted:{ .lg .middle } __Features__
 
     ---
 
-    Routing rules are defined through Ingress, and traffic is controlled based on network policies.
+    A complete list of container management features across clusters, nodes, workloads, networking and storage, security, and inspection.
 
-    - [Service](../user-guide/network/create-services.md): ClusterIP, NodePort, LoadBalancer
-    - [Ingress](../user-guide/network/create-ingress.md): Path-based, Name-based
-    - [Network Policies](../user-guide/network/network-policy.md)
+    [:arrow_forward: View features](features.md)
 
-- :material-harddisk:{ .lg .middle } __Container Storage__
+- :material-map-outline:{ .lg .middle } __Scenarios__
 
     ---
 
-    Container management follows the containerized storage concept of Kubernetes, supporting native CSI for dynamic volume provisioning, volume snapshots, cloning, and more.
+    Best practices for multi-cluster management, application delivery, hybrid cloud, and more.
 
-    - [Persistent Volume Claim (PVC)](../user-guide/storage/pvc.md)
-    - [Persistent Volume (PV)](../user-guide/storage/pv.md)
-    - [StorageClass](../user-guide/storage/sc.md)
+    [:arrow_forward: View scenarios](scenarios.md)
+
+- :material-chat-question-outline:{ .lg .middle } __FAQ__
+
+    ---
+
+    Common questions and solutions about cluster creation, workload operation, and networking and storage.
+
+    [:arrow_forward: View the FAQ](faq.md)
 
 </div>
-
-<div class="grid cards" markdown>
-
-- :material-security:{ .lg .middle } __Security Management__
-
-    ---
-
-    Container management supports three types of scanning at the node and cluster level:
-
-    - [Compliance Scanning](../user-guide/security/cis/config.md)
-    - [Permission Scanning](../user-guide/security/audit.md)
-    - [Vulnerability Scanning](../user-guide/security/hunter.md)
-
-- :material-key:{ .lg .middle } __Configuration and Secrets__
-
-    ---
-
-    Container management allows the management of ConfigMaps and Secrets in a key-value format:
-
-    - [ConfigMap](../user-guide/configmaps-secrets/create-configmap.md)
-    - [Secrets](../user-guide/configmaps-secrets/create-secret.md)
-
-</div>
-
-<div class="grid cards" markdown>
-
-- :material-card-search:{ .lg .middle } __Cluster Inspection__
-
-    ---
-
-    Cluster inspection enables automatic/manual periodic or on-demand checks of the overall health status of the cluster, giving administrators proactive control over cluster security.
-
-    - [Create Inspection Configuration](../user-guide/inspect/config.md)
-    - [Perform Inspection](../user-guide/inspect/inspect.md)
-    - [View Inspection Reports](../user-guide/inspect/report.md)
-
-- :material-auto-fix:{ .lg .middle } __Cluster Operations__
-    
-    ---
-
-    Cluster operations refer to tasks such as viewing cluster actions, upgrading the cluster,
-    and managing cluster configurations.
-
-    - [View Recent Operations](../user-guide/clusterops/latest-operations.md)
-    - [Cluster Settings](../user-guide/clusterops/cluster-settings.md)
-    - [Cluster Upgrade](../user-guide/clusters/upgrade-cluster.md)
-
-</div>
-
-!!! success
-
-    With containerization, you can develop and deploy applications faster and simpler compared to
-    building virtual devices. Containerized architecture brings remarkable operational and economic
-    benefits, including lower or even free licensing costs, higher utilization of physical resources,
-    improved scalability, and increased service reliability.
-
-    Looking ahead, container virtualization will help enterprises make better use of hybrid and
-    multi-cloud environments, enabling optimized resource management and application deployment.
-
-**Logical Architecture of Container Management**
-
-![Logical Architecture](../images/kpanda_architect.svg)
 
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
 [Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
 [Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }
+[View User Manual (PDF)](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/kpanda.pdf){ .md-button .md-button--primary }
