@@ -826,6 +826,7 @@ nav:
                       - OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
               - Get Started with Insight:
                   - Use OpenTelemetry:
+                      - insight/quickstart/otel/index.md
                       - Observe App with OTel: insight/quickstart/otel/otel.md
                       - Non-intrusive Enhancement with Operator: insight/quickstart/otel/operator.md
                       - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md
@@ -837,6 +838,7 @@ nav:
                       - Java App with JVM Metrics Enables Insight: insight/quickstart/otel/java/jvm-monitor/legacy-jvm.md
                       - Writing TraceId and SpanId into Java Application Logs: insight/quickstart/otel/java/mdc.md
                   - Golang App Insight:
+                      - insight/quickstart/otel/golang/index.md
                       - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang/golang.md
                       - Writing TraceId and SpanId into Golang Application Logs: insight/quickstart/otel/golang/traceid_logs.md
                   - Other Integrations:
@@ -844,10 +846,12 @@ nav:
                       - Use OTel to Receive SkyWalking Traces: insight/best-practice/sw-to-otel.md
                       - Integrate Nginx Ingress Trace Tracking: insight/best-practice/ingress-otel.md
               - Dashboard:
+                  - insight/user-guide/dashboard/index.md
                   - Overview: insight/user-guide/dashboard/overview.md
                   - Dashboard: insight/user-guide/dashboard/dashboard.md
                   - Import Custom Dashboard: insight/user-guide/dashboard/import-dashboard.md
               - Infrastructure:
+                  - insight/user-guide/infra/index.md
                   - Clusters: insight/user-guide/infra/cluster.md
                   - Nodes: insight/user-guide/infra/node.md
                   - Namespaces: insight/user-guide/infra/namespace.md
@@ -857,6 +861,7 @@ nav:
               - Metrics: insight/user-guide/data-query/metric.md
               - Logging: insight/user-guide/data-query/log.md
               - Traces:
+                  - insight/user-guide/trace/index.md
                   - Service Topology: insight/user-guide/trace/topology.md
                   - Service: insight/user-guide/trace/service.md
                   - Trace Query: insight/user-guide/trace/trace.md
@@ -870,16 +875,19 @@ nav:
                   - Alert Silence: insight/user-guide/alert-center/silent.md
                   - Alert Inhibition: insight/user-guide/alert-center/inhibition.md
               - Data Collection:
+                  - insight/user-guide/collection-manag/index.md
                   - Collection Management: insight/user-guide/collection-manag/collection-manag.md
                   - Service Monitor: insight/user-guide/collection-manag/service-monitor.md
                   - insight-agent Status: insight/user-guide/collection-manag/agent-status.md
               - System Config:
+                  - insight/user-guide/system-config/index.md
                   - System Components: insight/user-guide/system-config/system-component.md
                   - System Config: insight/user-guide/system-config/system-config.md
                   - Modify Config: insight/user-guide/system-config/modify-config.md
               - Network Insight:
                   - Integrate DeepFlow: insight/best-practice/integration_deepflow.md
               - References:
+                  - insight/reference/index.md
                   - Insight Reference Metrics: insight/reference/used-metric-in-insight.md
                   - Insight Grafana data to a Database: insight/best-practice/grafana-use-db.md
                   - Custom Probe: insight/user-guide/collection-manag/probe-module.md
@@ -895,10 +903,12 @@ nav:
                   - Using Kafka and Elasticsearch for Large-Scale Log Processing: insight/best-practice/insight-kafka.md
                   - Enabling Span Metrics Alerts and Custom Span Alerts: insight/reference/span-metrics-alert.md
               - Compatibility Test:
+                  - insight/compati-test/index.md
                   - K8s Compatibility Test: insight/compati-test/k8s-compatibility.md
                   - Rancher Compatibility Test: insight/compati-test/rancher-compatibility.md
                   - OCP Compatibility Test: insight/compati-test/ocp-compatibility.md
               - FAQs:
+                  - insight/faq/index.md
                   - Clock Skew of Trace Data: insight/faq/traceclockskew.md
                   - Log Collection Troubleshoot: insight/best-practice/debug-log.md
                   - Trace Collection Troubleshoot: insight/best-practice/debug-trace.md

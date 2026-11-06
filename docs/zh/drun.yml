@@ -686,6 +686,7 @@ nav:
                       - 定制Insight组件调度策略: drun/insight/quickstart/install/component-scheduling.md
               - 开始观测:
                   - OpenTelemetry 观测:
+                      - drun/insight/quickstart/otel/index.md
                       - 使用OTel赋予应用可观测: drun/insight/quickstart/otel/otel.md
                       - Operator无侵入增强应用: drun/insight/quickstart/otel/operator.md
                       - 向Insight发送链路数据: drun/insight/quickstart/otel/send_tracing_to_insight.md
@@ -697,6 +698,7 @@ nav:
                       - 已有JVM指标的Java应用对接可观测性: drun/insight/quickstart/otel/java/jvm-monitor/legacy-jvm.md
                       - 将 TraceId 和 SpanId 写入 Java 应用日志: drun/insight/quickstart/otel/java/mdc.md
                   - Golang 应用观测:
+                      - drun/insight/quickstart/otel/golang/index.md
                       - OTel SDK增强Go应用: drun/insight/quickstart/otel/golang/golang.md
                       - 将 TraceId 和 SpanId 写入 Golang 应用日志: drun/insight/quickstart/otel/golang/traceid_logs.md
                   - 其他观测技术集成:
@@ -704,10 +706,12 @@ nav:
                       - 使用OTel接收 SkyWalking 链路数据: drun/insight/best-practice/sw-to-otel.md
                       - 接入 Nginx Ingress 的链路追踪: drun/insight/best-practice/ingress-otel.md
               - 仪表盘:
+                  - drun/insight/user-guide/dashboard/index.md
                   - 概览: drun/insight/user-guide/dashboard/overview.md
                   - 仪表盘: drun/insight/user-guide/dashboard/dashboard.md
                   - 导入自定义仪表盘: drun/insight/user-guide/dashboard/import-dashboard.md
               - 基础设施:
+                  - drun/insight/user-guide/infra/index.md
                   - 集群监控: drun/insight/user-guide/infra/cluster.md
                   - 节点监控: drun/insight/user-guide/infra/node.md
                   - 命名空间监控: drun/insight/user-guide/infra/namespace.md
@@ -717,6 +721,7 @@ nav:
               - 指标: drun/insight/user-guide/data-query/metric.md
               - 日志: drun/insight/user-guide/data-query/log.md
               - 链路追踪:
+                  - drun/insight/user-guide/trace/index.md
                   - 服务拓扑: drun/insight/user-guide/trace/topology.md
                   - 服务: drun/insight/user-guide/trace/service.md
                   - 调用链: drun/insight/user-guide/trace/trace.md
@@ -730,16 +735,19 @@ nav:
                   - 告警静默: drun/insight/user-guide/alert-center/silent.md
                   - 告警抑制: drun/insight/user-guide/alert-center/inhibition.md
               - 数据采集:
+                  - drun/insight/user-guide/collection-manag/index.md
                   - 采集管理: drun/insight/user-guide/collection-manag/collection-manag.md
                   - 服务监控: drun/insight/user-guide/collection-manag/service-monitor.md
                   - 采集组件insight-agent状态: drun/insight/user-guide/collection-manag/agent-status.md
               - 系统配置:
+                  - drun/insight/user-guide/system-config/index.md
                   - 系统组件: drun/insight/user-guide/system-config/system-component.md
                   - 系统配置: drun/insight/user-guide/system-config/system-config.md
                   - 修改配置: drun/insight/user-guide/system-config/modify-config.md
               - 网络监控:
                   - 集成 DeepFlow: drun/insight/best-practice/integration_deepflow.md
               - 参考文档:
+                  - drun/insight/reference/index.md
                   - 可观性参考指标说明: drun/insight/reference/used-metric-in-insight.md
                   - Insight Grafana 持久化到数据库: drun/insight/best-practice/grafana-use-db.md
                   - 自定义探测方式: drun/insight/user-guide/collection-manag/probe-module.md
@@ -755,10 +763,12 @@ nav:
                   - 利用 Kafka 与 Elasticsearch 流式架构应对超大规模日志方案: drun/insight/best-practice/insight-kafka.md
                   - 开启链路指标告警规则与自定义链路告警规则: drun/insight/reference/span-metrics-alert.md
               - 兼容性测试:
+                  - drun/insight/compati-test/index.md
                   - Kubernetes 兼容性测试: drun/insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: drun/insight/compati-test/rancher-compatibility.md
                   - Openshift 兼容性测试: drun/insight/compati-test/ocp-compatibility.md
               - 常见问题:
+                  - drun/insight/faq/index.md
                   - 链路数据的时钟偏移: drun/insight/faq/traceclockskew.md
                   - 日志采集排障指南: drun/insight/best-practice/debug-log.md
                   - 链路采集排障指南: drun/insight/best-practice/debug-trace.md
