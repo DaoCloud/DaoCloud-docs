@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc"> role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
   <title id="title">Insight Observability Architecture</title>
   <desc id="desc">Insight observability architecture from top to bottom: observed targets (DCE clusters, OpenShift clusters, nodes, containers and workloads, application services, K8s events); unified collection via insight-agent (metrics Prometheus, logs Fluent Bit, traces OpenTelemetry, events); the Insight observability platform (visualization and query: dashboards, infrastructure, metric query, log query, events and probes; distributed tracing: service topology, services, traces, remote sampling; alert center: alert rules, alert templates, message templates, silence and inhibition, notification config); notification channels (email, WeChat Work, DingTalk, Webhook, SMS).</desc>
   <style>

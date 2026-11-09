@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc"> role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
   <title id="title">可观测模块逻辑架构</title>
   <desc id="desc">可观测模块逻辑架构自上而下：被观测对象（DCE 集群、OpenShift 集群、节点、容器与工作负载、应用服务、K8s 事件）；统一采集 insight-agent（指标 Prometheus、日志 Fluent Bit、链路 OpenTelemetry、事件 Events）；Insight 可观测平台（可视化与查询：仪表盘、基础设施、指标查询、日志查询、事件与拨测；链路追踪：服务拓扑、服务列表、调用链、远程采样；告警中心：告警规则、告警模板、消息模板、静默与抑制、通知配置）；通知渠道（邮件、企业微信、钉钉、Webhook、短信）。</desc>
   <style>

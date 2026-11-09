@@ -143,14 +143,6 @@ flowchart LR
 
     [:arrow_forward: 查看功能列表](features.md)
 
-- :material-book-open-page-variant:{ .lg .middle } __术语表__
-
-    ---
-
-    了解全局管理涉及的常见术语与概念，如 IAM、层级、工作空间、资源绑定等。
-
-    [:arrow_forward: 查看术语表](glossary.md)
-
 - :material-chat-question-outline:{ .lg .middle } __常见问题__
 
     ---

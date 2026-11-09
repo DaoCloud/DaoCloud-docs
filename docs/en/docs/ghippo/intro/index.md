@@ -145,14 +145,6 @@ flowchart LR
 
     [:arrow_forward: View the feature list](features.md)
 
-- :material-book-open-page-variant:{ .lg .middle } __Glossary__
-
-    ---
-
-    Learn common terms and concepts in Global Management, such as IAM, folder, workspace, and resource binding.
-
-    [:arrow_forward: View the glossary](glossary.md)
-
 - :material-chat-question-outline:{ .lg .middle } __FAQs__
 
     ---
