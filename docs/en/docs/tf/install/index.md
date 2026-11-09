@@ -55,6 +55,6 @@ Once installed and logged in with `admin/changeme`, initialize the platform in t
 4. Verify metrics and log collection in [Insight](../insight/intro/index.md), and check business data in
    [Cockpit](../crane/user-guide/singlepage.md) as well as metering and billing in [Billing Center](../leopard/index.md).
 
-[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
-[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
-[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button }

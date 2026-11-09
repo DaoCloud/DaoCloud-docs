@@ -21,6 +21,6 @@ MongoDB 被广泛应用于 Web 应用、大数据分析、物联网、实时数�
 
 ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mongodb/images/what.jpg)
 
-[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
-[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
-[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button }

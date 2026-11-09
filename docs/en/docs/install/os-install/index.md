@@ -136,6 +136,6 @@ The figure below puts the tested kernel of each distribution next to the compone
 - [Installation Overview](../index.md): installation flow for the Community and Enterprise editions
 - [Create Cluster with Non-supported OS](../../kpanda/best-practice/use-otherlinux-create-custer.md): how clusters handle distributions outside the list
 
-[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
-[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
-[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button }

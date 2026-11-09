@@ -50,6 +50,6 @@ flowchart TB
 3. 进入[大模型服务平台](../hydra/index.md)部署或接入模型，配置 Token 与 API 调用。
 4. 在[可观测性](../insight/intro/index.md)中确认指标与日志采集正常，在[驾驶舱](../crane/user-guide/singlepage.md)与[费用中心](../leopard/index.md)中核对运营数据与计量计费。
 
-[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
-[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
-[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button }

@@ -29,6 +29,6 @@ DCE 提供的备份恢复可以分为 **应用备份** 和 **ETCD 备份** 两�
 
     需要注意的是，目前仅支持将 etcd 备份数据恢复到同一集群（原集群）。如需了解与此相关的最佳实践，可参考 [ETCD 备份还原](../../best-practice/etcd-backup.md)。
 
-[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
-[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
-[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button }

@@ -158,6 +158,6 @@ This allows Calico to tightly bind to the orchestrator, so users can manage the 
 When required, the orchestrator plugin provides feedback from the Calico network to the orchestrator.
 For example, providing information about Felix liveness, and marking specific endpoints as failed if network setup fails.
 
-[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
-[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
-[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button }

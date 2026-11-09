@@ -54,6 +54,6 @@ Once installed and logged in with `admin/changeme`, initialize the platform in t
 3. Go to [LLM Studio](../hydra/index.md) to deploy or connect models, and configure Tokens and API access.
 4. Verify metrics and log collection in [Observability](../insight/intro/index.md), and check metering and billing in [Wallet](../leopard/index.md).
 
-[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
-[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
-[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button }

@@ -26,6 +26,6 @@ Spiderpool 是一个 Kubernetes 的 Underlay 和 RDMA 网络解决方案，它�
 | 多层级路由定制 | 支持子网 CIDR、IP Pool、应用级别的自定义路由，路由优先级由低至高。|
 | 丰富的 Metrics | 提供丰富的监控指标，保障集群 IP 资源监控。|
 
-[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
-[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
-[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button }

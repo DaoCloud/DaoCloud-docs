@@ -86,4 +86,4 @@ You can create ConfigMaps with two methods:
        password: "****"
      ```
 
-[Next step: use secret](use-secret.md){ .md-button .md-button--primary }
+[Next step: use secret](use-secret.md){ .md-button }

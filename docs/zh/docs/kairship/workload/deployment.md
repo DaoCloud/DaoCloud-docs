@@ -74,4 +74,4 @@
 
     ![more actions](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deploy12.png)
 
-[下一步：创建多云服务](../resource/service.md){ .md-button .md-button--primary }
+[下一步：创建多云服务](../resource/service.md){ .md-button }

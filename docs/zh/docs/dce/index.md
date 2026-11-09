@@ -192,6 +192,6 @@ DaoCloud Enterprise (DCE) 以 K8s 作为开发底座，提供了高度可扩展�
       致敬曾经、现在和未来的努力吧！
     ```
 
-[申请社区免费体验](./license0.md){ .md-button .md-button--primary }
-[最佳实践](./bphome.md){ .md-button .md-button--primary }
-[常见问题](./faq.md){ .md-button .md-button--primary }
+[申请社区免费体验](./license0.md){ .md-button }
+[最佳实践](./bphome.md){ .md-button }
+[常见问题](./faq.md){ .md-button }

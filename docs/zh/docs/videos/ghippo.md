@@ -110,6 +110,6 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/appearance.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ghippo-appearance.png"></video>
 </div>
 
-[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
-[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
-[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button }
