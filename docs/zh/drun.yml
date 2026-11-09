@@ -55,6 +55,7 @@ nav:
                       - 远端文件预热: drun/hydra/file-storage/file-preheat.md
                       - 文件存储扩容: drun/hydra/file-storage/file-scale.md
                   - API Key 管理: drun/hydra/apikey.md
+                  - 用量统计: drun/hydra/usage.md
               - 运维管理:
                   - 模型广场管理: drun/hydra/oam/index.md
                   - MaaS模型管理: drun/hydra/oam/maas.md
