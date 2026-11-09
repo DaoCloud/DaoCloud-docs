@@ -9,7 +9,7 @@ It provides a Hugging Face-compatible API, serving as a private alternative to H
 
 MatrixHub is written in Go and open-sourced under the [Apache License 2.0](https://github.com/matrixhub-ai/matrixhub/blob/main/LICENSE).
 It has achieved the **Passing** level of [OpenSSF Best Practices](https://www.bestpractices.dev/projects/13641).
-MatrixHub is now listed in the [CNCF Cloud Native Landscape](https://landscape.cncf.io/?group=ai-native&item=ai-native-infra--model-asset-and-registry--matrixhub) (AI Native Infrastructure → Model Asset and Registry).
+MatrixHub has passed the CNCF TOC vote and officially joined the [CNCF Sandbox](https://github.com/cncf/sandbox/issues/510); it is also listed in the [CNCF Cloud Native Landscape](https://landscape.cncf.io/?group=ai-native&item=ai-native-infra--model-asset-and-registry--matrixhub) (AI Native Infrastructure → Model Asset and Registry).
 
 [Join the MatrixHub GitHub community](https://github.com/matrixhub-ai/matrixhub){ .md-button }
 [Visit the MatrixHub website](https://matrixhub.ai/){ .md-button }

@@ -5,9 +5,15 @@ hide:
 
 # DaoCloud 开源项目
 
-!!! info
+「DaoCloud 道客」坚持开源共建，从云原生基础设施到 AI 算力与推理，
+项目覆盖 AI 模型与推理、GPU 与作业调度、编排与运行时、生命周期与交付、
+网络与服务网格、存储与数据、可观测与运维、测试与镜像分发等领域。
 
-    「DaoCloud 道客」开源生态启航！
+下图展示了 DaoCloud 道客开源项目的整体布局与参与方式（资料统计日期 2026.11.03）：
+
+![道客开源项目全景图](./images/opensource-portfolio.svg)
+
+## DaoCloud 自主开源项目
 
 <div class="grid cards" markdown>
 
@@ -43,7 +49,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./hwameistor.md)
 
--   :melon:{ .lg .middle } __HAMi__ :simple-cncf: **已入选 CNCF Incubation** 👏
+-   :melon:{ .lg .middle } __HAMi__ :simple-cncf: **已入选 CNCF Incubating** 👏
 
     ---
 
@@ -91,7 +97,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kwok.md)
 
--   :material-brain:{ .lg .middle } __MatrixHub__ :simple-cncf: 已入选 CNCF Landscape
+-   :material-brain:{ .lg .middle } __MatrixHub__ :simple-cncf: 已入选 CNCF Sandbox
 
     ---
 
@@ -121,7 +127,7 @@ hide:
 
     一个适用于 Kubernetes 的高性能、高可用、简单、安全且与云无关的存储解决方案
 
-    [:octicons-arrow-right-24: Learn more](./piraeus.md)
+    [:octicons-arrow-right-24: 了解更多](./piraeus.md)
 
 -   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Sandbox
 
@@ -169,10 +175,8 @@ hide:
 
     **Think Different, Think Open Source!**
 
-![cncf logo](./images/cncf.png)
-
 <p align="center">
-Clusterpedia、HwameiStor、Merbridge、Spiderpool 和 Kubean 均已入选 <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>。
+HAMi 已入选 <a href="https://www.cncf.io/sandbox-projects/">CNCF Incubating</a>；Clusterpedia、HwameiStor、MatrixHub、Merbridge、Spiderpool 和 Kubean 均已入选 <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>。
 </p>
 
 [下载中心](https://docs.daocloud.io/download/){ .md-button }

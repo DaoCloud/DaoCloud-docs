@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1920 1318" role="img" aria-labelledby="pt-title pt-desc">
+<title id="pt-title">DaoCloud Open Source Portfolio</title>
+<desc id="pt-desc">DaoCloud open source portfolio: 38 projects grouped into AI models and inference, GPU and scheduling, orchestration and runtime, lifecycle and delivery, networking and service mesh, storage and data, observability and operations, and testing and image distribution. Badges mark how DaoCloud participates.</desc>
+<style>
+  .bg{fill:#ffffff}
+  .band{fill:#f7f8fb}
+  .t-main{fill:#1e2430}
+  .t-sub{fill:#5b6472}
+  .t-faint{fill:#8a93a3}
+  .num{fill:#1e2430;font-weight:700}
+  .badge-blue{fill:#3d5aa9}
+  .badge-green{fill:#1e7a4e}
+  .badge-purple{fill:#7e57c2}
+  .f-blue{fill:#eef3fd;stroke:#4a6fb5;stroke-width:1.6}
+  .f-green{fill:#e9f5ef;stroke:#2e8b68;stroke-width:1.6}
+  .f-purple{fill:#f3eefb;stroke:#9575cd;stroke-width:1.6}
+  .f-blue-d{fill:#eef3fd;stroke:#4a6fb5;stroke-width:1.8;stroke-dasharray:5 4}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#161b24}
+    .band{fill:#1f2733}
+    .t-main{fill:#e8eaf0}
+    .t-sub{fill:#a8b3c4}
+    .t-faint{fill:#78839a}
+    .num{fill:#e8eaf0}
+    .f-blue{fill:#22304a;stroke:#6f8fd9}
+    .f-green{fill:#1d3329;stroke:#4aa97e}
+    .f-purple{fill:#2d2540;stroke:#a78bda}
+    .f-blue-d{fill:#22304a;stroke:#6f8fd9}
+    .red{fill:#e05a56}
+  }
+</style>
+<rect class="bg" x="0" y="0" width="1920" height="1318"/>
+<rect x="28" y="26" width="8" height="54" rx="3" fill="#c8413d"/>
+<text x="50" y="52" font-size="27" font-weight="700" class="t-main">DaoCloud Open Source Portfolio</text>
+<text x="50" y="82" font-size="15" class="t-sub">THE PORTFOLIO: From cloud native infrastructure to AI compute and inference</text>
+<text x="1892" y="46" text-anchor="end" font-size="19" font-weight="700" fill="#c8413d">DaoCloud</text>
+<text x="1892" y="70" text-anchor="end" font-size="13" class="t-faint">Data as of 2026.11.03</text>
+<text x="64" y="162" font-size="42" class="num">38</text>
+<text x="152" y="142" font-size="16" font-weight="600" class="t-main">Projects in this portfolio</text>
+<text x="152" y="168" font-size="13" class="t-faint">incl. subprojects and 1 archived project</text>
+<text x="516" y="162" font-size="42" class="num">18</text>
+<text x="604" y="142" font-size="16" font-weight="600" class="t-main">Self-initiated by DaoCloud</text>
+<text x="604" y="168" font-size="13" class="t-faint">incl. projects started by DaoCloud staff</text>
+<text x="968" y="162" font-size="42" class="num">18</text>
+<text x="1056" y="142" font-size="16" font-weight="600" class="t-main">Deeply contributed</text>
+<text x="1056" y="168" font-size="13" class="t-faint">maintainer, approver, or core contributor</text>
+<text x="1420" y="162" font-size="42" class="num">2</text>
+<text x="1508" y="142" font-size="16" font-weight="600" class="t-main">Co-initiated</text>
+<text x="1508" y="168" font-size="13" class="t-faint">HAMI / Piraeus</text>
+<text x="64" y="222" font-size="15" font-weight="600" class="t-main">Badge = participation</text>
+<circle cx="330" cy="217" r="10" class="badge-blue"/><rect x="324.5" y="211.5" width="11.0" height="2.1" rx="1" fill="#ffffff"/><rect x="324.5" y="216" width="11.0" height="2.1" rx="1" fill="#ffffff"/><rect x="324.5" y="220.5" width="11.0" height="2.1" rx="1" fill="#ffffff"/>
+<text x="350" y="222" font-size="14" class="t-main">Self-initiated</text>
+<circle cx="490" cy="217" r="10" class="badge-green"/><circle cx="495.1" y="217.0" r="1.6" fill="#ffffff"/><circle cx="493.6" y="220.6" r="1.6" fill="#ffffff"/><circle cx="490.0" y="222.1" r="1.6" fill="#ffffff"/><circle cx="486.4" y="220.6" r="1.6" fill="#ffffff"/><circle cx="484.9" y="217.0" r="1.6" fill="#ffffff"/><circle cx="486.4" y="213.4" r="1.6" fill="#ffffff"/><circle cx="490.0" y="211.9" r="1.6" fill="#ffffff"/><circle cx="493.6" y="213.4" r="1.6" fill="#ffffff"/><circle cx="490" cy="217" r="4.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="490" cy="217" r="1.4" fill="#ffffff"/>
+<text x="510" y="222" font-size="14" class="t-main">Deep contributor</text>
+<rect x="630" y="207" width="20" height="20" rx="5.0" class="badge-purple"/><circle cx="645.1" y="217.0" r="1.6" fill="#ffffff"/><circle cx="643.6" y="220.6" r="1.6" fill="#ffffff"/><circle cx="640.0" y="222.1" r="1.6" fill="#ffffff"/><circle cx="636.4" y="220.6" r="1.6" fill="#ffffff"/><circle cx="634.9" y="217.0" r="1.6" fill="#ffffff"/><circle cx="636.4" y="213.4" r="1.6" fill="#ffffff"/><circle cx="640.0" y="211.9" r="1.6" fill="#ffffff"/><circle cx="643.6" y="213.4" r="1.6" fill="#ffffff"/><circle cx="640" cy="217" r="4.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="640" cy="217" r="1.4" fill="#ffffff"/>
+<text x="660" y="222" font-size="14" class="t-main">Co-initiated</text>
+<text x="1892" y="222" text-anchor="end" font-size="13" class="t-faint">+ Feishu additions / dashed = archived</text>
+<rect class="band" x="28" y="252" width="1864" height="108" rx="14"/>
+<text x="46" y="296" font-size="14.5" font-weight="700" class="t-main">AI Models and</text>
+<text x="46" y="316" font-size="14.5" font-weight="700" class="t-main">Inference</text>
+<text x="46" y="334" font-size="11" class="t-faint">5 projects</text>
+<rect class=" f-blue" x="232.0" y="268.0" width="320.0" height="76" rx="10"/>
+<circle cx="258.0" cy="292.0" r="12" class="badge-blue"/><rect x="251.4" y="285.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="291.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="296.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="406.0" y="300.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">MatrixHub</text>
+<text x="406.0" y="324.0" text-anchor="middle" font-size="12.5" class="t-sub">AI model registry</text>
+<rect class=" f-green" x="564.0" y="268.0" width="320.0" height="76" rx="10"/>
+<circle cx="590.0" cy="292.0" r="12" class="badge-green"/><circle cx="596.1" y="292.0" r="1.9" fill="#ffffff"/><circle cx="594.3" y="296.3" r="1.9" fill="#ffffff"/><circle cx="590.0" y="298.1" r="1.9" fill="#ffffff"/><circle cx="585.7" y="296.3" r="1.9" fill="#ffffff"/><circle cx="583.9" y="292.0" r="1.9" fill="#ffffff"/><circle cx="585.7" y="287.7" r="1.9" fill="#ffffff"/><circle cx="590.0" y="285.9" r="1.9" fill="#ffffff"/><circle cx="594.3" y="287.7" r="1.9" fill="#ffffff"/><circle cx="590.0" cy="292.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="590.0" cy="292.0" r="1.6" fill="#ffffff"/>
+<text x="738.0" y="300.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">vLLM</text>
+<text x="738.0" y="324.0" text-anchor="middle" font-size="12.5" class="t-sub">LLM inference engine</text>
+<rect class=" f-green" x="896.0" y="268.0" width="320.0" height="76" rx="10"/>
+<circle cx="922.0" cy="292.0" r="12" class="badge-green"/><circle cx="928.1" y="292.0" r="1.9" fill="#ffffff"/><circle cx="926.3" y="296.3" r="1.9" fill="#ffffff"/><circle cx="922.0" y="298.1" r="1.9" fill="#ffffff"/><circle cx="917.7" y="296.3" r="1.9" fill="#ffffff"/><circle cx="915.9" y="292.0" r="1.9" fill="#ffffff"/><circle cx="917.7" y="287.7" r="1.9" fill="#ffffff"/><circle cx="922.0" y="285.9" r="1.9" fill="#ffffff"/><circle cx="926.3" y="287.7" r="1.9" fill="#ffffff"/><circle cx="922.0" cy="292.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="922.0" cy="292.0" r="1.6" fill="#ffffff"/>
+<text x="1070.0" y="300.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">llm-d</text>
+<text x="1070.0" y="324.0" text-anchor="middle" font-size="12.5" class="t-sub">Distributed inference</text>
+<rect class=" f-green" x="1228.0" y="268.0" width="320.0" height="76" rx="10"/>
+<circle cx="1254.0" cy="292.0" r="12" class="badge-green"/><circle cx="1260.1" y="292.0" r="1.9" fill="#ffffff"/><circle cx="1258.3" y="296.3" r="1.9" fill="#ffffff"/><circle cx="1254.0" y="298.1" r="1.9" fill="#ffffff"/><circle cx="1249.7" y="296.3" r="1.9" fill="#ffffff"/><circle cx="1247.9" y="292.0" r="1.9" fill="#ffffff"/><circle cx="1249.7" y="287.7" r="1.9" fill="#ffffff"/><circle cx="1254.0" y="285.9" r="1.9" fill="#ffffff"/><circle cx="1258.3" y="287.7" r="1.9" fill="#ffffff"/><circle cx="1254.0" cy="292.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1254.0" cy="292.0" r="1.6" fill="#ffffff"/>
+<text x="1402.0" y="294.0" text-anchor="middle" font-size="17" font-weight="600" class="t-main">vLLM Semantic</text>
+<text x="1402.0" y="312.0" text-anchor="middle" font-size="17" font-weight="600" class="t-main">Router</text>
+<text x="1402.0" y="330.0" text-anchor="middle" font-size="12" class="t-sub">Semantic model routing</text>
+<rect class=" f-green" x="1560.0" y="268.0" width="320.0" height="76" rx="10"/>
+<circle cx="1586.0" cy="292.0" r="12" class="badge-green"/><circle cx="1592.1" y="292.0" r="1.9" fill="#ffffff"/><circle cx="1590.3" y="296.3" r="1.9" fill="#ffffff"/><circle cx="1586.0" y="298.1" r="1.9" fill="#ffffff"/><circle cx="1581.7" y="296.3" r="1.9" fill="#ffffff"/><circle cx="1579.9" y="292.0" r="1.9" fill="#ffffff"/><circle cx="1581.7" y="287.7" r="1.9" fill="#ffffff"/><circle cx="1586.0" y="285.9" r="1.9" fill="#ffffff"/><circle cx="1590.3" y="287.7" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="292.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1586.0" cy="292.0" r="1.6" fill="#ffffff"/>
+<text x="1734.0" y="300.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Dynamo</text>
+<text x="1734.0" y="324.0" text-anchor="middle" font-size="12.5" class="t-sub">Distributed inference framework</text>
+<text x="1864.0" y="288.0" text-anchor="end" font-size="14" font-weight="700" class="t-faint">+</text>
+<rect class="band" x="28" y="370" width="1864" height="108" rx="14"/>
+<text x="46" y="422" font-size="14.5" font-weight="700" class="t-main">GPU and Scheduling</text>
+<text x="46" y="452" font-size="11" class="t-faint">4 projects</text>
+<rect class=" f-purple" x="232.0" y="386.0" width="403.0" height="76" rx="10"/>
+<rect x="246.0" y="398.0" width="24" height="24" rx="6.0" class="badge-purple"/><circle cx="264.1" y="410.0" r="1.9" fill="#ffffff"/><circle cx="262.3" y="414.3" r="1.9" fill="#ffffff"/><circle cx="258.0" y="416.1" r="1.9" fill="#ffffff"/><circle cx="253.7" y="414.3" r="1.9" fill="#ffffff"/><circle cx="251.9" y="410.0" r="1.9" fill="#ffffff"/><circle cx="253.7" y="405.7" r="1.9" fill="#ffffff"/><circle cx="258.0" y="403.9" r="1.9" fill="#ffffff"/><circle cx="262.3" y="405.7" r="1.9" fill="#ffffff"/><circle cx="258.0" cy="410.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="258.0" cy="410.0" r="1.6" fill="#ffffff"/>
+<text x="447.5" y="418.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">HAMi</text>
+<text x="447.5" y="442.0" text-anchor="middle" font-size="12.5" class="t-sub">Heterogeneous GPU sharing</text>
+<rect class=" f-green" x="647.0" y="386.0" width="403.0" height="76" rx="10"/>
+<circle cx="673.0" cy="410.0" r="12" class="badge-green"/><circle cx="679.1" y="410.0" r="1.9" fill="#ffffff"/><circle cx="677.3" y="414.3" r="1.9" fill="#ffffff"/><circle cx="673.0" y="416.1" r="1.9" fill="#ffffff"/><circle cx="668.7" y="414.3" r="1.9" fill="#ffffff"/><circle cx="666.9" y="410.0" r="1.9" fill="#ffffff"/><circle cx="668.7" y="405.7" r="1.9" fill="#ffffff"/><circle cx="673.0" y="403.9" r="1.9" fill="#ffffff"/><circle cx="677.3" y="405.7" r="1.9" fill="#ffffff"/><circle cx="673.0" cy="410.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="673.0" cy="410.0" r="1.6" fill="#ffffff"/>
+<text x="862.5" y="418.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kueue</text>
+<text x="862.5" y="442.0" text-anchor="middle" font-size="12.5" class="t-sub">Job queueing and quotas</text>
+<rect class=" f-green" x="1062.0" y="386.0" width="403.0" height="76" rx="10"/>
+<circle cx="1088.0" cy="410.0" r="12" class="badge-green"/><circle cx="1094.1" y="410.0" r="1.9" fill="#ffffff"/><circle cx="1092.3" y="414.3" r="1.9" fill="#ffffff"/><circle cx="1088.0" y="416.1" r="1.9" fill="#ffffff"/><circle cx="1083.7" y="414.3" r="1.9" fill="#ffffff"/><circle cx="1081.9" y="410.0" r="1.9" fill="#ffffff"/><circle cx="1083.7" y="405.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" y="403.9" r="1.9" fill="#ffffff"/><circle cx="1092.3" y="405.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="410.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1088.0" cy="410.0" r="1.6" fill="#ffffff"/>
+<text x="1277.5" y="418.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">LWS</text>
+<text x="1277.5" y="442.0" text-anchor="middle" font-size="12.5" class="t-sub">Multi-host inference workloads</text>
+<rect class=" f-green" x="1477.0" y="386.0" width="403.0" height="76" rx="10"/>
+<circle cx="1503.0" cy="410.0" r="12" class="badge-green"/><circle cx="1509.1" y="410.0" r="1.9" fill="#ffffff"/><circle cx="1507.3" y="414.3" r="1.9" fill="#ffffff"/><circle cx="1503.0" y="416.1" r="1.9" fill="#ffffff"/><circle cx="1498.7" y="414.3" r="1.9" fill="#ffffff"/><circle cx="1496.9" y="410.0" r="1.9" fill="#ffffff"/><circle cx="1498.7" y="405.7" r="1.9" fill="#ffffff"/><circle cx="1503.0" y="403.9" r="1.9" fill="#ffffff"/><circle cx="1507.3" y="405.7" r="1.9" fill="#ffffff"/><circle cx="1503.0" cy="410.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1503.0" cy="410.0" r="1.6" fill="#ffffff"/>
+<text x="1692.5" y="412.0" text-anchor="middle" font-size="17" font-weight="600" class="t-main">kueue-scheduler-</text>
+<text x="1692.5" y="430.0" text-anchor="middle" font-size="17" font-weight="600" class="t-main">wasm-extension</text>
+<text x="1692.5" y="448.0" text-anchor="middle" font-size="12" class="t-sub">Wasm scheduler extension</text>
+<rect class="band" x="28" y="488" width="1864" height="108" rx="14"/>
+<text x="46" y="532" font-size="14.5" font-weight="700" class="t-main">Orchestration and</text>
+<text x="46" y="552" font-size="14.5" font-weight="700" class="t-main">Runtime</text>
+<text x="46" y="570" font-size="11" class="t-faint">4 projects</text>
+<rect class=" f-green" x="232.0" y="504.0" width="403.0" height="76" rx="10"/>
+<circle cx="258.0" cy="528.0" r="12" class="badge-green"/><circle cx="264.1" y="528.0" r="1.9" fill="#ffffff"/><circle cx="262.3" y="532.3" r="1.9" fill="#ffffff"/><circle cx="258.0" y="534.1" r="1.9" fill="#ffffff"/><circle cx="253.7" y="532.3" r="1.9" fill="#ffffff"/><circle cx="251.9" y="528.0" r="1.9" fill="#ffffff"/><circle cx="253.7" y="523.7" r="1.9" fill="#ffffff"/><circle cx="258.0" y="521.9" r="1.9" fill="#ffffff"/><circle cx="262.3" y="523.7" r="1.9" fill="#ffffff"/><circle cx="258.0" cy="528.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="258.0" cy="528.0" r="1.6" fill="#ffffff"/>
+<text x="447.5" y="536.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kubernetes</text>
+<text x="447.5" y="560.0" text-anchor="middle" font-size="12.5" class="t-sub">Container orchestration</text>
+<rect class=" f-green" x="647.0" y="504.0" width="403.0" height="76" rx="10"/>
+<circle cx="673.0" cy="528.0" r="12" class="badge-green"/><circle cx="679.1" y="528.0" r="1.9" fill="#ffffff"/><circle cx="677.3" y="532.3" r="1.9" fill="#ffffff"/><circle cx="673.0" y="534.1" r="1.9" fill="#ffffff"/><circle cx="668.7" y="532.3" r="1.9" fill="#ffffff"/><circle cx="666.9" y="528.0" r="1.9" fill="#ffffff"/><circle cx="668.7" y="523.7" r="1.9" fill="#ffffff"/><circle cx="673.0" y="521.9" r="1.9" fill="#ffffff"/><circle cx="677.3" y="523.7" r="1.9" fill="#ffffff"/><circle cx="673.0" cy="528.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="673.0" cy="528.0" r="1.6" fill="#ffffff"/>
+<text x="862.5" y="536.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Karmada</text>
+<text x="862.5" y="560.0" text-anchor="middle" font-size="12.5" class="t-sub">Multi-cloud orchestration</text>
+<rect class=" f-green" x="1062.0" y="504.0" width="403.0" height="76" rx="10"/>
+<circle cx="1088.0" cy="528.0" r="12" class="badge-green"/><circle cx="1094.1" y="528.0" r="1.9" fill="#ffffff"/><circle cx="1092.3" y="532.3" r="1.9" fill="#ffffff"/><circle cx="1088.0" y="534.1" r="1.9" fill="#ffffff"/><circle cx="1083.7" y="532.3" r="1.9" fill="#ffffff"/><circle cx="1081.9" y="528.0" r="1.9" fill="#ffffff"/><circle cx="1083.7" y="523.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" y="521.9" r="1.9" fill="#ffffff"/><circle cx="1092.3" y="523.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="528.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1088.0" cy="528.0" r="1.6" fill="#ffffff"/>
+<text x="1277.5" y="536.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">KubeEdge</text>
+<text x="1277.5" y="560.0" text-anchor="middle" font-size="12.5" class="t-sub">Cloud-edge collaboration</text>
+<rect class=" f-green" x="1477.0" y="504.0" width="403.0" height="76" rx="10"/>
+<circle cx="1503.0" cy="528.0" r="12" class="badge-green"/><circle cx="1509.1" y="528.0" r="1.9" fill="#ffffff"/><circle cx="1507.3" y="532.3" r="1.9" fill="#ffffff"/><circle cx="1503.0" y="534.1" r="1.9" fill="#ffffff"/><circle cx="1498.7" y="532.3" r="1.9" fill="#ffffff"/><circle cx="1496.9" y="528.0" r="1.9" fill="#ffffff"/><circle cx="1498.7" y="523.7" r="1.9" fill="#ffffff"/><circle cx="1503.0" y="521.9" r="1.9" fill="#ffffff"/><circle cx="1507.3" y="523.7" r="1.9" fill="#ffffff"/><circle cx="1503.0" cy="528.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1503.0" cy="528.0" r="1.6" fill="#ffffff"/>
+<text x="1692.5" y="536.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">containerd</text>
+<text x="1692.5" y="560.0" text-anchor="middle" font-size="12.5" class="t-sub">Container runtime</text>
+<rect class="band" x="28" y="606" width="1864" height="108" rx="14"/>
+<text x="46" y="658" font-size="14.5" font-weight="700" class="t-main">Lifecycle and Delivery</text>
+<text x="46" y="688" font-size="11" class="t-faint">5 projects</text>
+<rect class=" f-blue" x="232.0" y="622.0" width="320.0" height="76" rx="10"/>
+<circle cx="258.0" cy="646.0" r="12" class="badge-blue"/><rect x="251.4" y="639.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="645.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="650.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="406.0" y="654.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kubean</text>
+<text x="406.0" y="678.0" text-anchor="middle" font-size="12.5" class="t-sub">Cluster lifecycle management</text>
+<rect class=" f-green" x="564.0" y="622.0" width="320.0" height="76" rx="10"/>
+<circle cx="590.0" cy="646.0" r="12" class="badge-green"/><circle cx="596.1" y="646.0" r="1.9" fill="#ffffff"/><circle cx="594.3" y="650.3" r="1.9" fill="#ffffff"/><circle cx="590.0" y="652.1" r="1.9" fill="#ffffff"/><circle cx="585.7" y="650.3" r="1.9" fill="#ffffff"/><circle cx="583.9" y="646.0" r="1.9" fill="#ffffff"/><circle cx="585.7" y="641.7" r="1.9" fill="#ffffff"/><circle cx="590.0" y="639.9" r="1.9" fill="#ffffff"/><circle cx="594.3" y="641.7" r="1.9" fill="#ffffff"/><circle cx="590.0" cy="646.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="590.0" cy="646.0" r="1.6" fill="#ffffff"/>
+<text x="738.0" y="654.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kubespray</text>
+<text x="738.0" y="678.0" text-anchor="middle" font-size="12.5" class="t-sub">Kubernetes deployment</text>
+<rect class=" f-green" x="896.0" y="622.0" width="320.0" height="76" rx="10"/>
+<circle cx="922.0" cy="646.0" r="12" class="badge-green"/><circle cx="928.1" y="646.0" r="1.9" fill="#ffffff"/><circle cx="926.3" y="650.3" r="1.9" fill="#ffffff"/><circle cx="922.0" y="652.1" r="1.9" fill="#ffffff"/><circle cx="917.7" y="650.3" r="1.9" fill="#ffffff"/><circle cx="915.9" y="646.0" r="1.9" fill="#ffffff"/><circle cx="917.7" y="641.7" r="1.9" fill="#ffffff"/><circle cx="922.0" y="639.9" r="1.9" fill="#ffffff"/><circle cx="926.3" y="641.7" r="1.9" fill="#ffffff"/><circle cx="922.0" cy="646.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="922.0" cy="646.0" r="1.6" fill="#ffffff"/>
+<text x="1070.0" y="654.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">kubeadm</text>
+<text x="1070.0" y="678.0" text-anchor="middle" font-size="12.5" class="t-sub">Cluster bootstrap and upgrade</text>
+<rect class=" f-blue" x="1228.0" y="622.0" width="320.0" height="76" rx="10"/>
+<circle cx="1254.0" cy="646.0" r="12" class="badge-blue"/><rect x="1247.4" y="639.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1247.4" y="645.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1247.4" y="650.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1402.0" y="654.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kubernetes LTS</text>
+<text x="1402.0" y="678.0" text-anchor="middle" font-size="12.5" class="t-sub">Long-term Kubernetes support</text>
+<rect class=" f-green" x="1560.0" y="622.0" width="320.0" height="76" rx="10"/>
+<circle cx="1586.0" cy="646.0" r="12" class="badge-green"/><circle cx="1592.1" y="646.0" r="1.9" fill="#ffffff"/><circle cx="1590.3" y="650.3" r="1.9" fill="#ffffff"/><circle cx="1586.0" y="652.1" r="1.9" fill="#ffffff"/><circle cx="1581.7" y="650.3" r="1.9" fill="#ffffff"/><circle cx="1579.9" y="646.0" r="1.9" fill="#ffffff"/><circle cx="1581.7" y="641.7" r="1.9" fill="#ffffff"/><circle cx="1586.0" y="639.9" r="1.9" fill="#ffffff"/><circle cx="1590.3" y="641.7" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="646.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1586.0" cy="646.0" r="1.6" fill="#ffffff"/>
+<text x="1734.0" y="654.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Argo CD</text>
+<text x="1734.0" y="678.0" text-anchor="middle" font-size="12.5" class="t-sub">GitOps continuous delivery</text>
+<text x="1864.0" y="642.0" text-anchor="end" font-size="14" font-weight="700" class="t-faint">+</text>
+<rect class="band" x="28" y="724" width="1864" height="108" rx="14"/>
+<text x="46" y="768" font-size="14.5" font-weight="700" class="t-main">Networking and</text>
+<text x="46" y="788" font-size="14.5" font-weight="700" class="t-main">Service Mesh</text>
+<text x="46" y="806" font-size="11" class="t-faint">4 projects</text>
+<rect class=" f-blue" x="232.0" y="740.0" width="403.0" height="76" rx="10"/>
+<circle cx="258.0" cy="764.0" r="12" class="badge-blue"/><rect x="251.4" y="757.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="763.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="768.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="447.5" y="772.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Spiderpool</text>
+<text x="447.5" y="796.0" text-anchor="middle" font-size="12.5" class="t-sub">Underlay / RDMA networking</text>
+<rect class=" f-blue" x="647.0" y="740.0" width="403.0" height="76" rx="10"/>
+<circle cx="673.0" cy="764.0" r="12" class="badge-blue"/><rect x="666.4" y="757.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="666.4" y="763.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="666.4" y="768.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="862.5" y="772.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">EgressGateway</text>
+<text x="862.5" y="796.0" text-anchor="middle" font-size="12.5" class="t-sub">Cluster egress gateway</text>
+<rect class=" f-green" x="1062.0" y="740.0" width="403.0" height="76" rx="10"/>
+<circle cx="1088.0" cy="764.0" r="12" class="badge-green"/><circle cx="1094.1" y="764.0" r="1.9" fill="#ffffff"/><circle cx="1092.3" y="768.3" r="1.9" fill="#ffffff"/><circle cx="1088.0" y="770.1" r="1.9" fill="#ffffff"/><circle cx="1083.7" y="768.3" r="1.9" fill="#ffffff"/><circle cx="1081.9" y="764.0" r="1.9" fill="#ffffff"/><circle cx="1083.7" y="759.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" y="757.9" r="1.9" fill="#ffffff"/><circle cx="1092.3" y="759.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="764.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1088.0" cy="764.0" r="1.6" fill="#ffffff"/>
+<text x="1277.5" y="772.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Istio</text>
+<text x="1277.5" y="796.0" text-anchor="middle" font-size="12.5" class="t-sub">Service mesh</text>
+<rect class=" f-blue-d" x="1477.0" y="740.0" width="403.0" height="76" rx="10"/>
+<circle cx="1503.0" cy="764.0" r="12" class="badge-blue"/><rect x="1496.4" y="757.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1496.4" y="763.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1496.4" y="768.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1692.5" y="772.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Merbridge</text>
+<text x="1692.5" y="796.0" text-anchor="middle" font-size="12.5" class="t-sub">eBPF mesh acceleration</text>
+<text x="1864.0" y="760.0" text-anchor="end" font-size="10" class="t-faint">Archived</text>
+<rect class="band" x="28" y="842" width="1864" height="108" rx="14"/>
+<text x="46" y="894" font-size="14.5" font-weight="700" class="t-main">Storage and Data</text>
+<text x="46" y="924" font-size="11" class="t-faint">5 projects</text>
+<rect class=" f-blue" x="232.0" y="858.0" width="320.0" height="76" rx="10"/>
+<circle cx="258.0" cy="882.0" r="12" class="badge-blue"/><rect x="251.4" y="875.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="881.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="886.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="406.0" y="890.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">HwameiStor</text>
+<text x="406.0" y="914.0" text-anchor="middle" font-size="12.5" class="t-sub">Cloud native local storage</text>
+<rect class=" f-purple" x="564.0" y="858.0" width="320.0" height="76" rx="10"/>
+<rect x="578.0" y="870.0" width="24" height="24" rx="6.0" class="badge-purple"/><circle cx="596.1" y="882.0" r="1.9" fill="#ffffff"/><circle cx="594.3" y="886.3" r="1.9" fill="#ffffff"/><circle cx="590.0" y="888.1" r="1.9" fill="#ffffff"/><circle cx="585.7" y="886.3" r="1.9" fill="#ffffff"/><circle cx="583.9" y="882.0" r="1.9" fill="#ffffff"/><circle cx="585.7" y="877.7" r="1.9" fill="#ffffff"/><circle cx="590.0" y="875.9" r="1.9" fill="#ffffff"/><circle cx="594.3" y="877.7" r="1.9" fill="#ffffff"/><circle cx="590.0" cy="882.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="590.0" cy="882.0" r="1.6" fill="#ffffff"/>
+<text x="738.0" y="890.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Piraeus</text>
+<text x="738.0" y="914.0" text-anchor="middle" font-size="12.5" class="t-sub">HA replicated storage</text>
+<rect class=" f-blue" x="896.0" y="858.0" width="320.0" height="76" rx="10"/>
+<circle cx="922.0" cy="882.0" r="12" class="badge-blue"/><rect x="915.4" y="875.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="915.4" y="881.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="915.4" y="886.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1070.0" y="890.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">ContextStore</text>
+<text x="1070.0" y="914.0" text-anchor="middle" font-size="12.5" class="t-sub">Tiered KV cache storage</text>
+<rect class=" f-green" x="1228.0" y="858.0" width="320.0" height="76" rx="10"/>
+<circle cx="1254.0" cy="882.0" r="12" class="badge-green"/><circle cx="1260.1" y="882.0" r="1.9" fill="#ffffff"/><circle cx="1258.3" y="886.3" r="1.9" fill="#ffffff"/><circle cx="1254.0" y="888.1" r="1.9" fill="#ffffff"/><circle cx="1249.7" y="886.3" r="1.9" fill="#ffffff"/><circle cx="1247.9" y="882.0" r="1.9" fill="#ffffff"/><circle cx="1249.7" y="877.7" r="1.9" fill="#ffffff"/><circle cx="1254.0" y="875.9" r="1.9" fill="#ffffff"/><circle cx="1258.3" y="877.7" r="1.9" fill="#ffffff"/><circle cx="1254.0" cy="882.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1254.0" cy="882.0" r="1.6" fill="#ffffff"/>
+<text x="1402.0" y="890.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Lustre CSI</text>
+<text x="1402.0" y="914.0" text-anchor="middle" font-size="12.5" class="t-sub">Lustre storage driver</text>
+<rect class=" f-blue" x="1560.0" y="858.0" width="320.0" height="76" rx="10"/>
+<circle cx="1586.0" cy="882.0" r="12" class="badge-blue"/><rect x="1579.4" y="875.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1579.4" y="881.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1579.4" y="886.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1734.0" y="890.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Xet</text>
+<text x="1734.0" y="914.0" text-anchor="middle" font-size="12.5" class="t-sub">Xet protocol in Go</text>
+<rect class="band" x="28" y="960" width="1864" height="108" rx="14"/>
+<text x="46" y="1012" font-size="14.5" font-weight="700" class="t-main">Observability and Ops</text>
+<text x="46" y="1042" font-size="11" class="t-faint">6 projects</text>
+<rect class=" f-blue" x="232.0" y="976.0" width="264.7" height="76" rx="10"/>
+<circle cx="258.0" cy="1000.0" r="12" class="badge-blue"/><rect x="251.4" y="993.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="999.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="1004.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="378.3" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Clusterpedia</text>
+<text x="378.3" y="1032.0" text-anchor="middle" font-size="12.5" class="t-sub">Multi-cluster search</text>
+<rect class=" f-green" x="508.7" y="976.0" width="264.7" height="76" rx="10"/>
+<circle cx="534.6666666666667" cy="1000.0" r="12" class="badge-green"/><circle cx="540.8" y="1000.0" r="1.9" fill="#ffffff"/><circle cx="539.0" y="1004.3" r="1.9" fill="#ffffff"/><circle cx="534.7" y="1006.1" r="1.9" fill="#ffffff"/><circle cx="530.4" y="1004.3" r="1.9" fill="#ffffff"/><circle cx="528.6" y="1000.0" r="1.9" fill="#ffffff"/><circle cx="530.4" y="995.7" r="1.9" fill="#ffffff"/><circle cx="534.7" y="993.9" r="1.9" fill="#ffffff"/><circle cx="539.0" y="995.7" r="1.9" fill="#ffffff"/><circle cx="534.6666666666667" cy="1000.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="534.6666666666667" cy="1000.0" r="1.6" fill="#ffffff"/>
+<text x="655.0" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">SkyWalking</text>
+<text x="655.0" y="1032.0" text-anchor="middle" font-size="12.5" class="t-sub">Application performance monitoring</text>
+<rect class=" f-green" x="785.3" y="976.0" width="264.7" height="76" rx="10"/>
+<circle cx="811.3333333333334" cy="1000.0" r="12" class="badge-green"/><circle cx="817.4" y="1000.0" r="1.9" fill="#ffffff"/><circle cx="815.6" y="1004.3" r="1.9" fill="#ffffff"/><circle cx="811.3" y="1006.1" r="1.9" fill="#ffffff"/><circle cx="807.0" y="1004.3" r="1.9" fill="#ffffff"/><circle cx="805.2" y="1000.0" r="1.9" fill="#ffffff"/><circle cx="807.0" y="995.7" r="1.9" fill="#ffffff"/><circle cx="811.3" y="993.9" r="1.9" fill="#ffffff"/><circle cx="815.6" y="995.7" r="1.9" fill="#ffffff"/><circle cx="811.3333333333334" cy="1000.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="811.3333333333334" cy="1000.0" r="1.6" fill="#ffffff"/>
+<text x="931.7" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">OpenTelemetry</text>
+<text x="931.7" y="1032.0" text-anchor="middle" font-size="12.5" class="t-sub">Telemetry collection</text>
+<text x="1034.0" y="996.0" text-anchor="end" font-size="14" font-weight="700" class="t-faint">+</text>
+<rect class=" f-green" x="1062.0" y="976.0" width="264.7" height="76" rx="10"/>
+<circle cx="1088.0" cy="1000.0" r="12" class="badge-green"/><circle cx="1094.1" y="1000.0" r="1.9" fill="#ffffff"/><circle cx="1092.3" y="1004.3" r="1.9" fill="#ffffff"/><circle cx="1088.0" y="1006.1" r="1.9" fill="#ffffff"/><circle cx="1083.7" y="1004.3" r="1.9" fill="#ffffff"/><circle cx="1081.9" y="1000.0" r="1.9" fill="#ffffff"/><circle cx="1083.7" y="995.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" y="993.9" r="1.9" fill="#ffffff"/><circle cx="1092.3" y="995.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="1000.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1088.0" cy="1000.0" r="1.6" fill="#ffffff"/>
+<text x="1208.3" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Apollo</text>
+<text x="1208.3" y="1032.0" text-anchor="middle" font-size="12.5" class="t-sub">Config management</text>
+<rect class=" f-blue" x="1338.7" y="976.0" width="264.7" height="76" rx="10"/>
+<circle cx="1364.6666666666667" cy="1000.0" r="12" class="badge-blue"/><rect x="1358.0666666666668" y="993.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1358.0666666666668" y="999.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1358.0666666666668" y="1004.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1485.0" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">CloudTTY</text>
+<text x="1485.0" y="1032.0" text-anchor="middle" font-size="12.5" class="t-sub">Kubernetes web terminal</text>
+<rect class=" f-blue" x="1615.3" y="976.0" width="264.7" height="76" rx="10"/>
+<circle cx="1641.3333333333335" cy="1000.0" r="12" class="badge-blue"/><rect x="1634.7333333333336" y="993.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1634.7333333333336" y="999.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1634.7333333333336" y="1004.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1761.7" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Unifabric</text>
+<text x="1761.7" y="1032.0" text-anchor="middle" font-size="12.5" class="t-sub">AI network observability</text>
+<rect class="band" x="28" y="1078" width="1864" height="108" rx="14"/>
+<text x="46" y="1122" font-size="14.5" font-weight="700" class="t-main">Testing and</text>
+<text x="46" y="1142" font-size="14.5" font-weight="700" class="t-main">Image Distribution</text>
+<text x="46" y="1160" font-size="11" class="t-faint">5 projects</text>
+<rect class=" f-blue" x="232.0" y="1094.0" width="320.0" height="76" rx="10"/>
+<circle cx="258.0" cy="1118.0" r="12" class="badge-blue"/><rect x="251.4" y="1111.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="1117.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="1122.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="406.0" y="1126.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">KWOK</text>
+<text x="406.0" y="1150.0" text-anchor="middle" font-size="12.5" class="t-sub">Node and cluster simulation</text>
+<rect class=" f-blue" x="564.0" y="1094.0" width="320.0" height="76" rx="10"/>
+<circle cx="590.0" cy="1118.0" r="12" class="badge-blue"/><rect x="583.4" y="1111.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="583.4" y="1117.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="583.4" y="1122.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="738.0" y="1126.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kdoctor</text>
+<text x="738.0" y="1150.0" text-anchor="middle" font-size="12.5" class="t-sub">Dataplane diagnostics</text>
+<rect class=" f-blue" x="896.0" y="1094.0" width="320.0" height="76" rx="10"/>
+<circle cx="922.0" cy="1118.0" r="12" class="badge-blue"/><rect x="915.4" y="1111.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="915.4" y="1117.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="915.4" y="1122.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1070.0" y="1126.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kcover</text>
+<text x="1070.0" y="1150.0" text-anchor="middle" font-size="12.5" class="t-sub">Failure recovery coverage</text>
+<rect class=" f-blue" x="1228.0" y="1094.0" width="320.0" height="76" rx="10"/>
+<circle cx="1254.0" cy="1118.0" r="12" class="badge-blue"/><rect x="1247.4" y="1111.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1247.4" y="1117.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1247.4" y="1122.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1402.0" y="1120.0" text-anchor="middle" font-size="17" font-weight="600" class="t-main">public-image-</text>
+<text x="1402.0" y="1138.0" text-anchor="middle" font-size="17" font-weight="600" class="t-main">mirror</text>
+<text x="1402.0" y="1156.0" text-anchor="middle" font-size="12" class="t-sub">Public image acceleration</text>
+<rect class=" f-blue" x="1560.0" y="1094.0" width="320.0" height="76" rx="10"/>
+<circle cx="1586.0" cy="1118.0" r="12" class="badge-blue"/><rect x="1579.4" y="1111.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1579.4" y="1117.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1579.4" y="1122.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1734.0" y="1126.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">OpenCIDN</text>
+<text x="1734.0" y="1150.0" text-anchor="middle" font-size="12.5" class="t-sub">Image distribution network</text>
+<text x="46" y="1230" font-size="13"><tspan font-weight="600" class="t-main">Scope: </tspan><tspan class="t-faint">Each project is categorized once by its primary mode of participation. The count includes tools, Kubernetes subprojects, projects initiated by DaoCloud staff, and one archived project; it is not the company-wide project total.</tspan></text>
+<text x="46" y="1252" font-size="13"><tspan font-weight="600" class="t-main">Relationship: </tspan><tspan class="t-faint">Self-initiated = founded by DaoCloud; Deep contributor = maintainer / approver / substantial contributions; Co-initiated = jointly founded. Co-initiation does not imply current maintainer affiliation.</tspan></text>
+<text x="46" y="1274" font-size="13"><tspan font-weight="600" class="t-main">Additions and revisions: </tspan><tspan class="t-faint">+ marks Dynamo, Argo CD, OpenTelemetry, and KWOK, categorized per the Feishu initiation list; Merbridge is a CNCF Sandbox project and is kept but marked archived after more than a year without updates; Knoway and kasmcloud were removed for the same reason.</tspan></text>
+<text x="46" y="1296" font-size="13"><tspan class="t-faint">Categories follow primary use case and do not imply dependency relationships.</tspan></text>
+</svg>

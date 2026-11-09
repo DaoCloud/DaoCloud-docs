@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1920 1318" role="img" aria-labelledby="pt-title pt-desc">
+<title id="pt-title">道客开源项目全景图</title>
+<desc id="pt-desc">DaoCloud 道客开源项目全景：38 个收录项目，按 AI 模型与推理、GPU 与作业调度、编排与运行时、生命周期与交付、网络与服务网格、存储与数据、可观测与运维、测试与镜像分发八个领域归类，标注道客的参与方式。</desc>
+<style>
+  .bg{fill:#ffffff}
+  .band{fill:#f7f8fb}
+  .t-main{fill:#1e2430}
+  .t-sub{fill:#5b6472}
+  .t-faint{fill:#8a93a3}
+  .num{fill:#1e2430;font-weight:700}
+  .badge-blue{fill:#3d5aa9}
+  .badge-green{fill:#1e7a4e}
+  .badge-purple{fill:#7e57c2}
+  .f-blue{fill:#eef3fd;stroke:#4a6fb5;stroke-width:1.6}
+  .f-green{fill:#e9f5ef;stroke:#2e8b68;stroke-width:1.6}
+  .f-purple{fill:#f3eefb;stroke:#9575cd;stroke-width:1.6}
+  .f-blue-d{fill:#eef3fd;stroke:#4a6fb5;stroke-width:1.8;stroke-dasharray:5 4}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#161b24}
+    .band{fill:#1f2733}
+    .t-main{fill:#e8eaf0}
+    .t-sub{fill:#a8b3c4}
+    .t-faint{fill:#78839a}
+    .num{fill:#e8eaf0}
+    .f-blue{fill:#22304a;stroke:#6f8fd9}
+    .f-green{fill:#1d3329;stroke:#4aa97e}
+    .f-purple{fill:#2d2540;stroke:#a78bda}
+    .f-blue-d{fill:#22304a;stroke:#6f8fd9}
+    .red{fill:#e05a56}
+  }
+</style>
+<rect class="bg" x="0" y="0" width="1920" height="1318"/>
+<rect x="28" y="26" width="8" height="54" rx="3" fill="#c8413d"/>
+<text x="50" y="52" font-size="27" font-weight="700" class="t-main">道客开源项目全景图</text>
+<text x="50" y="82" font-size="15" class="t-sub">THE PORTFOLIO：从云原生基础设施到 AI 算力与推理</text>
+<text x="1892" y="46" text-anchor="end" font-size="19" font-weight="700" fill="#c8413d">DaoCloud 道客</text>
+<text x="1892" y="70" text-anchor="end" font-size="13" class="t-faint">资料统计日期 2026.11.03</text>
+<text x="64" y="162" font-size="42" class="num">38</text>
+<text x="152" y="142" font-size="16" font-weight="600" class="t-main">本园收录项目</text>
+<text x="152" y="168" font-size="13" class="t-faint">含子项目及 1 个归档项目</text>
+<text x="516" y="162" font-size="42" class="num">18</text>
+<text x="604" y="142" font-size="16" font-weight="600" class="t-main">道客自主开源</text>
+<text x="604" y="168" font-size="13" class="t-faint">含道客或道客员工发起项目</text>
+<text x="968" y="162" font-size="42" class="num">18</text>
+<text x="1056" y="142" font-size="16" font-weight="600" class="t-main">道客重度参与</text>
+<text x="1056" y="168" font-size="13" class="t-faint">维护、Approver 或深度贡献</text>
+<text x="1420" y="162" font-size="42" class="num">2</text>
+<text x="1508" y="142" font-size="16" font-weight="600" class="t-main">道客联合开源</text>
+<text x="1508" y="168" font-size="13" class="t-faint">HAMI · Piraeus</text>
+<text x="64" y="222" font-size="15" font-weight="600" class="t-main">颜色与角标 = 道客参与方式</text>
+<circle cx="330" cy="217" r="10" class="badge-blue"/><rect x="324.5" y="211.5" width="11.0" height="2.1" rx="1" fill="#ffffff"/><rect x="324.5" y="216" width="11.0" height="2.1" rx="1" fill="#ffffff"/><rect x="324.5" y="220.5" width="11.0" height="2.1" rx="1" fill="#ffffff"/>
+<text x="350" y="222" font-size="14" class="t-main">自主开源</text>
+<circle cx="490" cy="217" r="10" class="badge-green"/><circle cx="495.1" cy="217.0" r="1.6" fill="#ffffff"/><circle cx="493.6" cy="220.6" r="1.6" fill="#ffffff"/><circle cx="490.0" cy="222.1" r="1.6" fill="#ffffff"/><circle cx="486.4" cy="220.6" r="1.6" fill="#ffffff"/><circle cx="484.9" cy="217.0" r="1.6" fill="#ffffff"/><circle cx="486.4" cy="213.4" r="1.6" fill="#ffffff"/><circle cx="490.0" cy="211.9" r="1.6" fill="#ffffff"/><circle cx="493.6" cy="213.4" r="1.6" fill="#ffffff"/><circle cx="490" cy="217" r="4.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="490" cy="217" r="1.4" fill="#ffffff"/>
+<text x="510" y="222" font-size="14" class="t-main">重度参与</text>
+<rect x="630" y="207" width="20" height="20" rx="5.0" class="badge-purple"/><circle cx="645.1" cy="217.0" r="1.6" fill="#ffffff"/><circle cx="643.6" cy="220.6" r="1.6" fill="#ffffff"/><circle cx="640.0" cy="222.1" r="1.6" fill="#ffffff"/><circle cx="636.4" cy="220.6" r="1.6" fill="#ffffff"/><circle cx="634.9" cy="217.0" r="1.6" fill="#ffffff"/><circle cx="636.4" cy="213.4" r="1.6" fill="#ffffff"/><circle cx="640.0" cy="211.9" r="1.6" fill="#ffffff"/><circle cx="643.6" cy="213.4" r="1.6" fill="#ffffff"/><circle cx="640" cy="217" r="4.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="640" cy="217" r="1.4" fill="#ffffff"/>
+<text x="660" y="222" font-size="14" class="t-main">联合开源</text>
+<text x="1892" y="222" text-anchor="end" font-size="13" class="t-faint">+ 飞书补充 · 虚线 已归档</text>
+<rect class="band" x="28" y="252" width="1864" height="108" rx="14"/>
+<text x="46" y="302" font-size="17" font-weight="700" class="t-main">AI 模型与推理</text>
+<text x="46" y="324" font-size="11" class="t-faint">Models &amp; inference</text>
+<rect class=" f-blue" x="232.0" y="268.0" width="320.0" height="76" rx="10"/>
+<circle cx="258.0" cy="292.0" r="12" class="badge-blue"/><rect x="251.4" y="285.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="291.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="296.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="406.0" y="300.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">MatrixHub</text>
+<text x="406.0" y="324.0" text-anchor="middle" font-size="13.5" class="t-sub">AI 模型仓库</text>
+<rect class=" f-green" x="564.0" y="268.0" width="320.0" height="76" rx="10"/>
+<circle cx="590.0" cy="292.0" r="12" class="badge-green"/><circle cx="596.1" cy="292.0" r="1.9" fill="#ffffff"/><circle cx="594.3" cy="296.3" r="1.9" fill="#ffffff"/><circle cx="590.0" cy="298.1" r="1.9" fill="#ffffff"/><circle cx="585.7" cy="296.3" r="1.9" fill="#ffffff"/><circle cx="583.9" cy="292.0" r="1.9" fill="#ffffff"/><circle cx="585.7" cy="287.7" r="1.9" fill="#ffffff"/><circle cx="590.0" cy="285.9" r="1.9" fill="#ffffff"/><circle cx="594.3" cy="287.7" r="1.9" fill="#ffffff"/><circle cx="590.0" cy="292.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="590.0" cy="292.0" r="1.6" fill="#ffffff"/>
+<text x="738.0" y="300.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">vLLM</text>
+<text x="738.0" y="324.0" text-anchor="middle" font-size="13.5" class="t-sub">大模型推理引擎</text>
+<rect class=" f-green" x="896.0" y="268.0" width="320.0" height="76" rx="10"/>
+<circle cx="922.0" cy="292.0" r="12" class="badge-green"/><circle cx="928.1" cy="292.0" r="1.9" fill="#ffffff"/><circle cx="926.3" cy="296.3" r="1.9" fill="#ffffff"/><circle cx="922.0" cy="298.1" r="1.9" fill="#ffffff"/><circle cx="917.7" cy="296.3" r="1.9" fill="#ffffff"/><circle cx="915.9" cy="292.0" r="1.9" fill="#ffffff"/><circle cx="917.7" cy="287.7" r="1.9" fill="#ffffff"/><circle cx="922.0" cy="285.9" r="1.9" fill="#ffffff"/><circle cx="926.3" cy="287.7" r="1.9" fill="#ffffff"/><circle cx="922.0" cy="292.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="922.0" cy="292.0" r="1.6" fill="#ffffff"/>
+<text x="1070.0" y="300.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">llm-d</text>
+<text x="1070.0" y="324.0" text-anchor="middle" font-size="13.5" class="t-sub">分布式推理服务</text>
+<rect class=" f-green" x="1228.0" y="268.0" width="320.0" height="76" rx="10"/>
+<circle cx="1254.0" cy="292.0" r="12" class="badge-green"/><circle cx="1260.1" cy="292.0" r="1.9" fill="#ffffff"/><circle cx="1258.3" cy="296.3" r="1.9" fill="#ffffff"/><circle cx="1254.0" cy="298.1" r="1.9" fill="#ffffff"/><circle cx="1249.7" cy="296.3" r="1.9" fill="#ffffff"/><circle cx="1247.9" cy="292.0" r="1.9" fill="#ffffff"/><circle cx="1249.7" cy="287.7" r="1.9" fill="#ffffff"/><circle cx="1254.0" cy="285.9" r="1.9" fill="#ffffff"/><circle cx="1258.3" cy="287.7" r="1.9" fill="#ffffff"/><circle cx="1254.0" cy="292.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1254.0" cy="292.0" r="1.6" fill="#ffffff"/>
+<text x="1402.0" y="294.0" text-anchor="middle" font-size="17" font-weight="600" class="t-main">vLLM Semantic</text>
+<text x="1402.0" y="312.0" text-anchor="middle" font-size="17" font-weight="600" class="t-main">Router</text>
+<text x="1402.0" y="330.0" text-anchor="middle" font-size="13" class="t-sub">模型语义路由</text>
+<rect class=" f-green" x="1560.0" y="268.0" width="320.0" height="76" rx="10"/>
+<circle cx="1586.0" cy="292.0" r="12" class="badge-green"/><circle cx="1592.1" cy="292.0" r="1.9" fill="#ffffff"/><circle cx="1590.3" cy="296.3" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="298.1" r="1.9" fill="#ffffff"/><circle cx="1581.7" cy="296.3" r="1.9" fill="#ffffff"/><circle cx="1579.9" cy="292.0" r="1.9" fill="#ffffff"/><circle cx="1581.7" cy="287.7" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="285.9" r="1.9" fill="#ffffff"/><circle cx="1590.3" cy="287.7" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="292.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1586.0" cy="292.0" r="1.6" fill="#ffffff"/>
+<text x="1734.0" y="300.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Dynamo</text>
+<text x="1734.0" y="324.0" text-anchor="middle" font-size="13.5" class="t-sub">分布式推理框架</text>
+<text x="1864.0" y="288.0" text-anchor="end" font-size="14" font-weight="700" class="t-faint">+</text>
+<rect class="band" x="28" y="370" width="1864" height="108" rx="14"/>
+<text x="46" y="420" font-size="17" font-weight="700" class="t-main">GPU 与作业调度</text>
+<text x="46" y="442" font-size="11" class="t-faint">GPU &amp; scheduling</text>
+<rect class=" f-purple" x="232.0" y="386.0" width="403.0" height="76" rx="10"/>
+<rect x="246.0" y="398.0" width="24" height="24" rx="6.0" class="badge-purple"/><circle cx="264.1" cy="410.0" r="1.9" fill="#ffffff"/><circle cx="262.3" cy="414.3" r="1.9" fill="#ffffff"/><circle cx="258.0" cy="416.1" r="1.9" fill="#ffffff"/><circle cx="253.7" cy="414.3" r="1.9" fill="#ffffff"/><circle cx="251.9" cy="410.0" r="1.9" fill="#ffffff"/><circle cx="253.7" cy="405.7" r="1.9" fill="#ffffff"/><circle cx="258.0" cy="403.9" r="1.9" fill="#ffffff"/><circle cx="262.3" cy="405.7" r="1.9" fill="#ffffff"/><circle cx="258.0" cy="410.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="258.0" cy="410.0" r="1.6" fill="#ffffff"/>
+<text x="447.5" y="418.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">HAMi</text>
+<text x="447.5" y="442.0" text-anchor="middle" font-size="13.5" class="t-sub">异构算力共享与虚拟化</text>
+<rect class=" f-green" x="647.0" y="386.0" width="403.0" height="76" rx="10"/>
+<circle cx="673.0" cy="410.0" r="12" class="badge-green"/><circle cx="679.1" cy="410.0" r="1.9" fill="#ffffff"/><circle cx="677.3" cy="414.3" r="1.9" fill="#ffffff"/><circle cx="673.0" cy="416.1" r="1.9" fill="#ffffff"/><circle cx="668.7" cy="414.3" r="1.9" fill="#ffffff"/><circle cx="666.9" cy="410.0" r="1.9" fill="#ffffff"/><circle cx="668.7" cy="405.7" r="1.9" fill="#ffffff"/><circle cx="673.0" cy="403.9" r="1.9" fill="#ffffff"/><circle cx="677.3" cy="405.7" r="1.9" fill="#ffffff"/><circle cx="673.0" cy="410.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="673.0" cy="410.0" r="1.6" fill="#ffffff"/>
+<text x="862.5" y="418.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kueue</text>
+<text x="862.5" y="442.0" text-anchor="middle" font-size="13.5" class="t-sub">作业队列与配额</text>
+<rect class=" f-green" x="1062.0" y="386.0" width="403.0" height="76" rx="10"/>
+<circle cx="1088.0" cy="410.0" r="12" class="badge-green"/><circle cx="1094.1" cy="410.0" r="1.9" fill="#ffffff"/><circle cx="1092.3" cy="414.3" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="416.1" r="1.9" fill="#ffffff"/><circle cx="1083.7" cy="414.3" r="1.9" fill="#ffffff"/><circle cx="1081.9" cy="410.0" r="1.9" fill="#ffffff"/><circle cx="1083.7" cy="405.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="403.9" r="1.9" fill="#ffffff"/><circle cx="1092.3" cy="405.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="410.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1088.0" cy="410.0" r="1.6" fill="#ffffff"/>
+<text x="1277.5" y="418.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">LWS</text>
+<text x="1277.5" y="442.0" text-anchor="middle" font-size="13.5" class="t-sub">多机推理工作负载</text>
+<rect class=" f-green" x="1477.0" y="386.0" width="403.0" height="76" rx="10"/>
+<circle cx="1503.0" cy="410.0" r="12" class="badge-green"/><circle cx="1509.1" cy="410.0" r="1.9" fill="#ffffff"/><circle cx="1507.3" cy="414.3" r="1.9" fill="#ffffff"/><circle cx="1503.0" cy="416.1" r="1.9" fill="#ffffff"/><circle cx="1498.7" cy="414.3" r="1.9" fill="#ffffff"/><circle cx="1496.9" cy="410.0" r="1.9" fill="#ffffff"/><circle cx="1498.7" cy="405.7" r="1.9" fill="#ffffff"/><circle cx="1503.0" cy="403.9" r="1.9" fill="#ffffff"/><circle cx="1507.3" cy="405.7" r="1.9" fill="#ffffff"/><circle cx="1503.0" cy="410.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1503.0" cy="410.0" r="1.6" fill="#ffffff"/>
+<text x="1692.5" y="412.0" text-anchor="middle" font-size="17" font-weight="600" class="t-main">kueue-scheduler-</text>
+<text x="1692.5" y="430.0" text-anchor="middle" font-size="17" font-weight="600" class="t-main">wasm-extension</text>
+<text x="1692.5" y="448.0" text-anchor="middle" font-size="13" class="t-sub">Wasm 调度扩展</text>
+<rect class="band" x="28" y="488" width="1864" height="108" rx="14"/>
+<text x="46" y="538" font-size="17" font-weight="700" class="t-main">编排与运行时</text>
+<text x="46" y="560" font-size="11" class="t-faint">Orchestration &amp; runtime</text>
+<rect class=" f-green" x="232.0" y="504.0" width="403.0" height="76" rx="10"/>
+<circle cx="258.0" cy="528.0" r="12" class="badge-green"/><circle cx="264.1" cy="528.0" r="1.9" fill="#ffffff"/><circle cx="262.3" cy="532.3" r="1.9" fill="#ffffff"/><circle cx="258.0" cy="534.1" r="1.9" fill="#ffffff"/><circle cx="253.7" cy="532.3" r="1.9" fill="#ffffff"/><circle cx="251.9" cy="528.0" r="1.9" fill="#ffffff"/><circle cx="253.7" cy="523.7" r="1.9" fill="#ffffff"/><circle cx="258.0" cy="521.9" r="1.9" fill="#ffffff"/><circle cx="262.3" cy="523.7" r="1.9" fill="#ffffff"/><circle cx="258.0" cy="528.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="258.0" cy="528.0" r="1.6" fill="#ffffff"/>
+<text x="447.5" y="536.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kubernetes</text>
+<text x="447.5" y="560.0" text-anchor="middle" font-size="13.5" class="t-sub">容器编排</text>
+<rect class=" f-green" x="647.0" y="504.0" width="403.0" height="76" rx="10"/>
+<circle cx="673.0" cy="528.0" r="12" class="badge-green"/><circle cx="679.1" cy="528.0" r="1.9" fill="#ffffff"/><circle cx="677.3" cy="532.3" r="1.9" fill="#ffffff"/><circle cx="673.0" cy="534.1" r="1.9" fill="#ffffff"/><circle cx="668.7" cy="532.3" r="1.9" fill="#ffffff"/><circle cx="666.9" cy="528.0" r="1.9" fill="#ffffff"/><circle cx="668.7" cy="523.7" r="1.9" fill="#ffffff"/><circle cx="673.0" cy="521.9" r="1.9" fill="#ffffff"/><circle cx="677.3" cy="523.7" r="1.9" fill="#ffffff"/><circle cx="673.0" cy="528.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="673.0" cy="528.0" r="1.6" fill="#ffffff"/>
+<text x="862.5" y="536.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Karmada</text>
+<text x="862.5" y="560.0" text-anchor="middle" font-size="13.5" class="t-sub">多云集群编排</text>
+<rect class=" f-green" x="1062.0" y="504.0" width="403.0" height="76" rx="10"/>
+<circle cx="1088.0" cy="528.0" r="12" class="badge-green"/><circle cx="1094.1" cy="528.0" r="1.9" fill="#ffffff"/><circle cx="1092.3" cy="532.3" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="534.1" r="1.9" fill="#ffffff"/><circle cx="1083.7" cy="532.3" r="1.9" fill="#ffffff"/><circle cx="1081.9" cy="528.0" r="1.9" fill="#ffffff"/><circle cx="1083.7" cy="523.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="521.9" r="1.9" fill="#ffffff"/><circle cx="1092.3" cy="523.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="528.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1088.0" cy="528.0" r="1.6" fill="#ffffff"/>
+<text x="1277.5" y="536.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">KubeEdge</text>
+<text x="1277.5" y="560.0" text-anchor="middle" font-size="13.5" class="t-sub">云边协同</text>
+<rect class=" f-green" x="1477.0" y="504.0" width="403.0" height="76" rx="10"/>
+<circle cx="1503.0" cy="528.0" r="12" class="badge-green"/><circle cx="1509.1" cy="528.0" r="1.9" fill="#ffffff"/><circle cx="1507.3" cy="532.3" r="1.9" fill="#ffffff"/><circle cx="1503.0" cy="534.1" r="1.9" fill="#ffffff"/><circle cx="1498.7" cy="532.3" r="1.9" fill="#ffffff"/><circle cx="1496.9" cy="528.0" r="1.9" fill="#ffffff"/><circle cx="1498.7" cy="523.7" r="1.9" fill="#ffffff"/><circle cx="1503.0" cy="521.9" r="1.9" fill="#ffffff"/><circle cx="1507.3" cy="523.7" r="1.9" fill="#ffffff"/><circle cx="1503.0" cy="528.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1503.0" cy="528.0" r="1.6" fill="#ffffff"/>
+<text x="1692.5" y="536.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">containerd</text>
+<text x="1692.5" y="560.0" text-anchor="middle" font-size="13.5" class="t-sub">容器运行时</text>
+<rect class="band" x="28" y="606" width="1864" height="108" rx="14"/>
+<text x="46" y="656" font-size="17" font-weight="700" class="t-main">生命周期与交付</text>
+<text x="46" y="678" font-size="11" class="t-faint">Lifecycle &amp; delivery</text>
+<rect class=" f-blue" x="232.0" y="622.0" width="320.0" height="76" rx="10"/>
+<circle cx="258.0" cy="646.0" r="12" class="badge-blue"/><rect x="251.4" y="639.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="645.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="650.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="406.0" y="654.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kubean</text>
+<text x="406.0" y="678.0" text-anchor="middle" font-size="13.5" class="t-sub">集群生命周期管理</text>
+<rect class=" f-green" x="564.0" y="622.0" width="320.0" height="76" rx="10"/>
+<circle cx="590.0" cy="646.0" r="12" class="badge-green"/><circle cx="596.1" cy="646.0" r="1.9" fill="#ffffff"/><circle cx="594.3" cy="650.3" r="1.9" fill="#ffffff"/><circle cx="590.0" cy="652.1" r="1.9" fill="#ffffff"/><circle cx="585.7" cy="650.3" r="1.9" fill="#ffffff"/><circle cx="583.9" cy="646.0" r="1.9" fill="#ffffff"/><circle cx="585.7" cy="641.7" r="1.9" fill="#ffffff"/><circle cx="590.0" cy="639.9" r="1.9" fill="#ffffff"/><circle cx="594.3" cy="641.7" r="1.9" fill="#ffffff"/><circle cx="590.0" cy="646.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="590.0" cy="646.0" r="1.6" fill="#ffffff"/>
+<text x="738.0" y="654.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kubespray</text>
+<text x="738.0" y="678.0" text-anchor="middle" font-size="13.5" class="t-sub">Kubernetes 集群部署</text>
+<rect class=" f-green" x="896.0" y="622.0" width="320.0" height="76" rx="10"/>
+<circle cx="922.0" cy="646.0" r="12" class="badge-green"/><circle cx="928.1" cy="646.0" r="1.9" fill="#ffffff"/><circle cx="926.3" cy="650.3" r="1.9" fill="#ffffff"/><circle cx="922.0" cy="652.1" r="1.9" fill="#ffffff"/><circle cx="917.7" cy="650.3" r="1.9" fill="#ffffff"/><circle cx="915.9" cy="646.0" r="1.9" fill="#ffffff"/><circle cx="917.7" cy="641.7" r="1.9" fill="#ffffff"/><circle cx="922.0" cy="639.9" r="1.9" fill="#ffffff"/><circle cx="926.3" cy="641.7" r="1.9" fill="#ffffff"/><circle cx="922.0" cy="646.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="922.0" cy="646.0" r="1.6" fill="#ffffff"/>
+<text x="1070.0" y="654.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">kubeadm</text>
+<text x="1070.0" y="678.0" text-anchor="middle" font-size="13.5" class="t-sub">集群引导与升级</text>
+<rect class=" f-blue" x="1228.0" y="622.0" width="320.0" height="76" rx="10"/>
+<circle cx="1254.0" cy="646.0" r="12" class="badge-blue"/><rect x="1247.4" y="639.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1247.4" y="645.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1247.4" y="650.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1402.0" y="654.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kubernetes LTS</text>
+<text x="1402.0" y="678.0" text-anchor="middle" font-size="13.5" class="t-sub">Kubernetes 长期维护</text>
+<rect class=" f-green" x="1560.0" y="622.0" width="320.0" height="76" rx="10"/>
+<circle cx="1586.0" cy="646.0" r="12" class="badge-green"/><circle cx="1592.1" cy="646.0" r="1.9" fill="#ffffff"/><circle cx="1590.3" cy="650.3" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="652.1" r="1.9" fill="#ffffff"/><circle cx="1581.7" cy="650.3" r="1.9" fill="#ffffff"/><circle cx="1579.9" cy="646.0" r="1.9" fill="#ffffff"/><circle cx="1581.7" cy="641.7" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="639.9" r="1.9" fill="#ffffff"/><circle cx="1590.3" cy="641.7" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="646.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1586.0" cy="646.0" r="1.6" fill="#ffffff"/>
+<text x="1734.0" y="654.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Argo CD</text>
+<text x="1734.0" y="678.0" text-anchor="middle" font-size="13.5" class="t-sub">GitOps 持续交付</text>
+<text x="1864.0" y="642.0" text-anchor="end" font-size="14" font-weight="700" class="t-faint">+</text>
+<rect class="band" x="28" y="724" width="1864" height="108" rx="14"/>
+<text x="46" y="774" font-size="17" font-weight="700" class="t-main">网络与服务网格</text>
+<text x="46" y="796" font-size="11" class="t-faint">Networking &amp; service mesh</text>
+<rect class=" f-blue" x="232.0" y="740.0" width="403.0" height="76" rx="10"/>
+<circle cx="258.0" cy="764.0" r="12" class="badge-blue"/><rect x="251.4" y="757.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="763.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="768.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="447.5" y="772.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Spiderpool</text>
+<text x="447.5" y="796.0" text-anchor="middle" font-size="13.5" class="t-sub">Underlay / RDMA 网络</text>
+<rect class=" f-blue" x="647.0" y="740.0" width="403.0" height="76" rx="10"/>
+<circle cx="673.0" cy="764.0" r="12" class="badge-blue"/><rect x="666.4" y="757.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="666.4" y="763.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="666.4" y="768.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="862.5" y="772.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">EgressGateway</text>
+<text x="862.5" y="796.0" text-anchor="middle" font-size="13.5" class="t-sub">集群出口网关</text>
+<rect class=" f-green" x="1062.0" y="740.0" width="403.0" height="76" rx="10"/>
+<circle cx="1088.0" cy="764.0" r="12" class="badge-green"/><circle cx="1094.1" cy="764.0" r="1.9" fill="#ffffff"/><circle cx="1092.3" cy="768.3" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="770.1" r="1.9" fill="#ffffff"/><circle cx="1083.7" cy="768.3" r="1.9" fill="#ffffff"/><circle cx="1081.9" cy="764.0" r="1.9" fill="#ffffff"/><circle cx="1083.7" cy="759.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="757.9" r="1.9" fill="#ffffff"/><circle cx="1092.3" cy="759.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="764.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1088.0" cy="764.0" r="1.6" fill="#ffffff"/>
+<text x="1277.5" y="772.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Istio</text>
+<text x="1277.5" y="796.0" text-anchor="middle" font-size="13.5" class="t-sub">服务网格</text>
+<rect class=" f-blue-d" x="1477.0" y="740.0" width="403.0" height="76" rx="10"/>
+<circle cx="1503.0" cy="764.0" r="12" class="badge-blue"/><rect x="1496.4" y="757.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1496.4" y="763.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1496.4" y="768.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1692.5" y="772.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Merbridge</text>
+<text x="1692.5" y="796.0" text-anchor="middle" font-size="13.5" class="t-sub">eBPF 服务网格加速</text>
+<text x="1864.0" y="760.0" text-anchor="end" font-size="11" class="t-faint">已归档</text>
+<rect class="band" x="28" y="842" width="1864" height="108" rx="14"/>
+<text x="46" y="892" font-size="17" font-weight="700" class="t-main">存储与数据</text>
+<text x="46" y="914" font-size="11" class="t-faint">Storage &amp; data</text>
+<rect class=" f-blue" x="232.0" y="858.0" width="320.0" height="76" rx="10"/>
+<circle cx="258.0" cy="882.0" r="12" class="badge-blue"/><rect x="251.4" y="875.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="881.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="886.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="406.0" y="890.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">HwameiStor</text>
+<text x="406.0" y="914.0" text-anchor="middle" font-size="13.5" class="t-sub">云原生本地存储</text>
+<rect class=" f-purple" x="564.0" y="858.0" width="320.0" height="76" rx="10"/>
+<rect x="578.0" y="870.0" width="24" height="24" rx="6.0" class="badge-purple"/><circle cx="596.1" cy="882.0" r="1.9" fill="#ffffff"/><circle cx="594.3" cy="886.3" r="1.9" fill="#ffffff"/><circle cx="590.0" cy="888.1" r="1.9" fill="#ffffff"/><circle cx="585.7" cy="886.3" r="1.9" fill="#ffffff"/><circle cx="583.9" cy="882.0" r="1.9" fill="#ffffff"/><circle cx="585.7" cy="877.7" r="1.9" fill="#ffffff"/><circle cx="590.0" cy="875.9" r="1.9" fill="#ffffff"/><circle cx="594.3" cy="877.7" r="1.9" fill="#ffffff"/><circle cx="590.0" cy="882.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="590.0" cy="882.0" r="1.6" fill="#ffffff"/>
+<text x="738.0" y="890.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Piraeus</text>
+<text x="738.0" y="914.0" text-anchor="middle" font-size="13.5" class="t-sub">高可用复制存储</text>
+<rect class=" f-blue" x="896.0" y="858.0" width="320.0" height="76" rx="10"/>
+<circle cx="922.0" cy="882.0" r="12" class="badge-blue"/><rect x="915.4" y="875.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="915.4" y="881.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="915.4" y="886.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1070.0" y="890.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">ContextStore</text>
+<text x="1070.0" y="914.0" text-anchor="middle" font-size="13.5" class="t-sub">推理 KV Cache 分层存储</text>
+<rect class=" f-green" x="1228.0" y="858.0" width="320.0" height="76" rx="10"/>
+<circle cx="1254.0" cy="882.0" r="12" class="badge-green"/><circle cx="1260.1" cy="882.0" r="1.9" fill="#ffffff"/><circle cx="1258.3" cy="886.3" r="1.9" fill="#ffffff"/><circle cx="1254.0" cy="888.1" r="1.9" fill="#ffffff"/><circle cx="1249.7" cy="886.3" r="1.9" fill="#ffffff"/><circle cx="1247.9" cy="882.0" r="1.9" fill="#ffffff"/><circle cx="1249.7" cy="877.7" r="1.9" fill="#ffffff"/><circle cx="1254.0" cy="875.9" r="1.9" fill="#ffffff"/><circle cx="1258.3" cy="877.7" r="1.9" fill="#ffffff"/><circle cx="1254.0" cy="882.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1254.0" cy="882.0" r="1.6" fill="#ffffff"/>
+<text x="1402.0" y="890.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Lustre CSI</text>
+<text x="1402.0" y="914.0" text-anchor="middle" font-size="13.5" class="t-sub">Lustre 存储驱动</text>
+<rect class=" f-blue" x="1560.0" y="858.0" width="320.0" height="76" rx="10"/>
+<circle cx="1586.0" cy="882.0" r="12" class="badge-blue"/><rect x="1579.4" y="875.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1579.4" y="881.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1579.4" y="886.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1734.0" y="890.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Xet</text>
+<text x="1734.0" y="914.0" text-anchor="middle" font-size="13.5" class="t-sub">Xet 协议 Go 实现</text>
+<rect class="band" x="28" y="960" width="1864" height="108" rx="14"/>
+<text x="46" y="1010" font-size="17" font-weight="700" class="t-main">可观测与运维</text>
+<text x="46" y="1032" font-size="11" class="t-faint">Observability &amp; operations</text>
+<rect class=" f-blue" x="232.0" y="976.0" width="264.7" height="76" rx="10"/>
+<circle cx="258.0" cy="1000.0" r="12" class="badge-blue"/><rect x="251.4" y="993.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="999.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="1004.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="378.3" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Clusterpedia</text>
+<text x="378.3" y="1032.0" text-anchor="middle" font-size="13.5" class="t-sub">多集群资源检索</text>
+<rect class=" f-green" x="508.7" y="976.0" width="264.7" height="76" rx="10"/>
+<circle cx="534.6666666666667" cy="1000.0" r="12" class="badge-green"/><circle cx="540.8" cy="1000.0" r="1.9" fill="#ffffff"/><circle cx="539.0" cy="1004.3" r="1.9" fill="#ffffff"/><circle cx="534.7" cy="1006.1" r="1.9" fill="#ffffff"/><circle cx="530.4" cy="1004.3" r="1.9" fill="#ffffff"/><circle cx="528.6" cy="1000.0" r="1.9" fill="#ffffff"/><circle cx="530.4" cy="995.7" r="1.9" fill="#ffffff"/><circle cx="534.7" cy="993.9" r="1.9" fill="#ffffff"/><circle cx="539.0" cy="995.7" r="1.9" fill="#ffffff"/><circle cx="534.6666666666667" cy="1000.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="534.6666666666667" cy="1000.0" r="1.6" fill="#ffffff"/>
+<text x="655.0" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">SkyWalking</text>
+<text x="655.0" y="1032.0" text-anchor="middle" font-size="13.5" class="t-sub">应用性能监测</text>
+<rect class=" f-green" x="785.3" y="976.0" width="264.7" height="76" rx="10"/>
+<circle cx="811.3333333333334" cy="1000.0" r="12" class="badge-green"/><circle cx="817.4" cy="1000.0" r="1.9" fill="#ffffff"/><circle cx="815.6" cy="1004.3" r="1.9" fill="#ffffff"/><circle cx="811.3" cy="1006.1" r="1.9" fill="#ffffff"/><circle cx="807.0" cy="1004.3" r="1.9" fill="#ffffff"/><circle cx="805.2" cy="1000.0" r="1.9" fill="#ffffff"/><circle cx="807.0" cy="995.7" r="1.9" fill="#ffffff"/><circle cx="811.3" cy="993.9" r="1.9" fill="#ffffff"/><circle cx="815.6" cy="995.7" r="1.9" fill="#ffffff"/><circle cx="811.3333333333334" cy="1000.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="811.3333333333334" cy="1000.0" r="1.6" fill="#ffffff"/>
+<text x="931.7" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">OpenTelemetry</text>
+<text x="931.7" y="1032.0" text-anchor="middle" font-size="13.5" class="t-sub">可观测数据采集</text>
+<text x="1034.0" y="996.0" text-anchor="end" font-size="14" font-weight="700" class="t-faint">+</text>
+<rect class=" f-green" x="1062.0" y="976.0" width="264.7" height="76" rx="10"/>
+<circle cx="1088.0" cy="1000.0" r="12" class="badge-green"/><circle cx="1094.1" cy="1000.0" r="1.9" fill="#ffffff"/><circle cx="1092.3" cy="1004.3" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="1006.1" r="1.9" fill="#ffffff"/><circle cx="1083.7" cy="1004.3" r="1.9" fill="#ffffff"/><circle cx="1081.9" cy="1000.0" r="1.9" fill="#ffffff"/><circle cx="1083.7" cy="995.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="993.9" r="1.9" fill="#ffffff"/><circle cx="1092.3" cy="995.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="1000.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1088.0" cy="1000.0" r="1.6" fill="#ffffff"/>
+<text x="1208.3" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Apollo</text>
+<text x="1208.3" y="1032.0" text-anchor="middle" font-size="13.5" class="t-sub">配置管理</text>
+<rect class=" f-blue" x="1338.7" y="976.0" width="264.7" height="76" rx="10"/>
+<circle cx="1364.6666666666667" cy="1000.0" r="12" class="badge-blue"/><rect x="1358.0666666666668" y="993.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1358.0666666666668" y="999.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1358.0666666666668" y="1004.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1485.0" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">CloudTTY</text>
+<text x="1485.0" y="1032.0" text-anchor="middle" font-size="13.5" class="t-sub">Kubernetes 云终端</text>
+<rect class=" f-blue" x="1615.3" y="976.0" width="264.7" height="76" rx="10"/>
+<circle cx="1641.3333333333335" cy="1000.0" r="12" class="badge-blue"/><rect x="1634.7333333333336" y="993.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1634.7333333333336" y="999.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1634.7333333333336" y="1004.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1761.7" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Unifabric</text>
+<text x="1761.7" y="1032.0" text-anchor="middle" font-size="13.5" class="t-sub">AI 高速网络可观测</text>
+<rect class="band" x="28" y="1078" width="1864" height="108" rx="14"/>
+<text x="46" y="1128" font-size="17" font-weight="700" class="t-main">测试与镜像分发</text>
+<text x="46" y="1150" font-size="11" class="t-faint">Testing &amp; image distribution</text>
+<rect class=" f-blue" x="232.0" y="1094.0" width="320.0" height="76" rx="10"/>
+<circle cx="258.0" cy="1118.0" r="12" class="badge-blue"/><rect x="251.4" y="1111.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="1117.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="251.4" y="1122.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="406.0" y="1126.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">KWOK</text>
+<text x="406.0" y="1150.0" text-anchor="middle" font-size="13.5" class="t-sub">节点与集群模拟</text>
+<rect class=" f-blue" x="564.0" y="1094.0" width="320.0" height="76" rx="10"/>
+<circle cx="590.0" cy="1118.0" r="12" class="badge-blue"/><rect x="583.4" y="1111.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="583.4" y="1117.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="583.4" y="1122.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="738.0" y="1126.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kdoctor</text>
+<text x="738.0" y="1150.0" text-anchor="middle" font-size="13.5" class="t-sub">数据平面诊断测试</text>
+<rect class=" f-blue" x="896.0" y="1094.0" width="320.0" height="76" rx="10"/>
+<circle cx="922.0" cy="1118.0" r="12" class="badge-blue"/><rect x="915.4" y="1111.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="915.4" y="1117.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="915.4" y="1122.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1070.0" y="1126.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Kcover</text>
+<text x="1070.0" y="1150.0" text-anchor="middle" font-size="13.5" class="t-sub">故障预防与恢复覆盖</text>
+<rect class=" f-blue" x="1228.0" y="1094.0" width="320.0" height="76" rx="10"/>
+<circle cx="1254.0" cy="1118.0" r="12" class="badge-blue"/><rect x="1247.4" y="1111.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1247.4" y="1117.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1247.4" y="1122.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1402.0" y="1120.0" text-anchor="middle" font-size="17" font-weight="600" class="t-main">public-image-</text>
+<text x="1402.0" y="1138.0" text-anchor="middle" font-size="17" font-weight="600" class="t-main">mirror</text>
+<text x="1402.0" y="1156.0" text-anchor="middle" font-size="13" class="t-sub">公共镜像加速</text>
+<rect class=" f-blue" x="1560.0" y="1094.0" width="320.0" height="76" rx="10"/>
+<circle cx="1586.0" cy="1118.0" r="12" class="badge-blue"/><rect x="1579.4" y="1111.6" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1579.4" y="1117.0" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/><rect x="1579.4" y="1122.4" width="13.200000000000001" height="2.1" rx="1" fill="#ffffff"/>
+<text x="1734.0" y="1126.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">OpenCIDN</text>
+<text x="1734.0" y="1150.0" text-anchor="middle" font-size="13.5" class="t-sub">容器镜像分发网络</text>
+<text x="46" y="1230" font-size="13"><tspan font-weight="600" class="t-main">展示口径：</tspan><tspan class="t-faint">每个项目按主要参与方式归类一次；收录数含工具、Kubernetes 子项目、道客员工发起项目与归档项目，不等同于公司级项目总量。</tspan></text>
+<text x="46" y="1252" font-size="13"><tspan font-weight="600" class="t-main">关系口径：</tspan><tspan class="t-faint">自主 = 发起；重度参与 = 维护 / Approver / 深度贡献；联合 = 联合发起。联合发起不表示当前维护者任职归属。</tspan></text>
+<text x="46" y="1274" font-size="13"><tspan font-weight="600" class="t-main">补充与修订：</tspan><tspan class="t-faint">+ 标注 Dynamo、Argo CD、OpenTelemetry、KWOK 按飞书发起口径归类；Merbridge 为 CNCF Sandbox 项目，虽超一年未更新仍保留并标注已归档；已剔除超一年未更新的 Knoway、kasmcloud。</tspan></text>
+<text x="46" y="1296" font-size="13"><tspan class="t-faint">技术分行按主要用途编排，不代表依赖关系。</tspan></text>
+</svg>

@@ -6,9 +6,16 @@ hide:
 
 # DaoCloud Open Source Projects
 
-!!! info
+DaoCloud is committed to open collaboration. From cloud native infrastructure to AI compute and inference,
+our projects span AI models and inference, GPU and job scheduling, orchestration and runtime,
+lifecycle and delivery, networking and service mesh, storage and data, observability and operations,
+as well as testing and image distribution.
 
-    DaoCloud ecosystem is growing up!
+The diagram below shows the overall layout of the DaoCloud open source portfolio and how we participate (data as of 2026.11.03):
+
+![DaoCloud open source portfolio](./images/opensource-portfolio.svg)
+
+## DaoCloud Self-Initiated Projects
 
 <div class="grid cards" markdown>
 
@@ -44,7 +51,7 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./hwameistor.md)
 
--   :melon:{ .lg .middle } __HAMi__ :simple-cncf: **Listed in CNCF Incubation** 👏
+-   :melon:{ .lg .middle } __HAMi__ :simple-cncf: **Listed in CNCF Incubating** 👏
 
     ---
 
@@ -92,7 +99,7 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./kwok.md)
 
--   :material-brain:{ .lg .middle } __MatrixHub__ :simple-cncf: Listed in CNCF Landscape
+-   :material-brain:{ .lg .middle } __MatrixHub__ :simple-cncf: Listed in CNCF Sandbox
 
     ---
 
@@ -170,10 +177,8 @@ hide:
 
     **Think Different, Think Open Source!**
 
-![cncf logo](./images/cncf.png)
-
 <p align="center">
-Clusterpedia, HwameiStor, Merbridge, Spiderpool, and Kubean have been selected for the <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>.
+HAMi is a <a href="https://www.cncf.io/projects/">CNCF Incubating</a> project; Clusterpedia, HwameiStor, MatrixHub, Merbridge, Spiderpool, and Kubean have been selected for the <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>.
 </p>
 
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button }
