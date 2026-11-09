@@ -72,6 +72,6 @@ Source: https://github.com/cncf/artwork/tree/master/projects/kubernetes/certifie
 
 有关 DaoCloud 开源贡献的更多信息，请参阅博客 [DaoCloud 是 K8s 资深认证服务商](../blogs/2022/221116-kcsp.md)。
 
-[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
-[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
-[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button }

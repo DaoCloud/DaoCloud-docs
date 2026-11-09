@@ -192,6 +192,6 @@ With DCE's cloud native DNA, enterprises can fully leverage the advantages of bo
       Honoring efforts past, present, future with delight.
     ```
 
-[Apply for Community Free Trial](./license0.md){ .md-button .md-button--primary }
-[Best Practices](./bphome.md){ .md-button .md-button--primary }
-[FAQs](./faq.md){ .md-button .md-button--primary }
+[Apply for Community Free Trial](./license0.md){ .md-button }
+[Best Practices](./bphome.md){ .md-button }
+[FAQs](./faq.md){ .md-button }

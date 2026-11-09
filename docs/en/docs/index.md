@@ -423,8 +423,8 @@ This site provides documentation for three product lines, covering full-stack ca
 
 <div class="tf-cta" markdown>
 
-[Apply for DCE Community Free Trial](./dce/license0.md){ .md-button .md-button--primary }
-[Learn about d.run](drun/index.md){ .md-button .md-button--primary }
-[Token Factory Overview](tf/index.md){ .md-button .md-button--primary }
+[Apply for DCE Community Free Trial](./dce/license0.md){ .md-button }
+[Learn about d.run](drun/index.md){ .md-button }
+[Token Factory Overview](tf/index.md){ .md-button }
 
 </div>

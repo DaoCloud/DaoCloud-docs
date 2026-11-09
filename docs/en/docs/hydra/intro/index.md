@@ -208,6 +208,6 @@ These audit items cover every aspect of the model lifecycle, ensuring that every
 
 For instructions, see [Security Audit Logs](../oam/security-audit-logs.md). For the complete list of audit items, see [LLM Studio Audit Items](../../ghippo/user-guide/audit/gproduct-audit/hydra.md).
 
-[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
-[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
-[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button }

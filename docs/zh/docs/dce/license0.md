@@ -60,7 +60,7 @@
 
 上述激活过程中常用到的几个页面汇总如下：
 
-[申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }
-[查看许可证密钥](https://license.daocloud.io/dce5-licenses){ .md-button .md-button--primary }
-[换取离线授权码](https://license.daocloud.io/dce5-license){ .md-button .md-button--primary }
-[安装教程](../install/index.md){ .md-button .md-button--primary }
+[申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button }
+[查看许可证密钥](https://license.daocloud.io/dce5-licenses){ .md-button }
+[换取离线授权码](https://license.daocloud.io/dce5-license){ .md-button }
+[安装教程](../install/index.md){ .md-button }

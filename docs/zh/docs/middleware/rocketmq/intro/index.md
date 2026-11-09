@@ -16,6 +16,6 @@ DaoCloud 在开源 Apache RocketMQ 做了容器化的定制开发，提供了简
 
 ![rocketmq ui](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/what01.png)
 
-[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
-[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
-[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button }

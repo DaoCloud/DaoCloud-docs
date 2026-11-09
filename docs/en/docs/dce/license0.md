@@ -69,7 +69,7 @@ To do this, go to the [license page](https://qingflow.com/f/58604bf8) and select
 
 The pages you may frequently access in the process of above procedure are listed as follows:
 
-[Apply for a license key](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }
-[View license keys](https://license.daocloud.io/dce5-licenses){ .md-button .md-button--primary }
-[Get an offline authorization code](https://license.daocloud.io/dce5-license){ .md-button .md-button--primary }
-[Install DCE](../install/index.md){ .md-button .md-button--primary }
+[Apply for a license key](https://qingflow.com/f/58604bf8){ .md-button }
+[View license keys](https://license.daocloud.io/dce5-licenses){ .md-button }
+[Get an offline authorization code](https://license.daocloud.io/dce5-license){ .md-button }
+[Install DCE](../install/index.md){ .md-button }

@@ -87,4 +87,4 @@ You can create ConfigMaps with two methods:
        version: '1.0'
      ```
 
-[Next step: Use ConfigMaps](use-configmap.md){ .md-button .md-button--primary }
+[Next step: Use ConfigMaps](use-configmap.md){ .md-button }

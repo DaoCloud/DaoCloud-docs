@@ -428,8 +428,8 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 
 <div class="tf-cta" markdown>
 
-[申请 DCE 社区免费体验](./dce/license0.md){ .md-button .md-button--primary }
-[了解 d.run](drun/index.md){ .md-button .md-button--primary }
-[Token 工厂概览](tf/index.md){ .md-button .md-button--primary }
+[申请 DCE 社区免费体验](./dce/license0.md){ .md-button }
+[了解 d.run](drun/index.md){ .md-button }
+[Token 工厂概览](tf/index.md){ .md-button }
 
 </div>

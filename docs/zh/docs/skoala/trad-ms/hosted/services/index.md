@@ -12,6 +12,6 @@
 
 是否可以治理：判断该微服务是否满足治理条件，例如是否开启了治理插件、是否正确配置插件信息、是否被网格纳管等要求。
 
-[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
-[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
-[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button }

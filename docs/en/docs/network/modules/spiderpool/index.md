@@ -27,6 +27,6 @@ The features provided by SpiderPool are as follows.
 | Multi-level custom route | Support subnet CIDR, IP Pool, and application-level custom route with low to high priority.  |
 | Rich Metrics | Provide rich monitoring metrics to ensure cluster IP resource monitoring. |
 
-[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
-[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
-[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button }

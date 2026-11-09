@@ -49,6 +49,6 @@ F5 设备有两种模式来转发流量到集群（关于转发模式，更多�
 
     更多信息，可参考 [F5 官方文档](https://clouddocs.f5.com/containers/latest/userguide/)。
 
-[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
-[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
-[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button }

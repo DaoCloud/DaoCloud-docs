@@ -39,6 +39,6 @@ The typical steps for managing and controlling end device are as follows:
 
 Next step: [Create End Device](create-device.md)
 
-[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
-[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
-[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button }

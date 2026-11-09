@@ -12,6 +12,6 @@ Link tracing: When creating a service using [Workbench](../../../../amamba/intro
 
 Whether it can be governed: determine whether the microservice meets the governance conditions, such as whether the governance plug-in is enabled, whether it is containerized, whether it is managed by the mesh, whether it is created by [Workbench](../../../../amamba/intro/index.md) and a series of requirements.
 
-[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
-[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
-[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button }

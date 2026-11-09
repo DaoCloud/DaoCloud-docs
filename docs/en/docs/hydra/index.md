@@ -42,6 +42,6 @@ You can also try models from the **Playground** page. See [this guide](./exp.md)
 
 You can easily deploy models from either the **Model Gallery** or the **Served Models** page. See [parameters](./deploy/deploy.md) for more information.
 
-[Download Center](https://docs.daocloud.io/en/download/){ .md-button .md-button--primary }
-[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button .md-button--primary }
-[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button .md-button--primary }
+[Download Center](https://docs.daocloud.io/en/download/){ .md-button }
+[Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }
+[Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button }

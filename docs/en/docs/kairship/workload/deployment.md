@@ -83,4 +83,4 @@ Follow the steps below to create a multicloud deployment from image.
 
     ![More Opetations](../images/deploy.png)
 
-[Next step：create multicloud services](../resource/service.md){ .md-button .md-button--primary }
+[Next step：create multicloud services](../resource/service.md){ .md-button }

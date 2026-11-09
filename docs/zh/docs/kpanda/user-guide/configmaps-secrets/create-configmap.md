@@ -77,4 +77,4 @@
       version: '1.0'
     ```
 
-[下一步：使用配置项](use-configmap.md){ .md-button .md-button--primary }
+[下一步：使用配置项](use-configmap.md){ .md-button }

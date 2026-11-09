@@ -206,6 +206,6 @@ nginx-v4-ippool                   4         10.244.0.0/16   2                   
 
 [了解 云原生网络](../../network/intro/index.md){ .md-button }
 
-[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
-[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
-[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button }

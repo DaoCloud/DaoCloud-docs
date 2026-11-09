@@ -36,4 +36,4 @@ GProduct 是 DCE 中除全局管理外的所有其他模块的统称，这些模
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oemin-istio.mp4" preload="metadata" poster="../../../videos/images/oem-in.png"></video>
 </div>
 
-[查阅和下载 GProduct PDF](./GProduct-manual.pdf){ .md-button .md-button--primary }
+[查阅和下载 GProduct PDF](./GProduct-manual.pdf){ .md-button }

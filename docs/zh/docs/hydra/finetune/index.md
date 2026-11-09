@@ -40,6 +40,6 @@ flowchart TB
     - 评估任务和导出任务依赖状态为 **成功** 的微调任务，必须先完成训练。
     - 微调配置可复用于多轮任务：评估结果不理想时，调整配置参数后重新创建任务，模型和数据集无需重新准备。
 
-[下载中心](https://docs.daocloud.io/download/){ .md-button .md-button--primary }
-[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button .md-button--primary }
-[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button .md-button--primary }
+[下载中心](https://docs.daocloud.io/download/){ .md-button }
+[了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
+[了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button }
