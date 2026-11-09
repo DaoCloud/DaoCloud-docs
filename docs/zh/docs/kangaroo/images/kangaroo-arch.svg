@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1000 630" role="img" aria-labelledby="title desc">
+  <title id="title">镜像仓库产品逻辑架构</title>
+  <desc id="desc">自上而下分为四层：访问入口（用户 push/pull、CLI、Jenkins、Kubernetes、Tekton、Helm）；镜像仓库生命周期管理分为两个明确的分组，每组由角色标签与同组右侧的 4 项能力组成——工作空间组：镜像空间、仓库集成、镜像扫描、镜像回收；管理员组：创建托管 Harbor、仓库集成、镜像同步、镜像空间绑定工作空间；底层为仓库实例管理；控制流由仓库实例管理下发仓库管理与权限控制到本地数据中心 cluster01 和异地数据中心 cluster02 的镜像仓库；数据流为集群从本地镜像仓库拉取 image/chart 部署到集群或应用；两地镜像仓库之间通过镜像同步保持制品一致。橙色虚线为控制流，灰色实线为数据流。</desc>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      [fill="#ffffff"] { fill: #232936; }
+      [fill="#fbfcfe"] { fill: #2b3340; }
+      [fill="#f8fafc"] { fill: #1e2530; }
+      [fill="#f5f7fa"] { fill: #1b222c; }
+      [fill="#e8f3fd"] { fill: #1c2838; }
+      [fill="#fff8e1"] { fill: #2a2519; }
+      [fill="#fff3e0"] { fill: #2d271c; }
+      [fill="#ffe082"] { fill: #4a3c1c; }
+      [fill="#e0e6ee"] { fill: #3a4450; }
+      [fill="#cfd8e3"] { fill: #39434f; }
+      [fill="#eceff1"] { fill: #2a323c; }
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#8a5a00"] { fill: #ffcc80; }
+      [fill="#2e7d32"] { fill: #81c784; }
+      [fill="#37474f"] { fill: #cfd8dc; }
+      [fill="#e65100"] { fill: #ffb74d; }
+      [fill="#ffb300"] { fill: #ffb74d; }
+      [fill="#607d8b"] { fill: #90a4ae; }
+      [stroke="#e0e6ee"] { stroke: #2e3540; }
+      [stroke="#e6eaf1"] { stroke: #2e3540; }
+      [stroke="#cfd8e3"] { stroke: #3a4450; }
+      [stroke="#90caf9"] { stroke: #2c4a6e; }
+      [stroke="#ffcc80"] { stroke: #6b542b; }
+      [stroke="#f0c36d"] { stroke: #6b542b; }
+      [stroke="#90a4ae"] { stroke: #4a5666; }
+      [stroke="#e65100"] { stroke: #a8662f; }
+      [stroke="#1565c0"] { stroke: #64b5f6; }
+      [stroke="#607d8b"] { stroke: #5a6b78; }
+      [stroke="#ffb300"] { stroke: #6b542b; }
+      [stroke="#b0bec5"] { stroke: #4a5666; }
+    }
+  </style>
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="arr-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
+    </marker>
+    <marker id="arr-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#607d8b"/>
+    </marker>
+  </defs>
+<rect x="0.5" y="0.5" width="999" height="629" rx="14" fill="#ffffff" stroke="#e6eaf1" stroke-width="1" />
+<text x="500.0" y="36" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#1a2330" >镜像仓库产品逻辑架构</text>
+<text x="500.0" y="57" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="#5c6775" >控制面统一管理仓库实例与权限，数据面就近拉取镜像，跨数据中心通过镜像同步保持一致</text>
+<rect x="40" y="72" width="140" height="32" rx="8" fill="#e8f3fd" stroke="#90caf9" stroke-width="1" />
+<text x="110.0" y="93" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#1565c0" >用户  push / pull</text>
+<path d="M 110.0 104 V 124" fill="none" stroke="#90caf9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)" />
+<rect x="196" y="72" width="140" height="32" rx="8" fill="#e8f3fd" stroke="#90caf9" stroke-width="1" />
+<text x="266.0" y="93" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#1565c0" >CLI</text>
+<path d="M 266.0 104 V 124" fill="none" stroke="#90caf9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)" />
+<rect x="352" y="72" width="140" height="32" rx="8" fill="#e8f3fd" stroke="#90caf9" stroke-width="1" />
+<text x="422.0" y="93" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#1565c0" >Jenkins</text>
+<path d="M 422.0 104 V 124" fill="none" stroke="#90caf9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)" />
+<rect x="508" y="72" width="140" height="32" rx="8" fill="#e8f3fd" stroke="#90caf9" stroke-width="1" />
+<text x="578.0" y="93" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#1565c0" >Kubernetes</text>
+<path d="M 578.0 104 V 124" fill="none" stroke="#90caf9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)" />
+<rect x="664" y="72" width="140" height="32" rx="8" fill="#e8f3fd" stroke="#90caf9" stroke-width="1" />
+<text x="734.0" y="93" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#1565c0" >Tekton</text>
+<path d="M 734.0 104 V 124" fill="none" stroke="#90caf9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)" />
+<rect x="820" y="72" width="140" height="32" rx="8" fill="#e8f3fd" stroke="#90caf9" stroke-width="1" />
+<text x="890.0" y="93" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#1565c0" >Helm</text>
+<path d="M 890.0 104 V 124" fill="none" stroke="#90caf9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)" />
+<rect x="40" y="132" width="920" height="196" rx="12" fill="#f5f7fa" stroke="#cfd8e3" stroke-width="1" />
+<text x="60" y="157" text-anchor="start" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" font-weight="700" fill="#37474f" >镜像仓库生命周期管理</text>
+<text x="940" y="157" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11" font-weight="400" fill="#5c6775" >控制面</text>
+<rect x="58" y="168" width="882" height="48" rx="8" fill="#e8f3fd" stroke="#90caf9" stroke-width="1" />
+<path d="M 66 168 H 198 V 216 H 66 A 8 8 0 0 1 58 208 V 176 A 8 8 0 0 1 66 168 Z" fill="#1565c0"/>
+<text x="128" y="197" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#ffffff" >工作空间</text>
+<path d="M 200 192 H 211 M 206 187 L 211 192 L 206 197" fill="none" stroke="#1565c0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="214" y="176" width="172" height="32" rx="6" fill="#fbfcfe" stroke="#90caf9" stroke-width="1" />
+<text x="300" y="196" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#1565c0" >镜像空间</text>
+<rect x="396" y="176" width="172" height="32" rx="6" fill="#fbfcfe" stroke="#90caf9" stroke-width="1" />
+<text x="482" y="196" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#1565c0" >仓库集成</text>
+<rect x="578" y="176" width="172" height="32" rx="6" fill="#fbfcfe" stroke="#90caf9" stroke-width="1" />
+<text x="664" y="196" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#1565c0" >镜像扫描</text>
+<rect x="760" y="176" width="172" height="32" rx="6" fill="#fbfcfe" stroke="#90caf9" stroke-width="1" />
+<text x="846" y="196" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#1565c0" >镜像回收</text>
+<rect x="58" y="224" width="882" height="48" rx="8" fill="#fff3e0" stroke="#ffcc80" stroke-width="1" />
+<path d="M 66 224 H 198 V 272 H 66 A 8 8 0 0 1 58 264 V 232 A 8 8 0 0 1 66 224 Z" fill="#e65100"/>
+<text x="128" y="253" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#ffffff" >管理员</text>
+<path d="M 200 248 H 211 M 206 243 L 211 248 L 206 253" fill="none" stroke="#e65100" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="214" y="232" width="172" height="32" rx="6" fill="#fbfcfe" stroke="#ffcc80" stroke-width="1" />
+<text x="300" y="252" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#8a5a00" >创建托管 Harbor</text>
+<rect x="396" y="232" width="172" height="32" rx="6" fill="#fbfcfe" stroke="#ffcc80" stroke-width="1" />
+<text x="482" y="252" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#8a5a00" >仓库集成</text>
+<rect x="578" y="232" width="172" height="32" rx="6" fill="#fbfcfe" stroke="#ffcc80" stroke-width="1" />
+<text x="664" y="252" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#8a5a00" >镜像同步</text>
+<rect x="760" y="232" width="172" height="32" rx="6" fill="#fbfcfe" stroke="#ffcc80" stroke-width="1" />
+<text x="846" y="252" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#8a5a00" >镜像空间绑定工作空间</text>
+<rect x="58" y="280" width="882" height="36" rx="8" fill="#1565c0" stroke="none" stroke-width="1" />
+<text x="499" y="303" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#ffffff" >仓库实例管理</text>
+<path d="M 499 316 V 336" fill="none" stroke="#e65100" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4" />
+<path d="M 168 336 H 668" fill="none" stroke="#e65100" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4" />
+<text x="499" y="356" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" font-weight="600" fill="#e65100" >仓库管理 / 权限控制</text>
+<rect x="40" y="364" width="450" height="190" rx="12" fill="#f8fafc" stroke="#cfd8e3" stroke-width="1" />
+<text x="60" y="390" text-anchor="start" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#1a2330" >本地数据中心</text>
+<rect x="60" y="402" width="410" height="138" rx="8" fill="#ffffff" stroke="#e0e6ee" stroke-width="1" />
+<text x="74" y="422" text-anchor="start" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#2e7d32" >cluster01</text>
+<rect x="114.0" y="440" width="92" height="54" rx="2" fill="#cfd8e3" stroke="#90a4ae" stroke-width="1" />
+<ellipse cx="160" cy="440" rx="46.0" ry="11" fill="#e0e6ee" stroke="#90a4ae" stroke-width="1"/>
+<path d="M 114.0 494 A 46.0 11 0 0 0 206.0 494" fill="none" stroke="#90a4ae" stroke-width="1"/>
+<text x="160" y="476" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#37474f" >镜像仓库</text>
+<path d="M 206 467 H 310" fill="none" stroke="#607d8b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-gray)" />
+<text x="258" y="457" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11" font-weight="400" fill="#5c6775" >拉取 image / chart</text>
+<rect x="312" y="442" width="104" height="50" rx="8" fill="#e8f3fd" stroke="#90caf9" stroke-width="1" />
+<text x="364" y="472" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1565c0" >多个集群</text>
+<text x="285" y="526" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11" font-weight="400" fill="#5c6775" >工作负载就近拉取</text>
+<rect x="510" y="364" width="450" height="190" rx="12" fill="#f8fafc" stroke="#cfd8e3" stroke-width="1" />
+<text x="530" y="390" text-anchor="start" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#1a2330" >异地数据中心</text>
+<rect x="530" y="402" width="410" height="138" rx="8" fill="#ffffff" stroke="#e0e6ee" stroke-width="1" />
+<text x="544" y="422" text-anchor="start" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#2e7d32" >cluster02</text>
+<rect x="614.0" y="440" width="92" height="54" rx="2" fill="#cfd8e3" stroke="#90a4ae" stroke-width="1" />
+<ellipse cx="660" cy="440" rx="46.0" ry="11" fill="#e0e6ee" stroke="#90a4ae" stroke-width="1"/>
+<path d="M 614.0 494 A 46.0 11 0 0 0 706.0 494" fill="none" stroke="#90a4ae" stroke-width="1"/>
+<text x="660" y="476" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#37474f" >镜像仓库</text>
+<path d="M 706 467 H 810" fill="none" stroke="#607d8b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-gray)" />
+<text x="758" y="457" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11" font-weight="400" fill="#5c6775" >拉取 image / chart</text>
+<rect x="812" y="442" width="104" height="50" rx="8" fill="#e8f3fd" stroke="#90caf9" stroke-width="1" />
+<text x="864" y="472" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1565c0" >应用</text>
+<text x="755" y="526" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11" font-weight="400" fill="#5c6775" >跨地域统一分发</text>
+<path d="M 168 336 V 432" fill="none" stroke="#e65100" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#arr-orange)" />
+<path d="M 668 336 V 432" fill="none" stroke="#e65100" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#arr-orange)" />
+<path d="M 160 494 V 574 H 660 V 494" fill="none" stroke="#607d8b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-gray)" />
+<text x="395" y="568" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#37474f" >镜像同步</text>
+<path d="M 690 604 H 736" fill="none" stroke="#e65100" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4" />
+<text x="744" y="608" text-anchor="start" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="#5c6775" >控制流</text>
+<path d="M 852 604 H 898" fill="none" stroke="#607d8b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+<text x="908" y="608" text-anchor="start" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="400" fill="#5c6775" >数据流</text>
+</svg>
