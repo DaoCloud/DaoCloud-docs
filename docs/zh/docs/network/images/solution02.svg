@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1000 700" role="img" aria-labelledby="title desc">
+  <title id="title">方案二架构：Calico + Macvlan/SR-IOV/IPvlan + SpiderPool + Multus（Submariner 跨集群）</title>
+  <desc id="desc">两个集群通过 Submariner 与 CoreDNS 实现跨集群服务发现（Service Export / Service Import）：每个集群内由 Multus 调度多 CNI，Calico 提供 Overlay 网络，Macvlan/SR-IOV/IPvlan 提供 Underlay 网络，SpiderPool 与 SpiderFlat 管理 IP 分配，集群间通过 IPSec/VXLAN 互通。底部列出核心能力：跨集群 Pod 联通、跨集群服务发现、固定静态 IP、动态虚拟 IP、K8s 标准网络策略、Pod 多网卡、丰富的 Metrics。</desc>
+  <style>
+    /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
+    @media (prefers-color-scheme: dark) {
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      [fill="#ffffff"] { fill: #232936; }
+      [fill="#f8fafc"] { fill: #1a212c; }
+      [fill="#e8f3fd"] { fill: #1c2838; }
+      [fill="#ede7f6"] { fill: #2a2440; }
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#2e7d32"] { fill: #81c784; }
+      [fill="#6a4fa3"] { fill: #b39ddb; }
+      [fill="#7e57c2"] { fill: #b39ddb; }
+      [stroke="#e0e6ee"] { stroke: #2e3540; }
+      [stroke="#cfd8e3"] { stroke: #3a4450; }
+      [stroke="#90caf9"] { stroke: #2c4a6e; }
+      [stroke="#b39ddb"] { stroke: #5e4b8a; }
+      [stroke="#9aa8bc"] { stroke: #4a5666; }
+      [stroke="#43a047"] { stroke: #2c5940; }
+    }
+  </style>
+
+  <defs>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7e57c2"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#43a047"/>
+    </marker>
+  </defs>
+
+  <!-- 画布 -->
+  <rect x="0.5" y="0.5" width="999" height="699" fill="#ffffff" stroke="#e0e6ee"/>
+
+  <!-- 顶部：跨集群服务发现 + Service Export/Import 双向箭头 -->
+  <text x="500" y="40" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#1a2330">跨集群服务发现</text>
+  <path d="M 245 160 V 74 H 745 V 152" fill="none" stroke="#7e57c2" stroke-width="2" marker-start="url(#arrow-purple)" marker-end="url(#arrow-purple)"/>
+  <text x="500" y="66" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" fill="#7e57c2">Service Export → Service Import</text>
+
+  <!-- ===================== Cluster01 ===================== -->
+  <rect x="30" y="120" width="440" height="400" rx="12" fill="#f8fafc" stroke="#cfd8e3"/>
+  <text x="50" y="148" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#1a2330">Cluster01</text>
+
+  <!-- Service（Export） -->
+  <rect x="160" y="160" width="170" height="36" rx="8" fill="#ede7f6" stroke="#b39ddb"/>
+  <text x="245" y="183" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#6a4fa3">{ Export } Service</text>
+
+  <!-- 应用区 -->
+  <rect x="50" y="220" width="400" height="124" rx="8" fill="#e8f3fd" stroke="#90caf9"/>
+  <text x="64" y="234" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" fill="#5c6775">应用</text>
+  <line x1="112" y1="244" x2="348" y2="244" stroke="#5c6775" stroke-width="1.2" marker-start="url(#arrow-green)" marker-end="url(#arrow-green)"/>
+  <text x="230" y="240" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">相互访问</text>
+
+  <!-- Pod 卡片 -->
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" text-anchor="middle">
+    <rect x="60" y="252" width="104" height="84" rx="6" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="112" y="282" font-size="13" font-weight="700" fill="#1a2330">Pod1</text>
+    <rect x="94" y="304" width="36" height="16" rx="4" fill="#1e88e5"/>
+    <text x="112" y="315.5" font-size="10" fill="#fafafa">eth0</text>
+
+    <rect x="178" y="252" width="104" height="84" rx="6" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="230" y="282" font-size="13" font-weight="700" fill="#1a2330">Pod2</text>
+    <rect x="190" y="304" width="36" height="16" rx="4" fill="#1e88e5"/>
+    <text x="208" y="315.5" font-size="10" fill="#fafafa">eth0</text>
+    <rect x="230" y="304" width="36" height="16" rx="4" fill="#1e88e5"/>
+    <text x="248" y="315.5" font-size="10" fill="#fafafa">eth1</text>
+
+    <rect x="296" y="252" width="104" height="84" rx="6" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="348" y="282" font-size="13" font-weight="700" fill="#1a2330">Pod3</text>
+    <rect x="330" y="304" width="36" height="16" rx="4" fill="#1e88e5"/>
+    <text x="348" y="315.5" font-size="10" fill="#fafafa">eth0</text>
+  </g>
+
+  <!-- Underlay / Overlay 网络带 -->
+  <rect x="50" y="356" width="196" height="34" fill="#5c8ae6"/>
+  <text x="148" y="378" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#fafafa">Underlay 网络</text>
+  <rect x="254" y="356" width="196" height="34" fill="#4caf50"/>
+  <text x="352" y="378" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#fafafa">Overlay 网络</text>
+
+  <!-- 组件行一：Calico + MULTUS -->
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif">
+    <g>
+      <path d="M 132 414 L 137 403 L 141 411 Z" fill="#ff8a65"/>
+      <path d="M 152 414 L 147 403 L 143 411 Z" fill="#ff8a65"/>
+      <circle cx="142" cy="418" r="10" fill="#ff8a65"/>
+      <circle cx="138.5" cy="416.5" r="1.4" fill="#4e342e"/>
+      <circle cx="145.5" cy="416.5" r="1.4" fill="#4e342e"/>
+      <path d="M 140.5 421 L 143.5 421 L 142 423 Z" fill="#d84315"/>
+      <text x="160" y="424" font-size="16" font-weight="700" fill="#1a2330">Calico</text>
+    </g>
+    <g>
+      <circle cx="308" cy="418" r="11" fill="#37474f"/>
+      <text x="308" y="423" text-anchor="middle" font-size="12" font-weight="700" fill="#fafafa">M</text>
+      <text x="326" y="424" font-size="15" font-weight="700" letter-spacing="1.5" fill="#1a2330">MULTUS</text>
+    </g>
+  </g>
+  <!-- 组件行二：Submariner + CoreDNS -->
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif">
+    <rect x="120" y="444" width="22" height="22" rx="6" fill="#00897b"/>
+    <text x="131" y="460" text-anchor="middle" font-size="13" font-weight="700" fill="#fafafa">S</text>
+    <text x="150" y="461" font-size="15" font-weight="700" fill="#1a2330">Submariner</text>
+    <text x="248" y="461" font-size="15" font-weight="700" fill="#5c6775">+</text>
+    <path d="M 272 447 L 284 447 L 290 455 L 284 463 L 272 463 L 266 455 Z" fill="#5c6bc0"/>
+    <text x="278" y="459.5" text-anchor="middle" font-size="11" font-weight="700" fill="#fafafa">C</text>
+    <text x="298" y="461" font-size="15" font-weight="700" fill="#1a2330">CoreDNS</text>
+  </g>
+  <text x="250" y="500" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#1565c0">SpiderPool + SpiderFlat</text>
+
+  <!-- ===================== Cluster02 ===================== -->
+  <rect x="530" y="120" width="440" height="400" rx="12" fill="#f8fafc" stroke="#cfd8e3"/>
+  <text x="550" y="148" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#1a2330">Cluster02</text>
+
+  <!-- Service（Import） -->
+  <rect x="660" y="160" width="170" height="36" rx="8" fill="#ede7f6" stroke="#b39ddb"/>
+  <text x="745" y="183" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#6a4fa3">{ Import } Service</text>
+
+  <!-- 应用区 -->
+  <rect x="550" y="220" width="400" height="124" rx="8" fill="#e8f3fd" stroke="#90caf9"/>
+  <text x="564" y="234" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" fill="#5c6775">应用</text>
+  <line x1="612" y1="244" x2="848" y2="244" stroke="#5c6775" stroke-width="1.2" marker-start="url(#arrow-green)" marker-end="url(#arrow-green)"/>
+  <text x="730" y="240" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">相互访问</text>
+
+  <!-- Pod 卡片 -->
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" text-anchor="middle">
+    <rect x="560" y="252" width="104" height="84" rx="6" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="612" y="282" font-size="13" font-weight="700" fill="#1a2330">Pod4</text>
+    <rect x="594" y="304" width="36" height="16" rx="4" fill="#43a047"/>
+    <text x="612" y="315.5" font-size="10" fill="#fafafa">eth0</text>
+
+    <rect x="678" y="252" width="104" height="84" rx="6" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="730" y="282" font-size="13" font-weight="700" fill="#1a2330">Pod5</text>
+    <rect x="690" y="304" width="36" height="16" rx="4" fill="#43a047"/>
+    <text x="708" y="315.5" font-size="10" fill="#fafafa">eth0</text>
+    <rect x="730" y="304" width="36" height="16" rx="4" fill="#1e88e5"/>
+    <text x="748" y="315.5" font-size="10" fill="#fafafa">eth1</text>
+
+    <rect x="796" y="252" width="104" height="84" rx="6" fill="#ffffff" stroke="#cfd8e3"/>
+    <text x="848" y="282" font-size="13" font-weight="700" fill="#1a2330">Pod6</text>
+    <rect x="830" y="304" width="36" height="16" rx="4" fill="#43a047"/>
+    <text x="848" y="315.5" font-size="10" fill="#fafafa">eth0</text>
+  </g>
+
+  <!-- Overlay / Underlay 网络带（与 Cluster01 镜像） -->
+  <rect x="550" y="356" width="196" height="34" fill="#4caf50"/>
+  <text x="648" y="378" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#fafafa">Overlay 网络</text>
+  <rect x="754" y="356" width="196" height="34" fill="#5c8ae6"/>
+  <text x="852" y="378" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#fafafa">Underlay 网络</text>
+
+  <!-- 组件行一：Calico + MULTUS -->
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif">
+    <g>
+      <path d="M 632 414 L 637 403 L 641 411 Z" fill="#ff8a65"/>
+      <path d="M 652 414 L 647 403 L 643 411 Z" fill="#ff8a65"/>
+      <circle cx="642" cy="418" r="10" fill="#ff8a65"/>
+      <circle cx="638.5" cy="416.5" r="1.4" fill="#4e342e"/>
+      <circle cx="645.5" cy="416.5" r="1.4" fill="#4e342e"/>
+      <path d="M 640.5 421 L 643.5 421 L 642 423 Z" fill="#d84315"/>
+      <text x="660" y="424" font-size="16" font-weight="700" fill="#1a2330">Calico</text>
+    </g>
+    <g>
+      <circle cx="808" cy="418" r="11" fill="#37474f"/>
+      <text x="808" y="423" text-anchor="middle" font-size="12" font-weight="700" fill="#fafafa">M</text>
+      <text x="826" y="424" font-size="15" font-weight="700" letter-spacing="1.5" fill="#1a2330">MULTUS</text>
+    </g>
+  </g>
+  <!-- 组件行二：Submariner + CoreDNS -->
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif">
+    <rect x="620" y="444" width="22" height="22" rx="6" fill="#00897b"/>
+    <text x="631" y="460" text-anchor="middle" font-size="13" font-weight="700" fill="#fafafa">S</text>
+    <text x="650" y="461" font-size="15" font-weight="700" fill="#1a2330">Submariner</text>
+    <text x="748" y="461" font-size="15" font-weight="700" fill="#5c6775">+</text>
+    <path d="M 772 447 L 784 447 L 790 455 L 784 463 L 772 463 L 766 455 Z" fill="#5c6bc0"/>
+    <text x="778" y="459.5" text-anchor="middle" font-size="11" font-weight="700" fill="#fafafa">C</text>
+    <text x="798" y="461" font-size="15" font-weight="700" fill="#1a2330">CoreDNS</text>
+  </g>
+  <text x="750" y="500" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#1565c0">SpiderPool + SpiderFlat</text>
+
+  <!-- 集群间互访（中间） -->
+  <rect x="428" y="328" width="144" height="17" fill="#ffffff"/>
+  <text x="500" y="341" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#2e7d32">IPv4/IPv6 相互访问</text>
+  <rect x="446" y="345" width="108" height="15" fill="#ffffff"/>
+  <text x="500" y="356.5" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">（IPSec、VXLAN）</text>
+  <line x1="472" y1="373" x2="486" y2="373" stroke="#43a047" stroke-width="2" marker-start="url(#arrow-green)"/>
+  <line x1="514" y1="373" x2="528" y2="373" stroke="#43a047" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <circle cx="500" cy="373" r="12" fill="#ffffff" stroke="#43a047" stroke-width="1.5"/>
+  <rect x="495" y="372" width="10" height="8" rx="1.5" fill="#2e7d32"/>
+  <path d="M 497 372 v -2.5 a 3 3 0 0 1 6 0 v 2.5" fill="none" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="443" y="391" width="114" height="17" fill="#ffffff"/>
+  <text x="500" y="404" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#2e7d32">IPv4/IPv6 相互访问</text>
+
+  <!-- 底部能力清单 -->
+  <rect x="30" y="544" width="940" height="120" rx="10" fill="#f8fafc" stroke="#9aa8bc" stroke-dasharray="6 4"/>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+    <rect x="60" y="562" width="205" height="34" rx="8" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="162.5" y="583.5" fill="#1565c0">跨集群 Pod 联通</text>
+    <rect x="292" y="562" width="205" height="34" rx="8" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="394.5" y="583.5" fill="#1565c0">跨集群服务发现</text>
+    <rect x="524" y="562" width="205" height="34" rx="8" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="626.5" y="583.5" fill="#1565c0">固定静态 IP</text>
+    <rect x="756" y="562" width="205" height="34" rx="8" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="858.5" y="583.5" fill="#1565c0">动态虚拟 IP</text>
+
+    <rect x="152" y="612" width="205" height="34" rx="8" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="254.5" y="633.5" fill="#1565c0">K8s 标准网络策略</text>
+    <rect x="404" y="612" width="205" height="34" rx="8" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="506.5" y="633.5" fill="#1565c0">Pod 多网卡</text>
+    <rect x="656" y="612" width="205" height="34" rx="8" fill="#e8f3fd" stroke="#90caf9"/>
+    <text x="758.5" y="633.5" fill="#1565c0">丰富的 Metrics</text>
+  </g>
+</svg>
