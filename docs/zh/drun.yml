@@ -661,6 +661,7 @@ nav:
               - Release Notes: drun/crane/intro/release-notes.md
           - Copilot 智能工作台:
               - drun/copilot/index.md
+              - 兼容性: drun/copilot/compatibility.md
       - 运维管理:
           - 可观测性:
               - drun/insight/intro/index.md

@@ -652,6 +652,7 @@ nav:
               - Release Notes: drun/crane/intro/release-notes.md
           - Copilot Workbench:
               - drun/copilot/index.md
+              - Compatibility: drun/copilot/compatibility.md
       - OAM:
           - Insight:
               - drun/insight/intro/index.md
