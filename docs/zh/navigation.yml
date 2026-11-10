@@ -773,6 +773,7 @@ nav:
                   - 通过 NodePort 多终端访问虚拟机: virtnest/quickstart/nodeport.md
                   - 虚拟机详情: virtnest/quickstart/detail.md
               - 虚拟机管理:
+                  - 虚拟机管理概览: virtnest/vm/index.md
                   - 创建密钥: virtnest/vm/create-secret.md
                   - 克隆虚拟机: virtnest/vm/clone.md
                   - 快照管理: virtnest/vm/snapshot.md
