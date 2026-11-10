@@ -125,7 +125,7 @@
 <text x="500.0" y="599" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9.0" font-weight="400" fill="#5c6775" >CNI / Multus / Spiderpool</text>
 <rect x="595.25" y="560" width="169" height="52" rx="7" fill="#ffffff" stroke="#ffcc80" stroke-width="1" />
 <text x="679.75" y="581" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#8a5a00" >Persistent Storage</text>
-<text x="679.75" y="599" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9.6" font-weight="400" fill="#5c6775" >PVC / SnapshotClass</text>
+<text x="679.75" y="599" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9.0" font-weight="400" fill="#5c6775" >PVC / VolumeSnapshotClass</text>
 <rect x="775.0" y="560" width="169" height="52" rx="7" fill="#ffffff" stroke="#ffcc80" stroke-width="1" />
 <text x="859.5" y="581" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#8a5a00" >Images &amp; Devices</text>
 <text x="859.5" y="599" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9.6" font-weight="400" fill="#5c6775" >Registry / GPU / vGPU</text>

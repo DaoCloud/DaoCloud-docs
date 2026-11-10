@@ -29,7 +29,7 @@ The architecture consists of three layers, from top to bottom: creation and acce
 
 ## Key Capabilities
 
-Virtnest provides complete capabilities for creating, running and operating virtual machines. Compared with maintaining a separate virtualization platform, it reuses Kubernetes scheduling, image and networking: container images serve as the basis for VM creation and share the host kernel and hardware resources, improving resource utilization; image-based distribution shortens VM startup time and supports fast, on-demand deployment and scaling; start/stop, configuration and monitoring use the same cluster management tools, simplifying day-to-day operations; applications and their configurations can be packaged into images for flexible release, and can directly reuse container networking, service discovery and load balancing to work seamlessly with existing containerized applications.
+Virtnest provides complete capabilities for creating, running and operating virtual machines. Each VM runs its own guest OS and kernel inside a virt-launcher Pod, isolated by QEMU / KVM. On top of that, Virtnest reuses Kubernetes scheduling, networking and storage: container images serve as the basis for VM creation, and VMs are scheduled alongside container workloads by the same cluster, improving resource utilization; image-based distribution shortens VM startup time and supports fast, on-demand deployment and scaling; start/stop, configuration and monitoring use the same cluster management tools, simplifying day-to-day operations; applications and their configurations can be packaged into images for flexible release, and can directly reuse container networking, service discovery and load balancing to work seamlessly with existing containerized applications.
 
 <div class="grid cards" markdown>
 
@@ -125,7 +125,7 @@ Complete the following steps in order to create and operate a virtual machine fr
     <span class="vn-path-desc">Log in via VNC / terminal, view details</span>
     <span class="vn-path-go">Go →</span>
   </a>
-  <a class="vn-path-step" style="--path-c:#8e24aa" href="features/">
+  <a class="vn-path-step" style="--path-c:#8e24aa" href="../vm/">
     <span class="vn-path-num">5</span>
     <span class="vn-path-title">Day-2 Operations</span>
     <span class="vn-path-desc">Snapshots, cloning, migration and monitoring</span>

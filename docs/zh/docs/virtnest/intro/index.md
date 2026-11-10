@@ -27,7 +27,7 @@ hide:
 
 ## 核心能力
 
-Virtnest 围绕虚拟机的创建、运行与运维提供完整能力。相比单独维护一套虚拟化平台，它复用 Kubernetes 的调度、镜像与网络体系：以容器镜像为创建基础并共享主机内核与硬件资源，提升资源利用率；镜像化分发缩短虚拟机启动时间，支持按需快速部署与扩容；启停、配置与监控沿用集群管理工具，简化日常操作；应用及其配置可打包进镜像灵活发布，并直接复用容器网络、服务发现与负载均衡，与既有容器化应用无缝协作。
+Virtnest 围绕虚拟机的创建、运行与运维提供完整能力。虚拟机在 virt-launcher Pod 中运行独立的 Guest OS 内核，由 QEMU / KVM 提供隔离；在此之上，Virtnest 复用 Kubernetes 的调度、网络与存储体系：以容器镜像为创建基础，与容器负载由同一集群统一调度，提升资源利用率；镜像化分发缩短虚拟机启动时间，支持按需快速部署与扩容；启停、配置与监控沿用集群管理工具，简化日常操作；应用及其配置可打包进镜像灵活发布，并直接复用容器网络、服务发现与负载均衡，与既有容器化应用无缝协作。
 
 <div class="grid cards" markdown>
 
@@ -123,7 +123,7 @@ Virtnest 围绕虚拟机的创建、运行与运维提供完整能力。相比�
     <span class="vn-path-desc">VNC / 终端登录，查看详情</span>
     <span class="vn-path-go">前往 →</span>
   </a>
-  <a class="vn-path-step" style="--path-c:#8e24aa" href="features/">
+  <a class="vn-path-step" style="--path-c:#8e24aa" href="../vm/">
     <span class="vn-path-num">5</span>
     <span class="vn-path-title">日常运维</span>
     <span class="vn-path-desc">快照、克隆、迁移与监控</span>
