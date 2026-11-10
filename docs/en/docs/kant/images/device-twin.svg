@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="380" viewBox="0 0 520 380" role="img" aria-labelledby="dt-title dt-desc">
+  <title id="dt-title">How a Device Twin Works</title>
+  <desc id="dt-desc">An edge node hosts a device twin with an actual state and a desired state. The end device reports its actual state through Data Reporting, receives commands from the desired state through Device Control, and resynchronizes when it comes back online.</desc>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      [fill="#ffffff"] { fill: #232936; }
+      [fill="#eef6fd"] { fill: #18283a; }
+      [fill="#f2f4f8"] { fill: #1f2a39; }
+      [fill="#fff6ea"] { fill: #2b2418; }
+      [fill="#262626"] { fill: #e6ebf2; }
+      [fill="#37474f"] { fill: #cfd8dc; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#e65100"] { fill: #ffb74d; }
+      [stroke="#90caf9"] { stroke: #2c4a6e; }
+      [stroke="#ffcc80"] { stroke: #6b542b; }
+      [stroke="#dbe3ee"] { stroke: #33404f; }
+      [stroke="#cfd8e3"] { stroke: #3a4450; }
+      [stroke="#c9ced6"] { stroke: #3a4450; }
+      [stroke="#1565c0"] { stroke: #64b5f6; }
+    }
+  </style>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+  </defs>
+<rect x="0" y="0" width="520" height="380" rx="0" fill="#ffffff" stroke="none" stroke-width="1.2" />
+<rect x="20" y="20" width="480" height="190" rx="24" fill="#eef6fd" stroke="#90caf9" stroke-width="1.6" />
+<text x="40" y="53" text-anchor="start" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="20" font-weight="600" fill="#1565c0" >Edge Node</text>
+<rect x="60" y="70" width="400" height="120" rx="16" fill="#f2f4f8" stroke="#dbe3ee" stroke-width="1.2" />
+<text x="260" y="99" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="20" font-weight="600" fill="#37474f" >Device Twin</text>
+<rect x="82" y="112" width="164" height="60" rx="9" fill="#ffffff" stroke="#cfd8e3" stroke-width="1.2" />
+<text x="164" y="149" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="16" font-weight="500" fill="#262626" >Actual State</text>
+<rect x="274" y="112" width="164" height="60" rx="9" fill="#ffffff" stroke="#cfd8e3" stroke-width="1.2" />
+<text x="356" y="149" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="16" font-weight="500" fill="#262626" >Desired State</text>
+<path d="M 20 270 L 500 270" fill="none" stroke="#c9ced6" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 7" />
+<rect x="20" y="290" width="480" height="72" rx="14" fill="#fff6ea" stroke="#ffcc80" stroke-width="1.6" />
+<text x="260" y="334" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="20" font-weight="600" fill="#e65100" >End Device</text>
+<path d="M 164 290 L 164 176" fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr)" />
+<path d="M 356 176 L 356 290" fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr)" />
+<rect x="94" y="216" width="140" height="36" rx="7" fill="#ffffff" stroke="none" stroke-width="1.2" />
+<text x="164" y="240" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#262626" >Data Reporting</text>
+<rect x="286" y="216" width="140" height="36" rx="7" fill="#ffffff" stroke="none" stroke-width="1.2" />
+<text x="356" y="240" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#262626" >Device Control</text>
+</svg>
