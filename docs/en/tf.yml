@@ -602,6 +602,7 @@ nav:
               - Release Notes: tf/crane/intro/release-notes.md
           - Copilot Workbench:
               - tf/copilot/index.md
+              - Compatibility: tf/copilot/compatibility.md
           - Billing Center:
               - tf/leopard/index.md
               - Transactions: tf/leopard/transactions.md
