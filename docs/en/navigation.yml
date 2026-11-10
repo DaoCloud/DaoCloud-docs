@@ -770,6 +770,7 @@ nav:
                   - Access VM by NodePort: virtnest/quickstart/nodeport.md
                   - VM Details: virtnest/quickstart/detail.md
               - Manage Virtual Machine:
+                  - VM Management Overview: virtnest/vm/index.md
                   - Create Secret: virtnest/vm/create-secret.md
                   - Clone Virtual Machine: virtnest/vm/clone.md
                   - Snapshots: virtnest/vm/snapshot.md
