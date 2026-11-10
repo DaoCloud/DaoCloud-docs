@@ -16,50 +16,14 @@ and distribution of applications and configurations for edge nodes, while the ed
 on running edge applications, achieving edge autonomy. The device side supports multi-protocol
 terminal access and provides standard interfaces for device connectivity.
 
-The functional architecture of the edge computing platform includes the following features:
+Cloud Edge Collaboration supports the following features:
 
-## Edge Node Management
-
-- Supports the integration of a vast number of edge nodes.
-- Automatically generates configuration information for edge nodes within the platform.
-- Offers two efficient and convenient management methods: token and certificate.
-- Allows for uniform management, monitoring, and operation of edge nodes from the cloud.
-
-## Edge Application/Model Management
-
-- Facilitates the rapid deployment of edge applications or models to edge nodes in the form of containers.
-  Users can package their edge applications or models into container images, upload them to a container
-  registry, and deploy these images to edge nodes via the Cloud Edge Collaboration platform.
-- Supports the viewing of running data, events, and log information for deployed instances.
-- Containers offer a robust ecosystem, aiding in the seamless transition of container applications to various
-  running environments, enhancing portability. Containers provide better resource isolation and support CPU
-  and GPU scheduling.
-
-## Edge Device Management
-
-- Supports connecting end devices to edge nodes, with access through multiple protocols.
-- Once connected, end devices can be uniformly managed from the cloud.
-
-## Edge Mesh
-
-Supports service discovery and traffic proxy, thereby implementing a closed loop of edge business traffic
-and solving the communication problem between edge-to-edge businesses in edge scenarios.
-
-## Data Management
-
-- Provides a message routing function, allowing users to configure message routing rules.
-- The platform forwards edge messages to corresponding message endpoints based on the configured routing rules,
-  enabling flexible data routing and enhancing data security.
-
-## Permission Management
-
-- Offers three-level permission management for platform/folders/workspaces.
-- Ensures resource sharing and isolation among different roles at multiple levels, fully guaranteeing resource security.
-
-## Edge Control
-
-- Provides resource scheduling, management, and maintenance functions for edge nodes.
-- Offers full life-cycle management of applications and models running on edge nodes.
-- Includes data collection functions and supports device protocol conversion, enabling data collection from devices connected to edge nodes.
-- Provides messaging and data transmission channels, supporting the EventBus protocol for transmitting edge messages to cloud-side REST protocols and vice versa.
-- Supports bidirectional transmission of unstructured data such as images, videos, and files.
+| Feature | Description |
+| --- | --- |
+| **Edge Node Management** | Supports onboarding a vast number of edge nodes with automatically generated node configuration; offers token and certificate management methods; enables unified management, monitoring, and operation of nodes from the cloud. |
+| **Edge Application/Model Management** | Packages applications or models as container images, uploads them to a container registry, and deploys them to edge nodes quickly; provides runtime data, events, and logs of deployed instances; containers improve portability and resource isolation and support CPU / GPU scheduling. |
+| **Edge Device Management** | Supports connecting end devices to edge nodes over multiple protocols, and manages them uniformly from the cloud once connected. |
+| **Edge Mesh** | Implements a closed loop of edge business traffic through service discovery and traffic proxy, solving communication problems between edge services in edge scenarios. |
+| **Data Management** | Provides message routing with configurable rules; the platform forwards edge messages to the corresponding endpoints along the configured paths, enabling flexible data routing and stronger data security. |
+| **Permission Management** | Offers three-level permission management (platform / folder / workspace) for fine-grained control; ensures resource sharing and isolation among different roles at multiple levels and guarantees resource security. |
+| **Edge Control** | Provides resource scheduling, management, and O&M for edge nodes; full lifecycle management of applications and models; data collection with device protocol conversion; messaging and data channels supporting EventBus-to-REST and REST-to-EventBus / ServiceBus forwarding paths; bidirectional transfer of unstructured data such as images, videos, and files. |
