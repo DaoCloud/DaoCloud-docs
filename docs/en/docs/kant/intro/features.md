@@ -16,7 +16,11 @@ and distribution of applications and configurations for edge nodes, while the ed
 on running edge applications, achieving edge autonomy. The device side supports multi-protocol
 terminal access and provides standard interfaces for device connectivity.
 
-The functional architecture of the edge computing platform includes the following features:
+The functional architecture of the platform is shown below:
+
+![Functional Architecture](../images/kant-arch.svg)
+
+Cloud Edge Collaboration supports the following features:
 
 ## Edge Node Management
 

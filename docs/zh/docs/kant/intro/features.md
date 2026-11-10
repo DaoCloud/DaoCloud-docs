@@ -11,7 +11,7 @@ hide:
 
 云边协同平台的功能架构如下图：
 
-![功能架构](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/features01.png)
+![功能架构](../images/kant-arch.svg)
 
 云边协同支持以下功能特性：
 
