@@ -5,7 +5,7 @@ Slack、Telegram、飞书等平台时只会显示裸 URL，没有预览卡片。
 ``on_post_page`` 中注入：
 
 - ``og:type`` / ``og:site_name`` / ``og:title`` / ``og:url`` / ``og:image``
-  / ``og:locale``（并用对方语言填充 ``og:locale:alternate``）
+  / ``og:locale``
 - ``og:description``：页面 frontmatter 的 ``description`` 优先，其次取
   渲染后页面的正文首段，最后兜底站点级描述。
 - ``twitter:card``（``summary``，目前只有方形 logo）+ 与 og 一致的
@@ -15,17 +15,22 @@ Slack、Telegram、飞书等平台时只会显示裸 URL，没有预览卡片。
 相同的每页专属文本——mkdocs 原样拷贝站点级 ``site_description``，导致全站
 每页共用同一句描述，搜索引擎会直接忽略。
 
-另外处理两处 ``<link>``：
+另外做三件"去语言线索"和站级修正的事，起因是飞书把中文页卡片抓成了英文：
 
-1. 移除 ``extra.alternate`` 生成的全站级 hreflang 声明。它们用的是相对 URL
-   且指向站点根，本身就是无效声明（Google 要求绝对 URL 且必须页级对应），
-   副作用却是实打实的：飞书等平台的链接预览会据此把 URL 按语言前缀改写，
-   于是中文页 ``/tf/hydra/intro/`` 被改写为 ``/en/tf/hydra/intro/`` 去抓，
-   卡片显示成英文；若英文版不存在（如 ``/en/drun/hydra/finetune/``），
-   抓到的就是一条 ``{"error":"Document not found"}``。
-   删掉后抓取方只会抓原 URL。header 里的语言切换下拉不受影响（那是 body
-   里的普通链接，不依赖 head 中的 hreflang）。
-2. 补齐缺失的 ``rel="canonical"``：英文站此前一个都没有，中文站由主题输出。
+1. 移除 ``extra.alternate`` 生成的 head 内 hreflang 声明。它们用的是相对
+   URL 且指向站点根，本身就是无效声明（Google 要求绝对 URL 且必须页级
+   对应），副作用却是实打实的：飞书据此把 URL 按语言前缀改写，中文页
+   ``/tf/hydra/intro/`` 被改写为 ``/en/tf/hydra/intro/`` 去抓，卡片显示成
+   英文；英文版不存在时（``/en/drun/hydra/finetune/``）抓到的就是一条
+   ``{"error":"Document not found"}``。
+2. 剥掉语言下拉 ``<a href="/en/" hreflang="en">`` 上的 hreflang 属性
+   （本 hook 上一版只删了 head 里的 ``<link>``，漏了 body 里的 ``<a>``，
+   于是飞书照旧跳到 ``/en/``）。只删属性，href / 文案 / class 保留，
+   切换功能不变。
+3. 不输出 ``og:locale:alternate``：语义是"本页还有另一种语言版本"，同样会
+   引导抓取方去找英文页，而它对 SEO 无实际价值。
+
+最后补齐缺失的 ``rel="canonical"``。
 
 本 hook 在 minify 插件之后执行（hooks 追加在插件列表末尾），正则对压缩后
 的 HTML 保持宽容。已含 ``og:title`` 的页面直接跳过。
@@ -51,6 +56,14 @@ _ALT_LINK_RE = re.compile(
     r"""<link\b(?=[^>]*\bhreflang\s*=)"""
     r"""(?=[^>]*\brel\s*=\s*(?:"alternate"|'alternate'|alternate(?=[\s>])))[^>]*>""",
     re.IGNORECASE,
+)
+
+# 语言切换下拉里的 <a href="/en/" hreflang="en"> 同样在向抓取器声明"有英文版"，
+# 而且这里直接给出了 /en/ 这个路径。飞书会据此把当前 URL 加上 /en/ 前缀去抓英文页，
+# 于是中文页的卡片显示成英文（英文版不存在时抓到的是 {"error":"Document not found"}）。
+# 只剥掉 hreflang 属性，href / 文案 / class 全部保留，切换功能不受影响。
+_A_HREFLANG_RE = re.compile(
+    r"""(<a\b[^>]*?)\s+hreflang\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)""", re.IGNORECASE
 )
 
 # 主题已输出的 canonical（中文站有，英文站此前没有）。
@@ -104,7 +117,6 @@ def on_post_page(output, page, config, **kwargs):
     desc = _truncate(re.sub(r"\s+", " ", html.unescape(desc)).strip())
 
     locale = _og_locale(config.theme.get("language") or "en")
-    alternate = "en_US" if locale == "zh_CN" else "zh_CN"
     site_name = config.site_name or ""
     title = str(page.title or site_name)
     url = getattr(page, "canonical_url", None) or config.site_url
@@ -118,7 +130,6 @@ def on_post_page(output, page, config, **kwargs):
         f'<meta property="og:url" content="{html.escape(url, quote=True)}">'
         f'<meta property="og:image" content="{html.escape(image, quote=True)}">'
         f'<meta property="og:locale" content="{locale}">'
-        f'<meta property="og:locale:alternate" content="{alternate}">'
         f'<meta property="og:description" content="{html.escape(desc, quote=True)}">'
         '<meta name="twitter:card" content="summary">'
         f'<meta name="twitter:title" content="{html.escape(title, quote=True)}">'
@@ -138,6 +149,9 @@ def on_post_page(output, page, config, **kwargs):
     # 移除站点级 hreflang。相对 URL + 指向站点根 = 无效声明，却会诱导飞书等
     # 平台按语言前缀改写 URL 去抓另一语言的版本（详见模块 docstring）。
     output = _ALT_LINK_RE.sub("", output)
+
+    # 语言下拉 <a> 上的 hreflang 同样会诱导抓取方跳到 /en/，剥掉属性保留链接。
+    output = _A_HREFLANG_RE.sub(lambda m: m.group(1), output)
 
     # 补齐缺失的 canonical（英文站此前完全没有）。
     if url and not _CANONICAL_RE.search(output):
