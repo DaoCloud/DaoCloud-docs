@@ -23,10 +23,11 @@ Slack、Telegram、飞书等平台时只会显示裸 URL，没有预览卡片。
    ``/tf/hydra/intro/`` 被改写为 ``/en/tf/hydra/intro/`` 去抓，卡片显示成
    英文；英文版不存在时（``/en/drun/hydra/finetune/``）抓到的就是一条
    ``{"error":"Document not found"}``。
-2. 剥掉语言下拉 ``<a href="/en/" hreflang="en">`` 上的 hreflang 属性
-   （本 hook 上一版只删了 head 里的 ``<link>``，漏了 body 里的 ``<a>``，
-   于是飞书照旧跳到 ``/en/``）。只删属性，href / 文案 / class 保留，
-   切换功能不变。
+2. 语言下拉 ``<a href="/en/" hreflang="en">`` 上的 hreflang 改名为 ``data-lang``
+   （只改名不删除）。``docs/*/docs/stylesheets/language-redirect.js`` 的点击
+   处理器以 ``.md-select__link[hreflang]`` 为选择器、并用属性值作为"用户选择
+   的语言"，删掉属性会让下拉退化成裸 href 跳转；改名后交互完全不变，而
+   ``data-*`` 对抓取方没有语言语义。
 3. 不输出 ``og:locale:alternate``：语义是"本页还有另一种语言版本"，同样会
    引导抓取方去找英文页，而它对 SEO 无实际价值。
 
@@ -59,12 +60,29 @@ _ALT_LINK_RE = re.compile(
 )
 
 # 语言切换下拉里的 <a href="/en/" hreflang="en"> 同样在向抓取器声明"有英文版"，
-# 而且这里直接给出了 /en/ 这个路径。飞书会据此把当前 URL 加上 /en/ 前缀去抓英文页，
-# 于是中文页的卡片显示成英文（英文版不存在时抓到的是 {"error":"Document not found"}）。
-# 只剥掉 hreflang 属性，href / 文案 / class 全部保留，切换功能不受影响。
+# 而且这里直接给出了 /en/ 这个路径，会诱导预览抓取方把当前 URL 加上 /en/ 前缀。
+#
+# 但 hreflang 是 docs/*/docs/stylesheets/language-redirect.js 的点击选择器依赖
+# （.md-select__link[hreflang]），且该属性的值被用作"用户选择的语言"。直接删掉
+# 会让下拉框退化成裸 href 跳转：用户选择不落盘、query/hash 丢失、且下次访问会
+# 被浏览器语言自动跳转覆盖。所以这里只做【改名】：hreflang → data-lang。
+# 属性值原样保留，JS 侧同步改为读 data-lang（见那两个 js 文件），视觉与交互不变，
+# 而 data-* 对爬虫没有任何语义。
 _A_HREFLANG_RE = re.compile(
-    r"""(<a\b[^>]*?)\s+hreflang\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)""", re.IGNORECASE
+    # 前瞻要求整个标签里出现 md-select__link，即只针对语言切换器；
+    # 正文里 <a href="/fr/" hreflang="fr"> 这类合法的语言标注不受影响。
+    r"""(<a\b(?=[^>]*\bmd-select__link\b)[^>]*?)(\s+)hreflang\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)""",
+    re.IGNORECASE,
 )
+
+
+def _rename_hreflang(match):
+    """把 <a> 上的 hreflang 改名为 data-lang（已存在 data-lang 时保持原样）。"""
+    head, gap, value = match.group(1), match.group(2), match.group(3)
+    if "data-lang" in head.lower():
+        return match.group(0)
+    # 保留原属性之间的空白（可能有换行和缩进），只替换属性名。
+    return f"{head}{gap}data-lang={value}"
 
 # 主题已输出的 canonical（中文站有，英文站此前没有）。
 _CANONICAL_RE = re.compile(r'<link\b[^>]*\brel=["\']?canonical["\']?[^>]*>', re.IGNORECASE)
@@ -150,8 +168,9 @@ def on_post_page(output, page, config, **kwargs):
     # 平台按语言前缀改写 URL 去抓另一语言的版本（详见模块 docstring）。
     output = _ALT_LINK_RE.sub("", output)
 
-    # 语言下拉 <a> 上的 hreflang 同样会诱导抓取方跳到 /en/，剥掉属性保留链接。
-    output = _A_HREFLANG_RE.sub(lambda m: m.group(1), output)
+    # 语言下拉 <a> 上的 hreflang 改名为 data-lang：属性对爬虫静默，
+    # 但 language-redirect.js 仍能据 data-lang 完成"记住用户选择 + 保留 query/hash"。
+    output = _A_HREFLANG_RE.sub(_rename_hreflang, output)
 
     # 补齐缺失的 canonical（英文站此前完全没有）。
     if url and not _CANONICAL_RE.search(output):
