@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://docs.daocloud.io/sitemap.xml
+Sitemap: https://docs.daocloud.io/en/sitemap.xml
