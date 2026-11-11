@@ -33,32 +33,44 @@ In the Cloud Edge Collaboration module, an end device can be created and associa
 
 The typical steps for managing and controlling end devices are as follows:
 
-<div class="grid cards" markdown>
+<style>
+.dev-path{display:flex;gap:0.75rem;margin:1.25rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.dev-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.dev-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.dev-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.dev-path-step:last-child::after{display:none}
+.dev-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.dev-path-title{font-weight:700;font-size:0.95rem}
+.dev-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.dev-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.dev-path-step{flex:1 1 calc(50% - 0.75rem)}.dev-path-step::after{display:none}}
+</style>
 
--   :one: __[Create Device Model](./create-device-model.md)__
-
-    ---
-
-    Abstract the common characteristics of a device type and use attributes to define the data the device provides.
-
--   :two: __[Create End Device](./create-device.md)__
-
-    ---
-
-    Create a device instance in an edge unit and fill in its basic information and access settings.
-
--   :three: __Associate with an Edge Node__
-
-    ---
-
-    Bind the device to an edge node. The edge node then stores the device's twin attributes, and the device starts reporting state and receiving commands.
-
--   :four: __[Manage and Monitor](./manage-device.md)__
-
-    ---
-
-    Edit basic information, twin attributes, labels, and access settings, and monitor device status.
-
+<div class="dev-path">
+  <a class="dev-path-step" style="--path-c:#2196f3" href="create-device-model/">
+    <span class="dev-path-num">1</span>
+    <span class="dev-path-title">Create Device Model</span>
+    <span class="dev-path-desc">Abstract the common characteristics of a device type and use attributes to define the data the device provides.</span>
+    <span class="dev-path-go">Go →</span>
+  </a>
+  <a class="dev-path-step" style="--path-c:#00acc1" href="create-device/">
+    <span class="dev-path-num">2</span>
+    <span class="dev-path-title">Create End Device</span>
+    <span class="dev-path-desc">Create a device instance in an edge unit and fill in its basic information and access settings.</span>
+    <span class="dev-path-go">Go →</span>
+  </a>
+  <a class="dev-path-step" style="--path-c:#43a047" href="create-device/">
+    <span class="dev-path-num">3</span>
+    <span class="dev-path-title">Associate with an Edge Node</span>
+    <span class="dev-path-desc">Select "Bind Node" in the device list. The edge node then stores the device's twin attributes, and the device starts reporting state and receiving commands.</span>
+    <span class="dev-path-go">Go →</span>
+  </a>
+  <a class="dev-path-step" style="--path-c:#fb8c00" href="manage-device/">
+    <span class="dev-path-num">4</span>
+    <span class="dev-path-title">Manage and Monitor</span>
+    <span class="dev-path-desc">Edit basic information, twin attributes, labels, and access settings, and monitor device status.</span>
+    <span class="dev-path-go">Go →</span>
+  </a>
 </div>
 
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button }

@@ -77,36 +77,48 @@ hide:
 
 </div>
 
-## 下一步
+## 学习路径
 
-按角色或任务选择接下来要阅读的文档：
+按下面的顺序依次完成，即可从创建边缘单元到打通云边数据通道：
 
-<div class="grid cards" markdown>
+<style>
+.kant-path{display:flex;gap:0.75rem;margin:1.25rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.kant-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.kant-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.kant-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.kant-path-step:last-child::after{display:none}
+.kant-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.kant-path-title{font-weight:700;font-size:0.95rem}
+.kant-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.kant-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.kant-path-step{flex:1 1 100%}.kant-path-step::after{display:none}}
+</style>
 
--   :material-run-fast:{ .lg .middle } __快速上手__
-
-    ---
-
-    - [创建专有边缘单元](../user-guide/edge-unit/create-internal-unit.md)
-    - [接入边缘节点](../user-guide/node/access-guide.md)
-    - [创建工作负载](../user-guide/edge-app/create-app.md)
-
--   :material-chip:{ .lg .middle } __终端与数据__
-
-    ---
-
-    - [创建设备模型](../user-guide/device/create-device-model.md)
-    - [创建终端设备](../user-guide/device/create-device.md)
-    - [创建消息路由](../user-guide/route/create-route.md)
-
--   :material-view-grid-outline:{ .lg .middle } __深入了解__
-
-    ---
-
-    - [功能特性](features.md)
-    - [基本概念](concepts.md)
-    - [应用场景](use-cases.md)
-
+<div class="kant-path">
+  <a class="kant-path-step" style="--path-c:#2196f3" href="../user-guide/edge-unit/create-internal-unit/">
+    <span class="kant-path-num">1</span>
+    <span class="kant-path-title">创建边缘单元</span>
+    <span class="kant-path-desc">创建专有边缘单元，为边缘业务准备运行环境</span>
+    <span class="kant-path-go">前往 →</span>
+  </a>
+  <a class="kant-path-step" style="--path-c:#00acc1" href="../user-guide/node/access-guide/">
+    <span class="kant-path-num">2</span>
+    <span class="kant-path-title">接入边缘节点</span>
+    <span class="kant-path-desc">用 Token 或证书把边缘节点纳管到云端</span>
+    <span class="kant-path-go">前往 →</span>
+  </a>
+  <a class="kant-path-step" style="--path-c:#43a047" href="../user-guide/edge-app/create-app/">
+    <span class="kant-path-num">3</span>
+    <span class="kant-path-title">创建工作负载</span>
+    <span class="kant-path-desc">将应用或模型部署到边缘节点运行</span>
+    <span class="kant-path-go">前往 →</span>
+  </a>
+  <a class="kant-path-step" style="--path-c:#fb8c00" href="../user-guide/device/create-device-model/">
+    <span class="kant-path-num">4</span>
+    <span class="kant-path-title">接入终端与数据</span>
+    <span class="kant-path-desc">创建设备模型与设备实例，再配置云边消息路由</span>
+    <span class="kant-path-go">前往 →</span>
+  </a>
 </div>
 
 [下载中心](https://docs.daocloud.io/download/){ .md-button }

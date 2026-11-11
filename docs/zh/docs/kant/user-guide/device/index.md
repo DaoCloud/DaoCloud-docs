@@ -33,32 +33,44 @@ hide:
 
 管理和控制终端设备，通常按以下顺序执行：
 
-<div class="grid cards" markdown>
+<style>
+.dev-path{display:flex;gap:0.75rem;margin:1.25rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.dev-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.dev-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.dev-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.dev-path-step:last-child::after{display:none}
+.dev-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.dev-path-title{font-weight:700;font-size:0.95rem}
+.dev-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.dev-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.dev-path-step{flex:1 1 calc(50% - 0.75rem)}.dev-path-step::after{display:none}}
+</style>
 
--   :one: __[创建设备模型](./create-device-model.md)__
-
-    ---
-
-    抽象同类设备的共同特征，用属性定义设备可对外提供的数据。
-
--   :two: __[创建终端设备](./create-device.md)__
-
-    ---
-
-    在边缘单元中创建设备实例，填写基本信息与访问配置。
-
--   :three: __关联边缘节点__
-
-    ---
-
-    将设备绑定到边缘节点；绑定后边缘节点保存该设备的孪生属性，设备开始上报状态并接收下发指令。
-
--   :four: __[管理与监控](./manage-device.md)__
-
-    ---
-
-    编辑基本信息、孪生属性、标签与访问配置，并监测终端设备的运行状态。
-
+<div class="dev-path">
+  <a class="dev-path-step" style="--path-c:#2196f3" href="create-device-model/">
+    <span class="dev-path-num">1</span>
+    <span class="dev-path-title">创建设备模型</span>
+    <span class="dev-path-desc">抽象同类设备的共同特征，用属性定义设备可对外提供的数据。</span>
+    <span class="dev-path-go">前往 →</span>
+  </a>
+  <a class="dev-path-step" style="--path-c:#00acc1" href="create-device/">
+    <span class="dev-path-num">2</span>
+    <span class="dev-path-title">创建终端设备</span>
+    <span class="dev-path-desc">在边缘单元中创建设备实例，填写基本信息与访问配置。</span>
+    <span class="dev-path-go">前往 →</span>
+  </a>
+  <a class="dev-path-step" style="--path-c:#43a047" href="create-device/">
+    <span class="dev-path-num">3</span>
+    <span class="dev-path-title">关联边缘节点</span>
+    <span class="dev-path-desc">在设备列表中选择「绑定节点」；绑定后边缘节点保存该设备的孪生属性，设备开始上报状态并接收下发指令。</span>
+    <span class="dev-path-go">前往 →</span>
+  </a>
+  <a class="dev-path-step" style="--path-c:#fb8c00" href="manage-device/">
+    <span class="dev-path-num">4</span>
+    <span class="dev-path-title">管理与监控</span>
+    <span class="dev-path-desc">编辑基本信息、孪生属性、标签与访问配置，并监测终端设备的运行状态。</span>
+    <span class="dev-path-go">前往 →</span>
+  </a>
 </div>
 
 [下载中心](https://docs.daocloud.io/download/){ .md-button }
