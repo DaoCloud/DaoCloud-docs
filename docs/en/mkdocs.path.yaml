@@ -160,7 +160,7 @@ extra:
     - link: /
       name: 简体中文
       lang: zh
-    - link: /
+    - link: /en/
       name: English
       lang: en
   generator: false
