@@ -247,3 +247,6 @@ markdown_extensions:
   - pymdownx.snippets
   #     auto_append:
   #       - includes/glossary.md
+
+hooks:
+  - ../../scripts/og_meta_hook.py
