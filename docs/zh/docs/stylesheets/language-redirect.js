@@ -26,6 +26,12 @@
 
   const currentPath = window.location.pathname;
 
+  // 0) 爬虫 / 链接预览抓取器 / 自动化浏览器：一律不跳转。
+  // 这类客户端没有真实用户偏好，任何跳转都只会让抓取结果偏离原始 URL
+  // （中文页被带去 /en/ 导致分享卡片显示英文）。放在最前面，连"用户显式
+  // 选择"分支也一并跳过——抓取器profile里残留的 localStorage 不该生效。
+  if (isCrawler()) return;
+
   let userSelectedLang = null;
   try {
     userSelectedLang = localStorage.getItem("userSelectedLang");
@@ -38,10 +44,13 @@
   if (userSelectedLang === "en" || userSelectedLang === "zh") {
     const chosen = targetFor(userSelectedLang);
     if (chosen !== currentPath) {
-      window.location.replace(chosen);
+      // 深链必须带上 query 和 hash（锚点、筛选参数），与下方点击处理器一致
+      window.location.replace(
+        chosen + window.location.search + window.location.hash
+      );
     }
-  } else if (!isCrawler()) {
-    // 2) 用户没选过：按浏览器语言自动跳转，但只对真实访客生效。
+  } else {
+    // 2) 用户没选过：按浏览器语言自动跳转。
     const userLang = (
       navigator.language ||
       navigator.userLanguage ||

@@ -7,7 +7,7 @@ date: 2024-10-10
 
 # Network Portfolio Solutions
 
-Based on open source projects, DCE Cloud Native Networking provides not only single CNI network support, but also multiple CNI portfolio solutions.
+Based on open source projects, Cloud Native Networking provides not only single CNI network support, but also multiple CNI portfolio solutions.
 
 <div class="grid cards" markdown>
 
