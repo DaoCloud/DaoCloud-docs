@@ -4,7 +4,7 @@ INHERIT: navigation.yml
 
 # Project information
 site_name: DaoCloud Docs Hub
-site_url: https://docs.daocloud.io/
+site_url: https://docs.daocloud.io/en/
 site_author: DaoCloud
 site_description: >-
   DaoCloud is a global pioneer in open source for AI, leading the wave of AI innovation and helping drive digital transformation.
@@ -230,3 +230,4 @@ markdown_extensions:
 
 hooks:
   - ../../scripts/redirect_html_hook.py
+  - ../../scripts/og_meta_hook.py
