@@ -79,36 +79,48 @@ Cloud Edge Collaboration provides a complete set of capabilities around edge nod
 
 </div>
 
-## Next Steps
+## Learning Path
 
-Choose the documentation to read next based on your role or task:
+Follow these steps in order to go from creating an edge unit to enabling cloud-edge data transfer:
 
-<div class="grid cards" markdown>
+<style>
+.kant-path{display:flex;gap:0.75rem;margin:1.25rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.kant-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.kant-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.kant-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.kant-path-step:last-child::after{display:none}
+.kant-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.kant-path-title{font-weight:700;font-size:0.95rem}
+.kant-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.kant-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.kant-path-step{flex:1 1 100%}.kant-path-step::after{display:none}}
+</style>
 
--   :material-run-fast:{ .lg .middle } __Quick Start__
-
-    ---
-
-    - [Create Internal Edge Unit](../user-guide/edge-unit/create-internal-unit.md)
-    - [Edge Node Onboarding](../user-guide/node/access-guide.md)
-    - [Create Deployment](../user-guide/edge-app/create-app.md)
-
--   :material-chip:{ .lg .middle } __Devices and Data__
-
-    ---
-
-    - [Create Device Model](../user-guide/device/create-device-model.md)
-    - [Create End Device](../user-guide/device/create-device.md)
-    - [Create Message Routes](../user-guide/route/create-route.md)
-
--   :material-view-grid-outline:{ .lg .middle } __Go Deeper__
-
-    ---
-
-    - [Features](features.md)
-    - [Concepts](concepts.md)
-    - [Use Cases](use-cases.md)
-
+<div class="kant-path">
+  <a class="kant-path-step" style="--path-c:#2196f3" href="../user-guide/edge-unit/create-internal-unit/">
+    <span class="kant-path-num">1</span>
+    <span class="kant-path-title">Create Edge Unit</span>
+    <span class="kant-path-desc">Create an internal edge unit</span>
+    <span class="kant-path-go">Go →</span>
+  </a>
+  <a class="kant-path-step" style="--path-c:#00acc1" href="../user-guide/node/access-guide/">
+    <span class="kant-path-num">2</span>
+    <span class="kant-path-title">Onboard Node</span>
+    <span class="kant-path-desc">Register a node with a token or certificate</span>
+    <span class="kant-path-go">Go →</span>
+  </a>
+  <a class="kant-path-step" style="--path-c:#43a047" href="../user-guide/edge-app/create-app/">
+    <span class="kant-path-num">3</span>
+    <span class="kant-path-title">Deploy App</span>
+    <span class="kant-path-desc">Run an app or model on edge nodes</span>
+    <span class="kant-path-go">Go →</span>
+  </a>
+  <a class="kant-path-step" style="--path-c:#fb8c00" href="../user-guide/device/create-device-model/">
+    <span class="kant-path-num">4</span>
+    <span class="kant-path-title">Connect Devices</span>
+    <span class="kant-path-desc">Define device models, add devices and set routes</span>
+    <span class="kant-path-go">Go →</span>
+  </a>
 </div>
 
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button }
