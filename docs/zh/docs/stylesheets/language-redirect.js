@@ -2,8 +2,8 @@
   "use strict";
 
   // 跳转目标：保持当前路径，只增删 /en 前缀。
-  function targetFor(lang, pathname) {
-    const path = pathname || window.location.pathname;
+  function targetFor(lang) {
+    const path = window.location.pathname;
     if (lang === "en") {
       return path.startsWith("/en/")
         ? path
@@ -13,8 +13,8 @@
   }
 
   // 链接预览抓取器 / 搜索引擎 / 自动化浏览器不应被语言跳转改写 URL。
-  // 否则中文页会因"浏览器语言不是中文"被抓成英文版，分享卡片显示英文
-  // （飞书等预览服务就是这样拿到英文页的）；英文版不存在时还会抓到 404。
+  // 否则中文页会被抓成英文版，分享卡片显示英文（飞书等预览服务就是这样
+  // 拿到英文页的）；英文版不存在时还会抓到 404。
   function isCrawler() {
     const ua = navigator.userAgent || "";
     if (navigator.webdriver === true) return true;
@@ -29,9 +29,14 @@
   // 0) 爬虫 / 链接预览抓取器 / 自动化浏览器：一律不跳转。
   // 这类客户端没有真实用户偏好，任何跳转都只会让抓取结果偏离原始 URL
   // （中文页被带去 /en/ 导致分享卡片显示英文）。放在最前面，连"用户显式
-  // 选择"分支也一并跳过——抓取器profile里残留的 localStorage 不该生效。
+  // 选择"分支也一并跳过——抓取器 profile 里残留的 localStorage 不该生效。
   if (isCrawler()) return;
 
+  // 1) 只有用户通过语言切换器显式选过语言才跳转（localStorage 记忆）。
+  // 不做按浏览器语言（navigator.language）的自动重定向：
+  // 自动跳转会改写用户输入的 URL，破坏深链与分享预览，
+  // 也曾把飞书等预览服务引到错误语言页面。
+  // 未选择过就停留当前页，URL 原样保留（含 query 与 hash）。
   let userSelectedLang = null;
   try {
     userSelectedLang = localStorage.getItem("userSelectedLang");
@@ -40,7 +45,6 @@
     userSelectedLang = null;
   }
 
-  // 1) 用户显式选过语言：以用户的选择为准。
   if (userSelectedLang === "en" || userSelectedLang === "zh") {
     const chosen = targetFor(userSelectedLang);
     if (chosen !== currentPath) {
@@ -49,28 +53,9 @@
         chosen + window.location.search + window.location.hash
       );
     }
-  } else {
-    // 2) 用户没选过：按浏览器语言自动跳转。
-    const userLang = (
-      navigator.language ||
-      navigator.userLanguage ||
-      "en"
-    ).toLowerCase();
-    const langPrefix = userLang.split("-")[0];
-
-    if (langPrefix === "zh") {
-      if (currentPath.startsWith("/en/")) {
-        window.location.replace(currentPath.replace(/^\/en/, "") || "/");
-      }
-    } else {
-      if (!currentPath.startsWith("/en/")) {
-        window.location.replace(
-          "/en" + (currentPath === "/" ? "" : currentPath)
-        );
-      }
-    }
   }
 
+  // 2) 语言切换器点击：跳转并记住选择。
   document.addEventListener("click", function (event) {
     // hreflang 已被 og_meta_hook.py 改名为 data-lang（消除对爬虫的语言线索），
     // 两个都认，保证没有挂 hook 的构建同样可用。
