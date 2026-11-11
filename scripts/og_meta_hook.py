@@ -88,6 +88,24 @@ def _rename_hreflang(match):
 _CANONICAL_RE = re.compile(r'<link\b[^>]*\brel=["\']?canonical["\']?[^>]*>', re.IGNORECASE)
 
 
+def _switcher_js_enabled(config):
+    """本次构建是否加载了 language-redirect.js（它负责消费 data-lang）。
+
+    hreflang 是切换脚本的点击选择器依赖，只有在脚本存在时改名才安全；
+    没有脚本的构建（如漏配 extra_javascript 的配置）保持原样，避免出现
+    "属性改了但没人消费"的半吊子状态。
+    """
+    items = getattr(config, "extra_javascript", None) or []
+    for item in items:
+        if isinstance(item, dict):
+            path = item.get("path")
+        else:
+            path = getattr(item, "path", None) or item
+        if path and "language-redirect.js" in str(path):
+            return True
+    return False
+
+
 def _first_paragraph(page_output):
     """提取 <article> 内第一个非空 <p> 的纯文本，取不到返回 None。"""
     article = page_output.find("<article")
@@ -170,7 +188,10 @@ def on_post_page(output, page, config, **kwargs):
 
     # 语言下拉 <a> 上的 hreflang 改名为 data-lang：属性对爬虫静默，
     # 但 language-redirect.js 仍能据 data-lang 完成"记住用户选择 + 保留 query/hash"。
-    output = _A_HREFLANG_RE.sub(_rename_hreflang, output)
+    # 仅在本次构建确实加载了 language-redirect.js 时才改名（见 _switcher_js_enabled）：
+    # 没有脚本的构建里 hreflang 是唯一选择器，改了反而没人消费。
+    if _switcher_js_enabled(config):
+        output = _A_HREFLANG_RE.sub(_rename_hreflang, output)
 
     # 补齐缺失的 canonical（英文站此前完全没有）。
     if url and not _CANONICAL_RE.search(output):
