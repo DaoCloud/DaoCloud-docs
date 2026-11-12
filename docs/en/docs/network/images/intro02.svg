@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+  <title id="title">Hybrid deployment during cloud-native transformation</title>
+  <desc id="desc">Two Kubernetes clusters host externally accessible and internal Pods, with connectivity between clusters and between Pod groups. Databases, middleware and other legacy applications on the right still run on physical servers and virtual machines and connect to the clusters bidirectionally. The infrastructure spans traditional, SDN and public cloud networks.</desc>
+  <style>
+    /* Dark mode adaptation: follows the OS / Material palette. */
+    @media (prefers-color-scheme: dark) {
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      [fill="#ffffff"] { fill: #232936; }
+      [fill="#f8fafc"] { fill: #1a212c; }
+      [fill="#f1f3f6"] { fill: #232c38; }
+      [fill="#e8f3fd"] { fill: #1c2838; }
+      [fill="#e8f5e9"] { fill: #1b3220; }
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#326ce5"] { fill: #7aa7f7; }
+      [fill="#6a4fa3"] { fill: #b39ddb; }
+      [stroke="#e0e6ee"] { stroke: #2e3540; }
+      [stroke="#d8e0ea"] { stroke: #3a4450; }
+      [stroke="#cfd8e3"] { stroke: #3a4450; }
+      [stroke="#9aa8bc"] { stroke: #4a5666; }
+      [stroke="#1a2330"] { stroke: #cbd3de; }
+      [stroke="#1565c0"] { stroke: #64b5f6; }
+      [stroke="#6a4fa3"] { stroke: #8e75c4; }
+      [stroke="#326ce5"] { stroke: #7aa7f7; }
+    }
+  </style>
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="arwP" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6a4fa3"/>
+    </marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="999" height="559" rx="10" fill="#ffffff" stroke="#e0e6ee"/>
+  <!-- Service entry -->
+  <rect x="10" y="146" width="62" height="22" rx="5" fill="#326ce5"/>
+  <text x="41" y="161" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">Service</text>
+  <circle cx="22" cy="190" r="5" fill="#e8f3fd" stroke="#1565c0" stroke-width="1.4"/>
+  <circle cx="42" cy="184" r="5" fill="#e8f3fd" stroke="#1565c0" stroke-width="1.4"/>
+  <circle cx="62" cy="190" r="5" fill="#e8f3fd" stroke="#1565c0" stroke-width="1.4"/>
+  <circle cx="32" cy="208" r="5" fill="#e8f3fd" stroke="#1565c0" stroke-width="1.4"/>
+  <circle cx="52" cy="208" r="5" fill="#e8f3fd" stroke="#1565c0" stroke-width="1.4"/>
+  <path d="M 20 199 H 64 M 32 188 L 42 203 M 62 190 L 52 203" fill="none" stroke="#1565c0" stroke-width="1.2"/>
+  <path d="M 74 190 H 112" fill="none" stroke="#1565c0" stroke-width="2" marker-end="url(#arw)"/>
+  <rect x="90" y="48" width="290" height="300" rx="12" fill="#ffffff" stroke="#6a4fa3" stroke-width="2.5"/>
+  <g>
+    <circle cx="124" cy="80" r="17" fill="#326ce5"/>
+    <circle cx="124" cy="80" r="11.5" fill="none" stroke="#ffffff" stroke-width="2.6"/>
+    <g stroke="#ffffff" stroke-width="2.2" stroke-linecap="round">
+      <line x1="124.0" y1="75.5" x2="124.0" y2="69.0"/>
+      <line x1="127.5" y1="77.2" x2="132.6" y2="73.1"/>
+      <line x1="128.4" y1="81.0" x2="134.7" y2="82.4"/>
+      <line x1="126.0" y1="84.1" x2="128.8" y2="89.9"/>
+      <line x1="122.0" y1="84.1" x2="119.2" y2="89.9"/>
+      <line x1="119.6" y1="81.0" x2="113.3" y2="82.4"/>
+      <line x1="120.5" y1="77.2" x2="115.4" y2="73.1"/>
+    </g>
+    <circle cx="124" cy="80" r="3.4" fill="#ffffff"/>
+  </g>
+  <text x="150" y="87" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" fill="#1a2330">Kubernetes</text>
+  <rect x="108" y="100" width="254" height="96" rx="8" fill="none" stroke="#cfd8e3" stroke-width="1.3" stroke-dasharray="6 4"/>
+  <text x="120" y="119" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="700" fill="#5c6775">External Access</text>
+  <rect x="118" y="134" width="72" height="46" rx="6" fill="#e8f3fd" stroke="#90caf9"/>
+  <text x="154" y="162" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#1a2330" text-anchor="middle">pod</text>
+  <rect x="202" y="134" width="72" height="46" rx="6" fill="#e8f3fd" stroke="#90caf9"/>
+  <text x="238" y="162" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#1a2330" text-anchor="middle">pod</text>
+  <rect x="286" y="134" width="72" height="46" rx="6" fill="#e8f3fd" stroke="#90caf9"/>
+  <text x="322" y="162" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#1a2330" text-anchor="middle">pod</text>
+  <rect x="108" y="238" width="254" height="96" rx="8" fill="none" stroke="#cfd8e3" stroke-width="1.3" stroke-dasharray="6 4"/>
+  <text x="120" y="257" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="700" fill="#5c6775">Internal Access</text>
+  <rect x="118" y="272" width="72" height="46" rx="6" fill="#e8f5e9" stroke="#a5d6a7"/>
+  <text x="154" y="300" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#1a2330" text-anchor="middle">pod</text>
+  <rect x="202" y="272" width="72" height="46" rx="6" fill="#e8f5e9" stroke="#a5d6a7"/>
+  <text x="238" y="300" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#1a2330" text-anchor="middle">pod</text>
+  <rect x="286" y="272" width="72" height="46" rx="6" fill="#e8f5e9" stroke="#a5d6a7"/>
+  <text x="322" y="300" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#1a2330" text-anchor="middle">pod</text>
+  <path d="M 235 200 V 232" fill="none" stroke="#1565c0" stroke-width="2" marker-start="url(#arw)" marker-end="url(#arw)"/>
+  <rect x="430" y="48" width="290" height="300" rx="12" fill="#ffffff" stroke="#6a4fa3" stroke-width="2.5"/>
+  <g>
+    <circle cx="464" cy="80" r="17" fill="#326ce5"/>
+    <circle cx="464" cy="80" r="11.5" fill="none" stroke="#ffffff" stroke-width="2.6"/>
+    <g stroke="#ffffff" stroke-width="2.2" stroke-linecap="round">
+      <line x1="464.0" y1="75.5" x2="464.0" y2="69.0"/>
+      <line x1="467.5" y1="77.2" x2="472.6" y2="73.1"/>
+      <line x1="468.4" y1="81.0" x2="474.7" y2="82.4"/>
+      <line x1="466.0" y1="84.1" x2="468.8" y2="89.9"/>
+      <line x1="462.0" y1="84.1" x2="459.2" y2="89.9"/>
+      <line x1="459.6" y1="81.0" x2="453.3" y2="82.4"/>
+      <line x1="460.5" y1="77.2" x2="455.4" y2="73.1"/>
+    </g>
+    <circle cx="464" cy="80" r="3.4" fill="#ffffff"/>
+  </g>
+  <text x="490" y="87" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" fill="#1a2330">Kubernetes</text>
+  <rect x="448" y="100" width="254" height="96" rx="8" fill="none" stroke="#cfd8e3" stroke-width="1.3" stroke-dasharray="6 4"/>
+  <text x="460" y="119" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="700" fill="#5c6775">External Access</text>
+  <rect x="458" y="134" width="72" height="46" rx="6" fill="#e8f3fd" stroke="#90caf9"/>
+  <text x="494" y="162" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#1a2330" text-anchor="middle">pod</text>
+  <rect x="542" y="134" width="72" height="46" rx="6" fill="#e8f3fd" stroke="#90caf9"/>
+  <text x="578" y="162" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#1a2330" text-anchor="middle">pod</text>
+  <rect x="626" y="134" width="72" height="46" rx="6" fill="#e8f3fd" stroke="#90caf9"/>
+  <text x="662" y="162" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#1a2330" text-anchor="middle">pod</text>
+  <rect x="448" y="238" width="254" height="96" rx="8" fill="none" stroke="#cfd8e3" stroke-width="1.3" stroke-dasharray="6 4"/>
+  <text x="460" y="257" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="700" fill="#5c6775">Internal Access</text>
+  <rect x="458" y="272" width="72" height="46" rx="6" fill="#e8f5e9" stroke="#a5d6a7"/>
+  <text x="494" y="300" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#1a2330" text-anchor="middle">pod</text>
+  <rect x="542" y="272" width="72" height="46" rx="6" fill="#e8f5e9" stroke="#a5d6a7"/>
+  <text x="578" y="300" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#1a2330" text-anchor="middle">pod</text>
+  <rect x="626" y="272" width="72" height="46" rx="6" fill="#e8f5e9" stroke="#a5d6a7"/>
+  <text x="662" y="300" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#1a2330" text-anchor="middle">pod</text>
+  <path d="M 575 200 V 232" fill="none" stroke="#1565c0" stroke-width="2" marker-start="url(#arw)" marker-end="url(#arw)"/>
+  <path d="M 383 157 H 427" fill="none" stroke="#1565c0" stroke-width="2" marker-start="url(#arw)" marker-end="url(#arw)"/>
+  <path d="M 383 295 H 427" fill="none" stroke="#1565c0" stroke-width="2" marker-start="url(#arw)" marker-end="url(#arw)"/>
+  <!-- Legacy application stack -->
+  <rect x="762" y="40" width="204" height="62" rx="8" fill="#ffffff" stroke="#9aa8bc" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <rect x="774" y="56" width="82" height="28" rx="5" fill="#f1f3f6"/>
+  <text x="815" y="75" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" fill="#1a2330" text-anchor="middle">Database</text>
+  <rect x="868" y="56" width="86" height="28" rx="5" fill="#f1f3f6"/>
+  <text x="911" y="75" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" fill="#1a2330" text-anchor="middle">Middleware</text>
+  <rect x="774" y="84" width="204" height="62" rx="8" fill="#ffffff" stroke="#9aa8bc" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <rect x="786" y="100" width="82" height="28" rx="5" fill="#f1f3f6"/>
+  <text x="827" y="119" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" fill="#1a2330" text-anchor="middle">Database</text>
+  <rect x="880" y="100" width="86" height="28" rx="5" fill="#f1f3f6"/>
+  <text x="923" y="119" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" fill="#1a2330" text-anchor="middle">Middleware</text>
+  <rect x="748" y="130" width="222" height="205" rx="9" fill="#ffffff" stroke="#1a2330" stroke-width="1.8"/>
+  <rect x="760" y="146" width="88" height="28" rx="5" fill="#f1f3f6"/>
+  <text x="804" y="165" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" fill="#1a2330" text-anchor="middle">Database</text>
+  <rect x="862" y="146" width="96" height="28" rx="5" fill="#f1f3f6"/>
+  <text x="910" y="165" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" fill="#1a2330" text-anchor="middle">Middleware</text>
+  <text x="859" y="202" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#1a2330" text-anchor="middle">Legacy Applications</text>
+  <rect x="769" y="218" width="68" height="22" rx="3" fill="#ffffff" stroke="#1a2330" stroke-width="1.4"/>
+  <rect x="769" y="244" width="68" height="22" rx="3" fill="#ffffff" stroke="#1a2330" stroke-width="1.4"/>
+  <rect x="777" y="230" width="4" height="4" rx="1" fill="#1a2330"/>
+  <rect x="787" y="230" width="4" height="4" rx="1" fill="#1a2330"/>
+  <rect x="813" y="228" width="16" height="9" rx="1" fill="none" stroke="#1a2330" stroke-width="1"/>
+  <rect x="777" y="256" width="4" height="4" rx="1" fill="#1a2330"/>
+  <rect x="787" y="256" width="4" height="4" rx="1" fill="#1a2330"/>
+  <rect x="813" y="254" width="16" height="9" rx="1" fill="none" stroke="#1a2330" stroke-width="1"/>
+  <text x="803" y="292" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#5c6775" text-anchor="middle">Physical</text>
+  <rect x="881" y="218" width="68" height="22" rx="3" fill="#ffffff" stroke="#1a2330" stroke-width="1.4"/>
+  <rect x="881" y="244" width="68" height="22" rx="3" fill="#ffffff" stroke="#1a2330" stroke-width="1.4"/>
+  <rect x="889" y="230" width="4" height="4" rx="1" fill="#1a2330"/>
+  <rect x="899" y="230" width="4" height="4" rx="1" fill="#1a2330"/>
+  <rect x="925" y="228" width="16" height="9" rx="1" fill="none" stroke="#1a2330" stroke-width="1"/>
+  <rect x="889" y="256" width="4" height="4" rx="1" fill="#1a2330"/>
+  <rect x="899" y="256" width="4" height="4" rx="1" fill="#1a2330"/>
+  <rect x="925" y="254" width="16" height="9" rx="1" fill="none" stroke="#1a2330" stroke-width="1"/>
+  <text x="915" y="292" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#5c6775" text-anchor="middle">Virtual</text>
+  <path d="M 723 230 H 745" fill="none" stroke="#1565c0" stroke-width="2" marker-start="url(#arw)" marker-end="url(#arw)"/>
+  <!-- Infrastructure band -->
+  <rect x="24" y="362" width="952" height="186" rx="10" fill="none" stroke="#9aa8bc" stroke-width="1.5" stroke-dasharray="9 6"/>
+  <rect x="25" y="363" width="950" height="62" fill="#f1f3f6"/>
+  <g fill="none" stroke="#1a2330" stroke-width="1.5">
+    <circle cx="182" cy="389" r="11"/>
+    <ellipse cx="182" cy="389" rx="5" ry="11"/>
+    <line x1="171" y1="389" x2="193" y2="389"/>
+    <path d="M 173 383 H 191 M 173 395 H 191"/>
+  </g>
+  <text x="182" y="414" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1a2330" text-anchor="middle">Traditional Network</text>
+  <rect x="130" y="440" width="104" height="24" rx="4" fill="#ffffff" stroke="#1a2330" stroke-width="1.6"/>
+  <rect x="139" y="447" width="5" height="5" rx="1" fill="#1a2330"/>
+  <rect x="150" y="447" width="5" height="5" rx="1" fill="#1a2330"/>
+  <rect x="196" y="446" width="7" height="10" rx="1" fill="none" stroke="#1a2330" stroke-width="1.2"/>
+  <rect x="207" y="446" width="7" height="10" rx="1" fill="none" stroke="#1a2330" stroke-width="1.2"/>
+  <rect x="218" y="446" width="7" height="10" rx="1" fill="none" stroke="#1a2330" stroke-width="1.2"/>
+  <rect x="130" y="470" width="104" height="24" rx="4" fill="#ffffff" stroke="#1a2330" stroke-width="1.6"/>
+  <rect x="139" y="477" width="5" height="5" rx="1" fill="#1a2330"/>
+  <rect x="150" y="477" width="5" height="5" rx="1" fill="#1a2330"/>
+  <rect x="196" y="476" width="7" height="10" rx="1" fill="none" stroke="#1a2330" stroke-width="1.2"/>
+  <rect x="207" y="476" width="7" height="10" rx="1" fill="none" stroke="#1a2330" stroke-width="1.2"/>
+  <rect x="218" y="476" width="7" height="10" rx="1" fill="none" stroke="#1a2330" stroke-width="1.2"/>
+  <text x="182" y="524" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#1a2330" text-anchor="middle">Physical Servers</text>
+  <g fill="none" stroke="#1a2330" stroke-width="1.6">
+    <path d="M 489 382 L 510 382 L 500 398 Z"/>
+  </g>
+  <rect x="485.8" y="378.8" width="6.4" height="6.4" rx="1" fill="#ffffff" stroke="#1a2330" stroke-width="1.5"/>
+  <rect x="506.8" y="378.8" width="6.4" height="6.4" rx="1" fill="#ffffff" stroke="#1a2330" stroke-width="1.5"/>
+  <rect x="496.8" y="394.8" width="6.4" height="6.4" rx="1" fill="#ffffff" stroke="#1a2330" stroke-width="1.5"/>
+  <text x="500" y="414" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1a2330" text-anchor="middle">SDN Network</text>
+  <rect x="448" y="440" width="104" height="24" rx="4" fill="#ffffff" stroke="#1a2330" stroke-width="1.6"/>
+  <rect x="457" y="447" width="5" height="5" rx="1" fill="#1a2330"/>
+  <rect x="468" y="447" width="5" height="5" rx="1" fill="#1a2330"/>
+  <rect x="514" y="446" width="7" height="10" rx="1" fill="none" stroke="#1a2330" stroke-width="1.2"/>
+  <rect x="525" y="446" width="7" height="10" rx="1" fill="none" stroke="#1a2330" stroke-width="1.2"/>
+  <rect x="536" y="446" width="7" height="10" rx="1" fill="none" stroke="#1a2330" stroke-width="1.2"/>
+  <rect x="448" y="472" width="104" height="26" rx="4" fill="#ffffff" stroke="#1a2330" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <rect x="457" y="479" width="5" height="5" rx="1" fill="#1a2330"/>
+  <rect x="468" y="479" width="5" height="5" rx="1" fill="#1a2330"/>
+  <rect x="514" y="478" width="7" height="10" rx="1" fill="none" stroke="#1a2330" stroke-width="1.2"/>
+  <rect x="525" y="478" width="7" height="10" rx="1" fill="none" stroke="#1a2330" stroke-width="1.2"/>
+  <rect x="536" y="478" width="7" height="10" rx="1" fill="none" stroke="#1a2330" stroke-width="1.2"/>
+  <rect x="494" y="475" width="54" height="20" rx="3" fill="#ffffff" stroke="#1a2330" stroke-width="1.5"/>
+  <rect x="499" y="481" width="8" height="8" rx="1" fill="none" stroke="#1a2330" stroke-width="1.1"/>
+  <rect x="512" y="481" width="8" height="8" rx="1" fill="none" stroke="#1a2330" stroke-width="1.1"/>
+  <rect x="525" y="481" width="8" height="8" rx="1" fill="none" stroke="#1a2330" stroke-width="1.1"/>
+  <text x="500" y="524" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#1a2330" text-anchor="middle">Virtual Machines</text>
+  <g stroke="#1a2330" stroke-width="1.5" fill="none">
+    <line x1="821.0" y1="389.0" x2="828.5" y2="389.0"/>
+    <line x1="820.1" y1="391.1" x2="825.4" y2="396.4"/>
+    <line x1="818.0" y1="392.0" x2="818.0" y2="399.5"/>
+    <line x1="815.9" y1="391.1" x2="810.6" y2="396.4"/>
+    <line x1="815.0" y1="389.0" x2="807.5" y2="389.0"/>
+    <line x1="815.9" y1="386.9" x2="810.6" y2="381.6"/>
+    <line x1="818.0" y1="386.0" x2="818.0" y2="378.5"/>
+    <line x1="820.1" y1="386.9" x2="825.4" y2="381.6"/>
+  </g>
+  <circle cx="828.5" cy="389.0" r="2" fill="#1a2330"/>
+  <circle cx="825.4" cy="396.4" r="2" fill="#1a2330"/>
+  <circle cx="818.0" cy="399.5" r="2" fill="#1a2330"/>
+  <circle cx="810.6" cy="396.4" r="2" fill="#1a2330"/>
+  <circle cx="807.5" cy="389.0" r="2" fill="#1a2330"/>
+  <circle cx="810.6" cy="381.6" r="2" fill="#1a2330"/>
+  <circle cx="818.0" cy="378.5" r="2" fill="#1a2330"/>
+  <circle cx="825.4" cy="381.6" r="2" fill="#1a2330"/>
+  <circle cx="818" cy="389" r="3.2" fill="#ffffff" stroke="#1a2330" stroke-width="1.5"/>
+  <text x="818" y="414" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1a2330" text-anchor="middle">Public Cloud Network</text>
+  <rect x="822" y="434" width="42" height="40" rx="3" fill="#ffffff" stroke="#1a2330" stroke-width="1.6"/>
+  <line x1="829" y1="444" x2="857" y2="444" stroke="#1a2330" stroke-width="1.2"/>
+  <line x1="829" y1="454" x2="857" y2="454" stroke="#1a2330" stroke-width="1.2"/>
+  <line x1="829" y1="464" x2="857" y2="464" stroke="#1a2330" stroke-width="1.2"/>
+  <path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" fill="#ffffff" stroke="#1a2330" stroke-width="0.9" transform="translate(760,444) scale(2.1)"/>
+  <text x="818" y="524" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#1a2330" text-anchor="middle">Public Cloud</text>
+</svg>

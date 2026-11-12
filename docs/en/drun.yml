@@ -405,7 +405,7 @@ nav:
               - Intro:
                   - What is Container Network: drun/network/intro/index.md
                   - Background and Challenges: drun/network/intro/background.md
-                  - Network Components: drun/network/modules/modules.md
+                  - Network Components: drun/network/modules/index.md
                   - Offline Upgrade Cloud Native Networking: drun/network/intro/offline.md
                   - Release Notes: drun/network/intro/release-notes.md
                   - Network Components FAQs: drun/network/intro/issues.md

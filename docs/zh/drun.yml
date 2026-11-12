@@ -414,7 +414,7 @@ nav:
               - 介绍:
                   - 什么是容器网络: drun/network/intro/index.md
                   - 背景和挑战: drun/network/intro/background.md
-                  - 网络组件: drun/network/modules/modules.md
+                  - 网络组件: drun/network/modules/index.md
                   - 离线升级云原生网络: drun/network/intro/offline.md
                   - Release Notes: drun/network/intro/release-notes.md
                   - 网络组件 FAQ: drun/network/intro/issues.md
