@@ -87,6 +87,9 @@ def _rename_hreflang(match):
 # 主题已输出的 canonical（中文站有，英文站此前没有）。
 _CANONICAL_RE = re.compile(r'<link\b[^>]*\brel=["\']?canonical["\']?[^>]*>', re.IGNORECASE)
 
+# 语言切换脚本的文件名（允许版本后缀，如 language-redirect.v2.js）。
+_SWITCHER_JS_RE = re.compile(r"language-redirect(?:\.v\d+)?\.js$")
+
 
 def _switcher_js_enabled(config):
     """本次构建是否加载了 language-redirect.js（它负责消费 data-lang）。
@@ -101,7 +104,9 @@ def _switcher_js_enabled(config):
             path = item.get("path")
         else:
             path = getattr(item, "path", None) or item
-        if path and "language-redirect.js" in str(path):
+        # 允许带版本后缀的文件名（如 language-redirect.v2.js）：改文件名是
+        # 为了绕开 CDN 与抓取器的旧 JS 缓存。
+        if path and _SWITCHER_JS_RE.search(str(path)):
             return True
     return False
 
@@ -187,8 +192,8 @@ def on_post_page(output, page, config, **kwargs):
     output = _ALT_LINK_RE.sub("", output)
 
     # 语言下拉 <a> 上的 hreflang 改名为 data-lang：属性对爬虫静默，
-    # 但 language-redirect.js 仍能据 data-lang 完成"记住用户选择 + 保留 query/hash"。
-    # 仅在本次构建确实加载了 language-redirect.js 时才改名（见 _switcher_js_enabled）：
+    # 但切换脚本仍能据 data-lang 在点击时保留 query/hash。
+    # 仅在本次构建确实加载了切换脚本时才改名（见 _switcher_js_enabled）：
     # 没有脚本的构建里 hreflang 是唯一选择器，改了反而没人消费。
     if _switcher_js_enabled(config):
         output = _A_HREFLANG_RE.sub(_rename_hreflang, output)
