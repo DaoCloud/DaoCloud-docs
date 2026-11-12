@@ -517,7 +517,7 @@ nav:
               - Intro:
                   - What is Container Network: network/intro/index.md
                   - Background and Challenges: network/intro/background.md
-                  - Network Components: network/modules/modules.md
+                  - Network Components: network/modules/index.md
                   - Offline Upgrade Cloud Native Networking: network/intro/offline.md
                   - Release Notes: network/intro/release-notes.md
                   - Network Components FAQs: network/intro/issues.md

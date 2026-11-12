@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+  <title id="title">云原生网络组件全景</title>
+  <desc id="desc">按 5 类能力组织 16 个网络组件：基础 CNI（Calico、Cilium、Aliyun CNI、Multus-underlay）；IPAM 与 RDMA（Spiderpool、SR-IOV Operator、UniFabric）；入口网关（Ingress-nginx、Contour、Higress、Kgateway）；负载均衡（MetalLB、F5networks）；出口与诊断（EgressGateway、Submariner、kdoctor）。所有组件均可按需安装与组合。</desc>
+  <style>
+    /* Dark mode adaptation: follows the OS / Material palette. */
+    @media (prefers-color-scheme: dark) {
+      [fill="#ffffff"] { fill: #1a212c; }
+      [stroke="#e0e6ee"] { stroke: #2e3540; }
+      [fill="#e8f3fd"] { fill: #1c2838; }
+      [fill="#e0f4f5"] { fill: #173033; }
+      [fill="#e8f5e9"] { fill: #1b3220; }
+      [fill="#fff3e0"] { fill: #382a17; }
+      [fill="#ede7f6"] { fill: #2a2440; }
+      [fill="#f8fafc"] { fill: #232936; }
+      [stroke="#d8e0ea"] { stroke: #3a4450; }
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#00838f"] { fill: #4dd0e1; }
+      [fill="#2e7d32"] { fill: #81c784; }
+      [fill="#ef6c00"] { fill: #ffb74d; }
+      [fill="#6a4fa3"] { fill: #b39ddb; }
+    }
+  </style>
+
+  <rect x="0.5" y="0.5" width="999" height="439" rx="10" fill="#ffffff" stroke="#e0e6ee" stroke-width="1"/>
+
+  <!-- 基础 CNI -->
+  <rect x="24" y="24" width="210" height="64" rx="10" fill="#e8f3fd"/>
+  <text x="40" y="62" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#1565c0">基础 CNI</text>
+  <rect x="248" y="36" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="332" y="62" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">Calico</text>
+  <rect x="428" y="36" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="512" y="62" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">Cilium</text>
+  <rect x="608" y="36" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="692" y="62" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">Aliyun CNI</text>
+  <rect x="788" y="36" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="872" y="62" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">Multus-underlay</text>
+
+  <!-- IPAM 与 RDMA -->
+  <rect x="24" y="104" width="210" height="64" rx="10" fill="#e0f4f5"/>
+  <text x="40" y="142" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#00838f">IPAM 与 RDMA</text>
+  <rect x="248" y="116" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="332" y="142" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">Spiderpool</text>
+  <rect x="428" y="116" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="512" y="142" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">SR-IOV Operator</text>
+  <rect x="608" y="116" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="692" y="142" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">UniFabric</text>
+
+  <!-- 入口网关 -->
+  <rect x="24" y="184" width="210" height="64" rx="10" fill="#e8f5e9"/>
+  <text x="40" y="222" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#2e7d32">入口网关</text>
+  <rect x="248" y="196" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="332" y="222" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">Ingress-nginx</text>
+  <rect x="428" y="196" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="512" y="222" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">Contour</text>
+  <rect x="608" y="196" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="692" y="222" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">Higress</text>
+  <rect x="788" y="196" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="872" y="222" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">Kgateway</text>
+
+  <!-- 负载均衡 -->
+  <rect x="24" y="264" width="210" height="64" rx="10" fill="#fff3e0"/>
+  <text x="40" y="302" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#ef6c00">负载均衡</text>
+  <rect x="248" y="276" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="332" y="302" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">MetalLB</text>
+  <rect x="428" y="276" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="512" y="302" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">F5networks</text>
+
+  <!-- 出口与诊断 -->
+  <rect x="24" y="344" width="210" height="64" rx="10" fill="#ede7f6"/>
+  <text x="40" y="382" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#6a4fa3">出口与诊断</text>
+  <rect x="248" y="356" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="332" y="382" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">EgressGateway</text>
+  <rect x="428" y="356" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="512" y="382" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">Submariner</text>
+  <rect x="608" y="356" width="168" height="40" rx="8" fill="#f8fafc" stroke="#d8e0ea" stroke-width="1"/>
+  <text x="692" y="382" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" fill="#1a2330">kdoctor</text>
+</svg>
