@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1000 406" role="img" aria-labelledby="title desc">
+  <title id="title">云边协同存储场景</title>
+  <desc id="desc">云端提供用户与权限、统一认证、安全管理、应用下发、镜像仓库、数据开放等能力；边缘端按节点自治、边缘应用管理、边缘数据管理三个维度组织，通过边缘数据采集标准接口对接智能制造、智慧门店、智能穿戴等工业设备。</desc>
+  <style>
+    /* Dark mode adaptation: follows the OS / Material palette. */
+    @media (prefers-color-scheme: dark) {
+      [fill="#ffffff"] { fill: #232936; }
+      [fill="#f8fafc"] { fill: #1a212c; }
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [stroke="#e0e6ee"] { stroke: #2e3540; }
+      [stroke="#cfd8e3"] { stroke: #3a4450; }
+    }
+  </style>
+  <rect x="0.5" y="0.5" width="999" height="405" rx="10" fill="#ffffff" stroke="#e0e6ee"/>
+  <!-- Left vertical rail -->
+  <rect x="14" y="14" width="34" height="378" rx="8" fill="#16265c"/>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="15" font-weight="700" fill="#f4f7fb" text-anchor="middle">
+    <text x="31" y="60">云</text>
+    <text x="31" y="80">端</text>
+    <text x="31" y="197">智</text>
+    <text x="31" y="215">慧</text>
+    <text x="31" y="233">边</text>
+    <text x="31" y="251">缘</text>
+    <text x="31" y="332">工</text>
+    <text x="31" y="348">业</text>
+    <text x="31" y="364">设</text>
+    <text x="31" y="380">备</text>
+  </g>
+  <!-- Cloud band -->
+  <rect x="56" y="14" width="930" height="104" rx="8" fill="#f8fafc" stroke="#e0e6ee"/>
+  <g fill="#34a853">
+    <rect x="76" y="30" width="88" height="26" rx="4"/>
+    <rect x="172" y="30" width="76" height="26" rx="4"/>
+    <rect x="256" y="30" width="76" height="26" rx="4"/>
+    <rect x="76" y="62" width="76" height="26" rx="4"/>
+    <rect x="160" y="62" width="76" height="26" rx="4"/>
+    <rect x="244" y="62" width="40" height="26" rx="4"/>
+    <rect x="380" y="30" width="76" height="26" rx="4"/>
+    <rect x="464" y="30" width="76" height="26" rx="4"/>
+    <rect x="380" y="62" width="76" height="26" rx="4"/>
+    <rect x="464" y="62" width="76" height="26" rx="4"/>
+    <rect x="610" y="30" width="76" height="26" rx="4"/>
+    <rect x="694" y="30" width="76" height="26" rx="4"/>
+    <rect x="610" y="62" width="76" height="26" rx="4"/>
+    <rect x="694" y="62" width="40" height="26" rx="4"/>
+  </g>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#f4f7fb" text-anchor="middle">
+    <text x="120" y="47">用户与权限</text>
+    <text x="210" y="47">统一认证</text>
+    <text x="294" y="47">安全管理</text>
+    <text x="114" y="79">平台管理</text>
+    <text x="198" y="79">监控大屏</text>
+    <text x="264" y="79">……</text>
+    <text x="418" y="47">应用下发</text>
+    <text x="502" y="47">镜像仓库</text>
+    <text x="418" y="79">模型下发</text>
+    <text x="502" y="79">应用监控</text>
+    <text x="648" y="47">数据开放</text>
+    <text x="732" y="47">数据镜像</text>
+    <text x="648" y="79">数据分发</text>
+    <text x="714" y="79">……</text>
+  </g>
+  <!-- Edge band -->
+  <rect x="56" y="126" width="930" height="196" rx="8" fill="#f8fafc" stroke="#e0e6ee"/>
+  <g fill="none" stroke="#7aa7f7" stroke-width="1.4" stroke-dasharray="6 4">
+    <rect x="68" y="138" width="260" height="136" rx="8"/>
+    <rect x="336" y="138" width="340" height="136" rx="8"/>
+    <rect x="688" y="138" width="290" height="136" rx="8"/>
+  </g>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#1565c0" text-anchor="middle">
+    <text x="88" y="154">节</text>
+    <text x="88" y="174">点</text>
+    <text x="88" y="194">自</text>
+    <text x="88" y="214">治</text>
+    <text x="356" y="154">边</text>
+    <text x="356" y="172">缘</text>
+    <text x="356" y="190">应</text>
+    <text x="356" y="208">用</text>
+    <text x="356" y="226">管</text>
+    <text x="356" y="244">理</text>
+    <text x="708" y="154">边</text>
+    <text x="708" y="172">缘</text>
+    <text x="708" y="190">数</text>
+    <text x="708" y="208">据</text>
+    <text x="708" y="226">管</text>
+    <text x="708" y="244">理</text>
+  </g>
+  <g fill="#34a853">
+    <rect x="104" y="150" width="100" height="26" rx="4"/>
+    <rect x="214" y="150" width="100" height="26" rx="4"/>
+    <rect x="104" y="184" width="100" height="26" rx="4"/>
+    <rect x="214" y="184" width="100" height="26" rx="4"/>
+    <rect x="104" y="218" width="104" height="26" rx="4"/>
+    <rect x="216" y="218" width="100" height="26" rx="4"/>
+    <rect x="374" y="150" width="122" height="26" rx="4"/>
+    <rect x="504" y="150" width="122" height="26" rx="4"/>
+    <rect x="374" y="184" width="122" height="26" rx="4"/>
+    <rect x="504" y="184" width="122" height="26" rx="4"/>
+    <rect x="374" y="218" width="122" height="26" rx="4"/>
+    <rect x="504" y="218" width="100" height="26" rx="4"/>
+    <rect x="726" y="150" width="100" height="26" rx="4"/>
+    <rect x="836" y="150" width="80" height="26" rx="4"/>
+    <rect x="726" y="184" width="112" height="26" rx="4"/>
+    <rect x="846" y="184" width="112" height="26" rx="4"/>
+    <rect x="726" y="218" width="122" height="26" rx="4"/>
+    <rect x="856" y="218" width="100" height="26" rx="4"/>
+  </g>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#f4f7fb" text-anchor="middle">
+    <text x="154" y="167">节点接入</text>
+    <text x="264" y="167">AZ管理</text>
+    <text x="154" y="201">运维管理</text>
+    <text x="264" y="201">容器运行管理</text>
+    <text x="156" y="235">AI框架版本管理</text>
+    <text x="266" y="235">编排调度管理</text>
+    <text x="435" y="167">边缘应用部署管理</text>
+    <text x="565" y="167">应用状态监控管理</text>
+    <text x="435" y="201">智能模型部署管理</text>
+    <text x="565" y="201">边缘应用日志管理</text>
+    <text x="435" y="235">应用镜像版本管理</text>
+    <text x="554" y="235">边缘网络管理</text>
+    <text x="776" y="167">边缘数据存储</text>
+    <text x="876" y="167">数据网关</text>
+    <text x="782" y="201">边缘数据预处理</text>
+    <text x="902" y="201">离线大数据处理</text>
+    <text x="787" y="235">边缘数据智能分发</text>
+    <text x="906" y="235">实时数据处理</text>
+  </g>
+  <rect x="68" y="284" width="908" height="30" rx="6" fill="#34a853"/>
+  <text x="522" y="304" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f4f7fb" text-anchor="middle">边缘数据采集标准接口</text>
+  <!-- Device band -->
+  <rect x="56" y="330" width="930" height="62" rx="8" fill="#16265c"/>
+  <rect x="64" y="338" width="914" height="46" rx="6" fill="none" stroke="#7a8fd0" stroke-width="1.2" stroke-dasharray="6 4"/>
+  <g fill="#35a3ea">
+    <rect x="194" y="347" width="112" height="28" rx="4"/>
+    <rect x="444" y="347" width="112" height="28" rx="4"/>
+    <rect x="694" y="347" width="112" height="28" rx="4"/>
+  </g>
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#f4f7fb" text-anchor="middle">
+    <text x="250" y="366">智能制造</text>
+    <text x="500" y="366">智慧门店</text>
+    <text x="750" y="366">智能穿戴</text>
+  </g>
+  <!-- Block arrows: devices -> edge interface -->
+  <g fill="#3aa0e8">
+    <polygon points="243,326 243,320 236,320 250,312 264,320 257,320 257,326"/>
+    <polygon points="493,326 493,320 486,320 500,312 514,320 507,320 507,326"/>
+    <polygon points="743,326 743,320 736,320 750,312 764,320 757,320 757,326"/>
+  </g>
+</svg>

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1000 406" role="img" aria-labelledby="title desc">
+  <title id="title">Cloud-Edge Collaborative Storage Scenarios</title>
+  <desc id="desc">The cloud provides user and permission management, unified authentication, security, app delivery, image registry, open data and more. The edge side is organized into node autonomy, edge application management, and edge data management, connecting to industrial devices such as smart manufacturing, smart stores and smart wearables through the standard edge data collection interface.</desc>
+  <style>
+    /* Dark mode adaptation: follows the OS / Material palette. */
+    @media (prefers-color-scheme: dark) {
+      [fill="#ffffff"] { fill: #232936; }
+      [fill="#f8fafc"] { fill: #1a212c; }
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [stroke="#e0e6ee"] { stroke: #2e3540; }
+      [stroke="#cfd8e3"] { stroke: #3a4450; }
+    }
+  </style>
+  <rect x="0.5" y="0.5" width="999" height="405" rx="10" fill="#ffffff" stroke="#e0e6ee"/>
+  <rect x="14" y="14" width="34" height="378" rx="8" fill="#16265c"/>
+  <text transform="rotate(-90 31 66)" x="31" y="66" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#f4f7fb" text-anchor="middle" dominant-baseline="middle">Cloud</text>
+  <text transform="rotate(-90 31 224)" x="31" y="224" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#f4f7fb" text-anchor="middle" dominant-baseline="middle">Smart Edge</text>
+  <text transform="rotate(-90 25 361)" x="25" y="361" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#f4f7fb" text-anchor="middle" dominant-baseline="middle">Industrial</text>
+  <text transform="rotate(-90 39 361)" x="39" y="361" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#f4f7fb" text-anchor="middle" dominant-baseline="middle">Devices</text>
+  <rect x="56" y="14" width="930" height="104" rx="8" fill="#f8fafc" stroke="#e0e6ee"/>
+  <rect x="76" y="30" width="131" height="26" rx="4" fill="#34a853"/>
+  <text x="141.5" y="47.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">User &amp; Permission</text>
+  <rect x="215" y="30" width="96" height="26" rx="4" fill="#34a853"/>
+  <text x="263.0" y="47.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Unified Auth</text>
+  <rect x="319" y="30" width="72" height="26" rx="4" fill="#34a853"/>
+  <text x="355.0" y="47.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Security</text>
+  <rect x="76" y="62" width="108" height="26" rx="4" fill="#34a853"/>
+  <text x="130.0" y="79.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Platform Mgmt</text>
+  <rect x="192" y="62" width="86" height="26" rx="4" fill="#34a853"/>
+  <text x="235.0" y="79.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Monitoring</text>
+  <rect x="286" y="62" width="46" height="26" rx="4" fill="#34a853"/>
+  <text x="309.0" y="79.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">…</text>
+  <rect x="417" y="30" width="100" height="26" rx="4" fill="#34a853"/>
+  <text x="467.0" y="47.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">App Delivery</text>
+  <rect x="525" y="30" width="111" height="26" rx="4" fill="#34a853"/>
+  <text x="580.5" y="47.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Image Registry</text>
+  <rect x="417" y="62" width="111" height="26" rx="4" fill="#34a853"/>
+  <text x="472.5" y="79.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Model Delivery</text>
+  <rect x="536" y="62" width="113" height="26" rx="4" fill="#34a853"/>
+  <text x="592.5" y="79.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">App Monitoring</text>
+  <rect x="675" y="30" width="87" height="26" rx="4" fill="#34a853"/>
+  <text x="718.5" y="47.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Open Data</text>
+  <rect x="770" y="30" width="107" height="26" rx="4" fill="#34a853"/>
+  <text x="823.5" y="47.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Data Mirroring</text>
+  <rect x="675" y="62" width="121" height="26" rx="4" fill="#34a853"/>
+  <text x="735.5" y="79.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Data Distribution</text>
+  <rect x="804" y="62" width="46" height="26" rx="4" fill="#34a853"/>
+  <text x="827.0" y="79.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">…</text>
+  <rect x="56" y="126" width="930" height="196" rx="8" fill="#f8fafc" stroke="#e0e6ee"/>
+  <rect x="68" y="138" width="292" height="136" rx="8" fill="none" stroke="#7aa7f7" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <text transform="rotate(-90 88 206)" x="88" y="206" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#1565c0" text-anchor="middle">Node Autonomy</text>
+  <rect x="108" y="150" width="101" height="26" rx="4" fill="#34a853"/>
+  <text x="158.5" y="167.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Node Access</text>
+  <rect x="217" y="150" width="122" height="26" rx="4" fill="#34a853"/>
+  <text x="278.0" y="167.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">AZ Management</text>
+  <rect x="108" y="184" width="54" height="26" rx="4" fill="#34a853"/>
+  <text x="135.0" y="201.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">O&amp;M</text>
+  <rect x="170" y="184" width="133" height="26" rx="4" fill="#34a853"/>
+  <text x="236.5" y="201.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Container Runtime</text>
+  <rect x="108" y="218" width="105" height="26" rx="4" fill="#34a853"/>
+  <text x="160.5" y="235.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">AI Framework</text>
+  <rect x="221" y="218" width="90" height="26" rx="4" fill="#34a853"/>
+  <text x="266.0" y="235.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Scheduling</text>
+  <rect x="372" y="138" width="294" height="136" rx="8" fill="none" stroke="#7aa7f7" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <text transform="rotate(-90 392 206)" x="392" y="206" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#1565c0" text-anchor="middle">Edge App Management</text>
+  <rect x="412" y="150" width="123" height="26" rx="4" fill="#34a853"/>
+  <text x="473.5" y="167.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">App Deployment</text>
+  <rect x="543" y="150" width="88" height="26" rx="4" fill="#34a853"/>
+  <text x="587.0" y="167.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">App Status</text>
+  <rect x="412" y="184" width="134" height="26" rx="4" fill="#34a853"/>
+  <text x="479.0" y="201.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Model Deployment</text>
+  <rect x="554" y="184" width="81" height="26" rx="4" fill="#34a853"/>
+  <text x="594.5" y="201.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">App Logs</text>
+  <rect x="412" y="218" width="126" height="26" rx="4" fill="#34a853"/>
+  <text x="475.0" y="235.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Image Versioning</text>
+  <rect x="546" y="218" width="106" height="26" rx="4" fill="#34a853"/>
+  <text x="599.0" y="235.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Edge Network</text>
+  <rect x="678" y="138" width="306" height="136" rx="8" fill="none" stroke="#7aa7f7" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <text transform="rotate(-90 698 206)" x="698" y="206" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#1565c0" text-anchor="middle">Edge Data Management</text>
+  <rect x="718" y="150" width="101" height="26" rx="4" fill="#34a853"/>
+  <text x="768.5" y="167.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Data Storage</text>
+  <rect x="827" y="150" width="106" height="26" rx="4" fill="#34a853"/>
+  <text x="880.0" y="167.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Data Gateway</text>
+  <rect x="718" y="184" width="138" height="26" rx="4" fill="#34a853"/>
+  <text x="787.0" y="201.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Data Preprocessing</text>
+  <rect x="864" y="184" width="114" height="26" rx="4" fill="#34a853"/>
+  <text x="921.0" y="201.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Offline Big Data</text>
+  <rect x="718" y="218" width="121" height="26" rx="4" fill="#34a853"/>
+  <text x="778.5" y="235.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Data Distribution</text>
+  <rect x="847" y="218" width="107" height="26" rx="4" fill="#34a853"/>
+  <text x="900.5" y="235.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Realtime Data</text>
+  <rect x="68" y="284" width="906" height="30" rx="6" fill="#34a853"/>
+  <text x="521.0" y="304" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#f4f7fb" text-anchor="middle">Standard Edge Data Collection Interface</text>
+  <rect x="56" y="330" width="930" height="62" rx="8" fill="#16265c"/>
+  <rect x="64" y="338" width="914" height="46" rx="6" fill="none" stroke="#7a8fd0" stroke-width="1.2" stroke-dasharray="6 4"/>
+  <rect x="188.6" y="347" width="144" height="28" rx="4" fill="#35a3ea"/>
+  <text x="260.6" y="366" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Smart Manufacturing</text>
+  <polygon points="253.6,326 253.6,320 246.6,320 260.6,312 274.6,320 267.6,320 267.6,326" fill="#3aa0e8"/>
+  <rect x="471.5" y="347" width="99" height="28" rx="4" fill="#35a3ea"/>
+  <text x="521.0" y="366" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Smart Stores</text>
+  <polygon points="514.0,326 514.0,320 507.0,320 521.0,312 535.0,320 528.0,320 528.0,326" fill="#3aa0e8"/>
+  <rect x="719.4" y="347" width="124" height="28" rx="4" fill="#35a3ea"/>
+  <text x="781.4" y="366" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.0" font-weight="700" fill="#f4f7fb" text-anchor="middle">Smart Wearables</text>
+  <polygon points="774.4,326 774.4,320 767.4,320 781.4,312 795.4,320 788.4,320 788.4,326" fill="#3aa0e8"/>
+</svg>

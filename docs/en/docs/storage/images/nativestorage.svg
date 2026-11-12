@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1000 576" role="img" aria-labelledby="title desc">
+  <title id="title">Cloud Native Storage Architecture</title>
+  <desc id="desc">Applications in the container cluster are grouped into data collection, data storage, data analytics and data sharing. They connect to block storage, NAS storage pools and object storage through block volumes, NAS volumes and object volumes, which in turn map to local storage, distributed storage, traditional storage, Ceph and NFS.</desc>
+  <style>
+    /* Dark mode adaptation: follows the OS / Material palette. */
+    @media (prefers-color-scheme: dark) {
+      [fill="#ffffff"] { fill: #232936; }
+      [fill="#f1f3f6"] { fill: #232c38; }
+      [fill="#e8f5e9"] { fill: #1b3220; }
+      [fill="#e6ebfa"] { fill: #1d2740; }
+      [fill="#cdd8f0"] { fill: #2a3850; }
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [stroke="#e0e6ee"] { stroke: #2e3540; }
+      [stroke="#cfd8e3"] { stroke: #3a4450; }
+      [stroke="#9aa8bc"] { stroke: #4a5666; }
+      [stroke="#1a2330"] { stroke: #cbd3de; }
+      [stroke="#326ce5"] { stroke: #7aa7f7; }
+    }
+  </style>
+  <rect x="0.5" y="0.5" width="999" height="575" rx="10" fill="#ffffff" stroke="#e0e6ee"/>
+  <!-- Container cluster boundary -->
+  <rect x="12" y="14" width="976" height="444" rx="10" fill="none" stroke="#9aa8bc" stroke-width="1.5" stroke-dasharray="9 6"/>
+  <text x="34" y="48" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="19" font-weight="700" fill="#1a2330">Container Cluster</text>
+  <!-- Application band -->
+  <rect x="28" y="64" width="944" height="118" rx="8" fill="#e8f5e9"/>
+  <rect x="44" y="76" width="212" height="94" rx="8" fill="none" stroke="#9aa8bc" stroke-width="1.2" stroke-dasharray="6 4"/>
+  <text x="56" y="96" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#2e7d32">Data Collection</text>
+  <rect x="98" y="112" width="104" height="36" rx="6" fill="#ffffff" stroke="#cfd8e3"/>
+  <text x="150" y="135" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#1a2330" text-anchor="middle">Kafka</text>
+  <rect x="272" y="76" width="212" height="94" rx="8" fill="none" stroke="#9aa8bc" stroke-width="1.2" stroke-dasharray="6 4"/>
+  <text x="284" y="96" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#2e7d32">Data Storage</text>
+  <rect x="282" y="112" width="90" height="36" rx="6" fill="#ffffff" stroke="#cfd8e3"/>
+  <text x="327" y="135" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#1a2330" text-anchor="middle">MySQL</text>
+  <rect x="382" y="112" width="94" height="36" rx="6" fill="#ffffff" stroke="#cfd8e3"/>
+  <text x="429" y="135" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#1a2330" text-anchor="middle">MongoDB</text>
+  <rect x="500" y="76" width="212" height="94" rx="8" fill="none" stroke="#9aa8bc" stroke-width="1.2" stroke-dasharray="6 4"/>
+  <text x="512" y="96" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#2e7d32">Data Analytics</text>
+  <rect x="514" y="112" width="108" height="36" rx="6" fill="#ffffff" stroke="#cfd8e3"/>
+  <text x="568" y="135" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#1a2330" text-anchor="middle">Elastic Search</text>
+  <rect x="630" y="112" width="74" height="36" rx="6" fill="#ffffff" stroke="#cfd8e3"/>
+  <text x="667" y="135" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#1a2330" text-anchor="middle">OLAP</text>
+  <rect x="728" y="76" width="212" height="94" rx="8" fill="none" stroke="#9aa8bc" stroke-width="1.2" stroke-dasharray="6 4"/>
+  <text x="740" y="96" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#2e7d32">Data Sharing</text>
+  <rect x="752" y="112" width="76" height="36" rx="6" fill="#ffffff" stroke="#cfd8e3"/>
+  <text x="790" y="135" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#1a2330" text-anchor="middle">App01</text>
+  <rect x="840" y="112" width="76" height="36" rx="6" fill="#ffffff" stroke="#cfd8e3"/>
+  <text x="878" y="135" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#1a2330" text-anchor="middle">App02</text>
+  <!-- Volume + pool band -->
+  <rect x="28" y="196" width="944" height="252" rx="8" fill="#e6ebfa"/>
+  <g>
+    <path d="M 204 232 a 26 9 0 0 0 52 0 V 262 a 26 9 0 0 1 -52 0 Z" fill="#ffffff" stroke="#326ce5" stroke-width="1.6"/>
+    <ellipse cx="230" cy="232" rx="26" ry="9" fill="#cdd8f0" stroke="#326ce5" stroke-width="1.6"/>
+    <text x="230" y="296" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330" text-anchor="middle">Block Volume</text>
+    <path d="M 474 232 a 26 9 0 0 0 52 0 V 262 a 26 9 0 0 1 -52 0 Z" fill="#ffffff" stroke="#326ce5" stroke-width="1.6"/>
+    <ellipse cx="500" cy="232" rx="26" ry="9" fill="#cdd8f0" stroke="#326ce5" stroke-width="1.6"/>
+    <text x="500" y="296" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330" text-anchor="middle">NAS Volume</text>
+    <path d="M 744 232 a 26 9 0 0 0 52 0 V 262 a 26 9 0 0 1 -52 0 Z" fill="#ffffff" stroke="#326ce5" stroke-width="1.6"/>
+    <ellipse cx="770" cy="232" rx="26" ry="9" fill="#cdd8f0" stroke="#326ce5" stroke-width="1.6"/>
+    <text x="770" y="296" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330" text-anchor="middle">Object Volume</text>
+  </g>
+  <rect x="44" y="316" width="292" height="116" rx="10" fill="#3f66d4"/>
+  <text x="60" y="344" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="17" font-weight="700" fill="#f4f7fb">Block Storage</text>
+  <rect x="62" y="362" width="108" height="30" rx="5" fill="#ffffff"/>
+  <text x="116" y="382" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#1a2330" text-anchor="middle">High Performance</text>
+  <rect x="178" y="362" width="100" height="30" rx="5" fill="#ffffff"/>
+  <text x="228" y="382" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#1a2330" text-anchor="middle">Large Capacity</text>
+  <rect x="354" y="316" width="292" height="116" rx="10" fill="#3f66d4"/>
+  <text x="370" y="344" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="17" font-weight="700" fill="#f4f7fb">NAS Storage Pool</text>
+  <rect x="372" y="362" width="108" height="30" rx="5" fill="#ffffff"/>
+  <text x="426" y="382" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#1a2330" text-anchor="middle">High Performance</text>
+  <rect x="488" y="362" width="100" height="30" rx="5" fill="#ffffff"/>
+  <text x="538" y="382" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#1a2330" text-anchor="middle">Large Capacity</text>
+  <rect x="664" y="316" width="292" height="116" rx="10" fill="#3f66d4"/>
+  <text x="680" y="344" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="17" font-weight="700" fill="#f4f7fb">Object Storage</text>
+  <rect x="676" y="362" width="108" height="30" rx="5" fill="#ffffff"/>
+  <text x="730" y="382" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#1a2330" text-anchor="middle">Massive Capacity</text>
+  <rect x="788" y="362" width="66" height="30" rx="5" fill="#ffffff"/>
+  <text x="821" y="382" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#1a2330" text-anchor="middle">Scalable</text>
+  <rect x="866" y="362" width="66" height="30" rx="5" fill="#ffffff"/>
+  <text x="899" y="382" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#1a2330" text-anchor="middle">Low Cost</text>
+  <!-- Storage backends -->
+  <rect x="28" y="472" width="944" height="92" rx="8" fill="#f1f3f6"/>
+  <g>
+    <path d="M 102 500 a 20 7 0 0 0 40 0 V 522 a 20 7 0 0 1 -40 0 Z" fill="#ffffff" stroke="#1a2330" stroke-width="1.5"/>
+    <ellipse cx="122" cy="500" rx="20" ry="7" fill="#6cc04a" stroke="#1a2330" stroke-width="1.5"/>
+    <text x="122" y="552" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330" text-anchor="middle">Local Storage</text>
+    <path d="M 288 500 a 20 7 0 0 0 40 0 V 522 a 20 7 0 0 1 -40 0 Z" fill="#ffffff" stroke="#1a2330" stroke-width="1.5"/>
+    <ellipse cx="308" cy="500" rx="20" ry="7" fill="#f5a623" stroke="#1a2330" stroke-width="1.5"/>
+    <text x="308" y="552" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330" text-anchor="middle">Distributed Storage</text>
+    <path d="M 474 500 a 20 7 0 0 0 40 0 V 522 a 20 7 0 0 1 -40 0 Z" fill="#ffffff" stroke="#1a2330" stroke-width="1.5"/>
+    <ellipse cx="494" cy="500" rx="20" ry="7" fill="#e05a5a" stroke="#1a2330" stroke-width="1.5"/>
+    <text x="494" y="552" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330" text-anchor="middle">Traditional Storage</text>
+    <path d="M 660 500 a 20 7 0 0 0 40 0 V 522 a 20 7 0 0 1 -40 0 Z" fill="#ffffff" stroke="#1a2330" stroke-width="1.5"/>
+    <ellipse cx="680" cy="500" rx="20" ry="7" fill="#e05a5a" stroke="#1a2330" stroke-width="1.5"/>
+    <text x="680" y="552" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330" text-anchor="middle">Ceph</text>
+    <path d="M 846 500 a 20 7 0 0 0 40 0 V 522 a 20 7 0 0 1 -40 0 Z" fill="#ffffff" stroke="#1a2330" stroke-width="1.5"/>
+    <ellipse cx="866" cy="500" rx="20" ry="7" fill="#3aa0e8" stroke="#1a2330" stroke-width="1.5"/>
+    <text x="866" y="552" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#1a2330" text-anchor="middle">NFS</text>
+  </g>
+  <!-- Block arrows: cluster -> backends -->
+  <g fill="#3aa0e8">
+    <polygon points="241,458 259,458 259,474 268,474 250,490 232,474 241,474"/>
+    <polygon points="491,458 509,458 509,474 518,474 500,490 482,474 491,474"/>
+    <polygon points="741,458 759,458 759,474 768,474 750,490 732,474 741,474"/>
+  </g>
+</svg>
