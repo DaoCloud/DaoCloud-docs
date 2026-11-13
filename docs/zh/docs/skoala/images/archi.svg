@@ -1,15 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1258 940" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 100 1258 840" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif">
   <title>微服务引擎架构</title>
-  <rect x="0" y="0" width="1258" height="940" fill="#FFFFFF"/>
+  <rect x="0" y="100" width="1258" height="840" fill="#FFFFFF"/>
   <defs>
     <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10 z" fill="#1A1A1A"/>
     </marker>
   </defs>
-
-  <!-- 标题 -->
-  <polygon points="29,34 58,34 46,56 17,56" fill="#00A958"/>
-  <text x="110" y="62" font-size="46" font-weight="bold" fill="#000000">微服务引擎 架构</text>
 
   <!-- ===== 左侧白色盒子 ===== -->
   <g fill="#FFFFFF" stroke="#8C8C8C" stroke-width="1.5">
