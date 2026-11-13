@@ -56,7 +56,7 @@ With DCE's cloud native DNA, enterprises can fully leverage the advantages of bo
         <span class="tf-arch-card-tip">Databases and message queues</span>
       </a>
       <a class="tf-arch-card tf-arch-card--compute" href="../kairship/intro/">
-        <span class="tf-arch-card-title">Multicloud Manageent</span>
+        <span class="tf-arch-card-title">Multicloud Management</span>
         <span class="tf-arch-card-tip">Multicloud and hybrid cloud orchestration</span>
       </a>
       <a class="tf-arch-card tf-arch-card--compute" href="../kangaroo/intro/">
@@ -117,6 +117,10 @@ With DCE's cloud native DNA, enterprises can fully leverage the advantages of bo
   </div>
 </div>
 
+## Product Architecture
+
+![DCE 5.0 Product Architecture](images/architecture.svg)
+
 ## Installation and Tutorials
 
 <div class="grid cards" markdown>
@@ -149,49 +153,55 @@ With DCE's cloud native DNA, enterprises can fully leverage the advantages of bo
 
 </div>
 
-## Download and Ecosystem
+## Learning Path
 
-<div class="grid cards" markdown>
+<style>
+.dce-path{display:flex;gap:0.75rem;margin:1.25rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.dce-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.dce-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.dce-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.dce-path-step:last-child::after{display:none}
+.dce-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.dce-path-title{font-weight:700;font-size:0.95rem}
+.dce-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.dce-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.dce-path-step::after{display:none}}
+</style>
 
-- :material-download:{ .lg .middle } __Download Center__
-
-    ---
-
-    The Download Center contains offline installation packages for the DCE Community Package, Enterprise Package, and sub-modules.
-
-    - [Download Community Package](../download/free/dce5-installer-history.md)
-    - [Download Enterprise Package](../download/business/dce5-installer-history.md)
-    - [Download Sub-Modules](../download/index.md#_3)
-
-- :simple-opensourceinitiative:{ .lg .middle } __DaoCloud Open Source Ecosystem__
-
-    ---
-
-    DaoCloud adheres to an open source enterprise culture, with multiple open source technologies included in the CNCF Sandbox.
-
-    - [Clusterpedia: Multi-Cluster Encyclopedia](../community/clusterpedia.md)
-    - [HwameiStor: Local Storage](../community/hwameistor.md)
-    - [Merbridge: Service Mesh Acceleration](../community/merbridge.md)
-
+<div class="dce-path">
+  <a class="dce-path-step" style="--path-c:#2196f3" href="../install/">
+    <span class="dce-path-num">1</span>
+    <span class="dce-path-title">Deploy the Platform</span>
+    <span class="dce-path-desc">Install DCE 5.0 online or offline</span>
+    <span class="dce-path-go">Go →</span>
+  </a>
+  <a class="dce-path-step" style="--path-c:#00acc1" href="../kpanda/intro/">
+    <span class="dce-path-num">2</span>
+    <span class="dce-path-title">Manage Clusters</span>
+    <span class="dce-path-desc">Integrate clusters and orchestrate containers</span>
+    <span class="dce-path-go">Go →</span>
+  </a>
+  <a class="dce-path-step" style="--path-c:#43a047" href="../amamba/intro/">
+    <span class="dce-path-num">3</span>
+    <span class="dce-path-title">Deliver Apps</span>
+    <span class="dce-path-desc">CI pipelines and GitOps delivery</span>
+    <span class="dce-path-go">Go →</span>
+  </a>
+  <a class="dce-path-step" style="--path-c:#fb8c00" href="../insight/intro/">
+    <span class="dce-path-num">4</span>
+    <span class="dce-path-title">Observe the System</span>
+    <span class="dce-path-desc">Unified metrics, logs, and traces</span>
+    <span class="dce-path-go">Go →</span>
+  </a>
+  <a class="dce-path-step" style="--path-c:#8e24aa" href="../ghippo/intro/">
+    <span class="dce-path-num">5</span>
+    <span class="dce-path-title">Govern the Platform</span>
+    <span class="dce-path-desc">Users, permissions, and global policies</span>
+    <span class="dce-path-go">Go →</span>
+  </a>
 </div>
-
-*[Clusterpedia]: A multi-cluster resource query plugin built into DCE, donated to CNCF and accepted into Sandbox
-*[HwameiStor]: A local highly available storage solution built into DCE, donated to CNCF and accepted into Sandbox
-*[Merbridge]: A mesh acceleration plugin built into DCE based on eBPF, donated to CNCF and accepted into Sandbox
-
-!!! success
-
-    ```yaml
-    What leads to a company's success?
-      It's the shared dream, a unified vision,
-        The joy of open source, collaborative decision.
-          Thriving on the thrill, working day and night,
-            Building magical things that shine so bright.
-
-    Together, let us now unite,
-      Honoring efforts past, present, future with delight.
-    ```
 
 [Apply for Community Free Trial](./license0.md){ .md-button }
 [Best Practices](./bphome.md){ .md-button }
 [FAQs](./faq.md){ .md-button }
+[Read the DaoCloud Enterprise Brochure](https://harbor-test2.cn-sh2.ufileos.com/docs/download/dce.pdf){ .md-button }
