@@ -5118,7 +5118,7 @@ For more questions, refer to [Permissions of All Modules](../ghippo/permissions/
 
         For a complete introduction to role and access management, please refer to [Role and Access Management](../ghippo/user-guide/access-control/role.md).
 
-??? "Application workbench permission description"
+??? "Workbench permission description"
 
     [Workbench](../amamba/intro/index.md) supports three user roles:
 

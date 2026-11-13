@@ -1,6 +1,6 @@
 # Toolchain Related Issues
 
-This page lists some issues that may be encountered when using the toolchain features of the application workbench, along with corresponding solutions.
+This page lists some issues that may be encountered when using the toolchain features of the workbench, along with corresponding solutions.
 
 ## Error When the Pipeline Runs with Maven as the Agent and Uses Integrated SonarQube for Java Code Scanning
 

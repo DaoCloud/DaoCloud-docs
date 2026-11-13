@@ -31,7 +31,7 @@
     <circle cx="13" cy="-6.5" r="2" fill="#111"/><circle cx="19" cy="-6.5" r="2" fill="#111"/>
     <path d="M12,0 Q16,4 20,0" stroke="#111" stroke-width="2" fill="none"/>
   </g>
-  <text x="468" y="140" font-size="16" font-weight="600" fill="#111" text-anchor="middle">Application Workbench Pipeline</text>
+  <text x="468" y="140" font-size="16" font-weight="600" fill="#111" text-anchor="middle">Workbench Pipeline</text>
   <text x="665" y="62" font-size="15" fill="#111" text-anchor="middle">Artifacts</text>
   <line x1="560" y1="88" x2="745" y2="88" stroke="#1a1a1a" stroke-width="2" marker-end="url(#bk)"/>
   <g transform="translate(800,72)">

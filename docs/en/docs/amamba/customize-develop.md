@@ -2,7 +2,7 @@
 
 ## YAML File Template  
 
-The declaration file is used to define information such as the custom step's name, version, and parameters. To align more closely with cloud-native practices, the plugin definitions in the Application Workbench follow the style of Kubernetes resources. Although they currently do not exist as CRDs, the plugin definition is as follows:  
+The declaration file is used to define information such as the custom step's name, version, and parameters. To align more closely with cloud-native practices, the plugin definitions in the Workbench follow the style of Kubernetes resources. Although they currently do not exist as CRDs, the plugin definition is as follows:  
 
 ```yaml
 apiVersion: pipeline.amamba.io/v1alpha1

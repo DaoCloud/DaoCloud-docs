@@ -50,7 +50,7 @@
   <line x1="308" y1="128" x2="455" y2="128" stroke="#1a1a1a" stroke-width="2" marker-end="url(#bk)"/>
 
   <!-- 流水线 -->
-  <text x="800" y="66" font-size="21" font-weight="700" fill="#111" text-anchor="middle">Application Workbench Pipeline</text>
+  <text x="800" y="66" font-size="21" font-weight="700" fill="#111" text-anchor="middle">Workbench Pipeline</text>
   <g fill="#A9B6EC">
     <polygon points="490,108 640,108 668,135 640,162 490,162 518,135"/>
     <polygon points="660,108 810,108 838,135 810,162 660,162 688,135"/>
