@@ -955,6 +955,7 @@ nav:
                   - Registration and Configuration Center:
                       - Hosted Registration Center: skoala/trad-ms/hosted/index.md
                       - Service Integration Standards:
+                          - Intro: skoala/standard/index.md
                           - Integrate Sentinel: skoala/standard/sentinel.md
                           - Integrate Nacos SDK: skoala/standard/nacos.md
                           - Integrate Sentinel Monitoring Capabilities: skoala/standard/monitor.md
@@ -986,22 +987,23 @@ nav:
                       - Microservices Management: skoala/trad-ms/integrated/manage-service.md
                       - Trace Tracking: skoala/trad-ms/integrated/trace.md
               - Plugin Center:
-                  - Intro: skoala/plugins/intro.md
+                  - Intro: skoala/plugins/index.md
                   - Plugin Practices:
-                      - Using JWT Plugin for Microservices: skoala/best-practice/plugins/jwt.md
-                      - Using JWT Plugin for Gateway: skoala/best-practice/jwt.md
-                      - Gateway Authentication Server:
-                          - skoala/best-practice/auth-server.md
-                          - Integrate AK/SK Authentication: skoala/best-practice/ak-sk-demo.md
-                          - Integrate OIDC Authentication: skoala/best-practice/OIDC-auth.md
-                      - Integrate Global Rate Limit Server for Gateway: skoala/best-practice/global-ratelimit.md
+                      - JWT Plugin for Microservices: skoala/plugins/jwt-ms.md
+                      - JWT Plugin for Gateway: skoala/plugins/jwt.md
+                      - Authentication Server:
+                          - Access Authentication Server: skoala/plugins/auth-server.md
+                          - Integrate AK/SK Authentication: skoala/plugins/ak-sk-demo.md
+                          - Integrate OIDC Authentication: skoala/plugins/OIDC-auth.md
+                      - Access Rate Limit Server: skoala/plugins/global-ratelimit.md
                   - Custom Plugin Examples:
-                      - Caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
-                      - Anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
-                      - CRC32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
-                      - Conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
-                      - Payload Limit: skoala/best-practice/envoy-extproc-payloadlimit-demo-go.md
+                      - Caching: skoala/plugins/envoy-extproc-caching-demo-go.md
+                      - Anti: skoala/plugins/envoy-extproc-anti-demo-go.md
+                      - CRC32: skoala/plugins/envoy-extproc-crc32-check-demo-go.md
+                      - Conv: skoala/plugins/envoy-extproc-method-conv-demo-go.md
+                      - Payload Limit: skoala/plugins/envoy-extproc-payloadlimit-demo-go.md
               - Best Practices:
+                  - Intro: skoala/best-practice/index.md
                   - Microservices Governance Application Example: skoala/best-practice/use-skoala-01.md
                   - API Policy Configuration Example: skoala/best-practice/gateway02.md
                   - Accessing Microservices via Gateway: skoala/best-practice/gateway01.md

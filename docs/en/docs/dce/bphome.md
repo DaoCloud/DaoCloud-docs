@@ -145,8 +145,8 @@ and maintain containerized applications more efficiently and stably.
     Mainly provides functionalities in two dimensions: microservices governance center and microservices gateway
 
     - [Experience Microservices Governance with Sample Applications](../skoala/best-practice/use-skoala-01.md)
-    - [Use JWT Plugin in Cloud Native Microservices](../skoala/best-practice/plugins/jwt.md)
-    - [Microservices Gateway Accesses Authentication Server](../skoala/best-practice/auth-server.md)
+    - [Use JWT Plugin in Cloud Native Microservices](../skoala/plugins/jwt-ms.md)
+    - [Microservices Gateway Accesses Authentication Server](../skoala/plugins/auth-server.md)
     - [Gateway API policy](../skoala/best-practice/gateway02.md)
     - [Access Microservices via Gateway](../skoala/best-practice/gateway01.md)
 

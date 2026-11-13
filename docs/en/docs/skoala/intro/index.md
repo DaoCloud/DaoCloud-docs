@@ -118,7 +118,7 @@ and Dubbo, helping you to build your own microservice system using open-source m
   <div class="tf-arch-layer tf-arch-layer--ops">
     <div class="tf-arch-layer-label">Shared Capabilities</div>
     <div class="tf-arch-cards">
-      <a class="tf-arch-card tf-arch-card--ops" href="../plugins/intro/">
+      <a class="tf-arch-card tf-arch-card--ops" href="../plugins/">
         <span class="tf-arch-card-title">Plugin Center</span>
         <span class="tf-arch-card-tip">Wasm plugins with one-click toggle</span>
       </a>
@@ -165,8 +165,8 @@ and Dubbo, helping you to build your own microservice system using open-source m
     ---
 
     - [Experience Microservice Governance with Sample Applications](../best-practice/use-skoala-01.md)
-    - [Using JWT Plugin in Cloud-Native Microservices](../best-practice/plugins/jwt.md)
-    - [Integrate Microservice Gateway with Authentication Server](../best-practice/auth-server.md)
+    - [Using JWT Plugin in Cloud-Native Microservices](../plugins/jwt-ms.md)
+    - [Integrate Microservice Gateway with Authentication Server](../plugins/auth-server.md)
     - [Gateway API Policy](../best-practice/gateway02.md)
 
 -   :material-engine:{ .lg .middle } __Cloud Native Microservices__

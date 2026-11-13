@@ -113,7 +113,7 @@ hide:
   <div class="tf-arch-layer tf-arch-layer--ops">
     <div class="tf-arch-layer-label">公共支撑</div>
     <div class="tf-arch-cards">
-      <a class="tf-arch-card tf-arch-card--ops" href="../plugins/intro/">
+      <a class="tf-arch-card tf-arch-card--ops" href="../plugins/">
         <span class="tf-arch-card-title">插件中心</span>
         <span class="tf-arch-card-tip">Wasm 插件与一键启停</span>
       </a>
@@ -160,8 +160,8 @@ hide:
     ---
 
     - [示例应用体验微服务治理](../best-practice/use-skoala-01.md)
-    - [在云原生微服务中使用 JWT 插件](../best-practice/plugins/jwt.md)
-    - [微服务网关接入认证服务器](../best-practice/auth-server.md)
+    - [在云原生微服务中使用 JWT 插件](../plugins/jwt-ms.md)
+    - [微服务网关接入认证服务器](../plugins/auth-server.md)
     - [网关 API 策略](../best-practice/gateway02.md)
 
 -   :material-engine:{ .lg .middle } __云原生微服务__

@@ -143,8 +143,8 @@ hide:
     主要提供微服务治理中心和微服务网关两个维度的功能
 
     - [示例应用体验微服务治理](../skoala/best-practice/use-skoala-01.md)
-    - [在云原生微服务中使用 JWT 插件](../skoala/best-practice/plugins/jwt.md)
-    - [微服务网关接入认证服务器](../skoala/best-practice/auth-server.md)
+    - [在云原生微服务中使用 JWT 插件](../skoala/plugins/jwt-ms.md)
+    - [微服务网关接入认证服务器](../skoala/plugins/auth-server.md)
     - [网关 API 策略](../skoala/best-practice/gateway02.md)
     - [通过网关访问微服务](../skoala/best-practice/gateway01.md)
 
