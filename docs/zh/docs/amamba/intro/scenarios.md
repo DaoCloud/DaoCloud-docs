@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 适用场景和优势
 
 应用工作台是以流水线、GitOps、Jenkins 等方式实现应用持续交付的模块。
@@ -13,7 +18,7 @@
     对于复杂的业务系统，从项目创建、编译、构建、自验、集成验证、类生产验证、上线的各个阶段都需要耗费大量的人力和时间，并且容易受到人为因素影响而出错。
     持续集成和持续交付由于具有标准化和自动化特点，以代码变更为流动单元，基于发布流水线，拉通开发、测试、运维所有职能，持续、快速、高可靠地发布软件，可以很好的解决该问题。
 
-    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/image.png)
+    ![image](../images/image.svg)
 
 - 基于流水线 + GitOps 实现云原生下的应用持续交付
 
@@ -21,7 +26,7 @@
     用户仅需将 Kubernetes 的 YAML 文件提交至代码仓库中，GitOps 会自动感知到 YAML 文件的变化，配合代码仓库的合并请求功能，
     将 YAML 文件的变更自动推送至集群中，整个过程无需学习 Kubernetes 的发布命令，也无需直接操作集群。
 
-    ![image2](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/image2.png)
+    ![image2](../images/image2.svg)
 
 ## 产品优势
 
