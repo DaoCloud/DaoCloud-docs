@@ -58,7 +58,7 @@ and Dubbo, helping you to build your own microservice system using open-source m
 
 <div class="tf-arch tf-arch--compact">
   <div class="tf-arch-layer tf-arch-layer--model">
-    <div class="tf-arch-layer-label">North-South Traffic · Microservice Gateway</div>
+    <div class="tf-arch-layer-label">Gateway</div>
     <div class="tf-arch-cards">
       <a class="tf-arch-card tf-arch-card--model" href="../gateway/">
         <span class="tf-arch-card-title">Gateway Management</span>
@@ -80,7 +80,7 @@ and Dubbo, helping you to build your own microservice system using open-source m
   </div>
   <div class="tf-arch-arrow">▲</div>
   <div class="tf-arch-layer tf-arch-layer--compute">
-    <div class="tf-arch-layer-label">East-West Traffic · Cloud Native Microservices</div>
+    <div class="tf-arch-layer-label">Cloud Native</div>
     <div class="tf-arch-cards">
       <a class="tf-arch-card tf-arch-card--compute" href="../cloud-ms/traffic-control/">
         <span class="tf-arch-card-title">Traffic Governance</span>
@@ -98,7 +98,7 @@ and Dubbo, helping you to build your own microservice system using open-source m
   </div>
   <div class="tf-arch-arrow">▲</div>
   <div class="tf-arch-layer tf-arch-layer--compute">
-    <div class="tf-arch-layer-label">East-West Traffic · Traditional Microservices</div>
+    <div class="tf-arch-layer-label">Traditional</div>
     <div class="tf-arch-cards">
       <a class="tf-arch-card tf-arch-card--compute" href="../trad-ms/hosted/">
         <span class="tf-arch-card-title">Registry and Config Center</span>
@@ -205,16 +205,17 @@ and Dubbo, helping you to build your own microservice system using open-source m
 ## Learning Path
 
 <style>
-.skoala-path{display:flex;gap:0.75rem;margin:1.25rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
-.skoala-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.skoala-path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.75rem;margin:1.25rem 0 1.75rem}
+.skoala-path-step{display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
 .skoala-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
 .skoala-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
-.skoala-path-step:last-child::after{display:none}
+.skoala-path-step:nth-child(3n)::after,.skoala-path-step:last-child::after{display:none}
 .skoala-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
 .skoala-path-title{font-weight:700;font-size:0.95rem}
 .skoala-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
 .skoala-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
-@media screen and (max-width: 768px){.skoala-path-step::after{display:none}}
+@media screen and (max-width: 768px){.skoala-path{grid-template-columns:repeat(2,minmax(0,1fr))}.skoala-path-step::after{display:none}}
+@media screen and (max-width: 520px){.skoala-path{grid-template-columns:1fr}}
 </style>
 
 <div class="skoala-path">
