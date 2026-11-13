@@ -49,6 +49,7 @@ nav:
                   - API Key Management: drun/hydra/apikey.md
               - Admin:
                   - Model Plaza Management: drun/hydra/oam/index.md
+                  - Model Provider Management: drun/hydra/oam/model-provider.md
                   - MaaS Model Management: drun/hydra/oam/maas.md
                   - Smart Routing: drun/hydra/oam/auto-route.md
                   - Model Serving Management: drun/hydra/oam/mdm.md

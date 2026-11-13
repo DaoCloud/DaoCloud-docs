@@ -48,6 +48,7 @@ nav:
                   - API Key Management: tf/hydra/apikey.md
               - Admin:
                   - Model Plaza Management: tf/hydra/oam/index.md
+                  - Model Provider Management: tf/hydra/oam/model-provider.md
                   - MaaS Model Management: tf/hydra/oam/maas.md
                   - Smart Routing: tf/hydra/oam/auto-route.md
                   - Model Serving Management: tf/hydra/oam/mdm.md
