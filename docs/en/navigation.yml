@@ -955,6 +955,7 @@ nav:
                   - Registration and Configuration Center:
                       - Hosted Registration Center: skoala/trad-ms/hosted/index.md
                       - Service Integration Standards:
+                          - Intro: skoala/standard/index.md
                           - Integrate Sentinel: skoala/standard/sentinel.md
                           - Integrate Nacos SDK: skoala/standard/nacos.md
                           - Integrate Sentinel Monitoring Capabilities: skoala/standard/monitor.md
@@ -1002,6 +1003,7 @@ nav:
                       - Conv: skoala/plugins/envoy-extproc-method-conv-demo-go.md
                       - Payload Limit: skoala/plugins/envoy-extproc-payloadlimit-demo-go.md
               - Best Practices:
+                  - Intro: skoala/best-practice/index.md
                   - Microservices Governance Application Example: skoala/best-practice/use-skoala-01.md
                   - API Policy Configuration Example: skoala/best-practice/gateway02.md
                   - Accessing Microservices via Gateway: skoala/best-practice/gateway01.md
