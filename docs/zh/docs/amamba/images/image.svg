@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 442" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif">
+  <defs>
+    <marker id="bk" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0L9,4L0,8Z" fill="#1a1a1a"/></marker>
+  </defs>
+  <rect width="1400" height="442" fill="#ffffff"/>
+
+  <!-- 人员 -->
+  <g stroke="#555" stroke-width="2.5" fill="#ffffff">
+    <circle cx="55" cy="92" r="17"/>
+    <path d="M30 148 Q30 116 55 116 Q80 116 80 148" />
+    <path d="M44 84 Q55 76 66 84" fill="none"/>
+  </g>
+  <text x="133" y="103" font-size="16" fill="#111" text-anchor="middle">提交代码</text>
+  <line x1="88" y1="128" x2="188" y2="128" stroke="#1a1a1a" stroke-width="2" marker-end="url(#bk)"/>
+
+  <!-- 代码源 -->
+  <text x="255" y="42" font-size="17" font-weight="600" fill="#111" text-anchor="middle">代码源</text>
+  <rect x="202" y="60" width="106" height="322" rx="12" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="8 6"/>
+
+  <!-- GitHub -->
+  <g transform="translate(255,118)">
+    <circle r="26" fill="#111"/>
+    <circle cx="0" cy="2" r="10" fill="#ffffff"/>
+    <path d="M-8,-6 L-5,-14 L-1,-8 H1 L5,-14 L8,-6 Z" fill="#ffffff"/>
+    <path d="M-9,8 Q0,14 9,8 L9,3 Q0,8 -9,3 Z" fill="#ffffff"/>
+  </g>
+  <!-- GitLab -->
+  <g transform="translate(255,190)">
+    <path d="M-24,-6 L-12,-20 L-4,-4 L4,-4 L12,-20 L24,-6 L14,22 L-14,22 Z" fill="#E24329"/>
+    <path d="M-24,-6 L-4,-4 L-14,22 Z" fill="#FC6D26"/>
+    <path d="M24,-6 L4,-4 L14,22 Z" fill="#FCA326"/>
+  </g>
+  <!-- Gitea -->
+  <g transform="translate(255,262)">
+    <path d="M-22,-16 H22 V10 Q22,22 0,22 Q-22,22 -22,10 Z" fill="#D9480F"/>
+    <path d="M22,-10 H30 Q36,-10 36,-2 Q36,6 28,6 H22" fill="none" stroke="#D9480F" stroke-width="4"/>
+    <circle cx="-8" cy="0" r="6" fill="#ffffff"/>
+    <path d="M2,0 H14" stroke="#ffffff" stroke-width="4"/>
+  </g>
+  <!-- JAR 文件 -->
+  <g transform="translate(255,330)">
+    <path d="M-18,-26 H6 L18,-14 V26 H-18 Z" fill="#ffffff" stroke="#111" stroke-width="3"/>
+    <path d="M6,-26 V-14 H18" fill="none" stroke="#111" stroke-width="3"/>
+    <rect x="-18" y="-2" width="36" height="16" fill="#111"/>
+    <text y="10" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">JAR</text>
+  </g>
+
+  <!-- 拉取代码 -->
+  <text x="400" y="103" font-size="16" fill="#111" text-anchor="middle">拉取代码</text>
+  <line x1="308" y1="128" x2="455" y2="128" stroke="#1a1a1a" stroke-width="2" marker-end="url(#bk)"/>
+
+  <!-- 流水线 -->
+  <text x="800" y="66" font-size="21" font-weight="700" fill="#111" text-anchor="middle">应用工作台流水线</text>
+  <g fill="#A9B6EC">
+    <polygon points="490,108 640,108 668,135 640,162 490,162 518,135"/>
+    <polygon points="660,108 810,108 838,135 810,162 660,162 688,135"/>
+    <polygon points="830,108 980,108 1008,135 980,162 830,162 858,135"/>
+    <polygon points="1000,108 1150,108 1178,135 1150,162 1000,162 1028,135"/>
+  </g>
+  <g font-size="17" fill="#111" text-anchor="middle">
+    <text x="586" y="141">代码下载</text>
+    <text x="756" y="141">代码检查</text>
+    <text x="926" y="141">编译构建</text>
+    <text x="1092" y="141">部署</text>
+  </g>
+
+  <!-- 制品 / 镜像 -->
+  <line x1="926" y1="162" x2="926" y2="205" stroke="#1a1a1a" stroke-width="2" marker-end="url(#bk)"/>
+  <text x="960" y="190" font-size="15" fill="#111">制品</text>
+  <g transform="translate(926,255)">
+    <path d="M-26,-12 L0,-20 L26,-12 L26,16 L0,24 L-26,16 Z" fill="#3D7BE0"/>
+    <path d="M-26,-12 L0,-4 L26,-12" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+    <path d="M0,-4 V24" stroke="#ffffff" stroke-width="2.5"/>
+    <path d="M-26,-12 L0,-20 L26,-12 L26,4 L0,-4 L-26,4 Z" fill="#5A94EE"/>
+  </g>
+  <text x="926" y="312" font-size="16" fill="#111" text-anchor="middle">镜像</text>
+  <text x="1120" y="252" font-size="16" fill="#111" text-anchor="middle">拉取镜像</text>
+  <line x1="980" y1="272" x2="1225" y2="272" stroke="#1a1a1a" stroke-width="2" marker-end="url(#bk)"/>
+
+  <!-- kubernetes 叠放两个集群 -->
+  <g>
+    <rect x="1198" y="60" width="158" height="180" rx="12" fill="#ffffff" stroke="#999" stroke-width="2" stroke-dasharray="8 6"/>
+    <g transform="translate(1224,92)">
+      <path d="M0,-16 L11,-11 L16,0 L11,11 L0,16 L-11,11 L-16,0 L-11,-11 Z" fill="#326CE5" transform="scale(0.9)"/>
+      <circle r="6" fill="none" stroke="#fff" stroke-width="2.5"/>
+    </g>
+    <text x="1248" y="98" font-size="16" font-weight="700" fill="#111">kubernetes</text>
+    <rect x="1232" y="100" width="158" height="282" rx="12" fill="#ffffff" stroke="#999" stroke-width="2" stroke-dasharray="8 6"/>
+    <g transform="translate(1258,132)">
+      <path d="M0,-16 L11,-11 L16,0 L11,11 L0,16 L-11,11 L-16,0 L-11,-11 Z" fill="#326CE5" transform="scale(0.9)"/>
+      <circle r="6" fill="none" stroke="#fff" stroke-width="2.5"/>
+    </g>
+    <text x="1282" y="138" font-size="16" font-weight="700" fill="#111">kubernetes</text>
+    <rect x="1244" y="152" width="136" height="80" rx="8" fill="#F5F7FA"/>
+    <text x="1256" y="174" font-size="14" fill="#2E7CF6">Application</text>
+    <g fill="#ffffff" stroke="#C9D4E0">
+      <rect x="1254" y="186" width="34" height="22" rx="6"/>
+      <rect x="1296" y="186" width="34" height="22" rx="6"/>
+      <rect x="1338" y="186" width="34" height="22" rx="6"/>
+    </g>
+    <g font-size="12" fill="#333" text-anchor="middle">
+      <text x="1271" y="201">pod</text><text x="1313" y="201">pod</text><text x="1355" y="201">pod</text>
+    </g>
+    <rect x="1244" y="244" width="136" height="80" rx="8" fill="#F5F7FA"/>
+    <text x="1256" y="266" font-size="14" fill="#2E7CF6">Application</text>
+    <g fill="#ffffff" stroke="#C9D4E0">
+      <rect x="1254" y="278" width="34" height="22" rx="6"/>
+      <rect x="1296" y="278" width="34" height="22" rx="6"/>
+      <rect x="1338" y="278" width="34" height="22" rx="6"/>
+    </g>
+    <g font-size="12" fill="#333" text-anchor="middle">
+      <text x="1271" y="293">pod</text><text x="1313" y="293">pod</text><text x="1355" y="293">pod</text>
+    </g>
+  </g>
+
+  <!-- 底部 Tekton / Jenkins -->
+  <rect x="500" y="310" width="580" height="72" rx="14" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="8 6"/>
+  <g transform="translate(610,346)">
+    <g fill="#F7A8C6">
+      <circle cx="-9" cy="-8" r="8"/><circle cx="9" cy="-8" r="8"/><circle cx="0" cy="2" r="9"/>
+      <circle cx="-11" cy="6" r="7"/><circle cx="11" cy="6" r="7"/>
+    </g>
+    <circle r="5" fill="#E24B8D"/>
+    <text x="24" y="10" font-size="24" font-weight="800" fill="#2F55A0">TEKTON</text>
+  </g>
+  <g transform="translate(850,346)">
+    <circle r="16" fill="#D3382F"/>
+    <circle cx="0" cy="-3" r="8" fill="#F6C9A8"/>
+    <path d="M-8,8 Q0,2 8,8 L8,12 L-8,12 Z" fill="#2E3B4E"/>
+    <path d="M-4,-1 H4" stroke="#111" stroke-width="2"/>
+    <text x="24" y="7" font-size="22" font-weight="700" fill="#111">Jenkins</text>
+  </g>
+</svg>

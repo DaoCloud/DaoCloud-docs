@@ -75,7 +75,7 @@ understand the evolution path and feature changes of each version.
 ### v0.18.1
 
 - **Improved** the accuracy of login command prompts after integrating Harbor administrator into the container registry
-- **Fixed** pagination issue in the image selector interface on the application workbench
+- **Fixed** pagination issue in the image selector interface on the workbench
 
 ## 2024-04-30
 

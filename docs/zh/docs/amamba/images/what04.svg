@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 719" font-family="'Helvetica Neue',Arial,'PingFang SC',system-ui,sans-serif">
+  <defs>
+    <marker id="bk" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0L9,4L0,8Z" fill="#333"/></marker>
+    <g id="teal">
+      <circle cx="0" cy="-14" r="9" fill="#26A69A"/>
+      <path d="M-13,12 Q-13,-3 0,-3 Q13,-3 13,12 Z" fill="#26A69A"/>
+      <circle cx="-3" cy="-15" r="1.6" fill="#E0F2F1"/><circle cx="3" cy="-15" r="1.6" fill="#E0F2F1"/>
+    </g>
+    <g id="gitred">
+      <path d="M0,-22 L16,-6 L16,10 L0,26 L-16,10 L-16,-6 Z" fill="#E24329" transform="rotate(0) scale(0.95)"/>
+      <circle cx="-6" cy="0" r="4.5" fill="#fff"/><circle cx="8" cy="12" r="4.5" fill="#fff"/>
+      <path d="M-3,1 L5,10 M8,8 V-8" stroke="#fff" stroke-width="2.5" fill="none"/>
+    </g>
+    <g id="dbcyl">
+      <ellipse cx="0" cy="-9" rx="16" ry="6" fill="#D7DBDF" stroke="#8A9299"/>
+      <path d="M-16,-9 V9 A16,6 0 0 0 16,9 V-9" fill="#E8EBEE" stroke="#8A9299"/>
+      <ellipse cx="0" cy="0" rx="16" ry="6" fill="none" stroke="#8A9299"/>
+    </g>
+    <g id="win">
+      <rect x="-38" y="-26" width="76" height="52" rx="7" fill="#ECEFF1" stroke="#90A4AE"/>
+      <line x1="-38" y1="-12" x2="38" y2="-12" stroke="#90A4AE"/>
+      <circle cx="-29" cy="-19" r="2.5" fill="#EF9A9A"/><circle cx="-20" cy="-19" r="2.5" fill="#FFF59D"/><circle cx="-11" cy="-19" r="2.5" fill="#A5D6A7"/>
+      <line x1="-28" y1="0" x2="28" y2="0" stroke="#B0BEC5" stroke-width="3"/>
+      <line x1="-28" y1="9" x2="20" y2="9" stroke="#CFD8DC" stroke-width="3"/>
+      <line x1="-28" y1="18" x2="26" y2="18" stroke="#CFD8DC" stroke-width="3"/>
+    </g>
+  </defs>
+  <rect width="1240" height="719" fill="#ffffff"/>
+
+  <!-- 顶部标签 -->
+  <g font-size="19" font-weight="700" fill="#222" text-anchor="middle">
+    <text x="287" y="48">Code Changes</text>
+    <text x="494" y="48">Reviewer</text>
+    <text x="745" y="48">App Code Repo</text>
+    <text x="907" y="48">Build</text>
+    <text x="1125" y="48">Image Registry</text>
+  </g>
+
+  <!-- Dev Team -->
+  <use href="#teal" x="45" y="215"/><use href="#teal" x="85" y="215"/><use href="#teal" x="125" y="215"/>
+  <text x="85" y="265" font-size="18" font-weight="700" fill="#222" text-anchor="middle">Dev Team</text>
+
+  <!-- Code Changes 窗口 -->
+  <g transform="translate(287,125)">
+    <rect x="-6" y="-6" width="88" height="64" rx="9" fill="#CFD8DC" opacity="0.55"/>
+    <use href="#win"/>
+    <text y="8" font-size="17" font-weight="700" fill="#455A64" text-anchor="middle">&lt;/&gt;</text>
+  </g>
+  <path d="M95 240 L230 150" fill="none" stroke="#333" stroke-width="2" marker-end="url(#bk)"/>
+  <path d="M330 118 H428" fill="none" stroke="#333" stroke-width="2" marker-end="url(#bk)"/>
+
+  <!-- Reviewer -->
+  <g transform="translate(462,112)">
+    <circle cx="-22" cy="0" r="18" fill="#E53935"/>
+    <path d="M-29,-7 L-15,7 M-15,-7 L-29,7" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="22" cy="0" r="18" fill="#43A047"/>
+    <path d="M14,0 L20,7 L31,-6" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <line x1="0" y1="-22" x2="0" y2="22" stroke="#90A4AE" stroke-width="1.5" stroke-dasharray="4 4"/>
+  </g>
+  <use href="#teal" x="462" y="185"/>
+  <path d="M492 118 H672" fill="none" stroke="#333" stroke-width="2" marker-end="url(#bk)"/>
+
+  <!-- App Code Repo -->
+  <g transform="translate(712,115)">
+    <use href="#gitred" x="-24"/>
+    <use href="#dbcyl" x="18" y="6"/><use href="#dbcyl" x="30" y="-6"/>
+  </g>
+  <path d="M760 108 H842" fill="none" stroke="#333" stroke-width="2" marker-end="url(#bk)"/>
+
+  <!-- Build -->
+  <g transform="translate(882,112)">
+    <circle r="40" fill="#F5B942"/>
+    <g transform="rotate(45)">
+      <rect x="-4" y="-2" width="8" height="30" rx="3" fill="#37474F"/>
+      <rect x="-16" y="-16" width="32" height="14" rx="4" fill="#78909C"/>
+    </g>
+  </g>
+  <text x="995" y="106" font-size="16" font-weight="700" fill="#222" text-anchor="middle">Container Images</text>
+  <path d="M925 112 H1078" fill="none" stroke="#333" stroke-width="2" marker-end="url(#bk)"/>
+
+  <!-- Image Registry -->
+  <g transform="translate(1125,105)"><use href="#win"/></g>
+
+  <!-- Config Updates → Env Config Repo -->
+  <path d="M882 155 V218" fill="none" stroke="#333" stroke-width="2" marker-end="url(#bk)"/>
+  <text x="895" y="192" font-size="16" font-weight="700" fill="#222">Config Updates</text>
+  <g transform="translate(742,282)">
+    <use href="#gitred" x="-38"/>
+    <use href="#dbcyl" x="0" y="8"/><use href="#dbcyl" x="14" y="-8"/>
+    <text x="46" y="-2" font-size="17" font-weight="700" fill="#222">Environment</text>
+    <text x="46" y="22" font-size="17" font-weight="700" fill="#222">Configuration</text>
+    <text x="46" y="46" font-size="17" font-weight="700" fill="#222">Repo</text>
+  </g>
+
+  <!-- Observes 长线：集群 → 镜像仓库 -->
+  <path d="M612 432 V330 H1125 V136" fill="none" stroke="#333" stroke-width="2" marker-end="url(#bk)"/>
+  <text x="655" y="320" font-size="16" font-weight="700" fill="#222">Observes</text>
+  <path d="M762 312 V330" fill="none" stroke="#333" stroke-width="2"/>
+
+  <!-- Kubernetes Cluster -->
+  <rect x="130" y="345" width="545" height="335" rx="28" fill="#FCFCFC" stroke="#BDBDBD" stroke-width="1.5"/>
+  <text x="402" y="662" font-size="19" font-weight="700" fill="#222" text-anchor="middle">Kubernetes Cluster</text>
+  <!-- 五边形 -->
+  <path d="M255 385 L390 485 L340 575 L175 575 L125 485 Z" fill="none" stroke="#9E9E9E" stroke-width="1.5"/>
+  <g fill="none" stroke="#9E9E9E" stroke-width="1.3">
+    <path d="M258 430 L296 458 L282 500 L234 500 L220 458 Z"/>
+    <path d="M322 425 L360 453 L346 495 L298 495 L284 453 Z"/>
+    <path d="M290 515 L328 543 L314 585 L266 585 L252 543 Z"/>
+  </g>
+  <g font-size="16" font-weight="700" fill="#333" text-anchor="middle">
+    <text x="258" y="478">App1</text>
+    <text x="322" y="473">App2</text>
+    <text x="290" y="563">App3</text>
+  </g>
+  <!-- k8s logo -->
+  <g transform="translate(196,540)">
+    <path d="M0,-30 L21,-21 L30,0 L21,21 L0,30 L-21,21 L-30,0 L-21,-21 Z" fill="#326CE5" stroke="#326CE5" stroke-width="6" stroke-linejoin="round"/>
+    <circle r="13" fill="none" stroke="#fff" stroke-width="3.5"/><circle r="3.5" fill="#fff"/>
+    <g stroke="#fff" stroke-width="3">
+      <line y1="-13" y2="-25"/><line y1="13" y2="25"/><line x1="-13" x2="-25"/><line x1="13" x2="25"/>
+      <line x1="-9" y1="-9" x2="-17" y2="-17"/><line x1="9" y1="9" x2="17" y2="17"/>
+      <line x1="-9" y1="9" x2="-17" y2="17"/><line x1="9" y1="-9" x2="17" y2="-17"/>
+    </g>
+  </g>
+  <!-- 火箭 -->
+  <g transform="translate(415,595) rotate(-30)">
+    <path d="M0,-30 Q14,-8 12,14 L-12,14 Q-14,-8 0,-30 Z" fill="#ECEFF1" stroke="#90A4AE" stroke-width="2"/>
+    <circle cy="-8" r="7" fill="#4DD0E1" stroke="#90A4AE"/>
+    <path d="M-12,2 L-22,18 L-12,14 Z M12,2 L22,18 L12,14 Z" fill="#90A4AE"/>
+    <path d="M-6,16 Q0,30 6,16" fill="#FFB74D"/>
+  </g>
+
+  <!-- Observes / Deploy -->
+  <text x="505" y="438" font-size="16" font-weight="700" fill="#222" text-anchor="middle">Observes</text>
+  <path d="M440 452 H542" fill="none" stroke="#333" stroke-width="2" marker-end="url(#bk)"/>
+  <path d="M542 482 H440" fill="none" stroke="#333" stroke-width="2" marker-end="url(#bk)"/>
+  <text x="505" y="508" font-size="16" font-weight="700" fill="#222" text-anchor="middle">Deploy</text>
+
+  <!-- Continuous Sync Operator -->
+  <g transform="translate(612,470)">
+    <path d="M-38,-14 A42,42 0 0 1 32,-26" fill="none" stroke="#8BC34A" stroke-width="14" stroke-linecap="round"/>
+    <path d="M26,-40 L44,-24 L20,-16 Z" fill="#8BC34A"/>
+    <path d="M38,14 A42,42 0 0 1 -32,26" fill="none" stroke="#FFC107" stroke-width="14" stroke-linecap="round"/>
+    <path d="M-26,40 L-44,24 L-20,16 Z" fill="#FFC107"/>
+    <text y="86" font-size="17" font-weight="700" fill="#222" text-anchor="middle">Continuous Sync</text>
+    <text y="108" font-size="17" font-weight="700" fill="#222" text-anchor="middle">Operator</text>
+  </g>
+</svg>

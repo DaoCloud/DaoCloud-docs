@@ -49,7 +49,7 @@ Amamba [Jenkins](https://github.com/amamba-io/jenkins-agent) 基于
 
 5. 多租户
 
-    基于 DCE5 的 Workspace 机制，我们对流水线和凭证做了隔离；
+    基于 Workspace 机制，我们对流水线和凭证做了隔离；
 
 此外，目前应用工作台也有着以下问题：
 
