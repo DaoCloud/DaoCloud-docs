@@ -125,4 +125,4 @@ For more details refer to [DaoCloud Style Guide of Writing](./style.md).
 
 | Site | Status
 |------|-------
-| daocloud-docs | [![Netlify Status](https://api.netlify.com/api/v1/badges/d193c503-c2f6-4c8f-99ee-db0371f90ceb/deploy-status)](https://app.netlify.com/sites/daocloud-docs/deploys)
+| daocloud | [![Netlify Status](https://api.netlify.com/api/v1/badges/b4b485f6-6ce3-4c47-a5e3-01835b0d96f0/deploy-status)](https://app.netlify.com/projects/daocloud/deploys)
