@@ -989,21 +989,21 @@ nav:
                       - 微服务管理: skoala/trad-ms/integrated/manage-service.md
                       - 链路追踪: skoala/trad-ms/integrated/trace.md
               - 插件中心:
-                  - 介绍: skoala/plugins/intro.md
+                  - 介绍: skoala/plugins/index.md
                   - 插件应用:
-                      - 云原生微服务使用JWT插件: skoala/best-practice/plugins/jwt.md
-                      - 云原生网关使用JWT插件: skoala/best-practice/jwt.md
-                      - 云原生网关认证服务器:
-                          - skoala/best-practice/auth-server.md
-                          - 接入 AK/SK 认证 : skoala/best-practice/ak-sk-demo.md
-                          - 接入 OIDC 认证 : skoala/best-practice/OIDC-auth.md
-                      - 云原生网关接入限流服务器: skoala/best-practice/global-ratelimit.md
+                      - 微服务 JWT 插件: skoala/plugins/jwt-ms.md
+                      - 网关 JWT 插件: skoala/plugins/jwt.md
+                      - 认证服务器:
+                          - 接入认证服务器: skoala/plugins/auth-server.md
+                          - 接入 AK/SK 认证 : skoala/plugins/ak-sk-demo.md
+                          - 接入 OIDC 认证 : skoala/plugins/OIDC-auth.md
+                      - 接入限流服务器: skoala/plugins/global-ratelimit.md
                   - 自定义插件示例:
-                      - caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
-                      - anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
-                      - crc32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
-                      - conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
-                      - payloadlimit: skoala/best-practice/envoy-extproc-payloadlimit-demo-go.md
+                      - caching: skoala/plugins/envoy-extproc-caching-demo-go.md
+                      - anti: skoala/plugins/envoy-extproc-anti-demo-go.md
+                      - crc32: skoala/plugins/envoy-extproc-crc32-check-demo-go.md
+                      - conv: skoala/plugins/envoy-extproc-method-conv-demo-go.md
+                      - payloadlimit: skoala/plugins/envoy-extproc-payloadlimit-demo-go.md
               - 最佳实践:
                   - 微服务治理应用示例: skoala/best-practice/use-skoala-01.md
                   - API 策略配置示例: skoala/best-practice/gateway02.md

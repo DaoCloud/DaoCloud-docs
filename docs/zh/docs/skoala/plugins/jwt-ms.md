@@ -8,10 +8,10 @@ DCE 微服务引擎支持在云原生微服务中使用 JWT 插件，为服务�
 
 ### 创建服务网格
 
-首先需要在 DCE 的[服务网格](../../../mspider/intro/index.md)模块中，为目标服务所在的集群创建服务网格。
+首先需要在 DCE 的[服务网格](../../mspider/intro/index.md)模块中，为目标服务所在的集群创建服务网格。
 目前支持创建托管网格、专有网格、外接网格三种类型的网格。
 
-有关具体网格的创建步骤，可参考[创建托管/专有网格](../../../mspider/user-guide/service-mesh/index.md)或[创建外接网格](../../../mspider/user-guide/service-mesh/external-mesh.md)。
+有关具体网格的创建步骤，可参考[创建托管/专有网格](../../mspider/user-guide/service-mesh/index.md)或[创建外接网格](../../mspider/user-guide/service-mesh/external-mesh.md)。
 
 ![add-mesh](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-jwt01.png)
 
@@ -24,8 +24,8 @@ DCE 微服务引擎支持在云原生微服务中使用 JWT 插件，为服务�
 !!! note
 
     - 由于此次演示使用的服务是 opentelemetry-demo-lite，所以使用 Helm 模板的形式部署应用。
-    - 如您使用其他服务，可以通过[创建工作负载](../../../kpanda/user-guide/workloads/create-deployment.md)或
-      [Helm 模板](../../../kpanda/user-guide/helm/helm-app.md)或其他方式在集群中部署应用。
+    - 如您使用其他服务，可以通过[创建工作负载](../../kpanda/user-guide/workloads/create-deployment.md)或
+      [Helm 模板](../../kpanda/user-guide/helm/helm-app.md)或其他方式在集群中部署应用。
 
 ### 为网格绑定工作空间
 
@@ -35,7 +35,7 @@ DCE 微服务引擎支持在云原生微服务中使用 JWT 插件，为服务�
 
 ### 在微服务引擎中接入服务
 
-进入微服务引擎模块，将演示应用导入云原生微服务模块，具体步骤可参考[导入服务](../../cloud-ms/traffic-control.md)。
+进入微服务引擎模块，将演示应用导入云原生微服务模块，具体步骤可参考[导入服务](../cloud-ms/traffic-control.md)。
 
 ![add-mesh](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-jwt04.png)
 
