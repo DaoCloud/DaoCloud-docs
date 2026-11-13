@@ -7,7 +7,7 @@ hide:
 
 # Microservice Engine Features
 
-The DCE Microservice Engine provides the following features:
+The Microservice Engine provides the following features:
 
 | Feature | Subfeature | Description |
 | ------ | ---------- | ----------- |
