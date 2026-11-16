@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 420" font-family="'Segoe UI',Roboto,'Helvetica Neue',Arial,system-ui,sans-serif">
+  <style>
+    .k-bg{fill:#ffffff}
+    .k-deco{fill:#EEF2F8}
+    .k-title{fill:#1F2329}
+    .k-card{fill:#F0F2F5}
+    .k-muted{fill:#6B7280}
+    @media (prefers-color-scheme: dark) {
+      .k-bg{fill:#1F2227}
+      .k-deco{fill:#2A2F36}
+      .k-title{fill:#E6E8EB}
+      .k-card{fill:#2A2F36}
+      .k-muted{fill:#9AA3AE}
+    }
+  </style>
+  <defs>
+    <polygon id="chev-first" points="0,0 300,0 324,24 300,48 0,48"/>
+    <polygon id="chev-next" points="0,0 300,0 324,24 300,48 0,48 -24,24"/>
+    <g id="icon-cube">
+      <polygon points="-9,-4 0,-9 9,-4 0,1" fill="#ffffff"/>
+      <polygon points="-9,-4 0,1 0,11 -9,6" fill="#ffffff" opacity="0.82"/>
+      <polygon points="9,-4 0,1 0,11 9,6" fill="#ffffff" opacity="0.62"/>
+    </g>
+    <g id="icon-cluster" stroke="#ffffff" stroke-width="2">
+      <line x1="-7" y1="-5" x2="7" y2="-5"/>
+      <line x1="-7" y1="-5" x2="0" y2="7"/>
+      <line x1="7" y1="-5" x2="0" y2="7"/>
+      <circle cx="-7" cy="-5" r="4" fill="#ffffff" stroke="none"/>
+      <circle cx="7" cy="-5" r="4" fill="#ffffff" stroke="none"/>
+      <circle cx="0" cy="7" r="4" fill="#ffffff" stroke="none"/>
+    </g>
+    <g id="icon-cloud">
+      <path fill="#ffffff" d="M-12,8 h24 a6.5,6.5 0 0 0 1.2,-12.9 a10,10 0 0 0 -19.2,-3.4 a8,8 0 0 0 -6,16.3 z"/>
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1080" height="420" class="k-bg"/>
+  <circle cx="1058" cy="16" r="110" class="k-deco"/>
+
+  <!-- Top: Cloud First → Cloud Smart -->
+  <text x="200" y="66" font-size="24" font-weight="700" class="k-title" text-anchor="middle">Cloud First</text>
+  <rect x="330" y="50" width="392" height="14" fill="#A9C3F0"/>
+  <polygon points="722,40 772,57 722,74" fill="#A9C3F0"/>
+  <text x="880" y="66" font-size="24" font-weight="700" class="k-title" text-anchor="middle">Cloud Smart</text>
+
+  <!-- Three stage chevrons -->
+  <g fill="#2563EB">
+    <use href="#chev-first" x="34" y="110"/>
+    <use href="#chev-next" x="378" y="110"/>
+    <use href="#chev-next" x="722" y="110"/>
+  </g>
+  <g fill="#ffffff" font-size="19" font-weight="700" text-anchor="middle">
+    <text x="196" y="140">App Migration</text>
+    <text x="540" y="140">Hybrid Cloud</text>
+    <text x="884" y="140">Multicloud</text>
+  </g>
+
+  <!-- Three description cards -->
+  <g class="k-card">
+    <rect x="40" y="200" width="317" height="185" rx="10"/>
+    <rect x="381" y="200" width="317" height="185" rx="10"/>
+    <rect x="722" y="200" width="318" height="185" rx="10"/>
+  </g>
+  <g fill="#2563EB">
+    <circle cx="198" cy="254" r="27"/>
+    <circle cx="539" cy="254" r="27"/>
+    <circle cx="881" cy="254" r="27"/>
+  </g>
+  <use href="#icon-cube" x="198" y="254"/>
+  <use href="#icon-cluster" x="539" y="254"/>
+  <use href="#icon-cloud" x="881" y="254"/>
+  <g text-anchor="middle" class="k-title">
+    <text x="198" y="318" font-size="20" font-weight="700">Single Cloud</text>
+    <text x="539" y="318" font-size="20" font-weight="700">Hybrid Cloud</text>
+    <text x="881" y="318" font-size="20" font-weight="700">Multicloud</text>
+  </g>
+  <g text-anchor="middle" class="k-muted" font-size="13">
+    <text x="198" y="342">Migrate applications and run them</text>
+    <text x="198" y="360">on a single cloud</text>
+    <text x="539" y="346">Connect private and public clouds</text>
+    <text x="881" y="346">Multiple private and public clouds</text>
+  </g>
+</svg>
