@@ -14,7 +14,7 @@ d.run 采用离线安装：在称为[火种节点](./commercial/deploy-arch.md)�
 
 !!! tip "版本说明"
 
-    本文以安装器 v0.45.0 为例。安装器、离线包与 osPackage 三者的版本必须相互匹配，各版本变化请查阅
+    本文以安装器 v0.46.0 为例。安装器、离线包与 osPackage 三者的版本必须相互匹配，各版本变化请查阅
     [安装器 Release Notes](./release-notes.md)。若要安装 Token 工厂，请参阅
     [Token 工厂安装指南](../../tf/install/index.md)，两者的清单文件与默认模块不同。
 
