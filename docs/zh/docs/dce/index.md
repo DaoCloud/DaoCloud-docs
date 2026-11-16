@@ -49,7 +49,7 @@ DaoCloud Enterprise (DCE) 以 K8s 作为开发底座，提供了高度可扩展�
 
 <div class="tf-arch tf-arch--compact">
   <div class="tf-arch-layer tf-arch-layer--compute">
-    <div class="tf-arch-layer-label">云原生底座</div>
+    <div class="tf-arch-layer-label">开箱即用的功能模块</div>
     <div class="tf-arch-cards">
       <a class="tf-arch-card tf-arch-card--compute" href="../middleware/">
         <span class="tf-arch-card-title">中间件</span>
