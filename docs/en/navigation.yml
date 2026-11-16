@@ -1029,7 +1029,7 @@ nav:
                   - Permissions: ghippo/permissions/mspider.md
                   - Spec for App Integration: mspider/intro/app-spec.md
                   - System Components and Architecture:
-                      - Architecture: mspider/intro/comp-archi-ui/architect.md
+                      - Architecture: mspider/intro/comp-archi-ui/index.md
                       - Control Plane Components: mspider/intro/comp-archi-ui/cp-component.md
                       - System Namespaces: mspider/intro/comp-archi-ui/namespaces.md
                       - Features Supported on UI: mspider/intro/comp-archi-ui/features-on-ui.md

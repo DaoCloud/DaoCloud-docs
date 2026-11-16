@@ -3,144 +3,189 @@ hide:
   - toc
 ---
 
-# 什么是服务网格
+# 服务网格
 
-服务网格是基于 Istio 开源技术构建的面向云原生应用的下一代服务网格。
-
-服务网格是一种具备高性能、高易用性的全托管服务网格产品，通过提供完整的非侵入式的微服务治理方案，能够统一治理多云多集群的复杂环境，
+服务网格是基于 Istio 开源技术构建的面向云原生应用的下一代服务网格，
+通过提供完整的非侵入式微服务治理方案，统一治理多云多集群的复杂环境，
 以基础设施的方式为用户提供服务流量治理、安全性治理、服务流量监控以及传统微服务（SpringCloud、Dubbo）功能。
 
-DCE 的服务网格兼容社区原生 Istio 开源服务网格，提供原生 Istio 接入管理能力。在较高的层次上，服务网格有助于降低服务治理的复杂性，减轻开发运维团队的压力。
+服务网格兼容社区原生 Istio 开源服务网格，提供原生 Istio 接入管理能力。
+在较高的层次上，服务网格有助于降低服务治理的复杂性，减轻开发运维团队的压力。
+服务网格无缝对接[容器管理](../../kpanda/intro/index.md)平台，并作为基础设施为[微服务引擎](../../skoala/intro/index.md)提供容器微服务治理支持，方便用户通过单一平台对各类微服务系统做统一管理。
 
-服务网格作为 DCE 产品的体系一员，无缝对接[容器管理](../../kpanda/intro/index.md)平台，可以为用户提供开箱即用的上手体验，
-并作为基础设施为[微服务引擎](../../skoala/intro/index.md)提供容器微服务治理支持，方便用户通过单一平台对各类微服务系统做统一管理。
-[查看/下载《服务网格用户手册》PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/mspider.pdf){ .md-button }
+## 核心能力
+
+<div class="grid cards" markdown>
+
+- :material-lan:{ .lg .middle } __网格创建与管理__
+
+    ---
+
+    支持托管网格、专有网格、外接网格三种模式，覆盖网格创建、删除与容量管理，提供免运维的托管控制面。
+
+    [:arrow_forward: 创建网格](../user-guide/service-mesh/index.md)
+
+- :material-swap-horizontal:{ .lg .middle } __流量治理__
+
+    ---
+
+    通过虚拟服务、目标规则、网关规则配置权重、内容、TCP/IP 等路由策略，实现动态智能路由与弹性流量管理。
+
+    [:arrow_forward: 流量治理](../user-guide/traffic-governance/README.md)
+
+- :material-chart-line:{ .lg .middle } __流量监控__
+
+    ---
+
+    可视化展现链路信息、服务异常响应、超长响应时延等指标，结合流量拓扑快速定位问题。
+
+    [:arrow_forward: 流量监控](../user-guide/traffic-monitor/README.md)
+
+- :material-shield-check:{ .lg .middle } __安全治理__
+
+    ---
+
+    提供对等身份认证、请求身份认证与授权策略，通过 mTLS 保障服务间通信安全。
+
+    [:arrow_forward: 安全治理](../user-guide/security/README.md)
+
+- :material-car-outline:{ .lg .middle } __边车管理__
+
+    ---
+
+    按命名空间或工作负载注入边车，支持边车资源优化、流量透传与日志级别调整。
+
+    [:arrow_forward: 边车管理](../user-guide/sidecar-management/ns-sidecar.md)
+
+- :material-gate:{ .lg .middle } __网格网关__
+
+    ---
+
+    创建并管理网格网关实例，为网格内服务提供统一的南北向流量入口。
+
+    [:arrow_forward: 创建网关实例](../user-guide/gateway-instance/create.md)
+
+</div>
+
+## 使用流程
+
+使用服务网格通常分为 **部署接入** 与 **治理观测** 两个阶段：管理员先安装模块、创建网格并纳管集群，业务用户随后注入边车，即可使用流量治理、安全治理与流量监控等治理能力。
+
+```mermaid
+flowchart LR
+    A["① 安装部署<br/>部署服务网格模块"] --> B["② 创建网格<br/>托管 · 专有 · 外接"]
+    B --> C["③ 纳管集群<br/>集群接入网格"]
+    C --> D["④ 注入边车<br/>命名空间 · 工作负载"]
+    D --> E["⑤ 治理与观测<br/>流量 · 安全 · 监控"]
+
+    click A href "../install/install/"
+    click B href "../user-guide/service-mesh/"
+    click C href "../user-guide/cluster-management/join-clus/"
+    click D href "../user-guide/sidecar-management/ns-sidecar/"
+    click E href "../user-guide/traffic-governance/"
+```
+
+| 步骤 | 角色 | 说明 |
+| --- | --- | --- |
+| ① [安装部署](../install/install.md) | 平台管理员 | 在集群中部署服务网格模块 |
+| ② [创建网格](../user-guide/service-mesh/index.md) | 平台管理员 | 创建托管、专有或外接模式的网格 |
+| ③ [纳管集群](../user-guide/cluster-management/join-clus.md) | 平台管理员 | 将一个或多个集群接入网格统一管理 |
+| ④ [注入边车](../user-guide/sidecar-management/ns-sidecar.md) | 业务用户 | 按命名空间或工作负载注入边车代理 |
+| ⑤ [流量治理](../user-guide/traffic-governance/README.md)与[流量监控](../user-guide/traffic-monitor/README.md) | 业务用户 | 配置路由与安全策略，实时监控服务运行状态 |
 
 ## 产品优势
 
-DCE 服务网格相比其他产品具备以下优势：
+服务网格相比其他产品具备以下优势：
 
-- 简单易用
+| 优势 | 说明 |
+| ---- | ---- |
+| 简单易用 | 无需修改任何业务代码，也无需手动安装代理，开启服务网格功能即可体验无侵入服务治理 |
+| 策略化的智能路由与弹性流量管理 | 权重、内容、TCP/IP 等路由规则；HTTP 会话保持；限流与离群检测；网络长连接管理；服务安全认证、鉴权、审计 |
+| 图形化应用全景拓扑 | 链路信息、服务异常响应、超长响应时延等可视化监控，结合调用链信息更快定位问题 |
+| 性能增强、可靠性增强 | 控制面和数据面基于社区版本进行加固和性能优化 |
+| 多云多集群、多基础设施 | 免运维托管控制面，全局统一服务治理、安全与监控；统一服务发现和管理容器与虚拟机（VM）等多种基础设施 |
+| 协议扩展 | 支持 Dubbo 协议 |
+| 传统 SDK 集成 | Spring Cloud、Dubbo 等传统微服务 SDK 业务无需大量代码改造即可迁移到云原生网格环境运行 |
 
-    无需修改任何业务代码，也无需手动安装代理，只需开启服务网格功能，即可体验丰富的无侵入服务治理能力。
+## 快速上手
 
-- 策略化的智能路由与弹性流量管理
+<style>
+.mspider-path{display:flex;gap:0.75rem;margin:1rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.mspider-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.mspider-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.mspider-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.mspider-path-step:last-child::after{display:none}
+.mspider-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.mspider-path-title{font-weight:700;font-size:0.95rem}
+.mspider-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.mspider-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.mspider-path-step::after{display:none}}
+</style>
 
-    支持为服务配置负载均衡、服务路由、故障注入、离群检测等治理规则。
-    结合一站式治理系统；提供实时的、可视化的微服务流量管理；
-    支持无侵入智能流量治理，应用无需任何改造，即可进行动态的智能路由和弹性流量管理。
+<div class="mspider-path">
+  <a class="mspider-path-step" style="--path-c:#2196f3" href="../install/install/">
+    <span class="mspider-path-num">1</span>
+    <span class="mspider-path-title">安装部署</span>
+    <span class="mspider-path-desc">部署服务网格模块</span>
+    <span class="mspider-path-go">Go →</span>
+  </a>
+  <a class="mspider-path-step" style="--path-c:#00acc1" href="../user-guide/service-mesh/">
+    <span class="mspider-path-num">2</span>
+    <span class="mspider-path-title">创建网格</span>
+    <span class="mspider-path-desc">托管 · 专有 · 外接</span>
+    <span class="mspider-path-go">Go →</span>
+  </a>
+  <a class="mspider-path-step" style="--path-c:#43a047" href="../user-guide/cluster-management/join-clus/">
+    <span class="mspider-path-num">3</span>
+    <span class="mspider-path-title">纳管集群</span>
+    <span class="mspider-path-desc">集群接入网格</span>
+    <span class="mspider-path-go">Go →</span>
+  </a>
+  <a class="mspider-path-step" style="--path-c:#fb8c00" href="../user-guide/sidecar-management/ns-sidecar/">
+    <span class="mspider-path-num">4</span>
+    <span class="mspider-path-title">注入边车</span>
+    <span class="mspider-path-desc">命名空间 · 工作负载</span>
+    <span class="mspider-path-go">Go →</span>
+  </a>
+  <a class="mspider-path-step" style="--path-c:#8e24aa" href="../user-guide/traffic-governance/">
+    <span class="mspider-path-num">5</span>
+    <span class="mspider-path-title">治理与观测</span>
+    <span class="mspider-path-desc">流量 · 安全 · 监控</span>
+    <span class="mspider-path-go">Go →</span>
+  </a>
+</div>
 
-    - 权重、内容、TCP/IP 等路由规则。
-    - HTTP 会话保持，满足业务处理持续性诉求。
-    - 限流、离群检测，实现服务间链路稳定、可靠。
-    - 网络长连接管理降低资源损耗，提升网络吞吐量。
-    - 服务安全认证：认证、鉴权、审计等，提供服务安全保障基石。
+## 更多资源
 
-- 图形化应用全景拓扑，流量治理可视化
+<div class="grid cards" markdown>
 
-    服务网格提供了可视化的流量监控，包括链路信息、服务异常响应、超长响应时延等信息，通过图表以及拓扑等多样化形式全面展现业务运行情况。
+- :material-map-outline:{ .lg .middle } __产品架构__
 
-    服务网格可以结合应用运维管理、应用性能管理服务，提供详细的微服务级流量监控、异常响应流量报告以及调用链信息，能够更快速、更准确的定位问题。
+    ---
 
-- 性能增强，可靠性增强
+    了解服务网格的整体架构、控制面组件与系统命名空间。
 
-    服务网格控制面和数据面基于社区版本的基础上进行更可靠的加固和性能优化。
+    [:arrow_forward: 查看产品架构](comp-archi-ui/index.md)
 
-- 多云多集群、多基础设施
+- :material-chat-question-outline:{ .lg .middle } __常见问题__
 
-    提供免运维的托管控制面，提供多云多集群的全局统一的服务治理、安全和服务运行监控能力，还提供对容器和虚拟机（VM）等多种基础设施的统一服务发现和管理。
+    ---
 
-- 协议扩展
+    服务网格使用过程中的常见问题与解决办法。
 
-    支持 Dubbo 协议。
+    [:arrow_forward: 查看常见问题](faq.md)
 
-- 传统 SDK 集成
+- :material-bug-outline:{ .lg .middle } __故障排查__
 
-    提供 Spring Cloud、Dubbo 等传统微服务 SDK 的集成解决方案，传统微服务 SDK 开发的业务无需大量代码改造即可快速迁移到云原生容网格运行环境上运行。
+    ---
 
-## 学习路径
+    持续更新的排障手册，覆盖创建网格、纳管集群、边车等常见故障案例。
 
-服务网格的学习路径如下：
+    [:arrow_forward: 查看故障排查](../troubleshoot/index.md)
 
-```mermaid
-flowchart TD
-
-    install([安装部署])
-    install --> mesh[创建网格]
-        subgraph mesh[创建网格]
-            managed[托管网格]
-            private[专有网格]
-            external[外接网格]
-            
-        end
-
-    mesh --> cluster[纳管集群]
-
-    cluster --> inject[注入边车]
-
-        subgraph inject[注入边车]
-            namespace[命名空间注入]
-            workload[工作负载注入]
-        end
-
-    inject -.-> service[服务管理]
-    inject -.-> traffic[流量治理]
-    inject -.-> security[安全治理]
-    inject -.-> sidecar[边车管理]
-    inject -.-> watch[流量监控]
-    inject -.-> gateway[网格网关]
-    inject -.-> config[网格配置]
-    inject -.-> upgrade[版本升级]
-    
-    service -.-> entry[服务条目<br>一键修复]
-    traffic -.-> virtual[虚拟服务<br>目标规则<br>网关规则]
-    security -.-> peer[对等身份认证<br>请求身份认证<br>授权策略]
-    sidecar -.-> sidecarm[命名空间边车<br>工作负载边车<br>边车流量透传]
-    watch -.-> watch2[流量监控<br>流量拓扑]
-    config -.-> intercon[多云互联<br>Istio资源<br>TLS密钥]
-    upgrade -.-> upgrade1[Istio 升级<br>边车升级]
-
-    click install "https://docs.daocloud.io/mspider/install/install/"
-    click managed "https://docs.daocloud.io/mspider/user-guide/service-mesh/"
-    click private "https://docs.daocloud.io/mspider/user-guide/service-mesh/"
-    click external "https://docs.daocloud.io/mspider/user-guide/service-mesh/external-mesh/"
-    click cluster "https://docs.daocloud.io/mspider/user-guide/cluster-management/join-clus/"
-    click global "https://docs.daocloud.io/mspider/user-guide/sidecar-management/global-sidecar/"
-    click namespace "https://docs.daocloud.io/mspider/user-guide/sidecar-management/ns-sidecar/"
-    click workload "https://docs.daocloud.io/mspider/user-guide/sidecar-management/workload-sidecar/"
-    click gateway "https://docs.daocloud.io/mspider/user-guide/gateway-instance/create/"
-    click service "https://docs.daocloud.io/mspider/user-guide/service-list/"
-    click traffic "https://docs.daocloud.io/mspider/user-guide/traffic-governance/"
-    click security "https://docs.daocloud.io/mspider/user-guide/security/"
-    click watch "https://docs.daocloud.io/mspider/user-guide/traffic-monitor/"
-    click upgrade "https://docs.daocloud.io/mspider/user-guide/upgrade/istio-update/"
-    click entry "https://docs.daocloud.io/mspider/user-guide/service-list/service-entry/"
-    click virtual "https://docs.daocloud.io/mspider/user-guide/traffic-governance/virtual-service/"
-    click peer "https://docs.daocloud.io/mspider/user-guide/security/peer/"
-    click sidecar "https://docs.daocloud.io/mspider/user-guide/sidecar-management/ns-sidecar/"
-    click sidecarm "https://docs.daocloud.io/mspider/user-guide/sidecar-management/passthrough/"
-    click watch2 "https://docs.daocloud.io/mspider/user-guide/traffic-monitor/conn-topo/"
-    click intercon "https://docs.daocloud.io/mspider/user-guide/multicluster/cluster-interconnect/"
-```
-
-## 常见问题和故障案例
-
-- [服务网格常见问题](./faq.md)
-- [创建网格时找不到所属集群](../troubleshoot/cannot-find-cluster.md)
-- [创建网格时一直处于“创建中”，最终创建失败](../troubleshoot/always-in-creating.md)
-- [创建的网格异常，但无法删除网格](../troubleshoot/failed-to-delete.md)
-- [托管网格纳管集群失败](../troubleshoot/failed-to-add-cluster.md)
-- [托管网格纳管集群时 istio-ingressgateway 异常](../troubleshoot/hosted-mesh-errors.md)
-- [网格空间无法正常解绑](../troubleshoot/mesh-space-cannot-unbind.md)
-- [DCE 4.0 接入问题追踪](../troubleshoot/dce4.0-issues.md)
-- [命名空间边车配置与工作负载边车冲突](../troubleshoot/sidecar.md)
-- [托管网格多云互联异常](../troubleshoot/cluster-interconnect.md)
-- [边车占用大量内存](../troubleshoot/sidecar-memory-err.md)
-- [创建网格时，集群列表存在未知集群](../troubleshoot/cluster-already-exist.md)
-- [托管网格 APIServer 证书过期处理办法](../troubleshoot/hosted-apiserver-cert-expiration.md)
-- [服务网格中常见的 503 报错](../troubleshoot/503-issue.md)
-- [如何使集群中监听 localhost 的应用被其它 Pod 访问](../troubleshoot/localhost-by-pod.md)
+</div>
 
 [下载中心](https://docs.daocloud.io/download/){ .md-button }
 [了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
 [了解 d.run AI 操作系统](https://docs.daocloud.io/drun/){ .md-button }
+[查阅《服务网格用户手册》PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/mspider.pdf){ .md-button }
