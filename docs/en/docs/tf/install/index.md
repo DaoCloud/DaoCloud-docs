@@ -16,7 +16,7 @@ images, osPackage offline packages, and optionally Addon offline packages.
 
 !!! tip "Version note"
 
-    This page uses installer v0.45.0 as an example. The versions of the installer, the offline image package, and the
+    This page uses installer v0.46.0 as an example. The versions of the installer, the offline image package, and the
     osPackage packages must match each other. For version changes, see the
     [installer Release Notes](./release-notes.md). To install d.run AI OS instead, see the
     [d.run AI OS installation guide](../../drun/install/index.md); the manifest file and default modules differ.

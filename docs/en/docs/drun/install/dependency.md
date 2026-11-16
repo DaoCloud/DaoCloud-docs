@@ -27,7 +27,7 @@ proceed to [offline installation](./start-install.md).
 1. Download the script.
 
     ```bash
-    export VERSION=v0.45.0   # (1)!
+    export VERSION=v0.46.0   # (1)!
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
@@ -53,14 +53,14 @@ Therefore, you need to create an offline package in an online environment first.
 1. Find a machine with internet access and download the installation script.
 
     ```bash
-    export VERSION=v0.45.0
+    export VERSION=v0.46.0
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
 2. Download the offline package for prerequisites.
 
     ```bash
-    export VERSION=v0.45.0  
+    export VERSION=v0.46.0  
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz
     ```
 
