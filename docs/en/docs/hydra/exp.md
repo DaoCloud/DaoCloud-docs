@@ -80,7 +80,7 @@ Select a model service:
 
 ![Select an image model](./images/exp07.png)
 
-Enter a prompt, choose a size, and click **Generate**:
+In the **Positive prompt** field, enter a prompt such as `a kitten`, select **Size**: `1024 × 1024`, and click **Generate**:
 
 ![Generate an image](./images/exp08.png)
 
@@ -92,6 +92,6 @@ The experience center supports built-in speech recognition models and services y
 
 1. On your first visit, select an API key. If you do not have one, you can authorize the platform to create one automatically.
 2. Select a speech recognition model from the list.
-3. Click **Upload audio** to upload an audio file, then click **Start recognition** to generate a transcript.
+3. Click **Click to upload** to upload an audio file, then click **Start recognition** to generate a transcript.
 
 ![Speech recognition](./images/exp09.png)
