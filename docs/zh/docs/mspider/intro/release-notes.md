@@ -83,7 +83,7 @@
 ### 背景
 
 因为 Istio 社区在 [v1.23 废弃 In-Cluster Operator](https://istio.io/latest/blog/2024/in-cluster-operator-deprecation-announcement/)，
-且在 v1.24 中彻底废弃，DCE 服务网格内置的 Istio 组件采用了 Istio In-Cluster Operator，
+且在 v1.24 中彻底废弃，服务网格内置的 Istio 组件采用了 Istio In-Cluster Operator，
 因此为了保证 Istio 1.23 以后的版本能够正常安装，
 我们开发了 [Pluma Operator](https://github.com/pluma-tools/pluma-operator)，并且进行开源。
 当在服务网格中的 Istio 版本大于等于 1.23 时，将自动切换 Operator（Istio In-Cluster Operator -> Pluma Operator）
