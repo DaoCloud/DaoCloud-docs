@@ -1,36 +1,100 @@
 ---
 hide:
   - toc
-MTPE: WANG0608GitHub
-date: 2024-07-10
 ---
 
-# What is Multicloud Management?
+# Multicloud Management
 
-Cloud computing has been developing in China for nearly 15 years, and with the maturity of technology, enterprise are not satisfied with simply moving their applications to the cloud. Instead, more complex multicloud requirements have emerged. The development process of cloud computing from single cloud to multicloud is illustrated below:
+Multicloud Management (Kairship) is an application-centric, out-of-the-box orchestration platform
+for multicloud applications. It enables centralized management of multicloud and hybrid-cloud
+environments, providing cross-cloud application deployment, release, and operations capabilities.
+It supports application autoscaling based on cluster resources to achieve global load balancing,
+and offers failover capabilities that thoroughly address disaster recovery for multicloud applications.
+Developers can use multiple clouds as if they were a single Kubernetes cluster: it is compatible
+with native Kubernetes APIs, upgrades from single-cluster to multi-cluster with zero modification,
+and seamlessly integrates with the existing single-cluster toolchain ecosystem.
 
-![evolution](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/what01.png)
+![From single cloud to multicloud](../images/what.svg)
 
-At the early stage, enterprises simply migrated their applications to the cloud. However, now they want to select clouds and customize their own multicloud environment.
+## Key Capabilities
 
-According to statistics, the current distribution of multicloud adoption by businesses choosing to the cloud are as follows:
+<div class="grid cards" markdown>
 
-| Cloud Solutions | Market Share |
-| ------------------------ | ------------ |
-| multiple public clouds + multiple private clouds | 43% |
-| multiple public clouds + one private cloud | 29% |
-| one public cloud + multiple private clouds | 12% |
-| one public cloud + one private cloud | 9% |
-| one public cloud or one private cloud | 7% |
+- :material-cloud-plus-outline:{ .lg .middle } __Multicloud Application Deployment__
 
-As the table shows, multicloud has become the mainstream in the market. This also explains why DaoCloud crafted the Multicloud Management module in DCE.
+    ---
 
-MultiCloud Management is an application-centric platform for efficiently managing applications across multiple clouds.
-It allows centralized management of multicloud and hybrid-cloud environments, providing cross-cloud deployment, release, and operational components. Scaling of applications based on cluster resources supports global load balancing, and it provides disaster recovery that fully addresses the disaster recovery problem for multicloud applications.
+    Define multi-cluster scheduling requirements with the PropagationPolicy deployment policy, supporting 1:N policy mapping and default policies to distribute workloads across clouds.
 
-![workload](../images/workload01.png)
+    [:arrow_forward: Configure deployment policies](../policy/propagation.md)
 
-[Demo video: One-Click Conversion to Multicloud](../../videos/use-cases.md#_2)
+- :material-swap-horizontal:{ .lg .middle } __One-Click Conversion__
+
+    ---
+
+    Convert single-cloud workloads to multicloud workloads with one click, migrating existing applications with zero modification.
+
+    [:arrow_forward: One-click conversion](../workload/promote.md)
+
+- :material-tune:{ .lg .middle } __Differentiated Configuration__
+
+    ---
+
+    Automatically generate differentiated configurations for different clusters with OverridePolicy, such as adapting image registry addresses by region or storage classes by cloud vendor.
+
+    [:arrow_forward: Configure override policies](../policy/override.md)
+
+- :material-chart-line:{ .lg .middle } __Global Autoscaling__
+
+    ---
+
+    Scale applications based on cluster resources, with cross-cluster FHPA autoscaling support for global load balancing.
+
+    [:arrow_forward: Cross-cluster autoscaling](../best-practice/fhpa.md)
+
+- :material-cloud-sync-outline:{ .lg .middle } __Failure Recovery__
+
+    ---
+
+    Built-in policy sets for multiple scenarios — two cities and three centers, dual-active within a city, and cross-region disaster recovery — with failover to solve multicloud application disaster recovery.
+
+    [:arrow_forward: Failover](../failover/failover.md)
+
+- :material-cube-outline:{ .lg .middle } __Multicloud Resource Management__
+
+    ---
+
+    Centrally manage multicloud workloads and resources such as ConfigMap, Secret, Service, and Ingress, with support for multicloud custom resources (CRDs).
+
+    [:arrow_forward: Create multicloud workloads](../workload/deployment.md)
+
+</div>
+
+## Workflow
+
+Using multicloud management typically involves two phases, **environment preparation** and **application governance**: administrators first create a multicloud instance and integrate worker clusters, then business users create multicloud workloads, configure scheduling policies, and keep applications running stably with autoscaling and failover.
+
+```mermaid
+flowchart LR
+    A["① Create a multicloud instance<br/>Management entry point"] --> B["② Integrate worker clusters<br/>Manage existing Kubernetes clusters"]
+    B --> C["③ Create multicloud workloads<br/>Forms · YAML · one-click conversion"]
+    C --> D["④ Configure scheduling policies<br/>PropagationPolicy · OverridePolicy"]
+    D --> E["⑤ Autoscaling & failover<br/>FHPA · disaster recovery"]
+
+    click A href "../instance/add/"
+    click B href "../cluster/"
+    click C href "../workload/deployment/"
+    click D href "../policy/propagation/"
+    click E href "../failover/failover/"
+```
+
+| Step | Role | Description |
+| --- | --- | --- |
+| ① [Create a multicloud instance](../instance/add.md) | Platform administrator | Create a multicloud instance as the management entry point for multicloud resources and policies |
+| ② [Manage worker clusters](../cluster.md) | Platform administrator | Integrate or register member clusters for unified multicloud scheduling |
+| ③ [Create multicloud workloads](../workload/deployment.md) | Business user | Create multicloud Deployments via forms or YAML, or [convert](../workload/promote.md) single-cloud applications with one click |
+| ④ Configure [deployment policies](../policy/propagation.md) and [override policies](../policy/override.md) | Business user | Define multi-cluster scheduling requirements and generate differentiated configurations per cluster as needed |
+| ⑤ [Failover](../failover/failover.md) and [cross-cluster autoscaling](../best-practice/fhpa.md) | Platform administrator | Configure FHPA to handle load fluctuations and use failover to ensure business continuity |
 
 ## Basic Concepts
 
@@ -48,30 +112,93 @@ It allows centralized management of multicloud and hybrid-cloud environments, pr
 
 Empowering developers to use **multicloud as if it were a single Kubernetes cluster**, multicloud management offers the following advantages:
 
-* **Compatible with Kubernetes Native API**
-  
-    Upgrade from single-cluster to multi-cluster with zero modification.
+| Advantage | Description |
+| --------- | ----------- |
+| Compatible with Kubernetes native API | Upgrade from single-cluster to multi-cluster with zero modification. |
+| Seamless integration with the Kubernetes toolchain ecosystem | Freedom from vendor lock-in: multicloud platform support, automatic allocation, and flexible migration; no dependency on commercial vendor products. |
+| Rich multi-cluster scheduling | Cluster affinity scheduling for high-availability multi-cluster deployments with fine granularity; supports multiple regions, availability zones, clusters, and vendors. |
+| Open and neutral | Jointly initiated by organizations from internet, finance, manufacturing, telecommunications, and cloud industries; out-of-the-box built-in policy sets for multiple scenarios — dual-active across cities, two-city three-center DR, and cross-region disaster recovery. |
+| Centralized management | No need to worry about cluster location; supports public cloud, private cloud, and edge clusters. |
 
-* **Seamless Integration with the Kubernetes Toolchain Ecosystem**
+## Quick Start
 
-    * Freedom from vendor lock-in: multicloud platform support, automatic allocation, and flexible migration.
-    * No dependency on commercial vendor products.
+<style>
+.kairship-path{display:flex;gap:0.75rem;margin:1rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.kairship-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.kairship-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.kairship-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.kairship-path-step:last-child::after{display:none}
+.kairship-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.kairship-path-title{font-weight:700;font-size:0.95rem}
+.kairship-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.kairship-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.kairship-path-step::after{display:none}}
+</style>
 
-* **Rich Multi-Cluster Scheduling**
+<div class="kairship-path">
+  <a class="kairship-path-step" style="--path-c:#2196f3" href="../instance/add/">
+    <span class="kairship-path-num">1</span>
+    <span class="kairship-path-title">Create an instance</span>
+    <span class="kairship-path-desc">Management entry point</span>
+    <span class="kairship-path-go">Go →</span>
+  </a>
+  <a class="kairship-path-step" style="--path-c:#00acc1" href="../cluster/">
+    <span class="kairship-path-num">2</span>
+    <span class="kairship-path-title">Integrate clusters</span>
+    <span class="kairship-path-desc">Manage existing Kubernetes clusters</span>
+    <span class="kairship-path-go">Go →</span>
+  </a>
+  <a class="kairship-path-step" style="--path-c:#43a047" href="../workload/deployment/">
+    <span class="kairship-path-num">3</span>
+    <span class="kairship-path-title">Create workloads</span>
+    <span class="kairship-path-desc">Forms · YAML · one-click conversion</span>
+    <span class="kairship-path-go">Go →</span>
+  </a>
+  <a class="kairship-path-step" style="--path-c:#fb8c00" href="../policy/propagation/">
+    <span class="kairship-path-num">4</span>
+    <span class="kairship-path-title">Configure policies</span>
+    <span class="kairship-path-desc">PropagationPolicy · OverridePolicy</span>
+    <span class="kairship-path-go">Go →</span>
+  </a>
+  <a class="kairship-path-step" style="--path-c:#8e24aa" href="../failover/failover/">
+    <span class="kairship-path-num">5</span>
+    <span class="kairship-path-title">Scaling & DR</span>
+    <span class="kairship-path-desc">FHPA · failover</span>
+    <span class="kairship-path-go">Go →</span>
+  </a>
+</div>
 
-    * Cluster affinity scheduling for high-availability multi-cluster deployments with fine granularity.
-    * Supports multiple regions, availability zones, clusters, and vendors.
+## More Resources
 
-* **Open and Neutral**
+<div class="grid cards" markdown>
 
-    * Jointly initiated by organizations from internet, finance, manufacturing, telecommunications, and cloud industries.
-    * Out-of-the-box built-in policy sets for multiple scenarios: dual-active across cities, two-city three-center DR, and cross-region disaster recovery.
+- :material-format-list-bulleted:{ .lg .middle } __Features__
 
-* **Centralized Management**
+    ---
 
-    * No need to worry about cluster location.
-    * Supports public cloud, private cloud, and edge clusters.
+    A complete list of multicloud management capabilities, from one-click conversion and scheduling policies to global load balancing and failover.
+
+    [:arrow_forward: View features](features.md)
+
+- :material-play-circle-outline:{ .lg .middle } __Demo Video__
+
+    ---
+
+    Watch a demo of converting a single-cloud application to a multicloud application with one click.
+
+    [:arrow_forward: Watch the demo](../../videos/use-cases.md#one-click-conversion-to-multicloud)
+
+- :material-chat-question-outline:{ .lg .middle } __FAQ__
+
+    ---
+
+    Common questions and solutions related to multicloud instances, workloads, and policy configuration.
+
+    [:arrow_forward: View FAQ](faq.md)
+
+</div>
 
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button }
 [Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }
 [Learn about d.run AI OS](https://docs.daocloud.io/en/drun/){ .md-button }
+[View the Multicloud Management User Guide (PDF)](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/kairship.pdf){ .md-button }
