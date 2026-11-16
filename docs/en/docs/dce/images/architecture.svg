@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="dce-arch" viewBox="0 0 1080 640" font-family="system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
+  <style>
+    .dce-arch .a-bg   { fill: #F7F8FA; stroke: #E3E6EA; }
+    .dce-arch .a-fill { fill: #ffffff; }
+    .dce-arch .a-bar  { fill: #ffffff; stroke: #D9DDE2; }
+    .dce-arch .a-fg   { fill: #1a1a1a; }
+    .dce-arch .a-fgS  { stroke: #1a1a1a; }
+    .dce-arch .a-dash { stroke: #BBBBBB; }
+    @media (prefers-color-scheme: dark) {
+      .dce-arch .a-bg   { fill: #1F2227; stroke: #343A44; }
+      .dce-arch .a-fill { fill: #2A2F36; }
+      .dce-arch .a-bar  { fill: #2A2F36; stroke: #3C434E; }
+      .dce-arch .a-fg   { fill: #E6E8EB; }
+      .dce-arch .a-fgS  { stroke: #E6E8EB; }
+      .dce-arch .a-dash { stroke: #7A8088; }
+    }
+  </style>
+  <!-- ============ Row 1: Multicloud Orchestration | Data Services ============ -->
+  <rect x="8" y="8" width="932" height="112" rx="10" class="a-bg"/>
+  <line x1="470" y1="8" x2="470" y2="120" class="a-dash" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <g transform="translate(206,30)">
+    <path d="M0,-5 Q-2,-11 -8,-9 Q-13,-8 -12,-3 Q-16,-2 -15,2 Q-14,5 -10,5 L8,5 Q13,5 13,0 Q13,-4 9,-5 Q10,-10 5,-10 Q1,-10 0,-5 Z" fill="#00A96C" transform="translate(-24,0) scale(0.8)"/>
+    <text x="0" y="5" font-size="17" font-weight="700" fill="#00A96C">Multicloud Orchestration</text>
+  </g>
+  <g font-size="14" class="a-fg" text-anchor="middle">
+    <rect x="20" y="46" width="105" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="72" y="66">Instances</text>
+    <rect x="131" y="46" width="105" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="183" y="66">Orchestration</text>
+    <rect x="242" y="46" width="105" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="294" y="66">Distribution</text>
+    <rect x="353" y="46" width="105" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="405" y="66">Cross-cloud DR</text>
+  </g>
+  <g transform="translate(672,30)">
+    <ellipse cx="-26" cy="-2" rx="6" ry="2.6" fill="none" stroke="#00A96C" stroke-width="1.6"/>
+    <path d="M-32,-2 V3 A6,2.6 0 0 0 -20,3 V-2" fill="none" stroke="#00A96C" stroke-width="1.6"/>
+    <text x="0" y="5" font-size="17" font-weight="700" fill="#00A96C">Data Services</text>
+  </g>
+  <g font-size="13.5" class="a-fg">
+    <rect x="484" y="46" width="286" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/>
+    <text x="627" y="66" text-anchor="middle">MySQL / PostgreSQL / MongoDB / Redis</text>
+    <rect x="778" y="46" width="76" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/>
+    <text x="816" y="66" text-anchor="middle">MinIO</text>
+    <rect x="484" y="84" width="240" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/>
+    <text x="604" y="104" text-anchor="middle">RabbitMQ / Kafka / RocketMQ</text>
+    <rect x="732" y="84" width="122" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/>
+    <text x="793" y="104" text-anchor="middle">Elasticsearch</text>
+  </g>
+  <!-- ============ Row 2: Microservice Governance | Observability ============ -->
+  <rect x="8" y="128" width="932" height="108" rx="10" class="a-bg"/>
+  <line x1="560" y1="128" x2="560" y2="236" class="a-dash" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <g transform="translate(252,150)">
+    <path d="M0,-9 L8,-4.5 L8,4.5 L0,9 L-8,4.5 L-8,-4.5 Z" fill="none" stroke="#00A96C" stroke-width="1.6" transform="translate(-28,0)"/>
+    <circle r="2.2" fill="#00A96C" transform="translate(-28,0)"/>
+    <text x="0" y="5" font-size="17" font-weight="700" fill="#00A96C">Microservice Governance</text>
+  </g>
+  <g font-size="14" class="a-fg" text-anchor="middle">
+    <rect x="20" y="164" width="72" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="56" y="184">Registry</text>
+    <rect x="98" y="164" width="130" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="163" y="184">Traffic Governance</text>
+    <rect x="234" y="164" width="66" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="267" y="184">Gateway</text>
+    <rect x="306" y="164" width="104" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="358" y="184">Service Mesh</text>
+    <rect x="416" y="164" width="84" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/>
+    <text x="458" y="184">Merbridge</text>
+  </g>
+  <g transform="translate(730,150)">
+    <circle cx="-28" cy="0" r="7" fill="none" stroke="#00A96C" stroke-width="1.6"/>
+    <circle cx="-28" cy="0" r="2.4" fill="#00A96C"/>
+    <text x="0" y="5" font-size="17" font-weight="700" fill="#00A96C">Observability</text>
+  </g>
+  <g font-size="14" class="a-fg" text-anchor="middle">
+    <rect x="570" y="164" width="88" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="614" y="184" font-size="12">Multi-cluster</text>
+    <rect x="663" y="164" width="100" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="713" y="184" font-size="11.5">Multi-dimension</text>
+    <rect x="769" y="164" width="82" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="810" y="184" font-size="13">Alert Center</text>
+    <rect x="857" y="164" width="80" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="897" y="184" font-size="13">Query</text>
+  </g>
+  <!-- ============ Row 3: App Store | Virtual Machine | App Delivery ============ -->
+  <rect x="8" y="244" width="932" height="108" rx="10" class="a-bg"/>
+  <line x1="278" y1="244" x2="278" y2="352" class="a-dash" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <line x1="608" y1="244" x2="608" y2="352" class="a-dash" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <g transform="translate(126,266)">
+    <path d="M-32,-6 h14 l3,5 h3 l3,-5 h14 v14 a4,4 0 0 1 -4,4 h-29 a4,4 0 0 1 -4,-4 Z" fill="none" stroke="#00A96C" stroke-width="1.5" transform="translate(-14,-4)"/>
+    <text x="0" y="9" font-size="17" font-weight="700" fill="#00A96C">App Store</text>
+  </g>
+  <g font-size="14" class="a-fg" text-anchor="middle">
+    <rect x="24" y="280" width="80" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="64" y="300">Xinchuang</text>
+    <rect x="109" y="280" width="80" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="149" y="300">Middleware</text>
+    <rect x="194" y="280" width="80" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="234" y="300">Big Data</text>
+  </g>
+  <g transform="translate(435,266)">
+    <rect x="-36" y="-12" width="26" height="18" rx="2.5" fill="none" stroke="#00A96C" stroke-width="1.5"/>
+    <line x1="-30" y1="10" x2="-16" y2="10" stroke="#00A96C" stroke-width="1.5"/>
+    <text x="0" y="5" font-size="17" font-weight="700" fill="#00A96C">Virtual Machine</text>
+  </g>
+  <g font-size="13" class="a-fg" text-anchor="middle">
+    <rect x="284" y="280" width="84" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="326" y="300" font-size="11">VM Management</text>
+    <rect x="374" y="280" width="114" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="431" y="300" font-size="11">VM Network/Storage</text>
+    <rect x="490" y="280" width="114" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="547" y="293" font-size="11">Snapshot / Clone</text><text x="547" y="306" font-size="11">Migration</text>
+  </g>
+  <g transform="translate(760,266)">
+    <path d="M-34,-6 A8,8 0 1 1 -20,4 M-20,4 A8,8 0 1 1 -34,-6" fill="none" stroke="#00A96C" stroke-width="1.6" transform="translate(-2,-6)"/>
+    <text x="0" y="5" font-size="17" font-weight="700" fill="#00A96C">App Delivery</text>
+  </g>
+  <g font-size="14" class="a-fg" text-anchor="middle">
+    <rect x="616" y="280" width="84" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="658" y="300">Registry</text>
+    <rect x="706" y="280" width="104" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="758" y="300">CI/CD Pipelines</text>
+    <rect x="816" y="280" width="114" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="873" y="300" font-size="13">GitOps Deployment</text>
+  </g>
+  <!-- ============ Row 4: Cloud Native Foundation + Global Management ============ -->
+  <rect x="8" y="360" width="932" height="185" rx="10" class="a-bg"/>
+  <g transform="translate(462,384)">
+    <path d="M-9,-6 L0,-10 L9,-6 L0,-2 Z M-9,-1 L0,3 L9,-1 M-9,4 L0,8 L9,4" fill="none" stroke="#00A96C" stroke-width="1.5" transform="translate(-32,-2)"/>
+    <text x="0" y="5" font-size="17" font-weight="700" fill="#00A96C">Cloud Native Foundation</text>
+  </g>
+  <rect x="700" y="402" width="236" height="134" rx="8" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/>
+  <g transform="translate(778,424)">
+    <circle cx="-24" cy="0" r="6.5" fill="none" class="a-fgS" stroke-width="1.5"/>
+    <g class="a-fgS" stroke-width="1.4"><line x1="-24" y1="-9.5" x2="-24" y2="-6.5"/><line x1="-24" y1="6.5" x2="-24" y2="9.5"/><line x1="-33.5" y1="0" x2="-30.5" y2="0"/><line x1="-17.5" y1="0" x2="-14.5" y2="0"/></g>
+    <text x="0" y="5" font-size="15" font-weight="700" class="a-fg">Global Management</text>
+  </g>
+  <g font-size="14" class="a-fg" text-anchor="middle">
+    <rect x="728" y="442" width="180" height="30" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="818" y="461">Users / Roles</text>
+    <rect x="728" y="480" width="180" height="30" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="818" y="499">Workspaces</text>
+  </g>
+  <text x="30" y="424" font-size="15" font-weight="700" class="a-fg">Container</text>
+  <text x="30" y="441" font-size="15" font-weight="700" class="a-fg">Management</text>
+  <g font-size="14" class="a-fg" text-anchor="middle">
+    <rect x="118" y="412" width="95" height="30" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="165" y="431">Clusters</text>
+    <rect x="219" y="412" width="95" height="30" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="266" y="431">Workloads</text>
+    <rect x="320" y="412" width="95" height="30" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/><text x="367" y="431">Open APIs</text>
+    <rect x="421" y="412" width="112" height="30" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/>
+    <text x="477" y="431">CloudTTY</text>
+  </g>
+  <text x="30" y="470" font-size="15" font-weight="700" class="a-fg">Cluster</text>
+  <text x="30" y="487" font-size="15" font-weight="700" class="a-fg">Management</text>
+  <g font-size="14" class="a-fg" text-anchor="middle">
+    <rect x="118" y="456" width="265" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/>
+    <text x="250" y="476" font-size="13">Clusterpedia: Multi-cluster Search</text>
+    <rect x="389" y="456" width="265" height="32" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/>
+    <text x="521" y="476" font-size="13">Kubean: Cluster Lifecycle Mgmt</text>
+  </g>
+  <g font-size="15" font-weight="700" class="a-fg">
+    <text x="30" y="524">Compute</text>
+    <text x="252" y="524">Network</text>
+    <text x="556" y="524">Storage</text>
+  </g>
+  <g font-size="13" class="a-fg" text-anchor="middle">
+    <rect x="98" y="506" width="146" height="30" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/>
+    <text x="171" y="525">KLTS / Containerd</text>
+    <rect x="314" y="506" width="232" height="30" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/>
+    <text x="430" y="525" font-size="11.5">Spiderpool / Cilium / Macvlan / Multus</text>
+    <rect x="618" y="506" width="80" height="30" rx="6" class="a-fill" stroke="#8FDBB2" stroke-width="1.3"/>
+    <text x="658" y="518" font-size="11">HwameiStor</text><text x="658" y="530" font-size="11">CSI</text>
+  </g>
+  <!-- ============ Row 5: Multicloud | Xinchuang | Cloud-Edge ============ -->
+  <rect x="8" y="553" width="932" height="80" rx="10" class="a-bg"/>
+  <line x1="280" y1="553" x2="280" y2="633" class="a-dash" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <line x1="650" y1="553" x2="650" y2="633" class="a-dash" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <g transform="translate(148,573)">
+    <path d="M0,-5 Q-2,-11 -8,-9 Q-13,-8 -12,-3 Q-16,-2 -15,2 Q-14,5 -10,5 L8,5 Q13,5 13,0 Q13,-4 9,-5 Q10,-10 5,-10 Q1,-10 0,-5 Z" fill="none" class="a-fgS" stroke-width="1.4" transform="translate(-26,0) scale(0.9)"/>
+    <text x="0" y="5" font-size="16" font-weight="700" class="a-fg">Multicloud</text>
+  </g>
+  <g font-size="13" class="a-fg" text-anchor="middle">
+    <g transform="translate(92,612)">
+      <path d="M0,-4 Q-2,-9 -7,-7 Q-11,-6 -10,-2 Q-13,-1 -12,2 Q-11,4 -8,4 L7,4 Q11,4 11,0 Q11,-3 8,-4 Q8,-8 4,-8 Q1,-8 0,-4 Z" fill="none" class="a-fgS" stroke-width="1.4"/>
+      <text y="24">Public Cloud</text>
+    </g>
+    <g transform="translate(212,612)">
+      <path d="M0,-4 Q-2,-9 -7,-7 Q-11,-6 -10,-2 Q-13,-1 -12,2 Q-11,4 -8,4 L7,4 Q11,4 11,0 Q11,-3 8,-4 Q8,-8 4,-8 Q1,-8 0,-4 Z" fill="none" class="a-fgS" stroke-width="1.4"/>
+      <line x1="-5" y1="-8" x2="-5" y2="-13" class="a-fgS" stroke-width="1.3"/>
+      <text y="24">Private Cloud</text>
+    </g>
+  </g>
+  <g transform="translate(464,573)">
+    <path d="M-8,-9 h16 v10 q0,3 -3,3 h-10 q-3,0 -3,-3 Z" fill="none" class="a-fgS" stroke-width="1.4" transform="translate(-30,-2)"/>
+    <rect x="-34" y="3" width="8" height="2" class="a-fg"/>
+    <text x="0" y="5" font-size="16" font-weight="700" class="a-fg">Xinchuang</text>
+  </g>
+  <g font-size="13" class="a-fg" text-anchor="middle">
+    <g transform="translate(370,612)">
+      <rect x="-9" y="-21" width="10" height="11" rx="1.5" fill="none" class="a-fgS" stroke-width="1.3"/>
+      <rect x="3" y="-21" width="10" height="11" rx="1.5" fill="none" class="a-fgS" stroke-width="1.3"/>
+      <text y="3" font-size="12.5" font-weight="600">Traditional Clusters</text>
+      <text y="19" font-size="10.5">Physical / Virtual Machines</text>
+    </g>
+    <g transform="translate(528,612)">
+      <rect x="-8" y="-23" width="16" height="12" rx="2" fill="none" class="a-fgS" stroke-width="1.3"/>
+      <line x1="-4" y1="-23" x2="-4" y2="-11" class="a-fgS" stroke-width="1"/>
+      <line x1="-8" y1="-17" x2="8" y2="-17" class="a-fgS" stroke-width="1"/>
+      <text y="3" font-size="12.5" font-weight="600">Xinchuang Clusters</text>
+      <text y="12" font-size="10">Kunpeng/Phytium/Hygon/Loongson</text>
+      <text y="25" font-size="10">Zhaoxin/Kylin/UOS/openEuler</text>
+    </g>
+  </g>
+  <g transform="translate(694,573)">
+    <path d="M-28,2 h6 l3,-6 h4" fill="none" class="a-fgS" stroke-width="1.4"/>
+    <circle cx="-14" cy="2" r="1.6" class="a-fg"/><circle cx="-20" cy="-1" r="1.6" class="a-fg"/>
+    <text x="0" y="5" font-size="16" font-weight="700" class="a-fg">Cloud-Edge Collaboration</text>
+  </g>
+  <g font-size="13" class="a-fg" text-anchor="middle">
+    <g transform="translate(742,612)">
+      <rect x="-10" y="-21" width="12" height="11" rx="1.5" fill="none" class="a-fgS" stroke-width="1.3"/>
+      <line x1="-6" y1="-18" x2="0" y2="-18" class="a-fgS" stroke-width="1"/>
+      <line x1="-6" y1="-15" x2="0" y2="-15" class="a-fgS" stroke-width="1"/>
+      <text y="3" font-size="12.5">Edge Cluster</text>
+    </g>
+    <g transform="translate(856,610)">
+      <circle cx="0" cy="-13" r="4" fill="none" class="a-fgS" stroke-width="1.3"/>
+      <circle cx="-8" cy="-4" r="4" fill="none" class="a-fgS" stroke-width="1.3"/>
+      <circle cx="8" cy="-4" r="4" fill="none" class="a-fgS" stroke-width="1.3"/>
+      <line x1="-2" y1="-10" x2="-6" y2="-6" class="a-fgS" stroke-width="1"/>
+      <line x1="2" y1="-10" x2="6" y2="-6" class="a-fgS" stroke-width="1"/>
+      <text y="12" font-size="12.5">Edge Node</text>
+    </g>
+  </g>
+  <!-- ============ Version bars (inner to outer: Community / Standard / Premium / Platinum) ============ -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <rect x="948" y="360" width="28" height="272" rx="8" class="a-bar"/>
+    <text x="957" y="496" fill="#00A96C" transform="rotate(90 957 496)">Community</text>
+    <rect x="982" y="244" width="28" height="388" rx="8" class="a-bar"/>
+    <text x="991" y="438" fill="#2E7CF6" transform="rotate(90 991 438)">Standard</text>
+    <rect x="1016" y="128" width="28" height="504" rx="8" class="a-bar"/>
+    <text x="1025" y="380" fill="#2E7CF6" transform="rotate(90 1025 380)">Premium</text>
+    <rect x="1050" y="8" width="28" height="624" rx="8" class="a-bar"/>
+    <text x="1059" y="320" class="a-fg" transform="rotate(90 1059 320)">Platinum</text>
+  </g>
+</svg>

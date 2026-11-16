@@ -7,7 +7,6 @@ hide:
 
 DaoCloud Enterprise (DCE) 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的各项生产级功能，使得企业能够轻松构建和管理分布式应用。
 借助 DCE 的云原生天赋，企业可以充分利用云上云下优势，实现资源的最优利用，提高 IT 系统的可靠性和弹性，极大地加速应用的交付速度。
-[查看/下载 DaoCloud Enterprise 彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/dce.pdf){ .md-button }
 
 <style>
 .tf-arch-card{min-width:calc(25% - 6px) !important}
@@ -118,6 +117,10 @@ DaoCloud Enterprise (DCE) 以 K8s 作为开发底座，提供了高度可扩展�
   </div>
 </div>
 
+## 产品架构
+
+![DCE 5.0 产品架构](images/architecture.svg)
+
 ## 安装和教程
 
 <div class="grid cards" markdown>
@@ -150,48 +153,55 @@ DaoCloud Enterprise (DCE) 以 K8s 作为开发底座，提供了高度可扩展�
 
 </div>
 
-## 下载和开源生态
+## 学习路径
 
-<div class="grid cards" markdown>
+<style>
+.dce-path{display:flex;gap:0.75rem;margin:1.25rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.dce-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.dce-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.dce-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.dce-path-step:last-child::after{display:none}
+.dce-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.dce-path-title{font-weight:700;font-size:0.95rem}
+.dce-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.dce-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.dce-path-step::after{display:none}}
+</style>
 
-- :material-download:{ .lg .middle } __下载中心__
-    
-    ---
-
-    下载中心包含了 DCE 社区版、商业版以及各个子模块的离线安装包。
-
-    - [下载社区版](../download/free/dce5-installer-history.md)
-    - [下载商业版](../download/business/dce5-installer-history.md)
-    - [下载子模块](../download/index.md#_3)
-
-- :simple-opensourceinitiative:{ .lg .middle } __DaoCloud 开源生态__
-    
-    ---
-
-    DaoCloud 秉承开源企业文化，已有多项开源技术入选 CNCF Sandbox。
-
-    - [Clusterpedia 多集群百科全书](../community/clusterpedia.md)
-    - [HwameiStor 本地化存储](../community/hwameistor.md)
-    - [Merbridge 服务网格加速](../community/merbridge.md)
-
+<div class="dce-path">
+  <a class="dce-path-step" style="--path-c:#2196f3" href="../install/">
+    <span class="dce-path-num">1</span>
+    <span class="dce-path-title">部署平台</span>
+    <span class="dce-path-desc">离线或在线安装 DCE 5.0</span>
+    <span class="dce-path-go">前往 →</span>
+  </a>
+  <a class="dce-path-step" style="--path-c:#00acc1" href="../kpanda/intro/">
+    <span class="dce-path-num">2</span>
+    <span class="dce-path-title">管理集群</span>
+    <span class="dce-path-desc">接入集群，统一容器编排调度</span>
+    <span class="dce-path-go">前往 →</span>
+  </a>
+  <a class="dce-path-step" style="--path-c:#43a047" href="../amamba/intro/">
+    <span class="dce-path-num">3</span>
+    <span class="dce-path-title">交付应用</span>
+    <span class="dce-path-desc">流水线与 GitOps 持续交付</span>
+    <span class="dce-path-go">前往 →</span>
+  </a>
+  <a class="dce-path-step" style="--path-c:#fb8c00" href="../insight/intro/">
+    <span class="dce-path-num">4</span>
+    <span class="dce-path-title">观测系统</span>
+    <span class="dce-path-desc">指标、日志、链路统一观测</span>
+    <span class="dce-path-go">前往 →</span>
+  </a>
+  <a class="dce-path-step" style="--path-c:#8e24aa" href="../ghippo/intro/">
+    <span class="dce-path-num">5</span>
+    <span class="dce-path-title">管控平台</span>
+    <span class="dce-path-desc">用户权限与全局安全治理</span>
+    <span class="dce-path-go">前往 →</span>
+  </a>
 </div>
-
-*[Clusterpedia]: 内置在 DCE 中的多集群资源查询插件，捐献给 CNCF 后已入选 Sandbox
-*[HwameiStor]: 内置在 DCE 中的本地高可用存储方案，捐献给 CNCF 后已入选 Sandbox
-*[Merbridge]: 内置在 DCE 中基于 eBPF 构建的网格加速插件，捐献给 CNCF 后已入选 Sandbox
-
-!!! success
-
-    ```yaml
-    是什么让一个企业走向成功？
-      是方向一致的梦想，
-        是开源分享的喜悦，
-          是日夜贡献成功构建魔法后的欣喜若狂。
-    
-    让我们一起，
-      致敬曾经、现在和未来的努力吧！
-    ```
 
 [申请社区免费体验](./license0.md){ .md-button }
 [最佳实践](./bphome.md){ .md-button }
 [常见问题](./faq.md){ .md-button }
+[查阅 DaoCloud Enterprise 彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/dce.pdf){ .md-button }
