@@ -269,7 +269,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 
     <div class="tf-arch tf-arch--compact">
       <div class="tf-arch-layer tf-arch-layer--compute">
-        <div class="tf-arch-layer-label">云原生底座</div>
+        <div class="tf-arch-layer-label">开箱即用的功能模块</div>
         <div class="tf-arch-cards">
           <a class="tf-arch-card tf-arch-card--compute" href="middleware/">
             <span class="tf-arch-card-title">中间件</span>
