@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">DaoCloud KubeCon 参与总览（2018-2026）</title>
+  <desc id="desc">左侧为每年 DaoCloud KubeCon 议题数分组柱状图（国内深绿、海外浅绿），右侧为四张数字卡：111 个议题、43 个海外议题、2 届联席主席、5 场 Keynote。</desc>
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <text x="70" y="52" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="700" fill="#111827">DaoCloud KubeCon 参与总览（2018-2026）</text>
+
+  <!-- 图例 -->
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#374151">
+    <rect x="620" y="54" width="14" height="14" rx="3" fill="#14563c"/>
+    <text x="640" y="66">国内（上海 / 线上 / 香港）</text>
+    <rect x="620" y="78" width="14" height="14" rx="3" fill="#4ec97f"/>
+    <text x="640" y="90">海外（欧洲 / 北美 / 日本）</text>
+  </g>
+
+  <!-- 图表标题 -->
+  <text x="90" y="112" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="600" fill="#374151">每年 DaoCloud KubeCon 议题数（个）</text>
+
+  <!-- 网格与刻度 -->
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#9ca3af">
+    <line x1="80" y1="545" x2="740" y2="545" stroke="#d1d5db" stroke-width="1"/>
+    <line x1="80" y1="440" x2="740" y2="440" stroke="#eceef1" stroke-width="1"/>
+    <line x1="80" y1="335" x2="740" y2="335" stroke="#eceef1" stroke-width="1"/>
+    <line x1="80" y1="230" x2="740" y2="230" stroke="#eceef1" stroke-width="1"/>
+    <line x1="80" y1="125" x2="740" y2="125" stroke="#eceef1" stroke-width="1"/>
+    <text x="72" y="549" text-anchor="end">0</text>
+    <text x="72" y="444" text-anchor="end">5</text>
+    <text x="72" y="339" text-anchor="end">10</text>
+    <text x="72" y="234" text-anchor="end">15</text>
+    <text x="72" y="129" text-anchor="end">20</text>
+  </g>
+
+  <!-- 国内柱 -->
+  <g fill="#14563c">
+    <rect x="90"  y="524" width="26" height="21"/>
+    <rect x="162" y="524" width="26" height="21"/>
+    <rect x="234" y="440" width="26" height="105"/>
+    <rect x="306" y="461" width="26" height="84"/>
+    <rect x="450" y="209" width="26" height="336"/>
+    <rect x="522" y="125" width="26" height="420"/>
+    <rect x="594" y="272" width="26" height="273"/>
+    <rect x="666" y="377" width="26" height="168"/>
+  </g>
+  <!-- 海外柱 -->
+  <g fill="#4ec97f">
+    <rect x="408" y="524" width="26" height="21"/>
+    <rect x="480" y="440" width="26" height="105"/>
+    <rect x="552" y="272" width="26" height="273"/>
+    <rect x="624" y="209" width="26" height="336"/>
+    <rect x="696" y="377" width="26" height="168"/>
+  </g>
+
+  <!-- 数值标签 -->
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="700" fill="#111827" text-anchor="middle">
+    <text x="103" y="518">1</text>
+    <text x="175" y="518">1</text>
+    <text x="247" y="434">5</text>
+    <text x="319" y="455">4</text>
+    <text x="421" y="518">1</text>
+    <text x="463" y="203">16</text>
+    <text x="493" y="434">5</text>
+    <text x="535" y="119">20</text>
+    <text x="565" y="266">13</text>
+    <text x="607" y="266">13</text>
+    <text x="637" y="203">16</text>
+    <text x="679" y="371">8</text>
+    <text x="709" y="371">8</text>
+  </g>
+
+  <!-- 年份 -->
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#4b5563" text-anchor="middle">
+    <text x="118" y="567">2018</text>
+    <text x="190" y="567">2019</text>
+    <text x="262" y="567">2020</text>
+    <text x="334" y="567">2021</text>
+    <text x="406" y="567">2022</text>
+    <text x="478" y="567">2023</text>
+    <text x="550" y="567">2024</text>
+    <text x="622" y="567">2025</text>
+    <text x="694" y="567">2026</text>
+  </g>
+
+  <!-- 数字卡 -->
+  <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <rect x="790" y="110" width="370" height="104" rx="12" fill="#eaf4ee"/>
+    <text x="810" y="162" font-size="38" font-weight="700" fill="#14563c">111<tspan font-size="16" fill="#111827"> 个议题</tspan></text>
+    <text x="810" y="192" font-size="13" fill="#6b7280">2018-2026.11 累计（按各届明细统计）</text>
+
+    <rect x="790" y="228" width="370" height="104" rx="12" fill="#eaf4ee"/>
+    <text x="810" y="280" font-size="38" font-weight="700" fill="#14563c">43<tspan font-size="16" fill="#111827"> 个海外议题</tspan></text>
+    <text x="810" y="308" font-size="13" fill="#6b7280">欧洲 · 北美 · 日本；2025 年海外 16 个</text>
+    <text x="810" y="326" font-size="13" fill="#6b7280">首次超过国内</text>
+
+    <rect x="790" y="346" width="370" height="104" rx="12" fill="#eaf4ee"/>
+    <text x="810" y="398" font-size="38" font-weight="700" fill="#14563c">2<tspan font-size="16" fill="#111827"> 届联席主席</tspan></text>
+    <text x="810" y="426" font-size="13" fill="#6b7280">KubeCon China 2024 · Paco Xu</text>
+    <text x="810" y="444" font-size="13" fill="#6b7280">KubeCon China 2025 · Roby</text>
+
+    <rect x="790" y="464" width="370" height="104" rx="12" fill="#eaf4ee"/>
+    <text x="810" y="516" font-size="38" font-weight="700" fill="#14563c">5<tspan font-size="16" fill="#111827"> 场 Keynote</tspan></text>
+    <text x="810" y="544" font-size="13" fill="#6b7280">香港 2024 ×2 · 香港 2025 ×2 · 东京 2025</text>
+  </g>
+</svg>
