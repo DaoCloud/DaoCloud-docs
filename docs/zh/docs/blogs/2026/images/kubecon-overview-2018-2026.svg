@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">DaoCloud KubeCon 参与总览（2018-2026）</title>
-  <desc id="desc">左侧为每年 DaoCloud KubeCon 议题数分组柱状图（国内深绿、海外浅绿），右侧为四张数字卡：111 个议题、43 个海外议题、2 届联席主席、5 场 Keynote。</desc>
+  <desc id="desc">左侧为每年 DaoCloud KubeCon 议题数分组柱状图（国内深绿、海外浅绿），右侧为四张数字卡：112 个议题、44 个海外议题、2 届联席主席、5 场 Keynote。</desc>
   <rect width="1200" height="630" fill="#ffffff"/>
 
   <text x="70" y="52" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="700" fill="#111827">DaoCloud KubeCon 参与总览（2018-2026）</text>
@@ -47,7 +47,7 @@
     <rect x="480" y="440" width="26" height="105"/>
     <rect x="552" y="272" width="26" height="273"/>
     <rect x="624" y="209" width="26" height="336"/>
-    <rect x="696" y="377" width="26" height="168"/>
+    <rect x="696" y="356" width="26" height="189"/>
   </g>
 
   <!-- 数值标签 -->
@@ -64,7 +64,7 @@
     <text x="607" y="266">13</text>
     <text x="637" y="203">16</text>
     <text x="679" y="371">8</text>
-    <text x="709" y="371">8</text>
+    <text x="709" y="350">9</text>
   </g>
 
   <!-- 年份 -->
@@ -83,11 +83,11 @@
   <!-- 数字卡 -->
   <g font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
     <rect x="790" y="110" width="370" height="104" rx="12" fill="#eaf4ee"/>
-    <text x="810" y="162" font-size="38" font-weight="700" fill="#14563c">111<tspan font-size="16" fill="#111827"> 个议题</tspan></text>
+    <text x="810" y="162" font-size="38" font-weight="700" fill="#14563c">112<tspan font-size="16" fill="#111827"> 个议题</tspan></text>
     <text x="810" y="192" font-size="13" fill="#6b7280">2018-2026.11 累计（按各届明细统计）</text>
 
     <rect x="790" y="228" width="370" height="104" rx="12" fill="#eaf4ee"/>
-    <text x="810" y="280" font-size="38" font-weight="700" fill="#14563c">43<tspan font-size="16" fill="#111827"> 个海外议题</tspan></text>
+    <text x="810" y="280" font-size="38" font-weight="700" fill="#14563c">44<tspan font-size="16" fill="#111827"> 个海外议题</tspan></text>
     <text x="810" y="308" font-size="13" fill="#6b7280">欧洲 · 北美 · 日本；2025 年海外 16 个</text>
     <text x="810" y="326" font-size="13" fill="#6b7280">首次超过国内</text>
 
