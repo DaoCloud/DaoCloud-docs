@@ -119,9 +119,9 @@ DaoCloud Enterprise (DCE) 以 K8s 作为开发底座，提供了高度可扩展�
 
 ## 产品架构
 
-![DCE 5.0 产品架构](images/architecture.svg)
+![DCE 产品架构](images/architecture.svg)
 
-## 安装和教程
+## 安装和视频教程
 
 <div class="grid cards" markdown>
 
@@ -129,8 +129,8 @@ DaoCloud Enterprise (DCE) 以 K8s 作为开发底座，提供了高度可扩展�
 
     ---
 
-    DCE 支持[离线](../install/community/k8s/offline.md)和[在线](../install/community/k8s/online.md)两种安装方式，
-    可以安装到[不同的 Linux 发行版上](../install/os-install/uos-v20-install-dce5.0.md)。
+    支持[离线](../install/community/k8s/offline.md)和[在线](../install/community/k8s/online.md)两种安装方式，
+    可以安装到[不同的 Linux 发行版](../install/os-install/uos-v20-install-dce5.0.md)。
 
     - [安装依赖项](../install/install-tools.md)
     - [安装社区版](../install/community/resources.md)
@@ -172,32 +172,32 @@ DaoCloud Enterprise (DCE) 以 K8s 作为开发底座，提供了高度可扩展�
   <a class="dce-path-step" style="--path-c:#2196f3" href="../install/">
     <span class="dce-path-num">1</span>
     <span class="dce-path-title">部署平台</span>
-    <span class="dce-path-desc">离线或在线安装 DCE 5.0</span>
-    <span class="dce-path-go">前往 →</span>
+    <span class="dce-path-desc">离线或在线安装 DCE</span>
+    <span class="dce-path-go">Go →</span>
   </a>
   <a class="dce-path-step" style="--path-c:#00acc1" href="../kpanda/intro/">
     <span class="dce-path-num">2</span>
     <span class="dce-path-title">管理集群</span>
     <span class="dce-path-desc">接入集群，统一容器编排调度</span>
-    <span class="dce-path-go">前往 →</span>
+    <span class="dce-path-go">Go →</span>
   </a>
   <a class="dce-path-step" style="--path-c:#43a047" href="../amamba/intro/">
     <span class="dce-path-num">3</span>
     <span class="dce-path-title">交付应用</span>
     <span class="dce-path-desc">流水线与 GitOps 持续交付</span>
-    <span class="dce-path-go">前往 →</span>
+    <span class="dce-path-go">Go →</span>
   </a>
   <a class="dce-path-step" style="--path-c:#fb8c00" href="../insight/intro/">
     <span class="dce-path-num">4</span>
     <span class="dce-path-title">观测系统</span>
     <span class="dce-path-desc">指标、日志、链路统一观测</span>
-    <span class="dce-path-go">前往 →</span>
+    <span class="dce-path-go">Go →</span>
   </a>
   <a class="dce-path-step" style="--path-c:#8e24aa" href="../ghippo/intro/">
     <span class="dce-path-num">5</span>
     <span class="dce-path-title">管控平台</span>
     <span class="dce-path-desc">用户权限与全局安全治理</span>
-    <span class="dce-path-go">前往 →</span>
+    <span class="dce-path-go">Go →</span>
   </a>
 </div>
 
@@ -205,3 +205,4 @@ DaoCloud Enterprise (DCE) 以 K8s 作为开发底座，提供了高度可扩展�
 [最佳实践](./bphome.md){ .md-button }
 [常见问题](./faq.md){ .md-button }
 [查阅 DaoCloud Enterprise 彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/dce.pdf){ .md-button }
+{: .tf-footer-cta }

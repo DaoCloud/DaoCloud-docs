@@ -154,31 +154,31 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
     <span class="drun-path-num">1</span>
     <span class="drun-path-title">部署平台</span>
     <span class="drun-path-desc">离线安装 d.run AI 操作系统</span>
-    <span class="drun-path-go">前往 →</span>
+    <span class="drun-path-go">Go →</span>
   </a>
   <a class="drun-path-step" style="--path-c:#00acc1" href="kpanda/intro/">
     <span class="drun-path-num">2</span>
     <span class="drun-path-title">纳管算力</span>
     <span class="drun-path-desc">接入集群，纳管异构 GPU 算力</span>
-    <span class="drun-path-go">前往 →</span>
+    <span class="drun-path-go">Go →</span>
   </a>
   <a class="drun-path-step" style="--path-c:#43a047" href="hydra/intro/">
     <span class="drun-path-num">3</span>
     <span class="drun-path-title">部署模型</span>
     <span class="drun-path-desc">模型广场选型，一键部署推理服务</span>
-    <span class="drun-path-go">前往 →</span>
+    <span class="drun-path-go">Go →</span>
   </a>
   <a class="drun-path-step" style="--path-c:#fb8c00" href="clawos/intro/">
     <span class="drun-path-num">4</span>
     <span class="drun-path-title">部署智能体</span>
     <span class="drun-path-desc">编排多智能体，落地业务场景</span>
-    <span class="drun-path-go">前往 →</span>
+    <span class="drun-path-go">Go →</span>
   </a>
   <a class="drun-path-step" style="--path-c:#8e24aa" href="crane/intro/">
     <span class="drun-path-num">5</span>
     <span class="drun-path-title">运营洞察</span>
     <span class="drun-path-desc">驾驶舱看全链路 Token 运营</span>
-    <span class="drun-path-go">前往 →</span>
+    <span class="drun-path-go">Go →</span>
   </a>
 </div>
 

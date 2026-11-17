@@ -49,7 +49,7 @@ With DCE's cloud native DNA, enterprises can fully leverage the advantages of bo
 
 <div class="tf-arch tf-arch--compact">
   <div class="tf-arch-layer tf-arch-layer--compute">
-    <div class="tf-arch-layer-label">Out-of-box Function Modules</div>
+    <div class="tf-arch-layer-label">Out-of-box Functional Modules</div>
     <div class="tf-arch-cards">
       <a class="tf-arch-card tf-arch-card--compute" href="../middleware/">
         <span class="tf-arch-card-title">Middleware</span>
@@ -119,9 +119,9 @@ With DCE's cloud native DNA, enterprises can fully leverage the advantages of bo
 
 ## Product Architecture
 
-![DCE 5.0 Product Architecture](images/architecture.svg)
+![DCE Product Architecture](images/architecture.svg)
 
-## Installation and Tutorials
+## Installation and Video Tutorials
 
 <div class="grid cards" markdown>
 
@@ -172,7 +172,7 @@ With DCE's cloud native DNA, enterprises can fully leverage the advantages of bo
   <a class="dce-path-step" style="--path-c:#2196f3" href="../install/">
     <span class="dce-path-num">1</span>
     <span class="dce-path-title">Deploy the Platform</span>
-    <span class="dce-path-desc">Install DCE 5.0 online or offline</span>
+    <span class="dce-path-desc">Install DCE online or offline</span>
     <span class="dce-path-go">Go →</span>
   </a>
   <a class="dce-path-step" style="--path-c:#00acc1" href="../kpanda/intro/">
@@ -201,7 +201,8 @@ With DCE's cloud native DNA, enterprises can fully leverage the advantages of bo
   </a>
 </div>
 
-[Apply for Community Free Trial](./license0.md){ .md-button }
+[Apply for Free Trial](./license0.md){ .md-button }
 [Best Practices](./bphome.md){ .md-button }
 [FAQs](./faq.md){ .md-button }
-[Read the DaoCloud Enterprise Brochure](https://harbor-test2.cn-sh2.ufileos.com/docs/download/dce.pdf){ .md-button }
+[Read DaoCloud Enterprise Brochure](https://harbor-test2.cn-sh2.ufileos.com/docs/download/dce.pdf){ .md-button }
+{: .tf-footer-cta }
