@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title desc">
+<title id="title">企业级大模型服务场景图</title>
+<desc id="desc">多种模型通过模型服务平台统一部署，经过 API Key 与模型访问控制后，按需服务多个业务应用。</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#4d79a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#8aa8c7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <style>
+    .title{font:600 20px 'Noto Sans SC','PingFang SC',sans-serif;fill:#1e446c}
+    .label{font:600 17px 'Noto Sans SC','PingFang SC',sans-serif;fill:#234c75}
+    .body{font:15px 'Noto Sans SC','PingFang SC',sans-serif;fill:#55708d}
+    .small{font:13px 'Noto Sans SC','PingFang SC',sans-serif;fill:#6d849e}
+    .micro{font:12px 'Noto Sans SC','PingFang SC',sans-serif;fill:#7188a0}
+    .panel{fill:#fff;stroke:#c9d9e9;stroke-width:1.6}
+    .panelBlue{fill:#f3f8fd;stroke:#9fbad5;stroke-width:1.7}
+    .panelTint{fill:#f8fbff;stroke:#d5e2ef;stroke-width:1.4}
+    .line{fill:none;stroke:#4d79a8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .lineSoft{fill:none;stroke:#91abc5;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .icon{fill:none;stroke:#4c78a6;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .chip{fill:#eaf3fb;stroke:#c0d4e8;stroke-width:1}
+    .accent{fill:#dcecf9;stroke:#87a9ca;stroke-width:1.4}
+  </style>
+</defs>
+<rect x="1" y="1" width="1198" height="458" rx="18" fill="#fff" stroke="#dce6f0"/>
+<text x="34" y="39" text-anchor="start" class="small">模型接入、访问治理与业务分发</text>
+<rect x="30" y="79" width="220" height="320" rx="16" class="panel"/>
+<text x="140" y="111" text-anchor="middle" class="label">模型来源</text>
+<rect x="51" y="135" width="178" height="66" rx="10" class="panelTint"/>
+<ellipse cx="76" cy="157" rx="13" ry="6" class="icon"/><path d="M63 157v18c0 7 26 7 26 0v-18 M63 166c0 7 26 7 26 0" class="icon"/>
+<text x="103" y="163" text-anchor="start" class="body">开源模型</text>
+<text x="103" y="184" text-anchor="start" class="micro">主流模型生态</text>
+<rect x="51" y="225" width="178" height="66" rx="10" class="panelTint"/>
+<ellipse cx="76" cy="247" rx="13" ry="6" class="icon"/><path d="M63 247v18c0 7 26 7 26 0v-18 M63 256c0 7 26 7 26 0" class="icon"/>
+<text x="103" y="253" text-anchor="start" class="body">企业自研模型</text>
+<text x="103" y="274" text-anchor="start" class="micro">内部模型与权重</text>
+<rect x="51" y="315" width="178" height="66" rx="10" class="panelTint"/>
+<ellipse cx="76" cy="337" rx="13" ry="6" class="icon"/><path d="M63 337v18c0 7 26 7 26 0v-18 M63 346c0 7 26 7 26 0" class="icon"/>
+<text x="103" y="343" text-anchor="start" class="body">第三方模型服务</text>
+<text x="103" y="364" text-anchor="start" class="micro">按需接入</text>
+<path d="M250 222 H305" class="line" marker-end="url(#arrow)"/>
+<rect x="309" y="123" width="270" height="197" rx="18" class="panelBlue"/>
+<text x="444" y="158" text-anchor="middle" class="title">模型服务平台</text>
+<path d="M415 190 L441 181 M415 190 L441 205 M415 220 L441 205 M415 220 L441 229 M441 181 L469 194 M441 205 L469 194 M441 205 L469 218 M441 229 L469 218" class="icon"/>
+<g fill="#f3f8fd" stroke="#4c78a6" stroke-width="1.8">
+  <circle cx="415" cy="190" r="4"/><circle cx="415" cy="220" r="4"/>
+  <circle cx="441" cy="181" r="4"/><circle cx="441" cy="205" r="4"/><circle cx="441" cy="229" r="4"/>
+  <circle cx="469" cy="194" r="4"/><circle cx="469" cy="218" r="4"/>
+</g>
+<text x="444" y="264" text-anchor="middle" class="body">模型广场 · 部署 · 统一 API</text>
+<path d="M579 222 H626" class="line" marker-end="url(#arrow)"/>
+<rect x="631" y="102" width="236" height="236" rx="16" class="panel"/>
+<text x="749" y="137" text-anchor="middle" class="label">访问与调用治理</text>
+<rect x="660" y="168" width="178" height="32" rx="8" class="chip"/>
+<text x="749" y="190" text-anchor="middle" class="small">API Key 鉴权</text>
+<rect x="660" y="212" width="178" height="32" rx="8" class="chip"/>
+<text x="749" y="234" text-anchor="middle" class="small">IP 白名单</text>
+<rect x="660" y="256" width="178" height="32" rx="8" class="chip"/>
+<text x="749" y="278" text-anchor="middle" class="small">模型访问权限</text>
+<rect x="660" y="300" width="178" height="32" rx="8" class="chip"/>
+<text x="749" y="322" text-anchor="middle" class="small">限额 · 限流</text>
+<path d="M867 220 H901 V126 M901 126 V315" class="lineSoft"/>
+<path d="M901 123 H925" class="lineSoft" marker-end="url(#arrowSoft)"/>
+<rect x="931" y="87" width="230" height="72" rx="12" class="panelTint"/>
+<rect x="950" y="107" width="32" height="30" rx="4" class="accent"/><path d="M957 116h18 M957 122h18 M957 128h12" class="icon"/>
+<text x="995" y="118" text-anchor="start" class="label">业务系统</text>
+<text x="995" y="140" text-anchor="start" class="micro">知识问答 · 客服</text>
+<path d="M901 221 H925" class="lineSoft" marker-end="url(#arrowSoft)"/>
+<rect x="931" y="185" width="230" height="72" rx="12" class="panelTint"/>
+<rect x="950" y="205" width="32" height="30" rx="4" class="accent"/><path d="M957 214h18 M957 220h18 M957 226h12" class="icon"/>
+<text x="995" y="216" text-anchor="start" class="label">研发工具</text>
+<text x="995" y="238" text-anchor="start" class="micro">代码助手 · 开发</text>
+<path d="M901 319 H925" class="lineSoft" marker-end="url(#arrowSoft)"/>
+<rect x="931" y="283" width="230" height="72" rx="12" class="panelTint"/>
+<rect x="950" y="303" width="32" height="30" rx="4" class="accent"/><path d="M957 312h18 M957 318h18 M957 324h12" class="icon"/>
+<text x="995" y="314" text-anchor="start" class="label">办公应用</text>
+<text x="995" y="336" text-anchor="start" class="micro">文档处理 · 检索</text>
+<rect x="309" y="354" width="852" height="48" rx="12" class="chip"/>
+<text x="735" y="384" text-anchor="middle" class="body">调用路由与用量统计 · 统一了解模型服务使用情况</text>
+</svg>

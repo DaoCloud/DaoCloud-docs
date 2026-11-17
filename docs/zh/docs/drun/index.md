@@ -134,6 +134,9 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
 
 ![d.run AI 操作系统全景图](images/drun-modules.svg)
 
+[了解功能和优势](intro/features-advantages.md){ .md-button }
+[查看典型应用场景](intro/scenarios.md){ .md-button }
+
 ## 学习路径
 
 <style>
