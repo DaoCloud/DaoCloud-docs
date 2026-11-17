@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1920 1318" role="img" aria-labelledby="pt-title pt-desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1920 1318" role="img" aria-labelledby="pt-title pt-desc" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
 <title id="pt-title">DaoCloud 开源项目全景图</title>
-<desc id="pt-desc">DaoCloud DaoCloud 开源项目全景：38 个收录项目，按 AI 模型与推理、GPU 与作业调度、编排与运行时、生命周期与交付、网络与服务网格、存储与数据、可观测与运维、测试与镜像分发八个领域归类，标注 DaoCloud 的参与方式。</desc>
+<desc id="pt-desc">DaoCloud 开源项目全景：38 个收录项目，按 AI 模型与推理、GPU 与作业调度、编排与运行时、生命周期与交付、网络与服务网格、存储与数据、可观测与运维、测试与镜像分发八个领域归类，标注 DaoCloud 的参与方式。</desc>
 <style>
   .bg{fill:#ffffff}
   .band{fill:#f7f8fb}
@@ -33,20 +33,20 @@
 <rect x="28" y="26" width="8" height="54" rx="3" fill="#c8413d"/>
 <text x="50" y="52" font-size="27" font-weight="700" class="t-main">DaoCloud 开源项目全景图</text>
 <text x="50" y="82" font-size="15" class="t-sub">THE PORTFOLIO：从云原生基础设施到 AI 算力与推理</text>
-<text x="1892" y="46" text-anchor="end" font-size="19" font-weight="700" fill="#c8413d">DaoCloud DaoCloud</text>
+<text x="1892" y="46" text-anchor="end" font-size="19" font-weight="700" fill="#c8413d">DaoCloud 道客</text>
 <text x="1892" y="70" text-anchor="end" font-size="13" class="t-faint">资料统计日期 2026.11.03</text>
 <text x="64" y="162" font-size="42" class="num">38</text>
-<text x="152" y="142" font-size="16" font-weight="600" class="t-main">本园收录项目</text>
+<text x="152" y="142" font-size="16" font-weight="600" class="t-main">本图收录项目</text>
 <text x="152" y="168" font-size="13" class="t-faint">含子项目及 1 个归档项目</text>
-<text x="516" y="162" font-size="42" class="num">18</text>
+<text x="516" y="162" font-size="42" class="num">17</text>
 <text x="604" y="142" font-size="16" font-weight="600" class="t-main">DaoCloud 自主开源</text>
 <text x="604" y="168" font-size="13" class="t-faint">含 DaoCloud 或 DaoCloud 员工发起项目</text>
-<text x="968" y="162" font-size="42" class="num">18</text>
+<text x="968" y="162" font-size="42" class="num">19</text>
 <text x="1056" y="142" font-size="16" font-weight="600" class="t-main">DaoCloud 重度参与</text>
 <text x="1056" y="168" font-size="13" class="t-faint">维护、Approver 或深度贡献</text>
 <text x="1420" y="162" font-size="42" class="num">2</text>
 <text x="1508" y="142" font-size="16" font-weight="600" class="t-main">DaoCloud 联合开源</text>
-<text x="1508" y="168" font-size="13" class="t-faint">HAMI · Piraeus</text>
+<text x="1508" y="168" font-size="13" class="t-faint">HAMi · Piraeus</text>
 <text x="64" y="222" font-size="15" font-weight="600" class="t-main">颜色与角标 = DaoCloud 参与方式</text>
 <circle cx="330" cy="217" r="10" class="badge-blue"/><rect x="324.5" y="211.5" width="11.0" height="2.1" rx="1" fill="#ffffff"/><rect x="324.5" y="216" width="11.0" height="2.1" rx="1" fill="#ffffff"/><rect x="324.5" y="220.5" width="11.0" height="2.1" rx="1" fill="#ffffff"/>
 <text x="350" y="222" font-size="14" class="t-main">自主开源</text>
@@ -54,7 +54,7 @@
 <text x="510" y="222" font-size="14" class="t-main">重度参与</text>
 <rect x="630" y="207" width="20" height="20" rx="5.0" class="badge-purple"/><circle cx="645.1" cy="217.0" r="1.6" fill="#ffffff"/><circle cx="643.6" cy="220.6" r="1.6" fill="#ffffff"/><circle cx="640.0" cy="222.1" r="1.6" fill="#ffffff"/><circle cx="636.4" cy="220.6" r="1.6" fill="#ffffff"/><circle cx="634.9" cy="217.0" r="1.6" fill="#ffffff"/><circle cx="636.4" cy="213.4" r="1.6" fill="#ffffff"/><circle cx="640.0" cy="211.9" r="1.6" fill="#ffffff"/><circle cx="643.6" cy="213.4" r="1.6" fill="#ffffff"/><circle cx="640" cy="217" r="4.5" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="640" cy="217" r="1.4" fill="#ffffff"/>
 <text x="660" y="222" font-size="14" class="t-main">联合开源</text>
-<text x="1892" y="222" text-anchor="end" font-size="13" class="t-faint">+ 飞书补充 · 虚线 已归档</text>
+<text x="1892" y="222" text-anchor="end" font-size="13" class="t-faint">虚线 = 已归档</text>
 <rect class="band" x="28" y="252" width="1864" height="108" rx="14"/>
 <text x="46" y="302" font-size="17" font-weight="700" class="t-main">AI 模型与推理</text>
 <text x="46" y="324" font-size="11" class="t-faint">Models &amp; inference</text>
@@ -79,7 +79,6 @@
 <circle cx="1586.0" cy="292.0" r="12" class="badge-green"/><circle cx="1592.1" cy="292.0" r="1.9" fill="#ffffff"/><circle cx="1590.3" cy="296.3" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="298.1" r="1.9" fill="#ffffff"/><circle cx="1581.7" cy="296.3" r="1.9" fill="#ffffff"/><circle cx="1579.9" cy="292.0" r="1.9" fill="#ffffff"/><circle cx="1581.7" cy="287.7" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="285.9" r="1.9" fill="#ffffff"/><circle cx="1590.3" cy="287.7" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="292.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1586.0" cy="292.0" r="1.6" fill="#ffffff"/>
 <text x="1734.0" y="300.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Dynamo</text>
 <text x="1734.0" y="324.0" text-anchor="middle" font-size="13.5" class="t-sub">分布式推理框架</text>
-<text x="1864.0" y="288.0" text-anchor="end" font-size="14" font-weight="700" class="t-faint">+</text>
 <rect class="band" x="28" y="370" width="1864" height="108" rx="14"/>
 <text x="46" y="420" font-size="17" font-weight="700" class="t-main">GPU 与作业调度</text>
 <text x="46" y="442" font-size="11" class="t-faint">GPU &amp; scheduling</text>
@@ -142,7 +141,6 @@
 <circle cx="1586.0" cy="646.0" r="12" class="badge-green"/><circle cx="1592.1" cy="646.0" r="1.9" fill="#ffffff"/><circle cx="1590.3" cy="650.3" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="652.1" r="1.9" fill="#ffffff"/><circle cx="1581.7" cy="650.3" r="1.9" fill="#ffffff"/><circle cx="1579.9" cy="646.0" r="1.9" fill="#ffffff"/><circle cx="1581.7" cy="641.7" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="639.9" r="1.9" fill="#ffffff"/><circle cx="1590.3" cy="641.7" r="1.9" fill="#ffffff"/><circle cx="1586.0" cy="646.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1586.0" cy="646.0" r="1.6" fill="#ffffff"/>
 <text x="1734.0" y="654.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Argo CD</text>
 <text x="1734.0" y="678.0" text-anchor="middle" font-size="13.5" class="t-sub">GitOps 持续交付</text>
-<text x="1864.0" y="642.0" text-anchor="end" font-size="14" font-weight="700" class="t-faint">+</text>
 <rect class="band" x="28" y="724" width="1864" height="108" rx="14"/>
 <text x="46" y="774" font-size="17" font-weight="700" class="t-main">网络与服务网格</text>
 <text x="46" y="796" font-size="11" class="t-faint">Networking &amp; service mesh</text>
@@ -201,7 +199,6 @@
 <circle cx="811.3333333333334" cy="1000.0" r="12" class="badge-green"/><circle cx="817.4" cy="1000.0" r="1.9" fill="#ffffff"/><circle cx="815.6" cy="1004.3" r="1.9" fill="#ffffff"/><circle cx="811.3" cy="1006.1" r="1.9" fill="#ffffff"/><circle cx="807.0" cy="1004.3" r="1.9" fill="#ffffff"/><circle cx="805.2" cy="1000.0" r="1.9" fill="#ffffff"/><circle cx="807.0" cy="995.7" r="1.9" fill="#ffffff"/><circle cx="811.3" cy="993.9" r="1.9" fill="#ffffff"/><circle cx="815.6" cy="995.7" r="1.9" fill="#ffffff"/><circle cx="811.3333333333334" cy="1000.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="811.3333333333334" cy="1000.0" r="1.6" fill="#ffffff"/>
 <text x="931.7" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">OpenTelemetry</text>
 <text x="931.7" y="1032.0" text-anchor="middle" font-size="13.5" class="t-sub">可观测数据采集</text>
-<text x="1034.0" y="996.0" text-anchor="end" font-size="14" font-weight="700" class="t-faint">+</text>
 <rect class=" f-green" x="1062.0" y="976.0" width="264.7" height="76" rx="10"/>
 <circle cx="1088.0" cy="1000.0" r="12" class="badge-green"/><circle cx="1094.1" cy="1000.0" r="1.9" fill="#ffffff"/><circle cx="1092.3" cy="1004.3" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="1006.1" r="1.9" fill="#ffffff"/><circle cx="1083.7" cy="1004.3" r="1.9" fill="#ffffff"/><circle cx="1081.9" cy="1000.0" r="1.9" fill="#ffffff"/><circle cx="1083.7" cy="995.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="993.9" r="1.9" fill="#ffffff"/><circle cx="1092.3" cy="995.7" r="1.9" fill="#ffffff"/><circle cx="1088.0" cy="1000.0" r="5.4" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="1088.0" cy="1000.0" r="1.6" fill="#ffffff"/>
 <text x="1208.3" y="1008.0" text-anchor="middle" font-size="19" font-weight="600" class="t-main">Apollo</text>
@@ -240,6 +237,6 @@
 <text x="1734.0" y="1150.0" text-anchor="middle" font-size="13.5" class="t-sub">容器镜像分发网络</text>
 <text x="46" y="1230" font-size="13"><tspan font-weight="600" class="t-main">展示口径：</tspan><tspan class="t-faint">每个项目按主要参与方式归类一次；收录数含工具、Kubernetes 子项目、DaoCloud 员工发起项目与归档项目，不等同于公司级项目总量。</tspan></text>
 <text x="46" y="1252" font-size="13"><tspan font-weight="600" class="t-main">关系口径：</tspan><tspan class="t-faint">自主 = 发起；重度参与 = 维护 / Approver / 深度贡献；联合 = 联合发起。联合发起不表示当前维护者任职归属。</tspan></text>
-<text x="46" y="1274" font-size="13"><tspan font-weight="600" class="t-main">补充与修订：</tspan><tspan class="t-faint">+ 标注 Dynamo、Argo CD、OpenTelemetry、KWOK 按飞书发起口径归类；Merbridge 为 CNCF Sandbox 项目，虽超一年未更新仍保留并标注已归档；已剔除超一年未更新的 Knoway、kasmcloud。</tspan></text>
+<text x="46" y="1274" font-size="13"><tspan font-weight="600" class="t-main">归档说明：</tspan><tspan class="t-faint">Merbridge 曾为 CNCF Sandbox 项目，2025 年 5 月转入 CNCF 归档，图中以虚线标注。</tspan></text>
 <text x="46" y="1296" font-size="13"><tspan class="t-faint">技术分行按主要用途编排，不代表依赖关系。</tspan></text>
 </svg>
