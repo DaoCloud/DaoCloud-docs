@@ -1565,6 +1565,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2026:
+          - 八年 KubeCon 参与总结: blogs/2026/kubecon.md
           - DaoCloud 助力宁波银行 AI 转型: blogs/2026/ningbo-bank.md
           - Dynamo v1.5.0 发布: blogs/2026/dynamo-v1.5.0.md
           - cgroup v1 已死: blogs/2026/kubernetes-node-swap-ai.md
