@@ -1,9 +1,8 @@
 nav:
   - d.run AI 操作系统:
-      - 概述: drun/index.md
+      - 功能和优势: drun/index.md
       - 探索和安装:
           - 介绍:
-              - 功能和优势: drun/intro/features-advantages.md
               - 典型应用场景: drun/intro/scenarios.md
               - 我们是 K8s 认证服务商: drun/intro/kcsp.md
               - Release Notes: drun/drun-rn/20260930.md
