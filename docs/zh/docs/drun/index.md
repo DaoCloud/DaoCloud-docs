@@ -1,70 +1,191 @@
-# 功能和优势
+---
+hide:
+  - toc
+---
 
-d.run AI 操作系统是面向企业的 AI 基础设施与服务平台，连接算力、模型和应用。平台基于云原生底座，提供异构算力管理、AI 开发与训练、模型部署与推理、智能体运行以及运营运维等能力，帮助企业将基础资源转化为可使用、可管理的 AI 服务。
+# d.run AI 操作系统
 
-![d.run AI 操作系统架构图](intro/images/drun-architecture-reference.png)
+d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推理引擎核心贡献积淀，统一纳管多元异构算力，
+实现颗粒化调度、全栈推理优化与全链路 Token 治理，算力利用率超 80%，将算力高效转化为可管可控的 Token 化 AI 生产力；
+平台汇聚全球主流大模型生态，配备可视化运营驾驶舱与 d.run Copilot 智能助手，面向企业全部门输出稳定高效的 AI 服务，
+全方位支撑业务智能化长期升级。
 
-## 功能特性
+<style>
+.tf-arch-card{min-width:calc(25% - 6px) !important}
+.tf-arch{overflow:visible !important}
+.tf-arch-card{overflow:visible !important}
+.tf-arch-card::after{display:none !important}
+.tf-arch-layer:first-child{border-radius:14px 14px 0 0 !important}
+.tf-arch-layer:last-child{border-radius:0 0 14px 14px !important}
+.tf-arch-card-tip{
+  opacity:0;
+  position:absolute;
+  bottom:calc(100% + 8px);
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,0.85);
+  color:#fff;
+  padding:0.35rem 0.65rem;
+  border-radius:6px;
+  font-size:0.72rem;
+  font-weight:500;
+  white-space:nowrap;
+  z-index:100;
+  pointer-events:none;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  transition:opacity 0.2s ease
+}
+.tf-arch-card-tip::after{
+  content:"";
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%);
+  border:5px solid transparent;
+  border-top-color:rgba(0,0,0,0.85)
+}
+.tf-arch-card:hover .tf-arch-card-tip{
+  opacity:1
+}
+</style>
 
-### 异构算力管理与资源调度
+<div class="tf-arch tf-arch--compact">
+  <div class="tf-arch-layer tf-arch-layer--model">
+    <div class="tf-arch-layer-label">云原生 AI</div>
+    <div class="tf-arch-cards">
+      <a class="tf-arch-card tf-arch-card--model" href="hydra/intro/">
+        <span class="tf-arch-card-title">大模型服务平台</span>
+        <span class="tf-arch-card-tip">模型部署与运维管理</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--model" href="baize/intro/">
+        <span class="tf-arch-card-title">AI Lab</span>
+        <span class="tf-arch-card-tip">云原生训推一体化</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--model" href="inferx/">
+        <span class="tf-arch-card-title">推理加速</span>
+        <span class="tf-arch-card-tip">推理加速与引擎管理</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--model" href="clawos/intro/">
+        <span class="tf-arch-card-title">ClawOS</span>
+        <span class="tf-arch-card-tip">多智能体运行与治理</span>
+      </a>
+    </div>
+  </div>
+  <div class="tf-arch-arrow">▲</div>
+  <div class="tf-arch-layer tf-arch-layer--compute">
+    <div class="tf-arch-layer-label">云原生底座</div>
+    <div class="tf-arch-cards">
+      <a class="tf-arch-card tf-arch-card--compute" href="kpanda/intro/">
+        <span class="tf-arch-card-title">容器管理</span>
+        <span class="tf-arch-card-tip">集群与工作负载管理</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="kangaroo/intro/">
+        <span class="tf-arch-card-title">镜像仓库</span>
+        <span class="tf-arch-card-tip">镜像托管与集成</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="topohub/intro/">
+        <span class="tf-arch-card-title">设备管理</span>
+        <span class="tf-arch-card-tip">硬件设备统一纳管</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="network/intro/">
+        <span class="tf-arch-card-title">云原生网络</span>
+        <span class="tf-arch-card-tip">多 CNI 融合网络</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--compute" href="storage/">
+        <span class="tf-arch-card-title">云原生存储</span>
+        <span class="tf-arch-card-tip">容器化存储与 CSI</span>
+      </a>
+    </div>
+  </div>
+  <div class="tf-arch-arrow">▲</div>
+  <div class="tf-arch-layer tf-arch-layer--ops">
+    <div class="tf-arch-layer-label">运营管理</div>
+    <div class="tf-arch-cards">
+      <a class="tf-arch-card tf-arch-card--ops" href="copilot/">
+        <span class="tf-arch-card-title">Copilot</span>
+        <span class="tf-arch-card-tip">智能运维助手</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--ops" href="crane/intro/">
+        <span class="tf-arch-card-title">驾驶舱</span>
+        <span class="tf-arch-card-tip">运营数据可视化</span>
+      </a>
+    </div>
+  </div>
+  <div class="tf-arch-arrow">▲</div>
+  <div class="tf-arch-layer tf-arch-layer--ops">
+    <div class="tf-arch-layer-label">运维管理</div>
+    <div class="tf-arch-cards">
+      <a class="tf-arch-card tf-arch-card--ops" href="insight/intro/">
+        <span class="tf-arch-card-title">可观测性</span>
+        <span class="tf-arch-card-tip">指标日志链路观测</span>
+      </a>
+      <a class="tf-arch-card tf-arch-card--ops" href="ghippo/intro/">
+        <span class="tf-arch-card-title">全局管理</span>
+        <span class="tf-arch-card-tip">用户权限与平台设置</span>
+      </a>
+    </div>
+  </div>
+</div>
 
-- **集群与设备管理**：接入和管理集群与工作负载，并通过设备管理统一查看和管理服务器、交换机等基础设施，帮助运维人员掌握资源分布。
-- **资源池与调度**：通过 AI Lab 创建资源池，组织集群中的 CPU、内存和异构 GPU 资源；通过队列关联工作空间，为开发、训练和推理任务统筹分配资源。
-- **网络与存储**：通过云原生网络连接容器化工作负载，并通过容器存储对接不同存储资源，为数据集、模型文件和应用提供数据访问能力。
+作为面向企业输出的 AI 操作系统，d.run 将算力调度、大模型推理与运营治理融为一体。
+平台统一纳管英伟达及国产异构算力，依靠颗粒化调度与全栈推理优化，把分散 GPU 算力转化为低成本、高稳定的 Token 服务；
+配备可视化运营驾驶舱，实时呈现算力消耗、模型调用与 Token 产出全链路数据；
+内置 d.run Copilot 智能助手，降低企业全部门使用 AI 的门槛，推动业务智能化长期升级。
 
-了解[容器管理](kpanda/intro/index.md)、[AI Lab](baize/intro/index.md)和[设备管理](topohub/intro/index.md)。
+![d.run AI 操作系统全景图](images/drun-modules.svg)
 
-### AI 开发与模型训练
+[了解功能和优势](intro/features-advantages.md){ .md-button }
+[查看典型应用场景](intro/scenarios.md){ .md-button }
 
-- **数据准备**：管理训练代码、训练数据和输出数据集，支持多数据源接入与数据预热，为开发和训练任务准备数据。
-- **模型开发**：使用 JupyterLab 或 CodeServer 等 Notebook 环境编写和调试代码，按需挂载资源与数据集，并支持自定义环境镜像。
-- **训练任务**：提交单机或分布式训练任务，支持 PyTorch、TensorFlow、PaddlePaddle 和 MPI 等框架；通过资源池与队列分配资源，并使用 TensorBoard 分析任务。
-- **模型服务**：将模型通过 Triton 或 vLLM 部署为推理服务，衔接模型开发、训练与服务部署。
+## 学习路径
 
-了解 [AI Lab](baize/intro/index.md) 和[开发控制台快速入门](baize/developer/quick-start.md)。
+<style>
+.drun-path{display:flex;gap:0.75rem;margin:1.25rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.drun-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.drun-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.drun-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.drun-path-step:last-child::after{display:none}
+.drun-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.drun-path-title{font-weight:700;font-size:0.95rem}
+.drun-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.drun-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.drun-path-step::after{display:none}}
+</style>
 
-### 模型部署与推理优化
+<div class="drun-path">
+  <a class="drun-path-step" style="--path-c:#2196f3" href="install/">
+    <span class="drun-path-num">1</span>
+    <span class="drun-path-title">部署平台</span>
+    <span class="drun-path-desc">离线安装 d.run AI 操作系统</span>
+    <span class="drun-path-go">前往 →</span>
+  </a>
+  <a class="drun-path-step" style="--path-c:#00acc1" href="kpanda/intro/">
+    <span class="drun-path-num">2</span>
+    <span class="drun-path-title">纳管算力</span>
+    <span class="drun-path-desc">接入集群，纳管异构 GPU 算力</span>
+    <span class="drun-path-go">前往 →</span>
+  </a>
+  <a class="drun-path-step" style="--path-c:#43a047" href="hydra/intro/">
+    <span class="drun-path-num">3</span>
+    <span class="drun-path-title">部署模型</span>
+    <span class="drun-path-desc">模型广场选型，一键部署推理服务</span>
+    <span class="drun-path-go">前往 →</span>
+  </a>
+  <a class="drun-path-step" style="--path-c:#fb8c00" href="clawos/intro/">
+    <span class="drun-path-num">4</span>
+    <span class="drun-path-title">部署智能体</span>
+    <span class="drun-path-desc">编排多智能体，落地业务场景</span>
+    <span class="drun-path-go">前往 →</span>
+  </a>
+  <a class="drun-path-step" style="--path-c:#8e24aa" href="crane/intro/">
+    <span class="drun-path-num">5</span>
+    <span class="drun-path-title">运营洞察</span>
+    <span class="drun-path-desc">驾驶舱看全链路 Token 运营</span>
+    <span class="drun-path-go">前往 →</span>
+  </a>
+</div>
 
-- **模型选择与部署**：通过模型广场浏览和体验模型，选择模型及部署配置创建推理服务；管理员可统一管理模型上架与部署配置。
-- **分布式推理**：支持多机多卡部署，并兼容多种异构 GPU，为资源需求较大的模型提供推理环境。
-- **推理优化与监测**：支持 vLLM、SGLang 等推理后端；推理加速服务提供 PD 分离、KV Cache 卸载等优化，以及上线前性能评估和上线后运行监测能力。
-
-了解[大模型服务平台](hydra/intro/index.md)和[推理加速服务](inferx/index.md)。
-
-### 模型服务与 Token 治理
-
-- **模型接入与调用**：提供模型接入和统一调用入口，应用可以通过兼容 OpenAI 的 API 使用模型服务，便于将模型能力集成到业务系统中。
-- **访问控制**：通过 API Key 验证模型服务调用身份，并为 API Key 配置 IP 地址或网段白名单及可访问的模型范围，限制调用来源和模型访问权限。
-- **限额与限流**：支持为 API Key 和工作空间设置 Token 配额，管理调用用量；支持按 API Key 或工作空间配置时间窗口内的请求次数限制，也支持基于 Token 的限流，辅助控制流量并保障服务稳定性。
-- **智能路由**：应用使用 `model=auto` 发起请求后，平台可根据时间、请求长度或其他规则选择目标模型；未命中规则时使用兜底模型，帮助不同请求匹配合适的模型服务。
-- **内容安全与审计**：通过网关安全策略检测模型请求和响应中的敏感词或风险模式，按配置执行阻断、记录日志或脱敏等操作；还可配置模型白名单或黑名单，并通过安全审计日志追溯策略触发记录。
-- **用量统计**：按 API Key、模型和时间等维度查看调用量及输入、输出 Token 用量，为服务使用分析和资源规划提供依据。
-
-了解[大模型服务平台](hydra/intro/index.md)、[API Key 管理](hydra/apikey.md)、[MaaS 模型管理](hydra/oam/maas.md)、[智能路由](hydra/oam/auto-route.md)和[用量统计](hydra/usage.md)。
-
-### 智能体运行与治理
-
-- **实例管理**：在工作空间中创建和管理受支持的 OpenClaw 实例，查看运行记录、调用量、Token 用量及错误率等信息。
-- **Skill 与网络管理**：通过 Skill 市场和管理能力组织智能体技能，并配置网络策略，管理实例的网络访问范围。
-- **协作工具集成**：支持与飞书和 Microsoft Teams 集成，使业务人员能够通过协作工具使用智能体，开展知识问答、文档处理和开发辅助等工作。
-
-了解 [ClawOS](clawos/intro/index.md)。
-
-### 运营、运维与安全管理
-
-- **运营洞察**：通过驾驶舱汇聚算力产能、Token 产出和生产健康等数据；在企业模式下查看组织用量与部门配额，辅助资源规划。
-- **可观测性**：通过指标、日志、链路和告警等能力观察平台与工作负载，辅助发现异常、分析运行状态和定位问题。
-- **权限与审计**：管理用户、工作空间和访问权限，并通过审计记录查看关键操作，支持团队协作和操作追溯。
-- **智能交互**：通过 Copilot 自然语言交互入口查询资源与服务状态、分析运行情况，并在权限范围内辅助执行任务。
-
-了解[驾驶舱](crane/intro/index.md)、[可观测性](insight/intro/index.md)、[全局管理](ghippo/intro/index.md)和 [Copilot](copilot/index.md)。
-
-## 产品优势
-
-- **统一异构算力，支撑多团队共享**：集中管理不同集群和异构 GPU 资源，通过资源池与队列为开发、训练和推理任务分配资源，减少分散建设和闲置资源带来的管理负担。
-- **优化推理链路，提升服务承载能力**：结合推理引擎、分布式推理和缓存等优化能力，针对不同模型与业务负载进行评估和调优，在吞吐、延迟和资源使用之间寻求平衡。
-- **统一模型服务，降低业务接入门槛**：通过模型广场、部署配置和兼容 API，帮助企业将开源模型及自有模型转化为可调用的服务，为多个业务团队提供统一入口。
-- **治理调用与用量，增强安全可控性**：通过访问权限、限额限流、内容安全、用量统计与审计等能力，帮助企业管理模型服务的调用和使用情况。
-- **贯通运营与运维，支撑持续优化**：结合驾驶舱、可观测性和 Copilot，帮助管理人员了解算力与模型服务运行情况，辅助资源规划、异常排查和日常运营。
-
-[了解典型应用场景](intro/scenarios.md)
+[下载 d.run AI 操作系统离线包](https://docs.daocloud.io/download/drun/){ .md-button }
+[安装 d.run AI 操作系统](install/index.md){ .md-button }
+[查阅 d.run AI 操作系统彩页](https://harbor-test2.cn-sh2.ufileos.com/docs/download/drun.pdf){ .md-button }
+{: .tf-footer-cta }
