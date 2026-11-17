@@ -4,11 +4,9 @@
 
 KubeCon + CloudNativeCon 是 CNCF（云原生计算基金会）的旗舰技术大会，名字取自 Kubernetes 的缩写——K8s 里的那个“Kube”。它是云原生领域规模最大、议程也最“硬”的会：从 Kubernetes 本身，到调度、网络、存储、运行时、可观测性、安全，再到最近两年的 AI 推理与算力调度，都在同一个场子里。
 
-大会每年在全球几个区域轮流开：北美、欧洲、中国、日本、印度。2026 年我们走了四站：阿姆斯特丹（3.23-3.26）、横滨（7.28-7.30）、上海（9.7-9.9）、盐湖城（11.9-11.12）。一站通常 3-4 天，形式包括 Keynote、分会场演讲（Breakout Session）、Tutorial、闪电演讲、维护者专场和项目展台。同城往往还会并办一批同场活动——CiliumCon、IstioCon、OpenInfra Summit、PyTorch Conference——2026 年上海站就是四会合一的规模。
+大会每年在全球几个区域轮流开：北美、欧洲、中国、日本、印度。2026 年我们走了四站：阿姆斯特丹（3.23-3.26）、横滨（7.28-7.30）、上海（9.7-9.9）、盐湖城（11.9-11.12）。一站通常 3-4 天，形式包括主会场 Keynote、分会场演讲 Session、实战演示 Tutorial、闪电演讲、维护者专场和项目展台。同城往往还会并办一批同场活动——CiliumCon、IstioCon、OpenInfra Summit、PyTorch Conference——2026 年上海站就是四会合一的规模。
 
 规模上，2025 年伦敦站超过 12,500 名参会者，2026 年阿姆斯特丹现场估计在 1.3 万人左右。这是全球云原生和 AI 基础设施从业者一年里最集中的一次碰面。所以，谁能在 KubeCon 上讲、讲什么，某种程度上就是这个行业的技术议程本身。
-
-这篇文章把 DaoCloud 这八年的议题摊开算一遍：哪一年讲了多少、讲的是什么、谁在讲，以及这条曲线背后真正变了的东西。
 
 ## 八年账本
 
@@ -30,7 +28,7 @@ KubeCon + CloudNativeCon 是 CNCF（云原生计算基金会）的旗舰技术�
 | 2026 | 16 | 8 | 8 | 上海站 8 个 + 5 个展台 |
 | **合计** | **111** | **68** | **43** | 2 届联席主席 · 5 场 Keynote |
 
-口径说明：同一议题有多位 DaoCloud 演讲者时计 1 个；2022 年那一个是北美站的 SIG Scheduling 维护者专场，疫情期间线上参与，按举办地计入海外。
+> 同一议题有多位 DaoCloud 演讲者时计 1 个；2022 年那一个是北美站的 SIG Scheduling 维护者专场，疫情期间线上参与，按举办地计入海外。
 
 ## 2018-2024：先讲客户，后讲项目
 
@@ -42,13 +40,13 @@ KubeCon + CloudNativeCon 是 CNCF（云原生计算基金会）的旗舰技术�
 | 2021 | KubeCon China（因疫情转线上） | 4 | 浦发、KubeEdge、SIG Node、优雅关机 |
 | 2022 | KubeCon 北美（线上） | 1 | kerthcet 参与 SIG Scheduling 维护者专场 |
 | 2023 | KubeCon 欧洲 | 3 | 调度、Kueue、kubeadm |
-| 2023 | KubeCon 上海 | 16 | 14 位演讲者：IstioCon ×2、Kubespray、Kueue、浦发、Karmada、containerd、K8sGPT、SIG Instrumentation / Node / Scheduling / Docs、KubeEdge、SAIC、KWOK<br>并组织 KCS |
+| 2023 | KubeCon 上海 | 16 | 14 位演讲者：IstioCon ×2、Kubespray、Kueue、浦发、Karmada、containerd、K8sGPT、SIG Instrumentation / Node / Scheduling / Docs、KubeEdge、SAIC、KWOK，还组织了 KCS |
 | 2023 | KubeCon 北美 | 2 | Spiderpool、Karmada<br>另制作了一系列维护者采访视频 |
 | 2024 | KubeCon 欧洲 | 11 | KubeEdge、Karmada、Spiderpool、HwameiStor、Kubespray、Structured Logging、SIG Scheduling、Steering |
 | 2024 | KubeCon 香港 | 20 | Co-Chair（Paco Xu）<br>HAMi、Ollama Operator、containerd、Kubernetes、nerdctl、Kubespray、Istio、Keycloak、KWOK、Kueue、KubeEdge、Argo CD、Kuasar、Cilium Gateway |
 | 2024 | KubeCon 北美 | 2 | Clusterpedia、Kubean |
 
-前四年是一段很典型的“跟着客户上台”的阶段。2020、2021 两年 KubeCon China 因疫情取消线下会场、整体转线上，我们也就在线上讲，客户案例和技术分享各占一半：浦发银行的云原生演进、超算中心的 HPC 容器化、.NET on K8s、Piraeus 本地持久卷。DaoCloud 讲的多半是
+前四年是一段很典型的“跟着客户上台”的阶段。2020、2021 两年 KubeCon China 因疫情取消线下会场、整体转线上，DaoCloud 也就在线上讲，客户案例和技术分享各占一半：浦发银行的云原生演进、超算中心的 HPC 容器化、.NET on K8s、Piraeus 本地持久卷。DaoCloud 讲的多半是
 **我们帮谁把 Kubernetes 跑起来了** 。
 
 2022 年是低谷，全年只有 1 个议题，还是线上参与的维护者圆桌。线下场景被切断之后，“还能讲什么”这个问题变得很尖锐。
@@ -62,10 +60,10 @@ KubeCon + CloudNativeCon 是 CNCF（云原生计算基金会）的旗舰技术�
 
 | 活动 | 城市 · 日期 | 议题数 | DaoCloud 议题与演讲者 |
 |---|---|---|---|
-| KubeCon 欧洲 | 伦敦 · 4.1-4.4 | 8 | LWS、Spiderpool、KubeEdge、KWOK、Kubernetes、Karpenter<br>演讲者：kerthcet、weizhoublue、wzshiming、Hongbing Zhang、liyuerich、Paco Xu、carlory |
-| KubeCon China | 香港 · 6.10-6.11 | 13 | Co-Chair：Roby<br>Keynote ×2：Roby、kerthcet<br>议题：llmaz、Kubernetes、LWS、KubeEdge、K8sGPT、OTel、Kubespray<br>演讲者：panpan0000、kebe7jun、Neko、yankay、Hongbing Zhang、liyuerich、kerthcet、cyclinder、jaredTan95、nicole-lihui、Roby、Paco Xu |
+| KubeCon 欧洲 | 伦敦 · 4.1-4.4 | 8 | - 议题：LWS、Spiderpool、KubeEdge、KWOK、Kubernetes、Karpenter<br>- 演讲者：kerthcet、weizhoublue、wzshiming、Hongbing Zhang、liyuerich、Paco Xu、carlory |
+| KubeCon China | 香港 · 6.10-6.11 | 13 | - Co-Chair：Roby<br>- Keynote ×2：Roby、kerthcet<br>- 议题：llmaz、Kubernetes、LWS、KubeEdge、K8sGPT、OTel、Kubespray<br>- 演讲者：panpan0000、kebe7jun、Neko、yankay、Hongbing Zhang、liyuerich、kerthcet、cyclinder、jaredTan95、nicole-lihui、Roby、Paco Xu |
 | KubeCon Japan | 东京 · 6.16-6.17 | 4 | Hongbing Zhang（Keynote）、yankay、weizhoublue、Paco Xu |
-| KubeCon 北美 | 亚特兰大 · 11.10-11.13 | 4 | Introducing TAG Workloads Foundation（Paco Xu）<br>KubeEdge Deep Dive + Project Lightning Talk（Hongbing Zhang）<br>Spiderpool Lightning Talk：拓扑感知的 RDMA 分配（weizhoublue） |
+| KubeCon 北美 | 亚特兰大 · 11.10-11.13 | 4 | - Introducing TAG Workloads Foundation（Paco Xu）<br>- KubeEdge Deep Dive + Project Lightning Talk（Hongbing Zhang）<br>- Spiderpool Lightning Talk：拓扑感知的 RDMA 分配（weizhoublue） |
 
 2025 年总计 29 个议题，海外 16 个对国内 13 个，
 **这是八年来海外第一次超过国内** 。同一年 Roby 接棒香港站联席主席，加上香港站 2 场、东京站 1 场，全年 3 场 Keynote。
@@ -76,10 +74,10 @@ KubeCon + CloudNativeCon 是 CNCF（云原生计算基金会）的旗舰技术�
 
 | 活动 | 城市 · 日期 | 议题数 | DaoCloud 议题与演讲者 |
 |---|---|---|---|
-| KubeCon 欧洲 | 阿姆斯特丹 · 3.23-3.26 | 3 | LMCache（yankay）<br>TAS（weizhoublue）<br>CiliumCon 闪电演讲：租户南北向带宽公平管理（weizhoublue） |
+| KubeCon 欧洲 | 阿姆斯特丹 · 3.23-3.26 | 3 | - LMCache（yankay）<br>- TAS（weizhoublue）<br>- CiliumCon 闪电演讲：租户南北向带宽公平管理（weizhoublue） |
 | KubeCon Japan | 横滨 · 7.28-7.30 | 2 | llm-d：From Model Serving to Distributed Inference（yankay，与 Microsoft 合讲）；Spiderpool（weizhoublue） |
-| KubeCon China | 上海 · 9.7-9.9 | 8 | LWS（yankay、panpan0000）<br>网络（weizhoublue）<br>JobSet（carlory）<br>LLM 推理可观测性（jaredTan95、Frapschen）<br>PD 分离与 TTFT（kebe7jun、nicole-lihui）<br>DRA（Paco Xu）<br>KubeEdge（Hongbing Zhang）<br>另有 5 个开源项目展台<br>大会期间 CNCF 宣布 Karmada 毕业 |
-| KubeCon 北美 | 盐湖城 · 11.9-11.12 | 3 | Steering the Ship: Ask the Kubernetes Steering Committee（Paco Xu）<br>TAG Workloads Foundation: Core Runtime, Batch Scheduling, and Moar（Paco Xu）<br>Fighting Fire with Fire: Scaling KubeEdge Vulnerability Management in the New AI Era（Hongbing Zhang） |
+| KubeCon China | 上海 · 9.7-9.9 | 8 | - LWS（yankay、panpan0000）<br>- 网络（weizhoublue）<br>- JobSet（carlory）<br>- LLM 推理可观测性（jaredTan95、Frapschen）<br>- PD 分离与 TTFT（kebe7jun、nicole-lihui）<br>- DRA（Paco Xu）<br>- KubeEdge（Hongbing Zhang）<br>- 另有 5 个开源项目展台<br>- 大会期间 CNCF 宣布 Karmada 毕业 |
+| KubeCon 北美 | 盐湖城 · 11.9-11.12 | 3 | - Steering the Ship: Ask the Kubernetes Steering Committee（Paco Xu）<br>- TAG Workloads Foundation: Core Runtime, Batch Scheduling, and Moar（Paco Xu）<br>- Fighting Fire with Fire: Scaling KubeEdge Vulnerability Management in the New AI Era（Hongbing Zhang） |
 
 ![KubeCon + CloudNativeCon Europe 2026 阿姆斯特丹 Keynote 主会场](./images/kubecon-eu-2026-keynote.jpg)
 
