@@ -156,31 +156,31 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
     <span class="tf-path-num">1</span>
     <span class="tf-path-title">部署平台</span>
     <span class="tf-path-desc">离线安装 Token 工厂，完成初始化与授权</span>
-    <span class="tf-path-go">前往 →</span>
+    <span class="tf-path-go">Go →</span>
   </a>
   <a class="tf-path-step" style="--path-c:#00acc1" href="kpanda/intro/">
     <span class="tf-path-num">2</span>
     <span class="tf-path-title">纳管算力</span>
     <span class="tf-path-desc">接入 GPU 节点，创建工作集群</span>
-    <span class="tf-path-go">前往 →</span>
+    <span class="tf-path-go">Go →</span>
   </a>
   <a class="tf-path-step" style="--path-c:#43a047" href="hydra/intro/">
     <span class="tf-path-num">3</span>
     <span class="tf-path-title">部署模型</span>
     <span class="tf-path-desc">模型广场选型，一键部署推理服务</span>
-    <span class="tf-path-go">前往 →</span>
+    <span class="tf-path-go">Go →</span>
   </a>
   <a class="tf-path-step" style="--path-c:#fb8c00" href="dak/">
     <span class="tf-path-num">4</span>
     <span class="tf-path-title">构建应用</span>
     <span class="tf-path-desc">搭建语料库与智能问答应用</span>
-    <span class="tf-path-go">前往 →</span>
+    <span class="tf-path-go">Go →</span>
   </a>
   <a class="tf-path-step" style="--path-c:#8e24aa" href="crane/intro/">
     <span class="tf-path-num">5</span>
     <span class="tf-path-title">运营结算</span>
     <span class="tf-path-desc">驾驶舱看运营，费用中心管计费</span>
-    <span class="tf-path-go">前往 →</span>
+    <span class="tf-path-go">Go →</span>
   </a>
 </div>
 
