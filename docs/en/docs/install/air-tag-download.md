@@ -11,6 +11,7 @@ This page provides a script to easily download all the offline packages required
 
 ```bash
 export VERSION=v0.46.0 # Change the version as required
+
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/download_packages_${VERSION}.sh
 chmod +x download_packages_${VERSION}.sh
 ```

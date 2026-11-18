@@ -17,6 +17,7 @@ This page lists the download addresses of installers and image packages.
 
      ```shell
      export VERSION=v0.46.0 # Change the version as required
+
      wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-$VERSION-amd64.tar
      ```
 
@@ -32,6 +33,7 @@ This page lists the download addresses of installers and image packages.
 
      ```shell
      export VERSION=v0.46.0 # Change the version as required
+     
      wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-$VERSION-arm64.tar
      ```
 
