@@ -1,5 +1,7 @@
 # DaoCloud 开源布道：八年 KubeCon，112 个议题
 
+2018 年，道客带着中国企业的云原生实践走上 KubeCon；2024、2025 年，道客工程师与 CEO 先后担任大会联席主席。 八年间，变化的不只是参会规模，更是「DaoCloud 道客」在全球开源社区中的角色与影响力。
+
 ## KubeCon 是什么
 
 KubeCon + CloudNativeCon 是 CNCF（云原生计算基金会）的旗舰技术大会，名字里的“Kube”就是 Kubernetes 的简称。它是云原生领域规模最大、议程也最“硬”的会：从 Kubernetes 本身，到调度、网络、存储、运行时、可观测性、安全，再到最近两年的 AI 推理与算力调度，都在同一个场子里。
@@ -45,13 +47,13 @@ KubeCon + CloudNativeCon 是 CNCF（云原生计算基金会）的旗舰技术�
 | 2024 | KubeCon 香港 | 20 | Co-Chair（Paco Xu）<br>Keynote ×2，其一为 wzshiming 与 NVIDIA 合讲的 KWOK 大规模测试<br>HAMi、Ollama Operator、containerd、Kubernetes、nerdctl、Kubespray、Istio、Keycloak、KWOK、Kueue、KubeEdge、Argo CD、Kuasar、Cilium Gateway |
 | 2024 | KubeCon 北美 | 2 | Clusterpedia、Kubean |
 
-前四年是很典型的“跟着客户上台”阶段。2020、2021 两年 KubeCon China 因疫情取消线下会场、整体转线上，DaoCloud 也就在线上讲：浦发银行的云原生演进、超算中心的 HPC 容器化、.NET on K8s、Piraeus 本地持久卷。
+2018—2021 年，从真实业务走向国际技术舞台。从浦发银行的云原生演进、超算中心的 HPC 容器化，到 .NET on Kubernetes、Piraeus 本地持久卷，道客与客户共同带来了一系列来自生产环境的技术实践。彼时，道客更多是在讲述云原生如何解决真实业务难题，让中国企业的技术实践被更多开发者看见。
 
-2022 年线下场景因疫情停摆，全年唯一一个议题是北美站线上的 SIG Scheduling 维护者专场。
+2022 年，从技术实践者走向上游社区核心。这一年，道客的身影首次出现在 KubeCon 北美站的 SIG Scheduling 维护者专场。这一次，道客开始以 Kubernetes 核心工作组维护者的身份，与全球开发者探讨技术演进。从使用开源技术解决问题，到参与推动开源技术本身的发展，道客完成了一次重要的角色转变。
 
-2023 年这个转向完全显形：上海站的议题里，Kueue、Karmada、containerd、KWOK、SIG Instrumentation / Node / Scheduling / Docs 都是 DaoCloud 深度参与的方向，还承担了 KCS（Kubernetes 贡献者峰会）的组织。
+2023 年，从参与项目走向深度共建。这一年，道客实现全球三场 KubeCon 全勤，开源贡献开始在更多核心技术领域集中展现。Kueue、Karmada、containerd、KWOK 等项目，以及 Kubernetes 的 Scheduling、Node、Instrumentation、Docs 等核心工作组，都活跃着道客工程师的身影。更重要的是，道客不再只是站在台上分享技术，还承担起 Kubernetes 贡献者峰会（KCS）的组织工作，推动来自不同国家和地区的开发者交流协作。从贡献代码到连接社区，道客开始以更深层次的方式参与全球开源生态建设。
 
-2024 年，DaoCloud 议题覆盖到了整个上游：欧洲站覆盖 KubeEdge、Karmada、Spiderpool、HwameiStor、Kubespray、Structured Logging；香港站 Paco Xu 担任 KubeCon China 联席主席。
+2024 年，从社区共建者走向国际大会组织者。这一年，道客围绕 AI 负载下的 GPU 共享、大规模测试与故障恢复等挑战提出了先进的技术方案，紧跟技术发展和前沿创新，在全球开源社区中始终保持着强劲的技术影响力。而更具标志性的事件，发生在香港。道客开源团队负责人 Paco Xu 担任 KubeCon China 大会联席主席，参与大会的组织与技术议程建设。2025 年，道客 CEO Roby 接棒担任大会联席主席。从站上 KubeCon 的讲台，到参与搭建 KubeCon 的舞台，道客在全球开源社区中的角色又向前迈进了一步。
 
 ## 2025：海外第一次超过国内
 
@@ -173,6 +175,6 @@ KubeCon 的 CFP 只认技术：展台可以买，顶级赞助商还能买到少�
 
 112 个议题拆到每一年、每一站，是一条很朴素的路径：先跟着客户上台，再带着自己维护的项目上台，最后坐到能决定议程的位置上。讲多少不重要，重要的是每次上台都带着新东西：一个新项目、一个新版本，或者一个新问题的解法。
 
-八年里，AI 从“能不能跑”走到“跑得多快、多便宜”，Kubernetes 从容器编排长成了 AI 的操作系统。DaoCloud 一直做的那四层——算力怎么切、任务怎么排、模型怎么分发、请求怎么走——恰好是每一波浪都必须重做的地方。议题、席位、项目、布道，都只是同一件事在不同层面的投影。
+八年间，道客从云原生技术的实践者，成长为 Kubernetes 上游社区的深度贡献者与全球开源生态的共建者。这不仅是道客的成长轨迹，也是中国开发者不断走向全球开源舞台中央的缩影。
 
 期待下一个八年，AI Infra 继续演进。
