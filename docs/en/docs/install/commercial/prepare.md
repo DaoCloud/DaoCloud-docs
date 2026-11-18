@@ -42,7 +42,7 @@ This page describes the preparation work required for deploying DaoCloud product
 If dependency components do not exist, install them through scripts. Refer to [Install Prerequisites](../index.md).
 
 ```bash
-export VERSION=v0.46.0 # Change this to the version number you need
+export VERSION=v0.46.0 # Change the version as required
 # Download script
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
 # Add executable permissions

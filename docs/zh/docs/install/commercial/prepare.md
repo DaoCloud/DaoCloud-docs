@@ -35,7 +35,7 @@
 如果不存在依赖组件，通过脚本进行安装依赖组件，[安装前置依赖](../index.md)。
 
 ```bash
-export VERSION=v0.46.0 # 修改为需要的版本号
+export VERSION=v0.46.0 # 按需修改版本号
 # 下载脚本
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
 # 添加可执行权限

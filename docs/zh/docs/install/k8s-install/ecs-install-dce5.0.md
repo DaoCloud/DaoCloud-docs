@@ -20,7 +20,7 @@
 1. 登录一台机器，下载 dce5-installer 二进制文件。
 
     ```shell
-    export VERSION=v0.46.0 # 修改为需要的版本号
+    export VERSION=v0.46.0 # 按需修改版本号
 
     curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
@@ -90,7 +90,7 @@
 1. 登录一台机器，下载 dce5-installer 二进制文件。
 
     ```shell
-    export VERSION=v0.46.0 # 修改为需要的版本号
+    export VERSION=v0.46.0 # 按需修改版本号
 
     curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
@@ -164,7 +164,7 @@
 1. 登录一台机器，下载 dce5-installer 二进制文件。
 
     ```shell
-    export VERSION=v0.46.0 # 修改为需要的版本号
+    export VERSION=v0.46.0 # 按需修改版本号
 
     curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer

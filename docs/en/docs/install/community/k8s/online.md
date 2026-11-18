@@ -35,7 +35,7 @@ This page will guide you to install DCE Community package online in a standard K
    (you can also [download it via browser](../../../download/index.md)).
 
     ```shell
-    export VERSION=v0.46.0 # Change this to the version number you need
+    export VERSION=v0.46.0 # Change the version as required
 
     curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer

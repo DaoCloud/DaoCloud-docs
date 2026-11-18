@@ -154,7 +154,7 @@
 开始安装前，需先安装好前置依赖项。
 
 ```shell
-export VERSION=v0.46.0 # 修改为需要的版本号
+export VERSION=v0.46.0 # 按需修改版本号
 
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz
