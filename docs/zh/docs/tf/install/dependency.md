@@ -22,11 +22,9 @@
 1. 下载脚本。
 
     ```bash
-    export VERSION=v0.46.0   # (1)!
+    export VERSION=v0.46.0 # 修改为需要的版本号
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
-
-    1. 安装器版本
 
     为 `install_prerequisite_${VERSION}.sh` 添加可执行权限：
 
@@ -47,21 +45,21 @@
 1. 找一台能连通外网的机器，下载安装脚本。
 
     ```bash
-    export VERSION=v0.46.0
+    export VERSION=v0.46.0 # 修改为需要的版本号
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
 2. 下载前置依赖组件离线包。
 
     ```bash
-    export VERSION=v0.46.0  
+    export VERSION=v0.46.0 # 修改为需要的版本号
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz
     ```
 
     !!! note
 
-        - 如果是 ARM 架构，请使用下载地址：
-          <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_arm64.tar.gz>
+        - 如果是 ARM 架构，请使用以下地址：
+          `https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_arm64.tar.gz`
         - 确保离线包与脚本在同一个目录层级
 
 3. 将下载的这些离线包上传到一台 K8s 集群控制平面节点，执行离线安装。

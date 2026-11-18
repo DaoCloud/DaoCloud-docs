@@ -34,16 +34,16 @@ This page will guide you to install DCE Community package online in a standard K
 1. Download the `dce5-installer` binary file on the controller node of the Kubernetes cluster
    (you can also [download it via browser](../../../download/index.md)).
 
-    Take VERSION=v0.46.0 as an example.
-
     ```shell
-    export VERSION=v0.46.0
-
-    # For ARM, replace `dce5-installer-$VERSION` with `dce5-installer-$VERSION-linux-arm64`
+    export VERSION=v0.46.0 # Change this to the version number you need
 
     curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
+
+    !!! tip
+
+        For ARM architecture, change `dce5-installer-$VERSION` to `dce5-installer-$VERSION-linux-arm64`.
 
 2. Customize `clusterConfig.yaml`
 
