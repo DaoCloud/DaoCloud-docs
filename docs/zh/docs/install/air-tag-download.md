@@ -5,7 +5,8 @@
 ## 下载脚本
 
 ```bash
-export VERSION=v0.46.0 # 修改为需要的版本号
+export VERSION=v0.46.0 # 按需修改版本号
+
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/download_packages_${VERSION}.sh
 chmod +x download_packages_${VERSION}.sh
 ```

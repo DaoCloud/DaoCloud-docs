@@ -16,7 +16,7 @@ This page lists the download addresses of installers and image packages.
 1. Download the offline package on the bootstrapping node. You can download other versions of the offline package from [Download Center](../../download/index.md).
 
      ```shell
-     export VERSION=v0.46.0 # Change this to the version number you need
+     export VERSION=v0.46.0 # Change the version as required
      wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-$VERSION-amd64.tar
      ```
 
@@ -31,7 +31,7 @@ This page lists the download addresses of installers and image packages.
 1. Download the offline image package on the bootstrapping node. You can download other versions of the offline package from [Download Center](../../download/index.md).
 
      ```shell
-     export VERSION=v0.46.0 # Change this to the version number you need
+     export VERSION=v0.46.0 # Change the version as required
      wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-$VERSION-arm64.tar
      ```
 

@@ -165,7 +165,7 @@ precheck pass...
 2. Download the `dce5-installer` binary file on the kind host.
 
     ```shell
-    export VERSION=v0.46.0 # Change this to the version number you need
+    export VERSION=v0.46.0 # Change the version as required
     curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```

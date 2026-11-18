@@ -153,7 +153,7 @@ This document describes how to perform a lightweight deployment of DCE using the
 Before starting the installation, make sure all prerequisite dependencies are installed.
 
 ```shell
-export VERSION=v0.46.0 # Change this to the version number you need
+export VERSION=v0.46.0 # Change the version as required
 
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz

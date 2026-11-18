@@ -31,7 +31,7 @@ Before installing DCE, you need to install some dependencies.
 1. Download the script.
 
     ```bash
-    export VERSION=v0.46.0 # Change this to the version number you need
+    export VERSION=v0.46.0 # Change the version as required
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
@@ -62,14 +62,14 @@ Offline installation means that the target host is in an offline state and canno
 1. Download the script.
 
     ```bash
-    export VERSION=v0.46.0 # Change this to the version number you need
+    export VERSION=v0.46.0 # Change the version as required
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
 2. Download the offline package for prerequisites.
 
     ```bash
-    export VERSION=v0.46.0 # Change this to the version number you need
+    export VERSION=v0.46.0 # Change the version as required
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz
     ```
 
