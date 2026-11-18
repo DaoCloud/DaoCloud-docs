@@ -69,19 +69,19 @@ By offering end-to-end lifecycle services—from model deployment to operational
 
 ## Workflow
 
-The platform combines the **operations management view + standard user view** to achieve unified model management, trial, and rapid deployment.
+The platform combines the **admin view + user view** to achieve unified model management, trial, and rapid deployment.
 The model usage process consists of **three steps + model file download**:
 
 ```mermaid
 flowchart LR
     EXT["External models<br/>DeepSeek · GLM · Qwen, etc."]
-    subgraph OPS["Operations management view"]
+    subgraph OPS["Admin view"]
         direction TB
         A["① Model Plaza management<br/>Import / create models"]
         B["② MaaS model management<br/>Configure trial runtime"]
         C["③ Model Serving management<br/>GPU / memory / framework"]
     end
-    subgraph USER["Standard user view"]
+    subgraph USER["User view"]
         direction TB
         D["Model Plaza<br/>Browse published models"]
         E["Model Experience<br/>Online trial, no deployment"]
@@ -94,18 +94,21 @@ flowchart LR
     B -->|Manage| E
     C --> F
     F -->|Model files ready| G
+    click A "../oam/"
+    click B "../oam/maas/"
+    click C "../oam/mdm/"
+    click D "../"
+    click E "../exp/"
+    click G "../deploy/deploy/"
+    click F "../dataset/"
 ```
 
-??? note "View the original hand-drawn workflow"
-
-    ![Platform usage process](images/OperationalLogic.png)
-
-| Step | Operations management view | Standard user view | Documentation |
-| :--- | :--- | :--- | :--- |
-| ① Model Plaza management | Import or create models in **Model Plaza Management**; published models sync automatically to the user view | Browse published models in the **Model Plaza** as the entry point for trials or deployments | [Model Plaza Management](../oam/index.md) |
-| ② MaaS model management | Set a model as a **MaaS model** and configure its trial runtime environment | Try configured models online in **Model Experience** without local deployment | [MaaS Model Management](../oam/maas.md) |
-| ③ Model Serving management | Create deployment profiles for resources and environments, e.g. GPU/memory/runtime framework | Select a model in **Model Service** to deploy quickly without manually filling in complex parameters | [Model Serving Management](../oam/mdm.md) |
-| ④ Model file download | Operations staff [download model files to designated locations](../dataset.md) as the foundation for deployment | — | [Dataset management](../dataset.md) |
+| Step | Admin view | User view |
+| :--- | :--- | :--- |
+| [① Model Plaza management](../oam/index.md) | Import or create models in **Model Plaza Management**; published models sync automatically to the user view | Browse published models in the **Model Plaza** as the entry point for trials or deployments |
+| [② MaaS model management](../oam/maas.md) | Set a model as a **MaaS model** and configure its trial runtime environment | Try configured models online in **Model Experience** without local deployment |
+| [③ Model Serving management](../oam/mdm.md) | Create deployment profiles for resources and environments, e.g. GPU/memory/runtime framework | Select a model in **Model Service** to deploy quickly without manually filling in complex parameters |
+| [④ Model file download](../dataset.md) | Operations staff download model files to designated locations as the foundation for deployment | — |
 
 ## Quick Start
 
@@ -198,11 +201,11 @@ The audit feature is a core part of the LLM Studio module. By recording key oper
 
 | Audit category | Covered operations | Event identifiers |
 | :--- | :--- | :--- |
-| **Model management** | Create, update, and delete models; enable/disable the MaaS model trial feature; publish and unpublish models | `Model`, `EnabledMAASModel`, `PublishModel`, `UnPublishModel` |
-| **Deployment template management** | Add and update model deployment templates | `AddDeployTemplates`, `UpdateDeployTemplates` |
-| **Model provider management** | Create, update, and delete model providers | `ModelProvider` |
-| **Workspace API key management** | Create and delete workspace API keys | `CreateWSAPIKey`, `DeleteWSAPIKey` |
-| **Model service management** | Create and delete workspace model services; update replicas; perform service actions | `CreateWSModelServing`, `DeleteWSModelServing`, `UpdateWSModelServingReplicas`, `DoModelWSServingAction` |
+| [Model management](../oam/index.md) | Create, update, and delete models; enable/disable the MaaS model trial feature; publish and unpublish models | `Model`, `EnabledMAASModel`, `PublishModel`, `UnPublishModel` |
+| [Deployment template management](../oam/mdm.md) | Add and update model deployment templates | `AddDeployTemplates`, `UpdateDeployTemplates` |
+| Model provider management | Create, update, and delete model providers | `ModelProvider` |
+| [Workspace API key management](../apikey.md) | Create and delete workspace API keys | `CreateWSAPIKey`, `DeleteWSAPIKey` |
+| [Model service management](../deploy/index.md) | Create and delete workspace model services; update replicas; perform service actions | `CreateWSModelServing`, `DeleteWSModelServing`, `UpdateWSModelServingReplicas`, `DoModelWSServingAction` |
 
 These audit items cover every aspect of the model lifecycle, ensuring that every operation is traceable.
 

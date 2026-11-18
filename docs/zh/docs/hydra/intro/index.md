@@ -91,18 +91,26 @@ flowchart LR
     B -->|管理| E
     C --> F
     F -->|模型文件就绪| G
+
+    click A "../oam/"
+    click B "../oam/maas/"
+    click C "../oam/mdm/"
+    click D "../"
+    click E "../exp/"
+    click G "../deploy/deploy/"
+    click F "../dataset/"
 ```
 
 ??? note "查看原始手绘流程图"
 
     ![平台使用流程](images/OperationalLogic.png)
 
-| 步骤 | 运维管理视图 | 普通用户视图 | 相关文档 |
-| --- | --- | --- | --- |
-| ① 模型广场管理 | 在 **模型广场管理** 中导入或创建模型，模型上线后自动同步到用户视图 | 在 **模型广场** 中浏览已上线的模型，作为体验或部署的入口 | [模型广场管理](../oam/index.md) |
-| ② MaaS 模型管理 | 将模型设置为 **MaaS 模型**，配置其试用运行环境 | 在 **模型体验** 中选择配置好的模型在线试用，无需本地部署 | [MaaS 模型管理](../oam/maas.md) |
-| ③ 模型部署管理 | 为模型创建资源和环境的部署配置文件，如 GPU/内存/运行框架等 | 在 **模型部署** 页面选择模型快速完成部署，无需手动填写复杂参数 | [模型部署管理](../oam/mdm.md) |
-| ④ 模型文件下载 | 由运维人员[将模型文件下载到指定位置](../dataset.md)，作为部署的底层基础 | — | [Dataset 管理](../dataset.md) |
+| 步骤 | 运维管理视图 | 普通用户视图 |
+| --- | --- | --- |
+| ① [模型广场管理](../oam/index.md) | 在 **模型广场管理** 中导入或创建模型，模型上线后自动同步到用户视图 | 在 **模型广场** 中浏览已上线的模型，作为体验或部署的入口 |
+| ② [MaaS 模型管理](../oam/maas.md) | 将模型设置为 **MaaS 模型**，配置其试用运行环境 | 在 **模型体验** 中选择配置好的模型在线试用，无需本地部署 |
+| ③ [模型部署管理](../oam/mdm.md) | 为模型创建资源和环境的部署配置文件，如 GPU/内存/运行框架等 | 在 **模型部署** 页面选择模型快速完成部署，无需手动填写复杂参数 |
+| ④ [模型文件下载](../dataset.md) | 由运维人员将模型文件下载到指定位置，作为部署的底层基础 | — |
 
 ## 快速上手
 
@@ -195,11 +203,11 @@ flowchart LR
 
 | 审计类别 | 覆盖操作 | 事件标识 |
 | :--- | :--- | :--- |
-| 模型管理 | 创建、更新、删除模型；启用/禁用 MaaS 模型体验功能；发布、下线模型 | `Model`、`EnabledMAASModel`、`PublishModel`、`UnPublishModel` |
-| 部署模板管理 | 添加、更新模型部署模板 | `AddDeployTemplates`、`UpdateDeployTemplates` |
+| [模型管理](../oam/index.md) | 创建、更新、删除模型；启用/禁用 MaaS 模型体验功能；发布、下线模型 | `Model`、`EnabledMAASModel`、`PublishModel`、`UnPublishModel` |
+| [部署模板管理](../oam/mdm.md) | 添加、更新模型部署模板 | `AddDeployTemplates`、`UpdateDeployTemplates` |
 | 模型提供商管理 | 创建、更新、删除模型提供商 | `ModelProvider` |
-| 工作空间 API 密钥管理 | 创建、删除工作空间 API 密钥 | `CreateWSAPIKey`、`DeleteWSAPIKey` |
-| 模型服务管理 | 创建、删除工作空间模型服务；更新副本数；执行服务操作 | `CreateWSModelServing`、`DeleteWSModelServing`、`UpdateWSModelServingReplicas`、`DoModelWSServingAction` |
+| [工作空间 API 密钥管理](../apikey.md) | 创建、删除工作空间 API 密钥 | `CreateWSAPIKey`、`DeleteWSAPIKey` |
+| [模型服务管理](../deploy/index.md) | 创建、删除工作空间模型服务；更新副本数；执行服务操作 | `CreateWSModelServing`、`DeleteWSModelServing`、`UpdateWSModelServingReplicas`、`DoModelWSServingAction` |
 
 这些审计项涵盖了模型生命周期的各个方面，确保每个操作都有迹可循。
 有关操作指引参见[安全审计日志](../oam/security-audit-logs.md)，审计项完整列表参见[大模型服务平台审计项](../../ghippo/user-guide/audit/gproduct-audit/hydra.md)。
