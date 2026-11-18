@@ -87,31 +87,31 @@ helm upgrade --install --create-namespace --cleanup-on-fail amamba amamba-releas
     <span class="amamba-path-num">1</span>
     <span class="amamba-path-title">快速上手</span>
     <span class="amamba-path-desc">跑通第一条编译、构建、部署流水线</span>
-    <span class="amamba-path-go">前往 →</span>
+    <span class="amamba-path-go">Go →</span>
   </a>
   <a class="amamba-path-step" style="--path-c:#00acc1" href="../user-guide/pipeline/create/custom/">
     <span class="amamba-path-num">2</span>
     <span class="amamba-path-title">编排流水线</span>
     <span class="amamba-path-desc">自定义任务、模板与语法，落地 CI</span>
-    <span class="amamba-path-go">前往 →</span>
+    <span class="amamba-path-go">Go →</span>
   </a>
   <a class="amamba-path-step" style="--path-c:#43a047" href="../user-guide/gitops/create-argo-cd/">
     <span class="amamba-path-num">3</span>
     <span class="amamba-path-title">GitOps 交付</span>
     <span class="amamba-path-desc">声明式应用配置，持续部署到集群</span>
-    <span class="amamba-path-go">前往 →</span>
+    <span class="amamba-path-go">Go →</span>
   </a>
   <a class="amamba-path-step" style="--path-c:#fb8c00" href="../user-guide/release/canary-guide/">
     <span class="amamba-path-num">4</span>
     <span class="amamba-path-title">渐进式发布</span>
     <span class="amamba-path-desc">灰度、蓝绿发布，新版本平滑上线</span>
-    <span class="amamba-path-go">前往 →</span>
+    <span class="amamba-path-go">Go →</span>
   </a>
   <a class="amamba-path-step" style="--path-c:#8e24aa" href="../user-guide/tools/integrated-toolchain/">
     <span class="amamba-path-num">5</span>
     <span class="amamba-path-title">集成工具链</span>
     <span class="amamba-path-desc">对接 SonarQube、Harbor、Jira 等工具</span>
-    <span class="amamba-path-go">前往 →</span>
+    <span class="amamba-path-go">Go →</span>
   </a>
 </div>
 

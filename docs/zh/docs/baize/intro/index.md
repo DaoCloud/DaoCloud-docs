@@ -121,31 +121,31 @@ flowchart TB
         <span class="baize-path-num">1</span>
         <span class="baize-path-title">安装组件</span>
         <span class="baize-path-desc">部署 AI Lab 所需组件</span>
-        <span class="baize-path-go">前往 →</span>
+        <span class="baize-path-go">Go →</span>
       </a>
       <a class="baize-path-step" style="--path-c:#00acc1" href="first/">
         <span class="baize-path-num">2</span>
         <span class="baize-path-title">首次使用</span>
         <span class="baize-path-desc">选择工作空间与集群</span>
-        <span class="baize-path-go">前往 →</span>
+        <span class="baize-path-go">Go →</span>
       </a>
       <a class="baize-path-step" style="--path-c:#43a047" href="../oam/resource/create/">
         <span class="baize-path-num">3</span>
         <span class="baize-path-title">创建资源池</span>
         <span class="baize-path-desc">规划 CPU、内存与 GPU</span>
-        <span class="baize-path-go">前往 →</span>
+        <span class="baize-path-go">Go →</span>
       </a>
       <a class="baize-path-step" style="--path-c:#fb8c00" href="../oam/queue/create/">
         <span class="baize-path-num">4</span>
         <span class="baize-path-title">创建队列</span>
         <span class="baize-path-desc">关联工作空间与配额</span>
-        <span class="baize-path-go">前往 →</span>
+        <span class="baize-path-go">Go →</span>
       </a>
       <a class="baize-path-step" style="--path-c:#8e24aa" href="../oam/gpu/">
         <span class="baize-path-num">5</span>
         <span class="baize-path-title">查看 GPU</span>
         <span class="baize-path-desc">监控负载、功率与温度</span>
-        <span class="baize-path-go">前往 →</span>
+        <span class="baize-path-go">Go →</span>
       </a>
     </div>
 
@@ -156,31 +156,31 @@ flowchart TB
         <span class="baize-path-num">1</span>
         <span class="baize-path-title">快速入门</span>
         <span class="baize-path-desc">走通数据集到训练全流程</span>
-        <span class="baize-path-go">前往 →</span>
+        <span class="baize-path-go">Go →</span>
       </a>
       <a class="baize-path-step" style="--path-c:#00acc1" href="../developer/notebooks/">
         <span class="baize-path-num">2</span>
         <span class="baize-path-title">创建 Notebook</span>
         <span class="baize-path-desc">一键挂载 GPU 与数据集</span>
-        <span class="baize-path-go">前往 →</span>
+        <span class="baize-path-go">Go →</span>
       </a>
       <a class="baize-path-step" style="--path-c:#43a047" href="../developer/jobs/">
         <span class="baize-path-num">3</span>
         <span class="baize-path-title">提交训练任务</span>
         <span class="baize-path-desc">PyTorch / Tensorflow / MPI</span>
-        <span class="baize-path-go">前往 →</span>
+        <span class="baize-path-go">Go →</span>
       </a>
       <a class="baize-path-step" style="--path-c:#fb8c00" href="../developer/dataset/">
         <span class="baize-path-num">4</span>
         <span class="baize-path-title">管理数据集</span>
         <span class="baize-path-desc">多数据源接入与数据标注</span>
-        <span class="baize-path-go">前往 →</span>
+        <span class="baize-path-go">Go →</span>
       </a>
       <a class="baize-path-step" style="--path-c:#8e24aa" href="../developer/inference/">
         <span class="baize-path-num">5</span>
         <span class="baize-path-title">部署模型服务</span>
         <span class="baize-path-desc">Triton / vLLM 推理上线</span>
-        <span class="baize-path-go">前往 →</span>
+        <span class="baize-path-go">Go →</span>
       </a>
     </div>
 

@@ -51,25 +51,25 @@ hide:
     <span class="dev-path-num">1</span>
     <span class="dev-path-title">创建设备模型</span>
     <span class="dev-path-desc">抽象同类设备的共同特征，用属性定义设备可对外提供的数据。</span>
-    <span class="dev-path-go">前往 →</span>
+    <span class="dev-path-go">Go →</span>
   </a>
   <a class="dev-path-step" style="--path-c:#00acc1" href="create-device/">
     <span class="dev-path-num">2</span>
     <span class="dev-path-title">创建终端设备</span>
     <span class="dev-path-desc">在边缘单元中创建设备实例，填写基本信息与访问配置。</span>
-    <span class="dev-path-go">前往 →</span>
+    <span class="dev-path-go">Go →</span>
   </a>
   <a class="dev-path-step" style="--path-c:#43a047" href="create-device/">
     <span class="dev-path-num">3</span>
     <span class="dev-path-title">关联边缘节点</span>
     <span class="dev-path-desc">在设备列表中选择「绑定节点」；绑定后边缘节点保存该设备的孪生属性，设备开始上报状态并接收下发指令。</span>
-    <span class="dev-path-go">前往 →</span>
+    <span class="dev-path-go">Go →</span>
   </a>
   <a class="dev-path-step" style="--path-c:#fb8c00" href="manage-device/">
     <span class="dev-path-num">4</span>
     <span class="dev-path-title">管理与监控</span>
     <span class="dev-path-desc">编辑基本信息、孪生属性、标签与访问配置，并监测终端设备的运行状态。</span>
-    <span class="dev-path-go">前往 →</span>
+    <span class="dev-path-go">Go →</span>
   </a>
 </div>
 

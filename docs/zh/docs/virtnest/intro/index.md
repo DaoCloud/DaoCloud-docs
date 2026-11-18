@@ -103,31 +103,31 @@ Virtnest 围绕虚拟机的创建、运行与运维提供完整能力。虚拟�
     <span class="vn-path-num">1</span>
     <span class="vn-path-title">安装部署</span>
     <span class="vn-path-desc">安装虚拟机模块与 virtnest-agent</span>
-    <span class="vn-path-go">前往 →</span>
+    <span class="vn-path-go">Go →</span>
   </a>
   <a class="vn-path-step" style="--path-c:#00acc1" href="../vm-image/">
     <span class="vn-path-num">2</span>
     <span class="vn-path-title">准备镜像</span>
     <span class="vn-path-desc">构建或导入虚拟机镜像</span>
-    <span class="vn-path-go">前往 →</span>
+    <span class="vn-path-go">Go →</span>
   </a>
   <a class="vn-path-step" style="--path-c:#43a047" href="../quickstart/">
     <span class="vn-path-num">3</span>
     <span class="vn-path-title">创建虚拟机</span>
     <span class="vn-path-desc">通过镜像、模板或 YAML 创建</span>
-    <span class="vn-path-go">前往 →</span>
+    <span class="vn-path-go">Go →</span>
   </a>
   <a class="vn-path-step" style="--path-c:#fb8c00" href="../quickstart/access/">
     <span class="vn-path-num">4</span>
     <span class="vn-path-title">连接虚拟机</span>
     <span class="vn-path-desc">VNC / 终端登录，查看详情</span>
-    <span class="vn-path-go">前往 →</span>
+    <span class="vn-path-go">Go →</span>
   </a>
   <a class="vn-path-step" style="--path-c:#8e24aa" href="../vm/">
     <span class="vn-path-num">5</span>
     <span class="vn-path-title">日常运维</span>
     <span class="vn-path-desc">快照、克隆、迁移与监控</span>
-    <span class="vn-path-go">前往 →</span>
+    <span class="vn-path-go">Go →</span>
   </a>
 </div>
 
