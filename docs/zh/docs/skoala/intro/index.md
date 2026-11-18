@@ -218,37 +218,37 @@ hide:
     <span class="skoala-path-num">1</span>
     <span class="skoala-path-title">部署引擎组件</span>
     <span class="skoala-path-desc">安装微服务引擎管理组件</span>
-    <span class="skoala-path-go">前往 →</span>
+    <span class="skoala-path-go">Go →</span>
   </a>
   <a class="skoala-path-step" style="--path-c:#00acc1" href="../quickstart/skoala-init/">
     <span class="skoala-path-num">2</span>
     <span class="skoala-path-title">初始化托管组件</span>
     <span class="skoala-path-desc">安装集群初始化组件 skoala-init</span>
-    <span class="skoala-path-go">前往 →</span>
+    <span class="skoala-path-go">Go →</span>
   </a>
   <a class="skoala-path-step" style="--path-c:#43a047" href="../quickstart/select-workspace/">
     <span class="skoala-path-num">3</span>
     <span class="skoala-path-title">选择工作空间</span>
     <span class="skoala-path-desc">为微服务和网关划定管理边界</span>
-    <span class="skoala-path-go">前往 →</span>
+    <span class="skoala-path-go">Go →</span>
   </a>
   <a class="skoala-path-step" style="--path-c:#fb8c00" href="../trad-ms/integrated/">
     <span class="skoala-path-num">4</span>
     <span class="skoala-path-title">接入微服务</span>
     <span class="skoala-path-desc">接入注册中心，纳管传统与云原生微服务</span>
-    <span class="skoala-path-go">前往 →</span>
+    <span class="skoala-path-go">Go →</span>
   </a>
   <a class="skoala-path-step" style="--path-c:#8e24aa" href="../cloud-ms/traffic-control/">
     <span class="skoala-path-num">5</span>
     <span class="skoala-path-title">治理流量</span>
     <span class="skoala-path-desc">Sentinel / Mesh 治理东西向流量</span>
-    <span class="skoala-path-go">前往 →</span>
+    <span class="skoala-path-go">Go →</span>
   </a>
   <a class="skoala-path-step" style="--path-c:#e53935" href="../gateway/">
     <span class="skoala-path-num">6</span>
     <span class="skoala-path-title">配置网关</span>
     <span class="skoala-path-desc">创建网关实例，管理南北向 API</span>
-    <span class="skoala-path-go">前往 →</span>
+    <span class="skoala-path-go">Go →</span>
   </a>
 </div>
 

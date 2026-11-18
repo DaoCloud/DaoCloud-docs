@@ -126,31 +126,31 @@ flowchart LR
         <span class="hydra-path-num">1</span>
         <span class="hydra-path-title">部署平台</span>
         <span class="hydra-path-desc">WS 模式安装大模型服务平台</span>
-        <span class="hydra-path-go">前往 →</span>
+        <span class="hydra-path-go">Go →</span>
       </a>
       <a class="hydra-path-step" style="--path-c:#00acc1" href="../oam/">
         <span class="hydra-path-num">2</span>
         <span class="hydra-path-title">上架模型</span>
         <span class="hydra-path-desc">导入或创建模型并上线</span>
-        <span class="hydra-path-go">前往 →</span>
+        <span class="hydra-path-go">Go →</span>
       </a>
       <a class="hydra-path-step" style="--path-c:#43a047" href="../oam/maas/">
         <span class="hydra-path-num">3</span>
         <span class="hydra-path-title">配置试用</span>
         <span class="hydra-path-desc">设置 MaaS 模型试用环境</span>
-        <span class="hydra-path-go">前往 →</span>
+        <span class="hydra-path-go">Go →</span>
       </a>
       <a class="hydra-path-step" style="--path-c:#fb8c00" href="../oam/mdm/">
         <span class="hydra-path-num">4</span>
         <span class="hydra-path-title">配置部署</span>
         <span class="hydra-path-desc">规划 GPU、内存与运行框架</span>
-        <span class="hydra-path-go">前往 →</span>
+        <span class="hydra-path-go">Go →</span>
       </a>
       <a class="hydra-path-step" style="--path-c:#8e24aa" href="../dataset/">
         <span class="hydra-path-num">5</span>
         <span class="hydra-path-title">准备模型文件</span>
         <span class="hydra-path-desc">Dataset 下载模型到指定位置</span>
-        <span class="hydra-path-go">前往 →</span>
+        <span class="hydra-path-go">Go →</span>
       </a>
     </div>
 
@@ -161,31 +161,31 @@ flowchart LR
         <span class="hydra-path-num">1</span>
         <span class="hydra-path-title">选模型</span>
         <span class="hydra-path-desc">模型广场筛选、对比主流模型</span>
-        <span class="hydra-path-go">前往 →</span>
+        <span class="hydra-path-go">Go →</span>
       </a>
       <a class="hydra-path-step" style="--path-c:#00acc1" href="../exp/">
         <span class="hydra-path-num">2</span>
         <span class="hydra-path-title">在线体验</span>
         <span class="hydra-path-desc">模型体验页直接对话与生图</span>
-        <span class="hydra-path-go">前往 →</span>
+        <span class="hydra-path-go">Go →</span>
       </a>
       <a class="hydra-path-step" style="--path-c:#43a047" href="../deploy/deploy/">
         <span class="hydra-path-num">3</span>
         <span class="hydra-path-title">部署服务</span>
         <span class="hydra-path-desc">选择模型一键完成部署</span>
-        <span class="hydra-path-go">前往 →</span>
+        <span class="hydra-path-go">Go →</span>
       </a>
       <a class="hydra-path-step" style="--path-c:#fb8c00" href="../apikey/">
         <span class="hydra-path-num">4</span>
         <span class="hydra-path-title">创建 API Key</span>
         <span class="hydra-path-desc">管理调用凭证与访问频次</span>
-        <span class="hydra-path-go">前往 →</span>
+        <span class="hydra-path-go">Go →</span>
       </a>
       <a class="hydra-path-step" style="--path-c:#8e24aa" href="../user-guides/">
         <span class="hydra-path-num">5</span>
         <span class="hydra-path-title">接入客户端</span>
         <span class="hydra-path-desc">Cherry Studio / Cline / LobeChat</span>
-        <span class="hydra-path-go">前往 →</span>
+        <span class="hydra-path-go">Go →</span>
       </a>
     </div>
 

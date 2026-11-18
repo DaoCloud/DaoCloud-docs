@@ -123,31 +123,31 @@ flowchart TB
         <span class="clawos-path-num">1</span>
         <span class="clawos-path-title">安装 ClawOS</span>
         <span class="clawos-path-desc">离线包 / Helm 在线安装</span>
-        <span class="clawos-path-go">前往 →</span>
+        <span class="clawos-path-go">Go →</span>
       </a>
       <a class="clawos-path-step" style="--path-c:#00acc1" href="../../ghippo/permissions/clawos/">
         <span class="clawos-path-num">2</span>
         <span class="clawos-path-title">权限规划</span>
         <span class="clawos-path-desc">用户 · 租户 · 平台管理员</span>
-        <span class="clawos-path-go">前往 →</span>
+        <span class="clawos-path-go">Go →</span>
       </a>
       <a class="clawos-path-step" style="--path-c:#43a047" href="../admin/network-manage/">
         <span class="clawos-path-num">3</span>
         <span class="clawos-path-title">网络策略</span>
         <span class="clawos-path-desc">定义出入站访问边界</span>
-        <span class="clawos-path-go">前往 →</span>
+        <span class="clawos-path-go">Go →</span>
       </a>
       <a class="clawos-path-step" style="--path-c:#fb8c00" href="../admin/skillmanage-admin/">
         <span class="clawos-path-num">4</span>
         <span class="clawos-path-title">Skill 上架</span>
         <span class="clawos-path-desc">审核并发布到 ClawHub</span>
-        <span class="clawos-path-go">前往 →</span>
+        <span class="clawos-path-go">Go →</span>
       </a>
       <a class="clawos-path-step" style="--path-c:#8e24aa" href="../admin/">
         <span class="clawos-path-num">5</span>
         <span class="clawos-path-title">全局概览</span>
         <span class="clawos-path-desc">全平台用量与风险</span>
-        <span class="clawos-path-go">前往 →</span>
+        <span class="clawos-path-go">Go →</span>
       </a>
     </div>
 
@@ -158,31 +158,31 @@ flowchart TB
         <span class="clawos-path-num">1</span>
         <span class="clawos-path-title">快速入门</span>
         <span class="clawos-path-desc">创建并访问首个实例</span>
-        <span class="clawos-path-go">前往 →</span>
+        <span class="clawos-path-go">Go →</span>
       </a>
       <a class="clawos-path-step" style="--path-c:#00acc1" href="../workspace/openclaw/">
         <span class="clawos-path-num">2</span>
         <span class="clawos-path-title">实例管理</span>
         <span class="clawos-path-desc">查看 · 编辑 · 删除实例</span>
-        <span class="clawos-path-go">前往 →</span>
+        <span class="clawos-path-go">Go →</span>
       </a>
       <a class="clawos-path-step" style="--path-c:#43a047" href="../workspace/feishu/">
         <span class="clawos-path-num">3</span>
         <span class="clawos-path-title">飞书集成</span>
         <span class="clawos-path-desc">让 Agent 进入群聊与私信</span>
-        <span class="clawos-path-go">前往 →</span>
+        <span class="clawos-path-go">Go →</span>
       </a>
       <a class="clawos-path-step" style="--path-c:#fb8c00" href="../workspace/teams-info/">
         <span class="clawos-path-num">4</span>
         <span class="clawos-path-title">Teams 配置</span>
         <span class="clawos-path-desc">对接 Microsoft Teams</span>
-        <span class="clawos-path-go">前往 →</span>
+        <span class="clawos-path-go">Go →</span>
       </a>
       <a class="clawos-path-step" style="--path-c:#8e24aa" href="../workspace/">
         <span class="clawos-path-num">5</span>
         <span class="clawos-path-title">用量观测</span>
         <span class="clawos-path-desc">Token · 调用 · 错误率</span>
-        <span class="clawos-path-go">前往 →</span>
+        <span class="clawos-path-go">Go →</span>
       </a>
     </div>
 
