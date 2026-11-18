@@ -26,6 +26,7 @@
 
     ```bash
     export VERSION=v0.46.0   # 按需修改版本号
+
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
@@ -57,6 +58,7 @@
 
     ```bash
     export VERSION=v0.46.0 # 按需修改版本号
+
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
@@ -64,6 +66,7 @@
 
     ```bash
     export VERSION=v0.46.0  # 按需修改版本号
+    
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz
     ```
 

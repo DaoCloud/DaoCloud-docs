@@ -43,6 +43,7 @@ If dependency components do not exist, install them through scripts. Refer to [I
 
 ```bash
 export VERSION=v0.46.0 # Change the version as required
+
 # Download script
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
 # Add executable permissions

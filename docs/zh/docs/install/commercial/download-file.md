@@ -15,6 +15,7 @@ hide:
 
     ```shell
     export VERSION=v0.46.0 # 按需修改版本号
+
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-$VERSION-amd64.tar
     ```
 
@@ -30,6 +31,7 @@ hide:
 
     ```shell
     export VERSION=v0.46.0 # 按需修改版本号
+    
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-$VERSION-arm64.tar
     ```
 
