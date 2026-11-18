@@ -10,8 +10,7 @@ KubeCon + CloudNativeCon 是 CNCF（云原生计算基金会）的旗舰技术�
 
 ## 八年账本
 
-2018 年，DaoCloud 在 KubeCon 上海站讲了 1 个议题。八年之后，截至 2026 年 11 月的盐湖城，这个数字累计到
-**112 个** ，其中 **44 个** 在海外。
+2018 年，DaoCloud 在 KubeCon 上海站讲了 1 个议题。八年之后，截至 2026 年 11 月的盐湖城，这个数字累计到 **112 个**，其中 **44 个** 在海外。
 
 ![DaoCloud KubeCon 参与总览（2018-2026）：年度议题柱状图与 112 个议题、44 个海外议题、2 届联席主席、5 场 Keynote](./images/kubecon-overview-2018-2026.svg)
 
@@ -46,15 +45,13 @@ KubeCon + CloudNativeCon 是 CNCF（云原生计算基金会）的旗舰技术�
 | 2024 | KubeCon 香港 | 20 | Co-Chair（Paco Xu）<br>Keynote ×2，其一为 wzshiming 与 NVIDIA 合讲的 KWOK 大规模测试<br>HAMi、Ollama Operator、containerd、Kubernetes、nerdctl、Kubespray、Istio、Keycloak、KWOK、Kueue、KubeEdge、Argo CD、Kuasar、Cilium Gateway |
 | 2024 | KubeCon 北美 | 2 | Clusterpedia、Kubean |
 
-前四年是一段很典型的“跟着客户上台”的阶段。2020、2021 两年 KubeCon China 因疫情取消线下会场、整体转线上，DaoCloud 也就在线上讲，客户案例和技术分享各占一半：浦发银行的云原生演进、超算中心的 HPC 容器化、.NET on K8s、Piraeus 本地持久卷。DaoCloud 讲的多半是
-**我们帮谁把 Kubernetes 跑起来了** 。
+前四年是很典型的“跟着客户上台”阶段。2020、2021 两年 KubeCon China 因疫情取消线下会场、整体转线上，DaoCloud 也就在线上讲：浦发银行的云原生演进、超算中心的 HPC 容器化、.NET on K8s、Piraeus 本地持久卷——客户案例和技术分享各占一半，讲的多半是 **我们帮谁把 Kubernetes 跑起来了** 。
 
-2022 年是低谷，全年只有 1 个议题，还是线上参与的维护者圆桌。线下场景被切断之后，“还能讲什么”这个问题变得很尖锐。
+2022 年线下场景因疫情停摆，全年唯一一个议题是北美站线上的 SIG Scheduling 维护者专场。讲的内容却悄悄换了主角：不再是客户系统，而是我们参与维护的调度代码。
 
-2023 年的反弹很陡：上海站一口气 16 个议题、14 位演讲者，还同时承担了 KCS（Kubernetes 贡献者峰会）的组织。更重要的是构成变了——讲的是
-**我们自己维护的代码和参与的 SIG** ，不再是纯粹的客户故事。
+2023 年这个转向完全显形：上海站的议题里，Kueue、Karmada、containerd、KWOK、SIG Instrumentation / Node / Scheduling / Docs 都是 DaoCloud 深度参与的方向，还承担了 KCS（Kubernetes 贡献者峰会）的组织。议题的主角从客户变成了 **我们自己维护的代码和参与的 SIG** 。
 
-2024 年到达顶点，33 个议题。香港站除了 20 个议题，Paco Xu 还担任了 KubeCon China 联席主席，这是 DaoCloud 第一次主持整届大会的议程编排，而不只是在议程里占几个位置；同年欧洲站 11 个、北美站 2 个，海外开始成规模。
+2024 年，DaoCloud 议题覆盖到了整个上游：欧洲站覆盖 KubeEdge、Karmada、Spiderpool、HwameiStor、Kubespray、Structured Logging；香港站 Paco Xu 担任 KubeCon China 联席主席，DaoCloud 第一次参与整届大会的议程编排，而不只是在议程里占几个位置。
 
 ## 2025：海外第一次超过国内
 
@@ -65,12 +62,11 @@ KubeCon + CloudNativeCon 是 CNCF（云原生计算基金会）的旗舰技术�
 | KubeCon Japan | 东京 · 6.16-6.17 | 4 | Hongbing Zhang（Keynote）、yankay、weizhoublue、Paco Xu |
 | KubeCon 北美 | 亚特兰大 · 11.10-11.13 | 4 | - Introducing TAG Workloads Foundation（Paco Xu）<br>- KubeEdge Deep Dive + Project Lightning Talk（Hongbing Zhang）<br>- Spiderpool Lightning Talk：拓扑感知的 RDMA 分配（weizhoublue） |
 
-2025 年总计 29 个议题，海外 16 个对国内 13 个，
-**这是八年来海外第一次超过国内** 。同一年 Roby 接棒香港站联席主席，加上香港站 2 场、东京站 1 场，全年 3 场 Keynote。
+2025 年总计 29 个议题，海外 16 个对国内 13 个，**这是八年来海外第一次超过国内**。同一年 Roby 接棒香港站联席主席，加上香港站 2 场、东京站 1 场，全年 3 场 Keynote。
 
 2025 年是首届 KubeCon Japan，DaoCloud 在东京就有 4 个议题，其中一场是 Keynote，说明 DaoCloud 在东亚的社区存在感已能支撑一个站点的核心议程，而不只是分会场里的一个 slot。
 
-## 2026：数量回落，重心转向 AI 推理
+## 2026：重心转向 AI 推理
 
 | 活动 | 城市 · 日期 | 议题数 | DaoCloud 议题与演讲者 |
 |---|---|---|---|
@@ -107,17 +103,16 @@ KubeCon + CloudNativeCon 是 CNCF（云原生计算基金会）的旗舰技术�
 | 2026 | KV-Cache 感知路由、llm-d、PD 分离与 TTFT、JobSet、DRA、LLM 推理可观测性 | 推理的延迟、吞吐、成本成为核心指标 |
 
 这不是追热点。AI 每换一次形态，底下这四层就要重做一次：
-**算力怎么切、任务怎么排、模型怎么分发、请求怎么走** 。
+**算力怎么切、任务怎么排、模型怎么分发、请求怎么走**。
 
 DaoCloud 八年里一直在做的，就是这四层。所以说走在前面，具体是指：
-**在每一波浪到来之前，就已经在这层代码里了** 。算力怎么切：HAMi 在 GPU 还是整卡独占时就在做切分；任务怎么排：Kueue 在训练任务大规模排队之前就在做队列、配额与抢占；模型怎么分发：MatrixHub 为 vLLM、SGLang、Dynamo 加速模型分发；请求怎么走：llm-d 进入 CNCF 之前，DaoCloud 就已在其中做 P/D 分离与 KV-Cache 感知路由。这些议题能上讲台，是因为代码早就写完了。
+**在每一波浪到来之前，就已经在这层代码里了**。算力怎么切：HAMi 在 GPU 还是整卡独占时就在做切分；任务怎么排：Kueue 在训练任务大规模排队之前就在做队列、配额与抢占；模型怎么分发：MatrixHub 为 vLLM、SGLang、Dynamo 加速模型分发；请求怎么走：llm-d 进入 CNCF 之前，DaoCloud 就已在其中做 P/D 分离与 KV-Cache 感知路由。这些议题能上讲台，是因为代码早就写完了。
 
 ## CFP 只认技术
 
 KubeCon 的 CFP 只认技术：展台可以买，顶级赞助商还能买到少量赞助 Keynote 或分会场时段，但 CFP 评审不看赞助商身份——通过 CFP 上台，只取决于提案本身够不够硬。
 
-这一点决定了 112 这个数字的性质：
-**它主要不是市场投入的产出，而是技术判断一次次被社区认可** 。分会场议题要过 CFP 评审，维护者专场和项目闪电演讲则要先成为 CNCF 项目的维护者。一家公司可以靠预算买到展位、买到 Logo、买到酒会，但买不到维护者对“Spiderpool 拓扑感知 RDMA 分配”这类题目的通过票。八年下来，这件事反过来成了最硬的背书——讲台站得住，客户才信你能把活干住。
+这一点决定了 112 这个数字的性质：**它主要不是市场投入的产出，而是技术判断一次次被社区认可**。分会场议题要过 CFP 评审，维护者专场和项目闪电演讲则要先成为 CNCF 项目的维护者。一家公司可以靠预算买到展位、买到 Logo、买到酒会，但买不到维护者对“Spiderpool 拓扑感知 RDMA 分配”这类题目的通过票。八年下来，这件事反过来成了最硬的背书——讲台站得住，客户才信你能把活干住。
 
 门槛既然在技术上，DaoCloud 这八年做的事也就不止于“去参会”。
 
@@ -131,14 +126,14 @@ KubeCon 的 CFP 只认技术：展台可以买，顶级赞助商还能买到少�
 | 评审 | CFP 截止后 3-4 周 | 维护者进入各 Track 的评审环节<br>联席主席参与整届议程编排 |
 | 筹备 | 会前 2-3 个月 | 展台组织协调、Demo 环境、值班排班、演讲稿打磨与彩排 |
 | 会中 | 3-4 天 | Keynote 与分会场演讲、开源项目展台、Contributor Summit |
-| 会后 | 1-3 个月 | 中文解读、技术复盘、把现场问题带回 roadmap |
+| 会后 | 1-3 个月 | 中文解读、技术复盘、把现场问题带回 Roadmap |
 
 ## DaoCloud 布道：把技术讲出去，也把社区带起来
 
 技术扩散不是单向宣讲，是双向流动——把上游的做法带回国内，也把国内的生产实践送进上游。KubeCon 只是这条线上最显眼的一段，会场之外：
 
 - **KCD** 累计主办或联合组织 **10 场**
-  （含 2026 年 11 月的杭州），DaoCloud 主题演讲 **20+ 场** ，2025 年北京站报名约 800 人、杭州站到场近 300 人，是国内云原生社区最稳定的线下场子。
+  （含 2026 年 11 月的杭州），DaoCloud 主题演讲 **20+ 场**，2025 年北京站报名约 800 人、杭州站到场近 300 人，是国内云原生社区最稳定的线下场子。
 - **CNCF 大使 4 位** ：Roby、Iceber、Paco Xu、windsonsea。大使不是荣誉头衔，是要持续做布道、带新人、组织活动。
 - **中文社区** ：Kubernetes 官网中文本地化长期维护，SIG Docs 中文 Approver 两人（windsonsea 是其中之一），Kueue Approver 也在其中。文档看起来最不“技术”，却是绝大多数国内开发者接触这些项目的第一入口。
 - **会场内的公共产品** ：2023 年北美站制作了一系列维护者采访视频。这类内容不产出议题数，却是项目方和用户真正对话的地方。
@@ -151,16 +146,16 @@ KubeCon 的 CFP 只认技术：展台可以买，顶级赞助商还能买到少�
 
 往上游：Kubernetes 侧有 Steering Committee（Paco Xu 2023 年当选、2025 年连任至 2027）、kubeadm 维护者、KWOK 创始人、Kubespray 维护者，以及 SIG Node / Scheduling / Storage / Docs 的一批 Reviewer 与 Approver，累计 6 人次拿到 Kubernetes 年度贡献者奖；CNCF 侧有 TAG Workloads Foundation Chair（Paco Xu）和 containerd 维护者。AI 方向这几年投入更重：
 
-- **vLLM**：DaoCloud 在 2026 年 2 月组建 vLLM 小队，chaunceyjiang（Reasoning / Tool Parser）、noooop（Pooling Models）是 Committer，linitra24 是 LoRA 方向 Reviewer。上游的在线推理接口、请求解析、Pooling 性能这些模块，有 DaoCloud 的代码在里面。
+- **vLLM**：上游的在线推理接口、请求解析、Pooling 性能这些模块，有 DaoCloud 的代码在里面。
 - **llm-d**：2026 年 3 月 12 日进入 CNCF Sandbox（公告在 KubeCon 欧洲站期间发出）。DaoCloud 在 ADOPTERS 名单中以 Contributor 身份在列（2025 年起），方向是 P/D 分离与 KV-Cache，用在 d.run MaaS 平台。
 - **Dynamo**：v1.5.0 的 40 位外部贡献者里，DaoCloud 以 8 人排在首位；2026 年起 carlory 转向 Dynamo Operator。
 - **HAMi、Kueue、LWS、Karmada、KubeEdge、Spiderpool**：从 Reviewer、Approver 到维护者，覆盖调度、GPU 切分、多机推理、多集群一整条链。
 
-把自己的项目交出去：HAMi 于 2026 年 7 月晋升 CNCF Incubating；Clusterpedia、HwameiStor、Kubean、Spiderpool、Piraeus 都在 CNCF Sandbox，Merbridge 也曾是 CNCF Sandbox 项目（2025 年 5 月转为归档）；KWOK 作为 kubernetes-sigs 项目，已被多家企业和开源项目用于大规模测试与仿真（见 [KWOK Adopters](https://kwok.sigs.k8s.io/docs/adopters/)）；CloudTTY 进了 CNCF Landscape。此外还有 MatrixHub（企业级自托管 AI 模型仓库，为 vLLM、SGLang、Dynamo 加速模型分发）、Unifabric（AI 高速网络可观测）、KLTS（Kubernetes 长期支持）、kdoctor、egressgateway、miragedebug 等一批项目。
+把自己的项目交出去：HAMi 于 2026 年 7 月晋升 CNCF Incubating；Clusterpedia、HwameiStor、Kubean、Spiderpool、Piraeus 都在 CNCF Sandbox；KWOK 作为 kubernetes-sigs 项目，已被多家企业和开源项目用于大规模测试与仿真（见 [KWOK Adopters](https://kwok.sigs.k8s.io/docs/adopters/)）；CloudTTY 进了 CNCF Landscape。此外还有 MatrixHub（企业级自托管 AI 模型仓库，为 vLLM、SGLang、Dynamo 加速模型分发）、Unifabric（AI 高速网络可观测）、KLTS（Kubernetes 长期支持）、kdoctor、egressgateway、miragedebug 等一批项目。
 
 ![DaoCloud 开源项目全景图](./images/daocloud-opensource-portfolio.svg)
 
-完整清单在 [DaoCloud 开源项目页](https://docs.daocloud.io/community/)。这些项目大多不是“内部工具顺手开源一下”，而是按社区规则在跑：公开 roadmap、接受外部 PR、把提交权限交出去。目前 DaoCloud 有 8 人专职做开源，分布在 Kubernetes 与 AI 推理两条主线上；而 CNCF 与 PyTorch 那一长串席位里，超过一半来自产品线和业务团队的工程师——Istio、OpenTelemetry、KubeEdge、vLLM Semantic Router 这些项目的 Reviewer 和 Approver，本职工作并不是“做开源”。
+完整清单参阅 [DaoCloud 开源项目页](https://docs.daocloud.io/community/)。这些项目大多不是“内部工具顺手开源一下”，而是按社区规则在跑：公开 Roadmap、接受外部 PR、把提交权限交出去。DaoCloud 从创立之初就设有专门的开源团队，持续建设开源至今。
 
 ## 附：2027 年 KubeCon 及 Open Nexus 日程
 
@@ -176,7 +171,7 @@ KubeCon 的 CFP 只认技术：展台可以买，顶级赞助商还能买到少�
 
 ## 结语
 
-112 个议题拆到每一年、每一站，是一条很朴素的路径：先跟着客户上台，再带着自己维护的项目上台，最后坐到能决定议程的位置上。数量在 2024 年见顶，之后有所回落——讲多少不重要，重要的是每次上台都带着新东西：一个新项目、一个新版本，或者一个新问题的解法。
+112 个议题拆到每一年、每一站，是一条很朴素的路径：先跟着客户上台，再带着自己维护的项目上台，最后坐到能决定议程的位置上。讲多少不重要，重要的是每次上台都带着新东西：一个新项目、一个新版本，或者一个新问题的解法。
 
 八年里，AI 从“能不能跑”走到“跑得多快、多便宜”，Kubernetes 从容器编排长成了 AI 的操作系统。DaoCloud 一直做的那四层——算力怎么切、任务怎么排、模型怎么分发、请求怎么走——恰好是每一波浪都必须重做的地方。议题、席位、项目、布道，都只是同一件事在不同层面的投影。
 
