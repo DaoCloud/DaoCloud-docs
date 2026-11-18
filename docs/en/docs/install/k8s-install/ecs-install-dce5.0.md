@@ -19,10 +19,9 @@ When deploying DCE on Alibaba Cloud ECS, special handling is required for load b
 
 1. Log in to a machine and download the dce5-installer binary file.
 
-    Assuming VERSION is v0.28.0:
-
     ```shell
-    export VERSION=v0.28.0
+    export VERSION=v0.46.0 # Change this to the version number you need
+
     curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
@@ -81,10 +80,9 @@ When deploying DCE on Alibaba Cloud ECS, special handling is required for load b
 
 1. Log in to a machine and download the dce5-installer binary file.
 
-    Assuming VERSION is v0.28.0:
-
     ```shell
-    export VERSION=v0.28.0
+    export VERSION=v0.46.0 # Change this to the version number you need
+
     curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
@@ -156,10 +154,9 @@ When deploying DCE on Alibaba Cloud ECS, special handling is required for load b
 
 1. Log in to a machine and download the dce5-installer binary file.
 
-    Assuming VERSION is v0.28.0:
-
     ```shell
-    export VERSION=v0.28.0
+    export VERSION=v0.46.0 # Change this to the version number you need
+
     curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```

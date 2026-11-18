@@ -334,7 +334,7 @@ bash install_prerequisite.sh online community
 ### 下载 dce5-installer
 
 ```bash
-export VERSION=v0.29.0
+export VERSION=v0.46.0 # 修改为需要的版本号
 curl -Lo ./dce5-installer https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
 chmod +x ./dce5-installer 
 ```
