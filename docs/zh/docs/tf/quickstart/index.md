@@ -5,7 +5,7 @@ hide:
 
 # 快速入门
 
-快速入门包含一系列动手实验，帮助您快速体验 Token 工厂的简单功能，包括从安装部署、纳管算力、生产 Token 到运营结算的功能。按角色分成两条学习路径：
+快速入门包含一系列动手实验，帮助您快速体验 Token 工厂的功能，包括从安装部署、纳管算力、生产 Token 到运营结算等。按角色分成两条学习路径：
 
 - 管理员视角：完成平台部署与算力纳管；
 - 用户视角：完成模型部署、应用构建与运营计费。
@@ -53,25 +53,25 @@ hide:
 === "用户视角"
 
     <div class="tf-path">
-      <a class="tf-path-step" style="--path-c:#fb8c00" href="deploy-model/">
+      <a class="tf-path-step" style="--path-c:#2196f3" href="deploy-model/">
         <span class="tf-path-num">1</span>
         <span class="tf-path-title">部署模型服务</span>
         <span class="tf-path-desc">模型广场选型，一键部署推理服务</span>
         <span class="tf-path-go">Go →</span>
       </a>
-      <a class="tf-path-step" style="--path-c:#8e24aa" href="call-model/">
+      <a class="tf-path-step" style="--path-c:#00acc1" href="call-model/">
         <span class="tf-path-num">2</span>
         <span class="tf-path-title">体验与调用模型</span>
         <span class="tf-path-desc">在线对话体验，创建 API Key 调用</span>
         <span class="tf-path-go">Go →</span>
       </a>
-      <a class="tf-path-step" style="--path-c:#5d4037" href="build-app/">
+      <a class="tf-path-step" style="--path-c:#43a047" href="build-app/">
         <span class="tf-path-num">3</span>
         <span class="tf-path-title">构建智能问答应用</span>
         <span class="tf-path-desc">搭建语料库，创建 RAG 应用</span>
         <span class="tf-path-go">Go →</span>
       </a>
-      <a class="tf-path-step" style="--path-c:#455a64" href="billing/">
+      <a class="tf-path-step" style="--path-c:#fb8c00" href="billing/">
         <span class="tf-path-num">4</span>
         <span class="tf-path-title">运营与计费</span>
         <span class="tf-path-desc">驾驶舱看运营，费用中心管计费</span>

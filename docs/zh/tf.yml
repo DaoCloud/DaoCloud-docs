@@ -1,21 +1,21 @@
 nav:
   - d.run Token 工厂效能平台:
       - 概述: tf/index.md
-      - 快速入门:
-          - 索引: tf/quickstart/index.md
-          - 安装 Token 工厂: tf/quickstart/deploy-platform.md
-          - 创建用户与工作空间: tf/quickstart/init-users.md
-          - 创建工作集群: tf/quickstart/join-cluster.md
-          - 部署模型服务: tf/quickstart/deploy-model.md
-          - 体验与调用模型: tf/quickstart/call-model.md
-          - 构建智能应用: tf/quickstart/build-app.md
-          - 运营与计费: tf/quickstart/billing.md
       - 探索和安装:
-          - 介绍:
+          - 产品介绍:
               - 我们是 K8s 认证服务商: tf/intro/kcsp.md
               - Release Notes: tf/tf-rn/20260930.md
               - DaoCloud 产品支持政策: tf/intro/support.md
-          - 安装:
+          - 快速入门:
+              - 索引: tf/quickstart/index.md
+              - 安装 Token 工厂: tf/quickstart/deploy-platform.md
+              - 创建用户与工作空间: tf/quickstart/init-users.md
+              - 创建工作集群: tf/quickstart/join-cluster.md
+              - 部署模型服务: tf/quickstart/deploy-model.md
+              - 体验与调用模型: tf/quickstart/call-model.md
+              - 构建智能应用: tf/quickstart/build-app.md
+              - 运营与计费: tf/quickstart/billing.md
+          - 安装 Token 工厂:
               - tf/install/index.md
               - 安装依赖项: tf/install/dependency.md
               - 安装准备:
