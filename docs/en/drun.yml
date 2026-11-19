@@ -4,7 +4,9 @@ nav:
       - Explore and Install:
           - Introduction:
               - DaoCloud is a KCSP: drun/intro/kcsp.md
-              - Release Notes: drun/drun-rn/20260930.md
+              - Release Notes:
+                  - Index: drun/drun-rn/index.md
+                  - v0.45.0-20260930 Released: drun/drun-rn/20260930.md
               - DaoCloud Support Policy: drun/intro/support.md
           - Installation:
               - drun/install/index.md

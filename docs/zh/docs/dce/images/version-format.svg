@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="310" viewBox="0 0 880 310" role="img" aria-labelledby="title desc">
+  <title id="title">DaoCloud 版本号格式</title>
+  <desc id="desc">v0.46.0-20261031 由安装器版本与发版日期组成；安装器版本与各功能模块均遵循语义化版本规范。</desc>
+  <style>
+    /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
+    @media (prefers-color-scheme: dark) {
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      [fill="#f5f8fd"] { fill: #1e2530; }
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#8a96a8"] { fill: #7e8794; }
+      [fill="#1565c0"] { fill: #64b5f6; }
+      [fill="#e65100"] { fill: #ffb74d; }
+      [fill="#2e7d32"] { fill: #81c784; }
+      [stroke="#b3d1f0"] { stroke: #31465e; }
+      [stroke="#ffd6a0"] { stroke: #5c4a26; }
+      [stroke="#c9d6e8"] { stroke: #333e4d; }
+      [stroke="#a9c7e8"] { stroke: #3f6a94; }
+      [stroke="#ffcf9e"] { stroke: #8a6a3a; }
+    }
+  </style>
+
+  <rect x="0.5" y="0.5" width="879" height="309" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
+
+  <!-- 标题 -->
+  <text x="440" text-anchor="middle" y="38" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#1a2330">DaoCloud 版本号格式</text>
+
+  <!-- 版本号解剖 -->
+  <text x="440" text-anchor="middle" y="122" font-family="'SF Mono', ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="46" font-weight="600" letter-spacing="1"><tspan fill="#1565c0">v0.46.0</tspan><tspan fill="#8a96a8">-</tspan><tspan fill="#e65100">20261031</tspan></text>
+
+  <!-- 分段标签 -->
+  <text x="330" text-anchor="middle" y="152" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" fill="#5c6775">安装器版本</text>
+  <text x="433" text-anchor="middle" y="152" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" fill="#8a96a8">分隔符</text>
+  <text x="550" text-anchor="middle" y="152" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" fill="#5c6775">发版日期</text>
+
+  <!-- 连接虚线 -->
+  <line x1="330" y1="160" x2="265" y2="185" stroke="#a9c7e8" stroke-dasharray="4 3" fill="none"/>
+  <line x1="550" y1="160" x2="615" y2="185" stroke="#ffcf9e" stroke-dasharray="4 3" fill="none"/>
+
+  <!-- 左卡：安装器版本 -->
+  <rect x="70" y="185" width="390" height="72" rx="10" fill="#f5f8fd" stroke="#b3d1f0"/>
+  <text x="265" text-anchor="middle" y="212" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#1565c0">安装器版本（语义化版本）</text>
+  <text x="265" text-anchor="middle" y="236" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#5c6775">主版本.次版本.修订号，随每月基线发版递增</text>
+
+  <!-- 右卡：发版日期 -->
+  <rect x="420" y="185" width="390" height="72" rx="10" fill="#f5f8fd" stroke="#ffd6a0"/>
+  <text x="615" text-anchor="middle" y="212" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#e65100">发版日期</text>
+  <text x="615" text-anchor="middle" y="236" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#5c6775">格式 YYYYMMDD，即该基线的发版日期</text>
+
+  <!-- 底部说明 -->
+  <line x1="90" y1="272" x2="790" y2="272" stroke="#c9d6e8" fill="none"/>
+  <text x="440" text-anchor="middle" y="293" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#5c6775">各功能模块同样采用<tspan fill="#2e7d32" font-weight="600">语义化版本</tspan>并独立演进，例如 容器管理 v0.50.1、全局管理 v0.49.2、费用中心 v0.17.1</text>
+</svg>

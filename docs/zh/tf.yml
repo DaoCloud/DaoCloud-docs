@@ -4,7 +4,10 @@ nav:
       - 探索和安装:
           - 产品介绍:
               - 我们是 K8s 认证服务商: tf/intro/kcsp.md
-              - Release Notes: tf/tf-rn/20260930.md
+              - Release Notes: 
+                  - 索引: tf/tf-rn/index.md
+                  - v0.46.0-20261031 发布: tf/tf-rn/20261031.md
+                  - v0.45.0-20260930 发布: tf/tf-rn/20260930.md
               - DaoCloud 产品支持政策: tf/intro/support.md
           - 快速入门:
               - 索引: tf/quickstart/index.md

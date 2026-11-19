@@ -4,12 +4,13 @@ nav:
   - DaoCloud Enterprise:
       - 概览: dce/index.md
       - 探索和安装:
-          - DCE 介绍:
+          - 产品介绍:
               - 申请社区免费体验: dce/license0.md
               - 功能和优势: dce/features.md
               - 适用场景: dce/scenario.md
               - 我们是 K8s 认证服务商: dce/kcsp.md
-              - DCE Release Notes:
+              - Release Notes:
+                  - 索引: dce/dce-rn/index.md
                   - v0.45.0-20260930 发布: dce/dce-rn/20260930.md
                   - v0.44.0-20260831 发布: dce/dce-rn/20260831.md
                   - v0.43.0-20260731 发布: dce/dce-rn/20260731.md
