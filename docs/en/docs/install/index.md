@@ -28,27 +28,30 @@ DCE has two versions: DCE Community and DCE Enterprise.
       <td>DCE Community</td>
       <td>
         <ul>
-          <li><a href="https://docs.daocloud.io/en/ghippo/intro/">Global Management</a></li>
-          <li><a href="https://docs.daocloud.io/en/kpanda/intro/">Container Management</a></li>
-          <li><a href="https://docs.daocloud.io/en/insight/intro/">Insight</a></li>
+          <li><a href="../ghippo/intro/">Global Management</a></li>
+          <li><a href="../kpanda/intro/">Container Management</a></li>
+          <li><a href="../insight/intro/">Insight</a></li>
         </ul>
       </td>
       <td>
-        <a href="https://docs.daocloud.io/en/dce/license0.html">Permanently free license</a>, the 3 modules will receive continuous updates, and you can <a href="https://docs.daocloud.io/en/download/index.html#download-modules">download offline packages for sub-modules</a> anytime.
+        <a href="../dce/license0/">Permanently free license</a>, the 3 modules will receive continuous updates, and you can <a href="https://docs.daocloud.io/en/download/#download-modules">download offline packages for sub-modules</a> anytime.
       </td>
     </tr>
     <tr>
       <td>DCE Enterprise</td>
       <td> <p>On top of DCE Community, more modules are added:</p>
         <ul>
-          <li><a href="https://docs.daocloud.io/en/amamba/intro/"><span style="white-space: nowrap;">Workbench</span></a></li>
-          <li><a href="https://docs.daocloud.io/en/kairship/intro/">Multicloud Management</a></li>
-          <li><a href="https://docs.daocloud.io/en/skoala/intro/"><span style="white-space: nowrap;">Microservice Engine</span></a></li>
-          <li><a href="https://docs.daocloud.io/en/mspider/intro/">Service Mesh</a></li>
-          <li><a href="https://docs.daocloud.io/en/middleware/index.html"><span style="white-space: nowrap;">Middleware</span></a></li>
-          <li><a href="https://docs.daocloud.io/en/kangaroo/intro/">Container Registry</a></li>
-          <li><a href="https://docs.daocloud.io/en/kant/intro/">Cloud Edge Collaboration</a></li>
-          <li><a href="https://docs.daocloud.io/en/virtnest/intro/">Containerized VM</a></li>
+          <li><a href="../amamba/intro/"><span style="white-space: nowrap;">Workbench</span></a></li>
+          <li><a href="../kairship/intro/">Multicloud Management</a></li>
+          <li><a href="../skoala/intro/"><span style="white-space: nowrap;">Microservice Engine</span></a></li>
+          <li><a href="../mspider/intro/">Service Mesh</a></li>
+          <li><a href="../middleware/"><span style="white-space: nowrap;">Middleware</span></a></li>
+          <li><a href="../kangaroo/intro/">Container Registry</a></li>
+          <li><a href="../kant/intro/">Cloud Edge Collaboration</a></li>
+          <li><a href="../virtnest/intro/">Containerized VM</a></li>
+          <li><a href="../topohub/intro/">Device Management</a></li>
+          <li><a href="../network/intro/">Networking</a></li>
+          <li><a href="../storage/hwameistor/intro/">HwameiStor</a></li>
         </ul>
       </td>
       <td>
@@ -85,17 +88,17 @@ end
 start([fa:fa-user DCE Community<br>Installation Process]) --> first
 start --> second
 
-click plan "https://docs.daocloud.io/en/install/community/resources.html"
-click k8s "https://docs.daocloud.io/en/install/community/kind/online.html#install-kind-cluster"
-click tools "https://docs.daocloud.io/en/install/install-tools.html"
-click kind "https://docs.daocloud.io/en/install/community/kind/online.html"
-click s1 "https://docs.daocloud.io/en/install/community/k8s/online.html"
-click s2 "https://docs.daocloud.io/en/install/community/k8s/offline.html"
-click kpanda "https://docs.daocloud.io/en/kpanda/intro/"
-click ghippo "https://docs.daocloud.io/en/ghippo/intro/"
-click insight "https://docs.daocloud.io/en/insight/intro/"
-click free "https://docs.daocloud.io/en/dce/license0.html"
-click ask "https://docs.daocloud.io/en/install/index.html#contact-us"
+click plan "community/resources/"
+click k8s "community/kind/online/#install-kind-cluster"
+click tools "install-tools/"
+click kind "community/kind/online/"
+click s1 "community/k8s/online/"
+click s2 "community/k8s/offline/"
+click kpanda "../kpanda/intro/"
+click ghippo "../ghippo/intro/"
+click insight "../insight/intro/"
+click free "../dce/license0/"
+click ask "#contact-us"
 ```
 
 ## Install DCE Enterprise
@@ -123,18 +126,18 @@ flowchart TB
     other-os -.-> tencent[Install on<br>TencentOS Server]
     other-os -.-> other[Install on<br>Other Linux]
 
-click arch "https://docs.daocloud.io/en/install/commercial/deploy-arch.html"
-click deploy "https://docs.daocloud.io/en/install/commercial/deploy-requirements.html"
-click prepare "https://docs.daocloud.io/en/install/commercial/prepare.html"
-click download "https://docs.daocloud.io/en/install/commercial/start-install.html#step-1-download-the-offline-package"
-click config "https://docs.daocloud.io/en/install/commercial/start-install.html#step-2-configure-clusterconfigyaml"
-click install "https://docs.daocloud.io/en/install/commercial/start-install.html#step-3-start-installation"
-click ocp "https://docs.daocloud.io/en/install/k8s-install/ocp-install-dce5.0.html"
-click ali "https://docs.daocloud.io/en/install/k8s-install/ecs-install-dce5.0.html"
-click uos "https://docs.daocloud.io/en/install/os-install/uos-v20-install-dce5.0.html"
-click oracle "https://docs.daocloud.io/en/install/os-install/oracleLinux-install-dce5.0.html"
-click tencent "https://docs.daocloud.io/en/install/os-install/TencentOS-install-dce5.0.html"
-click other "https://docs.daocloud.io/en/install/os-install/otherlinux.html"
+click arch "commercial/deploy-arch/"
+click deploy "commercial/deploy-requirements/"
+click prepare "commercial/prepare/"
+click download "commercial/start-install/#download-offline-package"
+click config "commercial/start-install/#edit-clusterconfigyaml"
+click install "commercial/start-install/#install"
+click ocp "k8s-install/ocp-install-dce5.0/"
+click ali "k8s-install/ecs-install-dce5.0/"
+click uos "os-install/uos-v20-install-dce5.0/"
+click oracle "os-install/oracleLinux-install-dce5.0/"
+click tencent "os-install/TencentOS-install-dce5.0/"
+click other "os-install/otherlinux/"
 ```
 
 ## Contact us

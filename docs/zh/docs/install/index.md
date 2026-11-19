@@ -1,6 +1,6 @@
 # 安装简介
 
-DCE 大体分为两个版本：社区版和商业版。
+DCE 分为社区版和商业版。
 
 - 社区版包括容器管理、全局管理、可观测性三大模块，可永久免费使用。[DCE 社区版安装手册 PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/docs/dce5-community.pdf){ .md-button }
 - 商业版在社区版的基础上可按需增加服务网格、微服务引擎、多云编排、数据服务中间件、镜像仓库、云边协同、容器化虚拟机等模块，
@@ -19,33 +19,36 @@ DCE 大体分为两个版本：社区版和商业版。
       <td>社区版</td>
       <td>
         <ul>
-          <li><a href="https://docs.daocloud.io/ghippo/intro/">全局管理</a></li>
-          <li><a href="https://docs.daocloud.io/kpanda/intro/">容器管理</a></li>
-          <li><a href="https://docs.daocloud.io/insight/intro/">可观测性</a></li>
+          <li><a href="../ghippo/intro/">全局管理</a></li>
+          <li><a href="../kpanda/intro/">容器管理</a></li>
+          <li><a href="../insight/intro/">可观测性</a></li>
         </ul>
       </td>
       <td>
-        <a href="https://docs.daocloud.io/dce/license0.html">永久免费授权</a>，3 个模块会保持持续更新，可随时
-        <a href="https://docs.daocloud.io/download/index.html#_3">下载子模块的离线包</a>
+        <a href="../dce/license0/">永久免费授权</a>，3 个模块会保持持续更新，可随时
+        <a href="https://docs.daocloud.io/download/#_3">下载子模块的离线包</a>
       </td>
     </tr>
     <tr>
       <td>商业版</td>
-      <td><p>社区版上增加了：</p>
+      <td><p>社区版上增加：</p>
         <ul>
-          <li><a href="https://docs.daocloud.io/amamba/intro/"><span style="white-space: nowrap;">应用工作台</span></a></li>
-          <li><a href="https://docs.daocloud.io/kairship/intro/">多云编排</a></li>
-          <li><a href="https://docs.daocloud.io/skoala/intro/"><span style="white-space: nowrap;">微服务引擎</span></a></li>
-          <li><a href="https://docs.daocloud.io/mspider/intro/">服务网格</a></li>
-          <li><a href="https://docs.daocloud.io/middleware/index.html"><span style="white-space: nowrap;">精选中间件</span></a></li>
-          <li><a href="https://docs.daocloud.io/kangaroo/intro/">镜像仓库</a></li>
-          <li><a href="https://docs.daocloud.io/kant/intro/">云边协同</a></li>
-          <li><a href="https://docs.daocloud.io/virtnest/intro/">容器化虚拟机</a></li>
+          <li><a href="../amamba/intro/"><span style="white-space: nowrap;">应用工作台</span></a></li>
+          <li><a href="../kairship/intro/">多云编排</a></li>
+          <li><a href="../skoala/intro/"><span style="white-space: nowrap;">微服务引擎</span></a></li>
+          <li><a href="../mspider/intro/">服务网格</a></li>
+          <li><a href="../middleware/"><span style="white-space: nowrap;">精选中间件</span></a></li>
+          <li><a href="../kangaroo/intro/">镜像仓库</a></li>
+          <li><a href="../kant/intro/">云边协同</a></li>
+          <li><a href="../virtnest/intro/">虚拟机</a></li>
+          <li><a href="../topohub/intro/">设备管理</a></li>
+          <li><a href="../network/intro/">云原生网络</a></li>
+          <li><a href="../storage/hwameistor/intro/">云原生存储</a></li>
         </ul>
       </td>
       <td>
         联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898，各个模块可按需自由组合，
-        可随时<a href="https://docs.daocloud.io/download/index.html#_3">下载子模块的离线包</a>
+        可随时<a href="https://docs.daocloud.io/download/#_3">下载子模块的离线包</a>
       </td>
     </tr>
   </tbody>
@@ -79,17 +82,17 @@ start([fa:fa-user DCE 社区版<br>安装和使用流程]) --> first
 start --> second
 
 
-click plan "https://docs.daocloud.io/install/community/resources.html"
-click k8s "https://docs.daocloud.io/install/community/kind/online.html#kind"
-click tools "https://docs.daocloud.io/install/install-tools.html"
-click kind "https://docs.daocloud.io/install/community/kind/online.html"
-click s1 "https://docs.daocloud.io/install/community/k8s/online.html"
-click s2 "https://docs.daocloud.io/install/community/k8s/offline.html"
-click kpanda "https://docs.daocloud.io/kpanda/intro/"
-click ghippo "https://docs.daocloud.io/ghippo/intro/"
-click insight "https://docs.daocloud.io/insight/intro/"
-click free "https://docs.daocloud.io/dce/license0.html"
-click ask "https://docs.daocloud.io/install/index.html#_4"
+click plan "community/resources/"
+click k8s "community/kind/online/#kind"
+click tools "install-tools/"
+click kind "community/kind/online/"
+click s1 "community/k8s/online/"
+click s2 "community/k8s/offline/"
+click kpanda "../kpanda/intro/"
+click ghippo "../ghippo/intro/"
+click insight "../insight/intro/"
+click free "../dce/license0/"
+click ask "#_4"
 ```
 
 ## 商业版安装流程
@@ -117,18 +120,18 @@ flowchart TB
     other-os -.-> tencent[安装到<br>TencentOS Server]
     other-os -.-> other[安装到<br>更多 Linux]
 
-click arch "https://docs.daocloud.io/install/commercial/deploy-arch.html"
-click deploy "https://docs.daocloud.io/install/commercial/deploy-requirements.html"
-click prepare "https://docs.daocloud.io/install/commercial/prepare.html"
-click download "https://docs.daocloud.io/install/commercial/start-install.html#1"
-click config "https://docs.daocloud.io/install/commercial/start-install.html#2-clusterconfigyaml"
-click install "https://docs.daocloud.io/install/commercial/start-install.html#3"
-click ocp "https://docs.daocloud.io/install/k8s-install/ocp-install-dce5.0.html"
-click ali "https://docs.daocloud.io/install/k8s-install/ecs-install-dce5.0.html"
-click uos "https://docs.daocloud.io/install/os-install/uos-v20-install-dce5.0.html"
-click oracle "https://docs.daocloud.io/install/os-install/oracleLinux-install-dce5.0.html"
-click tencent "https://docs.daocloud.io/install/os-install/TencentOS-install-dce5.0.html"
-click other "https://docs.daocloud.io/install/os-install/otherlinux.html"
+click arch "commercial/deploy-arch/"
+click deploy "commercial/deploy-requirements/"
+click prepare "commercial/prepare/"
+click download "commercial/start-install/#1"
+click config "commercial/start-install/#2-clusterconfigyaml"
+click install "commercial/start-install/#3"
+click ocp "k8s-install/ocp-install-dce5.0/"
+click ali "k8s-install/ecs-install-dce5.0/"
+click uos "os-install/uos-v20-install-dce5.0/"
+click oracle "os-install/oracleLinux-install-dce5.0/"
+click tencent "os-install/TencentOS-install-dce5.0/"
+click other "os-install/otherlinux/"
 ```
 
 ## 联系我们
