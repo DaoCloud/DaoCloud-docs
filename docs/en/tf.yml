@@ -4,7 +4,10 @@ nav:
       - Explore and Install:
           - Introduction:
               - DaoCloud is a KCSP: tf/intro/kcsp.md
-              - Release Notes: tf/tf-rn/20260930.md
+              - Release Notes:
+                  - Index: tf/tf-rn/index.md
+                  - v0.46.0-20261031 Released: tf/tf-rn/20261031.md
+                  - v0.45.0-20260930 Released: tf/tf-rn/20260930.md
               - DaoCloud Support Policy: tf/intro/support.md
           - Quick Start:
               - Overview: tf/quickstart/index.md

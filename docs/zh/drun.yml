@@ -4,7 +4,10 @@ nav:
       - 探索和安装:
           - 介绍:
               - 我们是 K8s 认证服务商: drun/intro/kcsp.md
-              - Release Notes: drun/drun-rn/20260930.md
+              - Release Notes:
+                  - 索引: drun/drun-rn/index.md
+                  - v0.46.0-20261031 发布: drun/drun-rn/20261031.md
+                  - v0.45.0-20260930 发布: drun/drun-rn/20260930.md
               - DaoCloud 产品支持政策: drun/intro/support.md
           - 安装:
               - drun/install/index.md
