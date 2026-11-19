@@ -161,6 +161,10 @@ plugins:
         "video.md": "videos/index.md"
         "baize.md": "baize/intro/index.md"
 
+        # gmagpie: no standalone module dir, docs live under ghippo report-billing
+        "tf/gmagpie/index.md": "ghippo/user-guide/report-billing/index.md"
+        "dce/gmagpie/index.md": "ghippo/user-guide/report-billing/index.md"
+
         # baize page renames
         "baize/best-practice/deploy-nfs-in-worker.md": "baize/best-practice/index.md"
 
