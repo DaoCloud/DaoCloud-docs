@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 642" width="1280" height="642" role="img" aria-labelledby="diagram-title diagram-desc" font-family="Inter, -apple-system, BlinkMacSystemFont, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<title id="diagram-title">Token Factory 产品架构图</title>
+<desc id="diagram-desc">中间主体从模型服务、Token 治理到推理优化、算力调度和算力集群，右侧贯穿运维保障与运营管理。</desc>
+<defs><linearGradient id="canvas" x2="1" y2="1"><stop stop-color="#fcfdff"/><stop offset="1" stop-color="#f6f4fe"/></linearGradient>
+<linearGradient id="blue-tag" x2="1" y2="1"><stop stop-color="#f1f7ff"/><stop offset="1" stop-color="#e5eeff"/></linearGradient>
+<linearGradient id="indigo-tag" x2="1" y2="1"><stop stop-color="#f2f5ff"/><stop offset="1" stop-color="#e8ebff"/></linearGradient>
+<linearGradient id="purple-tag" x2="1" y2="1"><stop stop-color="#f7f2ff"/><stop offset="1" stop-color="#eee5ff"/></linearGradient>
+</defs>
+<rect x="0" y="0" width="1280" height="642" rx="0" fill="url(#canvas)" stroke="none"/>
+<g aria-label="模型服务">
+<rect x="18" y="18" width="132" height="49" rx="10" fill="url(#blue-tag)" stroke="#cdddfe"/>
+<rect x="31" y="32.5" width="3" height="20" rx="1.5" fill="#2852a3" stroke="none"/>
+<text x="91" y="42.5" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="720" fill="#2852a3">模型服务</text>
+<rect x="166" y="18" width="810" height="49" rx="11" fill="#edf4ff" stroke="#cdddfe"/>
+<rect x="176" y="27" width="288" height="31" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="188" y="42.5" text-anchor="start" dominant-baseline="central" font-size="16" font-weight="700" fill="#2852a3">模型广场</text>
+<rect x="275" y="31.5" width="22" height="22" rx="5" fill="#f0efff" stroke="none"/>
+<path d="M-7 1C-5-5 0-3 3-2L7-5 6 1C5 6-4 7-7 1ZM-4 0-3 1" transform="translate(286 42.5)" fill="none" stroke="#4268e8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"/>
+<rect x="309" y="31.5" width="22" height="22" rx="5" fill="#f0efff" stroke="none"/>
+<path d="M0-7 2-2 7 0 2 2 0 7-2 2-7 0-2-2Z" transform="translate(320 42.5)" fill="none" stroke="#704cdc" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"/>
+<rect x="343" y="31.5" width="22" height="22" rx="5" fill="#f0efff" stroke="none"/>
+<path d="M-4-5V5M4-5V5M-4 0H4" transform="translate(354 42.5)" fill="none" stroke="#4c4c9a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"/>
+<rect x="377" y="31.5" width="22" height="22" rx="5" fill="#f0efff" stroke="none"/>
+<path d="M-6-1V1M-3-4V4M0-6V6M3-4V4M6-1V1" transform="translate(388 42.5)" fill="none" stroke="#7859de" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"/>
+<rect x="411" y="31.5" width="22" height="22" rx="5" fill="#f0efff" stroke="none"/>
+<path d="M-5-5H5L-5 5H5" transform="translate(422 42.5)" fill="none" stroke="#3f60b7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"/>
+<rect x="473" y="27" width="116.5" height="31" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="531.25" y="42.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">模型管理</text>
+<rect x="598.5" y="27" width="116.5" height="31" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="656.75" y="42.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">API 兼容</text>
+<rect x="724.0" y="27" width="116.5" height="31" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="782.25" y="42.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">模型体验</text>
+<rect x="849.5" y="27" width="116.5" height="31" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="907.75" y="42.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">自定义模型</text>
+</g>
+<g aria-label="Token 治理">
+<rect x="18" y="76" width="132" height="114" rx="10" fill="url(#indigo-tag)" stroke="#d5dcff"/>
+<rect x="31" y="123.0" width="3" height="20" rx="1.5" fill="#3d51a9" stroke="none"/>
+<text x="91" y="133.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="720" fill="#3d51a9">Token 治理</text>
+<rect x="166" y="76" width="810" height="114" rx="11" fill="#eef1ff" stroke="#d5dcff"/>
+<rect x="176" y="86" width="257.3333333333333" height="48" rx="7" fill="#fff" stroke="#dde3fb"/>
+<text x="304.66666666666663" y="101.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">用量统计</text>
+<text x="304.66666666666663" y="121.0" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">多维度 Token 计量</text>
+<rect x="442.3333333333333" y="86" width="257.3333333333333" height="48" rx="7" fill="#fff" stroke="#dde3fb"/>
+<text x="571.0" y="101.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">智能路由</text>
+<text x="571.0" y="121.0" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">自动模型选择/容灾切换</text>
+<rect x="708.6666666666666" y="86" width="257.3333333333333" height="48" rx="7" fill="#fff" stroke="#dde3fb"/>
+<text x="837.3333333333333" y="101.0" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">流量控制</text>
+<text x="837.3333333333333" y="121.0" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">限流/降级</text>
+<rect x="176" y="143" width="190.75" height="37" rx="7" fill="#fff" stroke="#dde3fb"/>
+<text x="271.375" y="161.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">内容合规安全</text>
+<rect x="375.75" y="143" width="190.75" height="37" rx="7" fill="#fff" stroke="#dde3fb"/>
+<text x="471.125" y="161.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">Token 渠道管理</text>
+<rect x="575.5" y="143" width="190.75" height="37" rx="7" fill="#fff" stroke="#dde3fb"/>
+<text x="670.875" y="161.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">API 密钥管理</text>
+<rect x="775.25" y="143" width="190.75" height="37" rx="7" fill="#fff" stroke="#dde3fb"/>
+<text x="870.625" y="161.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">模型精度评估</text>
+</g>
+<g aria-label="推理优化">
+<rect x="18" y="199" width="132" height="127" rx="10" fill="url(#purple-tag)" stroke="#ddd0fb"/>
+<rect x="31" y="252.5" width="3" height="20" rx="1.5" fill="#6035aa" stroke="none"/>
+<text x="91" y="262.5" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="720" fill="#6035aa">推理优化</text>
+<rect x="166" y="199" width="810" height="127" rx="11" fill="#f3efff" stroke="#ddd0fb"/>
+<rect x="176" y="209" width="143.89312977099237" height="49" rx="7" fill="#fff" stroke="#e7defa"/>
+<text x="247.94656488549617" y="224.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">分布式编排</text>
+<text x="247.94656488549617" y="244.5" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">Dynamo / LLM-D</text>
+<rect x="328.89312977099235" y="209" width="128.06488549618322" height="49" rx="7" fill="#fff" stroke="#e7defa"/>
+<text x="392.92557251908397" y="233.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">P/D 分离</text>
+<rect x="465.9580152671756" y="209" width="143.89312977099237" height="49" rx="7" fill="#fff" stroke="#e7defa"/>
+<text x="537.9045801526718" y="224.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">KV 缓存优化</text>
+<text x="537.9045801526718" y="244.5" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">Redhare</text>
+<rect x="618.8511450381679" y="209" width="152.5267175572519" height="49" rx="7" fill="#fff" stroke="#e7defa"/>
+<text x="695.1145038167939" y="233.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">KV 感知调度</text>
+<rect x="780.3778625954199" y="209" width="185.62213740458017" height="49" rx="7" fill="#fff" stroke="#e7defa"/>
+<text x="873.1889312977099" y="224.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">权重加速</text>
+<text x="873.1889312977099" y="244.5" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">ModelExpress / MatrixHub</text>
+<rect x="176" y="267" width="149.30693069306932" height="49" rx="7" fill="#fff" stroke="#e7defa"/>
+<text x="250.65346534653466" y="282.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">引擎优化</text>
+<text x="250.65346534653466" y="302.5" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">vLLM / SGLang</text>
+<rect x="334.3069306930693" y="267" width="156.77227722772278" height="49" rx="7" fill="#fff" stroke="#e7defa"/>
+<text x="412.69306930693074" y="291.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">分布式通信优化</text>
+<rect x="500.0792079207921" y="267" width="149.30693069306932" height="49" rx="7" fill="#fff" stroke="#e7defa"/>
+<text x="574.7326732673267" y="291.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">模型量化</text>
+<rect x="658.3861386138615" y="267" width="149.30693069306932" height="49" rx="7" fill="#fff" stroke="#e7defa"/>
+<text x="733.0396039603961" y="291.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">推测解码</text>
+<rect x="816.6930693069307" y="267" width="149.30693069306932" height="49" rx="7" fill="#fff" stroke="#e7defa"/>
+<text x="891.3465346534654" y="291.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">算子调优</text>
+</g>
+<g aria-label="算力调度">
+<rect x="18" y="335" width="132" height="214" rx="10" fill="url(#blue-tag)" stroke="#cdddfe"/>
+<rect x="31" y="432.0" width="3" height="20" rx="1.5" fill="#2852a3" stroke="none"/>
+<text x="91" y="442.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="720" fill="#2852a3">算力调度</text>
+<rect x="166" y="335" width="810" height="69" rx="11" fill="#edf4ff" stroke="#cdddfe"/>
+<text x="224" y="369.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="720" fill="#2852a3">调度优化</text>
+<rect x="280" y="345" width="165.5" height="49" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="362.75" y="360.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">工作负载感知</text>
+<text x="362.75" y="380.5" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">Gang/Binpack</text>
+<rect x="453.5" y="345" width="165.5" height="49" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="536.25" y="360.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">混合任务调度</text>
+<text x="536.25" y="380.5" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">队列/训推/忙闲</text>
+<rect x="627.0" y="345" width="165.5" height="49" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="709.75" y="360.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">拓扑感知调度</text>
+<text x="709.75" y="380.5" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">TAS/NUMA</text>
+<rect x="800.5" y="345" width="165.5" height="49" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="883.25" y="360.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">分布式推理调度</text>
+<text x="883.25" y="380.5" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">LWS</text>
+<rect x="166" y="412" width="810" height="69" rx="11" fill="#edf4ff" stroke="#cdddfe"/>
+<text x="224" y="446.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="720" fill="#2852a3">异构池化</text>
+<rect x="280" y="422" width="106.43529411764706" height="49" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="333.21764705882356" y="437.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">异构计算</text>
+<text x="333.21764705882356" y="457.5" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">DRA</text>
+<rect x="394.43529411764706" y="422" width="109.00000000000001" height="49" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="448.93529411764706" y="437.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">GPU 共享</text>
+<text x="448.93529411764706" y="457.5" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">HAMi / MIG</text>
+<rect x="511.43529411764706" y="422" width="159.01176470588237" height="49" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="590.9411764705883" y="437.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">GPU 管理</text>
+<text x="590.9411764705883" y="457.5" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">GPU Operator / AICR</text>
+<rect x="678.4470588235295" y="422" width="141.0588235294118" height="49" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="748.9764705882353" y="437.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">GPU 网络加速</text>
+<text x="748.9764705882353" y="457.5" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">Spiderpool / Nixl</text>
+<rect x="827.5058823529413" y="422" width="138.49411764705886" height="49" rx="7" fill="#fff" stroke="#dbe7fd"/>
+<text x="896.7529411764707" y="437.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="650" fill="#242b51">高速分布式存储</text>
+<text x="896.7529411764707" y="457.5" text-anchor="middle" dominant-baseline="central" font-size="12.5" font-weight="500" fill="#526186">Lustre / CMX</text>
+<rect x="166" y="489" width="810" height="60" rx="11" fill="#eef1ff" stroke="#d5dcff"/>
+<g transform="translate(436 519)" aria-hidden="true">
+<path d="M0 -11 8.6 -6.9 10.7 2.5 4.8 10 -4.8 10 -10.7 2.5 -8.6 -6.9Z" fill="#376be8"/>
+<g fill="none" stroke="white" stroke-width="0.9" stroke-linecap="round">
+<circle r="4.3"/><circle r="1.05"/>
+<path d="M0 -1.3V-6.7" transform="rotate(0.0000)"/>
+<path d="M0 -1.3V-6.7" transform="rotate(51.4286)"/>
+<path d="M0 -1.3V-6.7" transform="rotate(102.8571)"/>
+<path d="M0 -1.3V-6.7" transform="rotate(154.2857)"/>
+<path d="M0 -1.3V-6.7" transform="rotate(205.7143)"/>
+<path d="M0 -1.3V-6.7" transform="rotate(257.1429)"/>
+<path d="M0 -1.3V-6.7" transform="rotate(308.5714)"/>
+</g></g>
+<text x="453" y="519" text-anchor="start" dominant-baseline="central" font-size="15" font-weight="720" fill="#3d51a9">kubernetes</text>
+<text x="551" y="519" text-anchor="start" dominant-baseline="central" font-size="16" font-weight="680" fill="#303b6e">AI 算力调度的事实标准</text>
+</g>
+<g aria-label="运维保障">
+<rect x="986" y="18" width="130" height="531" rx="11" fill="#eef1ff" stroke="#d5dcff"/>
+<rect x="996" y="28" width="110" height="43" rx="7" fill="#ffffff" stroke="none"/>
+<text x="1051.0" y="49.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="720" fill="#3d51a9">运维保障</text>
+<rect x="996" y="86" width="110" height="49" rx="7" fill="#ffffff" stroke="#dde3fb"/>
+<text x="1051.0" y="110.5" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">仪表盘</text>
+<rect x="996" y="150" width="110" height="49" rx="7" fill="#ffffff" stroke="#dde3fb"/>
+<text x="1051.0" y="174.5" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">Copilot</text>
+<rect x="996" y="214" width="110" height="49" rx="7" fill="#ffffff" stroke="#dde3fb"/>
+<text x="1051.0" y="238.5" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">弹性扩缩</text>
+<rect x="996" y="278" width="110" height="49" rx="7" fill="#ffffff" stroke="#dde3fb"/>
+<text x="1051.0" y="302.5" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">SLO 追踪</text>
+<rect x="996" y="342" width="110" height="49" rx="7" fill="#ffffff" stroke="#dde3fb"/>
+<text x="1051.0" y="366.5" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">资源监控</text>
+<rect x="996" y="406" width="110" height="49" rx="7" fill="#ffffff" stroke="#dde3fb"/>
+<text x="1051.0" y="430.5" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">链路查询</text>
+<rect x="996" y="470" width="110" height="49" rx="7" fill="#ffffff" stroke="#dde3fb"/>
+<text x="1051.0" y="486.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">AI 网络</text>
+<text x="1051.0" y="503.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">监控</text>
+</g>
+<g aria-label="运营管理">
+<rect x="1126" y="18" width="130" height="531" rx="11" fill="#f3efff" stroke="#ddd0fb"/>
+<rect x="1136" y="28" width="110" height="43" rx="7" fill="#ffffff" stroke="none"/>
+<text x="1191.0" y="49.5" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="720" fill="#6035aa">运营管理</text>
+<rect x="1136" y="86" width="110" height="49" rx="7" fill="#ffffff" stroke="#e7defa"/>
+<text x="1191.0" y="102.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">运营</text>
+<text x="1191.0" y="119.0" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">驾驶舱</text>
+<rect x="1136" y="150" width="110" height="49" rx="7" fill="#ffffff" stroke="#e7defa"/>
+<text x="1191.0" y="174.5" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">权限管理</text>
+<rect x="1136" y="214" width="110" height="49" rx="7" fill="#ffffff" stroke="#e7defa"/>
+<text x="1191.0" y="238.5" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">多租户</text>
+<rect x="1136" y="278" width="110" height="49" rx="7" fill="#ffffff" stroke="#e7defa"/>
+<text x="1191.0" y="302.5" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">统一认证</text>
+<rect x="1136" y="342" width="110" height="49" rx="7" fill="#ffffff" stroke="#e7defa"/>
+<text x="1191.0" y="366.5" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">配额管理</text>
+<rect x="1136" y="406" width="110" height="49" rx="7" fill="#ffffff" stroke="#e7defa"/>
+<text x="1191.0" y="430.5" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">访问控制</text>
+<rect x="1136" y="470" width="110" height="49" rx="7" fill="#ffffff" stroke="#e7defa"/>
+<text x="1191.0" y="494.5" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="620" fill="#242b51">计量计费</text>
+</g>
+<g aria-label="算力集群">
+<rect x="18" y="558" width="132" height="66" rx="10" fill="url(#indigo-tag)" stroke="#d5dcff"/>
+<rect x="31" y="581.0" width="3" height="20" rx="1.5" fill="#3d51a9" stroke="none"/>
+<text x="91" y="591.0" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="720" fill="#3d51a9">算力集群</text>
+<rect x="166" y="558" width="1090" height="66" rx="11" fill="#eef1ff" stroke="#d5dcff"/>
+<rect x="176.0" y="568" width="170" height="46" rx="7" fill="#ffffff" stroke="#dde3fb"/>
+<text x="261.0" y="583" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="720" fill="#354681">天数智芯</text>
+<text x="261.0" y="601" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="570" fill="#53648b">Iluvatar CoreX</text>
+<rect x="355.5" y="568" width="170" height="46" rx="7" fill="#ffffff" stroke="#dde3fb"/>
+<text x="440.5" y="591" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="720" fill="#354681">Ascend</text>
+<rect x="535.0" y="568" width="170" height="46" rx="7" fill="#ffffff" stroke="#dde3fb"/>
+<text x="620.0" y="591" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="720" fill="#354681">NVIDIA</text>
+<rect x="714.5" y="568" width="170" height="46" rx="7" fill="#ffffff" stroke="#dde3fb"/>
+<text x="799.5" y="583" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="720" fill="#354681">METAX</text>
+<text x="799.5" y="601" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="570" fill="#53648b">沐曦</text>
+<rect x="894.0" y="568" width="170" height="46" rx="7" fill="#ffffff" stroke="#dde3fb"/>
+<text x="979.0" y="583" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="720" fill="#354681">Enflame</text>
+<text x="979.0" y="601" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="570" fill="#53648b">燧原科技</text>
+<rect x="1073.5" y="568" width="170" height="46" rx="7" fill="#ffffff" stroke="#dde3fb"/>
+<text x="1158.5" y="583" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="720" fill="#354681">壁仞科技</text>
+<text x="1158.5" y="601" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="570" fill="#53648b">BIREN TECHNOLOGY</text>
+</g>
+</svg>
