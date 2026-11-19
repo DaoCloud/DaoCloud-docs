@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="510" viewBox="0 0 920 510" role="img" aria-labelledby="title desc">
+  <title id="title">Token 工厂部署架构</title>
+  <desc id="desc">火种节点与全局服务集群承载 Docker Registry、ChartMuseum、Kubernetes Master（功能组件及日志组件）、kubean 与平台核心组件；工作集群通过接入创建的方式纳入管理，可按需扩展。</desc>
+  <style>
+    /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
+    @media (prefers-color-scheme: dark) {
+      rect[x="0.5"] { fill: rgba(255,255,255,0.015); stroke: #2e3540; }
+      /* surfaces */
+      [fill="#ffffff"]:not([x="0.5"]) { fill: #232936; }
+      [fill="#e6f7ec"] { fill: #1b2c22; }
+      [fill="#fff3e0"] { fill: #2b2519; }
+      /* text */
+      [fill="#1a2330"] { fill: #e6ebf2; }
+      [fill="#5c6775"] { fill: #b6bfcb; }
+      [fill="#8a96a8"] { fill: #7e8794; }
+      [fill="#2e7d32"] { fill: #81c784; }
+      [fill="#e65100"] { fill: #ffb74d; }
+      /* strokes */
+      [stroke="#66bb6a"] { stroke: #4caf50; }
+      [stroke="#ffa726"] { stroke: #ffb74d; }
+      [stroke="#43a047"] { stroke: #66bb6a; }
+      [stroke="#c8e6c9"] { stroke: #2c5940; }
+      [stroke="#ffe0b2"] { stroke: #5c4a26; }
+    }
+  </style>
+
+  <rect x="0.5" y="0.5" width="919" height="509" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
+
+  <!-- 标题 -->
+  <text x="460" text-anchor="middle" y="40" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#1a2330">Token 工厂部署架构</text>
+  <text x="460" text-anchor="middle" y="62" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#6b7688">火种节点承载全局服务与安装引擎 · 工作集群按需接入创建</text>
+
+  <!-- 火种节点 & 全局服务集群 -->
+  <rect x="44" y="92" width="380" height="360" rx="12" fill="#e6f7ec" stroke="#66bb6a" stroke-width="1.8" stroke-dasharray="7 5"/>
+  <text x="66" y="122" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#2e7d32">🔥 火种节点 &amp; 全局服务集群</text>
+
+  <rect x="74" y="136" width="320" height="52" rx="8" fill="#ffffff" stroke="#c8e6c9"/>
+  <circle cx="104" cy="162" r="15" fill="#2496ed"/>
+  <text x="104" y="167" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#ffffff">D</text>
+  <text x="130" y="158" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Docker Registry</text>
+  <text x="130" y="178" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">镜像与制品仓库</text>
+
+  <rect x="74" y="196" width="320" height="52" rx="8" fill="#ffffff" stroke="#c8e6c9"/>
+  <circle cx="104" cy="222" r="15" fill="#00acc1"/>
+  <text x="104" y="227" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#ffffff">C</text>
+  <text x="130" y="218" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">ChartMuseum</text>
+  <text x="130" y="238" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Helm Chart 仓库</text>
+
+  <rect x="74" y="256" width="320" height="52" rx="8" fill="#ffffff" stroke="#c8e6c9"/>
+  <circle cx="104" cy="282" r="15" fill="#326ce5"/>
+  <text x="104" y="287" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#ffffff">☸</text>
+  <text x="130" y="278" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Kubernetes Master</text>
+  <text x="130" y="298" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">功能组件及日志组件</text>
+
+  <rect x="74" y="316" width="320" height="52" rx="8" fill="#ffffff" stroke="#c8e6c9"/>
+  <circle cx="104" cy="342" r="15" fill="#43a047"/>
+  <text x="104" y="347" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#ffffff">k</text>
+  <text x="130" y="338" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">kubean</text>
+  <text x="130" y="358" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">集群安装引擎</text>
+
+  <rect x="74" y="376" width="320" height="52" rx="8" fill="#ffffff" stroke="#c8e6c9"/>
+  <circle cx="104" cy="402" r="15" fill="#1565c0"/>
+  <text x="104" y="406" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="8" font-weight="700" fill="#ffffff">CPT</text>
+  <text x="130" y="398" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Components</text>
+  <text x="130" y="418" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">平台核心组件</text>
+
+  <!-- 接入创建箭头 -->
+  <text x="480" text-anchor="middle" y="262" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#2e7d32">接入创建</text>
+  <line x1="436" y1="272" x2="514" y2="272" stroke="#43a047" stroke-width="2.2"/>
+  <polygon points="514,266 526,272 514,278" fill="#43a047"/>
+
+  <!-- 工作集群 -->
+  <rect x="536" y="92" width="340" height="360" rx="12" fill="#fff3e0" stroke="#ffa726" stroke-width="1.8" stroke-dasharray="7 5"/>
+  <text x="558" y="122" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#e65100">工作集群</text>
+  <text x="854" y="122" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11" fill="#8a96a8">上海</text>
+
+  <rect x="566" y="136" width="280" height="52" rx="8" fill="#ffffff" stroke="#ffe0b2"/>
+  <circle cx="596" cy="162" r="15" fill="#1e88e5"/>
+  <text x="596" y="167" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#ffffff">☸</text>
+  <text x="622" y="158" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Workload Cluster 01</text>
+  <text x="622" y="178" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">业务负载 · GPU 推理</text>
+
+  <rect x="566" y="196" width="280" height="52" rx="8" fill="#ffffff" stroke="#ffe0b2"/>
+  <circle cx="596" cy="222" r="15" fill="#1e88e5"/>
+  <text x="596" y="227" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#ffffff">☸</text>
+  <text x="622" y="218" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Workload Cluster 02</text>
+  <text x="622" y="238" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">业务负载 · GPU 推理</text>
+
+  <rect x="566" y="256" width="280" height="52" rx="8" fill="#ffffff" stroke="#ffe0b2"/>
+  <circle cx="596" cy="282" r="15" fill="#1e88e5"/>
+  <text x="596" y="287" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#ffffff">☸</text>
+  <text x="622" y="278" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Workload Cluster 03</text>
+  <text x="622" y="298" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">业务负载 · GPU 推理</text>
+
+  <rect x="566" y="316" width="280" height="52" rx="8" fill="#ffffff" stroke="#ffe0b2"/>
+  <circle cx="596" cy="342" r="15" fill="#1e88e5"/>
+  <text x="596" y="347" text-anchor="middle" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#ffffff">⋯</text>
+  <text x="622" y="338" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">……</text>
+  <text x="622" y="358" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">按需扩展更多工作集群</text>
+
+  <!-- 页脚说明 -->
+  <text x="460" text-anchor="middle" y="486" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="11.5" fill="#8a96a8">火种节点统一承载全局服务与安装引擎，工作集群通过接入创建纳入统一管理。</text>
+</svg>
