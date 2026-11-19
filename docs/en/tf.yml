@@ -6,6 +6,15 @@ nav:
               - DaoCloud is a KCSP: tf/intro/kcsp.md
               - Release Notes: tf/tf-rn/20260930.md
               - DaoCloud Support Policy: tf/intro/support.md
+          - Quick Start:
+              - Overview: tf/quickstart/index.md
+              - Install Token Factory: tf/quickstart/deploy-platform.md
+              - Create Users and Workspaces: tf/quickstart/init-users.md
+              - Create a Work Cluster: tf/quickstart/join-cluster.md
+              - Deploy a Model Service: tf/quickstart/deploy-model.md
+              - Try Out and Call Models: tf/quickstart/call-model.md
+              - Build an Intelligent App: tf/quickstart/build-app.md
+              - Operations and Billing: tf/quickstart/billing.md
           - Installation:
               - tf/install/index.md
               - Install Dependencies: tf/install/dependency.md
