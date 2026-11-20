@@ -101,7 +101,7 @@ This site provides documentation for three product lines, covering full-stack ca
             <span class="tf-arch-card-title">AI Apps</span>
             <span class="tf-arch-card-tip">Intelligent Q&A and application capabilities</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model" href="tf/inferx/">
+          <a class="tf-arch-card tf-arch-card--model" href="tf/infery/">
             <span class="tf-arch-card-title">InferX Suite</span>
             <span class="tf-arch-card-tip">Inference acceleration and engine management</span>
           </a>
@@ -373,7 +373,7 @@ This site provides documentation for three product lines, covering full-stack ca
     - [AI Lab](drun/baize/intro/)
     - [AI Apps](tf/dak/)
     - [LLM Studio](tf/hydra/intro/)
-    - [InferX Suite](tf/inferx/)
+    - [InferX Suite](tf/infery/)
     - [Compute Cloud](tf/zestu/)
 
 - :material-server:{ .lg .middle } __Containers__
