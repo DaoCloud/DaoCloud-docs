@@ -3,6 +3,8 @@ nav:
       - Overview: tf/index.md
       - Explore and Install:
           - Introduction:
+              - Overview: tf/intro/index.md
+              - Features: tf/intro/features.md
               - DaoCloud is a KCSP: tf/intro/kcsp.md
               - Release Notes:
                   - Index: tf/tf-rn/index.md
