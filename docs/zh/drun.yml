@@ -9,6 +9,16 @@ nav:
                   - v0.46.0-20261031 发布: drun/drun-rn/20261031.md
                   - v0.45.0-20260930 发布: drun/drun-rn/20260930.md
               - DaoCloud 产品支持政策: drun/intro/support.md
+          - 快速入门:
+              - 索引: drun/quickstart/index.md
+              - 安装部署: drun/quickstart/deploy-platform.md
+              - 创建用户与工作空间: drun/quickstart/init-users.md
+              - 创建工作集群: drun/quickstart/join-cluster.md
+              - 部署模型服务: drun/quickstart/deploy-model.md
+              - 体验与调用模型: drun/quickstart/call-model.md
+              - AI Lab 训练模型: drun/quickstart/train-model.md
+              - 创建智能体: drun/quickstart/deploy-agent.md
+              - 运营洞察: drun/quickstart/operations.md
           - 安装:
               - drun/install/index.md
               - 安装依赖项: drun/install/dependency.md

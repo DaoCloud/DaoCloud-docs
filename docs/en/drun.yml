@@ -9,6 +9,16 @@ nav:
                   - v0.46.0-20261031 Released: drun/drun-rn/20261031.md
                   - v0.45.0-20260930 Released: drun/drun-rn/20260930.md
               - DaoCloud Support Policy: drun/intro/support.md
+          - Quick Start:
+              - Overview: drun/quickstart/index.md
+              - Install d.run AI Operating System: drun/quickstart/deploy-platform.md
+              - Create Users and Workspaces: drun/quickstart/init-users.md
+              - Create a Work Cluster: drun/quickstart/join-cluster.md
+              - Deploy a Model Service: drun/quickstart/deploy-model.md
+              - Try Out and Call Models: drun/quickstart/call-model.md
+              - Train Models in AI Lab: drun/quickstart/train-model.md
+              - Create an Agent: drun/quickstart/deploy-agent.md
+              - Operations Insight: drun/quickstart/operations.md
           - Installation:
               - drun/install/index.md
               - Install Dependencies: drun/install/dependency.md

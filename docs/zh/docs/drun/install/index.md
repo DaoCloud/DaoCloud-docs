@@ -48,7 +48,7 @@ flowchart TB
 1. 在[全局管理](../ghippo/intro/index.md)中创建用户、用户组与工作空间，并规划角色权限。
 2. 在[容器管理](../kpanda/intro/index.md)中创建工作集群，承接业务负载；AI 训练与推理建议使用 GPU 节点。
 3. 进入[大模型服务平台](../hydra/index.md)部署或接入模型，配置 Token 与 API 调用。
-4. 在[可观测性](../insight/intro/index.md)中确认指标与日志采集正常，在[钱包](../leopard/index.md)中核对计量计费。
+4. 在[可观测性](../insight/intro/index.md)中确认指标与日志采集正常。
 
 [下载中心](https://docs.daocloud.io/download/){ .md-button }
 [了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
