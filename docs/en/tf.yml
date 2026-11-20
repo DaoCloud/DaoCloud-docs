@@ -96,13 +96,13 @@ nav:
                   - Improvement Suggestions: tf/dak/data-analysis/suggestions.md
               - My Feedback: tf/dak/my-feedback/my-feedback.md
           - InferX Suite:
-              - What is InferX: tf/inferx/index.md
-              - FAQs: tf/inferx/faqs.md
+              - What is InferX: tf/infery/index.md
+              - FAQs: tf/infery/faqs.md
               - Best Practices:
-                  - Install InferX in Offline Environment: tf/inferx/guides/offline.md
-                  - Enable Istio GAIE Feature for Cluster: tf/inferx/guides/enable-istio-gaie-with-mspider.md
-                  - Model Weight Download and Configuration: tf/inferx/guides/model-weights-setup.md
-                  - Expose Model Service Externally (Hydra/Knoway): tf/inferx/guides/export-by-hydra.md
+                  - Install InferX in Offline Environment: tf/infery/guides/offline.md
+                  - Enable Istio GAIE Feature for Cluster: tf/infery/guides/enable-istio-gaie-with-mspider.md
+                  - Model Weight Download and Configuration: tf/infery/guides/model-weights-setup.md
+                  - Expose Model Service Externally (Hydra/Knoway): tf/infery/guides/export-by-hydra.md
           - Compute Cloud:
               - tf/zestu/index.md
               - Container Instance:

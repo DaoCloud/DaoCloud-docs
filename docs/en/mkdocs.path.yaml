@@ -99,6 +99,12 @@ plugins:
   
   - redirects:
       redirect_maps:
+        "tf/inferx/index.md": "tf/infery/index.md"
+        "tf/inferx/faqs.md": "tf/infery/faqs.md"
+        "tf/inferx/guides/enable-istio-gaie-with-mspider.md": "tf/infery/guides/enable-istio-gaie-with-mspider.md"
+        "tf/inferx/guides/export-by-hydra.md": "tf/infery/guides/export-by-hydra.md"
+        "tf/inferx/guides/model-weights-setup.md": "tf/infery/guides/model-weights-setup.md"
+        "tf/inferx/guides/offline.md": "tf/infery/guides/offline.md"
         "api.md": "dce/index.md"
         "dce/what-is-dce.md": "dce/index.md"
         "install/install-dce.md": "install/community/k8s/online.md"

@@ -104,7 +104,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
             <span class="tf-arch-card-title">AI 应用</span>
             <span class="tf-arch-card-tip">智能问答等应用能力</span>
           </a>
-          <a class="tf-arch-card tf-arch-card--model" href="tf/inferx/">
+          <a class="tf-arch-card tf-arch-card--model" href="tf/infery/">
             <span class="tf-arch-card-title">推理加速</span>
             <span class="tf-arch-card-tip">推理加速与引擎管理</span>
           </a>
@@ -378,7 +378,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
     - [AI Lab](drun/baize/intro/)
     - [AI 应用](tf/dak/)
     - [大模型服务平台](tf/hydra/intro/)
-    - [推理加速](tf/inferx/)
+    - [推理加速](tf/infery/)
     - [算力云](tf/zestu/)
 
 - :material-server:{ .lg .middle } __容器__
