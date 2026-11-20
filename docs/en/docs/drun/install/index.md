@@ -52,7 +52,7 @@ Once installed and logged in with `admin/changeme`, initialize the platform in t
 1. Create users, user groups, and workspaces in [Global Management](../ghippo/intro/index.md), and plan roles and permissions.
 2. Create worker clusters in [Container Management](../kpanda/intro/index.md) to host workloads; use GPU nodes for AI training and inference.
 3. Go to [LLM Studio](../hydra/index.md) to deploy or connect models, and configure Tokens and API access.
-4. Verify metrics and log collection in [Observability](../insight/intro/index.md), and check metering and billing in [Wallet](../leopard/index.md).
+4. Verify metrics and log collection in [Observability](../insight/intro/index.md).
 
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button }
 [Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }
