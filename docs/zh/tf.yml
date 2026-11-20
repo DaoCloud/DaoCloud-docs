@@ -3,6 +3,8 @@ nav:
       - 概述: tf/index.md
       - 探索和安装:
           - 产品介绍:
+              - 平台概述: tf/intro/index.md
+              - 功能特性: tf/intro/features.md
               - 我们是 K8s 认证服务商: tf/intro/kcsp.md
               - Release Notes: 
                   - 索引: tf/tf-rn/index.md
