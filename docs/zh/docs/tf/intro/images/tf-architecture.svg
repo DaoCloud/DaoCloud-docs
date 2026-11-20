@@ -200,4 +200,44 @@
 <text x="1158.5" y="583" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="720" fill="#354681">壁仞科技</text>
 <text x="1158.5" y="601" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="570" fill="#53648b">BIREN TECHNOLOGY</text>
 </g>
+<style>
+@media (prefers-color-scheme: dark){
+#canvas stop{stop-color:#151731}
+#canvas stop[offset="1"]{stop-color:#1d1f3f}
+#blue-tag stop{stop-color:#20335c}
+#blue-tag stop[offset="1"]{stop-color:#1a2a4d}
+#indigo-tag stop{stop-color:#242a5c}
+#indigo-tag stop[offset="1"]{stop-color:#1c2148}
+#purple-tag stop{stop-color:#2b2558}
+#purple-tag stop[offset="1"]{stop-color:#221d47}
+rect[fill="#edf4ff"]{fill:#1e2a4d}
+rect[fill="#eef1ff"]{fill:#20244e}
+rect[fill="#f3efff"]{fill:#2a2258}
+rect[fill="#fff"]{fill:#262e4e}
+rect[fill="#ffffff"]{fill:#262e4e}
+rect[fill="#f0efff"]{fill:#1c1f3e}
+rect[stroke="#cdddfe"]{stroke:#3c4f83}
+rect[stroke="#d5dcff"]{stroke:#40457e}
+rect[stroke="#ddd0fb"]{stroke:#4b4080}
+rect[stroke="#dbe7fd"]{stroke:#364170}
+rect[stroke="#dde3fb"]{stroke:#3a4270}
+rect[stroke="#e7defa"]{stroke:#473d7a}
+rect[fill="#2852a3"]{fill:#8fb2ff}
+rect[fill="#3d51a9"]{fill:#a3b1ff}
+rect[fill="#6035aa"]{fill:#c69fff}
+text[fill="#2852a3"]{fill:#8fb2ff}
+text[fill="#3d51a9"]{fill:#a3b1ff}
+text[fill="#6035aa"]{fill:#c69fff}
+text[fill="#242b51"]{fill:#e8ebfa}
+text[fill="#526186"]{fill:#9ba4c2}
+text[fill="#303b6e"]{fill:#c9cfec}
+text[fill="#354681"]{fill:#e0e4f6}
+text[fill="#53648b"]{fill:#939dba}
+path[stroke="#4268e8"]{stroke:#8fb2ff}
+path[stroke="#704cdc"]{stroke:#b69eff}
+path[stroke="#4c4c9a"]{stroke:#a5aade}
+path[stroke="#7859de"]{stroke:#b69eff}
+path[stroke="#3f60b7"]{stroke:#8fb2ff}
+}
+</style>
 </svg>

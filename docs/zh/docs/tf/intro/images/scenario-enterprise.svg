@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 300" width="880" height="300" role="img" aria-labelledby="dt dd" font-family="Inter, -apple-system, BlinkMacSystemFont, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<title id="dt">大型企业 AI 服务建设场景</title><desc id="dd">企业统一部署和管理模型服务，面向子公司和业务部门提供模型 API、专属推理服务和知识问答应用，并按组织统计用量计费。</desc>
+<defs><linearGradient id="canvas" x2="1" y2="1"><stop stop-color="#fcfdff"/><stop offset="1" stop-color="#f6f4fe"/></linearGradient><linearGradient id="blue-tag" x2="1" y2="1"><stop stop-color="#f1f7ff"/><stop offset="1" stop-color="#e5eeff"/></linearGradient><linearGradient id="indigo-tag" x2="1" y2="1"><stop stop-color="#f2f5ff"/><stop offset="1" stop-color="#e8ebff"/></linearGradient><linearGradient id="purple-tag" x2="1" y2="1"><stop stop-color="#f7f2ff"/><stop offset="1" stop-color="#eee5ff"/></linearGradient></defs>
+<rect x="0" y="0" width="880" height="300" fill="url(#canvas)" stroke="none"/>
+<g aria-label="企业 AI 基础平台">
+<rect x="18" y="18" width="200" height="40" rx="10" fill="url(#blue-tag)" stroke="#cdddfe"/><rect x="31" y="28" width="3" height="20" rx="1.5" fill="#2852a3" stroke="none"/><text x="118.0" y="38" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="720" fill="#2852a3">企业 AI 基础平台</text>
+<rect x="18" y="66" width="200" height="216" rx="11" fill="#edf4ff" stroke="#cdddfe"/>
+<rect x="30" y="78" width="176" height="52" rx="7" fill="#fff" stroke="#dbe7fd"/><text x="118.0" y="94" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="680" fill="#242b51">统一部署</text><text x="118.0" y="114" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#526186">模型服务快速上线</text><rect x="30" y="141" width="176" height="52" rx="7" fill="#fff" stroke="#dbe7fd"/><text x="118.0" y="157" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="680" fill="#242b51">统一管理</text><text x="118.0" y="177" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#526186">部署环境集中管控</text><rect x="30" y="204" width="176" height="52" rx="7" fill="#fff" stroke="#dbe7fd"/><text x="118.0" y="220" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="680" fill="#242b51">算力底座</text><text x="118.0" y="240" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#526186">GPU 集群统一供给</text>
+</g>
+<g aria-label="面向组织的服务">
+<rect x="278" y="18" width="300" height="40" rx="10" fill="url(#indigo-tag)" stroke="#d5dcff"/><rect x="291" y="28" width="3" height="20" rx="1.5" fill="#3d51a9" stroke="none"/><text x="428.0" y="38" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="720" fill="#3d51a9">面向组织的服务</text>
+<rect x="278" y="66" width="300" height="216" rx="11" fill="#eef1ff" stroke="#d5dcff"/>
+<rect x="290" y="80" width="131" height="64" rx="7" fill="#fff" stroke="#dde3fb"/><text x="355.5" y="96" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="680" fill="#242b51">模型 API</text><text x="355.5" y="116" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#526186">标准化接口接入</text><rect x="435" y="80" width="131" height="64" rx="7" fill="#fff" stroke="#dde3fb"/><text x="500.5" y="96" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="680" fill="#242b51">专属推理服务</text><text x="500.5" y="116" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#526186">独立部署实例</text><rect x="290" y="154" width="131" height="64" rx="7" fill="#fff" stroke="#dde3fb"/><text x="355.5" y="170" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="680" fill="#242b51">知识问答应用</text><text x="355.5" y="190" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#526186">面向业务场景</text><rect x="435" y="154" width="131" height="64" rx="7" fill="#fff" stroke="#dde3fb"/><text x="500.5" y="170" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="680" fill="#242b51">权限与配额</text><text x="500.5" y="190" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#526186">组织级资源隔离</text><rect x="290" y="228" width="276" height="40" rx="7" fill="#fff" stroke="#dde3fb"/><text x="428.0" y="248.0" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="680" fill="#242b51">按组织统计用量并计费</text>
+</g>
+<g aria-label="子公司与业务部门">
+<rect x="638" y="18" width="224" height="40" rx="10" fill="url(#purple-tag)" stroke="#ddd0fb"/><rect x="651" y="28" width="3" height="20" rx="1.5" fill="#6035aa" stroke="none"/><text x="750.0" y="38" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="720" fill="#6035aa">子公司与业务部门</text>
+<rect x="638" y="66" width="224" height="216" rx="11" fill="#f3efff" stroke="#ddd0fb"/>
+<rect x="650" y="78" width="200" height="52" rx="7" fill="#fff" stroke="#ddd0fb"/><text x="750.0" y="94" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="680" fill="#242b51">子公司</text><text x="750.0" y="114" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#526186">按组织独立计量</text><rect x="650" y="141" width="200" height="52" rx="7" fill="#fff" stroke="#ddd0fb"/><text x="750.0" y="157" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="680" fill="#242b51">业务部门</text><text x="750.0" y="177" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#526186">部门级用量统计</text><rect x="650" y="204" width="200" height="52" rx="7" fill="#fff" stroke="#ddd0fb"/><text x="750.0" y="220" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="680" fill="#242b51">研发团队</text><text x="750.0" y="240" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#526186">自助接入与试用</text>
+</g>
+<path d="M222 158 H268" fill="none" stroke="#4268e8" stroke-width="1.8" stroke-linecap="round"/><path d="M276 158 L268 154.5 L268 161.5 Z" fill="#4268e8" stroke="none"/><path d="M274 192 H228" fill="none" stroke="#4268e8" stroke-width="1.8" stroke-linecap="round"/><path d="M220 192 L228 188.5 L228 195.5 Z" fill="#4268e8" stroke="none"/><text x="248.0" y="178" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="#303b6e">构建 / 发布</text>
+<path d="M582 158 H628" fill="none" stroke="#4268e8" stroke-width="1.8" stroke-linecap="round"/><path d="M636 158 L628 154.5 L628 161.5 Z" fill="#4268e8" stroke="none"/><path d="M634 192 H588" fill="none" stroke="#4268e8" stroke-width="1.8" stroke-linecap="round"/><path d="M580 192 L588 188.5 L588 195.5 Z" fill="#4268e8" stroke="none"/><text x="608.0" y="178" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="#303b6e">调用 / 计费</text>
+<style>
+@media (prefers-color-scheme: dark){
+#canvas stop{stop-color:#151731}
+#canvas stop[offset="1"]{stop-color:#1d1f3f}
+#blue-tag stop{stop-color:#20335c}
+#blue-tag stop[offset="1"]{stop-color:#1a2a4d}
+#indigo-tag stop{stop-color:#242a5c}
+#indigo-tag stop[offset="1"]{stop-color:#1c2148}
+#purple-tag stop{stop-color:#2b2558}
+#purple-tag stop[offset="1"]{stop-color:#221d47}
+rect[fill="#edf4ff"]{fill:#1e2a4d}
+rect[fill="#eef1ff"]{fill:#20244e}
+rect[fill="#f3efff"]{fill:#2a2258}
+rect[fill="#fff"]{fill:#262e4e}
+rect[fill="#f0efff"]{fill:#1c1f3e}
+rect[stroke="#cdddfe"]{stroke:#3c4f83}
+rect[stroke="#d5dcff"]{stroke:#40457e}
+rect[stroke="#ddd0fb"]{stroke:#4b4080}
+rect[stroke="#dbe7fd"]{stroke:#364170}
+rect[stroke="#dde3fb"]{stroke:#3a4270}
+rect[fill="#2852a3"]{fill:#8fb2ff}
+rect[fill="#3d51a9"]{fill:#a3b1ff}
+rect[fill="#6035aa"]{fill:#c69fff}
+text[fill="#2852a3"]{fill:#8fb2ff}
+text[fill="#3d51a9"]{fill:#a3b1ff}
+text[fill="#6035aa"]{fill:#c69fff}
+text[fill="#242b51"]{fill:#e8ebfa}
+text[fill="#526186"]{fill:#9ba4c2}
+text[fill="#303b6e"]{fill:#c9cfec}
+path[stroke="#4268e8"]{stroke:#8fb2ff}
+path[fill="#4268e8"]{fill:#8fb2ff}
+}
+</style>
+</svg>
