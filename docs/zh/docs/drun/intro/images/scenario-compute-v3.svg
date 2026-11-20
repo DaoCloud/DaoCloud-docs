@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title desc">
+<title id="title">企业统一 AI 算力与开发平台场景图</title>
+<desc id="desc">多集群异构算力汇入统一资源池，再通过队列和工作空间分配给研发、训练和推理团队。</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#4d79a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#8aa8c7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <style>
+    .title{font:600 20px 'Noto Sans SC','PingFang SC',sans-serif;fill:#1e446c}
+    .label{font:600 17px 'Noto Sans SC','PingFang SC',sans-serif;fill:#234c75}
+    .body{font:15px 'Noto Sans SC','PingFang SC',sans-serif;fill:#55708d}
+    .small{font:13px 'Noto Sans SC','PingFang SC',sans-serif;fill:#6d849e}
+    .micro{font:12px 'Noto Sans SC','PingFang SC',sans-serif;fill:#7188a0}
+    .panel{fill:#fff;stroke:#c9d9e9;stroke-width:1.6}
+    .panelBlue{fill:#f3f8fd;stroke:#9fbad5;stroke-width:1.7}
+    .panelTint{fill:#f8fbff;stroke:#d5e2ef;stroke-width:1.4}
+    .line{fill:none;stroke:#4d79a8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .lineSoft{fill:none;stroke:#91abc5;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .icon{fill:none;stroke:#4c78a6;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .chip{fill:#eaf3fb;stroke:#c0d4e8;stroke-width:1}
+    .accent{fill:#dcecf9;stroke:#87a9ca;stroke-width:1.4}
+  </style>
+</defs>
+<rect x="1" y="1" width="1198" height="458" rx="18" fill="#fff" stroke="#dce6f0"/>
+<text x="34" y="39" text-anchor="start" class="small">资源接入与团队使用</text>
+<rect x="30" y="72" width="248" height="284" rx="16" class="panel"/>
+<text x="154" y="104" text-anchor="middle" class="label">异构算力资源</text>
+<rect x="57" y="128" width="82" height="104" rx="9" class="panelTint"/>
+<rect x="70" y="142" width="56" height="20" rx="3" class="accent"/>
+<rect x="70" y="170" width="56" height="20" rx="3" class="accent"/>
+<rect x="70" y="198" width="56" height="20" rx="3" class="accent"/>
+<circle cx="78" cy="152" r="2" fill="#4f80b0"/>
+<circle cx="78" cy="180" r="2" fill="#4f80b0"/>
+<circle cx="78" cy="208" r="2" fill="#4f80b0"/>
+<text x="98" y="254" text-anchor="middle" class="small">集群 A</text>
+<rect x="155" y="128" width="82" height="104" rx="9" class="panelTint"/>
+<rect x="168" y="142" width="56" height="20" rx="3" class="accent"/>
+<rect x="168" y="170" width="56" height="20" rx="3" class="accent"/>
+<rect x="168" y="198" width="56" height="20" rx="3" class="accent"/>
+<circle cx="176" cy="152" r="2" fill="#4f80b0"/>
+<circle cx="176" cy="180" r="2" fill="#4f80b0"/>
+<circle cx="176" cy="208" r="2" fill="#4f80b0"/>
+<text x="196" y="254" text-anchor="middle" class="small">集群 B</text>
+<rect x="51" y="282" width="205" height="48" rx="9" class="chip"/>
+<text x="153" y="303" text-anchor="middle" class="body">CPU · GPU · 存储</text>
+<text x="153" y="322" text-anchor="middle" class="micro">设备与集群统一纳管</text>
+<path d="M278 210 H334" class="line" marker-end="url(#arrow)"/>
+<rect x="337" y="119" width="320" height="190" rx="18" class="panelBlue"/>
+<text x="497" y="153" text-anchor="middle" class="title">统一资源池</text>
+<circle cx="497" cy="208" r="35" fill="#e4f0fa" stroke="#86a9ca" stroke-width="1.6"/>
+<path d="M480 198h34v9h-34z M480 211h34v9h-34z M480 224h34v7h-34z" class="icon"/>
+<text x="497" y="266" text-anchor="middle" class="body">资源编排 · 共享调度</text>
+<rect x="365" y="323" width="264" height="47" rx="10" class="chip"/>
+<text x="497" y="344" text-anchor="middle" class="label">队列与工作空间</text>
+<text x="497" y="361" text-anchor="middle" class="micro">按团队 / 任务分配资源</text>
+<path d="M657 210 H699 V113 M699 113 V322" class="lineSoft"/>
+<path d="M699 112 H735" class="lineSoft" marker-end="url(#arrowSoft)"/>
+<rect x="741" y="73" width="420" height="78" rx="12" class="panel"/>
+<circle cx="777" cy="102" r="9" class="accent"/><circle cx="797" cy="104" r="7" class="accent"/><path d="M761 130q2-17 16-17t16 17 M788 130q2-13 11-13t12 13" class="icon"/>
+<text x="834" y="107" text-anchor="start" class="label">研发工作空间</text>
+<text x="834" y="131" text-anchor="start" class="small">Notebook · 数据集</text>
+<path d="M699 220 H735" class="lineSoft" marker-end="url(#arrowSoft)"/>
+<rect x="741" y="181" width="420" height="78" rx="12" class="panel"/>
+<circle cx="777" cy="210" r="9" class="accent"/><circle cx="797" cy="212" r="7" class="accent"/><path d="M761 238q2-17 16-17t16 17 M788 238q2-13 11-13t12 13" class="icon"/>
+<text x="834" y="215" text-anchor="start" class="label">训练工作空间</text>
+<text x="834" y="239" text-anchor="start" class="small">训练任务 · GPU</text>
+<path d="M699 328 H735" class="lineSoft" marker-end="url(#arrowSoft)"/>
+<rect x="741" y="289" width="420" height="78" rx="12" class="panel"/>
+<circle cx="777" cy="318" r="9" class="accent"/><circle cx="797" cy="320" r="7" class="accent"/><path d="M761 346q2-17 16-17t16 17 M788 346q2-13 11-13t12 13" class="icon"/>
+<text x="834" y="323" text-anchor="start" class="label">推理服务空间</text>
+<text x="834" y="347" text-anchor="start" class="small">模型部署 · 服务</text>
+</svg>

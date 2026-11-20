@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title desc">
+<title id="title">高性能推理与业务应用支撑场景图</title>
+<desc id="desc">业务请求经模型服务进入推理加速链路，结合 Prefill、KV Cache 与 Decode 处理后返回结果，并持续观察服务状态。</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#4d79a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#8aa8c7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <style>
+    .title{font:600 20px 'Noto Sans SC','PingFang SC',sans-serif;fill:#1e446c}
+    .label{font:600 17px 'Noto Sans SC','PingFang SC',sans-serif;fill:#234c75}
+    .body{font:15px 'Noto Sans SC','PingFang SC',sans-serif;fill:#55708d}
+    .small{font:13px 'Noto Sans SC','PingFang SC',sans-serif;fill:#6d849e}
+    .micro{font:12px 'Noto Sans SC','PingFang SC',sans-serif;fill:#7188a0}
+    .panel{fill:#fff;stroke:#c9d9e9;stroke-width:1.6}
+    .panelBlue{fill:#f3f8fd;stroke:#9fbad5;stroke-width:1.7}
+    .panelTint{fill:#f8fbff;stroke:#d5e2ef;stroke-width:1.4}
+    .line{fill:none;stroke:#4d79a8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .lineSoft{fill:none;stroke:#91abc5;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .icon{fill:none;stroke:#4c78a6;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .chip{fill:#eaf3fb;stroke:#c0d4e8;stroke-width:1}
+    .accent{fill:#dcecf9;stroke:#87a9ca;stroke-width:1.4}
+  </style>
+</defs>
+<rect x="1" y="1" width="1198" height="458" rx="18" fill="#fff" stroke="#dce6f0"/>
+<text x="34" y="39" text-anchor="start" class="small">推理请求经过优化链路，服务 RAG 与智能体应用</text>
+<rect x="32" y="112" width="205" height="230" rx="16" class="panel"/>
+<text x="134" y="146" text-anchor="middle" class="label">业务请求</text>
+<rect x="55" y="172" width="158" height="38" rx="8" class="panelTint"/>
+<circle cx="72" cy="191" r="6" class="accent"/>
+<text x="88" y="197" text-anchor="start" class="small">知识检索请求</text>
+<rect x="55" y="226" width="158" height="38" rx="8" class="panelTint"/>
+<circle cx="72" cy="245" r="6" class="accent"/>
+<text x="88" y="251" text-anchor="start" class="small">智能体请求</text>
+<rect x="55" y="280" width="158" height="38" rx="8" class="panelTint"/>
+<circle cx="72" cy="299" r="6" class="accent"/>
+<text x="88" y="305" text-anchor="start" class="small">其他</text>
+<path d="M237 226 H282" class="line" marker-end="url(#arrow)"/>
+<rect x="288" y="135" width="187" height="182" rx="15" class="panelBlue"/>
+<text x="381" y="171" text-anchor="middle" class="title">Prefill</text>
+<text x="381" y="198" text-anchor="middle" class="body">读取输入上下文</text>
+<path d="M332 236h98 M332 249h80 M332 262h88" class="lineSoft"/>
+<text x="381" y="292" text-anchor="middle" class="small">上下文处理</text>
+<path d="M475 226 H512" class="line" marker-end="url(#arrow)"/>
+<rect x="518" y="158" width="154" height="137" rx="15" class="panel"/>
+<text x="595" y="191" text-anchor="middle" class="label">KV Cache</text>
+<path d="M551 211h88v16h-88z M551 234h88v16h-88z M551 257h88v16h-88z" class="accent"/>
+<path d="M672 226 H709" class="line" marker-end="url(#arrow)"/>
+<rect x="715" y="135" width="187" height="182" rx="15" class="panelBlue"/>
+<text x="808" y="171" text-anchor="middle" class="title">Decode</text>
+<text x="808" y="198" text-anchor="middle" class="body">生成模型响应</text>
+<path d="M757 238h14v30h-14z M781 225h14v43h-14z M805 212h14v56h-14z M829 232h14v36h-14z" class="accent"/>
+<text x="808" y="292" text-anchor="middle" class="small">分批生成</text>
+<path d="M902 226 H946" class="line" marker-end="url(#arrow)"/>
+<rect x="952" y="112" width="215" height="230" rx="16" class="panel"/>
+<text x="1059" y="146" text-anchor="middle" class="label">业务应用</text>
+<rect x="974" y="172" width="171" height="38" rx="8" class="panelTint"/>
+<path d="M990 184h16v14h-16z M994 180h16v14" class="icon"/>
+<text x="1018" y="197" text-anchor="start" class="small">RAG 知识库</text>
+<rect x="974" y="226" width="171" height="38" rx="8" class="panelTint"/>
+<path d="M990 238h16v14h-16z M994 234h16v14" class="icon"/>
+<text x="1018" y="251" text-anchor="start" class="small">企业智能体</text>
+<rect x="974" y="280" width="171" height="38" rx="8" class="panelTint"/>
+<path d="M990 292h16v14h-16z M994 288h16v14" class="icon"/>
+<text x="1018" y="305" text-anchor="start" class="small">模型 API</text>
+<rect x="288" y="355" width="614" height="52" rx="12" class="chip"/>
+<path d="M319 370h35v20h-35z M326 364v6 M347 364v6 M326 390v6 M347 390v6" class="icon"/>
+<text x="370" y="378" text-anchor="start" class="body">推理引擎 · GPU 资源 · 多机并行</text>
+<text x="370" y="397" text-anchor="start" class="micro">性能评估与延迟 / SLA 运行监测</text>
+<path d="M381 355V330 M808 355V330" class="lineSoft"/>
+</svg>

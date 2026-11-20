@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title desc">
+<title id="title">AI 使用与运营管理场景图</title>
+<desc id="desc">驾驶舱汇集算力、模型调用、Token 用量和运行状态信息，帮助平台运营人员查看组织用量、配额和异常并开展资源规划与问题排查。</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#4d79a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#8aa8c7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <style>
+    .title{font:600 20px 'Noto Sans SC','PingFang SC',sans-serif;fill:#1e446c}
+    .label{font:600 17px 'Noto Sans SC','PingFang SC',sans-serif;fill:#234c75}
+    .body{font:15px 'Noto Sans SC','PingFang SC',sans-serif;fill:#55708d}
+    .small{font:13px 'Noto Sans SC','PingFang SC',sans-serif;fill:#6d849e}
+    .micro{font:12px 'Noto Sans SC','PingFang SC',sans-serif;fill:#7188a0}
+    .panel{fill:#fff;stroke:#c9d9e9;stroke-width:1.6}
+    .panelBlue{fill:#f3f8fd;stroke:#9fbad5;stroke-width:1.7}
+    .panelTint{fill:#f8fbff;stroke:#d5e2ef;stroke-width:1.4}
+    .line{fill:none;stroke:#4d79a8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .lineSoft{fill:none;stroke:#91abc5;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .icon{fill:none;stroke:#4c78a6;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .chip{fill:#eaf3fb;stroke:#c0d4e8;stroke-width:1}
+    .accent{fill:#dcecf9;stroke:#87a9ca;stroke-width:1.4}
+  </style>
+</defs>
+<rect x="1" y="1" width="1198" height="458" rx="18" fill="#fff" stroke="#dce6f0"/>
+<text x="34" y="39" text-anchor="start" class="small">从平台运行数据到运营与运维行动</text>
+<rect x="30" y="70" width="792" height="342" rx="17" class="panel"/>
+<path d="M30 119H822" class="lineSoft"/>
+<text x="58" y="101" text-anchor="start" class="title">d.run 运营驾驶舱</text>
+<rect x="698" y="84" width="93" height="23" rx="8" class="chip"/>
+<text x="744" y="100" text-anchor="middle" class="micro">组织视图</text>
+<rect x="52" y="139" width="230" height="205" rx="12" class="panelTint"/>
+<text x="72" y="169" text-anchor="start" class="label">算力资源</text>
+<text x="72" y="194" text-anchor="start" class="micro">GPU / 集群使用情况</text>
+<rect x="78" y="268" width="18" height="50" rx="4" fill="#cfe2f3" stroke="#84a8cb"/>
+<rect x="111" y="236" width="18" height="82" rx="4" fill="#cfe2f3" stroke="#84a8cb"/>
+<rect x="144" y="254" width="18" height="64" rx="4" fill="#cfe2f3" stroke="#84a8cb"/>
+<rect x="177" y="207" width="18" height="111" rx="4" fill="#cfe2f3" stroke="#84a8cb"/>
+<rect x="210" y="227" width="18" height="91" rx="4" fill="#cfe2f3" stroke="#84a8cb"/>
+<path d="M70 318H258" class="lineSoft"/>
+<rect x="299" y="139" width="230" height="205" rx="12" class="panelTint"/>
+<text x="319" y="169" text-anchor="start" class="label">模型与 Token</text>
+<text x="319" y="194" text-anchor="start" class="micro">调用量与用量趋势</text>
+<path d="M321 302 C350 282 361 291 384 261 S428 272 449 230 S490 248 509 216" fill="none" stroke="#5687b6" stroke-width="3" stroke-linecap="round"/>
+<path d="M321 318H510 M321 220V318" class="lineSoft"/>
+<circle cx="449" cy="230" r="5" fill="#fff" stroke="#5687b6" stroke-width="2"/>
+<rect x="546" y="139" width="253" height="205" rx="12" class="panelTint"/>
+<text x="566" y="169" text-anchor="start" class="label">服务健康</text>
+<text x="566" y="194" text-anchor="start" class="micro">告警 · 延迟 · SLA</text>
+<rect x="565" y="222" width="215" height="27" rx="6" fill="#d9edf0" stroke="#d3dfeb"/>
+<text x="586" y="240" text-anchor="start" class="micro">正常</text>
+<text x="641" y="240" text-anchor="start" class="small">模型服务</text>
+<circle cx="766" cy="235" r="3" fill="#6a8caf"/>
+<rect x="565" y="258" width="215" height="27" rx="6" fill="#fff4db" stroke="#d3dfeb"/>
+<text x="586" y="276" text-anchor="start" class="micro">关注</text>
+<text x="641" y="276" text-anchor="start" class="small">调用延迟</text>
+<circle cx="766" cy="271" r="3" fill="#6a8caf"/>
+<rect x="565" y="294" width="215" height="27" rx="6" fill="#e7eef7" stroke="#d3dfeb"/>
+<text x="586" y="312" text-anchor="start" class="micro">记录</text>
+<text x="641" y="312" text-anchor="start" class="small">操作审计</text>
+<circle cx="766" cy="307" r="3" fill="#6a8caf"/>
+<path d="M822 240 H858" class="line" marker-end="url(#arrow)"/>
+<rect x="865" y="82" width="298" height="137" rx="16" class="panelBlue"/>
+<circle cx="904" cy="122" r="19" fill="#fff" stroke="#8eaccb" stroke-width="1.6"/><path d="M904 110v13l9 6" class="icon"/>
+<text x="940" y="120" text-anchor="start" class="label">运营分析</text>
+<text x="893" y="165" text-anchor="start" class="body">部门用量 · 配额 · 资源规划</text>
+<text x="893" y="192" text-anchor="start" class="micro">看清使用分布，安排资源</text>
+<rect x="865" y="254" width="298" height="137" rx="16" class="panel"/>
+<path d="M891 289h31v25h-31z M896 282h21 M898 320h17" class="icon"/>
+<text x="940" y="296" text-anchor="start" class="label">运维处置</text>
+<text x="893" y="341" text-anchor="start" class="body">运行告警 · 问题排查 · 审计追溯</text>
+<text x="893" y="368" text-anchor="start" class="micro">依据运行情况跟进处理</text>
+<path d="M1014 219 V244" class="lineSoft" marker-end="url(#arrowSoft)"/>
+</svg>
