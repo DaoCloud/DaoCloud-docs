@@ -9,6 +9,7 @@
 .product-docs-menu summary {
   cursor: pointer;
   list-style: none;
+  align-items: center;
 }
 
 .product-docs-menu summary::-webkit-details-marker {
@@ -17,8 +18,12 @@
 
 .product-docs-menu__caret {
   display: inline-block;
-  font-size: .7rem;
-  margin-left: .15rem;
+  width: 0;
+  height: 0;
+  border-left: .3rem solid transparent;
+  border-right: .3rem solid transparent;
+  border-top: .4rem solid currentColor;
+  margin-left: .3rem;
   transition: transform 125ms;
 }
 
