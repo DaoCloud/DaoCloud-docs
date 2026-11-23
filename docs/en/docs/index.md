@@ -101,14 +101,36 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
 .md-typeset .tf-hero::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;background:conic-gradient(from var(--tf-hero-angle),rgba(33,150,243,0) 0deg,#2196f3 30deg,#0e9f9f 55deg,rgba(33,150,243,0) 95deg,rgba(33,150,243,0) 175deg,#7c5cff 205deg,rgba(33,150,243,0) 250deg,rgba(33,150,243,0) 360deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none;animation:tf-hero-spin 6s linear infinite}
 @keyframes tf-hero-spin{to{--tf-hero-angle:360deg}}
 @media (prefers-reduced-motion: reduce){.md-typeset .tf-hero::before{animation:none}}
+
+/* 客户成功故事卡片 */
+.md-typeset .story-marquee{display:grid;margin:1.2rem 0 2rem;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.md-typeset .story-track{display:flex;width:max-content;animation:story-move 70s linear infinite}
+.md-typeset .story-marquee:hover .story-track{animation-play-state:paused}
+.md-typeset .story-group{display:flex;gap:1rem;padding-right:1rem;align-items:stretch}
+.md-typeset .story-card{width:330px;flex:none;display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid var(--md-default-fg-color--lightest);background:var(--md-default-bg-color);transition:transform .2s ease,border-color .2s ease}
+.md-typeset .story-card:hover{transform:translateY(-3px);border-color:var(--s1)}
+.md-typeset .story-card-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;height:62px;padding:0 .9rem;background:linear-gradient(120deg,var(--s1),var(--s2))}
+.md-typeset .story-card-prod{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.95);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}
+.md-typeset .story-card-prod:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.md-typeset .story-card-ind{font-size:.62rem;color:rgba(255,255,255,.92);background:rgba(255,255,255,.18);padding:.14rem .55rem;border-radius:999px;white-space:nowrap;flex:none}
+.md-typeset .story-card-body{display:flex;flex-direction:column;flex:1;padding:.7rem .9rem .85rem}
+.md-typeset .story-card-name{font-weight:700;font-size:.95rem;margin:0}
+.md-typeset .story-card-desc{font-size:.75rem;line-height:1.55;color:var(--md-default-fg-color--light);margin:.3rem 0 .7rem}
+.md-typeset .story-card-metrics{display:flex;gap:1rem;margin-top:auto;flex-wrap:wrap}
+.md-typeset .story-card-metrics span{font-size:.62rem;color:var(--md-default-fg-color--light)}
+.md-typeset .story-card-metrics b{display:block;font-size:1rem;font-weight:700;color:var(--s1)}
+@keyframes story-move{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+[data-md-color-scheme="slate"] .md-typeset .story-card{border-color:rgba(148,163,184,.18);background:rgba(148,163,184,.06)}
+[data-md-color-scheme="slate"] .md-typeset .story-card-metrics b{color:var(--s2)}
+@media (prefers-reduced-motion: reduce){.md-typeset .story-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.md-typeset .story-track{animation:none;width:auto}.md-typeset .story-group[aria-hidden="true"]{display:none}}
 </style>
 
 === ":material-factory: d.run Token Factory"
 
-    This is a high-efficiency AI Token production and management system designed for intelligent computing centers, dedicated to upgrading traditional computing centers into efficient, profitable Token factories.
+    This is a high-efficiency AI Token production and management system designed for AI centers, dedicated to upgrading traditional computing centers into efficient, profitable Token factories.
     The platform unifiedly manages NVIDIA and domestic heterogeneous computing power, transforming distributed GPU compute into low-cost, highly stable, and tradable standardized Token services through intelligent scheduling and inference optimization.
     Built on the Token Factory manager and unified operations system, the platform enables global management of resources, production, costs, and supply-demand, serving end users, administrators, operators, and O&M teams,
-    driving intelligent computing centers to evolve from "providing compute" to "producing and operating Tokens".
+    driving AI centers to evolve from "providing compute" to "producing and operating Tokens".
 
     <div class="tf-arch tf-arch--compact">
       <div class="tf-arch-layer tf-arch-layer--model">
@@ -353,6 +375,89 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
       </div>
     </div>
 
+
+## Customer Success Stories
+
+<div class="story-marquee" aria-label="Customer success stories">
+  <div class="story-track">
+    <div class="story-group">
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
+        <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform and the cornerstone for ASEAN cross-border compute expansion</p><div class="story-card-metrics"><span><b>1000P+</b>initial compute scale</span><span><b>3B yuan</b>planned 3-year investment</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
+        <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, with 60+ AI scenarios in 12 industries</p><div class="story-card-metrics"><span><b>2200P</b>compute under unified scheduling</span><span><b>7x</b>Token output efficiency</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
+        <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">Japanese listed company focused on data center and system innovation, taking a smart computing center from build to operations and launching Token services fast</p><div class="story-card-metrics"><span><b>End-to-end</b>build to operations</span><span><b>Fast go-live</b>Token services</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
+        <div class="story-card-top"><a class="story-card-prod" href="drun/">d.run AI OS</a><span class="story-card-ind">Manufacturing</span></div>
+        <div class="story-card-body"><p class="story-card-name">OMRON</p><p class="story-card-desc">Global automation and electronics leader with an enterprise AI knowledge base for manufacturing and administration</p><div class="story-card-metrics"><span><b>65%</b>curation time saved</span><span><b>60%</b>support efficiency</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
+        <div class="story-card-top"><a class="story-card-prod" href="drun/">d.run AI OS</a><span class="story-card-ind">Manufacturing</span></div>
+        <div class="story-card-body"><p class="story-card-name">Panel maker</p><p class="story-card-desc">Leading LCD panel manufacturer running high-performance GPU clusters on AI appliances for scenario-based model applications</p><div class="story-card-metrics"><span><b>30%</b>R&D efficiency</span><span><b>10,000+</b>AI agents</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
+        <div class="story-card-top"><a class="story-card-prod" href="drun/">d.run AI OS</a><span class="story-card-ind">Global</span></div>
+        <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">High-efficiency compute cluster powering Hong Kong's first LLM and the HKGAI Studio platform</p><div class="story-card-metrics"><span><b>90%</b>GPU utilization</span><span><b>60%</b>faster fine-tuning</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Manufacturing</span></div>
+        <div class="story-card-body"><p class="story-card-name">Dongfang Electric</p><p class="story-card-desc">One of the world's largest energy equipment makers, running an AI platform for power-equipment quality analysis</p><div class="story-card-metrics"><span><b>10x</b>production efficiency</span><span><b>30%</b>detection accuracy</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Finance</span></div>
+        <div class="story-card-body"><p class="story-card-name">SPD Bank</p><p class="story-card-desc">Global top-20 bank; China's first cloud-native platform for large-scale payment services</p><div class="story-card-metrics"><span><b>10,000</b>peak TPS</span><span><b>99.99%</b>SLA</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Retail</span></div>
+        <div class="story-card-body"><p class="story-card-name">Watsons Group</p><p class="story-card-desc">World's largest health and beauty retailer, powering its O+O business end to end</p><div class="story-card-metrics"><span><b>99.99%</b>core business SLA</span><span><b>70%+</b>faster releases</span></div></div>
+      </div>
+    </div>
+    <div class="story-group" aria-hidden="true">
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
+        <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform and the cornerstone for ASEAN cross-border compute expansion</p><div class="story-card-metrics"><span><b>1000P+</b>initial compute scale</span><span><b>3B yuan</b>planned 3-year investment</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
+        <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, with 60+ AI scenarios in 12 industries</p><div class="story-card-metrics"><span><b>2200P</b>compute under unified scheduling</span><span><b>7x</b>Token output efficiency</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
+        <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">Japanese listed company focused on data center and system innovation, taking a smart computing center from build to operations and launching Token services fast</p><div class="story-card-metrics"><span><b>End-to-end</b>build to operations</span><span><b>Fast go-live</b>Token services</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
+        <div class="story-card-top"><a class="story-card-prod" href="drun/">d.run AI OS</a><span class="story-card-ind">Manufacturing</span></div>
+        <div class="story-card-body"><p class="story-card-name">OMRON</p><p class="story-card-desc">Global automation and electronics leader with an enterprise AI knowledge base for manufacturing and administration</p><div class="story-card-metrics"><span><b>65%</b>curation time saved</span><span><b>60%</b>support efficiency</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
+        <div class="story-card-top"><a class="story-card-prod" href="drun/">d.run AI OS</a><span class="story-card-ind">Manufacturing</span></div>
+        <div class="story-card-body"><p class="story-card-name">Panel maker</p><p class="story-card-desc">Leading LCD panel manufacturer running high-performance GPU clusters on AI appliances for scenario-based model applications</p><div class="story-card-metrics"><span><b>30%</b>R&D efficiency</span><span><b>10,000+</b>AI agents</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
+        <div class="story-card-top"><a class="story-card-prod" href="drun/">d.run AI OS</a><span class="story-card-ind">Global</span></div>
+        <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">High-efficiency compute cluster powering Hong Kong's first LLM and the HKGAI Studio platform</p><div class="story-card-metrics"><span><b>90%</b>GPU utilization</span><span><b>60%</b>faster fine-tuning</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Manufacturing</span></div>
+        <div class="story-card-body"><p class="story-card-name">Dongfang Electric</p><p class="story-card-desc">One of the world's largest energy equipment makers, running an AI platform for power-equipment quality analysis</p><div class="story-card-metrics"><span><b>10x</b>production efficiency</span><span><b>30%</b>detection accuracy</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Finance</span></div>
+        <div class="story-card-body"><p class="story-card-name">SPD Bank</p><p class="story-card-desc">Global top-20 bank; China's first cloud-native platform for large-scale payment services</p><div class="story-card-metrics"><span><b>10,000</b>peak TPS</span><span><b>99.99%</b>SLA</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Retail</span></div>
+        <div class="story-card-body"><p class="story-card-name">Watsons Group</p><p class="story-card-desc">World's largest health and beauty retailer, powering its O+O business end to end</p><div class="story-card-metrics"><span><b>99.99%</b>core business SLA</span><span><b>70%+</b>faster releases</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 ## Explore Product Modules
 

@@ -105,6 +105,28 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 .md-typeset .tf-hero::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;background:conic-gradient(from var(--tf-hero-angle),rgba(33,150,243,0) 0deg,#2196f3 30deg,#0e9f9f 55deg,rgba(33,150,243,0) 95deg,rgba(33,150,243,0) 175deg,#7c5cff 205deg,rgba(33,150,243,0) 250deg,rgba(33,150,243,0) 360deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none;animation:tf-hero-spin 6s linear infinite}
 @keyframes tf-hero-spin{to{--tf-hero-angle:360deg}}
 @media (prefers-reduced-motion: reduce){.md-typeset .tf-hero::before{animation:none}}
+
+/* 客户成功故事卡片 */
+.md-typeset .story-marquee{display:grid;margin:1.2rem 0 2rem;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.md-typeset .story-track{display:flex;width:max-content;animation:story-move 70s linear infinite}
+.md-typeset .story-marquee:hover .story-track{animation-play-state:paused}
+.md-typeset .story-group{display:flex;gap:1rem;padding-right:1rem;align-items:stretch}
+.md-typeset .story-card{width:330px;flex:none;display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid var(--md-default-fg-color--lightest);background:var(--md-default-bg-color);transition:transform .2s ease,border-color .2s ease}
+.md-typeset .story-card:hover{transform:translateY(-3px);border-color:var(--s1)}
+.md-typeset .story-card-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;height:62px;padding:0 .9rem;background:linear-gradient(120deg,var(--s1),var(--s2))}
+.md-typeset .story-card-prod{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.95);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}
+.md-typeset .story-card-prod:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.md-typeset .story-card-ind{font-size:.62rem;color:rgba(255,255,255,.92);background:rgba(255,255,255,.18);padding:.14rem .55rem;border-radius:999px;white-space:nowrap;flex:none}
+.md-typeset .story-card-body{display:flex;flex-direction:column;flex:1;padding:.7rem .9rem .85rem}
+.md-typeset .story-card-name{font-weight:700;font-size:.95rem;margin:0}
+.md-typeset .story-card-desc{font-size:.75rem;line-height:1.55;color:var(--md-default-fg-color--light);margin:.3rem 0 .7rem}
+.md-typeset .story-card-metrics{display:flex;gap:1rem;margin-top:auto;flex-wrap:wrap}
+.md-typeset .story-card-metrics span{font-size:.62rem;color:var(--md-default-fg-color--light)}
+.md-typeset .story-card-metrics b{display:block;font-size:1rem;font-weight:700;color:var(--s1)}
+@keyframes story-move{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+[data-md-color-scheme="slate"] .md-typeset .story-card{border-color:rgba(148,163,184,.18);background:rgba(148,163,184,.06)}
+[data-md-color-scheme="slate"] .md-typeset .story-card-metrics b{color:var(--s2)}
+@media (prefers-reduced-motion: reduce){.md-typeset .story-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.md-typeset .story-track{animation:none;width:auto}.md-typeset .story-group[aria-hidden="true"]{display:none}}
 </style>
 
 === ":material-factory: d.run Token 工厂效能平台"
@@ -359,6 +381,89 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         </div>
       </div>
     </div>
+
+## 客户成功故事
+
+<div class="story-marquee" aria-label="客户成功故事">
+  <div class="story-track">
+    <div class="story-group">
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">智算中心</span></div>
+        <div class="story-card-body"><p class="story-card-name">润道星算</p><p class="story-card-desc">广西首个以 Token 为计量单位的智算服务平台，布局东盟跨境算力与 AI Token 出海业务的核心基石</p><div class="story-card-metrics"><span><b>1000P+</b>首期算力规模</span><span><b>30 亿元</b>三年规划投资</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">智算中心</span></div>
+        <div class="story-card-body"><p class="story-card-name">厦门思明算力联盟</p><p class="story-card-desc">市级智能算力跨主体、跨架构、跨中心的统一调度，开放 12 大行业、60 余个 AI 场景</p><div class="story-card-metrics"><span><b>2200P</b>全域调度算力</span><span><b>7 倍</b>Token 输出效率提升</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">智算中心</span></div>
+        <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">专注数据中心与系统创新的日本上市企业，以端到端方案从基建到运营落地智算中心，快速上线 Token 服务</p><div class="story-card-metrics"><span><b>端到端</b>基建到运营</span><span><b>快速上线</b>Token 服务</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
+        <div class="story-card-top"><a class="story-card-prod" href="drun/">d.run AI 操作系统</a><span class="story-card-ind">制造</span></div>
+        <div class="story-card-body"><p class="story-card-name">欧姆龙</p><p class="story-card-desc">全球知名的自动化控制及电子设备制造领军企业，打造工业制造与企业行政双场景 AI 知识库</p><div class="story-card-metrics"><span><b>65%</b>知识整理工时节约</span><span><b>60%</b>客服处理效率提升</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
+        <div class="story-card-top"><a class="story-card-prod" href="drun/">d.run AI 操作系统</a><span class="story-card-ind">制造</span></div>
+        <div class="story-card-body"><p class="story-card-name">液晶屏制造巨头</p><p class="story-card-desc">半导体液晶屏行业领军企业，以 AI 一体机构建高性能 GPU 集群，落地制造业场景化模型应用</p><div class="story-card-metrics"><span><b>30%</b>软件研发效率提升</span><span><b>10,000+</b>AI 智能体</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
+        <div class="story-card-top"><a class="story-card-prod" href="drun/">d.run AI 操作系统</a><span class="story-card-ind">港澳</span></div>
+        <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">联合港科大打造支撑首个港产大模型落地的高效能算力集群，全面赋能 HKGAI Studio</p><div class="story-card-metrics"><span><b>90%</b>GPU 利用率</span><span><b>60%</b>模型微调效率提升</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE 云原生操作系统</a><span class="story-card-ind">制造</span></div>
+        <div class="story-card-body"><p class="story-card-name">东方电气</p><p class="story-card-desc">全球最大的能源装备制造企业集团之一，打造发电装备质量智能分析 AI 中台</p><div class="story-card-metrics"><span><b>10 倍</b>生产效率提升</span><span><b>30%</b>缺陷检测准确率</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE 云原生操作系统</a><span class="story-card-ind">金融</span></div>
+        <div class="story-card-body"><p class="story-card-name">浦发银行</p><p class="story-card-desc">全球银行前 20 强，中国首个支持大规模支付业务的云原生平台</p><div class="story-card-metrics"><span><b>10,000</b>支付峰值 TPS</span><span><b>99.99%</b>SLA</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE 云原生操作系统</a><span class="story-card-ind">零售</span></div>
+        <div class="story-card-body"><p class="story-card-name">屈臣氏集团</p><p class="story-card-desc">全球最大的保健及美容产品零售商，端到端赋能 O+O 业务</p><div class="story-card-metrics"><span><b>99.99%</b>核心业务 SLA</span><span><b>70%+</b>发布耗时缩短</span></div></div>
+      </div>
+    </div>
+    <div class="story-group" aria-hidden="true">
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">智算中心</span></div>
+        <div class="story-card-body"><p class="story-card-name">润道星算</p><p class="story-card-desc">广西首个以 Token 为计量单位的智算服务平台，布局东盟跨境算力与 AI Token 出海业务的核心基石</p><div class="story-card-metrics"><span><b>1000P+</b>首期算力规模</span><span><b>30 亿元</b>三年规划投资</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">智算中心</span></div>
+        <div class="story-card-body"><p class="story-card-name">厦门思明算力联盟</p><p class="story-card-desc">市级智能算力跨主体、跨架构、跨中心的统一调度，开放 12 大行业、60 余个 AI 场景</p><div class="story-card-metrics"><span><b>2200P</b>全域调度算力</span><span><b>7 倍</b>Token 输出效率提升</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">智算中心</span></div>
+        <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">专注数据中心与系统创新的日本上市企业，以端到端方案从基建到运营落地智算中心，快速上线 Token 服务</p><div class="story-card-metrics"><span><b>端到端</b>基建到运营</span><span><b>快速上线</b>Token 服务</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
+        <div class="story-card-top"><a class="story-card-prod" href="drun/">d.run AI 操作系统</a><span class="story-card-ind">制造</span></div>
+        <div class="story-card-body"><p class="story-card-name">欧姆龙</p><p class="story-card-desc">全球知名的自动化控制及电子设备制造领军企业，打造工业制造与企业行政双场景 AI 知识库</p><div class="story-card-metrics"><span><b>65%</b>知识整理工时节约</span><span><b>60%</b>客服处理效率提升</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
+        <div class="story-card-top"><a class="story-card-prod" href="drun/">d.run AI 操作系统</a><span class="story-card-ind">制造</span></div>
+        <div class="story-card-body"><p class="story-card-name">液晶屏制造巨头</p><p class="story-card-desc">半导体液晶屏行业领军企业，以 AI 一体机构建高性能 GPU 集群，落地制造业场景化模型应用</p><div class="story-card-metrics"><span><b>30%</b>软件研发效率提升</span><span><b>10,000+</b>AI 智能体</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
+        <div class="story-card-top"><a class="story-card-prod" href="drun/">d.run AI 操作系统</a><span class="story-card-ind">港澳</span></div>
+        <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">联合港科大打造支撑首个港产大模型落地的高效能算力集群，全面赋能 HKGAI Studio</p><div class="story-card-metrics"><span><b>90%</b>GPU 利用率</span><span><b>60%</b>模型微调效率提升</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE 云原生操作系统</a><span class="story-card-ind">制造</span></div>
+        <div class="story-card-body"><p class="story-card-name">东方电气</p><p class="story-card-desc">全球最大的能源装备制造企业集团之一，打造发电装备质量智能分析 AI 中台</p><div class="story-card-metrics"><span><b>10 倍</b>生产效率提升</span><span><b>30%</b>缺陷检测准确率</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE 云原生操作系统</a><span class="story-card-ind">金融</span></div>
+        <div class="story-card-body"><p class="story-card-name">浦发银行</p><p class="story-card-desc">全球银行前 20 强，中国首个支持大规模支付业务的云原生平台</p><div class="story-card-metrics"><span><b>10,000</b>支付峰值 TPS</span><span><b>99.99%</b>SLA</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE 云原生操作系统</a><span class="story-card-ind">零售</span></div>
+        <div class="story-card-body"><p class="story-card-name">屈臣氏集团</p><p class="story-card-desc">全球最大的保健及美容产品零售商，端到端赋能 O+O 业务</p><div class="story-card-metrics"><span><b>99.99%</b>核心业务 SLA</span><span><b>70%+</b>发布耗时缩短</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 ## 探索产品模块
 
