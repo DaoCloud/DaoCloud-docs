@@ -8,8 +8,7 @@ hide:
 
 <div class="tf-hero" markdown>
 
-DaoCloud is an open-source pioneer in the global AI space, dedicated to accelerating enterprise intelligent transformation through cloud native technology.
-This site provides documentation for all product lines, covering full-stack capabilities from infrastructure and compute scheduling to model inference and application building.
+DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI transformation with cloud native technology. Explore the AI full stack here — from compute scheduling, model training, and inference to building AI apps and governing multi-agent systems.
 
 <div class="tf-hero-badges">
 <a class="tf-hero-badge tf-hero-badge--tf" href="tf/">d.run Token Factory</a>
@@ -95,6 +94,13 @@ This site provides documentation for all product lines, covering full-stack capa
 [data-md-color-scheme="slate"] .md-typeset .doc-marquee__group--ai{--m-glow:rgba(14,159,159,.2);--m-bg:rgba(14,159,159,.1);--m-border:rgba(14,159,159,.35);--m-hover:rgba(14,159,159,.24)}
 [data-md-color-scheme="slate"] .md-typeset .doc-marquee__chip{color:#d5dce8 !important}
 @media (prefers-reduced-motion: reduce){.md-typeset .doc-marquee{-webkit-mask-image:none;mask-image:none}.md-typeset .doc-marquee__track{animation:none;width:auto;flex-wrap:wrap}.md-typeset .doc-marquee__group[aria-hidden="true"]{display:none}}
+
+/* tf-hero shimmer border */
+@property --tf-hero-angle{syntax:"<angle>";inherits:false;initial-value:0deg}
+.md-typeset .tf-hero{position:relative}
+.md-typeset .tf-hero::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;background:conic-gradient(from var(--tf-hero-angle),rgba(33,150,243,0) 0deg,#2196f3 30deg,#0e9f9f 55deg,rgba(33,150,243,0) 95deg,rgba(33,150,243,0) 175deg,#7c5cff 205deg,rgba(33,150,243,0) 250deg,rgba(33,150,243,0) 360deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none;animation:tf-hero-spin 6s linear infinite}
+@keyframes tf-hero-spin{to{--tf-hero-angle:360deg}}
+@media (prefers-reduced-motion: reduce){.md-typeset .tf-hero::before{animation:none}}
 </style>
 
 === ":material-factory: d.run Token Factory"

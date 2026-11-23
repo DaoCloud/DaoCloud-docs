@@ -11,8 +11,8 @@ hide:
 
 <div class="tf-hero" markdown>
 
-DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加速企业智能化转型。
-本站提供所有产品线的文档内容，覆盖从基础设施、算力调度到模型推理和应用构建的全栈能力。
+DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加速企业 AI 智能化转型。
+本站覆盖从算力调度、模型训练和推理，到智能应用构建和多智能体治理的 AI 全栈能力。
 
 <div class="tf-hero-badges">
 <a class="tf-hero-badge tf-hero-badge--tf" href="tf/">d.run Token 工厂效能平台</a>
@@ -98,6 +98,13 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 [data-md-color-scheme="slate"] .md-typeset .doc-marquee__group--ai{--m-glow:rgba(14,159,159,.2);--m-bg:rgba(14,159,159,.1);--m-border:rgba(14,159,159,.35);--m-hover:rgba(14,159,159,.24)}
 [data-md-color-scheme="slate"] .md-typeset .doc-marquee__chip{color:#d5dce8 !important}
 @media (prefers-reduced-motion: reduce){.md-typeset .doc-marquee{-webkit-mask-image:none;mask-image:none}.md-typeset .doc-marquee__track{animation:none;width:auto;flex-wrap:wrap}.md-typeset .doc-marquee__group[aria-hidden="true"]{display:none}}
+
+/* tf-hero 流光边框 */
+@property --tf-hero-angle{syntax:"<angle>";inherits:false;initial-value:0deg}
+.md-typeset .tf-hero{position:relative}
+.md-typeset .tf-hero::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;background:conic-gradient(from var(--tf-hero-angle),rgba(33,150,243,0) 0deg,#2196f3 30deg,#0e9f9f 55deg,rgba(33,150,243,0) 95deg,rgba(33,150,243,0) 175deg,#7c5cff 205deg,rgba(33,150,243,0) 250deg,rgba(33,150,243,0) 360deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none;animation:tf-hero-spin 6s linear infinite}
+@keyframes tf-hero-spin{to{--tf-hero-angle:360deg}}
+@media (prefers-reduced-motion: reduce){.md-typeset .tf-hero::before{animation:none}}
 </style>
 
 === ":material-factory: d.run Token 工厂效能平台"
