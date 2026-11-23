@@ -383,11 +383,11 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
     <div class="story-group">
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
-        <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform and the cornerstone for ASEAN cross-border compute expansion</p><div class="story-card-metrics"><span><b>1000P+</b>initial compute scale</span><span><b>3B yuan</b>planned 3-year investment</span></div></div>
+        <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform and the cornerstone for ASEAN cross-border compute expansion</p><div class="story-card-metrics"><span><b>1000P</b>initial compute scale</span><span><b>3000-5000P</b>planned compute scale</span></div></div>
       </div>
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
-        <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, with 60+ AI scenarios in 12 industries</p><div class="story-card-metrics"><span><b>2200P</b>compute under unified scheduling</span><span><b>7x</b>Token output efficiency</span></div></div>
+        <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, with 60+ AI scenarios in 12 industries</p><div class="story-card-metrics"><span><b>~2000P</b>compute under unified scheduling</span><span><b>7x</b>Token output efficiency</span></div></div>
       </div>
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
@@ -421,11 +421,11 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
     <div class="story-group" aria-hidden="true">
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
-        <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform and the cornerstone for ASEAN cross-border compute expansion</p><div class="story-card-metrics"><span><b>1000P+</b>initial compute scale</span><span><b>3B yuan</b>planned 3-year investment</span></div></div>
+        <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform and the cornerstone for ASEAN cross-border compute expansion</p><div class="story-card-metrics"><span><b>1000P</b>initial compute scale</span><span><b>3000-5000P</b>planned compute scale</span></div></div>
       </div>
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
-        <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, with 60+ AI scenarios in 12 industries</p><div class="story-card-metrics"><span><b>2200P</b>compute under unified scheduling</span><span><b>7x</b>Token output efficiency</span></div></div>
+        <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, with 60+ AI scenarios in 12 industries</p><div class="story-card-metrics"><span><b>~2000P</b>compute under unified scheduling</span><span><b>7x</b>Token output efficiency</span></div></div>
       </div>
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
