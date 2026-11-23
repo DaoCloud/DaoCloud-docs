@@ -16,7 +16,7 @@
 
 3. 在模板库中搜索目标 GLM 模型，也可按 GPU 类型、编排框架 llm\-d 和推理模式 PD 分离筛选。
 
-![选择glm模板](images/glm模板.png)
+![选择glm模板](images/glm-template.png)
 
 ## 部署环境配置
 
@@ -48,7 +48,7 @@
 
 - **llm-d-router**：负责推理请求的路由与调度。请核对副本数和镜像版本，并根据请求并发量及 Prefill / Decode 的处理能力配置副本数，避免成为性能瓶颈。
 
-![资源配置-模板](images/模板-资源配置.jpg)
+![资源配置-模板](images/glm-template-resources.jpg)
 
 ## 预览并部署
 
