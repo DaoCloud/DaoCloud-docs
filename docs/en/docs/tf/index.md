@@ -132,6 +132,64 @@ As a high-efficiency AI Token production and management system built for intelli
 
 ![The d.run Token Factory at a glance](images/tf-modules.svg)
 
+## Customer success stories
+
+<style>
+/* 客户成功故事卡片 */
+.md-typeset .story-marquee{display:grid;margin:1.2rem 0 2rem;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.md-typeset .story-track{display:flex;width:max-content;animation:story-move 23s linear infinite}
+.md-typeset .story-marquee:hover .story-track{animation-play-state:paused}
+.md-typeset .story-group{display:flex;gap:1rem;padding-right:1rem;align-items:stretch}
+.md-typeset .story-card{width:330px;flex:none;display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid var(--md-default-fg-color--lightest);background:var(--md-default-bg-color);transition:transform .2s ease,border-color .2s ease}
+.md-typeset .story-card:hover{transform:translateY(-3px);border-color:var(--s1)}
+.md-typeset .story-card-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;height:62px;padding:0 .9rem;background:linear-gradient(120deg,var(--s1),var(--s2))}
+.md-typeset .story-card-ind{font-size:.62rem;color:rgba(255,255,255,.92);background:rgba(255,255,255,.18);padding:.14rem .55rem;border-radius:999px;white-space:nowrap}
+.md-typeset .story-card-idx{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.8)}
+.md-typeset .story-card-body{display:flex;flex-direction:column;flex:1;padding:.7rem .9rem .85rem}
+.md-typeset .story-card-name{font-weight:700;font-size:.95rem;margin:0}
+.md-typeset .story-card-desc{font-size:.75rem;line-height:1.55;color:var(--md-default-fg-color--light);margin:.35rem 0 .75rem}
+.md-typeset .story-card-metrics{display:flex;gap:1rem;margin-top:auto;flex-wrap:wrap}
+.md-typeset .story-card-metrics span{font-size:.62rem;color:var(--md-default-fg-color--light)}
+.md-typeset .story-card-metrics b{display:block;font-size:1rem;font-weight:700;color:var(--s1)}
+@keyframes story-move{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+[data-md-color-scheme="slate"] .md-typeset .story-card{border-color:rgba(148,163,184,.18);background:rgba(148,163,184,.06)}
+[data-md-color-scheme="slate"] .md-typeset .story-card-metrics b{color:var(--s2)}
+@media (prefers-reduced-motion: reduce){.md-typeset .story-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.md-typeset .story-track{animation:none;width:auto}.md-typeset .story-group[aria-hidden="true"]{display:none}}
+</style>
+
+<div class="story-marquee" aria-label="Customer success stories">
+  <div class="story-track">
+    <div class="story-group">
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><span class="story-card-ind">AI Center</span><span class="story-card-idx">01</span></div>
+        <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform and the cornerstone for ASEAN cross-border compute expansion</p><div class="story-card-metrics"><span><b>1000P+</b>initial compute scale</span><span><b>3B yuan</b>planned 3-year investment</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><span class="story-card-ind">AI Center</span><span class="story-card-idx">02</span></div>
+        <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, with 60+ AI scenarios in 12 industries</p><div class="story-card-metrics"><span><b>2200P</b>compute under unified scheduling</span><span><b>7x</b>Token output efficiency</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><span class="story-card-ind">AI Center</span><span class="story-card-idx">03</span></div>
+        <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">Japanese listed company focused on data center and system innovation, taking a smart computing center from build to operations and launching Token services fast</p><div class="story-card-metrics"><span><b>End-to-end</b>build to operations</span><span><b>Fast go-live</b>Token services</span></div></div>
+      </div>
+    </div>
+    <div class="story-group" aria-hidden="true">
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><span class="story-card-ind">AI Center</span><span class="story-card-idx">01</span></div>
+        <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform and the cornerstone for ASEAN cross-border compute expansion</p><div class="story-card-metrics"><span><b>1000P+</b>initial compute scale</span><span><b>3B yuan</b>planned 3-year investment</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><span class="story-card-ind">AI Center</span><span class="story-card-idx">02</span></div>
+        <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, with 60+ AI scenarios in 12 industries</p><div class="story-card-metrics"><span><b>2200P</b>compute under unified scheduling</span><span><b>7x</b>Token output efficiency</span></div></div>
+      </div>
+      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
+        <div class="story-card-top"><span class="story-card-ind">AI Center</span><span class="story-card-idx">03</span></div>
+        <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">Japanese listed company focused on data center and system innovation, taking a smart computing center from build to operations and launching Token services fast</p><div class="story-card-metrics"><span><b>End-to-end</b>build to operations</span><span><b>Fast go-live</b>Token services</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 ## Learning Path
 
 <style>
