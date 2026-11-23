@@ -389,14 +389,14 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
     <div class="story-group">
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">智算中心</span></div>
-        <div class="story-card-body"><p class="story-card-name">润道星算</p><p class="story-card-desc">广西首个以 Token 为计量单位的智算服务平台，构建统一纳管的算力“蓄水池”，算力消费像用电用水一样方便</p><div class="story-card-metrics"><span><b>1000P+</b>算力规模</span><span><b>近 2000 卡</b>异构算力</span></div></div>
+        <div class="story-card-body"><p class="story-card-name">润道星算</p><p class="story-card-desc">广西首个以 Token 为计量单位的智算服务平台，布局东盟跨境算力与 AI Token 出海业务的核心基石</p><div class="story-card-metrics"><span><b>1000P+</b>首期算力规模</span><span><b>30 亿元</b>三年规划投资</span></div></div>
       </div>
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">智算中心</span></div>
-        <div class="story-card-body"><p class="story-card-name">厦门思明算力联盟</p><p class="story-card-desc">市级智能算力跨主体、跨架构、跨中心的统一调度，即取即需、按需付费</p><div class="story-card-metrics"><span><b>7 倍</b>Token 输出效率提升</span></div></div>
+        <div class="story-card-body"><p class="story-card-name">厦门思明算力联盟</p><p class="story-card-desc">市级智能算力跨主体、跨架构、跨中心的统一调度，开放 12 大行业、60 余个 AI 场景</p><div class="story-card-metrics"><span><b>2200P</b>全域调度算力</span><span><b>7 倍</b>Token 输出效率提升</span></div></div>
       </div>
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">数据中心</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">智算中心</span></div>
         <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">专注数据中心与系统创新的日本上市企业，以端到端方案从基建到运营落地智算中心，快速上线 Token 服务</p><div class="story-card-metrics"><span><b>端到端</b>基建到运营</span><span><b>快速上线</b>Token 服务</span></div></div>
       </div>
       <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
@@ -427,14 +427,14 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
     <div class="story-group" aria-hidden="true">
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">智算中心</span></div>
-        <div class="story-card-body"><p class="story-card-name">润道星算</p><p class="story-card-desc">广西首个以 Token 为计量单位的智算服务平台，构建统一纳管的算力“蓄水池”，算力消费像用电用水一样方便</p><div class="story-card-metrics"><span><b>1000P+</b>算力规模</span><span><b>近 2000 卡</b>异构算力</span></div></div>
+        <div class="story-card-body"><p class="story-card-name">润道星算</p><p class="story-card-desc">广西首个以 Token 为计量单位的智算服务平台，布局东盟跨境算力与 AI Token 出海业务的核心基石</p><div class="story-card-metrics"><span><b>1000P+</b>首期算力规模</span><span><b>30 亿元</b>三年规划投资</span></div></div>
       </div>
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">智算中心</span></div>
-        <div class="story-card-body"><p class="story-card-name">厦门思明算力联盟</p><p class="story-card-desc">市级智能算力跨主体、跨架构、跨中心的统一调度，即取即需、按需付费</p><div class="story-card-metrics"><span><b>7 倍</b>Token 输出效率提升</span></div></div>
+        <div class="story-card-body"><p class="story-card-name">厦门思明算力联盟</p><p class="story-card-desc">市级智能算力跨主体、跨架构、跨中心的统一调度，开放 12 大行业、60 余个 AI 场景</p><div class="story-card-metrics"><span><b>2200P</b>全域调度算力</span><span><b>7 倍</b>Token 输出效率提升</span></div></div>
       </div>
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">数据中心</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token 工厂效能平台</a><span class="story-card-ind">智算中心</span></div>
         <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">专注数据中心与系统创新的日本上市企业，以端到端方案从基建到运营落地智算中心，快速上线 Token 服务</p><div class="story-card-metrics"><span><b>端到端</b>基建到运营</span><span><b>快速上线</b>Token 服务</span></div></div>
       </div>
       <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">

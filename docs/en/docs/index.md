@@ -383,14 +383,14 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
     <div class="story-group">
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
-        <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform, pooling compute so it is consumed like power and water</p><div class="story-card-metrics"><span><b>1000P+</b>compute scale</span><span><b>~2,000</b>GPUs managed</span></div></div>
+        <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform and the cornerstone for ASEAN cross-border compute expansion</p><div class="story-card-metrics"><span><b>1000P+</b>initial compute scale</span><span><b>3B yuan</b>planned 3-year investment</span></div></div>
       </div>
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
-        <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, pay as you go</p><div class="story-card-metrics"><span><b>7x</b>Token output efficiency</span></div></div>
+        <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, with 60+ AI scenarios in 12 industries</p><div class="story-card-metrics"><span><b>2200P</b>compute under unified scheduling</span><span><b>7x</b>Token output efficiency</span></div></div>
       </div>
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">Data center</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
         <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">Japanese listed company focused on data center and system innovation, taking a smart computing center from build to operations and launching Token services fast</p><div class="story-card-metrics"><span><b>End-to-end</b>build to operations</span><span><b>Fast go-live</b>Token services</span></div></div>
       </div>
       <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
@@ -406,29 +406,29 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
         <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">High-efficiency compute cluster powering Hong Kong's first LLM and the HKGAI Studio platform</p><div class="story-card-metrics"><span><b>90%</b>GPU utilization</span><span><b>60%</b>faster fine-tuning</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">Manufacturing</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Manufacturing</span></div>
         <div class="story-card-body"><p class="story-card-name">Dongfang Electric</p><p class="story-card-desc">One of the world's largest energy equipment makers, running an AI platform for power-equipment quality analysis</p><div class="story-card-metrics"><span><b>10x</b>production efficiency</span><span><b>30%</b>detection accuracy</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">Finance</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Finance</span></div>
         <div class="story-card-body"><p class="story-card-name">SPD Bank</p><p class="story-card-desc">Global top-20 bank; China's first cloud-native platform for large-scale payment services</p><div class="story-card-metrics"><span><b>10,000</b>peak TPS</span><span><b>99.99%</b>SLA</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">Retail</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Retail</span></div>
         <div class="story-card-body"><p class="story-card-name">Watsons Group</p><p class="story-card-desc">World's largest health and beauty retailer, powering its O+O business end to end</p><div class="story-card-metrics"><span><b>99.99%</b>core business SLA</span><span><b>70%+</b>faster releases</span></div></div>
       </div>
     </div>
     <div class="story-group" aria-hidden="true">
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
-        <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform, pooling compute so it is consumed like power and water</p><div class="story-card-metrics"><span><b>1000P+</b>compute scale</span><span><b>~2,000</b>GPUs managed</span></div></div>
+        <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform and the cornerstone for ASEAN cross-border compute expansion</p><div class="story-card-metrics"><span><b>1000P+</b>initial compute scale</span><span><b>3B yuan</b>planned 3-year investment</span></div></div>
       </div>
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
         <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
-        <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, pay as you go</p><div class="story-card-metrics"><span><b>7x</b>Token output efficiency</span></div></div>
+        <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, with 60+ AI scenarios in 12 industries</p><div class="story-card-metrics"><span><b>2200P</b>compute under unified scheduling</span><span><b>7x</b>Token output efficiency</span></div></div>
       </div>
       <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">Data center</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="tf/">d.run Token Factory</a><span class="story-card-ind">AI Center</span></div>
         <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">Japanese listed company focused on data center and system innovation, taking a smart computing center from build to operations and launching Token services fast</p><div class="story-card-metrics"><span><b>End-to-end</b>build to operations</span><span><b>Fast go-live</b>Token services</span></div></div>
       </div>
       <div class="story-card" style="--s1:#7C5CFF;--s2:#A78BFF">
@@ -444,15 +444,15 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
         <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">High-efficiency compute cluster powering Hong Kong's first LLM and the HKGAI Studio platform</p><div class="story-card-metrics"><span><b>90%</b>GPU utilization</span><span><b>60%</b>faster fine-tuning</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">Manufacturing</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Manufacturing</span></div>
         <div class="story-card-body"><p class="story-card-name">Dongfang Electric</p><p class="story-card-desc">One of the world's largest energy equipment makers, running an AI platform for power-equipment quality analysis</p><div class="story-card-metrics"><span><b>10x</b>production efficiency</span><span><b>30%</b>detection accuracy</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">Finance</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Finance</span></div>
         <div class="story-card-body"><p class="story-card-name">SPD Bank</p><p class="story-card-desc">Global top-20 bank; China's first cloud-native platform for large-scale payment services</p><div class="story-card-metrics"><span><b>10,000</b>peak TPS</span><span><b>99.99%</b>SLA</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">Retail</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Retail</span></div>
         <div class="story-card-body"><p class="story-card-name">Watsons Group</p><p class="story-card-desc">World's largest health and beauty retailer, powering its O+O business end to end</p><div class="story-card-metrics"><span><b>99.99%</b>core business SLA</span><span><b>70%+</b>faster releases</span></div></div>
       </div>
     </div>
