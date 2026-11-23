@@ -141,11 +141,11 @@ As an AI operating system designed for enterprises, d.run integrates compute sch
 .md-typeset .story-card{width:330px;flex:none;display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid var(--md-default-fg-color--lightest);background:var(--md-default-bg-color);transition:transform .2s ease,border-color .2s ease}
 .md-typeset .story-card:hover{transform:translateY(-3px);border-color:var(--s1)}
 .md-typeset .story-card-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;height:62px;padding:0 .9rem;background:linear-gradient(120deg,var(--s1),var(--s2))}
-.md-typeset .story-card-ind{font-size:.62rem;color:rgba(255,255,255,.92);background:rgba(255,255,255,.18);padding:.14rem .55rem;border-radius:999px;white-space:nowrap}
-.md-typeset .story-card-idx{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.8)}
+.md-typeset .story-card-high{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.95);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.md-typeset .story-card-ind{font-size:.62rem;color:rgba(255,255,255,.92);background:rgba(255,255,255,.18);padding:.14rem .55rem;border-radius:999px;white-space:nowrap;flex:none}
 .md-typeset .story-card-body{display:flex;flex-direction:column;flex:1;padding:.7rem .9rem .85rem}
 .md-typeset .story-card-name{font-weight:700;font-size:.95rem;margin:0}
-.md-typeset .story-card-desc{font-size:.75rem;line-height:1.55;color:var(--md-default-fg-color--light);margin:.35rem 0 .75rem}
+.md-typeset .story-card-desc{font-size:.75rem;line-height:1.55;color:var(--md-default-fg-color--light);margin:.3rem 0 .7rem}
 .md-typeset .story-card-metrics{display:flex;gap:1rem;margin-top:auto;flex-wrap:wrap}
 .md-typeset .story-card-metrics span{font-size:.62rem;color:var(--md-default-fg-color--light)}
 .md-typeset .story-card-metrics b{display:block;font-size:1rem;font-weight:700;color:var(--s1)}
@@ -158,54 +158,54 @@ As an AI operating system designed for enterprises, d.run integrates compute sch
 <div class="story-marquee" aria-label="Customer success stories">
   <div class="story-track">
     <div class="story-group">
-      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><span class="story-card-ind">Finance</span><span class="story-card-idx">01</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">Full-stack solution</span><span class="story-card-ind">Finance</span></div>
         <div class="story-card-body"><p class="story-card-name">Asset management group</p><p class="story-card-desc">China top-500 financial group; full-stack AI infra from GPU planning to LLM adaptation</p><div class="story-card-metrics"><span><b>Reliable</b>compute supply</span><span><b>Multi-scenario</b>AI services</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#0E9F9F;--s2:#4FC3C0">
-        <div class="story-card-top"><span class="story-card-ind">Manufacturing</span><span class="story-card-idx">02</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">AI all-in-one</span><span class="story-card-ind">Manufacturing</span></div>
         <div class="story-card-body"><p class="story-card-name">Panel maker</p><p class="story-card-desc">Leading LCD panel manufacturer running high-performance GPU clusters on AI appliances for scenario-based model applications</p><div class="story-card-metrics"><span><b>30%</b>R&D efficiency</span><span><b>10,000+</b>AI agents</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#0E9F9F;--s2:#4FC3C0">
-        <div class="story-card-top"><span class="story-card-ind">Manufacturing</span><span class="story-card-idx">03</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">AI knowledge base</span><span class="story-card-ind">Japan</span></div>
         <div class="story-card-body"><p class="story-card-name">OMRON</p><p class="story-card-desc">Global automation leader with an enterprise AI knowledge base for manufacturing and administration</p><div class="story-card-metrics"><span><b>65%</b>curation time saved</span><span><b>60%</b>support efficiency</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#0891B2;--s2:#22D3EE">
-        <div class="story-card-top"><span class="story-card-ind">HK & Macao</span><span class="story-card-idx">04</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">First HK LLM</span><span class="story-card-ind">Hong Kong</span></div>
         <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">High-efficiency compute cluster powering Hong Kong's first LLM and the HKGAI Studio platform</p><div class="story-card-metrics"><span><b>90%</b>GPU utilization</span><span><b>60%</b>faster fine-tuning</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><span class="story-card-ind">Ecosystem</span><span class="story-card-idx">05</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">Compute services</span><span class="story-card-ind">Shanghai</span></div>
         <div class="story-card-body"><p class="story-card-name">ModelSpeed Space</p><p class="story-card-desc">Compute service platform for China's first LLM innovation ecosystem community, lowering the bar via pooling, elastic scheduling, and cost optimization</p><div class="story-card-metrics"><span><b>One-stop</b>compute-model-app</span><span><b>First</b>LLM innovation community</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#8B5CF6;--s2:#C084FC">
-        <div class="story-card-top"><span class="story-card-ind">Domestic stack</span><span class="story-card-idx">06</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">AI super node</span><span class="story-card-ind">Domestic compute</span></div>
         <div class="story-card-body"><p class="story-card-name">Shanghai Cube</p><p class="story-card-desc">China's first open-architecture intelligent computing supernode, co-developed with domestic compute vendors for large-scale adoption</p><div class="story-card-metrics"><span><b>80%</b>of imported flagship performance</span><span><b>Full-stack</b>chip-system-platform domestication</span></div></div>
       </div>
     </div>
     <div class="story-group" aria-hidden="true">
-      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><span class="story-card-ind">Finance</span><span class="story-card-idx">01</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">Full-stack solution</span><span class="story-card-ind">Finance</span></div>
         <div class="story-card-body"><p class="story-card-name">Asset management group</p><p class="story-card-desc">China top-500 financial group; full-stack AI infra from GPU planning to LLM adaptation</p><div class="story-card-metrics"><span><b>Reliable</b>compute supply</span><span><b>Multi-scenario</b>AI services</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#0E9F9F;--s2:#4FC3C0">
-        <div class="story-card-top"><span class="story-card-ind">Manufacturing</span><span class="story-card-idx">02</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">AI all-in-one</span><span class="story-card-ind">Manufacturing</span></div>
         <div class="story-card-body"><p class="story-card-name">Panel maker</p><p class="story-card-desc">Leading LCD panel manufacturer running high-performance GPU clusters on AI appliances for scenario-based model applications</p><div class="story-card-metrics"><span><b>30%</b>R&D efficiency</span><span><b>10,000+</b>AI agents</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#0E9F9F;--s2:#4FC3C0">
-        <div class="story-card-top"><span class="story-card-ind">Manufacturing</span><span class="story-card-idx">03</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">AI knowledge base</span><span class="story-card-ind">Japan</span></div>
         <div class="story-card-body"><p class="story-card-name">OMRON</p><p class="story-card-desc">Global automation leader with an enterprise AI knowledge base for manufacturing and administration</p><div class="story-card-metrics"><span><b>65%</b>curation time saved</span><span><b>60%</b>support efficiency</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#0891B2;--s2:#22D3EE">
-        <div class="story-card-top"><span class="story-card-ind">HK & Macao</span><span class="story-card-idx">04</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">First HK LLM</span><span class="story-card-ind">Hong Kong</span></div>
         <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">High-efficiency compute cluster powering Hong Kong's first LLM and the HKGAI Studio platform</p><div class="story-card-metrics"><span><b>90%</b>GPU utilization</span><span><b>60%</b>faster fine-tuning</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><span class="story-card-ind">Ecosystem</span><span class="story-card-idx">05</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">Compute services</span><span class="story-card-ind">Shanghai</span></div>
         <div class="story-card-body"><p class="story-card-name">ModelSpeed Space</p><p class="story-card-desc">Compute service platform for China's first LLM innovation ecosystem community, lowering the bar via pooling, elastic scheduling, and cost optimization</p><div class="story-card-metrics"><span><b>One-stop</b>compute-model-app</span><span><b>First</b>LLM innovation community</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#8B5CF6;--s2:#C084FC">
-        <div class="story-card-top"><span class="story-card-ind">Domestic stack</span><span class="story-card-idx">06</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">AI super node</span><span class="story-card-ind">Domestic compute</span></div>
         <div class="story-card-body"><p class="story-card-name">Shanghai Cube</p><p class="story-card-desc">China's first open-architecture intelligent computing supernode, co-developed with domestic compute vendors for large-scale adoption</p><div class="story-card-metrics"><span><b>80%</b>of imported flagship performance</span><span><b>Full-stack</b>chip-system-platform domestication</span></div></div>
       </div>
     </div>

@@ -147,11 +147,11 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
 .md-typeset .story-card{width:330px;flex:none;display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid var(--md-default-fg-color--lightest);background:var(--md-default-bg-color);transition:transform .2s ease,border-color .2s ease}
 .md-typeset .story-card:hover{transform:translateY(-3px);border-color:var(--s1)}
 .md-typeset .story-card-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;height:62px;padding:0 .9rem;background:linear-gradient(120deg,var(--s1),var(--s2))}
-.md-typeset .story-card-ind{font-size:.62rem;color:rgba(255,255,255,.92);background:rgba(255,255,255,.18);padding:.14rem .55rem;border-radius:999px;white-space:nowrap}
-.md-typeset .story-card-idx{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.8)}
+.md-typeset .story-card-high{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.95);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.md-typeset .story-card-ind{font-size:.62rem;color:rgba(255,255,255,.92);background:rgba(255,255,255,.18);padding:.14rem .55rem;border-radius:999px;white-space:nowrap;flex:none}
 .md-typeset .story-card-body{display:flex;flex-direction:column;flex:1;padding:.7rem .9rem .85rem}
 .md-typeset .story-card-name{font-weight:700;font-size:.95rem;margin:0}
-.md-typeset .story-card-desc{font-size:.75rem;line-height:1.55;color:var(--md-default-fg-color--light);margin:.35rem 0 .75rem}
+.md-typeset .story-card-desc{font-size:.75rem;line-height:1.55;color:var(--md-default-fg-color--light);margin:.3rem 0 .7rem}
 .md-typeset .story-card-metrics{display:flex;gap:1rem;margin-top:auto;flex-wrap:wrap}
 .md-typeset .story-card-metrics span{font-size:.62rem;color:var(--md-default-fg-color--light)}
 .md-typeset .story-card-metrics b{display:block;font-size:1rem;font-weight:700;color:var(--s1)}
@@ -164,30 +164,30 @@ Token 工厂是 DaoCloud 面向 AI 智算场景打造的一体化平台，围绕
 <div class="story-marquee" aria-label="客户成功故事">
   <div class="story-track">
     <div class="story-group">
-      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><span class="story-card-ind">智算中心</span><span class="story-card-idx">01</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">Token 出海</span><span class="story-card-ind">东盟</span></div>
         <div class="story-card-body"><p class="story-card-name">润道星算</p><p class="story-card-desc">广西首个以 Token 为计量单位的智算服务平台，布局东盟跨境算力与 AI Token 出海业务的核心基石</p><div class="story-card-metrics"><span><b>1000P+</b>首期算力规模</span><span><b>30 亿元</b>三年规划投资</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><span class="story-card-ind">智算中心</span><span class="story-card-idx">02</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">统一调度</span><span class="story-card-ind">智算中心</span></div>
         <div class="story-card-body"><p class="story-card-name">厦门思明算力联盟</p><p class="story-card-desc">市级智能算力跨主体、跨架构、跨中心的统一调度，开放 12 大行业、60 余个 AI 场景</p><div class="story-card-metrics"><span><b>2200P</b>全域调度算力</span><span><b>7 倍</b>Token 输出效率提升</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><span class="story-card-ind">智算中心</span><span class="story-card-idx">03</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">端到端方案</span><span class="story-card-ind">日本</span></div>
         <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">专注数据中心与系统创新的日本上市企业，以端到端方案从基建到运营落地智算中心，快速上线 Token 服务</p><div class="story-card-metrics"><span><b>端到端</b>基建到运营</span><span><b>快速上线</b>Token 服务</span></div></div>
       </div>
     </div>
     <div class="story-group" aria-hidden="true">
-      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><span class="story-card-ind">智算中心</span><span class="story-card-idx">01</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">Token 出海</span><span class="story-card-ind">东盟</span></div>
         <div class="story-card-body"><p class="story-card-name">润道星算</p><p class="story-card-desc">广西首个以 Token 为计量单位的智算服务平台，布局东盟跨境算力与 AI Token 出海业务的核心基石</p><div class="story-card-metrics"><span><b>1000P+</b>首期算力规模</span><span><b>30 亿元</b>三年规划投资</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><span class="story-card-ind">智算中心</span><span class="story-card-idx">02</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">统一调度</span><span class="story-card-ind">智算中心</span></div>
         <div class="story-card-body"><p class="story-card-name">厦门思明算力联盟</p><p class="story-card-desc">市级智能算力跨主体、跨架构、跨中心的统一调度，开放 12 大行业、60 余个 AI 场景</p><div class="story-card-metrics"><span><b>2200P</b>全域调度算力</span><span><b>7 倍</b>Token 输出效率提升</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><span class="story-card-ind">智算中心</span><span class="story-card-idx">03</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">端到端方案</span><span class="story-card-ind">日本</span></div>
         <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">专注数据中心与系统创新的日本上市企业，以端到端方案从基建到运营落地智算中心，快速上线 Token 服务</p><div class="story-card-metrics"><span><b>端到端</b>基建到运营</span><span><b>快速上线</b>Token 服务</span></div></div>
       </div>
     </div>

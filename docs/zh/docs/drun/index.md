@@ -145,11 +145,11 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
 .md-typeset .story-card{width:330px;flex:none;display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid var(--md-default-fg-color--lightest);background:var(--md-default-bg-color);transition:transform .2s ease,border-color .2s ease}
 .md-typeset .story-card:hover{transform:translateY(-3px);border-color:var(--s1)}
 .md-typeset .story-card-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;height:62px;padding:0 .9rem;background:linear-gradient(120deg,var(--s1),var(--s2))}
-.md-typeset .story-card-ind{font-size:.62rem;color:rgba(255,255,255,.92);background:rgba(255,255,255,.18);padding:.14rem .55rem;border-radius:999px;white-space:nowrap}
-.md-typeset .story-card-idx{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.8)}
+.md-typeset .story-card-high{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.95);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.md-typeset .story-card-ind{font-size:.62rem;color:rgba(255,255,255,.92);background:rgba(255,255,255,.18);padding:.14rem .55rem;border-radius:999px;white-space:nowrap;flex:none}
 .md-typeset .story-card-body{display:flex;flex-direction:column;flex:1;padding:.7rem .9rem .85rem}
 .md-typeset .story-card-name{font-weight:700;font-size:.95rem;margin:0}
-.md-typeset .story-card-desc{font-size:.75rem;line-height:1.55;color:var(--md-default-fg-color--light);margin:.35rem 0 .75rem}
+.md-typeset .story-card-desc{font-size:.75rem;line-height:1.55;color:var(--md-default-fg-color--light);margin:.3rem 0 .7rem}
 .md-typeset .story-card-metrics{display:flex;gap:1rem;margin-top:auto;flex-wrap:wrap}
 .md-typeset .story-card-metrics span{font-size:.62rem;color:var(--md-default-fg-color--light)}
 .md-typeset .story-card-metrics b{display:block;font-size:1rem;font-weight:700;color:var(--s1)}
@@ -162,54 +162,54 @@ d.run 依托全球前三的 Kubernetes 调度技术与 vLLM 等主流开源推�
 <div class="story-marquee" aria-label="客户成功故事">
   <div class="story-track">
     <div class="story-group">
-      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><span class="story-card-ind">金融</span><span class="story-card-idx">01</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">全链路方案</span><span class="story-card-ind">金融</span></div>
         <div class="story-card-body"><p class="story-card-name">金融资产管理集团</p><p class="story-card-desc">中国 500 强金融资产管理集团，从 GPU 选型规划到大模型适配的全链路方案</p><div class="story-card-metrics"><span><b>稳定</b>算力供应</span><span><b>多场景</b>AI 智能</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#0E9F9F;--s2:#4FC3C0">
-        <div class="story-card-top"><span class="story-card-ind">制造</span><span class="story-card-idx">02</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">AI 一体机</span><span class="story-card-ind">制造</span></div>
         <div class="story-card-body"><p class="story-card-name">液晶屏制造巨头</p><p class="story-card-desc">半导体液晶屏行业领军企业，以 AI 一体机构建高性能 GPU 集群，落地制造业场景化模型应用</p><div class="story-card-metrics"><span><b>30%</b>软件研发效率提升</span><span><b>10,000+</b>AI 智能体</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#0E9F9F;--s2:#4FC3C0">
-        <div class="story-card-top"><span class="story-card-ind">制造</span><span class="story-card-idx">03</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">AI 知识库</span><span class="story-card-ind">日本</span></div>
         <div class="story-card-body"><p class="story-card-name">欧姆龙</p><p class="story-card-desc">全球知名的自动化控制及电子设备制造领军企业，打造工业制造与企业行政双场景 AI 知识库</p><div class="story-card-metrics"><span><b>65%</b>知识整理工时节约</span><span><b>60%</b>客服处理效率提升</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#0891B2;--s2:#22D3EE">
-        <div class="story-card-top"><span class="story-card-ind">港澳</span><span class="story-card-idx">04</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">港产大模型</span><span class="story-card-ind">香港</span></div>
         <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">联合港科大打造支撑首个港产大模型落地的高效能算力集群，全面赋能 HKGAI Studio</p><div class="story-card-metrics"><span><b>90%</b>GPU 利用率</span><span><b>60%</b>模型微调效率提升</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><span class="story-card-ind">产业生态</span><span class="story-card-idx">05</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">算力服务平台</span><span class="story-card-ind">上海</span></div>
         <div class="story-card-body"><p class="story-card-name">模速空间</p><p class="story-card-desc">全国首个大模型创新生态社区的算力资源服务平台，通过资源池化、弹性调度与成本优化降低创新门槛</p><div class="story-card-metrics"><span><b>一站式</b>算力-模型-应用</span><span><b>全国首个</b>大模型创新生态社区</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#8B5CF6;--s2:#C084FC">
-        <div class="story-card-top"><span class="story-card-ind">国产化</span><span class="story-card-idx">06</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">智算超节点</span><span class="story-card-ind">国产算力</span></div>
         <div class="story-card-body"><p class="story-card-name">Shanghai Cube</p><p class="story-card-desc">联合国产算力厂商研发国内首款开放架构智算超节点，软硬深度协同推进国产算力规模化应用</p><div class="story-card-metrics"><span><b>80%</b>性能达进口高端设备</span><span><b>全栈</b>“芯片-系统-平台”国产化</span></div></div>
       </div>
     </div>
     <div class="story-group" aria-hidden="true">
-      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><span class="story-card-ind">金融</span><span class="story-card-idx">01</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">全链路方案</span><span class="story-card-ind">金融</span></div>
         <div class="story-card-body"><p class="story-card-name">金融资产管理集团</p><p class="story-card-desc">中国 500 强金融资产管理集团，从 GPU 选型规划到大模型适配的全链路方案</p><div class="story-card-metrics"><span><b>稳定</b>算力供应</span><span><b>多场景</b>AI 智能</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#0E9F9F;--s2:#4FC3C0">
-        <div class="story-card-top"><span class="story-card-ind">制造</span><span class="story-card-idx">02</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">AI 一体机</span><span class="story-card-ind">制造</span></div>
         <div class="story-card-body"><p class="story-card-name">液晶屏制造巨头</p><p class="story-card-desc">半导体液晶屏行业领军企业，以 AI 一体机构建高性能 GPU 集群，落地制造业场景化模型应用</p><div class="story-card-metrics"><span><b>30%</b>软件研发效率提升</span><span><b>10,000+</b>AI 智能体</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#0E9F9F;--s2:#4FC3C0">
-        <div class="story-card-top"><span class="story-card-ind">制造</span><span class="story-card-idx">03</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">AI 知识库</span><span class="story-card-ind">日本</span></div>
         <div class="story-card-body"><p class="story-card-name">欧姆龙</p><p class="story-card-desc">全球知名的自动化控制及电子设备制造领军企业，打造工业制造与企业行政双场景 AI 知识库</p><div class="story-card-metrics"><span><b>65%</b>知识整理工时节约</span><span><b>60%</b>客服处理效率提升</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#0891B2;--s2:#22D3EE">
-        <div class="story-card-top"><span class="story-card-ind">港澳</span><span class="story-card-idx">04</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">港产大模型</span><span class="story-card-ind">香港</span></div>
         <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">联合港科大打造支撑首个港产大模型落地的高效能算力集群，全面赋能 HKGAI Studio</p><div class="story-card-metrics"><span><b>90%</b>GPU 利用率</span><span><b>60%</b>模型微调效率提升</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#16A34A;--s2:#4ADE80">
-        <div class="story-card-top"><span class="story-card-ind">产业生态</span><span class="story-card-idx">05</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">算力服务平台</span><span class="story-card-ind">上海</span></div>
         <div class="story-card-body"><p class="story-card-name">模速空间</p><p class="story-card-desc">全国首个大模型创新生态社区的算力资源服务平台，通过资源池化、弹性调度与成本优化降低创新门槛</p><div class="story-card-metrics"><span><b>一站式</b>算力-模型-应用</span><span><b>全国首个</b>大模型创新生态社区</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#8B5CF6;--s2:#C084FC">
-        <div class="story-card-top"><span class="story-card-ind">国产化</span><span class="story-card-idx">06</span></div>
+      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+        <div class="story-card-top"><span class="story-card-high">智算超节点</span><span class="story-card-ind">国产算力</span></div>
         <div class="story-card-body"><p class="story-card-name">Shanghai Cube</p><p class="story-card-desc">联合国产算力厂商研发国内首款开放架构智算超节点，软硬深度协同推进国产算力规模化应用</p><div class="story-card-metrics"><span><b>80%</b>性能达进口高端设备</span><span><b>全栈</b>“芯片-系统-平台”国产化</span></div></div>
       </div>
     </div>
