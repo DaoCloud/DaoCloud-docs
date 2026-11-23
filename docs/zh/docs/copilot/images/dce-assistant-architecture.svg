@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">DCE 小助手逻辑架构</title>
+  <desc id="desc">用户通过对话界面访问 DeepSeek Harness。Harness 与模型 API 交互，加载 Skills 并调用 CLI 工具和数据插件。DCE CLI 访问平台数据；数据插件经数据获取、临时内存数据集和展示处理，在浏览器中呈现图表和表格。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#36856b"/></marker>
+    <style>
+      text { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #243c35; text-anchor: middle; }
+      .heading { font-size: 25px; font-weight: 600; }
+      .body { font-size: 18px; }
+      .small { font-size: 16px; fill: #536b62; }
+      .label { font-size: 16px; fill: #36856b; }
+      .box { fill: #f3f9f6; stroke: #b4d6c7; stroke-width: 1.5; }
+      .line { fill: none; stroke: #36856b; stroke-width: 2; marker-end: url(#arrow); }
+      .both { marker-start: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="850" rx="16" fill="#fff"/>
+  <rect class="box" x="340" y="25" width="520" height="85" rx="12"/>
+  <text class="heading" x="600" y="61">用户与对话界面</text>
+  <text class="body" x="600" y="88">提出问题 · 补充条件 · 查看结果</text>
+  <path class="line both" d="M600 112 V178"/>
+  <text class="label" x="696" y="149">提问与回答</text>
+  <rect class="box" x="60" y="180" width="280" height="120" rx="12"/>
+  <text class="heading" x="200" y="224">模型 API</text>
+  <text class="body" x="200" y="259">需求理解与推理</text>
+  <rect x="400" y="180" width="400" height="120" rx="12" fill="#168258"/>
+  <text x="600" y="224" style="font-size:28px;font-weight:600;fill:#fff">DeepSeek Harness</text>
+  <text x="600" y="259" style="font-size:18px;fill:#fff">组织对话 · 加载 Skills · 调用工具</text>
+  <path class="line both" d="M342 240 H398"/>
+  <rect class="box" x="860" y="180" width="280" height="120" rx="12"/>
+  <text class="heading" x="1000" y="215">Skills</text>
+  <text class="body" x="1000" y="246">DCE 查询 · 集群与 Pod 诊断</text>
+  <text class="body" x="1000" y="275">GPU 瓶颈分析</text>
+  <path class="line" d="M858 240 H802" stroke-dasharray="6 4"/>
+  <path class="line" d="M500 302 V330 H240 V388"/>
+  <text class="label" x="310" y="355">调用工具</text>
+  <path class="line" d="M700 302 V358"/>
+  <rect class="box" x="60" y="390" width="360" height="140" rx="12"/>
+  <text class="heading" x="240" y="429">CLI 工具</text>
+  <text class="body" x="240" y="462">dce · kubectl · promtool</text>
+  <text class="small" x="240" y="499">通过 DCE CLI 获取平台数据</text>
+  <rect x="500" y="360" width="640" height="200" rx="12" fill="#f9fbfa" stroke="#b4d6c7" stroke-width="1.5"/>
+  <text class="heading" x="820" y="400">数据插件</text>
+  <rect class="box" x="520" y="425" width="175" height="110" rx="8"/>
+  <text x="607" y="457" style="font-size:18px;font-weight:600">tool-getdata</text>
+  <text class="small" x="607" y="487">获取与规范化数据</text>
+  <text class="small" x="607" y="514">调用 DCE CLI</text>
+  <rect class="box" x="725" y="425" width="150" height="110" rx="8"/>
+  <text x="800" y="457" style="font-size:19px;font-weight:600">内存数据集</text>
+  <text class="small" x="800" y="487">带有效期</text>
+  <text class="small" x="800" y="514">非持久化</text>
+  <rect class="box" x="905" y="425" width="215" height="110" rx="8"/>
+  <text x="1012" y="457" style="font-size:18px;font-weight:600">tool-present-data</text>
+  <text class="small" x="1012" y="487">解析数据</text>
+  <text class="small" x="1012" y="514">生成展示元数据</text>
+  <path class="line both" d="M422 480 H518"/>
+  <path class="line" d="M697 480 H723"/>
+  <path class="line" d="M877 480 H903"/>
+  <path class="line both" d="M240 532 V658"/>
+  <text class="label" x="341" y="600">查询运行数据</text>
+  <rect class="box" x="60" y="660" width="360" height="120" rx="12"/>
+  <text class="heading" x="240" y="704">平台与运行数据</text>
+  <text class="body" x="240" y="740">DCE · Kubernetes · Prometheus</text>
+  <path class="line" d="M1012 562 V658"/>
+  <text class="label" x="1085" y="610">展示元数据</text>
+  <rect class="box" x="720" y="660" width="420" height="120" rx="12"/>
+  <text class="heading" x="930" y="696">浏览器展示</text>
+  <text class="body" x="930" y="729">ui-data-visualization</text>
+  <text class="small" x="930" y="757">图表与表格</text>
+  <text class="small" x="600" y="823">Harness 组织分析，Skills 提供方法，工具查询数据，数据插件支持可视化。</text>
+</svg>

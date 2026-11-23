@@ -625,6 +625,7 @@ nav:
               - Release Notes: tf/crane/intro/release-notes.md
           - Copilot 智能工作台:
               - tf/copilot/index.md
+              - DCE 小助手: tf/copilot/dce-assistant.md
               - 兼容性: tf/copilot/compatibility.md
           - 费用中心:
               - tf/leopard/index.md
