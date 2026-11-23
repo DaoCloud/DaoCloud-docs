@@ -6,14 +6,14 @@
     .dce-arch .a-fg   { fill: #1a1a1a; }
     .dce-arch .a-fgS  { stroke: #1a1a1a; }
     .dce-arch .a-dash { stroke: #BBBBBB; }
-    .dce-arch .a-tP { fill: #8E24AA; }
-    .dce-arch .a-tO { fill: #FB8C00; }
-    .dce-arch .a-tB { fill: #2E7CF6; }
-    .dce-arch .a-tG { fill: #75808F; }
-    .dce-arch .a-sP { stroke: #D8A7EC; }
-    .dce-arch .a-sO { stroke: #FFC98F; }
-    .dce-arch .a-sB { stroke: #A8C7FA; }
-    .dce-arch .a-sG { stroke: #C4CAD3; }
+    .dce-arch .a-tP { fill: #FB8C00; }
+    .dce-arch .a-tO { fill: #43A047; }
+    .dce-arch .a-tB { fill: #00ACC1; }
+    .dce-arch .a-tG { fill: #2196F3; }
+    .dce-arch .a-sP { stroke: #FFCC80; }
+    .dce-arch .a-sO { stroke: #A5D6A7; }
+    .dce-arch .a-sB { stroke: #A0E7EC; }
+    .dce-arch .a-sG { stroke: #A9CEF6; }
     @media (prefers-color-scheme: dark) {
       .dce-arch .a-bg   { fill: #1F2227; stroke: #343A44; }
       .dce-arch .a-fill { fill: #2A2F36; }
@@ -21,10 +21,10 @@
       .dce-arch .a-fg   { fill: #E6E8EB; }
       .dce-arch .a-fgS  { stroke: #E6E8EB; }
       .dce-arch .a-dash { stroke: #7A8088; }
-      .dce-arch .a-tP { fill: #D1A3E8; }
-      .dce-arch .a-tO { fill: #FFB74D; }
-      .dce-arch .a-tB { fill: #82ADEF; }
-      .dce-arch .a-tG { fill: #A6AEBA; }
+      .dce-arch .a-tP { fill: #FFB74D; }
+      .dce-arch .a-tO { fill: #81C784; }
+      .dce-arch .a-tB { fill: #4DD0E1; }
+      .dce-arch .a-tG { fill: #64B5F6; }
     }
   </style>
   <!-- ============ 第一行：多云编排 | 数据服务 ============ -->
@@ -35,10 +35,10 @@
     <text x="0" y="5" font-size="17" font-weight="700" class="a-tP">多云编排</text>
   </g>
   <g font-size="14" class="a-fg" text-anchor="middle">
-    <rect x="20" y="46" width="105" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/><text x="72" y="66">多云实例</text>
-    <rect x="131" y="46" width="105" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/><text x="183" y="66">集群编排</text>
-    <rect x="242" y="46" width="105" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/><text x="294" y="66">资源分发</text>
-    <rect x="353" y="46" width="105" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/><text x="405" y="66">跨云容灾</text>
+    <rect x="20" y="46" width="212" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/><text x="126" y="66">多云实例</text>
+    <rect x="240" y="46" width="212" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/><text x="346" y="66">集群编排</text>
+    <rect x="20" y="84" width="212" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/><text x="126" y="104">资源分发</text>
+    <rect x="240" y="84" width="212" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/><text x="346" y="104">跨云容灾</text>
   </g>
   <g transform="translate(669,30)">
     <ellipse cx="-26" cy="-2" rx="6" ry="2.6" fill="none" class="a-sP" stroke-width="1.6"/>
@@ -46,14 +46,14 @@
     <text x="0" y="5" font-size="17" font-weight="700" class="a-tP">数据服务</text>
   </g>
   <g font-size="13.5" class="a-fg">
-    <rect x="484" y="46" width="286" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/>
-    <text x="627" y="66" text-anchor="middle">MySQL / PostgreSQL / MongoDB / Redis</text>
-    <rect x="778" y="46" width="76" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/>
-    <text x="816" y="66" text-anchor="middle">MinIO</text>
-    <rect x="484" y="84" width="240" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/>
-    <text x="604" y="104" text-anchor="middle">RabbitMQ / Kafka / RocketMQ</text>
-    <rect x="732" y="84" width="122" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/>
-    <text x="793" y="104" text-anchor="middle">Elasticsearch</text>
+    <rect x="484" y="46" width="362" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/>
+    <text x="665" y="66" text-anchor="middle">MySQL / PostgreSQL / MongoDB / Redis</text>
+    <rect x="854" y="46" width="76" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/>
+    <text x="892" y="66" text-anchor="middle">MinIO</text>
+    <rect x="484" y="84" width="316" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/>
+    <text x="642" y="104" text-anchor="middle">RabbitMQ / Kafka / RocketMQ</text>
+    <rect x="808" y="84" width="122" height="32" rx="6" class="a-fill a-sP" stroke-width="1.3"/>
+    <text x="869" y="104" text-anchor="middle">Elasticsearch</text>
   </g>
   <!-- ============ 第二行：微服务治理 | 可观测性 ============ -->
   <rect x="8" y="128" width="932" height="108" rx="10" class="a-bg"/>
@@ -64,12 +64,12 @@
     <text x="0" y="5" font-size="17" font-weight="700" class="a-tO">微服务治理</text>
   </g>
   <g font-size="14" class="a-fg" text-anchor="middle">
-    <rect x="20" y="164" width="98" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="69" y="184">注册中心</text>
-    <rect x="123" y="164" width="98" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="172" y="184">流量治理</text>
-    <rect x="226" y="164" width="104" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="278" y="184">微服务网关</text>
-    <rect x="335" y="164" width="98" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="384" y="184">服务网格</text>
-    <rect x="438" y="164" width="100" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/>
-    <text x="488" y="184">Merbridge</text>
+    <rect x="20" y="164" width="170" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="105" y="184">注册中心</text>
+    <rect x="198" y="164" width="170" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="283" y="184">流量治理</text>
+    <rect x="376" y="164" width="172" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="462" y="184">微服务网关</text>
+    <rect x="110" y="200" width="170" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="195" y="220">服务网格</text>
+    <rect x="288" y="200" width="170" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/>
+    <text x="373" y="220">Merbridge</text>
   </g>
   <g transform="translate(753,150)">
     <circle cx="-28" cy="0" r="7" fill="none" class="a-sO" stroke-width="1.6"/>
@@ -77,10 +77,10 @@
     <text x="0" y="5" font-size="17" font-weight="700" class="a-tO">可观测性</text>
   </g>
   <g font-size="14" class="a-fg" text-anchor="middle">
-    <rect x="570" y="164" width="88" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="614" y="184">多集群观测</text>
-    <rect x="663" y="164" width="88" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="707" y="184">多维度观测</text>
-    <rect x="756" y="164" width="88" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="800" y="184">告警中心</text>
-    <rect x="849" y="164" width="88" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="893" y="184">观测查询</text>
+    <rect x="570" y="164" width="176" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="658" y="184">多集群观测</text>
+    <rect x="754" y="164" width="176" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="842" y="184">多维度观测</text>
+    <rect x="570" y="200" width="176" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="658" y="220">告警中心</text>
+    <rect x="754" y="200" width="176" height="32" rx="6" class="a-fill a-sO" stroke-width="1.3"/><text x="842" y="220">观测查询</text>
   </g>
   <!-- ============ 第三行：应用商店 | 虚拟机 | 应用交付 ============ -->
   <rect x="8" y="244" width="932" height="108" rx="10" class="a-bg"/>
@@ -91,9 +91,9 @@
     <text x="0" y="9" font-size="17" font-weight="700" class="a-tB">应用商店</text>
   </g>
   <g font-size="14" class="a-fg" text-anchor="middle">
-    <rect x="24" y="280" width="76" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="62" y="300">信创应用</text>
-    <rect x="105" y="280" width="76" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="143" y="300">中间件</text>
-    <rect x="186" y="280" width="76" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="224" y="300">大数据</text>
+    <rect x="24" y="288" width="76" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="62" y="308">信创应用</text>
+    <rect x="105" y="288" width="76" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="143" y="308">中间件</text>
+    <rect x="186" y="288" width="76" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="224" y="308">大数据</text>
   </g>
   <g transform="translate(444,266)">
     <rect x="-36" y="-12" width="26" height="18" rx="2.5" fill="none" class="a-sB" stroke-width="1.5"/>
@@ -101,18 +101,18 @@
     <text x="0" y="5" font-size="17" font-weight="700" class="a-tB">虚拟机</text>
   </g>
   <g font-size="13" class="a-fg" text-anchor="middle">
-    <rect x="284" y="280" width="84" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="326" y="300">虚拟机管理</text>
-    <rect x="374" y="280" width="114" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="431" y="300">虚拟机网络&amp;存储</text>
-    <rect x="490" y="280" width="114" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="547" y="300">快照、克隆、迁移</text>
+    <rect x="284" y="288" width="84" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="326" y="308">虚拟机管理</text>
+    <rect x="374" y="288" width="114" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="431" y="308">虚拟机网络&amp;存储</text>
+    <rect x="490" y="288" width="114" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="547" y="308">快照、克隆、迁移</text>
   </g>
   <g transform="translate(769,266)">
-    <path d="M-34,-6 A8,8 0 1 1 -20,4 M-20,4 A8,8 0 1 1 -34,-6" fill="none" class="a-sB" stroke-width="1.6" transform="translate(-2,-6)"/>
+    <path d="M-34,-6 A8,8 0 1 1 -20,4 M-20,4 A8,8 0 1 1 -34,-6" fill="none" class="a-sB" stroke-width="1.6" transform="translate(-2,0)"/>
     <text x="0" y="5" font-size="17" font-weight="700" class="a-tB">应用交付</text>
   </g>
   <g font-size="14" class="a-fg" text-anchor="middle">
-    <rect x="616" y="280" width="84" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="658" y="300">镜像仓库</text>
-    <rect x="708" y="280" width="106" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="761" y="300">CI/CD 流水线</text>
-    <rect x="822" y="280" width="100" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="872" y="300">GitOps 部署</text>
+    <rect x="616" y="288" width="84" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="658" y="308">镜像仓库</text>
+    <rect x="708" y="288" width="106" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="761" y="308">CI/CD 流水线</text>
+    <rect x="822" y="288" width="100" height="32" rx="6" class="a-fill a-sB" stroke-width="1.3"/><text x="872" y="308">GitOps 部署</text>
   </g>
   <!-- ============ 第四行：云原生底座 + 全局管理 ============ -->
   <rect x="8" y="360" width="932" height="185" rx="10" class="a-bg"/>
@@ -132,11 +132,11 @@
   </g>
   <text x="30" y="432" font-size="15" font-weight="700" class="a-tG">容器管理</text>
   <g font-size="14" class="a-fg" text-anchor="middle">
-    <rect x="104" y="412" width="95" height="32" rx="6" class="a-fill a-sG" stroke-width="1.3"/><text x="151" y="432">集群纳管</text>
-    <rect x="205" y="412" width="95" height="32" rx="6" class="a-fill a-sG" stroke-width="1.3"/><text x="252" y="432">负载管理</text>
-    <rect x="306" y="412" width="95" height="32" rx="6" class="a-fill a-sG" stroke-width="1.3"/><text x="353" y="432">开放接口</text>
-    <rect x="407" y="412" width="112" height="32" rx="6" class="a-fill a-sG" stroke-width="1.3"/>
-    <text x="463" y="432">CloudTTY</text>
+    <rect x="104" y="412" width="132" height="32" rx="6" class="a-fill a-sG" stroke-width="1.3"/><text x="170" y="432">集群纳管</text>
+    <rect x="242" y="412" width="133" height="32" rx="6" class="a-fill a-sG" stroke-width="1.3"/><text x="308" y="432">负载管理</text>
+    <rect x="381" y="412" width="132" height="32" rx="6" class="a-fill a-sG" stroke-width="1.3"/><text x="447" y="432">开放接口</text>
+    <rect x="519" y="412" width="133" height="32" rx="6" class="a-fill a-sG" stroke-width="1.3"/>
+    <text x="585" y="432">CloudTTY</text>
   </g>
   <text x="30" y="478" font-size="15" font-weight="700" class="a-tG">集群管理</text>
   <g font-size="14" class="a-fg" text-anchor="middle">
@@ -207,7 +207,7 @@
       <rect x="-10" y="-21" width="12" height="11" rx="1.5" fill="none" class="a-fgS" stroke-width="1.3"/>
       <line x1="-6" y1="-18" x2="0" y2="-18" class="a-fgS" stroke-width="1"/>
       <line x1="-6" y1="-15" x2="0" y2="-15" class="a-fgS" stroke-width="1"/>
-      <text y="3" font-size="12.5">边缘集群</text>
+      <text y="8" font-size="12.5">边缘集群</text>
     </g>
     <g transform="translate(856,610)">
       <circle cx="0" cy="-13" r="4" fill="none" class="a-fgS" stroke-width="1.3"/>
@@ -215,18 +215,18 @@
       <circle cx="8" cy="-4" r="4" fill="none" class="a-fgS" stroke-width="1.3"/>
       <line x1="-2" y1="-10" x2="-6" y2="-6" class="a-fgS" stroke-width="1"/>
       <line x1="2" y1="-10" x2="6" y2="-6" class="a-fgS" stroke-width="1"/>
-      <text y="12" font-size="12.5">边缘节点</text>
+      <text y="16" font-size="12.5">边缘节点</text>
     </g>
   </g>
   <!-- ============ 右侧版本范围条（内→外：社区 / 标准 / 高级 / 白金） ============ -->
   <g font-size="14" font-weight="700" text-anchor="middle">
-    <rect x="948" y="360" width="28" height="272" rx="8" fill="#8B93A1"/>
+    <rect x="948" y="360" width="28" height="272" rx="8" fill="#2196F3"/>
     <text x="962" y="476" fill="#ffffff"><tspan x="962" dy="0">社</tspan><tspan x="962" dy="24">区</tspan><tspan x="962" dy="24">版</tspan></text>
-    <rect x="982" y="244" width="28" height="388" rx="8" fill="#2E7CF6"/>
+    <rect x="982" y="244" width="28" height="388" rx="8" fill="#00ACC1"/>
     <text x="996" y="418" fill="#ffffff"><tspan x="996" dy="0">标</tspan><tspan x="996" dy="24">准</tspan><tspan x="996" dy="24">版</tspan></text>
-    <rect x="1016" y="128" width="28" height="504" rx="8" fill="#FB8C00"/>
+    <rect x="1016" y="128" width="28" height="504" rx="8" fill="#43A047"/>
     <text x="1030" y="360" fill="#ffffff"><tspan x="1030" dy="0">高</tspan><tspan x="1030" dy="24">级</tspan><tspan x="1030" dy="24">版</tspan></text>
-    <rect x="1050" y="8" width="28" height="624" rx="8" fill="#8E24AA"/>
+    <rect x="1050" y="8" width="28" height="624" rx="8" fill="#FB8C00"/>
     <text x="1064" y="298" fill="#ffffff"><tspan x="1064" dy="0">白</tspan><tspan x="1064" dy="24">金</tspan><tspan x="1064" dy="24">版</tspan></text>
   </g>
 </svg>
