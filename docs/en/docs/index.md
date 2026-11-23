@@ -9,7 +9,7 @@ hide:
 <div class="tf-hero" markdown>
 
 DaoCloud is an open-source pioneer in the global AI space, dedicated to accelerating enterprise intelligent transformation through cloud native technology.
-This site provides documentation for three product lines, covering full-stack capabilities from infrastructure and compute scheduling to model inference and application building.
+This site provides documentation for all product lines, covering full-stack capabilities from infrastructure and compute scheduling to model inference and application building.
 
 <div class="tf-hero-badges">
 <a class="tf-hero-badge tf-hero-badge--tf" href="tf/">d.run Token Factory</a>
@@ -80,6 +80,21 @@ This site provides documentation for three product lines, covering full-stack ca
 [data-md-color-scheme="slate"] .tf-relation-box-detail{color:#dae3f0}
 [data-md-color-scheme="slate"] .tf-relation-arrow{color:#7d8ba3}
 [data-md-color-scheme="slate"] .tf-relation-foot{color:#94a3b8}
+/* 首页产品跑马灯 */
+.md-typeset .doc-marquee{display:grid;gap:.7rem;margin:2rem 0 1.2rem;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.md-typeset .doc-marquee__track{display:flex;width:max-content;animation:doc-marquee-move 60s linear infinite}
+.md-typeset .doc-marquee__track--rev{animation-direction:reverse}
+.md-typeset .doc-marquee:hover .doc-marquee__track{animation-play-state:paused}
+.md-typeset .doc-marquee__group{--m-accent:#1B66F5;--m-glow:rgba(27,102,245,.16);--m-bg:#EAF1FE;--m-border:#B9CEF7;--m-hover:#D8E5FC;display:flex;gap:.7rem;padding-right:.7rem}
+.md-typeset .doc-marquee__group--ai{--m-accent:#0E9F9F;--m-glow:rgba(14,159,159,.16);--m-bg:#E3F6F5;--m-border:#A8DBD9;--m-hover:#D3EFEE}
+.md-typeset .doc-marquee__chip{display:inline-flex;align-items:center;gap:.5rem;padding:.36rem .9rem;border-radius:999px;font-size:.78rem;font-weight:500;line-height:1.4;white-space:nowrap;background:var(--m-bg);border:1px solid var(--m-border);color:#0F1D33 !important;text-decoration:none !important;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.md-typeset .doc-marquee__chip:hover{transform:translateY(-2px);border-color:var(--m-accent);background:var(--m-hover);color:#0F1D33 !important}
+.md-typeset .doc-marquee__dot{flex:none;width:7px;height:7px;border-radius:50%;background:var(--m-accent);box-shadow:0 0 0 3px var(--m-glow)}
+@keyframes doc-marquee-move{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+[data-md-color-scheme="slate"] .md-typeset .doc-marquee__group{--m-glow:rgba(27,102,245,.2);--m-bg:rgba(27,102,245,.1);--m-border:rgba(27,102,245,.35);--m-hover:rgba(27,102,245,.22)}
+[data-md-color-scheme="slate"] .md-typeset .doc-marquee__group--ai{--m-glow:rgba(14,159,159,.2);--m-bg:rgba(14,159,159,.1);--m-border:rgba(14,159,159,.35);--m-hover:rgba(14,159,159,.24)}
+[data-md-color-scheme="slate"] .md-typeset .doc-marquee__chip{color:#d5dce8 !important}
+@media (prefers-reduced-motion: reduce){.md-typeset .doc-marquee{-webkit-mask-image:none;mask-image:none}.md-typeset .doc-marquee__track{animation:none;width:auto;flex-wrap:wrap}.md-typeset .doc-marquee__group[aria-hidden="true"]{display:none}}
 </style>
 
 === ":material-factory: d.run Token Factory"
@@ -332,36 +347,69 @@ This site provides documentation for three product lines, covering full-stack ca
       </div>
     </div>
 
-<div class="tf-relation">
-
-  <div class="tf-relation-kicker">DaoCloud Product Family · How the Three Fit Together</div>
-
-  <div class="tf-relation-box tf-relation-box--tf">
-    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="tf/">d.run Token Factory · Token production &amp; operations for AI compute centers</a></div>
-    <div class="tf-relation-box-sub">Dual user/admin views · Turns compute into measurable, tradable, revenue-ready Token capacity</div>
-    <div class="tf-relation-box-detail">LLM Studio · AI Apps (RAG) · Inference (InferX) · Compute Cloud · Copilot / Cockpit / Billing Center</div>
-  </div>
-
-  <div class="tf-relation-arrow">▲</div>
-
-  <div class="tf-relation-box tf-relation-box--drun">
-    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="drun/">d.run AI OS · Enterprise AI operating system</a></div>
-    <div class="tf-relation-box-sub">Unified scheduling of heterogeneous compute, inference &amp; governance · AI for every team</div>
-    <div class="tf-relation-box-detail">Cloud-native AI (LLM Studio, AI Lab, ClawOS, InferX) · Cloud native base · Ops &amp; management</div>
-  </div>
-
-  <div class="tf-relation-arrow">▲</div>
-
-  <div class="tf-relation-box tf-relation-box--dce">
-    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="dce/">DCE · Enterprise cloud native operating system (foundation)</a></div>
-    <div class="tf-relation-box-sub">Lego-style modular assembly · Core capabilities in containers, networking, storage, middleware, observability &amp; more</div>
-  </div>
-
-  <div class="tf-relation-foot">All three are DaoCloud products sharing one cloud native foundation and AI stack — differing in who they serve and why.</div>
-
-</div>
 
 ## Explore Product Modules
+
+<div class="doc-marquee" aria-label="Product module quick view">
+  <div class="doc-marquee__track doc-marquee__track--rev">
+    <div class="doc-marquee__group doc-marquee__group--ai">
+      <a class="doc-marquee__chip" href="drun/clawos/intro/"><span class="doc-marquee__dot"></span>ClawOS</a>
+      <a class="doc-marquee__chip" href="drun/baize/intro/"><span class="doc-marquee__dot"></span>AI Lab</a>
+      <a class="doc-marquee__chip" href="tf/dak/"><span class="doc-marquee__dot"></span>AI Apps</a>
+      <a class="doc-marquee__chip" href="tf/hydra/intro/"><span class="doc-marquee__dot"></span>LLM Studio</a>
+      <a class="doc-marquee__chip" href="tf/inferx/"><span class="doc-marquee__dot"></span>InferX Suite</a>
+      <a class="doc-marquee__chip" href="tf/zestu/"><span class="doc-marquee__dot"></span>Compute Cloud</a>
+      <a class="doc-marquee__chip" href="kpanda/intro/"><span class="doc-marquee__dot"></span>Container Management</a>
+      <a class="doc-marquee__chip" href="kairship/intro/"><span class="doc-marquee__dot"></span>Multicloud Management</a>
+      <a class="doc-marquee__chip" href="kangaroo/intro/"><span class="doc-marquee__dot"></span>Container Registry</a>
+      <a class="doc-marquee__chip" href="network/intro/"><span class="doc-marquee__dot"></span>Cloud Native Network</a>
+      <a class="doc-marquee__chip" href="storage/"><span class="doc-marquee__dot"></span>Cloud Native Storage</a>
+      <a class="doc-marquee__chip" href="virtnest/intro/"><span class="doc-marquee__dot"></span>Virtual Machine</a>
+    </div>
+    <div class="doc-marquee__group doc-marquee__group--ai" aria-hidden="true">
+      <a class="doc-marquee__chip" href="drun/clawos/intro/"><span class="doc-marquee__dot"></span>ClawOS</a>
+      <a class="doc-marquee__chip" href="drun/baize/intro/"><span class="doc-marquee__dot"></span>AI Lab</a>
+      <a class="doc-marquee__chip" href="tf/dak/"><span class="doc-marquee__dot"></span>AI Apps</a>
+      <a class="doc-marquee__chip" href="tf/hydra/intro/"><span class="doc-marquee__dot"></span>LLM Studio</a>
+      <a class="doc-marquee__chip" href="tf/inferx/"><span class="doc-marquee__dot"></span>InferX Suite</a>
+      <a class="doc-marquee__chip" href="tf/zestu/"><span class="doc-marquee__dot"></span>Compute Cloud</a>
+      <a class="doc-marquee__chip" href="kpanda/intro/"><span class="doc-marquee__dot"></span>Container Management</a>
+      <a class="doc-marquee__chip" href="kairship/intro/"><span class="doc-marquee__dot"></span>Multicloud Management</a>
+      <a class="doc-marquee__chip" href="kangaroo/intro/"><span class="doc-marquee__dot"></span>Container Registry</a>
+      <a class="doc-marquee__chip" href="network/intro/"><span class="doc-marquee__dot"></span>Cloud Native Network</a>
+      <a class="doc-marquee__chip" href="storage/"><span class="doc-marquee__dot"></span>Cloud Native Storage</a>
+      <a class="doc-marquee__chip" href="virtnest/intro/"><span class="doc-marquee__dot"></span>Virtual Machine</a>
+    </div>
+  </div>
+  <div class="doc-marquee__track">
+    <div class="doc-marquee__group">
+      <a class="doc-marquee__chip" href="insight/intro/"><span class="doc-marquee__dot"></span>Observability</a>
+      <a class="doc-marquee__chip" href="skoala/intro/"><span class="doc-marquee__dot"></span>Microservice Engine</a>
+      <a class="doc-marquee__chip" href="mspider/intro/"><span class="doc-marquee__dot"></span>Service Mesh</a>
+      <a class="doc-marquee__chip" href="amamba/intro/"><span class="doc-marquee__dot"></span>Workbench</a>
+      <a class="doc-marquee__chip" href="kant/intro/"><span class="doc-marquee__dot"></span>Cloud Edge Collaboration</a>
+      <a class="doc-marquee__chip" href="middleware/"><span class="doc-marquee__dot"></span>Middleware</a>
+      <a class="doc-marquee__chip" href="ghippo/intro/"><span class="doc-marquee__dot"></span>Global Management</a>
+      <a class="doc-marquee__chip" href="topohub/intro/"><span class="doc-marquee__dot"></span>Device Management</a>
+      <a class="doc-marquee__chip" href="copilot/"><span class="doc-marquee__dot"></span>Copilot</a>
+      <a class="doc-marquee__chip" href="crane/intro/"><span class="doc-marquee__dot"></span>Cockpit</a>
+      <a class="doc-marquee__chip" href="leopard/"><span class="doc-marquee__dot"></span>Billing Center</a>
+    </div>
+    <div class="doc-marquee__group" aria-hidden="true">
+      <a class="doc-marquee__chip" href="insight/intro/"><span class="doc-marquee__dot"></span>Observability</a>
+      <a class="doc-marquee__chip" href="skoala/intro/"><span class="doc-marquee__dot"></span>Microservice Engine</a>
+      <a class="doc-marquee__chip" href="mspider/intro/"><span class="doc-marquee__dot"></span>Service Mesh</a>
+      <a class="doc-marquee__chip" href="amamba/intro/"><span class="doc-marquee__dot"></span>Workbench</a>
+      <a class="doc-marquee__chip" href="kant/intro/"><span class="doc-marquee__dot"></span>Cloud Edge Collaboration</a>
+      <a class="doc-marquee__chip" href="middleware/"><span class="doc-marquee__dot"></span>Middleware</a>
+      <a class="doc-marquee__chip" href="ghippo/intro/"><span class="doc-marquee__dot"></span>Global Management</a>
+      <a class="doc-marquee__chip" href="topohub/intro/"><span class="doc-marquee__dot"></span>Device Management</a>
+      <a class="doc-marquee__chip" href="copilot/"><span class="doc-marquee__dot"></span>Copilot</a>
+      <a class="doc-marquee__chip" href="crane/intro/"><span class="doc-marquee__dot"></span>Cockpit</a>
+      <a class="doc-marquee__chip" href="leopard/"><span class="doc-marquee__dot"></span>Billing Center</a>
+    </div>
+  </div>
+</div>
 
 <div class="grid cards home-cards" markdown>
 
@@ -418,6 +466,35 @@ This site provides documentation for three product lines, covering full-stack ca
     - [Middleware](middleware/)
     - [Global Management](ghippo/intro/)
     - [Device Management](topohub/intro/)
+
+</div>
+
+<div class="tf-relation">
+
+  <div class="tf-relation-kicker">DaoCloud Product Family · How the Three Fit Together</div>
+
+  <div class="tf-relation-box tf-relation-box--tf">
+    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="tf/">d.run Token Factory · Token production &amp; operations for AI compute centers</a></div>
+    <div class="tf-relation-box-sub">Dual user/admin views · Turns compute into measurable, tradable, revenue-ready Token capacity</div>
+    <div class="tf-relation-box-detail">LLM Studio · AI Apps (RAG) · Inference (InferX) · Compute Cloud · Copilot / Cockpit / Billing Center</div>
+  </div>
+
+  <div class="tf-relation-arrow">▲</div>
+
+  <div class="tf-relation-box tf-relation-box--drun">
+    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="drun/">d.run AI OS · Enterprise AI operating system</a></div>
+    <div class="tf-relation-box-sub">Unified scheduling of heterogeneous compute, inference &amp; governance · AI for every team</div>
+    <div class="tf-relation-box-detail">Cloud-native AI (LLM Studio, AI Lab, ClawOS, InferX) · Cloud native base · Ops &amp; management</div>
+  </div>
+
+  <div class="tf-relation-arrow">▲</div>
+
+  <div class="tf-relation-box tf-relation-box--dce">
+    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="dce/">DCE · Enterprise cloud native operating system (foundation)</a></div>
+    <div class="tf-relation-box-sub">Lego-style modular assembly · Core capabilities in containers, networking, storage, middleware, observability &amp; more</div>
+  </div>
+
+  <div class="tf-relation-foot">All three are DaoCloud products sharing one cloud native foundation and AI stack — differing in who they serve and why.</div>
 
 </div>
 

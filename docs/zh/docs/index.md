@@ -7,11 +7,12 @@ hide:
 # DaoCloud 文档中心
 
 *[DCE]: DaoCloud Enterprise 的简称
+*[d.run]: DaoCloud Runs Intelligence
 
 <div class="tf-hero" markdown>
 
 DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加速企业智能化转型。
-本站提供三大产品线的文档内容，覆盖从基础设施、算力调度到模型推理和应用构建的全栈能力。
+本站提供所有产品线的文档内容，覆盖从基础设施、算力调度到模型推理和应用构建的全栈能力。
 
 <div class="tf-hero-badges">
 <a class="tf-hero-badge tf-hero-badge--tf" href="tf/">d.run Token 工厂效能平台</a>
@@ -82,6 +83,21 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 [data-md-color-scheme="slate"] .tf-relation-box-detail{color:#dae3f0}
 [data-md-color-scheme="slate"] .tf-relation-arrow{color:#7d8ba3}
 [data-md-color-scheme="slate"] .tf-relation-foot{color:#94a3b8}
+/* 首页产品跑马灯 */
+.md-typeset .doc-marquee{display:grid;gap:.7rem;margin:2rem 0 1.2rem;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.md-typeset .doc-marquee__track{display:flex;width:max-content;animation:doc-marquee-move 60s linear infinite}
+.md-typeset .doc-marquee__track--rev{animation-direction:reverse}
+.md-typeset .doc-marquee:hover .doc-marquee__track{animation-play-state:paused}
+.md-typeset .doc-marquee__group{--m-accent:#1B66F5;--m-glow:rgba(27,102,245,.16);--m-bg:#EAF1FE;--m-border:#B9CEF7;--m-hover:#D8E5FC;display:flex;gap:.7rem;padding-right:.7rem}
+.md-typeset .doc-marquee__group--ai{--m-accent:#0E9F9F;--m-glow:rgba(14,159,159,.16);--m-bg:#E3F6F5;--m-border:#A8DBD9;--m-hover:#D3EFEE}
+.md-typeset .doc-marquee__chip{display:inline-flex;align-items:center;gap:.5rem;padding:.36rem .9rem;border-radius:999px;font-size:.78rem;font-weight:500;line-height:1.4;white-space:nowrap;background:var(--m-bg);border:1px solid var(--m-border);color:#0F1D33 !important;text-decoration:none !important;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.md-typeset .doc-marquee__chip:hover{transform:translateY(-2px);border-color:var(--m-accent);background:var(--m-hover);color:#0F1D33 !important}
+.md-typeset .doc-marquee__dot{flex:none;width:7px;height:7px;border-radius:50%;background:var(--m-accent);box-shadow:0 0 0 3px var(--m-glow)}
+@keyframes doc-marquee-move{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+[data-md-color-scheme="slate"] .md-typeset .doc-marquee__group{--m-glow:rgba(27,102,245,.2);--m-bg:rgba(27,102,245,.1);--m-border:rgba(27,102,245,.35);--m-hover:rgba(27,102,245,.22)}
+[data-md-color-scheme="slate"] .md-typeset .doc-marquee__group--ai{--m-glow:rgba(14,159,159,.2);--m-bg:rgba(14,159,159,.1);--m-border:rgba(14,159,159,.35);--m-hover:rgba(14,159,159,.24)}
+[data-md-color-scheme="slate"] .md-typeset .doc-marquee__chip{color:#d5dce8 !important}
+@media (prefers-reduced-motion: reduce){.md-typeset .doc-marquee{-webkit-mask-image:none;mask-image:none}.md-typeset .doc-marquee__track{animation:none;width:auto;flex-wrap:wrap}.md-typeset .doc-marquee__group[aria-hidden="true"]{display:none}}
 </style>
 
 === ":material-factory: d.run Token 工厂效能平台"
@@ -337,36 +353,68 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
       </div>
     </div>
 
-<div class="tf-relation">
-
-  <div class="tf-relation-kicker">DaoCloud 产品族 ·「道生三，三生万物」</div>
-
-  <div class="tf-relation-box tf-relation-box--tf">
-    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="tf/">d.run Token 工厂效能平台 · 面向智算中心的 Token 生产与经营系统</a></div>
-    <div class="tf-relation-box-sub">用户/管理员双视图 · 把算力转化为可计量、可交易、可运营的 Token 产能</div>
-    <div class="tf-relation-box-detail">大模型服务平台 · AI 应用 (RAG) · 推理加速 InferX · 算力云 · Copilot/驾驶舱/费用中心</div>
-  </div>
-
-  <div class="tf-relation-arrow">▲</div>
-
-  <div class="tf-relation-box tf-relation-box--drun">
-    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="drun/">d.run AI 操作系统 · 面向企业的 AI 操作系统</a></div>
-    <div class="tf-relation-box-sub">异构算力调度 + 模型推理 + 运营治理一体 · 面向企业全部门输出 AI 服务</div>
-    <div class="tf-relation-box-detail">云原生 AI（Hydra/AI Lab/ClawOS/InferX）· 云原生底座 · 运营与运维管理</div>
-  </div>
-
-  <div class="tf-relation-arrow">▲</div>
-
-  <div class="tf-relation-box tf-relation-box--dce">
-    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="dce/">DaoCloud Enterprise · 企业级云原生操作系统（底座）</a></div>
-    <div class="tf-relation-box-sub">乐高式模块化搭建 · 容器/网络/存储/中间件/可观测/全局管理等基础能力</div>
-  </div>
-
-  <div class="tf-relation-foot">三者同属 DaoCloud 产品族，共享云原生底座与 AI 组件，差异在“服务对象”与“经营目标”</div>
-
-</div>
-
 ## 探索产品模块
+
+<div class="doc-marquee" aria-label="产品模块速览">
+  <div class="doc-marquee__track doc-marquee__track--rev">
+    <div class="doc-marquee__group doc-marquee__group--ai">
+      <a class="doc-marquee__chip" href="drun/clawos/intro/"><span class="doc-marquee__dot"></span>ClawOS</a>
+      <a class="doc-marquee__chip" href="drun/baize/intro/"><span class="doc-marquee__dot"></span>AI Lab</a>
+      <a class="doc-marquee__chip" href="tf/dak/"><span class="doc-marquee__dot"></span>AI 应用</a>
+      <a class="doc-marquee__chip" href="tf/hydra/intro/"><span class="doc-marquee__dot"></span>大模型服务平台</a>
+      <a class="doc-marquee__chip" href="tf/inferx/"><span class="doc-marquee__dot"></span>推理加速</a>
+      <a class="doc-marquee__chip" href="tf/zestu/"><span class="doc-marquee__dot"></span>算力云</a>
+      <a class="doc-marquee__chip" href="kpanda/intro/"><span class="doc-marquee__dot"></span>容器管理</a>
+      <a class="doc-marquee__chip" href="kairship/intro/"><span class="doc-marquee__dot"></span>多云编排</a>
+      <a class="doc-marquee__chip" href="kangaroo/intro/"><span class="doc-marquee__dot"></span>镜像仓库</a>
+      <a class="doc-marquee__chip" href="network/intro/"><span class="doc-marquee__dot"></span>云原生网络</a>
+      <a class="doc-marquee__chip" href="storage/"><span class="doc-marquee__dot"></span>云原生存储</a>
+      <a class="doc-marquee__chip" href="virtnest/intro/"><span class="doc-marquee__dot"></span>虚拟机</a>
+    </div>
+    <div class="doc-marquee__group doc-marquee__group--ai" aria-hidden="true">
+      <a class="doc-marquee__chip" href="drun/clawos/intro/"><span class="doc-marquee__dot"></span>ClawOS</a>
+      <a class="doc-marquee__chip" href="drun/baize/intro/"><span class="doc-marquee__dot"></span>AI Lab</a>
+      <a class="doc-marquee__chip" href="tf/dak/"><span class="doc-marquee__dot"></span>AI 应用</a>
+      <a class="doc-marquee__chip" href="tf/hydra/intro/"><span class="doc-marquee__dot"></span>大模型服务平台</a>
+      <a class="doc-marquee__chip" href="tf/inferx/"><span class="doc-marquee__dot"></span>推理加速</a>
+      <a class="doc-marquee__chip" href="tf/zestu/"><span class="doc-marquee__dot"></span>算力云</a>
+      <a class="doc-marquee__chip" href="kpanda/intro/"><span class="doc-marquee__dot"></span>容器管理</a>
+      <a class="doc-marquee__chip" href="kairship/intro/"><span class="doc-marquee__dot"></span>多云编排</a>
+      <a class="doc-marquee__chip" href="kangaroo/intro/"><span class="doc-marquee__dot"></span>镜像仓库</a>
+      <a class="doc-marquee__chip" href="network/intro/"><span class="doc-marquee__dot"></span>云原生网络</a>
+      <a class="doc-marquee__chip" href="storage/"><span class="doc-marquee__dot"></span>云原生存储</a>
+      <a class="doc-marquee__chip" href="virtnest/intro/"><span class="doc-marquee__dot"></span>虚拟机</a>
+    </div>
+  </div>
+  <div class="doc-marquee__track">
+    <div class="doc-marquee__group">
+      <a class="doc-marquee__chip" href="insight/intro/"><span class="doc-marquee__dot"></span>可观测性</a>
+      <a class="doc-marquee__chip" href="skoala/intro/"><span class="doc-marquee__dot"></span>微服务引擎</a>
+      <a class="doc-marquee__chip" href="mspider/intro/"><span class="doc-marquee__dot"></span>服务网格</a>
+      <a class="doc-marquee__chip" href="amamba/intro/"><span class="doc-marquee__dot"></span>应用工作台</a>
+      <a class="doc-marquee__chip" href="kant/intro/"><span class="doc-marquee__dot"></span>云边协同</a>
+      <a class="doc-marquee__chip" href="middleware/"><span class="doc-marquee__dot"></span>中间件</a>
+      <a class="doc-marquee__chip" href="ghippo/intro/"><span class="doc-marquee__dot"></span>全局管理</a>
+      <a class="doc-marquee__chip" href="topohub/intro/"><span class="doc-marquee__dot"></span>设备管理</a>
+      <a class="doc-marquee__chip" href="copilot/"><span class="doc-marquee__dot"></span>Copilot</a>
+      <a class="doc-marquee__chip" href="crane/intro/"><span class="doc-marquee__dot"></span>驾驶舱</a>
+      <a class="doc-marquee__chip" href="leopard/"><span class="doc-marquee__dot"></span>费用中心</a>
+    </div>
+    <div class="doc-marquee__group" aria-hidden="true">
+      <a class="doc-marquee__chip" href="insight/intro/"><span class="doc-marquee__dot"></span>可观测性</a>
+      <a class="doc-marquee__chip" href="skoala/intro/"><span class="doc-marquee__dot"></span>微服务引擎</a>
+      <a class="doc-marquee__chip" href="mspider/intro/"><span class="doc-marquee__dot"></span>服务网格</a>
+      <a class="doc-marquee__chip" href="amamba/intro/"><span class="doc-marquee__dot"></span>应用工作台</a>
+      <a class="doc-marquee__chip" href="kant/intro/"><span class="doc-marquee__dot"></span>云边协同</a>
+      <a class="doc-marquee__chip" href="middleware/"><span class="doc-marquee__dot"></span>中间件</a>
+      <a class="doc-marquee__chip" href="ghippo/intro/"><span class="doc-marquee__dot"></span>全局管理</a>
+      <a class="doc-marquee__chip" href="topohub/intro/"><span class="doc-marquee__dot"></span>设备管理</a>
+      <a class="doc-marquee__chip" href="copilot/"><span class="doc-marquee__dot"></span>Copilot</a>
+      <a class="doc-marquee__chip" href="crane/intro/"><span class="doc-marquee__dot"></span>驾驶舱</a>
+      <a class="doc-marquee__chip" href="leopard/"><span class="doc-marquee__dot"></span>费用中心</a>
+    </div>
+  </div>
+</div>
 
 <div class="grid cards home-cards" markdown>
 
@@ -423,6 +471,38 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
     - [中间件](middleware/)
     - [全局管理](ghippo/intro/)
     - [设备管理](topohub/intro/)
+    - [Copilot](./copilot/index.md)
+    - [驾驶舱](./crane/intro/index.md)
+    - [费用中心](./leopard/index.md)
+
+</div>
+
+<div class="tf-relation">
+
+  <div class="tf-relation-kicker">DaoCloud 产品族 ·「道生三，三生万物」</div>
+
+  <div class="tf-relation-box tf-relation-box--tf">
+    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="tf/">d.run Token 工厂效能平台 · 面向智算中心的 Token 生产与经营系统</a></div>
+    <div class="tf-relation-box-sub">用户/管理员双视图 · 把算力转化为可计量、可交易、可运营的 Token 产能</div>
+    <div class="tf-relation-box-detail">大模型服务平台 · AI 应用 (RAG) · 推理加速 InferX · 算力云 · Copilot/驾驶舱/费用中心</div>
+  </div>
+
+  <div class="tf-relation-arrow">▲</div>
+
+  <div class="tf-relation-box tf-relation-box--drun">
+    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="drun/">d.run AI 操作系统 · 面向企业的 AI 操作系统</a></div>
+    <div class="tf-relation-box-sub">异构算力调度 + 模型推理 + 运营治理一体 · 面向企业全部门输出 AI 服务</div>
+    <div class="tf-relation-box-detail">云原生 AI（Hydra/AI Lab/ClawOS/InferX）· 云原生底座 · 运营与运维管理</div>
+  </div>
+
+  <div class="tf-relation-arrow">▲</div>
+
+  <div class="tf-relation-box tf-relation-box--dce">
+    <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="dce/">DaoCloud Enterprise · 企业级云原生操作系统（底座）</a></div>
+    <div class="tf-relation-box-sub">乐高式模块化搭建 · 容器/网络/存储/中间件/可观测/全局管理等基础能力</div>
+  </div>
+
+  <div class="tf-relation-foot">三者同属 DaoCloud 产品族，共享云原生底座与 AI 组件，差异在“服务对象”与“经营目标”</div>
 
 </div>
 
