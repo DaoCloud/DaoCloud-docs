@@ -3,9 +3,9 @@ hide:
   - toc
 ---
 
-# 兼容性
+# Copilot 兼容性
 
-本页列出 Token 工厂 Copilot 智能体与 Kubernetes 集群的兼容性测试结果，帮助您选择合适的集群版本。
+本页列出 Copilot 智能体与 Kubernetes 集群的兼容性测试结果，帮助您选择合适的集群版本。
 
 ✅：测试通过；❌：测试未通过或不支持；空：未进行测试。
 
