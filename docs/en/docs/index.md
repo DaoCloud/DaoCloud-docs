@@ -461,6 +461,64 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
 
 ## Explore Product Modules
 
+<div class="grid cards home-cards" markdown>
+
+- :material-robot:{ .lg .middle } __Cloud Native AI__
+
+    ---
+
+    - [ClawOS](drun/clawos/intro/)
+    - [AI Lab](drun/baize/intro/)
+    - [AI Apps](tf/dak/)
+    - [LLM Studio](tf/hydra/intro/)
+    - [InferX Suite](tf/inferx/)
+    - [Compute Cloud](tf/zestu/)
+
+- :material-server:{ .lg .middle } __Containers__
+
+    ---
+
+    - [Container Management](kpanda/intro/)
+    - [Multicloud Management](kairship/intro/)
+    - [Container Registry](kangaroo/intro/)
+    - [Cloud Native Network](network/intro/)
+    - [Cloud Native Storage](storage/)
+    - [Virtual Machine](virtnest/intro/)
+
+- :material-file-document-multiple-outline:{ .lg .middle } __Microservices__
+
+    ---
+
+    - [Observability](insight/intro/)
+    - [Microservice Engine](skoala/intro/)
+    - [Service Mesh](mspider/intro/)
+
+</div>
+
+<div class="grid cards home-cards" markdown>
+
+- :material-human-greeting:{ .lg .middle } __Workbench__
+
+    ---
+
+    - [Workbench](amamba/intro/)
+
+- :material-cloud-outline:{ .lg .middle } __Edge Computing__
+
+    ---
+
+    - [Cloud Edge Collaboration](kant/intro/)
+
+- :material-database:{ .lg .middle } __Data Services and Management__
+
+    ---
+
+    - [Middleware](middleware/)
+    - [Global Management](ghippo/intro/)
+    - [Device Management](topohub/intro/)
+
+</div>
+
 <div class="doc-marquee" aria-label="Product module quick view">
   <div class="doc-marquee__track doc-marquee__track--rev">
     <div class="doc-marquee__group doc-marquee__group--ai">
@@ -520,64 +578,6 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
       <a class="doc-marquee__chip" href="leopard/"><span class="doc-marquee__dot"></span>Billing Center</a>
     </div>
   </div>
-</div>
-
-<div class="grid cards home-cards" markdown>
-
-- :material-robot:{ .lg .middle } __Cloud Native AI__
-
-    ---
-
-    - [ClawOS](drun/clawos/intro/)
-    - [AI Lab](drun/baize/intro/)
-    - [AI Apps](tf/dak/)
-    - [LLM Studio](tf/hydra/intro/)
-    - [InferX Suite](tf/inferx/)
-    - [Compute Cloud](tf/zestu/)
-
-- :material-server:{ .lg .middle } __Containers__
-
-    ---
-
-    - [Container Management](kpanda/intro/)
-    - [Multicloud Management](kairship/intro/)
-    - [Container Registry](kangaroo/intro/)
-    - [Cloud Native Network](network/intro/)
-    - [Cloud Native Storage](storage/)
-    - [Virtual Machine](virtnest/intro/)
-
-- :material-file-document-multiple-outline:{ .lg .middle } __Microservices__
-
-    ---
-
-    - [Observability](insight/intro/)
-    - [Microservice Engine](skoala/intro/)
-    - [Service Mesh](mspider/intro/)
-
-</div>
-
-<div class="grid cards home-cards" markdown>
-
-- :material-human-greeting:{ .lg .middle } __Workbench__
-
-    ---
-
-    - [Workbench](amamba/intro/)
-
-- :material-cloud-outline:{ .lg .middle } __Edge Computing__
-
-    ---
-
-    - [Cloud Edge Collaboration](kant/intro/)
-
-- :material-database:{ .lg .middle } __Data Services and Management__
-
-    ---
-
-    - [Middleware](middleware/)
-    - [Global Management](ghippo/intro/)
-    - [Device Management](topohub/intro/)
-
 </div>
 
 <div class="tf-relation">

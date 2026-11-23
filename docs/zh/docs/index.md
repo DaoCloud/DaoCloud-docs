@@ -467,67 +467,6 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
 
 ## 探索产品模块
 
-<div class="doc-marquee" aria-label="产品模块速览">
-  <div class="doc-marquee__track doc-marquee__track--rev">
-    <div class="doc-marquee__group doc-marquee__group--ai">
-      <a class="doc-marquee__chip" href="drun/clawos/intro/"><span class="doc-marquee__dot"></span>ClawOS</a>
-      <a class="doc-marquee__chip" href="drun/baize/intro/"><span class="doc-marquee__dot"></span>AI Lab</a>
-      <a class="doc-marquee__chip" href="tf/dak/"><span class="doc-marquee__dot"></span>AI 应用</a>
-      <a class="doc-marquee__chip" href="tf/hydra/intro/"><span class="doc-marquee__dot"></span>大模型服务平台</a>
-      <a class="doc-marquee__chip" href="tf/inferx/"><span class="doc-marquee__dot"></span>推理加速</a>
-      <a class="doc-marquee__chip" href="tf/zestu/"><span class="doc-marquee__dot"></span>算力云</a>
-      <a class="doc-marquee__chip" href="kpanda/intro/"><span class="doc-marquee__dot"></span>容器管理</a>
-      <a class="doc-marquee__chip" href="kairship/intro/"><span class="doc-marquee__dot"></span>多云编排</a>
-      <a class="doc-marquee__chip" href="kangaroo/intro/"><span class="doc-marquee__dot"></span>镜像仓库</a>
-      <a class="doc-marquee__chip" href="network/intro/"><span class="doc-marquee__dot"></span>云原生网络</a>
-      <a class="doc-marquee__chip" href="storage/"><span class="doc-marquee__dot"></span>云原生存储</a>
-      <a class="doc-marquee__chip" href="virtnest/intro/"><span class="doc-marquee__dot"></span>虚拟机</a>
-    </div>
-    <div class="doc-marquee__group doc-marquee__group--ai" aria-hidden="true">
-      <a class="doc-marquee__chip" href="drun/clawos/intro/"><span class="doc-marquee__dot"></span>ClawOS</a>
-      <a class="doc-marquee__chip" href="drun/baize/intro/"><span class="doc-marquee__dot"></span>AI Lab</a>
-      <a class="doc-marquee__chip" href="tf/dak/"><span class="doc-marquee__dot"></span>AI 应用</a>
-      <a class="doc-marquee__chip" href="tf/hydra/intro/"><span class="doc-marquee__dot"></span>大模型服务平台</a>
-      <a class="doc-marquee__chip" href="tf/inferx/"><span class="doc-marquee__dot"></span>推理加速</a>
-      <a class="doc-marquee__chip" href="tf/zestu/"><span class="doc-marquee__dot"></span>算力云</a>
-      <a class="doc-marquee__chip" href="kpanda/intro/"><span class="doc-marquee__dot"></span>容器管理</a>
-      <a class="doc-marquee__chip" href="kairship/intro/"><span class="doc-marquee__dot"></span>多云编排</a>
-      <a class="doc-marquee__chip" href="kangaroo/intro/"><span class="doc-marquee__dot"></span>镜像仓库</a>
-      <a class="doc-marquee__chip" href="network/intro/"><span class="doc-marquee__dot"></span>云原生网络</a>
-      <a class="doc-marquee__chip" href="storage/"><span class="doc-marquee__dot"></span>云原生存储</a>
-      <a class="doc-marquee__chip" href="virtnest/intro/"><span class="doc-marquee__dot"></span>虚拟机</a>
-    </div>
-  </div>
-  <div class="doc-marquee__track">
-    <div class="doc-marquee__group">
-      <a class="doc-marquee__chip" href="insight/intro/"><span class="doc-marquee__dot"></span>可观测性</a>
-      <a class="doc-marquee__chip" href="skoala/intro/"><span class="doc-marquee__dot"></span>微服务引擎</a>
-      <a class="doc-marquee__chip" href="mspider/intro/"><span class="doc-marquee__dot"></span>服务网格</a>
-      <a class="doc-marquee__chip" href="amamba/intro/"><span class="doc-marquee__dot"></span>应用工作台</a>
-      <a class="doc-marquee__chip" href="kant/intro/"><span class="doc-marquee__dot"></span>云边协同</a>
-      <a class="doc-marquee__chip" href="middleware/"><span class="doc-marquee__dot"></span>中间件</a>
-      <a class="doc-marquee__chip" href="ghippo/intro/"><span class="doc-marquee__dot"></span>全局管理</a>
-      <a class="doc-marquee__chip" href="topohub/intro/"><span class="doc-marquee__dot"></span>设备管理</a>
-      <a class="doc-marquee__chip" href="copilot/"><span class="doc-marquee__dot"></span>Copilot</a>
-      <a class="doc-marquee__chip" href="crane/intro/"><span class="doc-marquee__dot"></span>驾驶舱</a>
-      <a class="doc-marquee__chip" href="leopard/"><span class="doc-marquee__dot"></span>费用中心</a>
-    </div>
-    <div class="doc-marquee__group" aria-hidden="true">
-      <a class="doc-marquee__chip" href="insight/intro/"><span class="doc-marquee__dot"></span>可观测性</a>
-      <a class="doc-marquee__chip" href="skoala/intro/"><span class="doc-marquee__dot"></span>微服务引擎</a>
-      <a class="doc-marquee__chip" href="mspider/intro/"><span class="doc-marquee__dot"></span>服务网格</a>
-      <a class="doc-marquee__chip" href="amamba/intro/"><span class="doc-marquee__dot"></span>应用工作台</a>
-      <a class="doc-marquee__chip" href="kant/intro/"><span class="doc-marquee__dot"></span>云边协同</a>
-      <a class="doc-marquee__chip" href="middleware/"><span class="doc-marquee__dot"></span>中间件</a>
-      <a class="doc-marquee__chip" href="ghippo/intro/"><span class="doc-marquee__dot"></span>全局管理</a>
-      <a class="doc-marquee__chip" href="topohub/intro/"><span class="doc-marquee__dot"></span>设备管理</a>
-      <a class="doc-marquee__chip" href="copilot/"><span class="doc-marquee__dot"></span>Copilot</a>
-      <a class="doc-marquee__chip" href="crane/intro/"><span class="doc-marquee__dot"></span>驾驶舱</a>
-      <a class="doc-marquee__chip" href="leopard/"><span class="doc-marquee__dot"></span>费用中心</a>
-    </div>
-  </div>
-</div>
-
 <div class="grid cards home-cards" markdown>
 
 - :material-robot:{ .lg .middle } __云原生 AI__
@@ -587,6 +526,68 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
     - [驾驶舱](./crane/intro/index.md)
     - [费用中心](./leopard/index.md)
 
+</div>
+
+
+<div class="doc-marquee" aria-label="产品模块速览">
+  <div class="doc-marquee__track doc-marquee__track--rev">
+    <div class="doc-marquee__group doc-marquee__group--ai">
+      <a class="doc-marquee__chip" href="drun/clawos/intro/"><span class="doc-marquee__dot"></span>ClawOS</a>
+      <a class="doc-marquee__chip" href="drun/baize/intro/"><span class="doc-marquee__dot"></span>AI Lab</a>
+      <a class="doc-marquee__chip" href="tf/dak/"><span class="doc-marquee__dot"></span>AI 应用</a>
+      <a class="doc-marquee__chip" href="tf/hydra/intro/"><span class="doc-marquee__dot"></span>大模型服务平台</a>
+      <a class="doc-marquee__chip" href="tf/inferx/"><span class="doc-marquee__dot"></span>推理加速</a>
+      <a class="doc-marquee__chip" href="tf/zestu/"><span class="doc-marquee__dot"></span>算力云</a>
+      <a class="doc-marquee__chip" href="kpanda/intro/"><span class="doc-marquee__dot"></span>容器管理</a>
+      <a class="doc-marquee__chip" href="kairship/intro/"><span class="doc-marquee__dot"></span>多云编排</a>
+      <a class="doc-marquee__chip" href="kangaroo/intro/"><span class="doc-marquee__dot"></span>镜像仓库</a>
+      <a class="doc-marquee__chip" href="network/intro/"><span class="doc-marquee__dot"></span>云原生网络</a>
+      <a class="doc-marquee__chip" href="storage/"><span class="doc-marquee__dot"></span>云原生存储</a>
+      <a class="doc-marquee__chip" href="virtnest/intro/"><span class="doc-marquee__dot"></span>虚拟机</a>
+    </div>
+    <div class="doc-marquee__group doc-marquee__group--ai" aria-hidden="true">
+      <a class="doc-marquee__chip" href="drun/clawos/intro/"><span class="doc-marquee__dot"></span>ClawOS</a>
+      <a class="doc-marquee__chip" href="drun/baize/intro/"><span class="doc-marquee__dot"></span>AI Lab</a>
+      <a class="doc-marquee__chip" href="tf/dak/"><span class="doc-marquee__dot"></span>AI 应用</a>
+      <a class="doc-marquee__chip" href="tf/hydra/intro/"><span class="doc-marquee__dot"></span>大模型服务平台</a>
+      <a class="doc-marquee__chip" href="tf/inferx/"><span class="doc-marquee__dot"></span>推理加速</a>
+      <a class="doc-marquee__chip" href="tf/zestu/"><span class="doc-marquee__dot"></span>算力云</a>
+      <a class="doc-marquee__chip" href="kpanda/intro/"><span class="doc-marquee__dot"></span>容器管理</a>
+      <a class="doc-marquee__chip" href="kairship/intro/"><span class="doc-marquee__dot"></span>多云编排</a>
+      <a class="doc-marquee__chip" href="kangaroo/intro/"><span class="doc-marquee__dot"></span>镜像仓库</a>
+      <a class="doc-marquee__chip" href="network/intro/"><span class="doc-marquee__dot"></span>云原生网络</a>
+      <a class="doc-marquee__chip" href="storage/"><span class="doc-marquee__dot"></span>云原生存储</a>
+      <a class="doc-marquee__chip" href="virtnest/intro/"><span class="doc-marquee__dot"></span>虚拟机</a>
+    </div>
+  </div>
+  <div class="doc-marquee__track">
+    <div class="doc-marquee__group">
+      <a class="doc-marquee__chip" href="insight/intro/"><span class="doc-marquee__dot"></span>可观测性</a>
+      <a class="doc-marquee__chip" href="skoala/intro/"><span class="doc-marquee__dot"></span>微服务引擎</a>
+      <a class="doc-marquee__chip" href="mspider/intro/"><span class="doc-marquee__dot"></span>服务网格</a>
+      <a class="doc-marquee__chip" href="amamba/intro/"><span class="doc-marquee__dot"></span>应用工作台</a>
+      <a class="doc-marquee__chip" href="kant/intro/"><span class="doc-marquee__dot"></span>云边协同</a>
+      <a class="doc-marquee__chip" href="middleware/"><span class="doc-marquee__dot"></span>中间件</a>
+      <a class="doc-marquee__chip" href="ghippo/intro/"><span class="doc-marquee__dot"></span>全局管理</a>
+      <a class="doc-marquee__chip" href="topohub/intro/"><span class="doc-marquee__dot"></span>设备管理</a>
+      <a class="doc-marquee__chip" href="copilot/"><span class="doc-marquee__dot"></span>Copilot</a>
+      <a class="doc-marquee__chip" href="crane/intro/"><span class="doc-marquee__dot"></span>驾驶舱</a>
+      <a class="doc-marquee__chip" href="leopard/"><span class="doc-marquee__dot"></span>费用中心</a>
+    </div>
+    <div class="doc-marquee__group" aria-hidden="true">
+      <a class="doc-marquee__chip" href="insight/intro/"><span class="doc-marquee__dot"></span>可观测性</a>
+      <a class="doc-marquee__chip" href="skoala/intro/"><span class="doc-marquee__dot"></span>微服务引擎</a>
+      <a class="doc-marquee__chip" href="mspider/intro/"><span class="doc-marquee__dot"></span>服务网格</a>
+      <a class="doc-marquee__chip" href="amamba/intro/"><span class="doc-marquee__dot"></span>应用工作台</a>
+      <a class="doc-marquee__chip" href="kant/intro/"><span class="doc-marquee__dot"></span>云边协同</a>
+      <a class="doc-marquee__chip" href="middleware/"><span class="doc-marquee__dot"></span>中间件</a>
+      <a class="doc-marquee__chip" href="ghippo/intro/"><span class="doc-marquee__dot"></span>全局管理</a>
+      <a class="doc-marquee__chip" href="topohub/intro/"><span class="doc-marquee__dot"></span>设备管理</a>
+      <a class="doc-marquee__chip" href="copilot/"><span class="doc-marquee__dot"></span>Copilot</a>
+      <a class="doc-marquee__chip" href="crane/intro/"><span class="doc-marquee__dot"></span>驾驶舱</a>
+      <a class="doc-marquee__chip" href="leopard/"><span class="doc-marquee__dot"></span>费用中心</a>
+    </div>
+  </div>
 </div>
 
 <div class="tf-relation">
