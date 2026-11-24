@@ -10,7 +10,7 @@ site_description: >-
   DaoCloud 是全球 AI 领域的开源先锋，引领 AI 技术浪潮，助力推动数字化转型。
 
 # copyright
-copyright: Copyright &copy; 2016 - 2026 DaoCloud
+copyright: Copyright &copy; 2016 - 2026 DaoCloud&nbsp;&nbsp;|&nbsp;&nbsp;<a href="mailto:info@daocloud.io">info@daocloud.io</a>&nbsp;&nbsp;|&nbsp;&nbsp;400 002 6898
 
 # Repository
 repo_name: DaoCloud/DaoCloud-docs
