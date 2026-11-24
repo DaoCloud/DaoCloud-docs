@@ -162,14 +162,14 @@ nav:
               - Reference:
                   - Gateway API Instance Access: drun/clawos/reference/gateway-access.md
               - FAQ: drun/clawos/faq.md
-          - InferX Suite:
-              - What is InferX: drun/inferx/index.md
+          - Turbo Inference:
+              - What is Turbo Inference: drun/inferx/index.md
               - FAQs: drun/inferx/faqs.md
               - Best Practices:
-                  - Install InferX in Offline Environment: drun/inferx/guides/offline.md
+                  - Install Turbo Inference Offline: drun/inferx/guides/offline.md
                   - Enable Istio GAIE Feature for Cluster: drun/inferx/guides/enable-istio-gaie-with-mspider.md
-                  - Model Weight Download and Configuration: drun/inferx/guides/model-weights-setup.md
-                  - Expose Model Service Externally (Hydra/Knoway): drun/inferx/guides/export-by-hydra.md
+                  - Download and Set Model Weight: drun/inferx/guides/model-weights-setup.md
+                  - Expose Model Service (Hydra/Knoway): drun/inferx/guides/export-by-hydra.md
       - Cloud Native Infra:
           - Container Management:
               - drun/kpanda/intro/index.md

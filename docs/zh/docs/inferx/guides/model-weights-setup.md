@@ -1,4 +1,4 @@
-# 模型权重下载与配置
+# 下载与配置模型权重
 
 *[InferX]: 推理加速服务的开发代号
 
@@ -10,7 +10,7 @@
 
 ## 模型权重管理方式
 
-InferX 支持以下两种模型权重管理方式：
+推理加速支持以下两种模型权重管理方式：
 
 | 方式     | 说明                                       | 推荐程度 |
 | -------- | ------------------------------------------ | -------- |
@@ -102,7 +102,9 @@ spec:
 
 在 Hydra 模型广场中，模型权重通常保存在 `public` 命名空间下。为了避免重复下载，您可以在目标命名空间中创建一个引用型 Dataset，指向已有的权重数据。
 
-> **注意**：被引用的 Dataset 必须设置 `spec.share: true`，并且（如果设置了 `shareToNamespaceSelector`）需要确保目标命名空间被包含在内。
+!!! note 
+
+    被引用的 Dataset 必须设置 `spec.share: true`，并且（如果设置了 `shareToNamespaceSelector`）需要确保目标命名空间被包含在内。
 
 ```yaml
 apiVersion: dataset.baizeai.io/v1alpha1
@@ -113,8 +115,10 @@ metadata:
 spec:
   source:
     type: REFERENCE
-    uri: dataset://public/qwen3-0-6b   # 格式为 dataset://[命名空间]/[Dataset 名称]
+    uri: dataset://public/qwen3-0-6b  # (1)!
 ```
+
+1. 格式为 dataset://[命名空间]/[Dataset 名称]
 
 ### Dataset 与 PVC 对应关系
 
@@ -127,11 +131,11 @@ metadata:
   name: inferx-modelcache-qwen3-0-6b
   namespace: default
   labels:
-    baize.io/dataset-name: inferx-modelcache-qwen3-0-6b   # 关联的 Dataset 名称
+    baize.io/dataset-name: inferx-modelcache-qwen3-0-6b # (1)!
   ownerReferences:
     - apiVersion: dataset.baizeai.io/v1alpha1
       kind: Dataset
-      name: inferx-modelcache-qwen3-0-6b                 # 所属 Dataset
+      name: inferx-modelcache-qwen3-0-6b # (2)!
 spec:
   accessModes:
     - ReadWriteMany
@@ -143,22 +147,30 @@ spec:
   volumeMode: Filesystem
 ```
 
-### 在 InferX 中使用 Dataset 模型
+1. 关联的 Dataset 名称
+2. 所属 Dataset
 
-在部署 InferX 推理服务时，可以通过 Helm Values 指定模型权重的 PVC 挂载路径。以下是一个示例片段：
+### 在推理加速中使用 Dataset 模型
+
+在部署推理加速服务时，可以通过 Helm Values 指定模型权重的 PVC 挂载路径。以下是一个示例片段：
 
 ```yaml
 llm-d-modelservice:
   enabled: true
   llm-d-modelservice:
     modelArtifacts:
-      name: "Qwen/Qwen3-0.6B"               # 模型名称，用于标识 served-model-name
-      uri: "pvc://inferx-modelcache-qwen3-0-6b/"   # 注意：必须使用 pvc://<PVC 名称>/<模型在 PVC 中的子路径> 格式
-      mountPath: /model-cache               # 模型权重在容器内的挂载路径，通常保持默认
+      name: "Qwen/Qwen3-0.6B"  # (1)! 
+      uri: "pvc://inferx-modelcache-qwen3-0-6b/" # (2)!
+      mountPath: /model-cache # (3)!
       labels:
-        app: qwen3-0.6b                       # 模型服务 Pod 的标签，需与 inferencepool 的 matchLabels 一致
+        app: qwen3-0.6b # (4)!
         llm-d.ai/inference-serving: "true"
 ```
+
+1. 模型名称，用于标识 served-model-name
+2. 注意：必须使用 pvc://<PVC 名称>/<模型在 PVC 中的子路径> 格式
+3. 模型权重在容器内的挂载路径，通常保持默认
+4. 模型服务 Pod 的标签，需与 inferencepool 的 matchLabels 一致
 
 **URI 格式说明**：`pvc://<PVC 名称>/<模型在 PVC 中的子路径>`.
 
@@ -173,7 +185,7 @@ llm-d-modelservice:
 
 ### 方式一：通过 PVC 挂载共享存储
 
-先在共享存储（例如 NFS / JuiceFS）中准备好模型文件，然后创建 PVC 并在 InferX 中引用。
+先在共享存储（例如 NFS/JuiceFS）中准备好模型文件，然后创建 PVC 并在推理加速中引用。
 
 示例配置：
 
@@ -183,12 +195,14 @@ llm-d-modelservice:
   llm-d-modelservice:
     modelArtifacts:
       name: "Qwen/Qwen3-0.6B"
-      uri: "pvc://custom-share-models/qwen06b"   # pvc://[共享目录 PVC 名称][模型路径]
+      uri: "pvc://custom-share-models/qwen06b" # (1)!
       mountPath: /model-cache
       labels:
         app: qwen3-0.6b
         llm-d.ai/inference-serving: "true"
 ```
+
+1. pvc://[共享目录 PVC 名称][模型路径]
 
 ### 方式二：通过自定义容器挂载模型目录
 

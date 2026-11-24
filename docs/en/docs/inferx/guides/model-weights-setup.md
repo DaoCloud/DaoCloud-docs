@@ -1,6 +1,6 @@
-# Model Weight Download and Configuration
+# Download and Configure Model Weights
 
-*[InferX]: The development codename for the Inference Acceleration Service
+*[InferX]: The development codename for Turbo Inference
 
 Before deploying a large model inference service, you need to download the model weight files to a storage location accessible by the inference service.
 
@@ -10,7 +10,7 @@ If Dataset is temporarily unavailable in your environment, you can also mount ex
 
 ## Model Weight Management Methods
 
-InferX supports the following two model weight management methods:
+Turbo Inference supports the following two model weight management methods:
 
 | Method | Description | Recommended |
 | -------- | ------------------------------------------ | -------- |
@@ -102,7 +102,9 @@ After creating the Dataset, the system automatically starts a Job to download th
 
 In the Hydra model plaza, model weights are typically stored in the `public` namespace. To avoid repeated downloads, you can create a reference-type Dataset in the target namespace pointing to the existing weight data.
 
-> **Note**: The referenced Dataset must have `spec.share: true` set, and (if `shareToNamespaceSelector` is configured) the target namespace must be included.
+!!! note
+
+    The referenced Dataset must have `spec.share: true` set, and (if `shareToNamespaceSelector` is configured) the target namespace must be included.
 
 ```yaml
 apiVersion: dataset.baizeai.io/v1alpha1
@@ -113,8 +115,10 @@ metadata:
 spec:
   source:
     type: REFERENCE
-    uri: dataset://public/qwen3-0-6b   # Format is dataset://[namespace]/[Dataset name]
+    uri: dataset://public/qwen3-0-6b # (1)!
 ```
+
+1. Format is dataset://[namespace]/[Dataset name]
 
 ### Dataset and PVC Correspondence
 
@@ -127,11 +131,11 @@ metadata:
   name: inferx-modelcache-qwen3-0-6b
   namespace: default
   labels:
-    baize.io/dataset-name: inferx-modelcache-qwen3-0-6b   # Associated Dataset name
+    baize.io/dataset-name: inferx-modelcache-qwen3-0-6b # (1)!
   ownerReferences:
     - apiVersion: dataset.baizeai.io/v1alpha1
       kind: Dataset
-      name: inferx-modelcache-qwen3-0-6b                 # Owning Dataset
+      name: inferx-modelcache-qwen3-0-6b # (2)!
 spec:
   accessModes:
     - ReadWriteMany
@@ -143,22 +147,30 @@ spec:
   volumeMode: Filesystem
 ```
 
-### Using Dataset Models in InferX
+1. The associated Dataset name
+2. The owning Dataset
 
-When deploying an InferX inference service, you can specify the PVC mount path for model weights via Helm Values. Here is an example snippet:
+### Using Dataset Models in Turbo Inference
+
+When deploying a Turbo Inference service, you can specify the PVC mount path for model weights via Helm Values. Here is an example snippet:
 
 ```yaml
 llm-d-modelservice:
   enabled: true
   llm-d-modelservice:
     modelArtifacts:
-      name: "Qwen/Qwen3-0.6B"               # Model name, used to identify served-model-name
-      uri: "pvc://inferx-modelcache-qwen3-0-6b/"   # Note: must use pvc://<PVC name>/<model subpath in PVC> format
-      mountPath: /model-cache               # Mount path of model weights in the container, typically keep default
+      name: "Qwen/Qwen3-0.6B" # (1)!
+      uri: "pvc://inferx-modelcache-qwen3-0-6b/" # (2)!
+      mountPath: /model-cache # (3)!
       labels:
-        app: qwen3-0.6b                       # Label for model service Pods, must match inferencepool's matchLabels
+        app: qwen3-0.6b # (4)!
         llm-d.ai/inference-serving: "true"
 ```
+
+1. Model name, used to identify served-model-name
+2. Note: must use pvc://<PVC name>/<model subpath in PVC> format
+3. Mount path of model weights in the container, typically keep default
+4. Label for model service Pods, must match inferencepool's matchLabels
 
 **URI Format Description**: `pvc://<PVC name>/<model subpath in PVC>`.
 
@@ -173,7 +185,7 @@ Common methods include the following two.
 
 ### Method 1: Mount Shared Storage via PVC
 
-First prepare the model files in shared storage (e.g., NFS / JuiceFS), then create a PVC and reference it in InferX.
+First prepare the model files in shared storage (e.g., NFS/JuiceFS), then create a PVC and reference it in Turbo Inference.
 
 Example configuration:
 
@@ -183,12 +195,14 @@ llm-d-modelservice:
   llm-d-modelservice:
     modelArtifacts:
       name: "Qwen/Qwen3-0.6B"
-      uri: "pvc://custom-share-models/qwen06b"   # pvc://[shared directory PVC name][model path]
+      uri: "pvc://custom-share-models/qwen06b" # (1)!
       mountPath: /model-cache
       labels:
         app: qwen3-0.6b
         llm-d.ai/inference-serving: "true"
 ```
+
+1. pvc://[shared directory PVC name][model path]
 
 ### Method 2: Mount Model Directory via Custom Container
 
