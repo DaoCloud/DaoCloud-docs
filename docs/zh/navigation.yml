@@ -1487,6 +1487,7 @@ nav:
                   - 接入设备: topohub/device/index.md
                   - 批量接入设备: topohub/device/batch-access.md
                   - 管理设备: topohub/device/manage-device.md
+          - DCE 小助手: copilot/dce-assistant.md
   - 下载中心:
       - DaoCloud 下载站:
           - download/index.md
