@@ -3,6 +3,95 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2026-11-20
+
+### v0.51.1
+
+- **Added** the `id` query parameter to the user list API to filter by exact user ID
+  (`GET /apis/ghippo.io/v1alpha1/users?id=<userId>`).
+- **Added** an API to create CSP users.
+- **Fixed** a security issue by adjusting the Keycloak JVM configuration to mitigate
+  [CVE-2026-114938](https://access.redhat.com/security/cve/cve-2026-114938).
+
+### v0.50.1
+
+- **Added** a CSP account lookup API with support for finding sub-accounts by ID.
+- **Added** support for referencing an existing Secret via `global.existingSecret` in the Helm chart.
+- **Added** support for creating users within folders.
+- **Fixed** a security issue by adjusting the Keycloak JVM configuration to mitigate
+  [CVE-2026-114938](https://access.redhat.com/security/cve/cve-2026-114938).
+
+### v0.49.3
+
+- **Added** support for displaying the Copilot button in the navigation bar through the Header Actions API.
+- **Added** support for sending SMS messages from Keycloak through a webhook.
+- **Fixed** an issue where automatic cleanup of certificate and authentication jobs repeatedly caused Argo CD
+  applications to go out of sync.
+- **Fixed** an error logged when a gateway was first created and its TLS Secret did not yet exist.
+- **Fixed** a Helm rollback failure where a leftover certificate job triggered a `field is immutable` error.
+- **Fixed** a security issue by adjusting the Keycloak JVM configuration to mitigate
+  [CVE-2026-114938](https://access.redhat.com/security/cve/cve-2026-114938).
+
+<a id="2025-06-30"></a>
+<a id="v0381"></a>
+
+### v0.38.2
+
+- **Added** support to display the most recent login time of `LDAP` users.
+- **Added** quota management UI adaptation for `Ascend 910 VIR` type `GPU`.
+- **Fixed** issue where some permission points were empty when viewing role details.
+- **Fixed** a security issue by adjusting the Keycloak JVM configuration to mitigate
+  [CVE-2026-114938](https://access.redhat.com/security/cve/cve-2026-114938).
+
+<a id="2024-9-30"></a>
+<a id="v0310"></a>
+
+### v0.31.2
+
+- **Added** support for username encryption when creating users
+- **Added** custom roles that support Container Management folders and workspace roles, and allow their permission points to be mapped to predefined roles in Container Management
+- **Fixed** an error related to excessively long license expiration periods.
+- **Fixed** an error encountered when a resource is unbound from a workspace.
+- **Fixed** an issue where the query methods for reports of the same type are inconsistent in __Global Management__ -> __Operations Management__ .
+- **Fixed** a security issue by adjusting the Keycloak JVM configuration to mitigate
+  [CVE-2026-114938](https://access.redhat.com/security/cve/cve-2026-114938).
+
+## 2026-07-07
+
+### v0.48.1
+
+- **Added** support for displaying the Copilot button in the navigation bar.
+- **Fixed** an issue with workspace vGPU quota calculation.
+- **Fixed** an issue where filtering the navigation menu for non-admin users changed the shared cache
+  and affected subsequent menu displays.
+- **Added** Japanese language support for the UI in **Operations Management** (v0.14.2).
+- **Fixed** vGPU statistics in **Operations Management** and excluded GPU models without matching allocation records from reports.
+- **Fixed** an issue in **Operations Management** where recalculation jobs skipped historical alert, audit, and cost data
+  for the requested dates.
+
+## 2026-06-03
+
+### v0.47.0
+
+- **Added** navigation menu support for Token Factory.
+- **Added** support for displaying `shortcut` navigation menu items based on user permissions.
+- **Fixed** an issue where unescaped commas in fields such as `User-Agent` shifted subsequent columns in audit log CSV exports.
+
+## 2026-03-02
+
+<a id="v0450"></a>
+
+### v0.45.1
+
+- **Added** (CSP) API support for user invitation registration and identity binding.
+- **Added** API support for integrating GProduct via Webhook.
+- **Added** API support for create, read, update, and delete operations on event notification.
+- **Optimized** SMS channel configuration approach.
+- **Fixed** issue where password reset SMS sending failed within a short time window.
+- **Fixed** an issue where the platform did not call a configured webhook when the corresponding action occurred.
+- **Added** API support for triggering historical data recalculation in **Operations Management** (v0.13.0).
+- **Fixed** permission checks for some APIs in **Operations Management**.
+
 ## 2026-01-31
 
 ### v0.46.0
@@ -10,18 +99,7 @@ so that you can understand the evolution path and feature changes of each versio
 * **Added** support for integrating SMS features via Webhook.
 * **Added** Japanese i18n support.
 * **Fixed** an issue where SMTP mail server username and password could not be saved as empty.
-* **Optimized** user displays to include firstname/lastname information.
 * **Optimized** SMTP email connection testing to support auto-adaptation of Plain, Noauth, and Login encryption methods.
-
-## 2025-12-31
-
-### v0.45.0
-
-* **Added** (CSP) API support for user invitation registration and identity binding.
-* **Added** API support for integrating GProduct via Webhook.
-* **Added** API support for create, read, update, and delete operations on event notification.
-* **Optimized** SMS channel configuration approach.
-* **Fixed** issue where password reset SMS sending failed within a short time window.
 
 ## 2025-11-30
 
@@ -33,7 +111,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ## 2025-10-31
 
-## v0.43.0
+### v0.43.0
 
 - **Added** (CSP) encryption support for usernames, mobile numbers, and passwords.
 - **Added** (CSP) APIs that allow operations teams to create records in the `domains` and `sms_templates` tables.
@@ -44,7 +122,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.42.0
 
-- **Added** an API that returns username information for the current user.
+- **Added** username information to the current user API response.
 - **Added** (CSP) support for primary accounts to view audit logs.
 - **Added** (CSP) audit logging for create, update, delete, and query operations on sub-accounts.
 - **Added** (CSP) support for returning different sub-tenant Alipay payment links and real-name authentication based on the `domain`.
@@ -78,14 +156,8 @@ so that you can understand the evolution path and feature changes of each versio
 - **Fixed** an issue where disabling two-factor authentication caused password reset to show `OTP` reset.  
 - **Fixed** an issue where the frontend failed to fetch information from identity providers
   via the `OIDC` protocol in one click.  
-
-## 2025-06-30
-
-### v0.38.1
-
-* **Added** support to display the most recent login time of `LDAP` users.
-* **Added** quota management UI adaptation for `Ascend 910 VIR` type `GPU`.
-* **Fixed** issue where some permission points were empty when viewing role details.
+- **Fixed** an issue where the login page icon and background did not display correctly.
+- **Fixed** an issue where graphics were missing from customized login pages.
 
 ## 2025-05-31
 
@@ -99,7 +171,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.36.0
 
-- **Added** service topology view into observability module.
+- **Added** integration with the upgraded observability service topology feature.
 - **Fixed** an issue where user `OpenAPI` tokens were missing assigned user group permissions.
 - **Fixed** an issue preventing `LDAP` users from changing their language settings.
 
@@ -144,20 +216,10 @@ so that you can understand the evolution path and feature changes of each versio
 ### v0.32.0
 
 - **Added** sidecar version role permission SDK
-- **Added** cloud-native AI related permission points in Workspace Editor
-- **Added** encryption implementation for username and password in session-limit interface
+- **Improved** Workspace Editor by adding cloud-native AI permissions
+- **Improved** the session-limit API by encrypting usernames and passwords
 - **Fixed** an issue where the corresponding field was not cleared after re-setting
   user LDAP filter to empty during synchronization
-
-## 2024-9-30
-
-### v0.31.0
-
-- **Added** support for username encryption when creating users
-- **Added** custom roles that support Container Management folders and workspace roles, and allow their permission points to be mapped to predefined roles in Container Management
-- **Fixed** an error related to excessively long license expiration periods.
-- **Fixed** an error encountered when a resource is unbound from a workspace.
-- **Fixed** an issue where the query methods for reports of the same type are inconsistent in __Global Management__ -> __Operations Management__ .
 
 ## 2024-8-31
 
@@ -209,7 +271,7 @@ so that you can understand the evolution path and feature changes of each versio
 #### Fixes
 
 - **Fixed** an issue that authorized users with a custom role can see all workspaces
-- **Fixed** an issue that the RBAC Access Denied page will appear on the Insight page after closing the browser and reopening it
+- **Fixed** an issue where Insight and other pages showed RBAC Access Denied after reopening the browser
 - **Fixed** an issue that the exported report has inconsistent fields with those shown on the page in __Global Management__ -> __Operations Management__
 
 ## 2024-5-31
@@ -250,7 +312,7 @@ so that you can understand the evolution path and feature changes of each versio
 #### Features
 
 - **Added** a feature where top-level navigation bar is displayed based on permissions
-- **Added** a feature where Workspace/Folder Editor does not support changing Workspace/Folder and names
+- **Added** a restriction that prevents Workspace and Folder Editors from renaming workspaces or folders
 - **Added** Ghippo support for ARM offline installation packages
 - **Added** a method provided by SDK to find Alias using Workspace ID GetWorkspaceById()
 - **Added** __Operations Management__ -> Report Management -> Pod Report: GPU statistics
@@ -268,7 +330,7 @@ so that you can understand the evolution path and feature changes of each versio
 #### Features
 
 - **Added** resource quotas limiting GPU
-- **Added** support for DCE5 logged-in users to access Insight's Grafana and other components
+- **Added** a restriction that allows only signed-in DCE users to access Insight's Grafana and other component interfaces
 
 #### Improvements
 
@@ -361,7 +423,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 - **Added** connection with Enterprise WeChat
 - **Added** support for 8-32 character passwords
-- **Added** support for integrating Kant license for cloud-edge collaboration
+- **Added** support for license integration in Kant (Cloud-Edge Collaboration)
 - **Added** Operations Management support for postgres/kingbase databases
 - **Improved** added primary keys to some database tables without primary keys
 
@@ -403,9 +465,9 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Features
 
-- **Added** the feature of workspace migration
-- **Added** features to create/edit/delete/list/view Webhook in Access Control
-- **Added** a feature to automaticlly cleanup Webhook record in Access Control
+- **Added** support for moving workspaces
+- **Added** support for creating, editing, deleting, listing, and viewing webhooks in the Docking Portal
+- **Added** automatic cleanup of webhook records in the Docking Portal
 - **Added** License expiration reminder
 - **Added** License function unavailable after expiration
 - **Added** the setting where users must enter the old password when changing passwords
@@ -436,10 +498,10 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Features
 
-- **Added** features to access clients (create/view/list/update/delete)in Access Control
-- **Added** features to create/edit/delete/list/view Webhook API in Access Control
+- **Added** support for creating, viewing, listing, updating, and deleting clients in the Docking Portal
+- **Added** API support for creating, editing, deleting, listing, and viewing webhooks in the Docking Portal
 - **Added** user CRUD/Login/Logout events triggering Webhook
-- **Added** Access Control permission
+- **Added** Docking Portal permissions
 - **Added** support for `.` and `@` in usernames/group names
 - **Added** a feature where platform default language changes to auto-detected browser preference
 - **Added** a feature of downloading audit logs as Excel and CSV formats
@@ -485,7 +547,7 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** support for changing the login page background image
 - **Added** support for modifying the ICP information at the bottom of the homepage and login page (update/display)
 - **Added** support for modifying database connection Helm parameter format
-- **Added** access management: access client API (create/view/list/update/delete)
+- **Added** API support for creating, viewing, listing, updating, and deleting clients in the Docking Portal
 - **Added** support for adding Path prefix to proxy URL
 - **Added** Audit Logs SDK to directly call AuditServer API
 - **Added** separate storage for user and system audit logs, with separate API access
@@ -614,7 +676,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Fixes
 
-- **Fixed** an issue with resource group binding to clusters
+- **Fixed** an issue by disabling cluster binding for resource groups
 - **Fixed** an issue where workspaces could not be created when there were no workspaces
 
 ## 2022-10-28
