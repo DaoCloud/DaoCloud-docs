@@ -8,6 +8,12 @@ date: 2024-10-10
 This page lists the release notes of Multicloud Management module,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2026-11-24
+
+### v0.25.0
+
+- **Fixed** a security vulnerability in Nginx.
+
 ## 2024-10-31  
 
 ### v0.24.0  
@@ -136,8 +142,6 @@ so that you can understand the evolution path and feature changes of each versio
 #### Improvements
 
 - **Improved** the data source for excluding clusters in deployment strategies.
-
-Sure! Here is the revised text with the requested style change:
 
 ## 2023-05-29
 
