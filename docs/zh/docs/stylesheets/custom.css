@@ -61,7 +61,9 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
 }
 
 .md-copyright .md-footer-qr {
