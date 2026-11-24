@@ -9,11 +9,34 @@
 *[SR-IOV]: Single Root IO Virtualization 的缩写，一种网卡虚拟化的技术
 *[RDMA]: Remote Direct Memory Access 的缩写，即远程直接内存访问，这是一个支撑 LLM 大模型和 GPT 的热门技术
 
+## 2026-10-30
+
+### v0.19.2
+
+- **新增** eni-vlan CNI 类型的 CRUD 支持，包含 masters、ippools 以及 `validateIaasNetConfig`（网关连通性检查开关）配置。
+- **新增** IaaS provider 模式下创建 SpiderIPPool 时自动添加 `ipam.spidernet.io/iaas-provider:` 注解，由 Spiderpool webhook 同步为外部 provider 监听的 label。
+- **移除** vlan CNI 的 vlanMode 配置，仅保留静态 vlanId。
+- **升级** Spiderpool 依赖至 v1.3.0-rc0，并适配 `IaaSProviderConfig` 变更（ServerURL -> Service）。
+
+## 2026-09-23
+
+### v0.19.1
+
+- **修复** ListSpiderIPPools 接口 select_namespace 过滤无法匹配通过 namespace 注解绑定的租户级 IPPool 的问题。
+
+## 2026-08-04
+
+### v0.19.0
+
+- **新增** `Spidermultusconfig` 支持 Vlan cniType，新增 VlanMode 枚举类型（manual/auto，默认为 manual），可通过 `CreateMultusCniConfig` 与 `UpdateMultusCniConfig` 接口配置 Vlan 类型的 CNI 网络配置。
+- **优化** CI/E2E 基础设施：支持新版 kind 镜像加载、按平台预加载 Spiderpool/Istio 镜像、Istio 镜像仓库可配置、优化 CI runner 检测与错误处理，并修复 proto3 optional 字段导致 generate-grpc-ts 失败的问题。
+- **升级** grpc、protobuf、oauth2、glog 等相关依赖包版本，修复潜在的安全漏洞。
+
 ## 2025-11-30
 
 ### v0.16.6
 
-- **修复** 修复用户因权限问题导致无法进入到网络管理界面的问题。
+- **修复** 用户因权限问题导致无法进入到网络管理界面的问题。
 - **修复** 限制 NS 级别的 IP 池只能被所属命名空间的应用使用，禁止其他命名空间使用。
 
 ## 2025-09-30
@@ -35,7 +58,6 @@
 ### v0.16.3
 
 - **优化** 适配 Spiderpool API 到 v1.0.1。
-
 - **修复** 子网界面 VlanId 不显示的问题
 
 !!! note
@@ -60,8 +82,8 @@
 ### v0.16.0
 
 - **修复** 前端使用默认池功能缺少字段选择，后端 API 新增对应的默认池字段支持。
-- **修复** 修复拼写错误问题，CreatedTime 应为 createdTime。
-- **修复** 修复更新 ovs 配置不起作用。
+- **修复** 拼写错误问题，CreatedTime 应为 createdTime。
+- **修复** 更新 ovs 配置不起作用。
 - **修复** 创建将 overlay CNI 类型作为 underlay multus CR 的名字，该 CR 将会错误识别为 overlay CNI。
 
 ## 2024-08-30
@@ -87,7 +109,7 @@
 - 适配 **Spiderpool v0.9.3**
 
 - **修复** ListAllSubnetsAndIPPoolsAndMultus API 通过 namespace 亲和性过滤池失败
-- **修复** 修复 ListMultusCniConfig API 指针值对比判断错误，并修复判断中将 SR-IOV 的错写为 IPvlan 的问题
+- **修复** ListMultusCniConfig API 指针值对比判断错误，并修复判断中将 SR-IOV 的错写为 IPvlan 的问题
 - **新增** 支持界面创建 ovs-cni 类型的 Multus CR
 
 ## 2024-04-30
@@ -97,7 +119,7 @@
 - 适配 **Spiderpool v0.9.1**
 - 适配 **EgressGateway v0.5.1**
 
-- **优化** 优化工作负载网络配置，支持 Multus CR 无感知，应用直接选择 IPPool
+- **优化** 工作负载网络配置，支持 Multus CR 无感知，应用直接选择 IPPool
 - **优化** 修复 multusName 中的命名空间为空，自动为其拼接 Spiderpool 的所在 Namespace
 - **优化** 支持创建 SR-IOV 节点策略时，配置以太网或 InfiniBand 网络类型
 
@@ -291,7 +313,7 @@
 #### 修复
 
 - **修复** 单栈时，查看工作负载出现指针错误
-- **修复** 修复添加大量 IP 时 Controller 超时
+- **修复** 添加大量 IP 时 Controller 超时
 - **修复** 亲和性填写可以填写中文
 - **修复** 工作负载名称与命名空间不匹配
 - **修复** 固定池显示问题
