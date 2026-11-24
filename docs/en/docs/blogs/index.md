@@ -12,6 +12,10 @@ technologies, sorted by date by default.
 
 ## 2026
 
+- [DaoCloud Open Source Advocacy: Eight Years of KubeCon, 112 Talks](2026/kubecon.md)
+
+    1 talk in 2018, 33 in 2024, and 112 in total by November 2026, 44 of them overseas. Behind the eight-year ledger are three transitions — from a home stage in China to a majority overseas, from cloud native to AI infrastructure, and from attendee to governor.
+
 - [KubeCon China 2026 Guide](./2026/kubecon-cn.md)
 
     KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026 takes place September 7–9 in Shanghai.
