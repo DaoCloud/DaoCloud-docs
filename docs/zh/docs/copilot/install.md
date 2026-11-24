@@ -17,7 +17,7 @@
 | Deployment / Service | `tokenfactory-copilot` |
 | 示例 Chart 版本 | `0.3.0-rc2` |
 
-下文命令使用 Chart `0.3.0-rc2`。安装前执行 `helm search repo agentclaw/copilot --versions`，把命令和离线导出配置里的版本换成要安装的版本。三个运行镜像的 tag 为 `v` 加上 Chart 版本，例如 Chart `0.3.0-rc2` 对应 `v0.3.0-rc2`，并且必须一起更换：
+下文命令使用 Chart `0.3.0-rc2`。安装前执行 `helm search repo agentclaw/copilot --versions --devel`。不带 `--devel` 时，搜索结果不包含 `0.3.0-rc2` 这类预发布版本。把命令和离线导出配置里的版本换成要安装的版本。三个运行镜像的 tag 为 `v` 加上 Chart 版本，例如 Chart `0.3.0-rc2` 对应 `v0.3.0-rc2`，并且必须一起更换：
 
 - `release.daocloud.io/agentclaw/deepseek-harness:v0.3.0-rc2`
 - `release.daocloud.io/agentclaw/copilot-skills:v0.3.0-rc2`
@@ -230,7 +230,7 @@ helm upgrade --install tokenfactory-copilot <chart> \
 ```bash
 helm repo add agentclaw https://release.daocloud.io/chartrepo/agentclaw
 helm repo update
-helm search repo agentclaw/copilot --versions
+helm search repo agentclaw/copilot --versions --devel
 
 helm upgrade --install tokenfactory-copilot agentclaw/copilot \
   --namespace copilot-system \
@@ -315,9 +315,12 @@ helm upgrade --install tokenfactory-copilot agentclaw/copilot \
 ```bash
 helm upgrade tokenfactory-copilot agentclaw/copilot \
   --namespace copilot-system \
+  --version 0.3.0-rc2 \
   --reset-values \
   -f values.yaml
 ```
+
+不写 `--version` 时，Helm 选择最新稳定版，不会选中带 `-rc` 的版本。`--version` 要与 values 中的镜像 tag 对应，tag 为 `v` 加上该 Chart 版本。
 
 使用 `--reuse-values` 时要显式更新上述三个 tag。旧 Release 也不会带上 `global.gproduct.proxy.enabled=true` 这一默认值，仍按独立域名运行。需要平台子路径时，把 `global.gproduct.proxy.enabled` 设为 `true`。
 

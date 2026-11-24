@@ -17,7 +17,7 @@ This page describes how to install the Copilot workbench offline and online. The
 | Deployment / Service | `tokenfactory-copilot` |
 | Example Chart version | `0.3.0-rc2` |
 
-The commands below use Chart `0.3.0-rc2`. Before installing, run `helm search repo agentclaw/copilot --versions` and replace that version in the commands and in the offline export config. Each runtime image tag is `v` plus the Chart version, so Chart `0.3.0-rc2` uses tag `v0.3.0-rc2`. Replace the three tags together:
+The commands below use Chart `0.3.0-rc2`. Before installing, run `helm search repo agentclaw/copilot --versions --devel` and replace that version in the commands and in the offline export config. Without `--devel`, the search omits prereleases such as `0.3.0-rc2`. Each runtime image tag is `v` plus the Chart version, so Chart `0.3.0-rc2` uses tag `v0.3.0-rc2`. Replace the three tags together:
 
 - `release.daocloud.io/agentclaw/deepseek-harness:v0.3.0-rc2`
 - `release.daocloud.io/agentclaw/copilot-skills:v0.3.0-rc2`
@@ -230,7 +230,7 @@ In **Helm Apps** -> **Helm Repositories**, add `https://release.daocloud.io/char
 ```bash
 helm repo add agentclaw https://release.daocloud.io/chartrepo/agentclaw
 helm repo update
-helm search repo agentclaw/copilot --versions
+helm search repo agentclaw/copilot --versions --devel
 
 helm upgrade --install tokenfactory-copilot agentclaw/copilot \
   --namespace copilot-system \
@@ -315,9 +315,12 @@ Upgrade with a complete values file:
 ```bash
 helm upgrade tokenfactory-copilot agentclaw/copilot \
   --namespace copilot-system \
+  --version 0.3.0-rc2 \
   --reset-values \
   -f values.yaml
 ```
+
+Without `--version`, Helm selects the latest stable chart and skips versions that contain `-rc`. Set `--version` to the Chart version that matches the image tags in the values file. A tag is `v` plus that Chart version.
 
 With `--reuse-values`, set those three tags explicitly. An existing release also keeps the previous `global.gproduct.proxy` value, so it stays on a dedicated host. To use the platform subpath, set `global.gproduct.proxy.enabled` to `true`.
 
