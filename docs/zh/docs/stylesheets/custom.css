@@ -56,3 +56,31 @@ img {
     background-color: #fff;
 }
 */
+/* 页脚公众号二维码 */
+.md-copyright {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.md-copyright .md-footer-qr {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+
+.md-copyright .md-footer-qr img {
+  width: 72px;
+  height: 72px;
+  border-radius: 4px;
+  background: #f5f5f5;
+}
+
+.md-copyright .md-footer-qr span {
+  font-size: 0.65rem;
+  line-height: 1.4;
+  opacity: 0.7;
+  max-width: 4.5rem;
+}
