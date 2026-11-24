@@ -1482,6 +1482,7 @@ nav:
                   - Onboard Device: topohub/device/index.md
                   - Batch Onboard Devices: topohub/device/batch-access.md
                   - Manage Devices: topohub/device/manage-device.md
+          - DCE Assistant: copilot/dce-assistant.md
   - Downloads:
       - Download Hub:
           - download/index.md
