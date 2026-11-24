@@ -1,21 +1,19 @@
-# Expose Model Service Externally (Hydra/Knoway)
+# Expose Model Services (Hydra/Knoway)
 
-*[InferX]: The development codename for the Inference Acceleration Service
-
-After the InferX model is successfully deployed, you can expose and access it through the following two methods:
+After the Turbo Inference model is successfully deployed, you can expose and access it through the following two methods:
 
 - Configure the model service in Hydra's MaaS model management page (recommended)
 - Manually register the model service via the `LLMBackend` CRD in Knoway
 
 ## Prerequisites
 
-- InferX model deployment is completed and the model is successfully deployed
+- Turbo Inference model deployment is completed and the model is successfully deployed
 - Known Helm Release name and deployment namespace (e.g., `qwen3-06b`, `public`)
 - Confirmed model name (e.g., `Qwen/Qwen3-0.6B`)
 
 ## Key Parameter Mapping
 
-| Configuration Item | Description | InferX Corresponding Parameter |
+| Configuration Item | Description | Turbo Inference Corresponding Parameter |
 |---|---|---|
 | Model ID | Model identifier used for display/calling on the business side | `llm-d-modelservice.llm-d-modelservice.modelArtifacts.name` |
 | Endpoint | Model service access address, must include protocol and `/v1` path | `http://<gateway-service>.<namespace>/v1` |
@@ -26,11 +24,11 @@ On the MaaS O&M management page, fill in the following core information for the 
 
 1. **Model ID**
    
-    It is recommended to keep it consistent with the InferX model name, e.g.: `Qwen/Qwen3-0.6B`
+    It is recommended to keep it consistent with the Turbo Inference model name, e.g.: `Qwen/Qwen3-0.6B`
 
 2. **Endpoint**
    
-    InferX models are exposed uniformly through a Gateway. You can get the gateway address with the following command:
+    Turbo Inference models are exposed uniformly through a Gateway. You can get the gateway address with the following command:
 
     ```bash
     NAMESPACE=public
@@ -81,7 +79,7 @@ spec:
 ```
 
 1. The exposed model name (used for business calls), must be unique
-2. InferX Gateway address, must include `/v1`
+2. Turbo Inference Gateway address, must include `/v1`
 3. The actual model name passed through to the inference service
 
 ### Verification

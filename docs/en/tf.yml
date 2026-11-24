@@ -95,11 +95,11 @@ nav:
                   - Shard Hit Ratio: tf/dak/data-analysis/shard-hit-ratio.md
                   - Improvement Suggestions: tf/dak/data-analysis/suggestions.md
               - My Feedback: tf/dak/my-feedback/my-feedback.md
-          - InferX Suite:
-              - What is InferX: tf/inferx/index.md
+          - Turbo Inference:
+              - What is Turbo Inference: tf/inferx/index.md
               - FAQs: tf/inferx/faqs.md
               - Best Practices:
-                  - Install InferX in Offline Environment: tf/inferx/guides/offline.md
+                  - Install Turbo Inference Offline: tf/inferx/guides/offline.md
                   - Enable Istio GAIE Feature for Cluster: tf/inferx/guides/enable-istio-gaie-with-mspider.md
                   - Model Weight Download and Configuration: tf/inferx/guides/model-weights-setup.md
                   - Expose Model Service Externally (Hydra/Knoway): tf/inferx/guides/export-by-hydra.md

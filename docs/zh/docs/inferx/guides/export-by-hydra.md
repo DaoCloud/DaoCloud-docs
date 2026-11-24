@@ -1,21 +1,19 @@
-# 模型服务对外暴露（Hydra/Knoway）
+# 对外暴露模型服务（Hydra/Knoway）
 
-*[InferX]: 推理加速服务的开发代号
-
-InferX 模型部署成功后，可以通过以下两种方式对外暴露并访问：
+推理加速模型部署成功后，可以通过以下两种方式对外暴露并访问：
 
 - 在 Hydra 的 MaaS 模型管理页面中配置模型服务（推荐）
 - 在 Knoway 中通过 `LLMBackend` CRD 手动注册模型服务
 
 ## 前置条件
 
-- 已完成 InferX 模型部署，并确认模型成功部署
+- 已完成推理加速模型部署，并确认模型成功部署
 - 已知 Helm Release 名称与部署命名空间（例如 `qwen3-06b`、`public`）
 - 已确认模型名（例如 `Qwen/Qwen3-0.6B`）
 
 ## 关键参数映射
 
-| 配置项 | 说明 | InferX 对应参数 |
+| 配置项 | 说明 | 推理加速 对应参数 |
 |---|---|---|
 | 模型 ID | 业务侧展示/调用时使用的模型标识 | `llm-d-modelservice.llm-d-modelservice.modelArtifacts.name` |
 | Endpoint | 模型服务访问地址，需包含协议与 `/v1` 路径 | `http://<gateway-service>.<namespace>/v1` |
@@ -26,11 +24,11 @@ InferX 模型部署成功后，可以通过以下两种方式对外暴露并访�
 
 1. **模型 ID**
    
-    建议与 InferX 模型名保持一致，例如：`Qwen/Qwen3-0.6B`
+    建议与推理加速模型名保持一致，例如：`Qwen/Qwen3-0.6B`
 
 2. **Endpoint**
    
-    InferX 模型统一通过 Gateway 暴露，可通过以下命令获取网关地址：
+    推理加速模型统一通过 Gateway 暴露，可通过以下命令获取网关地址：
 
     ```bash
     NAMESPACE=public
@@ -80,8 +78,8 @@ spec:
         model: Qwen/Qwen3-0.6B # (3)!
 ```
 
-1. 对外暴露的模型名（业务调用时使用）, 必须唯一
-2. InferX Gateway 地址，必须包含 `/v1`
+1. 对外暴露的模型名（业务调用时使用），必须唯一
+2. 推理加速 Gateway 地址，必须包含 `/v1`
 3. 透传到推理服务的实际模型名
 
 ### 验证
