@@ -15,6 +15,40 @@ evolution path and feature changes of each version.
 *[SR-IOV]: Single Root IO Virtualization
 *[RDMA]: Remote Direct Memory Access, a popular tech to support LLM and GPT
 
+## 2026-10-30
+
+### v0.19.2
+
+- **Added** CRUD support for the eni-vlan CNI type, including the `masters`, `ippools`, and
+  `validateIaasNetConfig` (gateway connectivity check switch) configurations.
+- **Added** automatic addition of the `ipam.spidernet.io/iaas-provider: <vendor>` annotation
+  when creating a SpiderIPPool in IaaS provider mode, which the spiderpool webhook syncs to the
+  label monitored by the external provider.
+- **Removed** the `vlanMode` configuration of the vlan CNI; only the static `vlanId` is retained.
+- **Upgraded** the spiderpool dependency to v1.3.0-rc0 and adapted to the IaaSProviderConfig
+  change (ServerURL -> Service).
+
+## 2026-09-23
+
+### v0.19.1
+
+- **Fixed** an issue where the `select_namespace` filter of the ListSpiderIPPools API could not
+  match tenant-level IPPools bound through namespace annotations.
+
+## 2026-08-04
+
+### v0.19.0
+
+- **Added** Vlan cniType support in Spidermultusconfig, including the new VlanMode enumeration
+  (manual/auto, defaulting to manual). The Vlan CNI configuration can be set through the
+  CreateMultusCniConfig and UpdateMultusCniConfig APIs.
+- **Optimized** the CI/E2E infrastructure: support for loading new kind images, preloading
+  spiderpool/Istio images by platform, a configurable Istio image registry, improved CI runner
+  detection and error handling, and a fix for generate-grpc-ts failures caused by proto3
+  optional fields.
+- **Upgraded** grpc, protobuf, oauth2, glog, and other dependency packages to fix potential
+  security vulnerabilities.
+
 ## 2025-11-30
 
 ### v0.16.6
