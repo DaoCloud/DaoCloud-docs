@@ -616,6 +616,7 @@ nav:
               - Release Notes: tf/crane/intro/release-notes.md
           - Copilot Workbench:
               - tf/copilot/index.md
+              - Investment Payback Calculation: tf/copilot/investment-payback.md
               - Compatibility: tf/copilot/compatibility.md
           - Billing Center:
               - tf/leopard/index.md
