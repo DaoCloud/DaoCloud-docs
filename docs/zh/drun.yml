@@ -76,6 +76,7 @@ nav:
                   - 模型部署管理: drun/hydra/oam/mdm.md
                   - 安全策略管理: drun/hydra/oam/security-policy.md
                   - 安全审计日志: drun/hydra/oam/security-audit-logs.md
+                  - 成本分析中心: drun/hydra/oam/cost-analysis-center.md
               - 用户实践场景:
                   - 示例场景介绍: drun/hydra/user-guides/index.md
                   - 在 VSCode 和 Cline 中使用: drun/hydra/user-guides/cline-in-vscode.md
