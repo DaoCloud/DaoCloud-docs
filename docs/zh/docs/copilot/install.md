@@ -49,20 +49,20 @@
 
     默认模型地址是 `https://api.deepseek.com`，模型 ID 是 `deepseek-flash`。使用该地址时，联网搜索复用同一个 `OPENAI_API_KEY`。改用其他模型地址时，搜索仍请求 DeepSeek 官方接口，需要在同一个 Secret 中增加 `DEEPSEEK_API_KEY`。
 
-5. 把 `dsh.entrypoint` 设为浏览器访问平台时使用的地址。只包含 scheme 和 host，不含路径，例如 `https://dce.example.com`。设置之后，代理只接受来自该地址的浏览器请求，其他来源返回 403。留空时，请求的 `Origin` 必须与 `Host` 一致。
+5. 把 `dsh.entrypoint` 设为浏览器访问平台时使用的地址。只包含 scheme 和 host，不含路径，例如 `https://platform.example.com`。设置之后，代理只接受来自该地址的浏览器请求，其他来源返回 403。留空时，请求的 `Origin` 必须与 `Host` 一致。
 
 安装时需要填写：
 
 | 参数 | 示例 | 说明 |
 | -- | -- | -- |
 | `dsh.model.existingSecretRef` | `tokenfactory-copilot-credentials` | 含有 `OPENAI_API_KEY` 的 Secret，优先于内联密钥 |
-| `dsh.entrypoint` | `https://dce.example.com` | 平台地址，scheme 加 host |
+| `dsh.entrypoint` | `https://platform.example.com` | 平台地址，scheme 加 host |
 
 直接设置 `dsh.model.apiKey` 也可以启动。密钥会保存在 Helm release 中，不推荐这种做法。
 
 ## 离线安装
 
-在可以访问 `https://release.daocloud.io` 的机器上先导出离线包，再把离线包拷到目标环境加载。
+在线安装使用的 Chart 仓库是 `https://release.daocloud.io/chartrepo/agentclaw`，可以匿名读取。下载中心尚未提供 Copilot 离线包。在可以访问该仓库的机器上用 charts-syncer 导出离线包，再拷到目标环境加载。下载中心发布离线包后，改用下载中心的离线包，后面的加载步骤相同。
 
 ### 导出离线包
 
@@ -243,7 +243,9 @@ helm upgrade --install tokenfactory-copilot agentclaw/copilot \
 
 ## 访问
 
-默认开启平台子路径。安装完成后通过 `https://<平台地址>/copilotui/` 访问，DCE 导航会在新窗口打开该地址。
+默认开启平台子路径。安装完成后，在浏览器打开 `https://<平台地址>/copilotui/`。平台导航会在新窗口打开该地址。
+
+![Copilot 工作台](./images/copilot.png)
 
 首次启动时，DeepSeek Harness 会在日志中打印一次性访问地址。查看时不要把其中的 token 贴到工单或聊天记录：
 
@@ -257,11 +259,11 @@ kubectl logs deploy/tokenfactory-copilot -n copilot-system | grep 'dsh web:'
 
 ## 可选配置
 
-### DCE CLI 凭据
+### CLI 凭据
 
-查询业务数据时需要 DCE CLI 凭据，建议使用只有查询权限的账号。Chart 把 `hosts.yml` 以只读方式挂载到 `$HOME/.config/dce/hosts.yml`。
+查询业务数据时需要平台 CLI 凭据，建议使用只有查询权限的账号。Chart 把 `hosts.yml` 以只读方式挂载到 `$HOME/.config/dce/hosts.yml`。
 
-在 DCE 控制台的 **用户中心** -> **API Token** 创建 token 后，可以由 Chart 生成 Secret。生成结果里的 `user` 为 `admin`，`insecure` 为 `true`：
+在平台控制台的 **用户中心** -> **API Token** 创建 token 后，可以由 Chart 生成 Secret。生成结果里的 `user` 为 `admin`，`insecure` 为 `true`：
 
 ```yaml
 dceAuth:
@@ -283,7 +285,7 @@ dceAuth:
   existingSecretRef: tokenfactory-dce-hosts
 ```
 
-`dceAuth` 是命令行查询凭据。平台子路径下，用户用 DCE 账号登录页面由 `global.gproduct.proxy.dceLogin` 控制，默认开启，与 `dceAuth` 无关。`global.gproduct.proxy.authnCheck` 默认为 `false`；设为 `true` 时必须同时开启 `dceLogin`。
+`dceAuth` 是命令行查询凭据。平台子路径下，用户用平台账号登录页面由 `global.gproduct.proxy.dceLogin` 控制，默认开启，与 `dceAuth` 无关。`global.gproduct.proxy.authnCheck` 默认为 `false`；设为 `true` 时必须同时开启 `dceLogin`。
 
 ### 会话持久化
 
@@ -293,7 +295,7 @@ dceAuth:
 
 ### 独立域名
 
-把 `global.gproduct.proxy.enabled` 设为 `false` 后，Copilot 使用 `dsh.entrypoint` 的根路径，并需要开启 Ingress。此模式没有 Ghippo 鉴权和 DCE 登录，需要在网关层限制访问。
+把 `global.gproduct.proxy.enabled` 设为 `false` 后，Copilot 使用 `dsh.entrypoint` 的根路径，并需要开启 Ingress。此模式没有 Ghippo 鉴权和平台账号登录，需要在网关层限制访问。
 
 ```bash
 helm upgrade --install tokenfactory-copilot agentclaw/copilot \

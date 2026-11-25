@@ -49,20 +49,20 @@ Do not replace only one of these images.
 
     The default model endpoint is `https://api.deepseek.com` and the model ID is `deepseek-flash`. With that endpoint, web search reuses the same `OPENAI_API_KEY`. If you point the model at another endpoint, web search still calls the official DeepSeek API and needs `DEEPSEEK_API_KEY` in the same Secret.
 
-5. Set `dsh.entrypoint` to the address browsers use to open the platform. Include only the scheme and host, with no path, for example `https://dce.example.com`. After it is set, the proxy accepts browser requests only from that origin and returns 403 for any other origin. When it is left empty, the request `Origin` must match `Host`.
+5. Set `dsh.entrypoint` to the address browsers use to open the platform. Include only the scheme and host, with no path, for example `https://platform.example.com`. After it is set, the proxy accepts browser requests only from that origin and returns 403 for any other origin. When it is left empty, the request `Origin` must match `Host`.
 
 Set these values during installation:
 
 | Parameter | Example | Description |
 | -- | -- | -- |
 | `dsh.model.existingSecretRef` | `tokenfactory-copilot-credentials` | Secret that contains `OPENAI_API_KEY`. It takes precedence over an inline key |
-| `dsh.entrypoint` | `https://dce.example.com` | Platform address, scheme plus host |
+| `dsh.entrypoint` | `https://platform.example.com` | Platform address, scheme plus host |
 
 Setting `dsh.model.apiKey` directly also starts Copilot. The key is then stored in the Helm release, so this is not recommended.
 
 ## Offline Installation
 
-On a machine that can reach `https://release.daocloud.io`, export an offline bundle, then copy that bundle to the target environment and load it.
+Online installation uses the Chart repository `https://release.daocloud.io/chartrepo/agentclaw`, which can be read without logging in. The download center does not yet publish a Copilot offline package. On a machine that can reach this repository, export a bundle with charts-syncer and copy it to the target environment. After the download center publishes an offline package, use that package. The loading steps below stay the same.
 
 ### Export the Offline Bundle
 
@@ -243,7 +243,9 @@ Replace `0.3.0-rc2` with the version you select from `helm search`.
 
 ## Access
 
-The platform subpath is enabled by default. After installation, open `https://<platform-address>/copilotui/`. DCE navigation opens that address in a new window.
+The platform subpath is enabled by default. After installation, open `https://<platform-address>/copilotui/` in a browser. The platform navigation opens that address in a new window.
+
+![Copilot workbench](./images/copilot.png)
 
 On first startup, DeepSeek Harness prints a one-time URL in the logs. Do not paste the token from that URL into a ticket or chat:
 
@@ -257,11 +259,11 @@ kubectl logs deploy/tokenfactory-copilot -n copilot-system | grep 'dsh web:'
 
 ## Optional Settings
 
-### DCE CLI Credentials
+### CLI Credentials
 
-Querying business data requires DCE CLI credentials. Use an account that can only query. The Chart mounts `hosts.yml` read-only at `$HOME/.config/dce/hosts.yml`.
+Querying business data requires platform CLI credentials. Use an account that can only query. The Chart mounts `hosts.yml` read-only at `$HOME/.config/dce/hosts.yml`.
 
-Create a token in the DCE console under **User Center** -> **API Token**. The Chart can then render the Secret. The rendered file uses `user: admin` and `insecure: true`:
+Create a token in the platform console under **User Center** -> **API Token**. The Chart can then render the Secret. The rendered file uses `user: admin` and `insecure: true`:
 
 ```yaml
 dceAuth:
@@ -283,7 +285,7 @@ dceAuth:
   existingSecretRef: tokenfactory-dce-hosts
 ```
 
-`dceAuth` is the credential used by the CLI. On the platform subpath, signing in to the page with a DCE account is controlled by `global.gproduct.proxy.dceLogin`, which is enabled by default and is separate from `dceAuth`. `global.gproduct.proxy.authnCheck` defaults to `false`. Setting it to `true` also requires `dceLogin` to be enabled.
+`dceAuth` is the credential used by the CLI. On the platform subpath, signing in to the page with a platform account is controlled by `global.gproduct.proxy.dceLogin`, which is enabled by default and is separate from `dceAuth`. `global.gproduct.proxy.authnCheck` defaults to `false`. Setting it to `true` also requires `dceLogin` to be enabled.
 
 ### Session Persistence
 
@@ -293,7 +295,7 @@ Each start replaces the `copilot-skills` directory on the volume. Do not store c
 
 ### Dedicated Host
 
-Set `global.gproduct.proxy.enabled` to `false` to serve Copilot at the root of `dsh.entrypoint`. This mode requires Ingress. It has no Ghippo authentication and no DCE login, so restrict access at the gateway.
+Set `global.gproduct.proxy.enabled` to `false` to serve Copilot at the root of `dsh.entrypoint`. This mode requires Ingress. It has no Ghippo authentication and no platform-account login, so restrict access at the gateway.
 
 ```bash
 helm upgrade --install tokenfactory-copilot agentclaw/copilot \
