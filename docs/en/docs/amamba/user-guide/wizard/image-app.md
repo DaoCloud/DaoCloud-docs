@@ -24,11 +24,11 @@ Following [Credential Management](../pipeline/credential.md), create the credent
 
 1. In the __Workbench__ -> __Wizard__ page, click __Build With Image__.
 
-    ![Wizard](../../images/image01.png)
+    <!-- ![Wizard](../../images/image01.png) -->
 
 2. Fill in the basic information and click __Next__.
 
-    ![Basic Information](../../images/image02.png)
+    <!-- ![Basic Information](../../images/image02.png) -->
 
     | Parameter | Description |
     |-----|---- |
@@ -40,7 +40,7 @@ Following [Credential Management](../pipeline/credential.md), create the credent
 
 3. Fill in the container configuration and click __Next__.
 
-    ![Container Configuration](../../images/image03.png)
+    <!-- ![Container Configuration](../../images/image03.png) -->
 
     - Service Configuration: Specify how the service can be accessed within the cluster, node, or
       load balancer. Example values:
@@ -69,7 +69,7 @@ Following [Credential Management](../pipeline/credential.md), create the credent
 4. On the __Advanced Settings__ page, click __Access MicroServices__. Configure the parameters as per
    the instructions below, and click __OK__.
 
-    ![Advanced Configuration](../../images/image04.png)
+    <!-- ![Advanced Configuration](../../images/image04.png) -->
 
     | Parameter | Description |
     |-------|------|

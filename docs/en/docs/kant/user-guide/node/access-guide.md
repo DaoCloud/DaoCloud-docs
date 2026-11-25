@@ -24,11 +24,11 @@ This document mainly describes the single-node onboarding procedure. If you want
 
 1. On the Edge Node List page, click the **Onboard Node** button to enter the node onboarding page.
 
-    ![Node List](../../images/access-guide-06.png)
+    <!-- ![Node List](../../images/access-guide-06.png) -->
 
 1. Based on the node environment configuration, select the corresponding access configuration, enter the node name, and then click **Get Onboarding Steps**.
 
-    ![Onboard Node](../../images/access-guide-07.png)
+    <!-- ![Onboard Node](../../images/access-guide-07.png) -->
 
 1. Onboard the node by executing the operations for the online or offline onboarding method.
 
@@ -38,7 +38,7 @@ This document mainly describes the single-node onboarding procedure. If you want
 
         1. In the onboarding steps drawer, click the __Online Onboarding__ tab to display the online onboarding steps.
 
-            ![Online Onboarding](../../images/access-guide-08.png)
+            <!-- ![Online Onboarding](../../images/access-guide-08.png) -->
 
         1. Use the script to prepare the keadm tool, and execute the command displayed in the interface.
 
@@ -84,7 +84,7 @@ This document mainly describes the single-node onboarding procedure. If you want
 
         1. In the onboarding steps drawer, click the __Offline Onboarding__ tab to display the offline onboarding steps.
 
-            ![Online Onboarding](../../images/access-guide-09.png)
+            <!-- ![Online Onboarding](../../images/access-guide-09.png) -->
 
         1. Click the **Download File** button, which will redirect you to the download center. In the download list, select the edge installation package and initialization script for the corresponding architecture.
 
@@ -130,4 +130,4 @@ This document mainly describes the single-node onboarding procedure. If you want
 
     1. Check the status of the edge node. If the current status is __Healthy__, it means the onboarding was successful.
 
-    ![Edge Node Onboarded Successfully](../../images/access-guide-05.png)
+    <!-- ![Edge Node Onboarded Successfully](../../images/access-guide-05.png) -->

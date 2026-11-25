@@ -59,7 +59,7 @@ The microservice engine supports the integration of Auth, JWT, Global Rate Limit
 
 </div>
 
-<!--![](../images/plugin01.png)-->
+<!--<!-- ![](../images/plugin01.png) -->-->
 
 ## Plugin Applications
 

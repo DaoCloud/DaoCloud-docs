@@ -14,7 +14,7 @@ Kubean is a cluster lifecycle management tool built on top of Kubespray.
 - Compatibility: Supports multi-architecture delivery including AMD, ARM, common Linux distributions, and the Kylin operating system based on Kunpeng architecture.
 - Scalability: Allows customization of clusters using native Kubespray features.
 
-![cncf gophers](./images/cncf-gophers.png)
+<!-- ![cncf gophers](./images/cncf-gophers.png) -->
 
 **Kubean is part of the [CNCF](https://cncf.io/) Sandbox projects.**
 

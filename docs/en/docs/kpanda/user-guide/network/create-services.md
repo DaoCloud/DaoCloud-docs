@@ -98,7 +98,7 @@ the public network.
 
 4. After configuring all parameters, click the __OK__ button to automatically return to the service list. On the right side of the list, click __┇__ to modify or delete the selected service.
 
-    ![Service list](../images/service04.png)
+    <!-- ![Service list](../images/service04.png) -->
 
 ## YAML example
 

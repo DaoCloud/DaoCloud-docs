@@ -94,7 +94,7 @@ After filling in the basic information, click __Add Rule__ and select __Event Ru
 
 1. Click __Import Template__ to batch import alert rules from alert templates already created by the platform administrator.
 
-    ![alert template](../../images/import-template.png){ width=1000px}
+    <!-- ![alert template](../../images/import-template.png) -->{ width=1000px}
 
 1. After clicking __Next__ , configure notifications.
 

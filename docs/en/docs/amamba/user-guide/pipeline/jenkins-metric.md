@@ -54,7 +54,7 @@ which can be viewed at the path `http://JenkinsHost:JenkinsPort/prometheus/`.
   
 2. After enabling, restart the Jenkins instance
 
-    ![jenkins-metric](../../images/jenkins-metric.png)
+    <!-- ![jenkins-metric](../../images/jenkins-metric.png) -->
 
 #### Metrics
 

@@ -6,7 +6,7 @@ This is a promotional page for the cat creative platform products.
 
 Slogan: **Love meow, understand meow**
 
-![](../images/cat01.png)
+<!-- ![](../images/cat01.png) -->
 
 ## Products
 
@@ -68,5 +68,5 @@ Slogan: **Love meow, understand meow**
 
 [View PPT](https://www.aippt.cn/share/1wVxvkpry830Bq0oOYAfAg){ .md-button .md-button--primary }
 
-![](../images/cat02.jpg)
+<!-- ![](../images/cat02.jpg) -->
 

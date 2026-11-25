@@ -4,7 +4,7 @@ The code repository focuses on code repository project management for the curren
 
 Through the **Repository Instance** dropdown at the top of the interface (such as "gitlab - admin" in the example), you can filter different code repository instances to quickly locate the target repository and improve operational efficiency.
 
-![repo](../images/repo01.png)
+<!-- ![repo](../images/repo01.png) -->
 
 ## View Repository Information
 

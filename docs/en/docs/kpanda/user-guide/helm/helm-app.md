@@ -88,7 +88,7 @@ If the update takes a long time, it may be caused by resource limits. You can ad
 
     Go to __Cluster Details__ -> __Cluster Operations__ -> __Cluster Settings__ -> __Advanced Settings__ , adjust the Helm job resource quota, and click __OK__ to save.
     
-    ![Update Helm App](../images/updatehelm.png)
+    <!-- ![Update Helm App](../images/updatehelm.png) -->
 
 Note: After the Helm app update is complete, you can change the resource quota back to the default value to reduce resource costs.
 

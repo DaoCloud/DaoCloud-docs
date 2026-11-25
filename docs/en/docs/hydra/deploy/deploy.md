@@ -12,7 +12,7 @@ such as resources, runtime, and instances as needed. You can initiate a deployme
 [Model Gallery](../index.md), [Model Management](../models/index.md), or the left navigation
 **Model Serving - Deploy New Model**. The following sections describe the steps and the meaning of each parameter.
 
-![deploy](../images/deploy-new-02.png)
+<!-- ![deploy](../images/deploy-new-02.png) -->
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ such as resources, runtime, and instances as needed. You can initiate a deployme
     | Distributed Inference | When enabled, you can configure the number of deployment nodes per instance | Suitable for scenarios where a single node has insufficient resources |
     | Queue Scheduling | You can configure the scheduling policy, priority, and more | Supports priority and topology-aware scheduling capabilities |
 
-    ![deploy](../images/deploy-new-03.png)
+    <!-- ![deploy](../images/deploy-new-03.png) -->
 
 ## After Deployment
 

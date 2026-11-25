@@ -17,7 +17,7 @@ To create new model metadata, or to manage deployment templates and model weight
 
 2. In the **┇** menu on the right side of the list, you can perform **Deploy**, **Update**, and **Delete** operations.
 
-    ![model-manage](../images/model-manage-01.png)
+    <!-- ![model-manage](../images/model-manage-01.png) -->
 
 ## Deploy a Model
 

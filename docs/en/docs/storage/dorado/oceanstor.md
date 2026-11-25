@@ -9,7 +9,7 @@ hide:
 
 ### 1.1 Verification Network Diagram
 
-![img](./images/clip_image008.png)
+<!-- ![img](./images/clip_image008.png) -->
 
 <div style="text-align:center;">Figure 1-1 Functional Verification Network Diagram</div>
 
@@ -115,15 +115,15 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
 
     1. Refer to the backend.yaml template file in the examples/backend directory of the Huawei CSI software package, and create a storage backend configuration file based on the actual environment information.
        
-        ![333](./images/clip_image010.png)
+        <!-- ![333](./images/clip_image010.png) -->
 
     2. Use the configuration file to create a storage backend, enter the username and password of the storage backend as prompted, and check whether the storage backend is created successfully.
        
-        ![444](./images/clip_image012.png)
+        <!-- ![444](./images/clip_image012.png) -->
 
     3. Delete the created storage backend and check whether it is deleted successfully.
        
-        ![555](./images/clip_image014.png)
+        <!-- ![555](./images/clip_image014.png) -->
 
 - **Expected Results**
    
@@ -134,15 +134,15 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
    
     1. The configuration file is modified  
        
-        ![img](./images/clip_image016.png)
+        <!-- ![img](./images/clip_image016.png) -->
 
     2. The storage backend is created successfully  
        
-        ![img](./images/clip_image018.png)
+        <!-- ![img](./images/clip_image018.png) -->
 
     3. The storage backend is deleted successfully  
        
-        ![img](./images/clip_image020.png)
+        <!-- ![img](./images/clip_image020.png) -->
 
 - **Test Conclusion**
     
@@ -173,19 +173,19 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
    
     1. Refer to the sc-lun.yaml template file in the examples directory of the Huawei CSI software package, and create a StorageClass configuration file based on the actual environment information.
        
-        ![img](./images/clip_image022.png)
+        <!-- ![img](./images/clip_image022.png) -->
 
     2. Use the configuration file to create a StorageClass and check whether it is created successfully.
       
-        ![img](./images/clip_image024.png)
+        <!-- ![img](./images/clip_image024.png) -->
 
     3. Delete the created StorageClass.
        
-        ![img](./images/clip_image026.png)
+        <!-- ![img](./images/clip_image026.png) -->
 
     4. Check whether the StorageClass is deleted successfully.
        
-        ![img](./images/clip_image028.png)
+        <!-- ![img](./images/clip_image028.png) -->
 
 - **Expected Results**
 
@@ -196,15 +196,15 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
    
     1. The configuration file is modified  
        
-        ![img](./images/clip_image030.png)
+        <!-- ![img](./images/clip_image030.png) -->
 
     2. The StorageClass is created successfully  
        
-        ![img](./images/clip_image032.png)
+        <!-- ![img](./images/clip_image032.png) -->
 
     3. The StorageClass is deleted successfully  
       
-        ![img](./images/clip_image034.png)
+        <!-- ![img](./images/clip_image034.png) -->
 
 - **Test Conclusion**
 
@@ -234,25 +234,25 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
     
     1. Refer to the pvc.yaml template file in the examples directory of the Huawei CSI software package, and create a PVC configuration file based on the actual environment information.
      
-        ![img](./images/clip_image036.png)
+        <!-- ![img](./images/clip_image036.png) -->
 
     2. Use the configuration file to create a PVC and check whether it is created successfully.
       
-        ![img](./images/clip_image038.png)
+        <!-- ![img](./images/clip_image038.png) -->
 
     3. Log in to the storage device and check whether the corresponding file system is created automatically.
        
-        ![img](./images/clip_image040.png)
+        <!-- ![img](./images/clip_image040.png) -->
 
-        ![img](./images/clip_image042.png)
+        <!-- ![img](./images/clip_image042.png) -->
 
     4. Delete the created PVC and check whether it is deleted successfully.
        
-        ![img](./images/clip_image044.png)
+        <!-- ![img](./images/clip_image044.png) -->
 
     5. Log in to the storage device and check whether the corresponding file system is deleted automatically.
       
-        ![img](./images/clip_image046.png)
+        <!-- ![img](./images/clip_image046.png) -->
 
 - **Expected Results**
     
@@ -265,23 +265,23 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
     
     1. The configuration file is modified  
        
-        ![img](./images/clip_image048.png)
+        <!-- ![img](./images/clip_image048.png) -->
 
     2. The PVC is created successfully  
        
-        ![img](./images/clip_image050.png)
+        <!-- ![img](./images/clip_image050.png) -->
 
     3. The file system is created successfully in the storage  
        
-        ![img](./images/clip_image052.png)
+        <!-- ![img](./images/clip_image052.png) -->
 
     4. The PVC is deleted successfully  
        
-        ![img](./images/clip_image054.png)
+        <!-- ![img](./images/clip_image054.png) -->
 
     5. The file system is deleted successfully in the storage  
        
-        ![img](./images/clip_image056.png)
+        <!-- ![img](./images/clip_image056.png) -->
 
 - **Test Conclusion**
     
@@ -311,27 +311,27 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
    
     1. Refer to the pod.yaml template file in the examples directory of the Huawei CSI software package, and create a Pod configuration file based on the actual environment information.
        
-        ![img](./images/clip_image058.png)
+        <!-- ![img](./images/clip_image058.png) -->
 
     2. Use the configuration file to create a Pod and check whether it is created successfully.
        
-        ![img](./images/clip_image060.png)
+        <!-- ![img](./images/clip_image060.png) -->
 
-        ![666](./images/clip_image062.png)
+        <!-- ![666](./images/clip_image062.png) -->
 
     3. Check whether the file system is mounted successfully on the Kubernetes node where the Pod resides.
 
     4. Enter the container of the Pod and check whether the PVC is mounted to the specified path.
        
-        ![img](./images/clip_image064.png)
+        <!-- ![img](./images/clip_image064.png) -->
 
     5. Enter the Pod command line interface from the web GUI
 
-        ![img](./images/vllm-workspace.png)
+        <!-- ![img](./images/vllm-workspace.png) -->
 
     6. Delete the created Pod and check whether it is deleted successfully.
        
-        ![777](./images/clip_image066.png)
+        <!-- ![777](./images/clip_image066.png) -->
 
 - **Expected Results**
    
@@ -344,23 +344,23 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
     
     1. The configuration file is modified  
        
-        ![img](./images/clip_image068.png)
+        <!-- ![img](./images/clip_image068.png) -->
 
     2. The Pod is created successfully  
        
-        ![img](./images/clip_image070.png)
+        <!-- ![img](./images/clip_image070.png) -->
 
     3. The file system is mounted successfully  
       
-        ![img](./images/clip_image072.png)
+        <!-- ![img](./images/clip_image072.png) -->
 
     4. The PVC is mounted to the specified path in the container  
       
-        ![img](./images/clip_image074.png)
+        <!-- ![img](./images/clip_image074.png) -->
 
     5. The Pod is deleted successfully  
        
-        ![img](./images/clip_image076.png)
+        <!-- ![img](./images/clip_image076.png) -->
 
 - **Test Conclusion**
 
@@ -419,7 +419,7 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
 
 - **Actual Results**
     
-    ![img](./images/clip_image078.png)
+    <!-- ![img](./images/clip_image078.png) -->
 
 - **Test Conclusion**
    
@@ -452,29 +452,29 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
     
     1. Modify the pvc mount configuration  
       
-        ![img](./images/clip_image080.png)
+        <!-- ![img](./images/clip_image080.png) -->
 
     2. Ensure that the Chunk Prefill feature and the GSA (sparsification) feature of the Unified Cache service are enabled  
       
-        ![img](./images/clip_image082.png)
+        <!-- ![img](./images/clip_image082.png) -->
 
     3. Enable the UC-eval test software
     4. Refer to the README.md file and import the environment variables  
       
-        ![img](./images/clip_image084.png)
+        <!-- ![img](./images/clip_image084.png) -->
 
     5. In the test script configuration, set the concurrency to 8-64, the number of input tokens to 32K, and the number of output tokens to 1K  
        
-        ![img](./images/clip_image086.png)
+        <!-- ![img](./images/clip_image086.png) -->
 
     6. Set the test case to run only the current test case  
        
-        ![img](./images/clip_image088.png)
+        <!-- ![img](./images/clip_image088.png) -->
 
     7. Run the UC-Eval test software and record the E2E latency (ms), TBT latency (ms), equivalent throughput TPS (Token/s), etc. of the test results
     8. Disable the Unified Cache service. After disabling features such as GSA and Chunk Prefill in the service configuration, restart the service and test the performance of the bare inference scenario  
       
-        ![img](./images/clip_image090.png)
+        <!-- ![img](./images/clip_image090.png) -->
 
         Repeat steps 2-6 and compare the results with those obtained when UCM is enabled
 
@@ -493,7 +493,7 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
 
         The recorded maximum concurrency is 32, with an incremental throughput of 292.7 tok/s  
         
-        ![img](./images/clip_image094.png)
+        <!-- ![img](./images/clip_image094.png) -->
 
     3. The bare inference scenario test results are as follows:  
        
@@ -503,7 +503,7 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
 
         The recorded maximum concurrency is 17, with an incremental throughput of 173.2 tok/s  
         
-        ![img](./images/clip_image098.png)
+        <!-- ![img](./images/clip_image098.png) -->
 
 - **Test Conclusion**
 
@@ -540,7 +540,7 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
 
     2. Refer to the README.md file, import the environment variables, and modify the model_url and model parameters  
       
-        ![img](./images/clip_image100.png)
+        <!-- ![img](./images/clip_image100.png) -->
 
     3. Pre-embed the dialogue content  
       
@@ -550,19 +550,19 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
 
         Modify multiturndialog.json  
 
-        ![img](./images/clip_image102.png)
+        <!-- ![img](./images/clip_image102.png) -->
 
         Point to UC-Eval-datasets/qa/multi_turn_dialogues/kimi/kimi.json  
 
-        ![img](./images/clip_image104.png)
+        <!-- ![img](./images/clip_image104.png) -->
 
     4. Modify the code so that only the multi-turn dialogue script is executed  
        
-        ![img](./images/clip_image106.png)
+        <!-- ![img](./images/clip_image106.png) -->
 
     5. Modify the content of test_multi_turn_dialogue as needed
 
-        ![img](./images/clip_image108.png)
+        <!-- ![img](./images/clip_image108.png) -->
 
     6. Calculate the TTFT/E2E/TBT latency according to the script return
     7. Enable the PrefixCache and RAGChunk features of Unified Cache  
@@ -582,7 +582,7 @@ For the Qwen3-32B model with a sequence length of 32K + 1K, when UCM is disabled
 
     [multi_turn_dialogue_latency.csv](attachments/image55__multi_turn_dialogue_latency.csv)
 
-    ![img](./images/clip_image112.png)
+    <!-- ![img](./images/clip_image112.png) -->
 
 - **Test Conclusion**
 

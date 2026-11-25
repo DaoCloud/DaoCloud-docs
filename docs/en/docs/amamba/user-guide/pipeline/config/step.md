@@ -161,7 +161,7 @@ When pushing an image, this step requires a username/password to log in to the i
 
 1. Create the credential in advance, and use it in the `Add Credentials` step of the pipeline. Set the username variable to `DOCKER_USERNAME` and the password variable to `DOCKER_PASSWORD`.
 
-    ![docker0](../../../images/docker0.jpg)
+    <!-- ![docker0](../../../images/docker0.jpg) -->
 
 2. Create the sub-step `docker build` and fill in the relevant parameters.
 
@@ -171,6 +171,6 @@ Note: this way is not recommended, because the password will be exposed in the p
 
 1. Add the variables `DOCKER_USERNAME` and `DOCKER_PASSWORD` in the environment variables module of the pipeline and set the corresponding information.
 
-    ![docker1](../../../images/docker1.jpg)
+    <!-- ![docker1](../../../images/docker1.jpg) -->
 
 2. Create the step `docker build` and fill in the relevant parameters.

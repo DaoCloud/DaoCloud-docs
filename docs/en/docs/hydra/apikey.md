@@ -2,7 +2,7 @@
 
 The API Key is a core credential for invoking model services, used to authenticate users and protect data security.
 
-![api keys](./images/apikey01.png)
+<!-- ![api keys](./images/apikey01.png) -->
 
 ## Feature Overview
 

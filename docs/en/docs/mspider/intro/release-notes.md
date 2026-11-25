@@ -54,7 +54,7 @@ providing convenience for users to learn about the evolution path and feature ch
     global.istioRepo: https://release.daocloud.io/chartrepo/addon
     ```
 
-    ![yaml snippet](../images/GlobalMeshCRD.png)
+    <!-- ![yaml snippet](../images/GlobalMeshCRD.png) -->
 
 ## 2025-05-09
 

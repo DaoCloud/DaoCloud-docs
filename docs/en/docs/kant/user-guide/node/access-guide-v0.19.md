@@ -19,7 +19,7 @@ The following onboarding procedure applies to Cloud Edge Collaboration module ve
 
     If you are onboarding heterogeneous nodes in an offline environment, first perform the multi-architecture merge of Helm applications. For the procedure, refer to [Multi-Architecture Merge and Upgrade Import Steps for Helm Applications](../../../kpanda/user-guide/helm/multi-archi-helm.md).
 
-![Onboard Node](../../images/access-guide-03.png)
+<!-- ![Onboard Node](../../images/access-guide-03.png) -->
 
 ## Steps
 
@@ -29,7 +29,7 @@ The following onboarding procedure applies to Cloud Edge Collaboration module ve
 
 1. Click the **Download File** button, which will redirect you to the [Download Center](https://docs.daocloud.io/en/download/modules/kant). In the download list, select the edge installation package corresponding to the version and architecture: `kantadm_{version}_{architecture}.tar.gz`. It is recommended to choose the latest version.
 
-    ![Download Edge Installation Package](../../images/access-guide-04.png)
+    <!-- ![Download Edge Installation Package](../../images/access-guide-04.png) -->
 
 1. Copy the edge installation package to the edge node to be onboarded and unzip it.
 
@@ -113,4 +113,4 @@ The following onboarding procedure applies to Cloud Edge Collaboration module ve
 
     1. Check the status of the edge node. If the current status is __Healthy__, it means the onboarding was successful.
 
-    ![Edge Node Onboarded Successfully](../../images/access-guide-05.png)
+    <!-- ![Edge Node Onboarded Successfully](../../images/access-guide-05.png) -->

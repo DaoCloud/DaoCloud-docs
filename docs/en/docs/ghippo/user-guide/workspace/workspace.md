@@ -45,7 +45,7 @@ To edit or delete a specific workspace or folder, select it and click __...__ on
 
 To move a specific workspace, select it and click __...__ on the right side.
 
-![Move](../../images/movews.png)
+<!-- ![Move](../../images/movews.png) -->
 
 Moving a workspace means transferring a workspace from one folder to another, for example, moving WS01 under folder01 to folder02.
 

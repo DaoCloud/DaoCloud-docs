@@ -14,7 +14,7 @@ In terms of scale, KubeCon London 2025 drew over 12,500 attendees, and Amsterdam
 
 In 2018, DaoCloud gave 1 talk at KubeCon Shanghai. Eight years later, as of Salt Lake City in November 2026, that number has accumulated to **112 talks**, of which **44** were delivered overseas.
 
-![DaoCloud KubeCon participation overview (2018-2026): bar chart of yearly talks, with 112 total talks, 44 overseas talks, 2 Co-Chair terms, and 5 keynotes](./images/kubecon-overview-2018-2026.svg)
+<!-- ![DaoCloud KubeCon participation overview (2018-2026): bar chart of yearly talks, with 112 total talks, 44 overseas talks, 2 Co-Chair terms, and 5 keynotes](./images/kubecon-overview-2018-2026.svg) -->
 
 | Year | Talks | China | Overseas | Notes |
 |---|---|---|---|---|
@@ -77,7 +77,7 @@ In 2025, DaoCloud delivered 29 talks in total, with 16 overseas versus 13 in Chi
 | KubeCon China | Shanghai · Sep 7–9 | 8 | - LWS: Gang Scheduling and Disaggregated Set (yankay)<br>- LWS Preflight: preflight checks for inference jobs (panpan0000)<br>- Networking (weizhoublue)<br>- JobSet (carlory)<br>- LLM inference observability (jaredTan95, Frapschen)<br>- P/D disaggregation and TTFT (kebe7jun, nicole-lihui)<br>- DRA (Paco Xu)<br>- KubeEdge (Hongbing Zhang)<br>- Plus 5 open source project booths<br>- During the conference, CNCF announced the graduation of Karmada |
 | KubeCon North America | Salt Lake City · Nov 9–12 | 3 | - Steering the Ship: Ask the Kubernetes Steering Committee (Paco Xu)<br>- Explore TAG Workloads Foundation: Core Runtime, Batch Scheduling, and Moar! (Paco Xu)<br>- Fighting Fire with Fire: Scaling KubeEdge Vulnerability Management in the New AI Era (Hongbing Zhang) |
 
-![Keynote stage at KubeCon + CloudNativeCon Europe 2026 in Amsterdam](./images/kubecon-eu-2026-keynote.jpg)
+<!-- ![Keynote stage at KubeCon + CloudNativeCon Europe 2026 in Amsterdam](./images/kubecon-eu-2026-keynote.jpg) -->
 
 ## Three Transitions Across Eight Years
 
@@ -155,7 +155,7 @@ Upstream contributions: on the Kubernetes side, there are the Steering Committee
 
 Handing projects over to the community: HAMi graduated to CNCF Incubating in July 2026; Clusterpedia, HwameiStor, Kubean, Spiderpool, and Piraeus are all in the CNCF Sandbox; KWOK, a kubernetes-sigs project, has been adopted by multiple enterprises and open source projects for large-scale testing and simulation (see [KWOK Adopters](https://kwok.sigs.k8s.io/docs/adopters/)); CloudTTY is listed in the CNCF Landscape. There are also MatrixHub (an enterprise-grade self-hosted AI model registry that accelerates model distribution for vLLM, SGLang, and Dynamo), Unifabric (AI high-speed network observability), KLTS (Kubernetes Long Term Support), kdoctor, egressgateway, miragedebug, and more.
 
-![DaoCloud open source project portfolio](./images/daocloud-opensource-portfolio.svg)
+<!-- ![DaoCloud open source project portfolio](./images/daocloud-opensource-portfolio.svg) -->
 
 For the complete list, see the [DaoCloud open source projects page](https://docs.daocloud.io/en/community/). Most of these projects are not "internal tools casually open-sourced"; they run by community rules: public roadmaps, external PRs accepted, and commit permissions handed over. DaoCloud has had a dedicated open source team since its founding and keeps building in the open to this day.
 

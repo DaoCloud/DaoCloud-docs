@@ -50,7 +50,7 @@ spec:
 
 Check the GPU resource allocation in the `Pod` before adjustment:
 
-![gpu-dynamic-regulation-before.png](./images/gpu-dynamic-regulation-before.png)
+<!-- ![gpu-dynamic-regulation-before.png](./images/gpu-dynamic-regulation-before.png) -->
 
 ### Dynamically Adjust the Computing Power
 
@@ -107,6 +107,6 @@ If you need to change the memory to 300 MB, follow the steps below:
 
 Check the GPU resource allocation in the `Pod` after adjustment:
 
-![gpu-dynamic-regulation-after.png](./images/gpu-dynamic-regulation-after.png)
+<!-- ![gpu-dynamic-regulation-after.png](./images/gpu-dynamic-regulation-after.png) -->
 
 Through the above steps, you can dynamically adjust the computing power and memory of a vGPU Pod without restarting it, thereby meeting business needs more flexibly and optimizing resource utilization.

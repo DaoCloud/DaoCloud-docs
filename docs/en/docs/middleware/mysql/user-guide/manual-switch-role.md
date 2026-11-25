@@ -14,4 +14,4 @@ By executing the appropriate commands and configuration, data consistency and se
 2. In the upper right corner of the overview page, click **Switch Primary/Standby**.
 3. Expand the drop-down list of standby nodes to specify the standby node to be promoted to the primary node.
 
-![mysql-switch-role](../images/change-role.png){: width=1000px}
+<!-- ![mysql-switch-role](../images/change-role.png) -->{: width=1000px}

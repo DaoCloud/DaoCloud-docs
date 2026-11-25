@@ -96,11 +96,11 @@ Currently, **Online Top-up** and **Offline Remittance** are supported.
 
 1. Click **Balance Alert Off** next to **Cash Balance** (off by default) to enable it.
 
-     ![balance](images/balance.png){width=900px}
+     <!-- ![balance](../storage/hwameistor/img/balance.png) -->{width=900px}
 
 2. In the dialog box, enable the alert and set a threshold. When the balance falls below the specified amount, the system sends an SMS message to the bound phone number.
 
-     ![balance_setting](images/balance_setting.png){width=900px}
+     <!-- ![balance_setting](images/balance_setting.png) -->{width=900px}
 
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button }
 [Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }

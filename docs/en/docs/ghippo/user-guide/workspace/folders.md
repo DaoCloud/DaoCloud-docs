@@ -12,7 +12,7 @@ Follow the steps below to create a folder:
 1. Log in to DCE with a user account having the admin/folder admin role.
    Click __Global Management__ -> __Workspace and Folder__ at the bottom of the left navigation bar.
 
-    ![Global Management](../images/ws01.png)
+    ![Global Management](../../images/ws01.png)
 
 2. Click the __Create Folder__ button in the top right corner.
 

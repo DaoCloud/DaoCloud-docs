@@ -1473,7 +1473,7 @@ For more questions, refer to [Virtual Machine FAQs](../virtnest/faq/index.md).
 
     - Phenomenon: Error reported even with sufficient resources:
 
-        ![Create VM error one](../virtnest/images/createvm-error01.png)
+        <!-- ![Create VM error one](../virtnest/images/createvm-error01.png) -->
 
     - Solution: [Enable hardware virtualization for nodes](../virtnest/install/install-dependency.md#all-nodes-having-hardware-virtualization-nested-virtualization-enabled)
 
@@ -1485,7 +1485,7 @@ For more questions, refer to [Virtual Machine FAQs](../virtnest/faq/index.md).
 
     **Case 3**
 
-    ![Create VM error three](../virtnest/images/createvm-error03.png)
+    <!-- ![Create VM error three](../virtnest/images/createvm-error03.png) -->
 
     Solution: Run the following command in the worker cluster:
 
@@ -1549,17 +1549,17 @@ For more questions, refer to [Virtual Machine FAQs](../virtnest/faq/index.md).
         Download address:
         https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md
 
-        ![img](../virtnest/faq/images/recog01.png)
+        <!-- ![img](../virtnest/faq/images/recog01.png) -->
 
     1. Install virtio-win iso
 
         After mounting the iso image, click virtio-win-gt-x64 to install. After installation, you can see the added disk
 
-        ![img](../virtnest/faq/images/recog02.png)
+        <!-- ![img](../virtnest/faq/images/recog02.png) -->
 
     1. Effect after adding disk
 
-        ![img](../virtnest/faq/images/recog03.png)
+        <!-- ![img](../virtnest/faq/images/recog03.png) -->
 
 ## Insight
 

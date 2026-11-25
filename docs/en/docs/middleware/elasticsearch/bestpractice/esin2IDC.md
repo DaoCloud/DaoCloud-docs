@@ -8,7 +8,7 @@ Assume that ES is deployed according to the topology below. A potential problem 
 
 1. Log in to the console and add labels to the nodes located in different data centers in the cluster. Assume that work1 and work2 are in one data center, and work3 is in another:
 
-    ![00](../../elasticsearch/images/es2-01.png)
+    <!-- ![00](../../elasticsearch/images/es2-01.png) -->
 
 2. The ES configuration mainly consists of two parts: one is the scheduling configuration for ES nodes, and the other is the configuration of the ES configuration files.
 
@@ -16,11 +16,11 @@ Assume that ES is deployed according to the topology below. A potential problem 
 
 - In the ES YAML, we need to configure two nodeSets (one nodeSet corresponds to one StatefulSet).
 
-    ![00](../../elasticsearch/images/es2-02.png)
+    <!-- ![00](../../elasticsearch/images/es2-02.png) -->
 
 - Using affinity and antiaffinity configurations, distribute two of the ES nodes in zone1 and the other ES node in zone2:
 
-    ![00](../../elasticsearch/images/es2-03.png)
+    <!-- ![00](../../elasticsearch/images/es2-03.png) -->
 
 ### Configuration File Settings
 

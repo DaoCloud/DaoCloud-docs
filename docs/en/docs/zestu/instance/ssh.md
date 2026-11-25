@@ -135,9 +135,9 @@ You can either copy the key manually from the terminal or use one of the followi
 
 2. Paste your SSH public key into the input field.
 
-    <!-- ![ssh4](../images/ssh4.png)
+    <!-- ![ssh4](../images/ssh4.png) -->
 
-    ![ssh5](../images/ssh5.png) -->
+    <!-- ![ssh5](../images/ssh5.png) -->
 
     - **Key Title**: A name to help you identify the key.
     - **Expiration Time**: Set a key expiration date. The key becomes invalid after that time. Leave blank for permanent validity.

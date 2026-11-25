@@ -8,7 +8,7 @@ Supports batch importing multiple models via remote URLs to simplify the model o
 
 1. On the **Model Gallery** page, click the **Batch Import** button at the top right corner.
 
-    ![Click Button](./images/import01.png)
+    <!-- ![Click Button](../../amamba/images/import01.png) -->
 
 2. In the pop-up import window:
 
@@ -17,7 +17,7 @@ Supports batch importing multiple models via remote URLs to simplify the model o
     - Check one or more models;
     - Click the **Import** button.
 
-    ![Import Models](./images/import02.png)
+    <!-- ![Import Models](../../amamba/images/import02.png) -->
 
     !!! note
 
@@ -31,7 +31,7 @@ If you need to manually add a model, you can use the model creation feature.
 
 1. On the **Model Gallery** page, click the **Create** button at the top right corner.
 
-    ![Click Button](./images/import01.png)
+    <!-- ![Click Button](../../amamba/images/import01.png) -->
 
 2. In the pop-up create model window, fill in the following parameters in order:
 
@@ -45,7 +45,7 @@ If you need to manually add a model, you can use the model creation feature.
 
     After filling out, click **Confirm** to complete creation.
 
-    ![Create Model](./images/create-model.png)
+    <!-- ![Create Model](./images/create-model.png) -->
 
 3. Return to the model list page, the newly created model will be displayed at the top.
 
@@ -55,11 +55,11 @@ Administrators can edit model parameter information anytime after model creation
 
 1. In the model list, click the **┇** menu icon to the right of the target model and select **Edit**.
 
-    ![Select Menu](./images/edit01.png)
+    <!-- ![Select Menu](../../virtnest/images/edit01.png) -->
 
 2. In the pop-up edit window, modify the model parameters as needed and click **Confirm** to save changes.
 
-    ![Modify Parameters](./images/edit02.png)
+    <!-- ![Modify Parameters](../../virtnest/images/edit02.png) -->
 
 3. After returning to the model list, the model position remains unchanged and updated parameters take effect immediately.
 
@@ -73,11 +73,11 @@ Administrators can manually control the display status of models in the marketpl
 
 1. In the model list, click the **┇** menu next to the target model and select **Deploy to Marketplace** or **Withdraw from Marketplace**.
 
-    ![Select Menu](./images/edit01.png)
+    <!-- ![Select Menu](../../virtnest/images/edit01.png) -->
 
 2. Taking withdrawal as an example, after selecting **Withdraw from Marketplace**, the page will show a success message and the model will be hidden from the marketplace frontend.
 
-    ![Withdraw](./images/offline.png)
+    <!-- ![Withdraw](./images/offline.png) -->
 
     !!! note
 

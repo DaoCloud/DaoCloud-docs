@@ -60,7 +60,7 @@ http:
 
 ### 1. Enable the Mesh Tracing Feature
 
-![img](./images/lane01.png)
+<!-- ![img](./images/lane01.png) -->
 
 ### 2. Define the Traffic Lane Matching Header with a wasm plugin
 
@@ -93,13 +93,13 @@ If you are in a private environment, remember to push the lane Wasm to the conta
 - Inject the sidecar
 - Whether the service is running normally (in the Service List UI)
 
-![img](./images/lane02.png)
+<!-- ![img](./images/lane02.png) -->
 
 ### 4. Define the dr of the service, and configure both green and yellow subsets for each service
 
 To confirm whether the target service is bound, you can use the service mesh UI as a reference.
 
-![img](./images/lane03.png)
+<!-- ![img](./images/lane03.png) -->
 
 ### 5. Define the vs routing rules for the north-south gateway
 
@@ -242,7 +242,7 @@ Error 2: **The service and the workload do not correspond correctly**, so the co
 The symptom is that istio-proxy has an incoming header, but there is no traceid.
 The request header `x-mspider-lane` seen in the business logs should normally be:
 
-![img](./images/lane05.png)
+<!-- ![img](./images/lane05.png) -->
 
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button }
 [Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }

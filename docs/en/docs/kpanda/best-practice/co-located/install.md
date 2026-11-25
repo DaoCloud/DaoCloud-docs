@@ -23,12 +23,12 @@ Refer to the following steps to install the Koordinator plugin for the cluster.
 
 3. Select __koordinator__ and click __Install__.
 
-    ![Click Install](../images/koordinator_helm.png)
+    <!-- ![Click Install](../images/koordinator_helm.png) -->
 
 4. On the Koordinator installation page, click __OK__ to install Koordinator with the default configuration.
 
-    ![Use the Default Configuration](../images/koordinator_install.png)
+    <!-- ![Use the Default Configuration](../images/koordinator_install.png) -->
 
 5. Check whether the Pods in the koordinator-system namespace are running properly.
 
-    ![Check Pods](../images/koordinator_system_pod.png)
+    <!-- ![Check Pods](../images/koordinator_system_pod.png) -->

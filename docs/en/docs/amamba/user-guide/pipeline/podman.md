@@ -84,7 +84,7 @@ docker manifest push --all $target # (5)!
 
 The final built image will contain images for both amd64 and arm64 platforms:
 
-![Dual-Platform Image](../../images/podman-build-mutil-arch.png)
+<!-- ![Dual-Platform Image](../../images/podman-build-mutil-arch.png) -->
 
 Of course, if you directly use Docker commands in Jenkinsfile, which do not support the manifest parameter, you can achieve the same result by building images separately. The steps are as follows:
 

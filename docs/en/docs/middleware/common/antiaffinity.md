@@ -27,7 +27,7 @@ Taking __Redis__ as an example, the following steps explain how to configure __w
 
 1. During the process of creating a __Redis__ instance, enable __workload anti-affinity__ in __Service Settings__ -> __Advanced Settings__ .
 
-    ![Advanced Settings](images/anti-affinity01.png)
+    <!-- ![Advanced Settings](images/anti-affinity01.png) -->
 
 2. Fill in the configuration for workload anti-affinity according to the following instructions.
 

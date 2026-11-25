@@ -37,7 +37,7 @@ To solve the above problems, it is recommended to set the outbound traffic polic
 
 #### Allow Access to All External Services
 
-![image](../images/outbound-traffic-01.png)
+<!-- ![image](../images/outbound-traffic-01.png) -->
 
 If your application has no strict access restrictions on external services, you can set the outbound traffic policy of the mesh to **Allow access to all external services**.
 In this way, services with an injected **sidecar** in the mesh do not need complex configuration when they need to access external services, which reduces the complexity of O&M.
@@ -56,7 +56,7 @@ For this reason, it is recommended to enable the **Pass-Through** mode for this 
 **Pass-Through mode**: In Istio, the pass-through mode allows certain traffic to be sent directly from the application to the target service
 without being processed by the sidecar proxy. This reduces latency and improves performance.
 
-![image](../images/outbound-traffic-02.png)
+<!-- ![image](../images/outbound-traffic-02.png) -->
 
 ## Summary
 

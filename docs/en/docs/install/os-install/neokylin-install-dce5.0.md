@@ -121,6 +121,6 @@ This article will introduce how to deploy DCE on the NeoKylin Linux Advanced Ser
 
         Please make a note of the provided URL for future access.
 
-    ![control-UI](../images/ui-neoky.png)
+    <!-- ![control-UI](../images/ui-neoky.png) -->
 
 8. After successfully installing DCE Enterprise, please contact us for authorization: Email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

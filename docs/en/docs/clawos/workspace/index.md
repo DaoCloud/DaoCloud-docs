@@ -24,7 +24,7 @@ It is primarily used to:
 * View the usage distribution of different models
 * Assist in evaluating costs, risks, and business value
 
-![Overview](../images/wsoverview.png)
+<!-- ![Overview](../images/wsoverview.png) -->
 
 ## Terminology
 

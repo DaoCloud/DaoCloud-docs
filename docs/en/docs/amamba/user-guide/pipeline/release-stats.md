@@ -15,7 +15,7 @@ By default, the release stats feature is disabled. You can enable it by modifyin
 
 1. In **Container Management**, select the [global service cluster](../../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster), and search for `amamba-config` in **ConfigMaps**.
 
-    ![git1](../../images/git1.jpg)
+    <!-- ![git1](../../images/git1.jpg) -->
 
 2. Click **Edit YAML**, and add `ReleaseStats=true` to the `featureGates` of apiServerConfig and devopsConfig.
 
@@ -29,11 +29,11 @@ By default, the release stats feature is disabled. You can enable it by modifyin
         - ReleaseStats=true
     ```
 
-    ![feature-gates-release](../../images/feature-gates-release.jpeg)
+    <!-- ![feature-gates-release](../../images/feature-gates-release.jpeg) -->
 
 3. After the modification is successful, search for `amamba-apiserver` and `amamba-devops-server` in Deployments, and click **Restart**.
 
-    ![git3](../../images/git3.jpg)
+    <!-- ![git3](../../images/git3.jpg) -->
 
 ### 2. Confirm the feature is enabled
 
@@ -45,7 +45,7 @@ After the restart is successful, enter the **Workbench**, and you will see the r
 
     Select `release` as the pipeline type.
 
-    ![Create pipeline](../../images/release-stats1.jpeg)
+    <!-- ![Create pipeline](../../images/release-stats1.jpeg) -->
 
 
 2. Edit and run the pipeline
@@ -97,4 +97,4 @@ After the restart is successful, enter the **Workbench**, and you will see the r
     In the left navigation bar, select **Release Stats**. On the list page, the system will show all
     version releases related to the current pipeline.
 
-    ![View release stats](../../images/release-stats2.jpeg)
+    <!-- ![View release stats](../../images/release-stats2.jpeg) -->

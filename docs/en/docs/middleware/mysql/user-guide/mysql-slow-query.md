@@ -14,7 +14,7 @@ The MySQL of the data service records SQL statements in the database whose execu
 
         Enabling the slow log feature will restart the instance!
 
-    ![alt text](../images/slow-query.png)
+    <!-- ![alt text](../images/slow-query.png) -->
 
 ## View the Slow Log
 
@@ -23,7 +23,7 @@ The MySQL of the data service records SQL statements in the database whose execu
     
     The slow log feature is disabled by default. Go to the **Slow Log Management** tab to enable it.
 
-    ![alt text](../images/slow-query-1.png)
+    <!-- ![alt text](../images/slow-query-1.png) -->
 
 ## Delete the Slow Log
 

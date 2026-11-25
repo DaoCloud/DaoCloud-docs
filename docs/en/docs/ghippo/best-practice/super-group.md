@@ -35,7 +35,7 @@ The specific operational steps are as follows:
 
     The platform administrator invites users to various sub-companies according to the actual situation and appoints sub-company administrators.
 
-    ![folerauth](../images/9.png)
+    <!-- ![folerauth](../images/9.png) -->
 
     Authorize sub-company regular users as "minirole" (1), and authorize sub-company administrators as Folder Admin.
     { .annotate }

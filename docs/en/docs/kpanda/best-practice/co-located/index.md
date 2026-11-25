@@ -37,7 +37,7 @@ The Koordinator scheduling system supports five types of QoS:
 - If the kubelet CPU manager policy is none, the already running K8s Guaranteed Pods are equivalent to Koordinator LS.
 - Newly created K8s Guaranteed Pods without a specified Koordinator QoS are equivalent to Koordinator LS.
 
-![koordinator_qos_cpu.png](../images/koordinator_qos_cpu.png)
+<!-- ![koordinator_qos_cpu.png](../images/koordinator_qos_cpu.png) -->
 
 ## Quick Start
 

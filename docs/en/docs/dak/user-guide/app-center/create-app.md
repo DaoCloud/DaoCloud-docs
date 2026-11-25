@@ -78,7 +78,7 @@ This page explains how to create an app in the App Center.
 
 1. In the **App Center** page, click the **Create** button and select to create a **Full Text Reading** app.
 
-    ![App Center](../../images/app-center.jpg)
+    <!-- ![App Center](../../images/app-center.jpg) -->
 
 2. Fill in the basic information for the app.
 

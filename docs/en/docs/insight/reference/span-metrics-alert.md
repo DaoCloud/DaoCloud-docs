@@ -83,11 +83,11 @@ For example:
 
 - First create an alert policy for the `Cluster` object:
 
-    ![Example alert group for the payment service](../images/spanmetrics-alert-policy.png)
+    <!-- ![Example alert group for the payment service](../images/spanmetrics-alert-policy.png) -->
 
 - Then add an alert rule with PromQL:
 
-    ![Example alert rule for the payment service](../images/spanmetrics-error_rate.png)
+    <!-- ![Example alert rule for the payment service](../images/spanmetrics-error_rate.png) -->
 
 The following are PromQL examples for different scenarios:
 

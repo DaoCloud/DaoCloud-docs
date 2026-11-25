@@ -46,20 +46,20 @@ Here is how to set GPU alert rules. Using GPU utilization as an example, users s
 
 1. On the observability page, click **Alerting** -> **Alert Policies** -> **Create Alert Policy**.
 
-    ![Create Alert Rule](../../images/create-gpu-alarm.png)
+    <!-- ![Create Alert Rule](../../images/create-gpu-alarm.png) -->
 
 2. Fill in the basic information.
 
-    ![Fill Alert Rule](../../images/gpu-alarm-details.png)
+    <!-- ![Fill Alert Rule](../../images/gpu-alarm-details.png) -->
 
 3. Add the alert rule.
 
-    ![Fill Alert Rule 2](../../images/gpu-alarm-details2.png)
+    <!-- ![Fill Alert Rule 2](../../images/gpu-alarm-details2.png) -->
 
 4. Choose the notification method.
 
-    ![Notification Method](../../images/gpu-alarm-message.png)
+    <!-- ![Notification Method](../../images/gpu-alarm-message.png) -->
 
 5. After setup, if a GPU maintains utilization above 80% for 5 seconds, you will receive an alert message like this:
 
-    ![Alert Message](../../images/gpu-alarm-message2.png)
+    <!-- ![Alert Message](../../images/gpu-alarm-message2.png) -->

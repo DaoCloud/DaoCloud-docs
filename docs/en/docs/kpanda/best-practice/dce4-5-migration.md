@@ -30,7 +30,7 @@ This article introduces the DCE 4.0 -> DCE migration process in some scenarios.
     - The object storage configuration must be consistent between the Velero installed in the managed DCE 4.0 cluster and the Velero installed in the restoration cluster.
     - If you need to perform Pod migration, turn on the __Migration Plugin Configuration__ switch in the form parameters (**velero 5.2.0+** supports this configuration).
 
-![Install the plugin](../images/4-5-03.png)
+<!-- ![Install the plugin](../images/4-5-03.png) -->
 
 ## Optional Configuration
 
@@ -243,7 +243,7 @@ First back up the resources that need to be backed up in the backup cluster. The
     - If you need to back up resources of multiple or all namespaces in batches, select multiple or all namespaces in the namespace option.
     - If you need to back up specific resources in a namespace, set labels for resource filtering.
         
-![Operation Menu](../images/4-5-backup1.png)
+<!-- ![Operation Menu](../images/4-5-backup1.png) -->
 
 **Restore**
 
@@ -253,11 +253,11 @@ After the data of the backup cluster is backed up, restore the resources and dat
 
 2. On the __Application Restore__ list page, select the restoration cluster. Click __Restore Backup__ in the upper right corner to create a restore backup task.
 
-    ![Restore Backup](../images/4-5-restore1.png)
+    <!-- ![Restore Backup](../images/4-5-restore1.png) -->
 
 3. Fill in the backup restore configuration and execute the backup.
 
-    ![Restore Backup](../images/4-5-restore2.png)
+    <!-- ![Restore Backup](../images/4-5-restore2.png) -->
       
     !!! note
 
@@ -272,7 +272,7 @@ The following describes the steps for image repository image migration.
 
 1. Integrate the DCE 4.0 image repository with the Kangaroo repository integration (admin). Refer to [Repository Integration](../../kangaroo/integrate/integrate-admin/integrate-admin.md) for the operation steps.
 
-    ![Source Repository Integration](../images/4-5-registry-01.png)
+    <!-- ![Source Repository Integration](../images/4-5-registry-01.png) -->
 
     !!! note
 
@@ -281,17 +281,17 @@ The following describes the steps for image repository image migration.
 
 2. Create or integrate a Harbor repository in the administrator interface to migrate the source images.
 
-    ![Target Repository Creation](../images/4-5-registry-02.png)
+    <!-- ![Target Repository Creation](../images/4-5-registry-02.png) -->
 
 3. Enter the Harbor repository instance, configure the target repository and synchronization rules. After the rules are triggered, Harbor will automatically pull images from dce-registry.
 
-    ![Target Repository Configuration](../images/4-5-registry-03.png)
+    <!-- ![Target Repository Configuration](../images/4-5-registry-03.png) -->
 
-    ![Synchronization Rule Configuration](../images/4-5-registry-04.png)
+    <!-- ![Synchronization Rule Configuration](../images/4-5-registry-04.png) -->
   
 4. Click the name of the synchronization rule to enter the synchronization task details page, where you can view whether the image synchronization is successful.
 
-    ![Target Repository Configuration](../images/4-5-registry-05.png)
+    <!-- ![Target Repository Configuration](../images/4-5-registry-05.png) -->
 
 ### Network Policy Migration
 
@@ -311,11 +311,11 @@ annotations:
   dce.daocloud.io/parcel.net.type: default-ipv4-ippool
 ```
 
-![DCE 4.0 Service](../images/4-5-calico-01.png)
+<!-- ![DCE 4.0 Service](../images/4-5-calico-01.png) -->
 
-![Service Migration Exception](../images/4-5-calico-02.png)
+<!-- ![Service Migration Exception](../images/4-5-calico-02.png) -->
 
-![Edit the Service YAML](../images/4-5-calico-03.png)
+<!-- ![Edit the Service YAML](../images/4-5-calico-03.png) -->
 
 #### Parcel Underlay Network Policy Migration
 
@@ -326,35 +326,35 @@ The following describes the steps for Parcel Underlay network policy migration.
 
 1. Install the Helm application spiderpool in the __restoration cluster__ . Refer to [Install Spiderpool](../../network/modules/spiderpool/install/install.md) for the installation process.
 
-    ![Install spiderpool](../images/4-5-underlay-01.png)
+    <!-- ![Install spiderpool](../images/4-5-underlay-01.png) -->
 
 2. Go to the details page of the __restoration cluster__ and select __Container Network__ -> __Network Configuration__ from the left menu.
 
-    ![Network Configuration](../images/4-5-underlay-02.png)
+    <!-- ![Network Configuration](../images/4-5-underlay-02.png) -->
 
 3. Check the IP addresses used in DCE4, and create the same subnet IP addresses and IP pool as in DCE4 in the DCE5.0 __Static IP Pool__ . For the use of subnets and IP pools, refer to [Create a Subnet and IP Pool](../../network/config/ippool/createpool.md).
 
-    ![Create a Subnet](../images/4-5-underlay-03.png)
+    <!-- ![Create a Subnet](../images/4-5-underlay-03.png) -->
 
-    ![Add an IP](../images/4-5-underlay-04.png)
+    <!-- ![Add an IP](../images/4-5-underlay-04.png) -->
 
     After the subnet is created, create an IP pool in the subnet details page and add the IP start address and the number of IPs.
 
-    ![Create an IP Pool](../images/4-5-underlay-05.png)
+    <!-- ![Create an IP Pool](../images/4-5-underlay-05.png) -->
 
 4. Create a macvlan-type Multus CR instance and select the IP pool that was just created. For specific usage, refer to [Create a Multus CR](../../network/config/multus-cr.md)
 
-    ![Create a Multus CR](../images/4-5-underlay-06.png)
+    <!-- ![Create a Multus CR](../images/4-5-underlay-06.png) -->
 
 5. Go to the **Custom Resources** page and manually change the `detectIPConflict` field of `spidermultusconfigs.spiderpool.spidernet.io` to `true`, which enables IP conflict detection.
 
-    ![IP Check](../images/4-5-underlay-07.png) 
+    <!-- ![IP Check](../images/4-5-underlay-07.png) --> 
 
 6. Go to **Workloads** -> **Container NIC Configuration**, select the macvlan-type Multus CR that was just created for the NIC, and select the created IP pool for the NIC IP pool, then click OK to complete the creation. If the container group is Running at this point, it means it can be accessed normally.
 
-    ![Workload](../images/4-5-underlay-08.png) 
+    <!-- ![Workload](../images/4-5-underlay-08.png) --> 
 
-    ![Select the NIC IP Pool](../images/4-5-underlay-09.png) 
+    <!-- ![Select the NIC IP Pool](../images/4-5-underlay-09.png) --> 
 
 7. Create the velero dce plugin configmap.
 

@@ -35,7 +35,7 @@ Git: <https://gitee.com/daocloud/huawei-dorado-test>
 
 ## Network Topology
 
-![](./images/networking.drawio.svg)
+<!-- ![](./images/networking.drawio.svg) -->
 
 ## Driver Download
 
@@ -125,36 +125,36 @@ $ make delete
 
 #### kubectl
 
-![](./images/cli.png)
+<!-- ![](./images/cli.png) -->
 
 #### mount -l
 
-![](./images/nfs.png)
+<!-- ![](./images/nfs.png) -->
 
 ### Backend
 
 #### File System
 
-![](./images/volume.png)
+<!-- ![](./images/volume.png) -->
 
 #### Clone
 
-![](./images/clone1.png)
-![](./images/clone2.png)
+<!-- ![](./images/clone1.png) -->
+<!-- ![](./images/clone2.png) -->
 
 #### Snapshot
 
-![](./images/snapshot.png)
+<!-- ![](../../middleware/elasticsearch/images/snapshot.png) -->
 
 #### PV Awareness
 
-![](./images/pv1.png)
-![](./images/pv2.png)
+<!-- ![](./images/pv1.png) -->
+<!-- ![](./images/pv2.png) -->
 
 #### Pod Awareness
 
-![](./images/pv1.png)
-![](./images/pv2.png)
+<!-- ![](./images/pv1.png) -->
+<!-- ![](./images/pv2.png) -->
 
 ## FAQs
 

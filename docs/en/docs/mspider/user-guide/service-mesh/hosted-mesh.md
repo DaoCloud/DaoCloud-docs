@@ -7,7 +7,7 @@ hide:
 
 1. On the right corner of the mesh list, click the __Create Mesh__ button and select **Create Hosted Mesh** from the dropdown list.
 
-    ![Create Mesh](../../images/create-mesh01.png)
+    <!-- ![Create Mesh](../../images/create-mesh01.png) -->
 
 2. The system will automatically detect the installation environment. After successful detection, fill in the following basic information and click __Next__ .
 
@@ -18,11 +18,11 @@ hide:
     - Load balancer annotations: Add annotations in the form of key-value pairs.
     - Mesh component repo: The address of the container registry that contains the data plane component images. The default is `release.daocloud.io/mspider`.
 
-    ![Basic Information](../../images/hosted-mesh01.png)
+    <!-- ![Basic Information](../../images/hosted-mesh01.png) -->
 
 3. System settings. Configure whether to report the trace, set the scale of the mesh, select the storage class, and click __Next__ .
 
-    ![System Settings](../../images/hosted-mesh02.png)
+    <!-- ![System Settings](../../images/hosted-mesh02.png) -->
 
     !!! note
 
@@ -31,15 +31,15 @@ hide:
 
 4. Governance settings. Set outbound traffic policies, locality-aware load balancing, and request retries. See [Request Retry Parameters Description](./params.md#max-retries).
 
-    ![Governance Settings](../../images/hosted-mesh03.png)
+    <!-- ![Governance Settings](../../images/hosted-mesh03.png) -->
 
 5. Sidecar settings. Set the global sidecar, sidecar resource limits, default sidecar log level, sidecar discovery limit, and sidecar registry setup, and click __OK__ . See [Log Level Description](./params.md#sidecar-log-level).
 
-    ![Sidecar Settings](../../images/hosted-mesh04.png)
+    <!-- ![Sidecar Settings](../../images/hosted-mesh04.png) -->
 
 6. You will automatically return to the Mesh List page, and the newly created mesh will be listed at the top. After some time, the status will change from __Creating__ to __Running__ . Click the __...__ on the right to perform operations such as editing mesh basic information, adding clusters, and accessing the console.
 
-    ![Mesh List](../../images/hosted-mesh05.png)
+    <!-- ![Mesh List](../../images/hosted-mesh05.png) -->
 
 !!! info
 

@@ -9,7 +9,7 @@ as inference services that can be called within the platform.
 - Online model trials are supported.
 - API calls and service O&M management are supported.
 
-![service](../images/service01.png)
+<!-- ![service](../../insight/user-guide/images/service01.png) -->
 
 ## Common Operations
 

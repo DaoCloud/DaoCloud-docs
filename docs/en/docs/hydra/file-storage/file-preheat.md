@@ -11,15 +11,15 @@ The remote file preheat function is used to preheat remote files to the cluster 
 
 1. Enter the large model service platform, select **File Storage** from the left navigation menu. In the file storage list, click the **target file storage name** to enter the file storage details page.
 
-    ![File storage list](../images/file-preheat01.png)
+    <!-- ![File storage list](../images/file-preheat01.png) -->
 
 2. On the file storage details page, select the **Preheat Task** tab, click the **Create Preheat Task** button in the top right corner.
 
-    ![Create preheat task](../images/file-preheat02.png)
+    <!-- ![Create preheat task](../images/file-preheat02.png) -->
 
 3. On the create preheat task page, select the file storage directory, source type, fill in the source information, and click **OK**. The preheat task is created successfully, and you will be returned to the file storage details page.
 
-    ![Fill parameters](../images/file-preheat03.png)
+    <!-- ![Fill parameters](../images/file-preheat03.png) -->
 
     | Parameter | Constraint / Description | Remarks |
     |---|---|---|

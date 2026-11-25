@@ -35,8 +35,8 @@ The MinIO console provides a graphical interface through which you can manage th
 
 1. Log in to the console of the cluster to be backed up, go to **Site Replication** in the left navigation bar, and click **Add Sites**.
 
-    ![MinIO disaster recovery](../images/minio-rc-01.png){ width=1000px }
+    <!-- ![MinIO disaster recovery](../images/minio-rc-01.png) -->{ width=1000px }
 
 2. Fill in the address of the current MinIO cluster and the address of the target MinIO cluster, then click **Save**.
 
-    ![MinIO disaster recovery](../images/minio-rc-02.png){ width=1000px }
+    <!-- ![MinIO disaster recovery](../images/minio-rc-02.png) -->{ width=1000px }
