@@ -5,11 +5,17 @@ date: 2025-06-23
 
 # Insight Release Notes
 
-This page lists the Release Notes of Insight, so that you can understand
-the evolution path and feature changes of each version. [Upgrade Notes](../quickstart/install/upgrade-note.md).
-Release notes for the Ipavo dashboard component are on the [Ipavo Release Notes](ipavo-release-notes.md) page.
+This page lists the Release Notes of Insight and the Ipavo dashboard
+component, so that you can understand the evolution path and feature changes
+of each version. [Upgrade Notes](../quickstart/install/upgrade-note.md).
 
 ## 2026-10-31
+
+### v0.15.2
+
+#### Ipavo
+
+- **Added** TokenFactory mode. With `global.tokenfactory.enable=true`, the sidebar menu is not created, while the proxy and version registration stay in place and `/ipavo` remains reachable. After upgrading an existing install with this value, the previous `<release>-menus` resource is removed
 
 ### v0.45.0
 
@@ -42,6 +48,15 @@ Release notes for the Ipavo dashboard component are on the [Ipavo Release Notes]
 - **Improved** the metrics remote-write exporter name from `prometheusremotewrite` to `prometheus_remote_write`
 - **Improved** Fluent Bit and the OpenTelemetry Collector with `insight.io/release-revision`
 
+### v0.15.1
+
+#### Ipavo
+
+- **Improved** global-management menu, proxy, and version resource names to follow the Helm release name
+- **Improved** those resources with the annotation `argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true`, so Argo CD can skip dry-run validation before the Ghippo CRDs are available
+- **Improved** UI proxy registration so it is skipped when `ui.enabled` is false
+- **Fixed** the built-in MySQL DSN to use `mysql.password` and the image reference to use `mysql.image.repository`
+
 ## 2026-08-31
 
 ### v0.43.0
@@ -70,6 +85,12 @@ Release notes for the Ipavo dashboard component are on the [Ipavo Release Notes]
 - **Upgraded** OpenTelemetry Operator from v0.148.0 to v0.152.0 and the Collector image from v0.150.0 to v0.156.0 (Collector chart 0.142.0 to 0.158.1, Operator chart 0.110.0 to 0.114.0)
 - **Upgraded** auto-instrumentation agents: Java 2.27.0 to 2.28.1, .NET 1.2.0 to 1.15.0, Node.js 0.73.0 to 0.76.0, Python 0.60b1 to 0.63b1, and Go v0.23.0 to v0.24.0
 - **Upgraded** the blackbox-exporter chart from 9.0.0 to 11.11.0, and tailing-sidecar chart 0.18.0 to 0.20.4 (image 0.20.0 to 0.20.5), with the auto certificate period set to 3650 days
+
+### v0.15.0
+
+#### Ipavo
+
+- **Upgraded** the server image to **v0.15.0** and the UI image to **v0.13.0**
 
 ## 2026-06-30
 

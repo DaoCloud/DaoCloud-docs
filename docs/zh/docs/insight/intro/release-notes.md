@@ -1,8 +1,14 @@
 # 可观测性 Release Notes
 
-本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化，[升级注意事项](../quickstart/install/upgrade-note.md)。仪表盘组件 Ipavo 的发布说明见 [Ipavo Release Notes](ipavo-release-notes.md)。
+本页列出 Insight 可观测性与仪表盘组件 Ipavo 的 Release Notes，便于您了解各版本的演进路径和特性变化，[升级注意事项](../quickstart/install/upgrade-note.md)。
 
 ## 2026-10-31
+
+### v0.15.2
+
+#### Ipavo
+
+- **新增** TokenFactory 模式。设置 `global.tokenfactory.enable=true` 后不创建侧边栏菜单，代理和版本注册保持不变，`/ipavo` 仍可访问。已部署环境开启该参数并升级后，原有的 `<release>-menus` 会被删除
 
 ### v0.45.0
 
@@ -35,6 +41,15 @@
 - **优化** 指标 remote write exporter 由 `prometheusremotewrite` 改为 `prometheus_remote_write`
 - **优化** Fluent Bit 与 OpenTelemetry Collector 增加 `insight.io/release-revision`
 
+### v0.15.1
+
+#### Ipavo
+
+- **优化** 全局管理中的菜单、代理和版本资源名称跟随 Helm release
+- **优化** 这些资源增加注解 `argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true`，在 Ghippo CRD 尚未就绪时允许 Argo CD 跳过 dry-run 校验
+- **优化** `ui.enabled` 为 false 时不注册 UI 反代
+- **修复** 内置 MySQL 的 DSN 使用 `mysql.password`，镜像地址使用 `mysql.image.repository`
+
 ## 2026-08-31
 
 ### v0.43.0
@@ -63,6 +78,12 @@
 - **升级** OpenTelemetry Operator v0.148.0 至 v0.152.0，Collector 镜像 v0.150.0 至 v0.156.0（Collector chart 0.142.0 至 0.158.1，Operator chart 0.110.0 至 0.114.0）
 - **升级** 自动注入探针：Java 2.27.0 至 2.28.1，.NET 1.2.0 至 1.15.0，Node.js 0.73.0 至 0.76.0，Python 0.60b1 至 0.63b1，Go v0.23.0 至 v0.24.0
 - **升级** blackbox-exporter chart 9.0.0 至 11.11.0；tailing-sidecar chart 0.18.0 至 0.20.4（镜像 0.20.0 至 0.20.5），自动证书周期改为 3650 天
+
+### v0.15.0
+
+#### Ipavo
+
+- **升级** 服务端镜像至 **v0.15.0**，UI 镜像至 **v0.13.0**
 
 ## 2026-06-30
 

@@ -649,7 +649,6 @@ nav:
                   - 应用场景: tf/insight/intro/scenarios.md
                   - 权限说明: tf/insight/intro/permission.md
                   - Release Notes: tf/insight/intro/release-notes.md
-                  - Ipavo Release Notes: tf/insight/intro/ipavo-release-notes.md
               - 快速入门:
                   - 部署资源规划:
                       - tf/insight/quickstart/res-plan/index.md

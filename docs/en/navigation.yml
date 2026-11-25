@@ -809,7 +809,6 @@ nav:
                   - Scenario: insight/intro/scenarios.md
                   - Permissions: insight/intro/permission.md
                   - Release Notes: insight/intro/release-notes.md
-                  - Ipavo Release Notes: insight/intro/ipavo-release-notes.md
               - Quick Start:
                   - Plan to Deploy:
                       - insight/quickstart/res-plan/index.md
