@@ -1641,7 +1641,6 @@ nav:
       - Ferry: community/ferry.md
       - HAMi: community/hami.md
       - HwameiStor: community/hwameistor.md
-      - KasmCloud: community/kasmcloud.md
       - Kdoctor: community/kdoctor.md
       - KLTS: community/klts.md
       - kube-node-tuning: community/kube-node-tuning.md
@@ -1653,7 +1652,8 @@ nav:
       - Piraeus: community/piraeus.md
       - Spiderpool: community/spiderpool.md
       - Unifabric: community/unifabric.md
-      - DaoCloud Icon Library: community/icons/index.md
-      - Kubean Cluster Integration with Karpenter: native/knowledge/karpenter.md
+      - Image Turbo Site: community/mirror.md
+      - DaoCloud Icons: community/icons/index.md
+      - Integrate Kubean Cluster with Karpenter: native/knowledge/karpenter.md
   - DaoCloud Website: https://daocloud.io/
 

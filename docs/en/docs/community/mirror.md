@@ -3,11 +3,11 @@ MTPE: windsonsea
 date: 2024-06-19
 ---
 
-# Mirror acceleration station
+# Image acceleration site
 
-Many mirrors are located overseas, such as gcr. Downloading from these mirrors from within China can be very slow and requires acceleration.
+Many images are located overseas, such as gcr. Downloading from these images from within China can be very slow and requires acceleration.
 
-DaoCloud provides a domestic mirror acceleration service that makes it easy to pull these images from within China.
+DaoCloud provides a domestic image acceleration service that makes it easy to pull these images from within China.
 
 ## How to use
 
@@ -25,9 +25,9 @@ DaoCloud provides a domestic mirror acceleration service that makes it easy to p
 
 ## Supported image list
 
-At present, DaoCloud has collected more than 600 overseas images for the convenience of Chinese users. You can always [provide PR](https://github.com/DaoCloud/public-image-mirror/pulls) to add more mirror addresses.
+At present, DaoCloud has collected more than 600 overseas images for the convenience of Chinese users. You can always [provide PR](https://github.com/DaoCloud/public-image-mirror/pulls) to add more image addresses.
 
-??? note "Click here to see the included mirror images."
+??? note "Click here to see the included images."
 
     ```bash
     docker.elastic.co/eck/eck-operator
