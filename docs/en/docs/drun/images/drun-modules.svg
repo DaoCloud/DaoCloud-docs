@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
   <title id="title">The d.run AI Operating System at a Glance</title>
-  <desc id="desc">d.run AI Operating System consists of four capability layers and Lego-style composable modules. Cloud-Native AI: LLM Studio (Hydra), AI Lab, InferX Suite, ClawOS. Cloud-Native Infrastructure: Containers (kpanda), Devices (topohub), Registry (kangaroo), Network (network), Storage. Operations: Cockpit (crane), Copilot. O&amp;M: Insight, Global Management (ghippo). Bottom-up, it turns heterogeneous compute into metered AI productivity.</desc>
+  <desc id="desc">d.run AI Operating System consists of four capability layers and Lego-style composable modules. Cloud Native AI: LLM Studio (Hydra), AI Lab, Turbo Inference, ClawOS. Cloud Native Infrastructure: Containers (kpanda), Devices (topohub), Registry (kangaroo), Network (network), Storage. Operations: Cockpit (crane), Copilot. O&amp;M: Insight, Global Management (ghippo). Bottom-up, it turns heterogeneous compute into metered AI productivity.</desc>
   <style>
     /* Dark mode adaptation: site palette defaults to auto (follows OS). CSS rules override presentation attributes. */
     @media (prefers-color-scheme: dark) {
@@ -36,9 +36,9 @@
   <text x="500" text-anchor="middle" y="42" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#1a2330">The d.run AI Operating System at a Glance</text>
   <text x="500" text-anchor="middle" y="64" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" fill="#6b7688">Four capability layers, Lego-style composable modules — turning heterogeneous compute into metered AI productivity</text>
 
-  <!-- Cloud-Native AI · Model production & inference -->
+  <!-- Cloud Native AI · Model production & inference -->
   <rect x="44" y="81" width="5" height="11" rx="2" fill="#2196f3"/>
-  <text x="57" y="90" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1565c0">Cloud-Native AI · Model production &amp; inference</text>
+  <text x="57" y="90" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1565c0">Cloud Native AI · Model production &amp; inference</text>
   <rect x="44" y="102" width="912" height="106" rx="10" fill="#e8f3fd" stroke="#2196f3" stroke-width="1.6"/>
   <rect x="55" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#bbdefb"/>
   <text x="66" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">LLM Studio</text>
@@ -51,7 +51,7 @@
   <text x="291.5" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Notebooks · Training jobs · Labeling</text>
   <text x="291.5" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Train &amp; serve in one place</text>
   <rect x="506" y="113" width="213.5" height="84" rx="8" fill="#ffffff" stroke="#bbdefb"/>
-  <text x="517" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">InferX Suite</text>
+  <text x="517" y="136" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Turbo Inference</text>
   <text x="708.5" y="135" text-anchor="end" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="9" fill="#9aa8bc">inferx</text>
   <text x="517" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Deploy · Accelerate · Validate</text>
   <text x="517" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">High-concurrency inference</text>
@@ -61,9 +61,9 @@
   <text x="742.5" y="159" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#5c6775">Agent runtime · Skill marketplace</text>
   <text x="742.5" y="179" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="10.5" fill="#8a96a8">Digital workers via IM</text>
 
-  <!-- Cloud-Native Infrastructure · Resource management & scheduling -->
+  <!-- Cloud Native Infrastructure · Resource management & scheduling -->
   <rect x="44" y="217" width="5" height="11" rx="2" fill="#00c853"/>
-  <text x="57" y="226" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#2e7d32">Cloud-Native Infrastructure · Resource management &amp; scheduling</text>
+  <text x="57" y="226" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#2e7d32">Cloud Native Infrastructure · Resource management &amp; scheduling</text>
   <rect x="44" y="238" width="912" height="106" rx="10" fill="#e6f7ec" stroke="#66bb6a" stroke-width="1"/>
   <rect x="55" y="249" width="170" height="84" rx="8" fill="#ffffff" stroke="#c8e6c9"/>
   <text x="66" y="272" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#1a2330">Containers</text>

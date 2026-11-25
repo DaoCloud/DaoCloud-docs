@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="680" viewBox="0 0 1000 680" role="img" aria-labelledby="title desc">
-  <title id="title">Where inference acceleration sits in the cloud-native AI stack</title>
-  <desc id="desc">Five layers, bottom-up: heterogeneous compute (NVIDIA/AMD GPUs, domestic accelerator cards, d.run compute cloud, DCE clusters), cloud-native AI platform (kpanda clusters, mspider service mesh, model registry, data, orchestration), the Inference Acceleration Service InferX (model deployment, inference acceleration, service acceptance, runtime assurance), model serving entry (Knoway/Istio GAIE, Hydra MaaS, multi-model routing), and business applications (AI agents, RAG knowledge bases, chatbots, code assistants). InferX sits between the platform and the business layers, turning heterogeneous compute into measurable Token output.</desc>
+  <title id="title">Where inference acceleration sits in the cloud native AI stack</title>
+  <desc id="desc">Five layers, bottom-up: heterogeneous compute (NVIDIA/AMD GPUs, domestic accelerator cards, d.run compute cloud, DCE clusters), cloud native AI platform (kpanda clusters, mspider service mesh, model registry, data, orchestration), Turbo Inference (model deployment, inference acceleration, service acceptance, runtime assurance), model serving entry (Knoway/Istio GAIE, Hydra MaaS, multi-model routing), and business applications (AI agents, RAG knowledge bases, chatbots, code assistants). Turbo Inference sits between the platform and the business layers, turning heterogeneous compute into measurable Token output.</desc>
 
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -14,8 +14,8 @@
   <rect x="0.5" y="0.5" width="999" height="679" rx="14" fill="#ffffff" stroke="#e6eaf1"/>
 
   <!-- Header -->
-  <text x="44" y="46" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="600" fill="#1a2330">Inference Acceleration in the Cloud-Native AI Stack</text>
-  <text x="44" y="70" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" fill="#6b7688">Bottom-up: compute → cloud-native AI platform → inference acceleration → model serving → applications</text>
+  <text x="44" y="46" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="600" fill="#1a2330">Turbo Inference in the Cloud Native AI Stack</text>
+  <text x="44" y="70" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" fill="#6b7688">Bottom-up: compute → cloud native AI platform → inference acceleration → model serving → applications</text>
 
   <!-- Token production path arrow -->
   <line x1="16" y1="576" x2="16" y2="112" stroke="#c3cddd" stroke-width="1.5" marker-end="url(#arrow)"/>
@@ -31,9 +31,9 @@
   <text x="68" y="214" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1a2330">Model Serving Entry</text>
   <text x="68" y="236" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" fill="#5c6775">Knoway (Istio GAIE) · Hydra MaaS model management · Multi-model routing</text>
 
-  <!-- 3. Inference Acceleration Service (highlighted) -->
+  <!-- 3. Turbo Inference (highlighted) -->
   <rect x="44" y="272" width="620" height="140" rx="12" fill="#eef4ff" stroke="#3366d6" stroke-width="1.8"/>
-  <text x="68" y="302" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#1c3f8f">Inference Acceleration Service (InferX)</text>
+  <text x="68" y="302" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" fill="#1c3f8f">Turbo Inference</text>
   <rect x="524" y="285" width="112" height="22" rx="11" fill="#3366d6"/>
   <text x="580" y="300" text-anchor="middle" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#ffffff">This page</text>
   <text x="68" y="324" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#4a6795">Full lifecycle from model deployment to runtime assurance, turning compute into Tokens</text>
@@ -41,7 +41,7 @@
   <rect x="68" y="336" width="137" height="32" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
   <text x="136" y="357" text-anchor="middle" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#2b4a86">Model Deployment</text>
   <rect x="213" y="336" width="137" height="32" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
-  <text x="281" y="357" text-anchor="middle" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#2b4a86">Inference Acceleration</text>
+  <text x="281" y="357" text-anchor="middle" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#2b4a86">Turbo Inference</text>
   <rect x="358" y="336" width="137" height="32" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
   <text x="426" y="357" text-anchor="middle" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#2b4a86">Service Acceptance</text>
   <rect x="503" y="336" width="137" height="32" rx="8" fill="#ffffff" stroke="#b9cdf0"/>
@@ -49,9 +49,9 @@
 
   <text x="68" y="394" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#5b7bb0">llm-d · PD disaggregation · KV Cache offloading · Multi-node · Operator tuning</text>
 
-  <!-- 4. Cloud-native AI platform -->
+  <!-- 4. Cloud Native AI platform -->
   <rect x="44" y="426" width="620" height="74" rx="10" fill="#f7f9fc" stroke="#dfe5ee"/>
-  <text x="68" y="456" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1a2330">Cloud-Native AI Platform</text>
+  <text x="68" y="456" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1a2330">Cloud Native AI Platform</text>
   <text x="68" y="478" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12.5" fill="#5c6775">kpanda clusters · mspider service mesh · Model registry · Data · Orchestration</text>
 
   <!-- 5. Heterogeneous compute -->
@@ -88,7 +88,7 @@
   <text x="712" y="568" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#5c6775">Private · Domestic accelerators</text>
 
   <!-- Footer -->
-  <text x="44" y="632" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#8a96a8">Note: InferX sits between the platform and business layers, turning heterogeneous compute into measurable Token output.</text>
+  <text x="44" y="632" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11.5" fill="#8a96a8">Note: Turbo Inference sits between the platform and business layers, turning heterogeneous compute into measurable Token output.</text>
 <style>
 @media (prefers-color-scheme: dark) {
   line[stroke="#c3cddd" i]{stroke:#8a94a6}

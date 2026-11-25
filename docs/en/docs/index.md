@@ -145,7 +145,7 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
             <span class="tf-arch-card-tip">Intelligent Q&A and application capabilities</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="tf/inferx/">
-            <span class="tf-arch-card-title">InferX Suite</span>
+            <span class="tf-arch-card-title">Turbo Inference</span>
             <span class="tf-arch-card-tip">Inference acceleration and engine management</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="tf/zestu/">
@@ -234,7 +234,7 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
             <span class="tf-arch-card-tip">Cloud-native integrated training and inference</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="drun/inferx/">
-            <span class="tf-arch-card-title">InferX Suite</span>
+            <span class="tf-arch-card-title">Turbo Inference</span>
             <span class="tf-arch-card-tip">Inference acceleration and engine management</span>
           </a>
           <a class="tf-arch-card tf-arch-card--model" href="drun/clawos/intro/">
@@ -471,7 +471,7 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
     - [AI Lab](drun/baize/intro/)
     - [AI Apps](tf/dak/)
     - [LLM Studio](tf/hydra/intro/)
-    - [InferX Suite](tf/inferx/)
+    - [Turbo Inference](tf/inferx/)
     - [Compute Cloud](tf/zestu/)
 
 - :material-server:{ .lg .middle } __Containers__
@@ -526,7 +526,7 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
       <a class="doc-marquee__chip" href="drun/baize/intro/"><span class="doc-marquee__dot"></span>AI Lab</a>
       <a class="doc-marquee__chip" href="tf/dak/"><span class="doc-marquee__dot"></span>AI Apps</a>
       <a class="doc-marquee__chip" href="tf/hydra/intro/"><span class="doc-marquee__dot"></span>LLM Studio</a>
-      <a class="doc-marquee__chip" href="tf/inferx/"><span class="doc-marquee__dot"></span>InferX Suite</a>
+      <a class="doc-marquee__chip" href="tf/inferx/"><span class="doc-marquee__dot"></span>Turbo Inference</a>
       <a class="doc-marquee__chip" href="tf/zestu/"><span class="doc-marquee__dot"></span>Compute Cloud</a>
       <a class="doc-marquee__chip" href="kpanda/intro/"><span class="doc-marquee__dot"></span>Container Management</a>
       <a class="doc-marquee__chip" href="kairship/intro/"><span class="doc-marquee__dot"></span>Multicloud Management</a>
@@ -540,7 +540,7 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
       <a class="doc-marquee__chip" href="drun/baize/intro/"><span class="doc-marquee__dot"></span>AI Lab</a>
       <a class="doc-marquee__chip" href="tf/dak/"><span class="doc-marquee__dot"></span>AI Apps</a>
       <a class="doc-marquee__chip" href="tf/hydra/intro/"><span class="doc-marquee__dot"></span>LLM Studio</a>
-      <a class="doc-marquee__chip" href="tf/inferx/"><span class="doc-marquee__dot"></span>InferX Suite</a>
+      <a class="doc-marquee__chip" href="tf/inferx/"><span class="doc-marquee__dot"></span>Turbo Inference</a>
       <a class="doc-marquee__chip" href="tf/zestu/"><span class="doc-marquee__dot"></span>Compute Cloud</a>
       <a class="doc-marquee__chip" href="kpanda/intro/"><span class="doc-marquee__dot"></span>Container Management</a>
       <a class="doc-marquee__chip" href="kairship/intro/"><span class="doc-marquee__dot"></span>Multicloud Management</a>

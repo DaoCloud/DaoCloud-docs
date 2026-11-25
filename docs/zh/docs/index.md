@@ -597,7 +597,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
   <div class="tf-relation-box tf-relation-box--tf">
     <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="tf/">d.run Token 工厂效能平台 · 面向智算中心的 Token 生产与经营系统</a></div>
     <div class="tf-relation-box-sub">用户/管理员双视图 · 把算力转化为可计量、可交易、可运营的 Token 产能</div>
-    <div class="tf-relation-box-detail">大模型服务平台 · AI 应用 (RAG) · 推理加速 InferX · 算力云 · Copilot/驾驶舱/费用中心</div>
+    <div class="tf-relation-box-detail">大模型服务平台 · AI 应用 (RAG) · 推理加速 · 算力云 · Copilot/驾驶舱/费用中心</div>
   </div>
 
   <div class="tf-relation-arrow">▲</div>
@@ -605,7 +605,7 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
   <div class="tf-relation-box tf-relation-box--drun">
     <div class="tf-relation-box-title"><a class="tf-relation-box-link" href="drun/">d.run AI 操作系统 · 面向企业的 AI 操作系统</a></div>
     <div class="tf-relation-box-sub">异构算力调度 + 模型推理 + 运营治理一体 · 面向企业全部门输出 AI 服务</div>
-    <div class="tf-relation-box-detail">云原生 AI（Hydra/AI Lab/ClawOS/InferX）· 云原生底座 · 运营与运维管理</div>
+    <div class="tf-relation-box-detail">云原生 AI（Hydra/AI Lab/ClawOS/InferY）· 云原生底座 · 运营与运维管理</div>
   </div>
 
   <div class="tf-relation-arrow">▲</div>
