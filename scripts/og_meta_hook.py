@@ -17,12 +17,14 @@ Slack、Telegram、飞书等平台时只会显示裸 URL，没有预览卡片。
 
 另外做三件"去语言线索"和站级修正的事，起因是飞书把中文页卡片抓成了英文：
 
-1. 移除 ``extra.alternate`` 生成的 head 内 hreflang 声明。它们用的是相对
-   URL 且指向站点根，本身就是无效声明（Google 要求绝对 URL 且必须页级
-   对应），副作用却是实打实的：飞书据此把 URL 按语言前缀改写，中文页
-   ``/tf/hydra/intro/`` 被改写为 ``/en/tf/hydra/intro/`` 去抓，卡片显示成
-   英文；英文版不存在时（``/en/drun/hydra/finetune/``）抓到的就是一条
-   ``{"error":"Document not found"}``。
+1. 移除 ``extra.alternate`` 生成的 head 内 hreflang 声明（相对 URL、指向站点
+   根，Google 视为无效），随后注入**页级、绝对 URL** 的有效 alternates：
+   zh 页挂 zh-CN（自身）+ en（对侧），en 页反向；对侧语言树中不存在同一
+   相对路径的页面时只挂自身。存在性判断按 ``config.docs_dir`` 推出对侧
+   docs 目录、检查同 ``src_uri`` 文件（含 symlink，``os.path.exists`` 会跟随
+   并对断链返回 False），因此 zh/en 页面树不对齐的部分自动只挂单语。
+   这能让 Google 按用户语言正确分发中英两版，也不会再诱导飞书把 URL
+   改写到一个不存在的英文页上。
 2. 语言下拉 ``<a href="/en/" hreflang="en">`` 上的 hreflang 改名为 ``data-lang``
    （只改名不删除）。``docs/*/docs/stylesheets/language-redirect.js`` 的点击
    处理器以 ``.md-select__link[hreflang]`` 为选择器、并用属性值作为"用户选择
@@ -38,10 +40,14 @@ Slack、Telegram、飞书等平台时只会显示裸 URL，没有预览卡片。
 """
 
 import html
+import os
 import re
 from urllib.parse import urljoin
 
 _MAX_DESC = 160
+
+# 页级 hreflang 值：Google 要求语言区域有效，zh 用 zh-CN、en 用 en。
+_HREFLANG = {"zh": "zh-CN", "en": "en"}
 
 # 站点级 description meta 标签（mkdocs 产出，可能已被压缩）。
 _SITE_DESC_RE = re.compile(r'<meta\s+name=["\']?description["\']?\s+content="[^"]*"\s*>')
@@ -143,6 +149,66 @@ def _og_locale(language):
     return {"zh": "zh_CN", "en": "en_US"}.get(language, "en_US")
 
 
+def _lang_and_dirs(config):
+    """从 docs_dir 路径识别本次构建的语言及对侧语言的 docs 目录。
+
+    两份配置的 docs_dir 固定形如 ``docs/zh/docs`` 与 ``docs/en/docs``；
+    识别不出（其他仓库/自定义布局）返回 (None, None)，调用方跳过注入。
+    """
+    docs_dir = str(getattr(config, "docs_dir", "") or "").replace(os.sep, "/")
+    m = re.search(r"/docs/(zh|en)/docs$", docs_dir)
+    if not m:
+        return None, None
+    lang = m.group(1)
+    other = "en" if lang == "zh" else "zh"
+    return lang, docs_dir.replace(f"/docs/{lang}/docs", f"/docs/{other}/docs")
+
+
+def _rebase(canonical_url, target_lang):
+    """把页级 canonical URL 重建为 target_lang 语言的对应页 URL。
+
+    zh 站 site_url 无语言前缀、en 站带 ``/en/``，因此只增删 host 后紧跟
+    的 ``/en/`` 段（正则锚定 host，页面路径里出现 ``/en/`` 不受影响）。
+    """
+    if target_lang == "en":
+        if re.match(r"^https?://[^/]+/en/", canonical_url):
+            return canonical_url
+        m = re.match(r"^(https?://[^/]+/)(.*)$", canonical_url)
+        return f"{m.group(1)}en/{m.group(2)}" if m else canonical_url
+    m = re.match(r"^(https?://[^/]+/)en/(.*)$", canonical_url)
+    return f"{m.group(1)}{m.group(2)}" if m else canonical_url
+
+
+def _language_alternates(page, config):
+    """生成页级、绝对 URL 的 hreflang <link> 串（无有效信息时返回空串）。
+
+    - 只处理真实文档页（``src_uri`` 以 ``.md`` 结尾），404 / search 等生成页跳过；
+    - 对侧语言树存在同一相对路径的页面（含 symlink）才挂对侧声明，
+      否则只挂自身——自引用 hreflang 合法且是 Google 推荐写法；
+    - 缺 canonical_url（site_url 未配置）时整个跳过，不输出相对 URL。
+    """
+    src_uri = str(getattr(page.file, "src_uri", "") or "")
+    if not src_uri.endswith(".md"):
+        return ""
+    canonical = getattr(page, "canonical_url", None)
+    if not canonical:
+        return ""
+    lang, other_dir = _lang_and_dirs(config)
+    if not lang:
+        return ""
+    links = (
+        f'<link rel="alternate" hreflang="{_HREFLANG[lang]}" '
+        f'href="{html.escape(canonical, quote=True)}">'
+    )
+    other = "en" if lang == "zh" else "zh"
+    if other_dir and os.path.exists(os.path.join(other_dir, *src_uri.split("/"))):
+        links += (
+            f'<link rel="alternate" hreflang="{_HREFLANG[other]}" '
+            f'href="{html.escape(_rebase(canonical, other), quote=True)}">'
+        )
+    return links
+
+
 def on_post_page(output, page, config, **kwargs):
     if not output or "</head>" not in output:
         return output
@@ -191,6 +257,11 @@ def on_post_page(output, page, config, **kwargs):
     # 平台按语言前缀改写 URL 去抓另一语言的版本（详见模块 docstring）。
     output = _ALT_LINK_RE.sub("", output)
 
+    # 注入页级、绝对 URL 的 hreflang（zh 页挂 zh-CN + en，en 页反向；
+    # 对侧不存在该页时只挂自身）。必须在移除之后注入，避免被
+    # _ALT_LINK_RE 误删——本函数结尾统一把 tags 插到 </head> 前。
+    alternates = _language_alternates(page, config)
+
     # 语言下拉 <a> 上的 hreflang 改名为 data-lang：属性对爬虫静默，
     # 但切换脚本仍能据 data-lang 在点击时保留 query/hash。
     # 仅在本次构建确实加载了切换脚本时才改名（见 _switcher_js_enabled）：
@@ -204,4 +275,4 @@ def on_post_page(output, page, config, **kwargs):
             "</head>", f'<link rel="canonical" href="{html.escape(url, quote=True)}">' + "</head>", 1
         )
 
-    return output.replace("</head>", tags + "</head>", 1)
+    return output.replace("</head>", alternates + tags + "</head>", 1)
