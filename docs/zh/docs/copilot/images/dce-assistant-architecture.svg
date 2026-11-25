@@ -1,71 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
-  <title id="title">DCE 小助手逻辑架构</title>
-  <desc id="desc">用户通过对话界面访问 DeepSeek Harness。Harness 与模型 API 交互，加载 Skills 并调用 CLI 工具和数据插件。DCE CLI 访问平台数据；数据插件经数据获取、临时内存数据集和展示处理，在浏览器中呈现图表和表格。</desc>
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#36856b"/></marker>
-    <style>
-      text { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #243c35; text-anchor: middle; }
-      .heading { font-size: 25px; font-weight: 600; }
-      .body { font-size: 18px; }
-      .small { font-size: 16px; fill: #536b62; }
-      .label { font-size: 16px; fill: #36856b; }
-      .box { fill: #f3f9f6; stroke: #b4d6c7; stroke-width: 1.5; }
-      .line { fill: none; stroke: #36856b; stroke-width: 2; marker-end: url(#arrow); }
-      .both { marker-start: url(#arrow); }
-    </style>
-  </defs>
-  <rect width="1200" height="850" rx="16" fill="#fff"/>
-  <rect class="box" x="340" y="25" width="520" height="85" rx="12"/>
-  <text class="heading" x="600" y="61">用户与对话界面</text>
-  <text class="body" x="600" y="88">提出问题 · 补充条件 · 查看结果</text>
-  <path class="line both" d="M600 112 V178"/>
-  <text class="label" x="696" y="149">提问与回答</text>
-  <rect class="box" x="60" y="180" width="280" height="120" rx="12"/>
-  <text class="heading" x="200" y="224">模型 API</text>
-  <text class="body" x="200" y="259">需求理解与推理</text>
-  <rect x="400" y="180" width="400" height="120" rx="12" fill="#168258"/>
-  <text x="600" y="224" style="font-size:28px;font-weight:600;fill:#fff">DeepSeek Harness</text>
-  <text x="600" y="259" style="font-size:18px;fill:#fff">组织对话 · 加载 Skills · 调用工具</text>
-  <path class="line both" d="M342 240 H398"/>
-  <rect class="box" x="860" y="180" width="280" height="120" rx="12"/>
-  <text class="heading" x="1000" y="215">Skills</text>
-  <text class="body" x="1000" y="246">DCE 查询 · 集群与 Pod 诊断</text>
-  <text class="body" x="1000" y="275">GPU 瓶颈分析</text>
-  <path class="line" d="M858 240 H802" stroke-dasharray="6 4"/>
-  <path class="line" d="M500 302 V330 H240 V388"/>
-  <text class="label" x="310" y="355">调用工具</text>
-  <path class="line" d="M700 302 V358"/>
-  <rect class="box" x="60" y="390" width="360" height="140" rx="12"/>
-  <text class="heading" x="240" y="429">CLI 工具</text>
-  <text class="body" x="240" y="462">dce · kubectl · promtool</text>
-  <text class="small" x="240" y="499">通过 DCE CLI 获取平台数据</text>
-  <rect x="500" y="360" width="640" height="200" rx="12" fill="#f9fbfa" stroke="#b4d6c7" stroke-width="1.5"/>
-  <text class="heading" x="820" y="400">数据插件</text>
-  <rect class="box" x="520" y="425" width="175" height="110" rx="8"/>
-  <text x="607" y="457" style="font-size:18px;font-weight:600">tool-getdata</text>
-  <text class="small" x="607" y="487">获取与规范化数据</text>
-  <text class="small" x="607" y="514">调用 DCE CLI</text>
-  <rect class="box" x="725" y="425" width="150" height="110" rx="8"/>
-  <text x="800" y="457" style="font-size:19px;font-weight:600">内存数据集</text>
-  <text class="small" x="800" y="487">带有效期</text>
-  <text class="small" x="800" y="514">非持久化</text>
-  <rect class="box" x="905" y="425" width="215" height="110" rx="8"/>
-  <text x="1012" y="457" style="font-size:18px;font-weight:600">tool-present-data</text>
-  <text class="small" x="1012" y="487">解析数据</text>
-  <text class="small" x="1012" y="514">生成展示元数据</text>
-  <path class="line both" d="M422 480 H518"/>
-  <path class="line" d="M697 480 H723"/>
-  <path class="line" d="M877 480 H903"/>
-  <path class="line both" d="M240 532 V658"/>
-  <text class="label" x="341" y="600">查询运行数据</text>
-  <rect class="box" x="60" y="660" width="360" height="120" rx="12"/>
-  <text class="heading" x="240" y="704">平台与运行数据</text>
-  <text class="body" x="240" y="740">DCE · Kubernetes · Prometheus</text>
-  <path class="line" d="M1012 562 V658"/>
-  <text class="label" x="1085" y="610">展示元数据</text>
-  <rect class="box" x="720" y="660" width="420" height="120" rx="12"/>
-  <text class="heading" x="930" y="696">浏览器展示</text>
-  <text class="body" x="930" y="729">ui-data-visualization</text>
-  <text class="small" x="930" y="757">图表与表格</text>
-  <text class="small" x="600" y="823">Harness 组织分析，Skills 提供方法，工具查询数据，数据插件支持可视化。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1280" viewBox="0 0 1920 1280" role="img" aria-labelledby="title desc">
+<title id="title">DCE 小助手逻辑架构</title><desc id="desc">上层用户与场景；中层 DCE 小助手和独立模型服务；下层 DCE 模块。小助手负责组织任务、加载 Skills、调用工具获取平台数据，并向用户呈现判断、依据和建议。模型通过 API 接收上下文与工具结果，返回推理、回答和工具调用请求。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#36856b"/></marker></defs>
+<style>text{font-family:'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#193a30}.flow{fill:none;stroke:#36856b;stroke-width:3;marker-end:url(#arrow)}</style>
+<rect width="1920" height="1280" fill="#f7faf8"/>
+
+<rect x="80" y="49" width="8" height="54" rx="3" fill="#36856b" stroke="#36856b" stroke-width="1.6"/>
+<text x="110" y="94" text-anchor="start" style="font-size:44px;font-weight:650;fill:#193a30">DCE 小助手架构</text>
+<text x="110" y="139" text-anchor="start" style="font-size:25px;font-weight:400;fill:#536b62">围绕平台查询、运维诊断和运行分析，提供有依据的判断与建议</text>
+<rect x="80" y="185" width="1760" height="140" rx="16" fill="#edf5f0" stroke="#b4d6c7" stroke-width="1.6"/>
+<text x="130" y="241" text-anchor="start" style="font-size:35px;font-weight:650;fill:#193a30">用户与场景</text>
+<text x="130" y="285" text-anchor="start" style="font-size:24px;font-weight:400;fill:#536b62">平台管理员 · 运维人员</text>
+<rect x="750" y="213" width="230" height="84" rx="12" fill="#ffffff" stroke="#b4d6c7" stroke-width="1.6"/>
+<text x="865" y="265" text-anchor="middle" style="font-size:28px;font-weight:600;fill:#193a30">平台查询</text>
+<rect x="1020" y="213" width="230" height="84" rx="12" fill="#ffffff" stroke="#b4d6c7" stroke-width="1.6"/>
+<text x="1135" y="265" text-anchor="middle" style="font-size:28px;font-weight:600;fill:#193a30">健康检查</text>
+<rect x="1290" y="213" width="230" height="84" rx="12" fill="#ffffff" stroke="#b4d6c7" stroke-width="1.6"/>
+<text x="1405" y="265" text-anchor="middle" style="font-size:28px;font-weight:600;fill:#193a30">故障排查</text>
+<rect x="1560" y="213" width="230" height="84" rx="12" fill="#ffffff" stroke="#b4d6c7" stroke-width="1.6"/>
+<text x="1675" y="265" text-anchor="middle" style="font-size:28px;font-weight:600;fill:#193a30">运行分析</text>
+<path class="flow" d="M390 327V428"/>
+<text x="428" y="386" text-anchor="start" style="font-size:23px;font-weight:400;fill:#536b62">提出问题</text>
+<path class="flow" d="M930 428V327"/>
+<text x="967" y="367" text-anchor="start" style="font-size:23px;font-weight:400;fill:#536b62">判断 · 依据 · 建议</text>
+<text x="967" y="402" text-anchor="start" style="font-size:21px;font-weight:400;fill:#536b62">文字 · 表格 · 图表</text>
+<rect x="80" y="430" width="1200" height="520" rx="20" fill="#edf5f0" stroke="#9ebfae" stroke-width="1.6"/>
+<text x="125" y="491" text-anchor="start" style="font-size:40px;font-weight:650;fill:#193a30">DCE 小助手</text>
+<text x="1235" y="488" text-anchor="end" style="font-size:21px;font-weight:400;fill:#536b62">运行基础：DeepSeek Harness</text>
+<rect x="120" y="535" width="1120" height="120" rx="12" fill="#168258" stroke="#168258" stroke-width="1.6"/>
+<text x="680" y="579" text-anchor="middle" style="font-size:30px;font-weight:650;fill:#ffffff">任务组织</text>
+<text x="680" y="621" text-anchor="middle" style="font-size:24px;font-weight:400;fill:#edf8f1">管理对话上下文 · 加载 Skills · 衔接模型与工具 · 整理分析结果</text>
+<path class="flow" d="M325 657V733"/>
+<text x="355" y="703" text-anchor="start" style="font-size:22px;font-weight:400;fill:#536b62">加载分析方法</text>
+<path class="flow" d="M975 657V733"/>
+<text x="1005" y="703" text-anchor="start" style="font-size:22px;font-weight:400;fill:#536b62">组织查询与展示</text>
+<rect x="120" y="735" width="410" height="160" rx="12" fill="#ffffff" stroke="#b4d6c7" stroke-width="1.6"/>
+<text x="325" y="781" text-anchor="middle" style="font-size:31px;font-weight:650;fill:#193a30">Skills</text>
+<text x="325" y="823" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#536b62">检查步骤 · 分析方法 · 输出要求</text>
+<text x="325" y="863" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#536b62">按任务加载对应场景的 Skill</text>
+<rect x="710" y="735" width="530" height="160" rx="12" fill="#ffffff" stroke="#b4d6c7" stroke-width="1.6"/>
+<text x="975" y="781" text-anchor="middle" style="font-size:30px;font-weight:650;fill:#193a30">工具与数据插件</text>
+<text x="975" y="823" text-anchor="middle" style="font-size:23px;font-weight:400;fill:#536b62">CLI 查询 · 数据整理 · 展示数据准备</text>
+<text x="975" y="863" text-anchor="middle" style="font-size:22px;font-weight:400;fill:#536b62">获取证据，支持表格与图表呈现</text>
+<text x="130" y="929" text-anchor="start" style="font-size:21px;font-weight:400;fill:#536b62">分析范围取决于 Skills、工具与可访问数据</text>
+<rect x="1510" y="430" width="330" height="520" rx="20" fill="#ffffff" stroke="#b4d6c7" stroke-width="1.6"/>
+<text x="1675" y="492" text-anchor="middle" style="font-size:35px;font-weight:650;fill:#193a30">模型服务</text>
+<text x="1675" y="535" text-anchor="middle" style="font-size:24px;font-weight:400;fill:#536b62">模型 API</text>
+<path class="flow" d="M1242 575H1508"/>
+<text x="1395" y="555" text-anchor="middle" style="font-size:19px;font-weight:400;fill:#536b62">需求 · 上下文 · 工具结果</text>
+<path class="flow" d="M1508 635H1242"/>
+<text x="1395" y="671" text-anchor="middle" style="font-size:19px;font-weight:400;fill:#536b62">回答 · 工具调用请求</text>
+<text x="1675" y="744" text-anchor="middle" style="font-size:25px;font-weight:600;fill:#193a30">理解用户需求</text>
+<text x="1675" y="789" text-anchor="middle" style="font-size:24px;font-weight:400;fill:#536b62">结合工具结果推理</text>
+<text x="1675" y="834" text-anchor="middle" style="font-size:24px;font-weight:400;fill:#536b62">生成回答与调用请求</text>
+<path class="flow" d="M865 897V1068"/>
+<text x="832" y="1002" text-anchor="end" style="font-size:23px;font-weight:400;fill:#536b62">查询请求</text>
+<path class="flow" d="M1120 1068V897"/>
+<text x="1155" y="996" text-anchor="start" style="font-size:23px;font-weight:400;fill:#536b62">返回平台数据</text>
+<text x="1155" y="1031" text-anchor="start" style="font-size:21px;font-weight:400;fill:#536b62">状态 · 事件 · 日志 · 指标</text>
+<rect x="80" y="1070" width="1760" height="145" rx="16" fill="#edf5f0" stroke="#b4d6c7" stroke-width="1.6"/>
+<text x="130" y="1133" text-anchor="start" style="font-size:35px;font-weight:650;fill:#193a30">DCE 模块</text>
+<text x="130" y="1176" text-anchor="start" style="font-size:22px;font-weight:400;fill:#536b62">提供平台数据</text>
+<rect x="450" y="1095" width="285" height="95" rx="10" fill="#ffffff" stroke="#b4d6c7" stroke-width="1.6"/>
+<text x="592.5" y="1133" text-anchor="middle" style="font-size:27px;font-weight:600;fill:#193a30">容器管理</text>
+<text x="592.5" y="1171" text-anchor="middle" style="font-size:19px;font-weight:400;fill:#536b62">集群 · 节点 · 工作负载 · GPU</text>
+<rect x="750" y="1095" width="285" height="95" rx="10" fill="#ffffff" stroke="#b4d6c7" stroke-width="1.6"/>
+<text x="892.5" y="1133" text-anchor="middle" style="font-size:27px;font-weight:600;fill:#193a30">可观测性</text>
+<text x="892.5" y="1171" text-anchor="middle" style="font-size:21px;font-weight:400;fill:#536b62">指标 · 日志 · 告警</text>
+<rect x="1050" y="1095" width="285" height="95" rx="10" fill="#ffffff" stroke="#b4d6c7" stroke-width="1.6"/>
+<text x="1192.5" y="1133" text-anchor="middle" style="font-size:27px;font-weight:600;fill:#193a30">大模型服务平台</text>
+<text x="1192.5" y="1171" text-anchor="middle" style="font-size:21px;font-weight:400;fill:#536b62">模型服务 · Token 用量</text>
+<rect x="1350" y="1095" width="285" height="95" rx="10" fill="#ffffff" stroke="#b4d6c7" stroke-width="1.6"/>
+<text x="1492.5" y="1133" text-anchor="middle" style="font-size:27px;font-weight:600;fill:#193a30">全局管理</text>
+<text x="1492.5" y="1171" text-anchor="middle" style="font-size:21px;font-weight:400;fill:#536b62">工作空间 · 用户与权限</text>
+<rect x="1650" y="1095" width="140" height="95" rx="10" fill="#ffffff" stroke="#8ab49d" stroke-width="1.6" stroke-dasharray="7 5"/>
+<text x="1720" y="1138" text-anchor="middle" style="font-size:42px;font-weight:650;fill:#36856b">···</text>
+<text x="1720" y="1171" text-anchor="middle" style="font-size:20px;font-weight:400;fill:#536b62">更多模块</text>
+<text x="960" y="1257" text-anchor="middle" style="font-size:25px;font-weight:600;fill:#536b62">小助手组织任务，Skills 提供方法，工具获取证据，模型辅助推理</text>
 </svg>
