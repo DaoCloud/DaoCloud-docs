@@ -640,6 +640,7 @@ nav:
                   - Application Scenarios: tf/insight/intro/scenarios.md
                   - Permission Notes: tf/insight/intro/permission.md
                   - Release Notes: tf/insight/intro/release-notes.md
+                  - Ipavo Release Notes: tf/insight/intro/ipavo-release-notes.md
               - Quick Start:
                   - Deployment Resource Planning:
                       - tf/insight/quickstart/res-plan/index.md

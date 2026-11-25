@@ -686,6 +686,7 @@ nav:
                   - 应用场景: drun/insight/intro/scenarios.md
                   - 权限说明: drun/insight/intro/permission.md
                   - Release Notes: drun/insight/intro/release-notes.md
+                  - Ipavo Release Notes: drun/insight/intro/ipavo-release-notes.md
               - 快速入门:
                   - 部署资源规划:
                       - drun/insight/quickstart/res-plan/index.md

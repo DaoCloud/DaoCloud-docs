@@ -677,6 +677,7 @@ nav:
                   - Application Scenarios: drun/insight/intro/scenarios.md
                   - Permission Notes: drun/insight/intro/permission.md
                   - Release Notes: drun/insight/intro/release-notes.md
+                  - Ipavo Release Notes: drun/insight/intro/ipavo-release-notes.md
               - Quick Start:
                   - Deployment Resource Planning:
                       - drun/insight/quickstart/res-plan/index.md

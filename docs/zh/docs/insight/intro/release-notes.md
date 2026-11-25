@@ -1,6 +1,81 @@
 # 可观测性 Release Notes
 
-本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化，[升级注意事项](../quickstart/install/upgrade-note.md)。
+本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化，[升级注意事项](../quickstart/install/upgrade-note.md)。仪表盘组件 Ipavo 的发布说明见 [Ipavo Release Notes](ipavo-release-notes.md)。
+
+## 2026-10-31
+
+### v0.45.0
+
+#### Insight Server
+
+- **新增** 数据库和 Elasticsearch 支持引用已有 Secret：`global.storage.database[0].existingSecret`、`global.elasticsearch.existingSecret`。未配置名称时仍由 Chart 创建 Secret
+- **优化** Grafana 的 Elasticsearch 数据源从该 Secret 读取密码
+- **优化** insight-server 从 Secret 读取 Elasticsearch 密码和数据库连接串
+
+#### Insight Agent
+
+- **新增** 日志导出到 Elasticsearch 时可以引用已有 Secret（`global.exporters.logging.elasticsearch.existingSecret`）。配置名称后 Chart 不再创建自带 Secret，Fluent Bit 和事件日志 Collector 的环境变量需要指向该 Secret
+- **优化** kube-prometheus-stack 中 Prometheus 的全名改为 `insight-agent`，Prometheus Operator 的全名改为 `insight-agent-prom-operator`，并保留兼容 Service `insight-agent-kube-prometh-prometheus`，供 insight-server 访问
+
+## 2026-09-30
+
+### v0.44.0
+
+#### Insight Server
+
+- **新增** `global.gitops.provider`，默认值为 `none`。设为 `argocd` 时，Grafana 资源添加 `argocd.argoproj.io/sync-wave`；VictoriaMetrics Operator 使用 `sync-wave: -1`
+- **优化** 更新 Ascend、Metax 和 NVIDIA 仪表盘
+- **优化** OpenTelemetry Collector 与 Aggregator 增加注解 `insight.io/release-revision`，随 Helm revision 更新
+
+#### Insight Agent
+
+- **新增** Prometheus 开启 native histograms 和 OTLP receiver，remote write 发送 native histograms，OTLP 指标名使用 `UnderscoreEscapingWithSuffixes`
+- **优化** spanmetrics 使用 `global.spanmetrics.maxSize: 16`，去掉固定 buckets
+- **优化** Fluent Bit 采集 Knoway 网关容器日志，排除路径中去掉 `*_knoway-gw*.log`
+- **优化** 指标 remote write exporter 由 `prometheusremotewrite` 改为 `prometheus_remote_write`
+- **优化** Fluent Bit 与 OpenTelemetry Collector 增加 `insight.io/release-revision`
+
+## 2026-08-31
+
+### v0.43.0
+
+#### Insight Server
+
+- **新增** 告警接口 `Alert/GetGroupYAML`
+- **新增** APIServer 与 Admission Webhook 告警，覆盖请求成功率、延迟、in-flight 请求和 APF 队列，并增加 `TooManyAdmissionWebhooks` 以及记录规则 `apiserver:admission_webhook_count`
+- **新增** 昇腾 NPU 告警，以及概览、详情、Pod 仪表盘
+- **新增** NVIDIA GPU 告警：`DCGMExporterDown`、`GPUHighTemperature`、`GPUMemoryNearLimit`、`GPUPCIeReplayHigh`、`GPURowRemapFailure`、`GPUXidError`
+- **新增** `ClusterLabelConflict` 和 `ClusterNameConflict` 告警
+- **优化** Grafana 的 Prometheus 数据源改用带 `/select/<tenant>/prometheus` 的 `vm.prometheus.read`
+- **优化** 禁用 Grafana 插件 `grafana-metricsdrilldown-app`
+- **优化** OpenTelemetry Collector 去掉启动参数 `--feature-gates=-connector.servicegraph.virtualNode`
+- **升级** VictoriaMetrics 组件 1.127.0 至 1.147.0（operator v0.64.0 至 v0.73.1，chart 0.61.12 至 0.86.0）、Alertmanager v0.28.0 至 v0.32.1、Grafana Operator v5.20.0 至 v5.24.0
+- **升级** OTel Collector chart 0.142.0 至 0.158.1（aggregator 镜像 v0.150.0 至 v0.156.0）、Vector chart 0.52.0 至 0.57.0（镜像 0.55.0 至 0.57.0）
+
+#### Insight Agent
+
+- **新增** 可配置 `global.cluster.id` 和 `global.cluster.name`。Fluent Bit、自动注入和事件日志使用该配置
+- **新增** kubeletstats receiver，每 30 秒采集容器文件系统指标，并 remote write 到集群内 Prometheus
+- **新增** kube-state-metrics 为 Deployment 增加标签白名单：`agentclaw.io/instance-name`、`agentclaw.io/workspace-id`、`agentclaw.io/user-id`、`agentclaw.io/user-name`
+- **优化** 审计日志黑名单增加 `leases`
+- **升级** 指标采集组件：Prometheus v2.53.5 至 v3.5.1，kube-prometheus-stack 75.15.0 至 86.2.0（remote write receiver 改为 `enableRemoteWriteReceiver`），Prometheus Operator v0.83.0 至 v0.91.0，node-exporter v1.9.1 至 v1.11.1，blackbox-exporter v0.26.0 至 v0.28.0，kube-state-metrics chart 6.3.0 至 7.4.0
+- **升级** Fluent Bit 4.2.4 至 5.0.7（chart 0.49.0 至 0.57.7）
+- **升级** OpenTelemetry Operator v0.148.0 至 v0.152.0，Collector 镜像 v0.150.0 至 v0.156.0（Collector chart 0.142.0 至 0.158.1，Operator chart 0.110.0 至 0.114.0）
+- **升级** 自动注入探针：Java 2.27.0 至 2.28.1，.NET 1.2.0 至 1.15.0，Node.js 0.73.0 至 0.76.0，Python 0.60b1 至 0.63b1，Go v0.23.0 至 v0.24.0
+- **升级** blackbox-exporter chart 9.0.0 至 11.11.0；tailing-sidecar chart 0.18.0 至 0.20.4（镜像 0.20.0 至 0.20.5），自动证书周期改为 3650 天
+
+## 2026-06-30
+
+### v0.42.2
+
+#### Insight Server
+
+- **优化** NVIDIA GPU 仪表盘改用 `insight_hami_*` 指标
+
+#### Insight Agent
+
+- **新增** HAMi GPU 指标别名记录规则 `insight_hami_*`，同时兼容 `hami_*` 与旧指标名
+- **优化** NVIDIA GPU 记录规则改用 `insight_hami_*`
 
 ## 2026-05-31
 

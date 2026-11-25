@@ -812,6 +812,7 @@ nav:
                   - 应用场景: insight/intro/scenarios.md
                   - 权限说明: insight/intro/permission.md
                   - Release Notes: insight/intro/release-notes.md
+                  - Ipavo Release Notes: insight/intro/ipavo-release-notes.md
               - 快速入门:
                   - 部署资源规划:
                       - insight/quickstart/res-plan/index.md
