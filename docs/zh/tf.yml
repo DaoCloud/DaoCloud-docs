@@ -626,6 +626,7 @@ nav:
               - Release Notes: tf/crane/intro/release-notes.md
           - Copilot 智能工作台:
               - tf/copilot/index.md
+              - 安装: tf/copilot/install.md
               - 投资回收周期测算: tf/copilot/investment-payback.md
               - 兼容性: tf/copilot/compatibility.md
           - 费用中心:
