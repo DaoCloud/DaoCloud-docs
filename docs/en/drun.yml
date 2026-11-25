@@ -67,6 +67,7 @@ nav:
                   - Model Serving Management: drun/hydra/oam/mdm.md
                   - Security Policy Management: drun/hydra/oam/security-policy.md
                   - Security Audit Logs: drun/hydra/oam/security-audit-logs.md
+                  - Cost Analysis Center: drun/hydra/oam/cost-analysis-center.md
               - User Practice Scenarios:
                   - Example Scenarios Intro: drun/hydra/user-guides/index.md
                   - Use in VSCode and Cline: drun/hydra/user-guides/cline-in-vscode.md

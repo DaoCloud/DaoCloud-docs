@@ -67,6 +67,7 @@ nav:
                   - Model Serving Management: tf/hydra/oam/mdm.md
                   - Security Policy Management: tf/hydra/oam/security-policy.md
                   - Security Audit Logs: tf/hydra/oam/security-audit-logs.md
+                  - Cost Analysis Center: tf/hydra/oam/cost-analysis-center.md
               - User Practice Scenarios:
                   - Example Scenarios Intro: tf/hydra/user-guides/index.md
                   - Use in VSCode and Cline: tf/hydra/user-guides/cline-in-vscode.md
