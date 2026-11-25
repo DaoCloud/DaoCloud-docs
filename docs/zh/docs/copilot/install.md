@@ -17,7 +17,7 @@
 | Deployment / Service | `tokenfactory-copilot` |
 | 示例 Chart 版本 | `0.3.0-rc2` |
 
-下文命令使用 Chart `0.3.0-rc2`。安装前执行 `helm search repo agentclaw/copilot --versions --devel`。不带 `--devel` 时，搜索结果不包含 `0.3.0-rc2` 这类预发布版本。把命令和离线导出配置里的版本换成要安装的版本。三个运行镜像的 tag 为 `v` 加上 Chart 版本，例如 Chart `0.3.0-rc2` 对应 `v0.3.0-rc2`，并且必须一起更换：
+下文命令使用 Chart `0.3.0-rc2`。安装前执行 `helm search repo agentclaw/copilot --versions --devel`。不带 `--devel` 时，搜索结果不包含 `0.3.0-rc2` 这类预发布版本。把命令和离线导出配置里的版本换成要安装的版本。仓库发布不带 `-rc` 的更高版本后，把下文示例里的 `0.3.0-rc2` 换成该稳定版。三个运行镜像的 tag 为 `v` 加上 Chart 版本，例如 Chart `0.3.0-rc2` 对应 `v0.3.0-rc2`，并且必须一起更换：
 
 - `release.daocloud.io/agentclaw/deepseek-harness:v0.3.0-rc2`
 - `release.daocloud.io/agentclaw/copilot-skills:v0.3.0-rc2`

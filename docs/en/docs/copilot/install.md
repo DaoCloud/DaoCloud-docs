@@ -17,7 +17,7 @@ This page describes how to install the Copilot workbench offline and online. The
 | Deployment / Service | `tokenfactory-copilot` |
 | Example Chart version | `0.3.0-rc2` |
 
-The commands below use Chart `0.3.0-rc2`. Before installing, run `helm search repo agentclaw/copilot --versions --devel` and replace that version in the commands and in the offline export config. Without `--devel`, the search omits prereleases such as `0.3.0-rc2`. Each runtime image tag is `v` plus the Chart version, so Chart `0.3.0-rc2` uses tag `v0.3.0-rc2`. Replace the three tags together:
+The commands below use Chart `0.3.0-rc2`. Before installing, run `helm search repo agentclaw/copilot --versions --devel` and replace that version in the commands and in the offline export config. Without `--devel`, the search omits prereleases such as `0.3.0-rc2`. After the repository publishes a higher version without `-rc`, replace `0.3.0-rc2` in the examples below with that stable version. Each runtime image tag is `v` plus the Chart version, so Chart `0.3.0-rc2` uses tag `v0.3.0-rc2`. Replace the three tags together:
 
 - `release.daocloud.io/agentclaw/deepseek-harness:v0.3.0-rc2`
 - `release.daocloud.io/agentclaw/copilot-skills:v0.3.0-rc2`
