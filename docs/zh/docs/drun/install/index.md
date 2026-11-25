@@ -14,9 +14,10 @@ d.run 采用离线安装：在称为[火种节点](./commercial/deploy-arch.md)�
 
 !!! tip "版本说明"
 
-    本文以安装器 v0.46.0 为例。安装器、离线包与 osPackage 三者的版本必须相互匹配，各版本变化请查阅
-    [安装器 Release Notes](./release-notes.md)。若要安装 Token 工厂，请参阅
-    [Token 工厂安装指南](../../tf/install/index.md)，两者的清单文件与默认模块不同。
+    以安装器 v0.46.0 为例，安装器、离线包与 osPackage 三者的版本必须相互匹配，各版本变化请查阅
+    [安装器 Release Notes](./release-notes.md)。
+
+## 安装流程
 
 从环境准备到日常运维共八个阶段。安装失败时先定位原因，修正后从对应阶段重试。点击图中的阶段可直接跳转到对应文档。
 
@@ -43,12 +44,49 @@ flowchart TB
     click J "upgrade/"
 ```
 
+## 下一步
+
 安装完成并用 `admin/changeme` 登录后，建议按以下顺序完成初始化：
 
-1. 在[全局管理](../ghippo/intro/index.md)中创建用户、用户组与工作空间，并规划角色权限。
-2. 在[容器管理](../kpanda/intro/index.md)中创建工作集群，承接业务负载；AI 训练与推理建议使用 GPU 节点。
-3. 进入[大模型服务平台](../hydra/index.md)部署或接入模型，配置 Token 与 API 调用。
-4. 在[可观测性](../insight/intro/index.md)中确认指标与日志采集正常。
+<style>
+.tf-path{display:flex;gap:0.75rem;margin:1.25rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.tf-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.tf-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.tf-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.tf-path-step:last-child::after{display:none}
+.tf-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.tf-path-title{font-weight:700;font-size:0.95rem}
+.tf-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.tf-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.tf-path-step::after{display:none}}
+</style>
+
+<div class="tf-path">
+  <a class="tf-path-step" style="--path-c:#2196f3" href="../ghippo/intro/">
+    <span class="tf-path-num">1</span>
+    <span class="tf-path-title">规划权限</span>
+    <span class="tf-path-desc">全局管理中创建用户、用户组与工作空间，规划角色权限</span>
+    <span class="tf-path-go">Go →</span>
+  </a>
+  <a class="tf-path-step" style="--path-c:#00acc1" href="../kpanda/intro/">
+    <span class="tf-path-num">2</span>
+    <span class="tf-path-title">创建集群</span>
+    <span class="tf-path-desc">容器管理中创建工作集群承接业务负载，AI 训练与推理建议使用 GPU 节点</span>
+    <span class="tf-path-go">Go →</span>
+  </a>
+  <a class="tf-path-step" style="--path-c:#43a047" href="../hydra/">
+    <span class="tf-path-num">3</span>
+    <span class="tf-path-title">部署模型</span>
+    <span class="tf-path-desc">大模型服务平台部署或接入模型，配置 Token 与 API 调用</span>
+    <span class="tf-path-go">Go →</span>
+  </a>
+  <a class="tf-path-step" style="--path-c:#fb8c00" href="../insight/intro/">
+    <span class="tf-path-num">4</span>
+    <span class="tf-path-title">观测运行</span>
+    <span class="tf-path-desc">可观测性中确认指标与日志采集正常</span>
+    <span class="tf-path-go">Go →</span>
+  </a>
+</div>
 
 [下载中心](https://docs.daocloud.io/download/){ .md-button }
 [了解 Token 工厂效能平台](https://docs.daocloud.io/tf/){ .md-button }
