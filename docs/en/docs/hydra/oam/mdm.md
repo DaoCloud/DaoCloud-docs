@@ -16,7 +16,7 @@ Platform administrators can manage model deployments in **Operations Management*
 
 This list displays all created model deployment configurations, including the model name and the number of available configurations for each.
 
-![Model Serving Management List](images/list.png)
+<!-- ![Model Serving Management List](images/list.png) -->
 
 ## Create
 
@@ -30,12 +30,12 @@ On the creation page, users need to:
 
 After completing the configuration, click **Confirm** to finish creation.
 
-![Model Serving Management Model Selection](images/select.png)
+<!-- ![Model Serving Management Model Selection](images/select.png) -->
 
-![Model Serving Management Creation](images/create.png)
+<!-- ![Model Serving Management Creation](../../middleware/postgresql/images/create.png) -->
 
 ## View Details
 
 Users can click a model in the list to view detailed information of created configurations, including resource allocation and runtime parameters.
 
-![Model Serving Management Details](images/xiangqing.png)
+<!-- ![Model Serving Management Details](images/xiangqing.png) -->

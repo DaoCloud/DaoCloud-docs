@@ -28,9 +28,9 @@ This document explains how to switch between full GPU mode, virtualization mode,
 
 2. After switching the mode and clicking **Confirm**, the node status will change to **Switching GPU Mode**. Once the GPU mode label is correctly displayed in the node list, the switch is complete (i.e., the `hami-nvidia-vgpu-device-plugin` pod for vGPU has started successfully).
 
-    <!-- ![GPU Mode 2](../images/vgpuaddon2.png)
+    <!-- ![GPU Mode 2](../images/vgpuaddon2.png) -->
 
-    ![GPU Mode 3](../images/vgpuaddon3.png) -->
+    <!-- ![GPU Mode 3](../images/vgpuaddon3.png) -->
 
 3. After the node successfully switches GPU modes, you can [deploy applications using vGPU resources](./nvidia/vgpu/vgpu_user.md). Note: there is a slight delay during the switch. Deploy applications only after the node labels are displayed correctly.
    **Note**: There may be a slight delay during the switching process. Please wait until the node label is correctly displayed before deploying applications.

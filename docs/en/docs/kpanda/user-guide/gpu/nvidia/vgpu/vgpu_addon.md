@@ -38,13 +38,13 @@ This section explains how to install the vGPU plugin in the DCE platform, which 
 
         The NVIDIA vGPU capability supports node-level GPU mode switching (full card/vGPU/MIG mode) to meet the requirements of different workloads for different GPU modes in the same cluster.
 
-    ![GPU mode 1](../../images/vgpuaddon1.png)
+    <!-- ![GPU mode 1](../../images/vgpuaddon1.png) -->
 
     After you click __OK__ , the node status changes to __Switching GPU Mode__ . Wait until the switch is complete, that is, the hami-nvidia-vgpu-device-plugin pod of the vGPU starts. After that, the status changes to __Nvidia-vGPU__ .
 
-    ![GPU mode 2](../../images/vgpuaddon2.png)
+    <!-- ![GPU mode 2](../../images/vgpuaddon2.png) -->
 
-    ![GPU mode 3](../../images/vgpuaddon3.png)
+    <!-- ![GPU mode 3](../../images/vgpuaddon3.png) -->
 
 5. After the GPU mode of the node is switched successfully, you can [deploy applications using vGPU resources](vgpu_user.md). Note that the switching takes a while, so deploy applications only after the node labels are displayed correctly.
 

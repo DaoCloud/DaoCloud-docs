@@ -20,7 +20,7 @@ If all dependencies are installed, [consult developers](../../install/index.md#c
 
 - Phenomenon: Error reported even with sufficient resources:
 
-    ![Create VM error one](../images/createvm-error01.png)
+    <!-- ![Create VM error one](../images/createvm-error01.png) -->
 
 - Solution: [Enable hardware virtualization for nodes](../install/install-dependency.md#all-nodes-having-hardware-virtualization-nested-virtualization-enabled)
 
@@ -32,7 +32,7 @@ Solution: [Upgrade the node operating system kernel](../install/install-dependen
 
 ### Case 3
 
-![Create VM error three](../images/createvm-error03.png)
+<!-- ![Create VM error three](../images/createvm-error03.png) -->
 
 Solution: Run the following command in the worker cluster:
 

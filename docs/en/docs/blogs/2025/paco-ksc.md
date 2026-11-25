@@ -36,7 +36,7 @@ To further advance the integration of Kubernetes with AI and other emerging tech
 - [WG AI Gateway](https://github.com/kubernetes/community/tree/master/wg-ai-gateway): Explores routing, policies, and observability for inference traffic within the Gateway API ecosystem, in collaboration with projects like Gateway API Inference Extension (GAIE).
 - [WG AI Integration](https://github.com/kubernetes/community/tree/master/wg-ai-integration): Focuses on practical integration of AI systems with Kubernetes, gathering real-world experience and proposals.
 
-![AI Working Groups](../images/ai-wg.jpeg)
+<!-- ![AI Working Groups](../images/ai-wg.jpeg) -->
 
 **How to Participate:** All working groups are listed on the community website’s [Community Groups page](https://www.kubernetes.dev/community/community-groups/), including Slack channels, mailing lists, and bi-weekly meetings. Practitioners or those interested in standards and implementation are welcome to join.
 

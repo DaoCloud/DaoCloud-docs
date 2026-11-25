@@ -18,17 +18,17 @@ Follow these steps to install __dify-chart__ plugin for the cluster and build th
 
 1. Find the target cluster where you want to install __dify-chart__ plugin in the cluster list. Click the cluster name, then click __Helm Applications__ -> __Helm Templates__ in the left navigation bar. Enter __dify-chart__ in the search bar.
 
-    ![Cluster Details](../images/dify-install01.png)
+    <!-- ![Cluster Details](../images/dify-install01.png) -->
 
 2. Read the __dify-chart__ plugin introduction, select the version and click __Install__. This article uses __0.0.2__ version as an example.
 
-    ![Click Install](../images/dify-install02.png)
+    <!-- ![Click Install](../images/dify-install02.png) -->
 
 3. Fill in and configure parameters, then click __Next__.
 
     === "Basic Parameters"
 
-        ![Fill Parameters](../images/dify-install03.png)
+        <!-- ![Fill Parameters](../images/dify-install03.png) -->
 
         - Name: Required parameter, enter the plugin name. Note that the name can be at most 63 characters, can only contain lowercase letters, numbers and separators ("-"), and must start and end with lowercase letters or numbers, e.g., dify-chart.
         - Namespace: The namespace where the plugin is installed. You can choose an existing namespace or create a new one. For example, create __dify__ namespace.
@@ -43,7 +43,7 @@ Follow these steps to install __dify-chart__ plugin for the cluster and build th
 
     === "Parameter Configuration"
 
-        ![Configure Service Parameters](../images/dify-install04.png)
+        <!-- ![Configure Service Parameters](../images/dify-install04.png) -->
 
         - __service__ :
             - __type__ : The access method of the Dify application. Keep the default __Nodeport__ node access.
@@ -52,26 +52,26 @@ Follow these steps to install __dify-chart__ plugin for the cluster and build th
 
 
 4. After confirming that the YAML is correct, click __OK__ to complete the installation of the __dify-chart__ plugin. The system will then automatically redirect to the __Helm Applications__ list page. After a few minutes, refresh the page and you will see the application that was just installed.
-    ![View Status](../images/dify-install06.png)
+    <!-- ![View Status](../images/dify-install06.png) -->
 
 ## Quick Access
 
 1. You can access it directly through the configured __nodeIP__ : __nodePort__ , or click __Services__ -> __dify-nginx-nodeport__ -> __External Access__ in the UI to access the built Dify platform.
 
-    ![Service Access](../images/dify-use16.jpeg)
+    <!-- ![Service Access](../images/dify-use16.jpeg) -->
 
 2. Enter the administrator initialization password to verify and enter the initialization page. The default administrator initialization password is __password__ .
 
-    ![Access Page](../images/dify-use01.png)
+    <!-- ![Access Page](../images/dify-use01.png) -->
 
 
 3. Set the administrator account of the Dify application, which is used to create applications and manage LLM providers. Click __Settings__ to complete the initialization.
 
-    ![Administrator Account](../images/dify-use02.png)
+    <!-- ![Administrator Account](../images/dify-use02.png) -->
 
 4. Log in with the administrator account set in the previous step to enter the Dify platform home page.
 
-    ![Application Home Page](../images/dify-use15.png)
+    <!-- ![Application Home Page](../images/dify-use15.png) -->
 
 ## Usage Example
 
@@ -81,15 +81,15 @@ This article takes the quick building of a __Chinese-English Translation__ appli
 
 1. On the Dify platform home page, click __Username__ in the upper right corner to enter the __Settings__ page.
 
-    ![Settings](../images/dify-use03.png)
+    <!-- ![Settings](../images/dify-use03.png) -->
 
 2. Click __Settings__ -> __Model Providers__ to enter the model list and select the required model.
 
-    ![Model Providers](../images/dify-use04.png)
+    <!-- ![Model Providers](../images/dify-use04.png) -->
 
 3. Configure the basic parameters of the model and click __Confirm__ to add the LLM service. This article takes __Tongyi Qianwen__ as an example.
 
-    ![Configure Parameters](../images/dify-use05.png)
+    <!-- ![Configure Parameters](../images/dify-use05.png) -->
 
     - Model Type: Dify classifies models into the following 4 categories according to usage scenarios: LLM Model, TTS Model, Text Embedding Model and Rerank Model.
     - Model Name: The specific name of the required model, e.g., qwen-turbo.
@@ -104,11 +104,11 @@ Steps to create a __Text Generation__ application:
 
 1.  On the Dify platform home page, click __Create Application__ -> __Create Blank Application__ , select the application type, and fill in the __Application Name & Icon__ and __Description__ to create the application.
 
-    ![Create Application](../images/dify-use06.png)
+    <!-- ![Create Application](../images/dify-use06.png) -->
 
 2.  After the application is created, you will be automatically redirected to the application overview page. Click __Orchestrate__ in the left menu to orchestrate the application. The __Debug and Preview__ area on the right side of the interface allows you to debug and preview the application.
 
-    ![Orchestrate Application](../images/dify-use07.png)
+    <!-- ![Orchestrate Application](../images/dify-use07.png) -->
 
     - Prefix Prompt: Prompts are used to constrain AI to give professional replies, making the responses more precise. Users can use the built-in prompt generator to write suitable prompts.
     - Variables: Variables will be presented in the form of a form for users to fill in before the conversation. The values of the variables in the prompt will be replaced with the values filled in by the user. The maximum length can be set, for example, {{query}}.
@@ -116,11 +116,11 @@ Steps to create a __Text Generation__ application:
 
 3.  Click __Publish__ in the upper right corner to complete the quick building of a simple application.
 
-    ![Publish Application](../images/dify-use08.png)
+    <!-- ![Publish Application](../images/dify-use08.png) -->
 
 4.  Click __Publish__ -> __Run__ in sequence to access the home page of the created application for use.
 
-    ![Use Application](../images/dify-use09.png)
+    <!-- ![Use Application](../images/dify-use09.png) -->
 
 ### Workflow Configuration
 
@@ -133,15 +133,15 @@ Steps to create a __Workflow__ workflow:
 
 1.  On the __Create Application__ -> __Create Blank Application__ page, select Workflow, and fill in the __Application Name & Icon__ and __Description__ to create the workflow.
 
-    ![Create Workflow](../images/dify-use10.png)
+    <!-- ![Create Workflow](../images/dify-use10.png) -->
 
 2.  After creation, you will be automatically redirected to the orchestration page. Add nodes by right-clicking or clicking the __+ sign__ at the end of the previous node to orchestrate the workflow.
 
-    ![Orchestrate Workflow](../images/dify-use11.png)
+    <!-- ![Orchestrate Workflow](../images/dify-use11.png) -->
 
 3.  Add an __LLM__ node, call the LLM, then fill in and configure the parameters.
 
-    ![Call the LLM](../images/dify-use12.png)
+    <!-- ![Call the LLM](../images/dify-use12.png) -->
 
     - Model: Call the LLM to answer questions, e.g., qwen-turbo.
     - Context: Context can be understood as the background information provided to the LLM, and is often used to fill in the output variables of knowledge retrieval.
@@ -153,10 +153,10 @@ Steps to create a __Workflow__ workflow:
 
 4.  Add the __End__ node to complete the workflow orchestration. Click __Run__ in the upper right corner to debug and preview the workflow.
 
-    ![Debug Workflow](../images/dify-use13.png)
+    <!-- ![Debug Workflow](../images/dify-use13.png) -->
 
 5.  Click __Publish__ in the upper right corner to complete the quick building of a simple workflow.
 
-    ![Call the LLM](../images/dify-use14.png)
+    <!-- ![Call the LLM](../images/dify-use14.png) -->
 
 For more features of the Dify application development platform, refer to [Dify Official Documentation](https://dify.ai).

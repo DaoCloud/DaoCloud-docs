@@ -16,7 +16,7 @@ This capability depends on Higress integrated with the Knoway gateway. It requir
 1. Sign in to the platform and open the **Admin Console**.
 2. In the left navigation, choose **Security** → **Policy Management**.
 
-![Policy management list](images/security-policy-list.png)
+<!-- ![Policy management list](images/security-policy-list.png) -->
 
 ## View the Policy List
 
@@ -41,7 +41,7 @@ You can search by **cluster** name in the search box. Click **Edit** on a row to
 2. On the **Edit Policy** page, **Cluster** is read-only.
 3. Under **Policy Configuration**, enable the policies you need, fill in the parameters, and save.
 
-![Edit policy](images/security-policy-edit.png)
+<!-- ![Edit policy](images/security-policy-edit.png) -->
 
 !!! note
 

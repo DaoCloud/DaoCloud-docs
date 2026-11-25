@@ -22,7 +22,7 @@ In the [Global Service Cluster](../../kpanda/user-guide/clusters/cluster-role.md
 
 The installed result is as shown below:
 
-<!-- ![Install Hydra and mspider](./images/deploy01.png) -->
+<!-- ![Install Hydra and mspider](../../kpanda/user-guide/images/deploy01.png) -->
 
 ## Worker Cluster
 
@@ -32,7 +32,7 @@ The worker cluster needs Hydra Agent and metallb installed.
 
 1. Create a worker cluster to deploy Hydra Agent (if resources are limited, you can also directly use the Global Service Cluster)
 
-    <!-- ![Install Hydra Agent](./images/deploy02.png) -->
+    <!-- ![Install Hydra Agent](../../kpanda/user-guide/images/deploy02.png) -->
 
 2. Deploy Hydra Agent in the worker cluster
 

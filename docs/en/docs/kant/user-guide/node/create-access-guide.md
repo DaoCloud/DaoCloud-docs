@@ -9,7 +9,7 @@ The following describes the steps to create an access configuration and how to m
 
 1. Click the **Edge Node** menu in the left navigation bar to enter the page, select **Access Configuration** to enter the configuration management list page, and click the **Create Access Configuration** button in the top right corner.
 
-    ![Guide Management](../../images/access-guide-011.png)
+    <!-- ![Guide Management](../../images/access-guide-011.png) -->
 
 2. Fill in the registration information.
 
@@ -20,7 +20,7 @@ The following describes the steps to create an access configuration and how to m
     - Description: Description information for the access configuration.
     - Tags: Tags information for the access configuration.
 
-    ![Create Access Configuration](../../images/access-guide-022.png)
+    <!-- ![Create Access Configuration](../../images/access-guide-022.png) -->
 
 3. After completing the information, click the **OK** button to complete the creation of the access configuration.
 

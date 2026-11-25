@@ -38,7 +38,7 @@ The platform provides two ways to modify the default storage capacity.
       capacity: "500Gi"
     ```
 
-    ![Modify the ConfigMap](../images/file-scale01.png)
+    <!-- ![Modify the ConfigMap](../images/file-scale01.png) -->
 
 ## Expand an Existing File Storage
 
@@ -52,15 +52,15 @@ To expand an already created file storage, follow the steps below.
 1. Go to **Container Management** -> **Global Service Cluster Details** -> **Custom Resources**, and find the
    **filesstorages.storage.hydra.io** resource.
 
-    ![Custom Resource](../images/file-scale02.png)
+    <!-- ![Custom Resource](../images/file-scale02.png) -->
 
 2. Click the custom resource name to enter the details page. Based on the **workspace ID** and the **cluster name**,
    find the CR instance of the target cluster, and click **Edit YAML**.
 
     CR instance naming rule: ws-{workspace ID}-{cluster name}-{random string}
 
-    ![File Storage CR Instance](../images/file-scale03.png)
+    <!-- ![File Storage CR Instance](../images/file-scale03.png) -->
 
 3. In the YAML file, modify the **spec.capacity** parameter to complete the storage capacity expansion.
 
-    ![Modify the Storage Capacity](../images/file-scale04.png)
+    <!-- ![Modify the Storage Capacity](../images/file-scale04.png) -->

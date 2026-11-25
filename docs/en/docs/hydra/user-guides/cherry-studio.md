@@ -4,7 +4,7 @@
 
 [🍒 Cherry Studio](https://cherry-ai.com/) is an LLM desktop client that supports integration with multiple LLM providers, including OpenAI, GPT-3, Hydra, and more.
 
-![Cherry Studio](../images/cherry-studio.jpg)
+<!-- ![Cherry Studio](../images/cherry-studio.jpg) -->
 
 ## Install Cherry Studio
 
@@ -16,7 +16,7 @@ It supports MacOS, Windows, and Linux clients.
 
 Open the configuration page in Cherry Studio, add a model provider, for example named `d.run`, with the provider type set to `OpenAI`.
 
-![Cherry Studio](../images/cherry-studio-2.png)
+<!-- ![Cherry Studio](../images/cherry-studio-2.png) -->
 
 Add your API Key and API Host obtained from d.run.
 
@@ -29,8 +29,8 @@ Add your API Key and API Host obtained from d.run.
 
 Cherry Studio will automatically detect the model list, and you can enable the models you need in the list.
 
-![Cherry Studio](../images/cherry-studio-4.png)
+<!-- ![Cherry Studio](../images/cherry-studio-4.png) -->
 
 ## Cherry Studio Usage Demo
 
-![Cherry Studio](../images/cherry-studio-5.png)
+<!-- ![Cherry Studio](../images/cherry-studio-5.png) -->

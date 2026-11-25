@@ -39,7 +39,7 @@ Only clusters [created through the container management module](../clusters/crea
     - __os_package_repos__: the repository address of the operating system packages. Fill it in according to your actual environment.
     - __enable_node_sysctl_tuning__: node kernel parameter tuning, which improves the stability, reliability, security, and performance of the system by adjusting kernel parameters.
 
-    ![Parameter Settings](../images/addnode04.png)
+    <!-- ![Parameter Settings](../images/addnode04.png) -->
 
 !!! note
 

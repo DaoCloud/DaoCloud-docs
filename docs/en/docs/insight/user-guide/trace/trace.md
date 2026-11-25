@@ -40,7 +40,7 @@ In the **Call Chain** section, you can view trace data from two dimensions: **Al
         **Error Spans** are Spans that contain the tag `error=true` in their details.  
         These indicate that an error or exception occurred during execution, often representing failures or issues in the trace request process.
 
-    ![all span](../../images/allSpan.png)
+    <!-- ![all span](../../images/allSpan.png) -->
 
 ### Viewing Span Details
 

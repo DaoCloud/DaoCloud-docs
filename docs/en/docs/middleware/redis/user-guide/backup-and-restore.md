@@ -7,7 +7,7 @@ The backup and restore features of Redis ensure data persistence and security. T
 
 Before backing up a Redis instance, confirm that the `Backup Configuration` of the current workspace already contains a verified S3 storage.
 
-![backup](../images/backup-restore.png)
+<!-- ![backup](../images/backup-restore.png) -->
 
 ## Backup Configuration
 
@@ -21,7 +21,7 @@ Before backing up a Redis instance, confirm that the `Backup Configuration` of t
 
 4. To schedule daily or weekly backups, enable the automatic backup feature and select the backup period and time.
 
-    ![backup](../images/backup-restore-1.png)
+    <!-- ![backup](../images/backup-restore-1.png) -->
 
 ## Backup Data
 
@@ -29,11 +29,11 @@ Before backing up a Redis instance, confirm that the `Backup Configuration` of t
 2. Click **Backup Management** -> **Backup Data** in the left menu.
 3. Click **Create Backup** at the top right of the list and fill in the backup name.
 
-    ![backup](../images/backup-restore-2.png)
+    <!-- ![backup](../images/backup-restore-2.png) -->
 
 4. After clicking **OK**, you can view the backup status, backup time, path, and other information in the list.
 
-    ![backup](../images/backup-restore-3.png)
+    <!-- ![backup](../images/backup-restore-3.png) -->
 
 ## Restore Data
 
@@ -41,8 +41,8 @@ Before backing up a Redis instance, confirm that the `Backup Configuration` of t
 
     You can choose to restore to the cluster and namespace where the current instance resides, or restore to another cluster and namespace.
 
-    ![alt text](../images/backup-restore-4.png)
+    <!-- ![alt text](../images/backup-restore-4.png) -->
 
 2. After clicking **OK**, you can view the status of data restoration.
 
-    ![backup](../images/backup-restore-5.png)
+    <!-- ![backup](../images/backup-restore-5.png) -->

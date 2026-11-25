@@ -30,7 +30,7 @@ UI feature with one click.
     
     > Note that you are adding a key-value pair
    
-    ![Modify the ConfigMap](../../images/argocd-ui-config.png)
+    <!-- ![Modify the ConfigMap](../../images/argocd-ui-config.png) -->
 
 !!! note
 

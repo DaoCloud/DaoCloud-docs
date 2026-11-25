@@ -2,7 +2,7 @@
 
 Local Storage (LS) is a module of HwameiStor, which aims to provide high-performance local persistent LVM storage volumes for applications.
 
-![architecture](../img/architecture.png)
+<!-- ![architecture](../application/img/architecture.png) -->
 
 Currently supported local persistent data volume type: `LVM`.
 

@@ -72,17 +72,17 @@ Deploy a Kubernetes cluster and limit the disk space that a single Docker contai
         xfs_quota -x -c print
         ```
 
-        ![View the fstab Configuration](../images/limit-disk-usage-docker-01.png)
+        <!-- ![View the fstab Configuration](../images/limit-disk-usage-docker-01.png) -->
 
     !!! note
 
         If pquota does not take effect, check whether the pquota option is enabled in the operating system. If it is not enabled, you need to add the `rootflags=pquota` parameter to the system boot configuration /etc/grub2.cfg. After the configuration is complete, you need to reboot the operating system.
 
-    ![Enable the pquota Option in the Operating System](../images/limit-disk-usage-docker-02.png)
+    <!-- ![Enable the pquota Option in the Operating System](../images/limit-disk-usage-docker-02.png) -->
 
 3. Add the docker_storage_options parameter in **Create Cluster** -> **Advanced Settings** -> **Custom Parameters** to set the disk space that a single container can occupy.
 
-    ![Add Custom Parameters](../images/limit-disk-usage-docker-03.png)
+    <!-- ![Add Custom Parameters](../images/limit-disk-usage-docker-03.png) -->
 
     !!! note
 
@@ -109,6 +109,6 @@ Deploy a Kubernetes cluster and limit the disk space that a single Docker contai
 
 4. View the running configuration of the dockerd service to check whether the disk limit is set successfully.
 
-    ![Check the Container Disk Limit](../images/limit-disk-usage-docker-04.png)
+    <!-- ![Check the Container Disk Limit](../images/limit-disk-usage-docker-04.png) -->
 
 With the above steps, the overall implementation process of limiting the disk space that a single Docker container can occupy is complete.

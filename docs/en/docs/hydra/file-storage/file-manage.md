@@ -6,11 +6,11 @@ This article introduces how to manage files in file storage, including folder cr
 
 1. On the file storage details page, select the **File Info** tab, click the **Create Folder** button in the top right corner.
 
-    ![Create folder](../images/file-upload01.png)
+    <!-- ![Create folder](../images/file-upload01.png) -->
 
 2. In the create folder dialog, fill in the folder name and click **OK**. The folder is created successfully, and you will be returned to the file storage details page.
 
-    ![Fill parameters](../images/file-upload02.png)
+    <!-- ![Fill parameters](../images/file-upload02.png) -->
 
     !!! note
 
@@ -27,11 +27,11 @@ The platform supports two ways to upload files to file storage.
 
 1. On the file storage details page, select the **File Info** tab, click the **┇** menu on the right side of the target file or folder, and select **Delete**.
 
-    ![Delete file](../images/file-upload03.png)
+    <!-- ![Delete file](../images/file-upload03.png) -->
 
 2. On the delete file page, click **OK**. The file is deleted successfully, and you will be returned to the file storage details page.
 
-    ![Confirm](../images/file-upload04.png)
+    <!-- ![Confirm](../images/file-upload04.png) -->
 
     !!! note
 

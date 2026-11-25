@@ -17,11 +17,11 @@ This document mainly describes how to use the cluster dynamic resource oversubsc
 
 1. Click __Cluster List__ in the left navigation bar, and then click the name of the target cluster to enter the __Cluster Details__ page.
 
-    ![Cluster List](../../images/cluster-oversold-01.png)
+    <!-- ![Cluster List](../../images/cluster-oversold-01.png) -->
 
 2. On the cluster details page, click __Operations and Maintenance__ -> __Cluster Settings__ in the left navigation bar, and then select the __Advanced Settings__ tab.
 
-    ![Advanced Settings](../../images/cluster-oversold-02.png)
+    <!-- ![Advanced Settings](../../images/cluster-oversold-02.png) -->
 
 3. Turn on cluster oversubscription and set the oversubscription ratio.
 
@@ -36,7 +36,7 @@ This document mainly describes how to use the cluster dynamic resource oversubsc
     clusterresourceoverrides.admission.autoscaling.openshift.io/enabled: "true"
     ```
 
-    ![Cluster Oversubscription](../../images/cluster-oversold-03.png)
+    <!-- ![Cluster Oversubscription](../../images/cluster-oversold-03.png) -->
 
 ## Use Cluster Oversubscription
 
@@ -44,8 +44,8 @@ After the cluster dynamic resource oversubscription ratio is set, it takes effec
 
 1. Create a workload named nginx and set the corresponding resource limits. For the creation procedure, refer to [Create a Stateless Workload (Deployment)](../workloads/create-deployment.md).
 
-    ![Create a Workload](../../images/cluster-oversold-04.png)
+    <!-- ![Create a Workload](../../images/cluster-oversold-04.png) -->
 
 2. Check whether the ratio of the Pod resource request value to the limit value of the workload matches the oversubscription ratio.
 
-    ![Check Pod Resources](../../images/cluster-oversold-05.png)
+    <!-- ![Check Pod Resources](../../images/cluster-oversold-05.png) -->

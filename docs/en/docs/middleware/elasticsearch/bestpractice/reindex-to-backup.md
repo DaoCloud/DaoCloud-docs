@@ -5,7 +5,7 @@
 Use the `reindex` feature of Elasticsearch to migrate data between clusters while ensuring that the business of the source cluster is not interrupted.
 To fully synchronize the data of the source cluster, the write operations of the source cluster still need to be stopped at some point.
 
-![move-data-to-new-es](../images/move-data-to-new-es.png)
+<!-- ![move-data-to-new-es](../images/move-data-to-new-es.png) -->
 
 ## Notes
 

@@ -18,7 +18,7 @@ following sections describe the steps for creating metadata and managing templat
 
 2. On the model management page, click **Create Model**.
 
-    ![create-model](../images/create-model-01.png)
+    <!-- ![create-model](../images/create-model-01.png) -->
 
 3. After filling in the parameters on the creation page, click **Confirm**, and the model is created successfully.
 
@@ -29,7 +29,7 @@ following sections describe the steps for creating metadata and managing templat
     | Model Icon | Optional | Supports local upload, or an image URL starting with `https://`; supports SVG, PNG, JPG, and JPEG formats, with a file size smaller than 40 KB. The recommended size is 100 x 100 pixels |
     | Model Description | Optional | Up to 800 characters each for Chinese and English |
 
-    ![create-model](../images/create-model-02.png)
+    <!-- ![create-model](../images/create-model-02.png) -->
 
 ## Manage Deployment Templates
 
@@ -42,7 +42,7 @@ When deploying a custom model, you can directly use a template to reduce repeate
 
 1. Select the **Deployment Templates** tab, and click **Create** in the upper right corner of the list.
 
-    ![create-model](../images/create-model-03.png)
+    <!-- ![create-model](../images/create-model-03.png) -->
 
 1. Fill in **Basic Information**, **Resource Configuration**, and **Runtime Configuration** in sequence, and then click **Confirm**.
 
@@ -59,7 +59,7 @@ When deploying a custom model, you can directly use a template to reduce repeate
     To use a custom inference runtime, complete the runtime configuration on the operations side first.
     For details, see [Custom LLM Inference Runtime](../user-guides/custom-runtime.md).
 
-    ![create-model](../images/create-model-031.png)
+    <!-- ![create-model](../images/create-model-031.png) -->
 
 ### Edit and Delete a Deployment Template
 
@@ -85,7 +85,7 @@ current model. When deploying a custom model, the corresponding weight files can
 1. On the model details page, select the **Model Weight Files** tab, and click **Create** in the upper right
    corner of the list.
 
-    ![create-model](../images/create-model-04.png)
+    <!-- ![create-model](../images/create-model-04.png) -->
 
 1. After filling in the parameter information, click **Confirm**.
 
@@ -97,7 +97,7 @@ current model. When deploying a custom model, the corresponding weight files can
     | Storage Directory | Required | Can be entered manually, or selected from the file storage by clicking **Select Directory**; you can also click **Create Now** to manage files |
     | Mount Path | Required | The mount path of the weights inside the container. The default example is `/mnt/path` |
 
-    ![create-model](../images/create-model-041.png)
+    <!-- ![create-model](../images/create-model-041.png) -->
 
 ### Update and Delete a Model Weight File
 

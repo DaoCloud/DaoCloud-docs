@@ -112,4 +112,4 @@ go build . -o extproc
 4. The **request_body_mode** in the processing_mode configuration must be configured as
    the option in the red box in the **following image**:
 
-    ![Add custom attributes](../images/envoy-extproc-anti-replay-demo-go.png)
+    <!-- ![Add custom attributes](../images/envoy-extproc-anti-replay-demo-go.png) -->

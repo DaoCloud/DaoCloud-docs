@@ -131,4 +131,4 @@ After completing the configuration and creation of the above parameters:
 1. Known issue: After upgrading gpu-operator from v23.9.0+3 to v24.6.0+1, `gpu-operator-node-feature-discovery-master` stays in a crash state.
 2. Solution: On the __Helm Applications__ page, search for __gpu-operator__ , click the __Update__ button in the operation column, enter the update page, select version 24.6.0+1, and then set upgradeCRD to true.
 
-    ![Upgrade GPU operator](../images/updategpuoperator.png)
+    <!-- ![Upgrade GPU operator](../images/updategpuoperator.png) -->

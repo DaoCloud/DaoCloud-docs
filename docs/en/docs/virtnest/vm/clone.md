@@ -20,14 +20,14 @@ The following prerequisites must be met before using the clone feature (the same
 
 1. From the left navigation bar, click __Virtual Machines__ -> __Virtual Machines__ in turn to enter the list page, and click __┇__ on the right side of the list to perform the clone operation on a virtual machine that is not in an error state.
 
-    ![Clone a virtual machine](../images/clone01.png)
+    <!-- ![Clone a virtual machine](../images/clone01.png) -->
 
 2. A dialog box pops up, where you need to enter the name and description of the new virtual machine. The clone operation may take some time, which depends on the size of the virtual machine and the storage performance.
 
-    ![Cloning process](../images/clone02.png)
+    <!-- ![Cloning process](../images/clone02.png) -->
 
 3. After the cloning succeeds, you can view the new virtual machine in the virtual machine list. The newly created virtual machine is powered off. If you need to power it on, perform the operation manually.
 
-    ![New virtual machine](../images/clone03.png)
+    <!-- ![New virtual machine](../images/clone03.png) -->
 
 4. It is recommended to take a snapshot of the original virtual machine before cloning. If you encounter any problem during cloning, check whether the prerequisites are met and try the clone operation again.

@@ -7,7 +7,7 @@ hide:
 
 1. On the right corner of the mesh list, click the __Create Mesh__ button and select **Create Dedicated Mesh** from the dropdown list.
 
-    ![Create Mesh](../../images/create-mesh01.png)
+    <!-- ![Create Mesh](../../images/create-mesh01.png) -->
 
 2. The system will automatically detect the installation environment. After successful detection, fill in the following basic information and click __Next__ .
 
@@ -18,11 +18,11 @@ hide:
     - Data plane mode: When the platform is not OpenShift and the Istio version is not lower than 1.21.0, you can select to enable Ambient Mesh.
       This is a Beta feature.
 
-    ![Basic Information](../../images/dedicated01.png)
+    <!-- ![Basic Information](../../images/dedicated01.png) -->
 
 3. System settings. Configure whether to report the trace, set the application scale and deployment mode, and click __Next__ .
 
-    ![System Settings](../../images/dedicated02.png)
+    <!-- ![System Settings](../../images/dedicated02.png) -->
 
     !!! note
 
@@ -30,11 +30,11 @@ hide:
 
 4. Governance settings. Set outbound traffic policies, locality-aware load balancing, and request retries. See [Request Retry Parameters Description](./params.md#max-retries).
 
-    ![Governance Settings](../../images/dedicated03.png)
+    <!-- ![Governance Settings](../../images/dedicated03.png) -->
 
 5. Sidecar settings. Set the global sidecar, sidecar resource limits, default sidecar log level, sidecar discovery limit, and sidecar registry setup, and click __OK__ . See [Log Level Description](./params.md#sidecar-log-level).
 
-    ![Sidecar Settings](../../images/dedicated04.png)
+    <!-- ![Sidecar Settings](../../images/dedicated04.png) -->
 
 6. You will automatically return to the Mesh List page, and the newly created mesh will be listed at the top. After some time, the status will change from __Creating__ to __Running__ . Click the __...__ on the right to perform operations such as editing mesh basic information, adding clusters, and accessing the console.
 

@@ -101,4 +101,4 @@ __Warning:__ This method bypasses Helm's configuration management and may cause 
 
 After the configuration takes effect, you can access the Alertmanager Web UI. On the "Status" page, you will see that the original grouping rules (such as `alertname` and `group_id`) are gone, which indicates that alerts are grouped by their unique label combination.
 
-![vmalertmanager-status](../images/vmalertmanager-status.png)
+<!-- ![vmalertmanager-status](../images/vmalertmanager-status.png) -->

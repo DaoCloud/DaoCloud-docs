@@ -66,7 +66,7 @@ Modify Jenkins' Casc configuration to enable it:
 
 2. Click __Add Step__, and you will see the list of custom steps. Select one and fill in the required parameters.
 
-    ![cus-step2](./images/custermize2.jpg)
+    <!-- ![cus-step2](./images/custermize2.jpg) -->
 
 Note the following limitations for custom steps:
 

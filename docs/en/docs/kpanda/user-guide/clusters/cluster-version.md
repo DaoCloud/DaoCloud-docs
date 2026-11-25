@@ -25,4 +25,4 @@ In addition, the version range for creating worker clusters through the interfac
 |------------------|------------------|------------------|--------------|--------|
 | <ul><li>1.30</li><li>1.31</li><li>1.32</li></ul> | <ul><li>1.30</li><li>1.31</li><li>1.32</li></ul> | v1.31.6 | v0.28.0 | 2025/4/11 |
 
-![Version Support Mechanism](../images/clusterversion1.png)
+<!-- ![Version Support Mechanism](../images/clusterversion1.png) -->

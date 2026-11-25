@@ -49,11 +49,11 @@ To create a new container instance using a saved image:
 
 2. In the confirmation popup, click **OK** to delete all versions of the selected image.
 
-    ![Confirm Deletion](../images/image07.png)
+    <!-- ![Confirm Deletion](../images/image07.png) -->
 
 3. To delete a specific version of an image, click into the image details page, find the version you want to delete, and click **Delete**.
 
-    ![Delete Image Version](../images/image08.png)
+    <!-- ![Delete Image Version](../images/image08.png) -->
 
     !!! warning
 

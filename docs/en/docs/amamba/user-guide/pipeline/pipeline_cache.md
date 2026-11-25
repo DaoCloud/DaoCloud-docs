@@ -15,7 +15,7 @@ can be used.
 
 2. Click `Go to Configure` to enable the pipeline buffer.
 
-    ![cache1](../../images/cache1.jpg)
+    <!-- ![cache1](../../images/cache1.jpg) -->
 
 3. Fill in the relevant parameters. The purpose is to configure the backend storage class for the platform
    pipeline so that PVC resources can be created later.
@@ -29,11 +29,11 @@ can be used.
     - Access Mode: supports ReadWriteOnce, ReadWriteMany, ReadOnlyMany, ReadWriteOncePod
     - Default Mount Path: the default value of the directory to which the data volume is mounted when configuring the cache in the pipeline
 
-    ![cache2](../../images/cache2.jpg)
+    <!-- ![cache2](../../images/cache2.jpg) -->
 
 4. After the configuration is complete, go to the pipeline to enable the cache for a single pipeline.
 
-    ![cache3](../../images/cache3.jpg)
+    <!-- ![cache3](../../images/cache3.jpg) -->
 
 ## Enable Buffer for a Pipeline
 
@@ -42,7 +42,7 @@ can be used.
 2. On the pipeline details page, click `Edit Pipeline` in the upper right corner to enter the graphical
    editing page, and click `Cache Configuration`.
 
-    ![cache4](../../images/cache4.jpg)
+    <!-- ![cache4](../../images/cache4.jpg) -->
 
 3. Enable the cache capability for the current pipeline, and configure the relevant parameters.
 
@@ -50,7 +50,7 @@ can be used.
     - Capacity: must not be higher than the maximum value set by the administrator
     - Cache Directory: the mount path. Mount the data volume in a directory of the container for caching data
 
-    ![cache4](../../images/cache5.jpg)
+    <!-- ![cache4](../../images/cache5.jpg) -->
 
 4. After the configuration is successful, a PVC resource will be created for the current pipeline. Note that
    a second update is not supported for now.
@@ -64,15 +64,15 @@ can be used.
 1. On the pipeline details page, click `Edit Pipeline` in the upper right corner to enter the graphical
    editing page, and click `Agent Settings`.
 
-    ![cache5](../../images/cache6.jpg)
+    <!-- ![cache5](../../images/cache6.jpg) -->
 
 2. Select `Kubernetes` as the type, and enable `Enable Cache`.
 
-    ![cache6](../../images/cache7.jpg)
+    <!-- ![cache6](../../images/cache7.jpg) -->
 
 3. After configuring the container image of the Agent, you can use the cache capability in the pipeline.
 
-    ![cache8](../../images/cache8.jpg)
+    <!-- ![cache8](../../images/cache8.jpg) -->
 
 ## Cache Example
 

@@ -22,7 +22,7 @@ For example, assume 2 racks, 6 brokers, and 100 replicas (including primary and 
 
 ## Dual Data Center Deployment Architecture
 
-![kafka](../../kafka/images/kafka2-01.png)
+<!-- ![kafka](../../kafka/images/kafka2-01.png) -->
 
 ## Steps
 

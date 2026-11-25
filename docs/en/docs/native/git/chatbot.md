@@ -20,10 +20,10 @@ DAK administrator permissions are required.
     - daocloud-docs corresponds to docs.daocloud.io
     - d.run-docs corresponds to docs.d.run
 
-    ![prepare csv](./images/chatbot01.png)
+    <!-- ![prepare csv](./images/chatbot01.png) -->
 
 1. For example, click daocloud-docs, click **...** in the top right corner -> Format Import
 
-    ![import](./images/chatbot02.png)
+    <!-- ![import](./images/chatbot02.png) -->
 
 1. Import the prepared CSV file and complete the wizard steps in order.

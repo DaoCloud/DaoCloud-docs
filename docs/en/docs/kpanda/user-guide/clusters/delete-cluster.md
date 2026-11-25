@@ -27,11 +27,11 @@ In the DCE platform, the difference between __Delete Cluster__ and __Remove__ is
 
 1. On the __Cluster List__ page, find the cluster to be deleted, click __┇__ on the right, and select __Delete Cluster__ in the drop-down list.
 
-    ![Click the delete button](../../images/delete001.png)
+    <!-- ![Click the delete button](../../images/delete001.png) -->
 
 2. Enter the cluster name to confirm, and then click __Delete__ .
 
-    ![Confirm deletion](../../images/delete002.png)
+    <!-- ![Confirm deletion](../../images/delete002.png) -->
 
     If you are prompted that some residual resources still exist in the cluster, you need to delete the related resources as prompted before you can perform the deletion.
 
@@ -49,11 +49,11 @@ In the DCE platform, the difference between __Delete Cluster__ and __Remove__ is
 
 1. On the __Cluster List__ page, find the cluster to be removed, click __┇__ on the right, and select __Remove__ in the drop-down list.
 
-    ![Click the remove button](../../images/remove001.png)
+    <!-- ![Click the remove button](../../images/remove001.png) -->
 
 2. Enter the cluster name to confirm, and then click __Remove__ .
 
-    ![Confirm removal](../../images/delete003.png)
+    <!-- ![Confirm removal](../../images/delete003.png) -->
 
     If you are prompted that some residual resources still exist in the cluster, you need to delete the related resources as prompted before you can remove it.
 

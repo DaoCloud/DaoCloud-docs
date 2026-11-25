@@ -43,13 +43,13 @@ The installation method of the commercial Addon is the same as that of the open-
 
     Path: __Container Management__ -> __Clusters__ -> click the target cluster name.
 
-    ![Access the Cluster](../../images/busihami1.png)
+    <!-- ![Access the Cluster](../../images/busihami1.png) -->
 
 2. Go to the Helm Chart page and select the commercial Addon.
 
     Path: __Helm Apps__ -> __Helm Chart__ , search for and select the Addon corresponding to `nvidia-vgpu-commercial`.
 
-    ![Search for the Commercial Addon](../../images/busihami2.png)
+    <!-- ![Search for the Commercial Addon](../../images/busihami2.png) -->
 
 3. Configure the installation parameters.
 

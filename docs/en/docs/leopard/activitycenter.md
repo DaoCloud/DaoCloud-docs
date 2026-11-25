@@ -15,7 +15,7 @@ Before using the referral feature for the first time, you need to activate your 
 
 2. Click **Initialize Invitation Code**. The system immediately generates a unique referral identifier and displays the corresponding promotion link and QR code.
 
-    ![activity](images/inviter.png)
+    <!-- ![activity](images/inviter.png) -->
 
 ## Invite New Users
 
@@ -26,7 +26,7 @@ You can use the generated exclusive tools for promotion:
 
 After an invitee completes registration through the specific link or QR code, the system automatically establishes the association, which serves as the basis for issuing vouchers or other rewards later.
 
-![activity](images/invitee.png)
+<!-- ![activity](images/invitee.png) -->
 
 ## Referral Records and Statistics
 

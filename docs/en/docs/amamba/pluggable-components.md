@@ -216,7 +216,7 @@ If you chose not to enable it during the deployment of DCE, follow the instructi
 
 5. After successful deployment, you can go to the __Workbench__ module to use the gray release capability based on `cloud-native gateway` in the current cluster.
 
-    ![contour](images/contour01.png)
+    <!-- ![contour](images/contour01.png) -->
 
 !!! note
 

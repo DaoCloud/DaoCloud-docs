@@ -14,13 +14,13 @@ By default, sub-accounts share the real balance of the primary account. Once cre
     set the **Available Amount** (that is, the balance threshold that triggers service suspension, which can be set to a non-zero value),
     and configure **Stop Services When in Arrears**: when enabled, if the balance is lower than the limit, the running resources under that sub-account are forcibly stopped.
 
-    ![limit](./images/createSub.png)
+    <!-- ![limit](./images/createSub.png) -->
 
 3. Click the **More (...)** icon on the far right of each row in the list to perform the following operations on an existing limit configuration:
     modify the **Available Amount**, adjust whether to **Stop Services When in Arrears**,
     or **delete** the policy — after deletion, the sub-account returns to the state of sharing the real balance of the primary account.
 
-    ![limit](./images/subuser1.png)
+    <!-- ![limit](./images/subuser1.png) -->
 
 ### Fields
 

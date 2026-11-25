@@ -40,4 +40,4 @@ version, achieving a quick rollback.
 3. The system automatically redirects to the job list page for gradual release, showing a prompt
    of __Creation Successful__ and generating a record in the list.
 
-    ![Return to list](../../images/blue-green03.png)
+    <!-- ![Return to list](../../images/blue-green03.png) -->

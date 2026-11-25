@@ -128,7 +128,7 @@ To disable automatic renewal, set the following advanced configuration when crea
 auto_renew_certificates: false
 ```
 
-![Certificate](../images/zhengshu.png)
+<!-- ![Certificate](../images/zhengshu.png) -->
 
 ### For Existing Clusters
 

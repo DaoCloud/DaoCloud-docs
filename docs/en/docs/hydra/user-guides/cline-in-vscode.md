@@ -8,7 +8,7 @@
 
 Search for the Cline extension in VSCode and install it.
 
-![Cline](../images/cline-in-vscode.png)
+<!-- ![Cline](../images/cline-in-vscode.png) -->
 
 You can also download and use the RooCode extension, which is a fork of Cline.
 
@@ -23,7 +23,7 @@ If your network cannot download the extension directly, consider downloading the
 
 Open Cline’s configuration page:
 
-![Cline](../images/cline-in-vscode-2.png)
+<!-- ![Cline](../images/cline-in-vscode-2.png) -->
 
 - **API Provider:** Select OpenAI Compatible
 - **Base URL:** Enter `https://chat.d.run`
@@ -32,8 +32,8 @@ Open Cline’s configuration page:
     - Can be obtained from Hydra’s Model Gallery, MaaS models start with `public/deepseek-r1`
     - For independently deployed model services, get it from the model service list
 
-![Cline](../images/cline-in-vscode-3.png)
+<!-- ![Cline](../images/cline-in-vscode-3.png) -->
 
 ## Cline Usage Demo
 
-![Cline](../images/cline-in-vscode-4.png)
+<!-- ![Cline](../images/cline-in-vscode-4.png) -->

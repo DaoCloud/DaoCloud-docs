@@ -55,7 +55,7 @@ Go to the **Bills** page and click **Bill Details** to view the list of bills on
 
 - Click the **Export** button to filter by `account scope`, `product name`, and `time range`.
 
-    ![bills](images/details-bills-download.png)
+    <!-- ![bills](images/details-bills-download.png) -->
 
 - The exported data contains all bill detail records that match the filter criteria.
 
@@ -63,7 +63,7 @@ Go to the **Bills** page and click **Bill Details** to view the list of bills on
 
 Monthly Bills are visible and available to primary accounts only. They provide monthly aggregated consumption statistics and support breakdown and export by region, product, and account, helping users understand the cost structure from the perspective of billing periods.
 
-![bills](images/monthly-bills-table.png)
+<!-- ![bills](images/monthly-bills-table.png) -->
 
 ### Fields in Monthly Bills
 
@@ -81,7 +81,7 @@ Go to the **Bills** page and click **Monthly Bills** to view the monthly bill li
 
 Click the **Details** icon to view expense details in three dimensions for the billing period.
 
-![monthly-bills](images/monthly-bills-details.png)
+<!-- ![monthly-bills](images/monthly-bills-details.png) -->
 
 - By region: Shows the cost breakdown by the region where the resource is located, with fields including `Billing Month`, `Region`, `Original Price`, `Voucher Deduction`, and `Cash Payment`.
 

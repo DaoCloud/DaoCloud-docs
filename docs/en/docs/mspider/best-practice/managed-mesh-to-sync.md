@@ -17,13 +17,13 @@ For this reason, DCE service mesh provides an optional advanced feature: **Worki
 
 In the mesh instance list, click **...** on the right of a hosted mesh, and select **Edit Basic Information** from the pop-up menu to enable/disable **Working Cluster Resource Synchronization**.
 
-![on/off](../images/sync-mesh01.png)
+<!-- ![on/off](../images/sync-mesh01.png) -->
 
 ## Resource List
 
 On the details page of a hosted mesh, you can distinguish different resources by their origin:
 
-![resources](../images/sync-mesh02.png)
+<!-- ![resources](../images/sync-mesh02.png) -->
 
 ## Automatically Remove Unmanaged Resources
 
@@ -41,7 +41,7 @@ To disable the automatic deletion capability, you can modify the custom resource
 global.enabled_resources_synchronizer_auto_remove: "false"
 ```
 
-![disable](../images/sync-mesh03.png)
+<!-- ![disable](../images/sync-mesh03.png) -->
 
 ## Manually Change the Resource Origin
 
@@ -54,6 +54,6 @@ kubectl label vs [resourceName] -n [ns] mspider.io/origin-cluster- mspider.io/sy
 
 The example effect is as follows:
 
-![example 1](../images/sync-mesh04.png)
+<!-- ![example 1](../images/sync-mesh04.png) -->
 
-![example 2](../images/sync-mesh04.png)
+<!-- ![example 2](../images/sync-mesh04.png) -->

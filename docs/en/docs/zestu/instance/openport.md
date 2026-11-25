@@ -50,9 +50,9 @@ This guide uses **nginx** as an example to demonstrate how to open a port using 
 
 5. Add **port 80** to the Access Management section and wait for the external port to be assigned (this usually takes around 1 minute).
 
-    <!-- ![Open Port 2](../images/openport2.png)
+    <!-- ![Open Port 2](../images/openport2.png) -->
     
-    ![Open Port 3](../images/openport3.png) -->
+    <!-- ![Open Port 3](../images/openport3.png) -->
 
 6. Click the generated **external access link** to access the nginx service.
 

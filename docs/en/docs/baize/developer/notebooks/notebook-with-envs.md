@@ -46,7 +46,7 @@ before the currently activated environment.
 In JupyterLab, the environments associated with the Notebook are automatically bounded
 to the Kernel list, allowing you to quickly switch environments through the Kernel.
 
-![Switch-Envs](../../images/notebook05.png)
+<!-- ![Switch-Envs](../../images/notebook05.png) -->
 
 With this method, you can simultaneously write and debug algorithms in a single Notebook.
 

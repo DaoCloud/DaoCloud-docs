@@ -7,7 +7,7 @@ hide:
 
 On this page, you can view the recent cluster operation records and Helm operation records, as well as the YAML files and logs of each operation, and you can also delete a certain record.
 
-![Operation Records](../../images/operations01.png)
+<!-- ![Operation Records](../../images/operations01.png) -->
 
 In the cluster operation list, through the __┇__ icon on the right, you can view the YAML and logs, and you can also delete a record.
 
@@ -21,4 +21,4 @@ By default, the system keeps the last 100 Helm operation records. If you keep to
 
 2. Set how many Helm operation records need to be kept, and click __OK__ .
 
-    ![Number of Retained Items](../../images/operations03.png)
+    <!-- ![Number of Retained Items](../../images/operations03.png) -->

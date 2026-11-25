@@ -15,19 +15,19 @@ This article describes how to manually switch the primary/standby roles of Redis
 2. In the Pod list of the instance that requires a primary/standby switchover, click the icon in front of the shard name to expand all nodes under the current shard.
 3. To switch the primary/standby roles of the nodes in a shard, click the **Switch Primary/Standby** icon after the shard to promote the standby node to the primary node.
 
-    ![switch-role](../images/switch-role.png){: width=}
+    <!-- ![switch-role](../images/switch-role.png) -->{: width=}
 
 4. Expand the drop-down list of standby nodes to specify the standby node to be promoted to the primary node.
 
-    ![switch-role](../images/switch-role-1.png)
+    <!-- ![switch-role](../images/switch-role-1.png) -->
 
 ## Sentinel Mode
 
 1. Click the name of the target Redis instance to enter its details page.
 2. In the upper right corner of the overview page, click **Switch Primary/Standby**.
 
-    ![switch-role](../images/switch-role-2.png)
+    <!-- ![switch-role](../images/switch-role-2.png) -->
 
 3. Expand the drop-down list of standby nodes to specify the standby node to be promoted to the primary node.
 
-    ![switch-role](../images/switch-role-3.png)
+    <!-- ![switch-role](../images/switch-role-3.png) -->

@@ -28,18 +28,18 @@ Taking **Dynamic SMLU mode** as an example:
 
 1. After correctly installing the DevicePlugin and related components, go to **Cluster** -> **Cluster Maintenance** -> **Cluster Settings** -> **Addon Plugins** to check whether the corresponding GPU type has been automatically enabled and detected.
 
-    ![MLU Type](../images/mlu1.PNG)
+    <!-- ![MLU Type](../images/mlu1.PNG) -->
 
 2. Go to the Node Management page to verify whether the node has correctly recognized the GPU type.
 
-    ![Node List](../images/mlu2.png)
+    <!-- ![Node List](../images/mlu2.png) -->
 
 3. Deploy workloads. Navigate to **Cluster** -> **Workloads**, and deploy workloads using an image. After selecting the type (e.g., **MLU VGPU**), configure the GPU resources required by the app:
 
     * **GPU Compute Power (`cambricon.com/mlu.smlu.vcore`)**: Indicates the percentage of core compute the Pod needs.
     * **GPU Memory (`cambricon.com/mlu.smlu.vmemory`)**: Indicates the amount of GPU memory the Pod needs, in MB.
 
-    ![Using MLU](../images/mlu3.png)
+    <!-- ![Using MLU](../images/mlu3.png) -->
 
 ## YAML Configuration Example
 

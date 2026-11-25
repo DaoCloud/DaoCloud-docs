@@ -5,7 +5,7 @@
 [Lobe Chat](https://lobehub.com/zh) is an open-source modern design AI chat framework.  
 It supports multiple AI providers (OpenAI/Claude 3/Gemini/Ollama/Qwen/DeepSeek), knowledge bases (file upload/knowledge management/RAG), multimodal features (vision/TTS/plugins/artwork), and offers one-click free deployment of your private ChatGPT/Claude applications.
 
-![Lobe Chat](../images/lobe-chat.png)
+<!-- ![Lobe Chat](../images/lobe-chat.png) -->
 
 ## Install Lobe Chat
 
@@ -29,7 +29,7 @@ $ docker run -d -p 3210:3210 \
 
 Lobe Chat also supports adding model provider configurations after deployment.
 
-![Lobe Chat](../images/lobe-chat-2.png)
+<!-- ![Lobe Chat](../images/lobe-chat-2.png) -->
 
 Add your API Key and API Host obtained from Hydra.
 
@@ -43,4 +43,4 @@ Add your API Key and API Host obtained from Hydra.
 
 ## Lobe Chat Usage Demo
 
-![Lobe Chat](../images/lobe-chat-3.png)
+<!-- ![Lobe Chat](../images/lobe-chat-3.png) -->

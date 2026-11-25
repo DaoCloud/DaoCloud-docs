@@ -36,10 +36,10 @@ This document describes how to enable the cluster to manage specified GPU cards.
 
 3. Restart the `nvidia-vgpu-hami-device-plugin`.
 
-    ![Restart device](../../images/device1.png)
+    <!-- ![Restart device](../../images/device1.png) -->
 
 4. Deploy workloads and check scheduling status.
 
-    ![Node details](../../images/node1.png)
+    <!-- ![Node details](../../images/node1.png) -->
 
     ![Deployment](../../images/deployment1.png)

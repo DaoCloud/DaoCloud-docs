@@ -21,7 +21,7 @@ The boundary of this solution is very clear: Kubean manages the **cluster lifecy
 | **Kubean** | - Create the control plane, etcd, and infra workers<br>- Maintain the Kubernetes version, Kubespray configuration, and core components<br>- Provide stable infrastructure nodes to host the Karpenter controller |
 | **Karpenter** | - Provision AWS EC2 worker nodes based on pending Pods<br>- Manage CPU/GPU elastic node pools through `EC2NodeClass` and `NodePool`<br>- Automatically reclaim idle, drifted, or underutilized nodes |
 
-![](./images/archi.png)
+<!-- ![](./images/archi.png) -->
 
 ## 2. Feasibility and Key Constraints
 
@@ -54,7 +54,7 @@ Do not allow Karpenter to manage the control plane, etcd, or the infra workers h
 
 ## 4. Deployment Workflow
 
-![Deployment Workflow](./images/flow.png)
+<!-- ![Deployment Workflow](./images/flow.png) -->
 
 1. Use Kubean to create the control plane, etcd, and infra worker nodes.
 2. Install and verify the CNI plugin, AWS Cloud Controller Manager, and the EBS CSI Driver.

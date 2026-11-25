@@ -11,12 +11,12 @@ This section describes a full-process example of a canary release based on diffe
 It can be created through [Workbench] - [Wizard] -> "Build With Git Repo" and "Build With Image", and
 enable **Enable Mesh** on the last step, the Advanced Settings page.
 
-![Create an application and enable mesh](../../images/canary-istio01.png)
+<!-- ![Create an application and enable mesh](../../images/canary-istio01.png) -->
 
 After an application with **Enable Mesh** is created, a `VirtualService` and a `DestinationRule` with
 the same name will be created automatically.
 
-![Automatically created custom resources](../../images/canary-istio02.png)
+<!-- ![Automatically created custom resources](../../images/canary-istio02.png) -->
 
 The specific YAML is as follows:
 
@@ -89,7 +89,7 @@ spec:
         protocol: HTTP
 ```
 
-![Application service](../../images/canary-istio03.png)
+<!-- ![Application service](../../images/canary-istio03.png) -->
 
 ### Prepare a VirtualService
 
@@ -132,13 +132,13 @@ kubectl edit svc istio-ingressgateway -n istio-system
 
 After the update is complete, run the command `curl ${node_ip}:${the nodePort corresponding to the newly added port in istio-ingressgateway}` to verify whether the deployed application can be accessed through `istio-ingressgateway`.
 
-![Access the application through istio-ingressgateway](../../images/canary-istio04.png)
+<!-- ![Access the application through istio-ingressgateway](../../images/canary-istio04.png) -->
 
 ## Based on Weight
 
 Create a release job - canary release, select Istio as the traffic management type and "Based on Weight" as the traffic scheduling type.
 
-![Based on weight](../../images/canary-istio05.png)
+<!-- ![Based on weight](../../images/canary-istio05.png) -->
 
 During the canary release, access `${node_ip}:${the nodePort corresponding to the newly added port in istio-ingressgateway}`.
 
@@ -146,7 +146,7 @@ During the canary release, access `${node_ip}:${the nodePort corresponding to th
 
 Create a release job - canary release, select Istio as the traffic management type and "Based on Request Characteristics" as the traffic scheduling type.
 
-![Based on request characteristics](../../images/canary-istio06.png)
+<!-- ![Based on request characteristics](../../images/canary-istio06.png) -->
 
 During the canary release, access `${node_ip}:${the nodePort corresponding to the newly added port in istio-ingressgateway}`. Note that when accessing with the request header that satisfies the traffic scheduling policy, you can access the new version; otherwise, you will access the original version.
 
@@ -159,34 +159,34 @@ curl -H 'key:value'  10.6.14.20:31406
 curl -H 'key:test'  10.6.14.20:31406           
 ```
 
-![Release process](../../images/canary-istio07.png)
+<!-- ![Release process](../../images/canary-istio07.png) -->
 
-![After the release succeeds](../../images/canary-istio08.png)
+<!-- ![After the release succeeds](../../images/canary-istio08.png) -->
 
 ## Enable Monitoring Analysis
 
 ⚠️ After monitoring analysis is enabled, `argo-rollouts` will continuously calculate the success rate/failure rate of the current release according to the metrics in `AnalysisRun`. If no request has ever been made, the calculated result will also be wrong, causing the release to roll back. Therefore, you need to ensure that requests are continuously accessing the service during the release.
 
-![Enable monitoring analysis](../../images/canary-istio09.png)
+<!-- ![Enable monitoring analysis](../../images/canary-istio09.png) -->
 
 When monitoring analysis is enabled, a `ServiceMonitor` will be created automatically.
 
-![ServiceMonitor](../../images/canary-istio10.png)
+<!-- ![ServiceMonitor](../../images/canary-istio10.png) -->
 
 After the canary release process is executed, an `AnalysisRun` will be created automatically. During the
 canary release, the call records of the application are collected by the observability module, and the
 `AnalysisRun` calculates whether the conditions are met according to the expression. The expression is as follows:
 
-![AnalysisRun](../../images/canary-istio11.png)
+<!-- ![AnalysisRun](../../images/canary-istio11.png) -->
 
 In "Observability" - "Metrics" - "Advanced Query", enter the above expression to query the corresponding
 metrics. `destination_service` is the service corresponding to the canary release. 
 
-![metrics](../../images/canary-istio12.png)
+<!-- ![metrics](../../images/canary-istio12.png) -->
 
 If the monitoring analysis succeeds, it will be displayed as follows:
 
-![result](../../images/canary-istio13.png)
+<!-- ![result](../../images/canary-istio13.png) -->
 
 # Canary Release - Based on Nginx
 
@@ -196,30 +196,30 @@ If the monitoring analysis succeeds, it will be displayed as follows:
 
 First, you need to install `ingress-nginx` in the current cluster.
 
-![Install ingress-nginx](../../images/canary-nginx01.png)
+<!-- ![Install ingress-nginx](../../images/canary-nginx01.png) -->
 
 The NodePort type is used here. Note that if `LoadBalancer` is selected as the Type, `metallb` needs to be installed in the current cluster.
 
-![ingress-nginx installed successfully](../../images/canary-nginx02.png)
+<!-- ![ingress-nginx installed successfully](../../images/canary-nginx02.png) -->
 
 ### Prepare an Application
 
 It can be created through [Workbench] - [Wizard] -> "Build With Git Repo" and "Build With Image".
 
-![Create an application](../../images/canary-nginx03.png)
+<!-- ![Create an application](../../images/canary-nginx03.png) -->
 
 ### Create a Route for the Application
 
-![Create a route](../../images/canary-nginx04.png)
+<!-- ![Create a route](../../images/canary-nginx04.png) -->
 
 After the creation is complete, access the NodePort corresponding to port 80 of ingress-nginx. A normal
 response indicates success.
 
-![Access through the route](../../images/canary-nginx05.png)
+<!-- ![Access through the route](../../images/canary-nginx05.png) -->
 
 ## Based on Nginx
 
-![Create a release job](../../images/canary-nginx06.png)
+<!-- ![Create a release job](../../images/canary-nginx06.png) -->
 
 After updating the image version to v2, access the NodePort corresponding to port 80 of ingress-nginx.
 
@@ -230,8 +230,8 @@ i=0; while true; do curl www.test-myapp.com:30828; i=$((i+1));echo ${i}; sleep 1
 After the release, the ratio of v1 to v2 is roughly 50% each. After you manually continue the release,
 the traffic all flows to the v2 version.
 
-![Access the application during the release](../../images/canary-nginx07.png)
+<!-- ![Access the application during the release](../../images/canary-nginx07.png) -->
 
 After continuing the release and waiting for 10 minutes, the release is complete.
 
-![Release complete](../../images/canary-nginx08.png)
+<!-- ![Release complete](../../images/canary-nginx08.png) -->

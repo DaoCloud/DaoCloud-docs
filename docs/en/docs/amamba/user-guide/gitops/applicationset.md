@@ -14,7 +14,7 @@ This article will guide you on how to enable the ApplicationSet feature in the W
 `AppOfApplicationSet` is an operation mode of GitOps. It deploys multi-cluster applications through
 **Application** -> **Generate ApplicationSet** -> **Generate multiple Applications**:
 
-![applicationset](../../images/gitops-application-set.png)
+<!-- ![applicationset](../../images/gitops-application-set.png) -->
 
 Therefore, essentially it still creates GitOps Applications. The premise is that your GitOps repository
 (assume the repository name is app-set-repo) needs to contain the following definition file of an ApplicationSet.
@@ -77,7 +77,7 @@ After the Workbench is upgraded to v0.35.0, we provide a feature switch to enabl
     ```
     > Note that you are adding a key-value pair
     
-    ![](../../images/app-in-any-ns-config.png)
+    <!-- ![](../../images/app-in-any-ns-config.png) -->
 
 4. Click Save, go to Workbench -> GitOps module, and create a GitOps application through AppOfApplicationSet.
 

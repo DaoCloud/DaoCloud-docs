@@ -16,7 +16,7 @@ scaling, and deletion.
 2. In the model service list, you can view the service status, number of instances, deployment location, and other information.
 3. Click the target service name (the service must be running) to enter the service details page.
 
-![service](../images/service02.png)
+<!-- ![service](../images/service02.png) -->
 
 ## View Service Details
 
@@ -38,18 +38,18 @@ If you find resource shortages or stuttering during model usage, you can scale t
 
 1. In the model service list, click the **┇** menu to the right of the target service and select **Scale**.
 
-    ![Scaling](../images/service03.png)
+    <!-- ![Scaling](../images/service03.png) -->
 
 2. Enter the target number of instances and click **Confirm**.
 
-    ![Scaling](../images/service04.png)
+    <!-- ![Scaling](../images/service04.png) -->
 
 ## Delete Model Services
 
 1. In the model service list, click the **┇** menu to the right of the target service and select **Delete**.
 2. Enter the name of the model service to delete and confirm the deletion.
 
-    ![Delete Service](../images/service05.png)
+    <!-- ![Delete Service](../images/service05.png) -->
 
 !!! note
 

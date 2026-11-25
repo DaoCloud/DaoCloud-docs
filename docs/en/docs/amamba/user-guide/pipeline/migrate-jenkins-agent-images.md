@@ -44,7 +44,7 @@ The available Jenkins Agent images are mapped through a ConfigMap. The modificat
 
 1. The label field indicates the agent label name used in the UI or Jenkinsfile.
 
-    ![label field](../../images/agent-image.png)
+    <!-- ![label field](../../images/agent-image.png) -->
 
 1. Select the agent label you need to modify, and change the `image` of the corresponding container
    (such as go, python, etc.) in the `containers` field to the image of the corresponding version.

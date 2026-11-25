@@ -13,7 +13,7 @@ for users who still need to compare against the legacy interface after upgrading
 You can deploy a model directly from the [Model Gallery](../index.md), or go to the **Model Serving** page from
 the left navigation bar to deploy a model. The form parameters for model deployment are as follows:
 
-![deploy](../images/deploy03.png)
+<!-- ![deploy](../images/deploy03.png) -->
 
 | Parameter | Constraints / Description | Remarks |
 |---|---|---|

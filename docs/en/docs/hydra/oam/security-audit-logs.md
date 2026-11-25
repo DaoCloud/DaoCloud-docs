@@ -15,7 +15,7 @@ Use this page together with [Security Policy Management](./security-policy.md). 
 1. Sign in to the platform and open the **Admin Console**.
 2. In the left navigation, choose **Security** → **Security Audit Logs**.
 
-![Security audit logs](images/security-audit-logs.png)
+<!-- ![Security audit logs](images/security-audit-logs.png) -->
 
 ## Filters
 
