@@ -16,10 +16,11 @@ images, osPackage offline packages, and optionally Addon offline packages.
 
 !!! tip "Version note"
 
-    This page uses installer v0.46.0 as an example. The versions of the installer, the offline image package, and the
+    Using installer v0.46.0 as an example: the versions of the installer, the offline image package, and the
     osPackage packages must match each other. For version changes, see the
-    [installer Release Notes](./release-notes.md). To install d.run AI OS instead, see the
-    [d.run AI OS installation guide](../../drun/install/index.md); the manifest file and default modules differ.
+    [installer Release Notes](./release-notes.md).
+
+## Installation Workflow
 
 There are eight stages from environment preparation to daily operations. If the installation fails, locate the cause
 first, then retry from the corresponding stage. Click a stage in the diagram to jump to its document.
@@ -47,13 +48,49 @@ flowchart TB
     click J "upgrade/"
 ```
 
-Once installed and logged in with `admin/changeme`, initialize the platform in this order:
+## Next Steps
 
-1. Create users, user groups, and workspaces in [Global Management](../ghippo/intro/index.md), and plan roles and permissions.
-2. Create worker clusters in [Container Management](../kpanda/intro/index.md) to host inference workloads; use GPU nodes.
-3. Go to [LLM Studio](../hydra/index.md) to deploy or connect models, and configure Tokens and API access.
-4. Verify metrics and log collection in [Insight](../insight/intro/index.md), and check business data in
-   [Cockpit](../crane/user-guide/singlepage.md) as well as metering and billing in [Billing Center](../leopard/index.md).
+Once installed and logged in with `admin/changeme`, initialize the platform in this order; business data can be reviewed in [Cockpit](../crane/user-guide/singlepage.md) and [Billing Center](../leopard/index.md):
+
+<style>
+.tf-path{display:flex;gap:0.75rem;margin:1.25rem 0 1.75rem;align-items:stretch;flex-wrap:wrap}
+.tf-path-step{flex:1 1 165px;min-width:160px;display:flex;flex-direction:column;gap:0.35rem;padding:0.85rem 0.9rem;border:1px solid var(--md-default-fg-color--lightest);border-top:3px solid var(--path-c,#2196f3);border-radius:12px;background:linear-gradient(180deg,rgba(33,150,243,0.04),transparent);color:inherit!important;text-decoration:none!important;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.tf-path-step:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.10);border-color:var(--path-c,#2196f3)}
+.tf-path-step::after{content:"›";position:absolute;right:-0.65rem;top:50%;transform:translateY(-50%);font-size:1.35rem;font-weight:700;color:var(--md-default-fg-color--light);z-index:1}
+.tf-path-step:last-child::after{display:none}
+.tf-path-num{width:1.55rem;height:1.55rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;background:var(--path-c,#2196f3)}
+.tf-path-title{font-weight:700;font-size:0.95rem}
+.tf-path-desc{font-size:0.78rem;color:var(--md-default-fg-color--light);line-height:1.5}
+.tf-path-go{margin-top:auto;font-size:0.75rem;font-weight:600;color:var(--path-c,#2196f3)}
+@media screen and (max-width: 768px){.tf-path-step::after{display:none}}
+</style>
+
+<div class="tf-path">
+  <a class="tf-path-step" style="--path-c:#2196f3" href="../ghippo/intro/">
+    <span class="tf-path-num">1</span>
+    <span class="tf-path-title">Plan Permissions</span>
+    <span class="tf-path-desc">Create users, user groups, and workspaces in Global Management, and plan roles and permissions</span>
+    <span class="tf-path-go">Go →</span>
+  </a>
+  <a class="tf-path-step" style="--path-c:#00acc1" href="../kpanda/intro/">
+    <span class="tf-path-num">2</span>
+    <span class="tf-path-title">Create Clusters</span>
+    <span class="tf-path-desc">Create worker clusters in Container Management to host inference workloads; use GPU nodes</span>
+    <span class="tf-path-go">Go →</span>
+  </a>
+  <a class="tf-path-step" style="--path-c:#43a047" href="../hydra/">
+    <span class="tf-path-num">3</span>
+    <span class="tf-path-title">Deploy Models</span>
+    <span class="tf-path-desc">Deploy or connect models in LLM Studio, and configure Tokens and API access</span>
+    <span class="tf-path-go">Go →</span>
+  </a>
+  <a class="tf-path-step" style="--path-c:#fb8c00" href="../insight/intro/">
+    <span class="tf-path-num">4</span>
+    <span class="tf-path-title">Observe &amp; Operate</span>
+    <span class="tf-path-desc">Verify metrics and log collection in Insight, and review business data in Cockpit as well as metering and billing in Billing Center</span>
+    <span class="tf-path-go">Go →</span>
+  </a>
+</div>
 
 [Download Center](https://docs.daocloud.io/en/download/){ .md-button }
 [Learn about d.run Token Factory](https://docs.daocloud.io/en/tf/){ .md-button }
