@@ -1673,7 +1673,6 @@ nav:
       - Ferry: community/ferry.md
       - HAMi: community/hami.md
       - HwameiStor: community/hwameistor.md
-      - KasmCloud: community/kasmcloud.md
       - Kdoctor: community/kdoctor.md
       - KLTS: community/klts.md
       - kube-node-tuning: community/kube-node-tuning.md
@@ -1685,7 +1684,7 @@ nav:
       - Piraeus: community/piraeus.md
       - Spiderpool: community/spiderpool.md
       - Unifabric: community/unifabric.md
-      - 公开镜像加速: community/mirror.md
+      - 镜像加速站: community/mirror.md
       - DaoCloud 开源图标库: community/icons/index.md
       - Kubean 集群集成 Karpenter AWS 弹性节点方案: native/knowledge/karpenter.md
   - DaoCloud 官网: https://daocloud.io/

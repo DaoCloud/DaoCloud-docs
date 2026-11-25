@@ -3,11 +3,11 @@ MTPE: windsonsea
 date: 2024-06-19
 ---
 
-# KWOK (`K`ubernetes `W`ith`O`ut `K`ubelet)
+# KWOK
 
 ![kwok](https://docs.daocloud.io/daocloud-docs-images/docs/community/images/kwok.png){ align=right }
 
-KWOK is an open source project independently developed by DaoCloud and managed by the Kubernetes-SIG community.
+KWOK (`K`ubernetes `W`ith`O`ut `K`ubelet) is an open source project independently developed by DaoCloud and managed by the Kubernetes-SIG community.
 
 [KWOK](https://sigs.k8s.io/kwok) can build a cluster of thousands of nodes in seconds.
 In this scenario, all simulated nodes behave like real nodes, so the overall footprint is very small, and you can easily do this on a laptop.
