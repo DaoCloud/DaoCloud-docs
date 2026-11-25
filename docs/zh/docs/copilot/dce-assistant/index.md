@@ -43,7 +43,7 @@ GPU 瓶颈分析需要实际容量与利用率数据。缺少 QPS 数据时，�
 
 ## 工作原理
 
-![DCE 小助手逻辑架构](./images/dce-assistant-architecture.svg)
+![DCE 小助手逻辑架构](../images/dce-assistant-architecture.svg)
 
 DCE 小助手基于 DeepSeek Harness 组织对话和分析任务。模型 API 负责需求理解与推理，Skills 提供分析方法，CLI 与数据插件负责数据访问和结果展示。
 
@@ -64,13 +64,13 @@ DCE 小助手提供标准会话界面和场景化可视界面。用户均可通�
 
 标准会话界面以会话列表和对话内容为中心，便于在工作区中发起会话、查看历史记录并开展连续问答，适合日常查询、问题排查和深入分析。
 
-![DCE 小助手标准会话界面](./images/dce-assistant-ui.png)
+![DCE 小助手标准会话界面](../images/dce-assistant-ui.png)
 
 ### 场景化可视界面
 
 场景化可视界面采用立体场景布局，将不同主题与推荐问题集中呈现。用户可以选择推荐问题，也可以直接输入需求，在当前界面中与小助手对话，适合场景浏览和演示。
 
-![DCE 小助手场景化可视界面](./images/dce-assistant-scenic-ui.png)
+![DCE 小助手场景化可视界面](../images/dce-assistant-scenic-ui.png)
 
 ## Skills 与能力扩展
 
@@ -85,5 +85,6 @@ DCE 小助手的主要能力依赖于 [daocloud-skills](https://github.com/DaoCl
 
 扩展或更新 Skills，可以增加分析方法与适用场景。新增能力同时需要相应的查询工具、平台接口、数据源和访问权限。数据插件提供展示能力，不替代专项分析所需的业务方法和数据。
 
+[安装 DCE 小助手](./install.md){ .md-button }
 [了解 daocloud-skills](https://github.com/DaoCloud/daocloud-skills){ .md-button }
-[查看兼容性说明](./compatibility.md){ .md-button }
+[查看兼容性说明](../compatibility.md){ .md-button }
