@@ -43,7 +43,7 @@ helm -n public upgrade --install qwen3-06b inferx/inferx --version $INFERX_CHART
 
 ## 服务不可用
 
-### 使用 HAMI & PD 分离情况下，Decode Pod 因 SidecarContainers 功能未开启导致无法调度
+### 使用 HAMi & PD 分离情况下，Decode Pod 因 SidecarContainers 功能未开启导致无法调度
 
 具体报错信息如下：
 

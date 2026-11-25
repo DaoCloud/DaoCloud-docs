@@ -43,7 +43,7 @@ helm -n public upgrade --install qwen3-06b inferx/inferx --version $INFERX_CHART
 
 ## Service Unavailable
 
-### When Using HAMI & PD Disaggregation, Decode Pod Cannot Be Scheduled Due to SidecarContainers Feature Not Enabled
+### When Using HAMi & PD Disaggregation, Decode Pod Cannot Be Scheduled Due to SidecarContainers Feature Not Enabled
 
 The error message is as follows:
 

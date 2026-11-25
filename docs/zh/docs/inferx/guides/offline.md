@@ -1,6 +1,6 @@
 # 离线环境安装推理加速
 
-*[InferX]: 推理加速服务的开发代号
+*[InferY]: 推理加速服务的开发代号
 
 ## 下载并解压推理加速离线包
 
@@ -23,7 +23,7 @@
 │   ├── inference-scheduling/
 │   ├── multi-node/
 │   └── pd-disaggregation/
-├── inferx-0.1.0.wrap.tgz       # InferX Charts 及镜像打包文件
+├── inferx-0.1.0.wrap.tgz       # Charts 及镜像打包文件
 └── README.md                   # 项目说明文档
 ```
 

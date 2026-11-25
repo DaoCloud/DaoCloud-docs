@@ -61,7 +61,7 @@ d.run leverages the world's top-three Kubernetes scheduling technology and core 
         <span class="tf-arch-card-tip">Cloud Native integrated training and inference</span>
       </a>
       <a class="tf-arch-card tf-arch-card--model" href="inferx/">
-        <span class="tf-arch-card-title">InferX Suite</span>
+        <span class="tf-arch-card-title">Turbo Inference</span>
         <span class="tf-arch-card-tip">Inference acceleration and engine management</span>
       </a>
       <a class="tf-arch-card tf-arch-card--model" href="clawos/intro/">
