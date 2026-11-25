@@ -267,4 +267,6 @@ markdown_extensions:
   #       - includes/glossary.md
 
 hooks:
+  - ../../scripts/tf_nav_hook.py
+  - ../../scripts/drun_nav_hook.py
   - ../../scripts/og_meta_hook.py
