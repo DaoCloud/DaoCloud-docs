@@ -1,8 +1,11 @@
 name: update visit stats
 
-# 每 6 小时从计数 Worker 拉累计数据，写入 repo 留档并同步到站点兜底文件。
-# 前置：repo Settings → Secrets → Actions 里配置 COUNTER_TOKEN（与 Worker 的 STATS_TOKEN 同值）。
-# 端点部署后把 ENDPOINT 换成实际 workers.dev 地址。
+# 每 6 小时从计数 Worker 拉累计数据，写入站点兜底文件并推回 main。
+# 前置 secrets：
+#   COUNTER_TOKEN —— Worker 的 STATS_TOKEN，访问 /stats 接口
+#   STATS_PAT     —— 管理员账号的 fine-grained PAT（仅本仓、Contents 读写）。
+#     main 有分支保护，github-actions[bot] 无法加入绕过名单（内置身份不可选），
+#     用管理员 PAT 推送可凭管理员身份绕过 PR 要求。
 
 on:
   schedule:
@@ -20,7 +23,10 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      # checkout 用 PAT，凭据会持续到 push 步骤，绕过分支保护
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.STATS_PAT }}
 
       - name: Fetch stats from counter worker
         env:
