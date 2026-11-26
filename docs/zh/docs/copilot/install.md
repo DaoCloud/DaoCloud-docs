@@ -25,7 +25,7 @@
 
 不要只更换其中一个镜像。
 
-### 前置条件 {#prerequisites}
+## 前置条件 {#prerequisites}
 
 1. 集群 Kubernetes 版本见 [兼容性](./compatibility.md)。
 

@@ -37,21 +37,12 @@ Therefore, Copilot and the smart workbench are the same product: Copilot is the 
 
 ## Core Values
 
-### Lowering the barrier to complex systems
-
-Users do not need to master all resource, model, inference, scheduling, and operations concepts first; they can ask questions in natural language and complete tasks step by step.
-
-### Improving problem analysis efficiency
-
-Copilot connects information scattered across resource, service, observability, metering, and operations modules, helping users find problems faster, understand causes, and compare solutions.
-
-### Making system capabilities easier to use
-
-The value of Token Factory lies not only in having underlying capabilities, but also in those capabilities being used stably and continuously by users. Copilot turns complex system capabilities into clear task entry points, helping the platform move from "it can run" to "it is easy to use".
-
-### Supporting ongoing operations
-
-For operations-oriented customers, Copilot serves not only technical maintenance, but also helps analyze the relationship between capacity, consumption, cost, and supply, helping users move from building compute systems to operating Token capacity.
+| Value | Description |
+| ---- | ---- |
+| Lowering the barrier to complex systems | Users do not need to master all resource, model, inference, scheduling, and operations concepts first; they can ask questions in natural language and complete tasks step by step. |
+| Improving problem analysis efficiency | Copilot connects information scattered across resource, service, observability, metering, and operations modules, helping users find problems faster, understand causes, and compare solutions. |
+| Making system capabilities easier to use | The value of Token Factory lies not only in having underlying capabilities, but also in those capabilities being used stably and continuously by users. Copilot turns complex system capabilities into clear task entry points, helping the platform move from "it can run" to "it is easy to use". |
+| Supporting ongoing operations | For operations-oriented customers, Copilot serves not only technical maintenance, but also helps analyze the relationship between capacity, consumption, cost, and supply, helping users move from building compute systems to operating Token capacity. |
 
 ## Usage Boundaries
 

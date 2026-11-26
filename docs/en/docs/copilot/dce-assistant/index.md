@@ -41,23 +41,9 @@ Analyzes the resource capacity, allocation, and actual usage of one or more GPU 
 
 GPU bottleneck analysis requires actual capacity and utilization data. When QPS data is unavailable, utilization-based estimation can be performed with explicit assumptions; when necessary resource or utilization data is missing, the data needs to be supplemented first. Estimation results are for planning assistance only; actual carrying capacity still needs to be verified with business workloads and performance tests.
 
-## Typical Use Cases
-
-You can directly describe the goal, resource scope, and concerns without looking up specific APIs or commands first. For example:
-
-| Scenario | Example Question | Main Result |
-| --- | --- | --- |
-| Query platform resources | List the clusters I can access in the current environment. | Cluster list and related information |
-| Check cluster health | Check the health status of the prod cluster and point out the issues that need priority. | Key metrics, abnormal resources, impact, and suggestions |
-| Troubleshoot Pod failures | Analyze why the api-xxx Pod in the default namespace of the prod cluster keeps restarting. | Status, events, and log evidence, possible causes, and handling suggestions |
-| Analyze GPU bottlenecks | If inference traffic increases by 30%, which GPU clusters may hit bottlenecks first? | Resource headroom, load estimation, and bottleneck assessment of each cluster |
-| Compare solutions | For the GPU bottleneck above, compare the applicable conditions of scaling out, rate limiting, and routing adjustment. | Basis, applicable conditions, and expected impact of each solution |
-
-The cluster, namespace, and Pod names above are question examples only; replace them with actual objects when using the assistant. Providing a clear resource scope, time range, and load conditions helps produce more accurate results.
-
 ## How It Works
 
-DCE Assistant organizes conversations and analysis tasks through DeepSeek Harness. The model API handles requirement understanding and reasoning, Skills provide analysis methods, and the CLI and data plugins handle data access and result presentation.
+DCE Assistant is built on DeepSeek Harness to organize conversations and analysis tasks. The model API handles requirement understanding and reasoning, Skills provide analysis methods, and the CLI and data plugins handle data access and result presentation.
 
 | Component | Main Responsibility |
 | --- | --- |
@@ -70,7 +56,19 @@ DCE Assistant organizes conversations and analysis tasks through DeepSeek Harnes
 
 ## UI and Result Presentation
 
-You can start a conversation, enter questions, and continue follow-up questions around the returned results in the workspace. The specific UI entries, model names, and example prompts are subject to the actual installed version and configuration.
+DCE Assistant provides a standard conversation UI and a scenario-based visual UI. In both UIs, you can ask questions, view analysis results, and continue follow-up questions around the results.
+
+### Standard Conversation UI
+
+The standard conversation UI centers on the conversation list and chat content, making it easy to start conversations, view history, and conduct continuous Q&A in the workspace. It suits daily queries, problem troubleshooting, and in-depth analysis.
+
+![DCE Assistant standard conversation UI](../images/dce-assistant-ui.png)
+
+### Scenario-Based Visual UI
+
+The scenario-based visual UI adopts a 3D scenario layout that presents different topics and recommended questions together. You can select a recommended question or directly enter your request to talk with the assistant in the current UI. It suits scenario browsing and demonstration.
+
+<!-- ![DCE Assistant scenario-based visual UI](../images/dce-assistant-scenic-ui.png) -->
 
 ## Skills and Capability Extension
 
@@ -84,13 +82,6 @@ The main capabilities of DCE Assistant rely on the Skills provided by [daocloud-
 | [container-management:gpu-bottleneck-analysis](https://github.com/DaoCloud/daocloud-skills/blob/main/skills/container-management-gpu-bottleneck-analysis/SKILL.md) | GPU capacity and bottleneck analysis |
 
 Extending or updating Skills can add analysis methods and applicable scenarios. New capabilities also require corresponding query tools, platform APIs, data sources, and access permissions. Data plugins provide presentation capabilities and do not replace the business methods and data required for specialized analysis.
-
-## Usage Requirements and Boundaries
-
-- **Environment and permissions**: Complete the [installation](./install.md) before use, and configure a usable model API, query tools, and DCE authentication information. The resources and data actually accessible are constrained by the permissions of the identity in use.
-- **Data availability**: Diagnosis and analysis depend on the status, events, logs, and metrics that the platform can return. When data is insufficient, the missing information and its impact on conclusions should be stated.
-- **Judgment and suggestions**: The assistant currently only provides queries, analysis, judgments, and suggestions, and does not perform resource changes on behalf of users. Operations such as restart, deletion, scaling, and routing adjustment need to be completed by users themselves.
-- **Analysis and verification**: Failure cause judgment and capacity estimation should be verified with evidence, assumptions, and actual business conditions. The suggestions provided by the assistant are for operations assistance and resource planning.
 
 [Install DCE Assistant](./install.md){ .md-button }
 [Learn about daocloud-skills](https://github.com/DaoCloud/daocloud-skills){ .md-button }

@@ -25,7 +25,7 @@ The commands below use Chart `0.3.0-rc2`. Before installing, run `helm search re
 
 Do not replace only one of these images.
 
-### Prerequisites {#prerequisites}
+## Prerequisites {#prerequisites}
 
 1. See [Compatibility](./compatibility.md) for Kubernetes versions.
 
