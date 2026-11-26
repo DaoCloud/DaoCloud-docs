@@ -86,3 +86,15 @@ img {
   opacity: 0.7;
   max-width: 4.5rem;
 }
+/* footer 访问计数器 */
+.md-copyright .visit-counter {
+  flex: none;
+  font-size: 0.65rem;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.md-copyright .visit-counter [id^='visit-'] {
+  font-weight: 600;
+  opacity: 1;
+}

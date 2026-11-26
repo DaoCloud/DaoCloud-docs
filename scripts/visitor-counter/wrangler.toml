@@ -1,0 +1,11 @@
+name = "docs-counter"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "docs-counter"
+database_id = "03ec9ba1-f152-4dc6-a118-e8bda935bba8"
+
+[triggers]
+crons = ["0 3 * * *"]   # 每天 03:00 UTC 清理 180 天前明细
