@@ -53,6 +53,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "No change, skip commit"
           else
-            git commit -m "chore: update visit stats [skip ci]"
+            # 不带 [skip ci]：让 deploy-for-main 触发站点构建，把 stats.json 部署到线上
+            # （stats.yml 本身只由 cron/workflow_dispatch 触发，不存在递归）
+            git commit -m "chore: update visit stats"
             git push
           fi
