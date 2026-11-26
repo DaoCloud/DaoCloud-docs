@@ -1565,6 +1565,7 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2026:
+          - Kubernetes v1.38 Sneak Peek: blogs/2026/k8s-v138-sneak-peek.md
           - Eight Years of KubeCon, 112 Talks: blogs/2026/kubecon.md
           - KubeCon China 2026 Guide: blogs/2026/kubecon-cn.md
           - Correcting Records for Unfixed K8s CVEs: blogs/2026/k8s-cve.md

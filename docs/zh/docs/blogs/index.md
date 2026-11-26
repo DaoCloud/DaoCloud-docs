@@ -11,6 +11,12 @@ hide:
 
 ## 2026 年
 
+- [Kubernetes v1.38 抢先看](./2026/k8s-v138-sneak-peek.md)
+
+    Kubernetes v1.38 预计将于 2026 年 12 月 16 日发布。容器运行时需要通过 CRI
+    `RuntimeConfig` 向 kubelet 报告 cgroup 驱动，kuberc、Pod 级别资源和
+    DRA 可分区设备预计进阶到稳定版，EvictionRequest API 以 Alpha 形态登场。
+
 - [DaoCloud 开源布道：八年 KubeCon，112 个议题](2026/kubecon.md)
 
     2018 年 1 个议题，2024 年 33 个，到 2026 年 11 月累计 112 个，其中 44 个在海外。八年账本背后是三条变化 —— 从国内主场到海外过半，从云原生走到 AI 基础设施，从参会者走到治理者。

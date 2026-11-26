@@ -12,6 +12,10 @@ technologies, sorted by date by default.
 
 ## 2026
 
+- [Kubernetes v1.38 Sneak Peek](2026/k8s-v138-sneak-peek.md)
+
+    As Kubernetes v1.38 approaches, legacy kubectl configuration options are removed and the kubelet requires container runtimes to report the cgroup driver via CRI, while kuberc, pod-level resources, and DRA partitionable devices are expected to graduate to stable. Plan your cgroup v1 migration and swap-related compatibility checks before upgrading.
+
 - [DaoCloud Open Source Advocacy: Eight Years of KubeCon, 112 Talks](2026/kubecon.md)
 
     1 talk in 2018, 33 in 2024, and 112 in total by November 2026, 44 of them overseas. Behind the eight-year ledger are three transitions — from a home stage in China to a majority overseas, from cloud native to AI infrastructure, and from attendee to governor.
