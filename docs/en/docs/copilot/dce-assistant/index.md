@@ -87,10 +87,11 @@ Extending or updating Skills can add analysis methods and applicable scenarios. 
 
 ## Usage Requirements and Boundaries
 
-- **Environment and permissions**: Before use, a usable model API, query tools, and DCE authentication information must be configured. The resources and data actually accessible are constrained by the permissions of the identity in use.
+- **Environment and permissions**: Complete the [installation](./install.md) before use, and configure a usable model API, query tools, and DCE authentication information. The resources and data actually accessible are constrained by the permissions of the identity in use.
 - **Data availability**: Diagnosis and analysis depend on the status, events, logs, and metrics that the platform can return. When data is insufficient, the missing information and its impact on conclusions should be stated.
 - **Judgment and suggestions**: The assistant currently only provides queries, analysis, judgments, and suggestions, and does not perform resource changes on behalf of users. Operations such as restart, deletion, scaling, and routing adjustment need to be completed by users themselves.
 - **Analysis and verification**: Failure cause judgment and capacity estimation should be verified with evidence, assumptions, and actual business conditions. The suggestions provided by the assistant are for operations assistance and resource planning.
 
+[Install DCE Assistant](./install.md){ .md-button }
 [Learn about daocloud-skills](https://github.com/DaoCloud/daocloud-skills){ .md-button }
-[View compatibility notes](./compatibility.md){ .md-button }
+[View compatibility notes](../compatibility.md){ .md-button }
