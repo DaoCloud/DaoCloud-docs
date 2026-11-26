@@ -1,0 +1,52 @@
+name: update visit stats
+
+# 每 6 小时从计数 Worker 拉累计数据，写入 repo 留档并同步到站点兜底文件。
+# 前置：repo Settings → Secrets → Actions 里配置 COUNTER_TOKEN（与 Worker 的 STATS_TOKEN 同值）。
+# 端点部署后把 ENDPOINT 换成实际 workers.dev 地址。
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-visit-stats
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch stats from counter worker
+        env:
+          ENDPOINT: https://docs-counter.daocloud.workers.dev
+          TOKEN: ${{ secrets.COUNTER_TOKEN }}
+        run: |
+          curl -sf --max-time 30 "$ENDPOINT/stats" -H "X-Stats-Token: $TOKEN" -o /tmp/stats.json
+          python3 -c "import json; d=json.load(open('/tmp/stats.json')); assert isinstance(d['pv'], int) and isinstance(d['uv'], int)"
+          python3 - <<'EOF'
+          import json
+          d = json.load(open('/tmp/stats.json'))
+          keep = {k: d[k] for k in ('pv', 'uv', 'updated')}
+          keep['daily'] = d.get('daily', {})
+          out = json.dumps(keep, ensure_ascii=False, indent=2) + '\n'
+          for p in ('docs/zh/docs/stats.json',):
+              open(p, 'w', encoding='utf-8').write(out)
+          EOF
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/zh/docs/stats.json
+          if git diff --cached --quiet; then
+            echo "No change, skip commit"
+          else
+            git commit -m "chore: update visit stats [skip ci]"
+            git push
+          fi
