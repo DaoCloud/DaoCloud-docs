@@ -19,7 +19,7 @@ This page describes how to install DCE Assistant offline and online. DCE Assista
 
 Install this Chart once in a cluster. The release name, namespace, and access path use the same values as Copilot. When release `tokenfactory-copilot` is already present, enable the DCE CLI credential on that release. See [Copilot is already installed](#existing).
 
-### Prerequisites {#prerequisites}
+## Prerequisites {#prerequisites}
 
 1. See [Compatibility](../compatibility.md) for Kubernetes versions.
 

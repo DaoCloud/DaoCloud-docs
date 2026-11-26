@@ -19,7 +19,7 @@
 
 同一集群部署一份该 Chart。Release 名称、命名空间和访问路径与 Copilot 使用同一组值。集群中已经存在 Release `tokenfactory-copilot` 时，在该 Release 上启用 DCE CLI 凭据，见[已安装 Copilot](#existing)。
 
-### 前置条件 {#prerequisites}
+## 前置条件 {#prerequisites}
 
 1. 集群 Kubernetes 版本见 [兼容性](../compatibility.md)。
 
