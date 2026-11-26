@@ -33,7 +33,10 @@ DaoCloud 文档站 footer 访问计数器（Cloudflare Worker + D1）。
    - `docs/{zh,en}/theme/overrides/assets/javascripts/visitor.js` 的 `ENDPOINT`
    - `.github/workflows/stats.yml` 的 `ENDPOINT` 环境变量
 
-4. GitHub repo：Settings → Secrets → Actions → 新建 `COUNTER_TOKEN`（值 = STATS_TOKEN）。
+4. GitHub repo：Settings → Secrets → Actions → 新建两个 secret：
+   - `COUNTER_TOKEN`（值 = STATS_TOKEN，访问 Worker /stats 接口）
+   - `STATS_PAT`（管理员的 fine-grained PAT，仅本仓 + Contents 读写；main 有分支保护，
+     内置 github-actions[bot] 加不进绕过名单，workflow 用该 PAT checkout/push 绕过）
 
 5. 控制台确认 Worker 的 Cron Trigger：`0 3 * * *`（wrangler.toml 已声明，deploy 自动创建）。
 
