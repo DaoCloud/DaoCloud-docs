@@ -21,7 +21,7 @@ This document describes the environment, resources, and model files to prepare b
 
 - [Optimized Template](optimized-template.md): choose a template that matches the model, GPU, and inference mode, and supplement deployment environment information.
 - [Generic Template](generic-template.md): configure resources and inference parameters yourself based on the model, hardware, and inference engine.
-- **Custom Deployment**: deploy with a `values.yaml` that matches the current platform Helm Chart.
+- [Custom Deployment](custom.md): deploy with a `values.yaml` that matches the current platform Helm Chart.
 
 Choosing a suitable optimized template enables quick deployment. A template marked **Production Ready** has been validated in real environments; a template marked **Early Access** is suitable for trial and evaluation.
 

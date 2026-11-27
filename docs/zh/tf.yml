@@ -107,7 +107,7 @@ nav:
               - 我的反馈: tf/dak/my-feedback/my-feedback.md
           - 推理加速服务:
               - 什么是推理加速: tf/inferx/index.md
-              - 离线安装推理加速: tf/inferx/offline.md
+              - 离线安装: tf/inferx/offline.md
               - 模型服务:
                   - 介绍: tf/inferx/model-services/index.md
                   - 部署前准备: tf/inferx/model-services/prerequisites.md

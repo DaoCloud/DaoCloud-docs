@@ -165,7 +165,7 @@ nav:
               - FAQ: drun/clawos/faq.md
           - Turbo Inference:
               - What is Turbo Inference: drun/inferx/index.md
-              - Install Turbo Inference Offline: drun/inferx/offline.md
+              - Install Offline: drun/inferx/offline.md
               - Model Services:
                   - Introduction: drun/inferx/model-services/index.md
                   - Prerequisites: drun/inferx/model-services/prerequisites.md
