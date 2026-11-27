@@ -5,8 +5,7 @@
 
 Kubernetes v1.38 is shaping up to be a release centered on
 **streamlined configuration and more advanced resource management**:
-`kubectl` removes two legacy configuration options, the kubelet by default requires container
-runtimes to report the cgroup driver through the CRI, and the retirement of cgroup v1 is
+`kubectl` removes two legacy configuration options, and the retirement of cgroup v1 is
 entering its countdown.
 Meanwhile, kuberc, pod-level resources, and DRA partitionable devices are expected to graduate
 to stable, and the EvictionRequest API arrives in alpha with a more coordinated way to evict Pods.
@@ -18,8 +17,6 @@ before the actual release date.
 !!! tip
 
     If your cluster still runs on cgroup v1, put its migration on the near-term roadmap;
-    if you manage your own nodes or node images, verify that your container runtime supports
-    CRI `RuntimeConfig` before upgrading;
     if your workloads use pod-level resources and rely on swap, complete compatibility
     validation before upgrading.
 
@@ -28,7 +25,7 @@ before the actual release date.
 | Area | Key changes |
 | --- | --- |
 | kubectl | The `KUBECTL_REMOTE_COMMAND_WEBSOCKETS` and `KUBECTL_PORT_FORWARD_WEBSOCKETS` environment variables are removed; kuberc is expected to graduate to stable, retiring the `name` field in credential plugin allowlist entries. |
-| Nodes and runtimes | The kubelet by default requires container runtimes to report the cgroup driver via CRI `RuntimeConfig`, and runtimes must start before the kubelet; support for cgroup v1 continues to be phased out. |
+| Nodes and runtimes | Support for cgroup v1 continues to be phased out; the modernization of kubelet cgroup driver configuration is deferred to v1.39. |
 | Scheduling and resources | Pod-level resources and DRA partitionable devices are expected to graduate to stable; swap limits on `LimitedSwap` nodes are computed from pod-level memory settings instead. |
 | New feature | The EvictionRequest API (alpha) introduces coordinated Pod eviction, giving applications a chance to finish cleanup before they are terminated. |
 
@@ -88,30 +85,24 @@ that the gate is planned to be locked on when the feature graduates to stable.
 To learn more, refer to
 [KEP-5793: Manifest Based Admission Control Config](https://kubernetes.dev/resources/keps/5793).
 
-## Breaking changes in Kubernetes v1.38
-
-### Container runtimes must report the cgroup driver
+### Container runtimes reporting the cgroup driver: migration deferred to v1.39
 
 The kubelet in v1.37 and older supported releases provides a legacy mechanism to configure the
 cgroup driver. The modern way to do that is via the CRI `RuntimeConfig` RPC, which reports the
-cgroup driver that the container runtime recommends using. In v1.38, the kubelet defaults to not
-allowing the legacy configuration mechanism: it will be both deprecated and unavailable unless
-explicitly re-activated. As a result, v1.38 nodes will essentially require that your container
-runtime is running **before** the kubelet starts (to look up the expected cgroup driver); if the
-kubelet can't get the cgroup driver from the runtime even after retrying, it will exit with an error
-before even registering the node.
+cgroup driver that the container runtime recommends using. As originally planned, v1.38 would
+disable this legacy configuration mechanism by default and require container runtimes to run
+**before** the kubelet starts (see
+[kubernetes/kubernetes#136731](https://github.com/kubernetes/kubernetes/pull/136731)).
+Because the relevant change did not land within the v1.38 release cycle, this migration is
+**deferred to v1.39**.
 
-As part of this upcoming release, the `cgroupDriver` field in the kubelet configuration file will be
-deprecated. Not only is specifying that field going to be deprecated, the kubelet will actually
-reject it unless you reactivate the legacy mechanism by enabling the (temporary)
-`LegacyCgroupDriverFallback` feature gate. The kubeadm tool will also no longer set `cgroupDriver`
-to `systemd` by default, and its preflight checks will report an error if the runtime doesn't
-support the RPC. If any of your nodes run an older, incompatible container runtime, you should
-follow the instructions in the official v1.38 release notes about how to upgrade.
+In v1.38, the `cgroupDriver` field in the kubelet configuration file continues to work as before,
+and no extra action is needed for this during the upgrade. If you manage your own nodes or node
+images, verify ahead of time that your container runtime supports `RuntimeConfig` so that you are
+ready for the migration in v1.39. To learn more, refer to
+[KEP-4033: Discover cgroup driver from CRI](https://kubernetes.dev/resources/keps/4033).
 
-To learn more, refer to
-[KEP-4033: Discover cgroup driver from CRI](https://kubernetes.dev/resources/keps/4033) and
-[kubernetes/kubernetes#136731](https://github.com/kubernetes/kubernetes/pull/136731).
+## Breaking changes in Kubernetes v1.38
 
 ### Pod-level resources: swap behavior changes on `LimitedSwap` nodes {#pod-level-resources-swap}
 

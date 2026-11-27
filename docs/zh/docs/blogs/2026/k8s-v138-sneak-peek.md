@@ -3,8 +3,7 @@
 > 原英文博客位于 [k8s.io/blog/](https://kubernetes.io/blog/2026/11/23/kubernetes-v1-38-sneak-peek/)
 
 Kubernetes v1.38 正在收敛为一次围绕 **配置机制精简与资源管理进阶** 的版本更新：
-`kubectl` 移除了两处遗留的配置项，kubelet 默认要求容器运行时通过 CRI 报告 cgroup 驱动，
-cgroup v1 的退出也进入倒计时。
+`kubectl` 移除了两处遗留的配置项，cgroup v1 的退出也进入倒计时。
 与此同时，kuberc、Pod 级别资源和 DRA 可分区设备三项能力预计进阶到稳定版，
 EvictionRequest API 则以 Alpha 形态带来更协调的 Pod 驱逐方式。
 
@@ -14,7 +13,6 @@ EvictionRequest API 则以 Alpha 形态带来更协调的 Pod 驱逐方式。
 !!! tip
 
     - 如果你的集群仍在使用 cgroup v1，应将迁移纳入近期计划；
-    - 如果自行管理节点或节点镜像，应在升级前确认容器运行时支持 CRI `RuntimeConfig`；
     - 如果工作负载启用了 Pod 级别资源并依赖交换内存，应在升级前完成兼容性验证。
 
 ## 一分钟了解 v1.38
@@ -22,7 +20,7 @@ EvictionRequest API 则以 Alpha 形态带来更协调的 Pod 驱逐方式。
 | 领域 | 变更要点 |
 | --- | --- |
 | kubectl | `KUBECTL_REMOTE_COMMAND_WEBSOCKETS` 和 `KUBECTL_PORT_FORWARD_WEBSOCKETS` 环境变量被移除；kuberc 预计进阶到稳定版，凭证插件允许列表条目的 `name` 字段随之退出。 |
-| 节点与运行时 | kubelet 默认要求容器运行时通过 CRI `RuntimeConfig` 报告 cgroup 驱动，运行时须先于 kubelet 启动；对 cgroup v1 的支持继续退场。 |
+| 节点与运行时 | 对 cgroup v1 的支持继续退场；kubelet cgroup 驱动配置的新机制迁移将推迟到 v1.39。 |
 | 调度与资源 | Pod 级别资源和 DRA 可分区设备预计进阶到稳定版；`LimitedSwap` 节点的交换内存限制改为按 Pod 级别内存设置计算。 |
 | 新特性 | EvictionRequest API（Alpha）引入可协调的 Pod 驱逐，让应用有机会在被终止前完成清理。 |
 
@@ -78,27 +76,20 @@ API 服务器在启动时也会记录受影响的现有配置。
 但请注意，当此特性进阶到稳定版时，该门控计划锁定为启用状态。参阅
 [KEP-5793：基于清单的准入控制配置](https://kubernetes.dev/resources/keps/5793)。
 
-## Kubernetes v1.38 中的破坏性变更
-
-### 容器运行时必须报告 cgroup 驱动
+### 容器运行时报告 cgroup 驱动：机制迁移推迟到 v1.39
 
 v1.37 及更早的受支持版本中的 kubelet 提供了一种用于配置 cgroup 驱动的传统机制。
 现代的做法是通过 CRI `RuntimeConfig` RPC，由容器运行时报告其建议使用的 cgroup 驱动。
-在 v1.38 中，kubelet 默认不再允许使用这种传统的配置机制：
-除非显式重新启用，否则该机制既被弃用又不可用。
-因此，v1.38 节点实际上要求你的容器运行时在 kubelet 启动 **之前** 就已运行
-（以便查询预期的 cgroup 驱动）；如果 kubelet 即使重试后仍无法从运行时获取 cgroup 驱动，
-它将在注册节点之前就以错误状态退出。
+按照原计划，v1.38 将默认禁用这种传统配置机制，并要求容器运行时在 kubelet 启动 **之前** 就已运行
+（参见 [kubernetes/kubernetes#136731](https://github.com/kubernetes/kubernetes/pull/136731)）。
+由于相关变更未能赶上 v1.38 的发布周期，该迁移 **推迟到 v1.39** 。
 
-作为本次即将发布的版本的一部分，kubelet 配置文件中的 `cgroupDriver` 字段将被弃用。
-不仅指定该字段会被弃用，而且除非你通过启用（临时的）`LegacyCgroupDriverFallback`
-特性门控重新激活传统机制，否则 kubelet 实际上会拒绝该字段。
-kubeadm 工具也不再默认将 `cgroupDriver` 设置为 `systemd`；
-如果运行时不支持该 RPC，kubeadm 的预检将报告错误。
-如果你的任何节点运行的是较旧的、不兼容的容器运行时，
-请遵照 v1.38 官方发布说明中关于如何升级的指示操作。参阅
-[KEP-4033：从 CRI 发现 cgroup 驱动](https://kubernetes.dev/resources/keps/4033)和
-[kubernetes/kubernetes#136731](https://github.com/kubernetes/kubernetes/pull/136731)。
+在 v1.38 中，kubelet 配置文件中的 `cgroupDriver` 字段仍可正常使用，升级时无需为此做额外处理。
+如果你自行管理节点或节点镜像，建议提前确认所用容器运行时已支持 `RuntimeConfig`，
+为 v1.39 的迁移做好准备。参阅
+[KEP-4033：从 CRI 发现 cgroup 驱动](https://kubernetes.dev/resources/keps/4033)。
+
+## Kubernetes v1.38 中的破坏性变更
 
 ### Pod 级别资源：`LimitedSwap` 节点上的交换行为发生变化   {#pod-level-resources-swap}
 
