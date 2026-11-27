@@ -109,9 +109,11 @@ nav:
               - 什么是推理加速: tf/inferx/index.md
               - FAQ: tf/inferx/faqs.md
               - 部署模型服务:
+                  - 介绍: tf/inferx/model-services/create-service/index.md
                   - 部署前准备: tf/inferx/model-services/create-service/prerequisites.md
                   - 通用模板部署: tf/inferx/model-services/create-service/generic-template.md
                   - 优选模板部署: tf/inferx/model-services/create-service/optimized-template.md
+                  - 自定义部署: tf/inferx/model-services/create-service/custom.md
               - 最佳实践:
                   - 离线环境安装推理加速: tf/inferx/guides/offline.md
                   - 启用集群的 Istio GAIE 特性: tf/inferx/guides/enable-istio-gaie-with-mspider.md
