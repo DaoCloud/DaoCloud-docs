@@ -4,8 +4,10 @@
  * 端点：
  *   POST /hit    页面 beacon。Body: {"c": "<client uuid>", "p": "<path>"}
  *                返回 {"pv": <累计>, "uv": <累计>}；Origin 不在白名单 → 403
+ *                UA 原样入库（截断 120 字符），不做过滤——展示口径保持全量
  *   GET  /stats  回写用。Header: X-Stats-Token: <STATS_TOKEN secret>
- *                返回 {"pv", "uv", "updated", "daily": {YYYY-MM-DD: {pv, uv}}}
+ *                返回 {"pv", "uv", "updated", "daily": {...}, "bots": {...}, "ua_top": [...]}
+ *                bots/ua_top 为审计口径：展示数字不过滤 UA，爬虫占比看这里
  *   scheduled    每天 03:00 UTC 清理 180 天前明细（PV/UV 累计在 counter 表，不受影响）
  *
  * 口径（2026-11-26 与维护者定稿）：
@@ -25,6 +27,18 @@ const RATE_LIMIT = 30;        // 次 / 窗口
 const RATE_WINDOW_MS = 60_000;
 const DETAIL_RETENTION_DAYS = 180;
 const DAILY_DAYS = 14;        // /stats 返回的日增量天数
+const UA_TOP = 8;             // /stats 返回的 top UA 条数
+
+/** 爬虫 UA 识别：SQL（LIKE）与 JS（RE）两份同源，改一处必须同步另一处 */
+const BOT_SQL =
+  "ua LIKE '%bot%' OR ua LIKE '%crawl%' OR ua LIKE '%spider%' OR ua LIKE '%slurp%'" +
+  " OR ua LIKE '%HeadlessChrome%' OR ua LIKE '%python-requests%' OR ua LIKE '%python-urllib%'" +
+  " OR ua LIKE '%curl%' OR ua LIKE '%wget%' OR ua LIKE '%Go-http-client%' OR ua LIKE '%Java/%'" +
+  " OR ua LIKE '%okhttp%' OR ua LIKE '%axios%' OR ua LIKE '%monitor%' OR ua LIKE '%uptime%'" +
+  " OR ua LIKE '%pingdom%' OR ua LIKE '%lighthouse%' OR ua LIKE '%phantomjs%'" +
+  " OR ua LIKE '%puppeteer%' OR ua LIKE '%playwright%'";
+const BOT_RE =
+  /bot|crawl|spider|slurp|headlesschrome|python-requests|python-urllib|curl|wget|go-http-client|java\/|okhttp|axios|monitor|uptime|pingdom|lighthouse|phantomjs|puppeteer|playwright/i;
 
 /** isolate 内存限流窗口：client -> [timestamps] */
 const rate = new Map();
@@ -100,8 +114,9 @@ async function handleHit(request, env) {
     .first();
 
   const stmts = [
-    env.DB.prepare('INSERT INTO hits (ts, client, path) VALUES (?, ?, ?)')
-      .bind(Date.now(), hit.client, hit.path),
+    env.DB.prepare('INSERT INTO hits (ts, client, path, ua) VALUES (?, ?, ?, ?)')
+      .bind(Date.now(), hit.client, hit.path,
+            (request.headers.get('User-Agent') || '').slice(0, 120)),
     env.DB.prepare('UPDATE counter SET pv = pv + 1 WHERE rowid = 1'),
   ];
   if (!seen) {
@@ -118,14 +133,34 @@ async function handleStats(request, env) {
   const {pv, uv} = await readCounter(env.DB);
   const since = Date.now() - DAILY_DAYS * 86_400_000;
   const {results} = await env.DB.prepare(
-    "SELECT strftime('%Y-%m-%d', ts / 1000, 'unixepoch') AS day, COUNT(*) AS pv, COUNT(DISTINCT client) AS uv " +
+    "SELECT strftime('%Y-%m-%d', ts / 1000, 'unixepoch') AS day, COUNT(*) AS pv, COUNT(DISTINCT client) AS uv, " +
+    `SUM(CASE WHEN ${BOT_SQL} THEN 1 ELSE 0 END) AS bot ` +
     'FROM hits WHERE ts >= ? GROUP BY day ORDER BY day'
   )
     .bind(since)
     .all();
   const daily = {};
-  for (const r of results) daily[r.day] = {pv: r.pv, uv: r.uv};
-  return json({pv, uv, updated: new Date().toISOString(), daily});
+  for (const r of results) daily[r.day] = {pv: r.pv, uv: r.uv, bot: r.bot || 0};
+  // 审计口径：爬虫累计（部署 ua 列之前的历史行 ua 为空串，计入非爬虫）
+  const botsRow = await env.DB.prepare(
+    `SELECT SUM(CASE WHEN ${BOT_SQL} THEN 1 ELSE 0 END) AS pv, ` +
+    `COUNT(DISTINCT CASE WHEN ${BOT_SQL} THEN client END) AS uv FROM hits`
+  ).first();
+  const {results: uaRows} = await env.DB.prepare(
+    'SELECT ua, COUNT(*) AS n FROM hits GROUP BY ua ORDER BY n DESC LIMIT ?'
+  )
+    .bind(UA_TOP)
+    .all();
+  const ua_top = uaRows
+    .filter((r) => r.ua)
+    .map((r) => ({ua: r.ua.slice(0, 80), n: r.n, bot: BOT_RE.test(r.ua)}));
+  return json({
+    pv, uv,
+    updated: new Date().toISOString(),
+    daily,
+    bots: {pv: botsRow?.pv || 0, uv: botsRow?.uv || 0},
+    ua_top,
+  });
 }
 
 export default {

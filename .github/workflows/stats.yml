@@ -38,7 +38,7 @@ jobs:
           python3 - <<'EOF'
           import json
           d = json.load(open('/tmp/stats.json'))
-          keep = {k: d[k] for k in ('pv', 'uv', 'updated')}
+          keep = {k: d[k] for k in ('pv', 'uv', 'updated', 'bots', 'ua_top')}
           keep['daily'] = d.get('daily', {})
           out = json.dumps(keep, ensure_ascii=False, indent=2) + '\n'
           for p in ('docs/zh/docs/stats.json',):
