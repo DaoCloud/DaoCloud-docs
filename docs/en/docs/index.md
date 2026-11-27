@@ -375,7 +375,6 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
       </div>
     </div>
 
-
 ## Customer Success Stories
 
 <div class="story-marquee" aria-label="Customer success stories">
@@ -406,15 +405,15 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
         <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">High-efficiency compute cluster powering Hong Kong's first LLM and the HKGAI Studio platform</p><div class="story-card-metrics"><span><b>90%</b>GPU utilization</span><span><b>60%</b>faster fine-tuning</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Manufacturing</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">Manufacturing</span></div>
         <div class="story-card-body"><p class="story-card-name">Dongfang Electric</p><p class="story-card-desc">One of the world's largest energy equipment makers, running an AI platform for power-equipment quality analysis</p><div class="story-card-metrics"><span><b>10x</b>production efficiency</span><span><b>30%</b>detection accuracy</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Finance</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">Finance</span></div>
         <div class="story-card-body"><p class="story-card-name">SPD Bank</p><p class="story-card-desc">Global top-20 bank; China's first cloud-native platform for large-scale payment services</p><div class="story-card-metrics"><span><b>10,000</b>peak TPS</span><span><b>99.99%</b>SLA</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Retail</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">Retail</span></div>
         <div class="story-card-body"><p class="story-card-name">Watsons Group</p><p class="story-card-desc">World's largest health and beauty retailer, powering its O+O business end to end</p><div class="story-card-metrics"><span><b>99.99%</b>core business SLA</span><span><b>70%+</b>faster releases</span></div></div>
       </div>
     </div>
@@ -444,15 +443,15 @@ DaoCloud is a global open-source pioneer in AI, accelerating enterprise AI trans
         <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">High-efficiency compute cluster powering Hong Kong's first LLM and the HKGAI Studio platform</p><div class="story-card-metrics"><span><b>90%</b>GPU utilization</span><span><b>60%</b>faster fine-tuning</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Manufacturing</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">Manufacturing</span></div>
         <div class="story-card-body"><p class="story-card-name">Dongfang Electric</p><p class="story-card-desc">One of the world's largest energy equipment makers, running an AI platform for power-equipment quality analysis</p><div class="story-card-metrics"><span><b>10x</b>production efficiency</span><span><b>30%</b>detection accuracy</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Finance</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">Finance</span></div>
         <div class="story-card-body"><p class="story-card-name">SPD Bank</p><p class="story-card-desc">Global top-20 bank; China's first cloud-native platform for large-scale payment services</p><div class="story-card-metrics"><span><b>10,000</b>peak TPS</span><span><b>99.99%</b>SLA</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE Cloud Native OS</a><span class="story-card-ind">Retail</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">Retail</span></div>
         <div class="story-card-body"><p class="story-card-name">Watsons Group</p><p class="story-card-desc">World's largest health and beauty retailer, powering its O+O business end to end</p><div class="story-card-metrics"><span><b>99.99%</b>core business SLA</span><span><b>70%+</b>faster releases</span></div></div>
       </div>
     </div>

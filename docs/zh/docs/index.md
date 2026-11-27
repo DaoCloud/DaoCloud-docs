@@ -412,15 +412,15 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">联合港科大打造支撑首个港产大模型落地的高效能算力集群，全面赋能 HKGAI Studio</p><div class="story-card-metrics"><span><b>90%</b>GPU 利用率</span><span><b>60%</b>模型微调效率提升</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE 云原生操作系统</a><span class="story-card-ind">制造</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">制造</span></div>
         <div class="story-card-body"><p class="story-card-name">东方电气</p><p class="story-card-desc">全球最大的能源装备制造企业集团之一，打造发电装备质量智能分析 AI 中台</p><div class="story-card-metrics"><span><b>10 倍</b>生产效率提升</span><span><b>30%</b>缺陷检测准确率</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE 云原生操作系统</a><span class="story-card-ind">金融</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">金融</span></div>
         <div class="story-card-body"><p class="story-card-name">浦发银行</p><p class="story-card-desc">全球银行前 20 强，中国首个支持大规模支付业务的云原生平台</p><div class="story-card-metrics"><span><b>10,000</b>支付峰值 TPS</span><span><b>99.99%</b>SLA</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE 云原生操作系统</a><span class="story-card-ind">零售</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">零售</span></div>
         <div class="story-card-body"><p class="story-card-name">屈臣氏集团</p><p class="story-card-desc">全球最大的保健及美容产品零售商，端到端赋能 O+O 业务</p><div class="story-card-metrics"><span><b>99.99%</b>核心业务 SLA</span><span><b>70%+</b>发布耗时缩短</span></div></div>
       </div>
     </div>
@@ -450,15 +450,15 @@ DaoCloud 是全球 AI 领域的开源先锋，致力于通过云原生技术加�
         <div class="story-card-body"><p class="story-card-name">HKGAI</p><p class="story-card-desc">联合港科大打造支撑首个港产大模型落地的高效能算力集群，全面赋能 HKGAI Studio</p><div class="story-card-metrics"><span><b>90%</b>GPU 利用率</span><span><b>60%</b>模型微调效率提升</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE 云原生操作系统</a><span class="story-card-ind">制造</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">制造</span></div>
         <div class="story-card-body"><p class="story-card-name">东方电气</p><p class="story-card-desc">全球最大的能源装备制造企业集团之一，打造发电装备质量智能分析 AI 中台</p><div class="story-card-metrics"><span><b>10 倍</b>生产效率提升</span><span><b>30%</b>缺陷检测准确率</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE 云原生操作系统</a><span class="story-card-ind">金融</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">金融</span></div>
         <div class="story-card-body"><p class="story-card-name">浦发银行</p><p class="story-card-desc">全球银行前 20 强，中国首个支持大规模支付业务的云原生平台</p><div class="story-card-metrics"><span><b>10,000</b>支付峰值 TPS</span><span><b>99.99%</b>SLA</span></div></div>
       </div>
       <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
-        <div class="story-card-top"><a class="story-card-prod" href="dce/">DCE 云原生操作系统</a><span class="story-card-ind">零售</span></div>
+        <div class="story-card-top"><a class="story-card-prod" href="dce/">DaoCloud Enterprise</a><span class="story-card-ind">零售</span></div>
         <div class="story-card-body"><p class="story-card-name">屈臣氏集团</p><p class="story-card-desc">全球最大的保健及美容产品零售商，端到端赋能 O+O 业务</p><div class="story-card-metrics"><span><b>99.99%</b>核心业务 SLA</span><span><b>70%+</b>发布耗时缩短</span></div></div>
       </div>
     </div>
