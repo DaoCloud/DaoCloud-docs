@@ -145,77 +145,77 @@ DaoCloud Enterprise (DCE) 以 K8s 作为开发底座，提供了高度可扩展�
 <div class="story-marquee" aria-label="客户成功故事">
   <div class="story-track">
     <div class="story-group">
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">AI 质量分析</span><span class="story-card-ind">制造</span></div>
         <div class="story-card-body"><p class="story-card-name">东方电气</p><p class="story-card-desc">全球最大的能源装备制造企业集团之一，打造发电装备质量智能分析 AI 中台</p><div class="story-card-metrics"><span><b>10 倍</b>生产效率提升</span><span><b>30%</b>缺陷检测准确率</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">微服务平台</span><span class="story-card-ind">制造</span></div>
         <div class="story-card-body"><p class="story-card-name">京东方</p><p class="story-card-desc">全球面板市场出货量第一，构建开放的数字化生态体系，29 套业务系统接入微服务平台</p><div class="story-card-metrics"><span><b>秒级</b>故障定位</span><span><b>70%</b>故障率降低</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">工业互联网</span><span class="story-card-ind">制造</span></div>
         <div class="story-card-body"><p class="story-card-name">海尔集团</p><p class="story-card-desc">综合家电巨头，共建工业互联网平台 COSMOPlat，打造工业应用软件开发基础底座</p><div class="story-card-metrics"><span><b>30,000+</b>入驻企业</span><span><b>1,000+</b>上线应用</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">双态 IT</span><span class="story-card-ind">汽车</span></div>
         <div class="story-card-body"><p class="story-card-name">广汽丰田</p><p class="story-card-desc">世界 500 强车企子公司，应用上云实现双态 IT，生产计划与物流系统弹性部署</p><div class="story-card-metrics"><span><b>敏捷</b>应用高效迭代</span><span><b>深化</b>数字化转型</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">车联网平台</span><span class="story-card-ind">汽车</span></div>
         <div class="story-card-body"><p class="story-card-name">东风汽车</p><p class="story-card-desc">汽车行业“国家队”代表，打造满足新能源汽车监管和监控需求的平台</p><div class="story-card-metrics"><span><b>实时</b>海量车辆数据处理</span><span><b>加速</b>汽车数字化进程</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">容器集群上云</span><span class="story-card-ind">金融</span></div>
         <div class="story-card-body"><p class="story-card-name">华泰证券</p><p class="story-card-desc">中国领先的综合性证券集团，大规模标准容器集群上云</p><div class="story-card-metrics"><span><b>50%</b>运维效率提升</span><span><b>60%</b>部署效率提升</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">云原生支付</span><span class="story-card-ind">金融</span></div>
         <div class="story-card-body"><p class="story-card-name">浦发银行</p><p class="story-card-desc">全球银行前 20 强，中国首个支持大规模支付业务的云原生平台</p><div class="story-card-metrics"><span><b>10,000</b>支付峰值 TPS</span><span><b>99.99%</b>SLA</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">O+O 零售</span><span class="story-card-ind">消费</span></div>
         <div class="story-card-body"><p class="story-card-name">屈臣氏集团</p><p class="story-card-desc">全球最大的保健及美容产品零售商，端到端赋能 O+O 业务</p><div class="story-card-metrics"><span><b>99.99%</b>核心业务 SLA</span><span><b>70%+</b>发布耗时缩短</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">AI 代码审核</span><span class="story-card-ind">海外</span></div>
         <div class="story-card-body"><p class="story-card-name">汽车零部件系统供应商</p><p class="story-card-desc">全球领先的汽车与摩托车零部件系统供应商，以 d.run 打造 AI 智能代码审核应用</p><div class="story-card-metrics"><span><b>90%</b>人力投入削减</span><span><b>10 倍</b>审核效率提升</span></div></div>
       </div>
     </div>
     <div class="story-group" aria-hidden="true">
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">AI 质量分析</span><span class="story-card-ind">制造</span></div>
         <div class="story-card-body"><p class="story-card-name">东方电气</p><p class="story-card-desc">全球最大的能源装备制造企业集团之一，打造发电装备质量智能分析 AI 中台</p><div class="story-card-metrics"><span><b>10 倍</b>生产效率提升</span><span><b>30%</b>缺陷检测准确率</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">微服务平台</span><span class="story-card-ind">制造</span></div>
         <div class="story-card-body"><p class="story-card-name">京东方</p><p class="story-card-desc">全球面板市场出货量第一，构建开放的数字化生态体系，29 套业务系统接入微服务平台</p><div class="story-card-metrics"><span><b>秒级</b>故障定位</span><span><b>70%</b>故障率降低</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">工业互联网</span><span class="story-card-ind">制造</span></div>
         <div class="story-card-body"><p class="story-card-name">海尔集团</p><p class="story-card-desc">综合家电巨头，共建工业互联网平台 COSMOPlat，打造工业应用软件开发基础底座</p><div class="story-card-metrics"><span><b>30,000+</b>入驻企业</span><span><b>1,000+</b>上线应用</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">双态 IT</span><span class="story-card-ind">汽车</span></div>
         <div class="story-card-body"><p class="story-card-name">广汽丰田</p><p class="story-card-desc">世界 500 强车企子公司，应用上云实现双态 IT，生产计划与物流系统弹性部署</p><div class="story-card-metrics"><span><b>敏捷</b>应用高效迭代</span><span><b>深化</b>数字化转型</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">车联网平台</span><span class="story-card-ind">汽车</span></div>
         <div class="story-card-body"><p class="story-card-name">东风汽车</p><p class="story-card-desc">汽车行业“国家队”代表，打造满足新能源汽车监管和监控需求的平台</p><div class="story-card-metrics"><span><b>实时</b>海量车辆数据处理</span><span><b>加速</b>汽车数字化进程</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">容器集群上云</span><span class="story-card-ind">金融</span></div>
         <div class="story-card-body"><p class="story-card-name">华泰证券</p><p class="story-card-desc">中国领先的综合性证券集团，大规模标准容器集群上云</p><div class="story-card-metrics"><span><b>50%</b>运维效率提升</span><span><b>60%</b>部署效率提升</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">云原生支付</span><span class="story-card-ind">金融</span></div>
         <div class="story-card-body"><p class="story-card-name">浦发银行</p><p class="story-card-desc">全球银行前 20 强，中国首个支持大规模支付业务的云原生平台</p><div class="story-card-metrics"><span><b>10,000</b>支付峰值 TPS</span><span><b>99.99%</b>SLA</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">O+O 零售</span><span class="story-card-ind">消费</span></div>
         <div class="story-card-body"><p class="story-card-name">屈臣氏集团</p><p class="story-card-desc">全球最大的保健及美容产品零售商，端到端赋能 O+O 业务</p><div class="story-card-metrics"><span><b>99.99%</b>核心业务 SLA</span><span><b>70%+</b>发布耗时缩短</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">AI 代码审核</span><span class="story-card-ind">海外</span></div>
         <div class="story-card-body"><p class="story-card-name">汽车零部件系统供应商</p><p class="story-card-desc">全球领先的汽车与摩托车零部件系统供应商，以 d.run 打造 AI 智能代码审核应用</p><div class="story-card-metrics"><span><b>90%</b>人力投入削减</span><span><b>10 倍</b>审核效率提升</span></div></div>
       </div>

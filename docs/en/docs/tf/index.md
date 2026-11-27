@@ -160,29 +160,29 @@ As a high-efficiency AI Token production and management system built for intelli
 <div class="story-marquee" aria-label="Customer success stories">
   <div class="story-track">
     <div class="story-group">
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Cross-border compute</span><span class="story-card-ind">ASEAN</span></div>
         <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform and the cornerstone for ASEAN cross-border compute expansion</p><div class="story-card-metrics"><span><b>1000P</b>initial compute scale</span><span><b>3000-5000P</b>planned compute scale</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Unified scheduling</span><span class="story-card-ind">AI Center</span></div>
         <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, with 60+ AI scenarios in 12 industries</p><div class="story-card-metrics"><span><b>~2000P</b>compute under unified scheduling</span><span><b>7x</b>Token output efficiency</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">End-to-end</span><span class="story-card-ind">Japan</span></div>
         <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">Japanese listed company focused on data center and system innovation, taking a smart computing center from build to operations and launching Token services fast</p><div class="story-card-metrics"><span><b>End-to-end</b>build to operations</span><span><b>Fast go-live</b>Token services</span></div></div>
       </div>
     </div>
     <div class="story-group" aria-hidden="true">
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Cross-border compute</span><span class="story-card-ind">ASEAN</span></div>
         <div class="story-card-body"><p class="story-card-name">Rundao Xingsuan</p><p class="story-card-desc">Guangxi's first Token-metered AI computing platform and the cornerstone for ASEAN cross-border compute expansion</p><div class="story-card-metrics"><span><b>1000P</b>initial compute scale</span><span><b>3000-5000P</b>planned compute scale</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Unified scheduling</span><span class="story-card-ind">AI Center</span></div>
         <div class="story-card-body"><p class="story-card-name">Xiamen Computing Alliance</p><p class="story-card-desc">City-level compute scheduling across entities, architectures, and data centers, with 60+ AI scenarios in 12 industries</p><div class="story-card-metrics"><span><b>~2000P</b>compute under unified scheduling</span><span><b>7x</b>Token output efficiency</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">End-to-end</span><span class="story-card-ind">Japan</span></div>
         <div class="story-card-body"><p class="story-card-name">PIXEL</p><p class="story-card-desc">Japanese listed company focused on data center and system innovation, taking a smart computing center from build to operations and launching Token services fast</p><div class="story-card-metrics"><span><b>End-to-end</b>build to operations</span><span><b>Fast go-live</b>Token services</span></div></div>
       </div>

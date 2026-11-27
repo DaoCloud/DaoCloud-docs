@@ -145,77 +145,77 @@ With DCE's cloud native DNA, enterprises can fully leverage the advantages of bo
 <div class="story-marquee" aria-label="Customer success stories">
   <div class="story-track">
     <div class="story-group">
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">AI quality analysis</span><span class="story-card-ind">Manufacturing</span></div>
         <div class="story-card-body"><p class="story-card-name">Dongfang Electric</p><p class="story-card-desc">One of the world's largest energy equipment makers, running an AI platform for power-equipment quality analysis</p><div class="story-card-metrics"><span><b>10x</b>production efficiency</span><span><b>30%</b>detection accuracy</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Microservices</span><span class="story-card-ind">Manufacturing</span></div>
         <div class="story-card-body"><p class="story-card-name">BOE</p><p class="story-card-desc">World's #1 panel shipper; 29 business systems on the microservice platform within an open digital ecosystem</p><div class="story-card-metrics"><span><b>Instant</b>fault locating</span><span><b>70%</b>fewer failures</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Industrial IoT</span><span class="story-card-ind">Manufacturing</span></div>
         <div class="story-card-body"><p class="story-card-name">Haier Group</p><p class="story-card-desc">Co-building the COSMOPlat industrial internet platform and its software foundation</p><div class="story-card-metrics"><span><b>30,000+</b>enterprises onboard</span><span><b>1,000+</b>apps live</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Dual-mode IT</span><span class="story-card-ind">Automotive</span></div>
         <div class="story-card-body"><p class="story-card-name">GAC Toyota</p><p class="story-card-desc">World 500 automaker subsidiary running dual-mode IT with elastic deployment for production and logistics</p><div class="story-card-metrics"><span><b>Agile</b>app iteration</span><span><b>Deeper</b>digital transformation</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Connected vehicles</span><span class="story-card-ind">Automotive</span></div>
         <div class="story-card-body"><p class="story-card-name">Dongfeng Motor</p><p class="story-card-desc">Member of China's auto "national team", building a platform for NEV regulation and monitoring</p><div class="story-card-metrics"><span><b>Real-time</b>massive vehicle data</span><span><b>Accelerated</b>auto digitalization</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Containers on cloud</span><span class="story-card-ind">Finance</span></div>
         <div class="story-card-body"><p class="story-card-name">Huatai Securities</p><p class="story-card-desc">Leading Chinese securities group running large-scale standard container clusters in the cloud</p><div class="story-card-metrics"><span><b>50%</b>ops efficiency</span><span><b>60%</b>faster deployment</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Cloud-native payments</span><span class="story-card-ind">Finance</span></div>
         <div class="story-card-body"><p class="story-card-name">SPD Bank</p><p class="story-card-desc">Global top-20 bank; China's first cloud-native platform for large-scale payment services</p><div class="story-card-metrics"><span><b>10,000</b>peak TPS</span><span><b>99.99%</b>SLA</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">O+O retail</span><span class="story-card-ind">Retail</span></div>
         <div class="story-card-body"><p class="story-card-name">Watsons Group</p><p class="story-card-desc">World's largest health and beauty retailer, powering its O+O business end to end</p><div class="story-card-metrics"><span><b>99.99%</b>core business SLA</span><span><b>70%+</b>faster releases</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">AI code review</span><span class="story-card-ind">Overseas</span></div>
         <div class="story-card-body"><p class="story-card-name">Auto parts supplier</p><p class="story-card-desc">Global auto and motorcycle parts leader running AI-powered code review on the d.run platform</p><div class="story-card-metrics"><span><b>90%</b>less manual effort</span><span><b>10x</b>review efficiency</span></div></div>
       </div>
     </div>
     <div class="story-group" aria-hidden="true">
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">AI quality analysis</span><span class="story-card-ind">Manufacturing</span></div>
         <div class="story-card-body"><p class="story-card-name">Dongfang Electric</p><p class="story-card-desc">One of the world's largest energy equipment makers, running an AI platform for power-equipment quality analysis</p><div class="story-card-metrics"><span><b>10x</b>production efficiency</span><span><b>30%</b>detection accuracy</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Microservices</span><span class="story-card-ind">Manufacturing</span></div>
         <div class="story-card-body"><p class="story-card-name">BOE</p><p class="story-card-desc">World's #1 panel shipper; 29 business systems on the microservice platform within an open digital ecosystem</p><div class="story-card-metrics"><span><b>Instant</b>fault locating</span><span><b>70%</b>fewer failures</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Industrial IoT</span><span class="story-card-ind">Manufacturing</span></div>
         <div class="story-card-body"><p class="story-card-name">Haier Group</p><p class="story-card-desc">Co-building the COSMOPlat industrial internet platform and its software foundation</p><div class="story-card-metrics"><span><b>30,000+</b>enterprises onboard</span><span><b>1,000+</b>apps live</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Dual-mode IT</span><span class="story-card-ind">Automotive</span></div>
         <div class="story-card-body"><p class="story-card-name">GAC Toyota</p><p class="story-card-desc">World 500 automaker subsidiary running dual-mode IT with elastic deployment for production and logistics</p><div class="story-card-metrics"><span><b>Agile</b>app iteration</span><span><b>Deeper</b>digital transformation</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Connected vehicles</span><span class="story-card-ind">Automotive</span></div>
         <div class="story-card-body"><p class="story-card-name">Dongfeng Motor</p><p class="story-card-desc">Member of China's auto "national team", building a platform for NEV regulation and monitoring</p><div class="story-card-metrics"><span><b>Real-time</b>massive vehicle data</span><span><b>Accelerated</b>auto digitalization</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Containers on cloud</span><span class="story-card-ind">Finance</span></div>
         <div class="story-card-body"><p class="story-card-name">Huatai Securities</p><p class="story-card-desc">Leading Chinese securities group running large-scale standard container clusters in the cloud</p><div class="story-card-metrics"><span><b>50%</b>ops efficiency</span><span><b>60%</b>faster deployment</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">Cloud-native payments</span><span class="story-card-ind">Finance</span></div>
         <div class="story-card-body"><p class="story-card-name">SPD Bank</p><p class="story-card-desc">Global top-20 bank; China's first cloud-native platform for large-scale payment services</p><div class="story-card-metrics"><span><b>10,000</b>peak TPS</span><span><b>99.99%</b>SLA</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">O+O retail</span><span class="story-card-ind">Retail</span></div>
         <div class="story-card-body"><p class="story-card-name">Watsons Group</p><p class="story-card-desc">World's largest health and beauty retailer, powering its O+O business end to end</p><div class="story-card-metrics"><span><b>99.99%</b>core business SLA</span><span><b>70%+</b>faster releases</span></div></div>
       </div>
-      <div class="story-card" style="--s1:#2EA452;--s2:#60CE6B">
+      <div class="story-card" style="--s1:#1B66F5;--s2:#5B8CFF">
         <div class="story-card-top"><span class="story-card-high">AI code review</span><span class="story-card-ind">Overseas</span></div>
         <div class="story-card-body"><p class="story-card-name">Auto parts supplier</p><p class="story-card-desc">Global auto and motorcycle parts leader running AI-powered code review on the d.run platform</p><div class="story-card-metrics"><span><b>90%</b>less manual effort</span><span><b>10x</b>review efficiency</span></div></div>
       </div>
