@@ -174,19 +174,19 @@ nav:
               - FAQ: drun/clawos/faq.md
           - 推理加速服务:
               - 什么是推理加速: drun/inferx/index.md
-              - FAQ: drun/inferx/faqs.md
-              - 部署模型服务:
-                  - 介绍: drun/inferx/model-services/create-service/index.md
-                  - 部署前准备: drun/inferx/model-services/create-service/prerequisites.md
-                  - 通用模板部署: drun/inferx/model-services/create-service/generic-template.md
-                  - 优选模板部署: drun/inferx/model-services/create-service/optimized-template.md
-                  - 自定义部署: drun/inferx/model-services/create-service/custom.md
+              - 离线安装推理加速: drun/inferx/offline.md
+              - 模型服务:
+                  - 介绍: drun/inferx/model-services/index.md
+                  - 部署前准备: drun/inferx/model-services/prerequisites.md
+                  - 通用模板部署: drun/inferx/model-services/generic-template.md
+                  - 优选模板部署: drun/inferx/model-services/optimized-template.md
+                  - 自定义部署: drun/inferx/model-services/custom.md
               - 最佳实践:
-                  - 离线环境安装推理加速: drun/inferx/guides/offline.md
-                  - 启用集群的 Istio GAIE 特性: drun/inferx/guides/enable-istio-gaie-with-mspider.md
-                  - 下载与配置模型权重: drun/inferx/guides/model-weights-setup.md
-                  - 部署 PD 分离的 GLM 5.3 模型: drun/inferx/guides/llm-d-pd-glm.md
-                  - 对外暴露模型服务(Hydra/Knoway): drun/inferx/guides/export-by-hydra.md
+                  - 启用集群的 Istio GAIE 特性: drun/inferx/best-practice/enable-istio-gaie-with-mspider.md
+                  - 下载与配置模型权重: drun/inferx/best-practice/model-weights-setup.md
+                  - 部署 PD 分离的 GLM 5.3 模型: drun/inferx/best-practice/llm-d-pd-glm.md
+                  - 对外暴露模型服务(Hydra/Knoway): drun/inferx/best-practice/export-by-hydra.md
+              - FAQ: drun/inferx/faqs.md
       - 云原生底座:
           - 容器管理:
               - drun/kpanda/intro/index.md

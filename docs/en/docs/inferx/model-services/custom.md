@@ -3,72 +3,72 @@ hide:
   - toc
 ---
 
-# 自定义部署
+# Custom Deployment
 
-自定义部署适用于需要完全掌控部署配置的场景：填写与平台 Helm Chart 匹配的 `values.yaml`，直接声明编排框架、服务角色与推理参数，平台按该 YAML 原样部署。适合自动化运维（GitOps、CI 流水线）或需要将服务配置纳入代码管理的场景。
+Custom deployment is suitable for scenarios where you need full control over the deployment configuration: enter a `values.yaml` that matches the platform Helm Chart to directly declare the orchestration framework, service roles, and inference parameters, and the platform deploys exactly as defined in that YAML. It suits automated operations (GitOps, CI pipelines) or scenarios where service configurations need to be managed as code.
 
-## 前提条件
+## Prerequisites
 
-已完成 [部署前准备](prerequisites.md)，并确认：
+You have completed [deployment preparation](prerequisites.md) and confirmed that:
 
-- 已具备目标集群和命名空间的操作权限。
-- 所用 `values.yaml` 与平台当前版本的 Helm Chart 结构匹配。
-- 模型权重已存放在目标命名空间的 PVC 中，对应 YAML 中的 `modelArtifacts.uri`。
+- You have the operation permissions for the target cluster and namespace.
+- The `values.yaml` you use matches the structure of the Helm Chart of the current platform version.
+- Model weights are stored in a PVC in the target namespace, corresponding to `modelArtifacts.uri` in the YAML.
 
-## 操作步骤
+## Steps
 
-1. 从左侧导航栏进入 **推理加速服务** > **模型服务**，点击 **新建部署**。
+1. Navigate to **Turbo Inference** > **Model Services** in the left navigation bar and click **New Deployment**.
 
-2. 在 **部署方式** 中选择 **自定义部署**（填写 `values.yaml` 自定义部署）。
+2. Select **Custom Deployment** as the deployment method (deploy with a custom `values.yaml`).
 
-3. 选择 **目标集群** 和 **命名空间**，填写 **服务名称**，**别名** 可选。
+3. Select the **Target Cluster** and **Namespace**, and enter the **Service Name**. The **Alias** is optional.
 
-4. 编辑 **values.yaml** 。参见 [values.yaml 示例](#custom-values-example)。
+4. Edit **values.yaml**. See the [values.yaml example](#custom-values-example).
 
-    ![自定义部署页面：选择部署方式、填写基本信息与 values.yaml](../images/custom01.png)
+    ![Custom deployment page: select Custom Deployment, fill in basic information and values.yaml](images/custom01.png)
 
-    填写 `values.yaml` 并选择目标集群与命名空间后，将按自定义 YAML 直接部署。
+    Enter the `values.yaml` and select the target cluster and namespace. The custom YAML will be deployed directly.
 
-5. 点击 **预览 YAML** ，核对服务配置后点击 **提交并部署** 。
+5. Click **Preview YAML**, verify the service configuration, and click **Submit and Deploy**.
 
-6. **验证服务**。
+6. **Verify the service**.
 
-    返回 **模型服务** 列表，确认服务状态为 **可用**，资源运行状态为 **运行中**。页面位置和状态示例参见[通用模板部署的服务验证步骤](generic-template.md#verify-service)。
+    Return to the **Model Services** list and confirm that the service status is **Available** and the resource running status is **Running**. For page locations and status examples, see [service verification steps of the generic template](generic-template.md#verify-service).
 
-## 关键配置说明
+## Key Configuration Notes
 
-下例使用 llm-d 编排框架部署 Qwen3-0.6B 模型（vLLM 引擎、PD 一体、单卡 A800）。YAML 的顶层配置段与关键配置项如下：
+The following example uses the llm-d orchestration framework to deploy the Qwen3-0.6B model (vLLM engine, PD Aggregated, single A800 GPU). The top-level configuration sections and key configuration items of the YAML are as follows:
 
-| 顶层配置段 | 作用 |
+| Top-level Section | Purpose |
 | --- | --- |
-| `dynamo` | Dynamo 编排框架开关。示例中 `enabled: false`，表示不启用 Dynamo。 |
-| `llm-d-infra` | llm-d 基础设施组件（推理网关）。示例中 `enabled: true`。 |
-| `llm-d-modelservice` | 推理服务主体：服务角色、模型挂载、并行策略与路由配置。 |
-| `llm-d-router-gateway` | llm-d 路由与网关：请求入口、EndpointPicker 调度配置与监控。 |
+| `dynamo` | Switch for the Dynamo orchestration framework. In the example, `enabled: false` means Dynamo is not enabled. |
+| `llm-d-infra` | llm-d infrastructure components (inference gateway). In the example, `enabled: true`. |
+| `llm-d-modelservice` | The inference service itself: service roles, model mounting, parallelism strategies, and routing configuration. |
+| `llm-d-router-gateway` | llm-d routing and gateway: request entry, EndpointPicker scheduling configuration, and monitoring. |
 
-| 配置项 | 说明 |
+| Configuration Item | Description |
 | --- | --- |
-| `accelerator` | 加速卡类型 `type` 及对应资源名称，如 `nvidia` 对应 `nvidia.com/gpu`；国产算力卡对应 `huawei`、`intel-gaudi` 等条目。 |
-| `decode` / `prefill` / `encode` | 服务角色，`create` 控制是否部署。示例中仅 `decode` 启用，即 PD 一体模式；PD 分离时需同时启用 `prefill`。 |
-| `containers.args` | 推理引擎启动参数，如 `--tensor-parallel-size`、`--max-model-len`、`--gpu-memory-utilization` 等。 |
-| `containers.image` | 推理镜像的 `registry` / `repository` / `tag`，使用自定义镜像时同步修改。 |
-| `modelArtifacts` | 模型来源：`uri: pvc://<PVC 名称>/` 指定权重所在的 PVC，`mountPath` 为容器内挂载路径，`name` 为模型访问名称。 |
-| `nodeSelector` | 按 GPU 型号和厂商选择节点，如 `node.kpanda.io/gpu-product`。 |
-| `parallelism` | 并行策略：`tensor`（TP）、`data`（DP）、`workers`，取值需与该角色申请的 GPU 数量一致。 |
-| `resources` | 各角色的 CPU、内存、GPU 请求量（`requests`）与限制量（`limits`）。 |
-| `routing` | 服务端口与路由代理。`proxy.enabled` 启用后由 `routing-proxy` 协调 prefill 与 decode 的请求衔接，PD 分离场景需开启。 |
-| `pluginsCustomConfig` | llm-d EndpointPicker 调度插件配置。示例内置默认调度配置与 PD 分离场景的 `pd-config.yaml`，按实际推理模式取舍。 |
+| `accelerator` | Accelerator type `type` and the corresponding resource name, e.g. `nvidia` maps to `nvidia.com/gpu`; domestic accelerator cards map to entries such as `huawei` and `intel-gaudi`. |
+| `decode` / `prefill` / `encode` | Service roles; `create` controls whether the role is deployed. In the example, only `decode` is enabled, which means PD Aggregated mode; for PD disaggregation, enable `prefill` as well. |
+| `containers.args` | Inference engine startup parameters, such as `--tensor-parallel-size`, `--max-model-len`, `--gpu-memory-utilization`, etc. |
+| `containers.image` | `registry` / `repository` / `tag` of the inference image; update them together when using a custom image. |
+| `modelArtifacts` | Model source: `uri: pvc://<PVC name>/` specifies the PVC where the weights reside, `mountPath` is the mount path inside the container, and `name` is the model access name. |
+| `nodeSelector` | Select nodes by GPU model and vendor, e.g. `node.kpanda.io/gpu-product`. |
+| `parallelism` | Parallelism strategy: `tensor` (TP), `data` (DP), `workers`. The values must match the number of GPUs requested for the role. |
+| `resources` | CPU, memory, and GPU requests and limits for each role. |
+| `routing` | Service ports and routing proxy. After `proxy.enabled` is turned on, `routing-proxy` coordinates request handoff between prefill and decode; required for PD disaggregation. |
+| `pluginsCustomConfig` | llm-d EndpointPicker scheduling plugin configuration. The example includes the default scheduling configuration and the `pd-config.yaml` for PD disaggregation; choose based on the actual inference mode. |
 
-配置时的注意事项与[通用模板](generic-template.md)一致：
+The configuration notes are consistent with the [Generic Template](generic-template.md):
 
-- 核对 `parallelism` 与该角色申请的 GPU 总数一致，开启并行选项不会自动增加已申请的 GPU 资源。
-- 按实际镜像中的引擎版本核对启动参数的取值和格式，并在 YAML 预览中复核生成的配置。
-- 模型首次加载可能耗时较长，应为启动检查预留足够时间。
+- Check that `parallelism` matches the total number of GPUs requested for the role; enabling parallelism options does not automatically increase the requested GPU resources.
+- Check the values and formats of startup parameters against the engine version in the actual image, and verify the generated configuration in the YAML preview.
+- The initial model load may take a long time. Reserve enough time for the startup check.
 
-## 完整 values.yaml 示例 {:#custom-values-example}
+## Full values.yaml Example {:#custom-values-example}
 
 <details>
-<summary>展开查看完整 values.yaml 示例（llm-d，PD 一体，Qwen3-0.6B）</summary>
+<summary>Expand to view the full values.yaml example (llm-d, PD Aggregated, Qwen3-0.6B)</summary>
 
 ```yaml title="values.yaml"
 dynamo:

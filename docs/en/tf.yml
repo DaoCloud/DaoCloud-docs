@@ -98,12 +98,19 @@ nav:
               - My Feedback: tf/dak/my-feedback/my-feedback.md
           - Turbo Inference:
               - What is Turbo Inference: tf/inferx/index.md
-              - FAQs: tf/inferx/faqs.md
+              - Install Turbo Inference Offline: tf/inferx/offline.md
+              - Model Services:
+                  - Introduction: tf/inferx/model-services/index.md
+                  - Prerequisites: tf/inferx/model-services/prerequisites.md
+                  - Use Generic Template: tf/inferx/model-services/generic-template.md
+                  - Use Optimized Template: tf/inferx/model-services/optimized-template.md
+                  - Use Custom Deployment: tf/inferx/model-services/custom.md
               - Best Practices:
-                  - Install Turbo Inference Offline: tf/inferx/guides/offline.md
-                  - Enable Istio GAIE Feature for Cluster: tf/inferx/guides/enable-istio-gaie-with-mspider.md
-                  - Model Weight Download and Configuration: tf/inferx/guides/model-weights-setup.md
-                  - Expose Model Service Externally (Hydra/Knoway): tf/inferx/guides/export-by-hydra.md
+                  - Enable Istio GAIE Feature for Cluster: tf/inferx/best-practice/enable-istio-gaie-with-mspider.md
+                  - Download and Configure Model Weight: tf/inferx/best-practice/model-weights-setup.md
+                  - Deploy a PD-disaggregated GLM 5.3 Service: tf/inferx/best-practice/llm-d-pd-glm.md
+                  - Expose Model Services (Hydra/Knoway): tf/inferx/best-practice/export-by-hydra.md
+              - FAQs: tf/inferx/faqs.md
           - Compute Cloud:
               - tf/zestu/index.md
               - Container Instance:
