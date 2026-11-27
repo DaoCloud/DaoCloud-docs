@@ -165,12 +165,19 @@ nav:
               - FAQ: drun/clawos/faq.md
           - Turbo Inference:
               - What is Turbo Inference: drun/inferx/index.md
-              - FAQs: drun/inferx/faqs.md
+              - Install Offline: drun/inferx/offline.md
+              - Model Services:
+                  - Introduction: drun/inferx/model-services/index.md
+                  - Prerequisites: drun/inferx/model-services/prerequisites.md
+                  - Use Generic Template: drun/inferx/model-services/generic-template.md
+                  - Use Optimized Template: drun/inferx/model-services/optimized-template.md
+                  - Use Custom Deployment: drun/inferx/model-services/custom.md
               - Best Practices:
-                  - Install Turbo Inference Offline: drun/inferx/guides/offline.md
-                  - Enable Istio GAIE Feature for Cluster: drun/inferx/guides/enable-istio-gaie-with-mspider.md
-                  - Download and Set Model Weight: drun/inferx/guides/model-weights-setup.md
-                  - Expose Model Service (Hydra/Knoway): drun/inferx/guides/export-by-hydra.md
+                  - Enable Istio GAIE Feature for Cluster: drun/inferx/best-practice/enable-istio-gaie-with-mspider.md
+                  - Download and Set Model Weight: drun/inferx/best-practice/model-weights-setup.md
+                  - Deploy a PD-disaggregated GLM 5.3 Service: drun/inferx/best-practice/llm-d-pd-glm.md
+                  - Expose Model Service (Hydra/Knoway): drun/inferx/best-practice/export-by-hydra.md
+              - FAQs: drun/inferx/faqs.md
       - Cloud Native Infra:
           - Container Management:
               - drun/kpanda/intro/index.md

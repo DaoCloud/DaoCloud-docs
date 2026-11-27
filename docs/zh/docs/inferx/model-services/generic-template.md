@@ -23,7 +23,7 @@ hide:
 
 2. 在 **部署方式** 中选择 **通用模板**。
 
-    ![选择通用模板](../images/generic-template.jpg)
+    ![选择通用模板](images/generic-template.jpg)
 
     如已有相近的优选模板，也可先选中该模板，再点击 **复制当前模版参数至通用模版**，基于预填参数继续配置。
 
@@ -54,7 +54,7 @@ hide:
 
     承担推理任务的角色配置较为复杂，直接影响服务性能与稳定性，请仔细核对各项参数。
 
-    ![通用模板的资源配置界面](../images/generic-template-resources.jpg)
+    ![通用模板的资源配置界面](images/generic-template-resources.jpg)
 
     | 配置项 | 填写说明 |
     | --- | --- |
@@ -73,7 +73,7 @@ hide:
 
         通过表单配置并行策略及相关参数。
 
-        ![引导式配置](../images/guide-config.png)
+        ![引导式配置](images/guide-config.png)
 
         | 参数 | 说明 |
         | --- | --- |
@@ -97,7 +97,7 @@ hide:
 
         填写所选推理框架与引擎版本支持的完整启动方式。
 
-        ![启动命令](../images/startup-cmd.png)
+        ![启动命令](images/startup-cmd.png)
 
     两种配置方式均可按需设置以下选项。
 
@@ -114,22 +114,22 @@ hide:
 
     === "列表状态"
 
-        ![模型服务列表中的可用状态和资源运行状态](../images/service-ready.jpg)
+        ![模型服务列表中的可用状态和资源运行状态](images/service-ready.jpg)
 
     === "拓扑与配置"
 
         点击服务卡片进入详情，在 **拓扑与配置** 中核对各角色的副本数、GPU、镜像和资源状态。
 
-        ![拓扑与配置页面中的角色资源配置](../images/service-topology.png)
+        ![拓扑与配置页面中的角色资源配置](images/service-topology.png)
 
     === "资源列表"
 
         在 **资源列表** 中查看各角色的资源和就绪状态。部署异常时，可在对应 Pod 行点击 **日志**。
 
-        ![资源列表中的资源状态和 Pod 日志入口](../images/resource-status.png)
+        ![资源列表中的资源状态和 Pod 日志入口](images/resource-status.png)
 
     === "服务观测"
 
         服务运行后，可在 **服务观测** 中查看健康实例数、实例数趋势和吞吐等指标。
 
-        ![服务观测页面中的健康实例数和吞吐](../images/service-monitoring.jpg)
+        ![服务观测页面中的健康实例数和吞吐](images/service-monitoring.jpg)

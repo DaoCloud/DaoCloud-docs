@@ -6,9 +6,9 @@
 
 #### Via kpanda Helm Charts
 
-![gateway-api-helm-charts](guides/images/gateway-api-helm-charts.png)
+![gateway-api-helm-charts](best-practice/images/gateway-api-helm-charts.png)
 
-![install-gateway-api](guides/images/install-gateway-api.png)
+![install-gateway-api](best-practice/images/install-gateway-api.png)
 
 #### Via Online Installation
 
@@ -69,5 +69,5 @@ reason: InvalidKind
 
 2. Enable the GAIE feature:
 
-    - For istio installed via `mspider`, refer to [Enable Istio GAIE Feature in Cluster](./guides/enable-istio-gaie-with-mspider.md) for configuration.
+    - For istio installed via `mspider`, refer to [Enable Istio GAIE Feature in Cluster](./best-practice/enable-istio-gaie-with-mspider.md) for configuration.
     - For istio or agent-gateway installed via other methods, refer to community documentation to enable the GAIE feature.

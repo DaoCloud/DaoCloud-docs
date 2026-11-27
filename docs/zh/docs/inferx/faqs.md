@@ -6,9 +6,9 @@
 
 #### 通过 kpanda Helm 模板
 
-![gateway-api-helm-charts](guides/images/gateway-api-helm-charts.png)
+![gateway-api-helm-charts](best-practice/images/gateway-api-helm-charts.png)
 
-![install-gateway-api](guides/images/install-gateway-api.png)
+![install-gateway-api](best-practice/images/install-gateway-api.png)
 
 #### 通过在线安装
 
@@ -69,5 +69,5 @@ reason: InvalidKind
 
 2. 启用 GAIE 特性：
 
-    - 通过 `mspider` 安装 istio，请参考文档 [启用集群的 Istio GAIE 特性](./guides/enable-istio-gaie-with-mspider.md) 进行配置。
+    - 通过 `mspider` 安装 istio，请参考文档 [启用集群的 Istio GAIE 特性](best-practice/enable-istio-gaie-with-mspider.md) 进行配置。
     - 通过其他方式安装的 Istio 或者 agent-gateway 可以参考社区文档启用 GAIE 特性。
