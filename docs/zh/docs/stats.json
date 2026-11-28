@@ -1,25 +1,35 @@
 {
-  "pv": 3012,
-  "uv": 2123,
-  "updated": "2026-11-28T01:08:27.263Z",
+  "pv": 3492,
+  "uv": 2591,
+  "updated": "2026-11-28T15:06:14.132Z",
   "bots": {
-    "pv": 368,
-    "uv": 365
+    "pv": 616,
+    "uv": 613
   },
   "ua_top": [
     {
       "ua": "Mozilla/5.0 (Linux; Android 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Mobile S",
-      "n": 315,
+      "n": 507,
       "bot": true
     },
     {
       "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)",
-      "n": 200,
+      "n": 206,
       "bot": false
     },
     {
       "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like ",
-      "n": 134,
+      "n": 190,
+      "bot": false
+    },
+    {
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like ",
+      "n": 142,
+      "bot": false
+    },
+    {
+      "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)",
+      "n": 92,
       "bot": false
     },
     {
@@ -28,19 +38,9 @@
       "bot": false
     },
     {
-      "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)",
-      "n": 85,
-      "bot": false
-    },
-    {
-      "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)",
-      "n": 61,
-      "bot": false
-    },
-    {
-      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like ",
-      "n": 41,
-      "bot": false
+      "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +htt",
+      "n": 76,
+      "bot": true
     }
   ],
   "daily": {
@@ -55,9 +55,9 @@
       "bot": 358
     },
     "2026-11-28": {
-      "pv": 18,
-      "uv": 15,
-      "bot": 10
+      "pv": 498,
+      "uv": 483,
+      "bot": 258
     }
   }
 }
