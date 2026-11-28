@@ -5,8 +5,105 @@ date: 2025-06-23
 
 # Insight Release Notes
 
-This page lists the Release Notes of Insight, so that you can understand
-the evolution path and feature changes of each version. [Upgrade Notes](../quickstart/install/upgrade-note.md).
+This page lists the Release Notes of Insight and the Ipavo dashboard
+component, so that you can understand the evolution path and feature changes
+of each version. [Upgrade Notes](../quickstart/install/upgrade-note.md).
+
+## 2026-10-31
+
+### v0.15.2
+
+#### Ipavo
+
+- **Added** TokenFactory mode. With `global.tokenfactory.enable=true`, the sidebar menu is not created, while the proxy and version registration stay in place and `/ipavo` remains reachable. After upgrading an existing install with this value, the previous `<release>-menus` resource is removed
+
+### v0.45.0
+
+#### Insight Server
+
+- **Added** support for an existing Secret for the database and Elasticsearch: `global.storage.database[0].existingSecret` and `global.elasticsearch.existingSecret`. The chart still creates its Secret when the name is empty
+- **Improved** Grafana Elasticsearch datasources to read the password from that Secret
+- **Improved** insight-server to read the Elasticsearch password and database DSN from the Secret
+
+#### Insight Agent
+
+- **Added** an existing Secret for the Elasticsearch password used by log export (`global.exporters.logging.elasticsearch.existingSecret`). When the name is set, the chart does not create its own Secret, and the Fluent Bit and event-log collector environment variables need to reference that Secret
+- **Improved** the kube-prometheus-stack Prometheus full name to `insight-agent` and the Prometheus Operator full name to `insight-agent-prom-operator`, and kept the compatibility Service `insight-agent-kube-prometh-prometheus` for insight-server
+
+## 2026-09-30
+
+### v0.44.0
+
+#### Insight Server
+
+- **Added** `global.gitops.provider`, default `none`. When set to `argocd`, Grafana resources get `argocd.argoproj.io/sync-wave`; the VictoriaMetrics Operator uses `sync-wave: -1`
+- **Improved** the Ascend, Metax, and NVIDIA dashboards
+- **Improved** the OpenTelemetry Collector and Aggregator with the `insight.io/release-revision` annotation, updated with the Helm revision
+
+#### Insight Agent
+
+- **Added** native histograms and the OTLP receiver on Prometheus, native histogram remote write, and OTLP metric names with `UnderscoreEscapingWithSuffixes`
+- **Improved** spanmetrics to use `global.spanmetrics.maxSize: 16` instead of fixed buckets
+- **Improved** Fluent Bit collection of Knoway gateway container logs by removing `*_knoway-gw*.log` from `Exclude_Path`
+- **Improved** the metrics remote-write exporter name from `prometheusremotewrite` to `prometheus_remote_write`
+- **Improved** Fluent Bit and the OpenTelemetry Collector with `insight.io/release-revision`
+
+### v0.15.1
+
+#### Ipavo
+
+- **Improved** global-management menu, proxy, and version resource names to follow the Helm release name
+- **Improved** those resources with the annotation `argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true`, so Argo CD can skip dry-run validation before the Ghippo CRDs are available
+- **Improved** UI proxy registration so it is skipped when `ui.enabled` is false
+- **Fixed** the built-in MySQL DSN to use `mysql.password` and the image reference to use `mysql.image.repository`
+
+## 2026-08-31
+
+### v0.43.0
+
+#### Insight Server
+
+- **Added** the alert API `Alert/GetGroupYAML`
+- **Added** APIServer and Admission Webhook alerts for request success rate, latency, in-flight requests, and APF queues, plus `TooManyAdmissionWebhooks` and the recording rule `apiserver:admission_webhook_count`
+- **Added** Ascend NPU alerts and overview, details, and Pod dashboards
+- **Added** NVIDIA GPU alerts: `DCGMExporterDown`, `GPUHighTemperature`, `GPUMemoryNearLimit`, `GPUPCIeReplayHigh`, `GPURowRemapFailure`, and `GPUXidError`
+- **Added** the `ClusterLabelConflict` and `ClusterNameConflict` alerts
+- **Improved** the Grafana Prometheus datasource to use `vm.prometheus.read`, which includes `/select/<tenant>/prometheus`
+- **Improved** Grafana by disabling the `grafana-metricsdrilldown-app` plugin
+- **Improved** the OpenTelemetry Collector startup arguments by dropping `--feature-gates=-connector.servicegraph.virtualNode`
+- **Upgraded** VictoriaMetrics components from 1.127.0 to 1.147.0 (operator v0.64.0 to v0.73.1, chart 0.61.12 to 0.86.0), Alertmanager from v0.28.0 to v0.32.1, and Grafana Operator from v5.20.0 to v5.24.0
+- **Upgraded** the OTel Collector chart from 0.142.0 to 0.158.1 (aggregator image v0.150.0 to v0.156.0) and the Vector chart from 0.52.0 to 0.57.0 (image 0.55.0 to 0.57.0)
+
+#### Insight Agent
+
+- **Added** configurable `global.cluster.id` and `global.cluster.name`, used by Fluent Bit, auto-instrumentation, and event logs
+- **Added** a kubeletstats receiver that collects container filesystem metrics every 30 seconds and remote-writes them to in-cluster Prometheus
+- **Added** a kube-state-metrics Deployment label allowlist: `agentclaw.io/instance-name`, `agentclaw.io/workspace-id`, `agentclaw.io/user-id`, and `agentclaw.io/user-name`
+- **Improved** the audit log blacklist with `leases`
+- **Upgraded** metric collection components: Prometheus v2.53.5 to v3.5.1, kube-prometheus-stack 75.15.0 to 86.2.0 (remote write receiver is now `enableRemoteWriteReceiver`), Prometheus Operator v0.83.0 to v0.91.0, node-exporter v1.9.1 to v1.11.1, blackbox-exporter v0.26.0 to v0.28.0, and the kube-state-metrics chart 6.3.0 to 7.4.0
+- **Upgraded** Fluent Bit from 4.2.4 to 5.0.7 (chart 0.49.0 to 0.57.7)
+- **Upgraded** OpenTelemetry Operator from v0.148.0 to v0.152.0 and the Collector image from v0.150.0 to v0.156.0 (Collector chart 0.142.0 to 0.158.1, Operator chart 0.110.0 to 0.114.0)
+- **Upgraded** auto-instrumentation agents: Java 2.27.0 to 2.28.1, .NET 1.2.0 to 1.15.0, Node.js 0.73.0 to 0.76.0, Python 0.60b1 to 0.63b1, and Go v0.23.0 to v0.24.0
+- **Upgraded** the blackbox-exporter chart from 9.0.0 to 11.11.0, and tailing-sidecar chart 0.18.0 to 0.20.4 (image 0.20.0 to 0.20.5), with the auto certificate period set to 3650 days
+
+### v0.15.0
+
+#### Ipavo
+
+- **Upgraded** the server image to **v0.15.0** and the UI image to **v0.13.0**
+
+## 2026-06-30
+
+### v0.42.2
+
+#### Insight Server
+
+- **Improved** the NVIDIA GPU dashboards to use `insight_hami_*` metrics
+
+#### Insight Agent
+
+- **Added** HAMi GPU metric alias recording rules `insight_hami_*`, compatible with `hami_*` and the legacy metric names
+- **Improved** NVIDIA GPU recording rules to use `insight_hami_*`
 
 ## 2026-05-31
 
