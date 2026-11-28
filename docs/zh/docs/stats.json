@@ -1,15 +1,15 @@
 {
-  "pv": 2920,
-  "uv": 2036,
-  "updated": "2026-11-27T16:13:29.770Z",
+  "pv": 3012,
+  "uv": 2123,
+  "updated": "2026-11-28T01:08:27.263Z",
   "bots": {
-    "pv": 311,
-    "uv": 309
+    "pv": 368,
+    "uv": 365
   },
   "ua_top": [
     {
       "ua": "Mozilla/5.0 (Linux; Android 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Mobile S",
-      "n": 273,
+      "n": 315,
       "bot": true
     },
     {
@@ -19,17 +19,17 @@
     },
     {
       "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like ",
-      "n": 130,
+      "n": 134,
       "bot": false
     },
     {
       "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)",
-      "n": 88,
+      "n": 89,
       "bot": false
     },
     {
       "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)",
-      "n": 84,
+      "n": 85,
       "bot": false
     },
     {
@@ -50,9 +50,14 @@
       "bot": 0
     },
     "2026-11-27": {
-      "pv": 1603,
-      "uv": 972,
-      "bot": 311
+      "pv": 1677,
+      "uv": 1044,
+      "bot": 358
+    },
+    "2026-11-28": {
+      "pv": 18,
+      "uv": 15,
+      "bot": 10
     }
   }
 }
